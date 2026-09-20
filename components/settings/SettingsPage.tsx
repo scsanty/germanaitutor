@@ -5,10 +5,17 @@ import type { ProviderConnection, Profile, ProviderType } from '@/lib/types';
 import type { ModelInfo } from '@/lib/providers/types';
 
 const PROVIDER_TYPES: ProviderType[] = ['anthropic', 'openai', 'gemini', 'ollama'];
+const USAGE_WINDOW_DAYS = 7;
+
+interface UsageTotals {
+  requestCount: number;
+  tokenCount: number;
+}
 
 export function SettingsPage() {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [connections, setConnections] = useState<ProviderConnection[]>([]);
+  const [usage, setUsage] = useState<Record<number, UsageTotals>>({});
   const [confirmingReset, setConfirmingReset] = useState(false);
   const [showAddProvider, setShowAddProvider] = useState(false);
   const [newProviderType, setNewProviderType] = useState<ProviderType>('anthropic');
@@ -25,6 +32,37 @@ export function SettingsPage() {
     fetch('/api/profile').then((r) => r.json()).then(setProfile);
     fetch('/api/providers').then((r) => r.json()).then(setConnections);
   }, []);
+
+  // Powers the spec's "approaching your limit" view: a per-connection rollup of
+  // the last week's requests/tokens, refreshed whenever the list changes.
+  useEffect(() => {
+    let cancelled = false;
+    Promise.all(
+      connections.map(async (c) => {
+        const res = await fetch(`/api/usage?connectionId=${c.id}&days=${USAGE_WINDOW_DAYS}`);
+        const days = await res.json();
+        const totals: UsageTotals = Array.isArray(days)
+          ? days.reduce(
+              (acc, d) => ({
+                requestCount: acc.requestCount + (d.requestCount ?? 0),
+                tokenCount: acc.tokenCount + (d.tokenCount ?? 0),
+              }),
+              { requestCount: 0, tokenCount: 0 }
+            )
+          : { requestCount: 0, tokenCount: 0 };
+        return [c.id, totals] as const;
+      })
+    )
+      .then((entries) => {
+        if (!cancelled) setUsage(Object.fromEntries(entries));
+      })
+      .catch(() => {
+        if (!cancelled) setUsage({});
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [connections]);
 
   async function refreshConnections() {
     const res = await fetch('/api/providers');
@@ -164,6 +202,11 @@ export function SettingsPage() {
               </button>
               <button onClick={() => handleRetest(c.id)}>Re-test</button>
               <button onClick={() => handleDelete(c.id)}>Remove</button>
+              <span>
+                {' '}
+                {usage[c.id]?.requestCount ?? 0} requests, {usage[c.id]?.tokenCount ?? 0} tokens (last{' '}
+                {USAGE_WINDOW_DAYS} days)
+              </span>
             </li>
           ))}
         </ul>

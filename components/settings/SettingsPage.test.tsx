@@ -116,6 +116,40 @@ describe('SettingsPage', () => {
     expect(screen.getByText('Done')).toBeInTheDocument();
   });
 
+  it('shows recent usage totals next to each provider connection', async () => {
+    const fetchMock = stubFetch({
+      'GET /api/providers': {
+        ok: true,
+        json: async () => [
+          {
+            id: 7,
+            providerType: 'anthropic',
+            label: null,
+            ollamaHost: null,
+            selectedModel: 'model-a',
+            isActive: true,
+            lastValidatedStatus: 'valid',
+            lastValidatedAt: null,
+            lastError: null,
+            createdAt: '',
+          },
+        ],
+      },
+      'GET /api/usage?connectionId=7&days=7': {
+        ok: true,
+        json: async () => [
+          { date: '2026-09-20', requestCount: 3, tokenCount: 1200 },
+          { date: '2026-09-19', requestCount: 2, tokenCount: 800 },
+        ],
+      },
+    });
+
+    render(<SettingsPage />);
+
+    await screen.findByText(/5 requests, 2000 tokens \(last 7 days\)/);
+    expect(fetchMock).toHaveBeenCalledWith('/api/usage?connectionId=7&days=7');
+  });
+
   it('requires confirmation before resetting app data', async () => {
     const fetchMock = stubFetch();
     render(<SettingsPage />);
