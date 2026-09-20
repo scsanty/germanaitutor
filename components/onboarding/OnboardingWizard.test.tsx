@@ -13,7 +13,7 @@ describe('OnboardingWizard', () => {
 
   it('keeps Next disabled on the provider step until the connection test succeeds', async () => {
     (fetch as any)
-      .mockResolvedValueOnce({ json: async () => ({ id: 1 }) })
+      .mockResolvedValueOnce({ ok: true, json: async () => ({ id: 1 }) })
       .mockResolvedValueOnce({ json: async () => ({ ok: true }) })
       .mockResolvedValueOnce({ json: async () => ({}) });
 
@@ -30,7 +30,7 @@ describe('OnboardingWizard', () => {
 
   it('shows the error and keeps Next disabled when the test fails', async () => {
     (fetch as any)
-      .mockResolvedValueOnce({ json: async () => ({ id: 1 }) })
+      .mockResolvedValueOnce({ ok: true, json: async () => ({ id: 1 }) })
       .mockResolvedValueOnce({ json: async () => ({ ok: false, error: 'Anthropic returned 401' }) });
 
     render(<OnboardingWizard />);
@@ -40,5 +40,18 @@ describe('OnboardingWizard', () => {
 
     await waitFor(() => expect(screen.getByRole('alert')).toHaveTextContent('Anthropic returned 401'));
     expect(screen.getByText('Next')).toBeDisabled();
+  });
+
+  it('shows an error and keeps Next disabled when saving the provider connection fails', async () => {
+    (fetch as any).mockResolvedValueOnce({ ok: false, json: async () => ({}) });
+
+    render(<OnboardingWizard />);
+    fireEvent.click(screen.getByText('Get started'));
+    fireEvent.change(screen.getByPlaceholderText('API key'), { target: { value: 'sk-test' } });
+    fireEvent.click(screen.getByText('Test connection'));
+
+    await waitFor(() => expect(screen.getByRole('alert')).toHaveTextContent('Failed to save provider connection'));
+    expect(screen.getByText('Next')).toBeDisabled();
+    expect(fetch).toHaveBeenCalledTimes(1);
   });
 });
