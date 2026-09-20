@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import type { ProviderConnection, Profile, ProviderType } from '@/lib/types';
 import type { ModelInfo } from '@/lib/providers/types';
 
@@ -190,6 +191,9 @@ export function SettingsPage() {
 
   return (
     <div>
+      <nav>
+        <Link href="/">Back to home</Link>
+      </nav>
       <section>
         <h2>Providers</h2>
         <ul>
