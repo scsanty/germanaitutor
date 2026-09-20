@@ -39,9 +39,18 @@ Build a complete, static, pre-authored curriculum — the full Track → Level �
 - Actual lesson delivery UI, progress tracking, gating/redirect logic (e.g. redirecting a user to complete a newly-inserted prerequisite lesson after a content update — this sub-project only exposes the data needed to detect that case).
 - TTS audio synthesis (Listening/Speaking sub-projects) and AI-based grading (Writing/Speaking sub-projects) — lessons for these skills get full text content now, audio/grading capability is layered on later.
 
-## Authentication Addendum (prerequisite, scoped separately)
+## Authentication Addendum
 
-Core shipped with no authentication ("local-only, single-user, no auth system"). This sub-project is the first to need a gated route (the admin browse UI), so a small addendum to Core — simple password auth, with Google SSO either included or stubbed for later — will be designed via its own short bounded-brainstorm immediately after this spec is approved, and implemented as an early task within this sub-project's implementation plan, before the admin UI task. It is not part of this document's design.
+Core shipped with no authentication ("local-only, single-user, no auth system"). This sub-project is the first to need a gated route (the admin browse UI), so it adds a small, scoped addendum to Core: simple password auth only (Google SSO deferred to a future public/multi-user phase — disproportionate OAuth setup for gating one local admin tool today). Implemented as an early task in this sub-project's plan, before the admin UI task.
+
+- **Storage:** a new `admin_auth` table (`password_hash`, `created_at`). Password hashed with Node's built-in `crypto.scrypt` — no new dependency, consistent with how Core already handles crypto.
+- **Sessions:** stateless, HMAC-signed HTTP-only cookie (signed with a server-side secret, following the same local-secret-file pattern as `lib/crypto/keyfile.ts`) — no session table, no cleanup job. Long-lived (e.g. 30 days, refreshed on activity), appropriate for a local single-user admin gate rather than a public system.
+- **Gating mechanism:** NOT Next.js middleware — `middleware.ts` runs in the Edge Runtime, which lacks Node's `crypto` module, and introducing a second Edge-compatible crypto path just for this would be inconsistent with Core's existing Node-crypto-only approach. Instead, a shared `requireAdminSession()` check (in a new `lib/services/adminAuthService.ts`) is called at the top of each `/admin/*` page and each `/api/admin/*` route handler — the same per-route gating pattern Core's `app/page.tsx` already uses for the onboarding-completion redirect.
+- **Flow:** visiting `/admin` with no `admin_auth` row yet shows a one-time "set admin password" form; once set, all `/admin/*` pages and `/api/admin/*` routes require a valid session cookie, redirecting to `/admin/login` otherwise.
+- **Recovery:** if the password is forgotten, delete the `admin_auth` row directly (the developer already has full local DB access) — no email/SSO recovery flow needed at this scope.
+- **Files:** `lib/services/adminAuthService.ts` (hash/verify password, sign/verify session cookie, `requireAdminSession()`), `app/api/admin/auth/route.ts` (setup/login/logout), `app/admin/login/page.tsx`.
+
+Note: **only the `/admin/*` pages are gated.** The read-only curriculum data routes (see API Routes below) live under `/api/curriculum/*`, not `/api/admin/*`, and are intentionally ungated — sub-project #3 needs to call them for regular end-user features later, not just the admin browse UI. The admin UI is just one more consumer of that same public data API.
 
 ## Data Model (new SQLite tables, extending Core's DB)
 
@@ -50,7 +59,7 @@ Core shipped with no authentication ("local-only, single-user, no auth system").
 - **`lessons`** — `id (stable slug, e.g. "generic-a1-present-tense-regular"), skill (grammar|vocabulary|reading|listening|writing|speaking), title, explanation, examples (JSON)`. This is the concept — its `id` is what Core's `memory_store` mastery entries key off (`entity_type: 'concept_mastery'`, `entity_key: lesson.id`). No `level` column — a lesson's level is wherever a track places it.
 - **`lesson_placements`** — `id, lesson_id, section_id, order_index`. How a shared lesson is positioned into a specific track's structure. A lesson can have multiple placements (different tracks, potentially different relative positions).
 - **`lesson_track_overrides`** — `id, lesson_id, track, explanation, examples`. Presence of a row means this track uses this content instead of the lesson's canonical content.
-- **`exercises`** — `id, lesson_id, track (nullable), type (multiple_choice|fill_blank|flashcard|free_text), content (JSON, shape per type — see below)`. `track = NULL` means shared across all tracks studying that lesson; non-null means track-exclusive.
+- **`exercises`** — `id (stable slug, e.g. "generic-a1-present-tense-regular-mc-1"), lesson_id, track (nullable), type (multiple_choice|fill_blank|flashcard|free_text), content (JSON, shape per type — see below)`. `track = NULL` means shared across all tracks studying that lesson; non-null means track-exclusive.
 - **`lesson_prerequisites`** — `lesson_id, prerequisite_lesson_id`. Concept-level, track-independent. Captured during master-pool generation. Consumed by sub-project #3's gating/sequencing logic.
 - **`curriculum_meta`** — `seed_version, last_synced_at`. Lets the app detect "curriculum content changed since I last synced," which sub-project #3 needs to implement the described update-catchup behavior (redirecting a user to complete a newly-inserted prerequisite before returning them to their prior position).
 
@@ -60,7 +69,7 @@ Core shipped with no authentication ("local-only, single-user, no auth system").
 - `flashcard`: `{ front, back }`
 - `free_text`: `{ prompt, modelAnswer }`
 
-Stable, slug-style IDs (not raw auto-increment integers) are used for `milestones`, `sections`, and `lessons` specifically so that a later seed update can upsert changed/added content by matching on ID — critical because mastery records and prerequisite edges key off lesson ID, and reassigned IDs on a regeneration would silently corrupt a user's stored progress.
+Stable, slug-style IDs (not raw auto-increment integers) are used for `milestones`, `sections`, `lessons`, and `exercises` — for lessons specifically because mastery records and prerequisite edges key off lesson ID; for exercises because sub-project #3's future spaced-repetition tracking will key per-user item history off exercise ID, and a regeneration reassigning IDs would silently break "has this user already seen this exact item" tracking. A regeneration that meaningfully changes an existing exercise's content should mint a new stable ID rather than mutate the old one in place, so any history already recorded against the old ID stays valid and the item is treated as new.
 
 ## Content Generation Pipeline
 
@@ -81,16 +90,16 @@ A standalone, resumable script (`scripts/generate-curriculum.ts`, run via `tsx`,
 
 ## API Routes (read-only)
 
-Following Core's established pattern (thin routes wrapping a service layer, server-side DB access only):
+Under `/api/curriculum/*` — ungated (see Authentication Addendum above), following Core's established pattern (thin routes wrapping a service layer, server-side DB access only):
 - List tracks/levels.
 - Get a track's Milestone → Section → Lesson structure (for a given level, or the whole track).
 - Get a lesson's content (explanation, examples, resolved against any track-specific override) and its exercise corpus (track-specific exercises falling back to shared ones).
 
-These are the full interface sub-project #3 needs to query curriculum data — it builds no query layer of its own for this.
+These are the full interface sub-project #3 needs to query curriculum data — it builds no query layer of its own for this. The admin browse UI below is just one more consumer of these same routes.
 
 ## Admin Browse UI
 
-A small, admin-only section (e.g. `/admin/curriculum`) for QA-ing the generated content: browse tracks → levels → milestones → sections → lessons, read full lesson content and its exercise corpus. Gated behind the authentication addendum described above. Exists purely for manual review — no automated content-quality grading.
+A small, admin-only section (`/admin/curriculum`) for QA-ing the generated content: browse tracks → levels → milestones → sections → lessons, read full lesson content and its exercise corpus, by calling the same `/api/curriculum/*` routes any other consumer would. Gated by `requireAdminSession()` (see Authentication Addendum above). Exists purely for manual review — no automated content-quality grading.
 
 ## Testing Approach
 
@@ -100,6 +109,8 @@ A small, admin-only section (e.g. `/admin/curriculum`) for QA-ing the generated 
 - **Generation script**: unit-tested with a mocked AI provider (reusing Core's `FetchLike` injection) to verify it correctly parses responses and persists the right relationships (placements, overrides, prerequisites), and that resumability correctly skips already-generated items by stable ID. Actual generated-content *quality* is a manual review step via the admin UI, not an automated test.
 - **Seed loader/merge logic**: unit tests verifying upsert-by-stable-ID behavior — new lessons inserted correctly into existing track order, changed content updated, a user's separate progress data left untouched.
 - **Admin UI**: component tests following Core's established pattern (RTL, mocked fetch).
+- **`adminAuthService`**: unit tests for password hashing/verification (real `crypto.scrypt` round-trip, following the rigor of Core's `lib/crypto/encrypt.test.ts`) and session cookie signing/verification (valid signature accepted, tampered/expired cookie rejected).
+- **Admin auth routes/gating**: integration tests for the setup-then-login flow, and that `requireAdminSession()` actually blocks an unauthenticated request to a protected `/admin/*` page or `/api/admin/*` route.
 - **Manual verification**: after a real (or small pilot) generation run, spot-check content quality and coherence via the admin browse UI.
 
 ## Key Decisions Log
@@ -111,4 +122,5 @@ A small, admin-only section (e.g. `/admin/curriculum`) for QA-ing the generated 
 - Granularity (how many milestones/sections/lessons per track/level) is AI-determined during generation, not fixed by a template — "as rich as required."
 - Text-only content is built now for all six skill tags, including listening/speaking/writing, even though audio synthesis and AI grading aren't built until their respective later sub-projects — avoids having to backfill curriculum content later.
 - Stable, slug-style IDs (not auto-increment integers) for milestones/sections/lessons, specifically to support safe content updates after initial ship without corrupting stored mastery/prerequisite references.
-- Authentication is scoped out of this design as a short, separate prerequisite addendum to Core, to be brainstormed immediately after this spec and implemented as an early task in this sub-project's plan.
+- Authentication addendum: password-only for v1 (Google SSO deferred to a future public/multi-user phase); Node's built-in `crypto.scrypt` and a stateless HMAC-signed session cookie, no new dependency and no sessions table; gated via a per-route `requireAdminSession()` check rather than Next.js middleware, since middleware runs in the Edge Runtime and lacks Node's `crypto` module — this keeps auth on the same Node-crypto approach Core already uses everywhere else.
+- Curriculum data routes (`/api/curriculum/*`) are deliberately ungated and separate from `/api/admin/*` — sub-project #3 needs them for regular end-user features later, not just the admin browse UI, which is just one more consumer of the same routes.
