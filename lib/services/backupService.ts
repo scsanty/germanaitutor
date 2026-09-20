@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, renameSync } from 'node:fs';
 import { gzipSync, gunzipSync } from 'node:zlib';
 import { createHash } from 'node:crypto';
 
@@ -43,11 +43,16 @@ export function importBackup(archive: Buffer, dbPath: string, keyFilePath: strin
   if (envelope.version !== BACKUP_VERSION) {
     throw new InvalidBackupError(`Unsupported backup version ${envelope.version}`);
   }
+  if (typeof envelope.db !== 'string' || typeof envelope.key !== 'string') {
+    throw new InvalidBackupError('Backup archive is missing required fields');
+  }
   const dbBuf = Buffer.from(envelope.db, 'base64');
   const keyBuf = Buffer.from(envelope.key, 'base64');
   if (sha256(dbBuf) !== envelope.dbHash || sha256(keyBuf) !== envelope.keyHash) {
     throw new InvalidBackupError('Backup archive is corrupt (checksum mismatch)');
   }
-  writeFileSync(dbPath, dbBuf);
-  writeFileSync(keyFilePath, keyBuf, { mode: 0o600 });
+  writeFileSync(`${dbPath}.tmp`, dbBuf);
+  renameSync(`${dbPath}.tmp`, dbPath);
+  writeFileSync(`${keyFilePath}.tmp`, keyBuf, { mode: 0o600 });
+  renameSync(`${keyFilePath}.tmp`, keyFilePath);
 }
