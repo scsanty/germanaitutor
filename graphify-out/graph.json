@@ -1,0 +1,378 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "skill_discovery_workflow",
+        "label": "Skill discovery workflow (leaderboard check, CLI search, quality verification)",
+        "nodes": [
+          "_agents_skills_find_skills_skill_skills_sh_leaderboard",
+          "_agents_skills_find_skills_skill_npx_skills_find",
+          "_agents_skills_find_skills_skill_quality_verification"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": ".agents/skills/find-skills/SKILL.md"
+      },
+      {
+        "id": "skills_cli_command_set",
+        "label": "Skills CLI command surface (find / add / update / init)",
+        "nodes": [
+          "_agents_skills_find_skills_skill_skills_cli",
+          "_agents_skills_find_skills_skill_npx_skills_find",
+          "_agents_skills_find_skills_skill_npx_skills_add",
+          "_agents_skills_find_skills_skill_npx_skills_update",
+          "_agents_skills_find_skills_skill_npx_skills_init"
+        ],
+        "relation": "form",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": ".agents/skills/find-skills/SKILL.md"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "_agents_skills_find_skills_skill_npx_skills_add",
+      "label": "npx skills add <package>",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Trusted Source Verification",
+      "contributor": null,
+      "file_type": "code",
+      "norm_label": "npx skills add <package>",
+      "source_file": ".agents/skills/find-skills/SKILL.md",
+      "source_location": null,
+      "source_url": null
+    },
+    {
+      "id": "_agents_skills_find_skills_skill_anthropics_skills",
+      "label": "anthropics/skills",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Trusted Source Verification",
+      "contributor": null,
+      "file_type": "concept",
+      "norm_label": "anthropics/skills",
+      "source_file": ".agents/skills/find-skills/SKILL.md",
+      "source_location": null,
+      "source_url": null
+    },
+    {
+      "id": "_agents_skills_find_skills_skill_microsoft_official_source",
+      "label": "Microsoft (official source)",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Trusted Source Verification",
+      "contributor": null,
+      "file_type": "concept",
+      "norm_label": "microsoft (official source)",
+      "source_file": ".agents/skills/find-skills/SKILL.md",
+      "source_location": null,
+      "source_url": null
+    },
+    {
+      "id": "_agents_skills_find_skills_skill_skills_sh_leaderboard",
+      "label": "skills.sh Leaderboard",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Trusted Source Verification",
+      "contributor": null,
+      "file_type": "concept",
+      "norm_label": "skills.sh leaderboard",
+      "source_file": ".agents/skills/find-skills/SKILL.md",
+      "source_location": null,
+      "source_url": null
+    },
+    {
+      "id": "_agents_skills_find_skills_skill_vercel_labs_agent_skills",
+      "label": "vercel-labs/agent-skills",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Trusted Source Verification",
+      "contributor": null,
+      "file_type": "concept",
+      "norm_label": "vercel-labs/agent-skills",
+      "source_file": ".agents/skills/find-skills/SKILL.md",
+      "source_location": null,
+      "source_url": null
+    },
+    {
+      "id": "_agents_skills_find_skills_skill_quality_verification",
+      "label": "Verify Quality Before Recommending",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Trusted Source Verification",
+      "contributor": null,
+      "file_type": "rationale",
+      "norm_label": "verify quality before recommending",
+      "source_file": ".agents/skills/find-skills/SKILL.md",
+      "source_location": null,
+      "source_url": null
+    },
+    {
+      "id": "_agents_skills_find_skills_skill_npx_skills_init",
+      "label": "npx skills init",
+      "author": null,
+      "captured_at": null,
+      "community": 1,
+      "community_name": "Skill Discovery Workflow",
+      "contributor": null,
+      "file_type": "code",
+      "norm_label": "npx skills init",
+      "source_file": ".agents/skills/find-skills/SKILL.md",
+      "source_location": null,
+      "source_url": null
+    },
+    {
+      "id": "_agents_skills_find_skills_skill_composiohq_awesome_claude_skills",
+      "label": "ComposioHQ/awesome-claude-skills",
+      "author": null,
+      "captured_at": null,
+      "community": 1,
+      "community_name": "Skill Discovery Workflow",
+      "contributor": null,
+      "file_type": "concept",
+      "norm_label": "composiohq/awesome-claude-skills",
+      "source_file": ".agents/skills/find-skills/SKILL.md",
+      "source_location": null,
+      "source_url": null
+    },
+    {
+      "id": "_agents_skills_find_skills_skill_find_skills_skill",
+      "label": "Find Skills (skill)",
+      "author": null,
+      "captured_at": null,
+      "community": 1,
+      "community_name": "Skill Discovery Workflow",
+      "contributor": null,
+      "file_type": "document",
+      "norm_label": "find skills (skill)",
+      "source_file": ".agents/skills/find-skills/SKILL.md",
+      "source_location": null,
+      "source_url": null
+    },
+    {
+      "id": "_agents_skills_find_skills_skill_npx_skills_find",
+      "label": "npx skills find [query] [--owner <owner>]",
+      "author": null,
+      "captured_at": null,
+      "community": 2,
+      "community_name": "Skills CLI Core Commands",
+      "contributor": null,
+      "file_type": "code",
+      "norm_label": "npx skills find [query] [--owner <owner>]",
+      "source_file": ".agents/skills/find-skills/SKILL.md",
+      "source_location": null,
+      "source_url": null
+    },
+    {
+      "id": "_agents_skills_find_skills_skill_npx_skills_update",
+      "label": "npx skills update",
+      "author": null,
+      "captured_at": null,
+      "community": 2,
+      "community_name": "Skills CLI Core Commands",
+      "contributor": null,
+      "file_type": "code",
+      "norm_label": "npx skills update",
+      "source_file": ".agents/skills/find-skills/SKILL.md",
+      "source_location": null,
+      "source_url": null
+    },
+    {
+      "id": "_agents_skills_find_skills_skill_skills_cli",
+      "label": "Skills CLI (npx skills)",
+      "author": null,
+      "captured_at": null,
+      "community": 2,
+      "community_name": "Skills CLI Core Commands",
+      "contributor": null,
+      "file_type": "concept",
+      "norm_label": "skills cli (npx skills)",
+      "source_file": ".agents/skills/find-skills/SKILL.md",
+      "source_location": null,
+      "source_url": null
+    }
+  ],
+  "links": [
+    {
+      "source": "_agents_skills_find_skills_skill_find_skills_skill",
+      "target": "_agents_skills_find_skills_skill_composiohq_awesome_claude_skills",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".agents/skills/find-skills/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "_agents_skills_find_skills_skill_find_skills_skill",
+      "target": "_agents_skills_find_skills_skill_npx_skills_init",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".agents/skills/find-skills/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "_agents_skills_find_skills_skill_find_skills_skill",
+      "target": "_agents_skills_find_skills_skill_quality_verification",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".agents/skills/find-skills/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "_agents_skills_find_skills_skill_find_skills_skill",
+      "target": "_agents_skills_find_skills_skill_skills_cli",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".agents/skills/find-skills/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "_agents_skills_find_skills_skill_find_skills_skill",
+      "target": "_agents_skills_find_skills_skill_skills_sh_leaderboard",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".agents/skills/find-skills/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "_agents_skills_find_skills_skill_npx_skills_add",
+      "target": "_agents_skills_find_skills_skill_vercel_labs_agent_skills",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".agents/skills/find-skills/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "_agents_skills_find_skills_skill_quality_verification",
+      "target": "_agents_skills_find_skills_skill_anthropics_skills",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".agents/skills/find-skills/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "_agents_skills_find_skills_skill_quality_verification",
+      "target": "_agents_skills_find_skills_skill_microsoft_official_source",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".agents/skills/find-skills/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "_agents_skills_find_skills_skill_quality_verification",
+      "target": "_agents_skills_find_skills_skill_vercel_labs_agent_skills",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".agents/skills/find-skills/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "_agents_skills_find_skills_skill_skills_cli",
+      "target": "_agents_skills_find_skills_skill_npx_skills_add",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".agents/skills/find-skills/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "_agents_skills_find_skills_skill_skills_cli",
+      "target": "_agents_skills_find_skills_skill_npx_skills_find",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".agents/skills/find-skills/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "_agents_skills_find_skills_skill_skills_cli",
+      "target": "_agents_skills_find_skills_skill_npx_skills_update",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".agents/skills/find-skills/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "_agents_skills_find_skills_skill_skills_sh_leaderboard",
+      "target": "_agents_skills_find_skills_skill_anthropics_skills",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".agents/skills/find-skills/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "_agents_skills_find_skills_skill_skills_sh_leaderboard",
+      "target": "_agents_skills_find_skills_skill_vercel_labs_agent_skills",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".agents/skills/find-skills/SKILL.md",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "skill_discovery_workflow",
+      "label": "Skill discovery workflow (leaderboard check, CLI search, quality verification)",
+      "nodes": [
+        "_agents_skills_find_skills_skill_skills_sh_leaderboard",
+        "_agents_skills_find_skills_skill_npx_skills_find",
+        "_agents_skills_find_skills_skill_quality_verification"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".agents/skills/find-skills/SKILL.md"
+    },
+    {
+      "id": "skills_cli_command_set",
+      "label": "Skills CLI command surface (find / add / update / init)",
+      "nodes": [
+        "_agents_skills_find_skills_skill_skills_cli",
+        "_agents_skills_find_skills_skill_npx_skills_find",
+        "_agents_skills_find_skills_skill_npx_skills_add",
+        "_agents_skills_find_skills_skill_npx_skills_update",
+        "_agents_skills_find_skills_skill_npx_skills_init"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": ".agents/skills/find-skills/SKILL.md"
+    }
+  ]
+}
