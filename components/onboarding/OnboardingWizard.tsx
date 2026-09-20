@@ -31,6 +31,11 @@ export function OnboardingWizard() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
     });
+    if (!createRes.ok) {
+      setSaving(false);
+      setTestError('Failed to save provider connection');
+      return;
+    }
     const created = await createRes.json();
     const testRes = await fetch(`/api/providers/${created.id}/test`, { method: 'POST' });
     const result = await testRes.json();
