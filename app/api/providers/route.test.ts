@@ -4,10 +4,12 @@ import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { closeDb } from '@/lib/db/client';
 
+const { listModels } = vi.hoisted(() => ({ listModels: vi.fn() }));
+
 vi.mock('@/lib/providers/registry', () => ({
   getAdapter: () => ({
     testConnection: vi.fn().mockResolvedValue({ ok: true }),
-    listModels: vi.fn(),
+    listModels,
     generateText: vi.fn(),
   }),
 }));
@@ -15,11 +17,20 @@ vi.mock('@/lib/providers/registry', () => ({
 import { GET, POST } from './route';
 import { PATCH, DELETE } from './[id]/route';
 import { POST as testRoute } from './[id]/test/route';
+import { GET as modelsRoute } from './[id]/models/route';
 import { GET as getActive, PUT as setActive } from './active/route';
+
+async function createConnection(body: Record<string, unknown>) {
+  const res = await POST(
+    new Request('http://localhost/api/providers', { method: 'POST', body: JSON.stringify(body) })
+  );
+  return res.json();
+}
 
 describe('/api/providers', () => {
   beforeEach(() => {
     process.env.GAIT_DATA_DIR = mkdtempSync(join(tmpdir(), 'gait-api-'));
+    listModels.mockReset();
   });
 
   afterEach(() => {
@@ -70,5 +81,40 @@ describe('/api/providers', () => {
 
     const deleteRes = await DELETE(new Request('http://localhost'), { params: { id: String(created.id) } });
     expect(deleteRes.status).toBe(204);
+  });
+
+  it('lists the models available to a connection', async () => {
+    const created = await createConnection({ providerType: 'anthropic', apiKey: 'sk-ant-test' });
+    listModels.mockResolvedValue([{ id: 'claude-x', label: 'Claude X' }]);
+
+    const res = await modelsRoute(new Request('http://localhost'), { params: { id: String(created.id) } });
+
+    expect(res.status).toBe(200);
+    expect(await res.json()).toEqual([{ id: 'claude-x', label: 'Claude X' }]);
+    expect(listModels).toHaveBeenCalledWith({ apiKey: 'sk-ant-test', host: undefined });
+  });
+
+  it('passes the Ollama host through when listing models', async () => {
+    const created = await createConnection({ providerType: 'ollama', ollamaHost: 'http://localhost:11434' });
+    listModels.mockResolvedValue([]);
+
+    await modelsRoute(new Request('http://localhost'), { params: { id: String(created.id) } });
+
+    expect(listModels).toHaveBeenCalledWith({ apiKey: undefined, host: 'http://localhost:11434' });
+  });
+
+  it('returns 502 instead of throwing when the provider is unreachable', async () => {
+    const created = await createConnection({ providerType: 'ollama', ollamaHost: 'http://localhost:11434' });
+    listModels.mockRejectedValue(new Error('fetch failed'));
+
+    const res = await modelsRoute(new Request('http://localhost'), { params: { id: String(created.id) } });
+
+    expect(res.status).toBe(502);
+    expect((await res.json()).error).toBe('fetch failed');
+  });
+
+  it('returns 404 when listing models for an unknown connection', async () => {
+    const res = await modelsRoute(new Request('http://localhost'), { params: { id: '999' } });
+    expect(res.status).toBe(404);
   });
 });

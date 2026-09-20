@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import type { ProviderConnection, Profile, ProviderType } from '@/lib/types';
+import type { ModelInfo } from '@/lib/providers/types';
 
 const PROVIDER_TYPES: ProviderType[] = ['anthropic', 'openai', 'gemini', 'ollama'];
 
@@ -15,6 +16,10 @@ export function SettingsPage() {
   const [newOllamaHost, setNewOllamaHost] = useState('http://localhost:11434');
   const [addError, setAddError] = useState<string | null>(null);
   const [adding, setAdding] = useState(false);
+  const [addedConnectionId, setAddedConnectionId] = useState<number | null>(null);
+  const [newModels, setNewModels] = useState<ModelInfo[]>([]);
+  const [newSelectedModel, setNewSelectedModel] = useState('');
+  const [modelsError, setModelsError] = useState<string | null>(null);
 
   useEffect(() => {
     fetch('/api/profile').then((r) => r.json()).then(setProfile);
@@ -45,11 +50,16 @@ export function SettingsPage() {
     await refreshConnections();
   }
 
-  function resetAddProviderForm() {
+  function closeAddProvider() {
     setNewProviderType('anthropic');
     setNewApiKey('');
     setNewOllamaHost('http://localhost:11434');
     setAddError(null);
+    setAddedConnectionId(null);
+    setNewModels([]);
+    setNewSelectedModel('');
+    setModelsError(null);
+    setShowAddProvider(false);
   }
 
   async function handleAddProvider() {
@@ -69,9 +79,43 @@ export function SettingsPage() {
       setAddError('Failed to save provider connection');
       return;
     }
+    const created = await res.json();
     await refreshConnections();
-    resetAddProviderForm();
-    setShowAddProvider(false);
+    setAddedConnectionId(created.id);
+    await loadModels(created.id);
+  }
+
+  // The provider may be unreachable (Ollama not running, bad key); the
+  // connection is already saved, so degrade to "no models" instead of failing.
+  async function loadModels(id: number) {
+    setModelsError(null);
+    try {
+      const res = await fetch(`/api/providers/${id}/models`);
+      const data = await res.json();
+      if (Array.isArray(data)) {
+        setNewModels(data);
+        setNewSelectedModel(data[0]?.id ?? '');
+        if (data.length === 0) setModelsError('No models reported by this provider');
+      } else {
+        setNewModels([]);
+        setModelsError(data?.error ?? 'Could not load models');
+      }
+    } catch {
+      setNewModels([]);
+      setModelsError('Could not load models');
+    }
+  }
+
+  async function handleSaveModel() {
+    if (addedConnectionId !== null && newSelectedModel) {
+      await fetch(`/api/providers/${addedConnectionId}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ selectedModel: newSelectedModel }),
+      });
+      await refreshConnections();
+    }
+    closeAddProvider();
   }
 
   async function handleProfileChange(patch: Partial<Profile>) {
@@ -113,7 +157,8 @@ export function SettingsPage() {
         <ul>
           {connections.map((c) => (
             <li key={c.id}>
-              {c.providerType} ({c.lastValidatedStatus}){c.isActive ? ' — active' : ''}
+              {c.providerType} ({c.lastValidatedStatus}){c.selectedModel ? ` — ${c.selectedModel}` : ''}
+              {c.isActive ? ' — active' : ''}
               <button onClick={() => handleSetActive(c.id)} disabled={c.isActive}>
                 Make active
               </button>
@@ -123,7 +168,9 @@ export function SettingsPage() {
           ))}
         </ul>
 
-        {showAddProvider ? (
+        {!showAddProvider && <button onClick={() => setShowAddProvider(true)}>Add provider</button>}
+
+        {showAddProvider && addedConnectionId === null && (
           <div>
             <h3>Add provider</h3>
             <select
@@ -154,18 +201,30 @@ export function SettingsPage() {
             <button onClick={handleAddProvider} disabled={adding}>
               Save provider
             </button>
-            <button
-              onClick={() => {
-                resetAddProviderForm();
-                setShowAddProvider(false);
-              }}
-            >
-              Cancel
-            </button>
+            <button onClick={closeAddProvider}>Cancel</button>
             {addError && <p role="alert">{addError}</p>}
           </div>
-        ) : (
-          <button onClick={() => setShowAddProvider(true)}>Add provider</button>
+        )}
+
+        {showAddProvider && addedConnectionId !== null && (
+          <div>
+            <h3>Choose a model</h3>
+            {newModels.length > 0 ? (
+              <label>
+                Model
+                <select value={newSelectedModel} onChange={(e) => setNewSelectedModel(e.target.value)}>
+                  {newModels.map((m) => (
+                    <option key={m.id} value={m.id}>
+                      {m.label}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            ) : (
+              <p>{modelsError ?? 'No models available'}</p>
+            )}
+            <button onClick={handleSaveModel}>Done</button>
+          </div>
         )}
       </section>
 

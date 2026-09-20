@@ -10,7 +10,10 @@ import { GET as exportRoute } from './export/route';
 import { POST as importRoute } from './import/route';
 
 function importRequest(archive: Buffer): Request {
-  return new Request('http://localhost/api/backup/import', { method: 'POST', body: archive });
+  return new Request('http://localhost/api/backup/import', {
+    method: 'POST',
+    body: new Uint8Array(archive),
+  });
 }
 
 describe('/api/backup', () => {
