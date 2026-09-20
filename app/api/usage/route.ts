@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { getDb } from '@/lib/db/client';
 import { createUsageService } from '@/lib/services/usageService';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(request: Request) {
   const url = new URL(request.url);
   const connectionId = Number(url.searchParams.get('connectionId'));
