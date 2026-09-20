@@ -3,34 +3,44 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { SettingsPage } from './SettingsPage';
 
+const PROFILE = {
+  displayName: '',
+  uiLanguage: 'en',
+  activeTrack: 'generic',
+  activeLevel: 'A1',
+  freestyleDefault: false,
+  onboardingComplete: true,
+  updatedAt: '',
+};
+
+/**
+ * "METHOD url"-keyed fetch stub; individual tests override only what they care
+ * about. Keyed by method too, since GET and POST /api/providers differ.
+ */
+function stubFetch(overrides: Record<string, unknown> = {}) {
+  const routes: Record<string, any> = {
+    'GET /api/profile': { ok: true, json: async () => PROFILE },
+    'GET /api/providers': { ok: true, json: async () => [] },
+    'POST /api/providers': { ok: true, json: async () => ({ id: 7 }) },
+    'GET /api/providers/7/models': { ok: true, json: async () => [{ id: 'model-a', label: 'Model A' }] },
+    'PATCH /api/providers/7': { ok: true, json: async () => ({ id: 7 }) },
+    ...overrides,
+  };
+  const fetchMock = vi.fn((url: string, init?: RequestInit) =>
+    Promise.resolve(routes[`${init?.method ?? 'GET'} ${url}`] ?? { ok: true, json: async () => ({}) })
+  );
+  vi.stubGlobal('fetch', fetchMock);
+  return fetchMock;
+}
+
 describe('SettingsPage', () => {
   beforeEach(() => {
-    vi.stubGlobal(
-      'fetch',
-      vi.fn((url: string) => {
-        if (url === '/api/profile') {
-          return Promise.resolve({
-            ok: true,
-            json: async () => ({
-              displayName: '',
-              uiLanguage: 'en',
-              activeTrack: 'generic',
-              activeLevel: 'A1',
-              freestyleDefault: false,
-              onboardingComplete: true,
-              updatedAt: '',
-            }),
-          });
-        }
-        if (url === '/api/providers') {
-          return Promise.resolve({ ok: true, json: async () => [] });
-        }
-        return Promise.resolve({ ok: true, json: async () => ({ ok: true }) });
-      })
-    );
+    stubFetch();
   });
 
   it('adds a new provider connection and refreshes the list', async () => {
+    const fetchMock = stubFetch();
+
     render(<SettingsPage />);
     await waitFor(() => screen.getByText('Add provider'));
 
@@ -40,14 +50,12 @@ describe('SettingsPage', () => {
     fireEvent.click(screen.getByText('Save provider'));
 
     await waitFor(() =>
-      expect(fetch).toHaveBeenCalledWith('/api/providers', {
+      expect(fetchMock).toHaveBeenCalledWith('/api/providers', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ providerType: 'openai', apiKey: 'sk-openai' }),
       })
     );
-    // The form closes again once the connection list has been refreshed.
-    await waitFor(() => expect(screen.queryByText('Save provider')).not.toBeInTheDocument());
   });
 
   it('offers an Ollama host field instead of an API key for Ollama', async () => {
@@ -61,11 +69,59 @@ describe('SettingsPage', () => {
     expect(screen.queryByPlaceholderText('API key')).not.toBeInTheDocument();
   });
 
+  it('lets the user pick a model for the newly added connection', async () => {
+    const fetchMock = stubFetch({
+      'GET /api/providers/7/models': {
+        ok: true,
+        json: async () => [
+          { id: 'model-a', label: 'Model A' },
+          { id: 'model-b', label: 'Model B' },
+        ],
+      },
+    });
+
+    render(<SettingsPage />);
+    await waitFor(() => screen.getByText('Add provider'));
+    fireEvent.click(screen.getByText('Add provider'));
+    fireEvent.change(screen.getByPlaceholderText('API key'), { target: { value: 'sk-ant' } });
+    fireEvent.click(screen.getByText('Save provider'));
+
+    const modelSelect = await screen.findByLabelText('Model');
+    fireEvent.change(modelSelect, { target: { value: 'model-b' } });
+    fireEvent.click(screen.getByText('Done'));
+
+    await waitFor(() =>
+      expect(fetchMock).toHaveBeenCalledWith('/api/providers/7', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ selectedModel: 'model-b' }),
+      })
+    );
+    await waitFor(() => expect(screen.queryByText('Done')).not.toBeInTheDocument());
+  });
+
+  it('keeps the connection but reports the problem when models cannot be listed', async () => {
+    stubFetch({
+      'GET /api/providers/7/models': { ok: false, json: async () => ({ error: 'Ollama returned 500' }) },
+    });
+
+    render(<SettingsPage />);
+    await waitFor(() => screen.getByText('Add provider'));
+    fireEvent.click(screen.getByText('Add provider'));
+    fireEvent.change(screen.getByPlaceholderText('API key'), { target: { value: 'sk-ant' } });
+    fireEvent.click(screen.getByText('Save provider'));
+
+    await screen.findByText('Ollama returned 500');
+    expect(screen.queryByLabelText('Model')).not.toBeInTheDocument();
+    expect(screen.getByText('Done')).toBeInTheDocument();
+  });
+
   it('requires confirmation before resetting app data', async () => {
+    const fetchMock = stubFetch();
     render(<SettingsPage />);
     await waitFor(() => screen.getByText('Reset app data'));
     fireEvent.click(screen.getByText('Reset app data'));
     expect(screen.getByText(/permanently/)).toBeInTheDocument();
-    expect(fetch).not.toHaveBeenCalledWith('/api/reset', expect.anything());
+    expect(fetchMock).not.toHaveBeenCalledWith('/api/reset', expect.anything());
   });
 });

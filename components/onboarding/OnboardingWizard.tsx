@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import type { ModelInfo } from '@/lib/providers/types';
 
 type Step = 'welcome' | 'provider' | 'track' | 'language';
 
@@ -17,6 +18,10 @@ export function OnboardingWizard() {
   const [ollamaHost, setOllamaHost] = useState('http://localhost:11434');
   const [validated, setValidated] = useState(false);
   const [testError, setTestError] = useState<string | null>(null);
+  const [connectionId, setConnectionId] = useState<number | null>(null);
+  const [models, setModels] = useState<ModelInfo[]>([]);
+  const [selectedModel, setSelectedModel] = useState('');
+  const [modelsError, setModelsError] = useState<string | null>(null);
   const [track, setTrack] = useState<(typeof TRACKS)[number]>('generic');
   const [level, setLevel] = useState<(typeof LEVELS)[number]>('A1');
   const [uiLanguage, setUiLanguage] = useState<'en' | 'de'>('en');
@@ -42,14 +47,49 @@ export function OnboardingWizard() {
     setSaving(false);
     if (result.ok) {
       setValidated(true);
+      setConnectionId(created.id);
       await fetch('/api/providers/active', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id: created.id }),
       });
+      await loadModels(created.id);
     } else {
       setTestError(result.error ?? 'Connection failed');
     }
+  }
+
+  // A provider can be unreachable even after a successful test (e.g. Ollama
+  // stopped in between), so a failure here degrades to "no models" rather than
+  // blocking onboarding.
+  async function loadModels(id: number) {
+    setModelsError(null);
+    try {
+      const res = await fetch(`/api/providers/${id}/models`);
+      const data = await res.json();
+      if (Array.isArray(data)) {
+        setModels(data);
+        setSelectedModel(data[0]?.id ?? '');
+        if (data.length === 0) setModelsError('No models reported by this provider');
+      } else {
+        setModels([]);
+        setModelsError(data?.error ?? 'Could not load models');
+      }
+    } catch {
+      setModels([]);
+      setModelsError('Could not load models');
+    }
+  }
+
+  async function handleProviderNext() {
+    if (connectionId !== null && selectedModel) {
+      await fetch(`/api/providers/${connectionId}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ selectedModel }),
+      });
+    }
+    setStep('track');
   }
 
   async function handleFinish() {
@@ -91,7 +131,20 @@ export function OnboardingWizard() {
         </button>
         {testError && <p role="alert">{testError}</p>}
         {validated && <p>Connected!</p>}
-        <button onClick={() => setStep('track')} disabled={!validated}>
+        {validated && models.length > 0 && (
+          <label>
+            Model
+            <select value={selectedModel} onChange={(e) => setSelectedModel(e.target.value)}>
+              {models.map((m) => (
+                <option key={m.id} value={m.id}>
+                  {m.label}
+                </option>
+              ))}
+            </select>
+          </label>
+        )}
+        {validated && modelsError && <p>{modelsError}</p>}
+        <button onClick={handleProviderNext} disabled={!validated}>
           Next
         </button>
       </div>
