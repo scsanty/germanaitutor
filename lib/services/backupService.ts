@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, renameSync } from 'node:fs';
+import { readFileSync, writeFileSync, renameSync, existsSync, unlinkSync } from 'node:fs';
 import { gzipSync, gunzipSync } from 'node:zlib';
 import { createHash } from 'node:crypto';
 
@@ -55,4 +55,9 @@ export function importBackup(archive: Buffer, dbPath: string, keyFilePath: strin
   renameSync(`${dbPath}.tmp`, dbPath);
   writeFileSync(`${keyFilePath}.tmp`, keyBuf, { mode: 0o600 });
   renameSync(`${keyFilePath}.tmp`, keyFilePath);
+  // Drop any WAL sidecars left over from the replaced database — they belong to
+  // the old file and would be replayed over the restored one on next open.
+  for (const sidecar of [`${dbPath}-wal`, `${dbPath}-shm`]) {
+    if (existsSync(sidecar)) unlinkSync(sidecar);
+  }
 }

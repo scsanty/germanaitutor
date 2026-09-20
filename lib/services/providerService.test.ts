@@ -3,7 +3,9 @@ import { describe, it, expect, vi } from 'vitest';
 import { mkdtempSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
+import { randomBytes } from 'node:crypto';
 import { createDbClient } from '../db/client';
+import { encrypt } from '../crypto/encrypt';
 import { createProviderService } from './providerService';
 
 vi.mock('../providers/registry', () => ({
@@ -51,6 +53,22 @@ describe('providerService', () => {
     const result = await service.testConnection(created.id);
     expect(result.ok).toBe(true);
     expect(service.getConnection(created.id)?.lastValidatedStatus).toBe('valid');
+  });
+
+  it('returns an error instead of throwing when the stored key cannot be decrypted', async () => {
+    const { service, db } = setup();
+    const created = service.createConnection({ providerType: 'anthropic', apiKey: 'sk-ant-test' });
+    // Simulate a key file that no longer matches what encrypted this row
+    // (e.g. a half-applied backup restore) by re-encrypting under a foreign key.
+    db.prepare('UPDATE provider_connections SET encrypted_api_key = ? WHERE id = ?').run(
+      encrypt('sk-ant-test', randomBytes(32)),
+      created.id
+    );
+
+    const result = await service.testConnection(created.id);
+    expect(result).toEqual({ ok: false, error: 'Stored credentials could not be decrypted' });
+    expect(service.getConnection(created.id)?.lastValidatedStatus).toBe('invalid');
+    expect(service.getConnection(created.id)?.lastError).toBe('Stored credentials could not be decrypted');
   });
 
   it('records failures and successes', () => {
