@@ -1,6 +1,8 @@
 node_modules/
 .next/
+.worktrees/
 *.db
 *.db-wal
 *.db-shm
 *.key
+tsconfig.tsbuildinfo
