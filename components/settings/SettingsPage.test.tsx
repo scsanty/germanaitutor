@@ -10,6 +10,7 @@ describe('SettingsPage', () => {
       vi.fn((url: string) => {
         if (url === '/api/profile') {
           return Promise.resolve({
+            ok: true,
             json: async () => ({
               displayName: '',
               uiLanguage: 'en',
@@ -22,11 +23,42 @@ describe('SettingsPage', () => {
           });
         }
         if (url === '/api/providers') {
-          return Promise.resolve({ json: async () => [] });
+          return Promise.resolve({ ok: true, json: async () => [] });
         }
-        return Promise.resolve({ json: async () => ({ ok: true }) });
+        return Promise.resolve({ ok: true, json: async () => ({ ok: true }) });
       })
     );
+  });
+
+  it('adds a new provider connection and refreshes the list', async () => {
+    render(<SettingsPage />);
+    await waitFor(() => screen.getByText('Add provider'));
+
+    fireEvent.click(screen.getByText('Add provider'));
+    fireEvent.change(screen.getByLabelText('New provider type'), { target: { value: 'openai' } });
+    fireEvent.change(screen.getByPlaceholderText('API key'), { target: { value: 'sk-openai' } });
+    fireEvent.click(screen.getByText('Save provider'));
+
+    await waitFor(() =>
+      expect(fetch).toHaveBeenCalledWith('/api/providers', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ providerType: 'openai', apiKey: 'sk-openai' }),
+      })
+    );
+    // The form closes again once the connection list has been refreshed.
+    await waitFor(() => expect(screen.queryByText('Save provider')).not.toBeInTheDocument());
+  });
+
+  it('offers an Ollama host field instead of an API key for Ollama', async () => {
+    render(<SettingsPage />);
+    await waitFor(() => screen.getByText('Add provider'));
+
+    fireEvent.click(screen.getByText('Add provider'));
+    fireEvent.change(screen.getByLabelText('New provider type'), { target: { value: 'ollama' } });
+
+    expect(screen.getByPlaceholderText('Ollama host')).toBeInTheDocument();
+    expect(screen.queryByPlaceholderText('API key')).not.toBeInTheDocument();
   });
 
   it('requires confirmation before resetting app data', async () => {
