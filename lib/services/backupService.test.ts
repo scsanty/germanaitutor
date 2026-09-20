@@ -3,6 +3,7 @@ import { describe, it, expect } from 'vitest';
 import { mkdtempSync, writeFileSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
+import { gzipSync, gunzipSync } from 'node:zlib';
 import { exportBackup, importBackup, InvalidBackupError } from './backupService';
 
 function setupFiles() {
@@ -37,8 +38,39 @@ describe('backupService', () => {
   it('rejects a checksum mismatch', () => {
     const { dbPath, keyPath } = setupFiles();
     const archive = exportBackup(dbPath, keyPath);
-    const tampered = Buffer.from(archive);
-    tampered[tampered.length - 1] ^= 0xff;
-    expect(() => importBackup(tampered, '/tmp/x', '/tmp/y')).toThrow();
+
+    // Gunzip, parse, mutate a character in the base64 db field, re-gzip
+    const decompressed = gunzipSync(archive).toString('utf8');
+    const envelope = JSON.parse(decompressed);
+    // Flip a character in the middle of the base64 db string
+    const dbArray = envelope.db.split('');
+    const midpoint = Math.floor(dbArray.length / 2);
+    dbArray[midpoint] = dbArray[midpoint] === 'a' ? 'b' : 'a';
+    envelope.db = dbArray.join('');
+    const tampered = gzipSync(Buffer.from(JSON.stringify(envelope), 'utf8'));
+
+    const restoreDir = mkdtempSync(join(tmpdir(), 'gait-restore-'));
+    const restoredDb = join(restoreDir, 'app.db');
+    const restoredKey = join(restoreDir, 'master.key');
+
+    expect(() => importBackup(tampered, restoredDb, restoredKey)).toThrow(InvalidBackupError);
+  });
+
+  it('rejects a malformed backup with missing fields', () => {
+    // Create a valid backup, then remove the db field
+    const { dbPath, keyPath } = setupFiles();
+    const archive = exportBackup(dbPath, keyPath);
+
+    // Gunzip, parse, delete required field, re-gzip
+    const decompressed = gunzipSync(archive).toString('utf8');
+    const envelope = JSON.parse(decompressed);
+    delete envelope.db;
+    const malformed = gzipSync(Buffer.from(JSON.stringify(envelope), 'utf8'));
+
+    const restoreDir = mkdtempSync(join(tmpdir(), 'gait-restore-'));
+    const restoredDb = join(restoreDir, 'app.db');
+    const restoredKey = join(restoreDir, 'master.key');
+
+    expect(() => importBackup(malformed, restoredDb, restoredKey)).toThrow(InvalidBackupError);
   });
 });
