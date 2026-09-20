@@ -1,1 +1,6 @@
-.worktrees/
+node_modules/
+.next/
+*.db
+*.db-wal
+*.db-shm
+*.key
