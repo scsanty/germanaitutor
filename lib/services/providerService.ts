@@ -104,10 +104,17 @@ export function createProviderService(db: Database.Database, keyFilePath?: strin
     const row = getRow(id);
     if (!row) return { ok: false, error: 'Connection not found' };
     const adapter = getAdapter(row.provider_type);
-    const creds = {
-      apiKey: row.encrypted_api_key ? decrypt(row.encrypted_api_key, masterKey) : undefined,
-      host: row.ollama_host ?? undefined,
-    };
+    let apiKey: string | undefined;
+    try {
+      apiKey = row.encrypted_api_key ? decrypt(row.encrypted_api_key, masterKey) : undefined;
+    } catch {
+      const error = 'Stored credentials could not be decrypted';
+      db.prepare(
+        `UPDATE provider_connections SET last_validated_status = ?, last_validated_at = datetime('now'), last_error = ? WHERE id = ?`
+      ).run('invalid', error, id);
+      return { ok: false, error };
+    }
+    const creds = { apiKey, host: row.ollama_host ?? undefined };
     const result = await adapter.testConnection(creds);
     db.prepare(
       `UPDATE provider_connections SET last_validated_status = ?, last_validated_at = datetime('now'), last_error = ? WHERE id = ?`
