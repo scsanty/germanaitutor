@@ -1,12 +1,20 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import type { ProviderConnection, Profile } from '@/lib/types';
+import type { ProviderConnection, Profile, ProviderType } from '@/lib/types';
+
+const PROVIDER_TYPES: ProviderType[] = ['anthropic', 'openai', 'gemini', 'ollama'];
 
 export function SettingsPage() {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [connections, setConnections] = useState<ProviderConnection[]>([]);
   const [confirmingReset, setConfirmingReset] = useState(false);
+  const [showAddProvider, setShowAddProvider] = useState(false);
+  const [newProviderType, setNewProviderType] = useState<ProviderType>('anthropic');
+  const [newApiKey, setNewApiKey] = useState('');
+  const [newOllamaHost, setNewOllamaHost] = useState('http://localhost:11434');
+  const [addError, setAddError] = useState<string | null>(null);
+  const [adding, setAdding] = useState(false);
 
   useEffect(() => {
     fetch('/api/profile').then((r) => r.json()).then(setProfile);
@@ -35,6 +43,35 @@ export function SettingsPage() {
   async function handleDelete(id: number) {
     await fetch(`/api/providers/${id}`, { method: 'DELETE' });
     await refreshConnections();
+  }
+
+  function resetAddProviderForm() {
+    setNewProviderType('anthropic');
+    setNewApiKey('');
+    setNewOllamaHost('http://localhost:11434');
+    setAddError(null);
+  }
+
+  async function handleAddProvider() {
+    setAdding(true);
+    setAddError(null);
+    const body =
+      newProviderType === 'ollama'
+        ? { providerType: newProviderType, ollamaHost: newOllamaHost }
+        : { providerType: newProviderType, apiKey: newApiKey };
+    const res = await fetch('/api/providers', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+    setAdding(false);
+    if (!res.ok) {
+      setAddError('Failed to save provider connection');
+      return;
+    }
+    await refreshConnections();
+    resetAddProviderForm();
+    setShowAddProvider(false);
   }
 
   async function handleProfileChange(patch: Partial<Profile>) {
@@ -85,6 +122,51 @@ export function SettingsPage() {
             </li>
           ))}
         </ul>
+
+        {showAddProvider ? (
+          <div>
+            <h3>Add provider</h3>
+            <select
+              aria-label="New provider type"
+              value={newProviderType}
+              onChange={(e) => setNewProviderType(e.target.value as ProviderType)}
+            >
+              {PROVIDER_TYPES.map((p) => (
+                <option key={p} value={p}>
+                  {p}
+                </option>
+              ))}
+            </select>
+            {newProviderType === 'ollama' ? (
+              <input
+                value={newOllamaHost}
+                onChange={(e) => setNewOllamaHost(e.target.value)}
+                placeholder="Ollama host"
+              />
+            ) : (
+              <input
+                value={newApiKey}
+                onChange={(e) => setNewApiKey(e.target.value)}
+                placeholder="API key"
+                type="password"
+              />
+            )}
+            <button onClick={handleAddProvider} disabled={adding}>
+              Save provider
+            </button>
+            <button
+              onClick={() => {
+                resetAddProviderForm();
+                setShowAddProvider(false);
+              }}
+            >
+              Cancel
+            </button>
+            {addError && <p role="alert">{addError}</p>}
+          </div>
+        ) : (
+          <button onClick={() => setShowAddProvider(true)}>Add provider</button>
+        )}
       </section>
 
       <section>
