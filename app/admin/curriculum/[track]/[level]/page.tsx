@@ -4,6 +4,8 @@ import { getDb } from '@/lib/db/client';
 import { createCurriculumService } from '@/lib/services/curriculumService';
 import type { Track, CefrLevel } from '@/lib/types';
 
+export const dynamic = 'force-dynamic';
+
 export default function AdminTrackLevelPage({ params }: { params: { track: string; level: string } }) {
   if (!isAdminSessionValid()) redirect('/admin/login');
   const structure = createCurriculumService(getDb()).getTrackStructure(

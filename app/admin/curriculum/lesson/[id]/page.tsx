@@ -2,6 +2,8 @@ import { redirect } from 'next/navigation';
 import { isAdminSessionValid } from '@/lib/auth/adminSession';
 import { LessonDetail } from '@/components/admin/CurriculumBrowser';
 
+export const dynamic = 'force-dynamic';
+
 export default function AdminLessonPage({
   params,
   searchParams,
