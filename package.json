@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "vitest run"
+    "test": "vitest run",
+    "generate-curriculum": "tsx scripts/generate-curriculum.ts"
   },
   "dependencies": {
     "next": "14.2.18",
@@ -24,6 +25,7 @@
     "@vitejs/plugin-react": "^4.3.4",
     "@testing-library/react": "^16.1.0",
     "@testing-library/jest-dom": "^6.6.3",
-    "jsdom": "^25.0.1"
+    "jsdom": "^25.0.1",
+    "tsx": "^4.19.2"
   }
 }
