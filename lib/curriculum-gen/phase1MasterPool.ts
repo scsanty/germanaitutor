@@ -2,8 +2,8 @@ import type Database from 'better-sqlite3';
 import type { GenerationAiClient } from './aiClient';
 import type { CefrLevel } from '../types';
 import type { Skill } from '../curriculum/types';
+import { getScopedLevels } from './scope';
 
-const LEVELS: CefrLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
 const SKILLS: Skill[] = ['grammar', 'vocabulary', 'reading', 'listening', 'writing', 'speaking'];
 
 interface RawConcept {
@@ -51,7 +51,7 @@ function persistConcepts(db: Database.Database, level: CefrLevel, concepts: RawC
 }
 
 export async function runPhase1(db: Database.Database, aiClient: GenerationAiClient): Promise<void> {
-  for (const level of LEVELS) {
+  for (const level of getScopedLevels()) {
     if (isLevelAlreadyGenerated(db, level)) continue;
     const response = (await aiClient.generateJSON(SYSTEM_PROMPT, buildUserPrompt(level))) as {
       concepts: RawConcept[];
