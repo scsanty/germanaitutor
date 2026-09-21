@@ -5,6 +5,8 @@ import { createAdminAuthService } from '@/lib/services/adminAuthService';
 import { loadOrCreateSessionSecret } from '@/lib/crypto/sessionSecret';
 import { ADMIN_SESSION_COOKIE, isAdminSessionValid } from '@/lib/auth/adminSession';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   const service = createAdminAuthService(getDb());
   return NextResponse.json({

@@ -3,6 +3,8 @@ import { getDb } from '@/lib/db/client';
 import { createCurriculumService } from '@/lib/services/curriculumService';
 import type { Track } from '@/lib/types';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(request: Request, { params }: { params: { id: string } }) {
   const url = new URL(request.url);
   const track = (url.searchParams.get('track') ?? 'generic') as Track;
