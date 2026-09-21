@@ -1,0 +1,1019 @@
+{
+  "seedVersion": "1",
+  "track": "telc",
+  "level": "A1",
+  "milestones": [
+    {
+      "milestone": {
+        "id": "telc-a1-telc-grundlagen",
+        "track": "telc",
+        "level": "A1",
+        "title": "TELC Grundlagen",
+        "description": null,
+        "orderIndex": 0
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "telc-a1-telc-grundlagen-personen-begruessung",
+            "milestoneId": "telc-a1-telc-grundlagen",
+            "title": "Personen & Begrüßung",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "a1-personal-pronouns",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "a1-greetings-farewells",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "a1-speaking-self-introduction",
+              "orderIndex": 2
+            }
+          ]
+        },
+        {
+          "section": {
+            "id": "telc-a1-telc-grundlagen-verben-sprachbausteine",
+            "milestoneId": "telc-a1-telc-grundlagen",
+            "title": "Verben & Sprachbausteine",
+            "description": null,
+            "orderIndex": 1
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "a1-present-tense-regular",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "a1-sein-haben",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "telc-a1-sprachbausteine-format",
+              "orderIndex": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-a1-alltag",
+        "track": "telc",
+        "level": "A1",
+        "title": "Alltag",
+        "description": null,
+        "orderIndex": 1
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "telc-a1-alltag-zahlen-familie",
+            "milestoneId": "telc-a1-alltag",
+            "title": "Zahlen & Familie",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "a1-numbers-1-100",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "a1-family-members",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "a1-definite-articles",
+              "orderIndex": 2
+            }
+          ]
+        },
+        {
+          "section": {
+            "id": "telc-a1-alltag-verstehen",
+            "milestoneId": "telc-a1-alltag",
+            "title": "Verstehen",
+            "description": null,
+            "orderIndex": 1
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "a1-listening-numbers-times",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "a1-reading-simple-signs",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "a1-listening-simple-instructions",
+              "orderIndex": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-a1-pruefungsteile",
+        "track": "telc",
+        "level": "A1",
+        "title": "Prüfungsteile: Lesen, Schreiben, Sprechen",
+        "description": null,
+        "orderIndex": 2
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "telc-a1-pruefungsteile-lesen-schreiben",
+            "milestoneId": "telc-a1-pruefungsteile",
+            "title": "Lesen & Schreiben",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "a1-reading-short-messages",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "a1-writing-simple-forms",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "a1-writing-short-postcard",
+              "orderIndex": 2
+            }
+          ]
+        },
+        {
+          "section": {
+            "id": "telc-a1-pruefungsteile-sprechen",
+            "milestoneId": "telc-a1-pruefungsteile",
+            "title": "Sprechen",
+            "description": null,
+            "orderIndex": 1
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "a1-speaking-asking-directions",
+              "orderIndex": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "a1-personal-pronouns",
+      "sourceLevel": "A1",
+      "skill": "grammar",
+      "title": "Personal pronouns",
+      "explanation": "German personal pronouns change form depending on who is speaking or being spoken about. The subject pronouns are: ich (I), du (you, informal singular), er/sie/es (he/she/it), wir (we), ihr (you, informal plural), sie (they), Sie (you, formal). Unlike English, German pronoun choice for \"you\" depends on formality and number.",
+      "examples": [
+        "Ich heiße Anna.",
+        "Du bist mein Freund.",
+        "Er wohnt in Berlin.",
+        "Wir lernen Deutsch."
+      ]
+    },
+    {
+      "id": "a1-greetings-farewells",
+      "sourceLevel": "A1",
+      "skill": "vocabulary",
+      "title": "Greetings and farewells",
+      "explanation": "Common German greetings vary by time of day and formality. \"Hallo\" and \"Guten Tag\" are general greetings; \"Guten Morgen\" is for mornings, \"Guten Abend\" for evenings. \"Tschüss\" is informal for goodbye, \"Auf Wiedersehen\" is formal.",
+      "examples": [
+        "Guten Morgen!",
+        "Hallo, wie geht's?",
+        "Auf Wiedersehen!",
+        "Tschüss, bis bald!"
+      ]
+    },
+    {
+      "id": "a1-speaking-self-introduction",
+      "sourceLevel": "A1",
+      "skill": "speaking",
+      "title": "Introducing yourself",
+      "explanation": "Introducing yourself in German typically includes your name, where you're from, and maybe your age, using simple present-tense sentences: 'Ich heiße...', 'Ich komme aus...', 'Ich bin ... Jahre alt.'",
+      "examples": [
+        "Ich heiße Lisa.",
+        "Ich komme aus Spanien.",
+        "Ich bin 25 Jahre alt.",
+        "Ich wohne in München."
+      ]
+    },
+    {
+      "id": "a1-present-tense-regular",
+      "sourceLevel": "A1",
+      "skill": "grammar",
+      "title": "Present tense of regular verbs",
+      "explanation": "Regular German verbs in the present tense add endings to the verb stem based on the subject: -e (ich), -st (du), -t (er/sie/es), -en (wir), -t (ihr), -en (sie/Sie). E.g., lernen → ich lerne, du lernst, er lernt.",
+      "examples": [
+        "Ich lerne Deutsch.",
+        "Du lernst schnell.",
+        "Wir lernen zusammen.",
+        "Sie lernen Englisch."
+      ]
+    },
+    {
+      "id": "a1-sein-haben",
+      "sourceLevel": "A1",
+      "skill": "grammar",
+      "title": "The verbs \"sein\" and \"haben\"",
+      "explanation": "sein (to be) and haben (to have) are essential irregular verbs. sein: ich bin, du bist, er ist, wir sind, ihr seid, sie sind. haben: ich habe, du hast, er hat, wir haben, ihr habt, sie haben.",
+      "examples": [
+        "Ich bin müde.",
+        "Du hast einen Hund.",
+        "Wir sind Freunde.",
+        "Sie haben Zeit."
+      ]
+    },
+    {
+      "id": "telc-a1-sprachbausteine-format",
+      "sourceLevel": "A1",
+      "skill": "writing",
+      "title": "TELC Sprachbausteine format",
+      "explanation": "TELC's \"Sprachbausteine\" (language building blocks) section tests grammar and vocabulary through short gap-fill texts, where candidates choose the correct word from three options to complete a coherent short text — testing contextual grammar recognition rather than free production.",
+      "examples": [
+        "Ich ___ (a: bin / b: bist / c: ist) Student.",
+        "Complete: 'Er wohnt ___ (a: in / b: an / c: auf) Berlin.'"
+      ]
+    },
+    {
+      "id": "a1-numbers-1-100",
+      "sourceLevel": "A1",
+      "skill": "vocabulary",
+      "title": "Numbers 1-100",
+      "explanation": "German numbers 1-12 have unique names; 13-19 add \"-zehn\"; tens end in \"-zig\" (except 30: dreißig); numbers 21-99 combine units and tens in reverse order with \"und\" (e.g., 21 = einundzwanzig).",
+      "examples": [
+        "eins, zwei, drei",
+        "zehn, zwanzig, dreißig",
+        "einundzwanzig (21)",
+        "hundert (100)"
+      ]
+    },
+    {
+      "id": "a1-family-members",
+      "sourceLevel": "A1",
+      "skill": "vocabulary",
+      "title": "Family members",
+      "explanation": "Basic family vocabulary: die Mutter (mother), der Vater (father), die Schwester (sister), der Bruder (brother), die Eltern (parents), die Großmutter/der Großvater (grandmother/grandfather).",
+      "examples": [
+        "Meine Mutter heißt Julia.",
+        "Mein Bruder ist 10 Jahre alt.",
+        "Das sind meine Eltern.",
+        "Meine Großmutter kocht gern."
+      ]
+    },
+    {
+      "id": "a1-definite-articles",
+      "sourceLevel": "A1",
+      "skill": "grammar",
+      "title": "Definite articles (der, die, das)",
+      "explanation": "German nouns have three genders, each with its own definite article: der (masculine), die (feminine), das (neuter). The plural article is always \"die\". Learning the gender with each noun is essential.",
+      "examples": [
+        "der Mann",
+        "die Frau",
+        "das Kind",
+        "die Kinder"
+      ]
+    },
+    {
+      "id": "a1-listening-numbers-times",
+      "sourceLevel": "A1",
+      "skill": "listening",
+      "title": "Understanding numbers and times spoken aloud",
+      "explanation": "A1 listeners should recognize spoken numbers and times, e.g., distinguishing \"um drei Uhr\" (at three) from \"um dreizehn Uhr\" (13:00), and understanding simple spoken phone numbers or prices.",
+      "examples": [
+        "Es ist zehn Uhr.",
+        "Der Zug fährt um 8:30 Uhr.",
+        "Das kostet fünf Euro.",
+        "Meine Nummer ist null-eins-zwei-drei."
+      ]
+    },
+    {
+      "id": "a1-reading-simple-signs",
+      "sourceLevel": "A1",
+      "skill": "reading",
+      "title": "Understanding simple signs",
+      "explanation": "Understanding common public signs is a key A1 reading skill: e.g., \"Eingang\" (entrance), \"Ausgang\" (exit), \"Geöffnet\" (open), \"Geschlossen\" (closed), \"Kein Zutritt\" (no entry).",
+      "examples": [
+        "Eingang →",
+        "Geöffnet: 9-18 Uhr",
+        "Kein Rauchen",
+        "Ausgang links"
+      ]
+    },
+    {
+      "id": "a1-listening-simple-instructions",
+      "sourceLevel": "A1",
+      "skill": "listening",
+      "title": "Following simple spoken instructions",
+      "explanation": "A1 listeners should follow short spoken instructions such as directions or classroom commands, e.g., \"Öffnen Sie das Buch\", \"Gehen Sie geradeaus\", \"Warten Sie bitte.\"",
+      "examples": [
+        "Öffnen Sie das Buch auf Seite 5.",
+        "Gehen Sie geradeaus und dann links.",
+        "Warten Sie bitte einen Moment.",
+        "Setzen Sie sich, bitte."
+      ]
+    },
+    {
+      "id": "a1-reading-short-messages",
+      "sourceLevel": "A1",
+      "skill": "reading",
+      "title": "Reading short personal messages",
+      "explanation": "A1 readers should understand short personal messages and notes, recognizing key words like time, place, and names in simple written texts.",
+      "examples": [
+        "Treffen wir uns um 18 Uhr?",
+        "Ich bin im Büro.",
+        "Bis später!",
+        "Kannst du Brot kaufen?"
+      ]
+    },
+    {
+      "id": "a1-writing-simple-forms",
+      "sourceLevel": "A1",
+      "skill": "writing",
+      "title": "Filling in simple forms",
+      "explanation": "A1 writers should be able to fill in simple forms with personal information: Name, Adresse, Geburtsdatum (date of birth), Telefonnummer, Nationalität.",
+      "examples": [
+        "Name: Maria Schmidt",
+        "Adresse: Hauptstraße 12",
+        "Geburtsdatum: 03.05.1998",
+        "Nationalität: deutsch"
+      ]
+    },
+    {
+      "id": "a1-writing-short-postcard",
+      "sourceLevel": "A1",
+      "skill": "writing",
+      "title": "Writing a short postcard",
+      "explanation": "A1 writers should write a short, simple postcard or note describing where they are and how they feel, using simple present-tense sentences and basic connectors like \"und\" and \"aber\".",
+      "examples": [
+        "Liebe Anna, ich bin in Berlin. Die Stadt ist schön. Bis bald, Tom.",
+        "Hallo Mama, mir geht es gut. Das Wetter ist sonnig."
+      ]
+    },
+    {
+      "id": "a1-speaking-asking-directions",
+      "sourceLevel": "A1",
+      "skill": "speaking",
+      "title": "Asking for and giving simple directions",
+      "explanation": "A1 speakers should ask for and understand simple directions using phrases like \"Wo ist...?\", \"Wie komme ich zu...?\", and basic direction words: links (left), rechts (right), geradeaus (straight ahead).",
+      "examples": [
+        "Wo ist der Bahnhof?",
+        "Wie komme ich zum Supermarkt?",
+        "Gehen Sie geradeaus und dann rechts.",
+        "Es ist links von der Kirche."
+      ]
+    }
+  ],
+  "overrides": [
+    {
+      "lessonId": "a1-present-tense-regular",
+      "track": "telc",
+      "explanation": "For TELC's Sprachbausteine format, present tense verb endings are tested through multiple-choice gap-fill exercises rather than free production — focus on quickly recognizing the correct ending among similar-looking options (e.g., distinguishing -t from -en).",
+      "examples": [
+        "Er ___ (spielt/spielen) Fußball. → spielt",
+        "Wir ___ (lernt/lernen) Deutsch. → lernen"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a1-personal-pronouns-mc-1",
+      "lessonId": "a1-personal-pronouns",
+      "track": null,
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welches Pronomen passt? '___ bin Student.'",
+        "options": [
+          "Ich",
+          "Du",
+          "Er",
+          "Wir"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "a1-personal-pronouns-fb-1",
+      "lessonId": "a1-personal-pronouns",
+      "track": null,
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "___ heißt Peter.",
+        "correctAnswer": "Er"
+      }
+    },
+    {
+      "id": "a1-personal-pronouns-fc-1",
+      "lessonId": "a1-personal-pronouns",
+      "track": null,
+      "type": "flashcard",
+      "content": {
+        "front": "sie (plural)",
+        "back": "they"
+      }
+    },
+    {
+      "id": "a1-personal-pronouns-mc-2",
+      "lessonId": "a1-personal-pronouns",
+      "track": null,
+      "type": "multiple_choice",
+      "content": {
+        "question": "Formal 'you' in German is:",
+        "options": [
+          "du",
+          "ihr",
+          "Sie",
+          "er"
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "a1-greetings-farewells-fc-1",
+      "lessonId": "a1-greetings-farewells",
+      "track": null,
+      "type": "flashcard",
+      "content": {
+        "front": "Guten Morgen",
+        "back": "Good morning"
+      }
+    },
+    {
+      "id": "a1-greetings-farewells-fc-2",
+      "lessonId": "a1-greetings-farewells",
+      "track": null,
+      "type": "flashcard",
+      "content": {
+        "front": "Tschüss",
+        "back": "Bye (informal)"
+      }
+    },
+    {
+      "id": "a1-greetings-farewells-mc-1",
+      "lessonId": "a1-greetings-farewells",
+      "track": null,
+      "type": "multiple_choice",
+      "content": {
+        "question": "Formal goodbye:",
+        "options": [
+          "Tschüss",
+          "Auf Wiedersehen",
+          "Hallo",
+          "Guten Appetit"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-greetings-farewells-fb-1",
+      "lessonId": "a1-greetings-farewells",
+      "track": null,
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "___ Abend!",
+        "correctAnswer": "Guten"
+      }
+    },
+    {
+      "id": "a1-speaking-self-introduction-ft-1",
+      "lessonId": "a1-speaking-self-introduction",
+      "track": null,
+      "type": "free_text",
+      "content": {
+        "prompt": "Introduce yourself in three German sentences (name, origin, age).",
+        "modelAnswer": "Ich heiße Lisa. Ich komme aus Spanien. Ich bin 25 Jahre alt."
+      }
+    },
+    {
+      "id": "a1-speaking-self-introduction-mc-1",
+      "lessonId": "a1-speaking-self-introduction",
+      "track": null,
+      "type": "multiple_choice",
+      "content": {
+        "question": "'I come from' in German:",
+        "options": [
+          "Ich komme aus",
+          "Ich heiße",
+          "Ich bin",
+          "Ich wohne"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "a1-speaking-self-introduction-fb-1",
+      "lessonId": "a1-speaking-self-introduction",
+      "track": null,
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Ich ___ Anna.",
+        "correctAnswer": "heiße"
+      }
+    },
+    {
+      "id": "a1-present-tense-regular-fb-1",
+      "lessonId": "a1-present-tense-regular",
+      "track": null,
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Ich ___ (lernen) Deutsch.",
+        "correctAnswer": "lerne"
+      }
+    },
+    {
+      "id": "a1-present-tense-regular-fb-2",
+      "lessonId": "a1-present-tense-regular",
+      "track": null,
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Du ___ (wohnen) in Berlin.",
+        "correctAnswer": "wohnst"
+      }
+    },
+    {
+      "id": "a1-present-tense-regular-mc-1",
+      "lessonId": "a1-present-tense-regular",
+      "track": null,
+      "type": "multiple_choice",
+      "content": {
+        "question": "'wir' ending for regular verbs:",
+        "options": [
+          "-e",
+          "-st",
+          "-t",
+          "-en"
+        ],
+        "correctIndex": 3
+      }
+    },
+    {
+      "id": "a1-present-tense-regular-fc-1",
+      "lessonId": "a1-present-tense-regular",
+      "track": null,
+      "type": "flashcard",
+      "content": {
+        "front": "spielen (ich)",
+        "back": "ich spiele"
+      }
+    },
+    {
+      "id": "a1-present-tense-regular-mc-2",
+      "lessonId": "a1-present-tense-regular",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "'Ihr ___ sehr gut Deutsch.'",
+        "options": [
+          "sprecht",
+          "spricht",
+          "sprechen"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "a1-sein-haben-fb-1",
+      "lessonId": "a1-sein-haben",
+      "track": null,
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Ich ___ (sein) glücklich.",
+        "correctAnswer": "bin"
+      }
+    },
+    {
+      "id": "a1-sein-haben-fb-2",
+      "lessonId": "a1-sein-haben",
+      "track": null,
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Er ___ (haben) ein Auto.",
+        "correctAnswer": "hat"
+      }
+    },
+    {
+      "id": "a1-sein-haben-mc-1",
+      "lessonId": "a1-sein-haben",
+      "track": null,
+      "type": "multiple_choice",
+      "content": {
+        "question": "'du' form of 'sein':",
+        "options": [
+          "bin",
+          "bist",
+          "ist",
+          "sind"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-sein-haben-fc-1",
+      "lessonId": "a1-sein-haben",
+      "track": null,
+      "type": "flashcard",
+      "content": {
+        "front": "wir haben",
+        "back": "we have"
+      }
+    },
+    {
+      "id": "telc-a1-sprachbausteine-format-mc-1",
+      "lessonId": "telc-a1-sprachbausteine-format",
+      "track": null,
+      "type": "multiple_choice",
+      "content": {
+        "question": "Choose the correct word: 'Wir ___ ins Kino.'",
+        "options": [
+          "gehen",
+          "geht",
+          "gehst"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "telc-a1-sprachbausteine-format-mc-2",
+      "lessonId": "telc-a1-sprachbausteine-format",
+      "track": null,
+      "type": "multiple_choice",
+      "content": {
+        "question": "Choose the correct word: 'Das ist ___ Buch.'",
+        "options": [
+          "mein",
+          "meine",
+          "meinen"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "a1-numbers-1-100-fc-1",
+      "lessonId": "a1-numbers-1-100",
+      "track": null,
+      "type": "flashcard",
+      "content": {
+        "front": "15",
+        "back": "fünfzehn"
+      }
+    },
+    {
+      "id": "a1-numbers-1-100-fc-2",
+      "lessonId": "a1-numbers-1-100",
+      "track": null,
+      "type": "flashcard",
+      "content": {
+        "front": "21",
+        "back": "einundzwanzig"
+      }
+    },
+    {
+      "id": "a1-numbers-1-100-mc-1",
+      "lessonId": "a1-numbers-1-100",
+      "track": null,
+      "type": "multiple_choice",
+      "content": {
+        "question": "'vierzig' means:",
+        "options": [
+          "14",
+          "40",
+          "4",
+          "44"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-numbers-1-100-fb-1",
+      "lessonId": "a1-numbers-1-100",
+      "track": null,
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Die Zahl 100 heißt ___.",
+        "correctAnswer": "hundert"
+      }
+    },
+    {
+      "id": "a1-family-members-fc-1",
+      "lessonId": "a1-family-members",
+      "track": null,
+      "type": "flashcard",
+      "content": {
+        "front": "der Vater",
+        "back": "the father"
+      }
+    },
+    {
+      "id": "a1-family-members-fc-2",
+      "lessonId": "a1-family-members",
+      "track": null,
+      "type": "flashcard",
+      "content": {
+        "front": "die Schwester",
+        "back": "the sister"
+      }
+    },
+    {
+      "id": "a1-family-members-mc-1",
+      "lessonId": "a1-family-members",
+      "track": null,
+      "type": "multiple_choice",
+      "content": {
+        "question": "'Eltern' means:",
+        "options": [
+          "Siblings",
+          "Parents",
+          "Grandparents",
+          "Children"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-family-members-fb-1",
+      "lessonId": "a1-family-members",
+      "track": null,
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Mein ___ heißt Tom.",
+        "correctAnswer": "Bruder"
+      }
+    },
+    {
+      "id": "a1-definite-articles-mc-1",
+      "lessonId": "a1-definite-articles",
+      "track": null,
+      "type": "multiple_choice",
+      "content": {
+        "question": "'Buch' (book) takes which article?",
+        "options": [
+          "der",
+          "die",
+          "das",
+          "den"
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "a1-definite-articles-fc-1",
+      "lessonId": "a1-definite-articles",
+      "track": null,
+      "type": "flashcard",
+      "content": {
+        "front": "die Frau",
+        "back": "the woman"
+      }
+    },
+    {
+      "id": "a1-definite-articles-fb-1",
+      "lessonId": "a1-definite-articles",
+      "track": null,
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "___ Mann ist groß.",
+        "correctAnswer": "Der"
+      }
+    },
+    {
+      "id": "a1-definite-articles-mc-2",
+      "lessonId": "a1-definite-articles",
+      "track": null,
+      "type": "multiple_choice",
+      "content": {
+        "question": "Plural definite article is always:",
+        "options": [
+          "der",
+          "die",
+          "das",
+          "dem"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-listening-numbers-times-mc-1",
+      "lessonId": "a1-listening-numbers-times",
+      "track": null,
+      "type": "multiple_choice",
+      "content": {
+        "question": "You hear 'um acht Uhr' — this means:",
+        "options": [
+          "At 8 o'clock",
+          "At 18 o'clock",
+          "In 8 minutes",
+          "8 euros"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "a1-listening-numbers-times-ft-1",
+      "lessonId": "a1-listening-numbers-times",
+      "track": null,
+      "type": "free_text",
+      "content": {
+        "prompt": "Write the time you hear: 'Es ist halb neun.'",
+        "modelAnswer": "8:30 (half past eight)"
+      }
+    },
+    {
+      "id": "a1-reading-simple-signs-mc-1",
+      "lessonId": "a1-reading-simple-signs",
+      "track": null,
+      "type": "multiple_choice",
+      "content": {
+        "question": "'Geschlossen' means:",
+        "options": [
+          "Open",
+          "Closed",
+          "Entrance",
+          "Exit"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-reading-simple-signs-fc-1",
+      "lessonId": "a1-reading-simple-signs",
+      "track": null,
+      "type": "flashcard",
+      "content": {
+        "front": "Kein Zutritt",
+        "back": "No entry"
+      }
+    },
+    {
+      "id": "a1-reading-simple-signs-mc-2",
+      "lessonId": "a1-reading-simple-signs",
+      "track": null,
+      "type": "multiple_choice",
+      "content": {
+        "question": "You see 'Ausgang' — this means:",
+        "options": [
+          "Entrance",
+          "Exit",
+          "Toilet",
+          "Parking"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-listening-simple-instructions-mc-1",
+      "lessonId": "a1-listening-simple-instructions",
+      "track": null,
+      "type": "multiple_choice",
+      "content": {
+        "question": "'Gehen Sie geradeaus' means:",
+        "options": [
+          "Turn left",
+          "Go straight ahead",
+          "Sit down",
+          "Wait"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-listening-simple-instructions-ft-1",
+      "lessonId": "a1-listening-simple-instructions",
+      "track": null,
+      "type": "free_text",
+      "content": {
+        "prompt": "What is being asked: 'Setzen Sie sich, bitte.'?",
+        "modelAnswer": "Please sit down."
+      }
+    },
+    {
+      "id": "a1-reading-short-messages-mc-1",
+      "lessonId": "a1-reading-short-messages",
+      "track": null,
+      "type": "multiple_choice",
+      "content": {
+        "question": "'Treffen wir uns um 18 Uhr?' asks about:",
+        "options": [
+          "A place",
+          "A time to meet",
+          "A price",
+          "A name"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-reading-short-messages-ft-1",
+      "lessonId": "a1-reading-short-messages",
+      "track": null,
+      "type": "free_text",
+      "content": {
+        "prompt": "What does 'Ich bin im Büro' mean?",
+        "modelAnswer": "I am at the office."
+      }
+    },
+    {
+      "id": "a1-writing-simple-forms-ft-1",
+      "lessonId": "a1-writing-simple-forms",
+      "track": null,
+      "type": "free_text",
+      "content": {
+        "prompt": "Fill in a simple form with your name, address, and date of birth in German form style.",
+        "modelAnswer": "Name: Anna Müller\nAdresse: Bahnhofstraße 5\nGeburtsdatum: 12.03.1995"
+      }
+    },
+    {
+      "id": "a1-writing-simple-forms-fb-1",
+      "lessonId": "a1-writing-simple-forms",
+      "track": null,
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "___: Berlin, Deutschland (place of birth)",
+        "correctAnswer": "Geburtsort"
+      }
+    },
+    {
+      "id": "a1-writing-short-postcard-ft-1",
+      "lessonId": "a1-writing-short-postcard",
+      "track": null,
+      "type": "free_text",
+      "content": {
+        "prompt": "Write a short postcard (3-4 sentences) to a friend describing your trip.",
+        "modelAnswer": "Liebe Lisa, ich bin in München. Die Stadt ist toll und das Essen ist lecker. Bis bald, Anna."
+      }
+    },
+    {
+      "id": "a1-speaking-asking-directions-mc-1",
+      "lessonId": "a1-speaking-asking-directions",
+      "track": null,
+      "type": "multiple_choice",
+      "content": {
+        "question": "'Wo ist der Bahnhof?' means:",
+        "options": [
+          "Where is the train station?",
+          "What time is it?",
+          "How are you?",
+          "Where do you live?"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "a1-speaking-asking-directions-ft-1",
+      "lessonId": "a1-speaking-asking-directions",
+      "track": null,
+      "type": "free_text",
+      "content": {
+        "prompt": "Ask for directions to the supermarket in German.",
+        "modelAnswer": "Wie komme ich zum Supermarkt?"
+      }
+    },
+    {
+      "id": "a1-speaking-asking-directions-fc-1",
+      "lessonId": "a1-speaking-asking-directions",
+      "track": null,
+      "type": "flashcard",
+      "content": {
+        "front": "links",
+        "back": "left"
+      }
+    }
+  ],
+  "prerequisites": [
+    {
+      "lessonId": "a1-speaking-self-introduction",
+      "prerequisiteLessonId": "a1-greetings-farewells"
+    },
+    {
+      "lessonId": "a1-speaking-self-introduction",
+      "prerequisiteLessonId": "a1-personal-pronouns"
+    },
+    {
+      "lessonId": "a1-present-tense-regular",
+      "prerequisiteLessonId": "a1-personal-pronouns"
+    },
+    {
+      "lessonId": "a1-sein-haben",
+      "prerequisiteLessonId": "a1-personal-pronouns"
+    },
+    {
+      "lessonId": "a1-listening-numbers-times",
+      "prerequisiteLessonId": "a1-numbers-1-100"
+    },
+    {
+      "lessonId": "a1-writing-simple-forms",
+      "prerequisiteLessonId": "a1-numbers-1-100"
+    }
+  ]
+}
