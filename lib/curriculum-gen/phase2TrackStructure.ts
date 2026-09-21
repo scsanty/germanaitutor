@@ -1,9 +1,7 @@
 import type Database from 'better-sqlite3';
 import type { GenerationAiClient } from './aiClient';
 import type { Track, CefrLevel } from '../types';
-
-const TRACKS: Track[] = ['generic', 'telc', 'goethe'];
-const LEVELS: CefrLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
+import { getScopedTracks, getScopedLevels } from './scope';
 
 interface RawLessonRef {
   lessonId: string;
@@ -105,8 +103,8 @@ function persistStructure(
 }
 
 export async function runPhase2(db: Database.Database, aiClient: GenerationAiClient): Promise<void> {
-  for (const track of TRACKS) {
-    for (const level of LEVELS) {
+  for (const track of getScopedTracks()) {
+    for (const level of getScopedLevels()) {
       if (isTrackLevelAlreadyGenerated(db, track, level)) continue;
       const poolLessonIds = (
         db.prepare('SELECT id FROM lessons WHERE source_level = ?').all(level) as { id: string }[]
