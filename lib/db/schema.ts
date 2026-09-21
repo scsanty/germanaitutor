@@ -45,5 +45,76 @@ export function runMigrations(db: Database.Database): void {
       updated_at TEXT NOT NULL DEFAULT (datetime('now')),
       UNIQUE(entity_type, entity_key)
     );
+
+    CREATE TABLE IF NOT EXISTS admin_auth (
+      id INTEGER PRIMARY KEY CHECK (id = 1),
+      password_hash TEXT NOT NULL,
+      created_at TEXT NOT NULL DEFAULT (datetime('now'))
+    );
+
+    CREATE TABLE IF NOT EXISTS milestones (
+      id TEXT PRIMARY KEY,
+      track TEXT NOT NULL CHECK (track IN ('generic','telc','goethe')),
+      level TEXT NOT NULL CHECK (level IN ('A1','A2','B1','B2','C1')),
+      title TEXT NOT NULL,
+      description TEXT,
+      order_index INTEGER NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS sections (
+      id TEXT PRIMARY KEY,
+      milestone_id TEXT NOT NULL REFERENCES milestones(id) ON DELETE CASCADE,
+      title TEXT NOT NULL,
+      description TEXT,
+      order_index INTEGER NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS lessons (
+      id TEXT PRIMARY KEY,
+      source_level TEXT NOT NULL CHECK (source_level IN ('A1','A2','B1','B2','C1')),
+      skill TEXT NOT NULL CHECK (skill IN ('grammar','vocabulary','reading','listening','writing','speaking')),
+      title TEXT NOT NULL,
+      explanation TEXT,
+      examples TEXT,
+      created_at TEXT NOT NULL DEFAULT (datetime('now'))
+    );
+
+    CREATE TABLE IF NOT EXISTS lesson_placements (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      lesson_id TEXT NOT NULL REFERENCES lessons(id) ON DELETE CASCADE,
+      section_id TEXT NOT NULL REFERENCES sections(id) ON DELETE CASCADE,
+      order_index INTEGER NOT NULL,
+      created_at TEXT NOT NULL DEFAULT (datetime('now')),
+      UNIQUE(lesson_id, section_id)
+    );
+
+    CREATE TABLE IF NOT EXISTS lesson_track_overrides (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      lesson_id TEXT NOT NULL REFERENCES lessons(id) ON DELETE CASCADE,
+      track TEXT NOT NULL CHECK (track IN ('generic','telc','goethe')),
+      explanation TEXT,
+      examples TEXT,
+      UNIQUE(lesson_id, track)
+    );
+
+    CREATE TABLE IF NOT EXISTS exercises (
+      id TEXT PRIMARY KEY,
+      lesson_id TEXT NOT NULL REFERENCES lessons(id) ON DELETE CASCADE,
+      track TEXT CHECK (track IN ('generic','telc','goethe')),
+      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','flashcard','free_text')),
+      content TEXT NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS lesson_prerequisites (
+      lesson_id TEXT NOT NULL REFERENCES lessons(id) ON DELETE CASCADE,
+      prerequisite_lesson_id TEXT NOT NULL REFERENCES lessons(id) ON DELETE CASCADE,
+      PRIMARY KEY (lesson_id, prerequisite_lesson_id)
+    );
+
+    CREATE TABLE IF NOT EXISTS curriculum_meta (
+      id INTEGER PRIMARY KEY CHECK (id = 1),
+      seed_version TEXT NOT NULL DEFAULT '0',
+      last_synced_at TEXT
+    );
   `);
 }
