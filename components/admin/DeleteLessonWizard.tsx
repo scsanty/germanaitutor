@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { Track } from '@/lib/types';
 
 export interface RepairEdge {
@@ -46,13 +46,23 @@ export function DeleteLessonWizard({
   const [previewError, setPreviewError] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [deleting, setDeleting] = useState(false);
+  // Synchronous in-flight guard for the advance-effect below. `setQueue(rest)` dequeues
+  // synchronously in the effect body, but `currentPreview` — the effect's only other
+  // re-entry guard — isn't set until the fetch it kicks off actually resolves. A re-render
+  // landing between those two moments (real network latency makes this easy to hit) would
+  // otherwise let the effect fire again and dequeue a second lesson concurrently, with one
+  // preview clobbering the other. A ref update is synchronous, unlike state, so setting this
+  // right before the fetch and checking it at the top of the effect closes that window.
+  const previewFetchInFlight = useRef(false);
 
   // Fetch the next queued lesson's own preview once nothing is currently being shown.
   useEffect(() => {
     if (currentPreview !== null || previewError !== null || queue.length === 0) return;
+    if (previewFetchInFlight.current) return;
     const [nextId, ...rest] = queue;
     setQueue(rest);
     setCurrentLessonId(nextId);
+    previewFetchInFlight.current = true;
     fetch(`/api/admin/curriculum/lessons/${nextId}/delete-preview`)
       .then(async (r) => {
         if (!r.ok) {
@@ -66,6 +76,9 @@ export function DeleteLessonWizard({
       })
       .catch(() => {
         setPreviewError('Failed to load delete preview');
+      })
+      .finally(() => {
+        previewFetchInFlight.current = false;
       });
   }, [queue, currentPreview, decided, previewError]);
 

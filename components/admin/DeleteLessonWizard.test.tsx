@@ -90,6 +90,63 @@ describe('DeleteLessonWizard', () => {
     expect(previewCalls).toHaveLength(3); // b, d, f — each fetched exactly once, never re-offered
   });
 
+  it('processes two accepted linked-lesson offers strictly one at a time under real network latency, never concurrently dequeuing a second lesson before the first\'s own preview has resolved', async () => {
+    // Regression test for the race where the advance-effect's synchronous `setQueue(rest)`
+    // dequeue, followed by a re-render before the async fetch resolves, let the effect fire
+    // again and dequeue a second queued lesson concurrently — clobbering the first lesson's
+    // own preview before its cascade offers could ever be shown. A microtask-resolving mock
+    // (mockResolvedValue, used by the other tests here) happens to resolve before React
+    // re-renders, so it can't exercise this window; a macrotask delay (setTimeout) can.
+    const delay = () => new Promise<void>((resolve) => setTimeout(resolve, 0));
+    (fetch as any).mockImplementation(async (url: string) => {
+      await delay();
+      if (url.endsWith('/lessons/b/delete-preview'))
+        return {
+          ok: true,
+          json: async () =>
+            previewFor('b', [
+              { id: 'd', title: 'D', track: 'telc' },
+              { id: 'e', title: 'E', track: 'goethe' },
+            ]),
+        };
+      if (url.endsWith('/lessons/d/delete-preview'))
+        return { ok: true, json: async () => previewFor('d', [{ id: 'x', title: 'X', track: 'telc' }]) };
+      if (url.endsWith('/lessons/e/delete-preview'))
+        return { ok: true, json: async () => previewFor('e', [{ id: 'y', title: 'Y', track: 'goethe' }]) };
+      return { ok: true, json: async () => ({ ok: true }) };
+    });
+
+    render(<DeleteLessonWizard rootLessonId="b" onCancel={vi.fn()} onDeleted={vi.fn()} />);
+    await waitFor(() => expect(screen.getByText('telc: D')).toBeInTheDocument());
+    fireEvent.click(screen.getByText('Also delete')); // accept D
+    await waitFor(() => expect(screen.getByText('goethe: E')).toBeInTheDocument());
+    fireEvent.click(screen.getByText('Also delete')); // accept E — queue is now [d, e]
+
+    // D's own preview (and its own cascade offer, X) must appear on its own — proving D was
+    // dequeued and fetched by itself, not concurrently with E.
+    await waitFor(() => expect(screen.getByText('telc: X')).toBeInTheDocument());
+    expect(
+      (fetch as any).mock.calls.some((c: any[]) => String(c[0]).endsWith('/lessons/e/delete-preview'))
+    ).toBe(false);
+    fireEvent.click(screen.getByText('Leave it')); // decline X
+
+    // Only once D's own preview cycle is fully resolved does E's own preview get fetched.
+    await waitFor(() => expect(screen.getByText('goethe: Y')).toBeInTheDocument());
+    fireEvent.click(screen.getByText('Leave it')); // decline Y
+
+    await waitFor(() => expect(screen.getByText('Ready to delete 3 lesson(s)')).toBeInTheDocument());
+    const previewCalls = (fetch as any).mock.calls
+      .filter((c: any[]) => String(c[0]).includes('delete-preview'))
+      .map((c: any[]) => String(c[0]));
+    // Exactly b, d, e — in that order, one after another. X and Y were declined so their own
+    // previews are never fetched at all.
+    expect(previewCalls).toEqual([
+      '/api/admin/curriculum/lessons/b/delete-preview',
+      '/api/admin/curriculum/lessons/d/delete-preview',
+      '/api/admin/curriculum/lessons/e/delete-preview',
+    ]);
+  });
+
   it('surfaces an error instead of silently showing empty effects when the preview fetch fails, blocking with Cancel-only (no Delete All) even for the single/last item in the queue', async () => {
     // Root lesson is the only item in the queue (queue starts and ends as ['b']) — the most
     // common failure shape, e.g. a root-lesson-not-found delete. `setQueue(rest)` pops the
