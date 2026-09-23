@@ -1,0 +1,583 @@
+track: goethe
+level: B2
+
+lessons:
+  - slug: goethe-textkohaesion-satzverflechtung
+    skill: grammar
+    title: "Textkohäsion, Anaphern und Satzverflechtung für Lesen Teil 2"
+    prerequisites: []
+    explanation: |
+      In Goethe Lesen Teil 2 müssen 6 entfernte Sätze aus 8 Optionen in einen Magazintext wiedereingesetzt werden.
+      Entscheidend für den Erfolg ist das Erkennen von Kohäsionsmitteln:
+      1. Pronomen und Deiktika: "dieser", "jene", "solche", "dort", "damals", die auf Nomen oder Sachverhalte des vorangehenden Satzes verweisen.
+      2. Konnektoren und Adverbien: "folglich", "demnach", "hingegen", "allerdings", "nichtsdestotrotz".
+      3. Lexikalische Wiederaufnahme durch Synonyme oder Oberbegriffe.
+    examples:
+      - "Vorheriger Satz: 'Die Wissenschaftler standen vor einem rätselhaften Phänomen.' -> Eingesetzter Satz: 'Dieses ließ sich mit bisherigen Theorien nicht erklären.'"
+      - "Vorheriger Satz: 'Trotz hoher Investitionen blieben die Erträge weit hinter den Erwartungen zurück.' -> Eingesetzter Satz: 'Die Firmenleitung zog deshalb drastische Konsequenzen.'"
+    exercises:
+      - type: multiple_choice
+        question: "Satz 1: 'Immer mehr Bürger entscheiden sich für den Verzicht auf tierische Produkte.' - Welcher Folgesatz weist die stärkste logische Verknüpfung auf?"
+        options:
+          - "Diese Entwicklung spiegelt sich auch im stark wachsenden Angebot an Ersatzprodukten wider."
+          - "Tiere brauchen bekanntlich viel Auslauf und Pflege auf dem Bauernhof."
+          - "Autos belasten die Umwelt in Innenstädten erheblich."
+          - "Deshalb fahren viele Menschen lieber mit der Bahn."
+        correctIndex: 0
+      - type: fill_blank
+        textWithBlank: "Viele Mitarbeiter klagten über Überlastung. Die Geschäftsführung reagierte ___ mit der Einführung von flexiblen Arbeitszeiten. (Konnektor: daraufhin / folglich)"
+        correctAnswer: "daraufhin"
+        acceptableVariants: ["folglich"]
+      - type: free_text
+        prompt: "Erklären Sie, worauf das Wort 'dies' im folgenden Satz verweist: 'Die Mieten stiegen um 20 %. Dies führte zu Protesten.'"
+        modelAnswer: "'Dies' verweist anaphorisch auf den gesamten vorherigen Sachverhalt, nämlich dass die Mieten um 20 % gestiegen sind."
+
+  - slug: goethe-meinungsausdruck-argumentationsstrukturen
+    skill: grammar
+    title: "Differenzierter Meinungsausdruck und Argumentationsketten"
+    prerequisites: []
+    explanation: |
+      Für das Goethe-Schreiben Teil 1 (Forumsbeitrag) und Sprechen müssen Argumente abgestuft und nuanciert formuliert werden.
+      Meinung einleiten: "Meines Erachtens", "Ich bin der festen Überzeugung, dass", "Aus meiner Sicht".
+      Argumente reihen und steigern: "Nicht minder bedeutsam ist...", "Ein weiterer gravierender Aspekt liegt darin, dass...", "Ganz entscheidend ist hierbei...".
+      Einschränkung/Distanzierung: "Man sollte allerdings nicht außer Acht lassen, dass...", "Gewiss trifft es zu, dass..., gleichwohl...".
+    examples:
+      - "Meines Erachtens überwiegen die Vorteile einer flexiblen Arbeitszeitregelung die organisatorischen Hürden bei Weitem."
+      - "Ein weiteres gewichtiges Argument für den Ausbau des Radwegenetzes ist die erhebliche Reduktion von Stickoxiden."
+      - "Es steht außer Frage, dass diese Reform hohe Kosten verursacht, gleichwohl ist sie unumgänglich."
+    exercises:
+      - type: multiple_choice
+        question: "Welcher Ausdruck verleiht einer persönlichen Überzeugung das stärkste Gewicht?"
+        options:
+          - "Es könnte eventuell sein, dass..."
+          - "Ich vertrete mit Nachdruck die Auffassung, dass..."
+          - "Manche Leute behaupten ja..."
+          - "Vielleicht stimmt es, dass..."
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "___ Erachtens sollten die Gebühren für Bildungseinrichtungen gänzlich abgeschafft werden. (Possessivpronomen Dativ)"
+        correctAnswer: "Meines"
+      - type: free_text
+        prompt: "Formulieren Sie eine These gegen die Smartphone-Nutzung in Grundschulen unter Verwendung von 'Ein wesentlicher Nachteil besteht darin, dass...'."
+        modelAnswer: "Ein wesentlicher Nachteil besteht darin, dass Smartphones die Konzentrationsfähigkeit der Kinder im Unterricht massiv beeinträchtigen."
+
+  - slug: goethe-subjektive-bedeutung-modalverben
+    skill: grammar
+    title: "Subjektive Bedeutung der Modalverben (Vermutung und Fremdaussage)"
+    prerequisites: []
+    explanation: |
+      Im B2-Bereich drücken Modalverben nicht nur Pflicht oder Fähigkeit aus, sondern den Grad der Wahrscheinlichkeit (Vermutung) oder die Distanzierung von fremden Aussagen.
+      Müssen: fast 100% sicher ("Das Licht brennt, er muss zu Hause sein").
+      Dürfte: ca. 75% wahrscheinlich ("Das Wetter dürfte morgen sonnig werden").
+      Könnte / Kann: ca. 50% Möglichkeit ("Es könnte regnen").
+      Sollen: fremde Behauptung / Gerücht ("Er soll viel Geld veruntreut haben" = Man sagt, dass...).
+      Wollen: eigene Behauptung des Subjekts, die bezweifelt wird ("Er will den Chef nicht gesehen haben").
+    examples:
+      - "Die Zeugin will zum Tatzeitpunkt zu Hause geschlafen haben. (Das behauptet sie selbst, wird aber angezweifelt.)"
+      - "Der neue Roman des Autors soll ein Meisterwerk sein. (Das hört man von Kritikern.)"
+      - "Nach dieser langen Reise müssen Sie völlig erschöpft sein. (Logische Schlussfolgerung.)"
+      - "Die Reparatur dürfte etwa zwei Stunden in Anspruch nehmen. (Wahrscheinliche Schätzung.)"
+    exercises:
+      - type: multiple_choice
+        question: "Was bedeutet: 'Der Minister soll von den Unregelmäßigkeiten gewusst haben'?"
+        options:
+          - "Der Minister war gesetzlich verpflichtet, davon zu wissen."
+          - "Der Minister wollte unbedingt davon wissen."
+          - "Gerüchten und Berichten zufolge wusste der Minister davon."
+          - "Der Minister weiß mit Sicherheit nichts davon."
+        correctIndex: 2
+      - type: fill_blank
+        textWithBlank: "Er behauptet, er sei unschuldig. -> Er ___ unschuldig sein. (subjektives Modalverb für Eigenbehauptung)"
+        correctAnswer: "will"
+      - type: free_text
+        prompt: "Drücken Sie eine sehr hohe Wahrscheinlichkeit mit 'müssen' aus: 'Es ist so gut wie sicher, dass sie den Zug verpasst hat.'"
+        modelAnswer: "Sie muss den Zug verpasst haben."
+
+  - slug: goethe-partizipialkonstruktionen-verdichtung
+    skill: grammar
+    title: "Partizipialkonstruktionen zur Textverdichtung in journalistischen Texten"
+    prerequisites: []
+    explanation: |
+      Goethe-Lesetexte (insbesondere Teil 3 und Teil 4) nutzen häufig partizipiale Attribute, um komplexe Informationen syntaktisch zu verdichten.
+      Statt eines Nebensatzes wird das Partizip I oder II attributiv vor das Nomen gesetzt, oft mit mehrgliedrigen Erweiterungen.
+      Beispiel: "Die auf der Konferenz von führenden Klimatologen vorgestellten Simulationsmodelle" = "Die Simulationsmodelle, die von führenden Klimatologen auf der Konferenz vorgestellt wurden".
+    examples:
+      - "Die von der Bundesregierung beschlossenen Steuererleichterungen treten im Januar in Kraft."
+      - "Das ständig wachsende Verkehrsaufkommen belastet die Anwohner der Hauptverkehrsachsen."
+      - "Die im Rahmen der Studie befragten Bürger zeigten sich überwiegend skeptisch."
+    exercises:
+      - type: multiple_choice
+        question: "Welcher Satz löst die Partizipialkonstruktion 'die von den Experten heftig kritisierte Entscheidung' korrekt in einen Relativsatz auf?"
+        options:
+          - "Die Entscheidung, die die Experten heftig kritisiert hat."
+          - "Die Entscheidung, die von den Experten heftig kritisiert wurde."
+          - "Die Entscheidung, welche die Experten heftig kritisieren wird."
+          - "Die Entscheidung, deren Experten heftig kritisierten."
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Die gestern von den Gewerkschaften ausgerufen___ Warnstreiks legten den Nahverkehr lahm. (Endung Partizip II)"
+        correctAnswer: "enen"
+      - type: free_text
+        prompt: "Verdichten Sie folgenden Relativsatz zu einem Partizipialattribut: 'Die Kosten, die durch die Renovierung entstanden sind.'"
+        modelAnswer: "Die durch die Renovierung entstandenen Kosten."
+
+  - slug: goethe-indirekte-rede-konjunktiv-i
+    skill: grammar
+    title: "Indirekte Rede und Konjunktiv I in der Berichterstattung"
+    prerequisites: []
+    explanation: |
+      Zur distanzierten Wiedergabe von Äußerungen nutzt die gehobene Schriftsprache und die journalistische Berichterstattung den Konjunktiv I.
+      Er wird vom Präsensstamm des Verbs abgeleitet: er/sie habe, sei, wisse, könne, müsse, gehe.
+      Stimmen die Konjunktiv-I-Formen mit dem Indikativ überein (häufig in der 1. Person Singular und im Plural), weicht man auf den Konjunktiv II aus ("hätten", "wären", "würden").
+    examples:
+      - "Der Sprecher betonte, die Regierung habe die Situation jederzeit unter Kontrolle."
+      - "Die Ministerin erklärte, man sei sich der Herausforderungen bewusst und werde rasch handeln."
+      - "Kritiker warfen dem Konzern vor, er verharmlose die ökologischen Folgeschäden."
+    exercises:
+      - type: fill_blank
+        textWithBlank: "Der Zeuge gab an, er ___ am Abend des Überfalls zu Hause gewesen. (Konjunktiv I von sein)"
+        correctAnswer: "sei"
+      - type: multiple_choice
+        question: "Welche Verbform steht im Konjunktiv I?"
+        options: ["er hätte", "er habe", "er hatte", "er hat"]
+        correctIndex: 1
+      - type: free_text
+        prompt: "Wandeln Sie in die indirekte Rede um: Die Zeitung schreibt: 'Die Wirtschaft wächst in diesem Jahr nicht.'"
+        modelAnswer: "Die Zeitung schreibt, die Wirtschaft wachse in diesem Jahr nicht."
+
+  - slug: goethe-feste-nomen-verb-gefuege
+    skill: grammar
+    title: "Gehobene Funktionsverbgefüge für Aufsatz und Vortrag"
+    prerequisites: []
+    explanation: |
+      In den Prüfungsteilen Schreiben und Sprechen des Goethe-Zertifikats B2 wird der gezielte Einsatz eines breiten, gehobenen Idiomenrepertoires positiv bewertet.
+      Wichtige Wendungen: "zur Sprache bringen" (ansprechen), "unter Beweis stellen" (beweisen), "in die Tat umsetzen" (verwirklichen), "außer Frage stehen" (zweifellos sein), "Einfluss ausüben auf" (beeinflussen), "Maßnahmen ergreifen" (handeln).
+    examples:
+      - "Er hat seine Fachkompetenz in zahlreichen Projekten eindrucksvoll unter Beweis gestellt."
+      - "Die gefassten Beschlüsse müssen nun schnellstmöglich in die Tat umgesetzt werden."
+      - "Es steht völlig außer Frage, dass das Bildungswesen reformbedürftig ist."
+      - "Die Lobbygruppe übte massiven Einfluss auf die Gesetzgebung aus."
+    exercises:
+      - type: fill_blank
+        textWithBlank: "Wir müssen umgehend geeignete Maßnahmen gegen die Ausbreitung des Virus ___ . (ergreifen / fassen)"
+        correctAnswer: "ergreifen"
+      - type: multiple_choice
+        question: "Welches Funktionsverb passt zu: 'jemandem Hilfe ___'?"
+        options: ["leisten", "stellen", "führen", "schaffen"]
+        correctIndex: 0
+      - type: flashcard
+        front: "in Kauf nehmen"
+        back: "einen Nachteil akzeptieren"
+      - type: free_text
+        prompt: "Verwenden Sie die Wendung 'in die Tat umsetzen' in einem eigenen Satz über gute Vorsätze."
+        modelAnswer: "Viele Menschen schaffen es im neuen Jahr nicht, ihre guten Vorsätze in die Tat umzusetzen."
+
+  - slug: goethe-vocab-nachhaltigkeit-umweltschutz
+    skill: vocabulary
+    title: "Wortschatz: Nachhaltiger Lebensstil und Konsumkritik"
+    prerequisites: []
+    explanation: |
+      Typische Themen im Goethe-Zertifikat B2 behandeln bewussten Konsum, Müllvermeidung und nachhaltigen Tourismus.
+      Schlüsselwörter: der Minimalismus, die Konsumgesellschaft, die Müllvermeidung, der Verzicht, unverpackte Lebensmittel, die Wegwerfmentalität, der ökologische Wandel.
+      Kollokationen: auf Überflüssiges verzichten, Ressourcen schonend einsetzen, ein Zeichen für den Umweltschutz setzen.
+    examples:
+      - "Der Trend zum Minimalismus beweist, dass Wohlstand nicht primär an materiellem Besitz gemessen werden muss."
+      - "Immer mehr Verbraucher kaufen in Unverpackt-Läden ein, um aktiv zur Müllvermeidung beizutragen."
+      - "Massentourismus zerstört oft genau die Naturräume, derentwegen Urlauber anreisen."
+    exercises:
+      - type: flashcard
+        front: "auf Konsum verzichten"
+        back: "bewusst nichts oder weniger Neues kaufen"
+      - type: multiple_choice
+        question: "Was bedeutet das Prinzip 'Zero Waste' auf Deutsch?"
+        options:
+          - "Müllverbrennung fördern"
+          - "Ziel eines müllfreien Lebensstils durch Vermeidung und Recycling"
+          - "Kauf von Billigprodukten im Discounter"
+          - "Verschwendung von Nahrungsmitteln"
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Statt Dinge wegzuwerfen, sollte man versuchen, sie zu reparieren oder zu ___ . (wiederverwerten)"
+        correctAnswer: "recyceln"
+        acceptableVariants: ["wiederverwerten"]
+      - type: free_text
+        prompt: "Erörtern Sie in einem Satz den Vorteil von unverpackten Lebensmitteln."
+        modelAnswer: "Unverpackte Lebensmittel reduzieren den Plastikmüll und schonen dadurch wertvolle Umweltressourcen."
+
+  - slug: goethe-vocab-bildung-arbeitswelt
+    skill: vocabulary
+    title: "Wortschatz: Bildung, Chancengleichheit und Digitalisierung"
+    prerequisites: []
+    explanation: |
+      Bildungsthemen im Goethe-Zertifikat reichen von Frühförderung über Benotungssysteme bis zum lebenslangen Lernen im Beruf.
+      Begriffe: das lebenslange Lernen, die Leistungsbeurteilung, die Chancengleichheit, die Medienkompetenz, der Quereinstieg, die Umschulung, die Studiengebühren.
+      Kollokationen: Talente fördern, Bildungsungerechtigkeit abbauen, theoretisches Wissen in die Praxis übertragen.
+    examples:
+      - "In einer sich rasch wandelnden Wirtschaftswelt gewinnt das Konzept des lebenslangen Lernens essenzielle Bedeutung."
+      - "Kritiker fordern, Noten in der Grundschule durch individuelle Entwicklungsberichte zu ersetzen."
+      - "Digital gestützter Unterricht ermöglicht personalisiertes Lernen im individuellen Tempo."
+    exercises:
+      - type: multiple_choice
+        question: "Was versteht man unter einem 'Quereinsteiger'?"
+        options:
+          - "Jemand, der ohne traditionelle Fachausbildung in einen neuen Berufszweig wechselt."
+          - "Ein Student, der die Universität vorzeitig abbricht."
+          - "Ein Lehrer, der ausschließlich an Privatschulen unterrichtet."
+          - "Ein Mitarbeiter, der seit dreißig Jahren im selben Betrieb arbeitet."
+        correctIndex: 0
+      - type: fill_blank
+        textWithBlank: "Das deutsche Bildungssystem wird oft dafür kritisiert, dass der soziale Status der Eltern zu stark den Bildungs___ der Kinder bestimmt."
+        correctAnswer: "erfolg"
+      - type: flashcard
+        front: "lebenslanges Lernen"
+        back: "ständige Weiterbildung über die gesamte Lebensspanne hinweg"
+      - type: free_text
+        prompt: "Formulieren Sie ein Argument für oder gegen die Benotung von Hausaufgaben."
+        modelAnswer: "Gegen die Benotung spricht, dass Schüler aus bildungsfernen Familien oft keine elterliche Unterstützung bei den Hausaufgaben erhalten."
+
+  - slug: goethe-vocab-gesellschaft-zusammenleben
+    skill: vocabulary
+    title: "Wortschatz: Ehrenamt, Generationen und gesellschaftlicher Zusammenhalt"
+    prerequisites: []
+    explanation: |
+      Gesellschaftliche Diskurse in B2 thematisieren ehrenamtliches Engagement, das Miteinander von Jung und Alt sowie gesellschaftliche Integration.
+      Begriffe: das bürgerschaftliche Engagement, der Zusammenhalt, das Mehrgenerationenhaus, der demografische Wandel, die Solidarität, die Isolation.
+      Kollokationen: einen Beitrag zur Gesellschaft leisten, sich für Schwächere einsetzen, Vereinsarbeit leisten.
+    examples:
+      - "Mehrgenerationenhäuser bieten Raum für gegenseitige Unterstützung zwischen Senioren und Familien."
+      - "Ohne das ehrenamtliche Engagement von Millionen Bürgern wären viele Hilfsangebote nicht finanzierbar."
+      - "Die Vereinsarbeit stärkt das Gemeinschaftsgefühl und wirkt der zunehmenden Vereinsamung entgegen."
+    exercises:
+      - type: flashcard
+        front: "das bürgerschaftliche Engagement"
+        back: "freiwilliger gesellschaftlicher Einsatz für das Gemeinwohl"
+      - type: fill_blank
+        textWithBlank: "Sportvereine und Kulturinitiativen stärken den sozialen ___ in unseren Städten."
+        correctAnswer: "Zusammenhalt"
+      - type: multiple_choice
+        question: "Welches Wort beschreibt das Zusammenleben mehrerer Generationen unter einem Dach?"
+        options:
+          - "Mehrgenerationenhaus"
+          - "Einfamilienhaus"
+          - "Studentenwohnheim"
+          - "Seniorenresidenz"
+        correctIndex: 0
+      - type: free_text
+        prompt: "Nennen Sie einen Beweggrund, warum Menschen ein Ehrenamt ausüben."
+        modelAnswer: "Viele Menschen möchten der Gesellschaft etwas zurückgeben und Freude am gemeinsamen Helfen erleben."
+
+  - slug: goethe-lesen-teil1-forenbeitraege-zuordnen
+    skill: reading
+    title: "Goethe Lesen Teil 1: Zuordnung von Aussagen zu Forumsbeiträgen"
+    prerequisites: []
+    explanation: |
+      In Teil 1 des Goethe-Leseverstehens (empfohlene Zeit: ca. 18 Minuten) lesen Sie vier kurze Forumsbeiträge verschiedener Personen (A, B, C, D) zu einem Thema (z. B. Minimalismus, fleischfreie Ernährung).
+      Sie ordnen 9 Aussagen der jeweils passenden Person zu. Personen können mehrfach gewählt werden.
+      Achten Sie auf Paraphrasen: Eine Aussage lautet beispielsweise "Wer verzichtet auf Fleisch?", während im Text von Person C steht: "Ich habe tierische Produkte komplett von meinem Speiseplan gestrichen."
+    examples:
+      - "Aussage: 'Für wen ist Naturschutz bei Kaufentscheidungen ausschlaggebend?' -> Text B: 'Ich kaufe nur Produkte aus biologischem Anbau, um die Umwelt nicht zu belasten.' -> Lösung: B."
+    exercises:
+      - type: multiple_choice
+        question: "Person A schreibt: 'Ein Auto brauche ich nicht; ich erledige alles zu Fuß oder mit dem Rad, das hält fit und kostet fast nichts.' - Welcher Aussage entspricht dies?"
+        options:
+          - "Person A sieht im Auto ein unverzichtbares Statussymbol."
+          - "Person A verzichtet bewusst aus Gesundheits- und Spargründen auf ein Kraftfahrzeug."
+          - "Person A plant den baldigen Kauf eines Elektroautos."
+          - "Person A fährt täglich lange Strecken mit der Bahn."
+        correctIndex: 1
+      - type: free_text
+        prompt: "Welche Strategie empfehlen Experten als ersten Schritt bei Goethe Lesen Teil 1?"
+        modelAnswer: "Zuerst die 9 Aussagen lesen und Schlüsselbegriffe markieren, bevor man die vier Beiträge detailliert überfliegt."
+
+  - slug: goethe-lesen-teil2-textrekonstruktion
+    skill: reading
+    title: "Goethe Lesen Teil 2: Textrekonstruktion mit Satzlücken"
+    prerequisites: [goethe-textkohaesion-satzverflechtung]
+    explanation: |
+      In Teil 2 (empfohlene Zeit: ca. 12 Minuten) lesen Sie einen zusammenhängenden Magazin- oder Zeitungsartikel, in dem 6 Sätze fehlen.
+      Aus einer Liste von 8 Sätzen (A–H) müssen Sie die 6 passenden Sätze den Lücken (1–6) zuordnen; zwei Sätze bleiben übrig.
+      Prüfen Sie immer den grammatischen und inhaltlichen Anschluss sowohl an den vorangehenden als auch an den nachfolgenden Satz (Pronominalbezüge, Konnektoren, Zeitenfolge).
+    examples:
+      - "Lücke 2: Vor dem Spalt steht 'Viele Schulen verfügen noch immer nicht über schnelles Internet.' Nach dem Spalt steht 'Daher können digitale Lehrmittel dort kaum genutzt werden.' -> Passender Rumpfsatz: 'Oft fehlt es schlicht an den finanziellen Mitteln für moderne Glasfaseranschlüsse.'"
+    exercises:
+      - type: multiple_choice
+        question: "Vor der Lücke: 'Immer mehr Menschen leiden unter Schlafstörungen.' Nach der Lücke: 'Besonders das blaue Displaylicht blockiert die Melatoninausschüttung.' Welcher Satz passt in die Lücke?"
+        options:
+          - "Mediziner machen hierfür vor allem die intensive Smartphone-Nutzung vor dem Zubettgehen verantwortlich."
+          - "Sport am frühen Morgen fördert hingegen die Vitalität."
+          - "Aus diesem Grund trinken viele Menschen gerne warmen Tee."
+          - "Schlaflabore sind in den meisten Kliniken sehr gut ausgestattet."
+        correctIndex: 0
+      - type: free_text
+        prompt: "Warum ist es riskant, bei Goethe Lesen Teil 2 nur auf das Wort vor der Lücke zu schauen?"
+        modelAnswer: "Weil der passende Satz sowohl logisch an den vorherigen Satz anknüpfen als auch zwingend zum darauf folgenden Satz überleiten muss."
+
+  - slug: goethe-lesen-teil3-sachtext-standpunkte
+    skill: reading
+    title: "Goethe Lesen Teil 3: Autorenabsichten in Sachtexten analysieren"
+    prerequisites: [goethe-partizipialkonstruktionen-verdichtung]
+    explanation: |
+      Teil 3 (empfohlene Zeit: ca. 12 Minuten) umfasst einen längeren journalistischen Leitartikel oder Essay und 6 Multiple-Choice-Aufgaben (a, b, c).
+      Geprüft wird das präzise Erfassen von Autorenmeinungen, Haltungen, Ironie und logischer Argumentationsführung.
+      Häufige Falle: Eine Option enthält Fakten, die zwar sachlich wahr sind, aber im Text vom Autor gar nicht behauptet oder vertreten werden.
+    examples:
+      - "Frage: Was kritisiert der Verfasser an der aktuellen Debatte? -> Option a: Die mangelnde Sachlichkeit der Kontrahenten. Option b: Die hohen Ausgaben für die Forschung. Option c: Die Einmischung der Medien."
+    exercises:
+      - type: multiple_choice
+        question: "Text: 'Dass Politiker das Problem der Altersarmut seit Jahren vor sich herschieben, ist an Zynismus kaum zu überbieten. Statt mutiger Reformen erleben wir ein ängstliches Verwalten des Status quo.' - Wie beurteilt der Autor das Handeln der Politik?"
+        options:
+          - "Er hält die bisherigen Schritte für vorsichtig, aber fundiert."
+          - "Er kritisiert den mangelnden Mut und die Untätigkeit der Verantwortlichen scharf."
+          - "Er lobt die Stabilität des derzeitigen Rentensystems."
+        correctIndex: 1
+      - type: free_text
+        prompt: "Erklären Sie den Unterschied zwischen einer expliziten Aussage und einer Autorenimplikation in einem journalistischen Text."
+        modelAnswer: "Eine explizite Aussage wird direkt im Wortlaut formuliert; eine Implikation erschließt sich indirekt aus dem Ton, der Wortwahl oder der Argumentationsstruktur des Verfassers."
+
+  - slug: goethe-lesen-teil4-lesermeinungen-ueberschriften
+    skill: reading
+    title: "Goethe Lesen Teil 4: Lesermeinungen Überschriften zuordnen"
+    prerequisites: []
+    explanation: |
+      In Teil 4 (empfohlene Zeit: ca. 12 Minuten) lesen Sie 8 kurze Statements oder Leserbriefe zu einem kontroversen Thema.
+      Diesen müssen Sie 6 aus 7 vorgegebenen Überschriften inhaltlich zuordnen. Zwei Texte bleiben ohne Zuordnung.
+      Konzentrieren Sie sich darauf, den Hauptgedanken jedes Leserbriefs in einem einzigen Satz zusammenzufassen, und vergleichen Sie diese Synthese mit den angebotenen Überschriften.
+    examples:
+      - "Leserbrief: 'Ich fahre seit 20 Jahren täglich mit dem Rad zur Arbeit. Wenn die Straßen enger werden, gefährdet das mein Leben.' -> Passende Überschrift: 'Sorge um die Sicherheit im Straßenverkehr'."
+    exercises:
+      - type: multiple_choice
+        question: "Leserkommentar: 'Es ist doch absurd, dass eine Zugfahrt von Berlin nach München doppelt so teuer ist wie ein Flug. Wenn die Bahn wettbewerbsfähig sein soll, müssen Steuern auf Kerosin erhoben und Bahntickets subventioniert werden.' - Welche Überschrift passt?"
+        options:
+          - "Forderung nach gerechteren Preisstrukturen im Fernverkehr"
+          - "Komfortmängel in modernen Schnellzügen"
+          - "Ausbau von Inlandsflughäfen dringend erforderlich"
+          - "Freie Fahrt für Geschäftsreisende"
+        correctIndex: 0
+      - type: free_text
+        prompt: "Warum sollten Sie bei Goethe Lesen Teil 4 zuerst die Leserbriefe kurz überfliegen, anstatt sofort nach einzelnen Worten der Überschriften zu suchen?"
+        modelAnswer: "Weil die Überschriften oft abstrakte Zusammenfassungen sind, deren Wortlaut sich im Originaltext meist gar nicht direkt wiederfindet."
+
+  - slug: goethe-lesen-teil5-richtlinien-ordnungen
+    skill: reading
+    title: "Goethe Lesen Teil 5: Richtlinien und Betriebsordnungen verstehen"
+    prerequisites: []
+    explanation: |
+      In Teil 5 (empfohlene Zeit: ca. 8 Minuten) lesen Sie einen administrativen Regelungstext (z. B. Bibliotheksordnung, Brandschutzordnung, IT-Nutzungsrichtlinien).
+      Sie ordnen drei vorgegebenen Textabschnitten jeweils die passende Überschrift aus 8 Optionen zu (eine dient als Beispiel, 4 bleiben ungenutzt).
+      Achten Sie auf institutionelle Formulierungen wie "ist untersagt", "bedarf der schriftlichen Zustimmung", "sind freizuhalten".
+    examples:
+      - "Abschnitt: 'Flucht- und Rettungswege dürfen zu keinem Zeitpunkt durch Gegenstände verstellt werden. Türen in Notausgängen sind stets unverschlossen zu halten.' -> Passende Überschrift: 'Freihaltung von Fluchtwegen'."
+    exercises:
+      - type: multiple_choice
+        question: "Textabschnitt: 'Die private Nutzung des Internets am Arbeitsplatz ist grundsätzlich nicht gestattet. Das Herunterladen urheberrechtlich geschützter Daten zieht arbeitsrechtliche Konsequenzen nach sich.' - Welche Überschrift trifft zu?"
+        options:
+          - "Regelungen zur Internetnutzung im Betrieb"
+          - "Erwerb von Softwarelizenzen"
+          - "Vergütung von Überstunden"
+          - "Technische Wartung von Arbeitsplatz-PCs"
+        correctIndex: 0
+      - type: fill_blank
+        textWithBlank: "In Richtlinien bedeutet die Formulierung 'ist unzulässig', dass eine Handlung strengstens ___ ist."
+        correctAnswer: "verboten"
+
+  - slug: goethe-hoeren-teil1-alltag-nachrichten
+    skill: listening
+    title: "Goethe Hören Teil 1: Alltagsgespräche und Radionachrichten"
+    prerequisites: []
+    explanation: |
+      In Teil 1 des Moduls Hören hören Sie 5 kurze Texte (Monologe oder Dialoge, z. B. Anrufbeantworter, Radioansagen, Telefongespräche).
+      Jeder Text wird nur EINMAL abgespielt!
+      Zu jedem Text lösen Sie zwei Aufgaben:
+      1. Richtig/Falsch zur Hauptaussage (Globalverstehen).
+      2. Multiple-Choice (a, b, c) zu einem wichtigen Detail.
+      Nutzen Sie die 20 Sekunden Lesezeit vor jedem Text unbedingt, um Schlüsselwörter in den Aufgaben zu unterstreichen.
+    examples:
+      - "Aufgabe 1: Das Museum ist am Feiertag geschlossen. (Richtig/Falsch)"
+      - "Aufgabe 2: Zu welcher Uhrzeit beginnt die Sonderführung? (a: 10:00 Uhr, b: 11:30 Uhr, c: 14:00 Uhr)"
+    exercises:
+      - type: multiple_choice
+        question: "Hörtext (1x): 'Liebe Hörer, der ADAC warnt vor Glatteisbildung auf der A3 zwischen Würzburg und Nürnberg. Fahren Sie bitte besonders vorsichtig. Die Streudienste sind bereits im Einsatz.' - Aufgabe 1: Auf der A3 besteht Rutschgefahr durch Glatteis."
+        options: ["Richtig", "Falsch"]
+        correctIndex: 0
+      - type: multiple_choice
+        question: "Basierend auf demselben Hörtext: Welche Maßnahme wurde bereits ergriffen?"
+        options:
+          - "Die Autobahn wurde komplett gesperrt."
+          - "Die Streufahrzeuge sind bereits unterwegs."
+          - "Geschwindigkeitsbegrenzungen wurden aufgehoben."
+        correctIndex: 1
+
+  - slug: goethe-hoeren-teil2-experteninterview
+    skill: listening
+    title: "Goethe Hören Teil 2: Experten- und Kulturinterviews"
+    prerequisites: []
+    explanation: |
+      In Teil 2 hören Sie ein ausführliches Radiointerview mit einer Persönlichkeit aus Wissenschaft, Kultur oder Gesellschaft.
+      Der Text wird ZWEIMAL abgespielt. Sie bearbeiten 6 Multiple-Choice-Aufgaben (a, b, c).
+      Beantworten Sie beim ersten Hören die klaren Aufgaben und markieren Sie Unsicherheiten.
+      Nutzen Sie das zweite Hören gezielt zur Verifikation und zur Lösung verbleibender Fragen.
+    examples:
+      - "Frage: Welches Hauptziel verfolgt das neue Forschungsprojekt? -> a: Die Entwicklung günstigerer Akkus. b: Die Erforschung neuer Werkstoffe. c: Die Senkung der Produktionskosten."
+    exercises:
+      - type: multiple_choice
+        question: "Interviewauszug: 'Unsere ursprüngliche Hypothese war, dass Jugendliche primär durch Unterhaltungsvideos lernen. Überraschenderweise zeigte sich jedoch, dass kurze Erklärformate zu naturwissenschaftlichen Themen die höchsten Abrufzahlen erzielen.' - Was war das überraschende Ergebnis?"
+        options:
+          - "Jugendliche meiden naturwissenschaftliche Themen im Netz."
+          - "Wissenschaftliche Erklärvideos werden häufiger aufgerufen als erwartet."
+          - "Unterhaltungsvideos sind das beliebteste Bildungsmedium."
+        correctIndex: 1
+      - type: free_text
+        prompt: "Wie sollten Sie die 15-sekündige Pause zwischen dem ersten und zweiten Hören in Teil 2 nutzen?"
+        modelAnswer: "Man sollte die noch unbeantworteten oder unklaren Aufgaben gezielt nochmals durchlesen, um beim zweiten Hören ganz selektiv auf die fehlenden Informationen zu achten."
+
+  - slug: goethe-hoeren-teil3-drei-sprecher-zuordnen
+    skill: listening
+    title: "Goethe Hören Teil 3: Podiumsgespräch mit drei Sprechern"
+    prerequisites: []
+    explanation: |
+      In Teil 3 hören Sie ein lebendiges Gespräch zwischen drei Personen (z. B. Moderator, ein weiblicher Gast, ein männlicher Gast) zu einem aktuellen gesellschaftlichen Thema.
+      Der Text wird nur EINMAL abgespielt!
+      Sie haben 7 Thesen/Aussagen vor sich und müssen entscheiden: Wer äußert diese Meinung? (Sprecher 1, Sprecher 2 oder Sprecher 3?).
+      Achten Sie auf Stimmfarben, Intonation, namentliche Ansprachen durch den Moderator und Formulierungen der Zustimmung oder Ablehnung.
+    examples:
+      - "Aussage: 'Hält eine gesetzliche Pflicht für unverhältnismäßig.' -> Im Audio sagt Herr Berg: 'Wir sollten auf die Eigenverantwortung der Bürger vertrauen statt ständig mit Verboten zu drohen.' -> Lösung: Herr Berg."
+    exercises:
+      - type: multiple_choice
+        question: "Moderator: 'Frau Dr. Sommer, teilen Sie diese Ansicht?' - Frau Dr. Sommer: 'Ganz im Gegenteil. Wenn wir jetzt nicht einschreiten, kollabiert das System in spätestens fünf Jahren.' - Wer sieht dringenden gesetzlichen Handlungsbedarf?"
+        options:
+          - "Der Moderator"
+          - "Frau Dr. Sommer"
+          - "Der zweite Gast (Herr Meyer)"
+        correctIndex: 1
+      - type: free_text
+        prompt: "Welcher Tipp hilft bei Teil 3, um während des Hörens die Sprecher nicht zu verwechseln?"
+        modelAnswer: "Sich zu Beginn der Sendung die Namen der Gäste und ihre Stimmmerkmale (männlich/weiblich, jung/alt, Rolle) sofort auf dem Aufgabenblatt kurz zu notieren."
+
+  - slug: goethe-hoeren-teil4-fachvortrag
+    skill: listening
+    title: "Goethe Hören Teil 4: Vortrag zu wissenschaftlichen Themen"
+    prerequisites: []
+    explanation: |
+      In Teil 4 hören Sie einen ca. 4–5-minütigen Fachvortrag oder eine Radiofeature-Sendung zu einem wissenschaftlichen oder gesellschaftlichen Thema.
+      Der Vortrag wird ZWEIMAL abgespielt. Dazu gibt es 8 Aufgaben mit Dreifachauswahl (a, b, c) bzw. Satzvervollständigungen.
+      Der Vortragende folgt meist einer klaren akademischen Gliederung: Einleitung -> methodisches Vorgehen -> Befunde -> Interpretation -> Ausblick.
+    examples:
+      - "Aufgabe: Laut Referent beruht der Anstieg der Lebenserwartung vor allem auf... -> a: verbesserter Hygiene und Medizin. b: gesünderer Ernährung. c: weniger körperlicher Arbeit."
+    exercises:
+      - type: multiple_choice
+        question: "Vortragender: 'Entscheidend für den Erfolg der Renaturierungsmaßnahme war nicht primär die Neuanpflanzung von Bäumen, sondern die Wiederherstellung des ursprünglichen Flussbetts.' - Was war laut Referent der wichtigste Erfolgsfaktor?"
+        options:
+          - "Das Pflanzen neuer Baumarten."
+          - "Die Begradigung des Gewässers."
+          - "Die Reaktivierung des natürlichen Flussverlaufs."
+        correctIndex: 2
+      - type: fill_blank
+        textWithBlank: "Wissenschaftliche Vorträge in Teil 4 gliedern sich meist in These, Begründung und ___ . (Schlussfolgerung / Ausblick)"
+        correctAnswer: "Ausblick"
+        acceptableVariants: ["Schlussfolgerung", "Fazit"]
+
+  - slug: goethe-schreiben-teil1-forumsbeitrag
+    skill: writing
+    title: "Goethe Schreiben Teil 1: Verfassen eines Forumsbeitrags"
+    prerequisites: [goethe-meinungsausdruck-argumentationsstrukturen]
+    explanation: |
+      In Teil 1 des Moduls Schreiben verfassen Sie einen Forumsbeitrag (ca. 150 Wörter) zu einem kontroversen Thema (z. B. Tempolimit, plastikfreie Kantine, Mediennutzung im Kindergarten).
+      Sie müssen vier Inhaltspunkte zwingend und ausgewogen bearbeiten:
+      1. Äußern Sie Ihre eigene Meinung zum Thema und begründen Sie diese.
+      2. Nennen Sie Gründe, warum das Thema aktuell diskutiert wird.
+      3. Schlagen Sie alternative Möglichkeiten vor.
+      4. Erläutern Sie die Vor- und Nachteile dieser Alternativen.
+      Achten Sie auf einen flüssigen Diskussionsstil (Anrede der Community: "Liebe Forumsmitglieder, ..."), Absätze und eine logische Gedankenführung.
+    examples:
+      - "Liebe Forenmitglieder, ich verfolge die Debatte über fleischlose Ernährung mit großem Interesse..."
+      - "Meines Erachtens ist es nicht zielführend, Fleischkonsum gänzlich zu verbieten; vielmehr sollten wir..."
+      - "Eine sinnvolle Alternative bestünde darin, vegetarische Gerichte ansprechend und preisgünstig anzubieten."
+    exercises:
+      - type: free_text
+        prompt: "Formulieren Sie den Hauptteil (ca. 50 Wörter) eines Forumsbeitrags zum Thema 'E-Scooter in Innenstädten': Eigene Meinung und Gründe für deren Beliebtheit."
+        modelAnswer: "Meines Erachtens stellen E-Scooter eine praktische Ergänzung des Nahverkehrs dar. Sie werden immer beliebter, weil man mit ihnen schnell und flexibel kurze Strecken zurücklegen kann, ohne im Stau zu stehen. Allerdings birgt das unachtsame Abstellen auf Gehwegen erhebliche Gefahren für Fußgänger."
+      - type: multiple_choice
+        question: "Wie viele Wörter sollte der Forumsbeitrag in Goethe Schreiben Teil 1 idealerweise umfassen?"
+        options:
+          - "Ca. 80 Wörter"
+          - "Ca. 150 Wörter"
+          - "Mindestens 300 Wörter"
+          - "Genau 50 Wörter"
+        correctIndex: 1
+
+  - slug: goethe-schreiben-teil2-formelle-mitteilung
+    skill: writing
+    title: "Goethe Schreiben Teil 2: Formelle berufliche Mitteilung"
+    prerequisites: [goethe-feste-nomen-verb-gefuege]
+    explanation: |
+      In Teil 2 schreiben Sie eine formelle berufliche Nachricht (ca. 100 Wörter) an Vorgesetzte, Geschäftspartner oder Dozenten.
+      Typische Situationen: Entschuldigung für Nichterscheinen, Bitte um Fristverlängerung, Beschwerde über defekte Arbeitsmittel, Bitte um Unterstützung bei einem Projekt.
+      Es müssen alle vorgegebenen Leitpunkte (meist 4 Punkte) registergerecht abgehandelt werden.
+      Verwenden Sie das formelle Register ("Sehr geehrte/r Frau/Herr...", "Mit freundlichen Grüßen") und höfliche Konjunktiv-II-Konstruktionen.
+    examples:
+      - "Sehr geehrte Frau Dr. Wagner, hiermit muss ich mich leider für das gestrige Projekttreffen entschuldigen..."
+      - "Aufgrund einer akuten Magen-Darm-Grippe war es mir unmöglich, rechtzeitig Bescheid zu geben."
+      - "Ich werde die versäumten Aufgaben schnellstmöglich nachholen und bis Freitag einreichen."
+    exercises:
+      - type: free_text
+        prompt: "Verfassen Sie eine formelle Bitte um Verschiebung eines Abgabetermins an Ihren Dozenten (ca. 40 Wörter)."
+        modelAnswer: "Sehr geehrter Herr Professor Müller, aufgrund eines unvorhersehbaren Krankheitsfalls in meiner Familie möchte ich mich erkundigen, ob es möglich wäre, die Abgabefrist für meine Hausarbeit um eine Woche zu verlängern. Für Ihr Verständnis wäre ich Ihnen sehr dankbar."
+      - type: fill_blank
+        textWithBlank: "Formelle Anrede für einen Dozenten mit Doktortitel: 'Sehr geehrter Herr ___ Klein,'"
+        correctAnswer: "Dr."
+
+  - slug: goethe-sprechen-teil1-vortrag
+    skill: speaking
+    title: "Goethe Sprechen Teil 1: Strukturierter Vortrag mit Optionenvergleich"
+    prerequisites: [goethe-meinungsausdruck-argumentationsstrukturen]
+    explanation: |
+      In Teil 1 der mündlichen Prüfung (ca. 4 Minuten pro Kandidat) halten Sie einen Vortrag zu einem gewählten Thema aus zwei Vorschlägen (z. B. Formen der Kinderbetreuung, Arbeitszeitmodelle, Urlaubsmöglichkeiten).
+      Ihre Präsentation muss folgende Pflichtbestandteile enthalten:
+      1. Einleitung: Thema vorstellen und Gliederung nennen.
+      2. Mehrere Möglichkeiten/Alternativen beschreiben (z. B. Kita vs. Tagesmutter).
+      3. Vor- und Nachteile dieser Alternativen abwägen.
+      4. Eine Möglichkeit genauer schildern und Ihre persönliche Meinung/Erfahrung begründen.
+      5. Abschluss und Übergabe an das Publikum für Nachfragen.
+    examples:
+      - "Guten Tag, das Thema meiner heutigen Präsentation lautet 'Erneuerbare Energien im Alltag'..."
+      - "Zunächst möchte ich zwei Optionen vorstellen: die Installation einer Photovoltaikanlage auf dem Eigenheim und die Beteiligung an einem Bürgerwindpark."
+      - "Aus meiner Sicht überwiegen die Vorteile einer eigenen Solaranlage, da man dadurch energieautark wird..."
+    exercises:
+      - type: free_text
+        prompt: "Formulieren Sie den Übergang vom Vergleich der Möglichkeiten zur Darlegung Ihrer eigenen Meinung in Ihrem Goethe-Vortrag."
+        modelAnswer: "Nachdem ich die verschiedenen Optionen gegenübergestellt habe, möchte ich nun auf meine persönliche Einschätzung eingehen. Meines Erachtens ist die flexibelste Lösung..."
+      - type: multiple_choice
+        question: "Welcher Punkt ist in Goethe Sprechen Teil 1 zwingend gefordert?"
+        options:
+          - "Ein langes Gedicht rezitieren."
+          - "Mindestens zwei Alternativen vergleichen und eine genauer beschreiben."
+          - "Den Partner während seines Vortrags unterbrechen."
+          - "Ausschließlich aus dem Gedächtnis historische Daten aufzählen."
+        correctIndex: 1
+
+  - slug: goethe-sprechen-teil2-diskussion
+    skill: speaking
+    title: "Goethe Sprechen Teil 2: Kontroverse Diskussion mit dem Partner"
+    prerequisites: [goethe-meinungsausdruck-argumentationsstrukturen]
+    explanation: |
+      In Teil 2 diskutieren Sie ca. 5 Minuten lang mit Ihrem Prüfungspartner über ein vorgegebenes streitbares Thema (z. B. 'Sollte die Innenstadt komplett autofrei werden?').
+      Erwartet wird eine dynamische, interaktive Debatte:
+      - Bringen Sie stichhaltige Argumente vor.
+      - Gehen Sie direkt auf die Aussagen Ihres Partners ein ("Da bin ich ganz Ihrer Meinung, allerdings...", "Diesem Punkt möchte ich widersprechen...").
+      - Bleiben Sie sachlich, vertreten Sie Ihren Standpunkt konsequent, aber zeigen Sie sich am Ende kompromissbereit, um ein gemeinsames Fazit zu ziehen.
+    examples:
+      - "Ich halte ein generelles Tempolimit auf Autobahnen für sinnvoll, da es nachweislich schwere Unfälle verhindert und den Schadstoffausstoß senkt."
+      - "Verstehen Sie mich nicht falsch, Sicherheit ist essenziell, aber moderne Assistenzsysteme regeln dies bereits. Wäre eine flexible Beschilderung nicht zielführender?"
+      - "Könnten wir uns darauf einigen, dass ein Tempolimit zumindest auf unfallträchtigen Streckenabschnitten Pflicht sein sollte?"
+    exercises:
+      - type: free_text
+        prompt: "Formulieren Sie einen diplomatischen Kompromissvorschlag in einer Diskussion über das Verbot von Plastikverpackungen im Supermarkt."
+        modelAnswer: "Vielleicht könnten wir uns darauf verständigen, dass Einwegplastik bei Obst und Gemüse verboten wird, während für empfindliche Fleisch- und Molkereiprodukte eine Übergangsfrist gilt."
+      - type: multiple_choice
+        question: "Was führt bei Goethe Sprechen Teil 2 zu Punktabzug?"
+        options:
+          - "Den Partner ausreden lassen und anschließend argumentieren."
+          - "Das Gespräch völlig dominieren, ohne den Partner zu Wort kommen zu lassen."
+          - "Rhetorische Rückfragen an den Partner stellen."
+          - "Einen Kompromiss aushandeln."
+        correctIndex: 1

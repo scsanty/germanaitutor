@@ -9,7 +9,10 @@ function writeSeedFile(
   dir: string,
   name: string,
   seedVersion: string,
-  overrides: { lessonId: string; track: string; explanation: string | null; examples: string[] | null }[] = []
+  overrides: Partial<{
+    lessons: { id: string; track: string; conceptId: string | null; explanation: string | null }[];
+    withMilestones: boolean;
+  }> = {}
 ) {
   writeFileSync(
     join(dir, name),
@@ -17,21 +20,32 @@ function writeSeedFile(
       seedVersion,
       track: 'generic',
       level: 'A1',
-      milestones: [
+      milestones:
+        overrides.withMilestones === false
+          ? []
+          : [
+              {
+                milestone: { id: 'm1', track: 'generic', level: 'A1', title: 'M1', description: null, orderIndex: 0 },
+                sections: [
+                  {
+                    section: { id: 's1', milestoneId: 'm1', title: 'S1', description: null, orderIndex: 0 },
+                    lessonRefs: [{ lessonId: 'l1', orderIndex: 0 }],
+                  },
+                ],
+              },
+            ],
+      lessons: overrides.lessons ?? [
         {
-          milestone: { id: 'm1', track: 'generic', level: 'A1', title: 'M1', description: null, orderIndex: 0 },
-          sections: [
-            {
-              section: { id: 's1', milestoneId: 'm1', title: 'S1', description: null, orderIndex: 0 },
-              lessonRefs: [{ lessonId: 'l1', orderIndex: 0 }],
-            },
-          ],
+          id: 'l1',
+          track: 'generic',
+          conceptId: null,
+          sourceLevel: 'A1',
+          skill: 'grammar',
+          title: 'L1',
+          explanation: 'Canonical explanation',
+          examples: ['ex'],
         },
       ],
-      lessons: [
-        { id: 'l1', sourceLevel: 'A1', skill: 'grammar', title: 'L1', explanation: 'Canonical explanation', examples: ['ex'] },
-      ],
-      overrides,
       exercises: [],
       prerequisites: [],
     })
@@ -46,8 +60,9 @@ describe('loadSeedIfNeeded', () => {
 
     loadSeedIfNeeded(db, seedDir);
 
-    const lesson = db.prepare('SELECT title FROM lessons WHERE id = ?').get('l1') as any;
+    const lesson = db.prepare('SELECT title, track FROM lessons WHERE id = ?').get('l1') as any;
     expect(lesson.title).toBe('L1');
+    expect(lesson.track).toBe('generic');
     const meta = db.prepare('SELECT seed_version FROM curriculum_meta WHERE id = 1').get() as any;
     expect(meta.seed_version).toBe('1');
   });
@@ -88,19 +103,90 @@ describe('loadSeedIfNeeded', () => {
     expect(profile.display_name).toBe('Real User');
   });
 
-  it('loads a track override without altering the canonical lesson content', () => {
+  it('loads lessons from different tracks independently, without touching lesson_track_overrides', () => {
     const db = createDbClient(':memory:');
     const seedDir = mkdtempSync(join(tmpdir(), 'gait-seed-'));
-    writeSeedFile(seedDir, 'generic-a1.json', '1', [
-      { lessonId: 'l1', track: 'telc', explanation: 'TELC-specific explanation', examples: ['telc ex'] },
-    ]);
+    writeSeedFile(seedDir, 'generic-a1.json', '1', {
+      withMilestones: false,
+      lessons: [
+        {
+          id: 'l1-generic',
+          track: 'generic',
+          conceptId: 'shared-concept',
+          sourceLevel: 'A1',
+          skill: 'grammar',
+          title: 'L1 (generic)',
+          explanation: 'Generic explanation',
+          examples: null,
+        },
+        {
+          id: 'l1-telc',
+          track: 'telc',
+          conceptId: 'shared-concept',
+          sourceLevel: 'A1',
+          skill: 'grammar',
+          title: 'L1 (telc)',
+          explanation: 'telc-specific explanation',
+          examples: null,
+        },
+      ] as any,
+    });
     loadSeedIfNeeded(db, seedDir);
 
-    const lesson = db.prepare('SELECT explanation FROM lessons WHERE id = ?').get('l1') as any;
-    expect(lesson.explanation).toBe('Canonical explanation');
-    const override = db
-      .prepare('SELECT explanation FROM lesson_track_overrides WHERE lesson_id = ? AND track = ?')
-      .get('l1', 'telc') as any;
-    expect(override.explanation).toBe('TELC-specific explanation');
+    const genericLesson = db.prepare('SELECT explanation, track FROM lessons WHERE id = ?').get('l1-generic') as any;
+    const telcLesson = db.prepare('SELECT explanation, track FROM lessons WHERE id = ?').get('l1-telc') as any;
+    expect(genericLesson.explanation).toBe('Generic explanation');
+    expect(genericLesson.track).toBe('generic');
+    expect(telcLesson.explanation).toBe('telc-specific explanation');
+    expect(telcLesson.track).toBe('telc');
+
+    const overrideCount = db.prepare('SELECT count(*) as c FROM lesson_track_overrides').get() as { c: number };
+    expect(overrideCount.c).toBe(0);
+  });
+
+  it('links lessons across tracks that share a concept_id', () => {
+    const db = createDbClient(':memory:');
+    const seedDir = mkdtempSync(join(tmpdir(), 'gait-seed-'));
+    writeSeedFile(seedDir, 'generic-a1.json', '1', {
+      withMilestones: false,
+      lessons: [
+        {
+          id: 'l1-generic',
+          track: 'generic',
+          conceptId: 'shared-concept',
+          sourceLevel: 'A1',
+          skill: 'grammar',
+          title: 'L1 (generic)',
+          explanation: 'a',
+          examples: null,
+        },
+        {
+          id: 'l1-telc',
+          track: 'telc',
+          conceptId: 'shared-concept',
+          sourceLevel: 'A1',
+          skill: 'grammar',
+          title: 'L1 (telc)',
+          explanation: 'b',
+          examples: null,
+        },
+        {
+          id: 'l1-goethe',
+          track: 'goethe',
+          conceptId: null,
+          sourceLevel: 'A1',
+          skill: 'grammar',
+          title: 'L1 (goethe)',
+          explanation: 'c',
+          examples: null,
+        },
+      ] as any,
+    });
+    loadSeedIfNeeded(db, seedDir);
+
+    const linked = db.prepare('SELECT id FROM lessons WHERE concept_id = ? ORDER BY id').all('shared-concept') as {
+      id: string;
+    }[];
+    expect(linked.map((r) => r.id)).toEqual(['l1-generic', 'l1-telc']);
   });
 });

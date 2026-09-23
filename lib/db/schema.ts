@@ -1,6 +1,50 @@
 import type Database from 'better-sqlite3';
 
+/**
+ * The `lessons` table gained required `track`/`concept_id` columns when the curriculum
+ * import moved from a single shared-lesson-per-concept model to independent per-track
+ * lessons (see docs/superpowers/specs/2026-09-20-cefr-frameworks-design.md). SQLite's
+ * `CREATE TABLE IF NOT EXISTS` won't add columns to a table that already exists on disk,
+ * so an app.db created before this change would be stuck on the old shape. Since the old
+ * shape only ever held self-generated pilot content (explicitly discarded in favor of the
+ * real imported curricula), the fix is to drop and let the curriculum tables recreate —
+ * never the non-curriculum tables (profile, provider_connections, etc.), which hold real
+ * user settings.
+ */
+function migrateLegacyCurriculumSchema(db: Database.Database): void {
+  const lessonsTable = db
+    .prepare("SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'lessons'")
+    .get();
+  if (!lessonsTable) return;
+
+  const columns = db.prepare('PRAGMA table_info(lessons)').all() as { name: string }[];
+  const hasTrackColumn = columns.some((c) => c.name === 'track');
+  if (hasTrackColumn) return;
+
+  db.exec(`
+    DROP TABLE IF EXISTS lesson_placements;
+    DROP TABLE IF EXISTS lesson_track_overrides;
+    DROP TABLE IF EXISTS exercises;
+    DROP TABLE IF EXISTS lesson_prerequisites;
+    DROP TABLE IF EXISTS lessons;
+    DROP TABLE IF EXISTS sections;
+    DROP TABLE IF EXISTS milestones;
+    DROP TABLE IF EXISTS curriculum_meta;
+  `);
+}
+
 export function runMigrations(db: Database.Database): void {
+  // Wrapped in one transaction so a concurrent connection (e.g. a parallel `next build`
+  // static-page-data worker also calling getDb()) never observes the mid-migration state
+  // where the legacy curriculum tables have been dropped but not yet recreated.
+  const migrate = db.transaction(() => {
+    migrateLegacyCurriculumSchema(db);
+    createTablesIfMissing(db);
+  });
+  migrate();
+}
+
+function createTablesIfMissing(db: Database.Database): void {
   db.exec(`
     CREATE TABLE IF NOT EXISTS profile (
       id INTEGER PRIMARY KEY CHECK (id = 1),
@@ -71,6 +115,8 @@ export function runMigrations(db: Database.Database): void {
 
     CREATE TABLE IF NOT EXISTS lessons (
       id TEXT PRIMARY KEY,
+      track TEXT NOT NULL CHECK (track IN ('generic','telc','goethe')),
+      concept_id TEXT,
       source_level TEXT NOT NULL CHECK (source_level IN ('A1','A2','B1','B2','C1')),
       skill TEXT NOT NULL CHECK (skill IN ('grammar','vocabulary','reading','listening','writing','speaking')),
       title TEXT NOT NULL,
@@ -78,6 +124,8 @@ export function runMigrations(db: Database.Database): void {
       examples TEXT,
       created_at TEXT NOT NULL DEFAULT (datetime('now'))
     );
+
+    CREATE INDEX IF NOT EXISTS idx_lessons_concept_id ON lessons(concept_id);
 
     CREATE TABLE IF NOT EXISTS lesson_placements (
       id INTEGER PRIMARY KEY AUTOINCREMENT,

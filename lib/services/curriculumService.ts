@@ -21,6 +21,8 @@ interface SectionRow {
 
 interface LessonRow {
   id: string;
+  track: Track;
+  concept_id: string | null;
   source_level: CefrLevel;
   skill: Lesson['skill'];
   title: string;
@@ -61,6 +63,8 @@ function rowToSection(row: SectionRow): Section {
 function rowToLesson(row: LessonRow): Lesson {
   return {
     id: row.id,
+    track: row.track,
+    conceptId: row.concept_id,
     sourceLevel: row.source_level,
     skill: row.skill,
     title: row.title,
@@ -123,31 +127,19 @@ export function createCurriculumService(db: Database.Database) {
     });
   }
 
-  function getLesson(lessonId: string, track: Track): Lesson | null {
+  // `track` is accepted for API-shape compatibility (callers already pass the track they're
+  // browsing) but no longer changes what's returned: since the curriculum import moved from
+  // one shared lesson per concept to independent lessons per track (see
+  // docs/superpowers/specs/2026-09-20-cefr-frameworks-design.md), a lesson's id already
+  // determines its track, and there is no override/fallback content to resolve.
+  function getLesson(lessonId: string, _track: Track): Lesson | null {
     const lessonRow = db.prepare('SELECT * FROM lessons WHERE id = ?').get(lessonId) as LessonRow | undefined;
-    if (!lessonRow) return null;
-    const overrideRow = db
-      .prepare('SELECT explanation, examples FROM lesson_track_overrides WHERE lesson_id = ? AND track = ?')
-      .get(lessonId, track) as { explanation: string | null; examples: string | null } | undefined;
-    if (overrideRow && overrideRow.explanation !== null) {
-      return {
-        ...rowToLesson(lessonRow),
-        explanation: overrideRow.explanation,
-        examples: overrideRow.examples ? JSON.parse(overrideRow.examples) : null,
-      };
-    }
-    return rowToLesson(lessonRow);
+    return lessonRow ? rowToLesson(lessonRow) : null;
   }
 
-  function getExercises(lessonId: string, track: Track): Exercise[] {
-    const trackSpecific = db
-      .prepare('SELECT * FROM exercises WHERE lesson_id = ? AND track = ?')
-      .all(lessonId, track) as ExerciseRow[];
-    if (trackSpecific.length > 0) return trackSpecific.map(rowToExercise);
-    const shared = db
-      .prepare('SELECT * FROM exercises WHERE lesson_id = ? AND track IS NULL')
-      .all(lessonId) as ExerciseRow[];
-    return shared.map(rowToExercise);
+  function getExercises(lessonId: string, _track: Track): Exercise[] {
+    const rows = db.prepare('SELECT * FROM exercises WHERE lesson_id = ?').all(lessonId) as ExerciseRow[];
+    return rows.map(rowToExercise);
   }
 
   function getPrerequisites(lessonId: string): LessonPrerequisite[] {

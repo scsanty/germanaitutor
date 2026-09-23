@@ -1,0 +1,1613 @@
+{
+  "seedVersion": "2",
+  "track": "generic",
+  "level": "B1",
+  "milestones": [
+    {
+      "milestone": {
+        "id": "generic-b1-grammar",
+        "track": "generic",
+        "level": "B1",
+        "title": "Grammar",
+        "description": null,
+        "orderIndex": 0
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "generic-b1-grammar-lessons",
+            "milestoneId": "generic-b1-grammar",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b1-subordinate-clauses-causal-concessive",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "b1-subordinate-clauses-temporal",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "b1-infinitive-clauses-zu-um-zu",
+              "orderIndex": 2
+            },
+            {
+              "lessonId": "b1-two-part-connectors",
+              "orderIndex": 3
+            },
+            {
+              "lessonId": "b1-relative-clauses-cases",
+              "orderIndex": 4
+            },
+            {
+              "lessonId": "b1-relative-clauses-prepositions",
+              "orderIndex": 5
+            },
+            {
+              "lessonId": "b1-verbs-with-prepositions-da-wo-compounds",
+              "orderIndex": 6
+            },
+            {
+              "lessonId": "b1-passive-voice-present-past",
+              "orderIndex": 7
+            },
+            {
+              "lessonId": "b1-passive-voice-modal-verbs",
+              "orderIndex": 8
+            },
+            {
+              "lessonId": "b1-subjunctive-ii-wishes-hypotheticals",
+              "orderIndex": 9
+            },
+            {
+              "lessonId": "b1-subjunctive-ii-past-conditions",
+              "orderIndex": 10
+            },
+            {
+              "lessonId": "b1-n-declension-weak-masculine-nouns",
+              "orderIndex": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-b1-vocabulary",
+        "track": "generic",
+        "level": "B1",
+        "title": "Vocabulary",
+        "description": null,
+        "orderIndex": 1
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "generic-b1-vocabulary-lessons",
+            "milestoneId": "generic-b1-vocabulary",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b1-vocab-environment-sustainability",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "b1-vocab-work-career-applications",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "b1-vocab-digital-media-technology",
+              "orderIndex": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-b1-reading",
+        "track": "generic",
+        "level": "B1",
+        "title": "Reading",
+        "description": null,
+        "orderIndex": 2
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "generic-b1-reading-lessons",
+            "milestoneId": "generic-b1-reading",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b1-reading-argumentative-articles",
+              "orderIndex": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-b1-listening",
+        "track": "generic",
+        "level": "B1",
+        "title": "Listening",
+        "description": null,
+        "orderIndex": 3
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "generic-b1-listening-lessons",
+            "milestoneId": "generic-b1-listening",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b1-listening-interviews-podcasts",
+              "orderIndex": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-b1-writing",
+        "track": "generic",
+        "level": "B1",
+        "title": "Writing",
+        "description": null,
+        "orderIndex": 4
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "generic-b1-writing-lessons",
+            "milestoneId": "generic-b1-writing",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b1-writing-argumentative-forum-post",
+              "orderIndex": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-b1-speaking",
+        "track": "generic",
+        "level": "B1",
+        "title": "Speaking",
+        "description": null,
+        "orderIndex": 5
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "generic-b1-speaking-lessons",
+            "milestoneId": "generic-b1-speaking",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b1-speaking-presenting-topic",
+              "orderIndex": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "b1-subordinate-clauses-causal-concessive",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "grammar",
+      "title": "Causal and Concessive Subordinate Clauses (weil, da, obwohl)",
+      "explanation": "Subordinate clauses (Nebensätze) introduced by subordinating conjunctions require verb-final word order, placing the finite conjugated verb at the very end of the clause.\nThe causal conjunctions 'weil' and 'da' express reasons and causes; 'da' is frequently placed in the initial clause when the reason is already known or established to the listener.\nThe concessive conjunction 'obwohl' expresses a counter-expectation or concession (despite the fact that).\nWhen the subordinate clause precedes the main clause, the main clause begins immediately with its conjugated finite verb (inversion).\n",
+      "examples": [
+        "Ich fahre heute mit der Bahn, weil mein Auto in der Werkstatt steht.",
+        "Da das Wetter heute sonnig und warm ist, machen wir einen Ausflug ins Grüne.",
+        "Obwohl er intensiv für die Prüfung gelernt hatte, war er vor dem Test sehr nervös.",
+        "Obwohl viele Menschen die Risiken kennen, nutzen sie täglich soziale Netzwerke."
+      ]
+    },
+    {
+      "id": "b1-subordinate-clauses-temporal",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "grammar",
+      "title": "Temporal Subordinate Clauses (als, wenn, während, nachdem, bevor)",
+      "explanation": "Temporal conjunctions establish chronological sequences between clauses and demand verb-final structure.\nUse 'als' for a single, unique event or period in the past; use 'wenn' for repeated past actions or any present/future conditions.\n'Während' denotes simultaneous ongoing actions; 'bevor' denotes an action that happens prior to another.\n'Nachdem' expresses anteriority (the action happened before the main clause) and typically requires a shift in tense: Plusquamperfekt with Präteritum, or Perfekt with Präsens.\n",
+      "examples": [
+        "Als ich ein Kind war, lebte meine Familie auf dem Land.",
+        "Immer wenn er nach Hause kommt, begrüßt ihn sein Hund an der Tür.",
+        "Nachdem sie ihr Studium abgeschlossen hatte, zog sie für eine Stelle nach Frankfurt.",
+        "Während er das Abendessen zubereitet, liest sie die Tageszeitung."
+      ]
+    },
+    {
+      "id": "b1-infinitive-clauses-zu-um-zu",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "grammar",
+      "title": "Infinitives with Zu, Um Zu, and Ohne Zu",
+      "explanation": "Infinitive constructions with 'zu' connect a dependent action to a main clause verb, adjective, or abstract noun without introducing a new subject.\nIn separable verbs, 'zu' is placed between the prefix and the verbal base (z.B. anzurufen, einzukaufen).\nThe final clause 'um... zu' expresses purpose or intention (in order to) when the subject of both clauses is identical; if the subjects differ, 'damit' must be used instead.\n'Ohne... zu' denotes an action that fails to occur (without doing), while 'anstatt... zu' denotes an alternative substituted for the expected action.\n",
+      "examples": [
+        "Ich habe die feste Absicht, mich beruflich weiterzubilden.",
+        "Er lernt jeden Abend Deutsch, um in Deutschland Medizin studieren zu können.",
+        "Sie verließ die Konferenz, ohne ein Wort zu sagen.",
+        "Es ist ratsam, vor Antritt der Reise die Papiere gründlich zu überprüfen."
+      ]
+    },
+    {
+      "id": "b1-two-part-connectors",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "grammar",
+      "title": "Two-Part Connectors (Doppelkonnektoren)",
+      "explanation": "Two-part connectors link syntactic elements or parallel clauses to convey nuanced logical relationships.\n'Sowohl... als auch' and 'nicht nur... sondern auch' add cumulative emphasis (both... and; not only... but also).\n'Weder... noch' provides double negation without requiring an extra 'nicht' or 'kein' (neither... nor).\n'Entweder... oder' denotes exclusivity (either... or), whereas 'zwar... aber' introduces a concession followed by an opposing restriction.\n",
+      "examples": [
+        "Sie spricht sowohl fließend Spanisch als auch ausgezeichnet Deutsch.",
+        "Er hat nicht nur die theoretische Prüfung bestanden, sondern auch die praktische mit Bravour gemeistert.",
+        "Weder mein Bruder noch meine Schwester konnten zur Feier anreisen.",
+        "Die Wohnung ist zwar relativ teuer, aber die zentrale Lage ist ideal."
+      ]
+    },
+    {
+      "id": "b1-relative-clauses-cases",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "grammar",
+      "title": "Relative Clauses in Nominative, Accusative, Dative, and Genitive",
+      "explanation": "Relative clauses provide essential descriptive information about a preceding reference noun and exhibit verb-final order.\nThe gender and grammatical number of the relative pronoun are determined by the reference noun, while its grammatical case is governed by its role in the relative clause.\nThe relative pronouns mirror the definite articles, except in the dative plural ('denen') and all genitive forms ('dessen' for masculine/neuter, 'deren' for feminine/plural).\n",
+      "examples": [
+        "Der Kollege, der die Präsentation vorbereitet hat, ist heute krank. (Nominativ)",
+        "Der Roman, den du mir empfohlen hast, ist wirklich spannend. (Akkusativ)",
+        "Die Nachbarin, der ich beim Einkauf geholfen habe, schenkte mir Blumen. (Dativ)",
+        "Das ist die Autorin, deren neues Buch auf Platz eins der Bestsellerliste steht. (Genitiv)"
+      ]
+    },
+    {
+      "id": "b1-relative-clauses-prepositions",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "grammar",
+      "title": "Relative Clauses with Prepositions and Prepositional Adverbs",
+      "explanation": "When a relative clause requires a preposition, that preposition precedes the relative pronoun and dictates its case (accusative, dative, or genitive).\nFor personal referents, use preposition + relative pronoun (z.B. der Mann, mit dem ich sprach).\nWhen referring back to inanimate concepts or entire clauses, speakers use prepositional adverbs formed with 'wo(r)-' + preposition (z.B. worüber, worauf, womit) or the relative pronoun 'was'.\n",
+      "examples": [
+        "Das Projekt, an dem wir seit sechs Monaten arbeiten, steht kurz vor dem Abschluss.",
+        "Die Kollegin, mit der ich mir ein Büro teile, ist äußerst hilfsbereit.",
+        "Es gibt vieles, worüber wir bei der nächsten Sitzung dringend sprechen müssen.",
+        "Er hat die Prüfung bestanden, was uns alle sehr erleichtert hat."
+      ]
+    },
+    {
+      "id": "b1-verbs-with-prepositions-da-wo-compounds",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "grammar",
+      "title": "Verbs with Fixed Prepositions and Pronominal Adverbs (da-/wo-compounds)",
+      "explanation": "Many German verbs require a fixed preposition governing a specific grammatical case (e.g., warten auf + Akk., träumen von + Dat., sich interessieren für + Akk.).\nWhen referring to persons, questions and pronouns keep the preposition distinct (z.B. Auf wen wartest du? - Auf meinen Vater).\nWhen referring to inanimate objects, actions, or full propositions, prepositional adverbs are formed with 'da(r)-' (darauf, daran, darüber) and interrogative compounds with 'wo(r)-' (worauf, woran, worüber).\n",
+      "examples": [
+        "Ich warte seit einer halben Stunde auf den Bus. -> Worauf wartest du? -> Ich warte darauf.",
+        "Er denkt oft an seine Studienzeit zurück. -> Woran denkt er? -> Er denkt daran.",
+        "Wir freuen uns sehr auf das kommende Wochenende.",
+        "Mit wem hast du dich gestern über die neuen Pläne unterhalten?"
+      ]
+    },
+    {
+      "id": "b1-passive-voice-present-past",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "grammar",
+      "title": "The Passive Voice in Present and Past Tenses (Vorgangspassiv)",
+      "explanation": "The process passive (Vorgangspassiv) shifts communicative focus from the agent performing an action to the action itself or the recipient experiencing it.\nIt is constructed using conjugated forms of 'werden' and the past participle (Partizip II) at clause final position.\nPräsens: Das Auto wird repariert. Präteritum: Das Auto wurde repariert. Perfekt: Das Auto ist repariert worden (note: 'worden', not 'geworden').\nThe acting agent can optionally be integrated using 'von' + Dativ (causal actor/person) or 'durch' + Akkusativ (means/intermediary).\n",
+      "examples": [
+        "In Deutschland werden täglich Millionen Tassen Kaffee getrunken.",
+        "Das historische Rathaus wurde im siebzehnten Jahrhundert erbaut.",
+        "Die neuen Richtlinien sind vom Vorstand bereits beschlossen worden.",
+        "Durch die Digitalisierung wurden zahlreiche Arbeitsprozesse grundlegend verändert."
+      ]
+    },
+    {
+      "id": "b1-passive-voice-modal-verbs",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "grammar",
+      "title": "Passive Voice with Modal Verbs",
+      "explanation": "When the passive voice combines with modal verbs, the finite modal verb occupies position V2 (or the end position in subordinate clauses), while the passive infinitive ('Partizip II + werden') moves to the final position.\nIn the past tense (Präteritum), the modal verb takes its past form: 'musste / konnte / durfte + Partizip II + werden'.\nThis structure is standard in formal instructions, technical guidelines, administrative regulations, and work assignments.\n",
+      "examples": [
+        "Diese Rechnung muss bis zum Monatsende bezahlt werden.",
+        "Die vertraulichen Unterlagen durften keinesfalls kopiert werden.",
+        "Der beschädigte Akku kann leider nicht mehr repariert werden.",
+        "Ich weiß, dass dieser Antrag unverzüglich eingereicht werden muss."
+      ]
+    },
+    {
+      "id": "b1-subjunctive-ii-wishes-hypotheticals",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "grammar",
+      "title": "Subjunctive II for Wishes and Hypotheticals (Konjunktiv II der Gegenwart)",
+      "explanation": "Konjunktiv II expresses unreal conditions, hypothetical scenarios, polite requests, and unfulfilled desires in the present.\nFor most verbs, it is constructed using the auxiliary 'würde' + Infinitiv at clause final position (z.B. ich würde gerne mehr reisen).\nCommon auxiliaries and modal verbs use distinct inflected synthetic forms: haben -> hätte, sein -> wäre, können -> könnte, müssen -> müsste, dürfen -> dürfte, wissen -> wüsste.\nHypothetical conditional sentences are linked via 'wenn': the verb in the 'wenn'-clause takes final position, and the main clause inverts.\n",
+      "examples": [
+        "Wenn ich mehr Zeit hätte, würde ich jeden Tag Sport treiben.",
+        "An deiner Stelle würde ich mich sofort bei dieser Firma bewerben.",
+        "Könnten Sie mir bitte kurz behilflich sein?",
+        "Es wäre fantastisch, wenn wir die Konferenz erfolgreich abschließen könnten."
+      ]
+    },
+    {
+      "id": "b1-subjunctive-ii-past-conditions",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "grammar",
+      "title": "Past Unreal Conditions with Subjunctive II (Konjunktiv II der Vergangenheit)",
+      "explanation": "The past subjunctive expresses counterfactual scenarios in the past—events that did not occur and cannot be altered.\nIt is formed using the Konjunktiv II of the auxiliary verbs 'hätte' or 'wäre' coupled with the past participle (Partizip II) at the end of the clause.\nVerbs taking 'sein' in the Perfekt use 'wäre + Partizip II' (z.B. ich wäre gekommen); verbs taking 'haben' use 'hätte + Partizip II' (z.B. ich hätte gesagt).\n",
+      "examples": [
+        "Wenn ich den Wecker gehört hätte, wäre ich nicht zu spät zum Vorstellungsgespräch gekommen.",
+        "Hätten wir das gewusst, wären wir natürlich zu Hause geblieben.",
+        "Er hätte die Prüfung bestanden, wenn er gründlicher gelernt hätte.",
+        "Fast wäre ich gestern auf der nassen Straße ausgerutscht."
+      ]
+    },
+    {
+      "id": "b1-n-declension-weak-masculine-nouns",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "grammar",
+      "title": "Weak Masculine Nouns (N-Deklination)",
+      "explanation": "A select subset of masculine nouns, designated as weak masculine nouns (N-Deklination), append an -(e)n ending in all grammatical cases (accusative, dative, and genitive) except the nominative singular.\nThis group includes masculine nouns ending in -e referring to male humans or animals (der Kollege, der Kunde, der Löwe), nouns ending in Greek suffixes like -ist, -ent, -ant, -at (der Journalist, der Student, der Praktikant, der Diplomat), and special words like 'der Herr' (+n in singular, +en in plural) and 'der Mensch'.\nThe noun 'das Herz' is neuter and irregular: it takes -en in dative/genitive singular and adds -s in genitive (des Herzens).\n",
+      "examples": [
+        "Der Abteilungsleiter sprach gestern ausführlich mit dem neuen Kunden.",
+        "Wir haben den bekannten Journalisten nach seiner Einschätzung gefragt.",
+        "Das Verhalten dieses Studenten ist stets vorbildlich.",
+        "Guten Tag, Herr Schmidt! Haben Sie den Kollegen schon gesehen?"
+      ]
+    },
+    {
+      "id": "b1-vocab-environment-sustainability",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "vocabulary",
+      "title": "Environment, Climate Protection, and Sustainability",
+      "explanation": "Discussing ecological matters at B1 requires precise terminology concerning resource conservation, renewable energies, and climate dynamics.\nEssential vocabulary encompasses: der Klimawandel (climate change), der Umweltschutz (environmental protection), erneuerbare Energien (renewable energy), die Mülltrennung (waste sorting), Plastik vermeiden (avoiding plastic), and nachhaltig (sustainable).\nKey idiomatic expressions include 'einen Beitrag leisten zu' (to contribute to) and 'Ressourcen schonen' (to conserve resources).\n",
+      "examples": [
+        "Immer mehr Haushalte leisten einen aktiven Beitrag zum Umweltschutz durch konsequente Mülltrennung.",
+        "Erneuerbare Energien wie Windkraft und Solarenergie sind entscheidend für die Reduzierung von Treibhausgasen.",
+        "Um Plastikmüll zu vermeiden, greifen viele Verbraucher beim Einkaufen zu Mehrwegtaschen.",
+        "Nachhaltiges Handeln bedeutet, natürliche Ressourcen für zukünftige Generationen zu schonen."
+      ]
+    },
+    {
+      "id": "b1-vocab-work-career-applications",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "vocabulary",
+      "title": "Career, Job Applications, and Workplace Interactions",
+      "explanation": "Navigating professional settings demands mastery of terms surrounding the German application cycle and organizational life.\nCore terms include: das Bewerbungsschreiben (cover letter), der Lebenslauf (resume/CV), das Vorstellungsgespräch (job interview), die Stellenausschreibung (job advertisement), and die Berufserfahrung (professional experience).\nAction verbs include: sich bewerben um (to apply for), kündigen (to resign / terminate employment), einstellen (to hire), and befördert werden (to be promoted).\n",
+      "examples": [
+        "Sie hat ihre Bewerbungsunterlagen mitsamt aktuellem Lebenslauf an die Personalabteilung gesendet.",
+        "Morgen habe ich ein wichtiges Vorstellungsgespräch bei einem mittelständischen IT-Unternehmen.",
+        "Um für diese Stelle infrage zu kommen, benötigt man mindestens drei Jahre relevante Berufserfahrung.",
+        "Er hat beschlossen, seinen bisherigen Job zu kündigen, um sich beruflich neu zu orientieren."
+      ]
+    },
+    {
+      "id": "b1-vocab-digital-media-technology",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "vocabulary",
+      "title": "Digital Media, Communication, and Technology",
+      "explanation": "B1 discourse frequently evaluates digital lifestyles, online communication, and cyber safety.\nEssential lexical units comprise: soziale Netzwerke (social networks), der Datenschutz (data protection/privacy), das Passwort (password), künstliche Intelligenz (artificial intelligence), herunterladen (to download), and hochladen (to upload).\nKey evaluative terms include: vernetzt (connected/networked), datensicher (data-secure), and ablenken (to distract).\n",
+      "examples": [
+        "Der Schutz persönlicher Daten im Internet gewinnt in der heutigen Gesellschaft zunehmend an Bedeutung.",
+        "Soziale Medien bieten viele Vernetzungsmöglichkeiten, bergen jedoch auch erhebliche Risiken für die Privatsphäre.",
+        "Viele Jugendliche lassen sich beim Lernen durch ständige Smartphone-Benachrichtigungen ablenken.",
+        "Künstliche Intelligenz wird in den kommenden Jahren viele alltägliche Arbeitsbereiche grundlegend verändern."
+      ]
+    },
+    {
+      "id": "b1-reading-argumentative-articles",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "reading",
+      "title": "Comprehending Argumentative Press Articles and Commentaries",
+      "explanation": "At B1, reading moves beyond simple factual discovery into understanding argumentative texts, press articles, and opinion columns.\nLearners must identify the central thesis, distinguish between supporting factual claims and subjective commentary, and recognize logical transition markers (z.B. einerseits... andererseits, dennoch, im Gegensatz dazu).\nSkimming provides global understanding, while focused scanning extracts implicit attitudes and conclusions.\n",
+      "examples": [
+        "Obwohl das Homeoffice mehr zeitliche Flexibilität bietet, befürchten Arbeitgeber oft einen Verlust des Teamgeists.",
+        "Einerseits sparen Pendler Fahrtkosten und Zeit, andererseits verschwimmen die Grenzen zwischen Berufs- und Privatleben.",
+        "Aus diesen Gründen plädieren Experten für hybride Arbeitsmodelle mit festgelegten Präsenztagen."
+      ]
+    },
+    {
+      "id": "b1-listening-interviews-podcasts",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "listening",
+      "title": "Listening to Thematic Interviews and Radio Reports",
+      "explanation": "Authentic B1 listening comprehension involves following spoken radio interviews, podcasts, and structured panel discussions delivered at standard conversational speed.\nSuccess requires tracking the speaker's main communicative intentions, catching causal explanations, and identifying agreement or skepticism through intonation and discourse particles (z.B. ja, eigentlich, doch, zwar).\n",
+      "examples": [
+        "Moderator: 'Frau Dr. Vogel, wie beurteilen Sie die Entwicklung des öffentlichen Nahverkehrs?'",
+        "Expertin: 'Nun, wir sehen zwar Fortschritte beim Streckenausbau, aber die Pünktlichkeit lässt weiterhin zu wünschen übrig.'",
+        "Sprecher: 'Aus meiner Sicht müssen die Ticketpreise deutlich gesenkt werden, um Pendler zum Umstieg zu bewegen.'"
+      ]
+    },
+    {
+      "id": "b1-writing-argumentative-forum-post",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "writing",
+      "title": "Structuring an Argumentative Forum Contribution",
+      "explanation": "Writing an argumentative contribution for an online forum requires a coherent four-step structure:\n1. Einleitung: Referring to the previous discussion and stating your general topic.\n2. Eigene Erfahrung: Describing personal experiences or habits.\n3. Vor- und Nachteile: Weighing advantages and disadvantages using balancing connectors (einerseits/andererseits, zwar/aber).\n4. Eigene Meinung & Fazit: Formulating your substantiated conclusion with clear opinion phrases (Meiner Auffassung nach, Ich bin davon überzeugt, dass...).\n",
+      "examples": [
+        "Ich verfolge die Diskussion über das Thema 'Autofreie Innenstädte' mit großem Interesse.",
+        "In meiner Heimatstadt erlebe ich täglich, wie verstopfte Straßen die Lebensqualität beeinträchtigen.",
+        "Zwar bedeutet ein Fahrverbot für Pendler eine Umstellung, aber dafür gewinnt die Stadt saubere Luft und Ruhe.",
+        "Zusammenfassend bin ich der Überzeugung, dass moderne Städte dem Fahrrad den Vorzug geben sollten."
+      ]
+    },
+    {
+      "id": "b1-speaking-presenting-topic",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "speaking",
+      "title": "Delivering a Five-Step Thematic Presentation",
+      "explanation": "A successful B1 oral presentation follows a standard five-phase sequence:\n1. Folie 1: Thema vorstellen und Aufbau erläutern ('Das Thema meiner Präsentation lautet... Zuerst möchte ich... Danach...').\n2. Folie 2: Eigene persönliche Erfahrungen schildern ('Ich persönlich habe festgestellt, dass...').\n3. Folie 3: Die Situation im Heimatland darstellen ('In meinem Heimatland ist die Situation so, dass...').\n4. Folie 4: Vor- und Nachteile abwägen ('Ein wesentlicher Vorteil ist..., auf der anderen Seite steht der Nachteil...').\n5. Folie 5: Eigenes Fazit ziehen und für die Aufmerksamkeit danken ('Zusammenfassend möchte ich sagen... Ich danke Ihnen fürs Zuhören.').\n",
+      "examples": [
+        "Guten Tag! In meiner heutigen Präsentation beschäftige ich mich mit der Frage, ob Fremdsprachenlernen im Kindergarten sinnvoll ist.",
+        "Ich selbst habe bereits im frühen Kindesalter begonnen, zweisprachig aufzuwachsen.",
+        "In meinem Heimatland wird erst ab der fünften Schulklasse Englisch unterrichtet.",
+        "Ein Vorteil des frühen Spracherwerbs ist die spielerische Akzentfreiheit, ein möglicher Nachteil die Überforderung des Kindes.",
+        "Damit bin ich am Ende meiner Präsentation angelangt. Haben Sie noch Fragen?"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b1-subordinate-clauses-causal-concessive__ex0",
+      "lessonId": "b1-subordinate-clauses-causal-concessive",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Konjunktion passt? 'Wir haben den Ausflug verschoben, ___ es den ganzen Tag geregnet hat.'",
+        "options": [
+          "obwohl",
+          "weil",
+          "trotzdem",
+          "deshalb"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-subordinate-clauses-causal-concessive__ex1",
+      "lessonId": "b1-subordinate-clauses-causal-concessive",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "___ sie starke Kopfschmerzen hatte, ging sie pünktlich zur Arbeit.",
+        "correctAnswer": "Obwohl"
+      }
+    },
+    {
+      "id": "b1-subordinate-clauses-causal-concessive__ex2",
+      "lessonId": "b1-subordinate-clauses-causal-concessive",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Satz weist die korrekte Verbstellung auf?",
+        "options": [
+          "Da ich habe keine Zeit, kann ich dich nicht besuchen.",
+          "Da ich keine Zeit habe, kann ich dich nicht besuchen.",
+          "Da ich keine Zeit habe, ich kann dich nicht besuchen.",
+          "Da keine Zeit ich habe, kann ich dich nicht besuchen."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-subordinate-clauses-causal-concessive__ex3",
+      "lessonId": "b1-subordinate-clauses-causal-concessive",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Er bleibt heute im Bett, weil er sich erkältet ___ . (haben)",
+        "correctAnswer": "hat"
+      }
+    },
+    {
+      "id": "b1-subordinate-clauses-causal-concessive__ex4",
+      "lessonId": "b1-subordinate-clauses-causal-concessive",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulate a sentence using 'obwohl' explaining why you went for a walk despite bad weather.",
+        "modelAnswer": "Obwohl es sehr kalt war, bin ich im Park spazieren gegangen."
+      }
+    },
+    {
+      "id": "b1-subordinate-clauses-temporal__ex0",
+      "lessonId": "b1-subordinate-clauses-temporal",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Konjunktion ist für ein einmaliges Ereignis in der Vergangenheit korrekt? '___ wir letztes Jahr in Wien waren, besuchten wir das Schloss Schönbrunn.'",
+        "options": [
+          "Wenn",
+          "Als",
+          "Wann",
+          "Nachdem"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-subordinate-clauses-temporal__ex1",
+      "lessonId": "b1-subordinate-clauses-temporal",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "___ er die Tür abschloss, kontrollierte er alle Fenster. (before)",
+        "correctAnswer": "Bevor"
+      }
+    },
+    {
+      "id": "b1-subordinate-clauses-temporal__ex2",
+      "lessonId": "b1-subordinate-clauses-temporal",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Nachdem er gefrühstückt ___, fuhr er sofort ins Büro. (hatte / war)",
+        "correctAnswer": "hatte"
+      }
+    },
+    {
+      "id": "b1-subordinate-clauses-temporal__ex3",
+      "lessonId": "b1-subordinate-clauses-temporal",
+      "track": "generic",
+      "type": "flashcard",
+      "content": {
+        "front": "während + Nebensatz",
+        "back": "while / during the time that (simultaneous action, verb at end)"
+      }
+    },
+    {
+      "id": "b1-subordinate-clauses-temporal__ex4",
+      "lessonId": "b1-subordinate-clauses-temporal",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Write a complex sentence starting with 'Nachdem' in the past (Plusquamperfekt + Präteritum).",
+        "modelAnswer": "Nachdem ich meine Aufgaben erledigt hatte, ging ich mit Freunden aus."
+      }
+    },
+    {
+      "id": "b1-infinitive-clauses-zu-um-zu__ex0",
+      "lessonId": "b1-infinitive-clauses-zu-um-zu",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Satz drückt eine Absicht mit identischem Subjekt korrekt aus?",
+        "options": [
+          "Ich spare Geld, damit ich ein neues Auto kaufe.",
+          "Ich spare Geld, um mir ein neues Auto zu kaufen.",
+          "Ich spare Geld, um mir ein neues Auto kaufen.",
+          "Ich spare Geld, für ein neues Auto zu kaufen."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-infinitive-clauses-zu-um-zu__ex1",
+      "lessonId": "b1-infinitive-clauses-zu-um-zu",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Er ging an mir vorbei, ohne mich ___ . (anzusehen / zu ansehen)",
+        "correctAnswer": "anzusehen"
+      }
+    },
+    {
+      "id": "b1-infinitive-clauses-zu-um-zu__ex2",
+      "lessonId": "b1-infinitive-clauses-zu-um-zu",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Sie freut sich darauf, ihre alten Freunde bald wieder___sehen.",
+        "correctAnswer": "zu"
+      }
+    },
+    {
+      "id": "b1-infinitive-clauses-zu-um-zu__ex3",
+      "lessonId": "b1-infinitive-clauses-zu-um-zu",
+      "track": "generic",
+      "type": "flashcard",
+      "content": {
+        "front": "anstatt... zu + Infinitiv",
+        "back": "instead of doing [something]"
+      }
+    },
+    {
+      "id": "b1-infinitive-clauses-zu-um-zu__ex4",
+      "lessonId": "b1-infinitive-clauses-zu-um-zu",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Explain why you learn German using an 'um... zu' infinitive construction.",
+        "modelAnswer": "Ich lerne Deutsch, um bessere Chancen auf dem Arbeitsmarkt zu haben."
+      }
+    },
+    {
+      "id": "b1-two-part-connectors__ex0",
+      "lessonId": "b1-two-part-connectors",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Doppelkonnektor drückt eine doppelte Verneinung aus?",
+        "options": [
+          "sowohl... als auch",
+          "weder... noch",
+          "entweder... oder",
+          "zwar... aber"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-two-part-connectors__ex1",
+      "lessonId": "b1-two-part-connectors",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Dieses Smartphone ist nicht nur modern gestaltet, ___ auch sehr leistungsstark.",
+        "correctAnswer": "sondern"
+      }
+    },
+    {
+      "id": "b1-two-part-connectors__ex2",
+      "lessonId": "b1-two-part-connectors",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Wir können ___ mit der Bahn fahren oder einen Mietwagen nehmen.",
+        "correctAnswer": "entweder"
+      }
+    },
+    {
+      "id": "b1-two-part-connectors__ex3",
+      "lessonId": "b1-two-part-connectors",
+      "track": "generic",
+      "type": "flashcard",
+      "content": {
+        "front": "zwar... aber",
+        "back": "it is true that... but / admittedly... however"
+      }
+    },
+    {
+      "id": "b1-two-part-connectors__ex4",
+      "lessonId": "b1-two-part-connectors",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Write a sentence describing two complementary skills you possess using 'nicht nur... sondern auch'.",
+        "modelAnswer": "Ich kann nicht nur Webseiten programmieren, sondern auch ansprechende Grafiken entwerfen."
+      }
+    },
+    {
+      "id": "b1-relative-clauses-cases__ex0",
+      "lessonId": "b1-relative-clauses-cases",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Der Mann, ___ dort vorne steht, leitet die Entwicklungsabteilung. (Nominativ Maskulin)",
+        "correctAnswer": "der"
+      }
+    },
+    {
+      "id": "b1-relative-clauses-cases__ex1",
+      "lessonId": "b1-relative-clauses-cases",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welches Relativpronomen ist im Dativ Plural korrekt? 'Die Kinder, ___ wir Geschenke mitbrachten, freuten sich sehr.'",
+        "options": [
+          "denen",
+          "die",
+          "den",
+          "deren"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "b1-relative-clauses-cases__ex2",
+      "lessonId": "b1-relative-clauses-cases",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Das ist der Arzt, zu ___ Fachkompetenz alle Patienten volles Vertrauen haben. (Dativ Maskulin)",
+        "correctAnswer": "dem"
+      }
+    },
+    {
+      "id": "b1-relative-clauses-cases__ex3",
+      "lessonId": "b1-relative-clauses-cases",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Frau Meier ist eine Kollegin, ___ Meinung im Team sehr geschätzt wird. (Genitiv Feminin)",
+        "correctAnswer": "deren"
+      }
+    },
+    {
+      "id": "b1-relative-clauses-cases__ex4",
+      "lessonId": "b1-relative-clauses-cases",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulate a sentence containing an accusative relative clause describing a car or house.",
+        "modelAnswer": "Das Haus, das meine Eltern gekauft haben, hat einen großen Garten."
+      }
+    },
+    {
+      "id": "b1-relative-clauses-prepositions__ex0",
+      "lessonId": "b1-relative-clauses-prepositions",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Fügung ist korrekt? 'Die Stadt, ___ wir seit drei Jahren leben, ist sehr grün.'",
+        "options": [
+          "in der",
+          "in die",
+          "worin",
+          "wohin"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "b1-relative-clauses-prepositions__ex1",
+      "lessonId": "b1-relative-clauses-prepositions",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Der Tisch, an ___ wir gestern saßen, war bereits reserviert.",
+        "correctAnswer": "dem"
+      }
+    },
+    {
+      "id": "b1-relative-clauses-prepositions__ex2",
+      "lessonId": "b1-relative-clauses-prepositions",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Das ist ein wichtiges Thema, ___ wir uns gründlich vorbereiten sollten. (worauf / worüber)",
+        "correctAnswer": "worauf"
+      }
+    },
+    {
+      "id": "b1-relative-clauses-prepositions__ex3",
+      "lessonId": "b1-relative-clauses-prepositions",
+      "track": "generic",
+      "type": "flashcard",
+      "content": {
+        "front": "womit / wodurch",
+        "back": "with which / through which (referring to inanimate things or ideas)"
+      }
+    },
+    {
+      "id": "b1-relative-clauses-prepositions__ex4",
+      "lessonId": "b1-relative-clauses-prepositions",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Write a sentence about a tool or computer you work with using 'mit dem' or 'mit der'.",
+        "modelAnswer": "Der Computer, mit dem ich täglich arbeite, ist extrem schnell."
+      }
+    },
+    {
+      "id": "b1-verbs-with-prepositions-da-wo-compounds__ex0",
+      "lessonId": "b1-verbs-with-prepositions-da-wo-compounds",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "___ ärgerst du dich denn so? Über den schlechten Service? (Worüber / Womit)",
+        "correctAnswer": "Worüber"
+      }
+    },
+    {
+      "id": "b1-verbs-with-prepositions-da-wo-compounds__ex1",
+      "lessonId": "b1-verbs-with-prepositions-da-wo-compounds",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welches Pronominaladverb passt? 'Freust du dich schon auf die Reise?' - 'Ja, ich freue mich sehr ___.'",
+        "options": [
+          "darüber",
+          "darauf",
+          "daran",
+          "dazu"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-verbs-with-prepositions-da-wo-compounds__ex2",
+      "lessonId": "b1-verbs-with-prepositions-da-wo-compounds",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Er nimmt regelmäßig ___ Sprachkurs teil. (an + Dativ: an dem)",
+        "correctAnswer": "am"
+      }
+    },
+    {
+      "id": "b1-verbs-with-prepositions-da-wo-compounds__ex3",
+      "lessonId": "b1-verbs-with-prepositions-da-wo-compounds",
+      "track": "generic",
+      "type": "flashcard",
+      "content": {
+        "front": "sich gewöhnen an (+ Akkusativ)",
+        "back": "to get used to / become accustomed to"
+      }
+    },
+    {
+      "id": "b1-verbs-with-prepositions-da-wo-compounds__ex4",
+      "lessonId": "b1-verbs-with-prepositions-da-wo-compounds",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Answer the question 'Worauf freust du dich im Sommer?' in a complete German sentence.",
+        "modelAnswer": "Ich freue mich sehr auf den Urlaub am Meer."
+      }
+    },
+    {
+      "id": "b1-passive-voice-present-past__ex0",
+      "lessonId": "b1-passive-voice-present-past",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Verbform vollendet das Präteritum Passiv? 'Die Straße ___ wegen Bauarbeiten gesperrt.'",
+        "options": [
+          "wurde",
+          "worden",
+          "wird",
+          "geworden"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "b1-passive-voice-present-past__ex1",
+      "lessonId": "b1-passive-voice-present-past",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Alle Berichte sind gestern pünktlich an den Kunden gesendet ___ . (worden / geworden)",
+        "correctAnswer": "worden"
+      }
+    },
+    {
+      "id": "b1-passive-voice-present-past__ex2",
+      "lessonId": "b1-passive-voice-present-past",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Das Dokument ___ im Moment von der Abteilungsleiterin geprüft. (Präsens von werden)",
+        "correctAnswer": "wird"
+      }
+    },
+    {
+      "id": "b1-passive-voice-present-past__ex3",
+      "lessonId": "b1-passive-voice-present-past",
+      "track": "generic",
+      "type": "flashcard",
+      "content": {
+        "front": "von (+ Dativ) vs. durch (+ Akkusativ) im Passiv",
+        "back": "von: direct personal agent/origin; durch: instrument, means, or abstract cause"
+      }
+    },
+    {
+      "id": "b1-passive-voice-present-past__ex4",
+      "lessonId": "b1-passive-voice-present-past",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Transform into Passive: 'Der Mechaniker reparierte die Bremsen.'",
+        "modelAnswer": "Die Bremsen wurden vom Mechaniker repariert."
+      }
+    },
+    {
+      "id": "b1-passive-voice-modal-verbs__ex0",
+      "lessonId": "b1-passive-voice-modal-verbs",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Satz bildet das Passiv mit Modalverb korrekt?",
+        "options": [
+          "Die E-Mail muss sofort geschrieben werden.",
+          "Die E-Mail muss sofort werden geschrieben.",
+          "Die E-Mail wird sofort geschrieben müssen.",
+          "Die E-Mail soll sofort geschrieben worden."
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "b1-passive-voice-modal-verbs__ex1",
+      "lessonId": "b1-passive-voice-modal-verbs",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Das Problem konnte gestern erfreulicherweise schnell gelöst ___ . (werden / worden)",
+        "correctAnswer": "werden"
+      }
+    },
+    {
+      "id": "b1-passive-voice-modal-verbs__ex2",
+      "lessonId": "b1-passive-voice-modal-verbs",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Alle Passagiere ___ gebeten, ihre Sicherheitsgurte anzulegen. (werden / müssen)",
+        "correctAnswer": "werden"
+      }
+    },
+    {
+      "id": "b1-passive-voice-modal-verbs__ex3",
+      "lessonId": "b1-passive-voice-modal-verbs",
+      "track": "generic",
+      "type": "flashcard",
+      "content": {
+        "front": "muss erledigt werden",
+        "back": "must be completed / has to be done"
+      }
+    },
+    {
+      "id": "b1-passive-voice-modal-verbs__ex4",
+      "lessonId": "b1-passive-voice-modal-verbs",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Express in German that the car cannot be picked up today (modal verb können + passive).",
+        "modelAnswer": "Das Auto kann heute leider nicht abgeholt werden."
+      }
+    },
+    {
+      "id": "b1-subjunctive-ii-wishes-hypotheticals__ex0",
+      "lessonId": "b1-subjunctive-ii-wishes-hypotheticals",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Form von 'sein' ist im Konjunktiv II korrekt? 'Wenn ich reich ___, würde ich eine Weltreise machen.'",
+        "options": [
+          "sei",
+          "wäre",
+          "würde sein",
+          "war"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-subjunctive-ii-wishes-hypotheticals__ex1",
+      "lessonId": "b1-subjunctive-ii-wishes-hypotheticals",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "An deiner Stelle ___ ich sofort mit dem Chef sprechen. (würde / hätte)",
+        "correctAnswer": "würde"
+      }
+    },
+    {
+      "id": "b1-subjunctive-ii-wishes-hypotheticals__ex2",
+      "lessonId": "b1-subjunctive-ii-wishes-hypotheticals",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Wenn er doch bloß mehr Geduld ___ ! (Konjunktiv II von haben)",
+        "correctAnswer": "hätte"
+      }
+    },
+    {
+      "id": "b1-subjunctive-ii-wishes-hypotheticals__ex3",
+      "lessonId": "b1-subjunctive-ii-wishes-hypotheticals",
+      "track": "generic",
+      "type": "flashcard",
+      "content": {
+        "front": "Ich hätte gern(e)...",
+        "back": "I would like to have... (polite request/desire)"
+      }
+    },
+    {
+      "id": "b1-subjunctive-ii-wishes-hypotheticals__ex4",
+      "lessonId": "b1-subjunctive-ii-wishes-hypotheticals",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Give advice to a friend who feels exhausted using 'An deiner Stelle würde ich...'.",
+        "modelAnswer": "An deiner Stelle würde ich am Wochenende richtig lange ausschlafen und mich erholen."
+      }
+    },
+    {
+      "id": "b1-subjunctive-ii-past-conditions__ex0",
+      "lessonId": "b1-subjunctive-ii-past-conditions",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welches Hilfsverb ist korrekt? 'Wenn ich den Zug verpasst hätte, ___ ich mit dem Taxi gefahren.'",
+        "options": [
+          "hätte",
+          "wäre",
+          "würde",
+          "sei"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-subjunctive-ii-past-conditions__ex1",
+      "lessonId": "b1-subjunctive-ii-past-conditions",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Wenn wir gestern mehr Zeit gehabt ___, hätten wir euch besucht.",
+        "correctAnswer": "hätten"
+      }
+    },
+    {
+      "id": "b1-subjunctive-ii-past-conditions__ex2",
+      "lessonId": "b1-subjunctive-ii-past-conditions",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Sie ___ den Vertrag gerne unterschrieben, aber die Bedingungen waren unklar. (hätte / wäre)",
+        "correctAnswer": "hätte"
+      }
+    },
+    {
+      "id": "b1-subjunctive-ii-past-conditions__ex3",
+      "lessonId": "b1-subjunctive-ii-past-conditions",
+      "track": "generic",
+      "type": "flashcard",
+      "content": {
+        "front": "wäre gewesen / hätte gehabt",
+        "back": "would have been / would have had (unreal past state)"
+      }
+    },
+    {
+      "id": "b1-subjunctive-ii-past-conditions__ex4",
+      "lessonId": "b1-subjunctive-ii-past-conditions",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Write a past unreal conditional sentence describing something you would have done differently yesterday.",
+        "modelAnswer": "Wenn das Wetter gestern schön gewesen wäre, wäre ich an den See gefahren."
+      }
+    },
+    {
+      "id": "b1-n-declension-weak-masculine-nouns__ex0",
+      "lessonId": "b1-n-declension-weak-masculine-nouns",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Ich habe gestern einen interessanten ___ interviewt. (der Journalist)",
+        "correctAnswer": "Journalisten"
+      }
+    },
+    {
+      "id": "b1-n-declension-weak-masculine-nouns__ex1",
+      "lessonId": "b1-n-declension-weak-masculine-nouns",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Form ist im Dativ korrekt? 'Ich helfe dem neuen ___ bei der Einarbeitung.'",
+        "options": [
+          "Kollege",
+          "Kollegen",
+          "Kolleges",
+          "Kollegem"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-n-declension-weak-masculine-nouns__ex2",
+      "lessonId": "b1-n-declension-weak-masculine-nouns",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Kennen Sie diesen ___ dort drüben? (der Herr)",
+        "correctAnswer": "Herrn"
+      }
+    },
+    {
+      "id": "b1-n-declension-weak-masculine-nouns__ex3",
+      "lessonId": "b1-n-declension-weak-masculine-nouns",
+      "track": "generic",
+      "type": "flashcard",
+      "content": {
+        "front": "der Nachbar -> mit dem...",
+        "back": "Nachbarn (N-Deklination Dativ Maskulin)"
+      }
+    },
+    {
+      "id": "b1-n-declension-weak-masculine-nouns__ex4",
+      "lessonId": "b1-n-declension-weak-masculine-nouns",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulate a sentence using 'den Kunden' (Akkusativ) with the verb 'anrufen'.",
+        "modelAnswer": "Ich rufe am Nachmittag den neuen Kunden an."
+      }
+    },
+    {
+      "id": "b1-vocab-environment-sustainability__ex0",
+      "lessonId": "b1-vocab-environment-sustainability",
+      "track": "generic",
+      "type": "flashcard",
+      "content": {
+        "front": "die Nachhaltigkeit / nachhaltig",
+        "back": "sustainability / sustainable"
+      }
+    },
+    {
+      "id": "b1-vocab-environment-sustainability__ex1",
+      "lessonId": "b1-vocab-environment-sustainability",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was gehört zu den erneuerbaren Energien?",
+        "options": [
+          "Die Steinkohle",
+          "Das Erdöl",
+          "Die Solarenergie",
+          "Das Erdgas"
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "b1-vocab-environment-sustainability__ex2",
+      "lessonId": "b1-vocab-environment-sustainability",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Jeder Bürger sollte Energie sparen, um das Klima zu ___ . (protect)",
+        "correctAnswer": "schützen"
+      }
+    },
+    {
+      "id": "b1-vocab-environment-sustainability__ex3",
+      "lessonId": "b1-vocab-environment-sustainability",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was bedeutet 'Müll trennen'?",
+        "options": [
+          "Den Müll verbrennen",
+          "Abfälle nach Glas, Papier und Plastik sortieren",
+          "Den Müll auf die Straße werfen",
+          "Abfall im Keller lagern"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-vocab-environment-sustainability__ex4",
+      "lessonId": "b1-vocab-environment-sustainability",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "State two personal habits you practice to live sustainably.",
+        "modelAnswer": "Ich fahre meistens mit dem Fahrrad und trenne meinen Müll sehr sorgfältig."
+      }
+    },
+    {
+      "id": "b1-vocab-work-career-applications__ex0",
+      "lessonId": "b1-vocab-work-career-applications",
+      "track": "generic",
+      "type": "flashcard",
+      "content": {
+        "front": "das Vorstellungsgespräch / Bewerbungsgespräch",
+        "back": "job interview"
+      }
+    },
+    {
+      "id": "b1-vocab-work-career-applications__ex1",
+      "lessonId": "b1-vocab-work-career-applications",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welches Dokument enthält tabellarisch Stationen der Ausbildung und Berufspraxis?",
+        "options": [
+          "Das Anschreiben",
+          "Der Lebenslauf",
+          "Das Kündigungsschreiben",
+          "Die Quittung"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-vocab-work-career-applications__ex2",
+      "lessonId": "b1-vocab-work-career-applications",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Ich möchte mich ___ die ausgeschriebene Stelle als Projektmanager bewerben. (um / für)",
+        "correctAnswer": "um"
+      }
+    },
+    {
+      "id": "b1-vocab-work-career-applications__ex3",
+      "lessonId": "b1-vocab-work-career-applications",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Nach erfolgreichen Verhandlungen hat das Unternehmen zwei neue Mitarbeiter ___ . (eingestellt / gekündigt)",
+        "correctAnswer": "eingestellt"
+      }
+    },
+    {
+      "id": "b1-vocab-work-career-applications__ex4",
+      "lessonId": "b1-vocab-work-career-applications",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulate a sentence stating that you have gathered five years of professional experience in sales.",
+        "modelAnswer": "Ich habe bereits fünf Jahre Berufserfahrung im Vertrieb gesammelt."
+      }
+    },
+    {
+      "id": "b1-vocab-digital-media-technology__ex0",
+      "lessonId": "b1-vocab-digital-media-technology",
+      "track": "generic",
+      "type": "flashcard",
+      "content": {
+        "front": "der Datenschutz",
+        "back": "data privacy / data protection"
+      }
+    },
+    {
+      "id": "b1-vocab-digital-media-technology__ex1",
+      "lessonId": "b1-vocab-digital-media-technology",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welches Verb beschreibt das Übertragen von Dateien aus dem Internet auf das eigene Gerät?",
+        "options": [
+          "hochladen",
+          "herunterladen",
+          "löschen",
+          "sperren"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-vocab-digital-media-technology__ex2",
+      "lessonId": "b1-vocab-digital-media-technology",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Es wird empfohlen, für jeden Online-Dienst ein sicheres ___ zu wählen.",
+        "correctAnswer": "Passwort"
+      }
+    },
+    {
+      "id": "b1-vocab-digital-media-technology__ex3",
+      "lessonId": "b1-vocab-digital-media-technology",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was bedeutet das Wort 'vernetzt'?",
+        "options": [
+          "isoliert sein",
+          "digital miteinander verbunden sein",
+          "ohne Strom sein",
+          "kaputt sein"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-vocab-digital-media-technology__ex4",
+      "lessonId": "b1-vocab-digital-media-technology",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Express an opinion regarding whether social media is beneficial or harmful.",
+        "modelAnswer": "Meiner Ansicht nach sind soziale Medien nützlich für Kontakte, aber man muss vorsichtig mit Daten umgehen."
+      }
+    },
+    {
+      "id": "b1-reading-argumentative-articles__ex0",
+      "lessonId": "b1-reading-argumentative-articles",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Text: 'Homeoffice bietet enorme Vorteile bei der Vereinbarkeit von Familie und Beruf. Dennoch warnen Psychologen vor zunehmender sozialer Isolation.' - Welchen Standpunkt vertritt der Text?",
+        "options": [
+          "Homeoffice hat ausschließlich positive Konsequenzen.",
+          "Trotz klarer Vorteile bringt Homeoffice auch zwischenmenschliche Gefahren mit sich.",
+          "Psychologen fordern das sofortige Verbot von Heimarbeit.",
+          "Familie und Beruf lassen sich im Homeoffice überhaupt nicht vereinbaren."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-reading-argumentative-articles__ex1",
+      "lessonId": "b1-reading-argumentative-articles",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welches Signalwort zeigt einen gegensätzlichen Standpunkt an?",
+        "options": [
+          "Deshalb",
+          "Außerdem",
+          "Dennoch",
+          "Weil"
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "b1-reading-argumentative-articles__ex2",
+      "lessonId": "b1-reading-argumentative-articles",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Textpassage: 'Einerseits sinkt der Energieverbrauch, ___ steigen die Kosten für Neuanschaffungen.' (andererseits)",
+        "correctAnswer": "andererseits"
+      }
+    },
+    {
+      "id": "b1-reading-argumentative-articles__ex3",
+      "lessonId": "b1-reading-argumentative-articles",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Read: 'Experten fordern autofreie Innenstädte, um Emissionen zu senken und die Lebensqualität zu steigern.' What is the stated goal of car-free city centers?",
+        "modelAnswer": "Das Ziel ist die Senkung von Emissionen und die Steigerung der Lebensqualität."
+      }
+    },
+    {
+      "id": "b1-listening-interviews-podcasts__ex0",
+      "lessonId": "b1-listening-interviews-podcasts",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Hörsituation: 'Eine Expertin äußert: Die Investitionen sind zwar beachtlich, doch die Umsetzung verläuft viel zu langsam.' - Was meint die Sprecherin?",
+        "options": [
+          "Sie ist vollkommen zufrieden mit dem Tempo.",
+          "Sie lobt das Geld, kritisiert aber die langsame Realisierung.",
+          "Es wird überhaupt kein Geld investiert.",
+          "Die Umsetzung ist schneller als gedacht."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-listening-interviews-podcasts__ex1",
+      "lessonId": "b1-listening-interviews-podcasts",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Ein Befragter sagt: 'Ich halte gar nichts davon, Haustiere im Internet zu bestellen.' - Welche Haltung drückt er aus?",
+        "options": [
+          "Klare Ablehnung",
+          "Große Begeisterung",
+          "Neutrale Zustimmung",
+          "Gleichgültigkeit"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "b1-listening-interviews-podcasts__ex2",
+      "lessonId": "b1-listening-interviews-podcasts",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Aussage im Podcast: 'Unser Hauptziel besteht ___, die CO2-Emissionen bis 2030 zu halbieren.' (darin / darauf)",
+        "correctAnswer": "darin"
+      }
+    },
+    {
+      "id": "b1-listening-interviews-podcasts__ex3",
+      "lessonId": "b1-listening-interviews-podcasts",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Summarize a speaker's statement when they say: 'Für mich kommt eine Reise ohne Bahn nicht mehr infrage, weil mir der Klimaschutz am Herzen liegt.'",
+        "modelAnswer": "Der Sprecher reist aus Gründen des Klimaschutzes nur noch mit der Bahn."
+      }
+    },
+    {
+      "id": "b1-writing-argumentative-forum-post__ex0",
+      "lessonId": "b1-writing-argumentative-forum-post",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Meiner Meinung ___ sollte der öffentliche Nahverkehr für Schüler komplett kostenlos sein.",
+        "correctAnswer": "nach"
+      }
+    },
+    {
+      "id": "b1-writing-argumentative-forum-post__ex1",
+      "lessonId": "b1-writing-argumentative-forum-post",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Einleitungsphrase eignet sich optimal für einen Diskussionsbeitrag im Internet?",
+        "options": [
+          "Sehr geehrte Damen und Herren,",
+          "Zu diesem Thema möchte ich gerne meine Meinung äußern.",
+          "Mit freundlichen Grüßen",
+          "Lieber Chef, hiermit kündige ich."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-writing-argumentative-forum-post__ex2",
+      "lessonId": "b1-writing-argumentative-forum-post",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Write a three-sentence balanced reflection on remote learning (home schooling) discussing one advantage and one disadvantage.",
+        "modelAnswer": "Ein großer Vorteil des Online-Lernens ist die zeitliche Flexibilität der Schüler. Allerdings fehlt vielen der direkte persönliche Kontakt zu Lehrern und Mitschülern. Daher halte ich eine Kombination aus Präsenz- und Fernunterricht für ideal."
+      }
+    },
+    {
+      "id": "b1-writing-argumentative-forum-post__ex3",
+      "lessonId": "b1-writing-argumentative-forum-post",
+      "track": "generic",
+      "type": "flashcard",
+      "content": {
+        "front": "Ich bin der Ansicht, dass...",
+        "back": "I am of the view/opinion that... (triggers verb-final word order)"
+      }
+    },
+    {
+      "id": "b1-speaking-presenting-topic__ex0",
+      "lessonId": "b1-speaking-presenting-topic",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Formulierung eignet sich ideal für die Folie 'Heimatland'?",
+        "options": [
+          "In meinem Heimatland spielt dieses Thema eine zentrale Rolle...",
+          "Hallo zusammen, mein Vortrag ist fertig.",
+          "Ich persönlich esse morgens immer Müsli.",
+          "Vielen Dank für Ihre geschätzte Aufmerksamkeit."
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "b1-speaking-presenting-topic__ex1",
+      "lessonId": "b1-speaking-presenting-topic",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Damit bin ich am Ende meines Vortrags ___. Vielen Dank für Ihre Aufmerksamkeit! (gelangt / angekommen)",
+        "correctAnswer": "angekommen"
+      }
+    },
+    {
+      "id": "b1-speaking-presenting-topic__ex2",
+      "lessonId": "b1-speaking-presenting-topic",
+      "track": "generic",
+      "type": "flashcard",
+      "content": {
+        "front": "Ein wesentlicher Aspekt dabei ist, dass...",
+        "back": "An essential aspect of this is that..."
+      }
+    },
+    {
+      "id": "b1-speaking-presenting-topic__ex3",
+      "lessonId": "b1-speaking-presenting-topic",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulate an introductory opening statement announcing your presentation on 'Shopping Online vs. Retail Stores'.",
+        "modelAnswer": "Das Thema meiner heutigen Präsentation lautet 'Online einkaufen oder im Geschäft vor Ort'. Ich möchte Ihnen die Vor- und Nachteile beider Möglichkeiten vorstellen."
+      }
+    }
+  ],
+  "prerequisites": [
+    {
+      "lessonId": "b1-subordinate-clauses-temporal",
+      "prerequisiteLessonId": "b1-subordinate-clauses-causal-concessive"
+    },
+    {
+      "lessonId": "b1-relative-clauses-prepositions",
+      "prerequisiteLessonId": "b1-relative-clauses-cases"
+    },
+    {
+      "lessonId": "b1-passive-voice-modal-verbs",
+      "prerequisiteLessonId": "b1-passive-voice-present-past"
+    },
+    {
+      "lessonId": "b1-subjunctive-ii-past-conditions",
+      "prerequisiteLessonId": "b1-subjunctive-ii-wishes-hypotheticals"
+    },
+    {
+      "lessonId": "b1-reading-argumentative-articles",
+      "prerequisiteLessonId": "b1-subordinate-clauses-causal-concessive"
+    },
+    {
+      "lessonId": "b1-reading-argumentative-articles",
+      "prerequisiteLessonId": "b1-two-part-connectors"
+    },
+    {
+      "lessonId": "b1-listening-interviews-podcasts",
+      "prerequisiteLessonId": "b1-verbs-with-prepositions-da-wo-compounds"
+    },
+    {
+      "lessonId": "b1-writing-argumentative-forum-post",
+      "prerequisiteLessonId": "b1-subordinate-clauses-causal-concessive"
+    },
+    {
+      "lessonId": "b1-writing-argumentative-forum-post",
+      "prerequisiteLessonId": "b1-two-part-connectors"
+    },
+    {
+      "lessonId": "b1-writing-argumentative-forum-post",
+      "prerequisiteLessonId": "b1-subjunctive-ii-wishes-hypotheticals"
+    },
+    {
+      "lessonId": "b1-speaking-presenting-topic",
+      "prerequisiteLessonId": "b1-two-part-connectors"
+    },
+    {
+      "lessonId": "b1-speaking-presenting-topic",
+      "prerequisiteLessonId": "b1-subjunctive-ii-wishes-hypotheticals"
+    }
+  ]
+}

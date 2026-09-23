@@ -1,0 +1,593 @@
+track: goethe
+level: C1
+
+lessons:
+  - slug: goethe-subjektive-modalverben
+    skill: grammar
+    title: Subjektive Bedeutung der Modalverben und Vermutungsgrade
+    prerequisites: []
+    explanation: |
+      Das Goethe-Zertifikat C1 verlangt das Beherrschen der subjektiven Verwendung von Modalverben zur Graduierung von Wahrscheinlichkeiten und Fremdaussagen.
+      Die Modalverben drücken unterschiedliche epistemische Gewissheitsgrade aus: 'müssen' (nahezu sicher: ~95%), 'müsste / dürfte' (sehr wahrscheinlich: ~75–80%), 'könnte' (möglich: ~50%), 'mag / mögen' (Einräumung: 'Das mag sein, aber...').
+      Vergangenheitsformen werden subjektiv mit Infinitiv Perfekt gebildet ('Er muss den Zug verpasst haben' = Ich bin sicher, dass er ihn verpasst hat).
+      Demgegenüber stehen 'sollen' (Gerücht: 'Er soll verreist sein' = Man sagt, dass...) und 'wollen' (subjektive Behauptung des Subjekts: 'Er will nichts bemerkt haben' = Er behauptet, nichts bemerkt zu haben).
+    examples:
+      - "Der Einbrecher muss durch das Kellerfenster eingedrungen sein; andere Zugänge waren versperrt."
+      - "Der Minister will von den illegalen Parteispenden nichts gewusst haben."
+      - "Die Konjunktur dürfte sich im dritten Quartal spürbar erholen."
+      - "Sie soll an einer bahnbrechenden Entdeckung arbeiten, verlautete aus dem Institut."
+    exercises:
+      - type: multiple_choice
+        question: "Was bedeutet der Satz: 'Der Zeuge will den Angeklagten am Tatort gesehen haben'?"
+        options:
+          - "Der Zeuge hat die feste Absicht, ihn dort zu sehen."
+          - "Der Zeuge behauptet über sich selbst, ihn gesehen zu haben (Zweifel der anderen möglich)."
+          - "Es ist wissenschaftlich bewiesen, dass er ihn gesehen hat."
+          - "Der Zeuge soll laut Gerüchten dort gewesen sein."
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Drücken Sie eine sehr hohe Wahrscheinlichkeit in der Vergangenheit aus: 'Bei diesem Lärm ___ er aufgewacht sein.' (müssen)"
+        correctAnswer: "muss"
+      - type: flashcard
+        front: "Subjektives Modalverb: 'sollen' (Präsens/Vergangenheit)"
+        back: "Drückt eine Fremdaussage / ein unbestätigtes Gerücht aus: 'Er soll Millionen veruntreut haben' = Man kolportiert, dass..."
+      - type: free_text
+        prompt: "Formulieren Sie eine vorsichtige Vermutung über die Verspätung eines Kollegen unter Nutzung von 'dürfte' und Infinitiv Perfekt."
+        modelAnswer: "Er dürfte im Berufsverkehr im Stau gestanden haben."
+
+  - slug: goethe-indirekte-rede-und-distanzierung
+    skill: grammar
+    title: Indirekte Rede und sprachliche Distanzierungsmittel
+    prerequisites: []
+    explanation: |
+      Im Goethe-Prüfungsmodul 'Lesen' und 'Schreiben' müssen Lernende subtile Distanzierungen in journalistischen Leitartikeln erkennen und selbst anwenden können.
+      Neben dem klassischen Konjunktiv I/II stehen zahlreiche lexikalische Distanzierungsmarker zur Verfügung: Adverbien ('angeblich', 'vorgeblich', 'vermeintlich'), präpositionale Attribute ('nach Angaben von', 'laut', 'gemäß') sowie Redeverben mit inhärenter Skepsis ('beteuern', 'vorschützen', 'vorgeben').
+      Auch parenthetische Einschübe ('wie verlautet', 'dem Vernehmen nach') signalisieren, dass sich der Verfasser die zitierte Information nicht zu eigen macht.
+    examples:
+      - "Der Sprecher betonte, die Gelder seien zweckgebunden verwendet worden; Kritiker halten diese Rechtfertigung für vorgeblich."
+      - "Dem Vernehmen nach plant die Konzernspitze die Schließung mehrerer Standorte."
+      - "Die vermeintlich bahnbrechende Studie hielt einer methodischen Überprüfung nicht stand."
+    exercises:
+      - type: multiple_choice
+        question: "Welches Adverb drückt aus, dass der Autor eine Behauptung für unwahr oder unbewiesen hält?"
+        options:
+          - "Zweifellos"
+          - "Vermeintlich"
+          - "Tatsächlich"
+          - "Offenkundig"
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Ergänzen Sie das Distanzierungssignal: '___ Vernehmen nach traten drei Vorstandsmitglieder zurück.' (According to reports)"
+        correctAnswer: "Dem"
+      - type: flashcard
+        front: "Distanzierungsverb: 'vorschützen'"
+        back: "Bedeutung: Eine falsche Begründung oder Ausrede vorschieben ('Er schützte Krankheit vor')."
+      - type: free_text
+        prompt: "Geben Sie die folgende Aussage mit maximaler journalistischer Distanzierung wieder: 'Der Konzernchef sagt: Wir haben keine Umweltgesetze verletzt.'"
+        modelAnswer: "Der Konzernchef beteuerte, sein Unternehmen habe keinerlei Umweltgesetze verletzt, was von Umweltverbänden jedoch als Schutzbehauptung eingestuft wird."
+
+  - slug: goethe-komplexe-adverbiale-nebensaetze
+    skill: grammar
+    title: Komplexe Adverbialsätze und modale Nuancen
+    prerequisites: []
+    explanation: |
+      Zur stilistischen Meisterschaft gehört auf Goethe C1-Niveau die präzise Handhabung seltenerer und komplexer Subjunktionen.
+      Adversative Verhältnisse werden mit 'wohingegen' oder 'während' verdeutlicht; modale Begleitumstände mit 'ohne dass' oder 'indem'; modale Ersetzungen mit 'anstatt dass / anstatt zu'.
+      Konditionale Restriktionen nutzen 'sofern', 'soweit' oder 'geschweige denn'.
+      Proportionale Beziehungen verlangen die Konstruktion 'je... desto / umso' (mit Nebensatzstruktur nach 'je' und Inversion nach 'desto').
+      Besonderes Augenmerk liegt auf der logischen Kongruenz zwischen Haupt- und Nebensatz.
+    examples:
+      - "Je tiefer man in die Materie eindringt, desto deutlicher treten die inneren Widersprüche zutage."
+      - "Der Beschluss wurde verabschiedet, ohne dass die betroffenen Kommunen zuvor angehört worden wären."
+      - "Anstatt die Ursachen nachhaltig zu bekämpfen, kurierte man lediglich an den Symptomen herum."
+    exercises:
+      - type: multiple_choice
+        question: "Welche Satzstellung folgt auf 'desto' im Hauptsatz der proportionalen Konstruktion?"
+        options:
+          - "Nebensatzwortstellung (Verb am Ende)"
+          - "Inversion (Komparativ + finites Verb + Subjekt)"
+          - "Gerade Wortstellung (Subjekt + Verb)"
+          - "Infinitiv mit zu"
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Vervollständigen Sie den proportionalen Satz: 'Je mehr Ressourcen bereitgestellt werden, ___ schneller lässt sich das Projekt realisieren.'"
+        correctAnswer: "desto"
+        acceptableVariants: ["umso"]
+      - type: fill_blank
+        textWithBlank: "Kombinieren Sie: 'Er handelte, ___ dass er die Risiken bedacht hätte.' (without)"
+        correctAnswer: "ohne"
+      - type: free_text
+        prompt: "Bilden Sie einen komplexen Satz mit 'anstatt dass' im Konjunktiv II."
+        modelAnswer: "Anstatt dass die Verantwortlichen endlich Verantwortung übernehmen würden, schieben sie die Schuld auf unvorhersehbare Marktbedingungen."
+
+  - slug: goethe-idiomatische-wendungen-und-redewendungen
+    skill: vocabulary
+    title: Idiomatik, Redensarten und bildhafte Wendungen
+    prerequisites: []
+    explanation: |
+      Das spontane und treffsichere Verständnis bildhafter Redensarten ist ein Kernmerkmal des Goethe-Zertifikats C1.
+      In Hörtexten (z. B. Radiointerviews) und Lesetexten (Feuilletons) treten Redewendungen gehäuft auf: 'den Nagel auf den Kopf treffen' (das Wesentliche erfassen), 'ins Gewicht fallen' (bedeutend sein), 'aus dem Rahmen fallen' (ungewöhnlich sein), 'die Flinte ins Korn werfen' (aufgeben), 'Öl ins Feuer gießen' (einen Konflikt anheizen).
+      Die Kandidaten müssen diese Metaphern nicht nur verstehen, sondern sie im mündlichen und schriftlichen Ausdruck stilistisch dosiert und kontextadäquat einsetzen.
+    examples:
+      - "Dieser Einwand fällt bei der Gesamtbewertung kaum ins Gewicht."
+      - "Mit seiner messerscharfen Kritik traf der Autor den Nagel auf den Kopf."
+      - "Anstatt zu deeskalieren, goss der Parteichef mit seiner Wortmeldung noch zusätzliches Öl ins Feuer."
+      - "Wir sollten nicht voreilig die Flinte ins Korn werfen, bevor alle Optionen ausgelotet sind."
+    exercises:
+      - type: multiple_choice
+        question: "Was bedeutet die Wendung: 'reinen Wein einschenken'?"
+        options:
+          - "Alkoholische Getränke bei einem Fest servieren"
+          - "Jemandem schonungslos die volle Wahrheit sagen"
+          - "Einen Streit friedlich beilegen"
+          - "Eine juristische Klage vorbereiten"
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Ergänzen Sie die Redewendung: 'Er hat den Bogen völlig ___.' (overstretched / gone too far)"
+        correctAnswer: "überspannt"
+      - type: flashcard
+        front: "Redewendung: 'etwas auf die lange Bank schieben'"
+        back: "Bedeutung: Eine unangenehme Entscheidung oder Erledigung unnötig lange aufschieben / verzögern."
+      - type: free_text
+        prompt: "Verfassen Sie einen Satz mit der Redewendung 'den Nagel auf den Kopf treffen'."
+        modelAnswer: "Mit seiner treffenden Analyse der sozialen Missstände traf der Soziologe den Nagel auf den Kopf."
+
+  - slug: goethe-komposita-und-wortbildung-c1
+    skill: vocabulary
+    title: Komplexe Wortbildung, Komposita und Derivation
+    prerequisites: []
+    explanation: |
+      Die morphologische Flexibilität des Deutschen bei der Bildung neuer Wortzusammensetzungen (Komposita) und Ableitungen (Derivationen) erreicht auf C1 ihren Höhepunkt.
+      Lernende müssen in der Lage sein, spontane Gelegenheitsbildungen der Gegenwartssprache (Ad-hoc-Komposita wie 'Krisenresilienz', 'Erkenntnisgewinn', 'Spitzenreiter') transparent in ihre semantischen Einzelteile zu zerlegen.
+      Ebenso zentral sind produktive Präfixe (miss-, ent-, ver-, zer-, un-) und Suffixe (-arm, -reich, -resistent, -trächtig, -lastig), die kompakte Charakterisierungen ermöglichen ('konfliktträchtig', 'erfolgsarm', 'theorielastig').
+    examples:
+      - "Die Zukunftsträchtigkeit dieser Technologie steht außer Frage."
+      - "Das Projekt litt von Beginn an unter einer gravierenden Theorielastigkeit."
+      - "Wir müssen die psychische Krisenresilienz von Jugendlichen nachhaltig stärken."
+    exercises:
+      - type: multiple_choice
+        question: "Was bedeutet das Suffix '-trächtig' in Worten wie 'folgenträchtig' oder 'konfliktträchtig'?"
+        options:
+          - "Frei von jeglichen Folgen"
+          - "Schwer an etwas tragend / reich an potenziellen Folgen"
+          - "In die Vergangenheit blickend"
+          - "Finanziell gefördert"
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Bilden Sie das Adjektiv mit dem Präfix 'miss-': 'Ein Verhalten, das man nicht billigen kann, ist ___.' (disapproving)"
+        correctAnswer: "missbilligend"
+      - type: flashcard
+        front: "Kompositum: 'das Alleinstellungsmerkmal'"
+        back: "Bedeutung: Ein einzigartiges Merkmal, das ein Produkt / eine Person exklusiv von der Konkurrenz abhebt (USP)."
+      - type: free_text
+        prompt: "Erstellen Sie ein Adjektiv auf '-resistent' und binden Sie es in einen C1-Satz ein."
+        modelAnswer: "Bakterienstämme, die gegen herkömmliche Antibiotika resistent sind, stellen die Medizin vor gewaltige Herausforderungen."
+
+  - slug: goethe-metaphorische-ausdrucksweise
+    skill: vocabulary
+    title: Metaphorik in Medien, Kultur und Politik
+    prerequisites: [goethe-idiomatische-wendungen-und-redewendungen]
+    explanation: |
+      In anspruchsvollen deutschen Leitmedien (z. B. DIE ZEIT, FAZ, Der Spiegel) werden Debatten intensiv über Leitmetaphern geführt.
+      Typische Metaphernfelder stammen aus der Seefahrt ('das Schiff durch schwere See steuern', 'in seichtes Fahrwasser geraten'), dem Bauwesen ('ein solides Fundament errichten', 'auf Sand gebaut sein'), der Medizin ('den Finger in die Wunde legen', 'ein Symptom kurieren') oder dem Kriegshandwerk ('schwere Geschütze auffahren').
+      C1-Lernende müssen die metaphorische Übertragung erkennen, die dahinterliegende Wertung dechiffrieren und im mündlichen Teil 'Sprechen' Metaphern pointiert einsetzen können.
+    examples:
+      - "Mit diesem Gesetz betreten wir juristisches Neuland."
+      - "Der Autor legte mit seiner Reportage schonungslos den Finger in die offene Wunde der Gesellschaft."
+      - "Die Argumentation des Ministers erwies sich als Kartenhaus, das beim ersten Gegenwind in sich zusammenbrach."
+    exercises:
+      - type: multiple_choice
+        question: "Was bedeutet die Metapher: 'Die Reform steht auf tönernen Füßen'?"
+        options:
+          - "Sie ist besonders antik und wertvoll."
+          - "Sie entbehrt einer soliden Basis und droht zu scheitern."
+          - "Sie wurde von Töpfern entworfen."
+          - "Sie ist unveränderlich in Stein gemeißelt."
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Ergänzen Sie die Metapher: 'Er versuchte, das Eis zu ___.' (break the ice)"
+        correctAnswer: "brechen"
+      - type: flashcard
+        front: "Metapher: 'einen Spagat vollziehen'"
+        back: "Bedeutung: Versuchen, zwei scheinbar unvereinbare Anforderungen oder Ziele gleichzeitig zu bewältigen."
+      - type: free_text
+        prompt: "Erklären Sie die Metapher: 'Er hat alle Brücken hinter sich abgebrochen'."
+        modelAnswer: "Er hat eine Entscheidung so radikal getroffen, dass eine Rückkehr zum früheren Zustand oder eine Versöhnung unmöglich geworden ist."
+
+  - slug: goethe-feste-nomen-praepositions-verbindungen
+    skill: grammar
+    title: Feste Nomen-Präpositions-Verbindungen
+    prerequisites: []
+    explanation: |
+      Zahlreiche abstrakte Nomen verlangen feste Präpositionen und spezifische Kasus.
+      Im Goethe-C1-Test ist die Beherrschung dieser Rektionen entscheidend für die fehlerfreie Textproduktion in Schreiben Teil 1 und 2.
+      Beispiele: 'die Skepsis gegenüber (+ Dat.)', 'die Bereitschaft zu (+ Dat.)', 'die Furcht vor (+ Dat.)', 'der Zweifel an (+ Dat.)', 'das Vertrauen auf/in (+ Akk./Dat.)', 'die Kritik an (+ Dat.)', 'das Streben nach (+ Dat.)' und 'das Interesse an (+ Dat.)'.
+      Fehlende oder falsche Präpositionen signalisieren mangelnde Sprachkompetenz auf der C1-Stufe.
+    examples:
+      - "Die wachsende Skepsis gegenüber den Absichten der Konzernführung führte zum Streik."
+      - "Es mangelt in der Belegschaft keineswegs an der Bereitschaft zur Veränderung."
+      - "Trotz aller Rückschläge verlor sie nie den Glauben an die Gerechtigkeit."
+    exercises:
+      - type: multiple_choice
+        question: "Welche Präposition gehört zum Nomen 'der Zweifel'?"
+        options:
+          - "über"
+          - "an (+ Dativ)"
+          - "zu"
+          - "für"
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Ergänzen Sie die Präposition: 'Das unstillbare Streben ___ Perfektion kann pathologische Züge annehmen.' (after / for)"
+        correctAnswer: "nach"
+      - type: flashcard
+        front: "Rektion: 'die Nachfrage ___ (+ Dat.)'"
+        back: "Präposition: nach ('Die Nachfrage nach Fachkräften ist enorm gestiegen.')"
+      - type: free_text
+        prompt: "Bilden Sie einen C1-Satz mit dem Nomen 'die Empörung' und der passenden Präposition."
+        modelAnswer: "Die Empörung über die unsozialen Kürzungsbeschlüsse erfasste breite Schichten der Bevölkerung."
+
+  - slug: goethe-differenzierte-konnektoren
+    skill: grammar
+    title: Differenzierte Konnektoren und argumentative Steuerung
+    prerequisites: [goethe-komplexe-adverbiale-nebensaetze]
+    explanation: |
+      Die logische Verknüpfung von Sinneinheiten in der Goethe-Textproduktion (Schreiben Teil 1) erfordert ein breites Spektrum eleganter Konnektoren jenseits von 'weil', 'obwohl' oder 'deshalb'.
+      Zur Steigerung und Negation dient 'geschweige denn'; zum Erklären von Ursachen 'zumal' (drückt einen besonders gewichtigen Zusatzgrund aus); zur adversativen Korrektur 'vielmehr'; zur Konzession 'nichtsdestotrotz' oder 'dessen ungeachtet'.
+      Die korrekte syntaktische Verankerung (Hauptsatz, Nebensatz oder Adverbialposition) muss automatisiert sein.
+    examples:
+      - "Niemand rechnete mit einem Erfolg, geschweige denn mit einem Erdrutschsieg."
+      - "Das Projekt geriet ins Stocken, zumal die finanziellen Mittel drastisch gekürzt worden waren."
+      - "Er ist kein Zyniker; vielmehr leidet er aufrichtig an den Zuständen der Welt."
+    exercises:
+      - type: multiple_choice
+        question: "Welche Funktion hat 'zumal' als Subjunktion?"
+        options:
+          - "Es leitet eine Bedingung ein."
+          - "Es führt einen besonders verstärkenden Kausalbegründungsgrund an."
+          - "Es drückt eine zeitliche Gleichzeitigkeit aus."
+          - "Es ersetzt eine Konklusion."
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Ergänzen Sie den adversativen Konnektor: 'Es handelt sich nicht um Fahrlässigkeit, ___ um vorsätzlichen Betrug.' (rather / on the contrary)"
+        correctAnswer: "vielmehr"
+      - type: flashcard
+        front: "Konnektor: 'dessen ungeachtet'"
+        back: "Bedeutung: trotzdem / ungeachtet dessen (gehobener konzessiver Satzanschluss)"
+      - type: free_text
+        prompt: "Bilden Sie einen Satz mit 'zumal' und Verb-Letzt-Stellung."
+        modelAnswer: "Die Entscheidung fiel leicht, zumal alle Beteiligten die Dringlichkeit der Sanierung erkannt hatten."
+
+  - slug: goethe-lesen-teil1-kommentar-und-essay
+    skill: reading
+    title: "Goethe Lesen Teil 1: Kommentare und essayistische Texte"
+    prerequisites: [goethe-differenzierte-konnektoren, goethe-indirekte-rede-und-distanzierung]
+    explanation: |
+      Im Teil 1 des Moduls 'Lesen' beim Goethe-Zertifikat C1 bearbeiten die Kandidaten einen längeren, anspruchsvollen Text (ca. 700–800 Wörter), meist einen meinungsbetonten Kommentar, ein Feuilleton oder einen literarisch-philosophischen Essay.
+      Die Aufgabenform umfasst Multiple-Choice-Fragen mit vier Optionen (A, B, C, D).
+      Gefordert ist das Erfassen von Gedankengängen, rhetorischen Absichten, tonalen Nuancen und der Gesamtkonzeption des Verfassers.
+      Prüflinge müssen unterscheiden können, wo der Autor eine fremde These darstellt und wo er seine eigene, oft pointiert-kritische Auffassung formuliert.
+    examples:
+      - "Aufgabe: 'Welche Haltung nimmt der Verfasser gegenüber dem modernen Achtsamkeitskult ein?' -> Option C: Er kritisiert ihn als marktkonforme Privatisierung struktureller Arbeitsüberlastung."
+    exercises:
+      - type: multiple_choice
+        question: "Ein Autor schreibt: 'Es grenzt an Realsatire, wenn Konzerne Yoga-Kurse spendieren, während sie gleichzeitig die Taktzeiten verdichten.' Welche Haltung drückt er aus?"
+        options:
+          - "Begeisterte Zustimmung zu betrieblichen Sportangeboten"
+          - "Scharfe, spöttische Kritik an scheinheiligen Alibimaßnahmen"
+          - "Neutraler Bericht über Gesundheitstrends"
+          - "Wissenschaftliche Messung der Taktzeiten"
+        correctIndex: 1
+      - type: multiple_choice
+        question: "Worauf zielen die Optionen in Goethe Lesen Teil 1 oft ab?"
+        options:
+          - "Auf wörtliche Textzitate ohne Bedeutungsübertrag"
+          - "Auf das Erkennen von Paraphrasen und übergeordneten Argumentationszielen"
+          - "Auf die Zählung von Wörtern im Text"
+          - "Auf Rechtschreibfehler im Artikel"
+        correctIndex: 1
+      - type: free_text
+        prompt: "Erklären Sie, woran man in einem Essay erkennt, dass der Autor eine These nur zum Schein aufstellt, um sie im nächsten Absatz zu widerlegen."
+        modelAnswer: "Man erkennt es an Formulierungen wie 'Man könnte einwenden...', 'Auf den ersten Blick scheint es...', gefolgt von einer scharfen Antithese ('Doch dieser Eindruck trügt')."
+      - type: free_text
+        prompt: "Formulieren Sie eine Paraphrase für den Satz: 'Die These entpuppt sich als bloßes Wunschdenken'."
+        modelAnswer: "Die Annahme basiert nicht auf der Realität, sondern entspringt illusionären Hoffnungen."
+
+  - slug: goethe-lesen-teil2-textrekonstruktion
+    skill: reading
+    title: "Goethe Lesen Teil 2: Textrekonstruktion"
+    prerequisites: [goethe-differenzierte-konnektoren, goethe-lesen-teil1-kommentar-und-essay]
+    explanation: |
+      Teil 2 des Leseverstehens prüft das Verständnis von Textaufbau und Textdramaturgie.
+      Aus einem anspruchsvollen Sachtext wurden sechs Sätze herausgetrennt. Die Kandidaten müssen diese Sätze aus einer Liste von acht Vorgaben (zwei Distraktoren) den korrekten Leerstellen zuordnen.
+      Entscheidend ist das Dekodieren von Verweisketten: Kataphorische und anaphorische Pronomen, logische Konnektoren, thematische Wiederaufnahmen und Zeitenfolgen.
+      Ein Fragment passt nur dann, wenn es sowohl semantisch als auch grammatisch einen nahtlosen Übergang zwischen dem Vorhergehenden und dem Nachfolgenden herstellt.
+    examples:
+      - "Lücke 1: Vorher steht: 'Die Kosten explodierten förmlich.' -> Passender Einschub: 'Ein Umstand, der die Finanzierungspläne der Kommune vollends über den Haufen warf.' -> Nachher: 'Folglich musste das gesamte Projekt gestoppt werden.'"
+    exercises:
+      - type: multiple_choice
+        question: "Welcher Satzanschluss passt nach: 'Viele Wissenschaftler zweifelten an den Ergebnissen'?"
+        options:
+          - "Diese Skepsis war angesichts der dünnen Datenbasis durchaus berechtigt."
+          - "Sie freuten sich über das schöne Wetter im Labor."
+          - "Deshalb kauften sie sofort neue Computer."
+          - "Niemand hatte Bedenken geäußert."
+        correctIndex: 0
+      - type: multiple_choice
+        question: "Wie geht man bei Goethe Lesen Teil 2 am effizientesten vor?"
+        options:
+          - "Erst den Text ohne Lücken lesen, dann Lückenumfeld analysieren und nach logischen Konnektoren suchen"
+          - "Blind die Sätze von oben nach unten eintragen"
+          - "Nur die beiden Distraktoren markieren und aufhören"
+          - "Den Text von rechts nach links überfliegen"
+        correctIndex: 0
+      - type: fill_blank
+        textWithBlank: "Kohäsionsmarker zur Lückenfüllung: '___ diesem Grunde zogen sich die Geldgeber zurück.' (For this reason)"
+        correctAnswer: "Aus"
+      - type: free_text
+        prompt: "Beschreiben Sie, wie ein Pronominaladverb wie 'dagegen' bei der Entscheidung in Teil 2 hilft."
+        modelAnswer: "'Dagegen' signalisiert einen scharfen Gegensatz zum direkt vorausgehenden Gedanken; das passende Fragment muss also eine Gegenposition oder Kontrastinformation enthalten."
+
+  - slug: goethe-lesen-teil3-sachtext-detail
+    skill: reading
+    title: "Goethe Lesen Teil 3: Fachartikel und populärwissenschaftliche Texte"
+    prerequisites: [goethe-komposita-und-wortbildung-c1, goethe-lesen-teil1-kommentar-und-essay]
+    explanation: |
+      Teil 3 des Leseverstehens präsentiert einen längeren populärwissenschaftlichen oder kulturgeschichtlichen Text.
+      Die Aufgaben bestehen aus Multiple-Choice-Fragen, die das detaillierte Verständnis komplexer Sachverhalte, kausaler Verflechtungen und prozessualer Abläufe abprüfen.
+      Die Kandidaten müssen fähig sein, feinste semantische Nuancen zu erfassen und Distraktoren zu eliminieren, die oft durch voreilige Generalisierungen oder verdrehte Ursache-Wirkungs-Beziehungen gekennzeichnet sind.
+      Hierbei ist präzise Textarbeit unerlässlich; Allgemeinwissen allein reicht zur Beantwortung nicht aus.
+    examples:
+      - "Text: 'Nicht die genetische Disposition allein bestimmt den Verlauf, sondern deren epigenetische Modulation durch Umweltfaktoren.' -> Frage: Was determiniert den Verlauf? -> Das Zusammenspiel aus Genen und umweltbedingten Modifikationen."
+    exercises:
+      - type: multiple_choice
+        question: "Text: 'Das Projekt scheiterte keineswegs am mangelnden Enthusiasmus der Forscher, sondern schlicht an der chronischen Unterfinanzierung.' - Warum scheiterte das Projekt?"
+        options:
+          - "Die Forscher waren demotiviert."
+          - "Es stand schlicht zu wenig Geld zur Verfügung."
+          - "Die Methodik war veraltet."
+          - "Das Projekt war ein großer Erfolg."
+        correctIndex: 1
+      - type: multiple_choice
+        question: "Welche Strategie verhindert Fehler bei Detailfragen in Teil 3?"
+        options:
+          - "Die Antwort wählen, die die meisten Fremdwörter enthält"
+          - "Die Textstelle exakt lokalisieren und Wort für Wort mit der Frageoption abgleichen"
+          - "Nur nach dem Bauchgefühl entscheiden"
+          - "Die kürzeste Option wählen"
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Paraphrase: 'Die Studie erbrachte den unwiderlegbaren Beweis.' -> 'Die Ergebnisse gelten als wissenschaftlich ___.' (gesichert / bewiesen)"
+        correctAnswer: "gesichert"
+      - type: free_text
+        prompt: "Erklären Sie den Unterschied zwischen 'notwendiger' und 'hinreichender' Bedingung in einem wissenschaftlichen Text."
+        modelAnswer: "Eine notwendige Bedingung muss zwingend erfüllt sein, damit das Ereignis eintreten kann; eine hinreichende Bedingung garantiert bei ihrer Erfüllung das Eintreten des Ereignisses von selbst."
+
+  - slug: goethe-lesen-teil4-kurzinformationen-abgleich
+    skill: reading
+    title: "Goethe Lesen Teil 4: Selektiver Informationsabgleich"
+    prerequisites: [goethe-feste-nomen-praepositions-verbindungen]
+    explanation: |
+      Im Teil 4 des Leseverstehens erhalten die Prüfungsteilnehmenden zehn kurze Selbstdarstellungen, Projektbeschreibungen oder Fachprofile und müssen diese einer Reihe von Vorgaben/Personenwünschen zuordnen (Matching-Aufgabe).
+      Erforderlich ist selektives Scanning: Schnelles Überfliegen und Identifizieren relevanter Kriterien unter Zeitdruck.
+      Häufig existieren für eine oder mehrere Vorgaben keine passenden Angebote (Option 'keine Lösung' bzw. Nullzuordnung).
+      Prüflinge müssen lernen, Ausschlusskriterien messerscharf zu erkennen (z. B. Kostenobergrenzen, Zielgruppenbeschränkungen, terminliche Vorgaben).
+    examples:
+      - "Person A sucht eine berufsbegleitende Weiterbildung im Medienrecht, die rein online stattfindet. -> Angebot 4: 'Master Medienrecht, 100% E-Learning, flexibel neben dem Beruf'."
+    exercises:
+      - type: multiple_choice
+        question: "Ein Interessent sucht: 'Führungskräfteseminar nur am Wochenende'. Angebot B bietet: 'Wöchentlicher Abendkurs montags'. Passt das Angebot?"
+        options:
+          - "Ja, es ist perfekt."
+          - "Nein, das Ausschlusskriterium 'Wochenende' wird nicht erfüllt."
+          - "Vielleicht, wenn er montags frei hat."
+          - "Das Angebot ist nur für Studierende."
+        correctIndex: 1
+      - type: multiple_choice
+        question: "Was muss man bei Goethe Lesen Teil 4 beachten, wenn kein Text perfekt passt?"
+        options:
+          - "Einfach den Text wählen, der am längsten ist"
+          - "Prüfen, ob für diese Vorgabe die Option 'nein / keine Zuordnung' vorgesehen ist"
+          - "Zwei Angebote gleichzeitig ankreuzen"
+          - "Den Prüfer rufen"
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Ergänzen Sie das Wort für eine unbedingte Bedingung: 'Ein abgeschlossenes Erststudium ist zwingende ___ für die Zulassung.' (prerequisite)"
+        correctAnswer: "Voraussetzung"
+      - type: free_text
+        prompt: "Nennen Sie drei typische Ausschlusskriterien, die bei Zuordnungsaufgaben in Teil 4 auftreten."
+        modelAnswer: "Zielgruppenbeschränkung (z. B. nur für Promovierte), zeitliche Restriktionen (z. B. Präsenzzeiten werktags) und Kosten/Zertifizierungshürden."
+
+  - slug: goethe-hoeren-teil1-dialog-notizen
+    skill: listening
+    title: "Goethe Hören Teil 1: Dialogisches Fachgespräch und Mitschrift"
+    prerequisites: [goethe-subjektive-modalverben, goethe-feste-nomen-praepositions-verbindungen]
+    explanation: |
+      Teil 1 des Hörverstehens besteht aus einem längeren, authentischen Gespräch (z. B. Beratungsgespräch, Experteninterview, Arbeitsbesprechung) zwischen zwei Personen.
+      Der Text wird zweimal abgespielt.
+      Auf einem Formular müssen Notizen ergänzt, Aussagen vervollständigt oder Daten eingetragen werden.
+      Die Kandidaten müssen relevante Detailinformationen präzise heraushören, während sie Füllwörter und irrelevante Höflichkeitsfloskeln ignorieren.
+      Grammatische und lexikalische Präzision beim Ausfüllen der Notizen ist obligatorisch.
+    examples:
+      - "Hörtext: 'Berater: Wir schlagen vor, das Budget um 15 % aufzustocken, allerdings frühestens zum Quartalswechsel im Juli.' -> Notiz: Budgetaufstockung: Höhe: 15 %, Zeitpunkt: ___ -> Lösung: Juli / Quartalswechsel."
+    exercises:
+      - type: fill_blank
+        textWithBlank: "Hörtext: 'Die Tagung findet dieses Jahr nicht in Leipzig, sondern im Kongresszentrum Dresden statt.' -> Notiz: Veranstaltungsort: Kongresszentrum ___."
+        correctAnswer: "Dresden"
+      - type: multiple_choice
+        question: "Wie verhält man sich optimal vor dem Start des ersten Hörens bei Goethe Hören Teil 1?"
+        options:
+          - "Die Augen schließen und entspannen"
+          - "Die Notizenvorlage gründlich lesen, Schlüsselbegriffe markieren und die gesuchte Wortart antizipieren"
+          - "Sofort anfangen zu schreiben"
+          - "Das Skript vom Nachbarn abschreiben"
+        correctIndex: 1
+      - type: multiple_choice
+        question: "Ein Sprecher korrigiert sich selbst: 'Wir treffen uns um 10... ach nein, da habe ich einen Termin, sagen wir lieber halb elf.' Welche Uhrzeit ist korrekt?"
+        options:
+          - "10:00 Uhr"
+          - "10:30 Uhr"
+          - "11:00 Uhr"
+          - "11:30 Uhr"
+        correctIndex: 1
+      - type: free_text
+        prompt: "Erklären Sie, warum das genaue Lesen der Lückenkontexte vor dem Hören kognitive Entlastung bringt."
+        modelAnswer: "Es aktiviert thematisches Vorwissen und fokussiert die Aufmerksamkeit gezielt auf die gesuchte Informationseinheit (z. B. Zahl, Ort, Ursache, Nomen)."
+
+  - slug: goethe-hoeren-teil2-radiointerview-monolog
+    skill: listening
+    title: "Goethe Hören Teil 2: Radiofeature, Vortrag und Interview"
+    prerequisites: [goethe-hoeren-teil1-dialog-notizen, goethe-idiomatische-wendungen-und-redewendungen]
+    explanation: |
+      Teil 2 umfasst einen längeren Radiobeitrag, einen wissenschaftlichen Monolog oder ein anspruchsvolles Feature (Dauer ca. 8 Minuten), das nur einmal gehört wird.
+      Dazu müssen zehn Multiple-Choice-Fragen mit je drei Optionen (A, B, C) beantwortet werden.
+      Der Hörer muss in der Lage sein, dem roten Faden auch bei komplexer Syntax, atmosphärischen Einspielern und dialektalen Färbungen zu folgen.
+      Zentral ist das Dechiffrieren von rhetorischen Fragen, Pausen und verdeckten Wertungen des Journalisten oder Referenten.
+    examples:
+      - "Hörtext: 'Ob die Energiewende gelingt, entscheidet sich nicht an Sonntagsreden, sondern am Netzausbau vor Ort.' -> Frage: Was ist der entscheidende Faktor? -> Der Ausbau der Übertragungsnetze."
+    exercises:
+      - type: multiple_choice
+        question: "Im Radiofeature sagt der Sprecher: 'Das Vorhaben entbehrt nicht einer gewissen Tragik.' Was meint er?"
+        options:
+          - "Es ist ein heiteres Lustspiel."
+          - "Das Vorhaben enthält bedauernswerte, tragische Momente des Scheiterns."
+          - "Niemand weiß, was passieren wird."
+          - "Es ist völlig emotionslos."
+        correctIndex: 1
+      - type: multiple_choice
+        question: "Was ist beim einmaligen Hören in Teil 2 überlebenswichtig?"
+        options:
+          - "Hängenbleiben an einer verpassten Frage"
+          - "Sofortiges Weiterwandern zur nächsten Frage, um den Anschluss an den Audiotrack nicht zu verlieren"
+          - "Die Aufnahme anhalten"
+          - "Den Prüfer um Wiederholung bitten"
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Hörtext-Wendungsanalyse: 'Er hat den Karren an die Wand ___.' (crashed / ruined)"
+        correctAnswer: "gefahren"
+      - type: free_text
+        prompt: "Beschreiben Sie die Funktion von akustischen Gliederungssignalen (Musikakzente, Pausen) in einem C1-Radiofeature."
+        modelAnswer: "Sie signalisieren das Ende eines thematischen Kapitels, schaffen Raum zur Reflexion und kündigen eine neue argumentative Perspektive oder einen neuen Sprecher an."
+
+  - slug: goethe-schreiben-teil1-freie-stellungnahme
+    skill: writing
+    title: "Goethe Schreiben Teil 1: Ausführliche freie Stellungnahme"
+    prerequisites: [goethe-differenzierte-konnektoren, goethe-subjektive-modalverben]
+    explanation: |
+      Im Teil 1 des Moduls Schreiben verfassen die Kandidaten einen gut strukturierten Text (mindestens 200–250 Wörter) zu einem kontroversen gesellschaftlichen Thema.
+      Die Aufgabenstellung beinhaltet eine Grafik und mehrere Leitpunkte, die zwingend bearbeitet werden müssen: 1. Wiedergabe der Kernaussage der Grafik, 2. Darstellung verschiedener Standpunkte, 3. Eigene Argumentation mit stichhaltigen Belegen, 4. Zukunftsperspektive/Ausblick.
+      Bewertet werden Kohärenz, logische Gliederung (Absatzgestaltung), lexikalischer Reichtum (C1-Wortschatz) sowie morphosyntaktische Korrektheit.
+      Verlangt wird ein formell-eleganter Registerton.
+    examples:
+      - "Thema: 'Lebenslanges Lernen im digitalen Zeitalter'"
+      - "Überleitung von der Grafik zur Diskussion: 'Wie das Schaubild eindrucksvoll verdeutlicht, partizipieren ältere Beschäftigte bislang nur marginal an digitalen Weiterbildungsangeboten. Dieser Umstand wirft die Frage auf, wie Barrieren abgebaut werden können.'"
+    exercises:
+      - type: free_text
+        prompt: "Verfassen Sie einen vollständigen Einleitungsabsatz für eine C1-Stellungnahme zum Thema 'Automatisierung und Arbeitsplatzverlust' inklusive Bezug auf ein Schaubild."
+        modelAnswer: "Der unaufhaltsame Vormarsch intelligenter Robotik und automatisierter Systeme transformiert die globale Arbeitswelt mit beispielloser Dynamik. Das vorliegende Schaubild des Instituts für Arbeitsmarkt- und Berufsforschung illustriert eindrücklich, welche Branchen im kommenden Jahrzehnt dem stärksten Substitutionspotenzial ausgesetzt sein werden. Angesichts dieser Befunde entbrennt eine vehemente Debatte über die Zukunft der Erwerbsarbeit."
+      - type: multiple_choice
+        question: "Welcher Fehler führt bei Goethe Schreiben Teil 1 zu drastischem Punkteabzug?"
+        options:
+          - "Die Verwendung komplexer Satzperioden"
+          - "Das vollständige Ignorieren eines der vorgegebenen Leitpunkte"
+          - "Ein Umfang von 280 Wörtern statt 200"
+          - "Das Verwenden von Absätzen"
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Ergänzen Sie den Satz zur Grafikbeschreibung: 'Aus dem Schaubild geht unmissverständlich ___, dass...' (emerges)"
+        correctAnswer: "hervor"
+      - type: free_text
+        prompt: "Formulieren Sie einen fundierten Ausblick (2-3 Sätze) zum Thema Elektromobilität."
+        modelAnswer: "Zusammenfassend lässt sich festhalten, dass die Elektromobilität nur dann eine echte ökologische Wende einleitet, wenn der verbrauchte Strom vollständig aus regenerativen Quellen gespeist wird. Gelingt dieser Schulterschluss mit der Energiewende nicht, wird die Umweltbelastung lediglich vom Auspuff zum Kraftwerk verlagert. Die Politik ist daher gefordert, ganzheitliche Infrastrukturen zu schaffen."
+
+  - slug: goethe-schreiben-teil2-textumformung-register
+    skill: writing
+    title: "Goethe Schreiben Teil 2: Textüberarbeitung und Registertransformation"
+    prerequisites: [goethe-schreiben-teil1-freie-stellungnahme, goethe-indirekte-rede-und-distanzierung]
+    explanation: |
+      Im Teil 2 des Schreibens müssen die Prüfungsteilnehmenden einen informellen oder semi-formellen Ausgangstext in einen hochgradig formellen, registeradäquaten Text (z. B. Beschwerdebrief, formeller Antrag, offizielle Stellungnahme an eine Institution) umarbeiten.
+      Umgangssprachliche Wendungen, emotionale Ausbrüche oder unpräzise Formulierungen müssen in sachliche, juristisch einwandfreie und höfliche Amts- und Geschäftssprache transformiert werden.
+      Zentral hierfür sind Nominalisierungen, Passivkonstruktionen, indirekte Bitten ('Wir wären Ihnen sehr verbunden, wenn...') und formelle Abschlussfloskeln ('In Erwartung Ihrer zeitnahen Rückmeldung verbleibe ich...').
+    examples:
+      - "Ausgangstext: 'Der Typ am Schalter war total unverschämt und hat mich einfach weggeschickt!' -> Transformation: 'Das Verhalten Ihres Mitarbeiters am Informationsschalter zeichnete sich leider durch ein hohes Maß an Unprofessionalität und mangelnder Kundenorientierung aus.'"
+      - "Ausgangstext: 'Ich will mein Geld sofort zurück!' -> Transformation: 'Vor diesem Hintergrund fordere ich Sie hiermit auf, den gezahlten Betrag unverzüglich auf mein Konto zu erstatten.'"
+    exercises:
+      - type: free_text
+        prompt: "Transformieren Sie den Satz in formelles C1-Deutsch: 'Kümmern Sie sich endlich darum, sonst gehe ich zum Anwalt!'"
+        modelAnswer: "Sollten Sie die beanstandeten Mängel nicht fristgerecht beheben, sehe ich mich gezwungen, rechtliche Schritte gegen Ihr Unternehmen einzuleiten."
+      - type: multiple_choice
+        question: "Welche Grußformel ist für ein offizielles Schreiben an eine Behörde angemessen?"
+        options:
+          - "Liebe Grüße und bis bald"
+          - "Mit freundlichen Grüßen"
+          - "Herzlichst Ihr Freund"
+          - "Tschüssikowski"
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Ergänzen Sie die formelle Höflichkeitsformel: 'Ich wäre Ihnen überaus ___, wenn Sie mein Anliegen wohlwollend prüfen würden.' (grateful / obliged)"
+        correctAnswer: "verbunden"
+        acceptableVariants: ["dankbar"]
+      - type: free_text
+        prompt: "Formulieren Sie den folgenden umgangssprachlichen Satz in geschäftssprachlichen Nominalstil um: 'Weil Sie den Vertrag nicht eingehalten haben, kündigen wir jetzt.'"
+        modelAnswer: "Aufgrund der Nichteinhaltung der vertraglichen Vereinbarungen Ihrerseits kündigen wir das Vertragsverhältnis mit sofortiger Wirkung."
+
+  - slug: goethe-sprechen-teil1-monologischer-vortrag
+    skill: speaking
+    title: "Goethe Sprechen Teil 1: Monologischer Vortrag"
+    prerequisites: [goethe-differenzierte-konnektoren, goethe-metaphorische-ausdrucksweise]
+    explanation: |
+      Im Teil 1 der mündlichen Prüfung hält jeder Kandidat einen 3- bis 4-minütigen strukturierten Vortrag zu einem gewählten Thema (z. B. 'Sollten Museen generell kostenlos sein?' oder 'Chancen und Risiken bargeldlosen Bezahlens').
+      Der Vortragende muss mehrere Aspekte beleuchten (Situation im Heimatland, Vor- und Nachteile, persönliche Bewertung) und die Ausführungen durch eine ansprechende rhetorische Rahmung (Einleitung und Fazit) zusammenhalten.
+      Freies, flüssiges Sprechen ohne Manuskript ist Voraussetzung für eine Spitzenbewertung.
+      Im Anschluss muss eine spontane Rückfrage des Prüfungspartners bzw. der Prüfenden kompetent und ausführlich beantwortet werden.
+    examples:
+      - "Thema: 'Freier Eintritt in staatliche Museen'"
+      - "Gedankengang: 'Einerseits bedeutet freier Eintritt eine Demokratisierung des Zugangs zu Hochkultur für einkommensschwache Schichten. Andererseits entfallen dadurch essenzielle Einnahmen, die für Restaurierungen und Forschung dringend benötigt werden.'"
+    exercises:
+      - type: free_text
+        prompt: "Formulieren Sie eine ansprechende Eröffnung für einen Vortrag über 'Bürgerbeteiligung bei Großbauprojekten'."
+        modelAnswer: "Sehr geehrte Prüfungskommission, wer heute über Infrastruktur und Stadtentwicklung nachdenkt, kommt an einer fundamentalen Frage nicht vorbei: Wie viel direkte Demokratie verträgt der Fortschritt? Über die Chancen und Reibungsflächen von Bürgerbeteiligung möchte ich heute referieren."
+      - type: multiple_choice
+        question: "Wie lange sollte der Vortrag in Goethe Sprechen Teil 1 dauern?"
+        options:
+          - "Maximal 1 Minute"
+          - "Zirka 3 bis 4 Minuten"
+          - "Mindestens 15 Minuten"
+          - "Genau 30 Sekunden"
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Ergänzen Sie die Redewendung zur Abwägung: 'Man muss hierbei das Für und ___ sorgsam gegeneinander abwägen.' (Wider)"
+        correctAnswer: "Wider"
+      - type: free_text
+        prompt: "Beantworten Sie als Referent die Nachfrage: 'Glauben Sie wirklich, dass freier Eintritt mehr Menschen aus bildungsfernen Schichten anlockt?'"
+        modelAnswer: "Das ist ein entscheidender Einwand. Die britische Erfahrung zeigt, dass der Eintrittspreis allein selten die größte Hürde ist; vielmehr bedarf es flankierender museumspädagogischer Konzepte, um Schwellenängste abzubauen. Der freie Eintritt ist die notwendige, aber nicht die hinreichende Bedingung."
+
+  - slug: goethe-sprechen-teil2-partnerdiskussion-konsens
+    skill: speaking
+    title: "Goethe Sprechen Teil 2: Kooperative Partnerdiskussion und Aushandlung"
+    prerequisites: [goethe-sprechen-teil1-monologischer-vortrag, goethe-subjektive-modalverben]
+    explanation: |
+      Teil 2 ist ein kollaboratives Gespräch (ca. 5 Minuten) zwischen zwei Prüfungsteilnehmern.
+      Auf der Grundlage einer vorgegebenen Aufgabenstellung (z. B. Organisation einer öffentlichen Veranstaltung, Auswahl einer Kampagne oder Verteilung eines Förderbudgets) müssen verschiedene Optionen gegeneinander abgewogen und ein Konsens erzielt werden.
+      Die Partner müssen aktiv aufeinander eingehen, Kompromisslinien ausloten, Einwände freundlich, aber bestimmt entkräften und gemeinsam eine finale Lösung formulieren.
+      Monologe sind streng untersagt; gefragt ist dynamische, kooperative Gesprächsinteraktion.
+    examples:
+      - "Situation: 'Welches Projekt soll von der Kulturstiftung gefördert werden: Die Sanierung eines historischen Kinos oder ein Street-Art-Festival für Jugendliche?'"
+      - "Diskursbeitrag: 'Ich verstehe deinen Einwand bezüglich der Kosten für das Kino vollkommen. Aber könnten wir nicht vorschlagen, das Street-Art-Festival im Vorfeld als Spendenaktion für das Kino zu nutzen? So würden wir beide Initiativen fruchtbar miteinander verbinden.'"
+    exercises:
+      - type: free_text
+        prompt: "Machen Sie Ihrem Prüfungspartner einen diplomatischen Kompromissvorschlag, wenn er auf einer anderen Projektoption beharrt."
+        modelAnswer: "Ich sehe die gewichtigen Vorzüge deines Vorschlags absolut ein. Um jedoch unseren beiden Anliegen gerecht zu werden: Wie wäre es, wenn wir das Budget teilen und in einer ersten Phase beide Konzepte als Pilotprojekte erproben?"
+      - type: multiple_choice
+        question: "Was ist das primäre Ziel von Goethe Sprechen Teil 2?"
+        options:
+          - "Den Partner niederzuschreien und die eigene Meinung durchzusetzen"
+          - "Eine kooperative Diskussion zu führen, Argumente abzuwägen und einen begründeten Konsens zu finden"
+          - "Möglichst wenig zu sprechen, um Fehler zu vermeiden"
+          - "Den Prüfer in ein Streitgespräch zu verwickeln"
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Ergänzen Sie die Formel für einen Kompromiss: 'Könnten wir uns auf die goldene ___ einigen?' (middle / compromise)"
+        correctAnswer: "Mitte"
+      - type: free_text
+        prompt: "Formulieren Sie den abschließenden Konsenssatz an die Prüfenden nach erfolgreicher Diskussion."
+        modelAnswer: "Wir haben uns nach Abwägung aller Vor- und Nachteile darauf verständigt, vorrangig das Mehrgenerationen-Projekt zu fördern, da es gesellschaftlich die nachhaltigste Breitenwirkung entfaltet."

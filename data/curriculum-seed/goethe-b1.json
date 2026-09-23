@@ -1,0 +1,1693 @@
+{
+  "seedVersion": "2",
+  "track": "goethe",
+  "level": "B1",
+  "milestones": [
+    {
+      "milestone": {
+        "id": "goethe-b1-grammar",
+        "track": "goethe",
+        "level": "B1",
+        "title": "Grammar",
+        "description": null,
+        "orderIndex": 0
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "goethe-b1-grammar-lessons",
+            "milestoneId": "goethe-b1-grammar",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b1-goethe-subordinate-clauses-final-consecutive",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "b1-goethe-causal-concessive-connectors",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "b1-goethe-relative-clauses-indefinite-pronouns",
+              "orderIndex": 2
+            },
+            {
+              "lessonId": "b1-goethe-subjunctive-ii-advice-opinions",
+              "orderIndex": 3
+            },
+            {
+              "lessonId": "b1-goethe-participles-as-adjectives",
+              "orderIndex": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "goethe-b1-vocabulary",
+        "track": "goethe",
+        "level": "B1",
+        "title": "Vocabulary",
+        "description": null,
+        "orderIndex": 1
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "goethe-b1-vocabulary-lessons",
+            "milestoneId": "goethe-b1-vocabulary",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b1-goethe-vocab-social-trends-relationships",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "b1-goethe-vocab-consumerism-environment",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "b1-goethe-vocab-education-career-training",
+              "orderIndex": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "goethe-b1-reading",
+        "track": "goethe",
+        "level": "B1",
+        "title": "Reading",
+        "description": null,
+        "orderIndex": 2
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "goethe-b1-reading-lessons",
+            "milestoneId": "goethe-b1-reading",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b1-goethe-reading-teil1-blog-narrative",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "b1-goethe-reading-teil2-press-articles",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "b1-goethe-reading-teil3-classifieds-matching",
+              "orderIndex": 2
+            },
+            {
+              "lessonId": "b1-goethe-reading-teil4-forum-comments",
+              "orderIndex": 3
+            },
+            {
+              "lessonId": "b1-goethe-reading-teil5-rules-regulations",
+              "orderIndex": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "goethe-b1-listening",
+        "track": "goethe",
+        "level": "B1",
+        "title": "Listening",
+        "description": null,
+        "orderIndex": 3
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "goethe-b1-listening-lessons",
+            "milestoneId": "goethe-b1-listening",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b1-goethe-listening-teil1-daily-announcements",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "b1-goethe-listening-teil2-guided-tour-presentation",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "b1-goethe-listening-teil3-casual-conversation",
+              "orderIndex": 2
+            },
+            {
+              "lessonId": "b1-goethe-listening-teil4-radio-discussion",
+              "orderIndex": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "goethe-b1-writing",
+        "track": "goethe",
+        "level": "B1",
+        "title": "Writing",
+        "description": null,
+        "orderIndex": 4
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "goethe-b1-writing-lessons",
+            "milestoneId": "goethe-b1-writing",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b1-goethe-writing-aufgabe1-personal-email",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "b1-goethe-writing-aufgabe2-forum-opinion",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "b1-goethe-writing-aufgabe3-formal-apology-request",
+              "orderIndex": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "goethe-b1-speaking",
+        "track": "goethe",
+        "level": "B1",
+        "title": "Speaking",
+        "description": null,
+        "orderIndex": 5
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "goethe-b1-speaking-lessons",
+            "milestoneId": "goethe-b1-speaking",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b1-goethe-speaking-teil1-planning-together",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "b1-goethe-speaking-teil2-monologic-presentation",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "b1-goethe-speaking-teil3-feedback-and-questions",
+              "orderIndex": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "b1-goethe-subordinate-clauses-final-consecutive",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "grammar",
+      "title": "Final and Consecutive Clauses (damit, um... zu, sodass)",
+      "explanation": "The Goethe B1 examination requires complex clause synthesis in argumentative writing and oral presentations.\nFinal clauses describe intention or purpose. Use 'damit' when the main clause subject and subordinate clause subject differ; when both subjects are identical, prefer the infinitive construction 'um... zu'.\nConsecutive clauses indicate results or consequences using 'sodass' (or 'so..., dass'), which also places the conjugated verb at the end of the subordinate clause.\n",
+      "examples": [
+        "Die Eltern arbeiten hart, damit ihre Kinder an einer guten Universität studieren können.",
+        "Er spart jeden Cent, um sich im nächsten Sommer eine Sprachreise nach Wien leisten zu können.",
+        "Der Busfahrer bremste so abrupt, dass mehrere Fahrgäste das Gleichgewicht verloren.",
+        "Es schneite die ganze Nacht hindurch, sodass am Morgen viele Straßen unpassierbar waren."
+      ]
+    },
+    {
+      "id": "b1-goethe-causal-concessive-connectors",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "grammar",
+      "title": "Discourse Connectors: Weil, Da, Obwohl, Trotzdem, Deshalb",
+      "explanation": "To express nuanced opinions in Goethe Schreiben (Aufgabe 2) and Sprechen (Teil 2), candidates must connect ideas using diverse causal and concessive markers.\n'Weil' and 'da' (subordinators) trigger verb-final order.\n'Deshalb', 'darum', and 'deswegen' (adverbial connectors) express consequence and trigger inversion (verb-second: Deshalb ging ich nach Hause).\n'Obwohl' introduces a concessive subordinate clause (verb at end), whereas 'trotzdem' is an adverbial connector triggering verb-second inversion (Trotzdem ging ich zur Arbeit).\n",
+      "examples": [
+        "Obwohl Carsharing viele Vorzüge bietet, besitzen die meisten Familien weiterhin einen eigenen Pkw.",
+        "Das Angebot an öffentlichen Verkehrsmitteln auf dem Land ist mangelhaft. Deshalb sind viele Menschen auf das Auto angewiesen.",
+        "Die Mieten in den Großstädten sind stark gestiegen; trotzdem ziehen immer mehr junge Leute dorthin.",
+        "Da erneuerbare Energien kontinuierlich ausgebaut werden, sinkt der Ausstoß von Treibhausgasen."
+      ]
+    },
+    {
+      "id": "b1-goethe-relative-clauses-indefinite-pronouns",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "grammar",
+      "title": "Relative Clauses with Indefinite Pronouns and Neutral References (was, alles)",
+      "explanation": "In sophisticated B1 discourse, relative clauses frequently refer to indefinite neutral pronouns (alles, etwas, nichts, vieles, das) or to an entire preceding statement.\nIn these instances, the relative pronoun 'was' must be used instead of 'das' or 'welches'.\nIf the relative clause requires a preposition combined with a neutral indefinite referent, speakers use 'wo(r)-' + preposition (z.B. worüber, woran, wovon).\n",
+      "examples": [
+        "Das ist alles, was ich zu diesem Sachverhalt sagen kann.",
+        "Es gibt vieles, worüber die Politik heute intensiv debattieren muss.",
+        "Sie hat die anspruchsvolle B1-Prüfung auf Anhieb bestanden, was ihre Eltern sehr stolz machte.",
+        "Er erzählte mir etwas, woran ich mich beim besten Willen nicht mehr erinnern konnte."
+      ]
+    },
+    {
+      "id": "b1-goethe-subjunctive-ii-advice-opinions",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "grammar",
+      "title": "Modals in Subjunctive II for Recommendations and Opinions",
+      "explanation": "Expressing nuanced opinions and giving advice are central to the Goethe B1 writing and speaking rubrics.\nModal verbs in the Konjunktiv II form tentative evaluations, polite counter-proposals, and constructive recommendations:\n- 'sollte / sollten': moral advice or sensible recommendation (Man sollte mehr Sport treiben).\n- 'könnte / könnten': possibility or alternative suggestion (Wir könnten das Projekt gemeinsam angehen).\n- 'müsste / müssten': necessity mitigated by politeness (Eigentlich müsste man den Vertrag überarbeiten).\n",
+      "examples": [
+        "Meiner Ansicht nach sollte die Stadtverwaltung mehr Mittel in den Ausbau von Fahrradwegen investieren.",
+        "Man könnte das Problem dadurch lösen, dass man flexiblere Arbeitszeiten anbietet.",
+        "Jugendliche sollten im Unterricht lernen, wie man seriöse von unseriösen Quellen im Internet unterscheidet.",
+        "Bevor wir eine endgültige Entscheidung treffen, müssten wir die Gesamtkosten genauer analysieren."
+      ]
+    },
+    {
+      "id": "b1-goethe-participles-as-adjectives",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "grammar",
+      "title": "Attributive Adjectives Formed from Participles (Partizip I und II)",
+      "explanation": "In formal notices, institutional regulations (Goethe Lesen Teil 5), and journalistic prose, participles often function as attributive adjectives before nouns and must decline accordingly.\nPartizip I (Infinitive + -d + adjective ending) denotes an ongoing, active process: 'die steigenden Preise', 'das schlafende Kind'.\nPartizip II denotes a completed state or passive result: 'das renovierte Gebäude', 'die gebuchten Tickets'.\n",
+      "examples": [
+        "Die Bundesregierung plant neue Hilfsprogramme für Familien mit schulpflichtigen Kindern.",
+        "Wegen der ständig steigenden Energiekosten suchen viele Verbraucher nach Sparmöglichkeiten.",
+        "Bitte legen Sie beim Betreten des Gebäudes das ausgefüllte Anmeldeformular an der Rezeption vor.",
+        "Alle im Flugzeug verbliebenen Gegenstände können beim Fundbüro abgeholt werden."
+      ]
+    },
+    {
+      "id": "b1-goethe-vocab-social-trends-relationships",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "vocabulary",
+      "title": "Social Trends, Generations, and Cohabitation",
+      "explanation": "Goethe B1 tests societal topics involving family models, social structures, and demographic change.\nKey terms include: die Wohngemeinschaft / WG (shared flat), der Singlehaushalt (single-person household), die Mehrgenerationenfamilie (multi-generational family), and das Zusammenleben (cohabitation).\nConcepts related to personal values include: das Ehrenamt (volunteering / voluntary work), die Einsamkeit (loneliness), der Zusammenhalt (solidarity/cohesion), and unabhängig sein (to be independent).\n",
+      "examples": [
+        "Viele Studierende und Berufseinsteiger in Großstädten entscheiden sich für das Leben in einer WG.",
+        "Der Anteil älterer Menschen in der Gesellschaft wächst stetig, was neue Wohnkonzepte erfordert.",
+        "Durch freiwilliges Engagement und ein Ehrenamt kann man neue Freundschaften schließen.",
+        "Ein harmonisches Zusammenleben verschiedener Generationen verlangt gegenseitigen Respekt und Toleranz."
+      ]
+    },
+    {
+      "id": "b1-goethe-vocab-consumerism-environment",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "vocabulary",
+      "title": "Modern Consumption, Media Habits, and Ecological Awareness",
+      "explanation": "Goethe B1 topics frequently touch upon mindful consumption, waste reduction, and the environmental footprint of digital technology.\nKey terms encompass: das Konsumverhalten (consumer behavior), der Verzicht (renunciation/giving up), die Wegwerfgesellschaft (throwaway society), and unverpackte Lebensmittel (unpackaged groceries).\nEvaluative vocabulary includes: umweltschädlich (harmful to the environment), energieeffizient (energy-efficient), and wiederverwertbar (recyclable/reusable).\n",
+      "examples": [
+        "Experten kritisieren die moderne Wegwerfgesellschaft, in der defekte Geräte sofort ersetzt werden.",
+        "Ein bewusster Verzicht auf überflüssigen Konsum schont nicht nur das Portemonnaie, sondern auch die Umwelt.",
+        "Unverpackt-Läden bieten Kunden die Möglichkeit, alltägliche Lebensmittel ohne Plastikmüll einzukaufen.",
+        "Der Einsatz energieeffizienter Elektrogeräte senkt den Stromverbrauch im Haushalt beträchtlich."
+      ]
+    },
+    {
+      "id": "b1-goethe-vocab-education-career-training",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "vocabulary",
+      "title": "Education Paths, Vocational Training, and Lifelong Learning",
+      "explanation": "Discussions in the Goethe exam regularly address vocational training, university education, and lifelong skill development.\nKey terminology covers: das duale Ausbildungssystem (dual vocational system combining trade school and practical company work), der Schulabschluss (school-leaving qualification), die Weiterbildung (further training/continuing education), and die Aufstiegschancen (opportunities for advancement).\nStandard collocations include: 'eine Prüfung ablegen/bestehen' (to sit/pass an exam), 'Erfahrungen sammeln' (to gain experience), and 'sich Kenntnisse aneignen' (to acquire knowledge).\n",
+      "examples": [
+        "Das duale Ausbildungssystem in Deutschland kombiniert theoretischen Unterricht in der Berufsschule mit praktischer Arbeit im Betrieb.",
+        "Lebenslanges Lernen und regelmäßige Weiterbildung sind im modernen Berufsleben unerlässlich.",
+        "Nach erfolgreichem Hochschulabschluss bieten sich jungen Absolventen vielfältige Aufstiegschancen.",
+        "Er hat sich entschieden, neben dem Beruf ein Fernstudium zu absolvieren."
+      ]
+    },
+    {
+      "id": "b1-goethe-reading-teil1-blog-narrative",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "reading",
+      "title": "Understanding Narrative Texts and Personal Blogs (Goethe Lesen Teil 1)",
+      "explanation": "In Goethe Lesen Teil 1, candidates read a personal text of approximately 350 words (such as a travel blog, diary entry, or personal narrative) and evaluate six statements as Richtig or Falsch.\nTasks assess selective comprehension of personal reflections, sequences of events, feelings, and concrete outcomes.\nWatch out for temporal adverbs (z.B. früher, damals, mittlerweile) and emotional attitudes that clarify whether an experience turned out positively or negatively.\n",
+      "examples": [
+        "Blogtext: 'Als ich vor drei Jahren nach Wien zog, fühlte ich mich anfangs fremd. Doch sobald ich mich im örtlichen Sportverein anmeldete, fand ich schnell herzliche Freunde.' - Aussage: Der Autor fand sofort am ersten Tag in Wien viele Freunde. -> Falsch.",
+        "Blogtext: 'Die anstrengende Wanderung auf den Berggipfel hat sich gelohnt: Der Panoramablick bei Sonnenaufgang war unvergesslich.' - Aussage: Der Autor empfand die Bergtour letztlich als ein lohnendes Erlebnis. -> Richtig."
+      ]
+    },
+    {
+      "id": "b1-goethe-reading-teil2-press-articles",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "reading",
+      "title": "Press Articles and Informational Reports (Goethe Lesen Teil 2)",
+      "explanation": "In Goethe Lesen Teil 2, candidates read two medium-length journalistic press articles from newspapers or magazines and answer three-option multiple-choice questions (each with options a, b, c).\nThis subtest evaluates detailed reading (*Detailverstehen*).\nCandidates must comprehend underlying causes, statistical comparisons, and future outlooks.\nExamine each multiple-choice option closely against the exact wording in the text: distractors frequently combine correct words in misleading ways.\n",
+      "examples": [
+        "Artikel: 'Eine Umfrage unter 1000 Jugendlichen ergab, dass das Umweltbewusstsein zwar hoch ist, aber nur ein Viertel im Alltag konsequent auf Plastikverpackungen verzichtet.'",
+        "Frage: 'Was geht aus der Umfrage hervor?' -> Option: 'Die meisten Jugendlichen wissen um die Umweltprobleme, handeln im Alltag aber oft anders.'"
+      ]
+    },
+    {
+      "id": "b1-goethe-reading-teil3-classifieds-matching",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "reading",
+      "title": "Matching Inquiries with Classified Advertisements (Goethe Lesen Teil 3)",
+      "explanation": "In Goethe Lesen Teil 3, candidates match the needs of seven individuals (numbered 13–19) to ten classified advertisements or announcements (labeled a–j).\nThere is always one situation for which no suitable advertisement exists; for this profile, candidates must select '0' (keine Anzeige).\nPay close attention to specific restrictions: a person looking for an intensive weekend course will not be served by an ad offering evening courses during the week.\n",
+      "examples": [
+        "Person: 'Lisa (22) möchte in den Semesterferien ihr Englisch für ein geplantes Auslandsstudium verbessern.' -> Anzeige C: 'Intensivsprachkurse im August für Studenten mit akademischem Fokus.'",
+        "Person: 'Herr Becker sucht einen Klavierlehrer, der ihn samstags bei sich zu Hause unterrichtet.' Alle Anzeigen bieten nur Unterricht in einer Musikschule an Wochentagen an. -> Lösung: 0."
+      ]
+    },
+    {
+      "id": "b1-goethe-reading-teil4-forum-comments",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "reading",
+      "title": "Evaluating Reader Opinions in Internet Forums (Goethe Lesen Teil 4)",
+      "explanation": "In Goethe Lesen Teil 4, candidates read seven reader comments from an online forum reacting to a controversial lead question (e.g. 'Sollte der öffentliche Nahverkehr für alle Bürger kostenlos sein?').\nFor each of the seven statements, candidates must decide whether the author expresses a positive attitude (Ja) or a negative attitude / rejection (Nein) regarding the question.\nLook beyond single positive or negative words: an author might list positive points before explicitly rejecting the core proposal in their concluding sentence.\n",
+      "examples": [
+        "Leitfrage: 'Sollten Haustiere im Büro erlaubt sein?'",
+        "Leser 1: 'Hunde am Arbeitsplatz bauen nachweislich Stress ab und heben das Betriebsklima. Ich nehme meinen Terrier jeden Tag mit ins Büro!' -> Haltung: Ja.",
+        "Leser 2: 'Man bedenkt dabei überhaupt nicht die vielen Kollegen mit Tierhaarallergien oder Angst vor Hunden. Ein Büro ist schließlich kein Tierheim!' -> Haltung: Nein."
+      ]
+    },
+    {
+      "id": "b1-goethe-reading-teil5-rules-regulations",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "reading",
+      "title": "Institutional Guidelines and Terms of Service (Goethe Lesen Teil 5)",
+      "explanation": "In Goethe Lesen Teil 5, candidates read an official text outlining formal rules or regulations (e.g. library regulations, swimming pool house rules, dormitory policies, fire safety rules).\nFour three-option multiple-choice items assess accurate comprehension of prohibitions, obligations, permissions, and administrative procedures.\nPay careful attention to modal qualifiers: 'ist gestattet' (permitted), 'ist untersagt' (prohibited), 'ist erforderlich' (mandatory), and 'kann auf Antrag bewilligt werden' (possible upon application).\n",
+      "examples": [
+        "Badeordnung: 'Die Benutzung von Mobiltelefonen und Kameras ist im gesamten Saunabereich aus Gründen des Persönlichkeitsschutzes strengstens untersagt.' -> Das Fotografieren in der Sauna ist verboten.",
+        "Bibliotheksordnung: 'Die Leihfrist kann vor Ablauf bis zu dreimal verlängert werden, sofern keine Vormerkung eines anderen Benutzers vorliegt.' -> Verlängerungen sind nur möglich, wenn das Buch nicht reserviert ist."
+      ]
+    },
+    {
+      "id": "b1-goethe-listening-teil1-daily-announcements",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "listening",
+      "title": "Short Dialogues and Voicemails with Dual Tasks (Goethe Hören Teil 1)",
+      "explanation": "In Goethe Hören Teil 1, candidates listen to five short everyday audio recordings (voicemail messages, train station announcements, public venue broadcasts).\nEach text is played twice and has two associated tasks: a True/False statement (global gist) and a three-option multiple-choice question (specific detail).\nUse the 10-second pause before each audio track to read both tasks, anticipating the speakers' main intent and listening selectively for dates, places, and times.\n",
+      "examples": [
+        "Text: 'Hallo Claudia, hier ist Thomas. Unser Treffen heute Abend im Café Einstein muss leider ausfallen, weil mein Sohn Fieber hat. Lass uns stattdessen am Samstag um 15 Uhr im Schlosspark spazieren gehen. Gib mir kurz Bescheid!' - Aufgabe 1: Thomas sagt das heutige Treffen ab (Richtig). Aufgabe 2: Wo wollen sie sich am Samstag treffen? (Im Schlosspark)."
+      ]
+    },
+    {
+      "id": "b1-goethe-listening-teil2-guided-tour-presentation",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "listening",
+      "title": "Guided Tours and Presentations Played Once (Goethe Hören Teil 2)",
+      "explanation": "In Goethe Hören Teil 2, candidates listen to a continuous monologic presentation (e.g. a museum tour guide, an event organizer, an orientation briefing for new employees).\nThe audio track is played only once and contains five three-option multiple-choice questions.\nSuccess depends on structured listening: follow the guide's organizational signposts (z.B. 'Als Erstes betreten wir...', 'Nun kommen wir zu...', 'Bitte beachten Sie unbedingt...') to anticipate each question in order.\n",
+      "examples": [
+        "Sprecher: 'Herzlich willkommen im Stadtmuseum! Unsere heutige Führung dauert rund 45 Minuten. Bevor wir den ersten Ausstellungsraum betreten, bitte ich Sie, große Taschen und Rucksäcke in den Schließfächern im Untergeschoss einzuschließen. Das Fotografieren mit Blitz ist aus konservatorischen Gründen untersagt.'"
+      ]
+    },
+    {
+      "id": "b1-goethe-listening-teil3-casual-conversation",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "listening",
+      "title": "Conversational Dialogue Between Two Acquaintances (Goethe Hören Teil 3)",
+      "explanation": "In Goethe Hören Teil 3, candidates listen to a casual conversation between two speakers (e.g. colleagues at lunch, neighbors in the hallway, friends discussing weekend plans).\nThe conversation is played only once.\nCandidates evaluate seven statements as Richtig or Falsch.\nTrack who says what: distractors often invert which speaker made a proposal, expressed skepticism, or confirmed a plan.\n",
+      "examples": [
+        "Mann: 'Hast du schon gehört, dass Sandra nach München zieht?' - Frau: 'Ja, sie hat dort ein fantastisches Jobangebot bekommen. Ich helfe ihr am Samstag beim Kistenpacken.' - Aussage: Sandra zieht um, weil sie eine neue Stelle antritt. -> Richtig."
+      ]
+    },
+    {
+      "id": "b1-goethe-listening-teil4-radio-discussion",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "listening",
+      "title": "Moderated Radio Panel Debate with Multiple Speakers (Goethe Hören Teil 4)",
+      "explanation": "In Goethe Hören Teil 4, candidates listen to a radio panel debate featuring a moderator and two guests with contrasting viewpoints on a societal issue.\nThe audio recording is played twice and contains eight tasks.\nCandidates must determine which person (Moderator, Gast A, or Gast B) expressed a specific opinion or argument.\nDistinguish between the speakers by paying close attention to speaker introductions, distinct vocal timbres, and identifying pronouns.\n",
+      "examples": [
+        "Moderatorin: 'Guten Abend! Unser Thema heute: Homeoffice - Fluch oder Segen? Zu Gast sind Arbeitgebervertreter Herr Wolf und Gewerkschafterin Frau Sommer.'",
+        "Herr Wolf: 'Unternehmen benötigen verbindliche Präsenztage, da der kreative Austausch im Team virtuell leidet.' -> Meinung: Präsenzzeiten im Büro sind für Innovationen unerlässlich -> Herr Wolf."
+      ]
+    },
+    {
+      "id": "b1-goethe-writing-aufgabe1-personal-email",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "writing",
+      "title": "Composing an Informal Personal Narrative (Goethe Schreiben Aufgabe 1)",
+      "explanation": "In Goethe Schreiben Aufgabe 1, candidates write a personal email of approximately 80 words to a friend recounting a recent experience or event.\nCandidates must address three explicit prompt points:\n1. Describing the event or activity (z.B. Umzug, Party, Reise).\n2. Explaining why you found it particularly positive or negative.\n3. Proposing a future meeting or inviting your friend.\nUse an informal register: 'Liebe/Lieber...', personal pronouns 'du/dir/dich', and an informal sign-off like 'Herzliche Grüße' or 'Bis bald'.\n",
+      "examples": [
+        "Liebe Sarah, letztes Wochenende bin ich endlich in meine neue Wohnung in Köln umgezogen! Die Lage ist fantastisch, direkt am Park. Allerdings war das Tragen der schweren Kisten in den vierten Stock ohne Aufzug unglaublich anstrengend. Ich habe Muskelkater am ganzen Körper! Wenn du am nächsten Wochenende Zeit hast, musst du mich unbedingt besuchen kommen. Ich koche uns etwas Leckeres und zeige dir die Stadt. Wie sieht es bei dir aus? Herzliche Grüße, dein Markus."
+      ]
+    },
+    {
+      "id": "b1-goethe-writing-aufgabe2-forum-opinion",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "writing",
+      "title": "Formulating a Nuanced Online Opinion (Goethe Schreiben Aufgabe 2)",
+      "explanation": "In Goethe Schreiben Aufgabe 2, candidates write a contribution of approximately 80 words for an online discussion forum reacting to an article or opinion post.\nUnlike Aufgabe 1, this task requires an objective, argumentative register without greetings or farewells:\n1. Refer to the lead topic and summarize the core issue.\n2. State your personal perspective using opinion exponents (Meiner Meinung nach, Ich stehe auf dem Standpunkt, dass...).\n3. Provide concrete reasons and real-world examples to support your view.\n4. Conclude with a clear, balanced final judgment.\n",
+      "examples": [
+        "In der heutigen Diskussion über die Nutzung von Smartphones im Schulunterricht möchte ich meinen Standpunkt darlegen. Ich bin der festen Überzeugung, dass Mobiltelefone im Klassenraum nicht verboten, sondern gezielt als Lernmedien eingesetzt werden sollten. Schüler können damit Recherchen durchführen oder interaktive Lern-Apps nutzen. Natürlich besteht die Gefahr der Ablenkung durch Spiele und Chat-Nachrichten, weshalb klare Nutzungsregeln aufgestellt werden müssen. Ein generelles Verbot halte ich jedoch für rückschrittlich."
+      ]
+    },
+    {
+      "id": "b1-goethe-writing-aufgabe3-formal-apology-request",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "writing",
+      "title": "Composing a Formal Notification or Apology (Goethe Schreiben Aufgabe 3)",
+      "explanation": "In Goethe Schreiben Aufgabe 3, candidates compose a concise formal email of approximately 40 words addressing a superior, teacher, course instructor, or official.\nThe message must handle an administrative absence, cancellation, or polite scheduling request:\n1. Formal greeting: 'Sehr geehrte/r Frau/Herr...'\n2. State the reason for being unable to attend or requiring an adjustment.\n3. Express regret and politely apologize.\n4. Request homework, materials, or an alternative appointment.\n5. Formal closing: 'Mit freundlichen Grüßen'.\n",
+      "examples": [
+        "Sehr geehrte Frau Dr. Wagner, leider bin ich heute Morgen mit hohem Fieber aufgewacht und kann deshalb nicht an Ihrem Seminar teilnehmen. Ich bitte Sie, mein Fehlen zu entschuldigen. Könnten Sie mir freundlicherweise mitteilen, welche Aufgaben ich für die nächste Woche vorbereiten soll? Vielen Dank für Ihr Verständnis. Mit freundlichen Grüßen, Lucas Weber."
+      ]
+    },
+    {
+      "id": "b1-goethe-speaking-teil1-planning-together",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "speaking",
+      "title": "Interactive Planning and Collaborative Organization (Goethe Sprechen Teil 1)",
+      "explanation": "In Goethe Sprechen Teil 1, candidates collaborate to plan an event, excursion, or project based on a task prompt (e.g. organizing a weekend bicycle tour or arranging a farewell party).\nCandidates must actively contribute ideas, react promptly to their partner's suggestions, handle differing views constructively, and agree on practical logistics (dates, budget, transport, food, equipment).\nExaminers look for conversational balance: avoid monologuing and consistently invite your partner to contribute ('Was denkst du darüber?', 'Hättest du einen anderen Vorschlag?').\n",
+      "examples": [
+        "Kandidat A: 'Wir sollen einen gemeinsamen Ausflug mit unserem Deutschkurs planen. Was hältst du von einer Fahrradtour an den See?'",
+        "Kandidat B: 'Das ist ein schöner Vorschlag, aber vielleicht haben nicht alle Kursteilnehmer ein Fahrrad. Wir könnten stattdessen mit dem Regionalzug fahren.'",
+        "Kandidat A: 'Guter Punkt! Das Gruppenticket der Bahn ist sehr günstig. Wollen wir uns am Samstag um neun Uhr am Bahnhof treffen?'",
+        "Kandidat B: 'Ja, das passt hervorragend. Ich kümmere mich um den Kauf der Fahrkarten und du informierst die anderen Teilnehmer.'"
+      ]
+    },
+    {
+      "id": "b1-goethe-speaking-teil2-monologic-presentation",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "speaking",
+      "title": "Thematic Presentation with Structured Slides (Goethe Sprechen Teil 2)",
+      "explanation": "In Goethe Sprechen Teil 2, each candidate selects one of two topics and delivers an unassisted monologic presentation lasting approximately 3 to 4 minutes.\nThe presentation must follow the 5-step Goethe structure:\n1. Folie 1: Thema und Struktur vorstellen ('Das Thema meiner Präsentation lautet... Meine Präsentation gliedert sich in folgende Teile...').\n2. Folie 2: Eigene persönliche Erfahrungen darlegen ('Ich persönlich habe die Erfahrung gemacht, dass...').\n3. Folie 3: Die Situation im Heimatland beschreiben ('In meinem Heimatland verhält es sich so, dass...').\n4. Folie 4: Vor- und Nachteile abwägen ('Ein großer Vorteil ist..., demgegenüber steht jedoch der Nachteil...').\n5. Folie 5: Eigene Meinung zusammenfassen und Vortrag beenden ('Zusammenfassend lässt sich sagen... Vielen Dank für Ihre Aufmerksamkeit!').\n",
+      "examples": [
+        "Folie 1: 'Guten Tag! Ich möchte Ihnen heute das Thema Vor- und Nachteile des Online-Shoppings vorstellen. Zunächst spreche ich über meine persönlichen Erfahrungen, danach über die Situation in meinem Heimatland. Anschließend werde ich die Vor- und Nachteile abwägen und meine eigene Meinung äußern.'",
+        "Folie 2: 'Ich selbst kaufe Bücher und Elektronikartikel meistens online, weil die Auswahl enorm ist.'",
+        "Folie 3: 'In meiner Heimat ist der stationäre Handel noch sehr dominant, aber die jüngere Generation nutzt zunehmend Lieferdienste.'",
+        "Folie 4: 'Ein Vorteil ist die Zeitersparnis, ein gravierender Nachteil jedoch das Aussterben kleiner Geschäfte in Innenstädten.'",
+        "Folie 5: 'Meiner Meinung nach sollte man das Internet sinnvoll nutzen, aber lokale Geschäfte unterstützen. Vielen Dank fürs Zuhören!'"
+      ]
+    },
+    {
+      "id": "b1-goethe-speaking-teil3-feedback-and-questions",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "speaking",
+      "title": "Providing Constructive Feedback and Answering Questions (Goethe Sprechen Teil 3)",
+      "explanation": "Goethe Sprechen Teil 3 follows immediately after the presentations delivered in Teil 2.\nEach candidate must provide feedback on their partner's presentation, ask one relevant follow-up question, and answer questions posed by the partner and the examiners.\nFeedback must follow a standard structure:\n1. Polite praise: 'Vielen Dank für deine interessante Präsentation. Ich fand das Thema sehr spannend.'\n2. Specific observation: 'Besonders interessant fand ich deine Schilderung über dein Heimatland, weil...'\n3. Asking a question: 'Ich hätte jedoch noch eine Frage: Glaubst du, dass...?'\n",
+      "examples": [
+        "Feedback: 'Danke für deinen Vortrag, Marco. Du hast sehr klar und strukturiert gesprochen. Besonders überrascht hat mich, dass in deinem Heimatland fast alle Einkäufe noch bar bezahlt werden. Dazu hätte ich eine Frage: Glaubst du, dass sich das Bargeld dort in den nächsten Jahren halten wird?'",
+        "Antwort auf Partnerfrage: 'Das ist eine gute Frage. Ich denke, dass bargeldloses Bezahlen mit dem Smartphone auch bei uns immer beliebter wird, aber ältere Menschen vertrauen dem Bargeld weiterhin mehr.'"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b1-goethe-subordinate-clauses-final-consecutive__ex0",
+      "lessonId": "b1-goethe-subordinate-clauses-final-consecutive",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Satz verbindet zwei unterschiedliche Subjekte final korrekt?",
+        "options": [
+          "Ich lerne viel, um die Prüfung zu bestehen.",
+          "Die Lehrerin erklärt die Grammatik deutlich, damit alle Schüler sie verstehen.",
+          "Die Lehrerin erklärt die Grammatik, um die Schüler zu verstehen.",
+          "Ich beeile mich, damit ich nicht zu spät komme."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-goethe-subordinate-clauses-final-consecutive__ex1",
+      "lessonId": "b1-goethe-subordinate-clauses-final-consecutive",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Er trainiert täglich, ___ seine Ausdauer für den Marathon zu verbessern.",
+        "correctAnswer": "um"
+      }
+    },
+    {
+      "id": "b1-goethe-subordinate-clauses-final-consecutive__ex2",
+      "lessonId": "b1-goethe-subordinate-clauses-final-consecutive",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Die Nachfrage nach Solaranlagen war extrem hoch, ___ es zu langen Lieferzeiten kam. (sodass / weil)",
+        "correctAnswer": "sodass"
+      }
+    },
+    {
+      "id": "b1-goethe-subordinate-clauses-final-consecutive__ex3",
+      "lessonId": "b1-goethe-subordinate-clauses-final-consecutive",
+      "track": "goethe",
+      "type": "flashcard",
+      "content": {
+        "front": "so + Adjektiv..., dass...",
+        "back": "so [adjective]... that... (consecutive structure expressing result)"
+      }
+    },
+    {
+      "id": "b1-goethe-subordinate-clauses-final-consecutive__ex4",
+      "lessonId": "b1-goethe-subordinate-clauses-final-consecutive",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Write a sentence using 'damit' explaining why parents provide their children with pocket money.",
+        "modelAnswer": "Eltern geben ihren Kindern Taschengeld, damit sie den selbstständigen Umgang mit Geld lernen."
+      }
+    },
+    {
+      "id": "b1-goethe-causal-concessive-connectors__ex0",
+      "lessonId": "b1-goethe-causal-concessive-connectors",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Satz zeigt die korrekte Inversion mit 'deshalb'?",
+        "options": [
+          "Deshalb ich habe mich für den Kurs angemeldet.",
+          "Deshalb habe ich mich für den Kurs angemeldet.",
+          "Deshalb habe für den Kurs mich angemeldet ich.",
+          "Ich deshalb habe mich angemeldet."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-goethe-causal-concessive-connectors__ex1",
+      "lessonId": "b1-goethe-causal-concessive-connectors",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Es regnete in Strömen, ___ machten die Wanderer einen langen Spaziergang. (Trotzdem / Obwohl)",
+        "correctAnswer": "Trotzdem"
+      }
+    },
+    {
+      "id": "b1-goethe-causal-concessive-connectors__ex2",
+      "lessonId": "b1-goethe-causal-concessive-connectors",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "___ viele Bürger für mehr Klimaschutz sind, verzichten wenige auf Flugreisen. (Nebensatz-Konnektor)",
+        "correctAnswer": "Obwohl"
+      }
+    },
+    {
+      "id": "b1-goethe-causal-concessive-connectors__ex3",
+      "lessonId": "b1-goethe-causal-concessive-connectors",
+      "track": "goethe",
+      "type": "flashcard",
+      "content": {
+        "front": "trotzdem (Position 1) vs. obwohl (Nebensatz)",
+        "back": "trotzdem: verb immediately follows (trotzdem ging er); obwohl: verb at the very end (obwohl er ging)"
+      }
+    },
+    {
+      "id": "b1-goethe-causal-concessive-connectors__ex4",
+      "lessonId": "b1-goethe-causal-concessive-connectors",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Express that organic food is expensive, but you buy it anyway, using 'deshalb' or 'trotzdem'.",
+        "modelAnswer": "Bio-Lebensmittel sind teuer, trotzdem kaufe ich sie regelmäßig."
+      }
+    },
+    {
+      "id": "b1-goethe-relative-clauses-indefinite-pronouns__ex0",
+      "lessonId": "b1-goethe-relative-clauses-indefinite-pronouns",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welches Relativpronomen ist nach 'alles' grammatikalisch zwingend? 'Das ist alles, ___ wir wissen.'",
+        "options": [
+          "das",
+          "was",
+          "welches",
+          "dass"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-goethe-relative-clauses-indefinite-pronouns__ex1",
+      "lessonId": "b1-goethe-relative-clauses-indefinite-pronouns",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Er hat sich für sein unhöfliches Verhalten entschuldigt, ___ ich sehr geschätzt habe.",
+        "correctAnswer": "was"
+      }
+    },
+    {
+      "id": "b1-goethe-relative-clauses-indefinite-pronouns__ex2",
+      "lessonId": "b1-goethe-relative-clauses-indefinite-pronouns",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Gibt es etwas, ___ du dich besonders fürchtest? (wovor / worüber)",
+        "correctAnswer": "wovor"
+      }
+    },
+    {
+      "id": "b1-goethe-relative-clauses-indefinite-pronouns__ex3",
+      "lessonId": "b1-goethe-relative-clauses-indefinite-pronouns",
+      "track": "goethe",
+      "type": "flashcard",
+      "content": {
+        "front": "Relativpronomen nach nichts / alles / etwas",
+        "back": "immer 'was' (z.B. nichts, was; etwas, was)"
+      }
+    },
+    {
+      "id": "b1-goethe-relative-clauses-indefinite-pronouns__ex4",
+      "lessonId": "b1-goethe-relative-clauses-indefinite-pronouns",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Complete the sentence with a relative clause referring to the whole thought: 'Er hilft mir immer beim Lernen, ... (which pleases me a lot)'.",
+        "modelAnswer": "Er hilft mir immer beim Lernen, was mich sehr freut."
+      }
+    },
+    {
+      "id": "b1-goethe-subjunctive-ii-advice-opinions__ex0",
+      "lessonId": "b1-goethe-subjunctive-ii-advice-opinions",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Form von 'sollen' drückt einen höflichen Ratschlag im Konjunktiv II aus? 'Du ___ früher schlafen gehen.'",
+        "options": [
+          "sollst",
+          "solltest",
+          "würdest sollen",
+          "sollt"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-goethe-subjunctive-ii-advice-opinions__ex1",
+      "lessonId": "b1-goethe-subjunctive-ii-advice-opinions",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Meines Erachtens ___ man den Müll viel konsequenter trennen. (sollte / müsste)",
+        "correctAnswer": "sollte"
+      }
+    },
+    {
+      "id": "b1-goethe-subjunctive-ii-advice-opinions__ex2",
+      "lessonId": "b1-goethe-subjunctive-ii-advice-opinions",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Wir ___ am Samstag zusammen kochen, wenn du Zeit hast. (könnten / sollten)",
+        "correctAnswer": "könnten"
+      }
+    },
+    {
+      "id": "b1-goethe-subjunctive-ii-advice-opinions__ex3",
+      "lessonId": "b1-goethe-subjunctive-ii-advice-opinions",
+      "track": "goethe",
+      "type": "flashcard",
+      "content": {
+        "front": "Meiner Auffassung nach sollte man...",
+        "back": "In my opinion, one should... (ideal phrase for writing task 2 / speaking presentation)"
+      }
+    },
+    {
+      "id": "b1-goethe-subjunctive-ii-advice-opinions__ex4",
+      "lessonId": "b1-goethe-subjunctive-ii-advice-opinions",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Give advice to someone suffering from work-related stress using 'sollte'.",
+        "modelAnswer": "Du solltest regelmäßige Pausen einlegen und am Abend keine geschäftlichen E-Mails mehr lesen."
+      }
+    },
+    {
+      "id": "b1-goethe-participles-as-adjectives__ex0",
+      "lessonId": "b1-goethe-participles-as-adjectives",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welches Partizip beschreibt einen aktiven, gegenwärtigen Vorgang? 'Die ___ Zahlen belegen den Trend.'",
+        "options": [
+          "gestiegenen",
+          "steigenden",
+          "steigen",
+          "gestiegene"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-goethe-participles-as-adjectives__ex1",
+      "lessonId": "b1-goethe-participles-as-adjectives",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Wir haben in einem wunderschön ___ Hotel gewohnt. (renovieren, Partizip II)",
+        "correctAnswer": "renovierten"
+      }
+    },
+    {
+      "id": "b1-goethe-participles-as-adjectives__ex2",
+      "lessonId": "b1-goethe-participles-as-adjectives",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Die am Bahnhof ___ Passagiere warteten ungeduldig auf den Anschlusszug. (ankommen, Partizip II)",
+        "correctAnswer": "angekommenen"
+      }
+    },
+    {
+      "id": "b1-goethe-participles-as-adjectives__ex3",
+      "lessonId": "b1-goethe-participles-as-adjectives",
+      "track": "goethe",
+      "type": "flashcard",
+      "content": {
+        "front": "Partizip I Bildung",
+        "back": "Infinitiv + d + Adjektivendung (z.B. spiel-en-d-e Kinder)"
+      }
+    },
+    {
+      "id": "b1-goethe-participles-as-adjectives__ex4",
+      "lessonId": "b1-goethe-participles-as-adjectives",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulate a sentence using the phrase 'das reparierte Auto'.",
+        "modelAnswer": "Mein Vater holt heute Nachmittag das reparierte Auto aus der Werkstatt ab."
+      }
+    },
+    {
+      "id": "b1-goethe-vocab-social-trends-relationships__ex0",
+      "lessonId": "b1-goethe-vocab-social-trends-relationships",
+      "track": "goethe",
+      "type": "flashcard",
+      "content": {
+        "front": "das Ehrenamt / ehrenamtlich tätig sein",
+        "back": "voluntary service / to work as an unpaid volunteer"
+      }
+    },
+    {
+      "id": "b1-goethe-vocab-social-trends-relationships__ex1",
+      "lessonId": "b1-goethe-vocab-social-trends-relationships",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was versteht man unter einer 'WG' (Wohngemeinschaft)?",
+        "options": [
+          "Ein Wohnheim nur für ältere Bürger",
+          "Eine Wohnung, in der sich mehrere Personen Küche, Bad und Kosten teilen",
+          "Ein Einfamilienhaus auf dem Land",
+          "Ein Hotelzimmer"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-goethe-vocab-social-trends-relationships__ex2",
+      "lessonId": "b1-goethe-vocab-social-trends-relationships",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Immer mehr junge Menschen streben danach, frühzeitig finanziell ___ zu sein. (independent)",
+        "correctAnswer": "unabhängig"
+      }
+    },
+    {
+      "id": "b1-goethe-vocab-social-trends-relationships__ex3",
+      "lessonId": "b1-goethe-vocab-social-trends-relationships",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "In vielen Städten engagieren sich Bürger im ___, um Bedürftigen zu helfen. (Ehrenamt / Verein)",
+        "correctAnswer": "Ehrenamt"
+      }
+    },
+    {
+      "id": "b1-goethe-vocab-social-trends-relationships__ex4",
+      "lessonId": "b1-goethe-vocab-social-trends-relationships",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "State one advantage and one disadvantage of living in a shared flat (WG).",
+        "modelAnswer": "In einer WG spart man Miete und ist nicht einsam, aber man hat oft weniger Privatsphäre."
+      }
+    },
+    {
+      "id": "b1-goethe-vocab-consumerism-environment__ex0",
+      "lessonId": "b1-goethe-vocab-consumerism-environment",
+      "track": "goethe",
+      "type": "flashcard",
+      "content": {
+        "front": "die Wegwerfgesellschaft",
+        "back": "throwaway society (culture characterized by short-lived goods and excessive waste)"
+      }
+    },
+    {
+      "id": "b1-goethe-vocab-consumerism-environment__ex1",
+      "lessonId": "b1-goethe-vocab-consumerism-environment",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was bedeutet das Wort 'Verzicht'?",
+        "options": [
+          "Freiwillig auf etwas verzichten / etwas nicht in Anspruch nehmen",
+          "Möglichst viel einkaufen",
+          "Einen Kredit aufnehmen",
+          "Alte Dinge wegwerfen"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "b1-goethe-vocab-consumerism-environment__ex2",
+      "lessonId": "b1-goethe-vocab-consumerism-environment",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Elektrogeräte mit hoher Energieeffizienzklasse ___ den monatlichen Stromverbrauch. (senken / erhöhen)",
+        "correctAnswer": "senken"
+      }
+    },
+    {
+      "id": "b1-goethe-vocab-consumerism-environment__ex3",
+      "lessonId": "b1-goethe-vocab-consumerism-environment",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Immer mehr Konsumenten hinterfragen ihr eigenes ___ und kaufen gezielt Secondhand-Waren. (consumer behavior)",
+        "correctAnswer": "Konsumverhalten"
+      }
+    },
+    {
+      "id": "b1-goethe-vocab-consumerism-environment__ex4",
+      "lessonId": "b1-goethe-vocab-consumerism-environment",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Express your view on whether packaging should be banned in supermarkets.",
+        "modelAnswer": "Meiner Ansicht nach sollten Supermärkte unnötige Plastikverpackungen verbieten, um die Müllberge zu verringern."
+      }
+    },
+    {
+      "id": "b1-goethe-vocab-education-career-training__ex0",
+      "lessonId": "b1-goethe-vocab-education-career-training",
+      "track": "goethe",
+      "type": "flashcard",
+      "content": {
+        "front": "das duale System",
+        "back": "dual vocational training system (combining vocational school theory with in-company training)"
+      }
+    },
+    {
+      "id": "b1-goethe-vocab-education-career-training__ex1",
+      "lessonId": "b1-goethe-vocab-education-career-training",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was bedeutet 'eine Prüfung bestehen'?",
+        "options": [
+          "Durch eine Prüfung fallen",
+          "Eine Prüfung erfolgreich abschließen",
+          "Eine Prüfung verschieben",
+          "Gar nicht erst zum Test erscheinen"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-goethe-vocab-education-career-training__ex2",
+      "lessonId": "b1-goethe-vocab-education-career-training",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Im heutigen Arbeitsmarkt muss man bereit sein, sich ständig neues Wissen ___ . (anzueignen / zu vergessen)",
+        "correctAnswer": "anzueignen"
+      }
+    },
+    {
+      "id": "b1-goethe-vocab-education-career-training__ex3",
+      "lessonId": "b1-goethe-vocab-education-career-training",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Gute Fremdsprachenkenntnisse verbessern die beruflichen ___ erheblich. (opportunities for advancement)",
+        "correctAnswer": "Aufstiegschancen"
+      }
+    },
+    {
+      "id": "b1-goethe-vocab-education-career-training__ex4",
+      "lessonId": "b1-goethe-vocab-education-career-training",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulate a sentence about whether you prefer practical work or theoretical study.",
+        "modelAnswer": "Ich bevorzuge eine praktische Ausbildung, weil ich dabei mein Wissen direkt im Beruf anwenden kann."
+      }
+    },
+    {
+      "id": "b1-goethe-reading-teil1-blog-narrative__ex0",
+      "lessonId": "b1-goethe-reading-teil1-blog-narrative",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Text: 'Nachdem ich monatelang gezögert hatte, kündigte ich schließlich meinen sicheren Bürojob, um eine Ausbildung zum Koch zu beginnen. Ich habe diesen radikalen Schritt keinen einzigen Tag bereut.' - Aussage: Der Verfasser ist mit seinem Berufswechsel sehr zufrieden.",
+        "options": [
+          "Richtig",
+          "Falsch"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "b1-goethe-reading-teil1-blog-narrative__ex1",
+      "lessonId": "b1-goethe-reading-teil1-blog-narrative",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Text: 'Eigentlich wollten wir das Wochenende an der Ostsee verbringen, aber wegen eines Unwetters blieben wir zu Hause und renovierten stattdessen die Küche.' - Aussage: Die Familie verbrachte das Wochenende am Strand.",
+        "options": [
+          "Richtig",
+          "Falsch"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-goethe-reading-teil1-blog-narrative__ex2",
+      "lessonId": "b1-goethe-reading-teil1-blog-narrative",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Explain how contrasting words like 'doch', 'allerdings', or 'aber' help you determine if an author's initial feeling changed.",
+        "modelAnswer": "Diese Wörter leiten einen Umschwung oder eine Einschränkung ein und zeigen, dass die Situation anders ausgegangen ist als ursprünglich geplant."
+      }
+    },
+    {
+      "id": "b1-goethe-reading-teil2-press-articles__ex0",
+      "lessonId": "b1-goethe-reading-teil2-press-articles",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Text: 'Während viele Einzelhändler über sinkende Umsätze klagen, meldet der Buchhandel überraschend stabile Zahlen, was vor allem an der großen Beliebtheit von Jugendbüchern liegt.' - Warum sind die Umsätze im Buchhandel stabil?",
+        "options": [
+          "Weil alle Einzelhändler ihre Preise gesenkt haben.",
+          "Weil sich Bücher für Kinder und Jugendliche besonders gut verkaufen.",
+          "Weil Erwachsene viel mehr Sachbücher lesen als früher."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-goethe-reading-teil2-press-articles__ex1",
+      "lessonId": "b1-goethe-reading-teil2-press-articles",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Text: 'Die Stadtverwaltung plant, ab dem kommenden Jahr den Eintritt in städtische Museen für Jugendliche bis 18 Jahre komplett kostenfrei zu gestalten.' - Was ist ab nächstem Jahr geplant?",
+        "options": [
+          "Museen werden nur noch für Jugendliche geöffnet sein.",
+          "Jugendliche unter 18 Jahren müssen im Museum nichts mehr bezahlen.",
+          "Alle Museumsbesucher erhalten eine Vergünstigung."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-goethe-reading-teil2-press-articles__ex2",
+      "lessonId": "b1-goethe-reading-teil2-press-articles",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Im Goethe Lesen Teil 2 bearbeitet man insgesamt ___ Pressetexte mit jeweils drei Multiple-Choice-Aufgaben. (number: zwei)",
+        "correctAnswer": "zwei"
+      }
+    },
+    {
+      "id": "b1-goethe-reading-teil3-classifieds-matching__ex0",
+      "lessonId": "b1-goethe-reading-teil3-classifieds-matching",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Person: 'Familie Graf sucht eine Betreuung für ihren Hund während des zweiwöchigen Sommerurlaubs.' Anzeige A: 'Tierpension Sonnenschein: Liebevolle Urlaubsbetreuung für Hunde und Katzen mit großem Auslauf.' Anzeige B: 'Hundeschule Welpe: Erziehungskurse für junge Hunde jeden Mittwoch.' Welche Anzeige passt?",
+        "options": [
+          "Anzeige A",
+          "Anzeige B",
+          "0 (keine Anzeige)"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "b1-goethe-reading-teil3-classifieds-matching__ex1",
+      "lessonId": "b1-goethe-reading-teil3-classifieds-matching",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Person: 'Ein Berufstätiger sucht samstags einen Yoga-Kurs am frühen Vormittag.' Alle vorliegenden Anzeigen bieten Yoga nur werktags ab 18 Uhr an. Welche Lösung wählen Sie?",
+        "options": [
+          "Anzeige E",
+          "Anzeige H",
+          "0 (keine Anzeige)"
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "b1-goethe-reading-teil3-classifieds-matching__ex2",
+      "lessonId": "b1-goethe-reading-teil3-classifieds-matching",
+      "track": "goethe",
+      "type": "flashcard",
+      "content": {
+        "front": "Die Option '0' in Goethe Lesen Teil 3",
+        "back": "Bedeutet: Für diese konkrete Person existiert im gesamten Anzeigenangebot keine adäquate Lösung."
+      }
+    },
+    {
+      "id": "b1-goethe-reading-teil4-forum-comments__ex0",
+      "lessonId": "b1-goethe-reading-teil4-forum-comments",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Thema: 'Konsumverzicht: Brauchen wir autofreie Sonntage?' Leserkommentar: 'Es ist herrlich, wenn die Straßen einmal im Monat den Spaziergängern und Inlineskatern gehören. Die Ruhe und die saubere Luft tun allen gut.' - Welche Meinung vertritt der Leser?",
+        "options": [
+          "Ja (zustimmend)",
+          "Nein (ablehnend)"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "b1-goethe-reading-teil4-forum-comments__ex1",
+      "lessonId": "b1-goethe-reading-teil4-forum-comments",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Thema: 'Sollen Schulnoten abgeschafft werden?' Leserkommentar: 'Ohne Noten fehlt den Schülern jeder Ansporn zur Leistung und die spätere Berufswelt verlangt ohnehin Leistungsnachweise. Eine Abschaffung wäre unverantwortlich.' - Welche Haltung hat der Verfasser?",
+        "options": [
+          "Ja (dafür)",
+          "Nein (dagegen)"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-goethe-reading-teil4-forum-comments__ex2",
+      "lessonId": "b1-goethe-reading-teil4-forum-comments",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "In Goethe Lesen Teil 4 bewertet man sieben Kommentare ausschließlich mit den Optionen ___ oder Nein.",
+        "correctAnswer": "Ja"
+      }
+    },
+    {
+      "id": "b1-goethe-reading-teil5-rules-regulations__ex0",
+      "lessonId": "b1-goethe-reading-teil5-rules-regulations",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Hausordnung: 'Das Abstellen von Fahrrädern und Kinderwagen im Treppenhaus ist aus Brandschutzgründen nicht gestattet.' - Was bedeutet diese Regelung?",
+        "options": [
+          "Man darf Fahrräder nur nachts im Treppenhaus parken.",
+          "Fahrräder und Kinderwagen dürfen nicht im Treppenhaus abgestellt werden.",
+          "Kinderwagen dürfen überall stehen, Fahrräder nicht."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-goethe-reading-teil5-rules-regulations__ex1",
+      "lessonId": "b1-goethe-reading-teil5-rules-regulations",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Schwimmbadordnung: 'Kinder unter 7 Jahren haben nur in Begleitung einer erwachsenen Aufsichtsperson Zutritt.' - Wer darf das Schwimmbad besuchen?",
+        "options": [
+          "Siebenjährige Kinder ohne Begleitung",
+          "Sechsjährige Kinder nur zusammen mit einem Erwachsenen",
+          "Kinder dürfen das Schwimmbad grundsätzlich nicht betreten"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-goethe-reading-teil5-rules-regulations__ex2",
+      "lessonId": "b1-goethe-reading-teil5-rules-regulations",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Formulierung für 'verboten sein' in behördlichen Ordnungen: 'Das Rauchen ist hier strengstens ___.' (untersagt / gestattet)",
+        "correctAnswer": "untersagt"
+      }
+    },
+    {
+      "id": "b1-goethe-listening-teil1-daily-announcements__ex0",
+      "lessonId": "b1-goethe-listening-teil1-daily-announcements",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Hörtext (2x): 'Hier Praxis Dr. Bergmann. Wegen einer technischen Störung bleibt das Labor heute geschlossen. Termine zur Blutabnahme verschieben sich auf morgen ab 7:30 Uhr.' - Aufgabe: Finden heute Blutabnahmen statt?",
+        "options": [
+          "Richtig",
+          "Falsch"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-goethe-listening-teil1-daily-announcements__ex1",
+      "lessonId": "b1-goethe-listening-teil1-daily-announcements",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Gleicher Hörtext: Wann können Patienten morgen zur Blutabnahme kommen?",
+        "options": [
+          "Ab 7:00 Uhr",
+          "Ab 7:30 Uhr",
+          "Erst am Nachmittag"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-goethe-listening-teil1-daily-announcements__ex2",
+      "lessonId": "b1-goethe-listening-teil1-daily-announcements",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "In Goethe Hören Teil 1 hört man jeden der fünf kurzen Texte genau ___ Mal. (number: zwei)",
+        "correctAnswer": "zwei"
+      }
+    },
+    {
+      "id": "b1-goethe-listening-teil2-guided-tour-presentation__ex0",
+      "lessonId": "b1-goethe-listening-teil2-guided-tour-presentation",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Führung (nur 1x!): 'Wir beginnen unseren Rundgang im historischen Weinkeller aus dem 14. Jahrhundert. Danach steigen wir hinauf zum Turm. Am Ende der Tour haben Sie Gelegenheit, im Museumsshop Souvenirs zu erwerben.' - Wo beginnt die Führung?",
+        "options": [
+          "Auf dem Aussichtsturm",
+          "Im historischen Weinkeller",
+          "Im Museumsshop"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-goethe-listening-teil2-guided-tour-presentation__ex1",
+      "lessonId": "b1-goethe-listening-teil2-guided-tour-presentation",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Führung: 'Wegen Renovierungsarbeiten ist die Gemäldegalerie heute leider nicht zugänglich.' - Welcher Bereich ist geschlossen?",
+        "options": [
+          "Die Gemäldegalerie",
+          "Das Café",
+          "Der gesamte Schlossgarten"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "b1-goethe-listening-teil2-guided-tour-presentation__ex2",
+      "lessonId": "b1-goethe-listening-teil2-guided-tour-presentation",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Why is tracking transition markers (z.B. 'als Nächstes', 'anschließend') critical during the single-broadcast recording of Teil 2?",
+        "modelAnswer": "Weil diese Signale anzeigen, dass der Sprecher zum nächsten Thema und damit zur nächsten Prüfungsaufgabe übergeht."
+      }
+    },
+    {
+      "id": "b1-goethe-listening-teil3-casual-conversation__ex0",
+      "lessonId": "b1-goethe-listening-teil3-casual-conversation",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Gespräch (nur 1x!): Mann: 'Wollen wir am Freitagabend ins Kino gehen? Es läuft der neue Film von Wim Wenders.' Frau: 'Am Freitag muss ich leider lange arbeiten, aber Samstagabend hätte ich Zeit.' - Aussage: Die Frau möchte am Freitag ins Kino gehen.",
+        "options": [
+          "Richtig",
+          "Falsch"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-goethe-listening-teil3-casual-conversation__ex1",
+      "lessonId": "b1-goethe-listening-teil3-casual-conversation",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Gleiches Gespräch: Mann: 'Prima, dann reserviere ich die Karten für Samstag um acht.' - Aussage: Die beiden treffen sich am Samstag.",
+        "options": [
+          "Richtig",
+          "Falsch"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "b1-goethe-listening-teil3-casual-conversation__ex2",
+      "lessonId": "b1-goethe-listening-teil3-casual-conversation",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "In Goethe Hören Teil 3 bewertet man die sieben Aussagen ausschließlich mit Richtig oder ___ .",
+        "correctAnswer": "Falsch"
+      }
+    },
+    {
+      "id": "b1-goethe-listening-teil4-radio-discussion__ex0",
+      "lessonId": "b1-goethe-listening-teil4-radio-discussion",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Debatte (2x): Frau Sommer: 'Mitarbeiter, die von zu Hause arbeiten, leisten oft mehr unbezahlte Überstunden als im Büro.' - Wer äußert diese Feststellung?",
+        "options": [
+          "Die Moderatorin",
+          "Herr Wolf",
+          "Frau Sommer"
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "b1-goethe-listening-teil4-radio-discussion__ex1",
+      "lessonId": "b1-goethe-listening-teil4-radio-discussion",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Debatte: Moderatorin: 'Ich begrüße Sie herzlich zu unserer heutigen Diskussionsrunde über flexible Arbeitsmodelle.' - Wer leitet die Diskussion ein?",
+        "options": [
+          "Die Moderatorin",
+          "Herr Wolf",
+          "Frau Sommer"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "b1-goethe-listening-teil4-radio-discussion__ex2",
+      "lessonId": "b1-goethe-listening-teil4-radio-discussion",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Explain how noting voice characteristics during the first listening helps identify speakers in Goethe Teil 4.",
+        "modelAnswer": "Man unterscheidet Stimmlage und Geschlecht der Sprecher und notiert sofort, wer welche Position grundsätzlich befürwortet oder ablehnt."
+      }
+    },
+    {
+      "id": "b1-goethe-writing-aufgabe1-personal-email__ex0",
+      "lessonId": "b1-goethe-writing-aufgabe1-personal-email",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Begrüßung passt für eine persönliche E-Mail an eine Freundin in Aufgabe 1?",
+        "options": [
+          "Sehr geehrte Frau Müller,",
+          "Liebe Julia,",
+          "Hallo Herr Schmidt,",
+          "An alle Kollegen,"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-goethe-writing-aufgabe1-personal-email__ex1",
+      "lessonId": "b1-goethe-writing-aufgabe1-personal-email",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "In Goethe Schreiben Aufgabe 1 beträgt die geforderte Textlänge ungefähr ___ Wörter. (number: 80)",
+        "correctAnswer": "80"
+      }
+    },
+    {
+      "id": "b1-goethe-writing-aufgabe1-personal-email__ex2",
+      "lessonId": "b1-goethe-writing-aufgabe1-personal-email",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Draft an invitation sentence to your friend proposing a meetup next weekend to see your new apartment.",
+        "modelAnswer": "Hast du nicht Lust, mich nächstes Wochenende zu besuchen und meine neue Wohnung anzuschauen?"
+      }
+    },
+    {
+      "id": "b1-goethe-writing-aufgabe1-personal-email__ex3",
+      "lessonId": "b1-goethe-writing-aufgabe1-personal-email",
+      "track": "goethe",
+      "type": "flashcard",
+      "content": {
+        "front": "Struktur Goethe Schreiben Aufgabe 1",
+        "back": "Anrede -> 1. Leitpunkt (Ereignis) -> 2. Leitpunkt (Begründung/Gefühl) -> 3. Leitpunkt (Treffen) -> Schlussgruß"
+      }
+    },
+    {
+      "id": "b1-goethe-writing-aufgabe2-forum-opinion__ex0",
+      "lessonId": "b1-goethe-writing-aufgabe2-forum-opinion",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welches Stilelement gehört NICHT in einen Forumsbeitrag bei Aufgabe 2?",
+        "options": [
+          "Eine begründete persönliche Meinung",
+          "Argumente für und gegen ein Thema",
+          "Eine formelle Briefanrede wie 'Sehr geehrte Damen und Herren'",
+          "Beispiele aus dem Alltag"
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "b1-goethe-writing-aufgabe2-forum-opinion__ex1",
+      "lessonId": "b1-goethe-writing-aufgabe2-forum-opinion",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Phrase für die Einleitung: 'Zu dem viel diskutierten Thema möchte ich gerne meine ___ äußern.' (Meinung / Kündigung)",
+        "correctAnswer": "Meinung"
+      }
+    },
+    {
+      "id": "b1-goethe-writing-aufgabe2-forum-opinion__ex2",
+      "lessonId": "b1-goethe-writing-aufgabe2-forum-opinion",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "State your opinion in two sentences on whether public transport should be free in cities.",
+        "modelAnswer": "Meiner Auffassung nach sollte der Nahverkehr kostenlos sein, weil dadurch viele Autofahrer auf Busse und Bahnen umsteigen würden. Dies würde den Verkehr entlasten und die Umwelt schonen."
+      }
+    },
+    {
+      "id": "b1-goethe-writing-aufgabe2-forum-opinion__ex3",
+      "lessonId": "b1-goethe-writing-aufgabe2-forum-opinion",
+      "track": "goethe",
+      "type": "flashcard",
+      "content": {
+        "front": "Meinungsphrasen Aufgabe 2",
+        "back": "Ich bin der Auffassung, dass...; Ein wesentliches Argument dafür ist...; Aus diesen Gründen halte ich..."
+      }
+    },
+    {
+      "id": "b1-goethe-writing-aufgabe3-formal-apology-request__ex0",
+      "lessonId": "b1-goethe-writing-aufgabe3-formal-apology-request",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Textlänge wird für die formelle Kurznachricht in Aufgabe 3 gefordert?",
+        "options": [
+          "ca. 20 Wörter",
+          "ca. 40 Wörter",
+          "ca. 80 Wörter",
+          "mindestens 120 Wörter"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-goethe-writing-aufgabe3-formal-apology-request__ex1",
+      "lessonId": "b1-goethe-writing-aufgabe3-formal-apology-request",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Formelle Entschuldigung: 'Ich bitte Sie vielmals, mein gestriges Fehlen zu ___ .' (apologize/excuse)",
+        "correctAnswer": "entschuldigen"
+      }
+    },
+    {
+      "id": "b1-goethe-writing-aufgabe3-formal-apology-request__ex2",
+      "lessonId": "b1-goethe-writing-aufgabe3-formal-apology-request",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Write a complete formal email (ca. 40 words) to your language teacher, Herr Braun, explaining that you cannot attend class today due to an urgent doctor's appointment.",
+        "modelAnswer": "Sehr geehrter Herr Braun, leider kann ich heute nicht zum Unterricht kommen, da ich einen dringenden Arzttermin wahrnehmen muss. Ich bitte Sie, mein Fehlen zu entschuldigen. Schicken Sie mir freundlicherweise die Hausaufgaben per E-Mail? Mit freundlichen Grüßen."
+      }
+    },
+    {
+      "id": "b1-goethe-speaking-teil1-planning-together__ex0",
+      "lessonId": "b1-goethe-speaking-teil1-planning-together",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was sollten Sie tun, wenn Ihr Partner einen Vorschlag macht, den Sie unpraktisch finden?",
+        "options": [
+          "Den Partner ignorieren und das Thema wechseln.",
+          "Höflich widersprechen, den Einwand begründen und eine Alternative vorschlagen.",
+          "Einfach schweigen.",
+          "Aufstehen und den Prüfungsraum verlassen."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-goethe-speaking-teil1-planning-together__ex1",
+      "lessonId": "b1-goethe-speaking-teil1-planning-together",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Partnerfrage: 'Was ___ du von der Idee, einen Grillabend im Park zu organisieren?' (hältst / meinst)",
+        "correctAnswer": "hältst"
+      }
+    },
+    {
+      "id": "b1-goethe-speaking-teil1-planning-together__ex2",
+      "lessonId": "b1-goethe-speaking-teil1-planning-together",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Propose to your speaking partner that you should share the expenses for an upcoming party.",
+        "modelAnswer": "Wir sollten die Kosten für das Essen und die Getränke am besten gerecht unter allen Teilnehmern aufteilen."
+      }
+    },
+    {
+      "id": "b1-goethe-speaking-teil1-planning-together__ex3",
+      "lessonId": "b1-goethe-speaking-teil1-planning-together",
+      "track": "goethe",
+      "type": "flashcard",
+      "content": {
+        "front": "Reaktionsformeln Teil 1",
+        "back": "Ja, hervorragende Idee!; Das halte ich für schwierig, weil...; Was meinst du dazu?; Einigen wir uns auf..."
+      }
+    },
+    {
+      "id": "b1-goethe-speaking-teil2-monologic-presentation__ex0",
+      "lessonId": "b1-goethe-speaking-teil2-monologic-presentation",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Punkt gehört zwingend zur 5-teiligen Folienstruktur im Goethe Sprechen Teil 2?",
+        "options": [
+          "Ein Gedicht vortragen",
+          "Die Situation im Heimatland schildern",
+          "Den Prüfer nach seinem Urlaub fragen",
+          "Einen Zeitungsartikel laut vorlesen"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-goethe-speaking-teil2-monologic-presentation__ex1",
+      "lessonId": "b1-goethe-speaking-teil2-monologic-presentation",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Überleitung zur Folie 4: 'Nun komme ich zu den Vor- und ___ dieses Modells.' (advantages and disadvantages)",
+        "correctAnswer": "Nachteilen"
+      }
+    },
+    {
+      "id": "b1-goethe-speaking-teil2-monologic-presentation__ex2",
+      "lessonId": "b1-goethe-speaking-teil2-monologic-presentation",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulate a concluding sentence thanking the audience for their attention at the end of your presentation.",
+        "modelAnswer": "Damit bin ich am Ende meines Vortrags angelangt. Ich bedanke mich herzlich für Ihre Aufmerksamkeit und freue mich auf Ihre Fragen."
+      }
+    },
+    {
+      "id": "b1-goethe-speaking-teil2-monologic-presentation__ex3",
+      "lessonId": "b1-goethe-speaking-teil2-monologic-presentation",
+      "track": "goethe",
+      "type": "flashcard",
+      "content": {
+        "front": "Überleitung im Vortrag",
+        "back": "Nachdem ich über meine Erfahrungen gesprochen habe, möchte ich nun auf die Situation in meinem Heimatland eingehen."
+      }
+    },
+    {
+      "id": "b1-goethe-speaking-teil3-feedback-and-questions__ex0",
+      "lessonId": "b1-goethe-speaking-teil3-feedback-and-questions",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Aussage ist ein passendes Feedback für die Präsentation des Partners?",
+        "options": [
+          "Ich habe überhaupt nicht zugehört.",
+          "Vielen Dank für deine Präsentation! Ich fand besonders den Punkt mit den Vor- und Nachteilen sehr aufschlussreich.",
+          "Dein Vortrag war viel zu lang und langweilig.",
+          "Können wir jetzt nach Hause gehen?"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-goethe-speaking-teil3-feedback-and-questions__ex1",
+      "lessonId": "b1-goethe-speaking-teil3-feedback-and-questions",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Feedbackformel: 'Ich fand deinen Vortrag sehr interessant und hätte dazu noch eine ___ an dich.' (question)",
+        "correctAnswer": "Frage"
+      }
+    },
+    {
+      "id": "b1-goethe-speaking-teil3-feedback-and-questions__ex2",
+      "lessonId": "b1-goethe-speaking-teil3-feedback-and-questions",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Ask your partner a follow-up question regarding their presentation on public transport.",
+        "modelAnswer": "Denkst du, dass Busse und Bahnen in Zukunft vollkommen fahrerlos gesteuert werden können?"
+      }
+    },
+    {
+      "id": "b1-goethe-speaking-teil3-feedback-and-questions__ex3",
+      "lessonId": "b1-goethe-speaking-teil3-feedback-and-questions",
+      "track": "goethe",
+      "type": "flashcard",
+      "content": {
+        "front": "Reaktion auf Prüferfragen in Teil 3",
+        "back": "Ruhig durchatmen, Frage kurz bestätigen ('Das ist ein wichtiger Aspekt...') und präzise in 2-3 Sätzen mit Begründung antworten."
+      }
+    }
+  ],
+  "prerequisites": [
+    {
+      "lessonId": "b1-goethe-reading-teil1-blog-narrative",
+      "prerequisiteLessonId": "b1-goethe-causal-concessive-connectors"
+    },
+    {
+      "lessonId": "b1-goethe-reading-teil2-press-articles",
+      "prerequisiteLessonId": "b1-goethe-subordinate-clauses-final-consecutive"
+    },
+    {
+      "lessonId": "b1-goethe-reading-teil3-classifieds-matching",
+      "prerequisiteLessonId": "b1-goethe-vocab-education-career-training"
+    },
+    {
+      "lessonId": "b1-goethe-reading-teil4-forum-comments",
+      "prerequisiteLessonId": "b1-goethe-subjunctive-ii-advice-opinions"
+    },
+    {
+      "lessonId": "b1-goethe-reading-teil5-rules-regulations",
+      "prerequisiteLessonId": "b1-goethe-participles-as-adjectives"
+    },
+    {
+      "lessonId": "b1-goethe-listening-teil2-guided-tour-presentation",
+      "prerequisiteLessonId": "b1-goethe-vocab-consumerism-environment"
+    },
+    {
+      "lessonId": "b1-goethe-listening-teil3-casual-conversation",
+      "prerequisiteLessonId": "b1-goethe-vocab-social-trends-relationships"
+    },
+    {
+      "lessonId": "b1-goethe-listening-teil4-radio-discussion",
+      "prerequisiteLessonId": "b1-goethe-subjunctive-ii-advice-opinions"
+    },
+    {
+      "lessonId": "b1-goethe-writing-aufgabe1-personal-email",
+      "prerequisiteLessonId": "b1-goethe-causal-concessive-connectors"
+    },
+    {
+      "lessonId": "b1-goethe-writing-aufgabe1-personal-email",
+      "prerequisiteLessonId": "b1-goethe-vocab-social-trends-relationships"
+    },
+    {
+      "lessonId": "b1-goethe-writing-aufgabe2-forum-opinion",
+      "prerequisiteLessonId": "b1-goethe-subjunctive-ii-advice-opinions"
+    },
+    {
+      "lessonId": "b1-goethe-writing-aufgabe2-forum-opinion",
+      "prerequisiteLessonId": "b1-goethe-vocab-consumerism-environment"
+    },
+    {
+      "lessonId": "b1-goethe-writing-aufgabe3-formal-apology-request",
+      "prerequisiteLessonId": "b1-goethe-subjunctive-ii-advice-opinions"
+    },
+    {
+      "lessonId": "b1-goethe-speaking-teil1-planning-together",
+      "prerequisiteLessonId": "b1-goethe-subjunctive-ii-advice-opinions"
+    },
+    {
+      "lessonId": "b1-goethe-speaking-teil2-monologic-presentation",
+      "prerequisiteLessonId": "b1-goethe-causal-concessive-connectors"
+    },
+    {
+      "lessonId": "b1-goethe-speaking-teil2-monologic-presentation",
+      "prerequisiteLessonId": "b1-goethe-vocab-consumerism-environment"
+    },
+    {
+      "lessonId": "b1-goethe-speaking-teil3-feedback-and-questions",
+      "prerequisiteLessonId": "b1-goethe-speaking-teil2-monologic-presentation"
+    }
+  ]
+}

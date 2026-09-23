@@ -13,8 +13,8 @@ describe('/api/curriculum', () => {
     getDb().exec(`
       INSERT INTO milestones (id, track, level, title, order_index) VALUES ('generic-a1-m1', 'generic', 'A1', 'Basics', 0);
       INSERT INTO sections (id, milestone_id, title, order_index) VALUES ('generic-a1-m1-s1', 'generic-a1-m1', 'Greetings', 0);
-      INSERT INTO lessons (id, source_level, skill, title, explanation, examples) VALUES
-        ('a1-present-tense-regular', 'A1', 'grammar', 'Present tense', 'Explanation', '["ich lerne"]');
+      INSERT INTO lessons (id, track, source_level, skill, title, explanation, examples) VALUES
+        ('a1-present-tense-regular', 'generic', 'A1', 'grammar', 'Present tense', 'Explanation', '["ich lerne"]');
       INSERT INTO lesson_placements (lesson_id, section_id, order_index) VALUES ('a1-present-tense-regular', 'generic-a1-m1-s1', 0);
     `);
   });
