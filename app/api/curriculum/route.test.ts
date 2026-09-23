@@ -37,6 +37,20 @@ describe('/api/curriculum', () => {
     expect(body[0].sections[0].lessons[0].id).toBe('a1-present-tense-regular');
   });
 
+  it('returns 400, not 500, for an invalid track or level instead of reaching the DB', async () => {
+    const badTrack = await getTrackStructure(new Request('http://localhost'), {
+      params: { track: 'bogus', level: 'A1' },
+    });
+    expect(badTrack.status).toBe(400);
+    expect((await badTrack.json()).error).toBeTruthy();
+
+    const badLevel = await getTrackStructure(new Request('http://localhost'), {
+      params: { track: 'generic', level: 'Z9' },
+    });
+    expect(badLevel.status).toBe(400);
+    expect((await badLevel.json()).error).toBeTruthy();
+  });
+
   it('returns a lesson with exercises and prerequisites', async () => {
     const res = await getLesson(new Request('http://localhost/api/curriculum/lessons/a1-present-tense-regular?track=generic'), {
       params: { id: 'a1-present-tense-regular' },
