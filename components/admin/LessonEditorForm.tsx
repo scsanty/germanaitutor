@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import type { Track, CefrLevel } from '@/lib/types';
 import type { Skill } from '@/lib/curriculum/types';
+import { unsortedMilestoneId } from '@/lib/curriculum-admin/unsortedBucket';
 import { ExerciseEditor, type ExerciseFormEntry } from './ExerciseEditor';
 import { PrerequisitePicker, type PickableLesson } from './PrerequisitePicker';
 import { PlacementPicker, type PlacementMilestoneOption, type PlacementValue } from './PlacementPicker';
@@ -27,10 +28,6 @@ type TrackStructureResponse = {
   milestone: { id: string; title: string };
   sections: { section: { id: string; title: string }; lessons: { id: string; title: string }[] }[];
 }[];
-
-function unsortedIdFor(track: Track, sourceLevel: CefrLevel): string {
-  return `${track}-${sourceLevel.toLowerCase()}-unsorted`;
-}
 
 export function LessonEditorForm(
   props:
@@ -61,7 +58,7 @@ export function LessonEditorForm(
     fetch(`/api/curriculum/tracks/${track}/${sourceLevel}`)
       .then((r) => r.json())
       .then((structure: TrackStructureResponse) => {
-        const unsortedId = unsortedIdFor(track, sourceLevel);
+        const unsortedId = unsortedMilestoneId(track, sourceLevel);
         const realEntries = structure.filter((entry) => entry.milestone.id !== unsortedId);
         setMilestones(
           realEntries.map((entry) => ({
