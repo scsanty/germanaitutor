@@ -17,6 +17,7 @@ export default function AdminTrackLevelPage({ params }: { params: { track: strin
       <h1>
         {params.track} — {params.level}
       </h1>
+      <a href={`/admin/curriculum/${params.track}/${params.level}/new`}>+ New Lesson</a>
       {structure.map(({ milestone, sections }) => (
         <div key={milestone.id}>
           <h2>{milestone.title}</h2>
