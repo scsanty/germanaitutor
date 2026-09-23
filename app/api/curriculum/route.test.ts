@@ -45,6 +45,7 @@ describe('/api/curriculum', () => {
     expect(body.lesson.id).toBe('a1-present-tense-regular');
     expect(body.exercises).toEqual([]);
     expect(body.prerequisites).toEqual([]);
+    expect(body.conceptLinks).toEqual([]);
   });
 
   it('returns 404 for an unknown lesson', async () => {
