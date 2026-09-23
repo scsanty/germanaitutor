@@ -127,4 +127,23 @@ describe('/api/admin/curriculum/sections', () => {
       .all(milestoneId) as { id: string }[];
     expect(rows.map((r) => r.id)).toEqual([s2.id, s1.id]);
   });
+
+  it('reorders sections, rejecting a payload for the Unsorted milestone', async () => {
+    const unsortedMilestoneId = 'generic-a1-unsorted';
+    const unsortedSectionId = `${unsortedMilestoneId}-section`;
+    getDb().exec(
+      `INSERT INTO milestones (id, track, level, title, order_index) VALUES ('${unsortedMilestoneId}', 'generic', 'A1', 'Unsorted', 0)`
+    );
+    getDb().exec(
+      `INSERT INTO sections (id, milestone_id, title, order_index) VALUES ('${unsortedSectionId}', '${unsortedMilestoneId}', 'Unsorted', 0)`
+    );
+
+    const res = await reorder(
+      new Request('http://localhost', {
+        method: 'PATCH',
+        body: JSON.stringify({ milestoneId: unsortedMilestoneId, orderedIds: [unsortedSectionId] }),
+      })
+    );
+    expect(res.status).toBe(400);
+  });
 });
