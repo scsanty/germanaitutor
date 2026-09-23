@@ -23,15 +23,6 @@ export interface Section {
 export interface Lesson {
   id: string;
   track: Track;
-  /**
-   * Shared across every lesson (in any track) that covers the same underlying
-   * concept, per curricula/overlap-review.md MERGE decisions. Null means this
-   * lesson has no cross-track equivalent — completing it doesn't mark
-   * anything else complete. Lessons with the same non-null conceptId are
-   * otherwise fully independent rows (own explanation/examples/exercises);
-   * nothing about their content is merged, only completion status.
-   */
-  conceptId: string | null;
   sourceLevel: CefrLevel;
   skill: Skill;
   title: string;
@@ -91,4 +82,10 @@ export interface Exercise {
 export interface LessonPrerequisite {
   lessonId: string;
   prerequisiteLessonId: string;
+}
+
+export interface LessonConceptLink {
+  lessonAId: string;
+  lessonBId: string;
+  createdAt: string;
 }

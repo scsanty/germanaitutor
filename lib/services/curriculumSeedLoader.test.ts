@@ -10,7 +10,7 @@ function writeSeedFile(
   name: string,
   seedVersion: string,
   overrides: Partial<{
-    lessons: { id: string; track: string; conceptId: string | null; explanation: string | null }[];
+    lessons: { id: string; track: string; explanation: string | null }[];
     withMilestones: boolean;
   }> = {}
 ) {
@@ -38,7 +38,6 @@ function writeSeedFile(
         {
           id: 'l1',
           track: 'generic',
-          conceptId: null,
           sourceLevel: 'A1',
           skill: 'grammar',
           title: 'L1',
@@ -112,7 +111,6 @@ describe('loadSeedIfNeeded', () => {
         {
           id: 'l1-generic',
           track: 'generic',
-          conceptId: 'shared-concept',
           sourceLevel: 'A1',
           skill: 'grammar',
           title: 'L1 (generic)',
@@ -122,7 +120,6 @@ describe('loadSeedIfNeeded', () => {
         {
           id: 'l1-telc',
           track: 'telc',
-          conceptId: 'shared-concept',
           sourceLevel: 'A1',
           skill: 'grammar',
           title: 'L1 (telc)',
@@ -142,51 +139,5 @@ describe('loadSeedIfNeeded', () => {
 
     const overrideCount = db.prepare('SELECT count(*) as c FROM lesson_track_overrides').get() as { c: number };
     expect(overrideCount.c).toBe(0);
-  });
-
-  it('links lessons across tracks that share a concept_id', () => {
-    const db = createDbClient(':memory:');
-    const seedDir = mkdtempSync(join(tmpdir(), 'gait-seed-'));
-    writeSeedFile(seedDir, 'generic-a1.json', '1', {
-      withMilestones: false,
-      lessons: [
-        {
-          id: 'l1-generic',
-          track: 'generic',
-          conceptId: 'shared-concept',
-          sourceLevel: 'A1',
-          skill: 'grammar',
-          title: 'L1 (generic)',
-          explanation: 'a',
-          examples: null,
-        },
-        {
-          id: 'l1-telc',
-          track: 'telc',
-          conceptId: 'shared-concept',
-          sourceLevel: 'A1',
-          skill: 'grammar',
-          title: 'L1 (telc)',
-          explanation: 'b',
-          examples: null,
-        },
-        {
-          id: 'l1-goethe',
-          track: 'goethe',
-          conceptId: null,
-          sourceLevel: 'A1',
-          skill: 'grammar',
-          title: 'L1 (goethe)',
-          explanation: 'c',
-          examples: null,
-        },
-      ] as any,
-    });
-    loadSeedIfNeeded(db, seedDir);
-
-    const linked = db.prepare('SELECT id FROM lessons WHERE concept_id = ? ORDER BY id').all('shared-concept') as {
-      id: string;
-    }[];
-    expect(linked.map((r) => r.id)).toEqual(['l1-generic', 'l1-telc']);
   });
 });

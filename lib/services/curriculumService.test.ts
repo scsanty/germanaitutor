@@ -31,14 +31,13 @@ describe('curriculumService', () => {
     expect(structure[0].sections[0].lessons[0].id).toBe('a1-present-tense-regular');
   });
 
-  it('returns a lesson with its own track and concept_id', () => {
+  it('returns a lesson with its own track', () => {
     const db = createDbClient(':memory:');
     seedBasicTree(db);
     const service = createCurriculumService(db);
     const lesson = service.getLesson('a1-present-tense-regular', 'generic');
     expect(lesson?.explanation).toBe('Canonical explanation');
     expect(lesson?.track).toBe('generic');
-    expect(lesson?.conceptId).toBeNull();
   });
 
   it('returns null for a lesson that does not exist', () => {
@@ -46,18 +45,6 @@ describe('curriculumService', () => {
     seedBasicTree(db);
     const service = createCurriculumService(db);
     expect(service.getLesson('does-not-exist', 'generic')).toBeNull();
-  });
-
-  it('exposes a shared concept_id when the lesson has a cross-track equivalent', () => {
-    const db = createDbClient(':memory:');
-    seedBasicTree(db);
-    db.prepare('UPDATE lessons SET concept_id = ? WHERE id = ?').run(
-      'a1-present-tense-concept',
-      'a1-present-tense-regular'
-    );
-    const service = createCurriculumService(db);
-    const lesson = service.getLesson('a1-present-tense-regular', 'generic');
-    expect(lesson?.conceptId).toBe('a1-present-tense-concept');
   });
 
   it('returns all exercises for a lesson', () => {
