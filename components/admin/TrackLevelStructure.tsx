@@ -54,12 +54,13 @@ export function TrackLevelStructure({ track, level }: { track: Track; level: Cef
   async function renameMilestone(id: string, currentTitle: string) {
     const title = window.prompt('Rename milestone', currentTitle);
     if (!title) return;
-    await fetch(`/api/admin/curriculum/milestones/${id}`, {
+    const res = await fetch(`/api/admin/curriculum/milestones/${id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ title, description: null }),
     });
-    load();
+    if (res.ok) load();
+    else setError((await res.json()).error ?? 'Failed to rename milestone');
   }
 
   async function deleteMilestone(id: string) {
@@ -81,12 +82,13 @@ export function TrackLevelStructure({ track, level }: { track: Track; level: Cef
     const swapWith = index + direction;
     if (swapWith < 0 || swapWith >= ids.length) return;
     [ids[index], ids[swapWith]] = [ids[swapWith], ids[index]];
-    await fetch('/api/admin/curriculum/milestones/reorder', {
+    const res = await fetch('/api/admin/curriculum/milestones/reorder', {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ track, level, orderedIds: ids }),
     });
-    load();
+    if (res.ok) load();
+    else setError((await res.json()).error ?? 'Failed to reorder milestones');
   }
 
   async function createSection(milestoneId: string) {
@@ -108,12 +110,13 @@ export function TrackLevelStructure({ track, level }: { track: Track; level: Cef
   async function renameSection(id: string, currentTitle: string) {
     const title = window.prompt('Rename section', currentTitle);
     if (!title) return;
-    await fetch(`/api/admin/curriculum/sections/${id}`, {
+    const res = await fetch(`/api/admin/curriculum/sections/${id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ title, description: null }),
     });
-    load();
+    if (res.ok) load();
+    else setError((await res.json()).error ?? 'Failed to rename section');
   }
 
   async function deleteSection(milestoneId: string, id: string) {
@@ -137,12 +140,13 @@ export function TrackLevelStructure({ track, level }: { track: Track; level: Cef
     const swapWith = index + direction;
     if (swapWith < 0 || swapWith >= ids.length) return;
     [ids[index], ids[swapWith]] = [ids[swapWith], ids[index]];
-    await fetch('/api/admin/curriculum/sections/reorder', {
+    const res = await fetch('/api/admin/curriculum/sections/reorder', {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ milestoneId, orderedIds: ids }),
     });
-    load();
+    if (res.ok) load();
+    else setError((await res.json()).error ?? 'Failed to reorder sections');
   }
 
   return (
