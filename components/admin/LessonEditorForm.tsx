@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { Track, CefrLevel } from '@/lib/types';
 import type { Skill } from '@/lib/curriculum/types';
 import { unsortedMilestoneId } from '@/lib/curriculum-admin/unsortedBucket';
@@ -67,6 +67,11 @@ export function LessonEditorForm(
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
 
+  // Skips the placement/prerequisite reset below on the very first run of this effect (the
+  // initial mount), so an edit form's initially-loaded prerequisiteIds aren't immediately
+  // wiped out — only an actual track/level *change* after mount should clear them.
+  const isFirstRun = useRef(true);
+
   useEffect(() => {
     fetch(`/api/curriculum/tracks/${track}/${sourceLevel}`)
       .then((r) => r.json())
@@ -83,6 +88,17 @@ export function LessonEditorForm(
         const allLessons = structure.flatMap((entry) => entry.sections.flatMap((s) => s.lessons));
         setCandidates(allLessons.filter((lesson) => lesson.id !== lessonId));
       });
+
+    // A track/level change invalidates any placement and prerequisites chosen under the old
+    // track+level's structure — force the user to re-pick a placement (Save stays disabled
+    // until they do) in the new structure rather than silently filing the lesson under a
+    // section, or with prerequisites, that belong to the track/level it was just moved out of.
+    if (isFirstRun.current) {
+      isFirstRun.current = false;
+    } else {
+      setPlacement(null);
+      setPrerequisiteIds([]);
+    }
   }, [track, sourceLevel, lessonId]);
 
   async function handleSubmit(e: React.FormEvent) {
@@ -183,7 +199,7 @@ export function LessonEditorForm(
 
       <PrerequisitePicker candidates={candidates} selectedIds={prerequisiteIds} onChange={setPrerequisiteIds} />
 
-      <PlacementPicker milestones={milestones} onChange={setPlacement} />
+      <PlacementPicker key={`${track}-${sourceLevel}`} milestones={milestones} onChange={setPlacement} />
 
       <button type="submit" disabled={!placement || saving}>
         Save

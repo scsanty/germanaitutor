@@ -97,4 +97,42 @@ describe('LessonEditorForm', () => {
     await waitFor(() => expect(screen.getByLabelText('Milestone')).toBeInTheDocument());
     expect(screen.getByText('Save')).toBeDisabled();
   });
+
+  it('changing track after selecting a placement clears it and disables Save again', async () => {
+    render(<LessonEditorForm mode="create" initialTrack="generic" initialSourceLevel="A1" onSaved={vi.fn()} />);
+    await waitFor(() => expect(screen.getByLabelText('Milestone')).toBeInTheDocument());
+
+    fireEvent.change(screen.getByLabelText('Milestone'), { target: { value: 'm1' } });
+    fireEvent.change(screen.getByLabelText('Section'), { target: { value: 's1' } });
+    await waitFor(() => expect(screen.getByText('Save')).not.toBeDisabled());
+
+    fireEvent.change(screen.getByLabelText('Track'), { target: { value: 'telc' } });
+    await waitFor(() => expect(screen.getByText('Save')).toBeDisabled());
+    // The picker itself must also reset its own internal milestone/section selection — not
+    // just the emitted value — since it remounts fresh (key={track}-{sourceLevel}).
+    expect((screen.getByLabelText('Milestone') as HTMLSelectElement).value).toBe('');
+  });
+
+  it('preserves the initially-loaded prerequisites on mount in edit mode (the track/level reset only fires on an actual change)', async () => {
+    render(
+      <LessonEditorForm
+        mode="edit"
+        lessonId="a1-edited"
+        initial={{
+          slug: 'edited',
+          track: 'generic',
+          sourceLevel: 'A1',
+          skill: 'grammar',
+          title: 'Edited Lesson',
+          explanation: null,
+          examples: null,
+          exercises: [],
+          prerequisiteIds: ['a1-other'],
+        }}
+        onSaved={vi.fn()}
+      />
+    );
+    await waitFor(() => expect(screen.getByText('Prerequisites')).toBeInTheDocument());
+    expect(screen.getByLabelText('Other Lesson')).toBeChecked();
+  });
 });
