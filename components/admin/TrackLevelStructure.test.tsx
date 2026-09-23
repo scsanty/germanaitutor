@@ -103,4 +103,11 @@ describe('TrackLevelStructure', () => {
       expect(JSON.parse(postCall[1].body)).toEqual({ milestoneId: 'm1', title: 'Section 2', description: null });
     });
   });
+
+  it('switches to the Diagram tab', async () => {
+    render(<TrackLevelStructure track="generic" level="A1" />);
+    await waitFor(() => expect(screen.getByText('Milestone 1')).toBeInTheDocument());
+    fireEvent.click(screen.getByText('Diagram'));
+    await waitFor(() => expect(screen.getByRole('img', { name: 'generic A1 dependency diagram' })).toBeInTheDocument());
+  });
 });

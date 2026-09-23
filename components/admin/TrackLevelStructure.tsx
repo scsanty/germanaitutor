@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import type { Track, CefrLevel } from '@/lib/types';
+import { DependencyDiagram } from './DependencyDiagram';
 import { unsortedMilestoneId } from '@/lib/curriculum-admin/unsortedBucket';
 
 interface StructureLesson {
@@ -22,6 +23,7 @@ export function TrackLevelStructure({ track, level }: { track: Track; level: Cef
   const [newMilestoneTitle, setNewMilestoneTitle] = useState('');
   const [newSectionTitleFor, setNewSectionTitleFor] = useState<Record<string, string>>({});
   const [error, setError] = useState<string | null>(null);
+  const [tab, setTab] = useState<'tree' | 'diagram'>('tree');
 
   function load() {
     fetch(`/api/curriculum/tracks/${track}/${level}`)
@@ -155,8 +157,17 @@ export function TrackLevelStructure({ track, level }: { track: Track; level: Cef
         {track} — {level}
       </h1>
       <a href={`/admin/curriculum/${track}/${level}/new`}>+ New Lesson</a>
+      <button type="button" onClick={() => setTab('tree')}>
+        Tree
+      </button>
+      <button type="button" onClick={() => setTab('diagram')}>
+        Diagram
+      </button>
 
-      {structure.map((entry) => {
+      {tab === 'diagram' && <DependencyDiagram track={track} level={level} />}
+
+      {tab === 'tree' &&
+        structure.map((entry) => {
         const isUnsorted = entry.milestone.id === unsortedId;
         return (
           <div key={entry.milestone.id}>
@@ -220,7 +231,7 @@ export function TrackLevelStructure({ track, level }: { track: Track; level: Cef
             )}
           </div>
         );
-      })}
+        })}
 
       <div>
         <input
