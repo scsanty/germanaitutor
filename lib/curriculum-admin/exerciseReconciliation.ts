@@ -1,5 +1,6 @@
 import type Database from 'better-sqlite3';
-import type { Track, ExerciseType, ExerciseContent } from '../curriculum/types';
+import type { Track } from '../types';
+import type { ExerciseType, ExerciseContent } from '../curriculum/types';
 import { randomSuffix } from './randomId';
 
 export interface ExerciseInput {
