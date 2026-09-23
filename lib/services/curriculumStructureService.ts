@@ -155,8 +155,13 @@ export function createCurriculumStructureService(db: Database.Database) {
   }
 
   function createSection(milestoneId: string, title: string, description: string | null): Section {
-    const milestone = db.prepare('SELECT 1 FROM milestones WHERE id = ?').get(milestoneId);
+    const milestone = db.prepare('SELECT track, level FROM milestones WHERE id = ?').get(milestoneId) as
+      | { track: Track; level: CefrLevel }
+      | undefined;
     if (!milestone) throw new Error(`Milestone not found: ${milestoneId}`);
+    if (milestoneId === unsortedMilestoneId(milestone.track, milestone.level)) {
+      throw new Error('Cannot create a section under the Unsorted milestone');
+    }
     const id = `${milestoneId}-${randomSuffix()}`;
     const maxOrder = db
       .prepare('SELECT COALESCE(MAX(order_index), -1) as m FROM sections WHERE milestone_id = ?')
@@ -198,6 +203,13 @@ export function createCurriculumStructureService(db: Database.Database) {
   }
 
   function reorderSections(milestoneId: string, orderedIds: string[]): void {
+    const milestone = db.prepare('SELECT track, level FROM milestones WHERE id = ?').get(milestoneId) as {
+      track: Track;
+      level: CefrLevel;
+    };
+    if (milestoneId === unsortedMilestoneId(milestone.track, milestone.level)) {
+      throw new Error('Cannot reorder sections within the Unsorted milestone');
+    }
     const real = (db.prepare('SELECT id FROM sections WHERE milestone_id = ?').all(milestoneId) as { id: string }[]).map(
       (r) => r.id
     );

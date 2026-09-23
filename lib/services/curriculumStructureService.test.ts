@@ -154,4 +154,34 @@ describe('curriculumStructureService — sections', () => {
       .all(milestone.id) as { id: string }[];
     expect(rows.map((r) => r.id)).toEqual([s2.id, s1.id]);
   });
+
+  it('reorderSections rejects reordering within the Unsorted milestone', () => {
+    const db = createDbClient(':memory:');
+    const service = createCurriculumStructureService(db);
+    service.createMilestone('generic', 'A1', 'Basics', null); // forces getTrackStructure-independent creation path unnecessary; ensure Unsorted exists directly instead
+    const unsortedId = 'generic-a1-unsorted';
+    db.prepare(
+      "INSERT INTO milestones (id, track, level, title, order_index) VALUES (?, 'generic', 'A1', 'Unsorted', 0)"
+    ).run(unsortedId);
+    db.prepare(
+      "INSERT INTO sections (id, milestone_id, title, order_index) VALUES (?, ?, 'Unsorted', 0)"
+    ).run(`${unsortedId}-section`, unsortedId);
+
+    expect(() => service.reorderSections(unsortedId, [`${unsortedId}-section`])).toThrow();
+  });
+
+  it('createSection rejects creating a section under the Unsorted milestone', () => {
+    const db = createDbClient(':memory:');
+    const service = createCurriculumStructureService(db);
+    service.createMilestone('generic', 'A1', 'Basics', null); // forces getTrackStructure-independent creation path unnecessary; ensure Unsorted exists directly instead
+    const unsortedId = 'generic-a1-unsorted';
+    db.prepare(
+      "INSERT INTO milestones (id, track, level, title, order_index) VALUES (?, 'generic', 'A1', 'Unsorted', 0)"
+    ).run(unsortedId);
+    db.prepare(
+      "INSERT INTO sections (id, milestone_id, title, order_index) VALUES (?, ?, 'Unsorted', 0)"
+    ).run(`${unsortedId}-section`, unsortedId);
+
+    expect(() => service.createSection(unsortedId, 'Some Title', null)).toThrow();
+  });
 });
