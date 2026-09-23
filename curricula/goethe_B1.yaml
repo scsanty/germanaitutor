@@ -1,0 +1,701 @@
+track: goethe
+level: B1
+
+lessons:
+  - slug: goethe-subordinate-clauses-final-consecutive
+    skill: grammar
+    title: Final and Consecutive Clauses (damit, um... zu, sodass)
+    prerequisites: []
+    explanation: |
+      The Goethe B1 examination requires complex clause synthesis in argumentative writing and oral presentations.
+      Final clauses describe intention or purpose. Use 'damit' when the main clause subject and subordinate clause subject differ; when both subjects are identical, prefer the infinitive construction 'um... zu'.
+      Consecutive clauses indicate results or consequences using 'sodass' (or 'so..., dass'), which also places the conjugated verb at the end of the subordinate clause.
+    examples:
+      - "Die Eltern arbeiten hart, damit ihre Kinder an einer guten Universität studieren können."
+      - "Er spart jeden Cent, um sich im nächsten Sommer eine Sprachreise nach Wien leisten zu können."
+      - "Der Busfahrer bremste so abrupt, dass mehrere Fahrgäste das Gleichgewicht verloren."
+      - "Es schneite die ganze Nacht hindurch, sodass am Morgen viele Straßen unpassierbar waren."
+    exercises:
+      - type: multiple_choice
+        question: "Welcher Satz verbindet zwei unterschiedliche Subjekte final korrekt?"
+        options:
+          - "Ich lerne viel, um die Prüfung zu bestehen."
+          - "Die Lehrerin erklärt die Grammatik deutlich, damit alle Schüler sie verstehen."
+          - "Die Lehrerin erklärt die Grammatik, um die Schüler zu verstehen."
+          - "Ich beeile mich, damit ich nicht zu spät komme."
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Er trainiert täglich, ___ seine Ausdauer für den Marathon zu verbessern."
+        correctAnswer: "um"
+      - type: fill_blank
+        textWithBlank: "Die Nachfrage nach Solaranlagen war extrem hoch, ___ es zu langen Lieferzeiten kam. (sodass / weil)"
+        correctAnswer: "sodass"
+      - type: flashcard
+        front: "so + Adjektiv..., dass..."
+        back: "so [adjective]... that... (consecutive structure expressing result)"
+      - type: free_text
+        prompt: "Write a sentence using 'damit' explaining why parents provide their children with pocket money."
+        modelAnswer: "Eltern geben ihren Kindern Taschengeld, damit sie den selbstständigen Umgang mit Geld lernen."
+
+  - slug: goethe-causal-concessive-connectors
+    skill: grammar
+    title: "Discourse Connectors: Weil, Da, Obwohl, Trotzdem, Deshalb"
+    prerequisites: []
+    explanation: |
+      To express nuanced opinions in Goethe Schreiben (Aufgabe 2) and Sprechen (Teil 2), candidates must connect ideas using diverse causal and concessive markers.
+      'Weil' and 'da' (subordinators) trigger verb-final order.
+      'Deshalb', 'darum', and 'deswegen' (adverbial connectors) express consequence and trigger inversion (verb-second: Deshalb ging ich nach Hause).
+      'Obwohl' introduces a concessive subordinate clause (verb at end), whereas 'trotzdem' is an adverbial connector triggering verb-second inversion (Trotzdem ging ich zur Arbeit).
+    examples:
+      - "Obwohl Carsharing viele Vorzüge bietet, besitzen die meisten Familien weiterhin einen eigenen Pkw."
+      - "Das Angebot an öffentlichen Verkehrsmitteln auf dem Land ist mangelhaft. Deshalb sind viele Menschen auf das Auto angewiesen."
+      - "Die Mieten in den Großstädten sind stark gestiegen; trotzdem ziehen immer mehr junge Leute dorthin."
+      - "Da erneuerbare Energien kontinuierlich ausgebaut werden, sinkt der Ausstoß von Treibhausgasen."
+    exercises:
+      - type: multiple_choice
+        question: "Welcher Satz zeigt die korrekte Inversion mit 'deshalb'?"
+        options:
+          - "Deshalb ich habe mich für den Kurs angemeldet."
+          - "Deshalb habe ich mich für den Kurs angemeldet."
+          - "Deshalb habe für den Kurs mich angemeldet ich."
+          - "Ich deshalb habe mich angemeldet."
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Es regnete in Strömen, ___ machten die Wanderer einen langen Spaziergang. (Trotzdem / Obwohl)"
+        correctAnswer: "Trotzdem"
+      - type: fill_blank
+        textWithBlank: "___ viele Bürger für mehr Klimaschutz sind, verzichten wenige auf Flugreisen. (Nebensatz-Konnektor)"
+        correctAnswer: "Obwohl"
+      - type: flashcard
+        front: "trotzdem (Position 1) vs. obwohl (Nebensatz)"
+        back: "trotzdem: verb immediately follows (trotzdem ging er); obwohl: verb at the very end (obwohl er ging)"
+      - type: free_text
+        prompt: "Express that organic food is expensive, but you buy it anyway, using 'deshalb' or 'trotzdem'."
+        modelAnswer: "Bio-Lebensmittel sind teuer, trotzdem kaufe ich sie regelmäßig."
+
+  - slug: goethe-relative-clauses-indefinite-pronouns
+    skill: grammar
+    title: Relative Clauses with Indefinite Pronouns and Neutral References (was, alles)
+    prerequisites: []
+    explanation: |
+      In sophisticated B1 discourse, relative clauses frequently refer to indefinite neutral pronouns (alles, etwas, nichts, vieles, das) or to an entire preceding statement.
+      In these instances, the relative pronoun 'was' must be used instead of 'das' or 'welches'.
+      If the relative clause requires a preposition combined with a neutral indefinite referent, speakers use 'wo(r)-' + preposition (z.B. worüber, woran, wovon).
+    examples:
+      - "Das ist alles, was ich zu diesem Sachverhalt sagen kann."
+      - "Es gibt vieles, worüber die Politik heute intensiv debattieren muss."
+      - "Sie hat die anspruchsvolle B1-Prüfung auf Anhieb bestanden, was ihre Eltern sehr stolz machte."
+      - "Er erzählte mir etwas, woran ich mich beim besten Willen nicht mehr erinnern konnte."
+    exercises:
+      - type: multiple_choice
+        question: "Welches Relativpronomen ist nach 'alles' grammatikalisch zwingend? 'Das ist alles, ___ wir wissen.'"
+        options: ["das", "was", "welches", "dass"]
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Er hat sich für sein unhöfliches Verhalten entschuldigt, ___ ich sehr geschätzt habe."
+        correctAnswer: "was"
+      - type: fill_blank
+        textWithBlank: "Gibt es etwas, ___ du dich besonders fürchtest? (wovor / worüber)"
+        correctAnswer: "wovor"
+      - type: flashcard
+        front: "Relativpronomen nach nichts / alles / etwas"
+        back: "immer 'was' (z.B. nichts, was; etwas, was)"
+      - type: free_text
+        prompt: "Complete the sentence with a relative clause referring to the whole thought: 'Er hilft mir immer beim Lernen, ... (which pleases me a lot)'."
+        modelAnswer: "Er hilft mir immer beim Lernen, was mich sehr freut."
+
+  - slug: goethe-subjunctive-ii-advice-opinions
+    skill: grammar
+    title: Modals in Subjunctive II for Recommendations and Opinions
+    prerequisites: []
+    explanation: |
+      Expressing nuanced opinions and giving advice are central to the Goethe B1 writing and speaking rubrics.
+      Modal verbs in the Konjunktiv II form tentative evaluations, polite counter-proposals, and constructive recommendations:
+      - 'sollte / sollten': moral advice or sensible recommendation (Man sollte mehr Sport treiben).
+      - 'könnte / könnten': possibility or alternative suggestion (Wir könnten das Projekt gemeinsam angehen).
+      - 'müsste / müssten': necessity mitigated by politeness (Eigentlich müsste man den Vertrag überarbeiten).
+    examples:
+      - "Meiner Ansicht nach sollte die Stadtverwaltung mehr Mittel in den Ausbau von Fahrradwegen investieren."
+      - "Man könnte das Problem dadurch lösen, dass man flexiblere Arbeitszeiten anbietet."
+      - "Jugendliche sollten im Unterricht lernen, wie man seriöse von unseriösen Quellen im Internet unterscheidet."
+      - "Bevor wir eine endgültige Entscheidung treffen, müssten wir die Gesamtkosten genauer analysieren."
+    exercises:
+      - type: multiple_choice
+        question: "Welche Form von 'sollen' drückt einen höflichen Ratschlag im Konjunktiv II aus? 'Du ___ früher schlafen gehen.'"
+        options: ["sollst", "solltest", "würdest sollen", "sollt"]
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Meines Erachtens ___ man den Müll viel konsequenter trennen. (sollte / müsste)"
+        correctAnswer: "sollte"
+      - type: fill_blank
+        textWithBlank: "Wir ___ am Samstag zusammen kochen, wenn du Zeit hast. (könnten / sollten)"
+        correctAnswer: "könnten"
+      - type: flashcard
+        front: "Meiner Auffassung nach sollte man..."
+        back: "In my opinion, one should... (ideal phrase for writing task 2 / speaking presentation)"
+      - type: free_text
+        prompt: "Give advice to someone suffering from work-related stress using 'sollte'."
+        modelAnswer: "Du solltest regelmäßige Pausen einlegen und am Abend keine geschäftlichen E-Mails mehr lesen."
+
+  - slug: goethe-participles-as-adjectives
+    skill: grammar
+    title: Attributive Adjectives Formed from Participles (Partizip I und II)
+    prerequisites: []
+    explanation: |
+      In formal notices, institutional regulations (Goethe Lesen Teil 5), and journalistic prose, participles often function as attributive adjectives before nouns and must decline accordingly.
+      Partizip I (Infinitive + -d + adjective ending) denotes an ongoing, active process: 'die steigenden Preise', 'das schlafende Kind'.
+      Partizip II denotes a completed state or passive result: 'das renovierte Gebäude', 'die gebuchten Tickets'.
+    examples:
+      - "Die Bundesregierung plant neue Hilfsprogramme für Familien mit schulpflichtigen Kindern."
+      - "Wegen der ständig steigenden Energiekosten suchen viele Verbraucher nach Sparmöglichkeiten."
+      - "Bitte legen Sie beim Betreten des Gebäudes das ausgefüllte Anmeldeformular an der Rezeption vor."
+      - "Alle im Flugzeug verbliebenen Gegenstände können beim Fundbüro abgeholt werden."
+    exercises:
+      - type: multiple_choice
+        question: "Welches Partizip beschreibt einen aktiven, gegenwärtigen Vorgang? 'Die ___ Zahlen belegen den Trend.'"
+        options: ["gestiegenen", "steigenden", "steigen", "gestiegene"]
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Wir haben in einem wunderschön ___ Hotel gewohnt. (renovieren, Partizip II)"
+        correctAnswer: "renovierten"
+      - type: fill_blank
+        textWithBlank: "Die am Bahnhof ___ Passagiere warteten ungeduldig auf den Anschlusszug. (ankommen, Partizip II)"
+        correctAnswer: "angekommenen"
+      - type: flashcard
+        front: "Partizip I Bildung"
+        back: "Infinitiv + d + Adjektivendung (z.B. spiel-en-d-e Kinder)"
+      - type: free_text
+        prompt: "Formulate a sentence using the phrase 'das reparierte Auto'."
+        modelAnswer: "Mein Vater holt heute Nachmittag das reparierte Auto aus der Werkstatt ab."
+
+  - slug: goethe-vocab-social-trends-relationships
+    skill: vocabulary
+    title: Social Trends, Generations, and Cohabitation
+    prerequisites: []
+    explanation: |
+      Goethe B1 tests societal topics involving family models, social structures, and demographic change.
+      Key terms include: die Wohngemeinschaft / WG (shared flat), der Singlehaushalt (single-person household), die Mehrgenerationenfamilie (multi-generational family), and das Zusammenleben (cohabitation).
+      Concepts related to personal values include: das Ehrenamt (volunteering / voluntary work), die Einsamkeit (loneliness), der Zusammenhalt (solidarity/cohesion), and unabhängig sein (to be independent).
+    examples:
+      - "Viele Studierende und Berufseinsteiger in Großstädten entscheiden sich für das Leben in einer WG."
+      - "Der Anteil älterer Menschen in der Gesellschaft wächst stetig, was neue Wohnkonzepte erfordert."
+      - "Durch freiwilliges Engagement und ein Ehrenamt kann man neue Freundschaften schließen."
+      - "Ein harmonisches Zusammenleben verschiedener Generationen verlangt gegenseitigen Respekt und Toleranz."
+    exercises:
+      - type: flashcard
+        front: "das Ehrenamt / ehrenamtlich tätig sein"
+        back: "voluntary service / to work as an unpaid volunteer"
+      - type: multiple_choice
+        question: "Was versteht man unter einer 'WG' (Wohngemeinschaft)?"
+        options:
+          - "Ein Wohnheim nur für ältere Bürger"
+          - "Eine Wohnung, in der sich mehrere Personen Küche, Bad und Kosten teilen"
+          - "Ein Einfamilienhaus auf dem Land"
+          - "Ein Hotelzimmer"
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Immer mehr junge Menschen streben danach, frühzeitig finanziell ___ zu sein. (independent)"
+        correctAnswer: "unabhängig"
+      - type: fill_blank
+        textWithBlank: "In vielen Städten engagieren sich Bürger im ___, um Bedürftigen zu helfen. (Ehrenamt / Verein)"
+        correctAnswer: "Ehrenamt"
+      - type: free_text
+        prompt: "State one advantage and one disadvantage of living in a shared flat (WG)."
+        modelAnswer: "In einer WG spart man Miete und ist nicht einsam, aber man hat oft weniger Privatsphäre."
+
+  - slug: goethe-vocab-consumerism-environment
+    skill: vocabulary
+    title: Modern Consumption, Media Habits, and Ecological Awareness
+    prerequisites: []
+    explanation: |
+      Goethe B1 topics frequently touch upon mindful consumption, waste reduction, and the environmental footprint of digital technology.
+      Key terms encompass: das Konsumverhalten (consumer behavior), der Verzicht (renunciation/giving up), die Wegwerfgesellschaft (throwaway society), and unverpackte Lebensmittel (unpackaged groceries).
+      Evaluative vocabulary includes: umweltschädlich (harmful to the environment), energieeffizient (energy-efficient), and wiederverwertbar (recyclable/reusable).
+    examples:
+      - "Experten kritisieren die moderne Wegwerfgesellschaft, in der defekte Geräte sofort ersetzt werden."
+      - "Ein bewusster Verzicht auf überflüssigen Konsum schont nicht nur das Portemonnaie, sondern auch die Umwelt."
+      - "Unverpackt-Läden bieten Kunden die Möglichkeit, alltägliche Lebensmittel ohne Plastikmüll einzukaufen."
+      - "Der Einsatz energieeffizienter Elektrogeräte senkt den Stromverbrauch im Haushalt beträchtlich."
+    exercises:
+      - type: flashcard
+        front: "die Wegwerfgesellschaft"
+        back: "throwaway society (culture characterized by short-lived goods and excessive waste)"
+      - type: multiple_choice
+        question: "Was bedeutet das Wort 'Verzicht'?"
+        options:
+          - "Freiwillig auf etwas verzichten / etwas nicht in Anspruch nehmen"
+          - "Möglichst viel einkaufen"
+          - "Einen Kredit aufnehmen"
+          - "Alte Dinge wegwerfen"
+        correctIndex: 0
+      - type: fill_blank
+        textWithBlank: "Elektrogeräte mit hoher Energieeffizienzklasse ___ den monatlichen Stromverbrauch. (senken / erhöhen)"
+        correctAnswer: "senken"
+      - type: fill_blank
+        textWithBlank: "Immer mehr Konsumenten hinterfragen ihr eigenes ___ und kaufen gezielt Secondhand-Waren. (consumer behavior)"
+        correctAnswer: "Konsumverhalten"
+      - type: free_text
+        prompt: "Express your view on whether packaging should be banned in supermarkets."
+        modelAnswer: "Meiner Ansicht nach sollten Supermärkte unnötige Plastikverpackungen verbieten, um die Müllberge zu verringern."
+
+  - slug: goethe-vocab-education-career-training
+    skill: vocabulary
+    title: Education Paths, Vocational Training, and Lifelong Learning
+    prerequisites: []
+    explanation: |
+      Discussions in the Goethe exam regularly address vocational training, university education, and lifelong skill development.
+      Key terminology covers: das duale Ausbildungssystem (dual vocational system combining trade school and practical company work), der Schulabschluss (school-leaving qualification), die Weiterbildung (further training/continuing education), and die Aufstiegschancen (opportunities for advancement).
+      Standard collocations include: 'eine Prüfung ablegen/bestehen' (to sit/pass an exam), 'Erfahrungen sammeln' (to gain experience), and 'sich Kenntnisse aneignen' (to acquire knowledge).
+    examples:
+      - "Das duale Ausbildungssystem in Deutschland kombiniert theoretischen Unterricht in der Berufsschule mit praktischer Arbeit im Betrieb."
+      - "Lebenslanges Lernen und regelmäßige Weiterbildung sind im modernen Berufsleben unerlässlich."
+      - "Nach erfolgreichem Hochschulabschluss bieten sich jungen Absolventen vielfältige Aufstiegschancen."
+      - "Er hat sich entschieden, neben dem Beruf ein Fernstudium zu absolvieren."
+    exercises:
+      - type: flashcard
+        front: "das duale System"
+        back: "dual vocational training system (combining vocational school theory with in-company training)"
+      - type: multiple_choice
+        question: "Was bedeutet 'eine Prüfung bestehen'?"
+        options:
+          - "Durch eine Prüfung fallen"
+          - "Eine Prüfung erfolgreich abschließen"
+          - "Eine Prüfung verschieben"
+          - "Gar nicht erst zum Test erscheinen"
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Im heutigen Arbeitsmarkt muss man bereit sein, sich ständig neues Wissen ___ . (anzueignen / zu vergessen)"
+        correctAnswer: "anzueignen"
+      - type: fill_blank
+        textWithBlank: "Gute Fremdsprachenkenntnisse verbessern die beruflichen ___ erheblich. (opportunities for advancement)"
+        correctAnswer: "Aufstiegschancen"
+      - type: free_text
+        prompt: "Formulate a sentence about whether you prefer practical work or theoretical study."
+        modelAnswer: "Ich bevorzuge eine praktische Ausbildung, weil ich dabei mein Wissen direkt im Beruf anwenden kann."
+
+  - slug: goethe-reading-teil1-blog-narrative
+    skill: reading
+    title: Understanding Narrative Texts and Personal Blogs (Goethe Lesen Teil 1)
+    prerequisites: [goethe-causal-concessive-connectors]
+    explanation: |
+      In Goethe Lesen Teil 1, candidates read a personal text of approximately 350 words (such as a travel blog, diary entry, or personal narrative) and evaluate six statements as Richtig or Falsch.
+      Tasks assess selective comprehension of personal reflections, sequences of events, feelings, and concrete outcomes.
+      Watch out for temporal adverbs (z.B. früher, damals, mittlerweile) and emotional attitudes that clarify whether an experience turned out positively or negatively.
+    examples:
+      - "Blogtext: 'Als ich vor drei Jahren nach Wien zog, fühlte ich mich anfangs fremd. Doch sobald ich mich im örtlichen Sportverein anmeldete, fand ich schnell herzliche Freunde.' - Aussage: Der Autor fand sofort am ersten Tag in Wien viele Freunde. -> Falsch."
+      - "Blogtext: 'Die anstrengende Wanderung auf den Berggipfel hat sich gelohnt: Der Panoramablick bei Sonnenaufgang war unvergesslich.' - Aussage: Der Autor empfand die Bergtour letztlich als ein lohnendes Erlebnis. -> Richtig."
+    exercises:
+      - type: multiple_choice
+        question: "Text: 'Nachdem ich monatelang gezögert hatte, kündigte ich schließlich meinen sicheren Bürojob, um eine Ausbildung zum Koch zu beginnen. Ich habe diesen radikalen Schritt keinen einzigen Tag bereut.' - Aussage: Der Verfasser ist mit seinem Berufswechsel sehr zufrieden."
+        options: ["Richtig", "Falsch"]
+        correctIndex: 0
+      - type: multiple_choice
+        question: "Text: 'Eigentlich wollten wir das Wochenende an der Ostsee verbringen, aber wegen eines Unwetters blieben wir zu Hause und renovierten stattdessen die Küche.' - Aussage: Die Familie verbrachte das Wochenende am Strand."
+        options: ["Richtig", "Falsch"]
+        correctIndex: 1
+      - type: free_text
+        prompt: "Explain how contrasting words like 'doch', 'allerdings', or 'aber' help you determine if an author's initial feeling changed."
+        modelAnswer: "Diese Wörter leiten einen Umschwung oder eine Einschränkung ein und zeigen, dass die Situation anders ausgegangen ist als ursprünglich geplant."
+
+  - slug: goethe-reading-teil2-press-articles
+    skill: reading
+    title: Press Articles and Informational Reports (Goethe Lesen Teil 2)
+    prerequisites: [goethe-subordinate-clauses-final-consecutive]
+    explanation: |
+      In Goethe Lesen Teil 2, candidates read two medium-length journalistic press articles from newspapers or magazines and answer three-option multiple-choice questions (each with options a, b, c).
+      This subtest evaluates detailed reading (*Detailverstehen*).
+      Candidates must comprehend underlying causes, statistical comparisons, and future outlooks.
+      Examine each multiple-choice option closely against the exact wording in the text: distractors frequently combine correct words in misleading ways.
+    examples:
+      - "Artikel: 'Eine Umfrage unter 1000 Jugendlichen ergab, dass das Umweltbewusstsein zwar hoch ist, aber nur ein Viertel im Alltag konsequent auf Plastikverpackungen verzichtet.'"
+      - "Frage: 'Was geht aus der Umfrage hervor?' -> Option: 'Die meisten Jugendlichen wissen um die Umweltprobleme, handeln im Alltag aber oft anders.'"
+    exercises:
+      - type: multiple_choice
+        question: "Text: 'Während viele Einzelhändler über sinkende Umsätze klagen, meldet der Buchhandel überraschend stabile Zahlen, was vor allem an der großen Beliebtheit von Jugendbüchern liegt.' - Warum sind die Umsätze im Buchhandel stabil?"
+        options:
+          - "Weil alle Einzelhändler ihre Preise gesenkt haben."
+          - "Weil sich Bücher für Kinder und Jugendliche besonders gut verkaufen."
+          - "Weil Erwachsene viel mehr Sachbücher lesen als früher."
+        correctIndex: 1
+      - type: multiple_choice
+        question: "Text: 'Die Stadtverwaltung plant, ab dem kommenden Jahr den Eintritt in städtische Museen für Jugendliche bis 18 Jahre komplett kostenfrei zu gestalten.' - Was ist ab nächstem Jahr geplant?"
+        options:
+          - "Museen werden nur noch für Jugendliche geöffnet sein."
+          - "Jugendliche unter 18 Jahren müssen im Museum nichts mehr bezahlen."
+          - "Alle Museumsbesucher erhalten eine Vergünstigung."
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Im Goethe Lesen Teil 2 bearbeitet man insgesamt ___ Pressetexte mit jeweils drei Multiple-Choice-Aufgaben. (number: zwei)"
+        correctAnswer: "zwei"
+
+  - slug: goethe-reading-teil3-classifieds-matching
+    skill: reading
+    title: Matching Inquiries with Classified Advertisements (Goethe Lesen Teil 3)
+    prerequisites: [goethe-vocab-education-career-training]
+    explanation: |
+      In Goethe Lesen Teil 3, candidates match the needs of seven individuals (numbered 13–19) to ten classified advertisements or announcements (labeled a–j).
+      There is always one situation for which no suitable advertisement exists; for this profile, candidates must select '0' (keine Anzeige).
+      Pay close attention to specific restrictions: a person looking for an intensive weekend course will not be served by an ad offering evening courses during the week.
+    examples:
+      - "Person: 'Lisa (22) möchte in den Semesterferien ihr Englisch für ein geplantes Auslandsstudium verbessern.' -> Anzeige C: 'Intensivsprachkurse im August für Studenten mit akademischem Fokus.'"
+      - "Person: 'Herr Becker sucht einen Klavierlehrer, der ihn samstags bei sich zu Hause unterrichtet.' Alle Anzeigen bieten nur Unterricht in einer Musikschule an Wochentagen an. -> Lösung: 0."
+    exercises:
+      - type: multiple_choice
+        question: "Person: 'Familie Graf sucht eine Betreuung für ihren Hund während des zweiwöchigen Sommerurlaubs.' Anzeige A: 'Tierpension Sonnenschein: Liebevolle Urlaubsbetreuung für Hunde und Katzen mit großem Auslauf.' Anzeige B: 'Hundeschule Welpe: Erziehungskurse für junge Hunde jeden Mittwoch.' Welche Anzeige passt?"
+        options: ["Anzeige A", "Anzeige B", "0 (keine Anzeige)"]
+        correctIndex: 0
+      - type: multiple_choice
+        question: "Person: 'Ein Berufstätiger sucht samstags einen Yoga-Kurs am frühen Vormittag.' Alle vorliegenden Anzeigen bieten Yoga nur werktags ab 18 Uhr an. Welche Lösung wählen Sie?"
+        options: ["Anzeige E", "Anzeige H", "0 (keine Anzeige)"]
+        correctIndex: 2
+      - type: flashcard
+        front: "Die Option '0' in Goethe Lesen Teil 3"
+        back: "Bedeutet: Für diese konkrete Person existiert im gesamten Anzeigenangebot keine adäquate Lösung."
+
+  - slug: goethe-reading-teil4-forum-comments
+    skill: reading
+    title: Evaluating Reader Opinions in Internet Forums (Goethe Lesen Teil 4)
+    prerequisites: [goethe-subjunctive-ii-advice-opinions]
+    explanation: |
+      In Goethe Lesen Teil 4, candidates read seven reader comments from an online forum reacting to a controversial lead question (e.g. 'Sollte der öffentliche Nahverkehr für alle Bürger kostenlos sein?').
+      For each of the seven statements, candidates must decide whether the author expresses a positive attitude (Ja) or a negative attitude / rejection (Nein) regarding the question.
+      Look beyond single positive or negative words: an author might list positive points before explicitly rejecting the core proposal in their concluding sentence.
+    examples:
+      - "Leitfrage: 'Sollten Haustiere im Büro erlaubt sein?'"
+      - "Leser 1: 'Hunde am Arbeitsplatz bauen nachweislich Stress ab und heben das Betriebsklima. Ich nehme meinen Terrier jeden Tag mit ins Büro!' -> Haltung: Ja."
+      - "Leser 2: 'Man bedenkt dabei überhaupt nicht die vielen Kollegen mit Tierhaarallergien oder Angst vor Hunden. Ein Büro ist schließlich kein Tierheim!' -> Haltung: Nein."
+    exercises:
+      - type: multiple_choice
+        question: "Thema: 'Konsumverzicht: Brauchen wir autofreie Sonntage?' Leserkommentar: 'Es ist herrlich, wenn die Straßen einmal im Monat den Spaziergängern und Inlineskatern gehören. Die Ruhe und die saubere Luft tun allen gut.' - Welche Meinung vertritt der Leser?"
+        options: ["Ja (zustimmend)", "Nein (ablehnend)"]
+        correctIndex: 0
+      - type: multiple_choice
+        question: "Thema: 'Sollen Schulnoten abgeschafft werden?' Leserkommentar: 'Ohne Noten fehlt den Schülern jeder Ansporn zur Leistung und die spätere Berufswelt verlangt ohnehin Leistungsnachweise. Eine Abschaffung wäre unverantwortlich.' - Welche Haltung hat der Verfasser?"
+        options: ["Ja (dafür)", "Nein (dagegen)"]
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "In Goethe Lesen Teil 4 bewertet man sieben Kommentare ausschließlich mit den Optionen ___ oder Nein."
+        correctAnswer: "Ja"
+
+  - slug: goethe-reading-teil5-rules-regulations
+    skill: reading
+    title: Institutional Guidelines and Terms of Service (Goethe Lesen Teil 5)
+    prerequisites: [goethe-participles-as-adjectives]
+    explanation: |
+      In Goethe Lesen Teil 5, candidates read an official text outlining formal rules or regulations (e.g. library regulations, swimming pool house rules, dormitory policies, fire safety rules).
+      Four three-option multiple-choice items assess accurate comprehension of prohibitions, obligations, permissions, and administrative procedures.
+      Pay careful attention to modal qualifiers: 'ist gestattet' (permitted), 'ist untersagt' (prohibited), 'ist erforderlich' (mandatory), and 'kann auf Antrag bewilligt werden' (possible upon application).
+    examples:
+      - "Badeordnung: 'Die Benutzung von Mobiltelefonen und Kameras ist im gesamten Saunabereich aus Gründen des Persönlichkeitsschutzes strengstens untersagt.' -> Das Fotografieren in der Sauna ist verboten."
+      - "Bibliotheksordnung: 'Die Leihfrist kann vor Ablauf bis zu dreimal verlängert werden, sofern keine Vormerkung eines anderen Benutzers vorliegt.' -> Verlängerungen sind nur möglich, wenn das Buch nicht reserviert ist."
+    exercises:
+      - type: multiple_choice
+        question: "Hausordnung: 'Das Abstellen von Fahrrädern und Kinderwagen im Treppenhaus ist aus Brandschutzgründen nicht gestattet.' - Was bedeutet diese Regelung?"
+        options:
+          - "Man darf Fahrräder nur nachts im Treppenhaus parken."
+          - "Fahrräder und Kinderwagen dürfen nicht im Treppenhaus abgestellt werden."
+          - "Kinderwagen dürfen überall stehen, Fahrräder nicht."
+        correctIndex: 1
+      - type: multiple_choice
+        question: "Schwimmbadordnung: 'Kinder unter 7 Jahren haben nur in Begleitung einer erwachsenen Aufsichtsperson Zutritt.' - Wer darf das Schwimmbad besuchen?"
+        options:
+          - "Siebenjährige Kinder ohne Begleitung"
+          - "Sechsjährige Kinder nur zusammen mit einem Erwachsenen"
+          - "Kinder dürfen das Schwimmbad grundsätzlich nicht betreten"
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Formulierung für 'verboten sein' in behördlichen Ordnungen: 'Das Rauchen ist hier strengstens ___.' (untersagt / gestattet)"
+        correctAnswer: "untersagt"
+
+  - slug: goethe-listening-teil1-daily-announcements
+    skill: listening
+    title: Short Dialogues and Voicemails with Dual Tasks (Goethe Hören Teil 1)
+    prerequisites: []
+    explanation: |
+      In Goethe Hören Teil 1, candidates listen to five short everyday audio recordings (voicemail messages, train station announcements, public venue broadcasts).
+      Each text is played twice and has two associated tasks: a True/False statement (global gist) and a three-option multiple-choice question (specific detail).
+      Use the 10-second pause before each audio track to read both tasks, anticipating the speakers' main intent and listening selectively for dates, places, and times.
+    examples:
+      - "Text: 'Hallo Claudia, hier ist Thomas. Unser Treffen heute Abend im Café Einstein muss leider ausfallen, weil mein Sohn Fieber hat. Lass uns stattdessen am Samstag um 15 Uhr im Schlosspark spazieren gehen. Gib mir kurz Bescheid!' - Aufgabe 1: Thomas sagt das heutige Treffen ab (Richtig). Aufgabe 2: Wo wollen sie sich am Samstag treffen? (Im Schlosspark)."
+    exercises:
+      - type: multiple_choice
+        question: "Hörtext (2x): 'Hier Praxis Dr. Bergmann. Wegen einer technischen Störung bleibt das Labor heute geschlossen. Termine zur Blutabnahme verschieben sich auf morgen ab 7:30 Uhr.' - Aufgabe: Finden heute Blutabnahmen statt?"
+        options: ["Richtig", "Falsch"]
+        correctIndex: 1
+      - type: multiple_choice
+        question: "Gleicher Hörtext: Wann können Patienten morgen zur Blutabnahme kommen?"
+        options: ["Ab 7:00 Uhr", "Ab 7:30 Uhr", "Erst am Nachmittag"]
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "In Goethe Hören Teil 1 hört man jeden der fünf kurzen Texte genau ___ Mal. (number: zwei)"
+        correctAnswer: "zwei"
+
+  - slug: goethe-listening-teil2-guided-tour-presentation
+    skill: listening
+    title: Guided Tours and Presentations Played Once (Goethe Hören Teil 2)
+    prerequisites: [goethe-vocab-consumerism-environment]
+    explanation: |
+      In Goethe Hören Teil 2, candidates listen to a continuous monologic presentation (e.g. a museum tour guide, an event organizer, an orientation briefing for new employees).
+      The audio track is played only once and contains five three-option multiple-choice questions.
+      Success depends on structured listening: follow the guide's organizational signposts (z.B. 'Als Erstes betreten wir...', 'Nun kommen wir zu...', 'Bitte beachten Sie unbedingt...') to anticipate each question in order.
+    examples:
+      - "Sprecher: 'Herzlich willkommen im Stadtmuseum! Unsere heutige Führung dauert rund 45 Minuten. Bevor wir den ersten Ausstellungsraum betreten, bitte ich Sie, große Taschen und Rucksäcke in den Schließfächern im Untergeschoss einzuschließen. Das Fotografieren mit Blitz ist aus konservatorischen Gründen untersagt.'"
+    exercises:
+      - type: multiple_choice
+        question: "Führung (nur 1x!): 'Wir beginnen unseren Rundgang im historischen Weinkeller aus dem 14. Jahrhundert. Danach steigen wir hinauf zum Turm. Am Ende der Tour haben Sie Gelegenheit, im Museumsshop Souvenirs zu erwerben.' - Wo beginnt die Führung?"
+        options:
+          - "Auf dem Aussichtsturm"
+          - "Im historischen Weinkeller"
+          - "Im Museumsshop"
+        correctIndex: 1
+      - type: multiple_choice
+        question: "Führung: 'Wegen Renovierungsarbeiten ist die Gemäldegalerie heute leider nicht zugänglich.' - Welcher Bereich ist geschlossen?"
+        options:
+          - "Die Gemäldegalerie"
+          - "Das Café"
+          - "Der gesamte Schlossgarten"
+        correctIndex: 0
+      - type: free_text
+        prompt: "Why is tracking transition markers (z.B. 'als Nächstes', 'anschließend') critical during the single-broadcast recording of Teil 2?"
+        modelAnswer: "Weil diese Signale anzeigen, dass der Sprecher zum nächsten Thema und damit zur nächsten Prüfungsaufgabe übergeht."
+
+  - slug: goethe-listening-teil3-casual-conversation
+    skill: listening
+    title: Conversational Dialogue Between Two Acquaintances (Goethe Hören Teil 3)
+    prerequisites: [goethe-vocab-social-trends-relationships]
+    explanation: |
+      In Goethe Hören Teil 3, candidates listen to a casual conversation between two speakers (e.g. colleagues at lunch, neighbors in the hallway, friends discussing weekend plans).
+      The conversation is played only once.
+      Candidates evaluate seven statements as Richtig or Falsch.
+      Track who says what: distractors often invert which speaker made a proposal, expressed skepticism, or confirmed a plan.
+    examples:
+      - "Mann: 'Hast du schon gehört, dass Sandra nach München zieht?' - Frau: 'Ja, sie hat dort ein fantastisches Jobangebot bekommen. Ich helfe ihr am Samstag beim Kistenpacken.' - Aussage: Sandra zieht um, weil sie eine neue Stelle antritt. -> Richtig."
+    exercises:
+      - type: multiple_choice
+        question: "Gespräch (nur 1x!): Mann: 'Wollen wir am Freitagabend ins Kino gehen? Es läuft der neue Film von Wim Wenders.' Frau: 'Am Freitag muss ich leider lange arbeiten, aber Samstagabend hätte ich Zeit.' - Aussage: Die Frau möchte am Freitag ins Kino gehen."
+        options: ["Richtig", "Falsch"]
+        correctIndex: 1
+      - type: multiple_choice
+        question: "Gleiches Gespräch: Mann: 'Prima, dann reserviere ich die Karten für Samstag um acht.' - Aussage: Die beiden treffen sich am Samstag."
+        options: ["Richtig", "Falsch"]
+        correctIndex: 0
+      - type: fill_blank
+        textWithBlank: "In Goethe Hören Teil 3 bewertet man die sieben Aussagen ausschließlich mit Richtig oder ___ ."
+        correctAnswer: "Falsch"
+
+  - slug: goethe-listening-teil4-radio-discussion
+    skill: listening
+    title: Moderated Radio Panel Debate with Multiple Speakers (Goethe Hören Teil 4)
+    prerequisites: [goethe-subjunctive-ii-advice-opinions]
+    explanation: |
+      In Goethe Hören Teil 4, candidates listen to a radio panel debate featuring a moderator and two guests with contrasting viewpoints on a societal issue.
+      The audio recording is played twice and contains eight tasks.
+      Candidates must determine which person (Moderator, Gast A, or Gast B) expressed a specific opinion or argument.
+      Distinguish between the speakers by paying close attention to speaker introductions, distinct vocal timbres, and identifying pronouns.
+    examples:
+      - "Moderatorin: 'Guten Abend! Unser Thema heute: Homeoffice - Fluch oder Segen? Zu Gast sind Arbeitgebervertreter Herr Wolf und Gewerkschafterin Frau Sommer.'"
+      - "Herr Wolf: 'Unternehmen benötigen verbindliche Präsenztage, da der kreative Austausch im Team virtuell leidet.' -> Meinung: Präsenzzeiten im Büro sind für Innovationen unerlässlich -> Herr Wolf."
+    exercises:
+      - type: multiple_choice
+        question: "Debatte (2x): Frau Sommer: 'Mitarbeiter, die von zu Hause arbeiten, leisten oft mehr unbezahlte Überstunden als im Büro.' - Wer äußert diese Feststellung?"
+        options: ["Die Moderatorin", "Herr Wolf", "Frau Sommer"]
+        correctIndex: 2
+      - type: multiple_choice
+        question: "Debatte: Moderatorin: 'Ich begrüße Sie herzlich zu unserer heutigen Diskussionsrunde über flexible Arbeitsmodelle.' - Wer leitet die Diskussion ein?"
+        options: ["Die Moderatorin", "Herr Wolf", "Frau Sommer"]
+        correctIndex: 0
+      - type: free_text
+        prompt: "Explain how noting voice characteristics during the first listening helps identify speakers in Goethe Teil 4."
+        modelAnswer: "Man unterscheidet Stimmlage und Geschlecht der Sprecher und notiert sofort, wer welche Position grundsätzlich befürwortet oder ablehnt."
+
+  - slug: goethe-writing-aufgabe1-personal-email
+    skill: writing
+    title: Composing an Informal Personal Narrative (Goethe Schreiben Aufgabe 1)
+    prerequisites: [goethe-causal-concessive-connectors, goethe-vocab-social-trends-relationships]
+    explanation: |
+      In Goethe Schreiben Aufgabe 1, candidates write a personal email of approximately 80 words to a friend recounting a recent experience or event.
+      Candidates must address three explicit prompt points:
+      1. Describing the event or activity (z.B. Umzug, Party, Reise).
+      2. Explaining why you found it particularly positive or negative.
+      3. Proposing a future meeting or inviting your friend.
+      Use an informal register: 'Liebe/Lieber...', personal pronouns 'du/dir/dich', and an informal sign-off like 'Herzliche Grüße' or 'Bis bald'.
+    examples:
+      - "Liebe Sarah, letztes Wochenende bin ich endlich in meine neue Wohnung in Köln umgezogen! Die Lage ist fantastisch, direkt am Park. Allerdings war das Tragen der schweren Kisten in den vierten Stock ohne Aufzug unglaublich anstrengend. Ich habe Muskelkater am ganzen Körper! Wenn du am nächsten Wochenende Zeit hast, musst du mich unbedingt besuchen kommen. Ich koche uns etwas Leckeres und zeige dir die Stadt. Wie sieht es bei dir aus? Herzliche Grüße, dein Markus."
+    exercises:
+      - type: multiple_choice
+        question: "Welche Begrüßung passt für eine persönliche E-Mail an eine Freundin in Aufgabe 1?"
+        options:
+          - "Sehr geehrte Frau Müller,"
+          - "Liebe Julia,"
+          - "Hallo Herr Schmidt,"
+          - "An alle Kollegen,"
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "In Goethe Schreiben Aufgabe 1 beträgt die geforderte Textlänge ungefähr ___ Wörter. (number: 80)"
+        correctAnswer: "80"
+      - type: free_text
+        prompt: "Draft an invitation sentence to your friend proposing a meetup next weekend to see your new apartment."
+        modelAnswer: "Hast du nicht Lust, mich nächstes Wochenende zu besuchen und meine neue Wohnung anzuschauen?"
+      - type: flashcard
+        front: "Struktur Goethe Schreiben Aufgabe 1"
+        back: "Anrede -> 1. Leitpunkt (Ereignis) -> 2. Leitpunkt (Begründung/Gefühl) -> 3. Leitpunkt (Treffen) -> Schlussgruß"
+
+  - slug: goethe-writing-aufgabe2-forum-opinion
+    skill: writing
+    title: Formulating a Nuanced Online Opinion (Goethe Schreiben Aufgabe 2)
+    prerequisites: [goethe-subjunctive-ii-advice-opinions, goethe-vocab-consumerism-environment]
+    explanation: |
+      In Goethe Schreiben Aufgabe 2, candidates write a contribution of approximately 80 words for an online discussion forum reacting to an article or opinion post.
+      Unlike Aufgabe 1, this task requires an objective, argumentative register without greetings or farewells:
+      1. Refer to the lead topic and summarize the core issue.
+      2. State your personal perspective using opinion exponents (Meiner Meinung nach, Ich stehe auf dem Standpunkt, dass...).
+      3. Provide concrete reasons and real-world examples to support your view.
+      4. Conclude with a clear, balanced final judgment.
+    examples:
+      - "In der heutigen Diskussion über die Nutzung von Smartphones im Schulunterricht möchte ich meinen Standpunkt darlegen. Ich bin der festen Überzeugung, dass Mobiltelefone im Klassenraum nicht verboten, sondern gezielt als Lernmedien eingesetzt werden sollten. Schüler können damit Recherchen durchführen oder interaktive Lern-Apps nutzen. Natürlich besteht die Gefahr der Ablenkung durch Spiele und Chat-Nachrichten, weshalb klare Nutzungsregeln aufgestellt werden müssen. Ein generelles Verbot halte ich jedoch für rückschrittlich."
+    exercises:
+      - type: multiple_choice
+        question: "Welches Stilelement gehört NICHT in einen Forumsbeitrag bei Aufgabe 2?"
+        options:
+          - "Eine begründete persönliche Meinung"
+          - "Argumente für und gegen ein Thema"
+          - "Eine formelle Briefanrede wie 'Sehr geehrte Damen und Herren'"
+          - "Beispiele aus dem Alltag"
+        correctIndex: 2
+      - type: fill_blank
+        textWithBlank: "Phrase für die Einleitung: 'Zu dem viel diskutierten Thema möchte ich gerne meine ___ äußern.' (Meinung / Kündigung)"
+        correctAnswer: "Meinung"
+      - type: free_text
+        prompt: "State your opinion in two sentences on whether public transport should be free in cities."
+        modelAnswer: "Meiner Auffassung nach sollte der Nahverkehr kostenlos sein, weil dadurch viele Autofahrer auf Busse und Bahnen umsteigen würden. Dies würde den Verkehr entlasten und die Umwelt schonen."
+      - type: flashcard
+        front: "Meinungsphrasen Aufgabe 2"
+        back: "Ich bin der Auffassung, dass...; Ein wesentliches Argument dafür ist...; Aus diesen Gründen halte ich..."
+
+  - slug: goethe-writing-aufgabe3-formal-apology-request
+    skill: writing
+    title: Composing a Formal Notification or Apology (Goethe Schreiben Aufgabe 3)
+    prerequisites: [goethe-subjunctive-ii-advice-opinions]
+    explanation: |
+      In Goethe Schreiben Aufgabe 3, candidates compose a concise formal email of approximately 40 words addressing a superior, teacher, course instructor, or official.
+      The message must handle an administrative absence, cancellation, or polite scheduling request:
+      1. Formal greeting: 'Sehr geehrte/r Frau/Herr...'
+      2. State the reason for being unable to attend or requiring an adjustment.
+      3. Express regret and politely apologize.
+      4. Request homework, materials, or an alternative appointment.
+      5. Formal closing: 'Mit freundlichen Grüßen'.
+    examples:
+      - "Sehr geehrte Frau Dr. Wagner, leider bin ich heute Morgen mit hohem Fieber aufgewacht und kann deshalb nicht an Ihrem Seminar teilnehmen. Ich bitte Sie, mein Fehlen zu entschuldigen. Könnten Sie mir freundlicherweise mitteilen, welche Aufgaben ich für die nächste Woche vorbereiten soll? Vielen Dank für Ihr Verständnis. Mit freundlichen Grüßen, Lucas Weber."
+    exercises:
+      - type: multiple_choice
+        question: "Welche Textlänge wird für die formelle Kurznachricht in Aufgabe 3 gefordert?"
+        options: ["ca. 20 Wörter", "ca. 40 Wörter", "ca. 80 Wörter", "mindestens 120 Wörter"]
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Formelle Entschuldigung: 'Ich bitte Sie vielmals, mein gestriges Fehlen zu ___ .' (apologize/excuse)"
+        correctAnswer: "entschuldigen"
+      - type: free_text
+        prompt: "Write a complete formal email (ca. 40 words) to your language teacher, Herr Braun, explaining that you cannot attend class today due to an urgent doctor's appointment."
+        modelAnswer: "Sehr geehrter Herr Braun, leider kann ich heute nicht zum Unterricht kommen, da ich einen dringenden Arzttermin wahrnehmen muss. Ich bitte Sie, mein Fehlen zu entschuldigen. Schicken Sie mir freundlicherweise die Hausaufgaben per E-Mail? Mit freundlichen Grüßen."
+
+  - slug: goethe-speaking-teil1-planning-together
+    skill: speaking
+    title: Interactive Planning and Collaborative Organization (Goethe Sprechen Teil 1)
+    prerequisites: [goethe-subjunctive-ii-advice-opinions]
+    explanation: |
+      In Goethe Sprechen Teil 1, candidates collaborate to plan an event, excursion, or project based on a task prompt (e.g. organizing a weekend bicycle tour or arranging a farewell party).
+      Candidates must actively contribute ideas, react promptly to their partner's suggestions, handle differing views constructively, and agree on practical logistics (dates, budget, transport, food, equipment).
+      Examiners look for conversational balance: avoid monologuing and consistently invite your partner to contribute ('Was denkst du darüber?', 'Hättest du einen anderen Vorschlag?').
+    examples:
+      - "Kandidat A: 'Wir sollen einen gemeinsamen Ausflug mit unserem Deutschkurs planen. Was hältst du von einer Fahrradtour an den See?'"
+      - "Kandidat B: 'Das ist ein schöner Vorschlag, aber vielleicht haben nicht alle Kursteilnehmer ein Fahrrad. Wir könnten stattdessen mit dem Regionalzug fahren.'"
+      - "Kandidat A: 'Guter Punkt! Das Gruppenticket der Bahn ist sehr günstig. Wollen wir uns am Samstag um neun Uhr am Bahnhof treffen?'"
+      - "Kandidat B: 'Ja, das passt hervorragend. Ich kümmere mich um den Kauf der Fahrkarten und du informierst die anderen Teilnehmer.'"
+    exercises:
+      - type: multiple_choice
+        question: "Was sollten Sie tun, wenn Ihr Partner einen Vorschlag macht, den Sie unpraktisch finden?"
+        options:
+          - "Den Partner ignorieren und das Thema wechseln."
+          - "Höflich widersprechen, den Einwand begründen und eine Alternative vorschlagen."
+          - "Einfach schweigen."
+          - "Aufstehen und den Prüfungsraum verlassen."
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Partnerfrage: 'Was ___ du von der Idee, einen Grillabend im Park zu organisieren?' (hältst / meinst)"
+        correctAnswer: "hältst"
+      - type: free_text
+        prompt: "Propose to your speaking partner that you should share the expenses for an upcoming party."
+        modelAnswer: "Wir sollten die Kosten für das Essen und die Getränke am besten gerecht unter allen Teilnehmern aufteilen."
+      - type: flashcard
+        front: "Reaktionsformeln Teil 1"
+        back: "Ja, hervorragende Idee!; Das halte ich für schwierig, weil...; Was meinst du dazu?; Einigen wir uns auf..."
+
+  - slug: goethe-speaking-teil2-monologic-presentation
+    skill: speaking
+    title: Thematic Presentation with Structured Slides (Goethe Sprechen Teil 2)
+    prerequisites: [goethe-causal-concessive-connectors, goethe-vocab-consumerism-environment]
+    explanation: |
+      In Goethe Sprechen Teil 2, each candidate selects one of two topics and delivers an unassisted monologic presentation lasting approximately 3 to 4 minutes.
+      The presentation must follow the 5-step Goethe structure:
+      1. Folie 1: Thema und Struktur vorstellen ('Das Thema meiner Präsentation lautet... Meine Präsentation gliedert sich in folgende Teile...').
+      2. Folie 2: Eigene persönliche Erfahrungen darlegen ('Ich persönlich habe die Erfahrung gemacht, dass...').
+      3. Folie 3: Die Situation im Heimatland beschreiben ('In meinem Heimatland verhält es sich so, dass...').
+      4. Folie 4: Vor- und Nachteile abwägen ('Ein großer Vorteil ist..., demgegenüber steht jedoch der Nachteil...').
+      5. Folie 5: Eigene Meinung zusammenfassen und Vortrag beenden ('Zusammenfassend lässt sich sagen... Vielen Dank für Ihre Aufmerksamkeit!').
+    examples:
+      - "Folie 1: 'Guten Tag! Ich möchte Ihnen heute das Thema Vor- und Nachteile des Online-Shoppings vorstellen. Zunächst spreche ich über meine persönlichen Erfahrungen, danach über die Situation in meinem Heimatland. Anschließend werde ich die Vor- und Nachteile abwägen und meine eigene Meinung äußern.'"
+      - "Folie 2: 'Ich selbst kaufe Bücher und Elektronikartikel meistens online, weil die Auswahl enorm ist.'"
+      - "Folie 3: 'In meiner Heimat ist der stationäre Handel noch sehr dominant, aber die jüngere Generation nutzt zunehmend Lieferdienste.'"
+      - "Folie 4: 'Ein Vorteil ist die Zeitersparnis, ein gravierender Nachteil jedoch das Aussterben kleiner Geschäfte in Innenstädten.'"
+      - "Folie 5: 'Meiner Meinung nach sollte man das Internet sinnvoll nutzen, aber lokale Geschäfte unterstützen. Vielen Dank fürs Zuhören!'"
+    exercises:
+      - type: multiple_choice
+        question: "Welcher Punkt gehört zwingend zur 5-teiligen Folienstruktur im Goethe Sprechen Teil 2?"
+        options:
+          - "Ein Gedicht vortragen"
+          - "Die Situation im Heimatland schildern"
+          - "Den Prüfer nach seinem Urlaub fragen"
+          - "Einen Zeitungsartikel laut vorlesen"
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Überleitung zur Folie 4: 'Nun komme ich zu den Vor- und ___ dieses Modells.' (advantages and disadvantages)"
+        correctAnswer: "Nachteilen"
+      - type: free_text
+        prompt: "Formulate a concluding sentence thanking the audience for their attention at the end of your presentation."
+        modelAnswer: "Damit bin ich am Ende meines Vortrags angelangt. Ich bedanke mich herzlich für Ihre Aufmerksamkeit und freue mich auf Ihre Fragen."
+      - type: flashcard
+        front: "Überleitung im Vortrag"
+        back: "Nachdem ich über meine Erfahrungen gesprochen habe, möchte ich nun auf die Situation in meinem Heimatland eingehen."
+
+  - slug: goethe-speaking-teil3-feedback-and-questions
+    skill: speaking
+    title: Providing Constructive Feedback and Answering Questions (Goethe Sprechen Teil 3)
+    prerequisites: [goethe-speaking-teil2-monologic-presentation]
+    explanation: |
+      Goethe Sprechen Teil 3 follows immediately after the presentations delivered in Teil 2.
+      Each candidate must provide feedback on their partner's presentation, ask one relevant follow-up question, and answer questions posed by the partner and the examiners.
+      Feedback must follow a standard structure:
+      1. Polite praise: 'Vielen Dank für deine interessante Präsentation. Ich fand das Thema sehr spannend.'
+      2. Specific observation: 'Besonders interessant fand ich deine Schilderung über dein Heimatland, weil...'
+      3. Asking a question: 'Ich hätte jedoch noch eine Frage: Glaubst du, dass...?'
+    examples:
+      - "Feedback: 'Danke für deinen Vortrag, Marco. Du hast sehr klar und strukturiert gesprochen. Besonders überrascht hat mich, dass in deinem Heimatland fast alle Einkäufe noch bar bezahlt werden. Dazu hätte ich eine Frage: Glaubst du, dass sich das Bargeld dort in den nächsten Jahren halten wird?'"
+      - "Antwort auf Partnerfrage: 'Das ist eine gute Frage. Ich denke, dass bargeldloses Bezahlen mit dem Smartphone auch bei uns immer beliebter wird, aber ältere Menschen vertrauen dem Bargeld weiterhin mehr.'"
+    exercises:
+      - type: multiple_choice
+        question: "Welche Aussage ist ein passendes Feedback für die Präsentation des Partners?"
+        options:
+          - "Ich habe überhaupt nicht zugehört."
+          - "Vielen Dank für deine Präsentation! Ich fand besonders den Punkt mit den Vor- und Nachteilen sehr aufschlussreich."
+          - "Dein Vortrag war viel zu lang und langweilig."
+          - "Können wir jetzt nach Hause gehen?"
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Feedbackformel: 'Ich fand deinen Vortrag sehr interessant und hätte dazu noch eine ___ an dich.' (question)"
+        correctAnswer: "Frage"
+      - type: free_text
+        prompt: "Ask your partner a follow-up question regarding their presentation on public transport."
+        modelAnswer: "Denkst du, dass Busse und Bahnen in Zukunft vollkommen fahrerlos gesteuert werden können?"
+      - type: flashcard
+        front: "Reaktion auf Prüferfragen in Teil 3"
+        back: "Ruhig durchatmen, Frage kurz bestätigen ('Das ist ein wichtiger Aspekt...') und präzise in 2-3 Sätzen mit Begründung antworten."

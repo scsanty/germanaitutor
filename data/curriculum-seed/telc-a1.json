@@ -1,61 +1,50 @@
 {
-  "seedVersion": "1",
+  "seedVersion": "2",
   "track": "telc",
   "level": "A1",
   "milestones": [
     {
       "milestone": {
-        "id": "telc-a1-telc-grundlagen",
+        "id": "telc-a1-grammar",
         "track": "telc",
         "level": "A1",
-        "title": "TELC Grundlagen",
+        "title": "Grammar",
         "description": null,
         "orderIndex": 0
       },
       "sections": [
         {
           "section": {
-            "id": "telc-a1-telc-grundlagen-personen-begruessung",
-            "milestoneId": "telc-a1-telc-grundlagen",
-            "title": "Personen & Begrüßung",
+            "id": "telc-a1-grammar-lessons",
+            "milestoneId": "telc-a1-grammar",
+            "title": "Lessons",
             "description": null,
             "orderIndex": 0
           },
           "lessonRefs": [
             {
-              "lessonId": "a1-personal-pronouns",
+              "lessonId": "a1-telc-present-tense-essentials",
               "orderIndex": 0
             },
             {
-              "lessonId": "a1-greetings-farewells",
+              "lessonId": "a1-telc-w-questions-official-inquiries",
               "orderIndex": 1
             },
             {
-              "lessonId": "a1-speaking-self-introduction",
+              "lessonId": "a1-telc-accusative-shopping-supplies",
               "orderIndex": 2
-            }
-          ]
-        },
-        {
-          "section": {
-            "id": "telc-a1-telc-grundlagen-verben-sprachbausteine",
-            "milestoneId": "telc-a1-telc-grundlagen",
-            "title": "Verben & Sprachbausteine",
-            "description": null,
-            "orderIndex": 1
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "a1-present-tense-regular",
-              "orderIndex": 0
             },
             {
-              "lessonId": "a1-sein-haben",
-              "orderIndex": 1
+              "lessonId": "a1-telc-modal-verbs-regulations",
+              "orderIndex": 3
             },
             {
-              "lessonId": "telc-a1-sprachbausteine-format",
-              "orderIndex": 2
+              "lessonId": "a1-telc-imperative-polite-requests",
+              "orderIndex": 4
+            },
+            {
+              "lessonId": "a1-telc-prepositions-time-appointments",
+              "orderIndex": 5
             }
           ]
         }
@@ -63,57 +52,38 @@
     },
     {
       "milestone": {
-        "id": "telc-a1-alltag",
+        "id": "telc-a1-vocabulary",
         "track": "telc",
         "level": "A1",
-        "title": "Alltag",
+        "title": "Vocabulary",
         "description": null,
         "orderIndex": 1
       },
       "sections": [
         {
           "section": {
-            "id": "telc-a1-alltag-zahlen-familie",
-            "milestoneId": "telc-a1-alltag",
-            "title": "Zahlen & Familie",
+            "id": "telc-a1-vocabulary-lessons",
+            "milestoneId": "telc-a1-vocabulary",
+            "title": "Lessons",
             "description": null,
             "orderIndex": 0
           },
           "lessonRefs": [
             {
-              "lessonId": "a1-numbers-1-100",
+              "lessonId": "a1-telc-identity-personal-data",
               "orderIndex": 0
             },
             {
-              "lessonId": "a1-family-members",
+              "lessonId": "a1-telc-housing-neighborhood-vocab",
               "orderIndex": 1
             },
             {
-              "lessonId": "a1-definite-articles",
+              "lessonId": "a1-telc-work-professions-vocab",
               "orderIndex": 2
-            }
-          ]
-        },
-        {
-          "section": {
-            "id": "telc-a1-alltag-verstehen",
-            "milestoneId": "telc-a1-alltag",
-            "title": "Verstehen",
-            "description": null,
-            "orderIndex": 1
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "a1-listening-numbers-times",
-              "orderIndex": 0
             },
             {
-              "lessonId": "a1-reading-simple-signs",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "a1-listening-simple-instructions",
-              "orderIndex": 2
+              "lessonId": "a1-telc-health-doctor-vocab",
+              "orderIndex": 3
             }
           ]
         }
@@ -121,49 +91,123 @@
     },
     {
       "milestone": {
-        "id": "telc-a1-pruefungsteile",
+        "id": "telc-a1-reading",
         "track": "telc",
         "level": "A1",
-        "title": "Prüfungsteile: Lesen, Schreiben, Sprechen",
+        "title": "Reading",
         "description": null,
         "orderIndex": 2
       },
       "sections": [
         {
           "section": {
-            "id": "telc-a1-pruefungsteile-lesen-schreiben",
-            "milestoneId": "telc-a1-pruefungsteile",
-            "title": "Lesen & Schreiben",
+            "id": "telc-a1-reading-lessons",
+            "milestoneId": "telc-a1-reading",
+            "title": "Lessons",
             "description": null,
             "orderIndex": 0
           },
           "lessonRefs": [
             {
-              "lessonId": "a1-reading-short-messages",
+              "lessonId": "a1-telc-reading-public-notices-signs",
               "orderIndex": 0
             },
             {
-              "lessonId": "a1-writing-simple-forms",
+              "lessonId": "a1-telc-reading-classifieds-housing",
               "orderIndex": 1
-            },
-            {
-              "lessonId": "a1-writing-short-postcard",
-              "orderIndex": 2
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-a1-listening",
+        "track": "telc",
+        "level": "A1",
+        "title": "Listening",
+        "description": null,
+        "orderIndex": 3
+      },
+      "sections": [
         {
           "section": {
-            "id": "telc-a1-pruefungsteile-sprechen",
-            "milestoneId": "telc-a1-pruefungsteile",
-            "title": "Sprechen",
+            "id": "telc-a1-listening-lessons",
+            "milestoneId": "telc-a1-listening",
+            "title": "Lessons",
             "description": null,
-            "orderIndex": 1
+            "orderIndex": 0
           },
           "lessonRefs": [
             {
-              "lessonId": "a1-speaking-asking-directions",
+              "lessonId": "a1-telc-listening-station-store-announcements",
               "orderIndex": 0
+            },
+            {
+              "lessonId": "a1-telc-listening-voicemail-appointments",
+              "orderIndex": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-a1-writing",
+        "track": "telc",
+        "level": "A1",
+        "title": "Writing",
+        "description": null,
+        "orderIndex": 4
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "telc-a1-writing-lessons",
+            "milestoneId": "telc-a1-writing",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "a1-telc-writing-registration-form",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "a1-telc-writing-short-appointment-note",
+              "orderIndex": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-a1-speaking",
+        "track": "telc",
+        "level": "A1",
+        "title": "Speaking",
+        "description": null,
+        "orderIndex": 5
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "telc-a1-speaking-lessons",
+            "milestoneId": "telc-a1-speaking",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "a1-telc-speaking-personal-disclosure",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "a1-telc-speaking-asking-requesting",
+              "orderIndex": 1
             }
           ]
         }
@@ -172,848 +216,1103 @@
   ],
   "lessons": [
     {
-      "id": "a1-personal-pronouns",
-      "sourceLevel": "A1",
-      "skill": "grammar",
-      "title": "Personal pronouns",
-      "explanation": "German personal pronouns change form depending on who is speaking or being spoken about. The subject pronouns are: ich (I), du (you, informal singular), er/sie/es (he/she/it), wir (we), ihr (you, informal plural), sie (they), Sie (you, formal). Unlike English, German pronoun choice for \"you\" depends on formality and number.",
-      "examples": [
-        "Ich heiße Anna.",
-        "Du bist mein Freund.",
-        "Er wohnt in Berlin.",
-        "Wir lernen Deutsch."
-      ]
-    },
-    {
-      "id": "a1-greetings-farewells",
-      "sourceLevel": "A1",
-      "skill": "vocabulary",
-      "title": "Greetings and farewells",
-      "explanation": "Common German greetings vary by time of day and formality. \"Hallo\" and \"Guten Tag\" are general greetings; \"Guten Morgen\" is for mornings, \"Guten Abend\" for evenings. \"Tschüss\" is informal for goodbye, \"Auf Wiedersehen\" is formal.",
-      "examples": [
-        "Guten Morgen!",
-        "Hallo, wie geht's?",
-        "Auf Wiedersehen!",
-        "Tschüss, bis bald!"
-      ]
-    },
-    {
-      "id": "a1-speaking-self-introduction",
-      "sourceLevel": "A1",
-      "skill": "speaking",
-      "title": "Introducing yourself",
-      "explanation": "Introducing yourself in German typically includes your name, where you're from, and maybe your age, using simple present-tense sentences: 'Ich heiße...', 'Ich komme aus...', 'Ich bin ... Jahre alt.'",
-      "examples": [
-        "Ich heiße Lisa.",
-        "Ich komme aus Spanien.",
-        "Ich bin 25 Jahre alt.",
-        "Ich wohne in München."
-      ]
-    },
-    {
-      "id": "a1-present-tense-regular",
-      "sourceLevel": "A1",
-      "skill": "grammar",
-      "title": "Present tense of regular verbs",
-      "explanation": "Regular German verbs in the present tense add endings to the verb stem based on the subject: -e (ich), -st (du), -t (er/sie/es), -en (wir), -t (ihr), -en (sie/Sie). E.g., lernen → ich lerne, du lernst, er lernt.",
-      "examples": [
-        "Ich lerne Deutsch.",
-        "Du lernst schnell.",
-        "Wir lernen zusammen.",
-        "Sie lernen Englisch."
-      ]
-    },
-    {
-      "id": "a1-sein-haben",
-      "sourceLevel": "A1",
-      "skill": "grammar",
-      "title": "The verbs \"sein\" and \"haben\"",
-      "explanation": "sein (to be) and haben (to have) are essential irregular verbs. sein: ich bin, du bist, er ist, wir sind, ihr seid, sie sind. haben: ich habe, du hast, er hat, wir haben, ihr habt, sie haben.",
-      "examples": [
-        "Ich bin müde.",
-        "Du hast einen Hund.",
-        "Wir sind Freunde.",
-        "Sie haben Zeit."
-      ]
-    },
-    {
-      "id": "telc-a1-sprachbausteine-format",
-      "sourceLevel": "A1",
-      "skill": "writing",
-      "title": "TELC Sprachbausteine format",
-      "explanation": "TELC's \"Sprachbausteine\" (language building blocks) section tests grammar and vocabulary through short gap-fill texts, where candidates choose the correct word from three options to complete a coherent short text — testing contextual grammar recognition rather than free production.",
-      "examples": [
-        "Ich ___ (a: bin / b: bist / c: ist) Student.",
-        "Complete: 'Er wohnt ___ (a: in / b: an / c: auf) Berlin.'"
-      ]
-    },
-    {
-      "id": "a1-numbers-1-100",
-      "sourceLevel": "A1",
-      "skill": "vocabulary",
-      "title": "Numbers 1-100",
-      "explanation": "German numbers 1-12 have unique names; 13-19 add \"-zehn\"; tens end in \"-zig\" (except 30: dreißig); numbers 21-99 combine units and tens in reverse order with \"und\" (e.g., 21 = einundzwanzig).",
-      "examples": [
-        "eins, zwei, drei",
-        "zehn, zwanzig, dreißig",
-        "einundzwanzig (21)",
-        "hundert (100)"
-      ]
-    },
-    {
-      "id": "a1-family-members",
-      "sourceLevel": "A1",
-      "skill": "vocabulary",
-      "title": "Family members",
-      "explanation": "Basic family vocabulary: die Mutter (mother), der Vater (father), die Schwester (sister), der Bruder (brother), die Eltern (parents), die Großmutter/der Großvater (grandmother/grandfather).",
-      "examples": [
-        "Meine Mutter heißt Julia.",
-        "Mein Bruder ist 10 Jahre alt.",
-        "Das sind meine Eltern.",
-        "Meine Großmutter kocht gern."
-      ]
-    },
-    {
-      "id": "a1-definite-articles",
-      "sourceLevel": "A1",
-      "skill": "grammar",
-      "title": "Definite articles (der, die, das)",
-      "explanation": "German nouns have three genders, each with its own definite article: der (masculine), die (feminine), das (neuter). The plural article is always \"die\". Learning the gender with each noun is essential.",
-      "examples": [
-        "der Mann",
-        "die Frau",
-        "das Kind",
-        "die Kinder"
-      ]
-    },
-    {
-      "id": "a1-listening-numbers-times",
-      "sourceLevel": "A1",
-      "skill": "listening",
-      "title": "Understanding numbers and times spoken aloud",
-      "explanation": "A1 listeners should recognize spoken numbers and times, e.g., distinguishing \"um drei Uhr\" (at three) from \"um dreizehn Uhr\" (13:00), and understanding simple spoken phone numbers or prices.",
-      "examples": [
-        "Es ist zehn Uhr.",
-        "Der Zug fährt um 8:30 Uhr.",
-        "Das kostet fünf Euro.",
-        "Meine Nummer ist null-eins-zwei-drei."
-      ]
-    },
-    {
-      "id": "a1-reading-simple-signs",
-      "sourceLevel": "A1",
-      "skill": "reading",
-      "title": "Understanding simple signs",
-      "explanation": "Understanding common public signs is a key A1 reading skill: e.g., \"Eingang\" (entrance), \"Ausgang\" (exit), \"Geöffnet\" (open), \"Geschlossen\" (closed), \"Kein Zutritt\" (no entry).",
-      "examples": [
-        "Eingang →",
-        "Geöffnet: 9-18 Uhr",
-        "Kein Rauchen",
-        "Ausgang links"
-      ]
-    },
-    {
-      "id": "a1-listening-simple-instructions",
-      "sourceLevel": "A1",
-      "skill": "listening",
-      "title": "Following simple spoken instructions",
-      "explanation": "A1 listeners should follow short spoken instructions such as directions or classroom commands, e.g., \"Öffnen Sie das Buch\", \"Gehen Sie geradeaus\", \"Warten Sie bitte.\"",
-      "examples": [
-        "Öffnen Sie das Buch auf Seite 5.",
-        "Gehen Sie geradeaus und dann links.",
-        "Warten Sie bitte einen Moment.",
-        "Setzen Sie sich, bitte."
-      ]
-    },
-    {
-      "id": "a1-reading-short-messages",
-      "sourceLevel": "A1",
-      "skill": "reading",
-      "title": "Reading short personal messages",
-      "explanation": "A1 readers should understand short personal messages and notes, recognizing key words like time, place, and names in simple written texts.",
-      "examples": [
-        "Treffen wir uns um 18 Uhr?",
-        "Ich bin im Büro.",
-        "Bis später!",
-        "Kannst du Brot kaufen?"
-      ]
-    },
-    {
-      "id": "a1-writing-simple-forms",
-      "sourceLevel": "A1",
-      "skill": "writing",
-      "title": "Filling in simple forms",
-      "explanation": "A1 writers should be able to fill in simple forms with personal information: Name, Adresse, Geburtsdatum (date of birth), Telefonnummer, Nationalität.",
-      "examples": [
-        "Name: Maria Schmidt",
-        "Adresse: Hauptstraße 12",
-        "Geburtsdatum: 03.05.1998",
-        "Nationalität: deutsch"
-      ]
-    },
-    {
-      "id": "a1-writing-short-postcard",
-      "sourceLevel": "A1",
-      "skill": "writing",
-      "title": "Writing a short postcard",
-      "explanation": "A1 writers should write a short, simple postcard or note describing where they are and how they feel, using simple present-tense sentences and basic connectors like \"und\" and \"aber\".",
-      "examples": [
-        "Liebe Anna, ich bin in Berlin. Die Stadt ist schön. Bis bald, Tom.",
-        "Hallo Mama, mir geht es gut. Das Wetter ist sonnig."
-      ]
-    },
-    {
-      "id": "a1-speaking-asking-directions",
-      "sourceLevel": "A1",
-      "skill": "speaking",
-      "title": "Asking for and giving simple directions",
-      "explanation": "A1 speakers should ask for and understand simple directions using phrases like \"Wo ist...?\", \"Wie komme ich zu...?\", and basic direction words: links (left), rechts (right), geradeaus (straight ahead).",
-      "examples": [
-        "Wo ist der Bahnhof?",
-        "Wie komme ich zum Supermarkt?",
-        "Gehen Sie geradeaus und dann rechts.",
-        "Es ist links von der Kirche."
-      ]
-    }
-  ],
-  "overrides": [
-    {
-      "lessonId": "a1-present-tense-regular",
+      "id": "a1-telc-identity-personal-data",
       "track": "telc",
-      "explanation": "For TELC's Sprachbausteine format, present tense verb endings are tested through multiple-choice gap-fill exercises rather than free production — focus on quickly recognizing the correct ending among similar-looking options (e.g., distinguishing -t from -en).",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "vocabulary",
+      "title": "Official Terms and Personal Information",
+      "explanation": "Administrative forms and public office visits require precise understanding of personal identification terms.\nKey concepts include: Vorname (first name), Nachname/Familienname (surname), Geburtsdatum (date of birth), Geburtsort (place of birth), Staatsangehörigkeit/Nationalität (citizenship), Familienstand (marital status: ledig, verheiratet, geschieden), and Postleitzahl (postal code).\n",
       "examples": [
-        "Er ___ (spielt/spielen) Fußball. → spielt",
-        "Wir ___ (lernt/lernen) Deutsch. → lernen"
+        "Familienstand: verheiratet, zwei Kinder.",
+        "Staatsangehörigkeit: syrisch.",
+        "Postleitzahl und Wohnort: 10115 Berlin.",
+        "Geburtsdatum: 14.05.1992."
+      ]
+    },
+    {
+      "id": "a1-telc-present-tense-essentials",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "grammar",
+      "title": "Present Tense Conjugation for Daily Needs",
+      "explanation": "Everyday integration requires mastering common verbs that follow regular and irregular present-tense patterns.\nEssential verbs include brauchen (to need), suchen (to search), verstehen (to understand), sprechen (to speak: du sprichst, er spricht), and helfen (to help: du hilfst, er hilft).\nVowel-changing verbs modify their root vowel from e to i/ie in the second and third person singular.\n",
+      "examples": [
+        "Ich brauche ein Formular für die Anmeldung.",
+        "Er spricht schon ein bisschen Deutsch.",
+        "Können Sie mir helfen? Ich verstehe das Wort nicht.",
+        "Wir suchen das Bürgeramt."
+      ]
+    },
+    {
+      "id": "a1-telc-housing-neighborhood-vocab",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "vocabulary",
+      "title": "Housing, Tenancy, and Neighborhood Terms",
+      "explanation": "Finding and managing housing requires specific terminology for apartments, leasing, and residential life.\nKey terms include: die Wohnung (apartment), das Zimmer (room), die Miete (rent), die Nebenkosten (utilities), die Kaution (deposit), der Nachbar (neighbor), and der Mietvertrag (lease agreement).\nCosts are typically differentiated as Kaltmiete (base rent without heating/utilities) and Warmmiete (total rent including utilities).\n",
+      "examples": [
+        "Die Warmmiete beträgt 650 Euro pro Monat.",
+        "Die Kaution sind drei Monatskaltmieten.",
+        "Die Wohnung hat drei Zimmer, eine Küche und ein Bad.",
+        "Die Nachbarn im Haus sind sehr freundlich."
+      ]
+    },
+    {
+      "id": "a1-telc-w-questions-official-inquiries",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "grammar",
+      "title": "Interrogatives for Official and Administrative Contexts",
+      "explanation": "Visiting government agencies and customer service counters requires forming precise questions.\nUse key question words: Wo (location: Wo ist Zimmer 12?), Wohin (destination), Wie lange (duration), Wer (person), and Wie viel / Wie viele (quantities and costs).\nThe verb immediately follows the question word, placing the subject directly after the verb.\n",
+      "examples": [
+        "Wo finde ich die Ausländerbehörde?",
+        "Welche Unterlagen brauche ich für die Anmeldung?",
+        "Wann hat das Rathaus Sprechstunde?",
+        "Wie lange dauert die Bearbeitung des Antrags?"
+      ]
+    },
+    {
+      "id": "a1-telc-accusative-shopping-supplies",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "grammar",
+      "title": "Accusative Case for Everyday Transactions",
+      "explanation": "Everyday transactions require using the accusative case to identify purchased items, contracts, or missing documents.\nOnly masculine singular determiners change: der becomes den, ein becomes einen, and kein becomes keinen.\nFeminine (die, eine, keine), neuter (das, ein, kein), and plural (die, keine) remain unchanged.\n",
+      "examples": [
+        "Ich unterschreibe den Mietvertrag.",
+        "Haben Sie einen Pass oder einen Ausweis dabei?",
+        "Wir brauchen eine neue Waschmaschine.",
+        "Er hat keinen Führerschein."
+      ]
+    },
+    {
+      "id": "a1-telc-modal-verbs-regulations",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "grammar",
+      "title": "Modal Verbs for House Rules and Regulations",
+      "explanation": "Residential rules (Hausordnung) and administrative regulations use the modal verbs müssen (obligation), dürfen (permission), and können (possibility).\nRemember that negation with dürfen indicates prohibition: 'Sie dürfen hier nicht parken' means parking is strictly forbidden.\nThe modal verb occupies position V2, while the accompanying infinitive is placed at the end of the sentence.\n",
+      "examples": [
+        "Hier darf man nicht rauchen.",
+        "Ab 22:00 Uhr müssen die Bewohner leise sein.",
+        "Sie können die Gebühr bar oder mit Karte bezahlen.",
+        "Im Treppenhaus darf man keine Fahrräder abstellen."
+      ]
+    },
+    {
+      "id": "a1-telc-work-professions-vocab",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "vocabulary",
+      "title": "Work, Professions, and the Workplace",
+      "explanation": "Workplace interactions involve terms for professions, daily working hours, and physical job sites.\nFemale professional titles add the suffix -in (der Arzt / die Ärztin; der Verkäufer / die Verkäuferin).\nKey terms include: der Arbeitsvertrag (employment contract), die Arbeitszeit (working hours), die Teilzeit / Vollzeit (part-time / full-time), and die Pause (break).\n",
+      "examples": [
+        "Ich arbeite als Verkäuferin im Supermarkt.",
+        "Meine Arbeitszeit ist von Montag bis Freitag, jeweils acht Stunden.",
+        "Er sucht eine Stelle in Teilzeit.",
+        "Um 12:30 Uhr machen wir eine halbe Stunde Mittagspause."
+      ]
+    },
+    {
+      "id": "a1-telc-imperative-polite-requests",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "grammar",
+      "title": "Imperatives and Polite Requests",
+      "explanation": "Everyday instructions and requests rely on the formal imperative and conditional phrasing.\nThe formal imperative simply inverts the verb and the formal pronoun: 'Kommen Sie!', 'Unterschreiben Sie hier!'.\nAlways include 'bitte' to maintain politeness.\nPolite requests often use 'Können Sie bitte...' followed by an infinitive at the end of the clause.\n",
+      "examples": [
+        "Bitte unterschreiben Sie dieses Formular.",
+        "Warten Sie bitte einen kurzen Moment im Wartezimmer.",
+        "Können Sie das bitte noch einmal wiederholen?",
+        "Rufen Sie mich morgen bitte zurück."
+      ]
+    },
+    {
+      "id": "a1-telc-prepositions-time-appointments",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "grammar",
+      "title": "Temporal Prepositions for Scheduling Appointments",
+      "explanation": "Scheduling appointments (Termine) requires using specific temporal prepositions.\nUse 'am' for days and dates (am Montag, am 12. März).\nUse 'um' for precise clock times (um 14 Uhr).\nUse 'im' for months and seasons (im Juli, im Sommer).\nUse 'von... bis...' to indicate time intervals (von 8:00 bis 16:00 Uhr).\n",
+      "examples": [
+        "Ich habe einen Termin beim Zahnarzt am Donnerstag um 10 Uhr.",
+        "Der Deutschkurs dauert von Januar bis April.",
+        "Haben Sie am Freitag Zeit für eine Wohnungsbesichtigung?",
+        "Die Sprechzeiten sind montags von 9 bis 12 Uhr."
+      ]
+    },
+    {
+      "id": "a1-telc-health-doctor-vocab",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "vocabulary",
+      "title": "Health, Doctor Visits, and the Pharmacy",
+      "explanation": "Healthcare visits require basic terms for symptoms, medical facilities, and administrative scheduling.\nKey terms include: der Arzt / die Ärztin (doctor), die Praxis (clinic), das Krankenhaus (hospital), die Apotheke (pharmacy), das Medikament (medicine), and das Rezept (prescription).\nSymptoms are expressed with 'weh tun' (Mein Kopf tut weh) or compound nouns ending in '-schmerzen' (Kopfschmerzen, Halsschmerzen).\n",
+      "examples": [
+        "Ich brauche einen Termin beim Arzt. Ich habe starke Kopfschmerzen.",
+        "Mein Rücken tut seit zwei Tagen weh.",
+        "Nehmen Sie diese Tabletten dreimal täglich vor dem Essen.",
+        "Das Medikament bekommen Sie mit einem Rezept in der Apotheke."
+      ]
+    },
+    {
+      "id": "a1-telc-reading-public-notices-signs",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "reading",
+      "title": "Reading Official Notices and House Rules",
+      "explanation": "Interpreting notices, safety signs, and residential rules requires scanning for prohibitions, requirements, and operating schedules.\nIdentify keywords like 'Notausgang' (emergency exit), 'Eingang/Ausgang' (entrance/exit), 'Ruhezeiten' (quiet hours), and 'Aufzug im Brandfall nicht benutzen' (do not use elevator during fires).\n",
+      "examples": [
+        "Hausordnung: Hausmüll bitte nur in die vorgesehenen Mülltonnen im Hof werfen. Abstellen von Sperrmüll ist verboten.",
+        "Ruhezeiten: Bitte vermeiden Sie Ruhestörungen montags bis samstags von 22:00 bis 07:00 Uhr sowie ganztägig an Sonn- und Feiertagen.",
+        "Wegen Renovierungsarbeiten bleibt das Kundenzentrum heute geschlossen."
+      ]
+    },
+    {
+      "id": "a1-telc-reading-classifieds-housing",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "reading",
+      "title": "Reading Classified Housing Advertisements",
+      "explanation": "Housing classifieds use standardized abbreviations: '2 Zi.-Whg.' (2-Zimmer-Wohnung), 'EBK' (Einbauküche / fitted kitchen), 'KM' (Kaltmiete), 'NK' (Nebenkosten), and 'ab sof.' (ab sofort / available immediately).\nFocus on extracting apartment size (square meters: qm), room count, cost components, and contact instructions.\n",
+      "examples": [
+        "Helle 3-Zi.-Whg. in Köln-Deutz, 75 qm, KM 680 Euro + 180 Euro NK, Kaution 2 KM, EBK vorhanden, ab 01.10. frei.",
+        "Schönes 1-Zimmer-Appartement für Studenten, 32 qm, Warmmiete 450 Euro inkl. Strom. Bezug sofort. Kontakt: heinz@wohnen.de.",
+        "Suche Nachmieter für gemütliche 2-Zimmer-Wohnung mit Balkon im 2. Stock. Keine Haustiere. Tel: 0162-334455."
+      ]
+    },
+    {
+      "id": "a1-telc-listening-station-store-announcements",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "listening",
+      "title": "Understanding Transit and Public Announcements",
+      "explanation": "Listening to public announcements in transport hubs and shopping venues requires selective listening for disruptions, track adjustments, and immediate actions.\nListen for numbers indicating platforms (Gleis), train identifiers (S-Bahn, ICE), delays (Minuten später), and destination changes.\n",
+      "examples": [
+        "Auf Gleis 5: S-Bahn Linie 3 nach Friedrichstraße fährt ein. Bitte Vorsicht bei der Einfahrt.",
+        "Achtung Fahrgäste: Wegen einer Weichenstörung verkehrt die Straßenbahnlinie 12 heute nur bis zum Südbahnhof.",
+        "Sehr geehrte Kundinnen, unser Baumarkt schließt in 15 Minuten. Kassen sind bis 20 Uhr geöffnet."
+      ]
+    },
+    {
+      "id": "a1-telc-listening-voicemail-appointments",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "listening",
+      "title": "Voicemail and Telephone Appointment Inquiries",
+      "explanation": "Telephone recordings and voicemails convey practical details such as office closures, callback requests, and appointment shifts.\nListen for caller identity, the purpose of the call, dates, times, and phone numbers.\n",
+      "examples": [
+        "Guten Tag, hier Praxis Dr. Weber. Wir bestätigen Ihren Termin am Mittwoch um 11:15 Uhr. Bitte bringen Sie Ihre Versichertenkarte mit.",
+        "Hallo Herr Al-Hassan, hier ist Autowerkstatt Schmidt. Ihr Auto ist fertig und kann bis 18 Uhr abgeholt werden. Auf Wiederhören.",
+        "Hier Anrufbeantworter der Firma Böhmer. Unsere Geschäftszeiten sind von Montag bis Freitag von 8 bis 17 Uhr."
+      ]
+    },
+    {
+      "id": "a1-telc-writing-registration-form",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "writing",
+      "title": "Completing Administrative and Registration Forms",
+      "explanation": "Filling out administrative forms requires extracting data from personal documents and mapping it to the appropriate fields.\nEnsure information is entered clearly without translation errors: Familienname (last name), Vorname (first name), Anschrift (street address and house number), PLZ / Ort (postal code and city), and Unterschrift (signature).\n",
+      "examples": [
+        "Name: Müller | Vorname: Thomas | Straße: Hauptstraße 12 | PLZ/Ort: 50667 Köln",
+        "Geburtsdatum: 02.11.1988 | Geburtsort: Damaskus | Staatsangehörigkeit: syrisch",
+        "Datum: 12.04.2024 | Unterschrift: [Handzeichen des Antragstellers]"
+      ]
+    },
+    {
+      "id": "a1-telc-writing-short-appointment-note",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "writing",
+      "title": "Writing Notes to Landlords, Doctors, or Employers",
+      "explanation": "Writing practical notes requires a clear statement of reason, a proposed solution or request, and polite closing phrasing.\nUseful expressions include: 'Sehr geehrte(r)...', 'Ich kann leider nicht kommen, weil...', and 'Können wir einen neuen Termin vereinbaren?'.\n",
+      "examples": [
+        "Sehr geehrte Frau Müller, mein Sohn ist heute krank und kann die Schule nicht besuchen. Viele Grüße, Fatima Aziz.",
+        "Sehr geehrter Herr Berger, die Heizung in meiner Wohnung funktioniert nicht. Können Sie bitte schnell einen Handwerker schicken? Mit freundlichen Grüßen, Ali Demir.",
+        "Guten Tag Herr Schneider, ich möchte meinen Termin am Donnerstag absagen und auf Freitag um 10 Uhr verschieben. Passt das? Herzliche Grüße."
+      ]
+    },
+    {
+      "id": "a1-telc-speaking-personal-disclosure",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "speaking",
+      "title": "Sharing Personal Data and Spelling",
+      "explanation": "Speaking tests begin with sharing personal details and spelling unusual names or reciting telephone numbers.\nPronounce German letters distinctly, especially diphthongs and umlauts (ä, ö, ü), and recite numbers in pairs or single digits without hesitation.\n",
+      "examples": [
+        "Mein Name ist Hassan, buchstabiert: H-A-S-S-A-N.",
+        "Meine Postleitzahl in Köln ist 50667 (fünf-null-sechs-sechs-sieben).",
+        "Ich wohne in der Bahnhofstraße Nummer 14.",
+        "Meine Telefonnummer lautet 0152 33 44 55."
+      ]
+    },
+    {
+      "id": "a1-telc-speaking-asking-requesting",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "speaking",
+      "title": "Practical Interpersonal Inquiries and Requests",
+      "explanation": "During paired speaking exams, candidates ask questions and make polite requests based on situational prompts.\nFrame polite questions and requests clearly using structures like 'Können Sie mir bitte sagen...', 'Geben Sie mir bitte...', and appropriate responses like 'Ja, gern' or 'Hier, bitte sehr'.\n",
+      "examples": [
+        "Können Sie mir bitte das Salz geben? - Ja, natürlich, hier bitte sehr.",
+        "Haben Sie heute Nachmittag Zeit für mich? - Leider nicht, ich muss arbeiten.",
+        "Entschuldigung, wo ist der Ausgang? - Gehen Sie geradeaus und dann nach links."
       ]
     }
   ],
   "exercises": [
     {
-      "id": "a1-personal-pronouns-mc-1",
-      "lessonId": "a1-personal-pronouns",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "Welches Pronomen passt? '___ bin Student.'",
-        "options": [
-          "Ich",
-          "Du",
-          "Er",
-          "Wir"
-        ],
-        "correctIndex": 0
-      }
-    },
-    {
-      "id": "a1-personal-pronouns-fb-1",
-      "lessonId": "a1-personal-pronouns",
-      "track": null,
-      "type": "fill_blank",
-      "content": {
-        "textWithBlank": "___ heißt Peter.",
-        "correctAnswer": "Er"
-      }
-    },
-    {
-      "id": "a1-personal-pronouns-fc-1",
-      "lessonId": "a1-personal-pronouns",
-      "track": null,
+      "id": "a1-telc-identity-personal-data__ex0",
+      "lessonId": "a1-telc-identity-personal-data",
+      "track": "telc",
       "type": "flashcard",
       "content": {
-        "front": "sie (plural)",
-        "back": "they"
+        "front": "der Familienstand",
+        "back": "marital status (single, married, etc.)"
       }
     },
     {
-      "id": "a1-personal-pronouns-mc-2",
-      "lessonId": "a1-personal-pronouns",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "Formal 'you' in German is:",
-        "options": [
-          "du",
-          "ihr",
-          "Sie",
-          "er"
-        ],
-        "correctIndex": 2
-      }
-    },
-    {
-      "id": "a1-greetings-farewells-fc-1",
-      "lessonId": "a1-greetings-farewells",
-      "track": null,
-      "type": "flashcard",
-      "content": {
-        "front": "Guten Morgen",
-        "back": "Good morning"
-      }
-    },
-    {
-      "id": "a1-greetings-farewells-fc-2",
-      "lessonId": "a1-greetings-farewells",
-      "track": null,
-      "type": "flashcard",
-      "content": {
-        "front": "Tschüss",
-        "back": "Bye (informal)"
-      }
-    },
-    {
-      "id": "a1-greetings-farewells-mc-1",
-      "lessonId": "a1-greetings-farewells",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "Formal goodbye:",
-        "options": [
-          "Tschüss",
-          "Auf Wiedersehen",
-          "Hallo",
-          "Guten Appetit"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "a1-greetings-farewells-fb-1",
-      "lessonId": "a1-greetings-farewells",
-      "track": null,
-      "type": "fill_blank",
-      "content": {
-        "textWithBlank": "___ Abend!",
-        "correctAnswer": "Guten"
-      }
-    },
-    {
-      "id": "a1-speaking-self-introduction-ft-1",
-      "lessonId": "a1-speaking-self-introduction",
-      "track": null,
-      "type": "free_text",
-      "content": {
-        "prompt": "Introduce yourself in three German sentences (name, origin, age).",
-        "modelAnswer": "Ich heiße Lisa. Ich komme aus Spanien. Ich bin 25 Jahre alt."
-      }
-    },
-    {
-      "id": "a1-speaking-self-introduction-mc-1",
-      "lessonId": "a1-speaking-self-introduction",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "'I come from' in German:",
-        "options": [
-          "Ich komme aus",
-          "Ich heiße",
-          "Ich bin",
-          "Ich wohne"
-        ],
-        "correctIndex": 0
-      }
-    },
-    {
-      "id": "a1-speaking-self-introduction-fb-1",
-      "lessonId": "a1-speaking-self-introduction",
-      "track": null,
-      "type": "fill_blank",
-      "content": {
-        "textWithBlank": "Ich ___ Anna.",
-        "correctAnswer": "heiße"
-      }
-    },
-    {
-      "id": "a1-present-tense-regular-fb-1",
-      "lessonId": "a1-present-tense-regular",
-      "track": null,
-      "type": "fill_blank",
-      "content": {
-        "textWithBlank": "Ich ___ (lernen) Deutsch.",
-        "correctAnswer": "lerne"
-      }
-    },
-    {
-      "id": "a1-present-tense-regular-fb-2",
-      "lessonId": "a1-present-tense-regular",
-      "track": null,
-      "type": "fill_blank",
-      "content": {
-        "textWithBlank": "Du ___ (wohnen) in Berlin.",
-        "correctAnswer": "wohnst"
-      }
-    },
-    {
-      "id": "a1-present-tense-regular-mc-1",
-      "lessonId": "a1-present-tense-regular",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "'wir' ending for regular verbs:",
-        "options": [
-          "-e",
-          "-st",
-          "-t",
-          "-en"
-        ],
-        "correctIndex": 3
-      }
-    },
-    {
-      "id": "a1-present-tense-regular-fc-1",
-      "lessonId": "a1-present-tense-regular",
-      "track": null,
-      "type": "flashcard",
-      "content": {
-        "front": "spielen (ich)",
-        "back": "ich spiele"
-      }
-    },
-    {
-      "id": "a1-present-tense-regular-mc-2",
-      "lessonId": "a1-present-tense-regular",
+      "id": "a1-telc-identity-personal-data__ex1",
+      "lessonId": "a1-telc-identity-personal-data",
       "track": "telc",
       "type": "multiple_choice",
       "content": {
-        "question": "'Ihr ___ sehr gut Deutsch.'",
+        "question": "Welches Wort bedeutet 'marital status: single'?",
         "options": [
-          "sprecht",
-          "spricht",
-          "sprechen"
-        ],
-        "correctIndex": 0
-      }
-    },
-    {
-      "id": "a1-sein-haben-fb-1",
-      "lessonId": "a1-sein-haben",
-      "track": null,
-      "type": "fill_blank",
-      "content": {
-        "textWithBlank": "Ich ___ (sein) glücklich.",
-        "correctAnswer": "bin"
-      }
-    },
-    {
-      "id": "a1-sein-haben-fb-2",
-      "lessonId": "a1-sein-haben",
-      "track": null,
-      "type": "fill_blank",
-      "content": {
-        "textWithBlank": "Er ___ (haben) ein Auto.",
-        "correctAnswer": "hat"
-      }
-    },
-    {
-      "id": "a1-sein-haben-mc-1",
-      "lessonId": "a1-sein-haben",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "'du' form of 'sein':",
-        "options": [
-          "bin",
-          "bist",
-          "ist",
-          "sind"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "a1-sein-haben-fc-1",
-      "lessonId": "a1-sein-haben",
-      "track": null,
-      "type": "flashcard",
-      "content": {
-        "front": "wir haben",
-        "back": "we have"
-      }
-    },
-    {
-      "id": "telc-a1-sprachbausteine-format-mc-1",
-      "lessonId": "telc-a1-sprachbausteine-format",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "Choose the correct word: 'Wir ___ ins Kino.'",
-        "options": [
-          "gehen",
-          "geht",
-          "gehst"
-        ],
-        "correctIndex": 0
-      }
-    },
-    {
-      "id": "telc-a1-sprachbausteine-format-mc-2",
-      "lessonId": "telc-a1-sprachbausteine-format",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "Choose the correct word: 'Das ist ___ Buch.'",
-        "options": [
-          "mein",
-          "meine",
-          "meinen"
-        ],
-        "correctIndex": 0
-      }
-    },
-    {
-      "id": "a1-numbers-1-100-fc-1",
-      "lessonId": "a1-numbers-1-100",
-      "track": null,
-      "type": "flashcard",
-      "content": {
-        "front": "15",
-        "back": "fünfzehn"
-      }
-    },
-    {
-      "id": "a1-numbers-1-100-fc-2",
-      "lessonId": "a1-numbers-1-100",
-      "track": null,
-      "type": "flashcard",
-      "content": {
-        "front": "21",
-        "back": "einundzwanzig"
-      }
-    },
-    {
-      "id": "a1-numbers-1-100-mc-1",
-      "lessonId": "a1-numbers-1-100",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "'vierzig' means:",
-        "options": [
-          "14",
-          "40",
-          "4",
-          "44"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "a1-numbers-1-100-fb-1",
-      "lessonId": "a1-numbers-1-100",
-      "track": null,
-      "type": "fill_blank",
-      "content": {
-        "textWithBlank": "Die Zahl 100 heißt ___.",
-        "correctAnswer": "hundert"
-      }
-    },
-    {
-      "id": "a1-family-members-fc-1",
-      "lessonId": "a1-family-members",
-      "track": null,
-      "type": "flashcard",
-      "content": {
-        "front": "der Vater",
-        "back": "the father"
-      }
-    },
-    {
-      "id": "a1-family-members-fc-2",
-      "lessonId": "a1-family-members",
-      "track": null,
-      "type": "flashcard",
-      "content": {
-        "front": "die Schwester",
-        "back": "the sister"
-      }
-    },
-    {
-      "id": "a1-family-members-mc-1",
-      "lessonId": "a1-family-members",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "'Eltern' means:",
-        "options": [
-          "Siblings",
-          "Parents",
-          "Grandparents",
-          "Children"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "a1-family-members-fb-1",
-      "lessonId": "a1-family-members",
-      "track": null,
-      "type": "fill_blank",
-      "content": {
-        "textWithBlank": "Mein ___ heißt Tom.",
-        "correctAnswer": "Bruder"
-      }
-    },
-    {
-      "id": "a1-definite-articles-mc-1",
-      "lessonId": "a1-definite-articles",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "'Buch' (book) takes which article?",
-        "options": [
-          "der",
-          "die",
-          "das",
-          "den"
+          "verheiratet",
+          "geschieden",
+          "ledig",
+          "verwitwet"
         ],
         "correctIndex": 2
       }
     },
     {
-      "id": "a1-definite-articles-fc-1",
-      "lessonId": "a1-definite-articles",
-      "track": null,
-      "type": "flashcard",
-      "content": {
-        "front": "die Frau",
-        "back": "the woman"
-      }
-    },
-    {
-      "id": "a1-definite-articles-fb-1",
-      "lessonId": "a1-definite-articles",
-      "track": null,
+      "id": "a1-telc-identity-personal-data__ex2",
+      "lessonId": "a1-telc-identity-personal-data",
+      "track": "telc",
       "type": "fill_blank",
       "content": {
-        "textWithBlank": "___ Mann ist groß.",
-        "correctAnswer": "Der"
+        "textWithBlank": "Bitte tragen Sie Ihre Adresse und die ___ ein. (postal code abbreviation: PLZ)",
+        "correctAnswer": "PLZ"
       }
     },
     {
-      "id": "a1-definite-articles-mc-2",
-      "lessonId": "a1-definite-articles",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "Plural definite article is always:",
-        "options": [
-          "der",
-          "die",
-          "das",
-          "dem"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "a1-listening-numbers-times-mc-1",
-      "lessonId": "a1-listening-numbers-times",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "You hear 'um acht Uhr' — this means:",
-        "options": [
-          "At 8 o'clock",
-          "At 18 o'clock",
-          "In 8 minutes",
-          "8 euros"
-        ],
-        "correctIndex": 0
-      }
-    },
-    {
-      "id": "a1-listening-numbers-times-ft-1",
-      "lessonId": "a1-listening-numbers-times",
-      "track": null,
+      "id": "a1-telc-identity-personal-data__ex3",
+      "lessonId": "a1-telc-identity-personal-data",
+      "track": "telc",
       "type": "free_text",
       "content": {
-        "prompt": "Write the time you hear: 'Es ist halb neun.'",
-        "modelAnswer": "8:30 (half past eight)"
+        "prompt": "State your nationality and city of residence.",
+        "modelAnswer": "Meine Staatsangehörigkeit ist polnisch und ich wohne in Bonn."
       }
     },
     {
-      "id": "a1-reading-simple-signs-mc-1",
-      "lessonId": "a1-reading-simple-signs",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "'Geschlossen' means:",
-        "options": [
-          "Open",
-          "Closed",
-          "Entrance",
-          "Exit"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "a1-reading-simple-signs-fc-1",
-      "lessonId": "a1-reading-simple-signs",
-      "track": null,
-      "type": "flashcard",
-      "content": {
-        "front": "Kein Zutritt",
-        "back": "No entry"
-      }
-    },
-    {
-      "id": "a1-reading-simple-signs-mc-2",
-      "lessonId": "a1-reading-simple-signs",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "You see 'Ausgang' — this means:",
-        "options": [
-          "Entrance",
-          "Exit",
-          "Toilet",
-          "Parking"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "a1-listening-simple-instructions-mc-1",
-      "lessonId": "a1-listening-simple-instructions",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "'Gehen Sie geradeaus' means:",
-        "options": [
-          "Turn left",
-          "Go straight ahead",
-          "Sit down",
-          "Wait"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "a1-listening-simple-instructions-ft-1",
-      "lessonId": "a1-listening-simple-instructions",
-      "track": null,
-      "type": "free_text",
-      "content": {
-        "prompt": "What is being asked: 'Setzen Sie sich, bitte.'?",
-        "modelAnswer": "Please sit down."
-      }
-    },
-    {
-      "id": "a1-reading-short-messages-mc-1",
-      "lessonId": "a1-reading-short-messages",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "'Treffen wir uns um 18 Uhr?' asks about:",
-        "options": [
-          "A place",
-          "A time to meet",
-          "A price",
-          "A name"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "a1-reading-short-messages-ft-1",
-      "lessonId": "a1-reading-short-messages",
-      "track": null,
-      "type": "free_text",
-      "content": {
-        "prompt": "What does 'Ich bin im Büro' mean?",
-        "modelAnswer": "I am at the office."
-      }
-    },
-    {
-      "id": "a1-writing-simple-forms-ft-1",
-      "lessonId": "a1-writing-simple-forms",
-      "track": null,
-      "type": "free_text",
-      "content": {
-        "prompt": "Fill in a simple form with your name, address, and date of birth in German form style.",
-        "modelAnswer": "Name: Anna Müller\nAdresse: Bahnhofstraße 5\nGeburtsdatum: 12.03.1995"
-      }
-    },
-    {
-      "id": "a1-writing-simple-forms-fb-1",
-      "lessonId": "a1-writing-simple-forms",
-      "track": null,
+      "id": "a1-telc-present-tense-essentials__ex0",
+      "lessonId": "a1-telc-present-tense-essentials",
+      "track": "telc",
       "type": "fill_blank",
       "content": {
-        "textWithBlank": "___: Berlin, Deutschland (place of birth)",
-        "correctAnswer": "Geburtsort"
+        "textWithBlank": "Er ___ sehr gut Englisch. (sprechen)",
+        "correctAnswer": "spricht"
       }
     },
     {
-      "id": "a1-writing-short-postcard-ft-1",
-      "lessonId": "a1-writing-short-postcard",
-      "track": null,
-      "type": "free_text",
-      "content": {
-        "prompt": "Write a short postcard (3-4 sentences) to a friend describing your trip.",
-        "modelAnswer": "Liebe Lisa, ich bin in München. Die Stadt ist toll und das Essen ist lecker. Bis bald, Anna."
-      }
-    },
-    {
-      "id": "a1-speaking-asking-directions-mc-1",
-      "lessonId": "a1-speaking-asking-directions",
-      "track": null,
+      "id": "a1-telc-present-tense-essentials__ex1",
+      "lessonId": "a1-telc-present-tense-essentials",
+      "track": "telc",
       "type": "multiple_choice",
       "content": {
-        "question": "'Wo ist der Bahnhof?' means:",
+        "question": "Welche Form von 'helfen' ist korrekt? '___ du mir bitte?'",
         "options": [
-          "Where is the train station?",
-          "What time is it?",
-          "How are you?",
-          "Where do you live?"
+          "Helfst",
+          "Hilfst",
+          "Helft",
+          "Hilft"
         ],
-        "correctIndex": 0
+        "correctIndex": 1
       }
     },
     {
-      "id": "a1-speaking-asking-directions-ft-1",
-      "lessonId": "a1-speaking-asking-directions",
-      "track": null,
-      "type": "free_text",
+      "id": "a1-telc-present-tense-essentials__ex2",
+      "lessonId": "a1-telc-present-tense-essentials",
+      "track": "telc",
+      "type": "fill_blank",
       "content": {
-        "prompt": "Ask for directions to the supermarket in German.",
-        "modelAnswer": "Wie komme ich zum Supermarkt?"
+        "textWithBlank": "Ich ___ Hilfe beim Ausfüllen des Formulars. (brauchen)",
+        "correctAnswer": "brauche"
       }
     },
     {
-      "id": "a1-speaking-asking-directions-fc-1",
-      "lessonId": "a1-speaking-asking-directions",
-      "track": null,
+      "id": "a1-telc-present-tense-essentials__ex3",
+      "lessonId": "a1-telc-present-tense-essentials",
+      "track": "telc",
       "type": "flashcard",
       "content": {
-        "front": "links",
-        "back": "left"
+        "front": "sie versteht",
+        "back": "she understands"
+      }
+    },
+    {
+      "id": "a1-telc-housing-neighborhood-vocab__ex0",
+      "lessonId": "a1-telc-housing-neighborhood-vocab",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "die Nebenkosten (pl.)",
+        "back": "utility charges / extra costs"
+      }
+    },
+    {
+      "id": "a1-telc-housing-neighborhood-vocab__ex1",
+      "lessonId": "a1-telc-housing-neighborhood-vocab",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was bedeutet 'Kaltmiete'?",
+        "options": [
+          "Miete inklusive aller Nebenkosten und Strom",
+          "Miete ohne Heizung und zusätzliche Betriebskosten",
+          "Kosten für den Umzug",
+          "Die Kaution für den Vermieter"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-telc-housing-neighborhood-vocab__ex2",
+      "lessonId": "a1-telc-housing-neighborhood-vocab",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Vor dem Einzug muss der Mieter eine ___ bezahlen. (deposit)",
+        "correctAnswer": "Kaution"
+      }
+    },
+    {
+      "id": "a1-telc-housing-neighborhood-vocab__ex3",
+      "lessonId": "a1-telc-housing-neighborhood-vocab",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Describe your apartment size in rooms.",
+        "modelAnswer": "Meine Wohnung hat zwei Zimmer, eine Küche und ein Badezimmer."
+      }
+    },
+    {
+      "id": "a1-telc-w-questions-official-inquiries__ex0",
+      "lessonId": "a1-telc-w-questions-official-inquiries",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welches Fragewort sucht nach einem Ort? '___ ist das Büro von Herrn Klein?'",
+        "options": [
+          "Wann",
+          "Wo",
+          "Wer",
+          "Warum"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-telc-w-questions-official-inquiries__ex1",
+      "lessonId": "a1-telc-w-questions-official-inquiries",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "___ kostet die Monatskarte für den Bus? (How much)",
+        "correctAnswer": "Wie viel"
+      }
+    },
+    {
+      "id": "a1-telc-w-questions-official-inquiries__ex2",
+      "lessonId": "a1-telc-w-questions-official-inquiries",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulate a formal question asking for the office opening hours using 'Wann'.",
+        "modelAnswer": "Wann öffnet das Bürgeramt?"
+      }
+    },
+    {
+      "id": "a1-telc-accusative-shopping-supplies__ex0",
+      "lessonId": "a1-telc-accusative-shopping-supplies",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Haben Sie ___ Reisepass dabei? (der Reisepass, masculine)",
+        "correctAnswer": "einen"
+      }
+    },
+    {
+      "id": "a1-telc-accusative-shopping-supplies__ex1",
+      "lessonId": "a1-telc-accusative-shopping-supplies",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Satz ist im Alltag grammatisch korrekt?",
+        "options": [
+          "Ich brauche ein neuer Schlüssel.",
+          "Ich brauche einen neuen Schlüssel.",
+          "Ich brauche einem neuen Schlüssel.",
+          "Ich brauche einer neuer Schlüssel."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-telc-accusative-shopping-supplies__ex2",
+      "lessonId": "a1-telc-accusative-shopping-supplies",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Wir haben leider ___ Balkon in der Wohnung. (kein, masculine)",
+        "correctAnswer": "keinen"
+      }
+    },
+    {
+      "id": "a1-telc-accusative-shopping-supplies__ex3",
+      "lessonId": "a1-telc-accusative-shopping-supplies",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "Ich habe den Antrag ausgefüllt.",
+        "back": "I have filled in the application (der Antrag -> den Antrag)."
+      }
+    },
+    {
+      "id": "a1-telc-modal-verbs-regulations__ex0",
+      "lessonId": "a1-telc-modal-verbs-regulations",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was bedeutet das Schild 'Rauchen verboten'?",
+        "options": [
+          "Hier muss man rauchen.",
+          "Hier darf man rauchen.",
+          "Hier darf man nicht rauchen.",
+          "Hier kann man Zigaretten kaufen."
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "a1-telc-modal-verbs-regulations__ex1",
+      "lessonId": "a1-telc-modal-verbs-regulations",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Man ___ ab 22 Uhr die Musik leiser stellen. (müssen, 3rd person singular)",
+        "correctAnswer": "muss"
+      }
+    },
+    {
+      "id": "a1-telc-modal-verbs-regulations__ex2",
+      "lessonId": "a1-telc-modal-verbs-regulations",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Hier ___ Sie nicht parken, das ist eine Ausfahrt. (dürfen, formal)",
+        "correctAnswer": "dürfen"
+      }
+    },
+    {
+      "id": "a1-telc-modal-verbs-regulations__ex3",
+      "lessonId": "a1-telc-modal-verbs-regulations",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "nicht dürfen",
+        "back": "to not be allowed to / to be prohibited from"
+      }
+    },
+    {
+      "id": "a1-telc-work-professions-vocab__ex0",
+      "lessonId": "a1-telc-work-professions-vocab",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "die Vollzeitstelle",
+        "back": "full-time job position"
+      }
+    },
+    {
+      "id": "a1-telc-work-professions-vocab__ex1",
+      "lessonId": "a1-telc-work-professions-vocab",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Wie heißt die weibliche Form von 'der Lehrer'?",
+        "options": [
+          "Die Lehrering",
+          "Die Lehrerin",
+          "Die Lehrerfrau",
+          "Die Lehrern"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-telc-work-professions-vocab__ex2",
+      "lessonId": "a1-telc-work-professions-vocab",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Er arbeitet 40 Stunden pro Woche, also arbeitet er in ___.",
+        "correctAnswer": "Vollzeit"
+      }
+    },
+    {
+      "id": "a1-telc-work-professions-vocab__ex3",
+      "lessonId": "a1-telc-work-professions-vocab",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "State your occupation (or desired profession) in German.",
+        "modelAnswer": "Ich arbeite als Krankenpfleger in einem Krankenhaus."
+      }
+    },
+    {
+      "id": "a1-telc-imperative-polite-requests__ex0",
+      "lessonId": "a1-telc-imperative-polite-requests",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "___ Sie bitte hier Ihren Namen ein! (tragen)",
+        "correctAnswer": "Tragen"
+      }
+    },
+    {
+      "id": "a1-telc-imperative-polite-requests__ex1",
+      "lessonId": "a1-telc-imperative-polite-requests",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Aufforderung ist die höflichste und im Bürgeramt angemessen?",
+        "options": [
+          "Gib mir den Pass!",
+          "Geben Sie mir bitte Ihren Pass.",
+          "Du musst mir den Pass geben.",
+          "Pass hierher!"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-telc-imperative-polite-requests__ex2",
+      "lessonId": "a1-telc-imperative-polite-requests",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Ask someone politely to speak more slowly using 'Können Sie bitte...'.",
+        "modelAnswer": "Können Sie bitte langsamer sprechen?"
+      }
+    },
+    {
+      "id": "a1-telc-prepositions-time-appointments__ex0",
+      "lessonId": "a1-telc-prepositions-time-appointments",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Präposition passt zu einer Uhrzeit? 'Der Termin ist ___ 15:30 Uhr.'",
+        "options": [
+          "Am",
+          "Im",
+          "Um",
+          "Bei"
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "a1-telc-prepositions-time-appointments__ex1",
+      "lessonId": "a1-telc-prepositions-time-appointments",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Der Kurs findet ___ Montag und Mittwoch statt.",
+        "correctAnswer": "am"
+      }
+    },
+    {
+      "id": "a1-telc-prepositions-time-appointments__ex2",
+      "lessonId": "a1-telc-prepositions-time-appointments",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Das Büro hat geöffnet ___ 8:00 Uhr ___ 12:00 Uhr.",
+        "correctAnswer": "von"
+      }
+    },
+    {
+      "id": "a1-telc-prepositions-time-appointments__ex3",
+      "lessonId": "a1-telc-prepositions-time-appointments",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "am Wochenende",
+        "back": "on the weekend"
+      }
+    },
+    {
+      "id": "a1-telc-health-doctor-vocab__ex0",
+      "lessonId": "a1-telc-health-doctor-vocab",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "die Bauchschmerzen (pl.)",
+        "back": "stomach ache / abdominal pains"
+      }
+    },
+    {
+      "id": "a1-telc-health-doctor-vocab__ex1",
+      "lessonId": "a1-telc-health-doctor-vocab",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Wo kauft man verschreibungspflichtige Medikamente?",
+        "options": [
+          "In der Bäckerei",
+          "In der Bibliothek",
+          "In der Apotheke",
+          "Im Einwohnermeldeamt"
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "a1-telc-health-doctor-vocab__ex2",
+      "lessonId": "a1-telc-health-doctor-vocab",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Mein Bein tut sehr ___ . (hurts)",
+        "correctAnswer": "weh"
+      }
+    },
+    {
+      "id": "a1-telc-health-doctor-vocab__ex3",
+      "lessonId": "a1-telc-health-doctor-vocab",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Say that you have an appointment with the doctor on Tuesday at 9.",
+        "modelAnswer": "Ich habe am Dienstag um 9 Uhr einen Termin beim Arzt."
+      }
+    },
+    {
+      "id": "a1-telc-reading-public-notices-signs__ex0",
+      "lessonId": "a1-telc-reading-public-notices-signs",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Hinweis: 'Ruhezeit von 22:00 bis 7:00 Uhr.' - Was bedeutet das für Mieter?",
+        "options": [
+          "Man darf laut Musik hören.",
+          "Man muss nachts leise sein.",
+          "Man darf keine Gäste empfangen.",
+          "Man muss um 22:00 Uhr schlafen."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-telc-reading-public-notices-signs__ex1",
+      "lessonId": "a1-telc-reading-public-notices-signs",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Schild an der Tür: 'Drücken' - Was müssen Sie tun?",
+        "options": [
+          "Anklopfen",
+          "Die Tür ziehen",
+          "Gegen die Tür drücken, um zu öffnen",
+          "Draußen warten"
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "a1-telc-reading-public-notices-signs__ex2",
+      "lessonId": "a1-telc-reading-public-notices-signs",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Grünes Schild mit weißem Läufer: 'Not___' (emergency exit)",
+        "correctAnswer": "ausgang"
+      }
+    },
+    {
+      "id": "a1-telc-reading-classifieds-housing__ex0",
+      "lessonId": "a1-telc-reading-classifieds-housing",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Anzeige: '2-Zi.-Whg., 55 qm, KM 500 Euro + NK 150 Euro.' - Wie hoch ist die Gesamtmiete (Warmmiete)?",
+        "options": [
+          "500 Euro",
+          "150 Euro",
+          "650 Euro",
+          "750 Euro"
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "a1-telc-reading-classifieds-housing__ex1",
+      "lessonId": "a1-telc-reading-classifieds-housing",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Anzeige: 'Große 4-Zimmer-Wohnung mit Garten, ab sofort frei.' - Ab wann kann man die Wohnung mieten?",
+        "options": [
+          "Erst im nächsten Jahr",
+          "Ab sofort",
+          "Ab 1. Dezember",
+          "Nur am Wochenende"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-telc-reading-classifieds-housing__ex2",
+      "lessonId": "a1-telc-reading-classifieds-housing",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Abkürzung in Wohnungsanzeigen: 'EBK' bedeutet Einbau___.",
+        "correctAnswer": "küche"
+      }
+    },
+    {
+      "id": "a1-telc-listening-station-store-announcements__ex0",
+      "lessonId": "a1-telc-listening-station-store-announcements",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Durchsage: 'Achtung an Gleis 7: Der ICE nach Stuttgart hält heute an Gleis 9.' - Wo fährt der Zug nach Stuttgart ab?",
+        "options": [
+          "An Gleis 7",
+          "An Gleis 9",
+          "Er fällt aus",
+          "An Gleis 11"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-telc-listening-station-store-announcements__ex1",
+      "lessonId": "a1-telc-listening-station-store-announcements",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Durchsage: 'Kundenhinweis: Ein kleiner Junge mit roter Jacke sucht seine Eltern an der Information.' - Wer wird gesucht?",
+        "options": [
+          "Ein Busfahrer",
+          "Die Eltern eines kleinen Jungen",
+          "Ein Kassenmitarbeiter",
+          "Ein Arzt"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-telc-listening-station-store-announcements__ex2",
+      "lessonId": "a1-telc-listening-station-store-announcements",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Durchsage: 'Der Zug nach Frankfurt hat voraussichtlich zehn Minuten ___ .' (delay)",
+        "correctAnswer": "Verspätung"
+      }
+    },
+    {
+      "id": "a1-telc-listening-voicemail-appointments__ex0",
+      "lessonId": "a1-telc-listening-voicemail-appointments",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Nachricht: 'Hier Praxis Dr. Weber. Ihr Termin am Montag verschiebt sich auf Dienstag, 14:00 Uhr.' - Wann ist der neue Termin?",
+        "options": [
+          "Montag um 14:00 Uhr",
+          "Dienstag um 14:00 Uhr",
+          "Dienstag um 10:00 Uhr",
+          "Mittwoch um 14:00 Uhr"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-telc-listening-voicemail-appointments__ex1",
+      "lessonId": "a1-telc-listening-voicemail-appointments",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Nachricht: 'Bitte bringen Sie zum Arzttermin Ihre Kranken___ mit.' (insurance card: Versichertenkarte/Krankenkassenkarte)",
+        "correctAnswer": "kassenkarte"
+      }
+    },
+    {
+      "id": "a1-telc-listening-voicemail-appointments__ex2",
+      "lessonId": "a1-telc-listening-voicemail-appointments",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Nachricht: 'Rufen Sie uns bitte unter 0171-45678 zurück.' - Was soll der Angerufene tun?",
+        "options": [
+          "Eine E-Mail schreiben",
+          "Sofort vorbeikommen",
+          "Zurückrufen",
+          "Ein Formular abschicken"
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "a1-telc-writing-registration-form__ex0",
+      "lessonId": "a1-telc-writing-registration-form",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Formularfeld für den Vornamen: '___'",
+        "correctAnswer": "Vorname"
+      }
+    },
+    {
+      "id": "a1-telc-writing-registration-form__ex1",
+      "lessonId": "a1-telc-writing-registration-form",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "In welches Feld gehört 'Hauptstraße 45, 80331 München'?",
+        "options": [
+          "Familienstand",
+          "Geburtsort",
+          "Straße, Hausnummer, PLZ und Wohnort",
+          "Staatsangehörigkeit"
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "a1-telc-writing-registration-form__ex2",
+      "lessonId": "a1-telc-writing-registration-form",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Provide your birth date in German format (DD.MM.YYYY).",
+        "modelAnswer": "15.08.1995"
+      }
+    },
+    {
+      "id": "a1-telc-writing-short-appointment-note__ex0",
+      "lessonId": "a1-telc-writing-short-appointment-note",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Write a short note to your landlord stating that the heating is broken and requesting help.",
+        "modelAnswer": "Sehr geehrter Herr Meyer, die Heizung in meiner Wohnung ist kaputt. Können Sie bitte schnell helfen? Mit freundlichen Grüßen, Anna Schmidt."
+      }
+    },
+    {
+      "id": "a1-telc-writing-short-appointment-note__ex1",
+      "lessonId": "a1-telc-writing-short-appointment-note",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Formelle Anrede für einen Mann: 'Sehr ___ Herr Braun,'",
+        "correctAnswer": "geehrter"
+      }
+    },
+    {
+      "id": "a1-telc-writing-short-appointment-note__ex2",
+      "lessonId": "a1-telc-writing-short-appointment-note",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Schlussformel ist in einem formellen Brief an Behörden oder Vermieter korrekt?",
+        "options": [
+          "Tschüss!",
+          "Mit freundlichen Grüßen",
+          "Bis bald mein Freund",
+          "Kuss"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-telc-speaking-personal-disclosure__ex0",
+      "lessonId": "a1-telc-speaking-personal-disclosure",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Spell your first name using German letters separated by hyphens (e.g., A-N-N-A).",
+        "modelAnswer": "M-A-R-T-I-N"
+      }
+    },
+    {
+      "id": "a1-telc-speaking-personal-disclosure__ex1",
+      "lessonId": "a1-telc-speaking-personal-disclosure",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Say your telephone number in spoken German words.",
+        "modelAnswer": "Meine Telefonnummer ist null-eins-sieben-eins, zwei, drei, vier, fünf, sechs."
+      }
+    },
+    {
+      "id": "a1-telc-speaking-personal-disclosure__ex2",
+      "lessonId": "a1-telc-speaking-personal-disclosure",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Wie wird der Buchstabe 'J' auf Deutsch im Alphabet ausgesprochen?",
+        "options": [
+          "Dschott",
+          "Jott",
+          "I-Grek",
+          "Kah"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-telc-speaking-asking-requesting__ex0",
+      "lessonId": "a1-telc-speaking-asking-requesting",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Ask a partner politely to open the window using 'Können Sie bitte...'.",
+        "modelAnswer": "Können Sie bitte das Fenster öffnen?"
+      }
+    },
+    {
+      "id": "a1-telc-speaking-asking-requesting__ex1",
+      "lessonId": "a1-telc-speaking-asking-requesting",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Partner: 'Können Sie mir bitte Ihren Stift leihen?' - Welche Antwort ist freundlich und passend?",
+        "options": [
+          "Nein, weg da!",
+          "Ja gerne, bitte sehr.",
+          "Ich habe keinen Hunger.",
+          "Der Stift ist blau."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-telc-speaking-asking-requesting__ex2",
+      "lessonId": "a1-telc-speaking-asking-requesting",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Politely ask an official for an administrative form.",
+        "modelAnswer": "Geben Sie mir bitte das Anmeldeformular?"
       }
     }
   ],
   "prerequisites": [
     {
-      "lessonId": "a1-speaking-self-introduction",
-      "prerequisiteLessonId": "a1-greetings-farewells"
+      "lessonId": "a1-telc-w-questions-official-inquiries",
+      "prerequisiteLessonId": "a1-telc-present-tense-essentials"
     },
     {
-      "lessonId": "a1-speaking-self-introduction",
-      "prerequisiteLessonId": "a1-personal-pronouns"
+      "lessonId": "a1-telc-accusative-shopping-supplies",
+      "prerequisiteLessonId": "a1-telc-present-tense-essentials"
     },
     {
-      "lessonId": "a1-present-tense-regular",
-      "prerequisiteLessonId": "a1-personal-pronouns"
+      "lessonId": "a1-telc-modal-verbs-regulations",
+      "prerequisiteLessonId": "a1-telc-present-tense-essentials"
     },
     {
-      "lessonId": "a1-sein-haben",
-      "prerequisiteLessonId": "a1-personal-pronouns"
+      "lessonId": "a1-telc-work-professions-vocab",
+      "prerequisiteLessonId": "a1-telc-identity-personal-data"
     },
     {
-      "lessonId": "a1-listening-numbers-times",
-      "prerequisiteLessonId": "a1-numbers-1-100"
+      "lessonId": "a1-telc-imperative-polite-requests",
+      "prerequisiteLessonId": "a1-telc-present-tense-essentials"
     },
     {
-      "lessonId": "a1-writing-simple-forms",
-      "prerequisiteLessonId": "a1-numbers-1-100"
+      "lessonId": "a1-telc-prepositions-time-appointments",
+      "prerequisiteLessonId": "a1-telc-identity-personal-data"
+    },
+    {
+      "lessonId": "a1-telc-health-doctor-vocab",
+      "prerequisiteLessonId": "a1-telc-prepositions-time-appointments"
+    },
+    {
+      "lessonId": "a1-telc-reading-public-notices-signs",
+      "prerequisiteLessonId": "a1-telc-modal-verbs-regulations"
+    },
+    {
+      "lessonId": "a1-telc-reading-classifieds-housing",
+      "prerequisiteLessonId": "a1-telc-housing-neighborhood-vocab"
+    },
+    {
+      "lessonId": "a1-telc-reading-classifieds-housing",
+      "prerequisiteLessonId": "a1-telc-prepositions-time-appointments"
+    },
+    {
+      "lessonId": "a1-telc-listening-station-store-announcements",
+      "prerequisiteLessonId": "a1-telc-prepositions-time-appointments"
+    },
+    {
+      "lessonId": "a1-telc-listening-voicemail-appointments",
+      "prerequisiteLessonId": "a1-telc-prepositions-time-appointments"
+    },
+    {
+      "lessonId": "a1-telc-listening-voicemail-appointments",
+      "prerequisiteLessonId": "a1-telc-health-doctor-vocab"
+    },
+    {
+      "lessonId": "a1-telc-writing-registration-form",
+      "prerequisiteLessonId": "a1-telc-identity-personal-data"
+    },
+    {
+      "lessonId": "a1-telc-writing-short-appointment-note",
+      "prerequisiteLessonId": "a1-telc-w-questions-official-inquiries"
+    },
+    {
+      "lessonId": "a1-telc-writing-short-appointment-note",
+      "prerequisiteLessonId": "a1-telc-prepositions-time-appointments"
+    },
+    {
+      "lessonId": "a1-telc-speaking-personal-disclosure",
+      "prerequisiteLessonId": "a1-telc-identity-personal-data"
+    },
+    {
+      "lessonId": "a1-telc-speaking-personal-disclosure",
+      "prerequisiteLessonId": "a1-telc-present-tense-essentials"
+    },
+    {
+      "lessonId": "a1-telc-speaking-asking-requesting",
+      "prerequisiteLessonId": "a1-telc-imperative-polite-requests"
+    },
+    {
+      "lessonId": "a1-telc-speaking-asking-requesting",
+      "prerequisiteLessonId": "a1-telc-housing-neighborhood-vocab"
     }
   ]
 }

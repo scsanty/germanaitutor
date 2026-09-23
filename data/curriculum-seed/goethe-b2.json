@@ -1,0 +1,1260 @@
+{
+  "seedVersion": "2",
+  "track": "goethe",
+  "level": "B2",
+  "milestones": [
+    {
+      "milestone": {
+        "id": "goethe-b2-grammar",
+        "track": "goethe",
+        "level": "B2",
+        "title": "Grammar",
+        "description": null,
+        "orderIndex": 0
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "goethe-b2-grammar-lessons",
+            "milestoneId": "goethe-b2-grammar",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b2-goethe-textkohaesion-satzverflechtung",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "b2-goethe-meinungsausdruck-argumentationsstrukturen",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "b2-goethe-subjektive-bedeutung-modalverben",
+              "orderIndex": 2
+            },
+            {
+              "lessonId": "b2-goethe-partizipialkonstruktionen-verdichtung",
+              "orderIndex": 3
+            },
+            {
+              "lessonId": "b2-goethe-indirekte-rede-konjunktiv-i",
+              "orderIndex": 4
+            },
+            {
+              "lessonId": "b2-goethe-feste-nomen-verb-gefuege",
+              "orderIndex": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "goethe-b2-vocabulary",
+        "track": "goethe",
+        "level": "B2",
+        "title": "Vocabulary",
+        "description": null,
+        "orderIndex": 1
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "goethe-b2-vocabulary-lessons",
+            "milestoneId": "goethe-b2-vocabulary",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b2-goethe-vocab-nachhaltigkeit-umweltschutz",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "b2-goethe-vocab-bildung-arbeitswelt",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "b2-goethe-vocab-gesellschaft-zusammenleben",
+              "orderIndex": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "goethe-b2-reading",
+        "track": "goethe",
+        "level": "B2",
+        "title": "Reading",
+        "description": null,
+        "orderIndex": 2
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "goethe-b2-reading-lessons",
+            "milestoneId": "goethe-b2-reading",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b2-goethe-lesen-teil1-forenbeitraege-zuordnen",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "b2-goethe-lesen-teil2-textrekonstruktion",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "b2-goethe-lesen-teil3-sachtext-standpunkte",
+              "orderIndex": 2
+            },
+            {
+              "lessonId": "b2-goethe-lesen-teil4-lesermeinungen-ueberschriften",
+              "orderIndex": 3
+            },
+            {
+              "lessonId": "b2-goethe-lesen-teil5-richtlinien-ordnungen",
+              "orderIndex": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "goethe-b2-listening",
+        "track": "goethe",
+        "level": "B2",
+        "title": "Listening",
+        "description": null,
+        "orderIndex": 3
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "goethe-b2-listening-lessons",
+            "milestoneId": "goethe-b2-listening",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b2-goethe-hoeren-teil1-alltag-nachrichten",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "b2-goethe-hoeren-teil2-experteninterview",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "b2-goethe-hoeren-teil3-drei-sprecher-zuordnen",
+              "orderIndex": 2
+            },
+            {
+              "lessonId": "b2-goethe-hoeren-teil4-fachvortrag",
+              "orderIndex": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "goethe-b2-writing",
+        "track": "goethe",
+        "level": "B2",
+        "title": "Writing",
+        "description": null,
+        "orderIndex": 4
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "goethe-b2-writing-lessons",
+            "milestoneId": "goethe-b2-writing",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b2-goethe-schreiben-teil1-forumsbeitrag",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "b2-goethe-schreiben-teil2-formelle-mitteilung",
+              "orderIndex": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "goethe-b2-speaking",
+        "track": "goethe",
+        "level": "B2",
+        "title": "Speaking",
+        "description": null,
+        "orderIndex": 5
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "goethe-b2-speaking-lessons",
+            "milestoneId": "goethe-b2-speaking",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b2-goethe-sprechen-teil1-vortrag",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "b2-goethe-sprechen-teil2-diskussion",
+              "orderIndex": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "b2-goethe-textkohaesion-satzverflechtung",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "grammar",
+      "title": "Textkohäsion, Anaphern und Satzverflechtung für Lesen Teil 2",
+      "explanation": "In Goethe Lesen Teil 2 müssen 6 entfernte Sätze aus 8 Optionen in einen Magazintext wiedereingesetzt werden.\nEntscheidend für den Erfolg ist das Erkennen von Kohäsionsmitteln:\n1. Pronomen und Deiktika: \"dieser\", \"jene\", \"solche\", \"dort\", \"damals\", die auf Nomen oder Sachverhalte des vorangehenden Satzes verweisen.\n2. Konnektoren und Adverbien: \"folglich\", \"demnach\", \"hingegen\", \"allerdings\", \"nichtsdestotrotz\".\n3. Lexikalische Wiederaufnahme durch Synonyme oder Oberbegriffe.\n",
+      "examples": [
+        "Vorheriger Satz: 'Die Wissenschaftler standen vor einem rätselhaften Phänomen.' -> Eingesetzter Satz: 'Dieses ließ sich mit bisherigen Theorien nicht erklären.'",
+        "Vorheriger Satz: 'Trotz hoher Investitionen blieben die Erträge weit hinter den Erwartungen zurück.' -> Eingesetzter Satz: 'Die Firmenleitung zog deshalb drastische Konsequenzen.'"
+      ]
+    },
+    {
+      "id": "b2-goethe-meinungsausdruck-argumentationsstrukturen",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "grammar",
+      "title": "Differenzierter Meinungsausdruck und Argumentationsketten",
+      "explanation": "Für das Goethe-Schreiben Teil 1 (Forumsbeitrag) und Sprechen müssen Argumente abgestuft und nuanciert formuliert werden.\nMeinung einleiten: \"Meines Erachtens\", \"Ich bin der festen Überzeugung, dass\", \"Aus meiner Sicht\".\nArgumente reihen und steigern: \"Nicht minder bedeutsam ist...\", \"Ein weiterer gravierender Aspekt liegt darin, dass...\", \"Ganz entscheidend ist hierbei...\".\nEinschränkung/Distanzierung: \"Man sollte allerdings nicht außer Acht lassen, dass...\", \"Gewiss trifft es zu, dass..., gleichwohl...\".\n",
+      "examples": [
+        "Meines Erachtens überwiegen die Vorteile einer flexiblen Arbeitszeitregelung die organisatorischen Hürden bei Weitem.",
+        "Ein weiteres gewichtiges Argument für den Ausbau des Radwegenetzes ist die erhebliche Reduktion von Stickoxiden.",
+        "Es steht außer Frage, dass diese Reform hohe Kosten verursacht, gleichwohl ist sie unumgänglich."
+      ]
+    },
+    {
+      "id": "b2-goethe-subjektive-bedeutung-modalverben",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "grammar",
+      "title": "Subjektive Bedeutung der Modalverben (Vermutung und Fremdaussage)",
+      "explanation": "Im B2-Bereich drücken Modalverben nicht nur Pflicht oder Fähigkeit aus, sondern den Grad der Wahrscheinlichkeit (Vermutung) oder die Distanzierung von fremden Aussagen.\nMüssen: fast 100% sicher (\"Das Licht brennt, er muss zu Hause sein\").\nDürfte: ca. 75% wahrscheinlich (\"Das Wetter dürfte morgen sonnig werden\").\nKönnte / Kann: ca. 50% Möglichkeit (\"Es könnte regnen\").\nSollen: fremde Behauptung / Gerücht (\"Er soll viel Geld veruntreut haben\" = Man sagt, dass...).\nWollen: eigene Behauptung des Subjekts, die bezweifelt wird (\"Er will den Chef nicht gesehen haben\").\n",
+      "examples": [
+        "Die Zeugin will zum Tatzeitpunkt zu Hause geschlafen haben. (Das behauptet sie selbst, wird aber angezweifelt.)",
+        "Der neue Roman des Autors soll ein Meisterwerk sein. (Das hört man von Kritikern.)",
+        "Nach dieser langen Reise müssen Sie völlig erschöpft sein. (Logische Schlussfolgerung.)",
+        "Die Reparatur dürfte etwa zwei Stunden in Anspruch nehmen. (Wahrscheinliche Schätzung.)"
+      ]
+    },
+    {
+      "id": "b2-goethe-partizipialkonstruktionen-verdichtung",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "grammar",
+      "title": "Partizipialkonstruktionen zur Textverdichtung in journalistischen Texten",
+      "explanation": "Goethe-Lesetexte (insbesondere Teil 3 und Teil 4) nutzen häufig partizipiale Attribute, um komplexe Informationen syntaktisch zu verdichten.\nStatt eines Nebensatzes wird das Partizip I oder II attributiv vor das Nomen gesetzt, oft mit mehrgliedrigen Erweiterungen.\nBeispiel: \"Die auf der Konferenz von führenden Klimatologen vorgestellten Simulationsmodelle\" = \"Die Simulationsmodelle, die von führenden Klimatologen auf der Konferenz vorgestellt wurden\".\n",
+      "examples": [
+        "Die von der Bundesregierung beschlossenen Steuererleichterungen treten im Januar in Kraft.",
+        "Das ständig wachsende Verkehrsaufkommen belastet die Anwohner der Hauptverkehrsachsen.",
+        "Die im Rahmen der Studie befragten Bürger zeigten sich überwiegend skeptisch."
+      ]
+    },
+    {
+      "id": "b2-goethe-indirekte-rede-konjunktiv-i",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "grammar",
+      "title": "Indirekte Rede und Konjunktiv I in der Berichterstattung",
+      "explanation": "Zur distanzierten Wiedergabe von Äußerungen nutzt die gehobene Schriftsprache und die journalistische Berichterstattung den Konjunktiv I.\nEr wird vom Präsensstamm des Verbs abgeleitet: er/sie habe, sei, wisse, könne, müsse, gehe.\nStimmen die Konjunktiv-I-Formen mit dem Indikativ überein (häufig in der 1. Person Singular und im Plural), weicht man auf den Konjunktiv II aus (\"hätten\", \"wären\", \"würden\").\n",
+      "examples": [
+        "Der Sprecher betonte, die Regierung habe die Situation jederzeit unter Kontrolle.",
+        "Die Ministerin erklärte, man sei sich der Herausforderungen bewusst und werde rasch handeln.",
+        "Kritiker warfen dem Konzern vor, er verharmlose die ökologischen Folgeschäden."
+      ]
+    },
+    {
+      "id": "b2-goethe-feste-nomen-verb-gefuege",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "grammar",
+      "title": "Gehobene Funktionsverbgefüge für Aufsatz und Vortrag",
+      "explanation": "In den Prüfungsteilen Schreiben und Sprechen des Goethe-Zertifikats B2 wird der gezielte Einsatz eines breiten, gehobenen Idiomenrepertoires positiv bewertet.\nWichtige Wendungen: \"zur Sprache bringen\" (ansprechen), \"unter Beweis stellen\" (beweisen), \"in die Tat umsetzen\" (verwirklichen), \"außer Frage stehen\" (zweifellos sein), \"Einfluss ausüben auf\" (beeinflussen), \"Maßnahmen ergreifen\" (handeln).\n",
+      "examples": [
+        "Er hat seine Fachkompetenz in zahlreichen Projekten eindrucksvoll unter Beweis gestellt.",
+        "Die gefassten Beschlüsse müssen nun schnellstmöglich in die Tat umgesetzt werden.",
+        "Es steht völlig außer Frage, dass das Bildungswesen reformbedürftig ist.",
+        "Die Lobbygruppe übte massiven Einfluss auf die Gesetzgebung aus."
+      ]
+    },
+    {
+      "id": "b2-goethe-vocab-nachhaltigkeit-umweltschutz",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "vocabulary",
+      "title": "Wortschatz: Nachhaltiger Lebensstil und Konsumkritik",
+      "explanation": "Typische Themen im Goethe-Zertifikat B2 behandeln bewussten Konsum, Müllvermeidung und nachhaltigen Tourismus.\nSchlüsselwörter: der Minimalismus, die Konsumgesellschaft, die Müllvermeidung, der Verzicht, unverpackte Lebensmittel, die Wegwerfmentalität, der ökologische Wandel.\nKollokationen: auf Überflüssiges verzichten, Ressourcen schonend einsetzen, ein Zeichen für den Umweltschutz setzen.\n",
+      "examples": [
+        "Der Trend zum Minimalismus beweist, dass Wohlstand nicht primär an materiellem Besitz gemessen werden muss.",
+        "Immer mehr Verbraucher kaufen in Unverpackt-Läden ein, um aktiv zur Müllvermeidung beizutragen.",
+        "Massentourismus zerstört oft genau die Naturräume, derentwegen Urlauber anreisen."
+      ]
+    },
+    {
+      "id": "b2-goethe-vocab-bildung-arbeitswelt",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "vocabulary",
+      "title": "Wortschatz: Bildung, Chancengleichheit und Digitalisierung",
+      "explanation": "Bildungsthemen im Goethe-Zertifikat reichen von Frühförderung über Benotungssysteme bis zum lebenslangen Lernen im Beruf.\nBegriffe: das lebenslange Lernen, die Leistungsbeurteilung, die Chancengleichheit, die Medienkompetenz, der Quereinstieg, die Umschulung, die Studiengebühren.\nKollokationen: Talente fördern, Bildungsungerechtigkeit abbauen, theoretisches Wissen in die Praxis übertragen.\n",
+      "examples": [
+        "In einer sich rasch wandelnden Wirtschaftswelt gewinnt das Konzept des lebenslangen Lernens essenzielle Bedeutung.",
+        "Kritiker fordern, Noten in der Grundschule durch individuelle Entwicklungsberichte zu ersetzen.",
+        "Digital gestützter Unterricht ermöglicht personalisiertes Lernen im individuellen Tempo."
+      ]
+    },
+    {
+      "id": "b2-goethe-vocab-gesellschaft-zusammenleben",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "vocabulary",
+      "title": "Wortschatz: Ehrenamt, Generationen und gesellschaftlicher Zusammenhalt",
+      "explanation": "Gesellschaftliche Diskurse in B2 thematisieren ehrenamtliches Engagement, das Miteinander von Jung und Alt sowie gesellschaftliche Integration.\nBegriffe: das bürgerschaftliche Engagement, der Zusammenhalt, das Mehrgenerationenhaus, der demografische Wandel, die Solidarität, die Isolation.\nKollokationen: einen Beitrag zur Gesellschaft leisten, sich für Schwächere einsetzen, Vereinsarbeit leisten.\n",
+      "examples": [
+        "Mehrgenerationenhäuser bieten Raum für gegenseitige Unterstützung zwischen Senioren und Familien.",
+        "Ohne das ehrenamtliche Engagement von Millionen Bürgern wären viele Hilfsangebote nicht finanzierbar.",
+        "Die Vereinsarbeit stärkt das Gemeinschaftsgefühl und wirkt der zunehmenden Vereinsamung entgegen."
+      ]
+    },
+    {
+      "id": "b2-goethe-lesen-teil1-forenbeitraege-zuordnen",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "reading",
+      "title": "Goethe Lesen Teil 1: Zuordnung von Aussagen zu Forumsbeiträgen",
+      "explanation": "In Teil 1 des Goethe-Leseverstehens (empfohlene Zeit: ca. 18 Minuten) lesen Sie vier kurze Forumsbeiträge verschiedener Personen (A, B, C, D) zu einem Thema (z. B. Minimalismus, fleischfreie Ernährung).\nSie ordnen 9 Aussagen der jeweils passenden Person zu. Personen können mehrfach gewählt werden.\nAchten Sie auf Paraphrasen: Eine Aussage lautet beispielsweise \"Wer verzichtet auf Fleisch?\", während im Text von Person C steht: \"Ich habe tierische Produkte komplett von meinem Speiseplan gestrichen.\"\n",
+      "examples": [
+        "Aussage: 'Für wen ist Naturschutz bei Kaufentscheidungen ausschlaggebend?' -> Text B: 'Ich kaufe nur Produkte aus biologischem Anbau, um die Umwelt nicht zu belasten.' -> Lösung: B."
+      ]
+    },
+    {
+      "id": "b2-goethe-lesen-teil2-textrekonstruktion",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "reading",
+      "title": "Goethe Lesen Teil 2: Textrekonstruktion mit Satzlücken",
+      "explanation": "In Teil 2 (empfohlene Zeit: ca. 12 Minuten) lesen Sie einen zusammenhängenden Magazin- oder Zeitungsartikel, in dem 6 Sätze fehlen.\nAus einer Liste von 8 Sätzen (A–H) müssen Sie die 6 passenden Sätze den Lücken (1–6) zuordnen; zwei Sätze bleiben übrig.\nPrüfen Sie immer den grammatischen und inhaltlichen Anschluss sowohl an den vorangehenden als auch an den nachfolgenden Satz (Pronominalbezüge, Konnektoren, Zeitenfolge).\n",
+      "examples": [
+        "Lücke 2: Vor dem Spalt steht 'Viele Schulen verfügen noch immer nicht über schnelles Internet.' Nach dem Spalt steht 'Daher können digitale Lehrmittel dort kaum genutzt werden.' -> Passender Rumpfsatz: 'Oft fehlt es schlicht an den finanziellen Mitteln für moderne Glasfaseranschlüsse.'"
+      ]
+    },
+    {
+      "id": "b2-goethe-lesen-teil3-sachtext-standpunkte",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "reading",
+      "title": "Goethe Lesen Teil 3: Autorenabsichten in Sachtexten analysieren",
+      "explanation": "Teil 3 (empfohlene Zeit: ca. 12 Minuten) umfasst einen längeren journalistischen Leitartikel oder Essay und 6 Multiple-Choice-Aufgaben (a, b, c).\nGeprüft wird das präzise Erfassen von Autorenmeinungen, Haltungen, Ironie und logischer Argumentationsführung.\nHäufige Falle: Eine Option enthält Fakten, die zwar sachlich wahr sind, aber im Text vom Autor gar nicht behauptet oder vertreten werden.\n",
+      "examples": [
+        "Frage: Was kritisiert der Verfasser an der aktuellen Debatte? -> Option a: Die mangelnde Sachlichkeit der Kontrahenten. Option b: Die hohen Ausgaben für die Forschung. Option c: Die Einmischung der Medien."
+      ]
+    },
+    {
+      "id": "b2-goethe-lesen-teil4-lesermeinungen-ueberschriften",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "reading",
+      "title": "Goethe Lesen Teil 4: Lesermeinungen Überschriften zuordnen",
+      "explanation": "In Teil 4 (empfohlene Zeit: ca. 12 Minuten) lesen Sie 8 kurze Statements oder Leserbriefe zu einem kontroversen Thema.\nDiesen müssen Sie 6 aus 7 vorgegebenen Überschriften inhaltlich zuordnen. Zwei Texte bleiben ohne Zuordnung.\nKonzentrieren Sie sich darauf, den Hauptgedanken jedes Leserbriefs in einem einzigen Satz zusammenzufassen, und vergleichen Sie diese Synthese mit den angebotenen Überschriften.\n",
+      "examples": [
+        "Leserbrief: 'Ich fahre seit 20 Jahren täglich mit dem Rad zur Arbeit. Wenn die Straßen enger werden, gefährdet das mein Leben.' -> Passende Überschrift: 'Sorge um die Sicherheit im Straßenverkehr'."
+      ]
+    },
+    {
+      "id": "b2-goethe-lesen-teil5-richtlinien-ordnungen",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "reading",
+      "title": "Goethe Lesen Teil 5: Richtlinien und Betriebsordnungen verstehen",
+      "explanation": "In Teil 5 (empfohlene Zeit: ca. 8 Minuten) lesen Sie einen administrativen Regelungstext (z. B. Bibliotheksordnung, Brandschutzordnung, IT-Nutzungsrichtlinien).\nSie ordnen drei vorgegebenen Textabschnitten jeweils die passende Überschrift aus 8 Optionen zu (eine dient als Beispiel, 4 bleiben ungenutzt).\nAchten Sie auf institutionelle Formulierungen wie \"ist untersagt\", \"bedarf der schriftlichen Zustimmung\", \"sind freizuhalten\".\n",
+      "examples": [
+        "Abschnitt: 'Flucht- und Rettungswege dürfen zu keinem Zeitpunkt durch Gegenstände verstellt werden. Türen in Notausgängen sind stets unverschlossen zu halten.' -> Passende Überschrift: 'Freihaltung von Fluchtwegen'."
+      ]
+    },
+    {
+      "id": "b2-goethe-hoeren-teil1-alltag-nachrichten",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "listening",
+      "title": "Goethe Hören Teil 1: Alltagsgespräche und Radionachrichten",
+      "explanation": "In Teil 1 des Moduls Hören hören Sie 5 kurze Texte (Monologe oder Dialoge, z. B. Anrufbeantworter, Radioansagen, Telefongespräche).\nJeder Text wird nur EINMAL abgespielt!\nZu jedem Text lösen Sie zwei Aufgaben:\n1. Richtig/Falsch zur Hauptaussage (Globalverstehen).\n2. Multiple-Choice (a, b, c) zu einem wichtigen Detail.\nNutzen Sie die 20 Sekunden Lesezeit vor jedem Text unbedingt, um Schlüsselwörter in den Aufgaben zu unterstreichen.\n",
+      "examples": [
+        "Aufgabe 1: Das Museum ist am Feiertag geschlossen. (Richtig/Falsch)",
+        "Aufgabe 2: Zu welcher Uhrzeit beginnt die Sonderführung? (a: 10:00 Uhr, b: 11:30 Uhr, c: 14:00 Uhr)"
+      ]
+    },
+    {
+      "id": "b2-goethe-hoeren-teil2-experteninterview",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "listening",
+      "title": "Goethe Hören Teil 2: Experten- und Kulturinterviews",
+      "explanation": "In Teil 2 hören Sie ein ausführliches Radiointerview mit einer Persönlichkeit aus Wissenschaft, Kultur oder Gesellschaft.\nDer Text wird ZWEIMAL abgespielt. Sie bearbeiten 6 Multiple-Choice-Aufgaben (a, b, c).\nBeantworten Sie beim ersten Hören die klaren Aufgaben und markieren Sie Unsicherheiten.\nNutzen Sie das zweite Hören gezielt zur Verifikation und zur Lösung verbleibender Fragen.\n",
+      "examples": [
+        "Frage: Welches Hauptziel verfolgt das neue Forschungsprojekt? -> a: Die Entwicklung günstigerer Akkus. b: Die Erforschung neuer Werkstoffe. c: Die Senkung der Produktionskosten."
+      ]
+    },
+    {
+      "id": "b2-goethe-hoeren-teil3-drei-sprecher-zuordnen",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "listening",
+      "title": "Goethe Hören Teil 3: Podiumsgespräch mit drei Sprechern",
+      "explanation": "In Teil 3 hören Sie ein lebendiges Gespräch zwischen drei Personen (z. B. Moderator, ein weiblicher Gast, ein männlicher Gast) zu einem aktuellen gesellschaftlichen Thema.\nDer Text wird nur EINMAL abgespielt!\nSie haben 7 Thesen/Aussagen vor sich und müssen entscheiden: Wer äußert diese Meinung? (Sprecher 1, Sprecher 2 oder Sprecher 3?).\nAchten Sie auf Stimmfarben, Intonation, namentliche Ansprachen durch den Moderator und Formulierungen der Zustimmung oder Ablehnung.\n",
+      "examples": [
+        "Aussage: 'Hält eine gesetzliche Pflicht für unverhältnismäßig.' -> Im Audio sagt Herr Berg: 'Wir sollten auf die Eigenverantwortung der Bürger vertrauen statt ständig mit Verboten zu drohen.' -> Lösung: Herr Berg."
+      ]
+    },
+    {
+      "id": "b2-goethe-hoeren-teil4-fachvortrag",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "listening",
+      "title": "Goethe Hören Teil 4: Vortrag zu wissenschaftlichen Themen",
+      "explanation": "In Teil 4 hören Sie einen ca. 4–5-minütigen Fachvortrag oder eine Radiofeature-Sendung zu einem wissenschaftlichen oder gesellschaftlichen Thema.\nDer Vortrag wird ZWEIMAL abgespielt. Dazu gibt es 8 Aufgaben mit Dreifachauswahl (a, b, c) bzw. Satzvervollständigungen.\nDer Vortragende folgt meist einer klaren akademischen Gliederung: Einleitung -> methodisches Vorgehen -> Befunde -> Interpretation -> Ausblick.\n",
+      "examples": [
+        "Aufgabe: Laut Referent beruht der Anstieg der Lebenserwartung vor allem auf... -> a: verbesserter Hygiene und Medizin. b: gesünderer Ernährung. c: weniger körperlicher Arbeit."
+      ]
+    },
+    {
+      "id": "b2-goethe-schreiben-teil1-forumsbeitrag",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "writing",
+      "title": "Goethe Schreiben Teil 1: Verfassen eines Forumsbeitrags",
+      "explanation": "In Teil 1 des Moduls Schreiben verfassen Sie einen Forumsbeitrag (ca. 150 Wörter) zu einem kontroversen Thema (z. B. Tempolimit, plastikfreie Kantine, Mediennutzung im Kindergarten).\nSie müssen vier Inhaltspunkte zwingend und ausgewogen bearbeiten:\n1. Äußern Sie Ihre eigene Meinung zum Thema und begründen Sie diese.\n2. Nennen Sie Gründe, warum das Thema aktuell diskutiert wird.\n3. Schlagen Sie alternative Möglichkeiten vor.\n4. Erläutern Sie die Vor- und Nachteile dieser Alternativen.\nAchten Sie auf einen flüssigen Diskussionsstil (Anrede der Community: \"Liebe Forumsmitglieder, ...\"), Absätze und eine logische Gedankenführung.\n",
+      "examples": [
+        "Liebe Forenmitglieder, ich verfolge die Debatte über fleischlose Ernährung mit großem Interesse...",
+        "Meines Erachtens ist es nicht zielführend, Fleischkonsum gänzlich zu verbieten; vielmehr sollten wir...",
+        "Eine sinnvolle Alternative bestünde darin, vegetarische Gerichte ansprechend und preisgünstig anzubieten."
+      ]
+    },
+    {
+      "id": "b2-goethe-schreiben-teil2-formelle-mitteilung",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "writing",
+      "title": "Goethe Schreiben Teil 2: Formelle berufliche Mitteilung",
+      "explanation": "In Teil 2 schreiben Sie eine formelle berufliche Nachricht (ca. 100 Wörter) an Vorgesetzte, Geschäftspartner oder Dozenten.\nTypische Situationen: Entschuldigung für Nichterscheinen, Bitte um Fristverlängerung, Beschwerde über defekte Arbeitsmittel, Bitte um Unterstützung bei einem Projekt.\nEs müssen alle vorgegebenen Leitpunkte (meist 4 Punkte) registergerecht abgehandelt werden.\nVerwenden Sie das formelle Register (\"Sehr geehrte/r Frau/Herr...\", \"Mit freundlichen Grüßen\") und höfliche Konjunktiv-II-Konstruktionen.\n",
+      "examples": [
+        "Sehr geehrte Frau Dr. Wagner, hiermit muss ich mich leider für das gestrige Projekttreffen entschuldigen...",
+        "Aufgrund einer akuten Magen-Darm-Grippe war es mir unmöglich, rechtzeitig Bescheid zu geben.",
+        "Ich werde die versäumten Aufgaben schnellstmöglich nachholen und bis Freitag einreichen."
+      ]
+    },
+    {
+      "id": "b2-goethe-sprechen-teil1-vortrag",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "speaking",
+      "title": "Goethe Sprechen Teil 1: Strukturierter Vortrag mit Optionenvergleich",
+      "explanation": "In Teil 1 der mündlichen Prüfung (ca. 4 Minuten pro Kandidat) halten Sie einen Vortrag zu einem gewählten Thema aus zwei Vorschlägen (z. B. Formen der Kinderbetreuung, Arbeitszeitmodelle, Urlaubsmöglichkeiten).\nIhre Präsentation muss folgende Pflichtbestandteile enthalten:\n1. Einleitung: Thema vorstellen und Gliederung nennen.\n2. Mehrere Möglichkeiten/Alternativen beschreiben (z. B. Kita vs. Tagesmutter).\n3. Vor- und Nachteile dieser Alternativen abwägen.\n4. Eine Möglichkeit genauer schildern und Ihre persönliche Meinung/Erfahrung begründen.\n5. Abschluss und Übergabe an das Publikum für Nachfragen.\n",
+      "examples": [
+        "Guten Tag, das Thema meiner heutigen Präsentation lautet 'Erneuerbare Energien im Alltag'...",
+        "Zunächst möchte ich zwei Optionen vorstellen: die Installation einer Photovoltaikanlage auf dem Eigenheim und die Beteiligung an einem Bürgerwindpark.",
+        "Aus meiner Sicht überwiegen die Vorteile einer eigenen Solaranlage, da man dadurch energieautark wird..."
+      ]
+    },
+    {
+      "id": "b2-goethe-sprechen-teil2-diskussion",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "speaking",
+      "title": "Goethe Sprechen Teil 2: Kontroverse Diskussion mit dem Partner",
+      "explanation": "In Teil 2 diskutieren Sie ca. 5 Minuten lang mit Ihrem Prüfungspartner über ein vorgegebenes streitbares Thema (z. B. 'Sollte die Innenstadt komplett autofrei werden?').\nErwartet wird eine dynamische, interaktive Debatte:\n- Bringen Sie stichhaltige Argumente vor.\n- Gehen Sie direkt auf die Aussagen Ihres Partners ein (\"Da bin ich ganz Ihrer Meinung, allerdings...\", \"Diesem Punkt möchte ich widersprechen...\").\n- Bleiben Sie sachlich, vertreten Sie Ihren Standpunkt konsequent, aber zeigen Sie sich am Ende kompromissbereit, um ein gemeinsames Fazit zu ziehen.\n",
+      "examples": [
+        "Ich halte ein generelles Tempolimit auf Autobahnen für sinnvoll, da es nachweislich schwere Unfälle verhindert und den Schadstoffausstoß senkt.",
+        "Verstehen Sie mich nicht falsch, Sicherheit ist essenziell, aber moderne Assistenzsysteme regeln dies bereits. Wäre eine flexible Beschilderung nicht zielführender?",
+        "Könnten wir uns darauf einigen, dass ein Tempolimit zumindest auf unfallträchtigen Streckenabschnitten Pflicht sein sollte?"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b2-goethe-textkohaesion-satzverflechtung__ex0",
+      "lessonId": "b2-goethe-textkohaesion-satzverflechtung",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Satz 1: 'Immer mehr Bürger entscheiden sich für den Verzicht auf tierische Produkte.' - Welcher Folgesatz weist die stärkste logische Verknüpfung auf?",
+        "options": [
+          "Diese Entwicklung spiegelt sich auch im stark wachsenden Angebot an Ersatzprodukten wider.",
+          "Tiere brauchen bekanntlich viel Auslauf und Pflege auf dem Bauernhof.",
+          "Autos belasten die Umwelt in Innenstädten erheblich.",
+          "Deshalb fahren viele Menschen lieber mit der Bahn."
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "b2-goethe-textkohaesion-satzverflechtung__ex1",
+      "lessonId": "b2-goethe-textkohaesion-satzverflechtung",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Viele Mitarbeiter klagten über Überlastung. Die Geschäftsführung reagierte ___ mit der Einführung von flexiblen Arbeitszeiten. (Konnektor: daraufhin / folglich)",
+        "correctAnswer": "daraufhin",
+        "acceptableVariants": [
+          "folglich"
+        ]
+      }
+    },
+    {
+      "id": "b2-goethe-textkohaesion-satzverflechtung__ex2",
+      "lessonId": "b2-goethe-textkohaesion-satzverflechtung",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Erklären Sie, worauf das Wort 'dies' im folgenden Satz verweist: 'Die Mieten stiegen um 20 %. Dies führte zu Protesten.'",
+        "modelAnswer": "'Dies' verweist anaphorisch auf den gesamten vorherigen Sachverhalt, nämlich dass die Mieten um 20 % gestiegen sind."
+      }
+    },
+    {
+      "id": "b2-goethe-meinungsausdruck-argumentationsstrukturen__ex0",
+      "lessonId": "b2-goethe-meinungsausdruck-argumentationsstrukturen",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Ausdruck verleiht einer persönlichen Überzeugung das stärkste Gewicht?",
+        "options": [
+          "Es könnte eventuell sein, dass...",
+          "Ich vertrete mit Nachdruck die Auffassung, dass...",
+          "Manche Leute behaupten ja...",
+          "Vielleicht stimmt es, dass..."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-goethe-meinungsausdruck-argumentationsstrukturen__ex1",
+      "lessonId": "b2-goethe-meinungsausdruck-argumentationsstrukturen",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "___ Erachtens sollten die Gebühren für Bildungseinrichtungen gänzlich abgeschafft werden. (Possessivpronomen Dativ)",
+        "correctAnswer": "Meines"
+      }
+    },
+    {
+      "id": "b2-goethe-meinungsausdruck-argumentationsstrukturen__ex2",
+      "lessonId": "b2-goethe-meinungsausdruck-argumentationsstrukturen",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulieren Sie eine These gegen die Smartphone-Nutzung in Grundschulen unter Verwendung von 'Ein wesentlicher Nachteil besteht darin, dass...'.",
+        "modelAnswer": "Ein wesentlicher Nachteil besteht darin, dass Smartphones die Konzentrationsfähigkeit der Kinder im Unterricht massiv beeinträchtigen."
+      }
+    },
+    {
+      "id": "b2-goethe-subjektive-bedeutung-modalverben__ex0",
+      "lessonId": "b2-goethe-subjektive-bedeutung-modalverben",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was bedeutet: 'Der Minister soll von den Unregelmäßigkeiten gewusst haben'?",
+        "options": [
+          "Der Minister war gesetzlich verpflichtet, davon zu wissen.",
+          "Der Minister wollte unbedingt davon wissen.",
+          "Gerüchten und Berichten zufolge wusste der Minister davon.",
+          "Der Minister weiß mit Sicherheit nichts davon."
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "b2-goethe-subjektive-bedeutung-modalverben__ex1",
+      "lessonId": "b2-goethe-subjektive-bedeutung-modalverben",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Er behauptet, er sei unschuldig. -> Er ___ unschuldig sein. (subjektives Modalverb für Eigenbehauptung)",
+        "correctAnswer": "will"
+      }
+    },
+    {
+      "id": "b2-goethe-subjektive-bedeutung-modalverben__ex2",
+      "lessonId": "b2-goethe-subjektive-bedeutung-modalverben",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Drücken Sie eine sehr hohe Wahrscheinlichkeit mit 'müssen' aus: 'Es ist so gut wie sicher, dass sie den Zug verpasst hat.'",
+        "modelAnswer": "Sie muss den Zug verpasst haben."
+      }
+    },
+    {
+      "id": "b2-goethe-partizipialkonstruktionen-verdichtung__ex0",
+      "lessonId": "b2-goethe-partizipialkonstruktionen-verdichtung",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Satz löst die Partizipialkonstruktion 'die von den Experten heftig kritisierte Entscheidung' korrekt in einen Relativsatz auf?",
+        "options": [
+          "Die Entscheidung, die die Experten heftig kritisiert hat.",
+          "Die Entscheidung, die von den Experten heftig kritisiert wurde.",
+          "Die Entscheidung, welche die Experten heftig kritisieren wird.",
+          "Die Entscheidung, deren Experten heftig kritisierten."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-goethe-partizipialkonstruktionen-verdichtung__ex1",
+      "lessonId": "b2-goethe-partizipialkonstruktionen-verdichtung",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Die gestern von den Gewerkschaften ausgerufen___ Warnstreiks legten den Nahverkehr lahm. (Endung Partizip II)",
+        "correctAnswer": "enen"
+      }
+    },
+    {
+      "id": "b2-goethe-partizipialkonstruktionen-verdichtung__ex2",
+      "lessonId": "b2-goethe-partizipialkonstruktionen-verdichtung",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Verdichten Sie folgenden Relativsatz zu einem Partizipialattribut: 'Die Kosten, die durch die Renovierung entstanden sind.'",
+        "modelAnswer": "Die durch die Renovierung entstandenen Kosten."
+      }
+    },
+    {
+      "id": "b2-goethe-indirekte-rede-konjunktiv-i__ex0",
+      "lessonId": "b2-goethe-indirekte-rede-konjunktiv-i",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Der Zeuge gab an, er ___ am Abend des Überfalls zu Hause gewesen. (Konjunktiv I von sein)",
+        "correctAnswer": "sei"
+      }
+    },
+    {
+      "id": "b2-goethe-indirekte-rede-konjunktiv-i__ex1",
+      "lessonId": "b2-goethe-indirekte-rede-konjunktiv-i",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Verbform steht im Konjunktiv I?",
+        "options": [
+          "er hätte",
+          "er habe",
+          "er hatte",
+          "er hat"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-goethe-indirekte-rede-konjunktiv-i__ex2",
+      "lessonId": "b2-goethe-indirekte-rede-konjunktiv-i",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Wandeln Sie in die indirekte Rede um: Die Zeitung schreibt: 'Die Wirtschaft wächst in diesem Jahr nicht.'",
+        "modelAnswer": "Die Zeitung schreibt, die Wirtschaft wachse in diesem Jahr nicht."
+      }
+    },
+    {
+      "id": "b2-goethe-feste-nomen-verb-gefuege__ex0",
+      "lessonId": "b2-goethe-feste-nomen-verb-gefuege",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Wir müssen umgehend geeignete Maßnahmen gegen die Ausbreitung des Virus ___ . (ergreifen / fassen)",
+        "correctAnswer": "ergreifen"
+      }
+    },
+    {
+      "id": "b2-goethe-feste-nomen-verb-gefuege__ex1",
+      "lessonId": "b2-goethe-feste-nomen-verb-gefuege",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welches Funktionsverb passt zu: 'jemandem Hilfe ___'?",
+        "options": [
+          "leisten",
+          "stellen",
+          "führen",
+          "schaffen"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "b2-goethe-feste-nomen-verb-gefuege__ex2",
+      "lessonId": "b2-goethe-feste-nomen-verb-gefuege",
+      "track": "goethe",
+      "type": "flashcard",
+      "content": {
+        "front": "in Kauf nehmen",
+        "back": "einen Nachteil akzeptieren"
+      }
+    },
+    {
+      "id": "b2-goethe-feste-nomen-verb-gefuege__ex3",
+      "lessonId": "b2-goethe-feste-nomen-verb-gefuege",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Verwenden Sie die Wendung 'in die Tat umsetzen' in einem eigenen Satz über gute Vorsätze.",
+        "modelAnswer": "Viele Menschen schaffen es im neuen Jahr nicht, ihre guten Vorsätze in die Tat umzusetzen."
+      }
+    },
+    {
+      "id": "b2-goethe-vocab-nachhaltigkeit-umweltschutz__ex0",
+      "lessonId": "b2-goethe-vocab-nachhaltigkeit-umweltschutz",
+      "track": "goethe",
+      "type": "flashcard",
+      "content": {
+        "front": "auf Konsum verzichten",
+        "back": "bewusst nichts oder weniger Neues kaufen"
+      }
+    },
+    {
+      "id": "b2-goethe-vocab-nachhaltigkeit-umweltschutz__ex1",
+      "lessonId": "b2-goethe-vocab-nachhaltigkeit-umweltschutz",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was bedeutet das Prinzip 'Zero Waste' auf Deutsch?",
+        "options": [
+          "Müllverbrennung fördern",
+          "Ziel eines müllfreien Lebensstils durch Vermeidung und Recycling",
+          "Kauf von Billigprodukten im Discounter",
+          "Verschwendung von Nahrungsmitteln"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-goethe-vocab-nachhaltigkeit-umweltschutz__ex2",
+      "lessonId": "b2-goethe-vocab-nachhaltigkeit-umweltschutz",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Statt Dinge wegzuwerfen, sollte man versuchen, sie zu reparieren oder zu ___ . (wiederverwerten)",
+        "correctAnswer": "recyceln",
+        "acceptableVariants": [
+          "wiederverwerten"
+        ]
+      }
+    },
+    {
+      "id": "b2-goethe-vocab-nachhaltigkeit-umweltschutz__ex3",
+      "lessonId": "b2-goethe-vocab-nachhaltigkeit-umweltschutz",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Erörtern Sie in einem Satz den Vorteil von unverpackten Lebensmitteln.",
+        "modelAnswer": "Unverpackte Lebensmittel reduzieren den Plastikmüll und schonen dadurch wertvolle Umweltressourcen."
+      }
+    },
+    {
+      "id": "b2-goethe-vocab-bildung-arbeitswelt__ex0",
+      "lessonId": "b2-goethe-vocab-bildung-arbeitswelt",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was versteht man unter einem 'Quereinsteiger'?",
+        "options": [
+          "Jemand, der ohne traditionelle Fachausbildung in einen neuen Berufszweig wechselt.",
+          "Ein Student, der die Universität vorzeitig abbricht.",
+          "Ein Lehrer, der ausschließlich an Privatschulen unterrichtet.",
+          "Ein Mitarbeiter, der seit dreißig Jahren im selben Betrieb arbeitet."
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "b2-goethe-vocab-bildung-arbeitswelt__ex1",
+      "lessonId": "b2-goethe-vocab-bildung-arbeitswelt",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Das deutsche Bildungssystem wird oft dafür kritisiert, dass der soziale Status der Eltern zu stark den Bildungs___ der Kinder bestimmt.",
+        "correctAnswer": "erfolg"
+      }
+    },
+    {
+      "id": "b2-goethe-vocab-bildung-arbeitswelt__ex2",
+      "lessonId": "b2-goethe-vocab-bildung-arbeitswelt",
+      "track": "goethe",
+      "type": "flashcard",
+      "content": {
+        "front": "lebenslanges Lernen",
+        "back": "ständige Weiterbildung über die gesamte Lebensspanne hinweg"
+      }
+    },
+    {
+      "id": "b2-goethe-vocab-bildung-arbeitswelt__ex3",
+      "lessonId": "b2-goethe-vocab-bildung-arbeitswelt",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulieren Sie ein Argument für oder gegen die Benotung von Hausaufgaben.",
+        "modelAnswer": "Gegen die Benotung spricht, dass Schüler aus bildungsfernen Familien oft keine elterliche Unterstützung bei den Hausaufgaben erhalten."
+      }
+    },
+    {
+      "id": "b2-goethe-vocab-gesellschaft-zusammenleben__ex0",
+      "lessonId": "b2-goethe-vocab-gesellschaft-zusammenleben",
+      "track": "goethe",
+      "type": "flashcard",
+      "content": {
+        "front": "das bürgerschaftliche Engagement",
+        "back": "freiwilliger gesellschaftlicher Einsatz für das Gemeinwohl"
+      }
+    },
+    {
+      "id": "b2-goethe-vocab-gesellschaft-zusammenleben__ex1",
+      "lessonId": "b2-goethe-vocab-gesellschaft-zusammenleben",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Sportvereine und Kulturinitiativen stärken den sozialen ___ in unseren Städten.",
+        "correctAnswer": "Zusammenhalt"
+      }
+    },
+    {
+      "id": "b2-goethe-vocab-gesellschaft-zusammenleben__ex2",
+      "lessonId": "b2-goethe-vocab-gesellschaft-zusammenleben",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welches Wort beschreibt das Zusammenleben mehrerer Generationen unter einem Dach?",
+        "options": [
+          "Mehrgenerationenhaus",
+          "Einfamilienhaus",
+          "Studentenwohnheim",
+          "Seniorenresidenz"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "b2-goethe-vocab-gesellschaft-zusammenleben__ex3",
+      "lessonId": "b2-goethe-vocab-gesellschaft-zusammenleben",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Nennen Sie einen Beweggrund, warum Menschen ein Ehrenamt ausüben.",
+        "modelAnswer": "Viele Menschen möchten der Gesellschaft etwas zurückgeben und Freude am gemeinsamen Helfen erleben."
+      }
+    },
+    {
+      "id": "b2-goethe-lesen-teil1-forenbeitraege-zuordnen__ex0",
+      "lessonId": "b2-goethe-lesen-teil1-forenbeitraege-zuordnen",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Person A schreibt: 'Ein Auto brauche ich nicht; ich erledige alles zu Fuß oder mit dem Rad, das hält fit und kostet fast nichts.' - Welcher Aussage entspricht dies?",
+        "options": [
+          "Person A sieht im Auto ein unverzichtbares Statussymbol.",
+          "Person A verzichtet bewusst aus Gesundheits- und Spargründen auf ein Kraftfahrzeug.",
+          "Person A plant den baldigen Kauf eines Elektroautos.",
+          "Person A fährt täglich lange Strecken mit der Bahn."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-goethe-lesen-teil1-forenbeitraege-zuordnen__ex1",
+      "lessonId": "b2-goethe-lesen-teil1-forenbeitraege-zuordnen",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Welche Strategie empfehlen Experten als ersten Schritt bei Goethe Lesen Teil 1?",
+        "modelAnswer": "Zuerst die 9 Aussagen lesen und Schlüsselbegriffe markieren, bevor man die vier Beiträge detailliert überfliegt."
+      }
+    },
+    {
+      "id": "b2-goethe-lesen-teil2-textrekonstruktion__ex0",
+      "lessonId": "b2-goethe-lesen-teil2-textrekonstruktion",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Vor der Lücke: 'Immer mehr Menschen leiden unter Schlafstörungen.' Nach der Lücke: 'Besonders das blaue Displaylicht blockiert die Melatoninausschüttung.' Welcher Satz passt in die Lücke?",
+        "options": [
+          "Mediziner machen hierfür vor allem die intensive Smartphone-Nutzung vor dem Zubettgehen verantwortlich.",
+          "Sport am frühen Morgen fördert hingegen die Vitalität.",
+          "Aus diesem Grund trinken viele Menschen gerne warmen Tee.",
+          "Schlaflabore sind in den meisten Kliniken sehr gut ausgestattet."
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "b2-goethe-lesen-teil2-textrekonstruktion__ex1",
+      "lessonId": "b2-goethe-lesen-teil2-textrekonstruktion",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Warum ist es riskant, bei Goethe Lesen Teil 2 nur auf das Wort vor der Lücke zu schauen?",
+        "modelAnswer": "Weil der passende Satz sowohl logisch an den vorherigen Satz anknüpfen als auch zwingend zum darauf folgenden Satz überleiten muss."
+      }
+    },
+    {
+      "id": "b2-goethe-lesen-teil3-sachtext-standpunkte__ex0",
+      "lessonId": "b2-goethe-lesen-teil3-sachtext-standpunkte",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Text: 'Dass Politiker das Problem der Altersarmut seit Jahren vor sich herschieben, ist an Zynismus kaum zu überbieten. Statt mutiger Reformen erleben wir ein ängstliches Verwalten des Status quo.' - Wie beurteilt der Autor das Handeln der Politik?",
+        "options": [
+          "Er hält die bisherigen Schritte für vorsichtig, aber fundiert.",
+          "Er kritisiert den mangelnden Mut und die Untätigkeit der Verantwortlichen scharf.",
+          "Er lobt die Stabilität des derzeitigen Rentensystems."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-goethe-lesen-teil3-sachtext-standpunkte__ex1",
+      "lessonId": "b2-goethe-lesen-teil3-sachtext-standpunkte",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Erklären Sie den Unterschied zwischen einer expliziten Aussage und einer Autorenimplikation in einem journalistischen Text.",
+        "modelAnswer": "Eine explizite Aussage wird direkt im Wortlaut formuliert; eine Implikation erschließt sich indirekt aus dem Ton, der Wortwahl oder der Argumentationsstruktur des Verfassers."
+      }
+    },
+    {
+      "id": "b2-goethe-lesen-teil4-lesermeinungen-ueberschriften__ex0",
+      "lessonId": "b2-goethe-lesen-teil4-lesermeinungen-ueberschriften",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Leserkommentar: 'Es ist doch absurd, dass eine Zugfahrt von Berlin nach München doppelt so teuer ist wie ein Flug. Wenn die Bahn wettbewerbsfähig sein soll, müssen Steuern auf Kerosin erhoben und Bahntickets subventioniert werden.' - Welche Überschrift passt?",
+        "options": [
+          "Forderung nach gerechteren Preisstrukturen im Fernverkehr",
+          "Komfortmängel in modernen Schnellzügen",
+          "Ausbau von Inlandsflughäfen dringend erforderlich",
+          "Freie Fahrt für Geschäftsreisende"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "b2-goethe-lesen-teil4-lesermeinungen-ueberschriften__ex1",
+      "lessonId": "b2-goethe-lesen-teil4-lesermeinungen-ueberschriften",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Warum sollten Sie bei Goethe Lesen Teil 4 zuerst die Leserbriefe kurz überfliegen, anstatt sofort nach einzelnen Worten der Überschriften zu suchen?",
+        "modelAnswer": "Weil die Überschriften oft abstrakte Zusammenfassungen sind, deren Wortlaut sich im Originaltext meist gar nicht direkt wiederfindet."
+      }
+    },
+    {
+      "id": "b2-goethe-lesen-teil5-richtlinien-ordnungen__ex0",
+      "lessonId": "b2-goethe-lesen-teil5-richtlinien-ordnungen",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Textabschnitt: 'Die private Nutzung des Internets am Arbeitsplatz ist grundsätzlich nicht gestattet. Das Herunterladen urheberrechtlich geschützter Daten zieht arbeitsrechtliche Konsequenzen nach sich.' - Welche Überschrift trifft zu?",
+        "options": [
+          "Regelungen zur Internetnutzung im Betrieb",
+          "Erwerb von Softwarelizenzen",
+          "Vergütung von Überstunden",
+          "Technische Wartung von Arbeitsplatz-PCs"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "b2-goethe-lesen-teil5-richtlinien-ordnungen__ex1",
+      "lessonId": "b2-goethe-lesen-teil5-richtlinien-ordnungen",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "In Richtlinien bedeutet die Formulierung 'ist unzulässig', dass eine Handlung strengstens ___ ist.",
+        "correctAnswer": "verboten"
+      }
+    },
+    {
+      "id": "b2-goethe-hoeren-teil1-alltag-nachrichten__ex0",
+      "lessonId": "b2-goethe-hoeren-teil1-alltag-nachrichten",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Hörtext (1x): 'Liebe Hörer, der ADAC warnt vor Glatteisbildung auf der A3 zwischen Würzburg und Nürnberg. Fahren Sie bitte besonders vorsichtig. Die Streudienste sind bereits im Einsatz.' - Aufgabe 1: Auf der A3 besteht Rutschgefahr durch Glatteis.",
+        "options": [
+          "Richtig",
+          "Falsch"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "b2-goethe-hoeren-teil1-alltag-nachrichten__ex1",
+      "lessonId": "b2-goethe-hoeren-teil1-alltag-nachrichten",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Basierend auf demselben Hörtext: Welche Maßnahme wurde bereits ergriffen?",
+        "options": [
+          "Die Autobahn wurde komplett gesperrt.",
+          "Die Streufahrzeuge sind bereits unterwegs.",
+          "Geschwindigkeitsbegrenzungen wurden aufgehoben."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-goethe-hoeren-teil2-experteninterview__ex0",
+      "lessonId": "b2-goethe-hoeren-teil2-experteninterview",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Interviewauszug: 'Unsere ursprüngliche Hypothese war, dass Jugendliche primär durch Unterhaltungsvideos lernen. Überraschenderweise zeigte sich jedoch, dass kurze Erklärformate zu naturwissenschaftlichen Themen die höchsten Abrufzahlen erzielen.' - Was war das überraschende Ergebnis?",
+        "options": [
+          "Jugendliche meiden naturwissenschaftliche Themen im Netz.",
+          "Wissenschaftliche Erklärvideos werden häufiger aufgerufen als erwartet.",
+          "Unterhaltungsvideos sind das beliebteste Bildungsmedium."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-goethe-hoeren-teil2-experteninterview__ex1",
+      "lessonId": "b2-goethe-hoeren-teil2-experteninterview",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Wie sollten Sie die 15-sekündige Pause zwischen dem ersten und zweiten Hören in Teil 2 nutzen?",
+        "modelAnswer": "Man sollte die noch unbeantworteten oder unklaren Aufgaben gezielt nochmals durchlesen, um beim zweiten Hören ganz selektiv auf die fehlenden Informationen zu achten."
+      }
+    },
+    {
+      "id": "b2-goethe-hoeren-teil3-drei-sprecher-zuordnen__ex0",
+      "lessonId": "b2-goethe-hoeren-teil3-drei-sprecher-zuordnen",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Moderator: 'Frau Dr. Sommer, teilen Sie diese Ansicht?' - Frau Dr. Sommer: 'Ganz im Gegenteil. Wenn wir jetzt nicht einschreiten, kollabiert das System in spätestens fünf Jahren.' - Wer sieht dringenden gesetzlichen Handlungsbedarf?",
+        "options": [
+          "Der Moderator",
+          "Frau Dr. Sommer",
+          "Der zweite Gast (Herr Meyer)"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-goethe-hoeren-teil3-drei-sprecher-zuordnen__ex1",
+      "lessonId": "b2-goethe-hoeren-teil3-drei-sprecher-zuordnen",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Welcher Tipp hilft bei Teil 3, um während des Hörens die Sprecher nicht zu verwechseln?",
+        "modelAnswer": "Sich zu Beginn der Sendung die Namen der Gäste und ihre Stimmmerkmale (männlich/weiblich, jung/alt, Rolle) sofort auf dem Aufgabenblatt kurz zu notieren."
+      }
+    },
+    {
+      "id": "b2-goethe-hoeren-teil4-fachvortrag__ex0",
+      "lessonId": "b2-goethe-hoeren-teil4-fachvortrag",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Vortragender: 'Entscheidend für den Erfolg der Renaturierungsmaßnahme war nicht primär die Neuanpflanzung von Bäumen, sondern die Wiederherstellung des ursprünglichen Flussbetts.' - Was war laut Referent der wichtigste Erfolgsfaktor?",
+        "options": [
+          "Das Pflanzen neuer Baumarten.",
+          "Die Begradigung des Gewässers.",
+          "Die Reaktivierung des natürlichen Flussverlaufs."
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "b2-goethe-hoeren-teil4-fachvortrag__ex1",
+      "lessonId": "b2-goethe-hoeren-teil4-fachvortrag",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Wissenschaftliche Vorträge in Teil 4 gliedern sich meist in These, Begründung und ___ . (Schlussfolgerung / Ausblick)",
+        "correctAnswer": "Ausblick",
+        "acceptableVariants": [
+          "Schlussfolgerung",
+          "Fazit"
+        ]
+      }
+    },
+    {
+      "id": "b2-goethe-schreiben-teil1-forumsbeitrag__ex0",
+      "lessonId": "b2-goethe-schreiben-teil1-forumsbeitrag",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulieren Sie den Hauptteil (ca. 50 Wörter) eines Forumsbeitrags zum Thema 'E-Scooter in Innenstädten': Eigene Meinung und Gründe für deren Beliebtheit.",
+        "modelAnswer": "Meines Erachtens stellen E-Scooter eine praktische Ergänzung des Nahverkehrs dar. Sie werden immer beliebter, weil man mit ihnen schnell und flexibel kurze Strecken zurücklegen kann, ohne im Stau zu stehen. Allerdings birgt das unachtsame Abstellen auf Gehwegen erhebliche Gefahren für Fußgänger."
+      }
+    },
+    {
+      "id": "b2-goethe-schreiben-teil1-forumsbeitrag__ex1",
+      "lessonId": "b2-goethe-schreiben-teil1-forumsbeitrag",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Wie viele Wörter sollte der Forumsbeitrag in Goethe Schreiben Teil 1 idealerweise umfassen?",
+        "options": [
+          "Ca. 80 Wörter",
+          "Ca. 150 Wörter",
+          "Mindestens 300 Wörter",
+          "Genau 50 Wörter"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-goethe-schreiben-teil2-formelle-mitteilung__ex0",
+      "lessonId": "b2-goethe-schreiben-teil2-formelle-mitteilung",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Verfassen Sie eine formelle Bitte um Verschiebung eines Abgabetermins an Ihren Dozenten (ca. 40 Wörter).",
+        "modelAnswer": "Sehr geehrter Herr Professor Müller, aufgrund eines unvorhersehbaren Krankheitsfalls in meiner Familie möchte ich mich erkundigen, ob es möglich wäre, die Abgabefrist für meine Hausarbeit um eine Woche zu verlängern. Für Ihr Verständnis wäre ich Ihnen sehr dankbar."
+      }
+    },
+    {
+      "id": "b2-goethe-schreiben-teil2-formelle-mitteilung__ex1",
+      "lessonId": "b2-goethe-schreiben-teil2-formelle-mitteilung",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Formelle Anrede für einen Dozenten mit Doktortitel: 'Sehr geehrter Herr ___ Klein,'",
+        "correctAnswer": "Dr."
+      }
+    },
+    {
+      "id": "b2-goethe-sprechen-teil1-vortrag__ex0",
+      "lessonId": "b2-goethe-sprechen-teil1-vortrag",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulieren Sie den Übergang vom Vergleich der Möglichkeiten zur Darlegung Ihrer eigenen Meinung in Ihrem Goethe-Vortrag.",
+        "modelAnswer": "Nachdem ich die verschiedenen Optionen gegenübergestellt habe, möchte ich nun auf meine persönliche Einschätzung eingehen. Meines Erachtens ist die flexibelste Lösung..."
+      }
+    },
+    {
+      "id": "b2-goethe-sprechen-teil1-vortrag__ex1",
+      "lessonId": "b2-goethe-sprechen-teil1-vortrag",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Punkt ist in Goethe Sprechen Teil 1 zwingend gefordert?",
+        "options": [
+          "Ein langes Gedicht rezitieren.",
+          "Mindestens zwei Alternativen vergleichen und eine genauer beschreiben.",
+          "Den Partner während seines Vortrags unterbrechen.",
+          "Ausschließlich aus dem Gedächtnis historische Daten aufzählen."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-goethe-sprechen-teil2-diskussion__ex0",
+      "lessonId": "b2-goethe-sprechen-teil2-diskussion",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulieren Sie einen diplomatischen Kompromissvorschlag in einer Diskussion über das Verbot von Plastikverpackungen im Supermarkt.",
+        "modelAnswer": "Vielleicht könnten wir uns darauf verständigen, dass Einwegplastik bei Obst und Gemüse verboten wird, während für empfindliche Fleisch- und Molkereiprodukte eine Übergangsfrist gilt."
+      }
+    },
+    {
+      "id": "b2-goethe-sprechen-teil2-diskussion__ex1",
+      "lessonId": "b2-goethe-sprechen-teil2-diskussion",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was führt bei Goethe Sprechen Teil 2 zu Punktabzug?",
+        "options": [
+          "Den Partner ausreden lassen und anschließend argumentieren.",
+          "Das Gespräch völlig dominieren, ohne den Partner zu Wort kommen zu lassen.",
+          "Rhetorische Rückfragen an den Partner stellen.",
+          "Einen Kompromiss aushandeln."
+        ],
+        "correctIndex": 1
+      }
+    }
+  ],
+  "prerequisites": [
+    {
+      "lessonId": "b2-goethe-lesen-teil2-textrekonstruktion",
+      "prerequisiteLessonId": "b2-goethe-textkohaesion-satzverflechtung"
+    },
+    {
+      "lessonId": "b2-goethe-lesen-teil3-sachtext-standpunkte",
+      "prerequisiteLessonId": "b2-goethe-partizipialkonstruktionen-verdichtung"
+    },
+    {
+      "lessonId": "b2-goethe-schreiben-teil1-forumsbeitrag",
+      "prerequisiteLessonId": "b2-goethe-meinungsausdruck-argumentationsstrukturen"
+    },
+    {
+      "lessonId": "b2-goethe-schreiben-teil2-formelle-mitteilung",
+      "prerequisiteLessonId": "b2-goethe-feste-nomen-verb-gefuege"
+    },
+    {
+      "lessonId": "b2-goethe-sprechen-teil1-vortrag",
+      "prerequisiteLessonId": "b2-goethe-meinungsausdruck-argumentationsstrukturen"
+    },
+    {
+      "lessonId": "b2-goethe-sprechen-teil2-diskussion",
+      "prerequisiteLessonId": "b2-goethe-meinungsausdruck-argumentationsstrukturen"
+    }
+  ]
+}

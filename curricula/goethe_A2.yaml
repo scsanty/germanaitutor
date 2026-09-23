@@ -1,0 +1,646 @@
+track: goethe
+level: A2
+
+lessons:
+  - slug: goethe-perfekt-past-tense
+    skill: grammar
+    title: "Perfekt Tense for Biographies and Personal Experiences"
+    prerequisites: []
+    explanation: |
+      The Goethe-Zertifikat A2 tests the Perfekt across all modules to recount past events, vacations, and biographical milestones.
+      Use haben for most transitive and stationary verbs, and sein for verbs of motion (fahren, fliegen, laufen) or state change (einschlafen, aufstehen), plus bleiben and sein.
+      Remember irregular past participles: treffen -> getroffen; lesen -> gelesen; schreiben -> geschrieben; finden -> gefunden.
+    examples:
+      - "Ich habe am Wochenende ein interessantes Buch gelesen."
+      - "Wir sind im letzten Sommer nach Griechenland geflogen."
+      - "Er hat seine Freunde in einem Café getroffen."
+      - "Was hast du am Samstagabend Schönes gemacht?"
+    exercises:
+      - type: fill_blank
+        textWithBlank: "Wir haben lange auf den Bus ___ . (warten)"
+        correctAnswer: "gewartet"
+      - type: multiple_choice
+        question: "Welches Hilfsverb und Partizip sind korrekt? 'Er ___ gestern zu Hause ___ .'"
+        options: ["hat ... geblieben", "ist ... geblieben", "ist ... gebleibt", "hat ... gebleibt"]
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Hast du den Brief an deine Freundin schon ___ ? (schreiben)"
+        correctAnswer: "geschrieben"
+      - type: flashcard
+        front: "treffen -> hat getroffen"
+        back: "to meet -> has met"
+
+  - slug: goethe-praeteritum-auxiliaries-modals
+    skill: grammar
+    title: "Präteritum of Sein, Haben, and Modal Verbs"
+    prerequisites: []
+    explanation: |
+      In Goethe reading texts and listening interviews, past narrative is frequently expressed using the Präteritum of sein, haben, and the modal auxiliaries.
+      Forms: war (sein), hatte (haben), konnte (können), musste (müssen), wollte (wollen), durfte (dürfen).
+      Using these simple past forms sounds more natural than compound Perfekt for these specific verbs.
+    examples:
+      - "Früher hatte ich viel mehr Freizeit als heute."
+      - "Am Sonntag war das Wetter leider sehr regnerisch."
+      - "Ich wollte dich gestern anrufen, aber mein Handy war leer."
+      - "Sie musste am Abend für die Deutschprüfung lernen."
+    exercises:
+      - type: fill_blank
+        textWithBlank: "Letztes Wochenende ___ meine Freunde keine Zeit für mich. (haben)"
+        correctAnswer: "hatten"
+      - type: multiple_choice
+        question: "Welche Form ist korrekt? 'Er ___ gestern nicht ins Kino mitkommen, weil er lernen ___ .'"
+        options: [
+          "konnte ... musste",
+          "könnte ... müsste",
+          "konntet ... musstet",
+          "kann ... muss"
+        ]
+        correctIndex: 0
+      - type: fill_blank
+        textWithBlank: "Wo ___ du gestern um 16 Uhr? (sein)"
+        correctAnswer: "warst"
+      - type: flashcard
+        front: "wir wollten / wir konnten"
+        back: "we wanted to / we were able to"
+
+  - slug: goethe-subordinating-conjunctions-weil-dass
+    skill: grammar
+    title: "Complex Clauses with Weil, Dass, and Wenn"
+    prerequisites: []
+    explanation: |
+      Goethe writing and speaking tasks require combining clauses using common subordinators: weil (cause), dass (content), and wenn (condition/time).
+      In all subordinate clauses introduced by these words, the conjugated finite verb is placed at the end of the clause.
+      A comma must always separate the main clause and the subordinate clause.
+    examples:
+      - "Ich lerne Deutsch, weil ich in Berlin studieren möchte."
+      - "Ich hoffe sehr, dass du zu meiner Geburtstagsparty kommst."
+      - "Wenn das Wetter schön ist, machen wir ein Picknick im Park."
+      - "Er hat mir erzählt, dass er eine neue Stelle gefunden hat."
+    exercises:
+      - type: fill_blank
+        textWithBlank: "Sie freut sich, ___ ihre Freundin aus Spanien zu Besuch kommt. (that)"
+        correctAnswer: "dass"
+      - type: multiple_choice
+        question: "Welcher Satz zeigt die korrekte Verbendstellung?"
+        options: [
+          "Ich bleibe daheim, weil ich bin erkältet.",
+          "Ich bleibe daheim, weil ich erkältet bin.",
+          "Ich bleibe daheim, weil erkältet ich bin.",
+          "Ich bleibe daheim, weil bin ich erkältet."
+        ]
+        correctIndex: 1
+      - type: free_text
+        prompt: "Combine into one sentence using 'weil': 'Ich kann nicht kommen.' + 'Ich muss arbeiten.'"
+        modelAnswer: "Ich kann nicht kommen, weil ich arbeiten muss."
+
+  - slug: goethe-two-way-prepositions-local
+    skill: grammar
+    title: "Two-Way Prepositions in Descriptions and Plans"
+    prerequisites: []
+    explanation: |
+      The Wechselpräpositionen (an, auf, hinter, in, neben, über, unter, vor, zwischen) take either the accusative or the dative.
+      Dative answers 'Wo?' (static location): 'Wir sitzen im Café', 'Das Bild hängt an der Wand'.
+      Accusative answers 'Wohin?' (dynamic movement/direction): 'Wir gehen ins Café', 'Ich hänge das Bild an die Wand'.
+      Mastering this distinction is essential for the picture-based and spatial tasks in Goethe Lesen and Sprechen.
+    examples:
+      - "Wir treffen uns vor dem Kino. (Wo? -> Dativ)"
+      - "Kommst du mit in den Park? (Wohin? -> Akkusativ)"
+      - "Die Katze schläft unter dem Tisch. (Wo? -> Dativ)"
+      - "Er stellt die Flasche auf den Tisch. (Wohin? -> Akkusativ)"
+    exercises:
+      - type: multiple_choice
+        question: "Welcher Fall folgt? 'Wir setzen uns in ___ Garten (der Garten).'"
+        options: ["den", "dem", "der", "des"]
+        correctIndex: 0
+      - type: fill_blank
+        textWithBlank: "Das Restaurant befindet sich neben ___ Post. (die Post / Wo? -> Dativ)"
+        correctAnswer: "der"
+      - type: fill_blank
+        textWithBlank: "Legen Sie die Bücher bitte auf ___ Tisch. (der Tisch / Wohin? -> Akkusativ)"
+        correctAnswer: "den"
+      - type: flashcard
+        front: "im Park (Dativ) vs. in den Park (Akkusativ)"
+        back: "in the park (location) vs. into the park (destination)"
+
+  - slug: goethe-comparative-superlative
+    skill: grammar
+    title: "Comparative and Superlative for Making Choices"
+    prerequisites: []
+    explanation: |
+      In Goethe Sprechen Teil 3, candidates negotiate and compare alternatives (e.g., choosing a restaurant, gift, or travel destination).
+      Comparative forms end in -er (billiger, schneller, schöner) + als.
+      Superlative forms use am ...-(e)sten (am billigsten, am schnellsten).
+      Irregular forms are frequent: gern -> lieber -> am liebsten; gut -> besser -> am besten; viel -> mehr -> am meisten.
+    examples:
+      - "Ich finde das blaue T-Shirt schöner als das rote."
+      - "Samstag ist besser für mich als Sonntag."
+      - "Dieses Restaurant ist am gemütlichsten."
+      - "Ich trinke am liebsten Orangensaft."
+    exercises:
+      - type: fill_blank
+        textWithBlank: "Italienisches Essen schmeckt mir ___ als Fast Food. (gut)"
+        correctAnswer: "besser"
+      - type: multiple_choice
+        question: "Welche Form ist korrekt? 'Das Fahrrad ist ___ als das Mofa.'"
+        options: ["billiger", "billig", "am billigsten", "mehr billig"]
+        correctIndex: 0
+      - type: fill_blank
+        textWithBlank: "Welches Hotel ist am ___ ? (nah -> am nächsten)"
+        correctAnswer: "nächsten"
+      - type: flashcard
+        front: "besser als / am besten"
+        back: "better than / the best"
+
+  - slug: goethe-adjective-declension-basics
+    skill: grammar
+    title: "Adjective Endings after Indefinite and Definite Articles"
+    prerequisites: []
+    explanation: |
+      Adjective endings depend on the preceding article, case, and gender.
+      After indefinite articles (ein/eine) in the nominative: ein schöner Tag (-er, masc.), ein tolles Buch (-es, neut.), eine nette Feier (-e, fem.).
+      In the accusative: einen schönen Tag (-en, masc.), ein tolles Buch (-es, neut.), eine nette Feier (-e, fem.).
+      In the dative: all adjectives take -en (mit einem neuen Freund, in einer großen Stadt).
+    examples:
+      - "Das ist ein wunderbares Geschenk!"
+      - "Ich suche einen bequemen Stuhl für mein Arbeitszimmer."
+      - "Wir haben in einem ausgezeichneten Restaurant gegessen."
+      - "Sie trägt ein rotes Kleid."
+    exercises:
+      - type: fill_blank
+        textWithBlank: "Er hat sich einen neu___ Computer gekauft. (masculine accusative with ein-)"
+        correctAnswer: "en"
+      - type: multiple_choice
+        question: "Welche Form passt? 'Wir haben eine ___ Reise gemacht.'"
+        options: ["schöne", "schöner", "schönen", "schönes"]
+        correctIndex: 0
+      - type: fill_blank
+        textWithBlank: "Das war ein lecker___ Kuchen! (masculine nominative with ein-)"
+        correctAnswer: "er"
+      - type: flashcard
+        front: "ein schönes Geschenk (neut. nom/acc)"
+        back: "a nice gift / present"
+
+  - slug: goethe-indirect-questions-polite
+    skill: grammar
+    title: "Indirect Polite Questions for Service and Social Encounters"
+    prerequisites: [goethe-subordinating-conjunctions-weil-dass]
+    explanation: |
+      Polite communicative exchanges in Goethe writing and speaking frequently use embedded indirect questions.
+      Introduce the question with polite framing clauses: 'Können Sie mir sagen...', 'Wissen Sie...', or 'Ich möchte gerne wissen...'.
+      The question word (wann, wo, wie lange) or ob introduces the dependent clause, and the conjugated verb moves to the end.
+    examples:
+      - "Könnten Sie mir bitte sagen, wann das Museum öffnet?"
+      - "Ich möchte gerne wissen, ob noch Plätze frei sind."
+      - "Wissen Sie, wie viel eine Fahrkarte nach Berlin kostet?"
+      - "Darf ich fragen, wo die Besprechung stattfindet?"
+    exercises:
+      - type: fill_blank
+        textWithBlank: "Wissen Sie, ob der Chef heute im Büro ___ ? (sein)"
+        correctAnswer: "ist"
+      - type: multiple_choice
+        question: "Welche indirekte Frage ist grammatisch korrekt?"
+        options: [
+          "Können Sie mir sagen, wo finde ich Gleis 4?",
+          "Können Sie mir sagen, wo ich Gleis 4 finde?",
+          "Können Sie mir sagen, wo Gleis 4 ich finde?",
+          "Können Sie mir sagen, wo finde Gleis 4 ich?"
+        ]
+        correctIndex: 1
+      - type: free_text
+        prompt: "Turn this direct question into a polite indirect question: 'Wann fängt das Konzert an?'"
+        modelAnswer: "Können Sie mir sagen, wann das Konzert anfängt?"
+
+  - slug: goethe-vocab-celebrations-social-events
+    skill: vocabulary
+    title: "Celebrations, Invitations, and Social Gatherings"
+    prerequisites: []
+    explanation: |
+      Invitations, celebrations, and gift-giving are central themes in the Goethe A2 exam.
+      Key terms include: die Einladung (invitation), die Feier / die Party (celebration/party), der Geburtstag (birthday), das Geschenk (gift), and der Gast (guest).
+      Essential verbs include: einladen (to invite: lädt ein, hat eingeladen), mitbringen (to bring along), gratulieren (to congratulate + dative), and absagen / zusagen (to decline / accept).
+    examples:
+      - "Ich lade dich herzlich zu meiner Geburtstagsparty am Samstag ein."
+      - "Herzlichen Glückwunsch zum Geburtstag! Alles Gute!"
+      - "Soll ich einen Salat oder einen Kuchen mitbringen?"
+      - "Leider muss ich für die Feier absagen, da ich arbeiten muss."
+    exercises:
+      - type: flashcard
+        front: "jemandem zum Geburtstag gratulieren"
+        back: "to congratulate someone on their birthday"
+      - type: multiple_choice
+        question: "Was antwortet man auf eine Einladung, wenn man kommen kann?"
+        options: [
+          "Ich sage hiermit gerne zu.",
+          "Ich muss leider absagen.",
+          "Es tut mir leid, ich habe keine Zeit.",
+          "Gute Besserung!"
+        ]
+        correctIndex: 0
+      - type: fill_blank
+        textWithBlank: "Er hat viele Freunde zu seinem Geburtstag ___ . (einladen / Partizip II)"
+        correctAnswer: "eingeladen"
+      - type: free_text
+        prompt: "Congratulate a friend on their birthday and wish them all the best."
+        modelAnswer: "Herzlichen Glückwunsch zum Geburtstag und alles Gute!"
+
+  - slug: goethe-vocab-travel-vacation-nature
+    skill: vocabulary
+    title: "Holidays, Excursions, and Nature Activities"
+    prerequisites: []
+    explanation: |
+      Vacation themes include destinations, accommodations, sightseeing, and outdoor leisure.
+      Key vocabulary: der Urlaub (vacation), die Reise (journey), die Sehenswürdigkeit (sight/attraction), der Strand (beach), die Berge (mountains), and das Zelt (tent).
+      Common phrases: einen Ausflug machen (to take an excursion), eine Stadt besichtigen (to sightsee a city), and Urlaub am Meer verbringen (to spend holidays at the sea).
+    examples:
+      - "Im Sommer fahren wir für zwei Wochen ans Meer."
+      - "Wir haben viele historische Sehenswürdigkeiten in Wien besichtigt."
+      - "Am Wochenende machen wir bei schönem Wetter einen Ausflug in die Berge."
+      - "Sie übernachten auf dem Campingplatz in einem Zelt."
+    exercises:
+      - type: flashcard
+        front: "die Sehenswürdigkeit (-en)"
+        back: "tourist attraction / sight"
+      - type: multiple_choice
+        question: "Was macht man gerne bei schönem Wetter im Grünen?"
+        options: [
+          "Einen Ausflug oder ein Picknick",
+          "Den Computer reparieren",
+          "Überstunden im Büro machen",
+          "Die Heizung einschalten"
+        ]
+        correctIndex: 0
+      - type: fill_blank
+        textWithBlank: "Wir möchten die Altstadt zu Fuß ___ . (to sightsee / tour: besichtigen)"
+        correctAnswer: "besichtigen"
+      - type: free_text
+        prompt: "State that you would like to spend your vacation in the mountains."
+        modelAnswer: "Ich möchte meinen Urlaub in den Bergen verbringen."
+
+  - slug: goethe-vocab-education-professions-career
+    skill: vocabulary
+    title: "Education, Vocational Training, and Career"
+    prerequisites: []
+    explanation: |
+      Talking about education and jobs requires terms for academic study, internships, and careers.
+      Vocabulary: die Schule (school), die Universität / die Hochschule (university), die Ausbildung (vocational training), das Praktikum (internship), and der Lebenslauf (curriculum vitae / résumé).
+      Useful verbs: studieren (to study at university), eine Ausbildung machen (to do vocational training), and Erfahrungen sammeln (to gather experience).
+    examples:
+      - "Nach der Schule hat sie eine Ausbildung zur Bankkaufrau gemacht."
+      - "Er studiert Informatik an der Technischen Universität."
+      - "Ich habe während meines Studiums ein Praktikum bei Siemens absolviert."
+      - "Bitte senden Sie Ihren Lebenslauf und Ihre Zeugnisse per E-Mail."
+    exercises:
+      - type: flashcard
+        front: "die Ausbildung (-en)"
+        back: "vocational training / apprenticeship"
+      - type: multiple_choice
+        question: "Was macht man an einer Universität?"
+        options: ["Man studiert.", "Man macht eine Lehre.", "Man geht in den Kindergarten.", "Man kauft ein."]
+        correctIndex: 0
+      - type: fill_blank
+        textWithBlank: "Für die Bewerbung brauche ich ein Anschreiben und einen tabellarischen ___ . (résumé/CV: Lebenslauf)"
+        correctAnswer: "Lebenslauf"
+      - type: free_text
+        prompt: "State what subject or profession you studied or trained in."
+        modelAnswer: "Ich habe Betriebswirtschaft an der Universität studiert."
+
+  - slug: goethe-vocab-media-communication
+    skill: vocabulary
+    title: "Media, Internet, and Digital Communication"
+    prerequisites: []
+    explanation: |
+      Reading and listening exercises at A2 often discuss digital media usage and communications.
+      Key terms include: das Smartphone (smartphone), die App (app), die Nachricht (message), das Internet (internet), die sozialen Medien (social media), and der Computer (computer).
+      Verbs include: herunterladen (to download: lädt herunter), anklicken (to click on), löschen (to delete), and weiterleiten (to forward).
+    examples:
+      - "Ich habe mir eine praktische App für den Fahrplan heruntergeladen."
+      - "Hast du meine Nachricht auf WhatsApp gelesen?"
+      - "Klicken Sie auf den Link, um die Anmeldung zu bestätigen."
+      - "Viele Jugendliche verbringen mehrere Stunden täglich in den sozialen Medien."
+    exercises:
+      - type: flashcard
+        front: "herunterladen (hat heruntergeladen)"
+        back: "to download"
+      - type: multiple_choice
+        question: "Was tut man mit einer wichtigen E-Mail, um sie einem Kollegen zu senden?"
+        options: ["Löschen", "Weiterleiten", "Ausschalten", "Herunterfallen"]
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Bitte ___ Sie auf das Symbol, um die Datei zu öffnen. (to click)"
+        correctAnswer: "klicken"
+      - type: free_text
+        prompt: "State that you received an email and replied to it."
+        modelAnswer: "Ich habe deine E-Mail bekommen und sofort geantwortet."
+
+  - slug: goethe-reading-teil1-personal-email
+    skill: reading
+    title: "Goethe Lesen Teil 1: Personal Messages and Comprehension Questions"
+    prerequisites: [goethe-perfekt-past-tense, goethe-vocab-celebrations-social-events]
+    explanation: |
+      In Goethe Lesen Teil 1, candidates read an authentic personal email or letter and answer five three-option multiple-choice questions (a, b, c).
+      Analyze the text systematically: determine who writes to whom, the communicative intention, specific past events, and future arrangements.
+    examples:
+      - "Text: 'Liebe Hanna, vielen Dank für das schöne Geschenk! Ich habe mich riesig gefreut. Am Samstag feiere ich meinen Geburtstag nach. Kommst du auch?' - Frage: Warum schreibt Klara? -> Um sich für das Geschenk zu bedanken und Hanna einzuladen."
+    exercises:
+      - type: multiple_choice
+        question: "Text: 'Hallo Timo, danke für deinen Anruf gestern. Leider war ich noch bei der Arbeit. Lass uns am Sonntag zusammen joggen gehen, aber bitte erst nach 14 Uhr, weil ich ausschlafen möchte. Bis dann, David.' - Wann möchte David joggen gehen?"
+        options: [
+          "Am Sonntag vor 14 Uhr",
+          "Am Sonntag nach 14 Uhr",
+          "Gestern nach der Arbeit"
+        ]
+        correctIndex: 1
+      - type: multiple_choice
+        question: "Text: 'Liebe Nachbarn, am Samstag feiere ich meinen 30. Geburtstag mit Freunden in der Wohnung. Es könnte etwas lauter werden. Vielen Dank für Ihr Verständnis! Martin.' - Was kündigt Martin an?"
+        options: [
+          "Dass er am Samstag umzieht",
+          "Dass es am Samstag eine lautere Party geben kann",
+          "Dass er neue Nachbarn sucht"
+        ]
+        correctIndex: 1
+      - type: free_text
+        prompt: "Text: 'Hallo Sara, mein Zug hat 20 Minuten Verspätung. Warte bitte im Café am Bahnhof auf mich!' - Where should Sara wait?"
+        modelAnswer: "Im Café am Bahnhof."
+
+  - slug: goethe-reading-teil2-service-directory
+    skill: reading
+    title: "Goethe Lesen Teil 2: Directories and Facility Information Boards"
+    prerequisites: [goethe-two-way-prepositions-local]
+    explanation: |
+      Goethe Lesen Teil 2 presents an information board (e.g., from a department store, exhibition hall, or public building) and requires answering five multiple-choice questions about where to find specific goods or services.
+      Match the object or inquiry in the task prompt to the corresponding floor or department heading.
+    examples:
+      - "Aufgabe: Sie möchten einen neuen Koffer für die Urlaubsreise kaufen. Infotafel: 1. Stock: Damen- und Herrenmode; 2. Stock: Sportartikel, Koffer, Taschen und Lederwaren; 3. Stock: Wohnen & Haushalt. -> Lösung: 2. Stock."
+    exercises:
+      - type: multiple_choice
+        question: "Situation: Sie suchen einen neuen Laptop und Druckerpapier. Informationstafel: EG: Kosmetik, Schmuck; 1. OG: Herrenbekleidung; 2. OG: Haushaltswaren; 3. OG: Elektronik, Computer, Bürobedarf. Wohin gehen Sie?"
+        options: ["Ins Erdgeschoss", "In das 1. OG", "In das 3. OG"]
+        correctIndex: 2
+      - type: multiple_choice
+        question: "Situation: Sie möchten ein Geschenk verpacken lassen. Informationstafel: EG: Information und Einpackservice; 1. OG: Damenmode; 2. OG: Kinderkleidung. Wohin gehen Sie?"
+        options: ["Ins Erdgeschoss", "In das 1. OG", "In das 2. OG"]
+        correctIndex: 0
+      - type: fill_blank
+        textWithBlank: "Infotafel: 'Kinderspielzeug, Babybekleidung und Kinderwagen finden Sie im ___ Stock.' (spoken/written: zweiten)"
+        correctAnswer: "zweiten"
+
+  - slug: goethe-reading-teil3-newspaper-report
+    skill: reading
+    title: "Goethe Lesen Teil 3: Informative Media Reports and Articles"
+    prerequisites: [goethe-praeteritum-auxiliaries-modals, goethe-vocab-media-communication]
+    explanation: |
+      In Goethe Lesen Teil 3, candidates read a short article from a newspaper, magazine, or website about cultural trends, leisure habits, or community projects, followed by five multiple-choice items.
+      Focus on understanding the central ideas and specific factual details without stumbling over unfamiliar low-frequency words.
+    examples:
+      - "Text: 'Immer mehr Menschen in Großstädten nutzen Carsharing statt ein eigenes Auto zu besitzen. Das spart monatlich Geld und schont die Umwelt.' - Frage: Warum nutzen Menschen Carsharing? -> Weil es günstiger ist und die Umwelt schont."
+    exercises:
+      - type: multiple_choice
+        question: "Text: 'Eine neue Studie zeigt: Wer mindestens dreimal pro Woche mit dem Fahrrad zur Arbeit fährt, ist seltener krank und fühlt sich im Alltag fitter.' - Was ist das Ergebnis der Studie?"
+        options: [
+          "Fahrradfahren ist gefährlich.",
+          "Radfahrer sind fitter und seltener krank.",
+          "Autofahren ist gesünder als Radfahren."
+        ]
+        correctIndex: 1
+      - type: multiple_choice
+        question: "Text: 'Das kleine Dorfmuseum öffnet nach zweijähriger Renovierung wieder seine Türen. Am Eröffnungswochenende ist der Eintritt für alle Besucher kostenlos.' - Wann ist der Eintritt frei?"
+        options: [
+          "Nur für Kinder unter 10 Jahren",
+          "Das ganze Jahr über",
+          "Am Eröffnungswochenende"
+        ]
+        correctIndex: 2
+      - type: free_text
+        prompt: "Text: 'Die Volkshochschule verzeichnet einen Rekord: Über 1.000 Teilnehmer haben sich für Sprachkurse angemeldet.' - How many participants registered?"
+        modelAnswer: "Über 1.000 Teilnehmer."
+
+  - slug: goethe-reading-teil4-advertisement-matching
+    skill: reading
+    title: "Goethe Lesen Teil 4: Matching Personal Requests to Classified Ads"
+    prerequisites: [goethe-vocab-education-professions-career]
+    explanation: |
+      In Goethe Lesen Teil 4, six individuals are seeking specific services, products, or events on the internet.
+      Candidates must match each person to the appropriate advertisement (ads a through f).
+      Crucially, for exactly one person there is NO matching advertisement in the set (marked with 'x' / 'keine Lösung').
+    examples:
+      - "Person: Lukas möchte am Wochenende Gitarrenunterricht für Anfänger nehmen. Anzeige b: 'Gitarrenschule: Neue Wochenendkurse für akustische Gitarre, keine Vorkenntnisse nötig!' -> Passt zu Lukas."
+      - "Person: Maria sucht einen Reitkurs für Fortgeschrittene am Sonntag. (Keine Anzeige erwähnt Reiten) -> Lösung: keine passende Anzeige."
+    exercises:
+      - type: multiple_choice
+        question: "Person: Thomas sucht einen Wochenendjob als Kellner in einem Restaurant. Anzeige a: 'Studentenjob im Büro gesucht (Mo-Fr).' Anzeige b: 'Restaurant Zur Linde sucht freundliche Servicekräfte für Freitag- und Samstagabend.' Welche Anzeige passt?"
+        options: ["Anzeige a", "Anzeige b", "Keine passende Anzeige"]
+        correctIndex: 1
+      - type: multiple_choice
+        question: "Person: Julia möchte ihr altes Klavier verkaufen. Anzeige c: 'Klavierlehrer erteilt Privatunterricht.' Anzeige d: 'Suche gebrauchtes Klavier oder E-Piano zum Kauf, zahle bar.' Welche Anzeige passt?"
+        options: ["Anzeige c", "Anzeige d", "Keine passende Anzeige"]
+        correctIndex: 1
+      - type: multiple_choice
+        question: "Person: Sven möchte am Samstag an einem Tauchkurs im Meer teilnehmen. Die vorliegenden Anzeigen bieten nur Schwimmkurse im Hallenbad und Segelkurse an. Welche Option wählt Sven?"
+        options: ["Anzeige für Schwimmkurs", "Anzeige für Segelkurs", "Keine Anzeige passt"]
+        correctIndex: 2
+
+  - slug: goethe-listening-teil1-everyday-dialogues
+    skill: listening
+    title: "Goethe Hören Teil 1: Short Dialogues and Multiple-Choice Questions"
+    prerequisites: [goethe-vocab-travel-vacation-nature]
+    explanation: |
+      In Goethe Hören Teil 1, candidates listen to five short everyday conversations (played twice).
+      Each dialogue is paired with a three-option multiple-choice question (a, b, c).
+      Read the question stem and all options during the pause before listening, and listen for specific times, prices, and locations.
+    examples:
+      - "Hörtext (2x): 'Wann treffen wir uns?' - 'Mein Kurs endet um 17 Uhr, lass uns um halb sechs im Café treffen.' - Frage: Wann treffen sich die Freunde? -> Option: Um 17:30 Uhr."
+    exercises:
+      - type: multiple_choice
+        question: "Hörtext (2x): 'Entschuldigung, wie viel kostet dieses T-Shirt?' - 'Es war ursprünglich 30 Euro, aber heute ist es um 50 Prozent reduziert, also 15 Euro.' - Wie viel kostet das T-Shirt?"
+        options: ["30 Euro", "15 Euro", "50 Euro"]
+        correctIndex: 1
+      - type: multiple_choice
+        question: "Hörtext (2x): 'Kommen Sie mit dem Auto zum Vorstellungsgespräch?' - 'Nein, es gibt dort keine Parkplätze. Ich nehme lieber die U-Bahn.' - Wie fährt der Mann zum Gespräch?"
+        options: ["Mit dem Auto", "Mit dem Bus", "Mit der U-Bahn"]
+        correctIndex: 2
+      - type: fill_blank
+        textWithBlank: "Hörtext: 'Der Zug fährt heute nicht von Gleis 3, sondern von Gleis ___ ab.' (spoken: sieben)"
+        correctAnswer: "7"
+
+  - slug: goethe-listening-teil2-guided-monologues
+    skill: listening
+    title: "Goethe Hören Teil 2: Extended Monologues and Visual Matching"
+    prerequisites: [goethe-two-way-prepositions-local]
+    explanation: |
+      In Goethe Hören Teil 2, candidates listen to a continuous informational broadcast or spoken monologue (played once or twice depending on task version), such as a city tour, exhibition opening, or radio guide.
+      Test takers match five items or individuals to corresponding images, rooms, or categories.
+    examples:
+      - "Hörtext: 'Willkommen im Stadtmuseum! Im ersten Raum links sehen Sie Gemälde des 19. Jahrhunderts. Geradeaus im großen Saal finden Sie historische Möbel, und im Obergeschoss befindet sich unsere Sonderausstellung über die Industrialisierung.'"
+    exercises:
+      - type: multiple_choice
+        question: "Führung: 'Im Erdgeschoss finden Sie die antiken Skulpturen, im ersten Stock unsere Gemäldegalerie und im zweiten Stock das Museumscafé.' - Wo befindet sich das Café?"
+        options: ["Im Erdgeschoss", "Im 1. Stock", "Im 2. Stock"]
+        correctIndex: 2
+      - type: multiple_choice
+        question: "Durchsage im Tierpark: 'Die Fütterung der Pinguine beginnt um 14:00 Uhr, die Elefanten werden um 15:30 Uhr gefüttert.' - Wann werden die Pinguine gefüttert?"
+        options: ["Um 14:00 Uhr", "Um 15:00 Uhr", "Um 15:30 Uhr"]
+        correctIndex: 0
+      - type: fill_blank
+        textWithBlank: "Führung: 'Die Stadtführung dauert insgesamt ___ Stunden.' (spoken: zwei)"
+        correctAnswer: "2"
+
+  - slug: goethe-listening-teil4-radio-interview
+    skill: listening
+    title: "Goethe Hören Teil 4: Radio Interviews and True/False Judgments"
+    prerequisites: [goethe-perfekt-past-tense, goethe-vocab-education-professions-career]
+    explanation: |
+      In Goethe Hören Teil 4, candidates listen to a broadcast radio interview (played twice) with a person discussing their profession, unusual hobby, or daily lifestyle.
+      Candidates evaluate five statements as Ja (Yes) or Nein (No) / Richtig (True) or Falsch (False).
+      Identify whether the speaker's stated opinions or past experiences match the test statements.
+    examples:
+      - "Interview: 'Moderator: Herr Berger, warum sind Sie Bäcker geworden? - Berger: Schon als kleiner Junge habe ich mit meiner Großmutter gebacken. Dieser Beruf war immer mein Traumberuf.' - Aussage: Herr Berger wollte schon als Kind Bäcker werden. -> Ja / Richtig."
+    exercises:
+      - type: multiple_choice
+        question: "Interview (2x): 'Journalist: Frau Jansen, arbeiten Sie gerne im Homeoffice? - Frau Jansen: Am Anfang fand ich es schwierig, aber mittlerweile schätze ich die Ruhe und spare zwei Stunden Fahrtzeit jeden Tag.' - Aussage: Frau Jansen findet die Arbeit von zu Hause positiv."
+        options: ["Ja / Richtig", "Nein / Falsch"]
+        correctIndex: 0
+      - type: multiple_choice
+        question: "Interview (2x): 'Sprecher: Ich habe früher Fußball im Verein gespielt, aber wegen einer Knieverletzung fahre ich heute nur noch Rennrad.' - Aussage: Der Sprecher spielt heute noch aktiv Fußball im Verein."
+        options: ["Ja / Richtig", "Nein / Falsch"]
+        correctIndex: 1
+      - type: multiple_choice
+        question: "Interview (2x): 'Sprecherin: Ich bin vor drei Jahren von der Großstadt aufs Land gezogen und habe diesen Schritt nie bereut.' - Aussage: Die Sprecherin möchte wieder zurück in die Großstadt ziehen."
+        options: ["Ja / Richtig", "Nein / Falsch"]
+        correctIndex: 1
+
+  - slug: goethe-writing-teil1-informal-note
+    skill: writing
+    title: "Goethe Schreiben Teil 1: Informal Personal Message (20–30 Words)"
+    prerequisites: [goethe-perfekt-past-tense, goethe-vocab-celebrations-social-events]
+    explanation: |
+      In Goethe Schreiben Teil 1, candidates write a short informal email or message of about 20–30 words to a friend or acquaintance for social contact maintenance.
+      You must address three explicit bullet points (e.g., thank for an invitation, state whether you can come, suggest bringing something).
+      Use an informal greeting (Liebe/Lieber...) and closing (Liebe Grüße / Dein(e)...).
+    examples:
+      - "Aufgabe: Ihre Freundin Julia hat Sie zur Grillparty eingeladen. 1. Bedanken Sie sich. 2. Zusagen. 3. Was mitbringen? -> 'Liebe Julia, vielen Dank für die Einladung zur Grillparty! Ich komme sehr gerne am Samstag. Soll ich einen Kartoffelsalat oder Getränke mitbringen? Bis bald, Daniel.'"
+    exercises:
+      - type: free_text
+        prompt: "Schreiben Sie eine E-Mail an Ihren Freund Felix (ca. 25 Wörter): Bedanken Sie sich für seine Hilfe beim Umzug und laden Sie ihn zum Essen ein. Nennen Sie Tag und Uhrzeit."
+        modelAnswer: "Lieber Felix, vielen Dank für deine tolle Hilfe beim Umzug! Ich möchte dich gerne zum Essen einladen. Hast du am Freitag um 19 Uhr Zeit? Viele Grüße, Marco."
+      - type: fill_blank
+        textWithBlank: "Informelle Anrede an eine Freundin: '___ Sarah,'"
+        correctAnswer: "Liebe"
+      - type: multiple_choice
+        question: "Welche Grußformel passt am Ende einer kurzen informellen Nachricht an einen Freund?"
+        options: [
+          "Mit freundlichen Grüßen",
+          "Sehr geehrte Damen und Herren",
+          "Viele Grüße",
+          "Hochachtungsvoll"
+        ]
+        correctIndex: 2
+
+  - slug: goethe-writing-teil2-semi-formal-message
+    skill: writing
+    title: "Goethe Schreiben Teil 2: Semi-Formal Message (30–40 Words)"
+    prerequisites: [goethe-subordinating-conjunctions-weil-dass, goethe-indirect-questions-polite]
+    explanation: |
+      In Goethe Schreiben Teil 2, candidates write a semi-formal message or email (approx. 30–40 words) to regulate an everyday action or formal interaction (Handlungsregulierung).
+      Typical tasks: apologizing for missing a class or appointment, rescheduling an appointment, or requesting information from a teacher, doctor, or customer service representative.
+      Follow the three prompt points, use polite formal phrasing (Sehr geehrte(r)...), and conclude with 'Mit freundlichen Grüßen'.
+    examples:
+      - "Aufgabe: Schreiben Sie an Ihre Sprachlehrerin Frau Schneider: 1. Grund des Schreibens: Abwesenheit morgen 2. Warum? 3. Hausaufgaben erfragen. -> 'Sehr geehrte Frau Schneider, leider kann ich morgen nicht zum Unterricht kommen, weil ich einen wichtigen Arzttermin habe. Könnten Sie mir bitte die Hausaufgaben für Donnerstag per E-Mail zusenden? Vielen Dank und mit freundlichen Grüßen, Elena Keller.'"
+    exercises:
+      - type: free_text
+        prompt: "Schreiben Sie an Ihren Vermieter, Herrn Bauer (ca. 35 Wörter): Bitten Sie um Erlaubnis, eine Katze in der Wohnung halten zu dürfen. Nennen Sie den Grund und versichern Sie, dass das Tier leise ist."
+        modelAnswer: "Sehr geehrter Herr Bauer, ich möchte Sie fragen, ob ich eine kleine Katze in meiner Wohnung halten darf. Das Tier ist sehr ruhig und macht keinen Lärm. Ich freue mich auf Ihre Antwort. Mit freundlichen Grüßen, Anna Berg."
+      - type: fill_blank
+        textWithBlank: "Formelle Anrede an eine unbekannte Person: 'Sehr geehrte Damen und ___ ,'"
+        correctAnswer: "Herren"
+      - type: multiple_choice
+        question: "Welche Einleitung passt für eine Entschuldigungs-E-Mail an einen Kursleiter?"
+        options: [
+          "Ich schreibe Ihnen, weil ich morgen leider verhindert bin.",
+          "Hallo Kumpel, ich habe keine Lust.",
+          "Gib mir schnell die Noten!",
+          "Kommst du zur Party?"
+        ]
+        correctIndex: 0
+
+  - slug: goethe-speaking-teil1-question-exchange
+    skill: speaking
+    title: "Goethe Sprechen Teil 1: Asking and Answering Questions on Cards"
+    prerequisites: [goethe-perfekt-past-tense]
+    explanation: |
+      In Goethe Sprechen Teil 1, candidates draw prompt cards containing a topic and a question word or keyword (e.g., Thema: Wohnort, Wort: Wohnung; Thema: Freizeit, Wort: Sport).
+      You must formulate an accurate question to your testing partner and respond to your partner's questions with complete, clear sentences.
+    examples:
+      - "Thema: 'Wochenende', Wort: 'Sonntag' -> Frage: 'Was machen Sie normalerweise am Sonntagnachmittag?' - Antwort: 'Am Sonntag gehe ich gerne mit meiner Familie spazieren und ruhe mich aus.'"
+      - "Thema: 'Essen', Wort: 'Frühstück' -> Frage: 'Was essen Sie am liebsten zum Frühstück?' - Antwort: 'Ich esse meistens Müsli mit Joghurt und trinke einen schwarzen Kaffee.'"
+    exercises:
+      - type: free_text
+        prompt: "Thema: 'Reisen', Wort: 'Sommer'. Formulate a question for your partner."
+        modelAnswer: "Wohin reisen Sie am liebsten im Sommer?"
+      - type: free_text
+        prompt: "Respond to the question: 'Wo kaufen Sie Ihre Kleidung am liebsten ein?'"
+        modelAnswer: "Ich kaufe meine Kleidung meistens in Kaufhäusern in der Innenstadt oder online ein."
+      - type: multiple_choice
+        question: "Thema: 'Arbeit', Wort: 'Pause'. Welche Frage passt grammatisch und inhaltlich am besten?"
+        options: [
+          "Was machen Sie in Ihrer Mittagspause?",
+          "Ist Pause eine Arbeit?",
+          "Wann Pause haben?",
+          "Warum Pause ist wichtig?"
+        ]
+        correctIndex: 0
+
+  - slug: goethe-speaking-teil2-monologic-topic
+    skill: speaking
+    title: "Goethe Sprechen Teil 2: Personal Monologue on a Given Life Topic"
+    prerequisites: [goethe-praeteritum-auxiliaries-modals, goethe-vocab-celebrations-social-events]
+    explanation: |
+      In Goethe Sprechen Teil 2, each candidate draws a topic card with guiding bullet points and delivers a coherent monologue about their own life and habits (duration approx. 1–2 minutes).
+      Topics include: 'Mein Lieblingstag', 'Mein Wochenende', 'Was machen Sie mit Ihrem Geld?', or 'Ein Fest mit Freunden'.
+      The examiner will ask one or two short follow-up questions when you finish.
+    examples:
+      - "Thema: 'Mein Wochenende' -> 'Ich möchte über mein Wochenende sprechen. Am Samstag stehe ich meistens um acht Uhr auf und frühstücke gemütlich. Danach gehe ich auf den Wochenmarkt und kaufe frisches Gemüse. Am Nachmittag treffe ich oft Freunde im Park. Am Sonntag bleibe ich gerne zu Hause, lese ein Buch oder koche etwas Gutes. Das Wochenende ist für mich sehr wichtig, um mich von der Arbeit zu erholen.'"
+    exercises:
+      - type: free_text
+        prompt: "Deliver a short presentation (4-5 sentences) on the topic: 'Mein Lieblingsurlaub'. State where you like to go, with whom, and what you do there."
+        modelAnswer: "Mein Lieblingsurlaub ist am Meer. Ich fahre im Sommer am liebsten mit meiner Familie nach Italien. Wir schwimmen im Meer, liegen am Strand und essen abends frischen Fisch. Ich mag diesen Urlaub, weil ich mich dort wunderbar entspannen kann."
+      - type: free_text
+        prompt: "Answer the examiner's follow-up question: 'Und was machen Sie, wenn es im Urlaub die ganze Zeit regnet?'"
+        modelAnswer: "Wenn es regnet, besuche ich gerne Museen oder lese ein Buch im Hotelzimmer."
+      - type: multiple_choice
+        question: "Welcher Redemittel-Ausdruck eignet sich hervorragend, um die Präsentation in Teil 2 zu beginnen?"
+        options: [
+          "Ich möchte heute über das Thema ... sprechen.",
+          "Ich habe keine Ahnung.",
+          "Du musst mir jetzt zuhören.",
+          "Schluss für heute!"
+        ]
+        correctIndex: 0
+
+  - slug: goethe-speaking-teil3-joint-negotiation
+    skill: speaking
+    title: "Goethe Sprechen Teil 3: Joint Negotiation and Event Planning"
+    prerequisites: [goethe-indirect-questions-polite, goethe-comparative-superlative]
+    explanation: |
+      In Goethe Sprechen Teil 3, candidates receive a collaborative task sheet (e.g., buying a birthday present for a mutual friend, planning a farewell party, or organizing a weekend excursion).
+      Interact spontaneously: propose ideas, react to your partner's proposals, negotiate alternatives, and finalize concrete details (wer, wann, wo, was).
+    examples:
+      - "Kandidat A: 'Unser Kollege Herr Meyer hat nächste Woche Geburtstag. Wollen wir ein Geschenk für ihn kaufen?'"
+      - "Kandidat B: 'Ja, das ist eine super Idee! Wir könnten ihm ein Buch oder einen Gutschein schenken. Was meinst du?'"
+      - "Kandidat A: 'Ich glaube, ein Restaurantgutschein ist besser, weil er gerne gut essen geht. Wer kauft den Gutschein?'"
+      - "Kandidat B: 'Das kann ich gerne morgen nach der Arbeit machen. Wie viel Geld wollen wir ausgeben?'"
+    exercises:
+      - type: free_text
+        prompt: "Propose an idea to your partner for planning a class party, and ask what they think."
+        modelAnswer: "Wollen wir am Freitagabend eine Party für unseren Deutschkurs organisieren? Was hältst du davon?"
+      - type: free_text
+        prompt: "Disagree politely with your partner's proposal to go hiking because of bad weather, and suggest going to the cinema instead."
+        modelAnswer: "Das Wetter soll am Wochenende leider schlecht werden. Lass uns lieber ins Kino gehen!"
+      - type: multiple_choice
+        question: "Welcher Ausdruck eignet sich hervorragend, um die Einigung am Ende der Verhandlung zusammenzufassen?"
+        options: [
+          "Dann halten wir fest: Wir treffen uns am Samstag um 14 Uhr vor dem Kino.",
+          "Ich will nicht mit dir sprechen.",
+          "Das ist mir egal, mach was du willst.",
+          "Nein, auf keinen Fall."
+        ]
+        correctIndex: 0

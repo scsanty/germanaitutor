@@ -1,0 +1,1160 @@
+{
+  "seedVersion": "2",
+  "track": "telc",
+  "level": "B2",
+  "milestones": [
+    {
+      "milestone": {
+        "id": "telc-b2-grammar",
+        "track": "telc",
+        "level": "B2",
+        "title": "Grammar",
+        "description": null,
+        "orderIndex": 0
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "telc-b2-grammar-lessons",
+            "milestoneId": "telc-b2-grammar",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b2-telc-sprachbausteine-1-grammatik",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "b2-telc-praepositionen-genitiv",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "b2-telc-konzessive-adversative-verbindungen",
+              "orderIndex": 2
+            },
+            {
+              "lessonId": "b2-telc-nomen-verb-verbindungen-beruf",
+              "orderIndex": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-b2-vocabulary",
+        "track": "telc",
+        "level": "B2",
+        "title": "Vocabulary",
+        "description": null,
+        "orderIndex": 1
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "telc-b2-vocabulary-lessons",
+            "milestoneId": "telc-b2-vocabulary",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b2-telc-sprachbausteine-2-wortschatz",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "b2-telc-vocab-berufsalltag-verhandlung",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "b2-telc-vocab-reklamation-dienstleistung",
+              "orderIndex": 2
+            },
+            {
+              "lessonId": "b2-telc-vocab-medien-konsumgesellschaft",
+              "orderIndex": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-b2-reading",
+        "track": "telc",
+        "level": "B2",
+        "title": "Reading",
+        "description": null,
+        "orderIndex": 2
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "telc-b2-reading-lessons",
+            "milestoneId": "telc-b2-reading",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b2-telc-leseverstehen-teil1-global",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "b2-telc-leseverstehen-teil2-detail",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "b2-telc-leseverstehen-teil3-selektiv",
+              "orderIndex": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-b2-listening",
+        "track": "telc",
+        "level": "B2",
+        "title": "Listening",
+        "description": null,
+        "orderIndex": 3
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "telc-b2-listening-lessons",
+            "milestoneId": "telc-b2-listening",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b2-telc-hoerverstehen-teil1-meinungen",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "b2-telc-hoerverstehen-teil2-interview",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "b2-telc-hoerverstehen-teil3-ansagen-nachrichten",
+              "orderIndex": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-b2-writing",
+        "track": "telc",
+        "level": "B2",
+        "title": "Writing",
+        "description": null,
+        "orderIndex": 4
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "telc-b2-writing-lessons",
+            "milestoneId": "telc-b2-writing",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b2-telc-schreiben-beschwerdebrief",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "b2-telc-schreiben-informationsbitte-anfrage",
+              "orderIndex": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-b2-speaking",
+        "track": "telc",
+        "level": "B2",
+        "title": "Speaking",
+        "description": null,
+        "orderIndex": 5
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "telc-b2-speaking-lessons",
+            "milestoneId": "telc-b2-speaking",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b2-telc-sprechen-teil1-praesentation",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "b2-telc-sprechen-teil2-diskussion",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "b2-telc-sprechen-teil3-problemlosung-planung",
+              "orderIndex": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "b2-telc-sprachbausteine-1-grammatik",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "grammar",
+      "title": "telc Sprachbausteine Teil 1: Grammatik im Kontext",
+      "explanation": "In Teil 1 der Sprachbausteine der telc-B2-Prüfung wird ein formeller Brief oder Text mit 10 Grammatiklücken vorgelegt.\nGeprüft werden gezielt: Kasusendungen von Artikeln und Adjektiven, feste Präpositionen, Pronominaladverbien (darauf, woran), Relativpronomen im Genitiv/Dativ sowie zweiteilige Konnektoren.\nAnalysieren Sie vor der Auswahl stets das Bezugswort und die Rektion des Verbs oder der Präposition im Satz.\n",
+      "examples": [
+        "Wir bedanken uns für Ihr Schreiben, in ___ Sie uns auf den Vorfall aufmerksam gemacht haben. (dem)",
+        "Aufgrund ___ unerwarteten Ausfalls unserer Server bitten wir um Nachsicht. (des)",
+        "Wir bitten Sie, ___ zu bestätigen, dass Sie die geänderten AGB akzeptieren. (es)"
+      ]
+    },
+    {
+      "id": "b2-telc-sprachbausteine-2-wortschatz",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "vocabulary",
+      "title": "telc Sprachbausteine Teil 2: Lexikalische Passung und Kollokationen",
+      "explanation": "In Sprachbausteine Teil 2 müssen 10 Lücken in einem Text geschlossen werden, indem passende Wörter aus einer Auswahlliste von 15 Optionen (a–o) zugeordnet werden.\nHierbei werden Kollokationen, semantische Nuancen, Nomen-Verb-Verbindungen und adäquate Registerentscheidungen abgefragt.\nAchten Sie genau auf den Kontext: Viele Wörter sind zwar semantisch ähnlich, passen aber syntaktisch oder idiomatisch nur in eine bestimmte Lücke.\n",
+      "examples": [
+        "Er hat maßgeblichen Anteil am Erfolg des Unternehmens. (nicht: Teil oder Stück)",
+        "Das Gesetz tritt mit sofortiger Wirkung in Kraft.",
+        "Wir müssen eine Reihe von Maßnahmen zur Qualitätssicherung ergreifen."
+      ]
+    },
+    {
+      "id": "b2-telc-praepositionen-genitiv",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "grammar",
+      "title": "Präpositionen mit Genitiv im Amts- und Geschäftsdeutsch",
+      "explanation": "Im gehobenen Schriftverkehr verlangt die telc-B2-Prüfung sichere Beherrschung von Genitivpräpositionen.\nKausal: \"aufgrund\", \"infolge\", \"mangels\", \"anlässlich\".\nKonzessiv: \"trotz\", \"ungeachtet\".\nLokal/Temporal: \"außerhalb\", \"innerhalb\", \"während\".\nFinal/Referentiell: \"hinsichtlich\", \"bezüglich\", \"zwecks\" (+ artikelloser Genitiv).\n",
+      "examples": [
+        "Zwecks besserer Abstimmung schlage ich ein persönliches Gespräch vor.",
+        "Infolge technischer Probleme verzögert sich die Auslieferung.",
+        "Hinsichtlich der Bezahlung verweisen wir auf Absatz 4 des Vertrags.",
+        "Ungeachtet der Einwände des Betriebsrats wurde die Umstrukturierung beschlossen."
+      ]
+    },
+    {
+      "id": "b2-telc-konzessive-adversative-verbindungen",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "grammar",
+      "title": "Konzessive und adversative Verknüpfungen",
+      "explanation": "Konzessive Konnektoren drücken einen Gegengrund aus, der eine Folge nicht verhindert hat.\nSubjunktionen mit Nebensatz (Verb am Ende): \"obwohl\", \"obgleich\", \"wenngleich\".\nKonjunktionaladverbien mit Inversion (Verb auf Position 2): \"trotzdem\", \"dennoch\", \"nichtsdestotrotz\".\nAdversative Konnektoren stellen Gegensätze dar: \"während\" (temporal/adversativ), \"wohingegen\", \"jedoch\", \"dagegen\".\n",
+      "examples": [
+        "Obwohl wir intensive Verhandlungen führten, konnten wir keine Einigung erzielen.",
+        "Die Ausgaben stiegen drastisch; dennoch erzielte der Betrieb einen leichten Gewinn.",
+        "Der erste Kandidat überzeugte fachlich, wohingegen der zweite über mehr Führungserfahrung verfügte.",
+        "Die Produktion lief stabil weiter, während die Verkaufszahlen im Ausland einbrachen."
+      ]
+    },
+    {
+      "id": "b2-telc-nomen-verb-verbindungen-beruf",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "grammar",
+      "title": "Berufliche Funktionsverbgefüge",
+      "explanation": "Im Geschäfts- und Arbeitsleben ersetzen feste Nomen-Verb-Verbindungen einfache Verben, um Vorgänge formeller auszudrücken.\nBeispiele für berufliche Kommunikation: \"eine Absprache treffen\" (= absprechen), \"in Verhandlung treten\" (= zu verhandeln beginnen), \"einen Vorschlag unterbreiten\" (= vorschlagen), \"zur Kenntnis nehmen\" (= bemerken, registrieren), \"in Auftrag geben\" (= beauftragen).\n",
+      "examples": [
+        "Darf ich Ihnen diesbezüglich einen konstruktiven Vorschlag unterbreiten?",
+        "Wir haben Ihre Anmerkungen aufmerksam zur Kenntnis genommen.",
+        "Die Geschäftsleitung ist mit dem Zulieferer in Verhandlungen getreten.",
+        "Die Wartung der Klimaanlagen wurde bereits bei einer Fachfirma in Auftrag gegeben."
+      ]
+    },
+    {
+      "id": "b2-telc-vocab-berufsalltag-verhandlung",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "vocabulary",
+      "title": "Wortschatz: Verhandlungen und innerbetriebliche Kommunikation",
+      "explanation": "Verhandlungssituationen erfordern präzise diplomatische Ausdrucksweise.\nBegriffe: der Kompromiss, die Rahmenbedingungen, die Tagesordnung, das Protokoll, die Fristverlängerung, das Zugeständnis, der Kostenvoranschlag.\nWendungen: einen Konsens erzielen, Zugeständnisse machen, auf einem Standpunkt beharren, einen Antrag bewilligen/ablehnen.\n",
+      "examples": [
+        "Nach zähen Verhandlungen konnten beide Tarifparteien schließlich einen Kompromiss erzielen.",
+        "Wir bitten um Verständnis dafür, dass wir auf der Einhaltung der Lieferfristen beharren müssen.",
+        "Der Vorstand hat den Antrag auf Bereitstellung zusätzlicher Mittel bewilligt.",
+        "Lassen Sie uns zunächst die einzelnen Punkte der Tagesordnung durchgehen."
+      ]
+    },
+    {
+      "id": "b2-telc-vocab-reklamation-dienstleistung",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "vocabulary",
+      "title": "Wortschatz: Reklamation, Kundenservice und Verbraucherrechte",
+      "explanation": "Der schriftliche Teil von telc B2 erfordert häufig das Verfassen eines Beschwerdebriefs oder einer Mängelrüge.\nSchlüsselwörter: die Reklamation, die Mängelrüge, der Schadensersatz, die Rückerstattung, die Kulanz, der Garantiefall, die Vertragsverletzung.\nKollokationen: einen Mangel feststellen/beheben, Nachbesserung verlangen, vom Kaufvertrag zurücktreten, Entschädigung fordern.\n",
+      "examples": [
+        "Da das gelieferte Gerät erhebliche Mängel aufweist, verlangen wir eine umgehende Nachbesserung.",
+        "Aus Kulanzgründen sind wir bereit, die Reparaturkosten zur Hälfte zu übernehmen.",
+        "Sollte die Nachbesserung fehlschlagen, behalten wir uns vor, vom Vertrag zurückzutreten.",
+        "Wegen der gravierenden Verspätung fordern wir einen angemessenen Schadensersatz."
+      ]
+    },
+    {
+      "id": "b2-telc-vocab-medien-konsumgesellschaft",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "vocabulary",
+      "title": "Wortschatz: Konsumverhalten, Medien und Werbung",
+      "explanation": "Konsum- und Medienthemen bilden oft die Grundlage für telc-Lesetexte und mündliche Prüfungsdiskussionen.\nZentrale Begriffe: das Konsumverhalten, die Reizüberflutung, die Werbestrategie, die Wegwerfgesellschaft, der Verbraucherschutz, das Konsumgut, die Produktplatzierung.\nVerben: zum Kauf verleiten, ein Produkt bewerben, Bedürfnisse wecken, konsumieren, hinterfragen.\n",
+      "examples": [
+        "Gezielte Produktplatzierungen in Filmen verleiten Jugendliche unbewusst zum Konsum.",
+        "Verbraucherschützer warnen vor irreführenden Werbeversprechen bei Diätprodukten.",
+        "Die ständige Reizüberflutung im Internet führt zu sinkender Konzentrationsfähigkeit.",
+        "In einer Wegwerfgesellschaft werden langlebige Güter oft vorschnell durch Neuanschaffungen ersetzt."
+      ]
+    },
+    {
+      "id": "b2-telc-leseverstehen-teil1-global",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "reading",
+      "title": "telc Leseverstehen Teil 1: Zuordnung von Überschriften",
+      "explanation": "In Teil 1 des telc-B2-Leseverstehens müssen 5 kurze Informationstexte jeweils einer von 10 vorgegebenen Überschriften zugeordnet werden.\nZiel ist das Globalverstehen: Erfassen Sie die Gesamtaussage und Hauptintention des Textes, anstatt an isolierten Vokabeln hängen zu bleiben.\nAchtung: Es gibt Distraktoren! Überschriften greifen oft wörtliche Zitate aus dem Text auf, treffen aber nicht den Kern der Aussage.\n",
+      "examples": [
+        "Text über flexible Arbeitszeitmodelle -> Passende Überschrift: 'Neue Wege zur Vereinbarkeit von Familie und Beruf'.",
+        "Falsche Fährte: Eine Überschrift erwähnt 'Krankenstand im Betrieb', obwohl der Text diesen nur in einem Nebensatz als Beispiel streift."
+      ]
+    },
+    {
+      "id": "b2-telc-leseverstehen-teil2-detail",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "reading",
+      "title": "telc Leseverstehen Teil 2: Detailverstehen mit Dreifachauswahl",
+      "explanation": "Teil 2 besteht aus einem längeren journalistischen Artikel (ca. 500–600 Wörter) und 5 Multiple-Choice-Aufgaben (a, b, c).\nDie Fragen folgen chronologisch dem Textverlauf und prüfen Detailverstehen, logische Zusammenhänge und Autorenintention.\nAchten Sie auf feine Einschränkungen im Text wie \"nur unter bestimmten Voraussetzungen\", \"kaum\", \"nahezu unmöglich\" oder \"überwiegend\".\n",
+      "examples": [
+        "Frage: Warum scheiterte das Pilotprojekt? - Option a: Wegen Geldmangels. Option b: Wegen mangelnder Akzeptanz der Bürger. Option c: Wegen bürokratischer Hürden."
+      ]
+    },
+    {
+      "id": "b2-telc-leseverstehen-teil3-selektiv",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "reading",
+      "title": "telc Leseverstehen Teil 3: Selektives Verstehen (Situations-Anzeigen-Zuordnung)",
+      "explanation": "In Teil 3 werden 10 Personenprofile mit konkreten Absichten oder Bedürfnissen vorgelegt.\nDiesen müssen 10 von 12 Werbe- und Informationsanzeigen zugeordnet werden (für mindestens zwei Situationen gibt es keine passende Anzeige: Markierung \"x\").\nAchten Sie akribisch auf Ausschlusskriterien: Altersgrenzen, Vorqualifikationen, Termine, Kosten oder örtliche Gebundenheit.\n",
+      "examples": [
+        "Situation: Eine Studentin sucht einen Wochenendjob im Freien. -> Passende Anzeige: Stadtgärtnerei sucht Aushilfen für Samstage. Anzeige mit Schreibtischarbeit scheidet aus."
+      ]
+    },
+    {
+      "id": "b2-telc-hoerverstehen-teil1-meinungen",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "listening",
+      "title": "telc Hörverstehen Teil 1: Globale Meinungszuordnung",
+      "explanation": "In Teil 1 des Hörverstehens hören Sie die Äußerungen von fünf Personen zu einem strittigen Thema (z. B. Tempolimit, Homeoffice, bargeldloses Bezahlen).\nZu jedem Sprecher müssen Sie aus einer Liste von Thesen die zutreffende Meinung zuordnen.\nDie Sprecher äußern sich oft dialektisch: Sie wägen Vor- und Nachteile ab, bevor sie zu ihrem eigentlichen Urteil kommen. Achten Sie auf Wendungen wie \"Letztlich bin ich jedoch der Meinung...\".\n",
+      "examples": [
+        "Sprecher 1: 'Sicherlich ist es bequem, mit dem Smartphone zu zahlen, aber wenn das Netz ausfällt, steht man hilflos da. Deshalb ziehe ich Bargeld vor.' -> These: Befürwortet weiterhin Barzahlung aus Sicherheitsgründen."
+      ]
+    },
+    {
+      "id": "b2-telc-hoerverstehen-teil2-interview",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "listening",
+      "title": "telc Hörverstehen Teil 2: Detailverstehen eines Interviews (Richtig/Falsch)",
+      "explanation": "Sie hören ein längeres Radiointerview (ca. 5–7 Minuten) mit einem Experten oder einer Persönlichkeit des öffentlichen Lebens.\nDazu bearbeiten Sie 10 Richtig/Falsch-Aufgaben. Der Text wird nur einmal vorgespielt!\nNutzen Sie die Vorbereitungszeit intensiv, um Schlüsselwörter in den Aussagen zu markieren.\nAussagen sind oft paraphrasiert: Im Audio fallen andere Wörter als auf dem Aufgabenblatt.\n",
+      "examples": [
+        "Item: 'Der Experte rät von einer sofortigen Einführung der Technologie ab.' - Im Audio: 'Wir sollten mit dem Rollout unbedingt warten, bis alle Sicherheitsfragen geklärt sind.' -> Richtig."
+      ]
+    },
+    {
+      "id": "b2-telc-hoerverstehen-teil3-ansagen-nachrichten",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "listening",
+      "title": "telc Hörverstehen Teil 3: Selektives Verstehen von Radionachrichten",
+      "explanation": "In Teil 3 hören Sie fünf kurze Beiträge aus dem Radio (Verkehrshinweise, Wettermeldungen, Kurznachrichten, Veranstaltungstipps).\nZu jedem Text lösen Sie eine Richtig/Falsch-Aufgabe. Jeder Text wird nur einmal abgespielt.\nKonzentrieren Sie sich auf konkrete Details: Welche Autobahn ist gesperrt? Für wen gilt das Angebot? Wann findet das Event statt?\n",
+      "examples": [
+        "Meldung: 'Auf der A8 zwischen München und Salzburg stockt der Verkehr wegen einer Baustelle auf 5 Kilometern.' - Aufgabe: Auf der A8 kommt es zu Verkehrsbehinderungen. -> Richtig."
+      ]
+    },
+    {
+      "id": "b2-telc-schreiben-beschwerdebrief",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "writing",
+      "title": "telc Schriftlicher Ausdruck: Formeller Beschwerdebrief",
+      "explanation": "In der telc-B2-Schreibprüfung können Sie zwischen zwei Aufgabentypen wählen; einer davon ist meist ein Beschwerdebrief.\nSie erhalten eine Anzeige oder Situationsbeschreibung mit vier Leitpunkten, von denen Sie mindestens drei detailliert bearbeiten müssen.\nAufbau:\n1. Absender, Empfänger, Datum, prägnante Betreffzeile mit Vorgangsnummer.\n2. Formelle Anrede (\"Sehr geehrte Damen und Herren,\").\n3. Anlass des Schreibens und detaillierter Abgleich zwischen Anzeige (Soll) und Realität (Ist).\n4. Forderung nach Entschädigung / Preisminderung mit konkreter Frist.\n5. Formelle Grußformel und Unterschrift.\n",
+      "examples": [
+        "Betreff: Beschwerde bezüglich unseres Aufenthalts im Hotel Seeblick – Buchungsnr. 7821",
+        "In Ihrem Prospekt sicherten Sie uns ein ruhiges Zimmer mit Meerblick zu. Tatsächlich blickten wir direkt auf eine Großbaustelle.",
+        "Ich erwarte daher eine Rückerstattung von mindestens 30 % des Gesamtpreises bis zum 30. Mai."
+      ]
+    },
+    {
+      "id": "b2-telc-schreiben-informationsbitte-anfrage",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "writing",
+      "title": "telc Schriftlicher Ausdruck: Detaillierte Anfrage und Informationsbitte",
+      "explanation": "Die zweite Option beim schriftlichen Ausdruck ist häufig eine förmliche Anfrage / Bitte um Information (z. B. zu einem Fortbildungsprogramm, einer Messe oder einer Veranstaltung).\nAuch hier müssen drei vorgegebene Leitpunkte zwingend behandelt werden.\nFormulieren Sie im gehobenen Konjunktiv II der Höflichkeit: \"Ich wäre Ihnen sehr dankbar, wenn Sie mir mitteilen könnten...\", \"Könnten Sie mir detaillierte Unterlagen bezüglich ... zukommen lassen?\".\n",
+      "examples": [
+        "Mit großem Interesse habe ich Ihre Ausschreibung für den Weiterbildungslehrgang zum Projektmanager gelesen.",
+        "Da ich berufstätig bin, würde mich interessieren, ob das Seminar auch als Wochenendkurs angeboten wird.",
+        "Des Weiteren bitte ich um Auskunft über eventuelle Fördermöglichkeiten durch das Arbeitsamt."
+      ]
+    },
+    {
+      "id": "b2-telc-sprechen-teil1-praesentation",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "speaking",
+      "title": "telc Mündliche Prüfung Teil 1: Die Präsentation",
+      "explanation": "In Teil 1A halten Sie einen ca. 2,5-minütigen Kurzvortrag über ein vorbereitetes Thema.\nMögliche Themenfelder:\n- Ein Buch, das Sie gelesen haben.\n- Ein Film, den Sie gesehen haben.\n- Eine Reise, die Sie unternommen haben.\n- Eine wichtige Erfahrung in Ihrem Leben.\n- Eine Veranstaltung, die Sie besucht haben.\nStruktur: Einleitung, kurze Zusammenfassung des Inhalts, persönliche Bewertung / warum das Thema für Sie bedeutsam war, Fazit.\nIn Teil 1B stellt Ihr Prüfungspartner bzw. der Prüfer zwei bis drei Nachfragen, die Sie spontan beantworten.\n",
+      "examples": [
+        "In meiner heutigen Präsentation möchte ich Ihnen das Buch 'Der Vorleser' von Bernhard Schlink vorstellen.",
+        "Besonders beeindruckt hat mich an diesem Werk die vielschichtige Aufarbeitung historischer Schuld.",
+        "Ich kann dieses Buch jedem empfehlen, der sich für deutsche Nachkriegsgeschichte interessiert."
+      ]
+    },
+    {
+      "id": "b2-telc-sprechen-teil2-diskussion",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "speaking",
+      "title": "telc Mündliche Prüfung Teil 2: Diskussion über ein kontroverses Thema",
+      "explanation": "In Teil 2 erhalten Sie und Ihr Partner ein kurzes Textzitat zu einer kontroversen Streitfrage (z. B. Tempolimit, Abschaffung von Hausaufgaben, Verbot von Plastiktüten).\nSie fassen die Aussage des Zitats kurz zusammen, beziehen begründet Stellung und diskutieren anschließend interaktiv miteinander.\nWichtig: Nicht monologisieren! Stellen Sie Fragen an den Partner (\"Wie siehst du das?\", \"Welche Erfahrungen hast du damit gemacht?\"), gehen Sie auf dessen Argumente ein und entwickeln Sie das Gespräch weiter.\n",
+      "examples": [
+        "Ich habe die Textvorlage so verstanden, dass der Autor ein generelles Smartphone-Verbot an Schulen fordert.",
+        "Dieser Ansicht kann ich mich nur teilweise anschließen. Zwar lenken Handys ab, aber man könnte sie gezielt im Unterricht einsetzen.",
+        "Was hältst du von dem Vorschlag, Handys nur in den Pausen zu erlauben?"
+      ]
+    },
+    {
+      "id": "b2-telc-sprechen-teil3-problemlosung-planung",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "speaking",
+      "title": "telc Mündliche Prüfung Teil 3: Gemeinsame Problemlösung und Planung",
+      "explanation": "In Teil 3 planen Sie gemeinsam mit Ihrem Prüfungspartner eine konkrete Aktion (z. B. ein Betriebsfest organisieren, einen Tag der offenen Tür planen, einen Ausflug für Sprachschüler vorbereiten).\nSie erhalten dafür Leitpunkte (Termin, Ort, Verpflegung, Programm, Kosten).\nDemonstrieren Sie Teamfähigkeit: Machen Sie konkrete Vorschläge, wägen Sie Alternativen ab, verteilen Sie Aufgaben und erzielen Sie am Ende einen klaren Konsens.\n",
+      "examples": [
+        "Lass uns zunächst überlegen, welches Datum für das Betriebsfest am besten geeignet wäre.",
+        "Wenn du dich um das Buffet kümmerst, könnte ich mich um die Einladungen und die Musik kümmern.",
+        "Ein Grillfest im Freien birgt das Risiko schlechten Wetters. Sollten wir nicht lieber einen Raum anmieten?"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b2-telc-sprachbausteine-1-grammatik__ex0",
+      "lessonId": "b2-telc-sprachbausteine-1-grammatik",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Text: 'Wir freuen uns über Ihre Bewerbung und teilen Ihnen mit, dass wir uns ___ Zusammenarbeit sehr gut vorstellen können.' - Welches Wort passt?",
+        "options": [
+          "eine",
+          "einer",
+          "eines",
+          "einem"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "b2-telc-sprachbausteine-1-grammatik__ex1",
+      "lessonId": "b2-telc-sprachbausteine-1-grammatik",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Sehr geehrte Damen und Herren, bezugnehmend ___ Ihre Anzeige vom 12. Mai bewerbe ich mich hiermit um die ausgeschriebene Stelle.",
+        "correctAnswer": "auf"
+      }
+    },
+    {
+      "id": "b2-telc-sprachbausteine-1-grammatik__ex2",
+      "lessonId": "b2-telc-sprachbausteine-1-grammatik",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Text: 'Die Kollegin, mit ___ Unterstützung das Projekt realisiert wurde, ist erkrankt.' - Welches Pronomen passt?",
+        "options": [
+          "deren",
+          "dessen",
+          "derer",
+          "denen"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "b2-telc-sprachbausteine-1-grammatik__ex3",
+      "lessonId": "b2-telc-sprachbausteine-1-grammatik",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Wir zweifeln nicht ___ , dass Sie die notwendigen Qualifikationen besitzen. (Pronominaladverb mit 'an')",
+        "correctAnswer": "daran"
+      }
+    },
+    {
+      "id": "b2-telc-sprachbausteine-2-wortschatz__ex0",
+      "lessonId": "b2-telc-sprachbausteine-2-wortschatz",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welches Nomen passt in die feste Wendung: 'eine Vereinbarung ___'?",
+        "options": [
+          "treffen",
+          "machen",
+          "erledigen",
+          "stellen"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "b2-telc-sprachbausteine-2-wortschatz__ex1",
+      "lessonId": "b2-telc-sprachbausteine-2-wortschatz",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Die Konferenz bietet eine ideale Gelegenheit, wertvolle Kontakte zu ___ . (knüpfen / binden)",
+        "correctAnswer": "knüpfen"
+      }
+    },
+    {
+      "id": "b2-telc-sprachbausteine-2-wortschatz__ex2",
+      "lessonId": "b2-telc-sprachbausteine-2-wortschatz",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welches Adjektiv passt idiomatisch zu 'Bedarf' im Sinne von sehr großem Bedarf?",
+        "options": [
+          "großzügiger",
+          "akuter",
+          "schwerer",
+          "harter"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-telc-sprachbausteine-2-wortschatz__ex3",
+      "lessonId": "b2-telc-sprachbausteine-2-wortschatz",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "in Kauf nehmen",
+        "back": "Nachteiliges akzeptieren / hinnehmen"
+      }
+    },
+    {
+      "id": "b2-telc-praepositionen-genitiv__ex0",
+      "lessonId": "b2-telc-praepositionen-genitiv",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "___ mangelnder Beweise wurde das Verfahren gegen den Beschuldigten eingestellt. (Kausalpräposition Genitiv)",
+        "correctAnswer": "Mangels"
+      }
+    },
+    {
+      "id": "b2-telc-praepositionen-genitiv__ex1",
+      "lessonId": "b2-telc-praepositionen-genitiv",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Präposition erfordert den Genitiv?",
+        "options": [
+          "gemäß",
+          "anlässlich",
+          "laut",
+          "entsprechend"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-telc-praepositionen-genitiv__ex2",
+      "lessonId": "b2-telc-praepositionen-genitiv",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Bitte überweisen Sie den Betrag ___ von 14 Tagen auf unser Geschäftskonto.",
+        "correctAnswer": "innerhalb"
+      }
+    },
+    {
+      "id": "b2-telc-praepositionen-genitiv__ex3",
+      "lessonId": "b2-telc-praepositionen-genitiv",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Bilden Sie einen Satz mit 'bezüglich' und dem Genitiv von 'die Beschwerde'.",
+        "modelAnswer": "Bezüglich Ihrer Beschwerde möchten wir Ihnen folgende Lösung anbieten."
+      }
+    },
+    {
+      "id": "b2-telc-konzessive-adversative-verbindungen__ex0",
+      "lessonId": "b2-telc-konzessive-adversative-verbindungen",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Satz weist eine korrekte Wortstellung nach 'dennoch' auf?",
+        "options": [
+          "Er war müde, dennoch er arbeitete weiter.",
+          "Er war müde, dennoch arbeitete er weiter.",
+          "Er war müde, dennoch weiterarbeitete er.",
+          "Er war müde, dennoch er hat weitergearbeitet."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-telc-konzessive-adversative-verbindungen__ex1",
+      "lessonId": "b2-telc-konzessive-adversative-verbindungen",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Das Projekt war schlecht vorbereitet, ___ gelang den Mitarbeitern ein voller Erfolg. (Konnektor Position 1: trotzdem / dennoch)",
+        "correctAnswer": "dennoch",
+        "acceptableVariants": [
+          "trotzdem"
+        ]
+      }
+    },
+    {
+      "id": "b2-telc-konzessive-adversative-verbindungen__ex2",
+      "lessonId": "b2-telc-konzessive-adversative-verbindungen",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Verbinden Sie die Sätze mit 'obwohl': 'Die Rohstoffpreise sind hoch. Das Unternehmen senkt die Endpreise.'",
+        "modelAnswer": "Obwohl die Rohstoffpreise hoch sind, senkt das Unternehmen die Endpreise."
+      }
+    },
+    {
+      "id": "b2-telc-nomen-verb-verbindungen-beruf__ex0",
+      "lessonId": "b2-telc-nomen-verb-verbindungen-beruf",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Wir müssen vor Projektbeginn klare Absprachen ___ . (treffen / machen)",
+        "correctAnswer": "treffen"
+      }
+    },
+    {
+      "id": "b2-telc-nomen-verb-verbindungen-beruf__ex1",
+      "lessonId": "b2-telc-nomen-verb-verbindungen-beruf",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was bedeutet: 'etwas in Erwägung ziehen'?",
+        "options": [
+          "etwas strikt ablehnen",
+          "über eine Option gründlich nachdenken",
+          "etwas sofort durchführen",
+          "etwas vergessen"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-telc-nomen-verb-verbindungen-beruf__ex2",
+      "lessonId": "b2-telc-nomen-verb-verbindungen-beruf",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "zur Sprache bringen",
+        "back": "ein Thema ansprechen / zur Diskussion stellen"
+      }
+    },
+    {
+      "id": "b2-telc-nomen-verb-verbindungen-beruf__ex3",
+      "lessonId": "b2-telc-nomen-verb-verbindungen-beruf",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Ersetzen Sie das Verb durch ein passendes Funktionsverbgefüge: 'Der Chef informierte die Mitarbeiter über die Neuerungen.'",
+        "modelAnswer": "Der Chef setzte die Mitarbeiter über die Neuerungen in Kenntnis."
+      }
+    },
+    {
+      "id": "b2-telc-vocab-berufsalltag-verhandlung__ex0",
+      "lessonId": "b2-telc-vocab-berufsalltag-verhandlung",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welches Substantiv bezeichnet eine gegenseitige Einigung durch beiderseitiges Nachgeben?",
+        "options": [
+          "Diskrepanz",
+          "Kompromiss",
+          "Frist",
+          "Monopol"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-telc-vocab-berufsalltag-verhandlung__ex1",
+      "lessonId": "b2-telc-vocab-berufsalltag-verhandlung",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Wer führt bei der heutigen Teamsitzung das ___ ? (schriftliche Dokumentation)",
+        "correctAnswer": "Protokoll"
+      }
+    },
+    {
+      "id": "b2-telc-vocab-berufsalltag-verhandlung__ex2",
+      "lessonId": "b2-telc-vocab-berufsalltag-verhandlung",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "Zugeständnisse machen",
+        "back": "der Gegenseite bei Verhandlungen entgegenkommen"
+      }
+    },
+    {
+      "id": "b2-telc-vocab-berufsalltag-verhandlung__ex3",
+      "lessonId": "b2-telc-vocab-berufsalltag-verhandlung",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Erklären Sie auf Deutsch, was ein 'Kostenvoranschlag' ist.",
+        "modelAnswer": "Ein Kostenvoranschlag ist eine schriftliche Schätzung der voraussichtlichen Kosten vor Beginn einer Arbeit."
+      }
+    },
+    {
+      "id": "b2-telc-vocab-reklamation-dienstleistung__ex0",
+      "lessonId": "b2-telc-vocab-reklamation-dienstleistung",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Das Unternehmen behob den Schaden ohne rechtliche Verpflichtung aus reiner ___ .",
+        "correctAnswer": "Kulanz"
+      }
+    },
+    {
+      "id": "b2-telc-vocab-reklamation-dienstleistung__ex1",
+      "lessonId": "b2-telc-vocab-reklamation-dienstleistung",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was bedeutet 'Nachbesserung' im Kaufrecht?",
+        "options": [
+          "Die Erhöhung des ursprünglichen Kaufpreises.",
+          "Die Reparatur oder der Ersatz einer mangelhaften Ware durch den Verkäufer.",
+          "Die Rücksendung ohne Geldrückgabe.",
+          "Die Verlängerung der Garantiezeit gegen Gebühr."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-telc-vocab-reklamation-dienstleistung__ex2",
+      "lessonId": "b2-telc-vocab-reklamation-dienstleistung",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "vom Vertrag zurücktreten",
+        "back": "den Kauf rückgängig machen und Geld zurückfordern"
+      }
+    },
+    {
+      "id": "b2-telc-vocab-reklamation-dienstleistung__ex3",
+      "lessonId": "b2-telc-vocab-reklamation-dienstleistung",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulieren Sie einen Satz, in dem Sie die Mängel einer Hotelübernachtung rügen.",
+        "modelAnswer": "Trotz vorheriger Buchung war das Hotelzimmer weder gereinigt noch funktionierte die Heizung."
+      }
+    },
+    {
+      "id": "b2-telc-vocab-medien-konsumgesellschaft__ex0",
+      "lessonId": "b2-telc-vocab-medien-konsumgesellschaft",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Begriff bezeichnet das Phänomen, dass Produkte absichtlich so gebaut werden, dass sie schnell kaputtgehen?",
+        "options": [
+          "Geplante Obsoleszenz",
+          "Produktoptimierung",
+          "Garantieverfall",
+          "Qualitätsstreuung"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "b2-telc-vocab-medien-konsumgesellschaft__ex1",
+      "lessonId": "b2-telc-vocab-medien-konsumgesellschaft",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Werbung weckt oft künstliche ___ , die in der Realität gar nicht existieren. (Bedürfnis, Plural)",
+        "correctAnswer": "Bedürfnisse"
+      }
+    },
+    {
+      "id": "b2-telc-vocab-medien-konsumgesellschaft__ex2",
+      "lessonId": "b2-telc-vocab-medien-konsumgesellschaft",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "die Wegwerfgesellschaft",
+        "back": "throwaway society (Gesellschaft, die Güter nach kurzem Gebrauch entsorgt)"
+      }
+    },
+    {
+      "id": "b2-telc-vocab-medien-konsumgesellschaft__ex3",
+      "lessonId": "b2-telc-vocab-medien-konsumgesellschaft",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Erläutern Sie kurz auf Deutsch, wie soziale Medien das Kaufverhalten junger Menschen beeinflussen.",
+        "modelAnswer": "Influencer und zielgerichtete Werbung wecken Wünsche und verleiten junge Menschen zu spontanen Einkäufen."
+      }
+    },
+    {
+      "id": "b2-telc-leseverstehen-teil1-global__ex0",
+      "lessonId": "b2-telc-leseverstehen-teil1-global",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Text: 'Viele Großstädte kämpfen gegen die Zunahme von Lieferwagen auf der letzten Meile. Pilotprojekte setzen nun auf Lastenräder und Mikro-Depots in Wohnquartieren, um Abgase und Lärm spürbar zu reduzieren.' - Welche Überschrift passt am besten?",
+        "options": [
+          "Totalschaden bei innerstädtischen Speditionen",
+          "Nachhaltige Konzepte für den innerstädtischen Lieferverkehr",
+          "Verbot von Dieselmotoren in allen Stadtteilen",
+          "Gefahren durch Lastenräder auf Bürgersteigen"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-telc-leseverstehen-teil1-global__ex1",
+      "lessonId": "b2-telc-leseverstehen-teil1-global",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Erklären Sie die Strategie, wie man bei telc Leseverstehen Teil 1 sogenannte 'Schlüsselwort-Fallen' meidet.",
+        "modelAnswer": "Man sollte den Text zuerst ganzheitlich erfassen und prüfen, ob die Überschrift das Hauptanliegen widerspiegelt, statt nur nach identischen Wörtern zu suchen."
+      }
+    },
+    {
+      "id": "b2-telc-leseverstehen-teil2-detail__ex0",
+      "lessonId": "b2-telc-leseverstehen-teil2-detail",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Text: 'Zwar stieß das Vorhaben im Stadtrat auf breite Zustimmung, doch scheiterte die Umsetzung letztlich an den massiven Einsprüchen der Anwohnerinitiative.' - Warum wurde das Projekt nicht umgesetzt?",
+        "options": [
+          "Weil der Stadtrat die Pläne abgelehnt hat.",
+          "Weil die Bürger vor Ort erfolgreich protestiert haben.",
+          "Weil die Finanzierung nicht gesichert war."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-telc-leseverstehen-teil2-detail__ex1",
+      "lessonId": "b2-telc-leseverstehen-teil2-detail",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Was ist der Unterschied zwischen der Aussage 'Er hat die Prüfung fast bestanden' und 'Er hat die Prüfung knapp bestanden'?",
+        "modelAnswer": "'Fast bestanden' bedeutet, dass er durchgefallen ist (nicht bestanden hat). 'Knapp bestanden' bedeutet, dass er die Prüfung erfolgreich absolviert hat, aber mit einer sehr geringen Punktzahl."
+      }
+    },
+    {
+      "id": "b2-telc-leseverstehen-teil3-selektiv__ex0",
+      "lessonId": "b2-telc-leseverstehen-teil3-selektiv",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Situation: Ein Berufstätiger sucht einen Spanischkurs ausschließlich am Wochenende in München. Anzeige A bietet Abendkurse in München; Anzeige B Wochenendkurse in Augsburg; Anzeige C Samstagskurse online. Welche Anzeige passt?",
+        "options": [
+          "Anzeige A",
+          "Anzeige B",
+          "Anzeige C",
+          "Keine der Anzeigen passt (x)"
+        ],
+        "correctIndex": 3
+      }
+    },
+    {
+      "id": "b2-telc-leseverstehen-teil3-selektiv__ex1",
+      "lessonId": "b2-telc-leseverstehen-teil3-selektiv",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Nennen Sie drei typische Ausschlusskriterien, die bei telc Leseverstehen Teil 3 dazu führen können, dass eine Anzeige unpassend ist.",
+        "modelAnswer": "Unpassende Unterrichtszeiten, falscher Veranstaltungsort oder geforderte Mindestqualifikationen."
+      }
+    },
+    {
+      "id": "b2-telc-hoerverstehen-teil1-meinungen__ex0",
+      "lessonId": "b2-telc-hoerverstehen-teil1-meinungen",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Sprecherin: 'Ich finde es prima, von zu Hause aus zu arbeiten, spare mir den Arbeitsweg und habe mehr Ruhe. Aber nach einem halben Jahr habe ich gemerkt, wie sehr mir der direkte Austausch mit den Kollegen fehlt. Dauerhaft vereinsamt man doch.' - Welche Haltung hat die Sprecherin?",
+        "options": [
+          "Sie lehnt Homeoffice ausnahmslos ab.",
+          "Sie sieht trotz anfänglicher Begeisterung die Gefahr sozialer Isolation.",
+          "Sie möchte nie wieder im Büro arbeiten."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-telc-hoerverstehen-teil1-meinungen__ex1",
+      "lessonId": "b2-telc-hoerverstehen-teil1-meinungen",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Worauf sollte man achten, wenn ein Sprecher einleitend sagt: 'Zugegeben, das klingt zunächst überzeugend...'?",
+        "modelAnswer": "Man sollte auf das nachfolgende 'aber' oder 'jedoch' achten, da dort meist die eigentliche Kritik und der wahre Standpunkt folgt."
+      }
+    },
+    {
+      "id": "b2-telc-hoerverstehen-teil2-interview__ex0",
+      "lessonId": "b2-telc-hoerverstehen-teil2-interview",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Aussage: 'Die Forscherin finanzierte das Projekt vollständig aus eigenen Mitteln.' - Audio: 'Ohne die großzügigen Fördergelder des Ministeriums hätten wir die Studie niemals durchführen können.' - Ist die Aussage richtig oder falsch?",
+        "options": [
+          "Richtig",
+          "Falsch"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-telc-hoerverstehen-teil2-interview__ex1",
+      "lessonId": "b2-telc-hoerverstehen-teil2-interview",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Bei Prüfungsaufgaben, die man nur einmal hört, muss man bereits während des Hörens die Antworten auf dem Aufgabenblatt ___ . (markieren / ankreuzen)",
+        "correctAnswer": "ankreuzen",
+        "acceptableVariants": [
+          "markieren"
+        ]
+      }
+    },
+    {
+      "id": "b2-telc-hoerverstehen-teil3-ansagen-nachrichten__ex0",
+      "lessonId": "b2-telc-hoerverstehen-teil3-ansagen-nachrichten",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Nachricht: 'Das Museum für Moderne Kunst bietet kommenden Sonntag freien Eintritt für Jugendliche bis 18 Jahre. Erwachsene zahlen den regulären Tarif von 12 Euro.' - Aussage: Am Sonntag können alle Besucher das Museum kostenlos besuchen.",
+        "options": [
+          "Richtig",
+          "Falsch"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-telc-hoerverstehen-teil3-ansagen-nachrichten__ex1",
+      "lessonId": "b2-telc-hoerverstehen-teil3-ansagen-nachrichten",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Hörtext: 'Wegen eines Warnstreiks des Sicherheitspersonals müssen Flugreisende am Flughafen Frankfurt heute mit massiven Flugausfällen und Verspätungen rechnen.' - Welcher Grund wird für die Verspätungen genannt?",
+        "modelAnswer": "Ein Warnstreik des Sicherheitspersonals."
+      }
+    },
+    {
+      "id": "b2-telc-schreiben-beschwerdebrief__ex0",
+      "lessonId": "b2-telc-schreiben-beschwerdebrief",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulieren Sie den Hauptteil (ca. 40 Wörter) einer Beschwerde über einen fehlerhaften Laptop: Lieferung verspätet, Akku defekt.",
+        "modelAnswer": "Entgegen Ihrer Lieferzusage von 48 Stunden traf das Gerät erst nach zwei Wochen bei mir ein. Zudem musste ich feststellen, dass der Akku defekt ist und sich das Gerät überhaupt nicht aufladen lässt."
+      }
+    },
+    {
+      "id": "b2-telc-schreiben-beschwerdebrief__ex1",
+      "lessonId": "b2-telc-schreiben-beschwerdebrief",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Grußformel gehört zwingend unter einen formellen telc-Beschwerdebrief?",
+        "options": [
+          "Herzliche Grüße und bis bald,",
+          "Mit freundlichen Grüßen",
+          "Liebe Grüße",
+          "Dein treuer Kunde"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-telc-schreiben-informationsbitte-anfrage__ex0",
+      "lessonId": "b2-telc-schreiben-informationsbitte-anfrage",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulieren Sie eine höfliche Anfrage bezüglich der Kosten und der Zertifizierung eines Sprachkurses.",
+        "modelAnswer": "Könnten Sie mir bitte mitteilen, wie hoch die Kursgebühren sind und ob am Ende des Lehrgangs ein international anerkanntes Zertifikat ausgestellt wird?"
+      }
+    },
+    {
+      "id": "b2-telc-schreiben-informationsbitte-anfrage__ex1",
+      "lessonId": "b2-telc-schreiben-informationsbitte-anfrage",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Ich wäre Ihnen sehr ___ , wenn Sie mir vorab Informationsmaterial zusenden könnten. (dankbar / erfreut)",
+        "correctAnswer": "dankbar"
+      }
+    },
+    {
+      "id": "b2-telc-sprechen-teil1-praesentation__ex0",
+      "lessonId": "b2-telc-sprechen-teil1-praesentation",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulieren Sie die Einleitung Ihrer telc-Präsentation über eine Reise nach Wien (ca. 30 Wörter).",
+        "modelAnswer": "Ich habe mich für das Thema 'Eine Reise' entschieden und möchte Ihnen von meinem Aufenthalt in Wien berichten. Ich wählte diese Stadt wegen ihrer faszinierenden Kultur und Architektur."
+      }
+    },
+    {
+      "id": "b2-telc-sprechen-teil1-praesentation__ex1",
+      "lessonId": "b2-telc-sprechen-teil1-praesentation",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was sollten Sie bei der telc-Präsentation unbedingt vermeiden?",
+        "options": [
+          "Blickkontakt zu Partner und Prüfern halten.",
+          "Einen auswendig gelernten Text ohne Betonung starr vom Blatt ablesen.",
+          "Eigene Meinungen und Gefühle einbringen.",
+          "Strukturierende Verbindungswörter verwenden."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-telc-sprechen-teil2-diskussion__ex0",
+      "lessonId": "b2-telc-sprechen-teil2-diskussion",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Reagieren Sie auf die Aussage Ihres Partners: 'Ich finde, jeder sollte selbst entscheiden, ob er einen Fahrradhelm trägt.' Formulieren Sie einen Einwand.",
+        "modelAnswer": "Da bin ich anderer Ansicht. Bei schweren Unfällen zahlt die Solidargemeinschaft die Behandlungskosten, weshalb eine Helmpflicht im Sinne aller wäre."
+      }
+    },
+    {
+      "id": "b2-telc-sprechen-teil2-diskussion__ex1",
+      "lessonId": "b2-telc-sprechen-teil2-diskussion",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Frage eignet sich hervorragend, um den Partner aktiv in die Diskussion einzubinden?",
+        "options": [
+          "Hast du verstanden, was ich gesagt habe?",
+          "Welche Aspekte sprechen aus deiner Sicht gegen diese Regelung?",
+          "Warum sagst du nichts?",
+          "Bist du fertig mit Reden?"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-telc-sprechen-teil3-problemlosung-planung__ex0",
+      "lessonId": "b2-telc-sprechen-teil3-problemlosung-planung",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Machen Sie Ihrem Prüfungspartner einen Vorschlag zur Aufteilung der Aufgaben bei der Organisation eines Sommerfests.",
+        "modelAnswer": "Ich schlage vor, dass ich den Veranstaltungsort reserviere und die Technik besorge, während du die Einkäufe für Essen und Getränke übernimmst. Was hältst du davon?"
+      }
+    },
+    {
+      "id": "b2-telc-sprechen-teil3-problemlosung-planung__ex1",
+      "lessonId": "b2-telc-sprechen-teil3-problemlosung-planung",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Können wir uns darauf ___ , dass wir das Fest am Samstag, den 14. Juli veranstalten? (einigen / vereinbaren)",
+        "correctAnswer": "einigen"
+      }
+    }
+  ],
+  "prerequisites": [
+    {
+      "lessonId": "b2-telc-leseverstehen-teil2-detail",
+      "prerequisiteLessonId": "b2-telc-konzessive-adversative-verbindungen"
+    },
+    {
+      "lessonId": "b2-telc-schreiben-beschwerdebrief",
+      "prerequisiteLessonId": "b2-telc-praepositionen-genitiv"
+    },
+    {
+      "lessonId": "b2-telc-schreiben-beschwerdebrief",
+      "prerequisiteLessonId": "b2-telc-vocab-reklamation-dienstleistung"
+    },
+    {
+      "lessonId": "b2-telc-schreiben-informationsbitte-anfrage",
+      "prerequisiteLessonId": "b2-telc-praepositionen-genitiv"
+    },
+    {
+      "lessonId": "b2-telc-schreiben-informationsbitte-anfrage",
+      "prerequisiteLessonId": "b2-telc-konzessive-adversative-verbindungen"
+    },
+    {
+      "lessonId": "b2-telc-sprechen-teil2-diskussion",
+      "prerequisiteLessonId": "b2-telc-konzessive-adversative-verbindungen"
+    },
+    {
+      "lessonId": "b2-telc-sprechen-teil3-problemlosung-planung",
+      "prerequisiteLessonId": "b2-telc-nomen-verb-verbindungen-beruf"
+    }
+  ]
+}

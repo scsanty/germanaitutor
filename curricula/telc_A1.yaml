@@ -1,0 +1,498 @@
+track: telc
+level: A1
+
+lessons:
+  - slug: telc-identity-personal-data
+    skill: vocabulary
+    title: Official Terms and Personal Information
+    prerequisites: []
+    explanation: |
+      Administrative forms and public office visits require precise understanding of personal identification terms.
+      Key concepts include: Vorname (first name), Nachname/Familienname (surname), Geburtsdatum (date of birth), Geburtsort (place of birth), Staatsangehörigkeit/Nationalität (citizenship), Familienstand (marital status: ledig, verheiratet, geschieden), and Postleitzahl (postal code).
+    examples:
+      - "Familienstand: verheiratet, zwei Kinder."
+      - "Staatsangehörigkeit: syrisch."
+      - "Postleitzahl und Wohnort: 10115 Berlin."
+      - "Geburtsdatum: 14.05.1992."
+    exercises:
+      - type: flashcard
+        front: "der Familienstand"
+        back: "marital status (single, married, etc.)"
+      - type: multiple_choice
+        question: "Welches Wort bedeutet 'marital status: single'?"
+        options: ["verheiratet", "geschieden", "ledig", "verwitwet"]
+        correctIndex: 2
+      - type: fill_blank
+        textWithBlank: "Bitte tragen Sie Ihre Adresse und die ___ ein. (postal code abbreviation: PLZ)"
+        correctAnswer: "PLZ"
+      - type: free_text
+        prompt: "State your nationality and city of residence."
+        modelAnswer: "Meine Staatsangehörigkeit ist polnisch und ich wohne in Bonn."
+
+  - slug: telc-present-tense-essentials
+    skill: grammar
+    title: Present Tense Conjugation for Daily Needs
+    prerequisites: []
+    explanation: |
+      Everyday integration requires mastering common verbs that follow regular and irregular present-tense patterns.
+      Essential verbs include brauchen (to need), suchen (to search), verstehen (to understand), sprechen (to speak: du sprichst, er spricht), and helfen (to help: du hilfst, er hilft).
+      Vowel-changing verbs modify their root vowel from e to i/ie in the second and third person singular.
+    examples:
+      - "Ich brauche ein Formular für die Anmeldung."
+      - "Er spricht schon ein bisschen Deutsch."
+      - "Können Sie mir helfen? Ich verstehe das Wort nicht."
+      - "Wir suchen das Bürgeramt."
+    exercises:
+      - type: fill_blank
+        textWithBlank: "Er ___ sehr gut Englisch. (sprechen)"
+        correctAnswer: "spricht"
+      - type: multiple_choice
+        question: "Welche Form von 'helfen' ist korrekt? '___ du mir bitte?'"
+        options: ["Helfst", "Hilfst", "Helft", "Hilft"]
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Ich ___ Hilfe beim Ausfüllen des Formulars. (brauchen)"
+        correctAnswer: "brauche"
+      - type: flashcard
+        front: "sie versteht"
+        back: "she understands"
+
+  - slug: telc-housing-neighborhood-vocab
+    skill: vocabulary
+    title: Housing, Tenancy, and Neighborhood Terms
+    prerequisites: []
+    explanation: |
+      Finding and managing housing requires specific terminology for apartments, leasing, and residential life.
+      Key terms include: die Wohnung (apartment), das Zimmer (room), die Miete (rent), die Nebenkosten (utilities), die Kaution (deposit), der Nachbar (neighbor), and der Mietvertrag (lease agreement).
+      Costs are typically differentiated as Kaltmiete (base rent without heating/utilities) and Warmmiete (total rent including utilities).
+    examples:
+      - "Die Warmmiete beträgt 650 Euro pro Monat."
+      - "Die Kaution sind drei Monatskaltmieten."
+      - "Die Wohnung hat drei Zimmer, eine Küche und ein Bad."
+      - "Die Nachbarn im Haus sind sehr freundlich."
+    exercises:
+      - type: flashcard
+        front: "die Nebenkosten (pl.)"
+        back: "utility charges / extra costs"
+      - type: multiple_choice
+        question: "Was bedeutet 'Kaltmiete'?"
+        options: [
+          "Miete inklusive aller Nebenkosten und Strom",
+          "Miete ohne Heizung und zusätzliche Betriebskosten",
+          "Kosten für den Umzug",
+          "Die Kaution für den Vermieter"
+        ]
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Vor dem Einzug muss der Mieter eine ___ bezahlen. (deposit)"
+        correctAnswer: "Kaution"
+      - type: free_text
+        prompt: "Describe your apartment size in rooms."
+        modelAnswer: "Meine Wohnung hat zwei Zimmer, eine Küche und ein Badezimmer."
+
+  - slug: telc-w-questions-official-inquiries
+    skill: grammar
+    title: Interrogatives for Official and Administrative Contexts
+    prerequisites: [telc-present-tense-essentials]
+    explanation: |
+      Visiting government agencies and customer service counters requires forming precise questions.
+      Use key question words: Wo (location: Wo ist Zimmer 12?), Wohin (destination), Wie lange (duration), Wer (person), and Wie viel / Wie viele (quantities and costs).
+      The verb immediately follows the question word, placing the subject directly after the verb.
+    examples:
+      - "Wo finde ich die Ausländerbehörde?"
+      - "Welche Unterlagen brauche ich für die Anmeldung?"
+      - "Wann hat das Rathaus Sprechstunde?"
+      - "Wie lange dauert die Bearbeitung des Antrags?"
+    exercises:
+      - type: multiple_choice
+        question: "Welches Fragewort sucht nach einem Ort? '___ ist das Büro von Herrn Klein?'"
+        options: ["Wann", "Wo", "Wer", "Warum"]
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "___ kostet die Monatskarte für den Bus? (How much)"
+        correctAnswer: "Wie viel"
+      - type: free_text
+        prompt: "Formulate a formal question asking for the office opening hours using 'Wann'."
+        modelAnswer: "Wann öffnet das Bürgeramt?"
+
+  - slug: telc-accusative-shopping-supplies
+    skill: grammar
+    title: Accusative Case for Everyday Transactions
+    prerequisites: [telc-present-tense-essentials]
+    explanation: |
+      Everyday transactions require using the accusative case to identify purchased items, contracts, or missing documents.
+      Only masculine singular determiners change: der becomes den, ein becomes einen, and kein becomes keinen.
+      Feminine (die, eine, keine), neuter (das, ein, kein), and plural (die, keine) remain unchanged.
+    examples:
+      - "Ich unterschreibe den Mietvertrag."
+      - "Haben Sie einen Pass oder einen Ausweis dabei?"
+      - "Wir brauchen eine neue Waschmaschine."
+      - "Er hat keinen Führerschein."
+    exercises:
+      - type: fill_blank
+        textWithBlank: "Haben Sie ___ Reisepass dabei? (der Reisepass, masculine)"
+        correctAnswer: "einen"
+      - type: multiple_choice
+        question: "Welcher Satz ist im Alltag grammatisch korrekt?"
+        options: [
+          "Ich brauche ein neuer Schlüssel.",
+          "Ich brauche einen neuen Schlüssel.",
+          "Ich brauche einem neuen Schlüssel.",
+          "Ich brauche einer neuer Schlüssel."
+        ]
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Wir haben leider ___ Balkon in der Wohnung. (kein, masculine)"
+        correctAnswer: "keinen"
+      - type: flashcard
+        front: "Ich habe den Antrag ausgefüllt."
+        back: "I have filled in the application (der Antrag -> den Antrag)."
+
+  - slug: telc-modal-verbs-regulations
+    skill: grammar
+    title: Modal Verbs for House Rules and Regulations
+    prerequisites: [telc-present-tense-essentials]
+    explanation: |
+      Residential rules (Hausordnung) and administrative regulations use the modal verbs müssen (obligation), dürfen (permission), and können (possibility).
+      Remember that negation with dürfen indicates prohibition: 'Sie dürfen hier nicht parken' means parking is strictly forbidden.
+      The modal verb occupies position V2, while the accompanying infinitive is placed at the end of the sentence.
+    examples:
+      - "Hier darf man nicht rauchen."
+      - "Ab 22:00 Uhr müssen die Bewohner leise sein."
+      - "Sie können die Gebühr bar oder mit Karte bezahlen."
+      - "Im Treppenhaus darf man keine Fahrräder abstellen."
+    exercises:
+      - type: multiple_choice
+        question: "Was bedeutet das Schild 'Rauchen verboten'?"
+        options: [
+          "Hier muss man rauchen.",
+          "Hier darf man rauchen.",
+          "Hier darf man nicht rauchen.",
+          "Hier kann man Zigaretten kaufen."
+        ]
+        correctIndex: 2
+      - type: fill_blank
+        textWithBlank: "Man ___ ab 22 Uhr die Musik leiser stellen. (müssen, 3rd person singular)"
+        correctAnswer: "muss"
+      - type: fill_blank
+        textWithBlank: "Hier ___ Sie nicht parken, das ist eine Ausfahrt. (dürfen, formal)"
+        correctAnswer: "dürfen"
+      - type: flashcard
+        front: "nicht dürfen"
+        back: "to not be allowed to / to be prohibited from"
+
+  - slug: telc-work-professions-vocab
+    skill: vocabulary
+    title: Work, Professions, and the Workplace
+    prerequisites: [telc-identity-personal-data]
+    explanation: |
+      Workplace interactions involve terms for professions, daily working hours, and physical job sites.
+      Female professional titles add the suffix -in (der Arzt / die Ärztin; der Verkäufer / die Verkäuferin).
+      Key terms include: der Arbeitsvertrag (employment contract), die Arbeitszeit (working hours), die Teilzeit / Vollzeit (part-time / full-time), and die Pause (break).
+    examples:
+      - "Ich arbeite als Verkäuferin im Supermarkt."
+      - "Meine Arbeitszeit ist von Montag bis Freitag, jeweils acht Stunden."
+      - "Er sucht eine Stelle in Teilzeit."
+      - "Um 12:30 Uhr machen wir eine halbe Stunde Mittagspause."
+    exercises:
+      - type: flashcard
+        front: "die Vollzeitstelle"
+        back: "full-time job position"
+      - type: multiple_choice
+        question: "Wie heißt die weibliche Form von 'der Lehrer'?"
+        options: ["Die Lehrering", "Die Lehrerin", "Die Lehrerfrau", "Die Lehrern"]
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Er arbeitet 40 Stunden pro Woche, also arbeitet er in ___."
+        correctAnswer: "Vollzeit"
+      - type: free_text
+        prompt: "State your occupation (or desired profession) in German."
+        modelAnswer: "Ich arbeite als Krankenpfleger in einem Krankenhaus."
+
+  - slug: telc-imperative-polite-requests
+    skill: grammar
+    title: Imperatives and Polite Requests
+    prerequisites: [telc-present-tense-essentials]
+    explanation: |
+      Everyday instructions and requests rely on the formal imperative and conditional phrasing.
+      The formal imperative simply inverts the verb and the formal pronoun: 'Kommen Sie!', 'Unterschreiben Sie hier!'.
+      Always include 'bitte' to maintain politeness.
+      Polite requests often use 'Können Sie bitte...' followed by an infinitive at the end of the clause.
+    examples:
+      - "Bitte unterschreiben Sie dieses Formular."
+      - "Warten Sie bitte einen kurzen Moment im Wartezimmer."
+      - "Können Sie das bitte noch einmal wiederholen?"
+      - "Rufen Sie mich morgen bitte zurück."
+    exercises:
+      - type: fill_blank
+        textWithBlank: "___ Sie bitte hier Ihren Namen ein! (tragen)"
+        correctAnswer: "Tragen"
+      - type: multiple_choice
+        question: "Welche Aufforderung ist die höflichste und im Bürgeramt angemessen?"
+        options: [
+          "Gib mir den Pass!",
+          "Geben Sie mir bitte Ihren Pass.",
+          "Du musst mir den Pass geben.",
+          "Pass hierher!"
+        ]
+        correctIndex: 1
+      - type: free_text
+        prompt: "Ask someone politely to speak more slowly using 'Können Sie bitte...'."
+        modelAnswer: "Können Sie bitte langsamer sprechen?"
+
+  - slug: telc-prepositions-time-appointments
+    skill: grammar
+    title: Temporal Prepositions for Scheduling Appointments
+    prerequisites: [telc-identity-personal-data]
+    explanation: |
+      Scheduling appointments (Termine) requires using specific temporal prepositions.
+      Use 'am' for days and dates (am Montag, am 12. März).
+      Use 'um' for precise clock times (um 14 Uhr).
+      Use 'im' for months and seasons (im Juli, im Sommer).
+      Use 'von... bis...' to indicate time intervals (von 8:00 bis 16:00 Uhr).
+    examples:
+      - "Ich habe einen Termin beim Zahnarzt am Donnerstag um 10 Uhr."
+      - "Der Deutschkurs dauert von Januar bis April."
+      - "Haben Sie am Freitag Zeit für eine Wohnungsbesichtigung?"
+      - "Die Sprechzeiten sind montags von 9 bis 12 Uhr."
+    exercises:
+      - type: multiple_choice
+        question: "Welche Präposition passt zu einer Uhrzeit? 'Der Termin ist ___ 15:30 Uhr.'"
+        options: ["Am", "Im", "Um", "Bei"]
+        correctIndex: 2
+      - type: fill_blank
+        textWithBlank: "Der Kurs findet ___ Montag und Mittwoch statt."
+        correctAnswer: "am"
+      - type: fill_blank
+        textWithBlank: "Das Büro hat geöffnet ___ 8:00 Uhr ___ 12:00 Uhr."
+        correctAnswer: "von"
+      - type: flashcard
+        front: "am Wochenende"
+        back: "on the weekend"
+
+  - slug: telc-health-doctor-vocab
+    skill: vocabulary
+    title: Health, Doctor Visits, and the Pharmacy
+    prerequisites: [telc-prepositions-time-appointments]
+    explanation: |
+      Healthcare visits require basic terms for symptoms, medical facilities, and administrative scheduling.
+      Key terms include: der Arzt / die Ärztin (doctor), die Praxis (clinic), das Krankenhaus (hospital), die Apotheke (pharmacy), das Medikament (medicine), and das Rezept (prescription).
+      Symptoms are expressed with 'weh tun' (Mein Kopf tut weh) or compound nouns ending in '-schmerzen' (Kopfschmerzen, Halsschmerzen).
+    examples:
+      - "Ich brauche einen Termin beim Arzt. Ich habe starke Kopfschmerzen."
+      - "Mein Rücken tut seit zwei Tagen weh."
+      - "Nehmen Sie diese Tabletten dreimal täglich vor dem Essen."
+      - "Das Medikament bekommen Sie mit einem Rezept in der Apotheke."
+    exercises:
+      - type: flashcard
+        front: "die Bauchschmerzen (pl.)"
+        back: "stomach ache / abdominal pains"
+      - type: multiple_choice
+        question: "Wo kauft man verschreibungspflichtige Medikamente?"
+        options: ["In der Bäckerei", "In der Bibliothek", "In der Apotheke", "Im Einwohnermeldeamt"]
+        correctIndex: 2
+      - type: fill_blank
+        textWithBlank: "Mein Bein tut sehr ___ . (hurts)"
+        correctAnswer: "weh"
+      - type: free_text
+        prompt: "Say that you have an appointment with the doctor on Tuesday at 9."
+        modelAnswer: "Ich habe am Dienstag um 9 Uhr einen Termin beim Arzt."
+
+  - slug: telc-reading-public-notices-signs
+    skill: reading
+    title: Reading Official Notices and House Rules
+    prerequisites: [telc-modal-verbs-regulations]
+    explanation: |
+      Interpreting notices, safety signs, and residential rules requires scanning for prohibitions, requirements, and operating schedules.
+      Identify keywords like 'Notausgang' (emergency exit), 'Eingang/Ausgang' (entrance/exit), 'Ruhezeiten' (quiet hours), and 'Aufzug im Brandfall nicht benutzen' (do not use elevator during fires).
+    examples:
+      - "Hausordnung: Hausmüll bitte nur in die vorgesehenen Mülltonnen im Hof werfen. Abstellen von Sperrmüll ist verboten."
+      - "Ruhezeiten: Bitte vermeiden Sie Ruhestörungen montags bis samstags von 22:00 bis 07:00 Uhr sowie ganztägig an Sonn- und Feiertagen."
+      - "Wegen Renovierungsarbeiten bleibt das Kundenzentrum heute geschlossen."
+    exercises:
+      - type: multiple_choice
+        question: "Hinweis: 'Ruhezeit von 22:00 bis 7:00 Uhr.' - Was bedeutet das für Mieter?"
+        options: [
+          "Man darf laut Musik hören.",
+          "Man muss nachts leise sein.",
+          "Man darf keine Gäste empfangen.",
+          "Man muss um 22:00 Uhr schlafen."
+        ]
+        correctIndex: 1
+      - type: multiple_choice
+        question: "Schild an der Tür: 'Drücken' - Was müssen Sie tun?"
+        options: ["Anklopfen", "Die Tür ziehen", "Gegen die Tür drücken, um zu öffnen", "Draußen warten"]
+        correctIndex: 2
+      - type: fill_blank
+        textWithBlank: "Grünes Schild mit weißem Läufer: 'Not___' (emergency exit)"
+        correctAnswer: "ausgang"
+
+  - slug: telc-reading-classifieds-housing
+    skill: reading
+    title: Reading Classified Housing Advertisements
+    prerequisites: [telc-housing-neighborhood-vocab, telc-prepositions-time-appointments]
+    explanation: |
+      Housing classifieds use standardized abbreviations: '2 Zi.-Whg.' (2-Zimmer-Wohnung), 'EBK' (Einbauküche / fitted kitchen), 'KM' (Kaltmiete), 'NK' (Nebenkosten), and 'ab sof.' (ab sofort / available immediately).
+      Focus on extracting apartment size (square meters: qm), room count, cost components, and contact instructions.
+    examples:
+      - "Helle 3-Zi.-Whg. in Köln-Deutz, 75 qm, KM 680 Euro + 180 Euro NK, Kaution 2 KM, EBK vorhanden, ab 01.10. frei."
+      - "Schönes 1-Zimmer-Appartement für Studenten, 32 qm, Warmmiete 450 Euro inkl. Strom. Bezug sofort. Kontakt: heinz@wohnen.de."
+      - "Suche Nachmieter für gemütliche 2-Zimmer-Wohnung mit Balkon im 2. Stock. Keine Haustiere. Tel: 0162-334455."
+    exercises:
+      - type: multiple_choice
+        question: "Anzeige: '2-Zi.-Whg., 55 qm, KM 500 Euro + NK 150 Euro.' - Wie hoch ist die Gesamtmiete (Warmmiete)?"
+        options: ["500 Euro", "150 Euro", "650 Euro", "750 Euro"]
+        correctIndex: 2
+      - type: multiple_choice
+        question: "Anzeige: 'Große 4-Zimmer-Wohnung mit Garten, ab sofort frei.' - Ab wann kann man die Wohnung mieten?"
+        options: ["Erst im nächsten Jahr", "Ab sofort", "Ab 1. Dezember", "Nur am Wochenende"]
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Abkürzung in Wohnungsanzeigen: 'EBK' bedeutet Einbau___."
+        correctAnswer: "küche"
+
+  - slug: telc-listening-station-store-announcements
+    skill: listening
+    title: Understanding Transit and Public Announcements
+    prerequisites: [telc-prepositions-time-appointments]
+    explanation: |
+      Listening to public announcements in transport hubs and shopping venues requires selective listening for disruptions, track adjustments, and immediate actions.
+      Listen for numbers indicating platforms (Gleis), train identifiers (S-Bahn, ICE), delays (Minuten später), and destination changes.
+    examples:
+      - "Auf Gleis 5: S-Bahn Linie 3 nach Friedrichstraße fährt ein. Bitte Vorsicht bei der Einfahrt."
+      - "Achtung Fahrgäste: Wegen einer Weichenstörung verkehrt die Straßenbahnlinie 12 heute nur bis zum Südbahnhof."
+      - "Sehr geehrte Kundinnen, unser Baumarkt schließt in 15 Minuten. Kassen sind bis 20 Uhr geöffnet."
+    exercises:
+      - type: multiple_choice
+        question: "Durchsage: 'Achtung an Gleis 7: Der ICE nach Stuttgart hält heute an Gleis 9.' - Wo fährt der Zug nach Stuttgart ab?"
+        options: ["An Gleis 7", "An Gleis 9", "Er fällt aus", "An Gleis 11"]
+        correctIndex: 1
+      - type: multiple_choice
+        question: "Durchsage: 'Kundenhinweis: Ein kleiner Junge mit roter Jacke sucht seine Eltern an der Information.' - Wer wird gesucht?"
+        options: ["Ein Busfahrer", "Die Eltern eines kleinen Jungen", "Ein Kassenmitarbeiter", "Ein Arzt"]
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Durchsage: 'Der Zug nach Frankfurt hat voraussichtlich zehn Minuten ___ .' (delay)"
+        correctAnswer: "Verspätung"
+
+  - slug: telc-listening-voicemail-appointments
+    skill: listening
+    title: Voicemail and Telephone Appointment Inquiries
+    prerequisites: [telc-prepositions-time-appointments, telc-health-doctor-vocab]
+    explanation: |
+      Telephone recordings and voicemails convey practical details such as office closures, callback requests, and appointment shifts.
+      Listen for caller identity, the purpose of the call, dates, times, and phone numbers.
+    examples:
+      - "Guten Tag, hier Praxis Dr. Weber. Wir bestätigen Ihren Termin am Mittwoch um 11:15 Uhr. Bitte bringen Sie Ihre Versichertenkarte mit."
+      - "Hallo Herr Al-Hassan, hier ist Autowerkstatt Schmidt. Ihr Auto ist fertig und kann bis 18 Uhr abgeholt werden. Auf Wiederhören."
+      - "Hier Anrufbeantworter der Firma Böhmer. Unsere Geschäftszeiten sind von Montag bis Freitag von 8 bis 17 Uhr."
+    exercises:
+      - type: multiple_choice
+        question: "Nachricht: 'Hier Praxis Dr. Weber. Ihr Termin am Montag verschiebt sich auf Dienstag, 14:00 Uhr.' - Wann ist der neue Termin?"
+        options: ["Montag um 14:00 Uhr", "Dienstag um 14:00 Uhr", "Dienstag um 10:00 Uhr", "Mittwoch um 14:00 Uhr"]
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Nachricht: 'Bitte bringen Sie zum Arzttermin Ihre Kranken___ mit.' (insurance card: Versichertenkarte/Krankenkassenkarte)"
+        correctAnswer: "kassenkarte"
+      - type: multiple_choice
+        question: "Nachricht: 'Rufen Sie uns bitte unter 0171-45678 zurück.' - Was soll der Angerufene tun?"
+        options: ["Eine E-Mail schreiben", "Sofort vorbeikommen", "Zurückrufen", "Ein Formular abschicken"]
+        correctIndex: 2
+
+  - slug: telc-writing-registration-form
+    skill: writing
+    title: Completing Administrative and Registration Forms
+    prerequisites: [telc-identity-personal-data]
+    explanation: |
+      Filling out administrative forms requires extracting data from personal documents and mapping it to the appropriate fields.
+      Ensure information is entered clearly without translation errors: Familienname (last name), Vorname (first name), Anschrift (street address and house number), PLZ / Ort (postal code and city), and Unterschrift (signature).
+    examples:
+      - "Name: Müller | Vorname: Thomas | Straße: Hauptstraße 12 | PLZ/Ort: 50667 Köln"
+      - "Geburtsdatum: 02.11.1988 | Geburtsort: Damaskus | Staatsangehörigkeit: syrisch"
+      - "Datum: 12.04.2024 | Unterschrift: [Handzeichen des Antragstellers]"
+    exercises:
+      - type: fill_blank
+        textWithBlank: "Formularfeld für den Vornamen: '___'"
+        correctAnswer: "Vorname"
+      - type: multiple_choice
+        question: "In welches Feld gehört 'Hauptstraße 45, 80331 München'?"
+        options: ["Familienstand", "Geburtsort", "Straße, Hausnummer, PLZ und Wohnort", "Staatsangehörigkeit"]
+        correctIndex: 2
+      - type: free_text
+        prompt: "Provide your birth date in German format (DD.MM.YYYY)."
+        modelAnswer: "15.08.1995"
+
+  - slug: telc-writing-short-appointment-note
+    skill: writing
+    title: Writing Notes to Landlords, Doctors, or Employers
+    prerequisites: [telc-w-questions-official-inquiries, telc-prepositions-time-appointments]
+    explanation: |
+      Writing practical notes requires a clear statement of reason, a proposed solution or request, and polite closing phrasing.
+      Useful expressions include: 'Sehr geehrte(r)...', 'Ich kann leider nicht kommen, weil...', and 'Können wir einen neuen Termin vereinbaren?'.
+    examples:
+      - "Sehr geehrte Frau Müller, mein Sohn ist heute krank und kann die Schule nicht besuchen. Viele Grüße, Fatima Aziz."
+      - "Sehr geehrter Herr Berger, die Heizung in meiner Wohnung funktioniert nicht. Können Sie bitte schnell einen Handwerker schicken? Mit freundlichen Grüßen, Ali Demir."
+      - "Guten Tag Herr Schneider, ich möchte meinen Termin am Donnerstag absagen und auf Freitag um 10 Uhr verschieben. Passt das? Herzliche Grüße."
+    exercises:
+      - type: free_text
+        prompt: "Write a short note to your landlord stating that the heating is broken and requesting help."
+        modelAnswer: "Sehr geehrter Herr Meyer, die Heizung in meiner Wohnung ist kaputt. Können Sie bitte schnell helfen? Mit freundlichen Grüßen, Anna Schmidt."
+      - type: fill_blank
+        textWithBlank: "Formelle Anrede für einen Mann: 'Sehr ___ Herr Braun,'"
+        correctAnswer: "geehrter"
+      - type: multiple_choice
+        question: "Welche Schlussformel ist in einem formellen Brief an Behörden oder Vermieter korrekt?"
+        options: ["Tschüss!", "Mit freundlichen Grüßen", "Bis bald mein Freund", "Kuss"]
+        correctIndex: 1
+
+  - slug: telc-speaking-personal-disclosure
+    skill: speaking
+    title: Sharing Personal Data and Spelling
+    prerequisites: [telc-identity-personal-data, telc-present-tense-essentials]
+    explanation: |
+      Speaking tests begin with sharing personal details and spelling unusual names or reciting telephone numbers.
+      Pronounce German letters distinctly, especially diphthongs and umlauts (ä, ö, ü), and recite numbers in pairs or single digits without hesitation.
+    examples:
+      - "Mein Name ist Hassan, buchstabiert: H-A-S-S-A-N."
+      - "Meine Postleitzahl in Köln ist 50667 (fünf-null-sechs-sechs-sieben)."
+      - "Ich wohne in der Bahnhofstraße Nummer 14."
+      - "Meine Telefonnummer lautet 0152 33 44 55."
+    exercises:
+      - type: free_text
+        prompt: "Spell your first name using German letters separated by hyphens (e.g., A-N-N-A)."
+        modelAnswer: "M-A-R-T-I-N"
+      - type: free_text
+        prompt: "Say your telephone number in spoken German words."
+        modelAnswer: "Meine Telefonnummer ist null-eins-sieben-eins, zwei, drei, vier, fünf, sechs."
+      - type: multiple_choice
+        question: "Wie wird der Buchstabe 'J' auf Deutsch im Alphabet ausgesprochen?"
+        options: ["Dschott", "Jott", "I-Grek", "Kah"]
+        correctIndex: 1
+
+  - slug: telc-speaking-asking-requesting
+    skill: speaking
+    title: Practical Interpersonal Inquiries and Requests
+    prerequisites: [telc-imperative-polite-requests, telc-housing-neighborhood-vocab]
+    explanation: |
+      During paired speaking exams, candidates ask questions and make polite requests based on situational prompts.
+      Frame polite questions and requests clearly using structures like 'Können Sie mir bitte sagen...', 'Geben Sie mir bitte...', and appropriate responses like 'Ja, gern' or 'Hier, bitte sehr'.
+    examples:
+      - "Können Sie mir bitte das Salz geben? - Ja, natürlich, hier bitte sehr."
+      - "Haben Sie heute Nachmittag Zeit für mich? - Leider nicht, ich muss arbeiten."
+      - "Entschuldigung, wo ist der Ausgang? - Gehen Sie geradeaus und dann nach links."
+    exercises:
+      - type: free_text
+        prompt: "Ask a partner politely to open the window using 'Können Sie bitte...'."
+        modelAnswer: "Können Sie bitte das Fenster öffnen?"
+      - type: multiple_choice
+        question: "Partner: 'Können Sie mir bitte Ihren Stift leihen?' - Welche Antwort ist freundlich und passend?"
+        options: [
+          "Nein, weg da!",
+          "Ja gerne, bitte sehr.",
+          "Ich habe keinen Hunger.",
+          "Der Stift ist blau."
+        ]
+        correctIndex: 1
+      - type: free_text
+        prompt: "Politely ask an official for an administrative form."
+        modelAnswer: "Geben Sie mir bitte das Anmeldeformular?"

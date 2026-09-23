@@ -1,0 +1,1363 @@
+{
+  "seedVersion": "2",
+  "track": "generic",
+  "level": "B2",
+  "milestones": [
+    {
+      "milestone": {
+        "id": "generic-b2-grammar",
+        "track": "generic",
+        "level": "B2",
+        "title": "Grammar",
+        "description": null,
+        "orderIndex": 0
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "generic-b2-grammar-lessons",
+            "milestoneId": "generic-b2-grammar",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b2-passiv-formen-zeiten",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "b2-passiv-modalverben",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "b2-passiv-alternativen",
+              "orderIndex": 2
+            },
+            {
+              "lessonId": "b2-konjunktiv-ii-vergangenheit",
+              "orderIndex": 3
+            },
+            {
+              "lessonId": "b2-zweiteilige-konnektoren",
+              "orderIndex": 4
+            },
+            {
+              "lessonId": "b2-nominalisierung-verbalisierung",
+              "orderIndex": 5
+            },
+            {
+              "lessonId": "b2-nomen-verb-verbindungen-basis",
+              "orderIndex": 6
+            },
+            {
+              "lessonId": "b2-partizipialattribute",
+              "orderIndex": 7
+            },
+            {
+              "lessonId": "b2-relativsaetze-praepositionen-wer-was",
+              "orderIndex": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-b2-vocabulary",
+        "track": "generic",
+        "level": "B2",
+        "title": "Vocabulary",
+        "description": null,
+        "orderIndex": 1
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "generic-b2-vocabulary-lessons",
+            "milestoneId": "generic-b2-vocabulary",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b2-umwelt-nachhaltigkeit-vocab",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "b2-digitalisierung-medien-vocab",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "b2-arbeitswelt-karriere-vocab",
+              "orderIndex": 2
+            },
+            {
+              "lessonId": "b2-gesellschaft-demografie-vocab",
+              "orderIndex": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-b2-reading",
+        "track": "generic",
+        "level": "B2",
+        "title": "Reading",
+        "description": null,
+        "orderIndex": 2
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "generic-b2-reading-lessons",
+            "milestoneId": "generic-b2-reading",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b2-sachtexte-global-detailverstehen",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "b2-kommentare-standpunkte-erfassen",
+              "orderIndex": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-b2-listening",
+        "track": "generic",
+        "level": "B2",
+        "title": "Listening",
+        "description": null,
+        "orderIndex": 3
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "generic-b2-listening-lessons",
+            "milestoneId": "generic-b2-listening",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b2-fachvortraege-podcasts-verstehen",
+              "orderIndex": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-b2-writing",
+        "track": "generic",
+        "level": "B2",
+        "title": "Writing",
+        "description": null,
+        "orderIndex": 4
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "generic-b2-writing-lessons",
+            "milestoneId": "generic-b2-writing",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b2-stellungnahme-erlaeuterung-verfassen",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "b2-beschwerdebrief-dienstleistung",
+              "orderIndex": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-b2-speaking",
+        "track": "generic",
+        "level": "B2",
+        "title": "Speaking",
+        "description": null,
+        "orderIndex": 5
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "generic-b2-speaking-lessons",
+            "milestoneId": "generic-b2-speaking",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "b2-pro-kontra-diskussion-fuehren",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "b2-fachpraesentation-strukturieren",
+              "orderIndex": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "b2-passiv-formen-zeiten",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "grammar",
+      "title": "Vorgangspassiv in allen Zeitformen",
+      "explanation": "Das Vorgangspassiv betont die Handlung selbst, während der Verursacher (Agens) in den Hintergrund tritt oder ungenannt bleibt.\nEs wird mit dem Hilfsverb \"werden\" und dem Partizip II des Hauptverbs gebildet.\nIm Perfekt und Plusquamperfekt lautet die Passivform von \"werden\" stets \"worden\" (ohne Ge-): \"ist repariert worden\", \"war repariert worden\".\nWird der Handelnde genannt, steht bei Personen meist \"von\" + Dativ, bei Mitteln oder Ursachen \"durch\" + Akkusativ.\n",
+      "examples": [
+        "Die neuen Richtlinien werden vom Vorstand beschlossen.",
+        "Das historische Gebäude wurde vor drei Jahren aufwendig renoviert.",
+        "Alle Dokumente sind bereits digitalisiert worden.",
+        "Durch den Sturm war die Stromleitung beschädigt worden."
+      ]
+    },
+    {
+      "id": "b2-passiv-modalverben",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "grammar",
+      "title": "Passiv mit Modalverben im Präsens und Präteritum",
+      "explanation": "Verbindet man das Vorgangspassiv mit einem Modalverb, wird das Modalverb finit konjugiert, während das Hauptverb als Passiv-Infinitiv (\"Partizip II + werden\") an das Satzende rückt.\nIm Präsens: \"Das Paket muss heute noch abgeschickt werden.\"\nIm Präteritum: \"Der Termin musste leider verschoben werden.\"\nIm Perfekt steht das Ersatzinfinitiv-Gefüge: \"hat verschoben werden müssen\" (auf B2-Niveau vor allem rezeptiv relevant).\n",
+      "examples": [
+        "Die Brandschutzvorschriften müssen strikt eingehalten werden.",
+        "Dieser Fehler konnte trotz sorgfältiger Prüfung nicht vermieden werden.",
+        "Die vertraulichen Unterlagen dürfen keinesfalls kopiert werden.",
+        "Der Bericht sollte bis Freitag fertiggestellt werden."
+      ]
+    },
+    {
+      "id": "b2-passiv-alternativen",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "grammar",
+      "title": "Passiversatzformen und Passivalternativen",
+      "explanation": "In der gehobenen Sprache und in Sachtexten wird das Passiv häufig durch Konstruktionen mit modalem Charakter ersetzt.\n\"sein + zu + Infinitiv\" drückt eine Notwendigkeit oder Möglichkeit aus (entspricht \"müssen / können + Passiv\"): \"Das ist zu tun\" = \"Das muss getan werden\".\n\"sich lassen + Infinitiv\" drückt eine Möglichkeit aus: \"Das Problem lässt sich lösen\" = \"Das Problem kann gelöst werden\".\nAdjektive auf \"-bar\", \"-abel\" oder \"-lich\" drücken passive Machbarkeit aus (\"machbar\", \"lösbar\", \"verständlich\").\n",
+      "examples": [
+        "Die Daten sind bis morgen Abend an das System zu übermitteln.",
+        "Diese Theorie lässt sich anhand experimenteller Daten leicht überprüfen.",
+        "Die Schäden am Fahrzeug sind leider irreparabel.",
+        "Es steht außer Zweifel, dass diese Aufgabe machbar ist."
+      ]
+    },
+    {
+      "id": "b2-konjunktiv-ii-vergangenheit",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "grammar",
+      "title": "Konjunktiv II der Vergangenheit",
+      "explanation": "Der Konjunktiv II der Vergangenheit drückt irreale Bedingungen, Wünsche, verpasste Gelegenheiten oder Vorwürfe bezüglich vergangener Ereignisse aus.\nEr wird gebildet mit den Konjunktiv-II-Formen von haben/sein (\"hätte\" / \"wäre\") und dem Partizip II des Verbs.\nBei Modalverben steht \"hätte + Doppelinfinitiv\": \"Ich hätte das wissen müssen.\"\n",
+      "examples": [
+        "Wenn ich den Zug nicht verpasst hätte, wäre ich pünktlich zur Konferenz erschienen.",
+        "Hätte der Autofahrer gebremst, wäre der Zusammenstoß vermeidbar gewesen.",
+        "Wir hätten die Frist unbedingt einhalten müssen.",
+        "Fast wäre mir dieser peinliche Rechenfehler unterlaufen."
+      ]
+    },
+    {
+      "id": "b2-zweiteilige-konnektoren",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "grammar",
+      "title": "Zweiteilige Konnektoren und Satzverknüpfungen",
+      "explanation": "Zweiteilige Konnektoren (Doppelkonnektoren) verbinden Satzglieder oder Teilsätze und drücken komplexe logische Beziehungen aus.\nKopulativ: \"sowohl ... als auch\" (positiv aufzählend), \"weder ... noch\" (doppelt verneinend).\nAdversativ/Einschränkend: \"zwar ... aber\" (Zugeständnis und Einschränkung), \"einerseits ... andererseits\" (Kontrast).\nDisjunktiv: \"entweder ... oder\" (Alternative).\nSteigernd: \"nicht nur ... sondern auch\" (zusätzlicher Aspekt).\n",
+      "examples": [
+        "Sie spricht nicht nur fließend Spanisch, sondern auch verhandlungssicheres Russisch.",
+        "Das Angebot ist zwar verlockend, aber die Nebenkosten sind viel zu hoch.",
+        "Wir verfügen zurzeit weder über personelle noch über finanzielle Kapazitäten.",
+        "Einerseits möchte er Karriere machen, andererseits legt er großen Wert auf Freizeit."
+      ]
+    },
+    {
+      "id": "b2-nominalisierung-verbalisierung",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "grammar",
+      "title": "Nominalstil und Verbalstil",
+      "explanation": "Im gehobenen Deutsch (Wissenschaft, Verwaltung, Berichte) dominiert der Nominalstil.\nHierbei werden Nebensätze (Verbalstil) durch Präpositional-Nominal-Gruppen ersetzt.\nTypische Präpositionen des Nominalstils regieren meist den Genitiv oder Dativ: \"wegen / aufgrund\" (kausal = weil), \"trotz / ungeachtet\" (konzessiv = obwohl), \"bei / mit\" (konditional = wenn), \"während\" (temporal = während), \"durch\" (modal = indem).\n",
+      "examples": [
+        "Verbalstil: Weil die Nachfrage unerwartet gestiegen ist, erhöhen wir die Produktion.",
+        "Nominalstil: Aufgrund des unerwarteten Nachfrageanstiegs erhöhen wir die Produktion.",
+        "Verbalstil: Obwohl das Wetter extrem schlecht war, fand das Open-Air-Konzert statt.",
+        "Nominalstil: Trotz des extrem schlechten Wetters fand das Open-Air-Konzert statt."
+      ]
+    },
+    {
+      "id": "b2-nomen-verb-verbindungen-basis",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "grammar",
+      "title": "Nomen-Verb-Verbindungen (Funktionsverbgefüge)",
+      "explanation": "Nomen-Verb-Verbindungen (Funktionsverbgefüge) bestehen aus einem Substantiv und einem weitgehend verblassten Verb (Funktionsverb).\nSie dienen im B2-Bereich der stilistischen Nuancierung und Präzisierung.\nMan unterscheidet feste Bedeutungen: \"eine Entscheidung treffen\" (= entscheiden), \"zur Verfügung stehen\" (= verfügbar sein), \"in Betracht ziehen\" (= erwägen), \"in Kraft treten\" (= gültig werden), \"Kritik üben an\" (= kritisieren).\n",
+      "examples": [
+        "Die Geschäftsleitung muss baldmöglichst eine endgültige Entscheidung treffen.",
+        "Dieses Thema steht heute leider nicht zur Diskussion.",
+        "Wir sollten alle Optionen sorgfältig in Betracht ziehen.",
+        "Das neue Gesetz wird voraussichtlich am 1. Januar in Kraft treten."
+      ]
+    },
+    {
+      "id": "b2-partizipialattribute",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "grammar",
+      "title": "Erweiterte Partizipialattribute (Partizip I und II)",
+      "explanation": "Partizipien können wie Adjektive vor Nomen stehen und durch zusätzliche Angaben erweitert werden.\nPartizip I (+ -d-) drückt eine aktive, gleichzeitige Handlung aus: \"die stetig steigenden Kosten\".\nPartizip II drückt bei transitiven Verben eine passive oder vollendete Handlung aus: \"das vor kurzem verabschiedete Gesetz\".\nDas Gerundiv (\"zu + Partizip I\") hat passiv-modale Bedeutung (\"müssen/können getan werden\"): \"die unverzüglich zu ergreifenden Maßnahmen\".\n",
+      "examples": [
+        "Die stetig wachsende Bevölkerung stellt Städte vor gewaltige Herausforderungen.",
+        "Der von unabhängigen Experten verfasste Gutachtenbericht liegt nun vor.",
+        "Die bis Freitag einzureichenden Anträge werden vorrangig bearbeitet.",
+        "Alle am Projekt beteiligten Mitarbeiter wurden informiert."
+      ]
+    },
+    {
+      "id": "b2-relativsaetze-praepositionen-wer-was",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "grammar",
+      "title": "Relativsätze mit Präpositionen und verallgemeinernde Relativpronomen",
+      "explanation": "Relativsätze werden im B2-Niveau häufig durch Präpositionen eingeleitet, die das Genus und den Kasus des Relativpronomens bestimmen: \"das Thema, über das wir sprechen\", \"der Kollege, mit dessen Hilfe ich fertig wurde\".\nBezieht sich der Relativsatz auf einen ganzen Sachverhalt oder ein Indefinitpronomen (alles, nichts, vieles, etwas), nutzt man \"was\" oder Pronominaladverbien (\"worüber\", \"womit\"): \"Er kam zu spät, worüber sich alle ärgerten.\"\nVerallgemeinernde Relativsätze beginnen mit \"wer\" oder \"wen/wem\".\n",
+      "examples": [
+        "Das ist der wissenschaftliche Ansatz, auf den sich die Forscher beziehen.",
+        "Sie hat die Prüfung mit Auszeichnung bestanden, was ihre Eltern sehr stolz machte.",
+        "Wer fleißig trainiert, wird früher oder später Erfolge sehen.",
+        "Hier ist der Künstler, dessen Werke international prämiert wurden."
+      ]
+    },
+    {
+      "id": "b2-umwelt-nachhaltigkeit-vocab",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "vocabulary",
+      "title": "Wortschatz: Umwelt, Klimaschutz und Nachhaltigkeit",
+      "explanation": "Das Themenfeld Ökologie erfordert differenzierte Nomen, Verben und feste Kollokationen.\nZentrale Begriffe sind: die Nachhaltigkeit, der CO2-Ausstoß, erneuerbare Energien, die Ressourcenschonung, der ökologische Fußabdruck, das Artensterben.\nWichtige Verben: reduzieren, schonen, vergeuden, drosseln, kompensieren, recyceln, umrüsten auf.\n",
+      "examples": [
+        "Die Reduktion der Treibhausgasemissionen erfordert ein Umdenken in Industrie und Verkehr.",
+        "Verbraucher können durch bewussten Konsum ihren ökologischen Fußabdruck minimieren.",
+        "Der Ausbau erneuerbarer Energien wie Wind- und Solarkraft schreitet zu langsam voran.",
+        "Die Bundesregierung plant strengere Grenzwerte für den Schadstoffausstoß."
+      ]
+    },
+    {
+      "id": "b2-digitalisierung-medien-vocab",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "vocabulary",
+      "title": "Wortschatz: Digitalisierung, KI und Medienkompetenz",
+      "explanation": "Der Diskurs über Digitalisierung umfasst Aspekte der Informationssicherheit, Automatisierung und sozialen Medien.\nKernbegriffe: der Datenschutz, die Datensicherheit, künstliche Intelligenz (KI), der Algorithmus, die Cyberkriminalität, die Medienkompetenz, der digitale Wandel.\nKollokationen: Daten erfassen/auswerten, ein System hacken/absichern, Informationen verifizieren, Inhalte ins Netz stellen.\n",
+      "examples": [
+        "Der Missbrauch sensibler Nutzerdaten stellt eine ernsthafte Bedrohung der Privatsphäre dar.",
+        "Künstliche Intelligenz verändert die Arbeitswelt in bisher ungekanntem Tempo.",
+        "In Zeiten von Fake News ist die Vermittlung fundierter Medienkompetenz an Schulen unverzichtbar.",
+        "Unternehmen müssen massive Investitionen in die IT-Sicherheit tätigen."
+      ]
+    },
+    {
+      "id": "b2-arbeitswelt-karriere-vocab",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "vocabulary",
+      "title": "Wortschatz: Arbeitswelt, Berufsleben und Karriere",
+      "explanation": "Auf B2-Niveau müssen differenzierte arbeitsrechtliche, organisatorische und karrierebezogene Sachverhalte erörtert werden können.\nKernvokabular: der Fachkräftemangel, die Arbeitsbedingungen, die Gleitzeit, die Vereinbarkeit von Familie und Beruf, die Weiterbildung, die Festanstellung, die Kündigungsfrist.\nTypische Verben: eine Stelle ausschreiben/besetzen, kündigen, ein Arbeitsverhältnis auflösen, verhandeln.\n",
+      "examples": [
+        "Viele Branchen leiden unter einem akuten Fachkräftemangel, der das Wirtschaftswachstum bremst.",
+        "Flexible Arbeitszeiten und Homeoffice fördern die Vereinbarkeit von Beruf und Privatleben.",
+        "Vor dem Antritt einer neuen Position sollte der Arbeitsvertrag eingehend geprüft werden.",
+        "Regelmäßige Weiterbildungsmaßnahmen steigern die Chancen auf dem Arbeitsmarkt."
+      ]
+    },
+    {
+      "id": "b2-gesellschaft-demografie-vocab",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "vocabulary",
+      "title": "Wortschatz: Gesellschaftlicher Wandel und Demografie",
+      "explanation": "Gesellschaftliche Diskussionen thematisieren Bevölkerungsentwicklung, soziale Sicherungssysteme und gesellschaftlichen Zusammenhalt.\nFachbegriffe: der demografische Wandel, die Überalterung der Gesellschaft, die Geburtenrate, der Generationenvertrag, das Ehrenamt, die soziale Ungleichheit, die Chancengleichheit.\nKollokationen: ehrenamtliche Arbeit leisten, gesellschaftlichen Zusammenhalt stärken, die Altersvorsorge reformieren.\n",
+      "examples": [
+        "Der demografische Wandel stellt die Rentenkassen und das Gesundheitssystem vor immense Probleme.",
+        "Millionen von Bürgern engagieren sich in ihrer Freizeit ehrenamtlich für das Gemeinwohl.",
+        "Zur Sicherung des Wohlstands muss die Vereinbarkeit von Pflege und Erwerbstätigkeit verbessert werden.",
+        "Chancengleichheit im Bildungssystem ist eine Grundvoraussetzung für sozialen Aufstieg."
+      ]
+    },
+    {
+      "id": "b2-sachtexte-global-detailverstehen",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "reading",
+      "title": "Leseverstehen: Sachtexte global und selektiv erschließen",
+      "explanation": "Bei anspruchsvollen Sachtexten geht es darum, zwischen Kernaussagen (Globalverstehen), Detailinformationen und impliziten Wertungen zu differenzieren.\nAchten Sie auf Gliederungssignale (z. B. \"erstens\", \"hingegen\", \"zusammenfassend\") und Schlüsselbegriffe im Themenumfeld.\nLassen Sie sich nicht von unbekannten Fachwörtern verunsichern; leiten Sie deren Bedeutung aus dem Kontext oder der Wortbildung ab.\n",
+      "examples": [
+        "Textauszug: 'Obwohl die Pilotstudie methodische Schwächen aufweist, liefert sie wertvolle Hinweise auf das geänderte Nutzerverhalten.'",
+        "Frage zum Text: Welche Einschränkung nennt der Autor hinsichtlich der Aussagekraft der Untersuchung?"
+      ]
+    },
+    {
+      "id": "b2-kommentare-standpunkte-erfassen",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "reading",
+      "title": "Leseverstehen: Standpunkte und Ironie in Kommentaren erkennen",
+      "explanation": "Leitartikel, Glossen und Essays enthalten oft subjektive Wertungen, rhetorische Fragen und sprachliche Nuancen wie Ironie oder Distanzierung.\nAchten Sie auf Modalpartikeln (\"ja\", \"doch\", \"wohl\"), Konjunktiv I zur Redewiedergabe (\"sei\", \"habe behauptet\") und wertende Adjektive (\"fragwürdig\", \"scheinbar\", \"angeblich\").\n",
+      "examples": [
+        "Text: 'Dass diese halbherzigen Maßnahmen die Klimakatastrophe abwenden sollen, ist mehr als zweifelhaft.'",
+        "Text: 'Der Minister feiert die Reform als Meilenstein – ein Blick auf die Zahlen offenbart jedoch ein Desaster.'"
+      ]
+    },
+    {
+      "id": "b2-fachvortraege-podcasts-verstehen",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "listening",
+      "title": "Hörverstehen: Fachvorträge und Diskussionsbeiträge",
+      "explanation": "Das Verstehen gesprochener Sprache auf B2 erfordert die Erfassung komplexer Gedankengänge bei normaler Sprechgeschwindigkeit.\nKonzentrieren Sie sich auf Einleitungsphrasen (\"Ich möchte nun auf den nächsten Punkt eingehen\"), Hervorhebungen (\"Besonders hervorzuheben ist...\") und Schlussfolgerungen (\"Daraus ergibt sich folgendes Fazit\").\nFiltern Sie störende Füllwörter mental heraus und notieren Sie beim Hören prägnante Stichwörter.\n",
+      "examples": [
+        "Hörtext: 'Zusammenfassend lässt sich konstatieren, dass die Investition in Weiterbildung langfristig zu höherer Produktivität führt.'",
+        "Hörtext: 'Bevor wir zur Fragerunde übergehen, möchte ich noch kurz die zentralen Thesen meines Vortrags rekapitulieren.'"
+      ]
+    },
+    {
+      "id": "b2-stellungnahme-erlaeuterung-verfassen",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "writing",
+      "title": "Schriftlicher Ausdruck: Strukturierte Stellungnahme und Erörterung",
+      "explanation": "Eine fundierte Stellungnahme (dialektische Erörterung) gliedert sich klassisch in:\n1. Einleitung: Thema aufgreifen, Relevanz darlegen, Fragestellung präzisieren.\n2. Hauptteil: Gegenargumente entkräften (Gegenseite beleuchten) und eigene Argumente steigernd darlegen (These, Begründung, konkretes Beispiel).\n3. Verknüpfungen: Konnektoren wie \"darüber hinaus\", \"demgegenüber ist einzuwenden\", \"zwar ... jedoch\" nutzen.\n4. Schlussteil: Abwägendes Fazit ziehen und eventuell einen Kompromiss oder Ausblick formulieren.\n",
+      "examples": [
+        "Einleitung: 'In der aktuellen Debatte wird immer wieder die Frage aufgeworfen, ob...'",
+        "Überleitung: 'Befürworter dieser Maßnahme führen häufig an, dass... Demgegenüber muss jedoch betont werden, dass...'",
+        "Fazit: 'Unter Abwägung aller Argumente überwiegen meines Erachtens die Vorteile...'"
+      ]
+    },
+    {
+      "id": "b2-beschwerdebrief-dienstleistung",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "writing",
+      "title": "Schriftlicher Ausdruck: Formelle Mängelrüge und Beschwerde",
+      "explanation": "Ein formeller Beschwerdebrief erfordert einen sachlichen, aber nachdrücklichen Tonfall im gehobenen Register.\nWichtige Bestandteile:\n- Betreffzeile mit Bezugsnummer / Buchungsnummer.\n- Höfliche, formelle Anrede (\"Sehr geehrte Damen und Herren,\").\n- Präzise Schilderung des Soll- und Ist-Zustands anhand konkreter Vorfälle.\n- Fristsetzung zur Nachbesserung, Rückerstattung oder Stellungnahme.\n- Ankündigung rechtlicher Schritte bei Fristversäumnis.\n",
+      "examples": [
+        "Betreff: Beschwerde über den gebuchten Sprachkurs – Rechnungsnummer 45982",
+        "Entgegen den Zusagen in Ihrem Prospekt fand der Unterricht nicht mit muttersprachlichen Dozenten statt.",
+        "Ich fordere Sie hiermit auf, mir bis zum 15. November einen Teilbetrag von 30 % zu erstatten."
+      ]
+    },
+    {
+      "id": "b2-pro-kontra-diskussion-fuehren",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "speaking",
+      "title": "Mündlicher Ausdruck: Argumentieren, Nuancieren und Einwände entkräften",
+      "explanation": "In einer Diskussion auf B2-Niveau müssen Sprecher flexibel auf Beiträge reagieren, den eigenen Standpunkt präzisieren und Widerspruch höflich, aber bestimmt formulieren.\nRedemittel zur Zustimmung mit Einschränkung: \"Dem stimme ich im Prinzip zu, allerdings...\", \"Da haben Sie sicher recht, dennoch sollte man bedenken, dass...\".\nRedemittel zum Widerspruch: \"Das sehe ich grundlegend anders.\", \"Diesem Argument möchte ich mit aller Entschiedenheit widersprechen.\", \"Erlauben Sie mir dazu eine kritische Anmerkung.\"\n",
+      "examples": [
+        "Ich verstehe Ihren Punkt vollkommen, bezweifle jedoch, dass diese Maßnahme finanzierbar ist.",
+        "Man darf hierbei keinesfalls die sozialen Folgen für einkommensschwache Familien außer Acht lassen.",
+        "Darf ich an dieser Stelle kurz einhaken und ein konkretes Gegenbeispiel anführen?"
+      ]
+    },
+    {
+      "id": "b2-fachpraesentation-strukturieren",
+      "track": "generic",
+      "conceptId": null,
+      "sourceLevel": "B2",
+      "skill": "speaking",
+      "title": "Mündlicher Ausdruck: Aufbau und Halten eines Fachreferats",
+      "explanation": "Ein strukturierter Vortrag erfordert eine transparente Gliederung und klare Moderationsphrasen:\n1. Einleitung: Begrüßung, Thema nennen, Aufbau kurz umreißen (\"In meinem heutigen Vortrag widme ich mich der Frage... Dazu gliedert sich mein Beitrag in drei Teile.\").\n2. Hauptteil: Übergänge zwischen Punkten markieren (\"Nachdem ich die Ursachen erläutert habe, komme ich nun zu den Lösungsansätzen.\").\n3. Schluss: Zusammenfassung der Kernaussage, Danksagung und Eröffnung der Fragerunde (\"Abschließend möchte ich festhalten... Ich danke Ihnen für Ihre Aufmerksamkeit und freue mich auf Ihre Fragen.\").\n",
+      "examples": [
+        "Der Zweck meiner heutigen Präsentation besteht darin, Ihnen die Vor- und Nachteile von Remote Work näherzubringen.",
+        "Lassen Sie mich diesen Aspekt anhand eines anschaulichen Beispiels verdeutlichen.",
+        "Damit bin ich am Ende meines Referats angelangt. Ich stehe Ihnen nun gerne für Fragen zur Verfügung."
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b2-passiv-formen-zeiten__ex0",
+      "lessonId": "b2-passiv-formen-zeiten",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Satz steht im Passiv Perfekt?",
+        "options": [
+          "Der Vertrag wird von den Anwälten geprüft worden sein.",
+          "Der Vertrag ist von den Anwälten geprüft worden.",
+          "Der Vertrag wurde von den Anwälten geprüft.",
+          "Der Vertrag hat die Anwälte geprüft."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-passiv-formen-zeiten__ex1",
+      "lessonId": "b2-passiv-formen-zeiten",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Gestern ___ die Testergebnisse endlich veröffentlicht. (Präteritum Passiv)",
+        "correctAnswer": "wurden"
+      }
+    },
+    {
+      "id": "b2-passiv-formen-zeiten__ex2",
+      "lessonId": "b2-passiv-formen-zeiten",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Das Problem ist bereits von den Technikern gelöst ___ .",
+        "correctAnswer": "worden"
+      }
+    },
+    {
+      "id": "b2-passiv-formen-zeiten__ex3",
+      "lessonId": "b2-passiv-formen-zeiten",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulieren Sie den folgenden Aktivsatz in das Passiv Präteritum um: 'Die Polizei sperrte die Autobahn.'",
+        "modelAnswer": "Die Autobahn wurde von der Polizei gesperrt."
+      }
+    },
+    {
+      "id": "b2-passiv-modalverben__ex0",
+      "lessonId": "b2-passiv-modalverben",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Die Rechnung ___ bis Ende des Monats bezahlt werden. (Präsens: müssen)",
+        "correctAnswer": "muss"
+      }
+    },
+    {
+      "id": "b2-passiv-modalverben__ex1",
+      "lessonId": "b2-passiv-modalverben",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Satz drückt eine vergangene Notwendigkeit im Passiv aus?",
+        "options": [
+          "Das Projekt kann nicht verlängert werden.",
+          "Das Projekt durfte nicht verlängert werden.",
+          "Das Projekt musste sofort gestoppt werden.",
+          "Das Projekt wird sofort gestoppt werden."
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "b2-passiv-modalverben__ex2",
+      "lessonId": "b2-passiv-modalverben",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Aufgrund des Unwetters ___ die Flüge gestrichen werden. (Präteritum: müssen, Plural)",
+        "correctAnswer": "mussten"
+      }
+    },
+    {
+      "id": "b2-passiv-modalverben__ex3",
+      "lessonId": "b2-passiv-modalverben",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formen Sie folgenden Satz ins Passiv mit Modalverb (Präsens) um: 'Man darf diese Software nicht ohne Lizenz nutzen.'",
+        "modelAnswer": "Diese Software darf nicht ohne Lizenz genutzt werden."
+      }
+    },
+    {
+      "id": "b2-passiv-alternativen__ex0",
+      "lessonId": "b2-passiv-alternativen",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was bedeutet: 'Der Text ist bis Montag zu übersetzen'?",
+        "options": [
+          "Der Text kann bis Montag übersetzt werden.",
+          "Der Text muss bis Montag übersetzt werden.",
+          "Der Text wird bis Montag übersetzt worden sein.",
+          "Der Text lässt sich bis Montag übersetzen."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-passiv-alternativen__ex1",
+      "lessonId": "b2-passiv-alternativen",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Diese schwierige Frage ___ sich nicht pauschal beantworten. (drückt Möglichkeit aus)",
+        "correctAnswer": "lässt"
+      }
+    },
+    {
+      "id": "b2-passiv-alternativen__ex2",
+      "lessonId": "b2-passiv-alternativen",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Die Handschrift ist so undeutlich, dass sie kaum les___ ist. (Suffix für Möglichkeit)",
+        "correctAnswer": "bar"
+      }
+    },
+    {
+      "id": "b2-passiv-alternativen__ex3",
+      "lessonId": "b2-passiv-alternativen",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Ersetzen Sie das Passiv durch 'sich lassen + Infinitiv': 'Die Datei kann nicht geöffnet werden.'",
+        "modelAnswer": "Die Datei lässt sich nicht öffnen."
+      }
+    },
+    {
+      "id": "b2-konjunktiv-ii-vergangenheit__ex0",
+      "lessonId": "b2-konjunktiv-ii-vergangenheit",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Wenn du mich rechtzeitig gewarnt hättest, ___ ich nicht in diese Falle getappt. (sein)",
+        "correctAnswer": "wäre"
+      }
+    },
+    {
+      "id": "b2-konjunktiv-ii-vergangenheit__ex1",
+      "lessonId": "b2-konjunktiv-ii-vergangenheit",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Konstruktion drückt ein versäumtes Handeln mit Modalverb korrekt aus?",
+        "options": [
+          "Er hatte früher aufstehen gesollt.",
+          "Er hätte früher aufstehen sollen.",
+          "Er würde früher aufstehen gesollt haben.",
+          "Er wäre früher aufgestanden gemusst."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-konjunktiv-ii-vergangenheit__ex2",
+      "lessonId": "b2-konjunktiv-ii-vergangenheit",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "An deiner Stelle ___ ich mich damals sofort beschwert. (haben)",
+        "correctAnswer": "hätte"
+      }
+    },
+    {
+      "id": "b2-konjunktiv-ii-vergangenheit__ex3",
+      "lessonId": "b2-konjunktiv-ii-vergangenheit",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Bilden Sie einen irrealen Bedingungssatz in der Vergangenheit: 'Er hat nicht gelernt. Er hat die Prüfung nicht bestanden.'",
+        "modelAnswer": "Wenn er gelernt hätte, hätte er die Prüfung bestanden."
+      }
+    },
+    {
+      "id": "b2-zweiteilige-konnektoren__ex0",
+      "lessonId": "b2-zweiteilige-konnektoren",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welches Konnektorenpaar schließt beide Alternativen aus?",
+        "options": [
+          "sowohl ... als auch",
+          "entweder ... oder",
+          "weder ... noch",
+          "nicht nur ... sondern auch"
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "b2-zweiteilige-konnektoren__ex1",
+      "lessonId": "b2-zweiteilige-konnektoren",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Das Produkt ist ___ günstig, aber qualitativ lässt es zu wünschen übrig.",
+        "correctAnswer": "zwar"
+      }
+    },
+    {
+      "id": "b2-zweiteilige-konnektoren__ex2",
+      "lessonId": "b2-zweiteilige-konnektoren",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Wir müssen uns entscheiden: ___ wir investieren jetzt, oder wir verlieren Marktanteile.",
+        "correctAnswer": "Entweder"
+      }
+    },
+    {
+      "id": "b2-zweiteilige-konnektoren__ex3",
+      "lessonId": "b2-zweiteilige-konnektoren",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Verbinden Sie die Sätze mit 'nicht nur ... sondern auch': 'Das Seminar vermittelt Theorie. Es bietet praktische Übungen.'",
+        "modelAnswer": "Das Seminar vermittelt nicht nur Theorie, sondern bietet auch praktische Übungen."
+      }
+    },
+    {
+      "id": "b2-nominalisierung-verbalisierung__ex0",
+      "lessonId": "b2-nominalisierung-verbalisierung",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "___ des starken Regens musste das Fußballspiel abgesagt werden. (Kausalpräposition mit Genitiv)",
+        "correctAnswer": "Wegen",
+        "acceptableVariants": [
+          "Aufgrund",
+          "Infolge"
+        ]
+      }
+    },
+    {
+      "id": "b2-nominalisierung-verbalisierung__ex1",
+      "lessonId": "b2-nominalisierung-verbalisierung",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Nominalisierung entspricht: 'Indem man regelmäßig trainiert, beugt man Verletzungen vor'?",
+        "options": [
+          "Trotz regelmäßigen Trainings beugt man Verletzungen vor.",
+          "Durch regelmäßiges Training beugt man Verletzungen vor.",
+          "Während des regelmäßigen Trainings beugt man Verletzungen vor.",
+          "Wegen regelmäßigen Trainings beugt man Verletzungen vor."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-nominalisierung-verbalisierung__ex2",
+      "lessonId": "b2-nominalisierung-verbalisierung",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Bei ___ des Vertrags sind alle Klauseln genau zu prüfen. (Unterzeichnung / unterzeichnen)",
+        "correctAnswer": "Unterzeichnung"
+      }
+    },
+    {
+      "id": "b2-nominalisierung-verbalisierung__ex3",
+      "lessonId": "b2-nominalisierung-verbalisierung",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Nominalisieren Sie: 'Weil die Temperaturen stetig sinken, friert der See zu.'",
+        "modelAnswer": "Aufgrund des stetigen Sinkens der Temperaturen friert der See zu."
+      }
+    },
+    {
+      "id": "b2-nomen-verb-verbindungen-basis__ex0",
+      "lessonId": "b2-nomen-verb-verbindungen-basis",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Die Wissenschaftlerin übte scharfe Kritik ___ den Methoden der Studie. (Präposition)",
+        "correctAnswer": "an"
+      }
+    },
+    {
+      "id": "b2-nomen-verb-verbindungen-basis__ex1",
+      "lessonId": "b2-nomen-verb-verbindungen-basis",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welches Verb komplettiert: 'etwas in Zweifel ___' (bezweifeln)?",
+        "options": [
+          "stellen",
+          "ziehen",
+          "bringen",
+          "nehmen"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-nomen-verb-verbindungen-basis__ex2",
+      "lessonId": "b2-nomen-verb-verbindungen-basis",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Für Rückfragen stehe ich Ihnen jederzeit gerne zur ___ .",
+        "correctAnswer": "Verfügung"
+      }
+    },
+    {
+      "id": "b2-nomen-verb-verbindungen-basis__ex3",
+      "lessonId": "b2-nomen-verb-verbindungen-basis",
+      "track": "generic",
+      "type": "flashcard",
+      "content": {
+        "front": "Abschied nehmen von (+ Dat.)",
+        "back": "sich verabschieden von (+ Dat.)"
+      }
+    },
+    {
+      "id": "b2-partizipialattribute__ex0",
+      "lessonId": "b2-partizipialattribute",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was bedeutet: 'das zu renovierende Gebäude'?",
+        "options": [
+          "das Gebäude, das renoviert worden ist",
+          "das Gebäude, das renoviert werden muss",
+          "das Gebäude, das gerade renoviert wird",
+          "das Gebäude, das renovieren wird"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-partizipialattribute__ex1",
+      "lessonId": "b2-partizipialattribute",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Die Zahl der im Ausland studier___ Personen nimmt kontinuierlich zu. (Partizip I)",
+        "correctAnswer": "enden"
+      }
+    },
+    {
+      "id": "b2-partizipialattribute__ex2",
+      "lessonId": "b2-partizipialattribute",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Das gestern unterschrieb___ Dokument liegt im Tresor. (Partizip II, neutral, Akkusativ/Nominativ)",
+        "correctAnswer": "ene"
+      }
+    },
+    {
+      "id": "b2-partizipialattribute__ex3",
+      "lessonId": "b2-partizipialattribute",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Verwandeln Sie das Relativsatzgefüge in ein erweitertes Partizipialattribut: 'Die Probleme, die von den Experten analysiert wurden.'",
+        "modelAnswer": "Die von den Experten analysierten Probleme."
+      }
+    },
+    {
+      "id": "b2-relativsaetze-praepositionen-wer-was__ex0",
+      "lessonId": "b2-relativsaetze-praepositionen-wer-was",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Der Vertrag, ___ Unterzeichnung wir lange gewartet haben, ist nun gültig. (Präposition 'auf' + Relativpronomen Akkusativ)",
+        "correctAnswer": "auf dessen"
+      }
+    },
+    {
+      "id": "b2-relativsaetze-praepositionen-wer-was__ex1",
+      "lessonId": "b2-relativsaetze-praepositionen-wer-was",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welches Pronomen passt: 'Das ist alles, ___ ich zu diesem Thema sagen kann'?",
+        "options": [
+          "das",
+          "was",
+          "welches",
+          "worüber"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-relativsaetze-praepositionen-wer-was__ex2",
+      "lessonId": "b2-relativsaetze-praepositionen-wer-was",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Er bot mir seine Unterstützung an, ___ ich sehr dankbar war. (Pronominaladverb mit 'für')",
+        "correctAnswer": "wofür"
+      }
+    },
+    {
+      "id": "b2-relativsaetze-praepositionen-wer-was__ex3",
+      "lessonId": "b2-relativsaetze-praepositionen-wer-was",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Bilden Sie einen Relativsatz mit Präposition: 'Die Konferenz. Wir nehmen an der Konferenz teil.'",
+        "modelAnswer": "Die Konferenz, an der wir teilnehmen."
+      }
+    },
+    {
+      "id": "b2-umwelt-nachhaltigkeit-vocab__ex0",
+      "lessonId": "b2-umwelt-nachhaltigkeit-vocab",
+      "track": "generic",
+      "type": "flashcard",
+      "content": {
+        "front": "der ökologische Fußabdruck",
+        "back": "ecological footprint (Messgröße für den Ressourcenverbrauch)"
+      }
+    },
+    {
+      "id": "b2-umwelt-nachhaltigkeit-vocab__ex1",
+      "lessonId": "b2-umwelt-nachhaltigkeit-vocab",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welches Wort bedeutet 'sparsam und vorausschauend mit Rohstoffen umgehen'?",
+        "options": [
+          "Ressourcen verschwenden",
+          "Ressourcen schonen",
+          "Ressourcen ausbeuten",
+          "Ressourcen verbrauchen"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-umwelt-nachhaltigkeit-vocab__ex2",
+      "lessonId": "b2-umwelt-nachhaltigkeit-vocab",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Viele Experten fordern die drastische Verringerung von Treibhaus___.",
+        "correctAnswer": "gasen"
+      }
+    },
+    {
+      "id": "b2-umwelt-nachhaltigkeit-vocab__ex3",
+      "lessonId": "b2-umwelt-nachhaltigkeit-vocab",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Nennen Sie zwei Maßnahmen zur Förderung der Nachhaltigkeit in Großstädten.",
+        "modelAnswer": "Der Ausbau des öffentlichen Nahverkehrs und die Schaffung weiterer Grünflächen."
+      }
+    },
+    {
+      "id": "b2-digitalisierung-medien-vocab__ex0",
+      "lessonId": "b2-digitalisierung-medien-vocab",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welches Substantiv bezeichnet die Fähigkeit, kritisch mit Medien und Nachrichten umzugehen?",
+        "options": [
+          "Medienlandschaft",
+          "Medienkompetenz",
+          "Medienkonsum",
+          "Medienkonzern"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-digitalisierung-medien-vocab__ex1",
+      "lessonId": "b2-digitalisierung-medien-vocab",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Die Europäische Union hat strenge Vorschriften zum Schutz persönlicher ___ erlassen.",
+        "correctAnswer": "Daten"
+      }
+    },
+    {
+      "id": "b2-digitalisierung-medien-vocab__ex2",
+      "lessonId": "b2-digitalisierung-medien-vocab",
+      "track": "generic",
+      "type": "flashcard",
+      "content": {
+        "front": "die Datenverschlüsselung",
+        "back": "data encryption"
+      }
+    },
+    {
+      "id": "b2-digitalisierung-medien-vocab__ex3",
+      "lessonId": "b2-digitalisierung-medien-vocab",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Erklären Sie kurz auf Deutsch, welches Risiko der Einsatz von künstlicher Intelligenz am Arbeitsplatz bergen kann.",
+        "modelAnswer": "Ein Risiko besteht darin, dass Arbeitsplätze durch Automatisierung wegfallen könnten."
+      }
+    },
+    {
+      "id": "b2-arbeitswelt-karriere-vocab__ex0",
+      "lessonId": "b2-arbeitswelt-karriere-vocab",
+      "track": "generic",
+      "type": "flashcard",
+      "content": {
+        "front": "die Vereinbarkeit von Familie und Beruf",
+        "back": "work-life / family-career balance"
+      }
+    },
+    {
+      "id": "b2-arbeitswelt-karriere-vocab__ex1",
+      "lessonId": "b2-arbeitswelt-karriere-vocab",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Das Unternehmen hat zwei neue Stellen im Bereich Marketing aus___ . (ausgeschrieben / besetzen)",
+        "correctAnswer": "geschrieben"
+      }
+    },
+    {
+      "id": "b2-arbeitswelt-karriere-vocab__ex2",
+      "lessonId": "b2-arbeitswelt-karriere-vocab",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was bedeutet 'Gleitzeit'?",
+        "options": [
+          "Feste Arbeitszeiten von 9 bis 17 Uhr ohne Ausnahme.",
+          "Ein Arbeitszeitmodell, bei dem Beginn und Ende der Arbeitszeit flexibel gewählt werden können.",
+          "Ein unbezahltes Praktikum nach der Universitätsausbildung.",
+          "Die Zeitspanne vor einer Kündigung."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-arbeitswelt-karriere-vocab__ex3",
+      "lessonId": "b2-arbeitswelt-karriere-vocab",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Nennen Sie zwei Faktoren, die zu einer hohen Arbeitszufriedenheit beitragen.",
+        "modelAnswer": "Ein faires Gehalt und ein angenehmes Betriebsklima tragen maßgeblich zur Arbeitszufriedenheit bei."
+      }
+    },
+    {
+      "id": "b2-gesellschaft-demografie-vocab__ex0",
+      "lessonId": "b2-gesellschaft-demografie-vocab",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Freiwillige Helfer engagieren sich häufig in einem ___ . (unbezahlte gemeinnützige Tätigkeit)",
+        "correctAnswer": "Ehrenamt"
+      }
+    },
+    {
+      "id": "b2-gesellschaft-demografie-vocab__ex1",
+      "lessonId": "b2-gesellschaft-demografie-vocab",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was versteht man unter dem 'Generationenvertrag'?",
+        "options": [
+          "Einen Kaufvertrag zwischen Großeltern und Enkeln.",
+          "Das Prinzip, dass die erwerbstätige Generation die Renten der älteren Generation finanziert.",
+          "Eine Vereinbarung über gemeinsame Wohnprojekte verschiedener Altersgruppen.",
+          "Ein Ausbildungsabkommen für Jugendliche."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-gesellschaft-demografie-vocab__ex2",
+      "lessonId": "b2-gesellschaft-demografie-vocab",
+      "track": "generic",
+      "type": "flashcard",
+      "content": {
+        "front": "die Chancengleichheit",
+        "back": "equality of opportunity"
+      }
+    },
+    {
+      "id": "b2-gesellschaft-demografie-vocab__ex3",
+      "lessonId": "b2-gesellschaft-demografie-vocab",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulieren Sie einen Satz über die Folgen der niedrigen Geburtenrate in Industrieländern.",
+        "modelAnswer": "Eine niedrige Geburtenrate führt langfristig zu einem Mangel an jungen Erwerbstätigen."
+      }
+    },
+    {
+      "id": "b2-sachtexte-global-detailverstehen__ex0",
+      "lessonId": "b2-sachtexte-global-detailverstehen",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Text: 'Entgegen früheren Annahmen hat die Digitalisierung nicht zum papierlosen Büro geführt. Vielmehr stieg der Papierverbrauch in vielen Verwaltungen zunächst an, da Entwürfe mehrfach ausgedruckt wurden.' - Was trifft laut Text zu?",
+        "options": [
+          "Das papierlose Büro hat sich sofort überall durchgesetzt.",
+          "Die Digitalisierung führte anfangs stellenweise sogar zu höherem Papierverbrauch.",
+          "Niemand druckt mehr Entwürfe auf Papier aus.",
+          "Frühere Annahmen zum Papierverbrauch erwiesen sich als völlig korrekt."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-sachtexte-global-detailverstehen__ex1",
+      "lessonId": "b2-sachtexte-global-detailverstehen",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Text: 'Während Kritiker vor dem Verlust von Arbeitsplätzen durch Automatisierung warnen, betonen Befürworter die Entstehung völlig neuer Berufsfelder.' - Welche zwei gegensätzlichen Positionen werden genannt?",
+        "modelAnswer": "Die Furcht vor dem Verlust bestehender Arbeitsplätze steht der Hoffnung auf neue Berufsfelder gegenüber."
+      }
+    },
+    {
+      "id": "b2-kommentare-standpunkte-erfassen__ex0",
+      "lessonId": "b2-kommentare-standpunkte-erfassen",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Text: 'Angeblich garantiert die neue App absolute Sicherheit vor Hackerangriffen. Doch schon wenige Stunden nach Veröffentlichung meldeten Sicherheitsexperten bedenkliche Schwachstellen.' - Welche Haltung hat der Autor?",
+        "options": [
+          "Er ist von der Zuverlässigkeit der App voll überzeugt.",
+          "Er bezweifelt die Versprechen des Herstellers massiv.",
+          "Er empfiehlt den Kauf der Software uneingeschränkt.",
+          "Er ignoriert die Berichte der Sicherheitsexperten."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-kommentare-standpunkte-erfassen__ex1",
+      "lessonId": "b2-kommentare-standpunkte-erfassen",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Erklären Sie die Bedeutung des Wortes 'scheinbar' im Kontrast zu 'anscheinend' in einem journalistischen Text.",
+        "modelAnswer": "'Scheinbar' drückt aus, dass etwas nur so aussieht, in Wirklichkeit aber nicht so ist. 'Anscheinend' bedeutet, dass eine Vermutung wahrscheinlich zutrifft."
+      }
+    },
+    {
+      "id": "b2-fachvortraege-podcasts-verstehen__ex0",
+      "lessonId": "b2-fachvortraege-podcasts-verstehen",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Sprecher: 'Man darf nicht übersehen, dass die Kosten für Solaranlagen zwar drastisch gesunken sind, die Speicherkapazitäten jedoch nach wie vor einen Engpass darstellen.' - Worin besteht das verbleibende Hauptproblem?",
+        "options": [
+          "In den extrem hohen Anschaffungskosten für Solarmodule.",
+          "In der mangelnden gesellschaftlichen Akzeptanz von Solarenergie.",
+          "In den unzureichenden Möglichkeiten zur Speicherung des erzeugten Stroms.",
+          "Im Mangel an ausgebildeten Handwerkern."
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "b2-fachvortraege-podcasts-verstehen__ex1",
+      "lessonId": "b2-fachvortraege-podcasts-verstehen",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Notieren Sie die Kernbotschaft: 'Ohne eine gezielte Modernisierung unserer Schulen werden wir den Anschluss an führende Technologienationen unausweichlich verlieren.'",
+        "modelAnswer": "Schulen müssen modernisiert werden, um technologisch konkurrenzfähig zu bleiben."
+      }
+    },
+    {
+      "id": "b2-stellungnahme-erlaeuterung-verfassen__ex0",
+      "lessonId": "b2-stellungnahme-erlaeuterung-verfassen",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Verfassen Sie eine Einleitung (ca. 30–40 Wörter) zu einer Stellungnahme über das Thema 'Homeoffice zur Pflicht für Unternehmen machen'.",
+        "modelAnswer": "Die Frage, ob Arbeitgeber gesetzlich dazu verpflichtet werden sollten, Homeoffice anzubieten, wird kontrovers diskutiert. Angesichts der fortschreitenden Digitalisierung und veränderter Lebensentwürfe gewinnt diese Debatte zunehmend an gesellschaftlicher Relevanz."
+      }
+    },
+    {
+      "id": "b2-stellungnahme-erlaeuterung-verfassen__ex1",
+      "lessonId": "b2-stellungnahme-erlaeuterung-verfassen",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Redewendung eignet sich am besten, um ein Gegenargument einzuführen?",
+        "options": [
+          "Ein weiteres Beispiel hierfür ist...",
+          "Dem steht allerdings das gewichtige Argument gegenüber, dass...",
+          "Zusammenfassend lässt sich feststellen, dass...",
+          "Zuerst möchte ich erwähnen, dass..."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-beschwerdebrief-dienstleistung__ex0",
+      "lessonId": "b2-beschwerdebrief-dienstleistung",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulieren Sie einen Schlusssatz mit Fristsetzung für einen Beschwerdebrief an ein Reiseunternehmen.",
+        "modelAnswer": "Ich erwarte Ihre schriftliche Stellungnahme sowie die Rückerstattung des genannten Betrags bis spätestens zum 24. Oktober."
+      }
+    },
+    {
+      "id": "b2-beschwerdebrief-dienstleistung__ex1",
+      "lessonId": "b2-beschwerdebrief-dienstleistung",
+      "track": "generic",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Sollten Sie die Frist verstreichen lassen, sehe ich mich gezwungen, rechtliche Schritte einzu___ .",
+        "correctAnswer": "leiten"
+      }
+    },
+    {
+      "id": "b2-pro-kontra-diskussion-fuehren__ex0",
+      "lessonId": "b2-pro-kontra-diskussion-fuehren",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Formulierung drückt höflichen, aber entschiedenen Widerspruch aus?",
+        "options": [
+          "Das ist mir völlig egal.",
+          "Da bin ich ganz Ihrer Ansicht.",
+          "Da muss ich Ihnen leider widersprechen, denn die Faktenlage zeigt ein anderes Bild.",
+          "Vielleicht haben Sie recht, vielleicht auch nicht."
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "b2-pro-kontra-diskussion-fuehren__ex1",
+      "lessonId": "b2-pro-kontra-diskussion-fuehren",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Reagieren Sie auf folgende Aussage: 'Universitätsbildung sollte für alle kostenpflichtig sein.' Äußern Sie fundierten Widerspruch mit Begründung.",
+        "modelAnswer": "Dem muss ich vehement widersprechen. Studiengebühren würden die soziale Spaltung vertiefen und Talenten aus benachteiligten Familien den Hochschulzugang versperren."
+      }
+    },
+    {
+      "id": "b2-fachpraesentation-strukturieren__ex0",
+      "lessonId": "b2-fachpraesentation-strukturieren",
+      "track": "generic",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulieren Sie einen Satz zur Ankündigung des zweiten Punkts Ihrer Präsentation nach Abschluss des ersten Punkts.",
+        "modelAnswer": "Nachdem wir uns mit den theoretischen Grundlagen befasst haben, wenden wir uns nun den praktischen Anwendungsbeispielen zu."
+      }
+    },
+    {
+      "id": "b2-fachpraesentation-strukturieren__ex1",
+      "lessonId": "b2-fachpraesentation-strukturieren",
+      "track": "generic",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Ausdruck eignet sich am besten für den Abschluss eines formalen Referats?",
+        "options": [
+          "So, das war's eigentlich von meiner Seite.",
+          "Ich bedanke mich ganz herzlich für Ihre Aufmerksamkeit und freue mich auf Ihre Rückfragen.",
+          "Hoffentlich war das nicht zu langweilig für Sie.",
+          "Jetzt können Sie klatschen."
+        ],
+        "correctIndex": 1
+      }
+    }
+  ],
+  "prerequisites": [
+    {
+      "lessonId": "b2-passiv-modalverben",
+      "prerequisiteLessonId": "b2-passiv-formen-zeiten"
+    },
+    {
+      "lessonId": "b2-passiv-alternativen",
+      "prerequisiteLessonId": "b2-passiv-modalverben"
+    },
+    {
+      "lessonId": "b2-nominalisierung-verbalisierung",
+      "prerequisiteLessonId": "b2-zweiteilige-konnektoren"
+    },
+    {
+      "lessonId": "b2-partizipialattribute",
+      "prerequisiteLessonId": "b2-passiv-formen-zeiten"
+    },
+    {
+      "lessonId": "b2-sachtexte-global-detailverstehen",
+      "prerequisiteLessonId": "b2-passiv-alternativen"
+    },
+    {
+      "lessonId": "b2-sachtexte-global-detailverstehen",
+      "prerequisiteLessonId": "b2-partizipialattribute"
+    },
+    {
+      "lessonId": "b2-kommentare-standpunkte-erfassen",
+      "prerequisiteLessonId": "b2-zweiteilige-konnektoren"
+    },
+    {
+      "lessonId": "b2-fachvortraege-podcasts-verstehen",
+      "prerequisiteLessonId": "b2-passiv-formen-zeiten"
+    },
+    {
+      "lessonId": "b2-fachvortraege-podcasts-verstehen",
+      "prerequisiteLessonId": "b2-nominalisierung-verbalisierung"
+    },
+    {
+      "lessonId": "b2-stellungnahme-erlaeuterung-verfassen",
+      "prerequisiteLessonId": "b2-zweiteilige-konnektoren"
+    },
+    {
+      "lessonId": "b2-stellungnahme-erlaeuterung-verfassen",
+      "prerequisiteLessonId": "b2-nominalisierung-verbalisierung"
+    },
+    {
+      "lessonId": "b2-beschwerdebrief-dienstleistung",
+      "prerequisiteLessonId": "b2-passiv-modalverben"
+    },
+    {
+      "lessonId": "b2-beschwerdebrief-dienstleistung",
+      "prerequisiteLessonId": "b2-konjunktiv-ii-vergangenheit"
+    },
+    {
+      "lessonId": "b2-pro-kontra-diskussion-fuehren",
+      "prerequisiteLessonId": "b2-zweiteilige-konnektoren"
+    },
+    {
+      "lessonId": "b2-pro-kontra-diskussion-fuehren",
+      "prerequisiteLessonId": "b2-nomen-verb-verbindungen-basis"
+    },
+    {
+      "lessonId": "b2-fachpraesentation-strukturieren",
+      "prerequisiteLessonId": "b2-nomen-verb-verbindungen-basis"
+    }
+  ]
+}

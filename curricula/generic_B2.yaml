@@ -1,0 +1,591 @@
+track: generic
+level: B2
+
+lessons:
+  - slug: passiv-formen-zeiten
+    skill: grammar
+    title: "Vorgangspassiv in allen Zeitformen"
+    prerequisites: []
+    explanation: |
+      Das Vorgangspassiv betont die Handlung selbst, während der Verursacher (Agens) in den Hintergrund tritt oder ungenannt bleibt.
+      Es wird mit dem Hilfsverb "werden" und dem Partizip II des Hauptverbs gebildet.
+      Im Perfekt und Plusquamperfekt lautet die Passivform von "werden" stets "worden" (ohne Ge-): "ist repariert worden", "war repariert worden".
+      Wird der Handelnde genannt, steht bei Personen meist "von" + Dativ, bei Mitteln oder Ursachen "durch" + Akkusativ.
+    examples:
+      - "Die neuen Richtlinien werden vom Vorstand beschlossen."
+      - "Das historische Gebäude wurde vor drei Jahren aufwendig renoviert."
+      - "Alle Dokumente sind bereits digitalisiert worden."
+      - "Durch den Sturm war die Stromleitung beschädigt worden."
+    exercises:
+      - type: multiple_choice
+        question: "Welcher Satz steht im Passiv Perfekt?"
+        options:
+          - "Der Vertrag wird von den Anwälten geprüft worden sein."
+          - "Der Vertrag ist von den Anwälten geprüft worden."
+          - "Der Vertrag wurde von den Anwälten geprüft."
+          - "Der Vertrag hat die Anwälte geprüft."
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Gestern ___ die Testergebnisse endlich veröffentlicht. (Präteritum Passiv)"
+        correctAnswer: "wurden"
+      - type: fill_blank
+        textWithBlank: "Das Problem ist bereits von den Technikern gelöst ___ ."
+        correctAnswer: "worden"
+      - type: free_text
+        prompt: "Formulieren Sie den folgenden Aktivsatz in das Passiv Präteritum um: 'Die Polizei sperrte die Autobahn.'"
+        modelAnswer: "Die Autobahn wurde von der Polizei gesperrt."
+
+  - slug: passiv-modalverben
+    skill: grammar
+    title: "Passiv mit Modalverben im Präsens und Präteritum"
+    prerequisites: [passiv-formen-zeiten]
+    explanation: |
+      Verbindet man das Vorgangspassiv mit einem Modalverb, wird das Modalverb finit konjugiert, während das Hauptverb als Passiv-Infinitiv ("Partizip II + werden") an das Satzende rückt.
+      Im Präsens: "Das Paket muss heute noch abgeschickt werden."
+      Im Präteritum: "Der Termin musste leider verschoben werden."
+      Im Perfekt steht das Ersatzinfinitiv-Gefüge: "hat verschoben werden müssen" (auf B2-Niveau vor allem rezeptiv relevant).
+    examples:
+      - "Die Brandschutzvorschriften müssen strikt eingehalten werden."
+      - "Dieser Fehler konnte trotz sorgfältiger Prüfung nicht vermieden werden."
+      - "Die vertraulichen Unterlagen dürfen keinesfalls kopiert werden."
+      - "Der Bericht sollte bis Freitag fertiggestellt werden."
+    exercises:
+      - type: fill_blank
+        textWithBlank: "Die Rechnung ___ bis Ende des Monats bezahlt werden. (Präsens: müssen)"
+        correctAnswer: "muss"
+      - type: multiple_choice
+        question: "Welcher Satz drückt eine vergangene Notwendigkeit im Passiv aus?"
+        options:
+          - "Das Projekt kann nicht verlängert werden."
+          - "Das Projekt durfte nicht verlängert werden."
+          - "Das Projekt musste sofort gestoppt werden."
+          - "Das Projekt wird sofort gestoppt werden."
+        correctIndex: 2
+      - type: fill_blank
+        textWithBlank: "Aufgrund des Unwetters ___ die Flüge gestrichen werden. (Präteritum: müssen, Plural)"
+        correctAnswer: "mussten"
+      - type: free_text
+        prompt: "Formen Sie folgenden Satz ins Passiv mit Modalverb (Präsens) um: 'Man darf diese Software nicht ohne Lizenz nutzen.'"
+        modelAnswer: "Diese Software darf nicht ohne Lizenz genutzt werden."
+
+  - slug: passiv-alternativen
+    skill: grammar
+    title: "Passiversatzformen und Passivalternativen"
+    prerequisites: [passiv-modalverben]
+    explanation: |
+      In der gehobenen Sprache und in Sachtexten wird das Passiv häufig durch Konstruktionen mit modalem Charakter ersetzt.
+      "sein + zu + Infinitiv" drückt eine Notwendigkeit oder Möglichkeit aus (entspricht "müssen / können + Passiv"): "Das ist zu tun" = "Das muss getan werden".
+      "sich lassen + Infinitiv" drückt eine Möglichkeit aus: "Das Problem lässt sich lösen" = "Das Problem kann gelöst werden".
+      Adjektive auf "-bar", "-abel" oder "-lich" drücken passive Machbarkeit aus ("machbar", "lösbar", "verständlich").
+    examples:
+      - "Die Daten sind bis morgen Abend an das System zu übermitteln."
+      - "Diese Theorie lässt sich anhand experimenteller Daten leicht überprüfen."
+      - "Die Schäden am Fahrzeug sind leider irreparabel."
+      - "Es steht außer Zweifel, dass diese Aufgabe machbar ist."
+    exercises:
+      - type: multiple_choice
+        question: "Was bedeutet: 'Der Text ist bis Montag zu übersetzen'?"
+        options:
+          - "Der Text kann bis Montag übersetzt werden."
+          - "Der Text muss bis Montag übersetzt werden."
+          - "Der Text wird bis Montag übersetzt worden sein."
+          - "Der Text lässt sich bis Montag übersetzen."
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Diese schwierige Frage ___ sich nicht pauschal beantworten. (drückt Möglichkeit aus)"
+        correctAnswer: "lässt"
+      - type: fill_blank
+        textWithBlank: "Die Handschrift ist so undeutlich, dass sie kaum les___ ist. (Suffix für Möglichkeit)"
+        correctAnswer: "bar"
+      - type: free_text
+        prompt: "Ersetzen Sie das Passiv durch 'sich lassen + Infinitiv': 'Die Datei kann nicht geöffnet werden.'"
+        modelAnswer: "Die Datei lässt sich nicht öffnen."
+
+  - slug: konjunktiv-ii-vergangenheit
+    skill: grammar
+    title: "Konjunktiv II der Vergangenheit"
+    prerequisites: []
+    explanation: |
+      Der Konjunktiv II der Vergangenheit drückt irreale Bedingungen, Wünsche, verpasste Gelegenheiten oder Vorwürfe bezüglich vergangener Ereignisse aus.
+      Er wird gebildet mit den Konjunktiv-II-Formen von haben/sein ("hätte" / "wäre") und dem Partizip II des Verbs.
+      Bei Modalverben steht "hätte + Doppelinfinitiv": "Ich hätte das wissen müssen."
+    examples:
+      - "Wenn ich den Zug nicht verpasst hätte, wäre ich pünktlich zur Konferenz erschienen."
+      - "Hätte der Autofahrer gebremst, wäre der Zusammenstoß vermeidbar gewesen."
+      - "Wir hätten die Frist unbedingt einhalten müssen."
+      - "Fast wäre mir dieser peinliche Rechenfehler unterlaufen."
+    exercises:
+      - type: fill_blank
+        textWithBlank: "Wenn du mich rechtzeitig gewarnt hättest, ___ ich nicht in diese Falle getappt. (sein)"
+        correctAnswer: "wäre"
+      - type: multiple_choice
+        question: "Welche Konstruktion drückt ein versäumtes Handeln mit Modalverb korrekt aus?"
+        options:
+          - "Er hatte früher aufstehen gesollt."
+          - "Er hätte früher aufstehen sollen."
+          - "Er würde früher aufstehen gesollt haben."
+          - "Er wäre früher aufgestanden gemusst."
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "An deiner Stelle ___ ich mich damals sofort beschwert. (haben)"
+        correctAnswer: "hätte"
+      - type: free_text
+        prompt: "Bilden Sie einen irrealen Bedingungssatz in der Vergangenheit: 'Er hat nicht gelernt. Er hat die Prüfung nicht bestanden.'"
+        modelAnswer: "Wenn er gelernt hätte, hätte er die Prüfung bestanden."
+
+  - slug: zweiteilige-konnektoren
+    skill: grammar
+    title: "Zweiteilige Konnektoren und Satzverknüpfungen"
+    prerequisites: []
+    explanation: |
+      Zweiteilige Konnektoren (Doppelkonnektoren) verbinden Satzglieder oder Teilsätze und drücken komplexe logische Beziehungen aus.
+      Kopulativ: "sowohl ... als auch" (positiv aufzählend), "weder ... noch" (doppelt verneinend).
+      Adversativ/Einschränkend: "zwar ... aber" (Zugeständnis und Einschränkung), "einerseits ... andererseits" (Kontrast).
+      Disjunktiv: "entweder ... oder" (Alternative).
+      Steigernd: "nicht nur ... sondern auch" (zusätzlicher Aspekt).
+    examples:
+      - "Sie spricht nicht nur fließend Spanisch, sondern auch verhandlungssicheres Russisch."
+      - "Das Angebot ist zwar verlockend, aber die Nebenkosten sind viel zu hoch."
+      - "Wir verfügen zurzeit weder über personelle noch über finanzielle Kapazitäten."
+      - "Einerseits möchte er Karriere machen, andererseits legt er großen Wert auf Freizeit."
+    exercises:
+      - type: multiple_choice
+        question: "Welches Konnektorenpaar schließt beide Alternativen aus?"
+        options:
+          - "sowohl ... als auch"
+          - "entweder ... oder"
+          - "weder ... noch"
+          - "nicht nur ... sondern auch"
+        correctIndex: 2
+      - type: fill_blank
+        textWithBlank: "Das Produkt ist ___ günstig, aber qualitativ lässt es zu wünschen übrig."
+        correctAnswer: "zwar"
+      - type: fill_blank
+        textWithBlank: "Wir müssen uns entscheiden: ___ wir investieren jetzt, oder wir verlieren Marktanteile."
+        correctAnswer: "Entweder"
+      - type: free_text
+        prompt: "Verbinden Sie die Sätze mit 'nicht nur ... sondern auch': 'Das Seminar vermittelt Theorie. Es bietet praktische Übungen.'"
+        modelAnswer: "Das Seminar vermittelt nicht nur Theorie, sondern bietet auch praktische Übungen."
+
+  - slug: nominalisierung-verbalisierung
+    skill: grammar
+    title: "Nominalstil und Verbalstil"
+    prerequisites: [zweiteilige-konnektoren]
+    explanation: |
+      Im gehobenen Deutsch (Wissenschaft, Verwaltung, Berichte) dominiert der Nominalstil.
+      Hierbei werden Nebensätze (Verbalstil) durch Präpositional-Nominal-Gruppen ersetzt.
+      Typische Präpositionen des Nominalstils regieren meist den Genitiv oder Dativ: "wegen / aufgrund" (kausal = weil), "trotz / ungeachtet" (konzessiv = obwohl), "bei / mit" (konditional = wenn), "während" (temporal = während), "durch" (modal = indem).
+    examples:
+      - "Verbalstil: Weil die Nachfrage unerwartet gestiegen ist, erhöhen wir die Produktion."
+      - "Nominalstil: Aufgrund des unerwarteten Nachfrageanstiegs erhöhen wir die Produktion."
+      - "Verbalstil: Obwohl das Wetter extrem schlecht war, fand das Open-Air-Konzert statt."
+      - "Nominalstil: Trotz des extrem schlechten Wetters fand das Open-Air-Konzert statt."
+    exercises:
+      - type: fill_blank
+        textWithBlank: "___ des starken Regens musste das Fußballspiel abgesagt werden. (Kausalpräposition mit Genitiv)"
+        correctAnswer: "Wegen"
+        acceptableVariants: ["Aufgrund", "Infolge"]
+      - type: multiple_choice
+        question: "Welche Nominalisierung entspricht: 'Indem man regelmäßig trainiert, beugt man Verletzungen vor'?"
+        options:
+          - "Trotz regelmäßigen Trainings beugt man Verletzungen vor."
+          - "Durch regelmäßiges Training beugt man Verletzungen vor."
+          - "Während des regelmäßigen Trainings beugt man Verletzungen vor."
+          - "Wegen regelmäßigen Trainings beugt man Verletzungen vor."
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Bei ___ des Vertrags sind alle Klauseln genau zu prüfen. (Unterzeichnung / unterzeichnen)"
+        correctAnswer: "Unterzeichnung"
+      - type: free_text
+        prompt: "Nominalisieren Sie: 'Weil die Temperaturen stetig sinken, friert der See zu.'"
+        modelAnswer: "Aufgrund des stetigen Sinkens der Temperaturen friert der See zu."
+
+  - slug: nomen-verb-verbindungen-basis
+    skill: grammar
+    title: "Nomen-Verb-Verbindungen (Funktionsverbgefüge)"
+    prerequisites: []
+    explanation: |
+      Nomen-Verb-Verbindungen (Funktionsverbgefüge) bestehen aus einem Substantiv und einem weitgehend verblassten Verb (Funktionsverb).
+      Sie dienen im B2-Bereich der stilistischen Nuancierung und Präzisierung.
+      Man unterscheidet feste Bedeutungen: "eine Entscheidung treffen" (= entscheiden), "zur Verfügung stehen" (= verfügbar sein), "in Betracht ziehen" (= erwägen), "in Kraft treten" (= gültig werden), "Kritik üben an" (= kritisieren).
+    examples:
+      - "Die Geschäftsleitung muss baldmöglichst eine endgültige Entscheidung treffen."
+      - "Dieses Thema steht heute leider nicht zur Diskussion."
+      - "Wir sollten alle Optionen sorgfältig in Betracht ziehen."
+      - "Das neue Gesetz wird voraussichtlich am 1. Januar in Kraft treten."
+    exercises:
+      - type: fill_blank
+        textWithBlank: "Die Wissenschaftlerin übte scharfe Kritik ___ den Methoden der Studie. (Präposition)"
+        correctAnswer: "an"
+      - type: multiple_choice
+        question: "Welches Verb komplettiert: 'etwas in Zweifel ___' (bezweifeln)?"
+        options: ["stellen", "ziehen", "bringen", "nehmen"]
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Für Rückfragen stehe ich Ihnen jederzeit gerne zur ___ ."
+        correctAnswer: "Verfügung"
+      - type: flashcard
+        front: "Abschied nehmen von (+ Dat.)"
+        back: "sich verabschieden von (+ Dat.)"
+
+  - slug: partizipialattribute
+    skill: grammar
+    title: "Erweiterte Partizipialattribute (Partizip I und II)"
+    prerequisites: [passiv-formen-zeiten]
+    explanation: |
+      Partizipien können wie Adjektive vor Nomen stehen und durch zusätzliche Angaben erweitert werden.
+      Partizip I (+ -d-) drückt eine aktive, gleichzeitige Handlung aus: "die stetig steigenden Kosten".
+      Partizip II drückt bei transitiven Verben eine passive oder vollendete Handlung aus: "das vor kurzem verabschiedete Gesetz".
+      Das Gerundiv ("zu + Partizip I") hat passiv-modale Bedeutung ("müssen/können getan werden"): "die unverzüglich zu ergreifenden Maßnahmen".
+    examples:
+      - "Die stetig wachsende Bevölkerung stellt Städte vor gewaltige Herausforderungen."
+      - "Der von unabhängigen Experten verfasste Gutachtenbericht liegt nun vor."
+      - "Die bis Freitag einzureichenden Anträge werden vorrangig bearbeitet."
+      - "Alle am Projekt beteiligten Mitarbeiter wurden informiert."
+    exercises:
+      - type: multiple_choice
+        question: "Was bedeutet: 'das zu renovierende Gebäude'?"
+        options:
+          - "das Gebäude, das renoviert worden ist"
+          - "das Gebäude, das renoviert werden muss"
+          - "das Gebäude, das gerade renoviert wird"
+          - "das Gebäude, das renovieren wird"
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Die Zahl der im Ausland studier___ Personen nimmt kontinuierlich zu. (Partizip I)"
+        correctAnswer: "enden"
+      - type: fill_blank
+        textWithBlank: "Das gestern unterschrieb___ Dokument liegt im Tresor. (Partizip II, neutral, Akkusativ/Nominativ)"
+        correctAnswer: "ene"
+      - type: free_text
+        prompt: "Verwandeln Sie das Relativsatzgefüge in ein erweitertes Partizipialattribut: 'Die Probleme, die von den Experten analysiert wurden.'"
+        modelAnswer: "Die von den Experten analysierten Probleme."
+
+  - slug: relativsaetze-praepositionen-wer-was
+    skill: grammar
+    title: "Relativsätze mit Präpositionen und verallgemeinernde Relativpronomen"
+    prerequisites: []
+    explanation: |
+      Relativsätze werden im B2-Niveau häufig durch Präpositionen eingeleitet, die das Genus und den Kasus des Relativpronomens bestimmen: "das Thema, über das wir sprechen", "der Kollege, mit dessen Hilfe ich fertig wurde".
+      Bezieht sich der Relativsatz auf einen ganzen Sachverhalt oder ein Indefinitpronomen (alles, nichts, vieles, etwas), nutzt man "was" oder Pronominaladverbien ("worüber", "womit"): "Er kam zu spät, worüber sich alle ärgerten."
+      Verallgemeinernde Relativsätze beginnen mit "wer" oder "wen/wem".
+    examples:
+      - "Das ist der wissenschaftliche Ansatz, auf den sich die Forscher beziehen."
+      - "Sie hat die Prüfung mit Auszeichnung bestanden, was ihre Eltern sehr stolz machte."
+      - "Wer fleißig trainiert, wird früher oder später Erfolge sehen."
+      - "Hier ist der Künstler, dessen Werke international prämiert wurden."
+    exercises:
+      - type: fill_blank
+        textWithBlank: "Der Vertrag, ___ Unterzeichnung wir lange gewartet haben, ist nun gültig. (Präposition 'auf' + Relativpronomen Akkusativ)"
+        correctAnswer: "auf dessen"
+      - type: multiple_choice
+        question: "Welches Pronomen passt: 'Das ist alles, ___ ich zu diesem Thema sagen kann'?"
+        options: ["das", "was", "welches", "worüber"]
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Er bot mir seine Unterstützung an, ___ ich sehr dankbar war. (Pronominaladverb mit 'für')"
+        correctAnswer: "wofür"
+      - type: free_text
+        prompt: "Bilden Sie einen Relativsatz mit Präposition: 'Die Konferenz. Wir nehmen an der Konferenz teil.'"
+        modelAnswer: "Die Konferenz, an der wir teilnehmen."
+
+  - slug: umwelt-nachhaltigkeit-vocab
+    skill: vocabulary
+    title: "Wortschatz: Umwelt, Klimaschutz und Nachhaltigkeit"
+    prerequisites: []
+    explanation: |
+      Das Themenfeld Ökologie erfordert differenzierte Nomen, Verben und feste Kollokationen.
+      Zentrale Begriffe sind: die Nachhaltigkeit, der CO2-Ausstoß, erneuerbare Energien, die Ressourcenschonung, der ökologische Fußabdruck, das Artensterben.
+      Wichtige Verben: reduzieren, schonen, vergeuden, drosseln, kompensieren, recyceln, umrüsten auf.
+    examples:
+      - "Die Reduktion der Treibhausgasemissionen erfordert ein Umdenken in Industrie und Verkehr."
+      - "Verbraucher können durch bewussten Konsum ihren ökologischen Fußabdruck minimieren."
+      - "Der Ausbau erneuerbarer Energien wie Wind- und Solarkraft schreitet zu langsam voran."
+      - "Die Bundesregierung plant strengere Grenzwerte für den Schadstoffausstoß."
+    exercises:
+      - type: flashcard
+        front: "der ökologische Fußabdruck"
+        back: "ecological footprint (Messgröße für den Ressourcenverbrauch)"
+      - type: multiple_choice
+        question: "Welches Wort bedeutet 'sparsam und vorausschauend mit Rohstoffen umgehen'?"
+        options:
+          - "Ressourcen verschwenden"
+          - "Ressourcen schonen"
+          - "Ressourcen ausbeuten"
+          - "Ressourcen verbrauchen"
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Viele Experten fordern die drastische Verringerung von Treibhaus___."
+        correctAnswer: "gasen"
+      - type: free_text
+        prompt: "Nennen Sie zwei Maßnahmen zur Förderung der Nachhaltigkeit in Großstädten."
+        modelAnswer: "Der Ausbau des öffentlichen Nahverkehrs und die Schaffung weiterer Grünflächen."
+
+  - slug: digitalisierung-medien-vocab
+    skill: vocabulary
+    title: "Wortschatz: Digitalisierung, KI und Medienkompetenz"
+    prerequisites: []
+    explanation: |
+      Der Diskurs über Digitalisierung umfasst Aspekte der Informationssicherheit, Automatisierung und sozialen Medien.
+      Kernbegriffe: der Datenschutz, die Datensicherheit, künstliche Intelligenz (KI), der Algorithmus, die Cyberkriminalität, die Medienkompetenz, der digitale Wandel.
+      Kollokationen: Daten erfassen/auswerten, ein System hacken/absichern, Informationen verifizieren, Inhalte ins Netz stellen.
+    examples:
+      - "Der Missbrauch sensibler Nutzerdaten stellt eine ernsthafte Bedrohung der Privatsphäre dar."
+      - "Künstliche Intelligenz verändert die Arbeitswelt in bisher ungekanntem Tempo."
+      - "In Zeiten von Fake News ist die Vermittlung fundierter Medienkompetenz an Schulen unverzichtbar."
+      - "Unternehmen müssen massive Investitionen in die IT-Sicherheit tätigen."
+    exercises:
+      - type: multiple_choice
+        question: "Welches Substantiv bezeichnet die Fähigkeit, kritisch mit Medien und Nachrichten umzugehen?"
+        options:
+          - "Medienlandschaft"
+          - "Medienkompetenz"
+          - "Medienkonsum"
+          - "Medienkonzern"
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Die Europäische Union hat strenge Vorschriften zum Schutz persönlicher ___ erlassen."
+        correctAnswer: "Daten"
+      - type: flashcard
+        front: "die Datenverschlüsselung"
+        back: "data encryption"
+      - type: free_text
+        prompt: "Erklären Sie kurz auf Deutsch, welches Risiko der Einsatz von künstlicher Intelligenz am Arbeitsplatz bergen kann."
+        modelAnswer: "Ein Risiko besteht darin, dass Arbeitsplätze durch Automatisierung wegfallen könnten."
+
+  - slug: arbeitswelt-karriere-vocab
+    skill: vocabulary
+    title: "Wortschatz: Arbeitswelt, Berufsleben und Karriere"
+    prerequisites: []
+    explanation: |
+      Auf B2-Niveau müssen differenzierte arbeitsrechtliche, organisatorische und karrierebezogene Sachverhalte erörtert werden können.
+      Kernvokabular: der Fachkräftemangel, die Arbeitsbedingungen, die Gleitzeit, die Vereinbarkeit von Familie und Beruf, die Weiterbildung, die Festanstellung, die Kündigungsfrist.
+      Typische Verben: eine Stelle ausschreiben/besetzen, kündigen, ein Arbeitsverhältnis auflösen, verhandeln.
+    examples:
+      - "Viele Branchen leiden unter einem akuten Fachkräftemangel, der das Wirtschaftswachstum bremst."
+      - "Flexible Arbeitszeiten und Homeoffice fördern die Vereinbarkeit von Beruf und Privatleben."
+      - "Vor dem Antritt einer neuen Position sollte der Arbeitsvertrag eingehend geprüft werden."
+      - "Regelmäßige Weiterbildungsmaßnahmen steigern die Chancen auf dem Arbeitsmarkt."
+    exercises:
+      - type: flashcard
+        front: "die Vereinbarkeit von Familie und Beruf"
+        back: "work-life / family-career balance"
+      - type: fill_blank
+        textWithBlank: "Das Unternehmen hat zwei neue Stellen im Bereich Marketing aus___ . (ausgeschrieben / besetzen)"
+        correctAnswer: "geschrieben"
+      - type: multiple_choice
+        question: "Was bedeutet 'Gleitzeit'?"
+        options:
+          - "Feste Arbeitszeiten von 9 bis 17 Uhr ohne Ausnahme."
+          - "Ein Arbeitszeitmodell, bei dem Beginn und Ende der Arbeitszeit flexibel gewählt werden können."
+          - "Ein unbezahltes Praktikum nach der Universitätsausbildung."
+          - "Die Zeitspanne vor einer Kündigung."
+        correctIndex: 1
+      - type: free_text
+        prompt: "Nennen Sie zwei Faktoren, die zu einer hohen Arbeitszufriedenheit beitragen."
+        modelAnswer: "Ein faires Gehalt und ein angenehmes Betriebsklima tragen maßgeblich zur Arbeitszufriedenheit bei."
+
+  - slug: gesellschaft-demografie-vocab
+    skill: vocabulary
+    title: "Wortschatz: Gesellschaftlicher Wandel und Demografie"
+    prerequisites: []
+    explanation: |
+      Gesellschaftliche Diskussionen thematisieren Bevölkerungsentwicklung, soziale Sicherungssysteme und gesellschaftlichen Zusammenhalt.
+      Fachbegriffe: der demografische Wandel, die Überalterung der Gesellschaft, die Geburtenrate, der Generationenvertrag, das Ehrenamt, die soziale Ungleichheit, die Chancengleichheit.
+      Kollokationen: ehrenamtliche Arbeit leisten, gesellschaftlichen Zusammenhalt stärken, die Altersvorsorge reformieren.
+    examples:
+      - "Der demografische Wandel stellt die Rentenkassen und das Gesundheitssystem vor immense Probleme."
+      - "Millionen von Bürgern engagieren sich in ihrer Freizeit ehrenamtlich für das Gemeinwohl."
+      - "Zur Sicherung des Wohlstands muss die Vereinbarkeit von Pflege und Erwerbstätigkeit verbessert werden."
+      - "Chancengleichheit im Bildungssystem ist eine Grundvoraussetzung für sozialen Aufstieg."
+    exercises:
+      - type: fill_blank
+        textWithBlank: "Freiwillige Helfer engagieren sich häufig in einem ___ . (unbezahlte gemeinnützige Tätigkeit)"
+        correctAnswer: "Ehrenamt"
+      - type: multiple_choice
+        question: "Was versteht man unter dem 'Generationenvertrag'?"
+        options:
+          - "Einen Kaufvertrag zwischen Großeltern und Enkeln."
+          - "Das Prinzip, dass die erwerbstätige Generation die Renten der älteren Generation finanziert."
+          - "Eine Vereinbarung über gemeinsame Wohnprojekte verschiedener Altersgruppen."
+          - "Ein Ausbildungsabkommen für Jugendliche."
+        correctIndex: 1
+      - type: flashcard
+        front: "die Chancengleichheit"
+        back: "equality of opportunity"
+      - type: free_text
+        prompt: "Formulieren Sie einen Satz über die Folgen der niedrigen Geburtenrate in Industrieländern."
+        modelAnswer: "Eine niedrige Geburtenrate führt langfristig zu einem Mangel an jungen Erwerbstätigen."
+
+  - slug: sachtexte-global-detailverstehen
+    skill: reading
+    title: "Leseverstehen: Sachtexte global und selektiv erschließen"
+    prerequisites: [passiv-alternativen, partizipialattribute]
+    explanation: |
+      Bei anspruchsvollen Sachtexten geht es darum, zwischen Kernaussagen (Globalverstehen), Detailinformationen und impliziten Wertungen zu differenzieren.
+      Achten Sie auf Gliederungssignale (z. B. "erstens", "hingegen", "zusammenfassend") und Schlüsselbegriffe im Themenumfeld.
+      Lassen Sie sich nicht von unbekannten Fachwörtern verunsichern; leiten Sie deren Bedeutung aus dem Kontext oder der Wortbildung ab.
+    examples:
+      - "Textauszug: 'Obwohl die Pilotstudie methodische Schwächen aufweist, liefert sie wertvolle Hinweise auf das geänderte Nutzerverhalten.'"
+      - "Frage zum Text: Welche Einschränkung nennt der Autor hinsichtlich der Aussagekraft der Untersuchung?"
+    exercises:
+      - type: multiple_choice
+        question: "Text: 'Entgegen früheren Annahmen hat die Digitalisierung nicht zum papierlosen Büro geführt. Vielmehr stieg der Papierverbrauch in vielen Verwaltungen zunächst an, da Entwürfe mehrfach ausgedruckt wurden.' - Was trifft laut Text zu?"
+        options:
+          - "Das papierlose Büro hat sich sofort überall durchgesetzt."
+          - "Die Digitalisierung führte anfangs stellenweise sogar zu höherem Papierverbrauch."
+          - "Niemand druckt mehr Entwürfe auf Papier aus."
+          - "Frühere Annahmen zum Papierverbrauch erwiesen sich als völlig korrekt."
+        correctIndex: 1
+      - type: free_text
+        prompt: "Text: 'Während Kritiker vor dem Verlust von Arbeitsplätzen durch Automatisierung warnen, betonen Befürworter die Entstehung völlig neuer Berufsfelder.' - Welche zwei gegensätzlichen Positionen werden genannt?"
+        modelAnswer: "Die Furcht vor dem Verlust bestehender Arbeitsplätze steht der Hoffnung auf neue Berufsfelder gegenüber."
+
+  - slug: kommentare-standpunkte-erfassen
+    skill: reading
+    title: "Leseverstehen: Standpunkte und Ironie in Kommentaren erkennen"
+    prerequisites: [zweiteilige-konnektoren]
+    explanation: |
+      Leitartikel, Glossen und Essays enthalten oft subjektive Wertungen, rhetorische Fragen und sprachliche Nuancen wie Ironie oder Distanzierung.
+      Achten Sie auf Modalpartikeln ("ja", "doch", "wohl"), Konjunktiv I zur Redewiedergabe ("sei", "habe behauptet") und wertende Adjektive ("fragwürdig", "scheinbar", "angeblich").
+    examples:
+      - "Text: 'Dass diese halbherzigen Maßnahmen die Klimakatastrophe abwenden sollen, ist mehr als zweifelhaft.'"
+      - "Text: 'Der Minister feiert die Reform als Meilenstein – ein Blick auf die Zahlen offenbart jedoch ein Desaster.'"
+    exercises:
+      - type: multiple_choice
+        question: "Text: 'Angeblich garantiert die neue App absolute Sicherheit vor Hackerangriffen. Doch schon wenige Stunden nach Veröffentlichung meldeten Sicherheitsexperten bedenkliche Schwachstellen.' - Welche Haltung hat der Autor?"
+        options:
+          - "Er ist von der Zuverlässigkeit der App voll überzeugt."
+          - "Er bezweifelt die Versprechen des Herstellers massiv."
+          - "Er empfiehlt den Kauf der Software uneingeschränkt."
+          - "Er ignoriert die Berichte der Sicherheitsexperten."
+        correctIndex: 1
+      - type: free_text
+        prompt: "Erklären Sie die Bedeutung des Wortes 'scheinbar' im Kontrast zu 'anscheinend' in einem journalistischen Text."
+        modelAnswer: "'Scheinbar' drückt aus, dass etwas nur so aussieht, in Wirklichkeit aber nicht so ist. 'Anscheinend' bedeutet, dass eine Vermutung wahrscheinlich zutrifft."
+
+  - slug: fachvortraege-podcasts-verstehen
+    skill: listening
+    title: "Hörverstehen: Fachvorträge und Diskussionsbeiträge"
+    prerequisites: [passiv-formen-zeiten, nominalisierung-verbalisierung]
+    explanation: |
+      Das Verstehen gesprochener Sprache auf B2 erfordert die Erfassung komplexer Gedankengänge bei normaler Sprechgeschwindigkeit.
+      Konzentrieren Sie sich auf Einleitungsphrasen ("Ich möchte nun auf den nächsten Punkt eingehen"), Hervorhebungen ("Besonders hervorzuheben ist...") und Schlussfolgerungen ("Daraus ergibt sich folgendes Fazit").
+      Filtern Sie störende Füllwörter mental heraus und notieren Sie beim Hören prägnante Stichwörter.
+    examples:
+      - "Hörtext: 'Zusammenfassend lässt sich konstatieren, dass die Investition in Weiterbildung langfristig zu höherer Produktivität führt.'"
+      - "Hörtext: 'Bevor wir zur Fragerunde übergehen, möchte ich noch kurz die zentralen Thesen meines Vortrags rekapitulieren.'"
+    exercises:
+      - type: multiple_choice
+        question: "Sprecher: 'Man darf nicht übersehen, dass die Kosten für Solaranlagen zwar drastisch gesunken sind, die Speicherkapazitäten jedoch nach wie vor einen Engpass darstellen.' - Worin besteht das verbleibende Hauptproblem?"
+        options:
+          - "In den extrem hohen Anschaffungskosten für Solarmodule."
+          - "In der mangelnden gesellschaftlichen Akzeptanz von Solarenergie."
+          - "In den unzureichenden Möglichkeiten zur Speicherung des erzeugten Stroms."
+          - "Im Mangel an ausgebildeten Handwerkern."
+        correctIndex: 2
+      - type: free_text
+        prompt: "Notieren Sie die Kernbotschaft: 'Ohne eine gezielte Modernisierung unserer Schulen werden wir den Anschluss an führende Technologienationen unausweichlich verlieren.'"
+        modelAnswer: "Schulen müssen modernisiert werden, um technologisch konkurrenzfähig zu bleiben."
+
+  - slug: stellungnahme-erlaeuterung-verfassen
+    skill: writing
+    title: "Schriftlicher Ausdruck: Strukturierte Stellungnahme und Erörterung"
+    prerequisites: [zweiteilige-konnektoren, nominalisierung-verbalisierung]
+    explanation: |
+      Eine fundierte Stellungnahme (dialektische Erörterung) gliedert sich klassisch in:
+      1. Einleitung: Thema aufgreifen, Relevanz darlegen, Fragestellung präzisieren.
+      2. Hauptteil: Gegenargumente entkräften (Gegenseite beleuchten) und eigene Argumente steigernd darlegen (These, Begründung, konkretes Beispiel).
+      3. Verknüpfungen: Konnektoren wie "darüber hinaus", "demgegenüber ist einzuwenden", "zwar ... jedoch" nutzen.
+      4. Schlussteil: Abwägendes Fazit ziehen und eventuell einen Kompromiss oder Ausblick formulieren.
+    examples:
+      - "Einleitung: 'In der aktuellen Debatte wird immer wieder die Frage aufgeworfen, ob...'"
+      - "Überleitung: 'Befürworter dieser Maßnahme führen häufig an, dass... Demgegenüber muss jedoch betont werden, dass...'"
+      - "Fazit: 'Unter Abwägung aller Argumente überwiegen meines Erachtens die Vorteile...'"
+    exercises:
+      - type: free_text
+        prompt: "Verfassen Sie eine Einleitung (ca. 30–40 Wörter) zu einer Stellungnahme über das Thema 'Homeoffice zur Pflicht für Unternehmen machen'."
+        modelAnswer: "Die Frage, ob Arbeitgeber gesetzlich dazu verpflichtet werden sollten, Homeoffice anzubieten, wird kontrovers diskutiert. Angesichts der fortschreitenden Digitalisierung und veränderter Lebensentwürfe gewinnt diese Debatte zunehmend an gesellschaftlicher Relevanz."
+      - type: multiple_choice
+        question: "Welche Redewendung eignet sich am besten, um ein Gegenargument einzuführen?"
+        options:
+          - "Ein weiteres Beispiel hierfür ist..."
+          - "Dem steht allerdings das gewichtige Argument gegenüber, dass..."
+          - "Zusammenfassend lässt sich feststellen, dass..."
+          - "Zuerst möchte ich erwähnen, dass..."
+        correctIndex: 1
+
+  - slug: beschwerdebrief-dienstleistung
+    skill: writing
+    title: "Schriftlicher Ausdruck: Formelle Mängelrüge und Beschwerde"
+    prerequisites: [passiv-modalverben, konjunktiv-ii-vergangenheit]
+    explanation: |
+      Ein formeller Beschwerdebrief erfordert einen sachlichen, aber nachdrücklichen Tonfall im gehobenen Register.
+      Wichtige Bestandteile:
+      - Betreffzeile mit Bezugsnummer / Buchungsnummer.
+      - Höfliche, formelle Anrede ("Sehr geehrte Damen und Herren,").
+      - Präzise Schilderung des Soll- und Ist-Zustands anhand konkreter Vorfälle.
+      - Fristsetzung zur Nachbesserung, Rückerstattung oder Stellungnahme.
+      - Ankündigung rechtlicher Schritte bei Fristversäumnis.
+    examples:
+      - "Betreff: Beschwerde über den gebuchten Sprachkurs – Rechnungsnummer 45982"
+      - "Entgegen den Zusagen in Ihrem Prospekt fand der Unterricht nicht mit muttersprachlichen Dozenten statt."
+      - "Ich fordere Sie hiermit auf, mir bis zum 15. November einen Teilbetrag von 30 % zu erstatten."
+    exercises:
+      - type: free_text
+        prompt: "Formulieren Sie einen Schlusssatz mit Fristsetzung für einen Beschwerdebrief an ein Reiseunternehmen."
+        modelAnswer: "Ich erwarte Ihre schriftliche Stellungnahme sowie die Rückerstattung des genannten Betrags bis spätestens zum 24. Oktober."
+      - type: fill_blank
+        textWithBlank: "Sollten Sie die Frist verstreichen lassen, sehe ich mich gezwungen, rechtliche Schritte einzu___ ."
+        correctAnswer: "leiten"
+
+  - slug: pro-kontra-diskussion-fuehren
+    skill: speaking
+    title: "Mündlicher Ausdruck: Argumentieren, Nuancieren und Einwände entkräften"
+    prerequisites: [zweiteilige-konnektoren, nomen-verb-verbindungen-basis]
+    explanation: |
+      In einer Diskussion auf B2-Niveau müssen Sprecher flexibel auf Beiträge reagieren, den eigenen Standpunkt präzisieren und Widerspruch höflich, aber bestimmt formulieren.
+      Redemittel zur Zustimmung mit Einschränkung: "Dem stimme ich im Prinzip zu, allerdings...", "Da haben Sie sicher recht, dennoch sollte man bedenken, dass...".
+      Redemittel zum Widerspruch: "Das sehe ich grundlegend anders.", "Diesem Argument möchte ich mit aller Entschiedenheit widersprechen.", "Erlauben Sie mir dazu eine kritische Anmerkung."
+    examples:
+      - "Ich verstehe Ihren Punkt vollkommen, bezweifle jedoch, dass diese Maßnahme finanzierbar ist."
+      - "Man darf hierbei keinesfalls die sozialen Folgen für einkommensschwache Familien außer Acht lassen."
+      - "Darf ich an dieser Stelle kurz einhaken und ein konkretes Gegenbeispiel anführen?"
+    exercises:
+      - type: multiple_choice
+        question: "Welche Formulierung drückt höflichen, aber entschiedenen Widerspruch aus?"
+        options:
+          - "Das ist mir völlig egal."
+          - "Da bin ich ganz Ihrer Ansicht."
+          - "Da muss ich Ihnen leider widersprechen, denn die Faktenlage zeigt ein anderes Bild."
+          - "Vielleicht haben Sie recht, vielleicht auch nicht."
+        correctIndex: 2
+      - type: free_text
+        prompt: "Reagieren Sie auf folgende Aussage: 'Universitätsbildung sollte für alle kostenpflichtig sein.' Äußern Sie fundierten Widerspruch mit Begründung."
+        modelAnswer: "Dem muss ich vehement widersprechen. Studiengebühren würden die soziale Spaltung vertiefen und Talenten aus benachteiligten Familien den Hochschulzugang versperren."
+
+  - slug: fachpraesentation-strukturieren
+    skill: speaking
+    title: "Mündlicher Ausdruck: Aufbau und Halten eines Fachreferats"
+    prerequisites: [nomen-verb-verbindungen-basis]
+    explanation: |
+      Ein strukturierter Vortrag erfordert eine transparente Gliederung und klare Moderationsphrasen:
+      1. Einleitung: Begrüßung, Thema nennen, Aufbau kurz umreißen ("In meinem heutigen Vortrag widme ich mich der Frage... Dazu gliedert sich mein Beitrag in drei Teile.").
+      2. Hauptteil: Übergänge zwischen Punkten markieren ("Nachdem ich die Ursachen erläutert habe, komme ich nun zu den Lösungsansätzen.").
+      3. Schluss: Zusammenfassung der Kernaussage, Danksagung und Eröffnung der Fragerunde ("Abschließend möchte ich festhalten... Ich danke Ihnen für Ihre Aufmerksamkeit und freue mich auf Ihre Fragen.").
+    examples:
+      - "Der Zweck meiner heutigen Präsentation besteht darin, Ihnen die Vor- und Nachteile von Remote Work näherzubringen."
+      - "Lassen Sie mich diesen Aspekt anhand eines anschaulichen Beispiels verdeutlichen."
+      - "Damit bin ich am Ende meines Referats angelangt. Ich stehe Ihnen nun gerne für Fragen zur Verfügung."
+    exercises:
+      - type: free_text
+        prompt: "Formulieren Sie einen Satz zur Ankündigung des zweiten Punkts Ihrer Präsentation nach Abschluss des ersten Punkts."
+        modelAnswer: "Nachdem wir uns mit den theoretischen Grundlagen befasst haben, wenden wir uns nun den praktischen Anwendungsbeispielen zu."
+      - type: multiple_choice
+        question: "Welcher Ausdruck eignet sich am besten für den Abschluss eines formalen Referats?"
+        options:
+          - "So, das war's eigentlich von meiner Seite."
+          - "Ich bedanke mich ganz herzlich für Ihre Aufmerksamkeit und freue mich auf Ihre Rückfragen."
+          - "Hoffentlich war das nicht zu langweilig für Sie."
+          - "Jetzt können Sie klatschen."
+        correctIndex: 1

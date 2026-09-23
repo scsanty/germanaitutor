@@ -1,61 +1,50 @@
 {
-  "seedVersion": "1",
+  "seedVersion": "2",
   "track": "goethe",
   "level": "A1",
   "milestones": [
     {
       "milestone": {
-        "id": "goethe-a1-start-deutsch-1-grundlagen",
+        "id": "goethe-a1-grammar",
         "track": "goethe",
         "level": "A1",
-        "title": "Start Deutsch 1: Grundlagen",
+        "title": "Grammar",
         "description": null,
         "orderIndex": 0
       },
       "sections": [
         {
           "section": {
-            "id": "goethe-a1-start-deutsch-1-grundlagen-sich-vorstellen",
-            "milestoneId": "goethe-a1-start-deutsch-1-grundlagen",
-            "title": "Sich vorstellen",
+            "id": "goethe-a1-grammar-lessons",
+            "milestoneId": "goethe-a1-grammar",
+            "title": "Lessons",
             "description": null,
             "orderIndex": 0
           },
           "lessonRefs": [
             {
-              "lessonId": "a1-speaking-self-introduction",
+              "lessonId": "a1-goethe-personal-pronouns-verbs",
               "orderIndex": 0
             },
             {
-              "lessonId": "a1-personal-pronouns",
+              "lessonId": "a1-goethe-question-formation",
               "orderIndex": 1
             },
             {
-              "lessonId": "a1-greetings-farewells",
+              "lessonId": "a1-goethe-possessive-determiners",
               "orderIndex": 2
-            }
-          ]
-        },
-        {
-          "section": {
-            "id": "goethe-a1-start-deutsch-1-grundlagen-grammatik",
-            "milestoneId": "goethe-a1-start-deutsch-1-grundlagen",
-            "title": "Grammatik",
-            "description": null,
-            "orderIndex": 1
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "a1-present-tense-regular",
-              "orderIndex": 0
             },
             {
-              "lessonId": "a1-sein-haben",
-              "orderIndex": 1
+              "lessonId": "a1-goethe-imperative-polite-forms",
+              "orderIndex": 3
             },
             {
-              "lessonId": "a1-definite-articles",
-              "orderIndex": 2
+              "lessonId": "a1-goethe-prepositions-local-temporal",
+              "orderIndex": 4
+            },
+            {
+              "lessonId": "a1-goethe-separable-verbs",
+              "orderIndex": 5
             }
           ]
         }
@@ -63,26 +52,34 @@
     },
     {
       "milestone": {
-        "id": "goethe-a1-modul-sprechen",
+        "id": "goethe-a1-vocabulary",
         "track": "goethe",
         "level": "A1",
-        "title": "Modul Sprechen",
+        "title": "Vocabulary",
         "description": null,
         "orderIndex": 1
       },
       "sections": [
         {
           "section": {
-            "id": "goethe-a1-modul-sprechen-bildbeschreibung",
-            "milestoneId": "goethe-a1-modul-sprechen",
-            "title": "Bildbeschreibung",
+            "id": "goethe-a1-vocabulary-lessons",
+            "milestoneId": "goethe-a1-vocabulary",
+            "title": "Lessons",
             "description": null,
             "orderIndex": 0
           },
           "lessonRefs": [
             {
-              "lessonId": "goethe-a1-picture-description-format",
+              "lessonId": "a1-goethe-vocab-family-friends",
               "orderIndex": 0
+            },
+            {
+              "lessonId": "a1-goethe-vocab-leisure-hobbies",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "a1-goethe-vocab-food-restaurants",
+              "orderIndex": 2
             }
           ]
         }
@@ -90,56 +87,33 @@
     },
     {
       "milestone": {
-        "id": "goethe-a1-alltag-familie",
+        "id": "goethe-a1-reading",
         "track": "goethe",
         "level": "A1",
-        "title": "Alltag & Familie",
+        "title": "Reading",
         "description": null,
         "orderIndex": 2
       },
       "sections": [
         {
           "section": {
-            "id": "goethe-a1-alltag-familie-zahlen-familie",
-            "milestoneId": "goethe-a1-alltag-familie",
-            "title": "Zahlen & Familie",
+            "id": "goethe-a1-reading-lessons",
+            "milestoneId": "goethe-a1-reading",
+            "title": "Lessons",
             "description": null,
             "orderIndex": 0
           },
           "lessonRefs": [
             {
-              "lessonId": "a1-numbers-1-100",
+              "lessonId": "a1-goethe-reading-teil1-personal-messages",
               "orderIndex": 0
             },
             {
-              "lessonId": "a1-family-members",
+              "lessonId": "a1-goethe-reading-teil2-information-matching",
               "orderIndex": 1
             },
             {
-              "lessonId": "a1-listening-numbers-times",
-              "orderIndex": 2
-            }
-          ]
-        },
-        {
-          "section": {
-            "id": "goethe-a1-alltag-familie-lesen-hoeren",
-            "milestoneId": "goethe-a1-alltag-familie",
-            "title": "Lesen & Hören",
-            "description": null,
-            "orderIndex": 1
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "a1-reading-simple-signs",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "a1-reading-short-messages",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "a1-listening-simple-instructions",
+              "lessonId": "a1-goethe-reading-teil3-public-signs-notices",
               "orderIndex": 2
             }
           ]
@@ -148,34 +122,92 @@
     },
     {
       "milestone": {
-        "id": "goethe-a1-schreiben-sprechen",
+        "id": "goethe-a1-listening",
         "track": "goethe",
         "level": "A1",
-        "title": "Schreiben & Sprechen",
+        "title": "Listening",
         "description": null,
         "orderIndex": 3
       },
       "sections": [
         {
           "section": {
-            "id": "goethe-a1-schreiben-sprechen-praxis",
-            "milestoneId": "goethe-a1-schreiben-sprechen",
-            "title": "Praxis",
+            "id": "goethe-a1-listening-lessons",
+            "milestoneId": "goethe-a1-listening",
+            "title": "Lessons",
             "description": null,
             "orderIndex": 0
           },
           "lessonRefs": [
             {
-              "lessonId": "a1-writing-simple-forms",
+              "lessonId": "a1-goethe-listening-teil1-dialogues-with-images",
               "orderIndex": 0
             },
             {
-              "lessonId": "a1-writing-short-postcard",
+              "lessonId": "a1-goethe-listening-teil2-announcements",
               "orderIndex": 1
             },
             {
-              "lessonId": "a1-speaking-asking-directions",
+              "lessonId": "a1-goethe-listening-teil3-phone-messages",
               "orderIndex": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "goethe-a1-writing",
+        "track": "goethe",
+        "level": "A1",
+        "title": "Writing",
+        "description": null,
+        "orderIndex": 4
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "goethe-a1-writing-lessons",
+            "milestoneId": "goethe-a1-writing",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "a1-goethe-writing-teil1-form-completion",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "a1-goethe-writing-teil2-short-letter",
+              "orderIndex": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "goethe-a1-speaking",
+        "track": "goethe",
+        "level": "A1",
+        "title": "Speaking",
+        "description": null,
+        "orderIndex": 5
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "goethe-a1-speaking-lessons",
+            "milestoneId": "goethe-a1-speaking",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "a1-goethe-speaking-teil1-teil2-teil3",
+              "orderIndex": 0
             }
           ]
         }
@@ -184,842 +216,1081 @@
   ],
   "lessons": [
     {
-      "id": "a1-speaking-self-introduction",
-      "sourceLevel": "A1",
-      "skill": "speaking",
-      "title": "Introducing yourself",
-      "explanation": "Introducing yourself in German typically includes your name, where you're from, and maybe your age, using simple present-tense sentences: 'Ich heiße...', 'Ich komme aus...', 'Ich bin ... Jahre alt.'",
-      "examples": [
-        "Ich heiße Lisa.",
-        "Ich komme aus Spanien.",
-        "Ich bin 25 Jahre alt.",
-        "Ich wohne in München."
-      ]
-    },
-    {
-      "id": "a1-personal-pronouns",
-      "sourceLevel": "A1",
-      "skill": "grammar",
-      "title": "Personal pronouns",
-      "explanation": "German personal pronouns change form depending on who is speaking or being spoken about. The subject pronouns are: ich (I), du (you, informal singular), er/sie/es (he/she/it), wir (we), ihr (you, informal plural), sie (they), Sie (you, formal). Unlike English, German pronoun choice for \"you\" depends on formality and number.",
-      "examples": [
-        "Ich heiße Anna.",
-        "Du bist mein Freund.",
-        "Er wohnt in Berlin.",
-        "Wir lernen Deutsch."
-      ]
-    },
-    {
-      "id": "a1-greetings-farewells",
-      "sourceLevel": "A1",
-      "skill": "vocabulary",
-      "title": "Greetings and farewells",
-      "explanation": "Common German greetings vary by time of day and formality. \"Hallo\" and \"Guten Tag\" are general greetings; \"Guten Morgen\" is for mornings, \"Guten Abend\" for evenings. \"Tschüss\" is informal for goodbye, \"Auf Wiedersehen\" is formal.",
-      "examples": [
-        "Guten Morgen!",
-        "Hallo, wie geht's?",
-        "Auf Wiedersehen!",
-        "Tschüss, bis bald!"
-      ]
-    },
-    {
-      "id": "a1-present-tense-regular",
-      "sourceLevel": "A1",
-      "skill": "grammar",
-      "title": "Present tense of regular verbs",
-      "explanation": "Regular German verbs in the present tense add endings to the verb stem based on the subject: -e (ich), -st (du), -t (er/sie/es), -en (wir), -t (ihr), -en (sie/Sie). E.g., lernen → ich lerne, du lernst, er lernt.",
-      "examples": [
-        "Ich lerne Deutsch.",
-        "Du lernst schnell.",
-        "Wir lernen zusammen.",
-        "Sie lernen Englisch."
-      ]
-    },
-    {
-      "id": "a1-sein-haben",
-      "sourceLevel": "A1",
-      "skill": "grammar",
-      "title": "The verbs \"sein\" and \"haben\"",
-      "explanation": "sein (to be) and haben (to have) are essential irregular verbs. sein: ich bin, du bist, er ist, wir sind, ihr seid, sie sind. haben: ich habe, du hast, er hat, wir haben, ihr habt, sie haben.",
-      "examples": [
-        "Ich bin müde.",
-        "Du hast einen Hund.",
-        "Wir sind Freunde.",
-        "Sie haben Zeit."
-      ]
-    },
-    {
-      "id": "a1-definite-articles",
-      "sourceLevel": "A1",
-      "skill": "grammar",
-      "title": "Definite articles (der, die, das)",
-      "explanation": "German nouns have three genders, each with its own definite article: der (masculine), die (feminine), das (neuter). The plural article is always \"die\". Learning the gender with each noun is essential.",
-      "examples": [
-        "der Mann",
-        "die Frau",
-        "das Kind",
-        "die Kinder"
-      ]
-    },
-    {
-      "id": "goethe-a1-picture-description-format",
-      "sourceLevel": "A1",
-      "skill": "speaking",
-      "title": "Goethe picture description format",
-      "explanation": "In the Goethe-Institut Start Deutsch 1 speaking exam, candidates describe a picture using simple sentences about what they see (people, objects, actions), typically starting with \"Ich sehe...\" or \"Auf dem Bild ist/sind...\".",
-      "examples": [
-        "Ich sehe eine Familie im Park.",
-        "Auf dem Bild ist ein Mann. Er liest eine Zeitung.",
-        "Es gibt einen Hund und eine Katze."
-      ]
-    },
-    {
-      "id": "a1-numbers-1-100",
-      "sourceLevel": "A1",
-      "skill": "vocabulary",
-      "title": "Numbers 1-100",
-      "explanation": "German numbers 1-12 have unique names; 13-19 add \"-zehn\"; tens end in \"-zig\" (except 30: dreißig); numbers 21-99 combine units and tens in reverse order with \"und\" (e.g., 21 = einundzwanzig).",
-      "examples": [
-        "eins, zwei, drei",
-        "zehn, zwanzig, dreißig",
-        "einundzwanzig (21)",
-        "hundert (100)"
-      ]
-    },
-    {
-      "id": "a1-family-members",
-      "sourceLevel": "A1",
-      "skill": "vocabulary",
-      "title": "Family members",
-      "explanation": "Basic family vocabulary: die Mutter (mother), der Vater (father), die Schwester (sister), der Bruder (brother), die Eltern (parents), die Großmutter/der Großvater (grandmother/grandfather).",
-      "examples": [
-        "Meine Mutter heißt Julia.",
-        "Mein Bruder ist 10 Jahre alt.",
-        "Das sind meine Eltern.",
-        "Meine Großmutter kocht gern."
-      ]
-    },
-    {
-      "id": "a1-listening-numbers-times",
-      "sourceLevel": "A1",
-      "skill": "listening",
-      "title": "Understanding numbers and times spoken aloud",
-      "explanation": "A1 listeners should recognize spoken numbers and times, e.g., distinguishing \"um drei Uhr\" (at three) from \"um dreizehn Uhr\" (13:00), and understanding simple spoken phone numbers or prices.",
-      "examples": [
-        "Es ist zehn Uhr.",
-        "Der Zug fährt um 8:30 Uhr.",
-        "Das kostet fünf Euro.",
-        "Meine Nummer ist null-eins-zwei-drei."
-      ]
-    },
-    {
-      "id": "a1-reading-simple-signs",
-      "sourceLevel": "A1",
-      "skill": "reading",
-      "title": "Understanding simple signs",
-      "explanation": "Understanding common public signs is a key A1 reading skill: e.g., \"Eingang\" (entrance), \"Ausgang\" (exit), \"Geöffnet\" (open), \"Geschlossen\" (closed), \"Kein Zutritt\" (no entry).",
-      "examples": [
-        "Eingang →",
-        "Geöffnet: 9-18 Uhr",
-        "Kein Rauchen",
-        "Ausgang links"
-      ]
-    },
-    {
-      "id": "a1-reading-short-messages",
-      "sourceLevel": "A1",
-      "skill": "reading",
-      "title": "Reading short personal messages",
-      "explanation": "A1 readers should understand short personal messages and notes, recognizing key words like time, place, and names in simple written texts.",
-      "examples": [
-        "Treffen wir uns um 18 Uhr?",
-        "Ich bin im Büro.",
-        "Bis später!",
-        "Kannst du Brot kaufen?"
-      ]
-    },
-    {
-      "id": "a1-listening-simple-instructions",
-      "sourceLevel": "A1",
-      "skill": "listening",
-      "title": "Following simple spoken instructions",
-      "explanation": "A1 listeners should follow short spoken instructions such as directions or classroom commands, e.g., \"Öffnen Sie das Buch\", \"Gehen Sie geradeaus\", \"Warten Sie bitte.\"",
-      "examples": [
-        "Öffnen Sie das Buch auf Seite 5.",
-        "Gehen Sie geradeaus und dann links.",
-        "Warten Sie bitte einen Moment.",
-        "Setzen Sie sich, bitte."
-      ]
-    },
-    {
-      "id": "a1-writing-simple-forms",
-      "sourceLevel": "A1",
-      "skill": "writing",
-      "title": "Filling in simple forms",
-      "explanation": "A1 writers should be able to fill in simple forms with personal information: Name, Adresse, Geburtsdatum (date of birth), Telefonnummer, Nationalität.",
-      "examples": [
-        "Name: Maria Schmidt",
-        "Adresse: Hauptstraße 12",
-        "Geburtsdatum: 03.05.1998",
-        "Nationalität: deutsch"
-      ]
-    },
-    {
-      "id": "a1-writing-short-postcard",
-      "sourceLevel": "A1",
-      "skill": "writing",
-      "title": "Writing a short postcard",
-      "explanation": "A1 writers should write a short, simple postcard or note describing where they are and how they feel, using simple present-tense sentences and basic connectors like \"und\" and \"aber\".",
-      "examples": [
-        "Liebe Anna, ich bin in Berlin. Die Stadt ist schön. Bis bald, Tom.",
-        "Hallo Mama, mir geht es gut. Das Wetter ist sonnig."
-      ]
-    },
-    {
-      "id": "a1-speaking-asking-directions",
-      "sourceLevel": "A1",
-      "skill": "speaking",
-      "title": "Asking for and giving simple directions",
-      "explanation": "A1 speakers should ask for and understand simple directions using phrases like \"Wo ist...?\", \"Wie komme ich zu...?\", and basic direction words: links (left), rechts (right), geradeaus (straight ahead).",
-      "examples": [
-        "Wo ist der Bahnhof?",
-        "Wie komme ich zum Supermarkt?",
-        "Gehen Sie geradeaus und dann rechts.",
-        "Es ist links von der Kirche."
-      ]
-    }
-  ],
-  "overrides": [
-    {
-      "lessonId": "a1-family-members",
+      "id": "a1-goethe-personal-pronouns-verbs",
       "track": "goethe",
-      "explanation": "For the Goethe Start Deutsch 1 speaking module, family vocabulary is often used in the \"ask about a person\" task, so learners should practice both naming family members AND forming simple questions about them, e.g., \"Hast du Geschwister?\"",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "grammar",
+      "title": "Personal Pronouns and Present Tense Foundations",
+      "explanation": "Mastering nominative pronouns and present tense verb inflection is required for all sections of Start Deutsch 1.\nWeak verbs follow standard endings: ich -e, du -st, er/sie/es -t, wir -en, ihr -t, and sie/Sie -en.\nThe formal address Sie (with plural verb ending -en) is used with adult examiners and unfamiliar dialogue partners.\n",
       "examples": [
-        "Hast du Geschwister?",
-        "Ja, ich habe einen Bruder.",
-        "Wie heißt deine Mutter?",
-        "Meine Mutter heißt Eva."
+        "Ich heiße Maria Santos und komme aus Spanien.",
+        "Wie heißen Sie und woher kommen Sie?",
+        "Mein Mann spricht fließend Deutsch.",
+        "Wir wohnen seit zwei Monaten in Berlin."
+      ]
+    },
+    {
+      "id": "a1-goethe-question-formation",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "grammar",
+      "title": "Question Formation for Goethe Sprechen Teil 2",
+      "explanation": "In Goethe Sprechen Teil 2, candidates draw thematic word cards and must formulate and answer questions with a testing partner.\nMaster both W-Fragen (Wer, Wie, Was, Wo, Wann, Warum, Welcher) and Ja/Nein-Fragen.\nRemember that W-Fragen place the verb in second position, while Ja/Nein-Fragen place the verb first.\n",
+      "examples": [
+        "Thema: Essen - Wort: Frühstück -> Was frühstücken Sie am Morgen?",
+        "Thema: Sport - Wort: Fahrrad -> Fahren Sie gerne Fahrrad?",
+        "Thema: Wochenende - Wort: Samstag -> Was machen Sie am Samstagabend?",
+        "Thema: Einkaufen - Wort: Zeitung -> Wo kaufen Sie Ihre Zeitung?"
+      ]
+    },
+    {
+      "id": "a1-goethe-possessive-determiners",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "grammar",
+      "title": "Possessive Determiners: Mein and Dein",
+      "explanation": "Describing family and personal belongings requires using possessive determiners (mein, dein, sein, ihr, unser, Ihr).\nPossessives take endings based on gender and case: mein Vater (masculine nominative), meine Mutter (feminine), mein Kind (neuter), and meine Eltern (plural).\nIn the accusative case, the masculine changes to meinen: 'Ich besuche meinen Bruder'.\n",
+      "examples": [
+        "Das ist mein Vater und das ist meine Mutter.",
+        "Wie alt ist dein Sohn?",
+        "Ich suche meine Tasche.",
+        "Er besucht am Sonntag seinen Freund."
+      ]
+    },
+    {
+      "id": "a1-goethe-imperative-polite-forms",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "grammar",
+      "title": "Imperatives and Requests for Goethe Sprechen Teil 3",
+      "explanation": "In Goethe Sprechen Teil 3, candidates draw picture cards depicting everyday objects and must formulate a polite request, which their partner answers.\nUse polite request formulas such as: 'Können Sie mir bitte... geben/zeigen/bringen?' or the formal imperative: 'Bringen Sie mir bitte...'.\nAlways reply with an appropriate accepting response like 'Ja, gern' or a polite decline.\n",
+      "examples": [
+        "Karte: Glas Wasser -> Können Sie mir bitte ein Glas Wasser geben? - Ja, natürlich!",
+        "Karte: Stift -> Geben Sie mir bitte Ihren Stift! - Bitte schön, hier ist er.",
+        "Karte: Buch -> Machen Sie bitte das Buch auf! - Ja, gerne.",
+        "Karte: Fenster -> Können Sie bitte das Fenster schließen? - Es ist leider kaputt."
+      ]
+    },
+    {
+      "id": "a1-goethe-prepositions-local-temporal",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "grammar",
+      "title": "Core Prepositions for Time and Location",
+      "explanation": "Prepositions indicate temporal and spatial relationships in listening, reading, and writing tasks.\nTemporal prepositions: 'um' for clock times (um 16 Uhr), 'am' for days and parts of the day (am Montag, am Nachmittag), and 'im' for months and seasons (im August).\nLocal prepositions: 'in' + dative for location inside a space (im Restaurant, in der Stadt), and 'nach' for cities and countries without articles (nach Berlin, nach Deutschland).\n",
+      "examples": [
+        "Die Besprechung beginnt um 9:00 Uhr.",
+        "Am Samstag fahre ich nach Hamburg.",
+        "Wir treffen uns im Supermarkt.",
+        "Ich bin im Mai geboren."
+      ]
+    },
+    {
+      "id": "a1-goethe-separable-verbs",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "grammar",
+      "title": "Separable Verbs for Daily Schedules",
+      "explanation": "Separable verbs (trennbare Verben) are common in everyday language and exam tasks.\nIn declarative main clauses, the prefix moves to the end of the sentence.\nIn questions, the conjugated stem appears in first or second position, with the prefix at the end.\nKey verbs include: ankommen (to arrive), abfahren (to depart), mitkommen (to come along), einkaufen (to shop), and mitbringen (to bring with).\n",
+      "examples": [
+        "Der Zug kommt um 17:15 Uhr in München an.",
+        "Wann fährt der Bus nach Frankfurt ab?",
+        "Kommst du heute Abend zur Party mit?",
+        "Ich bringe einen leckeren Salat mit."
+      ]
+    },
+    {
+      "id": "a1-goethe-vocab-family-friends",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "vocabulary",
+      "title": "Family, Relatives, and Friends",
+      "explanation": "Family terms are central to Sprechen Teil 1 (self-introduction) and Teil 2.\nKey vocabulary includes: die Eltern (parents), der Vater (father), die Mutter (mother), die Kinder (children), der Sohn (son), die Tochter (daughter), der Bruder (brother), die Schwester (sister), and die Geschwister (siblings).\nRemember that 'die Geschwister' is a plural noun referring to brothers and sisters collectively.\n",
+      "examples": [
+        "Ich habe zwei Geschwister: einen Bruder und eine Schwester.",
+        "Meine Eltern leben in Polen.",
+        "Mein Sohn ist sechs Jahre alt und geht in die Schule.",
+        "Haben Sie Kinder? - Ja, eine Tochter."
+      ]
+    },
+    {
+      "id": "a1-goethe-vocab-leisure-hobbies",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "vocabulary",
+      "title": "Leisure Time, Hobbies, and Sports",
+      "explanation": "Leisure activities feature prominently in Goethe speaking prompts and written messages.\nCommon leisure activities include: Sport treiben (to do sports), Fußball spielen (to play soccer), Musik hören (to listen to music), ins Kino gehen (to go to the movies), Freunde treffen (to meet friends), and lesen (to read).\nExpress likes using the adverb 'gern' or 'gerne': 'Ich lese gerne Bücher'.\n",
+      "examples": [
+        "In meiner Freizeit spiele ich gerne Tennis.",
+        "Am Wochenende treffe ich meine Freunde im Park.",
+        "Meine Hobbys sind Kochen, Schwimmen und Reisen.",
+        "Gehst du heute Abend mit ins Kino?"
+      ]
+    },
+    {
+      "id": "a1-goethe-vocab-food-restaurants",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "vocabulary",
+      "title": "Meals, Dining Out, and Beverages",
+      "explanation": "Food vocabulary is tested in listening dialogues, reading advertisements, and speaking exchanges.\nKey terms include: das Frühstück (breakfast), das Mittagessen (lunch), das Abendessen (dinner), die Speisekarte (menu), and die Rechnung (bill).\nUseful dining phrases include: 'Ich hätte gern...' (I would like to have...), 'Zahlen bitte!' (Check, please!), and 'Getrennt oder zusammen?' (Separate or together?).\n",
+      "examples": [
+        "Ich esse zum Frühstück meistens Brot mit Käse.",
+        "Herr Ober, die Speisekarte bitte!",
+        "Wir möchten bitte zahlen. Zusammen, bitte.",
+        "Trinken Sie lieber Kaffee oder Tee?"
+      ]
+    },
+    {
+      "id": "a1-goethe-reading-teil1-personal-messages",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "reading",
+      "title": "Goethe Lesen Teil 1: Informal Notes and Emails",
+      "explanation": "Goethe Lesen Teil 1 consists of short informal letters, postcards, or emails followed by true/false (Richtig/Falsch) comprehension questions.\nRead the questions first, then scan the text for matching keywords, dates, names, and underlying meaning.\n",
+      "examples": [
+        "Text: 'Liebe Eva, ich bin wieder gesund und möchte dich am Freitag zum Essen einladen. Passt es dir um 19 Uhr? Sag mir bald Bescheid! Gruß, Clara.' - Aussage: Clara möchte mit Eva essen gehen. (Richtig)",
+        "Text: 'Hallo Markus, mein Auto ist kaputt. Kannst du mich heute um 16 Uhr von der Arbeit abholen? Danke dir! Jan.' - Aussage: Jan kann Markus mit dem Auto abholen. (Falsch)"
+      ]
+    },
+    {
+      "id": "a1-goethe-reading-teil2-information-matching",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "reading",
+      "title": "Goethe Lesen Teil 2: Functional Information Search",
+      "explanation": "In Goethe Lesen Teil 2, you are given an information need and must choose which of two websites or classified ads (Website a or Website b) contains the solution.\nFocus on key terms, product types, and locations to identify the correct match.\n",
+      "examples": [
+        "Situation: Sie möchten am Wochenende in Berlin ein gebrauchtes Fahrrad kaufen. -> Website a: Fahrradgeschäft Meier - Verkauf von neuen und gebrauchten Fahrrädern in Berlin. Website b: Autovermietung Berlin - Günstige Mietwagen. -> Richtige Antwort: Website a.",
+        "Situation: Sie suchen ein Hotelzimmer in den Bergen für Ihren Urlaub. -> Website a: Berg-Resort Alpenblick: Gemütliche Zimmer und Ferienwohnungen. Website b: Stadtmuseum München: Öffnungszeiten und Tickets. -> Richtige Antwort: Website a."
+      ]
+    },
+    {
+      "id": "a1-goethe-reading-teil3-public-signs-notices",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "reading",
+      "title": "Goethe Lesen Teil 3: Notices and Public Signs",
+      "explanation": "Goethe Lesen Teil 3 presents short signs, bulletin board notices, and warning placards found in public spaces (train stations, stores, restaurants, offices).\nRead each sign and evaluate whether a statement about it is Richtig (True) or Falsch (False).\n",
+      "examples": [
+        "Schild: 'Hunde an der Leine führen!' - Aussage: Hunde sind hier verboten. -> Falsch.",
+        "Schild: 'Aufzug defekt. Bitte Treppe benutzen.' - Aussage: Der Lift funktioniert nicht. -> Richtig.",
+        "Schild: 'Heute wegen Krankheit geschlossen.' - Aussage: Das Geschäft ist heute geöffnet. -> Falsch."
+      ]
+    },
+    {
+      "id": "a1-goethe-listening-teil1-dialogues-with-images",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "listening",
+      "title": "Goethe Hören Teil 1: Dialogues with Visual Prompts",
+      "explanation": "Goethe Hören Teil 1 presents short conversational exchanges played twice, each paired with three multiple-choice options (often illustrated with images).\nRead the question before the audio begins and identify the key detail being asked (e.g., location, time, price, or purchased item).\n",
+      "examples": [
+        "Gespräch: 'Entschuldigung, wo ist der Bahnhof? Gehen Sie an der Kreuzung nach links.' - Frage: Wo muss der Mann abbiegen? -> Option a: nach links.",
+        "Gespräch: 'Möchten Sie Apfelsaft oder Orangensaft? - Nein danke, ich möchte nur ein Mineralwasser.' - Frage: Was trinkt die Frau? -> Mineralwasser."
+      ]
+    },
+    {
+      "id": "a1-goethe-listening-teil2-announcements",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "listening",
+      "title": "Goethe Hören Teil 2: Single-Broadcast Announcements",
+      "explanation": "Goethe Hören Teil 2 consists of short public announcements in public spaces (train stations, supermarkets, department stores, airports).\nUnlike Teil 1 and Teil 3, each audio clip in Teil 2 is played only once.\nRead the true/false statement during the preparation pause and listen specifically for key informational cues.\n",
+      "examples": [
+        "Durchsage: 'Achtung Kunden! Unser Restaurant im dritten Stock bietet heute frischen Fisch zum halben Preis an.' - Aussage: Im Restaurant gibt es heute ein Sonderangebot. -> Richtig.",
+        "Durchsage: 'Der Intercity nach Köln fällt heute wegen schlechten Wetters aus.' - Aussage: Der Zug nach Köln fährt pünktlich. -> Falsch."
+      ]
+    },
+    {
+      "id": "a1-goethe-listening-teil3-phone-messages",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "listening",
+      "title": "Goethe Hören Teil 3: Voicemails and Messages",
+      "explanation": "Goethe Hören Teil 3 consists of recorded telephone voicemails, automated answering machine messages, and personal phone messages.\nEach clip is played twice.\nQuestions are multiple choice with three options (a, b, c); focus on noting down phone numbers, appointment changes, dates, and callback requests.\n",
+      "examples": [
+        "Nachricht: 'Hallo Stefan, hier ist Michael. Wir spielen heute nicht draußen Fußball, es regnet. Wir gehen um 18 Uhr schwimmen. Komm bitte zur Schwimmhalle! Tschüss.' - Frage: Wohin gehen die Freunde? -> In die Schwimmhalle.",
+        "Nachricht: 'Guten Tag Frau Meyer, Praxis Dr. Kunz hier. Ihr Rezept ist abholbereit. Unsere Praxis ist heute bis 17 Uhr geöffnet.' - Frage: Bis wann kann Frau Meyer das Rezept abholen? -> Bis 17 Uhr."
+      ]
+    },
+    {
+      "id": "a1-goethe-writing-teil1-form-completion",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "writing",
+      "title": "Goethe Schreiben Teil 1: Extracting Data for Forms",
+      "explanation": "In Goethe Schreiben Teil 1, candidates read a short biographical text about one or two people and must fill in five missing fields on an administrative form.\nAvoid entering unnecessary information; copy names, numbers, dates, and locations exactly as presented in the text.\n",
+      "examples": [
+        "Text: 'Ihre Freundin Maria Rossi möchte in Köln einen Deutschkurs buchen. Sie wohnt in 50667 Köln, Marktstraße 14. Sie möchte den Kurs mit zwei Personen besuchen.' -> Formularfeld 'Anzahl der Personen': 2.",
+        "Text: 'Herr David Evans zahlt die Hotelrechnung mit Kreditkarte.' -> Formularfeld 'Zahlungsweise': Kreditkarte."
+      ]
+    },
+    {
+      "id": "a1-goethe-writing-teil2-short-letter",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "writing",
+      "title": "Goethe Schreiben Teil 2: Composing Short Emails",
+      "explanation": "In Goethe Schreiben Teil 2, candidates compose a short email or letter of approximately 30 words addressing three given prompts.\nFollow this structure:\n1. Anrede: 'Liebe...' (female) / 'Lieber...' (male) for friends; 'Sehr geehrte Damen und Herren,' for formal recipients.\n2. Body: Address all three given prompt points directly in complete sentences.\n3. Grußformel: 'Viele Grüße' (informal) or 'Mit freundlichen Grüßen' (formal), followed by your name.\n",
+      "examples": [
+        "Aufgabe: Schreiben Sie eine E-Mail an Ihre Freundin Julia. 1. Warum schreiben Sie? 2. Wann treffen? 3. Was mitbringen? -> 'Liebe Julia, danke für die Einladung zur Party. Ich komme sehr gerne am Samstag um 19 Uhr. Soll ich einen Kuchen mitbringen? Viele Grüße, Marco.'"
+      ]
+    },
+    {
+      "id": "a1-goethe-speaking-teil1-teil2-teil3",
+      "track": "goethe",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "speaking",
+      "title": "Goethe Sprechen Teile 1, 2 und 3: Comprehensive Exam Format",
+      "explanation": "The Goethe A1 speaking exam has three structured parts:\nTeil 1: Self-introduction based on six prompts (Name, Alter, Land, Wohnort, Beruf, Sprachen, Hobby), followed by spelling your name and reciting a number for the examiner.\nTeil 2: Asking and answering thematic questions using word cards with your testing partner.\nTeil 3: Formulating polite requests based on object cards and responding appropriately to your partner's requests.\n",
+      "examples": [
+        "Teil 1: 'Ich heiße Carlos, bin 30 Jahre alt, komme aus Brasilien und wohne in München. Ich bin Ingenieur, spreche Portugiesisch und lerne Deutsch. Mein Hobby ist Fußball.' - Prüfer: 'Buchstabieren Sie Ihren Nachnamen, bitte!'",
+        "Teil 2: Thema 'Freizeit' + Wort 'Samstag' -> 'Was machen Sie am Samstag?' - 'Ich gehe einkaufen.'",
+        "Teil 3: Karte mit 'Bleistift' -> 'Haben Sie einen Bleistift für mich?' - 'Ja, bitte sehr!'"
       ]
     }
   ],
   "exercises": [
     {
-      "id": "a1-speaking-self-introduction-ft-1",
-      "lessonId": "a1-speaking-self-introduction",
-      "track": null,
-      "type": "free_text",
-      "content": {
-        "prompt": "Introduce yourself in three German sentences (name, origin, age).",
-        "modelAnswer": "Ich heiße Lisa. Ich komme aus Spanien. Ich bin 25 Jahre alt."
-      }
-    },
-    {
-      "id": "a1-speaking-self-introduction-mc-1",
-      "lessonId": "a1-speaking-self-introduction",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "'I come from' in German:",
-        "options": [
-          "Ich komme aus",
-          "Ich heiße",
-          "Ich bin",
-          "Ich wohne"
-        ],
-        "correctIndex": 0
-      }
-    },
-    {
-      "id": "a1-speaking-self-introduction-fb-1",
-      "lessonId": "a1-speaking-self-introduction",
-      "track": null,
+      "id": "a1-goethe-personal-pronouns-verbs__ex0",
+      "lessonId": "a1-goethe-personal-pronouns-verbs",
+      "track": "goethe",
       "type": "fill_blank",
       "content": {
-        "textWithBlank": "Ich ___ Anna.",
-        "correctAnswer": "heiße"
+        "textWithBlank": "Wie ___ Sie? - Ich heiße Johann Schmidt. (heißen)",
+        "correctAnswer": "heißen"
       }
     },
     {
-      "id": "a1-personal-pronouns-mc-1",
-      "lessonId": "a1-personal-pronouns",
-      "track": null,
+      "id": "a1-goethe-personal-pronouns-verbs__ex1",
+      "lessonId": "a1-goethe-personal-pronouns-verbs",
+      "track": "goethe",
       "type": "multiple_choice",
       "content": {
-        "question": "Welches Pronomen passt? '___ bin Student.'",
+        "question": "Welches Verb passt? 'Du ___ sehr gut Deutsch.'",
         "options": [
-          "Ich",
-          "Du",
-          "Er",
-          "Wir"
-        ],
-        "correctIndex": 0
-      }
-    },
-    {
-      "id": "a1-personal-pronouns-fb-1",
-      "lessonId": "a1-personal-pronouns",
-      "track": null,
-      "type": "fill_blank",
-      "content": {
-        "textWithBlank": "___ heißt Peter.",
-        "correctAnswer": "Er"
-      }
-    },
-    {
-      "id": "a1-personal-pronouns-fc-1",
-      "lessonId": "a1-personal-pronouns",
-      "track": null,
-      "type": "flashcard",
-      "content": {
-        "front": "sie (plural)",
-        "back": "they"
-      }
-    },
-    {
-      "id": "a1-personal-pronouns-mc-2",
-      "lessonId": "a1-personal-pronouns",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "Formal 'you' in German is:",
-        "options": [
-          "du",
-          "ihr",
-          "Sie",
-          "er"
-        ],
-        "correctIndex": 2
-      }
-    },
-    {
-      "id": "a1-greetings-farewells-fc-1",
-      "lessonId": "a1-greetings-farewells",
-      "track": null,
-      "type": "flashcard",
-      "content": {
-        "front": "Guten Morgen",
-        "back": "Good morning"
-      }
-    },
-    {
-      "id": "a1-greetings-farewells-fc-2",
-      "lessonId": "a1-greetings-farewells",
-      "track": null,
-      "type": "flashcard",
-      "content": {
-        "front": "Tschüss",
-        "back": "Bye (informal)"
-      }
-    },
-    {
-      "id": "a1-greetings-farewells-mc-1",
-      "lessonId": "a1-greetings-farewells",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "Formal goodbye:",
-        "options": [
-          "Tschüss",
-          "Auf Wiedersehen",
-          "Hallo",
-          "Guten Appetit"
+          "spricht",
+          "sprichst",
+          "sprechen",
+          "spreche"
         ],
         "correctIndex": 1
       }
     },
     {
-      "id": "a1-greetings-farewells-fb-1",
-      "lessonId": "a1-greetings-farewells",
-      "track": null,
+      "id": "a1-goethe-personal-pronouns-verbs__ex2",
+      "lessonId": "a1-goethe-personal-pronouns-verbs",
+      "track": "goethe",
       "type": "fill_blank",
       "content": {
-        "textWithBlank": "___ Abend!",
-        "correctAnswer": "Guten"
+        "textWithBlank": "Er ___ aus Frankreich. (kommen)",
+        "correctAnswer": "kommt"
       }
     },
     {
-      "id": "a1-present-tense-regular-fb-1",
-      "lessonId": "a1-present-tense-regular",
-      "track": null,
-      "type": "fill_blank",
-      "content": {
-        "textWithBlank": "Ich ___ (lernen) Deutsch.",
-        "correctAnswer": "lerne"
-      }
-    },
-    {
-      "id": "a1-present-tense-regular-fb-2",
-      "lessonId": "a1-present-tense-regular",
-      "track": null,
-      "type": "fill_blank",
-      "content": {
-        "textWithBlank": "Du ___ (wohnen) in Berlin.",
-        "correctAnswer": "wohnst"
-      }
-    },
-    {
-      "id": "a1-present-tense-regular-mc-1",
-      "lessonId": "a1-present-tense-regular",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "'wir' ending for regular verbs:",
-        "options": [
-          "-e",
-          "-st",
-          "-t",
-          "-en"
-        ],
-        "correctIndex": 3
-      }
-    },
-    {
-      "id": "a1-present-tense-regular-fc-1",
-      "lessonId": "a1-present-tense-regular",
-      "track": null,
+      "id": "a1-goethe-personal-pronouns-verbs__ex3",
+      "lessonId": "a1-goethe-personal-pronouns-verbs",
+      "track": "goethe",
       "type": "flashcard",
       "content": {
-        "front": "spielen (ich)",
-        "back": "ich spiele"
+        "front": "woher kommen Sie?",
+        "back": "where do you come from? (formal)"
       }
     },
     {
-      "id": "a1-sein-haben-fb-1",
-      "lessonId": "a1-sein-haben",
-      "track": null,
-      "type": "fill_blank",
-      "content": {
-        "textWithBlank": "Ich ___ (sein) glücklich.",
-        "correctAnswer": "bin"
-      }
-    },
-    {
-      "id": "a1-sein-haben-fb-2",
-      "lessonId": "a1-sein-haben",
-      "track": null,
-      "type": "fill_blank",
-      "content": {
-        "textWithBlank": "Er ___ (haben) ein Auto.",
-        "correctAnswer": "hat"
-      }
-    },
-    {
-      "id": "a1-sein-haben-mc-1",
-      "lessonId": "a1-sein-haben",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "'du' form of 'sein':",
-        "options": [
-          "bin",
-          "bist",
-          "ist",
-          "sind"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "a1-sein-haben-fc-1",
-      "lessonId": "a1-sein-haben",
-      "track": null,
-      "type": "flashcard",
-      "content": {
-        "front": "wir haben",
-        "back": "we have"
-      }
-    },
-    {
-      "id": "a1-definite-articles-mc-1",
-      "lessonId": "a1-definite-articles",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "'Buch' (book) takes which article?",
-        "options": [
-          "der",
-          "die",
-          "das",
-          "den"
-        ],
-        "correctIndex": 2
-      }
-    },
-    {
-      "id": "a1-definite-articles-fc-1",
-      "lessonId": "a1-definite-articles",
-      "track": null,
-      "type": "flashcard",
-      "content": {
-        "front": "die Frau",
-        "back": "the woman"
-      }
-    },
-    {
-      "id": "a1-definite-articles-fb-1",
-      "lessonId": "a1-definite-articles",
-      "track": null,
-      "type": "fill_blank",
-      "content": {
-        "textWithBlank": "___ Mann ist groß.",
-        "correctAnswer": "Der"
-      }
-    },
-    {
-      "id": "a1-definite-articles-mc-2",
-      "lessonId": "a1-definite-articles",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "Plural definite article is always:",
-        "options": [
-          "der",
-          "die",
-          "das",
-          "dem"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "goethe-a1-picture-description-format-ft-1",
-      "lessonId": "goethe-a1-picture-description-format",
-      "track": null,
-      "type": "free_text",
-      "content": {
-        "prompt": "Describe an imagined picture of a family having breakfast, using 3 simple German sentences.",
-        "modelAnswer": "Ich sehe eine Familie. Sie sitzen am Tisch. Sie essen Brot und trinken Kaffee."
-      }
-    },
-    {
-      "id": "goethe-a1-picture-description-format-mc-1",
-      "lessonId": "goethe-a1-picture-description-format",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "'Ich sehe...' means:",
-        "options": [
-          "I hear...",
-          "I see...",
-          "I think...",
-          "I want..."
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "a1-numbers-1-100-fc-1",
-      "lessonId": "a1-numbers-1-100",
-      "track": null,
-      "type": "flashcard",
-      "content": {
-        "front": "15",
-        "back": "fünfzehn"
-      }
-    },
-    {
-      "id": "a1-numbers-1-100-fc-2",
-      "lessonId": "a1-numbers-1-100",
-      "track": null,
-      "type": "flashcard",
-      "content": {
-        "front": "21",
-        "back": "einundzwanzig"
-      }
-    },
-    {
-      "id": "a1-numbers-1-100-mc-1",
-      "lessonId": "a1-numbers-1-100",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "'vierzig' means:",
-        "options": [
-          "14",
-          "40",
-          "4",
-          "44"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "a1-numbers-1-100-fb-1",
-      "lessonId": "a1-numbers-1-100",
-      "track": null,
-      "type": "fill_blank",
-      "content": {
-        "textWithBlank": "Die Zahl 100 heißt ___.",
-        "correctAnswer": "hundert"
-      }
-    },
-    {
-      "id": "a1-family-members-fc-1",
-      "lessonId": "a1-family-members",
-      "track": null,
-      "type": "flashcard",
-      "content": {
-        "front": "der Vater",
-        "back": "the father"
-      }
-    },
-    {
-      "id": "a1-family-members-fc-2",
-      "lessonId": "a1-family-members",
-      "track": null,
-      "type": "flashcard",
-      "content": {
-        "front": "die Schwester",
-        "back": "the sister"
-      }
-    },
-    {
-      "id": "a1-family-members-mc-1",
-      "lessonId": "a1-family-members",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "'Eltern' means:",
-        "options": [
-          "Siblings",
-          "Parents",
-          "Grandparents",
-          "Children"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "a1-family-members-fb-1",
-      "lessonId": "a1-family-members",
-      "track": null,
-      "type": "fill_blank",
-      "content": {
-        "textWithBlank": "Mein ___ heißt Tom.",
-        "correctAnswer": "Bruder"
-      }
-    },
-    {
-      "id": "a1-family-members-ft-1",
-      "lessonId": "a1-family-members",
+      "id": "a1-goethe-question-formation__ex0",
+      "lessonId": "a1-goethe-question-formation",
       "track": "goethe",
       "type": "free_text",
       "content": {
-        "prompt": "Ask a partner about their siblings in German, then answer as if you have one sister.",
-        "modelAnswer": "Hast du Geschwister? — Ja, ich habe eine Schwester."
+        "prompt": "Thema: 'Freizeit', Wort: 'Sport'. Formulate a question for your partner.",
+        "modelAnswer": "Treiben Sie gerne Sport am Wochenende?"
       }
     },
     {
-      "id": "a1-listening-numbers-times-mc-1",
-      "lessonId": "a1-listening-numbers-times",
-      "track": null,
+      "id": "a1-goethe-question-formation__ex1",
+      "lessonId": "a1-goethe-question-formation",
+      "track": "goethe",
       "type": "multiple_choice",
       "content": {
-        "question": "You hear 'um acht Uhr' — this means:",
+        "question": "Thema 'Wohnen', Wort 'Balkon'. Welche Frage passt am besten?",
         "options": [
-          "At 8 o'clock",
-          "At 18 o'clock",
-          "In 8 minutes",
-          "8 euros"
-        ],
-        "correctIndex": 0
-      }
-    },
-    {
-      "id": "a1-listening-numbers-times-ft-1",
-      "lessonId": "a1-listening-numbers-times",
-      "track": null,
-      "type": "free_text",
-      "content": {
-        "prompt": "Write the time you hear: 'Es ist halb neun.'",
-        "modelAnswer": "8:30 (half past eight)"
-      }
-    },
-    {
-      "id": "a1-reading-simple-signs-mc-1",
-      "lessonId": "a1-reading-simple-signs",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "'Geschlossen' means:",
-        "options": [
-          "Open",
-          "Closed",
-          "Entrance",
-          "Exit"
+          "Was ist ein Balkon?",
+          "Hat Ihre Wohnung einen Balkon?",
+          "Wo liegt der Balkon?",
+          "Kaufen Sie einen Balkon?"
         ],
         "correctIndex": 1
       }
     },
     {
-      "id": "a1-reading-simple-signs-fc-1",
-      "lessonId": "a1-reading-simple-signs",
-      "track": null,
-      "type": "flashcard",
-      "content": {
-        "front": "Kein Zutritt",
-        "back": "No entry"
-      }
-    },
-    {
-      "id": "a1-reading-simple-signs-mc-2",
-      "lessonId": "a1-reading-simple-signs",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "You see 'Ausgang' — this means:",
-        "options": [
-          "Entrance",
-          "Exit",
-          "Toilet",
-          "Parking"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "a1-reading-short-messages-mc-1",
-      "lessonId": "a1-reading-short-messages",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "'Treffen wir uns um 18 Uhr?' asks about:",
-        "options": [
-          "A place",
-          "A time to meet",
-          "A price",
-          "A name"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "a1-reading-short-messages-ft-1",
-      "lessonId": "a1-reading-short-messages",
-      "track": null,
+      "id": "a1-goethe-question-formation__ex2",
+      "lessonId": "a1-goethe-question-formation",
+      "track": "goethe",
       "type": "free_text",
       "content": {
-        "prompt": "What does 'Ich bin im Büro' mean?",
-        "modelAnswer": "I am at the office."
+        "prompt": "Thema: 'Einkaufen', Wort: 'Supermarkt'. Formulate a question starting with 'Wann'.",
+        "modelAnswer": "Wann gehen Sie in den Supermarkt?"
       }
     },
     {
-      "id": "a1-listening-simple-instructions-mc-1",
-      "lessonId": "a1-listening-simple-instructions",
-      "track": null,
-      "type": "multiple_choice",
-      "content": {
-        "question": "'Gehen Sie geradeaus' means:",
-        "options": [
-          "Turn left",
-          "Go straight ahead",
-          "Sit down",
-          "Wait"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "a1-listening-simple-instructions-ft-1",
-      "lessonId": "a1-listening-simple-instructions",
-      "track": null,
-      "type": "free_text",
-      "content": {
-        "prompt": "What is being asked: 'Setzen Sie sich, bitte.'?",
-        "modelAnswer": "Please sit down."
-      }
-    },
-    {
-      "id": "a1-writing-simple-forms-ft-1",
-      "lessonId": "a1-writing-simple-forms",
-      "track": null,
-      "type": "free_text",
-      "content": {
-        "prompt": "Fill in a simple form with your name, address, and date of birth in German form style.",
-        "modelAnswer": "Name: Anna Müller\nAdresse: Bahnhofstraße 5\nGeburtsdatum: 12.03.1995"
-      }
-    },
-    {
-      "id": "a1-writing-simple-forms-fb-1",
-      "lessonId": "a1-writing-simple-forms",
-      "track": null,
+      "id": "a1-goethe-possessive-determiners__ex0",
+      "lessonId": "a1-goethe-possessive-determiners",
+      "track": "goethe",
       "type": "fill_blank",
       "content": {
-        "textWithBlank": "___: Berlin, Deutschland (place of birth)",
-        "correctAnswer": "Geburtsort"
+        "textWithBlank": "Das ist ___ Schwester. Sie heißt Laura. (feminine, my)",
+        "correctAnswer": "meine"
       }
     },
     {
-      "id": "a1-writing-short-postcard-ft-1",
-      "lessonId": "a1-writing-short-postcard",
-      "track": null,
-      "type": "free_text",
-      "content": {
-        "prompt": "Write a short postcard (3-4 sentences) to a friend describing your trip.",
-        "modelAnswer": "Liebe Lisa, ich bin in München. Die Stadt ist toll und das Essen ist lecker. Bis bald, Anna."
-      }
-    },
-    {
-      "id": "a1-speaking-asking-directions-mc-1",
-      "lessonId": "a1-speaking-asking-directions",
-      "track": null,
+      "id": "a1-goethe-possessive-determiners__ex1",
+      "lessonId": "a1-goethe-possessive-determiners",
+      "track": "goethe",
       "type": "multiple_choice",
       "content": {
-        "question": "'Wo ist der Bahnhof?' means:",
+        "question": "Welche Form ist im Akkusativ Maskulin korrekt? 'Ich habe ___ Schlüssel verloren.'",
         "options": [
-          "Where is the train station?",
-          "What time is it?",
-          "How are you?",
-          "Where do you live?"
+          "mein",
+          "meine",
+          "meinen",
+          "meinem"
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "a1-goethe-possessive-determiners__ex2",
+      "lessonId": "a1-goethe-possessive-determiners",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Ist das ___ Auto, Herr Schulz? (your, formal)",
+        "correctAnswer": "Ihr"
+      }
+    },
+    {
+      "id": "a1-goethe-possessive-determiners__ex3",
+      "lessonId": "a1-goethe-possessive-determiners",
+      "track": "goethe",
+      "type": "flashcard",
+      "content": {
+        "front": "meine Kinder (pl.)",
+        "back": "my children"
+      }
+    },
+    {
+      "id": "a1-goethe-imperative-polite-forms__ex0",
+      "lessonId": "a1-goethe-imperative-polite-forms",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "You draw a card showing an apple. Formulate a polite request using 'Können Sie...'.",
+        "modelAnswer": "Können Sie mir bitte den Apfel geben?"
+      }
+    },
+    {
+      "id": "a1-goethe-imperative-polite-forms__ex1",
+      "lessonId": "a1-goethe-imperative-polite-forms",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "You draw a card showing a dictionary (Wörterbuch). Request it using the imperative with 'bitte'.",
+        "modelAnswer": "Geben Sie mir bitte das Wörterbuch!"
+      }
+    },
+    {
+      "id": "a1-goethe-imperative-polite-forms__ex2",
+      "lessonId": "a1-goethe-imperative-polite-forms",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Ihr Partner fragt: 'Darf ich Ihre Zeitung lesen?' - Was antworten Sie höflich?",
+        "options": [
+          "Nein, Zeitung!",
+          "Ja, natürlich, hier bitte.",
+          "Ich lese keine Zeitung.",
+          "Das Buch ist teuer."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-goethe-prepositions-local-temporal__ex0",
+      "lessonId": "a1-goethe-prepositions-local-temporal",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Präposition passt zur Stadt? 'Wir reisen im Sommer ___ Wien.'",
+        "options": [
+          "nach",
+          "in",
+          "zu",
+          "bei"
         ],
         "correctIndex": 0
       }
     },
     {
-      "id": "a1-speaking-asking-directions-ft-1",
-      "lessonId": "a1-speaking-asking-directions",
-      "track": null,
-      "type": "free_text",
+      "id": "a1-goethe-prepositions-local-temporal__ex1",
+      "lessonId": "a1-goethe-prepositions-local-temporal",
+      "track": "goethe",
+      "type": "fill_blank",
       "content": {
-        "prompt": "Ask for directions to the supermarket in German.",
-        "modelAnswer": "Wie komme ich zum Supermarkt?"
+        "textWithBlank": "Der Zug kommt ___ 18:45 Uhr an.",
+        "correctAnswer": "um"
       }
     },
     {
-      "id": "a1-speaking-asking-directions-fc-1",
-      "lessonId": "a1-speaking-asking-directions",
-      "track": null,
+      "id": "a1-goethe-prepositions-local-temporal__ex2",
+      "lessonId": "a1-goethe-prepositions-local-temporal",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Wir haben ___ Sonntag keine Schule.",
+        "correctAnswer": "am"
+      }
+    },
+    {
+      "id": "a1-goethe-prepositions-local-temporal__ex3",
+      "lessonId": "a1-goethe-prepositions-local-temporal",
+      "track": "goethe",
       "type": "flashcard",
       "content": {
-        "front": "links",
-        "back": "left"
+        "front": "im Supermarkt",
+        "back": "in the supermarket"
+      }
+    },
+    {
+      "id": "a1-goethe-separable-verbs__ex0",
+      "lessonId": "a1-goethe-separable-verbs",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Der Zug fährt um 8:00 Uhr am Hauptbahnhof ___ . (abfahren)",
+        "correctAnswer": "ab"
+      }
+    },
+    {
+      "id": "a1-goethe-separable-verbs__ex1",
+      "lessonId": "a1-goethe-separable-verbs",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Satz ist grammatisch korrekt gebildet?",
+        "options": [
+          "Er mitbringt seine Freundin.",
+          "Er bringt seine Freundin mit.",
+          "Er bringt mit seine Freundin.",
+          "Bringt er seine Freundin mit nicht."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-goethe-separable-verbs__ex2",
+      "lessonId": "a1-goethe-separable-verbs",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Wann kommst du am Flughafen ___ ? (ankommen)",
+        "correctAnswer": "an"
+      }
+    },
+    {
+      "id": "a1-goethe-separable-verbs__ex3",
+      "lessonId": "a1-goethe-separable-verbs",
+      "track": "goethe",
+      "type": "flashcard",
+      "content": {
+        "front": "ankommen (er kommt... an)",
+        "back": "to arrive"
+      }
+    },
+    {
+      "id": "a1-goethe-vocab-family-friends__ex0",
+      "lessonId": "a1-goethe-vocab-family-friends",
+      "track": "goethe",
+      "type": "flashcard",
+      "content": {
+        "front": "die Geschwister (pl.)",
+        "back": "siblings (brothers and sisters)"
+      }
+    },
+    {
+      "id": "a1-goethe-vocab-family-friends__ex1",
+      "lessonId": "a1-goethe-vocab-family-friends",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Wer sind die 'Eltern'?",
+        "options": [
+          "Bruder und Schwester",
+          "Mutter und Vater",
+          "Oma und Opa",
+          "Sohn und Tochter"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-goethe-vocab-family-friends__ex2",
+      "lessonId": "a1-goethe-vocab-family-friends",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Haben Sie Kinder? - Ja, einen ___ und zwei Töchter. (son)",
+        "correctAnswer": "Sohn"
+      }
+    },
+    {
+      "id": "a1-goethe-vocab-family-friends__ex3",
+      "lessonId": "a1-goethe-vocab-family-friends",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "State how many brothers and sisters you have in German.",
+        "modelAnswer": "Ich habe einen Bruder und keine Schwester."
+      }
+    },
+    {
+      "id": "a1-goethe-vocab-leisure-hobbies__ex0",
+      "lessonId": "a1-goethe-vocab-leisure-hobbies",
+      "track": "goethe",
+      "type": "flashcard",
+      "content": {
+        "front": "Freunde treffen",
+        "back": "to meet friends"
+      }
+    },
+    {
+      "id": "a1-goethe-vocab-leisure-hobbies__ex1",
+      "lessonId": "a1-goethe-vocab-leisure-hobbies",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welches Verb passt zu 'Fußball'?",
+        "options": [
+          "tanzen",
+          "spielen",
+          "singen",
+          "kochen"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-goethe-vocab-leisure-hobbies__ex2",
+      "lessonId": "a1-goethe-vocab-leisure-hobbies",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "In meiner Freizeit lese ich sehr ___ Romane. (gladly / like to)",
+        "correctAnswer": "gern"
+      }
+    },
+    {
+      "id": "a1-goethe-vocab-leisure-hobbies__ex3",
+      "lessonId": "a1-goethe-vocab-leisure-hobbies",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Name two of your hobbies in a complete German sentence.",
+        "modelAnswer": "Meine Hobbys sind Schwimmen und Gitarre spielen."
+      }
+    },
+    {
+      "id": "a1-goethe-vocab-food-restaurants__ex0",
+      "lessonId": "a1-goethe-vocab-food-restaurants",
+      "track": "goethe",
+      "type": "flashcard",
+      "content": {
+        "front": "die Speisekarte",
+        "back": "the menu (restaurant)"
+      }
+    },
+    {
+      "id": "a1-goethe-vocab-food-restaurants__ex1",
+      "lessonId": "a1-goethe-vocab-food-restaurants",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was sagt man im Restaurant, wenn man bezahlen möchte?",
+        "options": [
+          "Guten Appetit!",
+          "Die Rechnung bitte!",
+          "Ein Glas Wasser bitte!",
+          "Auf Wiedersehen sofort!"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-goethe-vocab-food-restaurants__ex2",
+      "lessonId": "a1-goethe-vocab-food-restaurants",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Zum ___ trinke ich gerne Orangensaft. (breakfast)",
+        "correctAnswer": "Frühstück"
+      }
+    },
+    {
+      "id": "a1-goethe-vocab-food-restaurants__ex3",
+      "lessonId": "a1-goethe-vocab-food-restaurants",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Order a mineral water politely in a German restaurant.",
+        "modelAnswer": "Ich möchte bitte ein Mineralwasser."
+      }
+    },
+    {
+      "id": "a1-goethe-reading-teil1-personal-messages__ex0",
+      "lessonId": "a1-goethe-reading-teil1-personal-messages",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Text: 'Hallo Sandra, danke für die Einladung zum Geburtstag. Leider muss ich am Samstag arbeiten und kann nicht kommen. Liebe Grüße, Peter.' - Aussage: Peter kommt nicht zur Geburtstagsparty.",
+        "options": [
+          "Richtig",
+          "Falsch"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "a1-goethe-reading-teil1-personal-messages__ex1",
+      "lessonId": "a1-goethe-reading-teil1-personal-messages",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Text: 'Lieber Ben, ich warte am Bahnhofscafé auf dich. Der Zug aus Hamburg hatte 30 Minuten Verspätung. Bis gleich! Claudia.' - Aussage: Claudias Zug war pünktlich.",
+        "options": [
+          "Richtig",
+          "Falsch"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-goethe-reading-teil1-personal-messages__ex2",
+      "lessonId": "a1-goethe-reading-teil1-personal-messages",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Text: 'Liebe Oma, wir kommen am Sonntag um 14 Uhr zum Kaffee. Wir bringen einen Kuchen mit! Dein Felix.' - Who brings the cake?",
+        "modelAnswer": "Felix bringt den Kuchen mit."
+      }
+    },
+    {
+      "id": "a1-goethe-reading-teil2-information-matching__ex0",
+      "lessonId": "a1-goethe-reading-teil2-information-matching",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Sie möchten sonntags frische Brötchen kaufen. Welche Website wählen Sie? Website a: 'Bäckerei Hansen: Wir haben auch am Sonntagmorgen von 7 bis 11 Uhr geöffnet.' Website b: 'Supermarkt Frisch: Mo-Sa 8-20 Uhr geöffnet, sonntags geschlossen.'",
+        "options": [
+          "Website a",
+          "Website b"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "a1-goethe-reading-teil2-information-matching__ex1",
+      "lessonId": "a1-goethe-reading-teil2-information-matching",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Sie suchen einen Sprachkurs für Deutsch am Abend. Welche Anzeige passt? Website a: 'Tanzschule Swing: Tanzkurse für Paare.' Website b: 'Sprachakademie: Deutschkurse für Erwachsene montags und mittwochs ab 18:30 Uhr.'",
+        "options": [
+          "Website a",
+          "Website b"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-goethe-reading-teil2-information-matching__ex2",
+      "lessonId": "a1-goethe-reading-teil2-information-matching",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Sie möchten heute Abend einen italienischen Film im Kino sehen. Wo finden Sie Informationen? Website a: 'Kino Babylon: Heute italienische Filmwoche im Original mit Untertiteln.' Website b: 'Theater am Markt: Goethes Faust auf der Bühne.'",
+        "options": [
+          "Website a",
+          "Website b"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "a1-goethe-reading-teil3-public-signs-notices__ex0",
+      "lessonId": "a1-goethe-reading-teil3-public-signs-notices",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Schild am Supermarkteingang: 'Keine Hunde im Geschäft erlaubt!' - Aussage: Man darf mit einem Hund in den Supermarkt gehen.",
+        "options": [
+          "Richtig",
+          "Falsch"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-goethe-reading-teil3-public-signs-notices__ex1",
+      "lessonId": "a1-goethe-reading-teil3-public-signs-notices",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Schild am Bahnsteig: 'Rauchen auf dem gesamten Bahnhofsgelände verboten!' - Aussage: Hier darf man nicht rauchen.",
+        "options": [
+          "Richtig",
+          "Falsch"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "a1-goethe-reading-teil3-public-signs-notices__ex2",
+      "lessonId": "a1-goethe-reading-teil3-public-signs-notices",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Schild an einer Praxistür: 'Bitte vor dem Eintreten anklopfen!' - Aussage: Man darf die Tür ohne Klopfen sofort öffnen.",
+        "options": [
+          "Richtig",
+          "Falsch"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-goethe-listening-teil1-dialogues-with-images__ex0",
+      "lessonId": "a1-goethe-listening-teil1-dialogues-with-images",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Hörtext (2x): 'Guten Tag, ich möchte zwei Tickets für das Konzert am Samstag.' - 'Gerne, das macht 40 Euro.' - Wie viel bezahlt der Mann?",
+        "options": [
+          "14 Euro",
+          "40 Euro",
+          "44 Euro"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-goethe-listening-teil1-dialogues-with-images__ex1",
+      "lessonId": "a1-goethe-listening-teil1-dialogues-with-images",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Hörtext (2x): 'Wann treffen wir uns am Bahnhof?' - 'Der Zug kommt um 15 Uhr, lass uns um viertel nach drei treffen.' - Um wie viel Uhr treffen sie sich?",
+        "options": [
+          "15:00 Uhr",
+          "15:15 Uhr",
+          "15:30 Uhr"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-goethe-listening-teil1-dialogues-with-images__ex2",
+      "lessonId": "a1-goethe-listening-teil1-dialogues-with-images",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Hörtext: 'Was möchten Sie essen?' - 'Ich nehme ein Stück ___ bitte.' (spoken word: Kuchen)",
+        "correctAnswer": "Kuchen"
+      }
+    },
+    {
+      "id": "a1-goethe-listening-teil2-announcements__ex0",
+      "lessonId": "a1-goethe-listening-teil2-announcements",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Durchsage (nur 1x!): 'Sehr geehrte Fahrgäste an Gleis 2, der Zug nach Berlin fällt heute aus. Bitte nutzen Sie den Zug um 14:30 Uhr auf Gleis 4.' - Aussage: Der Zug nach Berlin fährt wie gewohnt auf Gleis 2.",
+        "options": [
+          "Richtig",
+          "Falsch"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-goethe-listening-teil2-announcements__ex1",
+      "lessonId": "a1-goethe-listening-teil2-announcements",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Durchsage (nur 1x!): 'Achtung im Kaufhaus: Das Geschäft schließt in fünf Minuten. Bitte gehen Sie zur Kasse.' - Aussage: Das Geschäft macht gleich zu.",
+        "options": [
+          "Richtig",
+          "Falsch"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "a1-goethe-listening-teil2-announcements__ex2",
+      "lessonId": "a1-goethe-listening-teil2-announcements",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Durchsage: 'Fahrgäste nach München steigen bitte um in den ICE auf Gleis ___ .' (spoken: fünf)",
+        "correctAnswer": "5"
+      }
+    },
+    {
+      "id": "a1-goethe-listening-teil3-phone-messages__ex0",
+      "lessonId": "a1-goethe-listening-teil3-phone-messages",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Nachricht (2x): 'Hallo David, hier Thomas. Hast du am Sonntag Zeit? Wir wollen grillen. Ruf mich bitte unter 0172-1234 an.' - Was soll David tun?",
+        "options": [
+          "Thomas eine E-Mail schreiben",
+          "Thomas anrufen",
+          "Sofort zum Grillen kommen"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-goethe-listening-teil3-phone-messages__ex1",
+      "lessonId": "a1-goethe-listening-teil3-phone-messages",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Nachricht (2x): 'Guten Tag, hier Sprachschule Aktiv. Der Kurs am Montag fällt aus und beginnt erst am Mittwoch um 18 Uhr.' - Wann beginnt der Kurs?",
+        "options": [
+          "Am Montag",
+          "Am Dienstag",
+          "Am Mittwoch"
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "a1-goethe-listening-teil3-phone-messages__ex2",
+      "lessonId": "a1-goethe-listening-teil3-phone-messages",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Nachricht: 'Bitte rufen Sie mich um ___ Uhr zurück.' (spoken number: siebzehn)",
+        "correctAnswer": "17"
+      }
+    },
+    {
+      "id": "a1-goethe-writing-teil1-form-completion__ex0",
+      "lessonId": "a1-goethe-writing-teil1-form-completion",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Text: 'Familie Meier möchte Urlaub machen: Herr Meier, seine Frau und die beiden Kinder Peter und Anna.' -> Formular: Anzahl der Personen: ___",
+        "correctAnswer": "4"
+      }
+    },
+    {
+      "id": "a1-goethe-writing-teil1-form-completion__ex1",
+      "lessonId": "a1-goethe-writing-teil1-form-completion",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Text: 'Frau Chen reist am 15. Juli an und bleibt bis zum 22. Juli.' - Was gehört ins Formularfeld 'Abreisedatum'?",
+        "options": [
+          "15. Juli",
+          "22. Juli",
+          "7 Tage",
+          "Juli"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-goethe-writing-teil1-form-completion__ex2",
+      "lessonId": "a1-goethe-writing-teil1-form-completion",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Text: 'Herr Martin wohnt in der Schillerstraße 8 in Leipzig.' -> Formularfeld 'Straße und Hausnummer': Schillerstraße ___",
+        "correctAnswer": "8"
+      }
+    },
+    {
+      "id": "a1-goethe-writing-teil2-short-letter__ex0",
+      "lessonId": "a1-goethe-writing-teil2-short-letter",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Schreiben Sie eine E-Mail an Ihren Freund Alex (ca. 30 Wörter): Sie möchten am Freitag ins Kino gehen. Fragen Sie nach der Uhrzeit und dem Treffpunkt.",
+        "modelAnswer": "Lieber Alex, hast du am Freitag Zeit? Ich möchte gerne mit dir ins Kino gehen. Wann fängt der Film an und wo treffen wir uns? Viele Grüße, Daniel."
+      }
+    },
+    {
+      "id": "a1-goethe-writing-teil2-short-letter__ex1",
+      "lessonId": "a1-goethe-writing-teil2-short-letter",
+      "track": "goethe",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Passende Anrede für einen Brief an Ihre Freundin Lisa: '___ Lisa,'",
+        "correctAnswer": "Liebe"
+      }
+    },
+    {
+      "id": "a1-goethe-writing-teil2-short-letter__ex2",
+      "lessonId": "a1-goethe-writing-teil2-short-letter",
+      "track": "goethe",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Grußformel passt am Ende einer informellen E-Mail an einen Kollegen/Freund?",
+        "options": [
+          "Hochachtungsvoll",
+          "Mit freundlichen Grüßen",
+          "Herzliche Grüße",
+          "Sehr geehrter Herr"
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "a1-goethe-speaking-teil1-teil2-teil3__ex0",
+      "lessonId": "a1-goethe-speaking-teil1-teil2-teil3",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Teil 1: Introduce yourself addressing your name, age, home country, and current city of residence.",
+        "modelAnswer": "Ich heiße Maria, bin 28 Jahre alt, komme aus Kolumbien und wohne in Hamburg."
+      }
+    },
+    {
+      "id": "a1-goethe-speaking-teil1-teil2-teil3__ex1",
+      "lessonId": "a1-goethe-speaking-teil1-teil2-teil3",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Teil 2: Thema 'Einkaufen', Wort 'Kasse'. Formulate an inquiry for your partner.",
+        "modelAnswer": "Entschuldigung, wo ist die Kasse?"
+      }
+    },
+    {
+      "id": "a1-goethe-speaking-teil1-teil2-teil3__ex2",
+      "lessonId": "a1-goethe-speaking-teil1-teil2-teil3",
+      "track": "goethe",
+      "type": "free_text",
+      "content": {
+        "prompt": "Teil 3: You receive a card depicting a glass of water. Formulate a polite request.",
+        "modelAnswer": "Können Sie mir bitte ein Glas Wasser bringen?"
       }
     }
   ],
   "prerequisites": [
     {
-      "lessonId": "a1-speaking-self-introduction",
-      "prerequisiteLessonId": "a1-greetings-farewells"
+      "lessonId": "a1-goethe-question-formation",
+      "prerequisiteLessonId": "a1-goethe-personal-pronouns-verbs"
     },
     {
-      "lessonId": "a1-speaking-self-introduction",
-      "prerequisiteLessonId": "a1-personal-pronouns"
+      "lessonId": "a1-goethe-possessive-determiners",
+      "prerequisiteLessonId": "a1-goethe-personal-pronouns-verbs"
     },
     {
-      "lessonId": "a1-present-tense-regular",
-      "prerequisiteLessonId": "a1-personal-pronouns"
+      "lessonId": "a1-goethe-imperative-polite-forms",
+      "prerequisiteLessonId": "a1-goethe-question-formation"
     },
     {
-      "lessonId": "a1-sein-haben",
-      "prerequisiteLessonId": "a1-personal-pronouns"
+      "lessonId": "a1-goethe-separable-verbs",
+      "prerequisiteLessonId": "a1-goethe-personal-pronouns-verbs"
     },
     {
-      "lessonId": "a1-listening-numbers-times",
-      "prerequisiteLessonId": "a1-numbers-1-100"
+      "lessonId": "a1-goethe-reading-teil1-personal-messages",
+      "prerequisiteLessonId": "a1-goethe-personal-pronouns-verbs"
     },
     {
-      "lessonId": "a1-writing-simple-forms",
-      "prerequisiteLessonId": "a1-numbers-1-100"
+      "lessonId": "a1-goethe-reading-teil1-personal-messages",
+      "prerequisiteLessonId": "a1-goethe-vocab-family-friends"
+    },
+    {
+      "lessonId": "a1-goethe-reading-teil2-information-matching",
+      "prerequisiteLessonId": "a1-goethe-prepositions-local-temporal"
+    },
+    {
+      "lessonId": "a1-goethe-reading-teil2-information-matching",
+      "prerequisiteLessonId": "a1-goethe-vocab-leisure-hobbies"
+    },
+    {
+      "lessonId": "a1-goethe-reading-teil3-public-signs-notices",
+      "prerequisiteLessonId": "a1-goethe-imperative-polite-forms"
+    },
+    {
+      "lessonId": "a1-goethe-listening-teil1-dialogues-with-images",
+      "prerequisiteLessonId": "a1-goethe-vocab-food-restaurants"
+    },
+    {
+      "lessonId": "a1-goethe-listening-teil1-dialogues-with-images",
+      "prerequisiteLessonId": "a1-goethe-prepositions-local-temporal"
+    },
+    {
+      "lessonId": "a1-goethe-listening-teil2-announcements",
+      "prerequisiteLessonId": "a1-goethe-prepositions-local-temporal"
+    },
+    {
+      "lessonId": "a1-goethe-listening-teil3-phone-messages",
+      "prerequisiteLessonId": "a1-goethe-separable-verbs"
+    },
+    {
+      "lessonId": "a1-goethe-listening-teil3-phone-messages",
+      "prerequisiteLessonId": "a1-goethe-prepositions-local-temporal"
+    },
+    {
+      "lessonId": "a1-goethe-writing-teil1-form-completion",
+      "prerequisiteLessonId": "a1-goethe-personal-pronouns-verbs"
+    },
+    {
+      "lessonId": "a1-goethe-writing-teil2-short-letter",
+      "prerequisiteLessonId": "a1-goethe-question-formation"
+    },
+    {
+      "lessonId": "a1-goethe-writing-teil2-short-letter",
+      "prerequisiteLessonId": "a1-goethe-imperative-polite-forms"
+    },
+    {
+      "lessonId": "a1-goethe-writing-teil2-short-letter",
+      "prerequisiteLessonId": "a1-goethe-vocab-leisure-hobbies"
+    },
+    {
+      "lessonId": "a1-goethe-speaking-teil1-teil2-teil3",
+      "prerequisiteLessonId": "a1-goethe-question-formation"
+    },
+    {
+      "lessonId": "a1-goethe-speaking-teil1-teil2-teil3",
+      "prerequisiteLessonId": "a1-goethe-imperative-polite-forms"
+    },
+    {
+      "lessonId": "a1-goethe-speaking-teil1-teil2-teil3",
+      "prerequisiteLessonId": "a1-goethe-vocab-family-friends"
     }
   ]
 }

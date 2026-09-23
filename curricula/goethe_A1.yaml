@@ -1,0 +1,497 @@
+track: goethe
+level: A1
+
+lessons:
+  - slug: goethe-personal-pronouns-verbs
+    skill: grammar
+    title: Personal Pronouns and Present Tense Foundations
+    prerequisites: []
+    explanation: |
+      Mastering nominative pronouns and present tense verb inflection is required for all sections of Start Deutsch 1.
+      Weak verbs follow standard endings: ich -e, du -st, er/sie/es -t, wir -en, ihr -t, and sie/Sie -en.
+      The formal address Sie (with plural verb ending -en) is used with adult examiners and unfamiliar dialogue partners.
+    examples:
+      - "Ich heiße Maria Santos und komme aus Spanien."
+      - "Wie heißen Sie und woher kommen Sie?"
+      - "Mein Mann spricht fließend Deutsch."
+      - "Wir wohnen seit zwei Monaten in Berlin."
+    exercises:
+      - type: fill_blank
+        textWithBlank: "Wie ___ Sie? - Ich heiße Johann Schmidt. (heißen)"
+        correctAnswer: "heißen"
+      - type: multiple_choice
+        question: "Welches Verb passt? 'Du ___ sehr gut Deutsch.'"
+        options: ["spricht", "sprichst", "sprechen", "spreche"]
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Er ___ aus Frankreich. (kommen)"
+        correctAnswer: "kommt"
+      - type: flashcard
+        front: "woher kommen Sie?"
+        back: "where do you come from? (formal)"
+
+  - slug: goethe-question-formation
+    skill: grammar
+    title: Question Formation for Goethe Sprechen Teil 2
+    prerequisites: [goethe-personal-pronouns-verbs]
+    explanation: |
+      In Goethe Sprechen Teil 2, candidates draw thematic word cards and must formulate and answer questions with a testing partner.
+      Master both W-Fragen (Wer, Wie, Was, Wo, Wann, Warum, Welcher) and Ja/Nein-Fragen.
+      Remember that W-Fragen place the verb in second position, while Ja/Nein-Fragen place the verb first.
+    examples:
+      - "Thema: Essen - Wort: Frühstück -> Was frühstücken Sie am Morgen?"
+      - "Thema: Sport - Wort: Fahrrad -> Fahren Sie gerne Fahrrad?"
+      - "Thema: Wochenende - Wort: Samstag -> Was machen Sie am Samstagabend?"
+      - "Thema: Einkaufen - Wort: Zeitung -> Wo kaufen Sie Ihre Zeitung?"
+    exercises:
+      - type: free_text
+        prompt: "Thema: 'Freizeit', Wort: 'Sport'. Formulate a question for your partner."
+        modelAnswer: "Treiben Sie gerne Sport am Wochenende?"
+      - type: multiple_choice
+        question: "Thema 'Wohnen', Wort 'Balkon'. Welche Frage passt am besten?"
+        options: [
+          "Was ist ein Balkon?",
+          "Hat Ihre Wohnung einen Balkon?",
+          "Wo liegt der Balkon?",
+          "Kaufen Sie einen Balkon?"
+        ]
+        correctIndex: 1
+      - type: free_text
+        prompt: "Thema: 'Einkaufen', Wort: 'Supermarkt'. Formulate a question starting with 'Wann'."
+        modelAnswer: "Wann gehen Sie in den Supermarkt?"
+
+  - slug: goethe-possessive-determiners
+    skill: grammar
+    title: "Possessive Determiners: Mein and Dein"
+    prerequisites: [goethe-personal-pronouns-verbs]
+    explanation: |
+      Describing family and personal belongings requires using possessive determiners (mein, dein, sein, ihr, unser, Ihr).
+      Possessives take endings based on gender and case: mein Vater (masculine nominative), meine Mutter (feminine), mein Kind (neuter), and meine Eltern (plural).
+      In the accusative case, the masculine changes to meinen: 'Ich besuche meinen Bruder'.
+    examples:
+      - "Das ist mein Vater und das ist meine Mutter."
+      - "Wie alt ist dein Sohn?"
+      - "Ich suche meine Tasche."
+      - "Er besucht am Sonntag seinen Freund."
+    exercises:
+      - type: fill_blank
+        textWithBlank: "Das ist ___ Schwester. Sie heißt Laura. (feminine, my)"
+        correctAnswer: "meine"
+      - type: multiple_choice
+        question: "Welche Form ist im Akkusativ Maskulin korrekt? 'Ich habe ___ Schlüssel verloren.'"
+        options: ["mein", "meine", "meinen", "meinem"]
+        correctIndex: 2
+      - type: fill_blank
+        textWithBlank: "Ist das ___ Auto, Herr Schulz? (your, formal)"
+        correctAnswer: "Ihr"
+      - type: flashcard
+        front: "meine Kinder (pl.)"
+        back: "my children"
+
+  - slug: goethe-imperative-polite-forms
+    skill: grammar
+    title: Imperatives and Requests for Goethe Sprechen Teil 3
+    prerequisites: [goethe-question-formation]
+    explanation: |
+      In Goethe Sprechen Teil 3, candidates draw picture cards depicting everyday objects and must formulate a polite request, which their partner answers.
+      Use polite request formulas such as: 'Können Sie mir bitte... geben/zeigen/bringen?' or the formal imperative: 'Bringen Sie mir bitte...'.
+      Always reply with an appropriate accepting response like 'Ja, gern' or a polite decline.
+    examples:
+      - "Karte: Glas Wasser -> Können Sie mir bitte ein Glas Wasser geben? - Ja, natürlich!"
+      - "Karte: Stift -> Geben Sie mir bitte Ihren Stift! - Bitte schön, hier ist er."
+      - "Karte: Buch -> Machen Sie bitte das Buch auf! - Ja, gerne."
+      - "Karte: Fenster -> Können Sie bitte das Fenster schließen? - Es ist leider kaputt."
+    exercises:
+      - type: free_text
+        prompt: "You draw a card showing an apple. Formulate a polite request using 'Können Sie...'."
+        modelAnswer: "Können Sie mir bitte den Apfel geben?"
+      - type: free_text
+        prompt: "You draw a card showing a dictionary (Wörterbuch). Request it using the imperative with 'bitte'."
+        modelAnswer: "Geben Sie mir bitte das Wörterbuch!"
+      - type: multiple_choice
+        question: "Ihr Partner fragt: 'Darf ich Ihre Zeitung lesen?' - Was antworten Sie höflich?"
+        options: [
+          "Nein, Zeitung!",
+          "Ja, natürlich, hier bitte.",
+          "Ich lese keine Zeitung.",
+          "Das Buch ist teuer."
+        ]
+        correctIndex: 1
+
+  - slug: goethe-prepositions-local-temporal
+    skill: grammar
+    title: Core Prepositions for Time and Location
+    prerequisites: []
+    explanation: |
+      Prepositions indicate temporal and spatial relationships in listening, reading, and writing tasks.
+      Temporal prepositions: 'um' for clock times (um 16 Uhr), 'am' for days and parts of the day (am Montag, am Nachmittag), and 'im' for months and seasons (im August).
+      Local prepositions: 'in' + dative for location inside a space (im Restaurant, in der Stadt), and 'nach' for cities and countries without articles (nach Berlin, nach Deutschland).
+    examples:
+      - "Die Besprechung beginnt um 9:00 Uhr."
+      - "Am Samstag fahre ich nach Hamburg."
+      - "Wir treffen uns im Supermarkt."
+      - "Ich bin im Mai geboren."
+    exercises:
+      - type: multiple_choice
+        question: "Welche Präposition passt zur Stadt? 'Wir reisen im Sommer ___ Wien.'"
+        options: ["nach", "in", "zu", "bei"]
+        correctIndex: 0
+      - type: fill_blank
+        textWithBlank: "Der Zug kommt ___ 18:45 Uhr an."
+        correctAnswer: "um"
+      - type: fill_blank
+        textWithBlank: "Wir haben ___ Sonntag keine Schule."
+        correctAnswer: "am"
+      - type: flashcard
+        front: "im Supermarkt"
+        back: "in the supermarket"
+
+  - slug: goethe-separable-verbs
+    skill: grammar
+    title: Separable Verbs for Daily Schedules
+    prerequisites: [goethe-personal-pronouns-verbs]
+    explanation: |
+      Separable verbs (trennbare Verben) are common in everyday language and exam tasks.
+      In declarative main clauses, the prefix moves to the end of the sentence.
+      In questions, the conjugated stem appears in first or second position, with the prefix at the end.
+      Key verbs include: ankommen (to arrive), abfahren (to depart), mitkommen (to come along), einkaufen (to shop), and mitbringen (to bring with).
+    examples:
+      - "Der Zug kommt um 17:15 Uhr in München an."
+      - "Wann fährt der Bus nach Frankfurt ab?"
+      - "Kommst du heute Abend zur Party mit?"
+      - "Ich bringe einen leckeren Salat mit."
+    exercises:
+      - type: fill_blank
+        textWithBlank: "Der Zug fährt um 8:00 Uhr am Hauptbahnhof ___ . (abfahren)"
+        correctAnswer: "ab"
+      - type: multiple_choice
+        question: "Welcher Satz ist grammatisch korrekt gebildet?"
+        options: [
+          "Er mitbringt seine Freundin.",
+          "Er bringt seine Freundin mit.",
+          "Er bringt mit seine Freundin.",
+          "Bringt er seine Freundin mit nicht."
+        ]
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Wann kommst du am Flughafen ___ ? (ankommen)"
+        correctAnswer: "an"
+      - type: flashcard
+        front: "ankommen (er kommt... an)"
+        back: "to arrive"
+
+  - slug: goethe-vocab-family-friends
+    skill: vocabulary
+    title: Family, Relatives, and Friends
+    prerequisites: []
+    explanation: |
+      Family terms are central to Sprechen Teil 1 (self-introduction) and Teil 2.
+      Key vocabulary includes: die Eltern (parents), der Vater (father), die Mutter (mother), die Kinder (children), der Sohn (son), die Tochter (daughter), der Bruder (brother), die Schwester (sister), and die Geschwister (siblings).
+      Remember that 'die Geschwister' is a plural noun referring to brothers and sisters collectively.
+    examples:
+      - "Ich habe zwei Geschwister: einen Bruder und eine Schwester."
+      - "Meine Eltern leben in Polen."
+      - "Mein Sohn ist sechs Jahre alt und geht in die Schule."
+      - "Haben Sie Kinder? - Ja, eine Tochter."
+    exercises:
+      - type: flashcard
+        front: "die Geschwister (pl.)"
+        back: "siblings (brothers and sisters)"
+      - type: multiple_choice
+        question: "Wer sind die 'Eltern'?"
+        options: [
+          "Bruder und Schwester",
+          "Mutter und Vater",
+          "Oma und Opa",
+          "Sohn und Tochter"
+        ]
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Haben Sie Kinder? - Ja, einen ___ und zwei Töchter. (son)"
+        correctAnswer: "Sohn"
+      - type: free_text
+        prompt: "State how many brothers and sisters you have in German."
+        modelAnswer: "Ich habe einen Bruder und keine Schwester."
+
+  - slug: goethe-vocab-leisure-hobbies
+    skill: vocabulary
+    title: Leisure Time, Hobbies, and Sports
+    prerequisites: []
+    explanation: |
+      Leisure activities feature prominently in Goethe speaking prompts and written messages.
+      Common leisure activities include: Sport treiben (to do sports), Fußball spielen (to play soccer), Musik hören (to listen to music), ins Kino gehen (to go to the movies), Freunde treffen (to meet friends), and lesen (to read).
+      Express likes using the adverb 'gern' or 'gerne': 'Ich lese gerne Bücher'.
+    examples:
+      - "In meiner Freizeit spiele ich gerne Tennis."
+      - "Am Wochenende treffe ich meine Freunde im Park."
+      - "Meine Hobbys sind Kochen, Schwimmen und Reisen."
+      - "Gehst du heute Abend mit ins Kino?"
+    exercises:
+      - type: flashcard
+        front: "Freunde treffen"
+        back: "to meet friends"
+      - type: multiple_choice
+        question: "Welches Verb passt zu 'Fußball'?"
+        options: ["tanzen", "spielen", "singen", "kochen"]
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "In meiner Freizeit lese ich sehr ___ Romane. (gladly / like to)"
+        correctAnswer: "gern"
+      - type: free_text
+        prompt: "Name two of your hobbies in a complete German sentence."
+        modelAnswer: "Meine Hobbys sind Schwimmen und Gitarre spielen."
+
+  - slug: goethe-vocab-food-restaurants
+    skill: vocabulary
+    title: Meals, Dining Out, and Beverages
+    prerequisites: []
+    explanation: |
+      Food vocabulary is tested in listening dialogues, reading advertisements, and speaking exchanges.
+      Key terms include: das Frühstück (breakfast), das Mittagessen (lunch), das Abendessen (dinner), die Speisekarte (menu), and die Rechnung (bill).
+      Useful dining phrases include: 'Ich hätte gern...' (I would like to have...), 'Zahlen bitte!' (Check, please!), and 'Getrennt oder zusammen?' (Separate or together?).
+    examples:
+      - "Ich esse zum Frühstück meistens Brot mit Käse."
+      - "Herr Ober, die Speisekarte bitte!"
+      - "Wir möchten bitte zahlen. Zusammen, bitte."
+      - "Trinken Sie lieber Kaffee oder Tee?"
+    exercises:
+      - type: flashcard
+        front: "die Speisekarte"
+        back: "the menu (restaurant)"
+      - type: multiple_choice
+        question: "Was sagt man im Restaurant, wenn man bezahlen möchte?"
+        options: [
+          "Guten Appetit!",
+          "Die Rechnung bitte!",
+          "Ein Glas Wasser bitte!",
+          "Auf Wiedersehen sofort!"
+        ]
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Zum ___ trinke ich gerne Orangensaft. (breakfast)"
+        correctAnswer: "Frühstück"
+      - type: free_text
+        prompt: "Order a mineral water politely in a German restaurant."
+        modelAnswer: "Ich möchte bitte ein Mineralwasser."
+
+  - slug: goethe-reading-teil1-personal-messages
+    skill: reading
+    title: "Goethe Lesen Teil 1: Informal Notes and Emails"
+    prerequisites: [goethe-personal-pronouns-verbs, goethe-vocab-family-friends]
+    explanation: |
+      Goethe Lesen Teil 1 consists of short informal letters, postcards, or emails followed by true/false (Richtig/Falsch) comprehension questions.
+      Read the questions first, then scan the text for matching keywords, dates, names, and underlying meaning.
+    examples:
+      - "Text: 'Liebe Eva, ich bin wieder gesund und möchte dich am Freitag zum Essen einladen. Passt es dir um 19 Uhr? Sag mir bald Bescheid! Gruß, Clara.' - Aussage: Clara möchte mit Eva essen gehen. (Richtig)"
+      - "Text: 'Hallo Markus, mein Auto ist kaputt. Kannst du mich heute um 16 Uhr von der Arbeit abholen? Danke dir! Jan.' - Aussage: Jan kann Markus mit dem Auto abholen. (Falsch)"
+    exercises:
+      - type: multiple_choice
+        question: "Text: 'Hallo Sandra, danke für die Einladung zum Geburtstag. Leider muss ich am Samstag arbeiten und kann nicht kommen. Liebe Grüße, Peter.' - Aussage: Peter kommt nicht zur Geburtstagsparty."
+        options: ["Richtig", "Falsch"]
+        correctIndex: 0
+      - type: multiple_choice
+        question: "Text: 'Lieber Ben, ich warte am Bahnhofscafé auf dich. Der Zug aus Hamburg hatte 30 Minuten Verspätung. Bis gleich! Claudia.' - Aussage: Claudias Zug war pünktlich."
+        options: ["Richtig", "Falsch"]
+        correctIndex: 1
+      - type: free_text
+        prompt: "Text: 'Liebe Oma, wir kommen am Sonntag um 14 Uhr zum Kaffee. Wir bringen einen Kuchen mit! Dein Felix.' - Who brings the cake?"
+        modelAnswer: "Felix bringt den Kuchen mit."
+
+  - slug: goethe-reading-teil2-information-matching
+    skill: reading
+    title: "Goethe Lesen Teil 2: Functional Information Search"
+    prerequisites: [goethe-prepositions-local-temporal, goethe-vocab-leisure-hobbies]
+    explanation: |
+      In Goethe Lesen Teil 2, you are given an information need and must choose which of two websites or classified ads (Website a or Website b) contains the solution.
+      Focus on key terms, product types, and locations to identify the correct match.
+    examples:
+      - "Situation: Sie möchten am Wochenende in Berlin ein gebrauchtes Fahrrad kaufen. -> Website a: Fahrradgeschäft Meier - Verkauf von neuen und gebrauchten Fahrrädern in Berlin. Website b: Autovermietung Berlin - Günstige Mietwagen. -> Richtige Antwort: Website a."
+      - "Situation: Sie suchen ein Hotelzimmer in den Bergen für Ihren Urlaub. -> Website a: Berg-Resort Alpenblick: Gemütliche Zimmer und Ferienwohnungen. Website b: Stadtmuseum München: Öffnungszeiten und Tickets. -> Richtige Antwort: Website a."
+    exercises:
+      - type: multiple_choice
+        question: "Sie möchten sonntags frische Brötchen kaufen. Welche Website wählen Sie? Website a: 'Bäckerei Hansen: Wir haben auch am Sonntagmorgen von 7 bis 11 Uhr geöffnet.' Website b: 'Supermarkt Frisch: Mo-Sa 8-20 Uhr geöffnet, sonntags geschlossen.'"
+        options: ["Website a", "Website b"]
+        correctIndex: 0
+      - type: multiple_choice
+        question: "Sie suchen einen Sprachkurs für Deutsch am Abend. Welche Anzeige passt? Website a: 'Tanzschule Swing: Tanzkurse für Paare.' Website b: 'Sprachakademie: Deutschkurse für Erwachsene montags und mittwochs ab 18:30 Uhr.'"
+        options: ["Website a", "Website b"]
+        correctIndex: 1
+      - type: multiple_choice
+        question: "Sie möchten heute Abend einen italienischen Film im Kino sehen. Wo finden Sie Informationen? Website a: 'Kino Babylon: Heute italienische Filmwoche im Original mit Untertiteln.' Website b: 'Theater am Markt: Goethes Faust auf der Bühne.'"
+        options: ["Website a", "Website b"]
+        correctIndex: 0
+
+  - slug: goethe-reading-teil3-public-signs-notices
+    skill: reading
+    title: "Goethe Lesen Teil 3: Notices and Public Signs"
+    prerequisites: [goethe-imperative-polite-forms]
+    explanation: |
+      Goethe Lesen Teil 3 presents short signs, bulletin board notices, and warning placards found in public spaces (train stations, stores, restaurants, offices).
+      Read each sign and evaluate whether a statement about it is Richtig (True) or Falsch (False).
+    examples:
+      - "Schild: 'Hunde an der Leine führen!' - Aussage: Hunde sind hier verboten. -> Falsch."
+      - "Schild: 'Aufzug defekt. Bitte Treppe benutzen.' - Aussage: Der Lift funktioniert nicht. -> Richtig."
+      - "Schild: 'Heute wegen Krankheit geschlossen.' - Aussage: Das Geschäft ist heute geöffnet. -> Falsch."
+    exercises:
+      - type: multiple_choice
+        question: "Schild am Supermarkteingang: 'Keine Hunde im Geschäft erlaubt!' - Aussage: Man darf mit einem Hund in den Supermarkt gehen."
+        options: ["Richtig", "Falsch"]
+        correctIndex: 1
+      - type: multiple_choice
+        question: "Schild am Bahnsteig: 'Rauchen auf dem gesamten Bahnhofsgelände verboten!' - Aussage: Hier darf man nicht rauchen."
+        options: ["Richtig", "Falsch"]
+        correctIndex: 0
+      - type: multiple_choice
+        question: "Schild an einer Praxistür: 'Bitte vor dem Eintreten anklopfen!' - Aussage: Man darf die Tür ohne Klopfen sofort öffnen."
+        options: ["Richtig", "Falsch"]
+        correctIndex: 1
+
+  - slug: goethe-listening-teil1-dialogues-with-images
+    skill: listening
+    title: "Goethe Hören Teil 1: Dialogues with Visual Prompts"
+    prerequisites: [goethe-vocab-food-restaurants, goethe-prepositions-local-temporal]
+    explanation: |
+      Goethe Hören Teil 1 presents short conversational exchanges played twice, each paired with three multiple-choice options (often illustrated with images).
+      Read the question before the audio begins and identify the key detail being asked (e.g., location, time, price, or purchased item).
+    examples:
+      - "Gespräch: 'Entschuldigung, wo ist der Bahnhof? Gehen Sie an der Kreuzung nach links.' - Frage: Wo muss der Mann abbiegen? -> Option a: nach links."
+      - "Gespräch: 'Möchten Sie Apfelsaft oder Orangensaft? - Nein danke, ich möchte nur ein Mineralwasser.' - Frage: Was trinkt die Frau? -> Mineralwasser."
+    exercises:
+      - type: multiple_choice
+        question: "Hörtext (2x): 'Guten Tag, ich möchte zwei Tickets für das Konzert am Samstag.' - 'Gerne, das macht 40 Euro.' - Wie viel bezahlt der Mann?"
+        options: ["14 Euro", "40 Euro", "44 Euro"]
+        correctIndex: 1
+      - type: multiple_choice
+        question: "Hörtext (2x): 'Wann treffen wir uns am Bahnhof?' - 'Der Zug kommt um 15 Uhr, lass uns um viertel nach drei treffen.' - Um wie viel Uhr treffen sie sich?"
+        options: ["15:00 Uhr", "15:15 Uhr", "15:30 Uhr"]
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Hörtext: 'Was möchten Sie essen?' - 'Ich nehme ein Stück ___ bitte.' (spoken word: Kuchen)"
+        correctAnswer: "Kuchen"
+
+  - slug: goethe-listening-teil2-announcements
+    skill: listening
+    title: "Goethe Hören Teil 2: Single-Broadcast Announcements"
+    prerequisites: [goethe-prepositions-local-temporal]
+    explanation: |
+      Goethe Hören Teil 2 consists of short public announcements in public spaces (train stations, supermarkets, department stores, airports).
+      Unlike Teil 1 and Teil 3, each audio clip in Teil 2 is played only once.
+      Read the true/false statement during the preparation pause and listen specifically for key informational cues.
+    examples:
+      - "Durchsage: 'Achtung Kunden! Unser Restaurant im dritten Stock bietet heute frischen Fisch zum halben Preis an.' - Aussage: Im Restaurant gibt es heute ein Sonderangebot. -> Richtig."
+      - "Durchsage: 'Der Intercity nach Köln fällt heute wegen schlechten Wetters aus.' - Aussage: Der Zug nach Köln fährt pünktlich. -> Falsch."
+    exercises:
+      - type: multiple_choice
+        question: "Durchsage (nur 1x!): 'Sehr geehrte Fahrgäste an Gleis 2, der Zug nach Berlin fällt heute aus. Bitte nutzen Sie den Zug um 14:30 Uhr auf Gleis 4.' - Aussage: Der Zug nach Berlin fährt wie gewohnt auf Gleis 2."
+        options: ["Richtig", "Falsch"]
+        correctIndex: 1
+      - type: multiple_choice
+        question: "Durchsage (nur 1x!): 'Achtung im Kaufhaus: Das Geschäft schließt in fünf Minuten. Bitte gehen Sie zur Kasse.' - Aussage: Das Geschäft macht gleich zu."
+        options: ["Richtig", "Falsch"]
+        correctIndex: 0
+      - type: fill_blank
+        textWithBlank: "Durchsage: 'Fahrgäste nach München steigen bitte um in den ICE auf Gleis ___ .' (spoken: fünf)"
+        correctAnswer: "5"
+
+  - slug: goethe-listening-teil3-phone-messages
+    skill: listening
+    title: "Goethe Hören Teil 3: Voicemails and Messages"
+    prerequisites: [goethe-separable-verbs, goethe-prepositions-local-temporal]
+    explanation: |
+      Goethe Hören Teil 3 consists of recorded telephone voicemails, automated answering machine messages, and personal phone messages.
+      Each clip is played twice.
+      Questions are multiple choice with three options (a, b, c); focus on noting down phone numbers, appointment changes, dates, and callback requests.
+    examples:
+      - "Nachricht: 'Hallo Stefan, hier ist Michael. Wir spielen heute nicht draußen Fußball, es regnet. Wir gehen um 18 Uhr schwimmen. Komm bitte zur Schwimmhalle! Tschüss.' - Frage: Wohin gehen die Freunde? -> In die Schwimmhalle."
+      - "Nachricht: 'Guten Tag Frau Meyer, Praxis Dr. Kunz hier. Ihr Rezept ist abholbereit. Unsere Praxis ist heute bis 17 Uhr geöffnet.' - Frage: Bis wann kann Frau Meyer das Rezept abholen? -> Bis 17 Uhr."
+    exercises:
+      - type: multiple_choice
+        question: "Nachricht (2x): 'Hallo David, hier Thomas. Hast du am Sonntag Zeit? Wir wollen grillen. Ruf mich bitte unter 0172-1234 an.' - Was soll David tun?"
+        options: [
+          "Thomas eine E-Mail schreiben",
+          "Thomas anrufen",
+          "Sofort zum Grillen kommen"
+        ]
+        correctIndex: 1
+      - type: multiple_choice
+        question: "Nachricht (2x): 'Guten Tag, hier Sprachschule Aktiv. Der Kurs am Montag fällt aus und beginnt erst am Mittwoch um 18 Uhr.' - Wann beginnt der Kurs?"
+        options: ["Am Montag", "Am Dienstag", "Am Mittwoch"]
+        correctIndex: 2
+      - type: fill_blank
+        textWithBlank: "Nachricht: 'Bitte rufen Sie mich um ___ Uhr zurück.' (spoken number: siebzehn)"
+        correctAnswer: "17"
+
+  - slug: goethe-writing-teil1-form-completion
+    skill: writing
+    title: "Goethe Schreiben Teil 1: Extracting Data for Forms"
+    prerequisites: [goethe-personal-pronouns-verbs]
+    explanation: |
+      In Goethe Schreiben Teil 1, candidates read a short biographical text about one or two people and must fill in five missing fields on an administrative form.
+      Avoid entering unnecessary information; copy names, numbers, dates, and locations exactly as presented in the text.
+    examples:
+      - "Text: 'Ihre Freundin Maria Rossi möchte in Köln einen Deutschkurs buchen. Sie wohnt in 50667 Köln, Marktstraße 14. Sie möchte den Kurs mit zwei Personen besuchen.' -> Formularfeld 'Anzahl der Personen': 2."
+      - "Text: 'Herr David Evans zahlt die Hotelrechnung mit Kreditkarte.' -> Formularfeld 'Zahlungsweise': Kreditkarte."
+    exercises:
+      - type: fill_blank
+        textWithBlank: "Text: 'Familie Meier möchte Urlaub machen: Herr Meier, seine Frau und die beiden Kinder Peter und Anna.' -> Formular: Anzahl der Personen: ___"
+        correctAnswer: "4"
+      - type: multiple_choice
+        question: "Text: 'Frau Chen reist am 15. Juli an und bleibt bis zum 22. Juli.' - Was gehört ins Formularfeld 'Abreisedatum'?"
+        options: ["15. Juli", "22. Juli", "7 Tage", "Juli"]
+        correctIndex: 1
+      - type: fill_blank
+        textWithBlank: "Text: 'Herr Martin wohnt in der Schillerstraße 8 in Leipzig.' -> Formularfeld 'Straße und Hausnummer': Schillerstraße ___"
+        correctAnswer: "8"
+
+  - slug: goethe-writing-teil2-short-letter
+    skill: writing
+    title: "Goethe Schreiben Teil 2: Composing Short Emails"
+    prerequisites: [goethe-question-formation, goethe-imperative-polite-forms, goethe-vocab-leisure-hobbies]
+    explanation: |
+      In Goethe Schreiben Teil 2, candidates compose a short email or letter of approximately 30 words addressing three given prompts.
+      Follow this structure:
+      1. Anrede: 'Liebe...' (female) / 'Lieber...' (male) for friends; 'Sehr geehrte Damen und Herren,' for formal recipients.
+      2. Body: Address all three given prompt points directly in complete sentences.
+      3. Grußformel: 'Viele Grüße' (informal) or 'Mit freundlichen Grüßen' (formal), followed by your name.
+    examples:
+      - "Aufgabe: Schreiben Sie eine E-Mail an Ihre Freundin Julia. 1. Warum schreiben Sie? 2. Wann treffen? 3. Was mitbringen? -> 'Liebe Julia, danke für die Einladung zur Party. Ich komme sehr gerne am Samstag um 19 Uhr. Soll ich einen Kuchen mitbringen? Viele Grüße, Marco.'"
+    exercises:
+      - type: free_text
+        prompt: "Schreiben Sie eine E-Mail an Ihren Freund Alex (ca. 30 Wörter): Sie möchten am Freitag ins Kino gehen. Fragen Sie nach der Uhrzeit und dem Treffpunkt."
+        modelAnswer: "Lieber Alex, hast du am Freitag Zeit? Ich möchte gerne mit dir ins Kino gehen. Wann fängt der Film an und wo treffen wir uns? Viele Grüße, Daniel."
+      - type: fill_blank
+        textWithBlank: "Passende Anrede für einen Brief an Ihre Freundin Lisa: '___ Lisa,'"
+        correctAnswer: "Liebe"
+      - type: multiple_choice
+        question: "Welche Grußformel passt am Ende einer informellen E-Mail an einen Kollegen/Freund?"
+        options: [
+          "Hochachtungsvoll",
+          "Mit freundlichen Grüßen",
+          "Herzliche Grüße",
+          "Sehr geehrter Herr"
+        ]
+        correctIndex: 2
+
+  - slug: goethe-speaking-teil1-teil2-teil3
+    skill: speaking
+    title: "Goethe Sprechen Teile 1, 2 und 3: Comprehensive Exam Format"
+    prerequisites: [goethe-question-formation, goethe-imperative-polite-forms, goethe-vocab-family-friends]
+    explanation: |
+      The Goethe A1 speaking exam has three structured parts:
+      Teil 1: Self-introduction based on six prompts (Name, Alter, Land, Wohnort, Beruf, Sprachen, Hobby), followed by spelling your name and reciting a number for the examiner.
+      Teil 2: Asking and answering thematic questions using word cards with your testing partner.
+      Teil 3: Formulating polite requests based on object cards and responding appropriately to your partner's requests.
+    examples:
+      - "Teil 1: 'Ich heiße Carlos, bin 30 Jahre alt, komme aus Brasilien und wohne in München. Ich bin Ingenieur, spreche Portugiesisch und lerne Deutsch. Mein Hobby ist Fußball.' - Prüfer: 'Buchstabieren Sie Ihren Nachnamen, bitte!'"
+      - "Teil 2: Thema 'Freizeit' + Wort 'Samstag' -> 'Was machen Sie am Samstag?' - 'Ich gehe einkaufen.'"
+      - "Teil 3: Karte mit 'Bleistift' -> 'Haben Sie einen Bleistift für mich?' - 'Ja, bitte sehr!'"
+    exercises:
+      - type: free_text
+        prompt: "Teil 1: Introduce yourself addressing your name, age, home country, and current city of residence."
+        modelAnswer: "Ich heiße Maria, bin 28 Jahre alt, komme aus Kolumbien und wohne in Hamburg."
+      - type: free_text
+        prompt: "Teil 2: Thema 'Einkaufen', Wort 'Kasse'. Formulate an inquiry for your partner."
+        modelAnswer: "Entschuldigung, wo ist die Kasse?"
+      - type: free_text
+        prompt: "Teil 3: You receive a card depicting a glass of water. Formulate a polite request."
+        modelAnswer: "Können Sie mir bitte ein Glas Wasser bringen?"

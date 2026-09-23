@@ -1,0 +1,1531 @@
+{
+  "seedVersion": "2",
+  "track": "telc",
+  "level": "A2",
+  "milestones": [
+    {
+      "milestone": {
+        "id": "telc-a2-grammar",
+        "track": "telc",
+        "level": "A2",
+        "title": "Grammar",
+        "description": null,
+        "orderIndex": 0
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "telc-a2-grammar-lessons",
+            "milestoneId": "telc-a2-grammar",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "a2-telc-perfekt-daily-work",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "a2-telc-dative-prepositions-errands",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "a2-telc-subordinating-conjunctions-weil-denn",
+              "orderIndex": 2
+            },
+            {
+              "lessonId": "a2-telc-modal-verbs-praeteritum",
+              "orderIndex": 3
+            },
+            {
+              "lessonId": "a2-telc-adjective-endings-accusative-dative",
+              "orderIndex": 4
+            },
+            {
+              "lessonId": "a2-telc-reflexive-verbs-work-social",
+              "orderIndex": 5
+            },
+            {
+              "lessonId": "a2-telc-conditional-wenn-clauses",
+              "orderIndex": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-a2-vocabulary",
+        "track": "telc",
+        "level": "A2",
+        "title": "Vocabulary",
+        "description": null,
+        "orderIndex": 1
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "telc-a2-vocabulary-lessons",
+            "milestoneId": "telc-a2-vocabulary",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "a2-telc-vocab-workplace-professions",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "a2-telc-vocab-banking-official-errands",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "a2-telc-vocab-mobility-trains-buses",
+              "orderIndex": 2
+            },
+            {
+              "lessonId": "a2-telc-vocab-scheduling-calendar-appointments",
+              "orderIndex": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-a2-reading",
+        "track": "telc",
+        "level": "A2",
+        "title": "Reading",
+        "description": null,
+        "orderIndex": 2
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "telc-a2-reading-lessons",
+            "milestoneId": "telc-a2-reading",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "a2-telc-reading-teil1-directory-matching",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "a2-telc-reading-teil2-informational-article",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "a2-telc-reading-teil3-classifieds-matching",
+              "orderIndex": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-a2-listening",
+        "track": "telc",
+        "level": "A2",
+        "title": "Listening",
+        "description": null,
+        "orderIndex": 3
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "telc-a2-listening-lessons",
+            "milestoneId": "telc-a2-listening",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "a2-telc-listening-teil1-voicemail-notes",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "a2-telc-listening-teil2-radio-announcements",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "a2-telc-listening-teil3-conversational-matching",
+              "orderIndex": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-a2-writing",
+        "track": "telc",
+        "level": "A2",
+        "title": "Writing",
+        "description": null,
+        "orderIndex": 4
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "telc-a2-writing-lessons",
+            "milestoneId": "telc-a2-writing",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "a2-telc-writing-teil1-form-completion",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "a2-telc-writing-teil2-practical-letter",
+              "orderIndex": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-a2-speaking",
+        "track": "telc",
+        "level": "A2",
+        "title": "Speaking",
+        "description": null,
+        "orderIndex": 5
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "telc-a2-speaking-lessons",
+            "milestoneId": "telc-a2-speaking",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "a2-telc-speaking-teil1-detailed-introduction",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "a2-telc-speaking-teil2-information-exchange",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "a2-telc-speaking-teil3-joint-planning",
+              "orderIndex": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "a2-telc-perfekt-daily-work",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A2",
+      "skill": "grammar",
+      "title": "Perfekt Tense for Daily Work and Life Tasks",
+      "explanation": "In telc A2 examinations, describing workplace duties, completed administrative tasks, and daily routines requires active control of the Perfekt.\nForm the Perfekt with the conjugated present of haben or sein and the past participle at the end of the sentence.\nWorkplace verbs like anrufen (hat angerufen), ausfüllen (hat ausgefüllt), bearbeiten (hat bearbeitet), and überweisen (hat überwiesen) are essential.\n",
+      "examples": [
+        "Ich habe die Unterlagen bereits an die Behörde geschickt.",
+        "Der Sachbearbeiter hat den Antrag gestern geprüft.",
+        "Haben Sie die Rechnung schon bezahlt?",
+        "Mein Kollege ist heute früher nach Hause gegangen."
+      ]
+    },
+    {
+      "id": "a2-telc-dative-prepositions-errands",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A2",
+      "skill": "grammar",
+      "title": "Dative Prepositions for Appointments and Errands",
+      "explanation": "Organizing errands and official appointments requires the prepositions mit, nach, von, zu, bei, and aus, which always govern the dative case.\nRemember the common contractions: zu + dem = zum, zu + der = zur, bei + dem = beim, von + dem = vom.\nNotice the noun changes: masculine/neuter takes dem (einem), feminine takes der (einer), and plural takes den + -n.\n",
+      "examples": [
+        "Ich muss morgen früh zum Arzt und danach zur Bank gehen.",
+        "Herr Müller arbeitet seit drei Jahren bei einer großen Firma.",
+        "Ich komme gerade vom Einwohnermeldeamt.",
+        "Kommen Sie mit dem Bus oder mit dem Auto zum Vorstellungsgespräch?"
+      ]
+    },
+    {
+      "id": "a2-telc-subordinating-conjunctions-weil-denn",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A2",
+      "skill": "grammar",
+      "title": "Giving Reasons: Weil vs. Denn in Administrative Inquiries",
+      "explanation": "Explaining absence, delays, or rescheduling requests requires causal connectors.\n'Weil' is a subordinating conjunction: it moves the finite verb to the end of the clause.\n'Denn' is a coordinating conjunction: it occupies position 0, leaving standard subject-verb order unchanged.\n",
+      "examples": [
+        "Ich kann morgen nicht kommen, weil ich einen wichtigen Arzttermin habe.",
+        "Ich kann morgen nicht kommen, denn ich habe einen wichtigen Arzttermin.",
+        "Er bittet um Verlängerung, weil die Dokumente noch fehlen.",
+        "Frau Keller bleibt zu Hause, denn ihr Kind ist krank."
+      ]
+    },
+    {
+      "id": "a2-telc-modal-verbs-praeteritum",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A2",
+      "skill": "grammar",
+      "title": "Präteritum of Modal Verbs in Excuses and Explanations",
+      "explanation": "In telc written tasks (such as notes to employers, teachers, or landlords), past obligations and incapacities are expressed using the Präteritum of modal verbs.\nUse musste (had to), konnte (was able to), durfte (was permitted to), and sollte (was supposed to).\nSingular 1st and 3rd persons share the same form without umlaut (ich konnte, er musste).\n",
+      "examples": [
+        "Gestern konnte ich nicht zur Arbeit kommen, weil ich hohes Fieber hatte.",
+        "Mein Sohn musste gestern zu Hause bleiben.",
+        "Wir durften den Raum während des Tests nicht verlassen.",
+        "Ich sollte mich bei der Personalabteilung melden."
+      ]
+    },
+    {
+      "id": "a2-telc-adjective-endings-accusative-dative",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A2",
+      "skill": "grammar",
+      "title": "Adjective Endings in Practical Transactions",
+      "explanation": "Handling commercial and residential transactions requires declining adjectives after indefinite articles (ein, eine) and negative articles (kein, keine).\nIn the accusative: masculine takes -en (einen neuen Mietvertrag); neuter takes -es (ein helles Zimmer); feminine takes -e (eine neue Wohnung).\nIn the dative: all genders without exception take -en after ein/kein/possessives (in einem großen Büro, mit einer freundlichen Nachbarin).\n",
+      "examples": [
+        "Ich suche eine bezahlbare Wohnung mit einem sonnigen Balkon.",
+        "Wir haben einen gebrauchten Schreibtisch gekauft.",
+        "Er wohnt in einem modernen Mehrfamilienhaus.",
+        "Haben Sie ein freies Einzelzimmer?"
+      ]
+    },
+    {
+      "id": "a2-telc-reflexive-verbs-work-social",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A2",
+      "skill": "grammar",
+      "title": "Reflexive Verbs for Social and Professional Contexts",
+      "explanation": "Many communicative verbs in practical German require reflexive pronouns (mich, dich, sich, uns, euch, sich).\nCrucial verbs for vocational and official contexts include: sich bewerben um (to apply for), sich verspäten (to be delayed), sich interessieren für (to be interested in), and sich anmelden (to register).\n",
+      "examples": [
+        "Ich bewerbe mich um die Stelle als Verkäufer.",
+        "Entschuldigen Sie bitte, die Bahn hat Verspätung und ich verspäte mich.",
+        "Interessieren Sie sich für diese Wohnung?",
+        "Man muss sich rechtzeitig beim Bürgeramt anmelden."
+      ]
+    },
+    {
+      "id": "a2-telc-conditional-wenn-clauses",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A2",
+      "skill": "grammar",
+      "title": "Conditional Clauses with Wenn in Rules and Agreements",
+      "explanation": "Conditional structures using wenn (if / when) explain conditions, rules, and arrangements in community and work life.\nWhen a sentence begins with the 'wenn' clause, the finite verb in that clause goes to the end; the main clause follows immediately with the conjugated verb in first position.\nFormula: 'Wenn [..., Verb], [Verb ...]'.\n",
+      "examples": [
+        "Wenn Sie Fragen haben, rufen Sie mich bitte an.",
+        "Wenn das Büro geschlossen ist, werfen Sie den Schlüssel in den Briefkasten.",
+        "Ich kann den Vertrag unterschreiben, wenn alle Angaben stimmen.",
+        "Wenn Sie krank sind, müssen Sie eine Arbeitsunfähigkeitsbescheinigung vorlegen."
+      ]
+    },
+    {
+      "id": "a2-telc-vocab-workplace-professions",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A2",
+      "skill": "vocabulary",
+      "title": "Workplace, Professional Duties, and Schedules",
+      "explanation": "Navigating work environments requires vocabulary related to contracts, responsibilities, shifts, and leaves of absence.\nKey terms include: der Arbeitgeber (employer), der Arbeitnehmer (employee), die Überstunden (overtime), die Teilzeit / Vollzeit (part-time / full-time), der Schichtdienst (shift work), and die Kündigung (termination/resignation).\nImportant practical expressions include Urlaub beantragen (to request vacation) and krankmelden (to call in sick).\n",
+      "examples": [
+        "Herr Al-Mansur arbeitet im Schichtdienst, auch an Wochenenden.",
+        "Ich muss heute zwei Überstunden machen, weil viele Bestellungen da sind.",
+        "Sie hat ihren Urlaub für den Sommer bereits beim Chef beantragt.",
+        "Mitarbeiter müssen sich bis 8:00 Uhr telefonisch krankmelden."
+      ]
+    },
+    {
+      "id": "a2-telc-vocab-banking-official-errands",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A2",
+      "skill": "vocabulary",
+      "title": "Banking, Municipal Offices, and Mail Services",
+      "explanation": "Navigating civic infrastructure requires understanding terminology for financial, postal, and governmental services.\nBanking terms include: das Konto (account), die Überweisung (bank transfer), der Dauerauftrag (standing order), and das Bargeld (cash).\nPostal and administrative terms include: der Personalausweis (ID card), die Meldebescheinigung (residence registration certificate), das Einschreiben (registered mail), and der Schalter (service counter).\n",
+      "examples": [
+        "Ich möchte ein Girokonto bei der Sparkasse eröffnen.",
+        "Bitte legen Sie zur Anmeldung Ihren Personalausweis vor.",
+        "Ich habe die Miete per Überweisung bezahlt.",
+        "Diesen Brief schicke ich per Einschreiben mit Rückschein."
+      ]
+    },
+    {
+      "id": "a2-telc-vocab-mobility-trains-buses",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A2",
+      "skill": "vocabulary",
+      "title": "Public Mobility, Disruption Notices, and Tickets",
+      "explanation": "Commuting requires understanding announcements and signs related to routes, delays, and fares.\nKey terms include: die Verbindung (connection), die Monatskarte (monthly pass), die Störung (fault/disruption), der Schienenersatzverkehr (rail replacement bus service), and das Gleis (railway platform/track).\n",
+      "examples": [
+        "Wegen einer Stellwerkstörung gibt es Verspätungen auf der S-Bahn-Linie 1.",
+        "Zwischen Hauptbahnhof und Messe fährt ein Schienenersatzverkehr mit Bussen.",
+        "Die Monatskarte für das gesamte Tarifgebiet kostet 78 Euro.",
+        "Wo kann ich mein Ticket entwerten?"
+      ]
+    },
+    {
+      "id": "a2-telc-vocab-scheduling-calendar-appointments",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A2",
+      "skill": "vocabulary",
+      "title": "Coordinating Appointments and Calendar Commitments",
+      "explanation": "Scheduling commitments requires phrases to propose, accept, reschedule, or cancel dates.\nKey verbs include: vereinbaren (to arrange/agree on), verschieben (to postpone/shift), absagen (to cancel), and bestätigen (to confirm).\nCommon idioms include: 'Passt es Ihnen am...?' (Does... suit you?), 'Da habe ich leider keine Zeit' (Unfortunately I have no time then), and 'Einen Termin wahrnehmen' (to attend an appointment).\n",
+      "examples": [
+        "Können wir den Termin vom Dienstag auf Donnerstag verschieben?",
+        "Ich muss unseren Termin leider absagen, da ich beruflich verhindert bin.",
+        "Passt es Ihnen am kommenden Freitag um 14:00 Uhr?",
+        "Ich möchte diesen Termin gerne verbindlich bestätigen."
+      ]
+    },
+    {
+      "id": "a2-telc-reading-teil1-directory-matching",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A2",
+      "skill": "reading",
+      "title": "telc Lesen Teil 1: Navigating Directories and Information Boards",
+      "explanation": "In telc Deutsch A2 Lesen Teil 1, candidates match five everyday needs to specific floors, counters, or departments on an informational board or directory (e.g., at a trade fair, shopping center, or municipal building).\nScan for precise category keywords and synonyms rather than reading every entry in detail.\n",
+      "examples": [
+        "Aufgabe: Sie suchen ein Wörterbuch für Ihren Sprachkurs. -> Infotafel: 1. Stock: Belletristik, Fachbücher, Lehr- und Wörterbücher. -> Lösung: 1. Stock.",
+        "Aufgabe: Sie möchten einen Pass beantragen. -> Rathaus-Wegweiser: Erdgeschoss: Bürgerbüro, Pass- und Ausweisstelle. -> Lösung: Erdgeschoss."
+      ]
+    },
+    {
+      "id": "a2-telc-reading-teil2-informational-article",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A2",
+      "skill": "reading",
+      "title": "telc Lesen Teil 2: Factual Texts and True/False Verification",
+      "explanation": "In telc Lesen Teil 2, candidates read an authentic journalistic or informational article (e.g., about volunteer work, community programs, or vocational training) and evaluate five statements as Richtig (True) or Falsch (False).\nRead each statement carefully before scanning the text, watching out for qualifying words like immer, nie, nur, or alle.\n",
+      "examples": [
+        "Text: 'Der Sportverein bietet ab November spezielle Schwimmkurse ausschließlich für Senioren an.' - Aussage: Junge Erwachsene können an den neuen Schwimmkursen teilnehmen. -> Falsch.",
+        "Text: 'Die Kurse finden samstags statt und kosten für Vereinsmitglieder keinen Aufpreis.' - Aussage: Für Mitglieder des Vereins ist der Kurs kostenlos. -> Richtig."
+      ]
+    },
+    {
+      "id": "a2-telc-reading-teil3-classifieds-matching",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A2",
+      "skill": "reading",
+      "title": "telc Lesen Teil 3: Matching Classified Advertisements",
+      "explanation": "In telc Lesen Teil 3, candidates match five individuals with specific requirements to seven classified advertisements (a through g).\nCarefully note restrictive conditions (e.g., weekend availability, price limits, specific neighborhoods, or required skills) to avoid choosing distracting near-matches.\n",
+      "examples": [
+        "Person: Anna sucht einen Nebenjob am Wochenende als Babysitterin in Köln-Ehrenfeld. Anzeige c: 'Suche zuverlässige Kinderbetreuung für samstags in Ehrenfeld.' -> Passt zu Anna.",
+        "Person: Familie Meyer sucht ein Ferienhaus an der Ostsee, in dem Hunde erlaubt sind. Anzeige f: 'Gemütliches Ferienhaus am Strand, Haustiere herzlich willkommen!' -> Passt zu Familie Meyer."
+      ]
+    },
+    {
+      "id": "a2-telc-listening-teil1-voicemail-notes",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A2",
+      "skill": "listening",
+      "title": "telc Hören Teil 1: Note-Taking from Voicemail Messages",
+      "explanation": "In telc Hören Teil 1, candidates listen to five recorded telephone answering machine messages (played twice) and fill in missing operational data on memo pads (Notizzettel).\nListen selectively for names, telephone numbers, meeting locations, times, and specific instructions.\n",
+      "examples": [
+        "Nachricht: 'Hallo Herr Schmidt, hier Praxis Dr. Kranz. Wir müssen Ihren Termin am Donnerstag von 10:00 Uhr auf 14:30 Uhr verschieben. Bitte rufen Sie kurz zurück.' -> Neuer Termin: 14:30 Uhr.",
+        "Nachricht: 'Hier Autohaus Wagner. Ihr Wagen ist fertig. Sie können ihn bis 18 Uhr abholen. Die Rechnung beträgt 240 Euro.' -> Rechnungsbetrag: 240 Euro."
+      ]
+    },
+    {
+      "id": "a2-telc-listening-teil2-radio-announcements",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A2",
+      "skill": "listening",
+      "title": "telc Hören Teil 2: Radio Announcements and Public Reports",
+      "explanation": "In telc Hören Teil 2, candidates listen to five short radio announcements (played once) and answer a three-option multiple-choice question for each.\nAnnouncements cover traffic advisories, event schedules, retail promotions, and weather warnings.\n",
+      "examples": [
+        "Hörtext: 'Der Wetterbericht: Am Nachmittag im Bergland schwere Gewitter mit Hagel. Bitte sichern Sie lose Gegenstände.' - Frage: Wo gibt es Unwetter? -> Im Bergland.",
+        "Hörtext: 'Konzerttipp: Das Open-Air-Konzert im Stadtpark beginnt heute wegen Regens erst um 20:30 Uhr.' - Frage: Wann fängt das Konzert an? -> Um 20:30 Uhr."
+      ]
+    },
+    {
+      "id": "a2-telc-listening-teil3-conversational-matching",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A2",
+      "skill": "listening",
+      "title": "telc Hören Teil 3: Dialogues and Speaker-Activity Matching",
+      "explanation": "In telc Hören Teil 3, candidates listen to a conversation between two people (played twice) and match five people or objects to nine possible activities, locations, or items.\nIdentify which speaker is talking and note specific preferences, responsibilities, or actions assigned to each individual.\n",
+      "examples": [
+        "Dialog: 'Wer bringt was zum Sommerfest mit? Sarah macht den Nudelsalat, und Thomas hat versprochen, Grillwürstchen mitzubringen.' -> Thomas: Grillwürstchen.",
+        "Dialog: 'Wer übernimmt welche Aufgabe im Büro? Martin schreibt das Protokoll, und Claudia kümmert sich um die Präsentation.' -> Claudia: Präsentation."
+      ]
+    },
+    {
+      "id": "a2-telc-writing-teil1-form-completion",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A2",
+      "skill": "writing",
+      "title": "telc Schreiben Teil 1: Extracting Information to Complete Forms",
+      "explanation": "In telc Schreiben Teil 1, candidates read three short texts (business cards, informational notes, or booking requests) and extract five missing details to complete a registration form.\nCopy the extracted information accurately into the blank fields without unnecessary words.\n",
+      "examples": [
+        "Text: 'Herr David Miller wohnt in Frankfurt in der Zeil 22. Er möchte ein Doppelzimmer vom 12. bis 15. Mai für sich und seine Frau buchen.' -> Formular: Straße/Hausnummer: Zeil 22; Zimmerart: Doppelzimmer."
+      ]
+    },
+    {
+      "id": "a2-telc-writing-teil2-practical-letter",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A2",
+      "skill": "writing",
+      "title": "telc Schreiben Teil 2: Writing a 40-Word Letter Covering 3 Prompts",
+      "explanation": "In telc Schreiben Teil 2, candidates compose a communicative note or email (approx. 40 words) choosing three out of four given guiding prompts.\nTypical situations include apologising for absence, requesting information from a landlord or authority, or rescheduling an appointment.\nEnsure you include: a proper greeting, complete sentences addressing each chosen prompt, and a polite closing formula.\n",
+      "examples": [
+        "Situation: Sie können wegen Krankheit nicht zum Deutschkurs kommen. Schreiben Sie an Ihre Lehrerin Frau Maier: 1. Grund des Schreibens 2. Wie lange krank? 3. Bitte um Hausaufgaben. -> 'Sehr geehrte Frau Maier, ich kann diese Woche leider nicht zum Unterricht kommen, weil ich eine schwere Grippe habe. Der Arzt hat mich bis Freitag krankgeschrieben. Können Sie mir bitte die Hausaufgaben per E-Mail schicken? Vielen Dank und freundliche Grüße, Ali Demir.'"
+      ]
+    },
+    {
+      "id": "a2-telc-speaking-teil1-detailed-introduction",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A2",
+      "skill": "speaking",
+      "title": "telc Sprechen Teil 1: Extended Personal Presentation and Follow-Ups",
+      "explanation": "In telc Sprechen Teil 1, candidates introduce themselves using at least six complete sentences based on prompt words (Name, Herkunft, Wohnort, Familie, Beruf/Ausbildung, Sprachen, Hobbys).\nFollowing your introduction, the examiner will ask two detailed follow-up questions (e.g., about your daily work routine or commute).\n",
+      "examples": [
+        "Kandidat: 'Mein Name ist Tarik Mansour. Ich komme aus Marokko, aber ich wohne seit zwei Jahren in Nürnberg. Ich bin verheiratet und habe zwei Kinder. Von Beruf bin ich Elektriker und arbeite bei einer Baufirma. In meiner Freizeit spiele ich gerne Fußball.' - Prüfer: 'Wie kommen Sie morgens zur Arbeit?' - Kandidat: 'Ich fahre meistens mit der U-Bahn.'"
+      ]
+    },
+    {
+      "id": "a2-telc-speaking-teil2-information-exchange",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A2",
+      "skill": "speaking",
+      "title": "telc Sprechen Teil 2: Paired Everyday Information Exchange",
+      "explanation": "In telc Sprechen Teil 2, test takers converse in pairs about familiar everyday themes (e.g., shopping habits, housing, weekends, holidays).\nCandidates take turns asking questions and responding with complete, descriptive answers rather than simple yes/no replies.\n",
+      "examples": [
+        "Kandidat A: 'Thema: Wohnen - Haben Sie einen Garten oder einen Balkon an Ihrer Wohnung?'",
+        "Kandidat B: 'Ja, wir haben einen kleinen Balkon. Im Sommer frühstücken wir dort sehr gern. Und wie wohnen Sie?'",
+        "Kandidat A: 'Ich wohne in einer Zweizimmerwohnung mitten in der Innenstadt, leider ohne Balkon.'"
+      ]
+    },
+    {
+      "id": "a2-telc-speaking-teil3-joint-planning",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A2",
+      "skill": "speaking",
+      "title": "telc Sprechen Teil 3: Joint Problem-Solving and Scheduling",
+      "explanation": "In telc Sprechen Teil 3, candidates receive task sheets with personal calendars or constraints and must collaboratively plan an activity (e.g., organizing a farewell party, planning a weekend trip, or finding a mutual appointment).\nMake suggestions, express agreement or polite disagreement, and agree upon concrete details (day, time, tasks).\n",
+      "examples": [
+        "Kandidat A: 'Wollen wir am Samstag zusammen für Peters Geschenk einkaufen gehen?'",
+        "Kandidat B: 'Am Samstagvormittag muss ich leider arbeiten. Passt es dir vielleicht am Samstagnachmittag um 16 Uhr?'",
+        "Kandidat A: 'Ja, 16 Uhr passt mir ausgezeichnet. Wo wollen wir uns treffen?'",
+        "Kandidat B: 'Treffen wir uns direkt vor dem Haupteingang vom Einkaufszentrum.'"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a2-telc-perfekt-daily-work__ex0",
+      "lessonId": "a2-telc-perfekt-daily-work",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Haben Sie das Formular vollständig ___ ? (ausfüllen)",
+        "correctAnswer": "ausgefüllt"
+      }
+    },
+    {
+      "id": "a2-telc-perfekt-daily-work__ex1",
+      "lessonId": "a2-telc-perfekt-daily-work",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welches Hilfsverb gehört zu 'überweisen'? 'Ich ___ das Geld gestern überwiesen.'",
+        "options": [
+          "habe",
+          "bin",
+          "werde",
+          "hätte"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "a2-telc-perfekt-daily-work__ex2",
+      "lessonId": "a2-telc-perfekt-daily-work",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Die Handwerker ___ um 8 Uhr gekommen. (sein)",
+        "correctAnswer": "sind"
+      }
+    },
+    {
+      "id": "a2-telc-perfekt-daily-work__ex3",
+      "lessonId": "a2-telc-perfekt-daily-work",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "einen Antrag ausfüllen -> hat ausgefüllt",
+        "back": "to fill out an application -> filled out"
+      }
+    },
+    {
+      "id": "a2-telc-dative-prepositions-errands__ex0",
+      "lessonId": "a2-telc-dative-prepositions-errands",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Form ist korrekt? 'Ich gehe heute ___ Arzt (der Arzt).'",
+        "options": [
+          "zum",
+          "zur",
+          "nach",
+          "bei"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "a2-telc-dative-prepositions-errands__ex1",
+      "lessonId": "a2-telc-dative-prepositions-errands",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Sie spricht gerade mit ___ Chefin. (die Chefin / Dativ)",
+        "correctAnswer": "der"
+      }
+    },
+    {
+      "id": "a2-telc-dative-prepositions-errands__ex2",
+      "lessonId": "a2-telc-dative-prepositions-errands",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Wir treffen uns beim Eingang von ___ Bahnhof. (der Bahnhof / Dativ: dem)",
+        "correctAnswer": "dem"
+      }
+    },
+    {
+      "id": "a2-telc-dative-prepositions-errands__ex3",
+      "lessonId": "a2-telc-dative-prepositions-errands",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "zu der Bank / bei dem Arzt",
+        "back": "zur Bank / beim Arzt"
+      }
+    },
+    {
+      "id": "a2-telc-subordinating-conjunctions-weil-denn__ex0",
+      "lessonId": "a2-telc-subordinating-conjunctions-weil-denn",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Satz mit 'weil' ist grammatisch korrekt?",
+        "options": [
+          "Ich komme später, weil mein Bus hatte Verspätung.",
+          "Ich komme später, weil mein Bus Verspätung hatte.",
+          "Ich komme später, weil hatte mein Bus Verspätung.",
+          "Ich komme später, denn mein Bus Verspätung hatte."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a2-telc-subordinating-conjunctions-weil-denn__ex1",
+      "lessonId": "a2-telc-subordinating-conjunctions-weil-denn",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Er sagt den Termin ab, ___ er beruflich verreisen muss. (subordinating)",
+        "correctAnswer": "weil"
+      }
+    },
+    {
+      "id": "a2-telc-subordinating-conjunctions-weil-denn__ex2",
+      "lessonId": "a2-telc-subordinating-conjunctions-weil-denn",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Wir bitten um Entschuldigung, ___ der Zug hat leider Verspätung. (coordinating: position 0)",
+        "correctAnswer": "denn"
+      }
+    },
+    {
+      "id": "a2-telc-subordinating-conjunctions-weil-denn__ex3",
+      "lessonId": "a2-telc-subordinating-conjunctions-weil-denn",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Write a sentence explaining why you are late using 'weil'.",
+        "modelAnswer": "Ich komme zu spät, weil die S-Bahn Verspätung hatte."
+      }
+    },
+    {
+      "id": "a2-telc-modal-verbs-praeteritum__ex0",
+      "lessonId": "a2-telc-modal-verbs-praeteritum",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Herr Becker ___ gestern Überstunden machen. (müssen / Präteritum)",
+        "correctAnswer": "musste"
+      }
+    },
+    {
+      "id": "a2-telc-modal-verbs-praeteritum__ex1",
+      "lessonId": "a2-telc-modal-verbs-praeteritum",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welches Modalverb drückt vergangene Unfähigkeit aus? 'Ich ___ Sie gestern nicht telefonisch erreichen.'",
+        "options": [
+          "konnte",
+          "musste",
+          "sollte",
+          "durfte"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "a2-telc-modal-verbs-praeteritum__ex2",
+      "lessonId": "a2-telc-modal-verbs-praeteritum",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Wir ___ den Termin leider nicht wahrnehmen. (können)",
+        "correctAnswer": "konnten"
+      }
+    },
+    {
+      "id": "a2-telc-modal-verbs-praeteritum__ex3",
+      "lessonId": "a2-telc-modal-verbs-praeteritum",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "ich musste / ich konnte",
+        "back": "I had to / I could (was able to)"
+      }
+    },
+    {
+      "id": "a2-telc-adjective-endings-accusative-dative__ex0",
+      "lessonId": "a2-telc-adjective-endings-accusative-dative",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Der Mieter wünscht sich einen ruhig___ Nachbarn. (masculine accusative)",
+        "correctAnswer": "en"
+      }
+    },
+    {
+      "id": "a2-telc-adjective-endings-accusative-dative__ex1",
+      "lessonId": "a2-telc-adjective-endings-accusative-dative",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Endung ist im Dativ korrekt? 'Ich wohne in einem groß___ Haus.'",
+        "options": [
+          "-es",
+          "-em",
+          "-en",
+          "-er"
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "a2-telc-adjective-endings-accusative-dative__ex2",
+      "lessonId": "a2-telc-adjective-endings-accusative-dative",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Sie sucht ein ruhig___ Zimmer im Stadtzentrum. (neuter accusative)",
+        "correctAnswer": "es"
+      }
+    },
+    {
+      "id": "a2-telc-adjective-endings-accusative-dative__ex3",
+      "lessonId": "a2-telc-adjective-endings-accusative-dative",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "mit einem freundlichen Gruß (Dativ)",
+        "back": "with a friendly greeting"
+      }
+    },
+    {
+      "id": "a2-telc-reflexive-verbs-work-social__ex0",
+      "lessonId": "a2-telc-reflexive-verbs-work-social",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welches Pronomen passt? 'Frau Demir bewirbt ___ um die freie Stelle.'",
+        "options": [
+          "ihr",
+          "sie",
+          "sich",
+          "ihn"
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "a2-telc-reflexive-verbs-work-social__ex1",
+      "lessonId": "a2-telc-reflexive-verbs-work-social",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Ich möchte ___ gerne für den Deutschkurs anmelden.",
+        "correctAnswer": "mich"
+      }
+    },
+    {
+      "id": "a2-telc-reflexive-verbs-work-social__ex2",
+      "lessonId": "a2-telc-reflexive-verbs-work-social",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Bitte entschuldigen Sie, wir verspäten ___ um zehn Minuten.",
+        "correctAnswer": "uns"
+      }
+    },
+    {
+      "id": "a2-telc-reflexive-verbs-work-social__ex3",
+      "lessonId": "a2-telc-reflexive-verbs-work-social",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "sich bewerben um (+ Akk.)",
+        "back": "to apply for (a job/position)"
+      }
+    },
+    {
+      "id": "a2-telc-conditional-wenn-clauses__ex0",
+      "lessonId": "a2-telc-conditional-wenn-clauses",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Wortstellung ist korrekt nach einem 'Wenn'-Satz?",
+        "options": [
+          "Wenn Sie Hilfe brauchen, Sie können mich anrufen.",
+          "Wenn Sie Hilfe brauchen, können Sie mich anrufen.",
+          "Wenn Sie Hilfe brauchen, anrufen können Sie mich.",
+          "Wenn Sie Hilfe brauchen, Sie anrufen mich."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a2-telc-conditional-wenn-clauses__ex1",
+      "lessonId": "a2-telc-conditional-wenn-clauses",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Wenn Sie verhindert ___ , geben Sie uns bitte 24 Stunden vorher Bescheid. (sein)",
+        "correctAnswer": "sind"
+      }
+    },
+    {
+      "id": "a2-telc-conditional-wenn-clauses__ex2",
+      "lessonId": "a2-telc-conditional-wenn-clauses",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Complete the conditional sentence: 'Wenn ich Zeit habe, ... (I will help you)'.",
+        "modelAnswer": "Wenn ich Zeit habe, helfe ich dir."
+      }
+    },
+    {
+      "id": "a2-telc-vocab-workplace-professions__ex0",
+      "lessonId": "a2-telc-vocab-workplace-professions",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "sich krankmelden",
+        "back": "to call in sick"
+      }
+    },
+    {
+      "id": "a2-telc-vocab-workplace-professions__ex1",
+      "lessonId": "a2-telc-vocab-workplace-professions",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was bedeutet 'Überstunden machen'?",
+        "options": [
+          "Mehr Stunden arbeiten als im Vertrag vereinbart",
+          "Zu spät zur Arbeit kommen",
+          "Eine Pause einlegen",
+          "Den Arbeitsplatz wechseln"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "a2-telc-vocab-workplace-professions__ex2",
+      "lessonId": "a2-telc-vocab-workplace-professions",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Er arbeitet nicht 40 Stunden, sondern 20 Stunden pro Woche, also in ___ .",
+        "correctAnswer": "Teilzeit"
+      }
+    },
+    {
+      "id": "a2-telc-vocab-workplace-professions__ex3",
+      "lessonId": "a2-telc-vocab-workplace-professions",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "State that you want to apply for vacation next week.",
+        "modelAnswer": "Ich möchte für nächste Woche Urlaub beantragen."
+      }
+    },
+    {
+      "id": "a2-telc-vocab-banking-official-errands__ex0",
+      "lessonId": "a2-telc-vocab-banking-official-errands",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "die Überweisung",
+        "back": "the bank transfer"
+      }
+    },
+    {
+      "id": "a2-telc-vocab-banking-official-errands__ex1",
+      "lessonId": "a2-telc-vocab-banking-official-errands",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welches Dokument beweist den Wohnsitz nach der Anmeldung beim Bürgeramt?",
+        "options": [
+          "Die Meldebescheinigung",
+          "Die Quittung",
+          "Die Fahrkarte",
+          "Das Zeugnis"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "a2-telc-vocab-banking-official-errands__ex2",
+      "lessonId": "a2-telc-vocab-banking-official-errands",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Bitte überweisen Sie den Betrag auf unser ___ bei der Postbank. (account: das Konto)",
+        "correctAnswer": "Konto"
+      }
+    },
+    {
+      "id": "a2-telc-vocab-banking-official-errands__ex3",
+      "lessonId": "a2-telc-vocab-banking-official-errands",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Say that you would like to open a checking account.",
+        "modelAnswer": "Ich möchte gerne ein Girokonto eröffnen."
+      }
+    },
+    {
+      "id": "a2-telc-vocab-mobility-trains-buses__ex0",
+      "lessonId": "a2-telc-vocab-mobility-trains-buses",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "der Schienenersatzverkehr (SEV)",
+        "back": "rail replacement bus service"
+      }
+    },
+    {
+      "id": "a2-telc-vocab-mobility-trains-buses__ex1",
+      "lessonId": "a2-telc-vocab-mobility-trains-buses",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was bedeutet das Wort 'entwerten' bei einer Fahrkarte?",
+        "options": [
+          "Das Ticket stempeln/ungültig machen vor der Fahrt",
+          "Das Ticket wegwerfen",
+          "Ein neues Ticket kaufen",
+          "Die Fahrkarte dem Kontrolleur zeigen"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "a2-telc-vocab-mobility-trains-buses__ex2",
+      "lessonId": "a2-telc-vocab-mobility-trains-buses",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Aufgrund einer technischen ___ kommt es heute zu Zugausfällen. (disruption: die Störung)",
+        "correctAnswer": "Störung"
+      }
+    },
+    {
+      "id": "a2-telc-vocab-mobility-trains-buses__ex3",
+      "lessonId": "a2-telc-vocab-mobility-trains-buses",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Ask whether this ticket is valid for zone A.",
+        "modelAnswer": "Ist dieses Ticket für den Tarifbereich A gültig?"
+      }
+    },
+    {
+      "id": "a2-telc-vocab-scheduling-calendar-appointments__ex0",
+      "lessonId": "a2-telc-vocab-scheduling-calendar-appointments",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "einen Termin verschieben",
+        "back": "to postpone / reschedule an appointment"
+      }
+    },
+    {
+      "id": "a2-telc-vocab-scheduling-calendar-appointments__ex1",
+      "lessonId": "a2-telc-vocab-scheduling-calendar-appointments",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was sagt man, wenn man zu einem vorgeschlagenen Zeitpunkt nicht kann?",
+        "options": [
+          "Da habe ich leider schon etwas vor.",
+          "Das passt mir ausgezeichnet.",
+          "Ja, das machen wir so.",
+          "Ich komme sehr gern."
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "a2-telc-vocab-scheduling-calendar-appointments__ex2",
+      "lessonId": "a2-telc-vocab-scheduling-calendar-appointments",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Können wir einen neuen Termin ___ ? (to arrange/agree: vereinbaren)",
+        "correctAnswer": "vereinbaren"
+      }
+    },
+    {
+      "id": "a2-telc-vocab-scheduling-calendar-appointments__ex3",
+      "lessonId": "a2-telc-vocab-scheduling-calendar-appointments",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Ask someone if Monday at 10:00 AM suits them.",
+        "modelAnswer": "Passt es Ihnen am Montag um 10 Uhr?"
+      }
+    },
+    {
+      "id": "a2-telc-reading-teil1-directory-matching__ex0",
+      "lessonId": "a2-telc-reading-teil1-directory-matching",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Situation: Sie haben Zahnschmerzen und suchen eine Praxis im Ärztehaus. Infotafel: EG: Apotheke, Sanitätshaus; 1. OG: Allgemeinmedizin, Kinderarzt; 2. OG: Zahnarztpraxis Dr. Weiss, Kieferorthopädie. Wohin gehen Sie?",
+        "options": [
+          "Ins Erdgeschoss",
+          "In den 1. Stock",
+          "In den 2. Stock"
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "a2-telc-reading-teil1-directory-matching__ex1",
+      "lessonId": "a2-telc-reading-teil1-directory-matching",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Situation: Sie möchten ein Buch ausleihen. Verzeichnis: Raum 101: Verwaltung; Raum 105: Lesesaal & Buchausleihe; Raum 110: Cafeteria. Wohin gehen Sie?",
+        "options": [
+          "Raum 101",
+          "Raum 105",
+          "Raum 110"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a2-telc-reading-teil1-directory-matching__ex2",
+      "lessonId": "a2-telc-reading-teil1-directory-matching",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Wegweiser: 'Fundbüro und Beschwerdestelle befinden sich im ___ .' (word for ground floor: Erdgeschoss)",
+        "correctAnswer": "Erdgeschoss"
+      }
+    },
+    {
+      "id": "a2-telc-reading-teil2-informational-article__ex0",
+      "lessonId": "a2-telc-reading-teil2-informational-article",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Text: 'Das neue Nachbarschaftszentrum öffnet täglich von 9 bis 18 Uhr. Dienstags bleibt es wegen interner Teamsitzungen für Besucher geschlossen.' - Aussage: Am Dienstagnachmittag kann man das Zentrum besuchen.",
+        "options": [
+          "Richtig",
+          "Falsch"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a2-telc-reading-teil2-informational-article__ex1",
+      "lessonId": "a2-telc-reading-teil2-informational-article",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Text: 'Für die Teilnahme am Kochkurs müssen die Zutaten nicht mitgebracht werden. Alles ist in der Gebühr enthalten.' - Aussage: Die Teilnehmer müssen das Essen selbst zum Kurs mitbringen.",
+        "options": [
+          "Richtig",
+          "Falsch"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a2-telc-reading-teil2-informational-article__ex2",
+      "lessonId": "a2-telc-reading-teil2-informational-article",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Text: 'Bürger können ihren Sperrmüll zweimal pro Jahr ohne zusätzliche Gebühren abholen lassen.' - Aussage: Die Abholung von Sperrmüll ist bis zu zweimal jährlich kostenfrei.",
+        "options": [
+          "Richtig",
+          "Falsch"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "a2-telc-reading-teil3-classifieds-matching__ex0",
+      "lessonId": "a2-telc-reading-teil3-classifieds-matching",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Person: Herr Klein sucht einen gebrauchten Kleinwagen bis maximal 3.000 Euro. Welche Anzeige passt? Anzeige a: 'VW Golf, Baujahr 2018, Top-Zustand, 9.500 Euro.' Anzeige b: 'Opel Corsa, fahrbereit, TÜV neu, VB 2.400 Euro.'",
+        "options": [
+          "Anzeige a",
+          "Anzeige b"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a2-telc-reading-teil3-classifieds-matching__ex1",
+      "lessonId": "a2-telc-reading-teil3-classifieds-matching",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Person: Sarah möchte abends Spanisch lernen. Anzeige c: 'Sprachstudio: Spanisch für Anfänger jeden Dienstag von 18:30 bis 20:00 Uhr.' Anzeige d: 'Intensivkurs Spanisch: Montag bis Freitag von 8:00 bis 12:00 Uhr.'",
+        "options": [
+          "Anzeige c",
+          "Anzeige d"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "a2-telc-reading-teil3-classifieds-matching__ex2",
+      "lessonId": "a2-telc-reading-teil3-classifieds-matching",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Person: Familie sucht eine 4-Zimmer-Wohnung mit Garten. Anzeige e: '3-Zimmer-Wohnung im Dachgeschoss mit Balkon.' Anzeige f: 'Geräumige 4-Zimmer-Erdgeschosswohnung mit eigenem Gartenzugang.'",
+        "options": [
+          "Anzeige e",
+          "Anzeige f"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a2-telc-listening-teil1-voicemail-notes__ex0",
+      "lessonId": "a2-telc-listening-teil1-voicemail-notes",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Nachricht: 'Hier Schreinerei Holz. Die Lieferung kommt am Freitag um ___ Uhr.' (spoken: elf)",
+        "correctAnswer": "11"
+      }
+    },
+    {
+      "id": "a2-telc-listening-teil1-voicemail-notes__ex1",
+      "lessonId": "a2-telc-listening-teil1-voicemail-notes",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Nachricht: 'Guten Tag, hier Kundendienst Becker. Unser Techniker kommt morgen zwischen 8 und 12 Uhr. Bitte stellen Sie sicher, dass jemand zu Hause ist.' - Was soll der Kunde tun?",
+        "options": [
+          "In die Werkstatt kommen",
+          "Morgen Vormittag zu Hause sein",
+          "Eine neue Rechnung bezahlen"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a2-telc-listening-teil1-voicemail-notes__ex2",
+      "lessonId": "a2-telc-listening-teil1-voicemail-notes",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Nachricht: 'Bitte rufen Sie mich unter der Nummer 0172-___ zurück.' (spoken: acht-fünf-zwei)",
+        "correctAnswer": "852"
+      }
+    },
+    {
+      "id": "a2-telc-listening-teil2-radio-announcements__ex0",
+      "lessonId": "a2-telc-listening-teil2-radio-announcements",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Radio (1x): 'Verkehrsmeldung für die A5: Wegen einer Wanderbaustelle zwischen Karlsruhe und Rastatt stockt der Verkehr auf vier Kilometern.' - Was ist auf der A5?",
+        "options": [
+          "Ein Unfall",
+          "Vier Kilometer stockender Verkehr wegen Baustelle",
+          "Eine Vollsperrung"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a2-telc-listening-teil2-radio-announcements__ex1",
+      "lessonId": "a2-telc-listening-teil2-radio-announcements",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Radio (1x): 'Verbrauchertipp: Frisches Obst und Gemüse auf dem Wochenmarkt am Rathausplatz heute bis 14 Uhr mit Sonderrabatten.' - Wo gibt es die Rabatte?",
+        "options": [
+          "Im Supermarkt",
+          "Auf dem Wochenmarkt",
+          "Im Einkaufszentrum"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a2-telc-listening-teil2-radio-announcements__ex2",
+      "lessonId": "a2-telc-listening-teil2-radio-announcements",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Radio: 'Das Bürgertelefon der Stadt ist heute bis ___ Uhr erreichbar.' (spoken: neunzehn)",
+        "correctAnswer": "19"
+      }
+    },
+    {
+      "id": "a2-telc-listening-teil3-conversational-matching__ex0",
+      "lessonId": "a2-telc-listening-teil3-conversational-matching",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Gespräch: 'Was machen die Kollegen am Wochenende? Markus repariert sein Fahrrad, während Sabine wandern geht.' - Was macht Sabine?",
+        "options": [
+          "Fahrrad reparieren",
+          "Wandern gehen",
+          "Zu Hause schlafen",
+          "Ein Fest organisieren"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a2-telc-listening-teil3-conversational-matching__ex1",
+      "lessonId": "a2-telc-listening-teil3-conversational-matching",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Gespräch: 'Wer übernimmt den Wochenenddienst im Krankenhaus? Dr. Klein hat Samstag Dienst und Dr. Frank übernimmt den Sonntag.' - Wer arbeitet am Sonntag?",
+        "options": [
+          "Dr. Klein",
+          "Dr. Frank",
+          "Beide Ärzte gemeinsam"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a2-telc-listening-teil3-conversational-matching__ex2",
+      "lessonId": "a2-telc-listening-teil3-conversational-matching",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Dialog: 'Lena kauft die Getränke für die Party und Felix backt einen Kuchen.' - What does Felix do?",
+        "modelAnswer": "Felix backt einen Kuchen."
+      }
+    },
+    {
+      "id": "a2-telc-writing-teil1-form-completion__ex0",
+      "lessonId": "a2-telc-writing-teil1-form-completion",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Text: 'Frau Dr. Julia Sommer, Kaiserstraße 14, 69115 Heidelberg. Anreise: 04. Oktober.' -> Formularfeld 'Wohnort': ___",
+        "correctAnswer": "Heidelberg"
+      }
+    },
+    {
+      "id": "a2-telc-writing-teil1-form-completion__ex1",
+      "lessonId": "a2-telc-writing-teil1-form-completion",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Text: 'Teilnehmer möchte den Kurs am Abend ab 18:30 Uhr besuchen.' -> Formularfeld 'Kurszeit': ___",
+        "correctAnswer": "Abend"
+      }
+    },
+    {
+      "id": "a2-telc-writing-teil1-form-completion__ex2",
+      "lessonId": "a2-telc-writing-teil1-form-completion",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Text: 'Zahlung erfolgt bargeldlos per EC-Karte bei der Ankunft.' - Was gehört ins Formularfeld 'Zahlungsart'?",
+        "options": [
+          "Barzahlung",
+          "EC-Karte",
+          "Rechnung",
+          "Kreditkarte"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a2-telc-writing-teil2-practical-letter__ex0",
+      "lessonId": "a2-telc-writing-teil2-practical-letter",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Schreiben Sie an Ihre Vermieterin, Frau Weber (ca. 40 Wörter): Die Heizung im Wohnzimmer ist kaputt, es ist sehr kalt. Bitten Sie um schnelle Reparatur und nennen Sie Ihre Telefonnummer.",
+        "modelAnswer": "Sehr geehrte Frau Weber, in meiner Wohnung ist die Heizung im Wohnzimmer seit gestern defekt und es ist sehr kalt. Können Sie bitte schnell einen Handwerker schicken? Sie erreichen mich unter 0171-1234567. Mit freundlichen Grüßen, Markus Graf."
+      }
+    },
+    {
+      "id": "a2-telc-writing-teil2-practical-letter__ex1",
+      "lessonId": "a2-telc-writing-teil2-practical-letter",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Passende Anrede für einen formellen Brief an einen Mann: 'Sehr ___ Herr Müller,'",
+        "correctAnswer": "geehrter"
+      }
+    },
+    {
+      "id": "a2-telc-writing-teil2-practical-letter__ex2",
+      "lessonId": "a2-telc-writing-teil2-practical-letter",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Grußformel ist in einem Schreiben an das Bürgeramt oder den Vermieter angemessen?",
+        "options": [
+          "Liebe Küsse",
+          "Mit freundlichen Grüßen",
+          "Tschüss und machs gut",
+          "Bis später"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a2-telc-speaking-teil1-detailed-introduction__ex0",
+      "lessonId": "a2-telc-speaking-teil1-detailed-introduction",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulate your self-introduction in German covering your profession, your daily commute, and your family status.",
+        "modelAnswer": "Ich bin Krankenpfleger von Beruf und fahre jeden Tag mit dem Bus zur Klinik. Ich bin verheiratet und lebe mit meiner Familie in Köln."
+      }
+    },
+    {
+      "id": "a2-telc-speaking-teil1-detailed-introduction__ex1",
+      "lessonId": "a2-telc-speaking-teil1-detailed-introduction",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Answer the examiner's question: 'Was haben Sie in Ihrem Heimatland gelernt oder gearbeitet?'",
+        "modelAnswer": "In meinem Heimatland habe ich als Automechaniker gearbeitet und eine Ausbildung in einer Werkstatt gemacht."
+      }
+    },
+    {
+      "id": "a2-telc-speaking-teil1-detailed-introduction__ex2",
+      "lessonId": "a2-telc-speaking-teil1-detailed-introduction",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Antwort passt zur Prüferfrage: 'Seit wann lernen Sie schon Deutsch?'",
+        "options": [
+          "In einer Sprachschule.",
+          "Seit etwa einem Jahr lerne ich Deutsch.",
+          "Deutsch ist eine schöne Sprache.",
+          "Zweimal pro Woche."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a2-telc-speaking-teil2-information-exchange__ex0",
+      "lessonId": "a2-telc-speaking-teil2-information-exchange",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Thema 'Einkaufen': Ask your partner where they usually buy groceries and why.",
+        "modelAnswer": "Wo kaufen Sie normalerweise Ihre Lebensmittel ein und warum?"
+      }
+    },
+    {
+      "id": "a2-telc-speaking-teil2-information-exchange__ex1",
+      "lessonId": "a2-telc-speaking-teil2-information-exchange",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Thema 'Wochenende': Respond to your partner's question about what you like to do on Sundays.",
+        "modelAnswer": "Am Sonntag gehe ich gerne im Park spazieren und koche gemütlich für meine Familie."
+      }
+    },
+    {
+      "id": "a2-telc-speaking-teil2-information-exchange__ex2",
+      "lessonId": "a2-telc-speaking-teil2-information-exchange",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Partner: 'Wie oft treiben Sie in der Woche Sport?' - Welche Antwort ist kommunikativ am besten?",
+        "options": [
+          "Nein, Sport.",
+          "Ich gehe zweimal pro Woche ins Fitnessstudio und jogge am Samstag.",
+          "Sport ist teuer.",
+          "Um 18 Uhr."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "a2-telc-speaking-teil3-joint-planning__ex0",
+      "lessonId": "a2-telc-speaking-teil3-joint-planning",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Propose an alternative day and time to your partner: you cannot meet on Friday because of work; suggest Saturday at 15:00.",
+        "modelAnswer": "Am Freitag kann ich leider nicht, weil ich arbeiten muss. Können wir uns am Samstag um 15 Uhr treffen?"
+      }
+    },
+    {
+      "id": "a2-telc-speaking-teil3-joint-planning__ex1",
+      "lessonId": "a2-telc-speaking-teil3-joint-planning",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Agree to your partner's suggestion and propose a concrete meeting spot.",
+        "modelAnswer": "Das ist eine gute Idee, das passt mir gut! Wollen wir uns am Hauptbahnhof treffen?"
+      }
+    },
+    {
+      "id": "a2-telc-speaking-teil3-joint-planning__ex2",
+      "lessonId": "a2-telc-speaking-teil3-joint-planning",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Ausdruck eignet sich hervorragend, um in Teil 3 einen Vorschlag zu machen?",
+        "options": [
+          "Ich schlage vor, dass wir...",
+          "Ich habe keine Lust.",
+          "Das ist mir egal.",
+          "Du musst jetzt gehen."
+        ],
+        "correctIndex": 0
+      }
+    }
+  ],
+  "prerequisites": [
+    {
+      "lessonId": "a2-telc-adjective-endings-accusative-dative",
+      "prerequisiteLessonId": "a2-telc-dative-prepositions-errands"
+    },
+    {
+      "lessonId": "a2-telc-conditional-wenn-clauses",
+      "prerequisiteLessonId": "a2-telc-subordinating-conjunctions-weil-denn"
+    },
+    {
+      "lessonId": "a2-telc-reading-teil1-directory-matching",
+      "prerequisiteLessonId": "a2-telc-vocab-banking-official-errands"
+    },
+    {
+      "lessonId": "a2-telc-reading-teil2-informational-article",
+      "prerequisiteLessonId": "a2-telc-perfekt-daily-work"
+    },
+    {
+      "lessonId": "a2-telc-reading-teil2-informational-article",
+      "prerequisiteLessonId": "a2-telc-subordinating-conjunctions-weil-denn"
+    },
+    {
+      "lessonId": "a2-telc-reading-teil3-classifieds-matching",
+      "prerequisiteLessonId": "a2-telc-vocab-workplace-professions"
+    },
+    {
+      "lessonId": "a2-telc-reading-teil3-classifieds-matching",
+      "prerequisiteLessonId": "a2-telc-vocab-scheduling-calendar-appointments"
+    },
+    {
+      "lessonId": "a2-telc-listening-teil1-voicemail-notes",
+      "prerequisiteLessonId": "a2-telc-vocab-scheduling-calendar-appointments"
+    },
+    {
+      "lessonId": "a2-telc-listening-teil2-radio-announcements",
+      "prerequisiteLessonId": "a2-telc-vocab-mobility-trains-buses"
+    },
+    {
+      "lessonId": "a2-telc-listening-teil3-conversational-matching",
+      "prerequisiteLessonId": "a2-telc-perfekt-daily-work"
+    },
+    {
+      "lessonId": "a2-telc-writing-teil1-form-completion",
+      "prerequisiteLessonId": "a2-telc-vocab-banking-official-errands"
+    },
+    {
+      "lessonId": "a2-telc-writing-teil2-practical-letter",
+      "prerequisiteLessonId": "a2-telc-subordinating-conjunctions-weil-denn"
+    },
+    {
+      "lessonId": "a2-telc-writing-teil2-practical-letter",
+      "prerequisiteLessonId": "a2-telc-modal-verbs-praeteritum"
+    },
+    {
+      "lessonId": "a2-telc-speaking-teil1-detailed-introduction",
+      "prerequisiteLessonId": "a2-telc-vocab-workplace-professions"
+    },
+    {
+      "lessonId": "a2-telc-speaking-teil2-information-exchange",
+      "prerequisiteLessonId": "a2-telc-perfekt-daily-work"
+    },
+    {
+      "lessonId": "a2-telc-speaking-teil3-joint-planning",
+      "prerequisiteLessonId": "a2-telc-vocab-scheduling-calendar-appointments"
+    },
+    {
+      "lessonId": "a2-telc-speaking-teil3-joint-planning",
+      "prerequisiteLessonId": "a2-telc-conditional-wenn-clauses"
+    }
+  ]
+}

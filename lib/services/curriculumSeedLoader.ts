@@ -16,13 +16,14 @@ interface SeedFile {
   }[];
   lessons: {
     id: string;
+    track: Track;
+    conceptId: string | null;
     sourceLevel: CefrLevel;
     skill: string;
     title: string;
     explanation: string | null;
     examples: string[] | null;
   }[];
-  overrides: { lessonId: string; track: Track; explanation: string | null; examples: string[] | null }[];
   exercises: { id: string; lessonId: string; track: Track | null; type: string; content: unknown }[];
   prerequisites: { lessonId: string; prerequisiteLessonId: string }[];
 }
@@ -48,12 +49,10 @@ function upsertSeedFile(db: Database.Database, seed: SeedFile): void {
      ON CONFLICT(lesson_id, section_id) DO UPDATE SET order_index = excluded.order_index`
   );
   const upsertLesson = db.prepare(
-    `INSERT INTO lessons (id, source_level, skill, title, explanation, examples) VALUES (?, ?, ?, ?, ?, ?)
-     ON CONFLICT(id) DO UPDATE SET title = excluded.title, explanation = excluded.explanation, examples = excluded.examples`
-  );
-  const upsertOverride = db.prepare(
-    `INSERT INTO lesson_track_overrides (lesson_id, track, explanation, examples) VALUES (?, ?, ?, ?)
-     ON CONFLICT(lesson_id, track) DO UPDATE SET explanation = excluded.explanation, examples = excluded.examples`
+    `INSERT INTO lessons (id, track, concept_id, source_level, skill, title, explanation, examples) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+     ON CONFLICT(id) DO UPDATE SET
+       concept_id = excluded.concept_id, title = excluded.title,
+       explanation = excluded.explanation, examples = excluded.examples`
   );
   const upsertExercise = db.prepare(
     `INSERT INTO exercises (id, lesson_id, track, type, content) VALUES (?, ?, ?, ?, ?)
@@ -68,6 +67,8 @@ function upsertSeedFile(db: Database.Database, seed: SeedFile): void {
   for (const lesson of seed.lessons) {
     upsertLesson.run(
       lesson.id,
+      lesson.track,
+      lesson.conceptId,
       lesson.sourceLevel,
       lesson.skill,
       lesson.title,
@@ -91,15 +92,6 @@ function upsertSeedFile(db: Database.Database, seed: SeedFile): void {
         upsertPlacement.run(ref.lessonId, section.id, ref.orderIndex);
       }
     }
-  }
-
-  for (const override of seed.overrides) {
-    upsertOverride.run(
-      override.lessonId,
-      override.track,
-      override.explanation,
-      override.examples ? JSON.stringify(override.examples) : null
-    );
   }
 
   for (const exercise of seed.exercises) {

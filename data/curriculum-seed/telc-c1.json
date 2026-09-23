@@ -1,0 +1,1573 @@
+{
+  "seedVersion": "2",
+  "track": "telc",
+  "level": "C1",
+  "milestones": [
+    {
+      "milestone": {
+        "id": "telc-c1-grammar",
+        "track": "telc",
+        "level": "C1",
+        "title": "Grammar",
+        "description": null,
+        "orderIndex": 0
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "telc-c1-grammar-lessons",
+            "milestoneId": "telc-c1-grammar",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "c1-telc-wissenschaftssprache-merkmale",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "c1-telc-angaben-praepositionen-genitiv",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "c1-telc-konditionale-satzgefuege-irreales",
+              "orderIndex": 2
+            },
+            {
+              "lessonId": "c1-telc-diskursmarker-ergaenzungen",
+              "orderIndex": 3
+            },
+            {
+              "lessonId": "c1-telc-modale-infinitive-und-gerundiv",
+              "orderIndex": 4
+            },
+            {
+              "lessonId": "c1-telc-sprachbausteine-grammatik-kollokationen",
+              "orderIndex": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-c1-vocabulary",
+        "track": "telc",
+        "level": "C1",
+        "title": "Vocabulary",
+        "description": null,
+        "orderIndex": 1
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "telc-c1-vocabulary-lessons",
+            "milestoneId": "telc-c1-vocabulary",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "c1-telc-funktionsverbgefuege-wissenschaft",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "c1-telc-abstrahierende-adjektive-und-nomen",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "c1-telc-fachwortschatz-hochschulkontext",
+              "orderIndex": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-c1-reading",
+        "track": "telc",
+        "level": "C1",
+        "title": "Reading",
+        "description": null,
+        "orderIndex": 2
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "telc-c1-reading-lessons",
+            "milestoneId": "telc-c1-reading",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "c1-telc-leseverstehen-teil1-sachtext-global",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "c1-telc-leseverstehen-teil2-textrekonstruktion",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "c1-telc-leseverstehen-teil3-selektiv-detail",
+              "orderIndex": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-c1-listening",
+        "track": "telc",
+        "level": "C1",
+        "title": "Listening",
+        "description": null,
+        "orderIndex": 3
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "telc-c1-listening-lessons",
+            "milestoneId": "telc-c1-listening",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "c1-telc-hoerverstehen-teil1-vorlesungsmitschrift",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "c1-telc-hoerverstehen-teil2-fachgespraech-interview",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "c1-telc-hoerverstehen-teil3-kurzvortraege",
+              "orderIndex": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-c1-writing",
+        "track": "telc",
+        "level": "C1",
+        "title": "Writing",
+        "description": null,
+        "orderIndex": 4
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "telc-c1-writing-lessons",
+            "milestoneId": "telc-c1-writing",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "c1-telc-schriftlicher-ausdruck-stellungnahme",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "c1-telc-grafikbeschreibung-und-synthese",
+              "orderIndex": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-c1-speaking",
+        "track": "telc",
+        "level": "C1",
+        "title": "Speaking",
+        "description": null,
+        "orderIndex": 5
+      },
+      "sections": [
+        {
+          "section": {
+            "id": "telc-c1-speaking-lessons",
+            "milestoneId": "telc-c1-speaking",
+            "title": "Lessons",
+            "description": null,
+            "orderIndex": 0
+          },
+          "lessonRefs": [
+            {
+              "lessonId": "c1-telc-muendlicher-ausdruck-teil1a-praesentation",
+              "orderIndex": 0
+            },
+            {
+              "lessonId": "c1-telc-muendlicher-ausdruck-teil1b-nachfragen",
+              "orderIndex": 1
+            },
+            {
+              "lessonId": "c1-telc-muendlicher-ausdruck-teil2-diskussion",
+              "orderIndex": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "c1-telc-wissenschaftssprache-merkmale",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "C1",
+      "skill": "grammar",
+      "title": "Merkmale und Strukturen der Wissenschaftssprache",
+      "explanation": "Die Prüfung telc Deutsch C1 Hochschule prüft schwerpunktmäßig das Beherrschen der deutschen Wissenschaftssprache (*Language for Academic Purposes*).\nWesentliche Merkmale sind extreme Informationsverdichtung, Nominalisierungen, unpersönliche Ausdrucksweisen (Vermeidung des Pronomens 'ich') sowie das Zurücktreten des Agens zugunsten des Untersuchungsgegenstands.\nVerwendet werden passivische Strukturen, Reflexivkonstruktionen ('Es zeigt sich, dass...'), 'man'-Sätze und Funktionsverbgefüge.\nDie Sprache ist nüchtern, präzise, emotionslos und folgt einem standardisierten akademischen Register, das in Vorlesungen, Seminararbeiten und Fachpublikationen gefordert ist.\n",
+      "examples": [
+        "Es konnte nachgewiesen werden, dass die Partikelkonzentration proportional zur Temperatur ansteigt.",
+        "Aus den erhobenen Daten lässt sich folgern, dass die Probanden unter Stress zu riskanteren Entscheidungen neigen.",
+        "Der vorliegende Beitrag unternimmt den Versuch, die Genese des Phänomens historisch-kritisch zu rekonstruieren."
+      ]
+    },
+    {
+      "id": "c1-telc-angaben-praepositionen-genitiv",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "C1",
+      "skill": "grammar",
+      "title": "Gehobene Genitivpräpositionen in wissenschaftlichen Kontexten",
+      "explanation": "In wissenschaftlichen Texten und telc-Leseaufgaben treten komplexe Genitivpräpositionen auf, die logische Verhältnisse extrem kompakt abbilden.\nDazu gehören kausale und konsekutive Präpositionen ('kraft', 'mangels', 'infolge', 'aufgrund'), konzessive ('ungeachtet', 'trotz'), finale ('zwecks') sowie modale und lokale ('anhand', 'hinsichtlich', 'seitens', 'zugunsten', 'zulasten').\nIn Prüfungsaufgaben (insbesondere Sprachbausteine) wird exakt geprüft, ob die Kasusrektion (Genitiv) und die semantische Nuance beherrscht werden.\nEin Registerfehler wie die Verwendung des Dativs nach diesen Präpositionen führt zu Punktabzug.\n",
+      "examples": [
+        "Mangels hinreichender Belege musste das Verfahren vorläufig ausgesetzt werden.",
+        "Ungeachtet der gravierenden methodischen Defizite wurden die Resultate publiziert.",
+        "Die Reformen gingen eindeutig zulasten der einkommensschwachen Bevölkerungsschichten.",
+        "Hinsichtlich der Interpretation der Rohdaten herrscht im Forscherteam Uneinigkeit."
+      ]
+    },
+    {
+      "id": "c1-telc-konditionale-satzgefuege-irreales",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "C1",
+      "skill": "grammar",
+      "title": "Komplexe Konditionalsatzgefüge und Irrealis",
+      "explanation": "Für wissenschaftliche Hypothesenbildungen und kontrafaktische Argumentationen verlangt telc C1 das Beherrschen variabler Konditionalstrukturen.\nNeben Standardgefügen mit 'wenn/falls' werden hypothetische Konnektoren wie 'vorausgesetzt, dass', 'es sei denn, (dass)', 'unter der Bedingung, dass' und 'im Falle, dass' eingesetzt.\nZudem können Konditionalsätze uneingeleitet mit Verb-Erst-Stellung formuliert werden ('Hätte man die Kontrollgruppe früher getestet, wären die Verzerrungen aufgefallen').\nIm irrealen Bereich der Vergangenheit ist die korrekte Bildung des Konjunktivs II (Plusquamperfekt mit 'wäre/hätte gewesen/getan' oder Passiv 'wäre... worden') unverzichtbar.\n",
+      "examples": [
+        "Sollten die Grenzwerte erneut überschritten werden, träte unverzüglich ein Notfallplan in Kraft.",
+        "Die Ergebnisse wären kaum reproduzierbar gewesen, hätte man nicht strikte Laborstandards eingehalten.",
+        "Die Zulassung wird erteilt, es sei denn, die klinische Studie offenbart signifikante Nebenwirkungen."
+      ]
+    },
+    {
+      "id": "c1-telc-funktionsverbgefuege-wissenschaft",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "C1",
+      "skill": "vocabulary",
+      "title": "Wissenschaftliche Funktionsverbgefüge und Kollokationen",
+      "explanation": "Im universitären Bereich existiert ein fest umrissenes Korpus von Funktionsverbgefügen, das für das Textverständnis und die eigene Textproduktion in telc C1 Hochschule verbindlich ist.\nWissenschaftler 'stellen Hypothesen auf', 'ziehen Schlüsse', 'treffen Annahmen', 'erbringen Nachweise', 'üben Kritik', 'leisten einen Beitrag' und 'setzen sich mit Theorien auseinander'.\nEbenso zentral sind Gefüge der Ergebnisdarstellung: 'Ergebnisse erzielen', 'Erkenntnisse gewinnen', 'in Widerspruch stehen zu' und 'Aufschluss geben über'.\nDas Beherrschen dieser Ausdrücke entscheidet im Subtest 'Schriftlicher Ausdruck' über das Erreichen der höchsten Kriterienbande im Wortschatzspektrum.\n",
+      "examples": [
+        "Die Studie leistet einen maßgeblichen Beitrag zur Erforschung neurodegenerativer Erkrankungen.",
+        "Die vorliegenden Befunde stehen in eklatantem Widerspruch zu den Ergebnissen früherer Untersuchungen.",
+        "Anhand des Experiments konnte der Wissenschaftler den schlüssigen Nachweis für seine These erbringen.",
+        "Wir müssen über die Ursachen dieses Versagens Klarheit gewinnen."
+      ]
+    },
+    {
+      "id": "c1-telc-diskursmarker-ergaenzungen",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "C1",
+      "skill": "grammar",
+      "title": "Diskursmarker und logische Konnektoren im akademischen Text",
+      "explanation": "Zur Verknüpfung komplexer Gedankengänge in telc-Aufsätzen (Stellungnahmen) und Präsentationen sind präzise logische Konnektoren unverzichtbar.\nHierzu zählen mehrteilige Konnektoren ('nicht nur... sondern auch', 'weder... noch', 'einerseits... andererseits', 'je... desto', 'zwar... aber'), einschränkende Konnektoren ('insofern... als', 'insoweit') sowie explikative Ausdrücke ('nämlich', 'das heißt', 'sprich').\nBesondere Aufmerksamkeit verlangt die Wortstellung: Konjunktionaladverbien wie 'folglich', 'demnach', 'jedoch' oder 'nichtsdestotrotz' erfordern Inversion (Verb auf Position 2), während Subjunktionen das Verb ans Satzende verbannen.\n",
+      "examples": [
+        "Die Theorie ist insofern problematisch, als sie empirisch kaum überprüfbar ist.",
+        "Einerseits birgt die Nanotechnologie immense Chancen, andererseits dürfen potenzielle toxikologische Risiken nicht bagatellisiert werden.",
+        "Das Experiment schlug fehl; folglich mussten sämtliche Prämissen revidiert werden."
+      ]
+    },
+    {
+      "id": "c1-telc-abstrahierende-adjektive-und-nomen",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "C1",
+      "skill": "vocabulary",
+      "title": "Abstrahierende Adjektive und wissenschaftliche Nomen",
+      "explanation": "Akademische Texte erfordern wertende und beschreibende Adjektive von hoher semantischer Schärfe.\nStatt einfacher Attribute ('gut', 'wichtig', 'schlecht') bedient sich der C1-Schreiber Begriffen wie 'fundiert', 'tragfähig', 'marginal', 'rudimentär', 'evident', 'kontrovers' oder 'signifikant'.\nEbenso werden Nominalabstrakta verwendet, um Prozesse präzise zu klassifizieren: 'Validität' (Gültigkeit), 'Reliabilität' (Zuverlässigkeit), 'Plausibilität' (Einleuchten), 'Ambivalenz' (Doppelwertigkeit) und 'Heterogenität' (Ungleichartigkeit).\nIn den telc-Teilen Leseverstehen und Sprachbausteine wird das genaue Verständnis dieser differenzierenden Lexeme geprüft.\n",
+      "examples": [
+        "Die Validität der psychologischen Testbatterie wurde von Fachgutachtern bestätigt.",
+        "Es handelt sich hierbei um ein äußerst kontrovers diskutiertes Paradigma.",
+        "Die Unterschiede zwischen den Versuchsgruppen erwiesen sich als statistisch hochgradig signifikant.",
+        "Das Wissen über die Langzeitfolgen ist bislang lediglich rudimentär vorhanden."
+      ]
+    },
+    {
+      "id": "c1-telc-modale-infinitive-und-gerundiv",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "C1",
+      "skill": "grammar",
+      "title": "Das Gerundiv und modale Infinitivkonstruktionen",
+      "explanation": "Das Gerundiv (auch Partizipialkonstruktion mit 'zu' genannt) ist ein exklusives Merkmal gehobener Amts- und Wissenschaftssprache.\nEs wird gebildet aus: Artikel + 'zu' + Partizip I + Adjektivendung + Substantiv (z. B. 'die zu bewältigenden Aufgaben').\nSemantisch entspricht das Gerundiv stets einem Passiv mit Modalverb (müssen, sollen oder können): 'die Aufgaben, die bewältigt werden müssen/können'.\nAktivische Varianten mit 'haben + zu + Infinitiv' drücken eine Verpflichtung des Subjekts aus ('Die Universität hat die Standards zu wahren' = muss die Standards wahren).\nDiese Konstruktionen erlauben maximale syntaktische Ökonomie bei vollkommener semantischer Dichte.\n",
+      "examples": [
+        "Die bei der Datenerhebung zu beachtenden Richtlinien sind im Anhang aufgeführt. (= Richtlinien, die beachtet werden müssen)",
+        "Der Prüfling hat vor Beginn der Klausur seinen Lichtbildausweis vorzuzeigen. (= muss vorzeigen)",
+        "Die kaum zu überschätzende Bedeutung dieser Entdeckung liegt auf der Hand."
+      ]
+    },
+    {
+      "id": "c1-telc-fachwortschatz-hochschulkontext",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "C1",
+      "skill": "vocabulary",
+      "title": "Hochschulstrukturen, Studienorganisation und Fachtermini",
+      "explanation": "Für telc C1 Hochschule ist die exakte Beherrschung des universitären Fachwortschatzes conditio sine qua non.\nHierzu gehören administrative Institutionen und Abläufe (Immatrikulation, Exmatrikulation, Prüfungsordnung, Akkreditierung, Modulhandbuch, Regelstudienzeit), akademische Würden und Funktionen (Dekanat, Senat, Dozentur, Habilitation, Ordinarius) sowie Lehr- und Prüfungsformate (Vorlesung, Proseminar, Hauptseminar, Kolloquium, Tutorium, Klausur, Disputation).\nLernende müssen zudem in der Lage sein, Studienleistungen (Leistungspunkte nach ECTS, Notenspiegel, Transcript of Records) und Gremienbeschlüsse sprachlich präzise zu erfassen und zu diskutieren.\n",
+      "examples": [
+        "Die Zulassung zum Masterstudium setzt den Nachweis von mindestens 180 ECTS-Punkten voraus.",
+        "Der Fakultätsrat beschloss eine grundlegende Reform der Promotionsordnung.",
+        "Im Rahmen des interdisziplinären Kolloquiums stellen Promovierende ihre Dissertationsprojekte vor.",
+        "Die Immatrikulationsfrist für das kommende Wintersemester endet am 15. Juli."
+      ]
+    },
+    {
+      "id": "c1-telc-leseverstehen-teil1-sachtext-global",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "C1",
+      "skill": "reading",
+      "title": "telc Leseverstehen Teil 1: Globale Sachtextzuordnung",
+      "explanation": "Im Teil 1 des Leseverstehens der Prüfung telc C1 Hochschule lesen die Kandidaten einen längeren, anspruchsvollen Text (ca. 1000–1200 Wörter) aus dem wissenschaftlichen oder gesellschaftlichen Bereich.\nDie Aufgabe besteht darin, Zwischenüberschriften oder Kernaussagen den einzelnen Textabschnitten korrekt zuzuordnen (Matching-Format).\nErforderlich ist globales Textverständnis: Lernende dürfen sich nicht an isolierten Begriffen festklammern, sondern müssen die zentrale Funktion und These jedes Absatzes abstrahieren.\nAblenker (Distraktoren) enthalten häufig wörtliche Lexeme aus dem Text, spiegeln jedoch eine andere logische Ebene oder eine Falschaussage wider.\n",
+      "examples": [
+        "Abschnitt A analysiert die Genese der Nanotechnologie; Überschrift: 'Historische Entwicklungslinien und Pioniere der Nanoforschung'.",
+        "Abschnitt B fokussiert ökologische Risiken; Überschrift: 'Unerforschte Gefahrenpotenziale für marine Ökosysteme'."
+      ]
+    },
+    {
+      "id": "c1-telc-leseverstehen-teil2-textrekonstruktion",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "C1",
+      "skill": "reading",
+      "title": "telc Leseverstehen Teil 2: Textrekonstruktion und Kohärenzanalyse",
+      "explanation": "Teil 2 des telc-Leseverstehens erfordert die Rekonstruktion eines wissenschaftlichen Artikels, aus dem sechs bis acht Absätze oder Textpassagen entfernt wurden.\nDie Kandidaten müssen die herausgelösten Fragmente anhand syntaktischer, thematischer und logischer Bezüge wieder an die korrekten Leerstellen einfügen.\nErfolgsentscheidend ist das Identifizieren von Kohäsionsmitteln: Pronomen ('dieser', 'jene', 'solche'), Pronominaladverbien ('hieraus', 'demgegenüber'), Konnektoren ('dennoch', 'folglich') und lexikalischen Rekurrenzen (Synonyme, Oberbegriffe).\nJede Lücke muss sowohl mit dem vorausgehenden als auch mit dem nachfolgenden Satz nahtlos harmonieren.\n",
+      "examples": [
+        "Vorausgehender Satz: 'Die Versuchsreihe brachte unerwartete Abweichungen hervor.' -> Passendes Fragment: 'Diese Anomalien ließen sich zunächst nicht mit den gängigen Modellen in Einklang bringen.' -> Folgesatz: 'Erst eine Rekalibrierung der Sensoren schuf Abhilfe.'"
+      ]
+    },
+    {
+      "id": "c1-telc-leseverstehen-teil3-selektiv-detail",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "C1",
+      "skill": "reading",
+      "title": "telc Leseverstehen Teil 3: Selektiv- und Detailverstehen",
+      "explanation": "Im Teil 3 des Leseverstehens bearbeiten die Prüflinge einen komplexen Text aus einer wissenschaftlichen Zeitschrift oder dem Feuilleton, gefolgt von Multiple-Choice-Aufgaben (meist dreigliedrig: a, b, c).\nGeprüft wird hier kein oberflächliches Verständnis, sondern das präzise Erfassen von Argumentationsketten, Autorenabsichten, kausalen Zusammenhängen und feinen Einschränkungen.\nTypische Fehlerquellen sind Verallgemeinerungen ('immer', 'alle') in den Optionen, wenn der Text lediglich von Einzelfällen oder Tendenzen spricht, sowie das Verwechseln von Tatsachenbehauptungen mit rein zitierten Fremdmeinungen.\nDie Antworten müssen direkt aus dem Text belegbar sein.\n",
+      "examples": [
+        "Text: 'Obwohl einige Pilotprojekte ermutigende Einsparungen verzeichneten, warnen Ökonomen vor voreiligen Schlüssen hinsichtlich der Rentabilität im industriellen Maßstab.' -> Frage: Wie bewerten Ökonomen die Technologie? -> Ihre Wirtschaftlichkeit für Großanlagen ist noch nicht gesichert."
+      ]
+    },
+    {
+      "id": "c1-telc-sprachbausteine-grammatik-kollokationen",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "C1",
+      "skill": "grammar",
+      "title": "telc Sprachbausteine: Grammatik und Kollokationen im Lückentext",
+      "explanation": "Der Prüfungsteil 'Sprachbausteine' bei telc C1 testet die Beherrschung grammatischer Rektionen, Kollokationen, Präpositionen und Konnektoren in einem zusammenhängenden wissenschaftsnahen Text.\nAn 20 bis 22 Lücken müssen Kandidaten aus jeweils vier Optionen (Multiple Choice) die einzig syntaktisch und semantisch stimmige Variante auswählen.\nGeprüft werden u. a. feste Verb-Präposition-Verbindungen ('plädieren für', 'zweifeln an'), Substantiv-Präposition-Kombinationen ('Skepsis gegenüber'), Adjektivrektionen ('empfänglich für'), Konjunktivformen sowie Pronominaladverbien.\nSchon minimale Bedeutungsnuancen oder formale Kasusanforderungen entscheiden über richtig oder falsch.\n",
+      "examples": [
+        "Lückensatz: 'Die Forscher plädierten mit Nachdruck ___ eine Reform der Förderkriterien.' -> Optionen: a) über, b) für, c) auf, d) nach -> Richtig: b) für.",
+        "Lückensatz: 'Das Phänomen ist eng verknüpft ___ den globalen Klimaveränderungen.' -> Optionen: a) mit, b) an, c) zu, d) von -> Richtig: a) mit."
+      ]
+    },
+    {
+      "id": "c1-telc-hoerverstehen-teil1-vorlesungsmitschrift",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "C1",
+      "skill": "listening",
+      "title": "telc Hörverstehen Teil 1: Vorlesungsnachvollzug und Mitschrift",
+      "explanation": "Im ersten Teil des Hörverstehens hören die Teilnehmenden einen Vortrag oder eine akademische Vorlesung (Dauer ca. 8–10 Minuten), die nur einmal vorgespielt wird.\nWährend des Hörens müssen auf einem strukturierten Aufgabenblatt Notizen ergänzt werden (Vervollständigung von Stichpunkten, Zuordnung von Thesen, Ergänzen von Kausalitäten).\nErforderlich ist das simultane Notieren bei gleichzeitigem Weiterhören; es dürfen keine vollständigen Sätze geschrieben werden, sondern prägnante Schlüsselwörter.\nDie Antworten verlangen orthografische und grammatische Genauigkeit bei fachspezifischen Begriffen.\n",
+      "examples": [
+        "Vorlesungsausschnitt: 'Die zelluläre Alterung wird maßgeblich durch die Verkürzung der Telomere reguliert. Sobald eine kritische Grenze unterschritten ist, stellt die Zelle ihre Teilung ein.' -> Mitschrift-Lücke: Ursache für Stopp der Zellteilung: Verkürzung der ___ -> Lösung: Telomere."
+      ]
+    },
+    {
+      "id": "c1-telc-hoerverstehen-teil2-fachgespraech-interview",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "C1",
+      "skill": "listening",
+      "title": "telc Hörverstehen Teil 2: Fachgespräche und Experteninterviews",
+      "explanation": "Teil 2 präsentiert ein längeres Gespräch zwischen zwei oder mehreren Experten (z. B. Radiointerview, Fachdebatte) über wissenschaftliche, bildungspolitische oder technologische Fragestellungen.\nDie Aufgabenstellung umfasst zehn Multiple-Choice-Items mit jeweils drei Optionen (a, b, c).\nDie Hörer müssen in der Lage sein, differenzierte Meinungsnuancen, Werturteile, Übereinstimmungen und Kontroversen zwischen den Gesprächspartnern zuzuordnen.\nErschwerend sind Ellipsen, spontane Redeübernahmen, Unterbrechungen und metasprachliche Kommentare.\n",
+      "examples": [
+        "Interview: 'Journalist: Sind Sie mit der Reform zufrieden? - Forscherin: Nun, man hat an einigen Stellschrauben gedreht, aber der große Wurf ist ausgeblieben.' -> Frage: Wie beurteilt die Forscherin die Reform? -> Als unzureichenden Teilschritt."
+      ]
+    },
+    {
+      "id": "c1-telc-hoerverstehen-teil3-kurzvortraege",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "C1",
+      "skill": "listening",
+      "title": "telc Hörverstehen Teil 3: Kurzvorträge und Sprecherzuordnung",
+      "explanation": "Im dritten Teil des Hörverstehens hören die Teilnehmenden mehrere kurze Statements (ca. 1–2 Minuten) verschiedener Personen zu einem gemeinsamen Rahmenthema (z. B. Studiengebühren, Künstliche Intelligenz in der Lehre).\nDie Aufgabe besteht darin, aus einer Liste von vorgegebenen Thesen diejenige auszuwählen, die mit der jeweiligen Sprecherposition übereinstimmt.\nDie Herausforderung liegt darin, dass viele Statements ambivalente Positionen enthalten und die gesuchte Aussage paraphrasiert ist.\nSchlüsselwörter aus den Vorgaben tauchen oft trügerisch in Statements auf, die eine gänzlich andere Schlussfolgerung ziehen.\n",
+      "examples": [
+        "Sprecher 1 spricht über Online-Vorlesungen: 'Zwar spart man die Anfahrt, aber der fehlende direkte Diskurs mit den Lehrenden verarmt das akademische Lernen.' -> Zuordnung: Sprecher 1 bemängelt das Fehlen interaktiver Kommunikation im digitalen Format."
+      ]
+    },
+    {
+      "id": "c1-telc-schriftlicher-ausdruck-stellungnahme",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "C1",
+      "skill": "writing",
+      "title": "telc Schriftlicher Ausdruck: Die wissenschaftliche Stellungnahme",
+      "explanation": "Die Textproduktion bei telc C1 Hochschule verlangt das Verfassen einer fundierten wissenschaftlichen Stellungnahme oder Erörterung (Umfang ca. 350–400 Wörter) auf der Basis von zwei kurzen Impulstexten/Zitaten.\nKandidaten müssen die in den Zitaten aufgeworfenen Thesen synthetisieren, gegeneinander abwägen und einen eigenen, klar begründeten Standpunkt entwickeln.\nBewertungskriterien sind: Aufgabenbewältigung (Bezug auf beide Positionen), Textaufbau/Kohärenz (Einleitung, Argumentation, Synthese), Wortschatzspektrum (akademisches Register, Funktionsverbgefüge) und grammatische Korrektheit (komplexe Satzstrukturen).\nEin rein persönlicher Erfahrungsbericht führt zu starkem Punktabzug; der Text muss durchgehend akademisch objektiviert bleiben.\n",
+      "examples": [
+        "Thema: 'Soll die Vergabe von Forschungsdrittmitteln an ethische Kriterien gekoppelt werden?'",
+        "Synthesesatz: 'Wenngleich die Forschungsfreiheit ein hohes verfassungsrechtliches Gut darstellt, darf sie nicht als Freibrief für ethisch bedenkliche Entwicklungen missverstanden werden; eine kontrollierte Regulierung ist mithin unumgänglich.'"
+      ]
+    },
+    {
+      "id": "c1-telc-grafikbeschreibung-und-synthese",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "C1",
+      "skill": "writing",
+      "title": "Grafik- und Datenanalyse im akademischen Kontext",
+      "explanation": "Das Beschreiben und Interpretieren statistischer Schaubilder (Balkendiagramme, Kurvendiagramme, Kreisdiagramme) ist ein integraler Bestandteil wissenschaftlicher Arbeiten und Prüfungsaufgaben.\nErforderlich ist eine dreigliedrige Struktur: 1. Einleitung (Thema, Quelle, Erhebungszeitraum, Maßeinheiten), 2. Detaillierte Befundbeschreibung (Extremwerte, Rangfolgen, signifikante Trends, Wendepunkte), 3. Interpretation und Hypothesenbildung bezüglich der Ursachen.\nZu verwenden ist ein spezifischer Wortschatz: 'einen Anstieg verzeichnen', 'stagnieren', 'kontinuierlich abfallen', 'im Vergleich zu', 'den Spitzenplatz einnehmen' und 'die Diskrepanz verdeutlichen'.\nWichtig: Reine Zahlenaufzählungen sind ungenügend; Daten müssen in sprachlich variable Vergleiche überführt werden.\n",
+      "examples": [
+        "Dem Schaubild des Statistischen Bundesamtes lässt sich entnehmen, dass die Zahl der Studienanfänger im Fach Informatik im vergangenen Jahrzehnt um knapp 40 Prozent gestiegen ist.",
+        "Während die Absolventenzahlen in den Ingenieurwissenschaften stagnieren, ist in den Biowissenschaften ein sprunghafter Zuwachs zu beobachten.",
+        "An der Spitze der Skala rangieren skandinavische Länder, wohingegen Deutschland im Mittelfeld verharrt."
+      ]
+    },
+    {
+      "id": "c1-telc-muendlicher-ausdruck-teil1a-praesentation",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "C1",
+      "skill": "speaking",
+      "title": "telc Mündliche Prüfung Teil 1A: Die akademische Präsentation",
+      "explanation": "Im Prüfungsteil 1A der mündlichen telc C1-Prüfung halten die Kandidaten einen ca. 3-minütigen, frei gesprochenen Vortrag zu einem komplexen, kontroversen Thema (Auswahl aus zwei Themen während der Vorbereitungszeit).\nGefordert ist eine professionelle Gliederung: Einleitung mit Problemaufriss und These, strukturierter Hauptteil mit Argumenten und Beispielen, Fazit mit persönlicher Stellungnahme und Ausblick.\nKandidaten dürfen nicht von ihren Notizen ablesen, sondern müssen Blickkontakt halten und rhetorische Mittel (Pausen, Betonungen) gezielt einsetzen.\nBewertet werden Flüssigkeit, Aussprache/Intonation, grammatische Korrektheit und das Einhalten akademischer Registerstandards.\n",
+      "examples": [
+        "Präsentationsthema: 'Sollte die Veröffentlichung wissenschaftlicher Studien ausschließlich Open Access erfolgen?'",
+        "Einleitung: 'Sehr geehrte Prüferinnen, lieber Prüfungspartner, ich möchte mich in meinem heutigen Vortrag mit der Frage befassen, ob wissenschaftliche Erkenntnisse als öffentliches Gut frei zugänglich sein müssen.'",
+        "Schluss: 'Zusammenfassend plädiere ich für eine verpflichtende Open-Access-Strategie, um den Wissenstransfer in Schwellenländer nicht länger durch Bezahlschranken zu blockieren.'"
+      ]
+    },
+    {
+      "id": "c1-telc-muendlicher-ausdruck-teil1b-nachfragen",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "C1",
+      "skill": "speaking",
+      "title": "telc Mündliche Prüfung Teil 1B: Nachfragen und Feedback",
+      "explanation": "Unmittelbar nach dem Vortrag von Prüfungspartner A muss Prüfungspartner B in Teil 1B gezielte inhaltliche Nachfragen stellen und ein kurzes Feedback geben (anschließend umgekehrt).\nGeprüft wird das aktive Hörverstehen und die Fähigkeit zur spontanen intellektuellen Interaktion.\nDie Nachfragen dürfen keine trivialen Banalitäten sein, sondern müssen Schwachstellen oder offene Aspekte der Präsentation thematisieren ('Sie erwähnten vorhin, dass... Mich würde interessieren, wie Sie in diesem Zusammenhang das Problem X beurteilen').\nDer Vortragende muss souverän, präzise und differenziert auf diese Einwände reagieren.\n",
+      "examples": [
+        "Nachfrage von Partner B: 'Vielen Dank für Ihren erhellenden Vortrag. Sie haben die ökonomischen Vorteile betont; wie schätzen Sie jedoch die datenschutzrechtlichen Risiken dieses Ansatzes ein?'",
+        "Erwiderung von Partner A: 'Das ist ein überaus berechtigter Einwand. Man müsste hier flankierend strenge Serverprotokolle vorschreiben...'"
+      ]
+    },
+    {
+      "id": "c1-telc-muendlicher-ausdruck-teil2-diskussion",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "C1",
+      "skill": "speaking",
+      "title": "telc Mündliche Prüfung Teil 2: Akademische Diskussion und Debatte",
+      "explanation": "Im Teil 2 der mündlichen Prüfung führen beide Kandidaten ein ca. 5-minütiges partnerschaftliches Streitgespräch zu einem kontroversen wissenschaftlichen oder gesellschaftspolitischen Zitat.\nZiel ist nicht das Erreichen eines simplen Konsenses, sondern ein argumentativer Schlagabtausch auf hohem intellektuellem Niveau.\nDie Partner müssen aufeinander eingehen, gegnerische Thesen aufgreifen, zergliedern, Gegenbeispiele anführen, Konzessionen machen ('Hier muss ich Ihnen partiell beipflichten...') und die Debatte dynamisch vorantreiben.\nMonologisches Dozieren führt ebenso zu Punktabzug wie passives Schweigen oder rein oberflächliche Zustimmung.\n",
+      "examples": [
+        "Diskussionsthema: 'Sollte die Veröffentlichung von Forschungsergebnissen staatlich zensiert werden dürfen, wenn Sicherheitsrisiken bestehen (Dual-Use-Problematik)?'",
+        "Diskursbeitrag: 'Hier berühren wir den heiklen Punkt der Biosicherheit. Natürlich darf Wissenschaft keinem staatlichen Diktat unterliegen, aber wenn genveränderte Pathogene als Waffe missbraucht werden könnten, gebietet die Verantwortungsethik klare Schranken.'"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "c1-telc-wissenschaftssprache-merkmale__ex0",
+      "lessonId": "c1-telc-wissenschaftssprache-merkmale",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Formulierung entspricht den Standards der Wissenschaftssprache in einer wissenschaftlichen Arbeit?",
+        "options": [
+          "Ich finde, dass die Theorie von Schmidt total veraltet ist.",
+          "Die von Schmidt postulierte Theorie erweist sich im Lichte neuerer empirischer Befunde als modifikationsbedürftig.",
+          "Man sieht ja ganz klar, dass Schmidt sich da vertan hat.",
+          "Meiner Meinung nach taugt Schmidts Ansatz einfach nichts."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "c1-telc-wissenschaftssprache-merkmale__ex1",
+      "lessonId": "c1-telc-wissenschaftssprache-merkmale",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Entpersönlichen Sie den Satz: 'Wir untersuchen in dieser Studie...' -> 'In dieser Studie ___ untersucht, inwiefern...'",
+        "correctAnswer": "wird"
+      }
+    },
+    {
+      "id": "c1-telc-wissenschaftssprache-merkmale__ex2",
+      "lessonId": "c1-telc-wissenschaftssprache-merkmale",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "Wissenschaftssprachliche Phrase: 'Es liegt die Vermutung nahe, dass...'",
+        "back": "Bedeutung: Es ist sehr wahrscheinlich / plausibel, dass..."
+      }
+    },
+    {
+      "id": "c1-telc-wissenschaftssprache-merkmale__ex3",
+      "lessonId": "c1-telc-wissenschaftssprache-merkmale",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulieren Sie den folgenden Satz wissenschaftssprachlich adäquat um: 'Wir haben herausgefunden, dass die Methode super funktioniert.'",
+        "modelAnswer": "Die Ergebnisse belegen die außerordentliche Effizienz und Validität der angewandten Methodik."
+      }
+    },
+    {
+      "id": "c1-telc-angaben-praepositionen-genitiv__ex0",
+      "lessonId": "c1-telc-angaben-praepositionen-genitiv",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Genitivpräposition drückt das Fehlen oder den Mangel an etwas aus?",
+        "options": [
+          "Kraft",
+          "Mangels",
+          "Zwecks",
+          "Zugunsten"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "c1-telc-angaben-praepositionen-genitiv__ex1",
+      "lessonId": "c1-telc-angaben-praepositionen-genitiv",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Ergänzen Sie die finale Präposition: '___ besserer Vergleichbarkeit wurden alle Werte normiert.' (for the purpose of)",
+        "correctAnswer": "Zwecks"
+      }
+    },
+    {
+      "id": "c1-telc-angaben-praepositionen-genitiv__ex2",
+      "lessonId": "c1-telc-angaben-praepositionen-genitiv",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Setzen Sie das Nomen in den korrekten Kasus nach 'ungeachtet': 'Ungeachtet ___ (der drohende Verlust) investierte das Unternehmen weiter.'",
+        "correctAnswer": "des drohenden Verlustes",
+        "acceptableVariants": [
+          "des drohenden Verlusts"
+        ]
+      }
+    },
+    {
+      "id": "c1-telc-angaben-praepositionen-genitiv__ex3",
+      "lessonId": "c1-telc-angaben-praepositionen-genitiv",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Bilden Sie einen wissenschaftlichen Satz mit 'zugunsten' und Genitiv.",
+        "modelAnswer": "Die universitäre Leitung entschied zugunsten einer substanziellen Aufstockung des Forschungsetats."
+      }
+    },
+    {
+      "id": "c1-telc-konditionale-satzgefuege-irreales__ex0",
+      "lessonId": "c1-telc-konditionale-satzgefuege-irreales",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was bedeutet 'es sei denn, dass...'?",
+        "options": [
+          "Weil auf jeden Fall...",
+          "Außer wenn... / Nur nicht, falls...",
+          "Damit erreicht wird, dass...",
+          "Obwohl eigentlich nicht..."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "c1-telc-konditionale-satzgefuege-irreales__ex1",
+      "lessonId": "c1-telc-konditionale-satzgefuege-irreales",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Bilden Sie einen uneingeleiteten Konditionalsatz mit 'sollen': '___ die Messungen fehlerhaft sein, müssen wir von vorn beginnen.'",
+        "correctAnswer": "Sollten"
+      }
+    },
+    {
+      "id": "c1-telc-konditionale-satzgefuege-irreales__ex2",
+      "lessonId": "c1-telc-konditionale-satzgefuege-irreales",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulieren Sie den folgenden Konditionalsatz in die uneingeleitete Verb-Erst-Form im Konjunktiv II der Vergangenheit um: 'Wenn die Forscher sorgfältiger gearbeitet hätten, wären die Fehler vermieden worden.'",
+        "modelAnswer": "Hätten die Forscher sorgfältiger gearbeitet, wären die Fehler vermieden worden."
+      }
+    },
+    {
+      "id": "c1-telc-konditionale-satzgefuege-irreales__ex3",
+      "lessonId": "c1-telc-konditionale-satzgefuege-irreales",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Bilden Sie eine wissenschaftliche Hypothese mit 'unter der Bedingung, dass...'.",
+        "modelAnswer": "Die Hypothese behält ihre Gültigkeit unter der Bedingung, dass der Druck während der gesamten Versuchsreihe konstant bleibt."
+      }
+    },
+    {
+      "id": "c1-telc-funktionsverbgefuege-wissenschaft__ex0",
+      "lessonId": "c1-telc-funktionsverbgefuege-wissenschaft",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welches Verb kollokiert korrekt mit 'eine Hypothese'?",
+        "options": [
+          "machen",
+          "aufstellen",
+          "schließen",
+          "legen"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "c1-telc-funktionsverbgefuege-wissenschaft__ex1",
+      "lessonId": "c1-telc-funktionsverbgefuege-wissenschaft",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Ergänzen Sie das passende Verb: 'Die Ausgrabungen gaben wichtigen Aufschluss ___ die Lebensweise der Kelten.' (über + Akkusativ)",
+        "correctAnswer": "über"
+      }
+    },
+    {
+      "id": "c1-telc-funktionsverbgefuege-wissenschaft__ex2",
+      "lessonId": "c1-telc-funktionsverbgefuege-wissenschaft",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "Funktionsverbgefüge: 'in Zweifel ziehen'",
+        "back": "Bedeutung: etwas anzweifeln, die Richtigkeit einer Aussage infrage stellen"
+      }
+    },
+    {
+      "id": "c1-telc-funktionsverbgefuege-wissenschaft__ex3",
+      "lessonId": "c1-telc-funktionsverbgefuege-wissenschaft",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Bilden Sie einen akademischen Satz mit dem Gefüge 'Schlüsse ziehen'.",
+        "modelAnswer": "Aus den vorliegenden Versuchsergebnissen lassen sich zum gegenwärtigen Zeitpunkt noch keine verlässlichen Schlüsse ziehen."
+      }
+    },
+    {
+      "id": "c1-telc-diskursmarker-ergaenzungen__ex0",
+      "lessonId": "c1-telc-diskursmarker-ergaenzungen",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Wortstellung folgt auf das Konjunktionaladverb 'demnach'?",
+        "options": [
+          "Demnach die Forscher änderten den Plan.",
+          "Demnach änderten die Forscher den Plan.",
+          "Demnach die Forscher den Plan änderten.",
+          "Die Forscher demnach änderten den Plan."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "c1-telc-diskursmarker-ergaenzungen__ex1",
+      "lessonId": "c1-telc-diskursmarker-ergaenzungen",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Vervollständigen Sie den einschränkenden Doppelkonnektor: 'Die Methode ist ___ valide, als sie standardisierte Kriterien erfüllt.'",
+        "correctAnswer": "insofern",
+        "acceptableVariants": [
+          "insoweit"
+        ]
+      }
+    },
+    {
+      "id": "c1-telc-diskursmarker-ergaenzungen__ex2",
+      "lessonId": "c1-telc-diskursmarker-ergaenzungen",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "Konnektor: 'nichtsdestotrotz'",
+        "back": "Synonym zu 'trotzdem / dennoch' (gehobene Stilebene, erfordert Inversion)"
+      }
+    },
+    {
+      "id": "c1-telc-diskursmarker-ergaenzungen__ex3",
+      "lessonId": "c1-telc-diskursmarker-ergaenzungen",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Verbinden Sie zwei kontrastierende Aspekte des Hochschulstudiums mit 'zwar... aber dennoch'.",
+        "modelAnswer": "Ein Studium verlangt zwar ein hohes Maß an Selbstdisziplin und Verzicht, eröffnet aber dennoch unvergleichliche Karrierechancen."
+      }
+    },
+    {
+      "id": "c1-telc-abstrahierende-adjektive-und-nomen__ex0",
+      "lessonId": "c1-telc-abstrahierende-adjektive-und-nomen",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was bedeutet es, wenn ein wissenschaftliches Forschungsergebnis 'evident' ist?",
+        "options": [
+          "Es ist vollkommen unklar und umstritten.",
+          "Es ist augenscheinlich, offenkundig und unwiderlegbar belegt.",
+          "Es basiert auf reinen Schätzungen ohne Messungen.",
+          "Es wurde heimlich und ohne Genehmigung publiziert."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "c1-telc-abstrahierende-adjektive-und-nomen__ex1",
+      "lessonId": "c1-telc-abstrahierende-adjektive-und-nomen",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Ergänzen Sie das Antonym zu 'Homogenität': 'Die enorme sprachliche ___ der Studierenden erfordert differenzierte Lehrmethoden.'",
+        "correctAnswer": "Heterogenität"
+      }
+    },
+    {
+      "id": "c1-telc-abstrahierende-adjektive-und-nomen__ex2",
+      "lessonId": "c1-telc-abstrahierende-adjektive-und-nomen",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "Adjektiv: 'rudimentär'",
+        "back": "Bedeutung: unvollständig, nur in Ansätzen / Grundzügen vorhanden"
+      }
+    },
+    {
+      "id": "c1-telc-abstrahierende-adjektive-und-nomen__ex3",
+      "lessonId": "c1-telc-abstrahierende-adjektive-und-nomen",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Bilden Sie einen Satz mit dem Adjektiv 'fundiert' im Kontext universitärer Bildung.",
+        "modelAnswer": "Eine fundierte Methodenausbildung ist das unabdingbare Fundament für jedes erfolgreiche Masterstudium."
+      }
+    },
+    {
+      "id": "c1-telc-modale-infinitive-und-gerundiv__ex0",
+      "lessonId": "c1-telc-modale-infinitive-und-gerundiv",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Bedeutung hat das Gerundiv: 'das zu lösende Problem'?",
+        "options": [
+          "Das Problem, das gelöst worden ist.",
+          "Das Problem, das gelöst werden muss oder kann.",
+          "Das Problem, das niemals gelöst werden wird.",
+          "Das Problem, welches das Lösen verhindert."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "c1-telc-modale-infinitive-und-gerundiv__ex1",
+      "lessonId": "c1-telc-modale-infinitive-und-gerundiv",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Transformieren Sie in ein Gerundiv: 'Die Dokumente, die eingereicht werden müssen' -> 'Die ___ Dokumente'",
+        "correctAnswer": "einzureichenden"
+      }
+    },
+    {
+      "id": "c1-telc-modale-infinitive-und-gerundiv__ex2",
+      "lessonId": "c1-telc-modale-infinitive-und-gerundiv",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "Konstruktion: 'haben + zu + Infinitiv'",
+        "back": "Aktivische Pflicht/Notwendigkeit: 'Der Autor hat zu belegen...' = Der Autor muss belegen..."
+      }
+    },
+    {
+      "id": "c1-telc-modale-infinitive-und-gerundiv__ex3",
+      "lessonId": "c1-telc-modale-infinitive-und-gerundiv",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulieren Sie den Nebensatz mit Hilfe eines Gerundivs um: 'Die Kriterien, die angewendet werden müssen, sind streng.'",
+        "modelAnswer": "Die anzuwendenden Kriterien sind streng."
+      }
+    },
+    {
+      "id": "c1-telc-fachwortschatz-hochschulkontext__ex0",
+      "lessonId": "c1-telc-fachwortschatz-hochschulkontext",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was versteht man an einer deutschen Hochschule unter einem 'Kolloquium'?",
+        "options": [
+          "Eine schriftliche Zwischenprüfung im ersten Semester",
+          "Ein wissenschaftliches Gespräch oder eine Diskussionsrunde über Forschungsarbeiten",
+          "Das Mensagebäude auf dem Campus",
+          "Den Mitgliedsausweis der Universitätsbibliothek"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "c1-telc-fachwortschatz-hochschulkontext__ex1",
+      "lessonId": "c1-telc-fachwortschatz-hochschulkontext",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Ergänzen Sie den Fachbegriff für die offizielle Einschreibung an einer Hochschule: 'Die ___ erfolgt im Studierendensekretariat.'",
+        "correctAnswer": "Immatrikulation"
+      }
+    },
+    {
+      "id": "c1-telc-fachwortschatz-hochschulkontext__ex2",
+      "lessonId": "c1-telc-fachwortschatz-hochschulkontext",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "Begriff: 'die Habilitation'",
+        "back": "Die höchste akademische Prüfung, mit der die Lehrbefähigung (Venia Legendi) an einer Universität erworben wird."
+      }
+    },
+    {
+      "id": "c1-telc-fachwortschatz-hochschulkontext__ex3",
+      "lessonId": "c1-telc-fachwortschatz-hochschulkontext",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Verfassen Sie einen formal korrekten Satz, der erklärt, was in einem 'Modulhandbuch' geregelt ist.",
+        "modelAnswer": "Das Modulhandbuch beschreibt detailliert die Inhalte, Lernziele, Lehrformen und Prüfungsanforderungen der einzelnen Studienmodule."
+      }
+    },
+    {
+      "id": "c1-telc-leseverstehen-teil1-sachtext-global__ex0",
+      "lessonId": "c1-telc-leseverstehen-teil1-sachtext-global",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Lesestrategie ist für telc Leseverstehen Teil 1 primär anzuwenden?",
+        "options": [
+          "Jedes unbekannte Wort im Text analysieren",
+          "Die Überschriften zuerst analysieren, Kernbegriffe markieren und die Hauptaussage jedes Absatzes im Ganzen erfassen",
+          "Nur den ersten Satz jedes Absatzes lesen und raten",
+          "Den Text rückwärts vom Fazit her lesen"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "c1-telc-leseverstehen-teil1-sachtext-global__ex1",
+      "lessonId": "c1-telc-leseverstehen-teil1-sachtext-global",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Ein Absatz schildert verschiedene Methoden zur Messung von Treibhausgasen und wägt deren Kosten ab. Welche Überschrift passt?",
+        "options": [
+          "Die unausweichliche Klimakatastrophe",
+          "Methodenvergleich und ökonomische Bewertung von Erfassungsverfahren",
+          "Vollständiger Verzicht auf Messtechnologien",
+          "Geschichte der Meteorologie im 19. Jahrhundert"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "c1-telc-leseverstehen-teil1-sachtext-global__ex2",
+      "lessonId": "c1-telc-leseverstehen-teil1-sachtext-global",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Beschreiben Sie kurz, wie Distraktoren bei Zuordnungsaufgaben in telc C1 typischerweise konstruiert sind.",
+        "modelAnswer": "Distraktoren greifen oft markante Einzelwörter des Textes auf, verdrehen aber die Kernaussage ins Gegenteil oder beziehen sich auf bloße Randbemerkungen statt auf die zentrale Absatzthese."
+      }
+    },
+    {
+      "id": "c1-telc-leseverstehen-teil1-sachtext-global__ex3",
+      "lessonId": "c1-telc-leseverstehen-teil1-sachtext-global",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulieren Sie eine passende C1-Zwischenüberschrift für einen Absatz über die psychischen Belastungen von Studierenden in Prüfungsphasen.",
+        "modelAnswer": "Psychosoziale Vulnerabilität und kognitive Überlastung im Kontext universitärer Prüfungsregime."
+      }
+    },
+    {
+      "id": "c1-telc-leseverstehen-teil2-textrekonstruktion__ex0",
+      "lessonId": "c1-telc-leseverstehen-teil2-textrekonstruktion",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher textuelle Hinweis signalisiert eine Lücke nach einem Satz, der ein Problem schildert?",
+        "options": [
+          "Ein Satz, der völlig unzusammenhängend ein neues Thema beginnt",
+          "Ein Einschub, der mit 'Um diesen Missstand zu beheben...' oder 'Dieses Problem...' anknüpft",
+          "Ein Absatz, der das Problem ohne logischen Bezug wiederholt",
+          "Eine Verabschiedungsformel"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "c1-telc-leseverstehen-teil2-textrekonstruktion__ex1",
+      "lessonId": "c1-telc-leseverstehen-teil2-textrekonstruktion",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Vor der Lücke steht: 'Viele Experten bezweifelten die Validität der Studie.' Welcher Anschluss passt kohärent?",
+        "options": [
+          "Sie aßen deshalb gemeinsam zu Mittag.",
+          "Ihre Skepsis entzündete sich vor allem an der zu geringen Probandenzahl.",
+          "Die Studie war weltweit berühmt.",
+          "Niemand hatte etwas gegen die Resultate einzuwenden."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "c1-telc-leseverstehen-teil2-textrekonstruktion__ex2",
+      "lessonId": "c1-telc-leseverstehen-teil2-textrekonstruktion",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Erläutern Sie die Funktion von anaphorischen Pronominaladverbien wie 'hieraus' bei der Textrekonstruktion.",
+        "modelAnswer": "Sie verweisen rückwärts auf einen zuvor etablierten Sachverhalt und leiten eine logische Konsequenz oder Deduktion ein, was eine zwingende Verknüpfung der Textteile belegt."
+      }
+    },
+    {
+      "id": "c1-telc-leseverstehen-teil2-textrekonstruktion__ex3",
+      "lessonId": "c1-telc-leseverstehen-teil2-textrekonstruktion",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Erstellen Sie ein kurzes Beispiel für eine semantische Brücke zwischen zwei Textabsätzen mittels Synonymie.",
+        "modelAnswer": "Absatzende: '...offenbarte die Untersuchung eklatante Mängel.' - Anschluss: 'Diese gravierenden Unzulänglichkeiten zwangen die Projektleitung zur sofortigen Intervention.'"
+      }
+    },
+    {
+      "id": "c1-telc-leseverstehen-teil3-selektiv-detail__ex0",
+      "lessonId": "c1-telc-leseverstehen-teil3-selektiv-detail",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Text: 'Es wäre jedoch verfehlt, das Phänomen ausschließlich auf ökonomische Prekarität zu kaprizieren; soziokulturelle Entfremdungsprozesse wiegen mindestens ebenso schwer.' - Was besagt der Text?",
+        "options": [
+          "Nur finanzielle Not erklärt das Phänomen.",
+          "Ökonomische Faktoren spielen gar keine Rolle.",
+          "Sowohl wirtschaftliche als auch soziokulturelle Ursachen sind maßgeblich.",
+          "Kulturelle Faktoren sind der alleinige Auslöser."
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "c1-telc-leseverstehen-teil3-selektiv-detail__ex1",
+      "lessonId": "c1-telc-leseverstehen-teil3-selektiv-detail",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Woran scheitern Prüflinge bei telc C1 MC-Fragen am häufigsten?",
+        "options": [
+          "An zu einfachen Fragen ohne Textbezug",
+          "Am Übersehen modaler Restriktionen wie 'kaum', 'partiell' oder 'lediglich' in den Antwortoptionen",
+          "An der Textlänge von unter 200 Wörtern",
+          "An grammatikalischen Tippfehlern im Text"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "c1-telc-leseverstehen-teil3-selektiv-detail__ex2",
+      "lessonId": "c1-telc-leseverstehen-teil3-selektiv-detail",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Erklären Sie, warum Optionen mit Absolutheitsansprüchen (z. B. 'völlig ausgeschlossen', 'ausnahmslos') in C1-Aufgaben meist falsch sind.",
+        "modelAnswer": "Wissenschaftliche Diskurse formulieren selten absolute Dogmen; differenzierte C1-Texte arbeiten typischerweise mit Wahrscheinlichkeiten, Tendenzen und Einschränkungen."
+      }
+    },
+    {
+      "id": "c1-telc-leseverstehen-teil3-selektiv-detail__ex3",
+      "lessonId": "c1-telc-leseverstehen-teil3-selektiv-detail",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulieren Sie eine Paraphrase für den Satz: 'Die These entbehrt jeglicher wissenschaftlicher Grundlage.'",
+        "modelAnswer": "Für diese Annahme existiert keinerlei empirischer oder theoretischer Beleg."
+      }
+    },
+    {
+      "id": "c1-telc-sprachbausteine-grammatik-kollokationen__ex0",
+      "lessonId": "c1-telc-sprachbausteine-grammatik-kollokationen",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Lücke: 'Die Ergebnisse stehen in Einklang ___ den internationalen Richtlinien.'",
+        "options": [
+          "zu",
+          "mit",
+          "an",
+          "für"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "c1-telc-sprachbausteine-grammatik-kollokationen__ex1",
+      "lessonId": "c1-telc-sprachbausteine-grammatik-kollokationen",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Sprachbaustein-Lücke: 'Er beharrte unnachgiebig ___ seinem Standpunkt.' (on + Dativ)",
+        "correctAnswer": "auf"
+      }
+    },
+    {
+      "id": "c1-telc-sprachbausteine-grammatik-kollokationen__ex2",
+      "lessonId": "c1-telc-sprachbausteine-grammatik-kollokationen",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Lücke: '___ der Tatsache, dass die Daten unvollständig waren, wurden sie publiziert.'",
+        "options": [
+          "Ungeachtet",
+          "Infolge",
+          "Anlässlich",
+          "Mittels"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "c1-telc-sprachbausteine-grammatik-kollokationen__ex3",
+      "lessonId": "c1-telc-sprachbausteine-grammatik-kollokationen",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Ergänzen Sie die passende Präposition und das Reflexivpronomen: 'Die Kommission verständigte ___ ___ einen tragfähigen Kompromiss.'",
+        "modelAnswer": "sich auf"
+      }
+    },
+    {
+      "id": "c1-telc-hoerverstehen-teil1-vorlesungsmitschrift__ex0",
+      "lessonId": "c1-telc-hoerverstehen-teil1-vorlesungsmitschrift",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Notizaufgabe: 'Hörtext: Das Experiment scheiterte an unzureichender Kühlung der Supraleiter.' -> Notiz: Ursache des Scheiterns: Mangelhafte ___ der Supraleiter.",
+        "correctAnswer": "Kühlung"
+      }
+    },
+    {
+      "id": "c1-telc-hoerverstehen-teil1-vorlesungsmitschrift__ex1",
+      "lessonId": "c1-telc-hoerverstehen-teil1-vorlesungsmitschrift",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was ist die effektivste Notizentechnik für telc C1 Hörverstehen Teil 1?",
+        "options": [
+          "Vollständige Sätze mit allen Artikeln ausschreiben",
+          "Abkürzungen, Pfeile für Kausalitäten und substantivische Kernbegriffe nutzen",
+          "Nichts aufschreiben und alles im Gedächtnis behalten",
+          "Nur die Zahlen notieren und den Text ignorieren"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "c1-telc-hoerverstehen-teil1-vorlesungsmitschrift__ex2",
+      "lessonId": "c1-telc-hoerverstehen-teil1-vorlesungsmitschrift",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Der Dozent sagt: 'Hierbei handelt es sich um eine conditio sine qua non.' Was notieren Sie zur Bedeutung für das Experiment?",
+        "options": [
+          "Unwichtige Randbedingung",
+          "Zwingende / unabdingbare Voraussetzung",
+          "Verbotene Maßnahme",
+          "Bereits abgeschlossener Test"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "c1-telc-hoerverstehen-teil1-vorlesungsmitschrift__ex3",
+      "lessonId": "c1-telc-hoerverstehen-teil1-vorlesungsmitschrift",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Erklären Sie, woran man im Tonfall eines Universitätsdozenten erkennt, dass ein prüfungsrelevanter Kernpunkt folgt.",
+        "modelAnswer": "Dozenten markieren Kernaussagen oft durch verlangsamtes Sprechtempo, Hebung der Lautstärke, vorgeschaltete Pausen oder explizite Signalfloskeln wie 'Halten wir fest...' oder 'Entscheidend ist hierbei...'."
+      }
+    },
+    {
+      "id": "c1-telc-hoerverstehen-teil2-fachgespraech-interview__ex0",
+      "lessonId": "c1-telc-hoerverstehen-teil2-fachgespraech-interview",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Experte: 'Die Datenlage ist zwar dünn, doch deutet vieles auf eine Trendwende hin.' - Wie schätzt der Experte die Situation ein?",
+        "options": [
+          "Er ist sich absolut sicher, dass alles beim Alten bleibt.",
+          "Er sieht begründete Anzeichen für einen Wandel, räumt aber Unsicherheiten ein.",
+          "Er hält die Untersuchung für komplett unseriös."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "c1-telc-hoerverstehen-teil2-fachgespraech-interview__ex1",
+      "lessonId": "c1-telc-hoerverstehen-teil2-fachgespraech-interview",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Worauf bezieht sich die Prüfungsfrage bei telc Teil 2 meistens?",
+        "options": [
+          "Auf die Kleidung der Interviewten",
+          "Auf die subjektive Haltung, Schlussfolgerungen und Argumente der jeweiligen Sprecher",
+          "Auf die genaue Uhrzeit der Aufnahme",
+          "Auf das Alter der beteiligten Journalisten"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "c1-telc-hoerverstehen-teil2-fachgespraech-interview__ex2",
+      "lessonId": "c1-telc-hoerverstehen-teil2-fachgespraech-interview",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Ergänzen Sie das Fachverb für 'in Abrede stellen': 'Der Ökonom ___ die Kausalität zwischen Zinsanstieg und Inflation ab.' (denies)",
+        "correctAnswer": "streitet",
+        "acceptableVariants": [
+          "leugnet"
+        ]
+      }
+    },
+    {
+      "id": "c1-telc-hoerverstehen-teil2-fachgespraech-interview__ex3",
+      "lessonId": "c1-telc-hoerverstehen-teil2-fachgespraech-interview",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Wie deuten Sie die Aussage einer Forscherin: 'Das Ergebnis überrascht mich nicht im Geringsten'?",
+        "modelAnswer": "Die Forscherin hatte genau diesen Ausgang erwartet; das Resultat bestätigt vollkommen ihre ursprüngliche Hypothese."
+      }
+    },
+    {
+      "id": "c1-telc-hoerverstehen-teil3-kurzvortraege__ex0",
+      "lessonId": "c1-telc-hoerverstehen-teil3-kurzvortraege",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Ein Sprecher betont die Chancen internationaler Studiengänge, verweist aber auf Sprachbarrieren. Welche Aussage trifft zu?",
+        "options": [
+          "Er lehnt Internationalisierung grundsätzlich ab.",
+          "Er befürwortet die Programme, sieht jedoch sprachliche Hürden als Herausforderung.",
+          "Er fordert die Abschaffung aller Fremdsprachen an Universitäten."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "c1-telc-hoerverstehen-teil3-kurzvortraege__ex1",
+      "lessonId": "c1-telc-hoerverstehen-teil3-kurzvortraege",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Wie viele Sprecher werden in telc Hörverstehen Teil 3 typischerweise gehört?",
+        "options": [
+          "Ein einziger Redner über 20 Minuten",
+          "Meist fünf bis sechs verschiedene Personen mit kurzen Statements",
+          "Zwei Personen im Zwiegespräch",
+          "Zehn Personen gleichzeitig durcheinander"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "c1-telc-hoerverstehen-teil3-kurzvortraege__ex2",
+      "lessonId": "c1-telc-hoerverstehen-teil3-kurzvortraege",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Sprecherin: 'Ich stehe dieser Neuerung äußerst ___ gegenüber.' (skeptisch / abwartend)",
+        "correctAnswer": "skeptisch"
+      }
+    },
+    {
+      "id": "c1-telc-hoerverstehen-teil3-kurzvortraege__ex3",
+      "lessonId": "c1-telc-hoerverstehen-teil3-kurzvortraege",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Nennen Sie zwei sprachliche Mittel, mit denen ein Sprecher in einem C1-Kurzbeitrag Distanz zu einer These aufbaut.",
+        "modelAnswer": "Durch die Verwendung des Konjunktivs ('Das sollte man angeblich tun...'), abwertende Adjektive ('vordergründig', 'fragwürdig') oder ironische Bemerkungen."
+      }
+    },
+    {
+      "id": "c1-telc-schriftlicher-ausdruck-stellungnahme__ex0",
+      "lessonId": "c1-telc-schriftlicher-ausdruck-stellungnahme",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulieren Sie eine Einleitung für eine C1-Stellungnahme zum Zitat: 'Universitäten dürfen keine Ausbildungsbetriebe für die Wirtschaft werden, sondern müssen Stätten reiner Erkenntnis bleiben.'",
+        "modelAnswer": "Das Spannungsverhältnis zwischen zweckfreier Grundlagenforschung und marktorientierter Verwertbarkeit akademischer Bildung durchzieht die universitätsgeschichtliche Debatte seit Humboldts Ideal. Vor dem Hintergrund zunehmender Drittmittelabhängigkeit gewinnt die Frage nach der Autonomie der Wissenschaft neue, existenzielle Brisanz."
+      }
+    },
+    {
+      "id": "c1-telc-schriftlicher-ausdruck-stellungnahme__ex1",
+      "lessonId": "c1-telc-schriftlicher-ausdruck-stellungnahme",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welches Strukturmodell ist für eine telc C1 Stellungnahme am zielführendsten?",
+        "options": [
+          "Nur die eigene Meinung ohne Erwähnung der Zitate aufschreiben",
+          "Dialektischer Aufbau: Synthese beider Zitate in der Einleitung, Abwägung von Gegenargumenten und Stützen der eigenen Position mit Belegen",
+          "Eine stichpunktartige Liste von Vorteilen und Nachteilen",
+          "Ein offener Brief an den Bundeskanzler im Umgangston"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "c1-telc-schriftlicher-ausdruck-stellungnahme__ex2",
+      "lessonId": "c1-telc-schriftlicher-ausdruck-stellungnahme",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Ergänzen Sie den wissenschaftlichen Überleitungssatz: 'Es stellt sich mithin die fundamentale Frage, ___ diese Entwicklung als Fortschritt oder Rückschritt einzustufen ist.' (whether)",
+        "correctAnswer": "ob"
+      }
+    },
+    {
+      "id": "c1-telc-schriftlicher-ausdruck-stellungnahme__ex3",
+      "lessonId": "c1-telc-schriftlicher-ausdruck-stellungnahme",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Verfassen Sie ein gewichtiges Argument gegen die vollständige Kommerzialisierung universitärer Forschung unter Nutzung von 'infolge'.",
+        "modelAnswer": "Infolge einer einseitigen Ausrichtung an privatwirtschaftlichen Verwertungsinteressen droht die thematische Marginalisierung traditionsreicher geisteswissenschaftlicher Disziplinen, deren gesellschaftlicher Wert sich nicht in unmittelbaren Renditen beziffern lässt."
+      }
+    },
+    {
+      "id": "c1-telc-grafikbeschreibung-und-synthese__ex0",
+      "lessonId": "c1-telc-grafikbeschreibung-und-synthese",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Wendung beschreibt einen unveränderten Zustand über längere Zeit am präzisesten?",
+        "options": [
+          "Die Werte explodierten förmlich.",
+          "Die Zahlen verharrten auf einem konstanten Niveau.",
+          "Die Kurve stürzte ins Bodenlose.",
+          "Die Werte schwankten erratisch."
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "c1-telc-grafikbeschreibung-und-synthese__ex1",
+      "lessonId": "c1-telc-grafikbeschreibung-und-synthese",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Ergänzen Sie das Fachverb für 'an der Spitze liegen': 'Mit einem Anteil von 35 Prozent ___ Schweden den ersten Platz in der Rangliste.' (occupies / ranks)",
+        "correctAnswer": "belegt",
+        "acceptableVariants": [
+          "nimmt",
+          "besetzt"
+        ]
+      }
+    },
+    {
+      "id": "c1-telc-grafikbeschreibung-und-synthese__ex2",
+      "lessonId": "c1-telc-grafikbeschreibung-und-synthese",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "Grafikphrase: 'Die Daten lassen den Schluss zu, dass...'",
+        "back": "Bedeutung: Aus den Zahlen lässt sich logisch folgern / ableiten, dass..."
+      }
+    },
+    {
+      "id": "c1-telc-grafikbeschreibung-und-synthese__ex3",
+      "lessonId": "c1-telc-grafikbeschreibung-und-synthese",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Verfassen Sie einen Vergleich zweier Werte (z. B. 60 % vs. 20 %) unter Verwendung von 'wohingegen'.",
+        "modelAnswer": "Rund 60 Prozent der befragten Studierenden befürworten digitale Prüfungsformate, wohingegen lediglich 20 Prozent der Dozierenden diese Einschätzung teilen."
+      }
+    },
+    {
+      "id": "c1-telc-muendlicher-ausdruck-teil1a-praesentation__ex0",
+      "lessonId": "c1-telc-muendlicher-ausdruck-teil1a-praesentation",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulieren Sie eine Roadmap für einen 3-Minuten-Vortrag über 'Numerus Clausus in der Medizin'.",
+        "modelAnswer": "Ich werde zunächst die historische Entstehung und die Funktionsweise des Numerus Clausus skizzieren, daran anschließend die Kritikpunkte bezüglich sozialer Selektivität erörtern und abschließend alternative Eignungsverfahren als Reformoption vorstellen."
+      }
+    },
+    {
+      "id": "c1-telc-muendlicher-ausdruck-teil1a-praesentation__ex1",
+      "lessonId": "c1-telc-muendlicher-ausdruck-teil1a-praesentation",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was führt bei der telc C1 Präsentation zu erheblichem Punktabzug?",
+        "options": [
+          "Freies Sprechen mit Blickkontakt",
+          "Vollständiges, monotones Ablesen eines vorformulierten Textes vom Notizblatt",
+          "Die Verwendung von Fremdwörtern",
+          "Das Einhalten des Zeitrahmens von 3 Minuten"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "c1-telc-muendlicher-ausdruck-teil1a-praesentation__ex2",
+      "lessonId": "c1-telc-muendlicher-ausdruck-teil1a-praesentation",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Ergänzen Sie die Präsentationsformel: 'Lassen Sie mich diesen Aspekt an einem konkreten Beispiel ___.' (illustrate)",
+        "correctAnswer": "verdeutlichen",
+        "acceptableVariants": [
+          "illustrieren",
+          "erläutern"
+        ]
+      }
+    },
+    {
+      "id": "c1-telc-muendlicher-ausdruck-teil1a-praesentation__ex3",
+      "lessonId": "c1-telc-muendlicher-ausdruck-teil1a-praesentation",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulieren Sie ein prägnantes Schlussfazit für einen Vortrag über 'Künstliche Intelligenz an Universitäten'.",
+        "modelAnswer": "Künstliche Intelligenz wird die Hochschulbildung nicht ersetzen, sondern grundlegend transformieren; entscheidend ist, dass wir sie als Werkzeug der Erkenntnis begreifen und nicht als Ersatz für originäres kritisches Denken."
+      }
+    },
+    {
+      "id": "c1-telc-muendlicher-ausdruck-teil1b-nachfragen__ex0",
+      "lessonId": "c1-telc-muendlicher-ausdruck-teil1b-nachfragen",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulieren Sie eine anspruchsvolle Nachfrage an einen Partner, der über 'Abschaffung des Bargelds' referiert hat.",
+        "modelAnswer": "Sie haben überzeugend dargelegt, wie die Abschaffung des Bargelds Steuerhinterziehung eindämmen könnte. Wie bewerten Sie jedoch die Gefahr der totalen finanziellen Gläsernheit und den Ausschluss technisch weniger versierter Bevölkerungsgruppen?"
+      }
+    },
+    {
+      "id": "c1-telc-muendlicher-ausdruck-teil1b-nachfragen__ex1",
+      "lessonId": "c1-telc-muendlicher-ausdruck-teil1b-nachfragen",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Nachfrage ist für Teil 1B auf C1-Niveau angemessen?",
+        "options": [
+          "Wie spät ist es jetzt?",
+          "Könnten Sie bitte noch einmal wiederholen, wer Sie sind?",
+          "Inwieweit lässt sich Ihre These mit den rezenten Befunden der Bildungsökonomie vereinbaren?",
+          "Fanden Sie das Thema schwer?"
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "c1-telc-muendlicher-ausdruck-teil1b-nachfragen__ex2",
+      "lessonId": "c1-telc-muendlicher-ausdruck-teil1b-nachfragen",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Ergänzen Sie die Feedbackformel: 'Ich fand Ihre Argumentation bezüglich der Kostensenkung äußerst ___.' (convincing / coherent)",
+        "correctAnswer": "stichhaltig",
+        "acceptableVariants": [
+          "überzeugend",
+          "schlüssig"
+        ]
+      }
+    },
+    {
+      "id": "c1-telc-muendlicher-ausdruck-teil1b-nachfragen__ex3",
+      "lessonId": "c1-telc-muendlicher-ausdruck-teil1b-nachfragen",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Reagieren Sie diplomatisch auf eine kritische Prüfungsfrage, zu der Sie keine exakten Zahlen parat haben.",
+        "modelAnswer": "Exakte statistische Erhebungen liegen mir zu diesem spezifischen Teilaspekt ad hoc nicht vor, doch qualitativ betrachtet deutet die Forschungslage klar darauf hin, dass hier erheblicher Handlungsbedarf besteht."
+      }
+    },
+    {
+      "id": "c1-telc-muendlicher-ausdruck-teil2-diskussion__ex0",
+      "lessonId": "c1-telc-muendlicher-ausdruck-teil2-diskussion",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulieren Sie einen Einwand gegen den Diskussionspartner, der behauptet, KI-Modelle würden menschliche Lehrkräfte vollständig obsolet machen.",
+        "modelAnswer": "Da muss ich Ihnen entschieden widersprechen. Ein Algorithmus vermag zwar enorme Datenmengen zu prozessieren, doch fehlt ihm jedwede emotionale Intelligenz, Empathie und die pädagogische Intuition, die für individuelle Bildungsprozesse essenziell sind."
+      }
+    },
+    {
+      "id": "c1-telc-muendlicher-ausdruck-teil2-diskussion__ex1",
+      "lessonId": "c1-telc-muendlicher-ausdruck-teil2-diskussion",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Reaktion belegt höchste C1-Interaktionskompetenz in der Debatte?",
+        "options": [
+          "Einfach laut 'Nein!' rufen und das Thema wechseln",
+          "Das Argument des Partners aufgreifen, differenzieren und mit einer tiefergehenden Implikation konfrontieren",
+          "Den Partner ausreden lassen und dann den eigenen auswendig gelernten Text aufsagen",
+          "Auf die Uhr schauen und die Prüfer fragen, ob die Zeit um ist"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "c1-telc-muendlicher-ausdruck-teil2-diskussion__ex2",
+      "lessonId": "c1-telc-muendlicher-ausdruck-teil2-diskussion",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Ergänzen Sie die Formel für teilweisen Konsens: 'In diesem Punkt gehe ich mit Ihnen völlig ___, allerdings...' (agree)",
+        "correctAnswer": "konform"
+      }
+    },
+    {
+      "id": "c1-telc-muendlicher-ausdruck-teil2-diskussion__ex3",
+      "lessonId": "c1-telc-muendlicher-ausdruck-teil2-diskussion",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Formulieren Sie ein vermittelndes Schlussplädoyer, das beide konträren Diskussionsstränge zu einer Synthese führt.",
+        "modelAnswer": "Wenngleich unsere Positionen hinsichtlich der regulatorischen Eingriffstiefe divergieren, herrscht Einigkeit darüber, dass eine ethische Rahmung der Technologie unverzichtbar ist, wenn wir Innovation nicht mit Kontrollverlust bezahlen wollen."
+      }
+    }
+  ],
+  "prerequisites": [
+    {
+      "lessonId": "c1-telc-modale-infinitive-und-gerundiv",
+      "prerequisiteLessonId": "c1-telc-wissenschaftssprache-merkmale"
+    },
+    {
+      "lessonId": "c1-telc-leseverstehen-teil1-sachtext-global",
+      "prerequisiteLessonId": "c1-telc-wissenschaftssprache-merkmale"
+    },
+    {
+      "lessonId": "c1-telc-leseverstehen-teil1-sachtext-global",
+      "prerequisiteLessonId": "c1-telc-diskursmarker-ergaenzungen"
+    },
+    {
+      "lessonId": "c1-telc-leseverstehen-teil2-textrekonstruktion",
+      "prerequisiteLessonId": "c1-telc-diskursmarker-ergaenzungen"
+    },
+    {
+      "lessonId": "c1-telc-leseverstehen-teil2-textrekonstruktion",
+      "prerequisiteLessonId": "c1-telc-leseverstehen-teil1-sachtext-global"
+    },
+    {
+      "lessonId": "c1-telc-leseverstehen-teil3-selektiv-detail",
+      "prerequisiteLessonId": "c1-telc-abstrahierende-adjektive-und-nomen"
+    },
+    {
+      "lessonId": "c1-telc-leseverstehen-teil3-selektiv-detail",
+      "prerequisiteLessonId": "c1-telc-leseverstehen-teil1-sachtext-global"
+    },
+    {
+      "lessonId": "c1-telc-sprachbausteine-grammatik-kollokationen",
+      "prerequisiteLessonId": "c1-telc-angaben-praepositionen-genitiv"
+    },
+    {
+      "lessonId": "c1-telc-sprachbausteine-grammatik-kollokationen",
+      "prerequisiteLessonId": "c1-telc-funktionsverbgefuege-wissenschaft"
+    },
+    {
+      "lessonId": "c1-telc-hoerverstehen-teil1-vorlesungsmitschrift",
+      "prerequisiteLessonId": "c1-telc-fachwortschatz-hochschulkontext"
+    },
+    {
+      "lessonId": "c1-telc-hoerverstehen-teil1-vorlesungsmitschrift",
+      "prerequisiteLessonId": "c1-telc-wissenschaftssprache-merkmale"
+    },
+    {
+      "lessonId": "c1-telc-hoerverstehen-teil2-fachgespraech-interview",
+      "prerequisiteLessonId": "c1-telc-abstrahierende-adjektive-und-nomen"
+    },
+    {
+      "lessonId": "c1-telc-hoerverstehen-teil2-fachgespraech-interview",
+      "prerequisiteLessonId": "c1-telc-hoerverstehen-teil1-vorlesungsmitschrift"
+    },
+    {
+      "lessonId": "c1-telc-hoerverstehen-teil3-kurzvortraege",
+      "prerequisiteLessonId": "c1-telc-hoerverstehen-teil2-fachgespraech-interview"
+    },
+    {
+      "lessonId": "c1-telc-schriftlicher-ausdruck-stellungnahme",
+      "prerequisiteLessonId": "c1-telc-diskursmarker-ergaenzungen"
+    },
+    {
+      "lessonId": "c1-telc-schriftlicher-ausdruck-stellungnahme",
+      "prerequisiteLessonId": "c1-telc-funktionsverbgefuege-wissenschaft"
+    },
+    {
+      "lessonId": "c1-telc-grafikbeschreibung-und-synthese",
+      "prerequisiteLessonId": "c1-telc-schriftlicher-ausdruck-stellungnahme"
+    },
+    {
+      "lessonId": "c1-telc-grafikbeschreibung-und-synthese",
+      "prerequisiteLessonId": "c1-telc-wissenschaftssprache-merkmale"
+    },
+    {
+      "lessonId": "c1-telc-muendlicher-ausdruck-teil1a-praesentation",
+      "prerequisiteLessonId": "c1-telc-fachwortschatz-hochschulkontext"
+    },
+    {
+      "lessonId": "c1-telc-muendlicher-ausdruck-teil1a-praesentation",
+      "prerequisiteLessonId": "c1-telc-diskursmarker-ergaenzungen"
+    },
+    {
+      "lessonId": "c1-telc-muendlicher-ausdruck-teil1b-nachfragen",
+      "prerequisiteLessonId": "c1-telc-muendlicher-ausdruck-teil1a-praesentation"
+    },
+    {
+      "lessonId": "c1-telc-muendlicher-ausdruck-teil2-diskussion",
+      "prerequisiteLessonId": "c1-telc-muendlicher-ausdruck-teil1b-nachfragen"
+    },
+    {
+      "lessonId": "c1-telc-muendlicher-ausdruck-teil2-diskussion",
+      "prerequisiteLessonId": "c1-telc-konditionale-satzgefuege-irreales"
+    }
+  ]
+}
