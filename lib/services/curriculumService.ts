@@ -22,7 +22,6 @@ interface SectionRow {
 interface LessonRow {
   id: string;
   track: Track;
-  concept_id: string | null;
   source_level: CefrLevel;
   skill: Lesson['skill'];
   title: string;
@@ -64,7 +63,6 @@ function rowToLesson(row: LessonRow): Lesson {
   return {
     id: row.id,
     track: row.track,
-    conceptId: row.concept_id,
     sourceLevel: row.source_level,
     skill: row.skill,
     title: row.title,

@@ -17,7 +17,6 @@ interface SeedFile {
   lessons: {
     id: string;
     track: Track;
-    conceptId: string | null;
     sourceLevel: CefrLevel;
     skill: string;
     title: string;
@@ -44,15 +43,18 @@ function upsertSeedFile(db: Database.Database, seed: SeedFile): void {
     `INSERT INTO sections (id, milestone_id, title, description, order_index) VALUES (?, ?, ?, ?, ?)
      ON CONFLICT(id) DO UPDATE SET title = excluded.title, description = excluded.description, order_index = excluded.order_index`
   );
+  // lesson_placements has a UNIQUE(lesson_id) constraint (a lesson belongs to exactly one
+  // section, per lib/db/schema.ts's migrateConceptIdAndPlacementUniqueness) rather than
+  // UNIQUE(lesson_id, section_id), so a re-seeded lesson that moved sections updates its
+  // existing placement row's section_id in place instead of conflicting on a stale pair.
   const upsertPlacement = db.prepare(
     `INSERT INTO lesson_placements (lesson_id, section_id, order_index) VALUES (?, ?, ?)
-     ON CONFLICT(lesson_id, section_id) DO UPDATE SET order_index = excluded.order_index`
+     ON CONFLICT(lesson_id) DO UPDATE SET section_id = excluded.section_id, order_index = excluded.order_index`
   );
   const upsertLesson = db.prepare(
-    `INSERT INTO lessons (id, track, concept_id, source_level, skill, title, explanation, examples) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    `INSERT INTO lessons (id, track, source_level, skill, title, explanation, examples) VALUES (?, ?, ?, ?, ?, ?, ?)
      ON CONFLICT(id) DO UPDATE SET
-       concept_id = excluded.concept_id, title = excluded.title,
-       explanation = excluded.explanation, examples = excluded.examples`
+       title = excluded.title, explanation = excluded.explanation, examples = excluded.examples`
   );
   const upsertExercise = db.prepare(
     `INSERT INTO exercises (id, lesson_id, track, type, content) VALUES (?, ?, ?, ?, ?)
@@ -68,7 +70,6 @@ function upsertSeedFile(db: Database.Database, seed: SeedFile): void {
     upsertLesson.run(
       lesson.id,
       lesson.track,
-      lesson.conceptId,
       lesson.sourceLevel,
       lesson.skill,
       lesson.title,
