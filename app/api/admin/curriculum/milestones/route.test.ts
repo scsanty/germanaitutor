@@ -27,6 +27,32 @@ describe('/api/admin/curriculum/milestones', () => {
     expect(res.status).toBe(401);
   });
 
+  it('returns 401 when not authenticated (PATCH rename)', async () => {
+    vi.mocked(isAdminSessionValid).mockReturnValue(false);
+    const res = await PATCH(
+      new Request('http://localhost', { method: 'PATCH', body: JSON.stringify({ title: 'X', description: null }) }),
+      { params: { id: 'some-id' } }
+    );
+    expect(res.status).toBe(401);
+  });
+
+  it('returns 401 when not authenticated (DELETE)', async () => {
+    vi.mocked(isAdminSessionValid).mockReturnValue(false);
+    const res = await DELETE(new Request('http://localhost', { method: 'DELETE' }), { params: { id: 'some-id' } });
+    expect(res.status).toBe(401);
+  });
+
+  it('returns 401 when not authenticated (PATCH reorder)', async () => {
+    vi.mocked(isAdminSessionValid).mockReturnValue(false);
+    const res = await reorder(
+      new Request('http://localhost', {
+        method: 'PATCH',
+        body: JSON.stringify({ track: 'generic', level: 'A1', orderedIds: [] }),
+      })
+    );
+    expect(res.status).toBe(401);
+  });
+
   it('creates a milestone', async () => {
     const res = await POST(
       new Request('http://localhost', {
