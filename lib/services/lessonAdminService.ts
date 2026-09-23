@@ -58,7 +58,7 @@ export function createLessonAdminService(db: Database.Database) {
       // Placement is resolved before prerequisites so that a cycle-check failure below
       // rolls back any milestone/section resolvePlacement just created too — the whole
       // create is one atomic unit, and no inline-created structure is ever left orphaned.
-      const sectionId = resolvePlacement(db, input.track, input.sourceLevel, input.placement);
+      const sectionId = resolvePlacement(db, input.track, input.sourceLevel, input.placement, 'create');
       const maxOrder = db
         .prepare('SELECT COALESCE(MAX(order_index), -1) as m FROM lesson_placements WHERE section_id = ?')
         .get(sectionId) as { m: number };
@@ -123,7 +123,7 @@ export function createLessonAdminService(db: Database.Database) {
       // Placement is resolved before prerequisites so that a cycle-check failure below
       // rolls back any milestone/section resolvePlacement just created too — the whole
       // update is one atomic unit, and no inline-created structure is ever left orphaned.
-      const sectionId = resolvePlacement(db, input.track, input.sourceLevel, input.placement);
+      const sectionId = resolvePlacement(db, input.track, input.sourceLevel, input.placement, 'update');
       db.prepare('DELETE FROM lesson_placements WHERE lesson_id = ?').run(id);
       const maxOrder = db
         .prepare('SELECT COALESCE(MAX(order_index), -1) as m FROM lesson_placements WHERE section_id = ?')
