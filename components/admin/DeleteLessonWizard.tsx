@@ -35,12 +35,21 @@ export function DeleteLessonWizard({
   const [currentLessonId, setCurrentLessonId] = useState<string | null>(null);
   const [currentPreview, setCurrentPreview] = useState<DeletePreviewResponse | null>(null);
   const [pendingOffers, setPendingOffers] = useState<LinkedLessonOffer[]>([]);
+  // Tracks a failed delete-preview GET, kept separate from `error` (below), which is
+  // reserved for the final batch-DELETE call's own failure/retry path. The two must never
+  // be conflated: `isDone` (computed from `currentPreview`/`queue`) can already be true by
+  // the time a preview fetch for the last queued item rejects — `setQueue(rest)` pops the
+  // queue synchronously, before the fetch resolves, so if that fetch fails there's no later
+  // state update that would make `isDone` false again. Checking `previewError` directly,
+  // instead of folding it into `error` and gating on `!isDone`, means the blocking
+  // Cancel-only screen renders regardless of queue/currentPreview timing.
+  const [previewError, setPreviewError] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [deleting, setDeleting] = useState(false);
 
   // Fetch the next queued lesson's own preview once nothing is currently being shown.
   useEffect(() => {
-    if (currentPreview !== null || error !== null || queue.length === 0) return;
+    if (currentPreview !== null || previewError !== null || queue.length === 0) return;
     const [nextId, ...rest] = queue;
     setQueue(rest);
     setCurrentLessonId(nextId);
@@ -48,7 +57,7 @@ export function DeleteLessonWizard({
       .then(async (r) => {
         if (!r.ok) {
           const data = await r.json();
-          setError(data.error ?? 'Failed to load delete preview');
+          setPreviewError(data.error ?? 'Failed to load delete preview');
           return;
         }
         const preview: DeletePreviewResponse = await r.json();
@@ -56,9 +65,9 @@ export function DeleteLessonWizard({
         setPendingOffers((preview.linkedLessons ?? []).filter((l) => !decided.has(l.id)));
       })
       .catch(() => {
-        setError('Failed to load delete preview');
+        setPreviewError('Failed to load delete preview');
       });
-  }, [queue, currentPreview, decided, error]);
+  }, [queue, currentPreview, decided, previewError]);
 
   // Once every offer on the current preview is resolved, clear it so the effect above
   // advances to the next queued lesson (or finishes, if the queue is also empty).
@@ -96,12 +105,15 @@ export function DeleteLessonWizard({
 
   const isDone = currentPreview === null && queue.length === 0;
 
-  // A preview fetch failure surfaces here — before the final "Ready to delete" screen —
-  // so it's never silently swallowed as "no repair effects, no linked lessons".
-  if (error && !isDone) {
+  // An unresolved preview-fetch failure always blocks the wizard here — checked
+  // unconditionally, not gated on `!isDone` — so it's never silently swallowed as "no
+  // repair effects, no linked lessons", and never falls through to an enabled "Delete All"
+  // on the final screen just because the failure happened to be the last (or only) item in
+  // the queue.
+  if (previewError) {
     return (
       <div>
-        <p role="alert">{error}</p>
+        <p role="alert">{previewError}</p>
         <button type="button" onClick={onCancel}>
           Cancel
         </button>
