@@ -33,6 +33,15 @@ describe('/api/admin/curriculum/lessons/[id]/links', () => {
     expect(res.status).toBe(401);
   });
 
+  it('DELETE returns 401 when not authenticated', async () => {
+    vi.mocked(isAdminSessionValid).mockReturnValue(false);
+    const res = await DELETE(
+      new Request('http://localhost', { method: 'DELETE' }),
+      { params: { id: 'a1-g1', otherId: 'a1-t1' } }
+    );
+    expect(res.status).toBe(401);
+  });
+
   it('creates a link', async () => {
     const res = await POST(
       new Request('http://localhost', { method: 'POST', body: JSON.stringify({ otherLessonId: 'a1-t1' }) }),
