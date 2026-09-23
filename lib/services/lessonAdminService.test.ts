@@ -186,3 +186,346 @@ describe('lessonAdminService.createLesson', () => {
     expect(db.prepare('SELECT 1 FROM sections WHERE title = ?').get('New Section')).toBeUndefined();
   });
 });
+
+describe('lessonAdminService.updateLesson', () => {
+  it('updates freely-editable fields without touching track/level', () => {
+    const db = createDbClient(':memory:');
+    seedMilestoneAndSection(db);
+    const service = createLessonAdminService(db);
+    const created = service.createLesson({
+      slug: 'modal-verbs',
+      track: 'generic',
+      sourceLevel: 'A1',
+      skill: 'grammar',
+      title: 'Modal Verbs',
+      explanation: null,
+      examples: null,
+      exercises: [],
+      prerequisiteIds: [],
+      placement: { sectionId: 's1' },
+    });
+
+    const updated = service.updateLesson(created.id, {
+      track: 'generic',
+      sourceLevel: 'A1',
+      skill: 'grammar',
+      title: 'Modal Verbs (Updated)',
+      explanation: 'Now with an explanation',
+      examples: ['Ich kann.'],
+      exercises: [],
+      prerequisiteIds: [],
+      placement: { sectionId: 's1' },
+    });
+
+    expect(updated.title).toBe('Modal Verbs (Updated)');
+    expect(updated.explanation).toBe('Now with an explanation');
+  });
+
+  it('throws when updating a lesson that does not exist', () => {
+    const db = createDbClient(':memory:');
+    seedMilestoneAndSection(db);
+    const service = createLessonAdminService(db);
+    expect(() =>
+      service.updateLesson('a1-nope', {
+        track: 'generic',
+        sourceLevel: 'A1',
+        skill: 'grammar',
+        title: 'X',
+        explanation: null,
+        examples: null,
+        exercises: [],
+        prerequisiteIds: [],
+        placement: { sectionId: 's1' },
+      })
+    ).toThrow();
+  });
+
+  it('rejects a track change while the lesson has a prerequisite edge as dependent', () => {
+    const db = createDbClient(':memory:');
+    seedMilestoneAndSection(db);
+    const service = createLessonAdminService(db);
+    db.prepare(
+      `INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('a1-basics', 'generic', 'A1', 'grammar', 'Basics')`
+    ).run();
+    const created = service.createLesson({
+      slug: 'modal-verbs',
+      track: 'generic',
+      sourceLevel: 'A1',
+      skill: 'grammar',
+      title: 'Modal Verbs',
+      explanation: null,
+      examples: null,
+      exercises: [],
+      prerequisiteIds: ['a1-basics'],
+      placement: { sectionId: 's1' },
+    });
+
+    expect(() =>
+      service.updateLesson(created.id, {
+        track: 'telc',
+        sourceLevel: 'A1',
+        skill: 'grammar',
+        title: created.title,
+        explanation: null,
+        examples: null,
+        exercises: [],
+        prerequisiteIds: ['a1-basics'],
+        placement: { sectionId: 's1' },
+      })
+    ).toThrow();
+  });
+
+  it('rejects a level change while another lesson depends on it', () => {
+    const db = createDbClient(':memory:');
+    seedMilestoneAndSection(db);
+    const service = createLessonAdminService(db);
+    const created = service.createLesson({
+      slug: 'basics',
+      track: 'generic',
+      sourceLevel: 'A1',
+      skill: 'grammar',
+      title: 'Basics',
+      explanation: null,
+      examples: null,
+      exercises: [],
+      prerequisiteIds: [],
+      placement: { sectionId: 's1' },
+    });
+    db.prepare(
+      `INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('a1-advanced', 'generic', 'A1', 'grammar', 'Advanced')`
+    ).run();
+    db.prepare('INSERT INTO lesson_prerequisites (lesson_id, prerequisite_lesson_id) VALUES (?, ?)').run(
+      'a1-advanced',
+      created.id
+    );
+
+    expect(() =>
+      service.updateLesson(created.id, {
+        track: 'generic',
+        sourceLevel: 'A2',
+        skill: 'grammar',
+        title: created.title,
+        explanation: null,
+        examples: null,
+        exercises: [],
+        prerequisiteIds: [],
+        placement: { sectionId: 's1' },
+      })
+    ).toThrow();
+  });
+
+  it('rejects a track change while the lesson has a concept link', () => {
+    const db = createDbClient(':memory:');
+    seedMilestoneAndSection(db);
+    const service = createLessonAdminService(db);
+    const created = service.createLesson({
+      slug: 'modal-verbs',
+      track: 'generic',
+      sourceLevel: 'A1',
+      skill: 'grammar',
+      title: 'Modal Verbs',
+      explanation: null,
+      examples: null,
+      exercises: [],
+      prerequisiteIds: [],
+      placement: { sectionId: 's1' },
+    });
+    db.prepare(
+      `INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('a1-modal-verbs-telc', 'telc', 'A1', 'grammar', 'x')`
+    ).run();
+    db.prepare('INSERT INTO lesson_concept_links (lesson_a_id, lesson_b_id) VALUES (?, ?)').run(
+      ...[created.id, 'a1-modal-verbs-telc'].sort()
+    );
+
+    expect(() =>
+      service.updateLesson(created.id, {
+        track: 'goethe',
+        sourceLevel: 'A1',
+        skill: 'grammar',
+        title: created.title,
+        explanation: null,
+        examples: null,
+        exercises: [],
+        prerequisiteIds: [],
+        placement: { sectionId: 's1' },
+      })
+    ).toThrow();
+  });
+
+  it('allows a track change with no blocking edges, placing it into the new track+level structure', () => {
+    const db = createDbClient(':memory:');
+    seedMilestoneAndSection(db);
+    db.exec(`
+      INSERT INTO milestones (id, track, level, title, order_index) VALUES ('m2', 'telc', 'A1', 'M2', 0);
+      INSERT INTO sections (id, milestone_id, title, order_index) VALUES ('s2', 'm2', 'S2', 0);
+    `);
+    const service = createLessonAdminService(db);
+    const created = service.createLesson({
+      slug: 'modal-verbs',
+      track: 'generic',
+      sourceLevel: 'A1',
+      skill: 'grammar',
+      title: 'Modal Verbs',
+      explanation: null,
+      examples: null,
+      exercises: [],
+      prerequisiteIds: [],
+      placement: { sectionId: 's1' },
+    });
+
+    const updated = service.updateLesson(created.id, {
+      track: 'telc',
+      sourceLevel: 'A1',
+      skill: 'grammar',
+      title: created.title,
+      explanation: null,
+      examples: null,
+      exercises: [],
+      prerequisiteIds: [],
+      placement: { sectionId: 's2' },
+    });
+
+    expect(updated.track).toBe('telc');
+    const placement = db.prepare('SELECT section_id FROM lesson_placements WHERE lesson_id = ?').get(created.id) as {
+      section_id: string;
+    };
+    expect(placement.section_id).toBe('s2');
+  });
+
+  it('reconciles prerequisites — adds newly-selected ones and removes deselected ones', () => {
+    const db = createDbClient(':memory:');
+    seedMilestoneAndSection(db);
+    const service = createLessonAdminService(db);
+    db.prepare(
+      `INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('a1-basics', 'generic', 'A1', 'grammar', 'Basics')`
+    ).run();
+    db.prepare(
+      `INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('a1-extra', 'generic', 'A1', 'grammar', 'Extra')`
+    ).run();
+    const created = service.createLesson({
+      slug: 'modal-verbs',
+      track: 'generic',
+      sourceLevel: 'A1',
+      skill: 'grammar',
+      title: 'Modal Verbs',
+      explanation: null,
+      examples: null,
+      exercises: [],
+      prerequisiteIds: ['a1-basics'],
+      placement: { sectionId: 's1' },
+    });
+
+    service.updateLesson(created.id, {
+      track: 'generic',
+      sourceLevel: 'A1',
+      skill: 'grammar',
+      title: created.title,
+      explanation: null,
+      examples: null,
+      exercises: [],
+      prerequisiteIds: ['a1-extra'],
+      placement: { sectionId: 's1' },
+    });
+
+    const rows = db.prepare('SELECT prerequisite_lesson_id FROM lesson_prerequisites WHERE lesson_id = ?').all(
+      created.id
+    ) as { prerequisite_lesson_id: string }[];
+    expect(rows).toEqual([{ prerequisite_lesson_id: 'a1-extra' }]);
+  });
+
+  it('rejects a new prerequisite that would create a cycle', () => {
+    const db = createDbClient(':memory:');
+    seedMilestoneAndSection(db);
+    const service = createLessonAdminService(db);
+    const a = service.createLesson({
+      slug: 'a',
+      track: 'generic',
+      sourceLevel: 'A1',
+      skill: 'grammar',
+      title: 'A',
+      explanation: null,
+      examples: null,
+      exercises: [],
+      prerequisiteIds: [],
+      placement: { sectionId: 's1' },
+    });
+    const b = service.createLesson({
+      slug: 'b',
+      track: 'generic',
+      sourceLevel: 'A1',
+      skill: 'grammar',
+      title: 'B',
+      explanation: null,
+      examples: null,
+      exercises: [],
+      prerequisiteIds: [a.id],
+      placement: { sectionId: 's1' },
+    });
+
+    expect(() =>
+      service.updateLesson(a.id, {
+        track: 'generic',
+        sourceLevel: 'A1',
+        skill: 'grammar',
+        title: a.title,
+        explanation: null,
+        examples: null,
+        exercises: [],
+        prerequisiteIds: [b.id],
+        placement: { sectionId: 's1' },
+      })
+    ).toThrow();
+  });
+
+  it('rolls back an inline-created milestone and section too, on a cycle failure later in the same update', () => {
+    const db = createDbClient(':memory:');
+    seedMilestoneAndSection(db);
+    const service = createLessonAdminService(db);
+    const a = service.createLesson({
+      slug: 'a',
+      track: 'generic',
+      sourceLevel: 'A1',
+      skill: 'grammar',
+      title: 'A',
+      explanation: null,
+      examples: null,
+      exercises: [],
+      prerequisiteIds: [],
+      placement: { sectionId: 's1' },
+    });
+    const b = service.createLesson({
+      slug: 'b',
+      track: 'generic',
+      sourceLevel: 'A1',
+      skill: 'grammar',
+      title: 'B',
+      explanation: null,
+      examples: null,
+      exercises: [],
+      prerequisiteIds: [a.id],
+      placement: { sectionId: 's1' },
+    });
+
+    expect(() =>
+      service.updateLesson(a.id, {
+        track: 'generic',
+        sourceLevel: 'A1',
+        skill: 'grammar',
+        title: a.title,
+        explanation: null,
+        examples: null,
+        exercises: [],
+        prerequisiteIds: [b.id],
+        placement: { newMilestoneTitle: 'New Milestone', newSectionTitle: 'New Section' },
+      })
+    ).toThrow();
+
+    expect(db.prepare('SELECT 1 FROM milestones WHERE title = ?').get('New Milestone')).toBeUndefined();
+    expect(db.prepare('SELECT 1 FROM sections WHERE title = ?').get('New Section')).toBeUndefined();
+    // a's placement is unchanged — still in the original section, not the (rolled-back) new one
+    const placement = db.prepare('SELECT section_id FROM lesson_placements WHERE lesson_id = ?').get(a.id) as {
+      section_id: string;
+    };
+    expect(placement.section_id).toBe('s1');
+  });
+});
