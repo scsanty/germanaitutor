@@ -46,6 +46,42 @@ describe('ExerciseEditor', () => {
     ]);
   });
 
+  it('removing an option before the correct one shifts correctIndex down by one', () => {
+    const onChange = vi.fn();
+    const exercises: ExerciseFormEntry[] = [
+      { id: 'ex1', type: 'multiple_choice', content: { question: 'Q', options: ['a', 'b', 'c'], correctIndex: 2 } },
+    ];
+    render(<ExerciseEditor exercises={exercises} onChange={onChange} />);
+    fireEvent.click(screen.getAllByText('Remove option')[0]);
+    expect(onChange).toHaveBeenCalledWith([
+      { id: 'ex1', type: 'multiple_choice', content: { question: 'Q', options: ['b', 'c'], correctIndex: 1 } },
+    ]);
+  });
+
+  it('removing the correct option itself resets correctIndex to 0', () => {
+    const onChange = vi.fn();
+    const exercises: ExerciseFormEntry[] = [
+      { id: 'ex1', type: 'multiple_choice', content: { question: 'Q', options: ['a', 'b', 'c'], correctIndex: 1 } },
+    ];
+    render(<ExerciseEditor exercises={exercises} onChange={onChange} />);
+    fireEvent.click(screen.getAllByText('Remove option')[1]);
+    expect(onChange).toHaveBeenCalledWith([
+      { id: 'ex1', type: 'multiple_choice', content: { question: 'Q', options: ['a', 'c'], correctIndex: 0 } },
+    ]);
+  });
+
+  it('removing an option after the correct one leaves correctIndex unchanged', () => {
+    const onChange = vi.fn();
+    const exercises: ExerciseFormEntry[] = [
+      { id: 'ex1', type: 'multiple_choice', content: { question: 'Q', options: ['a', 'b', 'c'], correctIndex: 0 } },
+    ];
+    render(<ExerciseEditor exercises={exercises} onChange={onChange} />);
+    fireEvent.click(screen.getAllByText('Remove option')[2]);
+    expect(onChange).toHaveBeenCalledWith([
+      { id: 'ex1', type: 'multiple_choice', content: { question: 'Q', options: ['a', 'b'], correctIndex: 0 } },
+    ]);
+  });
+
   it('removes an exercise entirely', () => {
     const onChange = vi.fn();
     const exercises: ExerciseFormEntry[] = [
