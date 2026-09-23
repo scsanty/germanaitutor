@@ -27,12 +27,22 @@ export function TrackLevelStructure({ track, level }: { track: Track; level: Cef
 
   function load() {
     fetch(`/api/curriculum/tracks/${track}/${level}`)
-      .then((r) => r.json())
-      .then(setStructure);
+      .then((r) => {
+        if (!r.ok) {
+          setError('Failed to load structure');
+          return null;
+        }
+        return r.json();
+      })
+      .then((result) => {
+        if (result) setStructure(result);
+      })
+      .catch(() => setError('Failed to load structure'));
   }
 
   useEffect(load, [track, level]);
 
+  if (error && !structure) return <p role="alert">{error}</p>;
   if (!structure) return <p>Loading...</p>;
 
   const unsortedId = unsortedMilestoneId(track, level);

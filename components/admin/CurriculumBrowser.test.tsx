@@ -9,6 +9,7 @@ describe('LessonDetail', () => {
 
   it('renders Edit and Clone links pointing at the right destinations', async () => {
     (fetch as any).mockResolvedValue({
+      ok: true,
       json: async () => ({
         lesson: { id: 'a1-l1', track: 'generic', sourceLevel: 'A1', title: 'L1', explanation: null, examples: null },
         exercises: [],
@@ -39,5 +40,18 @@ describe('LessonDetail', () => {
     await waitFor(() => expect(screen.getByText('Delete')).toBeInTheDocument());
     fireEvent.click(screen.getByText('Delete'));
     await waitFor(() => expect(screen.getByText('Deleting a1-l1')).toBeInTheDocument());
+  });
+
+  it('surfaces an error instead of hanging on Loading when the lesson fetch fails', async () => {
+    (fetch as any).mockResolvedValue({ ok: false, json: async () => ({ error: 'Lesson not found' }) });
+    render(<LessonDetail lessonId="a1-l1" track="generic" />);
+    await waitFor(() => expect(screen.getByRole('alert')).toHaveTextContent('Failed to load lesson'));
+    expect(screen.queryByText('Loading...')).not.toBeInTheDocument();
+  });
+
+  it('surfaces an error instead of hanging on Loading on a network failure', async () => {
+    (fetch as any).mockRejectedValue(new Error('network down'));
+    render(<LessonDetail lessonId="a1-l1" track="generic" />);
+    await waitFor(() => expect(screen.getByRole('alert')).toHaveTextContent('Failed to load lesson'));
   });
 });
