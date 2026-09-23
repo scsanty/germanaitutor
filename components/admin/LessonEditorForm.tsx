@@ -29,25 +29,38 @@ type TrackStructureResponse = {
   sections: { section: { id: string; title: string }; lessons: { id: string; title: string }[] }[];
 }[];
 
+export type LessonCloneContent = Pick<
+  LessonEditorInitialValues,
+  'slug' | 'skill' | 'title' | 'explanation' | 'examples' | 'exercises'
+>;
+
 export function LessonEditorForm(
   props:
-    | { mode: 'create'; initialTrack: Track; initialSourceLevel: CefrLevel; onSaved: (lesson: { id: string }) => void }
+    | {
+        mode: 'create';
+        initialTrack: Track;
+        initialSourceLevel: CefrLevel;
+        initialContent?: LessonCloneContent;
+        onSaved: (lesson: { id: string }) => void;
+      }
     | { mode: 'edit'; lessonId: string; initial: LessonEditorInitialValues; onSaved: (lesson: { id: string }) => void }
 ) {
-  const initial = props.mode === 'edit' ? props.initial : undefined;
+  const initial = props.mode === 'edit' ? props.initial : props.initialContent;
   const lessonId = props.mode === 'edit' ? props.lessonId : undefined;
 
   const [slug, setSlug] = useState(initial?.slug ?? '');
-  const [track, setTrack] = useState<Track>(props.mode === 'create' ? props.initialTrack : initial!.track);
+  const [track, setTrack] = useState<Track>(props.mode === 'create' ? props.initialTrack : props.initial.track);
   const [sourceLevel, setSourceLevel] = useState<CefrLevel>(
-    props.mode === 'create' ? props.initialSourceLevel : initial!.sourceLevel
+    props.mode === 'create' ? props.initialSourceLevel : props.initial.sourceLevel
   );
   const [skill, setSkill] = useState<Skill>(initial?.skill ?? 'grammar');
   const [title, setTitle] = useState(initial?.title ?? '');
   const [explanation, setExplanation] = useState(initial?.explanation ?? '');
   const [examples, setExamples] = useState<string[]>(initial?.examples ?? []);
   const [exercises, setExercises] = useState<ExerciseFormEntry[]>(initial?.exercises ?? []);
-  const [prerequisiteIds, setPrerequisiteIds] = useState<string[]>(initial?.prerequisiteIds ?? []);
+  const [prerequisiteIds, setPrerequisiteIds] = useState<string[]>(
+    props.mode === 'edit' ? props.initial.prerequisiteIds : []
+  );
   const [placement, setPlacement] = useState<PlacementValue | null>(null);
   const [candidates, setCandidates] = useState<PickableLesson[]>([]);
   const [milestones, setMilestones] = useState<PlacementMilestoneOption[]>([]);
