@@ -77,6 +77,22 @@ describe('TrackLevelStructure', () => {
     });
   });
 
+  it('surfaces an error when renaming a milestone fails', async () => {
+    vi.spyOn(window, 'prompt').mockReturnValue('New Title');
+    (fetch as any).mockImplementation((url: string) => {
+      if (url === '/api/admin/curriculum/milestones/m1') {
+        return Promise.resolve({ ok: false, json: async () => ({ error: 'Title already in use' }) });
+      }
+      return Promise.resolve({ ok: true, json: async () => structure });
+    });
+    render(<TrackLevelStructure track="generic" level="A1" />);
+    await waitFor(() => expect(screen.getByText('Milestone 1')).toBeInTheDocument());
+    fireEvent.click(screen.getByText('Rename milestone'));
+    await waitFor(() => {
+      expect(screen.getByRole('alert')).toHaveTextContent('Title already in use');
+    });
+  });
+
   it('creates a section under a milestone', async () => {
     render(<TrackLevelStructure track="generic" level="A1" />);
     await waitFor(() => expect(screen.getByText('Milestone 1')).toBeInTheDocument());
