@@ -90,7 +90,13 @@ describe('DeleteLessonWizard', () => {
     expect(previewCalls).toHaveLength(3); // b, d, f — each fetched exactly once, never re-offered
   });
 
-  it('surfaces an error instead of silently showing empty effects when the preview fetch fails', async () => {
+  it('surfaces an error instead of silently showing empty effects when the preview fetch fails, blocking with Cancel-only (no Delete All) even for the single/last item in the queue', async () => {
+    // Root lesson is the only item in the queue (queue starts and ends as ['b']) — the most
+    // common failure shape, e.g. a root-lesson-not-found delete. `setQueue(rest)` pops the
+    // queue to [] synchronously before this rejection resolves, so `isDone`
+    // (currentPreview === null && queue.length === 0) is already true by the time the error
+    // is recorded. The fix must still render the blocking Cancel-only screen here rather than
+    // falling through to the "Ready to delete" screen with an enabled Delete All button.
     (fetch as any).mockResolvedValue({
       ok: false,
       json: async () => ({ error: 'Lesson not found' }),
@@ -98,6 +104,8 @@ describe('DeleteLessonWizard', () => {
     render(<DeleteLessonWizard rootLessonId="b" onCancel={vi.fn()} onDeleted={vi.fn()} />);
     await waitFor(() => expect(screen.getByRole('alert')).toHaveTextContent('Lesson not found'));
     expect(screen.queryByText('Repair effects')).not.toBeInTheDocument();
+    expect(screen.queryByText('Delete All')).not.toBeInTheDocument();
+    expect(screen.queryByText(/Ready to delete/)).not.toBeInTheDocument();
   });
 
   it('Delete All sends the accumulated set and calls onDeleted', async () => {
