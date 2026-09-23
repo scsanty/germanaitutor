@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "vitest run",
-    "build-curriculum-seed": "tsx scripts/build-curriculum-seed.ts"
+    "test": "vitest run"
   },
   "dependencies": {
     "better-sqlite3": "^13.0.0",
