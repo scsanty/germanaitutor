@@ -11,12 +11,21 @@ export default function NewLessonPage({ params }: { params: { track: string; lev
   const cloneFrom = searchParams.get('cloneFrom');
   const [initialContent, setInitialContent] = useState<LessonCloneContent | null>(null);
   const [loading, setLoading] = useState(!!cloneFrom);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     if (!cloneFrom) return;
     fetch(`/api/curriculum/lessons/${cloneFrom}?track=${params.track}`)
-      .then((r) => r.json())
+      .then((r) => {
+        if (!r.ok) {
+          setError('Could not load the lesson to clone');
+          setLoading(false);
+          return null;
+        }
+        return r.json();
+      })
       .then((data) => {
+        if (!data) return;
         const sourceSlug = data.lesson.id.slice(data.lesson.sourceLevel.toLowerCase().length + 1);
         setInitialContent({
           slug: `${sourceSlug}-copy`,
@@ -30,9 +39,14 @@ export default function NewLessonPage({ params }: { params: { track: string; lev
           })),
         });
         setLoading(false);
+      })
+      .catch(() => {
+        setError('Could not load the lesson to clone');
+        setLoading(false);
       });
   }, [cloneFrom, params.track]);
 
+  if (error) return <p role="alert">{error}</p>;
   if (loading) return <p>Loading...</p>;
 
   return (

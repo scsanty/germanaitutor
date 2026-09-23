@@ -14,11 +14,19 @@ export default function EditLessonPage({
   const router = useRouter();
   const track = searchParams.track ?? 'generic';
   const [initial, setInitial] = useState<LessonEditorInitialValues | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     fetch(`/api/curriculum/lessons/${params.id}?track=${track}`)
-      .then((r) => r.json())
+      .then((r) => {
+        if (!r.ok) {
+          setError('Lesson not found');
+          return null;
+        }
+        return r.json();
+      })
       .then((data) => {
+        if (!data) return;
         const slug = data.lesson.id.slice(data.lesson.sourceLevel.toLowerCase().length + 1);
         setInitial({
           slug,
@@ -35,9 +43,11 @@ export default function EditLessonPage({
           })),
           prerequisiteIds: data.prerequisites.map((p: { prerequisiteLessonId: string }) => p.prerequisiteLessonId),
         });
-      });
+      })
+      .catch(() => setError('Lesson not found'));
   }, [params.id, track]);
 
+  if (error) return <p role="alert">{error}</p>;
   if (!initial) return <p>Loading...</p>;
 
   return (
