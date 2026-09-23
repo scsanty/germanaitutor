@@ -126,7 +126,12 @@ function MultipleChoiceFields({
 
   function removeOption(optionIndex: number) {
     const options = content.options.filter((_, i) => i !== optionIndex);
-    const correctIndex = content.correctIndex >= options.length ? 0 : content.correctIndex;
+    let correctIndex = content.correctIndex;
+    if (optionIndex === content.correctIndex) {
+      correctIndex = 0;
+    } else if (optionIndex < content.correctIndex) {
+      correctIndex = content.correctIndex - 1;
+    }
     onChange({ ...content, options, correctIndex });
   }
 
