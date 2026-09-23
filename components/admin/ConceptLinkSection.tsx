@@ -65,8 +65,14 @@ export function ConceptLinkSection({
   }
 
   async function removeLink(otherId: string) {
-    await fetch(`/api/admin/curriculum/lessons/${lessonId}/links/${otherId}`, { method: 'DELETE' });
-    onLinksChange(links.filter((l) => l.id !== otherId));
+    setError(null);
+    const res = await fetch(`/api/admin/curriculum/lessons/${lessonId}/links/${otherId}`, { method: 'DELETE' });
+    if (res.ok) {
+      onLinksChange(links.filter((l) => l.id !== otherId));
+    } else {
+      const data = await res.json();
+      setError(data.error ?? 'Failed to remove link');
+    }
   }
 
   return (

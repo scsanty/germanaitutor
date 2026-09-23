@@ -71,4 +71,28 @@ describe('ConceptLinkSection', () => {
     );
     expect(deleteCall[1].method).toBe('DELETE');
   });
+
+  it('surfaces an error instead of optimistically removing the link when the DELETE fails', async () => {
+    const onLinksChange = vi.fn();
+    (fetch as any).mockImplementation((url: string) => {
+      if (url.includes('/tracks/telc/')) return Promise.resolve({ json: async () => telcStructure });
+      if (url.includes('/tracks/goethe/')) return Promise.resolve({ json: async () => goetheStructure });
+      if (url === '/api/admin/curriculum/lessons/g1/links/t1') {
+        return Promise.resolve({ ok: false, json: async () => ({ error: 'Link not found' }) });
+      }
+      return Promise.resolve({ ok: true, json: async () => ({ ok: true }) });
+    });
+    render(
+      <ConceptLinkSection
+        lessonId="g1"
+        track="generic"
+        sourceLevel="A1"
+        links={[{ id: 't1', title: 'T1', track: 'telc' }]}
+        onLinksChange={onLinksChange}
+      />
+    );
+    fireEvent.click(screen.getByText('Unlink'));
+    await waitFor(() => expect(screen.getByRole('alert')).toHaveTextContent('Link not found'));
+    expect(onLinksChange).not.toHaveBeenCalled();
+  });
 });

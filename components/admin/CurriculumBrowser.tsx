@@ -13,13 +13,24 @@ export function LessonDetail({ lessonId, track }: { lessonId: string; track: str
     prerequisites: LessonPrerequisite[];
     conceptLinks: ConceptLinkEntry[];
   } | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     fetch(`/api/curriculum/lessons/${lessonId}?track=${track}`)
-      .then((r) => r.json())
-      .then(setData);
+      .then((r) => {
+        if (!r.ok) {
+          setError('Failed to load lesson');
+          return null;
+        }
+        return r.json();
+      })
+      .then((result) => {
+        if (result) setData(result);
+      })
+      .catch(() => setError('Failed to load lesson'));
   }, [lessonId, track]);
 
+  if (error) return <p role="alert">{error}</p>;
   if (!data) return <p>Loading...</p>;
 
   return (

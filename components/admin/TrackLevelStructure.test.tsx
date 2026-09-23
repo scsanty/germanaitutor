@@ -104,6 +104,13 @@ describe('TrackLevelStructure', () => {
     });
   });
 
+  it('surfaces an error instead of hanging on Loading when the structure fetch fails', async () => {
+    (fetch as any).mockResolvedValue({ ok: false, json: async () => ({ error: 'Track not found' }) });
+    render(<TrackLevelStructure track="generic" level="A1" />);
+    await waitFor(() => expect(screen.getByRole('alert')).toHaveTextContent('Failed to load structure'));
+    expect(screen.queryByText('Loading...')).not.toBeInTheDocument();
+  });
+
   it('switches to the Diagram tab', async () => {
     render(<TrackLevelStructure track="generic" level="A1" />);
     await waitFor(() => expect(screen.getByText('Milestone 1')).toBeInTheDocument());

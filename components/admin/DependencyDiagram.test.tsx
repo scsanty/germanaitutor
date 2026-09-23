@@ -21,12 +21,13 @@ describe('DependencyDiagram', () => {
   beforeEach(() => {
     vi.stubGlobal('fetch', vi.fn());
     (fetch as any).mockImplementation((url: string) => {
-      if (url.includes('/tracks/')) return Promise.resolve({ json: async () => structure });
+      if (url.includes('/tracks/')) return Promise.resolve({ ok: true, json: async () => structure });
       if (url.includes('/lessons/a1-advanced'))
         return Promise.resolve({
+          ok: true,
           json: async () => ({ prerequisites: [{ lessonId: 'a1-advanced', prerequisiteLessonId: 'a1-basics' }] }),
         });
-      return Promise.resolve({ json: async () => ({ prerequisites: [] }) });
+      return Promise.resolve({ ok: true, json: async () => ({ prerequisites: [] }) });
     });
   });
 
@@ -42,5 +43,15 @@ describe('DependencyDiagram', () => {
     const { container } = render(<DependencyDiagram track="generic" level="A1" />);
     await waitFor(() => expect(screen.getByText('Advanced')).toBeInTheDocument());
     expect(container.querySelectorAll('line')).toHaveLength(1);
+  });
+
+  it('surfaces an error instead of hanging on Loading when the structure fetch fails', async () => {
+    (fetch as any).mockImplementation((url: string) => {
+      if (url.includes('/tracks/')) return Promise.resolve({ ok: false, json: async () => ({ error: 'Not found' }) });
+      return Promise.resolve({ ok: true, json: async () => ({ prerequisites: [] }) });
+    });
+    render(<DependencyDiagram track="generic" level="A1" />);
+    await waitFor(() => expect(screen.getByRole('alert')).toHaveTextContent('Failed to load dependency diagram'));
+    expect(screen.queryByText('Loading...')).not.toBeInTheDocument();
   });
 });

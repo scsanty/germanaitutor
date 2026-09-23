@@ -23,24 +23,33 @@ const CARD_HEIGHT = 40;
 export function DependencyDiagram({ track, level }: { track: Track; level: CefrLevel }) {
   const [lessons, setLessons] = useState<DiagramLesson[] | null>(null);
   const [edges, setEdges] = useState<DiagramEdge[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     fetch(`/api/curriculum/tracks/${track}/${level}`)
-      .then((r) => r.json())
+      .then((r) => {
+        if (!r.ok) throw new Error('Failed to load dependency diagram');
+        return r.json();
+      })
       .then((structure: { sections: { lessons: DiagramLesson[] }[] }[]) => {
         const allLessons = structure.flatMap((entry) => entry.sections.flatMap((s) => s.lessons));
         setLessons(allLessons);
         return Promise.all(
           allLessons.map((lesson) =>
             fetch(`/api/curriculum/lessons/${lesson.id}?track=${track}`)
-              .then((r) => r.json())
+              .then((r) => {
+                if (!r.ok) throw new Error('Failed to load dependency diagram');
+                return r.json();
+              })
               .then((data) => (Array.isArray(data?.prerequisites) ? data.prerequisites : []) as DiagramEdge[])
           )
         );
       })
-      .then((prereqLists) => setEdges(prereqLists.flat()));
+      .then((prereqLists) => setEdges(prereqLists.flat()))
+      .catch(() => setError('Failed to load dependency diagram'));
   }, [track, level]);
 
+  if (error) return <p role="alert">{error}</p>;
   if (!lessons) return <p>Loading...</p>;
 
   const layout = computeDiagramLayout(
