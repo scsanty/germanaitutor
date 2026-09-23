@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { createDbClient } from './client';
+import { runMigrations } from './schema';
 
 describe('curriculum schema', () => {
   it('creates all nine new tables', () => {
@@ -43,41 +44,126 @@ describe('curriculum schema', () => {
     ).toThrow();
     db.close();
   });
+});
 
-  it('allows lessons in different tracks to share a concept_id', () => {
+describe('lesson_concept_links', () => {
+  it('creates the table with the expected columns', () => {
     const db = createDbClient(':memory:');
-    const insert = db.prepare(
-      `INSERT INTO lessons (id, track, concept_id, source_level, skill, title) VALUES (?, ?, ?, ?, ?, ?)`
-    );
-    insert.run('a1-personal-pronouns', 'generic', 'a1-pronouns-present-tense', 'A1', 'grammar', 'Personal pronouns');
-    insert.run(
-      'a1-goethe-personal-pronouns-verbs',
-      'goethe',
-      'a1-pronouns-present-tense',
-      'A1',
-      'grammar',
-      'Personal pronouns and present tense'
-    );
-    const rows = db
-      .prepare('SELECT id FROM lessons WHERE concept_id = ? ORDER BY id')
-      .all('a1-pronouns-present-tense') as { id: string }[];
-    expect(rows).toHaveLength(2);
+    const columns = db.prepare('PRAGMA table_info(lesson_concept_links)').all() as { name: string }[];
+    const names = columns.map((c) => c.name);
+    expect(names).toEqual(expect.arrayContaining(['id', 'lesson_a_id', 'lesson_b_id', 'created_at']));
     db.close();
   });
 
-  it('defaults concept_id to null for a lesson with no cross-track equivalent', () => {
+  it('drops lessons.concept_id entirely', () => {
     const db = createDbClient(':memory:');
-    db.prepare(`INSERT INTO lessons (id, track, source_level, skill, title) VALUES (?, ?, ?, ?, ?)`).run(
-      'a1-negation-nicht-kein',
-      'generic',
-      'A1',
-      'grammar',
-      'Negation with nicht and kein'
+    const columns = db.prepare('PRAGMA table_info(lessons)').all() as { name: string }[];
+    expect(columns.some((c) => c.name === 'concept_id')).toBe(false);
+    db.close();
+  });
+
+  it('rejects a link where lesson_a_id is not less than lesson_b_id', () => {
+    const db = createDbClient(':memory:');
+    db.prepare(`INSERT INTO lessons (id, track, source_level, skill, title) VALUES (?, 'generic', 'A1', 'grammar', 'L')`).run(
+      'a1-b'
     );
-    const row = db.prepare('SELECT concept_id FROM lessons WHERE id = ?').get('a1-negation-nicht-kein') as {
-      concept_id: string | null;
+    db.prepare(`INSERT INTO lessons (id, track, source_level, skill, title) VALUES (?, 'telc', 'A1', 'grammar', 'L')`).run(
+      'a1-a'
+    );
+    expect(() =>
+      db.prepare('INSERT INTO lesson_concept_links (lesson_a_id, lesson_b_id) VALUES (?, ?)').run('a1-b', 'a1-a')
+    ).toThrow();
+    db.close();
+  });
+
+  it('rejects a duplicate pair', () => {
+    const db = createDbClient(':memory:');
+    db.prepare(`INSERT INTO lessons (id, track, source_level, skill, title) VALUES (?, 'generic', 'A1', 'grammar', 'L')`).run(
+      'a1-a'
+    );
+    db.prepare(`INSERT INTO lessons (id, track, source_level, skill, title) VALUES (?, 'telc', 'A1', 'grammar', 'L')`).run(
+      'a1-b'
+    );
+    db.prepare('INSERT INTO lesson_concept_links (lesson_a_id, lesson_b_id) VALUES (?, ?)').run('a1-a', 'a1-b');
+    expect(() =>
+      db.prepare('INSERT INTO lesson_concept_links (lesson_a_id, lesson_b_id) VALUES (?, ?)').run('a1-a', 'a1-b')
+    ).toThrow();
+    db.close();
+  });
+
+  it('cascade-deletes a link row when either linked lesson is deleted', () => {
+    const db = createDbClient(':memory:');
+    db.prepare(`INSERT INTO lessons (id, track, source_level, skill, title) VALUES (?, 'generic', 'A1', 'grammar', 'L')`).run(
+      'a1-a'
+    );
+    db.prepare(`INSERT INTO lessons (id, track, source_level, skill, title) VALUES (?, 'telc', 'A1', 'grammar', 'L')`).run(
+      'a1-b'
+    );
+    db.prepare('INSERT INTO lesson_concept_links (lesson_a_id, lesson_b_id) VALUES (?, ?)').run('a1-a', 'a1-b');
+    db.prepare('DELETE FROM lessons WHERE id = ?').run('a1-a');
+    const remaining = db.prepare('SELECT count(*) as c FROM lesson_concept_links').get() as { c: number };
+    expect(remaining.c).toBe(0);
+    db.close();
+  });
+});
+
+describe('lesson_placements uniqueness', () => {
+  it('rejects a second placement for the same lesson', () => {
+    const db = createDbClient(':memory:');
+    db.exec(`
+      INSERT INTO milestones (id, track, level, title, order_index) VALUES ('m1', 'generic', 'A1', 'M1', 0);
+      INSERT INTO sections (id, milestone_id, title, order_index) VALUES ('s1', 'm1', 'S1', 0);
+      INSERT INTO sections (id, milestone_id, title, order_index) VALUES ('s2', 'm1', 'S2', 1);
+      INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('l1', 'generic', 'A1', 'grammar', 'L1');
+      INSERT INTO lesson_placements (lesson_id, section_id, order_index) VALUES ('l1', 's1', 0);
+    `);
+    expect(() =>
+      db.prepare('INSERT INTO lesson_placements (lesson_id, section_id, order_index) VALUES (?, ?, ?)').run('l1', 's2', 0)
+    ).toThrow();
+    db.close();
+  });
+});
+
+describe('legacy schema migration to this plan\'s shape', () => {
+  it('drops concept_id and adds the placements uniqueness constraint without losing existing rows', () => {
+    const db = createDbClient(':memory:');
+    // Simulate a DB frozen at the pre-this-plan shape (concept_id column present,
+    // lesson_placements uniqueness only on the (lesson_id, section_id) pair), then
+    // re-run migrations and confirm both the shape and the data come out right.
+    db.exec(`
+      ALTER TABLE lessons ADD COLUMN concept_id TEXT;
+      DROP TABLE lesson_placements;
+      CREATE TABLE lesson_placements (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        lesson_id TEXT NOT NULL REFERENCES lessons(id) ON DELETE CASCADE,
+        section_id TEXT NOT NULL REFERENCES sections(id) ON DELETE CASCADE,
+        order_index INTEGER NOT NULL,
+        created_at TEXT NOT NULL DEFAULT (datetime('now')),
+        UNIQUE(lesson_id, section_id)
+      );
+    `);
+    db.exec(`
+      INSERT INTO milestones (id, track, level, title, order_index) VALUES ('m1', 'generic', 'A1', 'M1', 0);
+      INSERT INTO sections (id, milestone_id, title, order_index) VALUES ('s1', 'm1', 'S1', 0);
+      INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('l1', 'generic', 'A1', 'grammar', 'L1');
+      INSERT INTO lesson_placements (lesson_id, section_id, order_index) VALUES ('l1', 's1', 0);
+    `);
+
+    runMigrations(db);
+
+    const columns = db.prepare('PRAGMA table_info(lessons)').all() as { name: string }[];
+    expect(columns.some((c) => c.name === 'concept_id')).toBe(false);
+
+    const placement = db.prepare('SELECT lesson_id, section_id FROM lesson_placements WHERE lesson_id = ?').get('l1') as {
+      lesson_id: string;
+      section_id: string;
     };
-    expect(row.concept_id).toBeNull();
+    expect(placement.section_id).toBe('s1');
+
+    expect(() =>
+      db.prepare('INSERT INTO lesson_placements (lesson_id, section_id, order_index) VALUES (?, ?, ?)').run('l1', 's1', 1)
+    ).toThrow();
+
     db.close();
   });
 });

@@ -33,6 +33,39 @@ function migrateLegacyCurriculumSchema(db: Database.Database): void {
   `);
 }
 
+/**
+ * Removes the `lessons.concept_id` column (replaced by `lesson_concept_links` — see
+ * docs/superpowers/specs/2026-09-22-curriculum-admin-management-design.md) and adds a
+ * UNIQUE constraint on `lesson_placements.lesson_id` (a lesson now belongs to exactly one
+ * section). Both changes are data-preserving: the column drop is a plain in-place
+ * `ALTER TABLE`, and the placements table is rebuilt via the standard SQLite
+ * create-copy-drop-rename pattern rather than dropped and recreated empty — curriculum
+ * tables hold irreplaceable admin-authored content now, not YAML-re-importable content.
+ */
+function migrateConceptIdAndPlacementUniqueness(db: Database.Database): void {
+  const columns = db.prepare('PRAGMA table_info(lessons)').all() as { name: string }[];
+  const hasConceptIdColumn = columns.some((c) => c.name === 'concept_id');
+  if (!hasConceptIdColumn) return;
+
+  db.exec(`
+    DROP INDEX IF EXISTS idx_lessons_concept_id;
+    ALTER TABLE lessons DROP COLUMN concept_id;
+
+    CREATE TABLE lesson_placements_new (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      lesson_id TEXT NOT NULL REFERENCES lessons(id) ON DELETE CASCADE,
+      section_id TEXT NOT NULL REFERENCES sections(id) ON DELETE CASCADE,
+      order_index INTEGER NOT NULL,
+      created_at TEXT NOT NULL DEFAULT (datetime('now')),
+      UNIQUE(lesson_id)
+    );
+    INSERT INTO lesson_placements_new (id, lesson_id, section_id, order_index, created_at)
+      SELECT id, lesson_id, section_id, order_index, created_at FROM lesson_placements;
+    DROP TABLE lesson_placements;
+    ALTER TABLE lesson_placements_new RENAME TO lesson_placements;
+  `);
+}
+
 export function runMigrations(db: Database.Database): void {
   // Wrapped in one transaction so a concurrent connection (e.g. a parallel `next build`
   // static-page-data worker also calling getDb()) never observes the mid-migration state
@@ -40,6 +73,7 @@ export function runMigrations(db: Database.Database): void {
   const migrate = db.transaction(() => {
     migrateLegacyCurriculumSchema(db);
     createTablesIfMissing(db);
+    migrateConceptIdAndPlacementUniqueness(db);
   });
   migrate();
 }
@@ -116,7 +150,6 @@ function createTablesIfMissing(db: Database.Database): void {
     CREATE TABLE IF NOT EXISTS lessons (
       id TEXT PRIMARY KEY,
       track TEXT NOT NULL CHECK (track IN ('generic','telc','goethe')),
-      concept_id TEXT,
       source_level TEXT NOT NULL CHECK (source_level IN ('A1','A2','B1','B2','C1')),
       skill TEXT NOT NULL CHECK (skill IN ('grammar','vocabulary','reading','listening','writing','speaking')),
       title TEXT NOT NULL,
@@ -125,15 +158,13 @@ function createTablesIfMissing(db: Database.Database): void {
       created_at TEXT NOT NULL DEFAULT (datetime('now'))
     );
 
-    CREATE INDEX IF NOT EXISTS idx_lessons_concept_id ON lessons(concept_id);
-
     CREATE TABLE IF NOT EXISTS lesson_placements (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       lesson_id TEXT NOT NULL REFERENCES lessons(id) ON DELETE CASCADE,
       section_id TEXT NOT NULL REFERENCES sections(id) ON DELETE CASCADE,
       order_index INTEGER NOT NULL,
       created_at TEXT NOT NULL DEFAULT (datetime('now')),
-      UNIQUE(lesson_id, section_id)
+      UNIQUE(lesson_id)
     );
 
     CREATE TABLE IF NOT EXISTS lesson_track_overrides (
@@ -158,6 +189,17 @@ function createTablesIfMissing(db: Database.Database): void {
       prerequisite_lesson_id TEXT NOT NULL REFERENCES lessons(id) ON DELETE CASCADE,
       PRIMARY KEY (lesson_id, prerequisite_lesson_id)
     );
+
+    CREATE TABLE IF NOT EXISTS lesson_concept_links (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      lesson_a_id TEXT NOT NULL REFERENCES lessons(id) ON DELETE CASCADE,
+      lesson_b_id TEXT NOT NULL REFERENCES lessons(id) ON DELETE CASCADE,
+      created_at TEXT NOT NULL DEFAULT (datetime('now')),
+      UNIQUE(lesson_a_id, lesson_b_id),
+      CHECK (lesson_a_id < lesson_b_id)
+    );
+    CREATE INDEX IF NOT EXISTS idx_lesson_concept_links_a ON lesson_concept_links(lesson_a_id);
+    CREATE INDEX IF NOT EXISTS idx_lesson_concept_links_b ON lesson_concept_links(lesson_b_id);
 
     CREATE TABLE IF NOT EXISTS curriculum_meta (
       id INTEGER PRIMARY KEY CHECK (id = 1),
