@@ -27,6 +27,7 @@ describe('LessonDetail', () => {
 
   it('opens the delete wizard when Delete is clicked', async () => {
     (fetch as any).mockResolvedValue({
+      ok: true,
       json: async () => ({
         lesson: { id: 'a1-l1', track: 'generic', sourceLevel: 'A1', title: 'L1', explanation: null, examples: null },
         exercises: [],
