@@ -27,8 +27,20 @@ describe('curriculumService', () => {
     seedBasicTree(db);
     const service = createCurriculumService(db);
     const structure = service.getTrackStructure('generic', 'A1');
-    expect(structure).toHaveLength(1);
+    expect(structure).toHaveLength(2);
     expect(structure[0].sections[0].lessons[0].id).toBe('a1-present-tense-regular');
+  });
+
+  it('ensures Unsorted exists and always sorts it last, regardless of order_index', () => {
+    const db = createDbClient(':memory:');
+    db.exec(`
+      INSERT INTO milestones (id, track, level, title, order_index) VALUES ('generic-a1-late', 'generic', 'A1', 'Late', 99);
+      INSERT INTO milestones (id, track, level, title, order_index) VALUES ('generic-a1-early', 'generic', 'A1', 'Early', 0);
+    `);
+    const service = createCurriculumService(db);
+    const structure = service.getTrackStructure('generic', 'A1');
+    const titles = structure.map((s) => s.milestone.title);
+    expect(titles).toEqual(['Early', 'Late', 'Unsorted']);
   });
 
   it('returns a lesson with its own track', () => {

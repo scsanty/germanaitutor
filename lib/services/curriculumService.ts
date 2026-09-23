@@ -1,6 +1,7 @@
 import type Database from 'better-sqlite3';
 import type { Track, CefrLevel } from '../types';
 import type { Milestone, Section, Lesson, Exercise, ExerciseContent, LessonPrerequisite } from '../curriculum/types';
+import { ensureUnsortedExists, unsortedMilestoneId } from '../curriculum-admin/unsortedBucket';
 
 interface MilestoneRow {
   id: string;
@@ -100,9 +101,11 @@ export function createCurriculumService(db: Database.Database) {
     track: Track,
     level: CefrLevel
   ): { milestone: Milestone; sections: { section: Section; lessons: Lesson[] }[] }[] {
+    ensureUnsortedExists(db, track, level);
+    const unsortedId = unsortedMilestoneId(track, level);
     const milestoneRows = db
-      .prepare('SELECT * FROM milestones WHERE track = ? AND level = ? ORDER BY order_index')
-      .all(track, level) as MilestoneRow[];
+      .prepare('SELECT * FROM milestones WHERE track = ? AND level = ? ORDER BY (id = ?) ASC, order_index ASC')
+      .all(track, level, unsortedId) as MilestoneRow[];
 
     return milestoneRows.map((milestoneRow) => {
       const sectionRows = db
