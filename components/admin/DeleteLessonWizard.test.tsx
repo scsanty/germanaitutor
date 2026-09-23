@@ -13,6 +13,7 @@ describe('DeleteLessonWizard', () => {
 
   it('shows the root lesson repair preview and its directly-linked lessons as offers', async () => {
     (fetch as any).mockResolvedValue({
+      ok: true,
       json: async () => previewFor('b', [{ id: 'd', title: 'D', track: 'telc' }]),
     });
     render(<DeleteLessonWizard rootLessonId="b" onCancel={vi.fn()} onDeleted={vi.fn()} />);
@@ -22,9 +23,9 @@ describe('DeleteLessonWizard', () => {
   it('accepting an offer adds it to the set and fetches its own preview next', async () => {
     (fetch as any).mockImplementation((url: string) => {
       if (url.endsWith('/lessons/b/delete-preview'))
-        return Promise.resolve({ json: async () => previewFor('b', [{ id: 'd', title: 'D', track: 'telc' }]) });
+        return Promise.resolve({ ok: true, json: async () => previewFor('b', [{ id: 'd', title: 'D', track: 'telc' }]) });
       if (url.endsWith('/lessons/d/delete-preview'))
-        return Promise.resolve({ json: async () => previewFor('d', []) });
+        return Promise.resolve({ ok: true, json: async () => previewFor('d', []) });
       return Promise.resolve({ ok: true, json: async () => ({ ok: true }) });
     });
     render(<DeleteLessonWizard rootLessonId="b" onCancel={vi.fn()} onDeleted={vi.fn()} />);
@@ -37,6 +38,7 @@ describe('DeleteLessonWizard', () => {
 
   it('declining an offer leaves it out of the set entirely', async () => {
     (fetch as any).mockResolvedValue({
+      ok: true,
       json: async () => previewFor('b', [{ id: 'd', title: 'D', track: 'telc' }]),
     });
     render(<DeleteLessonWizard rootLessonId="b" onCancel={vi.fn()} onDeleted={vi.fn()} />);
@@ -50,6 +52,7 @@ describe('DeleteLessonWizard', () => {
     (fetch as any).mockImplementation((url: string) => {
       if (url.endsWith('/lessons/b/delete-preview'))
         return Promise.resolve({
+          ok: true,
           json: async () =>
             previewFor('b', [
               { id: 'd', title: 'D', track: 'telc' },
@@ -58,6 +61,7 @@ describe('DeleteLessonWizard', () => {
         });
       if (url.endsWith('/lessons/d/delete-preview'))
         return Promise.resolve({
+          ok: true,
           json: async () =>
             previewFor('d', [
               { id: 'b', title: 'B', track: 'generic' },
@@ -66,6 +70,7 @@ describe('DeleteLessonWizard', () => {
         });
       if (url.endsWith('/lessons/f/delete-preview'))
         return Promise.resolve({
+          ok: true,
           json: async () =>
             previewFor('f', [
               { id: 'd', title: 'D', track: 'telc' },
@@ -85,10 +90,20 @@ describe('DeleteLessonWizard', () => {
     expect(previewCalls).toHaveLength(3); // b, d, f — each fetched exactly once, never re-offered
   });
 
+  it('surfaces an error instead of silently showing empty effects when the preview fetch fails', async () => {
+    (fetch as any).mockResolvedValue({
+      ok: false,
+      json: async () => ({ error: 'Lesson not found' }),
+    });
+    render(<DeleteLessonWizard rootLessonId="b" onCancel={vi.fn()} onDeleted={vi.fn()} />);
+    await waitFor(() => expect(screen.getByRole('alert')).toHaveTextContent('Lesson not found'));
+    expect(screen.queryByText('Repair effects')).not.toBeInTheDocument();
+  });
+
   it('Delete All sends the accumulated set and calls onDeleted', async () => {
     const onDeleted = vi.fn();
     (fetch as any).mockImplementation((url: string, init?: RequestInit) => {
-      if (String(url).endsWith('/lessons/b/delete-preview')) return Promise.resolve({ json: async () => previewFor('b', []) });
+      if (String(url).endsWith('/lessons/b/delete-preview')) return Promise.resolve({ ok: true, json: async () => previewFor('b', []) });
       return Promise.resolve({ ok: true, json: async () => ({ ok: true }) });
     });
     render(<DeleteLessonWizard rootLessonId="b" onCancel={vi.fn()} onDeleted={onDeleted} />);

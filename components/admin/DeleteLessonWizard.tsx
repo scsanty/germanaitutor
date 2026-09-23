@@ -40,17 +40,25 @@ export function DeleteLessonWizard({
 
   // Fetch the next queued lesson's own preview once nothing is currently being shown.
   useEffect(() => {
-    if (currentPreview !== null || queue.length === 0) return;
+    if (currentPreview !== null || error !== null || queue.length === 0) return;
     const [nextId, ...rest] = queue;
     setQueue(rest);
     setCurrentLessonId(nextId);
     fetch(`/api/admin/curriculum/lessons/${nextId}/delete-preview`)
-      .then((r) => r.json())
-      .then((preview: DeletePreviewResponse) => {
+      .then(async (r) => {
+        if (!r.ok) {
+          const data = await r.json();
+          setError(data.error ?? 'Failed to load delete preview');
+          return;
+        }
+        const preview: DeletePreviewResponse = await r.json();
         setCurrentPreview(preview);
         setPendingOffers((preview.linkedLessons ?? []).filter((l) => !decided.has(l.id)));
+      })
+      .catch(() => {
+        setError('Failed to load delete preview');
       });
-  }, [queue, currentPreview, decided]);
+  }, [queue, currentPreview, decided, error]);
 
   // Once every offer on the current preview is resolved, clear it so the effect above
   // advances to the next queued lesson (or finishes, if the queue is also empty).
@@ -87,6 +95,19 @@ export function DeleteLessonWizard({
   }
 
   const isDone = currentPreview === null && queue.length === 0;
+
+  // A preview fetch failure surfaces here — before the final "Ready to delete" screen —
+  // so it's never silently swallowed as "no repair effects, no linked lessons".
+  if (error && !isDone) {
+    return (
+      <div>
+        <p role="alert">{error}</p>
+        <button type="button" onClick={onCancel}>
+          Cancel
+        </button>
+      </div>
+    );
+  }
 
   if (!isDone) {
     if (!currentPreview) return <p>Loading...</p>;
