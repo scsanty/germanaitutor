@@ -3,7 +3,7 @@ import { join } from 'node:path';
 import type Database from 'better-sqlite3';
 import type { Track, CefrLevel } from '../types';
 
-interface SeedFile {
+export interface SeedFile {
   seedVersion: string;
   track: Track;
   level: CefrLevel;
@@ -25,6 +25,7 @@ interface SeedFile {
   }[];
   exercises: { id: string; lessonId: string; track: Track | null; type: string; content: unknown }[];
   prerequisites: { lessonId: string; prerequisiteLessonId: string }[];
+  conceptLinks?: { lessonAId: string; lessonBId: string }[];
 }
 
 function getCurrentSeedVersion(db: Database.Database): string {
@@ -101,6 +102,16 @@ function upsertSeedFile(db: Database.Database, seed: SeedFile): void {
 
   for (const prereq of seed.prerequisites) {
     upsertPrerequisite.run(prereq.lessonId, prereq.prerequisiteLessonId);
+  }
+
+  // Each link is listed in both files it touches; a pair whose other lesson hasn't
+  // loaded yet is skipped here and inserted when that lesson's file loads.
+  const lessonExists = db.prepare('SELECT 1 FROM lessons WHERE id = ?');
+  const insertLink = db.prepare('INSERT OR IGNORE INTO lesson_concept_links (lesson_a_id, lesson_b_id) VALUES (?, ?)');
+  for (const link of seed.conceptLinks ?? []) {
+    const [a, b] = link.lessonAId < link.lessonBId ? [link.lessonAId, link.lessonBId] : [link.lessonBId, link.lessonAId];
+    if (a === b || !lessonExists.get(a) || !lessonExists.get(b)) continue;
+    insertLink.run(a, b);
   }
 }
 
