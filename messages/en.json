@@ -48,6 +48,15 @@
     "telc": "TELC",
     "goethe": "Goethe"
   },
+  "notices": {
+    "placementPrompt": "Find your level: the placement test unlocks the levels that fit you.",
+    "takeTest": "Take the placement test",
+    "skip": "Skip, start at A1",
+    "unlocked": "{level} unlocked — switch to {level}?",
+    "switch": "Switch",
+    "dismiss": "Dismiss",
+    "error": "Something went wrong. Please reload the page."
+  },
   "onboarding": {
     "welcomeTitle": "Welcome to German AI Tutor",
     "getStarted": "Get started",

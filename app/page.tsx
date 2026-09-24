@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation';
 import { getDb } from '@/lib/db/client';
 import { createProfileService } from '@/lib/services/profileService';
 import { ActiveProviderBanner } from '@/components/ActiveProviderBanner';
+import { HomeNotices } from '@/components/home/HomeNotices';
 import { HomeIntro } from '@/components/home/HomeIntro';
 
 // Reads the DB on every request; without this Next would evaluate it at build
@@ -16,6 +17,7 @@ export default function Home() {
   return (
     <div>
       <ActiveProviderBanner />
+      <HomeNotices />
       <HomeIntro />
     </div>
   );
