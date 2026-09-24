@@ -14,7 +14,7 @@ Let the student (the app's only end-user, on this local single-user app) actuall
 
 Three phases, each its own plan → implementation cycle. **This spec settles Phase 1 in full; Phases 2 and 3 are outlines** that get their own short brainstorm when they're next, since their open details are better answered once Phase 1 is real and usable.
 
-Phase 1 is implemented as **two plans run back to back**. **Plan 1A** builds the level system and admin work: unlocking, the placement test (including authoring the default exam for review), the flashcard rule and violation list, curriculum export, and exam download/upload. **Plan 1B** builds the teaching loop on top: the tree, lessons, grading, completion, review, the Daily Queue, and the lesson chat. Plan 1B starts from a working level system, so nothing gets reworked. The placement test needs grading, so Plan 1A also builds `grading.ts` (deterministic) and the AI free-text grader; Plan 1B reuses both for lessons and the queue.
+Phase 1 is implemented as **two plans run back to back**. **Plan 1A** builds the translation setup (translating the existing student pages first, so everything after uses it), then the level system and admin work: unlocking, the placement test (including authoring the default exam for review), the flashcard rule and violation list, curriculum export, and exam download/upload. **Plan 1B** builds the teaching loop on top: the tree, lessons, grading, completion, review, the Daily Queue, and the lesson chat. Plan 1B starts from a working level system, so nothing gets reworked. The placement test needs grading, so Plan 1A also builds `grading.ts` (deterministic) and the AI free-text grader; Plan 1B reuses both for lessons and the queue.
 
 **Phase 1 (this cycle) — the core teaching loop:**
 - The curriculum tree as the app's home page (`/`), for the active track+level, with progress and soft prerequisite warnings.
@@ -24,6 +24,7 @@ Phase 1 is implemented as **two plans run back to back**. **Plan 1A** builds the
 - A persisted per-lesson AI chat, including an "Ask AI" button on every answered exercise except flashcards.
 - Level unlocking: levels are hard-locked above the student's highest unlocked level, shared across all tracks. Finishing a level in any track unlocks the next level in every track.
 - A placement test in onboarding (skippable, retakable from Settings) that sets the starting unlocked range, replacing Core's self-selected level.
+- Interface translations (English/German) for every student-facing page, old and new, following `profile.uiLanguage`.
 - Admin additions: the "flashcards only in vocabulary lessons" rule, a live list of existing violations, curriculum export to seed JSON (per track+level, or a zip of all), and download/upload of the placement exam.
 
 **Phase 2 (outline) — exercise pool growth:** "Get more exercises" per lesson, backed by a shared, growing pool of AI-generated exercises plus an admin review/reject queue.
@@ -159,7 +160,7 @@ The function is written against a plain state object, not a table, so Phase 3's 
 ## Phase 1: Level Unlocking
 
 - **One unlock range for all tracks.** `profile.highest_unlocked_level` opens every level from A1 up to it, in every track. A1 is always open.
-- **Hard lock.** A level above the highest unlocked one can't be chosen as the active level (Settings or any prompt), and its lessons can't be opened — `/lesson/[id]` for such a lesson shows "Locked — unlocks after finishing <level below>" instead of the lesson.
+- **Hard lock.** A level above the highest unlocked one can't be chosen as the active level (Settings or any prompt), and its lessons can't be opened — `/lesson/[id]` for such a lesson shows "Locked — unlocks after finishing <level below>" instead of the lesson. The server enforces it too: recording an answer or chatting about a lesson in a locked level is rejected by the API. The read-only curriculum API stays open, since the admin pages use it.
 - **Finishing a level.** A track+level is finished when every visible lesson in its tree (Unsorted excluded) is complete, own or shared via a concept link. Whenever a lesson completion is recorded, the service checks that lesson's track+level; if it's now finished and the next level is still locked, `highest_unlocked_level` moves up one — in every track. Example: finishing Generic A1 opens A2 in Generic, Goethe, and TELC, so the student can go on to Goethe A2.
 - **Unlocks never go down.** Nothing re-locks a level — not a lower placement retake, and not an admin adding lessons to a level that was already finished.
 - **Prompt.** When a level unlocks this way (or through a higher placement retake), `unlock_notice_level` is set and the tree shows "A2 unlocked — switch to A2?" until the student taps Switch (changes the active level) or × (keeps it); either clears the notice. If a second unlock happens first, the notice shows the higher level. A first placement sets the active level directly and shows no notice. Nothing past C1.
@@ -167,7 +168,7 @@ The function is written against a plain state object, not a table, so Phase 3's 
 
 ## Phase 1: Placement Test
 
-**Where it runs.** Onboarding becomes: welcome → connect provider → choose track → choose UI language → placement test (or "Skip, start at A1") → done. Replaces Core's self-selected level. A working provider is already guaranteed by that point, so free-text grading is available. Settings gets "Take / retake the placement test" and shows the best result. An existing profile with `placement_status = 'pending'` sees a "Take the placement test" banner on the home tree until it takes or skips it. For a new student, onboarding is complete only once the test is taken or skipped; leaving mid-test reopens onboarding at the placement step. There's no "Ask AI" during the test.
+**Where it runs.** Onboarding becomes: welcome → connect provider → choose track → choose UI language → placement test (or "Skip, start at A1") → done. Replaces Core's self-selected level. A working provider is already guaranteed by that point, so free-text grading is available. Settings gets "Take / retake the placement test" and shows the best result. An existing profile with `placement_status = 'pending'` sees a "Take the placement test" banner on the home tree until it takes or skips it. For a new student, onboarding is complete only once the test is taken or skipped. The wizard currently keeps everything in the browser and saves the profile once at the end; it changes to save track and UI language when leaving the language step (with onboarding still unfinished), and on reopening it jumps straight to the placement step if a validated provider exists. Leaving mid-test therefore reopens onboarding at the placement step, with earlier choices kept. There's no "Ask AI" during the test.
 
 **The exam.** One track-neutral exam, the same for every student, ordered by ascending difficulty — across levels and within each level. The default exam has 40 questions, 8 per level from A1 to C1, roughly 3 multiple choice, 3 fill-blank, and 2 free text per level. Flashcards are excluded (they're self-graded, and placement needs a real grade). Voice questions come with the Speaking sub-project. Claude authors the default exam as a task in the implementation plan, and the user reviews it before it ships as `data/placement-exam.json`. That seed loads only into an empty `placement_questions` table; after that the database, and admin uploads, are authoritative.
 
@@ -185,7 +186,7 @@ The function is written against a plain state object, not a table, so Phase 3's 
 
 Being placed at a level means "study here", so passing a level's questions places the student one level up. Placement only unlocks: no lesson below the placed level is marked complete.
 
-**After the test.** The end screen shows the score, the placed level, and every answer next to the correct one. First placement: `highest_unlocked_level` and `active_level` are set to the placed level. Retake: unlocks only ever go up — a higher placement raises `highest_unlocked_level` and offers "You placed at B2. Switch to it?"; a lower one changes nothing. Only the best result is kept in `placement_best_result`, replaced only by a higher score.
+**After the test.** The end screen shows the score, the placed level, and every answer next to the correct one; free-text answers also show the AI's feedback and the model answer (the only place that feedback appears, since the test shows none while running). First placement: `highest_unlocked_level` and `active_level` are set to the placed level. Retake: unlocks only ever go up — a higher placement raises `highest_unlocked_level` and offers "You placed at B2. Switch to it?"; a lower one changes nothing. Only the best result is kept in `placement_best_result`, replaced only by a higher score.
 
 ## Phase 1: Pages and Navigation
 
@@ -193,9 +194,19 @@ Being placed at a level means "study here", so passing a level's questions place
 - **`/queue`** — the Daily Queue. Due exercises from lessons in the active track+level only, most overdue first, up to the profile's `daily_review_cap` per day (reviews already answered in the queue today count against it; practice re-dos of completed lessons don't; the rest roll over). Items are shown one at a time with the same grading and "Ask AI" as inside a lesson. Below the reviews: one suggested next lesson — the first incomplete lesson in tree order whose prerequisites are all done, or the first incomplete lesson if none qualify.
 - **`/lesson/[id]`** — explanation and examples first. Then exercises one at a time with a progress counter, in fixed order (sorted by exercise id, multiple-choice options exactly as authored). Wrong answers go to a retry round at the end until every exercise has passed. Leaving and coming back resumes with the exercises not yet passed. Re-opening a completed lesson runs it again as practice. The page lists the lesson's prerequisites ("builds on: X, Y") as links with their status; cross-track concept-linked siblings are not shown. A collapsible chat panel shows the lesson's saved thread.
 - **`/placement`** — the placement test and its end screen, used from onboarding and from Settings.
-- **Settings** gets a "Daily review limit" number field (`daily_review_cap`, default 50), limits the level picker to unlocked levels, and adds the placement retake and best result.
+- **Settings** gets a "Daily review limit" number field (`daily_review_cap`, default 50, whole numbers 1–500), limits the level picker to unlocked levels, and adds the placement retake and best result.
 
 Pages are thin server wrappers around client components, following the existing `AdminLessonPage → LessonDetail` split. No auth gate — student pages are ungated like the rest of the app's non-admin surface.
+
+## Phase 1: Translations
+
+Today every page is English and `uiLanguage` is stored but read by nothing. Phase 1 makes it real:
+- **Library:** next-intl, in its no-locale-routing mode (no `/en` or `/de` URL prefixes). The request config reads the locale from `profile.uiLanguage`; the root layout sets `<html lang>` and provides messages to client components. The plan pins a next-intl version whose supported Next.js range includes this app's 14.2.
+- **Catalogs:** `messages/en.json` and `messages/de.json` with identical keys. A test fails if their key sets differ.
+- **What's translated:** interface text only — buttons, labels, headings, messages, and errors — on every student-facing page: onboarding, Settings, the tree, lessons, the queue, placement, and the provider banner. Learning content (lesson explanations, examples, exercises, placement questions) stays exactly as authored. Admin pages stay English.
+- **Onboarding order is unchanged**, so its screens before the language step show in the default, English.
+- Claude writes the German text as part of the plan, without a separate review step; the user corrects anything odd in use.
+- AI feedback and chat replies already follow `uiLanguage` (see AI Behavior).
 
 ## Phase 1: AI Behavior
 
@@ -234,6 +245,8 @@ All AI calls go through the existing provider layer using the active connection,
 - `placementScoring.ts` — question points, the thresholds computed from an exam, score → placed level, and the stop rules.
 - `placementExamFormat.ts` — parsing and validating an uploaded exam file.
 
+**Translations:** `messages/en.json`, `messages/de.json`, the next-intl request config, and the provider in `app/layout.tsx`. Existing onboarding, Settings, and banner components move their text to catalog keys.
+
 **Services** (`lib/services/`):
 - `attemptService.ts` — records an attempt, grades it (calling the AI for free text), applies the first-per-day rule, writes completion and seeds review at the moment of completion.
 - `progressService.ts` — tree status per lesson (own and shared completion), prerequisite warnings, locked-level checks, and the Daily Queue.
@@ -259,6 +272,7 @@ All AI calls go through the existing provider layer using the active connection,
 - `lib/tutoring/*` — pure, table-driven unit tests (SM-2 interval sequences, seeding rule, first-per-day behavior, cap and suggested-next selection, placement points and thresholds including the default-exam table above, each stop rule, and exam-file validation errors).
 - Unlocking and placement — integration tests: finishing a level in one track opens the next level in all tracks; hard lock rejects a locked active level and a locked lesson; a lower retake changes nothing and a higher one raises the unlock; a bad upload changes nothing; the existing-profile migration resets to A1.
 - Services and routes — integration tests against a real temp-file SQLite database, matching the existing pattern: completion is written once and survives new exercises; cascades on admin delete; review entry at completion; queue scoping to active track+level; flashcard rule on create, update, and skill change; export output loads back through the seed loader, concept links included.
+- Translations — the en/de key-parity test; component tests render with the English catalog so existing text assertions keep working.
 - AI-calling code — tested against a fake provider adapter, matching `lib/providers/*.test.ts`. No real API calls.
 - Client components — timing-realistic fetch mocks (a response delayed by a real timer, not an instantly-resolved promise) for any multi-step effect, per the prior sub-project's final review, which found a race that instant mocks hid.
 
@@ -296,5 +310,6 @@ A Freestyle icon next to the Daily Queue icon. An open AI chat at the student's 
 - **Existing profiles are reset to A1** and prompted for the placement test, rather than keeping their self-selected level.
 - **Placement exam is admin-replaceable** by uploading JSON or YAML, validated in full before replacing anything. Claude drafts the default exam as a plan task for the user's review.
 - **Unlock prompt persists until acted on** (Switch or ×), so a student who deliberately stays on a lower level isn't nagged, and unlocks never go down.
-- **Phase 1 is two plans:** level system and admin first (1A), teaching loop on top (1B).
+- **Phase 1 is two plans:** translations, level system, and admin first (1A), teaching loop on top (1B).
+- **The whole student-facing app gets English/German interface text now**, via next-intl without locale routing, following `profile.uiLanguage`. Content and admin stay as authored / English. Onboarding keeps its order, so its early screens stay English.
 - **No `memory_store` writes and no multi-user support** in this phase.
