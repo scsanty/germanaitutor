@@ -14,6 +14,8 @@ Let the student (the app's only end-user, on this local single-user app) actuall
 
 Three phases, each its own plan → implementation cycle. **This spec settles Phase 1 in full; Phases 2 and 3 are outlines** that get their own short brainstorm when they're next, since their open details are better answered once Phase 1 is real and usable.
 
+Phase 1 is implemented as **two plans run back to back**. **Plan 1A** builds the level system and admin work: unlocking, the placement test (including authoring the default exam for review), the flashcard rule and violation list, curriculum export, and exam download/upload. **Plan 1B** builds the teaching loop on top: the tree, lessons, grading, completion, review, the Daily Queue, and the lesson chat. Plan 1B starts from a working level system, so nothing gets reworked. The placement test needs grading, so Plan 1A also builds `grading.ts` (deterministic) and the AI free-text grader; Plan 1B reuses both for lessons and the queue.
+
 **Phase 1 (this cycle) — the core teaching loop:**
 - The curriculum tree as the app's home page (`/`), for the active track+level, with progress and soft prerequisite warnings.
 - Lesson page: explanation/examples, then exercises one at a time, graded immediately, wrong answers retried until the lesson completes.
@@ -79,6 +81,8 @@ ALTER TABLE profile ADD COLUMN highest_unlocked_level TEXT NOT NULL DEFAULT 'A1'
   CHECK (highest_unlocked_level IN ('A1', 'A2', 'B1', 'B2', 'C1'));
 ALTER TABLE profile ADD COLUMN placement_status TEXT NOT NULL DEFAULT 'pending'
   CHECK (placement_status IN ('pending', 'skipped', 'taken'));
+ALTER TABLE profile ADD COLUMN unlock_notice_level TEXT
+  CHECK (unlock_notice_level IN ('A2', 'B1', 'B2', 'C1'));  -- set on unlock, cleared on Switch or dismiss
 
 -- Placement exam: one active exam, ordered by ascending difficulty
 CREATE TABLE placement_questions (
@@ -134,7 +138,7 @@ A lesson becomes complete the first time every one of its exercises has at least
 
 Lessons containing a `free_text` exercise can't complete while no AI provider is working, since free-text grading is blocked in that state (see AI behavior).
 
-**Shared completion through concept links is display-only.** If a concept-linked lesson in another track is complete, this lesson shows "covered via <track>" in the tree and counts as done for the suggested-next lesson and for finishing the level (which unlocks the next one). It gets no `lesson_completions` row, and its exercises don't enter review — the student never practiced them.
+**Shared completion through concept links is display-only.** If a concept-linked lesson in another track is complete, this lesson shows "covered via <track>" in the tree and counts as done for the suggested-next lesson and for finishing the level (which unlocks the next one). It gets no `lesson_completions` row, and its exercises don't enter review — the student never practiced them. Everywhere else a lesson is judged "done" — the "builds on" warnings, the suggested-next rule, and finishing a level — own and shared completion count the same.
 
 ## Phase 1: Spaced Repetition
 
@@ -157,12 +161,13 @@ The function is written against a plain state object, not a table, so Phase 3's 
 - **One unlock range for all tracks.** `profile.highest_unlocked_level` opens every level from A1 up to it, in every track. A1 is always open.
 - **Hard lock.** A level above the highest unlocked one can't be chosen as the active level (Settings or any prompt), and its lessons can't be opened — `/lesson/[id]` for such a lesson shows "Locked — unlocks after finishing <level below>" instead of the lesson.
 - **Finishing a level.** A track+level is finished when every visible lesson in its tree (Unsorted excluded) is complete, own or shared via a concept link. Whenever a lesson completion is recorded, the service checks that lesson's track+level; if it's now finished and the next level is still locked, `highest_unlocked_level` moves up one — in every track. Example: finishing Generic A1 opens A2 in Generic, Goethe, and TELC, so the student can go on to Goethe A2.
-- **Prompt.** When a level unlocks this way, the tree shows "A2 unlocked — switch to A2?" (one tap switches the active level; ignoring it keeps the current one). Nothing past C1.
+- **Unlocks never go down.** Nothing re-locks a level — not a lower placement retake, and not an admin adding lessons to a level that was already finished.
+- **Prompt.** When a level unlocks this way (or through a higher placement retake), `unlock_notice_level` is set and the tree shows "A2 unlocked — switch to A2?" until the student taps Switch (changes the active level) or × (keeps it); either clears the notice. If a second unlock happens first, the notice shows the higher level. A first placement sets the active level directly and shows no notice. Nothing past C1.
 - **Later.** When the Level exams sub-project lands, finishing a level will also require passing that track+level's exam.
 
 ## Phase 1: Placement Test
 
-**Where it runs.** Onboarding becomes: welcome → connect provider → choose track → choose UI language → placement test (or "Skip, start at A1") → done. Replaces Core's self-selected level. A working provider is already guaranteed by that point, so free-text grading is available. Settings gets "Take / retake the placement test" and shows the best result. An existing profile with `placement_status = 'pending'` sees a "Take the placement test" banner on the home tree until it takes or skips it.
+**Where it runs.** Onboarding becomes: welcome → connect provider → choose track → choose UI language → placement test (or "Skip, start at A1") → done. Replaces Core's self-selected level. A working provider is already guaranteed by that point, so free-text grading is available. Settings gets "Take / retake the placement test" and shows the best result. An existing profile with `placement_status = 'pending'` sees a "Take the placement test" banner on the home tree until it takes or skips it. For a new student, onboarding is complete only once the test is taken or skipped; leaving mid-test reopens onboarding at the placement step. There's no "Ask AI" during the test.
 
 **The exam.** One track-neutral exam, the same for every student, ordered by ascending difficulty — across levels and within each level. The default exam has 40 questions, 8 per level from A1 to C1, roughly 3 multiple choice, 3 fill-blank, and 2 free text per level. Flashcards are excluded (they're self-graded, and placement needs a real grade). Voice questions come with the Speaking sub-project. Claude authors the default exam as a task in the implementation plan, and the user reviews it before it ships as `data/placement-exam.json`. That seed loads only into an empty `placement_questions` table; after that the database, and admin uploads, are authoritative.
 
@@ -185,7 +190,7 @@ Being placed at a level means "study here", so passing a level's questions place
 ## Phase 1: Pages and Navigation
 
 - **`/`** — the curriculum tree for the profile's active track+level: milestones and sections in order, each lesson with its status (not started / in progress / complete / covered via another track). The admin-only Unsorted bucket is hidden. A lesson with an incomplete prerequisite shows a "builds on: X" warning but is always clickable. Keeps the existing onboarding redirect and `ActiveProviderBanner`. Top corner: a Daily Queue icon (Phase 3 adds a Freestyle icon beside it). Shows the level-unlocked prompt and the pending-placement banner described above.
-- **`/queue`** — the Daily Queue. Due exercises from lessons in the active track+level only, most overdue first, up to the profile's `daily_review_cap` per day (reviews already done today count against it; the rest roll over). Items are shown one at a time with the same grading and "Ask AI" as inside a lesson. Below the reviews: one suggested next lesson — the first incomplete lesson in tree order whose prerequisites are all done, or the first incomplete lesson if none qualify.
+- **`/queue`** — the Daily Queue. Due exercises from lessons in the active track+level only, most overdue first, up to the profile's `daily_review_cap` per day (reviews already answered in the queue today count against it; practice re-dos of completed lessons don't; the rest roll over). Items are shown one at a time with the same grading and "Ask AI" as inside a lesson. Below the reviews: one suggested next lesson — the first incomplete lesson in tree order whose prerequisites are all done, or the first incomplete lesson if none qualify.
 - **`/lesson/[id]`** — explanation and examples first. Then exercises one at a time with a progress counter, in fixed order (sorted by exercise id, multiple-choice options exactly as authored). Wrong answers go to a retry round at the end until every exercise has passed. Leaving and coming back resumes with the exercises not yet passed. Re-opening a completed lesson runs it again as practice. The page lists the lesson's prerequisites ("builds on: X, Y") as links with their status; cross-track concept-linked siblings are not shown. A collapsible chat panel shows the lesson's saved thread.
 - **`/placement`** — the placement test and its end screen, used from onboarding and from Settings.
 - **Settings** gets a "Daily review limit" number field (`daily_review_cap`, default 50), limits the level picker to unlocked levels, and adds the placement retake and best result.
@@ -273,7 +278,7 @@ A Freestyle icon next to the Daily Queue icon. An open AI chat at the student's 
 - **Review starts at lesson completion, not first attempt**, and only the first answer per day moves a schedule, so in-lesson retries don't read as recall.
 - **Daily Queue is scoped to the active track+level**, with a daily cap configurable in Settings (default 50).
 - **Completion is stored and sticky.** An admin adding an exercise never takes a completion away.
-- **Shared completion via concept links is display-only** — it affects the tree, suggested-next, and the level-up prompt, but not review.
+- **Shared completion via concept links is display-only** — it counts for the tree, "builds on" warnings, suggested-next, and finishing a level, but not for review.
 - **Admin deletes cascade** through all student progress tables.
 - **Soft prerequisite gating** — warnings only, every lesson reachable.
 - **The tree is the home page at `/`**, with the Daily Queue one tap away. This reverses an earlier draft that made the queue the home screen.
@@ -290,4 +295,6 @@ A Freestyle icon next to the Daily Queue icon. An open AI chat at the student's 
 - **Placement only unlocks** — it never marks lessons complete — and it can be skipped (start at A1) and retaken, keeping only the best result.
 - **Existing profiles are reset to A1** and prompted for the placement test, rather than keeping their self-selected level.
 - **Placement exam is admin-replaceable** by uploading JSON or YAML, validated in full before replacing anything. Claude drafts the default exam as a plan task for the user's review.
+- **Unlock prompt persists until acted on** (Switch or ×), so a student who deliberately stays on a lower level isn't nagged, and unlocks never go down.
+- **Phase 1 is two plans:** level system and admin first (1A), teaching loop on top (1B).
 - **No `memory_store` writes and no multi-user support** in this phase.
