@@ -1,5 +1,13 @@
 {
   "common": {
     "loading": "Wird geladen …"
+  },
+  "banner": {
+    "providerTrouble": "Dein aktiver KI-Anbieter ({provider}) hat Probleme: {error}. <link>Öffne die Einstellungen</link>, um das Problem zu beheben oder den Anbieter zu wechseln."
+  },
+  "home": {
+    "title": "German AI Tutor",
+    "intro": "Deine Lektionen erscheinen bald hier.",
+    "settings": "Einstellungen"
   }
 }
