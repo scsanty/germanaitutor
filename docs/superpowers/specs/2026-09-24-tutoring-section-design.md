@@ -20,7 +20,9 @@ Three phases, each its own plan → implementation cycle. **This spec settles Ph
 - Stored ("sticky") lesson completion, with display-only completion sharing across concept-linked lessons.
 - Exercise-level spaced repetition (simplified SM-2), entered at lesson completion, and the Daily Queue with a Settings-configurable daily cap.
 - A persisted per-lesson AI chat, including an "Ask AI" button on every answered exercise except flashcards.
-- Admin additions: the "flashcards only in vocabulary lessons" rule, a live list of existing violations, and curriculum export to seed JSON (per track+level, or a zip of all).
+- Level unlocking: levels are hard-locked above the student's highest unlocked level, shared across all tracks. Finishing a level in any track unlocks the next level in every track.
+- A placement test in onboarding (skippable, retakable from Settings) that sets the starting unlocked range, replacing Core's self-selected level.
+- Admin additions: the "flashcards only in vocabulary lessons" rule, a live list of existing violations, curriculum export to seed JSON (per track+level, or a zip of all), and download/upload of the placement exam.
 
 **Phase 2 (outline) — exercise pool growth:** "Get more exercises" per lesson, backed by a shared, growing pool of AI-generated exercises plus an admin review/reject queue.
 
@@ -29,6 +31,8 @@ Three phases, each its own plan → implementation cycle. **This spec settles Ph
 **Out of scope entirely (later sub-projects' job):**
 - Skill-specific Freestyle tooling — essay grading (Writing, #4), spoken conversation with STT/TTS (Speaking, #6), Reading/Listening-specific mechanics (#7, #8).
 - Gamification — streaks, XP, badges (#5).
+- Level exams — a full mock exam per track+level (Reading, Listening, Writing, Speaking, following that track's format and rubric), required to finish a level. This becomes its own sub-project after the Writing, Speaking, Reading, and Listening modules exist; Claude drafts the 15 exams and the user reviews them. Until then, finishing a level means completing its lessons (see Level Unlocking).
+- Voice questions in the placement test — added by the Speaking sub-project (#6), which brings speech-to-text.
 - Styling. New pages follow the app's current plain-HTML conventions; the deferred app-wide design pass (dark-first, warm orange accent, colors in an external theme file) restyles everything later.
 - Multi-user support. Every table is implicitly scoped to the app's one local profile. A future multi-user pass would add a `user_id` column throughout.
 - Writing anything to Core's `memory_store`. Phase 1's progress lives in its own tables and nothing in Phase 1 needs cross-call AI memory.
@@ -71,7 +75,42 @@ CREATE TABLE lesson_chat_messages (
 );
 
 ALTER TABLE profile ADD COLUMN daily_review_cap INTEGER NOT NULL DEFAULT 50;
+ALTER TABLE profile ADD COLUMN highest_unlocked_level TEXT NOT NULL DEFAULT 'A1'
+  CHECK (highest_unlocked_level IN ('A1', 'A2', 'B1', 'B2', 'C1'));
+ALTER TABLE profile ADD COLUMN placement_status TEXT NOT NULL DEFAULT 'pending'
+  CHECK (placement_status IN ('pending', 'skipped', 'taken'));
+
+-- Placement exam: one active exam, ordered by ascending difficulty
+CREATE TABLE placement_questions (
+  id TEXT PRIMARY KEY,
+  position INTEGER NOT NULL UNIQUE,   -- 1..N, easiest first
+  level TEXT NOT NULL CHECK (level IN ('A1', 'A2', 'B1', 'B2', 'C1')),
+  type TEXT NOT NULL CHECK (type IN ('multiple_choice', 'fill_blank', 'free_text')),
+  content TEXT NOT NULL               -- JSON, same shapes as lesson ExerciseContent
+);
+
+-- The attempt in progress (at most one; starting a new attempt overwrites it)
+CREATE TABLE placement_session (
+  id INTEGER PRIMARY KEY CHECK (id = 1),
+  started_at TEXT NOT NULL,
+  next_position INTEGER NOT NULL,
+  score REAL NOT NULL,
+  mistakes INTEGER NOT NULL,
+  answers TEXT NOT NULL               -- JSON list for the end-of-test review screen
+);
+
+-- Only the best result is kept
+CREATE TABLE placement_best_result (
+  id INTEGER PRIMARY KEY CHECK (id = 1),
+  score REAL NOT NULL,
+  max_score REAL NOT NULL,
+  placed_level TEXT NOT NULL,
+  stop_reason TEXT NOT NULL CHECK (stop_reason IN ('beyond_my_knowledge', 'five_mistakes', 'finished')),
+  taken_at TEXT NOT NULL
+);
 ```
+
+**Existing profiles.** A profile created before this change self-selected its level in onboarding. The migration resets it to `highest_unlocked_level = 'A1'`, `active_level = 'A1'`, `placement_status = 'pending'`, so the home tree prompts it to take (or skip) the placement test like a new user.
 
 **Grades.** Every attempt stores one of three results:
 
@@ -95,7 +134,7 @@ A lesson becomes complete the first time every one of its exercises has at least
 
 Lessons containing a `free_text` exercise can't complete while no AI provider is working, since free-text grading is blocked in that state (see AI behavior).
 
-**Shared completion through concept links is display-only.** If a concept-linked lesson in another track is complete, this lesson shows "covered via <track>" in the tree and counts as done for the suggested-next lesson and the level-complete prompt. It gets no `lesson_completions` row, and its exercises don't enter review — the student never practiced them.
+**Shared completion through concept links is display-only.** If a concept-linked lesson in another track is complete, this lesson shows "covered via <track>" in the tree and counts as done for the suggested-next lesson and for finishing the level (which unlocks the next one). It gets no `lesson_completions` row, and its exercises don't enter review — the student never practiced them.
 
 ## Phase 1: Spaced Repetition
 
@@ -113,12 +152,43 @@ The function is written against a plain state object, not a table, so Phase 3's 
 
 **Days** are the computer's local calendar date. An exercise is due when `next_due_at <= today`.
 
+## Phase 1: Level Unlocking
+
+- **One unlock range for all tracks.** `profile.highest_unlocked_level` opens every level from A1 up to it, in every track. A1 is always open.
+- **Hard lock.** A level above the highest unlocked one can't be chosen as the active level (Settings or any prompt), and its lessons can't be opened — `/lesson/[id]` for such a lesson shows "Locked — unlocks after finishing <level below>" instead of the lesson.
+- **Finishing a level.** A track+level is finished when every visible lesson in its tree (Unsorted excluded) is complete, own or shared via a concept link. Whenever a lesson completion is recorded, the service checks that lesson's track+level; if it's now finished and the next level is still locked, `highest_unlocked_level` moves up one — in every track. Example: finishing Generic A1 opens A2 in Generic, Goethe, and TELC, so the student can go on to Goethe A2.
+- **Prompt.** When a level unlocks this way, the tree shows "A2 unlocked — switch to A2?" (one tap switches the active level; ignoring it keeps the current one). Nothing past C1.
+- **Later.** When the Level exams sub-project lands, finishing a level will also require passing that track+level's exam.
+
+## Phase 1: Placement Test
+
+**Where it runs.** Onboarding becomes: welcome → connect provider → choose track → choose UI language → placement test (or "Skip, start at A1") → done. Replaces Core's self-selected level. A working provider is already guaranteed by that point, so free-text grading is available. Settings gets "Take / retake the placement test" and shows the best result. An existing profile with `placement_status = 'pending'` sees a "Take the placement test" banner on the home tree until it takes or skips it.
+
+**The exam.** One track-neutral exam, the same for every student, ordered by ascending difficulty — across levels and within each level. The default exam has 40 questions, 8 per level from A1 to C1, roughly 3 multiple choice, 3 fill-blank, and 2 free text per level. Flashcards are excluded (they're self-graded, and placement needs a real grade). Voice questions come with the Speaking sub-project. Claude authors the default exam as a task in the implementation plan, and the user reviews it before it ships as `data/placement-exam.json`. That seed loads only into an empty `placement_questions` table; after that the database, and admin uploads, are authoritative.
+
+**Taking it.** One question at a time, easiest first, with no right/wrong feedback and no counter. Multiple choice and fill-blank are graded deterministically (the same `grading.ts` as lessons); free text is graded by AI as `correct` / `almost` / `wrong`. If free-text grading fails, the student sees an error and retries; their answer is kept. A "Beyond my knowledge" button is always visible. The test stops when the student presses it, makes their 5th `wrong` answer (the button is pressed automatically), or answers every question. Leaving mid-test abandons the attempt; the next start begins again from question 1.
+
+**Scoring (deterministic).** A question is worth points equal to its level: A1 = 1, A2 = 2, B1 = 3, B2 = 4, C1 = 5. `correct` earns the full value, `almost` half, `wrong` nothing. Only `wrong` counts as a mistake. The score is the cumulative total when the test stops. Placement thresholds are computed from the loaded exam: the threshold to be placed at a level is 75% of the maximum points of every level below it. With the default exam:
+
+| Score | Placed at | Unlocks |
+|---|---|---|
+| under 6 | A1 | A1 |
+| 6 – under 18 | A2 | A1–A2 |
+| 18 – under 36 | B1 | A1–B1 |
+| 36 – under 60 | B2 | A1–B2 |
+| 60 – 120 | C1 | A1–C1 |
+
+Being placed at a level means "study here", so passing a level's questions places the student one level up. Placement only unlocks: no lesson below the placed level is marked complete.
+
+**After the test.** The end screen shows the score, the placed level, and every answer next to the correct one. First placement: `highest_unlocked_level` and `active_level` are set to the placed level. Retake: unlocks only ever go up — a higher placement raises `highest_unlocked_level` and offers "You placed at B2. Switch to it?"; a lower one changes nothing. Only the best result is kept in `placement_best_result`, replaced only by a higher score.
+
 ## Phase 1: Pages and Navigation
 
-- **`/`** — the curriculum tree for the profile's active track+level: milestones and sections in order, each lesson with its status (not started / in progress / complete / covered via another track). The admin-only Unsorted bucket is hidden. A lesson with an incomplete prerequisite shows a "builds on: X" warning but is always clickable. Keeps the existing onboarding redirect and `ActiveProviderBanner`. Top corner: a Daily Queue icon (Phase 3 adds a Freestyle icon beside it). When every visible lesson in the active track+level is complete (own or shared), a "Level complete — move up to B1?" prompt updates the active level with one tap; nothing at C1.
+- **`/`** — the curriculum tree for the profile's active track+level: milestones and sections in order, each lesson with its status (not started / in progress / complete / covered via another track). The admin-only Unsorted bucket is hidden. A lesson with an incomplete prerequisite shows a "builds on: X" warning but is always clickable. Keeps the existing onboarding redirect and `ActiveProviderBanner`. Top corner: a Daily Queue icon (Phase 3 adds a Freestyle icon beside it). Shows the level-unlocked prompt and the pending-placement banner described above.
 - **`/queue`** — the Daily Queue. Due exercises from lessons in the active track+level only, most overdue first, up to the profile's `daily_review_cap` per day (reviews already done today count against it; the rest roll over). Items are shown one at a time with the same grading and "Ask AI" as inside a lesson. Below the reviews: one suggested next lesson — the first incomplete lesson in tree order whose prerequisites are all done, or the first incomplete lesson if none qualify.
 - **`/lesson/[id]`** — explanation and examples first. Then exercises one at a time with a progress counter, in fixed order (sorted by exercise id, multiple-choice options exactly as authored). Wrong answers go to a retry round at the end until every exercise has passed. Leaving and coming back resumes with the exercises not yet passed. Re-opening a completed lesson runs it again as practice. The page lists the lesson's prerequisites ("builds on: X, Y") as links with their status; cross-track concept-linked siblings are not shown. A collapsible chat panel shows the lesson's saved thread.
-- **Settings** gets a "Daily review limit" number field (`daily_review_cap`, default 50).
+- **`/placement`** — the placement test and its end screen, used from onboarding and from Settings.
+- **Settings** gets a "Daily review limit" number field (`daily_review_cap`, default 50), limits the level picker to unlocked levels, and adds the placement retake and best result.
 
 Pages are thin server wrappers around client components, following the existing `AdminLessonPage → LessonDetail` split. No auth gate — student pages are ungated like the rest of the app's non-admin surface.
 
@@ -144,6 +214,11 @@ All AI calls go through the existing provider layer using the active connection,
 - **The seed format gains a `conceptLinks` list** (every link where at least one lesson is in that file, so each link appears in both files it touches). The loader upserts them in canonical order, skipping any pair whose other lesson doesn't exist yet; that pair lands when the other file loads. The dead per-lesson `conceptId` field is dropped from exports and ignored if present.
 - Building a zip needs a small zip dependency; the plan picks one.
 
+**Placement exam download and upload.** From `/admin`:
+- Download the active exam as JSON or YAML, in the same format the upload accepts, to use as a template.
+- Upload a JSON or YAML file that replaces the whole exam. The file lists questions in order, each with `id`, `level`, `type`, and `content`. It's validated in full before anything changes: allowed types only (no flashcards), valid content shape per type, every level A1–C1 present, levels never decreasing along the order, unique ids. Any problem rejects the whole upload with a list of errors; nothing is half-applied. On success the questions are replaced in one transaction.
+- An upload never touches `placement_best_result` or unlock state. An attempt in progress is discarded, since its questions no longer exist.
+
 ## Phase 1: Architecture
 
 **Pure logic** (`lib/tutoring/`, unit-tested without a DB):
@@ -151,17 +226,22 @@ All AI calls go through the existing provider layer using the active connection,
 - `grading.ts` — deterministic grading for `multiple_choice` and `fill_blank`.
 - `completion.ts` — whether a lesson's attempts meet the completion rule.
 - `queue.ts` — picking due items under the cap, and the suggested next lesson.
+- `placementScoring.ts` — question points, the thresholds computed from an exam, score → placed level, and the stop rules.
+- `placementExamFormat.ts` — parsing and validating an uploaded exam file.
 
 **Services** (`lib/services/`):
 - `attemptService.ts` — records an attempt, grades it (calling the AI for free text), applies the first-per-day rule, writes completion and seeds review at the moment of completion.
 - `progressService.ts` — tree status per lesson (own and shared completion), prerequisite warnings, level-complete check, and the Daily Queue.
 - `lessonChatService.ts` — reads and appends the lesson thread, and builds the AI context.
 - `curriculumExportService.ts` — builds seed JSON per track+level.
+- `unlockService.ts` — the level-finished check after each completion, and raising `highest_unlocked_level`.
+- `placementService.ts` — starting, answering, and finishing an attempt; best-result and unlock updates; loading the seed exam and replacing it on upload.
+- Existing `profileService.ts` rejects an `active_level` above `highest_unlocked_level`.
 - Existing `lessonAdminService.ts` gains the flashcard rule; existing `curriculumSeedLoader.ts` gains concept-link loading.
 
 **API routes:**
-- Student: `POST /api/tutoring/attempts`, `GET /api/tutoring/tree`, `GET /api/tutoring/queue`, `GET/POST /api/tutoring/lessons/[id]/chat`, and the Settings field through the existing profile route.
-- Admin: `GET /api/admin/curriculum/export` (zip) and `GET /api/admin/curriculum/export/[track]/[level]` (single file), `GET /api/admin/curriculum/flashcard-violations`.
+- Student: `POST /api/tutoring/attempts`, `GET /api/tutoring/tree`, `GET /api/tutoring/queue`, `GET/POST /api/tutoring/lessons/[id]/chat`, `POST /api/placement/start`, `POST /api/placement/answer`, `POST /api/placement/stop` ("Beyond my knowledge"), `POST /api/placement/skip`, and the Settings fields through the existing profile route.
+- Admin: `GET /api/admin/curriculum/export` (zip) and `GET /api/admin/curriculum/export/[track]/[level]` (single file), `GET /api/admin/curriculum/flashcard-violations`, `GET /api/admin/placement-exam?format=json|yaml`, `PUT /api/admin/placement-exam` (upload).
 
 ## Phase 1: Error Handling
 
@@ -171,7 +251,8 @@ All AI calls go through the existing provider layer using the active connection,
 
 ## Phase 1: Testing
 
-- `lib/tutoring/*` — pure, table-driven unit tests (SM-2 interval sequences, seeding rule, first-per-day behavior, cap and suggested-next selection).
+- `lib/tutoring/*` — pure, table-driven unit tests (SM-2 interval sequences, seeding rule, first-per-day behavior, cap and suggested-next selection, placement points and thresholds including the default-exam table above, each stop rule, and exam-file validation errors).
+- Unlocking and placement — integration tests: finishing a level in one track opens the next level in all tracks; hard lock rejects a locked active level and a locked lesson; a lower retake changes nothing and a higher one raises the unlock; a bad upload changes nothing; the existing-profile migration resets to A1.
 - Services and routes — integration tests against a real temp-file SQLite database, matching the existing pattern: completion is written once and survives new exercises; cascades on admin delete; review entry at completion; queue scoping to active track+level; flashcard rule on create, update, and skill change; export output loads back through the seed loader, concept links included.
 - AI-calling code — tested against a fake provider adapter, matching `lib/providers/*.test.ts`. No real API calls.
 - Client components — timing-realistic fetch mocks (a response delayed by a real timer, not an instantly-resolved promise) for any multi-step effect, per the prior sub-project's final review, which found a race that instant mocks hid.
@@ -202,4 +283,11 @@ A Freestyle icon next to the Daily Queue icon. An open AI chat at the student's 
 - **Curriculum export** is an admin download (per track+level, or a zip of all), keeps the current seed version, and extends the seed format with concept links so a fresh install keeps them.
 - **Fixed exercise order** and one-at-a-time presentation with an end-of-lesson retry round.
 - **Plain HTML now**; styling waits for the deferred app-wide design pass.
+- **Placement and unlocking went into Phase 1**, since unlocking replaces the level logic Phase 1 already owned (the old "level complete, move up?" prompt).
+- **Levels unlock globally.** One unlocked range covers all tracks, so finishing Generic A1 opens A2 in Goethe and TELC too. Locks are hard.
+- **Level exams are a later sub-project.** Finishing a level currently means completing its lessons; passing a four-part mock exam in that track's format gets added once Reading, Listening, Writing, and Speaking exist.
+- **Placement test:** one track-neutral exam, ascending difficulty, no voice or flashcards yet, no feedback during the test, stops on "Beyond my knowledge" or the 5th mistake. Points are weighted by level, and thresholds are computed from the loaded exam (75% of every lower level's maximum), so an uploaded replacement scores correctly without code changes.
+- **Placement only unlocks** — it never marks lessons complete — and it can be skipped (start at A1) and retaken, keeping only the best result.
+- **Existing profiles are reset to A1** and prompted for the placement test, rather than keeping their self-selected level.
+- **Placement exam is admin-replaceable** by uploading JSON or YAML, validated in full before replacing anything. Claude drafts the default exam as a plan task for the user's review.
 - **No `memory_store` writes and no multi-user support** in this phase.
