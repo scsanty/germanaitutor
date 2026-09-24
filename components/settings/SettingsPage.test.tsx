@@ -125,6 +125,31 @@ describe('SettingsPage', () => {
     expect(screen.getByText('Done')).toBeInTheDocument();
   });
 
+  it('shows the provider status translated, not the raw status value', async () => {
+    stubFetch({
+      'GET /api/providers': {
+        ok: true,
+        json: async () => [
+          {
+            id: 7,
+            providerType: 'anthropic',
+            label: null,
+            ollamaHost: null,
+            selectedModel: 'model-a',
+            isActive: true,
+            lastValidatedStatus: 'failing',
+            lastValidatedAt: null,
+            lastError: null,
+            createdAt: '',
+          },
+        ],
+      },
+    });
+    renderWithIntl(<SettingsPage />);
+    expect(await screen.findByText('Having trouble')).toBeInTheDocument();
+    expect(screen.queryByText('failing')).not.toBeInTheDocument();
+  });
+
   it('shows recent usage totals next to each provider connection', async () => {
     const fetchMock = stubFetch({
       'GET /api/providers': {

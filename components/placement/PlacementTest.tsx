@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import type {
   PlacementAnswer,
@@ -20,9 +21,11 @@ export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; 
   const [text, setText] = useState('');
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [gradingErrorDetail, setGradingErrorDetail] = useState<string | null>(null);
 
   function applyState(state: PlacementState) {
     setError(null);
+    setGradingErrorDetail(null);
     if (state.status === 'finished') {
       setOutcome(state.outcome);
       setQuestion(null);
@@ -37,6 +40,8 @@ export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; 
 
   async function send(url: string, body?: unknown) {
     setBusy(true);
+    setError(null);
+    setGradingErrorDetail(null);
     try {
       const res = await fetch(url, {
         method: 'POST',
@@ -48,13 +53,32 @@ export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; 
         applyState(data as PlacementState);
       } else {
         const detail = typeof data.error === 'string' ? data.error : String(res.status);
-        setError(res.status === 502 ? t('gradingFailed', { error: detail }) : t('genericError', { error: detail }));
+        if (res.status === 502) {
+          setGradingErrorDetail(detail);
+        } else {
+          setError(t('genericError', { error: detail }));
+        }
       }
     } catch (err) {
       setError(t('genericError', { error: (err as Error).message }));
     } finally {
       setBusy(false);
     }
+  }
+
+  function errorAlert() {
+    if (gradingErrorDetail) {
+      return (
+        <p role="alert">
+          {t.rich('gradingFailed', {
+            error: gradingErrorDetail,
+            link: (chunks) => <Link href="/settings">{chunks}</Link>,
+          })}
+        </p>
+      );
+    }
+    if (error) return <p role="alert">{error}</p>;
+    return null;
   }
 
   function currentAnswer(): PlacementAnswer | null {
@@ -80,7 +104,7 @@ export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; 
             {t('skip')}
           </button>
         )}
-        {error && <p role="alert">{error}</p>}
+        {errorAlert()}
       </div>
     );
   }
@@ -89,7 +113,6 @@ export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; 
     const answer = currentAnswer();
     return (
       <div>
-        <p>{t('questionOf', { current: question.position, total: question.total })}</p>
         {question.type === 'multiple_choice' && (
           <fieldset>
             <legend>{question.question}</legend>
@@ -128,7 +151,7 @@ export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; 
         <button type="button" disabled={busy} onClick={() => send('/api/placement/stop')}>
           {t('beyond')}
         </button>
-        {error && <p role="alert">{error}</p>}
+        {errorAlert()}
       </div>
     );
   }

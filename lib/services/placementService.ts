@@ -222,13 +222,14 @@ export function createPlacementService(db: Database.Database, deps?: PlacementDe
 
       const profile = profiles.getProfile();
       if (profile.placementStatus !== 'taken') {
-        // First placement: land on the highest unlocked level, never lowering one already open.
+        // First placement: the active level is the placed level (Ruling M-4), but the
+        // highest unlocked level never lowers one already open (e.g. from finished lessons).
         // Any notice left over from before is for a level at or below this new highest level,
         // so it is always obsolete here.
         const highest = higherLevel(profile.highestUnlockedLevel, placed);
         profiles.writeLevelState({
           highestUnlockedLevel: highest,
-          activeLevel: highest,
+          activeLevel: placed,
           placementStatus: 'taken',
           unlockNoticeLevel: null,
         });

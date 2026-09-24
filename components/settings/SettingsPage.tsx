@@ -234,7 +234,8 @@ export function SettingsPage() {
         <ul>
           {connections.map((c) => (
             <li key={c.id}>
-              {c.providerType} ({c.lastValidatedStatus}){c.selectedModel ? ` — ${c.selectedModel}` : ''}
+              {c.providerType} (<span>{t(`connectionStatus.${c.lastValidatedStatus}`)}</span>)
+              {c.selectedModel ? ` — ${c.selectedModel}` : ''}
               {c.isActive ? ` ${t('activeMarker')}` : ''}
               <button onClick={() => handleSetActive(c.id)} disabled={c.isActive}>
                 {t('makeActive')}

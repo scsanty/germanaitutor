@@ -23,6 +23,12 @@ describe('Onboarding page', () => {
     expect(OnboardingPage().props).toEqual({ initialStep: 'placement' });
   });
 
+  it('resumes at the placement step when the active connection is failing, not just valid', () => {
+    mockGetProfile.mockReturnValue({ onboardingChoicesSaved: true });
+    mockGetActiveConnection.mockReturnValue({ lastValidatedStatus: 'failing' });
+    expect(OnboardingPage().props).toEqual({ initialStep: 'placement' });
+  });
+
   it('starts from the welcome step when the choices were never saved', () => {
     mockGetProfile.mockReturnValue({ onboardingChoicesSaved: false });
     mockGetActiveConnection.mockReturnValue({ lastValidatedStatus: 'valid' });
@@ -32,6 +38,12 @@ describe('Onboarding page', () => {
   it('starts from the welcome step when there is no working provider', () => {
     mockGetProfile.mockReturnValue({ onboardingChoicesSaved: true });
     mockGetActiveConnection.mockReturnValue(null);
+    expect(OnboardingPage().props).toEqual({ initialStep: 'welcome' });
+  });
+
+  it('starts from the welcome step when the connection was never validated or failed a re-test', () => {
+    mockGetProfile.mockReturnValue({ onboardingChoicesSaved: true });
+    mockGetActiveConnection.mockReturnValue({ lastValidatedStatus: 'invalid' });
     expect(OnboardingPage().props).toEqual({ initialStep: 'welcome' });
   });
 });
