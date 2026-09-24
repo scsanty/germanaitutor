@@ -93,3 +93,44 @@ describe('ExerciseEditor', () => {
     expect(onChange).toHaveBeenCalledWith([{ id: 'ex2', type: 'flashcard', content: { front: 'c', back: 'd' } }]);
   });
 });
+
+describe('ExerciseEditor flashcard rule', () => {
+  it('adds a multiple-choice exercise by default when flashcards are not allowed', () => {
+    const onChange = vi.fn();
+    render(<ExerciseEditor exercises={[]} onChange={onChange} allowFlashcards={false} />);
+    fireEvent.click(screen.getByText('Add exercise'));
+    expect(onChange).toHaveBeenCalledWith([
+      { type: 'multiple_choice', content: { question: '', options: ['', ''], correctIndex: 0 } },
+    ]);
+  });
+
+  it('hides the flashcard type for a non-flashcard exercise when flashcards are not allowed', () => {
+    render(
+      <ExerciseEditor
+        exercises={[{ type: 'fill_blank', content: { textWithBlank: 'a ___', correctAnswer: 'b' } }]}
+        onChange={vi.fn()}
+        allowFlashcards={false}
+      />
+    );
+    const options = Array.from(screen.getByLabelText('Exercise 1 type').querySelectorAll('option')).map((o) => o.value);
+    expect(options).toEqual(['multiple_choice', 'fill_blank', 'free_text']);
+  });
+
+  it('still shows an existing flashcard as a flashcard so it can be changed', () => {
+    render(
+      <ExerciseEditor
+        exercises={[{ type: 'flashcard', content: { front: 'x', back: 'y' } }]}
+        onChange={vi.fn()}
+        allowFlashcards={false}
+      />
+    );
+    expect(screen.getByLabelText('Exercise 1 type')).toHaveValue('flashcard');
+  });
+
+  it('keeps adding flashcards by default in vocabulary lessons', () => {
+    const onChange = vi.fn();
+    render(<ExerciseEditor exercises={[]} onChange={onChange} />);
+    fireEvent.click(screen.getByText('Add exercise'));
+    expect(onChange).toHaveBeenCalledWith([{ type: 'flashcard', content: { front: '', back: '' } }]);
+  });
+});
