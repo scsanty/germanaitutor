@@ -232,5 +232,31 @@ function createTablesIfMissing(db: Database.Database): void {
       seed_version TEXT NOT NULL DEFAULT '0',
       last_synced_at TEXT
     );
+
+    CREATE TABLE IF NOT EXISTS placement_questions (
+      id TEXT PRIMARY KEY,
+      position INTEGER NOT NULL UNIQUE,
+      level TEXT NOT NULL CHECK (level IN ('A1','A2','B1','B2','C1')),
+      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','free_text')),
+      content TEXT NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS placement_session (
+      id INTEGER PRIMARY KEY CHECK (id = 1),
+      started_at TEXT NOT NULL,
+      next_position INTEGER NOT NULL,
+      score REAL NOT NULL,
+      mistakes INTEGER NOT NULL,
+      answers TEXT NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS placement_best_result (
+      id INTEGER PRIMARY KEY CHECK (id = 1),
+      score REAL NOT NULL,
+      max_score REAL NOT NULL,
+      placed_level TEXT NOT NULL CHECK (placed_level IN ('A1','A2','B1','B2','C1')),
+      stop_reason TEXT NOT NULL CHECK (stop_reason IN ('beyond_my_knowledge','five_mistakes','finished')),
+      taken_at TEXT NOT NULL
+    );
   `);
 }
