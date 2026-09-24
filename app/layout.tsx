@@ -1,13 +1,10 @@
 import type { ReactNode } from 'react';
-import { join } from 'node:path';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages, getTimeZone } from 'next-intl/server';
 import { getDb } from '@/lib/db/client';
-import { loadSeedIfNeeded } from '@/lib/services/curriculumSeedLoader';
-import { createPlacementService } from '@/lib/services/placementService';
+import { loadBundledSeeds } from '@/lib/services/bundledSeeds';
 
-loadSeedIfNeeded(getDb(), join(process.cwd(), 'data', 'curriculum-seed'));
-createPlacementService(getDb()).loadSeedExamIfEmpty(join(process.cwd(), 'data', 'placement-exam.json'));
+loadBundledSeeds(getDb());
 
 // The locale is read from the database, so no page may be prerendered at build time.
 export const dynamic = 'force-dynamic';

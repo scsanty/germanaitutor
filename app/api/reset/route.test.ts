@@ -4,6 +4,9 @@ import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { getDb, getDbPath, closeDb } from '@/lib/db/client';
 import { defaultKeyFilePath, loadOrCreateMasterKey } from '@/lib/crypto/keyfile';
+import { loadBundledSeeds } from '@/lib/services/bundledSeeds';
+import { createProfileService } from '@/lib/services/profileService';
+import { POST as startPlacement } from '@/app/api/placement/start/route';
 import { POST } from './route';
 
 describe('/api/reset', () => {
@@ -18,13 +21,27 @@ describe('/api/reset', () => {
     delete process.env.GAIT_DATA_DIR;
   });
 
-  it('deletes the database and master key files', async () => {
+  it('deletes the master key and starts a fresh database in its place', async () => {
     expect(existsSync(getDbPath())).toBe(true);
     expect(existsSync(defaultKeyFilePath())).toBe(true);
+    createProfileService(getDb()).updateProfile({ displayName: 'before-reset' });
 
     const res = await POST();
     expect((await res.json()).ok).toBe(true);
-    expect(existsSync(getDbPath())).toBe(false);
+    // The master key is gone and never recreated by reset.
     expect(existsSync(defaultKeyFilePath())).toBe(false);
+    // The DB file exists again only because loadBundledSeeds (via getDb()) rebuilds it;
+    // it is a fresh database, not the one that held 'before-reset'.
+    expect(existsSync(getDbPath())).toBe(true);
+    expect(createProfileService(getDb()).getProfile().displayName).toBe('');
+  });
+
+  it('reloads the bundled placement exam, so the test can start again right after reset', async () => {
+    loadBundledSeeds(getDb());
+
+    await POST();
+
+    const res = await startPlacement();
+    expect(res.status).toBe(200);
   });
 });
