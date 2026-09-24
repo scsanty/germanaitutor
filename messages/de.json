@@ -42,5 +42,30 @@
     },
     "noAnswer": "(keine Antwort)",
     "continue": "Weiter"
+  },
+  "tracks": {
+    "generic": "Allgemein",
+    "telc": "TELC",
+    "goethe": "Goethe"
+  },
+  "onboarding": {
+    "welcomeTitle": "Willkommen bei German AI Tutor",
+    "getStarted": "Los geht’s",
+    "providerTitle": "KI-Anbieter verbinden",
+    "providerType": "Anbieter",
+    "ollamaHost": "Ollama-Host",
+    "apiKey": "API-Schlüssel",
+    "testConnection": "Verbindung testen",
+    "connected": "Verbunden!",
+    "model": "Modell",
+    "next": "Weiter",
+    "saveFailed": "Die Anbieterverbindung konnte nicht gespeichert werden",
+    "connectionFailed": "Verbindung fehlgeschlagen",
+    "noModels": "Dieser Anbieter meldet keine Modelle",
+    "modelsFailed": "Modelle konnten nicht geladen werden",
+    "trackTitle": "Wähle deinen Lernweg",
+    "languageTitle": "Wähle die Sprache der Oberfläche",
+    "saveChoicesFailed": "Deine Auswahl konnte nicht gespeichert werden. Bitte versuche es noch einmal.",
+    "finishFailed": "Die Einrichtung konnte nicht abgeschlossen werden. Bitte versuche es noch einmal."
   }
 }

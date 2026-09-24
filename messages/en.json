@@ -42,5 +42,30 @@
     },
     "noAnswer": "(no answer)",
     "continue": "Continue"
+  },
+  "tracks": {
+    "generic": "Generic",
+    "telc": "TELC",
+    "goethe": "Goethe"
+  },
+  "onboarding": {
+    "welcomeTitle": "Welcome to German AI Tutor",
+    "getStarted": "Get started",
+    "providerTitle": "Connect an AI provider",
+    "providerType": "Provider",
+    "ollamaHost": "Ollama host",
+    "apiKey": "API key",
+    "testConnection": "Test connection",
+    "connected": "Connected!",
+    "model": "Model",
+    "next": "Next",
+    "saveFailed": "Failed to save provider connection",
+    "connectionFailed": "Connection failed",
+    "noModels": "No models reported by this provider",
+    "modelsFailed": "Could not load models",
+    "trackTitle": "Choose your track",
+    "languageTitle": "Choose your interface language",
+    "saveChoicesFailed": "Could not save your choices. Please try again.",
+    "finishFailed": "Could not finish setup. Please try again."
   }
 }
