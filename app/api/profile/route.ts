@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { getDb } from '@/lib/db/client';
-import { createProfileService } from '@/lib/services/profileService';
+import { createProfileService, LockedLevelError } from '@/lib/services/profileService';
 
 export const dynamic = 'force-dynamic';
 
@@ -12,5 +12,10 @@ export async function GET() {
 export async function PATCH(request: Request) {
   const body = await request.json();
   const service = createProfileService(getDb());
-  return NextResponse.json(service.updateProfile(body));
+  try {
+    return NextResponse.json(service.updateProfile(body));
+  } catch (err) {
+    if (err instanceof LockedLevelError) return NextResponse.json({ error: err.message }, { status: 400 });
+    throw err;
+  }
 }
