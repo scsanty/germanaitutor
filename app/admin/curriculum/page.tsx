@@ -11,6 +11,9 @@ export default function AdminCurriculumPage() {
   return (
     <div>
       <h1>Curriculum</h1>
+      <p>
+        <a href="/admin/curriculum/flashcard-violations">Flashcards outside vocabulary lessons</a>
+      </p>
       <ul>
         {tracks.map(({ track, levels }) => (
           <li key={track}>
