@@ -16,6 +16,8 @@ export interface ProviderConnection {
   createdAt: string;
 }
 
+export type PlacementStatus = 'pending' | 'skipped' | 'taken';
+
 export interface Profile {
   displayName: string;
   uiLanguage: 'en' | 'de';
@@ -23,5 +25,9 @@ export interface Profile {
   activeLevel: CefrLevel;
   freestyleDefault: boolean;
   onboardingComplete: boolean;
+  highestUnlockedLevel: CefrLevel;
+  placementStatus: PlacementStatus;
+  unlockNoticeLevel: CefrLevel | null;
+  onboardingChoicesSaved: boolean;
   updatedAt: string;
 }
