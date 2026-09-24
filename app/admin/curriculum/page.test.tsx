@@ -1,4 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { render, screen } from '@testing-library/react';
 
 const { redirectMock, isAdminSessionValidMock, listTracksMock } = vi.hoisted(() => ({
   redirectMock: vi.fn(() => {
@@ -33,5 +34,17 @@ describe('AdminCurriculumPage', () => {
     listTracksMock.mockReturnValue([{ track: 'generic', levels: ['A1'] }]);
     const result = AdminCurriculumPage();
     expect(result).toBeTruthy();
+  });
+
+  it('links to the admin tools and the seed exports', () => {
+    isAdminSessionValidMock.mockReturnValue(true);
+    listTracksMock.mockReturnValue([{ track: 'generic', levels: ['A1'] }]);
+    render(AdminCurriculumPage());
+    expect(screen.getByRole('link', { name: 'Download all as seed files (zip)' })).toHaveAttribute(
+      'href',
+      '/api/admin/curriculum/export'
+    );
+    expect(screen.getByRole('link', { name: '(export)' })).toHaveAttribute('href', '/api/admin/curriculum/export/generic/A1');
+    expect(screen.getByRole('link', { name: 'Placement exam' })).toHaveAttribute('href', '/admin/placement-exam');
   });
 });
