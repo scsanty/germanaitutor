@@ -9,5 +9,38 @@
     "title": "German AI Tutor",
     "intro": "Deine Lektionen erscheinen bald hier.",
     "settings": "Einstellungen"
+  },
+  "placement": {
+    "title": "Einstufungstest",
+    "intro": "Beantworte die Fragen nacheinander. Sie werden mit der Zeit schwieriger. Wenn eine Frage über dein Wissen hinausgeht, drücke „Übersteigt mein Wissen“: Der Test endet dann und stuft dich ein. Nach 5 falschen Antworten endet der Test ebenfalls. Deine Antworten siehst du am Ende.",
+    "start": "Test starten",
+    "skip": "Überspringen und mit A1 beginnen",
+    "questionOf": "Frage {current} von {total}",
+    "answerLabel": "Deine Antwort",
+    "submit": "Antwort abschicken",
+    "submitting": "Wird geprüft …",
+    "beyond": "Übersteigt mein Wissen",
+    "gradingFailed": "Deine Antwort konnte nicht bewertet werden: {error}. Deine Antwort bleibt erhalten, du kannst es noch einmal versuchen.",
+    "genericError": "Etwas ist schiefgelaufen: {error}",
+    "resultTitle": "Dein Ergebnis",
+    "placedAt": "Du wurdest auf {level} eingestuft.",
+    "score": "Punkte: {score} von {max}",
+    "stopReason": {
+      "beyond_my_knowledge": "Du hast mit „Übersteigt mein Wissen“ beendet.",
+      "five_mistakes": "Der Test endete nach 5 falschen Antworten.",
+      "finished": "Du hast alle Fragen beantwortet."
+    },
+    "review": "Deine Antworten",
+    "given": "Deine Antwort: {answer}",
+    "correctAnswer": "Richtige Antwort: {answer}",
+    "modelAnswer": "Musterantwort: {answer}",
+    "feedback": "Rückmeldung: {feedback}",
+    "result": {
+      "correct": "Richtig",
+      "almost": "Fast richtig",
+      "wrong": "Falsch"
+    },
+    "noAnswer": "(keine Antwort)",
+    "continue": "Weiter"
   }
 }
