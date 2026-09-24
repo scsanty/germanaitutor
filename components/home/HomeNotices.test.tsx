@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
-import { screen, fireEvent, waitFor } from '@testing-library/react';
+import { screen, fireEvent, waitFor, act } from '@testing-library/react';
 import { renderWithIntl } from '@/test/renderWithIntl';
 import { delayedResponse } from '@/test/delayedResponse';
 import { HomeNotices } from './HomeNotices';
@@ -64,7 +64,9 @@ describe('HomeNotices', () => {
     const fetchMock = stubFetch({ '/api/profile': () => delayedResponse(BASE_PROFILE) });
     const { container } = renderWithIntl(<HomeNotices />);
     await waitFor(() => expect(fetchMock).toHaveBeenCalled());
-    await new Promise((resolve) => setTimeout(resolve, 20));
+    await act(async () => {
+      await new Promise((resolve) => setTimeout(resolve, 20));
+    });
     expect(container).toBeEmptyDOMElement();
   });
 
