@@ -179,6 +179,13 @@ describe('placementService', () => {
     expect(profiles.getProfile()).toMatchObject({ highestUnlockedLevel: 'B1', activeLevel: 'B1', placementStatus: 'taken' });
   });
 
+  it('a first placement clears an unlock notice left from before', async () => {
+    const { service, profiles, exam } = setup();
+    profiles.writeLevelState({ highestUnlockedLevel: 'A2', placementStatus: 'skipped', unlockNoticeLevel: 'A2' });
+    await answerInOrder(service, exam, exam.length);
+    expect(profiles.getProfile()).toMatchObject({ highestUnlockedLevel: 'C1', activeLevel: 'C1', unlockNoticeLevel: null, placementStatus: 'taken' });
+  });
+
   it('skipping marks a pending placement as skipped but never undoes a taken one', async () => {
     const { service, profiles, exam } = setup();
     expect(service.skip().placementStatus).toBe('skipped');
