@@ -9,5 +9,38 @@
     "title": "German AI Tutor",
     "intro": "Your lessons will appear here soon.",
     "settings": "Settings"
+  },
+  "placement": {
+    "title": "Placement test",
+    "intro": "Answer the questions one at a time. They get harder as you go. When a question is beyond what you know, press “Beyond my knowledge”: the test ends there and places you. The test also ends after 5 wrong answers. You will see your answers at the end.",
+    "start": "Start the test",
+    "skip": "Skip, start at A1",
+    "questionOf": "Question {current} of {total}",
+    "answerLabel": "Your answer",
+    "submit": "Submit answer",
+    "submitting": "Checking…",
+    "beyond": "Beyond my knowledge",
+    "gradingFailed": "Your answer could not be graded: {error}. Your answer is kept, so you can try again.",
+    "genericError": "Something went wrong: {error}",
+    "resultTitle": "Your result",
+    "placedAt": "You placed at {level}.",
+    "score": "Score: {score} of {max} points",
+    "stopReason": {
+      "beyond_my_knowledge": "You stopped with “Beyond my knowledge”.",
+      "five_mistakes": "The test ended after 5 wrong answers.",
+      "finished": "You answered every question."
+    },
+    "review": "Your answers",
+    "given": "Your answer: {answer}",
+    "correctAnswer": "Correct answer: {answer}",
+    "modelAnswer": "Model answer: {answer}",
+    "feedback": "Feedback: {feedback}",
+    "result": {
+      "correct": "Correct",
+      "almost": "Almost",
+      "wrong": "Wrong"
+    },
+    "noAnswer": "(no answer)",
+    "continue": "Continue"
   }
 }
