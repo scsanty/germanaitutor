@@ -1,5 +1,13 @@
 {
   "common": {
     "loading": "Loading..."
+  },
+  "banner": {
+    "providerTrouble": "Your active provider ({provider}) is having trouble: {error}. <link>Visit Settings</link> to fix it or switch providers."
+  },
+  "home": {
+    "title": "German AI Tutor",
+    "intro": "Your lessons will appear here soon.",
+    "settings": "Settings"
   }
 }

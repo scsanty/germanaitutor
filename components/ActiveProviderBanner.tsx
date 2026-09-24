@@ -2,15 +2,18 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import type { ProviderConnection } from '@/lib/types';
 
 export function ActiveProviderBanner() {
+  const t = useTranslations('banner');
   const [active, setActive] = useState<ProviderConnection | null>(null);
 
   useEffect(() => {
     let cancelled = false;
     async function poll() {
       const res = await fetch('/api/providers/active');
+      if (!res.ok) return;
       const data = await res.json();
       if (!cancelled) setActive(data);
     }
@@ -30,8 +33,11 @@ export function ActiveProviderBanner() {
 
   return (
     <div role="alert">
-      Your active provider ({active.providerType}) is having trouble: {active.lastError}.{' '}
-      <Link href="/settings">Visit Settings</Link> to fix it or switch providers.
+      {t.rich('providerTrouble', {
+        provider: active.providerType,
+        error: active.lastError ?? '',
+        link: (chunks) => <Link href="/settings">{chunks}</Link>,
+      })}
     </div>
   );
 }
