@@ -1,6 +1,6 @@
 import type Database from 'better-sqlite3';
 import type { Track, CefrLevel } from '../types';
-import type { Skill, Lesson } from '../curriculum/types';
+import type { Skill, Lesson, ExerciseType } from '../curriculum/types';
 import { createCurriculumService } from './curriculumService';
 import { wouldCreateCycle } from '../curriculum-admin/cycleDetection';
 import { resolvePlacement, type PlacementInput } from '../curriculum-admin/placementResolver';
@@ -31,6 +31,20 @@ export interface UpdateLessonInput {
   placement: PlacementInput;
 }
 
+export function flashcardRuleViolation(skill: Skill, exercises: { type: ExerciseType }[]): string | null {
+  if (skill === 'vocabulary') return null;
+  const count = exercises.filter((e) => e.type === 'flashcard').length;
+  if (count === 0) return null;
+  return count === 1
+    ? 'This lesson has 1 flashcard, which is only allowed in vocabulary lessons. Remove or change them first.'
+    : `This lesson has ${count} flashcards, which are only allowed in vocabulary lessons. Remove or change them first.`;
+}
+
+function assertFlashcardRule(skill: Skill, exercises: { type: ExerciseType }[]): void {
+  const violation = flashcardRuleViolation(skill, exercises);
+  if (violation) throw new Error(violation);
+}
+
 export function createLessonAdminService(db: Database.Database) {
   const reads = createCurriculumService(db);
 
@@ -38,6 +52,8 @@ export function createLessonAdminService(db: Database.Database) {
     const id = `${input.sourceLevel.toLowerCase()}-${input.slug}`;
 
     const run = db.transaction(() => {
+      assertFlashcardRule(input.skill, input.exercises);
+
       const existing = db.prepare('SELECT 1 FROM lessons WHERE id = ?').get(id);
       if (existing) throw new Error(`Lesson id already exists: ${id}`);
 
@@ -85,6 +101,8 @@ export function createLessonAdminService(db: Database.Database) {
 
   function updateLesson(id: string, input: UpdateLessonInput): Lesson {
     const run = db.transaction(() => {
+      assertFlashcardRule(input.skill, input.exercises);
+
       const current = db.prepare('SELECT track, source_level FROM lessons WHERE id = ?').get(id) as
         | { track: Track; source_level: CefrLevel }
         | undefined;

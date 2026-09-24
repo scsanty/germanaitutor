@@ -195,7 +195,7 @@ export function LessonEditorForm(
         </button>
       </div>
 
-      <ExerciseEditor exercises={exercises} onChange={setExercises} />
+      <ExerciseEditor exercises={exercises} onChange={setExercises} allowFlashcards={skill === 'vocabulary'} />
 
       <PrerequisitePicker candidates={candidates} selectedIds={prerequisiteIds} onChange={setPrerequisiteIds} />
 

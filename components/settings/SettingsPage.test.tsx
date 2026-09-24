@@ -1,6 +1,11 @@
 // components/settings/SettingsPage.test.tsx
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { screen, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { renderWithIntl } from '@/test/renderWithIntl';
+
+const { refreshMock } = vi.hoisted(() => ({ refreshMock: vi.fn() }));
+vi.mock('next/navigation', () => ({ useRouter: () => ({ refresh: refreshMock, push: vi.fn() }) }));
+
 import { SettingsPage } from './SettingsPage';
 
 const PROFILE = {
@@ -10,6 +15,10 @@ const PROFILE = {
   activeLevel: 'A1',
   freestyleDefault: false,
   onboardingComplete: true,
+  highestUnlockedLevel: 'B1',
+  placementStatus: 'taken',
+  unlockNoticeLevel: null,
+  onboardingChoicesSaved: true,
   updatedAt: '',
 };
 
@@ -41,7 +50,7 @@ describe('SettingsPage', () => {
   it('adds a new provider connection and refreshes the list', async () => {
     const fetchMock = stubFetch();
 
-    render(<SettingsPage />);
+    renderWithIntl(<SettingsPage />);
     await waitFor(() => screen.getByText('Add provider'));
 
     fireEvent.click(screen.getByText('Add provider'));
@@ -59,7 +68,7 @@ describe('SettingsPage', () => {
   });
 
   it('offers an Ollama host field instead of an API key for Ollama', async () => {
-    render(<SettingsPage />);
+    renderWithIntl(<SettingsPage />);
     await waitFor(() => screen.getByText('Add provider'));
 
     fireEvent.click(screen.getByText('Add provider'));
@@ -80,7 +89,7 @@ describe('SettingsPage', () => {
       },
     });
 
-    render(<SettingsPage />);
+    renderWithIntl(<SettingsPage />);
     await waitFor(() => screen.getByText('Add provider'));
     fireEvent.click(screen.getByText('Add provider'));
     fireEvent.change(screen.getByPlaceholderText('API key'), { target: { value: 'sk-ant' } });
@@ -105,7 +114,7 @@ describe('SettingsPage', () => {
       'GET /api/providers/7/models': { ok: false, json: async () => ({ error: 'Ollama returned 500' }) },
     });
 
-    render(<SettingsPage />);
+    renderWithIntl(<SettingsPage />);
     await waitFor(() => screen.getByText('Add provider'));
     fireEvent.click(screen.getByText('Add provider'));
     fireEvent.change(screen.getByPlaceholderText('API key'), { target: { value: 'sk-ant' } });
@@ -114,6 +123,31 @@ describe('SettingsPage', () => {
     await screen.findByText('Ollama returned 500');
     expect(screen.queryByLabelText('Model')).not.toBeInTheDocument();
     expect(screen.getByText('Done')).toBeInTheDocument();
+  });
+
+  it('shows the provider status translated, not the raw status value', async () => {
+    stubFetch({
+      'GET /api/providers': {
+        ok: true,
+        json: async () => [
+          {
+            id: 7,
+            providerType: 'anthropic',
+            label: null,
+            ollamaHost: null,
+            selectedModel: 'model-a',
+            isActive: true,
+            lastValidatedStatus: 'failing',
+            lastValidatedAt: null,
+            lastError: null,
+            createdAt: '',
+          },
+        ],
+      },
+    });
+    renderWithIntl(<SettingsPage />);
+    expect(await screen.findByText('Having trouble')).toBeInTheDocument();
+    expect(screen.queryByText('failing')).not.toBeInTheDocument();
   });
 
   it('shows recent usage totals next to each provider connection', async () => {
@@ -144,7 +178,7 @@ describe('SettingsPage', () => {
       },
     });
 
-    render(<SettingsPage />);
+    renderWithIntl(<SettingsPage />);
 
     await screen.findByText(/5 requests, 2000 tokens \(last 7 days\)/);
     expect(fetchMock).toHaveBeenCalledWith('/api/usage?connectionId=7&days=7');
@@ -152,10 +186,65 @@ describe('SettingsPage', () => {
 
   it('requires confirmation before resetting app data', async () => {
     const fetchMock = stubFetch();
-    render(<SettingsPage />);
+    renderWithIntl(<SettingsPage />);
     await waitFor(() => screen.getByText('Reset app data'));
     fireEvent.click(screen.getByText('Reset app data'));
     expect(screen.getByText(/permanently/)).toBeInTheDocument();
     expect(fetchMock).not.toHaveBeenCalledWith('/api/reset', expect.anything());
+  });
+
+  it('offers only the unlocked levels', async () => {
+    stubFetch();
+    renderWithIntl(<SettingsPage />);
+    const levelSelect = await screen.findByLabelText('Level');
+    const options = Array.from(levelSelect.querySelectorAll('option')).map((o) => o.textContent);
+    expect(options).toEqual(['A1', 'A2', 'B1']);
+    expect(screen.getByText('Levels above B1 unlock as you finish lessons or place higher in the placement test.')).toBeInTheDocument();
+  });
+
+  it('shows an error when a setting cannot be saved', async () => {
+    stubFetch({ 'PATCH /api/profile': { ok: false, status: 400, json: async () => ({ error: 'Level B1 is locked' }) } });
+    renderWithIntl(<SettingsPage />);
+    fireEvent.change(await screen.findByLabelText('Level'), { target: { value: 'B1' } });
+    await waitFor(() =>
+      expect(screen.getByRole('alert')).toHaveTextContent('Could not save this setting: Level B1 is locked')
+    );
+  });
+
+  it('refreshes the page after changing the interface language', async () => {
+    stubFetch({ 'PATCH /api/profile': { ok: true, json: async () => ({ ...PROFILE, uiLanguage: 'de' }) } });
+    renderWithIntl(<SettingsPage />);
+    fireEvent.change(await screen.findByLabelText('Language'), { target: { value: 'de' } });
+    await waitFor(() => expect(refreshMock).toHaveBeenCalled());
+  });
+
+  it('shows the best placement result and a retake link', async () => {
+    stubFetch({
+      'GET /api/placement': {
+        ok: true,
+        json: async () => ({
+          best: { score: 24, maxScore: 120, placedLevel: 'B1', stopReason: 'five_mistakes', takenAt: '2026-09-24 10:00:00' },
+          questionCount: 40,
+        }),
+      },
+    });
+    renderWithIntl(<SettingsPage />);
+    expect(await screen.findByText('Best result: B1 (24 of 120 points, 2026-09-24)')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Retake the placement test' })).toHaveAttribute('href', '/placement');
+  });
+
+  it('offers the placement test when it was never taken', async () => {
+    stubFetch({ 'GET /api/placement': { ok: true, json: async () => ({ best: null, questionCount: 40 }) } });
+    renderWithIntl(<SettingsPage />);
+    expect(await screen.findByText('You have not taken the placement test yet.')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Take the placement test' })).toBeInTheDocument();
+  });
+
+  it('shows an error when the profile cannot be loaded', async () => {
+    stubFetch({ 'GET /api/profile': { ok: false, status: 500, json: async () => ({}) } });
+    renderWithIntl(<SettingsPage />);
+    await waitFor(() =>
+      expect(screen.getByRole('alert')).toHaveTextContent('Could not load your settings. Please reload the page.')
+    );
   });
 });

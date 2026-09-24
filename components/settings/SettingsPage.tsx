@@ -2,10 +2,15 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import type { ProviderConnection, Profile, ProviderType } from '@/lib/types';
+import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
+import type { ProviderConnection, Profile, ProviderType, Track } from '@/lib/types';
 import type { ModelInfo } from '@/lib/providers/types';
+import type { PlacementBestResult } from '@/lib/tutoring/placementTypes';
+import { levelsUpTo } from '@/lib/tutoring/levels';
 
 const PROVIDER_TYPES: ProviderType[] = ['anthropic', 'openai', 'gemini', 'ollama'];
+const TRACKS: Track[] = ['generic', 'telc', 'goethe'];
 const USAGE_WINDOW_DAYS = 7;
 
 interface UsageTotals {
@@ -14,7 +19,15 @@ interface UsageTotals {
 }
 
 export function SettingsPage() {
+  const router = useRouter();
+  const t = useTranslations('settings');
+  const tTracks = useTranslations('tracks');
+  const tCommon = useTranslations('common');
   const [profile, setProfile] = useState<Profile | null>(null);
+  const [loadFailed, setLoadFailed] = useState(false);
+  const [profileError, setProfileError] = useState<string | null>(null);
+  const [placementBest, setPlacementBest] = useState<PlacementBestResult | null | undefined>(undefined);
+  const [placementFailed, setPlacementFailed] = useState(false);
   const [connections, setConnections] = useState<ProviderConnection[]>([]);
   const [usage, setUsage] = useState<Record<number, UsageTotals>>({});
   const [confirmingReset, setConfirmingReset] = useState(false);
@@ -30,7 +43,19 @@ export function SettingsPage() {
   const [modelsError, setModelsError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch('/api/profile').then((r) => r.json()).then(setProfile);
+    fetch('/api/profile')
+      .then(async (res) => {
+        if (!res.ok) throw new Error(String(res.status));
+        setProfile(await res.json());
+      })
+      .catch(() => setLoadFailed(true));
+    fetch('/api/placement')
+      .then(async (res) => {
+        if (!res.ok) throw new Error(String(res.status));
+        const data = await res.json();
+        setPlacementBest(data.best ?? null);
+      })
+      .catch(() => setPlacementFailed(true));
     fetch('/api/providers').then((r) => r.json()).then(setConnections);
   }, []);
 
@@ -115,7 +140,7 @@ export function SettingsPage() {
     });
     setAdding(false);
     if (!res.ok) {
-      setAddError('Failed to save provider connection');
+      setAddError(t('saveFailed'));
       return;
     }
     const created = await res.json();
@@ -134,14 +159,14 @@ export function SettingsPage() {
       if (Array.isArray(data)) {
         setNewModels(data);
         setNewSelectedModel(data[0]?.id ?? '');
-        if (data.length === 0) setModelsError('No models reported by this provider');
+        if (data.length === 0) setModelsError(t('noModels'));
       } else {
         setNewModels([]);
-        setModelsError(data?.error ?? 'Could not load models');
+        setModelsError(data?.error ?? t('modelsFailed'));
       }
     } catch {
       setNewModels([]);
-      setModelsError('Could not load models');
+      setModelsError(t('modelsFailed'));
     }
   }
 
@@ -158,12 +183,20 @@ export function SettingsPage() {
   }
 
   async function handleProfileChange(patch: Partial<Profile>) {
+    setProfileError(null);
     const res = await fetch('/api/profile', {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(patch),
     });
-    setProfile(await res.json());
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      setProfileError(t('profileSaveFailed', { error: data.error ?? String(res.status) }));
+      return;
+    }
+    setProfile(data);
+    // The interface language is applied by the server layout, so re-render it.
+    if (patch.uiLanguage) router.refresh();
   }
 
   async function handleExport() {
@@ -187,41 +220,47 @@ export function SettingsPage() {
     window.location.href = '/onboarding';
   }
 
-  if (!profile) return <p>Loading...</p>;
+  if (loadFailed) return <p role="alert">{t('loadFailed')}</p>;
+  if (!profile) return <p>{tCommon('loading')}</p>;
 
   return (
     <div>
       <nav>
-        <Link href="/">Back to home</Link>
+        <Link href="/">{t('backHome')}</Link>
       </nav>
+      {profileError && <p role="alert">{profileError}</p>}
       <section>
-        <h2>Providers</h2>
+        <h2>{t('providers')}</h2>
         <ul>
           {connections.map((c) => (
             <li key={c.id}>
-              {c.providerType} ({c.lastValidatedStatus}){c.selectedModel ? ` — ${c.selectedModel}` : ''}
-              {c.isActive ? ' — active' : ''}
+              {c.providerType} (<span>{t(`connectionStatus.${c.lastValidatedStatus}`)}</span>)
+              {c.selectedModel ? ` — ${c.selectedModel}` : ''}
+              {c.isActive ? ` ${t('activeMarker')}` : ''}
               <button onClick={() => handleSetActive(c.id)} disabled={c.isActive}>
-                Make active
+                {t('makeActive')}
               </button>
-              <button onClick={() => handleRetest(c.id)}>Re-test</button>
-              <button onClick={() => handleDelete(c.id)}>Remove</button>
+              <button onClick={() => handleRetest(c.id)}>{t('retest')}</button>
+              <button onClick={() => handleDelete(c.id)}>{t('remove')}</button>
               <span>
                 {' '}
-                {usage[c.id]?.requestCount ?? 0} requests, {usage[c.id]?.tokenCount ?? 0} tokens (last{' '}
-                {USAGE_WINDOW_DAYS} days)
+                {t('usage', {
+                  requests: String(usage[c.id]?.requestCount ?? 0),
+                  tokens: String(usage[c.id]?.tokenCount ?? 0),
+                  days: String(USAGE_WINDOW_DAYS),
+                })}
               </span>
             </li>
           ))}
         </ul>
 
-        {!showAddProvider && <button onClick={() => setShowAddProvider(true)}>Add provider</button>}
+        {!showAddProvider && <button onClick={() => setShowAddProvider(true)}>{t('addProvider')}</button>}
 
         {showAddProvider && addedConnectionId === null && (
           <div>
-            <h3>Add provider</h3>
+            <h3>{t('addProvider')}</h3>
             <select
-              aria-label="New provider type"
+              aria-label={t('newProviderType')}
               value={newProviderType}
               onChange={(e) => setNewProviderType(e.target.value as ProviderType)}
             >
@@ -235,30 +274,30 @@ export function SettingsPage() {
               <input
                 value={newOllamaHost}
                 onChange={(e) => setNewOllamaHost(e.target.value)}
-                placeholder="Ollama host"
+                placeholder={t('ollamaHost')}
               />
             ) : (
               <input
                 value={newApiKey}
                 onChange={(e) => setNewApiKey(e.target.value)}
-                placeholder="API key"
+                placeholder={t('apiKey')}
                 type="password"
               />
             )}
             <button onClick={handleAddProvider} disabled={adding}>
-              Save provider
+              {t('saveProvider')}
             </button>
-            <button onClick={closeAddProvider}>Cancel</button>
+            <button onClick={closeAddProvider}>{t('cancel')}</button>
             {addError && <p role="alert">{addError}</p>}
           </div>
         )}
 
         {showAddProvider && addedConnectionId !== null && (
           <div>
-            <h3>Choose a model</h3>
+            <h3>{t('chooseModel')}</h3>
             {newModels.length > 0 ? (
               <label>
-                Model
+                {t('model')}
                 <select value={newSelectedModel} onChange={(e) => setNewSelectedModel(e.target.value)}>
                   {newModels.map((m) => (
                     <option key={m.id} value={m.id}>
@@ -268,38 +307,63 @@ export function SettingsPage() {
                 </select>
               </label>
             ) : (
-              <p>{modelsError ?? 'No models available'}</p>
+              <p>{modelsError ?? t('noModelsAvailable')}</p>
             )}
-            <button onClick={handleSaveModel}>Done</button>
+            <button onClick={handleSaveModel}>{t('done')}</button>
           </div>
         )}
       </section>
 
       <section>
-        <h2>Track & level</h2>
+        <h2>{t('trackLevel')}</h2>
         <select
+          aria-label={t('trackLabel')}
           value={profile.activeTrack}
-          onChange={(e) => handleProfileChange({ activeTrack: e.target.value as Profile['activeTrack'] })}
+          onChange={(e) => handleProfileChange({ activeTrack: e.target.value as Track })}
         >
-          <option value="generic">Generic</option>
-          <option value="telc">TELC</option>
-          <option value="goethe">Goethe</option>
-        </select>
-        <select
-          value={profile.activeLevel}
-          onChange={(e) => handleProfileChange({ activeLevel: e.target.value as Profile['activeLevel'] })}
-        >
-          {['A1', 'A2', 'B1', 'B2', 'C1'].map((l) => (
-            <option key={l} value={l}>
-              {l}
+          {TRACKS.map((track) => (
+            <option key={track} value={track}>
+              {tTracks(track)}
             </option>
           ))}
         </select>
+        <select
+          aria-label={t('levelLabel')}
+          value={profile.activeLevel}
+          onChange={(e) => handleProfileChange({ activeLevel: e.target.value as Profile['activeLevel'] })}
+        >
+          {levelsUpTo(profile.highestUnlockedLevel).map((level) => (
+            <option key={level} value={level}>
+              {level}
+            </option>
+          ))}
+        </select>
+        {profile.highestUnlockedLevel !== 'C1' && <p>{t('levelHint', { level: profile.highestUnlockedLevel })}</p>}
       </section>
 
       <section>
-        <h2>Language</h2>
+        <h2>{t('placement')}</h2>
+        {placementFailed && <p role="alert">{t('placementLoadFailed')}</p>}
+        {placementBest === null && <p>{t('placementNone')}</p>}
+        {placementBest && (
+          <p>
+            {t('placementBest', {
+              level: placementBest.placedLevel,
+              score: placementBest.score,
+              max: placementBest.maxScore,
+              date: placementBest.takenAt.slice(0, 10),
+            })}
+          </p>
+        )}
+        {placementBest !== undefined && (
+          <Link href="/placement">{placementBest ? t('placementRetake') : t('placementTake')}</Link>
+        )}
+      </section>
+
+      <section>
+        <h2>{t('language')}</h2>
         <select
+          aria-label={t('language')}
           value={profile.uiLanguage}
           onChange={(e) => handleProfileChange({ uiLanguage: e.target.value as 'en' | 'de' })}
         >
@@ -309,20 +373,20 @@ export function SettingsPage() {
       </section>
 
       <section>
-        <h2>Freestyle mode</h2>
+        <h2>{t('freestyle')}</h2>
         <label>
           <input
             type="checkbox"
             checked={profile.freestyleDefault}
             onChange={(e) => handleProfileChange({ freestyleDefault: e.target.checked })}
           />
-          Default to freestyle mode
+          {t('freestyleDefault')}
         </label>
       </section>
 
       <section>
-        <h2>Backup</h2>
-        <button onClick={handleExport}>Export backup</button>
+        <h2>{t('backup')}</h2>
+        <button onClick={handleExport}>{t('exportBackup')}</button>
         <input
           type="file"
           accept=".gaitbackup"
@@ -331,15 +395,15 @@ export function SettingsPage() {
       </section>
 
       <section>
-        <h2>Danger zone</h2>
+        <h2>{t('dangerZone')}</h2>
         {confirmingReset ? (
           <>
-            <p>This deletes all local data permanently. Are you sure?</p>
-            <button onClick={handleReset}>Yes, reset everything</button>
-            <button onClick={() => setConfirmingReset(false)}>Cancel</button>
+            <p>{t('resetConfirm')}</p>
+            <button onClick={handleReset}>{t('resetYes')}</button>
+            <button onClick={() => setConfirmingReset(false)}>{t('cancel')}</button>
           </>
         ) : (
-          <button onClick={() => setConfirmingReset(true)}>Reset app data</button>
+          <button onClick={() => setConfirmingReset(true)}>{t('reset')}</button>
         )}
       </section>
     </div>
