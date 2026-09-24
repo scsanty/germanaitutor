@@ -2,17 +2,21 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import type { ModelInfo } from '@/lib/providers/types';
+import { PlacementTest } from '@/components/placement/PlacementTest';
 
-type Step = 'welcome' | 'provider' | 'track' | 'language';
+type Step = 'welcome' | 'provider' | 'track' | 'language' | 'placement';
 
 const PROVIDER_TYPES = ['anthropic', 'openai', 'gemini', 'ollama'] as const;
 const TRACKS = ['generic', 'telc', 'goethe'] as const;
-const LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1'] as const;
+const JSON_HEADERS = { 'Content-Type': 'application/json' };
 
-export function OnboardingWizard() {
+export function OnboardingWizard({ initialStep = 'welcome' }: { initialStep?: Step }) {
   const router = useRouter();
-  const [step, setStep] = useState<Step>('welcome');
+  const t = useTranslations('onboarding');
+  const tTracks = useTranslations('tracks');
+  const [step, setStep] = useState<Step>(initialStep);
   const [providerType, setProviderType] = useState<(typeof PROVIDER_TYPES)[number]>('anthropic');
   const [apiKey, setApiKey] = useState('');
   const [ollamaHost, setOllamaHost] = useState('http://localhost:11434');
@@ -23,9 +27,10 @@ export function OnboardingWizard() {
   const [selectedModel, setSelectedModel] = useState('');
   const [modelsError, setModelsError] = useState<string | null>(null);
   const [track, setTrack] = useState<(typeof TRACKS)[number]>('generic');
-  const [level, setLevel] = useState<(typeof LEVELS)[number]>('A1');
   const [uiLanguage, setUiLanguage] = useState<'en' | 'de'>('en');
   const [saving, setSaving] = useState(false);
+  const [choicesError, setChoicesError] = useState<string | null>(null);
+  const [finishError, setFinishError] = useState<string | null>(null);
 
   async function handleConnectAndTest() {
     setSaving(true);
@@ -33,12 +38,12 @@ export function OnboardingWizard() {
     const body = providerType === 'ollama' ? { providerType, ollamaHost } : { providerType, apiKey };
     const createRes = await fetch('/api/providers', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: JSON_HEADERS,
       body: JSON.stringify(body),
     });
     if (!createRes.ok) {
       setSaving(false);
-      setTestError('Failed to save provider connection');
+      setTestError(t('saveFailed'));
       return;
     }
     const created = await createRes.json();
@@ -50,12 +55,12 @@ export function OnboardingWizard() {
       setConnectionId(created.id);
       await fetch('/api/providers/active', {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
+        headers: JSON_HEADERS,
         body: JSON.stringify({ id: created.id }),
       });
       await loadModels(created.id);
     } else {
-      setTestError(result.error ?? 'Connection failed');
+      setTestError(result.error ?? t('connectionFailed'));
     }
   }
 
@@ -70,14 +75,14 @@ export function OnboardingWizard() {
       if (Array.isArray(data)) {
         setModels(data);
         setSelectedModel(data[0]?.id ?? '');
-        if (data.length === 0) setModelsError('No models reported by this provider');
+        if (data.length === 0) setModelsError(t('noModels'));
       } else {
         setModels([]);
-        setModelsError(data?.error ?? 'Could not load models');
+        setModelsError(data?.error ?? t('modelsFailed'));
       }
     } catch {
       setModels([]);
-      setModelsError('Could not load models');
+      setModelsError(t('modelsFailed'));
     }
   }
 
@@ -85,27 +90,60 @@ export function OnboardingWizard() {
     if (connectionId !== null && selectedModel) {
       await fetch(`/api/providers/${connectionId}`, {
         method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
+        headers: JSON_HEADERS,
         body: JSON.stringify({ selectedModel }),
       });
     }
     setStep('track');
   }
 
-  async function handleFinish() {
-    await fetch('/api/profile', {
+  // Saved before the placement test so leaving mid-test can resume there.
+  async function handleLanguageNext() {
+    setSaving(true);
+    setChoicesError(null);
+    const res = await fetch('/api/profile', {
       method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ activeTrack: track, activeLevel: level, uiLanguage, onboardingComplete: true }),
+      headers: JSON_HEADERS,
+      body: JSON.stringify({ activeTrack: track, uiLanguage, onboardingChoicesSaved: true }),
     });
+    setSaving(false);
+    if (!res.ok) {
+      setChoicesError(t('saveChoicesFailed'));
+      return;
+    }
+    router.refresh();
+    setStep('placement');
+  }
+
+  async function finishOnboarding() {
+    setFinishError(null);
+    const res = await fetch('/api/profile', {
+      method: 'PATCH',
+      headers: JSON_HEADERS,
+      body: JSON.stringify({ onboardingComplete: true }),
+    });
+    if (!res.ok) {
+      setFinishError(t('finishFailed'));
+      return;
+    }
     router.push('/');
+  }
+
+  async function skipPlacement() {
+    setFinishError(null);
+    const res = await fetch('/api/placement/skip', { method: 'POST' });
+    if (!res.ok) {
+      setFinishError(t('finishFailed'));
+      return;
+    }
+    await finishOnboarding();
   }
 
   if (step === 'welcome') {
     return (
       <div>
-        <h1>Welcome to German AI Tutor</h1>
-        <button onClick={() => setStep('provider')}>Get started</button>
+        <h1>{t('welcomeTitle')}</h1>
+        <button onClick={() => setStep('provider')}>{t('getStarted')}</button>
       </div>
     );
   }
@@ -113,8 +151,12 @@ export function OnboardingWizard() {
   if (step === 'provider') {
     return (
       <div>
-        <h2>Connect an AI provider</h2>
-        <select value={providerType} onChange={(e) => setProviderType(e.target.value as typeof providerType)}>
+        <h2>{t('providerTitle')}</h2>
+        <select
+          aria-label={t('providerType')}
+          value={providerType}
+          onChange={(e) => setProviderType(e.target.value as typeof providerType)}
+        >
           {PROVIDER_TYPES.map((p) => (
             <option key={p} value={p}>
               {p}
@@ -122,18 +164,18 @@ export function OnboardingWizard() {
           ))}
         </select>
         {providerType === 'ollama' ? (
-          <input value={ollamaHost} onChange={(e) => setOllamaHost(e.target.value)} placeholder="Ollama host" />
+          <input value={ollamaHost} onChange={(e) => setOllamaHost(e.target.value)} placeholder={t('ollamaHost')} />
         ) : (
-          <input value={apiKey} onChange={(e) => setApiKey(e.target.value)} placeholder="API key" type="password" />
+          <input value={apiKey} onChange={(e) => setApiKey(e.target.value)} placeholder={t('apiKey')} type="password" />
         )}
         <button onClick={handleConnectAndTest} disabled={saving}>
-          Test connection
+          {t('testConnection')}
         </button>
         {testError && <p role="alert">{testError}</p>}
-        {validated && <p>Connected!</p>}
+        {validated && <p>{t('connected')}</p>}
         {validated && models.length > 0 && (
           <label>
-            Model
+            {t('model')}
             <select value={selectedModel} onChange={(e) => setSelectedModel(e.target.value)}>
               {models.map((m) => (
                 <option key={m.id} value={m.id}>
@@ -145,7 +187,7 @@ export function OnboardingWizard() {
         )}
         {validated && modelsError && <p>{modelsError}</p>}
         <button onClick={handleProviderNext} disabled={!validated}>
-          Next
+          {t('next')}
         </button>
       </div>
     );
@@ -154,34 +196,43 @@ export function OnboardingWizard() {
   if (step === 'track') {
     return (
       <div>
-        <h2>Choose your track and level</h2>
-        <select value={track} onChange={(e) => setTrack(e.target.value as typeof track)}>
-          {TRACKS.map((t) => (
-            <option key={t} value={t}>
-              {t}
+        <h2>{t('trackTitle')}</h2>
+        <select aria-label={t('trackTitle')} value={track} onChange={(e) => setTrack(e.target.value as typeof track)}>
+          {TRACKS.map((trackOption) => (
+            <option key={trackOption} value={trackOption}>
+              {tTracks(trackOption)}
             </option>
           ))}
         </select>
-        <select value={level} onChange={(e) => setLevel(e.target.value as typeof level)}>
-          {LEVELS.map((l) => (
-            <option key={l} value={l}>
-              {l}
-            </option>
-          ))}
+        <button onClick={() => setStep('language')}>{t('next')}</button>
+      </div>
+    );
+  }
+
+  if (step === 'language') {
+    return (
+      <div>
+        <h2>{t('languageTitle')}</h2>
+        <select
+          aria-label={t('languageTitle')}
+          value={uiLanguage}
+          onChange={(e) => setUiLanguage(e.target.value as 'en' | 'de')}
+        >
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
         </select>
-        <button onClick={() => setStep('language')}>Next</button>
+        <button onClick={handleLanguageNext} disabled={saving}>
+          {t('next')}
+        </button>
+        {choicesError && <p role="alert">{choicesError}</p>}
       </div>
     );
   }
 
   return (
     <div>
-      <h2>Choose your interface language</h2>
-      <select value={uiLanguage} onChange={(e) => setUiLanguage(e.target.value as 'en' | 'de')}>
-        <option value="en">English</option>
-        <option value="de">Deutsch</option>
-      </select>
-      <button onClick={handleFinish}>Finish</button>
+      {finishError && <p role="alert">{finishError}</p>}
+      <PlacementTest onFinished={finishOnboarding} onSkip={skipPlacement} />
     </div>
   );
 }
