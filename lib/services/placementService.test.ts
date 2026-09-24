@@ -172,11 +172,12 @@ describe('placementService', () => {
     expect(service.getBestResult()).toMatchObject({ placedLevel: 'C1' });
   });
 
-  it('a first placement never lowers levels already unlocked', async () => {
+  it('a first placement never lowers levels already unlocked, but sets the active level to the placed one', async () => {
     const { service, profiles, exam } = setup();
     profiles.writeLevelState({ highestUnlockedLevel: 'B1', placementStatus: 'skipped' });
-    await answerInOrder(service, exam, 0);
-    expect(profiles.getProfile()).toMatchObject({ highestUnlockedLevel: 'B1', activeLevel: 'B1', placementStatus: 'taken' });
+    const state = await answerInOrder(service, exam, 0);
+    expect(state).toMatchObject({ outcome: { placedLevel: 'A1' } });
+    expect(profiles.getProfile()).toMatchObject({ highestUnlockedLevel: 'B1', activeLevel: 'A1', placementStatus: 'taken' });
   });
 
   it('a first placement clears an unlock notice left from before', async () => {

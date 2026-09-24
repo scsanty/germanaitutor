@@ -1,6 +1,6 @@
 import type Database from 'better-sqlite3';
 import type { Profile, Track, CefrLevel, PlacementStatus } from '../types';
-import { isAtOrBelow } from '../tutoring/levels';
+import { isAtOrBelow, isCefrLevel } from '../tutoring/levels';
 
 interface Row {
   display_name: string;
@@ -65,7 +65,10 @@ export function createProfileService(db: Database.Database) {
   function updateProfile(input: ProfileUpdate): Profile {
     ensureRow();
     const current = getProfile();
-    if (input.activeLevel !== undefined && !isAtOrBelow(input.activeLevel, current.highestUnlockedLevel)) {
+    if (
+      input.activeLevel !== undefined &&
+      (!isCefrLevel(input.activeLevel) || !isAtOrBelow(input.activeLevel, current.highestUnlockedLevel))
+    ) {
       throw new LockedLevelError(`Level ${input.activeLevel} is locked`);
     }
     db.prepare(

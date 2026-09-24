@@ -56,12 +56,12 @@ describe('PlacementTest', () => {
     expect(screen.queryByText('Skip, start at A1')).not.toBeInTheDocument();
   });
 
-  it('starts the test and shows the first question', async () => {
+  it('starts the test and shows the first question, with no progress counter', async () => {
     stubFetch({ '/api/placement/start': () => delayedResponse({ status: 'in_progress', question: MC_QUESTION }) });
     renderWithIntl(<PlacementTest onFinished={vi.fn()} />);
     fireEvent.click(screen.getByText('Start the test'));
     expect(await screen.findByText('Ich ___ Anna.')).toBeInTheDocument();
-    expect(screen.getByText('Question 1 of 3')).toBeInTheDocument();
+    expect(screen.queryByText(/Question \d+ of \d+/)).not.toBeInTheDocument();
   });
 
   it('keeps Submit disabled until an answer is chosen, then sends it and shows the next question', async () => {
@@ -85,7 +85,7 @@ describe('PlacementTest', () => {
     });
   });
 
-  it('keeps the typed answer and shows the error when grading fails', async () => {
+  it('keeps the typed answer and shows the error with a Settings link when grading fails', async () => {
     stubFetch({
       '/api/placement/start': () => delayedResponse({ status: 'in_progress', question: FREE_QUESTION }),
       '/api/placement/answer': () => delayedResponse({ error: 'Anthropic returned 429' }, { ok: false, status: 502 }),
@@ -100,6 +100,31 @@ describe('PlacementTest', () => {
       expect(screen.getByRole('alert')).toHaveTextContent('Your answer could not be graded: Anthropic returned 429')
     );
     expect(screen.getByLabelText('Your answer')).toHaveValue('Ich lerne Deutsch.');
+    expect(screen.getByRole('link', { name: 'Visit Settings' })).toHaveAttribute('href', '/settings');
+  });
+
+  it('clears the previous error as soon as a retry starts', async () => {
+    const answerMock = vi
+      .fn()
+      .mockImplementationOnce(() => delayedResponse({ error: 'Anthropic returned 429' }, { ok: false, status: 502 }))
+      .mockImplementationOnce(() => delayedResponse({ status: 'in_progress', question: FREE_QUESTION }, { ms: 50 }));
+    stubFetch({
+      '/api/placement/start': () => delayedResponse({ status: 'in_progress', question: FREE_QUESTION }),
+      '/api/placement/answer': answerMock,
+    });
+    renderWithIntl(<PlacementTest onFinished={vi.fn()} />);
+    fireEvent.click(screen.getByText('Start the test'));
+    const textarea = await screen.findByLabelText('Your answer');
+    fireEvent.change(textarea, { target: { value: 'Ich lerne Deutsch.' } });
+    fireEvent.click(screen.getByText('Submit answer'));
+    await waitFor(() => expect(screen.getByRole('alert')).toBeInTheDocument());
+
+    fireEvent.click(screen.getByText('Submit answer'));
+    expect(screen.getByText('Checking…')).toBeInTheDocument();
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+
+    // Let the second (delayed) response settle before the test ends.
+    await waitFor(() => expect(screen.queryByText('Checking…')).not.toBeInTheDocument());
   });
 
   it('ends the test with Beyond my knowledge and shows the result', async () => {

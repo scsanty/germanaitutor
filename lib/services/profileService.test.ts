@@ -35,6 +35,13 @@ describe('profileService', () => {
     expect(service.getProfile().activeLevel).toBe('A1');
   });
 
+  it('rejects an unknown activeLevel instead of hitting the SQLite CHECK', () => {
+    const db = createDbClient(':memory:');
+    const service = createProfileService(db);
+    expect(() => service.updateProfile({ activeLevel: 'Z9' as never })).toThrow(LockedLevelError);
+    expect(service.getProfile().activeLevel).toBe('A1');
+  });
+
   it('ignores level-state fields sent through updateProfile', () => {
     const db = createDbClient(':memory:');
     const service = createProfileService(db);

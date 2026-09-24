@@ -42,6 +42,14 @@ describe('/api/profile', () => {
     expect(await res.json()).toEqual({ error: 'Level B2 is locked' });
   });
 
+  it('PATCH rejects an unknown level with 400', async () => {
+    const res = await PATCH(
+      new Request('http://localhost/api/profile', { method: 'PATCH', body: JSON.stringify({ activeLevel: 'Z9' }) })
+    );
+    expect(res.status).toBe(400);
+    expect(await res.json()).toEqual({ error: 'Level Z9 is locked' });
+  });
+
   it('PATCH accepts an unlocked level', async () => {
     createProfileService(getDb()).writeLevelState({ highestUnlockedLevel: 'B2' });
     const res = await PATCH(
