@@ -48,6 +48,15 @@
     "telc": "TELC",
     "goethe": "Goethe"
   },
+  "notices": {
+    "placementPrompt": "Finde dein Niveau: Der Einstufungstest schaltet die passenden Niveaus für dich frei.",
+    "takeTest": "Einstufungstest machen",
+    "skip": "Überspringen und mit A1 beginnen",
+    "unlocked": "{level} freigeschaltet – zu {level} wechseln?",
+    "switch": "Wechseln",
+    "dismiss": "Ausblenden",
+    "error": "Etwas ist schiefgelaufen. Bitte lade die Seite neu."
+  },
   "onboarding": {
     "welcomeTitle": "Willkommen bei German AI Tutor",
     "getStarted": "Los geht’s",
