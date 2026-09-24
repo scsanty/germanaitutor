@@ -31,9 +31,11 @@ function blankContentFor(type: ExerciseType): ExerciseContent {
 export function ExerciseEditor({
   exercises,
   onChange,
+  allowFlashcards = true,
 }: {
   exercises: ExerciseFormEntry[];
   onChange: (exercises: ExerciseFormEntry[]) => void;
+  allowFlashcards?: boolean;
 }) {
   function updateAt(index: number, entry: ExerciseFormEntry) {
     const next = [...exercises];
@@ -46,7 +48,8 @@ export function ExerciseEditor({
   }
 
   function addExercise() {
-    onChange([...exercises, { type: 'flashcard', content: blankContentFor('flashcard') }]);
+    const type: ExerciseType = allowFlashcards ? 'flashcard' : 'multiple_choice';
+    onChange([...exercises, { type, content: blankContentFor(type) }]);
   }
 
   return (
@@ -64,7 +67,7 @@ export function ExerciseEditor({
           >
             <option value="multiple_choice">Multiple choice</option>
             <option value="fill_blank">Fill in the blank</option>
-            <option value="flashcard">Flashcard</option>
+            {(allowFlashcards || exercise.type === 'flashcard') && <option value="flashcard">Flashcard</option>}
             <option value="free_text">Free text</option>
           </select>
 
