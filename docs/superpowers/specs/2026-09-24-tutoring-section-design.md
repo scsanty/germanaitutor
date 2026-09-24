@@ -231,7 +231,7 @@ All AI calls go through the existing provider layer using the active connection,
 
 **Services** (`lib/services/`):
 - `attemptService.ts` — records an attempt, grades it (calling the AI for free text), applies the first-per-day rule, writes completion and seeds review at the moment of completion.
-- `progressService.ts` — tree status per lesson (own and shared completion), prerequisite warnings, level-complete check, and the Daily Queue.
+- `progressService.ts` — tree status per lesson (own and shared completion), prerequisite warnings, locked-level checks, and the Daily Queue.
 - `lessonChatService.ts` — reads and appends the lesson thread, and builds the AI context.
 - `curriculumExportService.ts` — builds seed JSON per track+level.
 - `unlockService.ts` — the level-finished check after each completion, and raising `highest_unlocked_level`.
