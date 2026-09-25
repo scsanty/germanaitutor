@@ -7,10 +7,9 @@ import { useTranslations } from 'next-intl';
 import type { ProviderConnection, Profile, ProviderType, Track } from '@/lib/types';
 import type { ModelInfo } from '@/lib/providers/types';
 import type { PlacementBestResult } from '@/lib/tutoring/placementTypes';
-import { levelsUpTo } from '@/lib/tutoring/levels';
+import { levelsUpTo, TRACKS } from '@/lib/tutoring/levels';
 
 const PROVIDER_TYPES: ProviderType[] = ['anthropic', 'openai', 'gemini', 'ollama'];
-const TRACKS: Track[] = ['generic', 'telc', 'goethe'];
 const USAGE_WINDOW_DAYS = 7;
 
 interface UsageTotals {

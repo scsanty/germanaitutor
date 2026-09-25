@@ -2,14 +2,13 @@
 
 import { useEffect, useState } from 'react';
 import type { Track, CefrLevel } from '@/lib/types';
+import { TRACKS } from '@/lib/tutoring/levels';
 
 export interface ConceptLinkEntry {
   id: string;
   title: string;
   track: Track;
 }
-
-const ALL_TRACKS: Track[] = ['generic', 'telc', 'goethe'];
 
 export function ConceptLinkSection({
   lessonId,
@@ -29,7 +28,7 @@ export function ConceptLinkSection({
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const otherTracks = ALL_TRACKS.filter((t) => t !== track);
+    const otherTracks = TRACKS.filter((t) => t !== track);
     Promise.all(
       otherTracks.map((t) =>
         fetch(`/api/curriculum/tracks/${t}/${sourceLevel}`)

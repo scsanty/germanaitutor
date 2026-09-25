@@ -4,12 +4,13 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import type { ModelInfo } from '@/lib/providers/types';
+import type { Track } from '@/lib/types';
+import { TRACKS } from '@/lib/tutoring/levels';
 import { PlacementTest } from '@/components/placement/PlacementTest';
 
 type Step = 'welcome' | 'provider' | 'track' | 'language' | 'placement';
 
 const PROVIDER_TYPES = ['anthropic', 'openai', 'gemini', 'ollama'] as const;
-const TRACKS = ['generic', 'telc', 'goethe'] as const;
 const JSON_HEADERS = { 'Content-Type': 'application/json' };
 
 export function OnboardingWizard({ initialStep = 'welcome' }: { initialStep?: Step }) {
@@ -26,7 +27,7 @@ export function OnboardingWizard({ initialStep = 'welcome' }: { initialStep?: St
   const [models, setModels] = useState<ModelInfo[]>([]);
   const [selectedModel, setSelectedModel] = useState('');
   const [modelsError, setModelsError] = useState<string | null>(null);
-  const [track, setTrack] = useState<(typeof TRACKS)[number]>('generic');
+  const [track, setTrack] = useState<Track>('generic');
   const [uiLanguage, setUiLanguage] = useState<'en' | 'de'>('en');
   const [saving, setSaving] = useState(false);
   const [choicesError, setChoicesError] = useState<string | null>(null);
@@ -197,7 +198,7 @@ export function OnboardingWizard({ initialStep = 'welcome' }: { initialStep?: St
     return (
       <div>
         <h2>{t('trackTitle')}</h2>
-        <select aria-label={t('trackTitle')} value={track} onChange={(e) => setTrack(e.target.value as typeof track)}>
+        <select aria-label={t('trackTitle')} value={track} onChange={(e) => setTrack(e.target.value as Track)}>
           {TRACKS.map((trackOption) => (
             <option key={trackOption} value={trackOption}>
               {tTracks(trackOption)}

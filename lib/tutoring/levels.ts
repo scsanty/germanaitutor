@@ -1,4 +1,4 @@
-import type { CefrLevel } from '../types';
+import type { CefrLevel, Track } from '../types';
 
 export const LEVELS: readonly CefrLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
 
@@ -24,4 +24,10 @@ export function higherLevel(a: CefrLevel, b: CefrLevel): CefrLevel {
 
 export function levelsUpTo(ceiling: CefrLevel): CefrLevel[] {
   return LEVELS.filter((level) => isAtOrBelow(level, ceiling));
+}
+
+export const TRACKS: readonly Track[] = ['generic', 'telc', 'goethe'];
+
+export function isTrack(value: unknown): value is Track {
+  return typeof value === 'string' && (TRACKS as readonly string[]).includes(value);
 }
