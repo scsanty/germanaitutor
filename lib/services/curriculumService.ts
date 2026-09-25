@@ -139,7 +139,9 @@ export function createCurriculumService(db: Database.Database) {
   }
 
   function getExercises(lessonId: string, _track: Track): Exercise[] {
-    const rows = db.prepare('SELECT * FROM exercises WHERE lesson_id = ?').all(lessonId) as ExerciseRow[];
+    // The order exercises were added: authored order for seeded lessons, admin additions at the
+    // end. Not by id, since text ids put `__ex10` before `__ex2`.
+    const rows = db.prepare('SELECT * FROM exercises WHERE lesson_id = ? ORDER BY rowid').all(lessonId) as ExerciseRow[];
     return rows.map(rowToExercise);
   }
 
