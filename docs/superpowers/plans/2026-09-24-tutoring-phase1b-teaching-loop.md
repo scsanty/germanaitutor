@@ -37,6 +37,8 @@ These settle details the spec leaves open or that implementation showed need a s
 7. **SM-2 constants.** Ease changes by +0.10 (correct), −0.15 (almost), −0.20 (wrong), rounded to two decimals, floor 1.3. Intervals are whole days: 1, then 6, then `round(previous × ease)`. Entering review: first-ever attempt `correct` → repetitions 1, interval 3, due in 3 days; anything else → repetitions 0, interval 1, due tomorrow.
 8. **Practice runs.** Re-opening a completed lesson runs every exercise again; a practice run in progress isn't stored, so leaving restarts it.
 9. **Chat history.** A call sends at most the last 20 messages including the new one, dropping leading assistant messages so the first message is always the learner's (some providers require that).
+10. **Where the first-answer-per-day rule is tested.** The spec lists it among the pure `lib/tutoring` tests. The rule is one database question ("has this exercise been answered today?"), so it lives in `attemptService` and is tested there against a real database (Task 7, "moves the schedule only on the first answer of the day"). The pure part, the SM-2 step it gates, has its own table tests in Task 2.
+11. **"Almost" grows the interval less.** `computeNextReview` applies the lowered ease before computing the interval, so an `almost` answer grows the interval less than a `correct` one, as the spec's Grades section says.
 
 ## File Structure
 
@@ -112,6 +114,7 @@ import { describe, it, expect } from 'vitest';
 import Database from 'better-sqlite3';
 import { createDbClient } from './client';
 import { runMigrations } from './schema';
+import { reconcileExercises } from '../curriculum-admin/exerciseReconciliation';
 
 function seedProgress(db: Database.Database) {
   db.exec(`
@@ -163,6 +166,23 @@ describe('tutoring progress tables', () => {
         )
         .run()
     ).toThrow();
+  });
+});
+
+describe('admin exercise edits', () => {
+  it('editing an exercise in place keeps its attempts and schedule; removing it drops them without failing', () => {
+    const db = createDbClient(':memory:');
+    seedProgress(db);
+    reconcileExercises(db, 'a1-l1', [
+      { id: 'a1-l1__ex1', type: 'fill_blank', content: { textWithBlank: 'Ich ___ hier.', correctAnswer: 'bin' } },
+    ]);
+    expect(count(db, 'lesson_attempts')).toBe(1);
+    expect(count(db, 'exercise_srs_state')).toBe(1);
+
+    reconcileExercises(db, 'a1-l1', []);
+    expect(count(db, 'lesson_attempts')).toBe(0);
+    expect(count(db, 'exercise_srs_state')).toBe(0);
+    expect(count(db, 'lesson_completions')).toBe(1);
   });
 });
 
@@ -4955,7 +4975,7 @@ and to `messages/de.json`, directly after its `tree` namespace:
     "title": "Tägliche Wiederholung",
     "backToTree": "Zurück zu deinen Lektionen",
     "loadFailed": "Die heutigen Wiederholungen konnten nicht geladen werden. Bitte lade die Seite neu.",
-    "remaining": "{count, plural, one {Heute noch # Wiederholung} other {Heute noch # Wiederholungen}}",
+    "remaining": "Heute noch {count, plural, one {# Wiederholung} other {# Wiederholungen}}",
     "fromLesson": "Aus der Lektion: {lesson}",
     "thisReview": "diese Wiederholung",
     "allDone": "Für heute ist alles erledigt. Gut gemacht!",
@@ -6097,6 +6117,7 @@ git commit -m "feat: offer the unlocked level after a retake and restart a lost 
 |---|---|
 | Data model: attempts, completions, SRS state, chat, `daily_review_cap` | Task 1 (see Refinement 1) |
 | Grades table, flashcard self-assessment buttons | Tasks 7, 10 |
+| Admin content changes: delete cascades, edit in place keeps progress, a new exercise doesn't reopen a completion | Task 1 (cascades, editor edits), Task 7 (sticky completion, seeding a late exercise) |
 | Completion rule, sticky completion, "Mark as done", exercise-less lessons | Tasks 3, 7, 12 |
 | Shared completion via concept links (display-only) | Task 5 (tree, warnings, level finished), Task 6 (suggested next) |
 | Simplified SM-2, entering review, first answer per day, local days | Tasks 2, 7 |
