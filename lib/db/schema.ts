@@ -87,6 +87,16 @@ function migrateProfileLevelColumns(db: Database.Database): void {
   `);
 }
 
+/**
+ * Adds the Daily Queue's per-day review limit to a profile created before the teaching loop.
+ * Fresh databases already have the column.
+ */
+function migrateDailyReviewCap(db: Database.Database): void {
+  const columns = db.prepare('PRAGMA table_info(profile)').all() as { name: string }[];
+  if (columns.some((c) => c.name === 'daily_review_cap')) return;
+  db.exec('ALTER TABLE profile ADD COLUMN daily_review_cap INTEGER NOT NULL DEFAULT 50 CHECK (daily_review_cap BETWEEN 1 AND 500)');
+}
+
 export function runMigrations(db: Database.Database): void {
   // Wrapped in one transaction so a concurrent connection (e.g. a parallel `next build`
   // static-page-data worker also calling getDb()) never observes the mid-migration state
@@ -96,6 +106,7 @@ export function runMigrations(db: Database.Database): void {
     createTablesIfMissing(db);
     migrateConceptIdAndPlacementUniqueness(db);
     migrateProfileLevelColumns(db);
+    migrateDailyReviewCap(db);
   });
   migrate();
 }
@@ -114,6 +125,7 @@ function createTablesIfMissing(db: Database.Database): void {
       placement_status TEXT NOT NULL DEFAULT 'pending' CHECK (placement_status IN ('pending','skipped','taken')),
       unlock_notice_level TEXT CHECK (unlock_notice_level IN ('A2','B1','B2','C1')),
       onboarding_choices_saved INTEGER NOT NULL DEFAULT 0,
+      daily_review_cap INTEGER NOT NULL DEFAULT 50 CHECK (daily_review_cap BETWEEN 1 AND 500),
       updated_at TEXT NOT NULL DEFAULT (datetime('now'))
     );
 
@@ -258,5 +270,43 @@ function createTablesIfMissing(db: Database.Database): void {
       stop_reason TEXT NOT NULL CHECK (stop_reason IN ('beyond_my_knowledge','five_mistakes','finished')),
       taken_at TEXT NOT NULL
     );
+
+    CREATE TABLE IF NOT EXISTS lesson_attempts (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      exercise_id TEXT NOT NULL REFERENCES exercises(id) ON DELETE CASCADE,
+      lesson_id TEXT NOT NULL REFERENCES lessons(id) ON DELETE CASCADE,
+      source TEXT NOT NULL CHECK (source IN ('lesson','queue')),
+      result TEXT NOT NULL CHECK (result IN ('correct','almost','wrong')),
+      answer_text TEXT,
+      ai_feedback TEXT,
+      answered_at TEXT NOT NULL,
+      answered_on TEXT NOT NULL
+    );
+    CREATE INDEX IF NOT EXISTS idx_lesson_attempts_exercise ON lesson_attempts(exercise_id);
+    CREATE INDEX IF NOT EXISTS idx_lesson_attempts_lesson ON lesson_attempts(lesson_id);
+
+    CREATE TABLE IF NOT EXISTS lesson_completions (
+      lesson_id TEXT PRIMARY KEY REFERENCES lessons(id) ON DELETE CASCADE,
+      completed_at TEXT NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS exercise_srs_state (
+      exercise_id TEXT PRIMARY KEY REFERENCES exercises(id) ON DELETE CASCADE,
+      repetitions INTEGER NOT NULL DEFAULT 0,
+      ease_factor REAL NOT NULL DEFAULT 2.5,
+      interval_days REAL NOT NULL DEFAULT 0,
+      next_due_at TEXT NOT NULL,
+      updated_at TEXT NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS lesson_chat_messages (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      lesson_id TEXT NOT NULL REFERENCES lessons(id) ON DELETE CASCADE,
+      exercise_id TEXT REFERENCES exercises(id) ON DELETE SET NULL,
+      role TEXT NOT NULL CHECK (role IN ('user','assistant')),
+      content TEXT NOT NULL,
+      created_at TEXT NOT NULL
+    );
+    CREATE INDEX IF NOT EXISTS idx_lesson_chat_lesson ON lesson_chat_messages(lesson_id);
   `);
 }

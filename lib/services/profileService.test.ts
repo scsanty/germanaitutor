@@ -1,7 +1,7 @@
 // lib/services/profileService.test.ts
 import { describe, it, expect } from 'vitest';
 import { createDbClient } from '../db/client';
-import { createProfileService, LockedLevelError } from './profileService';
+import { createProfileService, LockedLevelError, ProfileUpdateError } from './profileService';
 
 describe('profileService', () => {
   it('returns default profile values before any update', () => {
@@ -73,5 +73,20 @@ describe('profileService', () => {
     const db = createDbClient(':memory:');
     const service = createProfileService(db);
     expect(service.updateProfile({ onboardingChoicesSaved: true }).onboardingChoicesSaved).toBe(true);
+  });
+
+  it('stores a daily review limit and rejects values outside 1–500', () => {
+    const service = createProfileService(createDbClient(':memory:'));
+    expect(service.getProfile().dailyReviewCap).toBe(50);
+    expect(service.updateProfile({ dailyReviewCap: 120 }).dailyReviewCap).toBe(120);
+    for (const bad of [0, 501, 2.5]) {
+      expect(() => service.updateProfile({ dailyReviewCap: bad })).toThrow(ProfileUpdateError);
+    }
+    expect(service.getProfile().dailyReviewCap).toBe(120);
+  });
+
+  it('treats a locked level as a profile update error', () => {
+    const service = createProfileService(createDbClient(':memory:'));
+    expect(() => service.updateProfile({ activeLevel: 'B2' })).toThrow(ProfileUpdateError);
   });
 });

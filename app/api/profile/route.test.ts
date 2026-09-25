@@ -58,4 +58,16 @@ describe('/api/profile', () => {
     expect(res.status).toBe(200);
     expect((await res.json()).activeLevel).toBe('B2');
   });
+
+  it('PATCH returns 400 for an invalid daily review limit', async () => {
+    const res = await PATCH(new Request('http://localhost', { method: 'PATCH', body: JSON.stringify({ dailyReviewCap: 0 }) }));
+    expect(res.status).toBe(400);
+    expect(await res.json()).toEqual({ error: 'The daily review limit must be a whole number from 1 to 500' });
+  });
+
+  it('PATCH saves a valid daily review limit', async () => {
+    const res = await PATCH(new Request('http://localhost', { method: 'PATCH', body: JSON.stringify({ dailyReviewCap: 25 }) }));
+    expect(res.status).toBe(200);
+    expect((await res.json()).dailyReviewCap).toBe(25);
+  });
 });
