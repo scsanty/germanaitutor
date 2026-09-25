@@ -1,11 +1,12 @@
 import type Database from 'better-sqlite3';
 import type { CefrLevel, Track } from '../types';
-import type { Skill } from '../curriculum/types';
+import type { ExerciseType, Skill } from '../curriculum/types';
 import { unsortedMilestoneId } from '../curriculum-admin/unsortedBucket';
 import { lessonStatus } from '../tutoring/completion';
 import { toExerciseView } from '../tutoring/exerciseView';
 import { isAtOrBelow, LEVELS, levelIndex } from '../tutoring/levels';
-import type { CurriculumTree, LessonView, TreeLesson } from '../tutoring/progressTypes';
+import type { CurriculumTree, DailyQueue, LessonView, TreeLesson } from '../tutoring/progressTypes';
+import { remainingReviews, selectDueItems, suggestNextLesson } from '../tutoring/queue';
 import { createCurriculumService } from './curriculumService';
 import { createProfileService } from './profileService';
 
@@ -19,6 +20,16 @@ interface VisibleLessonRow {
 interface DoneState {
   completed: Set<string>;
   coveredVia: Map<string, Track>;
+}
+
+interface DueRow {
+  id: string;
+  lesson_id: string;
+  track: Track | null;
+  type: ExerciseType;
+  content: string;
+  lesson_title: string;
+  next_due_at: string;
 }
 
 export function createProgressService(db: Database.Database) {
@@ -184,7 +195,71 @@ export function createProgressService(db: Database.Database) {
     };
   }
 
-  return { getTree, getLessonView, isLevelFinished, isCompleted, passedExerciseIds };
+  // Spec: Pages and Navigation, `/queue`. Reviews follow what was learned, not where it's
+  // filed, so lessons an admin moved into Unsorted still count.
+  function getDailyQueue(today: string): DailyQueue {
+    const { activeTrack: track, activeLevel: level, dailyReviewCap: cap } = profiles.getProfile();
+    const answeredToday = (
+      db.prepare(`SELECT COUNT(*) AS n FROM lesson_attempts WHERE source = 'queue' AND answered_on = ?`).get(today) as {
+        n: number;
+      }
+    ).n;
+    const rows = db
+      .prepare(
+        `SELECT e.id, e.lesson_id, e.track, e.type, e.content, l.title AS lesson_title, st.next_due_at
+         FROM exercise_srs_state st
+         JOIN exercises e ON e.id = st.exercise_id
+         JOIN lessons l ON l.id = e.lesson_id
+         JOIN lesson_placements p ON p.lesson_id = l.id
+         JOIN sections s ON s.id = p.section_id
+         JOIN milestones m ON m.id = s.milestone_id
+         WHERE m.track = ? AND m.level = ? AND st.next_due_at <= ?
+           AND NOT EXISTS (
+             SELECT 1 FROM lesson_attempts a WHERE a.exercise_id = e.id AND a.source = 'queue' AND a.answered_on = ?
+           )
+         ORDER BY st.next_due_at, m.order_index, s.order_index, p.order_index, e.rowid`
+      )
+      .all(track, level, today, today) as DueRow[];
+    const due = selectDueItems(
+      rows.map((row) => ({ ...row, exerciseId: row.id, nextDueAt: row.next_due_at })),
+      today,
+      remainingReviews(cap, answeredToday)
+    );
+
+    const done = loadDoneState();
+    const prerequisites = prerequisitesByLesson();
+    const lessons = visibleLessons(track, level);
+    const suggestedId = suggestNextLesson(
+      lessons.map((lesson) => ({
+        id: lesson.id,
+        done: isDone(done, lesson.id),
+        prerequisiteIds: (prerequisites.get(lesson.id) ?? []).map((p) => p.id),
+      })),
+      new Set([...done.completed, ...done.coveredVia.keys()])
+    );
+    const suggested = lessons.find((lesson) => lesson.id === suggestedId);
+
+    return {
+      track,
+      level,
+      cap,
+      answeredToday,
+      items: due.map((row) => ({
+        lessonId: row.lesson_id,
+        lessonTitle: row.lesson_title,
+        exercise: toExerciseView({
+          id: row.id,
+          lessonId: row.lesson_id,
+          track: row.track,
+          type: row.type,
+          content: JSON.parse(row.content),
+        }),
+      })),
+      suggestedLesson: suggested ? { id: suggested.id, title: suggested.title } : null,
+    };
+  }
+
+  return { getTree, getLessonView, isLevelFinished, isCompleted, passedExerciseIds, getDailyQueue };
 }
 
 export type ProgressService = ReturnType<typeof createProgressService>;
