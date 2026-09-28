@@ -2,6 +2,7 @@ import { describe, it, expect, vi } from 'vitest';
 import { screen, fireEvent, waitFor } from '@testing-library/react';
 import { renderWithIntl } from '@/test/renderWithIntl';
 import { delayedResponse } from '@/test/delayedResponse';
+import { CHAT_MESSAGE_MAX_LENGTH } from '@/lib/tutoring/lessonChat';
 import { LessonChat } from './LessonChat';
 
 const URL = '/api/tutoring/lessons/a1-greet/chat';
@@ -87,6 +88,17 @@ describe('LessonChat', () => {
     stubFetch({ [`GET ${URL}`]: () => delayedResponse({}, { ok: false, status: 500 }) });
     renderChat();
     expect(await screen.findByRole('alert')).toHaveTextContent('Could not load the chat.');
+  });
+
+  // M-8: the server rejects messages over CHAT_MESSAGE_MAX_LENGTH with an English 400; cap the
+  // textarea client-side so the student sees it before sending.
+  it('caps the message textarea at the server limit', async () => {
+    stubFetch({ [`GET ${URL}`]: () => delayedResponse({ messages: [], aiAvailable: true }) });
+    renderChat();
+    expect(await screen.findByLabelText('Your message')).toHaveAttribute(
+      'maxLength',
+      String(CHAT_MESSAGE_MAX_LENGTH)
+    );
   });
 
   it('labels who wrote each message', async () => {

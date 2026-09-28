@@ -3,6 +3,7 @@ import { screen, fireEvent, waitFor } from '@testing-library/react';
 import { renderWithIntl } from '@/test/renderWithIntl';
 import { delayedResponse } from '@/test/delayedResponse';
 import type { ExerciseView } from '@/lib/tutoring/exerciseView';
+import type { AttemptSource } from '@/lib/tutoring/lessonAnswers';
 import { ExerciseCard } from './ExerciseCard';
 
 const MC: ExerciseView = { id: 'ex1', type: 'multiple_choice', question: 'How do you greet someone?', options: ['Hallo', 'Tschüss'] };
@@ -32,9 +33,9 @@ function stubAttempts(...responses: (() => Promise<unknown>)[]) {
   return fetchMock;
 }
 
-function renderCard(exercise: ExerciseView) {
+function renderCard(exercise: ExerciseView, source: AttemptSource = 'lesson') {
   const props = { onAnswered: vi.fn(), onNext: vi.fn(), onSkip: vi.fn(), onAskAi: vi.fn() };
-  renderWithIntl(<ExerciseCard exercise={exercise} source="lesson" {...props} />);
+  renderWithIntl(<ExerciseCard exercise={exercise} source={source} {...props} />);
   return props;
 }
 
@@ -120,5 +121,20 @@ describe('ExerciseCard', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Check' }));
     expect(await screen.findByRole('alert')).toHaveTextContent('Something went wrong: Level A2 is locked');
     await waitFor(() => expect(screen.getByRole('button', { name: 'Check' })).not.toBeDisabled());
+    // In a lesson run, a generic error has no "skip"; the retry round already handles that.
+    expect(screen.queryByRole('button', { name: 'Skip for now' })).not.toBeInTheDocument();
+  });
+
+  // M-4: on the Daily Queue there is no retry round, so a non-grading error (a 403, a deleted
+  // exercise, a network drop) must not strand the student with only a disabled path forward.
+  it('offers Skip for any error on the Daily Queue, not only a grading failure', async () => {
+    stubAttempts(() => delayedResponse({ error: 'Level A2 is locked' }, { ok: false, status: 403 }));
+    const props = renderCard(MC, 'queue');
+    fireEvent.click(screen.getByLabelText('Hallo'));
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }));
+
+    expect(await screen.findByRole('alert')).toHaveTextContent('Something went wrong: Level A2 is locked');
+    fireEvent.click(screen.getByRole('button', { name: 'Skip for now' }));
+    expect(props.onSkip).toHaveBeenCalled();
   });
 });

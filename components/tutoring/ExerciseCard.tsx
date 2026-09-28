@@ -178,7 +178,9 @@ export function ExerciseCard({ exercise, source, onAnswered, onNext, onSkip, onA
       <button type="button" disabled={busy || answer === null} onClick={() => answer && submit(answer)}>
         {busy ? t('submitting') : t('submit')}
       </button>
-      {gradingError && (
+      {/* M-4: a lesson run has its own retry round for a plain error, but the Daily Queue does
+          not, so any error there — not only a grading failure — needs a way forward. */}
+      {(gradingError || (source === 'queue' && error)) && (
         <button type="button" onClick={onSkip}>
           {t('skipForNow')}
         </button>

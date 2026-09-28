@@ -3,7 +3,7 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
-import type { ChatMessageView } from '@/lib/tutoring/lessonChat';
+import { CHAT_MESSAGE_MAX_LENGTH, type ChatMessageView } from '@/lib/tutoring/lessonChat';
 
 export interface AskAbout {
   exerciseId: string;
@@ -114,6 +114,7 @@ export function LessonChat({ lessonId, open, onToggle, askAbout, onClearAskAbout
             aria-label={t('messageLabel')}
             value={draft}
             disabled={!aiAvailable || busy}
+            maxLength={CHAT_MESSAGE_MAX_LENGTH}
             onChange={(e) => setDraft(e.target.value)}
           />
           <button type="button" disabled={!aiAvailable || busy || messages === null || !draft.trim()} onClick={send}>
