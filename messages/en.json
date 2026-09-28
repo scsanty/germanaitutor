@@ -164,7 +164,8 @@
     "trackTitle": "Choose your track",
     "languageTitle": "Choose your interface language",
     "saveChoicesFailed": "Could not save your choices. Please try again.",
-    "finishFailed": "Could not finish setup. Please try again."
+    "finishFailed": "Could not finish setup. Please try again.",
+    "modelSaveFailed": "Could not save the model. Please try again."
   },
   "settings": {
     "backHome": "Back to home",
@@ -202,6 +203,13 @@
     "dailyReviewLimit": "Daily review limit",
     "dailyReviewHint": "How many reviews the daily review shows per day (1–500). The rest wait until tomorrow.",
     "dailyReviewInvalid": "Enter a whole number from 1 to 500.",
+    "providersLoadFailed": "Could not load your AI providers.",
+    "actionFailed": "Could not complete that: {error}",
+    "modelSaveFailed": "Could not save the model. Please try again.",
+    "exportFailed": "Could not export the backup. Please try again.",
+    "importFailed": "Could not restore the backup: {error}",
+    "importDone": "Backup restored. Reload the page to see the restored data.",
+    "resetFailed": "Could not reset the app data. Please try again.",
     "profileSaveFailed": "Could not save this setting: {error}",
     "placement": "Placement test",
     "placementBest": "Best result: {level} ({score} of {max} points, {date})",

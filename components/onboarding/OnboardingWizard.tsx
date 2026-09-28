@@ -32,36 +32,49 @@ export function OnboardingWizard({ initialStep = 'welcome' }: { initialStep?: St
   const [saving, setSaving] = useState(false);
   const [choicesError, setChoicesError] = useState<string | null>(null);
   const [finishError, setFinishError] = useState<string | null>(null);
+  const [providerNextError, setProviderNextError] = useState<string | null>(null);
 
   async function handleConnectAndTest() {
     setSaving(true);
     setTestError(null);
-    const body = providerType === 'ollama' ? { providerType, ollamaHost } : { providerType, apiKey };
-    const createRes = await fetch('/api/providers', {
-      method: 'POST',
-      headers: JSON_HEADERS,
-      body: JSON.stringify(body),
-    });
-    if (!createRes.ok) {
-      setSaving(false);
-      setTestError(t('saveFailed'));
-      return;
-    }
-    const created = await createRes.json();
-    const testRes = await fetch(`/api/providers/${created.id}/test`, { method: 'POST' });
-    const result = await testRes.json();
-    setSaving(false);
-    if (result.ok) {
-      setValidated(true);
-      setConnectionId(created.id);
-      await fetch('/api/providers/active', {
+    try {
+      const body = providerType === 'ollama' ? { providerType, ollamaHost } : { providerType, apiKey };
+      const createRes = await fetch('/api/providers', {
+        method: 'POST',
+        headers: JSON_HEADERS,
+        body: JSON.stringify(body),
+      });
+      if (!createRes.ok) {
+        setTestError(t('saveFailed'));
+        return;
+      }
+      const created = await createRes.json();
+      const testRes = await fetch(`/api/providers/${created.id}/test`, { method: 'POST' });
+      if (!testRes.ok) {
+        setTestError(t('connectionFailed'));
+        return;
+      }
+      const result = await testRes.json();
+      if (!result.ok) {
+        setTestError(result.error ?? t('connectionFailed'));
+        return;
+      }
+      const activeRes = await fetch('/api/providers/active', {
         method: 'PUT',
         headers: JSON_HEADERS,
         body: JSON.stringify({ id: created.id }),
       });
+      if (!activeRes.ok) {
+        setTestError(t('saveFailed'));
+        return;
+      }
+      setValidated(true);
+      setConnectionId(created.id);
       await loadModels(created.id);
-    } else {
-      setTestError(result.error ?? t('connectionFailed'));
+    } catch {
+      setTestError(t('connectionFailed'));
+    } finally {
+      setSaving(false);
     }
   }
 
@@ -88,12 +101,19 @@ export function OnboardingWizard({ initialStep = 'welcome' }: { initialStep?: St
   }
 
   async function handleProviderNext() {
+    setProviderNextError(null);
     if (connectionId !== null && selectedModel) {
-      await fetch(`/api/providers/${connectionId}`, {
-        method: 'PATCH',
-        headers: JSON_HEADERS,
-        body: JSON.stringify({ selectedModel }),
-      });
+      try {
+        const res = await fetch(`/api/providers/${connectionId}`, {
+          method: 'PATCH',
+          headers: JSON_HEADERS,
+          body: JSON.stringify({ selectedModel }),
+        });
+        if (!res.ok) throw new Error(String(res.status));
+      } catch {
+        setProviderNextError(t('modelSaveFailed'));
+        return;
+      }
     }
     setStep('track');
   }
@@ -190,6 +210,7 @@ export function OnboardingWizard({ initialStep = 'welcome' }: { initialStep?: St
         <button onClick={handleProviderNext} disabled={!validated}>
           {t('next')}
         </button>
+        {providerNextError && <p role="alert">{providerNextError}</p>}
       </div>
     );
   }

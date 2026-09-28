@@ -279,4 +279,55 @@ describe('SettingsPage', () => {
     expect(await screen.findByRole('alert')).toHaveTextContent('Enter a whole number from 1 to 500.');
     expect(fetchMock.mock.calls.some(([, init]) => (init as RequestInit | undefined)?.method === 'PATCH')).toBe(false);
   });
+
+  const CONNECTION = {
+    id: 3,
+    providerType: 'ollama',
+    label: null,
+    ollamaHost: 'http://localhost:11434',
+    selectedModel: 'llama',
+    isActive: false,
+    lastValidatedStatus: 'valid',
+    lastValidatedAt: null,
+    lastError: null,
+    createdAt: '',
+  };
+
+  it('shows an error when a provider action fails', async () => {
+    stubFetch({
+      'GET /api/providers': { ok: true, json: async () => [CONNECTION] },
+      'PUT /api/providers/active': { ok: false, status: 500, json: async () => ({ error: 'boom' }) },
+    });
+    renderWithIntl(<SettingsPage />);
+    fireEvent.click(await screen.findByText('Make active'));
+    expect(await screen.findByRole('alert')).toHaveTextContent('Could not complete that: boom');
+  });
+
+  it('shows an error when the providers cannot load', async () => {
+    stubFetch({ 'GET /api/providers': { ok: false, status: 500, json: async () => ({}) } });
+    renderWithIntl(<SettingsPage />);
+    expect(await screen.findByRole('alert')).toHaveTextContent('Could not load your AI providers.');
+  });
+
+  it('confirms a restored backup, and says why a restore failed', async () => {
+    stubFetch({ 'POST /api/backup/import': { ok: true, json: async () => ({ ok: true }) } });
+    const { container } = renderWithIntl(<SettingsPage />);
+    await screen.findByText('Export backup');
+    const input = container.querySelector('input[type="file"]') as HTMLInputElement;
+
+    fireEvent.change(input, { target: { files: [new File(['x'], 'backup.gaitbackup')] } });
+    expect(await screen.findByText('Backup restored. Reload the page to see the restored data.')).toBeInTheDocument();
+
+    stubFetch({ 'POST /api/backup/import': { ok: false, status: 400, json: async () => ({ error: 'Not a backup file' }) } });
+    fireEvent.change(input, { target: { files: [new File(['y'], 'other.gaitbackup')] } });
+    expect(await screen.findByRole('alert')).toHaveTextContent('Could not restore the backup: Not a backup file');
+  });
+
+  it('shows an error and stays when the reset fails', async () => {
+    stubFetch({ 'POST /api/reset': { ok: false, status: 500, json: async () => ({}) } });
+    renderWithIntl(<SettingsPage />);
+    fireEvent.click(await screen.findByText('Reset app data'));
+    fireEvent.click(screen.getByText('Yes, reset everything'));
+    expect(await screen.findByRole('alert')).toHaveTextContent('Could not reset the app data. Please try again.');
+  });
 });

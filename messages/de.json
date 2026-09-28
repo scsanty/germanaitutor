@@ -164,7 +164,8 @@
     "trackTitle": "Wähle deinen Lernweg",
     "languageTitle": "Wähle die Sprache der Oberfläche",
     "saveChoicesFailed": "Deine Auswahl konnte nicht gespeichert werden. Bitte versuche es noch einmal.",
-    "finishFailed": "Die Einrichtung konnte nicht abgeschlossen werden. Bitte versuche es noch einmal."
+    "finishFailed": "Die Einrichtung konnte nicht abgeschlossen werden. Bitte versuche es noch einmal.",
+    "modelSaveFailed": "Das Modell konnte nicht gespeichert werden. Bitte versuch es noch einmal."
   },
   "settings": {
     "backHome": "Zurück zur Startseite",
@@ -202,6 +203,13 @@
     "dailyReviewLimit": "Tageslimit für Wiederholungen",
     "dailyReviewHint": "So viele Wiederholungen zeigt die tägliche Wiederholung pro Tag (1–500). Der Rest wartet bis morgen.",
     "dailyReviewInvalid": "Gib eine ganze Zahl von 1 bis 500 ein.",
+    "providersLoadFailed": "Deine KI-Anbieter konnten nicht geladen werden.",
+    "actionFailed": "Das hat nicht geklappt: {error}",
+    "modelSaveFailed": "Das Modell konnte nicht gespeichert werden. Bitte versuch es noch einmal.",
+    "exportFailed": "Die Sicherung konnte nicht exportiert werden. Bitte versuch es noch einmal.",
+    "importFailed": "Die Sicherung konnte nicht wiederhergestellt werden: {error}",
+    "importDone": "Sicherung wiederhergestellt. Lade die Seite neu, um die Daten zu sehen.",
+    "resetFailed": "Die App-Daten konnten nicht zurückgesetzt werden. Bitte versuch es noch einmal.",
     "profileSaveFailed": "Diese Einstellung konnte nicht gespeichert werden: {error}",
     "placement": "Einstufungstest",
     "placementBest": "Bestes Ergebnis: {level} ({score} von {max} Punkten, {date})",
