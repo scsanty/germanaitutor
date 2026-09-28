@@ -221,6 +221,7 @@ export function createPlacementService(db: Database.Database, deps?: PlacementDe
       }
 
       const profile = profiles.getProfile();
+      let unlockOffer: CefrLevel | null = null;
       if (profile.placementStatus !== 'taken') {
         // First placement: the active level is the placed level (Ruling M-4), but the
         // highest unlocked level never lowers one already open (e.g. from finished lessons).
@@ -234,7 +235,9 @@ export function createPlacementService(db: Database.Database, deps?: PlacementDe
           unlockNoticeLevel: null,
         });
       } else {
-        unlocks.raiseUnlockedLevel(placed, { notify: true });
+        // Retake: unlocks only go up. A higher placement is offered on the end screen too.
+        const raised = unlocks.raiseUnlockedLevel(placed, { notify: true });
+        if (raised.highestUnlockedLevel !== profile.highestUnlockedLevel) unlockOffer = placed;
       }
 
       db.prepare('DELETE FROM placement_session').run();
@@ -245,6 +248,7 @@ export function createPlacementService(db: Database.Database, deps?: PlacementDe
         stopReason,
         answers: JSON.parse(session.answers) as PlacementAnswerRecord[],
         isNewBest,
+        unlockOffer,
       };
     })();
   }

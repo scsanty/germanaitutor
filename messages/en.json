@@ -40,7 +40,11 @@
       "wrong": "Wrong"
     },
     "noAnswer": "(no answer)",
-    "continue": "Continue"
+    "continue": "Continue",
+    "switchOffer": "{level} is now unlocked. Switch to it?",
+    "switch": "Switch",
+    "switched": "Switched to {level}.",
+    "sessionLost": "The test was interrupted, so it starts again from the first question."
   },
   "exercise": {
     "answerLabel": "Your answer",

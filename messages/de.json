@@ -40,7 +40,11 @@
       "wrong": "Falsch"
     },
     "noAnswer": "(keine Antwort)",
-    "continue": "Weiter"
+    "continue": "Weiter",
+    "switchOffer": "{level} ist jetzt freigeschaltet. Dorthin wechseln?",
+    "switch": "Wechseln",
+    "switched": "Zu {level} gewechselt.",
+    "sessionLost": "Der Test wurde unterbrochen und beginnt wieder mit der ersten Frage."
   },
   "exercise": {
     "answerLabel": "Deine Antwort",

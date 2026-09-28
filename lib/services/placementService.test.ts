@@ -201,6 +201,45 @@ describe('placementService', () => {
     service.replaceExam(smallPlacementExam());
     expect(() => service.stop()).toThrow(PlacementError);
   });
+
+  it('offers the newly unlocked level after a higher retake, and nothing otherwise', async () => {
+    const { service, exam } = setup();
+    await answerInOrder(service, exam, 2, 2);
+    const first = service.stop();
+    expect(first.status === 'finished' && first.outcome.unlockOffer).toBeNull();
+
+    const higher = await answerInOrder(service, exam, exam.length);
+    expect(higher).toMatchObject({ outcome: { placedLevel: 'C1', unlockOffer: 'C1' } });
+
+    const lower = await answerInOrder(service, exam, 0);
+    expect(lower).toMatchObject({ outcome: { unlockOffer: null } });
+  });
+
+  it('a retake with the same score keeps the earlier best result', async () => {
+    const { db, service, exam } = setup();
+    await answerInOrder(service, exam, 2, 2);
+    service.stop();
+    db.prepare("UPDATE placement_best_result SET taken_at = '2026-01-01 00:00:00'").run();
+
+    await answerInOrder(service, exam, 2, 2);
+    expect(service.stop()).toMatchObject({ outcome: { isNewBest: false } });
+    expect(service.getBestResult()).toMatchObject({ score: 2, takenAt: '2026-01-01 00:00:00' });
+  });
+
+  it('accepts only one of two simultaneous answers to the same question', async () => {
+    const gradeFreeText = vi.fn(async () => {
+      await new Promise((resolve) => setTimeout(resolve, 5));
+      return { ok: true as const, result: 'correct' as const, feedback: 'Gut.' };
+    });
+    const free: PlacementQuestion = { id: 'free', level: 'A1', type: 'free_text', content: { prompt: 'Write.', modelAnswer: 'Ich schreibe.' } };
+    const { service } = setup([free, ...smallPlacementExam()], { gradeFreeText });
+    service.start();
+
+    const answer = { type: 'free_text' as const, text: 'Ich schreibe.' };
+    const results = await Promise.allSettled([service.answer('free', answer), service.answer('free', answer)]);
+    expect(results.map((r) => r.status).sort()).toEqual(['fulfilled', 'rejected']);
+    expect(results.find((r) => r.status === 'rejected')).toMatchObject({ reason: { kind: 'bad_request' } });
+  });
 });
 
 describe('toPlacementErrorResponse', () => {

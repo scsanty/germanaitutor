@@ -22,6 +22,7 @@ export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; 
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [gradingErrorDetail, setGradingErrorDetail] = useState<string | null>(null);
+  const [switched, setSwitched] = useState(false);
 
   function applyState(state: PlacementState) {
     setError(null);
@@ -55,10 +56,36 @@ export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; 
         const detail = typeof data.error === 'string' ? data.error : String(res.status);
         if (res.status === 502) {
           setGradingErrorDetail(detail);
+        } else if (res.status === 409 && url !== '/api/placement/start') {
+          // The attempt is gone (restarted elsewhere, or an admin replaced the exam): start over.
+          setQuestion(null);
+          setPhase('intro');
+          setError(t('sessionLost'));
         } else {
           setError(t('genericError', { error: detail }));
         }
       }
+    } catch (err) {
+      setError(t('genericError', { error: (err as Error).message }));
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function switchToOffer() {
+    setBusy(true);
+    setError(null);
+    try {
+      const res = await fetch('/api/tutoring/unlock-notice', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'switch' }),
+      });
+      if (!res.ok) {
+        setError(t('genericError', { error: String(res.status) }));
+        return;
+      }
+      setSwitched(true);
     } catch (err) {
       setError(t('genericError', { error: (err as Error).message }));
     } finally {
@@ -163,6 +190,18 @@ export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; 
       <p>{t('placedAt', { level: outcome.placedLevel })}</p>
       <p>{t('score', { score: outcome.score, max: outcome.maxScore })}</p>
       <p>{t(`stopReason.${outcome.stopReason}`)}</p>
+      {outcome.unlockOffer &&
+        (switched ? (
+          <p>{t('switched', { level: outcome.unlockOffer })}</p>
+        ) : (
+          <p>
+            {t('switchOffer', { level: outcome.unlockOffer })}{' '}
+            <button type="button" disabled={busy} onClick={switchToOffer}>
+              {t('switch')}
+            </button>
+          </p>
+        ))}
+      {errorAlert()}
       <h3>{t('review')}</h3>
       <ol>
         {outcome.answers.map((a) => (

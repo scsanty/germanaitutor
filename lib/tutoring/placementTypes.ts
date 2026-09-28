@@ -39,6 +39,7 @@ export interface PlacementOutcome {
   stopReason: PlacementStopReason;
   answers: PlacementAnswerRecord[];
   isNewBest: boolean;
+  unlockOffer: CefrLevel | null;
 }
 
 export type PlacementState =
