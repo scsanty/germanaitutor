@@ -42,6 +42,30 @@
     "noAnswer": "(keine Antwort)",
     "continue": "Weiter"
   },
+  "exercise": {
+    "answerLabel": "Deine Antwort",
+    "submit": "Prüfen",
+    "submitting": "Wird geprüft …",
+    "showAnswer": "Antwort zeigen",
+    "rating": {
+      "knew": "Gewusst",
+      "sort_of": "Halb gewusst",
+      "didnt_know": "Nicht gewusst"
+    },
+    "result": {
+      "correct": "Richtig!",
+      "almost": "Fast – das zählt als bestanden.",
+      "wrong": "Nicht ganz."
+    },
+    "correctAnswer": "Richtige Antwort: {answer}",
+    "modelAnswer": "Musterantwort: {answer}",
+    "feedback": "Rückmeldung: {feedback}",
+    "askAi": "KI fragen",
+    "next": "Weiter",
+    "skipForNow": "Vorerst überspringen",
+    "gradingFailed": "Deine Antwort konnte nicht bewertet werden: {error}. Deine Antwort bleibt erhalten, du kannst es noch einmal versuchen. <link>Öffne die Einstellungen</link>, falls das öfter passiert.",
+    "genericError": "Etwas ist schiefgelaufen: {error}"
+  },
   "tracks": {
     "generic": "Allgemein",
     "telc": "TELC",

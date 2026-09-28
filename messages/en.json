@@ -42,6 +42,30 @@
     "noAnswer": "(no answer)",
     "continue": "Continue"
   },
+  "exercise": {
+    "answerLabel": "Your answer",
+    "submit": "Check",
+    "submitting": "Checking…",
+    "showAnswer": "Show answer",
+    "rating": {
+      "knew": "Knew it",
+      "sort_of": "Sort of",
+      "didnt_know": "Didn't know it"
+    },
+    "result": {
+      "correct": "Correct!",
+      "almost": "Almost — that counts as passed.",
+      "wrong": "Not quite."
+    },
+    "correctAnswer": "Correct answer: {answer}",
+    "modelAnswer": "Model answer: {answer}",
+    "feedback": "Feedback: {feedback}",
+    "askAi": "Ask AI",
+    "next": "Next",
+    "skipForNow": "Skip for now",
+    "gradingFailed": "Your answer could not be graded: {error}. Your answer is kept, so you can try again. <link>Visit Settings</link> if this keeps happening.",
+    "genericError": "Something went wrong: {error}"
+  },
   "tracks": {
     "generic": "Generic",
     "telc": "TELC",
