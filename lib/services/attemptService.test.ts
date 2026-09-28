@@ -1,5 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
 import { createDbClient } from '../db/client';
+import { reconcileExercises } from '../curriculum-admin/exerciseReconciliation';
 import { createProfileService } from './profileService';
 import { AttemptError, createAttemptService, toAttemptErrorResponse } from './attemptService';
 import { seedTutoringCurriculum } from '@/test/tutoringFixtures';
@@ -150,6 +151,33 @@ describe('attemptService.markLessonDone', () => {
   it('refuses a locked lesson', () => {
     const { service } = setup();
     expect(() => service.markLessonDone('a2-past')).toThrow('Level A2 is locked');
+  });
+
+  // I-1: an admin deleting the only unpassed exercise must not strand the lesson.
+  it('completes a lesson after an admin deletes its last unpassed exercise, seeding review for what remains', async () => {
+    const { db, service, srs, count, profiles } = setup();
+    await service.recordAttempt('a1-greet__ex1', right, 'lesson');
+    expect(count('lesson_completions')).toBe(0);
+
+    reconcileExercises(db, 'a1-greet', [
+      {
+        id: 'a1-greet__ex1',
+        type: 'multiple_choice',
+        content: { question: 'How do you greet someone?', options: ['Hallo', 'Tschüss'], correctIndex: 0 },
+      },
+    ]);
+
+    expect(service.markLessonDone('a1-greet')).toEqual({ completed: true });
+    expect(count('lesson_completions')).toBe(1);
+    expect(srs('a1-greet__ex1')).toEqual({ repetitions: 1, interval_days: 3, next_due_at: '2026-09-27' });
+    // Completing a1-greet also covers Goethe A1's only lesson via the concept link, finishing Goethe A1.
+    expect(profiles.getProfile()).toMatchObject({ highestUnlockedLevel: 'A2', unlockNoticeLevel: 'A2' });
+  });
+
+  it('still refuses a lesson that has an unpassed exercise', () => {
+    const { service } = setup();
+    expect(() => service.markLessonDone('a1-greet')).toThrow(AttemptError);
+    expect(() => service.markLessonDone('a1-greet')).toThrow('This lesson has exercises; answer them to complete it');
   });
 });
 

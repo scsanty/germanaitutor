@@ -196,7 +196,21 @@ export function LessonPage({ lessonId }: { lessonId: string }) {
         </div>
       ) : (
         <div>
-          <p>{run.practice ? t('practiceFinished') : completedNow ? t('completedNow') : t('allPassed')}</p>
+          {run.practice ? (
+            <p>{t('practiceFinished')}</p>
+          ) : completedNow || lesson.completed ? (
+            <p>{t('completedNow')}</p>
+          ) : (
+            // I-1: an admin deleted the lesson's remaining unpassed exercises, so this run
+            // started with nothing pending; offer the same "Mark as done" path as an
+            // exercise-less lesson instead of a dead-end "All exercises passed" message.
+            <div>
+              <button type="button" disabled={marking} onClick={() => markDone(lesson)}>
+                {t('markDone')}
+              </button>
+              {markError && <p role="alert">{markError}</p>}
+            </div>
+          )}
           <Link href="/">{t('backToTree')}</Link> <Link href="/queue">{t('toQueue')}</Link>
         </div>
       )}

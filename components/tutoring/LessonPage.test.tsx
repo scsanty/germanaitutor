@@ -97,6 +97,18 @@ describe('LessonPage', () => {
     expect(screen.getByText('Greeting?')).toBeInTheDocument();
   });
 
+  // I-1: an admin deleting the lesson's last unpassed exercise leaves every remaining exercise
+  // passed while the lesson itself is still not complete; the student must not be dead-ended.
+  it('offers Mark as done when every remaining exercise is already passed but the lesson is not complete', async () => {
+    stubFetch({
+      'GET /api/tutoring/lessons/a1-greet': () => delayedResponse({ ...LESSON, passedExerciseIds: ['ex1', 'ex2'] }),
+    });
+    renderWithIntl(<LessonPage lessonId="a1-greet" />);
+    fireEvent.click(await screen.findByRole('button', { name: 'Continue the exercises' }));
+    expect(await screen.findByRole('button', { name: 'Mark as done' })).toBeInTheDocument();
+    expect(screen.queryByText('All exercises passed.')).not.toBeInTheDocument();
+  });
+
   it('opens the chat about an exercise from Ask AI', async () => {
     stubFetch(
       {

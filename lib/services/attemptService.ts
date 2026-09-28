@@ -203,15 +203,19 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
   }
 
   // Spec: Completion — a lesson with no exercises completes when the student taps "Mark as done".
+  // I-1: a lesson whose remaining exercises are all passed (an admin deleted the rest) can also
+  // complete this way, since `recordAttempt` will never see another answer to trigger it.
   function markLessonDone(lessonId: string): { completed: true } {
     const lesson = getUnlockedLesson(lessonId);
-    if (curriculum.getExercises(lesson.id, lesson.track).length > 0) {
+    const exerciseIds = curriculum.getExercises(lesson.id, lesson.track).map((e) => e.id);
+    if (exerciseIds.length > 0 && !meetsCompletionRule(exerciseIds, new Set(progress.passedExerciseIds(lesson.id)))) {
       throw new AttemptError('This lesson has exercises; answer them to complete it', 'bad_request');
     }
     const doneAt = now();
+    const at = doneAt.toISOString();
     db.transaction(() => {
       if (!progress.isCompleted(lesson.id)) {
-        completeLesson(lesson.id, lesson.sourceLevel, [], localDate(doneAt), doneAt.toISOString());
+        completeLesson(lesson.id, lesson.sourceLevel, exerciseIds, localDate(doneAt), at);
       }
     })();
     return { completed: true };
