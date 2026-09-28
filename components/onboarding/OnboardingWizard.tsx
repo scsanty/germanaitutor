@@ -27,6 +27,7 @@ export function OnboardingWizard({ initialStep = 'welcome' }: { initialStep?: St
   const [models, setModels] = useState<ModelInfo[]>([]);
   const [selectedModel, setSelectedModel] = useState('');
   const [modelsError, setModelsError] = useState<string | null>(null);
+  const [modelsFailed, setModelsFailed] = useState(false);
   const [track, setTrack] = useState<Track>('generic');
   const [uiLanguage, setUiLanguage] = useState<'en' | 'de'>('en');
   const [saving, setSaving] = useState(false);
@@ -83,20 +84,24 @@ export function OnboardingWizard({ initialStep = 'welcome' }: { initialStep?: St
   // blocking onboarding.
   async function loadModels(id: number) {
     setModelsError(null);
+    setModelsFailed(false);
     try {
       const res = await fetch(`/api/providers/${id}/models`);
-      const data = await res.json();
-      if (Array.isArray(data)) {
-        setModels(data);
-        setSelectedModel(data[0]?.id ?? '');
-        if (data.length === 0) setModelsError(t('noModels'));
-      } else {
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
         setModels([]);
-        setModelsError(data?.error ?? t('modelsFailed'));
+        setModelsError(typeof data?.error === 'string' ? data.error : t('modelsFailed'));
+        setModelsFailed(true);
+        return;
       }
+      const data = await res.json();
+      setModels(data);
+      setSelectedModel(data[0]?.id ?? '');
+      if (data.length === 0) setModelsError(t('noModels'));
     } catch {
       setModels([]);
       setModelsError(t('modelsFailed'));
+      setModelsFailed(true);
     }
   }
 
@@ -122,42 +127,55 @@ export function OnboardingWizard({ initialStep = 'welcome' }: { initialStep?: St
   async function handleLanguageNext() {
     setSaving(true);
     setChoicesError(null);
-    const res = await fetch('/api/profile', {
-      method: 'PATCH',
-      headers: JSON_HEADERS,
-      body: JSON.stringify({ activeTrack: track, uiLanguage, onboardingChoicesSaved: true }),
-    });
-    setSaving(false);
-    if (!res.ok) {
+    try {
+      const res = await fetch('/api/profile', {
+        method: 'PATCH',
+        headers: JSON_HEADERS,
+        body: JSON.stringify({ activeTrack: track, uiLanguage, onboardingChoicesSaved: true }),
+      });
+      if (!res.ok) {
+        setChoicesError(t('saveChoicesFailed'));
+        return;
+      }
+      router.refresh();
+      setStep('placement');
+    } catch {
       setChoicesError(t('saveChoicesFailed'));
-      return;
+    } finally {
+      setSaving(false);
     }
-    router.refresh();
-    setStep('placement');
   }
 
   async function finishOnboarding() {
     setFinishError(null);
-    const res = await fetch('/api/profile', {
-      method: 'PATCH',
-      headers: JSON_HEADERS,
-      body: JSON.stringify({ onboardingComplete: true }),
-    });
-    if (!res.ok) {
+    try {
+      const res = await fetch('/api/profile', {
+        method: 'PATCH',
+        headers: JSON_HEADERS,
+        body: JSON.stringify({ onboardingComplete: true }),
+      });
+      if (!res.ok) {
+        setFinishError(t('finishFailed'));
+        return;
+      }
+      router.push('/');
+    } catch {
       setFinishError(t('finishFailed'));
-      return;
     }
-    router.push('/');
   }
 
   async function skipPlacement() {
     setFinishError(null);
-    const res = await fetch('/api/placement/skip', { method: 'POST' });
-    if (!res.ok) {
+    try {
+      const res = await fetch('/api/placement/skip', { method: 'POST' });
+      if (!res.ok) {
+        setFinishError(t('finishFailed'));
+        return;
+      }
+      await finishOnboarding();
+    } catch {
       setFinishError(t('finishFailed'));
-      return;
     }
-    await finishOnboarding();
   }
 
   if (step === 'welcome') {
@@ -206,7 +224,7 @@ export function OnboardingWizard({ initialStep = 'welcome' }: { initialStep?: St
             </select>
           </label>
         )}
-        {validated && modelsError && <p>{modelsError}</p>}
+        {validated && modelsError && (modelsFailed ? <p role="alert">{modelsError}</p> : <p>{modelsError}</p>)}
         <button onClick={handleProviderNext} disabled={!validated}>
           {t('next')}
         </button>

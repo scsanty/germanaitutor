@@ -40,6 +40,7 @@ export function SettingsPage() {
   const [newModels, setNewModels] = useState<ModelInfo[]>([]);
   const [newSelectedModel, setNewSelectedModel] = useState('');
   const [modelsError, setModelsError] = useState<string | null>(null);
+  const [modelsFailed, setModelsFailed] = useState(false);
   const [capDraft, setCapDraft] = useState<string | null>(null);
   const [capError, setCapError] = useState<string | null>(null);
   const [providersFailed, setProvidersFailed] = useState(false);
@@ -155,6 +156,7 @@ export function SettingsPage() {
     setNewModels([]);
     setNewSelectedModel('');
     setModelsError(null);
+    setModelsFailed(false);
     setModelSaveError(null);
     setShowAddProvider(false);
   }
@@ -166,40 +168,49 @@ export function SettingsPage() {
       newProviderType === 'ollama'
         ? { providerType: newProviderType, ollamaHost: newOllamaHost }
         : { providerType: newProviderType, apiKey: newApiKey };
-    const res = await fetch('/api/providers', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
-    });
-    setAdding(false);
-    if (!res.ok) {
+    try {
+      const res = await fetch('/api/providers', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+      if (!res.ok) {
+        setAddError(t('saveFailed'));
+        return;
+      }
+      const created = await res.json();
+      await refreshConnections();
+      setAddedConnectionId(created.id);
+      await loadModels(created.id);
+    } catch {
       setAddError(t('saveFailed'));
-      return;
+    } finally {
+      setAdding(false);
     }
-    const created = await res.json();
-    await refreshConnections();
-    setAddedConnectionId(created.id);
-    await loadModels(created.id);
   }
 
   // The provider may be unreachable (Ollama not running, bad key); the
   // connection is already saved, so degrade to "no models" instead of failing.
   async function loadModels(id: number) {
     setModelsError(null);
+    setModelsFailed(false);
     try {
       const res = await fetch(`/api/providers/${id}/models`);
-      const data = await res.json();
-      if (Array.isArray(data)) {
-        setNewModels(data);
-        setNewSelectedModel(data[0]?.id ?? '');
-        if (data.length === 0) setModelsError(t('noModels'));
-      } else {
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
         setNewModels([]);
-        setModelsError(data?.error ?? t('modelsFailed'));
+        setModelsError(typeof data?.error === 'string' ? data.error : t('modelsFailed'));
+        setModelsFailed(true);
+        return;
       }
+      const data = await res.json();
+      setNewModels(data);
+      setNewSelectedModel(data[0]?.id ?? '');
+      if (data.length === 0) setModelsError(t('noModels'));
     } catch {
       setNewModels([]);
       setModelsError(t('modelsFailed'));
+      setModelsFailed(true);
     }
   }
 
@@ -224,19 +235,23 @@ export function SettingsPage() {
 
   async function handleProfileChange(patch: Partial<Profile>) {
     setProfileError(null);
-    const res = await fetch('/api/profile', {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(patch),
-    });
-    const data = await res.json().catch(() => ({}));
-    if (!res.ok) {
-      setProfileError(t('profileSaveFailed', { error: data.error ?? String(res.status) }));
-      return;
+    try {
+      const res = await fetch('/api/profile', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(patch),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setProfileError(t('profileSaveFailed', { error: data.error ?? String(res.status) }));
+        return;
+      }
+      setProfile(data);
+      // The interface language is applied by the server layout, so re-render it.
+      if (patch.uiLanguage) router.refresh();
+    } catch (err) {
+      setProfileError(t('profileSaveFailed', { error: (err as Error).message }));
     }
-    setProfile(data);
-    // The interface language is applied by the server layout, so re-render it.
-    if (patch.uiLanguage) router.refresh();
   }
 
   // Saved on blur, so typing "3" on the way to "30" doesn't save 3.
@@ -386,6 +401,8 @@ export function SettingsPage() {
                   ))}
                 </select>
               </label>
+            ) : modelsFailed ? (
+              <p role="alert">{modelsError}</p>
             ) : (
               <p>{modelsError ?? t('noModelsAvailable')}</p>
             )}

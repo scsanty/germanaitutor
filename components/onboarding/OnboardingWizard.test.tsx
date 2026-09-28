@@ -104,9 +104,20 @@ describe('OnboardingWizard', () => {
 
     await connectSuccessfully();
 
-    await screen.findByText('Ollama returned 500');
+    // M-1: loadModels must branch on res.ok, and the failure text is a visible error
+    // (role="alert"), not a plain paragraph.
+    expect(await screen.findByRole('alert')).toHaveTextContent('Ollama returned 500');
     expect(screen.queryByLabelText('Model')).not.toBeInTheDocument();
     expect(screen.getByText('Next')).not.toBeDisabled();
+  });
+
+  it('shows "no models" as plain text, not an alert, when the provider has none', async () => {
+    stubFetch({ '/api/providers/1/models': { ok: true, json: async () => [] } });
+
+    await connectSuccessfully();
+
+    await screen.findByText('No models reported by this provider');
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
   });
 
   it('shows the error and keeps Next disabled when the test fails', async () => {

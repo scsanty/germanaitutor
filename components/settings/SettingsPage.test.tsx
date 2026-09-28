@@ -121,9 +121,46 @@ describe('SettingsPage', () => {
     fireEvent.change(screen.getByPlaceholderText('API key'), { target: { value: 'sk-ant' } });
     fireEvent.click(screen.getByText('Save provider'));
 
-    await screen.findByText('Ollama returned 500');
+    // M-1: loadModels must branch on res.ok, not just infer failure from the response shape,
+    // and the failure text is a visible error (role="alert"), not a plain paragraph.
+    expect(await screen.findByRole('alert')).toHaveTextContent('Ollama returned 500');
     expect(screen.queryByLabelText('Model')).not.toBeInTheDocument();
     expect(screen.getByText('Done')).toBeInTheDocument();
+  });
+
+  it('shows "no models" as plain text, not an alert, when the provider has none', async () => {
+    stubFetch({ 'GET /api/providers/7/models': { ok: true, json: async () => [] } });
+
+    renderWithIntl(<SettingsPage />);
+    await waitFor(() => screen.getByText('Add provider'));
+    fireEvent.click(screen.getByText('Add provider'));
+    fireEvent.change(screen.getByPlaceholderText('API key'), { target: { value: 'sk-ant' } });
+    fireEvent.click(screen.getByText('Save provider'));
+
+    await screen.findByText('No models reported by this provider');
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+  });
+
+  it('shows an error and re-enables Save provider when adding a provider rejects', async () => {
+    const fetchMock = vi.fn((url: string, init?: RequestInit) => {
+      if (`${init?.method ?? 'GET'} ${url}` === 'POST /api/providers') return Promise.reject(new Error('network down'));
+      const routes: Record<string, any> = {
+        'GET /api/profile': { ok: true, json: async () => PROFILE },
+        'GET /api/providers': { ok: true, json: async () => [] },
+      };
+      return Promise.resolve(routes[`${init?.method ?? 'GET'} ${url}`] ?? { ok: true, json: async () => ({}) });
+    });
+    vi.stubGlobal('fetch', fetchMock);
+
+    renderWithIntl(<SettingsPage />);
+    await waitFor(() => screen.getByText('Add provider'));
+    fireEvent.click(screen.getByText('Add provider'));
+    fireEvent.change(screen.getByPlaceholderText('API key'), { target: { value: 'sk-ant' } });
+    const saveButton = screen.getByText('Save provider');
+    fireEvent.click(saveButton);
+
+    expect(await screen.findByRole('alert')).toHaveTextContent('Failed to save provider connection');
+    await waitFor(() => expect(saveButton).not.toBeDisabled());
   });
 
   it('shows the provider status translated, not the raw status value', async () => {
