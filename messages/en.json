@@ -7,7 +7,7 @@
   },
   "home": {
     "title": "German AI Tutor",
-    "intro": "Your lessons will appear here soon.",
+    "dailyQueue": "Daily review",
     "settings": "Settings"
   },
   "placement": {
@@ -105,6 +105,19 @@
     "markFailed": "Could not mark this lesson as done: {error}",
     "done": "Done — this lesson is complete.",
     "exerciseLabel": "exercise {number}"
+  },
+  "tree": {
+    "heading": "{track} {level}",
+    "loadFailed": "Could not load your lessons. Please reload the page.",
+    "empty": "There are no lessons at this level yet.",
+    "status": {
+      "not_started": "Not started",
+      "in_progress": "In progress",
+      "complete": "Complete",
+      "covered": "Covered"
+    },
+    "coveredVia": "Covered via {track}",
+    "buildsOn": "Builds on: {lessons}"
   },
   "tracks": {
     "generic": "Generic",

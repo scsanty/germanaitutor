@@ -4,16 +4,16 @@ import { renderWithIntl } from '@/test/renderWithIntl';
 import { HomeIntro } from './HomeIntro';
 
 describe('HomeIntro', () => {
-  it('renders the title, intro and a Settings link in English', () => {
+  it('renders the title and links to the Daily review and Settings', () => {
     renderWithIntl(<HomeIntro />);
     expect(screen.getByRole('heading', { name: 'German AI Tutor' })).toBeInTheDocument();
-    expect(screen.getByText('Your lessons will appear here soon.')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Daily review' })).toHaveAttribute('href', '/queue');
     expect(screen.getByRole('link', { name: 'Settings' })).toHaveAttribute('href', '/settings');
   });
 
   it('renders in German', () => {
     renderWithIntl(<HomeIntro />, 'de');
-    expect(screen.getByText('Deine Lektionen erscheinen bald hier.')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Tägliche Wiederholung' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Einstellungen' })).toBeInTheDocument();
   });
 });
