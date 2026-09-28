@@ -19,6 +19,7 @@ const PROFILE = {
   placementStatus: 'taken',
   unlockNoticeLevel: null,
   onboardingChoicesSaved: true,
+  dailyReviewCap: 50,
   updatedAt: '',
 };
 
@@ -246,5 +247,36 @@ describe('SettingsPage', () => {
     await waitFor(() =>
       expect(screen.getByRole('alert')).toHaveTextContent('Could not load your settings. Please reload the page.')
     );
+  });
+
+  it('saves a new daily review limit when the field loses focus', async () => {
+    const fetchMock = stubFetch({ 'PATCH /api/profile': { ok: true, json: async () => ({ ...PROFILE, dailyReviewCap: 30 }) } });
+    renderWithIntl(<SettingsPage />);
+    const field = await screen.findByLabelText('Daily review limit');
+    expect(field).toHaveValue(50);
+
+    fireEvent.change(field, { target: { value: '30' } });
+    fireEvent.blur(field);
+
+    await waitFor(() =>
+      expect(fetchMock).toHaveBeenCalledWith('/api/profile', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ dailyReviewCap: 30 }),
+      })
+    );
+    await waitFor(() => expect(field).toHaveValue(30));
+  });
+
+  it('rejects a daily review limit outside 1–500 without saving it', async () => {
+    const fetchMock = stubFetch();
+    renderWithIntl(<SettingsPage />);
+    const field = await screen.findByLabelText('Daily review limit');
+
+    fireEvent.change(field, { target: { value: '0' } });
+    fireEvent.blur(field);
+
+    expect(await screen.findByRole('alert')).toHaveTextContent('Enter a whole number from 1 to 500.');
+    expect(fetchMock.mock.calls.some(([, init]) => (init as RequestInit | undefined)?.method === 'PATCH')).toBe(false);
   });
 });

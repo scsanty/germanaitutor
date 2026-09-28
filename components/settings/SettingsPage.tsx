@@ -40,6 +40,8 @@ export function SettingsPage() {
   const [newModels, setNewModels] = useState<ModelInfo[]>([]);
   const [newSelectedModel, setNewSelectedModel] = useState('');
   const [modelsError, setModelsError] = useState<string | null>(null);
+  const [capDraft, setCapDraft] = useState<string | null>(null);
+  const [capError, setCapError] = useState<string | null>(null);
 
   useEffect(() => {
     fetch('/api/profile')
@@ -198,6 +200,19 @@ export function SettingsPage() {
     if (patch.uiLanguage) router.refresh();
   }
 
+  // Saved on blur, so typing "3" on the way to "30" doesn't save 3.
+  async function saveDailyReviewCap() {
+    if (capDraft === null || !profile) return;
+    const value = Number(capDraft);
+    if (!Number.isInteger(value) || value < 1 || value > 500) {
+      setCapError(t('dailyReviewInvalid'));
+      return;
+    }
+    setCapError(null);
+    setCapDraft(null);
+    if (value !== profile.dailyReviewCap) await handleProfileChange({ dailyReviewCap: value });
+  }
+
   async function handleExport() {
     const res = await fetch('/api/backup/export');
     const blob = await res.blob();
@@ -338,6 +353,24 @@ export function SettingsPage() {
           ))}
         </select>
         {profile.highestUnlockedLevel !== 'C1' && <p>{t('levelHint', { level: profile.highestUnlockedLevel })}</p>}
+      </section>
+
+      <section>
+        <h2>{t('dailyReview')}</h2>
+        <label>
+          {t('dailyReviewLimit')}{' '}
+          <input
+            type="number"
+            min={1}
+            max={500}
+            step={1}
+            value={capDraft ?? String(profile.dailyReviewCap)}
+            onChange={(e) => setCapDraft(e.target.value)}
+            onBlur={saveDailyReviewCap}
+          />
+        </label>
+        <p>{t('dailyReviewHint')}</p>
+        {capError && <p role="alert">{capError}</p>}
       </section>
 
       <section>
