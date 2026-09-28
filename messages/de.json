@@ -66,6 +66,23 @@
     "gradingFailed": "Deine Antwort konnte nicht bewertet werden: {error}. Deine Antwort bleibt erhalten, du kannst es noch einmal versuchen. <link>Öffne die Einstellungen</link>, falls das öfter passiert.",
     "genericError": "Etwas ist schiefgelaufen: {error}"
   },
+  "chat": {
+    "show": "KI-Tutor fragen",
+    "hide": "KI-Tutor ausblenden",
+    "loadFailed": "Der Chat konnte nicht geladen werden.",
+    "empty": "Frag alles zu dieser Lektion.",
+    "you": "Du",
+    "tutor": "Tutor",
+    "aboutExercise": "(zu einer Übung)",
+    "unavailable": "Der KI-Tutor braucht einen funktionierenden KI-Anbieter. <link>Öffne die Einstellungen</link>, um einen einzurichten.",
+    "askingAbout": "Frage zu {label}",
+    "clearAskAbout": "Nicht mehr zu dieser Übung fragen",
+    "messageLabel": "Deine Nachricht",
+    "send": "Senden",
+    "sending": "Wird gesendet …",
+    "aiFailed": "Der KI-Tutor konnte nicht antworten: {error}. Deine Nachricht bleibt erhalten, du kannst es noch einmal versuchen. <link>Öffne die Einstellungen</link>, falls das öfter passiert.",
+    "genericError": "Etwas ist schiefgelaufen: {error}"
+  },
   "tracks": {
     "generic": "Allgemein",
     "telc": "TELC",

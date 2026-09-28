@@ -66,6 +66,23 @@
     "gradingFailed": "Your answer could not be graded: {error}. Your answer is kept, so you can try again. <link>Visit Settings</link> if this keeps happening.",
     "genericError": "Something went wrong: {error}"
   },
+  "chat": {
+    "show": "Ask the AI tutor",
+    "hide": "Hide the AI tutor",
+    "loadFailed": "Could not load the chat.",
+    "empty": "Ask anything about this lesson.",
+    "you": "You",
+    "tutor": "Tutor",
+    "aboutExercise": "(about an exercise)",
+    "unavailable": "The AI tutor needs a working AI provider. <link>Visit Settings</link> to set one up.",
+    "askingAbout": "Asking about {label}",
+    "clearAskAbout": "Stop asking about this exercise",
+    "messageLabel": "Your message",
+    "send": "Send",
+    "sending": "Sending…",
+    "aiFailed": "The AI tutor could not answer: {error}. Your message is kept, so you can try again. <link>Visit Settings</link> if this keeps happening.",
+    "genericError": "Something went wrong: {error}"
+  },
   "tracks": {
     "generic": "Generic",
     "telc": "TELC",
