@@ -1,7 +1,8 @@
 import type Database from 'better-sqlite3';
 import type { CefrLevel, Profile } from '../types';
-import { higherLevel, isAtOrBelow } from '../tutoring/levels';
+import { higherLevel, isAtOrBelow, nextLevel, TRACKS } from '../tutoring/levels';
 import { createProfileService } from './profileService';
+import { createProgressService } from './progressService';
 
 export function createUnlockService(db: Database.Database) {
   const profiles = createProfileService(db);
@@ -31,7 +32,19 @@ export function createUnlockService(db: Database.Database) {
     });
   }
 
-  return { isLevelUnlocked, raiseUnlockedLevel, resolveUnlockNotice };
+  // Spec: Level Unlocking. Runs after every lesson completion. A completion can finish its level
+  // in its own track, or in another track through a concept link (links always join the same
+  // level), so every track is checked; either way the next level unlocks everywhere.
+  function checkLevelFinishedAfterCompletion(level: CefrLevel): Profile {
+    const next = nextLevel(level);
+    const progress = createProgressService(db);
+    if (next && TRACKS.some((track) => progress.isLevelFinished(track, level))) {
+      return raiseUnlockedLevel(next, { notify: true });
+    }
+    return profiles.getProfile();
+  }
+
+  return { isLevelUnlocked, raiseUnlockedLevel, resolveUnlockNotice, checkLevelFinishedAfterCompletion };
 }
 
 export type UnlockService = ReturnType<typeof createUnlockService>;

@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { createDbClient } from '../db/client';
 import { createProfileService } from './profileService';
 import { createUnlockService } from './unlockService';
+import { markComplete, seedTutoringCurriculum } from '@/test/tutoringFixtures';
 
 function setup() {
   const db = createDbClient(':memory:');
@@ -61,5 +62,24 @@ describe('unlockService', () => {
   it('does nothing when there is no notice', () => {
     const { unlocks } = setup();
     expect(unlocks.resolveUnlockNotice('switch')).toMatchObject({ activeLevel: 'A1', unlockNoticeLevel: null });
+  });
+
+  it('raises the unlock with a notice when a completion finished the level in any track', () => {
+    const db = createDbClient(':memory:');
+    seedTutoringCurriculum(db);
+    const unlocks = createUnlockService(db);
+    expect(unlocks.checkLevelFinishedAfterCompletion('A1').highestUnlockedLevel).toBe('A1');
+    markComplete(db, 'a1-goethe-greet');
+    expect(unlocks.checkLevelFinishedAfterCompletion('A1')).toMatchObject({
+      highestUnlockedLevel: 'A2',
+      unlockNoticeLevel: 'A2',
+    });
+  });
+
+  it('does nothing after finishing C1, since there is no level above it', () => {
+    const db = createDbClient(':memory:');
+    const profiles = createProfileService(db);
+    profiles.writeLevelState({ highestUnlockedLevel: 'C1' });
+    expect(createUnlockService(db).checkLevelFinishedAfterCompletion('C1').highestUnlockedLevel).toBe('C1');
   });
 });
