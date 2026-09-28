@@ -119,6 +119,19 @@
     "coveredVia": "Abgedeckt über {track}",
     "buildsOn": "Baut auf: {lessons}"
   },
+  "queue": {
+    "title": "Tägliche Wiederholung",
+    "backToTree": "Zurück zu deinen Lektionen",
+    "loadFailed": "Die heutigen Wiederholungen konnten nicht geladen werden. Bitte lade die Seite neu.",
+    "remaining": "Heute noch {count, plural, one {# Wiederholung} other {# Wiederholungen}}",
+    "fromLesson": "Aus der Lektion: {lesson}",
+    "thisReview": "diese Wiederholung",
+    "allDone": "Für heute ist alles erledigt. Gut gemacht!",
+    "nothingDue": "Gerade gibt es nichts zu wiederholen.",
+    "capReached": "Du hast dein Tageslimit erreicht. Der Rest wartet bis morgen.",
+    "nextLesson": "Nächste Lektion",
+    "noSuggestion": "Du hast alle Lektionen auf diesem Niveau abgeschlossen."
+  },
   "tracks": {
     "generic": "Allgemein",
     "telc": "TELC",

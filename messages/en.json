@@ -119,6 +119,19 @@
     "coveredVia": "Covered via {track}",
     "buildsOn": "Builds on: {lessons}"
   },
+  "queue": {
+    "title": "Daily review",
+    "backToTree": "Back to your lessons",
+    "loadFailed": "Could not load today's reviews. Please reload the page.",
+    "remaining": "{count, plural, one {# review left today} other {# reviews left today}}",
+    "fromLesson": "From the lesson: {lesson}",
+    "thisReview": "this review",
+    "allDone": "All done for today. Well done!",
+    "nothingDue": "Nothing to review right now.",
+    "capReached": "You reached today's review limit. The rest wait until tomorrow.",
+    "nextLesson": "Next lesson",
+    "noSuggestion": "You have finished every lesson at this level."
+  },
   "tracks": {
     "generic": "Generic",
     "telc": "TELC",
