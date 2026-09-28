@@ -3,7 +3,8 @@ import { mkdtempSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { getDb, closeDb } from '@/lib/db/client';
-import { seedTutoringCurriculum } from '@/test/tutoringFixtures';
+import { seedTutoringCurriculum, markComplete } from '@/test/tutoringFixtures';
+import { createProfileService } from '@/lib/services/profileService';
 import { GET as getTree } from './tree/route';
 import { GET as getQueue } from './queue/route';
 import { POST as postAttempt } from './attempts/route';
@@ -33,6 +34,20 @@ describe('/api/tutoring', () => {
     const tree = await (await getTree()).json();
     expect(tree).toMatchObject({ track: 'generic', level: 'A1' });
     expect(tree.milestones[0].sections[0].lessons.map((l: { id: string }) => l.id)).toEqual(['a1-greet', 'a1-sein']);
+  });
+
+  // M-3: an admin edit (here, deleting the level's last unfinished lesson) can finish a level
+  // without a new completion ever being recorded; the tree load must still catch it up.
+  it('GET tree unlocks the next level when an admin edit already finished the active one', async () => {
+    const db = getDb();
+    markComplete(db, 'a1-greet');
+    db.prepare('DELETE FROM lessons WHERE id = ?').run('a1-sein');
+
+    const tree = await (await getTree()).json();
+    expect(tree.milestones[0].sections[0].lessons.map((l: { id: string }) => l.id)).toEqual(['a1-greet']);
+
+    const profile = createProfileService(db).getProfile();
+    expect(profile).toMatchObject({ highestUnlockedLevel: 'A2', unlockNoticeLevel: 'A2' });
   });
 
   it('GET lesson returns the lesson, a locked view, or 404', async () => {
