@@ -46,7 +46,6 @@ It converts the 38 listening lessons, whose "Hörtext" is printed today, into re
 
 - Speech-to-text (Speaking).
 - Cloud TTS adapters (later; the interface allows them).
-- Uploading real recordings in this release. The admin **can** regenerate a clip; uploads come with the Level exams if needed. (The earlier decision "admin can regenerate or upload" is met in part: regenerate now, upload is noted as a follow-up in the Level exams spec.)
 
 ## Speech Sidecar
 
@@ -107,7 +106,11 @@ interface SpeechProvider {
   - failures retry with backoff, up to 5 attempts, then `failed` plus a notification;
   - every 60 s it checks `health`, and a change of state raises or resolves the "speech service down" notification.
 - **On demand:** `GET /api/audio/[hash]` serves the file if it exists. If it doesn't, it renders now (if the service is up) and caches the result. Otherwise it answers 503 `{ code: 'audio_unavailable' }`.
-- **Admin:** each lesson or set with audio has a **Regenerate audio** action, which deletes the file and requeues it.
+- **Admin:** each lesson or set with audio has two actions:
+  - **Regenerate audio** deletes the file and requeues it.
+  - **Upload recording** (mp3, ogg, wav or m4a, max 20 MB) converts the file to ogg through the sidecar's `POST /convert` and stores it under the same hash, with the job marked `uploaded`, so the worker never overwrites it. Regenerate clears the upload.
+
+  The sidecar gains `POST /convert` (any audio → ogg/opus mono 24 kHz), and `audio_jobs.status` gains `'uploaded'`.
 
 ## `audio_questions` Task Type
 
@@ -197,7 +200,7 @@ The backup envelope becomes **version 2**. It adds `audio: { [fileName]: base64 
 ## Decisions (2026-09-29)
 
 - **TTS:** local Piper TTS in a Docker sidecar, behind a provider interface.
-- **Audio:** distinct voices per speaker, light ambience, pre-generated in the background with on-demand fallback. Backups include audio.
+- **Audio:** distinct voices per speaker, light ambience, pre-generated in the background with on-demand fallback. The admin can regenerate a clip or upload a recording. Backups include audio.
 - **Existing lessons:** the listening lessons are converted; the transcript is hidden until after answering, with evidence highlighted.
 - **Replays:** Teil practice follows the real replay rules. Lessons get unlimited replays, 0.75× speed and a 5-second rewind.
 - **Sidecar down:** cached audio plays, exercises with missing audio are removed, and graded activities that depend on them are hidden. The admin is notified in the panel and by email.
