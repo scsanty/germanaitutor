@@ -94,6 +94,27 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
     return lesson;
   }
 
+  // Phase 2 leftover: a queue answer must be a real, due review of the active track+level that
+  // hasn't been answered in the queue today — otherwise it would count against the daily cap.
+  function assertDueInQueue(exerciseId: string, today: string): void {
+    const { activeTrack, activeLevel } = profiles.getProfile();
+    const due = db
+      .prepare(
+        `SELECT 1
+         FROM exercises e
+         JOIN exercise_srs_state st ON st.exercise_id = e.id
+         JOIN lesson_placements p ON p.lesson_id = e.lesson_id
+         JOIN sections s ON s.id = p.section_id
+         JOIN milestones m ON m.id = s.milestone_id
+         WHERE e.id = ? AND m.track = ? AND m.level = ? AND st.next_due_at <= ?
+           AND NOT EXISTS (
+             SELECT 1 FROM lesson_attempts a WHERE a.exercise_id = e.id AND a.source = 'queue' AND a.answered_on = ?
+           )`
+      )
+      .get(exerciseId, activeTrack, activeLevel, today, today);
+    if (!due) throw new AttemptError('This review is not due', 'bad_request', 'not_due');
+  }
+
   async function grade(
     exercise: Exercise,
     answer: LessonAnswer,
@@ -174,6 +195,7 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
   async function recordAttempt(exerciseId: string, answer: LessonAnswer, source: AttemptSource): Promise<AttemptOutcome> {
     const exercise = getExercise(exerciseId);
     const lesson = getUnlockedLesson(exercise.lessonId);
+    if (source === 'queue') assertDueInQueue(exercise.id, localDate(now()));
     const { result, feedback } = await grade(exercise, answer, lesson.sourceLevel);
     const answeredAt = now();
     const at = answeredAt.toISOString();

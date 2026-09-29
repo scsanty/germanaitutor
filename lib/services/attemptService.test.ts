@@ -85,6 +85,25 @@ describe('attemptService.recordAttempt', () => {
     expect(count('lesson_attempts')).toBe(4);
   });
 
+  it('accepts a queue answer only for a due review in the active track and level, once a day', async () => {
+    const { db, service, setDay, count, profiles } = setup();
+    await service.recordAttempt('a1-greet__ex1', right, 'lesson');
+    await service.recordAttempt('a1-greet__ex2', knew, 'lesson');
+    // Seeded: ex1 due 2026-09-27.
+    await expect(service.recordAttempt('a1-greet__ex1', right, 'queue')).rejects.toMatchObject({ code: 'not_due' });
+    expect(count('lesson_attempts')).toBe(2);
+
+    setDay(27);
+    await expect(service.recordAttempt('a1-greet__ex1', right, 'queue')).resolves.toMatchObject({ result: 'correct' });
+    await expect(service.recordAttempt('a1-greet__ex1', right, 'queue')).rejects.toMatchObject({ code: 'not_due' });
+    await expect(service.recordAttempt('a1-greet__ex1', right, 'lesson')).resolves.toMatchObject({ result: 'correct' });
+
+    // Review Focus 5: after switching track, a leftover queue item from the old track is refused.
+    db.prepare("UPDATE exercise_srs_state SET next_due_at = '2026-09-27' WHERE exercise_id = 'a1-greet__ex2'").run();
+    profiles.updateProfile({ activeTrack: 'goethe' });
+    await expect(service.recordAttempt('a1-greet__ex2', knew, 'queue')).rejects.toMatchObject({ code: 'not_due' });
+  });
+
   it('grades free text with the AI in the UI language and stores the answer and feedback', async () => {
     const { db, service, gradeFreeText, profiles } = setup({
       grade: vi.fn().mockResolvedValue({ ok: true, result: 'almost', feedback: 'Fast.' }),

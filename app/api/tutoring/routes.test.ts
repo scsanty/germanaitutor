@@ -79,6 +79,12 @@ describe('/api/tutoring', () => {
     expect(await locked.json()).toEqual({ error: 'Level A2 is locked', code: 'level_locked', params: { level: 'A2' } });
   });
 
+  it('POST attempts refuses a queue answer that is not due', async () => {
+    const res = await attempt({ exerciseId: 'a1-greet__ex1', answer: { type: 'multiple_choice', selectedIndex: 0 }, source: 'queue' });
+    expect(res.status).toBe(400);
+    expect(await res.json()).toEqual({ error: 'This review is not due', code: 'not_due' });
+  });
+
   it('POST complete refuses a lesson that has exercises', async () => {
     const res = await completeLesson(new Request('http://localhost', { method: 'POST' }), params('a1-greet'));
     expect(res.status).toBe(400);
