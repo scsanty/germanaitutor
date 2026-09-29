@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getDb } from '@/lib/db/client';
 import { createLessonChatService, toChatErrorResponse } from '@/lib/services/lessonChatService';
+import { errorBody } from '@/lib/tutoring/errorCodes';
 
 export const dynamic = 'force-dynamic';
 
@@ -25,7 +26,7 @@ export async function POST(request: Request, props: { params: Promise<{ id: stri
   const message = body?.message;
   const exerciseId = body?.exerciseId ?? null;
   if (typeof message !== 'string' || (exerciseId !== null && typeof exerciseId !== 'string')) {
-    return NextResponse.json({ error: 'message (text) and an optional exerciseId are required' }, { status: 400 });
+    return NextResponse.json(errorBody('message (text) and an optional exerciseId are required', 'bad_request'), { status: 400 });
   }
   try {
     return NextResponse.json(await createLessonChatService(getDb()).send(params.id, message, exerciseId));

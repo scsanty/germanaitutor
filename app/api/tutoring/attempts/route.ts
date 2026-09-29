@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { getDb } from '@/lib/db/client';
 import { createAttemptService, toAttemptErrorResponse } from '@/lib/services/attemptService';
 import { isAttemptSource, parseLessonAnswer } from '@/lib/tutoring/lessonAnswers';
+import { errorBody } from '@/lib/tutoring/errorCodes';
 
 export const dynamic = 'force-dynamic';
 
@@ -12,7 +13,7 @@ export async function POST(request: Request) {
   const source = body?.source;
   if (typeof exerciseId !== 'string' || !answer || !isAttemptSource(source)) {
     return NextResponse.json(
-      { error: 'exerciseId, a valid answer, and source ("lesson" or "queue") are required' },
+      errorBody('exerciseId, a valid answer, and source ("lesson" or "queue") are required', 'bad_request'),
       { status: 400 }
     );
   }

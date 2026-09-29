@@ -127,6 +127,17 @@ describe('attemptService.recordAttempt', () => {
     ).rejects.toMatchObject({ kind: 'bad_request' });
   });
 
+  it('names the locked level and the AI failure in the error code', async () => {
+    const { service } = setup({ grade: vi.fn().mockResolvedValue({ ok: false, error: 'No AI provider is set up', code: 'no_provider' }) });
+    await expect(service.recordAttempt('a2-past__ex1', { type: 'fill_blank', text: 'war' }, 'lesson')).rejects.toMatchObject({
+      code: 'level_locked',
+      params: { level: 'A2' },
+    });
+    await expect(
+      service.recordAttempt('a1-sein__ex10', { type: 'free_text', text: 'Ich bin müde.' }, 'lesson')
+    ).rejects.toMatchObject({ kind: 'grading_failed', code: 'no_provider' });
+  });
+
   it('unlocks the next level when a completion finishes a level, including through a concept link', async () => {
     const { service, profiles } = setup();
     await service.recordAttempt('a1-greet__ex1', right, 'lesson');
@@ -185,10 +196,10 @@ describe('attemptService.markLessonDone', () => {
 
 describe('toAttemptErrorResponse', () => {
   it('maps error kinds to HTTP statuses', () => {
-    expect(toAttemptErrorResponse(new AttemptError('x', 'not_found'))).toEqual({ status: 404, body: { error: 'x' } });
-    expect(toAttemptErrorResponse(new AttemptError('x', 'locked'))).toEqual({ status: 403, body: { error: 'x' } });
-    expect(toAttemptErrorResponse(new AttemptError('x', 'bad_request'))).toEqual({ status: 400, body: { error: 'x' } });
-    expect(toAttemptErrorResponse(new AttemptError('x', 'grading_failed'))).toEqual({ status: 502, body: { error: 'x' } });
+    expect(toAttemptErrorResponse(new AttemptError('x', 'not_found'))).toEqual({ status: 404, body: { error: 'x', code: 'not_found' } });
+    expect(toAttemptErrorResponse(new AttemptError('x', 'locked'))).toEqual({ status: 403, body: { error: 'x', code: 'level_locked' } });
+    expect(toAttemptErrorResponse(new AttemptError('x', 'bad_request'))).toEqual({ status: 400, body: { error: 'x', code: 'bad_request' } });
+    expect(toAttemptErrorResponse(new AttemptError('x', 'grading_failed'))).toEqual({ status: 502, body: { error: 'x', code: 'ai_failed' } });
     expect(toAttemptErrorResponse(new Error('x'))).toBeNull();
   });
 });

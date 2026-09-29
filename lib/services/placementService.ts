@@ -14,25 +14,37 @@ import type {
   PlacementQuestionView,
   PlacementState,
 } from '../tutoring/placementTypes';
+import { errorBody, type ApiErrorBody, type ErrorCode, type ErrorParams } from '../tutoring/errorCodes';
 import { gradeFreeText, type FreeTextGradeOutcome } from './freeTextGradingService';
 import { createProfileService } from './profileService';
 import { createUnlockService } from './unlockService';
 
 export type PlacementErrorKind = 'no_exam' | 'no_session' | 'bad_request' | 'grading_failed';
 
+const DEFAULT_CODE: Record<PlacementErrorKind, ErrorCode> = {
+  no_exam: 'no_exam',
+  no_session: 'no_session',
+  bad_request: 'bad_request',
+  grading_failed: 'ai_failed',
+};
+
 export class PlacementError extends Error {
+  readonly code: ErrorCode;
   constructor(
     message: string,
-    readonly kind: PlacementErrorKind
+    readonly kind: PlacementErrorKind,
+    code?: ErrorCode,
+    readonly params?: ErrorParams
   ) {
     super(message);
+    this.code = code ?? DEFAULT_CODE[kind];
   }
 }
 
-export function toPlacementErrorResponse(err: unknown): { status: number; body: { error: string } } | null {
+export function toPlacementErrorResponse(err: unknown): { status: number; body: ApiErrorBody } | null {
   if (!(err instanceof PlacementError)) return null;
   const status = err.kind === 'bad_request' ? 400 : err.kind === 'grading_failed' ? 502 : 409;
-  return { status, body: { error: err.message } };
+  return { status, body: errorBody(err.message, err.code, err.params) };
 }
 
 export interface PlacementDeps {
@@ -155,7 +167,7 @@ export function createPlacementService(db: Database.Database, deps?: PlacementDe
         level: question.level,
         uiLanguage: profiles.getProfile().uiLanguage,
       });
-      if (!graded.ok) throw new PlacementError(graded.error, 'grading_failed');
+      if (!graded.ok) throw new PlacementError(graded.error, 'grading_failed', graded.code, graded.params);
       return {
         ...base,
         question: content.prompt,

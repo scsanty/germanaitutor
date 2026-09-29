@@ -56,7 +56,7 @@ describe('/api/tutoring', () => {
     expect(await (await getLesson(request, params('a2-past'))).json()).toMatchObject({ locked: true, unlocksAfter: 'A1' });
     const missing = await getLesson(request, params('nope'));
     expect(missing.status).toBe(404);
-    expect(await missing.json()).toEqual({ error: 'Lesson not found' });
+    expect(await missing.json()).toEqual({ error: 'Lesson not found', code: 'not_found' });
   });
 
   it('POST attempts grades an answer', async () => {
@@ -76,7 +76,7 @@ describe('/api/tutoring', () => {
     expect((await attempt({ exerciseId: 'nope', answer: mc, source: 'lesson' })).status).toBe(404);
     const locked = await attempt({ exerciseId: 'a2-past__ex1', answer: { type: 'fill_blank', text: 'war' }, source: 'lesson' });
     expect(locked.status).toBe(403);
-    expect(await locked.json()).toEqual({ error: 'Level A2 is locked' });
+    expect(await locked.json()).toEqual({ error: 'Level A2 is locked', code: 'level_locked', params: { level: 'A2' } });
   });
 
   it('POST complete refuses a lesson that has exercises', async () => {

@@ -39,7 +39,7 @@ describe('/api/profile', () => {
       new Request('http://localhost/api/profile', { method: 'PATCH', body: JSON.stringify({ activeLevel: 'B2' }) })
     );
     expect(res.status).toBe(400);
-    expect(await res.json()).toEqual({ error: 'Level B2 is locked' });
+    expect(await res.json()).toEqual({ error: 'Level B2 is locked', code: 'level_locked', params: { level: 'B2' } });
   });
 
   it('PATCH rejects an unknown level with 400', async () => {
@@ -47,7 +47,7 @@ describe('/api/profile', () => {
       new Request('http://localhost/api/profile', { method: 'PATCH', body: JSON.stringify({ activeLevel: 'Z9' }) })
     );
     expect(res.status).toBe(400);
-    expect(await res.json()).toEqual({ error: 'Level Z9 is locked' });
+    expect(await res.json()).toEqual({ error: 'Level Z9 is locked', code: 'level_locked', params: { level: 'Z9' } });
   });
 
   it('PATCH accepts an unlocked level', async () => {
@@ -62,7 +62,7 @@ describe('/api/profile', () => {
   it('PATCH returns 400 for an invalid daily review limit', async () => {
     const res = await PATCH(new Request('http://localhost', { method: 'PATCH', body: JSON.stringify({ dailyReviewCap: 0 }) }));
     expect(res.status).toBe(400);
-    expect(await res.json()).toEqual({ error: 'The daily review limit must be a whole number from 1 to 500' });
+    expect(await res.json()).toEqual({ error: 'The daily review limit must be a whole number from 1 to 500', code: 'invalid_daily_cap' });
   });
 
   it('PATCH saves a valid daily review limit', async () => {

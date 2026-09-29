@@ -49,7 +49,7 @@ describe('/api/placement', () => {
     expect((await answerRequest({ questionId: 'A1-mc' })).status).toBe(400);
     const wrongQuestion = await answerRequest({ questionId: 'C1-mc', answer: { type: 'multiple_choice', selectedIndex: 0 } });
     expect(wrongQuestion.status).toBe(400);
-    expect(await wrongQuestion.json()).toEqual({ error: 'That question is not the current one' });
+    expect(await wrongQuestion.json()).toEqual({ error: 'That question is not the current one', code: 'bad_request' });
   });
 
   it('answer and stop return 409 when no test is in progress', async () => {

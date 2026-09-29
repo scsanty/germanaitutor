@@ -9,6 +9,7 @@ import {
   type ChatExerciseContext,
   type ChatMessageView,
 } from '../tutoring/lessonChat';
+import { errorBody, type ApiErrorBody, type ErrorCode, type ErrorParams } from '../tutoring/errorCodes';
 import { generateWithActiveProvider, isAiAvailable, type AiRequest, type AiResult } from './aiService';
 import { createCurriculumService } from './curriculumService';
 import { createProfileService } from './profileService';
@@ -16,20 +17,31 @@ import { createUnlockService } from './unlockService';
 
 export type ChatErrorKind = 'not_found' | 'locked' | 'bad_request' | 'ai_failed';
 
+const DEFAULT_CODE: Record<ChatErrorKind, ErrorCode> = {
+  not_found: 'not_found',
+  locked: 'level_locked',
+  bad_request: 'bad_request',
+  ai_failed: 'ai_failed',
+};
+
 export class ChatError extends Error {
+  readonly code: ErrorCode;
   constructor(
     message: string,
-    readonly kind: ChatErrorKind
+    readonly kind: ChatErrorKind,
+    code?: ErrorCode,
+    readonly params?: ErrorParams
   ) {
     super(message);
+    this.code = code ?? DEFAULT_CODE[kind];
   }
 }
 
 const STATUS_FOR: Record<ChatErrorKind, number> = { not_found: 404, locked: 403, bad_request: 400, ai_failed: 502 };
 
-export function toChatErrorResponse(err: unknown): { status: number; body: { error: string } } | null {
+export function toChatErrorResponse(err: unknown): { status: number; body: ApiErrorBody } | null {
   if (!(err instanceof ChatError)) return null;
-  return { status: STATUS_FOR[err.kind], body: { error: err.message } };
+  return { status: STATUS_FOR[err.kind], body: errorBody(err.message, err.code, err.params) };
 }
 
 export interface LessonChatDeps {
@@ -65,7 +77,7 @@ export function createLessonChatService(db: Database.Database, deps: LessonChatD
     const lesson = curriculum.getLesson(lessonId, 'generic'); // getLesson ignores its track argument
     if (!lesson) throw new ChatError(`Lesson not found: ${lessonId}`, 'not_found');
     if (!unlocks.isLevelUnlocked(lesson.sourceLevel)) {
-      throw new ChatError(`Level ${lesson.sourceLevel} is locked`, 'locked');
+      throw new ChatError(`Level ${lesson.sourceLevel} is locked`, 'locked', 'level_locked', { level: lesson.sourceLevel });
     }
     return lesson;
   }
@@ -141,7 +153,7 @@ export function createLessonChatService(db: Database.Database, deps: LessonChatD
       }),
       messages: history,
     });
-    if (!reply.ok) throw new ChatError(reply.error, 'ai_failed');
+    if (!reply.ok) throw new ChatError(reply.error, 'ai_failed', reply.code, reply.params);
 
     const at = now().toISOString();
     const insert = db.prepare(

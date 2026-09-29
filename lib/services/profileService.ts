@@ -1,6 +1,7 @@
 import type Database from 'better-sqlite3';
 import type { Profile, Track, CefrLevel, PlacementStatus } from '../types';
 import { isAtOrBelow, isCefrLevel } from '../tutoring/levels';
+import type { ErrorCode, ErrorParams } from '../tutoring/errorCodes';
 
 interface Row {
   display_name: string;
@@ -35,7 +36,15 @@ function rowToProfile(row: Row): Profile {
 }
 
 // A client update the profile can't accept; the profile route answers it with 400.
-export class ProfileUpdateError extends Error {}
+export class ProfileUpdateError extends Error {
+  constructor(
+    message: string,
+    readonly code: ErrorCode = 'bad_request',
+    readonly params?: ErrorParams
+  ) {
+    super(message);
+  }
+}
 export class LockedLevelError extends ProfileUpdateError {}
 
 export const DAILY_REVIEW_CAP_MIN = 1;
@@ -86,10 +95,10 @@ export function createProfileService(db: Database.Database) {
       input.activeLevel !== undefined &&
       (!isCefrLevel(input.activeLevel) || !isAtOrBelow(input.activeLevel, current.highestUnlockedLevel))
     ) {
-      throw new LockedLevelError(`Level ${input.activeLevel} is locked`);
+      throw new LockedLevelError(`Level ${input.activeLevel} is locked`, 'level_locked', { level: String(input.activeLevel) });
     }
     if (input.dailyReviewCap !== undefined && !isValidDailyReviewCap(input.dailyReviewCap)) {
-      throw new ProfileUpdateError('The daily review limit must be a whole number from 1 to 500');
+      throw new ProfileUpdateError('The daily review limit must be a whole number from 1 to 500', 'invalid_daily_cap');
     }
     db.prepare(
       `UPDATE profile SET display_name = ?, ui_language = ?, active_track = ?, active_level = ?, freestyle_default = ?,

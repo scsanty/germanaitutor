@@ -47,10 +47,10 @@ describe('/api/tutoring/lessons/[id]/chat', () => {
   });
 
   it('POST answers 502 when the AI fails, and 400 for a malformed body', async () => {
-    vi.mocked(generateWithActiveProvider).mockResolvedValue({ ok: false, error: 'No AI provider is set up' });
+    vi.mocked(generateWithActiveProvider).mockResolvedValue({ ok: false, error: 'No AI provider is set up', code: 'no_provider' });
     const failed = await post('a1-greet', { message: 'Hi?' });
     expect(failed.status).toBe(502);
-    expect(await failed.json()).toEqual({ error: 'No AI provider is set up' });
+    expect(await failed.json()).toEqual({ error: 'No AI provider is set up', code: 'no_provider' });
     expect((await post('a1-greet', { message: 42 })).status).toBe(400);
     expect((await post('a1-greet', { message: 'Hi?', exerciseId: 7 })).status).toBe(400);
   });

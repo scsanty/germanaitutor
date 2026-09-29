@@ -14,6 +14,7 @@ import {
   type LessonAnswer,
 } from '../tutoring/lessonAnswers';
 import { computeNextReview, seedReview, type SrsState } from '../tutoring/srs';
+import { errorBody, type ApiErrorBody, type ErrorCode, type ErrorParams } from '../tutoring/errorCodes';
 import { createCurriculumService } from './curriculumService';
 import { gradeFreeText, type FreeTextGradeOutcome } from './freeTextGradingService';
 import { createProfileService } from './profileService';
@@ -22,20 +23,31 @@ import { createUnlockService } from './unlockService';
 
 export type AttemptErrorKind = 'not_found' | 'locked' | 'bad_request' | 'grading_failed';
 
+const DEFAULT_CODE: Record<AttemptErrorKind, ErrorCode> = {
+  not_found: 'not_found',
+  locked: 'level_locked',
+  bad_request: 'bad_request',
+  grading_failed: 'ai_failed',
+};
+
 export class AttemptError extends Error {
+  readonly code: ErrorCode;
   constructor(
     message: string,
-    readonly kind: AttemptErrorKind
+    readonly kind: AttemptErrorKind,
+    code?: ErrorCode,
+    readonly params?: ErrorParams
   ) {
     super(message);
+    this.code = code ?? DEFAULT_CODE[kind];
   }
 }
 
 const STATUS_FOR: Record<AttemptErrorKind, number> = { not_found: 404, locked: 403, bad_request: 400, grading_failed: 502 };
 
-export function toAttemptErrorResponse(err: unknown): { status: number; body: { error: string } } | null {
+export function toAttemptErrorResponse(err: unknown): { status: number; body: ApiErrorBody } | null {
   if (!(err instanceof AttemptError)) return null;
-  return { status: STATUS_FOR[err.kind], body: { error: err.message } };
+  return { status: STATUS_FOR[err.kind], body: errorBody(err.message, err.code, err.params) };
 }
 
 export interface AttemptDeps {
@@ -77,7 +89,7 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
     const lesson = curriculum.getLesson(lessonId, 'generic'); // getLesson ignores its track argument
     if (!lesson) throw new AttemptError(`Lesson not found: ${lessonId}`, 'not_found');
     if (!unlocks.isLevelUnlocked(lesson.sourceLevel)) {
-      throw new AttemptError(`Level ${lesson.sourceLevel} is locked`, 'locked');
+      throw new AttemptError(`Level ${lesson.sourceLevel} is locked`, 'locked', 'level_locked', { level: lesson.sourceLevel });
     }
     return lesson;
   }
@@ -112,7 +124,7 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
           level,
           uiLanguage: profiles.getProfile().uiLanguage,
         });
-        if (!graded.ok) throw new AttemptError(graded.error, 'grading_failed');
+        if (!graded.ok) throw new AttemptError(graded.error, 'grading_failed', graded.code, graded.params);
         return { result: graded.result, feedback: graded.feedback };
       }
     }

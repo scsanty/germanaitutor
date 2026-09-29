@@ -28,14 +28,13 @@ describe('gradeFreeText', () => {
     expect(await gradeFreeText(createDbClient(':memory:'), input)).toEqual({
       ok: false,
       error: 'The AI replied in an unexpected format',
+      code: 'ai_bad_reply',
     });
   });
 
   it('passes through a provider failure', async () => {
-    vi.mocked(generateWithActiveProvider).mockResolvedValue({ ok: false, error: 'No AI provider is set up' });
-    expect(await gradeFreeText(createDbClient(':memory:'), input)).toEqual({
-      ok: false,
-      error: 'No AI provider is set up',
-    });
+    const failure = { ok: false as const, error: 'No AI provider is set up', code: 'no_provider' as const };
+    vi.mocked(generateWithActiveProvider).mockResolvedValue(failure);
+    expect(await gradeFreeText(createDbClient(':memory:'), input)).toEqual(failure);
   });
 });

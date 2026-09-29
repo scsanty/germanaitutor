@@ -83,7 +83,7 @@ describe('lessonChatService', () => {
     expect(toChatErrorResponse(new ChatError('x', 'not_found'))?.status).toBe(404);
     expect(toChatErrorResponse(new ChatError('x', 'locked'))?.status).toBe(403);
     expect(toChatErrorResponse(new ChatError('x', 'bad_request'))?.status).toBe(400);
-    expect(toChatErrorResponse(new ChatError('x', 'ai_failed'))).toEqual({ status: 502, body: { error: 'x' } });
+    expect(toChatErrorResponse(new ChatError('x', 'ai_failed'))).toEqual({ status: 502, body: { error: 'x', code: 'ai_failed' } });
     expect(toChatErrorResponse(new Error('x'))).toBeNull();
   });
 });

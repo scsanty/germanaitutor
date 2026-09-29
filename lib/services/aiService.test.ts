@@ -29,6 +29,7 @@ describe('generateWithActiveProvider', () => {
     expect(await generateWithActiveProvider(db, request, keyFilePath)).toEqual({
       ok: false,
       error: 'No AI provider is set up',
+      code: 'no_provider',
     });
   });
 
@@ -39,6 +40,7 @@ describe('generateWithActiveProvider', () => {
     expect(await generateWithActiveProvider(db, request, keyFilePath)).toEqual({
       ok: false,
       error: 'The active AI provider has no model selected',
+      code: 'no_model',
     });
   });
 
@@ -70,6 +72,8 @@ describe('generateWithActiveProvider', () => {
     expect(await generateWithActiveProvider(db, request, keyFilePath)).toEqual({
       ok: false,
       error: 'Anthropic returned 429',
+      code: 'ai_failed',
+      params: { detail: 'Anthropic returned 429' },
     });
     expect(providers.getConnection(connection.id)).toMatchObject({
       lastValidatedStatus: 'failing',
