@@ -38,7 +38,7 @@
 <body>
 <header>
   <h1>GermanLearner — project board</h1>
-  <div class="sub">Last updated: 2026-09-29 · Current step: Tutoring Phase 2 plan written — awaiting review and choice of execution method</div>
+  <div class="sub">Last updated: 2026-09-29 · Current step: brainstorming all remaining specs (restructure, bilingual and design pass decided; Reading next)</div>
   <div class="legend">
     <span class="done">Done</span><span class="progress">In progress</span><span class="planning">Spec / planning</span>
     <span class="next">Up next</span><span class="todo">Not started</span><span class="deferred">Deferred</span>
@@ -63,41 +63,41 @@
   </section>
 
   <section class="col">
-    <h2>Spec / planning <span class="n">1</span></h2>
-    <div class="card planning"><h3>#3 Tutoring — Phase 2: Practice pool</h3><div class="tag">Spec approved · plan written, awaiting review</div>
+    <h2>Spec / planning <span class="n">4</span></h2>
+    <div class="card planning"><h3>#3 Tutoring — Phase 2: Practice pool</h3><div class="tag">Plan written · builds first, after all specs and plans</div>
       <ul>
-        <li class="ok">Spec approved (docs/superpowers/specs/2026-09-29-…)</li>
-        <li class="ok">Implementation plan (15 tasks, docs/superpowers/plans/2026-09-29-…)</li>
-        <li class="todo">Execution (fresh branch, merge to main)</li>
-        <li class="todo">"Get more exercises" batches of 5 (practice, not recorded)</li>
-        <li class="todo">AI generation into shared pool</li>
-        <li class="todo">Admin review: approve / reject / edit / promote</li>
-        <li class="todo">Approved pool in curriculum export</li>
-        <li class="todo">Leftovers: sticky Ask-AI, translated errors, chat retry, queue source check, flaky test</li>
+        <li class="ok">Spec approved</li>
+        <li class="ok">Implementation plan (15 tasks)</li>
+        <li class="todo">Amend the generation prompt: German-only, CEFR level (new decision)</li>
+        <li class="todo">Execution</li>
       </ul></div>
+    <div class="card planning"><h3>Curriculum restructure</h3><div class="tag">Decisions made · spec to write</div>
+      <ul><li class="ok">Track → Level → Milestone → Lesson (sections removed)</li><li class="ok">Difficulty-ranked, hard-gated milestones; prerequisites lock lessons</li><li class="ok">Branching vertical tree; test-out (80%, 24 h cooldown)</li><li class="todo">Spec</li><li class="todo">Plan</li></ul></div>
+    <div class="card planning"><h3>Bilingual content (en/de)</h3><div class="tag">Decisions made · spec to write</div>
+      <ul><li class="ok">Titles, explanations and instructions in both languages; tested German never translated</li><li class="ok">Toggle per lesson; Claude drafts the translations</li><li class="todo">Spec</li><li class="todo">Plan</li></ul></div>
+    <div class="card planning"><h3>App-wide design pass — NaDoch!</h3><div class="tag">Decisions made · spec to write</div>
+      <ul><li class="ok">Logo and palette (teal/cyan + orange on #121212)</li><li class="ok">shadcn/ui + Tailwind v4 + React 19</li><li class="ok">Thumb-zone phone layout, desktop sidebar, focus mode, PWA</li><li class="todo">Spec</li><li class="todo">Plan</li></ul></div>
   </section>
 
   <section class="col">
-    <h2>Up next <span class="n">1</span></h2>
-    <div class="card next"><h3>App-wide design pass</h3><div class="tag">After Phase 2</div>
-      <ul><li class="todo">Navigation shell</li><li class="todo">Dark-first warm theme (#ff9843 accent)</li><li class="todo">Editable theme-tokens file, light toggle</li></ul></div>
+    <h2>Brainstorming queue <span class="n">7</span></h2>
+    <div class="card next"><h3>Reading module</h3><div class="tag">telc B1 focus · brainstorming now</div></div>
+    <div class="card next"><h3>Listening module</h3><div class="tag">Piper TTS in a Docker sidecar</div></div>
+    <div class="card next"><h3>Writing module</h3></div>
+    <div class="card next"><h3>Speaking module</h3><div class="tag">faster-whisper in a Docker sidecar</div></div>
+    <div class="card next"><h3>Level exams</h3><div class="tag">Gated exam node at the end of each level</div></div>
+    <div class="card next"><h3>#3 Tutoring — Phase 3: Freestyle</h3><div class="tag">Includes Teil practice and full mocks</div></div>
+    <div class="card next"><h3>Accounts &amp; hosting</h3><div class="tag">Multi-user, home server, then cloud</div></div>
   </section>
 
   <section class="col">
-    <h2>Not started <span class="n">6</span></h2>
-    <div class="card todo"><h3>#3 Tutoring — Phase 3: Freestyle</h3><div class="tag">Outline only</div>
-      <ul><li class="todo">Open AI practice chat</li><li class="todo">Cross-source vocabulary deck</li></ul></div>
-    <div class="card todo"><h3>#4 Writing module</h3></div>
-    <div class="card todo"><h3>#5 Gamification</h3><div class="tag">XP, streaks, badges</div></div>
-    <div class="card todo"><h3>#6 Speaking module</h3><div class="tag">STT/TTS, voice placement questions</div></div>
-    <div class="card todo"><h3>#7 Reading module</h3></div>
-    <div class="card todo"><h3>#8 Listening module</h3></div>
+    <h2>Not started <span class="n">1</span></h2>
+    <div class="card todo"><h3>#5 Gamification</h3><div class="tag">Excluded from this round</div></div>
   </section>
 
   <section class="col">
-    <h2>Deferred <span class="n">1</span></h2>
-    <div class="card deferred"><h3>Level exams</h3><div class="tag">Waits for #4, #6, #7, #8</div>
-      <ul><li class="todo">Mock exam per track + level, required to finish a level</li></ul></div>
+    <h2>Deferred <span class="n">0</span></h2>
+    <div class="card deferred"><h3>(none)</h3></div>
   </section>
 </main>
 </body>
