@@ -1,8 +1,18 @@
 // components/onboarding/OnboardingWizard.test.tsx
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { screen, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { renderWithIntl } from '@/test/renderWithIntl';
 
-vi.mock('next/navigation', () => ({ useRouter: () => ({ push: vi.fn() }) }));
+const { pushMock, refreshMock } = vi.hoisted(() => ({ pushMock: vi.fn(), refreshMock: vi.fn() }));
+vi.mock('next/navigation', () => ({ useRouter: () => ({ push: pushMock, refresh: refreshMock }) }));
+vi.mock('@/components/placement/PlacementTest', () => ({
+  PlacementTest: ({ onFinished, onSkip }: { onFinished: () => void; onSkip?: () => void }) => (
+    <div>
+      <button onClick={onFinished}>fake finish</button>
+      <button onClick={onSkip}>fake skip</button>
+    </div>
+  ),
+}));
 
 import { OnboardingWizard } from './OnboardingWizard';
 
@@ -17,6 +27,8 @@ function stubFetch(overrides: Record<string, unknown> = {}) {
     '/api/providers/active': { ok: true, json: async () => ({}) },
     '/api/providers/1/models': { ok: true, json: async () => [{ id: 'model-a', label: 'Model A' }] },
     '/api/providers/1': { ok: true, json: async () => ({ id: 1, selectedModel: 'model-a' }) },
+    '/api/profile': { ok: true, json: async () => ({}) },
+    '/api/placement/skip': { ok: true, json: async () => ({}) },
     ...overrides,
   };
   const fetchMock = vi.fn((url: string) => {
@@ -29,7 +41,7 @@ function stubFetch(overrides: Record<string, unknown> = {}) {
 }
 
 async function connectSuccessfully() {
-  render(<OnboardingWizard />);
+  renderWithIntl(<OnboardingWizard />);
   fireEvent.click(screen.getByText('Get started'));
   fireEvent.change(screen.getByPlaceholderText('API key'), { target: { value: 'sk-test' } });
   fireEvent.click(screen.getByText('Test connection'));
@@ -38,12 +50,14 @@ async function connectSuccessfully() {
 describe('OnboardingWizard', () => {
   beforeEach(() => {
     vi.stubGlobal('fetch', vi.fn());
+    pushMock.mockClear();
+    refreshMock.mockClear();
   });
 
   it('keeps Next disabled on the provider step until the connection test succeeds', async () => {
     stubFetch();
 
-    render(<OnboardingWizard />);
+    renderWithIntl(<OnboardingWizard />);
     fireEvent.click(screen.getByText('Get started'));
     const nextButton = screen.getByText('Next');
     expect(nextButton).toBeDisabled();
@@ -80,7 +94,7 @@ describe('OnboardingWizard', () => {
         body: JSON.stringify({ selectedModel: 'model-b' }),
       })
     );
-    await screen.findByText('Choose your track and level');
+    await screen.findByText('Choose your track');
   });
 
   it('continues past the model picker when the provider cannot list models', async () => {
@@ -98,7 +112,7 @@ describe('OnboardingWizard', () => {
   it('shows the error and keeps Next disabled when the test fails', async () => {
     stubFetch({ '/api/providers/1/test': { ok: true, json: async () => ({ ok: false, error: 'Anthropic returned 401' }) } });
 
-    render(<OnboardingWizard />);
+    renderWithIntl(<OnboardingWizard />);
     fireEvent.click(screen.getByText('Get started'));
     fireEvent.change(screen.getByPlaceholderText('API key'), { target: { value: 'bad-key' } });
     fireEvent.click(screen.getByText('Test connection'));
@@ -110,7 +124,7 @@ describe('OnboardingWizard', () => {
   it('shows an error and keeps Next disabled when saving the provider connection fails', async () => {
     const fetchMock = stubFetch({ '/api/providers': { ok: false, json: async () => ({}) } });
 
-    render(<OnboardingWizard />);
+    renderWithIntl(<OnboardingWizard />);
     fireEvent.click(screen.getByText('Get started'));
     fireEvent.change(screen.getByPlaceholderText('API key'), { target: { value: 'sk-test' } });
     fireEvent.click(screen.getByText('Test connection'));
@@ -118,5 +132,55 @@ describe('OnboardingWizard', () => {
     await waitFor(() => expect(screen.getByRole('alert')).toHaveTextContent('Failed to save provider connection'));
     expect(screen.getByText('Next')).toBeDisabled();
     expect(fetchMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('saves the track and language before the placement step', async () => {
+    const fetchMock = stubFetch();
+    await connectSuccessfully();
+    await waitFor(() => expect(screen.getByText('Next')).not.toBeDisabled());
+    fireEvent.click(screen.getByText('Next'));
+
+    fireEvent.change(await screen.findByLabelText('Choose your track'), { target: { value: 'telc' } });
+    fireEvent.click(screen.getByText('Next'));
+    fireEvent.change(screen.getByLabelText('Choose your interface language'), { target: { value: 'de' } });
+    fireEvent.click(screen.getByText('Next'));
+
+    await screen.findByText('fake finish');
+    expect(fetchMock).toHaveBeenCalledWith('/api/profile', {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ activeTrack: 'telc', uiLanguage: 'de', onboardingChoicesSaved: true }),
+    });
+    expect(refreshMock).toHaveBeenCalled();
+  });
+
+  it('shows an error and stays on the language step when saving the choices fails', async () => {
+    stubFetch({ '/api/profile': { ok: false, json: async () => ({}) } });
+    renderWithIntl(<OnboardingWizard initialStep="language" />);
+    fireEvent.click(screen.getByText('Next'));
+    await waitFor(() =>
+      expect(screen.getByRole('alert')).toHaveTextContent('Could not save your choices. Please try again.')
+    );
+    expect(screen.queryByText('fake finish')).not.toBeInTheDocument();
+  });
+
+  it('finishes onboarding after the placement test', async () => {
+    const fetchMock = stubFetch();
+    renderWithIntl(<OnboardingWizard initialStep="placement" />);
+    fireEvent.click(screen.getByText('fake finish'));
+    await waitFor(() => expect(pushMock).toHaveBeenCalledWith('/'));
+    expect(fetchMock).toHaveBeenCalledWith('/api/profile', {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ onboardingComplete: true }),
+    });
+  });
+
+  it('skipping the placement test records the skip and finishes onboarding', async () => {
+    const fetchMock = stubFetch();
+    renderWithIntl(<OnboardingWizard initialStep="placement" />);
+    fireEvent.click(screen.getByText('fake skip'));
+    await waitFor(() => expect(pushMock).toHaveBeenCalledWith('/'));
+    expect(fetchMock).toHaveBeenCalledWith('/api/placement/skip', { method: 'POST' });
   });
 });

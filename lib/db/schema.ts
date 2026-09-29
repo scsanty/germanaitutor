@@ -66,6 +66,27 @@ function migrateConceptIdAndPlacementUniqueness(db: Database.Database): void {
   `);
 }
 
+/**
+ * Adds the level-unlocking columns to a profile created before the placement test existed.
+ * That profile self-selected its level in onboarding; per the Tutoring spec it restarts at A1
+ * and is prompted for the placement test. Fresh databases already have the columns.
+ */
+function migrateProfileLevelColumns(db: Database.Database): void {
+  const columns = db.prepare('PRAGMA table_info(profile)').all() as { name: string }[];
+  if (columns.some((c) => c.name === 'placement_status')) return;
+
+  db.exec(`
+    ALTER TABLE profile ADD COLUMN highest_unlocked_level TEXT NOT NULL DEFAULT 'A1'
+      CHECK (highest_unlocked_level IN ('A1','A2','B1','B2','C1'));
+    ALTER TABLE profile ADD COLUMN placement_status TEXT NOT NULL DEFAULT 'pending'
+      CHECK (placement_status IN ('pending','skipped','taken'));
+    ALTER TABLE profile ADD COLUMN unlock_notice_level TEXT
+      CHECK (unlock_notice_level IN ('A2','B1','B2','C1'));
+    ALTER TABLE profile ADD COLUMN onboarding_choices_saved INTEGER NOT NULL DEFAULT 0;
+    UPDATE profile SET active_level = 'A1' WHERE id = 1;
+  `);
+}
+
 export function runMigrations(db: Database.Database): void {
   // Wrapped in one transaction so a concurrent connection (e.g. a parallel `next build`
   // static-page-data worker also calling getDb()) never observes the mid-migration state
@@ -74,6 +95,7 @@ export function runMigrations(db: Database.Database): void {
     migrateLegacyCurriculumSchema(db);
     createTablesIfMissing(db);
     migrateConceptIdAndPlacementUniqueness(db);
+    migrateProfileLevelColumns(db);
   });
   migrate();
 }
@@ -88,6 +110,10 @@ function createTablesIfMissing(db: Database.Database): void {
       active_level TEXT NOT NULL DEFAULT 'A1' CHECK (active_level IN ('A1','A2','B1','B2','C1')),
       freestyle_default INTEGER NOT NULL DEFAULT 0,
       onboarding_complete INTEGER NOT NULL DEFAULT 0,
+      highest_unlocked_level TEXT NOT NULL DEFAULT 'A1' CHECK (highest_unlocked_level IN ('A1','A2','B1','B2','C1')),
+      placement_status TEXT NOT NULL DEFAULT 'pending' CHECK (placement_status IN ('pending','skipped','taken')),
+      unlock_notice_level TEXT CHECK (unlock_notice_level IN ('A2','B1','B2','C1')),
+      onboarding_choices_saved INTEGER NOT NULL DEFAULT 0,
       updated_at TEXT NOT NULL DEFAULT (datetime('now'))
     );
 
@@ -205,6 +231,32 @@ function createTablesIfMissing(db: Database.Database): void {
       id INTEGER PRIMARY KEY CHECK (id = 1),
       seed_version TEXT NOT NULL DEFAULT '0',
       last_synced_at TEXT
+    );
+
+    CREATE TABLE IF NOT EXISTS placement_questions (
+      id TEXT PRIMARY KEY,
+      position INTEGER NOT NULL UNIQUE,
+      level TEXT NOT NULL CHECK (level IN ('A1','A2','B1','B2','C1')),
+      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','free_text')),
+      content TEXT NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS placement_session (
+      id INTEGER PRIMARY KEY CHECK (id = 1),
+      started_at TEXT NOT NULL,
+      next_position INTEGER NOT NULL,
+      score REAL NOT NULL,
+      mistakes INTEGER NOT NULL,
+      answers TEXT NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS placement_best_result (
+      id INTEGER PRIMARY KEY CHECK (id = 1),
+      score REAL NOT NULL,
+      max_score REAL NOT NULL,
+      placed_level TEXT NOT NULL CHECK (placed_level IN ('A1','A2','B1','B2','C1')),
+      stop_reason TEXT NOT NULL CHECK (stop_reason IN ('beyond_my_knowledge','five_mistakes','finished')),
+      taken_at TEXT NOT NULL
     );
   `);
 }

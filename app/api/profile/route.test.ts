@@ -3,7 +3,8 @@ import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { mkdtempSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
-import { closeDb } from '@/lib/db/client';
+import { closeDb, getDb } from '@/lib/db/client';
+import { createProfileService } from '@/lib/services/profileService';
 import { GET, PATCH } from './route';
 
 describe('/api/profile', () => {
@@ -31,5 +32,30 @@ describe('/api/profile', () => {
     );
     const body = await res.json();
     expect(body.activeTrack).toBe('telc');
+  });
+
+  it('PATCH rejects a locked level with 400', async () => {
+    const res = await PATCH(
+      new Request('http://localhost/api/profile', { method: 'PATCH', body: JSON.stringify({ activeLevel: 'B2' }) })
+    );
+    expect(res.status).toBe(400);
+    expect(await res.json()).toEqual({ error: 'Level B2 is locked' });
+  });
+
+  it('PATCH rejects an unknown level with 400', async () => {
+    const res = await PATCH(
+      new Request('http://localhost/api/profile', { method: 'PATCH', body: JSON.stringify({ activeLevel: 'Z9' }) })
+    );
+    expect(res.status).toBe(400);
+    expect(await res.json()).toEqual({ error: 'Level Z9 is locked' });
+  });
+
+  it('PATCH accepts an unlocked level', async () => {
+    createProfileService(getDb()).writeLevelState({ highestUnlockedLevel: 'B2' });
+    const res = await PATCH(
+      new Request('http://localhost/api/profile', { method: 'PATCH', body: JSON.stringify({ activeLevel: 'B2' }) })
+    );
+    expect(res.status).toBe(200);
+    expect((await res.json()).activeLevel).toBe('B2');
   });
 });

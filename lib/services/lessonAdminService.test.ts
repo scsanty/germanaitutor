@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { createDbClient } from '../db/client';
-import { createLessonAdminService } from './lessonAdminService';
+import { createLessonAdminService, flashcardRuleViolation, type UpdateLessonInput } from './lessonAdminService';
+import type { ExerciseInput } from '../curriculum-admin/exerciseReconciliation';
 
 function seedMilestoneAndSection(db: ReturnType<typeof createDbClient>) {
   db.exec(`
@@ -96,7 +97,7 @@ describe('lessonAdminService.createLesson', () => {
       slug: 'modal-verbs',
       track: 'generic',
       sourceLevel: 'A1',
-      skill: 'grammar',
+      skill: 'vocabulary',
       title: 'Modal Verbs',
       explanation: null,
       examples: null,
@@ -527,5 +528,66 @@ describe('lessonAdminService.updateLesson', () => {
       section_id: string;
     };
     expect(placement.section_id).toBe('s1');
+  });
+});
+
+describe('flashcard rule', () => {
+  function setupRule() {
+    const db = createDbClient(':memory:');
+    seedMilestoneAndSection(db);
+    return { db, service: createLessonAdminService(db) };
+  }
+
+  const flashcard: ExerciseInput = { type: 'flashcard', content: { front: 'der Hund', back: 'the dog' } };
+  const multipleChoice: ExerciseInput = {
+    type: 'multiple_choice',
+    content: { question: 'Q', options: ['a', 'b'], correctIndex: 0 },
+  };
+
+  function lessonFields(skill: 'grammar' | 'vocabulary', exercises: ExerciseInput[]): UpdateLessonInput {
+    return {
+      track: 'generic',
+      sourceLevel: 'A1',
+      skill,
+      title: 'Rule test',
+      explanation: null,
+      examples: null,
+      exercises,
+      prerequisiteIds: [],
+      placement: { sectionId: 's1' },
+    };
+  }
+
+  it('describes a violation with the exact message', () => {
+    expect(flashcardRuleViolation('grammar', [flashcard, flashcard, multipleChoice])).toBe(
+      'This lesson has 2 flashcards, which are only allowed in vocabulary lessons. Remove or change them first.'
+    );
+    expect(flashcardRuleViolation('grammar', [flashcard])).toBe(
+      'This lesson has 1 flashcard, which is only allowed in vocabulary lessons. Remove or change them first.'
+    );
+    expect(flashcardRuleViolation('vocabulary', [flashcard])).toBeNull();
+    expect(flashcardRuleViolation('grammar', [multipleChoice])).toBeNull();
+  });
+
+  it('allows flashcards in a vocabulary lesson', () => {
+    const { service } = setupRule();
+    expect(service.createLesson({ slug: 'rule-test', ...lessonFields('vocabulary', [flashcard]) }).id).toBe('a1-rule-test');
+  });
+
+  it('refuses to create a non-vocabulary lesson with a flashcard', () => {
+    const { db, service } = setupRule();
+    expect(() =>
+      service.createLesson({ slug: 'rule-test', ...lessonFields('grammar', [flashcard, multipleChoice]) })
+    ).toThrow('This lesson has 1 flashcard, which is only allowed in vocabulary lessons. Remove or change them first.');
+    expect(db.prepare('SELECT COUNT(*) AS n FROM lessons').get()).toEqual({ n: 0 });
+  });
+
+  it('refuses to change a vocabulary lesson with flashcards to another skill', () => {
+    const { db, service } = setupRule();
+    service.createLesson({ slug: 'rule-test', ...lessonFields('vocabulary', [flashcard]) });
+    expect(() => service.updateLesson('a1-rule-test', lessonFields('grammar', [flashcard]))).toThrow(
+      'This lesson has 1 flashcard, which is only allowed in vocabulary lessons. Remove or change them first.'
+    );
+    expect(db.prepare('SELECT skill FROM lessons WHERE id = ?').get('a1-rule-test')).toEqual({ skill: 'vocabulary' });
   });
 });

@@ -1,0 +1,128 @@
+{
+  "common": {
+    "loading": "Loading..."
+  },
+  "banner": {
+    "providerTrouble": "Your active provider ({provider}) is having trouble: {error}. <link>Visit Settings</link> to fix it or switch providers."
+  },
+  "home": {
+    "title": "German AI Tutor",
+    "intro": "Your lessons will appear here soon.",
+    "settings": "Settings"
+  },
+  "placement": {
+    "title": "Placement test",
+    "intro": "Answer the questions one at a time. They get harder as you go. When a question is beyond what you know, press “Beyond my knowledge”: the test ends there and places you. The test also ends after 5 wrong answers. You will see your answers at the end.",
+    "start": "Start the test",
+    "skip": "Skip, start at A1",
+    "answerLabel": "Your answer",
+    "submit": "Submit answer",
+    "submitting": "Checking…",
+    "beyond": "Beyond my knowledge",
+    "gradingFailed": "Your answer could not be graded: {error}. Your answer is kept, so you can try again. <link>Visit Settings</link> if this keeps happening.",
+    "genericError": "Something went wrong: {error}",
+    "resultTitle": "Your result",
+    "placedAt": "You placed at {level}.",
+    "score": "Score: {score} of {max} points",
+    "stopReason": {
+      "beyond_my_knowledge": "You stopped with “Beyond my knowledge”.",
+      "five_mistakes": "The test ended after 5 wrong answers.",
+      "finished": "You answered every question."
+    },
+    "review": "Your answers",
+    "given": "Your answer: {answer}",
+    "correctAnswer": "Correct answer: {answer}",
+    "modelAnswer": "Model answer: {answer}",
+    "feedback": "Feedback: {feedback}",
+    "result": {
+      "correct": "Correct",
+      "almost": "Almost",
+      "wrong": "Wrong"
+    },
+    "noAnswer": "(no answer)",
+    "continue": "Continue"
+  },
+  "tracks": {
+    "generic": "Generic",
+    "telc": "TELC",
+    "goethe": "Goethe"
+  },
+  "notices": {
+    "placementPrompt": "Find your level: the placement test unlocks the levels that fit you.",
+    "takeTest": "Take the placement test",
+    "skip": "Skip, start at A1",
+    "unlocked": "{level} unlocked — switch to {level}?",
+    "switch": "Switch",
+    "dismiss": "Dismiss",
+    "error": "Something went wrong. Please reload the page."
+  },
+  "onboarding": {
+    "welcomeTitle": "Welcome to German AI Tutor",
+    "getStarted": "Get started",
+    "providerTitle": "Connect an AI provider",
+    "providerType": "Provider",
+    "ollamaHost": "Ollama host",
+    "apiKey": "API key",
+    "testConnection": "Test connection",
+    "connected": "Connected!",
+    "model": "Model",
+    "next": "Next",
+    "saveFailed": "Failed to save provider connection",
+    "connectionFailed": "Connection failed",
+    "noModels": "No models reported by this provider",
+    "modelsFailed": "Could not load models",
+    "trackTitle": "Choose your track",
+    "languageTitle": "Choose your interface language",
+    "saveChoicesFailed": "Could not save your choices. Please try again.",
+    "finishFailed": "Could not finish setup. Please try again."
+  },
+  "settings": {
+    "backHome": "Back to home",
+    "loadFailed": "Could not load your settings. Please reload the page.",
+    "providers": "Providers",
+    "connectionStatus": {
+      "valid": "Working",
+      "failing": "Having trouble",
+      "invalid": "Not working",
+      "untested": "Not tested yet"
+    },
+    "activeMarker": "— active",
+    "makeActive": "Make active",
+    "retest": "Re-test",
+    "remove": "Remove",
+    "usage": "{requests} requests, {tokens} tokens (last {days} days)",
+    "addProvider": "Add provider",
+    "newProviderType": "New provider type",
+    "ollamaHost": "Ollama host",
+    "apiKey": "API key",
+    "saveProvider": "Save provider",
+    "cancel": "Cancel",
+    "saveFailed": "Failed to save provider connection",
+    "chooseModel": "Choose a model",
+    "model": "Model",
+    "noModelsAvailable": "No models available",
+    "noModels": "No models reported by this provider",
+    "modelsFailed": "Could not load models",
+    "done": "Done",
+    "trackLevel": "Track & level",
+    "trackLabel": "Track",
+    "levelLabel": "Level",
+    "levelHint": "Levels above {level} unlock as you finish lessons or place higher in the placement test.",
+    "profileSaveFailed": "Could not save this setting: {error}",
+    "placement": "Placement test",
+    "placementBest": "Best result: {level} ({score} of {max} points, {date})",
+    "placementNone": "You have not taken the placement test yet.",
+    "placementTake": "Take the placement test",
+    "placementRetake": "Retake the placement test",
+    "placementLoadFailed": "Could not load your placement result.",
+    "language": "Language",
+    "freestyle": "Freestyle mode",
+    "freestyleDefault": "Default to freestyle mode",
+    "backup": "Backup",
+    "exportBackup": "Export backup",
+    "dangerZone": "Danger zone",
+    "resetConfirm": "This deletes all local data permanently. Are you sure?",
+    "resetYes": "Yes, reset everything",
+    "reset": "Reset app data"
+  }
+}

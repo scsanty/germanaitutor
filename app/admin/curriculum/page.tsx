@@ -11,14 +11,22 @@ export default function AdminCurriculumPage() {
   return (
     <div>
       <h1>Curriculum</h1>
+      <p>
+        <a href="/admin/curriculum/flashcard-violations">Flashcards outside vocabulary lessons</a>
+        {' · '}
+        <a href="/admin/placement-exam">Placement exam</a>
+        {' · '}
+        <a href="/api/admin/curriculum/export">Download all as seed files (zip)</a>
+      </p>
       <ul>
         {tracks.map(({ track, levels }) => (
           <li key={track}>
             {track}:{' '}
             {levels.map((level) => (
-              <a key={level} href={`/admin/curriculum/${track}/${level}`}>
-                {level}{' '}
-              </a>
+              <span key={level}>
+                <a href={`/admin/curriculum/${track}/${level}`}>{level}</a>{' '}
+                <a href={`/api/admin/curriculum/export/${track}/${level}`}>(export)</a>{' '}
+              </span>
             ))}
           </li>
         ))}
