@@ -138,7 +138,7 @@ Every milestone at that next rank gets its own test-out.
 - its lesson isn't done already;
 - for `free_text`, a working AI provider exists.
 
-If fewer than **5** gradable exercises exist, no test-out is offered, with the reason "not enough questions".
+If the draw (below) would have fewer than **5** questions, no test-out is offered, with the reason "not enough questions".
 
 **Draw.** For the milestone's not-done lessons in random order:
 - **up to 10 lessons:** up to 2 random gradable exercises each;
@@ -195,8 +195,8 @@ The practice pool already requires a completed lesson, so it's unaffected. Queue
 
 New error codes join Phase 2's `ErrorCode` union and the `errors` catalog (en and de):
 - `lesson_locked`: "This lesson is still locked" / "Diese Lektion ist noch gesperrt"
-- `testout_unavailable`: "This test-out isn't available" / "Dieser Einstufungstest ist nicht verfügbar"
-- `testout_cooldown`: "You can try this test-out again later" / "Du kannst diesen Test später noch einmal versuchen"
+- `testout_unavailable`: "This test-out isn't available" / "Dieser Test zum Überspringen ist nicht verfügbar"
+- `testout_cooldown`: "You can try this test-out again later" / "Du kannst diesen Test später noch einmal machen"
 
 The Daily Queue's ordering replaces section and placement order with `difficulty_rank`, then milestone id, then exercise rowid. The suggested next lesson becomes the first **open**, not-done lesson in tree order (rank, then branch layout order).
 
