@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GermanLearner Kanban</title>
+<style>
+  :root {
+    --bg: #1c1410; --panel: #2a1f18; --card: #33261d; --text: #fff3e6; --muted: #c9a888;
+    --accent: #ff9843; --done: #7bc47f; --planning: #ffcf5c; --progress: #ff9843; --next: #6fb3ff;
+    --todo: #8a7563; --deferred: #b48cd8; --border: #3d2e23;
+  }
+  @media (prefers-color-scheme: light) {
+    :root { --bg: #fff8f0; --panel: #f6ebdf; --card: #ffffff; --text: #2a1f18; --muted: #7a5c43; --border: #e6d5c3; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  header { padding: 20px 16px 8px; }
+  h1 { margin: 0 0 4px; font-size: 22px; }
+  .sub { color: var(--muted); font-size: 13px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; font-size: 12px; color: var(--muted); }
+  .legend span::before { content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; background: var(--c); }
+  .board { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; padding: 12px 16px 24px; }
+  .col { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 10px; }
+  .col h2 { margin: 2px 4px 10px; font-size: 14px; text-transform: uppercase; letter-spacing: .06em; display: flex; justify-content: space-between; }
+  .col h2 .n { color: var(--muted); font-weight: 500; }
+  .card { background: var(--card); border: 1px solid var(--border); border-left: 4px solid var(--c); border-radius: 10px; padding: 9px 10px; margin-bottom: 8px; }
+  .card h3 { margin: 0; font-size: 14px; }
+  .card .tag { font-size: 11px; color: var(--muted); }
+  .card ul { margin: 6px 0 0; padding-left: 16px; font-size: 12.5px; color: var(--muted); }
+  .card li.ok::marker { content: "✓ "; color: var(--done); }
+  .card li.wip::marker { content: "◐ "; color: var(--progress); }
+  .card li.todo::marker { content: "○ "; color: var(--todo); }
+  .done { --c: var(--done); } .planning { --c: var(--planning); } .progress { --c: var(--progress); }
+  .next { --c: var(--next); } .todo { --c: var(--todo); } .deferred { --c: var(--deferred); }
+</style>
+</head>
+<body>
+<header>
+  <h1>GermanLearner — project board</h1>
+  <div class="sub">Last updated: 2026-09-29 · Current step: writing the Tutoring Phase 2 implementation plan</div>
+  <div class="legend">
+    <span class="done">Done</span><span class="progress">In progress</span><span class="planning">Spec / planning</span>
+    <span class="next">Up next</span><span class="todo">Not started</span><span class="deferred">Deferred</span>
+  </div>
+</header>
+
+<main class="board">
+  <section class="col">
+    <h2>Done <span class="n">6</span></h2>
+    <div class="card done"><h3>#1 Core platform</h3><div class="tag">Sub-project 1</div>
+      <ul><li class="ok">Onboarding wizard</li><li class="ok">Settings, backup/import, reset</li><li class="ok">BYOK providers (Anthropic, OpenAI, Gemini, Ollama), encrypted keys, usage</li><li class="ok">Structured memory store (infra)</li></ul></div>
+    <div class="card done"><h3>#2 CEFR frameworks</h3><div class="tag">Sub-project 2</div>
+      <ul><li class="ok">Curriculum data model</li><li class="ok">Cross-track concept links</li><li class="ok">Seed import (DB is authoritative)</li><li class="ok">Read-only API, admin login, browse UI</li></ul></div>
+    <div class="card done"><h3>#2.5 Curriculum admin management</h3><div class="tag">Sub-project 2.5</div>
+      <ul><li class="ok">Lesson CRUD, dependency repair</li><li class="ok">Concept linking, dependency diagram</li><li class="ok">Unsorted bucket</li></ul></div>
+    <div class="card done"><h3>#3 Tutoring — Phase 1A</h3><div class="tag">Levels, placement, admin, translations</div>
+      <ul><li class="ok">en/de translations</li><li class="ok">Level unlocking (global, hard lock)</li><li class="ok">Placement test</li><li class="ok">Flashcard rule + violations list</li><li class="ok">Seed export, placement-exam upload</li></ul></div>
+    <div class="card done"><h3>#3 Tutoring — Phase 1B</h3><div class="tag">Teaching loop</div>
+      <ul><li class="ok">Curriculum tree home page</li><li class="ok">Lesson page, retry round, sticky completion</li><li class="ok">SM-2 review + Daily Queue, daily limit</li><li class="ok">Lesson chat + Ask AI</li></ul></div>
+    <div class="card done"><h3>Next.js 16 migration</h3><div class="tag">Platform</div>
+      <ul><li class="ok">Async params, cookies, admin check</li><li class="ok">tsc + next build clean, 612 tests</li></ul></div>
+  </section>
+
+  <section class="col">
+    <h2>Spec / planning <span class="n">1</span></h2>
+    <div class="card planning"><h3>#3 Tutoring — Phase 2: Practice pool</h3><div class="tag">Spec approved · plan being written</div>
+      <ul>
+        <li class="ok">Spec approved (docs/superpowers/specs/2026-09-29-…)</li>
+        <li class="wip">Implementation plan (15 tasks)</li>
+        <li class="todo">"Get more exercises" batches of 5 (practice, not recorded)</li>
+        <li class="todo">AI generation into shared pool</li>
+        <li class="todo">Admin review: approve / reject / edit / promote</li>
+        <li class="todo">Approved pool in curriculum export</li>
+        <li class="todo">Leftovers: sticky Ask-AI, translated errors, chat retry, queue source check, flaky test</li>
+      </ul></div>
+  </section>
+
+  <section class="col">
+    <h2>Up next <span class="n">1</span></h2>
+    <div class="card next"><h3>App-wide design pass</h3><div class="tag">After Phase 2</div>
+      <ul><li class="todo">Navigation shell</li><li class="todo">Dark-first warm theme (#ff9843 accent)</li><li class="todo">Editable theme-tokens file, light toggle</li></ul></div>
+  </section>
+
+  <section class="col">
+    <h2>Not started <span class="n">6</span></h2>
+    <div class="card todo"><h3>#3 Tutoring — Phase 3: Freestyle</h3><div class="tag">Outline only</div>
+      <ul><li class="todo">Open AI practice chat</li><li class="todo">Cross-source vocabulary deck</li></ul></div>
+    <div class="card todo"><h3>#4 Writing module</h3></div>
+    <div class="card todo"><h3>#5 Gamification</h3><div class="tag">XP, streaks, badges</div></div>
+    <div class="card todo"><h3>#6 Speaking module</h3><div class="tag">STT/TTS, voice placement questions</div></div>
+    <div class="card todo"><h3>#7 Reading module</h3></div>
+    <div class="card todo"><h3>#8 Listening module</h3></div>
+  </section>
+
+  <section class="col">
+    <h2>Deferred <span class="n">1</span></h2>
+    <div class="card deferred"><h3>Level exams</h3><div class="tag">Waits for #4, #6, #7, #8</div>
+      <ul><li class="todo">Mock exam per track + level, required to finish a level</li></ul></div>
+  </section>
+</main>
+</body>
+</html>
