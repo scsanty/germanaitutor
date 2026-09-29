@@ -7,10 +7,9 @@ import { useTranslations } from 'next-intl';
 import type { ProviderConnection, Profile, ProviderType, Track } from '@/lib/types';
 import type { ModelInfo } from '@/lib/providers/types';
 import type { PlacementBestResult } from '@/lib/tutoring/placementTypes';
-import { levelsUpTo } from '@/lib/tutoring/levels';
+import { levelsUpTo, TRACKS } from '@/lib/tutoring/levels';
 
 const PROVIDER_TYPES: ProviderType[] = ['anthropic', 'openai', 'gemini', 'ollama'];
-const TRACKS: Track[] = ['generic', 'telc', 'goethe'];
 const USAGE_WINDOW_DAYS = 7;
 
 interface UsageTotals {
@@ -41,6 +40,15 @@ export function SettingsPage() {
   const [newModels, setNewModels] = useState<ModelInfo[]>([]);
   const [newSelectedModel, setNewSelectedModel] = useState('');
   const [modelsError, setModelsError] = useState<string | null>(null);
+  const [modelsFailed, setModelsFailed] = useState(false);
+  const [capDraft, setCapDraft] = useState<string | null>(null);
+  const [capError, setCapError] = useState<string | null>(null);
+  const [providersFailed, setProvidersFailed] = useState(false);
+  const [actionError, setActionError] = useState<string | null>(null);
+  const [backupError, setBackupError] = useState<string | null>(null);
+  const [importMessage, setImportMessage] = useState<string | null>(null);
+  const [resetError, setResetError] = useState<string | null>(null);
+  const [modelSaveError, setModelSaveError] = useState<string | null>(null);
 
   useEffect(() => {
     fetch('/api/profile')
@@ -56,7 +64,12 @@ export function SettingsPage() {
         setPlacementBest(data.best ?? null);
       })
       .catch(() => setPlacementFailed(true));
-    fetch('/api/providers').then((r) => r.json()).then(setConnections);
+    fetch('/api/providers')
+      .then(async (res) => {
+        if (!res.ok) throw new Error(String(res.status));
+        setConnections(await res.json());
+      })
+      .catch(() => setProvidersFailed(true));
   }, []);
 
   // Powers the spec's "approaching your limit" view: a per-connection rollup of
@@ -66,6 +79,8 @@ export function SettingsPage() {
     Promise.all(
       connections.map(async (c) => {
         const res = await fetch(`/api/usage?connectionId=${c.id}&days=${USAGE_WINDOW_DAYS}`);
+        // Usage is a quiet background display: a failed request shows zeros, not an alert.
+        if (!res.ok) return [c.id, { requestCount: 0, tokenCount: 0 }] as const;
         const days = await res.json();
         const totals: UsageTotals = Array.isArray(days)
           ? days.reduce(
@@ -91,27 +106,45 @@ export function SettingsPage() {
   }, [connections]);
 
   async function refreshConnections() {
-    const res = await fetch('/api/providers');
-    setConnections(await res.json());
+    try {
+      const res = await fetch('/api/providers');
+      if (!res.ok) throw new Error(String(res.status));
+      setConnections(await res.json());
+      setProvidersFailed(false);
+    } catch {
+      setProvidersFailed(true);
+    }
   }
 
-  async function handleSetActive(id: number) {
-    await fetch('/api/providers/active', {
+  // Provider buttons show an alert when their request fails, instead of silently doing nothing.
+  async function providerAction(url: string, init: RequestInit) {
+    setActionError(null);
+    try {
+      const res = await fetch(url, init);
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setActionError(t('actionFailed', { error: data.error ?? String(res.status) }));
+      }
+    } catch (err) {
+      setActionError(t('actionFailed', { error: (err as Error).message }));
+    }
+    await refreshConnections();
+  }
+
+  function handleSetActive(id: number) {
+    return providerAction('/api/providers/active', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ id }),
     });
-    await refreshConnections();
   }
 
-  async function handleRetest(id: number) {
-    await fetch(`/api/providers/${id}/test`, { method: 'POST' });
-    await refreshConnections();
+  function handleRetest(id: number) {
+    return providerAction(`/api/providers/${id}/test`, { method: 'POST' });
   }
 
-  async function handleDelete(id: number) {
-    await fetch(`/api/providers/${id}`, { method: 'DELETE' });
-    await refreshConnections();
+  function handleDelete(id: number) {
+    return providerAction(`/api/providers/${id}`, { method: 'DELETE' });
   }
 
   function closeAddProvider() {
@@ -123,6 +156,8 @@ export function SettingsPage() {
     setNewModels([]);
     setNewSelectedModel('');
     setModelsError(null);
+    setModelsFailed(false);
+    setModelSaveError(null);
     setShowAddProvider(false);
   }
 
@@ -133,50 +168,66 @@ export function SettingsPage() {
       newProviderType === 'ollama'
         ? { providerType: newProviderType, ollamaHost: newOllamaHost }
         : { providerType: newProviderType, apiKey: newApiKey };
-    const res = await fetch('/api/providers', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
-    });
-    setAdding(false);
-    if (!res.ok) {
+    try {
+      const res = await fetch('/api/providers', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+      if (!res.ok) {
+        setAddError(t('saveFailed'));
+        return;
+      }
+      const created = await res.json();
+      await refreshConnections();
+      setAddedConnectionId(created.id);
+      await loadModels(created.id);
+    } catch {
       setAddError(t('saveFailed'));
-      return;
+    } finally {
+      setAdding(false);
     }
-    const created = await res.json();
-    await refreshConnections();
-    setAddedConnectionId(created.id);
-    await loadModels(created.id);
   }
 
   // The provider may be unreachable (Ollama not running, bad key); the
   // connection is already saved, so degrade to "no models" instead of failing.
   async function loadModels(id: number) {
     setModelsError(null);
+    setModelsFailed(false);
     try {
       const res = await fetch(`/api/providers/${id}/models`);
-      const data = await res.json();
-      if (Array.isArray(data)) {
-        setNewModels(data);
-        setNewSelectedModel(data[0]?.id ?? '');
-        if (data.length === 0) setModelsError(t('noModels'));
-      } else {
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
         setNewModels([]);
-        setModelsError(data?.error ?? t('modelsFailed'));
+        setModelsError(typeof data?.error === 'string' ? data.error : t('modelsFailed'));
+        setModelsFailed(true);
+        return;
       }
+      const data = await res.json();
+      setNewModels(data);
+      setNewSelectedModel(data[0]?.id ?? '');
+      if (data.length === 0) setModelsError(t('noModels'));
     } catch {
       setNewModels([]);
       setModelsError(t('modelsFailed'));
+      setModelsFailed(true);
     }
   }
 
   async function handleSaveModel() {
+    setModelSaveError(null);
     if (addedConnectionId !== null && newSelectedModel) {
-      await fetch(`/api/providers/${addedConnectionId}`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ selectedModel: newSelectedModel }),
-      });
+      try {
+        const res = await fetch(`/api/providers/${addedConnectionId}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ selectedModel: newSelectedModel }),
+        });
+        if (!res.ok) throw new Error(String(res.status));
+      } catch {
+        setModelSaveError(t('modelSaveFailed'));
+        return;
+      }
       await refreshConnections();
     }
     closeAddProvider();
@@ -184,38 +235,80 @@ export function SettingsPage() {
 
   async function handleProfileChange(patch: Partial<Profile>) {
     setProfileError(null);
-    const res = await fetch('/api/profile', {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(patch),
-    });
-    const data = await res.json().catch(() => ({}));
-    if (!res.ok) {
-      setProfileError(t('profileSaveFailed', { error: data.error ?? String(res.status) }));
+    try {
+      const res = await fetch('/api/profile', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(patch),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setProfileError(t('profileSaveFailed', { error: data.error ?? String(res.status) }));
+        return;
+      }
+      setProfile(data);
+      // The interface language is applied by the server layout, so re-render it.
+      if (patch.uiLanguage) router.refresh();
+    } catch (err) {
+      setProfileError(t('profileSaveFailed', { error: (err as Error).message }));
+    }
+  }
+
+  // Saved on blur, so typing "3" on the way to "30" doesn't save 3.
+  async function saveDailyReviewCap() {
+    if (capDraft === null || !profile) return;
+    const value = Number(capDraft);
+    if (!Number.isInteger(value) || value < 1 || value > 500) {
+      setCapError(t('dailyReviewInvalid'));
       return;
     }
-    setProfile(data);
-    // The interface language is applied by the server layout, so re-render it.
-    if (patch.uiLanguage) router.refresh();
+    setCapError(null);
+    setCapDraft(null);
+    if (value !== profile.dailyReviewCap) await handleProfileChange({ dailyReviewCap: value });
   }
 
   async function handleExport() {
-    const res = await fetch('/api/backup/export');
-    const blob = await res.blob();
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'germanaitutor-backup.gaitbackup';
-    a.click();
-    URL.revokeObjectURL(url);
+    setBackupError(null);
+    try {
+      const res = await fetch('/api/backup/export');
+      if (!res.ok) throw new Error(String(res.status));
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'germanaitutor-backup.gaitbackup';
+      a.click();
+      URL.revokeObjectURL(url);
+    } catch {
+      setBackupError(t('exportFailed'));
+    }
   }
 
   async function handleImport(file: File) {
-    await fetch('/api/backup/import', { method: 'POST', body: file });
+    setBackupError(null);
+    setImportMessage(null);
+    try {
+      const res = await fetch('/api/backup/import', { method: 'POST', body: file });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setBackupError(t('importFailed', { error: data.error ?? String(res.status) }));
+        return;
+      }
+      setImportMessage(t('importDone'));
+    } catch (err) {
+      setBackupError(t('importFailed', { error: (err as Error).message }));
+    }
   }
 
   async function handleReset() {
-    await fetch('/api/reset', { method: 'POST' });
+    setResetError(null);
+    try {
+      const res = await fetch('/api/reset', { method: 'POST' });
+      if (!res.ok) throw new Error(String(res.status));
+    } catch {
+      setResetError(t('resetFailed'));
+      return;
+    }
     setConfirmingReset(false);
     window.location.href = '/onboarding';
   }
@@ -231,6 +324,8 @@ export function SettingsPage() {
       {profileError && <p role="alert">{profileError}</p>}
       <section>
         <h2>{t('providers')}</h2>
+        {providersFailed && <p role="alert">{t('providersLoadFailed')}</p>}
+        {actionError && <p role="alert">{actionError}</p>}
         <ul>
           {connections.map((c) => (
             <li key={c.id}>
@@ -306,10 +401,13 @@ export function SettingsPage() {
                   ))}
                 </select>
               </label>
+            ) : modelsFailed ? (
+              <p role="alert">{modelsError}</p>
             ) : (
               <p>{modelsError ?? t('noModelsAvailable')}</p>
             )}
             <button onClick={handleSaveModel}>{t('done')}</button>
+            {modelSaveError && <p role="alert">{modelSaveError}</p>}
           </div>
         )}
       </section>
@@ -339,6 +437,24 @@ export function SettingsPage() {
           ))}
         </select>
         {profile.highestUnlockedLevel !== 'C1' && <p>{t('levelHint', { level: profile.highestUnlockedLevel })}</p>}
+      </section>
+
+      <section>
+        <h2>{t('dailyReview')}</h2>
+        <label>
+          {t('dailyReviewLimit')}{' '}
+          <input
+            type="number"
+            min={1}
+            max={500}
+            step={1}
+            value={capDraft ?? String(profile.dailyReviewCap)}
+            onChange={(e) => setCapDraft(e.target.value)}
+            onBlur={saveDailyReviewCap}
+          />
+        </label>
+        <p>{t('dailyReviewHint')}</p>
+        {capError && <p role="alert">{capError}</p>}
       </section>
 
       <section>
@@ -392,6 +508,8 @@ export function SettingsPage() {
           accept=".gaitbackup"
           onChange={(e) => e.target.files?.[0] && handleImport(e.target.files[0])}
         />
+        {backupError && <p role="alert">{backupError}</p>}
+        {importMessage && <p>{importMessage}</p>}
       </section>
 
       <section>
@@ -405,6 +523,7 @@ export function SettingsPage() {
         ) : (
           <button onClick={() => setConfirmingReset(true)}>{t('reset')}</button>
         )}
+        {resetError && <p role="alert">{resetError}</p>}
       </section>
     </div>
   );

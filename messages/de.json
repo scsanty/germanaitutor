@@ -7,7 +7,7 @@
   },
   "home": {
     "title": "German AI Tutor",
-    "intro": "Deine Lektionen erscheinen bald hier.",
+    "dailyQueue": "Tägliche Wiederholung",
     "settings": "Einstellungen"
   },
   "placement": {
@@ -40,7 +40,101 @@
       "wrong": "Falsch"
     },
     "noAnswer": "(keine Antwort)",
-    "continue": "Weiter"
+    "continue": "Weiter",
+    "switchOffer": "{level} ist jetzt freigeschaltet. Dorthin wechseln?",
+    "switch": "Wechseln",
+    "switched": "Zu {level} gewechselt.",
+    "sessionLost": "Der Test wurde unterbrochen und beginnt wieder mit der ersten Frage."
+  },
+  "exercise": {
+    "answerLabel": "Deine Antwort",
+    "submit": "Prüfen",
+    "submitting": "Wird geprüft …",
+    "showAnswer": "Antwort zeigen",
+    "rating": {
+      "knew": "Gewusst",
+      "sort_of": "Halb gewusst",
+      "didnt_know": "Nicht gewusst"
+    },
+    "result": {
+      "correct": "Richtig!",
+      "almost": "Fast – das zählt als bestanden.",
+      "wrong": "Nicht ganz."
+    },
+    "correctAnswer": "Richtige Antwort: {answer}",
+    "modelAnswer": "Musterantwort: {answer}",
+    "feedback": "Rückmeldung: {feedback}",
+    "askAi": "KI fragen",
+    "next": "Weiter",
+    "skipForNow": "Vorerst überspringen",
+    "gradingFailed": "Deine Antwort konnte nicht bewertet werden: {error}. Deine Antwort bleibt erhalten, du kannst es noch einmal versuchen. <link>Öffne die Einstellungen</link>, falls das öfter passiert.",
+    "genericError": "Etwas ist schiefgelaufen: {error}"
+  },
+  "chat": {
+    "show": "KI-Tutor fragen",
+    "hide": "KI-Tutor ausblenden",
+    "loadFailed": "Der Chat konnte nicht geladen werden.",
+    "empty": "Frag alles zu dieser Lektion.",
+    "you": "Du",
+    "tutor": "Tutor",
+    "aboutExercise": "(zu einer Übung)",
+    "unavailable": "Der KI-Tutor braucht einen funktionierenden KI-Anbieter. <link>Öffne die Einstellungen</link>, um einen einzurichten.",
+    "askingAbout": "Frage zu {label}",
+    "clearAskAbout": "Nicht mehr zu dieser Übung fragen",
+    "messageLabel": "Deine Nachricht",
+    "send": "Senden",
+    "sending": "Wird gesendet …",
+    "aiFailed": "Der KI-Tutor konnte nicht antworten: {error}. Deine Nachricht bleibt erhalten, du kannst es noch einmal versuchen. <link>Öffne die Einstellungen</link>, falls das öfter passiert.",
+    "genericError": "Etwas ist schiefgelaufen: {error}"
+  },
+  "lesson": {
+    "backToTree": "Zurück zu deinen Lektionen",
+    "loadFailed": "Diese Lektion konnte nicht geladen werden. Bitte lade die Seite neu.",
+    "notFound": "Diese Lektion gibt es nicht.",
+    "locked": "Gesperrt – wird freigeschaltet, wenn du {level} abgeschlossen hast.",
+    "buildsOn": "Baut auf:",
+    "prerequisiteDone": "erledigt",
+    "prerequisiteNotDone": "noch nicht erledigt",
+    "examples": "Beispiele",
+    "start": "Übungen starten",
+    "continue": "Übungen fortsetzen",
+    "practiceAgain": "Noch einmal üben",
+    "practiceNote": "Übungsrunde: Diese Lektion ist schon abgeschlossen.",
+    "progress": "{passed} von {total} Übungen bestanden",
+    "completedNow": "Lektion abgeschlossen! Ihre Übungen kommen in deiner täglichen Wiederholung wieder.",
+    "allPassed": "Alle Übungen bestanden.",
+    "practiceFinished": "Übungsrunde beendet.",
+    "toQueue": "Zur täglichen Wiederholung",
+    "markDone": "Als erledigt markieren",
+    "markFailed": "Die Lektion konnte nicht als erledigt markiert werden: {error}",
+    "done": "Erledigt – diese Lektion ist abgeschlossen.",
+    "exerciseLabel": "Übung {number}"
+  },
+  "tree": {
+    "heading": "{track} {level}",
+    "loadFailed": "Deine Lektionen konnten nicht geladen werden. Bitte lade die Seite neu.",
+    "empty": "Auf diesem Niveau gibt es noch keine Lektionen.",
+    "status": {
+      "not_started": "Nicht begonnen",
+      "in_progress": "Begonnen",
+      "complete": "Abgeschlossen",
+      "covered": "Abgedeckt"
+    },
+    "coveredVia": "Abgedeckt über {track}",
+    "buildsOn": "Baut auf: {lessons}"
+  },
+  "queue": {
+    "title": "Tägliche Wiederholung",
+    "backToTree": "Zurück zu deinen Lektionen",
+    "loadFailed": "Die heutigen Wiederholungen konnten nicht geladen werden. Bitte lade die Seite neu.",
+    "remaining": "Heute noch {count, plural, one {# Wiederholung} other {# Wiederholungen}}",
+    "fromLesson": "Aus der Lektion: {lesson}",
+    "thisReview": "dieser Wiederholung",
+    "allDone": "Für heute ist alles erledigt. Gut gemacht!",
+    "nothingDue": "Gerade gibt es nichts zu wiederholen.",
+    "capReached": "Du hast dein Tageslimit erreicht. Der Rest wartet bis morgen.",
+    "nextLesson": "Nächste Lektion",
+    "noSuggestion": "Du hast alle Lektionen auf diesem Niveau abgeschlossen."
   },
   "tracks": {
     "generic": "Allgemein",
@@ -74,7 +168,8 @@
     "trackTitle": "Wähle deinen Lernweg",
     "languageTitle": "Wähle die Sprache der Oberfläche",
     "saveChoicesFailed": "Deine Auswahl konnte nicht gespeichert werden. Bitte versuche es noch einmal.",
-    "finishFailed": "Die Einrichtung konnte nicht abgeschlossen werden. Bitte versuche es noch einmal."
+    "finishFailed": "Die Einrichtung konnte nicht abgeschlossen werden. Bitte versuche es noch einmal.",
+    "modelSaveFailed": "Das Modell konnte nicht gespeichert werden. Bitte versuch es noch einmal."
   },
   "settings": {
     "backHome": "Zurück zur Startseite",
@@ -108,6 +203,17 @@
     "trackLabel": "Lernweg",
     "levelLabel": "Niveau",
     "levelHint": "Niveaus über {level} werden freigeschaltet, wenn du Lektionen abschließt oder im Einstufungstest höher eingestuft wirst.",
+    "dailyReview": "Tägliche Wiederholung",
+    "dailyReviewLimit": "Tageslimit für Wiederholungen",
+    "dailyReviewHint": "So viele Wiederholungen zeigt die tägliche Wiederholung pro Tag (1–500). Der Rest wartet bis morgen.",
+    "dailyReviewInvalid": "Gib eine ganze Zahl von 1 bis 500 ein.",
+    "providersLoadFailed": "Deine KI-Anbieter konnten nicht geladen werden.",
+    "actionFailed": "Das hat nicht geklappt: {error}",
+    "modelSaveFailed": "Das Modell konnte nicht gespeichert werden. Bitte versuch es noch einmal.",
+    "exportFailed": "Die Sicherung konnte nicht exportiert werden. Bitte versuch es noch einmal.",
+    "importFailed": "Die Sicherung konnte nicht wiederhergestellt werden: {error}",
+    "importDone": "Sicherung wiederhergestellt. Lade die Seite neu, um die Daten zu sehen.",
+    "resetFailed": "Die App-Daten konnten nicht zurückgesetzt werden. Bitte versuch es noch einmal.",
     "profileSaveFailed": "Diese Einstellung konnte nicht gespeichert werden: {error}",
     "placement": "Einstufungstest",
     "placementBest": "Bestes Ergebnis: {level} ({score} von {max} Punkten, {date})",

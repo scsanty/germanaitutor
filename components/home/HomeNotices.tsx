@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import type { Profile } from '@/lib/types';
 
-export function HomeNotices() {
+export function HomeNotices({ onChange }: { onChange?: (profile: Profile) => void } = {}) {
   const t = useTranslations('notices');
   const [profile, setProfile] = useState<Profile | null>(null);
   const [failed, setFailed] = useState(false);
@@ -37,7 +37,9 @@ export function HomeNotices() {
           : { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }
       );
       if (!res.ok) throw new Error(String(res.status));
-      setProfile(await res.json());
+      const updated = (await res.json()) as Profile;
+      setProfile(updated);
+      onChange?.(updated);
     } catch {
       setFailed(true);
     } finally {

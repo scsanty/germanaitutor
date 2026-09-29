@@ -11,7 +11,7 @@ vi.mock('@/lib/services/profileService', () => ({
   createProfileService: () => ({ getProfile: mockGetProfile }),
 }));
 vi.mock('@/components/ActiveProviderBanner', () => ({ ActiveProviderBanner: () => null }));
-vi.mock('@/components/home/HomeNotices', () => ({ HomeNotices: () => null }));
+vi.mock('@/components/home/HomeScreen', () => ({ HomeScreen: () => null }));
 vi.mock('@/components/home/HomeIntro', () => ({ HomeIntro: () => null }));
 
 import Home from './page';

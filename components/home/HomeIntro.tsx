@@ -8,8 +8,10 @@ export function HomeIntro() {
   return (
     <div>
       <h1>{t('title')}</h1>
-      <p>{t('intro')}</p>
       <nav>
+        <Link href="/queue" aria-label={t('dailyQueue')} title={t('dailyQueue')}>
+          🗓
+        </Link>{' '}
         <Link href="/settings">{t('settings')}</Link>
       </nav>
     </div>

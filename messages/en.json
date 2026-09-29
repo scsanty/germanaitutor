@@ -7,7 +7,7 @@
   },
   "home": {
     "title": "German AI Tutor",
-    "intro": "Your lessons will appear here soon.",
+    "dailyQueue": "Daily review",
     "settings": "Settings"
   },
   "placement": {
@@ -40,7 +40,101 @@
       "wrong": "Wrong"
     },
     "noAnswer": "(no answer)",
-    "continue": "Continue"
+    "continue": "Continue",
+    "switchOffer": "{level} is now unlocked. Switch to it?",
+    "switch": "Switch",
+    "switched": "Switched to {level}.",
+    "sessionLost": "The test was interrupted, so it starts again from the first question."
+  },
+  "exercise": {
+    "answerLabel": "Your answer",
+    "submit": "Check",
+    "submitting": "Checking…",
+    "showAnswer": "Show answer",
+    "rating": {
+      "knew": "Knew it",
+      "sort_of": "Sort of",
+      "didnt_know": "Didn't know it"
+    },
+    "result": {
+      "correct": "Correct!",
+      "almost": "Almost — that counts as passed.",
+      "wrong": "Not quite."
+    },
+    "correctAnswer": "Correct answer: {answer}",
+    "modelAnswer": "Model answer: {answer}",
+    "feedback": "Feedback: {feedback}",
+    "askAi": "Ask AI",
+    "next": "Next",
+    "skipForNow": "Skip for now",
+    "gradingFailed": "Your answer could not be graded: {error}. Your answer is kept, so you can try again. <link>Visit Settings</link> if this keeps happening.",
+    "genericError": "Something went wrong: {error}"
+  },
+  "chat": {
+    "show": "Ask the AI tutor",
+    "hide": "Hide the AI tutor",
+    "loadFailed": "Could not load the chat.",
+    "empty": "Ask anything about this lesson.",
+    "you": "You",
+    "tutor": "Tutor",
+    "aboutExercise": "(about an exercise)",
+    "unavailable": "The AI tutor needs a working AI provider. <link>Visit Settings</link> to set one up.",
+    "askingAbout": "Asking about {label}",
+    "clearAskAbout": "Stop asking about this exercise",
+    "messageLabel": "Your message",
+    "send": "Send",
+    "sending": "Sending…",
+    "aiFailed": "The AI tutor could not answer: {error}. Your message is kept, so you can try again. <link>Visit Settings</link> if this keeps happening.",
+    "genericError": "Something went wrong: {error}"
+  },
+  "lesson": {
+    "backToTree": "Back to your lessons",
+    "loadFailed": "Could not load this lesson. Please reload the page.",
+    "notFound": "This lesson does not exist.",
+    "locked": "Locked — unlocks after finishing {level}.",
+    "buildsOn": "Builds on:",
+    "prerequisiteDone": "done",
+    "prerequisiteNotDone": "not done yet",
+    "examples": "Examples",
+    "start": "Start the exercises",
+    "continue": "Continue the exercises",
+    "practiceAgain": "Practice again",
+    "practiceNote": "Practice run: this lesson is already complete.",
+    "progress": "{passed} of {total} exercises passed",
+    "completedNow": "Lesson complete! Its exercises will come back in your daily review.",
+    "allPassed": "All exercises passed.",
+    "practiceFinished": "Practice finished.",
+    "toQueue": "Go to your daily review",
+    "markDone": "Mark as done",
+    "markFailed": "Could not mark this lesson as done: {error}",
+    "done": "Done — this lesson is complete.",
+    "exerciseLabel": "exercise {number}"
+  },
+  "tree": {
+    "heading": "{track} {level}",
+    "loadFailed": "Could not load your lessons. Please reload the page.",
+    "empty": "There are no lessons at this level yet.",
+    "status": {
+      "not_started": "Not started",
+      "in_progress": "In progress",
+      "complete": "Complete",
+      "covered": "Covered"
+    },
+    "coveredVia": "Covered via {track}",
+    "buildsOn": "Builds on: {lessons}"
+  },
+  "queue": {
+    "title": "Daily review",
+    "backToTree": "Back to your lessons",
+    "loadFailed": "Could not load today's reviews. Please reload the page.",
+    "remaining": "{count, plural, one {# review left today} other {# reviews left today}}",
+    "fromLesson": "From the lesson: {lesson}",
+    "thisReview": "this review",
+    "allDone": "All done for today. Well done!",
+    "nothingDue": "Nothing to review right now.",
+    "capReached": "You reached today's review limit. The rest wait until tomorrow.",
+    "nextLesson": "Next lesson",
+    "noSuggestion": "You have finished every lesson at this level."
   },
   "tracks": {
     "generic": "Generic",
@@ -74,7 +168,8 @@
     "trackTitle": "Choose your track",
     "languageTitle": "Choose your interface language",
     "saveChoicesFailed": "Could not save your choices. Please try again.",
-    "finishFailed": "Could not finish setup. Please try again."
+    "finishFailed": "Could not finish setup. Please try again.",
+    "modelSaveFailed": "Could not save the model. Please try again."
   },
   "settings": {
     "backHome": "Back to home",
@@ -108,6 +203,17 @@
     "trackLabel": "Track",
     "levelLabel": "Level",
     "levelHint": "Levels above {level} unlock as you finish lessons or place higher in the placement test.",
+    "dailyReview": "Daily review",
+    "dailyReviewLimit": "Daily review limit",
+    "dailyReviewHint": "How many reviews the daily review shows per day (1–500). The rest wait until tomorrow.",
+    "dailyReviewInvalid": "Enter a whole number from 1 to 500.",
+    "providersLoadFailed": "Could not load your AI providers.",
+    "actionFailed": "Could not complete that: {error}",
+    "modelSaveFailed": "Could not save the model. Please try again.",
+    "exportFailed": "Could not export the backup. Please try again.",
+    "importFailed": "Could not restore the backup: {error}",
+    "importDone": "Backup restored. Reload the page to see the restored data.",
+    "resetFailed": "Could not reset the app data. Please try again.",
     "profileSaveFailed": "Could not save this setting: {error}",
     "placement": "Placement test",
     "placementBest": "Best result: {level} ({score} of {max} points, {date})",

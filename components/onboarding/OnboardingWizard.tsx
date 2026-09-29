@@ -4,12 +4,13 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import type { ModelInfo } from '@/lib/providers/types';
+import type { Track } from '@/lib/types';
+import { TRACKS } from '@/lib/tutoring/levels';
 import { PlacementTest } from '@/components/placement/PlacementTest';
 
 type Step = 'welcome' | 'provider' | 'track' | 'language' | 'placement';
 
 const PROVIDER_TYPES = ['anthropic', 'openai', 'gemini', 'ollama'] as const;
-const TRACKS = ['generic', 'telc', 'goethe'] as const;
 const JSON_HEADERS = { 'Content-Type': 'application/json' };
 
 export function OnboardingWizard({ initialStep = 'welcome' }: { initialStep?: Step }) {
@@ -26,41 +27,55 @@ export function OnboardingWizard({ initialStep = 'welcome' }: { initialStep?: St
   const [models, setModels] = useState<ModelInfo[]>([]);
   const [selectedModel, setSelectedModel] = useState('');
   const [modelsError, setModelsError] = useState<string | null>(null);
-  const [track, setTrack] = useState<(typeof TRACKS)[number]>('generic');
+  const [modelsFailed, setModelsFailed] = useState(false);
+  const [track, setTrack] = useState<Track>('generic');
   const [uiLanguage, setUiLanguage] = useState<'en' | 'de'>('en');
   const [saving, setSaving] = useState(false);
   const [choicesError, setChoicesError] = useState<string | null>(null);
   const [finishError, setFinishError] = useState<string | null>(null);
+  const [providerNextError, setProviderNextError] = useState<string | null>(null);
 
   async function handleConnectAndTest() {
     setSaving(true);
     setTestError(null);
-    const body = providerType === 'ollama' ? { providerType, ollamaHost } : { providerType, apiKey };
-    const createRes = await fetch('/api/providers', {
-      method: 'POST',
-      headers: JSON_HEADERS,
-      body: JSON.stringify(body),
-    });
-    if (!createRes.ok) {
-      setSaving(false);
-      setTestError(t('saveFailed'));
-      return;
-    }
-    const created = await createRes.json();
-    const testRes = await fetch(`/api/providers/${created.id}/test`, { method: 'POST' });
-    const result = await testRes.json();
-    setSaving(false);
-    if (result.ok) {
-      setValidated(true);
-      setConnectionId(created.id);
-      await fetch('/api/providers/active', {
+    try {
+      const body = providerType === 'ollama' ? { providerType, ollamaHost } : { providerType, apiKey };
+      const createRes = await fetch('/api/providers', {
+        method: 'POST',
+        headers: JSON_HEADERS,
+        body: JSON.stringify(body),
+      });
+      if (!createRes.ok) {
+        setTestError(t('saveFailed'));
+        return;
+      }
+      const created = await createRes.json();
+      const testRes = await fetch(`/api/providers/${created.id}/test`, { method: 'POST' });
+      if (!testRes.ok) {
+        setTestError(t('connectionFailed'));
+        return;
+      }
+      const result = await testRes.json();
+      if (!result.ok) {
+        setTestError(result.error ?? t('connectionFailed'));
+        return;
+      }
+      const activeRes = await fetch('/api/providers/active', {
         method: 'PUT',
         headers: JSON_HEADERS,
         body: JSON.stringify({ id: created.id }),
       });
+      if (!activeRes.ok) {
+        setTestError(t('saveFailed'));
+        return;
+      }
+      setValidated(true);
+      setConnectionId(created.id);
       await loadModels(created.id);
-    } else {
-      setTestError(result.error ?? t('connectionFailed'));
+    } catch {
+      setTestError(t('connectionFailed'));
+    } finally {
+      setSaving(false);
     }
   }
 
@@ -69,30 +84,41 @@ export function OnboardingWizard({ initialStep = 'welcome' }: { initialStep?: St
   // blocking onboarding.
   async function loadModels(id: number) {
     setModelsError(null);
+    setModelsFailed(false);
     try {
       const res = await fetch(`/api/providers/${id}/models`);
-      const data = await res.json();
-      if (Array.isArray(data)) {
-        setModels(data);
-        setSelectedModel(data[0]?.id ?? '');
-        if (data.length === 0) setModelsError(t('noModels'));
-      } else {
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
         setModels([]);
-        setModelsError(data?.error ?? t('modelsFailed'));
+        setModelsError(typeof data?.error === 'string' ? data.error : t('modelsFailed'));
+        setModelsFailed(true);
+        return;
       }
+      const data = await res.json();
+      setModels(data);
+      setSelectedModel(data[0]?.id ?? '');
+      if (data.length === 0) setModelsError(t('noModels'));
     } catch {
       setModels([]);
       setModelsError(t('modelsFailed'));
+      setModelsFailed(true);
     }
   }
 
   async function handleProviderNext() {
+    setProviderNextError(null);
     if (connectionId !== null && selectedModel) {
-      await fetch(`/api/providers/${connectionId}`, {
-        method: 'PATCH',
-        headers: JSON_HEADERS,
-        body: JSON.stringify({ selectedModel }),
-      });
+      try {
+        const res = await fetch(`/api/providers/${connectionId}`, {
+          method: 'PATCH',
+          headers: JSON_HEADERS,
+          body: JSON.stringify({ selectedModel }),
+        });
+        if (!res.ok) throw new Error(String(res.status));
+      } catch {
+        setProviderNextError(t('modelSaveFailed'));
+        return;
+      }
     }
     setStep('track');
   }
@@ -101,42 +127,55 @@ export function OnboardingWizard({ initialStep = 'welcome' }: { initialStep?: St
   async function handleLanguageNext() {
     setSaving(true);
     setChoicesError(null);
-    const res = await fetch('/api/profile', {
-      method: 'PATCH',
-      headers: JSON_HEADERS,
-      body: JSON.stringify({ activeTrack: track, uiLanguage, onboardingChoicesSaved: true }),
-    });
-    setSaving(false);
-    if (!res.ok) {
+    try {
+      const res = await fetch('/api/profile', {
+        method: 'PATCH',
+        headers: JSON_HEADERS,
+        body: JSON.stringify({ activeTrack: track, uiLanguage, onboardingChoicesSaved: true }),
+      });
+      if (!res.ok) {
+        setChoicesError(t('saveChoicesFailed'));
+        return;
+      }
+      router.refresh();
+      setStep('placement');
+    } catch {
       setChoicesError(t('saveChoicesFailed'));
-      return;
+    } finally {
+      setSaving(false);
     }
-    router.refresh();
-    setStep('placement');
   }
 
   async function finishOnboarding() {
     setFinishError(null);
-    const res = await fetch('/api/profile', {
-      method: 'PATCH',
-      headers: JSON_HEADERS,
-      body: JSON.stringify({ onboardingComplete: true }),
-    });
-    if (!res.ok) {
+    try {
+      const res = await fetch('/api/profile', {
+        method: 'PATCH',
+        headers: JSON_HEADERS,
+        body: JSON.stringify({ onboardingComplete: true }),
+      });
+      if (!res.ok) {
+        setFinishError(t('finishFailed'));
+        return;
+      }
+      router.push('/');
+    } catch {
       setFinishError(t('finishFailed'));
-      return;
     }
-    router.push('/');
   }
 
   async function skipPlacement() {
     setFinishError(null);
-    const res = await fetch('/api/placement/skip', { method: 'POST' });
-    if (!res.ok) {
+    try {
+      const res = await fetch('/api/placement/skip', { method: 'POST' });
+      if (!res.ok) {
+        setFinishError(t('finishFailed'));
+        return;
+      }
+      await finishOnboarding();
+    } catch {
       setFinishError(t('finishFailed'));
-      return;
     }
-    await finishOnboarding();
   }
 
   if (step === 'welcome') {
@@ -185,10 +224,11 @@ export function OnboardingWizard({ initialStep = 'welcome' }: { initialStep?: St
             </select>
           </label>
         )}
-        {validated && modelsError && <p>{modelsError}</p>}
+        {validated && modelsError && (modelsFailed ? <p role="alert">{modelsError}</p> : <p>{modelsError}</p>)}
         <button onClick={handleProviderNext} disabled={!validated}>
           {t('next')}
         </button>
+        {providerNextError && <p role="alert">{providerNextError}</p>}
       </div>
     );
   }
@@ -197,7 +237,7 @@ export function OnboardingWizard({ initialStep = 'welcome' }: { initialStep?: St
     return (
       <div>
         <h2>{t('trackTitle')}</h2>
-        <select aria-label={t('trackTitle')} value={track} onChange={(e) => setTrack(e.target.value as typeof track)}>
+        <select aria-label={t('trackTitle')} value={track} onChange={(e) => setTrack(e.target.value as Track)}>
           {TRACKS.map((trackOption) => (
             <option key={trackOption} value={trackOption}>
               {tTracks(trackOption)}

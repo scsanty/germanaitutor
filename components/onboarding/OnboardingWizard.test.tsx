@@ -104,9 +104,20 @@ describe('OnboardingWizard', () => {
 
     await connectSuccessfully();
 
-    await screen.findByText('Ollama returned 500');
+    // M-1: loadModels must branch on res.ok, and the failure text is a visible error
+    // (role="alert"), not a plain paragraph.
+    expect(await screen.findByRole('alert')).toHaveTextContent('Ollama returned 500');
     expect(screen.queryByLabelText('Model')).not.toBeInTheDocument();
     expect(screen.getByText('Next')).not.toBeDisabled();
+  });
+
+  it('shows "no models" as plain text, not an alert, when the provider has none', async () => {
+    stubFetch({ '/api/providers/1/models': { ok: true, json: async () => [] } });
+
+    await connectSuccessfully();
+
+    await screen.findByText('No models reported by this provider');
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
   });
 
   it('shows the error and keeps Next disabled when the test fails', async () => {
@@ -182,5 +193,21 @@ describe('OnboardingWizard', () => {
     fireEvent.click(screen.getByText('fake skip'));
     await waitFor(() => expect(pushMock).toHaveBeenCalledWith('/'));
     expect(fetchMock).toHaveBeenCalledWith('/api/placement/skip', { method: 'POST' });
+  });
+
+  it('shows an error when the working connection cannot be made active', async () => {
+    stubFetch({ '/api/providers/active': { ok: false, json: async () => ({}) } });
+    await connectSuccessfully();
+    await waitFor(() => expect(screen.getByRole('alert')).toHaveTextContent('Failed to save provider connection'));
+    expect(screen.getByText('Next')).toBeDisabled();
+  });
+
+  it('stays on the provider step when the chosen model cannot be saved', async () => {
+    stubFetch({ '/api/providers/1': { ok: false, json: async () => ({}) } });
+    await connectSuccessfully();
+    await waitFor(() => expect(screen.getByText('Next')).not.toBeDisabled());
+    fireEvent.click(screen.getByText('Next'));
+    expect(await screen.findByRole('alert')).toHaveTextContent('Could not save the model. Please try again.');
+    expect(screen.getByText('Test connection')).toBeInTheDocument();
   });
 });

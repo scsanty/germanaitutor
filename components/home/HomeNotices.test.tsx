@@ -87,4 +87,15 @@ describe('HomeNotices', () => {
     fireEvent.click(await screen.findByText('Switch'));
     await waitFor(() => expect(screen.getByRole('alert')).toBeInTheDocument());
   });
+
+  it('reports the changed profile to its parent', async () => {
+    stubFetch({
+      '/api/profile': () => delayedResponse({ ...BASE_PROFILE, unlockNoticeLevel: 'A2' }),
+      '/api/tutoring/unlock-notice': () => delayedResponse({ ...BASE_PROFILE, activeLevel: 'A2' }),
+    });
+    const onChange = vi.fn();
+    renderWithIntl(<HomeNotices onChange={onChange} />);
+    fireEvent.click(await screen.findByText('Switch'));
+    await waitFor(() => expect(onChange).toHaveBeenCalledWith({ ...BASE_PROFILE, activeLevel: 'A2' }));
+  });
 });

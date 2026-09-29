@@ -7,6 +7,7 @@ import { unsortedMilestoneId } from '@/lib/curriculum-admin/unsortedBucket';
 import { ExerciseEditor, type ExerciseFormEntry } from './ExerciseEditor';
 import { PrerequisitePicker, type PickableLesson } from './PrerequisitePicker';
 import { PlacementPicker, type PlacementMilestoneOption, type PlacementValue } from './PlacementPicker';
+import { LEVELS, TRACKS } from '@/lib/tutoring/levels';
 
 export interface LessonEditorInitialValues {
   slug: string;
@@ -20,8 +21,6 @@ export interface LessonEditorInitialValues {
   prerequisiteIds: string[];
 }
 
-const TRACKS: Track[] = ['generic', 'telc', 'goethe'];
-const LEVELS: CefrLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
 const SKILLS: Skill[] = ['grammar', 'vocabulary', 'reading', 'listening', 'writing', 'speaking'];
 
 type TrackStructureResponse = {

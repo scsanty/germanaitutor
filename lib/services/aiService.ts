@@ -42,3 +42,13 @@ export async function generateWithActiveProvider(
     return { ok: false, error: message };
   }
 }
+
+// "A working provider" for the UI (chat, free text): an active connection with a model that has
+// not been found invalid. `failing` still allows a try — it passed validation and later hit a
+// runtime error. Reads the table directly so it never touches the key file.
+export function isAiAvailable(db: Database.Database): boolean {
+  const row = db
+    .prepare('SELECT selected_model, last_validated_status FROM provider_connections WHERE is_active = 1')
+    .get() as { selected_model: string | null; last_validated_status: string } | undefined;
+  return !!row && !!row.selected_model && row.last_validated_status !== 'invalid';
+}

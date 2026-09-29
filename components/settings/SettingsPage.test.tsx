@@ -19,6 +19,7 @@ const PROFILE = {
   placementStatus: 'taken',
   unlockNoticeLevel: null,
   onboardingChoicesSaved: true,
+  dailyReviewCap: 50,
   updatedAt: '',
 };
 
@@ -120,9 +121,46 @@ describe('SettingsPage', () => {
     fireEvent.change(screen.getByPlaceholderText('API key'), { target: { value: 'sk-ant' } });
     fireEvent.click(screen.getByText('Save provider'));
 
-    await screen.findByText('Ollama returned 500');
+    // M-1: loadModels must branch on res.ok, not just infer failure from the response shape,
+    // and the failure text is a visible error (role="alert"), not a plain paragraph.
+    expect(await screen.findByRole('alert')).toHaveTextContent('Ollama returned 500');
     expect(screen.queryByLabelText('Model')).not.toBeInTheDocument();
     expect(screen.getByText('Done')).toBeInTheDocument();
+  });
+
+  it('shows "no models" as plain text, not an alert, when the provider has none', async () => {
+    stubFetch({ 'GET /api/providers/7/models': { ok: true, json: async () => [] } });
+
+    renderWithIntl(<SettingsPage />);
+    await waitFor(() => screen.getByText('Add provider'));
+    fireEvent.click(screen.getByText('Add provider'));
+    fireEvent.change(screen.getByPlaceholderText('API key'), { target: { value: 'sk-ant' } });
+    fireEvent.click(screen.getByText('Save provider'));
+
+    await screen.findByText('No models reported by this provider');
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+  });
+
+  it('shows an error and re-enables Save provider when adding a provider rejects', async () => {
+    const fetchMock = vi.fn((url: string, init?: RequestInit) => {
+      if (`${init?.method ?? 'GET'} ${url}` === 'POST /api/providers') return Promise.reject(new Error('network down'));
+      const routes: Record<string, any> = {
+        'GET /api/profile': { ok: true, json: async () => PROFILE },
+        'GET /api/providers': { ok: true, json: async () => [] },
+      };
+      return Promise.resolve(routes[`${init?.method ?? 'GET'} ${url}`] ?? { ok: true, json: async () => ({}) });
+    });
+    vi.stubGlobal('fetch', fetchMock);
+
+    renderWithIntl(<SettingsPage />);
+    await waitFor(() => screen.getByText('Add provider'));
+    fireEvent.click(screen.getByText('Add provider'));
+    fireEvent.change(screen.getByPlaceholderText('API key'), { target: { value: 'sk-ant' } });
+    const saveButton = screen.getByText('Save provider');
+    fireEvent.click(saveButton);
+
+    expect(await screen.findByRole('alert')).toHaveTextContent('Failed to save provider connection');
+    await waitFor(() => expect(saveButton).not.toBeDisabled());
   });
 
   it('shows the provider status translated, not the raw status value', async () => {
@@ -246,5 +284,87 @@ describe('SettingsPage', () => {
     await waitFor(() =>
       expect(screen.getByRole('alert')).toHaveTextContent('Could not load your settings. Please reload the page.')
     );
+  });
+
+  it('saves a new daily review limit when the field loses focus', async () => {
+    const fetchMock = stubFetch({ 'PATCH /api/profile': { ok: true, json: async () => ({ ...PROFILE, dailyReviewCap: 30 }) } });
+    renderWithIntl(<SettingsPage />);
+    const field = await screen.findByLabelText('Daily review limit');
+    expect(field).toHaveValue(50);
+
+    fireEvent.change(field, { target: { value: '30' } });
+    fireEvent.blur(field);
+
+    await waitFor(() =>
+      expect(fetchMock).toHaveBeenCalledWith('/api/profile', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ dailyReviewCap: 30 }),
+      })
+    );
+    await waitFor(() => expect(field).toHaveValue(30));
+  });
+
+  it('rejects a daily review limit outside 1–500 without saving it', async () => {
+    const fetchMock = stubFetch();
+    renderWithIntl(<SettingsPage />);
+    const field = await screen.findByLabelText('Daily review limit');
+
+    fireEvent.change(field, { target: { value: '0' } });
+    fireEvent.blur(field);
+
+    expect(await screen.findByRole('alert')).toHaveTextContent('Enter a whole number from 1 to 500.');
+    expect(fetchMock.mock.calls.some(([, init]) => (init as RequestInit | undefined)?.method === 'PATCH')).toBe(false);
+  });
+
+  const CONNECTION = {
+    id: 3,
+    providerType: 'ollama',
+    label: null,
+    ollamaHost: 'http://localhost:11434',
+    selectedModel: 'llama',
+    isActive: false,
+    lastValidatedStatus: 'valid',
+    lastValidatedAt: null,
+    lastError: null,
+    createdAt: '',
+  };
+
+  it('shows an error when a provider action fails', async () => {
+    stubFetch({
+      'GET /api/providers': { ok: true, json: async () => [CONNECTION] },
+      'PUT /api/providers/active': { ok: false, status: 500, json: async () => ({ error: 'boom' }) },
+    });
+    renderWithIntl(<SettingsPage />);
+    fireEvent.click(await screen.findByText('Make active'));
+    expect(await screen.findByRole('alert')).toHaveTextContent('Could not complete that: boom');
+  });
+
+  it('shows an error when the providers cannot load', async () => {
+    stubFetch({ 'GET /api/providers': { ok: false, status: 500, json: async () => ({}) } });
+    renderWithIntl(<SettingsPage />);
+    expect(await screen.findByRole('alert')).toHaveTextContent('Could not load your AI providers.');
+  });
+
+  it('confirms a restored backup, and says why a restore failed', async () => {
+    stubFetch({ 'POST /api/backup/import': { ok: true, json: async () => ({ ok: true }) } });
+    const { container } = renderWithIntl(<SettingsPage />);
+    await screen.findByText('Export backup');
+    const input = container.querySelector('input[type="file"]') as HTMLInputElement;
+
+    fireEvent.change(input, { target: { files: [new File(['x'], 'backup.gaitbackup')] } });
+    expect(await screen.findByText('Backup restored. Reload the page to see the restored data.')).toBeInTheDocument();
+
+    stubFetch({ 'POST /api/backup/import': { ok: false, status: 400, json: async () => ({ error: 'Not a backup file' }) } });
+    fireEvent.change(input, { target: { files: [new File(['y'], 'other.gaitbackup')] } });
+    expect(await screen.findByRole('alert')).toHaveTextContent('Could not restore the backup: Not a backup file');
+  });
+
+  it('shows an error and stays when the reset fails', async () => {
+    stubFetch({ 'POST /api/reset': { ok: false, status: 500, json: async () => ({}) } });
+    renderWithIntl(<SettingsPage />);
+    fireEvent.click(await screen.findByText('Reset app data'));
+    fireEvent.click(screen.getByText('Yes, reset everything'));
+    expect(await screen.findByRole('alert')).toHaveTextContent('Could not reset the app data. Please try again.');
   });
 });

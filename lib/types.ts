@@ -29,5 +29,6 @@ export interface Profile {
   placementStatus: PlacementStatus;
   unlockNoticeLevel: CefrLevel | null;
   onboardingChoicesSaved: boolean;
+  dailyReviewCap: number;
   updatedAt: string;
 }

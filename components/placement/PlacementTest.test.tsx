@@ -155,4 +155,35 @@ describe('PlacementTest', () => {
       expect(screen.getByRole('alert')).toHaveTextContent('Something went wrong: No placement exam is loaded')
     );
   });
+
+  it('goes back to the start when the test in progress is gone', async () => {
+    stubFetch({
+      '/api/placement/start': () => delayedResponse({ status: 'in_progress', question: MC_QUESTION }),
+      '/api/placement/stop': () => delayedResponse({ error: 'No placement test is in progress' }, { ok: false, status: 409 }),
+    });
+    renderWithIntl(<PlacementTest onFinished={vi.fn()} />);
+    fireEvent.click(screen.getByText('Start the test'));
+    fireEvent.click(await screen.findByText('Beyond my knowledge'));
+
+    expect(await screen.findByRole('alert')).toHaveTextContent(
+      'The test was interrupted, so it starts again from the first question.'
+    );
+    expect(screen.getByText('Start the test')).toBeInTheDocument();
+  });
+
+  it('offers to switch to a level that a retake unlocked', async () => {
+    stubFetch({
+      '/api/placement/start': () => delayedResponse({ status: 'in_progress', question: MC_QUESTION }),
+      '/api/placement/stop': () =>
+        delayedResponse({ status: 'finished', outcome: { ...OUTCOME, placedLevel: 'B2', unlockOffer: 'B2' } }),
+      '/api/tutoring/unlock-notice': () => delayedResponse({}),
+    });
+    renderWithIntl(<PlacementTest onFinished={vi.fn()} />);
+    fireEvent.click(screen.getByText('Start the test'));
+    fireEvent.click(await screen.findByText('Beyond my knowledge'));
+
+    expect(await screen.findByText('B2 is now unlocked. Switch to it?')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Switch' }));
+    expect(await screen.findByText('Switched to B2.')).toBeInTheDocument();
+  });
 });

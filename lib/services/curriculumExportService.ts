@@ -1,9 +1,7 @@
 import type Database from 'better-sqlite3';
 import type { Track, CefrLevel } from '../types';
-import { LEVELS } from '../tutoring/levels';
+import { LEVELS, TRACKS } from '../tutoring/levels';
 import type { SeedFile } from './curriculumSeedLoader';
-
-export const TRACKS: readonly Track[] = ['generic', 'telc', 'goethe'];
 
 export function seedFileName(track: Track, level: CefrLevel): string {
   return `${track}-${level.toLowerCase()}.json`;
