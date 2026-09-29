@@ -7,6 +7,7 @@ import type { LessonView } from '@/lib/tutoring/progressTypes';
 import type { AttemptOutcome } from '@/lib/tutoring/lessonAnswers';
 import { ExerciseCard } from './ExerciseCard';
 import { LessonChat, type AskAbout } from './LessonChat';
+import { useApiErrorText } from '@/components/useApiErrorText';
 
 type OpenLesson = Extract<LessonView, { locked: false }>;
 
@@ -22,6 +23,7 @@ interface Run {
 export function LessonPage({ lessonId }: { lessonId: string }) {
   const t = useTranslations('lesson');
   const tCommon = useTranslations('common');
+  const errorText = useApiErrorText();
   const [view, setView] = useState<LessonView | null>(null);
   const [notFound, setNotFound] = useState(false);
   const [loadFailed, setLoadFailed] = useState(false);
@@ -93,7 +95,7 @@ export function LessonPage({ lessonId }: { lessonId: string }) {
       const res = await fetch(`/api/tutoring/lessons/${lesson.id}/complete`, { method: 'POST' });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setMarkError(t('markFailed', { error: typeof data.error === 'string' ? data.error : String(res.status) }));
+        setMarkError(t('markFailed', { error: errorText(data, String(res.status)) }));
         return;
       }
       setView({ ...lesson, completed: true });

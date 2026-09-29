@@ -4,6 +4,7 @@ import { useEffect, useState, type ReactNode } from 'react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { CHAT_MESSAGE_MAX_LENGTH, type ChatMessageView } from '@/lib/tutoring/lessonChat';
+import { useApiErrorText } from '@/components/useApiErrorText';
 
 export interface AskAbout {
   exerciseId: string;
@@ -21,6 +22,7 @@ export interface LessonChatProps {
 export function LessonChat({ lessonId, open, onToggle, askAbout, onClearAskAbout }: LessonChatProps) {
   const t = useTranslations('chat');
   const tCommon = useTranslations('common');
+  const errorText = useApiErrorText();
   const [messages, setMessages] = useState<ChatMessageView[] | null>(null);
   const [aiAvailable, setAiAvailable] = useState(true);
   const [loadFailed, setLoadFailed] = useState(false);
@@ -68,7 +70,7 @@ export function LessonChat({ lessonId, open, onToggle, askAbout, onClearAskAbout
         onClearAskAbout();
         return;
       }
-      const detail = typeof data.error === 'string' ? data.error : String(res.status);
+      const detail = errorText(data, String(res.status));
       if (res.status === 502) setAiError(detail);
       else setError(t('genericError', { error: detail }));
     } catch (err) {

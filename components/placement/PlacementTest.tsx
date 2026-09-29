@@ -9,11 +9,13 @@ import type {
   PlacementQuestionView,
   PlacementState,
 } from '@/lib/tutoring/placementTypes';
+import { useApiErrorText } from '@/components/useApiErrorText';
 
 type Phase = 'intro' | 'question' | 'result';
 
 export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; onSkip?: () => void }) {
   const t = useTranslations('placement');
+  const errorText = useApiErrorText();
   const [phase, setPhase] = useState<Phase>('intro');
   const [question, setQuestion] = useState<PlacementQuestionView | null>(null);
   const [outcome, setOutcome] = useState<PlacementOutcome | null>(null);
@@ -53,7 +55,7 @@ export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; 
       if (res.ok) {
         applyState(data as PlacementState);
       } else {
-        const detail = typeof data.error === 'string' ? data.error : String(res.status);
+        const detail = errorText(data, String(res.status));
         if (res.status === 502) {
           setGradingErrorDetail(detail);
         } else if (res.status === 409 && url !== '/api/placement/start') {

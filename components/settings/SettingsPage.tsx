@@ -8,6 +8,7 @@ import type { ProviderConnection, Profile, ProviderType, Track } from '@/lib/typ
 import type { ModelInfo } from '@/lib/providers/types';
 import type { PlacementBestResult } from '@/lib/tutoring/placementTypes';
 import { levelsUpTo, TRACKS } from '@/lib/tutoring/levels';
+import { useApiErrorText } from '@/components/useApiErrorText';
 
 const PROVIDER_TYPES: ProviderType[] = ['anthropic', 'openai', 'gemini', 'ollama'];
 const USAGE_WINDOW_DAYS = 7;
@@ -22,6 +23,7 @@ export function SettingsPage() {
   const t = useTranslations('settings');
   const tTracks = useTranslations('tracks');
   const tCommon = useTranslations('common');
+  const errorText = useApiErrorText();
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loadFailed, setLoadFailed] = useState(false);
   const [profileError, setProfileError] = useState<string | null>(null);
@@ -243,7 +245,7 @@ export function SettingsPage() {
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setProfileError(t('profileSaveFailed', { error: data.error ?? String(res.status) }));
+        setProfileError(t('profileSaveFailed', { error: errorText(data, String(res.status)) }));
         return;
       }
       setProfile(data);

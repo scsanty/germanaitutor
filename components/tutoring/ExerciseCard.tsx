@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import type { ExerciseView } from '@/lib/tutoring/exerciseView';
 import type { AttemptOutcome, AttemptSource, FlashcardRating, LessonAnswer } from '@/lib/tutoring/lessonAnswers';
+import { useApiErrorText } from '@/components/useApiErrorText';
 
 const RATINGS: FlashcardRating[] = ['knew', 'sort_of', 'didnt_know'];
 
@@ -32,6 +33,7 @@ function taskText(exercise: ExerciseView): string {
 
 export function ExerciseCard({ exercise, source, onAnswered, onNext, onSkip, onAskAi }: ExerciseCardProps) {
   const t = useTranslations('exercise');
+  const errorText = useApiErrorText();
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [text, setText] = useState('');
   const [revealed, setRevealed] = useState(false);
@@ -56,7 +58,7 @@ export function ExerciseCard({ exercise, source, onAnswered, onNext, onSkip, onA
         onAnswered(data as AttemptOutcome);
         return;
       }
-      const detail = typeof data.error === 'string' ? data.error : String(res.status);
+      const detail = errorText(data, String(res.status));
       // 502: the AI could not grade the answer (spec: AI Behavior).
       if (res.status === 502) setGradingError(detail);
       else setError(t('genericError', { error: detail }));

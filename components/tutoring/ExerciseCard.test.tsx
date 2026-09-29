@@ -137,4 +137,14 @@ describe('ExerciseCard', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Skip for now' }));
     expect(props.onSkip).toHaveBeenCalled();
   });
+
+  it('shows a coded error in the interface language', async () => {
+    stubAttempts(() =>
+      delayedResponse({ error: 'Level A2 is locked', code: 'level_locked', params: { level: 'A2' } }, { ok: false, status: 403 })
+    );
+    renderCard(MC);
+    fireEvent.click(screen.getByLabelText('Hallo'));
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }));
+    expect(await screen.findByRole('alert')).toHaveTextContent('Something went wrong: Level A2 is locked');
+  });
 });

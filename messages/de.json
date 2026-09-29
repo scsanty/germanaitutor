@@ -2,6 +2,21 @@
   "common": {
     "loading": "Wird geladen …"
   },
+  "errors": {
+    "not_found": "Das wurde nicht gefunden",
+    "level_locked": "Das Niveau {level} ist gesperrt",
+    "bad_request": "Diese Anfrage war ungültig",
+    "lesson_not_completed": "Schließ zuerst die Lektion ab",
+    "not_due": "Diese Wiederholung ist gerade nicht fällig",
+    "no_provider": "Es ist kein KI-Anbieter eingerichtet",
+    "no_model": "Für den aktiven KI-Anbieter ist kein Modell ausgewählt",
+    "credentials_unreadable": "Der gespeicherte API-Schlüssel konnte nicht gelesen werden",
+    "ai_failed": "Der KI-Anbieter hat einen Fehler gemeldet ({detail})",
+    "ai_bad_reply": "Die KI hat in einem unerwarteten Format geantwortet",
+    "no_session": "Es läuft gerade kein Einstufungstest",
+    "no_exam": "Es ist kein Einstufungstest geladen",
+    "invalid_daily_cap": "Das Tageslimit muss eine ganze Zahl von 1 bis 500 sein"
+  },
   "banner": {
     "providerTrouble": "Dein aktiver KI-Anbieter ({provider}) hat Probleme: {error}. <link>Öffne die Einstellungen</link>, um das Problem zu beheben oder den Anbieter zu wechseln."
   },
