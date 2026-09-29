@@ -97,6 +97,18 @@ function migrateDailyReviewCap(db: Database.Database): void {
   db.exec('ALTER TABLE profile ADD COLUMN daily_review_cap INTEGER NOT NULL DEFAULT 50 CHECK (daily_review_cap BETWEEN 1 AND 500)');
 }
 
+/**
+ * Chat messages can be about a practice-pool exercise (Tutoring Phase 2). Adds the column to a
+ * chat table created before Phase 2; fresh databases already have it.
+ */
+function migrateChatPracticeColumn(db: Database.Database): void {
+  const columns = db.prepare('PRAGMA table_info(lesson_chat_messages)').all() as { name: string }[];
+  if (columns.some((c) => c.name === 'practice_exercise_id')) return;
+  db.exec(
+    'ALTER TABLE lesson_chat_messages ADD COLUMN practice_exercise_id TEXT REFERENCES practice_exercises(id) ON DELETE SET NULL'
+  );
+}
+
 export function runMigrations(db: Database.Database): void {
   // Wrapped in one transaction so a concurrent connection (e.g. a parallel `next build`
   // static-page-data worker also calling getDb()) never observes the mid-migration state
@@ -107,6 +119,7 @@ export function runMigrations(db: Database.Database): void {
     migrateConceptIdAndPlacementUniqueness(db);
     migrateProfileLevelColumns(db);
     migrateDailyReviewCap(db);
+    migrateChatPracticeColumn(db);
   });
   migrate();
 }
@@ -303,10 +316,27 @@ function createTablesIfMissing(db: Database.Database): void {
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       lesson_id TEXT NOT NULL REFERENCES lessons(id) ON DELETE CASCADE,
       exercise_id TEXT REFERENCES exercises(id) ON DELETE SET NULL,
+      practice_exercise_id TEXT REFERENCES practice_exercises(id) ON DELETE SET NULL,
       role TEXT NOT NULL CHECK (role IN ('user','assistant')),
       content TEXT NOT NULL,
       created_at TEXT NOT NULL
     );
     CREATE INDEX IF NOT EXISTS idx_lesson_chat_lesson ON lesson_chat_messages(lesson_id);
+
+    CREATE TABLE IF NOT EXISTS practice_exercises (
+      id TEXT PRIMARY KEY,
+      lesson_id TEXT NOT NULL REFERENCES lessons(id) ON DELETE CASCADE,
+      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','flashcard','free_text')),
+      content TEXT NOT NULL,
+      review_status TEXT NOT NULL DEFAULT 'unreviewed' CHECK (review_status IN ('unreviewed','approved','rejected')),
+      created_at TEXT NOT NULL,
+      reviewed_at TEXT
+    );
+    CREATE INDEX IF NOT EXISTS idx_practice_exercises_lesson ON practice_exercises(lesson_id);
+
+    CREATE TABLE IF NOT EXISTS practice_seen (
+      practice_exercise_id TEXT PRIMARY KEY REFERENCES practice_exercises(id) ON DELETE CASCADE,
+      served_at TEXT NOT NULL
+    );
   `);
 }
