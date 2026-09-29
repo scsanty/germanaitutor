@@ -10,7 +10,8 @@ function mapError(err: unknown) {
   throw err;
 }
 
-export async function GET(_request: Request, { params }: { params: { id: string } }) {
+export async function GET(_request: Request, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   try {
     return NextResponse.json(createLessonChatService(getDb()).getThread(params.id));
   } catch (err) {
@@ -18,7 +19,8 @@ export async function GET(_request: Request, { params }: { params: { id: string 
   }
 }
 
-export async function POST(request: Request, { params }: { params: { id: string } }) {
+export async function POST(request: Request, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const body = await request.json().catch(() => null);
   const message = body?.message;
   const exerciseId = body?.exerciseId ?? null;

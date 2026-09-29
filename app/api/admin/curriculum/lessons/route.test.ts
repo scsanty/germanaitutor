@@ -18,7 +18,7 @@ function seedMilestoneAndSection() {
 describe('/api/admin/curriculum/lessons', () => {
   beforeEach(() => {
     process.env.GAIT_DATA_DIR = mkdtempSync(join(tmpdir(), 'gait-admin-lessons-'));
-    vi.mocked(isAdminSessionValid).mockReturnValue(true);
+    vi.mocked(isAdminSessionValid).mockResolvedValue(true);
   });
 
   afterEach(() => {
@@ -27,7 +27,7 @@ describe('/api/admin/curriculum/lessons', () => {
   });
 
   it('returns 401 when not authenticated', async () => {
-    vi.mocked(isAdminSessionValid).mockReturnValue(false);
+    vi.mocked(isAdminSessionValid).mockResolvedValue(false);
     const res = await POST(
       new Request('http://localhost', { method: 'POST', body: JSON.stringify({}) })
     );

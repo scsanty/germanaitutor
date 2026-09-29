@@ -13,7 +13,7 @@ import { isAdminSessionValid } from '@/lib/auth/adminSession';
 describe('/api/admin/curriculum/milestones', () => {
   beforeEach(() => {
     process.env.GAIT_DATA_DIR = mkdtempSync(join(tmpdir(), 'gait-admin-milestones-'));
-    vi.mocked(isAdminSessionValid).mockReturnValue(true);
+    vi.mocked(isAdminSessionValid).mockResolvedValue(true);
   });
 
   afterEach(() => {
@@ -22,28 +22,28 @@ describe('/api/admin/curriculum/milestones', () => {
   });
 
   it('returns 401 when not authenticated', async () => {
-    vi.mocked(isAdminSessionValid).mockReturnValue(false);
+    vi.mocked(isAdminSessionValid).mockResolvedValue(false);
     const res = await POST(new Request('http://localhost', { method: 'POST', body: JSON.stringify({}) }));
     expect(res.status).toBe(401);
   });
 
   it('returns 401 when not authenticated (PATCH rename)', async () => {
-    vi.mocked(isAdminSessionValid).mockReturnValue(false);
+    vi.mocked(isAdminSessionValid).mockResolvedValue(false);
     const res = await PATCH(
       new Request('http://localhost', { method: 'PATCH', body: JSON.stringify({ title: 'X', description: null }) }),
-      { params: { id: 'some-id' } }
+      { params: Promise.resolve({ id: 'some-id' }) }
     );
     expect(res.status).toBe(401);
   });
 
   it('returns 401 when not authenticated (DELETE)', async () => {
-    vi.mocked(isAdminSessionValid).mockReturnValue(false);
-    const res = await DELETE(new Request('http://localhost', { method: 'DELETE' }), { params: { id: 'some-id' } });
+    vi.mocked(isAdminSessionValid).mockResolvedValue(false);
+    const res = await DELETE(new Request('http://localhost', { method: 'DELETE' }), { params: Promise.resolve({ id: 'some-id' }) });
     expect(res.status).toBe(401);
   });
 
   it('returns 401 when not authenticated (PATCH reorder)', async () => {
-    vi.mocked(isAdminSessionValid).mockReturnValue(false);
+    vi.mocked(isAdminSessionValid).mockResolvedValue(false);
     const res = await reorder(
       new Request('http://localhost', {
         method: 'PATCH',
@@ -77,7 +77,7 @@ describe('/api/admin/curriculum/milestones', () => {
 
     const res = await PATCH(
       new Request('http://localhost', { method: 'PATCH', body: JSON.stringify({ title: 'Fundamentals', description: null }) }),
-      { params: { id: created.id } }
+      { params: Promise.resolve({ id: created.id }) }
     );
     expect(res.status).toBe(200);
     expect((await res.json()).title).toBe('Fundamentals');
@@ -93,7 +93,7 @@ describe('/api/admin/curriculum/milestones', () => {
       )
     ).json();
 
-    const res = await DELETE(new Request('http://localhost', { method: 'DELETE' }), { params: { id: created.id } });
+    const res = await DELETE(new Request('http://localhost', { method: 'DELETE' }), { params: Promise.resolve({ id: created.id }) });
     expect(res.status).toBe(200);
     expect(getDb().prepare('SELECT 1 FROM milestones WHERE id = ?').get(created.id)).toBeUndefined();
   });

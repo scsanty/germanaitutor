@@ -5,8 +5,8 @@ import { createCurriculumAuditService } from '@/lib/services/curriculumAuditServ
 
 export const dynamic = 'force-dynamic';
 
-export default function FlashcardViolationsPage() {
-  if (!isAdminSessionValid()) redirect('/admin/login');
+export default async function FlashcardViolationsPage() {
+  if (!(await isAdminSessionValid())) redirect('/admin/login');
   const violations = createCurriculumAuditService(getDb()).listFlashcardViolations();
   return (
     <div>

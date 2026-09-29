@@ -6,7 +6,8 @@ import type { Track } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
 
-export async function GET(request: Request, { params }: { params: { id: string } }) {
+export async function GET(request: Request, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const url = new URL(request.url);
   const track = (url.searchParams.get('track') ?? 'generic') as Track;
   const db = getDb();

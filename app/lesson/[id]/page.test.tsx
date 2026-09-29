@@ -18,15 +18,15 @@ describe('Lesson page', () => {
     mockRedirect.mockClear();
   });
 
-  it('sends a student who has not finished onboarding to onboarding', () => {
+  it('sends a student who has not finished onboarding to onboarding', async () => {
     mockGetProfile.mockReturnValue({ onboardingComplete: false });
-    Lesson({ params: { id: 'a1-greet' } });
+    await Lesson({ params: Promise.resolve({ id: 'a1-greet' }) });
     expect(mockRedirect).toHaveBeenCalledWith('/onboarding');
   });
 
-  it('renders the lesson otherwise', () => {
+  it('renders the lesson otherwise', async () => {
     mockGetProfile.mockReturnValue({ onboardingComplete: true });
-    expect(Lesson({ params: { id: 'a1-greet' } })).toBeTruthy();
+    expect(await Lesson({ params: Promise.resolve({ id: 'a1-greet' }) })).toBeTruthy();
     expect(mockRedirect).not.toHaveBeenCalled();
   });
 });

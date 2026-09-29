@@ -19,18 +19,18 @@ vi.mock('@/lib/services/curriculumAuditService', () => ({
 import FlashcardViolationsPage from './page';
 
 describe('FlashcardViolationsPage', () => {
-  it('redirects to /admin/login when not authenticated', () => {
+  it('redirects to /admin/login when not authenticated', async () => {
     isAdminSessionValidMock.mockReturnValue(false);
-    expect(() => FlashcardViolationsPage()).toThrow('NEXT_REDIRECT');
+    await expect(FlashcardViolationsPage()).rejects.toThrow('NEXT_REDIRECT');
     expect(redirectMock).toHaveBeenCalledWith('/admin/login');
   });
 
-  it('links each lesson to its edit form', () => {
+  it('links each lesson to its edit form', async () => {
     isAdminSessionValidMock.mockReturnValue(true);
     listMock.mockReturnValue([
       { lessonId: 'a1-g', title: 'Pronouns', track: 'generic', level: 'A1', skill: 'grammar', flashcardCount: 3 },
     ]);
-    render(FlashcardViolationsPage());
+    render(await FlashcardViolationsPage());
     expect(screen.getByRole('link', { name: 'Pronouns' })).toHaveAttribute(
       'href',
       '/admin/curriculum/lesson/a1-g/edit?track=generic'
@@ -38,10 +38,10 @@ describe('FlashcardViolationsPage', () => {
     expect(screen.getByText('3')).toBeInTheDocument();
   });
 
-  it('says so when there are none', () => {
+  it('says so when there are none', async () => {
     isAdminSessionValidMock.mockReturnValue(true);
     listMock.mockReturnValue([]);
-    render(FlashcardViolationsPage());
+    render(await FlashcardViolationsPage());
     expect(screen.getByText('None — every flashcard is in a vocabulary lesson.')).toBeInTheDocument();
   });
 });

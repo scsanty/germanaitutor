@@ -5,7 +5,8 @@ import { isCefrLevel, isTrack } from '@/lib/tutoring/levels';
 
 export const dynamic = 'force-dynamic';
 
-export async function GET(_request: Request, { params }: { params: { track: string; level: string } }) {
+export async function GET(_request: Request, props: { params: Promise<{ track: string; level: string }> }) {
+  const params = await props.params;
   // This is a public, unauthenticated GET route whose read path (getTrackStructure ->
   // ensureUnsortedExists) has a side-effecting INSERT on every call. Validating track/level
   // here, before that's reached, keeps a bad value from throwing inside the handler (a 500)

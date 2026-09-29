@@ -1,11 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { LessonEditorForm, type LessonCloneContent } from '@/components/admin/LessonEditorForm';
 import type { Track, CefrLevel } from '@/lib/types';
 
-export default function NewLessonPage({ params }: { params: { track: string; level: string } }) {
+export default function NewLessonPage() {
+  const params = useParams<{ track: string; level: string }>();
   const router = useRouter();
   const searchParams = useSearchParams();
   const cloneFrom = searchParams.get('cloneFrom');

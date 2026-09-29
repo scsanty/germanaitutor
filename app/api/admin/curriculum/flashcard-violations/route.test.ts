@@ -11,7 +11,7 @@ import { isAdminSessionValid } from '@/lib/auth/adminSession';
 describe('/api/admin/curriculum/flashcard-violations', () => {
   beforeEach(() => {
     process.env.GAIT_DATA_DIR = mkdtempSync(join(tmpdir(), 'gait-violations-'));
-    vi.mocked(isAdminSessionValid).mockReturnValue(true);
+    vi.mocked(isAdminSessionValid).mockResolvedValue(true);
   });
 
   afterEach(() => {
@@ -20,7 +20,7 @@ describe('/api/admin/curriculum/flashcard-violations', () => {
   });
 
   it('returns 401 when not authenticated', async () => {
-    vi.mocked(isAdminSessionValid).mockReturnValue(false);
+    vi.mocked(isAdminSessionValid).mockResolvedValue(false);
     expect((await GET()).status).toBe(401);
   });
 

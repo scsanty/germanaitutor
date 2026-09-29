@@ -26,18 +26,18 @@ describe('isAdminSessionValid', () => {
     delete process.env.GAIT_DATA_DIR;
   });
 
-  it('returns false when no cookie is present', () => {
-    expect(isAdminSessionValid()).toBe(false);
+  it('returns false when no cookie is present', async () => {
+    expect(await isAdminSessionValid()).toBe(false);
   });
 
-  it('returns true for a valid session token', () => {
+  it('returns true for a valid session token', async () => {
     const service = createAdminAuthService(getDb());
     const secret = loadOrCreateSessionSecret();
     cookieStore.set('admin_session', service.createSessionToken(secret));
-    expect(isAdminSessionValid()).toBe(true);
+    expect(await isAdminSessionValid()).toBe(true);
   });
 
-  it('returns false for a tampered token', () => {
+  it('returns false for a tampered token', async () => {
     const service = createAdminAuthService(getDb());
     const secret = loadOrCreateSessionSecret();
     const token = service.createSessionToken(secret);
@@ -48,6 +48,6 @@ describe('isAdminSessionValid', () => {
     const flippedDigit = signature[0] === '0' ? '1' : '0';
     const tamperedSignature = flippedDigit + signature.slice(1);
     cookieStore.set('admin_session', `${payload}.${tamperedSignature}`);
-    expect(isAdminSessionValid()).toBe(false);
+    expect(await isAdminSessionValid()).toBe(false);
   });
 });

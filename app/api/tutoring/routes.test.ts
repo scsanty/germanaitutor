@@ -16,7 +16,7 @@ function attempt(body: unknown) {
 }
 
 function params(id: string) {
-  return { params: { id } };
+  return { params: Promise.resolve({ id }) };
 }
 
 describe('/api/tutoring', () => {

@@ -11,13 +11,13 @@ vi.mock('@/lib/auth/adminSession', () => ({ isAdminSessionValid: vi.fn(() => tru
 import { isAdminSessionValid } from '@/lib/auth/adminSession';
 
 function one(track: string, level: string) {
-  return exportOne(new Request('http://localhost'), { params: { track, level } });
+  return exportOne(new Request('http://localhost'), { params: Promise.resolve({ track, level }) });
 }
 
 describe('/api/admin/curriculum/export', () => {
   beforeEach(() => {
     process.env.GAIT_DATA_DIR = mkdtempSync(join(tmpdir(), 'gait-export-routes-'));
-    vi.mocked(isAdminSessionValid).mockReturnValue(true);
+    vi.mocked(isAdminSessionValid).mockResolvedValue(true);
   });
 
   afterEach(() => {
@@ -26,7 +26,7 @@ describe('/api/admin/curriculum/export', () => {
   });
 
   it('returns 401 when not authenticated', async () => {
-    vi.mocked(isAdminSessionValid).mockReturnValue(false);
+    vi.mocked(isAdminSessionValid).mockResolvedValue(false);
     expect((await exportAll()).status).toBe(401);
     expect((await one('generic', 'A1')).status).toBe(401);
   });

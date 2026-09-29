@@ -4,13 +4,15 @@ import { LessonDetail } from '@/components/admin/CurriculumBrowser';
 
 export const dynamic = 'force-dynamic';
 
-export default function AdminLessonPage({
+export default async function AdminLessonPage({
   params,
   searchParams,
 }: {
-  params: { id: string };
-  searchParams: { track?: string };
+  params: Promise<{ id: string }>;
+  searchParams: Promise<{ track?: string }>;
 }) {
-  if (!isAdminSessionValid()) redirect('/admin/login');
-  return <LessonDetail lessonId={params.id} track={searchParams.track ?? 'generic'} />;
+  const { id } = await params;
+  const { track } = await searchParams;
+  if (!(await isAdminSessionValid())) redirect('/admin/login');
+  return <LessonDetail lessonId={id} track={track ?? 'generic'} />;
 }

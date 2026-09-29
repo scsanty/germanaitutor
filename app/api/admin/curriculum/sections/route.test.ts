@@ -15,7 +15,7 @@ describe('/api/admin/curriculum/sections', () => {
 
   beforeEach(() => {
     process.env.GAIT_DATA_DIR = mkdtempSync(join(tmpdir(), 'gait-admin-sections-'));
-    vi.mocked(isAdminSessionValid).mockReturnValue(true);
+    vi.mocked(isAdminSessionValid).mockResolvedValue(true);
     milestoneId = 'm1';
     getDb().exec(
       `INSERT INTO milestones (id, track, level, title, order_index) VALUES ('${milestoneId}', 'generic', 'A1', 'M1', 0)`
@@ -28,28 +28,28 @@ describe('/api/admin/curriculum/sections', () => {
   });
 
   it('returns 401 when not authenticated', async () => {
-    vi.mocked(isAdminSessionValid).mockReturnValue(false);
+    vi.mocked(isAdminSessionValid).mockResolvedValue(false);
     const res = await POST(new Request('http://localhost', { method: 'POST', body: JSON.stringify({}) }));
     expect(res.status).toBe(401);
   });
 
   it('returns 401 when not authenticated (PATCH rename)', async () => {
-    vi.mocked(isAdminSessionValid).mockReturnValue(false);
+    vi.mocked(isAdminSessionValid).mockResolvedValue(false);
     const res = await PATCH(
       new Request('http://localhost', { method: 'PATCH', body: JSON.stringify({ title: 'X', description: null }) }),
-      { params: { id: 'some-id' } }
+      { params: Promise.resolve({ id: 'some-id' }) }
     );
     expect(res.status).toBe(401);
   });
 
   it('returns 401 when not authenticated (DELETE)', async () => {
-    vi.mocked(isAdminSessionValid).mockReturnValue(false);
-    const res = await DELETE(new Request('http://localhost', { method: 'DELETE' }), { params: { id: 'some-id' } });
+    vi.mocked(isAdminSessionValid).mockResolvedValue(false);
+    const res = await DELETE(new Request('http://localhost', { method: 'DELETE' }), { params: Promise.resolve({ id: 'some-id' }) });
     expect(res.status).toBe(401);
   });
 
   it('returns 401 when not authenticated (PATCH reorder)', async () => {
-    vi.mocked(isAdminSessionValid).mockReturnValue(false);
+    vi.mocked(isAdminSessionValid).mockResolvedValue(false);
     const res = await reorder(
       new Request('http://localhost', {
         method: 'PATCH',
@@ -82,7 +82,7 @@ describe('/api/admin/curriculum/sections', () => {
 
     const res = await PATCH(
       new Request('http://localhost', { method: 'PATCH', body: JSON.stringify({ title: 'Section One', description: null }) }),
-      { params: { id: created.id } }
+      { params: Promise.resolve({ id: created.id }) }
     );
     expect(res.status).toBe(200);
     expect((await res.json()).title).toBe('Section One');
@@ -98,7 +98,7 @@ describe('/api/admin/curriculum/sections', () => {
       )
     ).json();
 
-    const res = await DELETE(new Request('http://localhost', { method: 'DELETE' }), { params: { id: created.id } });
+    const res = await DELETE(new Request('http://localhost', { method: 'DELETE' }), { params: Promise.resolve({ id: created.id }) });
     expect(res.status).toBe(200);
     expect(getDb().prepare('SELECT 1 FROM sections WHERE id = ?').get(created.id)).toBeUndefined();
   });

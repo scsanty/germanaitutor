@@ -5,7 +5,8 @@ import { LessonPage } from '@/components/tutoring/LessonPage';
 
 export const dynamic = 'force-dynamic';
 
-export default function Lesson({ params }: { params: { id: string } }) {
+export default async function Lesson(props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   if (!createProfileService(getDb()).getProfile().onboardingComplete) {
     redirect('/onboarding');
   }

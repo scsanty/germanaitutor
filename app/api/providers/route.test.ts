@@ -51,7 +51,7 @@ describe('/api/providers', () => {
     const listRes = await GET();
     expect(await listRes.json()).toHaveLength(1);
 
-    const testRes = await testRoute(new Request('http://localhost'), { params: { id: String(created.id) } });
+    const testRes = await testRoute(new Request('http://localhost'), { params: Promise.resolve({ id: String(created.id) }) });
     expect((await testRes.json()).ok).toBe(true);
 
     await setActive(
@@ -75,11 +75,11 @@ describe('/api/providers', () => {
 
     const updateRes = await PATCH(
       new Request('http://localhost', { method: 'PATCH', body: JSON.stringify({ label: 'Work account' }) }),
-      { params: { id: String(created.id) } }
+      { params: Promise.resolve({ id: String(created.id) }) }
     );
     expect((await updateRes.json()).label).toBe('Work account');
 
-    const deleteRes = await DELETE(new Request('http://localhost'), { params: { id: String(created.id) } });
+    const deleteRes = await DELETE(new Request('http://localhost'), { params: Promise.resolve({ id: String(created.id) }) });
     expect(deleteRes.status).toBe(204);
   });
 
@@ -87,7 +87,7 @@ describe('/api/providers', () => {
     const created = await createConnection({ providerType: 'anthropic', apiKey: 'sk-ant-test' });
     listModels.mockResolvedValue([{ id: 'claude-x', label: 'Claude X' }]);
 
-    const res = await modelsRoute(new Request('http://localhost'), { params: { id: String(created.id) } });
+    const res = await modelsRoute(new Request('http://localhost'), { params: Promise.resolve({ id: String(created.id) }) });
 
     expect(res.status).toBe(200);
     expect(await res.json()).toEqual([{ id: 'claude-x', label: 'Claude X' }]);
@@ -98,7 +98,7 @@ describe('/api/providers', () => {
     const created = await createConnection({ providerType: 'ollama', ollamaHost: 'http://localhost:11434' });
     listModels.mockResolvedValue([]);
 
-    await modelsRoute(new Request('http://localhost'), { params: { id: String(created.id) } });
+    await modelsRoute(new Request('http://localhost'), { params: Promise.resolve({ id: String(created.id) }) });
 
     expect(listModels).toHaveBeenCalledWith({ apiKey: undefined, host: 'http://localhost:11434' });
   });
@@ -107,14 +107,14 @@ describe('/api/providers', () => {
     const created = await createConnection({ providerType: 'ollama', ollamaHost: 'http://localhost:11434' });
     listModels.mockRejectedValue(new Error('fetch failed'));
 
-    const res = await modelsRoute(new Request('http://localhost'), { params: { id: String(created.id) } });
+    const res = await modelsRoute(new Request('http://localhost'), { params: Promise.resolve({ id: String(created.id) }) });
 
     expect(res.status).toBe(502);
     expect((await res.json()).error).toBe('fetch failed');
   });
 
   it('returns 404 when listing models for an unknown connection', async () => {
-    const res = await modelsRoute(new Request('http://localhost'), { params: { id: '999' } });
+    const res = await modelsRoute(new Request('http://localhost'), { params: Promise.resolve({ id: '999' }) });
     expect(res.status).toBe(404);
   });
 });

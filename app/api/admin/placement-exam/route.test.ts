@@ -18,7 +18,7 @@ function put(body: string, format = 'json') {
 describe('/api/admin/placement-exam', () => {
   beforeEach(() => {
     process.env.GAIT_DATA_DIR = mkdtempSync(join(tmpdir(), 'gait-exam-admin-'));
-    vi.mocked(isAdminSessionValid).mockReturnValue(true);
+    vi.mocked(isAdminSessionValid).mockResolvedValue(true);
     createPlacementService(getDb()).replaceExam(smallPlacementExam());
   });
 
@@ -28,7 +28,7 @@ describe('/api/admin/placement-exam', () => {
   });
 
   it('returns 401 when not authenticated', async () => {
-    vi.mocked(isAdminSessionValid).mockReturnValue(false);
+    vi.mocked(isAdminSessionValid).mockResolvedValue(false);
     expect((await GET(new Request('http://localhost/api/admin/placement-exam'))).status).toBe(401);
     expect((await put('{}')).status).toBe(401);
   });

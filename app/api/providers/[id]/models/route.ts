@@ -6,7 +6,8 @@ import { getAdapter } from '@/lib/providers/registry';
 
 export const dynamic = 'force-dynamic';
 
-export async function GET(_request: Request, { params }: { params: { id: string } }) {
+export async function GET(_request: Request, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const id = Number(params.id);
   const service = createProviderService(getDb(), defaultKeyFilePath());
   const connection = service.getConnection(id);

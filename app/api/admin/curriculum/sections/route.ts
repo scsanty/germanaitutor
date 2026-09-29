@@ -6,7 +6,7 @@ import { createCurriculumStructureService } from '@/lib/services/curriculumStruc
 export const dynamic = 'force-dynamic';
 
 export async function POST(request: Request) {
-  if (!isAdminSessionValid()) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  if (!(await isAdminSessionValid())) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   const { milestoneId, title, description } = await request.json();
   const service = createCurriculumStructureService(getDb());
   try {

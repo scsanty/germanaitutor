@@ -6,7 +6,7 @@ import { PlacementExamAdmin } from '@/components/admin/PlacementExamAdmin';
 
 export const dynamic = 'force-dynamic';
 
-export default function PlacementExamAdminPage() {
-  if (!isAdminSessionValid()) redirect('/admin/login');
+export default async function PlacementExamAdminPage() {
+  if (!(await isAdminSessionValid())) redirect('/admin/login');
   return <PlacementExamAdmin questionCount={createPlacementService(getDb()).questionCount()} />;
 }

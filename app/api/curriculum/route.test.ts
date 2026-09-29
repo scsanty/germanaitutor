@@ -31,7 +31,7 @@ describe('/api/curriculum', () => {
 
   it('returns a track structure', async () => {
     const res = await getTrackStructure(new Request('http://localhost'), {
-      params: { track: 'generic', level: 'A1' },
+      params: Promise.resolve({ track: 'generic', level: 'A1' }),
     });
     const body = await res.json();
     expect(body[0].sections[0].lessons[0].id).toBe('a1-present-tense-regular');
@@ -39,13 +39,13 @@ describe('/api/curriculum', () => {
 
   it('returns 400, not 500, for an invalid track or level instead of reaching the DB', async () => {
     const badTrack = await getTrackStructure(new Request('http://localhost'), {
-      params: { track: 'bogus', level: 'A1' },
+      params: Promise.resolve({ track: 'bogus', level: 'A1' }),
     });
     expect(badTrack.status).toBe(400);
     expect((await badTrack.json()).error).toBeTruthy();
 
     const badLevel = await getTrackStructure(new Request('http://localhost'), {
-      params: { track: 'generic', level: 'Z9' },
+      params: Promise.resolve({ track: 'generic', level: 'Z9' }),
     });
     expect(badLevel.status).toBe(400);
     expect((await badLevel.json()).error).toBeTruthy();
@@ -53,7 +53,7 @@ describe('/api/curriculum', () => {
 
   it('returns a lesson with exercises and prerequisites', async () => {
     const res = await getLesson(new Request('http://localhost/api/curriculum/lessons/a1-present-tense-regular?track=generic'), {
-      params: { id: 'a1-present-tense-regular' },
+      params: Promise.resolve({ id: 'a1-present-tense-regular' }),
     });
     const body = await res.json();
     expect(body.lesson.id).toBe('a1-present-tense-regular');
@@ -63,7 +63,7 @@ describe('/api/curriculum', () => {
   });
 
   it('returns 404 for an unknown lesson', async () => {
-    const res = await getLesson(new Request('http://localhost'), { params: { id: 'nonexistent' } });
+    const res = await getLesson(new Request('http://localhost'), { params: Promise.resolve({ id: 'nonexistent' }) });
     expect(res.status).toBe(404);
   });
 });

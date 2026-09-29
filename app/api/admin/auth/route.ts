@@ -11,7 +11,7 @@ export async function GET() {
   const service = createAdminAuthService(getDb());
   return NextResponse.json({
     passwordSet: service.isPasswordSet(),
-    authenticated: isAdminSessionValid(),
+    authenticated: await isAdminSessionValid(),
   });
 }
 
@@ -28,7 +28,7 @@ export async function POST(request: Request) {
   }
   const secret = loadOrCreateSessionSecret();
   const token = service.createSessionToken(secret);
-  cookies().set(ADMIN_SESSION_COOKIE, token, {
+  (await cookies()).set(ADMIN_SESSION_COOKIE, token, {
     httpOnly: true,
     sameSite: 'lax',
     maxAge: 30 * 24 * 60 * 60,
@@ -38,6 +38,6 @@ export async function POST(request: Request) {
 }
 
 export async function DELETE() {
-  cookies().delete(ADMIN_SESSION_COOKIE);
+  (await cookies()).delete(ADMIN_SESSION_COOKIE);
   return NextResponse.json({ ok: true });
 }

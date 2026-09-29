@@ -6,6 +6,6 @@ import { createCurriculumAuditService } from '@/lib/services/curriculumAuditServ
 export const dynamic = 'force-dynamic';
 
 export async function GET() {
-  if (!isAdminSessionValid()) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  if (!(await isAdminSessionValid())) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   return NextResponse.json(createCurriculumAuditService(getDb()).listFlashcardViolations());
 }

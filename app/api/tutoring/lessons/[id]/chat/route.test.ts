@@ -14,7 +14,7 @@ import { seedTutoringCurriculum } from '@/test/tutoringFixtures';
 import { GET, POST } from './route';
 
 function post(id: string, body: unknown) {
-  return POST(new Request('http://localhost', { method: 'POST', body: JSON.stringify(body) }), { params: { id } });
+  return POST(new Request('http://localhost', { method: 'POST', body: JSON.stringify(body) }), { params: Promise.resolve({ id }) });
 }
 
 describe('/api/tutoring/lessons/[id]/chat', () => {
@@ -31,9 +31,9 @@ describe('/api/tutoring/lessons/[id]/chat', () => {
 
   it('GET returns the thread, or 404 and 403', async () => {
     const request = new Request('http://localhost');
-    expect(await (await GET(request, { params: { id: 'a1-greet' } })).json()).toEqual({ messages: [], aiAvailable: false });
-    expect((await GET(request, { params: { id: 'nope' } })).status).toBe(404);
-    expect((await GET(request, { params: { id: 'a2-past' } })).status).toBe(403);
+    expect(await (await GET(request, { params: Promise.resolve({ id: 'a1-greet' }) })).json()).toEqual({ messages: [], aiAvailable: false });
+    expect((await GET(request, { params: Promise.resolve({ id: 'nope' }) })).status).toBe(404);
+    expect((await GET(request, { params: Promise.resolve({ id: 'a2-past' }) })).status).toBe(403);
   });
 
   it('POST sends a message and returns the new messages', async () => {

@@ -7,8 +7,9 @@ import type { Track } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
 
-export async function GET(_request: Request, { params }: { params: { track: string; level: string } }) {
-  if (!isAdminSessionValid()) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+export async function GET(_request: Request, props: { params: Promise<{ track: string; level: string }> }) {
+  const params = await props.params;
+  if (!(await isAdminSessionValid())) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   const track = params.track as Track;
   if (!TRACKS.includes(track) || !isCefrLevel(params.level)) {
     return NextResponse.json({ error: 'Unknown track or level' }, { status: 400 });

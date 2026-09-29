@@ -7,7 +7,7 @@ import { createLessonDeleteService } from '@/lib/services/lessonDeleteService';
 export const dynamic = 'force-dynamic';
 
 export async function POST(request: Request) {
-  if (!isAdminSessionValid()) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  if (!(await isAdminSessionValid())) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   const input = await request.json();
   const service = createLessonAdminService(getDb());
   try {
@@ -19,7 +19,7 @@ export async function POST(request: Request) {
 }
 
 export async function DELETE(request: Request) {
-  if (!isAdminSessionValid()) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  if (!(await isAdminSessionValid())) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   const { lessonIds } = await request.json();
   const service = createLessonDeleteService(getDb());
   try {

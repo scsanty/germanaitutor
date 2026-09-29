@@ -1,18 +1,14 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { LessonEditorForm, type LessonEditorInitialValues } from '@/components/admin/LessonEditorForm';
 
-export default function EditLessonPage({
-  params,
-  searchParams,
-}: {
-  params: { id: string };
-  searchParams: { track?: string };
-}) {
+export default function EditLessonPage() {
+  const params = useParams<{ id: string }>();
+  const searchParams = useSearchParams();
   const router = useRouter();
-  const track = searchParams.track ?? 'generic';
+  const track = searchParams.get('track') ?? 'generic';
   const [initial, setInitial] = useState<LessonEditorInitialValues | null>(null);
   const [error, setError] = useState<string | null>(null);
 

@@ -12,7 +12,7 @@ function formatFrom(request: Request): ExamFormat | null {
 }
 
 export async function GET(request: Request) {
-  if (!isAdminSessionValid()) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  if (!(await isAdminSessionValid())) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   const format = formatFrom(request);
   if (!format) return NextResponse.json({ error: 'format must be json or yaml' }, { status: 400 });
   const text = serializePlacementExam(createPlacementService(getDb()).getExam(), format);
@@ -25,7 +25,7 @@ export async function GET(request: Request) {
 }
 
 export async function PUT(request: Request) {
-  if (!isAdminSessionValid()) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  if (!(await isAdminSessionValid())) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   const format = formatFrom(request);
   if (!format) return NextResponse.json({ errors: ['format must be json or yaml'] }, { status: 400 });
   const parsed = parsePlacementExam(await request.text(), format);

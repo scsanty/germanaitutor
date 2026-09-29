@@ -23,23 +23,23 @@ describe('AdminCurriculumPage', () => {
     redirectMock.mockClear();
   });
 
-  it('redirects to /admin/login when not authenticated', () => {
+  it('redirects to /admin/login when not authenticated', async () => {
     isAdminSessionValidMock.mockReturnValue(false);
-    expect(() => AdminCurriculumPage()).toThrow('NEXT_REDIRECT');
+    await expect(AdminCurriculumPage()).rejects.toThrow('NEXT_REDIRECT');
     expect(redirectMock).toHaveBeenCalledWith('/admin/login');
   });
 
-  it('renders track list when authenticated', () => {
+  it('renders track list when authenticated', async () => {
     isAdminSessionValidMock.mockReturnValue(true);
     listTracksMock.mockReturnValue([{ track: 'generic', levels: ['A1'] }]);
-    const result = AdminCurriculumPage();
+    const result = await AdminCurriculumPage();
     expect(result).toBeTruthy();
   });
 
-  it('links to the admin tools and the seed exports', () => {
+  it('links to the admin tools and the seed exports', async () => {
     isAdminSessionValidMock.mockReturnValue(true);
     listTracksMock.mockReturnValue([{ track: 'generic', levels: ['A1'] }]);
-    render(AdminCurriculumPage());
+    render(await AdminCurriculumPage());
     expect(screen.getByRole('link', { name: 'Download all as seed files (zip)' })).toHaveAttribute(
       'href',
       '/api/admin/curriculum/export'

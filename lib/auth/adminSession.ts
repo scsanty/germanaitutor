@@ -5,8 +5,8 @@ import { loadOrCreateSessionSecret } from '../crypto/sessionSecret';
 
 export const ADMIN_SESSION_COOKIE = 'admin_session';
 
-export function isAdminSessionValid(): boolean {
-  const token = cookies().get(ADMIN_SESSION_COOKIE)?.value;
+export async function isAdminSessionValid(): Promise<boolean> {
+  const token = (await cookies()).get(ADMIN_SESSION_COOKIE)?.value;
   if (!token) return false;
   const secret = loadOrCreateSessionSecret();
   const service = createAdminAuthService(getDb());

@@ -7,7 +7,7 @@ import { createCurriculumExportService } from '@/lib/services/curriculumExportSe
 export const dynamic = 'force-dynamic';
 
 export async function GET() {
-  if (!isAdminSessionValid()) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  if (!(await isAdminSessionValid())) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   const files = Object.fromEntries(
     createCurriculumExportService(getDb())
       .exportAll()

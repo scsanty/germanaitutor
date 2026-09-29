@@ -5,8 +5,8 @@ import { createCurriculumService } from '@/lib/services/curriculumService';
 
 export const dynamic = 'force-dynamic';
 
-export default function AdminCurriculumPage() {
-  if (!isAdminSessionValid()) redirect('/admin/login');
+export default async function AdminCurriculumPage() {
+  if (!(await isAdminSessionValid())) redirect('/admin/login');
   const tracks = createCurriculumService(getDb()).listTracks();
   return (
     <div>

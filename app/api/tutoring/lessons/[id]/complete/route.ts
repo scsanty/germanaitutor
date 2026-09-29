@@ -4,7 +4,8 @@ import { createAttemptService, toAttemptErrorResponse } from '@/lib/services/att
 
 export const dynamic = 'force-dynamic';
 
-export async function POST(_request: Request, { params }: { params: { id: string } }) {
+export async function POST(_request: Request, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   try {
     return NextResponse.json(createAttemptService(getDb()).markLessonDone(params.id));
   } catch (err) {

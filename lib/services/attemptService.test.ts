@@ -1,15 +1,17 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, type Mock } from 'vitest';
 import { createDbClient } from '../db/client';
 import { reconcileExercises } from '../curriculum-admin/exerciseReconciliation';
 import { createProfileService } from './profileService';
-import { AttemptError, createAttemptService, toAttemptErrorResponse } from './attemptService';
+import { AttemptError, createAttemptService, toAttemptErrorResponse, type AttemptDeps } from './attemptService';
 import { seedTutoringCurriculum } from '@/test/tutoringFixtures';
 
-function setup(options: { day?: number; grade?: ReturnType<typeof vi.fn> } = {}) {
+type GradeFreeText = NonNullable<AttemptDeps['gradeFreeText']>;
+
+function setup(options: { day?: number; grade?: Mock<GradeFreeText> } = {}) {
   const db = createDbClient(':memory:');
   seedTutoringCurriculum(db);
   let day = options.day ?? 24;
-  const gradeFreeText = options.grade ?? vi.fn().mockResolvedValue({ ok: true, result: 'correct', feedback: 'Gut.' });
+  const gradeFreeText = options.grade ?? vi.fn<GradeFreeText>().mockResolvedValue({ ok: true, result: 'correct', feedback: 'Gut.' });
   const service = createAttemptService(db, { gradeFreeText, now: () => new Date(2026, 8, day, 10, 0) });
   return {
     db,
