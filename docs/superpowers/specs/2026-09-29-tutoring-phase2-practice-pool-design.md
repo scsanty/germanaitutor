@@ -31,6 +31,7 @@ This phase lets a student keep practising a finished lesson beyond its authored 
 | Generation timing | On demand. When the pool has no unseen exercises left, one AI call generates the missing ones while the student sees "Preparing exercises…". Nothing is generated in the background. |
 | Admin actions | Approve, reject, edit, and promote into the lesson. |
 | Storage | A separate `practice_exercises` table, not new columns on `exercises`. |
+| Export | Approved pool exercises are included in the curriculum export (seed JSON), so a fresh install starts with the curated pool. Unreviewed and rejected exercises are not exported. |
 
 ## Data Model
 
@@ -146,6 +147,15 @@ The existing admin lesson page gains a **Practice pool** section. It lists that 
 - `PATCH /api/admin/practice/[id]`. The body is `{ action: 'approve' | 'reject' }` or `{ content }` to edit.
 - `POST /api/admin/practice/[id]/promote`
 
+## Curriculum Export
+
+- **Format.** The seed format gains an optional `practice` list: `[{ id, lessonId, type, content }]`.
+- **What each file holds.** Each per-track+level file carries the `approved` pool exercises of the lessons placed in that file. The zip of all files carries them too.
+- **Loading.** The seed loader inserts listed practice exercises as `approved` if their id doesn't exist yet. Like concept links, it skips any whose lesson doesn't exist.
+- **Existing files.** Files without the list load as before.
+- **Seed version.** The export keeps the current `seedVersion`, as in Phase 1. Replacing the repo's seed files therefore affects only fresh installs, unless someone bumps the version.
+- **Round trip.** Exporting and reloading must reproduce the approved pool. The existing round-trip test is extended to cover this.
+
 ## Phase 1 Leftovers Included
 
 1. **Ask-AI context stays attached.** Today the chat drops the attached exercise after the first message. In this phase it stays attached to every message until the student clears it with × or presses Ask AI on another exercise. The server already builds context for each message, so this is a client change in `LessonChat` and its parents. It applies to authored and practice exercises alike.
@@ -155,6 +165,16 @@ The existing admin lesson page gains a **Practice pool** section. It lists that 
    - **Unchanged.** The provider's own failure text, such as "Anthropic returned 429", still appears as a detail inside the translated sentence.
    - **Out of scope.** Admin routes stay English.
 3. **Chat load retry.** If the thread failed to load, closing and reopening the chat panel tries again instead of keeping the error until a page reload.
+4. **The server checks the answer source.** Today `POST /api/tutoring/attempts` trusts `source: 'queue'`, so an answer to an exercise that isn't due still counts against the daily review limit. In this phase a queue answer is accepted only if the exercise meets every condition below. Otherwise the server answers `400` with the code `not_due`, and lesson answers are unaffected.
+   - Its lesson is placed in the active track+level.
+   - It has a review schedule with `next_due_at <= today`.
+   - It hasn't already been answered in the queue today.
+5. **The intermittent test failure.** One full-suite run failed once, the name of the failing test wasn't captured, and the failure has not recurred. The job is to find it:
+   - Run the full suite repeatedly (at least 20 times) under parallel load.
+   - Capture the name of any failing test.
+   - Fix the root cause, for example a timing-dependent assertion or a shared temp directory.
+   - The likely suspects from the Phase 1 final review are the password-hashing tests (`adminAuthService` and the admin auth route) and the `ExerciseCard` and `PlacementTest` flows that chain several fetches.
+   - If 20 runs under load stay green, say so and add a note to the test README. Don't guess at a fix.
 
 ## Translations
 
@@ -215,6 +235,8 @@ New interface text goes into both `messages/en.json` and `messages/de.json`, wit
   - the chat keeps its context across messages and retries a failed load;
   - a translated error is shown for a known code.
 - **Translations.** The en/de parity test stays green.
+- **Export.** Export → reload round-trips the approved pool. Unreviewed and rejected exercises are not exported.
+- **Answer source.** A queue answer is rejected with `not_due` when the exercise isn't due, isn't in the active track+level, or was already answered in the queue today. A lesson answer still works.
 
 ## Out of Scope
 
