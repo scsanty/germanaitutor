@@ -1152,6 +1152,7 @@ describe('buildPracticeGenerationPrompt', () => {
     expect(systemPrompt).toContain('- flashcard: ');
     expect(systemPrompt).not.toContain('- free_text: ');
     expect(systemPrompt).toContain('Reply with only a JSON object');
+    expect(systemPrompt).toContain('Write everything in German only, including every question, prompt and instruction: no English at all. Use only vocabulary and grammar appropriate for CEFR level A1.');
     expect(messages).toHaveLength(1);
     expect(messages[0].role).toBe('user');
     expect(messages[0].content).toContain('Lesson explanation:\nSay Hallo to greet someone.');
@@ -1282,7 +1283,10 @@ export function buildPracticeGenerationPrompt(
     'You write extra practice exercises for a German course.',
     `The lesson is "${ctx.title}" at CEFR level ${ctx.level} (skill: ${ctx.skill}).`,
     `Write exactly ${count} new exercises. Use only these types: ${allowedTypes.join(', ')}.`,
-    "Match the language, style and difficulty of the lesson's example exercises, and keep German learning content in German.",
+    // Decision 2026-09-29: practice exercises are CEFR-style and entirely in German — questions, prompts
+    // and instructions included — using only words and structures a learner at this level knows.
+    `Write everything in German only, including every question, prompt and instruction: no English at all. Use only vocabulary and grammar appropriate for CEFR level ${ctx.level}.`,
+    "Match the style and difficulty of the lesson's example exercises.",
     'Do not repeat the example exercises or each other.',
     'Content shapes:',
     ...allowedTypes.map((type) => `- ${SHAPES[type]}`),
