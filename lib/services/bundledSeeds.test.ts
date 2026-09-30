@@ -1,6 +1,6 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { createDbClient } from '../db/client';
-import { loadBundledSeeds } from './bundledSeeds';
+import { ensureBundledSeeds, loadBundledSeeds } from './bundledSeeds';
 import { createPlacementService } from './placementService';
 
 describe('loadBundledSeeds', () => {
@@ -26,5 +26,17 @@ describe('loadBundledSeeds', () => {
     loadBundledSeeds(db);
 
     expect(createPlacementService(db).questionCount()).toBe(1);
+  });
+});
+
+describe('ensureBundledSeeds', () => {
+  it('does nothing until called, then seeds once', () => {
+    const db = createDbClient(':memory:');
+    const getDb = vi.fn(() => db);
+    expect(getDb).not.toHaveBeenCalled();
+    ensureBundledSeeds(getDb);
+    ensureBundledSeeds(getDb);
+    expect(getDb).toHaveBeenCalledTimes(1);
+    expect((db.prepare('SELECT COUNT(*) AS n FROM lessons').get() as { n: number }).n).toBeGreaterThan(0);
   });
 });

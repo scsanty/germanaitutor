@@ -33,4 +33,13 @@ describe('createDbClient', () => {
     closeDb();
     delete process.env.GAIT_DB_PATH;
   });
+
+  it('getDb refuses to open the database during next build', () => {
+    process.env.NEXT_PHASE = 'phase-production-build';
+    try {
+      expect(() => getDb()).toThrow(/next build/);
+    } finally {
+      delete process.env.NEXT_PHASE;
+    }
+  });
 });
