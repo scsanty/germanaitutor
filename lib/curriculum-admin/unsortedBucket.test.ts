@@ -3,18 +3,14 @@ import { createDbClient } from '../db/client';
 import { ensureUnsortedExists } from './unsortedBucket';
 
 describe('ensureUnsortedExists', () => {
-  it('creates the milestone and section on first call', () => {
+  it('creates the unranked Unsorted milestone on first call', () => {
     const db = createDbClient(':memory:');
     const result = ensureUnsortedExists(db, 'generic', 'A1');
     expect(result.milestoneId).toBe('generic-a1-unsorted');
-    const milestone = db.prepare('SELECT title FROM milestones WHERE id = ?').get(result.milestoneId) as {
-      title: string;
-    };
-    expect(milestone.title).toBe('Unsorted');
-    const section = db.prepare('SELECT milestone_id FROM sections WHERE id = ?').get(result.sectionId) as {
-      milestone_id: string;
-    };
-    expect(section.milestone_id).toBe(result.milestoneId);
+    expect(db.prepare('SELECT title, difficulty_rank FROM milestones WHERE id = ?').get(result.milestoneId)).toEqual({
+      title: 'Unsorted',
+      difficulty_rank: null,
+    });
   });
 
   it('is idempotent — a second call does not create duplicates', () => {

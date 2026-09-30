@@ -1,223 +1,8 @@
 {
-  "seedVersion": "2",
+  "seedVersion": "4",
+  "formatVersion": 2,
   "track": "generic",
   "level": "B1",
-  "milestones": [
-    {
-      "milestone": {
-        "id": "generic-b1-grammar",
-        "track": "generic",
-        "level": "B1",
-        "title": "Grammar",
-        "description": null,
-        "orderIndex": 0
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-b1-grammar-lessons",
-            "milestoneId": "generic-b1-grammar",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b1-subordinate-clauses-causal-concessive",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "b1-subordinate-clauses-temporal",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "b1-infinitive-clauses-zu-um-zu",
-              "orderIndex": 2
-            },
-            {
-              "lessonId": "b1-two-part-connectors",
-              "orderIndex": 3
-            },
-            {
-              "lessonId": "b1-relative-clauses-cases",
-              "orderIndex": 4
-            },
-            {
-              "lessonId": "b1-relative-clauses-prepositions",
-              "orderIndex": 5
-            },
-            {
-              "lessonId": "b1-verbs-with-prepositions-da-wo-compounds",
-              "orderIndex": 6
-            },
-            {
-              "lessonId": "b1-passive-voice-present-past",
-              "orderIndex": 7
-            },
-            {
-              "lessonId": "b1-passive-voice-modal-verbs",
-              "orderIndex": 8
-            },
-            {
-              "lessonId": "b1-subjunctive-ii-wishes-hypotheticals",
-              "orderIndex": 9
-            },
-            {
-              "lessonId": "b1-subjunctive-ii-past-conditions",
-              "orderIndex": 10
-            },
-            {
-              "lessonId": "b1-n-declension-weak-masculine-nouns",
-              "orderIndex": 11
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-b1-vocabulary",
-        "track": "generic",
-        "level": "B1",
-        "title": "Vocabulary",
-        "description": null,
-        "orderIndex": 1
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-b1-vocabulary-lessons",
-            "milestoneId": "generic-b1-vocabulary",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b1-vocab-environment-sustainability",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "b1-vocab-work-career-applications",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "b1-vocab-digital-media-technology",
-              "orderIndex": 2
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-b1-reading",
-        "track": "generic",
-        "level": "B1",
-        "title": "Reading",
-        "description": null,
-        "orderIndex": 2
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-b1-reading-lessons",
-            "milestoneId": "generic-b1-reading",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b1-reading-argumentative-articles",
-              "orderIndex": 0
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-b1-listening",
-        "track": "generic",
-        "level": "B1",
-        "title": "Listening",
-        "description": null,
-        "orderIndex": 3
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-b1-listening-lessons",
-            "milestoneId": "generic-b1-listening",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b1-listening-interviews-podcasts",
-              "orderIndex": 0
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-b1-writing",
-        "track": "generic",
-        "level": "B1",
-        "title": "Writing",
-        "description": null,
-        "orderIndex": 4
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-b1-writing-lessons",
-            "milestoneId": "generic-b1-writing",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b1-writing-argumentative-forum-post",
-              "orderIndex": 0
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-b1-speaking",
-        "track": "generic",
-        "level": "B1",
-        "title": "Speaking",
-        "description": null,
-        "orderIndex": 5
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-b1-speaking-lessons",
-            "milestoneId": "generic-b1-speaking",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b1-speaking-presenting-topic",
-              "orderIndex": 0
-            }
-          ]
-        }
-      ]
-    }
-  ],
   "lessons": [
     {
       "id": "b1-subordinate-clauses-causal-concessive",
@@ -1608,6 +1393,75 @@
     {
       "lessonId": "b1-speaking-presenting-topic",
       "prerequisiteLessonId": "b1-subjunctive-ii-wishes-hypotheticals"
+    }
+  ],
+  "milestones": [
+    {
+      "milestone": {
+        "id": "generic-b1-m1-reasons-time-and-wishes",
+        "track": "generic",
+        "level": "B1",
+        "title": "Reasons, time and wishes",
+        "description": "Link ideas with causal, concessive and time clauses, use zu-infinitives and Konjunktiv II for wishes, with vocabulary for work and media.",
+        "difficultyRank": 1
+      },
+      "lessonIds": [
+        "b1-infinitive-clauses-zu-um-zu",
+        "b1-subjunctive-ii-wishes-hypotheticals",
+        "b1-subordinate-clauses-causal-concessive",
+        "b1-subordinate-clauses-temporal",
+        "b1-vocab-digital-media-technology",
+        "b1-vocab-work-career-applications"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-b1-m2-relative-clauses-and-fixed-prepositions",
+        "track": "generic",
+        "level": "B1",
+        "title": "Relative clauses and fixed prepositions",
+        "description": "Build relative clauses, use verbs with fixed prepositions and weak masculine nouns, and follow interviews on the environment and other topics.",
+        "difficultyRank": 2
+      },
+      "lessonIds": [
+        "b1-listening-interviews-podcasts",
+        "b1-n-declension-weak-masculine-nouns",
+        "b1-relative-clauses-cases",
+        "b1-relative-clauses-prepositions",
+        "b1-verbs-with-prepositions-da-wo-compounds",
+        "b1-vocab-environment-sustainability"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-b1-m3-passive-voice-and-hypotheticals",
+        "track": "generic",
+        "level": "B1",
+        "title": "Passive voice and hypotheticals",
+        "description": "Use the passive, including with modal verbs, talk about past unreal conditions, and connect ideas with two-part connectors.",
+        "difficultyRank": 3
+      },
+      "lessonIds": [
+        "b1-passive-voice-modal-verbs",
+        "b1-passive-voice-present-past",
+        "b1-subjunctive-ii-past-conditions",
+        "b1-two-part-connectors"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-b1-m4-arguing-and-presenting",
+        "track": "generic",
+        "level": "B1",
+        "title": "Arguing and presenting",
+        "description": "Read argumentative articles, give a structured presentation and write a forum post that argues a position.",
+        "difficultyRank": 4
+      },
+      "lessonIds": [
+        "b1-reading-argumentative-articles",
+        "b1-speaking-presenting-topic",
+        "b1-writing-argumentative-forum-post"
+      ]
     }
   ]
 }

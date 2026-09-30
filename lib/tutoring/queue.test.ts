@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { remainingReviews, selectDueItems, suggestNextLesson } from './queue';
+import { remainingReviews, selectDueItems } from './queue';
 
 describe('selectDueItems', () => {
   const candidates = [
@@ -31,29 +31,5 @@ describe('remainingReviews', () => {
     [10, 12, 0],
   ])('cap %i with %i answered → %i left', (cap, answered, expected) => {
     expect(remainingReviews(cap, answered)).toBe(expected);
-  });
-});
-
-describe('suggestNextLesson', () => {
-  it('picks the first incomplete lesson whose prerequisites are all done', () => {
-    const lessons = [
-      { id: 'done', done: true, prerequisiteIds: [] },
-      { id: 'blocked', done: false, prerequisiteIds: ['elsewhere'] },
-      { id: 'ready', done: false, prerequisiteIds: ['done'] },
-    ];
-    expect(suggestNextLesson(lessons, new Set(['done']))).toBe('ready');
-  });
-
-  it('falls back to the first incomplete lesson when none is ready', () => {
-    const lessons = [
-      { id: 'blocked-1', done: false, prerequisiteIds: ['x'] },
-      { id: 'blocked-2', done: false, prerequisiteIds: ['y'] },
-    ];
-    expect(suggestNextLesson(lessons, new Set())).toBe('blocked-1');
-  });
-
-  it('suggests nothing when every lesson is done', () => {
-    expect(suggestNextLesson([{ id: 'a', done: true, prerequisiteIds: [] }], new Set(['a']))).toBeNull();
-    expect(suggestNextLesson([], new Set())).toBeNull();
   });
 });

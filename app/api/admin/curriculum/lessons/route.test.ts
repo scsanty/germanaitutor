@@ -8,10 +8,9 @@ import { POST, DELETE } from './route';
 vi.mock('@/lib/auth/adminSession', () => ({ isAdminSessionValid: vi.fn(() => true) }));
 import { isAdminSessionValid } from '@/lib/auth/adminSession';
 
-function seedMilestoneAndSection() {
+function seedMilestone() {
   getDb().exec(`
-    INSERT INTO milestones (id, track, level, title, order_index) VALUES ('m1', 'generic', 'A1', 'M1', 0);
-    INSERT INTO sections (id, milestone_id, title, order_index) VALUES ('s1', 'm1', 'S1', 0);
+    INSERT INTO milestones (id, track, level, title, difficulty_rank) VALUES ('m1', 'generic', 'A1', 'M1', 1);
   `);
 }
 
@@ -35,7 +34,7 @@ describe('/api/admin/curriculum/lessons', () => {
   });
 
   it('creates a lesson', async () => {
-    seedMilestoneAndSection();
+    seedMilestone();
     const res = await POST(
       new Request('http://localhost', {
         method: 'POST',
@@ -49,7 +48,7 @@ describe('/api/admin/curriculum/lessons', () => {
           examples: null,
           exercises: [],
           prerequisiteIds: [],
-          placement: { sectionId: 's1' },
+          placement: { milestoneId: 'm1' },
         }),
       })
     );
@@ -72,7 +71,7 @@ describe('/api/admin/curriculum/lessons', () => {
           examples: null,
           exercises: [],
           prerequisiteIds: [],
-          placement: { sectionId: 'nonexistent-section' },
+          placement: { milestoneId: 'nonexistent-milestone' },
         }),
       })
     );
@@ -82,7 +81,7 @@ describe('/api/admin/curriculum/lessons', () => {
   });
 
   it('batch deletes a set of lessons', async () => {
-    seedMilestoneAndSection();
+    seedMilestone();
     getDb().exec(`
       INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('a1-l1', 'generic', 'A1', 'grammar', 'L1');
       INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('a1-l2', 'generic', 'A1', 'grammar', 'L2');

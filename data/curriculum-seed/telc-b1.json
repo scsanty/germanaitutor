@@ -1,227 +1,8 @@
 {
-  "seedVersion": "2",
+  "seedVersion": "4",
+  "formatVersion": 2,
   "track": "telc",
   "level": "B1",
-  "milestones": [
-    {
-      "milestone": {
-        "id": "telc-b1-grammar",
-        "track": "telc",
-        "level": "B1",
-        "title": "Grammar",
-        "description": null,
-        "orderIndex": 0
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "telc-b1-grammar-lessons",
-            "milestoneId": "telc-b1-grammar",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b1-telc-sprachbausteine-connectors-grammar",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "b1-telc-passive-workplace-processes",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "b1-telc-konjunktiv-ii-polite-work-requests",
-              "orderIndex": 2
-            },
-            {
-              "lessonId": "b1-telc-indirect-questions-official",
-              "orderIndex": 3
-            },
-            {
-              "lessonId": "b1-telc-prepositional-verbs-service-queries",
-              "orderIndex": 4
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "telc-b1-vocabulary",
-        "track": "telc",
-        "level": "B1",
-        "title": "Vocabulary",
-        "description": null,
-        "orderIndex": 1
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "telc-b1-vocabulary-lessons",
-            "milestoneId": "telc-b1-vocabulary",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b1-telc-sprachbausteine-lexical-cloze",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "b1-telc-vocab-workplace-office-communication",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "b1-telc-vocab-consumer-rights-complaints",
-              "orderIndex": 2
-            },
-            {
-              "lessonId": "b1-telc-vocab-housing-leases-disputes",
-              "orderIndex": 3
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "telc-b1-reading",
-        "track": "telc",
-        "level": "B1",
-        "title": "Reading",
-        "description": null,
-        "orderIndex": 2
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "telc-b1-reading-lessons",
-            "milestoneId": "telc-b1-reading",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b1-telc-reading-teil1-headline-matching",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "b1-telc-reading-teil2-detailed-comprehension",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "b1-telc-reading-teil3-classifieds-matching",
-              "orderIndex": 2
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "telc-b1-listening",
-        "track": "telc",
-        "level": "B1",
-        "title": "Listening",
-        "description": null,
-        "orderIndex": 3
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "telc-b1-listening-lessons",
-            "milestoneId": "telc-b1-listening",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b1-telc-listening-teil1-news-broadcasts",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "b1-telc-listening-teil2-longer-interview",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "b1-telc-listening-teil3-transactional-calls",
-              "orderIndex": 2
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "telc-b1-writing",
-        "track": "telc",
-        "level": "B1",
-        "title": "Writing",
-        "description": null,
-        "orderIndex": 4
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "telc-b1-writing-lessons",
-            "milestoneId": "telc-b1-writing",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b1-telc-writing-complaint-letter",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "b1-telc-writing-inquiry-request-letter",
-              "orderIndex": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "telc-b1-speaking",
-        "track": "telc",
-        "level": "B1",
-        "title": "Speaking",
-        "description": null,
-        "orderIndex": 5
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "telc-b1-speaking-lessons",
-            "milestoneId": "telc-b1-speaking",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b1-telc-speaking-teil1-kontaktaufnahme",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "b1-telc-speaking-teil2-topic-discussion",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "b1-telc-speaking-teil3-joint-planning",
-              "orderIndex": 2
-            }
-          ]
-        }
-      ]
-    }
-  ],
   "lessons": [
     {
       "id": "b1-telc-sprachbausteine-connectors-grammar",
@@ -1560,6 +1341,76 @@
     {
       "lessonId": "b1-telc-speaking-teil3-joint-planning",
       "prerequisiteLessonId": "b1-telc-konjunktiv-ii-polite-work-requests"
+    }
+  ],
+  "milestones": [
+    {
+      "milestone": {
+        "id": "telc-b1-m1-home-work-and-inquiries",
+        "track": "telc",
+        "level": "B1",
+        "title": "Home, work and inquiries",
+        "description": "Vocabulary for housing and the workplace, indirect questions, and exam tasks for ads, phone calls and getting to know someone.",
+        "difficultyRank": 1
+      },
+      "lessonIds": [
+        "b1-telc-indirect-questions-official",
+        "b1-telc-listening-teil3-transactional-calls",
+        "b1-telc-reading-teil3-classifieds-matching",
+        "b1-telc-speaking-teil1-kontaktaufnahme",
+        "b1-telc-vocab-housing-leases-disputes",
+        "b1-telc-vocab-workplace-office-communication"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-b1-m2-complaints-and-the-news",
+        "track": "telc",
+        "level": "B1",
+        "title": "Complaints and the news",
+        "description": "Verbs with prepositions and consumer-rights vocabulary for a complaint letter, plus news broadcasts and a radio interview.",
+        "difficultyRank": 2
+      },
+      "lessonIds": [
+        "b1-telc-listening-teil1-news-broadcasts",
+        "b1-telc-listening-teil2-longer-interview",
+        "b1-telc-prepositional-verbs-service-queries",
+        "b1-telc-vocab-consumer-rights-complaints",
+        "b1-telc-writing-complaint-letter"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-b1-m3-diplomacy-and-discussion",
+        "track": "telc",
+        "level": "B1",
+        "title": "Diplomacy and discussion",
+        "description": "Polite Konjunktiv II and the passive at work, discussing a topic, planning together and writing a formal inquiry.",
+        "difficultyRank": 3
+      },
+      "lessonIds": [
+        "b1-telc-konjunktiv-ii-polite-work-requests",
+        "b1-telc-passive-workplace-processes",
+        "b1-telc-speaking-teil2-topic-discussion",
+        "b1-telc-speaking-teil3-joint-planning",
+        "b1-telc-writing-inquiry-request-letter"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-b1-m4-language-elements-and-detailed-reading",
+        "track": "telc",
+        "level": "B1",
+        "title": "Language elements and detailed reading",
+        "description": "The Sprachbausteine grammar and vocabulary gaps, headline matching and detailed reading comprehension.",
+        "difficultyRank": 4
+      },
+      "lessonIds": [
+        "b1-telc-reading-teil1-headline-matching",
+        "b1-telc-reading-teil2-detailed-comprehension",
+        "b1-telc-sprachbausteine-connectors-grammar",
+        "b1-telc-sprachbausteine-lexical-cloze"
+      ]
     }
   ]
 }

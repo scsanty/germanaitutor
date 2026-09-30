@@ -4,12 +4,12 @@ import { LessonEditorForm } from './LessonEditorForm';
 
 const trackStructureResponse = [
   {
-    milestone: { id: 'm1', title: 'Milestone 1' },
-    sections: [{ section: { id: 's1', title: 'Section 1' }, lessons: [{ id: 'a1-other', title: 'Other Lesson' }] }],
+    milestone: { id: 'm1', title: 'Milestone 1', description: null, difficultyRank: 1 },
+    lessons: [{ id: 'a1-other', title: 'Other Lesson' }],
   },
   {
-    milestone: { id: 'generic-a1-unsorted', title: 'Unsorted' },
-    sections: [{ section: { id: 'generic-a1-unsorted-section', title: 'Unsorted' }, lessons: [] }],
+    milestone: { id: 'generic-a1-unsorted', title: 'Unsorted', description: null, difficultyRank: null },
+    lessons: [],
   },
 ];
 
@@ -24,7 +24,7 @@ describe('LessonEditorForm', () => {
       <LessonEditorForm mode="create" initialTrack="generic" initialSourceLevel="A1" onSaved={vi.fn()} />
     );
     // The Milestone select renders before the fetch resolves, so wait for its options.
-    expect(await screen.findByText('Milestone 1')).toBeInTheDocument();
+    expect(await screen.findByText('1. Milestone 1')).toBeInTheDocument();
     expect(screen.queryByText('Unsorted')).not.toBeInTheDocument();
   });
 
@@ -58,19 +58,18 @@ describe('LessonEditorForm', () => {
       return Promise.resolve({ ok: true, json: async () => ({ id: 'a1-new-lesson', title: 'New Lesson' }) });
     });
     render(<LessonEditorForm mode="create" initialTrack="generic" initialSourceLevel="A1" onSaved={onSaved} />);
-    await screen.findByRole('option', { name: 'Milestone 1' });
+    await screen.findByRole('option', { name: '1. Milestone 1' });
 
     fireEvent.change(screen.getByPlaceholderText('Slug'), { target: { value: 'new-lesson' } });
     fireEvent.change(screen.getByPlaceholderText('Title'), { target: { value: 'New Lesson' } });
     fireEvent.change(screen.getByLabelText('Milestone'), { target: { value: 'm1' } });
-    fireEvent.change(screen.getByLabelText('Section'), { target: { value: 's1' } });
     fireEvent.click(screen.getByText('Save'));
 
     await waitFor(() => expect(onSaved).toHaveBeenCalledWith({ id: 'a1-new-lesson', title: 'New Lesson' }));
     const createCall = (fetch as any).mock.calls.find((c: any[]) => c[0] === '/api/admin/curriculum/lessons');
     expect(createCall[1].method).toBe('POST');
     const body = JSON.parse(createCall[1].body);
-    expect(body).toMatchObject({ slug: 'new-lesson', title: 'New Lesson', placement: { sectionId: 's1' } });
+    expect(body).toMatchObject({ slug: 'new-lesson', title: 'New Lesson', placement: { milestoneId: 'm1' } });
   });
 
   it('shows an error and does not call onSaved when the save request fails', async () => {
@@ -80,12 +79,11 @@ describe('LessonEditorForm', () => {
       return Promise.resolve({ ok: false, json: async () => ({ error: 'Duplicate id' }) });
     });
     render(<LessonEditorForm mode="create" initialTrack="generic" initialSourceLevel="A1" onSaved={onSaved} />);
-    await screen.findByRole('option', { name: 'Milestone 1' });
+    await screen.findByRole('option', { name: '1. Milestone 1' });
 
     fireEvent.change(screen.getByPlaceholderText('Slug'), { target: { value: 'new-lesson' } });
     fireEvent.change(screen.getByPlaceholderText('Title'), { target: { value: 'New Lesson' } });
     fireEvent.change(screen.getByLabelText('Milestone'), { target: { value: 'm1' } });
-    fireEvent.change(screen.getByLabelText('Section'), { target: { value: 's1' } });
     fireEvent.click(screen.getByText('Save'));
 
     await waitFor(() => expect(screen.getByRole('alert')).toHaveTextContent('Duplicate id'));
@@ -100,15 +98,14 @@ describe('LessonEditorForm', () => {
 
   it('changing track after selecting a placement clears it and disables Save again', async () => {
     render(<LessonEditorForm mode="create" initialTrack="generic" initialSourceLevel="A1" onSaved={vi.fn()} />);
-    await screen.findByRole('option', { name: 'Milestone 1' });
+    await screen.findByRole('option', { name: '1. Milestone 1' });
 
     fireEvent.change(screen.getByLabelText('Milestone'), { target: { value: 'm1' } });
-    fireEvent.change(screen.getByLabelText('Section'), { target: { value: 's1' } });
     await waitFor(() => expect(screen.getByText('Save')).not.toBeDisabled());
 
     fireEvent.change(screen.getByLabelText('Track'), { target: { value: 'telc' } });
     await waitFor(() => expect(screen.getByText('Save')).toBeDisabled());
-    // The picker itself must also reset its own internal milestone/section selection — not
+    // The picker itself must also reset its own internal milestone selection — not
     // just the emitted value — since it remounts fresh (key={track}-{sourceLevel}).
     expect((screen.getByLabelText('Milestone') as HTMLSelectElement).value).toBe('');
   });
@@ -134,5 +131,11 @@ describe('LessonEditorForm', () => {
     );
     await waitFor(() => expect(screen.getByText('Prerequisites')).toBeInTheDocument());
     expect(screen.getByLabelText('Other Lesson')).toBeChecked();
+  });
+
+  it('shows an alert when the track structure cannot load', async () => {
+    (fetch as any).mockResolvedValue({ ok: false, status: 500, json: async () => ({}) });
+    render(<LessonEditorForm mode="create" initialTrack="generic" initialSourceLevel="A1" onSaved={vi.fn()} />);
+    expect(await screen.findByRole('alert')).toHaveTextContent('Failed to load the track structure');
   });
 });

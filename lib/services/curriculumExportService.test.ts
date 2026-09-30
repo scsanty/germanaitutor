@@ -5,6 +5,7 @@ import { tmpdir } from 'node:os';
 import { createDbClient } from '../db/client';
 import { loadSeedIfNeeded } from './curriculumSeedLoader';
 import { createCurriculumExportService, seedFileName } from './curriculumExportService';
+import { ensureUnsortedExists } from '../curriculum-admin/unsortedBucket';
 
 const REPO_SEED_DIR = join(process.cwd(), 'data', 'curriculum-seed');
 
@@ -39,7 +40,7 @@ describe('curriculumExportService', () => {
     const target = createDbClient(':memory:');
     loadSeedIfNeeded(target, dir);
 
-    for (const table of ['lessons', 'exercises', 'milestones', 'sections', 'lesson_placements', 'lesson_prerequisites']) {
+    for (const table of ['lessons', 'exercises', 'milestones', 'lesson_placements', 'lesson_prerequisites']) {
       expect({ table, n: count(target, table) }).toEqual({ table, n: count(source, table) });
     }
     expect(createCurriculumExportService(target).exportAll()).toEqual(exported);
@@ -48,11 +49,10 @@ describe('curriculumExportService', () => {
   it('includes concept links touching the file and keeps exercises in the order they were added', () => {
     const db = createDbClient(':memory:');
     db.exec(`
-      INSERT INTO milestones (id, track, level, title, order_index) VALUES ('g-m', 'generic', 'A1', 'M', 0), ('o-m', 'goethe', 'A1', 'M', 0);
-      INSERT INTO sections (id, milestone_id, title, order_index) VALUES ('g-s', 'g-m', 'S', 0), ('o-s', 'o-m', 'S', 0);
+      INSERT INTO milestones (id, track, level, title, difficulty_rank) VALUES ('g-m', 'generic', 'A1', 'M', 1), ('o-m', 'goethe', 'A1', 'M', 1);
       INSERT INTO lessons (id, track, source_level, skill, title) VALUES
         ('a1-g', 'generic', 'A1', 'grammar', 'G'), ('a1-o', 'goethe', 'A1', 'grammar', 'O');
-      INSERT INTO lesson_placements (lesson_id, section_id, order_index) VALUES ('a1-g', 'g-s', 0), ('a1-o', 'o-s', 0);
+      INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES ('a1-g', 'g-m'), ('a1-o', 'o-m');
       INSERT INTO exercises (id, lesson_id, type, content) VALUES
         ('a1-g__ex10', 'a1-g', 'free_text', '{"prompt":"p","modelAnswer":"m"}'),
         ('a1-g__ex2', 'a1-g', 'free_text', '{"prompt":"p","modelAnswer":"m"}');
@@ -61,16 +61,15 @@ describe('curriculumExportService', () => {
     const seed = createCurriculumExportService(db).exportTrackLevel('generic', 'A1');
     expect(seed.conceptLinks).toEqual([{ lessonAId: 'a1-g', lessonBId: 'a1-o' }]);
     expect(seed.exercises.map((e) => e.id)).toEqual(['a1-g__ex10', 'a1-g__ex2']);
-    expect(seed.milestones[0].sections[0].lessonRefs).toEqual([{ lessonId: 'a1-g', orderIndex: 0 }]);
+    expect(seed.milestones[0].lessonIds).toEqual(['a1-g']);
   });
 
   it('exports only approved practice exercises, and they load back as approved', () => {
     const db = createDbClient(':memory:');
     db.exec(`
-      INSERT INTO milestones (id, track, level, title, order_index) VALUES ('g-m', 'generic', 'A1', 'M', 0);
-      INSERT INTO sections (id, milestone_id, title, order_index) VALUES ('g-s', 'g-m', 'S', 0);
+      INSERT INTO milestones (id, track, level, title, difficulty_rank) VALUES ('g-m', 'generic', 'A1', 'M', 1);
       INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('a1-g', 'generic', 'A1', 'grammar', 'G');
-      INSERT INTO lesson_placements (lesson_id, section_id, order_index) VALUES ('a1-g', 'g-s', 0);
+      INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES ('a1-g', 'g-m');
       INSERT INTO practice_exercises (id, lesson_id, type, content, review_status, created_at) VALUES
         ('a1-g__px-b', 'a1-g', 'fill_blank', '{"textWithBlank":"b ___","correctAnswer":"x"}', 'approved', '2026-09-29T10:00:02.000Z'),
         ('a1-g__px-a', 'a1-g', 'fill_blank', '{"textWithBlank":"a ___","correctAnswer":"x"}', 'approved', '2026-09-29T10:00:01.000Z'),
@@ -88,5 +87,25 @@ describe('curriculumExportService', () => {
     const target = createDbClient(':memory:');
     loadSeedIfNeeded(target, dir);
     expect(createCurriculumExportService(target).exportTrackLevel('generic', 'A1').practice).toEqual(seed.practice);
+  });
+
+  it('exports format v2: ranked milestones with sorted lesson ids, Unsorted lessons as lessons only', () => {
+    const db = createDbClient(':memory:');
+    db.exec(`
+      INSERT INTO milestones (id, track, level, title, difficulty_rank) VALUES ('m2', 'generic', 'A1', 'Two', 2), ('m1', 'generic', 'A1', 'One', 1);
+      INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('b', 'generic', 'A1', 'grammar', 'B'),
+        ('a', 'generic', 'A1', 'grammar', 'A'), ('u', 'generic', 'A1', 'grammar', 'U');
+      INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES ('b', 'm1'), ('a', 'm1'), ('u', 'm2');
+    `);
+    ensureUnsortedExists(db, 'generic', 'A1');
+    db.prepare("UPDATE lesson_placements SET milestone_id = 'generic-a1-unsorted' WHERE lesson_id = 'u'").run();
+
+    const seed = createCurriculumExportService(db).exportTrackLevel('generic', 'A1');
+    expect(seed.formatVersion).toBe(2);
+    expect(seed.milestones.map((m) => [m.milestone.id, m.milestone.difficultyRank, m.lessonIds])).toEqual([
+      ['m1', 1, ['a', 'b']],
+      ['m2', 2, []],
+    ]);
+    expect(seed.lessons.map((l) => l.id)).toEqual(['a', 'b', 'u']);
   });
 });

@@ -5,13 +5,14 @@ import { createCurriculumStructureService } from '@/lib/services/curriculumStruc
 
 export const dynamic = 'force-dynamic';
 
-export async function POST(request: Request) {
+export async function PATCH(request: Request, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   if (!(await isAdminSessionValid())) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-  const { milestoneId, title, description } = await request.json();
-  const service = createCurriculumStructureService(getDb());
+  const body = await request.json().catch(() => null);
+  if (typeof body?.milestoneId !== 'string') return NextResponse.json({ error: 'milestoneId is required' }, { status: 400 });
   try {
-    const section = service.createSection(milestoneId, title, description);
-    return NextResponse.json(section, { status: 201 });
+    createCurriculumStructureService(getDb()).moveLesson(params.id, body.milestoneId);
+    return NextResponse.json({ ok: true });
   } catch (err) {
     return NextResponse.json({ error: (err as Error).message }, { status: 400 });
   }

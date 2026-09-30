@@ -1,227 +1,8 @@
 {
-  "seedVersion": "2",
+  "seedVersion": "4",
+  "formatVersion": 2,
   "track": "telc",
   "level": "C1",
-  "milestones": [
-    {
-      "milestone": {
-        "id": "telc-c1-grammar",
-        "track": "telc",
-        "level": "C1",
-        "title": "Grammar",
-        "description": null,
-        "orderIndex": 0
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "telc-c1-grammar-lessons",
-            "milestoneId": "telc-c1-grammar",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "c1-telc-wissenschaftssprache-merkmale",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "c1-telc-angaben-praepositionen-genitiv",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "c1-telc-konditionale-satzgefuege-irreales",
-              "orderIndex": 2
-            },
-            {
-              "lessonId": "c1-telc-diskursmarker-ergaenzungen",
-              "orderIndex": 3
-            },
-            {
-              "lessonId": "c1-telc-modale-infinitive-und-gerundiv",
-              "orderIndex": 4
-            },
-            {
-              "lessonId": "c1-telc-sprachbausteine-grammatik-kollokationen",
-              "orderIndex": 5
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "telc-c1-vocabulary",
-        "track": "telc",
-        "level": "C1",
-        "title": "Vocabulary",
-        "description": null,
-        "orderIndex": 1
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "telc-c1-vocabulary-lessons",
-            "milestoneId": "telc-c1-vocabulary",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "c1-telc-funktionsverbgefuege-wissenschaft",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "c1-telc-abstrahierende-adjektive-und-nomen",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "c1-telc-fachwortschatz-hochschulkontext",
-              "orderIndex": 2
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "telc-c1-reading",
-        "track": "telc",
-        "level": "C1",
-        "title": "Reading",
-        "description": null,
-        "orderIndex": 2
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "telc-c1-reading-lessons",
-            "milestoneId": "telc-c1-reading",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "c1-telc-leseverstehen-teil1-sachtext-global",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "c1-telc-leseverstehen-teil2-textrekonstruktion",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "c1-telc-leseverstehen-teil3-selektiv-detail",
-              "orderIndex": 2
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "telc-c1-listening",
-        "track": "telc",
-        "level": "C1",
-        "title": "Listening",
-        "description": null,
-        "orderIndex": 3
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "telc-c1-listening-lessons",
-            "milestoneId": "telc-c1-listening",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "c1-telc-hoerverstehen-teil1-vorlesungsmitschrift",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "c1-telc-hoerverstehen-teil2-fachgespraech-interview",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "c1-telc-hoerverstehen-teil3-kurzvortraege",
-              "orderIndex": 2
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "telc-c1-writing",
-        "track": "telc",
-        "level": "C1",
-        "title": "Writing",
-        "description": null,
-        "orderIndex": 4
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "telc-c1-writing-lessons",
-            "milestoneId": "telc-c1-writing",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "c1-telc-schriftlicher-ausdruck-stellungnahme",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "c1-telc-grafikbeschreibung-und-synthese",
-              "orderIndex": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "telc-c1-speaking",
-        "track": "telc",
-        "level": "C1",
-        "title": "Speaking",
-        "description": null,
-        "orderIndex": 5
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "telc-c1-speaking-lessons",
-            "milestoneId": "telc-c1-speaking",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "c1-telc-muendlicher-ausdruck-teil1a-praesentation",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "c1-telc-muendlicher-ausdruck-teil1b-nachfragen",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "c1-telc-muendlicher-ausdruck-teil2-diskussion",
-              "orderIndex": 2
-            }
-          ]
-        }
-      ]
-    }
-  ],
   "lessons": [
     {
       "id": "c1-telc-wissenschaftssprache-merkmale",
@@ -1568,6 +1349,76 @@
     {
       "lessonId": "c1-telc-muendlicher-ausdruck-teil2-diskussion",
       "prerequisiteLessonId": "c1-telc-konditionale-satzgefuege-irreales"
+    }
+  ],
+  "milestones": [
+    {
+      "milestone": {
+        "id": "telc-c1-m1-university-vocabulary-and-presenting",
+        "track": "telc",
+        "level": "C1",
+        "title": "University vocabulary and presenting",
+        "description": "Vocabulary for university life and academic terms, discourse markers, and giving an academic presentation and answering questions on it.",
+        "difficultyRank": 1
+      },
+      "lessonIds": [
+        "c1-telc-abstrahierende-adjektive-und-nomen",
+        "c1-telc-diskursmarker-ergaenzungen",
+        "c1-telc-fachwortschatz-hochschulkontext",
+        "c1-telc-funktionsverbgefuege-wissenschaft",
+        "c1-telc-muendlicher-ausdruck-teil1a-praesentation",
+        "c1-telc-muendlicher-ausdruck-teil1b-nachfragen"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-c1-m2-features-of-academic-language",
+        "track": "telc",
+        "level": "C1",
+        "title": "Features of academic language",
+        "description": "How academic German works, genitive prepositions and collocations, with lecture notes, global reading, the language elements and a written statement.",
+        "difficultyRank": 2
+      },
+      "lessonIds": [
+        "c1-telc-angaben-praepositionen-genitiv",
+        "c1-telc-hoerverstehen-teil1-vorlesungsmitschrift",
+        "c1-telc-leseverstehen-teil1-sachtext-global",
+        "c1-telc-schriftlicher-ausdruck-stellungnahme",
+        "c1-telc-sprachbausteine-grammatik-kollokationen",
+        "c1-telc-wissenschaftssprache-merkmale"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-c1-m3-complex-structures-and-detailed-texts",
+        "track": "telc",
+        "level": "C1",
+        "title": "Complex structures and detailed texts",
+        "description": "The gerundive, modal infinitives and complex conditionals, with text reconstruction, detailed reading and expert interviews.",
+        "difficultyRank": 3
+      },
+      "lessonIds": [
+        "c1-telc-hoerverstehen-teil2-fachgespraech-interview",
+        "c1-telc-konditionale-satzgefuege-irreales",
+        "c1-telc-leseverstehen-teil2-textrekonstruktion",
+        "c1-telc-leseverstehen-teil3-selektiv-detail",
+        "c1-telc-modale-infinitive-und-gerundiv"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-c1-m4-data-analysis-and-academic-debate",
+        "track": "telc",
+        "level": "C1",
+        "title": "Data analysis and academic debate",
+        "description": "Describe and synthesise data from charts, match short lectures to speakers and hold an academic debate.",
+        "difficultyRank": 4
+      },
+      "lessonIds": [
+        "c1-telc-grafikbeschreibung-und-synthese",
+        "c1-telc-hoerverstehen-teil3-kurzvortraege",
+        "c1-telc-muendlicher-ausdruck-teil2-diskussion"
+      ]
     }
   ]
 }

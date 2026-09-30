@@ -2,6 +2,7 @@ import type Database from 'better-sqlite3';
 import type { Track, CefrLevel } from '../types';
 import { LEVELS, TRACKS } from '../tutoring/levels';
 import type { SeedFile } from './curriculumSeedLoader';
+import { unsortedMilestoneId } from '../curriculum-admin/unsortedBucket';
 
 export function seedFileName(track: Track, level: CefrLevel): string {
   return `${track}-${level.toLowerCase()}.json`;
@@ -13,15 +14,7 @@ interface MilestoneRow {
   level: CefrLevel;
   title: string;
   description: string | null;
-  order_index: number;
-}
-
-interface SectionRow {
-  id: string;
-  milestone_id: string;
-  title: string;
-  description: string | null;
-  order_index: number;
+  difficulty_rank: number | null;
 }
 
 interface LessonRow {
@@ -52,26 +45,23 @@ export function createCurriculumExportService(db: Database.Database) {
 
   // Reads directly rather than through getTrackStructure, which writes (it ensures Unsorted exists).
   function exportTrackLevel(track: Track, level: CefrLevel): SeedFile {
-    const milestoneRows = db
-      .prepare('SELECT * FROM milestones WHERE track = ? AND level = ? ORDER BY order_index, id')
-      .all(track, level) as MilestoneRow[];
-    const sectionStmt = db.prepare('SELECT * FROM sections WHERE milestone_id = ? ORDER BY order_index, id');
-    const placementStmt = db.prepare(
-      'SELECT lesson_id, order_index FROM lesson_placements WHERE section_id = ? ORDER BY order_index, id'
-    );
+    const unsortedId = unsortedMilestoneId(track, level);
+    const milestoneRows = (
+      db
+        .prepare('SELECT * FROM milestones WHERE track = ? AND level = ? ORDER BY difficulty_rank, id')
+        .all(track, level) as MilestoneRow[]
+    ).filter((m) => m.id !== unsortedId && m.difficulty_rank !== null);
+    const placedIn = db.prepare('SELECT lesson_id FROM lesson_placements WHERE milestone_id = ? ORDER BY lesson_id');
 
-    const lessonIds: string[] = [];
     const milestones = milestoneRows.map((m) => ({
-      milestone: { id: m.id, track: m.track, level: m.level, title: m.title, description: m.description, orderIndex: m.order_index },
-      sections: (sectionStmt.all(m.id) as SectionRow[]).map((s) => {
-        const refs = placementStmt.all(s.id) as { lesson_id: string; order_index: number }[];
-        lessonIds.push(...refs.map((r) => r.lesson_id));
-        return {
-          section: { id: s.id, milestoneId: s.milestone_id, title: s.title, description: s.description, orderIndex: s.order_index },
-          lessonRefs: refs.map((r) => ({ lessonId: r.lesson_id, orderIndex: r.order_index })),
-        };
-      }),
+      milestone: { id: m.id, track: m.track, level: m.level, title: m.title, description: m.description, difficultyRank: m.difficulty_rank! },
+      lessonIds: (placedIn.all(m.id) as { lesson_id: string }[]).map((r) => r.lesson_id),
     }));
+    // Unsorted lessons are exported as lessons in no milestone; the loader shelves them in Unsorted again.
+    const lessonIds = [
+      ...milestones.flatMap((m) => m.lessonIds),
+      ...(placedIn.all(unsortedId) as { lesson_id: string }[]).map((r) => r.lesson_id),
+    ];
 
     const lessonStmt = db.prepare('SELECT * FROM lessons WHERE id = ?');
     const lessons = lessonIds.map((id) => {
@@ -128,7 +118,18 @@ export function createCurriculumExportService(db: Database.Database) {
       }))
     );
 
-    return { seedVersion: currentSeedVersion(), track, level, milestones, lessons, exercises, prerequisites, conceptLinks, practice };
+    return {
+      seedVersion: currentSeedVersion(),
+      formatVersion: 2 as const,
+      track,
+      level,
+      milestones,
+      lessons,
+      exercises,
+      prerequisites,
+      conceptLinks,
+      practice,
+    };
   }
 
   function exportAll(): { fileName: string; seed: SeedFile }[] {

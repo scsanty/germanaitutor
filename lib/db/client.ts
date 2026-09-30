@@ -26,6 +26,9 @@ export function createDbClient(path: string): Database.Database {
 let singleton: Database.Database | null = null;
 
 export function getDb(): Database.Database {
+  if (process.env.NEXT_PHASE === 'phase-production-build') {
+    throw new Error('getDb() must not be called during `next build`: the database is opened at request time only');
+  }
   if (!singleton) {
     singleton = createDbClient(getDbPath());
   }

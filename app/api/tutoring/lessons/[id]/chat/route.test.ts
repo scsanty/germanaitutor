@@ -10,7 +10,7 @@ vi.mock('@/lib/services/aiService', async (importOriginal) => ({
 
 import { getDb, closeDb } from '@/lib/db/client';
 import { generateWithActiveProvider } from '@/lib/services/aiService';
-import { seedTutoringCurriculum } from '@/test/tutoringFixtures';
+import { addSecondMilestone, seedTutoringCurriculum } from '@/test/tutoringFixtures';
 import { GET, POST } from './route';
 
 function post(id: string, body: unknown) {
@@ -60,5 +60,13 @@ describe('/api/tutoring/lessons/[id]/chat', () => {
     expect(
       (await post('a1-greet', { message: 'Hi?', practiceExerciseId: 'px-1', practiceAnswer: { answerText: 'x', result: 'great' } })).status
     ).toBe(400);
+  });
+
+  it('POST refuses a locked lesson before calling the AI', async () => {
+    addSecondMilestone(getDb());
+    const res = await post('a1-late', { message: 'Hallo?' });
+    expect(res.status).toBe(403);
+    expect(await res.json()).toMatchObject({ code: 'lesson_locked' });
+    expect(generateWithActiveProvider).not.toHaveBeenCalled();
   });
 });

@@ -24,8 +24,8 @@ export interface LessonEditorInitialValues {
 const SKILLS: Skill[] = ['grammar', 'vocabulary', 'reading', 'listening', 'writing', 'speaking'];
 
 type TrackStructureResponse = {
-  milestone: { id: string; title: string };
-  sections: { section: { id: string; title: string }; lessons: { id: string; title: string }[] }[];
+  milestone: { id: string; title: string; difficultyRank: number | null };
+  lessons: { id: string; title: string }[];
 }[];
 
 export type LessonCloneContent = Pick<
@@ -73,25 +73,25 @@ export function LessonEditorForm(
 
   useEffect(() => {
     fetch(`/api/curriculum/tracks/${track}/${sourceLevel}`)
-      .then((r) => r.json())
+      .then((r) => {
+        if (!r.ok) throw new Error(String(r.status));
+        return r.json();
+      })
       .then((structure: TrackStructureResponse) => {
         const unsortedId = unsortedMilestoneId(track, sourceLevel);
         const realEntries = structure.filter((entry) => entry.milestone.id !== unsortedId);
         setMilestones(
-          realEntries.map((entry) => ({
-            id: entry.milestone.id,
-            title: entry.milestone.title,
-            sections: entry.sections.map((s) => ({ id: s.section.id, title: s.section.title })),
-          }))
+          realEntries.map((entry) => ({ id: entry.milestone.id, title: entry.milestone.title, difficultyRank: entry.milestone.difficultyRank ?? 0 }))
         );
-        const allLessons = structure.flatMap((entry) => entry.sections.flatMap((s) => s.lessons));
+        const allLessons = structure.flatMap((entry) => entry.lessons);
         setCandidates(allLessons.filter((lesson) => lesson.id !== lessonId));
-      });
+      })
+      .catch(() => setError('Failed to load the track structure'));
 
     // A track/level change invalidates any placement and prerequisites chosen under the old
     // track+level's structure — force the user to re-pick a placement (Save stays disabled
     // until they do) in the new structure rather than silently filing the lesson under a
-    // section, or with prerequisites, that belong to the track/level it was just moved out of.
+    // milestone, or with prerequisites, that belong to the track/level it was just moved out of.
     if (isFirstRun.current) {
       isFirstRun.current = false;
     } else {

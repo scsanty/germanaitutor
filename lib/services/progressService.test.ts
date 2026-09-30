@@ -3,7 +3,7 @@ import { createDbClient } from '../db/client';
 import { ensureUnsortedExists } from '../curriculum-admin/unsortedBucket';
 import { createProfileService } from './profileService';
 import { createProgressService } from './progressService';
-import { addAttempt, markComplete, scheduleReview, seedTutoringCurriculum } from '@/test/tutoringFixtures';
+import { addAttempt, addSecondMilestone, markComplete, scheduleReview, seedTutoringCurriculum } from '@/test/tutoringFixtures';
 
 function setup() {
   const db = createDbClient(':memory:');
@@ -12,22 +12,21 @@ function setup() {
 }
 
 function lessonsOf(tree: ReturnType<ReturnType<typeof createProgressService>['getTree']>) {
-  return tree.milestones.flatMap((m) => m.sections.flatMap((s) => s.lessons));
+  return tree.milestones.flatMap((m) => m.lessons);
 }
 
 describe('progressService.getTree', () => {
   it('lists the active track+level in tree order and hides the Unsorted bucket', () => {
     const { db, progress } = setup();
-    const { sectionId } = ensureUnsortedExists(db, 'generic', 'A1');
+    const { milestoneId } = ensureUnsortedExists(db, 'generic', 'A1');
     db.exec(`
       INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('a1-hidden', 'generic', 'A1', 'grammar', 'Hidden');
-      INSERT INTO lesson_placements (lesson_id, section_id, order_index) VALUES ('a1-hidden', '${sectionId}', 0);
+      INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES ('a1-hidden', '${milestoneId}');
     `);
 
     const tree = progress.getTree();
     expect(tree).toMatchObject({ track: 'generic', level: 'A1' });
     expect(tree.milestones.map((m) => m.title)).toEqual(['Basics']);
-    expect(tree.milestones[0].sections.map((s) => s.title)).toEqual(['Greetings']);
     expect(lessonsOf(tree).map((l) => l.id)).toEqual(['a1-greet', 'a1-sein']);
   });
 
@@ -48,22 +47,43 @@ describe('progressService.getTree', () => {
     ]);
   });
 
-  it('warns about unfinished prerequisites, counting shared completion as done', () => {
+  it('locks a lesson until its prerequisites are done, counting shared completion, and lays out branches', () => {
     const { db, progress } = setup();
-    const sein = () => lessonsOf(progress.getTree()).find((l) => l.id === 'a1-sein');
-    expect(sein()?.missingPrerequisites).toEqual([{ id: 'a1-greet', title: 'Saying hello' }]);
+    const lesson = (id: string) => progress.getTree().milestones.flatMap((m) => m.lessons).find((l) => l.id === id)!;
+    expect(lesson('a1-greet')).toMatchObject({ locked: false, branch: 0, column: 0, row: 0 });
+    expect(lesson('a1-sein')).toMatchObject({ locked: true, branch: 0, column: 0, row: 1 });
+    expect(progress.getTree().milestones[0].edges).toEqual([{ from: 'a1-greet', to: 'a1-sein' }]);
     markComplete(db, 'a1-goethe-greet');
-    expect(sein()?.missingPrerequisites).toEqual([]);
+    expect(lesson('a1-sein').locked).toBe(false);
+  });
+
+  it('ranks milestones, gates the next rank, shows earlier prerequisites as chips, and reports the test-out', () => {
+    const { db, progress } = setup();
+    addSecondMilestone(db);
+    db.exec("INSERT INTO lesson_prerequisites (lesson_id, prerequisite_lesson_id) VALUES ('a1-late', 'a1-greet')");
+    const tree = progress.getTree();
+    expect(tree.milestones.map((m) => [m.id, m.rank, m.state])).toEqual([
+      ['g-a1-m1', 1, 'open'],
+      ['g-a1-m2', 2, 'locked'],
+    ]);
+    expect(tree.milestones[1].lessons[0]).toMatchObject({
+      id: 'a1-late',
+      locked: true,
+      earlierPrerequisites: [{ id: 'a1-greet', title: 'Saying hello', done: false }],
+    });
+    // a1-late has only two eligible exercises, so the draw would be too small.
+    expect(tree.milestones[1].testOut).toEqual({ status: 'too_few_questions' });
+    expect(tree.milestones[0].testOut).toEqual({ status: 'none' });
   });
 });
 
 describe('progressService.isLevelFinished', () => {
   it('needs every visible lesson done, own or shared, and ignores Unsorted', () => {
     const { db, progress } = setup();
-    const { sectionId } = ensureUnsortedExists(db, 'generic', 'A1');
+    const { milestoneId } = ensureUnsortedExists(db, 'generic', 'A1');
     db.exec(`
       INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('a1-hidden', 'generic', 'A1', 'grammar', 'Hidden');
-      INSERT INTO lesson_placements (lesson_id, section_id, order_index) VALUES ('a1-hidden', '${sectionId}', 0);
+      INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES ('a1-hidden', '${milestoneId}');
     `);
     expect(progress.isLevelFinished('generic', 'A1')).toBe(false);
     markComplete(db, 'a1-goethe-greet');
@@ -85,7 +105,7 @@ describe('progressService.getLessonView', () => {
 
   it('shows a lesson above the unlocked range as locked', () => {
     expect(setup().progress.getLessonView('a2-past')).toEqual({
-      locked: true,
+      locked: 'level',
       id: 'a2-past',
       title: 'The past of sein',
       level: 'A2',
@@ -93,8 +113,16 @@ describe('progressService.getLessonView', () => {
     });
   });
 
+  it('does not list a prerequisite that sits in Unsorted', () => {
+    const { db, progress } = setup();
+    const { milestoneId } = ensureUnsortedExists(db, 'generic', 'A1');
+    db.prepare('UPDATE lesson_placements SET milestone_id = ? WHERE lesson_id = ?').run(milestoneId, 'a1-greet');
+    expect(progress.getLessonView('a1-sein')).toMatchObject({ locked: false, prerequisites: [] });
+  });
+
   it('returns content, exercises in authored order without answers, progress, and prerequisites', () => {
     const { db, progress } = setup();
+    markComplete(db, 'a1-greet');
     addAttempt(db, 'a1-sein__ex10', 'wrong');
     addAttempt(db, 'a1-sein__ex10', 'almost');
     const view = progress.getLessonView('a1-sein');
@@ -113,7 +141,7 @@ describe('progressService.getLessonView', () => {
       ],
       passedExerciseIds: ['a1-sein__ex10'],
       completed: false,
-      prerequisites: [{ id: 'a1-greet', title: 'Saying hello', done: false }],
+      prerequisites: [{ id: 'a1-greet', title: 'Saying hello', done: true }],
     });
   });
 
@@ -131,8 +159,8 @@ describe('progressService.getDailyQueue', () => {
 
   it('lists due exercises of the active track+level, most overdue first, including Unsorted', () => {
     const { db, progress } = setup();
-    const { sectionId } = ensureUnsortedExists(db, 'generic', 'A1');
-    db.exec(`UPDATE lesson_placements SET section_id = '${sectionId}' WHERE lesson_id = 'a1-sein'`);
+    const { milestoneId } = ensureUnsortedExists(db, 'generic', 'A1');
+    db.exec(`UPDATE lesson_placements SET milestone_id = '${milestoneId}' WHERE lesson_id = 'a1-sein'`);
     scheduleReview(db, 'a1-greet__ex1', '2026-09-24');
     scheduleReview(db, 'a1-sein__ex2', '2026-09-20');
     scheduleReview(db, 'a1-greet__ex2', '2026-09-25');
@@ -175,5 +203,31 @@ describe('progressService.getDailyQueue', () => {
     expect(progress.getDailyQueue(today).suggestedLesson).toEqual({ id: 'a1-sein', title: 'The verb sein' });
     markComplete(db, 'a1-sein');
     expect(progress.getDailyQueue(today).suggestedLesson).toBeNull();
+  });
+});
+
+describe('progressService.getLessonView locks', () => {
+  it('returns a lesson-locked view naming the reason, and the open view once unlocked', () => {
+    const { db, progress } = setup();
+    addSecondMilestone(db);
+    expect(progress.getLessonView('a1-late')).toEqual({
+      locked: 'lesson',
+      id: 'a1-late',
+      title: 'A later lesson',
+      level: 'A1',
+      reason: 'milestone',
+      milestone: { id: 'g-a1-m1', title: 'Basics' },
+      missingPrerequisites: [],
+    });
+    markComplete(db, 'a1-greet');
+    markComplete(db, 'a1-sein');
+    expect(progress.getLessonView('a1-late')).toMatchObject({ locked: false, id: 'a1-late' });
+  });
+
+  it('suggests the first open lesson that is not done', () => {
+    const { db, progress } = setup();
+    addSecondMilestone(db);
+    markComplete(db, 'a1-greet');
+    expect(progress.getDailyQueue('2026-09-29').suggestedLesson).toEqual({ id: 'a1-sein', title: 'The verb sein' });
   });
 });

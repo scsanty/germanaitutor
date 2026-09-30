@@ -15,20 +15,3 @@ export function selectDueItems<T extends DueCandidate>(candidates: T[], today: s
 export function remainingReviews(cap: number, answeredInQueueToday: number): number {
   return Math.max(0, cap - answeredInQueueToday);
 }
-
-export interface SuggestionCandidate {
-  id: string;
-  done: boolean;
-  prerequisiteIds: string[];
-}
-
-// Spec: the first incomplete lesson in tree order whose prerequisites are all done, or the
-// first incomplete lesson if none qualify.
-export function suggestNextLesson(
-  lessonsInTreeOrder: SuggestionCandidate[],
-  doneIds: ReadonlySet<string>
-): string | null {
-  const incomplete = lessonsInTreeOrder.filter((lesson) => !lesson.done);
-  const ready = incomplete.find((lesson) => lesson.prerequisiteIds.every((id) => doneIds.has(id)));
-  return (ready ?? incomplete[0])?.id ?? null;
-}

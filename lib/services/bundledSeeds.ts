@@ -10,3 +10,13 @@ export function loadBundledSeeds(db: Database.Database): void {
   loadSeedIfNeeded(db, join(process.cwd(), 'data', 'curriculum-seed'));
   createPlacementService(db).loadSeedExamIfEmpty(join(process.cwd(), 'data', 'placement-exam.json'));
 }
+
+let seeded = false;
+
+// Request-time entry point: seeds once per server process, never at module scope, because
+// Next evaluates the root layout during `next build` and that must not touch a real database.
+export function ensureBundledSeeds(getDb: () => Database.Database): void {
+  if (seeded) return;
+  loadBundledSeeds(getDb());
+  seeded = true;
+}

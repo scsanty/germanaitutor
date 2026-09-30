@@ -7,6 +7,7 @@ import type { ExerciseView } from '@/lib/tutoring/exerciseView';
 import type { AttemptOutcome, AttemptSource, FlashcardRating, LessonAnswer } from '@/lib/tutoring/lessonAnswers';
 import type { GradeResult } from '@/lib/tutoring/grading';
 import type { PracticeGradeOutcome } from '@/lib/tutoring/practiceViews';
+import type { TestOutAnswerOutcome } from '@/lib/tutoring/testOutViews';
 import { useApiErrorText } from '@/components/useApiErrorText';
 
 const RATINGS: FlashcardRating[] = ['knew', 'sort_of', 'didnt_know'];
@@ -14,7 +15,10 @@ const RATINGS: FlashcardRating[] = ['knew', 'sort_of', 'didnt_know'];
 export interface ExerciseCardProps {
   exercise: ExerciseView;
   source: AttemptSource;
-  mode?: 'lesson' | 'practice';
+  mode?: 'lesson' | 'practice' | 'test';
+  testMilestoneId?: string;
+  onTestAnswered?: (outcome: TestOutAnswerOutcome) => void;
+  onTestStale?: () => void;
   onAnswered?: (outcome: AttemptOutcome) => void;
   onPracticeAnswered?: (outcome: PracticeGradeOutcome) => void;
   onNext: () => void;
@@ -30,7 +34,7 @@ interface Shown {
   answerText: string;
 }
 
-function taskText(exercise: ExerciseView): string {
+export function taskText(exercise: ExerciseView): string {
   switch (exercise.type) {
     case 'multiple_choice':
       return exercise.question;
@@ -61,6 +65,9 @@ export function ExerciseCard({
   mode = 'lesson',
   onAnswered,
   onPracticeAnswered,
+  testMilestoneId,
+  onTestAnswered,
+  onTestStale,
   onNext,
   onSkip,
   onAskAi,
@@ -81,15 +88,25 @@ export function ExerciseCard({
     setGradingError(null);
     try {
       const practice = mode === 'practice';
-      const res = await fetch(practice ? '/api/tutoring/practice/answer' : '/api/tutoring/attempts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(
-          practice ? { practiceExerciseId: exercise.id, answer } : { exerciseId: exercise.id, answer, source }
-        ),
-      });
+      const test = mode === 'test';
+      const url = test
+        ? `/api/tutoring/milestones/${testMilestoneId}/testout/answer`
+        : practice
+          ? '/api/tutoring/practice/answer'
+          : '/api/tutoring/attempts';
+      const payload = test
+        ? { exerciseId: exercise.id, answer }
+        : practice
+          ? { practiceExerciseId: exercise.id, answer }
+          : { exerciseId: exercise.id, answer, source };
+      const res = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
       const data = await res.json().catch(() => ({}));
       if (res.ok) {
+        if (test) {
+          // Spec: no feedback during a test-out; the page moves on to the next question.
+          onTestAnswered?.(data as TestOutAnswerOutcome);
+          return;
+        }
         const answerText = answerTextOf(exercise, answer);
         if (practice) {
           const outcome = data as PracticeGradeOutcome;
@@ -100,6 +117,11 @@ export function ExerciseCard({
           setShown({ result: outcome.result, correctAnswer: outcome.correctAnswer, feedback: outcome.feedback, answerText });
           onAnswered?.(outcome);
         }
+        return;
+      }
+      // 400 bad_request: not the next question (another tab moved the attempt on).
+      if (test && (res.status === 404 || res.status === 409 || (res.status === 400 && data?.code === 'bad_request'))) {
+        onTestStale?.();
         return;
       }
       const detail = errorText(data, String(res.status));
@@ -229,7 +251,7 @@ export function ExerciseCard({
       {/* M-4: a lesson run has its own retry round for a plain error, but the Daily Queue and a
           practice batch do not, so any error there — not only a grading failure — needs a way
           forward. */}
-      {(gradingError || ((source === 'queue' || mode === 'practice') && error)) && (
+      {mode !== 'test' && (gradingError || ((source === 'queue' || mode === 'practice') && error)) && (
         <button type="button" onClick={onSkip}>
           {t('skipForNow')}
         </button>

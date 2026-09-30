@@ -16,6 +16,7 @@ import { computeNextReview, seedReview, type SrsState } from '../tutoring/srs';
 import { errorBodyFor, type ApiErrorBody, type ErrorCode, type ErrorParams } from '../tutoring/errorCodes';
 import { createCurriculumService } from './curriculumService';
 import { gradeExerciseAnswer } from './exerciseGrading';
+import { lessonLock } from './levelGating';
 import { gradeFreeText, type FreeTextGradeOutcome } from './freeTextGradingService';
 import { createProfileService } from './profileService';
 import { createProgressService } from './progressService';
@@ -104,8 +105,7 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
          FROM exercises e
          JOIN exercise_srs_state st ON st.exercise_id = e.id
          JOIN lesson_placements p ON p.lesson_id = e.lesson_id
-         JOIN sections s ON s.id = p.section_id
-         JOIN milestones m ON m.id = s.milestone_id
+         JOIN milestones m ON m.id = p.milestone_id
          WHERE e.id = ? AND m.track = ? AND m.level = ? AND st.next_due_at <= ?
            AND NOT EXISTS (
              SELECT 1 FROM lesson_attempts a WHERE a.exercise_id = e.id AND a.source = 'queue' AND a.answered_on = ?
@@ -170,9 +170,15 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
     unlocks.checkLevelFinishedAfterCompletion(level);
   }
 
+  // Spec: Server Enforcement. Lesson work on a locked lesson is refused; reviews are not affected.
+  function assertLessonOpen(lessonId: string): void {
+    if (lessonLock(db, lessonId).locked) throw new AttemptError('This lesson is still locked', 'locked', 'lesson_locked');
+  }
+
   async function recordAttempt(exerciseId: string, answer: LessonAnswer, source: AttemptSource): Promise<AttemptOutcome> {
     const exercise = getExercise(exerciseId);
     const lesson = getUnlockedLesson(exercise.lessonId);
+    if (source === 'lesson') assertLessonOpen(lesson.id);
     if (source === 'queue') assertDueInQueue(exercise.id, localDate(now()));
     const { result, feedback } = await grade(exercise, answer, lesson.sourceLevel);
     const answeredAt = now();
@@ -219,6 +225,7 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
   // complete this way, since `recordAttempt` will never see another answer to trigger it.
   function markLessonDone(lessonId: string): { completed: true } {
     const lesson = getUnlockedLesson(lessonId);
+    assertLessonOpen(lesson.id);
     const exerciseIds = curriculum.getExercises(lesson.id, lesson.track).map((e) => e.id);
     if (exerciseIds.length > 0 && !meetsCompletionRule(exerciseIds, new Set(progress.passedExerciseIds(lesson.id)))) {
       throw new AttemptError('This lesson has exercises; answer them to complete it', 'bad_request');

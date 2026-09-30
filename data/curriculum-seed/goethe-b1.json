@@ -1,239 +1,8 @@
 {
-  "seedVersion": "2",
+  "seedVersion": "4",
+  "formatVersion": 2,
   "track": "goethe",
   "level": "B1",
-  "milestones": [
-    {
-      "milestone": {
-        "id": "goethe-b1-grammar",
-        "track": "goethe",
-        "level": "B1",
-        "title": "Grammar",
-        "description": null,
-        "orderIndex": 0
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "goethe-b1-grammar-lessons",
-            "milestoneId": "goethe-b1-grammar",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b1-goethe-subordinate-clauses-final-consecutive",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "b1-goethe-causal-concessive-connectors",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "b1-goethe-relative-clauses-indefinite-pronouns",
-              "orderIndex": 2
-            },
-            {
-              "lessonId": "b1-goethe-subjunctive-ii-advice-opinions",
-              "orderIndex": 3
-            },
-            {
-              "lessonId": "b1-goethe-participles-as-adjectives",
-              "orderIndex": 4
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "goethe-b1-vocabulary",
-        "track": "goethe",
-        "level": "B1",
-        "title": "Vocabulary",
-        "description": null,
-        "orderIndex": 1
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "goethe-b1-vocabulary-lessons",
-            "milestoneId": "goethe-b1-vocabulary",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b1-goethe-vocab-social-trends-relationships",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "b1-goethe-vocab-consumerism-environment",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "b1-goethe-vocab-education-career-training",
-              "orderIndex": 2
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "goethe-b1-reading",
-        "track": "goethe",
-        "level": "B1",
-        "title": "Reading",
-        "description": null,
-        "orderIndex": 2
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "goethe-b1-reading-lessons",
-            "milestoneId": "goethe-b1-reading",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b1-goethe-reading-teil1-blog-narrative",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "b1-goethe-reading-teil2-press-articles",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "b1-goethe-reading-teil3-classifieds-matching",
-              "orderIndex": 2
-            },
-            {
-              "lessonId": "b1-goethe-reading-teil4-forum-comments",
-              "orderIndex": 3
-            },
-            {
-              "lessonId": "b1-goethe-reading-teil5-rules-regulations",
-              "orderIndex": 4
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "goethe-b1-listening",
-        "track": "goethe",
-        "level": "B1",
-        "title": "Listening",
-        "description": null,
-        "orderIndex": 3
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "goethe-b1-listening-lessons",
-            "milestoneId": "goethe-b1-listening",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b1-goethe-listening-teil1-daily-announcements",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "b1-goethe-listening-teil2-guided-tour-presentation",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "b1-goethe-listening-teil3-casual-conversation",
-              "orderIndex": 2
-            },
-            {
-              "lessonId": "b1-goethe-listening-teil4-radio-discussion",
-              "orderIndex": 3
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "goethe-b1-writing",
-        "track": "goethe",
-        "level": "B1",
-        "title": "Writing",
-        "description": null,
-        "orderIndex": 4
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "goethe-b1-writing-lessons",
-            "milestoneId": "goethe-b1-writing",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b1-goethe-writing-aufgabe1-personal-email",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "b1-goethe-writing-aufgabe2-forum-opinion",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "b1-goethe-writing-aufgabe3-formal-apology-request",
-              "orderIndex": 2
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "goethe-b1-speaking",
-        "track": "goethe",
-        "level": "B1",
-        "title": "Speaking",
-        "description": null,
-        "orderIndex": 5
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "goethe-b1-speaking-lessons",
-            "milestoneId": "goethe-b1-speaking",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b1-goethe-speaking-teil1-planning-together",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "b1-goethe-speaking-teil2-monologic-presentation",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "b1-goethe-speaking-teil3-feedback-and-questions",
-              "orderIndex": 2
-            }
-          ]
-        }
-      ]
-    }
-  ],
   "lessons": [
     {
       "id": "b1-goethe-subordinate-clauses-final-consecutive",
@@ -1688,6 +1457,79 @@
     {
       "lessonId": "b1-goethe-speaking-teil3-feedback-and-questions",
       "prerequisiteLessonId": "b1-goethe-speaking-teil2-monologic-presentation"
+    }
+  ],
+  "milestones": [
+    {
+      "milestone": {
+        "id": "goethe-b1-m1-reasons-purposes-and-personal-stories",
+        "track": "goethe",
+        "level": "B1",
+        "title": "Reasons, purposes and personal stories",
+        "description": "Connect ideas with reason, purpose and result clauses, and handle personal topics: blogs, a personal email, announcements and casual conversation.",
+        "difficultyRank": 1
+      },
+      "lessonIds": [
+        "b1-goethe-causal-concessive-connectors",
+        "b1-goethe-listening-teil1-daily-announcements",
+        "b1-goethe-listening-teil3-casual-conversation",
+        "b1-goethe-reading-teil1-blog-narrative",
+        "b1-goethe-subordinate-clauses-final-consecutive",
+        "b1-goethe-vocab-social-trends-relationships",
+        "b1-goethe-writing-aufgabe1-personal-email"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "goethe-b1-m2-education-work-and-consumption",
+        "track": "goethe",
+        "level": "B1",
+        "title": "Education, work and consumption",
+        "description": "Vocabulary for education, careers and consumption, with press articles, classified ads, a guided tour and a short presentation.",
+        "difficultyRank": 2
+      },
+      "lessonIds": [
+        "b1-goethe-listening-teil2-guided-tour-presentation",
+        "b1-goethe-reading-teil2-press-articles",
+        "b1-goethe-reading-teil3-classifieds-matching",
+        "b1-goethe-speaking-teil2-monologic-presentation",
+        "b1-goethe-vocab-consumerism-environment",
+        "b1-goethe-vocab-education-career-training"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "goethe-b1-m3-opinions-and-advice",
+        "track": "goethe",
+        "level": "B1",
+        "title": "Opinions and advice",
+        "description": "Give advice and opinions with Konjunktiv II and relative clauses, in forum comments, a radio discussion and joint planning.",
+        "difficultyRank": 3
+      },
+      "lessonIds": [
+        "b1-goethe-listening-teil4-radio-discussion",
+        "b1-goethe-reading-teil4-forum-comments",
+        "b1-goethe-relative-clauses-indefinite-pronouns",
+        "b1-goethe-speaking-teil1-planning-together",
+        "b1-goethe-subjunctive-ii-advice-opinions",
+        "b1-goethe-writing-aufgabe2-forum-opinion"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "goethe-b1-m4-formal-texts-and-feedback",
+        "track": "goethe",
+        "level": "B1",
+        "title": "Formal texts and feedback",
+        "description": "Participles used as adjectives, rules and regulations, a formal message, and giving feedback after a presentation.",
+        "difficultyRank": 4
+      },
+      "lessonIds": [
+        "b1-goethe-participles-as-adjectives",
+        "b1-goethe-reading-teil5-rules-regulations",
+        "b1-goethe-speaking-teil3-feedback-and-questions",
+        "b1-goethe-writing-aufgabe3-formal-apology-request"
+      ]
     }
   ]
 }

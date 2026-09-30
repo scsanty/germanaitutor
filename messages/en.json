@@ -16,7 +16,10 @@
     "ai_no_exercises": "The AI couldn't make new exercises for this lesson right now. Try again later",
     "no_session": "No placement test is in progress",
     "no_exam": "No placement exam is loaded",
-    "invalid_daily_cap": "The daily review limit must be a whole number from 1 to 500"
+    "invalid_daily_cap": "The daily review limit must be a whole number from 1 to 500",
+    "lesson_locked": "This lesson is still locked",
+    "testout_unavailable": "This test-out isn't available",
+    "testout_cooldown": "You can try this test-out again later"
   },
   "banner": {
     "providerTrouble": "Your active provider ({provider}) is having trouble: {error}. <link>Visit Settings</link> to fix it or switch providers."
@@ -122,6 +125,8 @@
     "loadFailed": "Could not load this lesson. Please reload the page.",
     "notFound": "This lesson does not exist.",
     "locked": "Locked — unlocks after finishing {level}.",
+    "lockedMilestone": "Locked — finish “{milestone}” first.",
+    "lockedPrerequisites": "Locked — first complete:",
     "buildsOn": "Builds on:",
     "prerequisiteDone": "done",
     "prerequisiteNotDone": "not done yet",
@@ -152,7 +157,14 @@
       "covered": "Covered"
     },
     "coveredVia": "Covered via {track}",
-    "buildsOn": "Builds on: {lessons}"
+    "milestoneLine": "Step {rank} · {state} · {done} of {total} done",
+    "milestoneState": { "locked": "Locked", "open": "Open", "complete": "Complete" },
+    "lockedLesson": "Locked",
+    "buildsOnChip": "Builds on: {title}",
+    "testOutStart": "Test out",
+    "testOutResume": "Resume the test-out ({answered} of {total})",
+    "testOutCooldown": "Try the test-out again after {time}",
+    "testOutTooFew": "Not enough questions to test out"
   },
   "queue": {
     "title": "Daily review",
@@ -261,5 +273,24 @@
     "resetConfirm": "This deletes all local data permanently. Are you sure?",
     "resetYes": "Yes, reset everything",
     "reset": "Reset app data"
+  },
+  "testOut": {
+    "title": "Test out: {milestone}",
+    "intro": "Answer up to 20 questions from this milestone. With 80% or more, all its lessons count as done. You'll see your results at the end.",
+    "start": "Start the test",
+    "resume": "Resume the test",
+    "progress": "Question {current} of {total}",
+    "passed": "Passed! This milestone is complete.",
+    "failed": "Not passed this time. You can try again in 24 hours.",
+    "score": "{score} of {maxScore} points",
+    "yourAnswer": "Your answer: {answer}",
+    "correctAnswer": "Correct answer: {answer}",
+    "result": { "correct": "Right", "almost": "Almost", "wrong": "Wrong" },
+    "unavailable": "This test-out isn't available right now.",
+    "cooldown": "You can try again after {time}.",
+    "tooFew": "This milestone doesn't have enough questions for a test-out.",
+    "backToTree": "Back to your lessons",
+    "loadFailed": "Could not load the test-out. Please reload the page.",
+    "genericError": "Something went wrong: {error}"
   }
 }

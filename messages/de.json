@@ -16,7 +16,10 @@
     "ai_no_exercises": "Die KI konnte gerade keine neuen Übungen für diese Lektion erstellen. Versuch es später noch einmal",
     "no_session": "Es läuft gerade kein Einstufungstest",
     "no_exam": "Es ist kein Einstufungstest geladen",
-    "invalid_daily_cap": "Das Tageslimit muss eine ganze Zahl von 1 bis 500 sein"
+    "invalid_daily_cap": "Das Tageslimit muss eine ganze Zahl von 1 bis 500 sein",
+    "lesson_locked": "Diese Lektion ist noch gesperrt",
+    "testout_unavailable": "Dieser Test zum Überspringen ist nicht verfügbar",
+    "testout_cooldown": "Du kannst diesen Test später noch einmal machen"
   },
   "banner": {
     "providerTrouble": "Dein aktiver KI-Anbieter ({provider}) hat Probleme: {error}. <link>Öffne die Einstellungen</link>, um das Problem zu beheben oder den Anbieter zu wechseln."
@@ -122,6 +125,8 @@
     "loadFailed": "Diese Lektion konnte nicht geladen werden. Bitte lade die Seite neu.",
     "notFound": "Diese Lektion gibt es nicht.",
     "locked": "Gesperrt – wird freigeschaltet, wenn du {level} abgeschlossen hast.",
+    "lockedMilestone": "Gesperrt – schließ zuerst „{milestone}“ ab.",
+    "lockedPrerequisites": "Gesperrt – schließ zuerst ab:",
     "buildsOn": "Baut auf:",
     "prerequisiteDone": "erledigt",
     "prerequisiteNotDone": "noch nicht erledigt",
@@ -152,7 +157,14 @@
       "covered": "Abgedeckt"
     },
     "coveredVia": "Abgedeckt über {track}",
-    "buildsOn": "Baut auf: {lessons}"
+    "milestoneLine": "Stufe {rank} · {state} · {done} von {total} erledigt",
+    "milestoneState": { "locked": "Gesperrt", "open": "Offen", "complete": "Abgeschlossen" },
+    "lockedLesson": "Gesperrt",
+    "buildsOnChip": "Baut auf: {title}",
+    "testOutStart": "Per Test überspringen",
+    "testOutResume": "Test fortsetzen ({answered} von {total})",
+    "testOutCooldown": "Test wieder möglich ab {time}",
+    "testOutTooFew": "Zu wenige Fragen für einen Test"
   },
   "queue": {
     "title": "Tägliche Wiederholung",
@@ -261,5 +273,24 @@
     "resetConfirm": "Dadurch werden alle lokalen Daten dauerhaft gelöscht. Bist du sicher?",
     "resetYes": "Ja, alles zurücksetzen",
     "reset": "App-Daten zurücksetzen"
+  },
+  "testOut": {
+    "title": "Per Test überspringen: {milestone}",
+    "intro": "Beantworte bis zu 20 Fragen aus dieser Stufe. Mit mindestens 80 % gelten alle ihre Lektionen als erledigt. Deine Ergebnisse siehst du am Ende.",
+    "start": "Test starten",
+    "resume": "Test fortsetzen",
+    "progress": "Frage {current} von {total}",
+    "passed": "Bestanden! Diese Stufe ist abgeschlossen.",
+    "failed": "Diesmal nicht bestanden. Du kannst es in 24 Stunden noch einmal versuchen.",
+    "score": "{score} von {maxScore} Punkten",
+    "yourAnswer": "Deine Antwort: {answer}",
+    "correctAnswer": "Richtige Antwort: {answer}",
+    "result": { "correct": "Richtig", "almost": "Fast richtig", "wrong": "Falsch" },
+    "unavailable": "Dieser Test ist gerade nicht verfügbar.",
+    "cooldown": "Du kannst es ab {time} noch einmal versuchen.",
+    "tooFew": "Diese Stufe hat nicht genug Fragen für einen Test.",
+    "backToTree": "Zurück zu deinen Lektionen",
+    "loadFailed": "Der Test konnte nicht geladen werden. Bitte lade die Seite neu.",
+    "genericError": "Etwas ist schiefgelaufen: {error}"
   }
 }

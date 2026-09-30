@@ -139,11 +139,47 @@ describe('LessonPage', () => {
   it('shows a locked lesson', async () => {
     stubFetch({
       'GET /api/tutoring/lessons/a2-past': () =>
-        delayedResponse({ locked: true, id: 'a2-past', title: 'The past', level: 'A2', unlocksAfter: 'A1' }),
+        delayedResponse({ locked: 'level', id: 'a2-past', title: 'The past', level: 'A2', unlocksAfter: 'A1' }),
     });
     renderWithIntl(<LessonPage lessonId="a2-past" />);
     expect(await screen.findByText('Locked — unlocks after finishing A1.')).toBeInTheDocument();
     expect(screen.queryByRole('button', { name: 'Start the exercises' })).not.toBeInTheDocument();
+  });
+
+  it('explains why a lesson is locked and links the missing prerequisites', async () => {
+    stubFetch({
+      'GET /api/tutoring/lessons/a1-greet': () =>
+        delayedResponse({
+          locked: 'lesson',
+          id: 'a1-greet',
+          title: 'Saying hello',
+          level: 'A1',
+          reason: 'prerequisites',
+          milestone: { id: 'g-a1-m1', title: 'Basics' },
+          missingPrerequisites: [{ id: 'a1-basics', title: 'Basics of German' }],
+        }),
+    });
+    renderWithIntl(<LessonPage lessonId="a1-greet" />);
+    expect(await screen.findByText('Locked — first complete:')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Basics of German' })).toHaveAttribute('href', '/lesson/a1-basics');
+    expect(screen.queryByRole('button', { name: 'Start the exercises' })).not.toBeInTheDocument();
+  });
+
+  it('names the milestone to finish when the whole milestone is locked', async () => {
+    stubFetch({
+      'GET /api/tutoring/lessons/a1-greet': () =>
+        delayedResponse({
+          locked: 'lesson',
+          id: 'a1-greet',
+          title: 'Saying hello',
+          level: 'A1',
+          reason: 'milestone',
+          milestone: { id: 'g-a1-m1', title: 'Basics' },
+          missingPrerequisites: [],
+        }),
+    });
+    renderWithIntl(<LessonPage lessonId="a1-greet" />);
+    expect(await screen.findByText('Locked — finish “Basics” first.')).toBeInTheDocument();
   });
 
   it('shows errors for a missing lesson and a failed load', async () => {

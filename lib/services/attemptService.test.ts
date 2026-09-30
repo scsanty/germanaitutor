@@ -3,7 +3,7 @@ import { createDbClient } from '../db/client';
 import { reconcileExercises } from '../curriculum-admin/exerciseReconciliation';
 import { createProfileService } from './profileService';
 import { AttemptError, createAttemptService, toAttemptErrorResponse, type AttemptDeps } from './attemptService';
-import { seedTutoringCurriculum } from '@/test/tutoringFixtures';
+import { markComplete, seedTutoringCurriculum } from '@/test/tutoringFixtures';
 
 type GradeFreeText = NonNullable<AttemptDeps['gradeFreeText']>;
 
@@ -108,6 +108,7 @@ describe('attemptService.recordAttempt', () => {
     const { db, service, gradeFreeText, profiles } = setup({
       grade: vi.fn().mockResolvedValue({ ok: true, result: 'almost', feedback: 'Fast.' }),
     });
+    markComplete(db, 'a1-greet');
     profiles.updateProfile({ uiLanguage: 'de' });
     const outcome = await service.recordAttempt('a1-sein__ex10', { type: 'free_text', text: 'Ich bin mude.' }, 'lesson');
     expect(outcome).toMatchObject({ result: 'almost', feedback: 'Fast.', correctAnswer: 'Ich bin müde.' });
@@ -126,7 +127,8 @@ describe('attemptService.recordAttempt', () => {
   });
 
   it('stores nothing when free-text grading fails', async () => {
-    const { service, count } = setup({ grade: vi.fn().mockResolvedValue({ ok: false, error: 'No AI provider is set up' }) });
+    const { db, service, count } = setup({ grade: vi.fn().mockResolvedValue({ ok: false, error: 'No AI provider is set up' }) });
+    markComplete(db, 'a1-greet');
     await expect(
       service.recordAttempt('a1-sein__ex10', { type: 'free_text', text: 'Ich bin müde.' }, 'lesson')
     ).rejects.toMatchObject({ kind: 'grading_failed', message: 'No AI provider is set up' });
@@ -147,7 +149,8 @@ describe('attemptService.recordAttempt', () => {
   });
 
   it('names the locked level and the AI failure in the error code', async () => {
-    const { service } = setup({ grade: vi.fn().mockResolvedValue({ ok: false, error: 'No AI provider is set up', code: 'no_provider' }) });
+    const { db, service } = setup({ grade: vi.fn().mockResolvedValue({ ok: false, error: 'No AI provider is set up', code: 'no_provider' }) });
+    markComplete(db, 'a1-greet');
     await expect(service.recordAttempt('a2-past__ex1', { type: 'fill_blank', text: 'war' }, 'lesson')).rejects.toMatchObject({
       code: 'level_locked',
       params: { level: 'A2' },
@@ -172,7 +175,7 @@ describe('attemptService.markLessonDone', () => {
     const { db, service, count } = setup();
     db.exec(`
       INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('a1-read', 'generic', 'A1', 'reading', 'Just read');
-      INSERT INTO lesson_placements (lesson_id, section_id, order_index) VALUES ('a1-read', 'g-a1-s1', 2);
+      INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES ('a1-read', 'g-a1-m1');
     `);
     expect(service.markLessonDone('a1-read')).toEqual({ completed: true });
     expect(service.markLessonDone('a1-read')).toEqual({ completed: true });

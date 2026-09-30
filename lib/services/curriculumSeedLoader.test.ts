@@ -18,6 +18,7 @@ function writeSeedFile(
     join(dir, name),
     JSON.stringify({
       seedVersion,
+      formatVersion: 2,
       track: 'generic',
       level: 'A1',
       milestones:
@@ -25,13 +26,8 @@ function writeSeedFile(
           ? []
           : [
               {
-                milestone: { id: 'm1', track: 'generic', level: 'A1', title: 'M1', description: null, orderIndex: 0 },
-                sections: [
-                  {
-                    section: { id: 's1', milestoneId: 'm1', title: 'S1', description: null, orderIndex: 0 },
-                    lessonRefs: [{ lessonId: 'l1', orderIndex: 0 }],
-                  },
-                ],
+                milestone: { id: 'm1', track: 'generic', level: 'A1', title: 'M1', description: null, difficultyRank: 1 },
+                lessonIds: ['l1'],
               },
             ],
       lessons: overrides.lessons ?? [
@@ -139,5 +135,58 @@ describe('loadSeedIfNeeded', () => {
 
     const overrideCount = db.prepare('SELECT count(*) as c FROM lesson_track_overrides').get() as { c: number };
     expect(overrideCount.c).toBe(0);
+  });
+});
+
+function seedDir(files: Record<string, unknown>): string {
+  const dir = mkdtempSync(join(tmpdir(), 'gait-seed-'));
+  for (const [name, content] of Object.entries(files)) writeFileSync(join(dir, name), JSON.stringify(content));
+  return dir;
+}
+
+function v2(version: string, milestones: { id: string; rank: number; lessonIds: string[] }[], lessonIds: string[]) {
+  return {
+    seedVersion: version,
+    formatVersion: 2,
+    track: 'generic',
+    level: 'A1',
+    milestones: milestones.map((m) => ({
+      milestone: { id: m.id, track: 'generic', level: 'A1', title: m.id, description: null, difficultyRank: m.rank },
+      lessonIds: m.lessonIds,
+    })),
+    lessons: lessonIds.map((id) => ({ id, track: 'generic', sourceLevel: 'A1', skill: 'grammar', title: id, explanation: null, examples: null })),
+    exercises: [],
+    prerequisites: [],
+  };
+}
+
+describe('loadSeedIfNeeded (format v2)', () => {
+  it('replaces the track+level structure: moves lessons, shelves unlisted ones, never deletes Unsorted', () => {
+    const db = createDbClient(':memory:');
+    loadSeedIfNeeded(db, seedDir({ 'a.json': v2('1', [{ id: 'm1', rank: 1, lessonIds: ['l1', 'l2'] }], ['l1', 'l2']) }));
+    db.exec(`INSERT INTO milestones (id, track, level, title, difficulty_rank) VALUES ('admin-m', 'generic', 'A1', 'Mine', 5);
+      INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('mine', 'generic', 'A1', 'grammar', 'Mine');
+      INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES ('mine', 'admin-m');`);
+
+    loadSeedIfNeeded(
+      db,
+      seedDir({ 'a.json': v2('2', [{ id: 'm1', rank: 1, lessonIds: ['l1'] }, { id: 'm2', rank: 2, lessonIds: ['l2'] }], ['l1', 'l2', 'l3']) })
+    );
+
+    expect(db.prepare('SELECT lesson_id, milestone_id FROM lesson_placements ORDER BY lesson_id').all()).toEqual([
+      { lesson_id: 'l1', milestone_id: 'm1' },
+      { lesson_id: 'l2', milestone_id: 'm2' },
+      { lesson_id: 'l3', milestone_id: 'generic-a1-unsorted' },
+      { lesson_id: 'mine', milestone_id: 'generic-a1-unsorted' },
+    ]);
+    expect(db.prepare("SELECT id FROM milestones WHERE id = 'admin-m'").get()).toBeUndefined();
+    expect(db.prepare("SELECT id FROM milestones WHERE id = 'generic-a1-unsorted'").get()).toBeTruthy();
+  });
+
+  it('rejects a v1 file by name and changes nothing', () => {
+    const db = createDbClient(':memory:');
+    const v1 = { seedVersion: '9', track: 'generic', level: 'A1', milestones: [], lessons: [], exercises: [], prerequisites: [] };
+    expect(() => loadSeedIfNeeded(db, seedDir({ 'old.json': v1 }))).toThrow(/old\.json uses format none; this app needs format 2 \(milestones without sections\)/);
+    expect(db.prepare('SELECT COUNT(*) AS n FROM milestones').get()).toEqual({ n: 0 });
   });
 });

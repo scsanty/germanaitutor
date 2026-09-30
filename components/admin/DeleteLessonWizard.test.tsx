@@ -3,7 +3,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { DeleteLessonWizard } from './DeleteLessonWizard';
 
 function previewFor(id: string, linkedLessons: { id: string; title: string; track: string }[]) {
-  return { lessonId: id, repair: { edgesToAdd: [], edgesToRemove: [] }, linkedLessons };
+  return { lessonId: id, repair: { edgesToAdd: [], edgesToRemove: [], skippedBridges: [] }, linkedLessons };
 }
 
 describe('DeleteLessonWizard', () => {

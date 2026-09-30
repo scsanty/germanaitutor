@@ -3,114 +3,40 @@ import { createDbClient } from '../db/client';
 import { resolvePlacement } from './placementResolver';
 import { ensureUnsortedExists } from './unsortedBucket';
 
+function setup() {
+  const db = createDbClient(':memory:');
+  db.exec(`INSERT INTO milestones (id, track, level, title, difficulty_rank) VALUES
+    ('g-a1-m1', 'generic', 'A1', 'Basics', 1), ('g-a2-m1', 'generic', 'A2', 'Next', 1)`);
+  return db;
+}
+
 describe('resolvePlacement', () => {
-  it('returns the given sectionId unchanged when it exists', () => {
-    const db = createDbClient(':memory:');
-    db.exec(`
-      INSERT INTO milestones (id, track, level, title, order_index) VALUES ('m1', 'generic', 'A1', 'M1', 0);
-      INSERT INTO sections (id, milestone_id, title, order_index) VALUES ('s1', 'm1', 'S1', 0);
-    `);
-    const result = resolvePlacement(db, 'generic', 'A1', { sectionId: 's1' }, 'create');
-    expect(result).toBe('s1');
+  it('returns an existing milestone of the same track+level', () => {
+    expect(resolvePlacement(setup(), 'generic', 'A1', { milestoneId: 'g-a1-m1' }, 'create')).toBe('g-a1-m1');
   });
 
-  it('throws when the given sectionId does not exist', () => {
-    const db = createDbClient(':memory:');
-    expect(() => resolvePlacement(db, 'generic', 'A1', { sectionId: 'nope' }, 'create')).toThrow();
+  it('rejects a milestone of another track+level, or one that does not exist', () => {
+    const db = setup();
+    expect(() => resolvePlacement(db, 'generic', 'A1', { milestoneId: 'g-a2-m1' }, 'create')).toThrow(/belongs to generic\/A2/);
+    expect(() => resolvePlacement(db, 'generic', 'A1', { milestoneId: 'nope' }, 'create')).toThrow(/not found/);
   });
 
-  it('throws when the given sectionId belongs to a milestone in a different track/level than requested', () => {
-    const db = createDbClient(':memory:');
-    db.exec(`
-      INSERT INTO milestones (id, track, level, title, order_index) VALUES ('m1', 'telc', 'B1', 'M1', 0);
-      INSERT INTO sections (id, milestone_id, title, order_index) VALUES ('s1', 'm1', 'S1', 0);
-    `);
-    expect(() => resolvePlacement(db, 'generic', 'A1', { sectionId: 's1' }, 'create')).toThrow();
+  it('rejects creating directly into Unsorted but allows moving there on update', () => {
+    const db = setup();
+    const { milestoneId } = ensureUnsortedExists(db, 'generic', 'A1');
+    expect(() => resolvePlacement(db, 'generic', 'A1', { milestoneId }, 'create')).toThrow(/Unsorted/);
+    expect(resolvePlacement(db, 'generic', 'A1', { milestoneId }, 'update')).toBe(milestoneId);
   });
 
-  it('creates a new section under an existing milestone', () => {
-    const db = createDbClient(':memory:');
-    db.exec(`INSERT INTO milestones (id, track, level, title, order_index) VALUES ('m1', 'generic', 'A1', 'M1', 0);`);
-    const sectionId = resolvePlacement(db, 'generic', 'A1', { milestoneId: 'm1', newSectionTitle: 'New Section' }, 'create');
-    const section = db.prepare('SELECT milestone_id, title FROM sections WHERE id = ?').get(sectionId) as {
-      milestone_id: string;
-      title: string;
-    };
-    expect(section.milestone_id).toBe('m1');
-    expect(section.title).toBe('New Section');
+  it('creates a new milestone with its rank', () => {
+    const db = setup();
+    const id = resolvePlacement(db, 'generic', 'A1', { newMilestoneTitle: 'Later', newMilestoneRank: 3 }, 'create');
+    expect(db.prepare('SELECT title, difficulty_rank FROM milestones WHERE id = ?').get(id)).toEqual({ title: 'Later', difficulty_rank: 3 });
   });
 
-  it('throws when the given milestoneId does not exist', () => {
-    const db = createDbClient(':memory:');
-    expect(() =>
-      resolvePlacement(db, 'generic', 'A1', { milestoneId: 'nope', newSectionTitle: 'X' }, 'create')
-    ).toThrow();
-  });
-
-  it('throws when inline-creating a section under a milestone from a different track/level than requested', () => {
-    const db = createDbClient(':memory:');
-    db.exec(`INSERT INTO milestones (id, track, level, title, order_index) VALUES ('m1', 'telc', 'B1', 'M1', 0);`);
-    expect(() =>
-      resolvePlacement(db, 'generic', 'A1', { milestoneId: 'm1', newSectionTitle: 'New Section' }, 'create')
-    ).toThrow();
-  });
-
-  it('creates a brand-new milestone and its first section', () => {
-    const db = createDbClient(':memory:');
-    const sectionId = resolvePlacement(db, 'generic', 'A1', {
-      newMilestoneTitle: 'New Milestone',
-      newSectionTitle: 'First Section',
-    }, 'create');
-    const section = db.prepare('SELECT milestone_id, title FROM sections WHERE id = ?').get(sectionId) as {
-      milestone_id: string;
-      title: string;
-    };
-    expect(section.title).toBe('First Section');
-    const milestone = db.prepare('SELECT track, level, title FROM milestones WHERE id = ?').get(
-      section.milestone_id
-    ) as { track: string; level: string; title: string };
-    expect(milestone).toEqual({ track: 'generic', level: 'A1', title: 'New Milestone' });
-  });
-
-  it('appends new milestones after existing ones by order_index', () => {
-    const db = createDbClient(':memory:');
-    db.exec(`INSERT INTO milestones (id, track, level, title, order_index) VALUES ('m1', 'generic', 'A1', 'M1', 5);`);
-    const sectionId = resolvePlacement(db, 'generic', 'A1', {
-      newMilestoneTitle: 'New',
-      newSectionTitle: 'S',
-    }, 'create');
-    const section = db.prepare('SELECT milestone_id FROM sections WHERE id = ?').get(sectionId) as {
-      milestone_id: string;
-    };
-    const milestone = db.prepare('SELECT order_index FROM milestones WHERE id = ?').get(section.milestone_id) as {
-      order_index: number;
-    };
-    expect(milestone.order_index).toBe(6);
-  });
-
-  describe('Unsorted guard', () => {
-    it('create requires a real (non-Unsorted) section', () => {
-      const db = createDbClient(':memory:');
-      const { sectionId: unsortedSectionId } = ensureUnsortedExists(db, 'generic', 'A1');
-      expect(() => resolvePlacement(db, 'generic', 'A1', { sectionId: unsortedSectionId }, 'create')).toThrow();
-    });
-
-    it('update may still shelve an existing lesson into the Unsorted section', () => {
-      const db = createDbClient(':memory:');
-      const { sectionId: unsortedSectionId } = ensureUnsortedExists(db, 'generic', 'A1');
-      const result = resolvePlacement(db, 'generic', 'A1', { sectionId: unsortedSectionId }, 'update');
-      expect(result).toBe(unsortedSectionId);
-    });
-
-    it('rejects inline-creating a new section under the Unsorted milestone, on create or update', () => {
-      const db = createDbClient(':memory:');
-      const { milestoneId: unsortedId } = ensureUnsortedExists(db, 'generic', 'A1');
-      expect(() =>
-        resolvePlacement(db, 'generic', 'A1', { milestoneId: unsortedId, newSectionTitle: 'X' }, 'create')
-      ).toThrow();
-      expect(() =>
-        resolvePlacement(db, 'generic', 'A1', { milestoneId: unsortedId, newSectionTitle: 'X' }, 'update')
-      ).toThrow();
-    });
+  it('rejects an invalid rank or an empty title', () => {
+    const db = setup();
+    expect(() => resolvePlacement(db, 'generic', 'A1', { newMilestoneTitle: 'X', newMilestoneRank: 0 }, 'create')).toThrow(/rank/);
+    expect(() => resolvePlacement(db, 'generic', 'A1', { newMilestoneTitle: ' ', newMilestoneRank: 2 }, 'create')).toThrow(/title/);
   });
 });

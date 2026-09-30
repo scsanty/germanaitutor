@@ -1,4 +1,5 @@
 import type Database from 'better-sqlite3';
+import { assertPrerequisiteScope } from '../curriculum-admin/prerequisiteScope';
 import type { Track, CefrLevel } from '../types';
 import type { Skill, Lesson, ExerciseType } from '../curriculum/types';
 import { createCurriculumService } from './curriculumService';
@@ -72,17 +73,10 @@ export function createLessonAdminService(db: Database.Database) {
       reconcileExercises(db, id, input.exercises);
 
       // Placement is resolved before prerequisites so that a cycle-check failure below
-      // rolls back any milestone/section resolvePlacement just created too — the whole
+      // rolls back any milestone resolvePlacement just created too — the whole
       // create is one atomic unit, and no inline-created structure is ever left orphaned.
-      const sectionId = resolvePlacement(db, input.track, input.sourceLevel, input.placement, 'create');
-      const maxOrder = db
-        .prepare('SELECT COALESCE(MAX(order_index), -1) as m FROM lesson_placements WHERE section_id = ?')
-        .get(sectionId) as { m: number };
-      db.prepare('INSERT INTO lesson_placements (lesson_id, section_id, order_index) VALUES (?, ?, ?)').run(
-        id,
-        sectionId,
-        maxOrder.m + 1
-      );
+      const milestoneId = resolvePlacement(db, input.track, input.sourceLevel, input.placement, 'create');
+      db.prepare('INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES (?, ?)').run(id, milestoneId);
 
       for (const prerequisiteId of input.prerequisiteIds) {
         if (wouldCreateCycle(db, id, prerequisiteId)) {
@@ -93,6 +87,8 @@ export function createLessonAdminService(db: Database.Database) {
           prerequisiteId
         );
       }
+
+      assertPrerequisiteScope(db, [id]);
     });
 
     run();
@@ -139,18 +135,11 @@ export function createLessonAdminService(db: Database.Database) {
       reconcileExercises(db, id, input.exercises);
 
       // Placement is resolved before prerequisites so that a cycle-check failure below
-      // rolls back any milestone/section resolvePlacement just created too — the whole
+      // rolls back any milestone resolvePlacement just created too — the whole
       // update is one atomic unit, and no inline-created structure is ever left orphaned.
-      const sectionId = resolvePlacement(db, input.track, input.sourceLevel, input.placement, 'update');
+      const milestoneId = resolvePlacement(db, input.track, input.sourceLevel, input.placement, 'update');
       db.prepare('DELETE FROM lesson_placements WHERE lesson_id = ?').run(id);
-      const maxOrder = db
-        .prepare('SELECT COALESCE(MAX(order_index), -1) as m FROM lesson_placements WHERE section_id = ?')
-        .get(sectionId) as { m: number };
-      db.prepare('INSERT INTO lesson_placements (lesson_id, section_id, order_index) VALUES (?, ?, ?)').run(
-        id,
-        sectionId,
-        maxOrder.m + 1
-      );
+      db.prepare('INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES (?, ?)').run(id, milestoneId);
 
       const currentPrereqs = new Set(
         (
@@ -180,6 +169,8 @@ export function createLessonAdminService(db: Database.Database) {
           );
         }
       }
+
+      assertPrerequisiteScope(db, [id]);
     });
 
     run();

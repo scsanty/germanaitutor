@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+import Database from 'better-sqlite3';
 import { createDbClient } from './client';
 import { runMigrations } from './schema';
 
@@ -13,7 +14,7 @@ describe('curriculum schema', () => {
       expect.arrayContaining([
         'admin_auth',
         'milestones',
-        'sections',
+        'milestone_testouts',
         'lessons',
         'lesson_placements',
         'lesson_track_overrides',
@@ -111,14 +112,13 @@ describe('lesson_placements uniqueness', () => {
   it('rejects a second placement for the same lesson', () => {
     const db = createDbClient(':memory:');
     db.exec(`
-      INSERT INTO milestones (id, track, level, title, order_index) VALUES ('m1', 'generic', 'A1', 'M1', 0);
-      INSERT INTO sections (id, milestone_id, title, order_index) VALUES ('s1', 'm1', 'S1', 0);
-      INSERT INTO sections (id, milestone_id, title, order_index) VALUES ('s2', 'm1', 'S2', 1);
+      INSERT INTO milestones (id, track, level, title, difficulty_rank) VALUES ('m1', 'generic', 'A1', 'M1', 1);
+      INSERT INTO milestones (id, track, level, title, difficulty_rank) VALUES ('m2', 'generic', 'A1', 'M2', 2);
       INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('l1', 'generic', 'A1', 'grammar', 'L1');
-      INSERT INTO lesson_placements (lesson_id, section_id, order_index) VALUES ('l1', 's1', 0);
+      INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES ('l1', 'm1');
     `);
     expect(() =>
-      db.prepare('INSERT INTO lesson_placements (lesson_id, section_id, order_index) VALUES (?, ?, ?)').run('l1', 's2', 0)
+      db.prepare('INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES (?, ?)').run('l1', 'm2')
     ).toThrow();
     db.close();
   });
@@ -126,13 +126,19 @@ describe('lesson_placements uniqueness', () => {
 
 describe('legacy schema migration to this plan\'s shape', () => {
   it('drops concept_id and adds the placements uniqueness constraint without losing existing rows', () => {
-    const db = createDbClient(':memory:');
-    // Simulate a DB frozen at the pre-this-plan shape (concept_id column present,
-    // lesson_placements uniqueness only on the (lesson_id, section_id) pair), then
-    // re-run migrations and confirm both the shape and the data come out right.
+    // Simulate a DB frozen at the pre-this-plan shape (concept_id column present, sections,
+    // lesson_placements uniqueness only on the (lesson_id, section_id) pair), then run the
+    // migrations and confirm both the shape and the data come out right.
+    const db = new Database(':memory:');
+    db.pragma('foreign_keys = ON');
     db.exec(`
-      ALTER TABLE lessons ADD COLUMN concept_id TEXT;
-      DROP TABLE lesson_placements;
+      CREATE TABLE milestones (id TEXT PRIMARY KEY, track TEXT NOT NULL, level TEXT NOT NULL, title TEXT NOT NULL,
+        description TEXT, order_index INTEGER NOT NULL);
+      CREATE TABLE sections (id TEXT PRIMARY KEY, milestone_id TEXT NOT NULL REFERENCES milestones(id) ON DELETE CASCADE,
+        title TEXT NOT NULL, description TEXT, order_index INTEGER NOT NULL);
+      CREATE TABLE lessons (id TEXT PRIMARY KEY, track TEXT NOT NULL, source_level TEXT NOT NULL, skill TEXT NOT NULL,
+        title TEXT NOT NULL, explanation TEXT, examples TEXT, concept_id TEXT,
+        created_at TEXT NOT NULL DEFAULT (datetime('now')));
       CREATE TABLE lesson_placements (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         lesson_id TEXT NOT NULL REFERENCES lessons(id) ON DELETE CASCADE,
@@ -141,8 +147,6 @@ describe('legacy schema migration to this plan\'s shape', () => {
         created_at TEXT NOT NULL DEFAULT (datetime('now')),
         UNIQUE(lesson_id, section_id)
       );
-    `);
-    db.exec(`
       INSERT INTO milestones (id, track, level, title, order_index) VALUES ('m1', 'generic', 'A1', 'M1', 0);
       INSERT INTO sections (id, milestone_id, title, order_index) VALUES ('s1', 'm1', 'S1', 0);
       INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('l1', 'generic', 'A1', 'grammar', 'L1');
@@ -154,15 +158,11 @@ describe('legacy schema migration to this plan\'s shape', () => {
     const columns = db.prepare('PRAGMA table_info(lessons)').all() as { name: string }[];
     expect(columns.some((c) => c.name === 'concept_id')).toBe(false);
 
-    const placement = db.prepare('SELECT lesson_id, section_id FROM lesson_placements WHERE lesson_id = ?').get('l1') as {
-      lesson_id: string;
-      section_id: string;
-    };
-    expect(placement.section_id).toBe('s1');
+    expect(db.prepare('SELECT lesson_id, milestone_id FROM lesson_placements').all()).toEqual([
+      { lesson_id: 'l1', milestone_id: 'm1' },
+    ]);
 
-    expect(() =>
-      db.prepare('INSERT INTO lesson_placements (lesson_id, section_id, order_index) VALUES (?, ?, ?)').run('l1', 's1', 1)
-    ).toThrow();
+    expect(() => db.prepare('INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES (?, ?)').run('l1', 'm1')).toThrow();
 
     db.close();
   });

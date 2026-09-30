@@ -1,7 +1,8 @@
 import type Database from 'better-sqlite3';
 import type { Track, CefrLevel } from '../types';
-import type { Milestone, Section } from '../curriculum/types';
+import type { Milestone } from '../curriculum/types';
 import { ensureUnsortedExists, unsortedMilestoneId } from '../curriculum-admin/unsortedBucket';
+import { assertPrerequisiteScope } from '../curriculum-admin/prerequisiteScope';
 import { randomSuffix } from '../curriculum-admin/randomId';
 
 export interface DisplacedLesson {
@@ -10,10 +11,6 @@ export interface DisplacedLesson {
 }
 
 export interface MilestoneDeletePreview {
-  sections: { id: string; title: string; lessons: DisplacedLesson[] }[];
-}
-
-export interface SectionDeletePreview {
   lessons: DisplacedLesson[];
 }
 
@@ -23,222 +20,121 @@ interface MilestoneRow {
   level: CefrLevel;
   title: string;
   description: string | null;
-  order_index: number;
+  difficulty_rank: number | null;
 }
 
-interface SectionRow {
-  id: string;
-  milestone_id: string;
-  title: string;
-  description: string | null;
-  order_index: number;
-}
-
-function rowToMilestone(row: MilestoneRow): Milestone {
+export function rowToMilestone(row: MilestoneRow): Milestone {
   return {
     id: row.id,
     track: row.track,
     level: row.level,
     title: row.title,
     description: row.description,
-    orderIndex: row.order_index,
+    difficultyRank: row.difficulty_rank,
   };
 }
 
-function rowToSection(row: SectionRow): Section {
-  return {
-    id: row.id,
-    milestoneId: row.milestone_id,
-    title: row.title,
-    description: row.description,
-    orderIndex: row.order_index,
-  };
-}
-
-function lessonsInSection(db: Database.Database, sectionId: string): DisplacedLesson[] {
-  return db
-    .prepare(
-      `SELECT l.id, l.title FROM lesson_placements lp JOIN lessons l ON l.id = lp.lesson_id WHERE lp.section_id = ?`
-    )
-    .all(sectionId) as DisplacedLesson[];
-}
-
-function relocateSectionLessonsToUnsorted(db: Database.Database, sectionId: string, unsortedSectionId: string): void {
-  const lessonIds = (
-    db.prepare('SELECT lesson_id FROM lesson_placements WHERE section_id = ?').all(sectionId) as {
-      lesson_id: string;
-    }[]
-  ).map((r) => r.lesson_id);
-  for (const lessonId of lessonIds) {
-    const maxOrder = db
-      .prepare('SELECT COALESCE(MAX(order_index), -1) as m FROM lesson_placements WHERE section_id = ?')
-      .get(unsortedSectionId) as { m: number };
-    db.prepare('UPDATE lesson_placements SET section_id = ?, order_index = ? WHERE lesson_id = ?').run(
-      unsortedSectionId,
-      maxOrder.m + 1,
-      lessonId
-    );
+// Spec: a difficulty rank is a whole number of 1 or more.
+export function assertValidRank(rank: unknown): number {
+  if (typeof rank !== 'number' || !Number.isInteger(rank) || rank < 1) {
+    throw new Error('Difficulty rank must be a whole number of 1 or more');
   }
+  return rank;
 }
 
 export function createCurriculumStructureService(db: Database.Database) {
-  function createMilestone(track: Track, level: CefrLevel, title: string, description: string | null): Milestone {
-    const id = `${track}-${level.toLowerCase()}-${randomSuffix()}`;
-    const maxOrder = db
-      .prepare('SELECT COALESCE(MAX(order_index), -1) as m FROM milestones WHERE track = ? AND level = ?')
-      .get(track, level) as { m: number };
-    db.prepare(
-      'INSERT INTO milestones (id, track, level, title, description, order_index) VALUES (?, ?, ?, ?, ?, ?)'
-    ).run(id, track, level, title, description, maxOrder.m + 1);
-    return rowToMilestone(db.prepare('SELECT * FROM milestones WHERE id = ?').get(id) as MilestoneRow);
+  function getMilestone(id: string): Milestone {
+    const row = db.prepare('SELECT * FROM milestones WHERE id = ?').get(id) as MilestoneRow | undefined;
+    if (!row) throw new Error(`Milestone not found: ${id}`);
+    return rowToMilestone(row);
   }
 
-  function renameMilestone(id: string, title: string, description: string | null): Milestone {
-    const existing = db.prepare('SELECT 1 FROM milestones WHERE id = ?').get(id);
-    if (!existing) throw new Error(`Milestone not found: ${id}`);
-    db.prepare('UPDATE milestones SET title = ?, description = ? WHERE id = ?').run(title, description, id);
-    return rowToMilestone(db.prepare('SELECT * FROM milestones WHERE id = ?').get(id) as MilestoneRow);
+  function assertNotUnsorted(milestone: Milestone): void {
+    if (milestone.id === unsortedMilestoneId(milestone.track, milestone.level)) {
+      throw new Error('The Unsorted milestone cannot be changed');
+    }
+  }
+
+  function createMilestone(
+    track: Track,
+    level: CefrLevel,
+    title: string,
+    description: string | null,
+    difficultyRank: unknown
+  ): Milestone {
+    const rank = assertValidRank(difficultyRank);
+    if (!title?.trim()) throw new Error('A milestone needs a title');
+    const id = `${track}-${level.toLowerCase()}-${randomSuffix()}`;
+    db.prepare(
+      'INSERT INTO milestones (id, track, level, title, description, difficulty_rank) VALUES (?, ?, ?, ?, ?, ?)'
+    ).run(id, track, level, title.trim(), description, rank);
+    return getMilestone(id);
+  }
+
+  function updateMilestone(
+    id: string,
+    input: { title: string; description: string | null; difficultyRank: unknown }
+  ): Milestone {
+    const milestone = getMilestone(id);
+    assertNotUnsorted(milestone);
+    const rank = assertValidRank(input.difficultyRank);
+    if (!input.title?.trim()) throw new Error('A milestone needs a title');
+    db.transaction(() => {
+      db.prepare('UPDATE milestones SET title = ?, description = ?, difficulty_rank = ? WHERE id = ?').run(
+        input.title.trim(),
+        input.description,
+        rank,
+        id
+      );
+      const lessonIds = (db.prepare('SELECT lesson_id FROM lesson_placements WHERE milestone_id = ?').all(id) as { lesson_id: string }[]).map(
+        (r) => r.lesson_id
+      );
+      assertPrerequisiteScope(db, lessonIds);
+    })();
+    return getMilestone(id);
+  }
+
+  // Spec: Admin, "Move to…". Same track+level only; the scope rule is re-checked for the lesson.
+  function moveLesson(lessonId: string, milestoneId: string): void {
+    const lesson = db.prepare('SELECT track, source_level FROM lessons WHERE id = ?').get(lessonId) as
+      | { track: Track; source_level: CefrLevel }
+      | undefined;
+    if (!lesson) throw new Error(`Lesson not found: ${lessonId}`);
+    const target = getMilestone(milestoneId);
+    if (target.track !== lesson.track || target.level !== lesson.source_level) {
+      throw new Error(`Milestone ${milestoneId} belongs to ${target.track}/${target.level}, not ${lesson.track}/${lesson.source_level}`);
+    }
+    db.transaction(() => {
+      db.prepare(
+        `INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES (?, ?)
+         ON CONFLICT(lesson_id) DO UPDATE SET milestone_id = excluded.milestone_id`
+      ).run(lessonId, milestoneId);
+      assertPrerequisiteScope(db, [lessonId]);
+    })();
   }
 
   function previewMilestoneDelete(id: string): MilestoneDeletePreview {
-    const sections = db.prepare('SELECT id, title FROM sections WHERE milestone_id = ?').all(id) as {
-      id: string;
-      title: string;
-    }[];
-    return { sections: sections.map((s) => ({ id: s.id, title: s.title, lessons: lessonsInSection(db, s.id) })) };
+    return {
+      lessons: db
+        .prepare(
+          'SELECT l.id, l.title FROM lesson_placements p JOIN lessons l ON l.id = p.lesson_id WHERE p.milestone_id = ? ORDER BY l.title'
+        )
+        .all(id) as DisplacedLesson[],
+    };
   }
 
+  // Its lessons move to Unsorted first: the placement foreign key would otherwise cascade them away.
   function deleteMilestone(id: string): void {
-    const milestone = db.prepare('SELECT track, level FROM milestones WHERE id = ?').get(id) as
-      | { track: Track; level: CefrLevel }
-      | undefined;
-    if (!milestone) throw new Error(`Milestone not found: ${id}`);
-    if (id === unsortedMilestoneId(milestone.track, milestone.level)) {
-      throw new Error('Cannot delete the Unsorted milestone');
-    }
-
-    const run = db.transaction(() => {
-      const { sectionId: unsortedSectionId } = ensureUnsortedExists(db, milestone.track, milestone.level);
-      const sectionIds = (db.prepare('SELECT id FROM sections WHERE milestone_id = ?').all(id) as { id: string }[]).map(
-        (r) => r.id
-      );
-      for (const sectionId of sectionIds) {
-        relocateSectionLessonsToUnsorted(db, sectionId, unsortedSectionId);
-      }
+    const milestone = getMilestone(id);
+    if (id === unsortedMilestoneId(milestone.track, milestone.level)) throw new Error('Cannot delete the Unsorted milestone');
+    db.transaction(() => {
+      const { milestoneId: unsortedId } = ensureUnsortedExists(db, milestone.track, milestone.level);
+      db.prepare('UPDATE lesson_placements SET milestone_id = ? WHERE milestone_id = ?').run(unsortedId, id);
       db.prepare('DELETE FROM milestones WHERE id = ?').run(id);
-    });
-    run();
+    })();
   }
 
-  function reorderMilestones(track: Track, level: CefrLevel, orderedIds: string[]): void {
-    const unsortedId = unsortedMilestoneId(track, level);
-    if (orderedIds.includes(unsortedId)) {
-      throw new Error('Cannot include Unsorted in a reorder');
-    }
-    const real = (
-      db.prepare('SELECT id FROM milestones WHERE track = ? AND level = ? AND id != ?').all(track, level, unsortedId) as {
-        id: string;
-      }[]
-    ).map((r) => r.id);
-    const givenSet = new Set(orderedIds);
-    const matches = real.length === orderedIds.length && real.every((id) => givenSet.has(id));
-    if (!matches) {
-      throw new Error('Reorder payload must include exactly the current set of milestones for this track+level');
-    }
-
-    const run = db.transaction(() => {
-      orderedIds.forEach((id, index) => {
-        db.prepare('UPDATE milestones SET order_index = ? WHERE id = ?').run(index, id);
-      });
-    });
-    run();
-  }
-
-  function createSection(milestoneId: string, title: string, description: string | null): Section {
-    const milestone = db.prepare('SELECT track, level FROM milestones WHERE id = ?').get(milestoneId) as
-      | { track: Track; level: CefrLevel }
-      | undefined;
-    if (!milestone) throw new Error(`Milestone not found: ${milestoneId}`);
-    if (milestoneId === unsortedMilestoneId(milestone.track, milestone.level)) {
-      throw new Error('Cannot create a section under the Unsorted milestone');
-    }
-    const id = `${milestoneId}-${randomSuffix()}`;
-    const maxOrder = db
-      .prepare('SELECT COALESCE(MAX(order_index), -1) as m FROM sections WHERE milestone_id = ?')
-      .get(milestoneId) as { m: number };
-    db.prepare(
-      'INSERT INTO sections (id, milestone_id, title, description, order_index) VALUES (?, ?, ?, ?, ?)'
-    ).run(id, milestoneId, title, description, maxOrder.m + 1);
-    return rowToSection(db.prepare('SELECT * FROM sections WHERE id = ?').get(id) as SectionRow);
-  }
-
-  function renameSection(id: string, title: string, description: string | null): Section {
-    const existing = db.prepare('SELECT 1 FROM sections WHERE id = ?').get(id);
-    if (!existing) throw new Error(`Section not found: ${id}`);
-    db.prepare('UPDATE sections SET title = ?, description = ? WHERE id = ?').run(title, description, id);
-    return rowToSection(db.prepare('SELECT * FROM sections WHERE id = ?').get(id) as SectionRow);
-  }
-
-  function previewSectionDelete(id: string): SectionDeletePreview {
-    return { lessons: lessonsInSection(db, id) };
-  }
-
-  function deleteSection(id: string): void {
-    const section = db.prepare('SELECT milestone_id FROM sections WHERE id = ?').get(id) as
-      | { milestone_id: string }
-      | undefined;
-    if (!section) throw new Error(`Section not found: ${id}`);
-    const milestone = db.prepare('SELECT track, level FROM milestones WHERE id = ?').get(section.milestone_id) as {
-      track: Track;
-      level: CefrLevel;
-    };
-
-    const run = db.transaction(() => {
-      const { sectionId: unsortedSectionId } = ensureUnsortedExists(db, milestone.track, milestone.level);
-      if (id === unsortedSectionId) throw new Error('Cannot delete the Unsorted section');
-      relocateSectionLessonsToUnsorted(db, id, unsortedSectionId);
-      db.prepare('DELETE FROM sections WHERE id = ?').run(id);
-    });
-    run();
-  }
-
-  function reorderSections(milestoneId: string, orderedIds: string[]): void {
-    const milestone = db.prepare('SELECT track, level FROM milestones WHERE id = ?').get(milestoneId) as {
-      track: Track;
-      level: CefrLevel;
-    };
-    if (milestoneId === unsortedMilestoneId(milestone.track, milestone.level)) {
-      throw new Error('Cannot reorder sections within the Unsorted milestone');
-    }
-    const real = (db.prepare('SELECT id FROM sections WHERE milestone_id = ?').all(milestoneId) as { id: string }[]).map(
-      (r) => r.id
-    );
-    const givenSet = new Set(orderedIds);
-    const matches = real.length === orderedIds.length && real.every((id) => givenSet.has(id));
-    if (!matches) {
-      throw new Error('Reorder payload must include exactly the current set of sections for this milestone');
-    }
-
-    const run = db.transaction(() => {
-      orderedIds.forEach((id, index) => {
-        db.prepare('UPDATE sections SET order_index = ? WHERE id = ?').run(index, id);
-      });
-    });
-    run();
-  }
-
-  return {
-    createMilestone,
-    renameMilestone,
-    previewMilestoneDelete,
-    deleteMilestone,
-    reorderMilestones,
-    createSection,
-    renameSection,
-    previewSectionDelete,
-    deleteSection,
-    reorderSections,
-  };
+  return { getMilestone, createMilestone, updateMilestone, previewMilestoneDelete, deleteMilestone, moveLesson };
 }
 
 export type CurriculumStructureService = ReturnType<typeof createCurriculumStructureService>;

@@ -13,6 +13,7 @@ import {
 import { errorBodyFor, type ApiErrorBody, type ErrorCode, type ErrorParams } from '../tutoring/errorCodes';
 import { generateWithActiveProvider, isAiAvailable, type AiRequest, type AiResult } from './aiService';
 import { createCurriculumService } from './curriculumService';
+import { lessonLock } from './levelGating';
 import { createProfileService } from './profileService';
 import { createUnlockService } from './unlockService';
 
@@ -165,6 +166,7 @@ export function createLessonChatService(db: Database.Database, deps: LessonChatD
     }
     if (exerciseId && practice) throw new ChatError('Ask about one exercise at a time', 'bad_request');
     const lesson = getUnlockedLesson(lessonId);
+    if (lessonLock(db, lesson.id).locked) throw new ChatError('This lesson is still locked', 'locked', 'lesson_locked');
     const context = exerciseId
       ? exerciseContext(lesson.id, exerciseId)
       : practice

@@ -9,15 +9,8 @@ export interface Milestone {
   level: CefrLevel;
   title: string;
   description: string | null;
-  orderIndex: number;
-}
-
-export interface Section {
-  id: string;
-  milestoneId: string;
-  title: string;
-  description: string | null;
-  orderIndex: number;
+  // 1, 2, 3 … inside its track+level; null only for the admin-only Unsorted bucket
+  difficultyRank: number | null;
 }
 
 export interface Lesson {
@@ -34,8 +27,7 @@ export interface Lesson {
 export interface LessonPlacement {
   id: number;
   lessonId: string;
-  sectionId: string;
-  orderIndex: number;
+  milestoneId: string;
   createdAt: string;
 }
 

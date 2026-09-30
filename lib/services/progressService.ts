@@ -5,21 +5,20 @@ import { unsortedMilestoneId } from '../curriculum-admin/unsortedBucket';
 import { lessonStatus } from '../tutoring/completion';
 import { toExerciseView } from '../tutoring/exerciseView';
 import { isAtOrBelow, LEVELS, levelIndex } from '../tutoring/levels';
-import type { CurriculumTree, DailyQueue, LessonView, TreeLesson } from '../tutoring/progressTypes';
-import { remainingReviews, selectDueItems, suggestNextLesson } from '../tutoring/queue';
+import type { CurriculumTree, DailyQueue, LessonView } from '../tutoring/progressTypes';
+import { computeBranchLayout } from '../tutoring/branchLayout';
+import { remainingReviews, selectDueItems } from '../tutoring/queue';
+import { isAiAvailable } from './aiService';
 import { createCurriculumService } from './curriculumService';
+import { lessonLock, loadDoneState, loadLevelGating, loadPrerequisites, type DoneState } from './levelGating';
 import { createProfileService } from './profileService';
+import { testOutStatusFor } from './testOutStatus';
 
 interface VisibleLessonRow {
   id: string;
   title: string;
   skill: Skill;
-  section_id: string;
-}
-
-interface DoneState {
-  completed: Set<string>;
-  coveredVia: Map<string, Track>;
+  milestone_id: string;
 }
 
 interface DueRow {
@@ -32,112 +31,83 @@ interface DueRow {
   next_due_at: string;
 }
 
+const isDone = (state: DoneState, id: string) => state.completed.has(id) || state.coveredVia.has(id);
+
 export function createProgressService(db: Database.Database) {
   const profiles = createProfileService(db);
   const curriculum = createCurriculumService(db);
 
-  // Own completion is a stored row. Shared completion is display-only: a concept-linked lesson
-  // (always in another track) with its own completion (spec: Completion).
-  function loadDoneState(): DoneState {
-    const completed = new Set(
-      (db.prepare('SELECT lesson_id FROM lesson_completions').all() as { lesson_id: string }[]).map((r) => r.lesson_id)
-    );
-    const links = db
-      .prepare(
-        `SELECT c.lesson_a_id AS a, c.lesson_b_id AS b, la.track AS a_track, lb.track AS b_track
-         FROM lesson_concept_links c
-         JOIN lessons la ON la.id = c.lesson_a_id
-         JOIN lessons lb ON lb.id = c.lesson_b_id
-         ORDER BY c.id`
-      )
-      .all() as { a: string; b: string; a_track: Track; b_track: Track }[];
-    const coveredVia = new Map<string, Track>();
-    for (const link of links) {
-      if (completed.has(link.a) && !completed.has(link.b) && !coveredVia.has(link.b)) coveredVia.set(link.b, link.a_track);
-      if (completed.has(link.b) && !completed.has(link.a) && !coveredVia.has(link.a)) coveredVia.set(link.a, link.b_track);
-    }
-    return { completed, coveredVia };
-  }
-
-  function isDone(state: DoneState, lessonId: string): boolean {
-    return state.completed.has(lessonId) || state.coveredVia.has(lessonId);
-  }
-
-  // The student-visible lessons of a track+level, in tree order. The Unsorted bucket is admin-only.
+    // The student-visible lessons of a track+level, in tree order. The Unsorted bucket is admin-only.
   function visibleLessons(track: Track, level: CefrLevel): VisibleLessonRow[] {
     return db
       .prepare(
-        `SELECT l.id, l.title, l.skill, s.id AS section_id
+        `SELECT l.id, l.title, l.skill, p.milestone_id
          FROM milestones m
-         JOIN sections s ON s.milestone_id = m.id
-         JOIN lesson_placements p ON p.section_id = s.id
+         JOIN lesson_placements p ON p.milestone_id = m.id
          JOIN lessons l ON l.id = p.lesson_id
          WHERE m.track = ? AND m.level = ? AND m.id != ?
-         ORDER BY m.order_index, m.id, s.order_index, s.id, p.order_index, l.id`
+         ORDER BY m.difficulty_rank, m.id, l.title, l.id`
       )
       .all(track, level, unsortedMilestoneId(track, level)) as VisibleLessonRow[];
   }
 
-  function prerequisitesByLesson(): Map<string, { id: string; title: string }[]> {
-    const rows = db
-      .prepare(
-        `SELECT lp.lesson_id, l.id, l.title
-         FROM lesson_prerequisites lp
-         JOIN lessons l ON l.id = lp.prerequisite_lesson_id
-         ORDER BY lp.lesson_id, l.title`
-      )
-      .all() as { lesson_id: string; id: string; title: string }[];
-    const map = new Map<string, { id: string; title: string }[]>();
-    for (const row of rows) {
-      const list = map.get(row.lesson_id) ?? [];
-      list.push({ id: row.id, title: row.title });
-      map.set(row.lesson_id, list);
-    }
-    return map;
-  }
-
   function getTree(): CurriculumTree {
     const { activeTrack: track, activeLevel: level } = profiles.getProfile();
-    const done = loadDoneState();
-    const prerequisites = prerequisitesByLesson();
+    const gating = loadLevelGating(db, track, level);
+    const info = new Map(visibleLessons(track, level).map((row) => [row.id, row]));
     const attempted = new Set(
       (db.prepare('SELECT DISTINCT lesson_id FROM lesson_attempts').all() as { lesson_id: string }[]).map((r) => r.lesson_id)
     );
+    const statusOpts = { now: new Date(), aiAvailable: isAiAvailable(db) };
 
-    const lessonsBySection = new Map<string, TreeLesson[]>();
-    for (const row of visibleLessons(track, level)) {
-      const list = lessonsBySection.get(row.section_id) ?? [];
-      list.push({
-        id: row.id,
-        title: row.title,
-        skill: row.skill,
-        status: lessonStatus({
-          completed: done.completed.has(row.id),
-          covered: done.coveredVia.has(row.id),
-          attempted: attempted.has(row.id),
-        }),
-        coveredVia: done.coveredVia.get(row.id) ?? null,
-        missingPrerequisites: (prerequisites.get(row.id) ?? []).filter((p) => !isDone(done, p.id)),
-      });
-      lessonsBySection.set(row.section_id, list);
-    }
-
-    const milestones = db
-      .prepare('SELECT id, title FROM milestones WHERE track = ? AND level = ? AND id != ? ORDER BY order_index, id')
-      .all(track, level, unsortedMilestoneId(track, level)) as { id: string; title: string }[];
-    const sectionsOf = db.prepare('SELECT id, title FROM sections WHERE milestone_id = ? ORDER BY order_index, id');
     return {
       track,
       level,
-      milestones: milestones.map((m) => ({
-        id: m.id,
-        title: m.title,
-        sections: (sectionsOf.all(m.id) as { id: string; title: string }[]).map((s) => ({
-          id: s.id,
-          title: s.title,
-          lessons: lessonsBySection.get(s.id) ?? [],
-        })),
-      })),
+      milestones: gating.milestones.map((milestone) => {
+        const ids = milestone.lessonIds;
+        const edges = ids.flatMap((id) =>
+          gating
+            .prerequisitesOf(id)
+            .filter((p) => ids.includes(p.id))
+            .map((p) => ({ from: p.id, to: id }))
+        );
+        const layout = new Map(computeBranchLayout(ids, edges, { flatOnCycle: true }).map((n) => [n.id, n]));
+        return {
+          id: milestone.id,
+          title: milestone.title,
+          description: milestone.description,
+          rank: milestone.rank,
+          state: gating.states.get(milestone.id)!,
+          edges,
+          testOut: testOutStatusFor(db, gating, milestone.id, statusOpts),
+          lessons: ids.map((id) => {
+            const row = info.get(id)!;
+            const at = layout.get(id)!;
+            return {
+              id,
+              title: row.title,
+              skill: row.skill,
+              status: lessonStatus({
+                completed: gating.done.completed.has(id),
+                covered: gating.done.coveredVia.has(id),
+                attempted: attempted.has(id),
+              }),
+              coveredVia: gating.done.coveredVia.get(id) ?? null,
+              locked: gating.isLessonLocked(id),
+              earlierPrerequisites: gating
+                .prerequisitesOf(id)
+                .filter((p) => {
+                  const home = gating.milestoneOf(p.id);
+                  return home !== undefined && home.id !== milestone.id;
+                })
+                .map((p) => ({ ...p, done: gating.isDone(p.id) })),
+              branch: at.branch,
+              column: at.column,
+              row: at.row,
+            };
+          }),
+        };
+      }),
     };
   }
 
@@ -145,7 +115,7 @@ export function createProgressService(db: Database.Database) {
   function isLevelFinished(track: Track, level: CefrLevel): boolean {
     const lessons = visibleLessons(track, level);
     if (lessons.length === 0) return false;
-    const done = loadDoneState();
+    const done = loadDoneState(db);
     return lessons.every((lesson) => isDone(done, lesson.id));
   }
 
@@ -171,14 +141,31 @@ export function createProgressService(db: Database.Database) {
     if (!lesson) return null;
     if (!isAtOrBelow(lesson.sourceLevel, profiles.getProfile().highestUnlockedLevel)) {
       return {
-        locked: true,
+        locked: 'level' as const,
         id: lesson.id,
         title: lesson.title,
         level: lesson.sourceLevel,
         unlocksAfter: LEVELS[levelIndex(lesson.sourceLevel) - 1],
       };
     }
-    const done = loadDoneState();
+    const lock = lessonLock(db, lesson.id);
+    if (lock.locked) {
+      return {
+        locked: 'lesson',
+        id: lesson.id,
+        title: lesson.title,
+        level: lesson.sourceLevel,
+        reason: lock.reason,
+        milestone: lock.milestone,
+        missingPrerequisites: lock.missingPrerequisites,
+      };
+    }
+    const done = loadDoneState(db);
+    const unsortedStmt = db.prepare(
+      `SELECT 1 FROM lesson_placements p JOIN milestones m ON m.id = p.milestone_id
+       WHERE p.lesson_id = ? AND m.difficulty_rank IS NULL`
+    );
+    const inUnsorted = (id: string) => !!unsortedStmt.get(id);
     return {
       locked: false,
       id: lesson.id,
@@ -191,7 +178,10 @@ export function createProgressService(db: Database.Database) {
       exercises: curriculum.getExercises(lesson.id, lesson.track).map(toExerciseView),
       passedExerciseIds: passedExerciseIds(lesson.id),
       completed: done.completed.has(lesson.id),
-      prerequisites: (prerequisitesByLesson().get(lesson.id) ?? []).map((p) => ({ ...p, done: isDone(done, p.id) })),
+      // Prerequisites placed in Unsorted are ignored by gating, so the view doesn't list them either.
+      prerequisites: (loadPrerequisites(db).get(lesson.id) ?? [])
+        .filter((p) => !inUnsorted(p.id))
+        .map((p) => ({ ...p, done: isDone(done, p.id) })),
     };
   }
 
@@ -211,13 +201,12 @@ export function createProgressService(db: Database.Database) {
          JOIN exercises e ON e.id = st.exercise_id
          JOIN lessons l ON l.id = e.lesson_id
          JOIN lesson_placements p ON p.lesson_id = l.id
-         JOIN sections s ON s.id = p.section_id
-         JOIN milestones m ON m.id = s.milestone_id
+         JOIN milestones m ON m.id = p.milestone_id
          WHERE m.track = ? AND m.level = ? AND st.next_due_at <= ?
            AND NOT EXISTS (
              SELECT 1 FROM lesson_attempts a WHERE a.exercise_id = e.id AND a.source = 'queue' AND a.answered_on = ?
            )
-         ORDER BY st.next_due_at, m.order_index, s.order_index, p.order_index, e.rowid`
+         ORDER BY st.next_due_at, COALESCE(m.difficulty_rank, 1000000), m.id, e.rowid`
       )
       .all(track, level, today, today) as DueRow[];
     const due = selectDueItems(
@@ -226,18 +215,11 @@ export function createProgressService(db: Database.Database) {
       remainingReviews(cap, answeredToday)
     );
 
-    const done = loadDoneState();
-    const prerequisites = prerequisitesByLesson();
-    const lessons = visibleLessons(track, level);
-    const suggestedId = suggestNextLesson(
-      lessons.map((lesson) => ({
-        id: lesson.id,
-        done: isDone(done, lesson.id),
-        prerequisiteIds: (prerequisites.get(lesson.id) ?? []).map((p) => p.id),
-      })),
-      new Set([...done.completed, ...done.coveredVia.keys()])
-    );
-    const suggested = lessons.find((lesson) => lesson.id === suggestedId);
+    const gating = loadLevelGating(db, track, level);
+    const suggestedId = gating.lessonsInTreeOrder().find((id) => !gating.isDone(id) && !gating.isLessonLocked(id));
+    const suggested = suggestedId
+      ? (db.prepare('SELECT id, title FROM lessons WHERE id = ?').get(suggestedId) as { id: string; title: string })
+      : undefined;
 
     return {
       track,
