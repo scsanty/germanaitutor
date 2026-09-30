@@ -6,6 +6,14 @@ import { useTranslations } from 'next-intl';
 import { CHAT_MESSAGE_MAX_LENGTH, type ChatMessageView } from '@/lib/tutoring/lessonChat';
 import type { GradeResult } from '@/lib/tutoring/grading';
 import { useApiErrorText } from '@/components/useApiErrorText';
+import { MessageCircle, Send, X } from 'lucide-react';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Button } from '@/components/ui/button';
+import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet';
+import { Skeleton } from '@/components/ui/skeleton';
+import { Textarea } from '@/components/ui/textarea';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
+import { cn } from '@/lib/utils';
 
 export type AskAbout =
   | { kind: 'exercise'; exerciseId: string; label: string }
@@ -30,6 +38,7 @@ export function LessonChat({ lessonId, open, onToggle, askAbout, onClearAskAbout
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [aiError, setAiError] = useState<string | null>(null);
+  const wide = useMediaQuery('(min-width: 768px)');
 
   // The thread loads the first time the panel opens.
   useEffect(() => {
@@ -96,52 +105,114 @@ export function LessonChat({ lessonId, open, onToggle, askAbout, onClearAskAbout
     }
   }
 
-  const settingsLink = (chunks: ReactNode) => <Link href="/settings">{chunks}</Link>;
+  const settingsLink = (chunks: ReactNode) => (
+    <Link href="/settings" className="font-semibold underline underline-offset-2">
+      {chunks}
+    </Link>
+  );
 
+  // Spec (design pass): a Sheet from the bottom on phones, from the right from 768 px.
   return (
-    <section>
-      <button type="button" aria-expanded={open} onClick={onToggle}>
+    <>
+      <Button type="button" variant="secondary" aria-expanded={open} onClick={onToggle} className="min-h-11 self-start">
+        <MessageCircle aria-hidden />
         {open ? t('hide') : t('show')}
-      </button>
-      {open && (
-        <div>
-          {loadFailed && <p role="alert">{t('loadFailed')}</p>}
-          {!loadFailed && messages === null && <p>{tCommon('loading')}</p>}
-          {messages && messages.length === 0 && <p>{t('empty')}</p>}
-          {messages && messages.length > 0 && (
-            <ul>
-              {messages.map((m) => (
-                <li key={m.id}>
-                  <strong>{m.role === 'user' ? `${t('you')}:` : `${t('tutor')}:`}</strong>{' '}
-                  {(m.exerciseId || m.practiceExerciseId) && <em>{t('aboutExercise')} </em>}
-                  {m.content}
-                </li>
-              ))}
-            </ul>
+      </Button>
+      <Sheet open={open} onOpenChange={(next) => !next && onToggle()}>
+        <SheetContent
+          side={wide ? 'right' : 'bottom'}
+          showCloseButton={false}
+          aria-describedby={undefined}
+          className={cn(
+            'gap-0 bg-surface data-[state=closed]:duration-200 data-[state=open]:duration-250',
+            wide ? 'w-full sm:max-w-md' : 'max-h-[85dvh] rounded-t-2xl'
           )}
-          {messages && !aiAvailable && <p>{t.rich('unavailable', { link: settingsLink })}</p>}
-          {askAbout && (
-            <p>
-              {t('askingAbout', { label: askAbout.label })}{' '}
-              <button type="button" aria-label={t('clearAskAbout')} onClick={onClearAskAbout}>
-                ×
-              </button>
-            </p>
-          )}
-          <textarea
-            aria-label={t('messageLabel')}
-            value={draft}
-            disabled={!aiAvailable || busy}
-            maxLength={CHAT_MESSAGE_MAX_LENGTH}
-            onChange={(e) => setDraft(e.target.value)}
-          />
-          <button type="button" disabled={!aiAvailable || busy || messages === null || !draft.trim()} onClick={send}>
-            {busy ? t('sending') : t('send')}
-          </button>
-          {aiError && <p role="alert">{t.rich('aiFailed', { error: aiError, link: settingsLink })}</p>}
-          {error && <p role="alert">{error}</p>}
-        </div>
-      )}
-    </section>
+        >
+          <SheetHeader className="flex-row items-center justify-between border-b border-border py-2 pr-2 pl-4">
+            <SheetTitle className="flex items-center gap-2 font-heading text-lg font-extrabold">
+              <MessageCircle aria-hidden className="size-5 text-primary" />
+              {t('tutor')}
+            </SheetTitle>
+            <SheetClose asChild>
+              <Button type="button" variant="ghost" size="icon" aria-label={t('hide')} className="size-11">
+                <X aria-hidden />
+              </Button>
+            </SheetClose>
+          </SheetHeader>
+          <div className="flex min-h-40 flex-1 flex-col gap-3 overflow-y-auto p-4">
+            {loadFailed && (
+              <Alert variant="destructive" role="alert">
+                <AlertDescription>{t('loadFailed')}</AlertDescription>
+              </Alert>
+            )}
+            {!loadFailed && messages === null && (
+              <div role="status" aria-label={tCommon('loading')} className="flex flex-col gap-3">
+                <Skeleton className="h-12 w-3/4" />
+                <Skeleton className="ml-auto h-10 w-2/3" />
+              </div>
+            )}
+            {messages && messages.length === 0 && <p className="m-auto text-center text-sm text-text-muted">{t('empty')}</p>}
+            {messages && messages.length > 0 && (
+              <ul className="flex flex-col gap-3">
+                {messages.map((m) => (
+                  <li
+                    key={m.id}
+                    className={cn(
+                      'max-w-[85%] rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed whitespace-pre-wrap',
+                      m.role === 'user'
+                        ? 'self-end rounded-br-md bg-primary/15 text-text'
+                        : 'self-start rounded-bl-md border border-border bg-surface-raised text-text'
+                    )}
+                  >
+                    <strong className="block text-xs font-semibold text-text-muted">{m.role === 'user' ? `${t('you')}:` : `${t('tutor')}:`}</strong>{' '}
+                    {(m.exerciseId || m.practiceExerciseId) && <em className="text-text-muted">{t('aboutExercise')} </em>}
+                    {m.content}
+                  </li>
+                ))}
+              </ul>
+            )}
+            {messages && !aiAvailable && (
+              <Alert role={undefined}>
+                <AlertDescription>{t.rich('unavailable', { link: settingsLink })}</AlertDescription>
+              </Alert>
+            )}
+          </div>
+          <div className="flex flex-col gap-2 border-t border-border p-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
+            {askAbout && (
+              <p className="flex items-center gap-1 self-start rounded-full bg-primary/15 py-0.5 pl-3 text-sm">
+                {t('askingAbout', { label: askAbout.label })}{' '}
+                <Button type="button" variant="ghost" size="icon" aria-label={t('clearAskAbout')} onClick={onClearAskAbout} className="size-11 rounded-full">
+                  <X aria-hidden />
+                </Button>
+              </p>
+            )}
+            <div className="flex items-end gap-2">
+              <Textarea
+                aria-label={t('messageLabel')}
+                value={draft}
+                disabled={!aiAvailable || busy}
+                maxLength={CHAT_MESSAGE_MAX_LENGTH}
+                onChange={(e) => setDraft(e.target.value)}
+                className="max-h-40 min-h-11 bg-background"
+              />
+              <Button type="button" disabled={!aiAvailable || busy || messages === null || !draft.trim()} onClick={send} className="min-h-11 px-4">
+                <Send aria-hidden />
+                {busy ? t('sending') : t('send')}
+              </Button>
+            </div>
+            {aiError && (
+              <Alert variant="destructive" role="alert">
+                <AlertDescription>{t.rich('aiFailed', { error: aiError, link: settingsLink })}</AlertDescription>
+              </Alert>
+            )}
+            {error && (
+              <Alert variant="destructive" role="alert">
+                <AlertDescription>{error}</AlertDescription>
+              </Alert>
+            )}
+          </div>
+        </SheetContent>
+      </Sheet>
+    </>
   );
 }

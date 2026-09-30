@@ -27,12 +27,14 @@ export function useExerciseShortcuts(handlers: { onPick?: (index: number) => voi
     function onKeyDown(event: KeyboardEvent) {
       // Esc from a text field must not leave the run: the unsent draft would be lost.
       if (isTyping(event.target)) return;
+      // An open dialog (exit confirmation, the lesson chat sheet) owns the keys, Esc included.
+      if (document.querySelector('[role="alertdialog"], [role="dialog"]')) return;
       if (event.key === 'Escape') {
         onEscape?.();
         return;
       }
-      // A held key must not check and then continue; an open dialog (exit confirmation) owns the keys.
-      if (event.repeat || document.querySelector('[role="alertdialog"]')) return;
+      // A held key must not check and then continue.
+      if (event.repeat) return;
       if (event.metaKey || event.ctrlKey || event.altKey) return;
       if (/^[1-4]$/.test(event.key) && onPick) {
         event.preventDefault();
