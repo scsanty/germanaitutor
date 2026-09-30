@@ -25,6 +25,7 @@ const PAIRS: [string, string, number][] = [
   ['accent', 'background', 3],
   ['success', 'background', 4.5],
   ['danger', 'background', 4.5],
+  ['danger-foreground', 'danger', 4.5],
   ['warning', 'background', 3],
   ['focus-ring', 'background', 3],
 ];
