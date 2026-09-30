@@ -6,8 +6,8 @@ import { TrackLevelStructure } from './TrackLevelStructure';
 vi.mock('./DependencyDiagram', () => ({ DependencyDiagram: () => <p>diagram</p> }));
 
 const STRUCTURE = [
-  { milestone: { id: 'm1', title: 'Basics', description: null, difficultyRank: 1 }, lessons: [{ id: 'a1-greet', title: 'Saying hello' }] },
-  { milestone: { id: 'generic-a1-unsorted', title: 'Unsorted', description: null, difficultyRank: null }, lessons: [] },
+  { milestone: { id: 'm1', title: 'Basics', description: null, difficultyRank: 1 }, lessons: [{ id: 'a1-greet', title: 'Saying hello' }], lessonsBuildingOnUnsorted: [] },
+  { milestone: { id: 'generic-a1-unsorted', title: 'Unsorted', description: null, difficultyRank: null }, lessons: [], lessonsBuildingOnUnsorted: [] },
 ];
 
 function stub(routes: Record<string, (init?: RequestInit) => Promise<unknown>>) {
@@ -32,6 +32,28 @@ describe('TrackLevelStructure', () => {
     expect(screen.getByRole('link', { name: 'Saying hello' })).toHaveAttribute('href', '/admin/curriculum/lesson/a1-greet?track=generic');
     expect(screen.getByRole('heading', { name: 'Unsorted' })).toBeInTheDocument();
     expect(screen.getAllByRole('button', { name: 'Delete milestone' })).toHaveLength(1);
+  });
+
+  it('moves a lesson with "Move to…" and flags lessons building on Unsorted', async () => {
+    const withFlag = [
+      { ...STRUCTURE[0], lessonsBuildingOnUnsorted: ['a1-greet'] },
+      { milestone: { id: 'm2', title: 'Past', description: null, difficultyRank: 2 }, lessons: [], lessonsBuildingOnUnsorted: [] },
+      { ...STRUCTURE[1], lessonsBuildingOnUnsorted: [] },
+    ];
+    const fetchMock = stub({
+      'GET /api/curriculum/tracks/generic/A1': () => delayedResponse(withFlag),
+      'PATCH /api/admin/curriculum/lessons/a1-greet/milestone': () => delayedResponse({ ok: true }),
+    });
+    render(<TrackLevelStructure track="generic" level="A1" />);
+    expect(await screen.findByText('builds on a lesson in Unsorted')).toBeInTheDocument();
+    fireEvent.change(screen.getByLabelText('Move Saying hello to'), { target: { value: 'm2' } });
+    await waitFor(() =>
+      expect(fetchMock).toHaveBeenCalledWith('/api/admin/curriculum/lessons/a1-greet/milestone', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ milestoneId: 'm2' }),
+      })
+    );
   });
 
   it('creates a milestone with a rank', async () => {

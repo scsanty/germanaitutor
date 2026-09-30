@@ -12,6 +12,7 @@ export interface StructureLesson {
 export interface StructureEntry {
   milestone: { id: string; title: string; description: string | null; difficultyRank: number | null };
   lessons: StructureLesson[];
+  lessonsBuildingOnUnsorted: string[];
 }
 
 async function errorOf(res: Response, fallback: string): Promise<string> {
@@ -87,6 +88,18 @@ export function TrackLevelStructure({ track, level }: { track: Track; level: Cef
     else setError(await errorOf(res, 'Failed to delete milestone'));
   }
 
+  async function moveLesson(lessonId: string, milestoneId: string) {
+    const res = await fetch(`/api/admin/curriculum/lessons/${lessonId}/milestone`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ milestoneId }),
+    });
+    if (res.ok) {
+      setError(null);
+      load();
+    } else setError(await errorOf(res, 'Failed to move lesson'));
+  }
+
   return (
     <div>
       <h1>
@@ -144,7 +157,23 @@ export function TrackLevelStructure({ track, level }: { track: Track; level: Cef
               <ul>
                 {entry.lessons.map((lesson) => (
                   <li key={lesson.id}>
-                    <a href={`/admin/curriculum/lesson/${lesson.id}?track=${track}`}>{lesson.title}</a>
+                    <a href={`/admin/curriculum/lesson/${lesson.id}?track=${track}`}>{lesson.title}</a>{' '}
+                    {entry.lessonsBuildingOnUnsorted.includes(lesson.id) && <em>builds on a lesson in Unsorted</em>}{' '}
+                    <select
+                      aria-label={`Move ${lesson.title} to`}
+                      value=""
+                      onChange={(e) => e.target.value && moveLesson(lesson.id, e.target.value)}
+                    >
+                      <option value="">Move to…</option>
+                      {structure
+                        .filter((other) => other.milestone.id !== entry.milestone.id)
+                        .map((other) => (
+                          <option key={other.milestone.id} value={other.milestone.id}>
+                            {other.milestone.difficultyRank === null ? '' : `${other.milestone.difficultyRank}. `}
+                            {other.milestone.title}
+                          </option>
+                        ))}
+                    </select>
                   </li>
                 ))}
               </ul>

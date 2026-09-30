@@ -10,6 +10,31 @@ function seedMilestone(db: ReturnType<typeof createDbClient>) {
 }
 
 describe('lessonAdminService.createLesson', () => {
+  it('rejects a prerequisite in a later milestone and rolls the whole create back', () => {
+    const db = createDbClient(':memory:');
+    db.exec(`
+      INSERT INTO milestones (id, track, level, title, difficulty_rank) VALUES ('m1', 'generic', 'A1', 'One', 1), ('m2', 'generic', 'A1', 'Two', 2);
+      INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('a1-later', 'generic', 'A1', 'grammar', 'Later');
+      INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES ('a1-later', 'm2');
+    `);
+    const service = createLessonAdminService(db);
+    expect(() =>
+      service.createLesson({
+        slug: 'early',
+        track: 'generic',
+        sourceLevel: 'A1',
+        skill: 'grammar',
+        title: 'Early',
+        explanation: null,
+        examples: null,
+        exercises: [],
+        prerequisiteIds: ['a1-later'],
+        placement: { milestoneId: 'm1' },
+      })
+    ).toThrow('Early builds on Later, which is in a later or parallel milestone');
+    expect(db.prepare("SELECT 1 FROM lessons WHERE id = 'a1-early'").get()).toBeUndefined();
+  });
+
   it('creates a lesson with the {level}-{slug} id and returns it', () => {
     const db = createDbClient(':memory:');
     seedMilestone(db);

@@ -79,7 +79,10 @@ export function createCurriculumService(db: Database.Database) {
     return Array.from(byTrack.entries()).map(([track, levels]) => ({ track, levels }));
   }
 
-  function getTrackStructure(track: Track, level: CefrLevel): { milestone: Milestone; lessons: Lesson[] }[] {
+  function getTrackStructure(
+    track: Track,
+    level: CefrLevel
+  ): { milestone: Milestone; lessons: Lesson[]; lessonsBuildingOnUnsorted: string[] }[] {
     ensureUnsortedExists(db, track, level);
     const unsortedId = unsortedMilestoneId(track, level);
     const milestoneRows = db
@@ -94,9 +97,20 @@ export function createCurriculumService(db: Database.Database) {
        WHERE lesson_placements.milestone_id = ?
        ORDER BY lessons.title, lessons.id`
     );
+    const buildsOnUnsorted = db.prepare(
+      `SELECT DISTINCT lp.lesson_id FROM lesson_prerequisites lp
+       JOIN lesson_placements pre ON pre.lesson_id = lp.prerequisite_lesson_id
+       JOIN lesson_placements own ON own.lesson_id = lp.lesson_id
+       WHERE pre.milestone_id = ? AND own.milestone_id = ?
+       ORDER BY lp.lesson_id`
+    );
     return milestoneRows.map((row) => ({
       milestone: rowToMilestone(row),
       lessons: (lessonsOf.all(row.id) as LessonRow[]).map(rowToLesson),
+      lessonsBuildingOnUnsorted:
+        row.id === unsortedId
+          ? []
+          : (buildsOnUnsorted.all(unsortedId, row.id) as { lesson_id: string }[]).map((r) => r.lesson_id),
     }));
   }
 

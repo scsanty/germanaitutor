@@ -1,4 +1,5 @@
 import type Database from 'better-sqlite3';
+import { assertPrerequisiteScope } from '../curriculum-admin/prerequisiteScope';
 import type { Track, CefrLevel } from '../types';
 import type { Skill, Lesson, ExerciseType } from '../curriculum/types';
 import { createCurriculumService } from './curriculumService';
@@ -86,6 +87,8 @@ export function createLessonAdminService(db: Database.Database) {
           prerequisiteId
         );
       }
+
+      assertPrerequisiteScope(db, [id]);
     });
 
     run();
@@ -166,6 +169,8 @@ export function createLessonAdminService(db: Database.Database) {
           );
         }
       }
+
+      assertPrerequisiteScope(db, [id]);
     });
 
     run();

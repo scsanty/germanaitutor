@@ -81,3 +81,36 @@ describe('curriculumStructureService — milestones', () => {
     expect(() => service.deleteMilestone(milestoneId)).toThrow(/Unsorted/);
   });
 });
+
+describe('scope checks on structure edits', () => {
+  function setup() {
+    const db = createDbClient(':memory:');
+    db.exec(`
+      INSERT INTO milestones (id, track, level, title, difficulty_rank) VALUES ('m1', 'generic', 'A1', 'One', 1),
+        ('m2', 'generic', 'A1', 'Two', 2), ('m9', 'generic', 'A2', 'Elsewhere', 1);
+      INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('a', 'generic', 'A1', 'grammar', 'Alpha'),
+        ('b', 'generic', 'A1', 'grammar', 'Beta');
+      INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES ('a', 'm1'), ('b', 'm2');
+      INSERT INTO lesson_prerequisites (lesson_id, prerequisite_lesson_id) VALUES ('b', 'a');
+    `);
+    return { db, service: createCurriculumStructureService(db) };
+  }
+
+  // Review Focus 5: lowering a rank below a milestone its lessons depend on is refused, and nothing changes.
+  it('refuses a rank change that breaks the scope rule and keeps the old rank', () => {
+    const { db, service } = setup();
+    expect(() => service.updateMilestone('m2', { title: 'Two', description: null, difficultyRank: 1 })).toThrow(
+      'Beta builds on Alpha, which is in a later or parallel milestone'
+    );
+    expect(db.prepare("SELECT difficulty_rank FROM milestones WHERE id = 'm2'").get()).toEqual({ difficulty_rank: 2 });
+  });
+
+  it('moves a lesson to another milestone of its track+level, checking scope', () => {
+    const { db, service } = setup();
+    service.moveLesson('a', 'm2'); // same milestone as its dependent: allowed
+    expect(db.prepare("SELECT milestone_id FROM lesson_placements WHERE lesson_id = 'a'").get()).toEqual({ milestone_id: 'm2' });
+    expect(() => service.moveLesson('b', 'm1')).toThrow(/later or parallel/);
+    expect(() => service.moveLesson('a', 'm9')).toThrow(/belongs to generic\/A2/);
+    expect(() => service.moveLesson('a', 'nope')).toThrow(/not found/);
+  });
+});

@@ -2,6 +2,7 @@ import type Database from 'better-sqlite3';
 import type { Track, CefrLevel } from '../types';
 import type { Milestone } from '../curriculum/types';
 import { ensureUnsortedExists, unsortedMilestoneId } from '../curriculum-admin/unsortedBucket';
+import { assertPrerequisiteScope } from '../curriculum-admin/prerequisiteScope';
 import { randomSuffix } from '../curriculum-admin/randomId';
 
 export interface DisplacedLesson {
@@ -78,13 +79,38 @@ export function createCurriculumStructureService(db: Database.Database) {
     assertNotUnsorted(milestone);
     const rank = assertValidRank(input.difficultyRank);
     if (!input.title?.trim()) throw new Error('A milestone needs a title');
-    db.prepare('UPDATE milestones SET title = ?, description = ?, difficulty_rank = ? WHERE id = ?').run(
-      input.title.trim(),
-      input.description,
-      rank,
-      id
-    );
+    db.transaction(() => {
+      db.prepare('UPDATE milestones SET title = ?, description = ?, difficulty_rank = ? WHERE id = ?').run(
+        input.title.trim(),
+        input.description,
+        rank,
+        id
+      );
+      const lessonIds = (db.prepare('SELECT lesson_id FROM lesson_placements WHERE milestone_id = ?').all(id) as { lesson_id: string }[]).map(
+        (r) => r.lesson_id
+      );
+      assertPrerequisiteScope(db, lessonIds);
+    })();
     return getMilestone(id);
+  }
+
+  // Spec: Admin, "Move to…". Same track+level only; the scope rule is re-checked for the lesson.
+  function moveLesson(lessonId: string, milestoneId: string): void {
+    const lesson = db.prepare('SELECT track, source_level FROM lessons WHERE id = ?').get(lessonId) as
+      | { track: Track; source_level: CefrLevel }
+      | undefined;
+    if (!lesson) throw new Error(`Lesson not found: ${lessonId}`);
+    const target = getMilestone(milestoneId);
+    if (target.track !== lesson.track || target.level !== lesson.source_level) {
+      throw new Error(`Milestone ${milestoneId} belongs to ${target.track}/${target.level}, not ${lesson.track}/${lesson.source_level}`);
+    }
+    db.transaction(() => {
+      db.prepare(
+        `INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES (?, ?)
+         ON CONFLICT(lesson_id) DO UPDATE SET milestone_id = excluded.milestone_id`
+      ).run(lessonId, milestoneId);
+      assertPrerequisiteScope(db, [lessonId]);
+    })();
   }
 
   function previewMilestoneDelete(id: string): MilestoneDeletePreview {
@@ -108,7 +134,7 @@ export function createCurriculumStructureService(db: Database.Database) {
     })();
   }
 
-  return { getMilestone, createMilestone, updateMilestone, previewMilestoneDelete, deleteMilestone };
+  return { getMilestone, createMilestone, updateMilestone, previewMilestoneDelete, deleteMilestone, moveLesson };
 }
 
 export type CurriculumStructureService = ReturnType<typeof createCurriculumStructureService>;

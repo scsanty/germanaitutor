@@ -9,6 +9,12 @@ const structure = [
       { id: 'a1-basics', title: 'Basics', skill: 'grammar' },
       { id: 'a1-advanced', title: 'Advanced', skill: 'grammar' },
     ],
+    lessonsBuildingOnUnsorted: [],
+  },
+  {
+    milestone: { id: 'm2', title: 'M2', description: null, difficultyRank: 2 },
+    lessons: [{ id: 'a1-later', title: 'Later', skill: 'reading' }],
+    lessonsBuildingOnUnsorted: [],
   },
 ];
 
@@ -38,6 +44,13 @@ describe('DependencyDiagram', () => {
     const { container } = render(<DependencyDiagram track="generic" level="A1" />);
     await waitFor(() => expect(screen.getByText('Advanced')).toBeInTheDocument());
     expect(container.querySelectorAll('line')).toHaveLength(1);
+  });
+
+  it('draws one band per milestone, headed by rank and title', async () => {
+    render(<DependencyDiagram track="generic" level="A1" />);
+    expect(await screen.findByRole('heading', { name: '1. M1' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: '2. M2' })).toBeInTheDocument();
+    expect(screen.getAllByRole('img')).toHaveLength(2);
   });
 
   it('surfaces an error instead of hanging on Loading when the structure fetch fails', async () => {
