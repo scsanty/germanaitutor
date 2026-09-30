@@ -37,6 +37,7 @@ export function LessonPage({ lessonId }: { lessonId: string }) {
   const [askAbout, setAskAbout] = useState<AskAbout | null>(null);
   const [marking, setMarking] = useState(false);
   const [markError, setMarkError] = useState<string | null>(null);
+  const [practiceActive, setPracticeActive] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -186,9 +187,12 @@ export function LessonPage({ lessonId }: { lessonId: string }) {
           </div>
         )
       ) : !run ? (
-        <button type="button" onClick={() => startRun(lesson)}>
-          {lesson.completed ? t('practiceAgain') : lesson.passedExerciseIds.length > 0 ? t('continue') : t('start')}
-        </button>
+        // A practice batch in progress is already marked seen; starting a lesson run would unmount it.
+        !practiceActive && (
+          <button type="button" onClick={() => startRun(lesson)}>
+            {lesson.completed ? t('practiceAgain') : lesson.passedExerciseIds.length > 0 ? t('continue') : t('start')}
+          </button>
+        )
       ) : current ? (
         <div>
           <p>{t('progress', { passed: run.passed, total: run.total })}</p>
@@ -226,7 +230,7 @@ export function LessonPage({ lessonId }: { lessonId: string }) {
 
       {/* Spec Phase 2: practice only on a lesson the student has completed themselves, and not
           while a lesson run is showing an exercise. */}
-      {lesson.completed && !current && <PracticeRun lessonId={lesson.id} onAskAi={practiceAskAi} />}
+      {lesson.completed && !current && <PracticeRun lessonId={lesson.id} onAskAi={practiceAskAi} onActiveChange={setPracticeActive} />}
       <LessonChat
         lessonId={lesson.id}
         open={chatOpen}

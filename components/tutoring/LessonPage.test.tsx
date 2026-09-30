@@ -170,4 +170,22 @@ describe('LessonPage', () => {
     await screen.findByRole('button', { name: 'Start the exercises' });
     expect(screen.queryByRole('button', { name: 'Get more exercises' })).not.toBeInTheDocument();
   });
+
+  it('does not offer a lesson run while a practice batch is in progress', async () => {
+    stubFetch({
+      'GET /api/tutoring/lessons/a1-greet': () => delayedResponse({ ...LESSON, completed: true, passedExerciseIds: ['ex1', 'ex2'] }),
+      'POST /api/tutoring/lessons/a1-greet/practice': () =>
+        delayedResponse({ exercises: [{ id: 'px-1', type: 'multiple_choice', question: 'Neu?', options: ['ja', 'nein'] }] }),
+      'POST /api/tutoring/practice/answer': () => delayedResponse({ result: 'correct', correctAnswer: 'ja' }),
+    });
+    renderWithIntl(<LessonPage lessonId="a1-greet" />);
+    expect(await screen.findByRole('button', { name: 'Practice again' })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Get more exercises' }));
+    await screen.findByText('Neu?');
+    expect(screen.queryByRole('button', { name: 'Practice again' })).not.toBeInTheDocument();
+    fireEvent.click(screen.getByLabelText('ja'));
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }));
+    fireEvent.click(await screen.findByRole('button', { name: 'Next' }));
+    expect(await screen.findByRole('button', { name: 'Practice again' })).toBeInTheDocument();
+  });
 });

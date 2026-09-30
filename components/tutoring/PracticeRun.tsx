@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useApiErrorText } from '@/components/useApiErrorText';
@@ -23,11 +23,13 @@ const EMPTY_TALLY: Tally = { correct: 0, almost: 0, wrong: 0, skipped: 0 };
 export interface PracticeRunProps {
   lessonId: string;
   onAskAi: (practiceExerciseId: string, answer: { answerText: string; result: GradeResult }) => void;
+  // True from the moment a batch loads until its summary shows.
+  onActiveChange?: (active: boolean) => void;
 }
 
 // Spec Phase 2: a batch of practice exercises, each shown once, no retry round, nothing recorded.
 // When the batch ends the button comes back for more.
-export function PracticeRun({ lessonId, onAskAi }: PracticeRunProps) {
+export function PracticeRun({ lessonId, onAskAi, onActiveChange }: PracticeRunProps) {
   const t = useTranslations('practice');
   const errorText = useApiErrorText();
   const [phase, setPhase] = useState<Phase>('idle');
@@ -38,6 +40,10 @@ export function PracticeRun({ lessonId, onAskAi }: PracticeRunProps) {
   const [lastResult, setLastResult] = useState<GradeResult | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [generationError, setGenerationError] = useState<string | null>(null);
+
+  useEffect(() => {
+    onActiveChange?.(phase === 'running');
+  }, [phase, onActiveChange]);
 
   async function start() {
     setPhase('loading');
