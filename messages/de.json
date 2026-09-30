@@ -334,5 +334,6 @@
     "profile": "Profil",
     "settings": "Einstellungen",
     "withDue": "{label} ({count} fällig)"
-  }
+  },
+  "focus": {"leave": "Verlassen", "progress": "Übung {current} von {total}", "leaveTitle": "Diese Übung verlassen?", "leaveBody": "Dein Fortschritt bei beantworteten Übungen bleibt erhalten.", "stay": "Bleiben", "leaveAnyway": "Trotzdem verlassen", "keysHint": "Tasten: 1–4 wählen · Enter prüfen · Esc verlassen"}
 }

@@ -334,5 +334,6 @@
     "profile": "Profile",
     "settings": "Settings",
     "withDue": "{label} ({count} due)"
-  }
+  },
+  "focus": {"leave": "Leave", "progress": "Exercise {current} of {total}", "leaveTitle": "Leave this exercise?", "leaveBody": "Your progress on answered exercises is kept.", "stay": "Stay", "leaveAnyway": "Leave anyway", "keysHint": "Keys: 1–4 choose · Enter check · Esc leave"}
 }
