@@ -59,7 +59,7 @@ describe('ExerciseCard', () => {
     expect(screen.queryByText(/Correct answer:/)).not.toBeInTheDocument();
 
     fireEvent.click(screen.getByRole('button', { name: 'Ask AI' }));
-    expect(props.onAskAi).toHaveBeenCalledWith('ex1');
+    expect(props.onAskAi).toHaveBeenCalledWith('ex1', { answerText: 'Hallo', result: 'correct' });
     fireEvent.click(screen.getByRole('button', { name: 'Next' }));
     expect(props.onNext).toHaveBeenCalled();
   });
@@ -146,5 +146,57 @@ describe('ExerciseCard', () => {
     fireEvent.click(screen.getByLabelText('Hallo'));
     fireEvent.click(screen.getByRole('button', { name: 'Check' }));
     expect(await screen.findByRole('alert')).toHaveTextContent('Something went wrong: Level A2 is locked');
+  });
+
+  it('in practice mode grades through the practice endpoint and shows Wrong with the correct answer', async () => {
+    const fetchMock = stubAttempts(() => delayedResponse({ result: 'wrong', correctAnswer: 'Hallo' }));
+    const onPracticeAnswered = vi.fn();
+    const onAskAi = vi.fn();
+    renderWithIntl(
+      <ExerciseCard exercise={MC} source="lesson" mode="practice" onPracticeAnswered={onPracticeAnswered} onNext={vi.fn()} onSkip={vi.fn()} onAskAi={onAskAi} />
+    );
+    fireEvent.click(screen.getByLabelText('Tschüss'));
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }));
+
+    expect(await screen.findByText('Wrong')).toBeInTheDocument();
+    expect(screen.getByText('Correct answer: Hallo')).toBeInTheDocument();
+    expect(fetchMock).toHaveBeenCalledWith('/api/tutoring/practice/answer', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ practiceExerciseId: 'ex1', answer: { type: 'multiple_choice', selectedIndex: 1 } }),
+    });
+    expect(onPracticeAnswered).toHaveBeenCalledWith({ result: 'wrong', correctAnswer: 'Hallo' });
+    fireEvent.click(screen.getByRole('button', { name: 'Ask AI' }));
+    expect(onAskAi).toHaveBeenCalledWith('ex1', { answerText: 'Tschüss', result: 'wrong' });
+  });
+
+  it('in practice mode shows Right alone, and Almost with the model answer for free text', async () => {
+    stubAttempts(() => delayedResponse({ result: 'correct', correctAnswer: 'Hallo' }));
+    const { unmount } = renderWithIntl(
+      <ExerciseCard exercise={MC} source="lesson" mode="practice" onNext={vi.fn()} onSkip={vi.fn()} />
+    );
+    fireEvent.click(screen.getByLabelText('Hallo'));
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }));
+    expect(await screen.findByText('Right')).toBeInTheDocument();
+    expect(screen.queryByText(/Correct answer:/)).not.toBeInTheDocument();
+    unmount();
+
+    stubAttempts(() => delayedResponse({ result: 'almost', correctAnswer: 'Ich bin müde.' }));
+    renderWithIntl(<ExerciseCard exercise={FREE} source="lesson" mode="practice" onNext={vi.fn()} onSkip={vi.fn()} />);
+    fireEvent.change(screen.getByLabelText('Your answer'), { target: { value: 'Ich bin mude.' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }));
+    expect(await screen.findByText('Almost')).toBeInTheDocument();
+    expect(screen.getByText('Model answer: Ich bin müde.')).toBeInTheDocument();
+  });
+
+  it('in practice mode offers Skip for any error, such as an exercise removed mid-batch', async () => {
+    stubAttempts(() => delayedResponse({ error: 'Practice exercise not found: ex1', code: 'not_found' }, { ok: false, status: 404 }));
+    const onSkip = vi.fn();
+    renderWithIntl(<ExerciseCard exercise={MC} source="lesson" mode="practice" onNext={vi.fn()} onSkip={onSkip} />);
+    fireEvent.click(screen.getByLabelText('Hallo'));
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }));
+    expect(await screen.findByRole('alert')).toHaveTextContent('Something went wrong: That could not be found');
+    fireEvent.click(screen.getByRole('button', { name: 'Skip for now' }));
+    expect(onSkip).toHaveBeenCalled();
   });
 });

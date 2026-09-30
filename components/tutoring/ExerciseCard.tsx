@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import type { ExerciseView } from '@/lib/tutoring/exerciseView';
 import type { AttemptOutcome, AttemptSource, FlashcardRating, LessonAnswer } from '@/lib/tutoring/lessonAnswers';
+import type { GradeResult } from '@/lib/tutoring/grading';
+import type { PracticeGradeOutcome } from '@/lib/tutoring/practiceViews';
 import { useApiErrorText } from '@/components/useApiErrorText';
 
 const RATINGS: FlashcardRating[] = ['knew', 'sort_of', 'didnt_know'];
@@ -12,10 +14,20 @@ const RATINGS: FlashcardRating[] = ['knew', 'sort_of', 'didnt_know'];
 export interface ExerciseCardProps {
   exercise: ExerciseView;
   source: AttemptSource;
-  onAnswered: (outcome: AttemptOutcome) => void;
+  mode?: 'lesson' | 'practice';
+  onAnswered?: (outcome: AttemptOutcome) => void;
+  onPracticeAnswered?: (outcome: PracticeGradeOutcome) => void;
   onNext: () => void;
   onSkip: () => void;
-  onAskAi?: (exerciseId: string) => void;
+  onAskAi?: (exerciseId: string, answer: { answerText: string; result: GradeResult }) => void;
+}
+
+// What the card shows after an answer, in lesson or practice mode.
+interface Shown {
+  result: GradeResult;
+  correctAnswer: string | null;
+  feedback: string | null;
+  answerText: string;
 }
 
 function taskText(exercise: ExerciseView): string {
@@ -31,7 +43,28 @@ function taskText(exercise: ExerciseView): string {
   }
 }
 
-export function ExerciseCard({ exercise, source, onAnswered, onNext, onSkip, onAskAi }: ExerciseCardProps) {
+function answerTextOf(exercise: ExerciseView, answer: LessonAnswer): string {
+  switch (answer.type) {
+    case 'multiple_choice':
+      return exercise.type === 'multiple_choice' ? (exercise.options[answer.selectedIndex] ?? '') : '';
+    case 'fill_blank':
+    case 'free_text':
+      return answer.text;
+    case 'flashcard':
+      return answer.rating;
+  }
+}
+
+export function ExerciseCard({
+  exercise,
+  source,
+  mode = 'lesson',
+  onAnswered,
+  onPracticeAnswered,
+  onNext,
+  onSkip,
+  onAskAi,
+}: ExerciseCardProps) {
   const t = useTranslations('exercise');
   const errorText = useApiErrorText();
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -40,22 +73,33 @@ export function ExerciseCard({ exercise, source, onAnswered, onNext, onSkip, onA
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [gradingError, setGradingError] = useState<string | null>(null);
-  const [outcome, setOutcome] = useState<AttemptOutcome | null>(null);
+  const [shown, setShown] = useState<Shown | null>(null);
 
   async function submit(answer: LessonAnswer) {
     setBusy(true);
     setError(null);
     setGradingError(null);
     try {
-      const res = await fetch('/api/tutoring/attempts', {
+      const practice = mode === 'practice';
+      const res = await fetch(practice ? '/api/tutoring/practice/answer' : '/api/tutoring/attempts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ exerciseId: exercise.id, answer, source }),
+        body: JSON.stringify(
+          practice ? { practiceExerciseId: exercise.id, answer } : { exerciseId: exercise.id, answer, source }
+        ),
       });
       const data = await res.json().catch(() => ({}));
       if (res.ok) {
-        setOutcome(data as AttemptOutcome);
-        onAnswered(data as AttemptOutcome);
+        const answerText = answerTextOf(exercise, answer);
+        if (practice) {
+          const outcome = data as PracticeGradeOutcome;
+          setShown({ result: outcome.result, correctAnswer: outcome.correctAnswer, feedback: null, answerText });
+          onPracticeAnswered?.(outcome);
+        } else {
+          const outcome = data as AttemptOutcome;
+          setShown({ result: outcome.result, correctAnswer: outcome.correctAnswer, feedback: outcome.feedback, answerText });
+          onAnswered?.(outcome);
+        }
         return;
       }
       const detail = errorText(data, String(res.status));
@@ -93,26 +137,28 @@ export function ExerciseCard({ exercise, source, onAnswered, onNext, onSkip, onA
     </>
   );
 
-  if (outcome) {
+  if (shown) {
+    // Practice (spec Phase 2): the right answer only when the student missed it. Lessons keep
+    // Phase 1's rule of also showing the model answer for correct free text.
     const showAnswer =
       exercise.type !== 'flashcard' &&
-      outcome.correctAnswer !== null &&
-      (outcome.result !== 'correct' || exercise.type === 'free_text');
+      shown.correctAnswer !== null &&
+      (shown.result !== 'correct' || (mode === 'lesson' && exercise.type === 'free_text'));
     return (
       <div>
         <p>{taskText(exercise)}</p>
         {exercise.type === 'flashcard' && <p>{exercise.back}</p>}
-        <p>{t(`result.${outcome.result}`)}</p>
+        <p>{mode === 'practice' ? t(`practiceResult.${shown.result}`) : t(`result.${shown.result}`)}</p>
         {showAnswer && (
           <p>
             {exercise.type === 'free_text'
-              ? t('modelAnswer', { answer: outcome.correctAnswer ?? '' })
-              : t('correctAnswer', { answer: outcome.correctAnswer ?? '' })}
+              ? t('modelAnswer', { answer: shown.correctAnswer ?? '' })
+              : t('correctAnswer', { answer: shown.correctAnswer ?? '' })}
           </p>
         )}
-        {outcome.feedback && <p>{t('feedback', { feedback: outcome.feedback })}</p>}
+        {shown.feedback && <p>{t('feedback', { feedback: shown.feedback })}</p>}
         {exercise.type !== 'flashcard' && onAskAi && (
-          <button type="button" onClick={() => onAskAi(exercise.id)}>
+          <button type="button" onClick={() => onAskAi(exercise.id, { answerText: shown.answerText, result: shown.result })}>
             {t('askAi')}
           </button>
         )}
@@ -180,9 +226,10 @@ export function ExerciseCard({ exercise, source, onAnswered, onNext, onSkip, onA
       <button type="button" disabled={busy || answer === null} onClick={() => answer && submit(answer)}>
         {busy ? t('submitting') : t('submit')}
       </button>
-      {/* M-4: a lesson run has its own retry round for a plain error, but the Daily Queue does
-          not, so any error there — not only a grading failure — needs a way forward. */}
-      {(gradingError || (source === 'queue' && error)) && (
+      {/* M-4: a lesson run has its own retry round for a plain error, but the Daily Queue and a
+          practice batch do not, so any error there — not only a grading failure — needs a way
+          forward. */}
+      {(gradingError || ((source === 'queue' || mode === 'practice') && error)) && (
         <button type="button" onClick={onSkip}>
           {t('skipForNow')}
         </button>

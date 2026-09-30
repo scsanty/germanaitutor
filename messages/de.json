@@ -76,6 +76,11 @@
       "almost": "Fast – das zählt als bestanden.",
       "wrong": "Nicht ganz."
     },
+    "practiceResult": {
+      "correct": "Richtig",
+      "almost": "Fast richtig",
+      "wrong": "Falsch"
+    },
     "correctAnswer": "Richtige Antwort: {answer}",
     "modelAnswer": "Musterantwort: {answer}",
     "feedback": "Rückmeldung: {feedback}",
@@ -83,6 +88,15 @@
     "next": "Weiter",
     "skipForNow": "Vorerst überspringen",
     "gradingFailed": "Deine Antwort konnte nicht bewertet werden: {error}. Deine Antwort bleibt erhalten, du kannst es noch einmal versuchen. <link>Öffne die Einstellungen</link>, falls das öfter passiert.",
+    "genericError": "Etwas ist schiefgelaufen: {error}"
+  },
+  "practice": {
+    "getMore": "Mehr Übungen",
+    "preparing": "Übungen werden vorbereitet …",
+    "counter": "Übung {current} von {total}",
+    "summary": "{correct} richtig, {almost} fast richtig, {wrong} falsch",
+    "summarySkipped": "{skipped} übersprungen",
+    "generationFailed": "Es konnten keine Übungen vorbereitet werden: {error}. <link>Öffne die Einstellungen</link>, falls das öfter passiert.",
     "genericError": "Etwas ist schiefgelaufen: {error}"
   },
   "chat": {

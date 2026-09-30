@@ -76,6 +76,11 @@
       "almost": "Almost — that counts as passed.",
       "wrong": "Not quite."
     },
+    "practiceResult": {
+      "correct": "Right",
+      "almost": "Almost",
+      "wrong": "Wrong"
+    },
     "correctAnswer": "Correct answer: {answer}",
     "modelAnswer": "Model answer: {answer}",
     "feedback": "Feedback: {feedback}",
@@ -83,6 +88,15 @@
     "next": "Next",
     "skipForNow": "Skip for now",
     "gradingFailed": "Your answer could not be graded: {error}. Your answer is kept, so you can try again. <link>Visit Settings</link> if this keeps happening.",
+    "genericError": "Something went wrong: {error}"
+  },
+  "practice": {
+    "getMore": "Get more exercises",
+    "preparing": "Preparing exercises…",
+    "counter": "Practice {current} of {total}",
+    "summary": "{correct} right, {almost} almost, {wrong} wrong",
+    "summarySkipped": "{skipped} skipped",
+    "generationFailed": "No practice exercises could be prepared: {error}. <link>Visit Settings</link> if this keeps happening.",
     "genericError": "Something went wrong: {error}"
   },
   "chat": {
