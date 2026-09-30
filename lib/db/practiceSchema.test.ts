@@ -14,11 +14,19 @@ function seed(db: Database.Database) {
   `);
 }
 
+function indexNames(db: Database.Database): string[] {
+  return (db.prepare("SELECT name FROM sqlite_master WHERE type = 'index'").all() as { name: string }[]).map((r) => r.name);
+}
+
 function count(db: Database.Database, table: string): number {
   return (db.prepare(`SELECT COUNT(*) AS n FROM ${table}`).get() as { n: number }).n;
 }
 
 describe('practice pool tables', () => {
+  it('indexes the chat practice column on a fresh database', () => {
+    expect(indexNames(createDbClient(':memory:'))).toContain('idx_lesson_chat_messages_practice');
+  });
+
   it('deleting a lesson removes its pool, what was seen, and its chat', () => {
     const db = createDbClient(':memory:');
     seed(db);
@@ -60,6 +68,7 @@ describe('practice pool tables', () => {
     runMigrations(db);
     const columns = (db.prepare('PRAGMA table_info(lesson_chat_messages)').all() as { name: string }[]).map((c) => c.name);
     expect(columns).toContain('practice_exercise_id');
+    expect(indexNames(db)).toContain('idx_lesson_chat_messages_practice');
     runMigrations(db);
   });
 });

@@ -42,6 +42,13 @@ describe('seed loader: practice', () => {
     expect(db.prepare('SELECT id, review_status FROM practice_exercises').all()).toEqual([{ id: 'a1-l__px-1', review_status: 'approved' }]);
   });
 
+  it('stamps seeded practice rows in ISO format like runtime rows', () => {
+    const db = load(seed([{ id: 'a1-l__px-1', lessonId: 'a1-l', type: 'fill_blank', content: { textWithBlank: '___', correctAnswer: 'ja' } }]));
+    const row = db.prepare('SELECT created_at, reviewed_at FROM practice_exercises').get() as { created_at: string; reviewed_at: string };
+    expect(row.created_at).toMatch(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/);
+    expect(row.reviewed_at).toBe(row.created_at);
+  });
+
   it('loads a file without a practice list as before', () => {
     expect(load(seed()).prepare('SELECT COUNT(*) AS n FROM practice_exercises').get()).toEqual({ n: 0 });
   });

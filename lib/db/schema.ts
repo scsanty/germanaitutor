@@ -109,6 +109,11 @@ function migrateChatPracticeColumn(db: Database.Database): void {
   );
 }
 
+// After the column exists on both fresh and migrated databases.
+function createChatPracticeIndex(db: Database.Database): void {
+  db.exec('CREATE INDEX IF NOT EXISTS idx_lesson_chat_messages_practice ON lesson_chat_messages(practice_exercise_id)');
+}
+
 export function runMigrations(db: Database.Database): void {
   // Wrapped in one transaction so a concurrent connection (e.g. a parallel `next build`
   // static-page-data worker also calling getDb()) never observes the mid-migration state
@@ -120,6 +125,7 @@ export function runMigrations(db: Database.Database): void {
     migrateProfileLevelColumns(db);
     migrateDailyReviewCap(db);
     migrateChatPracticeColumn(db);
+    createChatPracticeIndex(db);
   });
   migrate();
 }

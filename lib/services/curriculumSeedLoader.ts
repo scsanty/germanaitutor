@@ -119,11 +119,12 @@ function upsertSeedFile(db: Database.Database, seed: SeedFile): void {
   // row (any status) is never overwritten, so an install's own review decisions stand.
   const insertPractice = db.prepare(
     `INSERT OR IGNORE INTO practice_exercises (id, lesson_id, type, content, review_status, created_at, reviewed_at)
-     VALUES (?, ?, ?, ?, 'approved', datetime('now'), datetime('now'))`
+     VALUES (?, ?, ?, ?, 'approved', ?, ?)`
   );
+  const practiceAt = new Date().toISOString();
   for (const item of seed.practice ?? []) {
     if (!lessonExists.get(item.lessonId)) continue;
-    insertPractice.run(item.id, item.lessonId, item.type, JSON.stringify(item.content));
+    insertPractice.run(item.id, item.lessonId, item.type, JSON.stringify(item.content), practiceAt, practiceAt);
   }
 }
 
