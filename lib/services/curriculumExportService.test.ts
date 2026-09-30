@@ -63,4 +63,30 @@ describe('curriculumExportService', () => {
     expect(seed.exercises.map((e) => e.id)).toEqual(['a1-g__ex10', 'a1-g__ex2']);
     expect(seed.milestones[0].sections[0].lessonRefs).toEqual([{ lessonId: 'a1-g', orderIndex: 0 }]);
   });
+
+  it('exports only approved practice exercises, and they load back as approved', () => {
+    const db = createDbClient(':memory:');
+    db.exec(`
+      INSERT INTO milestones (id, track, level, title, order_index) VALUES ('g-m', 'generic', 'A1', 'M', 0);
+      INSERT INTO sections (id, milestone_id, title, order_index) VALUES ('g-s', 'g-m', 'S', 0);
+      INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('a1-g', 'generic', 'A1', 'grammar', 'G');
+      INSERT INTO lesson_placements (lesson_id, section_id, order_index) VALUES ('a1-g', 'g-s', 0);
+      INSERT INTO practice_exercises (id, lesson_id, type, content, review_status, created_at) VALUES
+        ('a1-g__px-b', 'a1-g', 'fill_blank', '{"textWithBlank":"b ___","correctAnswer":"x"}', 'approved', '2026-09-29T10:00:02.000Z'),
+        ('a1-g__px-a', 'a1-g', 'fill_blank', '{"textWithBlank":"a ___","correctAnswer":"x"}', 'approved', '2026-09-29T10:00:01.000Z'),
+        ('a1-g__px-u', 'a1-g', 'fill_blank', '{"textWithBlank":"u ___","correctAnswer":"x"}', 'unreviewed', '2026-09-29T10:00:03.000Z'),
+        ('a1-g__px-r', 'a1-g', 'fill_blank', '{"textWithBlank":"r ___","correctAnswer":"x"}', 'rejected', '2026-09-29T10:00:04.000Z');
+    `);
+    const seed = createCurriculumExportService(db).exportTrackLevel('generic', 'A1');
+    expect(seed.practice).toEqual([
+      { id: 'a1-g__px-a', lessonId: 'a1-g', type: 'fill_blank', content: { textWithBlank: 'a ___', correctAnswer: 'x' } },
+      { id: 'a1-g__px-b', lessonId: 'a1-g', type: 'fill_blank', content: { textWithBlank: 'b ___', correctAnswer: 'x' } },
+    ]);
+
+    const dir = mkdtempSync(join(tmpdir(), 'gait-export-practice-'));
+    writeFileSync(join(dir, 'generic-a1.json'), JSON.stringify({ ...seed, seedVersion: 'next' }));
+    const target = createDbClient(':memory:');
+    loadSeedIfNeeded(target, dir);
+    expect(createCurriculumExportService(target).exportTrackLevel('generic', 'A1').practice).toEqual(seed.practice);
+  });
 });

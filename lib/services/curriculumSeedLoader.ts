@@ -26,6 +26,7 @@ export interface SeedFile {
   exercises: { id: string; lessonId: string; track: Track | null; type: string; content: unknown }[];
   prerequisites: { lessonId: string; prerequisiteLessonId: string }[];
   conceptLinks?: { lessonAId: string; lessonBId: string }[];
+  practice?: { id: string; lessonId: string; type: string; content: unknown }[];
 }
 
 function getCurrentSeedVersion(db: Database.Database): string {
@@ -112,6 +113,17 @@ function upsertSeedFile(db: Database.Database, seed: SeedFile): void {
     const [a, b] = link.lessonAId < link.lessonBId ? [link.lessonAId, link.lessonBId] : [link.lessonBId, link.lessonAId];
     if (a === b || !lessonExists.get(a) || !lessonExists.get(b)) continue;
     insertLink.run(a, b);
+  }
+
+  // Tutoring Phase 2: approved practice exercises travel with the curriculum. An existing pool
+  // row (any status) is never overwritten, so an install's own review decisions stand.
+  const insertPractice = db.prepare(
+    `INSERT OR IGNORE INTO practice_exercises (id, lesson_id, type, content, review_status, created_at, reviewed_at)
+     VALUES (?, ?, ?, ?, 'approved', datetime('now'), datetime('now'))`
+  );
+  for (const item of seed.practice ?? []) {
+    if (!lessonExists.get(item.lessonId)) continue;
+    insertPractice.run(item.id, item.lessonId, item.type, JSON.stringify(item.content));
   }
 }
 

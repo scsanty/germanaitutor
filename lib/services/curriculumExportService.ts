@@ -116,7 +116,19 @@ export function createCurriculumExportService(db: Database.Database) {
       .filter((c) => inFile.has(c.lesson_a_id) || inFile.has(c.lesson_b_id))
       .map((c) => ({ lessonAId: c.lesson_a_id, lessonBId: c.lesson_b_id }));
 
-    return { seedVersion: currentSeedVersion(), track, level, milestones, lessons, exercises, prerequisites, conceptLinks };
+    const practiceStmt = db.prepare(
+      "SELECT id, lesson_id, type, content FROM practice_exercises WHERE lesson_id = ? AND review_status = 'approved' ORDER BY created_at, rowid"
+    );
+    const practice = lessonIds.flatMap((id) =>
+      (practiceStmt.all(id) as { id: string; lesson_id: string; type: string; content: string }[]).map((p) => ({
+        id: p.id,
+        lessonId: p.lesson_id,
+        type: p.type,
+        content: JSON.parse(p.content) as unknown,
+      }))
+    );
+
+    return { seedVersion: currentSeedVersion(), track, level, milestones, lessons, exercises, prerequisites, conceptLinks, practice };
   }
 
   function exportAll(): { fileName: string; seed: SeedFile }[] {
