@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { validateExerciseContent } from './exerciseContentValidation';
+import { validateExerciseContent, instructionProblems } from './exerciseContentValidation';
 
 describe('validateExerciseContent', () => {
   it('accepts valid content of every type', () => {
@@ -40,5 +40,26 @@ describe('validateExerciseContent', () => {
   it('reports flashcard and free-text problems', () => {
     expect(validateExerciseContent('flashcard', { front: 'x' })).toEqual(['back must be a non-empty string']);
     expect(validateExerciseContent('free_text', { modelAnswer: 'x' })).toEqual(['prompt must be a non-empty string']);
+  });
+});
+
+describe('instructions', () => {
+  it('accepts an instruction with both languages, and an empty question or prompt only then', () => {
+    const instruction = { en: 'Choose the right greeting.', de: 'Wähle die richtige Begrüßung.' };
+    expect(validateExerciseContent('multiple_choice', { question: '', options: ['Hallo', 'Tschüss'], correctIndex: 0, instruction })).toEqual([]);
+    expect(validateExerciseContent('free_text', { prompt: '', modelAnswer: 'Hallo!', instruction })).toEqual([]);
+    expect(validateExerciseContent('multiple_choice', { question: '', options: ['Hallo', 'Tschüss'], correctIndex: 0 })).toEqual([
+      'question must be a non-empty string',
+    ]);
+  });
+
+  it('rejects a half-filled instruction and any instruction on a flashcard', () => {
+    expect(instructionProblems('fill_blank', { textWithBlank: 'Ich ___.', correctAnswer: 'bin', instruction: { en: 'Fill in.', de: '' } })).toEqual([
+      'instruction needs both English and German',
+    ]);
+    expect(instructionProblems('flashcard', { front: 'a', back: 'b', instruction: { en: 'x', de: 'y' } })).toEqual([
+      'flashcards have no instruction',
+    ]);
+    expect(instructionProblems('fill_blank', { textWithBlank: 'Ich ___.', correctAnswer: 'bin' })).toEqual([]);
   });
 });
