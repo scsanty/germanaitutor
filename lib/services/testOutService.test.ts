@@ -244,4 +244,14 @@ describe('testOutService.start and answer', () => {
     expect(resumed.questions.map((q) => q.id)).toEqual(run.questions.slice(1).map((q) => q.id));
     expect(resumed.questions[resumed.answered].id).toBe(run.questions[2].id);
   });
+
+  it('discards an attempt that deletions shrink below the minimum size, with no cooldown', async () => {
+    const { db, service } = setup();
+    const run = service.start('g-a1-m2');
+    for (const q of run.questions.slice(0, 3)) await service.answer('g-a1-m2', q.id, right(db, q.id));
+    db.prepare('DELETE FROM exercises WHERE id IN (?, ?)').run(run.questions[4].id, run.questions[5].id);
+    expect(service.state('g-a1-m2').status).toEqual({ status: 'too_few_questions' });
+    expect(db.prepare('SELECT COUNT(*) AS n FROM milestone_testouts').get()).toEqual({ n: 0 });
+    expect(db.prepare("SELECT COUNT(*) AS n FROM lesson_completions WHERE source = 'testout'").get()).toEqual({ n: 0 });
+  });
 });

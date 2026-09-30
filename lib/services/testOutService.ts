@@ -8,7 +8,7 @@ import type { FreeTextGradingInput } from '../tutoring/freeTextGrading';
 import type { GradeResult } from '../tutoring/grading';
 import { answerTextFor, correctAnswerFor, type LessonAnswer } from '../tutoring/lessonAnswers';
 import { INITIAL_EASE } from '../tutoring/srs';
-import { drawTestOut, scoreTestOut } from '../tutoring/testOut';
+import { drawTestOut, scoreTestOut, TESTOUT_MIN_QUESTIONS } from '../tutoring/testOut';
 import type { TestOutAnswerOutcome, TestOutResult, TestOutRun, TestOutState } from '../tutoring/testOutViews';
 import { isAiAvailable } from './aiService';
 import { gradeExerciseAnswer } from './exerciseGrading';
@@ -136,14 +136,15 @@ export function createTestOutService(db: Database.Database, deps: TestOutDeps = 
     };
   }
 
-  // Prunes the open attempt. One with nothing left is dropped (no cooldown); one with every
-  // remaining question answered is finished like a normal last answer. Returns whether it ended.
+  // Prunes the open attempt. One left below the minimum size is discarded (no cooldown); one with
+  // every remaining question answered is finished like a normal last answer. Returns whether it ended.
   function settle(milestoneId: string): boolean {
     return db.transaction(() => {
       const row = openAttempt(milestoneId);
       if (!row) return false;
       const { ids, answers } = pruned(row);
-      if (ids.length === 0) {
+      // Below the minimum draw size the attempt is void, however much was answered.
+      if (ids.length < TESTOUT_MIN_QUESTIONS) {
         db.prepare('DELETE FROM milestone_testouts WHERE id = ?').run(row.id);
         return true;
       }
