@@ -1,6 +1,6 @@
 {
-  "seedVersion": "4",
-  "formatVersion": 2,
+  "seedVersion": "5",
+  "formatVersion": 3,
   "track": "telc",
   "level": "B1",
   "lessons": [
@@ -13,6 +13,14 @@
       "title": "Syntactic Connectors and Particle Accuracy (telc Sprachbausteine Teil 1)",
       "explanation": "In telc Sprachbausteine Teil 1, candidates complete a ten-gap semi-formal or formal letter evaluating morphosyntactic precision.\nSuccess depends on recognizing whether a connector coordinates two main clauses in position zero (und, denn, aber, oder, sondern), inverts subject and verb in position one (deshalb, trotzdem, sonst, außerdem), or introduces a subordinate verb-final clause (weil, dass, obwohl, wenn, da).\nPrepositions paired with proper case declensions (trotz + Gen./Dat., wegen + Gen./Dat., seit + Dat.) represent additional frequent test targets.\n",
       "examples": [
+        "Wir wollten gestern pünktlich abreisen, aber der Zug hatte erhebliche Verspätung.",
+        "Er war gesundheitlich angeschlagen, trotzdem erschien er pünktlich zum Arbeitseinsatz.",
+        "Ich schreibe Ihnen diese Mitteilung, weil ich um eine Terminverschiebung bitten möchte.",
+        "Wegen eines technischen Defekts bleibt unsere Filiale heute geschlossen."
+      ],
+      "titleDe": "Syntactic Connectors and Particle Accuracy (telc Sprachbausteine Teil 1)",
+      "explanationDe": "In telc Sprachbausteine Teil 1, candidates complete a ten-gap semi-formal or formal letter evaluating morphosyntactic precision.\nSuccess depends on recognizing whether a connector coordinates two main clauses in position zero (und, denn, aber, oder, sondern), inverts subject and verb in position one (deshalb, trotzdem, sonst, außerdem), or introduces a subordinate verb-final clause (weil, dass, obwohl, wenn, da).\nPrepositions paired with proper case declensions (trotz + Gen./Dat., wegen + Gen./Dat., seit + Dat.) represent additional frequent test targets.\n",
+      "examplesDe": [
         "Wir wollten gestern pünktlich abreisen, aber der Zug hatte erhebliche Verspätung.",
         "Er war gesundheitlich angeschlagen, trotzdem erschien er pünktlich zum Arbeitseinsatz.",
         "Ich schreibe Ihnen diese Mitteilung, weil ich um eine Terminverschiebung bitten möchte.",
@@ -32,6 +40,14 @@
         "Wir bitten Sie, die beiliegenden Unterlagen vollständig auszufüllen und zurückzusenden.",
         "Aus betrieblichen Gründen müssen wir die geplante Betriebsversammlung leider verschieben.",
         "Bitte geben Sie uns so bald wie möglich über Ihre Teilnahme Bescheid."
+      ],
+      "titleDe": "Contextual Vocabulary Selection (telc Sprachbausteine Teil 2)",
+      "explanationDe": "In telc Sprachbausteine Teil 2, candidates fill ten gaps in an informational text or formal notification choosing from a pool of 15 candidate words.\nThis part tests idiomatic collocations (Entscheidung treffen, zur Verfügung stehen), compound nouns, and context-appropriate word forms.\nLearners must evaluate word class (noun, verb, adjective, preposition), semantic fitness, and required grammatical agreement before assigning an item from the pool.\n",
+      "examplesDe": [
+        "Für Rückfragen stehe ich Ihnen jederzeit gerne zur Verfügung.",
+        "Wir bitten Sie, die beiliegenden Unterlagen vollständig auszufüllen und zurückzusenden.",
+        "Aus betrieblichen Gründen müssen wir die geplante Betriebsversammlung leider verschieben.",
+        "Bitte geben Sie uns so bald wie möglich über Ihre Teilnahme Bescheid."
       ]
     },
     {
@@ -43,6 +59,14 @@
       "title": "Passive Voice in Workplace Procedures and Documentation",
       "explanation": "Workplace regulations, shift protocols, and standard operating procedures in German organizations rely heavily on the passive voice.\nInstructions describe operational sequences objectively: 'Die Ware wird geprüft, anschließend wird der Lieferschein gezeichnet.'\nCombined with modal verbs, it forms impersonal duties and prohibitions: 'Sicherheitshelme müssen getragen werden', 'Das Rauchen im Lager darf keinesfalls gestattet werden'.\n",
       "examples": [
+        "Vor dem Verlassen des Betriebsgeländes müssen alle Maschinen ordnungsgemäß abgeschaltet werden.",
+        "Der Wareneingang wird täglich vom Schichtleiter dokumentiert und im System verbucht.",
+        "Krankmeldungen müssen spätestens am dritten Werktag im Personalbüro vorgelegt werden.",
+        "Die Protokolle der Teamsitzung wurden allen Mitarbeitern per E-Mail zugestellt."
+      ],
+      "titleDe": "Passive Voice in Workplace Procedures and Documentation",
+      "explanationDe": "Workplace regulations, shift protocols, and standard operating procedures in German organizations rely heavily on the passive voice.\nInstructions describe operational sequences objectively: 'Die Ware wird geprüft, anschließend wird der Lieferschein gezeichnet.'\nCombined with modal verbs, it forms impersonal duties and prohibitions: 'Sicherheitshelme müssen getragen werden', 'Das Rauchen im Lager darf keinesfalls gestattet werden'.\n",
+      "examplesDe": [
         "Vor dem Verlassen des Betriebsgeländes müssen alle Maschinen ordnungsgemäß abgeschaltet werden.",
         "Der Wareneingang wird täglich vom Schichtleiter dokumentiert und im System verbucht.",
         "Krankmeldungen müssen spätestens am dritten Werktag im Personalbüro vorgelegt werden.",
@@ -62,6 +86,14 @@
         "Ich würde vorschlagen, dass wir uns die anfallenden Aufgaben gerecht aufteilen.",
         "Es wäre ratsam, vor der Unterschrift den Mietvertrag noch einmal juristisch zu prüfen.",
         "Hätten Sie morgen Vormittag Zeit für eine kurze telefonische Abstimmung?"
+      ],
+      "titleDe": "Professional Politeness and Diplomatic Negotiation with Konjunktiv II",
+      "explanationDe": "In telc oral and written tasks, candidates must interact diplomatically with colleagues, superiors, clients, and municipal officials.\nInstead of blunt imperatives or direct indicative requests, use Konjunktiv II forms: 'Könnten Sie...', 'Würden Sie freundlicherweise...', 'Dürfte ich Sie kurz bitten...'.\nWhen offering suggestions or making proposals during paired negotiations (telc Sprechen Teil 3), phrases like 'Ich würde vorschlagen, dass...', 'Es wäre günstig, wenn...' maintain polite engagement.\n",
+      "examplesDe": [
+        "Könnten Sie mir bitte die aktuellen Verkaufszahlen bis heute Nachmittag zukommen lassen?",
+        "Ich würde vorschlagen, dass wir uns die anfallenden Aufgaben gerecht aufteilen.",
+        "Es wäre ratsam, vor der Unterschrift den Mietvertrag noch einmal juristisch zu prüfen.",
+        "Hätten Sie morgen Vormittag Zeit für eine kurze telefonische Abstimmung?"
       ]
     },
     {
@@ -73,6 +105,14 @@
       "title": "Indirect Questions in Inquiries and Administrative Contacts",
       "explanation": "Formal communication with public offices (Bürgeramt, Ausländerbehörde, Finanzamt) requires embedded indirect questions.\nIndirect questions function syntactically as subordinate clauses with verb-final word order.\nYes/No questions convert using the subordinator 'ob' (z.B. Ich möchte wissen, ob der Antrag bewilligt wurde); W-questions retain their question word as the connector (z.B. Können Sie mir mitteilen, wann die Bescheinigung abholbereit ist?).\n",
       "examples": [
+        "Ich möchte mich erkundigen, ob mein Antrag auf Wohngeld bereits eingegangen ist.",
+        "Könnten Sie mir mitteilen, welche Unterlagen ich zur Anmeldung mitbringen muss?",
+        "Wissen Sie zufällig, bis wann die Bürgerberatung heute geöffnet hat?",
+        "Mich würde interessieren, wer für die Bearbeitung meiner Akte zuständig ist."
+      ],
+      "titleDe": "Indirect Questions in Inquiries and Administrative Contacts",
+      "explanationDe": "Formal communication with public offices (Bürgeramt, Ausländerbehörde, Finanzamt) requires embedded indirect questions.\nIndirect questions function syntactically as subordinate clauses with verb-final word order.\nYes/No questions convert using the subordinator 'ob' (z.B. Ich möchte wissen, ob der Antrag bewilligt wurde); W-questions retain their question word as the connector (z.B. Können Sie mir mitteilen, wann die Bescheinigung abholbereit ist?).\n",
+      "examplesDe": [
         "Ich möchte mich erkundigen, ob mein Antrag auf Wohngeld bereits eingegangen ist.",
         "Könnten Sie mir mitteilen, welche Unterlagen ich zur Anmeldung mitbringen muss?",
         "Wissen Sie zufällig, bis wann die Bürgerberatung heute geöffnet hat?",
@@ -92,6 +132,14 @@
         "Wir bestehen auf der sofortigen Rückerstattung des vollen Kaufpreises.",
         "Hiermit bitte ich Sie um schriftliche Bestätigung unseres gestrigen Telefonats.",
         "Der Mieter erkundigte sich nach den Gründen für die Erhöhung der monatlichen Vorauszahlung."
+      ],
+      "titleDe": "Prepositional Verbs in Complaints and Customer Service",
+      "explanationDe": "Formal service transactions and complaint management depend heavily on verbs taking fixed prepositions.\nKey combinations include: sich beschweren bei [Dat.] über [Akk.] (to complain to s.o. about s.th.), bestehen auf [Dat.] (to insist on), bitten um [Akk.] (to request / ask for), sich erkundigen nach [Dat.] (to inquire about), and zweifeln an [Dat.] (to doubt).\nPronominal adverbs (darüber, darauf, darum) link the verb to subsequent dependent clauses.\n",
+      "examplesDe": [
+        "Ich möchte mich mit diesem Schreiben ausdrücklich über den unzureichenden Kundenservice beschweren.",
+        "Wir bestehen auf der sofortigen Rückerstattung des vollen Kaufpreises.",
+        "Hiermit bitte ich Sie um schriftliche Bestätigung unseres gestrigen Telefonats.",
+        "Der Mieter erkundigte sich nach den Gründen für die Erhöhung der monatlichen Vorauszahlung."
       ]
     },
     {
@@ -103,6 +151,14 @@
       "title": "Workplace Operations, Contracts, and Labor Relations",
       "explanation": "telc B1 tests the functional language required for navigating German work environments and exercising employment rights.\nKey terms include: der Arbeitsvertrag (employment contract), die Kündigungsfrist (notice period), die Krankschreibung / Arbeitsunfähigkeitsbescheinigung (doctor's sick note), die Überstunden (overtime hours), and der Betriebsrat (works council).\nProfessional communicative tasks involve notifying an employer about sick leave, requesting vacation time, and negotiating shift schedules.\n",
       "examples": [
+        "Gemäß meinem Arbeitsvertrag beträgt die Kündigungsfrist drei Monate zum Monatsende.",
+        "Ich habe heute Morgen meinen Arbeitgeber angerufen, um mich krankzumelden.",
+        "Wegen des dringenden Großauftrags mussten alle Angestellten am Wochenende Überstunden leisten.",
+        "Bei Streitigkeiten zwischen Belegschaft und Geschäftsführung vermittelt der Betriebsrat."
+      ],
+      "titleDe": "Workplace Operations, Contracts, and Labor Relations",
+      "explanationDe": "telc B1 tests the functional language required for navigating German work environments and exercising employment rights.\nKey terms include: der Arbeitsvertrag (employment contract), die Kündigungsfrist (notice period), die Krankschreibung / Arbeitsunfähigkeitsbescheinigung (doctor's sick note), die Überstunden (overtime hours), and der Betriebsrat (works council).\nProfessional communicative tasks involve notifying an employer about sick leave, requesting vacation time, and negotiating shift schedules.\n",
+      "examplesDe": [
         "Gemäß meinem Arbeitsvertrag beträgt die Kündigungsfrist drei Monate zum Monatsende.",
         "Ich habe heute Morgen meinen Arbeitgeber angerufen, um mich krankzumelden.",
         "Wegen des dringenden Großauftrags mussten alle Angestellten am Wochenende Überstunden leisten.",
@@ -122,6 +178,14 @@
         "Da die Reparatur zweimal fehlschlug, trete ich hiermit vom Kaufvertrag zurück.",
         "Anbei sende ich Ihnen eine Kopie des Kassenbons als Nachweis für die gültige Garantie.",
         "Ich erwarte, dass Sie mir das defekte Smartphone umgehend durch ein Neugerät ersetzen."
+      ],
+      "titleDe": "Consumer Rights, Product Defects, and Warranty Claims",
+      "explanationDe": "Writing letters of complaint and resolving service disputes are core telc tasks.\nEssential vocabulary includes: die Reklamation / Beschwerde (complaint), fehlerhaft / defekt (defective), die Garantie / Gewährleistung (warranty), der Kaufbeleg / die Quittung (receipt), and der Ersatz (replacement).\nCollocations for resolving consumer issues include: 'den Vertrag widerrufen' (to revoke a contract), 'vom Kaufvertrag zurücktreten' (to withdraw from a sales contract), and 'den Schaden ersetzen' (to compensate for damage).\n",
+      "examplesDe": [
+        "Das gelieferte Haushaltsgerät wies bereits beim Auspacken erhebliche Mängel auf.",
+        "Da die Reparatur zweimal fehlschlug, trete ich hiermit vom Kaufvertrag zurück.",
+        "Anbei sende ich Ihnen eine Kopie des Kassenbons als Nachweis für die gültige Garantie.",
+        "Ich erwarte, dass Sie mir das defekte Smartphone umgehend durch ein Neugerät ersetzen."
       ]
     },
     {
@@ -133,6 +197,14 @@
       "title": "Tenancy Rights, Building Rules, and Housing Inquiries",
       "explanation": "Residential integration in Germany involves understanding tenancy agreements and resolving domestic issues.\nKey terminology covers: die Betriebskostenabrechnung (utility / operating cost statement), die Mieterhöhung (rent increase), die Ruhestörung (noise disturbance), der Schimmelbefall (mold infestation), and das Übergabeprotokoll (apartment handover report).\nTenants must be able to notify landlords of housing defects (Mängelanzeige) and request repairs with deadlines.\n",
       "examples": [
+        "Wegen der defekten Heizungsanlage fordern die Mieter eine angemessene Mietminderung.",
+        "Im Badezimmer hat sich trotz regelmäßigem Lüften gefährlicher Schimmel gebildet.",
+        "Wir bitten Sie dringend, die gesetzlichen Ruhezeiten zwischen 22:00 und 07:00 Uhr einzuhalten.",
+        "Die jährliche Abrechnung der Nebenkosten wies eine unerwartet hohe Nachzahlung auf."
+      ],
+      "titleDe": "Tenancy Rights, Building Rules, and Housing Inquiries",
+      "explanationDe": "Residential integration in Germany involves understanding tenancy agreements and resolving domestic issues.\nKey terminology covers: die Betriebskostenabrechnung (utility / operating cost statement), die Mieterhöhung (rent increase), die Ruhestörung (noise disturbance), der Schimmelbefall (mold infestation), and das Übergabeprotokoll (apartment handover report).\nTenants must be able to notify landlords of housing defects (Mängelanzeige) and request repairs with deadlines.\n",
+      "examplesDe": [
         "Wegen der defekten Heizungsanlage fordern die Mieter eine angemessene Mietminderung.",
         "Im Badezimmer hat sich trotz regelmäßigem Lüften gefährlicher Schimmel gebildet.",
         "Wir bitten Sie dringend, die gesetzlichen Ruhezeiten zwischen 22:00 und 07:00 Uhr einzuhalten.",
@@ -150,6 +222,12 @@
       "examples": [
         "Text: 'Ein Verein in Hamburg organisiert Reparatur-Cafés, in denen Bürger kaputte Geräte gemeinsam instand setzen.' -> Überschrift: 'Reparieren statt wegwerfen'.",
         "Text: 'Neue Studie belegt: Wer regelmäßig mit dem Rad zur Arbeit fährt, leidet seltener unter Herz-Kreislauf-Erkrankungen.' -> Überschrift: 'Mit dem Fahrrad gesund durch den Alltag'."
+      ],
+      "titleDe": "Global Reading and Headline Matching (telc Leseverstehen Teil 1)",
+      "explanationDe": "In telc Leseverstehen Teil 1, candidates match five short journalistic texts or reports to the most suitable headline from a list of eight options (three are distractors).\nSuccess requires global comprehension (*Globalverstehen*).\nFocus on understanding the central message of each paragraph rather than fixating on unfamiliar vocabulary.\nWatch out for lexical traps: distractors often contain the exact same individual words as the text while conveying a completely different overall meaning.\n",
+      "examplesDe": [
+        "Text: 'Ein Verein in Hamburg organisiert Reparatur-Cafés, in denen Bürger kaputte Geräte gemeinsam instand setzen.' -> Überschrift: 'Reparieren statt wegwerfen'.",
+        "Text: 'Neue Studie belegt: Wer regelmäßig mit dem Rad zur Arbeit fährt, leidet seltener unter Herz-Kreislauf-Erkrankungen.' -> Überschrift: 'Mit dem Fahrrad gesund durch den Alltag'."
       ]
     },
     {
@@ -161,6 +239,12 @@
       "title": "Detailed Reading Comprehension (telc Leseverstehen Teil 2)",
       "explanation": "In telc Leseverstehen Teil 2, candidates read an authentic 350-word informational article and answer five multiple-choice questions (each with options a, b, c).\nThis subtest evaluates detailed reading (*Detailverstehen*).\nAnswers follow the chronological sequence of the text.\nCarefully analyze paraphrased expressions, modal qualifiers (nur, ausschließlich, teilweise), and negations that distinguish the correct option from plausible distractors.\n",
       "examples": [
+        "Textpassage: 'Die Stadtbibliothek verzeichnete einen Rückgang bei den gedruckten Ausleihen, wohingegen die Nachfrage nach elektronischen Medien um fast 40 Prozent anstieg.'",
+        "Frage: 'Welche Entwicklung zeigt sich in der Bibliothek?' -> Antwort: 'Digitale Angebote werden wesentlich häufiger genutzt als früher.'"
+      ],
+      "titleDe": "Detailed Reading Comprehension (telc Leseverstehen Teil 2)",
+      "explanationDe": "In telc Leseverstehen Teil 2, candidates read an authentic 350-word informational article and answer five multiple-choice questions (each with options a, b, c).\nThis subtest evaluates detailed reading (*Detailverstehen*).\nAnswers follow the chronological sequence of the text.\nCarefully analyze paraphrased expressions, modal qualifiers (nur, ausschließlich, teilweise), and negations that distinguish the correct option from plausible distractors.\n",
+      "examplesDe": [
         "Textpassage: 'Die Stadtbibliothek verzeichnete einen Rückgang bei den gedruckten Ausleihen, wohingegen die Nachfrage nach elektronischen Medien um fast 40 Prozent anstieg.'",
         "Frage: 'Welche Entwicklung zeigt sich in der Bibliothek?' -> Antwort: 'Digitale Angebote werden wesentlich häufiger genutzt als früher.'"
       ]
@@ -176,6 +260,12 @@
       "examples": [
         "Situation: Eine Familie sucht eine 4-Zimmer-Wohnung mit Garten im Grünen. -> Anzeige D: 'Geräumige Doppelhaushälfte am Stadtrand mit 5 Zimmern und Garten zu vermieten.'",
         "Situation: Ein Student sucht samstags Nachhilfeunterricht in Spanisch. In den Anzeigen gibt es nur Angebote für Englisch und Mathematik. -> Richtige Lösung: x."
+      ],
+      "titleDe": "Selective Reading and Classified Ads Matching (telc Leseverstehen Teil 3)",
+      "explanationDe": "In telc Leseverstehen Teil 3, candidates match ten personal profiles (situations/needs) to twelve classified advertisements or service postings.\nTwo situations have no matching advertisement in the pool; candidates must mark these as 'x' (keine passende Anzeige vorhanden).\nCandidates must read the requirements of each profile carefully, noting restrictive criteria such as opening hours, locations, age limits, and price caps.\n",
+      "examplesDe": [
+        "Situation: Eine Familie sucht eine 4-Zimmer-Wohnung mit Garten im Grünen. -> Anzeige D: 'Geräumige Doppelhaushälfte am Stadtrand mit 5 Zimmern und Garten zu vermieten.'",
+        "Situation: Ein Student sucht samstags Nachhilfeunterricht in Spanisch. In den Anzeigen gibt es nur Angebote für Englisch und Mathematik. -> Richtige Lösung: x."
       ]
     },
     {
@@ -187,6 +277,12 @@
       "title": "Global Listening to Radio Broadcasts and News (telc Hörverstehen Teil 1)",
       "explanation": "In telc Hörverstehen Teil 1, candidates listen to five short authentic spoken texts (news items, radio reports, public interest announcements) played only once.\nEach audio passage is accompanied by one True/False (Richtig/Falsch) statement.\nCandidates have a short preparation time before each clip to read the statement, highlight the core assertion, and prepare for synonyms or contrasting information in the broadcast.\n",
       "examples": [
+        "Radiotext: 'Wegen eines Unfalls auf der A3 zwischen Köln und Frankfurt kommt es derzeit zu zehn Kilometern Stau. Autofahrern wird empfohlen, das Gebiet weiträumig zu umfahren.' - Aussage: Auf der A3 läuft der Verkehr flüssig. -> Falsch.",
+        "Durchsage: 'Das Bürgerbüro Mitte bleibt am Freitag wegen einer internen Fortbildung geschlossen.' - Aussage: Am Freitag kann man das Bürgerbüro nicht besuchen. -> Richtig."
+      ],
+      "titleDe": "Global Listening to Radio Broadcasts and News (telc Hörverstehen Teil 1)",
+      "explanationDe": "In telc Hörverstehen Teil 1, candidates listen to five short authentic spoken texts (news items, radio reports, public interest announcements) played only once.\nEach audio passage is accompanied by one True/False (Richtig/Falsch) statement.\nCandidates have a short preparation time before each clip to read the statement, highlight the core assertion, and prepare for synonyms or contrasting information in the broadcast.\n",
+      "examplesDe": [
         "Radiotext: 'Wegen eines Unfalls auf der A3 zwischen Köln und Frankfurt kommt es derzeit zu zehn Kilometern Stau. Autofahrern wird empfohlen, das Gebiet weiträumig zu umfahren.' - Aussage: Auf der A3 läuft der Verkehr flüssig. -> Falsch.",
         "Durchsage: 'Das Bürgerbüro Mitte bleibt am Freitag wegen einer internen Fortbildung geschlossen.' - Aussage: Am Freitag kann man das Bürgerbüro nicht besuchen. -> Richtig."
       ]
@@ -202,6 +298,12 @@
       "examples": [
         "Interviewerausschnitt: 'Frau Dr. Jansen, Sie haben fünf Jahre lang das Essverhalten von Berufstätigen untersucht. Was hat Sie am meisten überrascht?' - Gast: 'Dass fast die Hälfte der Befragten regelmäßig am Schreibtisch isst, anstatt eine richtige Pause zu machen.'",
         "Aussage: 'Die meisten Angestellten verbringen ihre Mittagspause in der Firmenkantine.' -> Falsch."
+      ],
+      "titleDe": "Detailed Listening to Radio Interviews (telc Hörverstehen Teil 2)",
+      "explanationDe": "In telc Hörverstehen Teil 2, candidates listen to a longer broadcast interview or feature report (duration approx. 3 minutes) played once.\nCandidates evaluate ten statements (numbered 41–50) as either Richtig or Falsch.\nThe statements follow the chronological flow of the spoken interaction.\nTest-takers must sustain their concentration, tracking transitions between questions posed by the interviewer and the answers provided by the guest.\n",
+      "examplesDe": [
+        "Interviewerausschnitt: 'Frau Dr. Jansen, Sie haben fünf Jahre lang das Essverhalten von Berufstätigen untersucht. Was hat Sie am meisten überrascht?' - Gast: 'Dass fast die Hälfte der Befragten regelmäßig am Schreibtisch isst, anstatt eine richtige Pause zu machen.'",
+        "Aussage: 'Die meisten Angestellten verbringen ihre Mittagspause in der Firmenkantine.' -> Falsch."
       ]
     },
     {
@@ -215,6 +317,12 @@
       "examples": [
         "Anrufbeantworter: 'Guten Tag, hier Autohaus Berg. Ihr bestelltes Ersatzteil ist eingetroffen. Sie können Ihren Wagen morgen ab 8 Uhr vorbeibringen.' - Aussage: Der Kunde kann sein Auto morgen zur Reparatur bringen. -> Richtig.",
         "Telefonat: 'Herr Meier, ich schaffe es leider nicht bis 15 Uhr. Können wir unser Treffen auf 16:30 Uhr verschieben? - Ja, das passt mir sogar besser.' - Aussage: Die Gesprächspartner treffen sich um 15 Uhr. -> Falsch."
+      ],
+      "titleDe": "Selective Listening to Calls and Voice Messages (telc Hörverstehen Teil 3)",
+      "explanationDe": "In telc Hörverstehen Teil 3, candidates listen to five short transactional telephone conversations or automated voicemail messages.\nEach scenario presents one True/False statement and is played twice.\nTest-takers must listen for specific operational details: callback requests, updated appointments, office hours, and administrative prerequisites.\n",
+      "examplesDe": [
+        "Anrufbeantworter: 'Guten Tag, hier Autohaus Berg. Ihr bestelltes Ersatzteil ist eingetroffen. Sie können Ihren Wagen morgen ab 8 Uhr vorbeibringen.' - Aussage: Der Kunde kann sein Auto morgen zur Reparatur bringen. -> Richtig.",
+        "Telefonat: 'Herr Meier, ich schaffe es leider nicht bis 15 Uhr. Können wir unser Treffen auf 16:30 Uhr verschieben? - Ja, das passt mir sogar besser.' - Aussage: Die Gesprächspartner treffen sich um 15 Uhr. -> Falsch."
       ]
     },
     {
@@ -226,6 +334,14 @@
       "title": "Composing a Formal Letter of Complaint (telc Schriftlicher Ausdruck)",
       "explanation": "The written module of telc B1 requires candidates to draft a formal or semi-formal letter based on one of two given prompts.\nThe text must cover four mandatory content points (Leitpunkte).\nA formal complaint letter follows this layout:\n1. Formal greeting: 'Sehr geehrte Damen und Herren,'\n2. Reason for writing with invoice/order reference.\n3. Precise description of the defect or poor service.\n4. Setting a realistic deadline (Fristsetzung) for rectification, replacement, or reimbursement.\n5. Appropriate formal sign-off: 'Mit freundlichen Grüßen'.\n",
       "examples": [
+        "Sehr geehrte Damen und Herren, am 12. Mai habe ich in Ihrem Online-Shop ein Notebook bestellt (Bestellnummer: 45892).",
+        "Leider musste ich nach dem Auspacken feststellen, dass der Bildschirm beschädigt ist und das Gerät sich nicht einschalten lässt.",
+        "Da ich den Laptop dringend für meine berufliche Arbeit benötige, fordere ich Sie hiermit auf, mir bis zum 25. Mai ein einwandfreies Ersatzgerät zu liefern.",
+        "Sollte diese Frist fruchtlos verstreichen, werde ich vom Kaufvertrag zurücktreten und mein Geld zurückfordern. Mit freundlichen Grüßen, Max Mustermann."
+      ],
+      "titleDe": "Composing a Formal Letter of Complaint (telc Schriftlicher Ausdruck)",
+      "explanationDe": "The written module of telc B1 requires candidates to draft a formal or semi-formal letter based on one of two given prompts.\nThe text must cover four mandatory content points (Leitpunkte).\nA formal complaint letter follows this layout:\n1. Formal greeting: 'Sehr geehrte Damen und Herren,'\n2. Reason for writing with invoice/order reference.\n3. Precise description of the defect or poor service.\n4. Setting a realistic deadline (Fristsetzung) for rectification, replacement, or reimbursement.\n5. Appropriate formal sign-off: 'Mit freundlichen Grüßen'.\n",
+      "examplesDe": [
         "Sehr geehrte Damen und Herren, am 12. Mai habe ich in Ihrem Online-Shop ein Notebook bestellt (Bestellnummer: 45892).",
         "Leider musste ich nach dem Auspacken feststellen, dass der Bildschirm beschädigt ist und das Gerät sich nicht einschalten lässt.",
         "Da ich den Laptop dringend für meine berufliche Arbeit benötige, fordere ich Sie hiermit auf, mir bis zum 25. Mai ein einwandfreies Ersatzgerät zu liefern.",
@@ -245,6 +361,14 @@
         "Da ich tagsüber in Vollzeit arbeite, suche ich gezielt nach Abendkursen oder Kursen am Wochenende.",
         "Könnten Sie mir bitte mitteilen, welche Gebühren für diesen Kurs anfallen und ob Fördermöglichkeiten durch die Bundesagentur für Arbeit bestehen?",
         "Über die Zusendung von aktuellem Informationsmaterial würde ich mich sehr freuen. Mit freundlichen Grüßen."
+      ],
+      "titleDe": "Formal Letters of Inquiry and Administrative Applications",
+      "explanationDe": "Writing an inquiry or formal request to an institution (e.g. municipal office, language school, vocational center) requires formal phrasing and clear organization.\nCandidates must address all four prompt points (*Leitpunkte*):\n1. Introducing yourself and explaining your situation.\n2. Describing your specific educational, administrative, or scheduling needs.\n3. Asking targeted questions regarding fees, prerequisites, or schedules using indirect questions.\n4. Requesting brochures, confirmations, or an in-person consultation appointment.\n",
+      "examplesDe": [
+        "Sehr geehrte Damen und Herren, mein Name ist Samir Al-Hassan und ich interessiere mich sehr für den berufsbegleitenden B2-Deutschkurs an Ihrer Sprachakademie.",
+        "Da ich tagsüber in Vollzeit arbeite, suche ich gezielt nach Abendkursen oder Kursen am Wochenende.",
+        "Könnten Sie mir bitte mitteilen, welche Gebühren für diesen Kurs anfallen und ob Fördermöglichkeiten durch die Bundesagentur für Arbeit bestehen?",
+        "Über die Zusendung von aktuellem Informationsmaterial würde ich mich sehr freuen. Mit freundlichen Grüßen."
       ]
     },
     {
@@ -256,6 +380,13 @@
       "title": "Establishing Contact and Personal Exchange (telc Sprechen Teil 1)",
       "explanation": "In telc Sprechen Teil 1 (*Kontaktaufnahme*), candidates converse with each other to get acquainted.\nPrompts cover personal background, hometowns, language learning experiences, professional training, and hobbies.\nExaminers assess active conversational interaction: candidates must introduce themselves clearly, ask their partner relevant follow-up questions, and react attentively to their partner's answers.\n",
       "examples": [
+        "Kandidat A: 'Hallo, mein Name ist Carlos. Ich komme ursprünglich aus Kolumbien, lebe aber seit zwei Jahren in Leipzig. Und woher kommst du?'",
+        "Kandidat B: 'Freut mich, Carlos! Ich komme aus der Türkei. Was machst du beruflich hier in Leipzig?'",
+        "Kandidat A: 'Ich arbeite als Krankenpfleger in einer Klinik. Das ist anstrengend, aber erfüllend. Wie lange lernst du schon Deutsch?'"
+      ],
+      "titleDe": "Establishing Contact and Personal Exchange (telc Sprechen Teil 1)",
+      "explanationDe": "In telc Sprechen Teil 1 (*Kontaktaufnahme*), candidates converse with each other to get acquainted.\nPrompts cover personal background, hometowns, language learning experiences, professional training, and hobbies.\nExaminers assess active conversational interaction: candidates must introduce themselves clearly, ask their partner relevant follow-up questions, and react attentively to their partner's answers.\n",
+      "examplesDe": [
         "Kandidat A: 'Hallo, mein Name ist Carlos. Ich komme ursprünglich aus Kolumbien, lebe aber seit zwei Jahren in Leipzig. Und woher kommst du?'",
         "Kandidat B: 'Freut mich, Carlos! Ich komme aus der Türkei. Was machst du beruflich hier in Leipzig?'",
         "Kandidat A: 'Ich arbeite als Krankenpfleger in einer Klinik. Das ist anstrengend, aber erfüllend. Wie lange lernst du schon Deutsch?'"
@@ -273,6 +404,13 @@
         "Kandidat A: 'Ich finde, dass das Einkaufen im Internet sehr praktisch ist, weil man Zeit spart. Wie siehst du das?'",
         "Kandidat B: 'Da stimme ich dir teilweise zu, aber im Geschäft kann man die Kleidung anprobieren und wird beraten.'",
         "Kandidat A: 'Das stimmt natürlich. Welche Erfahrungen hast du denn bisher mit Lieferungen gemacht?'"
+      ],
+      "titleDe": "Discussing Experiences on Everyday Topics (telc Sprechen Teil 2)",
+      "explanationDe": "In telc Sprechen Teil 2 (*Gespräch über ein Thema*), candidates converse about a specific topic (e.g. online shopping, child care, public transportation, living in the countryside).\nCandidates must share their personal opinions and experiences, ask their partner for their point of view, and discuss the topic collaboratively.\nExaminers look for spontaneous spoken fluency, the ability to substantiate statements with reasons, and appropriate turn-taking.\n",
+      "examplesDe": [
+        "Kandidat A: 'Ich finde, dass das Einkaufen im Internet sehr praktisch ist, weil man Zeit spart. Wie siehst du das?'",
+        "Kandidat B: 'Da stimme ich dir teilweise zu, aber im Geschäft kann man die Kleidung anprobieren und wird beraten.'",
+        "Kandidat A: 'Das stimmt natürlich. Welche Erfahrungen hast du denn bisher mit Lieferungen gemacht?'"
       ]
     },
     {
@@ -284,6 +422,14 @@
       "title": "Collaborative Problem Solving and Planning (telc Sprechen Teil 3)",
       "explanation": "In telc Sprechen Teil 3 (*Gemeinsam eine Aufgabe lösen*), candidates collaborate to organize an event, solve a practical logistical problem, or resolve an everyday situation.\nCandidates receive a task card with guidelines (e.g. organizing a farewell party for a colleague, planning a weekend excursion, helping a friend move).\nCandidates must contribute their own suggestions, respond constructively to their partner's ideas, negotiate disagreements politely, and agree on a coherent plan of action.\n",
       "examples": [
+        "Kandidat A: 'Unser Kollege Herr Meier geht nächsten Monat in Rente. Wir sollten eine kleine Abschiedsfeier planen. Was meinst du?'",
+        "Kandidat B: 'Eine hervorragende Idee! Wir könnten am Freitagnachmittag Kaffee und Kuchen im Konferenzraum organisieren. Wer kümmert sich um den Kuchen?'",
+        "Kandidat A: 'Das kann ich gerne übernehmen. Aber was schenken wir ihm zum Abschied? Hast du eine Idee?'",
+        "Kandidat B: 'Er wandert sehr gerne. Wie wäre es mit einem Gutschein für ein Sportgeschäft?'"
+      ],
+      "titleDe": "Collaborative Problem Solving and Planning (telc Sprechen Teil 3)",
+      "explanationDe": "In telc Sprechen Teil 3 (*Gemeinsam eine Aufgabe lösen*), candidates collaborate to organize an event, solve a practical logistical problem, or resolve an everyday situation.\nCandidates receive a task card with guidelines (e.g. organizing a farewell party for a colleague, planning a weekend excursion, helping a friend move).\nCandidates must contribute their own suggestions, respond constructively to their partner's ideas, negotiate disagreements politely, and agree on a coherent plan of action.\n",
+      "examplesDe": [
         "Kandidat A: 'Unser Kollege Herr Meier geht nächsten Monat in Rente. Wir sollten eine kleine Abschiedsfeier planen. Was meinst du?'",
         "Kandidat B: 'Eine hervorragende Idee! Wir könnten am Freitagnachmittag Kaffee und Kuchen im Konferenzraum organisieren. Wer kümmert sich um den Kuchen?'",
         "Kandidat A: 'Das kann ich gerne übernehmen. Aber was schenken wir ihm zum Abschied? Hast du eine Idee?'",
@@ -1351,7 +1497,9 @@
         "level": "B1",
         "title": "Home, work and inquiries",
         "description": "Vocabulary for housing and the workplace, indirect questions, and exam tasks for ads, phone calls and getting to know someone.",
-        "difficultyRank": 1
+        "difficultyRank": 1,
+        "titleDe": "Home, work and inquiries",
+        "descriptionDe": "Vocabulary for housing and the workplace, indirect questions, and exam tasks for ads, phone calls and getting to know someone."
       },
       "lessonIds": [
         "b1-telc-indirect-questions-official",
@@ -1369,7 +1517,9 @@
         "level": "B1",
         "title": "Complaints and the news",
         "description": "Verbs with prepositions and consumer-rights vocabulary for a complaint letter, plus news broadcasts and a radio interview.",
-        "difficultyRank": 2
+        "difficultyRank": 2,
+        "titleDe": "Complaints and the news",
+        "descriptionDe": "Verbs with prepositions and consumer-rights vocabulary for a complaint letter, plus news broadcasts and a radio interview."
       },
       "lessonIds": [
         "b1-telc-listening-teil1-news-broadcasts",
@@ -1386,7 +1536,9 @@
         "level": "B1",
         "title": "Diplomacy and discussion",
         "description": "Polite Konjunktiv II and the passive at work, discussing a topic, planning together and writing a formal inquiry.",
-        "difficultyRank": 3
+        "difficultyRank": 3,
+        "titleDe": "Diplomacy and discussion",
+        "descriptionDe": "Polite Konjunktiv II and the passive at work, discussing a topic, planning together and writing a formal inquiry."
       },
       "lessonIds": [
         "b1-telc-konjunktiv-ii-polite-work-requests",
@@ -1403,7 +1555,9 @@
         "level": "B1",
         "title": "Language elements and detailed reading",
         "description": "The Sprachbausteine grammar and vocabulary gaps, headline matching and detailed reading comprehension.",
-        "difficultyRank": 4
+        "difficultyRank": 4,
+        "titleDe": "Language elements and detailed reading",
+        "descriptionDe": "The Sprachbausteine grammar and vocabulary gaps, headline matching and detailed reading comprehension."
       },
       "lessonIds": [
         "b1-telc-reading-teil1-headline-matching",

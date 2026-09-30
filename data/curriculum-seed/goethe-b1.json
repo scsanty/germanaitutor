@@ -1,6 +1,6 @@
 {
-  "seedVersion": "4",
-  "formatVersion": 2,
+  "seedVersion": "5",
+  "formatVersion": 3,
   "track": "goethe",
   "level": "B1",
   "lessons": [
@@ -13,6 +13,14 @@
       "title": "Final and Consecutive Clauses (damit, um... zu, sodass)",
       "explanation": "The Goethe B1 examination requires complex clause synthesis in argumentative writing and oral presentations.\nFinal clauses describe intention or purpose. Use 'damit' when the main clause subject and subordinate clause subject differ; when both subjects are identical, prefer the infinitive construction 'um... zu'.\nConsecutive clauses indicate results or consequences using 'sodass' (or 'so..., dass'), which also places the conjugated verb at the end of the subordinate clause.\n",
       "examples": [
+        "Die Eltern arbeiten hart, damit ihre Kinder an einer guten Universität studieren können.",
+        "Er spart jeden Cent, um sich im nächsten Sommer eine Sprachreise nach Wien leisten zu können.",
+        "Der Busfahrer bremste so abrupt, dass mehrere Fahrgäste das Gleichgewicht verloren.",
+        "Es schneite die ganze Nacht hindurch, sodass am Morgen viele Straßen unpassierbar waren."
+      ],
+      "titleDe": "Final and Consecutive Clauses (damit, um... zu, sodass)",
+      "explanationDe": "The Goethe B1 examination requires complex clause synthesis in argumentative writing and oral presentations.\nFinal clauses describe intention or purpose. Use 'damit' when the main clause subject and subordinate clause subject differ; when both subjects are identical, prefer the infinitive construction 'um... zu'.\nConsecutive clauses indicate results or consequences using 'sodass' (or 'so..., dass'), which also places the conjugated verb at the end of the subordinate clause.\n",
+      "examplesDe": [
         "Die Eltern arbeiten hart, damit ihre Kinder an einer guten Universität studieren können.",
         "Er spart jeden Cent, um sich im nächsten Sommer eine Sprachreise nach Wien leisten zu können.",
         "Der Busfahrer bremste so abrupt, dass mehrere Fahrgäste das Gleichgewicht verloren.",
@@ -32,6 +40,14 @@
         "Das Angebot an öffentlichen Verkehrsmitteln auf dem Land ist mangelhaft. Deshalb sind viele Menschen auf das Auto angewiesen.",
         "Die Mieten in den Großstädten sind stark gestiegen; trotzdem ziehen immer mehr junge Leute dorthin.",
         "Da erneuerbare Energien kontinuierlich ausgebaut werden, sinkt der Ausstoß von Treibhausgasen."
+      ],
+      "titleDe": "Discourse Connectors: Weil, Da, Obwohl, Trotzdem, Deshalb",
+      "explanationDe": "To express nuanced opinions in Goethe Schreiben (Aufgabe 2) and Sprechen (Teil 2), candidates must connect ideas using diverse causal and concessive markers.\n'Weil' and 'da' (subordinators) trigger verb-final order.\n'Deshalb', 'darum', and 'deswegen' (adverbial connectors) express consequence and trigger inversion (verb-second: Deshalb ging ich nach Hause).\n'Obwohl' introduces a concessive subordinate clause (verb at end), whereas 'trotzdem' is an adverbial connector triggering verb-second inversion (Trotzdem ging ich zur Arbeit).\n",
+      "examplesDe": [
+        "Obwohl Carsharing viele Vorzüge bietet, besitzen die meisten Familien weiterhin einen eigenen Pkw.",
+        "Das Angebot an öffentlichen Verkehrsmitteln auf dem Land ist mangelhaft. Deshalb sind viele Menschen auf das Auto angewiesen.",
+        "Die Mieten in den Großstädten sind stark gestiegen; trotzdem ziehen immer mehr junge Leute dorthin.",
+        "Da erneuerbare Energien kontinuierlich ausgebaut werden, sinkt der Ausstoß von Treibhausgasen."
       ]
     },
     {
@@ -43,6 +59,14 @@
       "title": "Relative Clauses with Indefinite Pronouns and Neutral References (was, alles)",
       "explanation": "In sophisticated B1 discourse, relative clauses frequently refer to indefinite neutral pronouns (alles, etwas, nichts, vieles, das) or to an entire preceding statement.\nIn these instances, the relative pronoun 'was' must be used instead of 'das' or 'welches'.\nIf the relative clause requires a preposition combined with a neutral indefinite referent, speakers use 'wo(r)-' + preposition (z.B. worüber, woran, wovon).\n",
       "examples": [
+        "Das ist alles, was ich zu diesem Sachverhalt sagen kann.",
+        "Es gibt vieles, worüber die Politik heute intensiv debattieren muss.",
+        "Sie hat die anspruchsvolle B1-Prüfung auf Anhieb bestanden, was ihre Eltern sehr stolz machte.",
+        "Er erzählte mir etwas, woran ich mich beim besten Willen nicht mehr erinnern konnte."
+      ],
+      "titleDe": "Relative Clauses with Indefinite Pronouns and Neutral References (was, alles)",
+      "explanationDe": "In sophisticated B1 discourse, relative clauses frequently refer to indefinite neutral pronouns (alles, etwas, nichts, vieles, das) or to an entire preceding statement.\nIn these instances, the relative pronoun 'was' must be used instead of 'das' or 'welches'.\nIf the relative clause requires a preposition combined with a neutral indefinite referent, speakers use 'wo(r)-' + preposition (z.B. worüber, woran, wovon).\n",
+      "examplesDe": [
         "Das ist alles, was ich zu diesem Sachverhalt sagen kann.",
         "Es gibt vieles, worüber die Politik heute intensiv debattieren muss.",
         "Sie hat die anspruchsvolle B1-Prüfung auf Anhieb bestanden, was ihre Eltern sehr stolz machte.",
@@ -62,6 +86,14 @@
         "Man könnte das Problem dadurch lösen, dass man flexiblere Arbeitszeiten anbietet.",
         "Jugendliche sollten im Unterricht lernen, wie man seriöse von unseriösen Quellen im Internet unterscheidet.",
         "Bevor wir eine endgültige Entscheidung treffen, müssten wir die Gesamtkosten genauer analysieren."
+      ],
+      "titleDe": "Modals in Subjunctive II for Recommendations and Opinions",
+      "explanationDe": "Expressing nuanced opinions and giving advice are central to the Goethe B1 writing and speaking rubrics.\nModal verbs in the Konjunktiv II form tentative evaluations, polite counter-proposals, and constructive recommendations:\n- 'sollte / sollten': moral advice or sensible recommendation (Man sollte mehr Sport treiben).\n- 'könnte / könnten': possibility or alternative suggestion (Wir könnten das Projekt gemeinsam angehen).\n- 'müsste / müssten': necessity mitigated by politeness (Eigentlich müsste man den Vertrag überarbeiten).\n",
+      "examplesDe": [
+        "Meiner Ansicht nach sollte die Stadtverwaltung mehr Mittel in den Ausbau von Fahrradwegen investieren.",
+        "Man könnte das Problem dadurch lösen, dass man flexiblere Arbeitszeiten anbietet.",
+        "Jugendliche sollten im Unterricht lernen, wie man seriöse von unseriösen Quellen im Internet unterscheidet.",
+        "Bevor wir eine endgültige Entscheidung treffen, müssten wir die Gesamtkosten genauer analysieren."
       ]
     },
     {
@@ -73,6 +105,14 @@
       "title": "Attributive Adjectives Formed from Participles (Partizip I und II)",
       "explanation": "In formal notices, institutional regulations (Goethe Lesen Teil 5), and journalistic prose, participles often function as attributive adjectives before nouns and must decline accordingly.\nPartizip I (Infinitive + -d + adjective ending) denotes an ongoing, active process: 'die steigenden Preise', 'das schlafende Kind'.\nPartizip II denotes a completed state or passive result: 'das renovierte Gebäude', 'die gebuchten Tickets'.\n",
       "examples": [
+        "Die Bundesregierung plant neue Hilfsprogramme für Familien mit schulpflichtigen Kindern.",
+        "Wegen der ständig steigenden Energiekosten suchen viele Verbraucher nach Sparmöglichkeiten.",
+        "Bitte legen Sie beim Betreten des Gebäudes das ausgefüllte Anmeldeformular an der Rezeption vor.",
+        "Alle im Flugzeug verbliebenen Gegenstände können beim Fundbüro abgeholt werden."
+      ],
+      "titleDe": "Attributive Adjectives Formed from Participles (Partizip I und II)",
+      "explanationDe": "In formal notices, institutional regulations (Goethe Lesen Teil 5), and journalistic prose, participles often function as attributive adjectives before nouns and must decline accordingly.\nPartizip I (Infinitive + -d + adjective ending) denotes an ongoing, active process: 'die steigenden Preise', 'das schlafende Kind'.\nPartizip II denotes a completed state or passive result: 'das renovierte Gebäude', 'die gebuchten Tickets'.\n",
+      "examplesDe": [
         "Die Bundesregierung plant neue Hilfsprogramme für Familien mit schulpflichtigen Kindern.",
         "Wegen der ständig steigenden Energiekosten suchen viele Verbraucher nach Sparmöglichkeiten.",
         "Bitte legen Sie beim Betreten des Gebäudes das ausgefüllte Anmeldeformular an der Rezeption vor.",
@@ -92,6 +132,14 @@
         "Der Anteil älterer Menschen in der Gesellschaft wächst stetig, was neue Wohnkonzepte erfordert.",
         "Durch freiwilliges Engagement und ein Ehrenamt kann man neue Freundschaften schließen.",
         "Ein harmonisches Zusammenleben verschiedener Generationen verlangt gegenseitigen Respekt und Toleranz."
+      ],
+      "titleDe": "Social Trends, Generations, and Cohabitation",
+      "explanationDe": "Goethe B1 tests societal topics involving family models, social structures, and demographic change.\nKey terms include: die Wohngemeinschaft / WG (shared flat), der Singlehaushalt (single-person household), die Mehrgenerationenfamilie (multi-generational family), and das Zusammenleben (cohabitation).\nConcepts related to personal values include: das Ehrenamt (volunteering / voluntary work), die Einsamkeit (loneliness), der Zusammenhalt (solidarity/cohesion), and unabhängig sein (to be independent).\n",
+      "examplesDe": [
+        "Viele Studierende und Berufseinsteiger in Großstädten entscheiden sich für das Leben in einer WG.",
+        "Der Anteil älterer Menschen in der Gesellschaft wächst stetig, was neue Wohnkonzepte erfordert.",
+        "Durch freiwilliges Engagement und ein Ehrenamt kann man neue Freundschaften schließen.",
+        "Ein harmonisches Zusammenleben verschiedener Generationen verlangt gegenseitigen Respekt und Toleranz."
       ]
     },
     {
@@ -103,6 +151,14 @@
       "title": "Modern Consumption, Media Habits, and Ecological Awareness",
       "explanation": "Goethe B1 topics frequently touch upon mindful consumption, waste reduction, and the environmental footprint of digital technology.\nKey terms encompass: das Konsumverhalten (consumer behavior), der Verzicht (renunciation/giving up), die Wegwerfgesellschaft (throwaway society), and unverpackte Lebensmittel (unpackaged groceries).\nEvaluative vocabulary includes: umweltschädlich (harmful to the environment), energieeffizient (energy-efficient), and wiederverwertbar (recyclable/reusable).\n",
       "examples": [
+        "Experten kritisieren die moderne Wegwerfgesellschaft, in der defekte Geräte sofort ersetzt werden.",
+        "Ein bewusster Verzicht auf überflüssigen Konsum schont nicht nur das Portemonnaie, sondern auch die Umwelt.",
+        "Unverpackt-Läden bieten Kunden die Möglichkeit, alltägliche Lebensmittel ohne Plastikmüll einzukaufen.",
+        "Der Einsatz energieeffizienter Elektrogeräte senkt den Stromverbrauch im Haushalt beträchtlich."
+      ],
+      "titleDe": "Modern Consumption, Media Habits, and Ecological Awareness",
+      "explanationDe": "Goethe B1 topics frequently touch upon mindful consumption, waste reduction, and the environmental footprint of digital technology.\nKey terms encompass: das Konsumverhalten (consumer behavior), der Verzicht (renunciation/giving up), die Wegwerfgesellschaft (throwaway society), and unverpackte Lebensmittel (unpackaged groceries).\nEvaluative vocabulary includes: umweltschädlich (harmful to the environment), energieeffizient (energy-efficient), and wiederverwertbar (recyclable/reusable).\n",
+      "examplesDe": [
         "Experten kritisieren die moderne Wegwerfgesellschaft, in der defekte Geräte sofort ersetzt werden.",
         "Ein bewusster Verzicht auf überflüssigen Konsum schont nicht nur das Portemonnaie, sondern auch die Umwelt.",
         "Unverpackt-Läden bieten Kunden die Möglichkeit, alltägliche Lebensmittel ohne Plastikmüll einzukaufen.",
@@ -122,6 +178,14 @@
         "Lebenslanges Lernen und regelmäßige Weiterbildung sind im modernen Berufsleben unerlässlich.",
         "Nach erfolgreichem Hochschulabschluss bieten sich jungen Absolventen vielfältige Aufstiegschancen.",
         "Er hat sich entschieden, neben dem Beruf ein Fernstudium zu absolvieren."
+      ],
+      "titleDe": "Education Paths, Vocational Training, and Lifelong Learning",
+      "explanationDe": "Discussions in the Goethe exam regularly address vocational training, university education, and lifelong skill development.\nKey terminology covers: das duale Ausbildungssystem (dual vocational system combining trade school and practical company work), der Schulabschluss (school-leaving qualification), die Weiterbildung (further training/continuing education), and die Aufstiegschancen (opportunities for advancement).\nStandard collocations include: 'eine Prüfung ablegen/bestehen' (to sit/pass an exam), 'Erfahrungen sammeln' (to gain experience), and 'sich Kenntnisse aneignen' (to acquire knowledge).\n",
+      "examplesDe": [
+        "Das duale Ausbildungssystem in Deutschland kombiniert theoretischen Unterricht in der Berufsschule mit praktischer Arbeit im Betrieb.",
+        "Lebenslanges Lernen und regelmäßige Weiterbildung sind im modernen Berufsleben unerlässlich.",
+        "Nach erfolgreichem Hochschulabschluss bieten sich jungen Absolventen vielfältige Aufstiegschancen.",
+        "Er hat sich entschieden, neben dem Beruf ein Fernstudium zu absolvieren."
       ]
     },
     {
@@ -133,6 +197,12 @@
       "title": "Understanding Narrative Texts and Personal Blogs (Goethe Lesen Teil 1)",
       "explanation": "In Goethe Lesen Teil 1, candidates read a personal text of approximately 350 words (such as a travel blog, diary entry, or personal narrative) and evaluate six statements as Richtig or Falsch.\nTasks assess selective comprehension of personal reflections, sequences of events, feelings, and concrete outcomes.\nWatch out for temporal adverbs (z.B. früher, damals, mittlerweile) and emotional attitudes that clarify whether an experience turned out positively or negatively.\n",
       "examples": [
+        "Blogtext: 'Als ich vor drei Jahren nach Wien zog, fühlte ich mich anfangs fremd. Doch sobald ich mich im örtlichen Sportverein anmeldete, fand ich schnell herzliche Freunde.' - Aussage: Der Autor fand sofort am ersten Tag in Wien viele Freunde. -> Falsch.",
+        "Blogtext: 'Die anstrengende Wanderung auf den Berggipfel hat sich gelohnt: Der Panoramablick bei Sonnenaufgang war unvergesslich.' - Aussage: Der Autor empfand die Bergtour letztlich als ein lohnendes Erlebnis. -> Richtig."
+      ],
+      "titleDe": "Understanding Narrative Texts and Personal Blogs (Goethe Lesen Teil 1)",
+      "explanationDe": "In Goethe Lesen Teil 1, candidates read a personal text of approximately 350 words (such as a travel blog, diary entry, or personal narrative) and evaluate six statements as Richtig or Falsch.\nTasks assess selective comprehension of personal reflections, sequences of events, feelings, and concrete outcomes.\nWatch out for temporal adverbs (z.B. früher, damals, mittlerweile) and emotional attitudes that clarify whether an experience turned out positively or negatively.\n",
+      "examplesDe": [
         "Blogtext: 'Als ich vor drei Jahren nach Wien zog, fühlte ich mich anfangs fremd. Doch sobald ich mich im örtlichen Sportverein anmeldete, fand ich schnell herzliche Freunde.' - Aussage: Der Autor fand sofort am ersten Tag in Wien viele Freunde. -> Falsch.",
         "Blogtext: 'Die anstrengende Wanderung auf den Berggipfel hat sich gelohnt: Der Panoramablick bei Sonnenaufgang war unvergesslich.' - Aussage: Der Autor empfand die Bergtour letztlich als ein lohnendes Erlebnis. -> Richtig."
       ]
@@ -148,6 +218,12 @@
       "examples": [
         "Artikel: 'Eine Umfrage unter 1000 Jugendlichen ergab, dass das Umweltbewusstsein zwar hoch ist, aber nur ein Viertel im Alltag konsequent auf Plastikverpackungen verzichtet.'",
         "Frage: 'Was geht aus der Umfrage hervor?' -> Option: 'Die meisten Jugendlichen wissen um die Umweltprobleme, handeln im Alltag aber oft anders.'"
+      ],
+      "titleDe": "Press Articles and Informational Reports (Goethe Lesen Teil 2)",
+      "explanationDe": "In Goethe Lesen Teil 2, candidates read two medium-length journalistic press articles from newspapers or magazines and answer three-option multiple-choice questions (each with options a, b, c).\nThis subtest evaluates detailed reading (*Detailverstehen*).\nCandidates must comprehend underlying causes, statistical comparisons, and future outlooks.\nExamine each multiple-choice option closely against the exact wording in the text: distractors frequently combine correct words in misleading ways.\n",
+      "examplesDe": [
+        "Artikel: 'Eine Umfrage unter 1000 Jugendlichen ergab, dass das Umweltbewusstsein zwar hoch ist, aber nur ein Viertel im Alltag konsequent auf Plastikverpackungen verzichtet.'",
+        "Frage: 'Was geht aus der Umfrage hervor?' -> Option: 'Die meisten Jugendlichen wissen um die Umweltprobleme, handeln im Alltag aber oft anders.'"
       ]
     },
     {
@@ -159,6 +235,12 @@
       "title": "Matching Inquiries with Classified Advertisements (Goethe Lesen Teil 3)",
       "explanation": "In Goethe Lesen Teil 3, candidates match the needs of seven individuals (numbered 13–19) to ten classified advertisements or announcements (labeled a–j).\nThere is always one situation for which no suitable advertisement exists; for this profile, candidates must select '0' (keine Anzeige).\nPay close attention to specific restrictions: a person looking for an intensive weekend course will not be served by an ad offering evening courses during the week.\n",
       "examples": [
+        "Person: 'Lisa (22) möchte in den Semesterferien ihr Englisch für ein geplantes Auslandsstudium verbessern.' -> Anzeige C: 'Intensivsprachkurse im August für Studenten mit akademischem Fokus.'",
+        "Person: 'Herr Becker sucht einen Klavierlehrer, der ihn samstags bei sich zu Hause unterrichtet.' Alle Anzeigen bieten nur Unterricht in einer Musikschule an Wochentagen an. -> Lösung: 0."
+      ],
+      "titleDe": "Matching Inquiries with Classified Advertisements (Goethe Lesen Teil 3)",
+      "explanationDe": "In Goethe Lesen Teil 3, candidates match the needs of seven individuals (numbered 13–19) to ten classified advertisements or announcements (labeled a–j).\nThere is always one situation for which no suitable advertisement exists; for this profile, candidates must select '0' (keine Anzeige).\nPay close attention to specific restrictions: a person looking for an intensive weekend course will not be served by an ad offering evening courses during the week.\n",
+      "examplesDe": [
         "Person: 'Lisa (22) möchte in den Semesterferien ihr Englisch für ein geplantes Auslandsstudium verbessern.' -> Anzeige C: 'Intensivsprachkurse im August für Studenten mit akademischem Fokus.'",
         "Person: 'Herr Becker sucht einen Klavierlehrer, der ihn samstags bei sich zu Hause unterrichtet.' Alle Anzeigen bieten nur Unterricht in einer Musikschule an Wochentagen an. -> Lösung: 0."
       ]
@@ -175,6 +257,13 @@
         "Leitfrage: 'Sollten Haustiere im Büro erlaubt sein?'",
         "Leser 1: 'Hunde am Arbeitsplatz bauen nachweislich Stress ab und heben das Betriebsklima. Ich nehme meinen Terrier jeden Tag mit ins Büro!' -> Haltung: Ja.",
         "Leser 2: 'Man bedenkt dabei überhaupt nicht die vielen Kollegen mit Tierhaarallergien oder Angst vor Hunden. Ein Büro ist schließlich kein Tierheim!' -> Haltung: Nein."
+      ],
+      "titleDe": "Evaluating Reader Opinions in Internet Forums (Goethe Lesen Teil 4)",
+      "explanationDe": "In Goethe Lesen Teil 4, candidates read seven reader comments from an online forum reacting to a controversial lead question (e.g. 'Sollte der öffentliche Nahverkehr für alle Bürger kostenlos sein?').\nFor each of the seven statements, candidates must decide whether the author expresses a positive attitude (Ja) or a negative attitude / rejection (Nein) regarding the question.\nLook beyond single positive or negative words: an author might list positive points before explicitly rejecting the core proposal in their concluding sentence.\n",
+      "examplesDe": [
+        "Leitfrage: 'Sollten Haustiere im Büro erlaubt sein?'",
+        "Leser 1: 'Hunde am Arbeitsplatz bauen nachweislich Stress ab und heben das Betriebsklima. Ich nehme meinen Terrier jeden Tag mit ins Büro!' -> Haltung: Ja.",
+        "Leser 2: 'Man bedenkt dabei überhaupt nicht die vielen Kollegen mit Tierhaarallergien oder Angst vor Hunden. Ein Büro ist schließlich kein Tierheim!' -> Haltung: Nein."
       ]
     },
     {
@@ -186,6 +275,12 @@
       "title": "Institutional Guidelines and Terms of Service (Goethe Lesen Teil 5)",
       "explanation": "In Goethe Lesen Teil 5, candidates read an official text outlining formal rules or regulations (e.g. library regulations, swimming pool house rules, dormitory policies, fire safety rules).\nFour three-option multiple-choice items assess accurate comprehension of prohibitions, obligations, permissions, and administrative procedures.\nPay careful attention to modal qualifiers: 'ist gestattet' (permitted), 'ist untersagt' (prohibited), 'ist erforderlich' (mandatory), and 'kann auf Antrag bewilligt werden' (possible upon application).\n",
       "examples": [
+        "Badeordnung: 'Die Benutzung von Mobiltelefonen und Kameras ist im gesamten Saunabereich aus Gründen des Persönlichkeitsschutzes strengstens untersagt.' -> Das Fotografieren in der Sauna ist verboten.",
+        "Bibliotheksordnung: 'Die Leihfrist kann vor Ablauf bis zu dreimal verlängert werden, sofern keine Vormerkung eines anderen Benutzers vorliegt.' -> Verlängerungen sind nur möglich, wenn das Buch nicht reserviert ist."
+      ],
+      "titleDe": "Institutional Guidelines and Terms of Service (Goethe Lesen Teil 5)",
+      "explanationDe": "In Goethe Lesen Teil 5, candidates read an official text outlining formal rules or regulations (e.g. library regulations, swimming pool house rules, dormitory policies, fire safety rules).\nFour three-option multiple-choice items assess accurate comprehension of prohibitions, obligations, permissions, and administrative procedures.\nPay careful attention to modal qualifiers: 'ist gestattet' (permitted), 'ist untersagt' (prohibited), 'ist erforderlich' (mandatory), and 'kann auf Antrag bewilligt werden' (possible upon application).\n",
+      "examplesDe": [
         "Badeordnung: 'Die Benutzung von Mobiltelefonen und Kameras ist im gesamten Saunabereich aus Gründen des Persönlichkeitsschutzes strengstens untersagt.' -> Das Fotografieren in der Sauna ist verboten.",
         "Bibliotheksordnung: 'Die Leihfrist kann vor Ablauf bis zu dreimal verlängert werden, sofern keine Vormerkung eines anderen Benutzers vorliegt.' -> Verlängerungen sind nur möglich, wenn das Buch nicht reserviert ist."
       ]
@@ -200,6 +295,11 @@
       "explanation": "In Goethe Hören Teil 1, candidates listen to five short everyday audio recordings (voicemail messages, train station announcements, public venue broadcasts).\nEach text is played twice and has two associated tasks: a True/False statement (global gist) and a three-option multiple-choice question (specific detail).\nUse the 10-second pause before each audio track to read both tasks, anticipating the speakers' main intent and listening selectively for dates, places, and times.\n",
       "examples": [
         "Text: 'Hallo Claudia, hier ist Thomas. Unser Treffen heute Abend im Café Einstein muss leider ausfallen, weil mein Sohn Fieber hat. Lass uns stattdessen am Samstag um 15 Uhr im Schlosspark spazieren gehen. Gib mir kurz Bescheid!' - Aufgabe 1: Thomas sagt das heutige Treffen ab (Richtig). Aufgabe 2: Wo wollen sie sich am Samstag treffen? (Im Schlosspark)."
+      ],
+      "titleDe": "Short Dialogues and Voicemails with Dual Tasks (Goethe Hören Teil 1)",
+      "explanationDe": "In Goethe Hören Teil 1, candidates listen to five short everyday audio recordings (voicemail messages, train station announcements, public venue broadcasts).\nEach text is played twice and has two associated tasks: a True/False statement (global gist) and a three-option multiple-choice question (specific detail).\nUse the 10-second pause before each audio track to read both tasks, anticipating the speakers' main intent and listening selectively for dates, places, and times.\n",
+      "examplesDe": [
+        "Text: 'Hallo Claudia, hier ist Thomas. Unser Treffen heute Abend im Café Einstein muss leider ausfallen, weil mein Sohn Fieber hat. Lass uns stattdessen am Samstag um 15 Uhr im Schlosspark spazieren gehen. Gib mir kurz Bescheid!' - Aufgabe 1: Thomas sagt das heutige Treffen ab (Richtig). Aufgabe 2: Wo wollen sie sich am Samstag treffen? (Im Schlosspark)."
       ]
     },
     {
@@ -212,6 +312,11 @@
       "explanation": "In Goethe Hören Teil 2, candidates listen to a continuous monologic presentation (e.g. a museum tour guide, an event organizer, an orientation briefing for new employees).\nThe audio track is played only once and contains five three-option multiple-choice questions.\nSuccess depends on structured listening: follow the guide's organizational signposts (z.B. 'Als Erstes betreten wir...', 'Nun kommen wir zu...', 'Bitte beachten Sie unbedingt...') to anticipate each question in order.\n",
       "examples": [
         "Sprecher: 'Herzlich willkommen im Stadtmuseum! Unsere heutige Führung dauert rund 45 Minuten. Bevor wir den ersten Ausstellungsraum betreten, bitte ich Sie, große Taschen und Rucksäcke in den Schließfächern im Untergeschoss einzuschließen. Das Fotografieren mit Blitz ist aus konservatorischen Gründen untersagt.'"
+      ],
+      "titleDe": "Guided Tours and Presentations Played Once (Goethe Hören Teil 2)",
+      "explanationDe": "In Goethe Hören Teil 2, candidates listen to a continuous monologic presentation (e.g. a museum tour guide, an event organizer, an orientation briefing for new employees).\nThe audio track is played only once and contains five three-option multiple-choice questions.\nSuccess depends on structured listening: follow the guide's organizational signposts (z.B. 'Als Erstes betreten wir...', 'Nun kommen wir zu...', 'Bitte beachten Sie unbedingt...') to anticipate each question in order.\n",
+      "examplesDe": [
+        "Sprecher: 'Herzlich willkommen im Stadtmuseum! Unsere heutige Führung dauert rund 45 Minuten. Bevor wir den ersten Ausstellungsraum betreten, bitte ich Sie, große Taschen und Rucksäcke in den Schließfächern im Untergeschoss einzuschließen. Das Fotografieren mit Blitz ist aus konservatorischen Gründen untersagt.'"
       ]
     },
     {
@@ -223,6 +328,11 @@
       "title": "Conversational Dialogue Between Two Acquaintances (Goethe Hören Teil 3)",
       "explanation": "In Goethe Hören Teil 3, candidates listen to a casual conversation between two speakers (e.g. colleagues at lunch, neighbors in the hallway, friends discussing weekend plans).\nThe conversation is played only once.\nCandidates evaluate seven statements as Richtig or Falsch.\nTrack who says what: distractors often invert which speaker made a proposal, expressed skepticism, or confirmed a plan.\n",
       "examples": [
+        "Mann: 'Hast du schon gehört, dass Sandra nach München zieht?' - Frau: 'Ja, sie hat dort ein fantastisches Jobangebot bekommen. Ich helfe ihr am Samstag beim Kistenpacken.' - Aussage: Sandra zieht um, weil sie eine neue Stelle antritt. -> Richtig."
+      ],
+      "titleDe": "Conversational Dialogue Between Two Acquaintances (Goethe Hören Teil 3)",
+      "explanationDe": "In Goethe Hören Teil 3, candidates listen to a casual conversation between two speakers (e.g. colleagues at lunch, neighbors in the hallway, friends discussing weekend plans).\nThe conversation is played only once.\nCandidates evaluate seven statements as Richtig or Falsch.\nTrack who says what: distractors often invert which speaker made a proposal, expressed skepticism, or confirmed a plan.\n",
+      "examplesDe": [
         "Mann: 'Hast du schon gehört, dass Sandra nach München zieht?' - Frau: 'Ja, sie hat dort ein fantastisches Jobangebot bekommen. Ich helfe ihr am Samstag beim Kistenpacken.' - Aussage: Sandra zieht um, weil sie eine neue Stelle antritt. -> Richtig."
       ]
     },
@@ -237,6 +347,12 @@
       "examples": [
         "Moderatorin: 'Guten Abend! Unser Thema heute: Homeoffice - Fluch oder Segen? Zu Gast sind Arbeitgebervertreter Herr Wolf und Gewerkschafterin Frau Sommer.'",
         "Herr Wolf: 'Unternehmen benötigen verbindliche Präsenztage, da der kreative Austausch im Team virtuell leidet.' -> Meinung: Präsenzzeiten im Büro sind für Innovationen unerlässlich -> Herr Wolf."
+      ],
+      "titleDe": "Moderated Radio Panel Debate with Multiple Speakers (Goethe Hören Teil 4)",
+      "explanationDe": "In Goethe Hören Teil 4, candidates listen to a radio panel debate featuring a moderator and two guests with contrasting viewpoints on a societal issue.\nThe audio recording is played twice and contains eight tasks.\nCandidates must determine which person (Moderator, Gast A, or Gast B) expressed a specific opinion or argument.\nDistinguish between the speakers by paying close attention to speaker introductions, distinct vocal timbres, and identifying pronouns.\n",
+      "examplesDe": [
+        "Moderatorin: 'Guten Abend! Unser Thema heute: Homeoffice - Fluch oder Segen? Zu Gast sind Arbeitgebervertreter Herr Wolf und Gewerkschafterin Frau Sommer.'",
+        "Herr Wolf: 'Unternehmen benötigen verbindliche Präsenztage, da der kreative Austausch im Team virtuell leidet.' -> Meinung: Präsenzzeiten im Büro sind für Innovationen unerlässlich -> Herr Wolf."
       ]
     },
     {
@@ -248,6 +364,11 @@
       "title": "Composing an Informal Personal Narrative (Goethe Schreiben Aufgabe 1)",
       "explanation": "In Goethe Schreiben Aufgabe 1, candidates write a personal email of approximately 80 words to a friend recounting a recent experience or event.\nCandidates must address three explicit prompt points:\n1. Describing the event or activity (z.B. Umzug, Party, Reise).\n2. Explaining why you found it particularly positive or negative.\n3. Proposing a future meeting or inviting your friend.\nUse an informal register: 'Liebe/Lieber...', personal pronouns 'du/dir/dich', and an informal sign-off like 'Herzliche Grüße' or 'Bis bald'.\n",
       "examples": [
+        "Liebe Sarah, letztes Wochenende bin ich endlich in meine neue Wohnung in Köln umgezogen! Die Lage ist fantastisch, direkt am Park. Allerdings war das Tragen der schweren Kisten in den vierten Stock ohne Aufzug unglaublich anstrengend. Ich habe Muskelkater am ganzen Körper! Wenn du am nächsten Wochenende Zeit hast, musst du mich unbedingt besuchen kommen. Ich koche uns etwas Leckeres und zeige dir die Stadt. Wie sieht es bei dir aus? Herzliche Grüße, dein Markus."
+      ],
+      "titleDe": "Composing an Informal Personal Narrative (Goethe Schreiben Aufgabe 1)",
+      "explanationDe": "In Goethe Schreiben Aufgabe 1, candidates write a personal email of approximately 80 words to a friend recounting a recent experience or event.\nCandidates must address three explicit prompt points:\n1. Describing the event or activity (z.B. Umzug, Party, Reise).\n2. Explaining why you found it particularly positive or negative.\n3. Proposing a future meeting or inviting your friend.\nUse an informal register: 'Liebe/Lieber...', personal pronouns 'du/dir/dich', and an informal sign-off like 'Herzliche Grüße' or 'Bis bald'.\n",
+      "examplesDe": [
         "Liebe Sarah, letztes Wochenende bin ich endlich in meine neue Wohnung in Köln umgezogen! Die Lage ist fantastisch, direkt am Park. Allerdings war das Tragen der schweren Kisten in den vierten Stock ohne Aufzug unglaublich anstrengend. Ich habe Muskelkater am ganzen Körper! Wenn du am nächsten Wochenende Zeit hast, musst du mich unbedingt besuchen kommen. Ich koche uns etwas Leckeres und zeige dir die Stadt. Wie sieht es bei dir aus? Herzliche Grüße, dein Markus."
       ]
     },
@@ -261,6 +382,11 @@
       "explanation": "In Goethe Schreiben Aufgabe 2, candidates write a contribution of approximately 80 words for an online discussion forum reacting to an article or opinion post.\nUnlike Aufgabe 1, this task requires an objective, argumentative register without greetings or farewells:\n1. Refer to the lead topic and summarize the core issue.\n2. State your personal perspective using opinion exponents (Meiner Meinung nach, Ich stehe auf dem Standpunkt, dass...).\n3. Provide concrete reasons and real-world examples to support your view.\n4. Conclude with a clear, balanced final judgment.\n",
       "examples": [
         "In der heutigen Diskussion über die Nutzung von Smartphones im Schulunterricht möchte ich meinen Standpunkt darlegen. Ich bin der festen Überzeugung, dass Mobiltelefone im Klassenraum nicht verboten, sondern gezielt als Lernmedien eingesetzt werden sollten. Schüler können damit Recherchen durchführen oder interaktive Lern-Apps nutzen. Natürlich besteht die Gefahr der Ablenkung durch Spiele und Chat-Nachrichten, weshalb klare Nutzungsregeln aufgestellt werden müssen. Ein generelles Verbot halte ich jedoch für rückschrittlich."
+      ],
+      "titleDe": "Formulating a Nuanced Online Opinion (Goethe Schreiben Aufgabe 2)",
+      "explanationDe": "In Goethe Schreiben Aufgabe 2, candidates write a contribution of approximately 80 words for an online discussion forum reacting to an article or opinion post.\nUnlike Aufgabe 1, this task requires an objective, argumentative register without greetings or farewells:\n1. Refer to the lead topic and summarize the core issue.\n2. State your personal perspective using opinion exponents (Meiner Meinung nach, Ich stehe auf dem Standpunkt, dass...).\n3. Provide concrete reasons and real-world examples to support your view.\n4. Conclude with a clear, balanced final judgment.\n",
+      "examplesDe": [
+        "In der heutigen Diskussion über die Nutzung von Smartphones im Schulunterricht möchte ich meinen Standpunkt darlegen. Ich bin der festen Überzeugung, dass Mobiltelefone im Klassenraum nicht verboten, sondern gezielt als Lernmedien eingesetzt werden sollten. Schüler können damit Recherchen durchführen oder interaktive Lern-Apps nutzen. Natürlich besteht die Gefahr der Ablenkung durch Spiele und Chat-Nachrichten, weshalb klare Nutzungsregeln aufgestellt werden müssen. Ein generelles Verbot halte ich jedoch für rückschrittlich."
       ]
     },
     {
@@ -273,6 +399,11 @@
       "explanation": "In Goethe Schreiben Aufgabe 3, candidates compose a concise formal email of approximately 40 words addressing a superior, teacher, course instructor, or official.\nThe message must handle an administrative absence, cancellation, or polite scheduling request:\n1. Formal greeting: 'Sehr geehrte/r Frau/Herr...'\n2. State the reason for being unable to attend or requiring an adjustment.\n3. Express regret and politely apologize.\n4. Request homework, materials, or an alternative appointment.\n5. Formal closing: 'Mit freundlichen Grüßen'.\n",
       "examples": [
         "Sehr geehrte Frau Dr. Wagner, leider bin ich heute Morgen mit hohem Fieber aufgewacht und kann deshalb nicht an Ihrem Seminar teilnehmen. Ich bitte Sie, mein Fehlen zu entschuldigen. Könnten Sie mir freundlicherweise mitteilen, welche Aufgaben ich für die nächste Woche vorbereiten soll? Vielen Dank für Ihr Verständnis. Mit freundlichen Grüßen, Lucas Weber."
+      ],
+      "titleDe": "Composing a Formal Notification or Apology (Goethe Schreiben Aufgabe 3)",
+      "explanationDe": "In Goethe Schreiben Aufgabe 3, candidates compose a concise formal email of approximately 40 words addressing a superior, teacher, course instructor, or official.\nThe message must handle an administrative absence, cancellation, or polite scheduling request:\n1. Formal greeting: 'Sehr geehrte/r Frau/Herr...'\n2. State the reason for being unable to attend or requiring an adjustment.\n3. Express regret and politely apologize.\n4. Request homework, materials, or an alternative appointment.\n5. Formal closing: 'Mit freundlichen Grüßen'.\n",
+      "examplesDe": [
+        "Sehr geehrte Frau Dr. Wagner, leider bin ich heute Morgen mit hohem Fieber aufgewacht und kann deshalb nicht an Ihrem Seminar teilnehmen. Ich bitte Sie, mein Fehlen zu entschuldigen. Könnten Sie mir freundlicherweise mitteilen, welche Aufgaben ich für die nächste Woche vorbereiten soll? Vielen Dank für Ihr Verständnis. Mit freundlichen Grüßen, Lucas Weber."
       ]
     },
     {
@@ -284,6 +415,14 @@
       "title": "Interactive Planning and Collaborative Organization (Goethe Sprechen Teil 1)",
       "explanation": "In Goethe Sprechen Teil 1, candidates collaborate to plan an event, excursion, or project based on a task prompt (e.g. organizing a weekend bicycle tour or arranging a farewell party).\nCandidates must actively contribute ideas, react promptly to their partner's suggestions, handle differing views constructively, and agree on practical logistics (dates, budget, transport, food, equipment).\nExaminers look for conversational balance: avoid monologuing and consistently invite your partner to contribute ('Was denkst du darüber?', 'Hättest du einen anderen Vorschlag?').\n",
       "examples": [
+        "Kandidat A: 'Wir sollen einen gemeinsamen Ausflug mit unserem Deutschkurs planen. Was hältst du von einer Fahrradtour an den See?'",
+        "Kandidat B: 'Das ist ein schöner Vorschlag, aber vielleicht haben nicht alle Kursteilnehmer ein Fahrrad. Wir könnten stattdessen mit dem Regionalzug fahren.'",
+        "Kandidat A: 'Guter Punkt! Das Gruppenticket der Bahn ist sehr günstig. Wollen wir uns am Samstag um neun Uhr am Bahnhof treffen?'",
+        "Kandidat B: 'Ja, das passt hervorragend. Ich kümmere mich um den Kauf der Fahrkarten und du informierst die anderen Teilnehmer.'"
+      ],
+      "titleDe": "Interactive Planning and Collaborative Organization (Goethe Sprechen Teil 1)",
+      "explanationDe": "In Goethe Sprechen Teil 1, candidates collaborate to plan an event, excursion, or project based on a task prompt (e.g. organizing a weekend bicycle tour or arranging a farewell party).\nCandidates must actively contribute ideas, react promptly to their partner's suggestions, handle differing views constructively, and agree on practical logistics (dates, budget, transport, food, equipment).\nExaminers look for conversational balance: avoid monologuing and consistently invite your partner to contribute ('Was denkst du darüber?', 'Hättest du einen anderen Vorschlag?').\n",
+      "examplesDe": [
         "Kandidat A: 'Wir sollen einen gemeinsamen Ausflug mit unserem Deutschkurs planen. Was hältst du von einer Fahrradtour an den See?'",
         "Kandidat B: 'Das ist ein schöner Vorschlag, aber vielleicht haben nicht alle Kursteilnehmer ein Fahrrad. Wir könnten stattdessen mit dem Regionalzug fahren.'",
         "Kandidat A: 'Guter Punkt! Das Gruppenticket der Bahn ist sehr günstig. Wollen wir uns am Samstag um neun Uhr am Bahnhof treffen?'",
@@ -304,6 +443,15 @@
         "Folie 3: 'In meiner Heimat ist der stationäre Handel noch sehr dominant, aber die jüngere Generation nutzt zunehmend Lieferdienste.'",
         "Folie 4: 'Ein Vorteil ist die Zeitersparnis, ein gravierender Nachteil jedoch das Aussterben kleiner Geschäfte in Innenstädten.'",
         "Folie 5: 'Meiner Meinung nach sollte man das Internet sinnvoll nutzen, aber lokale Geschäfte unterstützen. Vielen Dank fürs Zuhören!'"
+      ],
+      "titleDe": "Thematic Presentation with Structured Slides (Goethe Sprechen Teil 2)",
+      "explanationDe": "In Goethe Sprechen Teil 2, each candidate selects one of two topics and delivers an unassisted monologic presentation lasting approximately 3 to 4 minutes.\nThe presentation must follow the 5-step Goethe structure:\n1. Folie 1: Thema und Struktur vorstellen ('Das Thema meiner Präsentation lautet... Meine Präsentation gliedert sich in folgende Teile...').\n2. Folie 2: Eigene persönliche Erfahrungen darlegen ('Ich persönlich habe die Erfahrung gemacht, dass...').\n3. Folie 3: Die Situation im Heimatland beschreiben ('In meinem Heimatland verhält es sich so, dass...').\n4. Folie 4: Vor- und Nachteile abwägen ('Ein großer Vorteil ist..., demgegenüber steht jedoch der Nachteil...').\n5. Folie 5: Eigene Meinung zusammenfassen und Vortrag beenden ('Zusammenfassend lässt sich sagen... Vielen Dank für Ihre Aufmerksamkeit!').\n",
+      "examplesDe": [
+        "Folie 1: 'Guten Tag! Ich möchte Ihnen heute das Thema Vor- und Nachteile des Online-Shoppings vorstellen. Zunächst spreche ich über meine persönlichen Erfahrungen, danach über die Situation in meinem Heimatland. Anschließend werde ich die Vor- und Nachteile abwägen und meine eigene Meinung äußern.'",
+        "Folie 2: 'Ich selbst kaufe Bücher und Elektronikartikel meistens online, weil die Auswahl enorm ist.'",
+        "Folie 3: 'In meiner Heimat ist der stationäre Handel noch sehr dominant, aber die jüngere Generation nutzt zunehmend Lieferdienste.'",
+        "Folie 4: 'Ein Vorteil ist die Zeitersparnis, ein gravierender Nachteil jedoch das Aussterben kleiner Geschäfte in Innenstädten.'",
+        "Folie 5: 'Meiner Meinung nach sollte man das Internet sinnvoll nutzen, aber lokale Geschäfte unterstützen. Vielen Dank fürs Zuhören!'"
       ]
     },
     {
@@ -315,6 +463,12 @@
       "title": "Providing Constructive Feedback and Answering Questions (Goethe Sprechen Teil 3)",
       "explanation": "Goethe Sprechen Teil 3 follows immediately after the presentations delivered in Teil 2.\nEach candidate must provide feedback on their partner's presentation, ask one relevant follow-up question, and answer questions posed by the partner and the examiners.\nFeedback must follow a standard structure:\n1. Polite praise: 'Vielen Dank für deine interessante Präsentation. Ich fand das Thema sehr spannend.'\n2. Specific observation: 'Besonders interessant fand ich deine Schilderung über dein Heimatland, weil...'\n3. Asking a question: 'Ich hätte jedoch noch eine Frage: Glaubst du, dass...?'\n",
       "examples": [
+        "Feedback: 'Danke für deinen Vortrag, Marco. Du hast sehr klar und strukturiert gesprochen. Besonders überrascht hat mich, dass in deinem Heimatland fast alle Einkäufe noch bar bezahlt werden. Dazu hätte ich eine Frage: Glaubst du, dass sich das Bargeld dort in den nächsten Jahren halten wird?'",
+        "Antwort auf Partnerfrage: 'Das ist eine gute Frage. Ich denke, dass bargeldloses Bezahlen mit dem Smartphone auch bei uns immer beliebter wird, aber ältere Menschen vertrauen dem Bargeld weiterhin mehr.'"
+      ],
+      "titleDe": "Providing Constructive Feedback and Answering Questions (Goethe Sprechen Teil 3)",
+      "explanationDe": "Goethe Sprechen Teil 3 follows immediately after the presentations delivered in Teil 2.\nEach candidate must provide feedback on their partner's presentation, ask one relevant follow-up question, and answer questions posed by the partner and the examiners.\nFeedback must follow a standard structure:\n1. Polite praise: 'Vielen Dank für deine interessante Präsentation. Ich fand das Thema sehr spannend.'\n2. Specific observation: 'Besonders interessant fand ich deine Schilderung über dein Heimatland, weil...'\n3. Asking a question: 'Ich hätte jedoch noch eine Frage: Glaubst du, dass...?'\n",
+      "examplesDe": [
         "Feedback: 'Danke für deinen Vortrag, Marco. Du hast sehr klar und strukturiert gesprochen. Besonders überrascht hat mich, dass in deinem Heimatland fast alle Einkäufe noch bar bezahlt werden. Dazu hätte ich eine Frage: Glaubst du, dass sich das Bargeld dort in den nächsten Jahren halten wird?'",
         "Antwort auf Partnerfrage: 'Das ist eine gute Frage. Ich denke, dass bargeldloses Bezahlen mit dem Smartphone auch bei uns immer beliebter wird, aber ältere Menschen vertrauen dem Bargeld weiterhin mehr.'"
       ]
@@ -1467,7 +1621,9 @@
         "level": "B1",
         "title": "Reasons, purposes and personal stories",
         "description": "Connect ideas with reason, purpose and result clauses, and handle personal topics: blogs, a personal email, announcements and casual conversation.",
-        "difficultyRank": 1
+        "difficultyRank": 1,
+        "titleDe": "Reasons, purposes and personal stories",
+        "descriptionDe": "Connect ideas with reason, purpose and result clauses, and handle personal topics: blogs, a personal email, announcements and casual conversation."
       },
       "lessonIds": [
         "b1-goethe-causal-concessive-connectors",
@@ -1486,7 +1642,9 @@
         "level": "B1",
         "title": "Education, work and consumption",
         "description": "Vocabulary for education, careers and consumption, with press articles, classified ads, a guided tour and a short presentation.",
-        "difficultyRank": 2
+        "difficultyRank": 2,
+        "titleDe": "Education, work and consumption",
+        "descriptionDe": "Vocabulary for education, careers and consumption, with press articles, classified ads, a guided tour and a short presentation."
       },
       "lessonIds": [
         "b1-goethe-listening-teil2-guided-tour-presentation",
@@ -1504,7 +1662,9 @@
         "level": "B1",
         "title": "Opinions and advice",
         "description": "Give advice and opinions with Konjunktiv II and relative clauses, in forum comments, a radio discussion and joint planning.",
-        "difficultyRank": 3
+        "difficultyRank": 3,
+        "titleDe": "Opinions and advice",
+        "descriptionDe": "Give advice and opinions with Konjunktiv II and relative clauses, in forum comments, a radio discussion and joint planning."
       },
       "lessonIds": [
         "b1-goethe-listening-teil4-radio-discussion",
@@ -1522,7 +1682,9 @@
         "level": "B1",
         "title": "Formal texts and feedback",
         "description": "Participles used as adjectives, rules and regulations, a formal message, and giving feedback after a presentation.",
-        "difficultyRank": 4
+        "difficultyRank": 4,
+        "titleDe": "Formal texts and feedback",
+        "descriptionDe": "Participles used as adjectives, rules and regulations, a formal message, and giving feedback after a presentation."
       },
       "lessonIds": [
         "b1-goethe-participles-as-adjectives",

@@ -75,6 +75,8 @@ describe('curriculumExportService', () => {
         ('a1-g__px-a', 'a1-g', 'fill_blank', '{"textWithBlank":"a ___","correctAnswer":"x"}', 'approved', '2026-09-29T10:00:01.000Z'),
         ('a1-g__px-u', 'a1-g', 'fill_blank', '{"textWithBlank":"u ___","correctAnswer":"x"}', 'unreviewed', '2026-09-29T10:00:03.000Z'),
         ('a1-g__px-r', 'a1-g', 'fill_blank', '{"textWithBlank":"r ___","correctAnswer":"x"}', 'rejected', '2026-09-29T10:00:04.000Z');
+      UPDATE milestones SET title_de = 'M-de' WHERE id = 'g-m';
+      UPDATE lessons SET title_de = 'G-de' WHERE id = 'a1-g';
     `);
     const seed = createCurriculumExportService(db).exportTrackLevel('generic', 'A1');
     expect(seed.practice).toEqual([
@@ -89,7 +91,7 @@ describe('curriculumExportService', () => {
     expect(createCurriculumExportService(target).exportTrackLevel('generic', 'A1').practice).toEqual(seed.practice);
   });
 
-  it('exports format v2: ranked milestones with sorted lesson ids, Unsorted lessons as lessons only', () => {
+  it('exports format v3: ranked milestones with sorted lesson ids, Unsorted lessons as lessons only', () => {
     const db = createDbClient(':memory:');
     db.exec(`
       INSERT INTO milestones (id, track, level, title, difficulty_rank) VALUES ('m2', 'generic', 'A1', 'Two', 2), ('m1', 'generic', 'A1', 'One', 1);
@@ -99,9 +101,12 @@ describe('curriculumExportService', () => {
     `);
     ensureUnsortedExists(db, 'generic', 'A1');
     db.prepare("UPDATE lesson_placements SET milestone_id = 'generic-a1-unsorted' WHERE lesson_id = 'u'").run();
+    db.exec("UPDATE lessons SET title_de = 'B-de' WHERE id = 'b'; UPDATE milestones SET title_de = 'One-de' WHERE id = 'm1';");
 
     const seed = createCurriculumExportService(db).exportTrackLevel('generic', 'A1');
-    expect(seed.formatVersion).toBe(2);
+    expect(seed.formatVersion).toBe(3);
+    expect(seed.milestones[0].milestone.titleDe).toBe('One-de');
+    expect(seed.lessons.find((l) => l.id === 'b')?.titleDe).toBe('B-de');
     expect(seed.milestones.map((m) => [m.milestone.id, m.milestone.difficultyRank, m.lessonIds])).toEqual([
       ['m1', 1, ['a', 'b']],
       ['m2', 2, []],

@@ -21,6 +21,8 @@ interface MilestoneRow {
   title: string;
   description: string | null;
   difficulty_rank: number | null;
+  title_de: string;
+  description_de: string | null;
 }
 
 export function rowToMilestone(row: MilestoneRow): Milestone {
@@ -31,6 +33,8 @@ export function rowToMilestone(row: MilestoneRow): Milestone {
     title: row.title,
     description: row.description,
     difficultyRank: row.difficulty_rank,
+    titleDe: row.title_de,
+    descriptionDe: row.description_de,
   };
 }
 

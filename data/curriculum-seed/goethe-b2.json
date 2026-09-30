@@ -1,6 +1,6 @@
 {
-  "seedVersion": "4",
-  "formatVersion": 2,
+  "seedVersion": "5",
+  "formatVersion": 3,
   "track": "goethe",
   "level": "B2",
   "lessons": [
@@ -15,6 +15,12 @@
       "examples": [
         "Vorheriger Satz: 'Die Wissenschaftler standen vor einem rätselhaften Phänomen.' -> Eingesetzter Satz: 'Dieses ließ sich mit bisherigen Theorien nicht erklären.'",
         "Vorheriger Satz: 'Trotz hoher Investitionen blieben die Erträge weit hinter den Erwartungen zurück.' -> Eingesetzter Satz: 'Die Firmenleitung zog deshalb drastische Konsequenzen.'"
+      ],
+      "titleDe": "Textkohäsion, Anaphern und Satzverflechtung für Lesen Teil 2",
+      "explanationDe": "In Goethe Lesen Teil 2 müssen 6 entfernte Sätze aus 8 Optionen in einen Magazintext wiedereingesetzt werden.\nEntscheidend für den Erfolg ist das Erkennen von Kohäsionsmitteln:\n1. Pronomen und Deiktika: \"dieser\", \"jene\", \"solche\", \"dort\", \"damals\", die auf Nomen oder Sachverhalte des vorangehenden Satzes verweisen.\n2. Konnektoren und Adverbien: \"folglich\", \"demnach\", \"hingegen\", \"allerdings\", \"nichtsdestotrotz\".\n3. Lexikalische Wiederaufnahme durch Synonyme oder Oberbegriffe.\n",
+      "examplesDe": [
+        "Vorheriger Satz: 'Die Wissenschaftler standen vor einem rätselhaften Phänomen.' -> Eingesetzter Satz: 'Dieses ließ sich mit bisherigen Theorien nicht erklären.'",
+        "Vorheriger Satz: 'Trotz hoher Investitionen blieben die Erträge weit hinter den Erwartungen zurück.' -> Eingesetzter Satz: 'Die Firmenleitung zog deshalb drastische Konsequenzen.'"
       ]
     },
     {
@@ -26,6 +32,13 @@
       "title": "Differenzierter Meinungsausdruck und Argumentationsketten",
       "explanation": "Für das Goethe-Schreiben Teil 1 (Forumsbeitrag) und Sprechen müssen Argumente abgestuft und nuanciert formuliert werden.\nMeinung einleiten: \"Meines Erachtens\", \"Ich bin der festen Überzeugung, dass\", \"Aus meiner Sicht\".\nArgumente reihen und steigern: \"Nicht minder bedeutsam ist...\", \"Ein weiterer gravierender Aspekt liegt darin, dass...\", \"Ganz entscheidend ist hierbei...\".\nEinschränkung/Distanzierung: \"Man sollte allerdings nicht außer Acht lassen, dass...\", \"Gewiss trifft es zu, dass..., gleichwohl...\".\n",
       "examples": [
+        "Meines Erachtens überwiegen die Vorteile einer flexiblen Arbeitszeitregelung die organisatorischen Hürden bei Weitem.",
+        "Ein weiteres gewichtiges Argument für den Ausbau des Radwegenetzes ist die erhebliche Reduktion von Stickoxiden.",
+        "Es steht außer Frage, dass diese Reform hohe Kosten verursacht, gleichwohl ist sie unumgänglich."
+      ],
+      "titleDe": "Differenzierter Meinungsausdruck und Argumentationsketten",
+      "explanationDe": "Für das Goethe-Schreiben Teil 1 (Forumsbeitrag) und Sprechen müssen Argumente abgestuft und nuanciert formuliert werden.\nMeinung einleiten: \"Meines Erachtens\", \"Ich bin der festen Überzeugung, dass\", \"Aus meiner Sicht\".\nArgumente reihen und steigern: \"Nicht minder bedeutsam ist...\", \"Ein weiterer gravierender Aspekt liegt darin, dass...\", \"Ganz entscheidend ist hierbei...\".\nEinschränkung/Distanzierung: \"Man sollte allerdings nicht außer Acht lassen, dass...\", \"Gewiss trifft es zu, dass..., gleichwohl...\".\n",
+      "examplesDe": [
         "Meines Erachtens überwiegen die Vorteile einer flexiblen Arbeitszeitregelung die organisatorischen Hürden bei Weitem.",
         "Ein weiteres gewichtiges Argument für den Ausbau des Radwegenetzes ist die erhebliche Reduktion von Stickoxiden.",
         "Es steht außer Frage, dass diese Reform hohe Kosten verursacht, gleichwohl ist sie unumgänglich."
@@ -44,6 +57,14 @@
         "Der neue Roman des Autors soll ein Meisterwerk sein. (Das hört man von Kritikern.)",
         "Nach dieser langen Reise müssen Sie völlig erschöpft sein. (Logische Schlussfolgerung.)",
         "Die Reparatur dürfte etwa zwei Stunden in Anspruch nehmen. (Wahrscheinliche Schätzung.)"
+      ],
+      "titleDe": "Subjektive Bedeutung der Modalverben (Vermutung und Fremdaussage)",
+      "explanationDe": "Im B2-Bereich drücken Modalverben nicht nur Pflicht oder Fähigkeit aus, sondern den Grad der Wahrscheinlichkeit (Vermutung) oder die Distanzierung von fremden Aussagen.\nMüssen: fast 100% sicher (\"Das Licht brennt, er muss zu Hause sein\").\nDürfte: ca. 75% wahrscheinlich (\"Das Wetter dürfte morgen sonnig werden\").\nKönnte / Kann: ca. 50% Möglichkeit (\"Es könnte regnen\").\nSollen: fremde Behauptung / Gerücht (\"Er soll viel Geld veruntreut haben\" = Man sagt, dass...).\nWollen: eigene Behauptung des Subjekts, die bezweifelt wird (\"Er will den Chef nicht gesehen haben\").\n",
+      "examplesDe": [
+        "Die Zeugin will zum Tatzeitpunkt zu Hause geschlafen haben. (Das behauptet sie selbst, wird aber angezweifelt.)",
+        "Der neue Roman des Autors soll ein Meisterwerk sein. (Das hört man von Kritikern.)",
+        "Nach dieser langen Reise müssen Sie völlig erschöpft sein. (Logische Schlussfolgerung.)",
+        "Die Reparatur dürfte etwa zwei Stunden in Anspruch nehmen. (Wahrscheinliche Schätzung.)"
       ]
     },
     {
@@ -58,6 +79,13 @@
         "Die von der Bundesregierung beschlossenen Steuererleichterungen treten im Januar in Kraft.",
         "Das ständig wachsende Verkehrsaufkommen belastet die Anwohner der Hauptverkehrsachsen.",
         "Die im Rahmen der Studie befragten Bürger zeigten sich überwiegend skeptisch."
+      ],
+      "titleDe": "Partizipialkonstruktionen zur Textverdichtung in journalistischen Texten",
+      "explanationDe": "Goethe-Lesetexte (insbesondere Teil 3 und Teil 4) nutzen häufig partizipiale Attribute, um komplexe Informationen syntaktisch zu verdichten.\nStatt eines Nebensatzes wird das Partizip I oder II attributiv vor das Nomen gesetzt, oft mit mehrgliedrigen Erweiterungen.\nBeispiel: \"Die auf der Konferenz von führenden Klimatologen vorgestellten Simulationsmodelle\" = \"Die Simulationsmodelle, die von führenden Klimatologen auf der Konferenz vorgestellt wurden\".\n",
+      "examplesDe": [
+        "Die von der Bundesregierung beschlossenen Steuererleichterungen treten im Januar in Kraft.",
+        "Das ständig wachsende Verkehrsaufkommen belastet die Anwohner der Hauptverkehrsachsen.",
+        "Die im Rahmen der Studie befragten Bürger zeigten sich überwiegend skeptisch."
       ]
     },
     {
@@ -69,6 +97,13 @@
       "title": "Indirekte Rede und Konjunktiv I in der Berichterstattung",
       "explanation": "Zur distanzierten Wiedergabe von Äußerungen nutzt die gehobene Schriftsprache und die journalistische Berichterstattung den Konjunktiv I.\nEr wird vom Präsensstamm des Verbs abgeleitet: er/sie habe, sei, wisse, könne, müsse, gehe.\nStimmen die Konjunktiv-I-Formen mit dem Indikativ überein (häufig in der 1. Person Singular und im Plural), weicht man auf den Konjunktiv II aus (\"hätten\", \"wären\", \"würden\").\n",
       "examples": [
+        "Der Sprecher betonte, die Regierung habe die Situation jederzeit unter Kontrolle.",
+        "Die Ministerin erklärte, man sei sich der Herausforderungen bewusst und werde rasch handeln.",
+        "Kritiker warfen dem Konzern vor, er verharmlose die ökologischen Folgeschäden."
+      ],
+      "titleDe": "Indirekte Rede und Konjunktiv I in der Berichterstattung",
+      "explanationDe": "Zur distanzierten Wiedergabe von Äußerungen nutzt die gehobene Schriftsprache und die journalistische Berichterstattung den Konjunktiv I.\nEr wird vom Präsensstamm des Verbs abgeleitet: er/sie habe, sei, wisse, könne, müsse, gehe.\nStimmen die Konjunktiv-I-Formen mit dem Indikativ überein (häufig in der 1. Person Singular und im Plural), weicht man auf den Konjunktiv II aus (\"hätten\", \"wären\", \"würden\").\n",
+      "examplesDe": [
         "Der Sprecher betonte, die Regierung habe die Situation jederzeit unter Kontrolle.",
         "Die Ministerin erklärte, man sei sich der Herausforderungen bewusst und werde rasch handeln.",
         "Kritiker warfen dem Konzern vor, er verharmlose die ökologischen Folgeschäden."
@@ -87,6 +122,14 @@
         "Die gefassten Beschlüsse müssen nun schnellstmöglich in die Tat umgesetzt werden.",
         "Es steht völlig außer Frage, dass das Bildungswesen reformbedürftig ist.",
         "Die Lobbygruppe übte massiven Einfluss auf die Gesetzgebung aus."
+      ],
+      "titleDe": "Gehobene Funktionsverbgefüge für Aufsatz und Vortrag",
+      "explanationDe": "In den Prüfungsteilen Schreiben und Sprechen des Goethe-Zertifikats B2 wird der gezielte Einsatz eines breiten, gehobenen Idiomenrepertoires positiv bewertet.\nWichtige Wendungen: \"zur Sprache bringen\" (ansprechen), \"unter Beweis stellen\" (beweisen), \"in die Tat umsetzen\" (verwirklichen), \"außer Frage stehen\" (zweifellos sein), \"Einfluss ausüben auf\" (beeinflussen), \"Maßnahmen ergreifen\" (handeln).\n",
+      "examplesDe": [
+        "Er hat seine Fachkompetenz in zahlreichen Projekten eindrucksvoll unter Beweis gestellt.",
+        "Die gefassten Beschlüsse müssen nun schnellstmöglich in die Tat umgesetzt werden.",
+        "Es steht völlig außer Frage, dass das Bildungswesen reformbedürftig ist.",
+        "Die Lobbygruppe übte massiven Einfluss auf die Gesetzgebung aus."
       ]
     },
     {
@@ -98,6 +141,13 @@
       "title": "Wortschatz: Nachhaltiger Lebensstil und Konsumkritik",
       "explanation": "Typische Themen im Goethe-Zertifikat B2 behandeln bewussten Konsum, Müllvermeidung und nachhaltigen Tourismus.\nSchlüsselwörter: der Minimalismus, die Konsumgesellschaft, die Müllvermeidung, der Verzicht, unverpackte Lebensmittel, die Wegwerfmentalität, der ökologische Wandel.\nKollokationen: auf Überflüssiges verzichten, Ressourcen schonend einsetzen, ein Zeichen für den Umweltschutz setzen.\n",
       "examples": [
+        "Der Trend zum Minimalismus beweist, dass Wohlstand nicht primär an materiellem Besitz gemessen werden muss.",
+        "Immer mehr Verbraucher kaufen in Unverpackt-Läden ein, um aktiv zur Müllvermeidung beizutragen.",
+        "Massentourismus zerstört oft genau die Naturräume, derentwegen Urlauber anreisen."
+      ],
+      "titleDe": "Wortschatz: Nachhaltiger Lebensstil und Konsumkritik",
+      "explanationDe": "Typische Themen im Goethe-Zertifikat B2 behandeln bewussten Konsum, Müllvermeidung und nachhaltigen Tourismus.\nSchlüsselwörter: der Minimalismus, die Konsumgesellschaft, die Müllvermeidung, der Verzicht, unverpackte Lebensmittel, die Wegwerfmentalität, der ökologische Wandel.\nKollokationen: auf Überflüssiges verzichten, Ressourcen schonend einsetzen, ein Zeichen für den Umweltschutz setzen.\n",
+      "examplesDe": [
         "Der Trend zum Minimalismus beweist, dass Wohlstand nicht primär an materiellem Besitz gemessen werden muss.",
         "Immer mehr Verbraucher kaufen in Unverpackt-Läden ein, um aktiv zur Müllvermeidung beizutragen.",
         "Massentourismus zerstört oft genau die Naturräume, derentwegen Urlauber anreisen."
@@ -115,6 +165,13 @@
         "In einer sich rasch wandelnden Wirtschaftswelt gewinnt das Konzept des lebenslangen Lernens essenzielle Bedeutung.",
         "Kritiker fordern, Noten in der Grundschule durch individuelle Entwicklungsberichte zu ersetzen.",
         "Digital gestützter Unterricht ermöglicht personalisiertes Lernen im individuellen Tempo."
+      ],
+      "titleDe": "Wortschatz: Bildung, Chancengleichheit und Digitalisierung",
+      "explanationDe": "Bildungsthemen im Goethe-Zertifikat reichen von Frühförderung über Benotungssysteme bis zum lebenslangen Lernen im Beruf.\nBegriffe: das lebenslange Lernen, die Leistungsbeurteilung, die Chancengleichheit, die Medienkompetenz, der Quereinstieg, die Umschulung, die Studiengebühren.\nKollokationen: Talente fördern, Bildungsungerechtigkeit abbauen, theoretisches Wissen in die Praxis übertragen.\n",
+      "examplesDe": [
+        "In einer sich rasch wandelnden Wirtschaftswelt gewinnt das Konzept des lebenslangen Lernens essenzielle Bedeutung.",
+        "Kritiker fordern, Noten in der Grundschule durch individuelle Entwicklungsberichte zu ersetzen.",
+        "Digital gestützter Unterricht ermöglicht personalisiertes Lernen im individuellen Tempo."
       ]
     },
     {
@@ -126,6 +183,13 @@
       "title": "Wortschatz: Ehrenamt, Generationen und gesellschaftlicher Zusammenhalt",
       "explanation": "Gesellschaftliche Diskurse in B2 thematisieren ehrenamtliches Engagement, das Miteinander von Jung und Alt sowie gesellschaftliche Integration.\nBegriffe: das bürgerschaftliche Engagement, der Zusammenhalt, das Mehrgenerationenhaus, der demografische Wandel, die Solidarität, die Isolation.\nKollokationen: einen Beitrag zur Gesellschaft leisten, sich für Schwächere einsetzen, Vereinsarbeit leisten.\n",
       "examples": [
+        "Mehrgenerationenhäuser bieten Raum für gegenseitige Unterstützung zwischen Senioren und Familien.",
+        "Ohne das ehrenamtliche Engagement von Millionen Bürgern wären viele Hilfsangebote nicht finanzierbar.",
+        "Die Vereinsarbeit stärkt das Gemeinschaftsgefühl und wirkt der zunehmenden Vereinsamung entgegen."
+      ],
+      "titleDe": "Wortschatz: Ehrenamt, Generationen und gesellschaftlicher Zusammenhalt",
+      "explanationDe": "Gesellschaftliche Diskurse in B2 thematisieren ehrenamtliches Engagement, das Miteinander von Jung und Alt sowie gesellschaftliche Integration.\nBegriffe: das bürgerschaftliche Engagement, der Zusammenhalt, das Mehrgenerationenhaus, der demografische Wandel, die Solidarität, die Isolation.\nKollokationen: einen Beitrag zur Gesellschaft leisten, sich für Schwächere einsetzen, Vereinsarbeit leisten.\n",
+      "examplesDe": [
         "Mehrgenerationenhäuser bieten Raum für gegenseitige Unterstützung zwischen Senioren und Familien.",
         "Ohne das ehrenamtliche Engagement von Millionen Bürgern wären viele Hilfsangebote nicht finanzierbar.",
         "Die Vereinsarbeit stärkt das Gemeinschaftsgefühl und wirkt der zunehmenden Vereinsamung entgegen."
@@ -141,6 +205,11 @@
       "explanation": "In Teil 1 des Goethe-Leseverstehens (empfohlene Zeit: ca. 18 Minuten) lesen Sie vier kurze Forumsbeiträge verschiedener Personen (A, B, C, D) zu einem Thema (z. B. Minimalismus, fleischfreie Ernährung).\nSie ordnen 9 Aussagen der jeweils passenden Person zu. Personen können mehrfach gewählt werden.\nAchten Sie auf Paraphrasen: Eine Aussage lautet beispielsweise \"Wer verzichtet auf Fleisch?\", während im Text von Person C steht: \"Ich habe tierische Produkte komplett von meinem Speiseplan gestrichen.\"\n",
       "examples": [
         "Aussage: 'Für wen ist Naturschutz bei Kaufentscheidungen ausschlaggebend?' -> Text B: 'Ich kaufe nur Produkte aus biologischem Anbau, um die Umwelt nicht zu belasten.' -> Lösung: B."
+      ],
+      "titleDe": "Goethe Lesen Teil 1: Zuordnung von Aussagen zu Forumsbeiträgen",
+      "explanationDe": "In Teil 1 des Goethe-Leseverstehens (empfohlene Zeit: ca. 18 Minuten) lesen Sie vier kurze Forumsbeiträge verschiedener Personen (A, B, C, D) zu einem Thema (z. B. Minimalismus, fleischfreie Ernährung).\nSie ordnen 9 Aussagen der jeweils passenden Person zu. Personen können mehrfach gewählt werden.\nAchten Sie auf Paraphrasen: Eine Aussage lautet beispielsweise \"Wer verzichtet auf Fleisch?\", während im Text von Person C steht: \"Ich habe tierische Produkte komplett von meinem Speiseplan gestrichen.\"\n",
+      "examplesDe": [
+        "Aussage: 'Für wen ist Naturschutz bei Kaufentscheidungen ausschlaggebend?' -> Text B: 'Ich kaufe nur Produkte aus biologischem Anbau, um die Umwelt nicht zu belasten.' -> Lösung: B."
       ]
     },
     {
@@ -152,6 +221,11 @@
       "title": "Goethe Lesen Teil 2: Textrekonstruktion mit Satzlücken",
       "explanation": "In Teil 2 (empfohlene Zeit: ca. 12 Minuten) lesen Sie einen zusammenhängenden Magazin- oder Zeitungsartikel, in dem 6 Sätze fehlen.\nAus einer Liste von 8 Sätzen (A–H) müssen Sie die 6 passenden Sätze den Lücken (1–6) zuordnen; zwei Sätze bleiben übrig.\nPrüfen Sie immer den grammatischen und inhaltlichen Anschluss sowohl an den vorangehenden als auch an den nachfolgenden Satz (Pronominalbezüge, Konnektoren, Zeitenfolge).\n",
       "examples": [
+        "Lücke 2: Vor dem Spalt steht 'Viele Schulen verfügen noch immer nicht über schnelles Internet.' Nach dem Spalt steht 'Daher können digitale Lehrmittel dort kaum genutzt werden.' -> Passender Rumpfsatz: 'Oft fehlt es schlicht an den finanziellen Mitteln für moderne Glasfaseranschlüsse.'"
+      ],
+      "titleDe": "Goethe Lesen Teil 2: Textrekonstruktion mit Satzlücken",
+      "explanationDe": "In Teil 2 (empfohlene Zeit: ca. 12 Minuten) lesen Sie einen zusammenhängenden Magazin- oder Zeitungsartikel, in dem 6 Sätze fehlen.\nAus einer Liste von 8 Sätzen (A–H) müssen Sie die 6 passenden Sätze den Lücken (1–6) zuordnen; zwei Sätze bleiben übrig.\nPrüfen Sie immer den grammatischen und inhaltlichen Anschluss sowohl an den vorangehenden als auch an den nachfolgenden Satz (Pronominalbezüge, Konnektoren, Zeitenfolge).\n",
+      "examplesDe": [
         "Lücke 2: Vor dem Spalt steht 'Viele Schulen verfügen noch immer nicht über schnelles Internet.' Nach dem Spalt steht 'Daher können digitale Lehrmittel dort kaum genutzt werden.' -> Passender Rumpfsatz: 'Oft fehlt es schlicht an den finanziellen Mitteln für moderne Glasfaseranschlüsse.'"
       ]
     },
@@ -165,6 +239,11 @@
       "explanation": "Teil 3 (empfohlene Zeit: ca. 12 Minuten) umfasst einen längeren journalistischen Leitartikel oder Essay und 6 Multiple-Choice-Aufgaben (a, b, c).\nGeprüft wird das präzise Erfassen von Autorenmeinungen, Haltungen, Ironie und logischer Argumentationsführung.\nHäufige Falle: Eine Option enthält Fakten, die zwar sachlich wahr sind, aber im Text vom Autor gar nicht behauptet oder vertreten werden.\n",
       "examples": [
         "Frage: Was kritisiert der Verfasser an der aktuellen Debatte? -> Option a: Die mangelnde Sachlichkeit der Kontrahenten. Option b: Die hohen Ausgaben für die Forschung. Option c: Die Einmischung der Medien."
+      ],
+      "titleDe": "Goethe Lesen Teil 3: Autorenabsichten in Sachtexten analysieren",
+      "explanationDe": "Teil 3 (empfohlene Zeit: ca. 12 Minuten) umfasst einen längeren journalistischen Leitartikel oder Essay und 6 Multiple-Choice-Aufgaben (a, b, c).\nGeprüft wird das präzise Erfassen von Autorenmeinungen, Haltungen, Ironie und logischer Argumentationsführung.\nHäufige Falle: Eine Option enthält Fakten, die zwar sachlich wahr sind, aber im Text vom Autor gar nicht behauptet oder vertreten werden.\n",
+      "examplesDe": [
+        "Frage: Was kritisiert der Verfasser an der aktuellen Debatte? -> Option a: Die mangelnde Sachlichkeit der Kontrahenten. Option b: Die hohen Ausgaben für die Forschung. Option c: Die Einmischung der Medien."
       ]
     },
     {
@@ -177,6 +256,11 @@
       "explanation": "In Teil 4 (empfohlene Zeit: ca. 12 Minuten) lesen Sie 8 kurze Statements oder Leserbriefe zu einem kontroversen Thema.\nDiesen müssen Sie 6 aus 7 vorgegebenen Überschriften inhaltlich zuordnen. Zwei Texte bleiben ohne Zuordnung.\nKonzentrieren Sie sich darauf, den Hauptgedanken jedes Leserbriefs in einem einzigen Satz zusammenzufassen, und vergleichen Sie diese Synthese mit den angebotenen Überschriften.\n",
       "examples": [
         "Leserbrief: 'Ich fahre seit 20 Jahren täglich mit dem Rad zur Arbeit. Wenn die Straßen enger werden, gefährdet das mein Leben.' -> Passende Überschrift: 'Sorge um die Sicherheit im Straßenverkehr'."
+      ],
+      "titleDe": "Goethe Lesen Teil 4: Lesermeinungen Überschriften zuordnen",
+      "explanationDe": "In Teil 4 (empfohlene Zeit: ca. 12 Minuten) lesen Sie 8 kurze Statements oder Leserbriefe zu einem kontroversen Thema.\nDiesen müssen Sie 6 aus 7 vorgegebenen Überschriften inhaltlich zuordnen. Zwei Texte bleiben ohne Zuordnung.\nKonzentrieren Sie sich darauf, den Hauptgedanken jedes Leserbriefs in einem einzigen Satz zusammenzufassen, und vergleichen Sie diese Synthese mit den angebotenen Überschriften.\n",
+      "examplesDe": [
+        "Leserbrief: 'Ich fahre seit 20 Jahren täglich mit dem Rad zur Arbeit. Wenn die Straßen enger werden, gefährdet das mein Leben.' -> Passende Überschrift: 'Sorge um die Sicherheit im Straßenverkehr'."
       ]
     },
     {
@@ -188,6 +272,11 @@
       "title": "Goethe Lesen Teil 5: Richtlinien und Betriebsordnungen verstehen",
       "explanation": "In Teil 5 (empfohlene Zeit: ca. 8 Minuten) lesen Sie einen administrativen Regelungstext (z. B. Bibliotheksordnung, Brandschutzordnung, IT-Nutzungsrichtlinien).\nSie ordnen drei vorgegebenen Textabschnitten jeweils die passende Überschrift aus 8 Optionen zu (eine dient als Beispiel, 4 bleiben ungenutzt).\nAchten Sie auf institutionelle Formulierungen wie \"ist untersagt\", \"bedarf der schriftlichen Zustimmung\", \"sind freizuhalten\".\n",
       "examples": [
+        "Abschnitt: 'Flucht- und Rettungswege dürfen zu keinem Zeitpunkt durch Gegenstände verstellt werden. Türen in Notausgängen sind stets unverschlossen zu halten.' -> Passende Überschrift: 'Freihaltung von Fluchtwegen'."
+      ],
+      "titleDe": "Goethe Lesen Teil 5: Richtlinien und Betriebsordnungen verstehen",
+      "explanationDe": "In Teil 5 (empfohlene Zeit: ca. 8 Minuten) lesen Sie einen administrativen Regelungstext (z. B. Bibliotheksordnung, Brandschutzordnung, IT-Nutzungsrichtlinien).\nSie ordnen drei vorgegebenen Textabschnitten jeweils die passende Überschrift aus 8 Optionen zu (eine dient als Beispiel, 4 bleiben ungenutzt).\nAchten Sie auf institutionelle Formulierungen wie \"ist untersagt\", \"bedarf der schriftlichen Zustimmung\", \"sind freizuhalten\".\n",
+      "examplesDe": [
         "Abschnitt: 'Flucht- und Rettungswege dürfen zu keinem Zeitpunkt durch Gegenstände verstellt werden. Türen in Notausgängen sind stets unverschlossen zu halten.' -> Passende Überschrift: 'Freihaltung von Fluchtwegen'."
       ]
     },
@@ -202,6 +291,12 @@
       "examples": [
         "Aufgabe 1: Das Museum ist am Feiertag geschlossen. (Richtig/Falsch)",
         "Aufgabe 2: Zu welcher Uhrzeit beginnt die Sonderführung? (a: 10:00 Uhr, b: 11:30 Uhr, c: 14:00 Uhr)"
+      ],
+      "titleDe": "Goethe Hören Teil 1: Alltagsgespräche und Radionachrichten",
+      "explanationDe": "In Teil 1 des Moduls Hören hören Sie 5 kurze Texte (Monologe oder Dialoge, z. B. Anrufbeantworter, Radioansagen, Telefongespräche).\nJeder Text wird nur EINMAL abgespielt!\nZu jedem Text lösen Sie zwei Aufgaben:\n1. Richtig/Falsch zur Hauptaussage (Globalverstehen).\n2. Multiple-Choice (a, b, c) zu einem wichtigen Detail.\nNutzen Sie die 20 Sekunden Lesezeit vor jedem Text unbedingt, um Schlüsselwörter in den Aufgaben zu unterstreichen.\n",
+      "examplesDe": [
+        "Aufgabe 1: Das Museum ist am Feiertag geschlossen. (Richtig/Falsch)",
+        "Aufgabe 2: Zu welcher Uhrzeit beginnt die Sonderführung? (a: 10:00 Uhr, b: 11:30 Uhr, c: 14:00 Uhr)"
       ]
     },
     {
@@ -213,6 +308,11 @@
       "title": "Goethe Hören Teil 2: Experten- und Kulturinterviews",
       "explanation": "In Teil 2 hören Sie ein ausführliches Radiointerview mit einer Persönlichkeit aus Wissenschaft, Kultur oder Gesellschaft.\nDer Text wird ZWEIMAL abgespielt. Sie bearbeiten 6 Multiple-Choice-Aufgaben (a, b, c).\nBeantworten Sie beim ersten Hören die klaren Aufgaben und markieren Sie Unsicherheiten.\nNutzen Sie das zweite Hören gezielt zur Verifikation und zur Lösung verbleibender Fragen.\n",
       "examples": [
+        "Frage: Welches Hauptziel verfolgt das neue Forschungsprojekt? -> a: Die Entwicklung günstigerer Akkus. b: Die Erforschung neuer Werkstoffe. c: Die Senkung der Produktionskosten."
+      ],
+      "titleDe": "Goethe Hören Teil 2: Experten- und Kulturinterviews",
+      "explanationDe": "In Teil 2 hören Sie ein ausführliches Radiointerview mit einer Persönlichkeit aus Wissenschaft, Kultur oder Gesellschaft.\nDer Text wird ZWEIMAL abgespielt. Sie bearbeiten 6 Multiple-Choice-Aufgaben (a, b, c).\nBeantworten Sie beim ersten Hören die klaren Aufgaben und markieren Sie Unsicherheiten.\nNutzen Sie das zweite Hören gezielt zur Verifikation und zur Lösung verbleibender Fragen.\n",
+      "examplesDe": [
         "Frage: Welches Hauptziel verfolgt das neue Forschungsprojekt? -> a: Die Entwicklung günstigerer Akkus. b: Die Erforschung neuer Werkstoffe. c: Die Senkung der Produktionskosten."
       ]
     },
@@ -226,6 +326,11 @@
       "explanation": "In Teil 3 hören Sie ein lebendiges Gespräch zwischen drei Personen (z. B. Moderator, ein weiblicher Gast, ein männlicher Gast) zu einem aktuellen gesellschaftlichen Thema.\nDer Text wird nur EINMAL abgespielt!\nSie haben 7 Thesen/Aussagen vor sich und müssen entscheiden: Wer äußert diese Meinung? (Sprecher 1, Sprecher 2 oder Sprecher 3?).\nAchten Sie auf Stimmfarben, Intonation, namentliche Ansprachen durch den Moderator und Formulierungen der Zustimmung oder Ablehnung.\n",
       "examples": [
         "Aussage: 'Hält eine gesetzliche Pflicht für unverhältnismäßig.' -> Im Audio sagt Herr Berg: 'Wir sollten auf die Eigenverantwortung der Bürger vertrauen statt ständig mit Verboten zu drohen.' -> Lösung: Herr Berg."
+      ],
+      "titleDe": "Goethe Hören Teil 3: Podiumsgespräch mit drei Sprechern",
+      "explanationDe": "In Teil 3 hören Sie ein lebendiges Gespräch zwischen drei Personen (z. B. Moderator, ein weiblicher Gast, ein männlicher Gast) zu einem aktuellen gesellschaftlichen Thema.\nDer Text wird nur EINMAL abgespielt!\nSie haben 7 Thesen/Aussagen vor sich und müssen entscheiden: Wer äußert diese Meinung? (Sprecher 1, Sprecher 2 oder Sprecher 3?).\nAchten Sie auf Stimmfarben, Intonation, namentliche Ansprachen durch den Moderator und Formulierungen der Zustimmung oder Ablehnung.\n",
+      "examplesDe": [
+        "Aussage: 'Hält eine gesetzliche Pflicht für unverhältnismäßig.' -> Im Audio sagt Herr Berg: 'Wir sollten auf die Eigenverantwortung der Bürger vertrauen statt ständig mit Verboten zu drohen.' -> Lösung: Herr Berg."
       ]
     },
     {
@@ -238,6 +343,11 @@
       "explanation": "In Teil 4 hören Sie einen ca. 4–5-minütigen Fachvortrag oder eine Radiofeature-Sendung zu einem wissenschaftlichen oder gesellschaftlichen Thema.\nDer Vortrag wird ZWEIMAL abgespielt. Dazu gibt es 8 Aufgaben mit Dreifachauswahl (a, b, c) bzw. Satzvervollständigungen.\nDer Vortragende folgt meist einer klaren akademischen Gliederung: Einleitung -> methodisches Vorgehen -> Befunde -> Interpretation -> Ausblick.\n",
       "examples": [
         "Aufgabe: Laut Referent beruht der Anstieg der Lebenserwartung vor allem auf... -> a: verbesserter Hygiene und Medizin. b: gesünderer Ernährung. c: weniger körperlicher Arbeit."
+      ],
+      "titleDe": "Goethe Hören Teil 4: Vortrag zu wissenschaftlichen Themen",
+      "explanationDe": "In Teil 4 hören Sie einen ca. 4–5-minütigen Fachvortrag oder eine Radiofeature-Sendung zu einem wissenschaftlichen oder gesellschaftlichen Thema.\nDer Vortrag wird ZWEIMAL abgespielt. Dazu gibt es 8 Aufgaben mit Dreifachauswahl (a, b, c) bzw. Satzvervollständigungen.\nDer Vortragende folgt meist einer klaren akademischen Gliederung: Einleitung -> methodisches Vorgehen -> Befunde -> Interpretation -> Ausblick.\n",
+      "examplesDe": [
+        "Aufgabe: Laut Referent beruht der Anstieg der Lebenserwartung vor allem auf... -> a: verbesserter Hygiene und Medizin. b: gesünderer Ernährung. c: weniger körperlicher Arbeit."
       ]
     },
     {
@@ -249,6 +359,13 @@
       "title": "Goethe Schreiben Teil 1: Verfassen eines Forumsbeitrags",
       "explanation": "In Teil 1 des Moduls Schreiben verfassen Sie einen Forumsbeitrag (ca. 150 Wörter) zu einem kontroversen Thema (z. B. Tempolimit, plastikfreie Kantine, Mediennutzung im Kindergarten).\nSie müssen vier Inhaltspunkte zwingend und ausgewogen bearbeiten:\n1. Äußern Sie Ihre eigene Meinung zum Thema und begründen Sie diese.\n2. Nennen Sie Gründe, warum das Thema aktuell diskutiert wird.\n3. Schlagen Sie alternative Möglichkeiten vor.\n4. Erläutern Sie die Vor- und Nachteile dieser Alternativen.\nAchten Sie auf einen flüssigen Diskussionsstil (Anrede der Community: \"Liebe Forumsmitglieder, ...\"), Absätze und eine logische Gedankenführung.\n",
       "examples": [
+        "Liebe Forenmitglieder, ich verfolge die Debatte über fleischlose Ernährung mit großem Interesse...",
+        "Meines Erachtens ist es nicht zielführend, Fleischkonsum gänzlich zu verbieten; vielmehr sollten wir...",
+        "Eine sinnvolle Alternative bestünde darin, vegetarische Gerichte ansprechend und preisgünstig anzubieten."
+      ],
+      "titleDe": "Goethe Schreiben Teil 1: Verfassen eines Forumsbeitrags",
+      "explanationDe": "In Teil 1 des Moduls Schreiben verfassen Sie einen Forumsbeitrag (ca. 150 Wörter) zu einem kontroversen Thema (z. B. Tempolimit, plastikfreie Kantine, Mediennutzung im Kindergarten).\nSie müssen vier Inhaltspunkte zwingend und ausgewogen bearbeiten:\n1. Äußern Sie Ihre eigene Meinung zum Thema und begründen Sie diese.\n2. Nennen Sie Gründe, warum das Thema aktuell diskutiert wird.\n3. Schlagen Sie alternative Möglichkeiten vor.\n4. Erläutern Sie die Vor- und Nachteile dieser Alternativen.\nAchten Sie auf einen flüssigen Diskussionsstil (Anrede der Community: \"Liebe Forumsmitglieder, ...\"), Absätze und eine logische Gedankenführung.\n",
+      "examplesDe": [
         "Liebe Forenmitglieder, ich verfolge die Debatte über fleischlose Ernährung mit großem Interesse...",
         "Meines Erachtens ist es nicht zielführend, Fleischkonsum gänzlich zu verbieten; vielmehr sollten wir...",
         "Eine sinnvolle Alternative bestünde darin, vegetarische Gerichte ansprechend und preisgünstig anzubieten."
@@ -266,6 +383,13 @@
         "Sehr geehrte Frau Dr. Wagner, hiermit muss ich mich leider für das gestrige Projekttreffen entschuldigen...",
         "Aufgrund einer akuten Magen-Darm-Grippe war es mir unmöglich, rechtzeitig Bescheid zu geben.",
         "Ich werde die versäumten Aufgaben schnellstmöglich nachholen und bis Freitag einreichen."
+      ],
+      "titleDe": "Goethe Schreiben Teil 2: Formelle berufliche Mitteilung",
+      "explanationDe": "In Teil 2 schreiben Sie eine formelle berufliche Nachricht (ca. 100 Wörter) an Vorgesetzte, Geschäftspartner oder Dozenten.\nTypische Situationen: Entschuldigung für Nichterscheinen, Bitte um Fristverlängerung, Beschwerde über defekte Arbeitsmittel, Bitte um Unterstützung bei einem Projekt.\nEs müssen alle vorgegebenen Leitpunkte (meist 4 Punkte) registergerecht abgehandelt werden.\nVerwenden Sie das formelle Register (\"Sehr geehrte/r Frau/Herr...\", \"Mit freundlichen Grüßen\") und höfliche Konjunktiv-II-Konstruktionen.\n",
+      "examplesDe": [
+        "Sehr geehrte Frau Dr. Wagner, hiermit muss ich mich leider für das gestrige Projekttreffen entschuldigen...",
+        "Aufgrund einer akuten Magen-Darm-Grippe war es mir unmöglich, rechtzeitig Bescheid zu geben.",
+        "Ich werde die versäumten Aufgaben schnellstmöglich nachholen und bis Freitag einreichen."
       ]
     },
     {
@@ -280,6 +404,13 @@
         "Guten Tag, das Thema meiner heutigen Präsentation lautet 'Erneuerbare Energien im Alltag'...",
         "Zunächst möchte ich zwei Optionen vorstellen: die Installation einer Photovoltaikanlage auf dem Eigenheim und die Beteiligung an einem Bürgerwindpark.",
         "Aus meiner Sicht überwiegen die Vorteile einer eigenen Solaranlage, da man dadurch energieautark wird..."
+      ],
+      "titleDe": "Goethe Sprechen Teil 1: Strukturierter Vortrag mit Optionenvergleich",
+      "explanationDe": "In Teil 1 der mündlichen Prüfung (ca. 4 Minuten pro Kandidat) halten Sie einen Vortrag zu einem gewählten Thema aus zwei Vorschlägen (z. B. Formen der Kinderbetreuung, Arbeitszeitmodelle, Urlaubsmöglichkeiten).\nIhre Präsentation muss folgende Pflichtbestandteile enthalten:\n1. Einleitung: Thema vorstellen und Gliederung nennen.\n2. Mehrere Möglichkeiten/Alternativen beschreiben (z. B. Kita vs. Tagesmutter).\n3. Vor- und Nachteile dieser Alternativen abwägen.\n4. Eine Möglichkeit genauer schildern und Ihre persönliche Meinung/Erfahrung begründen.\n5. Abschluss und Übergabe an das Publikum für Nachfragen.\n",
+      "examplesDe": [
+        "Guten Tag, das Thema meiner heutigen Präsentation lautet 'Erneuerbare Energien im Alltag'...",
+        "Zunächst möchte ich zwei Optionen vorstellen: die Installation einer Photovoltaikanlage auf dem Eigenheim und die Beteiligung an einem Bürgerwindpark.",
+        "Aus meiner Sicht überwiegen die Vorteile einer eigenen Solaranlage, da man dadurch energieautark wird..."
       ]
     },
     {
@@ -291,6 +422,13 @@
       "title": "Goethe Sprechen Teil 2: Kontroverse Diskussion mit dem Partner",
       "explanation": "In Teil 2 diskutieren Sie ca. 5 Minuten lang mit Ihrem Prüfungspartner über ein vorgegebenes streitbares Thema (z. B. 'Sollte die Innenstadt komplett autofrei werden?').\nErwartet wird eine dynamische, interaktive Debatte:\n- Bringen Sie stichhaltige Argumente vor.\n- Gehen Sie direkt auf die Aussagen Ihres Partners ein (\"Da bin ich ganz Ihrer Meinung, allerdings...\", \"Diesem Punkt möchte ich widersprechen...\").\n- Bleiben Sie sachlich, vertreten Sie Ihren Standpunkt konsequent, aber zeigen Sie sich am Ende kompromissbereit, um ein gemeinsames Fazit zu ziehen.\n",
       "examples": [
+        "Ich halte ein generelles Tempolimit auf Autobahnen für sinnvoll, da es nachweislich schwere Unfälle verhindert und den Schadstoffausstoß senkt.",
+        "Verstehen Sie mich nicht falsch, Sicherheit ist essenziell, aber moderne Assistenzsysteme regeln dies bereits. Wäre eine flexible Beschilderung nicht zielführender?",
+        "Könnten wir uns darauf einigen, dass ein Tempolimit zumindest auf unfallträchtigen Streckenabschnitten Pflicht sein sollte?"
+      ],
+      "titleDe": "Goethe Sprechen Teil 2: Kontroverse Diskussion mit dem Partner",
+      "explanationDe": "In Teil 2 diskutieren Sie ca. 5 Minuten lang mit Ihrem Prüfungspartner über ein vorgegebenes streitbares Thema (z. B. 'Sollte die Innenstadt komplett autofrei werden?').\nErwartet wird eine dynamische, interaktive Debatte:\n- Bringen Sie stichhaltige Argumente vor.\n- Gehen Sie direkt auf die Aussagen Ihres Partners ein (\"Da bin ich ganz Ihrer Meinung, allerdings...\", \"Diesem Punkt möchte ich widersprechen...\").\n- Bleiben Sie sachlich, vertreten Sie Ihren Standpunkt konsequent, aber zeigen Sie sich am Ende kompromissbereit, um ein gemeinsames Fazit zu ziehen.\n",
+      "examplesDe": [
         "Ich halte ein generelles Tempolimit auf Autobahnen für sinnvoll, da es nachweislich schwere Unfälle verhindert und den Schadstoffausstoß senkt.",
         "Verstehen Sie mich nicht falsch, Sicherheit ist essenziell, aber moderne Assistenzsysteme regeln dies bereits. Wäre eine flexible Beschilderung nicht zielführender?",
         "Könnten wir uns darauf einigen, dass ein Tempolimit zumindest auf unfallträchtigen Streckenabschnitten Pflicht sein sollte?"
@@ -1038,7 +1176,9 @@
         "level": "B2",
         "title": "Opinions and everyday listening",
         "description": "Express and argue opinions, with vocabulary for society and education, everyday listening, forum posts to read and a forum post to write.",
-        "difficultyRank": 1
+        "difficultyRank": 1,
+        "titleDe": "Opinions and everyday listening",
+        "descriptionDe": "Express and argue opinions, with vocabulary for society and education, everyday listening, forum posts to read and a forum post to write."
       },
       "lessonIds": [
         "b2-goethe-hoeren-teil1-alltag-nachrichten",
@@ -1056,7 +1196,9 @@
         "level": "B2",
         "title": "Interviews, reports and modal meaning",
         "description": "Reported speech and the subjective use of modal verbs, sustainability vocabulary, expert interviews, readers' opinions and a partner discussion.",
-        "difficultyRank": 2
+        "difficultyRank": 2,
+        "titleDe": "Interviews, reports and modal meaning",
+        "descriptionDe": "Reported speech and the subjective use of modal verbs, sustainability vocabulary, expert interviews, readers' opinions and a partner discussion."
       },
       "lessonIds": [
         "b2-goethe-hoeren-teil2-experteninterview",
@@ -1074,7 +1216,9 @@
         "level": "B2",
         "title": "Formal language and presenting",
         "description": "Formal noun-verb phrases for a work message, rules and regulations, a structured talk and a three-speaker panel.",
-        "difficultyRank": 3
+        "difficultyRank": 3,
+        "titleDe": "Formal language and presenting",
+        "descriptionDe": "Formal noun-verb phrases for a work message, rules and regulations, a structured talk and a three-speaker panel."
       },
       "lessonIds": [
         "b2-goethe-feste-nomen-verb-gefuege",
@@ -1091,7 +1235,9 @@
         "level": "B2",
         "title": "Dense texts and lectures",
         "description": "Participle constructions and text cohesion, reconstructing texts, analysing an author's intent and following an academic lecture.",
-        "difficultyRank": 4
+        "difficultyRank": 4,
+        "titleDe": "Dense texts and lectures",
+        "descriptionDe": "Participle constructions and text cohesion, reconstructing texts, analysing an author's intent and following an academic lecture."
       },
       "lessonIds": [
         "b2-goethe-hoeren-teil4-fachvortrag",

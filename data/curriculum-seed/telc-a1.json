@@ -1,6 +1,6 @@
 {
-  "seedVersion": "4",
-  "formatVersion": 2,
+  "seedVersion": "5",
+  "formatVersion": 3,
   "track": "telc",
   "level": "A1",
   "lessons": [
@@ -13,6 +13,14 @@
       "title": "Official Terms and Personal Information",
       "explanation": "Administrative forms and public office visits require precise understanding of personal identification terms.\nKey concepts include: Vorname (first name), Nachname/Familienname (surname), Geburtsdatum (date of birth), Geburtsort (place of birth), Staatsangehörigkeit/Nationalität (citizenship), Familienstand (marital status: ledig, verheiratet, geschieden), and Postleitzahl (postal code).\n",
       "examples": [
+        "Familienstand: verheiratet, zwei Kinder.",
+        "Staatsangehörigkeit: syrisch.",
+        "Postleitzahl und Wohnort: 10115 Berlin.",
+        "Geburtsdatum: 14.05.1992."
+      ],
+      "titleDe": "Official Terms and Personal Information",
+      "explanationDe": "Administrative forms and public office visits require precise understanding of personal identification terms.\nKey concepts include: Vorname (first name), Nachname/Familienname (surname), Geburtsdatum (date of birth), Geburtsort (place of birth), Staatsangehörigkeit/Nationalität (citizenship), Familienstand (marital status: ledig, verheiratet, geschieden), and Postleitzahl (postal code).\n",
+      "examplesDe": [
         "Familienstand: verheiratet, zwei Kinder.",
         "Staatsangehörigkeit: syrisch.",
         "Postleitzahl und Wohnort: 10115 Berlin.",
@@ -32,6 +40,14 @@
         "Er spricht schon ein bisschen Deutsch.",
         "Können Sie mir helfen? Ich verstehe das Wort nicht.",
         "Wir suchen das Bürgeramt."
+      ],
+      "titleDe": "Present Tense Conjugation for Daily Needs",
+      "explanationDe": "Everyday integration requires mastering common verbs that follow regular and irregular present-tense patterns.\nEssential verbs include brauchen (to need), suchen (to search), verstehen (to understand), sprechen (to speak: du sprichst, er spricht), and helfen (to help: du hilfst, er hilft).\nVowel-changing verbs modify their root vowel from e to i/ie in the second and third person singular.\n",
+      "examplesDe": [
+        "Ich brauche ein Formular für die Anmeldung.",
+        "Er spricht schon ein bisschen Deutsch.",
+        "Können Sie mir helfen? Ich verstehe das Wort nicht.",
+        "Wir suchen das Bürgeramt."
       ]
     },
     {
@@ -43,6 +59,14 @@
       "title": "Housing, Tenancy, and Neighborhood Terms",
       "explanation": "Finding and managing housing requires specific terminology for apartments, leasing, and residential life.\nKey terms include: die Wohnung (apartment), das Zimmer (room), die Miete (rent), die Nebenkosten (utilities), die Kaution (deposit), der Nachbar (neighbor), and der Mietvertrag (lease agreement).\nCosts are typically differentiated as Kaltmiete (base rent without heating/utilities) and Warmmiete (total rent including utilities).\n",
       "examples": [
+        "Die Warmmiete beträgt 650 Euro pro Monat.",
+        "Die Kaution sind drei Monatskaltmieten.",
+        "Die Wohnung hat drei Zimmer, eine Küche und ein Bad.",
+        "Die Nachbarn im Haus sind sehr freundlich."
+      ],
+      "titleDe": "Housing, Tenancy, and Neighborhood Terms",
+      "explanationDe": "Finding and managing housing requires specific terminology for apartments, leasing, and residential life.\nKey terms include: die Wohnung (apartment), das Zimmer (room), die Miete (rent), die Nebenkosten (utilities), die Kaution (deposit), der Nachbar (neighbor), and der Mietvertrag (lease agreement).\nCosts are typically differentiated as Kaltmiete (base rent without heating/utilities) and Warmmiete (total rent including utilities).\n",
+      "examplesDe": [
         "Die Warmmiete beträgt 650 Euro pro Monat.",
         "Die Kaution sind drei Monatskaltmieten.",
         "Die Wohnung hat drei Zimmer, eine Küche und ein Bad.",
@@ -62,6 +86,14 @@
         "Welche Unterlagen brauche ich für die Anmeldung?",
         "Wann hat das Rathaus Sprechstunde?",
         "Wie lange dauert die Bearbeitung des Antrags?"
+      ],
+      "titleDe": "Interrogatives for Official and Administrative Contexts",
+      "explanationDe": "Visiting government agencies and customer service counters requires forming precise questions.\nUse key question words: Wo (location: Wo ist Zimmer 12?), Wohin (destination), Wie lange (duration), Wer (person), and Wie viel / Wie viele (quantities and costs).\nThe verb immediately follows the question word, placing the subject directly after the verb.\n",
+      "examplesDe": [
+        "Wo finde ich die Ausländerbehörde?",
+        "Welche Unterlagen brauche ich für die Anmeldung?",
+        "Wann hat das Rathaus Sprechstunde?",
+        "Wie lange dauert die Bearbeitung des Antrags?"
       ]
     },
     {
@@ -73,6 +105,14 @@
       "title": "Accusative Case for Everyday Transactions",
       "explanation": "Everyday transactions require using the accusative case to identify purchased items, contracts, or missing documents.\nOnly masculine singular determiners change: der becomes den, ein becomes einen, and kein becomes keinen.\nFeminine (die, eine, keine), neuter (das, ein, kein), and plural (die, keine) remain unchanged.\n",
       "examples": [
+        "Ich unterschreibe den Mietvertrag.",
+        "Haben Sie einen Pass oder einen Ausweis dabei?",
+        "Wir brauchen eine neue Waschmaschine.",
+        "Er hat keinen Führerschein."
+      ],
+      "titleDe": "Accusative Case for Everyday Transactions",
+      "explanationDe": "Everyday transactions require using the accusative case to identify purchased items, contracts, or missing documents.\nOnly masculine singular determiners change: der becomes den, ein becomes einen, and kein becomes keinen.\nFeminine (die, eine, keine), neuter (das, ein, kein), and plural (die, keine) remain unchanged.\n",
+      "examplesDe": [
         "Ich unterschreibe den Mietvertrag.",
         "Haben Sie einen Pass oder einen Ausweis dabei?",
         "Wir brauchen eine neue Waschmaschine.",
@@ -92,6 +132,14 @@
         "Ab 22:00 Uhr müssen die Bewohner leise sein.",
         "Sie können die Gebühr bar oder mit Karte bezahlen.",
         "Im Treppenhaus darf man keine Fahrräder abstellen."
+      ],
+      "titleDe": "Modal Verbs for House Rules and Regulations",
+      "explanationDe": "Residential rules (Hausordnung) and administrative regulations use the modal verbs müssen (obligation), dürfen (permission), and können (possibility).\nRemember that negation with dürfen indicates prohibition: 'Sie dürfen hier nicht parken' means parking is strictly forbidden.\nThe modal verb occupies position V2, while the accompanying infinitive is placed at the end of the sentence.\n",
+      "examplesDe": [
+        "Hier darf man nicht rauchen.",
+        "Ab 22:00 Uhr müssen die Bewohner leise sein.",
+        "Sie können die Gebühr bar oder mit Karte bezahlen.",
+        "Im Treppenhaus darf man keine Fahrräder abstellen."
       ]
     },
     {
@@ -103,6 +151,14 @@
       "title": "Work, Professions, and the Workplace",
       "explanation": "Workplace interactions involve terms for professions, daily working hours, and physical job sites.\nFemale professional titles add the suffix -in (der Arzt / die Ärztin; der Verkäufer / die Verkäuferin).\nKey terms include: der Arbeitsvertrag (employment contract), die Arbeitszeit (working hours), die Teilzeit / Vollzeit (part-time / full-time), and die Pause (break).\n",
       "examples": [
+        "Ich arbeite als Verkäuferin im Supermarkt.",
+        "Meine Arbeitszeit ist von Montag bis Freitag, jeweils acht Stunden.",
+        "Er sucht eine Stelle in Teilzeit.",
+        "Um 12:30 Uhr machen wir eine halbe Stunde Mittagspause."
+      ],
+      "titleDe": "Work, Professions, and the Workplace",
+      "explanationDe": "Workplace interactions involve terms for professions, daily working hours, and physical job sites.\nFemale professional titles add the suffix -in (der Arzt / die Ärztin; der Verkäufer / die Verkäuferin).\nKey terms include: der Arbeitsvertrag (employment contract), die Arbeitszeit (working hours), die Teilzeit / Vollzeit (part-time / full-time), and die Pause (break).\n",
+      "examplesDe": [
         "Ich arbeite als Verkäuferin im Supermarkt.",
         "Meine Arbeitszeit ist von Montag bis Freitag, jeweils acht Stunden.",
         "Er sucht eine Stelle in Teilzeit.",
@@ -122,6 +178,14 @@
         "Warten Sie bitte einen kurzen Moment im Wartezimmer.",
         "Können Sie das bitte noch einmal wiederholen?",
         "Rufen Sie mich morgen bitte zurück."
+      ],
+      "titleDe": "Imperatives and Polite Requests",
+      "explanationDe": "Everyday instructions and requests rely on the formal imperative and conditional phrasing.\nThe formal imperative simply inverts the verb and the formal pronoun: 'Kommen Sie!', 'Unterschreiben Sie hier!'.\nAlways include 'bitte' to maintain politeness.\nPolite requests often use 'Können Sie bitte...' followed by an infinitive at the end of the clause.\n",
+      "examplesDe": [
+        "Bitte unterschreiben Sie dieses Formular.",
+        "Warten Sie bitte einen kurzen Moment im Wartezimmer.",
+        "Können Sie das bitte noch einmal wiederholen?",
+        "Rufen Sie mich morgen bitte zurück."
       ]
     },
     {
@@ -133,6 +197,14 @@
       "title": "Temporal Prepositions for Scheduling Appointments",
       "explanation": "Scheduling appointments (Termine) requires using specific temporal prepositions.\nUse 'am' for days and dates (am Montag, am 12. März).\nUse 'um' for precise clock times (um 14 Uhr).\nUse 'im' for months and seasons (im Juli, im Sommer).\nUse 'von... bis...' to indicate time intervals (von 8:00 bis 16:00 Uhr).\n",
       "examples": [
+        "Ich habe einen Termin beim Zahnarzt am Donnerstag um 10 Uhr.",
+        "Der Deutschkurs dauert von Januar bis April.",
+        "Haben Sie am Freitag Zeit für eine Wohnungsbesichtigung?",
+        "Die Sprechzeiten sind montags von 9 bis 12 Uhr."
+      ],
+      "titleDe": "Temporal Prepositions for Scheduling Appointments",
+      "explanationDe": "Scheduling appointments (Termine) requires using specific temporal prepositions.\nUse 'am' for days and dates (am Montag, am 12. März).\nUse 'um' for precise clock times (um 14 Uhr).\nUse 'im' for months and seasons (im Juli, im Sommer).\nUse 'von... bis...' to indicate time intervals (von 8:00 bis 16:00 Uhr).\n",
+      "examplesDe": [
         "Ich habe einen Termin beim Zahnarzt am Donnerstag um 10 Uhr.",
         "Der Deutschkurs dauert von Januar bis April.",
         "Haben Sie am Freitag Zeit für eine Wohnungsbesichtigung?",
@@ -152,6 +224,14 @@
         "Mein Rücken tut seit zwei Tagen weh.",
         "Nehmen Sie diese Tabletten dreimal täglich vor dem Essen.",
         "Das Medikament bekommen Sie mit einem Rezept in der Apotheke."
+      ],
+      "titleDe": "Health, Doctor Visits, and the Pharmacy",
+      "explanationDe": "Healthcare visits require basic terms for symptoms, medical facilities, and administrative scheduling.\nKey terms include: der Arzt / die Ärztin (doctor), die Praxis (clinic), das Krankenhaus (hospital), die Apotheke (pharmacy), das Medikament (medicine), and das Rezept (prescription).\nSymptoms are expressed with 'weh tun' (Mein Kopf tut weh) or compound nouns ending in '-schmerzen' (Kopfschmerzen, Halsschmerzen).\n",
+      "examplesDe": [
+        "Ich brauche einen Termin beim Arzt. Ich habe starke Kopfschmerzen.",
+        "Mein Rücken tut seit zwei Tagen weh.",
+        "Nehmen Sie diese Tabletten dreimal täglich vor dem Essen.",
+        "Das Medikament bekommen Sie mit einem Rezept in der Apotheke."
       ]
     },
     {
@@ -163,6 +243,13 @@
       "title": "Reading Official Notices and House Rules",
       "explanation": "Interpreting notices, safety signs, and residential rules requires scanning for prohibitions, requirements, and operating schedules.\nIdentify keywords like 'Notausgang' (emergency exit), 'Eingang/Ausgang' (entrance/exit), 'Ruhezeiten' (quiet hours), and 'Aufzug im Brandfall nicht benutzen' (do not use elevator during fires).\n",
       "examples": [
+        "Hausordnung: Hausmüll bitte nur in die vorgesehenen Mülltonnen im Hof werfen. Abstellen von Sperrmüll ist verboten.",
+        "Ruhezeiten: Bitte vermeiden Sie Ruhestörungen montags bis samstags von 22:00 bis 07:00 Uhr sowie ganztägig an Sonn- und Feiertagen.",
+        "Wegen Renovierungsarbeiten bleibt das Kundenzentrum heute geschlossen."
+      ],
+      "titleDe": "Reading Official Notices and House Rules",
+      "explanationDe": "Interpreting notices, safety signs, and residential rules requires scanning for prohibitions, requirements, and operating schedules.\nIdentify keywords like 'Notausgang' (emergency exit), 'Eingang/Ausgang' (entrance/exit), 'Ruhezeiten' (quiet hours), and 'Aufzug im Brandfall nicht benutzen' (do not use elevator during fires).\n",
+      "examplesDe": [
         "Hausordnung: Hausmüll bitte nur in die vorgesehenen Mülltonnen im Hof werfen. Abstellen von Sperrmüll ist verboten.",
         "Ruhezeiten: Bitte vermeiden Sie Ruhestörungen montags bis samstags von 22:00 bis 07:00 Uhr sowie ganztägig an Sonn- und Feiertagen.",
         "Wegen Renovierungsarbeiten bleibt das Kundenzentrum heute geschlossen."
@@ -180,6 +267,13 @@
         "Helle 3-Zi.-Whg. in Köln-Deutz, 75 qm, KM 680 Euro + 180 Euro NK, Kaution 2 KM, EBK vorhanden, ab 01.10. frei.",
         "Schönes 1-Zimmer-Appartement für Studenten, 32 qm, Warmmiete 450 Euro inkl. Strom. Bezug sofort. Kontakt: heinz@wohnen.de.",
         "Suche Nachmieter für gemütliche 2-Zimmer-Wohnung mit Balkon im 2. Stock. Keine Haustiere. Tel: 0162-334455."
+      ],
+      "titleDe": "Reading Classified Housing Advertisements",
+      "explanationDe": "Housing classifieds use standardized abbreviations: '2 Zi.-Whg.' (2-Zimmer-Wohnung), 'EBK' (Einbauküche / fitted kitchen), 'KM' (Kaltmiete), 'NK' (Nebenkosten), and 'ab sof.' (ab sofort / available immediately).\nFocus on extracting apartment size (square meters: qm), room count, cost components, and contact instructions.\n",
+      "examplesDe": [
+        "Helle 3-Zi.-Whg. in Köln-Deutz, 75 qm, KM 680 Euro + 180 Euro NK, Kaution 2 KM, EBK vorhanden, ab 01.10. frei.",
+        "Schönes 1-Zimmer-Appartement für Studenten, 32 qm, Warmmiete 450 Euro inkl. Strom. Bezug sofort. Kontakt: heinz@wohnen.de.",
+        "Suche Nachmieter für gemütliche 2-Zimmer-Wohnung mit Balkon im 2. Stock. Keine Haustiere. Tel: 0162-334455."
       ]
     },
     {
@@ -191,6 +285,13 @@
       "title": "Understanding Transit and Public Announcements",
       "explanation": "Listening to public announcements in transport hubs and shopping venues requires selective listening for disruptions, track adjustments, and immediate actions.\nListen for numbers indicating platforms (Gleis), train identifiers (S-Bahn, ICE), delays (Minuten später), and destination changes.\n",
       "examples": [
+        "Auf Gleis 5: S-Bahn Linie 3 nach Friedrichstraße fährt ein. Bitte Vorsicht bei der Einfahrt.",
+        "Achtung Fahrgäste: Wegen einer Weichenstörung verkehrt die Straßenbahnlinie 12 heute nur bis zum Südbahnhof.",
+        "Sehr geehrte Kundinnen, unser Baumarkt schließt in 15 Minuten. Kassen sind bis 20 Uhr geöffnet."
+      ],
+      "titleDe": "Understanding Transit and Public Announcements",
+      "explanationDe": "Listening to public announcements in transport hubs and shopping venues requires selective listening for disruptions, track adjustments, and immediate actions.\nListen for numbers indicating platforms (Gleis), train identifiers (S-Bahn, ICE), delays (Minuten später), and destination changes.\n",
+      "examplesDe": [
         "Auf Gleis 5: S-Bahn Linie 3 nach Friedrichstraße fährt ein. Bitte Vorsicht bei der Einfahrt.",
         "Achtung Fahrgäste: Wegen einer Weichenstörung verkehrt die Straßenbahnlinie 12 heute nur bis zum Südbahnhof.",
         "Sehr geehrte Kundinnen, unser Baumarkt schließt in 15 Minuten. Kassen sind bis 20 Uhr geöffnet."
@@ -208,6 +309,13 @@
         "Guten Tag, hier Praxis Dr. Weber. Wir bestätigen Ihren Termin am Mittwoch um 11:15 Uhr. Bitte bringen Sie Ihre Versichertenkarte mit.",
         "Hallo Herr Al-Hassan, hier ist Autowerkstatt Schmidt. Ihr Auto ist fertig und kann bis 18 Uhr abgeholt werden. Auf Wiederhören.",
         "Hier Anrufbeantworter der Firma Böhmer. Unsere Geschäftszeiten sind von Montag bis Freitag von 8 bis 17 Uhr."
+      ],
+      "titleDe": "Voicemail and Telephone Appointment Inquiries",
+      "explanationDe": "Telephone recordings and voicemails convey practical details such as office closures, callback requests, and appointment shifts.\nListen for caller identity, the purpose of the call, dates, times, and phone numbers.\n",
+      "examplesDe": [
+        "Guten Tag, hier Praxis Dr. Weber. Wir bestätigen Ihren Termin am Mittwoch um 11:15 Uhr. Bitte bringen Sie Ihre Versichertenkarte mit.",
+        "Hallo Herr Al-Hassan, hier ist Autowerkstatt Schmidt. Ihr Auto ist fertig und kann bis 18 Uhr abgeholt werden. Auf Wiederhören.",
+        "Hier Anrufbeantworter der Firma Böhmer. Unsere Geschäftszeiten sind von Montag bis Freitag von 8 bis 17 Uhr."
       ]
     },
     {
@@ -222,6 +330,13 @@
         "Name: Müller | Vorname: Thomas | Straße: Hauptstraße 12 | PLZ/Ort: 50667 Köln",
         "Geburtsdatum: 02.11.1988 | Geburtsort: Damaskus | Staatsangehörigkeit: syrisch",
         "Datum: 12.04.2024 | Unterschrift: [Handzeichen des Antragstellers]"
+      ],
+      "titleDe": "Completing Administrative and Registration Forms",
+      "explanationDe": "Filling out administrative forms requires extracting data from personal documents and mapping it to the appropriate fields.\nEnsure information is entered clearly without translation errors: Familienname (last name), Vorname (first name), Anschrift (street address and house number), PLZ / Ort (postal code and city), and Unterschrift (signature).\n",
+      "examplesDe": [
+        "Name: Müller | Vorname: Thomas | Straße: Hauptstraße 12 | PLZ/Ort: 50667 Köln",
+        "Geburtsdatum: 02.11.1988 | Geburtsort: Damaskus | Staatsangehörigkeit: syrisch",
+        "Datum: 12.04.2024 | Unterschrift: [Handzeichen des Antragstellers]"
       ]
     },
     {
@@ -233,6 +348,13 @@
       "title": "Writing Notes to Landlords, Doctors, or Employers",
       "explanation": "Writing practical notes requires a clear statement of reason, a proposed solution or request, and polite closing phrasing.\nUseful expressions include: 'Sehr geehrte(r)...', 'Ich kann leider nicht kommen, weil...', and 'Können wir einen neuen Termin vereinbaren?'.\n",
       "examples": [
+        "Sehr geehrte Frau Müller, mein Sohn ist heute krank und kann die Schule nicht besuchen. Viele Grüße, Fatima Aziz.",
+        "Sehr geehrter Herr Berger, die Heizung in meiner Wohnung funktioniert nicht. Können Sie bitte schnell einen Handwerker schicken? Mit freundlichen Grüßen, Ali Demir.",
+        "Guten Tag Herr Schneider, ich möchte meinen Termin am Donnerstag absagen und auf Freitag um 10 Uhr verschieben. Passt das? Herzliche Grüße."
+      ],
+      "titleDe": "Writing Notes to Landlords, Doctors, or Employers",
+      "explanationDe": "Writing practical notes requires a clear statement of reason, a proposed solution or request, and polite closing phrasing.\nUseful expressions include: 'Sehr geehrte(r)...', 'Ich kann leider nicht kommen, weil...', and 'Können wir einen neuen Termin vereinbaren?'.\n",
+      "examplesDe": [
         "Sehr geehrte Frau Müller, mein Sohn ist heute krank und kann die Schule nicht besuchen. Viele Grüße, Fatima Aziz.",
         "Sehr geehrter Herr Berger, die Heizung in meiner Wohnung funktioniert nicht. Können Sie bitte schnell einen Handwerker schicken? Mit freundlichen Grüßen, Ali Demir.",
         "Guten Tag Herr Schneider, ich möchte meinen Termin am Donnerstag absagen und auf Freitag um 10 Uhr verschieben. Passt das? Herzliche Grüße."
@@ -251,6 +373,14 @@
         "Meine Postleitzahl in Köln ist 50667 (fünf-null-sechs-sechs-sieben).",
         "Ich wohne in der Bahnhofstraße Nummer 14.",
         "Meine Telefonnummer lautet 0152 33 44 55."
+      ],
+      "titleDe": "Sharing Personal Data and Spelling",
+      "explanationDe": "Speaking tests begin with sharing personal details and spelling unusual names or reciting telephone numbers.\nPronounce German letters distinctly, especially diphthongs and umlauts (ä, ö, ü), and recite numbers in pairs or single digits without hesitation.\n",
+      "examplesDe": [
+        "Mein Name ist Hassan, buchstabiert: H-A-S-S-A-N.",
+        "Meine Postleitzahl in Köln ist 50667 (fünf-null-sechs-sechs-sieben).",
+        "Ich wohne in der Bahnhofstraße Nummer 14.",
+        "Meine Telefonnummer lautet 0152 33 44 55."
       ]
     },
     {
@@ -262,6 +392,13 @@
       "title": "Practical Interpersonal Inquiries and Requests",
       "explanation": "During paired speaking exams, candidates ask questions and make polite requests based on situational prompts.\nFrame polite questions and requests clearly using structures like 'Können Sie mir bitte sagen...', 'Geben Sie mir bitte...', and appropriate responses like 'Ja, gern' or 'Hier, bitte sehr'.\n",
       "examples": [
+        "Können Sie mir bitte das Salz geben? - Ja, natürlich, hier bitte sehr.",
+        "Haben Sie heute Nachmittag Zeit für mich? - Leider nicht, ich muss arbeiten.",
+        "Entschuldigung, wo ist der Ausgang? - Gehen Sie geradeaus und dann nach links."
+      ],
+      "titleDe": "Practical Interpersonal Inquiries and Requests",
+      "explanationDe": "During paired speaking exams, candidates ask questions and make polite requests based on situational prompts.\nFrame polite questions and requests clearly using structures like 'Können Sie mir bitte sagen...', 'Geben Sie mir bitte...', and appropriate responses like 'Ja, gern' or 'Hier, bitte sehr'.\n",
+      "examplesDe": [
         "Können Sie mir bitte das Salz geben? - Ja, natürlich, hier bitte sehr.",
         "Haben Sie heute Nachmittag Zeit für mich? - Leider nicht, ich muss arbeiten.",
         "Entschuldigung, wo ist der Ausgang? - Gehen Sie geradeaus und dann nach links."
@@ -1112,7 +1249,9 @@
         "level": "A1",
         "title": "Personal details and daily needs",
         "description": "Give your personal details, spell your name, fill in a registration form and use present-tense verbs and housing words.",
-        "difficultyRank": 1
+        "difficultyRank": 1,
+        "titleDe": "Personal details and daily needs",
+        "descriptionDe": "Give your personal details, spell your name, fill in a registration form and use present-tense verbs and housing words."
       },
       "lessonIds": [
         "a1-telc-housing-neighborhood-vocab",
@@ -1129,7 +1268,9 @@
         "level": "A1",
         "title": "Shopping, work and asking",
         "description": "Use the accusative when shopping, ask questions at offices, make polite requests and talk about work.",
-        "difficultyRank": 2
+        "difficultyRank": 2,
+        "titleDe": "Shopping, work and asking",
+        "descriptionDe": "Use the accusative when shopping, ask questions at offices, make polite requests and talk about work."
       },
       "lessonIds": [
         "a1-telc-accusative-shopping-supplies",
@@ -1146,7 +1287,9 @@
         "level": "A1",
         "title": "Appointments and house rules",
         "description": "Say when things happen, understand rules with modal verbs, read notices and housing ads, and write a short note.",
-        "difficultyRank": 3
+        "difficultyRank": 3,
+        "titleDe": "Appointments and house rules",
+        "descriptionDe": "Say when things happen, understand rules with modal verbs, read notices and housing ads, and write a short note."
       },
       "lessonIds": [
         "a1-telc-modal-verbs-regulations",
@@ -1163,7 +1306,9 @@
         "level": "A1",
         "title": "Health and announcements",
         "description": "Words for the doctor and pharmacy, public announcements, and voicemail messages about appointments.",
-        "difficultyRank": 4
+        "difficultyRank": 4,
+        "titleDe": "Health and announcements",
+        "descriptionDe": "Words for the doctor and pharmacy, public announcements, and voicemail messages about appointments."
       },
       "lessonIds": [
         "a1-telc-health-doctor-vocab",

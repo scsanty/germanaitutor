@@ -3,21 +3,25 @@ import { join } from 'node:path';
 import type Database from 'better-sqlite3';
 import type { Track, CefrLevel } from '../types';
 import { ensureUnsortedExists } from '../curriculum-admin/unsortedBucket';
+import { lessonTextProblems, milestoneTextProblems } from '../curriculum/bilingualValidation';
+import { instructionProblems } from '../curriculum/exerciseContentValidation';
 
-export const SEED_FORMAT_VERSION = 2;
+export const SEED_FORMAT_VERSION = 3;
 
 export interface SeedMilestone {
   id: string;
   track: Track;
   level: CefrLevel;
   title: string;
+  titleDe: string;
   description: string | null;
+  descriptionDe: string | null;
   difficultyRank: number;
 }
 
 export interface SeedFile {
   seedVersion: string;
-  formatVersion: 2;
+  formatVersion: 3;
   track: Track;
   level: CefrLevel;
   milestones: { milestone: SeedMilestone; lessonIds: string[] }[];
@@ -27,8 +31,11 @@ export interface SeedFile {
     sourceLevel: CefrLevel;
     skill: string;
     title: string;
+    titleDe: string;
     explanation: string | null;
+    explanationDe: string | null;
     examples: string[] | null;
+    examplesDe: string[] | null;
   }[];
   exercises: { id: string; lessonId: string; track: Track | null; type: string; content: unknown }[];
   prerequisites: { lessonId: string; prerequisiteLessonId: string }[];
@@ -36,11 +43,28 @@ export interface SeedFile {
   practice?: { id: string; lessonId: string; type: string; content: unknown }[];
 }
 
+// Spec: Seed Format v3. Every file is checked before anything is written.
+export function validateSeedFile(seed: SeedFile, name: string): string[] {
+  const problems: string[] = [];
+  for (const { milestone } of seed.milestones) {
+    for (const p of milestoneTextProblems(milestone)) problems.push(`${name}: milestone ${milestone.id}: ${p}`);
+  }
+  for (const lesson of seed.lessons) {
+    for (const p of lessonTextProblems(lesson)) problems.push(`${name}: lesson ${lesson.id}: ${p}`);
+  }
+  for (const exercise of seed.exercises) {
+    for (const p of instructionProblems(exercise.type, exercise.content)) problems.push(`${name}: exercise ${exercise.id}: ${p}`);
+  }
+  return problems;
+}
+
 function readSeedFile(path: string, name: string): SeedFile {
   const seed = JSON.parse(readFileSync(path, 'utf8')) as SeedFile & { formatVersion?: unknown };
   if (seed.formatVersion !== SEED_FORMAT_VERSION) {
     throw new Error(`Seed file ${name} uses format ${String(seed.formatVersion ?? 'none')}; this app needs format ${SEED_FORMAT_VERSION} (milestones without sections)`);
   }
+  const problems = validateSeedFile(seed, name);
+  if (problems.length > 0) throw new Error(problems.slice(0, 10).join('\n'));
   return seed;
 }
 
@@ -55,9 +79,9 @@ function getCurrentSeedVersion(db: Database.Database): string {
 function replaceStructure(db: Database.Database, seed: SeedFile): void {
   const { milestoneId: unsortedId } = ensureUnsortedExists(db, seed.track, seed.level);
   const upsertMilestone = db.prepare(
-    `INSERT INTO milestones (id, track, level, title, description, difficulty_rank) VALUES (?, ?, ?, ?, ?, ?)
+    `INSERT INTO milestones (id, track, level, title, description, difficulty_rank, title_de, description_de) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
      ON CONFLICT(id) DO UPDATE SET title = excluded.title, description = excluded.description,
-       difficulty_rank = excluded.difficulty_rank`
+       difficulty_rank = excluded.difficulty_rank, title_de = excluded.title_de, description_de = excluded.description_de`
   );
   const place = db.prepare(
     `INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES (?, ?)
@@ -65,7 +89,7 @@ function replaceStructure(db: Database.Database, seed: SeedFile): void {
   );
 
   for (const { milestone, lessonIds } of seed.milestones) {
-    upsertMilestone.run(milestone.id, milestone.track, milestone.level, milestone.title, milestone.description, milestone.difficultyRank);
+    upsertMilestone.run(milestone.id, milestone.track, milestone.level, milestone.title, milestone.description, milestone.difficultyRank, milestone.titleDe, milestone.descriptionDe);
     for (const lessonId of lessonIds) place.run(lessonId, milestone.id);
   }
 
@@ -89,9 +113,10 @@ function replaceStructure(db: Database.Database, seed: SeedFile): void {
 
 function upsertSeedFile(db: Database.Database, seed: SeedFile): void {
   const upsertLesson = db.prepare(
-    `INSERT INTO lessons (id, track, source_level, skill, title, explanation, examples) VALUES (?, ?, ?, ?, ?, ?, ?)
-     ON CONFLICT(id) DO UPDATE SET
-       title = excluded.title, explanation = excluded.explanation, examples = excluded.examples`
+    `INSERT INTO lessons (id, track, source_level, skill, title, explanation, examples, title_de, explanation_de, examples_de)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+     ON CONFLICT(id) DO UPDATE SET title = excluded.title, explanation = excluded.explanation, examples = excluded.examples,
+       title_de = excluded.title_de, explanation_de = excluded.explanation_de, examples_de = excluded.examples_de`
   );
   const upsertExercise = db.prepare(
     `INSERT INTO exercises (id, lesson_id, track, type, content) VALUES (?, ?, ?, ?, ?)
@@ -110,7 +135,10 @@ function upsertSeedFile(db: Database.Database, seed: SeedFile): void {
       lesson.skill,
       lesson.title,
       lesson.explanation,
-      lesson.examples ? JSON.stringify(lesson.examples) : null
+      lesson.examples ? JSON.stringify(lesson.examples) : null,
+      lesson.titleDe,
+      lesson.explanationDe,
+      lesson.examplesDe ? JSON.stringify(lesson.examplesDe) : null
     );
   }
   replaceStructure(db, seed);

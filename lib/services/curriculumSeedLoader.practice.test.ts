@@ -8,16 +8,16 @@ import { loadSeedIfNeeded, type SeedFile } from './curriculumSeedLoader';
 function seed(practice?: SeedFile['practice']): SeedFile {
   return {
     seedVersion: '7',
-    formatVersion: 2,
+    formatVersion: 3,
     track: 'generic',
     level: 'A1',
     milestones: [
       {
-        milestone: { id: 'g-m', track: 'generic', level: 'A1', title: 'M', description: null, difficultyRank: 1 },
+        milestone: { id: 'g-m', track: 'generic', level: 'A1', title: 'M', titleDe: 'M', description: null, descriptionDe: null, difficultyRank: 1 },
         lessonIds: ['a1-l'],
       },
     ],
-    lessons: [{ id: 'a1-l', track: 'generic', sourceLevel: 'A1', skill: 'grammar', title: 'L', explanation: null, examples: null }],
+    lessons: [{ id: 'a1-l', track: 'generic', sourceLevel: 'A1', skill: 'grammar', title: 'L', titleDe: 'L', explanation: null, explanationDe: null, examples: null, examplesDe: null }],
     exercises: [],
     prerequisites: [],
     ...(practice ? { practice } : {}),

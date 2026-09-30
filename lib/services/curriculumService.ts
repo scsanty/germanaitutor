@@ -10,6 +10,8 @@ interface MilestoneRow {
   title: string;
   description: string | null;
   difficulty_rank: number | null;
+  title_de: string;
+  description_de: string | null;
 }
 
 interface LessonRow {
@@ -20,6 +22,9 @@ interface LessonRow {
   title: string;
   explanation: string | null;
   examples: string | null;
+  title_de: string;
+  explanation_de: string | null;
+  examples_de: string | null;
   created_at: string;
 }
 
@@ -39,6 +44,8 @@ function rowToMilestone(row: MilestoneRow): Milestone {
     title: row.title,
     description: row.description,
     difficultyRank: row.difficulty_rank,
+    titleDe: row.title_de,
+    descriptionDe: row.description_de,
   };
 }
 
@@ -51,6 +58,9 @@ function rowToLesson(row: LessonRow): Lesson {
     title: row.title,
     explanation: row.explanation,
     examples: row.examples ? JSON.parse(row.examples) : null,
+    titleDe: row.title_de,
+    explanationDe: row.explanation_de,
+    examplesDe: row.examples_de ? JSON.parse(row.examples_de) : null,
     createdAt: row.created_at,
   };
 }
