@@ -157,7 +157,14 @@
       "covered": "Covered"
     },
     "coveredVia": "Covered via {track}",
-    "buildsOn": "Builds on: {lessons}"
+    "milestoneLine": "Step {rank} · {state} · {done} of {total} done",
+    "milestoneState": { "locked": "Locked", "open": "Open", "complete": "Complete" },
+    "lockedLesson": "Locked",
+    "buildsOnChip": "Builds on: {title}",
+    "testOutStart": "Test out",
+    "testOutResume": "Resume the test-out ({answered} of {total})",
+    "testOutCooldown": "Try the test-out again after {time}",
+    "testOutTooFew": "Not enough questions to test out"
   },
   "queue": {
     "title": "Daily review",

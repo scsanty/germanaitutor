@@ -2,6 +2,8 @@ import type { CefrLevel, Track } from '../types';
 import type { Skill } from '../curriculum/types';
 import type { LessonStatus } from './completion';
 import type { ExerciseView } from './exerciseView';
+import type { MilestoneState } from './gating';
+import type { TestOutStatus } from './testOutViews';
 
 export interface TreeLesson {
   id: string;
@@ -9,13 +11,24 @@ export interface TreeLesson {
   skill: Skill;
   status: LessonStatus;
   coveredVia: Track | null;
-  missingPrerequisites: { id: string; title: string }[];
+  locked: boolean;
+  // prerequisites that sit in a lower-rank milestone: shown as "builds on" chips
+  earlierPrerequisites: { id: string; title: string; done: boolean }[];
+  branch: number;
+  column: number;
+  row: number;
 }
 
 export interface TreeMilestone {
   id: string;
   title: string;
+  description: string | null;
+  rank: number;
+  state: MilestoneState;
   lessons: TreeLesson[];
+  // prerequisite → dependent, inside this milestone
+  edges: { from: string; to: string }[];
+  testOut: TestOutStatus;
 }
 
 export interface CurriculumTree {

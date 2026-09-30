@@ -5,11 +5,14 @@ import { unsortedMilestoneId } from '../curriculum-admin/unsortedBucket';
 import { lessonStatus } from '../tutoring/completion';
 import { toExerciseView } from '../tutoring/exerciseView';
 import { isAtOrBelow, LEVELS, levelIndex } from '../tutoring/levels';
-import type { CurriculumTree, DailyQueue, LessonView, TreeLesson } from '../tutoring/progressTypes';
+import type { CurriculumTree, DailyQueue, LessonView } from '../tutoring/progressTypes';
+import { computeBranchLayout } from '../tutoring/branchLayout';
 import { remainingReviews, selectDueItems } from '../tutoring/queue';
+import { isAiAvailable } from './aiService';
 import { createCurriculumService } from './curriculumService';
 import { lessonLock, loadDoneState, loadLevelGating, loadPrerequisites, type DoneState } from './levelGating';
 import { createProfileService } from './profileService';
+import { testOutStatusFor } from './testOutStatus';
 
 interface VisibleLessonRow {
   id: string;
@@ -50,37 +53,61 @@ export function createProgressService(db: Database.Database) {
 
   function getTree(): CurriculumTree {
     const { activeTrack: track, activeLevel: level } = profiles.getProfile();
-    const done = loadDoneState(db);
-    const prerequisites = loadPrerequisites(db);
+    const gating = loadLevelGating(db, track, level);
+    const info = new Map(visibleLessons(track, level).map((row) => [row.id, row]));
     const attempted = new Set(
       (db.prepare('SELECT DISTINCT lesson_id FROM lesson_attempts').all() as { lesson_id: string }[]).map((r) => r.lesson_id)
     );
+    const statusOpts = { now: new Date(), aiAvailable: isAiAvailable(db) };
 
-    const lessonsByMilestone = new Map<string, TreeLesson[]>();
-    for (const row of visibleLessons(track, level)) {
-      const list = lessonsByMilestone.get(row.milestone_id) ?? [];
-      list.push({
-        id: row.id,
-        title: row.title,
-        skill: row.skill,
-        status: lessonStatus({
-          completed: done.completed.has(row.id),
-          covered: done.coveredVia.has(row.id),
-          attempted: attempted.has(row.id),
-        }),
-        coveredVia: done.coveredVia.get(row.id) ?? null,
-        missingPrerequisites: (prerequisites.get(row.id) ?? []).filter((p) => !isDone(done, p.id)),
-      });
-      lessonsByMilestone.set(row.milestone_id, list);
-    }
-
-    const milestones = db
-      .prepare('SELECT id, title FROM milestones WHERE track = ? AND level = ? AND id != ? ORDER BY difficulty_rank, id')
-      .all(track, level, unsortedMilestoneId(track, level)) as { id: string; title: string }[];
     return {
       track,
       level,
-      milestones: milestones.map((m) => ({ id: m.id, title: m.title, lessons: lessonsByMilestone.get(m.id) ?? [] })),
+      milestones: gating.milestones.map((milestone) => {
+        const ids = milestone.lessonIds;
+        const edges = ids.flatMap((id) =>
+          gating
+            .prerequisitesOf(id)
+            .filter((p) => ids.includes(p.id))
+            .map((p) => ({ from: p.id, to: id }))
+        );
+        const layout = new Map(computeBranchLayout(ids, edges).map((n) => [n.id, n]));
+        return {
+          id: milestone.id,
+          title: milestone.title,
+          description: milestone.description,
+          rank: milestone.rank,
+          state: gating.states.get(milestone.id)!,
+          edges,
+          testOut: testOutStatusFor(db, gating, milestone.id, statusOpts),
+          lessons: ids.map((id) => {
+            const row = info.get(id)!;
+            const at = layout.get(id)!;
+            return {
+              id,
+              title: row.title,
+              skill: row.skill,
+              status: lessonStatus({
+                completed: gating.done.completed.has(id),
+                covered: gating.done.coveredVia.has(id),
+                attempted: attempted.has(id),
+              }),
+              coveredVia: gating.done.coveredVia.get(id) ?? null,
+              locked: gating.isLessonLocked(id),
+              earlierPrerequisites: gating
+                .prerequisitesOf(id)
+                .filter((p) => {
+                  const home = gating.milestoneOf(p.id);
+                  return home !== undefined && home.id !== milestone.id;
+                })
+                .map((p) => ({ ...p, done: gating.isDone(p.id) })),
+              branch: at.branch,
+              column: at.column,
+              row: at.row,
+            };
+          }),
+        };
+      }),
     };
   }
 

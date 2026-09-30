@@ -47,12 +47,33 @@ describe('progressService.getTree', () => {
     ]);
   });
 
-  it('warns about unfinished prerequisites, counting shared completion as done', () => {
+  it('locks a lesson until its prerequisites are done, counting shared completion, and lays out branches', () => {
     const { db, progress } = setup();
-    const sein = () => lessonsOf(progress.getTree()).find((l) => l.id === 'a1-sein');
-    expect(sein()?.missingPrerequisites).toEqual([{ id: 'a1-greet', title: 'Saying hello' }]);
+    const lesson = (id: string) => progress.getTree().milestones.flatMap((m) => m.lessons).find((l) => l.id === id)!;
+    expect(lesson('a1-greet')).toMatchObject({ locked: false, branch: 0, column: 0, row: 0 });
+    expect(lesson('a1-sein')).toMatchObject({ locked: true, branch: 0, column: 0, row: 1 });
+    expect(progress.getTree().milestones[0].edges).toEqual([{ from: 'a1-greet', to: 'a1-sein' }]);
     markComplete(db, 'a1-goethe-greet');
-    expect(sein()?.missingPrerequisites).toEqual([]);
+    expect(lesson('a1-sein').locked).toBe(false);
+  });
+
+  it('ranks milestones, gates the next rank, shows earlier prerequisites as chips, and reports the test-out', () => {
+    const { db, progress } = setup();
+    addSecondMilestone(db);
+    db.exec("INSERT INTO lesson_prerequisites (lesson_id, prerequisite_lesson_id) VALUES ('a1-late', 'a1-greet')");
+    const tree = progress.getTree();
+    expect(tree.milestones.map((m) => [m.id, m.rank, m.state])).toEqual([
+      ['g-a1-m1', 1, 'open'],
+      ['g-a1-m2', 2, 'locked'],
+    ]);
+    expect(tree.milestones[1].lessons[0]).toMatchObject({
+      id: 'a1-late',
+      locked: true,
+      earlierPrerequisites: [{ id: 'a1-greet', title: 'Saying hello', done: false }],
+    });
+    // a1-late has only two eligible exercises, so the draw would be too small.
+    expect(tree.milestones[1].testOut).toEqual({ status: 'too_few_questions' });
+    expect(tree.milestones[0].testOut).toEqual({ status: 'none' });
   });
 });
 

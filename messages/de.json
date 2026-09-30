@@ -157,7 +157,14 @@
       "covered": "Abgedeckt"
     },
     "coveredVia": "Abgedeckt über {track}",
-    "buildsOn": "Baut auf: {lessons}"
+    "milestoneLine": "Stufe {rank} · {state} · {done} von {total} erledigt",
+    "milestoneState": { "locked": "Gesperrt", "open": "Offen", "complete": "Abgeschlossen" },
+    "lockedLesson": "Gesperrt",
+    "buildsOnChip": "Baut auf: {title}",
+    "testOutStart": "Per Test überspringen",
+    "testOutResume": "Test fortsetzen ({answered} von {total})",
+    "testOutCooldown": "Test wieder möglich ab {time}",
+    "testOutTooFew": "Zu wenige Fragen für einen Test"
   },
   "queue": {
     "title": "Tägliche Wiederholung",
