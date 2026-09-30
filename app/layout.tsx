@@ -7,6 +7,8 @@ import { getLocale, getMessages, getTimeZone } from 'next-intl/server';
 import { getDb } from '@/lib/db/client';
 import { createProfileService } from '@/lib/services/profileService';
 import { PreferencesProvider } from '@/components/providers/PreferencesProvider';
+import { ShellProvider } from '@/components/shell/ShellContext';
+import { AppShell } from '@/components/shell/AppShell';
 import { ensureBundledSeeds } from '@/lib/services/bundledSeeds';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
@@ -33,7 +35,11 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
     <html lang={locale} data-theme={profile.theme} className={`${inter.variable} ${nunito.variable}`}>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages} timeZone={timeZone}>
-          <PreferencesProvider initial={{ theme: profile.theme, soundEnabled: profile.soundEnabled }}>{children}</PreferencesProvider>
+          <PreferencesProvider initial={{ theme: profile.theme, soundEnabled: profile.soundEnabled }}>
+            <ShellProvider>
+              <AppShell>{children}</AppShell>
+            </ShellProvider>
+          </PreferencesProvider>
         </NextIntlClientProvider>
       </body>
     </html>

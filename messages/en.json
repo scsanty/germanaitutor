@@ -295,5 +295,16 @@
     "backToTree": "Back to your lessons",
     "loadFailed": "Could not load the test-out. Please reload the page.",
     "genericError": "Something went wrong: {error}"
+  },
+  "nav": {
+    "main": "Main",
+    "learn": "Learn",
+    "dashboard": "Dashboard",
+    "review": "Review",
+    "flashcards": "Flashcards",
+    "freestyle": "Freestyle",
+    "profile": "Profile",
+    "settings": "Settings",
+    "withDue": "{label} ({count} due)"
   }
 }
