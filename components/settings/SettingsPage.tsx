@@ -516,11 +516,11 @@ export function SettingsPage() {
 
       <SectionCard title={t('appearance')}>
         {preferenceError && <ErrorAlert>{preferenceError}</ErrorAlert>}
-        <RadioGroup value={theme} onValueChange={(value) => saveTheme(value as Theme)} aria-label={t('theme')} className="grid grid-cols-3 gap-2">
+        <RadioGroup value={theme} onValueChange={(value) => saveTheme(value as Theme)} aria-label={t('theme')} className="grid gap-2 sm:grid-cols-3">
           {(['dark', 'light', 'system'] as const).map((option) => (
             <label
               key={option}
-              className="flex min-h-11 cursor-pointer items-center justify-center gap-2 rounded-lg border-2 border-border bg-surface px-2 py-2 text-sm font-medium transition-colors duration-150 hover:border-primary/50 has-[[data-state=checked]]:border-primary has-[[data-state=checked]]:bg-primary/10 motion-reduce:transition-none"
+              className="flex min-h-11 cursor-pointer items-center gap-2 rounded-lg border-2 border-border bg-surface px-3 py-2 text-sm font-medium transition-colors sm:justify-center sm:px-2 duration-150 hover:border-primary/50 has-[[data-state=checked]]:border-primary has-[[data-state=checked]]:bg-primary/10 motion-reduce:transition-none"
             >
               <RadioGroupItem value={option} aria-label={t(`themeOption.${option}`)} />
               {t(`themeOption.${option}`)}
