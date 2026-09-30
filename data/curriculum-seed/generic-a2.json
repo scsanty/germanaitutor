@@ -1,5 +1,5 @@
 {
-  "seedVersion": "3",
+  "seedVersion": "4",
   "formatVersion": 2,
   "track": "generic",
   "level": "A2",
@@ -1432,97 +1432,73 @@
   "milestones": [
     {
       "milestone": {
-        "id": "generic-a2-grammar",
+        "id": "generic-a2-m1-everyday-topics-and-reasons",
         "track": "generic",
         "level": "A2",
-        "title": "Grammar",
-        "description": null,
+        "title": "Everyday topics and reasons",
+        "description": "Vocabulary for health, clothes, home and travel, comparing things, and giving reasons with weil and dass.",
         "difficultyRank": 1
       },
       "lessonIds": [
-        "a2-perfekt-haben-regular",
-        "a2-perfekt-sein-movement",
-        "a2-praeteritum-sein-haben",
-        "a2-praeteritum-modal-verbs",
-        "a2-dative-personal-pronouns",
-        "a2-dative-prepositions",
-        "a2-two-way-prepositions-location-direction",
-        "a2-subordinate-clauses-weil-dass",
-        "a2-indirect-questions-ob-w-fragen",
         "a2-comparative-and-superlative",
-        "a2-adjective-declension-definite-articles",
-        "a2-reflexive-verbs-intro",
-        "a2-temporal-prepositions-vor-nach-seit"
+        "a2-subordinate-clauses-weil-dass",
+        "a2-vocab-body-health-illness",
+        "a2-vocab-clothing-shopping",
+        "a2-vocab-housing-furniture",
+        "a2-vocab-travel-transportation"
       ]
     },
     {
       "milestone": {
-        "id": "generic-a2-vocabulary",
+        "id": "generic-a2-m2-talking-about-the-past",
         "track": "generic",
         "level": "A2",
-        "title": "Vocabulary",
-        "description": null,
+        "title": "Talking about the past",
+        "description": "Tell others what happened using the Perfekt and the Präteritum, in conversation, in speech and in an email.",
         "difficultyRank": 2
       },
       "lessonIds": [
-        "a2-vocab-travel-transportation",
-        "a2-vocab-housing-furniture",
-        "a2-vocab-body-health-illness",
-        "a2-vocab-clothing-shopping"
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-a2-reading",
-        "track": "generic",
-        "level": "A2",
-        "title": "Reading",
-        "description": null,
-        "difficultyRank": 3
-      },
-      "lessonIds": [
-        "a2-reading-travel-itineraries",
-        "a2-reading-short-news-reports"
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-a2-listening",
-        "track": "generic",
-        "level": "A2",
-        "title": "Listening",
-        "description": null,
-        "difficultyRank": 4
-      },
-      "lessonIds": [
-        "a2-listening-weather-traffic-announcements",
-        "a2-listening-conversations-past-events"
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-a2-writing",
-        "track": "generic",
-        "level": "A2",
-        "title": "Writing",
-        "description": null,
-        "difficultyRank": 5
-      },
-      "lessonIds": [
+        "a2-listening-conversations-past-events",
+        "a2-perfekt-haben-regular",
+        "a2-perfekt-sein-movement",
+        "a2-praeteritum-modal-verbs",
+        "a2-praeteritum-sein-haben",
+        "a2-speaking-reporting-past-weekend",
         "a2-writing-informal-email-vacation"
       ]
     },
     {
       "milestone": {
-        "id": "generic-a2-speaking",
+        "id": "generic-a2-m3-the-dative-case",
         "track": "generic",
         "level": "A2",
-        "title": "Speaking",
-        "description": null,
-        "difficultyRank": 6
+        "title": "The dative case",
+        "description": "Use dative pronouns and prepositions, reflexive verbs and adjective endings, and follow travel information and reports.",
+        "difficultyRank": 3
       },
       "lessonIds": [
-        "a2-speaking-reporting-past-weekend"
+        "a2-adjective-declension-definite-articles",
+        "a2-dative-personal-pronouns",
+        "a2-dative-prepositions",
+        "a2-listening-weather-traffic-announcements",
+        "a2-reading-travel-itineraries",
+        "a2-reflexive-verbs-intro"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-a2-m4-prepositions-and-complex-sentences",
+        "track": "generic",
+        "level": "A2",
+        "title": "Prepositions and complex sentences",
+        "description": "Say where and when with two-way and time prepositions, ask indirect questions, and read short news reports.",
+        "difficultyRank": 4
+      },
+      "lessonIds": [
+        "a2-indirect-questions-ob-w-fragen",
+        "a2-reading-short-news-reports",
+        "a2-temporal-prepositions-vor-nach-seit",
+        "a2-two-way-prepositions-location-direction"
       ]
     }
   ]

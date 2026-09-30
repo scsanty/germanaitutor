@@ -1,5 +1,5 @@
 {
-  "seedVersion": "3",
+  "seedVersion": "4",
   "formatVersion": 2,
   "track": "generic",
   "level": "B2",
@@ -1144,94 +1144,70 @@
   "milestones": [
     {
       "milestone": {
-        "id": "generic-b2-grammar",
+        "id": "generic-b2-m1-society-and-working-life",
         "track": "generic",
         "level": "B2",
-        "title": "Grammar",
-        "description": null,
+        "title": "Society and working life",
+        "description": "Vocabulary for work, digital life, society and the environment, two-part connectors, and the past subjunctive.",
         "difficultyRank": 1
       },
       "lessonIds": [
+        "b2-arbeitswelt-karriere-vocab",
+        "b2-digitalisierung-medien-vocab",
+        "b2-gesellschaft-demografie-vocab",
+        "b2-konjunktiv-ii-vergangenheit",
+        "b2-umwelt-nachhaltigkeit-vocab",
+        "b2-zweiteilige-konnektoren"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-b2-m2-passive-and-formal-phrasing",
+        "track": "generic",
+        "level": "B2",
+        "title": "Passive and formal phrasing",
+        "description": "Use the passive in all tenses and with modal verbs, noun-verb phrases and advanced relative clauses, read opinion pieces and write a formal complaint.",
+        "difficultyRank": 2
+      },
+      "lessonIds": [
+        "b2-beschwerdebrief-dienstleistung",
+        "b2-kommentare-standpunkte-erfassen",
+        "b2-nomen-verb-verbindungen-basis",
         "b2-passiv-formen-zeiten",
         "b2-passiv-modalverben",
-        "b2-passiv-alternativen",
-        "b2-konjunktiv-ii-vergangenheit",
-        "b2-zweiteilige-konnektoren",
-        "b2-nominalisierung-verbalisierung",
-        "b2-nomen-verb-verbindungen-basis",
-        "b2-partizipialattribute",
         "b2-relativsaetze-praepositionen-wer-was"
       ]
     },
     {
       "milestone": {
-        "id": "generic-b2-vocabulary",
+        "id": "generic-b2-m3-nominal-style-and-argument",
         "track": "generic",
         "level": "B2",
-        "title": "Vocabulary",
-        "description": null,
-        "difficultyRank": 2
-      },
-      "lessonIds": [
-        "b2-umwelt-nachhaltigkeit-vocab",
-        "b2-digitalisierung-medien-vocab",
-        "b2-arbeitswelt-karriere-vocab",
-        "b2-gesellschaft-demografie-vocab"
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-b2-reading",
-        "track": "generic",
-        "level": "B2",
-        "title": "Reading",
-        "description": null,
+        "title": "Nominal style and argument",
+        "description": "Switch between nominal and verbal style, lead a pro-and-con discussion, give a talk, write a structured statement and follow expert talks.",
         "difficultyRank": 3
       },
       "lessonIds": [
-        "b2-sachtexte-global-detailverstehen",
-        "b2-kommentare-standpunkte-erfassen"
+        "b2-fachpraesentation-strukturieren",
+        "b2-fachvortraege-podcasts-verstehen",
+        "b2-nominalisierung-verbalisierung",
+        "b2-pro-kontra-diskussion-fuehren",
+        "b2-stellungnahme-erlaeuterung-verfassen"
       ]
     },
     {
       "milestone": {
-        "id": "generic-b2-listening",
+        "id": "generic-b2-m4-dense-factual-texts",
         "track": "generic",
         "level": "B2",
-        "title": "Listening",
-        "description": null,
+        "title": "Dense factual texts",
+        "description": "Unpack extended participle phrases and passive alternatives, then read demanding factual texts for gist and detail.",
         "difficultyRank": 4
       },
       "lessonIds": [
-        "b2-fachvortraege-podcasts-verstehen"
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-b2-writing",
-        "track": "generic",
-        "level": "B2",
-        "title": "Writing",
-        "description": null,
-        "difficultyRank": 5
-      },
-      "lessonIds": [
-        "b2-stellungnahme-erlaeuterung-verfassen",
-        "b2-beschwerdebrief-dienstleistung"
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-b2-speaking",
-        "track": "generic",
-        "level": "B2",
-        "title": "Speaking",
-        "description": null,
-        "difficultyRank": 6
-      },
-      "lessonIds": [
-        "b2-pro-kontra-diskussion-fuehren",
-        "b2-fachpraesentation-strukturieren"
+        "b2-partizipialattribute",
+        "b2-passiv-alternativen",
+        "b2-sachtexte-global-detailverstehen"
       ]
     }
   ]

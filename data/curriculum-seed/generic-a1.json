@@ -1,5 +1,5 @@
 {
-  "seedVersion": "3",
+  "seedVersion": "4",
   "formatVersion": 2,
   "track": "generic",
   "level": "A1",
@@ -1143,92 +1143,68 @@
   "milestones": [
     {
       "milestone": {
-        "id": "generic-a1-grammar",
+        "id": "generic-a1-m1-first-steps",
         "track": "generic",
         "level": "A1",
-        "title": "Grammar",
-        "description": null,
+        "title": "First steps",
+        "description": "Greetings, numbers, articles, pronouns and your first present-tense verbs, including sein and haben.",
         "difficultyRank": 1
       },
       "lessonIds": [
+        "a1-alphabet-greetings-numbers",
+        "a1-definite-indefinite-articles",
         "a1-personal-pronouns",
         "a1-regular-verbs-present",
-        "a1-verb-sein-haben",
-        "a1-definite-indefinite-articles",
-        "a1-sentence-structure-w-questions",
-        "a1-accusative-case-articles",
-        "a1-negation-nicht-kein",
-        "a1-separable-verbs",
-        "a1-modal-verbs-koennen-moechten"
+        "a1-verb-sein-haben"
       ]
     },
     {
       "milestone": {
-        "id": "generic-a1-vocabulary",
+        "id": "generic-a1-m2-shopping-and-daily-routine",
         "track": "generic",
         "level": "A1",
-        "title": "Vocabulary",
-        "description": null,
+        "title": "Shopping and daily routine",
+        "description": "Talk about food, prices and your day, use the accusative and say no with nicht and kein.",
         "difficultyRank": 2
       },
       "lessonIds": [
-        "a1-alphabet-greetings-numbers",
+        "a1-accusative-case-articles",
         "a1-daily-routine-vocabulary",
-        "a1-food-shopping-vocabulary"
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-a1-reading",
-        "track": "generic",
-        "level": "A1",
-        "title": "Reading",
-        "description": null,
-        "difficultyRank": 3
-      },
-      "lessonIds": [
-        "a1-reading-short-messages",
+        "a1-food-shopping-vocabulary",
+        "a1-listening-dialogues-numbers-prices",
+        "a1-negation-nicht-kein",
         "a1-reading-classified-ads-notices"
       ]
     },
     {
       "milestone": {
-        "id": "generic-a1-listening",
+        "id": "generic-a1-m3-questions-and-word-order",
         "track": "generic",
         "level": "A1",
-        "title": "Listening",
-        "description": null,
-        "difficultyRank": 4
+        "title": "Questions and word order",
+        "description": "Build statements and questions with correct word order, use separable verbs, and read and hear short everyday texts.",
+        "difficultyRank": 3
       },
       "lessonIds": [
         "a1-listening-public-announcements",
-        "a1-listening-dialogues-numbers-prices"
+        "a1-reading-short-messages",
+        "a1-sentence-structure-w-questions",
+        "a1-separable-verbs"
       ]
     },
     {
       "milestone": {
-        "id": "generic-a1-writing",
+        "id": "generic-a1-m4-introductions-and-invitations",
         "track": "generic",
         "level": "A1",
-        "title": "Writing",
-        "description": null,
-        "difficultyRank": 5
+        "title": "Introductions and invitations",
+        "description": "Say what you can and would like to do, introduce yourself aloud and write a short invitation.",
+        "difficultyRank": 4
       },
       "lessonIds": [
+        "a1-modal-verbs-koennen-moechten",
+        "a1-speaking-self-introduction",
         "a1-writing-short-invitation"
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-a1-speaking",
-        "track": "generic",
-        "level": "A1",
-        "title": "Speaking",
-        "description": null,
-        "difficultyRank": 6
-      },
-      "lessonIds": [
-        "a1-speaking-self-introduction"
       ]
     }
   ]

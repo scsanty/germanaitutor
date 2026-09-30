@@ -1,5 +1,5 @@
 {
-  "seedVersion": "3",
+  "seedVersion": "4",
   "formatVersion": 2,
   "track": "generic",
   "level": "B1",
@@ -1398,93 +1398,69 @@
   "milestones": [
     {
       "milestone": {
-        "id": "generic-b1-grammar",
+        "id": "generic-b1-m1-reasons-time-and-wishes",
         "track": "generic",
         "level": "B1",
-        "title": "Grammar",
-        "description": null,
+        "title": "Reasons, time and wishes",
+        "description": "Link ideas with causal, concessive and time clauses, use zu-infinitives and Konjunktiv II for wishes, with vocabulary for work and media.",
         "difficultyRank": 1
       },
       "lessonIds": [
+        "b1-infinitive-clauses-zu-um-zu",
+        "b1-subjunctive-ii-wishes-hypotheticals",
         "b1-subordinate-clauses-causal-concessive",
         "b1-subordinate-clauses-temporal",
-        "b1-infinitive-clauses-zu-um-zu",
-        "b1-two-part-connectors",
-        "b1-relative-clauses-cases",
-        "b1-relative-clauses-prepositions",
-        "b1-verbs-with-prepositions-da-wo-compounds",
-        "b1-passive-voice-present-past",
-        "b1-passive-voice-modal-verbs",
-        "b1-subjunctive-ii-wishes-hypotheticals",
-        "b1-subjunctive-ii-past-conditions",
-        "b1-n-declension-weak-masculine-nouns"
+        "b1-vocab-digital-media-technology",
+        "b1-vocab-work-career-applications"
       ]
     },
     {
       "milestone": {
-        "id": "generic-b1-vocabulary",
+        "id": "generic-b1-m2-relative-clauses-and-fixed-prepositions",
         "track": "generic",
         "level": "B1",
-        "title": "Vocabulary",
-        "description": null,
+        "title": "Relative clauses and fixed prepositions",
+        "description": "Build relative clauses, use verbs with fixed prepositions and weak masculine nouns, and follow interviews on the environment and other topics.",
         "difficultyRank": 2
       },
       "lessonIds": [
-        "b1-vocab-environment-sustainability",
-        "b1-vocab-work-career-applications",
-        "b1-vocab-digital-media-technology"
+        "b1-listening-interviews-podcasts",
+        "b1-n-declension-weak-masculine-nouns",
+        "b1-relative-clauses-cases",
+        "b1-relative-clauses-prepositions",
+        "b1-verbs-with-prepositions-da-wo-compounds",
+        "b1-vocab-environment-sustainability"
       ]
     },
     {
       "milestone": {
-        "id": "generic-b1-reading",
+        "id": "generic-b1-m3-passive-voice-and-hypotheticals",
         "track": "generic",
         "level": "B1",
-        "title": "Reading",
-        "description": null,
+        "title": "Passive voice and hypotheticals",
+        "description": "Use the passive, including with modal verbs, talk about past unreal conditions, and connect ideas with two-part connectors.",
         "difficultyRank": 3
       },
       "lessonIds": [
-        "b1-reading-argumentative-articles"
+        "b1-passive-voice-modal-verbs",
+        "b1-passive-voice-present-past",
+        "b1-subjunctive-ii-past-conditions",
+        "b1-two-part-connectors"
       ]
     },
     {
       "milestone": {
-        "id": "generic-b1-listening",
+        "id": "generic-b1-m4-arguing-and-presenting",
         "track": "generic",
         "level": "B1",
-        "title": "Listening",
-        "description": null,
+        "title": "Arguing and presenting",
+        "description": "Read argumentative articles, give a structured presentation and write a forum post that argues a position.",
         "difficultyRank": 4
       },
       "lessonIds": [
-        "b1-listening-interviews-podcasts"
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-b1-writing",
-        "track": "generic",
-        "level": "B1",
-        "title": "Writing",
-        "description": null,
-        "difficultyRank": 5
-      },
-      "lessonIds": [
+        "b1-reading-argumentative-articles",
+        "b1-speaking-presenting-topic",
         "b1-writing-argumentative-forum-post"
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-b1-speaking",
-        "track": "generic",
-        "level": "B1",
-        "title": "Speaking",
-        "description": null,
-        "difficultyRank": 6
-      },
-      "lessonIds": [
-        "b1-speaking-presenting-topic"
       ]
     }
   ]
