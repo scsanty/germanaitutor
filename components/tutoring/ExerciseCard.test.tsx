@@ -199,4 +199,34 @@ describe('ExerciseCard', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Skip for now' }));
     expect(onSkip).toHaveBeenCalled();
   });
+
+  it('in test mode posts to the test-out route and shows no result', async () => {
+    const fetchMock = stubAttempts(() => delayedResponse({ finished: false, answered: 1, total: 6 }));
+    const onTestAnswered = vi.fn();
+    renderWithIntl(
+      <ExerciseCard exercise={MC} source="lesson" mode="test" testMilestoneId="m2" onTestAnswered={onTestAnswered} onNext={vi.fn()} onSkip={vi.fn()} />
+    );
+    fireEvent.click(screen.getByLabelText('Tschüss'));
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }));
+    await waitFor(() => expect(onTestAnswered).toHaveBeenCalledWith({ finished: false, answered: 1, total: 6 }));
+    expect(fetchMock).toHaveBeenCalledWith('/api/tutoring/milestones/m2/testout/answer', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ exerciseId: 'ex1', answer: { type: 'multiple_choice', selectedIndex: 1 } }),
+    });
+    expect(screen.queryByText('Wrong')).not.toBeInTheDocument();
+    expect(screen.queryByText(/Correct answer/)).not.toBeInTheDocument();
+  });
+
+  it('in test mode reports a stale question and never offers Skip', async () => {
+    stubAttempts(() => delayedResponse({ error: 'gone', code: 'not_found' }, { ok: false, status: 404 }));
+    const onTestStale = vi.fn();
+    renderWithIntl(
+      <ExerciseCard exercise={MC} source="lesson" mode="test" testMilestoneId="m2" onTestStale={onTestStale} onNext={vi.fn()} onSkip={vi.fn()} />
+    );
+    fireEvent.click(screen.getByLabelText('Hallo'));
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }));
+    await waitFor(() => expect(onTestStale).toHaveBeenCalled());
+    expect(screen.queryByRole('button', { name: 'Skip for now' })).not.toBeInTheDocument();
+  });
 });

@@ -273,5 +273,24 @@
     "resetConfirm": "Dadurch werden alle lokalen Daten dauerhaft gelöscht. Bist du sicher?",
     "resetYes": "Ja, alles zurücksetzen",
     "reset": "App-Daten zurücksetzen"
+  },
+  "testOut": {
+    "title": "Per Test überspringen: {milestone}",
+    "intro": "Beantworte bis zu 20 Fragen aus dieser Stufe. Mit mindestens 80 % gelten alle ihre Lektionen als erledigt. Deine Ergebnisse siehst du am Ende.",
+    "start": "Test starten",
+    "resume": "Test fortsetzen",
+    "progress": "Frage {current} von {total}",
+    "passed": "Bestanden! Diese Stufe ist abgeschlossen.",
+    "failed": "Diesmal nicht bestanden. Du kannst es in 24 Stunden noch einmal versuchen.",
+    "score": "{score} von {maxScore} Punkten",
+    "yourAnswer": "Deine Antwort: {answer}",
+    "correctAnswer": "Richtige Antwort: {answer}",
+    "result": { "correct": "Richtig", "almost": "Fast richtig", "wrong": "Falsch" },
+    "unavailable": "Dieser Test ist gerade nicht verfügbar.",
+    "cooldown": "Du kannst es ab {time} noch einmal versuchen.",
+    "tooFew": "Diese Stufe hat nicht genug Fragen für einen Test.",
+    "backToTree": "Zurück zu deinen Lektionen",
+    "loadFailed": "Der Test konnte nicht geladen werden. Bitte lade die Seite neu.",
+    "genericError": "Etwas ist schiefgelaufen: {error}"
   }
 }

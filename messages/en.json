@@ -273,5 +273,24 @@
     "resetConfirm": "This deletes all local data permanently. Are you sure?",
     "resetYes": "Yes, reset everything",
     "reset": "Reset app data"
+  },
+  "testOut": {
+    "title": "Test out: {milestone}",
+    "intro": "Answer up to 20 questions from this milestone. With 80% or more, all its lessons count as done. You'll see your results at the end.",
+    "start": "Start the test",
+    "resume": "Resume the test",
+    "progress": "Question {current} of {total}",
+    "passed": "Passed! This milestone is complete.",
+    "failed": "Not passed this time. You can try again in 24 hours.",
+    "score": "{score} of {maxScore} points",
+    "yourAnswer": "Your answer: {answer}",
+    "correctAnswer": "Correct answer: {answer}",
+    "result": { "correct": "Right", "almost": "Almost", "wrong": "Wrong" },
+    "unavailable": "This test-out isn't available right now.",
+    "cooldown": "You can try again after {time}.",
+    "tooFew": "This milestone doesn't have enough questions for a test-out.",
+    "backToTree": "Back to your lessons",
+    "loadFailed": "Could not load the test-out. Please reload the page.",
+    "genericError": "Something went wrong: {error}"
   }
 }
