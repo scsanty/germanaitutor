@@ -1,5 +1,5 @@
 {
-  "seedVersion": "3",
+  "seedVersion": "4",
   "formatVersion": 2,
   "track": "goethe",
   "level": "B1",
@@ -1462,97 +1462,73 @@
   "milestones": [
     {
       "milestone": {
-        "id": "goethe-b1-grammar",
+        "id": "goethe-b1-m1-reasons-purposes-and-personal-stories",
         "track": "goethe",
         "level": "B1",
-        "title": "Grammar",
-        "description": null,
+        "title": "Reasons, purposes and personal stories",
+        "description": "Connect ideas with reason, purpose and result clauses, and handle personal topics: blogs, a personal email, announcements and casual conversation.",
         "difficultyRank": 1
       },
       "lessonIds": [
-        "b1-goethe-subordinate-clauses-final-consecutive",
         "b1-goethe-causal-concessive-connectors",
-        "b1-goethe-relative-clauses-indefinite-pronouns",
-        "b1-goethe-subjunctive-ii-advice-opinions",
-        "b1-goethe-participles-as-adjectives"
+        "b1-goethe-listening-teil1-daily-announcements",
+        "b1-goethe-listening-teil3-casual-conversation",
+        "b1-goethe-reading-teil1-blog-narrative",
+        "b1-goethe-subordinate-clauses-final-consecutive",
+        "b1-goethe-vocab-social-trends-relationships",
+        "b1-goethe-writing-aufgabe1-personal-email"
       ]
     },
     {
       "milestone": {
-        "id": "goethe-b1-vocabulary",
+        "id": "goethe-b1-m2-education-work-and-consumption",
         "track": "goethe",
         "level": "B1",
-        "title": "Vocabulary",
-        "description": null,
+        "title": "Education, work and consumption",
+        "description": "Vocabulary for education, careers and consumption, with press articles, classified ads, a guided tour and a short presentation.",
         "difficultyRank": 2
       },
       "lessonIds": [
-        "b1-goethe-vocab-social-trends-relationships",
+        "b1-goethe-listening-teil2-guided-tour-presentation",
+        "b1-goethe-reading-teil2-press-articles",
+        "b1-goethe-reading-teil3-classifieds-matching",
+        "b1-goethe-speaking-teil2-monologic-presentation",
         "b1-goethe-vocab-consumerism-environment",
         "b1-goethe-vocab-education-career-training"
       ]
     },
     {
       "milestone": {
-        "id": "goethe-b1-reading",
+        "id": "goethe-b1-m3-opinions-and-advice",
         "track": "goethe",
         "level": "B1",
-        "title": "Reading",
-        "description": null,
+        "title": "Opinions and advice",
+        "description": "Give advice and opinions with Konjunktiv II and relative clauses, in forum comments, a radio discussion and joint planning.",
         "difficultyRank": 3
       },
       "lessonIds": [
-        "b1-goethe-reading-teil1-blog-narrative",
-        "b1-goethe-reading-teil2-press-articles",
-        "b1-goethe-reading-teil3-classifieds-matching",
+        "b1-goethe-listening-teil4-radio-discussion",
         "b1-goethe-reading-teil4-forum-comments",
-        "b1-goethe-reading-teil5-rules-regulations"
+        "b1-goethe-relative-clauses-indefinite-pronouns",
+        "b1-goethe-speaking-teil1-planning-together",
+        "b1-goethe-subjunctive-ii-advice-opinions",
+        "b1-goethe-writing-aufgabe2-forum-opinion"
       ]
     },
     {
       "milestone": {
-        "id": "goethe-b1-listening",
+        "id": "goethe-b1-m4-formal-texts-and-feedback",
         "track": "goethe",
         "level": "B1",
-        "title": "Listening",
-        "description": null,
+        "title": "Formal texts and feedback",
+        "description": "Participles used as adjectives, rules and regulations, a formal message, and giving feedback after a presentation.",
         "difficultyRank": 4
       },
       "lessonIds": [
-        "b1-goethe-listening-teil1-daily-announcements",
-        "b1-goethe-listening-teil2-guided-tour-presentation",
-        "b1-goethe-listening-teil3-casual-conversation",
-        "b1-goethe-listening-teil4-radio-discussion"
-      ]
-    },
-    {
-      "milestone": {
-        "id": "goethe-b1-writing",
-        "track": "goethe",
-        "level": "B1",
-        "title": "Writing",
-        "description": null,
-        "difficultyRank": 5
-      },
-      "lessonIds": [
-        "b1-goethe-writing-aufgabe1-personal-email",
-        "b1-goethe-writing-aufgabe2-forum-opinion",
+        "b1-goethe-participles-as-adjectives",
+        "b1-goethe-reading-teil5-rules-regulations",
+        "b1-goethe-speaking-teil3-feedback-and-questions",
         "b1-goethe-writing-aufgabe3-formal-apology-request"
-      ]
-    },
-    {
-      "milestone": {
-        "id": "goethe-b1-speaking",
-        "track": "goethe",
-        "level": "B1",
-        "title": "Speaking",
-        "description": null,
-        "difficultyRank": 6
-      },
-      "lessonIds": [
-        "b1-goethe-speaking-teil1-planning-together",
-        "b1-goethe-speaking-teil2-monologic-presentation",
-        "b1-goethe-speaking-teil3-feedback-and-questions"
       ]
     }
   ]

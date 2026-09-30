@@ -1,5 +1,5 @@
 {
-  "seedVersion": "3",
+  "seedVersion": "4",
   "formatVersion": 2,
   "track": "goethe",
   "level": "B2",
@@ -1033,96 +1033,72 @@
   "milestones": [
     {
       "milestone": {
-        "id": "goethe-b2-grammar",
+        "id": "goethe-b2-m1-opinions-and-everyday-listening",
         "track": "goethe",
         "level": "B2",
-        "title": "Grammar",
-        "description": null,
+        "title": "Opinions and everyday listening",
+        "description": "Express and argue opinions, with vocabulary for society and education, everyday listening, forum posts to read and a forum post to write.",
         "difficultyRank": 1
       },
       "lessonIds": [
-        "b2-goethe-textkohaesion-satzverflechtung",
+        "b2-goethe-hoeren-teil1-alltag-nachrichten",
+        "b2-goethe-lesen-teil1-forenbeitraege-zuordnen",
         "b2-goethe-meinungsausdruck-argumentationsstrukturen",
-        "b2-goethe-subjektive-bedeutung-modalverben",
-        "b2-goethe-partizipialkonstruktionen-verdichtung",
-        "b2-goethe-indirekte-rede-konjunktiv-i",
-        "b2-goethe-feste-nomen-verb-gefuege"
-      ]
-    },
-    {
-      "milestone": {
-        "id": "goethe-b2-vocabulary",
-        "track": "goethe",
-        "level": "B2",
-        "title": "Vocabulary",
-        "description": null,
-        "difficultyRank": 2
-      },
-      "lessonIds": [
-        "b2-goethe-vocab-nachhaltigkeit-umweltschutz",
+        "b2-goethe-schreiben-teil1-forumsbeitrag",
         "b2-goethe-vocab-bildung-arbeitswelt",
         "b2-goethe-vocab-gesellschaft-zusammenleben"
       ]
     },
     {
       "milestone": {
-        "id": "goethe-b2-reading",
+        "id": "goethe-b2-m2-interviews-reports-and-modal-meaning",
         "track": "goethe",
         "level": "B2",
-        "title": "Reading",
-        "description": null,
+        "title": "Interviews, reports and modal meaning",
+        "description": "Reported speech and the subjective use of modal verbs, sustainability vocabulary, expert interviews, readers' opinions and a partner discussion.",
+        "difficultyRank": 2
+      },
+      "lessonIds": [
+        "b2-goethe-hoeren-teil2-experteninterview",
+        "b2-goethe-indirekte-rede-konjunktiv-i",
+        "b2-goethe-lesen-teil4-lesermeinungen-ueberschriften",
+        "b2-goethe-sprechen-teil2-diskussion",
+        "b2-goethe-subjektive-bedeutung-modalverben",
+        "b2-goethe-vocab-nachhaltigkeit-umweltschutz"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "goethe-b2-m3-formal-language-and-presenting",
+        "track": "goethe",
+        "level": "B2",
+        "title": "Formal language and presenting",
+        "description": "Formal noun-verb phrases for a work message, rules and regulations, a structured talk and a three-speaker panel.",
         "difficultyRank": 3
       },
       "lessonIds": [
-        "b2-goethe-lesen-teil1-forenbeitraege-zuordnen",
-        "b2-goethe-lesen-teil2-textrekonstruktion",
-        "b2-goethe-lesen-teil3-sachtext-standpunkte",
-        "b2-goethe-lesen-teil4-lesermeinungen-ueberschriften",
-        "b2-goethe-lesen-teil5-richtlinien-ordnungen"
+        "b2-goethe-feste-nomen-verb-gefuege",
+        "b2-goethe-hoeren-teil3-drei-sprecher-zuordnen",
+        "b2-goethe-lesen-teil5-richtlinien-ordnungen",
+        "b2-goethe-schreiben-teil2-formelle-mitteilung",
+        "b2-goethe-sprechen-teil1-vortrag"
       ]
     },
     {
       "milestone": {
-        "id": "goethe-b2-listening",
+        "id": "goethe-b2-m4-dense-texts-and-lectures",
         "track": "goethe",
         "level": "B2",
-        "title": "Listening",
-        "description": null,
+        "title": "Dense texts and lectures",
+        "description": "Participle constructions and text cohesion, reconstructing texts, analysing an author's intent and following an academic lecture.",
         "difficultyRank": 4
       },
       "lessonIds": [
-        "b2-goethe-hoeren-teil1-alltag-nachrichten",
-        "b2-goethe-hoeren-teil2-experteninterview",
-        "b2-goethe-hoeren-teil3-drei-sprecher-zuordnen",
-        "b2-goethe-hoeren-teil4-fachvortrag"
-      ]
-    },
-    {
-      "milestone": {
-        "id": "goethe-b2-writing",
-        "track": "goethe",
-        "level": "B2",
-        "title": "Writing",
-        "description": null,
-        "difficultyRank": 5
-      },
-      "lessonIds": [
-        "b2-goethe-schreiben-teil1-forumsbeitrag",
-        "b2-goethe-schreiben-teil2-formelle-mitteilung"
-      ]
-    },
-    {
-      "milestone": {
-        "id": "goethe-b2-speaking",
-        "track": "goethe",
-        "level": "B2",
-        "title": "Speaking",
-        "description": null,
-        "difficultyRank": 6
-      },
-      "lessonIds": [
-        "b2-goethe-sprechen-teil1-vortrag",
-        "b2-goethe-sprechen-teil2-diskussion"
+        "b2-goethe-hoeren-teil4-fachvortrag",
+        "b2-goethe-lesen-teil2-textrekonstruktion",
+        "b2-goethe-lesen-teil3-sachtext-standpunkte",
+        "b2-goethe-partizipialkonstruktionen-verdichtung",
+        "b2-goethe-textkohaesion-satzverflechtung"
       ]
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "seedVersion": "3",
+  "seedVersion": "4",
   "formatVersion": 2,
   "track": "goethe",
   "level": "C1",
@@ -1204,91 +1204,67 @@
   "milestones": [
     {
       "milestone": {
-        "id": "goethe-c1-grammar",
+        "id": "goethe-c1-m1-idioms-word-formation-and-clauses",
         "track": "goethe",
         "level": "C1",
-        "title": "Grammar",
-        "description": null,
+        "title": "Idioms, word formation and clauses",
+        "description": "Idioms, compound words, complex adverbial clauses and fixed noun-preposition phrases, with a first selective reading task.",
         "difficultyRank": 1
       },
       "lessonIds": [
-        "c1-goethe-subjektive-modalverben",
-        "c1-goethe-indirekte-rede-und-distanzierung",
-        "c1-goethe-komplexe-adverbiale-nebensaetze",
         "c1-goethe-feste-nomen-praepositions-verbindungen",
-        "c1-goethe-differenzierte-konnektoren"
-      ]
-    },
-    {
-      "milestone": {
-        "id": "goethe-c1-vocabulary",
-        "track": "goethe",
-        "level": "C1",
-        "title": "Vocabulary",
-        "description": null,
-        "difficultyRank": 2
-      },
-      "lessonIds": [
         "c1-goethe-idiomatische-wendungen-und-redewendungen",
+        "c1-goethe-komplexe-adverbiale-nebensaetze",
         "c1-goethe-komposita-und-wortbildung-c1",
-        "c1-goethe-metaphorische-ausdrucksweise"
-      ]
-    },
-    {
-      "milestone": {
-        "id": "goethe-c1-reading",
-        "track": "goethe",
-        "level": "C1",
-        "title": "Reading",
-        "description": null,
-        "difficultyRank": 3
-      },
-      "lessonIds": [
-        "c1-goethe-lesen-teil1-kommentar-und-essay",
-        "c1-goethe-lesen-teil2-textrekonstruktion",
-        "c1-goethe-lesen-teil3-sachtext-detail",
         "c1-goethe-lesen-teil4-kurzinformationen-abgleich"
       ]
     },
     {
       "milestone": {
-        "id": "goethe-c1-listening",
+        "id": "goethe-c1-m2-nuance-distance-and-connectors",
         "track": "goethe",
         "level": "C1",
-        "title": "Listening",
-        "description": null,
+        "title": "Nuance, distance and connectors",
+        "description": "Modal verbs for degrees of certainty, reported speech and distancing, connectors that steer an argument, metaphor, and note-taking from a dialogue.",
+        "difficultyRank": 2
+      },
+      "lessonIds": [
+        "c1-goethe-differenzierte-konnektoren",
+        "c1-goethe-hoeren-teil1-dialog-notizen",
+        "c1-goethe-indirekte-rede-und-distanzierung",
+        "c1-goethe-metaphorische-ausdrucksweise",
+        "c1-goethe-subjektive-modalverben"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "goethe-c1-m3-commentary-and-monologue",
+        "track": "goethe",
+        "level": "C1",
+        "title": "Commentary and monologue",
+        "description": "Read commentaries and essays, write a detailed statement, give a monologue talk and follow a radio feature.",
+        "difficultyRank": 3
+      },
+      "lessonIds": [
+        "c1-goethe-hoeren-teil2-radiointerview-monolog",
+        "c1-goethe-lesen-teil1-kommentar-und-essay",
+        "c1-goethe-schreiben-teil1-freie-stellungnahme",
+        "c1-goethe-sprechen-teil1-monologischer-vortrag"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "goethe-c1-m4-text-reconstruction-and-register",
+        "track": "goethe",
+        "level": "C1",
+        "title": "Text reconstruction and register",
+        "description": "The hardest exam formats: rebuilding texts, detailed science articles, rewriting in another register and a consensus discussion.",
         "difficultyRank": 4
       },
       "lessonIds": [
-        "c1-goethe-hoeren-teil1-dialog-notizen",
-        "c1-goethe-hoeren-teil2-radiointerview-monolog"
-      ]
-    },
-    {
-      "milestone": {
-        "id": "goethe-c1-writing",
-        "track": "goethe",
-        "level": "C1",
-        "title": "Writing",
-        "description": null,
-        "difficultyRank": 5
-      },
-      "lessonIds": [
-        "c1-goethe-schreiben-teil1-freie-stellungnahme",
-        "c1-goethe-schreiben-teil2-textumformung-register"
-      ]
-    },
-    {
-      "milestone": {
-        "id": "goethe-c1-speaking",
-        "track": "goethe",
-        "level": "C1",
-        "title": "Speaking",
-        "description": null,
-        "difficultyRank": 6
-      },
-      "lessonIds": [
-        "c1-goethe-sprechen-teil1-monologischer-vortrag",
+        "c1-goethe-lesen-teil2-textrekonstruktion",
+        "c1-goethe-lesen-teil3-sachtext-detail",
+        "c1-goethe-schreiben-teil2-textumformung-register",
         "c1-goethe-sprechen-teil2-partnerdiskussion-konsens"
       ]
     }

@@ -1,5 +1,5 @@
 {
-  "seedVersion": "3",
+  "seedVersion": "4",
   "formatVersion": 2,
   "track": "goethe",
   "level": "A1",
@@ -1085,92 +1085,68 @@
   "milestones": [
     {
       "milestone": {
-        "id": "goethe-a1-grammar",
+        "id": "goethe-a1-m1-me-my-family-and-free-time",
         "track": "goethe",
         "level": "A1",
-        "title": "Grammar",
-        "description": null,
+        "title": "Me, my family and free time",
+        "description": "Pronouns and present-tense verbs, my and your, and words for family, food and hobbies.",
         "difficultyRank": 1
       },
       "lessonIds": [
         "a1-goethe-personal-pronouns-verbs",
-        "a1-goethe-question-formation",
         "a1-goethe-possessive-determiners",
-        "a1-goethe-imperative-polite-forms",
-        "a1-goethe-prepositions-local-temporal",
-        "a1-goethe-separable-verbs"
+        "a1-goethe-vocab-family-friends",
+        "a1-goethe-vocab-food-restaurants",
+        "a1-goethe-vocab-leisure-hobbies"
       ]
     },
     {
       "milestone": {
-        "id": "goethe-a1-vocabulary",
+        "id": "goethe-a1-m2-times-places-and-questions",
         "track": "goethe",
         "level": "A1",
-        "title": "Vocabulary",
-        "description": null,
+        "title": "Times, places and questions",
+        "description": "Prepositions of time and place, asking questions and separable verbs, plus the first reading and form-filling tasks.",
         "difficultyRank": 2
       },
       "lessonIds": [
-        "a1-goethe-vocab-family-friends",
-        "a1-goethe-vocab-leisure-hobbies",
-        "a1-goethe-vocab-food-restaurants"
-      ]
-    },
-    {
-      "milestone": {
-        "id": "goethe-a1-reading",
-        "track": "goethe",
-        "level": "A1",
-        "title": "Reading",
-        "description": null,
-        "difficultyRank": 3
-      },
-      "lessonIds": [
+        "a1-goethe-prepositions-local-temporal",
+        "a1-goethe-question-formation",
         "a1-goethe-reading-teil1-personal-messages",
-        "a1-goethe-reading-teil2-information-matching",
-        "a1-goethe-reading-teil3-public-signs-notices"
+        "a1-goethe-separable-verbs",
+        "a1-goethe-writing-teil1-form-completion"
       ]
     },
     {
       "milestone": {
-        "id": "goethe-a1-listening",
+        "id": "goethe-a1-m3-listening-and-finding-information",
         "track": "goethe",
         "level": "A1",
-        "title": "Listening",
-        "description": null,
-        "difficultyRank": 4
+        "title": "Listening and finding information",
+        "description": "The exam's short dialogues, announcements and phone messages, and searching texts for practical information.",
+        "difficultyRank": 3
       },
       "lessonIds": [
         "a1-goethe-listening-teil1-dialogues-with-images",
         "a1-goethe-listening-teil2-announcements",
-        "a1-goethe-listening-teil3-phone-messages"
+        "a1-goethe-listening-teil3-phone-messages",
+        "a1-goethe-reading-teil2-information-matching"
       ]
     },
     {
       "milestone": {
-        "id": "goethe-a1-writing",
+        "id": "goethe-a1-m4-requests-notices-and-exam-speaking",
         "track": "goethe",
         "level": "A1",
-        "title": "Writing",
-        "description": null,
-        "difficultyRank": 5
+        "title": "Requests, notices and exam speaking",
+        "description": "Imperatives and polite requests, public signs, a short email, and all three parts of the speaking exam.",
+        "difficultyRank": 4
       },
       "lessonIds": [
-        "a1-goethe-writing-teil1-form-completion",
+        "a1-goethe-imperative-polite-forms",
+        "a1-goethe-reading-teil3-public-signs-notices",
+        "a1-goethe-speaking-teil1-teil2-teil3",
         "a1-goethe-writing-teil2-short-letter"
-      ]
-    },
-    {
-      "milestone": {
-        "id": "goethe-a1-speaking",
-        "track": "goethe",
-        "level": "A1",
-        "title": "Speaking",
-        "description": null,
-        "difficultyRank": 6
-      },
-      "lessonIds": [
-        "a1-goethe-speaking-teil1-teil2-teil3"
       ]
     }
   ]

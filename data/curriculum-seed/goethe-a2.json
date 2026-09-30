@@ -1,5 +1,5 @@
 {
-  "seedVersion": "3",
+  "seedVersion": "4",
   "formatVersion": 2,
   "track": "goethe",
   "level": "A2",
@@ -1359,97 +1359,73 @@
   "milestones": [
     {
       "milestone": {
-        "id": "goethe-a2-grammar",
+        "id": "goethe-a2-m1-past-experiences-and-celebrations",
         "track": "goethe",
         "level": "A2",
-        "title": "Grammar",
-        "description": null,
+        "title": "Past experiences and celebrations",
+        "description": "Talk about the past with the Perfekt and Präteritum, with vocabulary for celebrations and holidays, in short messages and dialogues.",
         "difficultyRank": 1
       },
       "lessonIds": [
+        "a2-goethe-listening-teil1-everyday-dialogues",
         "a2-goethe-perfekt-past-tense",
         "a2-goethe-praeteritum-auxiliaries-modals",
-        "a2-goethe-subordinating-conjunctions-weil-dass",
-        "a2-goethe-two-way-prepositions-local",
-        "a2-goethe-comparative-superlative",
-        "a2-goethe-adjective-declension-basics",
-        "a2-goethe-indirect-questions-polite"
+        "a2-goethe-reading-teil1-personal-email",
+        "a2-goethe-vocab-celebrations-social-events",
+        "a2-goethe-vocab-travel-vacation-nature",
+        "a2-goethe-writing-teil1-informal-note"
       ]
     },
     {
       "milestone": {
-        "id": "goethe-a2-vocabulary",
+        "id": "goethe-a2-m2-describing-places-and-people",
         "track": "goethe",
         "level": "A2",
-        "title": "Vocabulary",
-        "description": null,
+        "title": "Describing places and people",
+        "description": "Adjective endings, two-way prepositions and comparisons, media vocabulary, and exam tasks with directories, monologues and question cards.",
         "difficultyRank": 2
       },
       "lessonIds": [
-        "a2-goethe-vocab-celebrations-social-events",
-        "a2-goethe-vocab-travel-vacation-nature",
-        "a2-goethe-vocab-education-professions-career",
+        "a2-goethe-adjective-declension-basics",
+        "a2-goethe-comparative-superlative",
+        "a2-goethe-listening-teil2-guided-monologues",
+        "a2-goethe-reading-teil2-service-directory",
+        "a2-goethe-speaking-teil1-question-exchange",
+        "a2-goethe-two-way-prepositions-local",
         "a2-goethe-vocab-media-communication"
       ]
     },
     {
       "milestone": {
-        "id": "goethe-a2-reading",
+        "id": "goethe-a2-m3-work-media-and-giving-reasons",
         "track": "goethe",
         "level": "A2",
-        "title": "Reading",
-        "description": null,
+        "title": "Work, media and giving reasons",
+        "description": "Link clauses with weil, dass and wenn, talk about education and careers, and handle news reports, ads, a radio interview and a short monologue.",
         "difficultyRank": 3
       },
       "lessonIds": [
-        "a2-goethe-reading-teil1-personal-email",
-        "a2-goethe-reading-teil2-service-directory",
+        "a2-goethe-listening-teil4-radio-interview",
         "a2-goethe-reading-teil3-newspaper-report",
-        "a2-goethe-reading-teil4-advertisement-matching"
+        "a2-goethe-reading-teil4-advertisement-matching",
+        "a2-goethe-speaking-teil2-monologic-topic",
+        "a2-goethe-subordinating-conjunctions-weil-dass",
+        "a2-goethe-vocab-education-professions-career"
       ]
     },
     {
       "milestone": {
-        "id": "goethe-a2-listening",
+        "id": "goethe-a2-m4-polite-requests-and-planning-together",
         "track": "goethe",
         "level": "A2",
-        "title": "Listening",
-        "description": null,
+        "title": "Polite requests and planning together",
+        "description": "Ask indirect, polite questions, plan an event with a partner and write a semi-formal message.",
         "difficultyRank": 4
       },
       "lessonIds": [
-        "a2-goethe-listening-teil1-everyday-dialogues",
-        "a2-goethe-listening-teil2-guided-monologues",
-        "a2-goethe-listening-teil4-radio-interview"
-      ]
-    },
-    {
-      "milestone": {
-        "id": "goethe-a2-writing",
-        "track": "goethe",
-        "level": "A2",
-        "title": "Writing",
-        "description": null,
-        "difficultyRank": 5
-      },
-      "lessonIds": [
-        "a2-goethe-writing-teil1-informal-note",
+        "a2-goethe-indirect-questions-polite",
+        "a2-goethe-speaking-teil3-joint-negotiation",
         "a2-goethe-writing-teil2-semi-formal-message"
-      ]
-    },
-    {
-      "milestone": {
-        "id": "goethe-a2-speaking",
-        "track": "goethe",
-        "level": "A2",
-        "title": "Speaking",
-        "description": null,
-        "difficultyRank": 6
-      },
-      "lessonIds": [
-        "a2-goethe-speaking-teil1-question-exchange",
-        "a2-goethe-speaking-teil2-monologic-topic",
-        "a2-goethe-speaking-teil3-joint-negotiation"
       ]
     }
   ]
