@@ -2,6 +2,10 @@
 
 import { useEffect, useRef, useState } from 'react';
 import type { Track } from '@/lib/types';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { BTN } from './adminStyles';
 
 export interface RepairEdge {
   lessonId: string;
@@ -130,17 +134,21 @@ export function DeleteLessonWizard({
   // the queue.
   if (previewError) {
     return (
-      <div>
-        <p role="alert">{previewError}</p>
-        <button type="button" onClick={onCancel}>
-          Cancel
-        </button>
-      </div>
+      <Card className="gap-3">
+        <CardContent className="flex flex-col items-start gap-3">
+          <Alert variant="destructive">
+            <AlertDescription>{previewError}</AlertDescription>
+          </Alert>
+          <Button type="button" variant="outline" className={BTN} onClick={onCancel}>
+            Cancel
+          </Button>
+        </CardContent>
+      </Card>
     );
   }
 
   if (!isDone) {
-    if (!currentPreview) return <p>Loading...</p>;
+    if (!currentPreview) return <p className="text-text-muted">Loading...</p>;
     const edgesToRemove = currentPreview.repair?.edgesToRemove ?? [];
     const edgesToAdd = currentPreview.repair?.edgesToAdd ?? [];
     const skippedBridges = currentPreview.repair?.skippedBridges ?? [];
@@ -148,61 +156,77 @@ export function DeleteLessonWizard({
     // lessons at once — so each decision is a single unambiguous action.
     const currentOffer = pendingOffers[0];
     return (
-      <div>
-        <h2>Deleting {currentLessonId}</h2>
-        <h3>Repair effects</h3>
-        <ul>
-          {edgesToRemove.map((e, i) => (
-            <li key={`remove-${i}`}>
-              Remove: {e.lessonId} no longer requires {e.prerequisiteLessonId}
-            </li>
-          ))}
-          {edgesToAdd.map((e, i) => (
-            <li key={`add-${i}`}>
-              Add: {e.lessonId} now requires {e.prerequisiteLessonId}
-            </li>
-          ))}
-          {skippedBridges.map((e, i) => (
-            <li key={`skip-${i}`}>
-              Skipped: {e.lessonId} will not require {e.prerequisiteLessonId} (it would break the prerequisite scope)
-            </li>
-          ))}
-        </ul>
-        {currentOffer && (
+      <Card className="gap-3">
+        <CardHeader>
+          <h2 className="text-lg leading-tight">Deleting {currentLessonId}</h2>
+        </CardHeader>
+        <CardContent className="flex flex-col gap-4">
           <div>
-            <h3>Also linked to this lesson</h3>
-            <div key={currentOffer.id}>
-              <span>
-                {currentOffer.track}: {currentOffer.title}
-              </span>
-              <button type="button" onClick={() => decide(currentOffer.id, true)}>
-                Also delete
-              </button>
-              <button type="button" onClick={() => decide(currentOffer.id, false)}>
-                Leave it
-              </button>
-            </div>
+            <h3 className="mb-1 text-base font-semibold">Repair effects</h3>
+            <ul className="flex list-disc flex-col gap-1 pl-5 text-sm">
+              {edgesToRemove.map((e, i) => (
+                <li key={`remove-${i}`}>
+                  Remove: {e.lessonId} no longer requires {e.prerequisiteLessonId}
+                </li>
+              ))}
+              {edgesToAdd.map((e, i) => (
+                <li key={`add-${i}`}>
+                  Add: {e.lessonId} now requires {e.prerequisiteLessonId}
+                </li>
+              ))}
+              {skippedBridges.map((e, i) => (
+                <li key={`skip-${i}`} className="text-warning">
+                  Skipped: {e.lessonId} will not require {e.prerequisiteLessonId} (it would break the prerequisite scope)
+                </li>
+              ))}
+            </ul>
           </div>
-        )}
-      </div>
+          {currentOffer && (
+            <div>
+              <h3 className="mb-2 text-base font-semibold">Also linked to this lesson</h3>
+              <div key={currentOffer.id} className="flex flex-wrap items-center gap-3 rounded-lg border bg-surface-raised p-3">
+                <span className="min-w-0 flex-1">
+                  {currentOffer.track}: {currentOffer.title}
+                </span>
+                <Button type="button" variant="destructive" className={BTN} onClick={() => decide(currentOffer.id, true)}>
+                  Also delete
+                </Button>
+                <Button type="button" variant="outline" className={BTN} onClick={() => decide(currentOffer.id, false)}>
+                  Leave it
+                </Button>
+              </div>
+            </div>
+          )}
+        </CardContent>
+      </Card>
     );
   }
 
   return (
-    <div>
-      <h2>Ready to delete {toDeleteSet.length} lesson(s)</h2>
-      <ul>
-        {toDeleteSet.map((id) => (
-          <li key={id}>{id}</li>
-        ))}
-      </ul>
-      <button type="button" onClick={handleDeleteAll} disabled={deleting}>
-        Delete All
-      </button>
-      <button type="button" onClick={onCancel}>
-        Cancel
-      </button>
-      {error && <p role="alert">{error}</p>}
-    </div>
+    <Card className="gap-3">
+      <CardHeader>
+        <h2 className="text-lg leading-tight">Ready to delete {toDeleteSet.length} lesson(s)</h2>
+      </CardHeader>
+      <CardContent className="flex flex-col gap-4">
+        <ul className="list-disc pl-5 text-sm">
+          {toDeleteSet.map((id) => (
+            <li key={id}>{id}</li>
+          ))}
+        </ul>
+        <div className="flex flex-wrap gap-2">
+          <Button type="button" variant="destructive" className={BTN} onClick={handleDeleteAll} disabled={deleting}>
+            Delete All
+          </Button>
+          <Button type="button" variant="outline" className={BTN} onClick={onCancel}>
+            Cancel
+          </Button>
+        </div>
+        {error && (
+          <Alert variant="destructive">
+            <AlertDescription>{error}</AlertDescription>
+          </Alert>
+        )}
+      </CardContent>
+    </Card>
   );
 }
