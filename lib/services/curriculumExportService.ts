@@ -1,8 +1,16 @@
 import type Database from 'better-sqlite3';
 import type { Track, CefrLevel } from '../types';
 import { LEVELS, TRACKS } from '../tutoring/levels';
-import type { SeedFile } from './curriculumSeedLoader';
+import { validateSeedFile, type SeedFile } from './curriculumSeedLoader';
 import { unsortedMilestoneId } from '../curriculum-admin/unsortedBucket';
+
+// The export would write a file the loader rejects at the next startup (e.g. a lesson with no German title).
+export class CurriculumExportError extends Error {
+  constructor(public readonly problems: string[]) {
+    super(`The export is not valid, so no file was written. Fix these first:\n${problems.join('\n')}`);
+    this.name = 'CurriculumExportError';
+  }
+}
 
 export function seedFileName(track: Track, level: CefrLevel): string {
   return `${track}-${level.toLowerCase()}.json`;
@@ -126,7 +134,7 @@ export function createCurriculumExportService(db: Database.Database) {
       }))
     );
 
-    return {
+    const seed = {
       seedVersion: currentSeedVersion(),
       formatVersion: 3 as const,
       track,
@@ -138,6 +146,9 @@ export function createCurriculumExportService(db: Database.Database) {
       conceptLinks,
       practice,
     };
+    const problems = validateSeedFile(seed, seedFileName(track, level));
+    if (problems.length > 0) throw new CurriculumExportError(problems);
+    return seed;
   }
 
   function exportAll(): { fileName: string; seed: SeedFile }[] {

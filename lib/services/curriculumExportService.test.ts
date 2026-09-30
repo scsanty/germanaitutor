@@ -4,7 +4,7 @@ import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { createDbClient } from '../db/client';
 import { loadSeedIfNeeded } from './curriculumSeedLoader';
-import { createCurriculumExportService, seedFileName } from './curriculumExportService';
+import { createCurriculumExportService, CurriculumExportError, seedFileName } from './curriculumExportService';
 import { ensureUnsortedExists } from '../curriculum-admin/unsortedBucket';
 
 const REPO_SEED_DIR = join(process.cwd(), 'data', 'curriculum-seed');
@@ -57,11 +57,25 @@ describe('curriculumExportService', () => {
         ('a1-g__ex10', 'a1-g', 'free_text', '{"prompt":"p","modelAnswer":"m"}'),
         ('a1-g__ex2', 'a1-g', 'free_text', '{"prompt":"p","modelAnswer":"m"}');
       INSERT INTO lesson_concept_links (lesson_a_id, lesson_b_id) VALUES ('a1-g', 'a1-o');
+      UPDATE milestones SET title_de = 'M-de';
+      UPDATE lessons SET title_de = title || '-de';
     `);
     const seed = createCurriculumExportService(db).exportTrackLevel('generic', 'A1');
     expect(seed.conceptLinks).toEqual([{ lessonAId: 'a1-g', lessonBId: 'a1-o' }]);
     expect(seed.exercises.map((e) => e.id)).toEqual(['a1-g__ex10', 'a1-g__ex2']);
     expect(seed.milestones[0].lessonIds).toEqual(['a1-g']);
+  });
+
+  it('refuses to export a file the loader would reject, naming the lesson', () => {
+    const db = createDbClient(':memory:');
+    db.exec(`
+      INSERT INTO milestones (id, track, level, title, difficulty_rank, title_de) VALUES ('g-m', 'generic', 'A1', 'M', 1, 'M-de');
+      INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('a1-old', 'generic', 'A1', 'grammar', 'Old');
+      INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES ('a1-old', 'g-m');
+    `);
+    const service = createCurriculumExportService(db);
+    expect(() => service.exportTrackLevel('generic', 'A1')).toThrow(CurriculumExportError);
+    expect(() => service.exportTrackLevel('generic', 'A1')).toThrow('lesson a1-old: German title is required');
   });
 
   it('exports only approved practice exercises, and they load back as approved', () => {
@@ -101,7 +115,7 @@ describe('curriculumExportService', () => {
     `);
     ensureUnsortedExists(db, 'generic', 'A1');
     db.prepare("UPDATE lesson_placements SET milestone_id = 'generic-a1-unsorted' WHERE lesson_id = 'u'").run();
-    db.exec("UPDATE lessons SET title_de = 'B-de' WHERE id = 'b'; UPDATE milestones SET title_de = 'One-de' WHERE id = 'm1';");
+    db.exec("UPDATE lessons SET title_de = title || '-de'; UPDATE milestones SET title_de = title || '-de' WHERE id != 'generic-a1-unsorted';");
 
     const seed = createCurriculumExportService(db).exportTrackLevel('generic', 'A1');
     expect(seed.formatVersion).toBe(3);
