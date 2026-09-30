@@ -16,7 +16,7 @@ export interface LinkedLessonOffer {
 
 export interface DeletePreviewResponse {
   lessonId: string;
-  repair: { edgesToAdd: RepairEdge[]; edgesToRemove: RepairEdge[] };
+  repair: { edgesToAdd: RepairEdge[]; edgesToRemove: RepairEdge[]; skippedBridges?: RepairEdge[] };
   linkedLessons: LinkedLessonOffer[];
 }
 
@@ -138,6 +138,7 @@ export function DeleteLessonWizard({
     if (!currentPreview) return <p>Loading...</p>;
     const edgesToRemove = currentPreview.repair?.edgesToRemove ?? [];
     const edgesToAdd = currentPreview.repair?.edgesToAdd ?? [];
+    const skippedBridges = currentPreview.repair?.skippedBridges ?? [];
     // Present offers one at a time, in order — never all of a lesson's linked
     // lessons at once — so each decision is a single unambiguous action.
     const currentOffer = pendingOffers[0];
@@ -154,6 +155,11 @@ export function DeleteLessonWizard({
           {edgesToAdd.map((e, i) => (
             <li key={`add-${i}`}>
               Add: {e.lessonId} now requires {e.prerequisiteLessonId}
+            </li>
+          ))}
+          {skippedBridges.map((e, i) => (
+            <li key={`skip-${i}`}>
+              Skipped: {e.lessonId} will not require {e.prerequisiteLessonId} (it would break the prerequisite scope)
             </li>
           ))}
         </ul>

@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { createDbClient } from '../db/client';
+import { loadLevelGating } from '../services/levelGating';
 import { computeRepairPreview, applyRepairAndDelete } from './dependencyRepair';
 
 function insertLesson(db: ReturnType<typeof createDbClient>, id: string) {
@@ -104,7 +105,7 @@ describe('computeRepairPreview', () => {
     const db = createDbClient(':memory:');
     insertLesson(db, 'a');
     const preview = computeRepairPreview(db, 'a');
-    expect(preview).toEqual({ edgesToAdd: [], edgesToRemove: [] });
+    expect(preview).toEqual({ edgesToAdd: [], edgesToRemove: [], skippedBridges: [] });
   });
 });
 
@@ -144,5 +145,55 @@ describe('applyRepairAndDelete', () => {
     expect(db.prepare('SELECT * FROM lesson_placements WHERE lesson_id = ?').get('b')).toBeUndefined();
     expect(db.prepare('SELECT * FROM exercises WHERE lesson_id = ?').get('b')).toBeUndefined();
     expect(db.prepare('SELECT * FROM lesson_concept_links').all()).toEqual([]);
+  });
+});
+
+function place(db: ReturnType<typeof createDbClient>, lessonId: string, milestoneId: string, rank: number | null) {
+  db.prepare(
+    `INSERT OR IGNORE INTO milestones (id, track, level, title, difficulty_rank) VALUES (?, 'generic', 'A1', ?, ?)`
+  ).run(milestoneId, milestoneId, rank);
+  db.prepare('INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES (?, ?)').run(lessonId, milestoneId);
+}
+
+describe('scope-safe bridging', () => {
+  it('adds no bridge through a lesson in Unsorted, and the dependent stays unlocked', () => {
+    const db = createDbClient(':memory:');
+    for (const id of ['a', 'b', 'c']) insertLesson(db, id);
+    place(db, 'a', 'm4', 4);
+    place(db, 'b', 'generic-a1-unsorted', null);
+    place(db, 'c', 'm1', 1);
+    addPrereq(db, 'b', 'a');
+    addPrereq(db, 'c', 'b');
+    const preview = computeRepairPreview(db, 'b');
+    expect(preview.edgesToAdd).toEqual([]);
+    expect(preview.skippedBridges).toEqual([{ lessonId: 'c', prerequisiteLessonId: 'a' }]);
+    applyRepairAndDelete(db, 'b');
+    expect(edges(db)).toEqual([]);
+    expect(loadLevelGating(db, 'generic', 'A1').isLessonLocked('c')).toBe(false);
+  });
+
+  it('skips a bridge that would span ranks', () => {
+    const db = createDbClient(':memory:');
+    for (const id of ['a', 'b', 'c']) insertLesson(db, id);
+    place(db, 'a', 'm3', 3);
+    place(db, 'b', 'm2', 2);
+    place(db, 'c', 'm1', 1);
+    addPrereq(db, 'b', 'a');
+    addPrereq(db, 'c', 'b');
+    const preview = computeRepairPreview(db, 'b');
+    expect(preview.edgesToAdd).toEqual([]);
+    expect(preview.skippedBridges).toEqual([{ lessonId: 'c', prerequisiteLessonId: 'a' }]);
+  });
+
+  it('still adds an in-scope bridge through a ranked lesson', () => {
+    const db = createDbClient(':memory:');
+    for (const id of ['a', 'b', 'c']) insertLesson(db, id);
+    place(db, 'a', 'm1', 1);
+    place(db, 'b', 'm2', 2);
+    place(db, 'c', 'm3', 3);
+    addPrereq(db, 'b', 'a');
+    addPrereq(db, 'c', 'b');
+    applyRepairAndDelete(db, 'b');
+    expect(edges(db)).toEqual([{ lessonId: 'c', prerequisiteLessonId: 'a' }]);
   });
 });

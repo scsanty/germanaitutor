@@ -1,4 +1,5 @@
 import type Database from 'better-sqlite3';
+import { prerequisiteScopeViolations, type PlacementInfo } from '../tutoring/gating';
 
 export interface RepairEdge {
   lessonId: string;
@@ -8,6 +9,21 @@ export interface RepairEdge {
 export interface RepairPreview {
   edgesToAdd: RepairEdge[];
   edgesToRemove: RepairEdge[];
+  // Bridges the repair refuses to add: the deleted lesson sat in Unsorted, or the bridge would
+  // break the prerequisite scope rule and could deadlock a level.
+  skippedBridges: RepairEdge[];
+}
+
+interface Placement extends PlacementInfo {
+  scope: string;
+}
+
+function placementLookup(db: Database.Database) {
+  const stmt = db.prepare(
+    `SELECT p.milestone_id AS milestoneId, m.difficulty_rank AS rank, m.track || '/' || m.level AS scope
+     FROM lesson_placements p JOIN milestones m ON m.id = p.milestone_id WHERE p.lesson_id = ?`
+  );
+  return (id: string) => stmt.get(id) as Placement | undefined;
 }
 
 /**
@@ -33,16 +49,26 @@ export function computeRepairPreview(db: Database.Database, lessonId: string): R
     'SELECT 1 FROM lesson_prerequisites WHERE lesson_id = ? AND prerequisite_lesson_id = ?'
   );
 
+  const placementOf = placementLookup(db);
+  const deletedInUnsorted = placementOf(lessonId)?.rank === null;
+
   const edgesToAdd: RepairEdge[] = [];
   const edgesToRemove: RepairEdge[] = [];
+  const skippedBridges: RepairEdge[] = [];
 
   for (const c of dep) {
     edgesToRemove.push({ lessonId: c, prerequisiteLessonId: lessonId });
     for (const a of pre) {
       if (c === a) continue;
-      if (!edgeExists.get(c, a)) {
-        edgesToAdd.push({ lessonId: c, prerequisiteLessonId: a });
-      }
+      if (edgeExists.get(c, a)) continue;
+      const bridge = { lessonId: c, prerequisiteLessonId: a };
+      const from = placementOf(c);
+      const to = placementOf(a);
+      const crossScope = !!from && !!to && from.scope !== to.scope;
+      const outOfScope =
+        prerequisiteScopeViolations([{ lessonId: c, prerequisiteId: a }], placementOf).length > 0;
+      if (deletedInUnsorted || crossScope || outOfScope) skippedBridges.push(bridge);
+      else edgesToAdd.push(bridge);
     }
   }
 
@@ -50,7 +76,7 @@ export function computeRepairPreview(db: Database.Database, lessonId: string): R
     edgesToRemove.push({ lessonId, prerequisiteLessonId: a });
   }
 
-  return { edgesToAdd, edgesToRemove };
+  return { edgesToAdd, edgesToRemove, skippedBridges };
 }
 
 /**
