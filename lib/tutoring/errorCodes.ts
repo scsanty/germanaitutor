@@ -14,7 +14,10 @@ export type ErrorCode =
   | 'ai_no_exercises'
   | 'no_session'
   | 'no_exam'
-  | 'invalid_daily_cap';
+  | 'invalid_daily_cap'
+  | 'lesson_locked'
+  | 'testout_unavailable'
+  | 'testout_cooldown';
 
 export type ErrorParams = Record<string, string>;
 

@@ -3,7 +3,7 @@ import { createDbClient } from '../db/client';
 import { ensureUnsortedExists } from '../curriculum-admin/unsortedBucket';
 import { createProfileService } from './profileService';
 import { createProgressService } from './progressService';
-import { addAttempt, markComplete, scheduleReview, seedTutoringCurriculum } from '@/test/tutoringFixtures';
+import { addAttempt, addSecondMilestone, markComplete, scheduleReview, seedTutoringCurriculum } from '@/test/tutoringFixtures';
 
 function setup() {
   const db = createDbClient(':memory:');
@@ -84,7 +84,7 @@ describe('progressService.getLessonView', () => {
 
   it('shows a lesson above the unlocked range as locked', () => {
     expect(setup().progress.getLessonView('a2-past')).toEqual({
-      locked: true,
+      locked: 'level',
       id: 'a2-past',
       title: 'The past of sein',
       level: 'A2',
@@ -94,6 +94,7 @@ describe('progressService.getLessonView', () => {
 
   it('returns content, exercises in authored order without answers, progress, and prerequisites', () => {
     const { db, progress } = setup();
+    markComplete(db, 'a1-greet');
     addAttempt(db, 'a1-sein__ex10', 'wrong');
     addAttempt(db, 'a1-sein__ex10', 'almost');
     const view = progress.getLessonView('a1-sein');
@@ -112,7 +113,7 @@ describe('progressService.getLessonView', () => {
       ],
       passedExerciseIds: ['a1-sein__ex10'],
       completed: false,
-      prerequisites: [{ id: 'a1-greet', title: 'Saying hello', done: false }],
+      prerequisites: [{ id: 'a1-greet', title: 'Saying hello', done: true }],
     });
   });
 
@@ -174,5 +175,31 @@ describe('progressService.getDailyQueue', () => {
     expect(progress.getDailyQueue(today).suggestedLesson).toEqual({ id: 'a1-sein', title: 'The verb sein' });
     markComplete(db, 'a1-sein');
     expect(progress.getDailyQueue(today).suggestedLesson).toBeNull();
+  });
+});
+
+describe('progressService.getLessonView locks', () => {
+  it('returns a lesson-locked view naming the reason, and the open view once unlocked', () => {
+    const { db, progress } = setup();
+    addSecondMilestone(db);
+    expect(progress.getLessonView('a1-late')).toEqual({
+      locked: 'lesson',
+      id: 'a1-late',
+      title: 'A later lesson',
+      level: 'A1',
+      reason: 'milestone',
+      milestone: { id: 'g-a1-m1', title: 'Basics' },
+      missingPrerequisites: [],
+    });
+    markComplete(db, 'a1-greet');
+    markComplete(db, 'a1-sein');
+    expect(progress.getLessonView('a1-late')).toMatchObject({ locked: false, id: 'a1-late' });
+  });
+
+  it('suggests the first open lesson that is not done', () => {
+    const { db, progress } = setup();
+    addSecondMilestone(db);
+    markComplete(db, 'a1-greet');
+    expect(progress.getDailyQueue('2026-09-29').suggestedLesson).toEqual({ id: 'a1-sein', title: 'The verb sein' });
   });
 });

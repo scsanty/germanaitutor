@@ -16,7 +16,10 @@
     "ai_no_exercises": "The AI couldn't make new exercises for this lesson right now. Try again later",
     "no_session": "No placement test is in progress",
     "no_exam": "No placement exam is loaded",
-    "invalid_daily_cap": "The daily review limit must be a whole number from 1 to 500"
+    "invalid_daily_cap": "The daily review limit must be a whole number from 1 to 500",
+    "lesson_locked": "This lesson is still locked",
+    "testout_unavailable": "This test-out isn't available",
+    "testout_cooldown": "You can try this test-out again later"
   },
   "banner": {
     "providerTrouble": "Your active provider ({provider}) is having trouble: {error}. <link>Visit Settings</link> to fix it or switch providers."
@@ -122,6 +125,8 @@
     "loadFailed": "Could not load this lesson. Please reload the page.",
     "notFound": "This lesson does not exist.",
     "locked": "Locked — unlocks after finishing {level}.",
+    "lockedMilestone": "Locked — finish “{milestone}” first.",
+    "lockedPrerequisites": "Locked — first complete:",
     "buildsOn": "Builds on:",
     "prerequisiteDone": "done",
     "prerequisiteNotDone": "not done yet",

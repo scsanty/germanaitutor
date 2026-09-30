@@ -82,3 +82,15 @@ export function addPracticeExercise(
     options.createdAt ?? '2026-09-29T10:00:00.000Z'
   );
 }
+
+/** Generic A1 gains a rank-2 milestone with one lesson (two exercises), locked until "Basics" is complete. */
+export function addSecondMilestone(db: Database.Database): void {
+  db.exec(`
+    INSERT INTO milestones (id, track, level, title, difficulty_rank) VALUES ('g-a1-m2', 'generic', 'A1', 'Later', 2);
+    INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('a1-late', 'generic', 'A1', 'grammar', 'A later lesson');
+    INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES ('a1-late', 'g-a1-m2');
+    INSERT INTO exercises (id, lesson_id, type, content) VALUES
+      ('a1-late__ex1', 'a1-late', 'multiple_choice', '{"question":"Q?","options":["ja","nein"],"correctIndex":0}'),
+      ('a1-late__ex2', 'a1-late', 'fill_blank', '{"textWithBlank":"Ich ___ hier.","correctAnswer":"bin"}');
+  `);
+}

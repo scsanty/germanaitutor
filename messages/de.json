@@ -16,7 +16,10 @@
     "ai_no_exercises": "Die KI konnte gerade keine neuen Übungen für diese Lektion erstellen. Versuch es später noch einmal",
     "no_session": "Es läuft gerade kein Einstufungstest",
     "no_exam": "Es ist kein Einstufungstest geladen",
-    "invalid_daily_cap": "Das Tageslimit muss eine ganze Zahl von 1 bis 500 sein"
+    "invalid_daily_cap": "Das Tageslimit muss eine ganze Zahl von 1 bis 500 sein",
+    "lesson_locked": "Diese Lektion ist noch gesperrt",
+    "testout_unavailable": "Dieser Test zum Überspringen ist nicht verfügbar",
+    "testout_cooldown": "Du kannst diesen Test später noch einmal machen"
   },
   "banner": {
     "providerTrouble": "Dein aktiver KI-Anbieter ({provider}) hat Probleme: {error}. <link>Öffne die Einstellungen</link>, um das Problem zu beheben oder den Anbieter zu wechseln."
@@ -122,6 +125,8 @@
     "loadFailed": "Diese Lektion konnte nicht geladen werden. Bitte lade die Seite neu.",
     "notFound": "Diese Lektion gibt es nicht.",
     "locked": "Gesperrt – wird freigeschaltet, wenn du {level} abgeschlossen hast.",
+    "lockedMilestone": "Gesperrt – schließ zuerst „{milestone}“ ab.",
+    "lockedPrerequisites": "Gesperrt – schließ zuerst ab:",
     "buildsOn": "Baut auf:",
     "prerequisiteDone": "erledigt",
     "prerequisiteNotDone": "noch nicht erledigt",

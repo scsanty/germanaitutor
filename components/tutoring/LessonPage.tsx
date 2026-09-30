@@ -119,7 +119,7 @@ export function LessonPage({ lessonId }: { lessonId: string }) {
     );
   }
   if (!view) return <p>{tCommon('loading')}</p>;
-  if (view.locked) {
+  if (view.locked === 'level') {
     return (
       <div>
         <nav>
@@ -127,6 +127,30 @@ export function LessonPage({ lessonId }: { lessonId: string }) {
         </nav>
         <h1>{view.title}</h1>
         <p>{t('locked', { level: view.unlocksAfter })}</p>
+      </div>
+    );
+  }
+  if (view.locked === 'lesson') {
+    return (
+      <div>
+        <nav>
+          <Link href="/">{t('backToTree')}</Link>
+        </nav>
+        <h1>{view.title}</h1>
+        {view.reason === 'milestone' ? (
+          <p>{t('lockedMilestone', { milestone: view.milestone.title })}</p>
+        ) : (
+          <>
+            <p>{t('lockedPrerequisites')}</p>
+            <ul>
+              {view.missingPrerequisites.map((p) => (
+                <li key={p.id}>
+                  <Link href={`/lesson/${p.id}`}>{p.title}</Link>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
       </div>
     );
   }

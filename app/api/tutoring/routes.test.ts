@@ -3,7 +3,7 @@ import { mkdtempSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { getDb, closeDb } from '@/lib/db/client';
-import { seedTutoringCurriculum, markComplete } from '@/test/tutoringFixtures';
+import { addSecondMilestone, seedTutoringCurriculum, markComplete } from '@/test/tutoringFixtures';
 import { createProfileService } from '@/lib/services/profileService';
 import { GET as getTree } from './tree/route';
 import { GET as getQueue } from './queue/route';
@@ -53,7 +53,7 @@ describe('/api/tutoring', () => {
   it('GET lesson returns the lesson, a locked view, or 404', async () => {
     const request = new Request('http://localhost');
     expect(await (await getLesson(request, params('a1-greet'))).json()).toMatchObject({ locked: false, id: 'a1-greet' });
-    expect(await (await getLesson(request, params('a2-past'))).json()).toMatchObject({ locked: true, unlocksAfter: 'A1' });
+    expect(await (await getLesson(request, params('a2-past'))).json()).toMatchObject({ locked: 'level', unlocksAfter: 'A1' });
     const missing = await getLesson(request, params('nope'));
     expect(missing.status).toBe(404);
     expect(await missing.json()).toEqual({ error: 'Lesson not found', code: 'not_found' });
@@ -97,5 +97,14 @@ describe('/api/tutoring', () => {
       items: [],
       suggestedLesson: { id: 'a1-greet', title: 'Saying hello' },
     });
+  });
+
+  it('refuses lesson answers and "mark as done" for a locked lesson, with the lesson_locked code', async () => {
+    addSecondMilestone(getDb());
+    const res = await attempt({ exerciseId: 'a1-late__ex1', answer: { type: 'multiple_choice', selectedIndex: 0 }, source: 'lesson' });
+    expect(res.status).toBe(403);
+    expect(await res.json()).toMatchObject({ code: 'lesson_locked' });
+    const done = await completeLesson(new Request('http://localhost', { method: 'POST' }), params('a1-late'));
+    expect(done.status).toBe(403);
   });
 });

@@ -25,7 +25,16 @@ export interface CurriculumTree {
 }
 
 export type LessonView =
-  | { locked: true; id: string; title: string; level: CefrLevel; unlocksAfter: CefrLevel }
+  | { locked: 'level'; id: string; title: string; level: CefrLevel; unlocksAfter: CefrLevel }
+  | {
+      locked: 'lesson';
+      id: string;
+      title: string;
+      level: CefrLevel;
+      reason: 'milestone' | 'prerequisites';
+      milestone: { id: string; title: string };
+      missingPrerequisites: { id: string; title: string }[];
+    }
   | {
       locked: false;
       id: string;
