@@ -1,14 +1,13 @@
 import type Database from 'better-sqlite3';
 import type { CefrLevel } from '../types';
-import type { Exercise, FillBlankContent, FreeTextContent, MultipleChoiceContent } from '../curriculum/types';
+import type { Exercise } from '../curriculum/types';
 import { meetsCompletionRule } from '../tutoring/completion';
 import { localDate } from '../tutoring/dates';
 import type { FreeTextGradingInput } from '../tutoring/freeTextGrading';
-import { gradeFillBlank, gradeMultipleChoice, type GradeResult } from '../tutoring/grading';
+import type { GradeResult } from '../tutoring/grading';
 import {
   answerTextFor,
   correctAnswerFor,
-  FLASHCARD_GRADES,
   type AttemptOutcome,
   type AttemptSource,
   type LessonAnswer,
@@ -16,6 +15,7 @@ import {
 import { computeNextReview, seedReview, type SrsState } from '../tutoring/srs';
 import { errorBody, type ApiErrorBody, type ErrorCode, type ErrorParams } from '../tutoring/errorCodes';
 import { createCurriculumService } from './curriculumService';
+import { gradeExerciseAnswer } from './exerciseGrading';
 import { gradeFreeText, type FreeTextGradeOutcome } from './freeTextGradingService';
 import { createProfileService } from './profileService';
 import { createProgressService } from './progressService';
@@ -120,35 +120,13 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
     answer: LessonAnswer,
     level: CefrLevel
   ): Promise<{ result: GradeResult; feedback: string | null }> {
-    if (answer.type !== exercise.type) {
-      throw new AttemptError('The answer does not match the exercise type', 'bad_request');
-    }
-    switch (answer.type) {
-      case 'multiple_choice': {
-        const content = exercise.content as MultipleChoiceContent;
-        if (answer.selectedIndex < 0 || answer.selectedIndex >= content.options.length) {
-          throw new AttemptError('That option does not exist', 'bad_request');
-        }
-        return { result: gradeMultipleChoice(content, answer.selectedIndex), feedback: null };
-      }
-      case 'fill_blank':
-        return { result: gradeFillBlank(exercise.content as FillBlankContent, answer.text), feedback: null };
-      case 'flashcard':
-        return { result: FLASHCARD_GRADES[answer.rating], feedback: null };
-      case 'free_text': {
-        if (!answer.text.trim()) throw new AttemptError('Write an answer first', 'bad_request');
-        const content = exercise.content as FreeTextContent;
-        const graded = await gradeFree({
-          prompt: content.prompt,
-          modelAnswer: content.modelAnswer,
-          studentAnswer: answer.text,
-          level,
-          uiLanguage: profiles.getProfile().uiLanguage,
-        });
-        if (!graded.ok) throw new AttemptError(graded.error, 'grading_failed', graded.code, graded.params);
-        return { result: graded.result, feedback: graded.feedback };
-      }
-    }
+    const graded = await gradeExerciseAnswer(exercise, answer, level, {
+      gradeFreeText: gradeFree,
+      uiLanguage: profiles.getProfile().uiLanguage,
+    });
+    if (graded.ok) return { result: graded.result, feedback: graded.feedback };
+    if (graded.reason === 'bad_request') throw new AttemptError(graded.message, 'bad_request');
+    throw new AttemptError(graded.message, 'grading_failed', graded.code, graded.params);
   }
 
   function getSrs(exerciseId: string): SrsState | null {
