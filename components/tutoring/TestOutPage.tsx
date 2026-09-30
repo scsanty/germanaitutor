@@ -8,6 +8,27 @@ import type { ExerciseView } from '@/lib/tutoring/exerciseView';
 import type { TestOutAnswerOutcome, TestOutResult, TestOutRun, TestOutState } from '@/lib/tutoring/testOutViews';
 import { ExerciseCard, taskText } from './ExerciseCard';
 
+// Score, pass/fail and the per-question review of one finished attempt.
+function ResultView({ result }: { result: TestOutResult }) {
+  const t = useTranslations('testOut');
+  return (
+    <>
+      <p>{result.passed ? t('passed') : t('failed')}</p>
+      <p>{t('score', { score: result.score, maxScore: result.maxScore })}</p>
+      <ol>
+        {result.review.map((item) => (
+          <li key={item.exercise.id}>
+            <p>{taskText(item.exercise)}</p>
+            <p>{t(`result.${item.result}`)}</p>
+            <p>{t('yourAnswer', { answer: item.answerText })}</p>
+            {item.result !== 'correct' && item.correctAnswer && <p>{t('correctAnswer', { answer: item.correctAnswer })}</p>}
+          </li>
+        ))}
+      </ol>
+    </>
+  );
+}
+
 // Spec: Student UI, test-out page. One question at a time, no feedback until the end.
 export function TestOutPage({ milestoneId }: { milestoneId: string }) {
   const t = useTranslations('testOut');
@@ -41,7 +62,8 @@ export function TestOutPage({ milestoneId }: { milestoneId: string }) {
       const res = await fetch(base, { method: 'POST' });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError(t('genericError', { error: errorText(data, String(res.status)) }));
+        // 409: the attempt was just settled elsewhere. The reload below shows its result.
+        if (res.status !== 409) setError(t('genericError', { error: errorText(data, String(res.status)) }));
         setQuestions(null);
         loadState();
         return;
@@ -71,18 +93,7 @@ export function TestOutPage({ milestoneId }: { milestoneId: string }) {
     return (
       <div>
         {heading}
-        <p>{result.passed ? t('passed') : t('failed')}</p>
-        <p>{t('score', { score: result.score, maxScore: result.maxScore })}</p>
-        <ol>
-          {result.review.map((item) => (
-            <li key={item.exercise.id}>
-              <p>{taskText(item.exercise)}</p>
-              <p>{t(`result.${item.result}`)}</p>
-              <p>{t('yourAnswer', { answer: item.answerText })}</p>
-              {item.result !== 'correct' && item.correctAnswer && <p>{t('correctAnswer', { answer: item.correctAnswer })}</p>}
-            </li>
-          ))}
-        </ol>
+        <ResultView result={result} />
         {back}
       </div>
     );
@@ -128,6 +139,7 @@ export function TestOutPage({ milestoneId }: { milestoneId: string }) {
       {s.status === 'too_few_questions' && <p>{t('tooFew')}</p>}
       {s.status === 'none' && <p>{t('unavailable')}</p>}
       {error && <p role="alert">{error}</p>}
+      {(s.status === 'none' || s.status === 'cooldown') && state.lastResult && <ResultView result={state.lastResult} />}
       <p>{back}</p>
     </div>
   );

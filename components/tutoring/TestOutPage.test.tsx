@@ -112,4 +112,33 @@ describe('TestOutPage', () => {
     expect(button).toBeDisabled();
     await waitFor(() => expect(screen.getByText('Question 1 of 1')).toBeInTheDocument());
   });
+
+  it('shows the last result again after a reload', async () => {
+    stub({ [`GET ${BASE}`]: [() => delayedResponse(STATE({ status: 'none' }, RESULT))] });
+    renderWithIntl(<TestOutPage milestoneId="m2" />);
+    expect(await screen.findByText('Passed! This milestone is complete.')).toBeInTheDocument();
+    expect(screen.getByText('1.5 of 2 points')).toBeInTheDocument();
+    expect(screen.getByText('Correct answer: bin')).toBeInTheDocument();
+  });
+
+  it('shows the result when the attempt was settled while a question was open', async () => {
+    stub({
+      [`GET ${BASE}`]: [
+        () => delayedResponse(STATE({ status: 'in_progress', answered: 0, total: 2 })),
+        () => delayedResponse(STATE({ status: 'none' }, RESULT)),
+      ],
+      [`POST ${BASE}`]: [
+        () => delayedResponse({ attemptId: 1, questions: [Q1, Q2], answered: 0 }),
+        () => delayedResponse({ error: 'settled', code: 'conflict' }, { ok: false, status: 409 }),
+      ],
+      [`POST ${BASE}/answer`]: [() => delayedResponse({ error: 'settled', code: 'conflict' }, { ok: false, status: 409 })],
+    });
+    renderWithIntl(<TestOutPage milestoneId="m2" />);
+    fireEvent.click(await screen.findByRole('button', { name: 'Resume the test' }));
+    fireEvent.click(await screen.findByLabelText('ja'));
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }));
+    expect(await screen.findByText('Passed! This milestone is complete.')).toBeInTheDocument();
+    expect(screen.getByText('1.5 of 2 points')).toBeInTheDocument();
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+  });
 });
