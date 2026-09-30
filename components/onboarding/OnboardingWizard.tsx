@@ -1,17 +1,61 @@
 'use client';
 
-import { useState } from 'react';
+import { useId, useState, type ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import type { ModelInfo } from '@/lib/providers/types';
 import type { Track } from '@/lib/types';
 import { TRACKS } from '@/lib/tutoring/levels';
 import { PlacementTest } from '@/components/placement/PlacementTest';
+import { Logo } from '@/components/brand/Logo';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { NativeSelect } from '@/components/ui/native-select';
+import { cn } from '@/lib/utils';
+import { CircleCheck } from 'lucide-react';
 
 type Step = 'welcome' | 'provider' | 'track' | 'language' | 'placement';
 
 const PROVIDER_TYPES = ['anthropic', 'openai', 'gemini', 'ollama'] as const;
 const JSON_HEADERS = { 'Content-Type': 'application/json' };
+// The steps shown as dots. The placement test brings its own screens.
+const DOT_STEPS: Step[] = ['welcome', 'provider', 'track', 'language', 'placement'];
+const PRIMARY = 'min-h-12 w-full text-base font-semibold';
+const FIELD_LABEL = 'text-sm font-semibold';
+
+// Onboarding has no shell: one centred card with the full logo on top and the step dots below it.
+function WizardCard({ step, children }: { step: Step; children: ReactNode }) {
+  const current = DOT_STEPS.indexOf(step);
+  return (
+    <div className="flex min-h-dvh items-center justify-center px-4 py-8">
+      <Card className="w-full max-w-md gap-6 px-5 py-8 sm:px-8">
+        <Logo variant="full" className="mx-auto h-20 w-auto" />
+        <ol aria-hidden className="flex items-center justify-center gap-2">
+          {DOT_STEPS.map((dot, index) => (
+            <li
+              key={dot}
+              className={cn(
+                'h-2 rounded-full transition-all duration-200 motion-reduce:transition-none',
+                index === current ? 'w-6 bg-primary' : index < current ? 'w-2 bg-primary/50' : 'w-2 bg-border',
+              )}
+            />
+          ))}
+        </ol>
+        <div className="flex flex-col gap-5">{children}</div>
+      </Card>
+    </div>
+  );
+}
+
+function ErrorAlert({ children }: { children: ReactNode }) {
+  return (
+    <Alert variant="destructive" role="alert">
+      <AlertDescription>{children}</AlertDescription>
+    </Alert>
+  );
+}
 
 export function OnboardingWizard({ initialStep = 'welcome' }: { initialStep?: Step }) {
   const router = useRouter();
@@ -34,6 +78,7 @@ export function OnboardingWizard({ initialStep = 'welcome' }: { initialStep?: St
   const [choicesError, setChoicesError] = useState<string | null>(null);
   const [finishError, setFinishError] = useState<string | null>(null);
   const [providerNextError, setProviderNextError] = useState<string | null>(null);
+  const fieldId = useId();
 
   async function handleConnectAndTest() {
     setSaving(true);
@@ -180,98 +225,120 @@ export function OnboardingWizard({ initialStep = 'welcome' }: { initialStep?: St
 
   if (step === 'welcome') {
     return (
-      <div>
-        <h1>{t('welcomeTitle')}</h1>
-        <button onClick={() => setStep('provider')}>{t('getStarted')}</button>
-      </div>
+      <WizardCard step={step}>
+        <h1 className="text-center text-3xl leading-tight">{t('welcomeTitle')}</h1>
+        <Button size="lg" onClick={() => setStep('provider')} className={PRIMARY}>
+          {t('getStarted')}
+        </Button>
+      </WizardCard>
     );
   }
 
   if (step === 'provider') {
     return (
-      <div>
-        <h2>{t('providerTitle')}</h2>
-        <select
-          aria-label={t('providerType')}
-          value={providerType}
-          onChange={(e) => setProviderType(e.target.value as typeof providerType)}
-        >
-          {PROVIDER_TYPES.map((p) => (
-            <option key={p} value={p}>
-              {p}
-            </option>
-          ))}
-        </select>
+      <WizardCard step={step}>
+        <h2 className="text-2xl">{t('providerTitle')}</h2>
+        <div className="flex flex-col gap-2">
+          <label htmlFor={`${fieldId}-type`} className={FIELD_LABEL}>
+            {t('providerType')}
+          </label>
+          <NativeSelect
+            id={`${fieldId}-type`}
+            aria-label={t('providerType')}
+            value={providerType}
+            onChange={(e) => setProviderType(e.target.value as typeof providerType)}
+          >
+            {PROVIDER_TYPES.map((p) => (
+              <option key={p} value={p}>
+                {p}
+              </option>
+            ))}
+          </NativeSelect>
+        </div>
         {providerType === 'ollama' ? (
-          <input value={ollamaHost} onChange={(e) => setOllamaHost(e.target.value)} placeholder={t('ollamaHost')} />
+          <Input value={ollamaHost} onChange={(e) => setOllamaHost(e.target.value)} placeholder={t('ollamaHost')} className="h-11" />
         ) : (
-          <input value={apiKey} onChange={(e) => setApiKey(e.target.value)} placeholder={t('apiKey')} type="password" />
+          <Input value={apiKey} onChange={(e) => setApiKey(e.target.value)} placeholder={t('apiKey')} type="password" className="h-11" />
         )}
-        <button onClick={handleConnectAndTest} disabled={saving}>
+        <Button variant="secondary" size="lg" onClick={handleConnectAndTest} disabled={saving} className="min-h-11 w-full border border-border">
           {t('testConnection')}
-        </button>
-        {testError && <p role="alert">{testError}</p>}
-        {validated && <p>{t('connected')}</p>}
+        </Button>
+        {testError && <ErrorAlert>{testError}</ErrorAlert>}
+        {validated && (
+          <p className="flex items-center gap-2 font-semibold text-success">
+            <CircleCheck aria-hidden className="size-5 shrink-0" />
+            {t('connected')}
+          </p>
+        )}
         {validated && models.length > 0 && (
-          <label>
-            {t('model')}
-            <select value={selectedModel} onChange={(e) => setSelectedModel(e.target.value)}>
+          <div className="flex flex-col gap-2">
+            <label htmlFor={`${fieldId}-model`} className={FIELD_LABEL}>
+              {t('model')}
+            </label>
+            <NativeSelect id={`${fieldId}-model`} value={selectedModel} onChange={(e) => setSelectedModel(e.target.value)}>
               {models.map((m) => (
                 <option key={m.id} value={m.id}>
                   {m.label}
                 </option>
               ))}
-            </select>
-          </label>
+            </NativeSelect>
+          </div>
         )}
-        {validated && modelsError && (modelsFailed ? <p role="alert">{modelsError}</p> : <p>{modelsError}</p>)}
-        <button onClick={handleProviderNext} disabled={!validated}>
+        {validated && modelsError && (modelsFailed ? <ErrorAlert>{modelsError}</ErrorAlert> : <p className="text-sm text-text-muted">{modelsError}</p>)}
+        <Button size="lg" onClick={handleProviderNext} disabled={!validated} className={PRIMARY}>
           {t('next')}
-        </button>
-        {providerNextError && <p role="alert">{providerNextError}</p>}
-      </div>
+        </Button>
+        {providerNextError && <ErrorAlert>{providerNextError}</ErrorAlert>}
+      </WizardCard>
     );
   }
 
   if (step === 'track') {
     return (
-      <div>
-        <h2>{t('trackTitle')}</h2>
-        <select aria-label={t('trackTitle')} value={track} onChange={(e) => setTrack(e.target.value as Track)}>
+      <WizardCard step={step}>
+        <h2 className="text-2xl">{t('trackTitle')}</h2>
+        <NativeSelect aria-label={t('trackTitle')} value={track} onChange={(e) => setTrack(e.target.value as Track)}>
           {TRACKS.map((trackOption) => (
             <option key={trackOption} value={trackOption}>
               {tTracks(trackOption)}
             </option>
           ))}
-        </select>
-        <button onClick={() => setStep('language')}>{t('next')}</button>
-      </div>
+        </NativeSelect>
+        <Button size="lg" onClick={() => setStep('language')} className={PRIMARY}>
+          {t('next')}
+        </Button>
+      </WizardCard>
     );
   }
 
   if (step === 'language') {
     return (
-      <div>
-        <h2>{t('languageTitle')}</h2>
-        <select
+      <WizardCard step={step}>
+        <h2 className="text-2xl">{t('languageTitle')}</h2>
+        <NativeSelect
           aria-label={t('languageTitle')}
           value={uiLanguage}
           onChange={(e) => setUiLanguage(e.target.value as 'en' | 'de')}
         >
           <option value="en">English</option>
           <option value="de">Deutsch</option>
-        </select>
-        <button onClick={handleLanguageNext} disabled={saving}>
+        </NativeSelect>
+        <Button size="lg" onClick={handleLanguageNext} disabled={saving} className={PRIMARY}>
           {t('next')}
-        </button>
-        {choicesError && <p role="alert">{choicesError}</p>}
-      </div>
+        </Button>
+        {choicesError && <ErrorAlert>{choicesError}</ErrorAlert>}
+      </WizardCard>
     );
   }
 
+  // The placement test brings its own centred cards and, mid-test, the focus layout.
   return (
-    <div>
-      {finishError && <p role="alert">{finishError}</p>}
+    <div className="flex min-h-dvh flex-col px-4">
+      {finishError && (
+        <div className="mx-auto mt-6 w-full max-w-md">
+          <ErrorAlert>{finishError}</ErrorAlert>
+        </div>
+      )}
       <PlacementTest onFinished={finishOnboarding} onSkip={skipPlacement} />
     </div>
   );
