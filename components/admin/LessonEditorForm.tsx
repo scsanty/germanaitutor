@@ -7,7 +7,15 @@ import { unsortedMilestoneId } from '@/lib/curriculum-admin/unsortedBucket';
 import { ExerciseEditor, type ExerciseFormEntry } from './ExerciseEditor';
 import { PrerequisitePicker, type PickableLesson } from './PrerequisitePicker';
 import { PlacementPicker, type PlacementMilestoneOption, type PlacementValue } from './PlacementPicker';
-import { LEVELS, TRACKS } from '@/lib/tutoring/levels';
+import { LEVELS, TRACKS, TRACK_LABEL } from '@/lib/tutoring/levels';
+import { Plus, X } from 'lucide-react';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { NativeSelect } from '@/components/ui/native-select';
+import { Textarea } from '@/components/ui/textarea';
+import { BTN, FIELD_LABEL, INPUT } from './adminStyles';
 
 export interface LessonEditorInitialValues {
   slug: string;
@@ -140,82 +148,114 @@ export function LessonEditorForm(
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      {props.mode === 'create' && (
-        <input placeholder="Slug" value={slug} onChange={(e) => setSlug(e.target.value)} />
-      )}
-      <input aria-label="Title (English)" placeholder="Title (English)" value={title} onChange={(e) => setTitle(e.target.value)} />
-      <input aria-label="Title (German)" placeholder="Title (German)" value={titleDe} onChange={(e) => setTitleDe(e.target.value)} />
-
-      <label>
-        Track
-        <select aria-label="Track" value={track} onChange={(e) => setTrack(e.target.value as Track)}>
-          {TRACKS.map((t) => (
-            <option key={t} value={t}>
-              {t}
-            </option>
-          ))}
-        </select>
-      </label>
-
-      <label>
-        Level
-        <select aria-label="Level" value={sourceLevel} onChange={(e) => setSourceLevel(e.target.value as CefrLevel)}>
-          {LEVELS.map((l) => (
-            <option key={l} value={l}>
-              {l}
-            </option>
-          ))}
-        </select>
-      </label>
-
-      <label>
-        Skill
-        <select aria-label="Skill" value={skill} onChange={(e) => setSkill(e.target.value as Skill)}>
-          {SKILLS.map((s) => (
-            <option key={s} value={s}>
-              {s}
-            </option>
-          ))}
-        </select>
-      </label>
-
-      <textarea
-        aria-label="Explanation (English)"
-        placeholder="Explanation (English)"
-        value={explanation}
-        onChange={(e) => setExplanation(e.target.value)}
-      />
-      <textarea
-        aria-label="Explanation (German)"
-        placeholder="Explanation (German)"
-        value={explanationDe}
-        onChange={(e) => setExplanationDe(e.target.value)}
-      />
-
-      <div>
-        <h3>Examples</h3>
-        {examples.map((example, index) => (
-          <div key={index}>
-            <input
-              aria-label={`Example ${index + 1} (English)`}
-              value={example.en}
-              onChange={(e) => setExamples(examples.map((ex, i) => (i === index ? { ...ex, en: e.target.value } : ex)))}
-            />
-            <input
-              aria-label={`Example ${index + 1} (German)`}
-              value={example.de}
-              onChange={(e) => setExamples(examples.map((ex, i) => (i === index ? { ...ex, de: e.target.value } : ex)))}
-            />
-            <button type="button" onClick={() => setExamples(examples.filter((_, i) => i !== index))}>
-              Remove example {index + 1}
-            </button>
+    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+      <Card className="min-w-0 gap-4">
+        <CardHeader>
+          <h2 className="text-lg leading-tight">Lesson</h2>
+        </CardHeader>
+        <CardContent className="flex flex-col gap-4">
+          {props.mode === 'create' && (
+            <label className={`${FIELD_LABEL} md:max-w-sm`}>
+              Slug
+              <Input className={INPUT} placeholder="Slug" value={slug} onChange={(e) => setSlug(e.target.value)} />
+            </label>
+          )}
+          <div className="grid gap-4 md:grid-cols-2">
+            <label className={FIELD_LABEL}>
+              Title (English)
+              <Input className={INPUT} aria-label="Title (English)" placeholder="Title (English)" value={title} onChange={(e) => setTitle(e.target.value)} />
+            </label>
+            <label className={FIELD_LABEL}>
+              Title (German)
+              <Input className={INPUT} aria-label="Title (German)" placeholder="Title (German)" value={titleDe} onChange={(e) => setTitleDe(e.target.value)} />
+            </label>
+            <label className={FIELD_LABEL}>
+              Explanation (English)
+              <Textarea
+                className="min-h-28"
+                aria-label="Explanation (English)"
+                placeholder="Explanation (English)"
+                value={explanation}
+                onChange={(e) => setExplanation(e.target.value)}
+              />
+            </label>
+            <label className={FIELD_LABEL}>
+              Explanation (German)
+              <Textarea
+                className="min-h-28"
+                aria-label="Explanation (German)"
+                placeholder="Explanation (German)"
+                value={explanationDe}
+                onChange={(e) => setExplanationDe(e.target.value)}
+              />
+            </label>
           </div>
-        ))}
-        <button type="button" onClick={() => setExamples([...examples, { en: '', de: '' }])}>
-          Add example
-        </button>
-      </div>
+          <div className="grid gap-4 sm:grid-cols-3">
+            <label className={FIELD_LABEL}>
+              Track
+              <NativeSelect aria-label="Track" value={track} onChange={(e) => setTrack(e.target.value as Track)}>
+                {TRACKS.map((t) => (
+                  <option key={t} value={t}>
+                    {TRACK_LABEL[t]}
+                  </option>
+                ))}
+              </NativeSelect>
+            </label>
+            <label className={FIELD_LABEL}>
+              Level
+              <NativeSelect aria-label="Level" value={sourceLevel} onChange={(e) => setSourceLevel(e.target.value as CefrLevel)}>
+                {LEVELS.map((l) => (
+                  <option key={l} value={l}>
+                    {l}
+                  </option>
+                ))}
+              </NativeSelect>
+            </label>
+            <label className={FIELD_LABEL}>
+              Skill
+              <NativeSelect aria-label="Skill" value={skill} onChange={(e) => setSkill(e.target.value as Skill)}>
+                {SKILLS.map((s) => (
+                  <option key={s} value={s}>
+                    {s}
+                  </option>
+                ))}
+              </NativeSelect>
+            </label>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="min-w-0 gap-4">
+        <CardHeader>
+          <h3 className="text-lg leading-tight font-semibold">Examples</h3>
+        </CardHeader>
+        <CardContent className="flex flex-col gap-3">
+          {examples.map((example, index) => (
+            <div key={index} className="grid items-center gap-2 md:grid-cols-[1fr_1fr_auto]">
+              <Input
+                className={INPUT}
+                aria-label={`Example ${index + 1} (English)`}
+                value={example.en}
+                onChange={(e) => setExamples(examples.map((ex, i) => (i === index ? { ...ex, en: e.target.value } : ex)))}
+              />
+              <Input
+                className={INPUT}
+                aria-label={`Example ${index + 1} (German)`}
+                value={example.de}
+                onChange={(e) => setExamples(examples.map((ex, i) => (i === index ? { ...ex, de: e.target.value } : ex)))}
+              />
+              <Button type="button" variant="ghost" className={`${BTN} justify-self-start text-destructive hover:text-destructive`} onClick={() => setExamples(examples.filter((_, i) => i !== index))}>
+                <X aria-hidden />
+                Remove example {index + 1}
+              </Button>
+            </div>
+          ))}
+          <Button type="button" variant="outline" className={`${BTN} self-start`} onClick={() => setExamples([...examples, { en: '', de: '' }])}>
+            <Plus aria-hidden />
+            Add example
+          </Button>
+        </CardContent>
+      </Card>
 
       <ExerciseEditor exercises={exercises} onChange={setExercises} allowFlashcards={skill === 'vocabulary'} />
 
@@ -223,10 +263,16 @@ export function LessonEditorForm(
 
       <PlacementPicker key={`${track}-${sourceLevel}`} milestones={milestones} onChange={setPlacement} />
 
-      <button type="submit" disabled={!placement || saving}>
-        Save
-      </button>
-      {error && <p role="alert">{error}</p>}
+      <div className="flex flex-wrap items-center gap-3 border-t pt-4">
+        <Button type="submit" className={BTN} disabled={!placement || saving}>
+          Save
+        </Button>
+        {error && (
+          <Alert variant="destructive" className="flex-1">
+            <AlertDescription>{error}</AlertDescription>
+          </Alert>
+        )}
+      </div>
     </form>
   );
 }
