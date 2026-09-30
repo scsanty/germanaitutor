@@ -6,7 +6,7 @@ import type { ErrorCode, ErrorParams } from '../tutoring/errorCodes';
 import { generateWithActiveProvider } from './aiService';
 
 export type FreeTextGradeOutcome =
-  | { ok: true; result: GradeResult; feedback: LocalizedText }
+  | { ok: true; result: GradeResult; feedback: LocalizedText | null }
   | { ok: false; error: string; code?: ErrorCode; params?: ErrorParams };
 
 export async function gradeFreeText(

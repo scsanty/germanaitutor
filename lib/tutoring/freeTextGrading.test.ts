@@ -22,6 +22,10 @@ describe('buildFreeTextGradingPrompt', () => {
     expect(systemPrompt).toContain('simple enough for CEFR level A1');
   });
 
+  it('returns null feedback when both languages are empty', () => {
+    expect(parseFreeTextGrade('{"result":"correct","feedback_en":" ","feedback_de":""}')).toEqual({ result: 'correct', feedback: null });
+  });
+
   it('requires feedback in both languages', () => {
     expect(parseFreeTextGrade('{"result":"almost","feedback_en":"Article."}')).toBeNull();
   });

@@ -34,7 +34,7 @@ export function buildFreeTextGradingPrompt(input: FreeTextGradingInput): {
   return { systemPrompt, messages };
 }
 
-export function parseFreeTextGrade(text: string): { result: GradeResult; feedback: LocalizedText } | null {
+export function parseFreeTextGrade(text: string): { result: GradeResult; feedback: LocalizedText | null } | null {
   const start = text.indexOf('{');
   const end = text.lastIndexOf('}');
   if (start === -1 || end <= start) return null;
@@ -48,5 +48,8 @@ export function parseFreeTextGrade(text: string): { result: GradeResult; feedbac
   const { result, feedback_en, feedback_de } = data as Record<string, unknown>;
   if (result !== 'correct' && result !== 'almost' && result !== 'wrong') return null;
   if (typeof feedback_en !== 'string' || typeof feedback_de !== 'string') return null;
-  return { result, feedback: { en: feedback_en.trim(), de: feedback_de.trim() } };
+  const en = feedback_en.trim();
+  const de = feedback_de.trim();
+  // No feedback in either language: nothing to show, rather than an empty "Feedback:" line.
+  return { result, feedback: en || de ? { en, de } : null };
 }
