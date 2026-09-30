@@ -6,8 +6,8 @@ import type { Theme } from '@/lib/types';
 interface Preferences {
   theme: Theme;
   soundEnabled: boolean;
-  setTheme: (theme: Theme) => Promise<void>;
-  setSoundEnabled: (enabled: boolean) => Promise<void>;
+  setTheme: (theme: Theme) => Promise<boolean>;
+  setSoundEnabled: (enabled: boolean) => Promise<boolean>;
 }
 
 const PreferencesContext = createContext<Preferences | null>(null);
@@ -27,6 +27,7 @@ async function save(patch: Record<string, unknown>): Promise<boolean> {
 
 // Spec: Theme selection. The server already rendered <html data-theme>; this keeps it in sync
 // after a change, and puts the old value back if saving fails.
+// The setters resolve to false then, so a caller can show its own error.
 export function PreferencesProvider({ initial, children }: { initial: { theme: Theme; soundEnabled: boolean }; children: ReactNode }) {
   const [theme, setThemeState] = useState<Theme>(initial.theme);
   const [soundEnabled, setSoundState] = useState(initial.soundEnabled);
@@ -39,7 +40,9 @@ export function PreferencesProvider({ initial, children }: { initial: { theme: T
       if (!(await save({ theme: next }))) {
         setThemeState(previous);
         document.documentElement.dataset.theme = previous;
+        return false;
       }
+      return true;
     },
     [theme]
   );
@@ -48,7 +51,11 @@ export function PreferencesProvider({ initial, children }: { initial: { theme: T
     async (next: boolean) => {
       const previous = soundEnabled;
       setSoundState(next);
-      if (!(await save({ soundEnabled: next }))) setSoundState(previous);
+      if (!(await save({ soundEnabled: next }))) {
+        setSoundState(previous);
+        return false;
+      }
+      return true;
     },
     [soundEnabled]
   );

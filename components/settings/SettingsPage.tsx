@@ -2,13 +2,13 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
-import type { ProviderConnection, Profile, ProviderType, Track } from '@/lib/types';
+import type { ProviderConnection, Profile, ProviderType, Theme } from '@/lib/types';
 import type { ModelInfo } from '@/lib/providers/types';
-import type { PlacementBestResult } from '@/lib/tutoring/placementTypes';
-import { levelsUpTo, TRACKS } from '@/lib/tutoring/levels';
 import { useApiErrorText } from '@/components/useApiErrorText';
+import { usePreferences } from '@/components/providers/PreferencesProvider';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Switch } from '@/components/ui/switch';
 
 const PROVIDER_TYPES: ProviderType[] = ['anthropic', 'openai', 'gemini', 'ollama'];
 const USAGE_WINDOW_DAYS = 7;
@@ -19,16 +19,15 @@ interface UsageTotals {
 }
 
 export function SettingsPage() {
-  const router = useRouter();
   const t = useTranslations('settings');
-  const tTracks = useTranslations('tracks');
   const tCommon = useTranslations('common');
   const errorText = useApiErrorText();
+  const { theme, soundEnabled, setTheme, setSoundEnabled } = usePreferences();
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loadFailed, setLoadFailed] = useState(false);
   const [profileError, setProfileError] = useState<string | null>(null);
-  const [placementBest, setPlacementBest] = useState<PlacementBestResult | null | undefined>(undefined);
-  const [placementFailed, setPlacementFailed] = useState(false);
+  const [adminSession, setAdminSession] = useState(false);
+  const [preferenceError, setPreferenceError] = useState<string | null>(null);
   const [connections, setConnections] = useState<ProviderConnection[]>([]);
   const [usage, setUsage] = useState<Record<number, UsageTotals>>({});
   const [confirmingReset, setConfirmingReset] = useState(false);
@@ -59,13 +58,14 @@ export function SettingsPage() {
         setProfile(await res.json());
       })
       .catch(() => setLoadFailed(true));
-    fetch('/api/placement')
+    // The Content Admin link is only offered with an admin session; a failed check just hides it.
+    fetch('/api/admin/auth')
       .then(async (res) => {
         if (!res.ok) throw new Error(String(res.status));
         const data = await res.json();
-        setPlacementBest(data.best ?? null);
+        setAdminSession(data.authenticated === true);
       })
-      .catch(() => setPlacementFailed(true));
+      .catch(() => setAdminSession(false));
     fetch('/api/providers')
       .then(async (res) => {
         if (!res.ok) throw new Error(String(res.status));
@@ -249,8 +249,6 @@ export function SettingsPage() {
         return;
       }
       setProfile(data);
-      // The interface language is applied by the server layout, so re-render it.
-      if (patch.uiLanguage) router.refresh();
     } catch (err) {
       setProfileError(t('profileSaveFailed', { error: (err as Error).message }));
     }
@@ -267,6 +265,17 @@ export function SettingsPage() {
     setCapError(null);
     setCapDraft(null);
     if (value !== profile.dailyReviewCap) await handleProfileChange({ dailyReviewCap: value });
+  }
+
+  // The provider rolls a failed save back; it resolves false so the failure is visible here.
+  async function saveTheme(next: Theme) {
+    setPreferenceError(null);
+    if (!(await setTheme(next))) setPreferenceError(t('preferenceSaveFailed'));
+  }
+
+  async function saveSound(next: boolean) {
+    setPreferenceError(null);
+    if (!(await setSoundEnabled(next))) setPreferenceError(t('preferenceSaveFailed'));
   }
 
   async function handleExport() {
@@ -415,33 +424,6 @@ export function SettingsPage() {
       </section>
 
       <section>
-        <h2>{t('trackLevel')}</h2>
-        <select
-          aria-label={t('trackLabel')}
-          value={profile.activeTrack}
-          onChange={(e) => handleProfileChange({ activeTrack: e.target.value as Track })}
-        >
-          {TRACKS.map((track) => (
-            <option key={track} value={track}>
-              {tTracks(track)}
-            </option>
-          ))}
-        </select>
-        <select
-          aria-label={t('levelLabel')}
-          value={profile.activeLevel}
-          onChange={(e) => handleProfileChange({ activeLevel: e.target.value as Profile['activeLevel'] })}
-        >
-          {levelsUpTo(profile.highestUnlockedLevel).map((level) => (
-            <option key={level} value={level}>
-              {level}
-            </option>
-          ))}
-        </select>
-        {profile.highestUnlockedLevel !== 'C1' && <p>{t('levelHint', { level: profile.highestUnlockedLevel })}</p>}
-      </section>
-
-      <section>
         <h2>{t('dailyReview')}</h2>
         <label>
           {t('dailyReviewLimit')}{' '}
@@ -460,34 +442,20 @@ export function SettingsPage() {
       </section>
 
       <section>
-        <h2>{t('placement')}</h2>
-        {placementFailed && <p role="alert">{t('placementLoadFailed')}</p>}
-        {placementBest === null && <p>{t('placementNone')}</p>}
-        {placementBest && (
-          <p>
-            {t('placementBest', {
-              level: placementBest.placedLevel,
-              score: placementBest.score,
-              max: placementBest.maxScore,
-              date: placementBest.takenAt.slice(0, 10),
-            })}
-          </p>
-        )}
-        {placementBest !== undefined && (
-          <Link href="/placement">{placementBest ? t('placementRetake') : t('placementTake')}</Link>
-        )}
-      </section>
-
-      <section>
-        <h2>{t('language')}</h2>
-        <select
-          aria-label={t('language')}
-          value={profile.uiLanguage}
-          onChange={(e) => handleProfileChange({ uiLanguage: e.target.value as 'en' | 'de' })}
-        >
-          <option value="en">English</option>
-          <option value="de">Deutsch</option>
-        </select>
+        <h2>{t('appearance')}</h2>
+        {preferenceError && <p role="alert">{preferenceError}</p>}
+        <RadioGroup value={theme} onValueChange={(value) => saveTheme(value as Theme)} aria-label={t('theme')}>
+          {(['dark', 'light', 'system'] as const).map((option) => (
+            <label key={option} className="flex items-center gap-2">
+              <RadioGroupItem value={option} aria-label={t(`themeOption.${option}`)} />
+              {t(`themeOption.${option}`)}
+            </label>
+          ))}
+        </RadioGroup>
+        <label className="flex items-center gap-2">
+          <Switch checked={soundEnabled} onCheckedChange={saveSound} aria-label={t('sounds')} />
+          {t('sounds')}
+        </label>
       </section>
 
       <section>
@@ -515,6 +483,13 @@ export function SettingsPage() {
         )}
         {resetError && <p role="alert">{resetError}</p>}
       </section>
+
+      {adminSession && (
+        <section>
+          <h2>{t('contentAdmin')}</h2>
+          <Link href="/admin/curriculum">{t('contentAdmin')}</Link>
+        </section>
+      )}
     </div>
   );
 }

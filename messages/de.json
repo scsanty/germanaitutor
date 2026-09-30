@@ -292,7 +292,18 @@
     "dangerZone": "Gefahrenbereich",
     "resetConfirm": "Dadurch werden alle lokalen Daten dauerhaft gelöscht. Bist du sicher?",
     "resetYes": "Ja, alles zurücksetzen",
-    "reset": "App-Daten zurücksetzen"
+    "reset": "App-Daten zurücksetzen",
+    "appearance": "Darstellung",
+    "theme": "Farbschema",
+    "themeOption": { "dark": "Dunkel", "light": "Hell", "system": "System" },
+    "sounds": "Töne",
+    "contentAdmin": "Inhaltsverwaltung",
+    "preferenceSaveFailed": "Diese Einstellung konnte nicht gespeichert werden. Bitte versuche es erneut."
+  },
+  "profile": {
+    "title": "Profil",
+    "name": "Name",
+    "nameLabel": "Dein Name"
   },
   "testOut": {
     "title": "Per Test überspringen: {milestone}",

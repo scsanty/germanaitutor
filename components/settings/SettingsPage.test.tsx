@@ -7,6 +7,8 @@ const { refreshMock } = vi.hoisted(() => ({ refreshMock: vi.fn() }));
 vi.mock('next/navigation', () => ({ useRouter: () => ({ refresh: refreshMock, push: vi.fn() }) }));
 
 import { SettingsPage } from './SettingsPage';
+import { PreferencesProvider } from '@/components/providers/PreferencesProvider';
+import { delayedResponse } from '@/test/delayedResponse';
 
 const PROFILE = {
   displayName: '',
@@ -28,10 +30,11 @@ const PROFILE = {
  * "METHOD url"-keyed fetch stub; individual tests override only what they care
  * about. Keyed by method too, since GET and POST /api/providers differ.
  */
-function stubFetch(overrides: Record<string, unknown> = {}) {
+function stubProfileRoutes(profilePatch: Record<string, unknown> = {}, adminAuth: Record<string, unknown> = { authenticated: false }, overrides: Record<string, unknown> = {}) {
   const routes: Record<string, any> = {
-    'GET /api/profile': { ok: true, json: async () => PROFILE },
+    'GET /api/profile': { ok: true, json: async () => ({ ...PROFILE, ...profilePatch }) },
     'GET /api/providers': { ok: true, json: async () => [] },
+    'GET /api/admin/auth': { ok: true, json: async () => ({ passwordSet: true, ...adminAuth }) },
     'POST /api/providers': { ok: true, json: async () => ({ id: 7 }) },
     'GET /api/providers/7/models': { ok: true, json: async () => [{ id: 'model-a', label: 'Model A' }] },
     'PATCH /api/providers/7': { ok: true, json: async () => ({ id: 7 }) },
@@ -44,15 +47,24 @@ function stubFetch(overrides: Record<string, unknown> = {}) {
   return fetchMock;
 }
 
+
+function renderSettings() {
+  return renderWithIntl(
+    <PreferencesProvider initial={{ theme: 'dark', soundEnabled: true }}>
+      <SettingsPage />
+    </PreferencesProvider>
+  );
+}
+
 describe('SettingsPage', () => {
   beforeEach(() => {
-    stubFetch();
+    stubProfileRoutes();
   });
 
   it('adds a new provider connection and refreshes the list', async () => {
-    const fetchMock = stubFetch();
+    const fetchMock = stubProfileRoutes();
 
-    renderWithIntl(<SettingsPage />);
+    renderSettings();
     await waitFor(() => screen.getByText('Add provider'));
 
     fireEvent.click(screen.getByText('Add provider'));
@@ -70,7 +82,7 @@ describe('SettingsPage', () => {
   });
 
   it('offers an Ollama host field instead of an API key for Ollama', async () => {
-    renderWithIntl(<SettingsPage />);
+    renderSettings();
     await waitFor(() => screen.getByText('Add provider'));
 
     fireEvent.click(screen.getByText('Add provider'));
@@ -81,7 +93,7 @@ describe('SettingsPage', () => {
   });
 
   it('lets the user pick a model for the newly added connection', async () => {
-    const fetchMock = stubFetch({
+    const fetchMock = stubProfileRoutes({}, undefined, {
       'GET /api/providers/7/models': {
         ok: true,
         json: async () => [
@@ -91,7 +103,7 @@ describe('SettingsPage', () => {
       },
     });
 
-    renderWithIntl(<SettingsPage />);
+    renderSettings();
     await waitFor(() => screen.getByText('Add provider'));
     fireEvent.click(screen.getByText('Add provider'));
     fireEvent.change(screen.getByPlaceholderText('API key'), { target: { value: 'sk-ant' } });
@@ -112,11 +124,11 @@ describe('SettingsPage', () => {
   });
 
   it('keeps the connection but reports the problem when models cannot be listed', async () => {
-    stubFetch({
+    stubProfileRoutes({}, undefined, {
       'GET /api/providers/7/models': { ok: false, json: async () => ({ error: 'Ollama returned 500' }) },
     });
 
-    renderWithIntl(<SettingsPage />);
+    renderSettings();
     await waitFor(() => screen.getByText('Add provider'));
     fireEvent.click(screen.getByText('Add provider'));
     fireEvent.change(screen.getByPlaceholderText('API key'), { target: { value: 'sk-ant' } });
@@ -130,9 +142,9 @@ describe('SettingsPage', () => {
   });
 
   it('shows "no models" as plain text, not an alert, when the provider has none', async () => {
-    stubFetch({ 'GET /api/providers/7/models': { ok: true, json: async () => [] } });
+    stubProfileRoutes({}, undefined, { 'GET /api/providers/7/models': { ok: true, json: async () => [] } });
 
-    renderWithIntl(<SettingsPage />);
+    renderSettings();
     await waitFor(() => screen.getByText('Add provider'));
     fireEvent.click(screen.getByText('Add provider'));
     fireEvent.change(screen.getByPlaceholderText('API key'), { target: { value: 'sk-ant' } });
@@ -153,7 +165,7 @@ describe('SettingsPage', () => {
     });
     vi.stubGlobal('fetch', fetchMock);
 
-    renderWithIntl(<SettingsPage />);
+    renderSettings();
     await waitFor(() => screen.getByText('Add provider'));
     fireEvent.click(screen.getByText('Add provider'));
     fireEvent.change(screen.getByPlaceholderText('API key'), { target: { value: 'sk-ant' } });
@@ -165,7 +177,7 @@ describe('SettingsPage', () => {
   });
 
   it('shows the provider status translated, not the raw status value', async () => {
-    stubFetch({
+    stubProfileRoutes({}, undefined, {
       'GET /api/providers': {
         ok: true,
         json: async () => [
@@ -184,13 +196,13 @@ describe('SettingsPage', () => {
         ],
       },
     });
-    renderWithIntl(<SettingsPage />);
+    renderSettings();
     expect(await screen.findByText('Having trouble')).toBeInTheDocument();
     expect(screen.queryByText('failing')).not.toBeInTheDocument();
   });
 
   it('shows recent usage totals next to each provider connection', async () => {
-    const fetchMock = stubFetch({
+    const fetchMock = stubProfileRoutes({}, undefined, {
       'GET /api/providers': {
         ok: true,
         json: async () => [
@@ -217,79 +229,24 @@ describe('SettingsPage', () => {
       },
     });
 
-    renderWithIntl(<SettingsPage />);
+    renderSettings();
 
     await screen.findByText(/5 requests, 2000 tokens \(last 7 days\)/);
     expect(fetchMock).toHaveBeenCalledWith('/api/usage?connectionId=7&days=7');
   });
 
   it('requires confirmation before resetting app data', async () => {
-    const fetchMock = stubFetch();
-    renderWithIntl(<SettingsPage />);
+    const fetchMock = stubProfileRoutes();
+    renderSettings();
     await waitFor(() => screen.getByText('Reset app data'));
     fireEvent.click(screen.getByText('Reset app data'));
     expect(screen.getByText(/permanently/)).toBeInTheDocument();
     expect(fetchMock).not.toHaveBeenCalledWith('/api/reset', expect.anything());
   });
 
-  it('offers only the unlocked levels', async () => {
-    stubFetch();
-    renderWithIntl(<SettingsPage />);
-    const levelSelect = await screen.findByLabelText('Level');
-    const options = Array.from(levelSelect.querySelectorAll('option')).map((o) => o.textContent);
-    expect(options).toEqual(['A1', 'A2', 'B1']);
-    expect(screen.getByText('Levels above B1 unlock as you finish lessons or place higher in the placement test.')).toBeInTheDocument();
-  });
-
-  it('shows an error when a setting cannot be saved', async () => {
-    stubFetch({ 'PATCH /api/profile': { ok: false, status: 400, json: async () => ({ error: 'Level B1 is locked' }) } });
-    renderWithIntl(<SettingsPage />);
-    fireEvent.change(await screen.findByLabelText('Level'), { target: { value: 'B1' } });
-    await waitFor(() =>
-      expect(screen.getByRole('alert')).toHaveTextContent('Could not save this setting: Level B1 is locked')
-    );
-  });
-
-  it('refreshes the page after changing the interface language', async () => {
-    stubFetch({ 'PATCH /api/profile': { ok: true, json: async () => ({ ...PROFILE, uiLanguage: 'de' }) } });
-    renderWithIntl(<SettingsPage />);
-    fireEvent.change(await screen.findByLabelText('Language'), { target: { value: 'de' } });
-    await waitFor(() => expect(refreshMock).toHaveBeenCalled());
-  });
-
-  it('shows the best placement result and a retake link', async () => {
-    stubFetch({
-      'GET /api/placement': {
-        ok: true,
-        json: async () => ({
-          best: { score: 24, maxScore: 120, placedLevel: 'B1', stopReason: 'five_mistakes', takenAt: '2026-09-24 10:00:00' },
-          questionCount: 40,
-        }),
-      },
-    });
-    renderWithIntl(<SettingsPage />);
-    expect(await screen.findByText('Best result: B1 (24 of 120 points, 2026-09-24)')).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'Retake the placement test' })).toHaveAttribute('href', '/placement');
-  });
-
-  it('offers the placement test when it was never taken', async () => {
-    stubFetch({ 'GET /api/placement': { ok: true, json: async () => ({ best: null, questionCount: 40 }) } });
-    renderWithIntl(<SettingsPage />);
-    expect(await screen.findByText('You have not taken the placement test yet.')).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'Take the placement test' })).toBeInTheDocument();
-  });
-
-  it('shows an error when the profile cannot be loaded', async () => {
-    stubFetch({ 'GET /api/profile': { ok: false, status: 500, json: async () => ({}) } });
-    renderWithIntl(<SettingsPage />);
-    await waitFor(() =>
-      expect(screen.getByRole('alert')).toHaveTextContent('Could not load your settings. Please reload the page.')
-    );
-  });
-
   it('saves a new daily review limit when the field loses focus', async () => {
-    const fetchMock = stubFetch({ 'PATCH /api/profile': { ok: true, json: async () => ({ ...PROFILE, dailyReviewCap: 30 }) } });
-    renderWithIntl(<SettingsPage />);
+    const fetchMock = stubProfileRoutes({}, undefined, { 'PATCH /api/profile': { ok: true, json: async () => ({ ...PROFILE, dailyReviewCap: 30 }) } });
+    renderSettings();
     const field = await screen.findByLabelText('Daily review limit');
     expect(field).toHaveValue(50);
 
@@ -307,8 +264,8 @@ describe('SettingsPage', () => {
   });
 
   it('rejects a daily review limit outside 1–500 without saving it', async () => {
-    const fetchMock = stubFetch();
-    renderWithIntl(<SettingsPage />);
+    const fetchMock = stubProfileRoutes();
+    renderSettings();
     const field = await screen.findByLabelText('Daily review limit');
 
     fireEvent.change(field, { target: { value: '0' } });
@@ -332,40 +289,83 @@ describe('SettingsPage', () => {
   };
 
   it('shows an error when a provider action fails', async () => {
-    stubFetch({
+    stubProfileRoutes({}, undefined, {
       'GET /api/providers': { ok: true, json: async () => [CONNECTION] },
       'PUT /api/providers/active': { ok: false, status: 500, json: async () => ({ error: 'boom' }) },
     });
-    renderWithIntl(<SettingsPage />);
+    renderSettings();
     fireEvent.click(await screen.findByText('Make active'));
     expect(await screen.findByRole('alert')).toHaveTextContent('Could not complete that: boom');
   });
 
   it('shows an error when the providers cannot load', async () => {
-    stubFetch({ 'GET /api/providers': { ok: false, status: 500, json: async () => ({}) } });
-    renderWithIntl(<SettingsPage />);
+    stubProfileRoutes({}, undefined, { 'GET /api/providers': { ok: false, status: 500, json: async () => ({}) } });
+    renderSettings();
     expect(await screen.findByRole('alert')).toHaveTextContent('Could not load your AI providers.');
   });
 
   it('confirms a restored backup, and says why a restore failed', async () => {
-    stubFetch({ 'POST /api/backup/import': { ok: true, json: async () => ({ ok: true }) } });
-    const { container } = renderWithIntl(<SettingsPage />);
+    stubProfileRoutes({}, undefined, { 'POST /api/backup/import': { ok: true, json: async () => ({ ok: true }) } });
+    const { container } = renderSettings();
     await screen.findByText('Export backup');
     const input = container.querySelector('input[type="file"]') as HTMLInputElement;
 
     fireEvent.change(input, { target: { files: [new File(['x'], 'backup.gaitbackup')] } });
     expect(await screen.findByText('Backup restored. Reload the page to see the restored data.')).toBeInTheDocument();
 
-    stubFetch({ 'POST /api/backup/import': { ok: false, status: 400, json: async () => ({ error: 'Not a backup file' }) } });
+    stubProfileRoutes({}, undefined, { 'POST /api/backup/import': { ok: false, status: 400, json: async () => ({ error: 'Not a backup file' }) } });
     fireEvent.change(input, { target: { files: [new File(['y'], 'other.gaitbackup')] } });
     expect(await screen.findByRole('alert')).toHaveTextContent('Could not restore the backup: Not a backup file');
   });
 
   it('shows an error and stays when the reset fails', async () => {
-    stubFetch({ 'POST /api/reset': { ok: false, status: 500, json: async () => ({}) } });
-    renderWithIntl(<SettingsPage />);
+    stubProfileRoutes({}, undefined, { 'POST /api/reset': { ok: false, status: 500, json: async () => ({}) } });
+    renderSettings();
     fireEvent.click(await screen.findByText('Reset app data'));
     fireEvent.click(screen.getByText('Yes, reset everything'));
     expect(await screen.findByRole('alert')).toHaveTextContent('Could not reset the app data. Please try again.');
+  });
+
+  it('changes the theme and the sound setting', async () => {
+    const fetchMock = stubProfileRoutes({});
+    renderSettings();
+    fireEvent.click(await screen.findByRole('radio', { name: 'Light' }));
+    await waitFor(() =>
+      expect(fetchMock).toHaveBeenCalledWith('/api/profile', expect.objectContaining({ body: JSON.stringify({ theme: 'light' }) }))
+    );
+    fireEvent.click(screen.getByRole('switch', { name: 'Sounds' }));
+    await waitFor(() =>
+      expect(fetchMock).toHaveBeenCalledWith('/api/profile', expect.objectContaining({ body: JSON.stringify({ soundEnabled: false }) }))
+    );
+  });
+
+  it('shows an alert when the theme or sound setting cannot be saved', async () => {
+    stubProfileRoutes({}, undefined, {
+      'PATCH /api/profile': delayedResponse({ error: 'nope' }, { ok: false, status: 500 }),
+    });
+    renderSettings();
+    fireEvent.click(await screen.findByRole('switch', { name: 'Sounds' }));
+    expect(await screen.findByRole('alert')).toHaveTextContent('Could not save this setting');
+  });
+
+  it('shows Content Admin only with an admin session', async () => {
+    stubProfileRoutes({}, { authenticated: true });
+    renderSettings();
+    expect(await screen.findByRole('link', { name: 'Content Admin' })).toHaveAttribute('href', '/admin/curriculum');
+  });
+
+  it('has no admin link without an admin session', async () => {
+    stubProfileRoutes({});
+    renderSettings();
+    await screen.findByRole('heading', { name: 'Providers' });
+    expect(screen.queryByRole('link', { name: 'Content Admin' })).not.toBeInTheDocument();
+  });
+
+  it('shows an error when the profile cannot be loaded', async () => {
+    stubProfileRoutes({}, undefined, { 'GET /api/profile': { ok: false, status: 500, json: async () => ({}) } });
+    renderSettings();
+    await waitFor(() =>
+      expect(screen.getByRole('alert')).toHaveTextContent('Could not load your settings. Please reload the page.')
+    );
   });
 });
