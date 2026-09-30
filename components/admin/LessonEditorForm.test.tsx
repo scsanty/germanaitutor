@@ -23,9 +23,9 @@ describe('LessonEditorForm', () => {
     render(
       <LessonEditorForm mode="create" initialTrack="generic" initialSourceLevel="A1" onSaved={vi.fn()} />
     );
-    await waitFor(() => expect(screen.getByLabelText('Milestone')).toBeInTheDocument());
+    // The Milestone select renders before the fetch resolves, so wait for its options.
+    expect(await screen.findByText('Milestone 1')).toBeInTheDocument();
     expect(screen.queryByText('Unsorted')).not.toBeInTheDocument();
-    expect(screen.getByText('Milestone 1')).toBeInTheDocument();
   });
 
   it('excludes the lesson being edited from its own prerequisite candidates', async () => {
@@ -58,7 +58,7 @@ describe('LessonEditorForm', () => {
       return Promise.resolve({ ok: true, json: async () => ({ id: 'a1-new-lesson', title: 'New Lesson' }) });
     });
     render(<LessonEditorForm mode="create" initialTrack="generic" initialSourceLevel="A1" onSaved={onSaved} />);
-    await waitFor(() => expect(screen.getByLabelText('Milestone')).toBeInTheDocument());
+    await screen.findByRole('option', { name: 'Milestone 1' });
 
     fireEvent.change(screen.getByPlaceholderText('Slug'), { target: { value: 'new-lesson' } });
     fireEvent.change(screen.getByPlaceholderText('Title'), { target: { value: 'New Lesson' } });
@@ -80,7 +80,7 @@ describe('LessonEditorForm', () => {
       return Promise.resolve({ ok: false, json: async () => ({ error: 'Duplicate id' }) });
     });
     render(<LessonEditorForm mode="create" initialTrack="generic" initialSourceLevel="A1" onSaved={onSaved} />);
-    await waitFor(() => expect(screen.getByLabelText('Milestone')).toBeInTheDocument());
+    await screen.findByRole('option', { name: 'Milestone 1' });
 
     fireEvent.change(screen.getByPlaceholderText('Slug'), { target: { value: 'new-lesson' } });
     fireEvent.change(screen.getByPlaceholderText('Title'), { target: { value: 'New Lesson' } });
@@ -100,7 +100,7 @@ describe('LessonEditorForm', () => {
 
   it('changing track after selecting a placement clears it and disables Save again', async () => {
     render(<LessonEditorForm mode="create" initialTrack="generic" initialSourceLevel="A1" onSaved={vi.fn()} />);
-    await waitFor(() => expect(screen.getByLabelText('Milestone')).toBeInTheDocument());
+    await screen.findByRole('option', { name: 'Milestone 1' });
 
     fireEvent.change(screen.getByLabelText('Milestone'), { target: { value: 'm1' } });
     fireEvent.change(screen.getByLabelText('Section'), { target: { value: 's1' } });
