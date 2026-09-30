@@ -2,7 +2,7 @@ import { describe, it, expect, vi } from 'vitest';
 import { createDbClient } from '../db/client';
 import { createAttemptService } from './attemptService';
 import { ChatError, createLessonChatService, toChatErrorResponse } from './lessonChatService';
-import { seedTutoringCurriculum } from '@/test/tutoringFixtures';
+import { addPracticeExercise, markComplete, seedTutoringCurriculum } from '@/test/tutoringFixtures';
 
 function setup(generate = vi.fn().mockResolvedValue({ ok: true, text: 'Weil man so grüßt.' })) {
   const db = createDbClient(':memory:');
@@ -21,8 +21,22 @@ describe('lessonChatService', () => {
     const { chat, generate } = setup();
     const { messages } = await chat.send('a1-greet', '  Was heißt Hallo?  ', null);
     expect(messages).toEqual([
-      { id: 1, role: 'user', content: 'Was heißt Hallo?', exerciseId: null, createdAt: '2026-09-24T10:00:00.000Z' },
-      { id: 2, role: 'assistant', content: 'Weil man so grüßt.', exerciseId: null, createdAt: '2026-09-24T10:00:00.000Z' },
+      {
+        id: 1,
+        role: 'user',
+        content: 'Was heißt Hallo?',
+        exerciseId: null,
+        practiceExerciseId: null,
+        createdAt: '2026-09-24T10:00:00.000Z',
+      },
+      {
+        id: 2,
+        role: 'assistant',
+        content: 'Weil man so grüßt.',
+        exerciseId: null,
+        practiceExerciseId: null,
+        createdAt: '2026-09-24T10:00:00.000Z',
+      },
     ]);
     expect(chat.getThread('a1-greet').messages).toEqual(messages);
     const request = generate.mock.calls[0][0];
@@ -77,6 +91,38 @@ describe('lessonChatService', () => {
     expect(() => chat.getThread('nope')).toThrow(ChatError);
     expect(() => chat.getThread('a2-past')).toThrow('Level A2 is locked');
     await expect(chat.send('a2-past', 'Hallo?', null)).rejects.toMatchObject({ kind: 'locked' });
+  });
+
+  it('attaches a practice exercise and the answer the student sent, and tags the messages with it', async () => {
+    const { db, chat, generate } = setup();
+    markComplete(db, 'a1-greet');
+    addPracticeExercise(db, 'px-1', 'a1-greet', { content: { question: 'Bye?', options: ['Tschüss', 'Hallo'], correctIndex: 0 } });
+    const { messages } = await chat.send('a1-greet', 'Warum?', null, {
+      practiceExerciseId: 'px-1',
+      answerText: 'Hallo',
+      result: 'wrong',
+    });
+    expect(messages.map((m) => [m.exerciseId, m.practiceExerciseId])).toEqual([
+      [null, 'px-1'],
+      [null, 'px-1'],
+    ]);
+    const prompt: string = generate.mock.calls[0][0].systemPrompt;
+    expect(prompt).toContain('Task: Bye? (options: Tschüss | Hallo)');
+    expect(prompt).toContain("Learner's answer: Hallo");
+    expect(prompt).toContain('Grade: wrong');
+    expect(prompt).toContain('Correct answer: Tschüss');
+  });
+
+  it('refuses a practice exercise of another lesson, a practice flashcard, and both kinds at once', async () => {
+    const { db, chat, attempts } = setup();
+    addPracticeExercise(db, 'px-sein', 'a1-sein');
+    addPracticeExercise(db, 'px-card', 'a1-greet', { type: 'flashcard', content: { front: 'a', back: 'b' } });
+    addPracticeExercise(db, 'px-ok', 'a1-greet');
+    await attempts.recordAttempt('a1-greet__ex1', { type: 'multiple_choice', selectedIndex: 0 }, 'lesson');
+    const about = (id: string) => ({ practiceExerciseId: id, answerText: 'x', result: 'wrong' as const });
+    await expect(chat.send('a1-greet', 'Warum?', null, about('px-sein'))).rejects.toMatchObject({ kind: 'bad_request' });
+    await expect(chat.send('a1-greet', 'Warum?', null, about('px-card'))).rejects.toMatchObject({ kind: 'bad_request' });
+    await expect(chat.send('a1-greet', 'Warum?', 'a1-greet__ex1', about('px-ok'))).rejects.toMatchObject({ kind: 'bad_request' });
   });
 
   it('maps error kinds to HTTP statuses', () => {

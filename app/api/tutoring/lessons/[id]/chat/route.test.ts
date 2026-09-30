@@ -54,4 +54,11 @@ describe('/api/tutoring/lessons/[id]/chat', () => {
     expect((await post('a1-greet', { message: 42 })).status).toBe(400);
     expect((await post('a1-greet', { message: 'Hi?', exerciseId: 7 })).status).toBe(400);
   });
+
+  it('POST validates the practice answer that comes with a practice exercise', async () => {
+    expect((await post('a1-greet', { message: 'Hi?', practiceExerciseId: 'px-1' })).status).toBe(400);
+    expect(
+      (await post('a1-greet', { message: 'Hi?', practiceExerciseId: 'px-1', practiceAnswer: { answerText: 'x', result: 'great' } })).status
+    ).toBe(400);
+  });
 });

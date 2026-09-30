@@ -10,7 +10,15 @@ export interface ChatMessageView {
   role: 'user' | 'assistant';
   content: string;
   exerciseId: string | null;
+  practiceExerciseId: string | null;
   createdAt: string;
+}
+
+// Ask AI on a practice exercise: its answer isn't stored, so the client sends it with the message.
+export interface PracticeChatAbout {
+  practiceExerciseId: string;
+  answerText: string;
+  result: GradeResult;
 }
 
 export interface ChatExerciseContext {

@@ -8,6 +8,7 @@ import {
   recentHistory,
   type ChatExerciseContext,
   type ChatMessageView,
+  type PracticeChatAbout,
 } from '../tutoring/lessonChat';
 import { errorBody, type ApiErrorBody, type ErrorCode, type ErrorParams } from '../tutoring/errorCodes';
 import { generateWithActiveProvider, isAiAvailable, type AiRequest, type AiResult } from './aiService';
@@ -54,6 +55,7 @@ interface MessageRow {
   role: 'user' | 'assistant';
   content: string;
   exercise_id: string | null;
+  practice_exercise_id: string | null;
   created_at: string;
 }
 
@@ -84,13 +86,16 @@ export function createLessonChatService(db: Database.Database, deps: LessonChatD
 
   function listMessages(lessonId: string): ChatMessageView[] {
     const rows = db
-      .prepare('SELECT id, role, content, exercise_id, created_at FROM lesson_chat_messages WHERE lesson_id = ? ORDER BY id')
+      .prepare(
+        'SELECT id, role, content, exercise_id, practice_exercise_id, created_at FROM lesson_chat_messages WHERE lesson_id = ? ORDER BY id'
+      )
       .all(lessonId) as MessageRow[];
     return rows.map((row) => ({
       id: row.id,
       role: row.role,
       content: row.content,
       exerciseId: row.exercise_id,
+      practiceExerciseId: row.practice_exercise_id,
       createdAt: row.created_at,
     }));
   }
@@ -128,16 +133,43 @@ export function createLessonChatService(db: Database.Database, deps: LessonChatD
     };
   }
 
+  function practiceContext(lessonId: string, about: PracticeChatAbout): ChatExerciseContext {
+    const row = db
+      .prepare('SELECT id, lesson_id, type, content FROM practice_exercises WHERE id = ? AND lesson_id = ?')
+      .get(about.practiceExerciseId, lessonId) as { id: string; lesson_id: string; type: Exercise['type']; content: string } | undefined;
+    if (!row) throw new ChatError('That practice exercise is not part of this lesson', 'bad_request');
+    if (row.type === 'flashcard') throw new ChatError('Ask AI is not available for flashcards', 'bad_request');
+    const exercise: Exercise = { id: row.id, lessonId: row.lesson_id, track: null, type: row.type, content: JSON.parse(row.content) };
+    return {
+      task: taskTextFor(exercise),
+      studentAnswer: about.answerText,
+      result: about.result,
+      correctAnswer: correctAnswerFor(exercise),
+      isFreeText: row.type === 'free_text',
+      feedback: null,
+    };
+  }
+
   // Nothing is stored unless the AI answers, so a failed call leaves the thread unchanged and
   // the student's typed message stays in the input to retry.
-  async function send(lessonId: string, message: string, exerciseId: string | null): Promise<{ messages: ChatMessageView[] }> {
+  async function send(
+    lessonId: string,
+    message: string,
+    exerciseId: string | null,
+    practice: PracticeChatAbout | null = null
+  ): Promise<{ messages: ChatMessageView[] }> {
     const content = message.trim();
     if (!content) throw new ChatError('Write a message first', 'bad_request');
     if (content.length > CHAT_MESSAGE_MAX_LENGTH) {
       throw new ChatError(`Messages can be at most ${CHAT_MESSAGE_MAX_LENGTH} characters`, 'bad_request');
     }
+    if (exerciseId && practice) throw new ChatError('Ask about one exercise at a time', 'bad_request');
     const lesson = getUnlockedLesson(lessonId);
-    const context = exerciseId ? exerciseContext(lesson.id, exerciseId) : null;
+    const context = exerciseId
+      ? exerciseContext(lesson.id, exerciseId)
+      : practice
+        ? practiceContext(lesson.id, practice)
+        : null;
     const history = recentHistory([
       ...listMessages(lesson.id).map((m) => ({ role: m.role, content: m.content })),
       { role: 'user' as const, content },
@@ -157,11 +189,12 @@ export function createLessonChatService(db: Database.Database, deps: LessonChatD
 
     const at = now().toISOString();
     const insert = db.prepare(
-      'INSERT INTO lesson_chat_messages (lesson_id, exercise_id, role, content, created_at) VALUES (?, ?, ?, ?, ?)'
+      'INSERT INTO lesson_chat_messages (lesson_id, exercise_id, practice_exercise_id, role, content, created_at) VALUES (?, ?, ?, ?, ?, ?)'
     );
+    const practiceId = practice?.practiceExerciseId ?? null;
     const ids = db.transaction(() => [
-      Number(insert.run(lesson.id, exerciseId, 'user', content, at).lastInsertRowid),
-      Number(insert.run(lesson.id, exerciseId, 'assistant', reply.text, at).lastInsertRowid),
+      Number(insert.run(lesson.id, exerciseId, practiceId, 'user', content, at).lastInsertRowid),
+      Number(insert.run(lesson.id, exerciseId, practiceId, 'assistant', reply.text, at).lastInsertRowid),
     ])();
     return { messages: listMessages(lesson.id).filter((m) => ids.includes(m.id)) };
   }
