@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { createDbClient } from '../db/client';
 import { ACTIVITY_DAYS, createDashboardService } from './dashboardService';
-import { addAttempt, markComplete, seedTutoringCurriculum } from '@/test/tutoringFixtures';
+import { addAttempt, addSecondMilestone, markComplete, seedTutoringCurriculum } from '@/test/tutoringFixtures';
 
 function setup() {
   const db = createDbClient(':memory:');
@@ -22,6 +22,20 @@ describe('dashboardService', () => {
     addAttempt(db, 'a1-greet__ex1', 'correct', { on: '2026-09-27' });
     markComplete(db, 'a1-greet');
     expect(service.getDashboard().continueLesson).toEqual({ id: 'a1-sein', title: 'The verb sein' });
+  });
+
+  it('never continues a locked lesson', () => {
+    const { db, service } = setup();
+    addSecondMilestone(db);
+    addAttempt(db, 'a1-late__ex1', 'wrong', { on: '2026-09-28' });
+    expect(service.getDashboard().continueLesson).toEqual({ id: 'a1-greet', title: 'Saying hello' });
+  });
+
+  it('ignores unfinished attempts from another track or level', () => {
+    const { db, service } = setup();
+    addAttempt(db, 'a1-goethe-greet__ex1', 'wrong', { on: '2026-09-28' });
+    addAttempt(db, 'a2-past__ex1', 'wrong', { on: '2026-09-28' });
+    expect(service.getDashboard().continueLesson).toEqual({ id: 'a1-greet', title: 'Saying hello' });
   });
 
   it('counts done lessons per skill in the active track and level', () => {

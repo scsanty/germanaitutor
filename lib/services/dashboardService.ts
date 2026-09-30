@@ -23,7 +23,7 @@ export function createDashboardService(db: Database.Database, deps: { now?: () =
     const queue = progress.getDailyQueue(today);
     const gating = loadLevelGating(db, activeTrack, activeLevel);
 
-    // Most recently attempted unfinished lesson that is still open; never a locked one.
+    // Most recently attempted unfinished lesson in the active level's ranked milestones that is still open; never a locked one.
     const recent = db
       .prepare(
         `SELECT a.lesson_id FROM lesson_attempts a
@@ -31,7 +31,8 @@ export function createDashboardService(db: Database.Database, deps: { now?: () =
          GROUP BY a.lesson_id ORDER BY MAX(a.id) DESC`
       )
       .all() as { lesson_id: string }[];
-    const open = recent.find((r) => !gating.isLessonLocked(r.lesson_id));
+    const inLevel = new Set(gating.milestones.flatMap((m) => m.lessonIds));
+    const open = recent.find((r) => inLevel.has(r.lesson_id) && !gating.isLessonLocked(r.lesson_id));
     const continueLesson = open
       ? { id: open.lesson_id, title: text.lessonTitle(open.lesson_id, uiLanguage) }
       : queue.suggestedLesson;
