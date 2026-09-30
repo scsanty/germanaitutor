@@ -96,16 +96,19 @@ export function ExerciseContentFields({
   content,
   index,
   onChange,
+  allowInstruction = true,
 }: {
   type: ExerciseType;
   content: ExerciseContent;
   index: number;
   onChange: (content: ExerciseContent) => void;
+  // False for the German-only practice pool.
+  allowInstruction?: boolean;
 }) {
   return (
     <>
       {typeSpecificFields(type, content, index, onChange)}
-      {type !== 'flashcard' && (
+      {allowInstruction && type !== 'flashcard' && (
         <InstructionFields
           value={(content as { instruction?: { en: string; de: string } }).instruction}
           index={index}

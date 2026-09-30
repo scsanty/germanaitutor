@@ -136,6 +136,7 @@ export function PracticePoolList({
                     type={item.type}
                     content={editing.content}
                     index={0}
+                    allowInstruction={false}
                     onChange={(content) => setEditing({ id: item.id, content })}
                   />
                   <button type="button" onClick={() => patch(item.id, { content: editing.content })}>

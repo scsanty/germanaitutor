@@ -10,6 +10,11 @@ function hasInstruction(c: Record<string, unknown>): boolean {
   return c.instruction !== undefined;
 }
 
+// The practice pool and level exams are German-only: their content never carries an instruction.
+export function hasInstructionKey(content: unknown): boolean {
+  return !!content && typeof content === 'object' && 'instruction' in content;
+}
+
 // Spec: an instruction has both languages or neither; flashcards never have one.
 export function instructionProblems(type: unknown, content: unknown): string[] {
   if (!content || typeof content !== 'object') return [];

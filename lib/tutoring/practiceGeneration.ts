@@ -1,7 +1,7 @@
 import type { CefrLevel } from '../types';
 import type { ChatMessage } from '../providers/types';
 import type { ExerciseContent, ExerciseType, Skill } from '../curriculum/types';
-import { validateExerciseContent } from '../curriculum/exerciseContentValidation';
+import { hasInstructionKey, validateExerciseContent } from '../curriculum/exerciseContentValidation';
 
 export const MAX_STYLE_EXAMPLES = 10;
 
@@ -84,7 +84,7 @@ export function parseGeneratedExercises(
     if (typeof type !== 'string' || !(allowedTypes as string[]).includes(type)) continue;
     if (type === 'flashcard' && skill !== 'vocabulary') continue;
     // The practice pool is German-only: an instruction (and the empty question it allows) is never valid here.
-    if (content && typeof content === 'object' && 'instruction' in content) continue;
+    if (hasInstructionKey(content)) continue;
     if (validateExerciseContent(type, content).length > 0) continue;
     usable.push({ type: type as ExerciseType, content: content as ExerciseContent });
   }

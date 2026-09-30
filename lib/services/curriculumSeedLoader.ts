@@ -4,7 +4,7 @@ import type Database from 'better-sqlite3';
 import type { Track, CefrLevel } from '../types';
 import { ensureUnsortedExists } from '../curriculum-admin/unsortedBucket';
 import { lessonTextProblems, milestoneTextProblems } from '../curriculum/bilingualValidation';
-import { instructionProblems } from '../curriculum/exerciseContentValidation';
+import { hasInstructionKey, instructionProblems } from '../curriculum/exerciseContentValidation';
 
 export const SEED_FORMAT_VERSION = 3;
 
@@ -55,13 +55,16 @@ export function validateSeedFile(seed: SeedFile, name: string): string[] {
   for (const exercise of seed.exercises) {
     for (const p of instructionProblems(exercise.type, exercise.content)) problems.push(`${name}: exercise ${exercise.id}: ${p}`);
   }
+  for (const item of seed.practice ?? []) {
+    if (hasInstructionKey(item.content)) problems.push(`${name}: practice ${item.id}: practice exercises are German-only and cannot have an instruction`);
+  }
   return problems;
 }
 
 function readSeedFile(path: string, name: string): SeedFile {
   const seed = JSON.parse(readFileSync(path, 'utf8')) as SeedFile & { formatVersion?: unknown };
   if (seed.formatVersion !== SEED_FORMAT_VERSION) {
-    throw new Error(`Seed file ${name} uses format ${String(seed.formatVersion ?? 'none')}; this app needs format ${SEED_FORMAT_VERSION} (milestones without sections)`);
+    throw new Error(`Seed file ${name} uses format ${String(seed.formatVersion ?? 'none')}; this app needs format ${SEED_FORMAT_VERSION} (bilingual milestones and lessons)`);
   }
   const problems = validateSeedFile(seed, name);
   if (problems.length > 0) throw new Error(problems.slice(0, 10).join('\n'));

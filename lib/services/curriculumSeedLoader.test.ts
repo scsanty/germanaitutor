@@ -204,6 +204,15 @@ describe('loadSeedIfNeeded (format v3)', () => {
     expect(db.prepare('SELECT COUNT(*) AS n FROM lessons').get()).toEqual({ n: 0 });
   });
 
+  it('rejects a practice exercise that carries an instruction', () => {
+    const db = createDbClient(':memory:');
+    const seed = v3('1', [{ id: 'm1', rank: 1, lessonIds: ['l1'] }], ['l1']);
+    (seed as any).practice = [
+      { id: 'l1__px1', lessonId: 'l1', type: 'fill_blank', content: { textWithBlank: 'Ich ___.', correctAnswer: 'bin', instruction: { en: 'Fill in.', de: 'Ergänze.' } } },
+    ];
+    expect(() => loadSeedIfNeeded(db, seedDir({ 'p.json': seed }))).toThrow('p.json: practice l1__px1: practice exercises are German-only');
+  });
+
   it('stores the German fields', () => {
     const db = createDbClient(':memory:');
     const seed = v3('1', [{ id: 'm1', rank: 1, lessonIds: ['l1'] }], ['l1']);
@@ -220,7 +229,7 @@ describe('loadSeedIfNeeded (format v3)', () => {
   it('rejects a v1 file by name and changes nothing', () => {
     const db = createDbClient(':memory:');
     const v1 = { seedVersion: '9', track: 'generic', level: 'A1', milestones: [], lessons: [], exercises: [], prerequisites: [] };
-    expect(() => loadSeedIfNeeded(db, seedDir({ 'old.json': v1 }))).toThrow(/old\.json uses format none; this app needs format 3 \(milestones without sections\)/);
+    expect(() => loadSeedIfNeeded(db, seedDir({ 'old.json': v1 }))).toThrow(/old\.json uses format none; this app needs format 3 \(bilingual milestones and lessons\)/);
     expect(db.prepare('SELECT COUNT(*) AS n FROM milestones').get()).toEqual({ n: 0 });
   });
 });

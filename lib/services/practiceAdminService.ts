@@ -1,7 +1,7 @@
 import type Database from 'better-sqlite3';
 import type { CefrLevel, Track } from '../types';
 import type { Exercise, ExerciseContent, ExerciseType, Skill } from '../curriculum/types';
-import { validateExerciseContent } from '../curriculum/exerciseContentValidation';
+import { hasInstructionKey, validateExerciseContent } from '../curriculum/exerciseContentValidation';
 import { randomSuffix } from '../curriculum-admin/randomId';
 import { correctAnswerFor } from '../tutoring/lessonAnswers';
 import { flashcardRuleViolation } from './lessonAdminService';
@@ -100,6 +100,9 @@ export function createPracticeAdminService(db: Database.Database, deps: { now?: 
   // Spec: Admin, "Edit" — same type, validated like the admin editor, and marked approved.
   function editContent(id: string, content: unknown): PracticePoolItem {
     const row = getRow(id);
+    if (hasInstructionKey(content)) {
+      throw new PracticeAdminError('Practice exercises are German-only and cannot have an instruction', 'bad_request');
+    }
     const errors = validateExerciseContent(row.type, content);
     if (errors.length > 0) throw new PracticeAdminError(`Invalid content: ${errors.join('; ')}`, 'bad_request');
     db.prepare("UPDATE practice_exercises SET content = ?, review_status = 'approved', reviewed_at = ? WHERE id = ?").run(
