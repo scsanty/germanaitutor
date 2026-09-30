@@ -164,6 +164,8 @@ export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; 
         confirmExit
         onExit={() => {
           setQuestion(null);
+          setSelectedIndex(null);
+          setText('');
           setPhase('intro');
         }}
       >

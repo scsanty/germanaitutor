@@ -77,4 +77,38 @@ describe('useExerciseShortcuts', () => {
     expect(onPick).toHaveBeenCalledTimes(1);
     expect(onEnter).toHaveBeenCalledTimes(1);
   });
+
+  it('ignores a held key, and any shortcut while the exit dialog is open', () => {
+    const onPick = vi.fn();
+    const onEnter = vi.fn();
+    renderWithIntl(
+      <FocusLayout progress={{ current: 1, total: 3 }} confirmExit onExit={vi.fn()}>
+        <Shortcuts onPick={onPick} onEnter={onEnter} />
+      </FocusLayout>
+    );
+    fireEvent.keyDown(document.body, { key: 'Enter', repeat: true });
+    fireEvent.keyDown(document.body, { key: '1', repeat: true });
+    expect(onEnter).not.toHaveBeenCalled();
+    expect(onPick).not.toHaveBeenCalled();
+    fireEvent.keyDown(document, { key: 'Escape' });
+    fireEvent.keyDown(document.body, { key: 'Enter' });
+    fireEvent.keyDown(document.body, { key: '2' });
+    expect(onEnter).not.toHaveBeenCalled();
+    expect(onPick).not.toHaveBeenCalled();
+  });
+
+  it('does not treat Esc in a text field as leaving, so a draft is kept', () => {
+    const onExit = vi.fn();
+    renderWithIntl(
+      <FocusLayout progress={{ current: 1, total: 3 }} confirmExit={false} onExit={onExit}>
+        <Shortcuts onPick={vi.fn()} onEnter={vi.fn()} />
+      </FocusLayout>
+    );
+    const field = screen.getByLabelText('Your answer');
+    fireEvent.change(field, { target: { value: 'mein Entwurf' } });
+    fireEvent.keyDown(field, { key: 'Escape' });
+    expect(onExit).not.toHaveBeenCalled();
+    expect(screen.queryByRole('alertdialog')).not.toBeInTheDocument();
+    expect(field).toHaveValue('mein Entwurf');
+  });
 });

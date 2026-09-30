@@ -25,11 +25,15 @@ export function useExerciseShortcuts(handlers: { onPick?: (index: number) => voi
   const { onPick, onEnter, onEscape } = handlers;
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
+      // Esc from a text field must not leave the run: the unsent draft would be lost.
+      if (isTyping(event.target)) return;
       if (event.key === 'Escape') {
         onEscape?.();
         return;
       }
-      if (isTyping(event.target) || event.metaKey || event.ctrlKey || event.altKey) return;
+      // A held key must not check and then continue; an open dialog (exit confirmation) owns the keys.
+      if (event.repeat || document.querySelector('[role="alertdialog"]')) return;
+      if (event.metaKey || event.ctrlKey || event.altKey) return;
       if (/^[1-4]$/.test(event.key) && onPick) {
         event.preventDefault();
         onPick(Number(event.key) - 1);
