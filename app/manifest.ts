@@ -8,6 +8,7 @@ export default function manifest(): MetadataRoute.Manifest {
     description: 'Learn German — von „Na?“ über „Ach so!“ zu „Doch!“',
     start_url: '/',
     display: 'standalone',
+    // Manifest colours can't read CSS variables; they mirror --background in app/theme.css.
     background_color: '#121212',
     theme_color: '#121212',
     icons: [

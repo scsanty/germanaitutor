@@ -15,6 +15,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'sw
 const nunito = Nunito({ subsets: ['latin'], weight: ['600', '700', '800', '900'], variable: '--font-nunito', display: 'swap' });
 
 export const metadata: Metadata = { title: 'NaDoch!', appleWebApp: { capable: true, title: 'NaDoch!' } };
+// themeColor can't read CSS variables; these mirror --background in app/theme.css.
 export const viewport: Viewport = {
   themeColor: [
     { media: '(prefers-color-scheme: dark)', color: '#121212' },
