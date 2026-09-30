@@ -1,9 +1,10 @@
 'use client';
 
 // Spec: a short celebration when a lesson completes: orange and teal particles, CSS only,
-// removed entirely under prefers-reduced-motion by globals.css.
+// not rendered at all under prefers-reduced-motion.
 export function Celebration({ show }: { show: boolean }) {
   if (!show) return null;
+  if (typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return null;
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 z-50 overflow-hidden">
       {Array.from({ length: 24 }, (_, i) => (

@@ -4,6 +4,9 @@ import { renderWithIntl } from '@/test/renderWithIntl';
 import { delayedResponse } from '@/test/delayedResponse';
 import { TestOutPage } from './TestOutPage';
 
+const push = vi.fn();
+vi.mock('next/navigation', () => ({ useRouter: () => ({ push }) }));
+
 const BASE = '/api/tutoring/milestones/m2/testout';
 const Q1 = { id: 'q1', type: 'multiple_choice', question: 'First?', options: ['ja', 'nein'] };
 const Q2 = { id: 'q2', type: 'fill_blank', textWithBlank: 'Ich ___ hier.' };

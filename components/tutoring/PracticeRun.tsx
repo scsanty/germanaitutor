@@ -9,6 +9,9 @@ import type { GradeResult } from '@/lib/tutoring/grading';
 import type { PracticeBatch, PracticeGradeOutcome } from '@/lib/tutoring/practiceViews';
 import { ExerciseCard } from './ExerciseCard';
 import type { ContentLanguage } from '@/lib/i18n/localizedText';
+import { FocusLayout } from '@/components/focus/FocusLayout';
+import { Celebration } from '@/components/focus/Celebration';
+import { useSound } from '@/lib/sound/useSound';
 
 type Phase = 'idle' | 'loading' | 'running' | 'summary';
 
@@ -42,10 +45,21 @@ export function PracticeRun({ lessonId, contentLanguage, onAskAi, onActiveChange
   const [lastResult, setLastResult] = useState<GradeResult | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [generationError, setGenerationError] = useState<string | null>(null);
+  const [celebrate, setCelebrate] = useState(false);
+  const playSound = useSound();
 
   useEffect(() => {
     onActiveChange?.(phase === 'running');
   }, [phase, onActiveChange]);
+
+  // The batch is over: a short celebration (Motion and Sound).
+  useEffect(() => {
+    if (phase !== 'summary') return;
+    playSound('complete');
+    setCelebrate(true);
+    const timer = setTimeout(() => setCelebrate(false), 1500);
+    return () => clearTimeout(timer);
+  }, [phase, playSound]);
 
   async function start() {
     setPhase('loading');
@@ -85,8 +99,13 @@ export function PracticeRun({ lessonId, contentLanguage, onAskAi, onActiveChange
 
   return (
     <section>
+      <Celebration show={celebrate} />
       {current ? (
-        <div>
+        <FocusLayout
+          progress={{ current: index + 1, total: exercises.length }}
+          confirmExit={index > 0}
+          onExit={() => setPhase('idle')}
+        >
           <p>{t('counter', { current: index + 1, total: exercises.length })}</p>
           <ExerciseCard
             key={turn}
@@ -99,7 +118,7 @@ export function PracticeRun({ lessonId, contentLanguage, onAskAi, onActiveChange
             onSkip={() => advance('skipped')}
             onAskAi={onAskAi}
           />
-        </div>
+        </FocusLayout>
       ) : (
         <div>
           {phase === 'summary' && (

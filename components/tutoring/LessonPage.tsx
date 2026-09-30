@@ -12,6 +12,9 @@ import { LessonChat, type AskAbout } from './LessonChat';
 import { pickText, type ContentLanguage } from '@/lib/i18n/localizedText';
 import { LanguageToggle } from '@/components/LanguageToggle';
 import { useApiErrorText } from '@/components/useApiErrorText';
+import { FocusLayout } from '@/components/focus/FocusLayout';
+import { Celebration } from '@/components/focus/Celebration';
+import { useSound } from '@/lib/sound/useSound';
 
 type OpenLesson = Extract<LessonView, { locked: false }>;
 
@@ -45,6 +48,9 @@ export function LessonPage({ lessonId }: { lessonId: string }) {
   const [marking, setMarking] = useState(false);
   const [markError, setMarkError] = useState<string | null>(null);
   const [practiceActive, setPracticeActive] = useState(false);
+  const [answeredThisRun, setAnsweredThisRun] = useState(0);
+  const [celebrate, setCelebrate] = useState(false);
+  const playSound = useSound();
 
   useEffect(() => {
     let cancelled = false;
@@ -66,16 +72,28 @@ export function LessonPage({ lessonId }: { lessonId: string }) {
     };
   }, [lessonId]);
 
+  // The run is over and the lesson was just completed: a short celebration (Motion and Sound).
+  const finishedNow = Boolean(run && !run.practice && run.pending.length === 0 && completedNow);
+  useEffect(() => {
+    if (!finishedNow) return;
+    playSound('complete');
+    setCelebrate(true);
+    const timer = setTimeout(() => setCelebrate(false), 1500);
+    return () => clearTimeout(timer);
+  }, [finishedNow, playSound]);
+
   function startRun(lesson: OpenLesson) {
     const practice = lesson.completed;
     const passed = new Set(lesson.passedExerciseIds);
     const pending = lesson.exercises.map((e) => e.id).filter((id) => practice || !passed.has(id));
     setRun({ pending, total: lesson.exercises.length, passed: lesson.exercises.length - pending.length, practice });
+    setAnsweredThisRun(0);
     setTurn((n) => n + 1);
   }
 
   function handleAnswered(outcome: AttemptOutcome) {
     setLastPassed(outcome.result !== 'wrong');
+    setAnsweredThisRun((n) => n + 1);
     if (outcome.justCompleted) setCompletedNow(true);
     setView((current) =>
       current && !current.locked
@@ -177,8 +195,41 @@ export function LessonPage({ lessonId }: { lessonId: string }) {
     setChatOpen(true);
   }
 
+  if (run && current) {
+    // Focus mode: the exercise run hides the shell. The explanation stays in the normal page.
+    return (
+      <FocusLayout
+        progress={{ current: Math.min(run.passed + 1, run.total), total: run.total }}
+        confirmExit={answeredThisRun > 0}
+        onExit={() => setRun(null)}
+      >
+        <p>{t('progress', { passed: run.passed, total: run.total })}</p>
+        {run.practice && <p>{t('practiceNote')}</p>}
+        <ExerciseCard
+          key={turn}
+          exercise={current}
+          source="lesson"
+          contentLanguage={language}
+          onAnswered={handleAnswered}
+          onNext={() => advance(lastPassed)}
+          onSkip={() => advance(false)}
+          onAskAi={askAi}
+        />
+        <LessonChat
+          lessonId={lesson.id}
+          open={chatOpen}
+          onToggle={() => setChatOpen((open) => !open)}
+          askAbout={askAbout}
+          onClearAskAbout={() => setAskAbout(null)}
+        />
+      </FocusLayout>
+    );
+  }
+
   return (
     <div>
+      {/* A practice batch runs in focus mode: the lesson page waits, hidden, behind it. */}
+      <div hidden={practiceActive}>
       <nav>
         <Link href="/">{t('backToTree')}</Link>
       </nav>
@@ -225,21 +276,6 @@ export function LessonPage({ lessonId }: { lessonId: string }) {
             {lesson.completed ? t('practiceAgain') : lesson.passedExerciseIds.length > 0 ? t('continue') : t('start')}
           </button>
         )
-      ) : current ? (
-        <div>
-          <p>{t('progress', { passed: run.passed, total: run.total })}</p>
-          {run.practice && <p>{t('practiceNote')}</p>}
-          <ExerciseCard
-            key={turn}
-            exercise={current}
-            source="lesson"
-            contentLanguage={language}
-            onAnswered={handleAnswered}
-            onNext={() => advance(lastPassed)}
-            onSkip={() => advance(false)}
-            onAskAi={askAi}
-          />
-        </div>
       ) : (
         <div>
           {run.practice ? (
@@ -261,9 +297,11 @@ export function LessonPage({ lessonId }: { lessonId: string }) {
         </div>
       )}
 
+      </div>
+
       {/* Spec Phase 2: practice only on a lesson the student has completed themselves, and not
           while a lesson run is showing an exercise. */}
-      {lesson.completed && !current && <PracticeRun lessonId={lesson.id} contentLanguage={language} onAskAi={practiceAskAi} onActiveChange={setPracticeActive} />}
+      {lesson.completed && <PracticeRun lessonId={lesson.id} contentLanguage={language} onAskAi={practiceAskAi} onActiveChange={setPracticeActive} />}
       <LessonChat
         lessonId={lesson.id}
         open={chatOpen}
@@ -271,6 +309,7 @@ export function LessonPage({ lessonId }: { lessonId: string }) {
         askAbout={askAbout}
         onClearAskAbout={() => setAskAbout(null)}
       />
+      <Celebration show={celebrate} />
     </div>
   );
 }

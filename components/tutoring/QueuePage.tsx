@@ -2,15 +2,18 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import type { DailyQueue, QueueItem } from '@/lib/tutoring/progressTypes';
 import { ExerciseCard } from './ExerciseCard';
 import { LessonChat, type AskAbout } from './LessonChat';
+import { FocusLayout } from '@/components/focus/FocusLayout';
 
 // Spec: Pages and Navigation, `/queue` — due reviews one at a time, with the same grading and
 // "Ask AI" as inside a lesson, then one suggested next lesson.
 export function QueuePage() {
   const t = useTranslations('queue');
+  const router = useRouter();
   const tCommon = useTranslations('common');
   const [queue, setQueue] = useState<DailyQueue | null>(null);
   const [failed, setFailed] = useState(false);
@@ -59,13 +62,14 @@ export function QueuePage() {
   if (!queue) return <p>{tCommon('loading')}</p>;
 
   const current = pending[0] ?? null;
-  return (
-    <div>
-      <nav>
-        <Link href="/">{t('backToTree')}</Link>
-      </nav>
-      <h1>{t('title')}</h1>
-      {current ? (
+  if (current) {
+    // Focus mode. An empty or finished queue (below) has nothing at stake, so no FocusLayout.
+    return (
+      <FocusLayout
+        progress={{ current: Math.max(1, queue.items.length - pending.length + 1), total: Math.max(1, queue.items.length) }}
+        confirmExit={answered > 0}
+        onExit={() => router.push('/')}
+      >
         <div>
           <p>{t('remaining', { count: pending.length })}</p>
           <p>{t('fromLesson', { lesson: current.lessonTitle })}</p>
@@ -90,9 +94,16 @@ export function QueuePage() {
             onClearAskAbout={() => setAskAbout(null)}
           />
         </div>
-      ) : (
-        <p>{answered > 0 ? t('allDone') : queue.answeredToday >= queue.cap ? t('capReached') : t('nothingDue')}</p>
-      )}
+      </FocusLayout>
+    );
+  }
+  return (
+    <div>
+      <nav>
+        <Link href="/">{t('backToTree')}</Link>
+      </nav>
+      <h1>{t('title')}</h1>
+      <p>{answered > 0 ? t('allDone') : queue.answeredToday >= queue.cap ? t('capReached') : t('nothingDue')}</p>
       <h2>{t('nextLesson')}</h2>
       {queue.suggestedLesson ? (
         <Link href={`/lesson/${queue.suggestedLesson.id}`}>{queue.suggestedLesson.title}</Link>

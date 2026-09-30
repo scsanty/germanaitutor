@@ -2,12 +2,14 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useFormatter, useLocale, useTranslations } from 'next-intl';
 import { useApiErrorText } from '@/components/useApiErrorText';
 import type { ExerciseView } from '@/lib/tutoring/exerciseView';
 import type { TestOutAnswerOutcome, TestOutResult, TestOutRun, TestOutState } from '@/lib/tutoring/testOutViews';
 import type { ContentLanguage } from '@/lib/i18n/localizedText';
 import { ExerciseCard, ExerciseHeading } from './ExerciseCard';
+import { FocusLayout } from '@/components/focus/FocusLayout';
 
 // Score, pass/fail and the per-question review of one finished attempt.
 function ResultView({ result }: { result: TestOutResult }) {
@@ -35,6 +37,7 @@ function ResultView({ result }: { result: TestOutResult }) {
 export function TestOutPage({ milestoneId }: { milestoneId: string }) {
   const t = useTranslations('testOut');
   const tCommon = useTranslations('common');
+  const router = useRouter();
   const format = useFormatter();
   const errorText = useApiErrorText();
   const base = `/api/tutoring/milestones/${milestoneId}/testout`;
@@ -104,7 +107,12 @@ export function TestOutPage({ milestoneId }: { milestoneId: string }) {
   const current = questions?.[answered];
   if (questions && current) {
     return (
-      <div>
+      // Focus mode, but no right/wrong anywhere and no sounds: the card plays none in test mode.
+      <FocusLayout
+        progress={{ current: answered + 1, total: questions.length }}
+        confirmExit={answered > 0}
+        onExit={() => router.push('/')}
+      >
         {heading}
         <p>{t('progress', { current: answered + 1, total: questions.length })}</p>
         <ExerciseCard
@@ -119,7 +127,7 @@ export function TestOutPage({ milestoneId }: { milestoneId: string }) {
           onSkip={() => undefined}
         />
         {error && <p role="alert">{error}</p>}
-      </div>
+      </FocusLayout>
     );
   }
 

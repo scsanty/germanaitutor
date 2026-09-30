@@ -109,6 +109,28 @@ describe('LessonPage', () => {
     expect(await screen.findByText('Lesson complete! Its exercises will come back in your daily review.')).toBeInTheDocument();
   });
 
+  it('runs in focus mode: the page waits, Leave asks once an exercise is answered, and keeps the progress', async () => {
+    stubFetch({ 'GET /api/tutoring/lessons/a1-greet': () => delayedResponse(LESSON) }, [() => delayedResponse(outcome('correct', { passedExerciseIds: ['ex1'] }))]);
+    renderWithIntl(<LessonPage lessonId="a1-greet" />);
+    fireEvent.click(await screen.findByRole('button', { name: 'Start the exercises' }));
+    expect(screen.getByRole('progressbar', { name: 'Exercise 1 of 2' })).toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: 'Saying hello' })).not.toBeInTheDocument();
+    // Nothing answered yet: Leave exits without asking.
+    fireEvent.click(screen.getByRole('button', { name: 'Leave' }));
+    expect(screen.getByRole('button', { name: 'Start the exercises' })).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: 'Start the exercises' }));
+    fireEvent.click(screen.getByLabelText('Hallo'));
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }));
+    await screen.findByRole('button', { name: 'Next' });
+    fireEvent.click(screen.getByRole('button', { name: 'Leave' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Stay' }));
+    expect(screen.getByRole('button', { name: 'Next' })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Leave' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Leave anyway' }));
+    expect(await screen.findByRole('heading', { name: 'Saying hello' })).toBeInTheDocument();
+  });
+
   it('continues with the exercises not yet passed', async () => {
     stubFetch({ 'GET /api/tutoring/lessons/a1-greet': () => delayedResponse({ ...LESSON, passedExerciseIds: ['ex1'] }) });
     renderWithIntl(<LessonPage lessonId="a1-greet" />);

@@ -79,6 +79,17 @@ describe('PlacementTest', () => {
     expect(screen.queryByText(/Question \d+ of \d+/)).not.toBeInTheDocument();
   });
 
+  it('leaves the question with a confirmation and goes back to the start', async () => {
+    stubFetch({ '/api/placement/start': () => delayedResponse({ status: 'in_progress', question: MC_QUESTION }) });
+    renderWithIntl(<PlacementTest onFinished={vi.fn()} />);
+    fireEvent.click(screen.getByText('Start the test'));
+    await screen.findByText('Ich ___ Anna.');
+    expect(screen.queryByRole('progressbar')).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Leave' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Leave anyway' }));
+    expect(screen.getByText('Start the test')).toBeInTheDocument();
+  });
+
   it('keeps Submit disabled until an answer is chosen, then sends it and shows the next question', async () => {
     const fetchMock = stubFetch({
       '/api/placement/start': () => delayedResponse({ status: 'in_progress', question: MC_QUESTION }),

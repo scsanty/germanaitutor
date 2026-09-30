@@ -12,6 +12,8 @@ import type {
 import { pickText, type ContentLanguage } from '@/lib/i18n/localizedText';
 import { LanguageToggle } from '@/components/LanguageToggle';
 import { useApiErrorText } from '@/components/useApiErrorText';
+import { FocusLayout } from '@/components/focus/FocusLayout';
+import { useExerciseShortcuts } from '@/components/focus/useExerciseShortcuts';
 
 type Phase = 'intro' | 'question' | 'result';
 
@@ -124,6 +126,18 @@ export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; 
     return question.type === 'fill_blank' ? { type: 'fill_blank', text: trimmed } : { type: 'free_text', text: trimmed };
   }
 
+  // Shortcuts in the question phase: 1-4 pick an option, Enter sends the answer. No sounds and
+  // no progress bar: a placement test shows no feedback and its length depends on the answers.
+  useExerciseShortcuts({
+    onPick: (index) => {
+      if (phase === 'question' && question?.type === 'multiple_choice' && index < question.options.length) setSelectedIndex(index);
+    },
+    onEnter: () => {
+      const ready = currentAnswer();
+      if (phase === 'question' && question && ready && !busy) send('/api/placement/answer', { questionId: question.id, answer: ready });
+    },
+  });
+
   if (phase === 'intro') {
     return (
       <div>
@@ -145,7 +159,14 @@ export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; 
   if (phase === 'question' && question) {
     const answer = currentAnswer();
     return (
-      <div>
+      <FocusLayout
+        progress={null}
+        confirmExit
+        onExit={() => {
+          setQuestion(null);
+          setPhase('intro');
+        }}
+      >
         <LanguageToggle value={language} onChange={setLanguage} label={tToggle('placement')} />
         {question.instruction && <p>{pickText(question.instruction, language)}</p>}
         {question.type === 'multiple_choice' && (
@@ -187,7 +208,7 @@ export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; 
           {t('beyond')}
         </button>
         {errorAlert()}
-      </div>
+      </FocusLayout>
     );
   }
 

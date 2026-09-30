@@ -11,6 +11,8 @@ import type { TestOutAnswerOutcome } from '@/lib/tutoring/testOutViews';
 import { LanguageToggle } from '@/components/LanguageToggle';
 import { pickText, type ContentLanguage, type LocalizedText } from '@/lib/i18n/localizedText';
 import { useApiErrorText } from '@/components/useApiErrorText';
+import { useExerciseShortcuts } from '@/components/focus/useExerciseShortcuts';
+import { useSound } from '@/lib/sound/useSound';
 
 const RATINGS: FlashcardRating[] = ['knew', 'sort_of', 'didnt_know'];
 
@@ -93,6 +95,8 @@ export function ExerciseCard({
   onAskAi,
 }: ExerciseCardProps) {
   const t = useTranslations('exercise');
+  const tFocus = useTranslations('focus');
+  const playSound = useSound();
   const errorText = useApiErrorText();
   const locale = useLocale() as ContentLanguage;
   const tToggle = useTranslations('languageToggle');
@@ -132,6 +136,9 @@ export function ExerciseCard({
           return;
         }
         const answerText = answerTextOf(exercise, answer);
+        // Sound only where feedback is shown; 'almost' counts as correct.
+        const graded = (data as { result: GradeResult }).result;
+        playSound(graded === 'wrong' ? 'wrong' : 'correct');
         if (practice) {
           const outcome = data as PracticeGradeOutcome;
           setShown({ result: outcome.result, correctAnswer: outcome.correctAnswer, feedback: null, answerText });
@@ -170,6 +177,23 @@ export function ExerciseCard({
   }
 
   const instruction = instructionText(exercise, language);
+
+  // Focus-mode shortcuts (1-4 pick an option, Enter checks or continues). Esc belongs to FocusLayout.
+  useExerciseShortcuts({
+    onPick: (index) => {
+      if (!shown && exercise.type === 'multiple_choice' && index < exercise.options.length) setSelectedIndex(index);
+    },
+    onEnter: () => {
+      if (shown) onNext();
+      else if (exercise.type === 'flashcard') {
+        if (!revealed) setRevealed(true);
+      } else if (!busy) {
+        const ready = currentAnswer();
+        if (ready) submit(ready);
+      }
+    },
+  });
+  const keysHint = <p className="hidden text-xs text-text-muted lg:block">{tFocus('keysHint')}</p>;
 
   const alerts = (
     <>
@@ -218,6 +242,7 @@ export function ExerciseCard({
         <button type="button" onClick={onNext}>
           {t('next')}
         </button>
+        {keysHint}
       </div>
     );
   }
@@ -241,6 +266,7 @@ export function ExerciseCard({
           </button>
         )}
         {alerts}
+        {keysHint}
       </div>
     );
   }
@@ -289,6 +315,7 @@ export function ExerciseCard({
         </button>
       )}
       {alerts}
+      {keysHint}
     </div>
   );
 }

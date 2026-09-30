@@ -4,6 +4,9 @@ import { renderWithIntl } from '@/test/renderWithIntl';
 import { delayedResponse } from '@/test/delayedResponse';
 import { QueuePage } from './QueuePage';
 
+const push = vi.fn();
+vi.mock('next/navigation', () => ({ useRouter: () => ({ push }) }));
+
 const QUEUE = {
   track: 'generic',
   level: 'A1',
@@ -40,6 +43,50 @@ function stubFetch(queue: unknown, options: { ok?: boolean; status?: number } = 
 }
 
 describe('QueuePage', () => {
+  it('leaves straight away before anything is answered, and asks once a review is answered', async () => {
+    push.mockClear();
+    stubFetch(QUEUE);
+    renderWithIntl(<QueuePage />);
+    await screen.findByText('2 reviews left today');
+    expect(screen.getByRole('progressbar', { name: 'Exercise 1 of 2' })).toBeInTheDocument();
+    // Esc with nothing answered: no confirmation.
+    fireEvent.keyDown(document, { key: 'Escape' });
+    expect(push).toHaveBeenCalledWith('/');
+    expect(screen.queryByRole('alertdialog')).not.toBeInTheDocument();
+
+    push.mockClear();
+    fireEvent.click(screen.getByLabelText('Hallo'));
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }));
+    await screen.findByRole('button', { name: 'Next' });
+    fireEvent.click(screen.getByRole('button', { name: 'Leave' }));
+    expect(screen.getByRole('alertdialog')).toBeInTheDocument();
+    expect(push).not.toHaveBeenCalled();
+    fireEvent.click(screen.getByRole('button', { name: 'Leave anyway' }));
+    expect(push).toHaveBeenCalledWith('/');
+  });
+
+  it('picks an option with a number key and checks with Enter', async () => {
+    const fetchMock = stubFetch(QUEUE);
+    renderWithIntl(<QueuePage />);
+    await screen.findByText('2 reviews left today');
+    fireEvent.keyDown(document.body, { key: '2' });
+    expect(screen.getByLabelText('Tschüss')).toBeChecked();
+    fireEvent.keyDown(document.body, { key: 'Enter' });
+    await screen.findByRole('button', { name: 'Next' });
+    expect(JSON.parse(fetchMock.mock.calls.find(([url]) => url === '/api/tutoring/attempts')?.[1]?.body as string).answer).toEqual({
+      type: 'multiple_choice',
+      selectedIndex: 1,
+    });
+  });
+
+  it('shows no exit button or progress bar for an empty queue', async () => {
+    stubFetch({ ...QUEUE, items: [] });
+    renderWithIntl(<QueuePage />);
+    await screen.findByText('Nothing to review right now.');
+    expect(screen.queryByRole('button', { name: 'Leave' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('progressbar')).not.toBeInTheDocument();
+  });
+
   it('works through the due reviews one at a time, then suggests the next lesson', async () => {
     const fetchMock = stubFetch(QUEUE);
     renderWithIntl(<QueuePage />);
