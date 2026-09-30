@@ -1,5 +1,5 @@
 {
-  "seedVersion": "5",
+  "seedVersion": "6",
   "formatVersion": 3,
   "track": "generic",
   "level": "A1",
@@ -18,8 +18,8 @@
         "Wir wohnen in Berlin.",
         "Sie sind Herr Müller, richtig?"
       ],
-      "titleDe": "Personal Pronouns in the Nominative",
-      "explanationDe": "In German, personal pronouns represent the subject of the clause in the nominative case.\nThey change according to grammatical person, number, and formal politeness.\nThe basic forms are: ich (I), du (you, informal singular), er (he), sie (she), es (it), wir (we), ihr (you, informal plural), sie (they), and Sie (you, formal singular and plural).\nNotice that formal Sie is always capitalized.\n",
+      "titleDe": "Personalpronomen im Nominativ",
+      "explanationDe": "Personalpronomen stehen für das Subjekt im Satz. Das Subjekt steht im Nominativ.\nDie Form hängt von der Person ab: eine Person oder viele Personen, du oder Sie.\nDie Formen sind: ich, du (informell, eine Person), er, sie, es, wir, ihr (informell, viele Personen), sie (viele Personen) und Sie (formell, eine oder viele Personen).\nWichtig: Das formelle Sie schreibt man immer groß.\n",
       "examplesDe": [
         "Ich komme aus Spanien.",
         "Du lernst Deutsch.",
@@ -41,8 +41,8 @@
         "Er spielt am Samstag Fußball.",
         "Wir trinken gerne Kaffee."
       ],
-      "titleDe": "Regular Verb Conjugation in Present Tense",
-      "explanationDe": "German regular verbs are conjugated in the present tense by removing the infinitive ending -en and adding person-specific endings to the verb stem.\nThe endings are: ich -e, du -st, er/sie/es -t, wir -en, ihr -t, and sie/Sie -en.\nFor example, the verb lernen has the stem lern-, yielding ich lerne, du lernst, and er lernt.\nVerbs ending in -ten or -den (like arbeiten) insert an extra -e- before endings for easier pronunciation (du arbeitest).\n",
+      "titleDe": "Regelmäßige Verben im Präsens",
+      "explanationDe": "Regelmäßige Verben sind einfach. Du nimmst den Infinitiv, zum Beispiel lernen. Du nimmst -en weg. Dann hast du den Stamm: lern-.\nDann kommt die Endung: ich -e, du -st, er/sie/es -t, wir -en, ihr -t, sie/Sie -en.\nZum Beispiel: lernen hat den Stamm lern-. Also: ich lerne, du lernst und er lernt.\nEndet der Stamm auf -t oder -d (zum Beispiel arbeiten), kommt ein -e- dazu. So ist das Sprechen leichter (du arbeitest).\n",
       "examplesDe": [
         "Ich lerne jeden Tag Deutsch.",
         "Du machst deine Hausaufgaben.",
@@ -64,8 +64,8 @@
         "Wir haben eine große Wohnung.",
         "Hast du Geschwister?"
       ],
-      "titleDe": "The Irregular Auxiliaries Sein and Haben",
-      "explanationDe": "The verbs sein (to be) and haben (to have) are highly irregular and essential for basic communication.\nThe conjugation of sein is: ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie/Sie sind.\nThe conjugation of haben is: ich habe, du hast, er/sie/es hat, wir haben, ihr habt, sie/Sie haben.\nThese verbs express identity, states of being, age, possession, and physical conditions.\n",
+      "titleDe": "Die unregelmäßigen Verben sein und haben",
+      "explanationDe": "Die Verben sein und haben sind sehr unregelmäßig. Du brauchst sie sehr oft.\nsein: ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie/Sie sind.\nhaben: ich habe, du hast, er/sie/es hat, wir haben, ihr habt, sie/Sie haben.\nMit diesen Verben sagst du, wer du bist, wie alt du bist, was du hast und wie es dir geht.\n",
       "examplesDe": [
         "Ich bin 25 Jahre alt.",
         "Er ist Arzt von Beruf.",
@@ -87,8 +87,8 @@
         "Ich bin 32 (zweiunddreißig) Jahre alt.",
         "Auf Wiedersehen, bis morgen!"
       ],
-      "titleDe": "Alphabet, Greetings, and Numbers 0 to 100",
-      "explanationDe": "Basic interactions begin with greetings, farewells, spelling names, and reciting numbers.\nCommon greetings include 'Guten Morgen' (morning), 'Guten Tag' (daytime), and 'Hallo' (informal).\nFarewells include 'Auf Wiedersehen' (formal) and 'Tschüss' (informal).\nGerman numbers from 21 to 99 are inverted, stating the unit before the ten joined by 'und' (einundzwanzig = 21).\n",
+      "titleDe": "Alphabet, Begrüßungen und Zahlen von 0 bis 100",
+      "explanationDe": "Am Anfang begrüßt man sich, man verabschiedet sich, man buchstabiert Namen und man sagt Zahlen.\nBegrüßungen sind zum Beispiel 'Guten Morgen' (am Morgen), 'Guten Tag' (am Tag) und 'Hallo' (informell).\nZum Abschied sagt man 'Auf Wiedersehen' (formell) und 'Tschüss' (informell).\nDie Zahlen von 21 bis 99 sagt man andersherum: zuerst die Einer, dann 'und', dann die Zehner (einundzwanzig = 21).\n",
       "examplesDe": [
         "Guten Tag, wie heißen Sie?",
         "Mein Name ist Weber, W-E-B-E-R.",
@@ -110,8 +110,8 @@
         "Die Kinder spielen im Garten.",
         "Das ist kein Problem."
       ],
-      "titleDe": "Definite and Indefinite Articles in Nominative",
-      "explanationDe": "Every German noun has an inherent grammatical gender: masculine (der), feminine (die), or neuter (das).\nThe plural for all genders in the nominative is die.\nThe indefinite article (a/an) is ein for masculine and neuter, and eine for feminine; there is no plural indefinite article.\nNegative articles follow this pattern: kein (masculine/neuter), keine (feminine/plural).\n",
+      "titleDe": "Bestimmte und unbestimmte Artikel im Nominativ",
+      "explanationDe": "Jedes Nomen hat ein Genus: maskulin (der), feminin (die) oder neutral (das).\nIm Plural ist der Artikel immer die.\nDer unbestimmte Artikel ist ein (maskulin und neutral) und eine (feminin). Im Plural gibt es keinen unbestimmten Artikel.\nDer negative Artikel ist kein (maskulin und neutral) und keine (feminin und Plural).\n",
       "examplesDe": [
         "Der Tisch ist neu.",
         "Das ist ein Buch und das ist eine Lampe.",
@@ -133,8 +133,8 @@
         "Woher kommst du?",
         "Wohnst du in Köln?"
       ],
-      "titleDe": "Word Order in Declarative Sentences and Questions",
-      "explanationDe": "German main clauses follow the verb-second (V2) rule: the conjugated finite verb is always the second element.\nIf a temporal or locational element starts the sentence, the subject inverts and follows the verb.\nInformation questions begin with an interrogative word (W-Wort: Wer, Was, Wo, Wohin, Woher, Wann, Wie), followed immediately by the verb.\nYes/No questions (Ja/Nein-Fragen) place the conjugated verb in the first position.\n",
+      "titleDe": "Satzstellung in Aussagesätzen und Fragen",
+      "explanationDe": "Im Hauptsatz steht das Verb immer auf Position 2.\nBeginnt der Satz mit einer Zeit oder einem Ort, dann steht das Subjekt nach dem Verb.\nW-Fragen beginnen mit einem Fragewort (W-Wort: Wer, Was, Wo, Wohin, Woher, Wann, Wie). Dann kommt sofort das Verb.\nBei Ja/Nein-Fragen steht das Verb auf Position 1.\n",
       "examplesDe": [
         "Ich trinke heute Tee.",
         "Heute trinke ich Tee.",
@@ -156,8 +156,8 @@
         "Am Wochenende schlafe ich lange.",
         "Wann frühstückst du normalerweise?"
       ],
-      "titleDe": "Time, Days of the Week, and Daily Routine",
-      "explanationDe": "Expressing daily routines requires terms for the days of the week, parts of the day, and clock times.\nThe days of the week use the preposition 'am' (am Montag, am Dienstag, am Wochenende).\nClock times use 'um' (um 8 Uhr, um halb neun = 8:30).\nKey routine activities include frühstücken (to eat breakfast), schlafen (to sleep), and anfangen (to begin).\n",
+      "titleDe": "Uhrzeit, Wochentage und Tagesablauf",
+      "explanationDe": "Für deinen Tagesablauf brauchst du die Wochentage, die Tageszeiten und die Uhrzeit.\nBei Wochentagen sagt man 'am' (am Montag, am Dienstag, am Wochenende).\nBei der Uhrzeit sagt man 'um' (um 8 Uhr, um halb neun = 8:30).\nWichtige Verben für den Tag sind frühstücken, schlafen und anfangen.\n",
       "examplesDe": [
         "Am Montag arbeite ich von acht bis fünf Uhr.",
         "Der Kurs beginnt um halb zehn.",
@@ -179,8 +179,8 @@
         "Wir suchen ein bequemes Sofa.",
         "Siehst du mich?"
       ],
-      "titleDe": "The Accusative Case Direct Object",
-      "explanationDe": "The accusative case marks the direct object receiving the action of a transitive verb (e.g., haben, kaufen, suchen, finden).\nOnly the masculine singular article changes in the accusative: der becomes den, and ein becomes einen.\nFeminine (die / eine), neuter (das / ein), and plural (die / keine) articles remain identical to their nominative forms.\nPersonal pronouns also shift: ich becomes mich, and du becomes dich.\n",
+      "titleDe": "Der Akkusativ: das direkte Objekt",
+      "explanationDe": "Der Akkusativ zeigt das direkte Objekt. Viele Verben brauchen den Akkusativ, zum Beispiel haben, kaufen, suchen und finden.\nNur der maskuline Artikel ändert sich: der wird den, und ein wird einen.\nFeminin (die / eine), neutral (das / ein) und Plural (die / keine) bleiben gleich wie im Nominativ.\nAuch Pronomen ändern sich: ich wird mich, und du wird dich.\n",
       "examplesDe": [
         "Ich kaufe den Tisch.",
         "Er hat einen Bruder und eine Schwester.",
@@ -202,8 +202,8 @@
         "Ich verstehe den Satz nicht.",
         "Das Restaurant ist heute nicht geöffnet."
       ],
-      "titleDe": "Negation with Nicht and Kein",
-      "explanationDe": "German uses two main words for negation: 'kein' and 'nicht'.\nUse 'kein' to negate nouns accompanied by an indefinite article or nouns with no article.\n'Kein' inflects like the indefinite article (kein, keine, keinen).\nUse 'nicht' to negate verbs, adjectives, adverbs, proper names, and nouns accompanied by definite articles or possessives.\n",
+      "titleDe": "Verneinung mit nicht und kein",
+      "explanationDe": "Im Deutschen gibt es zwei wichtige Wörter für die Verneinung: 'kein' und 'nicht'.\nNimm 'kein' für Nomen mit unbestimmtem Artikel oder Nomen ohne Artikel.\n'Kein' hat die Endungen wie der unbestimmte Artikel (kein, keine, keinen).\nNimm 'nicht' für Verben, Adjektive, Adverbien, Namen und Nomen mit bestimmtem Artikel oder mit Possessivartikel (mein, dein …).\n",
       "examplesDe": [
         "Das ist kein Hund, das ist eine Katze.",
         "Ich habe kein Geld.",
@@ -225,8 +225,8 @@
         "Käse und Brot sind im Angebot.",
         "Ich nehme noch eine Packung Reis, danke."
       ],
-      "titleDe": "Food, Groceries, and Shopping",
-      "explanationDe": "Shopping for groceries requires knowledge of common food items, units of measurement, and transactional phrasing.\nCommon measures include: ein Kilo (a kilo), ein Pfund (500 grams), eine Flasche (a bottle), and eine Packung (a carton/package).\nKey polite transactional phrases include 'Ich möchte bitte...' (I would like...) and 'Was kostet...?' (How much does... cost?).\n",
+      "titleDe": "Essen, Lebensmittel und Einkaufen",
+      "explanationDe": "Beim Einkaufen brauchst du Wörter für Lebensmittel, für Mengen und für das Gespräch an der Kasse.\nWichtige Mengen sind: ein Kilo, ein Pfund (500 Gramm), eine Flasche und eine Packung.\nHöfliche Sätze sind 'Ich möchte bitte...' und 'Was kostet...?'.\n",
       "examplesDe": [
         "Ich möchte bitte ein Kilo Äpfel.",
         "Was kosten zwei Flaschen Wasser?",
@@ -248,8 +248,8 @@
         "Rufst du mich heute Abend an?",
         "Wir bringen einen Kuchen zur Party mit."
       ],
-      "titleDe": "Separable-Prefix Verbs in the Present Tense",
-      "explanationDe": "Separable verbs (trennbare Verben) consist of a base verb and a separable prefix (such as ab-, an-, auf-, aus-, ein-, mit-, vor-, zu-).\nIn present tense main clauses, the prefix detaches from the conjugated stem and moves to the final position of the clause.\nCommon verbs include aufstehen (to get up), einkaufen (to shop), anrufen (to call), and mitbringen (to bring along).\n",
+      "titleDe": "Trennbare Verben im Präsens",
+      "explanationDe": "Trennbare Verben haben ein Verb und eine Vorsilbe (zum Beispiel ab-, an-, auf-, aus-, ein-, mit-, vor-, zu-).\nIm Präsens trennt man die Vorsilbe vom Verb. Die Vorsilbe steht am Ende vom Satz.\nWichtige Verben sind aufstehen, einkaufen, anrufen und mitbringen.\n",
       "examplesDe": [
         "Ich stehe jeden Morgen um sechs Uhr auf.",
         "Er kauft am Nachmittag im Supermarkt ein.",
@@ -271,8 +271,8 @@
         "Ich möchte einen Kaffee trinken.",
         "Möchten Sie etwas bestellen?"
       ],
-      "titleDe": "Modal Verbs: Können and Möchten",
-      "explanationDe": "Modal verbs modify the mood or intention of the main action.\nIn the present tense, modal verbs conjugate irregularly in the singular and share identical forms for the first and third persons (ich kann, er kann; ich möchte, er möchte).\nThe modal verb occupies the V2 position, while the main action verb appears in its infinitive form at the end of the sentence.\nKönnen denotes ability or possibility; möchten expresses a polite wish or request.\n",
+      "titleDe": "Modalverben: können und möchten",
+      "explanationDe": "Modalverben sagen etwas über die Handlung: Kann ich das? Will ich das?\nIm Präsens sind Modalverben im Singular unregelmäßig. Die Form für ich und er/sie/es ist gleich (ich kann, er kann; ich möchte, er möchte).\nDas Modalverb steht auf Position 2. Das zweite Verb steht im Infinitiv am Ende vom Satz.\nMit können sagst du, was du kannst oder was möglich ist. Mit möchten sagst du höflich, was du willst.\n",
       "examplesDe": [
         "Ich kann sehr gut Schwimmen.",
         "Wir können morgen zusammen Deutsch lernen.",
@@ -293,8 +293,8 @@
         "Hallo Tom, kommst du heute um 18 Uhr zum Sport? Bitte gib mir Bescheid. LG, Markus.",
         "Liebe Kolleginnen, am Freitag feiere ich meinen Geburtstag im Büro. Es gibt Kuchen! Herzliche Grüße, Sabine."
       ],
-      "titleDe": "Reading Short Personal Notes and Messages",
-      "explanationDe": "Reading at A1 involves scanning brief personal notes, postcards, SMS messages, and emails.\nFocus on identifying the sender, the recipient, the primary communicative intention, and key details like dates, times, and meeting locations.\n",
+      "titleDe": "Kurze Nachrichten und Notizen lesen",
+      "explanationDe": "Auf A1 liest du kurze Notizen, Postkarten, SMS und E-Mails.\nFrag dich: Wer schreibt? Wer bekommt die Nachricht? Was will die Person? Achte auch auf Datum, Uhrzeit und Treffpunkt.\n",
       "examplesDe": [
         "Lieber Paul, ich bin im Supermarkt. Brauchen wir Milch? Schreib mir schnell! Gruß, Anna.",
         "Hallo Tom, kommst du heute um 18 Uhr zum Sport? Bitte gib mir Bescheid. LG, Markus.",
@@ -314,8 +314,8 @@
         "Sehr geehrte Kundinnen und Kunden, unser Geschäft schließt in zehn Minuten. Bitte begeben Sie sich zur Kasse.",
         "Der Flug LH 400 nach New York ist jetzt zum Einsteigen bereit an Flugsteig B12."
       ],
-      "titleDe": "Listening to Public Announcements",
-      "explanationDe": "Public address announcements in train stations, airports, and retail stores convey concise operational information.\nLearners must listen selectively for key terms such as 'Gleis' (track/platform), 'Verspätung' (delay), 'Achtung' (attention), and opening/closing times.\n",
+      "titleDe": "Durchsagen verstehen",
+      "explanationDe": "Durchsagen am Bahnhof, am Flughafen und im Geschäft sind kurz. Sie geben wichtige Informationen.\nHör genau auf wichtige Wörter wie 'Gleis', 'Verspätung', 'Achtung' und auf Öffnungszeiten.\n",
       "examplesDe": [
         "Achtung an Gleis 4: Der Intercity nach Hamburg fährt heute mit 15 Minuten Verspätung ab.",
         "Sehr geehrte Kundinnen und Kunden, unser Geschäft schließt in zehn Minuten. Bitte begeben Sie sich zur Kasse.",
@@ -335,8 +335,8 @@
         "2-Zimmer-Wohnung im Zentrum zu vermieten. 60 qm, 750 Euro warm. Tel: 0171-123456.",
         "Bäckerei Meyer: Wegen Urlaub geschlossen vom 1. bis 15. August."
       ],
-      "titleDe": "Reading Notices, Signs, and Classified Ads",
-      "explanationDe": "Public notices, building directories, and classified advertisements require scanning for specific data points.\nLook for opening hours (Öffnungszeiten), prices (Preise), dates, room counts, and contact numbers.\n",
+      "titleDe": "Schilder, Aushänge und Anzeigen lesen",
+      "explanationDe": "Bei Schildern, Wegweisern und Anzeigen suchst du bestimmte Informationen.\nSuch nach Öffnungszeiten, Preisen, Daten, Zimmern und Telefonnummern.\n",
       "examplesDe": [
         "Praxis Dr. Schmidt: Sprechzeiten Montag bis Freitag 8:00 - 12:00 Uhr. Mittwochnachmittag geschlossen.",
         "2-Zimmer-Wohnung im Zentrum zu vermieten. 60 qm, 750 Euro warm. Tel: 0171-123456.",
@@ -356,8 +356,8 @@
         "Meine Telefonnummer ist null-eins-sieben-sechs, achtundfünfzig, vierundzwanzig, drei.",
         "Wir treffen uns am Dienstag, dem vierzehnten Mai, um sechzehn Uhr."
       ],
-      "titleDe": "Listening for Numbers, Dates, and Prices",
-      "explanationDe": "Transactional conversations require extracting numerical values from spoken German.\nTrain your ear to recognize spoken numbers, compound figures, monetary expressions (Euro and Cent), and phone numbers.\n",
+      "titleDe": "Zahlen, Daten und Preise hören",
+      "explanationDe": "Beim Einkaufen und in anderen Gesprächen musst du Zahlen hören und verstehen.\nÜbe: Zahlen, lange Zahlen, Preise (Euro und Cent) und Telefonnummern.\n",
       "examplesDe": [
         "Das macht dann zusammen vierzehn Euro fünfzig, bitte.",
         "Meine Telefonnummer ist null-eins-sieben-sechs, achtundfünfzig, vierundzwanzig, drei.",
@@ -377,8 +377,8 @@
         "Lieber Peter, danke für die Einladung. Ich komme sehr gerne am Sonntag um 15 Uhr. Herzliche Grüße, Anna.",
         "Hallo Alex, hast du morgen Zeit? Wir wollen im Park grillen. Ruf mich bitte an! Dein Jan."
       ],
-      "titleDe": "Writing Simple Messages and Invitations",
-      "explanationDe": "Writing short personal notes or invitations involves standard opening greetings, clear statement of purpose, event details, and an appropriate closing.\nUse 'Liebe/Lieber...' for informal greetings, provide the time and location of the event, and conclude with 'Herzliche Grüße' or 'Viele Grüße'.\n",
+      "titleDe": "Kurze Nachrichten und Einladungen schreiben",
+      "explanationDe": "Eine kurze Nachricht oder Einladung hat eine Anrede, den Grund, die Details und einen Gruß am Ende.\nSchreib 'Liebe/Lieber...' als Anrede. Sag, wann und wo die Party ist. Schreib am Ende 'Herzliche Grüße' oder 'Viele Grüße'.\n",
       "examplesDe": [
         "Liebe Maria, ich lade dich herzlich zu meiner Geburtstagsparty ein. Wir feiern am Samstag um 19 Uhr bei mir. Kannst du kommen? Viele Grüße, Lukas.",
         "Lieber Peter, danke für die Einladung. Ich komme sehr gerne am Sonntag um 15 Uhr. Herzliche Grüße, Anna.",
@@ -399,8 +399,8 @@
         "Ich bin 28 Jahre alt und arbeite als Ingenieur.",
         "Meine Hobbys sind Schwimmen und Gitarre spielen."
       ],
-      "titleDe": "Spoken Personal Introduction",
-      "explanationDe": "A basic spoken introduction covers seven key personal points: name, age, country of origin, place of residence, languages spoken, profession, and hobbies.\nSentences should be concise, grammatically correct, and use clear pronunciation.\n",
+      "titleDe": "Sich mündlich vorstellen",
+      "explanationDe": "Wenn du dich vorstellst, sagst du sieben Dinge: Name, Alter, Land, Wohnort, Sprachen, Beruf und Hobbys.\nSprich kurze, richtige Sätze. Sprich deutlich.\n",
       "examplesDe": [
         "Mein Name ist Marco Rossi.",
         "Ich komme aus Italien und wohne in Frankfurt.",
@@ -452,8 +452,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "State which country you come from using 'ich'.",
-        "modelAnswer": "Ich komme aus Italien."
+        "prompt": "",
+        "modelAnswer": "Ich komme aus Italien.",
+        "instruction": {
+          "en": "State which country you come from using 'ich'.",
+          "de": "Sag, aus welchem Land du kommst. Benutze 'ich'."
+        }
       }
     },
     {
@@ -590,8 +594,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Write a short German farewell to an acquaintance.",
-        "modelAnswer": "Auf Wiedersehen!"
+        "prompt": "",
+        "modelAnswer": "Auf Wiedersehen!",
+        "instruction": {
+          "en": "Write a short German farewell to an acquaintance.",
+          "de": "Schreib einen kurzen Abschiedsgruß an einen Bekannten."
+        }
       }
     },
     {
@@ -672,8 +680,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Form a polar (Yes/No) question using the verb 'trinken' and 'Kaffee'.",
-        "modelAnswer": "Trinkst du Kaffee?"
+        "prompt": "",
+        "modelAnswer": "Trinkst du Kaffee?",
+        "instruction": {
+          "en": "Form a polar (Yes/No) question using the verb 'trinken' and 'Kaffee'.",
+          "de": "Bilde eine Ja/Nein-Frage mit dem Verb 'trinken' und dem Wort 'Kaffee'."
+        }
       }
     },
     {
@@ -718,8 +730,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "State at what time you wake up using 'um'.",
-        "modelAnswer": "Ich stehe um sieben Uhr auf."
+        "prompt": "",
+        "modelAnswer": "Ich stehe um sieben Uhr auf.",
+        "instruction": {
+          "en": "State at what time you wake up using 'um'.",
+          "de": "Sag, um wie viel Uhr du aufwachst. Benutze 'um'."
+        }
       }
     },
     {
@@ -810,8 +826,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Formulate a sentence stating that you do not drink beer using 'kein'.",
-        "modelAnswer": "Ich trinke kein Bier."
+        "prompt": "",
+        "modelAnswer": "Ich trinke kein Bier.",
+        "instruction": {
+          "en": "Formulate a sentence stating that you do not drink beer using 'kein'.",
+          "de": "Sag in einem Satz: Du trinkst kein Bier. Benutze 'kein'."
+        }
       }
     },
     {
@@ -856,8 +876,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Ask how much a loaf of bread costs using 'Was kostet...'.",
-        "modelAnswer": "Was kostet das Brot?"
+        "prompt": "",
+        "modelAnswer": "Was kostet das Brot?",
+        "instruction": {
+          "en": "Ask how much a loaf of bread costs using 'Was kostet...'.",
+          "de": "Frag, was ein Brot kostet. Benutze 'Was kostet...'."
+        }
       }
     },
     {
@@ -948,8 +972,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Express that you can speak German using 'können'.",
-        "modelAnswer": "Ich kann Deutsch sprechen."
+        "prompt": "",
+        "modelAnswer": "Ich kann Deutsch sprechen.",
+        "instruction": {
+          "en": "Express that you can speak German using 'können'.",
+          "de": "Sag, dass du Deutsch sprechen kannst. Benutze 'können'."
+        }
       }
     },
     {
@@ -990,8 +1018,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Based on: 'Liebe Tina, der Kuchen steht in der Küche. Guten Appetit! Lisa.' - Who prepared the cake?",
-        "modelAnswer": "Lisa hat den Kuchen vorbereitet."
+        "prompt": "Liebe Tina, der Kuchen steht in der Küche. Guten Appetit! Lisa.",
+        "modelAnswer": "Lisa hat den Kuchen vorbereitet.",
+        "instruction": {
+          "en": "Based on the note: who prepared the cake?",
+          "de": "Lies die Notiz. Von wem ist der Kuchen?"
+        }
       }
     },
     {
@@ -1126,8 +1158,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Write a two-sentence informal invitation to a friend for coffee tomorrow at 15:00.",
-        "modelAnswer": "Lieber Marco, hast du morgen um 15 Uhr Zeit für einen Kaffee? Ich lade dich herzlich ein!"
+        "prompt": "",
+        "modelAnswer": "Lieber Marco, hast du morgen um 15 Uhr Zeit für einen Kaffee? Ich lade dich herzlich ein!",
+        "instruction": {
+          "en": "Write a two-sentence informal invitation to a friend for coffee tomorrow at 15:00.",
+          "de": "Schreib eine kurze Einladung an einen Freund: Ihr trinkt morgen um 15:00 Uhr Kaffee. Schreib zwei Sätze."
+        }
       }
     },
     {
@@ -1162,8 +1198,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Introduce yourself in German stating your name and your home country.",
-        "modelAnswer": "Ich heiße Elena und ich komme aus Spanien."
+        "prompt": "",
+        "modelAnswer": "Ich heiße Elena und ich komme aus Spanien.",
+        "instruction": {
+          "en": "Introduce yourself in German stating your name and your home country.",
+          "de": "Stell dich vor. Sag deinen Namen und dein Heimatland."
+        }
       }
     },
     {
@@ -1172,8 +1212,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "State your place of residence and your profession in one German sentence.",
-        "modelAnswer": "Ich wohne in Berlin und bin Lehrer von Beruf."
+        "prompt": "",
+        "modelAnswer": "Ich wohne in Berlin und bin Lehrer von Beruf.",
+        "instruction": {
+          "en": "State your place of residence and your profession in one German sentence.",
+          "de": "Sag in einem Satz, wo du wohnst und was du von Beruf bist."
+        }
       }
     },
     {
@@ -1288,8 +1332,8 @@
         "title": "First steps",
         "description": "Greetings, numbers, articles, pronouns and your first present-tense verbs, including sein and haben.",
         "difficultyRank": 1,
-        "titleDe": "First steps",
-        "descriptionDe": "Greetings, numbers, articles, pronouns and your first present-tense verbs, including sein and haben."
+        "titleDe": "Erste Schritte",
+        "descriptionDe": "Begrüßungen, Zahlen, Artikel, Pronomen und deine ersten Verben im Präsens, auch sein und haben."
       },
       "lessonIds": [
         "a1-alphabet-greetings-numbers",
@@ -1307,8 +1351,8 @@
         "title": "Shopping and daily routine",
         "description": "Talk about food, prices and your day, use the accusative and say no with nicht and kein.",
         "difficultyRank": 2,
-        "titleDe": "Shopping and daily routine",
-        "descriptionDe": "Talk about food, prices and your day, use the accusative and say no with nicht and kein."
+        "titleDe": "Einkaufen und Alltag",
+        "descriptionDe": "Du sprichst über Essen, Preise und deinen Tag, benutzt den Akkusativ und sagst Nein mit nicht und kein."
       },
       "lessonIds": [
         "a1-accusative-case-articles",
@@ -1327,8 +1371,8 @@
         "title": "Questions and word order",
         "description": "Build statements and questions with correct word order, use separable verbs, and read and hear short everyday texts.",
         "difficultyRank": 3,
-        "titleDe": "Questions and word order",
-        "descriptionDe": "Build statements and questions with correct word order, use separable verbs, and read and hear short everyday texts."
+        "titleDe": "Fragen und Satzstellung",
+        "descriptionDe": "Du bildest Aussagen und Fragen mit der richtigen Satzstellung, benutzt trennbare Verben und liest und hörst kurze Alltagstexte."
       },
       "lessonIds": [
         "a1-listening-public-announcements",
@@ -1345,8 +1389,8 @@
         "title": "Introductions and invitations",
         "description": "Say what you can and would like to do, introduce yourself aloud and write a short invitation.",
         "difficultyRank": 4,
-        "titleDe": "Introductions and invitations",
-        "descriptionDe": "Say what you can and would like to do, introduce yourself aloud and write a short invitation."
+        "titleDe": "Vorstellen und Einladen",
+        "descriptionDe": "Du sagst, was du kannst und möchtest, stellst dich vor und schreibst eine kurze Einladung."
       },
       "lessonIds": [
         "a1-modal-verbs-koennen-moechten",

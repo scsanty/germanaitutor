@@ -1,5 +1,5 @@
 {
-  "seedVersion": "5",
+  "seedVersion": "6",
   "formatVersion": 3,
   "track": "generic",
   "level": "A2",
@@ -18,8 +18,8 @@
         "Er hat ein Doppelzimmer im Hotel reserviert.",
         "Hast du gestern mit deinen Eltern telefoniert?"
       ],
-      "titleDe": "Conversational Past: Perfekt with Haben and Regular Verbs",
-      "explanationDe": "In spoken and informal written German, the Perfekt tense is used to talk about completed past events.\nIt is formed with a conjugated present-tense auxiliary verb (usually haben) in the second position (V2) and a past participle (Partizip II) at the end of the clause.\nRegular weak verbs form the participle with the prefix ge-, the verb stem, and the suffix -t (ge- + stem + -t, e.g., gemacht, gelernt).\nVerbs ending in -ieren form their participle without ge- (e.g., studiert, reserviert).\n",
+      "titleDe": "Das Perfekt mit haben und regelmäßigen Verben",
+      "explanationDe": "Wenn man spricht oder eine private Nachricht schreibt, benutzt man meistens das Perfekt. Man erzählt damit, was schon passiert ist.\nDas Perfekt hat zwei Teile: Das Hilfsverb (meistens haben) steht auf Position 2. Das Partizip II steht am Ende vom Satz.\nRegelmäßige Verben bilden das Partizip mit ge- + Stamm + -t, zum Beispiel gemacht, gelernt.\nVerben auf -ieren haben kein ge- im Partizip, zum Beispiel studiert, reserviert.\n",
       "examplesDe": [
         "Ich habe gestern meine Hausaufgaben gemacht.",
         "Wir haben am Wochenende Deutsch gelernt.",
@@ -41,8 +41,8 @@
         "Wir sind um acht Uhr am Bahnhof angekommen.",
         "Bist du schon einmal nach Italien geflogen?"
       ],
-      "titleDe": "Conversational Past: Perfekt with Sein and Irregular Verbs",
-      "explanationDe": "Verbs that indicate a change of location (e.g., gehen, fahren, fliegen) or a change of state (e.g., aufwachen, einschlafen) use sein instead of haben as their auxiliary in the Perfekt.\nThe verbs sein (ist gewesen) and bleiben (ist geblieben) also take sein.\nStrong and irregular verbs often change their stem vowel in the participle and end in -en rather than -t (e.g., gefahren, gegangen).\n",
+      "titleDe": "Das Perfekt mit sein und unregelmäßigen Verben",
+      "explanationDe": "Manche Verben bilden das Perfekt mit sein und nicht mit haben. Das sind Verben, bei denen man den Ort wechselt (zum Beispiel gehen, fahren, fliegen), und Verben, bei denen sich ein Zustand ändert (zum Beispiel aufwachen, einschlafen).\nAuch sein (ist gewesen) und bleiben (ist geblieben) haben das Hilfsverb sein.\nStarke und unregelmäßige Verben ändern im Partizip oft den Vokal. Sie enden auf -en, nicht auf -t (zum Beispiel gefahren, gegangen).\n",
       "examplesDe": [
         "Ich bin gestern nach Berlin gefahren.",
         "Sie ist am Sonntag zu Hause geblieben.",
@@ -64,8 +64,8 @@
         "Wo warst du am letzten Wochenende?",
         "Hattet ihr früher ein Haustier?"
       ],
-      "titleDe": "Simple Past: Präteritum of Sein and Haben",
-      "explanationDe": "While spoken German prefers the Perfekt for most verbs, the simple past (Präteritum) of sein and haben is widely preferred in both spoken and written registers.\nThe forms of sein are: ich war, du warst, er/sie/es war, wir waren, ihr wart, sie/Sie waren.\nThe forms of haben are: ich hatte, du hattest, er/sie/es hatte, wir hatten, ihr hattet, sie/Sie hatten.\nThese forms express past states of being, possession, availability, or emotions.\n",
+      "titleDe": "Das Präteritum von sein und haben",
+      "explanationDe": "Beim Sprechen benutzt man für die meisten Verben das Perfekt. Aber bei sein und haben nimmt man meistens das Präteritum, beim Sprechen und beim Schreiben.\nsein: ich war, du warst, er/sie/es war, wir waren, ihr wart, sie/Sie waren.\nhaben: ich hatte, du hattest, er/sie/es hatte, wir hatten, ihr hattet, sie/Sie hatten.\nMit diesen Formen sagst du, wie etwas früher war, was du hattest oder wie du dich gefühlt hast.\n",
       "examplesDe": [
         "Gestern war ich sehr müde.",
         "Wir hatten am Montag keine Zeit.",
@@ -87,8 +87,8 @@
         "Wir wollten ins Kino gehen, aber die Karten waren ausverkauft.",
         "Durftest du als Kind alleine in die Stadt fahren?"
       ],
-      "titleDe": "Simple Past: Präteritum of Modal Verbs",
-      "explanationDe": "In both spoken and written German, modal verbs are almost always used in the Präteritum rather than the compound Perfekt.\nThe Präteritum stems drop any umlauts: können -> konnte, müssen -> musste, dürfen -> durfte, wollen -> wollte, sollen -> sollte.\nThe personal endings match the regular past paradigm: ich -te, du -test, er/sie/es -te, wir -ten, ihr -tet, sie/Sie -ten.\nThe first and third person singular forms are always identical (ich konnte, er konnte).\n",
+      "titleDe": "Das Präteritum der Modalverben",
+      "explanationDe": "Bei Modalverben benutzt man fast immer das Präteritum, nicht das Perfekt. Das gilt beim Sprechen und beim Schreiben.\nIm Präteritum haben die Modalverben keinen Umlaut: können -> konnte, müssen -> musste, dürfen -> durfte, wollen -> wollte, sollen -> sollte.\nDie Endungen sind: ich -te, du -test, er/sie/es -te, wir -ten, ihr -tet, sie/Sie -ten.\nDie Formen für ich und er/sie/es sind immer gleich (ich konnte, er konnte).\n",
       "examplesDe": [
         "Ich konnte gestern leider nicht zur Schule kommen.",
         "Er musste am Wochenende viele Stunden arbeiten.",
@@ -110,8 +110,8 @@
         "Das Buch gehört ihm nicht.",
         "Wie geht es Ihnen heute?"
       ],
-      "titleDe": "Dative Case and Dative Personal Pronouns",
-      "explanationDe": "The dative case marks the indirect object, answering the question 'Wem?' (To whom?).\nDative personal pronouns are: mir (me), dir (you, inf.), ihm (him/it), ihr (her), ihm (it), uns (us), euch (you pl.), ihnen (them), and Ihnen (you, formal).\nCertain verbs strictly govern the dative case without a direct object, including helfen (to help), danken (to thank), gefallen (to please), gehören (to belong to), and passen (to fit/suit).\n",
+      "titleDe": "Der Dativ und die Personalpronomen im Dativ",
+      "explanationDe": "Der Dativ zeigt das indirekte Objekt. Er antwortet auf die Frage 'Wem?'.\nDie Personalpronomen im Dativ sind: mir, dir, ihm, ihr, ihm, uns, euch, ihnen und Ihnen (formell).\nEinige Verben brauchen immer den Dativ, auch ohne Akkusativ. Zum Beispiel: helfen, danken, gefallen, gehören und passen.\n",
       "examplesDe": [
         "Kannst du mir bitte helfen?",
         "Das rote Kleid gefällt ihr sehr gut.",
@@ -133,8 +133,8 @@
         "Nach dem Unterricht gehen wir alle zusammen nach Hause.",
         "Sie kommt gerade vom Arzt."
       ],
-      "titleDe": "Fixed Dative Prepositions",
-      "explanationDe": "Certain prepositions in German are always followed by the dative case, regardless of movement or context.\nThe primary dative prepositions are: aus (out of, from), bei (at, with), mit (with, by means of), nach (after, to), seit (since, for), von (from, of), zu (to), and gegenüber (opposite).\nArticles decline in the dative: masculine dem (einem), feminine der (einer), neuter dem (einem), and plural den + -n on the noun (keinen Freunden).\n",
+      "titleDe": "Präpositionen mit Dativ",
+      "explanationDe": "Nach einigen Präpositionen steht immer der Dativ. Es ist egal, ob man sich bewegt oder nicht.\nDie wichtigsten Präpositionen mit Dativ sind: aus, bei, mit, nach, seit, von, zu und gegenüber.\nDie Artikel im Dativ sind: maskulin dem (einem), feminin der (einer), neutral dem (einem) und Plural den. Im Plural bekommt auch das Nomen ein -n (keinen Freunden).\n",
       "examplesDe": [
         "Ich fahre jeden Morgen mit dem Bus zur Arbeit.",
         "Er wohnt seit einem Jahr in Hamburg.",
@@ -156,8 +156,8 @@
         "Die Kinder spielen im (in dem) Garten. (Wo? -> Dativ)",
         "Wir gehen heute Abend ins (in das) Kino. (Wohin? -> Akkusativ)"
       ],
-      "titleDe": "Two-Way Prepositions: Accusative vs. Dative",
-      "explanationDe": "Nine prepositions can govern either the accusative or the dative case: an, auf, hinter, in, neben, über, unter, vor, and zwischen.\nUse the accusative when describing directional movement or a change of location answering the question 'Wohin?' (Where to?).\nUse the dative when describing a static location or state of rest answering the question 'Wo?' (Where?).\nCommon verb pairs reflect this rule: legen/liegen, stellen/stehen, setzen/sitzen.\n",
+      "titleDe": "Wechselpräpositionen: Akkusativ oder Dativ",
+      "explanationDe": "Neun Präpositionen haben manchmal den Akkusativ und manchmal den Dativ: an, auf, hinter, in, neben, über, unter, vor und zwischen.\nNimm den Akkusativ, wenn es eine Bewegung zu einem Ziel gibt. Die Frage ist dann 'Wohin?'.\nNimm den Dativ, wenn etwas an einem Ort ist und sich nicht bewegt. Die Frage ist dann 'Wo?'.\nDiese Verbpaare zeigen die Regel: legen/liegen, stellen/stehen, setzen/sitzen.\n",
       "examplesDe": [
         "Das Buch liegt auf dem Tisch. (Wo? -> Dativ)",
         "Ich lege das Buch auf den Tisch. (Wohin? -> Akkusativ)",
@@ -179,8 +179,8 @@
         "Ich weiß, dass du morgen Geburtstag hast.",
         "Wir hoffen, dass das Wetter am Wochenende schön wird."
       ],
-      "titleDe": "Subordinate Clauses with Weil and Dass",
-      "explanationDe": "Subordinate clauses (Nebensätze) introduced by conjunctions such as weil (because) and dass (that) alter German clause topology.\nThe subordinate clause is separated by a comma, and the conjugated finite verb is kicked to the very end of the clause.\n'Weil' introduces causal explanations, while 'dass' introduces content clauses reporting thoughts, feelings, or facts.\n",
+      "titleDe": "Nebensätze mit weil und dass",
+      "explanationDe": "Nebensätze beginnen oft mit einer Konjunktion wie weil oder dass. Dann ändert sich die Satzstellung.\nVor dem Nebensatz steht ein Komma. Das konjugierte Verb steht ganz am Ende vom Nebensatz.\nMit 'weil' nennst du einen Grund. Mit 'dass' sagst du, was jemand denkt, fühlt oder weiß.\n",
       "examplesDe": [
         "Ich bleibe heute im Bett, weil ich krank bin.",
         "Er lernt fleißig, weil er die Prüfung bestehen will.",
@@ -202,8 +202,8 @@
         "Darf ich fragen, wie viel das Zimmer pro Nacht kostet?",
         "Wissen Sie, wann die Vorlesung beginnt?"
       ],
-      "titleDe": "Indirect Questions with Ob and W-Words",
-      "explanationDe": "Indirect questions sound more polite than direct questions in everyday interactions.\nThey function syntactically as subordinate clauses, meaning the conjugated verb moves to the end.\nYes/No questions become indirect questions introduced by ob (whether/if): 'Kommt der Bus?' -> 'Können Sie mir sagen, ob der Bus kommt?'.\nInformation questions retain their question word (wann, wo, wie, was): 'Wann fährt der Zug?' -> 'Ich möchte wissen, wann der Zug abfährt.'.\n",
+      "titleDe": "Indirekte Fragen mit ob und W-Wörtern",
+      "explanationDe": "Indirekte Fragen sind höflicher als direkte Fragen.\nSie sind Nebensätze. Das heißt: Das konjugierte Verb steht am Ende.\nAus einer Ja/Nein-Frage wird eine indirekte Frage mit ob: 'Kommt der Bus?' -> 'Können Sie mir sagen, ob der Bus kommt?'.\nBei W-Fragen bleibt das Fragewort (wann, wo, wie, was): 'Wann fährt der Zug?' -> 'Ich möchte wissen, wann der Zug abfährt.'.\n",
       "examplesDe": [
         "Können Sie mir sagen, wo der Bahnhof ist?",
         "Ich weiß nicht, ob das Geschäft heute geöffnet ist.",
@@ -225,8 +225,8 @@
         "Welches Smartphone ist am billigsten?",
         "Ich trinke gerne Kaffee, aber Tee trinke ich lieber."
       ],
-      "titleDe": "Comparison of Adjectives: Comparative and Superlative",
-      "explanationDe": "The comparative compares two entities and is formed by adding -er to the adjective stem, followed by als (e.g., schneller als).\nMonosyllabic adjectives with stem vowels a, o, u frequently take an umlaut (alt -> älter, groß -> größer, warm -> wärmer).\nThe superlative is formed with am + stem + -sten (am schnellsten, am größten).\nKey irregular forms must be memorized: gut -> besser -> am besten; viel -> mehr -> am meisten; gern -> lieber -> am liebsten.\n",
+      "titleDe": "Adjektive vergleichen: Komparativ und Superlativ",
+      "explanationDe": "Mit dem Komparativ vergleichst du zwei Dinge. Du hängst -er an das Adjektiv und sagst dann als (zum Beispiel schneller als).\nKurze Adjektive mit a, o oder u bekommen oft einen Umlaut (alt -> älter, groß -> größer, warm -> wärmer).\nDen Superlativ bildest du mit am + Adjektiv + -sten (am schnellsten, am größten).\nEinige Formen sind unregelmäßig. Du musst sie lernen: gut -> besser -> am besten; viel -> mehr -> am meisten; gern -> lieber -> am liebsten.\n",
       "examplesDe": [
         "Mein Bruder ist älter als ich.",
         "Der Zug ist schneller als das Auto.",
@@ -248,8 +248,8 @@
         "Wir wohnen in dem gelben Haus.",
         "Die neuen Nachbarn sind sehr freundlich."
       ],
-      "titleDe": "Adjective Declension after Definite Articles",
-      "explanationDe": "When an adjective stands between a determiner and a noun, it must take an inflectional ending.\nAfter definite articles (der, die, das), the adjective takes only two possible endings in the singular and plural: -e or -en.\nIn the nominative singular: der alte Tisch (-e), die neue Lampe (-e), das schöne Bild (-e).\nEvery other form takes -en: all accusative masculine forms (den alten Tisch), all dative forms (dem alten Tisch, der neuen Lampe), and all plurals (die neuen Tische).\n",
+      "titleDe": "Adjektivendungen nach dem bestimmten Artikel",
+      "explanationDe": "Steht ein Adjektiv zwischen Artikel und Nomen, dann braucht es eine Endung.\nNach dem bestimmten Artikel (der, die, das) gibt es nur zwei Endungen: -e oder -en.\nIm Nominativ Singular ist die Endung -e: der alte Tisch, die neue Lampe, das schöne Bild.\nAlle anderen Formen haben -en: maskulin im Akkusativ (den alten Tisch), alle Formen im Dativ (dem alten Tisch, der neuen Lampe) und alle Formen im Plural (die neuen Tische).\n",
       "examplesDe": [
         "Der alte Mann geht im Park spazieren.",
         "Ich kaufe den schwarzen Mantel.",
@@ -271,8 +271,8 @@
         "Freust du dich auf das Wochenende?",
         "Die Schüler setzen sich auf ihre Stühle."
       ],
-      "titleDe": "Introduction to Reflexive Verbs",
-      "explanationDe": "Reflexive verbs express actions that reflect back onto the grammatical subject.\nThey are accompanied by a reflexive pronoun (Reflexivpronomen) in the accusative: mich (myself), dich (yourself), sich (himself/herself/itself), uns (ourselves), euch (yourselves), and sich (themselves/yourself formal).\nCommon A2 reflexive verbs include: sich freuen (to look forward to / be happy), sich ärgern (to be annoyed), sich fühlen (to feel), sich beeilen (to hurry), and sich waschen (to wash oneself).\n",
+      "titleDe": "Einführung in reflexive Verben",
+      "explanationDe": "Bei reflexiven Verben geht die Handlung zurück zum Subjekt.\nDiese Verben haben ein Reflexivpronomen im Akkusativ: mich, dich, sich, uns, euch und sich.\nWichtige reflexive Verben auf A2 sind: sich freuen, sich ärgern, sich fühlen, sich beeilen und sich waschen.\n",
       "examplesDe": [
         "Ich fühle mich heute gar nicht gut.",
         "Wir müssen uns beeilen, der Bus kommt gleich.",
@@ -294,8 +294,8 @@
         "Ich lerne seit sechs Monaten Deutsch und spreche es schon gut.",
         "Ab dem 1. August gelten neue Fahrpreise."
       ],
-      "titleDe": "Temporal Prepositions: Vor, Nach, Seit, and Ab",
-      "explanationDe": "Temporal prepositions indicate when an event happens, its sequence, or its duration.\n'Vor' (before / ago) and 'nach' (after) always take the dative: vor dem Frühstück (before breakfast); vor einem Jahr (a year ago).\n'Seit' indicates an action that began in the past and is still ongoing in the present, used with the present tense and dative: seit zwei Monaten (for two months).\n'Ab' indicates a starting point in the present or future: ab nächster Woche (starting next week).\n",
+      "titleDe": "Zeitpräpositionen: vor, nach, seit und ab",
+      "explanationDe": "Zeitpräpositionen sagen, wann etwas passiert, in welcher Reihenfolge und wie lange.\n'Vor' und 'nach' haben immer den Dativ: vor dem Frühstück; vor einem Jahr (das ist schon ein Jahr her).\n'Seit' benutzt du, wenn etwas früher begonnen hat und jetzt noch weitergeht. Das Verb steht im Präsens, und nach seit kommt der Dativ: seit zwei Monaten.\n'Ab' sagt, wann etwas jetzt oder in der Zukunft beginnt: ab nächster Woche.\n",
       "examplesDe": [
         "Vor dem Unterricht trinke ich einen Kaffee.",
         "Wir sind vor drei Wochen umgezogen.",
@@ -317,8 +317,8 @@
         "Ich möchte eine einfache Fahrkarte nach Köln kaufen.",
         "Der Flug hat leider 45 Minuten Verspätung."
       ],
-      "titleDe": "Travel, Railway Stations, and Airports",
-      "explanationDe": "Traveling in German-speaking countries requires vocabulary for booking, boarding, and managing delays.\nKey terms include: die Fahrkarte / das Ticket (ticket), der Bahnsteig (platform), das Gleis (track), die Abfahrt (departure), die Ankunft (arrival), and der Flug (flight).\nImportant verbs include umsteigen (to transfer/change trains), einsteigen (to board), aussteigen (to exit/alight), and stornieren (to cancel).\n",
+      "titleDe": "Reisen, Bahnhof und Flughafen",
+      "explanationDe": "Auf Reisen brauchst du Wörter zum Buchen, zum Einsteigen und für Verspätungen.\nWichtige Wörter sind: die Fahrkarte / das Ticket, der Bahnsteig, das Gleis, die Abfahrt, die Ankunft und der Flug.\nWichtige Verben sind umsteigen, einsteigen, aussteigen und stornieren.\n",
       "examplesDe": [
         "Der Intercity nach Hamburg steht an Gleis 3 bereit.",
         "Müssen wir in Hannover umsteigen oder fährt der Zug durch?",
@@ -340,8 +340,8 @@
         "Der Schreibtisch steht direkt vor dem Fenster im Arbeitszimmer.",
         "Wir suchen eine moderne 3-Zimmer-Wohnung mit Balkon."
       ],
-      "titleDe": "Living Spaces, Rooms, and Household Furniture",
-      "explanationDe": "Describing apartments and homes involves specific terminology for rooms, fixtures, and household furnishings.\nRooms include: das Wohnzimmer (living room), das Schlafzimmer (bedroom), die Küche (kitchen), and das Badezimmer (bathroom).\nFurniture items include: der Schrank (wardrobe/cupboard), das Regal (shelf), der Schreibtisch (desk), der Teppich (carpet), and die Waschmaschine (washing machine).\n",
+      "titleDe": "Wohnung, Zimmer und Möbel",
+      "explanationDe": "Wenn du eine Wohnung beschreibst, brauchst du Wörter für Zimmer, Einrichtung und Möbel.\nZimmer sind zum Beispiel: das Wohnzimmer, das Schlafzimmer, die Küche und das Badezimmer.\nMöbel und Geräte sind zum Beispiel: der Schrank, das Regal, der Schreibtisch, der Teppich und die Waschmaschine.\n",
       "examplesDe": [
         "In meinem Schlafzimmer stehen ein großes Bett und ein Schrank.",
         "Die Küche hat einen Kühlschrank, einen Herd und eine Spülmaschine.",
@@ -363,8 +363,8 @@
         "Der Arzt hat mir ein Rezept für Tabletten gegeben.",
         "Gute Besserung! Ruh dich gut aus."
       ],
-      "titleDe": "Body Parts, Illnesses, and Healthcare",
-      "explanationDe": "Talking about health problems involves naming parts of the body and describing symptoms accurately.\nBody parts include: der Kopf (head), der Hals (neck/throat), der Rücken (back), der Bauch (stomach), das Bein (leg), and der Arm (arm).\nSymptoms are described with compound nouns like Halsschmerzen (sore throat), Fieber (fever), Husten (cough), and Schnupfen (runny nose).\n",
+      "titleDe": "Körper, Krankheiten und Arztbesuch",
+      "explanationDe": "Wenn du über Gesundheit sprichst, nennst du Körperteile und beschreibst deine Beschwerden genau.\nKörperteile sind zum Beispiel: der Kopf, der Hals, der Rücken, der Bauch, das Bein und der Arm.\nBeschwerden beschreibt man oft mit zusammengesetzten Nomen wie Halsschmerzen, und mit Wörtern wie Fieber, Husten und Schnupfen.\n",
       "examplesDe": [
         "Ich habe seit drei Tagen hohes Fieber und starken Husten.",
         "Mein Rücken tut nach dem Sport sehr weh.",
@@ -386,8 +386,8 @@
         "Das blaue Hemd steht dir ausgezeichnet.",
         "Wo finde ich die Umkleidekabinen?"
       ],
-      "titleDe": "Clothing, Sizes, Colors, and Shopping",
-      "explanationDe": "Shopping for clothes requires expressing preferences for styles, fits, sizes, and colors.\nGarments include: die Hose (pants), das Hemd (dress shirt), die Jacke (jacket), der Pullover (sweater), and die Schuhe (shoes, pl.).\nKey adjectives and transactional terms include: die Größe (size), anprobieren (to try on), eng (tight), weit (loose), and passen (to fit).\n",
+      "titleDe": "Kleidung, Größen, Farben und Einkaufen",
+      "explanationDe": "Beim Kleidungskauf sagst du, welchen Stil, welche Größe und welche Farbe du möchtest und wie etwas passt.\nKleidungsstücke sind zum Beispiel: die Hose, das Hemd, die Jacke, der Pullover und die Schuhe (Plural).\nWichtige Wörter im Geschäft sind: die Größe, anprobieren, eng, weit und passen.\n",
       "examplesDe": [
         "Kann ich diese schwarze Jacke in Größe M anprobieren?",
         "Die Hose ist mir leider zu weit, haben Sie eine kleinere Größe?",
@@ -407,8 +407,8 @@
         "Hotel Alpenrose: Ihr Zimmer steht Ihnen am Anreisetag ab 15:00 Uhr zur Verfügung. Das Frühstücksbuffet servieren wir von 7:00 bis 10:30 Uhr.",
         "Reiseplan: Abfahrt München Hbf um 08:34 Uhr von Gleis 11. Ankunft Salzburg Hbf um 10:12 Uhr. Kein Umstieg erforderlich."
       ],
-      "titleDe": "Reading Travel Itineraries and Hotel Information",
-      "explanationDe": "Reading travel itineraries and booking confirmations at A2 requires extracting operational details such as dates, departure times, check-in rules, and included meals.\nLook for headings like 'Buchungsbestätigung' (booking confirmation), 'Inklusive' (included), and 'Stornierungsbedingungen' (cancellation policies).\n",
+      "titleDe": "Reisepläne und Hotelinformationen lesen",
+      "explanationDe": "In Reiseplänen und Buchungsbestätigungen suchst du wichtige Informationen: Daten, Abfahrtszeiten, Regeln für den Check-in und die Mahlzeiten im Preis.\nAchte auf Überschriften wie 'Buchungsbestätigung', 'Inklusive' und 'Stornierungsbedingungen'.\n",
       "examplesDe": [
         "Hotel Alpenrose: Ihr Zimmer steht Ihnen am Anreisetag ab 15:00 Uhr zur Verfügung. Das Frühstücksbuffet servieren wir von 7:00 bis 10:30 Uhr.",
         "Reiseplan: Abfahrt München Hbf um 08:34 Uhr von Gleis 11. Ankunft Salzburg Hbf um 10:12 Uhr. Kein Umstieg erforderlich."
@@ -426,8 +426,8 @@
         "Gestern Abend ereignete sich auf der Autobahn A1 ein schwerer Unfall. Wegen der Aufräumarbeiten war die Straße für drei Stunden voll gesperrt.",
         "Die Stadtbibliothek eröffnet am kommenden Samstag eine neue Abteilung für digitale Medien. Der Eintritt ist am ersten Wochenende frei."
       ],
-      "titleDe": "Reading Short News Reports and Local Announcements",
-      "explanationDe": "Newspaper snippets, municipal notices, and public interest stories communicate core facts using a combination of present, past, and passive constructions.\nFocus on answering the fundamental journalism questions: Wer? (Who?), Was? (What?), Wann? (When?), and Wo? (Where?).\n",
+      "titleDe": "Kurze Nachrichten und Mitteilungen lesen",
+      "explanationDe": "Kurze Zeitungstexte, Mitteilungen der Stadt und lokale Geschichten nennen die wichtigsten Fakten. Sie benutzen das Präsens, die Vergangenheit und das Passiv.\nBeantworte die wichtigsten W-Fragen: Wer?, Was?, Wann? und Wo?\n",
       "examplesDe": [
         "Gestern Abend ereignete sich auf der Autobahn A1 ein schwerer Unfall. Wegen der Aufräumarbeiten war die Straße für drei Stunden voll gesperrt.",
         "Die Stadtbibliothek eröffnet am kommenden Samstag eine neue Abteilung für digitale Medien. Der Eintritt ist am ersten Wochenende frei."
@@ -445,8 +445,8 @@
         "Verkehrsmeldung: Auf der A8 München Richtung Salzburg fünf Kilometer Stau nach einem Unfall.",
         "Das Wetter morgen: Im Norden heiter bis wolkig bei Höchstwerten um 22 Grad, im Süden am Nachmittag Gewitter."
       ],
-      "titleDe": "Understanding Weather Bulletins and Traffic Reports",
-      "explanationDe": "Weather forecasts and traffic announcements on the radio follow standardized structures.\nTraffic bulletins report accidents (Unfall), road closures (Sperrung), and traffic jams (Stau) with precise kilometer lengths and road numbers (z.B. A3, B10).\nWeather reports describe temperatures (Grad Celsius), precipitation (Regen, Schnee), and sunshine.\n",
+      "titleDe": "Wetterbericht und Verkehrsmeldungen verstehen",
+      "explanationDe": "Wetterberichte und Verkehrsmeldungen im Radio haben immer eine ähnliche Form.\nVerkehrsmeldungen nennen Unfälle (Unfall), gesperrte Straßen (Sperrung) und Staus (Stau). Sie sagen genau, wie viele Kilometer und welche Straße (z.B. A3, B10).\nWetterberichte nennen die Temperatur (Grad Celsius), Regen oder Schnee (Regen, Schnee) und die Sonne.\n",
       "examplesDe": [
         "Verkehrsmeldung: Auf der A8 München Richtung Salzburg fünf Kilometer Stau nach einem Unfall.",
         "Das Wetter morgen: Im Norden heiter bis wolkig bei Höchstwerten um 22 Grad, im Süden am Nachmittag Gewitter."
@@ -464,8 +464,8 @@
         "Dialog: 'Wie war dein Urlaub in Italien?' - 'Fantastisch! Wir haben jeden Tag am Strand gelegen und leckere Pasta gegessen.'",
         "Dialog: 'Hast du am Samstag Peter getroffen?' - 'Nein, Peter war krank. Ich bin alleine ins Kino gegangen.'"
       ],
-      "titleDe": "Listening to Conversations about Past Vacations and Activities",
-      "explanationDe": "Everyday conversations frequently involve friends or coworkers recounting what they did over the weekend or during their holidays.\nListen for Perfekt constructions, temporal indicators (gestern, letztes Wochenende, vor einem Monat), and emotional evaluations (toll, anstrengend, langweilig).\n",
+      "titleDe": "Gespräche über Urlaub und Freizeit verstehen",
+      "explanationDe": "In Alltagsgesprächen erzählen Freunde oder Kollegen oft, was sie am Wochenende oder im Urlaub gemacht haben.\nHör auf das Perfekt, auf Zeitangaben (gestern, letztes Wochenende, vor einem Monat) und auf Bewertungen (toll, anstrengend, langweilig).\n",
       "examplesDe": [
         "Dialog: 'Wie war dein Urlaub in Italien?' - 'Fantastisch! Wir haben jeden Tag am Strand gelegen und leckere Pasta gegessen.'",
         "Dialog: 'Hast du am Samstag Peter getroffen?' - 'Nein, Peter war krank. Ich bin alleine ins Kino gegangen.'"
@@ -482,8 +482,8 @@
       "examples": [
         "Lieber Paul, ich bin gerade aus dem Urlaub in Wien zurückgekommen. Die Stadt hat mir sehr gut gefallen, weil die Museen wunderschön waren. Wir haben viel Kaffee getrunken. Wie geht es dir? Herzliche Grüße, Stefan."
       ],
-      "titleDe": "Composing an Informal Email about Past Events",
-      "explanationDe": "Writing an informal email about personal experiences requires greeting the recipient, describing events using the Perfekt, giving emotional reactions, and ending with an inquiry about the friend's life.\nEnsure correct sentence connectors (und, aber, weil) and punctuation.\n",
+      "titleDe": "Eine private E-Mail über Erlebnisse schreiben",
+      "explanationDe": "In einer privaten E-Mail über deine Erlebnisse begrüßt du die Person. Du erzählst im Perfekt, was du gemacht hast, und sagst, wie es dir gefallen hat. Am Ende fragst du, wie es der Person geht.\nBenutze die richtigen Verbindungswörter (und, aber, weil) und achte auf die Zeichensetzung.\n",
       "examplesDe": [
         "Lieber Paul, ich bin gerade aus dem Urlaub in Wien zurückgekommen. Die Stadt hat mir sehr gut gefallen, weil die Museen wunderschön waren. Wir haben viel Kaffee getrunken. Wie geht es dir? Herzliche Grüße, Stefan."
       ]
@@ -500,8 +500,8 @@
         "Am Samstag habe ich zuerst lange geschlafen. Danach habe ich eingekauft und am Nachmittag habe ich Freunde getroffen.",
         "Am Sonntag bin ich im Wald spazieren gegangen, weil das Wetter sehr schön war."
       ],
-      "titleDe": "Speaking: Reporting Past Activities and Weekend Plans",
-      "explanationDe": "To converse fluently at A2, learners must produce connected sentences describing what they did recently and what they intend to do next.\nUse temporal sequence markers such as zuerst (first), danach / dann (then), später (later), and schließlich (finally) to structure your monologue.\n",
+      "titleDe": "Sprechen: vom Wochenende erzählen und Pläne machen",
+      "explanationDe": "Auf A2 sprichst du in zusammenhängenden Sätzen. Du erzählst, was du gemacht hast und was du als Nächstes machen willst.\nMit Wörtern wie zuerst, danach / dann, später und schließlich ordnest du deine Erzählung.\n",
       "examplesDe": [
         "Am Samstag habe ich zuerst lange geschlafen. Danach habe ich eingekauft und am Nachmittag habe ich Freunde getroffen.",
         "Am Sonntag bin ich im Wald spazieren gegangen, weil das Wetter sehr schön war."
@@ -863,8 +863,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Complete the sentence using 'weil': 'Ich lerne Deutsch, weil... (I want to work in Germany)'.",
-        "modelAnswer": "Ich lerne Deutsch, weil ich in Deutschland arbeiten möchte."
+        "prompt": "Ich lerne Deutsch, weil...",
+        "modelAnswer": "Ich lerne Deutsch, weil ich in Deutschland arbeiten möchte.",
+        "instruction": {
+          "en": "Complete the sentence using 'weil'. Your reason: you want to work in Germany.",
+          "de": "Ergänze den Satz mit 'weil'. Dein Grund: Du willst in Deutschland arbeiten."
+        }
       }
     },
     {
@@ -909,8 +913,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Turn this direct question into an indirect question starting with 'Können Sie mir sagen...': 'Wo ist der Ausgang?'",
-        "modelAnswer": "Können Sie mir sagen, wo der Ausgang ist?"
+        "prompt": "Wo ist der Ausgang?",
+        "modelAnswer": "Können Sie mir sagen, wo der Ausgang ist?",
+        "instruction": {
+          "en": "Turn this direct question into an indirect question starting with 'Können Sie mir sagen...'.",
+          "de": "Mach aus der direkten Frage eine indirekte Frage. Beginne mit 'Können Sie mir sagen...'."
+        }
       }
     },
     {
@@ -1139,8 +1147,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Ask whether you need to change trains on the journey to Munich.",
-        "modelAnswer": "Muss ich auf dem Weg nach München umsteigen?"
+        "prompt": "",
+        "modelAnswer": "Muss ich auf dem Weg nach München umsteigen?",
+        "instruction": {
+          "en": "Ask whether you need to change trains on the journey to Munich.",
+          "de": "Frag, ob du auf der Fahrt nach München umsteigen musst."
+        }
       }
     },
     {
@@ -1185,8 +1197,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Describe what furniture is in your living room.",
-        "modelAnswer": "In meinem Wohnzimmer stehen ein bequemes Sofa, ein Fernseher und ein Tisch."
+        "prompt": "",
+        "modelAnswer": "In meinem Wohnzimmer stehen ein bequemes Sofa, ein Fernseher und ein Tisch.",
+        "instruction": {
+          "en": "Describe what furniture is in your living room.",
+          "de": "Beschreib, welche Möbel in deinem Wohnzimmer stehen."
+        }
       }
     },
     {
@@ -1231,8 +1247,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Say that you cannot come to work today because you have a headache.",
-        "modelAnswer": "Ich kann heute nicht zur Arbeit kommen, weil ich starke Kopfschmerzen habe."
+        "prompt": "",
+        "modelAnswer": "Ich kann heute nicht zur Arbeit kommen, weil ich starke Kopfschmerzen habe.",
+        "instruction": {
+          "en": "Say that you cannot come to work today because you have a headache.",
+          "de": "Sag, dass du heute nicht zur Arbeit kommen kannst, weil du Kopfschmerzen hast."
+        }
       }
     },
     {
@@ -1277,8 +1297,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Ask the shop assistant if you can try on the coat.",
-        "modelAnswer": "Kann ich diesen Mantel bitte anprobieren?"
+        "prompt": "",
+        "modelAnswer": "Kann ich diesen Mantel bitte anprobieren?",
+        "instruction": {
+          "en": "Ask the shop assistant if you can try on the coat.",
+          "de": "Frag die Verkäuferin, ob du den Mantel anprobieren kannst."
+        }
       }
     },
     {
@@ -1319,8 +1343,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Text: 'Frühstück ist im Zimmerpreis enthalten und wird im Erdgeschoss serviert.' - Does breakfast cost extra?",
-        "modelAnswer": "Nein, das Frühstück ist im Preis enthalten."
+        "prompt": "Frühstück ist im Zimmerpreis enthalten und wird im Erdgeschoss serviert.",
+        "modelAnswer": "Nein, das Frühstück ist im Preis enthalten.",
+        "instruction": {
+          "en": "Read the text. Does breakfast cost extra?",
+          "de": "Lies den Text. Muss man für das Frühstück extra bezahlen?"
+        }
       }
     },
     {
@@ -1361,8 +1389,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Text: 'Wegen eines Feiertags bleiben alle städtischen Ämter am Freitag geschlossen.' - Why are the offices closed on Friday?",
-        "modelAnswer": "Wegen eines Feiertags bleiben sie geschlossen."
+        "prompt": "Wegen eines Feiertags bleiben alle städtischen Ämter am Freitag geschlossen.",
+        "modelAnswer": "Wegen eines Feiertags bleiben sie geschlossen.",
+        "instruction": {
+          "en": "Read the text. Why are the offices closed on Friday?",
+          "de": "Lies den Text. Warum sind die Ämter am Freitag geschlossen?"
+        }
       }
     },
     {
@@ -1445,8 +1477,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Spoken text: 'Wir sind im Urlaub zwei Wochen durch Norwegen gewandert.' - Where did they spend their vacation?",
-        "modelAnswer": "In Norwegen."
+        "prompt": "Wir sind im Urlaub zwei Wochen durch Norwegen gewandert.",
+        "modelAnswer": "In Norwegen.",
+        "instruction": {
+          "en": "Read the spoken text. Where did they spend their vacation?",
+          "de": "Lies den gesprochenen Text. Wo haben sie ihren Urlaub gemacht?"
+        }
       }
     },
     {
@@ -1455,8 +1491,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Write a short email (approx. 35 words) to a friend about your last weekend. State where you went and what you did.",
-        "modelAnswer": "Liebe Laura, am Wochenende bin ich mit dem Zug nach Hamburg gefahren. Ich habe den Hafen besucht und mit Freunden Fischbrötchen gegessen. Das Wetter war herrlich. Was hast du gemacht? Viele Grüße, Julia."
+        "prompt": "",
+        "modelAnswer": "Liebe Laura, am Wochenende bin ich mit dem Zug nach Hamburg gefahren. Ich habe den Hafen besucht und mit Freunden Fischbrötchen gegessen. Das Wetter war herrlich. Was hast du gemacht? Viele Grüße, Julia.",
+        "instruction": {
+          "en": "Write a short email (approx. 35 words) to a friend about your last weekend. State where you went and what you did.",
+          "de": "Schreib eine kurze E-Mail (ca. 35 Wörter) an einen Freund über dein letztes Wochenende. Schreib, wo du warst und was du gemacht hast."
+        }
       }
     },
     {
@@ -1491,8 +1531,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Tell your conversation partner in two sentences what you did last Sunday.",
-        "modelAnswer": "Am Sonntag habe ich ein Buch gelesen und am Nachmittag habe ich meine Großeltern besucht."
+        "prompt": "",
+        "modelAnswer": "Am Sonntag habe ich ein Buch gelesen und am Nachmittag habe ich meine Großeltern besucht.",
+        "instruction": {
+          "en": "Tell your conversation partner in two sentences what you did last Sunday.",
+          "de": "Erzähl deinem Gesprächspartner in zwei Sätzen, was du letzten Sonntag gemacht hast."
+        }
       }
     },
     {
@@ -1501,8 +1545,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Describe what you plan to do next weekend using 'am Wochenende'.",
-        "modelAnswer": "Am Wochenende möchte ich mit meinen Freunden grillen und ins Kino gehen."
+        "prompt": "",
+        "modelAnswer": "Am Wochenende möchte ich mit meinen Freunden grillen und ins Kino gehen.",
+        "instruction": {
+          "en": "Describe what you plan to do next weekend using 'am Wochenende'.",
+          "de": "Beschreib, was du nächstes Wochenende machen willst. Benutze 'am Wochenende'."
+        }
       }
     },
     {
@@ -1609,8 +1657,8 @@
         "title": "Everyday topics and reasons",
         "description": "Vocabulary for health, clothes, home and travel, comparing things, and giving reasons with weil and dass.",
         "difficultyRank": 1,
-        "titleDe": "Everyday topics and reasons",
-        "descriptionDe": "Vocabulary for health, clothes, home and travel, comparing things, and giving reasons with weil and dass."
+        "titleDe": "Alltagsthemen und Gründe",
+        "descriptionDe": "Wörter für Gesundheit, Kleidung, Wohnen und Reisen, Dinge vergleichen und Gründe nennen mit weil und dass."
       },
       "lessonIds": [
         "a2-comparative-and-superlative",
@@ -1629,8 +1677,8 @@
         "title": "Talking about the past",
         "description": "Tell others what happened using the Perfekt and the Präteritum, in conversation, in speech and in an email.",
         "difficultyRank": 2,
-        "titleDe": "Talking about the past",
-        "descriptionDe": "Tell others what happened using the Perfekt and the Präteritum, in conversation, in speech and in an email."
+        "titleDe": "Über die Vergangenheit sprechen",
+        "descriptionDe": "Du erzählst mit dem Perfekt und dem Präteritum, was passiert ist: im Gespräch, beim Sprechen und in einer E-Mail."
       },
       "lessonIds": [
         "a2-listening-conversations-past-events",
@@ -1650,8 +1698,8 @@
         "title": "The dative case",
         "description": "Use dative pronouns and prepositions, reflexive verbs and adjective endings, and follow travel information and reports.",
         "difficultyRank": 3,
-        "titleDe": "The dative case",
-        "descriptionDe": "Use dative pronouns and prepositions, reflexive verbs and adjective endings, and follow travel information and reports."
+        "titleDe": "Der Dativ",
+        "descriptionDe": "Du benutzt Pronomen und Präpositionen mit Dativ, reflexive Verben und Adjektivendungen und verstehst Reiseinformationen und Meldungen."
       },
       "lessonIds": [
         "a2-adjective-declension-definite-articles",
@@ -1670,8 +1718,8 @@
         "title": "Prepositions and complex sentences",
         "description": "Say where and when with two-way and time prepositions, ask indirect questions, and read short news reports.",
         "difficultyRank": 4,
-        "titleDe": "Prepositions and complex sentences",
-        "descriptionDe": "Say where and when with two-way and time prepositions, ask indirect questions, and read short news reports."
+        "titleDe": "Präpositionen und längere Sätze",
+        "descriptionDe": "Du sagst mit Wechselpräpositionen und Zeitpräpositionen, wo und wann etwas passiert, stellst indirekte Fragen und liest kurze Nachrichten."
       },
       "lessonIds": [
         "a2-indirect-questions-ob-w-fragen",

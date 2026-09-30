@@ -1,5 +1,5 @@
 {
-  "seedVersion": "5",
+  "seedVersion": "6",
   "formatVersion": 3,
   "track": "generic",
   "level": "C1",
@@ -10,8 +10,8 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "grammar",
-      "title": "Transformation zwischen Nominalstil und Verbalstil",
-      "explanation": "Auf der Niveaustufe C1 ist die souveräne Beherrschung des Nominalstils unerlässlich für das Verständnis und Verfassen von wissenschaftlichen, administrativen und publizistischen Fachtexten.\nBeim Nominalstil werden verbale Aussagen, insbesondere Nebensätze (Kausal-, Temporal-, Konditional- oder Konzessivsätze), durch komplexe Substantivierungen ersetzt, die in der Regel von Genitivattributen oder Präpositionalphrasen begleitet werden.\nHierbei transformieren sich temporale Konjunktionen (z. B. \"während\") in entsprechende Präpositionen (z. B. \"während\" + Genitiv), kausale Konjunktionen (\"weil\", \"da\") in Präpositionen wie \"aufgrund\", \"infolge\" oder \"wegen\", und konditionale Gefüge (\"wenn\", \"falls\") in \"bei\" (+ Dativ) oder \"im Falle\" (+ Genitiv).\nUmgekehrt erfordert die Dekodierung dichter Nominalketten im Leseverstehen die Fähigkeit zur Re-Verbalisierung, um syntaktische Transparenz und textuelle Zugänglichkeit herzustellen.\n",
+      "title": "Switching between Nominal Style and Verbal Style",
+      "explanation": "At C1, confident command of the nominal style is essential for understanding and writing academic, administrative and journalistic texts.\nIn the nominal style, verbal statements, especially subordinate clauses (causal, temporal, conditional or concessive), are replaced by complex nominalisations, usually accompanied by genitive attributes or prepositional phrases.\nTemporal conjunctions (e.g. \"während\") turn into the corresponding prepositions (e.g. \"während\" + genitive), causal conjunctions (\"weil\", \"da\") into prepositions such as \"aufgrund\", \"infolge\" or \"wegen\", and conditional constructions (\"wenn\", \"falls\") into \"bei\" (+ dative) or \"im Falle\" (+ genitive).\nConversely, decoding dense chains of nouns when reading requires the ability to turn them back into verbs, making the syntax transparent and the text accessible.\n",
       "examples": [
         "Weil die Weltbevölkerung rapide anwächst, geraten globale Ressourcen zunehmend unter Druck. -> Infolge des rapiden Anwachsens der Weltbevölkerung geraten globale Ressourcen zunehmend unter Druck.",
         "Bevor die Kommission das Gutachten publizierte, konsultierte sie renommierte Fachleute. -> Vor der Publikation des Gutachtens konsultierte die Kommission renommierte Fachleute.",
@@ -31,8 +31,8 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "grammar",
-      "title": "Erweiterte Partizipialattribute und Linksverzweigung",
-      "explanation": "Erweiterte Partizipialkonstruktionen stellen eines der markantesten stilistischen Merkmale der anspruchsvollen deutschen Schriftsprache dar.\nHierbei werden Relativsätze in vorangestellte Attribute transformiert, die zwischen dem Artikel bzw. Pronomen und dem Bezugsnomen positioniert werden (sogenannte Linksverzweigung).\nDas Partizip I (Partizip Präsens) drückt dabei eine aktive, gleichzeitige oder noch andauernde Handlung aus (\"die sich rasch entwickelnde Technologie\"), während das Partizip II (Partizip Perfekt) eine abgeschlossene Handlung im Passiv oder bei transitiven Verben im Aktiv ausdrückt (\"das von Experten erarbeitete Protokoll\").\nZur Auflösung und Konstruktion solcher Attribute muss die Dependenzkette vom Partizip rückwärts bis zu den modifizierenden Adverbialen und Ergänzungen exakt syntaktisch zugeordnet werden.\n",
+      "title": "Extended Participle Phrases and Left-Branching",
+      "explanation": "Extended participle constructions are one of the most striking stylistic features of demanding written German.\nRelative clauses are turned into attributes placed before the noun, between the article or pronoun and the noun they describe (so-called left-branching).\nPartizip I (present participle) expresses an active action that is simultaneous or still ongoing (\"die sich rasch entwickelnde Technologie\"), while Partizip II (past participle) expresses a completed action in the passive, or in the active with transitive verbs (\"das von Experten erarbeitete Protokoll\").\nTo build or unpack such attributes, you must trace the chain of dependencies backwards from the participle to the adverbials and complements that modify it, and assign each one correctly.\n",
       "examples": [
         "Die Richtlinien, die gestern von der zuständigen Behörde nach langen Verhandlungen verabschiedet wurden, treten umgehend in Kraft. -> Die gestern von der zuständigen Behörde nach langen Verhandlungen verabschiedeten Richtlinien treten umgehend in Kraft.",
         "Wissenschaftler, die über neuartige Ansätze zur CO2-Reduktion forschen, trafen sich in Bonn. -> Über neuartige Ansätze zur CO2-Reduktion forschende Wissenschaftler trafen sich in Bonn.",
@@ -52,8 +52,8 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "grammar",
-      "title": "Konjunktiv I, Redewiedergabe und epistemische Distanzierung",
-      "explanation": "In publizistischen Kommentaren, wissenschaftlichen Diskursen und Berichterstattungen dient der Konjunktiv I der neutralen, distanzierten Wiedergabe fremder Äußerungen oder Hypothesen.\nDer Konjunktiv I wird vom Präsensstamm des Verbs abgeleitet (Endungen: -e, -est, -e, -en, -et, -en).\nFällt eine Form des Konjunktivs I mit dem Indikativ Präsens zusammen (dies betrifft häufig die 1. Person Singular sowie die 1. und 3. Person Plural), muss sie zwingend durch den Konjunktiv II ersetzt werden, um Mehrdeutigkeit zu vermeiden.\nVergangenheitsformen werden im Konjunktiv einheitlich mit 'habe/sei' bzw. 'hätte/wäre' + Partizip II gebildet; Zukunftsbezüge und Passivformen nutzen 'werde/würde'.\n",
+      "title": "Konjunktiv I, Reported Speech and Epistemic Distance",
+      "explanation": "In journalistic commentary, academic discourse and news reporting, Konjunktiv I is used to report other people's statements or hypotheses neutrally and with distance.\nKonjunktiv I is derived from the present stem of the verb (endings: -e, -est, -e, -en, -et, -en).\nIf a Konjunktiv I form is identical to the present indicative (this often affects the 1st person singular and the 1st and 3rd person plural), it must be replaced by Konjunktiv II to avoid ambiguity.\nPast forms in the subjunctive are always built with \"habe/sei\" or \"hätte/wäre\" + past participle; references to the future and passive forms use \"werde/würde\".\n",
       "examples": [
         "Der Regierungssprecher betonte, das Kabinett habe alle Optionen eingehend geprüft und werde zeitnah handeln.",
         "Kritiker wandten ein, die Maßnahmen seien unzureichend und kämen für viele Betriebe schlicht zu spät.",
@@ -73,8 +73,8 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "grammar",
-      "title": "Passiv-Alternativen und modale Konkurrenzformen",
-      "explanation": "Im gehobenen Schrift- und Fachdeutsch werden anstelle des Vorgangspassivs mit Modalverben häufig stilistisch elegantere Passiv-Ersatzformen verwendet.\nHierzu gehören 'sein + zu + Infinitiv' (drückt Notwendigkeit oder Möglichkeit aus: 'Das Problem ist zu lösen' = muss/kann gelöst werden) sowie 'sich lassen + Infinitiv' (drückt ausschließlich Machbarkeit/Möglichkeit aus: 'Das lässt sich einrichten').\nZudem fungieren Adjektive mit den Suffixen '-bar', '-lich', '-abel' oder '-ibel' (z. B. 'machbar', 'begreiflich', 'praktikabel') als modale Prädikate mit Passivbedeutung.\nReflexive Konstruktionen mit passivischer Bedeutung ('Es fand sich keine Lösung') und Funktionsverbgefüge mit passivischem Charakter ('Anwendung finden', 'Beachtung finden') vervollständigen dieses Repertoire.\n",
+      "title": "Passive Alternatives and Competing Modal Forms",
+      "explanation": "In formal written and specialist German, stylistically more elegant passive substitutes are often used instead of the process passive with modal verbs.\nThese include \"sein + zu + infinitive\" (necessity or possibility: \"Das Problem ist zu lösen\" = must/can be solved) and \"sich lassen + infinitive\" (possibility or feasibility only: \"Das lässt sich einrichten\").\nAdjectives with the suffixes \"-bar\", \"-lich\", \"-abel\" or \"-ibel\" (e.g. \"machbar\", \"begreiflich\", \"praktikabel\") also act as modal predicates with a passive meaning.\nReflexive constructions with a passive meaning (\"Es fand sich keine Lösung\") and noun-verb collocations with a passive character (\"Anwendung finden\", \"Beachtung finden\") complete this repertoire.\n",
       "examples": [
         "Die aufgeworfenen Fragestellungen sind im Rahmen dieses Seminars zwingend zu vertiefen. (= müssen vertieft werden)",
         "Diese gravierende Diskrepanz lässt sich durch veränderte Erhebungsmethoden plausibel erklären. (= kann erklärt werden)",
@@ -96,8 +96,8 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "vocabulary",
-      "title": "Nomen-Verb-Verbindungen und Funktionsverbgefüge",
-      "explanation": "Funktionsverbgefüge (FVG) bestehen aus einem substantivierten Verb oder einem abstrakten Nomen und einem semantisch verblassten Funktionsverb (z. B. bringen, nehmen, stehen, stellen, ziehen).\nDie lexikalische Hauptbedeutung liegt beim Nomen, während das Verb primär grammatische Funktionen (Tempus, Modus, Genus verbi) und Aspekte (inchoativ = beginnend, durativ = andauernd, kausativ = bewirkend) übernimmt.\nTypische aktische Gefüge ('in Erwägung ziehen' = erwägen, 'zur Sprache bringen' = ansprechen) stehen passivischen Gefügen gegenüber ('in Erwägung stehen', 'zur Sprache kommen').\nDie idiomatisch korrekte Zuweisung von Präposition, Artikel und Verb ist ein zentrales Kriterium für C1-Sprachkompetenz.\n",
+      "title": "Noun-Verb Collocations and Function Verb Constructions",
+      "explanation": "Function verb constructions (Funktionsverbgefüge, FVG) consist of a nominalised verb or an abstract noun and a function verb whose meaning has faded (e.g. bringen, nehmen, stehen, stellen, ziehen).\nThe main lexical meaning lies in the noun, while the verb mainly carries grammatical information (tense, mood, voice) and aspect (inchoative = beginning, durative = continuing, causative = bringing about).\nTypical active constructions (\"in Erwägung ziehen\" = erwägen, \"zur Sprache bringen\" = ansprechen) contrast with passive ones (\"in Erwägung stehen\", \"zur Sprache kommen\").\nChoosing the idiomatically correct preposition, article and verb is a key criterion of C1 language competence.\n",
       "examples": [
         "Wir müssen sämtliche Eventualitäten sorgfältig in Betracht ziehen.",
         "Die kontroverse Thematik kam während der Podiumsdiskussion ausführlich zur Sprache.",
@@ -105,7 +105,7 @@
         "Die neuen Richtlinien treten mit Beginn des kommenden Geschäftsjahres in Kraft."
       ],
       "titleDe": "Nomen-Verb-Verbindungen und Funktionsverbgefüge",
-      "explanationDe": "Funktionsverbgefüge (FVG) bestehen aus einem substantivierten Verb oder einem abstrakten Nomen und einem semantisch verblassten Funktionsverb (z. B. bringen, nehmen, stehen, stellen, ziehen).\nDie lexikalische Hauptbedeutung liegt beim Nomen, während das Verb primär grammatische Funktionen (Tempus, Modus, Genus verbi) und Aspekte (inchoativ = beginnend, durativ = andauernd, kausativ = bewirkend) übernimmt.\nTypische aktische Gefüge ('in Erwägung ziehen' = erwägen, 'zur Sprache bringen' = ansprechen) stehen passivischen Gefügen gegenüber ('in Erwägung stehen', 'zur Sprache kommen').\nDie idiomatisch korrekte Zuweisung von Präposition, Artikel und Verb ist ein zentrales Kriterium für C1-Sprachkompetenz.\n",
+      "explanationDe": "Funktionsverbgefüge (FVG) bestehen aus einem substantivierten Verb oder einem abstrakten Nomen und einem semantisch verblassten Funktionsverb (z. B. bringen, nehmen, stehen, stellen, ziehen).\nDie lexikalische Hauptbedeutung liegt beim Nomen, während das Verb primär grammatische Funktionen (Tempus, Modus, Genus verbi) und Aspekte (inchoativ = beginnend, durativ = andauernd, kausativ = bewirkend) übernimmt.\nTypische aktivische Gefüge ('in Erwägung ziehen' = erwägen, 'zur Sprache bringen' = ansprechen) stehen passivischen Gefügen gegenüber ('in Erwägung stehen', 'zur Sprache kommen').\nDie idiomatisch korrekte Zuweisung von Präposition, Artikel und Verb ist ein zentrales Kriterium für C1-Sprachkompetenz.\n",
       "examplesDe": [
         "Wir müssen sämtliche Eventualitäten sorgfältig in Betracht ziehen.",
         "Die kontroverse Thematik kam während der Podiumsdiskussion ausführlich zur Sprache.",
@@ -119,8 +119,8 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "grammar",
-      "title": "Komplexe Konnektoren und Textkohäsion",
-      "explanation": "Zur Verknüpfung von Sinneinheiten in anspruchsvollen Texten verfügt das Deutsche auf C1-Niveau über differenzierte Konnektoren aller Wortarten (Konjunktionen, Subjunktionen, Konjunktionaladverbien und Präpositionalausdrücke).\nHierzu gehören konzessive Verknüpfungen ('wenngleich', 'obschon', 'ungeachtet dessen'), adversative Gegenüberstellungen ('demgegenüber', 'vielmehr', 'wohingegen') sowie konsekutive und kausale Ableitungen ('infolgedessen', 'demzufolge', 'mithin').\nPräpositionale Konnektoren verlangen meist den Genitiv ('anlässlich', 'in Anbetracht', 'kraft').\nEine präzise Textkohäsion erfordert zudem den gezielten Einsatz von Pronominaladverbien ('hierbei', 'demgegenüber', 'woraufhin'), um thematische Progression ohne redundante Satzstrukturen zu gewährleisten.\n",
+      "title": "Complex Connectors and Text Cohesion",
+      "explanation": "To link units of meaning in demanding texts, German at C1 offers a differentiated set of connectors from every word class (coordinating and subordinating conjunctions, conjunctional adverbs and prepositional expressions).\nThese include concessive links (\"wenngleich\", \"obschon\", \"ungeachtet dessen\"), adversative contrasts (\"demgegenüber\", \"vielmehr\", \"wohingegen\") and consecutive and causal inferences (\"infolgedessen\", \"demzufolge\", \"mithin\").\nPrepositional connectors usually require the genitive (\"anlässlich\", \"in Anbetracht\", \"kraft\").\nPrecise text cohesion also requires deliberate use of prepositional adverbs (\"hierbei\", \"demgegenüber\", \"woraufhin\") so that the topic can progress without repetitive sentence structures.\n",
       "examples": [
         "Wenngleich die experimentellen Befunde vielversprechend anmuten, bedürfen sie einer rigorosen Replikation.",
         "Die Investitionen wurden drastisch gekürzt; infolgedessen stagnierte die technologische Weiterentwicklung über Jahre.",
@@ -142,8 +142,8 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "grammar",
-      "title": "Modalpartikeln und diskursive Nuancierung",
-      "explanation": "Modalpartikeln (auch Abtönungspartikeln genannt, wie ja, doch, eben, halt, wohl, etwa, denn, eigentlich) dienen im gesprochenen und essayistischen Deutsch der Steuerung von Hörer- und Leserbezug.\nSie drücken epistemische Einstellungen, Erwartungshaltungen, Konsensannahmen oder feine emotionale Haltungen aus, ohne die propositionale Grundbedeutung des Satzes zu verändern.\nSo signalisiert 'ja', dass eine Information als allgemein bekannt vorausgesetzt wird; 'doch' fungiert als Appell oder Erinnerung; 'wohl' markiert eine begründete Vermutung oder Skepsis; 'denn' in Fragesätzen signalisiert echtes Interesse oder Irritation.\nAuf C1-Niveau ist das Erkennen von Subtext und Ironie eng an das Verständnis dieser Partikeln gekoppelt.\n",
+      "title": "Modal Particles and Nuance in Discourse",
+      "explanation": "Modal particles (also called Abtönungspartikeln, such as ja, doch, eben, halt, wohl, etwa, denn, eigentlich) are used in spoken and essayistic German to manage the relationship with the listener or reader.\nThey express attitudes towards knowledge, expectations, assumed consensus or subtle emotional stances, without changing the basic propositional meaning of the sentence.\nFor example, \"ja\" signals that information is assumed to be common knowledge; \"doch\" works as an appeal or reminder; \"wohl\" marks a reasoned assumption or scepticism; \"denn\" in questions signals genuine interest or irritation.\nAt C1, recognising subtext and irony is closely tied to understanding these particles.\n",
       "examples": [
         "Das war ja von vornherein zu erwarten, wenn man die Parameter analysiert.",
         "Sie werden doch wohl kaum behaupten, dass diese Kalkulation tragfähig ist!",
@@ -165,8 +165,8 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "vocabulary",
-      "title": "Gehobener Wortschatz und Abstraktbegriffe",
-      "explanation": "Das C1-Niveau zeichnet sich durch einen hochdifferenzierten Wortschatz aus, der präzise Beschreibungen komplexer Sachverhalte ohne Rückgriff auf vage Allgemeinplätze ermöglicht.\nZentral hierfür sind wissenschaftlich fundierte Abstraktbegriffe griechisch-lateinischen Ursprungs (Diskrepanz, Implikation, Ambiguität, Paradigma, Plausibilität) sowie gehobene genuine deutsche Lexeme (Zerrüttung, Unzulänglichkeit, Sachverhalt, Tragweite).\nEbenso entscheidend ist die Beherrschung stilistischer Registerunterschiede: Formulierungen wie 'konstatieren' statt 'feststellen', 'revozieren' statt 'zurücknehmen' oder 'marginalisieren' statt 'an den Rand drängen'.\nPräzision in Kollokationen und Konnotationen verhindert Fehlinterpretationen in anspruchsvollen Fachdiskursen.\n",
+      "title": "Elevated Vocabulary and Abstract Concepts",
+      "explanation": "C1 is marked by a highly differentiated vocabulary that allows complex matters to be described precisely, without falling back on vague commonplaces.\nCentral to this are academic abstract nouns of Greek and Latin origin (Diskrepanz, Implikation, Ambiguität, Paradigma, Plausibilität) as well as elevated native German words (Zerrüttung, Unzulänglichkeit, Sachverhalt, Tragweite).\nJust as important is command of stylistic register differences: phrasings such as \"konstatieren\" instead of \"feststellen\", \"revozieren\" instead of \"zurücknehmen\" or \"marginalisieren\" instead of \"an den Rand drängen\".\nPrecision in collocations and connotations prevents misinterpretation in demanding specialist discourse.\n",
       "examples": [
         "Die gravierende Diskrepanz zwischen Anspruch und Wirklichkeit ließ sich nicht länger leugnen.",
         "Diese technologische Innovation markiert einen fundamentalen Paradigmenwechsel in der Industrie.",
@@ -188,8 +188,8 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "vocabulary",
-      "title": "Feste Präposition-Nomen-Verbindungen",
-      "explanation": "Feste Präposition-Nomen-Verbindungen (oft auch als sekundäre oder komplexe Präpositionalphrasen bezeichnet) strukturieren formelle Stellungnahmen und Fachtexte.\nSie bestehen aus einer Präposition, einem Substantiv und meist einer Genitiv- oder Dativanbindung.\nTypische Beispiele umfassen: 'im Hinblick auf (+ Akk.)', 'in Anbetracht (+ Gen.)', 'anhand (+ Gen.)', 'unter Berücksichtigung (+ Gen.)', 'auf Veranlassung (+ Gen.)' sowie 'im Einklang mit (+ Dat.)'.\nFehlerhafte Rektionen oder falsche Präpositionswahlen fallen in Texten des C1-Niveaus sofort als registerinadäquat auf.\n",
+      "title": "Fixed Preposition-Noun Phrases",
+      "explanation": "Fixed preposition-noun phrases (often called secondary or complex prepositional phrases) structure formal statements and specialist texts.\nThey consist of a preposition, a noun and usually a genitive or dative link.\nTypical examples include: \"im Hinblick auf (+ acc.)\", \"in Anbetracht (+ gen.)\", \"anhand (+ gen.)\", \"unter Berücksichtigung (+ gen.)\", \"auf Veranlassung (+ gen.)\" and \"im Einklang mit (+ dat.)\".\nIn C1 texts, wrong case government or the wrong choice of preposition immediately stands out as inappropriate to the register.\n",
       "examples": [
         "Im Hinblick auf die ökonomische Nachhaltigkeit müssen die Weichen jetzt gestellt werden.",
         "Das Verfahren wurde in Anbetracht der geringen Schuld des Angeklagten eingestellt.",
@@ -211,8 +211,8 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "grammar",
-      "title": "Subjektloses Passiv und unpersönliche Satzkonstruktionen",
-      "explanation": "Das Deutsche erlaubt im Vorgangspassiv die Bildung subjektloser Sätze, wenn intransitive Verben verwendet werden ('Hier wird gearbeitet', 'Ihm wurde geholfen').\nIm Vorfeld kann ein formales Pronominalelement 'Es' stehen ('Es wurde bis spät in die Nacht debattiert'), das jedoch entfällt, sobald ein anderes Satzglied die Spitzenposition besetzt ('Bis spät in die Nacht wurde debattiert').\nZusätzlich dienen unpersönliche Konstruktionen mit reflexiven Verben ('Es empfiehlt sich, ...', 'Es handelt sich um ...') oder adjektivischen Prädikaten ('Es ist unabdingbar, dass ...') der wissenschaftlichen Entpersönlichung des Diskurses.\nSie ermöglichen die Konzentration auf den Prozess und die Sachebene, indem handelnde Akteure bewusst in den Hintergrund gerückt werden.\n",
+      "title": "The Subjectless Passive and Impersonal Constructions",
+      "explanation": "In the process passive, German allows subjectless sentences when intransitive verbs are used (\"Hier wird gearbeitet\", \"Ihm wurde geholfen\").\nA formal placeholder \"Es\" can stand in first position (\"Es wurde bis spät in die Nacht debattiert\"), but it disappears as soon as another sentence element takes the first position (\"Bis spät in die Nacht wurde debattiert\").\nIn addition, impersonal constructions with reflexive verbs (\"Es empfiehlt sich, ...\", \"Es handelt sich um ...\") or adjectival predicates (\"Es ist unabdingbar, dass ...\") make academic discourse impersonal.\nThey let the text focus on the process and the facts by deliberately moving the people acting into the background.\n",
       "examples": [
         "Auf der Konferenz wurde intensiv über alternative Energiekonzepte debattiert.",
         "Gegen die geplante Trassenführung wurde vonseiten der Bürgerinitiative wiederholt protestiert.",
@@ -234,8 +234,8 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "grammar",
-      "title": "Hypotaxe, Schachtelsätze und die klassische Satzperiode",
-      "explanation": "Das C1-Niveau verlangt das Beherrschen mehrfach untergeordneter Nebensatzstrukturen (Hypotaxen), ohne den roten Faden der syntaktischen Satzklammer zu verlieren.\nIn anspruchsvollen literarischen und wissenschaftlichen Texten treffen subordinierende Kettensätze aufeinander, bei denen Nebensätze zweiten oder dritten Grades von übergeordneten Nebensätzen abhängen.\nHäufig treten Parenthesen (eingeschobene Zusätze mit Gedankenstrichen oder Kommata) und Infinitivkonstruktionen hinzu.\nEntscheidend ist die präzise Platzierung der Finitumsformen am Satzende sowie die korrekte logische Hierarchisierung der Teilaussagen innerhalb einer ausladenden Satzperiode.\n",
+      "title": "Hypotaxis, Nested Sentences and the Classical Period",
+      "explanation": "C1 requires command of multiply subordinated clause structures (hypotaxis) without losing track of the sentence bracket.\nIn demanding literary and academic texts, chains of subordinate clauses meet, with second- or third-degree subordinate clauses depending on higher-level subordinate clauses.\nParentheses (inserted remarks set off by dashes or commas) and infinitive constructions are frequently added.\nWhat matters is placing the finite verbs precisely at the end of their clauses and arranging the partial statements in the correct logical hierarchy within a long, sweeping sentence.\n",
       "examples": [
         "Dass die Maßnahmen, die zwar von der Regierung mit großem Nachdruck beschlossen worden waren, letztlich wirkungslos blieben, überraschte niemanden, der die Materie kannte.",
         "Obgleich der Autor behauptet, die Quellenlage hinreichend gewürdigt zu haben, drängt sich dem Leser der Eindruck auf, dass wesentliche Dokumente absichtlich ignoriert wurden.",
@@ -255,13 +255,13 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "vocabulary",
-      "title": "Rhetorische Stilmittel und situative Registervariation",
-      "explanation": "Souveräne Sprachverwendung auf C1-Niveau erfordert den gezielten Einsatz rhetorischer Figuren und die Fähigkeit, flexibel zwischen verschiedenen Sprachebenen zu wechseln.\nZu den wirksamsten Stilmitteln im gehobenen Diskurs zählen Euphemismen (beschönigende Umschreibungen), Litotes (doppelte Verneinung zur Hervorhebung: 'nicht unbedeutend'), Oxymora ('beredtes Schweigen'), Antithesen sowie Chiasmen.\nParallel dazu muss der Lernende das neutrale Schriftdeutsch, das akademische Fachregister, die juristisch-administrative Verwaltungssprache und den pointierten Feuilletonstil trennscharf anwenden können.\nFehlgriffe, etwa die Verwendung umgangssprachlicher Wendungen in akademischen Arbeiten oder übertriebener Archaismen in sachlichen Berichten, müssen vermieden werden.\n",
+      "title": "Rhetorical Devices and Register Variation",
+      "explanation": "Confident language use at C1 requires the deliberate use of rhetorical figures and the ability to switch flexibly between different levels of language.\nAmong the most effective devices in elevated discourse are euphemisms (softening paraphrases), litotes (double negation for emphasis: \"nicht unbedeutend\"), oxymorons (\"beredtes Schweigen\"), antitheses and chiasmus.\nAt the same time, learners must be able to keep neutral written German, the academic register, legal and administrative language and the pointed style of the arts pages clearly apart.\nMissteps such as colloquial phrases in academic papers or exaggerated archaisms in factual reports must be avoided.\n",
       "examples": [
-        "Es handelt sich bei diesem Manöver um einen nicht ungeschickten Schachzug der Opposition. (Litotes)",
-        "Das Unternehmen trennte sich von Mitarbeitern, um 'Synergieeffekte freizusetzen'. (Euphemismus für Entlassungen)",
+        "Es handelt sich bei diesem Manöver um einen nicht ungeschickten Schachzug der Opposition. (litotes)",
+        "Das Unternehmen trennte sich von Mitarbeitern, um 'Synergieeffekte freizusetzen'. (euphemism for redundancies)",
         "Der Friede ist nicht die Abwesenheit von Krieg, sondern eine Tugend, die aus der Stärke des Geistes entspringt.",
-        "Beredtes Schweigen herrschte im Saal, als die verheerenden Zahlen verkündet wurden. (Oxymoron)"
+        "Beredtes Schweigen herrschte im Saal, als die verheerenden Zahlen verkündet wurden. (oxymoron)"
       ],
       "titleDe": "Rhetorische Stilmittel und situative Registervariation",
       "explanationDe": "Souveräne Sprachverwendung auf C1-Niveau erfordert den gezielten Einsatz rhetorischer Figuren und die Fähigkeit, flexibel zwischen verschiedenen Sprachebenen zu wechseln.\nZu den wirksamsten Stilmitteln im gehobenen Diskurs zählen Euphemismen (beschönigende Umschreibungen), Litotes (doppelte Verneinung zur Hervorhebung: 'nicht unbedeutend'), Oxymora ('beredtes Schweigen'), Antithesen sowie Chiasmen.\nParallel dazu muss der Lernende das neutrale Schriftdeutsch, das akademische Fachregister, die juristisch-administrative Verwaltungssprache und den pointierten Feuilletonstil trennscharf anwenden können.\nFehlgriffe, etwa die Verwendung umgangssprachlicher Wendungen in akademischen Arbeiten oder übertriebener Archaismen in sachlichen Berichten, müssen vermieden werden.\n",
@@ -278,11 +278,11 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "reading",
-      "title": "Analytische Rezeption komplexer Sachtexte",
-      "explanation": "Das Lesen auf C1-Niveau umfasst anspruchsvolle essayistische, wissenschaftliche und fachjournalistische Texte mit hoher Informationsdichte und nicht-linearer Argumentation.\nDer Leser muss fähig sein, thematische Hauptstränge von digressiven Nebenüberlegungen zu unterscheiden, die argumentative Struktur zu rekonstruieren und die Perspektive des Verfassers offenzulegen.\nBesondere Hürden bilden hierbei terminologische Verdichtungen, implizite Querverweise auf zeitgeschichtliche oder philosophische Diskurse sowie syntaktische Verschachtelungen.\nEffizientes Lesen erfordert den Wechsel zwischen kursorischem Überfliegen (Skimming) zur Makrostrukturerfassung und selektivem Detailverstehen (Scanning) zur Extraktion logischer Prämissen.\n",
+      "title": "Analytical Reading of Complex Factual Texts",
+      "explanation": "Reading at C1 covers demanding essays, academic texts and specialist journalism with a high density of information and non-linear argumentation.\nReaders must be able to separate the main threads from digressions, reconstruct the structure of the argument and reveal the author's perspective.\nParticular hurdles are dense terminology, implicit references to historical or philosophical debates and nested syntax.\nEfficient reading requires switching between cursory skimming to grasp the overall structure and selective scanning for detail to extract the logical premises.\n",
       "examples": [
-        "Textauszug: 'Dass die Digitalisierung nicht per se emanzipatorischen Charakter trägt, sondern unter kapitalistischer Ägide vielmehr neue Formen entfremdeter Arbeit zeitigt, offenbart sich exemplarisch an den algorithmisch gesteuerten Prekariaten der Plattformökonomie.'",
-        "Frage zum Text: Welche Grundthese vertritt der Autor hinsichtlich digitaler Arbeitsplattformen? -> Sie führen trotz technologischer Fortschritte zu prekären und fremdbestimmten Arbeitsverhältnissen."
+        "Text excerpt: 'Dass die Digitalisierung nicht per se emanzipatorischen Charakter trägt, sondern unter kapitalistischer Ägide vielmehr neue Formen entfremdeter Arbeit zeitigt, offenbart sich exemplarisch an den algorithmisch gesteuerten Prekariaten der Plattformökonomie.'",
+        "Question on the text: Welche Grundthese vertritt der Autor hinsichtlich digitaler Arbeitsplattformen? -> Sie führen trotz technologischer Fortschritte zu prekären und fremdbestimmten Arbeitsverhältnissen."
       ],
       "titleDe": "Analytische Rezeption komplexer Sachtexte",
       "explanationDe": "Das Lesen auf C1-Niveau umfasst anspruchsvolle essayistische, wissenschaftliche und fachjournalistische Texte mit hoher Informationsdichte und nicht-linearer Argumentation.\nDer Leser muss fähig sein, thematische Hauptstränge von digressiven Nebenüberlegungen zu unterscheiden, die argumentative Struktur zu rekonstruieren und die Perspektive des Verfassers offenzulegen.\nBesondere Hürden bilden hierbei terminologische Verdichtungen, implizite Querverweise auf zeitgeschichtliche oder philosophische Diskurse sowie syntaktische Verschachtelungen.\nEffizientes Lesen erfordert den Wechsel zwischen kursorischem Überfliegen (Skimming) zur Makrostrukturerfassung und selektivem Detailverstehen (Scanning) zur Extraktion logischer Prämissen.\n",
@@ -297,11 +297,11 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "reading",
-      "title": "Dekodierung von Ironie, Subtext und impliziten Aussagen",
-      "explanation": "Auf der Stufe C1 reicht das Erfassen der wörtlichen Bedeutung (Denotation) nicht mehr aus; entscheidend ist das Erkennen von Konnotationen, Ironie, Sarkasmus und zwischen den Zeilen transportierten Botschaften.\nAutoren nutzen rhetorische Kunstgriffe wie Untertreibungen, scheinbare Zustimmung (konzessionierende Scheinargumente) oder auffällige Wortwahlen, um Vorbehalte oder Spott anzudeuten.\nTypische Indikatoren für Subtext sind Modalpartikeln ('ja', 'wohl'), konjunktivische Distanzierungen sowie Anführungszeichen zur Distanzierung von Schlagwörtern ('sogenannte Experten').\nAufgabe des Rezipienten ist es, die Diskrepanz zwischen explizitem Wortlaut und intendierter Aussage aufzudecken.\n",
+      "title": "Decoding Irony, Subtext and Implicit Statements",
+      "explanation": "At C1, grasping the literal meaning (denotation) is no longer enough; what matters is recognising connotations, irony, sarcasm and messages carried between the lines.\nAuthors use rhetorical tricks such as understatement, apparent agreement (conceding pseudo-arguments) or striking word choices to hint at reservations or mockery.\nTypical indicators of subtext are modal particles (\"ja\", \"wohl\"), distancing through the subjunctive and quotation marks that distance the writer from buzzwords (\"sogenannte Experten\").\nThe reader's task is to uncover the gap between the explicit wording and the intended message.\n",
       "examples": [
-        "Text: 'Ein wahrhaft meisterhafter Schachzug der Führungsetage: Nach monatelangen Beratungen präsentierte man ein Konzept, das die Probleme exakt dort belässt, wo sie zuvor waren.' (Gemeint ist: Das Konzept ist völlig unbrauchbar und ein Misserfolg).",
-        "Text: 'Man darf gespannt sein, wie lange die Koalition dieses harmonische Schauspiel noch aufrechterhalten kann.' (Bedeutung: In der Koalition gärt es; ein Bruch steht bevor)."
+        "Text: 'Ein wahrhaft meisterhafter Schachzug der Führungsetage: Nach monatelangen Beratungen präsentierte man ein Konzept, das die Probleme exakt dort belässt, wo sie zuvor waren.' (Meaning: the concept is completely useless and a failure.)",
+        "Text: 'Man darf gespannt sein, wie lange die Koalition dieses harmonische Schauspiel noch aufrechterhalten kann.' (Meaning: there is unrest in the coalition; a break-up is coming.)"
       ],
       "titleDe": "Dekodierung von Ironie, Subtext und impliziten Aussagen",
       "explanationDe": "Auf der Stufe C1 reicht das Erfassen der wörtlichen Bedeutung (Denotation) nicht mehr aus; entscheidend ist das Erkennen von Konnotationen, Ironie, Sarkasmus und zwischen den Zeilen transportierten Botschaften.\nAutoren nutzen rhetorische Kunstgriffe wie Untertreibungen, scheinbare Zustimmung (konzessionierende Scheinargumente) oder auffällige Wortwahlen, um Vorbehalte oder Spott anzudeuten.\nTypische Indikatoren für Subtext sind Modalpartikeln ('ja', 'wohl'), konjunktivische Distanzierungen sowie Anführungszeichen zur Distanzierung von Schlagwörtern ('sogenannte Experten').\nAufgabe des Rezipienten ist es, die Diskrepanz zwischen explizitem Wortlaut und intendierter Aussage aufzudecken.\n",
@@ -316,11 +316,11 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "listening",
-      "title": "Verstehen von akademischen Fachvorträgen und Kolloquien",
-      "explanation": "Das Hörverstehen auf C1-Niveau erfordert die Verarbeitung gesprochener Wissenschaftssprache mit hohem Abstraktionsgrad, schnellem Sprechtempo und dichter Informationsstruktur.\nIn universitären Vorlesungen, Keynotes oder wissenschaftlichen Kolloquien müssen Hörer in der Lage sein, komplexe Deduktionen simultan mitzuvollziehen und Hauptthesen von empirischen Beispielen zu trennen.\nErschwerend wirken akustische Nebengeräusche, spontane metakommunikative Einschübe des Dozenten ('Lassen Sie mich an dieser Stelle kurz einhaken...') sowie der Verzicht auf visuelle Textunterstützung.\nZentral ist hierbei das mentale Notieren von Signalwörtern zur Diskursgliederung (Gliederungssignale, Kontrastmarker, Fazitformeln).\n",
+      "title": "Understanding Academic Lectures and Colloquia",
+      "explanation": "Listening at C1 requires processing spoken academic language with a high level of abstraction, fast delivery and a dense information structure.\nIn university lectures, keynotes or academic colloquia, listeners must be able to follow complex deductions as they unfold and separate main theses from empirical examples.\nBackground noise, the lecturer's spontaneous remarks about the talk itself (\"Lassen Sie mich an dieser Stelle kurz einhaken...\") and the lack of visual text support make this harder.\nThe key is to make mental notes of signal words that structure the discourse (structuring signals, contrast markers, concluding formulas).\n",
       "examples": [
-        "Hörtext: 'Wenn wir nun die Paradigmen der klassischen Spieltheorie verlassen und stattdessen verhaltensökonomische Modelle zugrunde legen, stellen wir fest, dass Akteure keineswegs als rationale Nutzenmaximierer agieren. Vielmehr unterliegen Entscheidungsprozesse kognitiven Heuristiken, die unter Unsicherheit zu systematischen Verzerrungen führen.'",
-        "Verständnisfrage: Was ist der methodische Kern der Aussage? -> Abkehr vom Homo oeconomicus zugunsten psychologisch fundierter Heuristiken."
+        "Audio text: 'Wenn wir nun die Paradigmen der klassischen Spieltheorie verlassen und stattdessen verhaltensökonomische Modelle zugrunde legen, stellen wir fest, dass Akteure keineswegs als rationale Nutzenmaximierer agieren. Vielmehr unterliegen Entscheidungsprozesse kognitiven Heuristiken, die unter Unsicherheit zu systematischen Verzerrungen führen.'",
+        "Comprehension question: Was ist der methodische Kern der Aussage? -> Abkehr vom Homo oeconomicus zugunsten psychologisch fundierter Heuristiken."
       ],
       "titleDe": "Verstehen von akademischen Fachvorträgen und Kolloquien",
       "explanationDe": "Das Hörverstehen auf C1-Niveau erfordert die Verarbeitung gesprochener Wissenschaftssprache mit hohem Abstraktionsgrad, schnellem Sprechtempo und dichter Informationsstruktur.\nIn universitären Vorlesungen, Keynotes oder wissenschaftlichen Kolloquien müssen Hörer in der Lage sein, komplexe Deduktionen simultan mitzuvollziehen und Hauptthesen von empirischen Beispielen zu trennen.\nErschwerend wirken akustische Nebengeräusche, spontane metakommunikative Einschübe des Dozenten ('Lassen Sie mich an dieser Stelle kurz einhaken...') sowie der Verzicht auf visuelle Textunterstützung.\nZentral ist hierbei das mentale Notieren von Signalwörtern zur Diskursgliederung (Gliederungssignale, Kontrastmarker, Fazitformeln).\n",
@@ -335,11 +335,11 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "listening",
-      "title": "Rezeption mehrstimmiger Debatten und Podiumsdiskussionen",
-      "explanation": "Das Verfolgen kontroverser Podiumsdiskussionen, parlamentarischer Debatten oder Radio-Features konfrontiert Lernende mit mehreren Sprechern, wechselnden Registern und überlappender Rede.\nHörer müssen imstande sein, rasche Themenwechsel, Unterbrechungen, polemische Spitzen und rhetorische Ausweichmanöver in Echtzeit zu dechiffrieren.\nDabei muss stets zugeordnet werden: Welche Partei vertritt welche Position? Wer reagiert auf welches Argument? Welche Aussagen sind sachliche Belege und welche reine Demagogie oder Polemik?\nAuch dialektale Färbungen und elliptische Satzstrukturen des gesprochenen Deutsch müssen ohne Verständnisverlust verarbeitet werden.\n",
+      "title": "Following Multi-Voice Debates and Panel Discussions",
+      "explanation": "Following controversial panel discussions, parliamentary debates or radio features confronts learners with several speakers, shifting registers and overlapping speech.\nListeners must be able to decode rapid changes of topic, interruptions, polemical jibes and rhetorical evasions in real time.\nThey must always work out: which side holds which position? Who is responding to which argument? Which statements are factual evidence and which are pure demagoguery or polemic?\nRegional accents and the elliptical sentence structures of spoken German must also be processed without losing comprehension.\n",
       "examples": [
-        "Sprecher A: 'Sie können doch nicht ernsthaft behaupten, dass diese Subventionen greifen!' - Sprecher B: 'Mit Verlaub, Herr Kollege, wenn Sie die Quartalsberichte zur Hand nähmen, statt populistische Parolen zu dreschen, wüssten Sie, dass die Exportzahlen gestiegen sind.'",
-        "Analyse: Sprecher B weist den Vorwurf von A zurück, indem er dessen Fachkompetenz angreift und sich auf konkrete Quartalszahlen beruft."
+        "Speaker A: 'Sie können doch nicht ernsthaft behaupten, dass diese Subventionen greifen!' - Speaker B: 'Mit Verlaub, Herr Kollege, wenn Sie die Quartalsberichte zur Hand nähmen, statt populistische Parolen zu dreschen, wüssten Sie, dass die Exportzahlen gestiegen sind.'",
+        "Analysis: Speaker B rejects the accusation from Speaker A by attacking the competence of Speaker A and pointing to concrete quarterly figures."
       ],
       "titleDe": "Rezeption mehrstimmiger Debatten und Podiumsdiskussionen",
       "explanationDe": "Das Verfolgen kontroverser Podiumsdiskussionen, parlamentarischer Debatten oder Radio-Features konfrontiert Lernende mit mehreren Sprechern, wechselnden Registern und überlappender Rede.\nHörer müssen imstande sein, rasche Themenwechsel, Unterbrechungen, polemische Spitzen und rhetorische Ausweichmanöver in Echtzeit zu dechiffrieren.\nDabei muss stets zugeordnet werden: Welche Partei vertritt welche Position? Wer reagiert auf welches Argument? Welche Aussagen sind sachliche Belege und welche reine Demagogie oder Polemik?\nAuch dialektale Färbungen und elliptische Satzstrukturen des gesprochenen Deutsch müssen ohne Verständnisverlust verarbeitet werden.\n",
@@ -354,11 +354,11 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "writing",
-      "title": "Verfassen differenzierter Kommentare und Essays",
-      "explanation": "Das Verfassen eines argumentativen Essays oder Kommentars auf C1-Niveau erfordert eine stringente Gliederung, profunde gedankliche Durchdringung und rhetorische Überzeugungskraft.\nNach einer prägnanten Hinführung zur Problematik (Aufhänger) folgt die dialektische Entfaltung der Argumente (These, Antithese, Synthese) unter Abwägung von Pro- und Kontra-Aspekten.\nWichtig ist das Vermeiden holzschnittartiger Polarisierungen; stattdessen müssen Ambivalenzen aufgezeigt, Gegenargumente antizipiert und entkräftet sowie logische Kausalitätsketten gebildet werden.\nDen Abschluss bildet ein ausgewogenes, in die Zukunft weisendes Fazit, das über das bloße Wiederholen der Thesen hinausgeht.\n",
+      "title": "Writing Nuanced Commentaries and Essays",
+      "explanation": "Writing an argumentative essay or commentary at C1 requires a rigorous structure, a thorough grasp of the ideas and rhetorical persuasiveness.\nA concise lead-in to the problem (the hook) is followed by a dialectical development of the arguments (thesis, antithesis, synthesis), weighing the pros and cons.\nAvoid crude, black-and-white polarisation; instead, show ambivalences, anticipate and refute counter-arguments and build logical chains of cause and effect.\nThe essay ends with a balanced, forward-looking conclusion that goes beyond merely repeating the theses.\n",
       "examples": [
-        "Einleitung: 'Die Debatte um den Einsatz generativer Künstlicher Intelligenz an Bildungseinrichtungen oszilliert gegenwärtig zwischen utopischer Euphorie und kulturpessimistischer Dystopie.'",
-        "Synthese: 'Statt eines technologiefeindlichen Verbotsregimes bedarf es vielmehr einer proaktiven Vermittlung kritischer Datenkompetenz, die Lernende dazu befähigt, die Grenzen algorithmischer Systeme reflektiert zu hinterfragen.'"
+        "Introduction: 'Die Debatte um den Einsatz generativer Künstlicher Intelligenz an Bildungseinrichtungen oszilliert gegenwärtig zwischen utopischer Euphorie und kulturpessimistischer Dystopie.'",
+        "Synthesis: 'Statt eines technologiefeindlichen Verbotsregimes bedarf es vielmehr einer proaktiven Vermittlung kritischer Datenkompetenz, die Lernende dazu befähigt, die Grenzen algorithmischer Systeme reflektiert zu hinterfragen.'"
       ],
       "titleDe": "Verfassen differenzierter Kommentare und Essays",
       "explanationDe": "Das Verfassen eines argumentativen Essays oder Kommentars auf C1-Niveau erfordert eine stringente Gliederung, profunde gedankliche Durchdringung und rhetorische Überzeugungskraft.\nNach einer prägnanten Hinführung zur Problematik (Aufhänger) folgt die dialektische Entfaltung der Argumente (These, Antithese, Synthese) unter Abwägung von Pro- und Kontra-Aspekten.\nWichtig ist das Vermeiden holzschnittartiger Polarisierungen; stattdessen müssen Ambivalenzen aufgezeigt, Gegenargumente antizipiert und entkräftet sowie logische Kausalitätsketten gebildet werden.\nDen Abschluss bildet ein ausgewogenes, in die Zukunft weisendes Fazit, das über das bloße Wiederholen der Thesen hinausgeht.\n",
@@ -373,11 +373,11 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "writing",
-      "title": "Strukturierung wissenschaftlicher Exposés und Berichte",
-      "explanation": "Das Verfassen wissenschaftlicher Arbeiten (Exposés, Forschungsberichte, Thesenpapiere) erfordert die Einhaltung strenger Konventionen bezüglich Aufbau, Objektivität und Stil.\nZentrale Elemente sind die Formulierung präziser Forschungsfragen, die Darlegung des methodischen Vorgehens, die Einordnung in den Forschungsstand sowie die Diskussion von Limitationen.\nGefordert ist ein sachlich-nüchterner Ton, die Vermeidung von Ich-Perspektiven durch unpersönliche Konstruktionen oder das Autoren-'Wir' und die exakte semantische Abgrenzung von Begriffen.\nZitate, Paraphrasen und Quellenverweise müssen harmonisch in den syntaktischen Satzfluss integriert werden.\n",
+      "title": "Structuring Academic Proposals and Reports",
+      "explanation": "Writing academic texts (research proposals, research reports, position papers) requires following strict conventions of structure, objectivity and style.\nCentral elements are formulating precise research questions, setting out the methodology, placing the work within the current state of research and discussing its limitations.\nThe tone must be factual and sober, the first person avoided through impersonal constructions or the authorial \"wir\", and terms defined with semantic precision.\nQuotations, paraphrases and references to sources must be woven smoothly into the flow of the sentence.\n",
       "examples": [
-        "Forschungsfrage: 'Im Zentrum der vorliegenden Untersuchung steht die Frage, inwieweit sozioökonomische Faktoren die Akzeptanz erneuerbarer Energien determinieren.'",
-        "Methodik: 'Zur Beantwortung dieser Fragestellung wurde ein qualitatives Forschungsdesign gewählt, das sich auf leitfadengestützte Experteninterviews stützt.'",
+        "Research question: 'Im Zentrum der vorliegenden Untersuchung steht die Frage, inwieweit sozioökonomische Faktoren die Akzeptanz erneuerbarer Energien determinieren.'",
+        "Methodology: 'Zur Beantwortung dieser Fragestellung wurde ein qualitatives Forschungsdesign gewählt, das sich auf leitfadengestützte Experteninterviews stützt.'",
         "Limitation: 'Einschränkend muss angemerkt werden, dass die Stichprobengröße keine uneingeschränkte Generalisierbarkeit der Befunde erlaubt.'"
       ],
       "titleDe": "Strukturierung wissenschaftlicher Exposés und Berichte",
@@ -394,12 +394,12 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "speaking",
-      "title": "Spontane, nuancierte Gesprächs- und Diskussionsführung",
-      "explanation": "Mündliche C1-Kompetenz manifestiert sich in der Fähigkeit, sich spontan, flüssig und ohne sichtbare Wortsuche auch zu hochabstrakten Themen zu äußern.\nIm Diskurs müssen Sprecher in der Lage sein, Nuancen von Zustimmung, Skepsis, Vorbehalt und Ablehnung präzise zu artikulieren.\nHierzu dienen Redemittel des Hedgings (vorsichtige Behauptungen: 'Ich wage zu bezweifeln, dass...'), der Unterbrechungssteuerung ('Darf ich an diesem Punkt kurz einhaken?'), des Zurückweisens von Unterbrechungen ('Lassen Sie mich diesen Gedanken bitte noch kurz zu Ende führen') und des Paraphrasierens ('Mit anderen Worten läuft Ihre Argumentation darauf hinaus, dass...').\nDie Aussprache und Intonation müssen natürlich sein und die beabsichtigten rhetorischen Akzente adäquat widerspiegeln.\n",
+      "title": "Leading Spontaneous, Nuanced Conversations and Discussions",
+      "explanation": "Spoken C1 competence shows in the ability to speak spontaneously and fluently, without obviously searching for words, even about highly abstract topics.\nIn discussion, speakers must be able to express shades of agreement, scepticism, reservation and rejection precisely.\nUseful phrases cover hedging (cautious claims: \"Ich wage zu bezweifeln, dass...\"), managing interruptions (\"Darf ich an diesem Punkt kurz einhaken?\"), fending off interruptions (\"Lassen Sie mich diesen Gedanken bitte noch kurz zu Ende führen\") and paraphrasing (\"Mit anderen Worten läuft Ihre Argumentation darauf hinaus, dass...\").\nPronunciation and intonation must sound natural and reflect the intended rhetorical emphasis.\n",
       "examples": [
-        "Zustimmung mit Vorbehalt: 'Ihrem Grundgedanken stimme ich vollkommen zu, wenngleich ich hinsichtlich der praktischen Umsetzbarkeit erhebliche Bedenken hege.'",
-        "Höfliche Richtigstellung: 'Da liegt meines Erachtens ein grundlegendes Missverständnis vor; mir ging es nicht um ein Verbot, sondern um eine stärkere Regulierung.'",
-        "Verhandlungsführung: 'Könnten wir uns auf den Kompromiss verständigen, dass wir zunächst eine Pilotphase initiieren, bevor wir über die finale Einführung entscheiden?'"
+        "Agreement with reservations: 'Ihrem Grundgedanken stimme ich vollkommen zu, wenngleich ich hinsichtlich der praktischen Umsetzbarkeit erhebliche Bedenken hege.'",
+        "Polite correction: 'Da liegt meines Erachtens ein grundlegendes Missverständnis vor; mir ging es nicht um ein Verbot, sondern um eine stärkere Regulierung.'",
+        "Negotiating: 'Könnten wir uns auf den Kompromiss verständigen, dass wir zunächst eine Pilotphase initiieren, bevor wir über die finale Einführung entscheiden?'"
       ],
       "titleDe": "Spontane, nuancierte Gesprächs- und Diskussionsführung",
       "explanationDe": "Mündliche C1-Kompetenz manifestiert sich in der Fähigkeit, sich spontan, flüssig und ohne sichtbare Wortsuche auch zu hochabstrakten Themen zu äußern.\nIm Diskurs müssen Sprecher in der Lage sein, Nuancen von Zustimmung, Skepsis, Vorbehalt und Ablehnung präzise zu artikulieren.\nHierzu dienen Redemittel des Hedgings (vorsichtige Behauptungen: 'Ich wage zu bezweifeln, dass...'), der Unterbrechungssteuerung ('Darf ich an diesem Punkt kurz einhaken?'), des Zurückweisens von Unterbrechungen ('Lassen Sie mich diesen Gedanken bitte noch kurz zu Ende führen') und des Paraphrasierens ('Mit anderen Worten läuft Ihre Argumentation darauf hinaus, dass...').\nDie Aussprache und Intonation müssen natürlich sein und die beabsichtigten rhetorischen Akzente adäquat widerspiegeln.\n",
@@ -415,12 +415,12 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "speaking",
-      "title": "Rhetorisch geschulte Präsentation komplexer Sachverhalte",
-      "explanation": "Ein strukturierter Fachvortrag auf C1-Niveau erfordert weit mehr als das bloße Aneinanderreihen von Fakten; er fordert meisterhafte Dramaturgie, Publikumsbezug und rhetorische Plastizität.\nDer Vortragende muss das Thema prägnant einführen, eine klare Roadmap skizzieren, Sinneinheiten durch transparente Meta-Kommunikation ('Kommen wir nun zum zweiten Kernaspekt...') verbinden und mit einem denkwürdigen Schlussakkord schließen.\nAbstrakte Zahlenkolonnen müssen in anschauliche Vergleiche überführt und Kernbotschaften durch rhetorische Fragen oder gezielte Pausen akzentuiert werden.\nIn der anschließenden Fragerunde gilt es, kritische Einwände gelassen aufzunehmen, zu strukturieren und präzise zu parieren.\n",
+      "title": "Presenting Complex Topics with Rhetorical Skill",
+      "explanation": "A structured specialist talk at C1 requires far more than lining up facts; it calls for skilful dramaturgy, engagement with the audience and vivid rhetoric.\nThe speaker must introduce the topic concisely, sketch a clear roadmap, link the sections with transparent signposting (\"Kommen wir nun zum zweiten Kernaspekt...\") and close with a memorable final note.\nAbstract columns of figures must be turned into vivid comparisons, and key messages emphasised with rhetorical questions or deliberate pauses.\nIn the question round that follows, critical objections should be taken up calmly, structured and answered precisely.\n",
       "examples": [
-        "Einleitung: 'Stellen Sie sich vor, wir könnten den globalen Primärenergiebedarf decken, ohne ein einziges Gramm Treibhausgas auszustoßen. Was wie Utopie klingt, ist Gegenstand unseres heutigen Vortrags über Fusionsenergie.'",
-        "Überleitung: 'Nachdem wir die physikalischen Hürden beleuchtet haben, drängt sich unweigerlich die ökonomische Dimension auf: Ist die Technologie überhaupt marktfähig?'",
-        "Schluss: 'Zusammenfassend lässt sich sagen: Die Fusionsenergie ist keine Patentlösung für die Gegenwart, aber ein unverzichtbarer Hoffnungsträger für die zweite Hälfte unseres Jahrhunderts.'"
+        "Introduction: 'Stellen Sie sich vor, wir könnten den globalen Primärenergiebedarf decken, ohne ein einziges Gramm Treibhausgas auszustoßen. Was wie Utopie klingt, ist Gegenstand unseres heutigen Vortrags über Fusionsenergie.'",
+        "Transition: 'Nachdem wir die physikalischen Hürden beleuchtet haben, drängt sich unweigerlich die ökonomische Dimension auf: Ist die Technologie überhaupt marktfähig?'",
+        "Conclusion: 'Zusammenfassend lässt sich sagen: Die Fusionsenergie ist keine Patentlösung für die Gegenwart, aber ein unverzichtbarer Hoffnungsträger für die zweite Hälfte unseres Jahrhunderts.'"
       ],
       "titleDe": "Rhetorisch geschulte Präsentation komplexer Sachverhalte",
       "explanationDe": "Ein strukturierter Fachvortrag auf C1-Niveau erfordert weit mehr als das bloße Aneinanderreihen von Fakten; er fordert meisterhafte Dramaturgie, Publikumsbezug und rhetorische Plastizität.\nDer Vortragende muss das Thema prägnant einführen, eine klare Roadmap skizzieren, Sinneinheiten durch transparente Meta-Kommunikation ('Kommen wir nun zum zweiten Kernaspekt...') verbinden und mit einem denkwürdigen Schlussakkord schließen.\nAbstrakte Zahlenkolonnen müssen in anschauliche Vergleiche überführt und Kernbotschaften durch rhetorische Fragen oder gezielte Pausen akzentuiert werden.\nIn der anschließenden Fragerunde gilt es, kritische Einwände gelassen aufzunehmen, zu strukturieren und präzise zu parieren.\n",
@@ -1487,8 +1487,8 @@
         "title": "Connectors and elevated vocabulary",
         "description": "Complex connectors, elevated and abstract vocabulary, fixed phrases and modal particles, used in live discussion and debate listening.",
         "difficultyRank": 1,
-        "titleDe": "Connectors and elevated vocabulary",
-        "descriptionDe": "Complex connectors, elevated and abstract vocabulary, fixed phrases and modal particles, used in live discussion and debate listening."
+        "titleDe": "Konnektoren und gehobener Wortschatz",
+        "descriptionDe": "Komplexe Konnektoren, gehobener und abstrakter Wortschatz, feste Wendungen und Modalpartikeln – angewandt in der Diskussion und beim Verstehen von Debatten."
       },
       "lessonIds": [
         "c1-feste-praeposition-nomen-wendungen",
@@ -1508,8 +1508,8 @@
         "title": "Nominal style and complex sentences",
         "description": "Nominal style, long nested sentences and participle phrases, applied to reading complex texts, following lectures and writing commentaries.",
         "difficultyRank": 2,
-        "titleDe": "Nominal style and complex sentences",
-        "descriptionDe": "Nominal style, long nested sentences and participle phrases, applied to reading complex texts, following lectures and writing commentaries."
+        "titleDe": "Nominalstil und komplexe Satzgefüge",
+        "descriptionDe": "Nominalstil, lange verschachtelte Sätze und Partizipialattribute – angewandt beim Lesen komplexer Texte, beim Verstehen von Vorträgen und beim Verfassen von Kommentaren."
       },
       "lessonIds": [
         "c1-komplexe-satzgefuege-und-satzperiode",
@@ -1528,8 +1528,8 @@
         "title": "Reported speech and impersonal style",
         "description": "Report speech with Konjunktiv I, choose between passive alternatives and impersonal constructions, and vary your register and style.",
         "difficultyRank": 3,
-        "titleDe": "Reported speech and impersonal style",
-        "descriptionDe": "Report speech with Konjunktiv I, choose between passive alternatives and impersonal constructions, and vary your register and style."
+        "titleDe": "Redewiedergabe und unpersönlicher Stil",
+        "descriptionDe": "Sie geben Äußerungen im Konjunktiv I wieder, wählen zwischen Passivalternativen und unpersönlichen Konstruktionen und variieren Register und Stil."
       },
       "lessonIds": [
         "c1-konjunktiv-eins-indirekte-rede",
@@ -1546,8 +1546,8 @@
         "title": "Subtext, rhetoric and academic writing",
         "description": "Read between the lines, present complex topics persuasively and structure academic reports.",
         "difficultyRank": 4,
-        "titleDe": "Subtext, rhetoric and academic writing",
-        "descriptionDe": "Read between the lines, present complex topics persuasively and structure academic reports."
+        "titleDe": "Subtext, Rhetorik und wissenschaftliches Schreiben",
+        "descriptionDe": "Sie lesen zwischen den Zeilen, präsentieren komplexe Themen überzeugend und gliedern wissenschaftliche Berichte."
       },
       "lessonIds": [
         "c1-erfassen-impliziter-bedeutungen",
