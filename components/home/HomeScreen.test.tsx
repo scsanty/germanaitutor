@@ -23,4 +23,10 @@ describe('HomeScreen', () => {
     await waitFor(() => expect(treeCalls()).toBe(2));
     await waitFor(() => expect(screen.queryByRole('button', { name: 'Switch' })).not.toBeInTheDocument());
   });
+
+  it('links to the dashboard', async () => {
+    vi.stubGlobal('fetch', vi.fn(() => delayedResponse({ placementStatus: 'taken', unlockNoticeLevel: null, ...TREE })));
+    renderWithIntl(<HomeScreen />);
+    expect(await screen.findByRole('link', { name: 'Dashboard' })).toHaveAttribute('href', '/dashboard');
+  });
 });

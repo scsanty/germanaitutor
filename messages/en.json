@@ -29,7 +29,24 @@
   "banner": {
     "providerTrouble": "Your active provider ({provider}) is having trouble: {error}. <link>Visit Settings</link> to fix it or switch providers."
   },
+  "dashboard": {
+    "title": "Dashboard",
+    "loading": "Loading your dashboard",
+    "loadFailed": "Could not load your dashboard. Please reload the page.",
+    "continueTitle": "Continue",
+    "continue": "Continue: {title}",
+    "nothingToContinue": "Pick a lesson from your tree to get started.",
+    "reviewsTitle": "Today's reviews",
+    "startReviews": "Start today’s {count} reviews",
+    "noReviews": "No reviews due today.",
+    "skillsTitle": "Progress by skill",
+    "ofTotal": "{done} of {total}",
+    "skill": { "grammar": "Grammar", "vocabulary": "Vocabulary", "reading": "Reading", "listening": "Listening", "writing": "Writing", "speaking": "Speaking" },
+    "activity": "Activity (12 weeks)",
+    "activityCell": "{date}: {count, plural, one {# answer} other {# answers}}"
+  },
   "home": {
+    "dashboardButton": "Dashboard",
     "title": "German AI Tutor",
     "dailyQueue": "Daily review",
     "settings": "Settings"

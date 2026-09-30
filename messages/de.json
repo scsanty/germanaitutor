@@ -29,7 +29,24 @@
   "banner": {
     "providerTrouble": "Dein aktiver KI-Anbieter ({provider}) hat Probleme: {error}. <link>Öffne die Einstellungen</link>, um das Problem zu beheben oder den Anbieter zu wechseln."
   },
+  "dashboard": {
+    "title": "Übersicht",
+    "loading": "Deine Übersicht wird geladen",
+    "loadFailed": "Deine Übersicht konnte nicht geladen werden. Bitte lade die Seite neu.",
+    "continueTitle": "Weitermachen",
+    "continue": "Weiter: {title}",
+    "nothingToContinue": "Wähle eine Lektion aus deinem Baum, um loszulegen.",
+    "reviewsTitle": "Heutige Wiederholungen",
+    "startReviews": "Heutige {count} Wiederholungen starten",
+    "noReviews": "Heute ist nichts fällig.",
+    "skillsTitle": "Fortschritt nach Fertigkeit",
+    "ofTotal": "{done} von {total}",
+    "skill": { "grammar": "Grammatik", "vocabulary": "Wortschatz", "reading": "Lesen", "listening": "Hören", "writing": "Schreiben", "speaking": "Sprechen" },
+    "activity": "Aktivität (12 Wochen)",
+    "activityCell": "{date}: {count, plural, one {# Antwort} other {# Antworten}}"
+  },
   "home": {
+    "dashboardButton": "Übersicht",
     "title": "German AI Tutor",
     "dailyQueue": "Tägliche Wiederholung",
     "settings": "Einstellungen"
