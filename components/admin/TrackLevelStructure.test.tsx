@@ -6,8 +6,8 @@ import { TrackLevelStructure } from './TrackLevelStructure';
 vi.mock('./DependencyDiagram', () => ({ DependencyDiagram: () => <p>diagram</p> }));
 
 const STRUCTURE = [
-  { milestone: { id: 'm1', title: 'Basics', description: null, difficultyRank: 1 }, lessons: [{ id: 'a1-greet', title: 'Saying hello' }], lessonsBuildingOnUnsorted: [] },
-  { milestone: { id: 'generic-a1-unsorted', title: 'Unsorted', description: null, difficultyRank: null }, lessons: [], lessonsBuildingOnUnsorted: [] },
+  { milestone: { id: 'm1', title: 'Basics', titleDe: 'Grundlagen', description: null, descriptionDe: null, difficultyRank: 1 }, lessons: [{ id: 'a1-greet', title: 'Saying hello' }], lessonsBuildingOnUnsorted: [] },
+  { milestone: { id: 'generic-a1-unsorted', title: 'Unsorted', titleDe: 'Unsortiert', description: null, descriptionDe: null, difficultyRank: null }, lessons: [], lessonsBuildingOnUnsorted: [] },
 ];
 
 function stub(routes: Record<string, (init?: RequestInit) => Promise<unknown>>) {
@@ -37,7 +37,7 @@ describe('TrackLevelStructure', () => {
   it('moves a lesson with "Move to…" and flags lessons building on Unsorted', async () => {
     const withFlag = [
       { ...STRUCTURE[0], lessonsBuildingOnUnsorted: ['a1-greet'] },
-      { milestone: { id: 'm2', title: 'Past', description: null, difficultyRank: 2 }, lessons: [], lessonsBuildingOnUnsorted: [] },
+      { milestone: { id: 'm2', title: 'Past', titleDe: 'Vergangenheit', description: null, descriptionDe: null, difficultyRank: 2 }, lessons: [], lessonsBuildingOnUnsorted: [] },
       { ...STRUCTURE[1], lessonsBuildingOnUnsorted: [] },
     ];
     const fetchMock = stub({
@@ -64,13 +64,14 @@ describe('TrackLevelStructure', () => {
     render(<TrackLevelStructure track="generic" level="A1" />);
     await screen.findByRole('heading', { name: '1. Basics' });
     fireEvent.change(screen.getByLabelText('New milestone title'), { target: { value: 'Past' } });
+    fireEvent.change(screen.getByLabelText('New milestone German title'), { target: { value: 'Vergangenheit' } });
     fireEvent.change(screen.getByLabelText('New milestone rank'), { target: { value: '2' } });
     fireEvent.click(screen.getByRole('button', { name: 'Add milestone' }));
     await waitFor(() =>
       expect(fetchMock).toHaveBeenCalledWith('/api/admin/curriculum/milestones', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ track: 'generic', level: 'A1', title: 'Past', description: null, difficultyRank: 2 }),
+        body: JSON.stringify({ track: 'generic', level: 'A1', title: 'Past', titleDe: 'Vergangenheit', description: null, descriptionDe: null, difficultyRank: 2 }),
       })
     );
   });
@@ -89,7 +90,7 @@ describe('TrackLevelStructure', () => {
     expect(fetchMock).toHaveBeenCalledWith('/api/admin/curriculum/milestones/m1', {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ title: 'Basics', description: null, difficultyRank: 0 }),
+      body: JSON.stringify({ title: 'Basics', titleDe: 'Grundlagen', description: null, descriptionDe: null, difficultyRank: 0 }),
     });
   });
 

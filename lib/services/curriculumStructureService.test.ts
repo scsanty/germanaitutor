@@ -15,22 +15,22 @@ describe('curriculumStructureService — milestones', () => {
   it('creates, updates and ranks milestones, and refuses bad ranks and Unsorted edits', () => {
     const db = createDbClient(':memory:');
     const service = createCurriculumStructureService(db);
-    const m = service.createMilestone('generic', 'A1', 'Basics', null, 2);
+    const m = service.createMilestone('generic', 'A1', { title: 'Basics', titleDe: 'Basics (de)', description: null, descriptionDe: null }, 2);
     expect(m).toMatchObject({ title: 'Basics', difficultyRank: 2 });
-    expect(service.updateMilestone(m.id, { title: 'Start', description: 'd', difficultyRank: 1 })).toMatchObject({
+    expect(service.updateMilestone(m.id, { title: 'Start', titleDe: 'Start (de)', description: 'd', descriptionDe: 'd (de)', difficultyRank: 1 })).toMatchObject({
       title: 'Start',
       description: 'd',
       difficultyRank: 1,
     });
-    expect(() => service.createMilestone('generic', 'A1', 'X', null, 1.5)).toThrow(/whole number/);
+    expect(() => service.createMilestone('generic', 'A1', { title: 'X', titleDe: 'X (de)', description: null, descriptionDe: null }, 1.5)).toThrow(/whole number/);
     const { milestoneId } = ensureUnsortedExists(db, 'generic', 'A1');
-    expect(() => service.updateMilestone(milestoneId, { title: 'U', description: null, difficultyRank: 1 })).toThrow(/Unsorted/);
+    expect(() => service.updateMilestone(milestoneId, { title: 'U', titleDe: 'U (de)', description: null, descriptionDe: null, difficultyRank: 1 })).toThrow(/Unsorted/);
   });
 
   it('moves a deleted milestone’s lessons to Unsorted', () => {
     const db = createDbClient(':memory:');
     const service = createCurriculumStructureService(db);
-    const m = service.createMilestone('generic', 'A1', 'Basics', null, 1);
+    const m = service.createMilestone('generic', 'A1', { title: 'Basics', titleDe: 'Basics (de)', description: null, descriptionDe: null }, 1);
     db.exec(`INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('l1', 'generic', 'A1', 'grammar', 'L1');
       INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES ('l1', '${m.id}');`);
     expect(service.previewMilestoneDelete(m.id)).toEqual({ lessons: [{ id: 'l1', title: 'L1' }] });
@@ -43,7 +43,7 @@ describe('curriculumStructureService — milestones', () => {
   it('previewMilestoneDelete lists every lesson that would move to Unsorted', () => {
     const db = createDbClient(':memory:');
     const service = createCurriculumStructureService(db);
-    const milestone = service.createMilestone('generic', 'A1', 'Basics', null, 1);
+    const milestone = service.createMilestone('generic', 'A1', { title: 'Basics', titleDe: 'Basics (de)', description: null, descriptionDe: null }, 1);
     insertLesson(db, 'a1-lesson-one', milestone.id);
 
     expect(service.previewMilestoneDelete(milestone.id)).toEqual({
@@ -54,7 +54,7 @@ describe('curriculumStructureService — milestones', () => {
   it('deleteMilestone relocates all its lessons to Unsorted, then removes it', () => {
     const db = createDbClient(':memory:');
     const service = createCurriculumStructureService(db);
-    const milestone = service.createMilestone('generic', 'A1', 'Basics', null, 1);
+    const milestone = service.createMilestone('generic', 'A1', { title: 'Basics', titleDe: 'Basics (de)', description: null, descriptionDe: null }, 1);
     insertLesson(db, 'a1-l1', milestone.id);
     insertLesson(db, 'a1-l2', milestone.id);
 
@@ -99,7 +99,7 @@ describe('scope checks on structure edits', () => {
   // Review Focus 5: lowering a rank below a milestone its lessons depend on is refused, and nothing changes.
   it('refuses a rank change that breaks the scope rule and keeps the old rank', () => {
     const { db, service } = setup();
-    expect(() => service.updateMilestone('m2', { title: 'Two', description: null, difficultyRank: 1 })).toThrow(
+    expect(() => service.updateMilestone('m2', { title: 'Two', titleDe: 'Two (de)', description: null, descriptionDe: null, difficultyRank: 1 })).toThrow(
       'Beta builds on Alpha, which is in a later or parallel milestone'
     );
     expect(db.prepare("SELECT difficulty_rank FROM milestones WHERE id = 'm2'").get()).toEqual({ difficulty_rank: 2 });
@@ -112,5 +112,12 @@ describe('scope checks on structure edits', () => {
     expect(() => service.moveLesson('b', 'm1')).toThrow(/later or parallel/);
     expect(() => service.moveLesson('a', 'm9')).toThrow(/belongs to generic\/A2/);
     expect(() => service.moveLesson('a', 'nope')).toThrow(/not found/);
+  });
+
+  it('requires a German milestone title', () => {
+    const service = createCurriculumStructureService(createDbClient(':memory:'));
+    expect(() => service.createMilestone('generic', 'A1', { title: 'A', titleDe: '', description: null, descriptionDe: null }, 1)).toThrow(
+      'German title is required'
+    );
   });
 });

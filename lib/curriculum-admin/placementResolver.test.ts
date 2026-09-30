@@ -30,13 +30,18 @@ describe('resolvePlacement', () => {
 
   it('creates a new milestone with its rank', () => {
     const db = setup();
-    const id = resolvePlacement(db, 'generic', 'A1', { newMilestoneTitle: 'Later', newMilestoneRank: 3 }, 'create');
-    expect(db.prepare('SELECT title, difficulty_rank FROM milestones WHERE id = ?').get(id)).toEqual({ title: 'Later', difficulty_rank: 3 });
+    const id = resolvePlacement(db, 'generic', 'A1', { newMilestoneTitle: 'Later', newMilestoneTitleDe: 'Später', newMilestoneRank: 3 }, 'create');
+    expect(db.prepare('SELECT title, title_de, difficulty_rank FROM milestones WHERE id = ?').get(id)).toEqual({
+      title: 'Later',
+      title_de: 'Später',
+      difficulty_rank: 3,
+    });
   });
 
   it('rejects an invalid rank or an empty title', () => {
     const db = setup();
-    expect(() => resolvePlacement(db, 'generic', 'A1', { newMilestoneTitle: 'X', newMilestoneRank: 0 }, 'create')).toThrow(/rank/);
-    expect(() => resolvePlacement(db, 'generic', 'A1', { newMilestoneTitle: ' ', newMilestoneRank: 2 }, 'create')).toThrow(/title/);
+    expect(() => resolvePlacement(db, 'generic', 'A1', { newMilestoneTitle: 'X', newMilestoneTitleDe: 'X', newMilestoneRank: 0 }, 'create')).toThrow(/rank/);
+    expect(() => resolvePlacement(db, 'generic', 'A1', { newMilestoneTitle: 'X', newMilestoneTitleDe: ' ', newMilestoneRank: 2 }, 'create')).toThrow(/German title/);
+    expect(() => resolvePlacement(db, 'generic', 'A1', { newMilestoneTitle: ' ', newMilestoneTitleDe: 'X', newMilestoneRank: 2 }, 'create')).toThrow(/title/);
   });
 });

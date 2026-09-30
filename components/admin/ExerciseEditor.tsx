@@ -102,6 +102,24 @@ export function ExerciseContentFields({
   index: number;
   onChange: (content: ExerciseContent) => void;
 }) {
+  return (
+    <>
+      {typeSpecificFields(type, content, index, onChange)}
+      {type !== 'flashcard' && (
+        <InstructionFields
+          value={(content as { instruction?: { en: string; de: string } }).instruction}
+          index={index}
+          onChange={(instruction) => {
+            const { instruction: _old, ...rest } = content as unknown as Record<string, unknown>;
+            onChange((instruction ? { ...rest, instruction } : rest) as unknown as ExerciseContent);
+          }}
+        />
+      )}
+    </>
+  );
+}
+
+function typeSpecificFields(type: ExerciseType, content: ExerciseContent, index: number, onChange: (content: ExerciseContent) => void) {
   switch (type) {
     case 'multiple_choice':
       return <MultipleChoiceFields content={content as MultipleChoiceContent} index={index} onChange={onChange} />;
@@ -112,6 +130,36 @@ export function ExerciseContentFields({
     case 'free_text':
       return <FreeTextFields content={content as FreeTextContent} index={index} onChange={onChange} />;
   }
+}
+
+function InstructionFields({
+  value,
+  index,
+  onChange,
+}: {
+  value: { en: string; de: string } | undefined;
+  index: number;
+  onChange: (instruction: { en: string; de: string } | undefined) => void;
+}) {
+  const current = value ?? { en: '', de: '' };
+  // Spec: both empty means no instruction; the key is removed, never stored empty (Review Focus 4).
+  const emit = (next: { en: string; de: string }) => onChange(next.en === '' && next.de === '' ? undefined : next);
+  return (
+    <div>
+      <input
+        aria-label={`Exercise ${index + 1} instruction (English)`}
+        placeholder="Instruction (English)"
+        value={current.en}
+        onChange={(e) => emit({ ...current, en: e.target.value })}
+      />
+      <input
+        aria-label={`Exercise ${index + 1} instruction (German)`}
+        placeholder="Instruction (German)"
+        value={current.de}
+        onChange={(e) => emit({ ...current, de: e.target.value })}
+      />
+    </div>
+  );
 }
 
 function MultipleChoiceFields({

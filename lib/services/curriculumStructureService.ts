@@ -4,6 +4,7 @@ import type { Milestone } from '../curriculum/types';
 import { ensureUnsortedExists, unsortedMilestoneId } from '../curriculum-admin/unsortedBucket';
 import { assertPrerequisiteScope } from '../curriculum-admin/prerequisiteScope';
 import { randomSuffix } from '../curriculum-admin/randomId';
+import { milestoneTextProblems, type MilestoneTexts } from '../curriculum/bilingualValidation';
 
 export interface DisplacedLesson {
   id: string;
@@ -46,6 +47,11 @@ export function assertValidRank(rank: unknown): number {
   return rank;
 }
 
+function assertMilestoneTexts(texts: MilestoneTexts): void {
+  const problems = milestoneTextProblems(texts);
+  if (problems.length > 0) throw new Error(problems.join('; '));
+}
+
 export function createCurriculumStructureService(db: Database.Database) {
   function getMilestone(id: string): Milestone {
     const row = db.prepare('SELECT * FROM milestones WHERE id = ?').get(id) as MilestoneRow | undefined;
@@ -62,31 +68,34 @@ export function createCurriculumStructureService(db: Database.Database) {
   function createMilestone(
     track: Track,
     level: CefrLevel,
-    title: string,
-    description: string | null,
+    texts: MilestoneTexts,
     difficultyRank: unknown
   ): Milestone {
     const rank = assertValidRank(difficultyRank);
-    if (!title?.trim()) throw new Error('A milestone needs a title');
+    if (!texts.title?.trim()) throw new Error('A milestone needs a title');
+    assertMilestoneTexts(texts);
     const id = `${track}-${level.toLowerCase()}-${randomSuffix()}`;
     db.prepare(
-      'INSERT INTO milestones (id, track, level, title, description, difficulty_rank) VALUES (?, ?, ?, ?, ?, ?)'
-    ).run(id, track, level, title.trim(), description, rank);
+      'INSERT INTO milestones (id, track, level, title, title_de, description, description_de, difficulty_rank) VALUES (?, ?, ?, ?, ?, ?, ?, ?)'
+    ).run(id, track, level, texts.title.trim(), texts.titleDe.trim(), texts.description, texts.descriptionDe, rank);
     return getMilestone(id);
   }
 
   function updateMilestone(
     id: string,
-    input: { title: string; description: string | null; difficultyRank: unknown }
+    input: MilestoneTexts & { difficultyRank: unknown }
   ): Milestone {
     const milestone = getMilestone(id);
     assertNotUnsorted(milestone);
     const rank = assertValidRank(input.difficultyRank);
     if (!input.title?.trim()) throw new Error('A milestone needs a title');
+    assertMilestoneTexts(input);
     db.transaction(() => {
-      db.prepare('UPDATE milestones SET title = ?, description = ?, difficulty_rank = ? WHERE id = ?').run(
+      db.prepare('UPDATE milestones SET title = ?, title_de = ?, description = ?, description_de = ?, difficulty_rank = ? WHERE id = ?').run(
         input.title.trim(),
+        input.titleDe.trim(),
         input.description,
+        input.descriptionDe,
         rank,
         id
       );
