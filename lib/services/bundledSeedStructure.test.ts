@@ -11,7 +11,7 @@ const files = readdirSync(DIR).filter((f) => f.endsWith('.json'));
 const seeds = files.map((f) => [f, JSON.parse(readFileSync(join(DIR, f), 'utf8')) as SeedFile] as const);
 // TEMPORARY gate while Task 6 lands track by track: tracks listed here are at seed version 6, the rest still at 5.
 // Add 'goethe' and 'telc' as their commits land, then remove the gate and expect '6' everywhere.
-const DONE_TRACKS = ['generic'];
+const DONE_TRACKS = ['generic', 'goethe'];
 
 describe('bundled curriculum seeds', () => {
   it('has all 15 track+level files at seed version 6, format 3', () => {
