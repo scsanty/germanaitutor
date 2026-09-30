@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
-import { screen, fireEvent } from '@testing-library/react';
+import { screen, fireEvent, waitFor } from '@testing-library/react';
 import { NextIntlClientProvider } from 'next-intl';
 import en from '@/messages/en.json';
 import { renderWithIntl } from '@/test/renderWithIntl';
@@ -249,7 +249,8 @@ describe('LessonPage', () => {
     expect(await screen.findByRole('button', { name: 'Practice again' })).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Get more exercises' }));
     await screen.findByText('Neu?');
-    expect(screen.queryByRole('button', { name: 'Practice again' })).not.toBeInTheDocument();
+    // onActiveChange reaches the page through an effect, so the button leaves a tick after the exercise shows.
+    await waitFor(() => expect(screen.queryByRole('button', { name: 'Practice again' })).not.toBeInTheDocument());
     fireEvent.click(screen.getByLabelText('ja'));
     fireEvent.click(screen.getByRole('button', { name: 'Check' }));
     fireEvent.click(await screen.findByRole('button', { name: 'Next' }));

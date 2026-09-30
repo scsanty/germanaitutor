@@ -46,6 +46,9 @@ export function DeleteLessonWizard({
   const [previewError, setPreviewError] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [deleting, setDeleting] = useState(false);
+  // True while a preview fetch is in flight. The queue is popped before the fetch resolves, so
+  // without this the wizard briefly looks finished (and offers Delete All) between two lessons.
+  const [fetching, setFetching] = useState(false);
   // Synchronous in-flight guard for the advance-effect below. `setQueue(rest)` dequeues
   // synchronously in the effect body, but `currentPreview` — the effect's only other
   // re-entry guard — isn't set until the fetch it kicks off actually resolves. A re-render
@@ -63,6 +66,7 @@ export function DeleteLessonWizard({
     setQueue(rest);
     setCurrentLessonId(nextId);
     previewFetchInFlight.current = true;
+    setFetching(true);
     fetch(`/api/admin/curriculum/lessons/${nextId}/delete-preview`)
       .then(async (r) => {
         if (!r.ok) {
@@ -79,6 +83,7 @@ export function DeleteLessonWizard({
       })
       .finally(() => {
         previewFetchInFlight.current = false;
+        setFetching(false);
       });
   }, [queue, currentPreview, decided, previewError]);
 
@@ -116,7 +121,7 @@ export function DeleteLessonWizard({
     }
   }
 
-  const isDone = currentPreview === null && queue.length === 0;
+  const isDone = currentPreview === null && queue.length === 0 && !fetching;
 
   // An unresolved preview-fetch failure always blocks the wizard here — checked
   // unconditionally, not gated on `!isDone` — so it's never silently swallowed as "no
