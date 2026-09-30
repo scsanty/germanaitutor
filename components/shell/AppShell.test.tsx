@@ -8,11 +8,11 @@ import { ShellProvider, useShell } from './ShellContext';
 const pathname = vi.hoisted(() => ({ value: '/' }));
 vi.mock('next/navigation', () => ({ usePathname: () => pathname.value }));
 
-function setWidth(desktop: boolean) {
+function setWidth(desktop: boolean, tablet = desktop) {
   vi.stubGlobal(
     'matchMedia',
     vi.fn((query: string) => ({
-      matches: desktop && query.includes('min-width: 1024px'),
+      matches: (desktop && query.includes('min-width: 1024px')) || (tablet && query.includes('min-width: 768px')),
       media: query,
       addEventListener: vi.fn(),
       removeEventListener: vi.fn(),
@@ -73,6 +73,30 @@ describe('AppShell', () => {
       expect(screen.queryByRole('navigation', { name: 'Main' })).not.toBeInTheDocument();
       expect(screen.getByText('page')).toBeInTheDocument();
     });
+  });
+
+  it('on a tablet: an icon-only sidebar whose links are still named', async () => {
+    setWidth(false, true);
+    renderShell();
+    const sidebar = screen.getByRole('navigation', { name: 'Main' });
+    expect(sidebar).not.toHaveTextContent('Dashboard');
+    expect(sidebar).not.toHaveTextContent('Learn');
+    expect(screen.getByRole('link', { name: 'Dashboard' })).toHaveAttribute('href', '/dashboard');
+    expect(await screen.findByRole('link', { name: 'Review (7 due)' })).toBeInTheDocument();
+  });
+
+  it('refetches the badge on navigation and not on bare routes', async () => {
+    setWidth(false);
+    const fetchMock = vi.fn(() => delayedResponse({ due: 7 }));
+    vi.stubGlobal('fetch', fetchMock);
+    const { unmount } = renderShell();
+    await screen.findByRole('link', { name: 'Review (7 due)' });
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    unmount();
+    pathname.value = '/onboarding';
+    renderShell();
+    await new Promise((r) => setTimeout(r, 20));
+    expect(fetchMock).toHaveBeenCalledTimes(1);
   });
 
   // Review Focus 5

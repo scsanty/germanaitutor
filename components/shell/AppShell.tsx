@@ -12,17 +12,24 @@ import { useShell } from './ShellContext';
 
 const BARE_ROUTES = ['/onboarding', '/admin/login'];
 
-function useReviewsDue(): number | null {
+// Refetched on every navigation so the badge follows the student's progress; skipped where the shell is hidden.
+function useReviewsDue(pathname: string, active: boolean): number | null {
   const [due, setDue] = useState<number | null>(null);
   useEffect(() => {
+    if (!active) return;
+    let stale = false;
     fetch('/api/tutoring/queue/count')
       .then(async (res) => {
-        if (!res.ok) return;
-        const data = (await res.json()) as { due?: unknown };
-        if (typeof data.due === 'number') setDue(data.due);
+        const data = res.ok ? ((await res.json()) as { due?: unknown }) : {};
+        if (!stale) setDue(typeof data.due === 'number' ? data.due : null);
       })
-      .catch(() => undefined);
-  }, []);
+      .catch(() => {
+        if (!stale) setDue(null);
+      });
+    return () => {
+      stale = true;
+    };
+  }, [pathname, active]);
   return due;
 }
 
@@ -58,10 +65,11 @@ export function AppShell({ children }: { children: ReactNode }) {
   const { focus } = useShell();
   const desktop = useMediaQuery('(min-width: 1024px)');
   const tablet = useMediaQuery('(min-width: 768px)');
-  const due = useReviewsDue();
+  const hidden = focus || BARE_ROUTES.some((route) => pathname.startsWith(route));
+  const due = useReviewsDue(pathname, !hidden);
   const tNav = useTranslations('nav');
 
-  if (focus || BARE_ROUTES.some((route) => pathname.startsWith(route))) return <>{children}</>;
+  if (hidden) return <>{children}</>;
 
   if (desktop || tablet) {
     return (
