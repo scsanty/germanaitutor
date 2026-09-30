@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useId, useState, type ReactNode } from 'react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import type { ProviderConnection, Profile, ProviderType, Theme } from '@/lib/types';
@@ -9,9 +9,36 @@ import { useApiErrorText } from '@/components/useApiErrorText';
 import { usePreferences } from '@/components/providers/PreferencesProvider';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Switch } from '@/components/ui/switch';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { NativeSelect } from '@/components/ui/native-select';
+import { Skeleton } from '@/components/ui/skeleton';
+import { CARD_GRID, SectionCard } from '@/components/SectionCard';
+import { cn } from '@/lib/utils';
+import { ArrowLeft, Download, Plus, RefreshCw, Trash2 } from 'lucide-react';
 
 const PROVIDER_TYPES: ProviderType[] = ['anthropic', 'openai', 'gemini', 'ollama'];
 const USAGE_WINDOW_DAYS = 7;
+const BUTTON = 'min-h-11';
+const SECONDARY = 'min-h-11 border border-border';
+
+// Connection status as a badge: the word carries it, the colour backs it up.
+const STATUS_BADGE: Record<ProviderConnection['lastValidatedStatus'], string> = {
+  valid: 'border-success/50 bg-success/10 text-success',
+  failing: 'border-warning/50 bg-warning/10 text-warning',
+  invalid: 'border-danger/50 bg-danger/10 text-danger',
+  untested: 'border-border text-text-muted',
+};
+
+function ErrorAlert({ children, className }: { children: ReactNode; className?: string }) {
+  return (
+    <Alert variant="destructive" role="alert" className={className}>
+      <AlertDescription>{children}</AlertDescription>
+    </Alert>
+  );
+}
 
 interface UsageTotals {
   requestCount: number;
@@ -22,6 +49,7 @@ export function SettingsPage() {
   const t = useTranslations('settings');
   const tCommon = useTranslations('common');
   const errorText = useApiErrorText();
+  const fieldId = useId();
   const { theme, soundEnabled, setTheme, setSoundEnabled } = usePreferences();
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loadFailed, setLoadFailed] = useState(false);
@@ -324,110 +352,154 @@ export function SettingsPage() {
     window.location.href = '/onboarding';
   }
 
-  if (loadFailed) return <p role="alert">{t('loadFailed')}</p>;
-  if (!profile) return <p>{tCommon('loading')}</p>;
+  if (loadFailed) return <ErrorAlert>{t('loadFailed')}</ErrorAlert>;
+  if (!profile)
+    return (
+      <div role="status" aria-label={tCommon('loading')} className={CARD_GRID}>
+        <Skeleton className="h-11 w-40 md:col-span-2" />
+        <Skeleton className="h-48 w-full md:col-span-2" />
+        <Skeleton className="h-40 w-full" />
+        <Skeleton className="h-40 w-full" />
+      </div>
+    );
 
   return (
-    <div>
-      <nav>
-        <Link href="/">{t('backHome')}</Link>
+    <div className={CARD_GRID}>
+      <nav className="md:col-span-2">
+        <Button asChild variant="ghost" className="-ml-3 min-h-11 text-text-muted hover:text-text">
+          <Link href="/">
+            <ArrowLeft aria-hidden />
+            {t('backHome')}
+          </Link>
+        </Button>
       </nav>
-      {profileError && <p role="alert">{profileError}</p>}
-      <section>
-        <h2>{t('providers')}</h2>
-        {providersFailed && <p role="alert">{t('providersLoadFailed')}</p>}
-        {actionError && <p role="alert">{actionError}</p>}
-        <ul>
-          {connections.map((c) => (
-            <li key={c.id}>
-              {c.providerType} (<span>{t(`connectionStatus.${c.lastValidatedStatus}`)}</span>)
-              {c.selectedModel ? ` — ${c.selectedModel}` : ''}
-              {c.isActive ? ` ${t('activeMarker')}` : ''}
-              <button onClick={() => handleSetActive(c.id)} disabled={c.isActive}>
-                {t('makeActive')}
-              </button>
-              <button onClick={() => handleRetest(c.id)}>{t('retest')}</button>
-              <button onClick={() => handleDelete(c.id)}>{t('remove')}</button>
-              <span>
-                {' '}
-                {t('usage', {
-                  requests: String(usage[c.id]?.requestCount ?? 0),
-                  tokens: String(usage[c.id]?.tokenCount ?? 0),
-                  days: String(USAGE_WINDOW_DAYS),
-                })}
-              </span>
-            </li>
-          ))}
-        </ul>
+      {profileError && <ErrorAlert className="md:col-span-2">{profileError}</ErrorAlert>}
+      <SectionCard title={t('providers')} className="md:col-span-2">
+        {providersFailed && <ErrorAlert>{t('providersLoadFailed')}</ErrorAlert>}
+        {actionError && <ErrorAlert>{actionError}</ErrorAlert>}
+        {connections.length > 0 && (
+          <ul className="flex flex-col gap-3">
+            {connections.map((c) => (
+              <li
+                key={c.id}
+                className={cn(
+                  'flex flex-col gap-3 rounded-lg border bg-surface p-4 lg:flex-row lg:items-center lg:justify-between',
+                  c.isActive ? 'border-primary/60' : 'border-border',
+                )}
+              >
+                <div className="flex min-w-0 flex-col gap-1.5">
+                  <p className="flex flex-wrap items-center gap-x-2 gap-y-1 font-semibold break-words">
+                    <span>
+                      {c.providerType}
+                      {c.selectedModel ? ` — ${c.selectedModel}` : ''}
+                      {c.isActive ? ` ${t('activeMarker')}` : ''}
+                    </span>
+                    <Badge variant="outline" className={STATUS_BADGE[c.lastValidatedStatus]}>
+                      {t(`connectionStatus.${c.lastValidatedStatus}`)}
+                    </Badge>
+                  </p>
+                  <p className="text-sm text-text-muted tabular-nums">
+                    {t('usage', {
+                      requests: String(usage[c.id]?.requestCount ?? 0),
+                      tokens: String(usage[c.id]?.tokenCount ?? 0),
+                      days: String(USAGE_WINDOW_DAYS),
+                    })}
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <Button variant="secondary" onClick={() => handleSetActive(c.id)} disabled={c.isActive} className={SECONDARY}>
+                    {t('makeActive')}
+                  </Button>
+                  <Button variant="secondary" onClick={() => handleRetest(c.id)} className={SECONDARY}>
+                    <RefreshCw aria-hidden />
+                    {t('retest')}
+                  </Button>
+                  <Button variant="destructive" onClick={() => handleDelete(c.id)} className={BUTTON}>
+                    <Trash2 aria-hidden />
+                    {t('remove')}
+                  </Button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
 
-        {!showAddProvider && <button onClick={() => setShowAddProvider(true)}>{t('addProvider')}</button>}
+        {!showAddProvider && (
+          <Button variant="secondary" onClick={() => setShowAddProvider(true)} className={cn(SECONDARY, 'self-start')}>
+            <Plus aria-hidden />
+            {t('addProvider')}
+          </Button>
+        )}
 
         {showAddProvider && addedConnectionId === null && (
-          <div>
-            <h3>{t('addProvider')}</h3>
-            <select
-              aria-label={t('newProviderType')}
-              value={newProviderType}
-              onChange={(e) => setNewProviderType(e.target.value as ProviderType)}
-            >
-              {PROVIDER_TYPES.map((p) => (
-                <option key={p} value={p}>
-                  {p}
-                </option>
-              ))}
-            </select>
-            {newProviderType === 'ollama' ? (
-              <input
-                value={newOllamaHost}
-                onChange={(e) => setNewOllamaHost(e.target.value)}
-                placeholder={t('ollamaHost')}
-              />
-            ) : (
-              <input
-                value={newApiKey}
-                onChange={(e) => setNewApiKey(e.target.value)}
-                placeholder={t('apiKey')}
-                type="password"
-              />
-            )}
-            <button onClick={handleAddProvider} disabled={adding}>
-              {t('saveProvider')}
-            </button>
-            <button onClick={closeAddProvider}>{t('cancel')}</button>
-            {addError && <p role="alert">{addError}</p>}
+          <div className="flex flex-col gap-3 rounded-lg border border-dashed border-border p-4">
+            <h3 className="text-base">{t('addProvider')}</h3>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <NativeSelect
+                aria-label={t('newProviderType')}
+                value={newProviderType}
+                onChange={(e) => setNewProviderType(e.target.value as ProviderType)}
+              >
+                {PROVIDER_TYPES.map((p) => (
+                  <option key={p} value={p}>
+                    {p}
+                  </option>
+                ))}
+              </NativeSelect>
+              {newProviderType === 'ollama' ? (
+                <Input value={newOllamaHost} onChange={(e) => setNewOllamaHost(e.target.value)} placeholder={t('ollamaHost')} className="h-11" />
+              ) : (
+                <Input value={newApiKey} onChange={(e) => setNewApiKey(e.target.value)} placeholder={t('apiKey')} type="password" className="h-11" />
+              )}
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <Button onClick={handleAddProvider} disabled={adding} className={BUTTON}>
+                {t('saveProvider')}
+              </Button>
+              <Button variant="secondary" onClick={closeAddProvider} className={SECONDARY}>
+                {t('cancel')}
+              </Button>
+            </div>
+            {addError && <ErrorAlert>{addError}</ErrorAlert>}
           </div>
         )}
 
         {showAddProvider && addedConnectionId !== null && (
-          <div>
-            <h3>{t('chooseModel')}</h3>
+          <div className="flex flex-col gap-3 rounded-lg border border-dashed border-border p-4">
+            <h3 className="text-base">{t('chooseModel')}</h3>
             {newModels.length > 0 ? (
-              <label>
-                {t('model')}
-                <select value={newSelectedModel} onChange={(e) => setNewSelectedModel(e.target.value)}>
+              <div className="flex flex-col gap-2">
+                <label htmlFor={`${fieldId}-model`} className="text-sm font-semibold">
+                  {t('model')}
+                </label>
+                <NativeSelect id={`${fieldId}-model`} value={newSelectedModel} onChange={(e) => setNewSelectedModel(e.target.value)}>
                   {newModels.map((m) => (
                     <option key={m.id} value={m.id}>
                       {m.label}
                     </option>
                   ))}
-                </select>
-              </label>
+                </NativeSelect>
+              </div>
             ) : modelsFailed ? (
-              <p role="alert">{modelsError}</p>
+              <ErrorAlert>{modelsError}</ErrorAlert>
             ) : (
-              <p>{modelsError ?? t('noModelsAvailable')}</p>
+              <p className="text-sm text-text-muted">{modelsError ?? t('noModelsAvailable')}</p>
             )}
-            <button onClick={handleSaveModel}>{t('done')}</button>
-            {modelSaveError && <p role="alert">{modelSaveError}</p>}
+            <Button onClick={handleSaveModel} className={cn(BUTTON, 'self-start')}>
+              {t('done')}
+            </Button>
+            {modelSaveError && <ErrorAlert>{modelSaveError}</ErrorAlert>}
           </div>
         )}
-      </section>
+      </SectionCard>
 
-      <section>
-        <h2>{t('dailyReview')}</h2>
-        <label>
-          {t('dailyReviewLimit')}{' '}
-          <input
+      <SectionCard title={t('dailyReview')}>
+        <div className="flex flex-col gap-2">
+          <label htmlFor={`${fieldId}-cap`} className="text-sm font-semibold">
+            {t('dailyReviewLimit')}
+          </label>
+          <Input
+            id={`${fieldId}-cap`}
             type="number"
             min={1}
             max={500}
@@ -435,60 +507,75 @@ export function SettingsPage() {
             value={capDraft ?? String(profile.dailyReviewCap)}
             onChange={(e) => setCapDraft(e.target.value)}
             onBlur={saveDailyReviewCap}
+            className="h-11 w-32 tabular-nums"
           />
-        </label>
-        <p>{t('dailyReviewHint')}</p>
-        {capError && <p role="alert">{capError}</p>}
-      </section>
+        </div>
+        <p className="text-sm text-text-muted">{t('dailyReviewHint')}</p>
+        {capError && <ErrorAlert>{capError}</ErrorAlert>}
+      </SectionCard>
 
-      <section>
-        <h2>{t('appearance')}</h2>
-        {preferenceError && <p role="alert">{preferenceError}</p>}
-        <RadioGroup value={theme} onValueChange={(value) => saveTheme(value as Theme)} aria-label={t('theme')}>
+      <SectionCard title={t('appearance')}>
+        {preferenceError && <ErrorAlert>{preferenceError}</ErrorAlert>}
+        <RadioGroup value={theme} onValueChange={(value) => saveTheme(value as Theme)} aria-label={t('theme')} className="grid grid-cols-3 gap-2">
           {(['dark', 'light', 'system'] as const).map((option) => (
-            <label key={option} className="flex items-center gap-2">
+            <label
+              key={option}
+              className="flex min-h-11 cursor-pointer items-center justify-center gap-2 rounded-lg border-2 border-border bg-surface px-2 py-2 text-sm font-medium transition-colors duration-150 hover:border-primary/50 has-[[data-state=checked]]:border-primary has-[[data-state=checked]]:bg-primary/10 motion-reduce:transition-none"
+            >
               <RadioGroupItem value={option} aria-label={t(`themeOption.${option}`)} />
               {t(`themeOption.${option}`)}
             </label>
           ))}
         </RadioGroup>
-        <label className="flex items-center gap-2">
-          <Switch checked={soundEnabled} onCheckedChange={saveSound} aria-label={t('sounds')} />
+        <label className="flex min-h-11 cursor-pointer items-center justify-between gap-3 rounded-lg border border-border bg-surface px-3 text-sm font-medium">
           {t('sounds')}
+          <Switch checked={soundEnabled} onCheckedChange={saveSound} aria-label={t('sounds')} />
         </label>
-      </section>
+      </SectionCard>
 
-      <section>
-        <h2>{t('backup')}</h2>
-        <button onClick={handleExport}>{t('exportBackup')}</button>
-        <input
+      <SectionCard title={t('backup')}>
+        <Button variant="secondary" onClick={handleExport} className={cn(SECONDARY, 'self-start')}>
+          <Download aria-hidden />
+          {t('exportBackup')}
+        </Button>
+        <Input
           type="file"
           accept=".gaitbackup"
           onChange={(e) => e.target.files?.[0] && handleImport(e.target.files[0])}
+          className="h-11 py-2 file:mr-3 file:rounded-md file:bg-surface-raised file:px-3"
         />
-        {backupError && <p role="alert">{backupError}</p>}
-        {importMessage && <p>{importMessage}</p>}
-      </section>
+        {backupError && <ErrorAlert>{backupError}</ErrorAlert>}
+        {importMessage && <p className="text-sm font-semibold text-success">{importMessage}</p>}
+      </SectionCard>
 
-      <section>
-        <h2>{t('dangerZone')}</h2>
+      <SectionCard title={t('dangerZone')} className="border-danger/40">
         {confirmingReset ? (
           <>
-            <p>{t('resetConfirm')}</p>
-            <button onClick={handleReset}>{t('resetYes')}</button>
-            <button onClick={() => setConfirmingReset(false)}>{t('cancel')}</button>
+            <p className="text-sm">{t('resetConfirm')}</p>
+            <div className="flex flex-wrap gap-2">
+              <Button variant="destructive" onClick={handleReset} className={BUTTON}>
+                {t('resetYes')}
+              </Button>
+              <Button variant="secondary" onClick={() => setConfirmingReset(false)} className={SECONDARY}>
+                {t('cancel')}
+              </Button>
+            </div>
           </>
         ) : (
-          <button onClick={() => setConfirmingReset(true)}>{t('reset')}</button>
+          <Button variant="destructive" onClick={() => setConfirmingReset(true)} className={cn(BUTTON, 'self-start')}>
+            <Trash2 aria-hidden />
+            {t('reset')}
+          </Button>
         )}
-        {resetError && <p role="alert">{resetError}</p>}
-      </section>
+        {resetError && <ErrorAlert>{resetError}</ErrorAlert>}
+      </SectionCard>
 
       {adminSession && (
-        <section>
-          <h2>{t('contentAdmin')}</h2>
-          <Link href="/admin/curriculum">{t('contentAdmin')}</Link>
-        </section>
+        <SectionCard title={t('contentAdmin')}>
+          <Button asChild variant="secondary" className={cn(SECONDARY, 'self-start')}>
+            <Link href="/admin/curriculum">{t('contentAdmin')}</Link>
+          </Button>
+        </SectionCard>
       )}
     </div>
   );

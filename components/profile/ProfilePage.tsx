@@ -9,6 +9,11 @@ import type { PlacementBestResult } from '@/lib/tutoring/placementTypes';
 import { levelsUpTo, TRACKS } from '@/lib/tutoring/levels';
 import { useApiErrorText } from '@/components/useApiErrorText';
 import { Input } from '@/components/ui/input';
+import { NativeSelect } from '@/components/ui/native-select';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Button } from '@/components/ui/button';
+import { Skeleton } from '@/components/ui/skeleton';
+import { CARD_GRID, SectionCard } from '@/components/SectionCard';
 
 export function ProfilePage() {
   const router = useRouter();
@@ -60,79 +65,108 @@ export function ProfilePage() {
     }
   }
 
-  if (loadFailed) return <p role="alert">{t('loadFailed')}</p>;
-  if (!profile) return <p>{tCommon('loading')}</p>;
+  if (loadFailed)
+    return (
+      <Alert variant="destructive" role="alert">
+        <AlertDescription>{t('loadFailed')}</AlertDescription>
+      </Alert>
+    );
+  if (!profile)
+    return (
+      <div role="status" aria-label={tCommon('loading')} className={CARD_GRID}>
+        <Skeleton className="h-9 w-40 md:col-span-2" />
+        <Skeleton className="h-36 w-full" />
+        <Skeleton className="h-36 w-full" />
+        <Skeleton className="h-36 w-full" />
+        <Skeleton className="h-36 w-full" />
+      </div>
+    );
 
   return (
-    <div>
-      <h1>{tProfile('title')}</h1>
-      {profileError && <p role="alert">{profileError}</p>}
-      <section>
-        <h2>{tProfile('name')}</h2>
+    <div className={CARD_GRID}>
+      <h1 className="text-3xl md:col-span-2 md:text-4xl">{tProfile('title')}</h1>
+      {profileError && (
+        <Alert variant="destructive" role="alert" className="md:col-span-2">
+          <AlertDescription>{profileError}</AlertDescription>
+        </Alert>
+      )}
+      <SectionCard title={tProfile('name')}>
         <Input
           aria-label={tProfile('nameLabel')}
           defaultValue={profile.displayName}
           onBlur={(e) => e.target.value !== profile.displayName && handleProfileChange({ displayName: e.target.value })}
+          className="h-11"
         />
-      </section>
+      </SectionCard>
 
-      <section>
-        <h2>{t('trackLevel')}</h2>
-        <select
-          aria-label={t('trackLabel')}
-          value={profile.activeTrack}
-          onChange={(e) => handleProfileChange({ activeTrack: e.target.value as Track })}
-        >
-          {TRACKS.map((track) => (
-            <option key={track} value={track}>
-              {tTracks(track)}
-            </option>
-          ))}
-        </select>
-        <select
-          aria-label={t('levelLabel')}
-          value={profile.activeLevel}
-          onChange={(e) => handleProfileChange({ activeLevel: e.target.value as Profile['activeLevel'] })}
-        >
-          {levelsUpTo(profile.highestUnlockedLevel).map((level) => (
-            <option key={level} value={level}>
-              {level}
-            </option>
-          ))}
-        </select>
-        {profile.highestUnlockedLevel !== 'C1' && <p>{t('levelHint', { level: profile.highestUnlockedLevel })}</p>}
-      </section>
+      <SectionCard title={t('trackLevel')}>
+        <div className="grid grid-cols-[minmax(0,2fr)_minmax(0,1fr)] gap-3">
+          <NativeSelect
+            aria-label={t('trackLabel')}
+            value={profile.activeTrack}
+            onChange={(e) => handleProfileChange({ activeTrack: e.target.value as Track })}
+          >
+            {TRACKS.map((track) => (
+              <option key={track} value={track}>
+                {tTracks(track)}
+              </option>
+            ))}
+          </NativeSelect>
+          <NativeSelect
+            aria-label={t('levelLabel')}
+            value={profile.activeLevel}
+            onChange={(e) => handleProfileChange({ activeLevel: e.target.value as Profile['activeLevel'] })}
+          >
+            {levelsUpTo(profile.highestUnlockedLevel).map((level) => (
+              <option key={level} value={level}>
+                {level}
+              </option>
+            ))}
+          </NativeSelect>
+        </div>
+        {profile.highestUnlockedLevel !== 'C1' && <p className="text-sm text-text-muted">{t('levelHint', { level: profile.highestUnlockedLevel })}</p>}
+      </SectionCard>
 
-      <section>
-        <h2>{t('placement')}</h2>
-        {placementFailed && <p role="alert">{t('placementLoadFailed')}</p>}
-        {placementBest === null && <p>{t('placementNone')}</p>}
+      <SectionCard title={t('placement')}>
+        {placementFailed && (
+          <Alert variant="destructive" role="alert">
+            <AlertDescription>{t('placementLoadFailed')}</AlertDescription>
+          </Alert>
+        )}
+        {placementBest === null && <p className="text-text-muted">{t('placementNone')}</p>}
         {placementBest && (
-          <p>
-            {t('placementBest', {
-              level: placementBest.placedLevel,
-              score: placementBest.score,
-              max: placementBest.maxScore,
-              date: placementBest.takenAt.slice(0, 10),
-            })}
-          </p>
+          <div className="flex items-center gap-4">
+            {/* The level at a glance; the sentence beside it says it in words. */}
+            <span aria-hidden className="font-heading text-4xl leading-none font-extrabold text-primary">
+              {placementBest.placedLevel}
+            </span>
+            <p className="min-w-0 text-sm">
+              {t('placementBest', {
+                level: placementBest.placedLevel,
+                score: placementBest.score,
+                max: placementBest.maxScore,
+                date: placementBest.takenAt.slice(0, 10),
+              })}
+            </p>
+          </div>
         )}
         {placementBest !== undefined && (
-          <Link href="/placement">{placementBest ? t('placementRetake') : t('placementTake')}</Link>
+          <Button asChild variant="secondary" size="lg" className="min-h-11 w-full border border-border sm:w-auto sm:self-start">
+            <Link href="/placement">{placementBest ? t('placementRetake') : t('placementTake')}</Link>
+          </Button>
         )}
-      </section>
+      </SectionCard>
 
-      <section>
-        <h2>{t('language')}</h2>
-        <select
+      <SectionCard title={t('language')}>
+        <NativeSelect
           aria-label={t('language')}
           value={profile.uiLanguage}
           onChange={(e) => handleProfileChange({ uiLanguage: e.target.value as 'en' | 'de' })}
         >
           <option value="en">English</option>
           <option value="de">Deutsch</option>
-        </select>
-      </section>
+        </NativeSelect>
+      </SectionCard>
     </div>
   );
 }
