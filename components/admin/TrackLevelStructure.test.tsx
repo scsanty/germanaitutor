@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { delayedResponse } from '@/test/delayedResponse';
 import { TrackLevelStructure } from './TrackLevelStructure';
@@ -21,10 +21,6 @@ function stub(routes: Record<string, (init?: RequestInit) => Promise<unknown>>) 
 }
 
 describe('TrackLevelStructure', () => {
-  beforeEach(() => {
-    vi.spyOn(window, 'confirm').mockReturnValue(true);
-  });
-
   it('lists milestones by rank with their lessons, and Unsorted without controls', async () => {
     stub({ 'GET /api/curriculum/tracks/generic/A1': () => delayedResponse(STRUCTURE) });
     render(<TrackLevelStructure track="generic" level="A1" />);
@@ -98,5 +94,18 @@ describe('TrackLevelStructure', () => {
     stub({ 'GET /api/curriculum/tracks/generic/A1': () => delayedResponse({}, { ok: false, status: 500 }) });
     render(<TrackLevelStructure track="generic" level="A1" />);
     expect(await screen.findByRole('alert')).toHaveTextContent('Failed to load structure');
+  });
+
+  it('deletes a milestone only after the dialog is confirmed', async () => {
+    const fetchMock = stub({
+      'GET /api/curriculum/tracks/generic/A1': () => delayedResponse(STRUCTURE),
+      'DELETE /api/admin/curriculum/milestones/m1': () => delayedResponse({ ok: true }),
+    });
+    render(<TrackLevelStructure track="generic" level="A1" />);
+    fireEvent.click(await screen.findByRole('button', { name: 'Delete milestone' }));
+    expect(await screen.findByRole('alertdialog')).toHaveTextContent('1 lesson(s) will move to Unsorted: Saying hello');
+    expect(fetchMock).not.toHaveBeenCalledWith('/api/admin/curriculum/milestones/m1', { method: 'DELETE' });
+    fireEvent.click(screen.getByRole('button', { name: 'Delete' }));
+    await waitFor(() => expect(fetchMock).toHaveBeenCalledWith('/api/admin/curriculum/milestones/m1', { method: 'DELETE' }));
   });
 });
