@@ -1,219 +1,8 @@
 {
-  "seedVersion": "2",
+  "seedVersion": "3",
+  "formatVersion": 2,
   "track": "generic",
   "level": "A1",
-  "milestones": [
-    {
-      "milestone": {
-        "id": "generic-a1-grammar",
-        "track": "generic",
-        "level": "A1",
-        "title": "Grammar",
-        "description": null,
-        "orderIndex": 0
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-a1-grammar-lessons",
-            "milestoneId": "generic-a1-grammar",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "a1-personal-pronouns",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "a1-regular-verbs-present",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "a1-verb-sein-haben",
-              "orderIndex": 2
-            },
-            {
-              "lessonId": "a1-definite-indefinite-articles",
-              "orderIndex": 3
-            },
-            {
-              "lessonId": "a1-sentence-structure-w-questions",
-              "orderIndex": 4
-            },
-            {
-              "lessonId": "a1-accusative-case-articles",
-              "orderIndex": 5
-            },
-            {
-              "lessonId": "a1-negation-nicht-kein",
-              "orderIndex": 6
-            },
-            {
-              "lessonId": "a1-separable-verbs",
-              "orderIndex": 7
-            },
-            {
-              "lessonId": "a1-modal-verbs-koennen-moechten",
-              "orderIndex": 8
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-a1-vocabulary",
-        "track": "generic",
-        "level": "A1",
-        "title": "Vocabulary",
-        "description": null,
-        "orderIndex": 1
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-a1-vocabulary-lessons",
-            "milestoneId": "generic-a1-vocabulary",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "a1-alphabet-greetings-numbers",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "a1-daily-routine-vocabulary",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "a1-food-shopping-vocabulary",
-              "orderIndex": 2
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-a1-reading",
-        "track": "generic",
-        "level": "A1",
-        "title": "Reading",
-        "description": null,
-        "orderIndex": 2
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-a1-reading-lessons",
-            "milestoneId": "generic-a1-reading",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "a1-reading-short-messages",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "a1-reading-classified-ads-notices",
-              "orderIndex": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-a1-listening",
-        "track": "generic",
-        "level": "A1",
-        "title": "Listening",
-        "description": null,
-        "orderIndex": 3
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-a1-listening-lessons",
-            "milestoneId": "generic-a1-listening",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "a1-listening-public-announcements",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "a1-listening-dialogues-numbers-prices",
-              "orderIndex": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-a1-writing",
-        "track": "generic",
-        "level": "A1",
-        "title": "Writing",
-        "description": null,
-        "orderIndex": 4
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-a1-writing-lessons",
-            "milestoneId": "generic-a1-writing",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "a1-writing-short-invitation",
-              "orderIndex": 0
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-a1-speaking",
-        "track": "generic",
-        "level": "A1",
-        "title": "Speaking",
-        "description": null,
-        "orderIndex": 5
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-a1-speaking-lessons",
-            "milestoneId": "generic-a1-speaking",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "a1-speaking-self-introduction",
-              "orderIndex": 0
-            }
-          ]
-        }
-      ]
-    }
-  ],
   "lessons": [
     {
       "id": "a1-personal-pronouns",
@@ -1349,6 +1138,98 @@
     {
       "lessonId": "a1-speaking-self-introduction",
       "prerequisiteLessonId": "a1-alphabet-greetings-numbers"
+    }
+  ],
+  "milestones": [
+    {
+      "milestone": {
+        "id": "generic-a1-grammar",
+        "track": "generic",
+        "level": "A1",
+        "title": "Grammar",
+        "description": null,
+        "difficultyRank": 1
+      },
+      "lessonIds": [
+        "a1-personal-pronouns",
+        "a1-regular-verbs-present",
+        "a1-verb-sein-haben",
+        "a1-definite-indefinite-articles",
+        "a1-sentence-structure-w-questions",
+        "a1-accusative-case-articles",
+        "a1-negation-nicht-kein",
+        "a1-separable-verbs",
+        "a1-modal-verbs-koennen-moechten"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-a1-vocabulary",
+        "track": "generic",
+        "level": "A1",
+        "title": "Vocabulary",
+        "description": null,
+        "difficultyRank": 2
+      },
+      "lessonIds": [
+        "a1-alphabet-greetings-numbers",
+        "a1-daily-routine-vocabulary",
+        "a1-food-shopping-vocabulary"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-a1-reading",
+        "track": "generic",
+        "level": "A1",
+        "title": "Reading",
+        "description": null,
+        "difficultyRank": 3
+      },
+      "lessonIds": [
+        "a1-reading-short-messages",
+        "a1-reading-classified-ads-notices"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-a1-listening",
+        "track": "generic",
+        "level": "A1",
+        "title": "Listening",
+        "description": null,
+        "difficultyRank": 4
+      },
+      "lessonIds": [
+        "a1-listening-public-announcements",
+        "a1-listening-dialogues-numbers-prices"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-a1-writing",
+        "track": "generic",
+        "level": "A1",
+        "title": "Writing",
+        "description": null,
+        "difficultyRank": 5
+      },
+      "lessonIds": [
+        "a1-writing-short-invitation"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-a1-speaking",
+        "track": "generic",
+        "level": "A1",
+        "title": "Speaking",
+        "description": null,
+        "difficultyRank": 6
+      },
+      "lessonIds": [
+        "a1-speaking-self-introduction"
+      ]
     }
   ]
 }

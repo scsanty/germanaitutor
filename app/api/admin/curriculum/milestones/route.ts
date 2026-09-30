@@ -7,10 +7,10 @@ export const dynamic = 'force-dynamic';
 
 export async function POST(request: Request) {
   if (!(await isAdminSessionValid())) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-  const { track, level, title, description } = await request.json();
+  const { track, level, title, description, difficultyRank } = await request.json();
   const service = createCurriculumStructureService(getDb());
   try {
-    const milestone = service.createMilestone(track, level, title, description);
+    const milestone = service.createMilestone(track, level, title, description, difficultyRank);
     return NextResponse.json(milestone, { status: 201 });
   } catch (err) {
     return NextResponse.json({ error: (err as Error).message }, { status: 400 });

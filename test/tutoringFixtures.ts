@@ -9,24 +9,20 @@ import type { GradeResult } from '@/lib/tutoring/grading';
  */
 export function seedTutoringCurriculum(db: Database.Database): void {
   db.exec(`
-    INSERT INTO milestones (id, track, level, title, order_index) VALUES
-      ('g-a1-m1', 'generic', 'A1', 'Basics', 0),
-      ('o-a1-m1', 'goethe', 'A1', 'Goethe basics', 0),
-      ('g-a2-m1', 'generic', 'A2', 'Next steps', 0);
-    INSERT INTO sections (id, milestone_id, title, order_index) VALUES
-      ('g-a1-s1', 'g-a1-m1', 'Greetings', 0),
-      ('o-a1-s1', 'o-a1-m1', 'Hallo', 0),
-      ('g-a2-s1', 'g-a2-m1', 'The past', 0);
+    INSERT INTO milestones (id, track, level, title, difficulty_rank) VALUES
+      ('g-a1-m1', 'generic', 'A1', 'Basics', 1),
+      ('o-a1-m1', 'goethe', 'A1', 'Goethe basics', 1),
+      ('g-a2-m1', 'generic', 'A2', 'Next steps', 1);
     INSERT INTO lessons (id, track, source_level, skill, title, explanation, examples) VALUES
       ('a1-greet', 'generic', 'A1', 'vocabulary', 'Saying hello', 'Say Hallo to greet someone.', '["Hallo!","Guten Tag!"]'),
       ('a1-sein', 'generic', 'A1', 'grammar', 'The verb sein', 'ich bin, du bist', NULL),
       ('a1-goethe-greet', 'goethe', 'A1', 'vocabulary', 'Goethe greetings', NULL, NULL),
       ('a2-past', 'generic', 'A2', 'grammar', 'The past of sein', NULL, NULL);
-    INSERT INTO lesson_placements (lesson_id, section_id, order_index) VALUES
-      ('a1-greet', 'g-a1-s1', 0),
-      ('a1-sein', 'g-a1-s1', 1),
-      ('a1-goethe-greet', 'o-a1-s1', 0),
-      ('a2-past', 'g-a2-s1', 0);
+    INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES
+      ('a1-greet', 'g-a1-m1'),
+      ('a1-sein', 'g-a1-m1'),
+      ('a1-goethe-greet', 'o-a1-m1'),
+      ('a2-past', 'g-a2-m1');
     INSERT INTO exercises (id, lesson_id, type, content) VALUES
       ('a1-greet__ex1', 'a1-greet', 'multiple_choice', '{"question":"How do you greet someone?","options":["Hallo","Tschüss"],"correctIndex":0}'),
       ('a1-greet__ex2', 'a1-greet', 'flashcard', '{"front":"der Hund","back":"the dog"}'),

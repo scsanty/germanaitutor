@@ -4,15 +4,10 @@ import { DependencyDiagram } from './DependencyDiagram';
 
 const structure = [
   {
-    milestone: { id: 'm1', title: 'M1' },
-    sections: [
-      {
-        section: { id: 's1', title: 'S1' },
-        lessons: [
-          { id: 'a1-basics', title: 'Basics', skill: 'grammar' },
-          { id: 'a1-advanced', title: 'Advanced', skill: 'grammar' },
-        ],
-      },
+    milestone: { id: 'm1', title: 'M1', description: null, difficultyRank: 1 },
+    lessons: [
+      { id: 'a1-basics', title: 'Basics', skill: 'grammar' },
+      { id: 'a1-advanced', title: 'Advanced', skill: 'grammar' },
     ],
   },
 ];

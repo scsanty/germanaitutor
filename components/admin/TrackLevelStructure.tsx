@@ -5,37 +5,33 @@ import type { Track, CefrLevel } from '@/lib/types';
 import { DependencyDiagram } from './DependencyDiagram';
 import { unsortedMilestoneId } from '@/lib/curriculum-admin/unsortedBucket';
 
-interface StructureLesson {
+export interface StructureLesson {
   id: string;
   title: string;
 }
-interface StructureSection {
-  section: { id: string; title: string };
+export interface StructureEntry {
+  milestone: { id: string; title: string; description: string | null; difficultyRank: number | null };
   lessons: StructureLesson[];
 }
-interface StructureEntry {
-  milestone: { id: string; title: string };
-  sections: StructureSection[];
+
+async function errorOf(res: Response, fallback: string): Promise<string> {
+  const data = await res.json().catch(() => ({}));
+  return typeof data.error === 'string' ? data.error : fallback;
 }
 
+// Admin-only, English. Spec: milestones listed by difficulty rank; lessons have no order inside one.
 export function TrackLevelStructure({ track, level }: { track: Track; level: CefrLevel }) {
   const [structure, setStructure] = useState<StructureEntry[] | null>(null);
-  const [newMilestoneTitle, setNewMilestoneTitle] = useState('');
-  const [newSectionTitleFor, setNewSectionTitleFor] = useState<Record<string, string>>({});
+  const [newTitle, setNewTitle] = useState('');
+  const [newRank, setNewRank] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [tab, setTab] = useState<'tree' | 'diagram'>('tree');
 
   function load() {
     fetch(`/api/curriculum/tracks/${track}/${level}`)
-      .then((r) => {
-        if (!r.ok) {
-          setError('Failed to load structure');
-          return null;
-        }
-        return r.json();
-      })
-      .then((result) => {
-        if (result) setStructure(result);
+      .then(async (r) => {
+        if (!r.ok) throw new Error(String(r.status));
+        setStructure((await r.json()) as StructureEntry[]);
       })
       .catch(() => setError('Failed to load structure'));
   }
@@ -46,119 +42,49 @@ export function TrackLevelStructure({ track, level }: { track: Track; level: Cef
   if (!structure) return <p>Loading...</p>;
 
   const unsortedId = unsortedMilestoneId(track, level);
-  const realMilestoneIds = structure.filter((entry) => entry.milestone.id !== unsortedId).map((e) => e.milestone.id);
 
   async function createMilestone() {
-    if (!newMilestoneTitle) return;
     const res = await fetch('/api/admin/curriculum/milestones', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ track, level, title: newMilestoneTitle, description: null }),
+      body: JSON.stringify({ track, level, title: newTitle, description: null, difficultyRank: Number(newRank) }),
     });
     if (res.ok) {
-      setNewMilestoneTitle('');
+      setNewTitle('');
+      setNewRank('');
+      setError(null);
       load();
-    } else {
-      setError((await res.json()).error ?? 'Failed to create milestone');
-    }
+    } else setError(await errorOf(res, 'Failed to create milestone'));
   }
 
-  async function renameMilestone(id: string, currentTitle: string) {
-    const title = window.prompt('Rename milestone', currentTitle);
-    if (!title) return;
-    const res = await fetch(`/api/admin/curriculum/milestones/${id}`, {
+  async function saveMilestone(entry: StructureEntry, changes: Partial<{ title: string; description: string | null; difficultyRank: number }>) {
+    const body = {
+      title: entry.milestone.title,
+      description: entry.milestone.description,
+      difficultyRank: entry.milestone.difficultyRank,
+      ...changes,
+    };
+    const res = await fetch(`/api/admin/curriculum/milestones/${entry.milestone.id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ title, description: null }),
+      body: JSON.stringify(body),
     });
-    if (res.ok) load();
-    else setError((await res.json()).error ?? 'Failed to rename milestone');
+    if (res.ok) {
+      setError(null);
+      load();
+    } else setError(await errorOf(res, 'Failed to save milestone'));
   }
 
-  async function deleteMilestone(id: string) {
-    const entry = structure!.find((e) => e.milestone.id === id)!;
-    const lessonTitles = entry.sections.flatMap((s) => s.lessons.map((l) => l.title));
+  async function deleteMilestone(entry: StructureEntry) {
+    const titles = entry.lessons.map((l) => l.title);
     const message =
-      lessonTitles.length > 0
-        ? `Delete "${entry.milestone.title}"? ${lessonTitles.length} lesson(s) will move to Unsorted: ${lessonTitles.join(', ')}`
+      titles.length > 0
+        ? `Delete "${entry.milestone.title}"? ${titles.length} lesson(s) will move to Unsorted: ${titles.join(', ')}`
         : `Delete "${entry.milestone.title}"?`;
     if (!window.confirm(message)) return;
-    const res = await fetch(`/api/admin/curriculum/milestones/${id}`, { method: 'DELETE' });
+    const res = await fetch(`/api/admin/curriculum/milestones/${entry.milestone.id}`, { method: 'DELETE' });
     if (res.ok) load();
-    else setError((await res.json()).error ?? 'Failed to delete milestone');
-  }
-
-  async function moveMilestone(id: string, direction: -1 | 1) {
-    const ids = [...realMilestoneIds];
-    const index = ids.indexOf(id);
-    const swapWith = index + direction;
-    if (swapWith < 0 || swapWith >= ids.length) return;
-    [ids[index], ids[swapWith]] = [ids[swapWith], ids[index]];
-    const res = await fetch('/api/admin/curriculum/milestones/reorder', {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ track, level, orderedIds: ids }),
-    });
-    if (res.ok) load();
-    else setError((await res.json()).error ?? 'Failed to reorder milestones');
-  }
-
-  async function createSection(milestoneId: string) {
-    const title = newSectionTitleFor[milestoneId];
-    if (!title) return;
-    const res = await fetch('/api/admin/curriculum/sections', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ milestoneId, title, description: null }),
-    });
-    if (res.ok) {
-      setNewSectionTitleFor((prev) => ({ ...prev, [milestoneId]: '' }));
-      load();
-    } else {
-      setError((await res.json()).error ?? 'Failed to create section');
-    }
-  }
-
-  async function renameSection(id: string, currentTitle: string) {
-    const title = window.prompt('Rename section', currentTitle);
-    if (!title) return;
-    const res = await fetch(`/api/admin/curriculum/sections/${id}`, {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ title, description: null }),
-    });
-    if (res.ok) load();
-    else setError((await res.json()).error ?? 'Failed to rename section');
-  }
-
-  async function deleteSection(milestoneId: string, id: string) {
-    const entry = structure!.find((e) => e.milestone.id === milestoneId)!;
-    const section = entry.sections.find((s) => s.section.id === id)!;
-    const lessonTitles = section.lessons.map((l) => l.title);
-    const message =
-      lessonTitles.length > 0
-        ? `Delete "${section.section.title}"? ${lessonTitles.length} lesson(s) will move to Unsorted: ${lessonTitles.join(', ')}`
-        : `Delete "${section.section.title}"?`;
-    if (!window.confirm(message)) return;
-    const res = await fetch(`/api/admin/curriculum/sections/${id}`, { method: 'DELETE' });
-    if (res.ok) load();
-    else setError((await res.json()).error ?? 'Failed to delete section');
-  }
-
-  async function moveSection(milestoneId: string, id: string, direction: -1 | 1) {
-    const entry = structure!.find((e) => e.milestone.id === milestoneId)!;
-    const ids = entry.sections.map((s) => s.section.id);
-    const index = ids.indexOf(id);
-    const swapWith = index + direction;
-    if (swapWith < 0 || swapWith >= ids.length) return;
-    [ids[index], ids[swapWith]] = [ids[swapWith], ids[index]];
-    const res = await fetch('/api/admin/curriculum/sections/reorder', {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ milestoneId, orderedIds: ids }),
-    });
-    if (res.ok) load();
-    else setError((await res.json()).error ?? 'Failed to reorder sections');
+    else setError(await errorOf(res, 'Failed to delete milestone'));
   }
 
   return (
@@ -178,77 +104,64 @@ export function TrackLevelStructure({ track, level }: { track: Track; level: Cef
 
       {tab === 'tree' &&
         structure.map((entry) => {
-        const isUnsorted = entry.milestone.id === unsortedId;
-        return (
-          <div key={entry.milestone.id}>
-            <h2>{entry.milestone.title}</h2>
-            {!isUnsorted && (
-              <>
-                <button type="button" onClick={() => moveMilestone(entry.milestone.id, -1)}>
-                  Move milestone up
-                </button>
-                <button type="button" onClick={() => moveMilestone(entry.milestone.id, 1)}>
-                  Move milestone down
-                </button>
-                <button type="button" onClick={() => renameMilestone(entry.milestone.id, entry.milestone.title)}>
-                  Rename milestone
-                </button>
-                <button type="button" onClick={() => deleteMilestone(entry.milestone.id)}>
-                  Delete milestone
-                </button>
-              </>
-            )}
-            {entry.sections.map(({ section, lessons }) => (
-              <div key={section.id}>
-                <h3>{section.title}</h3>
-                {!isUnsorted && (
-                  <>
-                    <button type="button" onClick={() => moveSection(entry.milestone.id, section.id, -1)}>
-                      Move section up
-                    </button>
-                    <button type="button" onClick={() => moveSection(entry.milestone.id, section.id, 1)}>
-                      Move section down
-                    </button>
-                    <button type="button" onClick={() => renameSection(section.id, section.title)}>
-                      Rename section
-                    </button>
-                    <button type="button" onClick={() => deleteSection(entry.milestone.id, section.id)}>
-                      Delete section
-                    </button>
-                  </>
-                )}
-                <ul>
-                  {lessons.map((lesson) => (
-                    <li key={lesson.id}>
-                      <a href={`/admin/curriculum/lesson/${lesson.id}?track=${track}`}>{lesson.title}</a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-            {!isUnsorted && (
-              <div>
-                <input
-                  aria-label={`New section title in ${entry.milestone.title}`}
-                  value={newSectionTitleFor[entry.milestone.id] ?? ''}
-                  onChange={(e) => setNewSectionTitleFor((prev) => ({ ...prev, [entry.milestone.id]: e.target.value }))}
-                  placeholder="New section title"
-                />
-                <button type="button" onClick={() => createSection(entry.milestone.id)}>
-                  Add section
-                </button>
-              </div>
-            )}
-          </div>
-        );
+          const isUnsorted = entry.milestone.id === unsortedId;
+          return (
+            <div key={entry.milestone.id}>
+              <h2>
+                {isUnsorted ? '' : `${entry.milestone.difficultyRank}. `}
+                {entry.milestone.title}
+              </h2>
+              {!isUnsorted && (
+                <>
+                  <label>
+                    Rank{' '}
+                    <input
+                      aria-label={`Rank of ${entry.milestone.title}`}
+                      type="number"
+                      min={1}
+                      step={1}
+                      defaultValue={entry.milestone.difficultyRank ?? 1}
+                      onBlur={(e) => {
+                        const rank = Number(e.target.value);
+                        if (rank !== entry.milestone.difficultyRank) saveMilestone(entry, { difficultyRank: rank });
+                      }}
+                    />
+                  </label>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const title = window.prompt('Rename milestone', entry.milestone.title);
+                      if (title) saveMilestone(entry, { title });
+                    }}
+                  >
+                    Rename milestone
+                  </button>
+                  <button type="button" onClick={() => deleteMilestone(entry)}>
+                    Delete milestone
+                  </button>
+                </>
+              )}
+              <ul>
+                {entry.lessons.map((lesson) => (
+                  <li key={lesson.id}>
+                    <a href={`/admin/curriculum/lesson/${lesson.id}?track=${track}`}>{lesson.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
         })}
 
       <div>
+        <input aria-label="New milestone title" value={newTitle} onChange={(e) => setNewTitle(e.target.value)} placeholder="New milestone title" />
         <input
-          aria-label="New milestone title"
-          value={newMilestoneTitle}
-          onChange={(e) => setNewMilestoneTitle(e.target.value)}
-          placeholder="New milestone title"
+          aria-label="New milestone rank"
+          type="number"
+          min={1}
+          step={1}
+          value={newRank}
+          onChange={(e) => setNewRank(e.target.value)}
+          placeholder="Rank"
         />
         <button type="button" onClick={createMilestone}>
           Add milestone

@@ -12,22 +12,21 @@ function setup() {
 }
 
 function lessonsOf(tree: ReturnType<ReturnType<typeof createProgressService>['getTree']>) {
-  return tree.milestones.flatMap((m) => m.sections.flatMap((s) => s.lessons));
+  return tree.milestones.flatMap((m) => m.lessons);
 }
 
 describe('progressService.getTree', () => {
   it('lists the active track+level in tree order and hides the Unsorted bucket', () => {
     const { db, progress } = setup();
-    const { sectionId } = ensureUnsortedExists(db, 'generic', 'A1');
+    const { milestoneId } = ensureUnsortedExists(db, 'generic', 'A1');
     db.exec(`
       INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('a1-hidden', 'generic', 'A1', 'grammar', 'Hidden');
-      INSERT INTO lesson_placements (lesson_id, section_id, order_index) VALUES ('a1-hidden', '${sectionId}', 0);
+      INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES ('a1-hidden', '${milestoneId}');
     `);
 
     const tree = progress.getTree();
     expect(tree).toMatchObject({ track: 'generic', level: 'A1' });
     expect(tree.milestones.map((m) => m.title)).toEqual(['Basics']);
-    expect(tree.milestones[0].sections.map((s) => s.title)).toEqual(['Greetings']);
     expect(lessonsOf(tree).map((l) => l.id)).toEqual(['a1-greet', 'a1-sein']);
   });
 
@@ -60,10 +59,10 @@ describe('progressService.getTree', () => {
 describe('progressService.isLevelFinished', () => {
   it('needs every visible lesson done, own or shared, and ignores Unsorted', () => {
     const { db, progress } = setup();
-    const { sectionId } = ensureUnsortedExists(db, 'generic', 'A1');
+    const { milestoneId } = ensureUnsortedExists(db, 'generic', 'A1');
     db.exec(`
       INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('a1-hidden', 'generic', 'A1', 'grammar', 'Hidden');
-      INSERT INTO lesson_placements (lesson_id, section_id, order_index) VALUES ('a1-hidden', '${sectionId}', 0);
+      INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES ('a1-hidden', '${milestoneId}');
     `);
     expect(progress.isLevelFinished('generic', 'A1')).toBe(false);
     markComplete(db, 'a1-goethe-greet');
@@ -131,8 +130,8 @@ describe('progressService.getDailyQueue', () => {
 
   it('lists due exercises of the active track+level, most overdue first, including Unsorted', () => {
     const { db, progress } = setup();
-    const { sectionId } = ensureUnsortedExists(db, 'generic', 'A1');
-    db.exec(`UPDATE lesson_placements SET section_id = '${sectionId}' WHERE lesson_id = 'a1-sein'`);
+    const { milestoneId } = ensureUnsortedExists(db, 'generic', 'A1');
+    db.exec(`UPDATE lesson_placements SET milestone_id = '${milestoneId}' WHERE lesson_id = 'a1-sein'`);
     scheduleReview(db, 'a1-greet__ex1', '2026-09-24');
     scheduleReview(db, 'a1-sein__ex2', '2026-09-20');
     scheduleReview(db, 'a1-greet__ex2', '2026-09-25');

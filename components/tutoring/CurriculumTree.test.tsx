@@ -11,23 +11,17 @@ const TREE = {
     {
       id: 'm1',
       title: 'Basics',
-      sections: [
+      lessons: [
+        { id: 'a1-greet', title: 'Saying hello', skill: 'vocabulary', status: 'complete', coveredVia: null, missingPrerequisites: [] },
         {
-          id: 's1',
-          title: 'Greetings',
-          lessons: [
-            { id: 'a1-greet', title: 'Saying hello', skill: 'vocabulary', status: 'complete', coveredVia: null, missingPrerequisites: [] },
-            {
-              id: 'a1-sein',
-              title: 'The verb sein',
-              skill: 'grammar',
-              status: 'in_progress',
-              coveredVia: null,
-              missingPrerequisites: [{ id: 'a1-pronouns', title: 'Pronouns' }],
-            },
-            { id: 'a1-bye', title: 'Saying goodbye', skill: 'vocabulary', status: 'covered', coveredVia: 'goethe', missingPrerequisites: [] },
-          ],
+          id: 'a1-sein',
+          title: 'The verb sein',
+          skill: 'grammar',
+          status: 'in_progress',
+          coveredVia: null,
+          missingPrerequisites: [{ id: 'a1-pronouns', title: 'Pronouns' }],
         },
+        { id: 'a1-bye', title: 'Saying goodbye', skill: 'vocabulary', status: 'covered', coveredVia: 'goethe', missingPrerequisites: [] },
       ],
     },
   ],
@@ -40,13 +34,12 @@ function stubTree(response: () => Promise<unknown>) {
 }
 
 describe('CurriculumTree', () => {
-  it('shows milestones, sections, and each lesson with its status and warnings', async () => {
+  it('shows milestones and each lesson with its status and warnings', async () => {
     stubTree(() => delayedResponse(TREE));
     renderWithIntl(<CurriculumTree reloadKey={0} />);
 
     expect(await screen.findByRole('heading', { name: 'Generic A1' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: 'Basics' })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: 'Greetings' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Saying hello' })).toHaveAttribute('href', '/lesson/a1-greet');
     expect(screen.getByText('Complete')).toBeInTheDocument();
     expect(screen.getByText('In progress')).toBeInTheDocument();

@@ -33,7 +33,7 @@ describe('/api/tutoring', () => {
   it('GET tree returns the active track+level', async () => {
     const tree = await (await getTree()).json();
     expect(tree).toMatchObject({ track: 'generic', level: 'A1' });
-    expect(tree.milestones[0].sections[0].lessons.map((l: { id: string }) => l.id)).toEqual(['a1-greet', 'a1-sein']);
+    expect(tree.milestones[0].lessons.map((l: { id: string }) => l.id)).toEqual(['a1-greet', 'a1-sein']);
   });
 
   // M-3: an admin edit (here, deleting the level's last unfinished lesson) can finish a level
@@ -44,7 +44,7 @@ describe('/api/tutoring', () => {
     db.prepare('DELETE FROM lessons WHERE id = ?').run('a1-sein');
 
     const tree = await (await getTree()).json();
-    expect(tree.milestones[0].sections[0].lessons.map((l: { id: string }) => l.id)).toEqual(['a1-greet']);
+    expect(tree.milestones[0].lessons.map((l: { id: string }) => l.id)).toEqual(['a1-greet']);
 
     const profile = createProfileService(db).getProfile();
     expect(profile).toMatchObject({ highestUnlockedLevel: 'A2', unlockNoticeLevel: 'A2' });

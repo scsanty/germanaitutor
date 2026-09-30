@@ -1,239 +1,8 @@
 {
-  "seedVersion": "2",
+  "seedVersion": "3",
+  "formatVersion": 2,
   "track": "generic",
   "level": "A2",
-  "milestones": [
-    {
-      "milestone": {
-        "id": "generic-a2-grammar",
-        "track": "generic",
-        "level": "A2",
-        "title": "Grammar",
-        "description": null,
-        "orderIndex": 0
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-a2-grammar-lessons",
-            "milestoneId": "generic-a2-grammar",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "a2-perfekt-haben-regular",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "a2-perfekt-sein-movement",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "a2-praeteritum-sein-haben",
-              "orderIndex": 2
-            },
-            {
-              "lessonId": "a2-praeteritum-modal-verbs",
-              "orderIndex": 3
-            },
-            {
-              "lessonId": "a2-dative-personal-pronouns",
-              "orderIndex": 4
-            },
-            {
-              "lessonId": "a2-dative-prepositions",
-              "orderIndex": 5
-            },
-            {
-              "lessonId": "a2-two-way-prepositions-location-direction",
-              "orderIndex": 6
-            },
-            {
-              "lessonId": "a2-subordinate-clauses-weil-dass",
-              "orderIndex": 7
-            },
-            {
-              "lessonId": "a2-indirect-questions-ob-w-fragen",
-              "orderIndex": 8
-            },
-            {
-              "lessonId": "a2-comparative-and-superlative",
-              "orderIndex": 9
-            },
-            {
-              "lessonId": "a2-adjective-declension-definite-articles",
-              "orderIndex": 10
-            },
-            {
-              "lessonId": "a2-reflexive-verbs-intro",
-              "orderIndex": 11
-            },
-            {
-              "lessonId": "a2-temporal-prepositions-vor-nach-seit",
-              "orderIndex": 12
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-a2-vocabulary",
-        "track": "generic",
-        "level": "A2",
-        "title": "Vocabulary",
-        "description": null,
-        "orderIndex": 1
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-a2-vocabulary-lessons",
-            "milestoneId": "generic-a2-vocabulary",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "a2-vocab-travel-transportation",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "a2-vocab-housing-furniture",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "a2-vocab-body-health-illness",
-              "orderIndex": 2
-            },
-            {
-              "lessonId": "a2-vocab-clothing-shopping",
-              "orderIndex": 3
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-a2-reading",
-        "track": "generic",
-        "level": "A2",
-        "title": "Reading",
-        "description": null,
-        "orderIndex": 2
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-a2-reading-lessons",
-            "milestoneId": "generic-a2-reading",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "a2-reading-travel-itineraries",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "a2-reading-short-news-reports",
-              "orderIndex": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-a2-listening",
-        "track": "generic",
-        "level": "A2",
-        "title": "Listening",
-        "description": null,
-        "orderIndex": 3
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-a2-listening-lessons",
-            "milestoneId": "generic-a2-listening",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "a2-listening-weather-traffic-announcements",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "a2-listening-conversations-past-events",
-              "orderIndex": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-a2-writing",
-        "track": "generic",
-        "level": "A2",
-        "title": "Writing",
-        "description": null,
-        "orderIndex": 4
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-a2-writing-lessons",
-            "milestoneId": "generic-a2-writing",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "a2-writing-informal-email-vacation",
-              "orderIndex": 0
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-a2-speaking",
-        "track": "generic",
-        "level": "A2",
-        "title": "Speaking",
-        "description": null,
-        "orderIndex": 5
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-a2-speaking-lessons",
-            "milestoneId": "generic-a2-speaking",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "a2-speaking-reporting-past-weekend",
-              "orderIndex": 0
-            }
-          ]
-        }
-      ]
-    }
-  ],
   "lessons": [
     {
       "id": "a2-perfekt-haben-regular",
@@ -1658,6 +1427,103 @@
     {
       "lessonId": "a2-speaking-reporting-past-weekend",
       "prerequisiteLessonId": "a2-perfekt-sein-movement"
+    }
+  ],
+  "milestones": [
+    {
+      "milestone": {
+        "id": "generic-a2-grammar",
+        "track": "generic",
+        "level": "A2",
+        "title": "Grammar",
+        "description": null,
+        "difficultyRank": 1
+      },
+      "lessonIds": [
+        "a2-perfekt-haben-regular",
+        "a2-perfekt-sein-movement",
+        "a2-praeteritum-sein-haben",
+        "a2-praeteritum-modal-verbs",
+        "a2-dative-personal-pronouns",
+        "a2-dative-prepositions",
+        "a2-two-way-prepositions-location-direction",
+        "a2-subordinate-clauses-weil-dass",
+        "a2-indirect-questions-ob-w-fragen",
+        "a2-comparative-and-superlative",
+        "a2-adjective-declension-definite-articles",
+        "a2-reflexive-verbs-intro",
+        "a2-temporal-prepositions-vor-nach-seit"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-a2-vocabulary",
+        "track": "generic",
+        "level": "A2",
+        "title": "Vocabulary",
+        "description": null,
+        "difficultyRank": 2
+      },
+      "lessonIds": [
+        "a2-vocab-travel-transportation",
+        "a2-vocab-housing-furniture",
+        "a2-vocab-body-health-illness",
+        "a2-vocab-clothing-shopping"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-a2-reading",
+        "track": "generic",
+        "level": "A2",
+        "title": "Reading",
+        "description": null,
+        "difficultyRank": 3
+      },
+      "lessonIds": [
+        "a2-reading-travel-itineraries",
+        "a2-reading-short-news-reports"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-a2-listening",
+        "track": "generic",
+        "level": "A2",
+        "title": "Listening",
+        "description": null,
+        "difficultyRank": 4
+      },
+      "lessonIds": [
+        "a2-listening-weather-traffic-announcements",
+        "a2-listening-conversations-past-events"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-a2-writing",
+        "track": "generic",
+        "level": "A2",
+        "title": "Writing",
+        "description": null,
+        "difficultyRank": 5
+      },
+      "lessonIds": [
+        "a2-writing-informal-email-vacation"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-a2-speaking",
+        "track": "generic",
+        "level": "A2",
+        "title": "Speaking",
+        "description": null,
+        "difficultyRank": 6
+      },
+      "lessonIds": [
+        "a2-speaking-reporting-past-weekend"
+      ]
     }
   ]
 }

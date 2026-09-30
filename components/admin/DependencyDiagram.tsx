@@ -31,8 +31,8 @@ export function DependencyDiagram({ track, level }: { track: Track; level: CefrL
         if (!r.ok) throw new Error('Failed to load dependency diagram');
         return r.json();
       })
-      .then((structure: { sections: { lessons: DiagramLesson[] }[] }[]) => {
-        const allLessons = structure.flatMap((entry) => entry.sections.flatMap((s) => s.lessons));
+      .then((structure: { lessons: DiagramLesson[] }[]) => {
+        const allLessons = structure.flatMap((entry) => entry.lessons);
         setLessons(allLessons);
         return Promise.all(
           allLessons.map((lesson) =>

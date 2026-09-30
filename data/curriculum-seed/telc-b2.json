@@ -1,223 +1,8 @@
 {
-  "seedVersion": "2",
+  "seedVersion": "3",
+  "formatVersion": 2,
   "track": "telc",
   "level": "B2",
-  "milestones": [
-    {
-      "milestone": {
-        "id": "telc-b2-grammar",
-        "track": "telc",
-        "level": "B2",
-        "title": "Grammar",
-        "description": null,
-        "orderIndex": 0
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "telc-b2-grammar-lessons",
-            "milestoneId": "telc-b2-grammar",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b2-telc-sprachbausteine-1-grammatik",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "b2-telc-praepositionen-genitiv",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "b2-telc-konzessive-adversative-verbindungen",
-              "orderIndex": 2
-            },
-            {
-              "lessonId": "b2-telc-nomen-verb-verbindungen-beruf",
-              "orderIndex": 3
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "telc-b2-vocabulary",
-        "track": "telc",
-        "level": "B2",
-        "title": "Vocabulary",
-        "description": null,
-        "orderIndex": 1
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "telc-b2-vocabulary-lessons",
-            "milestoneId": "telc-b2-vocabulary",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b2-telc-sprachbausteine-2-wortschatz",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "b2-telc-vocab-berufsalltag-verhandlung",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "b2-telc-vocab-reklamation-dienstleistung",
-              "orderIndex": 2
-            },
-            {
-              "lessonId": "b2-telc-vocab-medien-konsumgesellschaft",
-              "orderIndex": 3
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "telc-b2-reading",
-        "track": "telc",
-        "level": "B2",
-        "title": "Reading",
-        "description": null,
-        "orderIndex": 2
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "telc-b2-reading-lessons",
-            "milestoneId": "telc-b2-reading",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b2-telc-leseverstehen-teil1-global",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "b2-telc-leseverstehen-teil2-detail",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "b2-telc-leseverstehen-teil3-selektiv",
-              "orderIndex": 2
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "telc-b2-listening",
-        "track": "telc",
-        "level": "B2",
-        "title": "Listening",
-        "description": null,
-        "orderIndex": 3
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "telc-b2-listening-lessons",
-            "milestoneId": "telc-b2-listening",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b2-telc-hoerverstehen-teil1-meinungen",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "b2-telc-hoerverstehen-teil2-interview",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "b2-telc-hoerverstehen-teil3-ansagen-nachrichten",
-              "orderIndex": 2
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "telc-b2-writing",
-        "track": "telc",
-        "level": "B2",
-        "title": "Writing",
-        "description": null,
-        "orderIndex": 4
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "telc-b2-writing-lessons",
-            "milestoneId": "telc-b2-writing",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b2-telc-schreiben-beschwerdebrief",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "b2-telc-schreiben-informationsbitte-anfrage",
-              "orderIndex": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "telc-b2-speaking",
-        "track": "telc",
-        "level": "B2",
-        "title": "Speaking",
-        "description": null,
-        "orderIndex": 5
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "telc-b2-speaking-lessons",
-            "milestoneId": "telc-b2-speaking",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b2-telc-sprechen-teil1-praesentation",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "b2-telc-sprechen-teil2-diskussion",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "b2-telc-sprechen-teil3-problemlosung-planung",
-              "orderIndex": 2
-            }
-          ]
-        }
-      ]
-    }
-  ],
   "lessons": [
     {
       "id": "b2-telc-sprachbausteine-1-grammatik",
@@ -1155,6 +940,99 @@
     {
       "lessonId": "b2-telc-sprechen-teil3-problemlosung-planung",
       "prerequisiteLessonId": "b2-telc-nomen-verb-verbindungen-beruf"
+    }
+  ],
+  "milestones": [
+    {
+      "milestone": {
+        "id": "telc-b2-grammar",
+        "track": "telc",
+        "level": "B2",
+        "title": "Grammar",
+        "description": null,
+        "difficultyRank": 1
+      },
+      "lessonIds": [
+        "b2-telc-sprachbausteine-1-grammatik",
+        "b2-telc-praepositionen-genitiv",
+        "b2-telc-konzessive-adversative-verbindungen",
+        "b2-telc-nomen-verb-verbindungen-beruf"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-b2-vocabulary",
+        "track": "telc",
+        "level": "B2",
+        "title": "Vocabulary",
+        "description": null,
+        "difficultyRank": 2
+      },
+      "lessonIds": [
+        "b2-telc-sprachbausteine-2-wortschatz",
+        "b2-telc-vocab-berufsalltag-verhandlung",
+        "b2-telc-vocab-reklamation-dienstleistung",
+        "b2-telc-vocab-medien-konsumgesellschaft"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-b2-reading",
+        "track": "telc",
+        "level": "B2",
+        "title": "Reading",
+        "description": null,
+        "difficultyRank": 3
+      },
+      "lessonIds": [
+        "b2-telc-leseverstehen-teil1-global",
+        "b2-telc-leseverstehen-teil2-detail",
+        "b2-telc-leseverstehen-teil3-selektiv"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-b2-listening",
+        "track": "telc",
+        "level": "B2",
+        "title": "Listening",
+        "description": null,
+        "difficultyRank": 4
+      },
+      "lessonIds": [
+        "b2-telc-hoerverstehen-teil1-meinungen",
+        "b2-telc-hoerverstehen-teil2-interview",
+        "b2-telc-hoerverstehen-teil3-ansagen-nachrichten"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-b2-writing",
+        "track": "telc",
+        "level": "B2",
+        "title": "Writing",
+        "description": null,
+        "difficultyRank": 5
+      },
+      "lessonIds": [
+        "b2-telc-schreiben-beschwerdebrief",
+        "b2-telc-schreiben-informationsbitte-anfrage"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-b2-speaking",
+        "track": "telc",
+        "level": "B2",
+        "title": "Speaking",
+        "description": null,
+        "difficultyRank": 6
+      },
+      "lessonIds": [
+        "b2-telc-sprechen-teil1-praesentation",
+        "b2-telc-sprechen-teil2-diskussion",
+        "b2-telc-sprechen-teil3-problemlosung-planung"
+      ]
     }
   ]
 }

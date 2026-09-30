@@ -1,227 +1,8 @@
 {
-  "seedVersion": "2",
+  "seedVersion": "3",
+  "formatVersion": 2,
   "track": "generic",
   "level": "B2",
-  "milestones": [
-    {
-      "milestone": {
-        "id": "generic-b2-grammar",
-        "track": "generic",
-        "level": "B2",
-        "title": "Grammar",
-        "description": null,
-        "orderIndex": 0
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-b2-grammar-lessons",
-            "milestoneId": "generic-b2-grammar",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b2-passiv-formen-zeiten",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "b2-passiv-modalverben",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "b2-passiv-alternativen",
-              "orderIndex": 2
-            },
-            {
-              "lessonId": "b2-konjunktiv-ii-vergangenheit",
-              "orderIndex": 3
-            },
-            {
-              "lessonId": "b2-zweiteilige-konnektoren",
-              "orderIndex": 4
-            },
-            {
-              "lessonId": "b2-nominalisierung-verbalisierung",
-              "orderIndex": 5
-            },
-            {
-              "lessonId": "b2-nomen-verb-verbindungen-basis",
-              "orderIndex": 6
-            },
-            {
-              "lessonId": "b2-partizipialattribute",
-              "orderIndex": 7
-            },
-            {
-              "lessonId": "b2-relativsaetze-praepositionen-wer-was",
-              "orderIndex": 8
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-b2-vocabulary",
-        "track": "generic",
-        "level": "B2",
-        "title": "Vocabulary",
-        "description": null,
-        "orderIndex": 1
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-b2-vocabulary-lessons",
-            "milestoneId": "generic-b2-vocabulary",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b2-umwelt-nachhaltigkeit-vocab",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "b2-digitalisierung-medien-vocab",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "b2-arbeitswelt-karriere-vocab",
-              "orderIndex": 2
-            },
-            {
-              "lessonId": "b2-gesellschaft-demografie-vocab",
-              "orderIndex": 3
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-b2-reading",
-        "track": "generic",
-        "level": "B2",
-        "title": "Reading",
-        "description": null,
-        "orderIndex": 2
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-b2-reading-lessons",
-            "milestoneId": "generic-b2-reading",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b2-sachtexte-global-detailverstehen",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "b2-kommentare-standpunkte-erfassen",
-              "orderIndex": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-b2-listening",
-        "track": "generic",
-        "level": "B2",
-        "title": "Listening",
-        "description": null,
-        "orderIndex": 3
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-b2-listening-lessons",
-            "milestoneId": "generic-b2-listening",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b2-fachvortraege-podcasts-verstehen",
-              "orderIndex": 0
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-b2-writing",
-        "track": "generic",
-        "level": "B2",
-        "title": "Writing",
-        "description": null,
-        "orderIndex": 4
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-b2-writing-lessons",
-            "milestoneId": "generic-b2-writing",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b2-stellungnahme-erlaeuterung-verfassen",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "b2-beschwerdebrief-dienstleistung",
-              "orderIndex": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-b2-speaking",
-        "track": "generic",
-        "level": "B2",
-        "title": "Speaking",
-        "description": null,
-        "orderIndex": 5
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-b2-speaking-lessons",
-            "milestoneId": "generic-b2-speaking",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "b2-pro-kontra-diskussion-fuehren",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "b2-fachpraesentation-strukturieren",
-              "orderIndex": 1
-            }
-          ]
-        }
-      ]
-    }
-  ],
   "lessons": [
     {
       "id": "b2-passiv-formen-zeiten",
@@ -1358,6 +1139,100 @@
     {
       "lessonId": "b2-fachpraesentation-strukturieren",
       "prerequisiteLessonId": "b2-nomen-verb-verbindungen-basis"
+    }
+  ],
+  "milestones": [
+    {
+      "milestone": {
+        "id": "generic-b2-grammar",
+        "track": "generic",
+        "level": "B2",
+        "title": "Grammar",
+        "description": null,
+        "difficultyRank": 1
+      },
+      "lessonIds": [
+        "b2-passiv-formen-zeiten",
+        "b2-passiv-modalverben",
+        "b2-passiv-alternativen",
+        "b2-konjunktiv-ii-vergangenheit",
+        "b2-zweiteilige-konnektoren",
+        "b2-nominalisierung-verbalisierung",
+        "b2-nomen-verb-verbindungen-basis",
+        "b2-partizipialattribute",
+        "b2-relativsaetze-praepositionen-wer-was"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-b2-vocabulary",
+        "track": "generic",
+        "level": "B2",
+        "title": "Vocabulary",
+        "description": null,
+        "difficultyRank": 2
+      },
+      "lessonIds": [
+        "b2-umwelt-nachhaltigkeit-vocab",
+        "b2-digitalisierung-medien-vocab",
+        "b2-arbeitswelt-karriere-vocab",
+        "b2-gesellschaft-demografie-vocab"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-b2-reading",
+        "track": "generic",
+        "level": "B2",
+        "title": "Reading",
+        "description": null,
+        "difficultyRank": 3
+      },
+      "lessonIds": [
+        "b2-sachtexte-global-detailverstehen",
+        "b2-kommentare-standpunkte-erfassen"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-b2-listening",
+        "track": "generic",
+        "level": "B2",
+        "title": "Listening",
+        "description": null,
+        "difficultyRank": 4
+      },
+      "lessonIds": [
+        "b2-fachvortraege-podcasts-verstehen"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-b2-writing",
+        "track": "generic",
+        "level": "B2",
+        "title": "Writing",
+        "description": null,
+        "difficultyRank": 5
+      },
+      "lessonIds": [
+        "b2-stellungnahme-erlaeuterung-verfassen",
+        "b2-beschwerdebrief-dienstleistung"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-b2-speaking",
+        "track": "generic",
+        "level": "B2",
+        "title": "Speaking",
+        "description": null,
+        "difficultyRank": 6
+      },
+      "lessonIds": [
+        "b2-pro-kontra-diskussion-fuehren",
+        "b2-fachpraesentation-strukturieren"
+      ]
     }
   ]
 }

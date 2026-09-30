@@ -1,219 +1,8 @@
 {
-  "seedVersion": "2",
+  "seedVersion": "3",
+  "formatVersion": 2,
   "track": "goethe",
   "level": "C1",
-  "milestones": [
-    {
-      "milestone": {
-        "id": "goethe-c1-grammar",
-        "track": "goethe",
-        "level": "C1",
-        "title": "Grammar",
-        "description": null,
-        "orderIndex": 0
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "goethe-c1-grammar-lessons",
-            "milestoneId": "goethe-c1-grammar",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "c1-goethe-subjektive-modalverben",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "c1-goethe-indirekte-rede-und-distanzierung",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "c1-goethe-komplexe-adverbiale-nebensaetze",
-              "orderIndex": 2
-            },
-            {
-              "lessonId": "c1-goethe-feste-nomen-praepositions-verbindungen",
-              "orderIndex": 3
-            },
-            {
-              "lessonId": "c1-goethe-differenzierte-konnektoren",
-              "orderIndex": 4
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "goethe-c1-vocabulary",
-        "track": "goethe",
-        "level": "C1",
-        "title": "Vocabulary",
-        "description": null,
-        "orderIndex": 1
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "goethe-c1-vocabulary-lessons",
-            "milestoneId": "goethe-c1-vocabulary",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "c1-goethe-idiomatische-wendungen-und-redewendungen",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "c1-goethe-komposita-und-wortbildung-c1",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "c1-goethe-metaphorische-ausdrucksweise",
-              "orderIndex": 2
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "goethe-c1-reading",
-        "track": "goethe",
-        "level": "C1",
-        "title": "Reading",
-        "description": null,
-        "orderIndex": 2
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "goethe-c1-reading-lessons",
-            "milestoneId": "goethe-c1-reading",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "c1-goethe-lesen-teil1-kommentar-und-essay",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "c1-goethe-lesen-teil2-textrekonstruktion",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "c1-goethe-lesen-teil3-sachtext-detail",
-              "orderIndex": 2
-            },
-            {
-              "lessonId": "c1-goethe-lesen-teil4-kurzinformationen-abgleich",
-              "orderIndex": 3
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "goethe-c1-listening",
-        "track": "goethe",
-        "level": "C1",
-        "title": "Listening",
-        "description": null,
-        "orderIndex": 3
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "goethe-c1-listening-lessons",
-            "milestoneId": "goethe-c1-listening",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "c1-goethe-hoeren-teil1-dialog-notizen",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "c1-goethe-hoeren-teil2-radiointerview-monolog",
-              "orderIndex": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "goethe-c1-writing",
-        "track": "goethe",
-        "level": "C1",
-        "title": "Writing",
-        "description": null,
-        "orderIndex": 4
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "goethe-c1-writing-lessons",
-            "milestoneId": "goethe-c1-writing",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "c1-goethe-schreiben-teil1-freie-stellungnahme",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "c1-goethe-schreiben-teil2-textumformung-register",
-              "orderIndex": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "goethe-c1-speaking",
-        "track": "goethe",
-        "level": "C1",
-        "title": "Speaking",
-        "description": null,
-        "orderIndex": 5
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "goethe-c1-speaking-lessons",
-            "milestoneId": "goethe-c1-speaking",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "c1-goethe-sprechen-teil1-monologischer-vortrag",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "c1-goethe-sprechen-teil2-partnerdiskussion-konsens",
-              "orderIndex": 1
-            }
-          ]
-        }
-      ]
-    }
-  ],
   "lessons": [
     {
       "id": "c1-goethe-subjektive-modalverben",
@@ -1410,6 +1199,98 @@
     {
       "lessonId": "c1-goethe-sprechen-teil2-partnerdiskussion-konsens",
       "prerequisiteLessonId": "c1-goethe-subjektive-modalverben"
+    }
+  ],
+  "milestones": [
+    {
+      "milestone": {
+        "id": "goethe-c1-grammar",
+        "track": "goethe",
+        "level": "C1",
+        "title": "Grammar",
+        "description": null,
+        "difficultyRank": 1
+      },
+      "lessonIds": [
+        "c1-goethe-subjektive-modalverben",
+        "c1-goethe-indirekte-rede-und-distanzierung",
+        "c1-goethe-komplexe-adverbiale-nebensaetze",
+        "c1-goethe-feste-nomen-praepositions-verbindungen",
+        "c1-goethe-differenzierte-konnektoren"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "goethe-c1-vocabulary",
+        "track": "goethe",
+        "level": "C1",
+        "title": "Vocabulary",
+        "description": null,
+        "difficultyRank": 2
+      },
+      "lessonIds": [
+        "c1-goethe-idiomatische-wendungen-und-redewendungen",
+        "c1-goethe-komposita-und-wortbildung-c1",
+        "c1-goethe-metaphorische-ausdrucksweise"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "goethe-c1-reading",
+        "track": "goethe",
+        "level": "C1",
+        "title": "Reading",
+        "description": null,
+        "difficultyRank": 3
+      },
+      "lessonIds": [
+        "c1-goethe-lesen-teil1-kommentar-und-essay",
+        "c1-goethe-lesen-teil2-textrekonstruktion",
+        "c1-goethe-lesen-teil3-sachtext-detail",
+        "c1-goethe-lesen-teil4-kurzinformationen-abgleich"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "goethe-c1-listening",
+        "track": "goethe",
+        "level": "C1",
+        "title": "Listening",
+        "description": null,
+        "difficultyRank": 4
+      },
+      "lessonIds": [
+        "c1-goethe-hoeren-teil1-dialog-notizen",
+        "c1-goethe-hoeren-teil2-radiointerview-monolog"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "goethe-c1-writing",
+        "track": "goethe",
+        "level": "C1",
+        "title": "Writing",
+        "description": null,
+        "difficultyRank": 5
+      },
+      "lessonIds": [
+        "c1-goethe-schreiben-teil1-freie-stellungnahme",
+        "c1-goethe-schreiben-teil2-textumformung-register"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "goethe-c1-speaking",
+        "track": "goethe",
+        "level": "C1",
+        "title": "Speaking",
+        "description": null,
+        "difficultyRank": 6
+      },
+      "lessonIds": [
+        "c1-goethe-sprechen-teil1-monologischer-vortrag",
+        "c1-goethe-sprechen-teil2-partnerdiskussion-konsens"
+      ]
     }
   ]
 }

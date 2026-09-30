@@ -36,7 +36,7 @@ export function CurriculumTree({ reloadKey }: { reloadKey: number }) {
   if (failed) return <p role="alert">{t('loadFailed')}</p>;
   if (!tree) return <p>{tCommon('loading')}</p>;
 
-  const empty = tree.milestones.every((m) => m.sections.every((s) => s.lessons.length === 0));
+  const empty = tree.milestones.every((m) => m.lessons.length === 0);
   return (
     <div>
       <h2>{t('heading', { track: tTracks(tree.track), level: tree.level })}</h2>
@@ -44,26 +44,19 @@ export function CurriculumTree({ reloadKey }: { reloadKey: number }) {
       {tree.milestones.map((milestone) => (
         <section key={milestone.id}>
           <h3>{milestone.title}</h3>
-          {milestone.sections.map((section) => (
-            <div key={section.id}>
-              <h4>{section.title}</h4>
-              <ul>
-                {section.lessons.map((lesson) => (
-                  <li key={lesson.id}>
-                    <Link href={`/lesson/${lesson.id}`}>{lesson.title}</Link> —{' '}
-                    <span>
-                      {lesson.coveredVia
-                        ? t('coveredVia', { track: tTracks(lesson.coveredVia) })
-                        : t(`status.${lesson.status}`)}
-                    </span>
-                    {lesson.missingPrerequisites.length > 0 && (
-                      <p>{t('buildsOn', { lessons: lesson.missingPrerequisites.map((p) => p.title).join(', ') })}</p>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <ul>
+            {milestone.lessons.map((lesson) => (
+              <li key={lesson.id}>
+                <Link href={`/lesson/${lesson.id}`}>{lesson.title}</Link> —{' '}
+                <span>
+                  {lesson.coveredVia ? t('coveredVia', { track: tTracks(lesson.coveredVia) }) : t(`status.${lesson.status}`)}
+                </span>
+                {lesson.missingPrerequisites.length > 0 && (
+                  <p>{t('buildsOn', { lessons: lesson.missingPrerequisites.map((p) => p.title).join(', ') })}</p>
+                )}
+              </li>
+            ))}
+          </ul>
         </section>
       ))}
     </div>

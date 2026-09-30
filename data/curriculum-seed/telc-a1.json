@@ -1,219 +1,8 @@
 {
-  "seedVersion": "2",
+  "seedVersion": "3",
+  "formatVersion": 2,
   "track": "telc",
   "level": "A1",
-  "milestones": [
-    {
-      "milestone": {
-        "id": "telc-a1-grammar",
-        "track": "telc",
-        "level": "A1",
-        "title": "Grammar",
-        "description": null,
-        "orderIndex": 0
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "telc-a1-grammar-lessons",
-            "milestoneId": "telc-a1-grammar",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "a1-telc-present-tense-essentials",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "a1-telc-w-questions-official-inquiries",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "a1-telc-accusative-shopping-supplies",
-              "orderIndex": 2
-            },
-            {
-              "lessonId": "a1-telc-modal-verbs-regulations",
-              "orderIndex": 3
-            },
-            {
-              "lessonId": "a1-telc-imperative-polite-requests",
-              "orderIndex": 4
-            },
-            {
-              "lessonId": "a1-telc-prepositions-time-appointments",
-              "orderIndex": 5
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "telc-a1-vocabulary",
-        "track": "telc",
-        "level": "A1",
-        "title": "Vocabulary",
-        "description": null,
-        "orderIndex": 1
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "telc-a1-vocabulary-lessons",
-            "milestoneId": "telc-a1-vocabulary",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "a1-telc-identity-personal-data",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "a1-telc-housing-neighborhood-vocab",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "a1-telc-work-professions-vocab",
-              "orderIndex": 2
-            },
-            {
-              "lessonId": "a1-telc-health-doctor-vocab",
-              "orderIndex": 3
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "telc-a1-reading",
-        "track": "telc",
-        "level": "A1",
-        "title": "Reading",
-        "description": null,
-        "orderIndex": 2
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "telc-a1-reading-lessons",
-            "milestoneId": "telc-a1-reading",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "a1-telc-reading-public-notices-signs",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "a1-telc-reading-classifieds-housing",
-              "orderIndex": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "telc-a1-listening",
-        "track": "telc",
-        "level": "A1",
-        "title": "Listening",
-        "description": null,
-        "orderIndex": 3
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "telc-a1-listening-lessons",
-            "milestoneId": "telc-a1-listening",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "a1-telc-listening-station-store-announcements",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "a1-telc-listening-voicemail-appointments",
-              "orderIndex": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "telc-a1-writing",
-        "track": "telc",
-        "level": "A1",
-        "title": "Writing",
-        "description": null,
-        "orderIndex": 4
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "telc-a1-writing-lessons",
-            "milestoneId": "telc-a1-writing",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "a1-telc-writing-registration-form",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "a1-telc-writing-short-appointment-note",
-              "orderIndex": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "telc-a1-speaking",
-        "track": "telc",
-        "level": "A1",
-        "title": "Speaking",
-        "description": null,
-        "orderIndex": 5
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "telc-a1-speaking-lessons",
-            "milestoneId": "telc-a1-speaking",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "a1-telc-speaking-personal-disclosure",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "a1-telc-speaking-asking-requesting",
-              "orderIndex": 1
-            }
-          ]
-        }
-      ]
-    }
-  ],
   "lessons": [
     {
       "id": "a1-telc-identity-personal-data",
@@ -1313,6 +1102,98 @@
     {
       "lessonId": "a1-telc-speaking-asking-requesting",
       "prerequisiteLessonId": "a1-telc-housing-neighborhood-vocab"
+    }
+  ],
+  "milestones": [
+    {
+      "milestone": {
+        "id": "telc-a1-grammar",
+        "track": "telc",
+        "level": "A1",
+        "title": "Grammar",
+        "description": null,
+        "difficultyRank": 1
+      },
+      "lessonIds": [
+        "a1-telc-present-tense-essentials",
+        "a1-telc-w-questions-official-inquiries",
+        "a1-telc-accusative-shopping-supplies",
+        "a1-telc-modal-verbs-regulations",
+        "a1-telc-imperative-polite-requests",
+        "a1-telc-prepositions-time-appointments"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-a1-vocabulary",
+        "track": "telc",
+        "level": "A1",
+        "title": "Vocabulary",
+        "description": null,
+        "difficultyRank": 2
+      },
+      "lessonIds": [
+        "a1-telc-identity-personal-data",
+        "a1-telc-housing-neighborhood-vocab",
+        "a1-telc-work-professions-vocab",
+        "a1-telc-health-doctor-vocab"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-a1-reading",
+        "track": "telc",
+        "level": "A1",
+        "title": "Reading",
+        "description": null,
+        "difficultyRank": 3
+      },
+      "lessonIds": [
+        "a1-telc-reading-public-notices-signs",
+        "a1-telc-reading-classifieds-housing"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-a1-listening",
+        "track": "telc",
+        "level": "A1",
+        "title": "Listening",
+        "description": null,
+        "difficultyRank": 4
+      },
+      "lessonIds": [
+        "a1-telc-listening-station-store-announcements",
+        "a1-telc-listening-voicemail-appointments"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-a1-writing",
+        "track": "telc",
+        "level": "A1",
+        "title": "Writing",
+        "description": null,
+        "difficultyRank": 5
+      },
+      "lessonIds": [
+        "a1-telc-writing-registration-form",
+        "a1-telc-writing-short-appointment-note"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "telc-a1-speaking",
+        "track": "telc",
+        "level": "A1",
+        "title": "Speaking",
+        "description": null,
+        "difficultyRank": 6
+      },
+      "lessonIds": [
+        "a1-telc-speaking-personal-disclosure",
+        "a1-telc-speaking-asking-requesting"
+      ]
     }
   ]
 }

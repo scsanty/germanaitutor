@@ -1,6 +1,6 @@
 import type Database from 'better-sqlite3';
 import type { Track, CefrLevel } from '../types';
-import type { Milestone, Section, Lesson, Exercise, ExerciseContent, LessonPrerequisite } from '../curriculum/types';
+import type { Milestone, Lesson, Exercise, ExerciseContent, LessonPrerequisite } from '../curriculum/types';
 import { ensureUnsortedExists, unsortedMilestoneId } from '../curriculum-admin/unsortedBucket';
 
 interface MilestoneRow {
@@ -9,15 +9,7 @@ interface MilestoneRow {
   level: CefrLevel;
   title: string;
   description: string | null;
-  order_index: number;
-}
-
-interface SectionRow {
-  id: string;
-  milestone_id: string;
-  title: string;
-  description: string | null;
-  order_index: number;
+  difficulty_rank: number | null;
 }
 
 interface LessonRow {
@@ -46,17 +38,7 @@ function rowToMilestone(row: MilestoneRow): Milestone {
     level: row.level,
     title: row.title,
     description: row.description,
-    orderIndex: row.order_index,
-  };
-}
-
-function rowToSection(row: SectionRow): Section {
-  return {
-    id: row.id,
-    milestoneId: row.milestone_id,
-    title: row.title,
-    description: row.description,
-    orderIndex: row.order_index,
+    difficultyRank: row.difficulty_rank,
   };
 }
 
@@ -97,35 +79,25 @@ export function createCurriculumService(db: Database.Database) {
     return Array.from(byTrack.entries()).map(([track, levels]) => ({ track, levels }));
   }
 
-  function getTrackStructure(
-    track: Track,
-    level: CefrLevel
-  ): { milestone: Milestone; sections: { section: Section; lessons: Lesson[] }[] }[] {
+  function getTrackStructure(track: Track, level: CefrLevel): { milestone: Milestone; lessons: Lesson[] }[] {
     ensureUnsortedExists(db, track, level);
     const unsortedId = unsortedMilestoneId(track, level);
     const milestoneRows = db
-      .prepare('SELECT * FROM milestones WHERE track = ? AND level = ? ORDER BY (id = ?) ASC, order_index ASC')
+      .prepare(
+        `SELECT * FROM milestones WHERE track = ? AND level = ?
+         ORDER BY (id = ?) ASC, difficulty_rank ASC, id ASC`
+      )
       .all(track, level, unsortedId) as MilestoneRow[];
-
-    return milestoneRows.map((milestoneRow) => {
-      const sectionRows = db
-        .prepare('SELECT * FROM sections WHERE milestone_id = ? ORDER BY order_index')
-        .all(milestoneRow.id) as SectionRow[];
-
-      const sections = sectionRows.map((sectionRow) => {
-        const lessonRows = db
-          .prepare(
-            `SELECT lessons.* FROM lessons
-             JOIN lesson_placements ON lesson_placements.lesson_id = lessons.id
-             WHERE lesson_placements.section_id = ?
-             ORDER BY lesson_placements.order_index`
-          )
-          .all(sectionRow.id) as LessonRow[];
-        return { section: rowToSection(sectionRow), lessons: lessonRows.map(rowToLesson) };
-      });
-
-      return { milestone: rowToMilestone(milestoneRow), sections };
-    });
+    const lessonsOf = db.prepare(
+      `SELECT lessons.* FROM lessons
+       JOIN lesson_placements ON lesson_placements.lesson_id = lessons.id
+       WHERE lesson_placements.milestone_id = ?
+       ORDER BY lessons.title, lessons.id`
+    );
+    return milestoneRows.map((row) => ({
+      milestone: rowToMilestone(row),
+      lessons: (lessonsOf.all(row.id) as LessonRow[]).map(rowToLesson),
+    }));
   }
 
   // `track` is accepted for API-shape compatibility (callers already pass the track they're

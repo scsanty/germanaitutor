@@ -5,13 +5,23 @@ import { createCurriculumStructureService } from '@/lib/services/curriculumStruc
 
 export const dynamic = 'force-dynamic';
 
+export async function GET(_request: Request, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
+  if (!(await isAdminSessionValid())) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  try {
+    return NextResponse.json(createCurriculumStructureService(getDb()).previewMilestoneDelete(params.id));
+  } catch (err) {
+    return NextResponse.json({ error: (err as Error).message }, { status: 400 });
+  }
+}
+
 export async function PATCH(request: Request, props: { params: Promise<{ id: string }> }) {
   const params = await props.params;
   if (!(await isAdminSessionValid())) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-  const { title, description } = await request.json();
+  const { title, description, difficultyRank } = await request.json();
   const service = createCurriculumStructureService(getDb());
   try {
-    const milestone = service.renameMilestone(params.id, title, description);
+    const milestone = service.updateMilestone(params.id, { title, description, difficultyRank });
     return NextResponse.json(milestone);
   } catch (err) {
     return NextResponse.json({ error: (err as Error).message }, { status: 400 });

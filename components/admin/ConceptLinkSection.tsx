@@ -32,14 +32,17 @@ export function ConceptLinkSection({
     Promise.all(
       otherTracks.map((t) =>
         fetch(`/api/curriculum/tracks/${t}/${sourceLevel}`)
-          .then((r) => r.json())
-          .then((structure: { sections: { lessons: ConceptLinkEntry[] }[] }[]) =>
-            Array.isArray(structure)
-              ? structure.flatMap((entry) => entry.sections.flatMap((s) => s.lessons))
-              : []
+          .then((r) => {
+            if (!r.ok) throw new Error(String(r.status));
+            return r.json();
+          })
+          .then((structure: { lessons: ConceptLinkEntry[] }[]) =>
+            Array.isArray(structure) ? structure.flatMap((entry) => entry.lessons) : []
           )
       )
-    ).then((lists) => setCandidates(lists.flat()));
+    )
+      .then((lists) => setCandidates(lists.flat()))
+      .catch(() => setError('Failed to load link candidates'));
   }, [track, sourceLevel]);
 
   const linkedIds = new Set(links.map((l) => l.id));

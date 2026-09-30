@@ -129,10 +129,9 @@ describe('applyRepairAndDelete', () => {
     insertLesson(db, 'a');
     insertLesson(db, 'b');
     db.exec(`
-      INSERT INTO milestones (id, track, level, title, order_index) VALUES ('m1', 'generic', 'A1', 'M1', 0);
-      INSERT INTO sections (id, milestone_id, title, order_index) VALUES ('s1', 'm1', 'S1', 0);
+      INSERT INTO milestones (id, track, level, title, difficulty_rank) VALUES ('m1', 'generic', 'A1', 'M1', 1);
     `);
-    db.prepare('INSERT INTO lesson_placements (lesson_id, section_id, order_index) VALUES (?, ?, 0)').run('b', 's1');
+    db.prepare('INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES (?, ?)').run('b', 'm1');
     db.prepare("INSERT INTO exercises (id, lesson_id, type, content) VALUES ('ex1', 'b', 'flashcard', '{}')").run();
     insertLesson(db, 'linked');
     db.prepare("INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('linked-telc', 'telc', 'A1', 'grammar', 'x')").run();

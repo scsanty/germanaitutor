@@ -1,120 +1,79 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { delayedResponse } from '@/test/delayedResponse';
 import { TrackLevelStructure } from './TrackLevelStructure';
 
-const structure = [
-  {
-    milestone: { id: 'm1', title: 'Milestone 1' },
-    sections: [{ section: { id: 's1', title: 'Section 1' }, lessons: [{ id: 'a1-l1', title: 'Lesson 1' }] }],
-  },
-  {
-    milestone: { id: 'generic-a1-unsorted', title: 'Unsorted' },
-    sections: [{ section: { id: 'generic-a1-unsorted-section', title: 'Unsorted' }, lessons: [] }],
-  },
+vi.mock('./DependencyDiagram', () => ({ DependencyDiagram: () => <p>diagram</p> }));
+
+const STRUCTURE = [
+  { milestone: { id: 'm1', title: 'Basics', description: null, difficultyRank: 1 }, lessons: [{ id: 'a1-greet', title: 'Saying hello' }] },
+  { milestone: { id: 'generic-a1-unsorted', title: 'Unsorted', description: null, difficultyRank: null }, lessons: [] },
 ];
+
+function stub(routes: Record<string, (init?: RequestInit) => Promise<unknown>>) {
+  const fetchMock = vi.fn((url: string, init?: RequestInit) => {
+    const key = `${init?.method ?? 'GET'} ${url}`;
+    if (!routes[key]) throw new Error(`Unexpected fetch: ${key}`);
+    return routes[key](init);
+  });
+  vi.stubGlobal('fetch', fetchMock);
+  return fetchMock;
+}
 
 describe('TrackLevelStructure', () => {
   beforeEach(() => {
-    vi.stubGlobal('fetch', vi.fn());
-    (fetch as any).mockResolvedValue({ ok: true, json: async () => structure });
+    vi.spyOn(window, 'confirm').mockReturnValue(true);
   });
 
-  it('renders milestones and sections, excluding management controls on Unsorted', async () => {
+  it('lists milestones by rank with their lessons, and Unsorted without controls', async () => {
+    stub({ 'GET /api/curriculum/tracks/generic/A1': () => delayedResponse(STRUCTURE) });
     render(<TrackLevelStructure track="generic" level="A1" />);
-    await waitFor(() => expect(screen.getByText('Milestone 1')).toBeInTheDocument());
-    expect(screen.getByText('Delete milestone')).toBeInTheDocument();
-    // Unsorted's own heading renders, but with no management controls next to it —
-    // only one "Delete milestone" button exists (for the real milestone).
-    expect(screen.getAllByText('Delete milestone')).toHaveLength(1);
+    expect(await screen.findByRole('heading', { name: '1. Basics' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Saying hello' })).toHaveAttribute('href', '/admin/curriculum/lesson/a1-greet?track=generic');
+    expect(screen.getByRole('heading', { name: 'Unsorted' })).toBeInTheDocument();
+    expect(screen.getAllByRole('button', { name: 'Delete milestone' })).toHaveLength(1);
   });
 
-  it('creates a milestone', async () => {
+  it('creates a milestone with a rank', async () => {
+    const fetchMock = stub({
+      'GET /api/curriculum/tracks/generic/A1': () => delayedResponse(STRUCTURE),
+      'POST /api/admin/curriculum/milestones': () => delayedResponse({ id: 'm2' }, { status: 201 }),
+    });
     render(<TrackLevelStructure track="generic" level="A1" />);
-    await waitFor(() => expect(screen.getByText('Milestone 1')).toBeInTheDocument());
-    fireEvent.change(screen.getByLabelText('New milestone title'), { target: { value: 'Milestone 2' } });
-    fireEvent.click(screen.getByText('Add milestone'));
-    await waitFor(() => {
-      const postCall = (fetch as any).mock.calls.find((c: any[]) => c[0] === '/api/admin/curriculum/milestones');
-      expect(postCall).toBeDefined();
-      expect(JSON.parse(postCall[1].body)).toEqual({ track: 'generic', level: 'A1', title: 'Milestone 2', description: null });
+    await screen.findByRole('heading', { name: '1. Basics' });
+    fireEvent.change(screen.getByLabelText('New milestone title'), { target: { value: 'Past' } });
+    fireEvent.change(screen.getByLabelText('New milestone rank'), { target: { value: '2' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Add milestone' }));
+    await waitFor(() =>
+      expect(fetchMock).toHaveBeenCalledWith('/api/admin/curriculum/milestones', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ track: 'generic', level: 'A1', title: 'Past', description: null, difficultyRank: 2 }),
+      })
+    );
+  });
+
+  it('saves a rank change and shows a server refusal', async () => {
+    const fetchMock = stub({
+      'GET /api/curriculum/tracks/generic/A1': () => delayedResponse(STRUCTURE),
+      'PATCH /api/admin/curriculum/milestones/m1': () =>
+        delayedResponse({ error: 'Difficulty rank must be a whole number of 1 or more' }, { ok: false, status: 400 }),
+    });
+    render(<TrackLevelStructure track="generic" level="A1" />);
+    const rank = await screen.findByLabelText('Rank of Basics');
+    fireEvent.change(rank, { target: { value: '0' } });
+    fireEvent.blur(rank);
+    expect(await screen.findByRole('alert')).toHaveTextContent('Difficulty rank must be a whole number of 1 or more');
+    expect(fetchMock).toHaveBeenCalledWith('/api/admin/curriculum/milestones/m1', {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title: 'Basics', description: null, difficultyRank: 0 }),
     });
   });
 
-  it('confirms with the affected lesson names before deleting a milestone', async () => {
-    const confirmSpy = vi.spyOn(window, 'confirm').mockReturnValue(true);
+  it('shows an error when the structure cannot load', async () => {
+    stub({ 'GET /api/curriculum/tracks/generic/A1': () => delayedResponse({}, { ok: false, status: 500 }) });
     render(<TrackLevelStructure track="generic" level="A1" />);
-    await waitFor(() => expect(screen.getByText('Milestone 1')).toBeInTheDocument());
-    fireEvent.click(screen.getByText('Delete milestone'));
-    expect(confirmSpy).toHaveBeenCalledWith(expect.stringContaining('Lesson 1'));
-    await waitFor(() => {
-      const deleteCall = (fetch as any).mock.calls.find((c: any[]) => c[0] === '/api/admin/curriculum/milestones/m1');
-      expect(deleteCall[1].method).toBe('DELETE');
-    });
-  });
-
-  it('does not delete when the confirm is declined', async () => {
-    vi.spyOn(window, 'confirm').mockReturnValue(false);
-    render(<TrackLevelStructure track="generic" level="A1" />);
-    await waitFor(() => expect(screen.getByText('Milestone 1')).toBeInTheDocument());
-    fireEvent.click(screen.getByText('Delete milestone'));
-    const deleteCall = (fetch as any).mock.calls.find((c: any[]) => c[0] === '/api/admin/curriculum/milestones/m1');
-    expect(deleteCall).toBeUndefined();
-  });
-
-  it('moving a milestone down sends the swapped order to the reorder endpoint', async () => {
-    const twoMilestones = [
-      { milestone: { id: 'm1', title: 'M1' }, sections: [] },
-      { milestone: { id: 'm2', title: 'M2' }, sections: [] },
-      { milestone: { id: 'generic-a1-unsorted', title: 'Unsorted' }, sections: [] },
-    ];
-    (fetch as any).mockResolvedValue({ ok: true, json: async () => twoMilestones });
-    render(<TrackLevelStructure track="generic" level="A1" />);
-    await waitFor(() => expect(screen.getByText('M1')).toBeInTheDocument());
-    fireEvent.click(screen.getAllByText('Move milestone down')[0]);
-    await waitFor(() => {
-      const reorderCall = (fetch as any).mock.calls.find((c: any[]) => c[0] === '/api/admin/curriculum/milestones/reorder');
-      expect(JSON.parse(reorderCall[1].body)).toEqual({ track: 'generic', level: 'A1', orderedIds: ['m2', 'm1'] });
-    });
-  });
-
-  it('surfaces an error when renaming a milestone fails', async () => {
-    vi.spyOn(window, 'prompt').mockReturnValue('New Title');
-    (fetch as any).mockImplementation((url: string) => {
-      if (url === '/api/admin/curriculum/milestones/m1') {
-        return Promise.resolve({ ok: false, json: async () => ({ error: 'Title already in use' }) });
-      }
-      return Promise.resolve({ ok: true, json: async () => structure });
-    });
-    render(<TrackLevelStructure track="generic" level="A1" />);
-    await waitFor(() => expect(screen.getByText('Milestone 1')).toBeInTheDocument());
-    fireEvent.click(screen.getByText('Rename milestone'));
-    await waitFor(() => {
-      expect(screen.getByRole('alert')).toHaveTextContent('Title already in use');
-    });
-  });
-
-  it('creates a section under a milestone', async () => {
-    render(<TrackLevelStructure track="generic" level="A1" />);
-    await waitFor(() => expect(screen.getByText('Milestone 1')).toBeInTheDocument());
-    fireEvent.change(screen.getByLabelText('New section title in Milestone 1'), { target: { value: 'Section 2' } });
-    fireEvent.click(screen.getByText('Add section'));
-    await waitFor(() => {
-      const postCall = (fetch as any).mock.calls.find((c: any[]) => c[0] === '/api/admin/curriculum/sections');
-      expect(JSON.parse(postCall[1].body)).toEqual({ milestoneId: 'm1', title: 'Section 2', description: null });
-    });
-  });
-
-  it('surfaces an error instead of hanging on Loading when the structure fetch fails', async () => {
-    (fetch as any).mockResolvedValue({ ok: false, json: async () => ({ error: 'Track not found' }) });
-    render(<TrackLevelStructure track="generic" level="A1" />);
-    await waitFor(() => expect(screen.getByRole('alert')).toHaveTextContent('Failed to load structure'));
-    expect(screen.queryByText('Loading...')).not.toBeInTheDocument();
-  });
-
-  it('switches to the Diagram tab', async () => {
-    render(<TrackLevelStructure track="generic" level="A1" />);
-    await waitFor(() => expect(screen.getByText('Milestone 1')).toBeInTheDocument());
-    fireEvent.click(screen.getByText('Diagram'));
-    await waitFor(() => expect(screen.getByRole('img', { name: 'generic A1 dependency diagram' })).toBeInTheDocument());
+    expect(await screen.findByRole('alert')).toHaveTextContent('Failed to load structure');
   });
 });

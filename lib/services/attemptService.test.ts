@@ -172,7 +172,7 @@ describe('attemptService.markLessonDone', () => {
     const { db, service, count } = setup();
     db.exec(`
       INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('a1-read', 'generic', 'A1', 'reading', 'Just read');
-      INSERT INTO lesson_placements (lesson_id, section_id, order_index) VALUES ('a1-read', 'g-a1-s1', 2);
+      INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES ('a1-read', 'g-a1-m1');
     `);
     expect(service.markLessonDone('a1-read')).toEqual({ completed: true });
     expect(service.markLessonDone('a1-read')).toEqual({ completed: true });

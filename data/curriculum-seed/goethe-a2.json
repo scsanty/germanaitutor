@@ -1,239 +1,8 @@
 {
-  "seedVersion": "2",
+  "seedVersion": "3",
+  "formatVersion": 2,
   "track": "goethe",
   "level": "A2",
-  "milestones": [
-    {
-      "milestone": {
-        "id": "goethe-a2-grammar",
-        "track": "goethe",
-        "level": "A2",
-        "title": "Grammar",
-        "description": null,
-        "orderIndex": 0
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "goethe-a2-grammar-lessons",
-            "milestoneId": "goethe-a2-grammar",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "a2-goethe-perfekt-past-tense",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "a2-goethe-praeteritum-auxiliaries-modals",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "a2-goethe-subordinating-conjunctions-weil-dass",
-              "orderIndex": 2
-            },
-            {
-              "lessonId": "a2-goethe-two-way-prepositions-local",
-              "orderIndex": 3
-            },
-            {
-              "lessonId": "a2-goethe-comparative-superlative",
-              "orderIndex": 4
-            },
-            {
-              "lessonId": "a2-goethe-adjective-declension-basics",
-              "orderIndex": 5
-            },
-            {
-              "lessonId": "a2-goethe-indirect-questions-polite",
-              "orderIndex": 6
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "goethe-a2-vocabulary",
-        "track": "goethe",
-        "level": "A2",
-        "title": "Vocabulary",
-        "description": null,
-        "orderIndex": 1
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "goethe-a2-vocabulary-lessons",
-            "milestoneId": "goethe-a2-vocabulary",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "a2-goethe-vocab-celebrations-social-events",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "a2-goethe-vocab-travel-vacation-nature",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "a2-goethe-vocab-education-professions-career",
-              "orderIndex": 2
-            },
-            {
-              "lessonId": "a2-goethe-vocab-media-communication",
-              "orderIndex": 3
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "goethe-a2-reading",
-        "track": "goethe",
-        "level": "A2",
-        "title": "Reading",
-        "description": null,
-        "orderIndex": 2
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "goethe-a2-reading-lessons",
-            "milestoneId": "goethe-a2-reading",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "a2-goethe-reading-teil1-personal-email",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "a2-goethe-reading-teil2-service-directory",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "a2-goethe-reading-teil3-newspaper-report",
-              "orderIndex": 2
-            },
-            {
-              "lessonId": "a2-goethe-reading-teil4-advertisement-matching",
-              "orderIndex": 3
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "goethe-a2-listening",
-        "track": "goethe",
-        "level": "A2",
-        "title": "Listening",
-        "description": null,
-        "orderIndex": 3
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "goethe-a2-listening-lessons",
-            "milestoneId": "goethe-a2-listening",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "a2-goethe-listening-teil1-everyday-dialogues",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "a2-goethe-listening-teil2-guided-monologues",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "a2-goethe-listening-teil4-radio-interview",
-              "orderIndex": 2
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "goethe-a2-writing",
-        "track": "goethe",
-        "level": "A2",
-        "title": "Writing",
-        "description": null,
-        "orderIndex": 4
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "goethe-a2-writing-lessons",
-            "milestoneId": "goethe-a2-writing",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "a2-goethe-writing-teil1-informal-note",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "a2-goethe-writing-teil2-semi-formal-message",
-              "orderIndex": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "goethe-a2-speaking",
-        "track": "goethe",
-        "level": "A2",
-        "title": "Speaking",
-        "description": null,
-        "orderIndex": 5
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "goethe-a2-speaking-lessons",
-            "milestoneId": "goethe-a2-speaking",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "a2-goethe-speaking-teil1-question-exchange",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "a2-goethe-speaking-teil2-monologic-topic",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "a2-goethe-speaking-teil3-joint-negotiation",
-              "orderIndex": 2
-            }
-          ]
-        }
-      ]
-    }
-  ],
   "lessons": [
     {
       "id": "a2-goethe-perfekt-past-tense",
@@ -1585,6 +1354,103 @@
     {
       "lessonId": "a2-goethe-speaking-teil3-joint-negotiation",
       "prerequisiteLessonId": "a2-goethe-comparative-superlative"
+    }
+  ],
+  "milestones": [
+    {
+      "milestone": {
+        "id": "goethe-a2-grammar",
+        "track": "goethe",
+        "level": "A2",
+        "title": "Grammar",
+        "description": null,
+        "difficultyRank": 1
+      },
+      "lessonIds": [
+        "a2-goethe-perfekt-past-tense",
+        "a2-goethe-praeteritum-auxiliaries-modals",
+        "a2-goethe-subordinating-conjunctions-weil-dass",
+        "a2-goethe-two-way-prepositions-local",
+        "a2-goethe-comparative-superlative",
+        "a2-goethe-adjective-declension-basics",
+        "a2-goethe-indirect-questions-polite"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "goethe-a2-vocabulary",
+        "track": "goethe",
+        "level": "A2",
+        "title": "Vocabulary",
+        "description": null,
+        "difficultyRank": 2
+      },
+      "lessonIds": [
+        "a2-goethe-vocab-celebrations-social-events",
+        "a2-goethe-vocab-travel-vacation-nature",
+        "a2-goethe-vocab-education-professions-career",
+        "a2-goethe-vocab-media-communication"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "goethe-a2-reading",
+        "track": "goethe",
+        "level": "A2",
+        "title": "Reading",
+        "description": null,
+        "difficultyRank": 3
+      },
+      "lessonIds": [
+        "a2-goethe-reading-teil1-personal-email",
+        "a2-goethe-reading-teil2-service-directory",
+        "a2-goethe-reading-teil3-newspaper-report",
+        "a2-goethe-reading-teil4-advertisement-matching"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "goethe-a2-listening",
+        "track": "goethe",
+        "level": "A2",
+        "title": "Listening",
+        "description": null,
+        "difficultyRank": 4
+      },
+      "lessonIds": [
+        "a2-goethe-listening-teil1-everyday-dialogues",
+        "a2-goethe-listening-teil2-guided-monologues",
+        "a2-goethe-listening-teil4-radio-interview"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "goethe-a2-writing",
+        "track": "goethe",
+        "level": "A2",
+        "title": "Writing",
+        "description": null,
+        "difficultyRank": 5
+      },
+      "lessonIds": [
+        "a2-goethe-writing-teil1-informal-note",
+        "a2-goethe-writing-teil2-semi-formal-message"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "goethe-a2-speaking",
+        "track": "goethe",
+        "level": "A2",
+        "title": "Speaking",
+        "description": null,
+        "difficultyRank": 6
+      },
+      "lessonIds": [
+        "a2-goethe-speaking-teil1-question-exchange",
+        "a2-goethe-speaking-teil2-monologic-topic",
+        "a2-goethe-speaking-teil3-joint-negotiation"
+      ]
     }
   ]
 }

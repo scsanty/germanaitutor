@@ -4,8 +4,7 @@ import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { getDb, closeDb } from '@/lib/db/client';
 import { POST } from './route';
-import { PATCH, DELETE } from './[id]/route';
-import { PATCH as reorder } from './reorder/route';
+import { GET, PATCH, DELETE } from './[id]/route';
 
 vi.mock('@/lib/auth/adminSession', () => ({ isAdminSessionValid: vi.fn(() => true) }));
 import { isAdminSessionValid } from '@/lib/auth/adminSession';
@@ -42,22 +41,11 @@ describe('/api/admin/curriculum/milestones', () => {
     expect(res.status).toBe(401);
   });
 
-  it('returns 401 when not authenticated (PATCH reorder)', async () => {
-    vi.mocked(isAdminSessionValid).mockResolvedValue(false);
-    const res = await reorder(
-      new Request('http://localhost', {
-        method: 'PATCH',
-        body: JSON.stringify({ track: 'generic', level: 'A1', orderedIds: [] }),
-      })
-    );
-    expect(res.status).toBe(401);
-  });
-
   it('creates a milestone', async () => {
     const res = await POST(
       new Request('http://localhost', {
         method: 'POST',
-        body: JSON.stringify({ track: 'generic', level: 'A1', title: 'Basics', description: null }),
+        body: JSON.stringify({ track: 'generic', level: 'A1', title: 'Basics', description: null, difficultyRank: 1 }),
       })
     );
     expect(res.status).toBe(201);
@@ -70,17 +58,17 @@ describe('/api/admin/curriculum/milestones', () => {
       await POST(
         new Request('http://localhost', {
           method: 'POST',
-          body: JSON.stringify({ track: 'generic', level: 'A1', title: 'Basics', description: null }),
+          body: JSON.stringify({ track: 'generic', level: 'A1', title: 'Basics', description: null, difficultyRank: 1 }),
         })
       )
     ).json();
 
     const res = await PATCH(
-      new Request('http://localhost', { method: 'PATCH', body: JSON.stringify({ title: 'Fundamentals', description: null }) }),
+      new Request('http://localhost', { method: 'PATCH', body: JSON.stringify({ title: 'Fundamentals', description: null, difficultyRank: 2 }) }),
       { params: Promise.resolve({ id: created.id }) }
     );
     expect(res.status).toBe(200);
-    expect((await res.json()).title).toBe('Fundamentals');
+    expect(await res.json()).toMatchObject({ title: 'Fundamentals', difficultyRank: 2 });
   });
 
   it('deletes a milestone', async () => {
@@ -88,7 +76,7 @@ describe('/api/admin/curriculum/milestones', () => {
       await POST(
         new Request('http://localhost', {
           method: 'POST',
-          body: JSON.stringify({ track: 'generic', level: 'A1', title: 'Basics', description: null }),
+          body: JSON.stringify({ track: 'generic', level: 'A1', title: 'Basics', description: null, difficultyRank: 1 }),
         })
       )
     ).json();
@@ -98,22 +86,37 @@ describe('/api/admin/curriculum/milestones', () => {
     expect(getDb().prepare('SELECT 1 FROM milestones WHERE id = ?').get(created.id)).toBeUndefined();
   });
 
-  it('reorders milestones, rejecting a payload that includes Unsorted', async () => {
-    const m1 = await (
-      await POST(
-        new Request('http://localhost', {
-          method: 'POST',
-          body: JSON.stringify({ track: 'generic', level: 'A1', title: 'M1', description: null }),
-        })
-      )
-    ).json();
-
-    const res = await reorder(
+  it('rejects a milestone without a whole-number rank', async () => {
+    const res = await POST(
       new Request('http://localhost', {
-        method: 'PATCH',
-        body: JSON.stringify({ track: 'generic', level: 'A1', orderedIds: [m1.id, 'generic-a1-unsorted'] }),
+        method: 'POST',
+        body: JSON.stringify({ track: 'generic', level: 'A1', title: 'Basics', description: null, difficultyRank: 0 }),
       })
     );
     expect(res.status).toBe(400);
+    expect((await res.json()).error).toMatch(/whole number/);
+  });
+
+  it('previews which lessons a milestone delete would move to Unsorted', async () => {
+    const created = await (
+      await POST(
+        new Request('http://localhost', {
+          method: 'POST',
+          body: JSON.stringify({ track: 'generic', level: 'A1', title: 'Basics', description: null, difficultyRank: 1 }),
+        })
+      )
+    ).json();
+    getDb().exec(`INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('l1', 'generic', 'A1', 'grammar', 'L1');
+      INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES ('l1', '${created.id}');`);
+
+    const res = await GET(new Request('http://localhost'), { params: Promise.resolve({ id: created.id }) });
+    expect(res.status).toBe(200);
+    expect(await res.json()).toEqual({ lessons: [{ id: 'l1', title: 'L1' }] });
+  });
+
+  it('returns 401 when not authenticated (GET preview)', async () => {
+    vi.mocked(isAdminSessionValid).mockResolvedValue(false);
+    const res = await GET(new Request('http://localhost'), { params: Promise.resolve({ id: 'some-id' }) });
+    expect(res.status).toBe(401);
   });
 });

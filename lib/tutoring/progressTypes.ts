@@ -12,16 +12,10 @@ export interface TreeLesson {
   missingPrerequisites: { id: string; title: string }[];
 }
 
-export interface TreeSection {
-  id: string;
-  title: string;
-  lessons: TreeLesson[];
-}
-
 export interface TreeMilestone {
   id: string;
   title: string;
-  sections: TreeSection[];
+  lessons: TreeLesson[];
 }
 
 export interface CurriculumTree {

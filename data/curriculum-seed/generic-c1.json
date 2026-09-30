@@ -1,227 +1,8 @@
 {
-  "seedVersion": "2",
+  "seedVersion": "3",
+  "formatVersion": 2,
   "track": "generic",
   "level": "C1",
-  "milestones": [
-    {
-      "milestone": {
-        "id": "generic-c1-grammar",
-        "track": "generic",
-        "level": "C1",
-        "title": "Grammar",
-        "description": null,
-        "orderIndex": 0
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-c1-grammar-lessons",
-            "milestoneId": "generic-c1-grammar",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "c1-nominalstil-und-verbalstil",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "c1-partizipialattribute-erweiterte-partizipien",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "c1-konjunktiv-eins-indirekte-rede",
-              "orderIndex": 2
-            },
-            {
-              "lessonId": "c1-passiv-alternativen-konkurrenzformen",
-              "orderIndex": 3
-            },
-            {
-              "lessonId": "c1-konnektoren-und-textkohaesion",
-              "orderIndex": 4
-            },
-            {
-              "lessonId": "c1-modalpartikeln-und-nuancen",
-              "orderIndex": 5
-            },
-            {
-              "lessonId": "c1-subjektlose-passiv-unpersoenliche-strukturen",
-              "orderIndex": 6
-            },
-            {
-              "lessonId": "c1-komplexe-satzgefuege-und-satzperiode",
-              "orderIndex": 7
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-c1-vocabulary",
-        "track": "generic",
-        "level": "C1",
-        "title": "Vocabulary",
-        "description": null,
-        "orderIndex": 1
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-c1-vocabulary-lessons",
-            "milestoneId": "generic-c1-vocabulary",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "c1-nomen-verb-verbindungen",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "c1-gehobener-wortschatz-abstrakte-begriffe",
-              "orderIndex": 1
-            },
-            {
-              "lessonId": "c1-feste-praeposition-nomen-wendungen",
-              "orderIndex": 2
-            },
-            {
-              "lessonId": "c1-stilmittel-und-registervariation",
-              "orderIndex": 3
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-c1-reading",
-        "track": "generic",
-        "level": "C1",
-        "title": "Reading",
-        "description": null,
-        "orderIndex": 2
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-c1-reading-lessons",
-            "milestoneId": "generic-c1-reading",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "c1-rezeption-komplexer-sachtexte",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "c1-erfassen-impliziter-bedeutungen",
-              "orderIndex": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-c1-listening",
-        "track": "generic",
-        "level": "C1",
-        "title": "Listening",
-        "description": null,
-        "orderIndex": 3
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-c1-listening-lessons",
-            "milestoneId": "generic-c1-listening",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "c1-verstaendnis-akademischer-fachvortraege",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "c1-rezeption-mehrstimmiger-debatten",
-              "orderIndex": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-c1-writing",
-        "track": "generic",
-        "level": "C1",
-        "title": "Writing",
-        "description": null,
-        "orderIndex": 4
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-c1-writing-lessons",
-            "milestoneId": "generic-c1-writing",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "c1-verfassen-differenzierter-kommentare",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "c1-strukturierung-akademischer-abhandlungen",
-              "orderIndex": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "milestone": {
-        "id": "generic-c1-speaking",
-        "track": "generic",
-        "level": "C1",
-        "title": "Speaking",
-        "description": null,
-        "orderIndex": 5
-      },
-      "sections": [
-        {
-          "section": {
-            "id": "generic-c1-speaking-lessons",
-            "milestoneId": "generic-c1-speaking",
-            "title": "Lessons",
-            "description": null,
-            "orderIndex": 0
-          },
-          "lessonRefs": [
-            {
-              "lessonId": "c1-spontane-nuancierte-diskussionsfuehrung",
-              "orderIndex": 0
-            },
-            {
-              "lessonId": "c1-rhetorische-praesentation-komplexer-themen",
-              "orderIndex": 1
-            }
-          ]
-        }
-      ]
-    }
-  ],
   "lessons": [
     {
       "id": "c1-nominalstil-und-verbalstil",
@@ -1552,6 +1333,100 @@
     {
       "lessonId": "c1-rhetorische-praesentation-komplexer-themen",
       "prerequisiteLessonId": "c1-stilmittel-und-registervariation"
+    }
+  ],
+  "milestones": [
+    {
+      "milestone": {
+        "id": "generic-c1-grammar",
+        "track": "generic",
+        "level": "C1",
+        "title": "Grammar",
+        "description": null,
+        "difficultyRank": 1
+      },
+      "lessonIds": [
+        "c1-nominalstil-und-verbalstil",
+        "c1-partizipialattribute-erweiterte-partizipien",
+        "c1-konjunktiv-eins-indirekte-rede",
+        "c1-passiv-alternativen-konkurrenzformen",
+        "c1-konnektoren-und-textkohaesion",
+        "c1-modalpartikeln-und-nuancen",
+        "c1-subjektlose-passiv-unpersoenliche-strukturen",
+        "c1-komplexe-satzgefuege-und-satzperiode"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-c1-vocabulary",
+        "track": "generic",
+        "level": "C1",
+        "title": "Vocabulary",
+        "description": null,
+        "difficultyRank": 2
+      },
+      "lessonIds": [
+        "c1-nomen-verb-verbindungen",
+        "c1-gehobener-wortschatz-abstrakte-begriffe",
+        "c1-feste-praeposition-nomen-wendungen",
+        "c1-stilmittel-und-registervariation"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-c1-reading",
+        "track": "generic",
+        "level": "C1",
+        "title": "Reading",
+        "description": null,
+        "difficultyRank": 3
+      },
+      "lessonIds": [
+        "c1-rezeption-komplexer-sachtexte",
+        "c1-erfassen-impliziter-bedeutungen"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-c1-listening",
+        "track": "generic",
+        "level": "C1",
+        "title": "Listening",
+        "description": null,
+        "difficultyRank": 4
+      },
+      "lessonIds": [
+        "c1-verstaendnis-akademischer-fachvortraege",
+        "c1-rezeption-mehrstimmiger-debatten"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-c1-writing",
+        "track": "generic",
+        "level": "C1",
+        "title": "Writing",
+        "description": null,
+        "difficultyRank": 5
+      },
+      "lessonIds": [
+        "c1-verfassen-differenzierter-kommentare",
+        "c1-strukturierung-akademischer-abhandlungen"
+      ]
+    },
+    {
+      "milestone": {
+        "id": "generic-c1-speaking",
+        "track": "generic",
+        "level": "C1",
+        "title": "Speaking",
+        "description": null,
+        "difficultyRank": 6
+      },
+      "lessonIds": [
+        "c1-spontane-nuancierte-diskussionsfuehrung",
+        "c1-rhetorische-praesentation-komplexer-themen"
+      ]
     }
   ]
 }

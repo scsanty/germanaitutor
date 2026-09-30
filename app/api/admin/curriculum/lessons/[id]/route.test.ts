@@ -13,10 +13,9 @@ describe('/api/admin/curriculum/lessons/[id]', () => {
     process.env.GAIT_DATA_DIR = mkdtempSync(join(tmpdir(), 'gait-admin-lesson-id-'));
     vi.mocked(isAdminSessionValid).mockResolvedValue(true);
     getDb().exec(`
-      INSERT INTO milestones (id, track, level, title, order_index) VALUES ('m1', 'generic', 'A1', 'M1', 0);
-      INSERT INTO sections (id, milestone_id, title, order_index) VALUES ('s1', 'm1', 'S1', 0);
+      INSERT INTO milestones (id, track, level, title, difficulty_rank) VALUES ('m1', 'generic', 'A1', 'M1', 1);
       INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('a1-l1', 'generic', 'A1', 'grammar', 'L1');
-      INSERT INTO lesson_placements (lesson_id, section_id, order_index) VALUES ('a1-l1', 's1', 0);
+      INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES ('a1-l1', 'm1');
     `);
   });
 
@@ -46,7 +45,7 @@ describe('/api/admin/curriculum/lessons/[id]', () => {
           examples: null,
           exercises: [],
           prerequisiteIds: [],
-          placement: { sectionId: 's1' },
+          placement: { milestoneId: 'm1' },
         }),
       }),
       { params: Promise.resolve({ id: 'a1-l1' }) }
@@ -69,7 +68,7 @@ describe('/api/admin/curriculum/lessons/[id]', () => {
           examples: null,
           exercises: [],
           prerequisiteIds: [],
-          placement: { sectionId: 's1' },
+          placement: { milestoneId: 'm1' },
         }),
       }),
       { params: Promise.resolve({ id: 'nope' }) }

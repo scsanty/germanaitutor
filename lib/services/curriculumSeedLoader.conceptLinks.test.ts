@@ -11,20 +11,15 @@ function seedFile(
   conceptLinks?: SeedFile['conceptLinks']
 ): SeedFile {
   const milestoneId = `${track}-a1-m`;
-  const sectionId = `${track}-a1-s`;
   return {
     seedVersion: '9',
+    formatVersion: 2,
     track,
     level: 'A1',
     milestones: [
       {
-        milestone: { id: milestoneId, track, level: 'A1', title: 'M', description: null, orderIndex: 0 },
-        sections: [
-          {
-            section: { id: sectionId, milestoneId, title: 'S', description: null, orderIndex: 0 },
-            lessonRefs: lessonIds.map((lessonId, orderIndex) => ({ lessonId, orderIndex })),
-          },
-        ],
+        milestone: { id: milestoneId, track, level: 'A1', title: 'M', description: null, difficultyRank: 1 },
+        lessonIds,
       },
     ],
     lessons: lessonIds.map((id) => ({

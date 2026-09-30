@@ -14,7 +14,7 @@ interface VisibleLessonRow {
   id: string;
   title: string;
   skill: Skill;
-  section_id: string;
+  milestone_id: string;
 }
 
 interface DoneState {
@@ -67,13 +67,12 @@ export function createProgressService(db: Database.Database) {
   function visibleLessons(track: Track, level: CefrLevel): VisibleLessonRow[] {
     return db
       .prepare(
-        `SELECT l.id, l.title, l.skill, s.id AS section_id
+        `SELECT l.id, l.title, l.skill, p.milestone_id
          FROM milestones m
-         JOIN sections s ON s.milestone_id = m.id
-         JOIN lesson_placements p ON p.section_id = s.id
+         JOIN lesson_placements p ON p.milestone_id = m.id
          JOIN lessons l ON l.id = p.lesson_id
          WHERE m.track = ? AND m.level = ? AND m.id != ?
-         ORDER BY m.order_index, m.id, s.order_index, s.id, p.order_index, l.id`
+         ORDER BY m.difficulty_rank, m.id, l.title, l.id`
       )
       .all(track, level, unsortedMilestoneId(track, level)) as VisibleLessonRow[];
   }
@@ -104,9 +103,9 @@ export function createProgressService(db: Database.Database) {
       (db.prepare('SELECT DISTINCT lesson_id FROM lesson_attempts').all() as { lesson_id: string }[]).map((r) => r.lesson_id)
     );
 
-    const lessonsBySection = new Map<string, TreeLesson[]>();
+    const lessonsByMilestone = new Map<string, TreeLesson[]>();
     for (const row of visibleLessons(track, level)) {
-      const list = lessonsBySection.get(row.section_id) ?? [];
+      const list = lessonsByMilestone.get(row.milestone_id) ?? [];
       list.push({
         id: row.id,
         title: row.title,
@@ -119,25 +118,16 @@ export function createProgressService(db: Database.Database) {
         coveredVia: done.coveredVia.get(row.id) ?? null,
         missingPrerequisites: (prerequisites.get(row.id) ?? []).filter((p) => !isDone(done, p.id)),
       });
-      lessonsBySection.set(row.section_id, list);
+      lessonsByMilestone.set(row.milestone_id, list);
     }
 
     const milestones = db
-      .prepare('SELECT id, title FROM milestones WHERE track = ? AND level = ? AND id != ? ORDER BY order_index, id')
+      .prepare('SELECT id, title FROM milestones WHERE track = ? AND level = ? AND id != ? ORDER BY difficulty_rank, id')
       .all(track, level, unsortedMilestoneId(track, level)) as { id: string; title: string }[];
-    const sectionsOf = db.prepare('SELECT id, title FROM sections WHERE milestone_id = ? ORDER BY order_index, id');
     return {
       track,
       level,
-      milestones: milestones.map((m) => ({
-        id: m.id,
-        title: m.title,
-        sections: (sectionsOf.all(m.id) as { id: string; title: string }[]).map((s) => ({
-          id: s.id,
-          title: s.title,
-          lessons: lessonsBySection.get(s.id) ?? [],
-        })),
-      })),
+      milestones: milestones.map((m) => ({ id: m.id, title: m.title, lessons: lessonsByMilestone.get(m.id) ?? [] })),
     };
   }
 
@@ -211,13 +201,12 @@ export function createProgressService(db: Database.Database) {
          JOIN exercises e ON e.id = st.exercise_id
          JOIN lessons l ON l.id = e.lesson_id
          JOIN lesson_placements p ON p.lesson_id = l.id
-         JOIN sections s ON s.id = p.section_id
-         JOIN milestones m ON m.id = s.milestone_id
+         JOIN milestones m ON m.id = p.milestone_id
          WHERE m.track = ? AND m.level = ? AND st.next_due_at <= ?
            AND NOT EXISTS (
              SELECT 1 FROM lesson_attempts a WHERE a.exercise_id = e.id AND a.source = 'queue' AND a.answered_on = ?
            )
-         ORDER BY st.next_due_at, m.order_index, s.order_index, p.order_index, e.rowid`
+         ORDER BY st.next_due_at, COALESCE(m.difficulty_rank, 1000000), m.id, e.rowid`
       )
       .all(track, level, today, today) as DueRow[];
     const due = selectDueItems(

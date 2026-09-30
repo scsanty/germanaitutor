@@ -2,17 +2,15 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { ConceptLinkSection } from './ConceptLinkSection';
 
-const telcStructure = [
-  { sections: [{ lessons: [{ id: 't1', title: 'T1', track: 'telc' }] }] },
-];
-const goetheStructure = [{ sections: [{ lessons: [] }] }];
+const telcStructure = [{ lessons: [{ id: 't1', title: 'T1', track: 'telc' }] }];
+const goetheStructure = [{ lessons: [] }];
 
 describe('ConceptLinkSection', () => {
   beforeEach(() => {
     vi.stubGlobal('fetch', vi.fn());
     (fetch as any).mockImplementation((url: string) => {
-      if (url.includes('/tracks/telc/')) return Promise.resolve({ json: async () => telcStructure });
-      if (url.includes('/tracks/goethe/')) return Promise.resolve({ json: async () => goetheStructure });
+      if (url.includes('/tracks/telc/')) return Promise.resolve({ ok: true, json: async () => telcStructure });
+      if (url.includes('/tracks/goethe/')) return Promise.resolve({ ok: true, json: async () => goetheStructure });
       return Promise.resolve({ ok: true, json: async () => ({ ok: true }) });
     });
   });
@@ -75,8 +73,8 @@ describe('ConceptLinkSection', () => {
   it('surfaces an error instead of optimistically removing the link when the DELETE fails', async () => {
     const onLinksChange = vi.fn();
     (fetch as any).mockImplementation((url: string) => {
-      if (url.includes('/tracks/telc/')) return Promise.resolve({ json: async () => telcStructure });
-      if (url.includes('/tracks/goethe/')) return Promise.resolve({ json: async () => goetheStructure });
+      if (url.includes('/tracks/telc/')) return Promise.resolve({ ok: true, json: async () => telcStructure });
+      if (url.includes('/tracks/goethe/')) return Promise.resolve({ ok: true, json: async () => goetheStructure });
       if (url === '/api/admin/curriculum/lessons/g1/links/t1') {
         return Promise.resolve({ ok: false, json: async () => ({ error: 'Link not found' }) });
       }
@@ -94,5 +92,13 @@ describe('ConceptLinkSection', () => {
     fireEvent.click(screen.getByText('Unlink'));
     await waitFor(() => expect(screen.getByRole('alert')).toHaveTextContent('Link not found'));
     expect(onLinksChange).not.toHaveBeenCalled();
+  });
+
+  it('shows an alert when the candidate lessons cannot load', async () => {
+    (fetch as any).mockImplementation(() => Promise.resolve({ ok: false, status: 500, json: async () => ({}) }));
+    render(
+      <ConceptLinkSection lessonId="g1" track="generic" sourceLevel="A1" links={[]} onLinksChange={vi.fn()} />
+    );
+    expect(await screen.findByRole('alert')).toHaveTextContent('Failed to load link candidates');
   });
 });
