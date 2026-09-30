@@ -67,3 +67,22 @@ export function scheduleReview(db: Database.Database, exerciseId: string, nextDu
      VALUES (?, 1, 2.5, 3, ?, '2026-09-24T10:00:00.000Z')`
   ).run(exerciseId, nextDueAt);
 }
+
+export function addPracticeExercise(
+  db: Database.Database,
+  id: string,
+  lessonId: string,
+  options: { type?: string; content?: unknown; status?: 'unreviewed' | 'approved' | 'rejected'; createdAt?: string } = {}
+): void {
+  db.prepare(
+    `INSERT INTO practice_exercises (id, lesson_id, type, content, review_status, created_at)
+     VALUES (?, ?, ?, ?, ?, ?)`
+  ).run(
+    id,
+    lessonId,
+    options.type ?? 'multiple_choice',
+    JSON.stringify(options.content ?? { question: `Question ${id}?`, options: ['ja', 'nein'], correctIndex: 0 }),
+    options.status ?? 'unreviewed',
+    options.createdAt ?? '2026-09-29T10:00:00.000Z'
+  );
+}
