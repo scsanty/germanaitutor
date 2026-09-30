@@ -27,6 +27,8 @@ export interface PlacementAnswerRecord {
   level: CefrLevel;
   type: PlacementQuestionType;
   question: string;
+  // Optional so records stored before instructions existed still read.
+  instruction?: LocalizedText;
   given: string;
   correctAnswer: string;
   result: GradeResult;

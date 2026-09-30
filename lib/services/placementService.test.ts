@@ -103,6 +103,16 @@ describe('placementService', () => {
     ]);
   });
 
+  it('stores the question instruction on the answer record', async () => {
+    const instruction = { en: 'Write a sentence.', de: 'Schreib einen Satz.' };
+    const fill: PlacementQuestion = { id: 'fill', level: 'A1', type: 'fill_blank', content: { textWithBlank: 'Ich ___ gut.', correctAnswer: 'bin', instruction } };
+    const { service } = setup([fill, ...smallPlacementExam()]);
+    service.start();
+    await service.answer('fill', { type: 'fill_blank', text: 'bin' });
+    const state = service.stop();
+    expect(state.status === 'finished' && state.outcome.answers[0].instruction).toEqual(instruction);
+  });
+
   it('reads legacy plain-text feedback from a stored session', () => {
     const { db, service } = setup();
     service.start();

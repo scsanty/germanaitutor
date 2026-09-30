@@ -162,6 +162,19 @@ describe('PlacementTest', () => {
     expect(onFinished).toHaveBeenCalled();
   });
 
+  it('shows the instruction in the review when the question text is empty', async () => {
+    const answer = { ...OUTCOME.answers[0], question: '', instruction: { en: 'Fill in the verb.', de: 'Ergänze das Verb.' } };
+    stubFetch({
+      '/api/placement/start': () => delayedResponse({ status: 'in_progress', question: MC_QUESTION }),
+      '/api/placement/stop': () => delayedResponse({ status: 'finished', outcome: { ...OUTCOME, answers: [answer] } }),
+    });
+    renderWithIntl(<PlacementTest onFinished={vi.fn()} />);
+    fireEvent.click(screen.getByText('Start the test'));
+    await screen.findByText('Ich ___ Anna.');
+    fireEvent.click(screen.getByText('Beyond my knowledge'));
+    expect(await screen.findByText('Fill in the verb.')).toBeInTheDocument();
+  });
+
   it('shows an error when the test cannot start', async () => {
     stubFetch({ '/api/placement/start': () => delayedResponse({ error: 'No placement exam is loaded' }, { ok: false, status: 409 }) });
     renderWithIntl(<PlacementTest onFinished={vi.fn()} />);

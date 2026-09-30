@@ -214,7 +214,8 @@ export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; 
       <ol>
         {outcome.answers.map((a) => (
           <li key={a.questionId}>
-            <p>{a.question}</p>
+            {a.instruction && <p>{pickText(a.instruction, language)}</p>}
+            {a.question && <p>{a.question}</p>}
             <p>
               {t('given', { answer: a.given || t('noAnswer') })} — {t(`result.${a.result}`)}
             </p>

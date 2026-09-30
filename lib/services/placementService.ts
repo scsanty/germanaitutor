@@ -142,7 +142,12 @@ export function createPlacementService(db: Database.Database, deps?: PlacementDe
   }
 
   async function gradeAnswer(question: PlacementQuestion, answer: PlacementAnswer): Promise<PlacementAnswerRecord> {
-    const base = { questionId: question.id, level: question.level, type: question.type };
+    const base = {
+      questionId: question.id,
+      level: question.level,
+      type: question.type,
+      ...(question.content.instruction ? { instruction: question.content.instruction } : {}),
+    };
     if (question.type === 'multiple_choice' && answer.type === 'multiple_choice') {
       const { content } = question;
       return {
