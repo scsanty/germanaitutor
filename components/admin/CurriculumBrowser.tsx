@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import type { Lesson, Exercise, LessonPrerequisite } from '@/lib/curriculum/types';
 import { ConceptLinkSection, type ConceptLinkEntry } from './ConceptLinkSection';
 import { DeleteLessonWizard } from './DeleteLessonWizard';
+import { PracticePoolList } from './PracticePoolList';
 
 export function LessonDetail({ lessonId, track }: { lessonId: string; track: string }) {
   const [showDeleteWizard, setShowDeleteWizard] = useState(false);
@@ -61,6 +62,8 @@ export function LessonDetail({ lessonId, track }: { lessonId: string; track: str
           </li>
         ))}
       </ul>
+      <h2>Practice pool</h2>
+      <PracticePoolList lessonId={lessonId} />
       <ConceptLinkSection
         lessonId={lessonId}
         track={data.lesson.track}

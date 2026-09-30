@@ -71,34 +71,12 @@ export function ExerciseEditor({
             <option value="free_text">Free text</option>
           </select>
 
-          {exercise.type === 'multiple_choice' && (
-            <MultipleChoiceFields
-              content={exercise.content as MultipleChoiceContent}
-              index={index}
-              onChange={(content) => updateAt(index, { ...exercise, content })}
-            />
-          )}
-          {exercise.type === 'fill_blank' && (
-            <FillBlankFields
-              content={exercise.content as FillBlankContent}
-              index={index}
-              onChange={(content) => updateAt(index, { ...exercise, content })}
-            />
-          )}
-          {exercise.type === 'flashcard' && (
-            <FlashcardFields
-              content={exercise.content as FlashcardContent}
-              index={index}
-              onChange={(content) => updateAt(index, { ...exercise, content })}
-            />
-          )}
-          {exercise.type === 'free_text' && (
-            <FreeTextFields
-              content={exercise.content as FreeTextContent}
-              index={index}
-              onChange={(content) => updateAt(index, { ...exercise, content })}
-            />
-          )}
+          <ExerciseContentFields
+            type={exercise.type}
+            content={exercise.content}
+            index={index}
+            onChange={(content) => updateAt(index, { ...exercise, content })}
+          />
 
           <button type="button" onClick={() => removeAt(index)}>
             Remove exercise {index + 1}
@@ -110,6 +88,30 @@ export function ExerciseEditor({
       </button>
     </div>
   );
+}
+
+// One exercise's content form, shared by the lesson editor and the practice review list.
+export function ExerciseContentFields({
+  type,
+  content,
+  index,
+  onChange,
+}: {
+  type: ExerciseType;
+  content: ExerciseContent;
+  index: number;
+  onChange: (content: ExerciseContent) => void;
+}) {
+  switch (type) {
+    case 'multiple_choice':
+      return <MultipleChoiceFields content={content as MultipleChoiceContent} index={index} onChange={onChange} />;
+    case 'fill_blank':
+      return <FillBlankFields content={content as FillBlankContent} index={index} onChange={onChange} />;
+    case 'flashcard':
+      return <FlashcardFields content={content as FlashcardContent} index={index} onChange={onChange} />;
+    case 'free_text':
+      return <FreeTextFields content={content as FreeTextContent} index={index} onChange={onChange} />;
+  }
 }
 
 function MultipleChoiceFields({

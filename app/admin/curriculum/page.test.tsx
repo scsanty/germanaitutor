@@ -46,5 +46,6 @@ describe('AdminCurriculumPage', () => {
     );
     expect(screen.getByRole('link', { name: '(export)' })).toHaveAttribute('href', '/api/admin/curriculum/export/generic/A1');
     expect(screen.getByRole('link', { name: 'Placement exam' })).toHaveAttribute('href', '/admin/placement-exam');
+    expect(screen.getByRole('link', { name: 'Practice exercises to review' })).toHaveAttribute('href', '/admin/practice-review');
   });
 });

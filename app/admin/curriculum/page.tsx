@@ -16,6 +16,8 @@ export default async function AdminCurriculumPage() {
         {' · '}
         <a href="/admin/placement-exam">Placement exam</a>
         {' · '}
+        <a href="/admin/practice-review">Practice exercises to review</a>
+        {' · '}
         <a href="/api/admin/curriculum/export">Download all as seed files (zip)</a>
       </p>
       <ul>
