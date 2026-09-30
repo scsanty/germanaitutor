@@ -1,5 +1,5 @@
 {
-  "seedVersion": "3",
+  "seedVersion": "4",
   "formatVersion": 2,
   "track": "telc",
   "level": "A1",
@@ -1107,92 +1107,68 @@
   "milestones": [
     {
       "milestone": {
-        "id": "telc-a1-grammar",
+        "id": "telc-a1-m1-personal-details-and-daily-needs",
         "track": "telc",
         "level": "A1",
-        "title": "Grammar",
-        "description": null,
+        "title": "Personal details and daily needs",
+        "description": "Give your personal details, spell your name, fill in a registration form and use present-tense verbs and housing words.",
         "difficultyRank": 1
       },
       "lessonIds": [
+        "a1-telc-housing-neighborhood-vocab",
+        "a1-telc-identity-personal-data",
         "a1-telc-present-tense-essentials",
-        "a1-telc-w-questions-official-inquiries",
-        "a1-telc-accusative-shopping-supplies",
-        "a1-telc-modal-verbs-regulations",
-        "a1-telc-imperative-polite-requests",
-        "a1-telc-prepositions-time-appointments"
+        "a1-telc-speaking-personal-disclosure",
+        "a1-telc-writing-registration-form"
       ]
     },
     {
       "milestone": {
-        "id": "telc-a1-vocabulary",
+        "id": "telc-a1-m2-shopping-work-and-asking",
         "track": "telc",
         "level": "A1",
-        "title": "Vocabulary",
-        "description": null,
+        "title": "Shopping, work and asking",
+        "description": "Use the accusative when shopping, ask questions at offices, make polite requests and talk about work.",
         "difficultyRank": 2
       },
       "lessonIds": [
-        "a1-telc-identity-personal-data",
-        "a1-telc-housing-neighborhood-vocab",
-        "a1-telc-work-professions-vocab",
-        "a1-telc-health-doctor-vocab"
+        "a1-telc-accusative-shopping-supplies",
+        "a1-telc-imperative-polite-requests",
+        "a1-telc-speaking-asking-requesting",
+        "a1-telc-w-questions-official-inquiries",
+        "a1-telc-work-professions-vocab"
       ]
     },
     {
       "milestone": {
-        "id": "telc-a1-reading",
+        "id": "telc-a1-m3-appointments-and-house-rules",
         "track": "telc",
         "level": "A1",
-        "title": "Reading",
-        "description": null,
+        "title": "Appointments and house rules",
+        "description": "Say when things happen, understand rules with modal verbs, read notices and housing ads, and write a short note.",
         "difficultyRank": 3
       },
       "lessonIds": [
+        "a1-telc-modal-verbs-regulations",
+        "a1-telc-prepositions-time-appointments",
+        "a1-telc-reading-classifieds-housing",
         "a1-telc-reading-public-notices-signs",
-        "a1-telc-reading-classifieds-housing"
-      ]
-    },
-    {
-      "milestone": {
-        "id": "telc-a1-listening",
-        "track": "telc",
-        "level": "A1",
-        "title": "Listening",
-        "description": null,
-        "difficultyRank": 4
-      },
-      "lessonIds": [
-        "a1-telc-listening-station-store-announcements",
-        "a1-telc-listening-voicemail-appointments"
-      ]
-    },
-    {
-      "milestone": {
-        "id": "telc-a1-writing",
-        "track": "telc",
-        "level": "A1",
-        "title": "Writing",
-        "description": null,
-        "difficultyRank": 5
-      },
-      "lessonIds": [
-        "a1-telc-writing-registration-form",
         "a1-telc-writing-short-appointment-note"
       ]
     },
     {
       "milestone": {
-        "id": "telc-a1-speaking",
+        "id": "telc-a1-m4-health-and-announcements",
         "track": "telc",
         "level": "A1",
-        "title": "Speaking",
-        "description": null,
-        "difficultyRank": 6
+        "title": "Health and announcements",
+        "description": "Words for the doctor and pharmacy, public announcements, and voicemail messages about appointments.",
+        "difficultyRank": 4
       },
       "lessonIds": [
-        "a1-telc-speaking-personal-disclosure",
-        "a1-telc-speaking-asking-requesting"
+        "a1-telc-health-doctor-vocab",
+        "a1-telc-listening-station-store-announcements",
+        "a1-telc-listening-voicemail-appointments"
       ]
     }
   ]

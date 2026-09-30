@@ -1,5 +1,5 @@
 {
-  "seedVersion": "3",
+  "seedVersion": "4",
   "formatVersion": 2,
   "track": "telc",
   "level": "B1",
@@ -1346,94 +1346,70 @@
   "milestones": [
     {
       "milestone": {
-        "id": "telc-b1-grammar",
+        "id": "telc-b1-m1-home-work-and-inquiries",
         "track": "telc",
         "level": "B1",
-        "title": "Grammar",
-        "description": null,
+        "title": "Home, work and inquiries",
+        "description": "Vocabulary for housing and the workplace, indirect questions, and exam tasks for ads, phone calls and getting to know someone.",
         "difficultyRank": 1
       },
       "lessonIds": [
-        "b1-telc-sprachbausteine-connectors-grammar",
-        "b1-telc-passive-workplace-processes",
-        "b1-telc-konjunktiv-ii-polite-work-requests",
         "b1-telc-indirect-questions-official",
-        "b1-telc-prepositional-verbs-service-queries"
+        "b1-telc-listening-teil3-transactional-calls",
+        "b1-telc-reading-teil3-classifieds-matching",
+        "b1-telc-speaking-teil1-kontaktaufnahme",
+        "b1-telc-vocab-housing-leases-disputes",
+        "b1-telc-vocab-workplace-office-communication"
       ]
     },
     {
       "milestone": {
-        "id": "telc-b1-vocabulary",
+        "id": "telc-b1-m2-complaints-and-the-news",
         "track": "telc",
         "level": "B1",
-        "title": "Vocabulary",
-        "description": null,
+        "title": "Complaints and the news",
+        "description": "Verbs with prepositions and consumer-rights vocabulary for a complaint letter, plus news broadcasts and a radio interview.",
         "difficultyRank": 2
-      },
-      "lessonIds": [
-        "b1-telc-sprachbausteine-lexical-cloze",
-        "b1-telc-vocab-workplace-office-communication",
-        "b1-telc-vocab-consumer-rights-complaints",
-        "b1-telc-vocab-housing-leases-disputes"
-      ]
-    },
-    {
-      "milestone": {
-        "id": "telc-b1-reading",
-        "track": "telc",
-        "level": "B1",
-        "title": "Reading",
-        "description": null,
-        "difficultyRank": 3
-      },
-      "lessonIds": [
-        "b1-telc-reading-teil1-headline-matching",
-        "b1-telc-reading-teil2-detailed-comprehension",
-        "b1-telc-reading-teil3-classifieds-matching"
-      ]
-    },
-    {
-      "milestone": {
-        "id": "telc-b1-listening",
-        "track": "telc",
-        "level": "B1",
-        "title": "Listening",
-        "description": null,
-        "difficultyRank": 4
       },
       "lessonIds": [
         "b1-telc-listening-teil1-news-broadcasts",
         "b1-telc-listening-teil2-longer-interview",
-        "b1-telc-listening-teil3-transactional-calls"
+        "b1-telc-prepositional-verbs-service-queries",
+        "b1-telc-vocab-consumer-rights-complaints",
+        "b1-telc-writing-complaint-letter"
       ]
     },
     {
       "milestone": {
-        "id": "telc-b1-writing",
+        "id": "telc-b1-m3-diplomacy-and-discussion",
         "track": "telc",
         "level": "B1",
-        "title": "Writing",
-        "description": null,
-        "difficultyRank": 5
+        "title": "Diplomacy and discussion",
+        "description": "Polite Konjunktiv II and the passive at work, discussing a topic, planning together and writing a formal inquiry.",
+        "difficultyRank": 3
       },
       "lessonIds": [
-        "b1-telc-writing-complaint-letter",
+        "b1-telc-konjunktiv-ii-polite-work-requests",
+        "b1-telc-passive-workplace-processes",
+        "b1-telc-speaking-teil2-topic-discussion",
+        "b1-telc-speaking-teil3-joint-planning",
         "b1-telc-writing-inquiry-request-letter"
       ]
     },
     {
       "milestone": {
-        "id": "telc-b1-speaking",
+        "id": "telc-b1-m4-language-elements-and-detailed-reading",
         "track": "telc",
         "level": "B1",
-        "title": "Speaking",
-        "description": null,
-        "difficultyRank": 6
+        "title": "Language elements and detailed reading",
+        "description": "The Sprachbausteine grammar and vocabulary gaps, headline matching and detailed reading comprehension.",
+        "difficultyRank": 4
       },
       "lessonIds": [
-        "b1-telc-speaking-teil1-kontaktaufnahme",
-        "b1-telc-speaking-teil2-topic-discussion",
-        "b1-telc-speaking-teil3-joint-planning"
+        "b1-telc-reading-teil1-headline-matching",
+        "b1-telc-reading-teil2-detailed-comprehension",
+        "b1-telc-sprachbausteine-connectors-grammar",
+        "b1-telc-sprachbausteine-lexical-cloze"
       ]
     }
   ]

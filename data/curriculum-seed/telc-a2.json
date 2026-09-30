@@ -1,5 +1,5 @@
 {
-  "seedVersion": "3",
+  "seedVersion": "4",
   "formatVersion": 2,
   "track": "telc",
   "level": "A2",
@@ -1304,95 +1304,71 @@
   "milestones": [
     {
       "milestone": {
-        "id": "telc-a2-grammar",
+        "id": "telc-a2-m1-work-errands-and-forms",
         "track": "telc",
         "level": "A2",
-        "title": "Grammar",
-        "description": null,
+        "title": "Work, errands and forms",
+        "description": "Talk about your working day with the Perfekt, handle banking and office errands, fill in forms and introduce yourself.",
         "difficultyRank": 1
       },
       "lessonIds": [
         "a2-telc-perfekt-daily-work",
-        "a2-telc-dative-prepositions-errands",
-        "a2-telc-subordinating-conjunctions-weil-denn",
-        "a2-telc-modal-verbs-praeteritum",
-        "a2-telc-adjective-endings-accusative-dative",
-        "a2-telc-reflexive-verbs-work-social",
-        "a2-telc-conditional-wenn-clauses"
+        "a2-telc-reading-teil1-directory-matching",
+        "a2-telc-speaking-teil1-detailed-introduction",
+        "a2-telc-vocab-banking-official-errands",
+        "a2-telc-vocab-workplace-professions",
+        "a2-telc-writing-teil1-form-completion"
       ]
     },
     {
       "milestone": {
-        "id": "telc-a2-vocabulary",
+        "id": "telc-a2-m2-appointments-and-getting-around",
         "track": "telc",
         "level": "A2",
-        "title": "Vocabulary",
-        "description": null,
+        "title": "Appointments and getting around",
+        "description": "Dative prepositions, scheduling and transport vocabulary, with voicemails, radio announcements and classified ads.",
         "difficultyRank": 2
       },
       "lessonIds": [
-        "a2-telc-vocab-workplace-professions",
-        "a2-telc-vocab-banking-official-errands",
+        "a2-telc-dative-prepositions-errands",
+        "a2-telc-listening-teil1-voicemail-notes",
+        "a2-telc-listening-teil2-radio-announcements",
+        "a2-telc-reading-teil3-classifieds-matching",
         "a2-telc-vocab-mobility-trains-buses",
         "a2-telc-vocab-scheduling-calendar-appointments"
       ]
     },
     {
       "milestone": {
-        "id": "telc-a2-reading",
+        "id": "telc-a2-m3-giving-reasons-and-excuses",
         "track": "telc",
         "level": "A2",
-        "title": "Reading",
-        "description": null,
+        "title": "Giving reasons and excuses",
+        "description": "Explain with weil and denn, modal verbs in the past and reflexive verbs, in factual texts, conversations, information exchange and a short letter.",
         "difficultyRank": 3
       },
       "lessonIds": [
-        "a2-telc-reading-teil1-directory-matching",
+        "a2-telc-listening-teil3-conversational-matching",
+        "a2-telc-modal-verbs-praeteritum",
         "a2-telc-reading-teil2-informational-article",
-        "a2-telc-reading-teil3-classifieds-matching"
-      ]
-    },
-    {
-      "milestone": {
-        "id": "telc-a2-listening",
-        "track": "telc",
-        "level": "A2",
-        "title": "Listening",
-        "description": null,
-        "difficultyRank": 4
-      },
-      "lessonIds": [
-        "a2-telc-listening-teil1-voicemail-notes",
-        "a2-telc-listening-teil2-radio-announcements",
-        "a2-telc-listening-teil3-conversational-matching"
-      ]
-    },
-    {
-      "milestone": {
-        "id": "telc-a2-writing",
-        "track": "telc",
-        "level": "A2",
-        "title": "Writing",
-        "description": null,
-        "difficultyRank": 5
-      },
-      "lessonIds": [
-        "a2-telc-writing-teil1-form-completion",
+        "a2-telc-reflexive-verbs-work-social",
+        "a2-telc-speaking-teil2-information-exchange",
+        "a2-telc-subordinating-conjunctions-weil-denn",
         "a2-telc-writing-teil2-practical-letter"
       ]
     },
     {
       "milestone": {
-        "id": "telc-a2-speaking",
+        "id": "telc-a2-m4-conditions-and-joint-planning",
         "track": "telc",
         "level": "A2",
-        "title": "Speaking",
-        "description": null,
-        "difficultyRank": 6
+        "title": "Conditions and joint planning",
+        "description": "Adjective endings, conditions with wenn, and solving a scheduling problem with a partner.",
+        "difficultyRank": 4
       },
       "lessonIds": [
-        "a2-telc-speaking-teil1-detailed-introduction",
-        "a2-telc-speaking-teil2-information-exchange",
+        "a2-telc-adjective-endings-accusative-dative",
+        "a2-telc-conditional-wenn-clauses",
         "a2-telc-speaking-teil3-joint-planning"
       ]
     }
