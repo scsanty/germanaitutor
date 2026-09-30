@@ -106,16 +106,22 @@ export function createTestOutService(db: Database.Database, deps: TestOutDeps = 
       .get(milestoneId) as AttemptRow | undefined;
   }
 
-  // Review Focus 3: unanswered questions whose exercise was deleted are dropped from the attempt.
+  // Review Focus 3: questions whose exercise was deleted are dropped from the attempt, answered or
+  // not, so `ids` and `answers` stay aligned (answers are always a prefix of ids).
   function pruned(row: AttemptRow): { ids: string[]; answers: StoredAnswer[] } {
     const ids = JSON.parse(row.exercise_ids) as string[];
     const answers = JSON.parse(row.answers) as StoredAnswer[];
     const exists = db.prepare('SELECT 1 FROM exercises WHERE id = ?');
-    const kept = [...ids.slice(0, answers.length), ...ids.slice(answers.length).filter((id) => exists.get(id))];
-    if (kept.length !== ids.length) {
-      db.prepare('UPDATE milestone_testouts SET exercise_ids = ? WHERE id = ?').run(JSON.stringify(kept), row.id);
+    const keptAnswers = answers.filter((a) => exists.get(a.exerciseId));
+    const keptIds = [...keptAnswers.map((a) => a.exerciseId), ...ids.slice(answers.length).filter((id) => exists.get(id))];
+    if (keptIds.length !== ids.length) {
+      db.prepare('UPDATE milestone_testouts SET exercise_ids = ?, answers = ? WHERE id = ?').run(
+        JSON.stringify(keptIds),
+        JSON.stringify(keptAnswers),
+        row.id
+      );
     }
-    return { ids: kept, answers };
+    return { ids: keptIds, answers: keptAnswers };
   }
 
   function toResult(answers: StoredAnswer[], score: number, maxScore: number, passed: boolean): TestOutResult {
@@ -130,8 +136,41 @@ export function createTestOutService(db: Database.Database, deps: TestOutDeps = 
     };
   }
 
+  // Prunes the open attempt. One with nothing left is dropped (no cooldown); one with every
+  // remaining question answered is finished like a normal last answer. Returns whether it ended.
+  function settle(milestoneId: string): boolean {
+    return db.transaction(() => {
+      const row = openAttempt(milestoneId);
+      if (!row) return false;
+      const { ids, answers } = pruned(row);
+      if (ids.length === 0) {
+        db.prepare('DELETE FROM milestone_testouts WHERE id = ?').run(row.id);
+        return true;
+      }
+      if (answers.length >= ids.length) {
+        finish(row, milestoneId, answers);
+        return true;
+      }
+      return false;
+    })();
+  }
+
+  function currentStatus(milestoneId: string) {
+    const { gating } = context(milestoneId);
+    let status = testOutStatusFor(db, gating, milestoneId, { now: now(), aiAvailable: aiAvailable() });
+    if (status.status === 'in_progress') {
+      settle(milestoneId); // prunes deleted questions; may end the attempt
+      status = testOutStatusFor(db, loadLevelGating(db, gating.track, gating.level), milestoneId, {
+        now: now(),
+        aiAvailable: aiAvailable(),
+      });
+    }
+    return status;
+  }
+
   function state(milestoneId: string): TestOutState {
-    const { milestone, gating } = context(milestoneId);
+    const { milestone } = context(milestoneId);
+    const status = currentStatus(milestoneId);
     const last = db
       .prepare(
         "SELECT * FROM milestone_testouts WHERE milestone_id = ? AND status != 'in_progress' ORDER BY finished_at DESC, id DESC LIMIT 1"
@@ -139,14 +178,14 @@ export function createTestOutService(db: Database.Database, deps: TestOutDeps = 
       .get(milestoneId) as AttemptRow | undefined;
     return {
       milestone: { id: milestone.id, title: milestone.title },
-      status: testOutStatusFor(db, gating, milestoneId, { now: now(), aiAvailable: aiAvailable() }),
+      status,
       lastResult: last ? toResult(JSON.parse(last.answers), last.score ?? 0, last.max_score ?? 0, last.status === 'passed') : null,
     };
   }
 
   function start(milestoneId: string): TestOutRun {
     const { gating } = context(milestoneId);
-    const status = testOutStatusFor(db, gating, milestoneId, { now: now(), aiAvailable: aiAvailable() });
+    const status = currentStatus(milestoneId);
     if (status.status === 'cooldown') {
       throw new TestOutError('You can try this test-out again later', 'cooldown', undefined, { retryAt: status.retryAt });
     }
@@ -202,8 +241,8 @@ export function createTestOutService(db: Database.Database, deps: TestOutDeps = 
   }
 
   async function answer(milestoneId: string, exerciseId: string, given: LessonAnswer): Promise<TestOutAnswerOutcome> {
-    const { milestone, gating } = context(milestoneId);
-    const status = testOutStatusFor(db, gating, milestoneId, { now: now(), aiAvailable: aiAvailable() });
+    const { milestone } = context(milestoneId);
+    const status = currentStatus(milestoneId);
     const row = openAttempt(milestoneId);
     if (status.status !== 'in_progress' || !row) throw new TestOutError("This test-out isn't available", 'unavailable');
     const { ids, answers } = pruned(row);

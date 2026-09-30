@@ -203,4 +203,45 @@ describe('testOutService.start and answer', () => {
       ('a1-late3__free', 'a1-late3', 'free_text', '{"prompt":"Sag hallo.","modelAnswer":"Hallo!"}')`);
     expect(noAi.start('g-a1-m2').questions.some((q) => q.type === 'free_text')).toBe(false);
   });
+
+  it('finishes an attempt whose last unanswered question was deleted, scoring only what was answered', async () => {
+    const { db, service } = setup();
+    const run = service.start('g-a1-m2');
+    for (const q of run.questions.slice(0, 5)) await service.answer('g-a1-m2', q.id, right(db, q.id));
+    db.prepare('DELETE FROM exercises WHERE id = ?').run(run.questions[5].id);
+    expect(kindOf(() => service.start('g-a1-m2'))).toBe('unavailable');
+    expect(service.state('g-a1-m2')).toMatchObject({ status: { status: 'none' }, lastResult: { passed: true, score: 5, maxScore: 5 } });
+    expect(db.prepare("SELECT COUNT(*) AS n FROM lesson_completions WHERE source = 'testout'").get()).toEqual({ n: 3 });
+    expect(db.prepare('SELECT COUNT(*) AS n FROM milestone_testouts WHERE status = ?').get('passed')).toEqual({ n: 1 });
+  });
+
+  it('finishes a stuck attempt on answer too, and fails with a cooldown when the score is low', async () => {
+    const { db, service } = setup();
+    const run = service.start('g-a1-m2');
+    for (const q of run.questions.slice(0, 5)) await service.answer('g-a1-m2', q.id, wrong(db, q.id));
+    db.prepare('DELETE FROM exercises WHERE id = ?').run(run.questions[5].id);
+    expect(await kindOfAsync(service.answer('g-a1-m2', run.questions[5].id, right(db, run.questions[4].id)))).toBe('unavailable');
+    expect(service.state('g-a1-m2')).toMatchObject({ status: { status: 'cooldown' }, lastResult: { passed: false, score: 0, maxScore: 5 } });
+  });
+
+  it('drops an attempt with every question deleted and no answers, without a cooldown', () => {
+    const { db, service } = setup();
+    const run = service.start('g-a1-m2');
+    db.prepare(`DELETE FROM exercises WHERE id IN (${run.questions.map(() => '?').join(',')})`).run(...run.questions.map((q) => q.id));
+    db.exec("DELETE FROM lessons WHERE id IN ('a1-late2', 'a1-late3')");
+    expect(service.state('g-a1-m2').status).toEqual({ status: 'too_few_questions' });
+    expect(db.prepare('SELECT COUNT(*) AS n FROM milestone_testouts').get()).toEqual({ n: 0 });
+  });
+
+  it('keeps questions aligned with answered when an answered exercise is deleted, and reports the pruned total', async () => {
+    const { db, service } = setup();
+    const run = service.start('g-a1-m2');
+    for (const q of run.questions.slice(0, 2)) await service.answer('g-a1-m2', q.id, right(db, q.id));
+    db.prepare('DELETE FROM exercises WHERE id = ?').run(run.questions[0].id);
+    expect(service.state('g-a1-m2').status).toEqual({ status: 'in_progress', answered: 1, total: 5 });
+    const resumed = service.start('g-a1-m2');
+    expect(resumed.answered).toBe(1);
+    expect(resumed.questions.map((q) => q.id)).toEqual(run.questions.slice(1).map((q) => q.id));
+    expect(resumed.questions[resumed.answered].id).toBe(run.questions[2].id);
+  });
 });
