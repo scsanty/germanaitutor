@@ -6,6 +6,8 @@ import { useTranslations } from 'next-intl';
 import type { LessonView } from '@/lib/tutoring/progressTypes';
 import type { AttemptOutcome } from '@/lib/tutoring/lessonAnswers';
 import { ExerciseCard } from './ExerciseCard';
+import { PracticeRun } from './PracticeRun';
+import type { GradeResult } from '@/lib/tutoring/grading';
 import { LessonChat, type AskAbout } from './LessonChat';
 import { useApiErrorText } from '@/components/useApiErrorText';
 
@@ -134,7 +136,12 @@ export function LessonPage({ lessonId }: { lessonId: string }) {
 
   function askAi(exerciseId: string) {
     const number = lesson.exercises.findIndex((e) => e.id === exerciseId) + 1;
-    setAskAbout({ exerciseId, label: t('exerciseLabel', { number }) });
+    setAskAbout({ kind: 'exercise', exerciseId, label: t('exerciseLabel', { number }) });
+    setChatOpen(true);
+  }
+
+  function practiceAskAi(practiceExerciseId: string, answer: { answerText: string; result: GradeResult }) {
+    setAskAbout({ kind: 'practice', practiceExerciseId, ...answer, label: t('practiceExerciseLabel') });
     setChatOpen(true);
   }
 
@@ -217,6 +224,9 @@ export function LessonPage({ lessonId }: { lessonId: string }) {
         </div>
       )}
 
+      {/* Spec Phase 2: practice only on a lesson the student has completed themselves, and not
+          while a lesson run is showing an exercise. */}
+      {lesson.completed && !current && <PracticeRun lessonId={lesson.id} onAskAi={practiceAskAi} />}
       <LessonChat
         lessonId={lesson.id}
         open={chatOpen}

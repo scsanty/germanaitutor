@@ -4,12 +4,12 @@ import { useEffect, useState, type ReactNode } from 'react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { CHAT_MESSAGE_MAX_LENGTH, type ChatMessageView } from '@/lib/tutoring/lessonChat';
+import type { GradeResult } from '@/lib/tutoring/grading';
 import { useApiErrorText } from '@/components/useApiErrorText';
 
-export interface AskAbout {
-  exerciseId: string;
-  label: string;
-}
+export type AskAbout =
+  | { kind: 'exercise'; exerciseId: string; label: string }
+  | { kind: 'practice'; practiceExerciseId: string; answerText: string; result: GradeResult; label: string };
 
 export interface LessonChatProps {
   lessonId: string;
@@ -51,6 +51,11 @@ export function LessonChat({ lessonId, open, onToggle, askAbout, onClearAskAbout
     };
   }, [open, lessonId, messages, loadFailed]);
 
+  // Phase 2 leftover: a failed load is retried the next time the panel opens.
+  useEffect(() => {
+    if (!open) setLoadFailed(false);
+  }, [open]);
+
   async function send() {
     const message = draft.trim();
     if (!message) return;
@@ -61,13 +66,24 @@ export function LessonChat({ lessonId, open, onToggle, askAbout, onClearAskAbout
       const res = await fetch(`/api/tutoring/lessons/${lessonId}/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message, exerciseId: askAbout?.exerciseId ?? null }),
+        body: JSON.stringify(
+          askAbout?.kind === 'exercise'
+            ? { message, exerciseId: askAbout.exerciseId }
+            : askAbout?.kind === 'practice'
+              ? {
+                  message,
+                  practiceExerciseId: askAbout.practiceExerciseId,
+                  practiceAnswer: { answerText: askAbout.answerText, result: askAbout.result },
+                }
+              : { message, exerciseId: null }
+        ),
       });
       const data = await res.json().catch(() => ({}));
       if (res.ok) {
         setMessages((previous) => [...(previous ?? []), ...(data.messages as ChatMessageView[])]);
         setDraft('');
-        onClearAskAbout();
+        // The exercise stays attached for follow-up questions until the student clears it (×)
+        // or asks about another one (Phase 2 leftover).
         return;
       }
       const detail = errorText(data, String(res.status));
@@ -97,7 +113,7 @@ export function LessonChat({ lessonId, open, onToggle, askAbout, onClearAskAbout
               {messages.map((m) => (
                 <li key={m.id}>
                   <strong>{m.role === 'user' ? `${t('you')}:` : `${t('tutor')}:`}</strong>{' '}
-                  {m.exerciseId && <em>{t('aboutExercise')} </em>}
+                  {(m.exerciseId || m.practiceExerciseId) && <em>{t('aboutExercise')} </em>}
                   {m.content}
                 </li>
               ))}

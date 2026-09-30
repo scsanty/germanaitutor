@@ -157,4 +157,17 @@ describe('LessonPage', () => {
     renderWithIntl(<LessonPage lessonId="a1-greet" />);
     expect(await screen.findByRole('alert')).toHaveTextContent('Could not load this lesson. Please reload the page.');
   });
+
+  it('offers Get more exercises only on a completed lesson', async () => {
+    stubFetch({ 'GET /api/tutoring/lessons/a1-greet': () => delayedResponse({ ...LESSON, completed: true, passedExerciseIds: ['ex1', 'ex2'] }) });
+    renderWithIntl(<LessonPage lessonId="a1-greet" />);
+    expect(await screen.findByRole('button', { name: 'Get more exercises' })).toBeInTheDocument();
+  });
+
+  it('does not offer practice before the lesson is completed', async () => {
+    stubFetch({ 'GET /api/tutoring/lessons/a1-greet': () => delayedResponse(LESSON) });
+    renderWithIntl(<LessonPage lessonId="a1-greet" />);
+    await screen.findByRole('button', { name: 'Start the exercises' });
+    expect(screen.queryByRole('button', { name: 'Get more exercises' })).not.toBeInTheDocument();
+  });
 });

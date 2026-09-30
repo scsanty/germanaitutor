@@ -77,7 +77,7 @@ export function QueuePage() {
             onNext={next}
             onSkip={skip}
             onAskAi={(exerciseId) => {
-              setAskAbout({ exerciseId, label: t('thisReview') });
+              setAskAbout({ kind: 'exercise', exerciseId, label: t('thisReview') });
               setChatOpen(true);
             }}
           />

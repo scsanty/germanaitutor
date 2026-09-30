@@ -2,6 +2,8 @@ import { describe, it, expect, vi } from 'vitest';
 import { screen, fireEvent, waitFor } from '@testing-library/react';
 import { renderWithIntl } from '@/test/renderWithIntl';
 import { delayedResponse } from '@/test/delayedResponse';
+import { NextIntlClientProvider } from 'next-intl';
+import en from '@/messages/en.json';
 import { CHAT_MESSAGE_MAX_LENGTH } from '@/lib/tutoring/lessonChat';
 import { LessonChat } from './LessonChat';
 
@@ -45,7 +47,7 @@ describe('LessonChat', () => {
           ],
         }),
     });
-    const props = renderChat({ askAbout: { exerciseId: 'ex1', label: 'exercise 1' } });
+    const props = renderChat({ askAbout: { kind: 'exercise', exerciseId: 'ex1', label: 'exercise 1' } });
 
     expect(await screen.findByText('Was heißt Hallo?')).toBeInTheDocument();
     expect(screen.getByText('Asking about exercise 1')).toBeInTheDocument();
@@ -59,7 +61,9 @@ describe('LessonChat', () => {
       body: JSON.stringify({ message: 'Warum?', exerciseId: 'ex1' }),
     });
     expect(screen.getByLabelText('Your message')).toHaveValue('');
-    expect(props.onClearAskAbout).toHaveBeenCalled();
+    // The context stays attached for follow-up questions (Phase 2).
+    expect(props.onClearAskAbout).not.toHaveBeenCalled();
+    expect(screen.getByText('Asking about exercise 1')).toBeInTheDocument();
   });
 
   it('is disabled with a Settings link when no AI provider works', async () => {
@@ -107,5 +111,48 @@ describe('LessonChat', () => {
     expect(await screen.findByText('Hello.')).toBeInTheDocument();
     expect(screen.getByText('You:')).toBeInTheDocument();
     expect(screen.getByText('Tutor:')).toBeInTheDocument();
+  });
+
+  it('sends a practice exercise’s answer with each message', async () => {
+    const fetchMock = stubFetch({
+      [`GET ${URL}`]: () => delayedResponse({ messages: [], aiAvailable: true }),
+      [`POST ${URL}`]: () => delayedResponse({ messages: [] }),
+    });
+    renderChat({
+      askAbout: { kind: 'practice', practiceExerciseId: 'px-1', answerText: 'Hallo', result: 'wrong', label: 'a practice exercise' },
+    });
+    expect(await screen.findByText('Ask anything about this lesson.')).toBeInTheDocument();
+    expect(screen.getByText('Asking about a practice exercise')).toBeInTheDocument();
+    fireEvent.change(screen.getByLabelText('Your message'), { target: { value: 'Warum?' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Send' }));
+    await waitFor(() =>
+      expect(fetchMock).toHaveBeenCalledWith(URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: 'Warum?', practiceExerciseId: 'px-1', practiceAnswer: { answerText: 'Hallo', result: 'wrong' } }),
+      })
+    );
+  });
+
+  it('tries loading again after a failed load when the panel is reopened', async () => {
+    const responses = [
+      () => delayedResponse({}, { ok: false, status: 500 }),
+      () => delayedResponse({ messages: [EARLIER], aiAvailable: true }),
+    ];
+    stubFetch({ [`GET ${URL}`]: () => responses.shift()!() });
+    const props = { lessonId: 'a1-greet', onToggle: vi.fn(), askAbout: null, onClearAskAbout: vi.fn() };
+    const { rerender } = renderWithIntl(<LessonChat {...props} open />);
+    expect(await screen.findByRole('alert')).toHaveTextContent('Could not load the chat.');
+    rerender(
+      <NextIntlClientProvider locale="en" messages={en} timeZone="UTC">
+        <LessonChat {...props} open={false} />
+      </NextIntlClientProvider>
+    );
+    rerender(
+      <NextIntlClientProvider locale="en" messages={en} timeZone="UTC">
+        <LessonChat {...props} open />
+      </NextIntlClientProvider>
+    );
+    expect(await screen.findByText('Was heißt Hallo?')).toBeInTheDocument();
   });
 });
