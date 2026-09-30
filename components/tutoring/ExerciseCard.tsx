@@ -50,6 +50,22 @@ export function taskText(exercise: ExerciseView): string {
   }
 }
 
+export function instructionText(exercise: ExerciseView, language: ContentLanguage): string | null {
+  return 'instruction' in exercise && exercise.instruction ? pickText(exercise.instruction, language) : null;
+}
+
+// The instruction (in the given language) followed by the stimulus text when there is one.
+export function ExerciseHeading({ exercise, language }: { exercise: ExerciseView; language: ContentLanguage }) {
+  const instruction = instructionText(exercise, language);
+  const task = taskText(exercise);
+  return (
+    <>
+      {instruction && <p>{instruction}</p>}
+      {task && <p>{task}</p>}
+    </>
+  );
+}
+
 function answerTextOf(exercise: ExerciseView, answer: LessonAnswer): string {
   switch (answer.type) {
     case 'multiple_choice':
@@ -153,8 +169,7 @@ export function ExerciseCard({
     return exercise.type === 'fill_blank' ? { type: 'fill_blank', text: trimmed } : { type: 'free_text', text: trimmed };
   }
 
-  const instruction = 'instruction' in exercise && exercise.instruction ? pickText(exercise.instruction, language) : null;
-  const task = taskText(exercise);
+  const instruction = instructionText(exercise, language);
 
   const alerts = (
     <>
@@ -179,8 +194,7 @@ export function ExerciseCard({
       (shown.result !== 'correct' || (mode === 'lesson' && exercise.type === 'free_text'));
     return (
       <div>
-        {instruction && <p>{instruction}</p>}
-        {task && <p>{task}</p>}
+        <ExerciseHeading exercise={exercise} language={language} />
         {exercise.type === 'flashcard' && <p>{exercise.back}</p>}
         <p>{mode === 'practice' ? t(`practiceResult.${shown.result}`) : t(`result.${shown.result}`)}</p>
         {showAnswer && (
@@ -236,8 +250,8 @@ export function ExerciseCard({
     <div>
       {instruction && <p>{instruction}</p>}
       {exercise.type === 'multiple_choice' && (
-        <fieldset>
-          <legend>{exercise.question}</legend>
+        <fieldset aria-label={exercise.question ? undefined : (instruction ?? undefined)}>
+          {exercise.question && <legend>{exercise.question}</legend>}
           {exercise.options.map((option, index) => (
             <label key={index}>
               <input

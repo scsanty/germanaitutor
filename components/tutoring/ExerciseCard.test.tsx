@@ -114,6 +114,11 @@ describe('ExerciseCard', () => {
     expect(screen.getByText('Feedback: Watch the umlaut.')).toBeInTheDocument();
   });
 
+  it('names the fieldset by the instruction when the multiple-choice question is empty', () => {
+    renderWithIntl(<ExerciseCard exercise={{ ...MC, question: '' }} source="lesson" onAnswered={vi.fn()} onNext={vi.fn()} onSkip={vi.fn()} />);
+    expect(screen.getByRole('group', { name: 'Pick the greeting.' })).toBeInTheDocument();
+  });
+
   it('shows the instruction in the content language, and feedback with its own toggle', async () => {
     stubAttempts(() => delayedResponse(outcome({ result: 'almost', correctAnswer: 'Ich bin müde.', feedback: { en: 'Watch the umlaut.', de: 'Achte auf den Umlaut.' } })));
     renderWithIntl(<ExerciseCard exercise={{ ...FREE, instruction: { en: 'Say you are tired.', de: 'Sag, dass du müde bist.' } }} source="lesson" contentLanguage="de" onAnswered={vi.fn()} onNext={vi.fn()} onSkip={vi.fn()} />);
