@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation';
 import { isAdminSessionValid } from '@/lib/auth/adminSession';
 import { getDb } from '@/lib/db/client';
 import { createCurriculumService } from '@/lib/services/curriculumService';
+import { TRACK_LABEL } from '@/lib/tutoring/levels';
 
 export const dynamic = 'force-dynamic';
 
@@ -23,7 +24,7 @@ export default async function AdminCurriculumPage() {
       <ul>
         {tracks.map(({ track, levels }) => (
           <li key={track}>
-            {track}:{' '}
+            {TRACK_LABEL[track]}:{' '}
             {levels.map((level) => (
               <span key={level}>
                 <a href={`/admin/curriculum/${track}/${level}`}>{level}</a>{' '}

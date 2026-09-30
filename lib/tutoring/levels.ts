@@ -28,6 +28,9 @@ export function levelsUpTo(ceiling: CefrLevel): CefrLevel[] {
 
 export const TRACKS: readonly Track[] = ['generic', 'telc', 'goethe'];
 
+// Display names for the tracks; the generic track is branded "NaDoch!" but its id stays `generic`.
+export const TRACK_LABEL: Record<Track, string> = { generic: 'NaDoch!', telc: 'telc', goethe: 'Goethe' };
+
 export function isTrack(value: unknown): value is Track {
   return typeof value === 'string' && (TRACKS as readonly string[]).includes(value);
 }

@@ -65,7 +65,7 @@ describe('CurriculumTree', () => {
     stubTree(() => delayedResponse(TREE));
     renderWithIntl(<CurriculumTree reloadKey={0} />);
 
-    expect(await screen.findByRole('heading', { name: 'Generic A1' })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: 'NaDoch! A1' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: 'Basics' })).toBeInTheDocument();
     expect(screen.getByText('Step 1 · Open · 2 of 3 done')).toBeInTheDocument();
     expect(screen.getByText('Step 2 · Locked · 0 of 1 done')).toBeInTheDocument();
@@ -119,7 +119,7 @@ describe('CurriculumTree', () => {
   it('renders in German', async () => {
     stubTree(() => delayedResponse(TREE));
     renderWithIntl(<CurriculumTree reloadKey={0} />, 'de');
-    expect(await screen.findByRole('heading', { name: 'Allgemein A1' })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: 'NaDoch! A1' })).toBeInTheDocument();
     expect(screen.getByText('Stufe 2 · Gesperrt · 0 von 1 erledigt')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Per Test überspringen' })).toBeInTheDocument();
   });

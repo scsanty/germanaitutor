@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import type { Track, CefrLevel } from '@/lib/types';
+import { TRACK_LABEL } from '@/lib/tutoring/levels';
 import { DependencyDiagram } from './DependencyDiagram';
 import { unsortedMilestoneId } from '@/lib/curriculum-admin/unsortedBucket';
 
@@ -107,7 +108,7 @@ export function TrackLevelStructure({ track, level }: { track: Track; level: Cef
   return (
     <div>
       <h1>
-        {track} — {level}
+        {TRACK_LABEL[track]} — {level}
       </h1>
       <a href={`/admin/curriculum/${track}/${level}/new`}>+ New Lesson</a>
       <button type="button" onClick={() => setTab('tree')}>

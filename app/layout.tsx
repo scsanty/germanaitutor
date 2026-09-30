@@ -1,5 +1,6 @@
 import './globals.css';
 import type { ReactNode } from 'react';
+import type { Metadata, Viewport } from 'next';
 import { Inter, Nunito } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages, getTimeZone } from 'next-intl/server';
@@ -10,6 +11,14 @@ import { ensureBundledSeeds } from '@/lib/services/bundledSeeds';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
 const nunito = Nunito({ subsets: ['latin'], weight: ['600', '700', '800', '900'], variable: '--font-nunito', display: 'swap' });
+
+export const metadata: Metadata = { title: 'NaDoch!', appleWebApp: { capable: true, title: 'NaDoch!' } };
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: dark)', color: '#121212' },
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+  ],
+};
 
 // The locale is read from the database, so no page may be prerendered at build time.
 export const dynamic = 'force-dynamic';
