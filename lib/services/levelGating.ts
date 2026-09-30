@@ -99,10 +99,26 @@ export function loadLevelGating(db: Database.Database, track: Track, level: Cefr
 
   const done = loadDoneState(db);
   const isDone = (id: string) => done.completed.has(id) || done.coveredVia.has(id);
-  const prerequisites = loadPrerequisites(db);
+  const allPrerequisites = loadPrerequisites(db);
   const states = milestoneStates(milestones, isDone);
   const milestoneOfLesson = new Map<string, GatingMilestone>();
   for (const m of milestones) for (const id of m.lessonIds) milestoneOfLesson.set(id, m);
+
+  // A prerequisite in the same milestone or a strictly lower rank counts. One placed in a
+  // parallel or higher milestone is bad data (spec: Prerequisite scope) and is ignored so it
+  // can never softlock a student. Lessons outside this level's ranked milestones are left alone.
+  const prerequisites = new Map<string, { id: string; title: string }[]>();
+  for (const [lessonId, list] of allPrerequisites) {
+    const own = milestoneOfLesson.get(lessonId);
+    prerequisites.set(
+      lessonId,
+      list.filter((p) => {
+        const theirs = milestoneOfLesson.get(p.id);
+        if (!own || !theirs || own.id === theirs.id) return true;
+        return theirs.rank < own.rank;
+      })
+    );
+  }
 
   return {
     track,

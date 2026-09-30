@@ -25,6 +25,13 @@ describe('loadLevelGating', () => {
 });
 
 describe('lessonLock', () => {
+  it('ignores a prerequisite that sits in a higher rank', () => {
+    const db = setup();
+    db.prepare('INSERT INTO lesson_prerequisites (lesson_id, prerequisite_lesson_id) VALUES (?, ?)').run('a1-greet', 'a1-late');
+    expect(loadLevelGating(db, 'generic', 'A1').prerequisitesOf('a1-greet')).toEqual([]);
+    expect(lessonLock(db, 'a1-greet')).toEqual({ locked: false });
+  });
+
   it('locks a lesson until its prerequisites are done', () => {
     const db = setup();
     expect(lessonLock(db, 'a1-greet')).toEqual({ locked: false });
