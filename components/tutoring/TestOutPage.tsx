@@ -10,26 +10,49 @@ import type { TestOutAnswerOutcome, TestOutResult, TestOutRun, TestOutState } fr
 import type { ContentLanguage } from '@/lib/i18n/localizedText';
 import { ExerciseCard, ExerciseHeading } from './ExerciseCard';
 import { FocusLayout } from '@/components/focus/FocusLayout';
+import { ONWARD, ResultCard, ReviewBadge } from '@/components/focus/ResultCard';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { Skeleton } from '@/components/ui/skeleton';
+import { CircleX, Clock, GraduationCap, Trophy } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import type { ReactNode } from 'react';
 
-// Score, pass/fail and the per-question review of one finished attempt.
-function ResultView({ result }: { result: TestOutResult }) {
+// Score, pass/fail and the per-question review of one finished attempt. `top` and `action` go
+// inside the score card (the page heading above, the way onward below).
+function ResultView({ result, top, action }: { result: TestOutResult; top?: ReactNode; action?: ReactNode }) {
   const t = useTranslations('testOut');
   const language: ContentLanguage = useLocale() === 'de' ? 'de' : 'en';
   return (
-    <>
-      <p>{result.passed ? t('passed') : t('failed')}</p>
-      <p>{t('score', { score: result.score, maxScore: result.maxScore })}</p>
-      <ol>
-        {result.review.map((item) => (
-          <li key={item.exercise.id}>
-            <ExerciseHeading exercise={item.exercise} language={language} />
-            <p>{t(`result.${item.result}`)}</p>
-            <p>{t('yourAnswer', { answer: item.answerText })}</p>
-            {item.result !== 'correct' && item.correctAnswer && <p>{t('correctAnswer', { answer: item.correctAnswer })}</p>}
-          </li>
-        ))}
+    <div className="flex flex-col gap-6">
+      <ResultCard icon={result.passed ? Trophy : CircleX} tone={result.passed ? 'success' : 'danger'}>
+        {top}
+        <p className={cn('font-semibold', result.passed ? 'text-success' : 'text-danger')}>{result.passed ? t('passed') : t('failed')}</p>
+        <p className="font-heading text-4xl leading-tight font-extrabold tracking-tight tabular-nums sm:text-5xl">
+          {t('score', { score: result.score, maxScore: result.maxScore })}
+        </p>
+        {action}
+      </ResultCard>
+      <ol className="mx-auto flex w-full max-w-2xl flex-col gap-3">
+        {result.review.map((item) => {
+          return (
+            <li key={item.exercise.id}>
+              <Card className="gap-3 px-5 py-4">
+                <ExerciseHeading exercise={item.exercise} language={language} />
+                <ReviewBadge result={item.result}>{t(`result.${item.result}`)}</ReviewBadge>
+                <div className="flex flex-col gap-1 text-sm">
+                  <p className="break-words">{t('yourAnswer', { answer: item.answerText })}</p>
+                  {item.result !== 'correct' && item.correctAnswer && (
+                    <p className="font-semibold break-words text-success">{t('correctAnswer', { answer: item.correctAnswer })}</p>
+                  )}
+                </div>
+              </Card>
+            </li>
+          );
+        })}
       </ol>
-    </>
+    </div>
   );
 }
 
@@ -88,18 +111,39 @@ export function TestOutPage({ milestoneId }: { milestoneId: string }) {
     else setAnswered(outcome.answered);
   }
 
-  if (loadFailed) return <p role="alert">{t('loadFailed')}</p>;
-  if (!state) return <p>{tCommon('loading')}</p>;
+  if (loadFailed)
+    return (
+      <Alert variant="destructive" role="alert" className="mx-auto max-w-md">
+        <AlertDescription>{t('loadFailed')}</AlertDescription>
+      </Alert>
+    );
+  if (!state)
+    return (
+      <div role="status" aria-label={tCommon('loading')} className="mx-auto flex w-full max-w-md flex-col items-center gap-4 py-8">
+        <Skeleton className="size-16 rounded-full" />
+        <Skeleton className="h-8 w-56 max-w-full" />
+        <Skeleton className="h-16 w-full" />
+        <Skeleton className="h-12 w-full" />
+      </div>
+    );
 
-  const back = <Link href="/">{t('backToTree')}</Link>;
-  const heading = <h1>{t('title', { milestone: state.milestone.title })}</h1>;
+  const back = (primary: boolean) => (
+    <Button asChild size="lg" variant={primary ? 'default' : 'secondary'} className={ONWARD}>
+      <Link href="/">{t('backToTree')}</Link>
+    </Button>
+  );
+  const title = t('title', { milestone: state.milestone.title });
+  const heading = <h1 className="text-2xl md:text-3xl">{title}</h1>;
+  const errorAlert = error && (
+    <Alert variant="destructive" role="alert" className="text-left">
+      <AlertDescription>{error}</AlertDescription>
+    </Alert>
+  );
 
   if (result) {
     return (
-      <div>
-        {heading}
-        <ResultView result={result} />
-        {back}
+      <div className="py-4 md:py-10">
+        <ResultView result={result} top={heading} action={<div className="mt-2 w-full">{back(true)}</div>} />
       </div>
     );
   }
@@ -113,8 +157,10 @@ export function TestOutPage({ milestoneId }: { milestoneId: string }) {
         confirmExit={answered > 0}
         onExit={() => router.push('/')}
       >
-        {heading}
-        <p>{t('progress', { current: answered + 1, total: questions.length })}</p>
+        <div className="mb-4 flex flex-col gap-1">
+          <h1 className="text-xl md:text-2xl">{title}</h1>
+          <p className="text-sm text-text-muted">{t('progress', { current: answered + 1, total: questions.length })}</p>
+        </div>
         <ExerciseCard
           key={current.id}
           exercise={current}
@@ -126,31 +172,34 @@ export function TestOutPage({ milestoneId }: { milestoneId: string }) {
           onNext={() => undefined}
           onSkip={() => undefined}
         />
-        {error && <p role="alert">{error}</p>}
+        {errorAlert}
       </FocusLayout>
     );
   }
 
   const s = state.status;
+  const canStart = s.status === 'available' || s.status === 'in_progress';
   return (
-    <div>
-      {heading}
-      {(s.status === 'available' || s.status === 'in_progress') && (
-        <>
-          <p>{t('intro')}</p>
-          <button type="button" disabled={starting} onClick={startOrResume}>
-            {s.status === 'available' ? t('start') : t('resume')}
-          </button>
-        </>
-      )}
-      {s.status === 'cooldown' && (
-        <p>{t('cooldown', { time: format.dateTime(new Date(s.retryAt), { dateStyle: 'medium', timeStyle: 'short' }) })}</p>
-      )}
-      {s.status === 'too_few_questions' && <p>{t('tooFew')}</p>}
-      {s.status === 'none' && <p>{t('unavailable')}</p>}
-      {error && <p role="alert">{error}</p>}
+    <div className="flex flex-col gap-6 py-4 md:py-10">
+      <ResultCard icon={s.status === 'cooldown' ? Clock : GraduationCap} tone={canStart ? 'highlight' : 'primary'}>
+        {heading}
+        {canStart && (
+          <>
+            <p className="max-w-[48ch] text-text-muted">{t('intro')}</p>
+            <Button type="button" size="lg" disabled={starting} onClick={startOrResume} className={cn(ONWARD, 'mt-2')}>
+              {s.status === 'available' ? t('start') : t('resume')}
+            </Button>
+          </>
+        )}
+        {s.status === 'cooldown' && (
+          <p className="text-text-muted">{t('cooldown', { time: format.dateTime(new Date(s.retryAt), { dateStyle: 'medium', timeStyle: 'short' }) })}</p>
+        )}
+        {s.status === 'too_few_questions' && <p className="text-text-muted">{t('tooFew')}</p>}
+        {s.status === 'none' && <p className="text-text-muted">{t('unavailable')}</p>}
+        {errorAlert}
+        <div className="w-full">{back(!canStart)}</div>
+      </ResultCard>
       {(s.status === 'none' || s.status === 'cooldown') && state.lastResult && <ResultView result={state.lastResult} />}
-      <p>{back}</p>
     </div>
   );
 }
