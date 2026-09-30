@@ -1,6 +1,6 @@
 {
-  "seedVersion": "4",
-  "formatVersion": 2,
+  "seedVersion": "6",
+  "formatVersion": 3,
   "track": "telc",
   "level": "A2",
   "lessons": [
@@ -13,6 +13,14 @@
       "title": "Perfekt Tense for Daily Work and Life Tasks",
       "explanation": "In telc A2 examinations, describing workplace duties, completed administrative tasks, and daily routines requires active control of the Perfekt.\nForm the Perfekt with the conjugated present of haben or sein and the past participle at the end of the sentence.\nWorkplace verbs like anrufen (hat angerufen), ausfüllen (hat ausgefüllt), bearbeiten (hat bearbeitet), and überweisen (hat überwiesen) are essential.\n",
       "examples": [
+        "Ich habe die Unterlagen bereits an die Behörde geschickt.",
+        "Der Sachbearbeiter hat den Antrag gestern geprüft.",
+        "Haben Sie die Rechnung schon bezahlt?",
+        "Mein Kollege ist heute früher nach Hause gegangen."
+      ],
+      "titleDe": "Das Perfekt bei der Arbeit und im Alltag",
+      "explanationDe": "In der telc-Prüfung A2 erzählen Sie oft, was Sie bei der Arbeit, im Amt oder im Alltag gemacht haben. Dafür brauchen Sie das Perfekt.\nDas Perfekt bildet man mit haben oder sein im Präsens. Das Partizip steht am Satzende.\nWichtige Verben für die Arbeit sind: anrufen (hat angerufen), ausfüllen (hat ausgefüllt), bearbeiten (hat bearbeitet) und überweisen (hat überwiesen).\n",
+      "examplesDe": [
         "Ich habe die Unterlagen bereits an die Behörde geschickt.",
         "Der Sachbearbeiter hat den Antrag gestern geprüft.",
         "Haben Sie die Rechnung schon bezahlt?",
@@ -32,6 +40,14 @@
         "Herr Müller arbeitet seit drei Jahren bei einer großen Firma.",
         "Ich komme gerade vom Einwohnermeldeamt.",
         "Kommen Sie mit dem Bus oder mit dem Auto zum Vorstellungsgespräch?"
+      ],
+      "titleDe": "Präpositionen mit Dativ für Termine und Erledigungen",
+      "explanationDe": "Für Termine und Erledigungen brauchen Sie die Präpositionen mit, nach, von, zu, bei und aus. Nach diesen Präpositionen steht immer der Dativ.\nMerken Sie sich die kurzen Formen: zu + dem = zum, zu + der = zur, bei + dem = beim, von + dem = vom.\nMaskulin und neutral haben dem (einem), feminin hat der (einer) und der Plural hat den und ein -n am Nomen.\n",
+      "examplesDe": [
+        "Ich muss morgen früh zum Arzt und danach zur Bank gehen.",
+        "Herr Müller arbeitet seit drei Jahren bei einer großen Firma.",
+        "Ich komme gerade vom Einwohnermeldeamt.",
+        "Kommen Sie mit dem Bus oder mit dem Auto zum Vorstellungsgespräch?"
       ]
     },
     {
@@ -43,6 +59,14 @@
       "title": "Giving Reasons: Weil vs. Denn in Administrative Inquiries",
       "explanation": "Explaining absence, delays, or rescheduling requests requires causal connectors.\n'Weil' is a subordinating conjunction: it moves the finite verb to the end of the clause.\n'Denn' is a coordinating conjunction: it occupies position 0, leaving standard subject-verb order unchanged.\n",
       "examples": [
+        "Ich kann morgen nicht kommen, weil ich einen wichtigen Arzttermin habe.",
+        "Ich kann morgen nicht kommen, denn ich habe einen wichtigen Arzttermin.",
+        "Er bittet um Verlängerung, weil die Dokumente noch fehlen.",
+        "Frau Keller bleibt zu Hause, denn ihr Kind ist krank."
+      ],
+      "titleDe": "Gründe nennen: weil und denn",
+      "explanationDe": "Wenn Sie fehlen, zu spät kommen oder einen Termin verschieben, nennen Sie einen Grund. Dafür gibt es weil und denn.\n'Weil' leitet einen Nebensatz ein. Das Verb steht dann am Ende.\n'Denn' steht auf Position 0. Danach kommt ein normaler Hauptsatz: Subjekt und Verb bleiben, wie sie sind.\n",
+      "examplesDe": [
         "Ich kann morgen nicht kommen, weil ich einen wichtigen Arzttermin habe.",
         "Ich kann morgen nicht kommen, denn ich habe einen wichtigen Arzttermin.",
         "Er bittet um Verlängerung, weil die Dokumente noch fehlen.",
@@ -62,6 +86,14 @@
         "Mein Sohn musste gestern zu Hause bleiben.",
         "Wir durften den Raum während des Tests nicht verlassen.",
         "Ich sollte mich bei der Personalabteilung melden."
+      ],
+      "titleDe": "Modalverben im Präteritum für Entschuldigungen",
+      "explanationDe": "In der schriftlichen Prüfung schreiben Sie zum Beispiel an Ihren Chef, an eine Lehrerin oder an den Vermieter. Wenn Sie erklären, was Sie tun mussten oder nicht tun konnten, benutzen Sie Modalverben im Präteritum.\nDie Formen sind: musste, konnte, durfte und sollte.\nBei ich und er/sie/es ist die Form gleich und hat keinen Umlaut (ich konnte, er musste).\n",
+      "examplesDe": [
+        "Gestern konnte ich nicht zur Arbeit kommen, weil ich hohes Fieber hatte.",
+        "Mein Sohn musste gestern zu Hause bleiben.",
+        "Wir durften den Raum während des Tests nicht verlassen.",
+        "Ich sollte mich bei der Personalabteilung melden."
       ]
     },
     {
@@ -73,6 +105,14 @@
       "title": "Adjective Endings in Practical Transactions",
       "explanation": "Handling commercial and residential transactions requires declining adjectives after indefinite articles (ein, eine) and negative articles (kein, keine).\nIn the accusative: masculine takes -en (einen neuen Mietvertrag); neuter takes -es (ein helles Zimmer); feminine takes -e (eine neue Wohnung).\nIn the dative: all genders without exception take -en after ein/kein/possessives (in einem großen Büro, mit einer freundlichen Nachbarin).\n",
       "examples": [
+        "Ich suche eine bezahlbare Wohnung mit einem sonnigen Balkon.",
+        "Wir haben einen gebrauchten Schreibtisch gekauft.",
+        "Er wohnt in einem modernen Mehrfamilienhaus.",
+        "Haben Sie ein freies Einzelzimmer?"
+      ],
+      "titleDe": "Adjektivendungen im Alltag",
+      "explanationDe": "Beim Einkaufen und bei der Wohnungssuche brauchen Sie Adjektive nach ein/eine und kein/keine.\nIm Akkusativ: maskulin hat -en (einen neuen Mietvertrag), neutral hat -es (ein helles Zimmer), feminin hat -e (eine neue Wohnung).\nIm Dativ haben alle Genera nach ein/kein/mein die Endung -en (in einem großen Büro, mit einer freundlichen Nachbarin).\n",
+      "examplesDe": [
         "Ich suche eine bezahlbare Wohnung mit einem sonnigen Balkon.",
         "Wir haben einen gebrauchten Schreibtisch gekauft.",
         "Er wohnt in einem modernen Mehrfamilienhaus.",
@@ -92,6 +132,14 @@
         "Entschuldigen Sie bitte, die Bahn hat Verspätung und ich verspäte mich.",
         "Interessieren Sie sich für diese Wohnung?",
         "Man muss sich rechtzeitig beim Bürgeramt anmelden."
+      ],
+      "titleDe": "Reflexive Verben bei der Arbeit und im Alltag",
+      "explanationDe": "Viele wichtige Verben haben ein Reflexivpronomen (mich, dich, sich, uns, euch, sich).\nWichtige Verben für Arbeit und Amt sind: sich bewerben um, sich verspäten, sich interessieren für und sich anmelden.\n",
+      "examplesDe": [
+        "Ich bewerbe mich um die Stelle als Verkäufer.",
+        "Entschuldigen Sie bitte, die Bahn hat Verspätung und ich verspäte mich.",
+        "Interessieren Sie sich für diese Wohnung?",
+        "Man muss sich rechtzeitig beim Bürgeramt anmelden."
       ]
     },
     {
@@ -103,6 +151,14 @@
       "title": "Conditional Clauses with Wenn in Rules and Agreements",
       "explanation": "Conditional structures using wenn (if / when) explain conditions, rules, and arrangements in community and work life.\nWhen a sentence begins with the 'wenn' clause, the finite verb in that clause goes to the end; the main clause follows immediately with the conjugated verb in first position.\nFormula: 'Wenn [..., Verb], [Verb ...]'.\n",
       "examples": [
+        "Wenn Sie Fragen haben, rufen Sie mich bitte an.",
+        "Wenn das Büro geschlossen ist, werfen Sie den Schlüssel in den Briefkasten.",
+        "Ich kann den Vertrag unterschreiben, wenn alle Angaben stimmen.",
+        "Wenn Sie krank sind, müssen Sie eine Arbeitsunfähigkeitsbescheinigung vorlegen."
+      ],
+      "titleDe": "Bedingungen mit wenn bei Regeln und Absprachen",
+      "explanationDe": "Mit wenn sagen Sie eine Bedingung. So erklärt man Regeln und Absprachen im Alltag und bei der Arbeit.\nWenn der Satz mit dem wenn-Satz beginnt, steht das Verb im wenn-Satz am Ende. Danach kommt sofort der Hauptsatz mit dem Verb auf Position 1.\nFormel: 'Wenn [..., Verb], [Verb ...]'.\n",
+      "examplesDe": [
         "Wenn Sie Fragen haben, rufen Sie mich bitte an.",
         "Wenn das Büro geschlossen ist, werfen Sie den Schlüssel in den Briefkasten.",
         "Ich kann den Vertrag unterschreiben, wenn alle Angaben stimmen.",
@@ -122,6 +178,14 @@
         "Ich muss heute zwei Überstunden machen, weil viele Bestellungen da sind.",
         "Sie hat ihren Urlaub für den Sommer bereits beim Chef beantragt.",
         "Mitarbeiter müssen sich bis 8:00 Uhr telefonisch krankmelden."
+      ],
+      "titleDe": "Arbeitsplatz, Aufgaben und Arbeitszeiten",
+      "explanationDe": "Bei der Arbeit brauchen Sie Wörter für Verträge, Aufgaben, Schichten und Urlaub.\nWichtige Wörter sind: der Arbeitgeber, der Arbeitnehmer, die Überstunden, die Teilzeit / Vollzeit, der Schichtdienst und die Kündigung.\nWichtige Ausdrücke sind: Urlaub beantragen und sich krankmelden.\n",
+      "examplesDe": [
+        "Herr Al-Mansur arbeitet im Schichtdienst, auch an Wochenenden.",
+        "Ich muss heute zwei Überstunden machen, weil viele Bestellungen da sind.",
+        "Sie hat ihren Urlaub für den Sommer bereits beim Chef beantragt.",
+        "Mitarbeiter müssen sich bis 8:00 Uhr telefonisch krankmelden."
       ]
     },
     {
@@ -133,6 +197,14 @@
       "title": "Banking, Municipal Offices, and Mail Services",
       "explanation": "Navigating civic infrastructure requires understanding terminology for financial, postal, and governmental services.\nBanking terms include: das Konto (account), die Überweisung (bank transfer), der Dauerauftrag (standing order), and das Bargeld (cash).\nPostal and administrative terms include: der Personalausweis (ID card), die Meldebescheinigung (residence registration certificate), das Einschreiben (registered mail), and der Schalter (service counter).\n",
       "examples": [
+        "Ich möchte ein Girokonto bei der Sparkasse eröffnen.",
+        "Bitte legen Sie zur Anmeldung Ihren Personalausweis vor.",
+        "Ich habe die Miete per Überweisung bezahlt.",
+        "Diesen Brief schicke ich per Einschreiben mit Rückschein."
+      ],
+      "titleDe": "Bank, Bürgeramt und Post",
+      "explanationDe": "Bei der Bank, bei der Post und im Amt brauchen Sie besondere Wörter.\nBank: das Konto, die Überweisung, der Dauerauftrag und das Bargeld.\nPost und Amt: der Personalausweis, die Meldebescheinigung, das Einschreiben und der Schalter.\n",
+      "examplesDe": [
         "Ich möchte ein Girokonto bei der Sparkasse eröffnen.",
         "Bitte legen Sie zur Anmeldung Ihren Personalausweis vor.",
         "Ich habe die Miete per Überweisung bezahlt.",
@@ -152,6 +224,14 @@
         "Zwischen Hauptbahnhof und Messe fährt ein Schienenersatzverkehr mit Bussen.",
         "Die Monatskarte für das gesamte Tarifgebiet kostet 78 Euro.",
         "Wo kann ich mein Ticket entwerten?"
+      ],
+      "titleDe": "Bus und Bahn: Störungen und Fahrkarten",
+      "explanationDe": "Wenn Sie mit Bus und Bahn fahren, müssen Sie Durchsagen und Schilder verstehen. Sie sagen, welche Linie fährt, ob es Verspätung gibt und was die Fahrkarte kostet.\nWichtige Wörter sind: die Verbindung, die Monatskarte, die Störung, der Schienenersatzverkehr und das Gleis.\n",
+      "examplesDe": [
+        "Wegen einer Stellwerkstörung gibt es Verspätungen auf der S-Bahn-Linie 1.",
+        "Zwischen Hauptbahnhof und Messe fährt ein Schienenersatzverkehr mit Bussen.",
+        "Die Monatskarte für das gesamte Tarifgebiet kostet 78 Euro.",
+        "Wo kann ich mein Ticket entwerten?"
       ]
     },
     {
@@ -163,6 +243,14 @@
       "title": "Coordinating Appointments and Calendar Commitments",
       "explanation": "Scheduling commitments requires phrases to propose, accept, reschedule, or cancel dates.\nKey verbs include: vereinbaren (to arrange/agree on), verschieben (to postpone/shift), absagen (to cancel), and bestätigen (to confirm).\nCommon idioms include: 'Passt es Ihnen am...?' (Does... suit you?), 'Da habe ich leider keine Zeit' (Unfortunately I have no time then), and 'Einen Termin wahrnehmen' (to attend an appointment).\n",
       "examples": [
+        "Können wir den Termin vom Dienstag auf Donnerstag verschieben?",
+        "Ich muss unseren Termin leider absagen, da ich beruflich verhindert bin.",
+        "Passt es Ihnen am kommenden Freitag um 14:00 Uhr?",
+        "Ich möchte diesen Termin gerne verbindlich bestätigen."
+      ],
+      "titleDe": "Termine vereinbaren und planen",
+      "explanationDe": "Für Termine brauchen Sie Sätze: Sie schlagen einen Termin vor, sagen zu, verschieben oder sagen ab.\nWichtige Verben sind: vereinbaren, verschieben, absagen und bestätigen.\nTypische Ausdrücke sind: 'Passt es Ihnen am...?', 'Da habe ich leider keine Zeit' und 'einen Termin wahrnehmen' (zu einem Termin gehen).\n",
+      "examplesDe": [
         "Können wir den Termin vom Dienstag auf Donnerstag verschieben?",
         "Ich muss unseren Termin leider absagen, da ich beruflich verhindert bin.",
         "Passt es Ihnen am kommenden Freitag um 14:00 Uhr?",
@@ -180,6 +268,12 @@
       "examples": [
         "Aufgabe: Sie suchen ein Wörterbuch für Ihren Sprachkurs. -> Infotafel: 1. Stock: Belletristik, Fachbücher, Lehr- und Wörterbücher. -> Lösung: 1. Stock.",
         "Aufgabe: Sie möchten einen Pass beantragen. -> Rathaus-Wegweiser: Erdgeschoss: Bürgerbüro, Pass- und Ausweisstelle. -> Lösung: Erdgeschoss."
+      ],
+      "titleDe": "Lesen Teil 1: Wegweiser und Infotafeln",
+      "explanationDe": "In telc Deutsch A2, Lesen Teil 1, lesen Sie eine Infotafel oder einen Wegweiser, zum Beispiel in einer Messe, einem Einkaufszentrum oder im Rathaus. Sie ordnen fünf Situationen dem richtigen Stockwerk, Schalter oder Bereich zu.\nSie müssen nicht jeden Eintrag genau lesen. Suchen Sie die wichtigen Stichwörter und Wörter mit gleicher Bedeutung.\n",
+      "examplesDe": [
+        "Aufgabe: Sie suchen ein Wörterbuch für Ihren Sprachkurs. -> Infotafel: 1. Stock: Belletristik, Fachbücher, Lehr- und Wörterbücher. -> Lösung: 1. Stock.",
+        "Aufgabe: Sie möchten einen Pass beantragen. -> Rathaus-Wegweiser: Erdgeschoss: Bürgerbüro, Pass- und Ausweisstelle. -> Lösung: Erdgeschoss."
       ]
     },
     {
@@ -191,6 +285,12 @@
       "title": "telc Lesen Teil 2: Factual Texts and True/False Verification",
       "explanation": "In telc Lesen Teil 2, candidates read an authentic journalistic or informational article (e.g., about volunteer work, community programs, or vocational training) and evaluate five statements as Richtig (True) or Falsch (False).\nRead each statement carefully before scanning the text, watching out for qualifying words like immer, nie, nur, or alle.\n",
       "examples": [
+        "Text: 'Der Sportverein bietet ab November spezielle Schwimmkurse ausschließlich für Senioren an.' - Aussage: Junge Erwachsene können an den neuen Schwimmkursen teilnehmen. -> Falsch.",
+        "Text: 'Die Kurse finden samstags statt und kosten für Vereinsmitglieder keinen Aufpreis.' - Aussage: Für Mitglieder des Vereins ist der Kurs kostenlos. -> Richtig."
+      ],
+      "titleDe": "Lesen Teil 2: Sachtexte, richtig oder falsch",
+      "explanationDe": "In Lesen Teil 2 lesen Sie einen Zeitungsartikel oder einen Informationstext, zum Beispiel über Ehrenamt, Angebote in der Stadt oder eine Ausbildung. Zu fünf Aussagen entscheiden Sie: Richtig oder Falsch?\nLesen Sie zuerst jede Aussage genau. Achten Sie auf Wörter wie immer, nie, nur oder alle.\n",
+      "examplesDe": [
         "Text: 'Der Sportverein bietet ab November spezielle Schwimmkurse ausschließlich für Senioren an.' - Aussage: Junge Erwachsene können an den neuen Schwimmkursen teilnehmen. -> Falsch.",
         "Text: 'Die Kurse finden samstags statt und kosten für Vereinsmitglieder keinen Aufpreis.' - Aussage: Für Mitglieder des Vereins ist der Kurs kostenlos. -> Richtig."
       ]
@@ -206,6 +306,12 @@
       "examples": [
         "Person: Anna sucht einen Nebenjob am Wochenende als Babysitterin in Köln-Ehrenfeld. Anzeige c: 'Suche zuverlässige Kinderbetreuung für samstags in Ehrenfeld.' -> Passt zu Anna.",
         "Person: Familie Meyer sucht ein Ferienhaus an der Ostsee, in dem Hunde erlaubt sind. Anzeige f: 'Gemütliches Ferienhaus am Strand, Haustiere herzlich willkommen!' -> Passt zu Familie Meyer."
+      ],
+      "titleDe": "Lesen Teil 3: Anzeigen zuordnen",
+      "explanationDe": "In Lesen Teil 3 gibt es fünf Personen mit bestimmten Wünschen und sieben Anzeigen (a bis g). Sie finden für jede Person die passende Anzeige.\nAchten Sie genau auf die Bedingungen, zum Beispiel: nur am Wochenende, ein Höchstpreis, ein bestimmter Stadtteil oder bestimmte Kenntnisse. Manche Anzeigen passen fast, aber nicht ganz.\n",
+      "examplesDe": [
+        "Person: Anna sucht einen Nebenjob am Wochenende als Babysitterin in Köln-Ehrenfeld. Anzeige c: 'Suche zuverlässige Kinderbetreuung für samstags in Ehrenfeld.' -> Passt zu Anna.",
+        "Person: Familie Meyer sucht ein Ferienhaus an der Ostsee, in dem Hunde erlaubt sind. Anzeige f: 'Gemütliches Ferienhaus am Strand, Haustiere herzlich willkommen!' -> Passt zu Familie Meyer."
       ]
     },
     {
@@ -217,6 +323,12 @@
       "title": "telc Hören Teil 1: Note-Taking from Voicemail Messages",
       "explanation": "In telc Hören Teil 1, candidates listen to five recorded telephone answering machine messages (played twice) and fill in missing operational data on memo pads (Notizzettel).\nListen selectively for names, telephone numbers, meeting locations, times, and specific instructions.\n",
       "examples": [
+        "Nachricht: 'Hallo Herr Schmidt, hier Praxis Dr. Kranz. Wir müssen Ihren Termin am Donnerstag von 10:00 Uhr auf 14:30 Uhr verschieben. Bitte rufen Sie kurz zurück.' -> Neuer Termin: 14:30 Uhr.",
+        "Nachricht: 'Hier Autohaus Wagner. Ihr Wagen ist fertig. Sie können ihn bis 18 Uhr abholen. Die Rechnung beträgt 240 Euro.' -> Rechnungsbetrag: 240 Euro."
+      ],
+      "titleDe": "Hören Teil 1: Notizen zu Telefonnachrichten",
+      "explanationDe": "In Hören Teil 1 hören Sie fünf Nachrichten auf dem Anrufbeantworter. Sie hören jede Nachricht zweimal. Dann ergänzen Sie die fehlenden Informationen auf einem Notizzettel.\nHören Sie genau auf Namen, Telefonnummern, Orte, Uhrzeiten und Anweisungen.\n",
+      "examplesDe": [
         "Nachricht: 'Hallo Herr Schmidt, hier Praxis Dr. Kranz. Wir müssen Ihren Termin am Donnerstag von 10:00 Uhr auf 14:30 Uhr verschieben. Bitte rufen Sie kurz zurück.' -> Neuer Termin: 14:30 Uhr.",
         "Nachricht: 'Hier Autohaus Wagner. Ihr Wagen ist fertig. Sie können ihn bis 18 Uhr abholen. Die Rechnung beträgt 240 Euro.' -> Rechnungsbetrag: 240 Euro."
       ]
@@ -232,6 +344,12 @@
       "examples": [
         "Hörtext: 'Der Wetterbericht: Am Nachmittag im Bergland schwere Gewitter mit Hagel. Bitte sichern Sie lose Gegenstände.' - Frage: Wo gibt es Unwetter? -> Im Bergland.",
         "Hörtext: 'Konzerttipp: Das Open-Air-Konzert im Stadtpark beginnt heute wegen Regens erst um 20:30 Uhr.' - Frage: Wann fängt das Konzert an? -> Um 20:30 Uhr."
+      ],
+      "titleDe": "Hören Teil 2: Radiodurchsagen",
+      "explanationDe": "In Hören Teil 2 hören Sie fünf kurze Radiodurchsagen. Sie hören jede Durchsage nur einmal. Zu jeder Durchsage gibt es eine Frage mit drei Antworten.\nDie Durchsagen sind zum Beispiel Verkehrsmeldungen, Veranstaltungstipps, Angebote im Geschäft oder Unwetterwarnungen.\n",
+      "examplesDe": [
+        "Hörtext: 'Der Wetterbericht: Am Nachmittag im Bergland schwere Gewitter mit Hagel. Bitte sichern Sie lose Gegenstände.' - Frage: Wo gibt es Unwetter? -> Im Bergland.",
+        "Hörtext: 'Konzerttipp: Das Open-Air-Konzert im Stadtpark beginnt heute wegen Regens erst um 20:30 Uhr.' - Frage: Wann fängt das Konzert an? -> Um 20:30 Uhr."
       ]
     },
     {
@@ -243,6 +361,12 @@
       "title": "telc Hören Teil 3: Dialogues and Speaker-Activity Matching",
       "explanation": "In telc Hören Teil 3, candidates listen to a conversation between two people (played twice) and match five people or objects to nine possible activities, locations, or items.\nIdentify which speaker is talking and note specific preferences, responsibilities, or actions assigned to each individual.\n",
       "examples": [
+        "Dialog: 'Wer bringt was zum Sommerfest mit? Sarah macht den Nudelsalat, und Thomas hat versprochen, Grillwürstchen mitzubringen.' -> Thomas: Grillwürstchen.",
+        "Dialog: 'Wer übernimmt welche Aufgabe im Büro? Martin schreibt das Protokoll, und Claudia kümmert sich um die Präsentation.' -> Claudia: Präsentation."
+      ],
+      "titleDe": "Hören Teil 3: Gespräche zuordnen",
+      "explanationDe": "In Hören Teil 3 hören Sie ein Gespräch zwischen zwei Personen. Sie hören es zweimal. Sie ordnen fünf Personen oder Sachen neun möglichen Aktivitäten, Orten oder Dingen zu.\nAchten Sie darauf, wer gerade spricht. Notieren Sie, was jede Person mag, macht oder übernimmt.\n",
+      "examplesDe": [
         "Dialog: 'Wer bringt was zum Sommerfest mit? Sarah macht den Nudelsalat, und Thomas hat versprochen, Grillwürstchen mitzubringen.' -> Thomas: Grillwürstchen.",
         "Dialog: 'Wer übernimmt welche Aufgabe im Büro? Martin schreibt das Protokoll, und Claudia kümmert sich um die Präsentation.' -> Claudia: Präsentation."
       ]
@@ -257,6 +381,11 @@
       "explanation": "In telc Schreiben Teil 1, candidates read three short texts (business cards, informational notes, or booking requests) and extract five missing details to complete a registration form.\nCopy the extracted information accurately into the blank fields without unnecessary words.\n",
       "examples": [
         "Text: 'Herr David Miller wohnt in Frankfurt in der Zeil 22. Er möchte ein Doppelzimmer vom 12. bis 15. Mai für sich und seine Frau buchen.' -> Formular: Straße/Hausnummer: Zeil 22; Zimmerart: Doppelzimmer."
+      ],
+      "titleDe": "Schreiben Teil 1: Ein Formular ausfüllen",
+      "explanationDe": "In Schreiben Teil 1 lesen Sie drei kurze Texte, zum Beispiel Visitenkarten, Notizen oder Buchungswünsche. Sie finden fünf fehlende Informationen und schreiben sie in ein Anmeldeformular.\nSchreiben Sie die Informationen genau in die Felder. Schreiben Sie keine unnötigen Wörter.\n",
+      "examplesDe": [
+        "Text: 'Herr David Miller wohnt in Frankfurt in der Zeil 22. Er möchte ein Doppelzimmer vom 12. bis 15. Mai für sich und seine Frau buchen.' -> Formular: Straße/Hausnummer: Zeil 22; Zimmerart: Doppelzimmer."
       ]
     },
     {
@@ -269,6 +398,11 @@
       "explanation": "In telc Schreiben Teil 2, candidates compose a communicative note or email (approx. 40 words) choosing three out of four given guiding prompts.\nTypical situations include apologising for absence, requesting information from a landlord or authority, or rescheduling an appointment.\nEnsure you include: a proper greeting, complete sentences addressing each chosen prompt, and a polite closing formula.\n",
       "examples": [
         "Situation: Sie können wegen Krankheit nicht zum Deutschkurs kommen. Schreiben Sie an Ihre Lehrerin Frau Maier: 1. Grund des Schreibens 2. Wie lange krank? 3. Bitte um Hausaufgaben. -> 'Sehr geehrte Frau Maier, ich kann diese Woche leider nicht zum Unterricht kommen, weil ich eine schwere Grippe habe. Der Arzt hat mich bis Freitag krankgeschrieben. Können Sie mir bitte die Hausaufgaben per E-Mail schicken? Vielen Dank und freundliche Grüße, Ali Demir.'"
+      ],
+      "titleDe": "Schreiben Teil 2: Ein Brief mit 40 Wörtern zu 3 Punkten",
+      "explanationDe": "In Schreiben Teil 2 schreiben Sie eine kurze Nachricht oder E-Mail (etwa 40 Wörter). Von vier Punkten wählen Sie drei aus.\nTypische Situationen sind: Sie entschuldigen sich, weil Sie gefehlt haben. Sie fragen den Vermieter oder ein Amt nach Informationen. Sie verschieben einen Termin.\nDenken Sie an eine passende Anrede, ganze Sätze zu jedem Punkt und einen höflichen Gruß am Ende.\n",
+      "examplesDe": [
+        "Situation: Sie können wegen Krankheit nicht zum Deutschkurs kommen. Schreiben Sie an Ihre Lehrerin Frau Maier: 1. Grund des Schreibens 2. Wie lange krank? 3. Bitte um Hausaufgaben. -> 'Sehr geehrte Frau Maier, ich kann diese Woche leider nicht zum Unterricht kommen, weil ich eine schwere Grippe habe. Der Arzt hat mich bis Freitag krankgeschrieben. Können Sie mir bitte die Hausaufgaben per E-Mail schicken? Vielen Dank und freundliche Grüße, Ali Demir.'"
       ]
     },
     {
@@ -280,6 +414,11 @@
       "title": "telc Sprechen Teil 1: Extended Personal Presentation and Follow-Ups",
       "explanation": "In telc Sprechen Teil 1, candidates introduce themselves using at least six complete sentences based on prompt words (Name, Herkunft, Wohnort, Familie, Beruf/Ausbildung, Sprachen, Hobbys).\nFollowing your introduction, the examiner will ask two detailed follow-up questions (e.g., about your daily work routine or commute).\n",
       "examples": [
+        "Kandidat: 'Mein Name ist Tarik Mansour. Ich komme aus Marokko, aber ich wohne seit zwei Jahren in Nürnberg. Ich bin verheiratet und habe zwei Kinder. Von Beruf bin ich Elektriker und arbeite bei einer Baufirma. In meiner Freizeit spiele ich gerne Fußball.' - Prüfer: 'Wie kommen Sie morgens zur Arbeit?' - Kandidat: 'Ich fahre meistens mit der U-Bahn.'"
+      ],
+      "titleDe": "Sprechen Teil 1: Sich ausführlich vorstellen",
+      "explanationDe": "In Sprechen Teil 1 stellen Sie sich mit mindestens sechs ganzen Sätzen vor. Dabei helfen Stichwörter (Name, Herkunft, Wohnort, Familie, Beruf/Ausbildung, Sprachen, Hobbys).\nDanach stellt der Prüfer zwei Fragen, zum Beispiel zu Ihrem Arbeitsalltag oder zu Ihrem Weg zur Arbeit.\n",
+      "examplesDe": [
         "Kandidat: 'Mein Name ist Tarik Mansour. Ich komme aus Marokko, aber ich wohne seit zwei Jahren in Nürnberg. Ich bin verheiratet und habe zwei Kinder. Von Beruf bin ich Elektriker und arbeite bei einer Baufirma. In meiner Freizeit spiele ich gerne Fußball.' - Prüfer: 'Wie kommen Sie morgens zur Arbeit?' - Kandidat: 'Ich fahre meistens mit der U-Bahn.'"
       ]
     },
@@ -295,6 +434,13 @@
         "Kandidat A: 'Thema: Wohnen - Haben Sie einen Garten oder einen Balkon an Ihrer Wohnung?'",
         "Kandidat B: 'Ja, wir haben einen kleinen Balkon. Im Sommer frühstücken wir dort sehr gern. Und wie wohnen Sie?'",
         "Kandidat A: 'Ich wohne in einer Zweizimmerwohnung mitten in der Innenstadt, leider ohne Balkon.'"
+      ],
+      "titleDe": "Sprechen Teil 2: Informationen austauschen",
+      "explanationDe": "In Sprechen Teil 2 sprechen Sie zu zweit über Alltagsthemen, zum Beispiel Einkaufen, Wohnen, Wochenende oder Urlaub.\nSie fragen abwechselnd und antworten mit ganzen Sätzen. Sagen Sie nicht nur Ja oder Nein, sondern erzählen Sie etwas.\n",
+      "examplesDe": [
+        "Kandidat A: 'Thema: Wohnen - Haben Sie einen Garten oder einen Balkon an Ihrer Wohnung?'",
+        "Kandidat B: 'Ja, wir haben einen kleinen Balkon. Im Sommer frühstücken wir dort sehr gern. Und wie wohnen Sie?'",
+        "Kandidat A: 'Ich wohne in einer Zweizimmerwohnung mitten in der Innenstadt, leider ohne Balkon.'"
       ]
     },
     {
@@ -306,6 +452,14 @@
       "title": "telc Sprechen Teil 3: Joint Problem-Solving and Scheduling",
       "explanation": "In telc Sprechen Teil 3, candidates receive task sheets with personal calendars or constraints and must collaboratively plan an activity (e.g., organizing a farewell party, planning a weekend trip, or finding a mutual appointment).\nMake suggestions, express agreement or polite disagreement, and agree upon concrete details (day, time, tasks).\n",
       "examples": [
+        "Kandidat A: 'Wollen wir am Samstag zusammen für Peters Geschenk einkaufen gehen?'",
+        "Kandidat B: 'Am Samstagvormittag muss ich leider arbeiten. Passt es dir vielleicht am Samstagnachmittag um 16 Uhr?'",
+        "Kandidat A: 'Ja, 16 Uhr passt mir ausgezeichnet. Wo wollen wir uns treffen?'",
+        "Kandidat B: 'Treffen wir uns direkt vor dem Haupteingang vom Einkaufszentrum.'"
+      ],
+      "titleDe": "Sprechen Teil 3: Gemeinsam etwas planen",
+      "explanationDe": "In Sprechen Teil 3 bekommen Sie ein Aufgabenblatt, zum Beispiel mit Ihrem Kalender. Zusammen mit Ihrem Partner planen Sie etwas, zum Beispiel eine Abschiedsfeier, einen Ausflug am Wochenende oder einen gemeinsamen Termin.\nMachen Sie Vorschläge und sagen Sie, ob Sie einverstanden sind oder nicht. Bleiben Sie dabei höflich. Am Ende einigen Sie sich auf Tag, Uhrzeit und Aufgaben.\n",
+      "examplesDe": [
         "Kandidat A: 'Wollen wir am Samstag zusammen für Peters Geschenk einkaufen gehen?'",
         "Kandidat B: 'Am Samstagvormittag muss ich leider arbeiten. Passt es dir vielleicht am Samstagnachmittag um 16 Uhr?'",
         "Kandidat A: 'Ja, 16 Uhr passt mir ausgezeichnet. Wo wollen wir uns treffen?'",
@@ -448,8 +602,12 @@
       "track": "telc",
       "type": "free_text",
       "content": {
-        "prompt": "Write a sentence explaining why you are late using 'weil'.",
-        "modelAnswer": "Ich komme zu spät, weil die S-Bahn Verspätung hatte."
+        "prompt": "",
+        "modelAnswer": "Ich komme zu spät, weil die S-Bahn Verspätung hatte.",
+        "instruction": {
+          "en": "Write a sentence explaining why you are late using 'weil'.",
+          "de": "Schreiben Sie einen Satz mit 'weil': Warum kommen Sie zu spät?"
+        }
       }
     },
     {
@@ -622,8 +780,12 @@
       "track": "telc",
       "type": "free_text",
       "content": {
-        "prompt": "Complete the conditional sentence: 'Wenn ich Zeit habe, ... (I will help you)'.",
-        "modelAnswer": "Wenn ich Zeit habe, helfe ich dir."
+        "prompt": "Wenn ich Zeit habe, ...",
+        "modelAnswer": "Wenn ich Zeit habe, helfe ich dir.",
+        "instruction": {
+          "en": "Complete the conditional sentence (I will help you).",
+          "de": "Ergänzen Sie den Satz. Sagen Sie, dass Sie der Person helfen."
+        }
       }
     },
     {
@@ -668,8 +830,12 @@
       "track": "telc",
       "type": "free_text",
       "content": {
-        "prompt": "State that you want to apply for vacation next week.",
-        "modelAnswer": "Ich möchte für nächste Woche Urlaub beantragen."
+        "prompt": "",
+        "modelAnswer": "Ich möchte für nächste Woche Urlaub beantragen.",
+        "instruction": {
+          "en": "State that you want to apply for vacation next week.",
+          "de": "Sagen Sie, dass Sie für nächste Woche Urlaub beantragen möchten."
+        }
       }
     },
     {
@@ -714,8 +880,12 @@
       "track": "telc",
       "type": "free_text",
       "content": {
-        "prompt": "Say that you would like to open a checking account.",
-        "modelAnswer": "Ich möchte gerne ein Girokonto eröffnen."
+        "prompt": "",
+        "modelAnswer": "Ich möchte gerne ein Girokonto eröffnen.",
+        "instruction": {
+          "en": "Say that you would like to open a checking account.",
+          "de": "Sagen Sie, dass Sie ein Girokonto eröffnen möchten."
+        }
       }
     },
     {
@@ -760,8 +930,12 @@
       "track": "telc",
       "type": "free_text",
       "content": {
-        "prompt": "Ask whether this ticket is valid for zone A.",
-        "modelAnswer": "Ist dieses Ticket für den Tarifbereich A gültig?"
+        "prompt": "",
+        "modelAnswer": "Ist dieses Ticket für den Tarifbereich A gültig?",
+        "instruction": {
+          "en": "Ask whether this ticket is valid for zone A.",
+          "de": "Fragen Sie, ob diese Fahrkarte für die Zone A gilt."
+        }
       }
     },
     {
@@ -806,8 +980,12 @@
       "track": "telc",
       "type": "free_text",
       "content": {
-        "prompt": "Ask someone if Monday at 10:00 AM suits them.",
-        "modelAnswer": "Passt es Ihnen am Montag um 10 Uhr?"
+        "prompt": "",
+        "modelAnswer": "Passt es Ihnen am Montag um 10 Uhr?",
+        "instruction": {
+          "en": "Ask someone if Monday at 10:00 AM suits them.",
+          "de": "Fragen Sie eine Person, ob ihr Montag um 10 Uhr passt."
+        }
       }
     },
     {
@@ -1046,8 +1224,12 @@
       "track": "telc",
       "type": "free_text",
       "content": {
-        "prompt": "Dialog: 'Lena kauft die Getränke für die Party und Felix backt einen Kuchen.' - What does Felix do?",
-        "modelAnswer": "Felix backt einen Kuchen."
+        "prompt": "Dialog: 'Lena kauft die Getränke für die Party und Felix backt einen Kuchen.'",
+        "modelAnswer": "Felix backt einen Kuchen.",
+        "instruction": {
+          "en": "What does Felix do?",
+          "de": "Was macht Felix?"
+        }
       }
     },
     {
@@ -1128,8 +1310,12 @@
       "track": "telc",
       "type": "free_text",
       "content": {
-        "prompt": "Formulate your self-introduction in German covering your profession, your daily commute, and your family status.",
-        "modelAnswer": "Ich bin Krankenpfleger von Beruf und fahre jeden Tag mit dem Bus zur Klinik. Ich bin verheiratet und lebe mit meiner Familie in Köln."
+        "prompt": "",
+        "modelAnswer": "Ich bin Krankenpfleger von Beruf und fahre jeden Tag mit dem Bus zur Klinik. Ich bin verheiratet und lebe mit meiner Familie in Köln.",
+        "instruction": {
+          "en": "Formulate your self-introduction in German covering your profession, your daily commute, and your family status.",
+          "de": "Stellen Sie sich vor. Sprechen Sie über Ihren Beruf, Ihren Weg zur Arbeit und Ihre Familie."
+        }
       }
     },
     {
@@ -1138,8 +1324,12 @@
       "track": "telc",
       "type": "free_text",
       "content": {
-        "prompt": "Answer the examiner's question: 'Was haben Sie in Ihrem Heimatland gelernt oder gearbeitet?'",
-        "modelAnswer": "In meinem Heimatland habe ich als Automechaniker gearbeitet und eine Ausbildung in einer Werkstatt gemacht."
+        "prompt": "Was haben Sie in Ihrem Heimatland gelernt oder gearbeitet?",
+        "modelAnswer": "In meinem Heimatland habe ich als Automechaniker gearbeitet und eine Ausbildung in einer Werkstatt gemacht.",
+        "instruction": {
+          "en": "Answer the examiner's question.",
+          "de": "Beantworten Sie die Frage des Prüfers."
+        }
       }
     },
     {
@@ -1164,8 +1354,12 @@
       "track": "telc",
       "type": "free_text",
       "content": {
-        "prompt": "Thema 'Einkaufen': Ask your partner where they usually buy groceries and why.",
-        "modelAnswer": "Wo kaufen Sie normalerweise Ihre Lebensmittel ein und warum?"
+        "prompt": "Thema 'Einkaufen'",
+        "modelAnswer": "Wo kaufen Sie normalerweise Ihre Lebensmittel ein und warum?",
+        "instruction": {
+          "en": "Ask your partner where they usually buy groceries and why.",
+          "de": "Fragen Sie Ihren Partner, wo er meistens Lebensmittel kauft und warum."
+        }
       }
     },
     {
@@ -1174,8 +1368,12 @@
       "track": "telc",
       "type": "free_text",
       "content": {
-        "prompt": "Thema 'Wochenende': Respond to your partner's question about what you like to do on Sundays.",
-        "modelAnswer": "Am Sonntag gehe ich gerne im Park spazieren und koche gemütlich für meine Familie."
+        "prompt": "Thema 'Wochenende'",
+        "modelAnswer": "Am Sonntag gehe ich gerne im Park spazieren und koche gemütlich für meine Familie.",
+        "instruction": {
+          "en": "Respond to your partner's question about what you like to do on Sundays.",
+          "de": "Ihr Partner hat gefragt, was Sie am Sonntag gern machen. Antworten Sie."
+        }
       }
     },
     {
@@ -1200,8 +1398,12 @@
       "track": "telc",
       "type": "free_text",
       "content": {
-        "prompt": "Propose an alternative day and time to your partner: you cannot meet on Friday because of work; suggest Saturday at 15:00.",
-        "modelAnswer": "Am Freitag kann ich leider nicht, weil ich arbeiten muss. Können wir uns am Samstag um 15 Uhr treffen?"
+        "prompt": "",
+        "modelAnswer": "Am Freitag kann ich leider nicht, weil ich arbeiten muss. Können wir uns am Samstag um 15 Uhr treffen?",
+        "instruction": {
+          "en": "Propose an alternative day and time to your partner: you cannot meet on Friday because of work; suggest Saturday at 15:00.",
+          "de": "Sie können am Freitag nicht, weil Sie arbeiten müssen. Schlagen Sie Ihrem Partner einen anderen Termin vor: Samstag um 15 Uhr."
+        }
       }
     },
     {
@@ -1210,8 +1412,12 @@
       "track": "telc",
       "type": "free_text",
       "content": {
-        "prompt": "Agree to your partner's suggestion and propose a concrete meeting spot.",
-        "modelAnswer": "Das ist eine gute Idee, das passt mir gut! Wollen wir uns am Hauptbahnhof treffen?"
+        "prompt": "",
+        "modelAnswer": "Das ist eine gute Idee, das passt mir gut! Wollen wir uns am Hauptbahnhof treffen?",
+        "instruction": {
+          "en": "Agree to your partner's suggestion and propose a concrete meeting spot.",
+          "de": "Sagen Sie Ja zum Vorschlag von Ihrem Partner und schlagen Sie einen genauen Treffpunkt vor."
+        }
       }
     },
     {
@@ -1309,7 +1515,9 @@
         "level": "A2",
         "title": "Work, errands and forms",
         "description": "Talk about your working day with the Perfekt, handle banking and office errands, fill in forms and introduce yourself.",
-        "difficultyRank": 1
+        "difficultyRank": 1,
+        "titleDe": "Arbeit, Erledigungen und Formulare",
+        "descriptionDe": "Sie erzählen im Perfekt von Ihrem Arbeitstag, erledigen Dinge bei der Bank und im Amt, füllen Formulare aus und stellen sich vor."
       },
       "lessonIds": [
         "a2-telc-perfekt-daily-work",
@@ -1327,7 +1535,9 @@
         "level": "A2",
         "title": "Appointments and getting around",
         "description": "Dative prepositions, scheduling and transport vocabulary, with voicemails, radio announcements and classified ads.",
-        "difficultyRank": 2
+        "difficultyRank": 2,
+        "titleDe": "Termine und unterwegs",
+        "descriptionDe": "Präpositionen mit Dativ, Wörter für Termine und Verkehr, dazu Nachrichten auf dem Anrufbeantworter, Radiodurchsagen und Kleinanzeigen."
       },
       "lessonIds": [
         "a2-telc-dative-prepositions-errands",
@@ -1345,7 +1555,9 @@
         "level": "A2",
         "title": "Giving reasons and excuses",
         "description": "Explain with weil and denn, modal verbs in the past and reflexive verbs, in factual texts, conversations, information exchange and a short letter.",
-        "difficultyRank": 3
+        "difficultyRank": 3,
+        "titleDe": "Gründe und Entschuldigungen",
+        "descriptionDe": "Sie erklären etwas mit weil und denn, benutzen Modalverben im Präteritum und reflexive Verben, in Sachtexten, Gesprächen, beim Informationsaustausch und in einem kurzen Brief."
       },
       "lessonIds": [
         "a2-telc-listening-teil3-conversational-matching",
@@ -1364,7 +1576,9 @@
         "level": "A2",
         "title": "Conditions and joint planning",
         "description": "Adjective endings, conditions with wenn, and solving a scheduling problem with a partner.",
-        "difficultyRank": 4
+        "difficultyRank": 4,
+        "titleDe": "Bedingungen und gemeinsam planen",
+        "descriptionDe": "Adjektivendungen, Bedingungen mit wenn und ein Terminproblem, das Sie mit Ihrem Partner lösen."
       },
       "lessonIds": [
         "a2-telc-adjective-endings-accusative-dative",

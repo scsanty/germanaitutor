@@ -6,6 +6,28 @@ function isNonEmptyString(value: unknown): value is string {
   return typeof value === 'string' && value.trim().length > 0;
 }
 
+function hasInstruction(c: Record<string, unknown>): boolean {
+  return c.instruction !== undefined;
+}
+
+// The practice pool and level exams are German-only: their content never carries an instruction.
+export function hasInstructionKey(content: unknown): boolean {
+  return !!content && typeof content === 'object' && 'instruction' in content;
+}
+
+// Spec: an instruction has both languages or neither; flashcards never have one.
+export function instructionProblems(type: unknown, content: unknown): string[] {
+  if (!content || typeof content !== 'object') return [];
+  const instruction = (content as Record<string, unknown>).instruction;
+  if (instruction === undefined) return [];
+  if (type === 'flashcard') return ['flashcards have no instruction'];
+  const i = instruction as Record<string, unknown> | null;
+  if (!i || typeof i !== 'object' || !isNonEmptyString(i.en) || !isNonEmptyString(i.de)) {
+    return ['instruction needs both English and German'];
+  }
+  return [];
+}
+
 export function validateExerciseContent(type: unknown, content: unknown): string[] {
   if (!EXERCISE_TYPES.includes(type as ExerciseType)) return [`unknown exercise type "${String(type)}"`];
   if (!content || typeof content !== 'object' || Array.isArray(content)) return ['content must be an object'];
@@ -14,7 +36,9 @@ export function validateExerciseContent(type: unknown, content: unknown): string
 
   switch (type as ExerciseType) {
     case 'multiple_choice': {
-      if (!isNonEmptyString(c.question)) errors.push('question must be a non-empty string');
+      if (hasInstruction(c) ? typeof c.question !== 'string' : !isNonEmptyString(c.question)) {
+        errors.push('question must be a non-empty string');
+      }
       if (!Array.isArray(c.options) || c.options.length < 2 || !c.options.every(isNonEmptyString)) {
         errors.push('options must be at least 2 non-empty strings');
       } else if (
@@ -46,10 +70,13 @@ export function validateExerciseContent(type: unknown, content: unknown): string
       break;
     }
     case 'free_text': {
-      if (!isNonEmptyString(c.prompt)) errors.push('prompt must be a non-empty string');
+      if (hasInstruction(c) ? typeof c.prompt !== 'string' : !isNonEmptyString(c.prompt)) {
+        errors.push('prompt must be a non-empty string');
+      }
       if (!isNonEmptyString(c.modelAnswer)) errors.push('modelAnswer must be a non-empty string');
       break;
     }
   }
+  errors.push(...instructionProblems(type, content));
   return errors;
 }

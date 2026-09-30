@@ -133,4 +133,28 @@ describe('ExerciseEditor flashcard rule', () => {
     fireEvent.click(screen.getByText('Add exercise'));
     expect(onChange).toHaveBeenCalledWith([{ type: 'flashcard', content: { front: '', back: '' } }]);
   });
+
+  it('edits an instruction in both languages, and drops it when both fields are emptied', () => {
+    const onChange = vi.fn();
+    const exercise = { type: 'fill_blank' as const, content: { textWithBlank: 'Ich ___.', correctAnswer: 'bin', instruction: { en: 'Fill in.', de: 'Ergänze.' } } };
+    render(<ExerciseEditor exercises={[exercise]} onChange={onChange} />);
+    fireEvent.change(screen.getByLabelText('Exercise 1 instruction (German)'), { target: { value: 'Fülle aus.' } });
+    expect(onChange).toHaveBeenLastCalledWith([
+      { type: 'fill_blank', content: { textWithBlank: 'Ich ___.', correctAnswer: 'bin', instruction: { en: 'Fill in.', de: 'Fülle aus.' } } },
+    ]);
+  });
+
+  // Review Focus 4: clearing both fields removes the key entirely.
+  it('removes the instruction key when both languages are empty', () => {
+    const onChange = vi.fn();
+    const exercise = { type: 'fill_blank' as const, content: { textWithBlank: 'Ich ___.', correctAnswer: 'bin', instruction: { en: 'Fill in.', de: '' } } };
+    render(<ExerciseEditor exercises={[exercise]} onChange={onChange} />);
+    fireEvent.change(screen.getByLabelText('Exercise 1 instruction (English)'), { target: { value: '' } });
+    expect(onChange.mock.lastCall![0][0].content).not.toHaveProperty('instruction');
+  });
+
+  it('offers no instruction fields on a flashcard', () => {
+    render(<ExerciseEditor exercises={[{ type: 'flashcard', content: { front: 'x', back: 'y' } }]} onChange={vi.fn()} />);
+    expect(screen.queryByLabelText('Exercise 1 instruction (English)')).not.toBeInTheDocument();
+  });
 });

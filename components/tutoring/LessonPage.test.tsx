@@ -1,5 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { screen, fireEvent } from '@testing-library/react';
+import { NextIntlClientProvider } from 'next-intl';
+import en from '@/messages/en.json';
 import { renderWithIntl } from '@/test/renderWithIntl';
 import { delayedResponse } from '@/test/delayedResponse';
 import { LessonPage } from './LessonPage';
@@ -7,14 +9,14 @@ import { LessonPage } from './LessonPage';
 const LESSON = {
   locked: false,
   id: 'a1-greet',
-  title: 'Saying hello',
+  title: { en: 'Saying hello', de: 'Begrüßen' },
   track: 'generic',
   level: 'A1',
   skill: 'vocabulary',
-  explanation: 'Say Hallo to greet someone.',
-  examples: ['Hallo!'],
+  explanation: { en: 'Say Hallo to greet someone.', de: 'Sag Hallo zur Begrüßung.' },
+  examples: [{ en: 'Hallo!', de: 'Hallo!' }],
   exercises: [
-    { id: 'ex1', type: 'multiple_choice', question: 'Greeting?', options: ['Hallo', 'Tschüss'] },
+    { id: 'ex1', type: 'multiple_choice', question: 'Greeting?', options: ['Hallo', 'Tschüss'], instruction: { en: 'Pick the greeting.', de: 'Wähle die Begrüßung.' } },
     { id: 'ex2', type: 'multiple_choice', question: 'Farewell?', options: ['Hallo', 'Tschüss'] },
   ],
   passedExerciseIds: [] as string[],
@@ -49,6 +51,35 @@ async function answer(option: string) {
 }
 
 describe('LessonPage', () => {
+  it('switches the lesson between English and German, starting in the UI language', async () => {
+    stubFetch({ 'GET /api/tutoring/lessons/a1-greet': () => delayedResponse(LESSON) });
+    renderWithIntl(<LessonPage lessonId="a1-greet" />);
+    expect(await screen.findByRole('heading', { name: 'Saying hello' })).toBeInTheDocument();
+    expect(screen.getByText('Say Hallo to greet someone.')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'DE' }));
+    expect(screen.getByRole('heading', { name: 'Begrüßen' })).toBeInTheDocument();
+    expect(screen.getByText('Sag Hallo zur Begrüßung.')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Start the exercises' }));
+    expect(screen.getByText('Wähle die Begrüßung.')).toBeInTheDocument();
+  });
+
+  // Review Focus 2: the same component instance moving to another lesson starts in the UI language again.
+  it('resets the toggle when another lesson opens', async () => {
+    stubFetch({
+      'GET /api/tutoring/lessons/a1-greet': () => delayedResponse(LESSON),
+      'GET /api/tutoring/lessons/a1-bye': () => delayedResponse({ ...LESSON, id: 'a1-bye', title: { en: 'Saying goodbye', de: 'Verabschieden' } }),
+    });
+    const { rerender } = renderWithIntl(<LessonPage lessonId="a1-greet" />);
+    fireEvent.click(await screen.findByRole('button', { name: 'DE' }));
+    rerender(
+      <NextIntlClientProvider locale="en" messages={en} timeZone="UTC">
+        <LessonPage lessonId="a1-bye" />
+      </NextIntlClientProvider>
+    );
+    expect(await screen.findByRole('heading', { name: 'Saying goodbye' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'EN' })).toHaveAttribute('aria-pressed', 'true');
+  });
+
   it('shows the explanation, examples, and prerequisites, then runs the exercises with a retry round', async () => {
     stubFetch(
       { 'GET /api/tutoring/lessons/a1-greet': () => delayedResponse(LESSON) },

@@ -16,16 +16,17 @@ describe('PlacementPicker', () => {
     expect(onChange).toHaveBeenLastCalledWith({ milestoneId: 'm2' });
   });
 
-  it('emits a new milestone only once it has a title and a whole-number rank of 1 or more', () => {
+  it('emits a new milestone only once it has both titles and a whole-number rank of 1 or more', () => {
     const onChange = vi.fn();
     render(<PlacementPicker milestones={MILESTONES} onChange={onChange} />);
     fireEvent.change(screen.getByLabelText('Milestone'), { target: { value: '__new__' } });
     fireEvent.change(screen.getByLabelText('New milestone title'), { target: { value: 'Later' } });
+    fireEvent.change(screen.getByLabelText('New milestone German title'), { target: { value: 'Später' } });
     expect(onChange).toHaveBeenLastCalledWith(null);
     fireEvent.change(screen.getByLabelText('New milestone rank'), { target: { value: '0' } });
     expect(onChange).toHaveBeenLastCalledWith(null);
     fireEvent.change(screen.getByLabelText('New milestone rank'), { target: { value: '3' } });
-    expect(onChange).toHaveBeenLastCalledWith({ newMilestoneTitle: 'Later', newMilestoneRank: 3 });
+    expect(onChange).toHaveBeenLastCalledWith({ newMilestoneTitle: 'Later', newMilestoneTitleDe: 'Später', newMilestoneRank: 3 });
   });
 
   it('emits null when the choice is cleared', () => {

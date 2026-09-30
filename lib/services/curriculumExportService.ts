@@ -1,8 +1,16 @@
 import type Database from 'better-sqlite3';
 import type { Track, CefrLevel } from '../types';
 import { LEVELS, TRACKS } from '../tutoring/levels';
-import type { SeedFile } from './curriculumSeedLoader';
+import { validateSeedFile, type SeedFile } from './curriculumSeedLoader';
 import { unsortedMilestoneId } from '../curriculum-admin/unsortedBucket';
+
+// The export would write a file the loader rejects at the next startup (e.g. a lesson with no German title).
+export class CurriculumExportError extends Error {
+  constructor(public readonly problems: string[]) {
+    super(`The export is not valid, so no file was written. Fix these first:\n${problems.join('\n')}`);
+    this.name = 'CurriculumExportError';
+  }
+}
 
 export function seedFileName(track: Track, level: CefrLevel): string {
   return `${track}-${level.toLowerCase()}.json`;
@@ -15,6 +23,8 @@ interface MilestoneRow {
   title: string;
   description: string | null;
   difficulty_rank: number | null;
+  title_de: string;
+  description_de: string | null;
 }
 
 interface LessonRow {
@@ -25,6 +35,9 @@ interface LessonRow {
   title: string;
   explanation: string | null;
   examples: string | null;
+  title_de: string;
+  explanation_de: string | null;
+  examples_de: string | null;
 }
 
 interface ExerciseRow {
@@ -54,7 +67,7 @@ export function createCurriculumExportService(db: Database.Database) {
     const placedIn = db.prepare('SELECT lesson_id FROM lesson_placements WHERE milestone_id = ? ORDER BY lesson_id');
 
     const milestones = milestoneRows.map((m) => ({
-      milestone: { id: m.id, track: m.track, level: m.level, title: m.title, description: m.description, difficultyRank: m.difficulty_rank! },
+      milestone: { id: m.id, track: m.track, level: m.level, title: m.title, titleDe: m.title_de, description: m.description, descriptionDe: m.description_de, difficultyRank: m.difficulty_rank! },
       lessonIds: (placedIn.all(m.id) as { lesson_id: string }[]).map((r) => r.lesson_id),
     }));
     // Unsorted lessons are exported as lessons in no milestone; the loader shelves them in Unsorted again.
@@ -74,6 +87,9 @@ export function createCurriculumExportService(db: Database.Database) {
         title: l.title,
         explanation: l.explanation,
         examples: l.examples ? (JSON.parse(l.examples) as string[]) : null,
+        titleDe: l.title_de,
+        explanationDe: l.explanation_de,
+        examplesDe: l.examples_de ? (JSON.parse(l.examples_de) as string[]) : null,
       };
     });
 
@@ -118,9 +134,9 @@ export function createCurriculumExportService(db: Database.Database) {
       }))
     );
 
-    return {
+    const seed = {
       seedVersion: currentSeedVersion(),
-      formatVersion: 2 as const,
+      formatVersion: 3 as const,
       track,
       level,
       milestones,
@@ -130,6 +146,9 @@ export function createCurriculumExportService(db: Database.Database) {
       conceptLinks,
       practice,
     };
+    const problems = validateSeedFile(seed, seedFileName(track, level));
+    if (problems.length > 0) throw new CurriculumExportError(problems);
+    return seed;
   }
 
   function exportAll(): { fileName: string; seed: SeedFile }[] {

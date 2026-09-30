@@ -4,7 +4,7 @@ import { randomSuffix } from './randomId';
 import { unsortedMilestoneId } from './unsortedBucket';
 import { assertValidRank } from '../services/curriculumStructureService';
 
-export type PlacementInput = { milestoneId: string } | { newMilestoneTitle: string; newMilestoneRank: number };
+export type PlacementInput = { milestoneId: string } | { newMilestoneTitle: string; newMilestoneTitleDe: string; newMilestoneRank: number };
 
 export type PlacementMode = 'create' | 'update';
 
@@ -37,9 +37,10 @@ export function resolvePlacement(
 
   const rank = assertValidRank(input.newMilestoneRank);
   if (!input.newMilestoneTitle.trim()) throw new Error('A new milestone needs a title');
+  if (!input.newMilestoneTitleDe?.trim()) throw new Error('A new milestone needs a German title');
   const milestoneId = `${track}-${level.toLowerCase()}-${randomSuffix()}`;
   db.prepare(
-    'INSERT INTO milestones (id, track, level, title, description, difficulty_rank) VALUES (?, ?, ?, ?, NULL, ?)'
-  ).run(milestoneId, track, level, input.newMilestoneTitle.trim(), rank);
+    'INSERT INTO milestones (id, track, level, title, title_de, description, difficulty_rank) VALUES (?, ?, ?, ?, ?, NULL, ?)'
+  ).run(milestoneId, track, level, input.newMilestoneTitle.trim(), input.newMilestoneTitleDe.trim(), rank);
   return milestoneId;
 }

@@ -141,4 +141,18 @@ describe('TestOutPage', () => {
     expect(screen.getByText('1.5 of 2 points')).toBeInTheDocument();
     expect(screen.queryByRole('alert')).not.toBeInTheDocument();
   });
+
+  it('shows the instruction in the review when the question text is empty', async () => {
+    const q = { id: 'q3', type: 'multiple_choice', question: '', instruction: { en: 'Pick the right verb', de: 'Wähle das richtige Verb' }, options: ['bin', 'ist'] };
+    stub({
+      [`GET ${BASE}`]: [
+        () =>
+          delayedResponse(
+            STATE({ status: 'none' }, { passed: false, score: 0, maxScore: 1, review: [{ exercise: q, answerText: 'ist', result: 'wrong', correctAnswer: 'bin' }] }),
+          ),
+      ],
+    });
+    renderWithIntl(<TestOutPage milestoneId="m2" />);
+    expect(await screen.findByText('Pick the right verb')).toBeInTheDocument();
+  });
 });

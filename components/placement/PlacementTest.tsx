@@ -2,13 +2,15 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import type {
   PlacementAnswer,
   PlacementOutcome,
   PlacementQuestionView,
   PlacementState,
 } from '@/lib/tutoring/placementTypes';
+import { pickText, type ContentLanguage } from '@/lib/i18n/localizedText';
+import { LanguageToggle } from '@/components/LanguageToggle';
 import { useApiErrorText } from '@/components/useApiErrorText';
 
 type Phase = 'intro' | 'question' | 'result';
@@ -16,6 +18,8 @@ type Phase = 'intro' | 'question' | 'result';
 export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; onSkip?: () => void }) {
   const t = useTranslations('placement');
   const errorText = useApiErrorText();
+  const tToggle = useTranslations('languageToggle');
+  const [language, setLanguage] = useState<ContentLanguage>(useLocale() as ContentLanguage);
   const [phase, setPhase] = useState<Phase>('intro');
   const [question, setQuestion] = useState<PlacementQuestionView | null>(null);
   const [outcome, setOutcome] = useState<PlacementOutcome | null>(null);
@@ -142,6 +146,8 @@ export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; 
     const answer = currentAnswer();
     return (
       <div>
+        <LanguageToggle value={language} onChange={setLanguage} label={tToggle('placement')} />
+        {question.instruction && <p>{pickText(question.instruction, language)}</p>}
         {question.type === 'multiple_choice' && (
           <fieldset>
             <legend>{question.question}</legend>
@@ -208,7 +214,8 @@ export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; 
       <ol>
         {outcome.answers.map((a) => (
           <li key={a.questionId}>
-            <p>{a.question}</p>
+            {a.instruction && <p>{pickText(a.instruction, language)}</p>}
+            {a.question && <p>{a.question}</p>}
             <p>
               {t('given', { answer: a.given || t('noAnswer') })} — {t(`result.${a.result}`)}
             </p>
@@ -217,7 +224,7 @@ export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; 
                 ? t('modelAnswer', { answer: a.correctAnswer })
                 : t('correctAnswer', { answer: a.correctAnswer })}
             </p>
-            {a.feedback && <p>{t('feedback', { feedback: a.feedback })}</p>}
+            {a.feedback && <p>{t('feedback', { feedback: pickText(a.feedback, language) })}</p>}
           </li>
         ))}
       </ol>

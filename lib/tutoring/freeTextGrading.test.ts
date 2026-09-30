@@ -6,19 +6,28 @@ const input = {
   modelAnswer: 'Ich heiße Anna.',
   studentAnswer: 'Ich heiße Tom.',
   level: 'A1' as const,
-  uiLanguage: 'en' as const,
 };
 
 describe('buildFreeTextGradingPrompt', () => {
-  it('names the level, the feedback language and the reply format', () => {
+  it('names the level and the reply format', () => {
     const { systemPrompt } = buildFreeTextGradingPrompt(input);
     expect(systemPrompt).toContain('CEFR level A1');
-    expect(systemPrompt).toContain('Write the feedback in English');
-    expect(systemPrompt).toContain('{"result": "correct" | "almost" | "wrong", "feedback": "..."}');
+    expect(systemPrompt).toContain('{"result": "correct" | "almost" | "wrong", "feedback_en": "...", "feedback_de": "..."}');
   });
 
-  it('asks for German feedback when the UI language is German', () => {
-    expect(buildFreeTextGradingPrompt({ ...input, uiLanguage: 'de' }).systemPrompt).toContain('Write the feedback in German');
+  it('asks for English and level-simplified German feedback', () => {
+    const { systemPrompt } = buildFreeTextGradingPrompt({ prompt: 'Say hello.', modelAnswer: 'Hallo!', studentAnswer: 'Halo', level: 'A1' });
+    expect(systemPrompt).toContain('"feedback_en"');
+    expect(systemPrompt).toContain('"feedback_de"');
+    expect(systemPrompt).toContain('simple enough for CEFR level A1');
+  });
+
+  it('returns null feedback when both languages are empty', () => {
+    expect(parseFreeTextGrade('{"result":"correct","feedback_en":" ","feedback_de":""}')).toEqual({ result: 'correct', feedback: null });
+  });
+
+  it('requires feedback in both languages', () => {
+    expect(parseFreeTextGrade('{"result":"almost","feedback_en":"Article."}')).toBeNull();
   });
 
   it('sends the task, model answer and student answer as the user message', () => {
@@ -33,22 +42,22 @@ describe('buildFreeTextGradingPrompt', () => {
 
 describe('parseFreeTextGrade', () => {
   it('parses a plain JSON reply', () => {
-    expect(parseFreeTextGrade('{"result": "almost", "feedback": " Check the ending. "}')).toEqual({
+    expect(parseFreeTextGrade('{"result": "almost", "feedback_en": " Check the ending. ", "feedback_de": " Prüfe die Endung. "}')).toEqual({
       result: 'almost',
-      feedback: 'Check the ending.',
+      feedback: { en: 'Check the ending.', de: 'Prüfe die Endung.' },
     });
   });
 
   it('finds the JSON object inside a fenced reply', () => {
-    expect(parseFreeTextGrade('Sure!\n```json\n{"result":"correct","feedback":"Well done."}\n```')).toEqual({
+    expect(parseFreeTextGrade('Sure!\n```json\n{"result":"correct","feedback_en":"Well done.","feedback_de":"Gut gemacht."}\n```')).toEqual({
       result: 'correct',
-      feedback: 'Well done.',
+      feedback: { en: 'Well done.', de: 'Gut gemacht.' },
     });
   });
 
   it('returns null for anything else', () => {
     expect(parseFreeTextGrade('Correct!')).toBeNull();
-    expect(parseFreeTextGrade('{"result": "great", "feedback": "x"}')).toBeNull();
+    expect(parseFreeTextGrade('{"result": "great", "feedback_en": "x", "feedback_de": "y"}')).toBeNull();
     expect(parseFreeTextGrade('{"result": "wrong"}')).toBeNull();
     expect(parseFreeTextGrade('{not json}')).toBeNull();
   });

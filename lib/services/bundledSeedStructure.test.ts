@@ -11,11 +11,11 @@ const files = readdirSync(DIR).filter((f) => f.endsWith('.json'));
 const seeds = files.map((f) => [f, JSON.parse(readFileSync(join(DIR, f), 'utf8')) as SeedFile] as const);
 
 describe('bundled curriculum seeds', () => {
-  it('has all 15 track+level files at seed version 4, format 2', () => {
+  it('has all 15 track+level files at seed version 6, format 3', () => {
     expect(files).toHaveLength(15);
     for (const [, seed] of seeds) {
-      expect(seed.formatVersion).toBe(2);
-      expect(seed.seedVersion).toBe('4');
+      expect(seed.formatVersion).toBe(3);
+      expect(seed.seedVersion).toBe('6');
     }
   });
 

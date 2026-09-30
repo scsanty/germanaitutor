@@ -45,6 +45,21 @@ function stubFetch(routes: Record<string, () => Promise<unknown>>) {
 }
 
 describe('PlacementTest', () => {
+  it('shows question instructions with a language toggle', async () => {
+    stubFetch({
+      '/api/placement/start': () =>
+        delayedResponse({
+          status: 'in_progress',
+          question: { ...MC_QUESTION, instruction: { en: 'Choose the right verb form.', de: 'Wähle die richtige Verbform.' } },
+        }),
+    });
+    renderWithIntl(<PlacementTest onFinished={vi.fn()} />);
+    fireEvent.click(screen.getByText('Start the test'));
+    expect(await screen.findByText('Choose the right verb form.')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'DE' }));
+    expect(screen.getByText('Wähle die richtige Verbform.')).toBeInTheDocument();
+  });
+
   it('offers Skip only when onSkip is given', () => {
     const onSkip = vi.fn();
     const { unmount } = renderWithIntl(<PlacementTest onFinished={vi.fn()} onSkip={onSkip} />);
@@ -145,6 +160,19 @@ describe('PlacementTest', () => {
 
     fireEvent.click(screen.getByText('Continue'));
     expect(onFinished).toHaveBeenCalled();
+  });
+
+  it('shows the instruction in the review when the question text is empty', async () => {
+    const answer = { ...OUTCOME.answers[0], question: '', instruction: { en: 'Fill in the verb.', de: 'Ergänze das Verb.' } };
+    stubFetch({
+      '/api/placement/start': () => delayedResponse({ status: 'in_progress', question: MC_QUESTION }),
+      '/api/placement/stop': () => delayedResponse({ status: 'finished', outcome: { ...OUTCOME, answers: [answer] } }),
+    });
+    renderWithIntl(<PlacementTest onFinished={vi.fn()} />);
+    fireEvent.click(screen.getByText('Start the test'));
+    await screen.findByText('Ich ___ Anna.');
+    fireEvent.click(screen.getByText('Beyond my knowledge'));
+    expect(await screen.findByText('Fill in the verb.')).toBeInTheDocument();
   });
 
   it('shows an error when the test cannot start', async () => {

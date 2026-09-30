@@ -15,8 +15,11 @@ export interface LessonEditorInitialValues {
   sourceLevel: CefrLevel;
   skill: Skill;
   title: string;
+  titleDe: string;
   explanation: string | null;
+  explanationDe: string | null;
   examples: string[] | null;
+  examplesDe: string[] | null;
   exercises: ExerciseFormEntry[];
   prerequisiteIds: string[];
 }
@@ -30,7 +33,7 @@ type TrackStructureResponse = {
 
 export type LessonCloneContent = Pick<
   LessonEditorInitialValues,
-  'slug' | 'skill' | 'title' | 'explanation' | 'examples' | 'exercises'
+  'slug' | 'skill' | 'title' | 'titleDe' | 'explanation' | 'explanationDe' | 'examples' | 'examplesDe' | 'exercises'
 >;
 
 export function LessonEditorForm(
@@ -54,8 +57,12 @@ export function LessonEditorForm(
   );
   const [skill, setSkill] = useState<Skill>(initial?.skill ?? 'grammar');
   const [title, setTitle] = useState(initial?.title ?? '');
+  const [titleDe, setTitleDe] = useState(initial?.titleDe ?? '');
   const [explanation, setExplanation] = useState(initial?.explanation ?? '');
-  const [examples, setExamples] = useState<string[]>(initial?.examples ?? []);
+  const [explanationDe, setExplanationDe] = useState(initial?.explanationDe ?? '');
+  const [examples, setExamples] = useState<{ en: string; de: string }[]>(
+    (initial?.examples ?? []).map((en, i) => ({ en, de: initial?.examplesDe?.[i] ?? '' }))
+  );
   const [exercises, setExercises] = useState<ExerciseFormEntry[]>(initial?.exercises ?? []);
   const [prerequisiteIds, setPrerequisiteIds] = useState<string[]>(
     props.mode === 'edit' ? props.initial.prerequisiteIds : []
@@ -111,8 +118,11 @@ export function LessonEditorForm(
       sourceLevel,
       skill,
       title,
+      titleDe,
       explanation: explanation || null,
-      examples: examples.length > 0 ? examples : null,
+      explanationDe: explanationDe || null,
+      examples: examples.length > 0 ? examples.map((r) => r.en) : null,
+      examplesDe: examples.length > 0 ? examples.map((r) => r.de) : null,
       exercises,
       prerequisiteIds,
       placement,
@@ -134,7 +144,8 @@ export function LessonEditorForm(
       {props.mode === 'create' && (
         <input placeholder="Slug" value={slug} onChange={(e) => setSlug(e.target.value)} />
       )}
-      <input placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} />
+      <input aria-label="Title (English)" placeholder="Title (English)" value={title} onChange={(e) => setTitle(e.target.value)} />
+      <input aria-label="Title (German)" placeholder="Title (German)" value={titleDe} onChange={(e) => setTitleDe(e.target.value)} />
 
       <label>
         Track
@@ -170,9 +181,16 @@ export function LessonEditorForm(
       </label>
 
       <textarea
-        placeholder="Explanation"
-        value={explanation ?? ''}
+        aria-label="Explanation (English)"
+        placeholder="Explanation (English)"
+        value={explanation}
         onChange={(e) => setExplanation(e.target.value)}
+      />
+      <textarea
+        aria-label="Explanation (German)"
+        placeholder="Explanation (German)"
+        value={explanationDe}
+        onChange={(e) => setExplanationDe(e.target.value)}
       />
 
       <div>
@@ -180,16 +198,21 @@ export function LessonEditorForm(
         {examples.map((example, index) => (
           <div key={index}>
             <input
-              aria-label={`Example ${index + 1}`}
-              value={example}
-              onChange={(e) => setExamples(examples.map((ex, i) => (i === index ? e.target.value : ex)))}
+              aria-label={`Example ${index + 1} (English)`}
+              value={example.en}
+              onChange={(e) => setExamples(examples.map((ex, i) => (i === index ? { ...ex, en: e.target.value } : ex)))}
+            />
+            <input
+              aria-label={`Example ${index + 1} (German)`}
+              value={example.de}
+              onChange={(e) => setExamples(examples.map((ex, i) => (i === index ? { ...ex, de: e.target.value } : ex)))}
             />
             <button type="button" onClick={() => setExamples(examples.filter((_, i) => i !== index))}>
               Remove example {index + 1}
             </button>
           </div>
         ))}
-        <button type="button" onClick={() => setExamples([...examples, ''])}>
+        <button type="button" onClick={() => setExamples([...examples, { en: '', de: '' }])}>
           Add example
         </button>
       </div>

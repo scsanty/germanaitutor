@@ -8,6 +8,7 @@ import type { ExerciseView } from '@/lib/tutoring/exerciseView';
 import type { GradeResult } from '@/lib/tutoring/grading';
 import type { PracticeBatch, PracticeGradeOutcome } from '@/lib/tutoring/practiceViews';
 import { ExerciseCard } from './ExerciseCard';
+import type { ContentLanguage } from '@/lib/i18n/localizedText';
 
 type Phase = 'idle' | 'loading' | 'running' | 'summary';
 
@@ -22,6 +23,7 @@ const EMPTY_TALLY: Tally = { correct: 0, almost: 0, wrong: 0, skipped: 0 };
 
 export interface PracticeRunProps {
   lessonId: string;
+  contentLanguage?: ContentLanguage;
   onAskAi: (practiceExerciseId: string, answer: { answerText: string; result: GradeResult }) => void;
   // True from the moment a batch loads until its summary shows.
   onActiveChange?: (active: boolean) => void;
@@ -29,7 +31,7 @@ export interface PracticeRunProps {
 
 // Spec Phase 2: a batch of practice exercises, each shown once, no retry round, nothing recorded.
 // When the batch ends the button comes back for more.
-export function PracticeRun({ lessonId, onAskAi, onActiveChange }: PracticeRunProps) {
+export function PracticeRun({ lessonId, contentLanguage, onAskAi, onActiveChange }: PracticeRunProps) {
   const t = useTranslations('practice');
   const errorText = useApiErrorText();
   const [phase, setPhase] = useState<Phase>('idle');
@@ -91,6 +93,7 @@ export function PracticeRun({ lessonId, onAskAi, onActiveChange }: PracticeRunPr
             exercise={current}
             source="lesson"
             mode="practice"
+            contentLanguage={contentLanguage}
             onPracticeAnswered={(outcome: PracticeGradeOutcome) => setLastResult(outcome.result)}
             onNext={() => advance(lastResult ?? 'skipped')}
             onSkip={() => advance('skipped')}

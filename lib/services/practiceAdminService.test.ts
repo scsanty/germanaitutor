@@ -59,6 +59,14 @@ describe('practiceAdminService', () => {
     expect(kindOf(() => admin.editContent('px-1', { question: '', options: ['ja'], correctIndex: 0 }))).toBe('bad_request');
   });
 
+  it('refuses content with an instruction, since the pool is German-only', () => {
+    const { db, admin } = setup();
+    addPracticeExercise(db, 'px-1', 'a1-greet');
+    const content = { question: 'Fixed?', options: ['ja', 'nein'], correctIndex: 1, instruction: { en: 'Pick.', de: 'Wähle.' } };
+    expect(kindOf(() => admin.editContent('px-1', content))).toBe('bad_request');
+    expect(() => admin.editContent('px-1', content)).toThrow('cannot have an instruction');
+  });
+
   it('promotes into the lesson’s authored exercises, keeps the completion, and leaves the pool', () => {
     const { db, admin } = setup();
     markComplete(db, 'a1-greet');

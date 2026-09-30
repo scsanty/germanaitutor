@@ -13,12 +13,12 @@ function seedFile(
   const milestoneId = `${track}-a1-m`;
   return {
     seedVersion: '9',
-    formatVersion: 2,
+    formatVersion: 3,
     track,
     level: 'A1',
     milestones: [
       {
-        milestone: { id: milestoneId, track, level: 'A1', title: 'M', description: null, difficultyRank: 1 },
+        milestone: { id: milestoneId, track, level: 'A1', title: 'M', titleDe: 'M', description: null, descriptionDe: null, difficultyRank: 1 },
         lessonIds,
       },
     ],
@@ -28,8 +28,11 @@ function seedFile(
       sourceLevel: 'A1',
       skill: 'grammar',
       title: id,
+      titleDe: id,
       explanation: null,
+      explanationDe: null,
       examples: null,
+      examplesDe: null,
     })),
     exercises: [],
     prerequisites: [],

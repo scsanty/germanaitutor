@@ -4,7 +4,7 @@ import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { createDbClient } from '../db/client';
 import { loadSeedIfNeeded } from './curriculumSeedLoader';
-import { createCurriculumExportService, seedFileName } from './curriculumExportService';
+import { createCurriculumExportService, CurriculumExportError, seedFileName } from './curriculumExportService';
 import { ensureUnsortedExists } from '../curriculum-admin/unsortedBucket';
 
 const REPO_SEED_DIR = join(process.cwd(), 'data', 'curriculum-seed');
@@ -57,11 +57,25 @@ describe('curriculumExportService', () => {
         ('a1-g__ex10', 'a1-g', 'free_text', '{"prompt":"p","modelAnswer":"m"}'),
         ('a1-g__ex2', 'a1-g', 'free_text', '{"prompt":"p","modelAnswer":"m"}');
       INSERT INTO lesson_concept_links (lesson_a_id, lesson_b_id) VALUES ('a1-g', 'a1-o');
+      UPDATE milestones SET title_de = 'M-de';
+      UPDATE lessons SET title_de = title || '-de';
     `);
     const seed = createCurriculumExportService(db).exportTrackLevel('generic', 'A1');
     expect(seed.conceptLinks).toEqual([{ lessonAId: 'a1-g', lessonBId: 'a1-o' }]);
     expect(seed.exercises.map((e) => e.id)).toEqual(['a1-g__ex10', 'a1-g__ex2']);
     expect(seed.milestones[0].lessonIds).toEqual(['a1-g']);
+  });
+
+  it('refuses to export a file the loader would reject, naming the lesson', () => {
+    const db = createDbClient(':memory:');
+    db.exec(`
+      INSERT INTO milestones (id, track, level, title, difficulty_rank, title_de) VALUES ('g-m', 'generic', 'A1', 'M', 1, 'M-de');
+      INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('a1-old', 'generic', 'A1', 'grammar', 'Old');
+      INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES ('a1-old', 'g-m');
+    `);
+    const service = createCurriculumExportService(db);
+    expect(() => service.exportTrackLevel('generic', 'A1')).toThrow(CurriculumExportError);
+    expect(() => service.exportTrackLevel('generic', 'A1')).toThrow('lesson a1-old: German title is required');
   });
 
   it('exports only approved practice exercises, and they load back as approved', () => {
@@ -75,6 +89,8 @@ describe('curriculumExportService', () => {
         ('a1-g__px-a', 'a1-g', 'fill_blank', '{"textWithBlank":"a ___","correctAnswer":"x"}', 'approved', '2026-09-29T10:00:01.000Z'),
         ('a1-g__px-u', 'a1-g', 'fill_blank', '{"textWithBlank":"u ___","correctAnswer":"x"}', 'unreviewed', '2026-09-29T10:00:03.000Z'),
         ('a1-g__px-r', 'a1-g', 'fill_blank', '{"textWithBlank":"r ___","correctAnswer":"x"}', 'rejected', '2026-09-29T10:00:04.000Z');
+      UPDATE milestones SET title_de = 'M-de' WHERE id = 'g-m';
+      UPDATE lessons SET title_de = 'G-de' WHERE id = 'a1-g';
     `);
     const seed = createCurriculumExportService(db).exportTrackLevel('generic', 'A1');
     expect(seed.practice).toEqual([
@@ -89,7 +105,7 @@ describe('curriculumExportService', () => {
     expect(createCurriculumExportService(target).exportTrackLevel('generic', 'A1').practice).toEqual(seed.practice);
   });
 
-  it('exports format v2: ranked milestones with sorted lesson ids, Unsorted lessons as lessons only', () => {
+  it('exports format v3: ranked milestones with sorted lesson ids, Unsorted lessons as lessons only', () => {
     const db = createDbClient(':memory:');
     db.exec(`
       INSERT INTO milestones (id, track, level, title, difficulty_rank) VALUES ('m2', 'generic', 'A1', 'Two', 2), ('m1', 'generic', 'A1', 'One', 1);
@@ -99,9 +115,12 @@ describe('curriculumExportService', () => {
     `);
     ensureUnsortedExists(db, 'generic', 'A1');
     db.prepare("UPDATE lesson_placements SET milestone_id = 'generic-a1-unsorted' WHERE lesson_id = 'u'").run();
+    db.exec("UPDATE lessons SET title_de = title || '-de'; UPDATE milestones SET title_de = title || '-de' WHERE id != 'generic-a1-unsorted';");
 
     const seed = createCurriculumExportService(db).exportTrackLevel('generic', 'A1');
-    expect(seed.formatVersion).toBe(2);
+    expect(seed.formatVersion).toBe(3);
+    expect(seed.milestones[0].milestone.titleDe).toBe('One-de');
+    expect(seed.lessons.find((l) => l.id === 'b')?.titleDe).toBe('B-de');
     expect(seed.milestones.map((m) => [m.milestone.id, m.milestone.difficultyRank, m.lessonIds])).toEqual([
       ['m1', 1, ['a', 'b']],
       ['m2', 2, []],

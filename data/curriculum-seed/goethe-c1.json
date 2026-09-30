@@ -1,6 +1,6 @@
 {
-  "seedVersion": "4",
-  "formatVersion": 2,
+  "seedVersion": "6",
+  "formatVersion": 3,
   "track": "goethe",
   "level": "C1",
   "lessons": [
@@ -10,9 +10,17 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "grammar",
-      "title": "Subjektive Bedeutung der Modalverben und Vermutungsgrade",
-      "explanation": "Das Goethe-Zertifikat C1 verlangt das Beherrschen der subjektiven Verwendung von Modalverben zur Graduierung von Wahrscheinlichkeiten und Fremdaussagen.\nDie Modalverben drücken unterschiedliche epistemische Gewissheitsgrade aus: 'müssen' (nahezu sicher: ~95%), 'müsste / dürfte' (sehr wahrscheinlich: ~75–80%), 'könnte' (möglich: ~50%), 'mag / mögen' (Einräumung: 'Das mag sein, aber...').\nVergangenheitsformen werden subjektiv mit Infinitiv Perfekt gebildet ('Er muss den Zug verpasst haben' = Ich bin sicher, dass er ihn verpasst hat).\nDemgegenüber stehen 'sollen' (Gerücht: 'Er soll verreist sein' = Man sagt, dass...) und 'wollen' (subjektive Behauptung des Subjekts: 'Er will nichts bemerkt haben' = Er behauptet, nichts bemerkt zu haben).\n",
+      "title": "Subjective Meaning of Modal Verbs and Degrees of Assumption",
+      "explanation": "The Goethe-Zertifikat C1 requires command of the subjective use of modal verbs to grade probabilities and reported claims.\nModal verbs express different degrees of epistemic certainty: 'müssen' (almost certain: ~95%), 'müsste / dürfte' (very likely: ~75–80%), 'könnte' (possible: ~50%), 'mag / mögen' (concession: 'Das mag sein, aber...').\nPast forms of the subjective use are built with the perfect infinitive ('Er muss den Zug verpasst haben' = I am sure he missed it).\nIn contrast, 'sollen' marks a rumour ('Er soll verreist sein' = people say that...) and 'wollen' marks the subject's own claim ('Er will nichts bemerkt haben' = he claims not to have noticed anything).\n",
       "examples": [
+        "Der Einbrecher muss durch das Kellerfenster eingedrungen sein; andere Zugänge waren versperrt.",
+        "Der Minister will von den illegalen Parteispenden nichts gewusst haben.",
+        "Die Konjunktur dürfte sich im dritten Quartal spürbar erholen.",
+        "Sie soll an einer bahnbrechenden Entdeckung arbeiten, verlautete aus dem Institut."
+      ],
+      "titleDe": "Subjektive Bedeutung der Modalverben und Vermutungsgrade",
+      "explanationDe": "Das Goethe-Zertifikat C1 verlangt das Beherrschen der subjektiven Verwendung von Modalverben zur Graduierung von Wahrscheinlichkeiten und Fremdaussagen.\nDie Modalverben drücken unterschiedliche epistemische Gewissheitsgrade aus: 'müssen' (nahezu sicher: ~95%), 'müsste / dürfte' (sehr wahrscheinlich: ~75–80%), 'könnte' (möglich: ~50%), 'mag / mögen' (Einräumung: 'Das mag sein, aber...').\nVergangenheitsformen werden subjektiv mit Infinitiv Perfekt gebildet ('Er muss den Zug verpasst haben' = Ich bin sicher, dass er ihn verpasst hat).\nDemgegenüber stehen 'sollen' (Gerücht: 'Er soll verreist sein' = Man sagt, dass...) und 'wollen' (subjektive Behauptung des Subjekts: 'Er will nichts bemerkt haben' = Er behauptet, nichts bemerkt zu haben).\n",
+      "examplesDe": [
         "Der Einbrecher muss durch das Kellerfenster eingedrungen sein; andere Zugänge waren versperrt.",
         "Der Minister will von den illegalen Parteispenden nichts gewusst haben.",
         "Die Konjunktur dürfte sich im dritten Quartal spürbar erholen.",
@@ -25,9 +33,16 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "grammar",
-      "title": "Indirekte Rede und sprachliche Distanzierungsmittel",
-      "explanation": "Im Goethe-Prüfungsmodul 'Lesen' und 'Schreiben' müssen Lernende subtile Distanzierungen in journalistischen Leitartikeln erkennen und selbst anwenden können.\nNeben dem klassischen Konjunktiv I/II stehen zahlreiche lexikalische Distanzierungsmarker zur Verfügung: Adverbien ('angeblich', 'vorgeblich', 'vermeintlich'), präpositionale Attribute ('nach Angaben von', 'laut', 'gemäß') sowie Redeverben mit inhärenter Skepsis ('beteuern', 'vorschützen', 'vorgeben').\nAuch parenthetische Einschübe ('wie verlautet', 'dem Vernehmen nach') signalisieren, dass sich der Verfasser die zitierte Information nicht zu eigen macht.\n",
+      "title": "Reported Speech and Linguistic Means of Distancing",
+      "explanation": "In the Goethe modules 'Lesen' and 'Schreiben', learners must recognise subtle distancing in newspaper editorials and be able to use it themselves.\nBesides the classic Konjunktiv I/II, there are many lexical distancing markers: adverbs ('angeblich', 'vorgeblich', 'vermeintlich'), prepositional attributes ('nach Angaben von', 'laut', 'gemäß') and reporting verbs with built-in scepticism ('beteuern', 'vorschützen', 'vorgeben').\nParenthetical insertions ('wie verlautet', 'dem Vernehmen nach') also signal that the writer does not endorse the quoted information.\n",
       "examples": [
+        "Der Sprecher betonte, die Gelder seien zweckgebunden verwendet worden; Kritiker halten diese Rechtfertigung für vorgeblich.",
+        "Dem Vernehmen nach plant die Konzernspitze die Schließung mehrerer Standorte.",
+        "Die vermeintlich bahnbrechende Studie hielt einer methodischen Überprüfung nicht stand."
+      ],
+      "titleDe": "Indirekte Rede und sprachliche Distanzierungsmittel",
+      "explanationDe": "Im Goethe-Prüfungsmodul 'Lesen' und 'Schreiben' müssen Lernende subtile Distanzierungen in journalistischen Leitartikeln erkennen und selbst anwenden können.\nNeben dem klassischen Konjunktiv I/II stehen zahlreiche lexikalische Distanzierungsmarker zur Verfügung: Adverbien ('angeblich', 'vorgeblich', 'vermeintlich'), präpositionale Attribute ('nach Angaben von', 'laut', 'gemäß') sowie Redeverben mit inhärenter Skepsis ('beteuern', 'vorschützen', 'vorgeben').\nAuch parenthetische Einschübe ('wie verlautet', 'dem Vernehmen nach') signalisieren, dass sich der Verfasser die zitierte Information nicht zu eigen macht.\n",
+      "examplesDe": [
         "Der Sprecher betonte, die Gelder seien zweckgebunden verwendet worden; Kritiker halten diese Rechtfertigung für vorgeblich.",
         "Dem Vernehmen nach plant die Konzernspitze die Schließung mehrerer Standorte.",
         "Die vermeintlich bahnbrechende Studie hielt einer methodischen Überprüfung nicht stand."
@@ -39,9 +54,16 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "grammar",
-      "title": "Komplexe Adverbialsätze und modale Nuancen",
-      "explanation": "Zur stilistischen Meisterschaft gehört auf Goethe C1-Niveau die präzise Handhabung seltenerer und komplexer Subjunktionen.\nAdversative Verhältnisse werden mit 'wohingegen' oder 'während' verdeutlicht; modale Begleitumstände mit 'ohne dass' oder 'indem'; modale Ersetzungen mit 'anstatt dass / anstatt zu'.\nKonditionale Restriktionen nutzen 'sofern', 'soweit' oder 'geschweige denn'.\nProportionale Beziehungen verlangen die Konstruktion 'je... desto / umso' (mit Nebensatzstruktur nach 'je' und Inversion nach 'desto').\nBesonderes Augenmerk liegt auf der logischen Kongruenz zwischen Haupt- und Nebensatz.\n",
+      "title": "Complex Adverbial Clauses and Modal Nuances",
+      "explanation": "At Goethe C1 level, stylistic mastery includes precise handling of rarer and more complex subordinating conjunctions.\nContrast is made clear with 'wohingegen' or 'während'; accompanying circumstances with 'ohne dass' or 'indem'; replacement with 'anstatt dass / anstatt zu'.\nConditional restrictions use 'sofern', 'soweit' or 'geschweige denn'.\nProportional relations need the construction 'je... desto / umso' (subordinate-clause order after 'je' and inversion after 'desto').\nPay special attention to the logical fit between main clause and subordinate clause.\n",
       "examples": [
+        "Je tiefer man in die Materie eindringt, desto deutlicher treten die inneren Widersprüche zutage.",
+        "Der Beschluss wurde verabschiedet, ohne dass die betroffenen Kommunen zuvor angehört worden wären.",
+        "Anstatt die Ursachen nachhaltig zu bekämpfen, kurierte man lediglich an den Symptomen herum."
+      ],
+      "titleDe": "Komplexe Adverbialsätze und modale Nuancen",
+      "explanationDe": "Zur stilistischen Meisterschaft gehört auf Goethe C1-Niveau die präzise Handhabung seltenerer und komplexer Subjunktionen.\nAdversative Verhältnisse werden mit 'wohingegen' oder 'während' verdeutlicht; modale Begleitumstände mit 'ohne dass' oder 'indem'; modale Ersetzungen mit 'anstatt dass / anstatt zu'.\nKonditionale Restriktionen nutzen 'sofern', 'soweit' oder 'geschweige denn'.\nProportionale Beziehungen verlangen die Konstruktion 'je... desto / umso' (mit Nebensatzstruktur nach 'je' und Inversion nach 'desto').\nBesonderes Augenmerk liegt auf der logischen Kongruenz zwischen Haupt- und Nebensatz.\n",
+      "examplesDe": [
         "Je tiefer man in die Materie eindringt, desto deutlicher treten die inneren Widersprüche zutage.",
         "Der Beschluss wurde verabschiedet, ohne dass die betroffenen Kommunen zuvor angehört worden wären.",
         "Anstatt die Ursachen nachhaltig zu bekämpfen, kurierte man lediglich an den Symptomen herum."
@@ -53,9 +75,17 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "vocabulary",
-      "title": "Idiomatik, Redensarten und bildhafte Wendungen",
-      "explanation": "Das spontane und treffsichere Verständnis bildhafter Redensarten ist ein Kernmerkmal des Goethe-Zertifikats C1.\nIn Hörtexten (z. B. Radiointerviews) und Lesetexten (Feuilletons) treten Redewendungen gehäuft auf: 'den Nagel auf den Kopf treffen' (das Wesentliche erfassen), 'ins Gewicht fallen' (bedeutend sein), 'aus dem Rahmen fallen' (ungewöhnlich sein), 'die Flinte ins Korn werfen' (aufgeben), 'Öl ins Feuer gießen' (einen Konflikt anheizen).\nDie Kandidaten müssen diese Metaphern nicht nur verstehen, sondern sie im mündlichen und schriftlichen Ausdruck stilistisch dosiert und kontextadäquat einsetzen.\n",
+      "title": "Idioms, Sayings and Figurative Phrases",
+      "explanation": "Understanding figurative idioms quickly and accurately is a core feature of the Goethe-Zertifikat C1.\nIdioms are frequent in listening texts (e.g. radio interviews) and reading texts (arts and culture pages): 'den Nagel auf den Kopf treffen' (to hit the nail on the head), 'ins Gewicht fallen' (to carry weight), 'aus dem Rahmen fallen' (to be out of the ordinary), 'die Flinte ins Korn werfen' (to throw in the towel), 'Öl ins Feuer gießen' (to add fuel to the fire).\nCandidates must not only understand these metaphors but also use them in speech and writing in the right dose and the right context.\n",
       "examples": [
+        "Dieser Einwand fällt bei der Gesamtbewertung kaum ins Gewicht.",
+        "Mit seiner messerscharfen Kritik traf der Autor den Nagel auf den Kopf.",
+        "Anstatt zu deeskalieren, goss der Parteichef mit seiner Wortmeldung noch zusätzliches Öl ins Feuer.",
+        "Wir sollten nicht voreilig die Flinte ins Korn werfen, bevor alle Optionen ausgelotet sind."
+      ],
+      "titleDe": "Idiomatik, Redensarten und bildhafte Wendungen",
+      "explanationDe": "Das spontane und treffsichere Verständnis bildhafter Redensarten ist ein Kernmerkmal des Goethe-Zertifikats C1.\nIn Hörtexten (z. B. Radiointerviews) und Lesetexten (Feuilletons) treten Redewendungen gehäuft auf: 'den Nagel auf den Kopf treffen' (das Wesentliche erfassen), 'ins Gewicht fallen' (bedeutend sein), 'aus dem Rahmen fallen' (ungewöhnlich sein), 'die Flinte ins Korn werfen' (aufgeben), 'Öl ins Feuer gießen' (einen Konflikt anheizen).\nDie Kandidaten müssen diese Metaphern nicht nur verstehen, sondern sie im mündlichen und schriftlichen Ausdruck stilistisch dosiert und kontextadäquat einsetzen.\n",
+      "examplesDe": [
         "Dieser Einwand fällt bei der Gesamtbewertung kaum ins Gewicht.",
         "Mit seiner messerscharfen Kritik traf der Autor den Nagel auf den Kopf.",
         "Anstatt zu deeskalieren, goss der Parteichef mit seiner Wortmeldung noch zusätzliches Öl ins Feuer.",
@@ -68,9 +98,16 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "vocabulary",
-      "title": "Komplexe Wortbildung, Komposita und Derivation",
-      "explanation": "Die morphologische Flexibilität des Deutschen bei der Bildung neuer Wortzusammensetzungen (Komposita) und Ableitungen (Derivationen) erreicht auf C1 ihren Höhepunkt.\nLernende müssen in der Lage sein, spontane Gelegenheitsbildungen der Gegenwartssprache (Ad-hoc-Komposita wie 'Krisenresilienz', 'Erkenntnisgewinn', 'Spitzenreiter') transparent in ihre semantischen Einzelteile zu zerlegen.\nEbenso zentral sind produktive Präfixe (miss-, ent-, ver-, zer-, un-) und Suffixe (-arm, -reich, -resistent, -trächtig, -lastig), die kompakte Charakterisierungen ermöglichen ('konfliktträchtig', 'erfolgsarm', 'theorielastig').\n",
+      "title": "Complex Word Formation, Compounds and Derivation",
+      "explanation": "The flexibility of German in forming new compounds (Komposita) and derivations reaches its peak at C1.\nLearners must be able to break down spontaneous one-off formations of contemporary German (ad hoc compounds such as 'Krisenresilienz', 'Erkenntnisgewinn', 'Spitzenreiter') into their meaningful parts.\nEqually important are productive prefixes (miss-, ent-, ver-, zer-, un-) and suffixes (-arm, -reich, -resistent, -trächtig, -lastig), which allow compact descriptions ('konfliktträchtig', 'erfolgsarm', 'theorielastig').\n",
       "examples": [
+        "Die Zukunftsträchtigkeit dieser Technologie steht außer Frage.",
+        "Das Projekt litt von Beginn an unter einer gravierenden Theorielastigkeit.",
+        "Wir müssen die psychische Krisenresilienz von Jugendlichen nachhaltig stärken."
+      ],
+      "titleDe": "Komplexe Wortbildung, Komposita und Derivation",
+      "explanationDe": "Die morphologische Flexibilität des Deutschen bei der Bildung neuer Wortzusammensetzungen (Komposita) und Ableitungen (Derivationen) erreicht auf C1 ihren Höhepunkt.\nLernende müssen in der Lage sein, spontane Gelegenheitsbildungen der Gegenwartssprache (Ad-hoc-Komposita wie 'Krisenresilienz', 'Erkenntnisgewinn', 'Spitzenreiter') transparent in ihre semantischen Einzelteile zu zerlegen.\nEbenso zentral sind produktive Präfixe (miss-, ent-, ver-, zer-, un-) und Suffixe (-arm, -reich, -resistent, -trächtig, -lastig), die kompakte Charakterisierungen ermöglichen ('konfliktträchtig', 'erfolgsarm', 'theorielastig').\n",
+      "examplesDe": [
         "Die Zukunftsträchtigkeit dieser Technologie steht außer Frage.",
         "Das Projekt litt von Beginn an unter einer gravierenden Theorielastigkeit.",
         "Wir müssen die psychische Krisenresilienz von Jugendlichen nachhaltig stärken."
@@ -82,9 +119,16 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "vocabulary",
-      "title": "Metaphorik in Medien, Kultur und Politik",
-      "explanation": "In anspruchsvollen deutschen Leitmedien (z. B. DIE ZEIT, FAZ, Der Spiegel) werden Debatten intensiv über Leitmetaphern geführt.\nTypische Metaphernfelder stammen aus der Seefahrt ('das Schiff durch schwere See steuern', 'in seichtes Fahrwasser geraten'), dem Bauwesen ('ein solides Fundament errichten', 'auf Sand gebaut sein'), der Medizin ('den Finger in die Wunde legen', 'ein Symptom kurieren') oder dem Kriegshandwerk ('schwere Geschütze auffahren').\nC1-Lernende müssen die metaphorische Übertragung erkennen, die dahinterliegende Wertung dechiffrieren und im mündlichen Teil 'Sprechen' Metaphern pointiert einsetzen können.\n",
+      "title": "Metaphor in the Media, Culture and Politics",
+      "explanation": "In demanding German quality media (e.g. DIE ZEIT, FAZ, Der Spiegel), debates are driven by guiding metaphors.\nTypical metaphor fields come from seafaring ('das Schiff durch schwere See steuern', 'in seichtes Fahrwasser geraten'), building ('ein solides Fundament errichten', 'auf Sand gebaut sein'), medicine ('den Finger in die Wunde legen', 'ein Symptom kurieren') or warfare ('schwere Geschütze auffahren').\nC1 learners must recognise the metaphorical transfer, decode the judgement behind it and use metaphors to make a point in the oral part 'Sprechen'.\n",
       "examples": [
+        "Mit diesem Gesetz betreten wir juristisches Neuland.",
+        "Der Autor legte mit seiner Reportage schonungslos den Finger in die offene Wunde der Gesellschaft.",
+        "Die Argumentation des Ministers erwies sich als Kartenhaus, das beim ersten Gegenwind in sich zusammenbrach."
+      ],
+      "titleDe": "Metaphorik in Medien, Kultur und Politik",
+      "explanationDe": "In anspruchsvollen deutschen Leitmedien (z. B. DIE ZEIT, FAZ, Der Spiegel) werden Debatten intensiv über Leitmetaphern geführt.\nTypische Metaphernfelder stammen aus der Seefahrt ('das Schiff durch schwere See steuern', 'in seichtes Fahrwasser geraten'), dem Bauwesen ('ein solides Fundament errichten', 'auf Sand gebaut sein'), der Medizin ('den Finger in die Wunde legen', 'ein Symptom kurieren') oder dem Kriegshandwerk ('schwere Geschütze auffahren').\nC1-Lernende müssen die metaphorische Übertragung erkennen, die dahinterliegende Wertung dechiffrieren und im mündlichen Teil 'Sprechen' Metaphern pointiert einsetzen können.\n",
+      "examplesDe": [
         "Mit diesem Gesetz betreten wir juristisches Neuland.",
         "Der Autor legte mit seiner Reportage schonungslos den Finger in die offene Wunde der Gesellschaft.",
         "Die Argumentation des Ministers erwies sich als Kartenhaus, das beim ersten Gegenwind in sich zusammenbrach."
@@ -96,9 +140,16 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "grammar",
-      "title": "Feste Nomen-Präpositions-Verbindungen",
-      "explanation": "Zahlreiche abstrakte Nomen verlangen feste Präpositionen und spezifische Kasus.\nIm Goethe-C1-Test ist die Beherrschung dieser Rektionen entscheidend für die fehlerfreie Textproduktion in Schreiben Teil 1 und 2.\nBeispiele: 'die Skepsis gegenüber (+ Dat.)', 'die Bereitschaft zu (+ Dat.)', 'die Furcht vor (+ Dat.)', 'der Zweifel an (+ Dat.)', 'das Vertrauen auf/in (+ Akk./Dat.)', 'die Kritik an (+ Dat.)', 'das Streben nach (+ Dat.)' und 'das Interesse an (+ Dat.)'.\nFehlende oder falsche Präpositionen signalisieren mangelnde Sprachkompetenz auf der C1-Stufe.\n",
+      "title": "Fixed Noun-Preposition Combinations",
+      "explanation": "Many abstract nouns require fixed prepositions and specific cases.\nIn the Goethe C1 exam, mastering these combinations is crucial for error-free writing in Schreiben Teil 1 and 2.\nExamples: 'die Skepsis gegenüber (+ Dat.)', 'die Bereitschaft zu (+ Dat.)', 'die Furcht vor (+ Dat.)', 'der Zweifel an (+ Dat.)', 'das Vertrauen auf/in (+ Akk./Dat.)', 'die Kritik an (+ Dat.)', 'das Streben nach (+ Dat.)' and 'das Interesse an (+ Dat.)'.\nMissing or wrong prepositions signal a lack of language competence at C1 level.\n",
       "examples": [
+        "Die wachsende Skepsis gegenüber den Absichten der Konzernführung führte zum Streik.",
+        "Es mangelt in der Belegschaft keineswegs an der Bereitschaft zur Veränderung.",
+        "Trotz aller Rückschläge verlor sie nie den Glauben an die Gerechtigkeit."
+      ],
+      "titleDe": "Feste Nomen-Präpositions-Verbindungen",
+      "explanationDe": "Zahlreiche abstrakte Nomen verlangen feste Präpositionen und spezifische Kasus.\nIm Goethe-C1-Test ist die Beherrschung dieser Rektionen entscheidend für die fehlerfreie Textproduktion in Schreiben Teil 1 und 2.\nBeispiele: 'die Skepsis gegenüber (+ Dat.)', 'die Bereitschaft zu (+ Dat.)', 'die Furcht vor (+ Dat.)', 'der Zweifel an (+ Dat.)', 'das Vertrauen auf/in (+ Akk./Dat.)', 'die Kritik an (+ Dat.)', 'das Streben nach (+ Dat.)' und 'das Interesse an (+ Dat.)'.\nFehlende oder falsche Präpositionen signalisieren mangelnde Sprachkompetenz auf der C1-Stufe.\n",
+      "examplesDe": [
         "Die wachsende Skepsis gegenüber den Absichten der Konzernführung führte zum Streik.",
         "Es mangelt in der Belegschaft keineswegs an der Bereitschaft zur Veränderung.",
         "Trotz aller Rückschläge verlor sie nie den Glauben an die Gerechtigkeit."
@@ -110,9 +161,16 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "grammar",
-      "title": "Differenzierte Konnektoren und argumentative Steuerung",
-      "explanation": "Die logische Verknüpfung von Sinneinheiten in der Goethe-Textproduktion (Schreiben Teil 1) erfordert ein breites Spektrum eleganter Konnektoren jenseits von 'weil', 'obwohl' oder 'deshalb'.\nZur Steigerung und Negation dient 'geschweige denn'; zum Erklären von Ursachen 'zumal' (drückt einen besonders gewichtigen Zusatzgrund aus); zur adversativen Korrektur 'vielmehr'; zur Konzession 'nichtsdestotrotz' oder 'dessen ungeachtet'.\nDie korrekte syntaktische Verankerung (Hauptsatz, Nebensatz oder Adverbialposition) muss automatisiert sein.\n",
+      "title": "Nuanced Connectors and Steering an Argument",
+      "explanation": "Linking ideas logically in Goethe writing tasks (Schreiben Teil 1) requires a wide range of elegant connectors beyond 'weil', 'obwohl' or 'deshalb'.\n'Geschweige denn' is used for escalation after a negative; 'zumal' explains causes (it adds a particularly weighty extra reason); 'vielmehr' corrects by contrast; 'nichtsdestotrotz' or 'dessen ungeachtet' express concession.\nThe correct syntactic position (main clause, subordinate clause or adverbial position) must be automatic.\n",
       "examples": [
+        "Niemand rechnete mit einem Erfolg, geschweige denn mit einem Erdrutschsieg.",
+        "Das Projekt geriet ins Stocken, zumal die finanziellen Mittel drastisch gekürzt worden waren.",
+        "Er ist kein Zyniker; vielmehr leidet er aufrichtig an den Zuständen der Welt."
+      ],
+      "titleDe": "Differenzierte Konnektoren und argumentative Steuerung",
+      "explanationDe": "Die logische Verknüpfung von Sinneinheiten in der Goethe-Textproduktion (Schreiben Teil 1) erfordert ein breites Spektrum eleganter Konnektoren jenseits von 'weil', 'obwohl' oder 'deshalb'.\nZur Steigerung und Negation dient 'geschweige denn'; zum Erklären von Ursachen 'zumal' (drückt einen besonders gewichtigen Zusatzgrund aus); zur adversativen Korrektur 'vielmehr'; zur Konzession 'nichtsdestotrotz' oder 'dessen ungeachtet'.\nDie korrekte syntaktische Verankerung (Hauptsatz, Nebensatz oder Adverbialposition) muss automatisiert sein.\n",
+      "examplesDe": [
         "Niemand rechnete mit einem Erfolg, geschweige denn mit einem Erdrutschsieg.",
         "Das Projekt geriet ins Stocken, zumal die finanziellen Mittel drastisch gekürzt worden waren.",
         "Er ist kein Zyniker; vielmehr leidet er aufrichtig an den Zuständen der Welt."
@@ -124,9 +182,14 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "reading",
-      "title": "Goethe Lesen Teil 1: Kommentare und essayistische Texte",
-      "explanation": "Im Teil 1 des Moduls 'Lesen' beim Goethe-Zertifikat C1 bearbeiten die Kandidaten einen längeren, anspruchsvollen Text (ca. 700–800 Wörter), meist einen meinungsbetonten Kommentar, ein Feuilleton oder einen literarisch-philosophischen Essay.\nDie Aufgabenform umfasst Multiple-Choice-Fragen mit vier Optionen (A, B, C, D).\nGefordert ist das Erfassen von Gedankengängen, rhetorischen Absichten, tonalen Nuancen und der Gesamtkonzeption des Verfassers.\nPrüflinge müssen unterscheiden können, wo der Autor eine fremde These darstellt und wo er seine eigene, oft pointiert-kritische Auffassung formuliert.\n",
+      "title": "Goethe Lesen Teil 1: Commentaries and Essays",
+      "explanation": "In Teil 1 of the 'Lesen' module of the Goethe-Zertifikat C1, candidates work on a long, demanding text (about 700–800 words), usually an opinion piece, an arts-page article or a literary-philosophical essay.\nThe task format is multiple choice with four options (A, B, C, D).\nYou need to follow the lines of thought, rhetorical intentions, nuances of tone and the author's overall concept.\nCandidates must be able to tell where the author presents someone else's thesis and where they state their own, often sharply critical, view.\n",
       "examples": [
+        "Task: 'Welche Haltung nimmt der Verfasser gegenüber dem modernen Achtsamkeitskult ein?' -> Option C: Er kritisiert ihn als marktkonforme Privatisierung struktureller Arbeitsüberlastung."
+      ],
+      "titleDe": "Goethe Lesen Teil 1: Kommentare und essayistische Texte",
+      "explanationDe": "Im Teil 1 des Moduls 'Lesen' beim Goethe-Zertifikat C1 bearbeiten die Kandidaten einen längeren, anspruchsvollen Text (ca. 700–800 Wörter), meist einen meinungsbetonten Kommentar, ein Feuilleton oder einen literarisch-philosophischen Essay.\nDie Aufgabenform umfasst Multiple-Choice-Fragen mit vier Optionen (A, B, C, D).\nGefordert ist das Erfassen von Gedankengängen, rhetorischen Absichten, tonalen Nuancen und der Gesamtkonzeption des Verfassers.\nPrüflinge müssen unterscheiden können, wo der Autor eine fremde These darstellt und wo er seine eigene, oft pointiert-kritische Auffassung formuliert.\n",
+      "examplesDe": [
         "Aufgabe: 'Welche Haltung nimmt der Verfasser gegenüber dem modernen Achtsamkeitskult ein?' -> Option C: Er kritisiert ihn als marktkonforme Privatisierung struktureller Arbeitsüberlastung."
       ]
     },
@@ -136,9 +199,14 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "reading",
-      "title": "Goethe Lesen Teil 2: Textrekonstruktion",
-      "explanation": "Teil 2 des Leseverstehens prüft das Verständnis von Textaufbau und Textdramaturgie.\nAus einem anspruchsvollen Sachtext wurden sechs Sätze herausgetrennt. Die Kandidaten müssen diese Sätze aus einer Liste von acht Vorgaben (zwei Distraktoren) den korrekten Leerstellen zuordnen.\nEntscheidend ist das Dekodieren von Verweisketten: Kataphorische und anaphorische Pronomen, logische Konnektoren, thematische Wiederaufnahmen und Zeitenfolgen.\nEin Fragment passt nur dann, wenn es sowohl semantisch als auch grammatisch einen nahtlosen Übergang zwischen dem Vorhergehenden und dem Nachfolgenden herstellt.\n",
+      "title": "Goethe Lesen Teil 2: Text Reconstruction",
+      "explanation": "Teil 2 of the reading module tests your understanding of how a text is built and how it unfolds.\nSix sentences have been removed from a demanding non-fiction text. Candidates must match them to the right gaps from a list of eight options (two distractors).\nThe key is decoding chains of reference: forward- and backward-pointing pronouns, logical connectors, repeated themes and sequences of tenses.\nA fragment only fits if it creates a seamless transition, in both meaning and grammar, between what comes before and what comes after.\n",
       "examples": [
+        "Gap 1: Before it: 'Die Kosten explodierten förmlich.' -> Matching insertion: 'Ein Umstand, der die Finanzierungspläne der Kommune vollends über den Haufen warf.' -> After it: 'Folglich musste das gesamte Projekt gestoppt werden.'"
+      ],
+      "titleDe": "Goethe Lesen Teil 2: Textrekonstruktion",
+      "explanationDe": "Teil 2 des Leseverstehens prüft das Verständnis von Textaufbau und Textdramaturgie.\nAus einem anspruchsvollen Sachtext wurden sechs Sätze herausgetrennt. Die Kandidaten müssen diese Sätze aus einer Liste von acht Vorgaben (zwei Distraktoren) den korrekten Leerstellen zuordnen.\nEntscheidend ist das Dekodieren von Verweisketten: Kataphorische und anaphorische Pronomen, logische Konnektoren, thematische Wiederaufnahmen und Zeitenfolgen.\nEin Fragment passt nur dann, wenn es sowohl semantisch als auch grammatisch einen nahtlosen Übergang zwischen dem Vorhergehenden und dem Nachfolgenden herstellt.\n",
+      "examplesDe": [
         "Lücke 1: Vorher steht: 'Die Kosten explodierten förmlich.' -> Passender Einschub: 'Ein Umstand, der die Finanzierungspläne der Kommune vollends über den Haufen warf.' -> Nachher: 'Folglich musste das gesamte Projekt gestoppt werden.'"
       ]
     },
@@ -148,9 +216,14 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "reading",
-      "title": "Goethe Lesen Teil 3: Fachartikel und populärwissenschaftliche Texte",
-      "explanation": "Teil 3 des Leseverstehens präsentiert einen längeren populärwissenschaftlichen oder kulturgeschichtlichen Text.\nDie Aufgaben bestehen aus Multiple-Choice-Fragen, die das detaillierte Verständnis komplexer Sachverhalte, kausaler Verflechtungen und prozessualer Abläufe abprüfen.\nDie Kandidaten müssen fähig sein, feinste semantische Nuancen zu erfassen und Distraktoren zu eliminieren, die oft durch voreilige Generalisierungen oder verdrehte Ursache-Wirkungs-Beziehungen gekennzeichnet sind.\nHierbei ist präzise Textarbeit unerlässlich; Allgemeinwissen allein reicht zur Beantwortung nicht aus.\n",
+      "title": "Goethe Lesen Teil 3: Specialist and Popular Science Articles",
+      "explanation": "Teil 3 of the reading module presents a long popular-science or cultural-history text.\nThe tasks are multiple-choice questions that test detailed understanding of complex facts, causal links and processes.\nCandidates must grasp the finest nuances of meaning and rule out distractors, which are often marked by hasty generalisations or reversed cause-and-effect relationships.\nPrecise work with the text is essential; general knowledge alone is not enough to answer.\n",
       "examples": [
+        "Text: 'Nicht die genetische Disposition allein bestimmt den Verlauf, sondern deren epigenetische Modulation durch Umweltfaktoren.' -> Question: Was determiniert den Verlauf? -> Das Zusammenspiel aus Genen und umweltbedingten Modifikationen."
+      ],
+      "titleDe": "Goethe Lesen Teil 3: Fachartikel und populärwissenschaftliche Texte",
+      "explanationDe": "Teil 3 des Leseverstehens präsentiert einen längeren populärwissenschaftlichen oder kulturgeschichtlichen Text.\nDie Aufgaben bestehen aus Multiple-Choice-Fragen, die das detaillierte Verständnis komplexer Sachverhalte, kausaler Verflechtungen und prozessualer Abläufe abprüfen.\nDie Kandidaten müssen fähig sein, feinste semantische Nuancen zu erfassen und Distraktoren zu eliminieren, die oft durch voreilige Generalisierungen oder verdrehte Ursache-Wirkungs-Beziehungen gekennzeichnet sind.\nHierbei ist präzise Textarbeit unerlässlich; Allgemeinwissen allein reicht zur Beantwortung nicht aus.\n",
+      "examplesDe": [
         "Text: 'Nicht die genetische Disposition allein bestimmt den Verlauf, sondern deren epigenetische Modulation durch Umweltfaktoren.' -> Frage: Was determiniert den Verlauf? -> Das Zusammenspiel aus Genen und umweltbedingten Modifikationen."
       ]
     },
@@ -160,9 +233,14 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "reading",
-      "title": "Goethe Lesen Teil 4: Selektiver Informationsabgleich",
-      "explanation": "Im Teil 4 des Leseverstehens erhalten die Prüfungsteilnehmenden zehn kurze Selbstdarstellungen, Projektbeschreibungen oder Fachprofile und müssen diese einer Reihe von Vorgaben/Personenwünschen zuordnen (Matching-Aufgabe).\nErforderlich ist selektives Scanning: Schnelles Überfliegen und Identifizieren relevanter Kriterien unter Zeitdruck.\nHäufig existieren für eine oder mehrere Vorgaben keine passenden Angebote (Option 'keine Lösung' bzw. Nullzuordnung).\nPrüflinge müssen lernen, Ausschlusskriterien messerscharf zu erkennen (z. B. Kostenobergrenzen, Zielgruppenbeschränkungen, terminliche Vorgaben).\n",
+      "title": "Goethe Lesen Teil 4: Selective Information Matching",
+      "explanation": "In Teil 4 of the reading module, candidates receive ten short self-descriptions, project descriptions or specialist profiles and must match them to a set of requirements or wishes (matching task).\nThis calls for selective scanning: skimming quickly and spotting the relevant criteria under time pressure.\nOften there is no suitable offer for one or more of the requirements (option 'keine Lösung', i.e. no match).\nCandidates must learn to spot exclusion criteria with precision (e.g. cost limits, target-group restrictions, scheduling requirements).\n",
       "examples": [
+        "Person A sucht eine berufsbegleitende Weiterbildung im Medienrecht, die rein online stattfindet. -> Offer 4: 'Master Medienrecht, 100% E-Learning, flexibel neben dem Beruf'."
+      ],
+      "titleDe": "Goethe Lesen Teil 4: Selektiver Informationsabgleich",
+      "explanationDe": "Im Teil 4 des Leseverstehens erhalten die Prüfungsteilnehmenden zehn kurze Selbstdarstellungen, Projektbeschreibungen oder Fachprofile und müssen diese einer Reihe von Vorgaben/Personenwünschen zuordnen (Matching-Aufgabe).\nErforderlich ist selektives Scanning: Schnelles Überfliegen und Identifizieren relevanter Kriterien unter Zeitdruck.\nHäufig existieren für eine oder mehrere Vorgaben keine passenden Angebote (Option 'keine Lösung' bzw. Nullzuordnung).\nPrüflinge müssen lernen, Ausschlusskriterien messerscharf zu erkennen (z. B. Kostenobergrenzen, Zielgruppenbeschränkungen, terminliche Vorgaben).\n",
+      "examplesDe": [
         "Person A sucht eine berufsbegleitende Weiterbildung im Medienrecht, die rein online stattfindet. -> Angebot 4: 'Master Medienrecht, 100% E-Learning, flexibel neben dem Beruf'."
       ]
     },
@@ -172,9 +250,14 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "listening",
-      "title": "Goethe Hören Teil 1: Dialogisches Fachgespräch und Mitschrift",
-      "explanation": "Teil 1 des Hörverstehens besteht aus einem längeren, authentischen Gespräch (z. B. Beratungsgespräch, Experteninterview, Arbeitsbesprechung) zwischen zwei Personen.\nDer Text wird zweimal abgespielt.\nAuf einem Formular müssen Notizen ergänzt, Aussagen vervollständigt oder Daten eingetragen werden.\nDie Kandidaten müssen relevante Detailinformationen präzise heraushören, während sie Füllwörter und irrelevante Höflichkeitsfloskeln ignorieren.\nGrammatische und lexikalische Präzision beim Ausfüllen der Notizen ist obligatorisch.\n",
+      "title": "Goethe Hören Teil 1: Professional Conversation and Note-Taking",
+      "explanation": "Teil 1 of the listening module is a long, authentic conversation between two people (e.g. an advisory meeting, an expert interview, a work meeting).\nThe text is played twice.\nOn a form, you complete notes, finish statements or fill in data.\nCandidates must pick out relevant details precisely while ignoring filler words and irrelevant polite phrases.\nGrammatical and lexical accuracy when filling in the notes is required.\n",
       "examples": [
+        "Audio text: 'Berater: Wir schlagen vor, das Budget um 15 % aufzustocken, allerdings frühestens zum Quartalswechsel im Juli.' -> Note: Budgetaufstockung: Höhe: 15 %, Zeitpunkt: ___ -> Answer: Juli / Quartalswechsel."
+      ],
+      "titleDe": "Goethe Hören Teil 1: Dialogisches Fachgespräch und Mitschrift",
+      "explanationDe": "Teil 1 des Hörverstehens besteht aus einem längeren, authentischen Gespräch (z. B. Beratungsgespräch, Experteninterview, Arbeitsbesprechung) zwischen zwei Personen.\nDer Text wird zweimal abgespielt.\nAuf einem Formular müssen Notizen ergänzt, Aussagen vervollständigt oder Daten eingetragen werden.\nDie Kandidaten müssen relevante Detailinformationen präzise heraushören, während sie Füllwörter und irrelevante Höflichkeitsfloskeln ignorieren.\nGrammatische und lexikalische Präzision beim Ausfüllen der Notizen ist obligatorisch.\n",
+      "examplesDe": [
         "Hörtext: 'Berater: Wir schlagen vor, das Budget um 15 % aufzustocken, allerdings frühestens zum Quartalswechsel im Juli.' -> Notiz: Budgetaufstockung: Höhe: 15 %, Zeitpunkt: ___ -> Lösung: Juli / Quartalswechsel."
       ]
     },
@@ -184,9 +267,14 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "listening",
-      "title": "Goethe Hören Teil 2: Radiofeature, Vortrag und Interview",
-      "explanation": "Teil 2 umfasst einen längeren Radiobeitrag, einen wissenschaftlichen Monolog oder ein anspruchsvolles Feature (Dauer ca. 8 Minuten), das nur einmal gehört wird.\nDazu müssen zehn Multiple-Choice-Fragen mit je drei Optionen (A, B, C) beantwortet werden.\nDer Hörer muss in der Lage sein, dem roten Faden auch bei komplexer Syntax, atmosphärischen Einspielern und dialektalen Färbungen zu folgen.\nZentral ist das Dechiffrieren von rhetorischen Fragen, Pausen und verdeckten Wertungen des Journalisten oder Referenten.\n",
+      "title": "Goethe Hören Teil 2: Radio Feature, Lecture and Interview",
+      "explanation": "Teil 2 is a long radio piece, an academic monologue or a demanding feature (about 8 minutes), heard only once.\nYou answer ten multiple-choice questions with three options each (A, B, C).\nThe listener must be able to follow the thread even with complex syntax, atmospheric sound clips and regional accents.\nDecoding rhetorical questions, pauses and hidden judgements by the journalist or speaker is central.\n",
       "examples": [
+        "Audio text: 'Ob die Energiewende gelingt, entscheidet sich nicht an Sonntagsreden, sondern am Netzausbau vor Ort.' -> Question: Was ist der entscheidende Faktor? -> Der Ausbau der Übertragungsnetze."
+      ],
+      "titleDe": "Goethe Hören Teil 2: Radiofeature, Vortrag und Interview",
+      "explanationDe": "Teil 2 umfasst einen längeren Radiobeitrag, einen wissenschaftlichen Monolog oder ein anspruchsvolles Feature (Dauer ca. 8 Minuten), das nur einmal gehört wird.\nDazu müssen zehn Multiple-Choice-Fragen mit je drei Optionen (A, B, C) beantwortet werden.\nDer Hörer muss in der Lage sein, dem roten Faden auch bei komplexer Syntax, atmosphärischen Einspielern und dialektalen Färbungen zu folgen.\nZentral ist das Dechiffrieren von rhetorischen Fragen, Pausen und verdeckten Wertungen des Journalisten oder Referenten.\n",
+      "examplesDe": [
         "Hörtext: 'Ob die Energiewende gelingt, entscheidet sich nicht an Sonntagsreden, sondern am Netzausbau vor Ort.' -> Frage: Was ist der entscheidende Faktor? -> Der Ausbau der Übertragungsnetze."
       ]
     },
@@ -196,9 +284,15 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "writing",
-      "title": "Goethe Schreiben Teil 1: Ausführliche freie Stellungnahme",
-      "explanation": "Im Teil 1 des Moduls Schreiben verfassen die Kandidaten einen gut strukturierten Text (mindestens 200–250 Wörter) zu einem kontroversen gesellschaftlichen Thema.\nDie Aufgabenstellung beinhaltet eine Grafik und mehrere Leitpunkte, die zwingend bearbeitet werden müssen: 1. Wiedergabe der Kernaussage der Grafik, 2. Darstellung verschiedener Standpunkte, 3. Eigene Argumentation mit stichhaltigen Belegen, 4. Zukunftsperspektive/Ausblick.\nBewertet werden Kohärenz, logische Gliederung (Absatzgestaltung), lexikalischer Reichtum (C1-Wortschatz) sowie morphosyntaktische Korrektheit.\nVerlangt wird ein formell-eleganter Registerton.\n",
+      "title": "Goethe Schreiben Teil 1: Detailed Free Statement",
+      "explanation": "In Teil 1 of the writing module, candidates write a well-structured text (at least 200–250 words) on a controversial social topic.\nThe task includes a chart and several guiding points that must be covered: 1. summarise the key message of the chart, 2. present different points of view, 3. give your own argument with sound evidence, 4. give an outlook on the future.\nMarking covers coherence, logical structure (paragraphing), lexical range (C1 vocabulary) and grammatical accuracy.\nA formal, elegant register is required.\n",
       "examples": [
+        "Topic: 'Lebenslanges Lernen im digitalen Zeitalter'",
+        "Transition from the chart to the discussion: 'Wie das Schaubild eindrucksvoll verdeutlicht, partizipieren ältere Beschäftigte bislang nur marginal an digitalen Weiterbildungsangeboten. Dieser Umstand wirft die Frage auf, wie Barrieren abgebaut werden können.'"
+      ],
+      "titleDe": "Goethe Schreiben Teil 1: Ausführliche freie Stellungnahme",
+      "explanationDe": "Im Teil 1 des Moduls Schreiben verfassen die Kandidaten einen gut strukturierten Text (mindestens 200–250 Wörter) zu einem kontroversen gesellschaftlichen Thema.\nDie Aufgabenstellung beinhaltet eine Grafik und mehrere Leitpunkte, die zwingend bearbeitet werden müssen: 1. Wiedergabe der Kernaussage der Grafik, 2. Darstellung verschiedener Standpunkte, 3. Eigene Argumentation mit stichhaltigen Belegen, 4. Zukunftsperspektive/Ausblick.\nBewertet werden Kohärenz, logische Gliederung (Absatzgestaltung), lexikalischer Reichtum (C1-Wortschatz) sowie morphosyntaktische Korrektheit.\nVerlangt wird ein formell-eleganter Registerton.\n",
+      "examplesDe": [
         "Thema: 'Lebenslanges Lernen im digitalen Zeitalter'",
         "Überleitung von der Grafik zur Diskussion: 'Wie das Schaubild eindrucksvoll verdeutlicht, partizipieren ältere Beschäftigte bislang nur marginal an digitalen Weiterbildungsangeboten. Dieser Umstand wirft die Frage auf, wie Barrieren abgebaut werden können.'"
       ]
@@ -209,9 +303,15 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "writing",
-      "title": "Goethe Schreiben Teil 2: Textüberarbeitung und Registertransformation",
-      "explanation": "Im Teil 2 des Schreibens müssen die Prüfungsteilnehmenden einen informellen oder semi-formellen Ausgangstext in einen hochgradig formellen, registeradäquaten Text (z. B. Beschwerdebrief, formeller Antrag, offizielle Stellungnahme an eine Institution) umarbeiten.\nUmgangssprachliche Wendungen, emotionale Ausbrüche oder unpräzise Formulierungen müssen in sachliche, juristisch einwandfreie und höfliche Amts- und Geschäftssprache transformiert werden.\nZentral hierfür sind Nominalisierungen, Passivkonstruktionen, indirekte Bitten ('Wir wären Ihnen sehr verbunden, wenn...') und formelle Abschlussfloskeln ('In Erwartung Ihrer zeitnahen Rückmeldung verbleibe ich...').\n",
+      "title": "Goethe Schreiben Teil 2: Revising a Text and Changing Register",
+      "explanation": "In Teil 2 of the writing module, candidates rework an informal or semi-formal source text into a highly formal text in the right register (e.g. a letter of complaint, a formal application, an official statement to an institution).\nColloquial phrases, emotional outbursts and vague wording must be turned into objective, legally sound and polite official and business language.\nKey tools are nominalisations, passive constructions, indirect requests ('Wir wären Ihnen sehr verbunden, wenn...') and formal closing phrases ('In Erwartung Ihrer zeitnahen Rückmeldung verbleibe ich...').\n",
       "examples": [
+        "Original text: 'Der Typ am Schalter war total unverschämt und hat mich einfach weggeschickt!' -> Rewritten: 'Das Verhalten Ihres Mitarbeiters am Informationsschalter zeichnete sich leider durch ein hohes Maß an Unprofessionalität und mangelnder Kundenorientierung aus.'",
+        "Original text: 'Ich will mein Geld sofort zurück!' -> Rewritten: 'Vor diesem Hintergrund fordere ich Sie hiermit auf, den gezahlten Betrag unverzüglich auf mein Konto zu erstatten.'"
+      ],
+      "titleDe": "Goethe Schreiben Teil 2: Textüberarbeitung und Registertransformation",
+      "explanationDe": "Im Teil 2 des Schreibens müssen die Prüfungsteilnehmenden einen informellen oder semi-formellen Ausgangstext in einen hochgradig formellen, registeradäquaten Text (z. B. Beschwerdebrief, formeller Antrag, offizielle Stellungnahme an eine Institution) umarbeiten.\nUmgangssprachliche Wendungen, emotionale Ausbrüche oder unpräzise Formulierungen müssen in sachliche, juristisch einwandfreie und höfliche Amts- und Geschäftssprache transformiert werden.\nZentral hierfür sind Nominalisierungen, Passivkonstruktionen, indirekte Bitten ('Wir wären Ihnen sehr verbunden, wenn...') und formelle Abschlussfloskeln ('In Erwartung Ihrer zeitnahen Rückmeldung verbleibe ich...').\n",
+      "examplesDe": [
         "Ausgangstext: 'Der Typ am Schalter war total unverschämt und hat mich einfach weggeschickt!' -> Transformation: 'Das Verhalten Ihres Mitarbeiters am Informationsschalter zeichnete sich leider durch ein hohes Maß an Unprofessionalität und mangelnder Kundenorientierung aus.'",
         "Ausgangstext: 'Ich will mein Geld sofort zurück!' -> Transformation: 'Vor diesem Hintergrund fordere ich Sie hiermit auf, den gezahlten Betrag unverzüglich auf mein Konto zu erstatten.'"
       ]
@@ -222,9 +322,15 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "speaking",
-      "title": "Goethe Sprechen Teil 1: Monologischer Vortrag",
-      "explanation": "Im Teil 1 der mündlichen Prüfung hält jeder Kandidat einen 3- bis 4-minütigen strukturierten Vortrag zu einem gewählten Thema (z. B. 'Sollten Museen generell kostenlos sein?' oder 'Chancen und Risiken bargeldlosen Bezahlens').\nDer Vortragende muss mehrere Aspekte beleuchten (Situation im Heimatland, Vor- und Nachteile, persönliche Bewertung) und die Ausführungen durch eine ansprechende rhetorische Rahmung (Einleitung und Fazit) zusammenhalten.\nFreies, flüssiges Sprechen ohne Manuskript ist Voraussetzung für eine Spitzenbewertung.\nIm Anschluss muss eine spontane Rückfrage des Prüfungspartners bzw. der Prüfenden kompetent und ausführlich beantwortet werden.\n",
+      "title": "Goethe Sprechen Teil 1: Monologue Talk",
+      "explanation": "In Teil 1 of the oral exam, each candidate gives a structured talk of 3 to 4 minutes on a chosen topic (e.g. 'Sollten Museen generell kostenlos sein?' or 'Chancen und Risiken bargeldlosen Bezahlens').\nThe speaker must cover several aspects (the situation in their home country, advantages and disadvantages, a personal assessment) and hold the talk together with an engaging rhetorical frame (introduction and conclusion).\nSpeaking freely and fluently without notes is a precondition for a top mark.\nAfterwards, a spontaneous follow-up question from the exam partner or the examiners must be answered competently and in detail.\n",
       "examples": [
+        "Topic: 'Freier Eintritt in staatliche Museen'",
+        "Line of thought: 'Einerseits bedeutet freier Eintritt eine Demokratisierung des Zugangs zu Hochkultur für einkommensschwache Schichten. Andererseits entfallen dadurch essenzielle Einnahmen, die für Restaurierungen und Forschung dringend benötigt werden.'"
+      ],
+      "titleDe": "Goethe Sprechen Teil 1: Monologischer Vortrag",
+      "explanationDe": "Im Teil 1 der mündlichen Prüfung hält jeder Kandidat einen 3- bis 4-minütigen strukturierten Vortrag zu einem gewählten Thema (z. B. 'Sollten Museen generell kostenlos sein?' oder 'Chancen und Risiken bargeldlosen Bezahlens').\nDer Vortragende muss mehrere Aspekte beleuchten (Situation im Heimatland, Vor- und Nachteile, persönliche Bewertung) und die Ausführungen durch eine ansprechende rhetorische Rahmung (Einleitung und Fazit) zusammenhalten.\nFreies, flüssiges Sprechen ohne Manuskript ist Voraussetzung für eine Spitzenbewertung.\nIm Anschluss muss eine spontane Rückfrage des Prüfungspartners bzw. der Prüfenden kompetent und ausführlich beantwortet werden.\n",
+      "examplesDe": [
         "Thema: 'Freier Eintritt in staatliche Museen'",
         "Gedankengang: 'Einerseits bedeutet freier Eintritt eine Demokratisierung des Zugangs zu Hochkultur für einkommensschwache Schichten. Andererseits entfallen dadurch essenzielle Einnahmen, die für Restaurierungen und Forschung dringend benötigt werden.'"
       ]
@@ -235,9 +341,15 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "speaking",
-      "title": "Goethe Sprechen Teil 2: Kooperative Partnerdiskussion und Aushandlung",
-      "explanation": "Teil 2 ist ein kollaboratives Gespräch (ca. 5 Minuten) zwischen zwei Prüfungsteilnehmern.\nAuf der Grundlage einer vorgegebenen Aufgabenstellung (z. B. Organisation einer öffentlichen Veranstaltung, Auswahl einer Kampagne oder Verteilung eines Förderbudgets) müssen verschiedene Optionen gegeneinander abgewogen und ein Konsens erzielt werden.\nDie Partner müssen aktiv aufeinander eingehen, Kompromisslinien ausloten, Einwände freundlich, aber bestimmt entkräften und gemeinsam eine finale Lösung formulieren.\nMonologe sind streng untersagt; gefragt ist dynamische, kooperative Gesprächsinteraktion.\n",
+      "title": "Goethe Sprechen Teil 2: Cooperative Partner Discussion and Negotiation",
+      "explanation": "Teil 2 is a collaborative conversation (about 5 minutes) between two candidates.\nBased on a given task (e.g. organising a public event, choosing a campaign or allocating a funding budget), the options must be weighed against each other and a consensus reached.\nThe partners must respond actively to each other, explore possible compromises, counter objections in a friendly but firm way and formulate a final solution together.\nMonologues are strictly off-limits; dynamic, cooperative interaction is what counts.\n",
       "examples": [
+        "Situation: 'Welches Projekt soll von der Kulturstiftung gefördert werden: Die Sanierung eines historischen Kinos oder ein Street-Art-Festival für Jugendliche?'",
+        "Contribution: 'Ich verstehe deinen Einwand bezüglich der Kosten für das Kino vollkommen. Aber könnten wir nicht vorschlagen, das Street-Art-Festival im Vorfeld als Spendenaktion für das Kino zu nutzen? So würden wir beide Initiativen fruchtbar miteinander verbinden.'"
+      ],
+      "titleDe": "Goethe Sprechen Teil 2: Kooperative Partnerdiskussion und Aushandlung",
+      "explanationDe": "Teil 2 ist ein kollaboratives Gespräch (ca. 5 Minuten) zwischen zwei Prüfungsteilnehmern.\nAuf der Grundlage einer vorgegebenen Aufgabenstellung (z. B. Organisation einer öffentlichen Veranstaltung, Auswahl einer Kampagne oder Verteilung eines Förderbudgets) müssen verschiedene Optionen gegeneinander abgewogen und ein Konsens erzielt werden.\nDie Partner müssen aktiv aufeinander eingehen, Kompromisslinien ausloten, Einwände freundlich, aber bestimmt entkräften und gemeinsam eine finale Lösung formulieren.\nMonologe sind streng untersagt; gefragt ist dynamische, kooperative Gesprächsinteraktion.\n",
+      "examplesDe": [
         "Situation: 'Welches Projekt soll von der Kulturstiftung gefördert werden: Die Sanierung eines historischen Kinos oder ein Street-Art-Festival für Jugendliche?'",
         "Diskursbeitrag: 'Ich verstehe deinen Einwand bezüglich der Kosten für das Kino vollkommen. Aber könnten wir nicht vorschlagen, das Street-Art-Festival im Vorfeld als Spendenaktion für das Kino zu nutzen? So würden wir beide Initiativen fruchtbar miteinander verbinden.'"
       ]
@@ -1209,7 +1321,9 @@
         "level": "C1",
         "title": "Idioms, word formation and clauses",
         "description": "Idioms, compound words, complex adverbial clauses and fixed noun-preposition phrases, with a first selective reading task.",
-        "difficultyRank": 1
+        "difficultyRank": 1,
+        "titleDe": "Redewendungen, Wortbildung und Nebensätze",
+        "descriptionDe": "Redewendungen, Komposita, komplexe Adverbialsätze und feste Nomen-Präpositions-Verbindungen, dazu eine erste Aufgabe zum selektiven Lesen."
       },
       "lessonIds": [
         "c1-goethe-feste-nomen-praepositions-verbindungen",
@@ -1226,7 +1340,9 @@
         "level": "C1",
         "title": "Nuance, distance and connectors",
         "description": "Modal verbs for degrees of certainty, reported speech and distancing, connectors that steer an argument, metaphor, and note-taking from a dialogue.",
-        "difficultyRank": 2
+        "difficultyRank": 2,
+        "titleDe": "Nuancen, Distanz und Konnektoren",
+        "descriptionDe": "Modalverben für Grade der Gewissheit, indirekte Rede und Distanzierung, Konnektoren zur Steuerung der Argumentation, Metaphorik und Notizen zu einem Gespräch."
       },
       "lessonIds": [
         "c1-goethe-differenzierte-konnektoren",
@@ -1243,7 +1359,9 @@
         "level": "C1",
         "title": "Commentary and monologue",
         "description": "Read commentaries and essays, write a detailed statement, give a monologue talk and follow a radio feature.",
-        "difficultyRank": 3
+        "difficultyRank": 3,
+        "titleDe": "Kommentar und Vortrag",
+        "descriptionDe": "Sie lesen Kommentare und Essays, verfassen eine ausführliche Stellungnahme, halten einen Vortrag und folgen einem Radiofeature."
       },
       "lessonIds": [
         "c1-goethe-hoeren-teil2-radiointerview-monolog",
@@ -1259,7 +1377,9 @@
         "level": "C1",
         "title": "Text reconstruction and register",
         "description": "The hardest exam formats: rebuilding texts, detailed science articles, rewriting in another register and a consensus discussion.",
-        "difficultyRank": 4
+        "difficultyRank": 4,
+        "titleDe": "Textrekonstruktion und Register",
+        "descriptionDe": "Die anspruchsvollsten Prüfungsformate: Texte rekonstruieren, detaillierte Fachartikel, Umformulieren in ein anderes Register und eine Diskussion mit Konsens."
       },
       "lessonIds": [
         "c1-goethe-lesen-teil2-textrekonstruktion",

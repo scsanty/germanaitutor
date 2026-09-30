@@ -103,6 +103,25 @@ describe('placementService', () => {
     ]);
   });
 
+  it('stores the question instruction on the answer record', async () => {
+    const instruction = { en: 'Write a sentence.', de: 'Schreib einen Satz.' };
+    const fill: PlacementQuestion = { id: 'fill', level: 'A1', type: 'fill_blank', content: { textWithBlank: 'Ich ___ gut.', correctAnswer: 'bin', instruction } };
+    const { service } = setup([fill, ...smallPlacementExam()]);
+    service.start();
+    await service.answer('fill', { type: 'fill_blank', text: 'bin' });
+    const state = service.stop();
+    expect(state.status === 'finished' && state.outcome.answers[0].instruction).toEqual(instruction);
+  });
+
+  it('reads legacy plain-text feedback from a stored session', () => {
+    const { db, service } = setup();
+    service.start();
+    const legacy = [{ questionId: 'A1-mc', level: 'A1', type: 'multiple_choice', question: 'Q', given: 'a', correctAnswer: 'b', result: 'wrong', feedback: 'legacy' }];
+    db.prepare('UPDATE placement_session SET answers = ? WHERE id = 1').run(JSON.stringify(legacy));
+    const state = service.stop();
+    expect(state.status === 'finished' && state.outcome.answers[0].feedback).toEqual({ en: 'legacy', de: 'legacy' });
+  });
+
   it('rejects an answer to a question that is not the current one', async () => {
     const { service } = setup();
     service.start();
@@ -122,7 +141,7 @@ describe('placementService', () => {
   });
 
   it('grades free text with the AI, giving half points for almost', async () => {
-    const gradeFreeText = vi.fn().mockResolvedValue({ ok: true, result: 'almost', feedback: 'Check the verb.' });
+    const gradeFreeText = vi.fn().mockResolvedValue({ ok: true, result: 'almost', feedback: { en: 'x', de: 'y' } });
     const free: PlacementQuestion = { id: 'free', level: 'A2', type: 'free_text', content: { prompt: 'Write.', modelAnswer: 'Ich schreibe.' } };
     const { service } = setup([free, ...smallPlacementExam()], { gradeFreeText });
     service.start();
@@ -133,9 +152,8 @@ describe('placementService', () => {
       modelAnswer: 'Ich schreibe.',
       studentAnswer: 'Ich schreib.',
       level: 'A2',
-      uiLanguage: 'en',
     });
-    expect(state).toMatchObject({ outcome: { score: 1, answers: [{ result: 'almost', feedback: 'Check the verb.' }] } });
+    expect(state).toMatchObject({ outcome: { score: 1, answers: [{ result: 'almost', feedback: { en: 'x', de: 'y' } }] } });
   });
 
   it('keeps the test at the same question when free-text grading fails', async () => {
@@ -147,7 +165,7 @@ describe('placementService', () => {
       kind: 'grading_failed',
       message: 'Anthropic returned 429',
     });
-    gradeFreeText.mockResolvedValue({ ok: true, result: 'correct', feedback: 'Good.' });
+    gradeFreeText.mockResolvedValue({ ok: true, result: 'correct', feedback: { en: 'Good.', de: 'Gut.' } });
     const state = await service.answer('free', { type: 'free_text', text: 'x' });
     expect(state).toMatchObject({ status: 'in_progress', question: { position: 2 } });
   });
@@ -229,7 +247,7 @@ describe('placementService', () => {
   it('accepts only one of two simultaneous answers to the same question', async () => {
     const gradeFreeText = vi.fn(async () => {
       await new Promise((resolve) => setTimeout(resolve, 5));
-      return { ok: true as const, result: 'correct' as const, feedback: 'Gut.' };
+      return { ok: true as const, result: 'correct' as const, feedback: { en: 'Good.', de: 'Gut.' } };
     });
     const free: PlacementQuestion = { id: 'free', level: 'A1', type: 'free_text', content: { prompt: 'Write.', modelAnswer: 'Ich schreibe.' } };
     const { service } = setup([free, ...smallPlacementExam()], { gradeFreeText });

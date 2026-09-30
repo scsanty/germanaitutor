@@ -2,12 +2,14 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import type { ExerciseView } from '@/lib/tutoring/exerciseView';
 import type { AttemptOutcome, AttemptSource, FlashcardRating, LessonAnswer } from '@/lib/tutoring/lessonAnswers';
 import type { GradeResult } from '@/lib/tutoring/grading';
 import type { PracticeGradeOutcome } from '@/lib/tutoring/practiceViews';
 import type { TestOutAnswerOutcome } from '@/lib/tutoring/testOutViews';
+import { LanguageToggle } from '@/components/LanguageToggle';
+import { pickText, type ContentLanguage, type LocalizedText } from '@/lib/i18n/localizedText';
 import { useApiErrorText } from '@/components/useApiErrorText';
 
 const RATINGS: FlashcardRating[] = ['knew', 'sort_of', 'didnt_know'];
@@ -15,6 +17,7 @@ const RATINGS: FlashcardRating[] = ['knew', 'sort_of', 'didnt_know'];
 export interface ExerciseCardProps {
   exercise: ExerciseView;
   source: AttemptSource;
+  contentLanguage?: ContentLanguage;
   mode?: 'lesson' | 'practice' | 'test';
   testMilestoneId?: string;
   onTestAnswered?: (outcome: TestOutAnswerOutcome) => void;
@@ -30,7 +33,7 @@ export interface ExerciseCardProps {
 interface Shown {
   result: GradeResult;
   correctAnswer: string | null;
-  feedback: string | null;
+  feedback: LocalizedText | null;
   answerText: string;
 }
 
@@ -45,6 +48,22 @@ export function taskText(exercise: ExerciseView): string {
     case 'free_text':
       return exercise.prompt;
   }
+}
+
+export function instructionText(exercise: ExerciseView, language: ContentLanguage): string | null {
+  return 'instruction' in exercise && exercise.instruction ? pickText(exercise.instruction, language) : null;
+}
+
+// The instruction (in the given language) followed by the stimulus text when there is one.
+export function ExerciseHeading({ exercise, language }: { exercise: ExerciseView; language: ContentLanguage }) {
+  const instruction = instructionText(exercise, language);
+  const task = taskText(exercise);
+  return (
+    <>
+      {instruction && <p>{instruction}</p>}
+      {task && <p>{task}</p>}
+    </>
+  );
 }
 
 function answerTextOf(exercise: ExerciseView, answer: LessonAnswer): string {
@@ -63,6 +82,7 @@ export function ExerciseCard({
   exercise,
   source,
   mode = 'lesson',
+  contentLanguage,
   onAnswered,
   onPracticeAnswered,
   testMilestoneId,
@@ -74,6 +94,10 @@ export function ExerciseCard({
 }: ExerciseCardProps) {
   const t = useTranslations('exercise');
   const errorText = useApiErrorText();
+  const locale = useLocale() as ContentLanguage;
+  const tToggle = useTranslations('languageToggle');
+  const language = contentLanguage ?? locale;
+  const [feedbackLanguage, setFeedbackLanguage] = useState<ContentLanguage>(locale);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [text, setText] = useState('');
   const [revealed, setRevealed] = useState(false);
@@ -145,6 +169,8 @@ export function ExerciseCard({
     return exercise.type === 'fill_blank' ? { type: 'fill_blank', text: trimmed } : { type: 'free_text', text: trimmed };
   }
 
+  const instruction = instructionText(exercise, language);
+
   const alerts = (
     <>
       {gradingError && (
@@ -168,7 +194,7 @@ export function ExerciseCard({
       (shown.result !== 'correct' || (mode === 'lesson' && exercise.type === 'free_text'));
     return (
       <div>
-        <p>{taskText(exercise)}</p>
+        <ExerciseHeading exercise={exercise} language={language} />
         {exercise.type === 'flashcard' && <p>{exercise.back}</p>}
         <p>{mode === 'practice' ? t(`practiceResult.${shown.result}`) : t(`result.${shown.result}`)}</p>
         {showAnswer && (
@@ -178,7 +204,12 @@ export function ExerciseCard({
               : t('correctAnswer', { answer: shown.correctAnswer ?? '' })}
           </p>
         )}
-        {shown.feedback && <p>{t('feedback', { feedback: shown.feedback })}</p>}
+        {shown.feedback && (
+          <div>
+            <p>{t('feedback', { feedback: pickText(shown.feedback, feedbackLanguage) })}</p>
+            <LanguageToggle value={feedbackLanguage} onChange={setFeedbackLanguage} label={tToggle('feedback')} />
+          </div>
+        )}
         {exercise.type !== 'flashcard' && onAskAi && (
           <button type="button" onClick={() => onAskAi(exercise.id, { answerText: shown.answerText, result: shown.result })}>
             {t('askAi')}
@@ -217,9 +248,10 @@ export function ExerciseCard({
   const answer = currentAnswer();
   return (
     <div>
+      {instruction && <p>{instruction}</p>}
       {exercise.type === 'multiple_choice' && (
-        <fieldset>
-          <legend>{exercise.question}</legend>
+        <fieldset aria-label={exercise.question ? undefined : (instruction ?? undefined)}>
+          {exercise.question && <legend>{exercise.question}</legend>}
           {exercise.options.map((option, index) => (
             <label key={index}>
               <input

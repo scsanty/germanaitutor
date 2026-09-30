@@ -32,8 +32,11 @@ export default function NewLessonPage() {
           slug: `${sourceSlug}-copy`,
           skill: data.lesson.skill,
           title: data.lesson.title,
+          titleDe: data.lesson.titleDe,
           explanation: data.lesson.explanation,
+          explanationDe: data.lesson.explanationDe,
           examples: data.lesson.examples,
+          examplesDe: data.lesson.examplesDe,
           exercises: data.exercises.map((ex: { type: string; content: unknown }) => ({
             type: ex.type,
             content: ex.content,

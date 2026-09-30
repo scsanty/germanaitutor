@@ -8,15 +8,15 @@ describe('buildLessonChatSystemPrompt', () => {
     level: 'A1' as const,
     explanation: 'ich bin, du bist',
     examples: ['Ich bin müde.'],
-    uiLanguage: 'de' as const,
     exercise: null,
   };
 
-  it('describes the lesson and answers in the UI language', () => {
+  it('describes the lesson and replies in the language of the latest message', () => {
     const prompt = buildLessonChatSystemPrompt(base);
     expect(prompt).toContain('CEFR level A1');
     expect(prompt).toContain('"The verb sein"');
-    expect(prompt).toContain('Answer in German');
+    expect(prompt).toContain("Reply in the language of the learner's latest message (German or English).");
+    expect(prompt).not.toMatch(/Answer in (English|German)/);
     expect(prompt).toContain('Lesson explanation:\nich bin, du bist');
     expect(prompt).toContain('Lesson examples:\n- Ich bin müde.');
     expect(prompt).not.toContain('asking about this exercise');
@@ -25,7 +25,6 @@ describe('buildLessonChatSystemPrompt', () => {
   it('adds the exercise the learner is asking about', () => {
     const prompt = buildLessonChatSystemPrompt({
       ...base,
-      uiLanguage: 'en',
       exercise: {
         task: 'Ich ___ müde.',
         studentAnswer: 'bist',
@@ -35,7 +34,8 @@ describe('buildLessonChatSystemPrompt', () => {
         feedback: null,
       },
     });
-    expect(prompt).toContain('Answer in English');
+    expect(prompt).toContain("Reply in the language of the learner's latest message (German or English).");
+    expect(prompt).not.toMatch(/Answer in (English|German)/);
     expect(prompt).toContain('Task: Ich ___ müde.');
     expect(prompt).toContain("Learner's answer: bist");
     expect(prompt).toContain('Grade: wrong');

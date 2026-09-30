@@ -35,17 +35,16 @@ export interface LessonChatPromptInput {
   level: CefrLevel;
   explanation: string | null;
   examples: string[] | null;
-  uiLanguage: 'en' | 'de';
   exercise: ChatExerciseContext | null;
 }
 
 // Spec: AI Behavior — each call sends the lesson's explanation and examples and the tagged
 // exercise's context, if any.
 export function buildLessonChatSystemPrompt(input: LessonChatPromptInput): string {
-  const language = input.uiLanguage === 'de' ? 'German' : 'English';
   const lines = [
     `You are a friendly German tutor. The learner is at CEFR level ${input.level} and is working on the lesson "${input.lessonTitle}".`,
-    `Answer in ${language}, and keep German words and example sentences in German.`,
+    "Reply in the language of the learner's latest message (German or English).",
+    `Keep German words and example sentences in German, and keep any German you write simple enough for CEFR level ${input.level}.`,
     'Keep answers short and focused on what the learner asked. If they ask about something unrelated to learning German, steer back to the lesson.',
   ];
   if (input.explanation) lines.push('', 'Lesson explanation:', input.explanation);

@@ -1,7 +1,8 @@
 import type Database from 'better-sqlite3';
 import type { Exercise } from '../curriculum/types';
 import type { GradeResult } from '../tutoring/grading';
-import { correctAnswerFor, taskTextFor } from '../tutoring/lessonAnswers';
+import { readFeedback } from '../i18n/localizedText';
+import { correctAnswerFor, taskTextOf } from '../tutoring/lessonAnswers';
 import {
   buildLessonChatSystemPrompt,
   CHAT_MESSAGE_MAX_LENGTH,
@@ -14,7 +15,6 @@ import { errorBodyFor, type ApiErrorBody, type ErrorCode, type ErrorParams } fro
 import { generateWithActiveProvider, isAiAvailable, type AiRequest, type AiResult } from './aiService';
 import { createCurriculumService } from './curriculumService';
 import { lessonLock } from './levelGating';
-import { createProfileService } from './profileService';
 import { createUnlockService } from './unlockService';
 
 export type ChatErrorKind = 'not_found' | 'locked' | 'bad_request' | 'ai_failed';
@@ -72,7 +72,6 @@ export function createLessonChatService(db: Database.Database, deps: LessonChatD
   const generate = deps.generate ?? ((request: AiRequest) => generateWithActiveProvider(db, request));
   const now = deps.now ?? (() => new Date());
   const curriculum = createCurriculumService(db);
-  const profiles = createProfileService(db);
   const unlocks = createUnlockService(db);
 
   // Spec: Level Unlocking — chatting about a lesson in a locked level is rejected.
@@ -125,12 +124,12 @@ export function createLessonChatService(db: Database.Database, deps: LessonChatD
       content: JSON.parse(row.content),
     };
     return {
-      task: taskTextFor(exercise),
+      task: taskTextOf(exercise),
       studentAnswer: attempt.answer_text,
       result: attempt.result,
       correctAnswer: correctAnswerFor(exercise),
       isFreeText: row.type === 'free_text',
-      feedback: attempt.ai_feedback,
+      feedback: readFeedback(attempt.ai_feedback)?.en ?? null,
     };
   }
 
@@ -142,7 +141,7 @@ export function createLessonChatService(db: Database.Database, deps: LessonChatD
     if (row.type === 'flashcard') throw new ChatError('Ask AI is not available for flashcards', 'bad_request');
     const exercise: Exercise = { id: row.id, lessonId: row.lesson_id, track: null, type: row.type, content: JSON.parse(row.content) };
     return {
-      task: taskTextFor(exercise),
+      task: taskTextOf(exercise),
       studentAnswer: about.answerText,
       result: about.result,
       correctAnswer: correctAnswerFor(exercise),
@@ -182,7 +181,6 @@ export function createLessonChatService(db: Database.Database, deps: LessonChatD
         level: lesson.sourceLevel,
         explanation: lesson.explanation,
         examples: lesson.examples,
-        uiLanguage: profiles.getProfile().uiLanguage,
         exercise: context,
       }),
       messages: history,

@@ -29,7 +29,7 @@ describe('/api/admin/curriculum/milestones', () => {
   it('returns 401 when not authenticated (PATCH rename)', async () => {
     vi.mocked(isAdminSessionValid).mockResolvedValue(false);
     const res = await PATCH(
-      new Request('http://localhost', { method: 'PATCH', body: JSON.stringify({ title: 'X', description: null }) }),
+      new Request('http://localhost', { method: 'PATCH', body: JSON.stringify({ title: 'X', titleDe: 'X', description: null, descriptionDe: null }) }),
       { params: Promise.resolve({ id: 'some-id' }) }
     );
     expect(res.status).toBe(401);
@@ -45,7 +45,7 @@ describe('/api/admin/curriculum/milestones', () => {
     const res = await POST(
       new Request('http://localhost', {
         method: 'POST',
-        body: JSON.stringify({ track: 'generic', level: 'A1', title: 'Basics', description: null, difficultyRank: 1 }),
+        body: JSON.stringify({ track: 'generic', level: 'A1', title: 'Basics', titleDe: 'Grundlagen', description: null, descriptionDe: null, difficultyRank: 1 }),
       })
     );
     expect(res.status).toBe(201);
@@ -58,13 +58,13 @@ describe('/api/admin/curriculum/milestones', () => {
       await POST(
         new Request('http://localhost', {
           method: 'POST',
-          body: JSON.stringify({ track: 'generic', level: 'A1', title: 'Basics', description: null, difficultyRank: 1 }),
+          body: JSON.stringify({ track: 'generic', level: 'A1', title: 'Basics', titleDe: 'Grundlagen', description: null, descriptionDe: null, difficultyRank: 1 }),
         })
       )
     ).json();
 
     const res = await PATCH(
-      new Request('http://localhost', { method: 'PATCH', body: JSON.stringify({ title: 'Fundamentals', description: null, difficultyRank: 2 }) }),
+      new Request('http://localhost', { method: 'PATCH', body: JSON.stringify({ title: 'Fundamentals', titleDe: 'Grundlagen 2', description: null, descriptionDe: null, difficultyRank: 2 }) }),
       { params: Promise.resolve({ id: created.id }) }
     );
     expect(res.status).toBe(200);
@@ -76,7 +76,7 @@ describe('/api/admin/curriculum/milestones', () => {
       await POST(
         new Request('http://localhost', {
           method: 'POST',
-          body: JSON.stringify({ track: 'generic', level: 'A1', title: 'Basics', description: null, difficultyRank: 1 }),
+          body: JSON.stringify({ track: 'generic', level: 'A1', title: 'Basics', titleDe: 'Grundlagen', description: null, descriptionDe: null, difficultyRank: 1 }),
         })
       )
     ).json();
@@ -90,7 +90,7 @@ describe('/api/admin/curriculum/milestones', () => {
     const res = await POST(
       new Request('http://localhost', {
         method: 'POST',
-        body: JSON.stringify({ track: 'generic', level: 'A1', title: 'Basics', description: null, difficultyRank: 0 }),
+        body: JSON.stringify({ track: 'generic', level: 'A1', title: 'Basics', titleDe: 'Grundlagen', description: null, descriptionDe: null, difficultyRank: 0 }),
       })
     );
     expect(res.status).toBe(400);
@@ -102,7 +102,7 @@ describe('/api/admin/curriculum/milestones', () => {
       await POST(
         new Request('http://localhost', {
           method: 'POST',
-          body: JSON.stringify({ track: 'generic', level: 'A1', title: 'Basics', description: null, difficultyRank: 1 }),
+          body: JSON.stringify({ track: 'generic', level: 'A1', title: 'Basics', titleDe: 'Grundlagen', description: null, descriptionDe: null, difficultyRank: 1 }),
         })
       )
     ).json();

@@ -1,4 +1,5 @@
 import type { CefrLevel, Track } from '../types';
+import type { LocalizedText } from '../i18n/localizedText';
 import type { Skill } from '../curriculum/types';
 import type { LessonStatus } from './completion';
 import type { ExerciseView } from './exerciseView';
@@ -51,12 +52,12 @@ export type LessonView =
   | {
       locked: false;
       id: string;
-      title: string;
+      title: LocalizedText;
       track: Track;
       level: CefrLevel;
       skill: Skill;
-      explanation: string | null;
-      examples: string[] | null;
+      explanation: LocalizedText | null;
+      examples: LocalizedText[] | null;
       exercises: ExerciseView[];
       passedExerciseIds: string[];
       completed: boolean;

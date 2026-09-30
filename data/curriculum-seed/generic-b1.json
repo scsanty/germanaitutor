@@ -1,6 +1,6 @@
 {
-  "seedVersion": "4",
-  "formatVersion": 2,
+  "seedVersion": "6",
+  "formatVersion": 3,
   "track": "generic",
   "level": "B1",
   "lessons": [
@@ -13,6 +13,14 @@
       "title": "Causal and Concessive Subordinate Clauses (weil, da, obwohl)",
       "explanation": "Subordinate clauses (Nebensätze) introduced by subordinating conjunctions require verb-final word order, placing the finite conjugated verb at the very end of the clause.\nThe causal conjunctions 'weil' and 'da' express reasons and causes; 'da' is frequently placed in the initial clause when the reason is already known or established to the listener.\nThe concessive conjunction 'obwohl' expresses a counter-expectation or concession (despite the fact that).\nWhen the subordinate clause precedes the main clause, the main clause begins immediately with its conjugated finite verb (inversion).\n",
       "examples": [
+        "Ich fahre heute mit der Bahn, weil mein Auto in der Werkstatt steht.",
+        "Da das Wetter heute sonnig und warm ist, machen wir einen Ausflug ins Grüne.",
+        "Obwohl er intensiv für die Prüfung gelernt hatte, war er vor dem Test sehr nervös.",
+        "Obwohl viele Menschen die Risiken kennen, nutzen sie täglich soziale Netzwerke."
+      ],
+      "titleDe": "Kausale und konzessive Nebensätze (weil, da, obwohl)",
+      "explanationDe": "Nebensätze mit einer unterordnenden Konjunktion haben Verbendstellung: Das konjugierte Verb steht ganz am Ende des Nebensatzes.\nDie kausalen Konjunktionen 'weil' und 'da' nennen einen Grund. Ein Satz mit 'da' steht oft am Anfang, wenn der Zuhörer den Grund schon kennt.\nDie konzessive Konjunktion 'obwohl' drückt einen Gegensatz zur Erwartung aus: Etwas passiert trotzdem.\nSteht der Nebensatz vor dem Hauptsatz, beginnt der Hauptsatz direkt mit dem konjugierten Verb.\n",
+      "examplesDe": [
         "Ich fahre heute mit der Bahn, weil mein Auto in der Werkstatt steht.",
         "Da das Wetter heute sonnig und warm ist, machen wir einen Ausflug ins Grüne.",
         "Obwohl er intensiv für die Prüfung gelernt hatte, war er vor dem Test sehr nervös.",
@@ -32,6 +40,14 @@
         "Immer wenn er nach Hause kommt, begrüßt ihn sein Hund an der Tür.",
         "Nachdem sie ihr Studium abgeschlossen hatte, zog sie für eine Stelle nach Frankfurt.",
         "Während er das Abendessen zubereitet, liest sie die Tageszeitung."
+      ],
+      "titleDe": "Temporale Nebensätze (als, wenn, während, nachdem, bevor)",
+      "explanationDe": "Temporale Konjunktionen ordnen Handlungen zeitlich ein. Auch hier steht das Verb am Ende des Nebensatzes.\nBenutze 'als' für ein einmaliges Ereignis oder einen Zeitraum in der Vergangenheit. Benutze 'wenn' für wiederholte Handlungen in der Vergangenheit und für alles in Gegenwart und Zukunft.\n'Während' bedeutet, dass zwei Handlungen gleichzeitig passieren. 'Bevor' bedeutet, dass die Handlung im Nebensatz später passiert als die im Hauptsatz.\n'Nachdem' bedeutet, dass die Handlung im Nebensatz zuerst passiert ist. Deshalb wechselt meist die Zeitform: Plusquamperfekt mit Präteritum oder Perfekt mit Präsens.\n",
+      "examplesDe": [
+        "Als ich ein Kind war, lebte meine Familie auf dem Land.",
+        "Immer wenn er nach Hause kommt, begrüßt ihn sein Hund an der Tür.",
+        "Nachdem sie ihr Studium abgeschlossen hatte, zog sie für eine Stelle nach Frankfurt.",
+        "Während er das Abendessen zubereitet, liest sie die Tageszeitung."
       ]
     },
     {
@@ -43,6 +59,14 @@
       "title": "Infinitives with Zu, Um Zu, and Ohne Zu",
       "explanation": "Infinitive constructions with 'zu' connect a dependent action to a main clause verb, adjective, or abstract noun without introducing a new subject.\nIn separable verbs, 'zu' is placed between the prefix and the verbal base (z.B. anzurufen, einzukaufen).\nThe final clause 'um... zu' expresses purpose or intention (in order to) when the subject of both clauses is identical; if the subjects differ, 'damit' must be used instead.\n'Ohne... zu' denotes an action that fails to occur (without doing), while 'anstatt... zu' denotes an alternative substituted for the expected action.\n",
       "examples": [
+        "Ich habe die feste Absicht, mich beruflich weiterzubilden.",
+        "Er lernt jeden Abend Deutsch, um in Deutschland Medizin studieren zu können.",
+        "Sie verließ die Konferenz, ohne ein Wort zu sagen.",
+        "Es ist ratsam, vor Antritt der Reise die Papiere gründlich zu überprüfen."
+      ],
+      "titleDe": "Infinitiv mit zu, um … zu und ohne … zu",
+      "explanationDe": "Infinitivsätze mit 'zu' verbinden eine Handlung mit einem Verb, einem Adjektiv oder einem abstrakten Nomen im Hauptsatz. Sie haben kein eigenes Subjekt.\nBei trennbaren Verben steht 'zu' zwischen Vorsilbe und Verb (z.B. anzurufen, einzukaufen).\n'Um... zu' drückt ein Ziel oder eine Absicht aus, wenn beide Sätze dasselbe Subjekt haben. Sind die Subjekte verschieden, braucht man 'damit'.\n'Ohne... zu' bedeutet, dass eine Handlung nicht passiert. 'Anstatt... zu' nennt eine andere Handlung statt der erwarteten.\n",
+      "examplesDe": [
         "Ich habe die feste Absicht, mich beruflich weiterzubilden.",
         "Er lernt jeden Abend Deutsch, um in Deutschland Medizin studieren zu können.",
         "Sie verließ die Konferenz, ohne ein Wort zu sagen.",
@@ -62,6 +86,14 @@
         "Er hat nicht nur die theoretische Prüfung bestanden, sondern auch die praktische mit Bravour gemeistert.",
         "Weder mein Bruder noch meine Schwester konnten zur Feier anreisen.",
         "Die Wohnung ist zwar relativ teuer, aber die zentrale Lage ist ideal."
+      ],
+      "titleDe": "Zweiteilige Konnektoren (Doppelkonnektoren)",
+      "explanationDe": "Zweiteilige Konnektoren verbinden Satzteile oder ganze Sätze und zeigen genau, wie die Gedanken zusammenhängen.\n'Sowohl... als auch' und 'nicht nur... sondern auch' verbinden zwei Dinge und betonen, dass beide gelten.\n'Weder... noch' verneint zwei Dinge. Man braucht dann kein zusätzliches 'nicht' oder 'kein'.\n'Entweder... oder' bedeutet: nur eine von zwei Möglichkeiten. 'Zwar... aber' gibt zuerst etwas zu und nennt dann eine Einschränkung.\n",
+      "examplesDe": [
+        "Sie spricht sowohl fließend Spanisch als auch ausgezeichnet Deutsch.",
+        "Er hat nicht nur die theoretische Prüfung bestanden, sondern auch die praktische mit Bravour gemeistert.",
+        "Weder mein Bruder noch meine Schwester konnten zur Feier anreisen.",
+        "Die Wohnung ist zwar relativ teuer, aber die zentrale Lage ist ideal."
       ]
     },
     {
@@ -73,6 +105,14 @@
       "title": "Relative Clauses in Nominative, Accusative, Dative, and Genitive",
       "explanation": "Relative clauses provide essential descriptive information about a preceding reference noun and exhibit verb-final order.\nThe gender and grammatical number of the relative pronoun are determined by the reference noun, while its grammatical case is governed by its role in the relative clause.\nThe relative pronouns mirror the definite articles, except in the dative plural ('denen') and all genitive forms ('dessen' for masculine/neuter, 'deren' for feminine/plural).\n",
       "examples": [
+        "Der Kollege, der die Präsentation vorbereitet hat, ist heute krank. (Nominativ)",
+        "Der Roman, den du mir empfohlen hast, ist wirklich spannend. (Akkusativ)",
+        "Die Nachbarin, der ich beim Einkauf geholfen habe, schenkte mir Blumen. (Dativ)",
+        "Das ist die Autorin, deren neues Buch auf Platz eins der Bestsellerliste steht. (Genitiv)"
+      ],
+      "titleDe": "Relativsätze im Nominativ, Akkusativ, Dativ und Genitiv",
+      "explanationDe": "Relativsätze geben wichtige Informationen über ein Nomen, das davor steht. Das Verb steht am Ende des Relativsatzes.\nGenus und Numerus des Relativpronomens kommen vom Bezugswort. Den Kasus bestimmt seine Rolle im Relativsatz.\nDie Relativpronomen sehen aus wie die bestimmten Artikel. Ausnahmen sind der Dativ Plural ('denen') und alle Genitivformen ('dessen' für maskulin und neutral, 'deren' für feminin und Plural).\n",
+      "examplesDe": [
         "Der Kollege, der die Präsentation vorbereitet hat, ist heute krank. (Nominativ)",
         "Der Roman, den du mir empfohlen hast, ist wirklich spannend. (Akkusativ)",
         "Die Nachbarin, der ich beim Einkauf geholfen habe, schenkte mir Blumen. (Dativ)",
@@ -92,6 +132,14 @@
         "Die Kollegin, mit der ich mir ein Büro teile, ist äußerst hilfsbereit.",
         "Es gibt vieles, worüber wir bei der nächsten Sitzung dringend sprechen müssen.",
         "Er hat die Prüfung bestanden, was uns alle sehr erleichtert hat."
+      ],
+      "titleDe": "Relativsätze mit Präpositionen und Präpositionaladverbien",
+      "explanationDe": "Braucht der Relativsatz eine Präposition, steht sie vor dem Relativpronomen und bestimmt seinen Kasus (Akkusativ, Dativ oder Genitiv).\nBei Personen benutzt man Präposition + Relativpronomen (z.B. der Mann, mit dem ich sprach).\nBezieht man sich auf Sachen, auf Begriffe oder auf einen ganzen Satz, benutzt man Präpositionaladverbien mit 'wo(r)-' + Präposition (z.B. worüber, worauf, womit) oder das Relativpronomen 'was'.\n",
+      "examplesDe": [
+        "Das Projekt, an dem wir seit sechs Monaten arbeiten, steht kurz vor dem Abschluss.",
+        "Die Kollegin, mit der ich mir ein Büro teile, ist äußerst hilfsbereit.",
+        "Es gibt vieles, worüber wir bei der nächsten Sitzung dringend sprechen müssen.",
+        "Er hat die Prüfung bestanden, was uns alle sehr erleichtert hat."
       ]
     },
     {
@@ -103,6 +151,14 @@
       "title": "Verbs with Fixed Prepositions and Pronominal Adverbs (da-/wo-compounds)",
       "explanation": "Many German verbs require a fixed preposition governing a specific grammatical case (e.g., warten auf + Akk., träumen von + Dat., sich interessieren für + Akk.).\nWhen referring to persons, questions and pronouns keep the preposition distinct (z.B. Auf wen wartest du? - Auf meinen Vater).\nWhen referring to inanimate objects, actions, or full propositions, prepositional adverbs are formed with 'da(r)-' (darauf, daran, darüber) and interrogative compounds with 'wo(r)-' (worauf, woran, worüber).\n",
       "examples": [
+        "Ich warte seit einer halben Stunde auf den Bus. -> Worauf wartest du? -> Ich warte darauf.",
+        "Er denkt oft an seine Studienzeit zurück. -> Woran denkt er? -> Er denkt daran.",
+        "Wir freuen uns sehr auf das kommende Wochenende.",
+        "Mit wem hast du dich gestern über die neuen Pläne unterhalten?"
+      ],
+      "titleDe": "Verben mit festen Präpositionen und Präpositionaladverbien (da-/wo-Wörter)",
+      "explanationDe": "Viele deutsche Verben haben eine feste Präposition mit einem bestimmten Kasus (z.B. warten auf + Akk., träumen von + Dat., sich interessieren für + Akk.).\nBei Personen bleibt die Präposition in Fragen und Antworten vor dem Pronomen (z.B. Auf wen wartest du? - Auf meinen Vater).\nBei Sachen, Handlungen oder ganzen Aussagen bildet man Präpositionaladverbien mit 'da(r)-' (darauf, daran, darüber) und Fragewörter mit 'wo(r)-' (worauf, woran, worüber).\n",
+      "examplesDe": [
         "Ich warte seit einer halben Stunde auf den Bus. -> Worauf wartest du? -> Ich warte darauf.",
         "Er denkt oft an seine Studienzeit zurück. -> Woran denkt er? -> Er denkt daran.",
         "Wir freuen uns sehr auf das kommende Wochenende.",
@@ -122,6 +178,14 @@
         "Das historische Rathaus wurde im siebzehnten Jahrhundert erbaut.",
         "Die neuen Richtlinien sind vom Vorstand bereits beschlossen worden.",
         "Durch die Digitalisierung wurden zahlreiche Arbeitsprozesse grundlegend verändert."
+      ],
+      "titleDe": "Das Passiv im Präsens und in der Vergangenheit (Vorgangspassiv)",
+      "explanationDe": "Das Vorgangspassiv stellt nicht die handelnde Person in den Mittelpunkt, sondern die Handlung selbst oder die Person, die sie betrifft.\nMan bildet es mit einer konjugierten Form von 'werden' und dem Partizip II am Satzende.\nPräsens: Das Auto wird repariert. Präteritum: Das Auto wurde repariert. Perfekt: Das Auto ist repariert worden (Achtung: 'worden', nicht 'geworden').\nWer die Handlung ausführt, kann man mit 'von' + Dativ (Person, Verursacher) oder mit 'durch' + Akkusativ (Mittel, Vermittler) nennen. Das ist aber nicht nötig.\n",
+      "examplesDe": [
+        "In Deutschland werden täglich Millionen Tassen Kaffee getrunken.",
+        "Das historische Rathaus wurde im siebzehnten Jahrhundert erbaut.",
+        "Die neuen Richtlinien sind vom Vorstand bereits beschlossen worden.",
+        "Durch die Digitalisierung wurden zahlreiche Arbeitsprozesse grundlegend verändert."
       ]
     },
     {
@@ -133,6 +197,14 @@
       "title": "Passive Voice with Modal Verbs",
       "explanation": "When the passive voice combines with modal verbs, the finite modal verb occupies position V2 (or the end position in subordinate clauses), while the passive infinitive ('Partizip II + werden') moves to the final position.\nIn the past tense (Präteritum), the modal verb takes its past form: 'musste / konnte / durfte + Partizip II + werden'.\nThis structure is standard in formal instructions, technical guidelines, administrative regulations, and work assignments.\n",
       "examples": [
+        "Diese Rechnung muss bis zum Monatsende bezahlt werden.",
+        "Die vertraulichen Unterlagen durften keinesfalls kopiert werden.",
+        "Der beschädigte Akku kann leider nicht mehr repariert werden.",
+        "Ich weiß, dass dieser Antrag unverzüglich eingereicht werden muss."
+      ],
+      "titleDe": "Das Passiv mit Modalverben",
+      "explanationDe": "Im Passiv mit Modalverb steht das konjugierte Modalverb auf Position 2 (im Nebensatz am Ende). Der Infinitiv Passiv ('Partizip II + werden') steht am Satzende.\nIm Präteritum steht das Modalverb in der Vergangenheitsform: 'musste / konnte / durfte + Partizip II + werden'.\nDiese Struktur ist typisch für formelle Anweisungen, technische Anleitungen, Vorschriften von Behörden und Arbeitsaufträge.\n",
+      "examplesDe": [
         "Diese Rechnung muss bis zum Monatsende bezahlt werden.",
         "Die vertraulichen Unterlagen durften keinesfalls kopiert werden.",
         "Der beschädigte Akku kann leider nicht mehr repariert werden.",
@@ -152,6 +224,14 @@
         "An deiner Stelle würde ich mich sofort bei dieser Firma bewerben.",
         "Könnten Sie mir bitte kurz behilflich sein?",
         "Es wäre fantastisch, wenn wir die Konferenz erfolgreich abschließen könnten."
+      ],
+      "titleDe": "Konjunktiv II für Wünsche und irreale Situationen (Gegenwart)",
+      "explanationDe": "Mit dem Konjunktiv II drückt man irreale Bedingungen, gedachte Situationen, höfliche Bitten und unerfüllte Wünsche in der Gegenwart aus.\nBei den meisten Verben bildet man ihn mit 'würde' + Infinitiv am Satzende (z.B. ich würde gerne mehr reisen).\nHilfsverben und Modalverben haben eigene Formen: haben -> hätte, sein -> wäre, können -> könnte, müssen -> müsste, dürfen -> dürfte, wissen -> wüsste.\nIrreale Bedingungssätze beginnen mit 'wenn': Im 'wenn'-Satz steht das Verb am Ende, und der Hauptsatz beginnt mit dem Verb.\n",
+      "examplesDe": [
+        "Wenn ich mehr Zeit hätte, würde ich jeden Tag Sport treiben.",
+        "An deiner Stelle würde ich mich sofort bei dieser Firma bewerben.",
+        "Könnten Sie mir bitte kurz behilflich sein?",
+        "Es wäre fantastisch, wenn wir die Konferenz erfolgreich abschließen könnten."
       ]
     },
     {
@@ -163,6 +243,14 @@
       "title": "Past Unreal Conditions with Subjunctive II (Konjunktiv II der Vergangenheit)",
       "explanation": "The past subjunctive expresses counterfactual scenarios in the past—events that did not occur and cannot be altered.\nIt is formed using the Konjunktiv II of the auxiliary verbs 'hätte' or 'wäre' coupled with the past participle (Partizip II) at the end of the clause.\nVerbs taking 'sein' in the Perfekt use 'wäre + Partizip II' (z.B. ich wäre gekommen); verbs taking 'haben' use 'hätte + Partizip II' (z.B. ich hätte gesagt).\n",
       "examples": [
+        "Wenn ich den Wecker gehört hätte, wäre ich nicht zu spät zum Vorstellungsgespräch gekommen.",
+        "Hätten wir das gewusst, wären wir natürlich zu Hause geblieben.",
+        "Er hätte die Prüfung bestanden, wenn er gründlicher gelernt hätte.",
+        "Fast wäre ich gestern auf der nassen Straße ausgerutscht."
+      ],
+      "titleDe": "Irreale Bedingungen in der Vergangenheit (Konjunktiv II der Vergangenheit)",
+      "explanationDe": "Der Konjunktiv II der Vergangenheit beschreibt Situationen, die nicht passiert sind und sich nicht mehr ändern lassen.\nMan bildet ihn mit 'hätte' oder 'wäre' und dem Partizip II am Satzende.\nVerben, die das Perfekt mit 'sein' bilden, nehmen 'wäre + Partizip II' (z.B. ich wäre gekommen). Verben mit 'haben' nehmen 'hätte + Partizip II' (z.B. ich hätte gesagt).\n",
+      "examplesDe": [
         "Wenn ich den Wecker gehört hätte, wäre ich nicht zu spät zum Vorstellungsgespräch gekommen.",
         "Hätten wir das gewusst, wären wir natürlich zu Hause geblieben.",
         "Er hätte die Prüfung bestanden, wenn er gründlicher gelernt hätte.",
@@ -182,6 +270,14 @@
         "Wir haben den bekannten Journalisten nach seiner Einschätzung gefragt.",
         "Das Verhalten dieses Studenten ist stets vorbildlich.",
         "Guten Tag, Herr Schmidt! Haben Sie den Kollegen schon gesehen?"
+      ],
+      "titleDe": "Die n-Deklination (schwache maskuline Nomen)",
+      "explanationDe": "Eine kleine Gruppe maskuliner Nomen folgt der n-Deklination: Sie bekommen in allen Kasus außer dem Nominativ Singular die Endung -(e)n (Akkusativ, Dativ und Genitiv).\nDazu gehören maskuline Nomen auf -e für Menschen oder Tiere (der Kollege, der Kunde, der Löwe), Nomen mit Endungen wie -ist, -ent, -ant, -at (der Journalist, der Student, der Praktikant, der Diplomat) und besondere Wörter wie 'der Herr' (+n im Singular, +en im Plural) und 'der Mensch'.\nDas Nomen 'das Herz' ist neutral und unregelmäßig: Im Dativ und Genitiv Singular bekommt es -en, im Genitiv zusätzlich -s (des Herzens).\n",
+      "examplesDe": [
+        "Der Abteilungsleiter sprach gestern ausführlich mit dem neuen Kunden.",
+        "Wir haben den bekannten Journalisten nach seiner Einschätzung gefragt.",
+        "Das Verhalten dieses Studenten ist stets vorbildlich.",
+        "Guten Tag, Herr Schmidt! Haben Sie den Kollegen schon gesehen?"
       ]
     },
     {
@@ -193,6 +289,14 @@
       "title": "Environment, Climate Protection, and Sustainability",
       "explanation": "Discussing ecological matters at B1 requires precise terminology concerning resource conservation, renewable energies, and climate dynamics.\nEssential vocabulary encompasses: der Klimawandel (climate change), der Umweltschutz (environmental protection), erneuerbare Energien (renewable energy), die Mülltrennung (waste sorting), Plastik vermeiden (avoiding plastic), and nachhaltig (sustainable).\nKey idiomatic expressions include 'einen Beitrag leisten zu' (to contribute to) and 'Ressourcen schonen' (to conserve resources).\n",
       "examples": [
+        "Immer mehr Haushalte leisten einen aktiven Beitrag zum Umweltschutz durch konsequente Mülltrennung.",
+        "Erneuerbare Energien wie Windkraft und Solarenergie sind entscheidend für die Reduzierung von Treibhausgasen.",
+        "Um Plastikmüll zu vermeiden, greifen viele Verbraucher beim Einkaufen zu Mehrwegtaschen.",
+        "Nachhaltiges Handeln bedeutet, natürliche Ressourcen für zukünftige Generationen zu schonen."
+      ],
+      "titleDe": "Umwelt, Klimaschutz und Nachhaltigkeit",
+      "explanationDe": "Wenn du auf B1 über Umweltthemen sprichst, brauchst du genaue Begriffe zum Ressourcensparen, zu erneuerbaren Energien und zum Klima.\nWichtige Wörter sind: der Klimawandel, der Umweltschutz, erneuerbare Energien, die Mülltrennung, Plastik vermeiden und nachhaltig.\nWichtige Wendungen sind 'einen Beitrag leisten zu' und 'Ressourcen schonen'.\n",
+      "examplesDe": [
         "Immer mehr Haushalte leisten einen aktiven Beitrag zum Umweltschutz durch konsequente Mülltrennung.",
         "Erneuerbare Energien wie Windkraft und Solarenergie sind entscheidend für die Reduzierung von Treibhausgasen.",
         "Um Plastikmüll zu vermeiden, greifen viele Verbraucher beim Einkaufen zu Mehrwegtaschen.",
@@ -212,6 +316,14 @@
         "Morgen habe ich ein wichtiges Vorstellungsgespräch bei einem mittelständischen IT-Unternehmen.",
         "Um für diese Stelle infrage zu kommen, benötigt man mindestens drei Jahre relevante Berufserfahrung.",
         "Er hat beschlossen, seinen bisherigen Job zu kündigen, um sich beruflich neu zu orientieren."
+      ],
+      "titleDe": "Beruf, Bewerbung und Arbeitsalltag",
+      "explanationDe": "Im Berufsleben brauchst du Begriffe rund um die Bewerbung und den Alltag in einer Firma.\nWichtige Wörter sind: das Bewerbungsschreiben, der Lebenslauf, das Vorstellungsgespräch, die Stellenausschreibung und die Berufserfahrung.\nWichtige Verben sind: sich bewerben um, kündigen, einstellen und befördert werden.\n",
+      "examplesDe": [
+        "Sie hat ihre Bewerbungsunterlagen mitsamt aktuellem Lebenslauf an die Personalabteilung gesendet.",
+        "Morgen habe ich ein wichtiges Vorstellungsgespräch bei einem mittelständischen IT-Unternehmen.",
+        "Um für diese Stelle infrage zu kommen, benötigt man mindestens drei Jahre relevante Berufserfahrung.",
+        "Er hat beschlossen, seinen bisherigen Job zu kündigen, um sich beruflich neu zu orientieren."
       ]
     },
     {
@@ -223,6 +335,14 @@
       "title": "Digital Media, Communication, and Technology",
       "explanation": "B1 discourse frequently evaluates digital lifestyles, online communication, and cyber safety.\nEssential lexical units comprise: soziale Netzwerke (social networks), der Datenschutz (data protection/privacy), das Passwort (password), künstliche Intelligenz (artificial intelligence), herunterladen (to download), and hochladen (to upload).\nKey evaluative terms include: vernetzt (connected/networked), datensicher (data-secure), and ablenken (to distract).\n",
       "examples": [
+        "Der Schutz persönlicher Daten im Internet gewinnt in der heutigen Gesellschaft zunehmend an Bedeutung.",
+        "Soziale Medien bieten viele Vernetzungsmöglichkeiten, bergen jedoch auch erhebliche Risiken für die Privatsphäre.",
+        "Viele Jugendliche lassen sich beim Lernen durch ständige Smartphone-Benachrichtigungen ablenken.",
+        "Künstliche Intelligenz wird in den kommenden Jahren viele alltägliche Arbeitsbereiche grundlegend verändern."
+      ],
+      "titleDe": "Digitale Medien, Kommunikation und Technik",
+      "explanationDe": "Auf B1 spricht man oft über das digitale Leben, über Kommunikation im Internet und über Sicherheit online.\nWichtige Wörter sind: soziale Netzwerke, der Datenschutz, das Passwort, künstliche Intelligenz, herunterladen und hochladen.\nWichtige Wörter zum Bewerten sind: vernetzt, datensicher und ablenken.\n",
+      "examplesDe": [
         "Der Schutz persönlicher Daten im Internet gewinnt in der heutigen Gesellschaft zunehmend an Bedeutung.",
         "Soziale Medien bieten viele Vernetzungsmöglichkeiten, bergen jedoch auch erhebliche Risiken für die Privatsphäre.",
         "Viele Jugendliche lassen sich beim Lernen durch ständige Smartphone-Benachrichtigungen ablenken.",
@@ -241,6 +361,13 @@
         "Obwohl das Homeoffice mehr zeitliche Flexibilität bietet, befürchten Arbeitgeber oft einen Verlust des Teamgeists.",
         "Einerseits sparen Pendler Fahrtkosten und Zeit, andererseits verschwimmen die Grenzen zwischen Berufs- und Privatleben.",
         "Aus diesen Gründen plädieren Experten für hybride Arbeitsmodelle mit festgelegten Präsenztagen."
+      ],
+      "titleDe": "Argumentative Zeitungsartikel und Kommentare verstehen",
+      "explanationDe": "Auf B1 suchst du beim Lesen nicht nur Fakten. Du verstehst auch argumentative Texte, Zeitungsartikel und Meinungsbeiträge.\nErkenne die Hauptthese, unterscheide Fakten von persönlicher Meinung und achte auf Signalwörter (z.B. einerseits... andererseits, dennoch, im Gegensatz dazu).\nBeim schnellen Überfliegen verstehst du das Thema im Ganzen. Beim genauen Lesen findest du Haltungen und Schlussfolgerungen, die nicht direkt gesagt werden.\n",
+      "examplesDe": [
+        "Obwohl das Homeoffice mehr zeitliche Flexibilität bietet, befürchten Arbeitgeber oft einen Verlust des Teamgeists.",
+        "Einerseits sparen Pendler Fahrtkosten und Zeit, andererseits verschwimmen die Grenzen zwischen Berufs- und Privatleben.",
+        "Aus diesen Gründen plädieren Experten für hybride Arbeitsmodelle mit festgelegten Präsenztagen."
       ]
     },
     {
@@ -252,6 +379,13 @@
       "title": "Listening to Thematic Interviews and Radio Reports",
       "explanation": "Authentic B1 listening comprehension involves following spoken radio interviews, podcasts, and structured panel discussions delivered at standard conversational speed.\nSuccess requires tracking the speaker's main communicative intentions, catching causal explanations, and identifying agreement or skepticism through intonation and discourse particles (z.B. ja, eigentlich, doch, zwar).\n",
       "examples": [
+        "Moderator: 'Frau Dr. Vogel, wie beurteilen Sie die Entwicklung des öffentlichen Nahverkehrs?'",
+        "Expertin: 'Nun, wir sehen zwar Fortschritte beim Streckenausbau, aber die Pünktlichkeit lässt weiterhin zu wünschen übrig.'",
+        "Sprecher: 'Aus meiner Sicht müssen die Ticketpreise deutlich gesenkt werden, um Pendler zum Umstieg zu bewegen.'"
+      ],
+      "titleDe": "Interviews und Radiobeiträge verstehen",
+      "explanationDe": "Auf B1 verstehst du echte Radiointerviews, Podcasts und Diskussionsrunden in normalem Sprechtempo.\nAchte darauf, was die Sprecher sagen wollen, wie sie etwas begründen und ob sie zustimmen oder skeptisch sind. Das zeigen oft die Intonation und Partikeln (z.B. ja, eigentlich, doch, zwar).\n",
+      "examplesDe": [
         "Moderator: 'Frau Dr. Vogel, wie beurteilen Sie die Entwicklung des öffentlichen Nahverkehrs?'",
         "Expertin: 'Nun, wir sehen zwar Fortschritte beim Streckenausbau, aber die Pünktlichkeit lässt weiterhin zu wünschen übrig.'",
         "Sprecher: 'Aus meiner Sicht müssen die Ticketpreise deutlich gesenkt werden, um Pendler zum Umstieg zu bewegen.'"
@@ -270,6 +404,14 @@
         "In meiner Heimatstadt erlebe ich täglich, wie verstopfte Straßen die Lebensqualität beeinträchtigen.",
         "Zwar bedeutet ein Fahrverbot für Pendler eine Umstellung, aber dafür gewinnt die Stadt saubere Luft und Ruhe.",
         "Zusammenfassend bin ich der Überzeugung, dass moderne Städte dem Fahrrad den Vorzug geben sollten."
+      ],
+      "titleDe": "Einen argumentativen Forumsbeitrag aufbauen",
+      "explanationDe": "Ein argumentativer Beitrag in einem Online-Forum hat vier klare Schritte:\n1. Einleitung: Du beziehst dich auf die Diskussion und nennst das Thema.\n2. Eigene Erfahrung: Du beschreibst deine Erfahrungen oder Gewohnheiten.\n3. Vor- und Nachteile: Du wägst Vor- und Nachteile ab, mit Konnektoren wie einerseits/andererseits und zwar/aber.\n4. Eigene Meinung & Fazit: Du ziehst ein begründetes Fazit und sagst klar deine Meinung (Meiner Auffassung nach, Ich bin davon überzeugt, dass...).\n",
+      "examplesDe": [
+        "Ich verfolge die Diskussion über das Thema 'Autofreie Innenstädte' mit großem Interesse.",
+        "In meiner Heimatstadt erlebe ich täglich, wie verstopfte Straßen die Lebensqualität beeinträchtigen.",
+        "Zwar bedeutet ein Fahrverbot für Pendler eine Umstellung, aber dafür gewinnt die Stadt saubere Luft und Ruhe.",
+        "Zusammenfassend bin ich der Überzeugung, dass moderne Städte dem Fahrrad den Vorzug geben sollten."
       ]
     },
     {
@@ -281,6 +423,15 @@
       "title": "Delivering a Five-Step Thematic Presentation",
       "explanation": "A successful B1 oral presentation follows a standard five-phase sequence:\n1. Folie 1: Thema vorstellen und Aufbau erläutern ('Das Thema meiner Präsentation lautet... Zuerst möchte ich... Danach...').\n2. Folie 2: Eigene persönliche Erfahrungen schildern ('Ich persönlich habe festgestellt, dass...').\n3. Folie 3: Die Situation im Heimatland darstellen ('In meinem Heimatland ist die Situation so, dass...').\n4. Folie 4: Vor- und Nachteile abwägen ('Ein wesentlicher Vorteil ist..., auf der anderen Seite steht der Nachteil...').\n5. Folie 5: Eigenes Fazit ziehen und für die Aufmerksamkeit danken ('Zusammenfassend möchte ich sagen... Ich danke Ihnen fürs Zuhören.').\n",
       "examples": [
+        "Guten Tag! In meiner heutigen Präsentation beschäftige ich mich mit der Frage, ob Fremdsprachenlernen im Kindergarten sinnvoll ist.",
+        "Ich selbst habe bereits im frühen Kindesalter begonnen, zweisprachig aufzuwachsen.",
+        "In meinem Heimatland wird erst ab der fünften Schulklasse Englisch unterrichtet.",
+        "Ein Vorteil des frühen Spracherwerbs ist die spielerische Akzentfreiheit, ein möglicher Nachteil die Überforderung des Kindes.",
+        "Damit bin ich am Ende meiner Präsentation angelangt. Haben Sie noch Fragen?"
+      ],
+      "titleDe": "Eine Präsentation in fünf Schritten halten",
+      "explanationDe": "Eine gute Präsentation auf B1 hat fünf Schritte:\n1. Folie 1: Thema vorstellen und Aufbau erläutern ('Das Thema meiner Präsentation lautet... Zuerst möchte ich... Danach...').\n2. Folie 2: Eigene persönliche Erfahrungen schildern ('Ich persönlich habe festgestellt, dass...').\n3. Folie 3: Die Situation im Heimatland darstellen ('In meinem Heimatland ist die Situation so, dass...').\n4. Folie 4: Vor- und Nachteile abwägen ('Ein wesentlicher Vorteil ist..., auf der anderen Seite steht der Nachteil...').\n5. Folie 5: Eigenes Fazit ziehen und für die Aufmerksamkeit danken ('Zusammenfassend möchte ich sagen... Ich danke Ihnen fürs Zuhören.').\n",
+      "examplesDe": [
         "Guten Tag! In meiner heutigen Präsentation beschäftige ich mich mit der Frage, ob Fremdsprachenlernen im Kindergarten sinnvoll ist.",
         "Ich selbst habe bereits im frühen Kindesalter begonnen, zweisprachig aufzuwachsen.",
         "In meinem Heimatland wird erst ab der fünften Schulklasse Englisch unterrichtet.",
@@ -348,8 +499,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Formulate a sentence using 'obwohl' explaining why you went for a walk despite bad weather.",
-        "modelAnswer": "Obwohl es sehr kalt war, bin ich im Park spazieren gegangen."
+        "prompt": "",
+        "modelAnswer": "Obwohl es sehr kalt war, bin ich im Park spazieren gegangen.",
+        "instruction": {
+          "en": "Formulate a sentence using 'obwohl' explaining why you went for a walk despite bad weather.",
+          "de": "Bilde einen Satz mit 'obwohl': Du bist trotz schlechten Wetters spazieren gegangen."
+        }
       }
     },
     {
@@ -404,8 +559,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Write a complex sentence starting with 'Nachdem' in the past (Plusquamperfekt + Präteritum).",
-        "modelAnswer": "Nachdem ich meine Aufgaben erledigt hatte, ging ich mit Freunden aus."
+        "prompt": "",
+        "modelAnswer": "Nachdem ich meine Aufgaben erledigt hatte, ging ich mit Freunden aus.",
+        "instruction": {
+          "en": "Write a complex sentence starting with 'Nachdem' in the past (Plusquamperfekt + Präteritum).",
+          "de": "Schreib einen Satz über die Vergangenheit, der mit 'Nachdem' beginnt (Plusquamperfekt + Präteritum)."
+        }
       }
     },
     {
@@ -460,8 +619,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Explain why you learn German using an 'um... zu' infinitive construction.",
-        "modelAnswer": "Ich lerne Deutsch, um bessere Chancen auf dem Arbeitsmarkt zu haben."
+        "prompt": "",
+        "modelAnswer": "Ich lerne Deutsch, um bessere Chancen auf dem Arbeitsmarkt zu haben.",
+        "instruction": {
+          "en": "Explain why you learn German using an 'um... zu' infinitive construction.",
+          "de": "Erkläre mit einem Infinitivsatz mit 'um... zu', warum du Deutsch lernst."
+        }
       }
     },
     {
@@ -516,8 +679,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Write a sentence describing two complementary skills you possess using 'nicht nur... sondern auch'.",
-        "modelAnswer": "Ich kann nicht nur Webseiten programmieren, sondern auch ansprechende Grafiken entwerfen."
+        "prompt": "",
+        "modelAnswer": "Ich kann nicht nur Webseiten programmieren, sondern auch ansprechende Grafiken entwerfen.",
+        "instruction": {
+          "en": "Write a sentence describing two complementary skills you possess using 'nicht nur... sondern auch'.",
+          "de": "Beschreib in einem Satz zwei Fähigkeiten, die sich ergänzen. Benutze 'nicht nur... sondern auch'."
+        }
       }
     },
     {
@@ -572,8 +739,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Formulate a sentence containing an accusative relative clause describing a car or house.",
-        "modelAnswer": "Das Haus, das meine Eltern gekauft haben, hat einen großen Garten."
+        "prompt": "",
+        "modelAnswer": "Das Haus, das meine Eltern gekauft haben, hat einen großen Garten.",
+        "instruction": {
+          "en": "Formulate a sentence containing an accusative relative clause describing a car or house.",
+          "de": "Bilde einen Satz mit einem Relativsatz im Akkusativ, der ein Auto oder ein Haus beschreibt."
+        }
       }
     },
     {
@@ -628,8 +799,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Write a sentence about a tool or computer you work with using 'mit dem' or 'mit der'.",
-        "modelAnswer": "Der Computer, mit dem ich täglich arbeite, ist extrem schnell."
+        "prompt": "",
+        "modelAnswer": "Der Computer, mit dem ich täglich arbeite, ist extrem schnell.",
+        "instruction": {
+          "en": "Write a sentence about a tool or computer you work with using 'mit dem' or 'mit der'.",
+          "de": "Schreib einen Satz über ein Werkzeug oder einen Computer, mit dem du arbeitest. Benutze 'mit dem' oder 'mit der'."
+        }
       }
     },
     {
@@ -684,8 +859,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Answer the question 'Worauf freust du dich im Sommer?' in a complete German sentence.",
-        "modelAnswer": "Ich freue mich sehr auf den Urlaub am Meer."
+        "prompt": "Worauf freust du dich im Sommer?",
+        "modelAnswer": "Ich freue mich sehr auf den Urlaub am Meer.",
+        "instruction": {
+          "en": "Answer the question in a complete German sentence.",
+          "de": "Beantworte die Frage in einem vollständigen Satz."
+        }
       }
     },
     {
@@ -740,8 +919,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Transform into Passive: 'Der Mechaniker reparierte die Bremsen.'",
-        "modelAnswer": "Die Bremsen wurden vom Mechaniker repariert."
+        "prompt": "Der Mechaniker reparierte die Bremsen.",
+        "modelAnswer": "Die Bremsen wurden vom Mechaniker repariert.",
+        "instruction": {
+          "en": "Transform the sentence into the passive.",
+          "de": "Setze den Satz ins Passiv."
+        }
       }
     },
     {
@@ -796,8 +979,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Express in German that the car cannot be picked up today (modal verb können + passive).",
-        "modelAnswer": "Das Auto kann heute leider nicht abgeholt werden."
+        "prompt": "",
+        "modelAnswer": "Das Auto kann heute leider nicht abgeholt werden.",
+        "instruction": {
+          "en": "Express in German that the car cannot be picked up today (modal verb können + passive).",
+          "de": "Sag, dass das Auto heute nicht abgeholt werden kann (Modalverb können + Passiv)."
+        }
       }
     },
     {
@@ -852,8 +1039,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Give advice to a friend who feels exhausted using 'An deiner Stelle würde ich...'.",
-        "modelAnswer": "An deiner Stelle würde ich am Wochenende richtig lange ausschlafen und mich erholen."
+        "prompt": "",
+        "modelAnswer": "An deiner Stelle würde ich am Wochenende richtig lange ausschlafen und mich erholen.",
+        "instruction": {
+          "en": "Give advice to a friend who feels exhausted using 'An deiner Stelle würde ich...'.",
+          "de": "Gib einem Freund, der sich erschöpft fühlt, einen Rat. Benutze 'An deiner Stelle würde ich...'."
+        }
       }
     },
     {
@@ -908,8 +1099,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Write a past unreal conditional sentence describing something you would have done differently yesterday.",
-        "modelAnswer": "Wenn das Wetter gestern schön gewesen wäre, wäre ich an den See gefahren."
+        "prompt": "",
+        "modelAnswer": "Wenn das Wetter gestern schön gewesen wäre, wäre ich an den See gefahren.",
+        "instruction": {
+          "en": "Write a past unreal conditional sentence describing something you would have done differently yesterday.",
+          "de": "Schreib einen irrealen Bedingungssatz in der Vergangenheit: Was hättest du gestern anders gemacht?"
+        }
       }
     },
     {
@@ -964,8 +1159,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Formulate a sentence using 'den Kunden' (Akkusativ) with the verb 'anrufen'.",
-        "modelAnswer": "Ich rufe am Nachmittag den neuen Kunden an."
+        "prompt": "",
+        "modelAnswer": "Ich rufe am Nachmittag den neuen Kunden an.",
+        "instruction": {
+          "en": "Formulate a sentence using 'den Kunden' (Akkusativ) with the verb 'anrufen'.",
+          "de": "Bilde einen Satz mit 'den Kunden' (Akkusativ) und dem Verb 'anrufen'."
+        }
       }
     },
     {
@@ -1026,8 +1225,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "State two personal habits you practice to live sustainably.",
-        "modelAnswer": "Ich fahre meistens mit dem Fahrrad und trenne meinen Müll sehr sorgfältig."
+        "prompt": "",
+        "modelAnswer": "Ich fahre meistens mit dem Fahrrad und trenne meinen Müll sehr sorgfältig.",
+        "instruction": {
+          "en": "State two personal habits you practice to live sustainably.",
+          "de": "Nenne zwei Gewohnheiten, mit denen du nachhaltig lebst."
+        }
       }
     },
     {
@@ -1082,8 +1285,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Formulate a sentence stating that you have gathered five years of professional experience in sales.",
-        "modelAnswer": "Ich habe bereits fünf Jahre Berufserfahrung im Vertrieb gesammelt."
+        "prompt": "",
+        "modelAnswer": "Ich habe bereits fünf Jahre Berufserfahrung im Vertrieb gesammelt.",
+        "instruction": {
+          "en": "Formulate a sentence stating that you have gathered five years of professional experience in sales.",
+          "de": "Bilde einen Satz: Du hast fünf Jahre Berufserfahrung im Verkauf gesammelt."
+        }
       }
     },
     {
@@ -1144,8 +1351,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Express an opinion regarding whether social media is beneficial or harmful.",
-        "modelAnswer": "Meiner Ansicht nach sind soziale Medien nützlich für Kontakte, aber man muss vorsichtig mit Daten umgehen."
+        "prompt": "",
+        "modelAnswer": "Meiner Ansicht nach sind soziale Medien nützlich für Kontakte, aber man muss vorsichtig mit Daten umgehen.",
+        "instruction": {
+          "en": "Express an opinion regarding whether social media is beneficial or harmful.",
+          "de": "Sag deine Meinung: Sind soziale Medien nützlich oder schädlich?"
+        }
       }
     },
     {
@@ -1196,8 +1407,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Read: 'Experten fordern autofreie Innenstädte, um Emissionen zu senken und die Lebensqualität zu steigern.' What is the stated goal of car-free city centers?",
-        "modelAnswer": "Das Ziel ist die Senkung von Emissionen und die Steigerung der Lebensqualität."
+        "prompt": "Experten fordern autofreie Innenstädte, um Emissionen zu senken und die Lebensqualität zu steigern.",
+        "modelAnswer": "Das Ziel ist die Senkung von Emissionen und die Steigerung der Lebensqualität.",
+        "instruction": {
+          "en": "Read the text. What is the stated goal of car-free city centers?",
+          "de": "Lies den Text. Welches Ziel haben autofreie Innenstädte laut Text?"
+        }
       }
     },
     {
@@ -1248,8 +1463,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Summarize a speaker's statement when they say: 'Für mich kommt eine Reise ohne Bahn nicht mehr infrage, weil mir der Klimaschutz am Herzen liegt.'",
-        "modelAnswer": "Der Sprecher reist aus Gründen des Klimaschutzes nur noch mit der Bahn."
+        "prompt": "Für mich kommt eine Reise ohne Bahn nicht mehr infrage, weil mir der Klimaschutz am Herzen liegt.",
+        "modelAnswer": "Der Sprecher reist aus Gründen des Klimaschutzes nur noch mit der Bahn.",
+        "instruction": {
+          "en": "Summarize the speaker's statement.",
+          "de": "Fasse die Aussage des Sprechers zusammen."
+        }
       }
     },
     {
@@ -1284,8 +1503,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Write a three-sentence balanced reflection on remote learning (home schooling) discussing one advantage and one disadvantage.",
-        "modelAnswer": "Ein großer Vorteil des Online-Lernens ist die zeitliche Flexibilität der Schüler. Allerdings fehlt vielen der direkte persönliche Kontakt zu Lehrern und Mitschülern. Daher halte ich eine Kombination aus Präsenz- und Fernunterricht für ideal."
+        "prompt": "",
+        "modelAnswer": "Ein großer Vorteil des Online-Lernens ist die zeitliche Flexibilität der Schüler. Allerdings fehlt vielen der direkte persönliche Kontakt zu Lehrern und Mitschülern. Daher halte ich eine Kombination aus Präsenz- und Fernunterricht für ideal.",
+        "instruction": {
+          "en": "Write a three-sentence balanced reflection on remote learning (home schooling) discussing one advantage and one disadvantage.",
+          "de": "Schreib drei Sätze mit einer ausgewogenen Einschätzung zum Fernunterricht (Homeschooling): Nenne einen Vorteil und einen Nachteil."
+        }
       }
     },
     {
@@ -1340,8 +1563,12 @@
       "track": "generic",
       "type": "free_text",
       "content": {
-        "prompt": "Formulate an introductory opening statement announcing your presentation on 'Shopping Online vs. Retail Stores'.",
-        "modelAnswer": "Das Thema meiner heutigen Präsentation lautet 'Online einkaufen oder im Geschäft vor Ort'. Ich möchte Ihnen die Vor- und Nachteile beider Möglichkeiten vorstellen."
+        "prompt": "",
+        "modelAnswer": "Das Thema meiner heutigen Präsentation lautet 'Online einkaufen oder im Geschäft vor Ort'. Ich möchte Ihnen die Vor- und Nachteile beider Möglichkeiten vorstellen.",
+        "instruction": {
+          "en": "Formulate an introductory opening statement announcing your presentation on 'Shopping Online vs. Retail Stores'.",
+          "de": "Formuliere einen Einstieg, mit dem du deine Präsentation zum Thema 'Online-Shopping oder Einkaufen im Geschäft' ankündigst."
+        }
       }
     }
   ],
@@ -1403,7 +1630,9 @@
         "level": "B1",
         "title": "Reasons, time and wishes",
         "description": "Link ideas with causal, concessive and time clauses, use zu-infinitives and Konjunktiv II for wishes, with vocabulary for work and media.",
-        "difficultyRank": 1
+        "difficultyRank": 1,
+        "titleDe": "Gründe, Zeit und Wünsche",
+        "descriptionDe": "Du verbindest Gedanken mit kausalen, konzessiven und temporalen Nebensätzen und benutzt zu-Infinitive und den Konjunktiv II für Wünsche, mit Wortschatz zu Arbeit und Medien."
       },
       "lessonIds": [
         "b1-infinitive-clauses-zu-um-zu",
@@ -1421,7 +1650,9 @@
         "level": "B1",
         "title": "Relative clauses and fixed prepositions",
         "description": "Build relative clauses, use verbs with fixed prepositions and weak masculine nouns, and follow interviews on the environment and other topics.",
-        "difficultyRank": 2
+        "difficultyRank": 2,
+        "titleDe": "Relativsätze und feste Präpositionen",
+        "descriptionDe": "Du bildest Relativsätze, benutzt Verben mit festen Präpositionen und die n-Deklination und verstehst Interviews zur Umwelt und zu anderen Themen."
       },
       "lessonIds": [
         "b1-listening-interviews-podcasts",
@@ -1439,7 +1670,9 @@
         "level": "B1",
         "title": "Passive voice and hypotheticals",
         "description": "Use the passive, including with modal verbs, talk about past unreal conditions, and connect ideas with two-part connectors.",
-        "difficultyRank": 3
+        "difficultyRank": 3,
+        "titleDe": "Passiv und irreale Bedingungen",
+        "descriptionDe": "Du benutzt das Passiv, auch mit Modalverben, sprichst über irreale Bedingungen in der Vergangenheit und verbindest Gedanken mit zweiteiligen Konnektoren."
       },
       "lessonIds": [
         "b1-passive-voice-modal-verbs",
@@ -1455,7 +1688,9 @@
         "level": "B1",
         "title": "Arguing and presenting",
         "description": "Read argumentative articles, give a structured presentation and write a forum post that argues a position.",
-        "difficultyRank": 4
+        "difficultyRank": 4,
+        "titleDe": "Argumentieren und präsentieren",
+        "descriptionDe": "Du liest argumentative Artikel, hältst eine gut aufgebaute Präsentation und schreibst einen Forumsbeitrag, in dem du eine Position vertrittst."
       },
       "lessonIds": [
         "b1-reading-argumentative-articles",

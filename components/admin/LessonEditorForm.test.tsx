@@ -4,7 +4,7 @@ import { LessonEditorForm } from './LessonEditorForm';
 
 const trackStructureResponse = [
   {
-    milestone: { id: 'm1', title: 'Milestone 1', description: null, difficultyRank: 1 },
+    milestone: { id: 'm1', title: 'Milestone 1', titleDe: 'Meilenstein 1', description: null, difficultyRank: 1 },
     lessons: [{ id: 'a1-other', title: 'Other Lesson' }],
   },
   {
@@ -39,8 +39,11 @@ describe('LessonEditorForm', () => {
           sourceLevel: 'A1',
           skill: 'grammar',
           title: 'Other Lesson',
+          titleDe: 'Andere Lektion',
           explanation: null,
+          explanationDe: null,
           examples: null,
+          examplesDe: null,
           exercises: [],
           prerequisiteIds: [],
         }}
@@ -61,7 +64,8 @@ describe('LessonEditorForm', () => {
     await screen.findByRole('option', { name: '1. Milestone 1' });
 
     fireEvent.change(screen.getByPlaceholderText('Slug'), { target: { value: 'new-lesson' } });
-    fireEvent.change(screen.getByPlaceholderText('Title'), { target: { value: 'New Lesson' } });
+    fireEvent.change(screen.getByLabelText('Title (English)'), { target: { value: 'New Lesson' } });
+    fireEvent.change(screen.getByLabelText('Title (German)'), { target: { value: 'Neue Lektion' } });
     fireEvent.change(screen.getByLabelText('Milestone'), { target: { value: 'm1' } });
     fireEvent.click(screen.getByText('Save'));
 
@@ -69,7 +73,16 @@ describe('LessonEditorForm', () => {
     const createCall = (fetch as any).mock.calls.find((c: any[]) => c[0] === '/api/admin/curriculum/lessons');
     expect(createCall[1].method).toBe('POST');
     const body = JSON.parse(createCall[1].body);
-    expect(body).toMatchObject({ slug: 'new-lesson', title: 'New Lesson', placement: { milestoneId: 'm1' } });
+    expect(body).toMatchObject({
+      slug: 'new-lesson',
+      title: 'New Lesson',
+      titleDe: 'Neue Lektion',
+      explanation: null,
+      explanationDe: null,
+      examples: null,
+      examplesDe: null,
+      placement: { milestoneId: 'm1' },
+    });
   });
 
   it('shows an error and does not call onSaved when the save request fails', async () => {
@@ -82,7 +95,8 @@ describe('LessonEditorForm', () => {
     await screen.findByRole('option', { name: '1. Milestone 1' });
 
     fireEvent.change(screen.getByPlaceholderText('Slug'), { target: { value: 'new-lesson' } });
-    fireEvent.change(screen.getByPlaceholderText('Title'), { target: { value: 'New Lesson' } });
+    fireEvent.change(screen.getByLabelText('Title (English)'), { target: { value: 'New Lesson' } });
+    fireEvent.change(screen.getByLabelText('Title (German)'), { target: { value: 'Neue Lektion' } });
     fireEvent.change(screen.getByLabelText('Milestone'), { target: { value: 'm1' } });
     fireEvent.click(screen.getByText('Save'));
 
@@ -121,8 +135,11 @@ describe('LessonEditorForm', () => {
           sourceLevel: 'A1',
           skill: 'grammar',
           title: 'Edited Lesson',
+          titleDe: 'Bearbeitete Lektion',
           explanation: null,
+          explanationDe: null,
           examples: null,
+          examplesDe: null,
           exercises: [],
           prerequisiteIds: ['a1-other'],
         }}
@@ -137,5 +154,34 @@ describe('LessonEditorForm', () => {
     (fetch as any).mockResolvedValue({ ok: false, status: 500, json: async () => ({}) });
     render(<LessonEditorForm mode="create" initialTrack="generic" initialSourceLevel="A1" onSaved={vi.fn()} />);
     expect(await screen.findByRole('alert')).toHaveTextContent('Failed to load the track structure');
+  });
+
+  it('sends both languages of the explanation and every example', async () => {
+    (fetch as any).mockImplementation((url: string) => {
+      if (url.startsWith('/api/curriculum/tracks')) return Promise.resolve({ ok: true, json: async () => trackStructureResponse });
+      return Promise.resolve({ ok: true, json: async () => ({ id: 'a1-new-lesson' }) });
+    });
+    render(<LessonEditorForm mode="create" initialTrack="generic" initialSourceLevel="A1" onSaved={vi.fn()} />);
+    await screen.findByRole('option', { name: '1. Milestone 1' });
+
+    fireEvent.change(screen.getByLabelText('Title (English)'), { target: { value: 'T' } });
+    fireEvent.change(screen.getByLabelText('Title (German)'), { target: { value: 'T-de' } });
+    fireEvent.change(screen.getByLabelText('Explanation (English)'), { target: { value: 'E' } });
+    fireEvent.change(screen.getByLabelText('Explanation (German)'), { target: { value: 'E-de' } });
+    fireEvent.click(screen.getByText('Add example'));
+    fireEvent.change(screen.getByLabelText('Example 1 (English)'), { target: { value: 'Ex' } });
+    fireEvent.change(screen.getByLabelText('Example 1 (German)'), { target: { value: 'Bsp' } });
+    fireEvent.change(screen.getByLabelText('Milestone'), { target: { value: 'm1' } });
+    fireEvent.change(screen.getByPlaceholderText('Slug'), { target: { value: 's' } });
+    fireEvent.click(screen.getByText('Save'));
+
+    await waitFor(() => expect((fetch as any).mock.calls.some((c: any[]) => c[0] === '/api/admin/curriculum/lessons')).toBe(true));
+    const call = (fetch as any).mock.calls.find((c: any[]) => c[0] === '/api/admin/curriculum/lessons');
+    expect(JSON.parse(call[1].body)).toMatchObject({
+      explanation: 'E',
+      explanationDe: 'E-de',
+      examples: ['Ex'],
+      examplesDe: ['Bsp'],
+    });
   });
 });

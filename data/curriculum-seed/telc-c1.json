@@ -1,6 +1,6 @@
 {
-  "seedVersion": "4",
-  "formatVersion": 2,
+  "seedVersion": "6",
+  "formatVersion": 3,
   "track": "telc",
   "level": "C1",
   "lessons": [
@@ -10,9 +10,16 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "grammar",
-      "title": "Merkmale und Strukturen der Wissenschaftssprache",
-      "explanation": "Die Prüfung telc Deutsch C1 Hochschule prüft schwerpunktmäßig das Beherrschen der deutschen Wissenschaftssprache (*Language for Academic Purposes*).\nWesentliche Merkmale sind extreme Informationsverdichtung, Nominalisierungen, unpersönliche Ausdrucksweisen (Vermeidung des Pronomens 'ich') sowie das Zurücktreten des Agens zugunsten des Untersuchungsgegenstands.\nVerwendet werden passivische Strukturen, Reflexivkonstruktionen ('Es zeigt sich, dass...'), 'man'-Sätze und Funktionsverbgefüge.\nDie Sprache ist nüchtern, präzise, emotionslos und folgt einem standardisierten akademischen Register, das in Vorlesungen, Seminararbeiten und Fachpublikationen gefordert ist.\n",
+      "title": "Features and Structures of Academic German",
+      "explanation": "The telc Deutsch C1 Hochschule exam focuses on command of academic German (*Language for Academic Purposes*).\nIts main features are very dense information, nominalisation, impersonal expressions (avoiding the pronoun 'ich') and putting the object of study in the foreground rather than the person doing the action.\nIt uses passive structures, reflexive constructions ('Es zeigt sich, dass...'), sentences with 'man' and noun-verb phrases.\nThe language is sober, precise and unemotional, and follows a standardised academic register that is expected in lectures, seminar papers and specialist publications.\n",
       "examples": [
+        "Es konnte nachgewiesen werden, dass die Partikelkonzentration proportional zur Temperatur ansteigt.",
+        "Aus den erhobenen Daten lässt sich folgern, dass die Probanden unter Stress zu riskanteren Entscheidungen neigen.",
+        "Der vorliegende Beitrag unternimmt den Versuch, die Genese des Phänomens historisch-kritisch zu rekonstruieren."
+      ],
+      "titleDe": "Merkmale und Strukturen der Wissenschaftssprache",
+      "explanationDe": "Die Prüfung telc Deutsch C1 Hochschule prüft schwerpunktmäßig das Beherrschen der deutschen Wissenschaftssprache (*Language for Academic Purposes*).\nWesentliche Merkmale sind extreme Informationsverdichtung, Nominalisierungen, unpersönliche Ausdrucksweisen (Vermeidung des Pronomens 'ich') sowie das Zurücktreten des Agens zugunsten des Untersuchungsgegenstands.\nVerwendet werden passivische Strukturen, Reflexivkonstruktionen ('Es zeigt sich, dass...'), 'man'-Sätze und Funktionsverbgefüge.\nDie Sprache ist nüchtern, präzise, emotionslos und folgt einem standardisierten akademischen Register, das in Vorlesungen, Seminararbeiten und Fachpublikationen gefordert ist.\n",
+      "examplesDe": [
         "Es konnte nachgewiesen werden, dass die Partikelkonzentration proportional zur Temperatur ansteigt.",
         "Aus den erhobenen Daten lässt sich folgern, dass die Probanden unter Stress zu riskanteren Entscheidungen neigen.",
         "Der vorliegende Beitrag unternimmt den Versuch, die Genese des Phänomens historisch-kritisch zu rekonstruieren."
@@ -24,9 +31,17 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "grammar",
-      "title": "Gehobene Genitivpräpositionen in wissenschaftlichen Kontexten",
-      "explanation": "In wissenschaftlichen Texten und telc-Leseaufgaben treten komplexe Genitivpräpositionen auf, die logische Verhältnisse extrem kompakt abbilden.\nDazu gehören kausale und konsekutive Präpositionen ('kraft', 'mangels', 'infolge', 'aufgrund'), konzessive ('ungeachtet', 'trotz'), finale ('zwecks') sowie modale und lokale ('anhand', 'hinsichtlich', 'seitens', 'zugunsten', 'zulasten').\nIn Prüfungsaufgaben (insbesondere Sprachbausteine) wird exakt geprüft, ob die Kasusrektion (Genitiv) und die semantische Nuance beherrscht werden.\nEin Registerfehler wie die Verwendung des Dativs nach diesen Präpositionen führt zu Punktabzug.\n",
+      "title": "Formal Genitive Prepositions in Academic Contexts",
+      "explanation": "Academic texts and telc reading tasks contain complex genitive prepositions that express logical relationships very compactly.\nThese include prepositions of cause and consequence ('kraft', 'mangels', 'infolge', 'aufgrund'), of concession ('ungeachtet', 'trotz'), of purpose ('zwecks') and of manner and reference ('anhand', 'hinsichtlich', 'seitens', 'zugunsten', 'zulasten').\nExam tasks (especially the Sprachbausteine) check precisely whether you have mastered the case they govern (genitive) and their shade of meaning.\nA register error such as using the dative after these prepositions costs points.\n",
       "examples": [
+        "Mangels hinreichender Belege musste das Verfahren vorläufig ausgesetzt werden.",
+        "Ungeachtet der gravierenden methodischen Defizite wurden die Resultate publiziert.",
+        "Die Reformen gingen eindeutig zulasten der einkommensschwachen Bevölkerungsschichten.",
+        "Hinsichtlich der Interpretation der Rohdaten herrscht im Forscherteam Uneinigkeit."
+      ],
+      "titleDe": "Gehobene Genitivpräpositionen in wissenschaftlichen Kontexten",
+      "explanationDe": "In wissenschaftlichen Texten und telc-Leseaufgaben treten komplexe Genitivpräpositionen auf, die logische Verhältnisse extrem kompakt abbilden.\nDazu gehören kausale und konsekutive Präpositionen ('kraft', 'mangels', 'infolge', 'aufgrund'), konzessive ('ungeachtet', 'trotz'), finale ('zwecks') sowie modale und lokale ('anhand', 'hinsichtlich', 'seitens', 'zugunsten', 'zulasten').\nIn Prüfungsaufgaben (insbesondere Sprachbausteine) wird exakt geprüft, ob die Kasusrektion (Genitiv) und die semantische Nuance beherrscht werden.\nEin Registerfehler wie die Verwendung des Dativs nach diesen Präpositionen führt zu Punktabzug.\n",
+      "examplesDe": [
         "Mangels hinreichender Belege musste das Verfahren vorläufig ausgesetzt werden.",
         "Ungeachtet der gravierenden methodischen Defizite wurden die Resultate publiziert.",
         "Die Reformen gingen eindeutig zulasten der einkommensschwachen Bevölkerungsschichten.",
@@ -39,9 +54,16 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "grammar",
-      "title": "Komplexe Konditionalsatzgefüge und Irrealis",
-      "explanation": "Für wissenschaftliche Hypothesenbildungen und kontrafaktische Argumentationen verlangt telc C1 das Beherrschen variabler Konditionalstrukturen.\nNeben Standardgefügen mit 'wenn/falls' werden hypothetische Konnektoren wie 'vorausgesetzt, dass', 'es sei denn, (dass)', 'unter der Bedingung, dass' und 'im Falle, dass' eingesetzt.\nZudem können Konditionalsätze uneingeleitet mit Verb-Erst-Stellung formuliert werden ('Hätte man die Kontrollgruppe früher getestet, wären die Verzerrungen aufgefallen').\nIm irrealen Bereich der Vergangenheit ist die korrekte Bildung des Konjunktivs II (Plusquamperfekt mit 'wäre/hätte gewesen/getan' oder Passiv 'wäre... worden') unverzichtbar.\n",
+      "title": "Complex Conditional Sentences and Unreal Conditions",
+      "explanation": "For forming academic hypotheses and arguing counterfactually, telc C1 expects command of varied conditional structures.\nBesides standard sentences with 'wenn/falls', hypothetical connectors are used, such as 'vorausgesetzt, dass' (provided that), 'es sei denn, (dass)' (unless), 'unter der Bedingung, dass' (on condition that) and 'im Falle, dass' (in the event that).\nConditional clauses can also be formed without a conjunction, with the verb first ('Hätte man die Kontrollgruppe früher getestet, wären die Verzerrungen aufgefallen').\nFor unreal conditions in the past, forming the Konjunktiv II correctly is essential (past perfect with 'wäre/hätte gewesen/getan', or the passive 'wäre... worden').\n",
       "examples": [
+        "Sollten die Grenzwerte erneut überschritten werden, träte unverzüglich ein Notfallplan in Kraft.",
+        "Die Ergebnisse wären kaum reproduzierbar gewesen, hätte man nicht strikte Laborstandards eingehalten.",
+        "Die Zulassung wird erteilt, es sei denn, die klinische Studie offenbart signifikante Nebenwirkungen."
+      ],
+      "titleDe": "Komplexe Konditionalsatzgefüge und Irrealis",
+      "explanationDe": "Für wissenschaftliche Hypothesenbildungen und kontrafaktische Argumentationen verlangt telc C1 das Beherrschen variabler Konditionalstrukturen.\nNeben Standardgefügen mit 'wenn/falls' werden hypothetische Konnektoren wie 'vorausgesetzt, dass', 'es sei denn, (dass)', 'unter der Bedingung, dass' und 'im Falle, dass' eingesetzt.\nZudem können Konditionalsätze uneingeleitet mit Verb-Erst-Stellung formuliert werden ('Hätte man die Kontrollgruppe früher getestet, wären die Verzerrungen aufgefallen').\nIm irrealen Bereich der Vergangenheit ist die korrekte Bildung des Konjunktivs II (Plusquamperfekt mit 'wäre/hätte gewesen/getan' oder Passiv 'wäre... worden') unverzichtbar.\n",
+      "examplesDe": [
         "Sollten die Grenzwerte erneut überschritten werden, träte unverzüglich ein Notfallplan in Kraft.",
         "Die Ergebnisse wären kaum reproduzierbar gewesen, hätte man nicht strikte Laborstandards eingehalten.",
         "Die Zulassung wird erteilt, es sei denn, die klinische Studie offenbart signifikante Nebenwirkungen."
@@ -53,9 +75,17 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "vocabulary",
-      "title": "Wissenschaftliche Funktionsverbgefüge und Kollokationen",
-      "explanation": "Im universitären Bereich existiert ein fest umrissenes Korpus von Funktionsverbgefügen, das für das Textverständnis und die eigene Textproduktion in telc C1 Hochschule verbindlich ist.\nWissenschaftler 'stellen Hypothesen auf', 'ziehen Schlüsse', 'treffen Annahmen', 'erbringen Nachweise', 'üben Kritik', 'leisten einen Beitrag' und 'setzen sich mit Theorien auseinander'.\nEbenso zentral sind Gefüge der Ergebnisdarstellung: 'Ergebnisse erzielen', 'Erkenntnisse gewinnen', 'in Widerspruch stehen zu' und 'Aufschluss geben über'.\nDas Beherrschen dieser Ausdrücke entscheidet im Subtest 'Schriftlicher Ausdruck' über das Erreichen der höchsten Kriterienbande im Wortschatzspektrum.\n",
+      "title": "Academic Noun-Verb Phrases and Collocations",
+      "explanation": "University German has a well-defined set of noun-verb phrases that you must know, both to understand texts and to write your own in telc C1 Hochschule.\nResearchers 'stellen Hypothesen auf' (put forward hypotheses), 'ziehen Schlüsse' (draw conclusions), 'treffen Annahmen' (make assumptions), 'erbringen Nachweise' (provide evidence), 'üben Kritik' (criticise), 'leisten einen Beitrag' (make a contribution) and 'setzen sich mit Theorien auseinander' (engage with theories).\nPhrases for presenting results are just as central: 'Ergebnisse erzielen' (achieve results), 'Erkenntnisse gewinnen' (gain insights), 'in Widerspruch stehen zu' (contradict) and 'Aufschluss geben über' (shed light on).\nIn the 'Schriftlicher Ausdruck' subtest, command of these expressions decides whether you reach the top band for range of vocabulary.\n",
       "examples": [
+        "Die Studie leistet einen maßgeblichen Beitrag zur Erforschung neurodegenerativer Erkrankungen.",
+        "Die vorliegenden Befunde stehen in eklatantem Widerspruch zu den Ergebnissen früherer Untersuchungen.",
+        "Anhand des Experiments konnte der Wissenschaftler den schlüssigen Nachweis für seine These erbringen.",
+        "Wir müssen über die Ursachen dieses Versagens Klarheit gewinnen."
+      ],
+      "titleDe": "Wissenschaftliche Funktionsverbgefüge und Kollokationen",
+      "explanationDe": "Im universitären Bereich existiert ein fest umrissenes Korpus von Funktionsverbgefügen, das für das Textverständnis und die eigene Textproduktion in telc C1 Hochschule verbindlich ist.\nWissenschaftler 'stellen Hypothesen auf', 'ziehen Schlüsse', 'treffen Annahmen', 'erbringen Nachweise', 'üben Kritik', 'leisten einen Beitrag' und 'setzen sich mit Theorien auseinander'.\nEbenso zentral sind Gefüge der Ergebnisdarstellung: 'Ergebnisse erzielen', 'Erkenntnisse gewinnen', 'in Widerspruch stehen zu' und 'Aufschluss geben über'.\nDas Beherrschen dieser Ausdrücke entscheidet im Subtest 'Schriftlicher Ausdruck' über das Erreichen der höchsten Kriterienbande im Wortschatzspektrum.\n",
+      "examplesDe": [
         "Die Studie leistet einen maßgeblichen Beitrag zur Erforschung neurodegenerativer Erkrankungen.",
         "Die vorliegenden Befunde stehen in eklatantem Widerspruch zu den Ergebnissen früherer Untersuchungen.",
         "Anhand des Experiments konnte der Wissenschaftler den schlüssigen Nachweis für seine These erbringen.",
@@ -68,9 +98,16 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "grammar",
-      "title": "Diskursmarker und logische Konnektoren im akademischen Text",
-      "explanation": "Zur Verknüpfung komplexer Gedankengänge in telc-Aufsätzen (Stellungnahmen) und Präsentationen sind präzise logische Konnektoren unverzichtbar.\nHierzu zählen mehrteilige Konnektoren ('nicht nur... sondern auch', 'weder... noch', 'einerseits... andererseits', 'je... desto', 'zwar... aber'), einschränkende Konnektoren ('insofern... als', 'insoweit') sowie explikative Ausdrücke ('nämlich', 'das heißt', 'sprich').\nBesondere Aufmerksamkeit verlangt die Wortstellung: Konjunktionaladverbien wie 'folglich', 'demnach', 'jedoch' oder 'nichtsdestotrotz' erfordern Inversion (Verb auf Position 2), während Subjunktionen das Verb ans Satzende verbannen.\n",
+      "title": "Discourse Markers and Logical Connectors in Academic Texts",
+      "explanation": "Precise logical connectors are essential for linking complex lines of thought in telc essays (written statements) and presentations.\nThese include two-part connectors ('nicht nur... sondern auch', 'weder... noch', 'einerseits... andererseits', 'je... desto', 'zwar... aber'), restrictive connectors ('insofern... als', 'insoweit') and explanatory expressions ('nämlich', 'das heißt', 'sprich').\nWord order needs particular attention: conjunctional adverbs such as 'folglich', 'demnach', 'jedoch' or 'nichtsdestotrotz' require inversion (verb in position 2), while subordinating conjunctions send the verb to the end of the clause.\n",
       "examples": [
+        "Die Theorie ist insofern problematisch, als sie empirisch kaum überprüfbar ist.",
+        "Einerseits birgt die Nanotechnologie immense Chancen, andererseits dürfen potenzielle toxikologische Risiken nicht bagatellisiert werden.",
+        "Das Experiment schlug fehl; folglich mussten sämtliche Prämissen revidiert werden."
+      ],
+      "titleDe": "Diskursmarker und logische Konnektoren im akademischen Text",
+      "explanationDe": "Zur Verknüpfung komplexer Gedankengänge in telc-Aufsätzen (Stellungnahmen) und Präsentationen sind präzise logische Konnektoren unverzichtbar.\nHierzu zählen mehrteilige Konnektoren ('nicht nur... sondern auch', 'weder... noch', 'einerseits... andererseits', 'je... desto', 'zwar... aber'), einschränkende Konnektoren ('insofern... als', 'insoweit') sowie explikative Ausdrücke ('nämlich', 'das heißt', 'sprich').\nBesondere Aufmerksamkeit verlangt die Wortstellung: Konjunktionaladverbien wie 'folglich', 'demnach', 'jedoch' oder 'nichtsdestotrotz' erfordern Inversion (Verb auf Position 2), während Subjunktionen das Verb ans Satzende verbannen.\n",
+      "examplesDe": [
         "Die Theorie ist insofern problematisch, als sie empirisch kaum überprüfbar ist.",
         "Einerseits birgt die Nanotechnologie immense Chancen, andererseits dürfen potenzielle toxikologische Risiken nicht bagatellisiert werden.",
         "Das Experiment schlug fehl; folglich mussten sämtliche Prämissen revidiert werden."
@@ -82,9 +119,17 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "vocabulary",
-      "title": "Abstrahierende Adjektive und wissenschaftliche Nomen",
-      "explanation": "Akademische Texte erfordern wertende und beschreibende Adjektive von hoher semantischer Schärfe.\nStatt einfacher Attribute ('gut', 'wichtig', 'schlecht') bedient sich der C1-Schreiber Begriffen wie 'fundiert', 'tragfähig', 'marginal', 'rudimentär', 'evident', 'kontrovers' oder 'signifikant'.\nEbenso werden Nominalabstrakta verwendet, um Prozesse präzise zu klassifizieren: 'Validität' (Gültigkeit), 'Reliabilität' (Zuverlässigkeit), 'Plausibilität' (Einleuchten), 'Ambivalenz' (Doppelwertigkeit) und 'Heterogenität' (Ungleichartigkeit).\nIn den telc-Teilen Leseverstehen und Sprachbausteine wird das genaue Verständnis dieser differenzierenden Lexeme geprüft.\n",
+      "title": "Abstract Adjectives and Academic Nouns",
+      "explanation": "Academic texts need evaluative and descriptive adjectives with very precise meanings.\nInstead of simple attributes ('gut', 'wichtig', 'schlecht'), a C1 writer uses words such as 'fundiert' (well-founded), 'tragfähig' (viable), 'marginal', 'rudimentär' (rudimentary), 'evident', 'kontrovers' (controversial) or 'signifikant' (significant).\nAbstract nouns are also used to classify processes precisely: 'Validität' (validity), 'Reliabilität' (reliability), 'Plausibilität' (plausibility), 'Ambivalenz' (ambivalence) and 'Heterogenität' (heterogeneity).\nThe telc Leseverstehen and Sprachbausteine sections test whether you understand these fine distinctions exactly.\n",
       "examples": [
+        "Die Validität der psychologischen Testbatterie wurde von Fachgutachtern bestätigt.",
+        "Es handelt sich hierbei um ein äußerst kontrovers diskutiertes Paradigma.",
+        "Die Unterschiede zwischen den Versuchsgruppen erwiesen sich als statistisch hochgradig signifikant.",
+        "Das Wissen über die Langzeitfolgen ist bislang lediglich rudimentär vorhanden."
+      ],
+      "titleDe": "Abstrahierende Adjektive und wissenschaftliche Nomen",
+      "explanationDe": "Akademische Texte erfordern wertende und beschreibende Adjektive von hoher semantischer Schärfe.\nStatt einfacher Attribute ('gut', 'wichtig', 'schlecht') bedient sich der C1-Schreiber Begriffen wie 'fundiert', 'tragfähig', 'marginal', 'rudimentär', 'evident', 'kontrovers' oder 'signifikant'.\nEbenso werden Nominalabstrakta verwendet, um Prozesse präzise zu klassifizieren: 'Validität' (Gültigkeit), 'Reliabilität' (Zuverlässigkeit), 'Plausibilität' (Einleuchten), 'Ambivalenz' (Doppelwertigkeit) und 'Heterogenität' (Ungleichartigkeit).\nIn den telc-Teilen Leseverstehen und Sprachbausteine wird das genaue Verständnis dieser differenzierenden Lexeme geprüft.\n",
+      "examplesDe": [
         "Die Validität der psychologischen Testbatterie wurde von Fachgutachtern bestätigt.",
         "Es handelt sich hierbei um ein äußerst kontrovers diskutiertes Paradigma.",
         "Die Unterschiede zwischen den Versuchsgruppen erwiesen sich als statistisch hochgradig signifikant.",
@@ -97,9 +142,16 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "grammar",
-      "title": "Das Gerundiv und modale Infinitivkonstruktionen",
-      "explanation": "Das Gerundiv (auch Partizipialkonstruktion mit 'zu' genannt) ist ein exklusives Merkmal gehobener Amts- und Wissenschaftssprache.\nEs wird gebildet aus: Artikel + 'zu' + Partizip I + Adjektivendung + Substantiv (z. B. 'die zu bewältigenden Aufgaben').\nSemantisch entspricht das Gerundiv stets einem Passiv mit Modalverb (müssen, sollen oder können): 'die Aufgaben, die bewältigt werden müssen/können'.\nAktivische Varianten mit 'haben + zu + Infinitiv' drücken eine Verpflichtung des Subjekts aus ('Die Universität hat die Standards zu wahren' = muss die Standards wahren).\nDiese Konstruktionen erlauben maximale syntaktische Ökonomie bei vollkommener semantischer Dichte.\n",
+      "title": "The Gerundive and Modal Infinitive Constructions",
+      "explanation": "The gerundive (also called the participle construction with 'zu') is a distinctive feature of formal official and academic German.\nIt is formed like this: article + 'zu' + present participle + adjective ending + noun (e.g. 'die zu bewältigenden Aufgaben').\nIn meaning, the gerundive always corresponds to a passive with a modal verb (müssen, sollen or können): 'die Aufgaben, die bewältigt werden müssen/können'.\nActive variants with 'haben + zu + infinitive' express an obligation of the subject ('Die Universität hat die Standards zu wahren' = the university must maintain the standards).\nThese constructions allow maximum grammatical economy while keeping the meaning fully dense.\n",
       "examples": [
+        "Die bei der Datenerhebung zu beachtenden Richtlinien sind im Anhang aufgeführt. (= guidelines that must be observed)",
+        "Der Prüfling hat vor Beginn der Klausur seinen Lichtbildausweis vorzuzeigen. (= must show)",
+        "Die kaum zu überschätzende Bedeutung dieser Entdeckung liegt auf der Hand."
+      ],
+      "titleDe": "Das Gerundiv und modale Infinitivkonstruktionen",
+      "explanationDe": "Das Gerundiv (auch Partizipialkonstruktion mit 'zu' genannt) ist ein exklusives Merkmal gehobener Amts- und Wissenschaftssprache.\nEs wird gebildet aus: Artikel + 'zu' + Partizip I + Adjektivendung + Substantiv (z. B. 'die zu bewältigenden Aufgaben').\nSemantisch entspricht das Gerundiv stets einem Passiv mit Modalverb (müssen, sollen oder können): 'die Aufgaben, die bewältigt werden müssen/können'.\nAktivische Varianten mit 'haben + zu + Infinitiv' drücken eine Verpflichtung des Subjekts aus ('Die Universität hat die Standards zu wahren' = muss die Standards wahren).\nDiese Konstruktionen erlauben maximale syntaktische Ökonomie bei vollkommener semantischer Dichte.\n",
+      "examplesDe": [
         "Die bei der Datenerhebung zu beachtenden Richtlinien sind im Anhang aufgeführt. (= Richtlinien, die beachtet werden müssen)",
         "Der Prüfling hat vor Beginn der Klausur seinen Lichtbildausweis vorzuzeigen. (= muss vorzeigen)",
         "Die kaum zu überschätzende Bedeutung dieser Entdeckung liegt auf der Hand."
@@ -111,9 +163,17 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "vocabulary",
-      "title": "Hochschulstrukturen, Studienorganisation und Fachtermini",
-      "explanation": "Für telc C1 Hochschule ist die exakte Beherrschung des universitären Fachwortschatzes conditio sine qua non.\nHierzu gehören administrative Institutionen und Abläufe (Immatrikulation, Exmatrikulation, Prüfungsordnung, Akkreditierung, Modulhandbuch, Regelstudienzeit), akademische Würden und Funktionen (Dekanat, Senat, Dozentur, Habilitation, Ordinarius) sowie Lehr- und Prüfungsformate (Vorlesung, Proseminar, Hauptseminar, Kolloquium, Tutorium, Klausur, Disputation).\nLernende müssen zudem in der Lage sein, Studienleistungen (Leistungspunkte nach ECTS, Notenspiegel, Transcript of Records) und Gremienbeschlüsse sprachlich präzise zu erfassen und zu diskutieren.\n",
+      "title": "University Structures, Study Organisation and Technical Terms",
+      "explanation": "For telc C1 Hochschule, an exact command of university vocabulary is an absolute must.\nThis includes administrative bodies and procedures (Immatrikulation - enrolment, Exmatrikulation - de-registration, Prüfungsordnung - examination regulations, Akkreditierung - accreditation, Modulhandbuch - module handbook, Regelstudienzeit - standard period of study), academic ranks and roles (Dekanat - dean's office, Senat - senate, Dozentur - lectureship, Habilitation, Ordinarius - full professor) and teaching and exam formats (Vorlesung - lecture, Proseminar, Hauptseminar - seminars, Kolloquium - colloquium, Tutorium - tutorial, Klausur - written exam, Disputation - oral defence).\nLearners must also be able to describe and discuss academic credit (ECTS credit points, grade distribution, Transcript of Records) and committee decisions precisely.\n",
       "examples": [
+        "Die Zulassung zum Masterstudium setzt den Nachweis von mindestens 180 ECTS-Punkten voraus.",
+        "Der Fakultätsrat beschloss eine grundlegende Reform der Promotionsordnung.",
+        "Im Rahmen des interdisziplinären Kolloquiums stellen Promovierende ihre Dissertationsprojekte vor.",
+        "Die Immatrikulationsfrist für das kommende Wintersemester endet am 15. Juli."
+      ],
+      "titleDe": "Hochschulstrukturen, Studienorganisation und Fachtermini",
+      "explanationDe": "Für telc C1 Hochschule ist die exakte Beherrschung des universitären Fachwortschatzes conditio sine qua non.\nHierzu gehören administrative Institutionen und Abläufe (Immatrikulation, Exmatrikulation, Prüfungsordnung, Akkreditierung, Modulhandbuch, Regelstudienzeit), akademische Würden und Funktionen (Dekanat, Senat, Dozentur, Habilitation, Ordinarius) sowie Lehr- und Prüfungsformate (Vorlesung, Proseminar, Hauptseminar, Kolloquium, Tutorium, Klausur, Disputation).\nLernende müssen zudem in der Lage sein, Studienleistungen (Leistungspunkte nach ECTS, Notenspiegel, Transcript of Records) und Gremienbeschlüsse sprachlich präzise zu erfassen und zu diskutieren.\n",
+      "examplesDe": [
         "Die Zulassung zum Masterstudium setzt den Nachweis von mindestens 180 ECTS-Punkten voraus.",
         "Der Fakultätsrat beschloss eine grundlegende Reform der Promotionsordnung.",
         "Im Rahmen des interdisziplinären Kolloquiums stellen Promovierende ihre Dissertationsprojekte vor.",
@@ -126,9 +186,15 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "reading",
-      "title": "telc Leseverstehen Teil 1: Globale Sachtextzuordnung",
-      "explanation": "Im Teil 1 des Leseverstehens der Prüfung telc C1 Hochschule lesen die Kandidaten einen längeren, anspruchsvollen Text (ca. 1000–1200 Wörter) aus dem wissenschaftlichen oder gesellschaftlichen Bereich.\nDie Aufgabe besteht darin, Zwischenüberschriften oder Kernaussagen den einzelnen Textabschnitten korrekt zuzuordnen (Matching-Format).\nErforderlich ist globales Textverständnis: Lernende dürfen sich nicht an isolierten Begriffen festklammern, sondern müssen die zentrale Funktion und These jedes Absatzes abstrahieren.\nAblenker (Distraktoren) enthalten häufig wörtliche Lexeme aus dem Text, spiegeln jedoch eine andere logische Ebene oder eine Falschaussage wider.\n",
+      "title": "telc Leseverstehen Teil 1: Global Matching in a Factual Text",
+      "explanation": "In Teil 1 of the reading section of telc C1 Hochschule, candidates read a longer, demanding text (about 1000–1200 words) on an academic or social topic.\nThe task is to match subheadings or key statements to the individual sections of the text (matching format).\nThis requires global understanding: learners must not cling to isolated terms but must work out the central function and claim of each paragraph.\nDistractors often contain words taken directly from the text but reflect a different logical level or a false statement.\n",
       "examples": [
+        "Section A analyses the origins of nanotechnology; heading: 'Historische Entwicklungslinien und Pioniere der Nanoforschung'.",
+        "Section B focuses on ecological risks; heading: 'Unerforschte Gefahrenpotenziale für marine Ökosysteme'."
+      ],
+      "titleDe": "telc Leseverstehen Teil 1: Globale Sachtextzuordnung",
+      "explanationDe": "Im Teil 1 des Leseverstehens der Prüfung telc C1 Hochschule lesen die Kandidaten einen längeren, anspruchsvollen Text (ca. 1000–1200 Wörter) aus dem wissenschaftlichen oder gesellschaftlichen Bereich.\nDie Aufgabe besteht darin, Zwischenüberschriften oder Kernaussagen den einzelnen Textabschnitten korrekt zuzuordnen (Matching-Format).\nErforderlich ist globales Textverständnis: Lernende dürfen sich nicht an isolierten Begriffen festklammern, sondern müssen die zentrale Funktion und These jedes Absatzes abstrahieren.\nAblenker (Distraktoren) enthalten häufig wörtliche Lexeme aus dem Text, spiegeln jedoch eine andere logische Ebene oder eine Falschaussage wider.\n",
+      "examplesDe": [
         "Abschnitt A analysiert die Genese der Nanotechnologie; Überschrift: 'Historische Entwicklungslinien und Pioniere der Nanoforschung'.",
         "Abschnitt B fokussiert ökologische Risiken; Überschrift: 'Unerforschte Gefahrenpotenziale für marine Ökosysteme'."
       ]
@@ -139,9 +205,14 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "reading",
-      "title": "telc Leseverstehen Teil 2: Textrekonstruktion und Kohärenzanalyse",
-      "explanation": "Teil 2 des telc-Leseverstehens erfordert die Rekonstruktion eines wissenschaftlichen Artikels, aus dem sechs bis acht Absätze oder Textpassagen entfernt wurden.\nDie Kandidaten müssen die herausgelösten Fragmente anhand syntaktischer, thematischer und logischer Bezüge wieder an die korrekten Leerstellen einfügen.\nErfolgsentscheidend ist das Identifizieren von Kohäsionsmitteln: Pronomen ('dieser', 'jene', 'solche'), Pronominaladverbien ('hieraus', 'demgegenüber'), Konnektoren ('dennoch', 'folglich') und lexikalischen Rekurrenzen (Synonyme, Oberbegriffe).\nJede Lücke muss sowohl mit dem vorausgehenden als auch mit dem nachfolgenden Satz nahtlos harmonieren.\n",
+      "title": "telc Leseverstehen Teil 2: Reconstructing a Text and Analysing Coherence",
+      "explanation": "Teil 2 of telc reading asks you to reconstruct an academic article from which six to eight paragraphs or passages have been removed.\nCandidates must put the removed fragments back into the right gaps, using grammatical, thematic and logical links.\nThe key to success is spotting cohesive devices: pronouns ('dieser', 'jene', 'solche'), prepositional adverbs ('hieraus', 'demgegenüber'), connectors ('dennoch', 'folglich') and repeated vocabulary (synonyms, umbrella terms).\nEach inserted passage must fit seamlessly with both the sentence before and the sentence after it.\n",
       "examples": [
+        "Previous sentence: 'Die Versuchsreihe brachte unerwartete Abweichungen hervor.' -> Matching fragment: 'Diese Anomalien ließen sich zunächst nicht mit den gängigen Modellen in Einklang bringen.' -> Next sentence: 'Erst eine Rekalibrierung der Sensoren schuf Abhilfe.'"
+      ],
+      "titleDe": "telc Leseverstehen Teil 2: Textrekonstruktion und Kohärenzanalyse",
+      "explanationDe": "Teil 2 des telc-Leseverstehens erfordert die Rekonstruktion eines wissenschaftlichen Artikels, aus dem sechs bis acht Absätze oder Textpassagen entfernt wurden.\nDie Kandidaten müssen die herausgelösten Fragmente anhand syntaktischer, thematischer und logischer Bezüge wieder an die korrekten Leerstellen einfügen.\nErfolgsentscheidend ist das Identifizieren von Kohäsionsmitteln: Pronomen ('dieser', 'jene', 'solche'), Pronominaladverbien ('hieraus', 'demgegenüber'), Konnektoren ('dennoch', 'folglich') und lexikalischen Rekurrenzen (Synonyme, Oberbegriffe).\nJede Lücke muss sowohl mit dem vorausgehenden als auch mit dem nachfolgenden Satz nahtlos harmonieren.\n",
+      "examplesDe": [
         "Vorausgehender Satz: 'Die Versuchsreihe brachte unerwartete Abweichungen hervor.' -> Passendes Fragment: 'Diese Anomalien ließen sich zunächst nicht mit den gängigen Modellen in Einklang bringen.' -> Folgesatz: 'Erst eine Rekalibrierung der Sensoren schuf Abhilfe.'"
       ]
     },
@@ -151,9 +222,14 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "reading",
-      "title": "telc Leseverstehen Teil 3: Selektiv- und Detailverstehen",
-      "explanation": "Im Teil 3 des Leseverstehens bearbeiten die Prüflinge einen komplexen Text aus einer wissenschaftlichen Zeitschrift oder dem Feuilleton, gefolgt von Multiple-Choice-Aufgaben (meist dreigliedrig: a, b, c).\nGeprüft wird hier kein oberflächliches Verständnis, sondern das präzise Erfassen von Argumentationsketten, Autorenabsichten, kausalen Zusammenhängen und feinen Einschränkungen.\nTypische Fehlerquellen sind Verallgemeinerungen ('immer', 'alle') in den Optionen, wenn der Text lediglich von Einzelfällen oder Tendenzen spricht, sowie das Verwechseln von Tatsachenbehauptungen mit rein zitierten Fremdmeinungen.\nDie Antworten müssen direkt aus dem Text belegbar sein.\n",
+      "title": "telc Leseverstehen Teil 3: Selective and Detailed Reading",
+      "explanation": "In Teil 3 of the reading section, candidates work on a complex text from an academic journal or the arts and culture pages of a newspaper, followed by multiple-choice tasks (usually three options: a, b, c).\nThis does not test superficial understanding but the precise grasp of chains of argument, the author's intentions, causal links and subtle restrictions.\nTypical sources of error are generalisations ('immer', 'alle') in the options when the text only talks about individual cases or trends, and confusing factual claims with other people's opinions that are merely quoted.\nThe answers must be directly supported by the text.\n",
       "examples": [
+        "Text: 'Obwohl einige Pilotprojekte ermutigende Einsparungen verzeichneten, warnen Ökonomen vor voreiligen Schlüssen hinsichtlich der Rentabilität im industriellen Maßstab.' -> Question: Wie bewerten Ökonomen die Technologie? -> Answer: Ihre Wirtschaftlichkeit für Großanlagen ist noch nicht gesichert."
+      ],
+      "titleDe": "telc Leseverstehen Teil 3: Selektiv- und Detailverstehen",
+      "explanationDe": "Im Teil 3 des Leseverstehens bearbeiten die Prüflinge einen komplexen Text aus einer wissenschaftlichen Zeitschrift oder dem Feuilleton, gefolgt von Multiple-Choice-Aufgaben (meist dreigliedrig: a, b, c).\nGeprüft wird hier kein oberflächliches Verständnis, sondern das präzise Erfassen von Argumentationsketten, Autorenabsichten, kausalen Zusammenhängen und feinen Einschränkungen.\nTypische Fehlerquellen sind Verallgemeinerungen ('immer', 'alle') in den Optionen, wenn der Text lediglich von Einzelfällen oder Tendenzen spricht, sowie das Verwechseln von Tatsachenbehauptungen mit rein zitierten Fremdmeinungen.\nDie Antworten müssen direkt aus dem Text belegbar sein.\n",
+      "examplesDe": [
         "Text: 'Obwohl einige Pilotprojekte ermutigende Einsparungen verzeichneten, warnen Ökonomen vor voreiligen Schlüssen hinsichtlich der Rentabilität im industriellen Maßstab.' -> Frage: Wie bewerten Ökonomen die Technologie? -> Ihre Wirtschaftlichkeit für Großanlagen ist noch nicht gesichert."
       ]
     },
@@ -163,9 +239,15 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "grammar",
-      "title": "telc Sprachbausteine: Grammatik und Kollokationen im Lückentext",
-      "explanation": "Der Prüfungsteil 'Sprachbausteine' bei telc C1 testet die Beherrschung grammatischer Rektionen, Kollokationen, Präpositionen und Konnektoren in einem zusammenhängenden wissenschaftsnahen Text.\nAn 20 bis 22 Lücken müssen Kandidaten aus jeweils vier Optionen (Multiple Choice) die einzig syntaktisch und semantisch stimmige Variante auswählen.\nGeprüft werden u. a. feste Verb-Präposition-Verbindungen ('plädieren für', 'zweifeln an'), Substantiv-Präposition-Kombinationen ('Skepsis gegenüber'), Adjektivrektionen ('empfänglich für'), Konjunktivformen sowie Pronominaladverbien.\nSchon minimale Bedeutungsnuancen oder formale Kasusanforderungen entscheiden über richtig oder falsch.\n",
+      "title": "telc Sprachbausteine: Grammar and Collocations in a Gap Text",
+      "explanation": "The 'Sprachbausteine' section of telc C1 tests your command of verb and preposition patterns, collocations, prepositions and connectors in a continuous, academic-style text.\nFor 20 to 22 gaps, candidates choose from four options (multiple choice) the only one that is correct in both grammar and meaning.\nThe section tests, among other things, fixed verb-preposition combinations ('plädieren für', 'zweifeln an'), noun-preposition combinations ('Skepsis gegenüber'), adjectives with fixed prepositions ('empfänglich für'), Konjunktiv forms and prepositional adverbs.\nEven tiny differences in meaning or formal case requirements decide between right and wrong.\n",
       "examples": [
+        "Gap sentence: 'Die Forscher plädierten mit Nachdruck ___ eine Reform der Förderkriterien.' -> Options: a) über, b) für, c) auf, d) nach -> Correct: b) für.",
+        "Gap sentence: 'Das Phänomen ist eng verknüpft ___ den globalen Klimaveränderungen.' -> Options: a) mit, b) an, c) zu, d) von -> Correct: a) mit."
+      ],
+      "titleDe": "telc Sprachbausteine: Grammatik und Kollokationen im Lückentext",
+      "explanationDe": "Der Prüfungsteil 'Sprachbausteine' bei telc C1 testet die Beherrschung grammatischer Rektionen, Kollokationen, Präpositionen und Konnektoren in einem zusammenhängenden wissenschaftsnahen Text.\nAn 20 bis 22 Lücken müssen Kandidaten aus jeweils vier Optionen (Multiple Choice) die einzig syntaktisch und semantisch stimmige Variante auswählen.\nGeprüft werden u. a. feste Verb-Präposition-Verbindungen ('plädieren für', 'zweifeln an'), Substantiv-Präposition-Kombinationen ('Skepsis gegenüber'), Adjektivrektionen ('empfänglich für'), Konjunktivformen sowie Pronominaladverbien.\nSchon minimale Bedeutungsnuancen oder formale Kasusanforderungen entscheiden über richtig oder falsch.\n",
+      "examplesDe": [
         "Lückensatz: 'Die Forscher plädierten mit Nachdruck ___ eine Reform der Förderkriterien.' -> Optionen: a) über, b) für, c) auf, d) nach -> Richtig: b) für.",
         "Lückensatz: 'Das Phänomen ist eng verknüpft ___ den globalen Klimaveränderungen.' -> Optionen: a) mit, b) an, c) zu, d) von -> Richtig: a) mit."
       ]
@@ -176,9 +258,14 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "listening",
-      "title": "telc Hörverstehen Teil 1: Vorlesungsnachvollzug und Mitschrift",
-      "explanation": "Im ersten Teil des Hörverstehens hören die Teilnehmenden einen Vortrag oder eine akademische Vorlesung (Dauer ca. 8–10 Minuten), die nur einmal vorgespielt wird.\nWährend des Hörens müssen auf einem strukturierten Aufgabenblatt Notizen ergänzt werden (Vervollständigung von Stichpunkten, Zuordnung von Thesen, Ergänzen von Kausalitäten).\nErforderlich ist das simultane Notieren bei gleichzeitigem Weiterhören; es dürfen keine vollständigen Sätze geschrieben werden, sondern prägnante Schlüsselwörter.\nDie Antworten verlangen orthografische und grammatische Genauigkeit bei fachspezifischen Begriffen.\n",
+      "title": "telc Hörverstehen Teil 1: Following a Lecture and Taking Notes",
+      "explanation": "In the first part of the listening section, candidates hear a talk or academic lecture (about 8–10 minutes) that is played only once.\nWhile listening, they complete notes on a structured task sheet (completing bullet points, matching claims, filling in causes and effects).\nYou need to write notes while you keep listening; do not write full sentences, only concise key words.\nThe answers require correct spelling and grammar for subject-specific terms.\n",
       "examples": [
+        "Lecture excerpt: 'Die zelluläre Alterung wird maßgeblich durch die Verkürzung der Telomere reguliert. Sobald eine kritische Grenze unterschritten ist, stellt die Zelle ihre Teilung ein.' -> Gap in the notes: Ursache für Stopp der Zellteilung: Verkürzung der ___ -> Answer: Telomere."
+      ],
+      "titleDe": "telc Hörverstehen Teil 1: Vorlesungsnachvollzug und Mitschrift",
+      "explanationDe": "Im ersten Teil des Hörverstehens hören die Teilnehmenden einen Vortrag oder eine akademische Vorlesung (Dauer ca. 8–10 Minuten), die nur einmal vorgespielt wird.\nWährend des Hörens müssen auf einem strukturierten Aufgabenblatt Notizen ergänzt werden (Vervollständigung von Stichpunkten, Zuordnung von Thesen, Ergänzen von Kausalitäten).\nErforderlich ist das simultane Notieren bei gleichzeitigem Weiterhören; es dürfen keine vollständigen Sätze geschrieben werden, sondern prägnante Schlüsselwörter.\nDie Antworten verlangen orthografische und grammatische Genauigkeit bei fachspezifischen Begriffen.\n",
+      "examplesDe": [
         "Vorlesungsausschnitt: 'Die zelluläre Alterung wird maßgeblich durch die Verkürzung der Telomere reguliert. Sobald eine kritische Grenze unterschritten ist, stellt die Zelle ihre Teilung ein.' -> Mitschrift-Lücke: Ursache für Stopp der Zellteilung: Verkürzung der ___ -> Lösung: Telomere."
       ]
     },
@@ -188,9 +275,14 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "listening",
-      "title": "telc Hörverstehen Teil 2: Fachgespräche und Experteninterviews",
-      "explanation": "Teil 2 präsentiert ein längeres Gespräch zwischen zwei oder mehreren Experten (z. B. Radiointerview, Fachdebatte) über wissenschaftliche, bildungspolitische oder technologische Fragestellungen.\nDie Aufgabenstellung umfasst zehn Multiple-Choice-Items mit jeweils drei Optionen (a, b, c).\nDie Hörer müssen in der Lage sein, differenzierte Meinungsnuancen, Werturteile, Übereinstimmungen und Kontroversen zwischen den Gesprächspartnern zuzuordnen.\nErschwerend sind Ellipsen, spontane Redeübernahmen, Unterbrechungen und metasprachliche Kommentare.\n",
+      "title": "telc Hörverstehen Teil 2: Expert Discussions and Interviews",
+      "explanation": "Teil 2 presents a longer conversation between two or more experts (e.g. a radio interview, a specialist debate) on scientific, educational-policy or technological questions.\nThe task consists of ten multiple-choice items, each with three options (a, b, c).\nListeners must be able to identify fine differences of opinion, value judgements, agreement and disagreement between the speakers.\nEllipsis, speakers suddenly taking over, interruptions and comments about the conversation itself make this harder.\n",
       "examples": [
+        "Interview: 'Journalist: Sind Sie mit der Reform zufrieden? - Forscherin: Nun, man hat an einigen Stellschrauben gedreht, aber der große Wurf ist ausgeblieben.' -> Question: Wie beurteilt die Forscherin die Reform? -> Answer: Als unzureichenden Teilschritt."
+      ],
+      "titleDe": "telc Hörverstehen Teil 2: Fachgespräche und Experteninterviews",
+      "explanationDe": "Teil 2 präsentiert ein längeres Gespräch zwischen zwei oder mehreren Experten (z. B. Radiointerview, Fachdebatte) über wissenschaftliche, bildungspolitische oder technologische Fragestellungen.\nDie Aufgabenstellung umfasst zehn Multiple-Choice-Items mit jeweils drei Optionen (a, b, c).\nDie Hörer müssen in der Lage sein, differenzierte Meinungsnuancen, Werturteile, Übereinstimmungen und Kontroversen zwischen den Gesprächspartnern zuzuordnen.\nErschwerend sind Ellipsen, spontane Redeübernahmen, Unterbrechungen und metasprachliche Kommentare.\n",
+      "examplesDe": [
         "Interview: 'Journalist: Sind Sie mit der Reform zufrieden? - Forscherin: Nun, man hat an einigen Stellschrauben gedreht, aber der große Wurf ist ausgeblieben.' -> Frage: Wie beurteilt die Forscherin die Reform? -> Als unzureichenden Teilschritt."
       ]
     },
@@ -200,9 +292,14 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "listening",
-      "title": "telc Hörverstehen Teil 3: Kurzvorträge und Sprecherzuordnung",
-      "explanation": "Im dritten Teil des Hörverstehens hören die Teilnehmenden mehrere kurze Statements (ca. 1–2 Minuten) verschiedener Personen zu einem gemeinsamen Rahmenthema (z. B. Studiengebühren, Künstliche Intelligenz in der Lehre).\nDie Aufgabe besteht darin, aus einer Liste von vorgegebenen Thesen diejenige auszuwählen, die mit der jeweiligen Sprecherposition übereinstimmt.\nDie Herausforderung liegt darin, dass viele Statements ambivalente Positionen enthalten und die gesuchte Aussage paraphrasiert ist.\nSchlüsselwörter aus den Vorgaben tauchen oft trügerisch in Statements auf, die eine gänzlich andere Schlussfolgerung ziehen.\n",
+      "title": "telc Hörverstehen Teil 3: Short Talks and Matching Speakers",
+      "explanation": "In the third part of the listening section, candidates hear several short statements (about 1–2 minutes each) by different people on a shared general topic (e.g. tuition fees, artificial intelligence in teaching).\nThe task is to choose, from a list of given statements, the one that matches each speaker's position.\nThe challenge is that many statements contain mixed positions and the statement you are looking for is paraphrased.\nKey words from the task often appear misleadingly in statements that reach a completely different conclusion.\n",
       "examples": [
+        "Speaker 1 talks about online lectures: 'Zwar spart man die Anfahrt, aber der fehlende direkte Diskurs mit den Lehrenden verarmt das akademische Lernen.' -> Match: Sprecher 1 bemängelt das Fehlen interaktiver Kommunikation im digitalen Format."
+      ],
+      "titleDe": "telc Hörverstehen Teil 3: Kurzvorträge und Sprecherzuordnung",
+      "explanationDe": "Im dritten Teil des Hörverstehens hören die Teilnehmenden mehrere kurze Statements (ca. 1–2 Minuten) verschiedener Personen zu einem gemeinsamen Rahmenthema (z. B. Studiengebühren, Künstliche Intelligenz in der Lehre).\nDie Aufgabe besteht darin, aus einer Liste von vorgegebenen Thesen diejenige auszuwählen, die mit der jeweiligen Sprecherposition übereinstimmt.\nDie Herausforderung liegt darin, dass viele Statements ambivalente Positionen enthalten und die gesuchte Aussage paraphrasiert ist.\nSchlüsselwörter aus den Vorgaben tauchen oft trügerisch in Statements auf, die eine gänzlich andere Schlussfolgerung ziehen.\n",
+      "examplesDe": [
         "Sprecher 1 spricht über Online-Vorlesungen: 'Zwar spart man die Anfahrt, aber der fehlende direkte Diskurs mit den Lehrenden verarmt das akademische Lernen.' -> Zuordnung: Sprecher 1 bemängelt das Fehlen interaktiver Kommunikation im digitalen Format."
       ]
     },
@@ -212,9 +309,15 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "writing",
-      "title": "telc Schriftlicher Ausdruck: Die wissenschaftliche Stellungnahme",
-      "explanation": "Die Textproduktion bei telc C1 Hochschule verlangt das Verfassen einer fundierten wissenschaftlichen Stellungnahme oder Erörterung (Umfang ca. 350–400 Wörter) auf der Basis von zwei kurzen Impulstexten/Zitaten.\nKandidaten müssen die in den Zitaten aufgeworfenen Thesen synthetisieren, gegeneinander abwägen und einen eigenen, klar begründeten Standpunkt entwickeln.\nBewertungskriterien sind: Aufgabenbewältigung (Bezug auf beide Positionen), Textaufbau/Kohärenz (Einleitung, Argumentation, Synthese), Wortschatzspektrum (akademisches Register, Funktionsverbgefüge) und grammatische Korrektheit (komplexe Satzstrukturen).\nEin rein persönlicher Erfahrungsbericht führt zu starkem Punktabzug; der Text muss durchgehend akademisch objektiviert bleiben.\n",
+      "title": "telc Schriftlicher Ausdruck: The Academic Position Paper",
+      "explanation": "The writing task in telc C1 Hochschule asks you to write a well-founded academic statement of position or discussion essay (about 350–400 words) based on two short stimulus texts or quotations.\nCandidates must synthesise the claims raised in the quotations, weigh them against each other and develop their own clearly reasoned position.\nThe assessment criteria are: task completion (reference to both positions), text structure and coherence (introduction, argument, synthesis), range of vocabulary (academic register, noun-verb phrases) and grammatical accuracy (complex sentence structures).\nA purely personal account of experience loses a lot of points; the text must stay academically objective throughout.\n",
       "examples": [
+        "Topic: 'Soll die Vergabe von Forschungsdrittmitteln an ethische Kriterien gekoppelt werden?'",
+        "Synthesis sentence: 'Wenngleich die Forschungsfreiheit ein hohes verfassungsrechtliches Gut darstellt, darf sie nicht als Freibrief für ethisch bedenkliche Entwicklungen missverstanden werden; eine kontrollierte Regulierung ist mithin unumgänglich.'"
+      ],
+      "titleDe": "telc Schriftlicher Ausdruck: Die wissenschaftliche Stellungnahme",
+      "explanationDe": "Die Textproduktion bei telc C1 Hochschule verlangt das Verfassen einer fundierten wissenschaftlichen Stellungnahme oder Erörterung (Umfang ca. 350–400 Wörter) auf der Basis von zwei kurzen Impulstexten/Zitaten.\nKandidaten müssen die in den Zitaten aufgeworfenen Thesen synthetisieren, gegeneinander abwägen und einen eigenen, klar begründeten Standpunkt entwickeln.\nBewertungskriterien sind: Aufgabenbewältigung (Bezug auf beide Positionen), Textaufbau/Kohärenz (Einleitung, Argumentation, Synthese), Wortschatzspektrum (akademisches Register, Funktionsverbgefüge) und grammatische Korrektheit (komplexe Satzstrukturen).\nEin rein persönlicher Erfahrungsbericht führt zu starkem Punktabzug; der Text muss durchgehend akademisch objektiviert bleiben.\n",
+      "examplesDe": [
         "Thema: 'Soll die Vergabe von Forschungsdrittmitteln an ethische Kriterien gekoppelt werden?'",
         "Synthesesatz: 'Wenngleich die Forschungsfreiheit ein hohes verfassungsrechtliches Gut darstellt, darf sie nicht als Freibrief für ethisch bedenkliche Entwicklungen missverstanden werden; eine kontrollierte Regulierung ist mithin unumgänglich.'"
       ]
@@ -225,9 +328,16 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "writing",
-      "title": "Grafik- und Datenanalyse im akademischen Kontext",
-      "explanation": "Das Beschreiben und Interpretieren statistischer Schaubilder (Balkendiagramme, Kurvendiagramme, Kreisdiagramme) ist ein integraler Bestandteil wissenschaftlicher Arbeiten und Prüfungsaufgaben.\nErforderlich ist eine dreigliedrige Struktur: 1. Einleitung (Thema, Quelle, Erhebungszeitraum, Maßeinheiten), 2. Detaillierte Befundbeschreibung (Extremwerte, Rangfolgen, signifikante Trends, Wendepunkte), 3. Interpretation und Hypothesenbildung bezüglich der Ursachen.\nZu verwenden ist ein spezifischer Wortschatz: 'einen Anstieg verzeichnen', 'stagnieren', 'kontinuierlich abfallen', 'im Vergleich zu', 'den Spitzenplatz einnehmen' und 'die Diskrepanz verdeutlichen'.\nWichtig: Reine Zahlenaufzählungen sind ungenügend; Daten müssen in sprachlich variable Vergleiche überführt werden.\n",
+      "title": "Analysing Charts and Data in an Academic Context",
+      "explanation": "Describing and interpreting statistical charts (bar charts, line graphs, pie charts) is an integral part of academic work and exam tasks.\nA three-part structure is required: 1. Introduction (topic, source, survey period, units of measurement), 2. Detailed description of the findings (highest and lowest values, rankings, significant trends, turning points), 3. Interpretation and hypotheses about the causes.\nUse specific vocabulary: 'einen Anstieg verzeichnen' (record an increase), 'stagnieren' (stagnate), 'kontinuierlich abfallen' (fall steadily), 'im Vergleich zu' (compared with), 'den Spitzenplatz einnehmen' (take first place) and 'die Diskrepanz verdeutlichen' (show the gap).\nImportant: simply listing numbers is not enough; data must be turned into comparisons with varied wording.\n",
       "examples": [
+        "Dem Schaubild des Statistischen Bundesamtes lässt sich entnehmen, dass die Zahl der Studienanfänger im Fach Informatik im vergangenen Jahrzehnt um knapp 40 Prozent gestiegen ist.",
+        "Während die Absolventenzahlen in den Ingenieurwissenschaften stagnieren, ist in den Biowissenschaften ein sprunghafter Zuwachs zu beobachten.",
+        "An der Spitze der Skala rangieren skandinavische Länder, wohingegen Deutschland im Mittelfeld verharrt."
+      ],
+      "titleDe": "Grafik- und Datenanalyse im akademischen Kontext",
+      "explanationDe": "Das Beschreiben und Interpretieren statistischer Schaubilder (Balkendiagramme, Kurvendiagramme, Kreisdiagramme) ist ein integraler Bestandteil wissenschaftlicher Arbeiten und Prüfungsaufgaben.\nErforderlich ist eine dreigliedrige Struktur: 1. Einleitung (Thema, Quelle, Erhebungszeitraum, Maßeinheiten), 2. Detaillierte Befundbeschreibung (Extremwerte, Rangfolgen, signifikante Trends, Wendepunkte), 3. Interpretation und Hypothesenbildung bezüglich der Ursachen.\nZu verwenden ist ein spezifischer Wortschatz: 'einen Anstieg verzeichnen', 'stagnieren', 'kontinuierlich abfallen', 'im Vergleich zu', 'den Spitzenplatz einnehmen' und 'die Diskrepanz verdeutlichen'.\nWichtig: Reine Zahlenaufzählungen sind ungenügend; Daten müssen in sprachlich variable Vergleiche überführt werden.\n",
+      "examplesDe": [
         "Dem Schaubild des Statistischen Bundesamtes lässt sich entnehmen, dass die Zahl der Studienanfänger im Fach Informatik im vergangenen Jahrzehnt um knapp 40 Prozent gestiegen ist.",
         "Während die Absolventenzahlen in den Ingenieurwissenschaften stagnieren, ist in den Biowissenschaften ein sprunghafter Zuwachs zu beobachten.",
         "An der Spitze der Skala rangieren skandinavische Länder, wohingegen Deutschland im Mittelfeld verharrt."
@@ -239,9 +349,16 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "speaking",
-      "title": "telc Mündliche Prüfung Teil 1A: Die akademische Präsentation",
-      "explanation": "Im Prüfungsteil 1A der mündlichen telc C1-Prüfung halten die Kandidaten einen ca. 3-minütigen, frei gesprochenen Vortrag zu einem komplexen, kontroversen Thema (Auswahl aus zwei Themen während der Vorbereitungszeit).\nGefordert ist eine professionelle Gliederung: Einleitung mit Problemaufriss und These, strukturierter Hauptteil mit Argumenten und Beispielen, Fazit mit persönlicher Stellungnahme und Ausblick.\nKandidaten dürfen nicht von ihren Notizen ablesen, sondern müssen Blickkontakt halten und rhetorische Mittel (Pausen, Betonungen) gezielt einsetzen.\nBewertet werden Flüssigkeit, Aussprache/Intonation, grammatische Korrektheit und das Einhalten akademischer Registerstandards.\n",
+      "title": "telc Mündliche Prüfung Teil 1A: The Academic Presentation",
+      "explanation": "In Teil 1A of the telc C1 oral exam, candidates give a talk of about 3 minutes, speaking freely, on a complex and controversial topic (chosen from two topics during the preparation time).\nA professional structure is required: an introduction that outlines the problem and states a thesis, a structured main part with arguments and examples, and a conclusion with a personal position and an outlook.\nCandidates must not read from their notes; they must keep eye contact and make deliberate use of rhetorical devices (pauses, emphasis).\nFluency, pronunciation/intonation, grammatical accuracy and adherence to academic register are assessed.\n",
       "examples": [
+        "Presentation topic: 'Sollte die Veröffentlichung wissenschaftlicher Studien ausschließlich Open Access erfolgen?'",
+        "Introduction: 'Sehr geehrte Prüferinnen, lieber Prüfungspartner, ich möchte mich in meinem heutigen Vortrag mit der Frage befassen, ob wissenschaftliche Erkenntnisse als öffentliches Gut frei zugänglich sein müssen.'",
+        "Conclusion: 'Zusammenfassend plädiere ich für eine verpflichtende Open-Access-Strategie, um den Wissenstransfer in Schwellenländer nicht länger durch Bezahlschranken zu blockieren.'"
+      ],
+      "titleDe": "telc Mündliche Prüfung Teil 1A: Die akademische Präsentation",
+      "explanationDe": "Im Prüfungsteil 1A der mündlichen telc C1-Prüfung halten die Kandidaten einen ca. 3-minütigen, frei gesprochenen Vortrag zu einem komplexen, kontroversen Thema (Auswahl aus zwei Themen während der Vorbereitungszeit).\nGefordert ist eine professionelle Gliederung: Einleitung mit Problemaufriss und These, strukturierter Hauptteil mit Argumenten und Beispielen, Fazit mit persönlicher Stellungnahme und Ausblick.\nKandidaten dürfen nicht von ihren Notizen ablesen, sondern müssen Blickkontakt halten und rhetorische Mittel (Pausen, Betonungen) gezielt einsetzen.\nBewertet werden Flüssigkeit, Aussprache/Intonation, grammatische Korrektheit und das Einhalten akademischer Registerstandards.\n",
+      "examplesDe": [
         "Präsentationsthema: 'Sollte die Veröffentlichung wissenschaftlicher Studien ausschließlich Open Access erfolgen?'",
         "Einleitung: 'Sehr geehrte Prüferinnen, lieber Prüfungspartner, ich möchte mich in meinem heutigen Vortrag mit der Frage befassen, ob wissenschaftliche Erkenntnisse als öffentliches Gut frei zugänglich sein müssen.'",
         "Schluss: 'Zusammenfassend plädiere ich für eine verpflichtende Open-Access-Strategie, um den Wissenstransfer in Schwellenländer nicht länger durch Bezahlschranken zu blockieren.'"
@@ -253,9 +370,15 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "speaking",
-      "title": "telc Mündliche Prüfung Teil 1B: Nachfragen und Feedback",
-      "explanation": "Unmittelbar nach dem Vortrag von Prüfungspartner A muss Prüfungspartner B in Teil 1B gezielte inhaltliche Nachfragen stellen und ein kurzes Feedback geben (anschließend umgekehrt).\nGeprüft wird das aktive Hörverstehen und die Fähigkeit zur spontanen intellektuellen Interaktion.\nDie Nachfragen dürfen keine trivialen Banalitäten sein, sondern müssen Schwachstellen oder offene Aspekte der Präsentation thematisieren ('Sie erwähnten vorhin, dass... Mich würde interessieren, wie Sie in diesem Zusammenhang das Problem X beurteilen').\nDer Vortragende muss souverän, präzise und differenziert auf diese Einwände reagieren.\n",
+      "title": "telc Mündliche Prüfung Teil 1B: Follow-up Questions and Feedback",
+      "explanation": "In Teil 1B, straight after partner A's talk, partner B must ask targeted questions about the content and give brief feedback (then the roles are reversed).\nThis tests active listening and the ability to interact intellectually on the spot.\nThe questions must not be trivial; they should address weak points or open aspects of the presentation ('Sie erwähnten vorhin, dass... Mich würde interessieren, wie Sie in diesem Zusammenhang das Problem X beurteilen').\nThe speaker must respond to these objections confidently, precisely and with nuance.\n",
       "examples": [
+        "Follow-up question from partner B: 'Vielen Dank für Ihren erhellenden Vortrag. Sie haben die ökonomischen Vorteile betont; wie schätzen Sie jedoch die datenschutzrechtlichen Risiken dieses Ansatzes ein?'",
+        "Reply from partner A: 'Das ist ein überaus berechtigter Einwand. Man müsste hier flankierend strenge Serverprotokolle vorschreiben...'"
+      ],
+      "titleDe": "telc Mündliche Prüfung Teil 1B: Nachfragen und Feedback",
+      "explanationDe": "Unmittelbar nach dem Vortrag von Prüfungspartner A muss Prüfungspartner B in Teil 1B gezielte inhaltliche Nachfragen stellen und ein kurzes Feedback geben (anschließend umgekehrt).\nGeprüft wird das aktive Hörverstehen und die Fähigkeit zur spontanen intellektuellen Interaktion.\nDie Nachfragen dürfen keine trivialen Banalitäten sein, sondern müssen Schwachstellen oder offene Aspekte der Präsentation thematisieren ('Sie erwähnten vorhin, dass... Mich würde interessieren, wie Sie in diesem Zusammenhang das Problem X beurteilen').\nDer Vortragende muss souverän, präzise und differenziert auf diese Einwände reagieren.\n",
+      "examplesDe": [
         "Nachfrage von Partner B: 'Vielen Dank für Ihren erhellenden Vortrag. Sie haben die ökonomischen Vorteile betont; wie schätzen Sie jedoch die datenschutzrechtlichen Risiken dieses Ansatzes ein?'",
         "Erwiderung von Partner A: 'Das ist ein überaus berechtigter Einwand. Man müsste hier flankierend strenge Serverprotokolle vorschreiben...'"
       ]
@@ -266,9 +389,15 @@
       "conceptId": null,
       "sourceLevel": "C1",
       "skill": "speaking",
-      "title": "telc Mündliche Prüfung Teil 2: Akademische Diskussion und Debatte",
-      "explanation": "Im Teil 2 der mündlichen Prüfung führen beide Kandidaten ein ca. 5-minütiges partnerschaftliches Streitgespräch zu einem kontroversen wissenschaftlichen oder gesellschaftspolitischen Zitat.\nZiel ist nicht das Erreichen eines simplen Konsenses, sondern ein argumentativer Schlagabtausch auf hohem intellektuellem Niveau.\nDie Partner müssen aufeinander eingehen, gegnerische Thesen aufgreifen, zergliedern, Gegenbeispiele anführen, Konzessionen machen ('Hier muss ich Ihnen partiell beipflichten...') und die Debatte dynamisch vorantreiben.\nMonologisches Dozieren führt ebenso zu Punktabzug wie passives Schweigen oder rein oberflächliche Zustimmung.\n",
+      "title": "telc Mündliche Prüfung Teil 2: Academic Discussion and Debate",
+      "explanation": "In Teil 2 of the oral exam, both candidates hold a debate of about 5 minutes with each other on a controversial academic or socio-political quotation.\nThe aim is not to reach a simple consensus but an exchange of arguments at a high intellectual level.\nThe partners must respond to each other, pick up and take apart the other side's claims, give counterexamples, make concessions ('Hier muss ich Ihnen partiell beipflichten...') and drive the debate forward.\nLecturing in a monologue costs points, just like staying passively silent or agreeing only superficially.\n",
       "examples": [
+        "Discussion topic: 'Sollte die Veröffentlichung von Forschungsergebnissen staatlich zensiert werden dürfen, wenn Sicherheitsrisiken bestehen (Dual-Use-Problematik)?'",
+        "Contribution: 'Hier berühren wir den heiklen Punkt der Biosicherheit. Natürlich darf Wissenschaft keinem staatlichen Diktat unterliegen, aber wenn genveränderte Pathogene als Waffe missbraucht werden könnten, gebietet die Verantwortungsethik klare Schranken.'"
+      ],
+      "titleDe": "telc Mündliche Prüfung Teil 2: Akademische Diskussion und Debatte",
+      "explanationDe": "Im Teil 2 der mündlichen Prüfung führen beide Kandidaten ein ca. 5-minütiges partnerschaftliches Streitgespräch zu einem kontroversen wissenschaftlichen oder gesellschaftspolitischen Zitat.\nZiel ist nicht das Erreichen eines simplen Konsenses, sondern ein argumentativer Schlagabtausch auf hohem intellektuellem Niveau.\nDie Partner müssen aufeinander eingehen, gegnerische Thesen aufgreifen, zergliedern, Gegenbeispiele anführen, Konzessionen machen ('Hier muss ich Ihnen partiell beipflichten...') und die Debatte dynamisch vorantreiben.\nMonologisches Dozieren führt ebenso zu Punktabzug wie passives Schweigen oder rein oberflächliche Zustimmung.\n",
+      "examplesDe": [
         "Diskussionsthema: 'Sollte die Veröffentlichung von Forschungsergebnissen staatlich zensiert werden dürfen, wenn Sicherheitsrisiken bestehen (Dual-Use-Problematik)?'",
         "Diskursbeitrag: 'Hier berühren wir den heiklen Punkt der Biosicherheit. Natürlich darf Wissenschaft keinem staatlichen Diktat unterliegen, aber wenn genveränderte Pathogene als Waffe missbraucht werden könnten, gebietet die Verantwortungsethik klare Schranken.'"
       ]
@@ -1359,7 +1488,9 @@
         "level": "C1",
         "title": "University vocabulary and presenting",
         "description": "Vocabulary for university life and academic terms, discourse markers, and giving an academic presentation and answering questions on it.",
-        "difficultyRank": 1
+        "difficultyRank": 1,
+        "titleDe": "Hochschulwortschatz und Präsentieren",
+        "descriptionDe": "Wortschatz für das Studium und wissenschaftliche Fachbegriffe, Diskursmarker sowie eine wissenschaftliche Präsentation mit anschließenden Fragen."
       },
       "lessonIds": [
         "c1-telc-abstrahierende-adjektive-und-nomen",
@@ -1377,7 +1508,9 @@
         "level": "C1",
         "title": "Features of academic language",
         "description": "How academic German works, genitive prepositions and collocations, with lecture notes, global reading, the language elements and a written statement.",
-        "difficultyRank": 2
+        "difficultyRank": 2,
+        "titleDe": "Merkmale der Wissenschaftssprache",
+        "descriptionDe": "Wie wissenschaftliches Deutsch funktioniert, Präpositionen mit Genitiv und Kollokationen, dazu Mitschriften von Vorlesungen, globales Lesen, die Sprachbausteine und eine schriftliche Stellungnahme."
       },
       "lessonIds": [
         "c1-telc-angaben-praepositionen-genitiv",
@@ -1395,7 +1528,9 @@
         "level": "C1",
         "title": "Complex structures and detailed texts",
         "description": "The gerundive, modal infinitives and complex conditionals, with text reconstruction, detailed reading and expert interviews.",
-        "difficultyRank": 3
+        "difficultyRank": 3,
+        "titleDe": "Komplexe Strukturen und anspruchsvolle Texte",
+        "descriptionDe": "Gerundivum, modale Infinitive und komplexe Bedingungssätze, dazu Textrekonstruktion, genaues Lesen und Interviews mit Fachleuten."
       },
       "lessonIds": [
         "c1-telc-hoerverstehen-teil2-fachgespraech-interview",
@@ -1412,7 +1547,9 @@
         "level": "C1",
         "title": "Data analysis and academic debate",
         "description": "Describe and synthesise data from charts, match short lectures to speakers and hold an academic debate.",
-        "difficultyRank": 4
+        "difficultyRank": 4,
+        "titleDe": "Datenanalyse und akademische Debatte",
+        "descriptionDe": "Sie beschreiben Daten aus Grafiken und fassen sie zusammen, ordnen kurze Vorträge den Sprechern zu und führen eine akademische Debatte."
       },
       "lessonIds": [
         "c1-telc-grafikbeschreibung-und-synthese",

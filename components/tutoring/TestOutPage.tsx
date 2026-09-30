@@ -2,15 +2,17 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useFormatter, useTranslations } from 'next-intl';
+import { useFormatter, useLocale, useTranslations } from 'next-intl';
 import { useApiErrorText } from '@/components/useApiErrorText';
 import type { ExerciseView } from '@/lib/tutoring/exerciseView';
 import type { TestOutAnswerOutcome, TestOutResult, TestOutRun, TestOutState } from '@/lib/tutoring/testOutViews';
-import { ExerciseCard, taskText } from './ExerciseCard';
+import type { ContentLanguage } from '@/lib/i18n/localizedText';
+import { ExerciseCard, ExerciseHeading } from './ExerciseCard';
 
 // Score, pass/fail and the per-question review of one finished attempt.
 function ResultView({ result }: { result: TestOutResult }) {
   const t = useTranslations('testOut');
+  const language: ContentLanguage = useLocale() === 'de' ? 'de' : 'en';
   return (
     <>
       <p>{result.passed ? t('passed') : t('failed')}</p>
@@ -18,7 +20,7 @@ function ResultView({ result }: { result: TestOutResult }) {
       <ol>
         {result.review.map((item) => (
           <li key={item.exercise.id}>
-            <p>{taskText(item.exercise)}</p>
+            <ExerciseHeading exercise={item.exercise} language={language} />
             <p>{t(`result.${item.result}`)}</p>
             <p>{t('yourAnswer', { answer: item.answerText })}</p>
             {item.result !== 'correct' && item.correctAnswer && <p>{t('correctAnswer', { answer: item.correctAnswer })}</p>}

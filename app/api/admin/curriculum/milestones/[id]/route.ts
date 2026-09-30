@@ -18,10 +18,10 @@ export async function GET(_request: Request, props: { params: Promise<{ id: stri
 export async function PATCH(request: Request, props: { params: Promise<{ id: string }> }) {
   const params = await props.params;
   if (!(await isAdminSessionValid())) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-  const { title, description, difficultyRank } = await request.json();
+  const { title, titleDe, description, descriptionDe, difficultyRank } = await request.json();
   const service = createCurriculumStructureService(getDb());
   try {
-    const milestone = service.updateMilestone(params.id, { title, description, difficultyRank });
+    const milestone = service.updateMilestone(params.id, { title, titleDe, description, descriptionDe, difficultyRank });
     return NextResponse.json(milestone);
   } catch (err) {
     return NextResponse.json({ error: (err as Error).message }, { status: 400 });

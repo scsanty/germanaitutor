@@ -30,8 +30,11 @@ export default function EditLessonPage() {
           sourceLevel: data.lesson.sourceLevel,
           skill: data.lesson.skill,
           title: data.lesson.title,
+          titleDe: data.lesson.titleDe,
           explanation: data.lesson.explanation,
+          explanationDe: data.lesson.explanationDe,
           examples: data.lesson.examples,
+          examplesDe: data.lesson.examplesDe,
           exercises: data.exercises.map((ex: { id: string; type: string; content: unknown }) => ({
             id: ex.id,
             type: ex.type,

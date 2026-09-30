@@ -6,6 +6,8 @@ import { createCurriculumService } from './curriculumService';
 import { wouldCreateCycle } from '../curriculum-admin/cycleDetection';
 import { resolvePlacement, type PlacementInput } from '../curriculum-admin/placementResolver';
 import { reconcileExercises, type ExerciseInput } from '../curriculum-admin/exerciseReconciliation';
+import { lessonTextProblems } from '../curriculum/bilingualValidation';
+import { instructionProblems } from '../curriculum/exerciseContentValidation';
 
 export interface CreateLessonInput {
   slug: string;
@@ -13,8 +15,11 @@ export interface CreateLessonInput {
   sourceLevel: CefrLevel;
   skill: Skill;
   title: string;
+  titleDe: string;
   explanation: string | null;
+  explanationDe: string | null;
   examples: string[] | null;
+  examplesDe: string[] | null;
   exercises: ExerciseInput[];
   prerequisiteIds: string[];
   placement: PlacementInput;
@@ -25,8 +30,11 @@ export interface UpdateLessonInput {
   sourceLevel: CefrLevel;
   skill: Skill;
   title: string;
+  titleDe: string;
   explanation: string | null;
+  explanationDe: string | null;
   examples: string[] | null;
+  examplesDe: string[] | null;
   exercises: ExerciseInput[];
   prerequisiteIds: string[];
   placement: PlacementInput;
@@ -46,6 +54,23 @@ function assertFlashcardRule(skill: Skill, exercises: { type: ExerciseType }[]):
   if (violation) throw new Error(violation);
 }
 
+// Spec: German title, both-or-neither texts and instructions are checked before any write.
+function assertLessonTexts(input: {
+  title: string;
+  titleDe: string;
+  explanation: string | null;
+  explanationDe: string | null;
+  examples: string[] | null;
+  examplesDe: string[] | null;
+  exercises: { type: ExerciseType; content: unknown }[];
+}): void {
+  const problems = [
+    ...lessonTextProblems(input),
+    ...input.exercises.flatMap((e, i) => instructionProblems(e.type, e.content).map((p) => `Exercise ${i + 1}: ${p}`)),
+  ];
+  if (problems.length > 0) throw new Error(problems.join('; '));
+}
+
 export function createLessonAdminService(db: Database.Database) {
   const reads = createCurriculumService(db);
 
@@ -53,21 +78,25 @@ export function createLessonAdminService(db: Database.Database) {
     const id = `${input.sourceLevel.toLowerCase()}-${input.slug}`;
 
     const run = db.transaction(() => {
+      assertLessonTexts(input);
       assertFlashcardRule(input.skill, input.exercises);
 
       const existing = db.prepare('SELECT 1 FROM lessons WHERE id = ?').get(id);
       if (existing) throw new Error(`Lesson id already exists: ${id}`);
 
       db.prepare(
-        'INSERT INTO lessons (id, track, source_level, skill, title, explanation, examples) VALUES (?, ?, ?, ?, ?, ?, ?)'
+        'INSERT INTO lessons (id, track, source_level, skill, title, title_de, explanation, explanation_de, examples, examples_de) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
       ).run(
         id,
         input.track,
         input.sourceLevel,
         input.skill,
         input.title,
+        input.titleDe,
         input.explanation,
-        input.examples ? JSON.stringify(input.examples) : null
+        input.explanationDe,
+        input.examples ? JSON.stringify(input.examples) : null,
+        input.examplesDe ? JSON.stringify(input.examplesDe) : null
       );
 
       reconcileExercises(db, id, input.exercises);
@@ -97,6 +126,7 @@ export function createLessonAdminService(db: Database.Database) {
 
   function updateLesson(id: string, input: UpdateLessonInput): Lesson {
     const run = db.transaction(() => {
+      assertLessonTexts(input);
       assertFlashcardRule(input.skill, input.exercises);
 
       const current = db.prepare('SELECT track, source_level FROM lessons WHERE id = ?').get(id) as
@@ -121,14 +151,17 @@ export function createLessonAdminService(db: Database.Database) {
       }
 
       db.prepare(
-        'UPDATE lessons SET track = ?, source_level = ?, skill = ?, title = ?, explanation = ?, examples = ? WHERE id = ?'
+        'UPDATE lessons SET track = ?, source_level = ?, skill = ?, title = ?, title_de = ?, explanation = ?, explanation_de = ?, examples = ?, examples_de = ? WHERE id = ?'
       ).run(
         input.track,
         input.sourceLevel,
         input.skill,
         input.title,
+        input.titleDe,
         input.explanation,
+        input.explanationDe,
         input.examples ? JSON.stringify(input.examples) : null,
+        input.examplesDe ? JSON.stringify(input.examplesDe) : null,
         id
       );
 

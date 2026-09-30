@@ -11,7 +11,7 @@ function setup(options: { day?: number; grade?: Mock<GradeFreeText> } = {}) {
   const db = createDbClient(':memory:');
   seedTutoringCurriculum(db);
   let day = options.day ?? 24;
-  const gradeFreeText = options.grade ?? vi.fn<GradeFreeText>().mockResolvedValue({ ok: true, result: 'correct', feedback: 'Gut.' });
+  const gradeFreeText = options.grade ?? vi.fn<GradeFreeText>().mockResolvedValue({ ok: true, result: 'correct', feedback: { en: 'Good.', de: 'Gut.' } });
   const service = createAttemptService(db, { gradeFreeText, now: () => new Date(2026, 8, day, 10, 0) });
   return {
     db,
@@ -104,26 +104,35 @@ describe('attemptService.recordAttempt', () => {
     await expect(service.recordAttempt('a1-greet__ex2', knew, 'queue')).rejects.toMatchObject({ code: 'not_due' });
   });
 
-  it('grades free text with the AI in the UI language and stores the answer and feedback', async () => {
+  it('grades free text with the AI and stores the answer and feedback', async () => {
     const { db, service, gradeFreeText, profiles } = setup({
-      grade: vi.fn().mockResolvedValue({ ok: true, result: 'almost', feedback: 'Fast.' }),
+      grade: vi.fn().mockResolvedValue({ ok: true, result: 'almost', feedback: { en: 'Almost.', de: 'Fast.' } }),
     });
     markComplete(db, 'a1-greet');
     profiles.updateProfile({ uiLanguage: 'de' });
     const outcome = await service.recordAttempt('a1-sein__ex10', { type: 'free_text', text: 'Ich bin mude.' }, 'lesson');
-    expect(outcome).toMatchObject({ result: 'almost', feedback: 'Fast.', correctAnswer: 'Ich bin müde.' });
+    expect(outcome).toMatchObject({ result: 'almost', feedback: { en: 'Almost.', de: 'Fast.' }, correctAnswer: 'Ich bin müde.' });
     expect(gradeFreeText).toHaveBeenCalledWith({
       prompt: 'Say that you are tired.',
       modelAnswer: 'Ich bin müde.',
       studentAnswer: 'Ich bin mude.',
       level: 'A1',
-      uiLanguage: 'de',
     });
     expect(db.prepare('SELECT answer_text, ai_feedback, source FROM lesson_attempts').get()).toEqual({
       answer_text: 'Ich bin mude.',
-      ai_feedback: 'Fast.',
+      ai_feedback: JSON.stringify({ en: 'Almost.', de: 'Fast.' }),
       source: 'lesson',
     });
+  });
+
+  it('stores feedback in both languages', async () => {
+    const grade = vi.fn<GradeFreeText>().mockResolvedValue({ ok: true, result: 'almost', feedback: { en: 'Good.', de: 'Gut.' } });
+    const { db, service } = setup({ grade });
+    db.prepare("INSERT INTO lesson_completions (lesson_id, completed_at) VALUES ('a1-greet', '2026-09-20T10:00:00.000Z')").run();
+    const outcome = await service.recordAttempt('a1-sein__ex10', { type: 'free_text', text: 'Ich bin mude.' }, 'lesson');
+    expect(outcome.feedback).toEqual({ en: 'Good.', de: 'Gut.' });
+    const row = db.prepare('SELECT ai_feedback FROM lesson_attempts ORDER BY id DESC LIMIT 1').get() as { ai_feedback: string };
+    expect(JSON.parse(row.ai_feedback)).toEqual({ en: 'Good.', de: 'Gut.' });
   });
 
   it('stores nothing when free-text grading fails', async () => {

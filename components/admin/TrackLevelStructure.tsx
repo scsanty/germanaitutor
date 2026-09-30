@@ -10,7 +10,7 @@ export interface StructureLesson {
   title: string;
 }
 export interface StructureEntry {
-  milestone: { id: string; title: string; description: string | null; difficultyRank: number | null };
+  milestone: { id: string; title: string; titleDe: string; description: string | null; descriptionDe: string | null; difficultyRank: number | null };
   lessons: StructureLesson[];
   lessonsBuildingOnUnsorted: string[];
 }
@@ -24,6 +24,7 @@ async function errorOf(res: Response, fallback: string): Promise<string> {
 export function TrackLevelStructure({ track, level }: { track: Track; level: CefrLevel }) {
   const [structure, setStructure] = useState<StructureEntry[] | null>(null);
   const [newTitle, setNewTitle] = useState('');
+  const [newTitleDe, setNewTitleDe] = useState('');
   const [newRank, setNewRank] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [tab, setTab] = useState<'tree' | 'diagram'>('tree');
@@ -48,20 +49,23 @@ export function TrackLevelStructure({ track, level }: { track: Track; level: Cef
     const res = await fetch('/api/admin/curriculum/milestones', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ track, level, title: newTitle, description: null, difficultyRank: Number(newRank) }),
+      body: JSON.stringify({ track, level, title: newTitle, titleDe: newTitleDe, description: null, descriptionDe: null, difficultyRank: Number(newRank) }),
     });
     if (res.ok) {
       setNewTitle('');
+      setNewTitleDe('');
       setNewRank('');
       setError(null);
       load();
     } else setError(await errorOf(res, 'Failed to create milestone'));
   }
 
-  async function saveMilestone(entry: StructureEntry, changes: Partial<{ title: string; description: string | null; difficultyRank: number }>) {
+  async function saveMilestone(entry: StructureEntry, changes: Partial<{ title: string; titleDe: string; description: string | null; descriptionDe: string | null; difficultyRank: number }>) {
     const body = {
       title: entry.milestone.title,
+      titleDe: entry.milestone.titleDe,
       description: entry.milestone.description,
+      descriptionDe: entry.milestone.descriptionDe,
       difficultyRank: entry.milestone.difficultyRank,
       ...changes,
     };
@@ -143,8 +147,10 @@ export function TrackLevelStructure({ track, level }: { track: Track; level: Cef
                   <button
                     type="button"
                     onClick={() => {
-                      const title = window.prompt('Rename milestone', entry.milestone.title);
-                      if (title) saveMilestone(entry, { title });
+                      const title = window.prompt('Rename milestone (English)', entry.milestone.title);
+                      if (!title) return;
+                      const titleDe = window.prompt('Rename milestone (German)', entry.milestone.titleDe);
+                      if (titleDe) saveMilestone(entry, { title, titleDe });
                     }}
                   >
                     Rename milestone
@@ -183,6 +189,12 @@ export function TrackLevelStructure({ track, level }: { track: Track; level: Cef
 
       <div>
         <input aria-label="New milestone title" value={newTitle} onChange={(e) => setNewTitle(e.target.value)} placeholder="New milestone title" />
+        <input
+          aria-label="New milestone German title"
+          value={newTitleDe}
+          onChange={(e) => setNewTitleDe(e.target.value)}
+          placeholder="New milestone German title"
+        />
         <input
           aria-label="New milestone rank"
           type="number"

@@ -41,6 +41,18 @@ describe('buildPracticeGenerationPrompt', () => {
 describe('parseGeneratedExercises', () => {
   const allowed = ['multiple_choice', 'flashcard'] as const;
 
+  it('skips an exercise that carries an instruction: the pool is German-only', () => {
+    const reply = JSON.stringify({
+      exercises: [
+        { type: 'multiple_choice', content: { question: '', options: ['a', 'b'], correctIndex: 0, instruction: { en: 'Pick.', de: 'Wähle.' } } },
+        { type: 'multiple_choice', content: { question: 'Bye?', options: ['Tschüss', 'Hallo'], correctIndex: 0 } },
+      ],
+    });
+    expect(parseGeneratedExercises(reply, [...allowed], 'vocabulary')).toEqual([
+      { type: 'multiple_choice', content: { question: 'Bye?', options: ['Tschüss', 'Hallo'], correctIndex: 0 } },
+    ]);
+  });
+
   it('keeps valid exercises of allowed types and drops the rest', () => {
     const reply = `Here you go: ${JSON.stringify({
       exercises: [

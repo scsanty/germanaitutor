@@ -10,16 +10,15 @@ const input = {
   modelAnswer: 'Ich schreibe.',
   studentAnswer: 'Ich schreib.',
   level: 'A2' as const,
-  uiLanguage: 'en' as const,
 };
 
 describe('gradeFreeText', () => {
   it('returns the parsed grade', async () => {
-    vi.mocked(generateWithActiveProvider).mockResolvedValue({ ok: true, text: '{"result":"almost","feedback":"Ending."}' });
+    vi.mocked(generateWithActiveProvider).mockResolvedValue({ ok: true, text: '{"result":"almost","feedback_en":"Ending.","feedback_de":"Endung."}' });
     expect(await gradeFreeText(createDbClient(':memory:'), input)).toEqual({
       ok: true,
       result: 'almost',
-      feedback: 'Ending.',
+      feedback: { en: 'Ending.', de: 'Endung.' },
     });
   });
 

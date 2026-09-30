@@ -151,6 +151,20 @@ function createChatPracticeIndex(db: Database.Database): void {
   db.exec('CREATE INDEX IF NOT EXISTS idx_lesson_chat_messages_practice ON lesson_chat_messages(practice_exercise_id)');
 }
 
+// Spec: Bilingual Content, Data Model. German columns beside the English ones; empty until seeded.
+function migrateBilingualColumns(db: Database.Database): void {
+  const has = (table: string, column: string) =>
+    (db.prepare(`PRAGMA table_info(${table})`).all() as { name: string }[]).some((c) => c.name === column);
+  if (!has('milestones', 'title_de')) {
+    db.exec("ALTER TABLE milestones ADD COLUMN title_de TEXT NOT NULL DEFAULT ''; ALTER TABLE milestones ADD COLUMN description_de TEXT;");
+  }
+  if (!has('lessons', 'title_de')) {
+    db.exec(
+      "ALTER TABLE lessons ADD COLUMN title_de TEXT NOT NULL DEFAULT ''; ALTER TABLE lessons ADD COLUMN explanation_de TEXT; ALTER TABLE lessons ADD COLUMN examples_de TEXT;"
+    );
+  }
+}
+
 export function runMigrations(db: Database.Database): void {
   // Wrapped in one transaction so a concurrent connection (e.g. a parallel `next build`
   // static-page-data worker also calling getDb()) never observes the mid-migration state
@@ -164,6 +178,7 @@ export function runMigrations(db: Database.Database): void {
     migrateChatPracticeColumn(db);
     createChatPracticeIndex(db);
     migrateToMilestoneOnlyStructure(db);
+    migrateBilingualColumns(db);
   });
   migrate();
 }
@@ -231,7 +246,9 @@ function createTablesIfMissing(db: Database.Database): void {
       level TEXT NOT NULL CHECK (level IN ('A1','A2','B1','B2','C1')),
       title TEXT NOT NULL,
       description TEXT,
-      difficulty_rank INTEGER CHECK (difficulty_rank IS NULL OR difficulty_rank >= 1)
+      difficulty_rank INTEGER CHECK (difficulty_rank IS NULL OR difficulty_rank >= 1),
+      title_de TEXT NOT NULL DEFAULT '',
+      description_de TEXT
     );
 
     CREATE TABLE IF NOT EXISTS lessons (
@@ -242,6 +259,9 @@ function createTablesIfMissing(db: Database.Database): void {
       title TEXT NOT NULL,
       explanation TEXT,
       examples TEXT,
+      title_de TEXT NOT NULL DEFAULT '',
+      explanation_de TEXT,
+      examples_de TEXT,
       created_at TEXT NOT NULL DEFAULT (datetime('now'))
     );
 

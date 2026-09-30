@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getDb } from '@/lib/db/client';
 import { isAdminSessionValid } from '@/lib/auth/adminSession';
-import { createCurriculumExportService, seedFileName } from '@/lib/services/curriculumExportService';
+import { createCurriculumExportService, CurriculumExportError, seedFileName } from '@/lib/services/curriculumExportService';
 import { isCefrLevel, TRACKS } from '@/lib/tutoring/levels';
 import type { Track } from '@/lib/types';
 
@@ -14,7 +14,13 @@ export async function GET(_request: Request, props: { params: Promise<{ track: s
   if (!TRACKS.includes(track) || !isCefrLevel(params.level)) {
     return NextResponse.json({ error: 'Unknown track or level' }, { status: 400 });
   }
-  const seed = createCurriculumExportService(getDb()).exportTrackLevel(track, params.level);
+  let seed;
+  try {
+    seed = createCurriculumExportService(getDb()).exportTrackLevel(track, params.level);
+  } catch (err) {
+    if (err instanceof CurriculumExportError) return NextResponse.json({ error: err.message }, { status: 409 });
+    throw err;
+  }
   return new Response(`${JSON.stringify(seed, null, 2)}\n`, {
     headers: {
       'Content-Type': 'application/json',

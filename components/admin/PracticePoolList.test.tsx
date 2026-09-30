@@ -67,6 +67,14 @@ describe('PracticePoolList', () => {
     );
   });
 
+  it('offers no instruction fields when editing pool content', async () => {
+    stubFetch({ 'GET /api/admin/practice?lessonId=a1-greet': () => delayedResponse([ITEM]) });
+    render(<PracticePoolList lessonId="a1-greet" />);
+    fireEvent.click(await screen.findByRole('button', { name: 'Edit' }));
+    expect(screen.getByLabelText('Exercise 1 question')).toBeInTheDocument();
+    expect(screen.queryByLabelText(/instruction/i)).not.toBeInTheDocument();
+  });
+
   it('promotes, and shows a server refusal', async () => {
     stubFetch({
       'GET /api/admin/practice?status=unreviewed': () => delayedResponse([ITEM]),

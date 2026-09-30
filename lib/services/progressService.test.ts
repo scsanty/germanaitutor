@@ -15,6 +15,24 @@ function lessonsOf(tree: ReturnType<ReturnType<typeof createProgressService>['ge
   return tree.milestones.flatMap((m) => m.lessons);
 }
 
+describe('progressService bilingual views', () => {
+  it('resolves the tree and locked views to the UI language, and gives the open lesson both languages', () => {
+    const { db, progress, profiles } = setup();
+    db.exec(`UPDATE lessons SET title_de = 'Begrüßen', explanation = 'Say Hallo.', explanation_de = 'Sag Hallo.' WHERE id = 'a1-greet';
+      UPDATE milestones SET title_de = 'Grundlagen' WHERE id = 'g-a1-m1';`);
+    profiles.updateProfile({ uiLanguage: 'de' });
+    const tree = progress.getTree();
+    expect(tree.milestones[0].title).toBe('Grundlagen');
+    expect(tree.milestones[0].lessons.find((l) => l.id === 'a1-greet')?.title).toBe('Begrüßen');
+    const view = progress.getLessonView('a1-greet');
+    expect(view).toMatchObject({
+      locked: false,
+      title: { en: 'Saying hello', de: 'Begrüßen' },
+      explanation: { en: 'Say Hallo.', de: 'Sag Hallo.' },
+    });
+  });
+});
+
 describe('progressService.getTree', () => {
   it('lists the active track+level in tree order and hides the Unsorted bucket', () => {
     const { db, progress } = setup();
@@ -129,11 +147,11 @@ describe('progressService.getLessonView', () => {
     expect(view).toEqual({
       locked: false,
       id: 'a1-sein',
-      title: 'The verb sein',
+      title: { en: 'The verb sein', de: '' },
       track: 'generic',
       level: 'A1',
       skill: 'grammar',
-      explanation: 'ich bin, du bist',
+      explanation: { en: 'ich bin, du bist', de: '' },
       examples: null,
       exercises: [
         { id: 'a1-sein__ex2', type: 'fill_blank', textWithBlank: 'Ich ___ müde.' },

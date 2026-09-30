@@ -1,6 +1,6 @@
 {
-  "seedVersion": "4",
-  "formatVersion": 2,
+  "seedVersion": "6",
+  "formatVersion": 3,
   "track": "telc",
   "level": "B2",
   "lessons": [
@@ -10,9 +10,16 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "grammar",
-      "title": "telc Sprachbausteine Teil 1: Grammatik im Kontext",
-      "explanation": "In Teil 1 der Sprachbausteine der telc-B2-Prüfung wird ein formeller Brief oder Text mit 10 Grammatiklücken vorgelegt.\nGeprüft werden gezielt: Kasusendungen von Artikeln und Adjektiven, feste Präpositionen, Pronominaladverbien (darauf, woran), Relativpronomen im Genitiv/Dativ sowie zweiteilige Konnektoren.\nAnalysieren Sie vor der Auswahl stets das Bezugswort und die Rektion des Verbs oder der Präposition im Satz.\n",
+      "title": "telc Sprachbausteine Teil 1: Grammar in Context",
+      "explanation": "In Teil 1 of the telc B2 Sprachbausteine, you get a formal letter or text with 10 grammar gaps.\nThe gaps specifically test: case endings of articles and adjectives, fixed prepositions, prepositional adverbs (darauf, woran), relative pronouns in the genitive/dative, and two-part connectors.\nBefore choosing, always analyse the word the gap refers to and which case the verb or preposition in the sentence governs.\n",
       "examples": [
+        "Wir bedanken uns für Ihr Schreiben, in ___ Sie uns auf den Vorfall aufmerksam gemacht haben. (dem)",
+        "Aufgrund ___ unerwarteten Ausfalls unserer Server bitten wir um Nachsicht. (des)",
+        "Wir bitten Sie, ___ zu bestätigen, dass Sie die geänderten AGB akzeptieren. (es)"
+      ],
+      "titleDe": "telc Sprachbausteine Teil 1: Grammatik im Kontext",
+      "explanationDe": "In Teil 1 der Sprachbausteine der telc-B2-Prüfung wird ein formeller Brief oder Text mit 10 Grammatiklücken vorgelegt.\nGeprüft werden gezielt: Kasusendungen von Artikeln und Adjektiven, feste Präpositionen, Pronominaladverbien (darauf, woran), Relativpronomen im Genitiv/Dativ sowie zweiteilige Konnektoren.\nAnalysieren Sie vor der Auswahl stets das Bezugswort und die Rektion des Verbs oder der Präposition im Satz.\n",
+      "examplesDe": [
         "Wir bedanken uns für Ihr Schreiben, in ___ Sie uns auf den Vorfall aufmerksam gemacht haben. (dem)",
         "Aufgrund ___ unerwarteten Ausfalls unserer Server bitten wir um Nachsicht. (des)",
         "Wir bitten Sie, ___ zu bestätigen, dass Sie die geänderten AGB akzeptieren. (es)"
@@ -24,9 +31,16 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "vocabulary",
-      "title": "telc Sprachbausteine Teil 2: Lexikalische Passung und Kollokationen",
-      "explanation": "In Sprachbausteine Teil 2 müssen 10 Lücken in einem Text geschlossen werden, indem passende Wörter aus einer Auswahlliste von 15 Optionen (a–o) zugeordnet werden.\nHierbei werden Kollokationen, semantische Nuancen, Nomen-Verb-Verbindungen und adäquate Registerentscheidungen abgefragt.\nAchten Sie genau auf den Kontext: Viele Wörter sind zwar semantisch ähnlich, passen aber syntaktisch oder idiomatisch nur in eine bestimmte Lücke.\n",
+      "title": "telc Sprachbausteine Teil 2: Word Choice and Collocations",
+      "explanation": "In Sprachbausteine Teil 2 you fill 10 gaps in a text by choosing suitable words from a list of 15 options (a–o).\nThis tests collocations, shades of meaning, noun-verb phrases and the right choice of register.\nRead the context carefully: many words are similar in meaning but fit only one particular gap grammatically or idiomatically.\n",
       "examples": [
+        "Er hat maßgeblichen Anteil am Erfolg des Unternehmens. (not: Teil or Stück)",
+        "Das Gesetz tritt mit sofortiger Wirkung in Kraft.",
+        "Wir müssen eine Reihe von Maßnahmen zur Qualitätssicherung ergreifen."
+      ],
+      "titleDe": "telc Sprachbausteine Teil 2: Lexikalische Passung und Kollokationen",
+      "explanationDe": "In Sprachbausteine Teil 2 müssen 10 Lücken in einem Text geschlossen werden, indem passende Wörter aus einer Auswahlliste von 15 Optionen (a–o) zugeordnet werden.\nHierbei werden Kollokationen, semantische Nuancen, Nomen-Verb-Verbindungen und adäquate Registerentscheidungen abgefragt.\nAchten Sie genau auf den Kontext: Viele Wörter sind zwar semantisch ähnlich, passen aber syntaktisch oder idiomatisch nur in eine bestimmte Lücke.\n",
+      "examplesDe": [
         "Er hat maßgeblichen Anteil am Erfolg des Unternehmens. (nicht: Teil oder Stück)",
         "Das Gesetz tritt mit sofortiger Wirkung in Kraft.",
         "Wir müssen eine Reihe von Maßnahmen zur Qualitätssicherung ergreifen."
@@ -38,9 +52,17 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "grammar",
-      "title": "Präpositionen mit Genitiv im Amts- und Geschäftsdeutsch",
-      "explanation": "Im gehobenen Schriftverkehr verlangt die telc-B2-Prüfung sichere Beherrschung von Genitivpräpositionen.\nKausal: \"aufgrund\", \"infolge\", \"mangels\", \"anlässlich\".\nKonzessiv: \"trotz\", \"ungeachtet\".\nLokal/Temporal: \"außerhalb\", \"innerhalb\", \"während\".\nFinal/Referentiell: \"hinsichtlich\", \"bezüglich\", \"zwecks\" (+ artikelloser Genitiv).\n",
+      "title": "Genitive Prepositions in Official and Business German",
+      "explanation": "In formal correspondence, the telc B2 exam expects confident use of genitive prepositions.\nCause: \"aufgrund\", \"infolge\", \"mangels\", \"anlässlich\".\nConcession: \"trotz\", \"ungeachtet\".\nPlace/time: \"außerhalb\", \"innerhalb\", \"während\".\nPurpose/reference: \"hinsichtlich\", \"bezüglich\", \"zwecks\" (+ genitive without an article).\n",
       "examples": [
+        "Zwecks besserer Abstimmung schlage ich ein persönliches Gespräch vor.",
+        "Infolge technischer Probleme verzögert sich die Auslieferung.",
+        "Hinsichtlich der Bezahlung verweisen wir auf Absatz 4 des Vertrags.",
+        "Ungeachtet der Einwände des Betriebsrats wurde die Umstrukturierung beschlossen."
+      ],
+      "titleDe": "Präpositionen mit Genitiv im Amts- und Geschäftsdeutsch",
+      "explanationDe": "Im gehobenen Schriftverkehr verlangt die telc-B2-Prüfung sichere Beherrschung von Genitivpräpositionen.\nKausal: \"aufgrund\", \"infolge\", \"mangels\", \"anlässlich\".\nKonzessiv: \"trotz\", \"ungeachtet\".\nLokal/Temporal: \"außerhalb\", \"innerhalb\", \"während\".\nFinal/Referentiell: \"hinsichtlich\", \"bezüglich\", \"zwecks\" (+ artikelloser Genitiv).\n",
+      "examplesDe": [
         "Zwecks besserer Abstimmung schlage ich ein persönliches Gespräch vor.",
         "Infolge technischer Probleme verzögert sich die Auslieferung.",
         "Hinsichtlich der Bezahlung verweisen wir auf Absatz 4 des Vertrags.",
@@ -53,9 +75,17 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "grammar",
-      "title": "Konzessive und adversative Verknüpfungen",
-      "explanation": "Konzessive Konnektoren drücken einen Gegengrund aus, der eine Folge nicht verhindert hat.\nSubjunktionen mit Nebensatz (Verb am Ende): \"obwohl\", \"obgleich\", \"wenngleich\".\nKonjunktionaladverbien mit Inversion (Verb auf Position 2): \"trotzdem\", \"dennoch\", \"nichtsdestotrotz\".\nAdversative Konnektoren stellen Gegensätze dar: \"während\" (temporal/adversativ), \"wohingegen\", \"jedoch\", \"dagegen\".\n",
+      "title": "Concessive and Contrasting Connectors",
+      "explanation": "Concessive connectors express a counter-reason that did not prevent the result.\nSubordinating conjunctions with a subordinate clause (verb at the end): \"obwohl\", \"obgleich\", \"wenngleich\".\nConjunctional adverbs with inversion (verb in position 2): \"trotzdem\", \"dennoch\", \"nichtsdestotrotz\".\nContrasting (adversative) connectors set two things against each other: \"während\" (time/contrast), \"wohingegen\", \"jedoch\", \"dagegen\".\n",
       "examples": [
+        "Obwohl wir intensive Verhandlungen führten, konnten wir keine Einigung erzielen.",
+        "Die Ausgaben stiegen drastisch; dennoch erzielte der Betrieb einen leichten Gewinn.",
+        "Der erste Kandidat überzeugte fachlich, wohingegen der zweite über mehr Führungserfahrung verfügte.",
+        "Die Produktion lief stabil weiter, während die Verkaufszahlen im Ausland einbrachen."
+      ],
+      "titleDe": "Konzessive und adversative Verknüpfungen",
+      "explanationDe": "Konzessive Konnektoren drücken einen Gegengrund aus, der eine Folge nicht verhindert hat.\nSubjunktionen mit Nebensatz (Verb am Ende): \"obwohl\", \"obgleich\", \"wenngleich\".\nKonjunktionaladverbien mit Inversion (Verb auf Position 2): \"trotzdem\", \"dennoch\", \"nichtsdestotrotz\".\nAdversative Konnektoren stellen Gegensätze dar: \"während\" (temporal/adversativ), \"wohingegen\", \"jedoch\", \"dagegen\".\n",
+      "examplesDe": [
         "Obwohl wir intensive Verhandlungen führten, konnten wir keine Einigung erzielen.",
         "Die Ausgaben stiegen drastisch; dennoch erzielte der Betrieb einen leichten Gewinn.",
         "Der erste Kandidat überzeugte fachlich, wohingegen der zweite über mehr Führungserfahrung verfügte.",
@@ -68,9 +98,17 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "grammar",
-      "title": "Berufliche Funktionsverbgefüge",
-      "explanation": "Im Geschäfts- und Arbeitsleben ersetzen feste Nomen-Verb-Verbindungen einfache Verben, um Vorgänge formeller auszudrücken.\nBeispiele für berufliche Kommunikation: \"eine Absprache treffen\" (= absprechen), \"in Verhandlung treten\" (= zu verhandeln beginnen), \"einen Vorschlag unterbreiten\" (= vorschlagen), \"zur Kenntnis nehmen\" (= bemerken, registrieren), \"in Auftrag geben\" (= beauftragen).\n",
+      "title": "Noun-Verb Phrases at Work",
+      "explanation": "In business and working life, fixed noun-verb phrases replace simple verbs to express actions more formally.\nExamples from workplace communication: \"eine Absprache treffen\" (= absprechen, to agree on something), \"in Verhandlung treten\" (= zu verhandeln beginnen, to enter into negotiations), \"einen Vorschlag unterbreiten\" (= vorschlagen, to put forward a proposal), \"zur Kenntnis nehmen\" (= bemerken, registrieren, to take note of), \"in Auftrag geben\" (= beauftragen, to commission).\n",
       "examples": [
+        "Darf ich Ihnen diesbezüglich einen konstruktiven Vorschlag unterbreiten?",
+        "Wir haben Ihre Anmerkungen aufmerksam zur Kenntnis genommen.",
+        "Die Geschäftsleitung ist mit dem Zulieferer in Verhandlungen getreten.",
+        "Die Wartung der Klimaanlagen wurde bereits bei einer Fachfirma in Auftrag gegeben."
+      ],
+      "titleDe": "Berufliche Funktionsverbgefüge",
+      "explanationDe": "Im Geschäfts- und Arbeitsleben ersetzen feste Nomen-Verb-Verbindungen einfache Verben, um Vorgänge formeller auszudrücken.\nBeispiele für berufliche Kommunikation: \"eine Absprache treffen\" (= absprechen), \"in Verhandlung treten\" (= zu verhandeln beginnen), \"einen Vorschlag unterbreiten\" (= vorschlagen), \"zur Kenntnis nehmen\" (= bemerken, registrieren), \"in Auftrag geben\" (= beauftragen).\n",
+      "examplesDe": [
         "Darf ich Ihnen diesbezüglich einen konstruktiven Vorschlag unterbreiten?",
         "Wir haben Ihre Anmerkungen aufmerksam zur Kenntnis genommen.",
         "Die Geschäftsleitung ist mit dem Zulieferer in Verhandlungen getreten.",
@@ -83,9 +121,17 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "vocabulary",
-      "title": "Wortschatz: Verhandlungen und innerbetriebliche Kommunikation",
-      "explanation": "Verhandlungssituationen erfordern präzise diplomatische Ausdrucksweise.\nBegriffe: der Kompromiss, die Rahmenbedingungen, die Tagesordnung, das Protokoll, die Fristverlängerung, das Zugeständnis, der Kostenvoranschlag.\nWendungen: einen Konsens erzielen, Zugeständnisse machen, auf einem Standpunkt beharren, einen Antrag bewilligen/ablehnen.\n",
+      "title": "Vocabulary: Negotiations and Internal Communication",
+      "explanation": "Negotiations call for precise, diplomatic wording.\nTerms: der Kompromiss (compromise), die Rahmenbedingungen (general conditions), die Tagesordnung (agenda), das Protokoll (minutes), die Fristverlängerung (deadline extension), das Zugeständnis (concession), der Kostenvoranschlag (cost estimate).\nPhrases: einen Konsens erzielen (reach a consensus), Zugeständnisse machen (make concessions), auf einem Standpunkt beharren (insist on a position), einen Antrag bewilligen/ablehnen (approve/reject an application).\n",
       "examples": [
+        "Nach zähen Verhandlungen konnten beide Tarifparteien schließlich einen Kompromiss erzielen.",
+        "Wir bitten um Verständnis dafür, dass wir auf der Einhaltung der Lieferfristen beharren müssen.",
+        "Der Vorstand hat den Antrag auf Bereitstellung zusätzlicher Mittel bewilligt.",
+        "Lassen Sie uns zunächst die einzelnen Punkte der Tagesordnung durchgehen."
+      ],
+      "titleDe": "Wortschatz: Verhandlungen und innerbetriebliche Kommunikation",
+      "explanationDe": "Verhandlungssituationen erfordern präzise diplomatische Ausdrucksweise.\nBegriffe: der Kompromiss, die Rahmenbedingungen, die Tagesordnung, das Protokoll, die Fristverlängerung, das Zugeständnis, der Kostenvoranschlag.\nWendungen: einen Konsens erzielen, Zugeständnisse machen, auf einem Standpunkt beharren, einen Antrag bewilligen/ablehnen.\n",
+      "examplesDe": [
         "Nach zähen Verhandlungen konnten beide Tarifparteien schließlich einen Kompromiss erzielen.",
         "Wir bitten um Verständnis dafür, dass wir auf der Einhaltung der Lieferfristen beharren müssen.",
         "Der Vorstand hat den Antrag auf Bereitstellung zusätzlicher Mittel bewilligt.",
@@ -98,9 +144,17 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "vocabulary",
-      "title": "Wortschatz: Reklamation, Kundenservice und Verbraucherrechte",
-      "explanation": "Der schriftliche Teil von telc B2 erfordert häufig das Verfassen eines Beschwerdebriefs oder einer Mängelrüge.\nSchlüsselwörter: die Reklamation, die Mängelrüge, der Schadensersatz, die Rückerstattung, die Kulanz, der Garantiefall, die Vertragsverletzung.\nKollokationen: einen Mangel feststellen/beheben, Nachbesserung verlangen, vom Kaufvertrag zurücktreten, Entschädigung fordern.\n",
+      "title": "Vocabulary: Complaints, Customer Service and Consumer Rights",
+      "explanation": "The written part of telc B2 often asks you to write a complaint letter or a formal notice of defects.\nKey words: die Reklamation (complaint), die Mängelrüge (notice of defects), der Schadensersatz (damages), die Rückerstattung (refund), die Kulanz (goodwill), der Garantiefall (warranty claim), die Vertragsverletzung (breach of contract).\nCollocations: einen Mangel feststellen/beheben (identify/fix a defect), Nachbesserung verlangen (demand a repair), vom Kaufvertrag zurücktreten (withdraw from the purchase contract), Entschädigung fordern (demand compensation).\n",
       "examples": [
+        "Da das gelieferte Gerät erhebliche Mängel aufweist, verlangen wir eine umgehende Nachbesserung.",
+        "Aus Kulanzgründen sind wir bereit, die Reparaturkosten zur Hälfte zu übernehmen.",
+        "Sollte die Nachbesserung fehlschlagen, behalten wir uns vor, vom Vertrag zurückzutreten.",
+        "Wegen der gravierenden Verspätung fordern wir einen angemessenen Schadensersatz."
+      ],
+      "titleDe": "Wortschatz: Reklamation, Kundenservice und Verbraucherrechte",
+      "explanationDe": "Der schriftliche Teil von telc B2 erfordert häufig das Verfassen eines Beschwerdebriefs oder einer Mängelrüge.\nSchlüsselwörter: die Reklamation, die Mängelrüge, der Schadensersatz, die Rückerstattung, die Kulanz, der Garantiefall, die Vertragsverletzung.\nKollokationen: einen Mangel feststellen/beheben, Nachbesserung verlangen, vom Kaufvertrag zurücktreten, Entschädigung fordern.\n",
+      "examplesDe": [
         "Da das gelieferte Gerät erhebliche Mängel aufweist, verlangen wir eine umgehende Nachbesserung.",
         "Aus Kulanzgründen sind wir bereit, die Reparaturkosten zur Hälfte zu übernehmen.",
         "Sollte die Nachbesserung fehlschlagen, behalten wir uns vor, vom Vertrag zurückzutreten.",
@@ -113,9 +167,17 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "vocabulary",
-      "title": "Wortschatz: Konsumverhalten, Medien und Werbung",
-      "explanation": "Konsum- und Medienthemen bilden oft die Grundlage für telc-Lesetexte und mündliche Prüfungsdiskussionen.\nZentrale Begriffe: das Konsumverhalten, die Reizüberflutung, die Werbestrategie, die Wegwerfgesellschaft, der Verbraucherschutz, das Konsumgut, die Produktplatzierung.\nVerben: zum Kauf verleiten, ein Produkt bewerben, Bedürfnisse wecken, konsumieren, hinterfragen.\n",
+      "title": "Vocabulary: Consumer Behaviour, Media and Advertising",
+      "explanation": "Consumer and media topics are often the basis for telc reading texts and oral exam discussions.\nKey terms: das Konsumverhalten (consumer behaviour), die Reizüberflutung (sensory overload), die Werbestrategie (advertising strategy), die Wegwerfgesellschaft (throwaway society), der Verbraucherschutz (consumer protection), das Konsumgut (consumer good), die Produktplatzierung (product placement).\nVerbs: zum Kauf verleiten (tempt someone to buy), ein Produkt bewerben (advertise a product), Bedürfnisse wecken (create needs), konsumieren (consume), hinterfragen (question critically).\n",
       "examples": [
+        "Gezielte Produktplatzierungen in Filmen verleiten Jugendliche unbewusst zum Konsum.",
+        "Verbraucherschützer warnen vor irreführenden Werbeversprechen bei Diätprodukten.",
+        "Die ständige Reizüberflutung im Internet führt zu sinkender Konzentrationsfähigkeit.",
+        "In einer Wegwerfgesellschaft werden langlebige Güter oft vorschnell durch Neuanschaffungen ersetzt."
+      ],
+      "titleDe": "Wortschatz: Konsumverhalten, Medien und Werbung",
+      "explanationDe": "Konsum- und Medienthemen bilden oft die Grundlage für telc-Lesetexte und mündliche Prüfungsdiskussionen.\nZentrale Begriffe: das Konsumverhalten, die Reizüberflutung, die Werbestrategie, die Wegwerfgesellschaft, der Verbraucherschutz, das Konsumgut, die Produktplatzierung.\nVerben: zum Kauf verleiten, ein Produkt bewerben, Bedürfnisse wecken, konsumieren, hinterfragen.\n",
+      "examplesDe": [
         "Gezielte Produktplatzierungen in Filmen verleiten Jugendliche unbewusst zum Konsum.",
         "Verbraucherschützer warnen vor irreführenden Werbeversprechen bei Diätprodukten.",
         "Die ständige Reizüberflutung im Internet führt zu sinkender Konzentrationsfähigkeit.",
@@ -128,9 +190,15 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "reading",
-      "title": "telc Leseverstehen Teil 1: Zuordnung von Überschriften",
-      "explanation": "In Teil 1 des telc-B2-Leseverstehens müssen 5 kurze Informationstexte jeweils einer von 10 vorgegebenen Überschriften zugeordnet werden.\nZiel ist das Globalverstehen: Erfassen Sie die Gesamtaussage und Hauptintention des Textes, anstatt an isolierten Vokabeln hängen zu bleiben.\nAchtung: Es gibt Distraktoren! Überschriften greifen oft wörtliche Zitate aus dem Text auf, treffen aber nicht den Kern der Aussage.\n",
+      "title": "telc Leseverstehen Teil 1: Matching Headlines",
+      "explanation": "In Teil 1 of telc B2 reading, you match 5 short information texts to 5 of 10 given headlines.\nThe aim is global understanding: grasp the overall message and main intention of the text instead of getting stuck on individual words.\nWatch out for distractors! Headlines often pick up words quoted directly from the text but miss its core message.\n",
       "examples": [
+        "Text about flexible working-time models -> Matching headline: 'Neue Wege zur Vereinbarkeit von Familie und Beruf'.",
+        "False trail: one headline mentions 'Krankenstand im Betrieb', although the text only touches on it briefly as an example in a subordinate clause."
+      ],
+      "titleDe": "telc Leseverstehen Teil 1: Zuordnung von Überschriften",
+      "explanationDe": "In Teil 1 des telc-B2-Leseverstehens müssen 5 kurze Informationstexte jeweils einer von 10 vorgegebenen Überschriften zugeordnet werden.\nZiel ist das Globalverstehen: Erfassen Sie die Gesamtaussage und Hauptintention des Textes, anstatt an isolierten Vokabeln hängen zu bleiben.\nAchtung: Es gibt Distraktoren! Überschriften greifen oft wörtliche Zitate aus dem Text auf, treffen aber nicht den Kern der Aussage.\n",
+      "examplesDe": [
         "Text über flexible Arbeitszeitmodelle -> Passende Überschrift: 'Neue Wege zur Vereinbarkeit von Familie und Beruf'.",
         "Falsche Fährte: Eine Überschrift erwähnt 'Krankenstand im Betrieb', obwohl der Text diesen nur in einem Nebensatz als Beispiel streift."
       ]
@@ -141,9 +209,14 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "reading",
-      "title": "telc Leseverstehen Teil 2: Detailverstehen mit Dreifachauswahl",
-      "explanation": "Teil 2 besteht aus einem längeren journalistischen Artikel (ca. 500–600 Wörter) und 5 Multiple-Choice-Aufgaben (a, b, c).\nDie Fragen folgen chronologisch dem Textverlauf und prüfen Detailverstehen, logische Zusammenhänge und Autorenintention.\nAchten Sie auf feine Einschränkungen im Text wie \"nur unter bestimmten Voraussetzungen\", \"kaum\", \"nahezu unmöglich\" oder \"überwiegend\".\n",
+      "title": "telc Leseverstehen Teil 2: Detailed Reading with Three Options",
+      "explanation": "Teil 2 consists of a longer journalistic article (about 500–600 words) and 5 multiple-choice tasks (a, b, c).\nThe questions follow the order of the text and test detailed understanding, logical connections and the author's intention.\nWatch for subtle restrictions in the text such as \"nur unter bestimmten Voraussetzungen\" (only under certain conditions), \"kaum\" (hardly), \"nahezu unmöglich\" (almost impossible) or \"überwiegend\" (mainly).\n",
       "examples": [
+        "Question: Warum scheiterte das Pilotprojekt? - Option a: Wegen Geldmangels. Option b: Wegen mangelnder Akzeptanz der Bürger. Option c: Wegen bürokratischer Hürden."
+      ],
+      "titleDe": "telc Leseverstehen Teil 2: Detailverstehen mit Dreifachauswahl",
+      "explanationDe": "Teil 2 besteht aus einem längeren journalistischen Artikel (ca. 500–600 Wörter) und 5 Multiple-Choice-Aufgaben (a, b, c).\nDie Fragen folgen chronologisch dem Textverlauf und prüfen Detailverstehen, logische Zusammenhänge und Autorenintention.\nAchten Sie auf feine Einschränkungen im Text wie \"nur unter bestimmten Voraussetzungen\", \"kaum\", \"nahezu unmöglich\" oder \"überwiegend\".\n",
+      "examplesDe": [
         "Frage: Warum scheiterte das Pilotprojekt? - Option a: Wegen Geldmangels. Option b: Wegen mangelnder Akzeptanz der Bürger. Option c: Wegen bürokratischer Hürden."
       ]
     },
@@ -153,9 +226,14 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "reading",
-      "title": "telc Leseverstehen Teil 3: Selektives Verstehen (Situations-Anzeigen-Zuordnung)",
-      "explanation": "In Teil 3 werden 10 Personenprofile mit konkreten Absichten oder Bedürfnissen vorgelegt.\nDiesen müssen 10 von 12 Werbe- und Informationsanzeigen zugeordnet werden (für mindestens zwei Situationen gibt es keine passende Anzeige: Markierung \"x\").\nAchten Sie akribisch auf Ausschlusskriterien: Altersgrenzen, Vorqualifikationen, Termine, Kosten oder örtliche Gebundenheit.\n",
+      "title": "telc Leseverstehen Teil 3: Selective Reading (Matching Situations to Ads)",
+      "explanation": "Teil 3 gives you 10 profiles of people with specific aims or needs.\nYou match 10 of 12 advertisements and information notices to them (at least two situations have no matching ad: mark them \"x\").\nPay close attention to exclusion criteria: age limits, required qualifications, dates, costs or location.\n",
       "examples": [
+        "Situation: A student is looking for a weekend job outdoors. -> Matching ad: Stadtgärtnerei sucht Aushilfen für Samstage. An ad for desk work is ruled out."
+      ],
+      "titleDe": "telc Leseverstehen Teil 3: Selektives Verstehen (Situations-Anzeigen-Zuordnung)",
+      "explanationDe": "In Teil 3 werden 10 Personenprofile mit konkreten Absichten oder Bedürfnissen vorgelegt.\nDiesen müssen 10 von 12 Werbe- und Informationsanzeigen zugeordnet werden (für mindestens zwei Situationen gibt es keine passende Anzeige: Markierung \"x\").\nAchten Sie akribisch auf Ausschlusskriterien: Altersgrenzen, Vorqualifikationen, Termine, Kosten oder örtliche Gebundenheit.\n",
+      "examplesDe": [
         "Situation: Eine Studentin sucht einen Wochenendjob im Freien. -> Passende Anzeige: Stadtgärtnerei sucht Aushilfen für Samstage. Anzeige mit Schreibtischarbeit scheidet aus."
       ]
     },
@@ -165,9 +243,14 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "listening",
-      "title": "telc Hörverstehen Teil 1: Globale Meinungszuordnung",
-      "explanation": "In Teil 1 des Hörverstehens hören Sie die Äußerungen von fünf Personen zu einem strittigen Thema (z. B. Tempolimit, Homeoffice, bargeldloses Bezahlen).\nZu jedem Sprecher müssen Sie aus einer Liste von Thesen die zutreffende Meinung zuordnen.\nDie Sprecher äußern sich oft dialektisch: Sie wägen Vor- und Nachteile ab, bevor sie zu ihrem eigentlichen Urteil kommen. Achten Sie auf Wendungen wie \"Letztlich bin ich jedoch der Meinung...\".\n",
+      "title": "telc Hörverstehen Teil 1: Matching Opinions",
+      "explanation": "In Teil 1 of the listening section you hear five people talking about a controversial topic (e.g. a speed limit, working from home, cashless payment).\nFor each speaker you choose the matching opinion from a list of statements.\nSpeakers often argue both sides: they weigh up pros and cons before they reach their actual judgement. Listen for phrases like \"Letztlich bin ich jedoch der Meinung...\".\n",
       "examples": [
+        "Speaker 1: 'Sicherlich ist es bequem, mit dem Smartphone zu zahlen, aber wenn das Netz ausfällt, steht man hilflos da. Deshalb ziehe ich Bargeld vor.' -> Statement: Befürwortet weiterhin Barzahlung aus Sicherheitsgründen."
+      ],
+      "titleDe": "telc Hörverstehen Teil 1: Globale Meinungszuordnung",
+      "explanationDe": "In Teil 1 des Hörverstehens hören Sie die Äußerungen von fünf Personen zu einem strittigen Thema (z. B. Tempolimit, Homeoffice, bargeldloses Bezahlen).\nZu jedem Sprecher müssen Sie aus einer Liste von Thesen die zutreffende Meinung zuordnen.\nDie Sprecher äußern sich oft dialektisch: Sie wägen Vor- und Nachteile ab, bevor sie zu ihrem eigentlichen Urteil kommen. Achten Sie auf Wendungen wie \"Letztlich bin ich jedoch der Meinung...\".\n",
+      "examplesDe": [
         "Sprecher 1: 'Sicherlich ist es bequem, mit dem Smartphone zu zahlen, aber wenn das Netz ausfällt, steht man hilflos da. Deshalb ziehe ich Bargeld vor.' -> These: Befürwortet weiterhin Barzahlung aus Sicherheitsgründen."
       ]
     },
@@ -177,9 +260,14 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "listening",
-      "title": "telc Hörverstehen Teil 2: Detailverstehen eines Interviews (Richtig/Falsch)",
-      "explanation": "Sie hören ein längeres Radiointerview (ca. 5–7 Minuten) mit einem Experten oder einer Persönlichkeit des öffentlichen Lebens.\nDazu bearbeiten Sie 10 Richtig/Falsch-Aufgaben. Der Text wird nur einmal vorgespielt!\nNutzen Sie die Vorbereitungszeit intensiv, um Schlüsselwörter in den Aussagen zu markieren.\nAussagen sind oft paraphrasiert: Im Audio fallen andere Wörter als auf dem Aufgabenblatt.\n",
+      "title": "telc Hörverstehen Teil 2: Detailed Understanding of an Interview (True/False)",
+      "explanation": "You hear a longer radio interview (about 5–7 minutes) with an expert or a public figure.\nYou answer 10 true/false tasks on it. The text is played only once!\nMake full use of the preparation time to mark key words in the statements.\nStatements are often paraphrased: the audio uses different words from the task sheet.\n",
       "examples": [
+        "Item: 'Der Experte rät von einer sofortigen Einführung der Technologie ab.' - In the audio: 'Wir sollten mit dem Rollout unbedingt warten, bis alle Sicherheitsfragen geklärt sind.' -> True."
+      ],
+      "titleDe": "telc Hörverstehen Teil 2: Detailverstehen eines Interviews (Richtig/Falsch)",
+      "explanationDe": "Sie hören ein längeres Radiointerview (ca. 5–7 Minuten) mit einem Experten oder einer Persönlichkeit des öffentlichen Lebens.\nDazu bearbeiten Sie 10 Richtig/Falsch-Aufgaben. Der Text wird nur einmal vorgespielt!\nNutzen Sie die Vorbereitungszeit intensiv, um Schlüsselwörter in den Aussagen zu markieren.\nAussagen sind oft paraphrasiert: Im Audio fallen andere Wörter als auf dem Aufgabenblatt.\n",
+      "examplesDe": [
         "Item: 'Der Experte rät von einer sofortigen Einführung der Technologie ab.' - Im Audio: 'Wir sollten mit dem Rollout unbedingt warten, bis alle Sicherheitsfragen geklärt sind.' -> Richtig."
       ]
     },
@@ -189,9 +277,14 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "listening",
-      "title": "telc Hörverstehen Teil 3: Selektives Verstehen von Radionachrichten",
-      "explanation": "In Teil 3 hören Sie fünf kurze Beiträge aus dem Radio (Verkehrshinweise, Wettermeldungen, Kurznachrichten, Veranstaltungstipps).\nZu jedem Text lösen Sie eine Richtig/Falsch-Aufgabe. Jeder Text wird nur einmal abgespielt.\nKonzentrieren Sie sich auf konkrete Details: Welche Autobahn ist gesperrt? Für wen gilt das Angebot? Wann findet das Event statt?\n",
+      "title": "telc Hörverstehen Teil 3: Selective Listening to Radio News",
+      "explanation": "In Teil 3 you hear five short radio items (traffic reports, weather reports, news in brief, event tips).\nFor each text you answer one true/false task. Each text is played only once.\nFocus on concrete details: Which motorway is closed? Who is the offer for? When does the event take place?\n",
       "examples": [
+        "Report: 'Auf der A8 zwischen München und Salzburg stockt der Verkehr wegen einer Baustelle auf 5 Kilometern.' - Task: Auf der A8 kommt es zu Verkehrsbehinderungen. -> True."
+      ],
+      "titleDe": "telc Hörverstehen Teil 3: Selektives Verstehen von Radionachrichten",
+      "explanationDe": "In Teil 3 hören Sie fünf kurze Beiträge aus dem Radio (Verkehrshinweise, Wettermeldungen, Kurznachrichten, Veranstaltungstipps).\nZu jedem Text lösen Sie eine Richtig/Falsch-Aufgabe. Jeder Text wird nur einmal abgespielt.\nKonzentrieren Sie sich auf konkrete Details: Welche Autobahn ist gesperrt? Für wen gilt das Angebot? Wann findet das Event statt?\n",
+      "examplesDe": [
         "Meldung: 'Auf der A8 zwischen München und Salzburg stockt der Verkehr wegen einer Baustelle auf 5 Kilometern.' - Aufgabe: Auf der A8 kommt es zu Verkehrsbehinderungen. -> Richtig."
       ]
     },
@@ -201,9 +294,16 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "writing",
-      "title": "telc Schriftlicher Ausdruck: Formeller Beschwerdebrief",
-      "explanation": "In der telc-B2-Schreibprüfung können Sie zwischen zwei Aufgabentypen wählen; einer davon ist meist ein Beschwerdebrief.\nSie erhalten eine Anzeige oder Situationsbeschreibung mit vier Leitpunkten, von denen Sie mindestens drei detailliert bearbeiten müssen.\nAufbau:\n1. Absender, Empfänger, Datum, prägnante Betreffzeile mit Vorgangsnummer.\n2. Formelle Anrede (\"Sehr geehrte Damen und Herren,\").\n3. Anlass des Schreibens und detaillierter Abgleich zwischen Anzeige (Soll) und Realität (Ist).\n4. Forderung nach Entschädigung / Preisminderung mit konkreter Frist.\n5. Formelle Grußformel und Unterschrift.\n",
+      "title": "telc Schriftlicher Ausdruck: Formal Complaint Letter",
+      "explanation": "In the telc B2 writing exam you choose between two task types; one of them is usually a complaint letter.\nYou get an advertisement or a description of the situation with four guiding points, and you must deal with at least three of them in detail.\nStructure:\n1. Sender, recipient, date, a concise subject line with a reference number.\n2. Formal greeting (\"Sehr geehrte Damen und Herren,\").\n3. Reason for writing and a detailed comparison between the advertisement (what was promised) and reality (what happened).\n4. Demand for compensation or a price reduction, with a specific deadline.\n5. Formal closing and signature.\n",
       "examples": [
+        "Betreff: Beschwerde bezüglich unseres Aufenthalts im Hotel Seeblick – Buchungsnr. 7821",
+        "In Ihrem Prospekt sicherten Sie uns ein ruhiges Zimmer mit Meerblick zu. Tatsächlich blickten wir direkt auf eine Großbaustelle.",
+        "Ich erwarte daher eine Rückerstattung von mindestens 30 % des Gesamtpreises bis zum 30. Mai."
+      ],
+      "titleDe": "telc Schriftlicher Ausdruck: Formeller Beschwerdebrief",
+      "explanationDe": "In der telc-B2-Schreibprüfung können Sie zwischen zwei Aufgabentypen wählen; einer davon ist meist ein Beschwerdebrief.\nSie erhalten eine Anzeige oder Situationsbeschreibung mit vier Leitpunkten, von denen Sie mindestens drei detailliert bearbeiten müssen.\nAufbau:\n1. Absender, Empfänger, Datum, prägnante Betreffzeile mit Vorgangsnummer.\n2. Formelle Anrede (\"Sehr geehrte Damen und Herren,\").\n3. Anlass des Schreibens und detaillierter Abgleich zwischen Anzeige (Soll) und Realität (Ist).\n4. Forderung nach Entschädigung / Preisminderung mit konkreter Frist.\n5. Formelle Grußformel und Unterschrift.\n",
+      "examplesDe": [
         "Betreff: Beschwerde bezüglich unseres Aufenthalts im Hotel Seeblick – Buchungsnr. 7821",
         "In Ihrem Prospekt sicherten Sie uns ein ruhiges Zimmer mit Meerblick zu. Tatsächlich blickten wir direkt auf eine Großbaustelle.",
         "Ich erwarte daher eine Rückerstattung von mindestens 30 % des Gesamtpreises bis zum 30. Mai."
@@ -215,9 +315,16 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "writing",
-      "title": "telc Schriftlicher Ausdruck: Detaillierte Anfrage und Informationsbitte",
-      "explanation": "Die zweite Option beim schriftlichen Ausdruck ist häufig eine förmliche Anfrage / Bitte um Information (z. B. zu einem Fortbildungsprogramm, einer Messe oder einer Veranstaltung).\nAuch hier müssen drei vorgegebene Leitpunkte zwingend behandelt werden.\nFormulieren Sie im gehobenen Konjunktiv II der Höflichkeit: \"Ich wäre Ihnen sehr dankbar, wenn Sie mir mitteilen könnten...\", \"Könnten Sie mir detaillierte Unterlagen bezüglich ... zukommen lassen?\".\n",
+      "title": "telc Schriftlicher Ausdruck: Detailed Inquiry and Request for Information",
+      "explanation": "The second option in the writing section is often a formal inquiry or request for information (e.g. about a training programme, a trade fair or an event).\nHere too, you must cover the three given guiding points.\nUse the formal, polite Konjunktiv II: \"Ich wäre Ihnen sehr dankbar, wenn Sie mir mitteilen könnten...\", \"Könnten Sie mir detaillierte Unterlagen bezüglich ... zukommen lassen?\".\n",
       "examples": [
+        "Mit großem Interesse habe ich Ihre Ausschreibung für den Weiterbildungslehrgang zum Projektmanager gelesen.",
+        "Da ich berufstätig bin, würde mich interessieren, ob das Seminar auch als Wochenendkurs angeboten wird.",
+        "Des Weiteren bitte ich um Auskunft über eventuelle Fördermöglichkeiten durch das Arbeitsamt."
+      ],
+      "titleDe": "telc Schriftlicher Ausdruck: Detaillierte Anfrage und Informationsbitte",
+      "explanationDe": "Die zweite Option beim schriftlichen Ausdruck ist häufig eine förmliche Anfrage / Bitte um Information (z. B. zu einem Fortbildungsprogramm, einer Messe oder einer Veranstaltung).\nAuch hier müssen drei vorgegebene Leitpunkte zwingend behandelt werden.\nFormulieren Sie im gehobenen Konjunktiv II der Höflichkeit: \"Ich wäre Ihnen sehr dankbar, wenn Sie mir mitteilen könnten...\", \"Könnten Sie mir detaillierte Unterlagen bezüglich ... zukommen lassen?\".\n",
+      "examplesDe": [
         "Mit großem Interesse habe ich Ihre Ausschreibung für den Weiterbildungslehrgang zum Projektmanager gelesen.",
         "Da ich berufstätig bin, würde mich interessieren, ob das Seminar auch als Wochenendkurs angeboten wird.",
         "Des Weiteren bitte ich um Auskunft über eventuelle Fördermöglichkeiten durch das Arbeitsamt."
@@ -229,9 +336,16 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "speaking",
-      "title": "telc Mündliche Prüfung Teil 1: Die Präsentation",
-      "explanation": "In Teil 1A halten Sie einen ca. 2,5-minütigen Kurzvortrag über ein vorbereitetes Thema.\nMögliche Themenfelder:\n- Ein Buch, das Sie gelesen haben.\n- Ein Film, den Sie gesehen haben.\n- Eine Reise, die Sie unternommen haben.\n- Eine wichtige Erfahrung in Ihrem Leben.\n- Eine Veranstaltung, die Sie besucht haben.\nStruktur: Einleitung, kurze Zusammenfassung des Inhalts, persönliche Bewertung / warum das Thema für Sie bedeutsam war, Fazit.\nIn Teil 1B stellt Ihr Prüfungspartner bzw. der Prüfer zwei bis drei Nachfragen, die Sie spontan beantworten.\n",
+      "title": "telc Mündliche Prüfung Teil 1: The Presentation",
+      "explanation": "In Teil 1A you give a short talk of about 2.5 minutes on a topic you have prepared.\nPossible topics:\n- A book you have read.\n- A film you have seen.\n- A journey you have made.\n- An important experience in your life.\n- An event you have attended.\nStructure: introduction, a short summary of the content, your personal assessment / why the topic mattered to you, conclusion.\nIn Teil 1B your exam partner or the examiner asks two or three follow-up questions, which you answer spontaneously.\n",
       "examples": [
+        "In meiner heutigen Präsentation möchte ich Ihnen das Buch 'Der Vorleser' von Bernhard Schlink vorstellen.",
+        "Besonders beeindruckt hat mich an diesem Werk die vielschichtige Aufarbeitung historischer Schuld.",
+        "Ich kann dieses Buch jedem empfehlen, der sich für deutsche Nachkriegsgeschichte interessiert."
+      ],
+      "titleDe": "telc Mündliche Prüfung Teil 1: Die Präsentation",
+      "explanationDe": "In Teil 1A halten Sie einen ca. 2,5-minütigen Kurzvortrag über ein vorbereitetes Thema.\nMögliche Themenfelder:\n- Ein Buch, das Sie gelesen haben.\n- Ein Film, den Sie gesehen haben.\n- Eine Reise, die Sie unternommen haben.\n- Eine wichtige Erfahrung in Ihrem Leben.\n- Eine Veranstaltung, die Sie besucht haben.\nStruktur: Einleitung, kurze Zusammenfassung des Inhalts, persönliche Bewertung / warum das Thema für Sie bedeutsam war, Fazit.\nIn Teil 1B stellt Ihr Prüfungspartner bzw. der Prüfer zwei bis drei Nachfragen, die Sie spontan beantworten.\n",
+      "examplesDe": [
         "In meiner heutigen Präsentation möchte ich Ihnen das Buch 'Der Vorleser' von Bernhard Schlink vorstellen.",
         "Besonders beeindruckt hat mich an diesem Werk die vielschichtige Aufarbeitung historischer Schuld.",
         "Ich kann dieses Buch jedem empfehlen, der sich für deutsche Nachkriegsgeschichte interessiert."
@@ -243,9 +357,16 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "speaking",
-      "title": "telc Mündliche Prüfung Teil 2: Diskussion über ein kontroverses Thema",
-      "explanation": "In Teil 2 erhalten Sie und Ihr Partner ein kurzes Textzitat zu einer kontroversen Streitfrage (z. B. Tempolimit, Abschaffung von Hausaufgaben, Verbot von Plastiktüten).\nSie fassen die Aussage des Zitats kurz zusammen, beziehen begründet Stellung und diskutieren anschließend interaktiv miteinander.\nWichtig: Nicht monologisieren! Stellen Sie Fragen an den Partner (\"Wie siehst du das?\", \"Welche Erfahrungen hast du damit gemacht?\"), gehen Sie auf dessen Argumente ein und entwickeln Sie das Gespräch weiter.\n",
+      "title": "telc Mündliche Prüfung Teil 2: Discussing a Controversial Topic",
+      "explanation": "In Teil 2 you and your partner receive a short quotation on a controversial question (e.g. a speed limit, abolishing homework, banning plastic bags).\nYou briefly summarise what the quotation says, give your reasoned position and then discuss it with each other.\nImportant: don't deliver a monologue! Ask your partner questions (\"Wie siehst du das?\", \"Welche Erfahrungen hast du damit gemacht?\"), respond to their arguments and move the conversation forward.\n",
       "examples": [
+        "Ich habe die Textvorlage so verstanden, dass der Autor ein generelles Smartphone-Verbot an Schulen fordert.",
+        "Dieser Ansicht kann ich mich nur teilweise anschließen. Zwar lenken Handys ab, aber man könnte sie gezielt im Unterricht einsetzen.",
+        "Was hältst du von dem Vorschlag, Handys nur in den Pausen zu erlauben?"
+      ],
+      "titleDe": "telc Mündliche Prüfung Teil 2: Diskussion über ein kontroverses Thema",
+      "explanationDe": "In Teil 2 erhalten Sie und Ihr Partner ein kurzes Textzitat zu einer kontroversen Streitfrage (z. B. Tempolimit, Abschaffung von Hausaufgaben, Verbot von Plastiktüten).\nSie fassen die Aussage des Zitats kurz zusammen, beziehen begründet Stellung und diskutieren anschließend interaktiv miteinander.\nWichtig: Nicht monologisieren! Stellen Sie Fragen an den Partner (\"Wie siehst du das?\", \"Welche Erfahrungen hast du damit gemacht?\"), gehen Sie auf dessen Argumente ein und entwickeln Sie das Gespräch weiter.\n",
+      "examplesDe": [
         "Ich habe die Textvorlage so verstanden, dass der Autor ein generelles Smartphone-Verbot an Schulen fordert.",
         "Dieser Ansicht kann ich mich nur teilweise anschließen. Zwar lenken Handys ab, aber man könnte sie gezielt im Unterricht einsetzen.",
         "Was hältst du von dem Vorschlag, Handys nur in den Pausen zu erlauben?"
@@ -257,9 +378,16 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "speaking",
-      "title": "telc Mündliche Prüfung Teil 3: Gemeinsame Problemlösung und Planung",
-      "explanation": "In Teil 3 planen Sie gemeinsam mit Ihrem Prüfungspartner eine konkrete Aktion (z. B. ein Betriebsfest organisieren, einen Tag der offenen Tür planen, einen Ausflug für Sprachschüler vorbereiten).\nSie erhalten dafür Leitpunkte (Termin, Ort, Verpflegung, Programm, Kosten).\nDemonstrieren Sie Teamfähigkeit: Machen Sie konkrete Vorschläge, wägen Sie Alternativen ab, verteilen Sie Aufgaben und erzielen Sie am Ende einen klaren Konsens.\n",
+      "title": "telc Mündliche Prüfung Teil 3: Solving a Problem and Planning Together",
+      "explanation": "In Teil 3 you and your exam partner plan a concrete activity together (e.g. organising a company party, planning an open day, preparing a trip for language students).\nYou receive guiding points for this (date, place, catering, programme, costs).\nShow that you can work as a team: make concrete suggestions, weigh up alternatives, share out the tasks and reach a clear consensus at the end.\n",
       "examples": [
+        "Lass uns zunächst überlegen, welches Datum für das Betriebsfest am besten geeignet wäre.",
+        "Wenn du dich um das Buffet kümmerst, könnte ich mich um die Einladungen und die Musik kümmern.",
+        "Ein Grillfest im Freien birgt das Risiko schlechten Wetters. Sollten wir nicht lieber einen Raum anmieten?"
+      ],
+      "titleDe": "telc Mündliche Prüfung Teil 3: Gemeinsame Problemlösung und Planung",
+      "explanationDe": "In Teil 3 planen Sie gemeinsam mit Ihrem Prüfungspartner eine konkrete Aktion (z. B. ein Betriebsfest organisieren, einen Tag der offenen Tür planen, einen Ausflug für Sprachschüler vorbereiten).\nSie erhalten dafür Leitpunkte (Termin, Ort, Verpflegung, Programm, Kosten).\nDemonstrieren Sie Teamfähigkeit: Machen Sie konkrete Vorschläge, wägen Sie Alternativen ab, verteilen Sie Aufgaben und erzielen Sie am Ende einen klaren Konsens.\n",
+      "examplesDe": [
         "Lass uns zunächst überlegen, welches Datum für das Betriebsfest am besten geeignet wäre.",
         "Wenn du dich um das Buffet kümmerst, könnte ich mich um die Einladungen und die Musik kümmern.",
         "Ein Grillfest im Freien birgt das Risiko schlechten Wetters. Sollten wir nicht lieber einen Raum anmieten?"
@@ -950,7 +1078,9 @@
         "level": "B2",
         "title": "Complaints and consumer life",
         "description": "Consumer and media vocabulary, genitive prepositions for formal writing, a complaint letter, and selective reading and listening.",
-        "difficultyRank": 1
+        "difficultyRank": 1,
+        "titleDe": "Reklamationen und Konsumalltag",
+        "descriptionDe": "Wortschatz zu Konsum und Medien, Präpositionen mit Genitiv für formelle Texte, ein Beschwerdebrief sowie selektives Lesen und Hören."
       },
       "lessonIds": [
         "b2-telc-hoerverstehen-teil3-ansagen-nachrichten",
@@ -968,7 +1098,9 @@
         "level": "B2",
         "title": "Workplace communication",
         "description": "Negotiation vocabulary and formal noun-verb phrases, a presentation, joint problem-solving and matching opinions you hear.",
-        "difficultyRank": 2
+        "difficultyRank": 2,
+        "titleDe": "Kommunikation im Beruf",
+        "descriptionDe": "Wortschatz für Verhandlungen und formelle Nomen-Verb-Verbindungen, eine Präsentation, gemeinsames Problemlösen und das Zuordnen gehörter Meinungen."
       },
       "lessonIds": [
         "b2-telc-hoerverstehen-teil1-meinungen",
@@ -985,7 +1117,9 @@
         "level": "B2",
         "title": "Arguing and contrasting",
         "description": "Concessive and contrasting links, a controversial discussion, a detailed inquiry, headline matching and a detailed interview.",
-        "difficultyRank": 3
+        "difficultyRank": 3,
+        "titleDe": "Argumentieren und Gegenüberstellen",
+        "descriptionDe": "Konzessive und adversative Verknüpfungen, eine Diskussion über ein Streitthema, eine ausführliche Anfrage, das Zuordnen von Überschriften und ein ausführliches Interview."
       },
       "lessonIds": [
         "b2-telc-hoerverstehen-teil2-interview",
@@ -1002,7 +1136,9 @@
         "level": "B2",
         "title": "Language elements and detailed reading",
         "description": "The Sprachbausteine grammar and collocation gaps, and detailed reading with three-way choices.",
-        "difficultyRank": 4
+        "difficultyRank": 4,
+        "titleDe": "Sprachbausteine und Detailverstehen",
+        "descriptionDe": "Grammatik- und Kollokationslücken in den Sprachbausteinen sowie genaues Lesen mit drei Antwortmöglichkeiten."
       },
       "lessonIds": [
         "b2-telc-leseverstehen-teil2-detail",

@@ -1,4 +1,5 @@
 import type { Track, CefrLevel } from '../types';
+import type { LocalizedText } from '../i18n/localizedText';
 
 export type Skill = 'grammar' | 'vocabulary' | 'reading' | 'listening' | 'writing' | 'speaking';
 export type ExerciseType = 'multiple_choice' | 'fill_blank' | 'flashcard' | 'free_text';
@@ -8,7 +9,9 @@ export interface Milestone {
   track: Track;
   level: CefrLevel;
   title: string;
+  titleDe: string;
   description: string | null;
+  descriptionDe: string | null;
   // 1, 2, 3 … inside its track+level; null only for the admin-only Unsorted bucket
   difficultyRank: number | null;
 }
@@ -19,8 +22,11 @@ export interface Lesson {
   sourceLevel: CefrLevel;
   skill: Skill;
   title: string;
+  titleDe: string;
   explanation: string | null;
+  explanationDe: string | null;
   examples: string[] | null;
+  examplesDe: string[] | null;
   createdAt: string;
 }
 
@@ -43,12 +49,14 @@ export interface MultipleChoiceContent {
   question: string;
   options: string[];
   correctIndex: number;
+  instruction?: LocalizedText;
 }
 
 export interface FillBlankContent {
   textWithBlank: string;
   correctAnswer: string;
   acceptableVariants?: string[];
+  instruction?: LocalizedText;
 }
 
 export interface FlashcardContent {
@@ -59,6 +67,7 @@ export interface FlashcardContent {
 export interface FreeTextContent {
   prompt: string;
   modelAnswer: string;
+  instruction?: LocalizedText;
 }
 
 export type ExerciseContent = MultipleChoiceContent | FillBlankContent | FlashcardContent | FreeTextContent;

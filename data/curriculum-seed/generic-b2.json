@@ -1,6 +1,6 @@
 {
-  "seedVersion": "4",
-  "formatVersion": 2,
+  "seedVersion": "6",
+  "formatVersion": 3,
   "track": "generic",
   "level": "B2",
   "lessons": [
@@ -10,9 +10,17 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "grammar",
-      "title": "Vorgangspassiv in allen Zeitformen",
-      "explanation": "Das Vorgangspassiv betont die Handlung selbst, während der Verursacher (Agens) in den Hintergrund tritt oder ungenannt bleibt.\nEs wird mit dem Hilfsverb \"werden\" und dem Partizip II des Hauptverbs gebildet.\nIm Perfekt und Plusquamperfekt lautet die Passivform von \"werden\" stets \"worden\" (ohne Ge-): \"ist repariert worden\", \"war repariert worden\".\nWird der Handelnde genannt, steht bei Personen meist \"von\" + Dativ, bei Mitteln oder Ursachen \"durch\" + Akkusativ.\n",
+      "title": "The Process Passive in All Tenses",
+      "explanation": "The process passive (Vorgangspassiv) puts the action itself in focus, while the agent who performs it moves into the background or is not named at all.\nIt is formed with the auxiliary \"werden\" and the past participle (Partizip II) of the main verb.\nIn the Perfekt and Plusquamperfekt, the passive form of \"werden\" is always \"worden\" (without ge-): \"ist repariert worden\", \"war repariert worden\".\nIf the agent is named, people usually take \"von\" + dative, while means or causes take \"durch\" + accusative.\n",
       "examples": [
+        "Die neuen Richtlinien werden vom Vorstand beschlossen.",
+        "Das historische Gebäude wurde vor drei Jahren aufwendig renoviert.",
+        "Alle Dokumente sind bereits digitalisiert worden.",
+        "Durch den Sturm war die Stromleitung beschädigt worden."
+      ],
+      "titleDe": "Vorgangspassiv in allen Zeitformen",
+      "explanationDe": "Das Vorgangspassiv betont die Handlung selbst, während der Verursacher (Agens) in den Hintergrund tritt oder ungenannt bleibt.\nEs wird mit dem Hilfsverb \"werden\" und dem Partizip II des Hauptverbs gebildet.\nIm Perfekt und Plusquamperfekt lautet die Passivform von \"werden\" stets \"worden\" (ohne Ge-): \"ist repariert worden\", \"war repariert worden\".\nWird der Handelnde genannt, steht bei Personen meist \"von\" + Dativ, bei Mitteln oder Ursachen \"durch\" + Akkusativ.\n",
+      "examplesDe": [
         "Die neuen Richtlinien werden vom Vorstand beschlossen.",
         "Das historische Gebäude wurde vor drei Jahren aufwendig renoviert.",
         "Alle Dokumente sind bereits digitalisiert worden.",
@@ -25,9 +33,17 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "grammar",
-      "title": "Passiv mit Modalverben im Präsens und Präteritum",
-      "explanation": "Verbindet man das Vorgangspassiv mit einem Modalverb, wird das Modalverb finit konjugiert, während das Hauptverb als Passiv-Infinitiv (\"Partizip II + werden\") an das Satzende rückt.\nIm Präsens: \"Das Paket muss heute noch abgeschickt werden.\"\nIm Präteritum: \"Der Termin musste leider verschoben werden.\"\nIm Perfekt steht das Ersatzinfinitiv-Gefüge: \"hat verschoben werden müssen\" (auf B2-Niveau vor allem rezeptiv relevant).\n",
+      "title": "The Passive with Modal Verbs in the Present and Präteritum",
+      "explanation": "When the process passive is combined with a modal verb, the modal verb is the conjugated finite verb, while the main verb moves to the end of the clause as a passive infinitive (\"Partizip II + werden\").\nPresent: \"Das Paket muss heute noch abgeschickt werden.\"\nPräteritum: \"Der Termin musste leider verschoben werden.\"\nIn the Perfekt you get the double-infinitive construction: \"hat verschoben werden müssen\" (at B2 mainly something to recognise when reading or listening).\n",
       "examples": [
+        "Die Brandschutzvorschriften müssen strikt eingehalten werden.",
+        "Dieser Fehler konnte trotz sorgfältiger Prüfung nicht vermieden werden.",
+        "Die vertraulichen Unterlagen dürfen keinesfalls kopiert werden.",
+        "Der Bericht sollte bis Freitag fertiggestellt werden."
+      ],
+      "titleDe": "Passiv mit Modalverben im Präsens und Präteritum",
+      "explanationDe": "Verbindet man das Vorgangspassiv mit einem Modalverb, wird das Modalverb finit konjugiert, während das Hauptverb als Passiv-Infinitiv (\"Partizip II + werden\") an das Satzende rückt.\nIm Präsens: \"Das Paket muss heute noch abgeschickt werden.\"\nIm Präteritum: \"Der Termin musste leider verschoben werden.\"\nIm Perfekt steht das Ersatzinfinitiv-Gefüge: \"hat verschoben werden müssen\" (auf B2-Niveau vor allem rezeptiv relevant).\n",
+      "examplesDe": [
         "Die Brandschutzvorschriften müssen strikt eingehalten werden.",
         "Dieser Fehler konnte trotz sorgfältiger Prüfung nicht vermieden werden.",
         "Die vertraulichen Unterlagen dürfen keinesfalls kopiert werden.",
@@ -40,9 +56,17 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "grammar",
-      "title": "Passiversatzformen und Passivalternativen",
-      "explanation": "In der gehobenen Sprache und in Sachtexten wird das Passiv häufig durch Konstruktionen mit modalem Charakter ersetzt.\n\"sein + zu + Infinitiv\" drückt eine Notwendigkeit oder Möglichkeit aus (entspricht \"müssen / können + Passiv\"): \"Das ist zu tun\" = \"Das muss getan werden\".\n\"sich lassen + Infinitiv\" drückt eine Möglichkeit aus: \"Das Problem lässt sich lösen\" = \"Das Problem kann gelöst werden\".\nAdjektive auf \"-bar\", \"-abel\" oder \"-lich\" drücken passive Machbarkeit aus (\"machbar\", \"lösbar\", \"verständlich\").\n",
+      "title": "Passive Substitutes and Alternatives to the Passive",
+      "explanation": "In formal language and in factual texts, the passive is often replaced by constructions with a modal meaning.\n\"sein + zu + infinitive\" expresses necessity or possibility (equivalent to \"müssen / können + passive\"): \"Das ist zu tun\" = \"Das muss getan werden\".\n\"sich lassen + infinitive\" expresses possibility: \"Das Problem lässt sich lösen\" = \"Das Problem kann gelöst werden\".\nAdjectives ending in \"-bar\", \"-abel\" or \"-lich\" express that something can be done (\"machbar\", \"lösbar\", \"verständlich\").\n",
       "examples": [
+        "Die Daten sind bis morgen Abend an das System zu übermitteln.",
+        "Diese Theorie lässt sich anhand experimenteller Daten leicht überprüfen.",
+        "Die Schäden am Fahrzeug sind leider irreparabel.",
+        "Es steht außer Zweifel, dass diese Aufgabe machbar ist."
+      ],
+      "titleDe": "Passiversatzformen und Passivalternativen",
+      "explanationDe": "In der gehobenen Sprache und in Sachtexten wird das Passiv häufig durch Konstruktionen mit modalem Charakter ersetzt.\n\"sein + zu + Infinitiv\" drückt eine Notwendigkeit oder Möglichkeit aus (entspricht \"müssen / können + Passiv\"): \"Das ist zu tun\" = \"Das muss getan werden\".\n\"sich lassen + Infinitiv\" drückt eine Möglichkeit aus: \"Das Problem lässt sich lösen\" = \"Das Problem kann gelöst werden\".\nAdjektive auf \"-bar\", \"-abel\" oder \"-lich\" drücken passive Machbarkeit aus (\"machbar\", \"lösbar\", \"verständlich\").\n",
+      "examplesDe": [
         "Die Daten sind bis morgen Abend an das System zu übermitteln.",
         "Diese Theorie lässt sich anhand experimenteller Daten leicht überprüfen.",
         "Die Schäden am Fahrzeug sind leider irreparabel.",
@@ -55,9 +79,17 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "grammar",
-      "title": "Konjunktiv II der Vergangenheit",
-      "explanation": "Der Konjunktiv II der Vergangenheit drückt irreale Bedingungen, Wünsche, verpasste Gelegenheiten oder Vorwürfe bezüglich vergangener Ereignisse aus.\nEr wird gebildet mit den Konjunktiv-II-Formen von haben/sein (\"hätte\" / \"wäre\") und dem Partizip II des Verbs.\nBei Modalverben steht \"hätte + Doppelinfinitiv\": \"Ich hätte das wissen müssen.\"\n",
+      "title": "The Past Subjunctive (Konjunktiv II der Vergangenheit)",
+      "explanation": "The past subjunctive expresses unreal conditions, wishes, missed opportunities or reproaches about past events.\nIt is formed with the Konjunktiv II forms of haben/sein (\"hätte\" / \"wäre\") and the past participle of the verb.\nWith modal verbs, use \"hätte + double infinitive\": \"Ich hätte das wissen müssen.\"\n",
       "examples": [
+        "Wenn ich den Zug nicht verpasst hätte, wäre ich pünktlich zur Konferenz erschienen.",
+        "Hätte der Autofahrer gebremst, wäre der Zusammenstoß vermeidbar gewesen.",
+        "Wir hätten die Frist unbedingt einhalten müssen.",
+        "Fast wäre mir dieser peinliche Rechenfehler unterlaufen."
+      ],
+      "titleDe": "Konjunktiv II der Vergangenheit",
+      "explanationDe": "Der Konjunktiv II der Vergangenheit drückt irreale Bedingungen, Wünsche, verpasste Gelegenheiten oder Vorwürfe bezüglich vergangener Ereignisse aus.\nEr wird gebildet mit den Konjunktiv-II-Formen von haben/sein (\"hätte\" / \"wäre\") und dem Partizip II des Verbs.\nBei Modalverben steht \"hätte + Doppelinfinitiv\": \"Ich hätte das wissen müssen.\"\n",
+      "examplesDe": [
         "Wenn ich den Zug nicht verpasst hätte, wäre ich pünktlich zur Konferenz erschienen.",
         "Hätte der Autofahrer gebremst, wäre der Zusammenstoß vermeidbar gewesen.",
         "Wir hätten die Frist unbedingt einhalten müssen.",
@@ -70,9 +102,17 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "grammar",
-      "title": "Zweiteilige Konnektoren und Satzverknüpfungen",
-      "explanation": "Zweiteilige Konnektoren (Doppelkonnektoren) verbinden Satzglieder oder Teilsätze und drücken komplexe logische Beziehungen aus.\nKopulativ: \"sowohl ... als auch\" (positiv aufzählend), \"weder ... noch\" (doppelt verneinend).\nAdversativ/Einschränkend: \"zwar ... aber\" (Zugeständnis und Einschränkung), \"einerseits ... andererseits\" (Kontrast).\nDisjunktiv: \"entweder ... oder\" (Alternative).\nSteigernd: \"nicht nur ... sondern auch\" (zusätzlicher Aspekt).\n",
+      "title": "Two-Part Connectors and Linking Clauses",
+      "explanation": "Two-part connectors (Doppelkonnektoren) link parts of a sentence or clauses and express complex logical relationships.\nCopulative: \"sowohl ... als auch\" (listing, both ... and), \"weder ... noch\" (double negative, neither ... nor).\nAdversative/restrictive: \"zwar ... aber\" (concession followed by a restriction), \"einerseits ... andererseits\" (contrast).\nDisjunctive: \"entweder ... oder\" (alternative).\nIntensifying: \"nicht nur ... sondern auch\" (an additional aspect).\n",
       "examples": [
+        "Sie spricht nicht nur fließend Spanisch, sondern auch verhandlungssicheres Russisch.",
+        "Das Angebot ist zwar verlockend, aber die Nebenkosten sind viel zu hoch.",
+        "Wir verfügen zurzeit weder über personelle noch über finanzielle Kapazitäten.",
+        "Einerseits möchte er Karriere machen, andererseits legt er großen Wert auf Freizeit."
+      ],
+      "titleDe": "Zweiteilige Konnektoren und Satzverknüpfungen",
+      "explanationDe": "Zweiteilige Konnektoren (Doppelkonnektoren) verbinden Satzglieder oder Teilsätze und drücken komplexe logische Beziehungen aus.\nKopulativ: \"sowohl ... als auch\" (positiv aufzählend), \"weder ... noch\" (doppelt verneinend).\nAdversativ/Einschränkend: \"zwar ... aber\" (Zugeständnis und Einschränkung), \"einerseits ... andererseits\" (Kontrast).\nDisjunktiv: \"entweder ... oder\" (Alternative).\nSteigernd: \"nicht nur ... sondern auch\" (zusätzlicher Aspekt).\n",
+      "examplesDe": [
         "Sie spricht nicht nur fließend Spanisch, sondern auch verhandlungssicheres Russisch.",
         "Das Angebot ist zwar verlockend, aber die Nebenkosten sind viel zu hoch.",
         "Wir verfügen zurzeit weder über personelle noch über finanzielle Kapazitäten.",
@@ -85,9 +125,17 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "grammar",
-      "title": "Nominalstil und Verbalstil",
-      "explanation": "Im gehobenen Deutsch (Wissenschaft, Verwaltung, Berichte) dominiert der Nominalstil.\nHierbei werden Nebensätze (Verbalstil) durch Präpositional-Nominal-Gruppen ersetzt.\nTypische Präpositionen des Nominalstils regieren meist den Genitiv oder Dativ: \"wegen / aufgrund\" (kausal = weil), \"trotz / ungeachtet\" (konzessiv = obwohl), \"bei / mit\" (konditional = wenn), \"während\" (temporal = während), \"durch\" (modal = indem).\n",
+      "title": "Nominal Style and Verbal Style",
+      "explanation": "Formal German (academic writing, administration, reports) is dominated by the nominal style.\nIn this style, subordinate clauses (verbal style) are replaced by prepositional noun phrases.\nThe typical prepositions of the nominal style usually take the genitive or dative: \"wegen / aufgrund\" (causal = weil), \"trotz / ungeachtet\" (concessive = obwohl), \"bei / mit\" (conditional = wenn), \"während\" (temporal = während), \"durch\" (modal = indem).\n",
       "examples": [
+        "Verbal style: Weil die Nachfrage unerwartet gestiegen ist, erhöhen wir die Produktion.",
+        "Nominal style: Aufgrund des unerwarteten Nachfrageanstiegs erhöhen wir die Produktion.",
+        "Verbal style: Obwohl das Wetter extrem schlecht war, fand das Open-Air-Konzert statt.",
+        "Nominal style: Trotz des extrem schlechten Wetters fand das Open-Air-Konzert statt."
+      ],
+      "titleDe": "Nominalstil und Verbalstil",
+      "explanationDe": "Im gehobenen Deutsch (Wissenschaft, Verwaltung, Berichte) dominiert der Nominalstil.\nHierbei werden Nebensätze (Verbalstil) durch Präpositional-Nominal-Gruppen ersetzt.\nTypische Präpositionen des Nominalstils regieren meist den Genitiv oder Dativ: \"wegen / aufgrund\" (kausal = weil), \"trotz / ungeachtet\" (konzessiv = obwohl), \"bei / mit\" (konditional = wenn), \"während\" (temporal = während), \"durch\" (modal = indem).\n",
+      "examplesDe": [
         "Verbalstil: Weil die Nachfrage unerwartet gestiegen ist, erhöhen wir die Produktion.",
         "Nominalstil: Aufgrund des unerwarteten Nachfrageanstiegs erhöhen wir die Produktion.",
         "Verbalstil: Obwohl das Wetter extrem schlecht war, fand das Open-Air-Konzert statt.",
@@ -100,9 +148,17 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "grammar",
-      "title": "Nomen-Verb-Verbindungen (Funktionsverbgefüge)",
-      "explanation": "Nomen-Verb-Verbindungen (Funktionsverbgefüge) bestehen aus einem Substantiv und einem weitgehend verblassten Verb (Funktionsverb).\nSie dienen im B2-Bereich der stilistischen Nuancierung und Präzisierung.\nMan unterscheidet feste Bedeutungen: \"eine Entscheidung treffen\" (= entscheiden), \"zur Verfügung stehen\" (= verfügbar sein), \"in Betracht ziehen\" (= erwägen), \"in Kraft treten\" (= gültig werden), \"Kritik üben an\" (= kritisieren).\n",
+      "title": "Noun-Verb Collocations (Funktionsverbgefüge)",
+      "explanation": "Noun-verb collocations (Funktionsverbgefüge) consist of a noun and a verb whose own meaning has largely faded (the function verb).\nAt B2 they are used to express things with more nuance and precision.\nMany have fixed meanings: \"eine Entscheidung treffen\" (= entscheiden), \"zur Verfügung stehen\" (= verfügbar sein), \"in Betracht ziehen\" (= erwägen), \"in Kraft treten\" (= gültig werden), \"Kritik üben an\" (= kritisieren).\n",
       "examples": [
+        "Die Geschäftsleitung muss baldmöglichst eine endgültige Entscheidung treffen.",
+        "Dieses Thema steht heute leider nicht zur Diskussion.",
+        "Wir sollten alle Optionen sorgfältig in Betracht ziehen.",
+        "Das neue Gesetz wird voraussichtlich am 1. Januar in Kraft treten."
+      ],
+      "titleDe": "Nomen-Verb-Verbindungen (Funktionsverbgefüge)",
+      "explanationDe": "Nomen-Verb-Verbindungen (Funktionsverbgefüge) bestehen aus einem Substantiv und einem weitgehend verblassten Verb (Funktionsverb).\nSie dienen im B2-Bereich der stilistischen Nuancierung und Präzisierung.\nMan unterscheidet feste Bedeutungen: \"eine Entscheidung treffen\" (= entscheiden), \"zur Verfügung stehen\" (= verfügbar sein), \"in Betracht ziehen\" (= erwägen), \"in Kraft treten\" (= gültig werden), \"Kritik üben an\" (= kritisieren).\n",
+      "examplesDe": [
         "Die Geschäftsleitung muss baldmöglichst eine endgültige Entscheidung treffen.",
         "Dieses Thema steht heute leider nicht zur Diskussion.",
         "Wir sollten alle Optionen sorgfältig in Betracht ziehen.",
@@ -115,9 +171,17 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "grammar",
-      "title": "Erweiterte Partizipialattribute (Partizip I und II)",
-      "explanation": "Partizipien können wie Adjektive vor Nomen stehen und durch zusätzliche Angaben erweitert werden.\nPartizip I (+ -d-) drückt eine aktive, gleichzeitige Handlung aus: \"die stetig steigenden Kosten\".\nPartizip II drückt bei transitiven Verben eine passive oder vollendete Handlung aus: \"das vor kurzem verabschiedete Gesetz\".\nDas Gerundiv (\"zu + Partizip I\") hat passiv-modale Bedeutung (\"müssen/können getan werden\"): \"die unverzüglich zu ergreifenden Maßnahmen\".\n",
+      "title": "Extended Participle Phrases (Partizip I and II)",
+      "explanation": "Participles can stand before nouns like adjectives and can be extended with additional information.\nPartizip I (+ -d-) expresses an active action happening at the same time: \"die stetig steigenden Kosten\".\nWith transitive verbs, Partizip II expresses a passive or completed action: \"das vor kurzem verabschiedete Gesetz\".\nThe gerundive (\"zu + Partizip I\") has a passive and modal meaning (\"must/can be done\"): \"die unverzüglich zu ergreifenden Maßnahmen\".\n",
       "examples": [
+        "Die stetig wachsende Bevölkerung stellt Städte vor gewaltige Herausforderungen.",
+        "Der von unabhängigen Experten verfasste Gutachtenbericht liegt nun vor.",
+        "Die bis Freitag einzureichenden Anträge werden vorrangig bearbeitet.",
+        "Alle am Projekt beteiligten Mitarbeiter wurden informiert."
+      ],
+      "titleDe": "Erweiterte Partizipialattribute (Partizip I und II)",
+      "explanationDe": "Partizipien können wie Adjektive vor Nomen stehen und durch zusätzliche Angaben erweitert werden.\nPartizip I (+ -d-) drückt eine aktive, gleichzeitige Handlung aus: \"die stetig steigenden Kosten\".\nPartizip II drückt bei transitiven Verben eine passive oder vollendete Handlung aus: \"das vor kurzem verabschiedete Gesetz\".\nDas Gerundiv (\"zu + Partizip I\") hat passiv-modale Bedeutung (\"müssen/können getan werden\"): \"die unverzüglich zu ergreifenden Maßnahmen\".\n",
+      "examplesDe": [
         "Die stetig wachsende Bevölkerung stellt Städte vor gewaltige Herausforderungen.",
         "Der von unabhängigen Experten verfasste Gutachtenbericht liegt nun vor.",
         "Die bis Freitag einzureichenden Anträge werden vorrangig bearbeitet.",
@@ -130,9 +194,17 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "grammar",
-      "title": "Relativsätze mit Präpositionen und verallgemeinernde Relativpronomen",
-      "explanation": "Relativsätze werden im B2-Niveau häufig durch Präpositionen eingeleitet, die das Genus und den Kasus des Relativpronomens bestimmen: \"das Thema, über das wir sprechen\", \"der Kollege, mit dessen Hilfe ich fertig wurde\".\nBezieht sich der Relativsatz auf einen ganzen Sachverhalt oder ein Indefinitpronomen (alles, nichts, vieles, etwas), nutzt man \"was\" oder Pronominaladverbien (\"worüber\", \"womit\"): \"Er kam zu spät, worüber sich alle ärgerten.\"\nVerallgemeinernde Relativsätze beginnen mit \"wer\" oder \"wen/wem\".\n",
+      "title": "Relative Clauses with Prepositions and Generalising Relative Pronouns",
+      "explanation": "At B2, relative clauses are often introduced by a preposition, which together with the reference noun determines the relative pronoun's case and gender: \"das Thema, über das wir sprechen\", \"der Kollege, mit dessen Hilfe ich fertig wurde\".\nIf the relative clause refers to a whole situation or to an indefinite pronoun (alles, nichts, vieles, etwas), use \"was\" or a prepositional adverb (\"worüber\", \"womit\"): \"Er kam zu spät, worüber sich alle ärgerten.\"\nGeneralising relative clauses begin with \"wer\" or \"wen/wem\" (whoever).\n",
       "examples": [
+        "Das ist der wissenschaftliche Ansatz, auf den sich die Forscher beziehen.",
+        "Sie hat die Prüfung mit Auszeichnung bestanden, was ihre Eltern sehr stolz machte.",
+        "Wer fleißig trainiert, wird früher oder später Erfolge sehen.",
+        "Hier ist der Künstler, dessen Werke international prämiert wurden."
+      ],
+      "titleDe": "Relativsätze mit Präpositionen und verallgemeinernde Relativpronomen",
+      "explanationDe": "Relativsätze werden im B2-Niveau häufig durch Präpositionen eingeleitet, die das Genus und den Kasus des Relativpronomens bestimmen: \"das Thema, über das wir sprechen\", \"der Kollege, mit dessen Hilfe ich fertig wurde\".\nBezieht sich der Relativsatz auf einen ganzen Sachverhalt oder ein Indefinitpronomen (alles, nichts, vieles, etwas), nutzt man \"was\" oder Pronominaladverbien (\"worüber\", \"womit\"): \"Er kam zu spät, worüber sich alle ärgerten.\"\nVerallgemeinernde Relativsätze beginnen mit \"wer\" oder \"wen/wem\".\n",
+      "examplesDe": [
         "Das ist der wissenschaftliche Ansatz, auf den sich die Forscher beziehen.",
         "Sie hat die Prüfung mit Auszeichnung bestanden, was ihre Eltern sehr stolz machte.",
         "Wer fleißig trainiert, wird früher oder später Erfolge sehen.",
@@ -145,9 +217,17 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "vocabulary",
-      "title": "Wortschatz: Umwelt, Klimaschutz und Nachhaltigkeit",
-      "explanation": "Das Themenfeld Ökologie erfordert differenzierte Nomen, Verben und feste Kollokationen.\nZentrale Begriffe sind: die Nachhaltigkeit, der CO2-Ausstoß, erneuerbare Energien, die Ressourcenschonung, der ökologische Fußabdruck, das Artensterben.\nWichtige Verben: reduzieren, schonen, vergeuden, drosseln, kompensieren, recyceln, umrüsten auf.\n",
+      "title": "Vocabulary: Environment, Climate Protection and Sustainability",
+      "explanation": "The topic of ecology calls for precise nouns, verbs and fixed collocations.\nKey terms are: die Nachhaltigkeit (sustainability), der CO2-Ausstoß (CO2 emissions), erneuerbare Energien (renewable energy), die Ressourcenschonung (conserving resources), der ökologische Fußabdruck (ecological footprint), das Artensterben (species extinction).\nImportant verbs: reduzieren, schonen, vergeuden, drosseln, kompensieren, recyceln, umrüsten auf.\n",
       "examples": [
+        "Die Reduktion der Treibhausgasemissionen erfordert ein Umdenken in Industrie und Verkehr.",
+        "Verbraucher können durch bewussten Konsum ihren ökologischen Fußabdruck minimieren.",
+        "Der Ausbau erneuerbarer Energien wie Wind- und Solarkraft schreitet zu langsam voran.",
+        "Die Bundesregierung plant strengere Grenzwerte für den Schadstoffausstoß."
+      ],
+      "titleDe": "Wortschatz: Umwelt, Klimaschutz und Nachhaltigkeit",
+      "explanationDe": "Das Themenfeld Ökologie erfordert differenzierte Nomen, Verben und feste Kollokationen.\nZentrale Begriffe sind: die Nachhaltigkeit, der CO2-Ausstoß, erneuerbare Energien, die Ressourcenschonung, der ökologische Fußabdruck, das Artensterben.\nWichtige Verben: reduzieren, schonen, vergeuden, drosseln, kompensieren, recyceln, umrüsten auf.\n",
+      "examplesDe": [
         "Die Reduktion der Treibhausgasemissionen erfordert ein Umdenken in Industrie und Verkehr.",
         "Verbraucher können durch bewussten Konsum ihren ökologischen Fußabdruck minimieren.",
         "Der Ausbau erneuerbarer Energien wie Wind- und Solarkraft schreitet zu langsam voran.",
@@ -160,9 +240,17 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "vocabulary",
-      "title": "Wortschatz: Digitalisierung, KI und Medienkompetenz",
-      "explanation": "Der Diskurs über Digitalisierung umfasst Aspekte der Informationssicherheit, Automatisierung und sozialen Medien.\nKernbegriffe: der Datenschutz, die Datensicherheit, künstliche Intelligenz (KI), der Algorithmus, die Cyberkriminalität, die Medienkompetenz, der digitale Wandel.\nKollokationen: Daten erfassen/auswerten, ein System hacken/absichern, Informationen verifizieren, Inhalte ins Netz stellen.\n",
+      "title": "Vocabulary: Digitalisation, AI and Media Literacy",
+      "explanation": "The debate about digitalisation covers information security, automation and social media.\nKey terms: der Datenschutz (data protection), die Datensicherheit (data security), künstliche Intelligenz (KI, artificial intelligence), der Algorithmus (algorithm), die Cyberkriminalität (cybercrime), die Medienkompetenz (media literacy), der digitale Wandel (digital transformation).\nCollocations: Daten erfassen/auswerten, ein System hacken/absichern, Informationen verifizieren, Inhalte ins Netz stellen.\n",
       "examples": [
+        "Der Missbrauch sensibler Nutzerdaten stellt eine ernsthafte Bedrohung der Privatsphäre dar.",
+        "Künstliche Intelligenz verändert die Arbeitswelt in bisher ungekanntem Tempo.",
+        "In Zeiten von Fake News ist die Vermittlung fundierter Medienkompetenz an Schulen unverzichtbar.",
+        "Unternehmen müssen massive Investitionen in die IT-Sicherheit tätigen."
+      ],
+      "titleDe": "Wortschatz: Digitalisierung, KI und Medienkompetenz",
+      "explanationDe": "Der Diskurs über Digitalisierung umfasst Aspekte der Informationssicherheit, Automatisierung und sozialen Medien.\nKernbegriffe: der Datenschutz, die Datensicherheit, künstliche Intelligenz (KI), der Algorithmus, die Cyberkriminalität, die Medienkompetenz, der digitale Wandel.\nKollokationen: Daten erfassen/auswerten, ein System hacken/absichern, Informationen verifizieren, Inhalte ins Netz stellen.\n",
+      "examplesDe": [
         "Der Missbrauch sensibler Nutzerdaten stellt eine ernsthafte Bedrohung der Privatsphäre dar.",
         "Künstliche Intelligenz verändert die Arbeitswelt in bisher ungekanntem Tempo.",
         "In Zeiten von Fake News ist die Vermittlung fundierter Medienkompetenz an Schulen unverzichtbar.",
@@ -175,9 +263,17 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "vocabulary",
-      "title": "Wortschatz: Arbeitswelt, Berufsleben und Karriere",
-      "explanation": "Auf B2-Niveau müssen differenzierte arbeitsrechtliche, organisatorische und karrierebezogene Sachverhalte erörtert werden können.\nKernvokabular: der Fachkräftemangel, die Arbeitsbedingungen, die Gleitzeit, die Vereinbarkeit von Familie und Beruf, die Weiterbildung, die Festanstellung, die Kündigungsfrist.\nTypische Verben: eine Stelle ausschreiben/besetzen, kündigen, ein Arbeitsverhältnis auflösen, verhandeln.\n",
+      "title": "Vocabulary: The World of Work, Working Life and Careers",
+      "explanation": "At B2 you need to be able to discuss complex matters of employment law, organisation and careers.\nCore vocabulary: der Fachkräftemangel (shortage of skilled workers), die Arbeitsbedingungen (working conditions), die Gleitzeit (flexitime), die Vereinbarkeit von Familie und Beruf (work-family balance), die Weiterbildung (further training), die Festanstellung (permanent position), die Kündigungsfrist (notice period).\nTypical verbs: eine Stelle ausschreiben/besetzen, kündigen, ein Arbeitsverhältnis auflösen, verhandeln.\n",
       "examples": [
+        "Viele Branchen leiden unter einem akuten Fachkräftemangel, der das Wirtschaftswachstum bremst.",
+        "Flexible Arbeitszeiten und Homeoffice fördern die Vereinbarkeit von Beruf und Privatleben.",
+        "Vor dem Antritt einer neuen Position sollte der Arbeitsvertrag eingehend geprüft werden.",
+        "Regelmäßige Weiterbildungsmaßnahmen steigern die Chancen auf dem Arbeitsmarkt."
+      ],
+      "titleDe": "Wortschatz: Arbeitswelt, Berufsleben und Karriere",
+      "explanationDe": "Auf B2-Niveau müssen differenzierte arbeitsrechtliche, organisatorische und karrierebezogene Sachverhalte erörtert werden können.\nKernvokabular: der Fachkräftemangel, die Arbeitsbedingungen, die Gleitzeit, die Vereinbarkeit von Familie und Beruf, die Weiterbildung, die Festanstellung, die Kündigungsfrist.\nTypische Verben: eine Stelle ausschreiben/besetzen, kündigen, ein Arbeitsverhältnis auflösen, verhandeln.\n",
+      "examplesDe": [
         "Viele Branchen leiden unter einem akuten Fachkräftemangel, der das Wirtschaftswachstum bremst.",
         "Flexible Arbeitszeiten und Homeoffice fördern die Vereinbarkeit von Beruf und Privatleben.",
         "Vor dem Antritt einer neuen Position sollte der Arbeitsvertrag eingehend geprüft werden.",
@@ -190,9 +286,17 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "vocabulary",
-      "title": "Wortschatz: Gesellschaftlicher Wandel und Demografie",
-      "explanation": "Gesellschaftliche Diskussionen thematisieren Bevölkerungsentwicklung, soziale Sicherungssysteme und gesellschaftlichen Zusammenhalt.\nFachbegriffe: der demografische Wandel, die Überalterung der Gesellschaft, die Geburtenrate, der Generationenvertrag, das Ehrenamt, die soziale Ungleichheit, die Chancengleichheit.\nKollokationen: ehrenamtliche Arbeit leisten, gesellschaftlichen Zusammenhalt stärken, die Altersvorsorge reformieren.\n",
+      "title": "Vocabulary: Social Change and Demographics",
+      "explanation": "Social debates deal with population trends, social security systems and social cohesion.\nKey terms: der demografische Wandel (demographic change), die Überalterung der Gesellschaft (ageing society), die Geburtenrate (birth rate), der Generationenvertrag (intergenerational contract), das Ehrenamt (volunteering), die soziale Ungleichheit (social inequality), die Chancengleichheit (equal opportunities).\nCollocations: ehrenamtliche Arbeit leisten, gesellschaftlichen Zusammenhalt stärken, die Altersvorsorge reformieren.\n",
       "examples": [
+        "Der demografische Wandel stellt die Rentenkassen und das Gesundheitssystem vor immense Probleme.",
+        "Millionen von Bürgern engagieren sich in ihrer Freizeit ehrenamtlich für das Gemeinwohl.",
+        "Zur Sicherung des Wohlstands muss die Vereinbarkeit von Pflege und Erwerbstätigkeit verbessert werden.",
+        "Chancengleichheit im Bildungssystem ist eine Grundvoraussetzung für sozialen Aufstieg."
+      ],
+      "titleDe": "Wortschatz: Gesellschaftlicher Wandel und Demografie",
+      "explanationDe": "Gesellschaftliche Diskussionen thematisieren Bevölkerungsentwicklung, soziale Sicherungssysteme und gesellschaftlichen Zusammenhalt.\nFachbegriffe: der demografische Wandel, die Überalterung der Gesellschaft, die Geburtenrate, der Generationenvertrag, das Ehrenamt, die soziale Ungleichheit, die Chancengleichheit.\nKollokationen: ehrenamtliche Arbeit leisten, gesellschaftlichen Zusammenhalt stärken, die Altersvorsorge reformieren.\n",
+      "examplesDe": [
         "Der demografische Wandel stellt die Rentenkassen und das Gesundheitssystem vor immense Probleme.",
         "Millionen von Bürgern engagieren sich in ihrer Freizeit ehrenamtlich für das Gemeinwohl.",
         "Zur Sicherung des Wohlstands muss die Vereinbarkeit von Pflege und Erwerbstätigkeit verbessert werden.",
@@ -205,9 +309,15 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "reading",
-      "title": "Leseverstehen: Sachtexte global und selektiv erschließen",
-      "explanation": "Bei anspruchsvollen Sachtexten geht es darum, zwischen Kernaussagen (Globalverstehen), Detailinformationen und impliziten Wertungen zu differenzieren.\nAchten Sie auf Gliederungssignale (z. B. \"erstens\", \"hingegen\", \"zusammenfassend\") und Schlüsselbegriffe im Themenumfeld.\nLassen Sie sich nicht von unbekannten Fachwörtern verunsichern; leiten Sie deren Bedeutung aus dem Kontext oder der Wortbildung ab.\n",
+      "title": "Reading: Understanding Factual Texts for Gist and Detail",
+      "explanation": "With demanding factual texts, the task is to distinguish the core statements (gist), detailed information and implicit judgements.\nPay attention to structuring signals (e.g. \"erstens\", \"hingegen\", \"zusammenfassend\") and key terms around the topic.\nDon't let unfamiliar technical words unsettle you; work out their meaning from the context or from how the word is built.\n",
       "examples": [
+        "Text excerpt: 'Obwohl die Pilotstudie methodische Schwächen aufweist, liefert sie wertvolle Hinweise auf das geänderte Nutzerverhalten.'",
+        "Question on the text: Welche Einschränkung nennt der Autor hinsichtlich der Aussagekraft der Untersuchung?"
+      ],
+      "titleDe": "Leseverstehen: Sachtexte global und selektiv erschließen",
+      "explanationDe": "Bei anspruchsvollen Sachtexten geht es darum, zwischen Kernaussagen (Globalverstehen), Detailinformationen und impliziten Wertungen zu differenzieren.\nAchten Sie auf Gliederungssignale (z. B. \"erstens\", \"hingegen\", \"zusammenfassend\") und Schlüsselbegriffe im Themenumfeld.\nLassen Sie sich nicht von unbekannten Fachwörtern verunsichern; leiten Sie deren Bedeutung aus dem Kontext oder der Wortbildung ab.\n",
+      "examplesDe": [
         "Textauszug: 'Obwohl die Pilotstudie methodische Schwächen aufweist, liefert sie wertvolle Hinweise auf das geänderte Nutzerverhalten.'",
         "Frage zum Text: Welche Einschränkung nennt der Autor hinsichtlich der Aussagekraft der Untersuchung?"
       ]
@@ -218,9 +328,15 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "reading",
-      "title": "Leseverstehen: Standpunkte und Ironie in Kommentaren erkennen",
-      "explanation": "Leitartikel, Glossen und Essays enthalten oft subjektive Wertungen, rhetorische Fragen und sprachliche Nuancen wie Ironie oder Distanzierung.\nAchten Sie auf Modalpartikeln (\"ja\", \"doch\", \"wohl\"), Konjunktiv I zur Redewiedergabe (\"sei\", \"habe behauptet\") und wertende Adjektive (\"fragwürdig\", \"scheinbar\", \"angeblich\").\n",
+      "title": "Reading: Recognising Positions and Irony in Commentaries",
+      "explanation": "Editorials, satirical columns and essays often contain subjective judgements, rhetorical questions and linguistic nuances such as irony or distancing.\nPay attention to modal particles (\"ja\", \"doch\", \"wohl\"), Konjunktiv I for reported speech (\"sei\", \"habe behauptet\") and evaluative adjectives (\"fragwürdig\", \"scheinbar\", \"angeblich\").\n",
       "examples": [
+        "Text: 'Dass diese halbherzigen Maßnahmen die Klimakatastrophe abwenden sollen, ist mehr als zweifelhaft.'",
+        "Text: 'Der Minister feiert die Reform als Meilenstein – ein Blick auf die Zahlen offenbart jedoch ein Desaster.'"
+      ],
+      "titleDe": "Leseverstehen: Standpunkte und Ironie in Kommentaren erkennen",
+      "explanationDe": "Leitartikel, Glossen und Essays enthalten oft subjektive Wertungen, rhetorische Fragen und sprachliche Nuancen wie Ironie oder Distanzierung.\nAchten Sie auf Modalpartikeln (\"ja\", \"doch\", \"wohl\"), Konjunktiv I zur Redewiedergabe (\"sei\", \"habe behauptet\") und wertende Adjektive (\"fragwürdig\", \"scheinbar\", \"angeblich\").\n",
+      "examplesDe": [
         "Text: 'Dass diese halbherzigen Maßnahmen die Klimakatastrophe abwenden sollen, ist mehr als zweifelhaft.'",
         "Text: 'Der Minister feiert die Reform als Meilenstein – ein Blick auf die Zahlen offenbart jedoch ein Desaster.'"
       ]
@@ -231,9 +347,15 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "listening",
-      "title": "Hörverstehen: Fachvorträge und Diskussionsbeiträge",
-      "explanation": "Das Verstehen gesprochener Sprache auf B2 erfordert die Erfassung komplexer Gedankengänge bei normaler Sprechgeschwindigkeit.\nKonzentrieren Sie sich auf Einleitungsphrasen (\"Ich möchte nun auf den nächsten Punkt eingehen\"), Hervorhebungen (\"Besonders hervorzuheben ist...\") und Schlussfolgerungen (\"Daraus ergibt sich folgendes Fazit\").\nFiltern Sie störende Füllwörter mental heraus und notieren Sie beim Hören prägnante Stichwörter.\n",
+      "title": "Listening: Expert Talks and Contributions to Discussions",
+      "explanation": "Understanding spoken language at B2 means following complex lines of thought at normal speed.\nConcentrate on introductory phrases (\"Ich möchte nun auf den nächsten Punkt eingehen\"), emphasis (\"Besonders hervorzuheben ist...\") and conclusions (\"Daraus ergibt sich folgendes Fazit\").\nMentally filter out distracting filler words and note down concise key words while you listen.\n",
       "examples": [
+        "Audio text: 'Zusammenfassend lässt sich konstatieren, dass die Investition in Weiterbildung langfristig zu höherer Produktivität führt.'",
+        "Audio text: 'Bevor wir zur Fragerunde übergehen, möchte ich noch kurz die zentralen Thesen meines Vortrags rekapitulieren.'"
+      ],
+      "titleDe": "Hörverstehen: Fachvorträge und Diskussionsbeiträge",
+      "explanationDe": "Das Verstehen gesprochener Sprache auf B2 erfordert die Erfassung komplexer Gedankengänge bei normaler Sprechgeschwindigkeit.\nKonzentrieren Sie sich auf Einleitungsphrasen (\"Ich möchte nun auf den nächsten Punkt eingehen\"), Hervorhebungen (\"Besonders hervorzuheben ist...\") und Schlussfolgerungen (\"Daraus ergibt sich folgendes Fazit\").\nFiltern Sie störende Füllwörter mental heraus und notieren Sie beim Hören prägnante Stichwörter.\n",
+      "examplesDe": [
         "Hörtext: 'Zusammenfassend lässt sich konstatieren, dass die Investition in Weiterbildung langfristig zu höherer Produktivität führt.'",
         "Hörtext: 'Bevor wir zur Fragerunde übergehen, möchte ich noch kurz die zentralen Thesen meines Vortrags rekapitulieren.'"
       ]
@@ -244,9 +366,16 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "writing",
-      "title": "Schriftlicher Ausdruck: Strukturierte Stellungnahme und Erörterung",
-      "explanation": "Eine fundierte Stellungnahme (dialektische Erörterung) gliedert sich klassisch in:\n1. Einleitung: Thema aufgreifen, Relevanz darlegen, Fragestellung präzisieren.\n2. Hauptteil: Gegenargumente entkräften (Gegenseite beleuchten) und eigene Argumente steigernd darlegen (These, Begründung, konkretes Beispiel).\n3. Verknüpfungen: Konnektoren wie \"darüber hinaus\", \"demgegenüber ist einzuwenden\", \"zwar ... jedoch\" nutzen.\n4. Schlussteil: Abwägendes Fazit ziehen und eventuell einen Kompromiss oder Ausblick formulieren.\n",
+      "title": "Writing: A Structured Statement of Opinion and Discussion",
+      "explanation": "A well-founded statement of opinion (a dialectical discussion) is classically structured as follows:\n1. Introduction: take up the topic, show why it matters, state the question precisely.\n2. Main part: weaken the counter-arguments (look at the other side) and present your own arguments in increasing order of strength (claim, reason, concrete example).\n3. Links: use connectors such as \"darüber hinaus\", \"demgegenüber ist einzuwenden\", \"zwar ... jedoch\".\n4. Conclusion: draw a balanced conclusion and, if appropriate, suggest a compromise or an outlook.\n",
       "examples": [
+        "Introduction: 'In der aktuellen Debatte wird immer wieder die Frage aufgeworfen, ob...'",
+        "Transition: 'Befürworter dieser Maßnahme führen häufig an, dass... Demgegenüber muss jedoch betont werden, dass...'",
+        "Conclusion: 'Unter Abwägung aller Argumente überwiegen meines Erachtens die Vorteile...'"
+      ],
+      "titleDe": "Schriftlicher Ausdruck: Strukturierte Stellungnahme und Erörterung",
+      "explanationDe": "Eine fundierte Stellungnahme (dialektische Erörterung) gliedert sich klassisch in:\n1. Einleitung: Thema aufgreifen, Relevanz darlegen, Fragestellung präzisieren.\n2. Hauptteil: Gegenargumente entkräften (Gegenseite beleuchten) und eigene Argumente steigernd darlegen (These, Begründung, konkretes Beispiel).\n3. Verknüpfungen: Konnektoren wie \"darüber hinaus\", \"demgegenüber ist einzuwenden\", \"zwar ... jedoch\" nutzen.\n4. Schlussteil: Abwägendes Fazit ziehen und eventuell einen Kompromiss oder Ausblick formulieren.\n",
+      "examplesDe": [
         "Einleitung: 'In der aktuellen Debatte wird immer wieder die Frage aufgeworfen, ob...'",
         "Überleitung: 'Befürworter dieser Maßnahme führen häufig an, dass... Demgegenüber muss jedoch betont werden, dass...'",
         "Fazit: 'Unter Abwägung aller Argumente überwiegen meines Erachtens die Vorteile...'"
@@ -258,9 +387,16 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "writing",
-      "title": "Schriftlicher Ausdruck: Formelle Mängelrüge und Beschwerde",
-      "explanation": "Ein formeller Beschwerdebrief erfordert einen sachlichen, aber nachdrücklichen Tonfall im gehobenen Register.\nWichtige Bestandteile:\n- Betreffzeile mit Bezugsnummer / Buchungsnummer.\n- Höfliche, formelle Anrede (\"Sehr geehrte Damen und Herren,\").\n- Präzise Schilderung des Soll- und Ist-Zustands anhand konkreter Vorfälle.\n- Fristsetzung zur Nachbesserung, Rückerstattung oder Stellungnahme.\n- Ankündigung rechtlicher Schritte bei Fristversäumnis.\n",
+      "title": "Writing: A Formal Complaint about a Service",
+      "explanation": "A formal letter of complaint needs a factual but firm tone in a formal register.\nImportant elements:\n- A subject line with the reference or booking number.\n- A polite, formal greeting (\"Sehr geehrte Damen und Herren,\").\n- A precise description of what was promised and what actually happened, based on concrete incidents.\n- A deadline for putting things right, a refund or a response.\n- Notice that you will take legal action if the deadline is missed.\n",
       "examples": [
+        "Betreff: Beschwerde über den gebuchten Sprachkurs – Rechnungsnummer 45982",
+        "Entgegen den Zusagen in Ihrem Prospekt fand der Unterricht nicht mit muttersprachlichen Dozenten statt.",
+        "Ich fordere Sie hiermit auf, mir bis zum 15. November einen Teilbetrag von 30 % zu erstatten."
+      ],
+      "titleDe": "Schriftlicher Ausdruck: Formelle Mängelrüge und Beschwerde",
+      "explanationDe": "Ein formeller Beschwerdebrief erfordert einen sachlichen, aber nachdrücklichen Tonfall im gehobenen Register.\nWichtige Bestandteile:\n- Betreffzeile mit Bezugsnummer / Buchungsnummer.\n- Höfliche, formelle Anrede (\"Sehr geehrte Damen und Herren,\").\n- Präzise Schilderung des Soll- und Ist-Zustands anhand konkreter Vorfälle.\n- Fristsetzung zur Nachbesserung, Rückerstattung oder Stellungnahme.\n- Ankündigung rechtlicher Schritte bei Fristversäumnis.\n",
+      "examplesDe": [
         "Betreff: Beschwerde über den gebuchten Sprachkurs – Rechnungsnummer 45982",
         "Entgegen den Zusagen in Ihrem Prospekt fand der Unterricht nicht mit muttersprachlichen Dozenten statt.",
         "Ich fordere Sie hiermit auf, mir bis zum 15. November einen Teilbetrag von 30 % zu erstatten."
@@ -272,9 +408,16 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "speaking",
-      "title": "Mündlicher Ausdruck: Argumentieren, Nuancieren und Einwände entkräften",
-      "explanation": "In einer Diskussion auf B2-Niveau müssen Sprecher flexibel auf Beiträge reagieren, den eigenen Standpunkt präzisieren und Widerspruch höflich, aber bestimmt formulieren.\nRedemittel zur Zustimmung mit Einschränkung: \"Dem stimme ich im Prinzip zu, allerdings...\", \"Da haben Sie sicher recht, dennoch sollte man bedenken, dass...\".\nRedemittel zum Widerspruch: \"Das sehe ich grundlegend anders.\", \"Diesem Argument möchte ich mit aller Entschiedenheit widersprechen.\", \"Erlauben Sie mir dazu eine kritische Anmerkung.\"\n",
+      "title": "Speaking: Arguing, Adding Nuance and Countering Objections",
+      "explanation": "In a discussion at B2, speakers need to react flexibly to what others say, sharpen their own position and disagree politely but firmly.\nPhrases for agreeing with reservations: \"Dem stimme ich im Prinzip zu, allerdings...\", \"Da haben Sie sicher recht, dennoch sollte man bedenken, dass...\".\nPhrases for disagreeing: \"Das sehe ich grundlegend anders.\", \"Diesem Argument möchte ich mit aller Entschiedenheit widersprechen.\", \"Erlauben Sie mir dazu eine kritische Anmerkung.\"\n",
       "examples": [
+        "Ich verstehe Ihren Punkt vollkommen, bezweifle jedoch, dass diese Maßnahme finanzierbar ist.",
+        "Man darf hierbei keinesfalls die sozialen Folgen für einkommensschwache Familien außer Acht lassen.",
+        "Darf ich an dieser Stelle kurz einhaken und ein konkretes Gegenbeispiel anführen?"
+      ],
+      "titleDe": "Mündlicher Ausdruck: Argumentieren, Nuancieren und Einwände entkräften",
+      "explanationDe": "In einer Diskussion auf B2-Niveau müssen Sprecher flexibel auf Beiträge reagieren, den eigenen Standpunkt präzisieren und Widerspruch höflich, aber bestimmt formulieren.\nRedemittel zur Zustimmung mit Einschränkung: \"Dem stimme ich im Prinzip zu, allerdings...\", \"Da haben Sie sicher recht, dennoch sollte man bedenken, dass...\".\nRedemittel zum Widerspruch: \"Das sehe ich grundlegend anders.\", \"Diesem Argument möchte ich mit aller Entschiedenheit widersprechen.\", \"Erlauben Sie mir dazu eine kritische Anmerkung.\"\n",
+      "examplesDe": [
         "Ich verstehe Ihren Punkt vollkommen, bezweifle jedoch, dass diese Maßnahme finanzierbar ist.",
         "Man darf hierbei keinesfalls die sozialen Folgen für einkommensschwache Familien außer Acht lassen.",
         "Darf ich an dieser Stelle kurz einhaken und ein konkretes Gegenbeispiel anführen?"
@@ -286,9 +429,16 @@
       "conceptId": null,
       "sourceLevel": "B2",
       "skill": "speaking",
-      "title": "Mündlicher Ausdruck: Aufbau und Halten eines Fachreferats",
-      "explanation": "Ein strukturierter Vortrag erfordert eine transparente Gliederung und klare Moderationsphrasen:\n1. Einleitung: Begrüßung, Thema nennen, Aufbau kurz umreißen (\"In meinem heutigen Vortrag widme ich mich der Frage... Dazu gliedert sich mein Beitrag in drei Teile.\").\n2. Hauptteil: Übergänge zwischen Punkten markieren (\"Nachdem ich die Ursachen erläutert habe, komme ich nun zu den Lösungsansätzen.\").\n3. Schluss: Zusammenfassung der Kernaussage, Danksagung und Eröffnung der Fragerunde (\"Abschließend möchte ich festhalten... Ich danke Ihnen für Ihre Aufmerksamkeit und freue mich auf Ihre Fragen.\").\n",
+      "title": "Speaking: Structuring and Giving a Specialist Talk",
+      "explanation": "A structured talk needs a transparent outline and clear signposting phrases:\n1. Introduction: greet the audience, name the topic, briefly outline the structure (\"In meinem heutigen Vortrag widme ich mich der Frage... Dazu gliedert sich mein Beitrag in drei Teile.\").\n2. Main part: mark the transitions between points (\"Nachdem ich die Ursachen erläutert habe, komme ich nun zu den Lösungsansätzen.\").\n3. Conclusion: summarise the key message, thank the audience and open the floor to questions (\"Abschließend möchte ich festhalten... Ich danke Ihnen für Ihre Aufmerksamkeit und freue mich auf Ihre Fragen.\").\n",
       "examples": [
+        "Der Zweck meiner heutigen Präsentation besteht darin, Ihnen die Vor- und Nachteile von Remote Work näherzubringen.",
+        "Lassen Sie mich diesen Aspekt anhand eines anschaulichen Beispiels verdeutlichen.",
+        "Damit bin ich am Ende meines Referats angelangt. Ich stehe Ihnen nun gerne für Fragen zur Verfügung."
+      ],
+      "titleDe": "Mündlicher Ausdruck: Aufbau und Halten eines Fachreferats",
+      "explanationDe": "Ein strukturierter Vortrag erfordert eine transparente Gliederung und klare Moderationsphrasen:\n1. Einleitung: Begrüßung, Thema nennen, Aufbau kurz umreißen (\"In meinem heutigen Vortrag widme ich mich der Frage... Dazu gliedert sich mein Beitrag in drei Teile.\").\n2. Hauptteil: Übergänge zwischen Punkten markieren (\"Nachdem ich die Ursachen erläutert habe, komme ich nun zu den Lösungsansätzen.\").\n3. Schluss: Zusammenfassung der Kernaussage, Danksagung und Eröffnung der Fragerunde (\"Abschließend möchte ich festhalten... Ich danke Ihnen für Ihre Aufmerksamkeit und freue mich auf Ihre Fragen.\").\n",
+      "examplesDe": [
         "Der Zweck meiner heutigen Präsentation besteht darin, Ihnen die Vor- und Nachteile von Remote Work näherzubringen.",
         "Lassen Sie mich diesen Aspekt anhand eines anschaulichen Beispiels verdeutlichen.",
         "Damit bin ich am Ende meines Referats angelangt. Ich stehe Ihnen nun gerne für Fragen zur Verfügung."
@@ -1149,7 +1299,9 @@
         "level": "B2",
         "title": "Society and working life",
         "description": "Vocabulary for work, digital life, society and the environment, two-part connectors, and the past subjunctive.",
-        "difficultyRank": 1
+        "difficultyRank": 1,
+        "titleDe": "Gesellschaft und Arbeitswelt",
+        "descriptionDe": "Wortschatz zu Arbeit, digitalem Leben, Gesellschaft und Umwelt, zweiteilige Konnektoren und der Konjunktiv II der Vergangenheit."
       },
       "lessonIds": [
         "b2-arbeitswelt-karriere-vocab",
@@ -1167,7 +1319,9 @@
         "level": "B2",
         "title": "Passive and formal phrasing",
         "description": "Use the passive in all tenses and with modal verbs, noun-verb phrases and advanced relative clauses, read opinion pieces and write a formal complaint.",
-        "difficultyRank": 2
+        "difficultyRank": 2,
+        "titleDe": "Passiv und formelle Ausdrucksweise",
+        "descriptionDe": "Sie verwenden das Passiv in allen Zeitformen und mit Modalverben, Nomen-Verb-Verbindungen und anspruchsvolle Relativsätze, lesen Meinungsbeiträge und schreiben eine formelle Beschwerde."
       },
       "lessonIds": [
         "b2-beschwerdebrief-dienstleistung",
@@ -1185,7 +1339,9 @@
         "level": "B2",
         "title": "Nominal style and argument",
         "description": "Switch between nominal and verbal style, lead a pro-and-con discussion, give a talk, write a structured statement and follow expert talks.",
-        "difficultyRank": 3
+        "difficultyRank": 3,
+        "titleDe": "Nominalstil und Argumentation",
+        "descriptionDe": "Sie wechseln zwischen Nominal- und Verbalstil, führen eine Pro-und-Kontra-Diskussion, halten ein Referat, verfassen eine gegliederte Stellungnahme und verstehen Fachvorträge."
       },
       "lessonIds": [
         "b2-fachpraesentation-strukturieren",
@@ -1202,7 +1358,9 @@
         "level": "B2",
         "title": "Dense factual texts",
         "description": "Unpack extended participle phrases and passive alternatives, then read demanding factual texts for gist and detail.",
-        "difficultyRank": 4
+        "difficultyRank": 4,
+        "titleDe": "Dichte Sachtexte",
+        "descriptionDe": "Sie lösen erweiterte Partizipialattribute und Passivalternativen auf und erschließen anspruchsvolle Sachtexte global und im Detail."
       },
       "lessonIds": [
         "b2-partizipialattribute",
