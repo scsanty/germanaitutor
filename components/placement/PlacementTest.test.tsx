@@ -45,6 +45,21 @@ function stubFetch(routes: Record<string, () => Promise<unknown>>) {
 }
 
 describe('PlacementTest', () => {
+  it('shows question instructions with a language toggle', async () => {
+    stubFetch({
+      '/api/placement/start': () =>
+        delayedResponse({
+          status: 'in_progress',
+          question: { ...MC_QUESTION, instruction: { en: 'Choose the right verb form.', de: 'Wähle die richtige Verbform.' } },
+        }),
+    });
+    renderWithIntl(<PlacementTest onFinished={vi.fn()} />);
+    fireEvent.click(screen.getByText('Start the test'));
+    expect(await screen.findByText('Choose the right verb form.')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'DE' }));
+    expect(screen.getByText('Wähle die richtige Verbform.')).toBeInTheDocument();
+  });
+
   it('offers Skip only when onSkip is given', () => {
     const onSkip = vi.fn();
     const { unmount } = renderWithIntl(<PlacementTest onFinished={vi.fn()} onSkip={onSkip} />);

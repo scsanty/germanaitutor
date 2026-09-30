@@ -6,7 +6,7 @@ import type { ExerciseView } from '@/lib/tutoring/exerciseView';
 import type { AttemptSource } from '@/lib/tutoring/lessonAnswers';
 import { ExerciseCard } from './ExerciseCard';
 
-const MC: ExerciseView = { id: 'ex1', type: 'multiple_choice', question: 'How do you greet someone?', options: ['Hallo', 'Tschüss'] };
+const MC: ExerciseView = { id: 'ex1', type: 'multiple_choice', question: 'How do you greet someone?', options: ['Hallo', 'Tschüss'], instruction: { en: 'Pick the greeting.', de: 'Wähle die Begrüßung.' } };
 const FILL: ExerciseView = { id: 'ex2', type: 'fill_blank', textWithBlank: 'Ich ___ müde.' };
 const CARD: ExerciseView = { id: 'ex3', type: 'flashcard', front: 'der Hund', back: 'the dog' };
 const FREE: ExerciseView = { id: 'ex4', type: 'free_text', prompt: 'Say that you are tired.' };
@@ -112,6 +112,17 @@ describe('ExerciseCard', () => {
     expect(await screen.findByText('Almost — that counts as passed.')).toBeInTheDocument();
     expect(screen.getByText('Model answer: Ich bin müde.')).toBeInTheDocument();
     expect(screen.getByText('Feedback: Watch the umlaut.')).toBeInTheDocument();
+  });
+
+  it('shows the instruction in the content language, and feedback with its own toggle', async () => {
+    stubAttempts(() => delayedResponse(outcome({ result: 'almost', correctAnswer: 'Ich bin müde.', feedback: { en: 'Watch the umlaut.', de: 'Achte auf den Umlaut.' } })));
+    renderWithIntl(<ExerciseCard exercise={{ ...FREE, instruction: { en: 'Say you are tired.', de: 'Sag, dass du müde bist.' } }} source="lesson" contentLanguage="de" onAnswered={vi.fn()} onNext={vi.fn()} onSkip={vi.fn()} />);
+    expect(screen.getByText('Sag, dass du müde bist.')).toBeInTheDocument();
+    fireEvent.change(screen.getByLabelText('Your answer'), { target: { value: 'Ich bin mude.' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }));
+    expect(await screen.findByText('Feedback: Watch the umlaut.')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'DE' }));
+    expect(screen.getByText('Feedback: Achte auf den Umlaut.')).toBeInTheDocument();
   });
 
   it('shows any other failure as an error', async () => {

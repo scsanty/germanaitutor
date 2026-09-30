@@ -21,6 +21,11 @@
     "testout_unavailable": "This test-out isn't available",
     "testout_cooldown": "You can try this test-out again later"
   },
+  "languageToggle": {
+    "lesson": "Lesson language",
+    "feedback": "Feedback language",
+    "placement": "Question language"
+  },
   "banner": {
     "providerTrouble": "Your active provider ({provider}) is having trouble: {error}. <link>Visit Settings</link> to fix it or switch providers."
   },

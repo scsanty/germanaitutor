@@ -21,6 +21,11 @@
     "testout_unavailable": "Dieser Test zum Überspringen ist nicht verfügbar",
     "testout_cooldown": "Du kannst diesen Test später noch einmal machen"
   },
+  "languageToggle": {
+    "lesson": "Sprache der Lektion",
+    "feedback": "Sprache des Feedbacks",
+    "placement": "Sprache der Fragen"
+  },
   "banner": {
     "providerTrouble": "Dein aktiver KI-Anbieter ({provider}) hat Probleme: {error}. <link>Öffne die Einstellungen</link>, um das Problem zu beheben oder den Anbieter zu wechseln."
   },

@@ -2,14 +2,15 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import type { LessonView } from '@/lib/tutoring/progressTypes';
 import type { AttemptOutcome } from '@/lib/tutoring/lessonAnswers';
 import { ExerciseCard } from './ExerciseCard';
 import { PracticeRun } from './PracticeRun';
 import type { GradeResult } from '@/lib/tutoring/grading';
 import { LessonChat, type AskAbout } from './LessonChat';
-import { pickText } from '@/lib/i18n/localizedText';
+import { pickText, type ContentLanguage } from '@/lib/i18n/localizedText';
+import { LanguageToggle } from '@/components/LanguageToggle';
 import { useApiErrorText } from '@/components/useApiErrorText';
 
 type OpenLesson = Extract<LessonView, { locked: false }>;
@@ -27,6 +28,11 @@ export function LessonPage({ lessonId }: { lessonId: string }) {
   const t = useTranslations('lesson');
   const tCommon = useTranslations('common');
   const errorText = useApiErrorText();
+  const locale = useLocale() as ContentLanguage;
+  const tToggle = useTranslations('languageToggle');
+  const [language, setLanguage] = useState<ContentLanguage>(locale);
+  // Spec: the toggle starts in the UI language every time a lesson opens (Review Focus 2).
+  useEffect(() => setLanguage(locale), [lessonId, locale]);
   const [view, setView] = useState<LessonView | null>(null);
   const [notFound, setNotFound] = useState(false);
   const [loadFailed, setLoadFailed] = useState(false);
@@ -176,7 +182,8 @@ export function LessonPage({ lessonId }: { lessonId: string }) {
       <nav>
         <Link href="/">{t('backToTree')}</Link>
       </nav>
-      <h1>{pickText(lesson.title, 'en')}</h1>
+      <h1>{pickText(lesson.title, language)}</h1>
+      <LanguageToggle value={language} onChange={setLanguage} label={tToggle('lesson')} />
       {lesson.prerequisites.length > 0 && (
         <p>
           {t('buildsOn')}{' '}
@@ -188,13 +195,13 @@ export function LessonPage({ lessonId }: { lessonId: string }) {
           ))}
         </p>
       )}
-      {lesson.explanation && <p>{pickText(lesson.explanation, 'en')}</p>}
+      {lesson.explanation && <p>{pickText(lesson.explanation, language)}</p>}
       {lesson.examples && lesson.examples.length > 0 && (
         <div>
           <h2>{t('examples')}</h2>
           <ul>
             {lesson.examples.map((example, index) => (
-              <li key={index}>{pickText(example, 'en')}</li>
+              <li key={index}>{pickText(example, language)}</li>
             ))}
           </ul>
         </div>
@@ -226,6 +233,7 @@ export function LessonPage({ lessonId }: { lessonId: string }) {
             key={turn}
             exercise={current}
             source="lesson"
+            contentLanguage={language}
             onAnswered={handleAnswered}
             onNext={() => advance(lastPassed)}
             onSkip={() => advance(false)}
@@ -255,7 +263,7 @@ export function LessonPage({ lessonId }: { lessonId: string }) {
 
       {/* Spec Phase 2: practice only on a lesson the student has completed themselves, and not
           while a lesson run is showing an exercise. */}
-      {lesson.completed && !current && <PracticeRun lessonId={lesson.id} onAskAi={practiceAskAi} onActiveChange={setPracticeActive} />}
+      {lesson.completed && !current && <PracticeRun lessonId={lesson.id} contentLanguage={language} onAskAi={practiceAskAi} onActiveChange={setPracticeActive} />}
       <LessonChat
         lessonId={lesson.id}
         open={chatOpen}
