@@ -1,4 +1,5 @@
 import type Database from 'better-sqlite3';
+import { localized } from '../i18n/localizedText';
 import type { CefrLevel, Track } from '../types';
 import type { ExerciseType, Skill } from '../curriculum/types';
 import { unsortedMilestoneId } from '../curriculum-admin/unsortedBucket';
@@ -9,6 +10,7 @@ import type { CurriculumTree, DailyQueue, LessonView } from '../tutoring/progres
 import { computeBranchLayout } from '../tutoring/branchLayout';
 import { remainingReviews, selectDueItems } from '../tutoring/queue';
 import { isAiAvailable } from './aiService';
+import { createContentText } from './contentText';
 import { createCurriculumService } from './curriculumService';
 import { lessonLock, loadDoneState, loadLevelGating, loadPrerequisites, type DoneState } from './levelGating';
 import { createProfileService } from './profileService';
@@ -36,6 +38,7 @@ const isDone = (state: DoneState, id: string) => state.completed.has(id) || stat
 export function createProgressService(db: Database.Database) {
   const profiles = createProfileService(db);
   const curriculum = createCurriculumService(db);
+  const text = createContentText(db);
 
     // The student-visible lessons of a track+level, in tree order. The Unsorted bucket is admin-only.
   function visibleLessons(track: Track, level: CefrLevel): VisibleLessonRow[] {
@@ -52,7 +55,7 @@ export function createProgressService(db: Database.Database) {
   }
 
   function getTree(): CurriculumTree {
-    const { activeTrack: track, activeLevel: level } = profiles.getProfile();
+    const { activeTrack: track, activeLevel: level, uiLanguage: language } = profiles.getProfile();
     const gating = loadLevelGating(db, track, level);
     const info = new Map(visibleLessons(track, level).map((row) => [row.id, row]));
     const attempted = new Set(
@@ -74,8 +77,8 @@ export function createProgressService(db: Database.Database) {
         const layout = new Map(computeBranchLayout(ids, edges, { flatOnCycle: true }).map((n) => [n.id, n]));
         return {
           id: milestone.id,
-          title: milestone.title,
-          description: milestone.description,
+          title: text.milestoneTitle(milestone.id, language),
+          description: text.milestoneDescription(milestone.id, language),
           rank: milestone.rank,
           state: gating.states.get(milestone.id)!,
           edges,
@@ -85,7 +88,7 @@ export function createProgressService(db: Database.Database) {
             const at = layout.get(id)!;
             return {
               id,
-              title: row.title,
+              title: text.lessonTitle(id, language),
               skill: row.skill,
               status: lessonStatus({
                 completed: gating.done.completed.has(id),
@@ -100,7 +103,7 @@ export function createProgressService(db: Database.Database) {
                   const home = gating.milestoneOf(p.id);
                   return home !== undefined && home.id !== milestone.id;
                 })
-                .map((p) => ({ ...p, done: gating.isDone(p.id) })),
+                .map((p) => ({ ...p, title: text.lessonTitle(p.id, language), done: gating.isDone(p.id) })),
               branch: at.branch,
               column: at.column,
               row: at.row,
@@ -139,11 +142,12 @@ export function createProgressService(db: Database.Database) {
   function getLessonView(lessonId: string): LessonView | null {
     const lesson = curriculum.getLesson(lessonId, 'generic'); // getLesson ignores its track argument
     if (!lesson) return null;
-    if (!isAtOrBelow(lesson.sourceLevel, profiles.getProfile().highestUnlockedLevel)) {
+    const { highestUnlockedLevel, uiLanguage: language } = profiles.getProfile();
+    if (!isAtOrBelow(lesson.sourceLevel, highestUnlockedLevel)) {
       return {
         locked: 'level' as const,
         id: lesson.id,
-        title: lesson.title,
+        title: text.lessonTitle(lesson.id, language),
         level: lesson.sourceLevel,
         unlocksAfter: LEVELS[levelIndex(lesson.sourceLevel) - 1],
       };
@@ -153,11 +157,11 @@ export function createProgressService(db: Database.Database) {
       return {
         locked: 'lesson',
         id: lesson.id,
-        title: lesson.title,
+        title: text.lessonTitle(lesson.id, language),
         level: lesson.sourceLevel,
         reason: lock.reason,
-        milestone: lock.milestone,
-        missingPrerequisites: lock.missingPrerequisites,
+        milestone: { id: lock.milestone.id, title: text.milestoneTitle(lock.milestone.id, language) },
+        missingPrerequisites: lock.missingPrerequisites.map((p) => ({ ...p, title: text.lessonTitle(p.id, language) })),
       };
     }
     const done = loadDoneState(db);
@@ -169,26 +173,26 @@ export function createProgressService(db: Database.Database) {
     return {
       locked: false,
       id: lesson.id,
-      title: lesson.title,
+      title: localized(lesson.title, lesson.titleDe),
       track: lesson.track,
       level: lesson.sourceLevel,
       skill: lesson.skill,
-      explanation: lesson.explanation,
-      examples: lesson.examples,
+      explanation: lesson.explanation ? localized(lesson.explanation, lesson.explanationDe) : null,
+      examples: lesson.examples ? lesson.examples.map((example, i) => localized(example, lesson.examplesDe?.[i])) : null,
       exercises: curriculum.getExercises(lesson.id, lesson.track).map(toExerciseView),
       passedExerciseIds: passedExerciseIds(lesson.id),
       completed: done.completed.has(lesson.id),
       // Prerequisites placed in Unsorted are ignored by gating, so the view doesn't list them either.
       prerequisites: (loadPrerequisites(db).get(lesson.id) ?? [])
         .filter((p) => !inUnsorted(p.id))
-        .map((p) => ({ ...p, done: isDone(done, p.id) })),
+        .map((p) => ({ ...p, title: text.lessonTitle(p.id, language), done: isDone(done, p.id) })),
     };
   }
 
   // Spec: Pages and Navigation, `/queue`. Reviews follow what was learned, not where it's
   // filed, so lessons an admin moved into Unsorted still count.
   function getDailyQueue(today: string): DailyQueue {
-    const { activeTrack: track, activeLevel: level, dailyReviewCap: cap } = profiles.getProfile();
+    const { activeTrack: track, activeLevel: level, dailyReviewCap: cap, uiLanguage: language } = profiles.getProfile();
     const answeredToday = (
       db.prepare(`SELECT COUNT(*) AS n FROM lesson_attempts WHERE source = 'queue' AND answered_on = ?`).get(today) as {
         n: number;
@@ -228,7 +232,7 @@ export function createProgressService(db: Database.Database) {
       answeredToday,
       items: due.map((row) => ({
         lessonId: row.lesson_id,
-        lessonTitle: row.lesson_title,
+        lessonTitle: text.lessonTitle(row.lesson_id, language),
         exercise: toExerciseView({
           id: row.id,
           lessonId: row.lesson_id,
@@ -237,7 +241,7 @@ export function createProgressService(db: Database.Database) {
           content: JSON.parse(row.content),
         }),
       })),
-      suggestedLesson: suggested ? { id: suggested.id, title: suggested.title } : null,
+      suggestedLesson: suggested ? { id: suggested.id, title: text.lessonTitle(suggested.id, language) } : null,
     };
   }
 

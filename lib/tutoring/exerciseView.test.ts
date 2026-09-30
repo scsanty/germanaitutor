@@ -37,4 +37,15 @@ describe('toExerciseView', () => {
       toExerciseView({ id: 'fc', lessonId: 'l', track: null, type: 'flashcard', content: { front: 'der Hund', back: 'the dog' } })
     ).toEqual({ id: 'fc', type: 'flashcard', front: 'der Hund', back: 'the dog' });
   });
+
+  it('carries the instruction in both languages', () => {
+    const view = toExerciseView({
+      id: 'e',
+      lessonId: 'l',
+      track: null,
+      type: 'free_text',
+      content: { prompt: '', modelAnswer: 'Hallo!', instruction: { en: 'Say hello.', de: 'Sag hallo.' } },
+    });
+    expect(view).toEqual({ id: 'e', type: 'free_text', prompt: '', instruction: { en: 'Say hello.', de: 'Sag hallo.' } });
+  });
 });

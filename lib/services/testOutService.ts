@@ -14,6 +14,7 @@ import { isAiAvailable } from './aiService';
 import { gradeExerciseAnswer } from './exerciseGrading';
 import { gradeFreeText, type FreeTextGradeOutcome } from './freeTextGradingService';
 import { loadLevelGating } from './levelGating';
+import { createContentText } from './contentText';
 import { createProfileService } from './profileService';
 import { eligibleCandidates, testOutStatusFor } from './testOutStatus';
 import { createUnlockService } from './unlockService';
@@ -83,6 +84,7 @@ export function createTestOutService(db: Database.Database, deps: TestOutDeps = 
   const aiAvailable = deps.aiAvailable ?? (() => isAiAvailable(db));
   const gradeFree = deps.gradeFreeText ?? ((input: FreeTextGradingInput) => gradeFreeText(db, input));
   const profiles = createProfileService(db);
+  const text = createContentText(db);
   const unlocks = createUnlockService(db);
 
   function context(milestoneId: string) {
@@ -178,7 +180,7 @@ export function createTestOutService(db: Database.Database, deps: TestOutDeps = 
       )
       .get(milestoneId) as AttemptRow | undefined;
     return {
-      milestone: { id: milestone.id, title: milestone.title },
+      milestone: { id: milestone.id, title: text.milestoneTitle(milestone.id, profiles.getProfile().uiLanguage) },
       status,
       lastResult: last ? toResult(JSON.parse(last.answers), last.score ?? 0, last.max_score ?? 0, last.status === 'passed') : null,
     };
@@ -251,10 +253,7 @@ export function createTestOutService(db: Database.Database, deps: TestOutDeps = 
     if (!exercise) throw new TestOutError(`Exercise not found: ${exerciseId}`, 'not_found');
     if (ids[answers.length] !== exerciseId) throw new TestOutError('That is not the next question', 'bad_request');
 
-    const graded = await gradeExerciseAnswer(exercise, given, milestone.level, {
-      gradeFreeText: gradeFree,
-      uiLanguage: profiles.getProfile().uiLanguage,
-    });
+    const graded = await gradeExerciseAnswer(exercise, given, milestone.level, { gradeFreeText: gradeFree });
     if (!graded.ok) {
       if (graded.reason === 'bad_request') throw new TestOutError(graded.message, 'bad_request');
       throw new TestOutError(graded.message, 'grading_failed', graded.code, graded.params);

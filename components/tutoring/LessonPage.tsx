@@ -9,6 +9,7 @@ import { ExerciseCard } from './ExerciseCard';
 import { PracticeRun } from './PracticeRun';
 import type { GradeResult } from '@/lib/tutoring/grading';
 import { LessonChat, type AskAbout } from './LessonChat';
+import { pickText } from '@/lib/i18n/localizedText';
 import { useApiErrorText } from '@/components/useApiErrorText';
 
 type OpenLesson = Extract<LessonView, { locked: false }>;
@@ -175,7 +176,7 @@ export function LessonPage({ lessonId }: { lessonId: string }) {
       <nav>
         <Link href="/">{t('backToTree')}</Link>
       </nav>
-      <h1>{lesson.title}</h1>
+      <h1>{pickText(lesson.title, 'en')}</h1>
       {lesson.prerequisites.length > 0 && (
         <p>
           {t('buildsOn')}{' '}
@@ -187,13 +188,13 @@ export function LessonPage({ lessonId }: { lessonId: string }) {
           ))}
         </p>
       )}
-      {lesson.explanation && <p>{lesson.explanation}</p>}
+      {lesson.explanation && <p>{pickText(lesson.explanation, 'en')}</p>}
       {lesson.examples && lesson.examples.length > 0 && (
         <div>
           <h2>{t('examples')}</h2>
           <ul>
             {lesson.examples.map((example, index) => (
-              <li key={index}>{example}</li>
+              <li key={index}>{pickText(example, 'en')}</li>
             ))}
           </ul>
         </div>

@@ -16,6 +16,7 @@ import type {
 } from '../tutoring/placementTypes';
 import { errorBodyFor, type ApiErrorBody, type ErrorCode, type ErrorParams } from '../tutoring/errorCodes';
 import { gradeFreeText, type FreeTextGradeOutcome } from './freeTextGradingService';
+import { readFeedback } from '../i18n/localizedText';
 import { createProfileService } from './profileService';
 import { createUnlockService } from './unlockService';
 
@@ -74,15 +75,21 @@ interface BestRow {
   taken_at: string;
 }
 
+// Sessions started before feedback became bilingual hold plain-text feedback.
+function readAnswers(stored: string): PlacementAnswerRecord[] {
+  return (JSON.parse(stored) as PlacementAnswerRecord[]).map((record) => ({ ...record, feedback: readFeedback(record.feedback) }));
+}
+
 function toView(question: PlacementQuestion, position: number, total: number): PlacementQuestionView {
   const base = { id: question.id, position, total, level: question.level };
+  const instruction = question.content.instruction ? { instruction: question.content.instruction } : {};
   switch (question.type) {
     case 'multiple_choice':
-      return { ...base, type: 'multiple_choice', question: question.content.question, options: question.content.options };
+      return { ...base, type: 'multiple_choice', question: question.content.question, options: question.content.options, ...instruction };
     case 'fill_blank':
-      return { ...base, type: 'fill_blank', textWithBlank: question.content.textWithBlank };
+      return { ...base, type: 'fill_blank', textWithBlank: question.content.textWithBlank, ...instruction };
     case 'free_text':
-      return { ...base, type: 'free_text', prompt: question.content.prompt };
+      return { ...base, type: 'free_text', prompt: question.content.prompt, ...instruction };
   }
 }
 
@@ -161,11 +168,10 @@ export function createPlacementService(db: Database.Database, deps?: PlacementDe
     if (question.type === 'free_text' && answer.type === 'free_text') {
       const { content } = question;
       const graded = await gradeFree({
-        prompt: content.prompt,
+        prompt: [question.content.instruction?.en, content.prompt].filter(Boolean).join(' — '),
         modelAnswer: content.modelAnswer,
         studentAnswer: answer.text,
         level: question.level,
-        uiLanguage: profiles.getProfile().uiLanguage,
       });
       if (!graded.ok) throw new PlacementError(graded.error, 'grading_failed', graded.code, graded.params);
       return {
@@ -197,7 +203,7 @@ export function createPlacementService(db: Database.Database, deps?: PlacementDe
     const answered = current.next_position;
     const score = current.score + pointsFor(question.level, record.result);
     const mistakes = current.mistakes + (record.result === 'wrong' ? 1 : 0);
-    const records = [...(JSON.parse(current.answers) as PlacementAnswerRecord[]), record];
+    const records = [...readAnswers(current.answers), record];
     db.prepare('UPDATE placement_session SET next_position = ?, score = ?, mistakes = ?, answers = ? WHERE id = 1').run(
       answered + 1,
       score,
@@ -258,7 +264,7 @@ export function createPlacementService(db: Database.Database, deps?: PlacementDe
         maxScore: max,
         placedLevel: placed,
         stopReason,
-        answers: JSON.parse(session.answers) as PlacementAnswerRecord[],
+        answers: readAnswers(session.answers),
         isNewBest,
         unlockOffer,
       };

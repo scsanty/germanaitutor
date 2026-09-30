@@ -7,12 +7,12 @@ import { LessonPage } from './LessonPage';
 const LESSON = {
   locked: false,
   id: 'a1-greet',
-  title: 'Saying hello',
+  title: { en: 'Saying hello', de: 'Begrüßen' },
   track: 'generic',
   level: 'A1',
   skill: 'vocabulary',
-  explanation: 'Say Hallo to greet someone.',
-  examples: ['Hallo!'],
+  explanation: { en: 'Say Hallo to greet someone.', de: '' },
+  examples: [{ en: 'Hallo!', de: '' }],
   exercises: [
     { id: 'ex1', type: 'multiple_choice', question: 'Greeting?', options: ['Hallo', 'Tschüss'] },
     { id: 'ex2', type: 'multiple_choice', question: 'Farewell?', options: ['Hallo', 'Tschüss'] },

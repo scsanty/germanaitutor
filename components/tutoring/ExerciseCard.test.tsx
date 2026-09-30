@@ -105,7 +105,7 @@ describe('ExerciseCard', () => {
   });
 
   it('shows the model answer and the AI feedback for free text', async () => {
-    stubAttempts(() => delayedResponse(outcome({ result: 'almost', correctAnswer: 'Ich bin müde.', feedback: 'Watch the umlaut.' })));
+    stubAttempts(() => delayedResponse(outcome({ result: 'almost', correctAnswer: 'Ich bin müde.', feedback: { en: 'Watch the umlaut.', de: 'Achte auf den Umlaut.' } })));
     renderCard(FREE);
     fireEvent.change(screen.getByLabelText('Your answer'), { target: { value: 'Ich bin mude.' } });
     fireEvent.click(screen.getByRole('button', { name: 'Check' }));

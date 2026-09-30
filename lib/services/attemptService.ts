@@ -18,6 +18,7 @@ import { createCurriculumService } from './curriculumService';
 import { gradeExerciseAnswer } from './exerciseGrading';
 import { lessonLock } from './levelGating';
 import { gradeFreeText, type FreeTextGradeOutcome } from './freeTextGradingService';
+import { storeFeedback, type LocalizedText } from '../i18n/localizedText';
 import { createProfileService } from './profileService';
 import { createProgressService } from './progressService';
 import { createUnlockService } from './unlockService';
@@ -119,11 +120,8 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
     exercise: Exercise,
     answer: LessonAnswer,
     level: CefrLevel
-  ): Promise<{ result: GradeResult; feedback: string | null }> {
-    const graded = await gradeExerciseAnswer(exercise, answer, level, {
-      gradeFreeText: gradeFree,
-      uiLanguage: profiles.getProfile().uiLanguage,
-    });
+  ): Promise<{ result: GradeResult; feedback: LocalizedText | null }> {
+    const graded = await gradeExerciseAnswer(exercise, answer, level, { gradeFreeText: gradeFree });
     if (graded.ok) return { result: graded.result, feedback: graded.feedback };
     if (graded.reason === 'bad_request') throw new AttemptError(graded.message, 'bad_request');
     throw new AttemptError(graded.message, 'grading_failed', graded.code, graded.params);
@@ -193,7 +191,7 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
       db.prepare(
         `INSERT INTO lesson_attempts (exercise_id, lesson_id, source, result, answer_text, ai_feedback, answered_at, answered_on)
          VALUES (?, ?, ?, ?, ?, ?, ?, ?)`
-      ).run(exercise.id, lesson.id, source, result, answerTextFor(exercise, answer), feedback, at, today);
+      ).run(exercise.id, lesson.id, source, result, answerTextFor(exercise, answer), feedback ? storeFeedback(feedback) : null, at, today);
 
       const wasComplete = progress.isCompleted(lesson.id);
       let justCompleted = false;

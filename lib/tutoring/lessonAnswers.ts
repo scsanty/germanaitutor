@@ -5,6 +5,7 @@ import type {
   FreeTextContent,
   MultipleChoiceContent,
 } from '../curriculum/types';
+import type { LocalizedText } from '../i18n/localizedText';
 import type { GradeResult } from './grading';
 
 export type FlashcardRating = 'knew' | 'sort_of' | 'didnt_know';
@@ -20,7 +21,7 @@ export type LessonAnswer =
 export interface AttemptOutcome {
   result: GradeResult;
   correctAnswer: string | null;
-  feedback: string | null;
+  feedback: LocalizedText | null;
   passedExerciseIds: string[];
   lessonCompleted: boolean;
   justCompleted: boolean;
@@ -96,4 +97,11 @@ export function taskTextFor(exercise: Exercise): string {
     case 'free_text':
       return (exercise.content as FreeTextContent).prompt;
   }
+}
+
+// The English task text for AI prompts: the instruction (if any) followed by the stimulus.
+export function taskTextOf(exercise: Exercise): string {
+  const content = exercise.content as { instruction?: { en: string } };
+  const stimulus = taskTextFor(exercise);
+  return [content.instruction?.en, stimulus].filter((part) => part && part.trim()).join(' — ');
 }

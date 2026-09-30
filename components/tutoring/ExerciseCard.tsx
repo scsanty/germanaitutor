@@ -8,6 +8,7 @@ import type { AttemptOutcome, AttemptSource, FlashcardRating, LessonAnswer } fro
 import type { GradeResult } from '@/lib/tutoring/grading';
 import type { PracticeGradeOutcome } from '@/lib/tutoring/practiceViews';
 import type { TestOutAnswerOutcome } from '@/lib/tutoring/testOutViews';
+import { pickText } from '@/lib/i18n/localizedText';
 import { useApiErrorText } from '@/components/useApiErrorText';
 
 const RATINGS: FlashcardRating[] = ['knew', 'sort_of', 'didnt_know'];
@@ -114,7 +115,7 @@ export function ExerciseCard({
           onPracticeAnswered?.(outcome);
         } else {
           const outcome = data as AttemptOutcome;
-          setShown({ result: outcome.result, correctAnswer: outcome.correctAnswer, feedback: outcome.feedback, answerText });
+          setShown({ result: outcome.result, correctAnswer: outcome.correctAnswer, feedback: outcome.feedback ? pickText(outcome.feedback, 'en') : null, answerText });
           onAnswered?.(outcome);
         }
         return;

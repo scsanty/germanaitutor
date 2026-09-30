@@ -7,8 +7,8 @@ const fill: Exercise = { id: 'fb', lessonId: 'l', track: null, type: 'fill_blank
 const card: Exercise = { id: 'fc', lessonId: 'l', track: null, type: 'flashcard', content: { front: 'der Hund', back: 'the dog' } };
 const free: Exercise = { id: 'ft', lessonId: 'l', track: null, type: 'free_text', content: { prompt: 'Write.', modelAnswer: 'Ich schreibe.' } };
 
-function deps(outcome: unknown = { ok: true, result: 'almost', feedback: 'Fast.' }) {
-  return { gradeFreeText: vi.fn().mockResolvedValue(outcome), uiLanguage: 'de' as const };
+function deps(outcome: unknown = { ok: true, result: 'almost', feedback: { en: 'Almost.', de: 'Fast.' } }) {
+  return { gradeFreeText: vi.fn().mockResolvedValue(outcome) };
 }
 
 describe('gradeExerciseAnswer', () => {
@@ -25,14 +25,13 @@ describe('gradeExerciseAnswer', () => {
     expect(await gradeExerciseAnswer(free, { type: 'free_text', text: 'Ich schreib.' }, 'A2', d)).toEqual({
       ok: true,
       result: 'almost',
-      feedback: 'Fast.',
+      feedback: { en: 'Almost.', de: 'Fast.' },
     });
     expect(d.gradeFreeText).toHaveBeenCalledWith({
       prompt: 'Write.',
       modelAnswer: 'Ich schreibe.',
       studentAnswer: 'Ich schreib.',
       level: 'A2',
-      uiLanguage: 'de',
     });
   });
 

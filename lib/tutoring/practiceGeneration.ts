@@ -83,6 +83,8 @@ export function parseGeneratedExercises(
     const { type, content } = item as { type?: unknown; content?: unknown };
     if (typeof type !== 'string' || !(allowedTypes as string[]).includes(type)) continue;
     if (type === 'flashcard' && skill !== 'vocabulary') continue;
+    // The practice pool is German-only: an instruction (and the empty question it allows) is never valid here.
+    if (content && typeof content === 'object' && 'instruction' in content) continue;
     if (validateExerciseContent(type, content).length > 0) continue;
     usable.push({ type: type as ExerciseType, content: content as ExerciseContent });
   }

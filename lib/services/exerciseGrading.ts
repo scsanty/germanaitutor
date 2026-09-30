@@ -1,19 +1,19 @@
+import type { LocalizedText } from '../i18n/localizedText';
 import type { CefrLevel } from '../types';
 import type { Exercise, FillBlankContent, FreeTextContent, MultipleChoiceContent } from '../curriculum/types';
 import type { ErrorCode, ErrorParams } from '../tutoring/errorCodes';
 import type { FreeTextGradingInput } from '../tutoring/freeTextGrading';
 import { gradeFillBlank, gradeMultipleChoice, type GradeResult } from '../tutoring/grading';
-import { FLASHCARD_GRADES, type LessonAnswer } from '../tutoring/lessonAnswers';
+import { FLASHCARD_GRADES, taskTextOf, type LessonAnswer } from '../tutoring/lessonAnswers';
 import type { FreeTextGradeOutcome } from './freeTextGradingService';
 
 export type ExerciseGradeOutcome =
-  | { ok: true; result: GradeResult; feedback: string | null }
+  | { ok: true; result: GradeResult; feedback: LocalizedText | null }
   | { ok: false; reason: 'bad_request'; message: string }
   | { ok: false; reason: 'grading_failed'; message: string; code?: ErrorCode; params?: ErrorParams };
 
 export interface ExerciseGradingDeps {
   gradeFreeText: (input: FreeTextGradingInput) => Promise<FreeTextGradeOutcome>;
-  uiLanguage: 'en' | 'de';
 }
 
 // The one grading rule for authored and practice exercises (spec: Grades): deterministic for
@@ -43,11 +43,10 @@ export async function gradeExerciseAnswer(
       if (!answer.text.trim()) return { ok: false, reason: 'bad_request', message: 'Write an answer first' };
       const content = exercise.content as FreeTextContent;
       const graded = await deps.gradeFreeText({
-        prompt: content.prompt,
+        prompt: taskTextOf(exercise),
         modelAnswer: content.modelAnswer,
         studentAnswer: answer.text,
         level,
-        uiLanguage: deps.uiLanguage,
       });
       if (!graded.ok) {
         return { ok: false, reason: 'grading_failed', message: graded.error, code: graded.code, params: graded.params };

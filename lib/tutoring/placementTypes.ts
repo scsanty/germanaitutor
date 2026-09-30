@@ -1,3 +1,4 @@
+import type { LocalizedText } from '../i18n/localizedText';
 import type { CefrLevel } from '../types';
 import type { GradeResult } from './grading';
 import type { PlacementQuestionType } from './placementExamFormat';
@@ -17,9 +18,9 @@ interface QuestionViewBase {
 
 // What the client sees of a question: never the answer.
 export type PlacementQuestionView =
-  | (QuestionViewBase & { type: 'multiple_choice'; question: string; options: string[] })
-  | (QuestionViewBase & { type: 'fill_blank'; textWithBlank: string })
-  | (QuestionViewBase & { type: 'free_text'; prompt: string });
+  | (QuestionViewBase & { type: 'multiple_choice'; question: string; options: string[]; instruction?: LocalizedText })
+  | (QuestionViewBase & { type: 'fill_blank'; textWithBlank: string; instruction?: LocalizedText })
+  | (QuestionViewBase & { type: 'free_text'; prompt: string; instruction?: LocalizedText });
 
 export interface PlacementAnswerRecord {
   questionId: string;
@@ -29,7 +30,7 @@ export interface PlacementAnswerRecord {
   given: string;
   correctAnswer: string;
   result: GradeResult;
-  feedback: string | null;
+  feedback: LocalizedText | null;
 }
 
 export interface PlacementOutcome {

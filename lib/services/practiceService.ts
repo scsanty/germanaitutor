@@ -12,7 +12,6 @@ import { generateWithActiveProvider, type AiRequest, type AiResult } from './aiS
 import { createCurriculumService } from './curriculumService';
 import { gradeExerciseAnswer } from './exerciseGrading';
 import { gradeFreeText, type FreeTextGradeOutcome } from './freeTextGradingService';
-import { createProfileService } from './profileService';
 import { createProgressService } from './progressService';
 import { createUnlockService } from './unlockService';
 
@@ -76,7 +75,6 @@ export function createPracticeService(db: Database.Database, deps: PracticeDeps 
   const gradeFree = deps.gradeFreeText ?? ((input: FreeTextGradingInput) => gradeFreeText(db, input));
   const now = deps.now ?? (() => new Date());
   const curriculum = createCurriculumService(db);
-  const profiles = createProfileService(db);
   const progress = createProgressService(db);
   const unlocks = createUnlockService(db);
 
@@ -192,10 +190,7 @@ export function createPracticeService(db: Database.Database, deps: PracticeDeps 
     if (!row) throw new PracticeError(`Practice exercise not found: ${practiceExerciseId}`, 'not_found');
     const lesson = getPracticeLesson(row.lesson_id);
     const exercise = rowToExercise(row);
-    const graded = await gradeExerciseAnswer(exercise, answer, lesson.sourceLevel, {
-      gradeFreeText: gradeFree,
-      uiLanguage: profiles.getProfile().uiLanguage,
-    });
+    const graded = await gradeExerciseAnswer(exercise, answer, lesson.sourceLevel, { gradeFreeText: gradeFree });
     if (!graded.ok) {
       if (graded.reason === 'bad_request') throw new PracticeError(graded.message, 'bad_request');
       throw new PracticeError(graded.message, 'ai_failed', graded.code, graded.params);

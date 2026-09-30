@@ -9,6 +9,7 @@ import type {
   PlacementQuestionView,
   PlacementState,
 } from '@/lib/tutoring/placementTypes';
+import { pickText } from '@/lib/i18n/localizedText';
 import { useApiErrorText } from '@/components/useApiErrorText';
 
 type Phase = 'intro' | 'question' | 'result';
@@ -217,7 +218,7 @@ export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; 
                 ? t('modelAnswer', { answer: a.correctAnswer })
                 : t('correctAnswer', { answer: a.correctAnswer })}
             </p>
-            {a.feedback && <p>{t('feedback', { feedback: a.feedback })}</p>}
+            {a.feedback && <p>{t('feedback', { feedback: pickText(a.feedback, 'en') })}</p>}
           </li>
         ))}
       </ol>

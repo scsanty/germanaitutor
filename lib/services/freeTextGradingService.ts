@@ -1,11 +1,12 @@
 import type Database from 'better-sqlite3';
+import type { LocalizedText } from '../i18n/localizedText';
 import type { GradeResult } from '../tutoring/grading';
 import { buildFreeTextGradingPrompt, parseFreeTextGrade, type FreeTextGradingInput } from '../tutoring/freeTextGrading';
 import type { ErrorCode, ErrorParams } from '../tutoring/errorCodes';
 import { generateWithActiveProvider } from './aiService';
 
 export type FreeTextGradeOutcome =
-  | { ok: true; result: GradeResult; feedback: string }
+  | { ok: true; result: GradeResult; feedback: LocalizedText }
   | { ok: false; error: string; code?: ErrorCode; params?: ErrorParams };
 
 export async function gradeFreeText(
