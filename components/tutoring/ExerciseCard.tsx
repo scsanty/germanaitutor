@@ -13,8 +13,28 @@ import { pickText, type ContentLanguage, type LocalizedText } from '@/lib/i18n/l
 import { useApiErrorText } from '@/components/useApiErrorText';
 import { useExerciseShortcuts } from '@/components/focus/useExerciseShortcuts';
 import { useSound } from '@/lib/sound/useSound';
+import { Check, CircleAlert, MessageCircle, X } from 'lucide-react';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Textarea } from '@/components/ui/textarea';
+import { cn } from '@/lib/utils';
 
 const RATINGS: FlashcardRating[] = ['knew', 'sort_of', 'didnt_know'];
+
+// The task text: 1.25rem, the loudest thing on the card.
+const TASK = 'text-xl leading-snug font-semibold whitespace-pre-line';
+// Check / Next / Show answer: full width, in the thumb zone at the bottom of the focus layout.
+const PRIMARY = 'min-h-12 w-full text-base font-semibold';
+// The action area stays at the bottom of the screen while a long task scrolls.
+const FOOTER = 'sticky bottom-0 mt-auto flex flex-col gap-3 bg-background pt-3 pb-1';
+
+const RESULT_STYLE: Record<GradeResult, { icon: typeof Check; box: string; text: string }> = {
+  correct: { icon: Check, box: 'border-success/50 bg-success/10', text: 'text-success' },
+  almost: { icon: CircleAlert, box: 'border-warning/50 bg-warning/10', text: 'text-warning' },
+  wrong: { icon: X, box: 'border-danger/50 bg-danger/10', text: 'text-danger' },
+};
 
 export interface ExerciseCardProps {
   exercise: ExerciseView;
@@ -61,10 +81,10 @@ export function ExerciseHeading({ exercise, language }: { exercise: ExerciseView
   const instruction = instructionText(exercise, language);
   const task = taskText(exercise);
   return (
-    <>
-      {instruction && <p>{instruction}</p>}
-      {task && <p>{task}</p>}
-    </>
+    <div className="flex flex-col gap-2">
+      {instruction && <p className="text-sm text-text-muted">{instruction}</p>}
+      {task && <p className={TASK}>{task}</p>}
+    </div>
   );
 }
 
@@ -193,19 +213,31 @@ export function ExerciseCard({
       }
     },
   });
-  const keysHint = <p className="hidden text-xs text-text-muted lg:block">{tFocus('keysHint')}</p>;
+  const keysHint = <p className="hidden text-center text-xs text-text-muted lg:block">{tFocus('keysHint')}</p>;
 
   const alerts = (
     <>
       {gradingError && (
-        <p role="alert">
-          {t.rich('gradingFailed', {
-            error: gradingError,
-            link: (chunks) => <Link href="/settings">{chunks}</Link>,
-          })}
-        </p>
+        <Alert variant="destructive" role="alert">
+          <AlertDescription>
+            <p>
+              {t.rich('gradingFailed', {
+                error: gradingError,
+                link: (chunks) => (
+                  <Link href="/settings" className="font-semibold underline underline-offset-2">
+                    {chunks}
+                  </Link>
+                ),
+              })}
+            </p>
+          </AlertDescription>
+        </Alert>
       )}
-      {error && <p role="alert">{error}</p>}
+      {error && (
+        <Alert variant="destructive" role="alert">
+          <AlertDescription>{error}</AlertDescription>
+        </Alert>
+      )}
     </>
   );
 
@@ -216,106 +248,147 @@ export function ExerciseCard({
       exercise.type !== 'flashcard' &&
       shown.correctAnswer !== null &&
       (shown.result !== 'correct' || (mode === 'lesson' && exercise.type === 'free_text'));
+    const style = RESULT_STYLE[shown.result];
+    const ResultIcon = style.icon;
     return (
-      <div>
+      <div className="flex flex-1 flex-col gap-6">
         <ExerciseHeading exercise={exercise} language={language} />
-        {exercise.type === 'flashcard' && <p>{exercise.back}</p>}
-        <p>{mode === 'practice' ? t(`practiceResult.${shown.result}`) : t(`result.${shown.result}`)}</p>
-        {showAnswer && (
-          <p>
-            {exercise.type === 'free_text'
-              ? t('modelAnswer', { answer: shown.correctAnswer ?? '' })
-              : t('correctAnswer', { answer: shown.correctAnswer ?? '' })}
-          </p>
-        )}
-        {shown.feedback && (
-          <div>
-            <p>{t('feedback', { feedback: pickText(shown.feedback, feedbackLanguage) })}</p>
-            <LanguageToggle value={feedbackLanguage} onChange={setFeedbackLanguage} label={tToggle('feedback')} />
+        {exercise.type === 'flashcard' && <p className="rounded-xl border border-border bg-surface p-4 text-lg">{exercise.back}</p>}
+        <div className={FOOTER}>
+          {/* The result rises from the bottom (200 ms; none under reduced motion). */}
+          <div className={cn('flex animate-rise-in flex-col gap-2 rounded-2xl border-2 p-4', style.box)}>
+            <p className={cn('flex items-center gap-2 font-heading text-lg font-extrabold', style.text)}>
+              <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-current/15">
+                <ResultIcon aria-hidden className="size-4" strokeWidth={3} />
+              </span>
+              <span>{mode === 'practice' ? t(`practiceResult.${shown.result}`) : t(`result.${shown.result}`)}</span>
+            </p>
+            {showAnswer && (
+              <p className="font-semibold">
+                {exercise.type === 'free_text'
+                  ? t('modelAnswer', { answer: shown.correctAnswer ?? '' })
+                  : t('correctAnswer', { answer: shown.correctAnswer ?? '' })}
+              </p>
+            )}
+            {shown.feedback && (
+              <div className="flex items-start justify-between gap-3">
+                <p className="min-w-0 text-sm leading-relaxed">{t('feedback', { feedback: pickText(shown.feedback, feedbackLanguage) })}</p>
+                <LanguageToggle value={feedbackLanguage} onChange={setFeedbackLanguage} label={tToggle('feedback')} />
+              </div>
+            )}
           </div>
-        )}
-        {exercise.type !== 'flashcard' && onAskAi && (
-          <button type="button" onClick={() => onAskAi(exercise.id, { answerText: shown.answerText, result: shown.result })}>
-            {t('askAi')}
-          </button>
-        )}
-        <button type="button" onClick={onNext}>
-          {t('next')}
-        </button>
-        {keysHint}
+          {exercise.type !== 'flashcard' && onAskAi && (
+            <Button
+              type="button"
+              variant="secondary"
+              onClick={() => onAskAi(exercise.id, { answerText: shown.answerText, result: shown.result })}
+              className="min-h-11 w-full"
+            >
+              <MessageCircle aria-hidden />
+              {t('askAi')}
+            </Button>
+          )}
+          <Button type="button" size="lg" onClick={onNext} className={PRIMARY}>
+            {t('next')}
+          </Button>
+          {keysHint}
+        </div>
       </div>
     );
   }
 
   if (exercise.type === 'flashcard') {
     return (
-      <div>
-        <p>{exercise.front}</p>
-        {revealed ? (
-          <div>
-            <p>{exercise.back}</p>
-            {RATINGS.map((rating) => (
-              <button key={rating} type="button" disabled={busy} onClick={() => submit({ type: 'flashcard', rating })}>
-                {t(`rating.${rating}`)}
-              </button>
-            ))}
-          </div>
-        ) : (
-          <button type="button" onClick={() => setRevealed(true)}>
-            {t('showAnswer')}
-          </button>
-        )}
-        {alerts}
-        {keysHint}
+      <div className="flex flex-1 flex-col gap-6">
+        <div className="flex flex-col gap-3 rounded-2xl border border-border bg-surface-raised p-6 text-center shadow-sm">
+          <p className="font-heading text-2xl font-extrabold">{exercise.front}</p>
+          {revealed && (
+            <p className="animate-rise-in border-t border-border pt-3 text-lg text-text-muted">{exercise.back}</p>
+          )}
+        </div>
+        <div className={FOOTER}>
+          {revealed ? (
+            <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
+              {RATINGS.map((rating) => (
+                <Button key={rating} type="button" variant="secondary" disabled={busy} onClick={() => submit({ type: 'flashcard', rating })} className="min-h-12 border border-border">
+                  {t(`rating.${rating}`)}
+                </Button>
+              ))}
+            </div>
+          ) : (
+            <Button type="button" size="lg" onClick={() => setRevealed(true)} className={PRIMARY}>
+              {t('showAnswer')}
+            </Button>
+          )}
+          {alerts}
+          {keysHint}
+        </div>
       </div>
     );
   }
 
   const answer = currentAnswer();
   return (
-    <div>
-      {instruction && <p>{instruction}</p>}
+    <div className="flex flex-1 flex-col gap-6">
+      {instruction && <p className="text-sm text-text-muted">{instruction}</p>}
       {exercise.type === 'multiple_choice' && (
-        <fieldset aria-label={exercise.question ? undefined : (instruction ?? undefined)}>
-          {exercise.question && <legend>{exercise.question}</legend>}
-          {exercise.options.map((option, index) => (
-            <label key={index}>
-              <input
-                type="radio"
-                name={`exercise-${exercise.id}`}
-                checked={selectedIndex === index}
-                onChange={() => setSelectedIndex(index)}
-              />
-              {option}
-            </label>
-          ))}
+        <fieldset aria-label={exercise.question ? undefined : (instruction ?? undefined)} className="m-0 min-w-0 border-0 p-0">
+          {exercise.question && <legend className={cn(TASK, 'mb-4 p-0')}>{exercise.question}</legend>}
+          <RadioGroup
+            value={selectedIndex === null ? '' : String(selectedIndex)}
+            onValueChange={(value) => setSelectedIndex(Number(value))}
+            className="gap-2.5"
+          >
+            {exercise.options.map((option, index) => {
+              const id = `exercise-${exercise.id}-option-${index}`;
+              return (
+                <div
+                  key={index}
+                  className="relative flex min-h-14 items-center gap-3 rounded-xl border-2 border-border bg-surface-raised px-4 py-2 transition-colors duration-150 hover:border-primary/50 has-[[data-state=checked]]:border-primary has-[[data-state=checked]]:bg-primary/10 has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-ring motion-reduce:transition-none"
+                >
+                  {index < 4 && (
+                    <kbd aria-hidden className="hidden size-7 shrink-0 items-center justify-center rounded-md border border-border bg-surface font-sans text-xs font-bold text-text-muted lg:flex">
+                      {index + 1}
+                    </kbd>
+                  )}
+                  {/* The label's ::after stretches over the row, so the whole row is the tap target. */}
+                  <label htmlFor={id} className="min-w-0 flex-1 cursor-pointer text-base font-medium after:absolute after:inset-0 after:content-['']">
+                    {option}
+                  </label>
+                  <RadioGroupItem id={id} value={String(index)} className="size-5 focus-visible:ring-0" />
+                </div>
+              );
+            })}
+          </RadioGroup>
         </fieldset>
       )}
       {exercise.type === 'fill_blank' && (
-        <div>
-          <p>{exercise.textWithBlank}</p>
-          <input aria-label={t('answerLabel')} value={text} onChange={(e) => setText(e.target.value)} />
+        <div className="flex flex-col gap-4">
+          <p className={TASK}>{exercise.textWithBlank}</p>
+          <Input aria-label={t('answerLabel')} value={text} onChange={(e) => setText(e.target.value)} autoComplete="off" autoCapitalize="off" spellCheck={false} className="h-12 text-lg md:text-lg" />
         </div>
       )}
       {exercise.type === 'free_text' && (
-        <div>
-          <p>{exercise.prompt}</p>
-          <textarea aria-label={t('answerLabel')} value={text} onChange={(e) => setText(e.target.value)} />
+        <div className="flex flex-col gap-4">
+          <p className={TASK}>{exercise.prompt}</p>
+          <Textarea aria-label={t('answerLabel')} value={text} onChange={(e) => setText(e.target.value)} spellCheck={false} className="min-h-32 text-base md:text-base" />
         </div>
       )}
-      <button type="button" disabled={busy || answer === null} onClick={() => answer && submit(answer)}>
-        {busy ? t('submitting') : t('submit')}
-      </button>
-      {/* M-4: a lesson run has its own retry round for a plain error, but the Daily Queue and a
-          practice batch do not, so any error there — not only a grading failure — needs a way
-          forward. */}
-      {mode !== 'test' && (gradingError || ((source === 'queue' || mode === 'practice') && error)) && (
-        <button type="button" onClick={onSkip}>
-          {t('skipForNow')}
-        </button>
-      )}
-      {alerts}
-      {keysHint}
+      <div className={FOOTER}>
+        {alerts}
+        <Button type="button" size="lg" disabled={busy || answer === null} onClick={() => answer && submit(answer)} className={PRIMARY}>
+          {busy ? t('submitting') : t('submit')}
+        </Button>
+        {/* M-4: a lesson run has its own retry round for a plain error, but the Daily Queue and a
+            practice batch do not, so any error there — not only a grading failure — needs a way
+            forward. */}
+        {mode !== 'test' && (gradingError || ((source === 'queue' || mode === 'practice') && error)) && (
+          <Button type="button" variant="secondary" onClick={onSkip} className="min-h-11 w-full">
+            {t('skipForNow')}
+          </Button>
+        )}
+        {keysHint}
+      </div>
     </div>
   );
 }

@@ -14,9 +14,11 @@ function isTyping(target: EventTarget | null): boolean {
 }
 
 // Enter on a focused button or link already activates it; a shortcut on top would fire twice.
+// A radio drawn as a button (RadioGroup) is not: Enter there still checks, as on a native radio.
 function isActivatable(target: EventTarget | null): boolean {
-  const tag = (target as HTMLElement | null)?.tagName;
-  return tag === 'BUTTON' || tag === 'A';
+  const el = target as HTMLElement | null;
+  if (!el || el.getAttribute('role') === 'radio') return false;
+  return el.tagName === 'BUTTON' || el.tagName === 'A';
 }
 
 // Spec: Focus mode shortcuts. 1–4 pick an option, Enter checks/continues, Esc exits.

@@ -124,8 +124,8 @@ export function LessonChat({ lessonId, open, onToggle, askAbout, onClearAskAbout
           showCloseButton={false}
           aria-describedby={undefined}
           className={cn(
-            'gap-0 bg-surface data-[state=closed]:duration-200 data-[state=open]:duration-250',
-            wide ? 'w-full sm:max-w-md' : 'max-h-[85dvh] rounded-t-2xl'
+            'gap-0 bg-surface',
+            wide ? 'animate-sheet-left w-full sm:max-w-md' : 'animate-sheet-up max-h-[85dvh] rounded-t-2xl'
           )}
         >
           <SheetHeader className="flex-row items-center justify-between border-b border-border py-2 pr-2 pl-4">

@@ -51,6 +51,29 @@
   --font-heading: var(--font-nunito), var(--font-inter), system-ui, sans-serif;
 }
 
+/* Motion (design pass): 150–250 ms, answering a person's action. The reduced-motion rule below cancels them. */
+@theme {
+  --animate-rise-in: rise-in 200ms ease-out;
+  --animate-sheet-up: sheet-up 250ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  --animate-sheet-left: sheet-left 250ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  @keyframes rise-in {
+    from {
+      transform: translateY(1.5rem);
+      opacity: 0;
+    }
+  }
+  @keyframes sheet-up {
+    from {
+      transform: translateY(100%);
+    }
+  }
+  @keyframes sheet-left {
+    from {
+      transform: translateX(100%);
+    }
+  }
+}
+
 @utility bg-brand-gradient {
   background-image: var(--brand-gradient);
 }
