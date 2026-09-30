@@ -9,16 +9,13 @@ import { loadLevelGating } from './levelGating';
 const DIR = join(process.cwd(), 'data', 'curriculum-seed');
 const files = readdirSync(DIR).filter((f) => f.endsWith('.json'));
 const seeds = files.map((f) => [f, JSON.parse(readFileSync(join(DIR, f), 'utf8')) as SeedFile] as const);
-// TEMPORARY gate while Task 6 lands track by track: tracks listed here are at seed version 6, the rest still at 5.
-// Add 'goethe' and 'telc' as their commits land, then remove the gate and expect '6' everywhere.
-const DONE_TRACKS = ['generic', 'goethe'];
 
 describe('bundled curriculum seeds', () => {
   it('has all 15 track+level files at seed version 6, format 3', () => {
     expect(files).toHaveLength(15);
     for (const [, seed] of seeds) {
       expect(seed.formatVersion).toBe(3);
-      expect(seed.seedVersion).toBe(DONE_TRACKS.includes(seed.track) ? '6' : '5');
+      expect(seed.seedVersion).toBe('6');
     }
   });
 

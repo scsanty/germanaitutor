@@ -5,13 +5,9 @@ import type { SeedFile } from './curriculumSeedLoader';
 import { validatePlacementExam } from '../tutoring/placementExamFormat';
 
 const DIR = join(process.cwd(), 'data', 'curriculum-seed');
-// TEMPORARY gate while Task 6 lands track by track: only tracks listed here have their German drafted.
-// Add 'goethe' and 'telc' as their commits land, then remove the gate (every seed is checked).
-const DONE_TRACKS = ['generic', 'goethe'];
 const seeds = readdirSync(DIR)
   .filter((f) => f.endsWith('.json'))
-  .map((f) => [f, JSON.parse(readFileSync(join(DIR, f), 'utf8')) as SeedFile] as const)
-  .filter(([, seed]) => DONE_TRACKS.includes(seed.track));
+  .map((f) => [f, JSON.parse(readFileSync(join(DIR, f), 'utf8')) as SeedFile] as const);
 
 // Quoted German inside an English example ('…' or „…“) must reappear unchanged in its German version.
 function quotedSegments(text: string): string[] {
