@@ -245,7 +245,7 @@ describe('placementService', () => {
 describe('toPlacementErrorResponse', () => {
   it('maps each error kind to a status', () => {
     expect(toPlacementErrorResponse(new PlacementError('x', 'bad_request'))).toEqual({ status: 400, body: { error: 'x', code: 'bad_request' } });
-    expect(toPlacementErrorResponse(new PlacementError('x', 'grading_failed'))).toEqual({ status: 502, body: { error: 'x', code: 'ai_failed' } });
+    expect(toPlacementErrorResponse(new PlacementError('x', 'grading_failed'))).toEqual({ status: 502, body: { error: 'x', code: 'ai_failed', params: { detail: 'x' } } });
     expect(toPlacementErrorResponse(new PlacementError('x', 'no_session'))).toEqual({ status: 409, body: { error: 'x', code: 'no_session' } });
     expect(toPlacementErrorResponse(new PlacementError('x', 'no_exam'))).toEqual({ status: 409, body: { error: 'x', code: 'no_exam' } });
     expect(toPlacementErrorResponse(new Error('other'))).toBeNull();

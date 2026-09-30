@@ -13,7 +13,7 @@ import {
   type LessonAnswer,
 } from '../tutoring/lessonAnswers';
 import { computeNextReview, seedReview, type SrsState } from '../tutoring/srs';
-import { errorBody, type ApiErrorBody, type ErrorCode, type ErrorParams } from '../tutoring/errorCodes';
+import { errorBodyFor, type ApiErrorBody, type ErrorCode, type ErrorParams } from '../tutoring/errorCodes';
 import { createCurriculumService } from './curriculumService';
 import { gradeExerciseAnswer } from './exerciseGrading';
 import { gradeFreeText, type FreeTextGradeOutcome } from './freeTextGradingService';
@@ -47,7 +47,7 @@ const STATUS_FOR: Record<AttemptErrorKind, number> = { not_found: 404, locked: 4
 
 export function toAttemptErrorResponse(err: unknown): { status: number; body: ApiErrorBody } | null {
   if (!(err instanceof AttemptError)) return null;
-  return { status: STATUS_FOR[err.kind], body: errorBody(err.message, err.code, err.params) };
+  return { status: STATUS_FOR[err.kind], body: errorBodyFor(err) };
 }
 
 export interface AttemptDeps {

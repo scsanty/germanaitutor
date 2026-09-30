@@ -10,7 +10,7 @@ import {
   type ChatMessageView,
   type PracticeChatAbout,
 } from '../tutoring/lessonChat';
-import { errorBody, type ApiErrorBody, type ErrorCode, type ErrorParams } from '../tutoring/errorCodes';
+import { errorBodyFor, type ApiErrorBody, type ErrorCode, type ErrorParams } from '../tutoring/errorCodes';
 import { generateWithActiveProvider, isAiAvailable, type AiRequest, type AiResult } from './aiService';
 import { createCurriculumService } from './curriculumService';
 import { createProfileService } from './profileService';
@@ -42,7 +42,7 @@ const STATUS_FOR: Record<ChatErrorKind, number> = { not_found: 404, locked: 403,
 
 export function toChatErrorResponse(err: unknown): { status: number; body: ApiErrorBody } | null {
   if (!(err instanceof ChatError)) return null;
-  return { status: STATUS_FOR[err.kind], body: errorBody(err.message, err.code, err.params) };
+  return { status: STATUS_FOR[err.kind], body: errorBodyFor(err) };
 }
 
 export interface LessonChatDeps {

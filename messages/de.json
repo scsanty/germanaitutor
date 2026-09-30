@@ -13,6 +13,7 @@
     "credentials_unreadable": "Der gespeicherte API-Schlüssel konnte nicht gelesen werden",
     "ai_failed": "Der KI-Anbieter hat einen Fehler gemeldet ({detail})",
     "ai_bad_reply": "Die KI hat in einem unerwarteten Format geantwortet",
+    "ai_no_exercises": "Die KI konnte gerade keine neuen Übungen für diese Lektion erstellen. Versuch es später noch einmal",
     "no_session": "Es läuft gerade kein Einstufungstest",
     "no_exam": "Es ist kein Einstufungstest geladen",
     "invalid_daily_cap": "Das Tageslimit muss eine ganze Zahl von 1 bis 500 sein"

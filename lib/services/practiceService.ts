@@ -1,7 +1,7 @@
 import type Database from 'better-sqlite3';
 import type { Exercise, ExerciseContent, ExerciseType } from '../curriculum/types';
 import { randomSuffix } from '../curriculum-admin/randomId';
-import { errorBody, type ApiErrorBody, type ErrorCode, type ErrorParams } from '../tutoring/errorCodes';
+import { errorBodyFor, type ApiErrorBody, type ErrorCode, type ErrorParams } from '../tutoring/errorCodes';
 import { toExerciseView } from '../tutoring/exerciseView';
 import type { FreeTextGradingInput } from '../tutoring/freeTextGrading';
 import { correctAnswerFor, type LessonAnswer } from '../tutoring/lessonAnswers';
@@ -49,7 +49,7 @@ export class PracticeError extends Error {
 
 export function toPracticeErrorResponse(err: unknown): { status: number; body: ApiErrorBody } | null {
   if (!(err instanceof PracticeError)) return null;
-  return { status: STATUS_FOR[err.kind], body: errorBody(err.message, err.code, err.params) };
+  return { status: STATUS_FOR[err.kind], body: errorBodyFor(err) };
 }
 
 export interface PracticeDeps {
@@ -140,7 +140,7 @@ export function createPracticeService(db: Database.Database, deps: PracticeDeps 
     }
     return {
       exercises: fresh,
-      failure: fresh.length === 0 ? { message: 'The AI replied with no usable exercises', code: 'ai_bad_reply' } : null,
+      failure: fresh.length === 0 ? { message: 'The AI could not make new exercises for this lesson right now', code: 'ai_no_exercises' } : null,
     };
   }
 
@@ -151,11 +151,12 @@ export function createPracticeService(db: Database.Database, deps: PracticeDeps 
       .prepare(
         `SELECT p.id, p.lesson_id, p.type, p.content FROM practice_exercises p
          WHERE p.lesson_id = ? AND p.review_status != 'rejected'
+           AND (p.type != 'flashcard' OR ? = 'vocabulary')
            AND NOT EXISTS (SELECT 1 FROM practice_seen s WHERE s.practice_exercise_id = p.id)
          ORDER BY p.created_at, p.rowid
          LIMIT ?`
       )
-      .all(lesson.id, PRACTICE_BATCH_SIZE) as PoolRow[];
+      .all(lesson.id, lesson.skill, PRACTICE_BATCH_SIZE) as PoolRow[];
 
     const need = PRACTICE_BATCH_SIZE - unseen.length;
     const generated = need > 0 ? await generateMissing(lesson, need) : { exercises: [], failure: null };

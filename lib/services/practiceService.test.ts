@@ -91,7 +91,21 @@ describe('practiceService.serveBatch', () => {
     await expect(malformed.service.serveBatch('a1-greet')).rejects.toMatchObject({ code: 'ai_bad_reply' });
 
     const unusable = setup(vi.fn().mockResolvedValue(reply([{ type: 'free_text', content: { prompt: 'x', modelAnswer: 'y' } }])));
-    await expect(unusable.service.serveBatch('a1-greet')).rejects.toMatchObject({ code: 'ai_bad_reply' });
+    await expect(unusable.service.serveBatch('a1-greet')).rejects.toMatchObject({ code: 'ai_no_exercises' });
+  });
+
+  it('serves no pool flashcards once the lesson is no longer vocabulary', async () => {
+    const { db, service } = setup();
+    addPracticeExercise(db, 'px-card', 'a1-greet', { type: 'flashcard', content: { front: 'die Katze', back: 'the cat' }, createdAt: '2026-09-29T10:00:01.000Z' });
+    addPracticeExercise(db, 'px-mc', 'a1-greet', { createdAt: '2026-09-29T10:00:02.000Z' });
+    db.prepare("UPDATE lessons SET skill = 'grammar' WHERE id = 'a1-greet'").run();
+    expect((await service.serveBatch('a1-greet')).exercises.map((e) => e.id)).toEqual(['px-mc']);
+  });
+
+  it('serves pool flashcards for a vocabulary lesson', async () => {
+    const { db, service } = setup();
+    addPracticeExercise(db, 'px-card', 'a1-greet', { type: 'flashcard', content: { front: 'die Katze', back: 'the cat' } });
+    expect((await service.serveBatch('a1-greet')).exercises.map((e) => e.id)).toEqual(['px-card']);
   });
 });
 

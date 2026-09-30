@@ -14,7 +14,7 @@ import type {
   PlacementQuestionView,
   PlacementState,
 } from '../tutoring/placementTypes';
-import { errorBody, type ApiErrorBody, type ErrorCode, type ErrorParams } from '../tutoring/errorCodes';
+import { errorBodyFor, type ApiErrorBody, type ErrorCode, type ErrorParams } from '../tutoring/errorCodes';
 import { gradeFreeText, type FreeTextGradeOutcome } from './freeTextGradingService';
 import { createProfileService } from './profileService';
 import { createUnlockService } from './unlockService';
@@ -44,7 +44,7 @@ export class PlacementError extends Error {
 export function toPlacementErrorResponse(err: unknown): { status: number; body: ApiErrorBody } | null {
   if (!(err instanceof PlacementError)) return null;
   const status = err.kind === 'bad_request' ? 400 : err.kind === 'grading_failed' ? 502 : 409;
-  return { status, body: errorBody(err.message, err.code, err.params) };
+  return { status, body: errorBodyFor(err) };
 }
 
 export interface PlacementDeps {

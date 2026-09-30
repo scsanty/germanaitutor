@@ -11,6 +11,7 @@ export type ErrorCode =
   | 'credentials_unreadable'
   | 'ai_failed'
   | 'ai_bad_reply'
+  | 'ai_no_exercises'
   | 'no_session'
   | 'no_exam'
   | 'invalid_daily_cap';
@@ -25,4 +26,11 @@ export interface ApiErrorBody {
 
 export function errorBody(error: string, code: ErrorCode, params?: ErrorParams): ApiErrorBody {
   return params ? { error, code, params } : { error, code };
+}
+
+// `errors.ai_failed` has a {detail} placeholder. A body that reaches the client without
+// params.detail (a fallback code) would show the raw key, so the message fills it in.
+export function errorBodyFor(err: { message: string; code: ErrorCode; params?: ErrorParams }): ApiErrorBody {
+  const params = err.code === 'ai_failed' && !err.params?.detail ? { ...err.params, detail: err.message } : err.params;
+  return errorBody(err.message, err.code, params);
 }
