@@ -541,6 +541,7 @@ export function SettingsPage() {
         <Input
           type="file"
           accept=".gaitbackup"
+          aria-label={t('importBackup')}
           onChange={(e) => e.target.files?.[0] && handleImport(e.target.files[0])}
           className="h-11 py-2 file:mr-3 file:rounded-md file:bg-surface-raised file:px-3"
         />
