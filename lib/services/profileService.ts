@@ -1,5 +1,5 @@
 import type Database from 'better-sqlite3';
-import type { Profile, Track, CefrLevel, PlacementStatus } from '../types';
+import type { Profile, Theme, Track, CefrLevel, PlacementStatus } from '../types';
 import { isAtOrBelow, isCefrLevel } from '../tutoring/levels';
 import type { ErrorCode, ErrorParams } from '../tutoring/errorCodes';
 
@@ -8,7 +8,8 @@ interface Row {
   ui_language: 'en' | 'de';
   active_track: Track;
   active_level: CefrLevel;
-  freestyle_default: number;
+  theme: Theme;
+  sound_enabled: number;
   onboarding_complete: number;
   highest_unlocked_level: CefrLevel;
   placement_status: PlacementStatus;
@@ -24,7 +25,8 @@ function rowToProfile(row: Row): Profile {
     uiLanguage: row.ui_language,
     activeTrack: row.active_track,
     activeLevel: row.active_level,
-    freestyleDefault: row.freestyle_default === 1,
+    theme: row.theme,
+    soundEnabled: row.sound_enabled === 1,
     onboardingComplete: row.onboarding_complete === 1,
     highestUnlockedLevel: row.highest_unlocked_level,
     placementStatus: row.placement_status,
@@ -64,7 +66,8 @@ export interface ProfileUpdate {
   uiLanguage?: 'en' | 'de';
   activeTrack?: Track;
   activeLevel?: CefrLevel;
-  freestyleDefault?: boolean;
+  theme?: Theme;
+  soundEnabled?: boolean;
   onboardingComplete?: boolean;
   onboardingChoicesSaved?: boolean;
   dailyReviewCap?: number;
@@ -100,8 +103,11 @@ export function createProfileService(db: Database.Database) {
     if (input.dailyReviewCap !== undefined && !isValidDailyReviewCap(input.dailyReviewCap)) {
       throw new ProfileUpdateError('The daily review limit must be a whole number from 1 to 500', 'invalid_daily_cap');
     }
+    if (input.theme !== undefined && !['dark', 'light', 'system'].includes(input.theme)) {
+      throw new ProfileUpdateError('Theme must be dark, light or system', 'bad_request');
+    }
     db.prepare(
-      `UPDATE profile SET display_name = ?, ui_language = ?, active_track = ?, active_level = ?, freestyle_default = ?,
+      `UPDATE profile SET display_name = ?, ui_language = ?, active_track = ?, active_level = ?, theme = ?, sound_enabled = ?,
          onboarding_complete = ?, onboarding_choices_saved = ?, daily_review_cap = ?, updated_at = datetime('now')
        WHERE id = 1`
     ).run(
@@ -109,7 +115,8 @@ export function createProfileService(db: Database.Database) {
       input.uiLanguage ?? current.uiLanguage,
       input.activeTrack ?? current.activeTrack,
       input.activeLevel ?? current.activeLevel,
-      (input.freestyleDefault ?? current.freestyleDefault) ? 1 : 0,
+      input.theme ?? current.theme,
+      (input.soundEnabled ?? current.soundEnabled) ? 1 : 0,
       (input.onboardingComplete ?? current.onboardingComplete) ? 1 : 0,
       (input.onboardingChoicesSaved ?? current.onboardingChoicesSaved) ? 1 : 0,
       input.dailyReviewCap ?? current.dailyReviewCap

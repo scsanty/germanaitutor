@@ -89,4 +89,11 @@ describe('profileService', () => {
     const service = createProfileService(createDbClient(':memory:'));
     expect(() => service.updateProfile({ activeLevel: 'B2' })).toThrow(ProfileUpdateError);
   });
+
+  it('updates the theme and sound, and rejects an unknown theme', () => {
+    const service = createProfileService(createDbClient(':memory:'));
+    expect(service.updateProfile({ theme: 'light', soundEnabled: false })).toMatchObject({ theme: 'light', soundEnabled: false });
+    expect(() => service.updateProfile({ theme: 'neon' as never })).toThrow('Theme must be dark, light or system');
+    expect(service.getProfile().theme).toBe('light');
+  });
 });

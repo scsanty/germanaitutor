@@ -4,6 +4,8 @@ import { Inter, Nunito } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages, getTimeZone } from 'next-intl/server';
 import { getDb } from '@/lib/db/client';
+import { createProfileService } from '@/lib/services/profileService';
+import { PreferencesProvider } from '@/components/providers/PreferencesProvider';
 import { ensureBundledSeeds } from '@/lib/services/bundledSeeds';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
@@ -14,14 +16,15 @@ export const dynamic = 'force-dynamic';
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
   ensureBundledSeeds(getDb);
+  const profile = createProfileService(getDb()).getProfile();
   const locale = await getLocale();
   const messages = await getMessages();
   const timeZone = await getTimeZone();
   return (
-    <html lang={locale} data-theme="dark" className={`${inter.variable} ${nunito.variable}`}>
+    <html lang={locale} data-theme={profile.theme} className={`${inter.variable} ${nunito.variable}`}>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages} timeZone={timeZone}>
-          {children}
+          <PreferencesProvider initial={{ theme: profile.theme, soundEnabled: profile.soundEnabled }}>{children}</PreferencesProvider>
         </NextIntlClientProvider>
       </body>
     </html>

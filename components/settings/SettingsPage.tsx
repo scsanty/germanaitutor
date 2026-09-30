@@ -491,18 +491,6 @@ export function SettingsPage() {
       </section>
 
       <section>
-        <h2>{t('freestyle')}</h2>
-        <label>
-          <input
-            type="checkbox"
-            checked={profile.freestyleDefault}
-            onChange={(e) => handleProfileChange({ freestyleDefault: e.target.checked })}
-          />
-          {t('freestyleDefault')}
-        </label>
-      </section>
-
-      <section>
         <h2>{t('backup')}</h2>
         <button onClick={handleExport}>{t('exportBackup')}</button>
         <input

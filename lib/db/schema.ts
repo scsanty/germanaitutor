@@ -179,8 +179,19 @@ export function runMigrations(db: Database.Database): void {
     createChatPracticeIndex(db);
     migrateToMilestoneOnlyStructure(db);
     migrateBilingualColumns(db);
+    migrateProfilePreferences(db);
   });
   migrate();
+}
+
+// Design pass: theme and sound preferences; the freestyle default setting is removed (Freestyle decision).
+function migrateProfilePreferences(db: Database.Database): void {
+  const columns = (db.prepare('PRAGMA table_info(profile)').all() as { name: string }[]).map((c) => c.name);
+  if (!columns.includes('theme')) {
+    db.exec("ALTER TABLE profile ADD COLUMN theme TEXT NOT NULL DEFAULT 'dark' CHECK (theme IN ('dark','light','system'))");
+  }
+  if (!columns.includes('sound_enabled')) db.exec('ALTER TABLE profile ADD COLUMN sound_enabled INTEGER NOT NULL DEFAULT 1');
+  if (columns.includes('freestyle_default')) db.exec('ALTER TABLE profile DROP COLUMN freestyle_default');
 }
 
 function createTablesIfMissing(db: Database.Database): void {
@@ -191,7 +202,8 @@ function createTablesIfMissing(db: Database.Database): void {
       ui_language TEXT NOT NULL DEFAULT 'en' CHECK (ui_language IN ('en','de')),
       active_track TEXT NOT NULL DEFAULT 'generic' CHECK (active_track IN ('generic','telc','goethe')),
       active_level TEXT NOT NULL DEFAULT 'A1' CHECK (active_level IN ('A1','A2','B1','B2','C1')),
-      freestyle_default INTEGER NOT NULL DEFAULT 0,
+      theme TEXT NOT NULL DEFAULT 'dark' CHECK (theme IN ('dark','light','system')),
+      sound_enabled INTEGER NOT NULL DEFAULT 1,
       onboarding_complete INTEGER NOT NULL DEFAULT 0,
       highest_unlocked_level TEXT NOT NULL DEFAULT 'A1' CHECK (highest_unlocked_level IN ('A1','A2','B1','B2','C1')),
       placement_status TEXT NOT NULL DEFAULT 'pending' CHECK (placement_status IN ('pending','skipped','taken')),
