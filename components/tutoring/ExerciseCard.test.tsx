@@ -229,4 +229,15 @@ describe('ExerciseCard', () => {
     await waitFor(() => expect(onTestStale).toHaveBeenCalled());
     expect(screen.queryByRole('button', { name: 'Skip for now' })).not.toBeInTheDocument();
   });
+
+  it('in test mode treats a 400 bad_request (not the next question) as stale', async () => {
+    stubAttempts(() => delayedResponse({ error: 'not the next question', code: 'bad_request' }, { ok: false, status: 400 }));
+    const onTestStale = vi.fn();
+    renderWithIntl(
+      <ExerciseCard exercise={MC} source="lesson" mode="test" testMilestoneId="m2" onTestStale={onTestStale} onNext={vi.fn()} onSkip={vi.fn()} />
+    );
+    fireEvent.click(screen.getByLabelText('Hallo'));
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }));
+    await waitFor(() => expect(onTestStale).toHaveBeenCalled());
+  });
 });

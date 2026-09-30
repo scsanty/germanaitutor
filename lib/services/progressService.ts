@@ -71,7 +71,7 @@ export function createProgressService(db: Database.Database) {
             .filter((p) => ids.includes(p.id))
             .map((p) => ({ from: p.id, to: id }))
         );
-        const layout = new Map(computeBranchLayout(ids, edges).map((n) => [n.id, n]));
+        const layout = new Map(computeBranchLayout(ids, edges, { flatOnCycle: true }).map((n) => [n.id, n]));
         return {
           id: milestone.id,
           title: milestone.title,
@@ -161,6 +161,11 @@ export function createProgressService(db: Database.Database) {
       };
     }
     const done = loadDoneState(db);
+    const unsortedStmt = db.prepare(
+      `SELECT 1 FROM lesson_placements p JOIN milestones m ON m.id = p.milestone_id
+       WHERE p.lesson_id = ? AND m.difficulty_rank IS NULL`
+    );
+    const inUnsorted = (id: string) => !!unsortedStmt.get(id);
     return {
       locked: false,
       id: lesson.id,
@@ -173,7 +178,10 @@ export function createProgressService(db: Database.Database) {
       exercises: curriculum.getExercises(lesson.id, lesson.track).map(toExerciseView),
       passedExerciseIds: passedExerciseIds(lesson.id),
       completed: done.completed.has(lesson.id),
-      prerequisites: (loadPrerequisites(db).get(lesson.id) ?? []).map((p) => ({ ...p, done: isDone(done, p.id) })),
+      // Prerequisites placed in Unsorted are ignored by gating, so the view doesn't list them either.
+      prerequisites: (loadPrerequisites(db).get(lesson.id) ?? [])
+        .filter((p) => !inUnsorted(p.id))
+        .map((p) => ({ ...p, done: isDone(done, p.id) })),
     };
   }
 

@@ -47,4 +47,13 @@ describe('computeBranchLayout', () => {
   it('throws on a cycle', () => {
     expect(() => computeBranchLayout(['a', 'b'], [{ from: 'a', to: 'b' }, { from: 'b', to: 'a' }])).toThrow(/Cycle/);
   });
+
+  it('falls back to a flat layout on a cycle when asked to', () => {
+    const cyclic = [{ from: 'a', to: 'b' }, { from: 'b', to: 'a' }];
+    expect(computeBranchLayout(['b', 'a', 'c'], cyclic, { flatOnCycle: true })).toEqual([
+      { id: 'b', branch: 0, column: 0, row: 0 },
+      { id: 'a', branch: 1, column: 1, row: 0 },
+      { id: 'c', branch: 2, column: 2, row: 0 },
+    ]);
+  });
 });

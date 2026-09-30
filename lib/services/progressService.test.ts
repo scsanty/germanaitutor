@@ -113,6 +113,13 @@ describe('progressService.getLessonView', () => {
     });
   });
 
+  it('does not list a prerequisite that sits in Unsorted', () => {
+    const { db, progress } = setup();
+    const { milestoneId } = ensureUnsortedExists(db, 'generic', 'A1');
+    db.prepare('UPDATE lesson_placements SET milestone_id = ? WHERE lesson_id = ?').run(milestoneId, 'a1-greet');
+    expect(progress.getLessonView('a1-sein')).toMatchObject({ locked: false, prerequisites: [] });
+  });
+
   it('returns content, exercises in authored order without answers, progress, and prerequisites', () => {
     const { db, progress } = setup();
     markComplete(db, 'a1-greet');

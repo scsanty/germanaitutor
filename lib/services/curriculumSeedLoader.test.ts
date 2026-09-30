@@ -186,7 +186,7 @@ describe('loadSeedIfNeeded (format v2)', () => {
   it('rejects a v1 file by name and changes nothing', () => {
     const db = createDbClient(':memory:');
     const v1 = { seedVersion: '9', track: 'generic', level: 'A1', milestones: [], lessons: [], exercises: [], prerequisites: [] };
-    expect(() => loadSeedIfNeeded(db, seedDir({ 'old.json': v1 }))).toThrow(/old\.json/);
+    expect(() => loadSeedIfNeeded(db, seedDir({ 'old.json': v1 }))).toThrow(/old\.json uses format none; this app needs format 2 \(milestones without sections\)/);
     expect(db.prepare('SELECT COUNT(*) AS n FROM milestones').get()).toEqual({ n: 0 });
   });
 });

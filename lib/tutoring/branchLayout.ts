@@ -9,7 +9,22 @@ export interface BranchNode {
 }
 
 // Spec: Branch layout. Pure and deterministic, so the tree renders the same every time.
-export function computeBranchLayout(lessonIds: string[], edges: { from: string; to: string }[]): BranchNode[] {
+// A cycle is a data error. The admin diagram lets it throw so the admin sees it; student paths
+// pass `flatOnCycle` and get every lesson in its own branch, in the given order.
+export function computeBranchLayout(
+  lessonIds: string[],
+  edges: { from: string; to: string }[],
+  options: { flatOnCycle?: boolean } = {}
+): BranchNode[] {
+  if (!options.flatOnCycle) return layout(lessonIds, edges);
+  try {
+    return layout(lessonIds, edges);
+  } catch {
+    return lessonIds.map((id, index) => ({ id, branch: index, column: index, row: 0 }));
+  }
+}
+
+function layout(lessonIds: string[], edges: { from: string; to: string }[]): BranchNode[] {
   const ids = new Set(lessonIds);
   const inside = edges.filter((e) => ids.has(e.from) && ids.has(e.to));
 

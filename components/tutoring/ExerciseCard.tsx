@@ -119,7 +119,8 @@ export function ExerciseCard({
         }
         return;
       }
-      if (test && (res.status === 404 || res.status === 409)) {
+      // 400 bad_request: not the next question (another tab moved the attempt on).
+      if (test && (res.status === 404 || res.status === 409 || (res.status === 400 && data?.code === 'bad_request'))) {
         onTestStale?.();
         return;
       }

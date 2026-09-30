@@ -149,7 +149,7 @@ export function loadLevelGating(db: Database.Database, track: Track, level: Cefr
         const inside = m.lessonIds.flatMap((id) =>
           (prerequisites.get(id) ?? []).filter((p) => m.lessonIds.includes(p.id)).map((p) => ({ from: p.id, to: id }))
         );
-        return computeBranchLayout(m.lessonIds, inside)
+        return computeBranchLayout(m.lessonIds, inside, { flatOnCycle: true })
           .sort((a, b) => a.row - b.row || a.column - b.column)
           .map((n) => n.id);
       });

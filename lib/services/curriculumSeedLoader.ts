@@ -39,7 +39,7 @@ export interface SeedFile {
 function readSeedFile(path: string, name: string): SeedFile {
   const seed = JSON.parse(readFileSync(path, 'utf8')) as SeedFile & { formatVersion?: unknown };
   if (seed.formatVersion !== SEED_FORMAT_VERSION) {
-    throw new Error(`Seed file ${name} is not seed format ${SEED_FORMAT_VERSION} (it has no sections; see the restructure spec)`);
+    throw new Error(`Seed file ${name} uses format ${String(seed.formatVersion ?? 'none')}; this app needs format ${SEED_FORMAT_VERSION} (milestones without sections)`);
   }
   return seed;
 }
