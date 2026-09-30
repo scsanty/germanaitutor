@@ -25,6 +25,7 @@
 - **Public paths:** `/login`, `/signup`, `/setup` (only while there are no users), `/api/auth/*`, `/badges/*`, `/privacy`, `/impressum`, and static assets. Everything else needs a session. API routes answer 401 or 403 in JSON.
 - **Invites:** a 32-byte random token, stored as a SHA-256 hash, single-use, with a 7-day default expiry. Open sign-up (`app_settings.signup_open`) requires email verification.
 - **Per-user tables:** carry `user_id` with `ON DELETE CASCADE`. Shared tables stay unscoped, exactly as the spec lists.
+- **Practice pool (Tutoring Phase 2):** `practice_seen` becomes per-user (add a `user_id` column and key it on `(user_id, practice_exercise_id)`). `practiceService.serveBatch` also needs a concurrency-safe pick once several students share a pool, because two simultaneous calls can otherwise serve the same unseen rows.
 - **AI:** each user's own key. Without one, AI features are unavailable for that user, and another user's key is never used.
 - **Backups:** the instance backup is Owner-only. The personal export holds only the user's rows.
 - **Deletion:** account deletion cascades and removes speech files; the last Owner can't delete themselves.

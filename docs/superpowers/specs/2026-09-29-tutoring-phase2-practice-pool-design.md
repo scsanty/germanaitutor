@@ -118,7 +118,7 @@ The server still checks that the exercise belongs to the lesson and is not a fla
   - how many exercises are needed;
   - up to 10 of the lesson's authored exercises, as style and difficulty guides;
   - the exact JSON shape for each type.
-- **Language.** Exercise text follows the style of the lesson's authored exercises. The German learning content stays in German.
+- **Language.** Generated practice exercises are German-only, per the 2026-09-29 bilingual-content decision. The style follows the lesson's authored exercises.
 - **Reply format.** The AI must reply with only `{ "exercises": [ { "type": ..., "content": { ... } } ] }`. A reply that is not valid JSON in that shape counts as a failed call and is never guessed at, the same rule as the Phase 1 grading.
 - **Checks on each returned exercise:**
   - The type must be one of the allowed types.
