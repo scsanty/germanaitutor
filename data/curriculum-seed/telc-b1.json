@@ -857,14 +857,14 @@
       "conceptId": null,
       "sourceLevel": "B1",
       "skill": "vocabulary",
-      "title": "Food, Eating Out and Restaurants",
+      "title": "Food, Drink and Restaurants",
       "explanation": "In a restaurant you book a table, order, ask about ingredients and pay; at home you talk about cooking and healthy eating.\nIn the restaurant: die Speisekarte, die Speisekarten (menu); das Gericht, die Gerichte (dish); die Vorspeise, die Vorspeisen (starter); das Hauptgericht, die Hauptgerichte (main course); der Nachtisch, die Nachtische (dessert); die Beilage, die Beilagen (side dish); der Kellner, die Kellner / die Kellnerin, die Kellnerinnen (waiter, waitress); die Rechnung, die Rechnungen (bill); das Trinkgeld, die Trinkgelder (tip).\nFood and eating: die Zutat, die Zutaten (ingredient); das Lebensmittel, die Lebensmittel (food item); die Ernährung (diet, nutrition, no plural); die Allergie, die Allergien (allergy).\nUseful chunks: einen Tisch reservieren (to book a table); Ich hätte gern … (I would like …); Zusammen oder getrennt? (one bill or separate bills?); vegetarisch / vegan essen (to eat vegetarian / vegan).\nNote that 'das Gericht' on a menu is a dish; in other contexts it also means a court of law.\n",
       "examples": [
         "Ich möchte für Samstagabend einen Tisch für vier Personen reservieren.",
         "Als Vorspeise nehme ich die Tomatensuppe und als Hauptgericht den Fisch mit Reis.",
         "Zahlen Sie zusammen oder getrennt?"
       ],
-      "titleDe": "Essen, Trinken und Restaurant",
+      "titleDe": "Essen, Trinken und Restaurants",
       "explanationDe": "Im Restaurant reservieren Sie einen Tisch, bestellen, fragen nach den Zutaten und bezahlen; zu Hause sprechen Sie über Kochen und gesunde Ernährung.\nIm Restaurant: die Speisekarte, die Speisekarten; das Gericht, die Gerichte; die Vorspeise, die Vorspeisen; das Hauptgericht, die Hauptgerichte; der Nachtisch, die Nachtische; die Beilage, die Beilagen; der Kellner, die Kellner / die Kellnerin, die Kellnerinnen; die Rechnung, die Rechnungen; das Trinkgeld, die Trinkgelder.\nEssen: die Zutat, die Zutaten; das Lebensmittel, die Lebensmittel; die Ernährung (kein Plural); die Allergie, die Allergien.\nWichtige Ausdrücke: einen Tisch reservieren; Ich hätte gern …; Zusammen oder getrennt?; vegetarisch / vegan essen.\nAchtung: 'das Gericht' auf der Speisekarte ist ein Essen; es kann aber auch ein Ort sein, wo Richter arbeiten.\n",
       "examplesDe": [
         "Ich möchte für Samstagabend einen Tisch für vier Personen reservieren.",
@@ -4106,8 +4106,8 @@
         "options": [
           "Rezept",
           "Symptom",
-          "Überweisung",
-          "Termin"
+          "Medikament",
+          "Pflaster"
         ],
         "correctIndex": 0,
         "instruction": {
@@ -4124,10 +4124,10 @@
       "content": {
         "question": "Ich habe seit zwei Tagen hohes ___ und starke Kopfschmerzen.",
         "options": [
-          "Erkältung",
-          "Rezept",
+          "Pflaster",
+          "Medikament",
           "Fieber",
-          "Apotheke"
+          "Symptom"
         ],
         "correctIndex": 2,
         "instruction": {
@@ -4164,7 +4164,9 @@
         "acceptableVariants": [
           "Notfallaufnahme",
           "Notfallambulanz",
-          "Notambulanz"
+          "Notambulanz",
+          "Rettungsstelle",
+          "Notfallstation"
         ],
         "instruction": {
           "en": "Fill in the German noun for the English word in brackets.",
@@ -4400,7 +4402,7 @@
       "track": "telc",
       "type": "multiple_choice",
       "content": {
-        "question": "Mit der BahnCard 25 bekommen Sie auf jede Fahrkarte eine ___ von 25 Prozent.",
+        "question": "Mit dem Studentenausweis bekommen Sie eine ___ von 25 Prozent.",
         "options": [
           "Ermäßigung",
           "Verbindung",
@@ -4420,7 +4422,7 @@
       "track": "telc",
       "type": "fill_blank",
       "content": {
-        "textWithBlank": "Achtung: Der Zug nach München fährt heute nicht von Gleis 5, sondern von ___ 8 ab. (platform)",
+        "textWithBlank": "Achtung: Der Zug nach München fährt heute von ___ 8 ab. (platform)",
         "correctAnswer": "Gleis",
         "acceptableVariants": [
           "Bahnsteig"
@@ -4440,7 +4442,8 @@
         "textWithBlank": "Bitte lassen Sie Ihr ___ im Bahnhof nicht unbeaufsichtigt. (luggage)",
         "correctAnswer": "Gepäck",
         "acceptableVariants": [
-          "Reisegepäck"
+          "Reisegepäck",
+          "Gepäckstück"
         ],
         "instruction": {
           "en": "Fill in the German noun for the English word in brackets.",
@@ -4518,7 +4521,8 @@
         "correctAnswer": "eröffnen",
         "acceptableVariants": [
           "einrichten",
-          "anlegen"
+          "anlegen",
+          "aufmachen"
         ],
         "instruction": {
           "en": "Fill in the German verb for the English word in brackets.",
