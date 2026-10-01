@@ -106,6 +106,10 @@ export function createProfileService(db: Database.Database) {
     if (input.theme !== undefined && !['dark', 'light', 'system'].includes(input.theme)) {
       throw new ProfileUpdateError('Theme must be dark, light or system', 'bad_request');
     }
+    // A JSON body can carry "false" as a string, which is truthy; only a real boolean is accepted.
+    if (input.soundEnabled !== undefined && typeof input.soundEnabled !== 'boolean') {
+      throw new ProfileUpdateError('Sound must be on or off (true or false)', 'bad_request');
+    }
     db.prepare(
       `UPDATE profile SET display_name = ?, ui_language = ?, active_track = ?, active_level = ?, theme = ?, sound_enabled = ?,
          onboarding_complete = ?, onboarding_choices_saved = ?, daily_review_cap = ?, updated_at = datetime('now')

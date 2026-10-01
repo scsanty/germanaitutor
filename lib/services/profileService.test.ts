@@ -96,4 +96,12 @@ describe('profileService', () => {
     expect(() => service.updateProfile({ theme: 'neon' as never })).toThrow('Theme must be dark, light or system');
     expect(service.getProfile().theme).toBe('light');
   });
+
+  it('rejects a sound setting that is not a boolean', () => {
+    const service = createProfileService(createDbClient(':memory:'));
+    service.updateProfile({ soundEnabled: false });
+    expect(() => service.updateProfile({ soundEnabled: 'false' as never })).toThrow(ProfileUpdateError);
+    expect(() => service.updateProfile({ soundEnabled: 1 as never })).toThrow('Sound must be on or off');
+    expect(service.getProfile().soundEnabled).toBe(false);
+  });
 });
