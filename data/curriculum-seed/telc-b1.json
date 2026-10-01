@@ -435,6 +435,211 @@
         "Kandidat A: 'Das kann ich gerne übernehmen. Aber was schenken wir ihm zum Abschied? Hast du eine Idee?'",
         "Kandidat B: 'Er wandert sehr gerne. Wie wäre es mit einem Gutschein für ein Sportgeschäft?'"
       ]
+    },
+    {
+      "id": "b1-telc-praeteritum-reports-and-letters",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "grammar",
+      "title": "The Präteritum in Reports and Letters",
+      "explanation": "Written German uses the Präteritum for past events in reports, letters, news and stories, while speech mostly uses the Perfekt.\nThe verbs sein, haben and werden and the modal verbs appear in the Präteritum in speech too: 'ich war', 'ich hatte', 'ich musste'.\nRegular verbs add -te to the stem: machen → ich machte, wir machten; stems ending in -t or -d add -ete: arbeiten → er arbeitete.\nIrregular verbs change the stem and take no ending in the ich and er/sie/es forms: gehen → ich ging, kommen → er kam, finden → sie fand.\nModal verbs drop the umlaut: können → konnte, müssen → musste, dürfen → durfte, wollen → wollte, sollen → sollte, mögen → mochte.\nThe endings are: ich –, du -st, er/sie/es –, wir -en, ihr -t, sie/Sie -en (ich machte, du machtest, wir machten, ihr machtet).\nA common mistake is adding -te to an irregular verb ('ich gehte') or keeping the umlaut in a modal verb: 'ich müsste' is Konjunktiv II and means something different from 'ich musste'.\n",
+      "examples": [
+        "Letzte Woche fiel die Heizung in unserer Wohnung drei Tage lang aus.",
+        "Ich konnte am Montag nicht zur Arbeit kommen, weil ich Fieber hatte.",
+        "Die Hausverwaltung schickte uns erst nach zwei Wochen einen Techniker.",
+        "Wir mussten die Möbel selbst in den Keller tragen."
+      ],
+      "titleDe": "Das Präteritum in Berichten und Briefen",
+      "explanationDe": "In geschriebenen Texten wie Berichten, Briefen und Nachrichten steht die Vergangenheit meistens im Präteritum, beim Sprechen meistens im Perfekt.\nsein, haben, werden und die Modalverben benutzt man auch beim Sprechen im Präteritum: 'ich war', 'ich hatte', 'ich musste'.\nRegelmäßige Verben bekommen -te: machen → ich machte, wir machten; endet der Stamm auf -t oder -d, kommt -ete: arbeiten → er arbeitete.\nUnregelmäßige Verben ändern den Stamm und haben bei ich und er/sie/es keine Endung: gehen → ich ging, kommen → er kam, finden → sie fand.\nModalverben verlieren den Umlaut: können → konnte, müssen → musste, dürfen → durfte, wollen → wollte, sollen → sollte, mögen → mochte.\nDie Endungen sind: ich –, du -st, er/sie/es –, wir -en, ihr -t, sie/Sie -en (ich machte, du machtest, wir machten, ihr machtet).\nTypische Fehler sind 'ich gehte' statt 'ich ging' und 'ich müsste' statt 'ich musste' – 'müsste' ist Konjunktiv II und bedeutet etwas anderes.\n",
+      "examplesDe": [
+        "Letzte Woche fiel die Heizung in unserer Wohnung drei Tage lang aus.",
+        "Ich konnte am Montag nicht zur Arbeit kommen, weil ich Fieber hatte.",
+        "Die Hausverwaltung schickte uns erst nach zwei Wochen einen Techniker.",
+        "Wir mussten die Möbel selbst in den Keller tragen."
+      ]
+    },
+    {
+      "id": "b1-telc-plusquamperfekt-incident-reports",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "grammar",
+      "title": "The Plusquamperfekt in Incident Reports",
+      "explanation": "The Plusquamperfekt describes something that happened before another past event: it is the 'past of the past'.\nIt is formed with the Präteritum of haben or sein plus the Partizip II: 'ich hatte gemacht', 'er war gegangen'.\nVerbs that take sein in the Perfekt also take sein here (gehen, kommen, fahren, passieren, bleiben); all others take haben.\nIt often appears after nachdem, or in reports where an earlier event explains a later one: 'Als ich ankam, war der Zug schon abgefahren.'\nA common mistake is using the Perfekt for the earlier event ('ist abgefahren'), which hides the order of events, or choosing hatte where war is needed.\n",
+      "examples": [
+        "Als der Handwerker kam, hatte ich den Wasserhahn schon selbst repariert.",
+        "Ich hatte die Miete pünktlich überwiesen, trotzdem bekam ich eine Mahnung.",
+        "Nachdem die Besprechung begonnen hatte, kam der Chef herein.",
+        "Der Patient war schon nach Hause gegangen, als der Arzt anrief."
+      ],
+      "titleDe": "Das Plusquamperfekt in Berichten",
+      "explanationDe": "Das Plusquamperfekt beschreibt eine Handlung, die vor einer anderen Handlung in der Vergangenheit passiert ist – die 'Vergangenheit der Vergangenheit'.\nMan bildet es mit 'hatte' oder 'war' und dem Partizip II: 'ich hatte gemacht', 'er war gegangen'.\nVerben mit sein im Perfekt nehmen auch hier sein (gehen, kommen, fahren, passieren, bleiben), alle anderen nehmen haben.\nOft steht es nach nachdem oder in Berichten, wenn ein früheres Ereignis ein späteres erklärt: 'Als ich ankam, war der Zug schon abgefahren.'\nTypische Fehler: Man benutzt für das frühere Ereignis das Perfekt ('ist abgefahren') oder wählt 'hatte' statt 'war'.\n",
+      "examplesDe": [
+        "Als der Handwerker kam, hatte ich den Wasserhahn schon selbst repariert.",
+        "Ich hatte die Miete pünktlich überwiesen, trotzdem bekam ich eine Mahnung.",
+        "Nachdem die Besprechung begonnen hatte, kam der Chef herein.",
+        "Der Patient war schon nach Hause gegangen, als der Arzt anrief."
+      ]
+    },
+    {
+      "id": "b1-telc-futur-i-plans-and-forecasts",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "grammar",
+      "title": "Futur I for Plans, Promises and Forecasts",
+      "explanation": "Futur I is formed with werden plus an infinitive at the end of the clause: ich werde, du wirst, er/sie/es wird, wir werden, ihr werdet, sie/Sie werden + arbeiten.\nGerman often uses the Präsens with a time word for the future ('Morgen fahre ich nach Berlin'), so Futur I is used mainly for forecasts, promises, firm intentions and official announcements.\nWith wohl or sicher, Futur I also expresses a guess about the present: 'Er wird wohl krank sein.'\nIn a subordinate clause the form of werden moves to the very end: '..., dass die Preise steigen werden.'\nA common mistake is confusing Futur I with the passive: 'Das Haus wird renoviert' is passive, while 'Wir werden das Haus renovieren' is future.\n",
+      "examples": [
+        "Die Bauarbeiten werden voraussichtlich bis Ende März dauern.",
+        "Ich werde Ihnen die Unterlagen bis Freitag zuschicken.",
+        "Die Mieten in der Stadt werden in den nächsten Jahren weiter steigen.",
+        "Frau Klein ist nicht im Büro, sie wird wohl beim Arzt sein."
+      ],
+      "titleDe": "Futur I für Pläne, Versprechen und Prognosen",
+      "explanationDe": "Das Futur I bildet man mit werden und einem Infinitiv am Satzende: ich werde, du wirst, er/sie/es wird, wir werden, ihr werdet, sie/Sie werden + arbeiten.\nFür die Zukunft benutzt man oft das Präsens mit einer Zeitangabe ('Morgen fahre ich nach Berlin'). Das Futur I steht vor allem bei Prognosen, Versprechen, festen Plänen und offiziellen Ankündigungen.\nMit 'wohl' oder 'sicher' drückt das Futur I auch eine Vermutung über die Gegenwart aus: 'Er wird wohl krank sein.'\nIm Nebensatz steht die Form von werden ganz am Ende: '..., dass die Preise steigen werden.'\nEin typischer Fehler ist die Verwechslung mit dem Passiv: 'Das Haus wird renoviert' ist Passiv, 'Wir werden das Haus renovieren' ist Futur.\n",
+      "examplesDe": [
+        "Die Bauarbeiten werden voraussichtlich bis Ende März dauern.",
+        "Ich werde Ihnen die Unterlagen bis Freitag zuschicken.",
+        "Die Mieten in der Stadt werden in den nächsten Jahren weiter steigen.",
+        "Frau Klein ist nicht im Büro, sie wird wohl beim Arzt sein."
+      ]
+    },
+    {
+      "id": "b1-telc-infinitive-with-zu-requests-and-rules",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "grammar",
+      "title": "Infinitive with zu in Requests and Rules",
+      "explanation": "After many verbs, nouns and adjectives a second action is expressed with zu plus the infinitive at the end of the clause: 'Ich habe vor, eine neue Wohnung zu suchen.'\nTypical triggers are verbs such as anfangen, aufhören, versuchen, vergessen, vorhaben, bitten and empfehlen, phrases such as Zeit haben, Lust haben and die Möglichkeit haben, and 'Es ist wichtig / schwer / verboten, ...'.\nWith separable verbs zu goes between the prefix and the stem: anrufen → anzurufen, umziehen → umzuziehen; inseparable verbs keep zu in front: zu unterschreiben.\nAfter modal verbs, werden and lassen there is no zu: 'Ich muss arbeiten', not 'Ich muss zu arbeiten'.\nThe infinitive clause has no subject of its own, so who does the action must be clear from the main clause; otherwise use a dass clause.\nA common mistake is putting zu before the prefix ('zu anrufen') or adding zu after a modal verb.\n",
+      "examples": [
+        "Vergessen Sie nicht, den Antrag bis Freitag abzugeben.",
+        "Ich habe leider keine Zeit, an der Besprechung teilzunehmen.",
+        "Es ist im ganzen Gebäude verboten zu rauchen.",
+        "Der Arzt hat mir empfohlen, mehr Sport zu treiben."
+      ],
+      "titleDe": "Infinitiv mit zu in Bitten und Regeln",
+      "explanationDe": "Nach vielen Verben, Nomen und Adjektiven drückt man eine zweite Handlung mit zu und dem Infinitiv am Satzende aus: 'Ich habe vor, eine neue Wohnung zu suchen.'\nTypisch sind Verben wie anfangen, aufhören, versuchen, vergessen, vorhaben, bitten und empfehlen, Ausdrücke wie Zeit haben, Lust haben und die Möglichkeit haben und 'Es ist wichtig / schwer / verboten, ...'.\nBei trennbaren Verben steht zu zwischen Präfix und Stamm: anrufen → anzurufen, umziehen → umzuziehen; bei untrennbaren Verben steht zu davor: zu unterschreiben.\nNach Modalverben, werden und lassen steht kein zu: 'Ich muss arbeiten', nicht 'Ich muss zu arbeiten'.\nDer Infinitivsatz hat kein eigenes Subjekt. Wer die Handlung macht, muss aus dem Hauptsatz klar sein, sonst braucht man einen dass-Satz.\nTypische Fehler sind 'zu anrufen' statt 'anzurufen' und zu nach einem Modalverb.\n",
+      "examplesDe": [
+        "Vergessen Sie nicht, den Antrag bis Freitag abzugeben.",
+        "Ich habe leider keine Zeit, an der Besprechung teilzunehmen.",
+        "Es ist im ganzen Gebäude verboten zu rauchen.",
+        "Der Arzt hat mir empfohlen, mehr Sport zu treiben."
+      ]
+    },
+    {
+      "id": "b1-telc-purpose-clauses-um-zu-damit",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "grammar",
+      "title": "Saying Why: um … zu and damit",
+      "explanation": "A purpose ('in order to', 'so that') is expressed with um … zu or damit; both answer the question 'Wozu?'.\nUse um … zu with the infinitive at the end when both clauses have the same subject: 'Ich lerne Deutsch, um in Deutschland zu arbeiten.'\nUse damit with the conjugated verb at the end when the subjects are different: 'Ich spreche langsam, damit die Kunden mich verstehen.'\nWith the same subject damit is also correct but sounds heavier ('Ich spare, damit ich ein Auto kaufen kann'), so um … zu is preferred.\nDo not add wollen to these clauses, because the purpose is already expressed; damit … können is fine.\nCommon mistakes are using um … zu with two different subjects and writing 'für' with an infinitive ('für zu arbeiten').\n",
+      "examples": [
+        "Ich rufe beim Amt an, um einen Termin zu vereinbaren.",
+        "Bitte schicken Sie mir die Unterlagen, damit ich den Antrag ausfüllen kann.",
+        "Wir haben die Wohnung renoviert, damit die neuen Mieter sofort einziehen können.",
+        "Viele Menschen fahren mit dem Fahrrad zur Arbeit, um Geld zu sparen."
+      ],
+      "titleDe": "Ziele ausdrücken: um … zu und damit",
+      "explanationDe": "Ein Ziel drückt man mit um … zu oder damit aus; beide antworten auf die Frage 'Wozu?'.\num … zu mit dem Infinitiv am Ende benutzt man, wenn beide Sätze dasselbe Subjekt haben: 'Ich lerne Deutsch, um in Deutschland zu arbeiten.'\ndamit mit dem konjugierten Verb am Ende benutzt man, wenn die Subjekte verschieden sind: 'Ich spreche langsam, damit die Kunden mich verstehen.'\nBei gleichem Subjekt ist damit auch richtig, klingt aber schwerer ('Ich spare, damit ich ein Auto kaufen kann'). Darum nimmt man lieber um … zu.\nIn diesen Sätzen steht kein 'wollen', weil das Ziel schon ausgedrückt ist; damit … können ist aber richtig.\nTypische Fehler sind um … zu bei zwei verschiedenen Subjekten und 'für' mit Infinitiv ('für zu arbeiten').\n",
+      "examplesDe": [
+        "Ich rufe beim Amt an, um einen Termin zu vereinbaren.",
+        "Bitte schicken Sie mir die Unterlagen, damit ich den Antrag ausfüllen kann.",
+        "Wir haben die Wohnung renoviert, damit die neuen Mieter sofort einziehen können.",
+        "Viele Menschen fahren mit dem Fahrrad zur Arbeit, um Geld zu sparen."
+      ]
+    },
+    {
+      "id": "b1-telc-conditions-wenn-falls",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "grammar",
+      "title": "Conditions with wenn and falls",
+      "explanation": "Conditions are introduced with wenn or falls, and the conjugated verb goes to the end of the clause: 'Wenn Sie Fragen haben, rufen Sie mich an.'\nWenn is the neutral word for 'if'; falls means 'in case' and stresses that the condition may not happen: 'Falls der Zug ausfällt, nehme ich ein Taxi.'\nWhen the condition comes first, the main clause starts with its verb: 'Falls Sie verhindert sind, sagen Sie bitte ab.'\nFor unreal conditions, wenn combines with the Konjunktiv II: 'Wenn ich mehr Zeit hätte, würde ich einen Kurs machen.'\nA common mistake is using ob for 'if' in a condition: ob only introduces indirect yes/no questions ('Ich weiß nicht, ob er kommt').\nAnother is keeping normal word order after the condition: 'Wenn es regnet, ich bleibe zu Hause' is wrong.\n",
+      "examples": [
+        "Wenn Sie krank sind, müssen Sie Ihren Arbeitgeber sofort informieren.",
+        "Falls die Waschmaschine wieder kaputtgeht, rufen Sie bitte den Kundendienst an.",
+        "Wenn die Miete nicht pünktlich kommt, schickt die Hausverwaltung eine Mahnung."
+      ],
+      "titleDe": "Bedingungen mit wenn und falls",
+      "explanationDe": "Bedingungen leitet man mit wenn oder falls ein, das konjugierte Verb steht am Ende: 'Wenn Sie Fragen haben, rufen Sie mich an.'\nwenn ist das neutrale Wort; falls betont, dass die Bedingung vielleicht nicht eintritt: 'Falls der Zug ausfällt, nehme ich ein Taxi.'\nSteht die Bedingung vorne, beginnt der Hauptsatz mit dem Verb: 'Falls Sie verhindert sind, sagen Sie bitte ab.'\nFür irreale Bedingungen steht wenn mit dem Konjunktiv II: 'Wenn ich mehr Zeit hätte, würde ich einen Kurs machen.'\nEin typischer Fehler ist ob statt wenn: ob leitet nur indirekte Ja/Nein-Fragen ein ('Ich weiß nicht, ob er kommt').\nEin anderer Fehler ist die normale Wortstellung nach der Bedingung: 'Wenn es regnet, ich bleibe zu Hause' ist falsch.\n",
+      "examplesDe": [
+        "Wenn Sie krank sind, müssen Sie Ihren Arbeitgeber sofort informieren.",
+        "Falls die Waschmaschine wieder kaputtgeht, rufen Sie bitte den Kundendienst an.",
+        "Wenn die Miete nicht pünktlich kommt, schickt die Hausverwaltung eine Mahnung."
+      ]
+    },
+    {
+      "id": "b1-telc-temporal-clauses-work-and-daily-life",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "grammar",
+      "title": "Time Clauses: als, wenn, während, bevor, nachdem, seit, bis, sobald",
+      "explanation": "Temporal clauses say when something happens, and the conjugated verb goes to the end of the clause.\nAls is for a single event or period in the past ('Als ich in Berlin ankam, ...'); wenn is for the present, the future and repeated events in the past ('Immer wenn ich Spätschicht hatte, ...').\nWährend means two things happen at the same time; bevor means the main clause happens first; nachdem means the nachdem clause happens first, usually with a tense shift: Plusquamperfekt + Präteritum, or Perfekt + Präsens.\nSeit (or seitdem) marks a starting point that lasts until now and usually takes the Präsens: 'Seit ich hier wohne, ...'; bis marks the end point: 'Warten Sie, bis Sie aufgerufen werden.'\nSobald means 'as soon as': 'Sobald ich die Unterlagen habe, melde ich mich.'\nThe most common mistakes are wenn for a single past event ('Wenn ich 2019 nach Deutschland kam' should be 'Als ich ...') and nachdem without the tense shift.\n",
+      "examples": [
+        "Als ich meine erste Stelle in Deutschland antrat, verstand ich die Kollegen kaum.",
+        "Nachdem ich den Mietvertrag unterschrieben hatte, bekam ich die Schlüssel.",
+        "Sobald die Reparatur fertig ist, rufen wir Sie an.",
+        "Seit ich in Teilzeit arbeite, habe ich mehr Zeit für meine Familie."
+      ],
+      "titleDe": "Temporalsätze: als, wenn, während, bevor, nachdem, seit, bis, sobald",
+      "explanationDe": "Temporalsätze sagen, wann etwas passiert; das konjugierte Verb steht am Ende.\nals steht für ein einmaliges Ereignis oder eine Zeit in der Vergangenheit ('Als ich in Berlin ankam, ...'); wenn steht für Gegenwart, Zukunft und Wiederholungen in der Vergangenheit ('Immer wenn ich Spätschicht hatte, ...').\nwährend heißt: zwei Dinge passieren gleichzeitig; bei bevor passiert der Hauptsatz zuerst; bei nachdem passiert der Nebensatz zuerst, meistens mit Zeitenwechsel: Plusquamperfekt + Präteritum oder Perfekt + Präsens.\nseit (oder seitdem) nennt einen Anfang, der bis heute dauert, meistens mit Präsens: 'Seit ich hier wohne, ...'; bis nennt das Ende: 'Warten Sie, bis Sie aufgerufen werden.'\nsobald heißt 'sofort, wenn': 'Sobald ich die Unterlagen habe, melde ich mich.'\nTypische Fehler sind wenn für ein einmaliges Ereignis in der Vergangenheit ('Wenn ich 2019 nach Deutschland kam' – richtig ist 'Als ich ...') und nachdem ohne Zeitenwechsel.\n",
+      "examplesDe": [
+        "Als ich meine erste Stelle in Deutschland antrat, verstand ich die Kollegen kaum.",
+        "Nachdem ich den Mietvertrag unterschrieben hatte, bekam ich die Schlüssel.",
+        "Sobald die Reparatur fertig ist, rufen wir Sie an.",
+        "Seit ich in Teilzeit arbeite, habe ich mehr Zeit für meine Familie."
+      ]
+    },
+    {
+      "id": "b1-telc-relative-clauses-housing-and-services",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "grammar",
+      "title": "Relative Clauses for Housing, Work and Services",
+      "explanation": "A relative clause describes a noun more precisely; it starts with a relative pronoun, and the conjugated verb goes to the end.\nThe pronoun takes its gender and number from the noun, but its case from its role in the relative clause.\nThe forms (nominative / accusative / dative) are: masculine der / den / dem, feminine die / die / der, neuter das / das / dem, plural die / die / denen.\nWith a preposition, the preposition comes first and decides the case: 'die Firma, bei der ich arbeite', 'der Kollege, mit dem ich spreche', 'das Problem, über das wir gesprochen haben'.\nAfter a place, wo can replace a preposition with a pronoun ('die Stadt, wo ich wohne'); after alles, etwas, nichts and das, use was ('Das ist alles, was ich weiß.').\nCommon mistakes are taking the case from the main clause instead of the relative clause, and writing 'die' instead of 'denen' in the dative plural.\n",
+      "examples": [
+        "Der Hausmeister, der im Erdgeschoss wohnt, hat die Tür repariert.",
+        "Das ist die Wohnung, die wir am Samstag besichtigt haben.",
+        "Die Kollegen, mit denen ich zusammenarbeite, kommen aus fünf Ländern.",
+        "Der Vermieter hat alles erledigt, was im Protokoll stand."
+      ],
+      "titleDe": "Relativsätze rund um Wohnung, Arbeit und Ämter",
+      "explanationDe": "Ein Relativsatz beschreibt ein Nomen genauer; er beginnt mit einem Relativpronomen, das konjugierte Verb steht am Ende.\nGenus und Zahl kommen vom Nomen, der Kasus kommt von der Rolle im Relativsatz.\nDie Formen (Nominativ / Akkusativ / Dativ) sind: maskulin der / den / dem, feminin die / die / der, neutral das / das / dem, Plural die / die / denen.\nMit Präposition steht die Präposition vorne und bestimmt den Kasus: 'die Firma, bei der ich arbeite', 'der Kollege, mit dem ich spreche', 'das Problem, über das wir gesprochen haben'.\nNach einem Ort kann wo stehen ('die Stadt, wo ich wohne'); nach alles, etwas, nichts und das steht was ('Das ist alles, was ich weiß.').\nTypische Fehler sind der Kasus aus dem Hauptsatz statt aus dem Relativsatz und 'die' statt 'denen' im Dativ Plural.\n",
+      "examplesDe": [
+        "Der Hausmeister, der im Erdgeschoss wohnt, hat die Tür repariert.",
+        "Das ist die Wohnung, die wir am Samstag besichtigt haben.",
+        "Die Kollegen, mit denen ich zusammenarbeite, kommen aus fünf Ländern.",
+        "Der Vermieter hat alles erledigt, was im Protokoll stand."
+      ]
+    },
+    {
+      "id": "b1-telc-two-part-connectors",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "grammar",
+      "title": "Two-Part Connectors: sowohl … als auch, weder … noch, je … desto",
+      "explanation": "Two-part connectors link two parallel pieces of information.\nsowohl … als auch ('both … and') and nicht nur … sondern auch ('not only … but also') add information; nicht nur … sondern auch stresses the second part.\nweder … noch ('neither … nor') negates both parts, so no extra nicht or kein is added.\nentweder … oder ('either … or') offers two alternatives: 'Entweder rufe ich an, oder ich schreibe eine E-Mail.'\nje … desto (or umso) ('the … the') needs comparatives: the je clause has the verb at the end, and after desto + comparative the verb comes next: 'Je länger ich in Deutschland lebe, desto besser verstehe ich die Leute.'\nCommon mistakes are 'sowohl … und', an extra nicht or kein with weder … noch, 'nicht nur … aber auch', and the wrong word order after desto.\n",
+      "examples": [
+        "Die Stelle bietet sowohl ein gutes Gehalt als auch flexible Arbeitszeiten.",
+        "Ich habe weder einen Brief noch eine E-Mail vom Vermieter bekommen.",
+        "Je früher Sie den Antrag stellen, desto schneller bekommen Sie eine Antwort.",
+        "Sie können entweder online bezahlen oder bar an der Kasse."
+      ],
+      "titleDe": "Zweiteilige Konnektoren: sowohl … als auch, weder … noch, je … desto",
+      "explanationDe": "Zweiteilige Konnektoren verbinden zwei gleichrangige Informationen.\nsowohl … als auch und nicht nur … sondern auch fügen etwas hinzu; bei nicht nur … sondern auch ist der zweite Teil wichtiger.\nweder … noch verneint beide Teile, deshalb steht kein zusätzliches nicht oder kein.\nentweder … oder nennt zwei Möglichkeiten: 'Entweder rufe ich an, oder ich schreibe eine E-Mail.'\nje … desto (oder umso) braucht den Komparativ: Im je-Satz steht das Verb am Ende, nach desto + Komparativ kommt sofort das Verb: 'Je länger ich in Deutschland lebe, desto besser verstehe ich die Leute.'\nTypische Fehler sind 'sowohl … und', ein zusätzliches nicht oder kein bei weder … noch, 'nicht nur … aber auch' und die falsche Wortstellung nach desto.\n",
+      "examplesDe": [
+        "Die Stelle bietet sowohl ein gutes Gehalt als auch flexible Arbeitszeiten.",
+        "Ich habe weder einen Brief noch eine E-Mail vom Vermieter bekommen.",
+        "Je früher Sie den Antrag stellen, desto schneller bekommen Sie eine Antwort.",
+        "Sie können entweder online bezahlen oder bar an der Kasse."
+      ]
     }
   ],
   "exercises": [
@@ -1493,6 +1698,1077 @@
         "front": "Kompromissformel in Teil 3",
         "back": "Lass uns doch einen Kompromiss schließen: Wir machen zuerst X und danach Y."
       }
+    },
+    {
+      "id": "b1-telc-praeteritum-reports-and-letters__ex0",
+      "lessonId": "b1-telc-praeteritum-reports-and-letters",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Am Montag ___ ich leider nicht ins Büro kommen. (können)",
+        "correctAnswer": "konnte",
+        "instruction": {
+          "en": "Fill in the Präteritum form of the verb in brackets.",
+          "de": "Ergänzen Sie das Verb in Klammern im Präteritum."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-praeteritum-reports-and-letters__ex1",
+      "lessonId": "b1-telc-praeteritum-reports-and-letters",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Der Techniker ___ erst um 16 Uhr und reparierte die Heizung. (kommen)",
+        "correctAnswer": "kam",
+        "instruction": {
+          "en": "Fill in the Präteritum form of the irregular verb in brackets.",
+          "de": "Ergänzen Sie das unregelmäßige Verb in Klammern im Präteritum."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-praeteritum-reports-and-letters__ex2",
+      "lessonId": "b1-telc-praeteritum-reports-and-letters",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Wir ___ die ganze Nacht ohne Strom, weil ein Kabel defekt war. (sein)",
+        "correctAnswer": "waren",
+        "instruction": {
+          "en": "Fill in the Präteritum form of the verb in brackets.",
+          "de": "Ergänzen Sie das Verb in Klammern im Präteritum."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-praeteritum-reports-and-letters__ex3",
+      "lessonId": "b1-telc-praeteritum-reports-and-letters",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Die Kollegin ___ gestern bis 20 Uhr, weil das Projekt fertig werden musste. (arbeiten)",
+        "correctAnswer": "arbeitete",
+        "instruction": {
+          "en": "Fill in the Präteritum form of the regular verb in brackets.",
+          "de": "Ergänzen Sie das regelmäßige Verb in Klammern im Präteritum."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-praeteritum-reports-and-letters__ex4",
+      "lessonId": "b1-telc-praeteritum-reports-and-letters",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Gestern ___ ich zum Arzt, weil ich starke Kopfschmerzen hatte.",
+        "options": [
+          "ging",
+          "gehte",
+          "gang",
+          "gegangen"
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "Choose the correct Präteritum form of gehen.",
+          "de": "Wählen Sie die richtige Präteritumform von 'gehen'."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-praeteritum-reports-and-letters__ex5",
+      "lessonId": "b1-telc-praeteritum-reports-and-letters",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Ich ___ den Termin absagen, weil mein Kind krank war.",
+        "options": [
+          "musste",
+          "müsste",
+          "musst",
+          "gemusst"
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "Choose the Präteritum form of müssen.",
+          "de": "Wählen Sie die Präteritumform von 'müssen'."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-praeteritum-reports-and-letters__ex6",
+      "lessonId": "b1-telc-praeteritum-reports-and-letters",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Satz steht im Präteritum?",
+        "options": [
+          "Der Zug hatte 30 Minuten Verspätung.",
+          "Der Zug hat 30 Minuten Verspätung gehabt.",
+          "Der Zug hat 30 Minuten Verspätung.",
+          "Der Zug wird 30 Minuten Verspätung haben."
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "Choose the sentence in the Präteritum.",
+          "de": "Wählen Sie den Satz im Präteritum."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-plusquamperfekt-incident-reports__ex0",
+      "lessonId": "b1-telc-plusquamperfekt-incident-reports",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Als ich im Büro ankam, ___ die Sitzung schon begonnen.",
+        "correctAnswer": "hatte",
+        "instruction": {
+          "en": "Fill in the auxiliary verb for the Plusquamperfekt.",
+          "de": "Ergänzen Sie das Hilfsverb im Plusquamperfekt."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-plusquamperfekt-incident-reports__ex1",
+      "lessonId": "b1-telc-plusquamperfekt-incident-reports",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Bevor ich die neue Stelle in München antrat, ___ ich drei Jahre in Köln gewohnt.",
+        "correctAnswer": "hatte",
+        "instruction": {
+          "en": "Fill in the auxiliary verb for the Plusquamperfekt.",
+          "de": "Ergänzen Sie das Hilfsverb im Plusquamperfekt."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-plusquamperfekt-incident-reports__ex2",
+      "lessonId": "b1-telc-plusquamperfekt-incident-reports",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Der Zug ___ schon abgefahren, als wir den Bahnsteig erreichten.",
+        "correctAnswer": "war",
+        "instruction": {
+          "en": "Fill in the auxiliary verb for the Plusquamperfekt.",
+          "de": "Ergänzen Sie das Hilfsverb im Plusquamperfekt."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-plusquamperfekt-incident-reports__ex3",
+      "lessonId": "b1-telc-plusquamperfekt-incident-reports",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Nachdem der Arzt mich ___ hatte, schrieb er mir ein Rezept. (untersuchen)",
+        "correctAnswer": "untersucht",
+        "instruction": {
+          "en": "Fill in the Partizip II of the verb in brackets.",
+          "de": "Ergänzen Sie das Partizip II des Verbs in Klammern."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-plusquamperfekt-incident-reports__ex4",
+      "lessonId": "b1-telc-plusquamperfekt-incident-reports",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Ich konnte die Wohnung nicht besichtigen, weil der Makler den Termin ___.",
+        "options": [
+          "abgesagt hatte",
+          "abgesagt war",
+          "absagte hatte",
+          "hat abgesagt"
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "Choose the correct Plusquamperfekt form.",
+          "de": "Wählen Sie die richtige Form im Plusquamperfekt."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-plusquamperfekt-incident-reports__ex5",
+      "lessonId": "b1-telc-plusquamperfekt-incident-reports",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Nachdem die Kollegin nach Hause ___, klingelte das Telefon.",
+        "options": [
+          "gegangen hatte",
+          "gegangen war",
+          "ging war",
+          "gegangen ist"
+        ],
+        "correctIndex": 1,
+        "instruction": {
+          "en": "Choose the correct Plusquamperfekt form.",
+          "de": "Wählen Sie die richtige Form im Plusquamperfekt."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-plusquamperfekt-incident-reports__ex6",
+      "lessonId": "b1-telc-plusquamperfekt-incident-reports",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Wir ___ den Vertrag schon unterschrieben, als wir den Fehler bemerkten.",
+        "options": [
+          "waren",
+          "hatten",
+          "sind",
+          "wurden"
+        ],
+        "correctIndex": 1,
+        "instruction": {
+          "en": "Choose the auxiliary verb for the Plusquamperfekt.",
+          "de": "Wählen Sie das Hilfsverb für das Plusquamperfekt."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-futur-i-plans-and-forecasts__ex0",
+      "lessonId": "b1-telc-futur-i-plans-and-forecasts",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Ich ___ Ihnen die Rechnung morgen per E-Mail schicken.",
+        "correctAnswer": "werde",
+        "instruction": {
+          "en": "Fill in the correct form of werden for Futur I.",
+          "de": "Ergänzen Sie die richtige Form von 'werden' im Futur I."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-futur-i-plans-and-forecasts__ex1",
+      "lessonId": "b1-telc-futur-i-plans-and-forecasts",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Nächstes Jahr ___ die Firma zwanzig neue Mitarbeiter einstellen.",
+        "correctAnswer": "wird",
+        "instruction": {
+          "en": "Fill in the correct form of werden for Futur I.",
+          "de": "Ergänzen Sie die richtige Form von 'werden' im Futur I."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-futur-i-plans-and-forecasts__ex2",
+      "lessonId": "b1-telc-futur-i-plans-and-forecasts",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Ihr ___ den neuen Kollegen am Montag kennenlernen.",
+        "correctAnswer": "werdet",
+        "instruction": {
+          "en": "Fill in the correct form of werden for Futur I.",
+          "de": "Ergänzen Sie die richtige Form von 'werden' im Futur I."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-futur-i-plans-and-forecasts__ex3",
+      "lessonId": "b1-telc-futur-i-plans-and-forecasts",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Der Vermieter hat versprochen, dass er die Heizung bald reparieren ___.",
+        "correctAnswer": "wird",
+        "instruction": {
+          "en": "Fill in the form of werden at the end of the subordinate clause.",
+          "de": "Ergänzen Sie die Form von 'werden' am Ende des Nebensatzes."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-futur-i-plans-and-forecasts__ex4",
+      "lessonId": "b1-telc-futur-i-plans-and-forecasts",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Satz steht im Futur I?",
+        "options": [
+          "Die Wohnung wird nächste Woche renoviert.",
+          "Wir werden die Wohnung nächste Woche renovieren.",
+          "Wir renovierten die Wohnung letzte Woche.",
+          "Wir wurden die Wohnung renovieren."
+        ],
+        "correctIndex": 1,
+        "instruction": {
+          "en": "Choose the sentence in Futur I (not the passive).",
+          "de": "Wählen Sie den Satz im Futur I (nicht im Passiv)."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-futur-i-plans-and-forecasts__ex5",
+      "lessonId": "b1-telc-futur-i-plans-and-forecasts",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Im Büro von Herrn Wagner brennt noch Licht. Er ___ wohl noch arbeiten.",
+        "options": [
+          "wird",
+          "werden",
+          "wurde",
+          "hat"
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "Choose the form that expresses a guess about the present.",
+          "de": "Wählen Sie die Form, die eine Vermutung über die Gegenwart ausdrückt."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-infinitive-with-zu-requests-and-rules__ex0",
+      "lessonId": "b1-telc-infinitive-with-zu-requests-and-rules",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Vergessen Sie bitte nicht, das Formular ___. (unterschreiben)",
+        "correctAnswer": "zu unterschreiben",
+        "instruction": {
+          "en": "Fill in the verb in brackets as an infinitive with zu.",
+          "de": "Ergänzen Sie das Verb in Klammern als Infinitiv mit zu."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-infinitive-with-zu-requests-and-rules__ex1",
+      "lessonId": "b1-telc-infinitive-with-zu-requests-and-rules",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Ich versuche seit Tagen, den Vermieter ___. (anrufen)",
+        "correctAnswer": "anzurufen",
+        "instruction": {
+          "en": "Fill in the separable verb in brackets as an infinitive with zu.",
+          "de": "Ergänzen Sie das trennbare Verb in Klammern als Infinitiv mit zu."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-infinitive-with-zu-requests-and-rules__ex2",
+      "lessonId": "b1-telc-infinitive-with-zu-requests-and-rules",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Wir haben vor, im Sommer in eine größere Wohnung ___. (umziehen)",
+        "correctAnswer": "umzuziehen",
+        "instruction": {
+          "en": "Fill in the separable verb in brackets as an infinitive with zu.",
+          "de": "Ergänzen Sie das trennbare Verb in Klammern als Infinitiv mit zu."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-infinitive-with-zu-requests-and-rules__ex3",
+      "lessonId": "b1-telc-infinitive-with-zu-requests-and-rules",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Satz ist richtig?",
+        "options": [
+          "Ich muss heute länger zu arbeiten.",
+          "Ich muss heute länger arbeiten.",
+          "Ich habe heute keine Lust, länger arbeiten.",
+          "Es ist wichtig, pünktlich kommen."
+        ],
+        "correctIndex": 1,
+        "instruction": {
+          "en": "Choose the correct sentence: with or without zu?",
+          "de": "Wählen Sie den richtigen Satz: mit oder ohne zu?"
+        }
+      }
+    },
+    {
+      "id": "b1-telc-infinitive-with-zu-requests-and-rules__ex4",
+      "lessonId": "b1-telc-infinitive-with-zu-requests-and-rules",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Es ist nicht erlaubt, im Treppenhaus Fahrräder ___.",
+        "options": [
+          "abzustellen",
+          "zu abstellen",
+          "abstellen",
+          "abgestellt"
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "Choose the correct infinitive with zu.",
+          "de": "Wählen Sie den richtigen Infinitiv mit zu."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-infinitive-with-zu-requests-and-rules__ex5",
+      "lessonId": "b1-telc-infinitive-with-zu-requests-and-rules",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Hast du am Samstag Zeit, mir beim Umzug ___?",
+        "options": [
+          "helfen",
+          "zu helfen",
+          "zuhelfen",
+          "geholfen"
+        ],
+        "correctIndex": 1,
+        "instruction": {
+          "en": "Choose the correct form after 'Zeit haben'.",
+          "de": "Wählen Sie die richtige Form nach 'Zeit haben'."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-purpose-clauses-um-zu-damit__ex0",
+      "lessonId": "b1-telc-purpose-clauses-um-zu-damit",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Ich gehe heute früher nach Hause, ___ meine Tochter vom Kindergarten abzuholen.",
+        "options": [
+          "um",
+          "damit",
+          "dass",
+          "weil"
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "Choose the word that introduces the purpose.",
+          "de": "Wählen Sie das Wort, das das Ziel einleitet."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-purpose-clauses-um-zu-damit__ex1",
+      "lessonId": "b1-telc-purpose-clauses-um-zu-damit",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Der Chef erklärt alles zweimal, ___ die neuen Mitarbeiter keine Fehler machen.",
+        "options": [
+          "um",
+          "damit",
+          "zu",
+          "ob"
+        ],
+        "correctIndex": 1,
+        "instruction": {
+          "en": "Choose the word that introduces the purpose.",
+          "de": "Wählen Sie das Wort, das das Ziel einleitet."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-purpose-clauses-um-zu-damit__ex2",
+      "lessonId": "b1-telc-purpose-clauses-um-zu-damit",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Ich brauche eine Bescheinigung vom Arbeitgeber, um das Wohngeld ___. (beantragen)",
+        "correctAnswer": "zu beantragen",
+        "instruction": {
+          "en": "Complete the um … zu clause with the verb in brackets.",
+          "de": "Ergänzen Sie den Satz mit um … zu und dem Verb in Klammern."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-purpose-clauses-um-zu-damit__ex3",
+      "lessonId": "b1-telc-purpose-clauses-um-zu-damit",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Ich spreche mit dem Hausmeister, ___ er die Heizung endlich repariert.",
+        "correctAnswer": "damit",
+        "instruction": {
+          "en": "Fill in the connector for a purpose (the subjects are different).",
+          "de": "Ergänzen Sie den Konnektor für ein Ziel (die Subjekte sind verschieden)."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-purpose-clauses-um-zu-damit__ex4",
+      "lessonId": "b1-telc-purpose-clauses-um-zu-damit",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Sie fährt nach Hamburg, ___ an einem Seminar teilzunehmen.",
+        "correctAnswer": "um",
+        "instruction": {
+          "en": "Fill in the word that introduces the purpose.",
+          "de": "Ergänzen Sie das Wort, das das Ziel einleitet."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-purpose-clauses-um-zu-damit__ex5",
+      "lessonId": "b1-telc-purpose-clauses-um-zu-damit",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Satz ist richtig?",
+        "options": [
+          "Ich lerne jeden Tag, um die Prüfung zu bestehen.",
+          "Ich lerne jeden Tag, für die Prüfung zu bestehen.",
+          "Ich lerne jeden Tag, damit die Prüfung bestehen.",
+          "Ich lerne jeden Tag, um ich die Prüfung bestehe."
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "Choose the correct sentence.",
+          "de": "Wählen Sie den richtigen Satz."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-conditions-wenn-falls__ex0",
+      "lessonId": "b1-telc-conditions-wenn-falls",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "___ Sie Fragen zum Vertrag haben, wenden Sie sich bitte an Frau Schulz.",
+        "options": [
+          "Ob",
+          "Falls",
+          "Als",
+          "Damit"
+        ],
+        "correctIndex": 1,
+        "instruction": {
+          "en": "Choose the word that introduces a condition.",
+          "de": "Wählen Sie das Wort, das eine Bedingung einleitet."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-conditions-wenn-falls__ex1",
+      "lessonId": "b1-telc-conditions-wenn-falls",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Ich weiß noch nicht, ___ ich morgen zur Arbeit gehen kann.",
+        "options": [
+          "wenn",
+          "falls",
+          "ob",
+          "dass"
+        ],
+        "correctIndex": 2,
+        "instruction": {
+          "en": "Condition or indirect question? Choose the right word.",
+          "de": "Bedingung oder indirekte Frage? Wählen Sie das richtige Wort."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-conditions-wenn-falls__ex2",
+      "lessonId": "b1-telc-conditions-wenn-falls",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Falls es morgen stark schneit, ___",
+        "options": [
+          "das Büro bleibt geschlossen.",
+          "bleibt das Büro geschlossen.",
+          "das Büro geschlossen bleibt.",
+          "geschlossen das Büro bleibt."
+        ],
+        "correctIndex": 1,
+        "instruction": {
+          "en": "Choose the main clause with the correct word order.",
+          "de": "Wählen Sie den Hauptsatz mit der richtigen Wortstellung."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-conditions-wenn-falls__ex3",
+      "lessonId": "b1-telc-conditions-wenn-falls",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Wenn du heute Abend Zeit ___, können wir die Wohnungsanzeigen zusammen anschauen. (haben)",
+        "correctAnswer": "hast",
+        "instruction": {
+          "en": "Fill in the verb in brackets in the correct form.",
+          "de": "Ergänzen Sie das Verb in Klammern in der richtigen Form."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-conditions-wenn-falls__ex4",
+      "lessonId": "b1-telc-conditions-wenn-falls",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Rufen Sie bitte den Notdienst an, ___ die Heizung am Wochenende ausfällt.",
+        "correctAnswer": "falls",
+        "acceptableVariants": [
+          "wenn"
+        ],
+        "instruction": {
+          "en": "Fill in a word for a condition ('if' / 'in case').",
+          "de": "Ergänzen Sie ein Wort für eine Bedingung."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-conditions-wenn-falls__ex5",
+      "lessonId": "b1-telc-conditions-wenn-falls",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Falls der Paketbote mich nicht zu Hause ___, bringt er das Paket zum Nachbarn. (antreffen)",
+        "correctAnswer": "antrifft",
+        "instruction": {
+          "en": "Fill in the verb in brackets in the correct form and position.",
+          "de": "Ergänzen Sie das Verb in Klammern in der richtigen Form."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-temporal-clauses-work-and-daily-life__ex0",
+      "lessonId": "b1-telc-temporal-clauses-work-and-daily-life",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "___ ich letztes Jahr nach München zog, fand ich schnell eine Wohnung.",
+        "options": [
+          "Wenn",
+          "Als",
+          "Ob",
+          "Seit"
+        ],
+        "correctIndex": 1,
+        "instruction": {
+          "en": "Choose the conjunction for a single event in the past.",
+          "de": "Wählen Sie die Konjunktion für ein einmaliges Ereignis in der Vergangenheit."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-temporal-clauses-work-and-daily-life__ex1",
+      "lessonId": "b1-telc-temporal-clauses-work-and-daily-life",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Immer ___ ich Spätschicht hatte, kam ich erst nach Mitternacht nach Hause.",
+        "options": [
+          "als",
+          "wenn",
+          "nachdem",
+          "bis"
+        ],
+        "correctIndex": 1,
+        "instruction": {
+          "en": "Choose the conjunction for a repeated event in the past.",
+          "de": "Wählen Sie die Konjunktion für ein wiederholtes Ereignis in der Vergangenheit."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-temporal-clauses-work-and-daily-life__ex2",
+      "lessonId": "b1-telc-temporal-clauses-work-and-daily-life",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Bitte schalten Sie Ihr Handy aus, ___ die Prüfung läuft.",
+        "options": [
+          "während",
+          "nachdem",
+          "als",
+          "ob"
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "Choose the conjunction: two things at the same time.",
+          "de": "Wählen Sie die Konjunktion: Zwei Dinge passieren gleichzeitig."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-temporal-clauses-work-and-daily-life__ex3",
+      "lessonId": "b1-telc-temporal-clauses-work-and-daily-life",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "___ Sie das Formular abschicken, prüfen Sie bitte noch einmal alle Angaben.",
+        "correctAnswer": "bevor",
+        "acceptableVariants": [
+          "ehe"
+        ],
+        "instruction": {
+          "en": "Fill in the conjunction: first check, then send ('before').",
+          "de": "Ergänzen Sie die Konjunktion: erst prüfen, dann abschicken."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-temporal-clauses-work-and-daily-life__ex4",
+      "lessonId": "b1-telc-temporal-clauses-work-and-daily-life",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Nachdem der Elektriker die Leitung repariert ___, funktionierte das Licht wieder.",
+        "correctAnswer": "hatte",
+        "instruction": {
+          "en": "Fill in the auxiliary verb: after nachdem, the earlier event is in the Plusquamperfekt.",
+          "de": "Ergänzen Sie das Hilfsverb: Nach nachdem steht das frühere Ereignis im Plusquamperfekt."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-temporal-clauses-work-and-daily-life__ex5",
+      "lessonId": "b1-telc-temporal-clauses-work-and-daily-life",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "___ ich in Deutschland lebe, spreche ich jeden Tag Deutsch.",
+        "correctAnswer": "seit",
+        "acceptableVariants": [
+          "seitdem"
+        ],
+        "instruction": {
+          "en": "Fill in the conjunction for a starting point that lasts until now ('since').",
+          "de": "Ergänzen Sie die Konjunktion für einen Anfang, der bis heute dauert."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-temporal-clauses-work-and-daily-life__ex6",
+      "lessonId": "b1-telc-temporal-clauses-work-and-daily-life",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Bitte warten Sie im Wartezimmer, ___ der Arzt Sie aufruft.",
+        "options": [
+          "bis",
+          "seit",
+          "sobald",
+          "als"
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "Choose the conjunction for the end point ('until').",
+          "de": "Wählen Sie die Konjunktion für das Ende."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-temporal-clauses-work-and-daily-life__ex7",
+      "lessonId": "b1-telc-temporal-clauses-work-and-daily-life",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "___ ich die Ergebnisse habe, schicke ich Ihnen eine E-Mail.",
+        "correctAnswer": "sobald",
+        "acceptableVariants": [
+          "sowie"
+        ],
+        "instruction": {
+          "en": "Fill in the conjunction meaning 'as soon as'.",
+          "de": "Ergänzen Sie die Konjunktion mit der Bedeutung 'sofort, wenn'."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-relative-clauses-housing-and-services__ex0",
+      "lessonId": "b1-telc-relative-clauses-housing-and-services",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Der Techniker, ___ gestern die Heizung repariert hat, kommt morgen noch einmal.",
+        "correctAnswer": "der",
+        "acceptableVariants": [
+          "welcher"
+        ],
+        "instruction": {
+          "en": "Fill in the relative pronoun.",
+          "de": "Ergänzen Sie das Relativpronomen."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-relative-clauses-housing-and-services__ex1",
+      "lessonId": "b1-telc-relative-clauses-housing-and-services",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Die Wohnung, ___ wir gemietet haben, liegt im dritten Stock.",
+        "correctAnswer": "die",
+        "acceptableVariants": [
+          "welche"
+        ],
+        "instruction": {
+          "en": "Fill in the relative pronoun.",
+          "de": "Ergänzen Sie das Relativpronomen."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-relative-clauses-housing-and-services__ex2",
+      "lessonId": "b1-telc-relative-clauses-housing-and-services",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Die Kollegin, ___ ich die Unterlagen gegeben habe, ist heute krank.",
+        "correctAnswer": "der",
+        "acceptableVariants": [
+          "welcher"
+        ],
+        "instruction": {
+          "en": "Fill in the relative pronoun in the dative.",
+          "de": "Ergänzen Sie das Relativpronomen im Dativ."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-relative-clauses-housing-and-services__ex3",
+      "lessonId": "b1-telc-relative-clauses-housing-and-services",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Die Nachbarn, ___ ich beim Umzug geholfen habe, haben mich zum Essen eingeladen.",
+        "correctAnswer": "denen",
+        "acceptableVariants": [
+          "welchen"
+        ],
+        "instruction": {
+          "en": "Fill in the relative pronoun in the dative plural.",
+          "de": "Ergänzen Sie das Relativpronomen im Dativ Plural."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-relative-clauses-housing-and-services__ex4",
+      "lessonId": "b1-telc-relative-clauses-housing-and-services",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Das ist die Firma, ___ ich seit fünf Jahren arbeite.",
+        "options": [
+          "bei der",
+          "bei die",
+          "die",
+          "bei dem"
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "Choose the preposition and relative pronoun.",
+          "de": "Wählen Sie die Präposition und das Relativpronomen."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-relative-clauses-housing-and-services__ex5",
+      "lessonId": "b1-telc-relative-clauses-housing-and-services",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Der Termin, ___ ich mich so lange gefreut habe, wurde leider abgesagt.",
+        "options": [
+          "auf den",
+          "auf dem",
+          "an den",
+          "den"
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "Choose the preposition and relative pronoun (sich freuen auf + accusative).",
+          "de": "Wählen Sie die Präposition und das Relativpronomen (sich freuen auf + Akkusativ)."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-relative-clauses-housing-and-services__ex6",
+      "lessonId": "b1-telc-relative-clauses-housing-and-services",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Ich ziehe in eine Stadt, ___ es viele Arbeitsplätze in der Pflege gibt.",
+        "correctAnswer": "wo",
+        "acceptableVariants": [
+          "in der",
+          "in welcher"
+        ],
+        "instruction": {
+          "en": "Fill in the relative word for a place.",
+          "de": "Ergänzen Sie das Relativwort für einen Ort."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-relative-clauses-housing-and-services__ex7",
+      "lessonId": "b1-telc-relative-clauses-housing-and-services",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Der Vermieter hat nicht alles repariert, ___ im Übergabeprotokoll steht.",
+        "options": [
+          "das",
+          "was",
+          "wo",
+          "welches"
+        ],
+        "correctIndex": 1,
+        "instruction": {
+          "en": "Choose the relative word after alles.",
+          "de": "Wählen Sie das Relativwort nach 'alles'."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-two-part-connectors__ex0",
+      "lessonId": "b1-telc-two-part-connectors",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Die Wohnung hat sowohl einen Balkon ___ einen kleinen Garten.",
+        "correctAnswer": "als auch",
+        "acceptableVariants": [
+          "wie auch"
+        ],
+        "instruction": {
+          "en": "Complete the two-part connector.",
+          "de": "Ergänzen Sie den zweiteiligen Konnektor."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-two-part-connectors__ex1",
+      "lessonId": "b1-telc-two-part-connectors",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Leider habe ich weder Zeit ___ Geld für einen Urlaub.",
+        "correctAnswer": "noch",
+        "instruction": {
+          "en": "Complete the two-part connector.",
+          "de": "Ergänzen Sie den zweiteiligen Konnektor."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-two-part-connectors__ex2",
+      "lessonId": "b1-telc-two-part-connectors",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Der neue Kollege spricht nicht nur Englisch, ___ auch Spanisch.",
+        "correctAnswer": "sondern",
+        "instruction": {
+          "en": "Complete the two-part connector.",
+          "de": "Ergänzen Sie den zweiteiligen Konnektor."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-two-part-connectors__ex3",
+      "lessonId": "b1-telc-two-part-connectors",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Je mehr Berufserfahrung Sie haben, ___ höher ist meistens Ihr Gehalt.",
+        "correctAnswer": "desto",
+        "acceptableVariants": [
+          "umso",
+          "um so"
+        ],
+        "instruction": {
+          "en": "Complete the two-part connector.",
+          "de": "Ergänzen Sie den zweiteiligen Konnektor."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-two-part-connectors__ex4",
+      "lessonId": "b1-telc-two-part-connectors",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Sie können den Termin ___ telefonisch oder per E-Mail absagen.",
+        "options": [
+          "entweder",
+          "weder",
+          "sowohl",
+          "nicht nur"
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "Choose the first part of the connector.",
+          "de": "Wählen Sie den ersten Teil des Konnektors."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-two-part-connectors__ex5",
+      "lessonId": "b1-telc-two-part-connectors",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Satz ist richtig?",
+        "options": [
+          "Ich habe weder Hunger noch Durst.",
+          "Ich habe weder keinen Hunger noch Durst.",
+          "Ich habe weder Hunger oder Durst.",
+          "Ich habe nicht weder Hunger noch Durst."
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "Choose the correct sentence.",
+          "de": "Wählen Sie den richtigen Satz."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-two-part-connectors__ex6",
+      "lessonId": "b1-telc-two-part-connectors",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Je länger die Besprechung dauert, ___",
+        "options": [
+          "desto müder werden die Kollegen.",
+          "desto die Kollegen werden müder.",
+          "desto müder die Kollegen werden.",
+          "desto werden die Kollegen müder."
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "Choose the second part with the correct word order.",
+          "de": "Wählen Sie den zweiten Teil mit der richtigen Wortstellung."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-two-part-connectors__ex7",
+      "lessonId": "b1-telc-two-part-connectors",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Der Deutschkurs ist nicht nur günstig, ___",
+        "options": [
+          "sondern auch sehr gut.",
+          "aber auch sehr gut.",
+          "als auch sehr gut.",
+          "oder auch sehr gut."
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "Choose the correct second part.",
+          "de": "Wählen Sie den richtigen zweiten Teil."
+        }
+      }
     }
   ],
   "prerequisites": [
@@ -1547,6 +2823,30 @@
     {
       "lessonId": "b1-telc-speaking-teil3-joint-planning",
       "prerequisiteLessonId": "b1-telc-konjunktiv-ii-polite-work-requests"
+    },
+    {
+      "lessonId": "b1-telc-plusquamperfekt-incident-reports",
+      "prerequisiteLessonId": "b1-telc-praeteritum-reports-and-letters"
+    },
+    {
+      "lessonId": "b1-telc-purpose-clauses-um-zu-damit",
+      "prerequisiteLessonId": "b1-telc-infinitive-with-zu-requests-and-rules"
+    },
+    {
+      "lessonId": "b1-telc-temporal-clauses-work-and-daily-life",
+      "prerequisiteLessonId": "b1-telc-plusquamperfekt-incident-reports"
+    },
+    {
+      "lessonId": "b1-telc-relative-clauses-housing-and-services",
+      "prerequisiteLessonId": "b1-telc-prepositional-verbs-service-queries"
+    },
+    {
+      "lessonId": "b1-telc-two-part-connectors",
+      "prerequisiteLessonId": "b1-telc-temporal-clauses-work-and-daily-life"
+    },
+    {
+      "lessonId": "b1-telc-konjunktiv-ii-polite-work-requests",
+      "prerequisiteLessonId": "b1-telc-praeteritum-reports-and-letters"
     }
   ],
   "milestones": [
@@ -1562,8 +2862,10 @@
         "descriptionDe": "Wortschatz für Wohnung und Arbeitsplatz, indirekte Fragen und Prüfungsaufgaben zu Anzeigen, Telefonaten und zum Kennenlernen."
       },
       "lessonIds": [
+        "b1-telc-futur-i-plans-and-forecasts",
         "b1-telc-indirect-questions-official",
         "b1-telc-listening-teil3-transactional-calls",
+        "b1-telc-praeteritum-reports-and-letters",
         "b1-telc-reading-teil3-classifieds-matching",
         "b1-telc-speaking-teil1-kontaktaufnahme",
         "b1-telc-vocab-housing-leases-disputes",
@@ -1582,8 +2884,11 @@
         "descriptionDe": "Verben mit Präpositionen und Wortschatz zu Verbraucherrechten für einen Beschwerdebrief, dazu Radionachrichten und ein Radiointerview."
       },
       "lessonIds": [
+        "b1-telc-conditions-wenn-falls",
+        "b1-telc-infinitive-with-zu-requests-and-rules",
         "b1-telc-listening-teil1-news-broadcasts",
         "b1-telc-listening-teil2-longer-interview",
+        "b1-telc-plusquamperfekt-incident-reports",
         "b1-telc-prepositional-verbs-service-queries",
         "b1-telc-vocab-consumer-rights-complaints",
         "b1-telc-writing-complaint-letter"
@@ -1603,8 +2908,11 @@
       "lessonIds": [
         "b1-telc-konjunktiv-ii-polite-work-requests",
         "b1-telc-passive-workplace-processes",
+        "b1-telc-purpose-clauses-um-zu-damit",
+        "b1-telc-relative-clauses-housing-and-services",
         "b1-telc-speaking-teil2-topic-discussion",
         "b1-telc-speaking-teil3-joint-planning",
+        "b1-telc-temporal-clauses-work-and-daily-life",
         "b1-telc-writing-inquiry-request-letter"
       ]
     },
@@ -1623,7 +2931,8 @@
         "b1-telc-reading-teil1-headline-matching",
         "b1-telc-reading-teil2-detailed-comprehension",
         "b1-telc-sprachbausteine-connectors-grammar",
-        "b1-telc-sprachbausteine-lexical-cloze"
+        "b1-telc-sprachbausteine-lexical-cloze",
+        "b1-telc-two-part-connectors"
       ]
     }
   ]

@@ -20,6 +20,10 @@ describe('telc B1 coverage', () => {
     }
   });
 
+  it('has exactly one coverage entry per inventory item', () => {
+    expect(Object.keys(coverage).filter((k) => k !== '_new').sort()).toEqual(inventory.map((i) => i.id).sort());
+  });
+
   it('maps only real telc B1 lessons, and every telc B1 lesson to at least one item', () => {
     const mapped = new Set(Object.entries(coverage).filter(([k]) => k !== '_new').flatMap(([, ids]) => ids));
     for (const id of mapped) expect(lessonIds.has(id), id).toBe(true);
