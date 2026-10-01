@@ -15,7 +15,7 @@ describe('bundled curriculum seeds', () => {
     expect(files).toHaveLength(15);
     for (const [, seed] of seeds) {
       expect(seed.formatVersion).toBe(3);
-      expect(seed.seedVersion).toBe('6');
+      expect(seed.seedVersion).toBe('7');
     }
   });
 

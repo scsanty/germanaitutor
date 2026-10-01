@@ -1,0 +1,368 @@
+[
+  {
+    "id": "g-praeteritum",
+    "kind": "grammar",
+    "label": "Präteritum (regular, irregular, modal verbs)",
+    "labelDe": "Präteritum (regelmäßig, unregelmäßig, Modalverben)"
+  },
+  {
+    "id": "g-plusquamperfekt",
+    "kind": "grammar",
+    "label": "Plusquamperfekt",
+    "labelDe": "Plusquamperfekt"
+  },
+  {
+    "id": "g-futur-1",
+    "kind": "grammar",
+    "label": "Futur I",
+    "labelDe": "Futur I"
+  },
+  {
+    "id": "g-passiv",
+    "kind": "grammar",
+    "label": "Passive (present, preterite, perfect, with modal verbs)",
+    "labelDe": "Passiv (Präsens, Präteritum, Perfekt, mit Modalverben)"
+  },
+  {
+    "id": "g-konjunktiv-2",
+    "kind": "grammar",
+    "label": "Konjunktiv II (würde, hätte, wäre, modal verbs: wishes, advice, unreal conditions)",
+    "labelDe": "Konjunktiv II (würde, hätte, wäre, Modalverben: Wünsche, Ratschläge, irreale Bedingungen)"
+  },
+  {
+    "id": "g-relativsaetze",
+    "kind": "grammar",
+    "label": "Relative clauses (nom., acc., dat., with prepositions; wo, was)",
+    "labelDe": "Relativsätze (Nom., Akk., Dat., mit Präpositionen; wo, was)"
+  },
+  {
+    "id": "g-kausal-konzessiv",
+    "kind": "grammar",
+    "label": "weil, da, obwohl, trotzdem, deshalb",
+    "labelDe": "weil, da, obwohl, trotzdem, deshalb"
+  },
+  {
+    "id": "g-final",
+    "kind": "grammar",
+    "label": "damit, um … zu",
+    "labelDe": "damit, um … zu"
+  },
+  {
+    "id": "g-temporal",
+    "kind": "grammar",
+    "label": "als, wenn, während, bevor, nachdem, seit, bis, sobald",
+    "labelDe": "als, wenn, während, bevor, nachdem, seit, bis, sobald"
+  },
+  {
+    "id": "g-konditional",
+    "kind": "grammar",
+    "label": "wenn, falls",
+    "labelDe": "wenn, falls"
+  },
+  {
+    "id": "g-indirekte-fragen",
+    "kind": "grammar",
+    "label": "Indirect questions (ob, W-words)",
+    "labelDe": "Indirekte Fragen (ob, W-Wörter)"
+  },
+  {
+    "id": "g-infinitiv-zu",
+    "kind": "grammar",
+    "label": "Infinitive with zu",
+    "labelDe": "Infinitiv mit zu"
+  },
+  {
+    "id": "g-zweiteilige-konnektoren",
+    "kind": "grammar",
+    "label": "sowohl … als auch, weder … noch, entweder … oder, nicht nur … sondern auch, je … desto",
+    "labelDe": "sowohl … als auch, weder … noch, entweder … oder, nicht nur … sondern auch, je … desto"
+  },
+  {
+    "id": "g-adjektivdeklination",
+    "kind": "grammar",
+    "label": "Adjective endings (all three types)",
+    "labelDe": "Adjektivdeklination (alle drei Typen)"
+  },
+  {
+    "id": "g-komparation",
+    "kind": "grammar",
+    "label": "Comparative and superlative",
+    "labelDe": "Komparativ und Superlativ"
+  },
+  {
+    "id": "g-genitiv",
+    "kind": "grammar",
+    "label": "Genitive, and wegen, trotz, während, statt",
+    "labelDe": "Genitiv, und wegen, trotz, während, statt"
+  },
+  {
+    "id": "g-n-deklination",
+    "kind": "grammar",
+    "label": "n-declension",
+    "labelDe": "n-Deklination"
+  },
+  {
+    "id": "g-reflexive-verben",
+    "kind": "grammar",
+    "label": "Reflexive verbs (acc./dat.)",
+    "labelDe": "Reflexive Verben (Akk./Dat.)"
+  },
+  {
+    "id": "g-verben-praepositionen",
+    "kind": "grammar",
+    "label": "Verbs with prepositions, and da-/wo-compounds",
+    "labelDe": "Verben mit Präpositionen und da-/wo-Komposita"
+  },
+  {
+    "id": "g-lassen-brauchen",
+    "kind": "grammar",
+    "label": "lassen, and brauchen … zu",
+    "labelDe": "lassen und brauchen … zu"
+  },
+  {
+    "id": "g-nomen-verb",
+    "kind": "grammar",
+    "label": "Noun-verb combinations (Antrag stellen, Entscheidung treffen …)",
+    "labelDe": "Nomen-Verb-Verbindungen (Antrag stellen, Entscheidung treffen …)"
+  },
+  {
+    "id": "g-partizip-adjektiv",
+    "kind": "grammar",
+    "label": "Participles as adjectives (recognition)",
+    "labelDe": "Partizipien als Adjektive (Erkennen)"
+  },
+  {
+    "id": "g-wortstellung",
+    "kind": "grammar",
+    "label": "Word order in the middle field and the sentence bracket",
+    "labelDe": "Wortstellung im Mittelfeld und in der Satzklammer"
+  },
+  {
+    "id": "t-arbeit",
+    "kind": "theme",
+    "label": "Work and jobs",
+    "labelDe": "Arbeit und Beruf"
+  },
+  {
+    "id": "t-wohnen",
+    "kind": "theme",
+    "label": "Housing",
+    "labelDe": "Wohnen"
+  },
+  {
+    "id": "t-gesundheit",
+    "kind": "theme",
+    "label": "Health and the doctor",
+    "labelDe": "Gesundheit und Arztbesuch"
+  },
+  {
+    "id": "t-reisen",
+    "kind": "theme",
+    "label": "Travel and transport",
+    "labelDe": "Reisen und Verkehr"
+  },
+  {
+    "id": "t-einkaufen",
+    "kind": "theme",
+    "label": "Shopping and complaints",
+    "labelDe": "Einkaufen und Reklamationen"
+  },
+  {
+    "id": "t-essen",
+    "kind": "theme",
+    "label": "Food and restaurants",
+    "labelDe": "Essen und Restaurant"
+  },
+  {
+    "id": "t-geld",
+    "kind": "theme",
+    "label": "Money and banking",
+    "labelDe": "Geld und Bank"
+  },
+  {
+    "id": "t-behoerden",
+    "kind": "theme",
+    "label": "Offices and forms",
+    "labelDe": "Behörden und Formulare"
+  },
+  {
+    "id": "t-medien",
+    "kind": "theme",
+    "label": "Media and communication",
+    "labelDe": "Medien und Kommunikation"
+  },
+  {
+    "id": "t-bildung",
+    "kind": "theme",
+    "label": "Education and learning",
+    "labelDe": "Bildung und Lernen"
+  },
+  {
+    "id": "t-umwelt",
+    "kind": "theme",
+    "label": "Environment and nature",
+    "labelDe": "Umwelt und Natur"
+  },
+  {
+    "id": "t-technik",
+    "kind": "theme",
+    "label": "Technology and the internet",
+    "labelDe": "Technik und Internet"
+  },
+  {
+    "id": "t-freizeit",
+    "kind": "theme",
+    "label": "Leisure and culture",
+    "labelDe": "Freizeit und Kultur"
+  },
+  {
+    "id": "t-familie",
+    "kind": "theme",
+    "label": "Family and relationships",
+    "labelDe": "Familie und Beziehungen"
+  },
+  {
+    "id": "t-feste",
+    "kind": "theme",
+    "label": "Festivals and traditions",
+    "labelDe": "Feste und Traditionen"
+  },
+  {
+    "id": "e-lesen-1",
+    "kind": "exam",
+    "label": "Reading (Leseverstehen) part 1",
+    "labelDe": "Leseverstehen Teil 1"
+  },
+  {
+    "id": "e-lesen-2",
+    "kind": "exam",
+    "label": "Reading (Leseverstehen) part 2",
+    "labelDe": "Leseverstehen Teil 2"
+  },
+  {
+    "id": "e-lesen-3",
+    "kind": "exam",
+    "label": "Reading (Leseverstehen) part 3",
+    "labelDe": "Leseverstehen Teil 3"
+  },
+  {
+    "id": "e-sprachbausteine-1",
+    "kind": "exam",
+    "label": "Language elements (Sprachbausteine) part 1",
+    "labelDe": "Sprachbausteine Teil 1"
+  },
+  {
+    "id": "e-sprachbausteine-2",
+    "kind": "exam",
+    "label": "Language elements (Sprachbausteine) part 2",
+    "labelDe": "Sprachbausteine Teil 2"
+  },
+  {
+    "id": "e-hoeren-1",
+    "kind": "exam",
+    "label": "Listening (Hörverstehen) part 1",
+    "labelDe": "Hörverstehen Teil 1"
+  },
+  {
+    "id": "e-hoeren-2",
+    "kind": "exam",
+    "label": "Listening (Hörverstehen) part 2",
+    "labelDe": "Hörverstehen Teil 2"
+  },
+  {
+    "id": "e-hoeren-3",
+    "kind": "exam",
+    "label": "Listening (Hörverstehen) part 3",
+    "labelDe": "Hörverstehen Teil 3"
+  },
+  {
+    "id": "e-schreiben",
+    "kind": "exam",
+    "label": "Written expression (Schriftlicher Ausdruck): a personal or semi-formal letter with 4 Leitpunkte",
+    "labelDe": "Schriftlicher Ausdruck: ein persönlicher oder halbformeller Brief mit 4 Leitpunkten"
+  },
+  {
+    "id": "e-sprechen-1",
+    "kind": "exam",
+    "label": "Oral expression (Mündlicher Ausdruck) part 1",
+    "labelDe": "Mündlicher Ausdruck Teil 1"
+  },
+  {
+    "id": "e-sprechen-2",
+    "kind": "exam",
+    "label": "Oral expression (Mündlicher Ausdruck) part 2",
+    "labelDe": "Mündlicher Ausdruck Teil 2"
+  },
+  {
+    "id": "e-sprechen-3",
+    "kind": "exam",
+    "label": "Oral expression (Mündlicher Ausdruck) part 3",
+    "labelDe": "Mündlicher Ausdruck Teil 3"
+  },
+  {
+    "id": "e-sprechen-vorbereitung",
+    "kind": "exam",
+    "label": "Using the 20-minute speaking preparation time",
+    "labelDe": "Die 20 Minuten Vorbereitungszeit nutzen"
+  },
+  {
+    "id": "k-meinung",
+    "kind": "communication",
+    "label": "Giving and justifying an opinion",
+    "labelDe": "Meinung äußern und begründen"
+  },
+  {
+    "id": "k-zustimmen-widersprechen",
+    "kind": "communication",
+    "label": "Agreeing and disagreeing politely",
+    "labelDe": "Höflich zustimmen und widersprechen"
+  },
+  {
+    "id": "k-vorschlaege",
+    "kind": "communication",
+    "label": "Making, accepting and rejecting suggestions",
+    "labelDe": "Vorschläge machen, annehmen und ablehnen"
+  },
+  {
+    "id": "k-beschwerde",
+    "kind": "communication",
+    "label": "Complaining",
+    "labelDe": "Sich beschweren"
+  },
+  {
+    "id": "k-rat",
+    "kind": "communication",
+    "label": "Asking for and giving advice",
+    "labelDe": "Um Rat bitten und Rat geben"
+  },
+  {
+    "id": "k-erfahrungen",
+    "kind": "communication",
+    "label": "Reporting experiences",
+    "labelDe": "Von Erfahrungen berichten"
+  },
+  {
+    "id": "k-plaene",
+    "kind": "communication",
+    "label": "Describing plans and intentions",
+    "labelDe": "Pläne und Absichten beschreiben"
+  },
+  {
+    "id": "k-gefuehle",
+    "kind": "communication",
+    "label": "Expressing feelings",
+    "labelDe": "Gefühle ausdrücken"
+  },
+  {
+    "id": "k-telefonieren",
+    "kind": "communication",
+    "label": "Phone calls and voicemails",
+    "labelDe": "Telefonate und Sprachnachrichten"
+  },
+  {
+    "id": "k-termine",
+    "kind": "communication",
+    "label": "Making and moving appointments",
+    "labelDe": "Termine vereinbaren und verschieben"
+  }
+]
