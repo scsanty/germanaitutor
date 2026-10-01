@@ -38,20 +38,36 @@
   "g-zweiteilige-konnektoren": [
     "b1-telc-two-part-connectors"
   ],
-  "g-adjektivdeklination": [],
-  "g-komparation": [],
-  "g-genitiv": [],
-  "g-n-deklination": [],
-  "g-reflexive-verben": [],
+  "g-adjektivdeklination": [
+    "b1-telc-adjective-endings-ads-and-offices"
+  ],
+  "g-komparation": [
+    "b1-telc-comparison-flats-and-offers"
+  ],
+  "g-genitiv": [
+    "b1-telc-genitive-and-wegen-trotz-waehrend-statt"
+  ],
+  "g-n-deklination": [
+    "b1-telc-n-declension-people-at-work"
+  ],
+  "g-reflexive-verben": [
+    "b1-telc-reflexive-verbs-acc-dat"
+  ],
   "g-verben-praepositionen": [
     "b1-telc-prepositional-verbs-service-queries"
   ],
-  "g-lassen-brauchen": [],
+  "g-lassen-brauchen": [
+    "b1-telc-lassen-and-brauchen-zu"
+  ],
   "g-nomen-verb": [
     "b1-telc-sprachbausteine-lexical-cloze"
   ],
-  "g-partizip-adjektiv": [],
-  "g-wortstellung": [],
+  "g-partizip-adjektiv": [
+    "b1-telc-participles-as-adjectives"
+  ],
+  "g-wortstellung": [
+    "b1-telc-word-order-sentence-bracket"
+  ],
   "t-arbeit": [
     "b1-telc-vocab-workplace-office-communication"
   ],
@@ -139,6 +155,14 @@
     "b1-telc-conditions-wenn-falls",
     "b1-telc-temporal-clauses-work-and-daily-life",
     "b1-telc-relative-clauses-housing-and-services",
-    "b1-telc-two-part-connectors"
+    "b1-telc-two-part-connectors",
+    "b1-telc-reflexive-verbs-acc-dat",
+    "b1-telc-comparison-flats-and-offers",
+    "b1-telc-adjective-endings-ads-and-offices",
+    "b1-telc-lassen-and-brauchen-zu",
+    "b1-telc-genitive-and-wegen-trotz-waehrend-statt",
+    "b1-telc-n-declension-people-at-work",
+    "b1-telc-participles-as-adjectives",
+    "b1-telc-word-order-sentence-bracket"
   ]
 }
