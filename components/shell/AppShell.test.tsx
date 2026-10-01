@@ -1,9 +1,11 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { screen, waitFor } from '@testing-library/react';
+import { useEffect, useState } from 'react';
+import { fireEvent, screen, waitFor } from '@testing-library/react';
 import { renderWithIntl } from '@/test/renderWithIntl';
 import { delayedResponse } from '@/test/delayedResponse';
 import { AppShell } from './AppShell';
 import { ShellProvider, useShell } from './ShellContext';
+import { FocusLayout } from '@/components/focus/FocusLayout';
 
 const pathname = vi.hoisted(() => ({ value: '/' }));
 vi.mock('next/navigation', () => ({ usePathname: () => pathname.value }));
@@ -33,6 +35,41 @@ function renderShell() {
         <FocusOn />
       </AppShell>
     </ShellProvider>
+  );
+}
+
+// A lesson-like page: local state decides whether the focus-mode run is showing.
+function StartPage({ mounts }: { mounts: { count: number } }) {
+  const [running, setRunning] = useState(false);
+  useEffect(() => {
+    mounts.count += 1;
+  }, [mounts]);
+  if (!running) return <button onClick={() => setRunning(true)}>start</button>;
+  return (
+    <FocusLayout progress={null} confirmExit={false} onExit={() => setRunning(false)}>
+      <p>run</p>
+    </FocusLayout>
+  );
+}
+
+// A queue-like page: fetches on mount, then shows the run in focus mode.
+function FetchingPage({ loads }: { loads: { count: number } }) {
+  const [loaded, setLoaded] = useState(false);
+  useEffect(() => {
+    loads.count += 1;
+    let stale = false;
+    void Promise.resolve().then(() => {
+      if (!stale) setLoaded(true);
+    });
+    return () => {
+      stale = true;
+    };
+  }, [loads]);
+  if (!loaded) return <p>loading</p>;
+  return (
+    <FocusLayout progress={null} confirmExit={false} onExit={() => {}}>
+      <p>queue run</p>
+    </FocusLayout>
   );
 }
 
@@ -105,5 +142,43 @@ describe('AppShell', () => {
     vi.stubGlobal('fetch', vi.fn(() => delayedResponse({}, { ok: false, status: 500 })));
     renderShell();
     await waitFor(() => expect(screen.getByRole('link', { name: 'Review' })).toBeInTheDocument());
+  });
+
+  // Final review C1: entering focus mode must not remount the page.
+  it.each([
+    ['phone', false, false],
+    ['tablet', false, true],
+    ['desktop', true, true],
+  ])('keeps the page mounted when a run enters focus mode (%s)', async (_name, desktop, tablet) => {
+    setWidth(desktop, tablet);
+    const mounts = { count: 0 };
+    renderWithIntl(
+      <ShellProvider>
+        <AppShell>
+          <StartPage mounts={mounts} />
+        </AppShell>
+      </ShellProvider>
+    );
+    fireEvent.click(screen.getByRole('button', { name: 'start' }));
+    await new Promise((r) => setTimeout(r, 30));
+    expect(screen.getByText('run')).toBeInTheDocument();
+    expect(screen.queryByRole('navigation', { name: 'Main' })).not.toBeInTheDocument();
+    expect(screen.getByRole('main')).toContainElement(screen.getByText('run'));
+    expect(mounts.count).toBe(1);
+  });
+
+  it('loads a fetching page once when it then enters focus mode', async () => {
+    setWidth(false);
+    const loads = { count: 0 };
+    renderWithIntl(
+      <ShellProvider>
+        <AppShell>
+          <FetchingPage loads={loads} />
+        </AppShell>
+      </ShellProvider>
+    );
+    await new Promise((r) => setTimeout(r, 50));
+    expect(screen.getByText('queue run')).toBeInTheDocument();
+    expect(loads.count).toBe(1);
   });
 });

@@ -69,11 +69,15 @@ export function AppShell({ children }: { children: ReactNode }) {
   const due = useReviewsDue(pathname, !hidden);
   const tNav = useTranslations('nav');
 
-  if (hidden) return <>{children}</>;
+  const wide = desktop || tablet;
+  const phone = !hidden && !wide;
 
-  if (desktop || tablet) {
-    return (
-      <div className="flex min-h-dvh">
+  // Final review C1: {children} sits at one fixed position (<main>, third child) in every mode.
+  // Chrome comes and goes as siblings at fixed indices, so entering or leaving focus mode,
+  // or resizing across a breakpoint, never remounts the page and loses its state.
+  return (
+    <div className={cn('flex min-h-dvh', !wide && 'flex-col')}>
+      {!hidden && wide && (
         <nav aria-label={tNav('main')} className={cn('sticky top-0 flex h-dvh flex-col gap-1 border-r border-border bg-surface p-3', desktop ? 'w-60' : 'w-16')}>
           <Link href="/" aria-label="NaDoch!" className="mb-4 block">
             <Logo variant="compact" className={desktop ? 'h-12' : 'h-8'} title="NaDoch!" />
@@ -91,32 +95,32 @@ export function AppShell({ children }: { children: ReactNode }) {
               ))}
           </div>
         </nav>
-        <main className="flex-1 px-6 py-6">{children}</main>
-      </div>
-    );
-  }
-
-  return (
-    <div className="flex min-h-dvh flex-col">
-      <header className="sticky top-0 z-10 flex items-center justify-between border-b border-border bg-background/90 px-4 py-2 backdrop-blur">
-        <Link href="/" aria-label="NaDoch!">
-          <Logo variant="compact" className="h-9" title="NaDoch!" />
-        </Link>
-        {navFor('top').map((item) => (
-          <NavLink key={item.id} item={item} due={due} showLabel={false} />
-        ))}
-      </header>
-      <main className="flex-1 px-4 pt-4 pb-32">{children}</main>
-      <div className="fixed right-4 bottom-20 z-10 flex gap-3">
-        {navFor('fab').map((item) => (
-          <NavLink key={item.id} item={item} due={due} showLabel={false} className="size-14 justify-center rounded-full bg-primary text-primary-foreground shadow-lg hover:bg-primary hover:text-primary-foreground" />
-        ))}
-      </div>
-      <nav aria-label={tNav('main')} className="fixed inset-x-0 bottom-0 z-10 flex justify-between border-t border-border bg-surface px-6 py-2">
-        {navFor('bottom').map((item) => (
-          <NavLink key={item.id} item={item} due={due} showLabel className="flex-col gap-0.5 text-xs" />
-        ))}
-      </nav>
+      )}
+      {phone && (
+        <header className="sticky top-0 z-10 flex items-center justify-between border-b border-border bg-background/90 px-4 py-2 backdrop-blur">
+          <Link href="/" aria-label="NaDoch!">
+            <Logo variant="compact" className="h-9" title="NaDoch!" />
+          </Link>
+          {navFor('top').map((item) => (
+            <NavLink key={item.id} item={item} due={due} showLabel={false} />
+          ))}
+        </header>
+      )}
+      <main className={cn('flex-1', !hidden && (wide ? 'px-6 py-6' : 'px-4 pt-4 pb-32'))}>{children}</main>
+      {phone && (
+        <div className="fixed right-4 bottom-20 z-10 flex gap-3">
+          {navFor('fab').map((item) => (
+            <NavLink key={item.id} item={item} due={due} showLabel={false} className="size-14 justify-center rounded-full bg-primary text-primary-foreground shadow-lg hover:bg-primary hover:text-primary-foreground" />
+          ))}
+        </div>
+      )}
+      {phone && (
+        <nav aria-label={tNav('main')} className="fixed inset-x-0 bottom-0 z-10 flex justify-between border-t border-border bg-surface px-6 py-2">
+          {navFor('bottom').map((item) => (
+            <NavLink key={item.id} item={item} due={due} showLabel className="flex-col gap-0.5 text-xs" />
+          ))}
+        </nav>
+      )}
     </div>
   );
 }
