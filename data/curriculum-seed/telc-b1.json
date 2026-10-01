@@ -443,7 +443,7 @@
       "sourceLevel": "B1",
       "skill": "grammar",
       "title": "The Präteritum in Reports and Letters",
-      "explanation": "Written German uses the Präteritum for past events in reports, letters, news and stories, while speech mostly uses the Perfekt.\nThe verbs sein, haben and werden and the modal verbs appear in the Präteritum in speech too: 'ich war', 'ich hatte', 'ich musste'.\nRegular verbs add -te to the stem: machen → ich machte, wir machten; stems ending in -t or -d add -ete: arbeiten → er arbeitete.\nIrregular verbs change the stem and take no ending in the ich and er/sie/es forms: gehen → ich ging, kommen → er kam, finden → sie fand.\nModal verbs drop the umlaut: können → konnte, müssen → musste, dürfen → durfte, wollen → wollte, sollen → sollte, mögen → mochte.\nThe endings are: ich –, du -st, er/sie/es –, wir -en, ihr -t, sie/Sie -en (ich machte, du machtest, wir machten, ihr machtet).\nA common mistake is adding -te to an irregular verb ('ich gehte') or keeping the umlaut in a modal verb: 'ich müsste' is Konjunktiv II and means something different from 'ich musste'.\n",
+      "explanation": "Written German uses the Präteritum for past events in reports, letters, news and stories, while speech mostly uses the Perfekt.\nThe verbs sein, haben and werden and the modal verbs appear in the Präteritum in speech too: 'ich war', 'ich hatte', 'ich musste'.\nRegular verbs add -te to the stem: machen → ich machte, wir machten; stems ending in -t or -d add -ete: arbeiten → er arbeitete.\nIrregular verbs change the stem and take no ending in the ich and er/sie/es forms: gehen → ich ging, kommen → er kam, finden → sie fand.\nModal verbs add -te, and those with an umlaut lose it: können → konnte, müssen → musste, dürfen → durfte; wollen → wollte, sollen → sollte; mögen also changes its consonant: mochte.\nThe endings are: ich –, du -st, er/sie/es –, wir -en, ihr -t, sie/Sie -en (ich machte, du machtest, wir machten, ihr machtet).\nA common mistake is adding -te to an irregular verb ('ich gehte') or keeping the umlaut in a modal verb: 'ich müsste' is Konjunktiv II and means something different from 'ich musste'.\n",
       "examples": [
         "Letzte Woche fiel die Heizung in unserer Wohnung drei Tage lang aus.",
         "Ich konnte am Montag nicht zur Arbeit kommen, weil ich Fieber hatte.",
@@ -451,7 +451,7 @@
         "Wir mussten die Möbel selbst in den Keller tragen."
       ],
       "titleDe": "Das Präteritum in Berichten und Briefen",
-      "explanationDe": "In geschriebenen Texten wie Berichten, Briefen und Nachrichten steht die Vergangenheit meistens im Präteritum, beim Sprechen meistens im Perfekt.\nsein, haben, werden und die Modalverben benutzt man auch beim Sprechen im Präteritum: 'ich war', 'ich hatte', 'ich musste'.\nRegelmäßige Verben bekommen -te: machen → ich machte, wir machten; endet der Stamm auf -t oder -d, kommt -ete: arbeiten → er arbeitete.\nUnregelmäßige Verben ändern den Stamm und haben bei ich und er/sie/es keine Endung: gehen → ich ging, kommen → er kam, finden → sie fand.\nModalverben verlieren den Umlaut: können → konnte, müssen → musste, dürfen → durfte, wollen → wollte, sollen → sollte, mögen → mochte.\nDie Endungen sind: ich –, du -st, er/sie/es –, wir -en, ihr -t, sie/Sie -en (ich machte, du machtest, wir machten, ihr machtet).\nTypische Fehler sind 'ich gehte' statt 'ich ging' und 'ich müsste' statt 'ich musste' – 'müsste' ist Konjunktiv II und bedeutet etwas anderes.\n",
+      "explanationDe": "In geschriebenen Texten wie Berichten, Briefen und Nachrichten steht die Vergangenheit meistens im Präteritum, beim Sprechen meistens im Perfekt.\nsein, haben, werden und die Modalverben benutzt man auch beim Sprechen im Präteritum: 'ich war', 'ich hatte', 'ich musste'.\nRegelmäßige Verben bekommen -te: machen → ich machte, wir machten; endet der Stamm auf -t oder -d, kommt -ete: arbeiten → er arbeitete.\nUnregelmäßige Verben ändern den Stamm und haben bei ich und er/sie/es keine Endung: gehen → ich ging, kommen → er kam, finden → sie fand.\nModalverben bekommen -te, und Modalverben mit Umlaut verlieren ihn: können → konnte, müssen → musste, dürfen → durfte; wollen → wollte, sollen → sollte; bei mögen ändert sich auch der Konsonant: mochte.\nDie Endungen sind: ich –, du -st, er/sie/es –, wir -en, ihr -t, sie/Sie -en (ich machte, du machtest, wir machten, ihr machtet).\nTypische Fehler sind 'ich gehte' statt 'ich ging' und 'ich müsste' statt 'ich musste' – 'müsste' ist Konjunktiv II und bedeutet etwas anderes.\n",
       "examplesDe": [
         "Letzte Woche fiel die Heizung in unserer Wohnung drei Tage lang aus.",
         "Ich konnte am Montag nicht zur Arbeit kommen, weil ich Fieber hatte.",
@@ -1982,8 +1982,8 @@
         "textWithBlank": "Der Vermieter hat versprochen, dass er die Heizung bald reparieren ___.",
         "correctAnswer": "wird",
         "instruction": {
-          "en": "Fill in the form of werden at the end of the subordinate clause.",
-          "de": "Ergänzen Sie die Form von 'werden' am Ende des Nebensatzes."
+          "en": "Fill in the Futur I form of werden at the end of the subordinate clause.",
+          "de": "Ergänzen Sie die Form von werden im Futur I am Ende des Nebensatzes."
         }
       }
     },
@@ -2332,7 +2332,7 @@
         "correctAnswer": "antrifft",
         "instruction": {
           "en": "Fill in the verb in brackets in the correct form and position.",
-          "de": "Ergänzen Sie das Verb in Klammern in der richtigen Form."
+          "de": "Ergänzen Sie das Verb in Klammern in der richtigen Form und Position."
         }
       }
     },
@@ -2403,9 +2403,9 @@
       "type": "fill_blank",
       "content": {
         "textWithBlank": "___ Sie das Formular abschicken, prüfen Sie bitte noch einmal alle Angaben.",
-        "correctAnswer": "bevor",
+        "correctAnswer": "Bevor",
         "acceptableVariants": [
-          "ehe"
+          "Ehe"
         ],
         "instruction": {
           "en": "Fill in the conjunction: first check, then send ('before').",
@@ -2434,9 +2434,9 @@
       "type": "fill_blank",
       "content": {
         "textWithBlank": "___ ich in Deutschland lebe, spreche ich jeden Tag Deutsch.",
-        "correctAnswer": "seit",
+        "correctAnswer": "Seit",
         "acceptableVariants": [
-          "seitdem"
+          "Seitdem"
         ],
         "instruction": {
           "en": "Fill in the conjunction for a starting point that lasts until now ('since').",
@@ -2471,9 +2471,9 @@
       "type": "fill_blank",
       "content": {
         "textWithBlank": "___ ich die Ergebnisse habe, schicke ich Ihnen eine E-Mail.",
-        "correctAnswer": "sobald",
+        "correctAnswer": "Sobald",
         "acceptableVariants": [
-          "sowie"
+          "Sowie"
         ],
         "instruction": {
           "en": "Fill in the conjunction meaning 'as soon as'.",
