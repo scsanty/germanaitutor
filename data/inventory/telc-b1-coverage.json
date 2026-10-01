@@ -74,20 +74,32 @@
   "t-wohnen": [
     "b1-telc-vocab-housing-leases-disputes"
   ],
-  "t-gesundheit": [],
-  "t-reisen": [],
+  "t-gesundheit": [
+    "b1-telc-vocab-health-doctor-visits"
+  ],
+  "t-reisen": [
+    "b1-telc-vocab-travel-and-transport"
+  ],
   "t-einkaufen": [
     "b1-telc-vocab-consumer-rights-complaints"
   ],
-  "t-essen": [],
-  "t-geld": [],
-  "t-behoerden": [],
+  "t-essen": [
+    "b1-telc-vocab-food-and-restaurants"
+  ],
+  "t-geld": [
+    "b1-telc-vocab-money-and-banking"
+  ],
+  "t-behoerden": [
+    "b1-telc-vocab-offices-forms-applications"
+  ],
   "t-medien": [],
   "t-bildung": [],
   "t-umwelt": [],
   "t-technik": [],
   "t-freizeit": [],
-  "t-familie": [],
+  "t-familie": [
+    "b1-telc-vocab-family-relationships"
+  ],
   "t-feste": [],
   "e-lesen-1": [
     "b1-telc-reading-teil1-headline-matching"
@@ -163,6 +175,12 @@
     "b1-telc-genitive-and-wegen-trotz-waehrend-statt",
     "b1-telc-n-declension-people-at-work",
     "b1-telc-participles-as-adjectives",
-    "b1-telc-word-order-sentence-bracket"
+    "b1-telc-word-order-sentence-bracket",
+    "b1-telc-vocab-health-doctor-visits",
+    "b1-telc-vocab-family-relationships",
+    "b1-telc-vocab-food-and-restaurants",
+    "b1-telc-vocab-travel-and-transport",
+    "b1-telc-vocab-money-and-banking",
+    "b1-telc-vocab-offices-forms-applications"
   ]
 }
