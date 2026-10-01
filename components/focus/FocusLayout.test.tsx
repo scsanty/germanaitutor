@@ -111,4 +111,19 @@ describe('useExerciseShortcuts', () => {
     expect(screen.queryByRole('alertdialog')).not.toBeInTheDocument();
     expect(field).toHaveValue('mein Entwurf');
   });
+
+  // Final review M2: new handler closures each render must not re-subscribe the listener.
+  it('subscribes the shortcut listener once across re-renders and still calls the latest handler', () => {
+    const add = vi.spyOn(document, 'addEventListener');
+    const first = vi.fn();
+    const latest = vi.fn();
+    const { rerender } = renderWithIntl(<Shortcuts onPick={first} onEnter={() => {}} />);
+    rerender(<Shortcuts onPick={() => first(0)} onEnter={() => {}} />);
+    rerender(<Shortcuts onPick={latest} onEnter={() => {}} />);
+    expect(add.mock.calls.filter(([type]) => type === 'keydown')).toHaveLength(1);
+    fireEvent.keyDown(document.body, { key: '2' });
+    expect(latest).toHaveBeenCalledWith(1);
+    expect(first).not.toHaveBeenCalled();
+    add.mockRestore();
+  });
 });

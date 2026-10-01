@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 function isTyping(target: EventTarget | null): boolean {
   const el = target as HTMLElement | null;
@@ -24,9 +24,15 @@ function isActivatable(target: EventTarget | null): boolean {
 // Spec: Focus mode shortcuts. 1–4 pick an option, Enter checks/continues, Esc exits.
 // Ignored while typing, so answers can contain digits and Enter submits the form normally.
 export function useExerciseShortcuts(handlers: { onPick?: (index: number) => void; onEnter?: () => void; onEscape?: () => void }): void {
-  const { onPick, onEnter, onEscape } = handlers;
+  // The latest handlers live in a ref, so callers can pass fresh closures each render
+  // while the document listener subscribes only once.
+  const handlersRef = useRef(handlers);
+  useEffect(() => {
+    handlersRef.current = handlers;
+  });
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
+      const { onPick, onEnter, onEscape } = handlersRef.current;
       // Esc from a text field must not leave the run: the unsent draft would be lost.
       if (isTyping(event.target)) return;
       // An open dialog (exit confirmation, the lesson chat sheet) owns the keys, Esc included.
@@ -48,5 +54,5 @@ export function useExerciseShortcuts(handlers: { onPick?: (index: number) => voi
     }
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
-  }, [onPick, onEnter, onEscape]);
+  }, []);
 }
