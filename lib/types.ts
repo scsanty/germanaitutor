@@ -23,7 +23,8 @@ export interface Profile {
   uiLanguage: 'en' | 'de';
   activeTrack: Track;
   activeLevel: CefrLevel;
-  freestyleDefault: boolean;
+  theme: 'dark' | 'light' | 'system';
+  soundEnabled: boolean;
   onboardingComplete: boolean;
   highestUnlockedLevel: CefrLevel;
   placementStatus: PlacementStatus;
@@ -32,3 +33,5 @@ export interface Profile {
   dailyReviewCap: number;
   updatedAt: string;
 }
+
+export type Theme = Profile['theme'];

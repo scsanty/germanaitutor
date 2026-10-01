@@ -29,7 +29,24 @@
   "banner": {
     "providerTrouble": "Dein aktiver KI-Anbieter ({provider}) hat Probleme: {error}. <link>Öffne die Einstellungen</link>, um das Problem zu beheben oder den Anbieter zu wechseln."
   },
+  "dashboard": {
+    "title": "Übersicht",
+    "loading": "Deine Übersicht wird geladen",
+    "loadFailed": "Deine Übersicht konnte nicht geladen werden. Bitte lade die Seite neu.",
+    "continueTitle": "Weitermachen",
+    "continue": "Weiter: {title}",
+    "nothingToContinue": "Wähle eine Lektion aus deinem Baum, um loszulegen.",
+    "reviewsTitle": "Heutige Wiederholungen",
+    "startReviews": "Heutige {count} Wiederholungen starten",
+    "noReviews": "Heute ist nichts fällig.",
+    "skillsTitle": "Fortschritt nach Fertigkeit",
+    "ofTotal": "{done} von {total}",
+    "skill": { "grammar": "Grammatik", "vocabulary": "Wortschatz", "reading": "Lesen", "listening": "Hören", "writing": "Schreiben", "speaking": "Sprechen" },
+    "activity": "Aktivität (12 Wochen)",
+    "activityCell": "{date}: {count, plural, one {# Antwort} other {# Antworten}}"
+  },
   "home": {
+    "dashboardButton": "Übersicht",
     "title": "German AI Tutor",
     "dailyQueue": "Tägliche Wiederholung",
     "settings": "Einstellungen"
@@ -185,7 +202,7 @@
     "noSuggestion": "Du hast alle Lektionen auf diesem Niveau abgeschlossen."
   },
   "tracks": {
-    "generic": "Allgemein",
+    "generic": "NaDoch!",
     "telc": "TELC",
     "goethe": "Goethe"
   },
@@ -270,14 +287,24 @@
     "placementRetake": "Einstufungstest wiederholen",
     "placementLoadFailed": "Dein Einstufungsergebnis konnte nicht geladen werden.",
     "language": "Sprache",
-    "freestyle": "Freestyle-Modus",
-    "freestyleDefault": "Standardmäßig im Freestyle-Modus starten",
     "backup": "Sicherung",
     "exportBackup": "Sicherung exportieren",
+    "importBackup": "Sicherung wiederherstellen",
     "dangerZone": "Gefahrenbereich",
     "resetConfirm": "Dadurch werden alle lokalen Daten dauerhaft gelöscht. Bist du sicher?",
     "resetYes": "Ja, alles zurücksetzen",
-    "reset": "App-Daten zurücksetzen"
+    "reset": "App-Daten zurücksetzen",
+    "appearance": "Darstellung",
+    "theme": "Farbschema",
+    "themeOption": { "dark": "Dunkel", "light": "Hell", "system": "System" },
+    "sounds": "Töne",
+    "contentAdmin": "Inhaltsverwaltung",
+    "preferenceSaveFailed": "Diese Einstellung konnte nicht gespeichert werden. Bitte versuche es erneut."
+  },
+  "profile": {
+    "title": "Profil",
+    "name": "Name",
+    "nameLabel": "Dein Name"
   },
   "testOut": {
     "title": "Per Test überspringen: {milestone}",
@@ -297,5 +324,17 @@
     "backToTree": "Zurück zu deinen Lektionen",
     "loadFailed": "Der Test konnte nicht geladen werden. Bitte lade die Seite neu.",
     "genericError": "Etwas ist schiefgelaufen: {error}"
-  }
+  },
+  "nav": {
+    "main": "Hauptmenü",
+    "learn": "Lernen",
+    "dashboard": "Übersicht",
+    "review": "Wiederholen",
+    "flashcards": "Karteikarten",
+    "freestyle": "Freestyle",
+    "profile": "Profil",
+    "settings": "Einstellungen",
+    "withDue": "{label} ({count} fällig)"
+  },
+  "focus": {"leave": "Verlassen", "progress": "Übung {current} von {total}", "leaveTitle": "Diese Übung verlassen?", "leaveBody": "Dein Fortschritt bei beantworteten Übungen bleibt erhalten.", "stay": "Bleiben", "leaveAnyway": "Trotzdem verlassen", "keysHint": "Tasten: 1–4 wählen · Enter prüfen · Esc verlassen"}
 }

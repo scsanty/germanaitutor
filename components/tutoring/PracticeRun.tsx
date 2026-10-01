@@ -9,6 +9,13 @@ import type { GradeResult } from '@/lib/tutoring/grading';
 import type { PracticeBatch, PracticeGradeOutcome } from '@/lib/tutoring/practiceViews';
 import { ExerciseCard } from './ExerciseCard';
 import type { ContentLanguage } from '@/lib/i18n/localizedText';
+import { FocusLayout } from '@/components/focus/FocusLayout';
+import { Celebration } from '@/components/focus/Celebration';
+import { useSound } from '@/lib/sound/useSound';
+import { ONWARD, ResultCard, SCORE } from '@/components/focus/ResultCard';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Button } from '@/components/ui/button';
+import { Dumbbell, LoaderCircle, Trophy } from 'lucide-react';
 
 type Phase = 'idle' | 'loading' | 'running' | 'summary';
 
@@ -42,10 +49,21 @@ export function PracticeRun({ lessonId, contentLanguage, onAskAi, onActiveChange
   const [lastResult, setLastResult] = useState<GradeResult | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [generationError, setGenerationError] = useState<string | null>(null);
+  const [celebrate, setCelebrate] = useState(false);
+  const playSound = useSound();
 
   useEffect(() => {
     onActiveChange?.(phase === 'running');
   }, [phase, onActiveChange]);
+
+  // The batch is over: a short celebration (Motion and Sound).
+  useEffect(() => {
+    if (phase !== 'summary') return;
+    playSound('complete');
+    setCelebrate(true);
+    const timer = setTimeout(() => setCelebrate(false), 1500);
+    return () => clearTimeout(timer);
+  }, [phase, playSound]);
 
   async function start() {
     setPhase('loading');
@@ -85,9 +103,14 @@ export function PracticeRun({ lessonId, contentLanguage, onAskAi, onActiveChange
 
   return (
     <section>
+      <Celebration show={celebrate} />
       {current ? (
-        <div>
-          <p>{t('counter', { current: index + 1, total: exercises.length })}</p>
+        <FocusLayout
+          progress={{ current: index + 1, total: exercises.length }}
+          confirmExit={index > 0}
+          onExit={() => setPhase('idle')}
+        >
+          <p className="mb-2 text-sm text-text-muted">{t('counter', { current: index + 1, total: exercises.length })}</p>
           <ExerciseCard
             key={turn}
             exercise={current}
@@ -99,33 +122,63 @@ export function PracticeRun({ lessonId, contentLanguage, onAskAi, onActiveChange
             onSkip={() => advance('skipped')}
             onAskAi={onAskAi}
           />
-        </div>
+        </FocusLayout>
       ) : (
-        <div>
-          {phase === 'summary' && (
-            <p>
-              <span>{t('summary', { correct: tally.correct, almost: tally.almost, wrong: tally.wrong })}</span>
-              {tally.skipped > 0 && (
-                <>
-                  {' · '}
-                  <span>{t('summarySkipped', { skipped: tally.skipped })}</span>
-                </>
-              )}
+        <div className="flex flex-col gap-3">
+          {phase === 'summary' ? (
+            <ResultCard icon={Trophy} tone="success">
+              {/* The score at a glance; the sentence below says the same for screen readers. */}
+              <p aria-hidden className={SCORE}>
+                {tally.correct}
+                <span className="text-text-muted">/{exercises.length}</span>
+              </p>
+              <p className="font-semibold">
+                <span>{t('summary', { correct: tally.correct, almost: tally.almost, wrong: tally.wrong })}</span>
+                {tally.skipped > 0 && (
+                  <>
+                    {' · '}
+                    <span className="text-text-muted">{t('summarySkipped', { skipped: tally.skipped })}</span>
+                  </>
+                )}
+              </p>
+              <Button type="button" size="lg" onClick={start} className={`${ONWARD} mt-2`}>
+                <Dumbbell aria-hidden />
+                {t('getMore')}
+              </Button>
+            </ResultCard>
+          ) : (
+            <Button type="button" size="lg" variant="secondary" disabled={phase === 'loading'} onClick={start} className="min-h-12 w-full text-base font-semibold md:w-auto">
+              <Dumbbell aria-hidden />
+              {t('getMore')}
+            </Button>
+          )}
+          {phase === 'loading' && (
+            <p role="status" className="flex items-center gap-2 text-sm text-text-muted">
+              <LoaderCircle aria-hidden className="size-4 animate-spin motion-reduce:animate-none" />
+              {t('preparing')}
             </p>
           )}
-          <button type="button" disabled={phase === 'loading'} onClick={start}>
-            {t('getMore')}
-          </button>
-          {phase === 'loading' && <p>{t('preparing')}</p>}
           {generationError && (
-            <p role="alert">
-              {t.rich('generationFailed', {
-                error: generationError,
-                link: (chunks) => <Link href="/settings">{chunks}</Link>,
-              })}
-            </p>
+            <Alert variant="destructive" role="alert">
+              <AlertDescription>
+                <p>
+                  {t.rich('generationFailed', {
+                    error: generationError,
+                    link: (chunks) => (
+                      <Link href="/settings" className="font-semibold underline underline-offset-2">
+                        {chunks}
+                      </Link>
+                    ),
+                  })}
+                </p>
+              </AlertDescription>
+            </Alert>
           )}
-          {error && <p role="alert">{error}</p>}
+          {error && (
+            <Alert variant="destructive" role="alert">
+              <AlertDescription>{error}</AlertDescription>
+            </Alert>
+          )}
         </div>
       )}
     </section>

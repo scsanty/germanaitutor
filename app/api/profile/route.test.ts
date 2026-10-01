@@ -70,4 +70,17 @@ describe('/api/profile', () => {
     expect(res.status).toBe(200);
     expect((await res.json()).dailyReviewCap).toBe(25);
   });
+
+  it('PATCH rejects a sound setting that is not true or false with 400 and does not store it', async () => {
+    const res = await PATCH(new Request('http://localhost', { method: 'PATCH', body: JSON.stringify({ soundEnabled: 'false' }) }));
+    expect(res.status).toBe(400);
+    // Sound defaults to on and stays on.
+    expect((await GET().then((r) => r.json())).soundEnabled).toBe(true);
+  });
+
+  it('PATCH rejects an unknown theme with 400 and does not store it', async () => {
+    const res = await PATCH(new Request('http://localhost', { method: 'PATCH', body: JSON.stringify({ theme: 'neon' }) }));
+    expect(res.status).toBe(400);
+    expect((await GET().then((r) => r.json())).theme).toBe('dark');
+  });
 });

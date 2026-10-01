@@ -1,6 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import { Download } from 'lucide-react';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { BTN, FOCUS, HINT, LINK, PAGE_TITLE } from './adminStyles';
 
 function readText(file: File): Promise<string> {
   return new Promise((resolve, reject) => {
@@ -45,39 +50,62 @@ export function PlacementExamAdmin({ questionCount }: { questionCount: number })
   }
 
   return (
-    <div>
-      <a href="/admin/curriculum">Back to curriculum</a>
-      <h1>Placement exam</h1>
-      <p>The active exam has {count} questions.</p>
-      <p>
-        Download: <a href="/api/admin/placement-exam?format=json">JSON</a> ·{' '}
-        <a href="/api/admin/placement-exam?format=yaml">YAML</a>
-      </p>
-      <h2>Replace the exam</h2>
-      <p>
-        Upload a JSON or YAML file in the same format as the download. The whole exam is replaced. A file with any problem
-        is rejected and nothing changes. Past placement results and unlocked levels are kept.
-      </p>
-      <input
-        type="file"
-        aria-label="Exam file"
-        accept=".json,.yaml,.yml"
-        onChange={(e) => setFile(e.target.files?.[0] ?? null)}
-      />
-      <button type="button" onClick={upload} disabled={!file || uploading}>
-        Upload
-      </button>
-      {message && <p>{message}</p>}
-      {errors.length > 0 && (
-        <div role="alert">
-          <p>The upload was rejected:</p>
-          <ul>
-            {errors.map((error) => (
-              <li key={error}>{error}</li>
-            ))}
-          </ul>
-        </div>
-      )}
+    <div className="flex flex-col gap-4">
+      <h1 className={PAGE_TITLE}>Placement exam</h1>
+      <Card className="min-w-0 gap-3">
+        <CardHeader>
+          <p className="text-lg font-semibold">The active exam has {count} questions.</p>
+        </CardHeader>
+        <CardContent>
+          <p className="flex flex-wrap items-center gap-x-2">
+            <span className={HINT}>Download:</span>
+            <a href="/api/admin/placement-exam?format=json" className={LINK}>
+              <Download aria-hidden className="size-4" />
+              JSON
+            </a>
+            <a href="/api/admin/placement-exam?format=yaml" className={LINK}>
+              <Download aria-hidden className="size-4" />
+              YAML
+            </a>
+          </p>
+        </CardContent>
+      </Card>
+      <Card className="min-w-0 gap-3">
+        <CardHeader>
+          <h2 className="text-lg leading-tight">Replace the exam</h2>
+        </CardHeader>
+        <CardContent className="flex flex-col gap-4">
+          <p className={`${HINT} max-w-prose`}>
+            Upload a JSON or YAML file in the same format as the download. The whole exam is replaced. A file with any
+            problem is rejected and nothing changes. Past placement results and unlocked levels are kept.
+          </p>
+          <div className="flex flex-wrap items-center gap-3">
+            <input
+              type="file"
+              aria-label="Exam file"
+              accept=".json,.yaml,.yml"
+              onChange={(e) => setFile(e.target.files?.[0] ?? null)}
+              className={`min-h-11 max-w-full min-w-0 rounded-md border bg-transparent p-2 text-sm file:mr-3 file:rounded-sm file:border-0 file:bg-surface-raised file:px-3 file:py-1.5 file:text-sm file:font-medium file:text-text ${FOCUS}`}
+            />
+            <Button type="button" className={BTN} onClick={upload} disabled={!file || uploading}>
+              Upload
+            </Button>
+          </div>
+          {message && <p role="status">{message}</p>}
+          {errors.length > 0 && (
+            <Alert variant="destructive">
+              <AlertDescription>
+                <p>The upload was rejected:</p>
+                <ul className="mt-1 list-disc pl-5">
+                  {errors.map((error) => (
+                    <li key={error}>{error}</li>
+                  ))}
+                </ul>
+              </AlertDescription>
+            </Alert>
+          )}
+        </CardContent>
+      </Card>
     </div>
   );
 }

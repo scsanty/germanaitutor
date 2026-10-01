@@ -30,6 +30,11 @@ describe('/api/tutoring', () => {
     delete process.env.GAIT_DATA_DIR;
   });
 
+  it('GET /queue/count returns the number of reviews left today', async () => {
+    const { GET: getCount } = await import('./queue/count/route');
+    expect(await (await getCount()).json()).toEqual({ due: 0 });
+  });
+
   it('GET tree returns the active track+level', async () => {
     const tree = await (await getTree()).json();
     expect(tree).toMatchObject({ track: 'generic', level: 'A1' });

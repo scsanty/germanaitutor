@@ -3,6 +3,11 @@
 import { useEffect, useState } from 'react';
 import type { Track, CefrLevel } from '@/lib/types';
 import { TRACKS } from '@/lib/tutoring/levels';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { NativeSelect } from '@/components/ui/native-select';
+import { BTN } from './adminStyles';
 
 export interface ConceptLinkEntry {
   id: string;
@@ -78,37 +83,47 @@ export function ConceptLinkSection({
   }
 
   return (
-    <div>
-      <h3>Concept Links</h3>
-      <ul>
-        {links.map((link) => (
-          <li key={link.id}>
-            {link.track}: {link.title}
-            <button type="button" onClick={() => removeLink(link.id)}>
-              Unlink
-            </button>
-          </li>
-        ))}
-      </ul>
-      <label>
-        Add link
-        <select
-          aria-label="Add link"
-          value={selectedCandidateId}
-          onChange={(e) => setSelectedCandidateId(e.target.value)}
-        >
-          <option value="">Select a lesson to link</option>
-          {unlinkedCandidates.map((c) => (
-            <option key={c.id} value={c.id}>
-              {c.track}: {c.title}
-            </option>
+    <Card className="min-w-0 gap-3">
+      <CardHeader>
+        <h3 className="text-lg leading-tight font-semibold">Concept Links</h3>
+      </CardHeader>
+      <CardContent className="flex flex-col gap-4">
+        <ul className="flex flex-col divide-y">
+          {links.map((link) => (
+            <li key={link.id} className="flex flex-wrap items-center justify-between gap-2 py-1">
+              <span className="min-w-0">
+                {link.track}: {link.title}
+              </span>
+              <Button type="button" variant="outline" className={BTN} onClick={() => removeLink(link.id)}>
+                Unlink
+              </Button>
+            </li>
           ))}
-        </select>
-      </label>
-      <button type="button" onClick={addLink}>
-        Add link
-      </button>
-      {error && <p role="alert">{error}</p>}
-    </div>
+        </ul>
+        <div className="flex flex-wrap gap-2">
+          <NativeSelect
+            wrapperClassName="min-w-0 flex-1 basis-64"
+            aria-label="Add link"
+            value={selectedCandidateId}
+            onChange={(e) => setSelectedCandidateId(e.target.value)}
+          >
+            <option value="">Select a lesson to link</option>
+            {unlinkedCandidates.map((c) => (
+              <option key={c.id} value={c.id}>
+                {c.track}: {c.title}
+              </option>
+            ))}
+          </NativeSelect>
+          <Button type="button" className={BTN} onClick={addLink}>
+            Add link
+          </Button>
+        </div>
+        {error && (
+          <Alert variant="destructive">
+            <AlertDescription>{error}</AlertDescription>
+          </Alert>
+        )}
+      </CardContent>
+    </Card>
   );
 }

@@ -9,7 +9,11 @@ import type {
   MultipleChoiceContent,
 } from '@/lib/curriculum/types';
 import type { PracticePoolItem, PracticeReviewStatus } from '@/lib/services/practiceAdminService';
-import { LEVELS, TRACKS } from '@/lib/tutoring/levels';
+import { LEVELS, TRACKS, TRACK_LABEL } from '@/lib/tutoring/levels';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Button } from '@/components/ui/button';
+import { NativeSelect } from '@/components/ui/native-select';
+import { BTN, FIELD_LABEL, LINK, TABLE, TABLE_WRAP, TD, TH } from './adminStyles';
 import { ExerciseContentFields } from './ExerciseEditor';
 
 function preview(item: PracticePoolItem): string {
@@ -93,80 +97,115 @@ export function PracticePoolList({
     act(`/api/admin/practice/${id}`, { method: 'PATCH', headers: JSON_HEADERS, body: JSON.stringify(body) });
 
   return (
-    <div>
+    <div className="flex flex-col gap-4">
       {showFilters && (
-        <p>
-          <label>
-            Track{' '}
-            <select aria-label="Track" value={track} onChange={(e) => setTrack(e.target.value)}>
+        <div className="grid gap-3 sm:max-w-md sm:grid-cols-2">
+          <label className={FIELD_LABEL}>
+            Track
+            <NativeSelect aria-label="Track" value={track} onChange={(e) => setTrack(e.target.value)}>
               <option value="">All</option>
               {TRACKS.map((t) => (
                 <option key={t} value={t}>
-                  {t}
+                  {TRACK_LABEL[t]}
                 </option>
               ))}
-            </select>
-          </label>{' '}
-          <label>
-            Level{' '}
-            <select aria-label="Level" value={level} onChange={(e) => setLevel(e.target.value)}>
+            </NativeSelect>
+          </label>
+          <label className={FIELD_LABEL}>
+            Level
+            <NativeSelect aria-label="Level" value={level} onChange={(e) => setLevel(e.target.value)}>
               <option value="">All</option>
               {LEVELS.map((l) => (
                 <option key={l} value={l}>
                   {l}
                 </option>
               ))}
-            </select>
+            </NativeSelect>
           </label>
-        </p>
+        </div>
       )}
-      {loadFailed && <p role="alert">Could not load practice exercises</p>}
-      {actionError && <p role="alert">{actionError}</p>}
-      {!loadFailed && items === null && <p>Loading...</p>}
-      {items && items.length === 0 && <p>Nothing here.</p>}
+      {loadFailed && (
+        <Alert variant="destructive">
+          <AlertDescription>Could not load practice exercises</AlertDescription>
+        </Alert>
+      )}
+      {actionError && (
+        <Alert variant="destructive">
+          <AlertDescription>{actionError}</AlertDescription>
+        </Alert>
+      )}
+      {!loadFailed && items === null && <p className="text-text-muted">Loading...</p>}
+      {items && items.length === 0 && <p className="rounded-lg border bg-card p-4 text-text-muted">Nothing here.</p>}
       {items && items.length > 0 && (
-        <ul>
-          {items.map((item) => (
-            <li key={item.id}>
-              <a href={`/admin/curriculum/lesson/${item.lessonId}?track=${item.track}`}>{item.lessonTitle}</a> · {item.track}{' '}
-              {item.level} · {item.type} · {item.reviewStatus}
-              {editing?.id === item.id ? (
-                <div>
-                  <ExerciseContentFields
-                    type={item.type}
-                    content={editing.content}
-                    index={0}
-                    allowInstruction={false}
-                    onChange={(content) => setEditing({ id: item.id, content })}
-                  />
-                  <button type="button" onClick={() => patch(item.id, { content: editing.content })}>
-                    Save
-                  </button>
-                  <button type="button" onClick={() => setEditing(null)}>
-                    Cancel
-                  </button>
-                </div>
-              ) : (
-                <div>
-                  <p>{preview(item)}</p>
-                  {item.correctAnswer && <p>Answer: {item.correctAnswer}</p>}
-                  <button type="button" onClick={() => patch(item.id, { action: 'approve' })}>
-                    Approve
-                  </button>
-                  <button type="button" onClick={() => patch(item.id, { action: 'reject' })}>
-                    Reject
-                  </button>
-                  <button type="button" onClick={() => setEditing({ id: item.id, content: item.content })}>
-                    Edit
-                  </button>
-                  <button type="button" onClick={() => act(`/api/admin/practice/${item.id}/promote`, { method: 'POST' })}>
-                    Promote into the lesson
-                  </button>
-                </div>
-              )}
-            </li>
-          ))}
-        </ul>
+        <div className={TABLE_WRAP}>
+          <table className={TABLE}>
+            <thead>
+              <tr>
+                <th scope="col" className={TH}>Lesson</th>
+                <th scope="col" className={TH}>Track and level</th>
+                <th scope="col" className={TH}>Type</th>
+                <th scope="col" className={TH}>Status</th>
+                <th scope="col" className={TH}>Exercise</th>
+              </tr>
+            </thead>
+            <tbody>
+              {items.map((item) => (
+                <tr key={item.id} className="align-top">
+                  <td className={TD}>
+                    <a href={`/admin/curriculum/lesson/${item.lessonId}?track=${item.track}`} className={LINK}>
+                      {item.lessonTitle}
+                    </a>
+                  </td>
+                  <td className={`${TD} whitespace-nowrap`}>
+                    {TRACK_LABEL[item.track]} {item.level}
+                  </td>
+                  <td className={`${TD} whitespace-nowrap`}>{item.type}</td>
+                  <td className={`${TD} whitespace-nowrap`}>{item.reviewStatus}</td>
+                  <td className={`${TD} min-w-72`}>
+                    {editing?.id === item.id ? (
+                      <div className="flex flex-col gap-3">
+                        <ExerciseContentFields
+                          type={item.type}
+                          content={editing.content}
+                          index={0}
+                          allowInstruction={false}
+                          onChange={(content) => setEditing({ id: item.id, content })}
+                        />
+                        <div className="flex flex-wrap gap-2">
+                          <Button type="button" className={BTN} onClick={() => patch(item.id, { content: editing.content })}>
+                            Save
+                          </Button>
+                          <Button type="button" variant="outline" className={BTN} onClick={() => setEditing(null)}>
+                            Cancel
+                          </Button>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="flex flex-col gap-2">
+                        <p>{preview(item)}</p>
+                        {item.correctAnswer && <p className="text-text-muted">Answer: {item.correctAnswer}</p>}
+                        <div className="flex flex-wrap gap-2">
+                          <Button type="button" className={BTN} onClick={() => patch(item.id, { action: 'approve' })}>
+                            Approve
+                          </Button>
+                          <Button type="button" variant="ghost" className={`${BTN} text-destructive hover:text-destructive`} onClick={() => patch(item.id, { action: 'reject' })}>
+                            Reject
+                          </Button>
+                          <Button type="button" variant="outline" className={BTN} onClick={() => setEditing({ id: item.id, content: item.content })}>
+                            Edit
+                          </Button>
+                          <Button type="button" variant="outline" className={BTN} onClick={() => act(`/api/admin/practice/${item.id}/promote`, { method: 'POST' })}>
+                            Promote into the lesson
+                          </Button>
+                        </div>
+                      </div>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
     </div>
   );

@@ -8,6 +8,12 @@ import type {
   FlashcardContent,
   FreeTextContent,
 } from '@/lib/curriculum/types';
+import { Plus, Trash2, X } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { NativeSelect } from '@/components/ui/native-select';
+import { BTN, FOCUS, INPUT } from './adminStyles';
 
 export interface ExerciseFormEntry {
   id?: string;
@@ -53,39 +59,46 @@ export function ExerciseEditor({
   }
 
   return (
-    <div>
-      <h3>Exercises ({exercises.length})</h3>
+    <div className="flex flex-col gap-4">
+      <h3 className="text-lg font-semibold">Exercises ({exercises.length})</h3>
       {exercises.map((exercise, index) => (
-        <div key={exercise.id ?? `new-${index}`}>
-          <select
-            aria-label={`Exercise ${index + 1} type`}
-            value={exercise.type}
-            onChange={(e) => {
-              const type = e.target.value as ExerciseType;
-              updateAt(index, { ...exercise, type, content: blankContentFor(type) });
-            }}
-          >
-            <option value="multiple_choice">Multiple choice</option>
-            <option value="fill_blank">Fill in the blank</option>
-            {(allowFlashcards || exercise.type === 'flashcard') && <option value="flashcard">Flashcard</option>}
-            <option value="free_text">Free text</option>
-          </select>
-
-          <ExerciseContentFields
-            type={exercise.type}
-            content={exercise.content}
-            index={index}
-            onChange={(content) => updateAt(index, { ...exercise, content })}
-          />
-
-          <button type="button" onClick={() => removeAt(index)}>
-            Remove exercise {index + 1}
-          </button>
-        </div>
+        <Card key={exercise.id ?? `new-${index}`} className="min-w-0 gap-4">
+          <CardHeader>
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <NativeSelect
+                wrapperClassName="w-full sm:w-64"
+                aria-label={`Exercise ${index + 1} type`}
+                value={exercise.type}
+                onChange={(e) => {
+                  const type = e.target.value as ExerciseType;
+                  updateAt(index, { ...exercise, type, content: blankContentFor(type) });
+                }}
+              >
+                <option value="multiple_choice">Multiple choice</option>
+                <option value="fill_blank">Fill in the blank</option>
+                {(allowFlashcards || exercise.type === 'flashcard') && <option value="flashcard">Flashcard</option>}
+                <option value="free_text">Free text</option>
+              </NativeSelect>
+              <Button type="button" variant="ghost" className={`${BTN} text-destructive hover:text-destructive`} onClick={() => removeAt(index)}>
+                <Trash2 aria-hidden />
+                Remove exercise {index + 1}
+              </Button>
+            </div>
+          </CardHeader>
+          <CardContent className="flex flex-col gap-3">
+            <ExerciseContentFields
+              type={exercise.type}
+              content={exercise.content}
+              index={index}
+              onChange={(content) => updateAt(index, { ...exercise, content })}
+            />
+          </CardContent>
+        </Card>
       ))}
-      <button type="button" onClick={addExercise}>
+      <Button type="button" variant="outline" className={`${BTN} self-start`} onClick={addExercise}>
+        <Plus aria-hidden />
         Add exercise
-      </button>
+      </Button>
     </div>
   );
 }
@@ -148,14 +161,16 @@ function InstructionFields({
   // Spec: both empty means no instruction; the key is removed, never stored empty (Review Focus 4).
   const emit = (next: { en: string; de: string }) => onChange(next.en === '' && next.de === '' ? undefined : next);
   return (
-    <div>
-      <input
+    <div className="grid gap-3 md:grid-cols-2">
+      <Input
+        className={INPUT}
         aria-label={`Exercise ${index + 1} instruction (English)`}
         placeholder="Instruction (English)"
         value={current.en}
         onChange={(e) => emit({ ...current, en: e.target.value })}
       />
-      <input
+      <Input
+        className={INPUT}
         aria-label={`Exercise ${index + 1} instruction (German)`}
         placeholder="Instruction (German)"
         value={current.de}
@@ -192,35 +207,42 @@ function MultipleChoiceFields({
   }
 
   return (
-    <div>
-      <input
+    <div className="flex flex-col gap-3">
+      <Input
+        className={INPUT}
         aria-label={`Exercise ${index + 1} question`}
         value={content.question}
         onChange={(e) => onChange({ ...content, question: e.target.value })}
         placeholder="Question"
       />
       {content.options.map((option, optionIndex) => (
-        <div key={optionIndex}>
-          <input
+        <div key={optionIndex} className="flex items-center gap-2">
+          <Input
+            className={INPUT}
             aria-label={`Exercise ${index + 1} option ${optionIndex + 1}`}
             value={option}
             onChange={(e) => updateOption(optionIndex, e.target.value)}
             placeholder={`Option ${optionIndex + 1}`}
           />
-          <input
-            type="radio"
-            aria-label={`Exercise ${index + 1} option ${optionIndex + 1} is correct`}
-            checked={content.correctIndex === optionIndex}
-            onChange={() => onChange({ ...content, correctIndex: optionIndex })}
-          />
-          <button type="button" onClick={() => removeOption(optionIndex)}>
+          <span className="grid size-11 shrink-0 place-items-center">
+            <input
+              type="radio"
+              className={`size-5 accent-primary ${FOCUS} rounded-full`}
+              aria-label={`Exercise ${index + 1} option ${optionIndex + 1} is correct`}
+              checked={content.correctIndex === optionIndex}
+              onChange={() => onChange({ ...content, correctIndex: optionIndex })}
+            />
+          </span>
+          <Button type="button" variant="ghost" className={`${BTN} shrink-0 text-destructive hover:text-destructive`} onClick={() => removeOption(optionIndex)}>
+            <X aria-hidden />
             Remove option
-          </button>
+          </Button>
         </div>
       ))}
-      <button type="button" onClick={() => onChange({ ...content, options: [...content.options, ''] })}>
+      <Button type="button" variant="outline" className={`${BTN} self-start`} onClick={() => onChange({ ...content, options: [...content.options, ''] })}>
+        <Plus aria-hidden />
         Add option
-      </button>
+      </Button>
     </div>
   );
 }
@@ -235,14 +257,16 @@ function FillBlankFields({
   onChange: (content: FillBlankContent) => void;
 }) {
   return (
-    <div>
-      <input
+    <div className="grid gap-3 md:grid-cols-2">
+      <Input
+        className={INPUT}
         aria-label={`Exercise ${index + 1} text with blank`}
         value={content.textWithBlank}
         onChange={(e) => onChange({ ...content, textWithBlank: e.target.value })}
         placeholder="Text with blank"
       />
-      <input
+      <Input
+        className={INPUT}
         aria-label={`Exercise ${index + 1} correct answer`}
         value={content.correctAnswer}
         onChange={(e) => onChange({ ...content, correctAnswer: e.target.value })}
@@ -262,14 +286,16 @@ function FlashcardFields({
   onChange: (content: FlashcardContent) => void;
 }) {
   return (
-    <div>
-      <input
+    <div className="grid gap-3 md:grid-cols-2">
+      <Input
+        className={INPUT}
         aria-label={`Exercise ${index + 1} front`}
         value={content.front}
         onChange={(e) => onChange({ ...content, front: e.target.value })}
         placeholder="Front"
       />
-      <input
+      <Input
+        className={INPUT}
         aria-label={`Exercise ${index + 1} back`}
         value={content.back}
         onChange={(e) => onChange({ ...content, back: e.target.value })}
@@ -289,14 +315,16 @@ function FreeTextFields({
   onChange: (content: FreeTextContent) => void;
 }) {
   return (
-    <div>
-      <input
+    <div className="grid gap-3 md:grid-cols-2">
+      <Input
+        className={INPUT}
         aria-label={`Exercise ${index + 1} prompt`}
         value={content.prompt}
         onChange={(e) => onChange({ ...content, prompt: e.target.value })}
         placeholder="Prompt"
       />
-      <input
+      <Input
+        className={INPUT}
         aria-label={`Exercise ${index + 1} model answer`}
         value={content.modelAnswer}
         onChange={(e) => onChange({ ...content, modelAnswer: e.target.value })}

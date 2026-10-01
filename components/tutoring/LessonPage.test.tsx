@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
-import { screen, fireEvent } from '@testing-library/react';
+import { screen, fireEvent, waitFor } from '@testing-library/react';
 import { NextIntlClientProvider } from 'next-intl';
 import en from '@/messages/en.json';
 import { renderWithIntl } from '@/test/renderWithIntl';
@@ -107,6 +107,28 @@ describe('LessonPage', () => {
     await answer('Hallo');
 
     expect(await screen.findByText('Lesson complete! Its exercises will come back in your daily review.')).toBeInTheDocument();
+  });
+
+  it('runs in focus mode: the page waits, Leave asks once an exercise is answered, and keeps the progress', async () => {
+    stubFetch({ 'GET /api/tutoring/lessons/a1-greet': () => delayedResponse(LESSON) }, [() => delayedResponse(outcome('correct', { passedExerciseIds: ['ex1'] }))]);
+    renderWithIntl(<LessonPage lessonId="a1-greet" />);
+    fireEvent.click(await screen.findByRole('button', { name: 'Start the exercises' }));
+    expect(screen.getByRole('progressbar', { name: 'Exercise 1 of 2' })).toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: 'Saying hello' })).not.toBeInTheDocument();
+    // Nothing answered yet: Leave exits without asking.
+    fireEvent.click(screen.getByRole('button', { name: 'Leave' }));
+    expect(screen.getByRole('button', { name: 'Start the exercises' })).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: 'Start the exercises' }));
+    fireEvent.click(screen.getByLabelText('Hallo'));
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }));
+    await screen.findByRole('button', { name: 'Next' });
+    fireEvent.click(screen.getByRole('button', { name: 'Leave' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Stay' }));
+    expect(screen.getByRole('button', { name: 'Next' })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Leave' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Leave anyway' }));
+    expect(await screen.findByRole('heading', { name: 'Saying hello' })).toBeInTheDocument();
   });
 
   it('continues with the exercises not yet passed', async () => {
@@ -249,7 +271,8 @@ describe('LessonPage', () => {
     expect(await screen.findByRole('button', { name: 'Practice again' })).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Get more exercises' }));
     await screen.findByText('Neu?');
-    expect(screen.queryByRole('button', { name: 'Practice again' })).not.toBeInTheDocument();
+    // onActiveChange reaches the page through an effect, so the button leaves a tick after the exercise shows.
+    await waitFor(() => expect(screen.queryByRole('button', { name: 'Practice again' })).not.toBeInTheDocument());
     fireEvent.click(screen.getByLabelText('ja'));
     fireEvent.click(screen.getByRole('button', { name: 'Check' }));
     fireEvent.click(await screen.findByRole('button', { name: 'Next' }));

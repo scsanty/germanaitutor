@@ -56,11 +56,11 @@ export function DependencyDiagram({ track, level }: { track: Track; level: CefrL
       .catch(() => setError('Failed to load dependency diagram'));
   }, [track, level]);
 
-  if (error) return <p role="alert">{error}</p>;
-  if (!entries) return <p>Loading...</p>;
+  if (error) return <p role="alert" className="text-destructive">{error}</p>;
+  if (!entries) return <p className="text-text-muted">Loading...</p>;
 
   return (
-    <div>
+    <div className="flex flex-col gap-4">
       {entries.map((entry) => {
         const ids = entry.lessons.map((l) => l.id);
         const inside = edges
@@ -72,11 +72,13 @@ export function DependencyDiagram({ track, level }: { track: Track; level: CefrL
         const columns = Math.max(0, ...layout.map((n) => n.column)) + 1;
         const rows = Math.max(0, ...layout.map((n) => n.row)) + 1;
         return (
-          <section key={entry.milestone.id}>
-            <h3>
+          <section key={entry.milestone.id} className="min-w-0 rounded-xl border bg-card p-4">
+            <h3 className="mb-2 text-base font-semibold">
               {entry.milestone.difficultyRank}. {entry.milestone.title}
             </h3>
+            <div className="overflow-x-auto">
             <svg
+              className="max-w-none"
               role="img"
               aria-label={`${entry.milestone.title} dependency diagram`}
               width={columns * COLUMN_WIDTH + 40}
@@ -92,20 +94,24 @@ export function DependencyDiagram({ track, level }: { track: Track; level: CefrL
                     y1={from.row * ROW_HEIGHT + 20 + CARD_HEIGHT}
                     x2={to.column * COLUMN_WIDTH + 20 + CARD_WIDTH / 2}
                     y2={to.row * ROW_HEIGHT + 20}
-                    stroke="black"
+                    className="stroke-text-muted"
+                    strokeWidth={1.5}
                   />
                 );
               })}
               {layout.map((node) => {
                 const lesson = byId.get(node.id)!;
                 return (
-                  <a key={node.id} href={`/admin/curriculum/lesson/${lesson.id}/edit?track=${track}`}>
+                  <a
+                    key={node.id}
+                    className="outline-none focus-visible:[&>g>rect]:stroke-primary focus-visible:[&>g>rect]:stroke-[3]"
+                    href={`/admin/curriculum/lesson/${lesson.id}/edit?track=${track}`}>
                     <g transform={`translate(${node.column * COLUMN_WIDTH + 20}, ${node.row * ROW_HEIGHT + 20})`}>
-                      <rect width={CARD_WIDTH} height={CARD_HEIGHT} fill="white" stroke="black" />
-                      <text x={8} y={16}>
+                      <rect width={CARD_WIDTH} height={CARD_HEIGHT} rx={6} className="fill-surface-raised stroke-border" strokeWidth={1.5} />
+                      <text x={8} y={16} className="fill-text text-xs font-medium">
                         {lesson.title}
                       </text>
-                      <text x={8} y={32} fontSize={10}>
+                      <text x={8} y={32} fontSize={10} className="fill-text-muted">
                         {lesson.skill}
                       </text>
                     </g>
@@ -113,6 +119,7 @@ export function DependencyDiagram({ track, level }: { track: Track; level: CefrL
                 );
               })}
             </svg>
+            </div>
           </section>
         );
       })}

@@ -50,10 +50,12 @@ export default function NewLessonPage() {
       });
   }, [cloneFrom, params.track]);
 
-  if (error) return <p role="alert">{error}</p>;
-  if (loading) return <p>Loading...</p>;
+  if (error) return <p role="alert" className="text-destructive">{error}</p>;
+  if (loading) return <p className="text-text-muted">Loading...</p>;
 
   return (
+    <div>
+      <h1 className="mb-4 text-2xl font-bold">New lesson</h1>
     <LessonEditorForm
       mode="create"
       initialTrack={params.track as Track}
@@ -61,5 +63,6 @@ export default function NewLessonPage() {
       initialContent={initialContent ?? undefined}
       onSaved={(lesson) => router.push(`/admin/curriculum/lesson/${lesson.id}?track=${params.track}`)}
     />
+    </div>
   );
 }

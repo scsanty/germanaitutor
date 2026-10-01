@@ -1,6 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { NativeSelect } from '@/components/ui/native-select';
+import { FIELD_LABEL, INPUT } from './adminStyles';
 
 export interface PlacementMilestoneOption {
   id: string;
@@ -39,11 +43,14 @@ export function PlacementPicker({
   }
 
   return (
-    <div>
-      <h3>Placement</h3>
-      <label>
+    <Card className="min-w-0 gap-3">
+      <CardHeader>
+        <h3 className="text-lg leading-tight font-semibold">Placement</h3>
+      </CardHeader>
+      <CardContent className="flex flex-col gap-3">
+      <label className={`${FIELD_LABEL} md:max-w-sm`}>
         Milestone
-        <select
+        <NativeSelect
           aria-label="Milestone"
           value={choice}
           onChange={(e) => {
@@ -58,11 +65,12 @@ export function PlacementPicker({
             </option>
           ))}
           <option value={NEW_OPTION}>+ Create new milestone</option>
-        </select>
+        </NativeSelect>
       </label>
       {choice === NEW_OPTION && (
-        <>
-          <input
+        <div className="grid gap-3 md:grid-cols-[1fr_1fr_8rem]">
+          <Input
+            className={INPUT}
             aria-label="New milestone title"
             placeholder="New milestone title"
             value={newTitle}
@@ -71,7 +79,8 @@ export function PlacementPicker({
               emit({ choice, newTitle: e.target.value, newTitleDe, newRank });
             }}
           />
-          <input
+          <Input
+            className={INPUT}
             aria-label="New milestone German title"
             placeholder="New milestone German title"
             value={newTitleDe}
@@ -80,7 +89,8 @@ export function PlacementPicker({
               emit({ choice, newTitle, newTitleDe: e.target.value, newRank });
             }}
           />
-          <input
+          <Input
+            className={INPUT}
             aria-label="New milestone rank"
             type="number"
             min={1}
@@ -92,8 +102,9 @@ export function PlacementPicker({
               emit({ choice, newTitle, newTitleDe, newRank: e.target.value });
             }}
           />
-        </>
+        </div>
       )}
-    </div>
+      </CardContent>
+    </Card>
   );
 }

@@ -29,7 +29,24 @@
   "banner": {
     "providerTrouble": "Your active provider ({provider}) is having trouble: {error}. <link>Visit Settings</link> to fix it or switch providers."
   },
+  "dashboard": {
+    "title": "Dashboard",
+    "loading": "Loading your dashboard",
+    "loadFailed": "Could not load your dashboard. Please reload the page.",
+    "continueTitle": "Continue",
+    "continue": "Continue: {title}",
+    "nothingToContinue": "Pick a lesson from your tree to get started.",
+    "reviewsTitle": "Today's reviews",
+    "startReviews": "Start today’s {count} reviews",
+    "noReviews": "No reviews due today.",
+    "skillsTitle": "Progress by skill",
+    "ofTotal": "{done} of {total}",
+    "skill": { "grammar": "Grammar", "vocabulary": "Vocabulary", "reading": "Reading", "listening": "Listening", "writing": "Writing", "speaking": "Speaking" },
+    "activity": "Activity (12 weeks)",
+    "activityCell": "{date}: {count, plural, one {# answer} other {# answers}}"
+  },
   "home": {
+    "dashboardButton": "Dashboard",
     "title": "German AI Tutor",
     "dailyQueue": "Daily review",
     "settings": "Settings"
@@ -185,7 +202,7 @@
     "noSuggestion": "You have finished every lesson at this level."
   },
   "tracks": {
-    "generic": "Generic",
+    "generic": "NaDoch!",
     "telc": "TELC",
     "goethe": "Goethe"
   },
@@ -270,14 +287,24 @@
     "placementRetake": "Retake the placement test",
     "placementLoadFailed": "Could not load your placement result.",
     "language": "Language",
-    "freestyle": "Freestyle mode",
-    "freestyleDefault": "Default to freestyle mode",
     "backup": "Backup",
     "exportBackup": "Export backup",
+    "importBackup": "Restore a backup",
     "dangerZone": "Danger zone",
     "resetConfirm": "This deletes all local data permanently. Are you sure?",
     "resetYes": "Yes, reset everything",
-    "reset": "Reset app data"
+    "reset": "Reset app data",
+    "appearance": "Appearance",
+    "theme": "Theme",
+    "themeOption": { "dark": "Dark", "light": "Light", "system": "System" },
+    "sounds": "Sounds",
+    "contentAdmin": "Content Admin",
+    "preferenceSaveFailed": "Could not save this setting. Please try again."
+  },
+  "profile": {
+    "title": "Profile",
+    "name": "Name",
+    "nameLabel": "Your name"
   },
   "testOut": {
     "title": "Test out: {milestone}",
@@ -297,5 +324,17 @@
     "backToTree": "Back to your lessons",
     "loadFailed": "Could not load the test-out. Please reload the page.",
     "genericError": "Something went wrong: {error}"
-  }
+  },
+  "nav": {
+    "main": "Main",
+    "learn": "Learn",
+    "dashboard": "Dashboard",
+    "review": "Review",
+    "flashcards": "Flashcards",
+    "freestyle": "Freestyle",
+    "profile": "Profile",
+    "settings": "Settings",
+    "withDue": "{label} ({count} due)"
+  },
+  "focus": {"leave": "Leave", "progress": "Exercise {current} of {total}", "leaveTitle": "Leave this exercise?", "leaveBody": "Your progress on answered exercises is kept.", "stay": "Stay", "leaveAnyway": "Leave anyway", "keysHint": "Keys: 1–4 choose · Enter check · Esc leave"}
 }

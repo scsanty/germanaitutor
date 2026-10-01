@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0284c7"/><stop offset=".48" stop-color="#06b6d4"/><stop offset="1" stop-color="#0d9488"/></linearGradient>
+    <linearGradient id="a" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fb923c"/><stop offset="1" stop-color="#ea580c"/></linearGradient>
+  </defs>
+  
+  <g transform="translate(0 0) scale(1)">
+    <path d="M96 40h320c44 0 80 36 80 80v200c0 44-36 80-80 80H224l-104 84c-12 10-28 0-24-14l14-70h-14c-44 0-80-36-80-80V120c0-44 36-80 80-80z" fill="url(#b)"/>
+    <path d="M217 318L168 318Q156.25 318 150.13 311.88Q144 305.75 144 294.25L144 165.50Q144 154 150.13 147.88Q156.25 141.75 168 141.75L217 141.75Q263 141.75 288.13 164.75Q313.25 187.75 313.25 229.75Q313.25 250.75 306.75 267.13Q300.25 283.50 288 294.88Q275.75 306.25 257.88 312.13Q240 318 217 318M190 179L190 280.75L214 280.75Q227.25 280.75 236.88 277.50Q246.50 274.25 252.88 268Q259.25 261.75 262.38 252.25Q265.50 242.75 265.50 229.75Q265.50 203.75 252.75 191.38Q240 179 214 179" fill="#ffffff"/>
+    <g transform="rotate(11 382 215)">
+      <path d="M368 110c0-18 30-18 30 0l-8 150c0 8-7 12-7 12s-7-4-7-12z" fill="url(#a)" stroke="#fff" stroke-width="8" stroke-linejoin="round"/>
+      <circle cx="383" cy="310" r="20" fill="url(#a)" stroke="#fff" stroke-width="8"/>
+    </g>
+  </g>
+</svg>

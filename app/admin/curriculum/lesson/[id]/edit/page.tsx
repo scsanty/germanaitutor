@@ -46,15 +46,18 @@ export default function EditLessonPage() {
       .catch(() => setError('Lesson not found'));
   }, [params.id, track]);
 
-  if (error) return <p role="alert">{error}</p>;
-  if (!initial) return <p>Loading...</p>;
+  if (error) return <p role="alert" className="text-destructive">{error}</p>;
+  if (!initial) return <p className="text-text-muted">Loading...</p>;
 
   return (
+    <div>
+      <h1 className="mb-4 text-2xl font-bold">Edit lesson</h1>
     <LessonEditorForm
       mode="edit"
       lessonId={params.id}
       initial={initial}
       onSaved={(lesson) => router.push(`/admin/curriculum/lesson/${lesson.id}?track=${initial.track}`)}
     />
+    </div>
   );
 }

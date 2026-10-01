@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import type { ProviderConnection } from '@/lib/types';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { TriangleAlert } from 'lucide-react';
 
 export function ActiveProviderBanner() {
   const t = useTranslations('banner');
@@ -32,12 +34,21 @@ export function ActiveProviderBanner() {
   }
 
   return (
-    <div role="alert">
-      {t.rich('providerTrouble', {
-        provider: active.providerType,
-        error: active.lastError ?? '',
-        link: (chunks) => <Link href="/settings">{chunks}</Link>,
-      })}
-    </div>
+    <Alert variant="destructive" role="alert" className="border-danger/50">
+      <TriangleAlert aria-hidden />
+      <AlertDescription className="break-words">
+        <p>
+          {t.rich('providerTrouble', {
+            provider: active.providerType,
+            error: active.lastError ?? '',
+            link: (chunks) => (
+              <Link href="/settings" className="font-semibold underline underline-offset-2">
+                {chunks}
+              </Link>
+            ),
+          })}
+        </p>
+      </AlertDescription>
+    </Alert>
   );
 }
