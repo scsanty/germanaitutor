@@ -92,15 +92,27 @@
   "t-behoerden": [
     "b1-telc-vocab-offices-forms-applications"
   ],
-  "t-medien": [],
-  "t-bildung": [],
-  "t-umwelt": [],
-  "t-technik": [],
-  "t-freizeit": [],
+  "t-medien": [
+    "b1-telc-vocab-media-and-communication"
+  ],
+  "t-bildung": [
+    "b1-telc-vocab-education-and-learning"
+  ],
+  "t-umwelt": [
+    "b1-telc-vocab-environment-and-nature"
+  ],
+  "t-technik": [
+    "b1-telc-vocab-technology-and-internet"
+  ],
+  "t-freizeit": [
+    "b1-telc-vocab-leisure-and-culture"
+  ],
   "t-familie": [
     "b1-telc-vocab-family-relationships"
   ],
-  "t-feste": [],
+  "t-feste": [
+    "b1-telc-vocab-festivals-and-traditions"
+  ],
   "e-lesen-1": [
     "b1-telc-reading-teil1-headline-matching"
   ],
@@ -181,6 +193,12 @@
     "b1-telc-vocab-food-and-restaurants",
     "b1-telc-vocab-travel-and-transport",
     "b1-telc-vocab-money-and-banking",
-    "b1-telc-vocab-offices-forms-applications"
+    "b1-telc-vocab-offices-forms-applications",
+    "b1-telc-vocab-leisure-and-culture",
+    "b1-telc-vocab-festivals-and-traditions",
+    "b1-telc-vocab-technology-and-internet",
+    "b1-telc-vocab-education-and-learning",
+    "b1-telc-vocab-media-and-communication",
+    "b1-telc-vocab-environment-and-nature"
   ]
 }
