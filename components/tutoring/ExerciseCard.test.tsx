@@ -130,6 +130,18 @@ describe('ExerciseCard', () => {
     expect(screen.getByText('Feedback: Achte auf den Umlaut.')).toBeInTheDocument();
   });
 
+  it.each([
+    ['legacy plain-text feedback', { en: 'Watch the umlaut.', de: 'Watch the umlaut.' }],
+    ['feedback with no German version', { en: 'Watch the umlaut.', de: '' }],
+  ])('shows no feedback toggle for %s', async (_name, feedback) => {
+    stubAttempts(() => delayedResponse(outcome({ result: 'almost', correctAnswer: 'Ich bin müde.', feedback })));
+    renderCard(FREE);
+    fireEvent.change(screen.getByLabelText('Your answer'), { target: { value: 'Ich bin mude.' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }));
+    expect(await screen.findByText('Feedback: Watch the umlaut.')).toBeInTheDocument();
+    expect(screen.queryByRole('group', { name: 'Feedback language' })).not.toBeInTheDocument();
+  });
+
   it('shows any other failure as an error', async () => {
     stubAttempts(() => delayedResponse({ error: 'Level A2 is locked' }, { ok: false, status: 403 }));
     renderCard(MC);

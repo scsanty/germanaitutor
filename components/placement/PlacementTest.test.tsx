@@ -56,8 +56,18 @@ describe('PlacementTest', () => {
     renderWithIntl(<PlacementTest onFinished={vi.fn()} />);
     fireEvent.click(screen.getByText('Start the test'));
     expect(await screen.findByText('Choose the right verb form.')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'EN' })).toHaveAttribute('aria-pressed', 'true');
     fireEvent.click(screen.getByRole('button', { name: 'DE' }));
     expect(screen.getByText('Wähle die richtige Verbform.')).toBeInTheDocument();
+  });
+
+  it('shows no language toggle on a question without an instruction', async () => {
+    stubFetch({ '/api/placement/start': () => delayedResponse({ status: 'in_progress', question: MC_QUESTION }) });
+    renderWithIntl(<PlacementTest onFinished={vi.fn()} />);
+    fireEvent.click(screen.getByText('Start the test'));
+    expect(await screen.findByText('Ich ___ Anna.')).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'DE' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'EN' })).not.toBeInTheDocument();
   });
 
   it('offers Skip only when onSkip is given', () => {
