@@ -1213,6 +1213,27 @@
         "Mit meinem ersten Vermieter habe ich leider schlechte Erfahrungen gemacht: Er hat nie etwas repariert.",
         "Als ich nach Deutschland kam, war alles neu für mich. Aber ich habe schnell gelernt, dass Pünktlichkeit bei der Arbeit sehr wichtig ist."
       ]
+    },
+    {
+      "id": "b1-telc-feelings-and-reacting-to-news",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "speaking",
+      "title": "Expressing Feelings and Reacting to News",
+      "explanation": "Expressing feelings: 'Ich freue mich über / auf ...' / 'Ich bin froh, dass ...' / 'Ich bin erleichtert.' / 'Ich ärgere mich über ...' / 'Es ärgert mich, dass ...' / 'Ich bin enttäuscht, dass ...' / 'Ich habe Angst vor ...' / 'Ich mache mir Sorgen um ...'\nReacting to good news: 'Das freut mich (für dich)!' / 'Herzlichen Glückwunsch!' / 'Wie schön!' / 'Toll, das hast du dir verdient!'\nReacting to bad news: 'Das tut mir (sehr) leid.' / 'Oh nein, wie schrecklich!' / 'So ein Pech!' / 'Das ist ja ärgerlich.' / 'Kann ich dir irgendwie helfen?' For an illness: 'Gute Besserung!' After a death: 'Mein herzliches Beileid.'\nGrammar: many feeling verbs are reflexive: sich freuen, sich ärgern, sich Sorgen machen (with a dative pronoun: 'Ich mache mir Sorgen.'). sich freuen über is for something that has happened or is here now, sich freuen auf for something in the future: 'Ich freue mich auf den Urlaub.' Angst haben vor takes the dative.\nRegister: with a neighbour, a colleague you do not know well or your boss use Sie: 'Das tut mir leid für Sie.' / 'Ich gratuliere Ihnen herzlich!' / 'Kann ich Ihnen helfen?' With friends use du: 'Das freut mich für dich!'\nCommon mistake: 'Das tut mir leid' reacts to bad news; it is not a reaction to good news.\n",
+      "examples": [
+        "Ich habe die Stelle bekommen! – Wirklich? Das freut mich sehr für dich. Herzlichen Glückwunsch!",
+        "Es ärgert mich, dass der Zug schon wieder Verspätung hat.",
+        "Mein Vater liegt im Krankenhaus. – Oh, das tut mir sehr leid. Kann ich dir irgendwie helfen?"
+      ],
+      "titleDe": "Gefühle ausdrücken und auf Nachrichten reagieren",
+      "explanationDe": "Gefühle ausdrücken: 'Ich freue mich über / auf ...' / 'Ich bin froh, dass ...' / 'Ich bin erleichtert.' / 'Ich ärgere mich über ...' / 'Es ärgert mich, dass ...' / 'Ich bin enttäuscht, dass ...' / 'Ich habe Angst vor ...' / 'Ich mache mir Sorgen um ...'\nAuf gute Nachrichten reagieren: 'Das freut mich (für dich)!' / 'Herzlichen Glückwunsch!' / 'Wie schön!' / 'Toll, das hast du dir verdient!'\nAuf schlechte Nachrichten reagieren: 'Das tut mir (sehr) leid.' / 'Oh nein, wie schrecklich!' / 'So ein Pech!' / 'Das ist ja ärgerlich.' / 'Kann ich dir irgendwie helfen?' Bei einer Krankheit: 'Gute Besserung!' Bei einem Todesfall: 'Mein herzliches Beileid.'\nGrammatik: Viele Verben für Gefühle sind reflexiv: sich freuen, sich ärgern, sich Sorgen machen (mit Dativpronomen: 'Ich mache mir Sorgen.'). sich freuen über benutzt man für etwas, das schon passiert ist oder jetzt da ist, sich freuen auf für etwas in der Zukunft: 'Ich freue mich auf den Urlaub.' Angst haben vor steht mit Dativ.\nSie oder du: Mit einem Nachbarn, einem Kollegen, den Sie nicht gut kennen, oder mit Ihrem Chef sprechen Sie mit Sie: 'Das tut mir leid für Sie.' / 'Ich gratuliere Ihnen herzlich!' / 'Kann ich Ihnen helfen?' Mit Freunden sprechen Sie mit du: 'Das freut mich für dich!'\nTypischer Fehler: 'Das tut mir leid' ist eine Reaktion auf schlechte Nachrichten, nicht auf gute.\n",
+      "examplesDe": [
+        "Ich habe die Stelle bekommen! – Wirklich? Das freut mich sehr für dich. Herzlichen Glückwunsch!",
+        "Es ärgert mich, dass der Zug schon wieder Verspätung hat.",
+        "Mein Vater liegt im Krankenhaus. – Oh, das tut mir sehr leid. Kann ich dir irgendwie helfen?"
+      ]
     }
   ],
   "exercises": [
@@ -6430,6 +6451,136 @@
           "de": "Schreiben Sie die E-Mail. Benutzen Sie Sie."
         }
       }
+    },
+    {
+      "id": "b1-telc-feelings-and-reacting-to-news__ex0",
+      "lessonId": "b1-telc-feelings-and-reacting-to-news",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Ihr Freund Karim: „Stell dir vor, ich habe meine B1-Prüfung bestanden!“",
+        "options": [
+          "Oh, das tut mir aber leid.",
+          "Gute Besserung!",
+          "Super, herzlichen Glückwunsch! Das freut mich für dich.",
+          "Mein herzliches Beileid."
+        ],
+        "correctIndex": 2,
+        "instruction": {
+          "en": "Choose the fitting reaction.",
+          "de": "Wählen Sie die passende Reaktion."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-feelings-and-reacting-to-news__ex1",
+      "lessonId": "b1-telc-feelings-and-reacting-to-news",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Ihre Nachbarin Frau Hoffmann: „Bei uns wurde eingebrochen. Man hat meinen Laptop gestohlen.“",
+        "options": [
+          "Herzlichen Glückwunsch, Frau Hoffmann!",
+          "Oh nein, das ist ja schrecklich! Kann ich Ihnen irgendwie helfen?",
+          "Oh nein, das ist ja schrecklich! Kann ich dir irgendwie helfen?",
+          "Das freut mich sehr für Sie."
+        ],
+        "correctIndex": 1,
+        "instruction": {
+          "en": "You address your neighbour Frau Hoffmann with Sie. Choose the fitting reaction.",
+          "de": "Sie siezen Ihre Nachbarin Frau Hoffmann. Wählen Sie die passende Reaktion."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-feelings-and-reacting-to-news__ex2",
+      "lessonId": "b1-telc-feelings-and-reacting-to-news",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Ihr Paket ist schon zum dritten Mal nicht angekommen. Sie rufen beim Kundenservice an. Was sagen Sie?",
+        "options": [
+          "Ich freue mich schon sehr auf das Paket.",
+          "Es ärgert mich wirklich, dass das Paket schon wieder nicht da ist.",
+          "Ich bin so erleichtert, dass alles geklappt hat.",
+          "Ich habe große Angst vor dem Paket."
+        ],
+        "correctIndex": 1,
+        "instruction": {
+          "en": "Choose the sentence that expresses how you feel in this situation.",
+          "de": "Wählen Sie den Satz, der Ihr Gefühl in dieser Situation ausdrückt."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-feelings-and-reacting-to-news__ex3",
+      "lessonId": "b1-telc-feelings-and-reacting-to-news",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Nächste Woche beginnt endlich mein Urlaub. Ich freue mich schon sehr ___ die freien Tage.",
+        "correctAnswer": "auf",
+        "instruction": {
+          "en": "Fill in the missing preposition.",
+          "de": "Ergänzen Sie die fehlende Präposition."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-feelings-and-reacting-to-news__ex4",
+      "lessonId": "b1-telc-feelings-and-reacting-to-news",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Mein Sohn hat seit drei Tagen hohes Fieber. Ich mache ___ große Sorgen.",
+        "correctAnswer": "mir",
+        "instruction": {
+          "en": "Fill in the missing reflexive pronoun.",
+          "de": "Ergänzen Sie das fehlende Reflexivpronomen."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-feelings-and-reacting-to-news__ex5",
+      "lessonId": "b1-telc-feelings-and-reacting-to-news",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Du hast dir das Bein gebrochen? Das tut mir aber ___! Gute Besserung!",
+        "correctAnswer": "leid",
+        "instruction": {
+          "en": "Fill in the missing word.",
+          "de": "Ergänzen Sie das fehlende Wort."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-feelings-and-reacting-to-news__ex6",
+      "lessonId": "b1-telc-feelings-and-reacting-to-news",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Ihr Freund Marco schreibt Ihnen, dass er eine neue Stelle in München gefunden hat und im nächsten Monat umzieht. Antworten Sie ihm: Reagieren Sie auf die Nachricht, sagen Sie, wie Sie sich fühlen, und schlagen Sie ein Treffen vor seinem Umzug vor.",
+        "modelAnswer": "Lieber Marco, herzlichen Glückwunsch zur neuen Stelle! Das freut mich wirklich sehr für dich, denn du hast so lange gesucht. Ich bin aber auch ein bisschen traurig, dass du so weit wegziehst. Ich werde unsere gemeinsamen Abende sehr vermissen. Wollen wir uns vor deinem Umzug noch einmal treffen? Hast du vielleicht nächsten Samstag Zeit? Dann koche ich für dich. Liebe Grüße, Elena",
+        "instruction": {
+          "en": "Write the message. Use du.",
+          "de": "Schreiben Sie die Nachricht. Benutzen Sie du."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-feelings-and-reacting-to-news__ex7",
+      "lessonId": "b1-telc-feelings-and-reacting-to-news",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Ihre Kollegin Frau Schmitt schreibt dem Team, dass sie nach einem Unfall im Krankenhaus liegt und drei Wochen nicht zur Arbeit kommen kann. Schreiben Sie ihr eine kurze Antwort: Reagieren Sie auf die Nachricht, wünschen Sie ihr gute Besserung und bieten Sie Ihre Hilfe an.",
+        "modelAnswer": "Liebe Frau Schmitt, es tut mir sehr leid, dass Sie einen Unfall hatten. Ich habe mir große Sorgen gemacht, als ich Ihre Nachricht gelesen habe. Zum Glück sind Sie jetzt in guten Händen. Machen Sie sich bitte keine Sorgen um die Arbeit, wir kümmern uns um Ihre Kunden. Wenn ich sonst etwas für Sie tun kann, sagen Sie mir bitte Bescheid. Ich wünsche Ihnen gute Besserung! Viele Grüße, Thomas Krüger",
+        "instruction": {
+          "en": "Write the reply. Use Sie.",
+          "de": "Schreiben Sie die Antwort. Benutzen Sie Sie."
+        }
+      }
     }
   ],
   "prerequisites": [
@@ -6556,6 +6707,10 @@
     {
       "lessonId": "b1-telc-talking-about-experiences",
       "prerequisiteLessonId": "b1-telc-praeteritum-reports-and-letters"
+    },
+    {
+      "lessonId": "b1-telc-feelings-and-reacting-to-news",
+      "prerequisiteLessonId": "b1-telc-reflexive-verbs-acc-dat"
     }
   ],
   "milestones": [
@@ -6631,6 +6786,7 @@
         "descriptionDe": "Höflicher Konjunktiv II und das Passiv bei der Arbeit, über ein Thema sprechen, gemeinsam planen und eine formelle Anfrage schreiben."
       },
       "lessonIds": [
+        "b1-telc-feelings-and-reacting-to-news",
         "b1-telc-genitive-and-wegen-trotz-waehrend-statt",
         "b1-telc-konjunktiv-ii-polite-work-requests",
         "b1-telc-n-declension-people-at-work",
