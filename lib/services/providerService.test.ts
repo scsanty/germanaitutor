@@ -63,6 +63,20 @@ describe('providerService', () => {
     expect(mockTestConnection).toHaveBeenLastCalledWith({ apiKey: 'gm-test', host: undefined }, { model: 'models/gemini-3.5-flash' });
   });
 
+  it('marks the connection untested when the model, key or host changes, but not when unchanged', async () => {
+    const { service } = setup();
+    const created = service.createConnection({ providerType: 'gemini', apiKey: 'gm-test', selectedModel: 'gemini-a' });
+    await service.testConnection(created.id);
+    service.updateConnection(created.id, { selectedModel: 'gemini-a', label: 'Same model' });
+    expect(service.getConnection(created.id)?.lastValidatedStatus).toBe('valid');
+    service.updateConnection(created.id, { selectedModel: 'gemini-b' });
+    expect(service.getConnection(created.id)?.lastValidatedStatus).toBe('untested');
+    expect(service.getConnection(created.id)?.lastError).toBeNull();
+    await service.testConnection(created.id);
+    service.updateConnection(created.id, { apiKey: 'gm-other' });
+    expect(service.getConnection(created.id)?.lastValidatedStatus).toBe('untested');
+  });
+
   it('returns an error instead of throwing when the stored key cannot be decrypted', async () => {
     const { service, db } = setup();
     const created = service.createConnection({ providerType: 'anthropic', apiKey: 'sk-ant-test' });

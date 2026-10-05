@@ -160,6 +160,12 @@ export function OnboardingWizard({ initialStep = 'welcome' }: { initialStep?: St
           body: JSON.stringify({ selectedModel }),
         });
         if (!res.ok) throw new Error(String(res.status));
+        // Saving the model re-tests it; a model the provider rejects keeps the student here.
+        const saved = (await res.json()) as { lastValidatedStatus?: string; lastError?: string | null };
+        if (saved.lastValidatedStatus === 'invalid') {
+          setProviderNextError(saved.lastError || t('connectionFailed'));
+          return;
+        }
       } catch {
         setProviderNextError(t('modelSaveFailed'));
         return;
