@@ -1106,6 +1106,27 @@
         "Leider muss ich meinen Termin am Freitag verschieben. Könnten wir uns auf nächsten Dienstag einigen?",
         "Hast du am Samstag Zeit? Wir könnten zusammen frühstücken."
       ]
+    },
+    {
+      "id": "b1-telc-speaking-preparation-time",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "speaking",
+      "title": "Using the Speaking Preparation Time (telc Mündlicher Ausdruck)",
+      "explanation": "The telc B1 oral exam is taken in pairs and lasts about 15 minutes. Before it, you get 20 minutes of preparation time with the task sheets.\nYou do not prepare Teil 1 (getting to know each other), because it is a spontaneous conversation. You use the time for Teil 2 (talking about a topic, based on a short text that only you have) and Teil 3 (planning something together with your partner).\nYou may make notes and use them in the exam as prompts. Write key words and a few useful phrases, not full sentences: the examiners want you to speak freely, not read out a text.\nA good plan for the 20 minutes: about 10 minutes for Teil 2 (main points of your text, your own opinion, one personal experience, a question for your partner) and about 10 minutes for Teil 3 (one idea for every point on the task sheet, plus phrases for suggesting, agreeing and disagreeing).\nThe examiners assess how well you complete each task and react to your partner, how well you express yourself, how accurate your German is, and your pronunciation. The oral exam is passed separately from the written exam, with at least 60 percent of its points.\nCommon mistakes: writing whole sentences and then reading them out, spending all the time on Teil 2, and preparing a fixed plan for Teil 3 that ignores what your partner says.\n",
+      "examples": [
+        "Notizen Teil 2: Text – Homeoffice, 3 Tage/Woche; Vorteile: kein Fahrweg, Ruhe; meine Meinung: gut, aber Kontakt zu Kollegen fehlt; Frage: Wie ist es bei dir?",
+        "Notizen Teil 3: Wann? Sa, 15 Uhr | Wo? Park/Gemeinschaftsraum | Essen? jeder bringt etwas mit | Redemittel: Wie wäre es, wenn ...? / Was hältst du davon?",
+        "In meinem Text geht es um das Thema Homeoffice. Dort steht, dass viele Leute drei Tage pro Woche zu Hause arbeiten."
+      ],
+      "titleDe": "Die Vorbereitungszeit nutzen (telc Mündlicher Ausdruck)",
+      "explanationDe": "Die mündliche Prüfung telc B1 ist eine Paarprüfung und dauert etwa 15 Minuten. Vorher haben Sie 20 Minuten Vorbereitungszeit mit den Aufgabenblättern.\nTeil 1 (Kontaktaufnahme) bereiten Sie nicht vor, denn das ist ein spontanes Gespräch. Sie bereiten Teil 2 (Gespräch über ein Thema, mit einem kurzen Text, den nur Sie haben) und Teil 3 (gemeinsam etwas planen) vor.\nSie dürfen sich Notizen machen und sie in der Prüfung als Hilfe benutzen. Schreiben Sie Stichpunkte und einige nützliche Redemittel, keine ganzen Sätze: Die Prüfer möchten, dass Sie frei sprechen und keinen Text vorlesen.\nEin guter Plan für die 20 Minuten: etwa 10 Minuten für Teil 2 (wichtigste Punkte Ihres Textes, Ihre Meinung, eine eigene Erfahrung, eine Frage an Ihren Partner) und etwa 10 Minuten für Teil 3 (eine Idee zu jedem Punkt auf dem Aufgabenblatt und Redemittel für Vorschläge, Zustimmung und Widerspruch).\nDie Prüfer bewerten, wie gut Sie die Aufgaben lösen und auf Ihren Partner reagieren, wie gut Sie sich ausdrücken, wie korrekt Ihr Deutsch ist und Ihre Aussprache. Die mündliche Prüfung bestehen Sie getrennt von der schriftlichen, mit mindestens 60 Prozent der Punkte.\nTypische Fehler: ganze Sätze schreiben und dann vorlesen, die ganze Zeit nur für Teil 2 benutzen und für Teil 3 einen festen Plan machen, der nicht auf den Partner eingeht.\n",
+      "examplesDe": [
+        "Notizen Teil 2: Text – Homeoffice, 3 Tage/Woche; Vorteile: kein Fahrweg, Ruhe; meine Meinung: gut, aber Kontakt zu Kollegen fehlt; Frage: Wie ist es bei dir?",
+        "Notizen Teil 3: Wann? Sa, 15 Uhr | Wo? Park/Gemeinschaftsraum | Essen? jeder bringt etwas mit | Redemittel: Wie wäre es, wenn ...? / Was hältst du davon?",
+        "In meinem Text geht es um das Thema Homeoffice. Dort steht, dass viele Leute drei Tage pro Woche zu Hause arbeiten."
+      ]
     }
   ],
   "exercises": [
@@ -5661,6 +5682,128 @@
           "de": "Schreiben Sie die Nachricht. Benutzen Sie du."
         }
       }
+    },
+    {
+      "id": "b1-telc-speaking-preparation-time__ex0",
+      "lessonId": "b1-telc-speaking-preparation-time",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Wie lange dauert die Vorbereitungszeit vor der mündlichen Prüfung telc B1?",
+        "options": [
+          "5 Minuten",
+          "10 Minuten",
+          "20 Minuten",
+          "45 Minuten"
+        ],
+        "correctIndex": 2,
+        "instruction": {
+          "en": "Choose the correct answer about the exam format.",
+          "de": "Wählen Sie die richtige Antwort zum Prüfungsformat."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-speaking-preparation-time__ex1",
+      "lessonId": "b1-telc-speaking-preparation-time",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Teile der mündlichen Prüfung bereiten Sie in der Vorbereitungszeit vor?",
+        "options": [
+          "Nur Teil 1",
+          "Teil 1 und Teil 2",
+          "Teil 2 und Teil 3",
+          "Nur Teil 3"
+        ],
+        "correctIndex": 2,
+        "instruction": {
+          "en": "Choose the correct answer about the exam format.",
+          "de": "Wählen Sie die richtige Antwort zum Prüfungsformat."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-speaking-preparation-time__ex2",
+      "lessonId": "b1-telc-speaking-preparation-time",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was schreiben Sie am besten auf Ihren Notizzettel?",
+        "options": [
+          "Einen ganzen Text, den ich in der Prüfung vorlese",
+          "Stichpunkte und ein paar nützliche Redemittel",
+          "Nur Fragen an die Prüfer",
+          "Eine Übersetzung des Textes in meine Muttersprache"
+        ],
+        "correctIndex": 1,
+        "instruction": {
+          "en": "Choose the best strategy for your notes.",
+          "de": "Wählen Sie die beste Strategie für Ihre Notizen."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-speaking-preparation-time__ex3",
+      "lessonId": "b1-telc-speaking-preparation-time",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Wie bereiten Sie Teil 3 (gemeinsam etwas planen) am besten vor?",
+        "options": [
+          "Ich notiere zu jedem Punkt auf dem Aufgabenblatt eine eigene Idee und einige Redemittel.",
+          "Ich denke nur über den ersten Punkt nach, der Rest kommt von selbst.",
+          "Ich lerne einen fertigen Plan auswendig und bleibe in der Prüfung dabei.",
+          "Ich bereite Teil 3 nicht vor, weil die Zeit für Teil 2 gebraucht wird."
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "Choose the best strategy.",
+          "de": "Wählen Sie die beste Strategie."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-speaking-preparation-time__ex4",
+      "lessonId": "b1-telc-speaking-preparation-time",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Ihr Text für Teil 2: „Immer mehr Familien verzichten auf ein eigenes Auto. Sie fahren mit Bus, Bahn und Fahrrad und leihen sich nur manchmal ein Auto. Das spart Geld und ist gut für die Umwelt. Kritiker sagen aber, dass das auf dem Land kaum möglich ist.“",
+        "modelAnswer": "Thema: Leben ohne eigenes Auto | Text: viele Familien ohne Auto; Bus, Bahn, Fahrrad; manchmal Auto leihen | Vorteile: spart Geld, gut für Umwelt | Kritik: auf dem Land schwierig | meine Meinung: in der Stadt gut, auf dem Land schwer | Erfahrung: ich fahre jeden Tag mit dem Fahrrad zur Arbeit | Frage an Partner: Brauchst du ein Auto? | Redemittel: In meinem Text geht es um ... / Ich finde, dass ...",
+        "instruction": {
+          "en": "You are in the preparation time. Write your notes for Teil 2 as key words, not full sentences: the main points of the text, your opinion, one experience and a question for your partner.",
+          "de": "Sie sind in der Vorbereitungszeit. Schreiben Sie Ihre Notizen für Teil 2 als Stichpunkte, nicht als ganze Sätze: die wichtigsten Punkte des Textes, Ihre Meinung, eine Erfahrung und eine Frage an Ihren Partner."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-speaking-preparation-time__ex5",
+      "lessonId": "b1-telc-speaking-preparation-time",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Aufgabe Teil 3: Eine Kollegin aus Ihrem Deutschkurs zieht in eine andere Stadt. Sie möchten mit Ihrem Partner eine kleine Abschiedsfeier planen. Punkte: Wann und wo? Essen und Getränke? Geschenk? Wer macht was?",
+        "modelAnswer": "Wann/wo? Fr nach dem Kurs, 18 Uhr, Kursraum oder Café | Essen/Getränke: jeder bringt etwas mit, ich: Kuchen | Geschenk: Buch über die neue Stadt oder Fotoalbum vom Kurs | Wer macht was? ich: Geschenk kaufen; Partner: Kursleiter fragen | Redemittel: Wie wäre es, wenn wir ...? / Was hältst du davon? / Gute Idee, aber ... / Dann machen wir es so.",
+        "instruction": {
+          "en": "You are in the preparation time. Write your notes for Teil 3 as key words: one idea for each point and some phrases for suggesting and agreeing.",
+          "de": "Sie sind in der Vorbereitungszeit. Schreiben Sie Ihre Notizen für Teil 3 als Stichpunkte: eine Idee zu jedem Punkt und einige Redemittel für Vorschläge und Zustimmung."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-speaking-preparation-time__ex6",
+      "lessonId": "b1-telc-speaking-preparation-time",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Ihre Notizen: Thema: Leben ohne eigenes Auto | viele Familien ohne Auto | Bus, Bahn, Fahrrad | spart Geld, gut für Umwelt | Kritik: auf dem Land schwierig",
+        "modelAnswer": "In meinem Text geht es um das Thema Leben ohne eigenes Auto. Dort steht, dass immer mehr Familien kein Auto haben. Sie fahren mit Bus, Bahn und Fahrrad. Das spart Geld und ist gut für die Umwelt. Kritiker meinen aber, dass das auf dem Land schwierig ist.",
+        "instruction": {
+          "en": "Now it is Teil 2. Use your notes to present your text to your partner in a few full sentences.",
+          "de": "Jetzt ist Teil 2. Stellen Sie Ihrem Partner mit Hilfe Ihrer Notizen Ihren Text in einigen ganzen Sätzen vor."
+        }
+      }
     }
   ],
   "prerequisites": [
@@ -5767,6 +5910,14 @@
     {
       "lessonId": "b1-telc-appointments-making-moving-cancelling",
       "prerequisiteLessonId": "b1-telc-phone-calls-and-voicemails"
+    },
+    {
+      "lessonId": "b1-telc-speaking-preparation-time",
+      "prerequisiteLessonId": "b1-telc-speaking-teil2-topic-discussion"
+    },
+    {
+      "lessonId": "b1-telc-speaking-preparation-time",
+      "prerequisiteLessonId": "b1-telc-speaking-teil3-joint-planning"
     }
   ],
   "milestones": [
@@ -5869,6 +6020,7 @@
         "b1-telc-participles-as-adjectives",
         "b1-telc-reading-teil1-headline-matching",
         "b1-telc-reading-teil2-detailed-comprehension",
+        "b1-telc-speaking-preparation-time",
         "b1-telc-sprachbausteine-connectors-grammar",
         "b1-telc-sprachbausteine-lexical-cloze",
         "b1-telc-two-part-connectors",
