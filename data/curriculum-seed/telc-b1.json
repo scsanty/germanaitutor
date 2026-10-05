@@ -1127,6 +1127,29 @@
         "Notizen Teil 3: Wann? Sa, 15 Uhr | Wo? Park/Gemeinschaftsraum | Essen? jeder bringt etwas mit | Redemittel: Wie wäre es, wenn ...? / Was hältst du davon?",
         "In meinem Text geht es um das Thema Homeoffice. Dort steht, dass viele Leute drei Tage pro Woche zu Hause arbeiten."
       ]
+    },
+    {
+      "id": "b1-telc-writing-personal-semi-formal-letter",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "writing",
+      "title": "Writing a Personal or Semi-Formal Letter (telc Schriftlicher Ausdruck)",
+      "explanation": "In telc Schriftlicher Ausdruck you have 30 minutes to write a letter. You get a short situation, often a letter or email you have received, and four Leitpunkte (content points). The task is worth 45 points.\nA personal letter goes to a friend or relative (du); a semi-formal letter goes to someone you know but address with Sie, such as a neighbour, a landlady, a teacher or a colleague.\nOpenings: personal 'Liebe Anna,' / 'Lieber Tom,' / 'Hallo Maria,'; semi-formal 'Liebe Frau Weber,' / 'Sehr geehrter Herr Schulz,'. After the comma, the first sentence starts with a small letter: 'Liebe Anna, vielen Dank für deinen Brief.'\nClosings: personal 'Viele Grüße' / 'Liebe Grüße' / 'Bis bald'; semi-formal 'Viele Grüße' / 'Freundliche Grüße' / 'Mit freundlichen Grüßen'. Put place and date at the top right and your name under the closing.\nYou must write about all four Leitpunkte. You may choose the order, but the letter should read like a real letter: an opening sentence, two or three sentences per point joined with connectors (weil, deshalb, aber, außerdem), and a closing sentence.\nThe examiners assess whether all Leitpunkte are covered, how well the letter fits the situation (register, opening and closing, structure) and how accurate the German is.\nCommon mistakes: forgetting a Leitpunkt, switching between du and Sie, or using 'Sehr geehrte Damen und Herren' to a friend.\n",
+      "examples": [
+        "Liebe Julia, vielen Dank für deine Einladung zu deiner Einweihungsparty! Ich freue mich sehr, dass du eine schöne Wohnung gefunden hast.",
+        "Leider kann ich am Samstag nicht kommen, weil meine Schwester an diesem Tag heiratet.",
+        "Liebe Frau Krüger, ich fahre vom 3. bis 17. August in den Urlaub. Könnten Sie in dieser Zeit vielleicht meine Blumen gießen?",
+        "Ich hoffe, wir sehen uns bald! Viele Grüße, deine Lena"
+      ],
+      "titleDe": "Einen persönlichen oder halbformellen Brief schreiben (telc Schriftlicher Ausdruck)",
+      "explanationDe": "Im Schriftlichen Ausdruck von telc B1 haben Sie 30 Minuten Zeit für einen Brief. Sie bekommen eine kurze Situation, oft einen Brief oder eine E-Mail, die Sie bekommen haben, und vier Leitpunkte. Für diese Aufgabe gibt es 45 Punkte.\nEinen persönlichen Brief schreiben Sie an Freunde oder Verwandte (du). Einen halbformellen Brief schreiben Sie an jemanden, den Sie kennen, aber siezen, zum Beispiel an eine Nachbarin, eine Vermieterin, einen Lehrer oder eine Kollegin.\nAnrede: persönlich 'Liebe Anna,' / 'Lieber Tom,' / 'Hallo Maria,'; halbformell 'Liebe Frau Weber,' / 'Sehr geehrter Herr Schulz,'. Nach dem Komma schreiben Sie klein weiter: 'Liebe Anna, vielen Dank für deinen Brief.'\nGruß: persönlich 'Viele Grüße' / 'Liebe Grüße' / 'Bis bald'; halbformell 'Viele Grüße' / 'Freundliche Grüße' / 'Mit freundlichen Grüßen'. Ort und Datum stehen oben rechts, Ihr Name steht unter dem Gruß.\nSie müssen zu allen vier Leitpunkten schreiben. Die Reihenfolge können Sie wählen, aber der Brief soll wie ein echter Brief klingen: ein Einleitungssatz, zwei oder drei Sätze pro Punkt mit Konnektoren (weil, deshalb, aber, außerdem) und ein Schlusssatz.\nDie Prüfer bewerten, ob alle Leitpunkte da sind, ob der Brief zur Situation passt (Sie oder du, Anrede und Gruß, Aufbau) und wie korrekt Ihr Deutsch ist.\nTypische Fehler: einen Leitpunkt vergessen, zwischen du und Sie wechseln oder an eine Freundin 'Sehr geehrte Damen und Herren' schreiben.\n",
+      "examplesDe": [
+        "Liebe Julia, vielen Dank für deine Einladung zu deiner Einweihungsparty! Ich freue mich sehr, dass du eine schöne Wohnung gefunden hast.",
+        "Leider kann ich am Samstag nicht kommen, weil meine Schwester an diesem Tag heiratet.",
+        "Liebe Frau Krüger, ich fahre vom 3. bis 17. August in den Urlaub. Könnten Sie in dieser Zeit vielleicht meine Blumen gießen?",
+        "Ich hoffe, wir sehen uns bald! Viele Grüße, deine Lena"
+      ]
     }
   ],
   "exercises": [
@@ -5804,6 +5827,142 @@
           "de": "Jetzt ist Teil 2. Stellen Sie Ihrem Partner mit Hilfe Ihrer Notizen Ihren Text in einigen ganzen Sätzen vor."
         }
       }
+    },
+    {
+      "id": "b1-telc-writing-personal-semi-formal-letter__ex0",
+      "lessonId": "b1-telc-writing-personal-semi-formal-letter",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Anrede passt?",
+        "options": [
+          "Lieber Jonas,",
+          "Sehr geehrter Herr Jonas,",
+          "Sehr geehrte Damen und Herren,",
+          "An Jonas:"
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "You are writing a personal letter to your friend Jonas. Choose the fitting opening.",
+          "de": "Sie schreiben einen persönlichen Brief an Ihren Freund Jonas. Wählen Sie die passende Anrede."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-writing-personal-semi-formal-letter__ex1",
+      "lessonId": "b1-telc-writing-personal-semi-formal-letter",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Satz passt in den Brief?",
+        "options": [
+          "Kannst du bitte am Samstag meine Blumen gießen?",
+          "Könnten Sie bitte am Samstag meine Blumen gießen?",
+          "Gieß bitte am Samstag meine Blumen!",
+          "Gießt ihr am Samstag meine Blumen?"
+        ],
+        "correctIndex": 1,
+        "instruction": {
+          "en": "You are writing a semi-formal letter to your neighbour Frau Brandt. You address her with Sie. Choose the sentence in the right register.",
+          "de": "Sie schreiben einen halbformellen Brief an Ihre Nachbarin Frau Brandt. Sie siezen sie. Wählen Sie den Satz im passenden Register."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-writing-personal-semi-formal-letter__ex2",
+      "lessonId": "b1-telc-writing-personal-semi-formal-letter",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Was gilt für die vier Leitpunkte?",
+        "options": [
+          "Ich muss zu allen vier Leitpunkten schreiben; die Reihenfolge kann ich selbst wählen.",
+          "Es reicht, wenn ich zwei Leitpunkte ausführlich behandle.",
+          "Ich muss die Leitpunkte nummerieren und als Liste schreiben.",
+          "Die Leitpunkte sind nur Ideen; ich kann auch über etwas anderes schreiben."
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "Choose the correct statement about the exam task.",
+          "de": "Wählen Sie die richtige Aussage zur Prüfungsaufgabe."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-writing-personal-semi-formal-letter__ex3",
+      "lessonId": "b1-telc-writing-personal-semi-formal-letter",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Briefanfang ist richtig geschrieben?",
+        "options": [
+          "Liebe Anna, Vielen Dank für deinen Brief.",
+          "Liebe Anna, vielen Dank für deinen Brief.",
+          "Liebe Anna. vielen Dank für deinen Brief.",
+          "Liebe, Anna vielen Dank für deinen Brief."
+        ],
+        "correctIndex": 1,
+        "instruction": {
+          "en": "Choose the correctly punctuated opening.",
+          "de": "Wählen Sie den Briefanfang mit der richtigen Zeichensetzung und Groß- und Kleinschreibung."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-writing-personal-semi-formal-letter__ex4",
+      "lessonId": "b1-telc-writing-personal-semi-formal-letter",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Liebe Frau Krüger, ich danke ___ herzlich für die Einladung zu Ihrem Sommerfest.",
+        "correctAnswer": "Ihnen",
+        "instruction": {
+          "en": "You address Frau Krüger with Sie. Fill in the missing pronoun.",
+          "de": "Sie siezen Frau Krüger. Ergänzen Sie das fehlende Pronomen."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-writing-personal-semi-formal-letter__ex5",
+      "lessonId": "b1-telc-writing-personal-semi-formal-letter",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Ich hoffe, wir sehen uns bald wieder. Viele ___, deine Lena",
+        "correctAnswer": "Grüße",
+        "instruction": {
+          "en": "Complete the closing formula of the personal letter.",
+          "de": "Ergänzen Sie die Grußformel am Ende des persönlichen Briefes."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-writing-personal-semi-formal-letter__ex6",
+      "lessonId": "b1-telc-writing-personal-semi-formal-letter",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Ihre Freundin Julia hat Ihnen geschrieben: Sie ist umgezogen und lädt Sie am Samstag zu ihrer Einweihungsparty ein. Sie können aber nicht kommen. Schreiben Sie Julia einen Brief. Schreiben Sie etwas zu allen vier Punkten:\n– Dank für die Einladung\n– Grund, warum Sie nicht kommen können\n– Vorschlag für einen Besuch zu einem anderen Termin\n– Geschenk für die neue Wohnung\nÜberlegen Sie sich eine passende Reihenfolge. Vergessen Sie Anrede und Gruß nicht.",
+        "modelAnswer": "Hamburg, 12. Mai 2026\n\nLiebe Julia,\n\nvielen Dank für deine Einladung zu deiner Einweihungsparty! Ich freue mich sehr, dass du endlich eine größere Wohnung gefunden hast.\n\nLeider kann ich am Samstag nicht kommen, weil meine Schwester an diesem Tag heiratet. Die Hochzeit ist in München, deshalb bin ich das ganze Wochenende weg. Das tut mir wirklich leid.\n\nAber ich möchte deine neue Wohnung unbedingt sehen. Hast du vielleicht am nächsten Freitagabend Zeit? Dann könnte ich dich besuchen und wir könnten zusammen kochen.\n\nIch habe auch schon ein kleines Geschenk für dich: eine schöne Pflanze für deinen Balkon. Du hast ja immer gesagt, dass du gern Blumen hättest.\n\nIch hoffe, die Party wird toll! Schreib mir bitte, ob Freitag passt.\n\nViele Grüße\ndeine Lena",
+        "instruction": {
+          "en": "Write the personal letter. Cover all four points.",
+          "de": "Schreiben Sie den persönlichen Brief. Behandeln Sie alle vier Punkte."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-writing-personal-semi-formal-letter__ex7",
+      "lessonId": "b1-telc-writing-personal-semi-formal-letter",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Sie fahren drei Wochen in den Urlaub. Schreiben Sie einen Brief an Ihren Nachbarn, Herrn Schulz. Sie kennen ihn, siezen ihn aber. Schreiben Sie etwas zu allen vier Punkten:\n– Grund für Ihr Schreiben\n– wie lange Sie weg sind\n– worum Sie ihn bitten (Briefkasten, Pflanzen)\n– Dank und ein Angebot, ihm auch einmal zu helfen\nÜberlegen Sie sich eine passende Reihenfolge. Vergessen Sie Anrede und Gruß nicht.",
+        "modelAnswer": "Köln, 20. Juni 2026\n\nLieber Herr Schulz,\n\nich habe eine Bitte an Sie. Meine Familie und ich fahren bald in den Urlaub, und wir brauchen in dieser Zeit ein bisschen Hilfe.\n\nWir sind vom 1. bis zum 21. Juli in Spanien. In diesen drei Wochen ist niemand in unserer Wohnung.\n\nKönnten Sie vielleicht ab und zu unseren Briefkasten leeren? Außerdem wäre es sehr nett, wenn Sie zweimal pro Woche unsere Pflanzen auf dem Balkon gießen könnten. Den Schlüssel würde ich Ihnen am Wochenende vorbeibringen.\n\nVielen Dank schon jetzt für Ihre Hilfe! Wenn Sie selbst einmal verreisen, helfe ich Ihnen natürlich auch gern.\n\nViele Grüße\nIhre Anna Petrova",
+        "instruction": {
+          "en": "Write the semi-formal letter. Use Sie and cover all four points.",
+          "de": "Schreiben Sie den halbformellen Brief. Benutzen Sie Sie und behandeln Sie alle vier Punkte."
+        }
+      }
     }
   ],
   "prerequisites": [
@@ -5918,6 +6077,10 @@
     {
       "lessonId": "b1-telc-speaking-preparation-time",
       "prerequisiteLessonId": "b1-telc-speaking-teil3-joint-planning"
+    },
+    {
+      "lessonId": "b1-telc-writing-personal-semi-formal-letter",
+      "prerequisiteLessonId": "b1-telc-writing-inquiry-request-letter"
     }
   ],
   "milestones": [
@@ -6026,7 +6189,8 @@
         "b1-telc-two-part-connectors",
         "b1-telc-vocab-environment-and-nature",
         "b1-telc-vocab-media-and-communication",
-        "b1-telc-word-order-sentence-bracket"
+        "b1-telc-word-order-sentence-bracket",
+        "b1-telc-writing-personal-semi-formal-letter"
       ]
     }
   ]
