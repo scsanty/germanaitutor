@@ -1060,6 +1060,29 @@
         "Wenn man das Licht ausschaltet, spart man Strom.",
         "Viele Leute fahren mit dem Fahrrad zur Arbeit, weil sie die Umwelt schützen wollen."
       ]
+    },
+    {
+      "id": "b1-telc-phone-calls-and-voicemails",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "speaking",
+      "title": "Phone Calls and Voicemails",
+      "explanation": "On the phone you need fixed chunks, because you cannot use gestures and the other person cannot see you.\nRegister: use Sie with offices, companies, doctors' surgeries and people you do not know; use du with friends and family. Say 'Auf Wiederhören!' at the end of a formal call, and 'Tschüss!' or 'Bis dann!' with friends.\nStarting a call: 'Guten Tag, mein Name ist ... Ich rufe wegen ... an.' / 'Ich rufe an, weil ...' / 'Könnte ich bitte mit Frau ... sprechen?' / 'Können Sie mich bitte mit ... verbinden?' With friends: 'Hallo, hier ist ...!'\nIf the person is not there: 'Sie ist gerade nicht am Platz.' / 'Kann ich ihr etwas ausrichten?' / 'Können Sie ihr bitte ausrichten, dass ...?' / 'Ich rufe später noch einmal an.'\nIf you do not understand: 'Könnten Sie das bitte wiederholen?' / 'Könnten Sie das bitte buchstabieren?' / 'Die Verbindung ist leider schlecht.'\nA voicemail (Sprachnachricht, Nachricht auf dem Anrufbeantworter) says who you are, why you are calling and what the other person should do: 'Bitte rufen Sie mich unter der Nummer ... zurück.' / 'Ruf mich doch bitte zurück!'\nA common mistake is to end a formal call with 'Tschüss!' or to switch between du and Sie in the same call.\n",
+      "examples": [
+        "Guten Tag, mein Name ist Ali Demir. Ich rufe wegen meiner Bestellung an. Könnte ich bitte mit Frau Berger sprechen?",
+        "Frau Berger ist gerade in einer Besprechung. Kann ich ihr etwas ausrichten?",
+        "Hallo Tom, hier ist Lisa. Ich wollte nur fragen, ob du am Samstag Zeit hast. Ruf mich doch bitte zurück!",
+        "Vielen Dank für Ihre Hilfe. Auf Wiederhören!"
+      ],
+      "titleDe": "Telefonate und Sprachnachrichten",
+      "explanationDe": "Am Telefon brauchen Sie feste Ausdrücke, denn Ihr Gesprächspartner kann Sie nicht sehen.\nSie oder du: Mit Ämtern, Firmen, Arztpraxen und fremden Personen sprechen Sie mit Sie. Mit Freunden und Familie sprechen Sie mit du. Am Ende von einem formellen Telefonat sagen Sie 'Auf Wiederhören!', mit Freunden 'Tschüss!' oder 'Bis dann!'.\nDas Gespräch beginnen: 'Guten Tag, mein Name ist ... Ich rufe wegen ... an.' / 'Ich rufe an, weil ...' / 'Könnte ich bitte mit Frau ... sprechen?' / 'Können Sie mich bitte mit ... verbinden?' Mit Freunden: 'Hallo, hier ist ...!'\nWenn die Person nicht da ist: 'Sie ist gerade nicht am Platz.' / 'Kann ich ihr etwas ausrichten?' / 'Können Sie ihr bitte ausrichten, dass ...?' / 'Ich rufe später noch einmal an.'\nWenn Sie etwas nicht verstehen: 'Könnten Sie das bitte wiederholen?' / 'Könnten Sie das bitte buchstabieren?' / 'Die Verbindung ist leider schlecht.'\nIn einer Sprachnachricht oder auf dem Anrufbeantworter sagen Sie, wer Sie sind, warum Sie anrufen und was die andere Person tun soll: 'Bitte rufen Sie mich unter der Nummer ... zurück.' / 'Ruf mich doch bitte zurück!'\nEin typischer Fehler: Man beendet ein formelles Telefonat mit 'Tschüss!' oder wechselt im selben Gespräch zwischen du und Sie.\n",
+      "examplesDe": [
+        "Guten Tag, mein Name ist Ali Demir. Ich rufe wegen meiner Bestellung an. Könnte ich bitte mit Frau Berger sprechen?",
+        "Frau Berger ist gerade in einer Besprechung. Kann ich ihr etwas ausrichten?",
+        "Hallo Tom, hier ist Lisa. Ich wollte nur fragen, ob du am Samstag Zeit hast. Ruf mich doch bitte zurück!",
+        "Vielen Dank für Ihre Hilfe. Auf Wiederhören!"
+      ]
     }
   ],
   "exercises": [
@@ -5343,6 +5366,145 @@
           "de": "Ergänzen Sie das passende Verb. In Klammern steht das Wort auf Englisch."
         }
       }
+    },
+    {
+      "id": "b1-telc-phone-calls-and-voicemails__ex0",
+      "lessonId": "b1-telc-phone-calls-and-voicemails",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Sekretariat: „Frau Berger ist leider gerade in einer Besprechung.“",
+        "options": [
+          "Herzlichen Glückwunsch, das freut mich sehr!",
+          "Kann ich ihr eine Nachricht hinterlassen?",
+          "Ja, am Apparat. Was kann ich für Sie tun?",
+          "Guten Appetit und bis morgen!"
+        ],
+        "correctIndex": 1,
+        "instruction": {
+          "en": "You call an office. Choose the fitting reaction.",
+          "de": "Sie rufen in einem Büro an. Wählen Sie die passende Reaktion."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-phone-calls-and-voicemails__ex1",
+      "lessonId": "b1-telc-phone-calls-and-voicemails",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Vielen Dank für die Auskunft, Herr Koch.",
+        "options": [
+          "Hallo!",
+          "Hab dich lieb!",
+          "Auf Wiederhören!",
+          "Guten Appetit!"
+        ],
+        "correctIndex": 2,
+        "instruction": {
+          "en": "You end a phone call with the property management office. Choose the fitting goodbye.",
+          "de": "Sie beenden ein Telefonat mit der Hausverwaltung. Wählen Sie den passenden Gruß."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-phone-calls-and-voicemails__ex2",
+      "lessonId": "b1-telc-phone-calls-and-voicemails",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Anrufer: „Mein Name ist Szczepański.“",
+        "options": [
+          "Könnten Sie Ihren Namen bitte buchstabieren?",
+          "Wie geht es Ihrem Namen?",
+          "Ich verbinde Sie mit Ihrem Namen.",
+          "Sie haben aber einen schönen Namen. Tschüss!"
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "You work at a reception desk and did not understand the caller's name. Choose the fitting reaction.",
+          "de": "Sie arbeiten am Empfang und haben den Namen des Anrufers nicht verstanden. Wählen Sie die passende Reaktion."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-phone-calls-and-voicemails__ex3",
+      "lessonId": "b1-telc-phone-calls-and-voicemails",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Guten Tag, mein Name ist Ali Demir. Ich rufe ___ meiner Bestellung an. (about / because of)",
+        "correctAnswer": "wegen",
+        "acceptableVariants": [
+          "bezüglich"
+        ],
+        "instruction": {
+          "en": "Fill in the preposition that gives the reason for your call.",
+          "de": "Ergänzen Sie die Präposition, die den Grund für Ihren Anruf nennt."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-phone-calls-and-voicemails__ex4",
+      "lessonId": "b1-telc-phone-calls-and-voicemails",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Frau Berger ist leider nicht da. Kann ich ihr etwas ___? (pass on a message)",
+        "correctAnswer": "ausrichten",
+        "acceptableVariants": [
+          "weitergeben"
+        ],
+        "instruction": {
+          "en": "Fill in the verb that means 'pass on a message'.",
+          "de": "Ergänzen Sie das Verb für 'eine Nachricht weitergeben'."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-phone-calls-and-voicemails__ex5",
+      "lessonId": "b1-telc-phone-calls-and-voicemails",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Hallo Tom, hier ist Lisa. Ruf mich bitte ___, wenn du die Nachricht hörst.",
+        "correctAnswer": "zurück",
+        "acceptableVariants": [
+          "an"
+        ],
+        "instruction": {
+          "en": "Complete the voicemail with the missing verb particle.",
+          "de": "Ergänzen Sie in der Sprachnachricht den fehlenden Teil des Verbs."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-phone-calls-and-voicemails__ex6",
+      "lessonId": "b1-telc-phone-calls-and-voicemails",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Sie sind krank und können morgen nicht zum Deutschkurs kommen. Sprechen Sie eine Nachricht auf den Anrufbeantworter der Sprachschule: Wer sind Sie? Warum rufen Sie an? Bitten Sie um die Hausaufgaben. Nennen Sie Ihre Telefonnummer für einen Rückruf.",
+        "modelAnswer": "Guten Tag, hier spricht Maria Lopez aus dem Kurs B1 am Vormittag. Ich rufe an, weil ich krank bin und morgen leider nicht zum Kurs kommen kann. Könnten Sie mir bitte die Hausaufgaben per E-Mail schicken? Bitte rufen Sie mich unter der Nummer 0176 2345678 zurück, wenn Sie Fragen haben. Vielen Dank und auf Wiederhören!",
+        "instruction": {
+          "en": "Write the voicemail message you would leave. Use Sie.",
+          "de": "Schreiben Sie die Nachricht, die Sie hinterlassen. Sprechen Sie mit Sie."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-phone-calls-and-voicemails__ex7",
+      "lessonId": "b1-telc-phone-calls-and-voicemails",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Sie rufen bei Ihrer Hausverwaltung an, weil die Heizung in Ihrer Wohnung nicht funktioniert. Begrüßen Sie, nennen Sie Ihren Namen und den Grund für Ihren Anruf und fragen Sie nach Herrn Koch, der für Ihr Haus zuständig ist.",
+        "modelAnswer": "Guten Tag, mein Name ist Jan Novak. Ich wohne in der Gartenstraße 12. Ich rufe an, weil die Heizung in meiner Wohnung seit gestern nicht mehr funktioniert. Könnte ich bitte mit Herrn Koch sprechen? Er ist für unser Haus zuständig.",
+        "instruction": {
+          "en": "Write how you would open this phone call.",
+          "de": "Schreiben Sie, wie Sie dieses Telefonat beginnen."
+        }
+      }
     }
   ],
   "prerequisites": [
@@ -5463,6 +5625,7 @@
         "b1-telc-futur-i-plans-and-forecasts",
         "b1-telc-indirect-questions-official",
         "b1-telc-listening-teil3-transactional-calls",
+        "b1-telc-phone-calls-and-voicemails",
         "b1-telc-praeteritum-reports-and-letters",
         "b1-telc-reading-teil3-classifieds-matching",
         "b1-telc-reflexive-verbs-acc-dat",
