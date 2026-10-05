@@ -2,6 +2,7 @@ import type { CefrLevel } from '../types';
 import type { ChatMessage } from '../providers/types';
 import type { LocalizedText } from '../i18n/localizedText';
 import type { GradeResult } from './grading';
+import { extractJsonObject } from '../ai/json';
 
 export interface FreeTextGradingInput {
   prompt: string;
@@ -35,17 +36,9 @@ export function buildFreeTextGradingPrompt(input: FreeTextGradingInput): {
 }
 
 export function parseFreeTextGrade(text: string): { result: GradeResult; feedback: LocalizedText | null } | null {
-  const start = text.indexOf('{');
-  const end = text.lastIndexOf('}');
-  if (start === -1 || end <= start) return null;
-  let data: unknown;
-  try {
-    data = JSON.parse(text.slice(start, end + 1));
-  } catch {
-    return null;
-  }
-  if (!data || typeof data !== 'object') return null;
-  const { result, feedback_en, feedback_de } = data as Record<string, unknown>;
+  const data = extractJsonObject(text);
+  if (!data) return null;
+  const { result, feedback_en, feedback_de } = data;
   if (result !== 'correct' && result !== 'almost' && result !== 'wrong') return null;
   if (typeof feedback_en !== 'string' || typeof feedback_de !== 'string') return null;
   const en = feedback_en.trim();
