@@ -1083,6 +1083,29 @@
         "Hallo Tom, hier ist Lisa. Ich wollte nur fragen, ob du am Samstag Zeit hast. Ruf mich doch bitte zurück!",
         "Vielen Dank für Ihre Hilfe. Auf Wiederhören!"
       ]
+    },
+    {
+      "id": "b1-telc-appointments-making-moving-cancelling",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "speaking",
+      "title": "Making, Moving and Cancelling Appointments",
+      "explanation": "Making an appointment: 'Ich hätte gern einen Termin.' / 'Ich möchte einen Termin vereinbaren.' / 'Wann passt es Ihnen?' / 'Hätten Sie am Dienstag um 10 Uhr Zeit?' / 'Ginge es bei Ihnen am Mittwoch?'\nAccepting or saying no: 'Ja, das passt mir gut.' / 'Einverstanden.' / 'Am Montag kann ich leider nicht. Wie wäre es mit Donnerstag?' / 'Da habe ich leider schon einen Termin.'\nMoving an appointment: 'Ich muss meinen Termin leider verschieben.' / 'Könnten wir den Termin auf Freitag verschieben?' (verschieben auf + accusative = move to).\nCancelling: 'Ich muss den Termin leider absagen.' Give a short reason and apologise: 'Es tut mir leid, aber ich bin krank.'\nConfirming: 'Gut, dann bis Donnerstag um 14 Uhr.' / 'Dann sehen wir uns am Freitag.'\nRegister: with a surgery, an office or a colleague you do not know well, use Sie and Konjunktiv II ('Hätten Sie ...?', 'Könnten wir ...?'). With friends use du: 'Hast du am Freitag Zeit?' / 'Passt dir Sonntag?'\nTime expressions: am Montag, um 10 Uhr, von 9 bis 11 Uhr, nächste Woche. Do not confuse verschieben (move to another time) with absagen (cancel).\n",
+      "examples": [
+        "Guten Tag, ich hätte gern einen Termin bei Dr. Schneider. Ginge es nächste Woche am Vormittag?",
+        "Am Montag kann ich leider nicht. Wie wäre es mit Donnerstag um 9 Uhr?",
+        "Leider muss ich meinen Termin am Freitag verschieben. Könnten wir uns auf nächsten Dienstag einigen?",
+        "Hast du am Samstag Zeit? Wir könnten zusammen frühstücken."
+      ],
+      "titleDe": "Termine vereinbaren, verschieben und absagen",
+      "explanationDe": "Einen Termin vereinbaren: 'Ich hätte gern einen Termin.' / 'Ich möchte einen Termin vereinbaren.' / 'Wann passt es Ihnen?' / 'Hätten Sie am Dienstag um 10 Uhr Zeit?' / 'Ginge es bei Ihnen am Mittwoch?'\nZusagen oder ablehnen: 'Ja, das passt mir gut.' / 'Einverstanden.' / 'Am Montag kann ich leider nicht. Wie wäre es mit Donnerstag?' / 'Da habe ich leider schon einen Termin.'\nEinen Termin verschieben: 'Ich muss meinen Termin leider verschieben.' / 'Könnten wir den Termin auf Freitag verschieben?' (verschieben auf + Akkusativ).\nEinen Termin absagen: 'Ich muss den Termin leider absagen.' Nennen Sie kurz den Grund und entschuldigen Sie sich: 'Es tut mir leid, aber ich bin krank.'\nBestätigen: 'Gut, dann bis Donnerstag um 14 Uhr.' / 'Dann sehen wir uns am Freitag.'\nSie oder du: Mit einer Praxis, einem Amt oder einem Kollegen, den Sie nicht gut kennen, sprechen Sie mit Sie und benutzen oft Konjunktiv II ('Hätten Sie ...?', 'Könnten wir ...?'). Mit Freunden sprechen Sie mit du: 'Hast du am Freitag Zeit?' / 'Passt dir Sonntag?'\nZeitangaben: am Montag, um 10 Uhr, von 9 bis 11 Uhr, nächste Woche. Verwechseln Sie nicht verschieben (auf eine andere Zeit legen) und absagen (nicht stattfinden lassen).\n",
+      "examplesDe": [
+        "Guten Tag, ich hätte gern einen Termin bei Dr. Schneider. Ginge es nächste Woche am Vormittag?",
+        "Am Montag kann ich leider nicht. Wie wäre es mit Donnerstag um 9 Uhr?",
+        "Leider muss ich meinen Termin am Freitag verschieben. Könnten wir uns auf nächsten Dienstag einigen?",
+        "Hast du am Samstag Zeit? Wir könnten zusammen frühstücken."
+      ]
     }
   ],
   "exercises": [
@@ -5505,6 +5528,139 @@
           "de": "Schreiben Sie, wie Sie dieses Telefonat beginnen."
         }
       }
+    },
+    {
+      "id": "b1-telc-appointments-making-moving-cancelling__ex0",
+      "lessonId": "b1-telc-appointments-making-moving-cancelling",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Arztpraxis: „Ginge es bei Ihnen am Mittwoch um 9 Uhr?“",
+        "options": [
+          "Ja, Mittwoch um 9 Uhr passt mir sehr gut.",
+          "Am Mittwoch kann ich leider nicht. Wäre auch Donnerstag möglich?",
+          "Gute Besserung und ein schönes Wochenende!",
+          "Danke, ich habe heute schon gefrühstückt."
+        ],
+        "correctIndex": 1,
+        "instruction": {
+          "en": "You have to work all day on Wednesday. Choose the fitting reaction.",
+          "de": "Sie müssen am Mittwoch den ganzen Tag arbeiten. Wählen Sie die passende Reaktion."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-appointments-making-moving-cancelling__ex1",
+      "lessonId": "b1-telc-appointments-making-moving-cancelling",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Satz verschiebt einen Termin?",
+        "options": [
+          "Ich muss den Termin leider absagen.",
+          "Ich möchte gern einen Termin vereinbaren.",
+          "Könnten wir den Termin auf Freitag verschieben?",
+          "Der Termin am Montag passt mir gut."
+        ],
+        "correctIndex": 2,
+        "instruction": {
+          "en": "You want to keep the appointment but at a different time. Which sentence do you say?",
+          "de": "Sie möchten den Termin behalten, aber zu einer anderen Zeit. Welchen Satz sagen Sie?"
+        }
+      }
+    },
+    {
+      "id": "b1-telc-appointments-making-moving-cancelling__ex2",
+      "lessonId": "b1-telc-appointments-making-moving-cancelling",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Nachricht passt?",
+        "options": [
+          "Hätten Sie am Freitagabend Zeit für einen Kinobesuch, Frau Mia?",
+          "Hast du am Freitagabend Zeit? Wir könnten ins Kino gehen.",
+          "Ich muss unseren Termin am Freitag leider absagen.",
+          "Ihr Termin am Freitag um 20 Uhr ist bestätigt."
+        ],
+        "correctIndex": 1,
+        "instruction": {
+          "en": "You want to suggest a cinema evening to your friend Mia.",
+          "de": "Sie möchten Ihrer Freundin Mia einen Kinoabend vorschlagen."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-appointments-making-moving-cancelling__ex3",
+      "lessonId": "b1-telc-appointments-making-moving-cancelling",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Leider bin ich krank. Ich muss den Termin morgen ___. (cancel)",
+        "correctAnswer": "absagen",
+        "acceptableVariants": [
+          "stornieren"
+        ],
+        "instruction": {
+          "en": "Fill in the German verb for the English word in brackets.",
+          "de": "Ergänzen Sie das passende Verb. In Klammern steht das Wort auf Englisch."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-appointments-making-moving-cancelling__ex4",
+      "lessonId": "b1-telc-appointments-making-moving-cancelling",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Könnten wir den Termin ___ nächsten Montag verschieben?",
+        "correctAnswer": "auf",
+        "instruction": {
+          "en": "Fill in the missing preposition.",
+          "de": "Ergänzen Sie die fehlende Präposition."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-appointments-making-moving-cancelling__ex5",
+      "lessonId": "b1-telc-appointments-making-moving-cancelling",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Hast du am Samstag Zeit? – Nein, da kann ich nicht. Aber Sonntag ___ mir gut.",
+        "correctAnswer": "passt",
+        "instruction": {
+          "en": "Fill in the missing verb.",
+          "de": "Ergänzen Sie das fehlende Verb."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-appointments-making-moving-cancelling__ex6",
+      "lessonId": "b1-telc-appointments-making-moving-cancelling",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Sie haben am Dienstag um 10 Uhr einen Termin in der Zahnarztpraxis Dr. Weber. Sie müssen an diesem Tag aber arbeiten. Schreiben Sie eine kurze E-Mail an die Praxis: Entschuldigen Sie sich, nennen Sie den Grund und schlagen Sie einen neuen Termin vor.",
+        "modelAnswer": "Sehr geehrte Damen und Herren, ich habe am Dienstag um 10 Uhr einen Termin bei Dr. Weber. Leider muss ich an diesem Tag arbeiten, weil ein Kollege krank ist. Deshalb möchte ich den Termin gern verschieben. Hätten Sie vielleicht am Donnerstag oder Freitag einen Termin am Nachmittag frei? Es tut mir leid, dass ich so kurzfristig absagen muss. Mit freundlichen Grüßen, Ahmet Yilmaz",
+        "instruction": {
+          "en": "Write the email. Use Sie.",
+          "de": "Schreiben Sie die E-Mail. Benutzen Sie Sie."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-appointments-making-moving-cancelling__ex7",
+      "lessonId": "b1-telc-appointments-making-moving-cancelling",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Sie wollten sich am Samstag mit Ihrem Freund Paul zum Fußballspielen treffen. Jetzt besucht Sie am Wochenende Ihre Familie. Schreiben Sie Paul eine Nachricht: Sagen Sie das Treffen ab, nennen Sie den Grund und schlagen Sie einen neuen Termin vor.",
+        "modelAnswer": "Hallo Paul, es tut mir leid, aber ich muss unser Treffen am Samstag absagen. Meine Eltern besuchen mich am Wochenende, und ich habe sie lange nicht gesehen. Hast du vielleicht am Mittwochabend Zeit? Dann könnten wir nach der Arbeit Fußball spielen. Sag mir einfach Bescheid! Viele Grüße, Sami",
+        "instruction": {
+          "en": "Write the message. Use du.",
+          "de": "Schreiben Sie die Nachricht. Benutzen Sie du."
+        }
+      }
     }
   ],
   "prerequisites": [
@@ -5607,6 +5763,10 @@
     {
       "lessonId": "b1-telc-comparison-flats-and-offers",
       "prerequisiteLessonId": "b1-telc-adjective-endings-ads-and-offices"
+    },
+    {
+      "lessonId": "b1-telc-appointments-making-moving-cancelling",
+      "prerequisiteLessonId": "b1-telc-phone-calls-and-voicemails"
     }
   ],
   "milestones": [
@@ -5651,6 +5811,7 @@
       },
       "lessonIds": [
         "b1-telc-adjective-endings-ads-and-offices",
+        "b1-telc-appointments-making-moving-cancelling",
         "b1-telc-comparison-flats-and-offers",
         "b1-telc-conditions-wenn-falls",
         "b1-telc-infinitive-with-zu-requests-and-rules",
