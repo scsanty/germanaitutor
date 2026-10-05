@@ -1234,6 +1234,29 @@
         "Es ärgert mich, dass der Zug schon wieder Verspätung hat.",
         "Mein Vater liegt im Krankenhaus. – Oh, das tut mir sehr leid. Kann ich dir irgendwie helfen?"
       ]
+    },
+    {
+      "id": "b1-telc-konjunktiv-ii-wishes-and-unreal-conditions",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "grammar",
+      "title": "Konjunktiv II for Wishes and Unreal Conditions",
+      "explanation": "The Konjunktiv II describes things that are not real now: wishes and unreal conditions.\nForms: haben → hätte, sein → wäre, and the modal verbs können → könnte, müssen → müsste, dürfen → dürfte, sollen → sollte; most other verbs use würde + infinitive at the end of the clause: 'Ich würde umziehen.'\nIn an unreal condition the verb goes to the end of the wenn-clause, and when the wenn-clause comes first, the main clause starts with its verb: 'Wenn ich mehr Zeit hätte, würde ich einen Abendkurs machen.'\nWishes: 'Ich wünschte, ich hätte eine größere Wohnung.' (after ich wünschte the next clause keeps main-clause word order) and 'Wenn ich doch nur mehr Urlaub hätte!' (verb at the end).\nWith gern you can name a wish directly: 'Ich hätte gern ein eigenes Büro.', 'Ich wäre gern Krankenpfleger.'\nA common mistake is würde + haben or sein instead of hätte or wäre: write 'Wenn ich ein Auto hätte', not 'Wenn ich ein Auto haben würde'.\nThe same goes for the modal verbs: in the wenn-clause use könnte, müsste, dürfte, sollte, not 'können würde'; würde + infinitive belongs in the main clause.\n",
+      "examples": [
+        "Wenn ich mehr Zeit hätte, würde ich einen Deutschkurs am Abend besuchen.",
+        "Wenn die Wohnung einen Balkon hätte, würden wir sie sofort nehmen.",
+        "Ich wünschte, mein Chef wäre etwas geduldiger.",
+        "Wenn ich doch nur Auto fahren könnte!"
+      ],
+      "titleDe": "Konjunktiv II für Wünsche und irreale Bedingungen",
+      "explanationDe": "Mit dem Konjunktiv II spricht man über Dinge, die jetzt nicht real sind: Wünsche und irreale Bedingungen.\nFormen: haben → hätte, sein → wäre, und die Modalverben können → könnte, müssen → müsste, dürfen → dürfte, sollen → sollte; die meisten anderen Verben bilden den Konjunktiv II mit würde + Infinitiv am Satzende: 'Ich würde umziehen.'\nIn einer irrealen Bedingung steht das Verb am Ende des wenn-Satzes. Steht der wenn-Satz vorne, beginnt der Hauptsatz mit dem Verb: 'Wenn ich mehr Zeit hätte, würde ich einen Abendkurs machen.'\nWünsche: 'Ich wünschte, ich hätte eine größere Wohnung.' (nach ich wünschte folgt die normale Wortstellung eines Hauptsatzes) und 'Wenn ich doch nur mehr Urlaub hätte!' (Verb am Ende).\nMit gern sagt man einen Wunsch direkt: 'Ich hätte gern ein eigenes Büro.', 'Ich wäre gern Krankenpfleger.'\nEin typischer Fehler ist würde + haben oder sein statt hätte oder wäre: Schreiben Sie 'Wenn ich ein Auto hätte', nicht 'Wenn ich ein Auto haben würde'.\nDas Gleiche gilt für die Modalverben: Im wenn-Satz stehen könnte, müsste, dürfte, sollte, nicht 'können würde'; würde + Infinitiv gehört in den Hauptsatz.\n",
+      "examplesDe": [
+        "Wenn ich mehr Zeit hätte, würde ich einen Deutschkurs am Abend besuchen.",
+        "Wenn die Wohnung einen Balkon hätte, würden wir sie sofort nehmen.",
+        "Ich wünschte, mein Chef wäre etwas geduldiger.",
+        "Wenn ich doch nur Auto fahren könnte!"
+      ]
     }
   ],
   "exercises": [
@@ -6581,6 +6604,148 @@
           "de": "Schreiben Sie die Antwort. Benutzen Sie Sie."
         }
       }
+    },
+    {
+      "id": "b1-telc-konjunktiv-ii-wishes-and-unreal-conditions__ex0",
+      "lessonId": "b1-telc-konjunktiv-ii-wishes-and-unreal-conditions",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Wenn ich mehr Geld ___, würde ich eine größere Wohnung mieten.",
+        "options": [
+          "hätte",
+          "haben würde",
+          "habe",
+          "hatte"
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "Choose the correct verb form for the unreal condition.",
+          "de": "Wählen Sie die richtige Verbform für die irreale Bedingung."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-konjunktiv-ii-wishes-and-unreal-conditions__ex1",
+      "lessonId": "b1-telc-konjunktiv-ii-wishes-and-unreal-conditions",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Wenn ich nicht so müde wäre, ___",
+        "options": [
+          "würde ich heute länger arbeiten.",
+          "ich würde heute länger arbeiten.",
+          "ich heute länger arbeiten würde.",
+          "würde heute ich länger arbeiten."
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "Choose the main clause with the correct word order.",
+          "de": "Wählen Sie den Hauptsatz mit der richtigen Wortstellung."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-konjunktiv-ii-wishes-and-unreal-conditions__ex2",
+      "lessonId": "b1-telc-konjunktiv-ii-wishes-and-unreal-conditions",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Ich ___ gern Ärztin, aber das Studium ist mir zu lang.",
+        "options": [
+          "wäre",
+          "hätte",
+          "bin",
+          "war"
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "Choose the form that expresses a wish.",
+          "de": "Wählen Sie die Form, die einen Wunsch ausdrückt."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-konjunktiv-ii-wishes-and-unreal-conditions__ex3",
+      "lessonId": "b1-telc-konjunktiv-ii-wishes-and-unreal-conditions",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Ich wünschte, ___",
+        "options": [
+          "ich hätte mehr Urlaub.",
+          "ich mehr Urlaub hätte.",
+          "hätte ich mehr Urlaub.",
+          "ich habe mehr Urlaub."
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "Complete the wish correctly.",
+          "de": "Ergänzen Sie den Wunsch richtig."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-konjunktiv-ii-wishes-and-unreal-conditions__ex4",
+      "lessonId": "b1-telc-konjunktiv-ii-wishes-and-unreal-conditions",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Wenn ich nicht so viel arbeiten ___, hätte ich mehr Zeit für Sport.",
+        "options": [
+          "müsste",
+          "musste",
+          "müssen würde",
+          "muss"
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "Choose the correct form of müssen for the unreal condition.",
+          "de": "Wählen Sie die richtige Form von müssen für die irreale Bedingung."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-konjunktiv-ii-wishes-and-unreal-conditions__ex5",
+      "lessonId": "b1-telc-konjunktiv-ii-wishes-and-unreal-conditions",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Wenn ich besser Deutsch sprechen ___, würde ich mich bei der Stadtverwaltung bewerben. (können)",
+        "correctAnswer": "könnte",
+        "instruction": {
+          "en": "Fill in the verb in brackets in the Konjunktiv II.",
+          "de": "Ergänzen Sie das Verb in Klammern im Konjunktiv II."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-konjunktiv-ii-wishes-and-unreal-conditions__ex6",
+      "lessonId": "b1-telc-konjunktiv-ii-wishes-and-unreal-conditions",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Wenn wir im Büro Musik hören ___, wäre die Arbeit angenehmer. (dürfen)",
+        "correctAnswer": "dürften",
+        "instruction": {
+          "en": "Fill in the verb in brackets in the Konjunktiv II.",
+          "de": "Ergänzen Sie das Verb in Klammern im Konjunktiv II."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-konjunktiv-ii-wishes-and-unreal-conditions__ex7",
+      "lessonId": "b1-telc-konjunktiv-ii-wishes-and-unreal-conditions",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Wenn ich doch nur mehr Zeit für meine Familie ___! (haben)",
+        "correctAnswer": "hätte",
+        "instruction": {
+          "en": "Fill in the verb in brackets to express a wish.",
+          "de": "Ergänzen Sie das Verb in Klammern, sodass ein Wunsch entsteht."
+        }
+      }
     }
   ],
   "prerequisites": [
@@ -6711,6 +6876,14 @@
     {
       "lessonId": "b1-telc-feelings-and-reacting-to-news",
       "prerequisiteLessonId": "b1-telc-reflexive-verbs-acc-dat"
+    },
+    {
+      "lessonId": "b1-telc-konjunktiv-ii-wishes-and-unreal-conditions",
+      "prerequisiteLessonId": "b1-telc-konjunktiv-ii-polite-work-requests"
+    },
+    {
+      "lessonId": "b1-telc-konjunktiv-ii-wishes-and-unreal-conditions",
+      "prerequisiteLessonId": "b1-telc-praeteritum-reports-and-letters"
     }
   ],
   "milestones": [
@@ -6780,15 +6953,16 @@
         "track": "telc",
         "level": "B1",
         "title": "Diplomacy and discussion",
-        "description": "Polite Konjunktiv II, the passive, the genitive, the n-declension, and relative, time and purpose clauses, with vocabulary for offices, education and technology. Expressing feelings, discussing a topic, planning together and writing a formal inquiry.",
+        "description": "Konjunktiv II for polite requests, wishes and unreal conditions, the passive, the genitive, the n-declension, and relative, time and purpose clauses, with vocabulary for offices, education and technology. Expressing feelings, discussing a topic, planning together and writing a formal inquiry.",
         "difficultyRank": 3,
         "titleDe": "Diplomatisch sein und diskutieren",
-        "descriptionDe": "Höflicher Konjunktiv II, das Passiv, der Genitiv, die n-Deklination sowie Relativ-, Temporal- und Finalsätze, dazu Wortschatz zu Ämtern, Bildung und Technik. Gefühle ausdrücken, über ein Thema sprechen, gemeinsam planen und eine formelle Anfrage schreiben."
+        "descriptionDe": "Konjunktiv II für höfliche Bitten, Wünsche und irreale Bedingungen, das Passiv, der Genitiv, die n-Deklination sowie Relativ-, Temporal- und Finalsätze, dazu Wortschatz zu Ämtern, Bildung und Technik. Gefühle ausdrücken, über ein Thema sprechen, gemeinsam planen und eine formelle Anfrage schreiben."
       },
       "lessonIds": [
         "b1-telc-feelings-and-reacting-to-news",
         "b1-telc-genitive-and-wegen-trotz-waehrend-statt",
         "b1-telc-konjunktiv-ii-polite-work-requests",
+        "b1-telc-konjunktiv-ii-wishes-and-unreal-conditions",
         "b1-telc-n-declension-people-at-work",
         "b1-telc-passive-workplace-processes",
         "b1-telc-purpose-clauses-um-zu-damit",
@@ -6880,6 +7054,10 @@
     {
       "lessonAId": "b1-relative-clauses-prepositions",
       "lessonBId": "b1-telc-relative-clauses-housing-and-services"
+    },
+    {
+      "lessonAId": "b1-subjunctive-ii-wishes-hypotheticals",
+      "lessonBId": "b1-telc-konjunktiv-ii-wishes-and-unreal-conditions"
     },
     {
       "lessonAId": "b1-subordinate-clauses-temporal",

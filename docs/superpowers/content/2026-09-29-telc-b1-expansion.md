@@ -1,6 +1,6 @@
 # telc B1 curriculum expansion: review summary
 
-Generated from `data/curriculum-seed/telc-b1.json`, `data/inventory/b1.json` and `data/inventory/telc-b1-coverage.json`. The telc B1 seed now has 57 lessons in 4 milestones; 37 of them are new in this expansion (shown in **bold**). Every one of the 61 inventory items is covered by at least one lesson.
+Generated from `data/curriculum-seed/telc-b1.json`, `data/inventory/b1.json` and `data/inventory/telc-b1-coverage.json`. The telc B1 seed now has 58 lessons in 4 milestones; 38 of them are new in this expansion (shown in **bold**). Every one of the 61 inventory items is covered by at least one lesson.
 
 ## Milestones
 
@@ -8,7 +8,7 @@ Generated from `data/curriculum-seed/telc-b1.json`, `data/inventory/b1.json` and
 |---|---|---|---|---|
 | 1 | Home, work and inquiries / Wohnen, Arbeit und Anfragen | 15 | 9 | The Präteritum, Futur I, reflexive verbs and indirect questions, with vocabulary for housing, work, family, food, health and leisure. Phone calls and voicemails and talking about plans and wishes, plus exam tasks for ads, service calls and getting to know someone. |
 | 2 | Complaints and the news / Beschwerden und Nachrichten | 17 | 12 | Prepositional verbs, adjective endings, comparison, conditions, the zu-infinitive, lassen and the Plusquamperfekt, with vocabulary for consumer rights, money, travel and festivals. Appointments, advice and talking about experiences, plus a complaint letter, news broadcasts and a radio interview. |
-| 3 | Diplomacy and discussion / Diplomatisch sein und diskutieren | 14 | 9 | Polite Konjunktiv II, the passive, the genitive, the n-declension, and relative, time and purpose clauses, with vocabulary for offices, education and technology. Expressing feelings, discussing a topic, planning together and writing a formal inquiry. |
+| 3 | Diplomacy and discussion / Diplomatisch sein und diskutieren | 15 | 10 | Konjunktiv II for polite requests, wishes and unreal conditions, the passive, the genitive, the n-declension, and relative, time and purpose clauses, with vocabulary for offices, education and technology. Expressing feelings, discussing a topic, planning together and writing a formal inquiry. |
 | 4 | Language elements and detailed reading / Sprachbausteine und genaues Lesen | 11 | 7 | Participles as adjectives, two-part connectors and word order for the Sprachbausteine, with vocabulary for media and the environment. Headline matching, detailed reading, a personal or semi-formal letter and using the speaking preparation time. |
 
 ## 1. Coverage matrix
@@ -19,7 +19,7 @@ Generated from `data/curriculum-seed/telc-b1.json`, `data/inventory/b1.json` and
 | Plusquamperfekt | grammar | **`b1-telc-plusquamperfekt-incident-reports`** |
 | Futur I | grammar | **`b1-telc-futur-i-plans-and-forecasts`** |
 | Passive (present, preterite, perfect, with modal verbs) | grammar | `b1-telc-passive-workplace-processes` |
-| Konjunktiv II (würde, hätte, wäre, modal verbs: wishes, advice, unreal conditions) | grammar | `b1-telc-konjunktiv-ii-polite-work-requests` |
+| Konjunktiv II (würde, hätte, wäre, modal verbs: wishes, advice, unreal conditions) | grammar | `b1-telc-konjunktiv-ii-polite-work-requests`, **`b1-telc-konjunktiv-ii-wishes-and-unreal-conditions`** |
 | Relative clauses (nom., acc., dat., with prepositions; wo, was) | grammar | **`b1-telc-relative-clauses-housing-and-services`** |
 | weil, da, obwohl, trotzdem, deshalb | grammar | `b1-telc-sprachbausteine-connectors-grammar` |
 | damit, um … zu | grammar | **`b1-telc-purpose-clauses-um-zu-damit`** |
@@ -104,6 +104,7 @@ Generated from `data/curriculum-seed/telc-b1.json`, `data/inventory/b1.json` and
 | `b1-telc-vocab-travel-and-transport` | Travel, Transport and Delays / Reisen, Verkehr und Verspätungen | 2. Complaints and the news | vocabulary | 6 | Tickets, connections and accommodation, and what to say about delays and cancellations. |
 | `b1-telc-feelings-and-reacting-to-news` | Expressing Feelings and Reacting to News / Gefühle ausdrücken und auf Nachrichten reagieren | 3. Diplomacy and discussion | speaking | 8 | Expressing feelings and reacting to good and bad news. |
 | `b1-telc-genitive-and-wegen-trotz-waehrend-statt` | The genitive, and wegen, trotz, während, statt / Der Genitiv und wegen, trotz, während, statt | 3. Diplomacy and discussion | grammar | 7 | Genitive articles and endings, and the prepositions wegen, trotz, während, statt. |
+| `b1-telc-konjunktiv-ii-wishes-and-unreal-conditions` | Konjunktiv II for Wishes and Unreal Conditions / Konjunktiv II für Wünsche und irreale Bedingungen | 3. Diplomacy and discussion | grammar | 8 | Unreal conditions (Wenn ich mehr Zeit hätte, würde ich …) and wishes (ich wünschte, Wenn ich doch …, hätte/wäre gern) with hätte, wäre, würde + infinitive and the modal forms; avoiding würde + haben/sein. |
 | `b1-telc-n-declension-people-at-work` | The n-declension: der Kunde, den Kunden / Die n-Deklination: der Kunde, den Kunden | 3. Diplomacy and discussion | grammar | 7 | Weak masculine nouns (der Kunde, den Kunden) in all cases. |
 | `b1-telc-purpose-clauses-um-zu-damit` | Saying Why: um … zu and damit / Ziele ausdrücken: um … zu und damit | 3. Diplomacy and discussion | grammar | 6 | Purpose with um … zu (same subject) and damit (different subject). |
 | `b1-telc-relative-clauses-housing-and-services` | Relative Clauses for Housing, Work and Services / Relativsätze rund um Wohnung, Arbeit und Ämter | 3. Diplomacy and discussion | grammar | 8 | Relative pronouns in all cases, with prepositions, and wo/was. |
@@ -121,7 +122,7 @@ Generated from `data/curriculum-seed/telc-b1.json`, `data/inventory/b1.json` and
 
 ## 3. Concept links added
 
-18 links, each listed in `telc-b1.json` and in the other file it touches. Before this task no B1 seed file had a `conceptLinks` list.
+19 links, each listed in `telc-b1.json` and in the other file it touches. Before this task no B1 seed file had a `conceptLinks` list.
 
 | telc B1 lesson | Linked lesson | File | Why |
 |---|---|---|---|
@@ -138,6 +139,7 @@ Generated from `data/curriculum-seed/telc-b1.json`, `data/inventory/b1.json` and
 | `b1-telc-n-declension-people-at-work` | `b1-n-declension-weak-masculine-nouns` (Weak Masculine Nouns (N-Deklination)) | generic-b1.json | Both teach the n-declension of weak masculine nouns. |
 | `b1-telc-relative-clauses-housing-and-services` | `b1-relative-clauses-cases` (Relative Clauses in Nominative, Accusative, Dative, and Genitive) | generic-b1.json | Both teach relative pronouns that take their case from the relative clause. |
 | `b1-telc-relative-clauses-housing-and-services` | `b1-relative-clauses-prepositions` (Relative Clauses with Prepositions and Prepositional Adverbs) | generic-b1.json | Both teach relative clauses with a preposition before the relative pronoun. |
+| `b1-telc-konjunktiv-ii-wishes-and-unreal-conditions` | `b1-subjunctive-ii-wishes-hypotheticals` (Subjunctive II for Wishes and Hypotheticals (Konjunktiv II der Gegenwart)) | generic-b1.json | Both teach the present Konjunktiv II for unreal conditions and wishes: hätte, wäre, the modal forms and würde + infinitive. |
 | `b1-telc-temporal-clauses-work-and-daily-life` | `b1-subordinate-clauses-temporal` (Temporal Subordinate Clauses (als, wenn, während, nachdem, bevor)) | generic-b1.json | Both teach temporal clauses with als, wenn, während, nachdem and bevor. |
 | `b1-telc-two-part-connectors` | `b1-two-part-connectors` (Two-Part Connectors (Doppelkonnektoren)) | generic-b1.json | Both teach the two-part connectors (sowohl … als auch, weder … noch, je … desto and others). |
 | `b1-telc-vocab-environment-and-nature` | `b1-vocab-environment-sustainability` (Environment, Climate Protection, and Sustainability) | generic-b1.json | Same theme: environment, climate and environmental protection vocabulary. |
