@@ -1150,6 +1150,27 @@
         "Liebe Frau Krüger, ich fahre vom 3. bis 17. August in den Urlaub. Könnten Sie in dieser Zeit vielleicht meine Blumen gießen?",
         "Ich hoffe, wir sehen uns bald! Viele Grüße, deine Lena"
       ]
+    },
+    {
+      "id": "b1-telc-advice-asking-and-giving",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "speaking",
+      "title": "Asking for and Giving Advice",
+      "explanation": "Asking for advice: 'Kannst du mir einen Rat geben?' / 'Was soll ich machen?' / 'Was würdest du an meiner Stelle tun?' / 'Hast du einen Tipp für mich?'\nGiving advice: 'Du solltest ...' / 'An deiner Stelle würde ich ...' / 'Ich würde dir raten, ...' / 'Ich würde dir empfehlen, ...' / 'Am besten gehst du ...' / 'Warum fragst du nicht ...?'\nReacting to advice: 'Danke, das ist ein guter Tipp.' / 'Das probiere ich aus.' / 'Ich weiß nicht, ob das klappt.'\nGrammar: after 'Du solltest' and 'An deiner Stelle würde ich' the infinitive goes to the end: 'Du solltest mehr schlafen.' 'An deiner Stelle' takes the first position, so 'würde' comes straight after it. raten and empfehlen take the dative: 'Ich rate dir ...', 'Ich empfehle Ihnen ...'.\nRegister: with a neighbour, a colleague you do not know well or a customer use Sie: 'Sie sollten ...' / 'An Ihrer Stelle würde ich ...' / 'Ich würde Ihnen empfehlen, ...' / 'Was würden Sie mir raten?' With friends and family use du.\nCommon mistake: for advice, use 'Du solltest ...' (Konjunktiv II). 'Du sollst ...' usually sounds like an order or passes on what someone else wants.\n",
+      "examples": [
+        "Ich schlafe seit Wochen schlecht. Was würdest du an meiner Stelle tun? – Du solltest abends nicht mehr so lange am Handy sein.",
+        "An Ihrer Stelle würde ich den Vermieter sofort schriftlich informieren.",
+        "Hast du einen Tipp für mich? Ich finde keine Wohnung. – Am besten fragst du auch Freunde und Kollegen."
+      ],
+      "titleDe": "Um Rat bitten und Rat geben",
+      "explanationDe": "Um Rat bitten: 'Kannst du mir einen Rat geben?' / 'Was soll ich machen?' / 'Was würdest du an meiner Stelle tun?' / 'Hast du einen Tipp für mich?'\nRat geben: 'Du solltest ...' / 'An deiner Stelle würde ich ...' / 'Ich würde dir raten, ...' / 'Ich würde dir empfehlen, ...' / 'Am besten gehst du ...' / 'Warum fragst du nicht ...?'\nAuf einen Rat reagieren: 'Danke, das ist ein guter Tipp.' / 'Das probiere ich aus.' / 'Ich weiß nicht, ob das klappt.'\nGrammatik: Nach 'Du solltest' und 'An deiner Stelle würde ich' steht der Infinitiv am Ende: 'Du solltest mehr schlafen.' 'An deiner Stelle' steht auf Position 1, deshalb kommt 'würde' direkt danach. raten und empfehlen stehen mit Dativ: 'Ich rate dir ...', 'Ich empfehle Ihnen ...'.\nSie oder du: Mit einem Nachbarn, einem Kollegen, den Sie nicht gut kennen, oder einem Kunden sprechen Sie mit Sie: 'Sie sollten ...' / 'An Ihrer Stelle würde ich ...' / 'Ich würde Ihnen empfehlen, ...' / 'Was würden Sie mir raten?' Mit Freunden und mit der Familie sprechen Sie mit du.\nTypischer Fehler: Für einen Rat benutzen Sie 'Du solltest ...' (Konjunktiv II). 'Du sollst ...' klingt meistens wie ein Befehl oder gibt weiter, was eine andere Person will.\n",
+      "examplesDe": [
+        "Ich schlafe seit Wochen schlecht. Was würdest du an meiner Stelle tun? – Du solltest abends nicht mehr so lange am Handy sein.",
+        "An Ihrer Stelle würde ich den Vermieter sofort schriftlich informieren.",
+        "Hast du einen Tipp für mich? Ich finde keine Wohnung. – Am besten fragst du auch Freunde und Kollegen."
+      ]
     }
   ],
   "exercises": [
@@ -5964,6 +5985,136 @@
           "de": "Schreiben Sie den halbformellen Brief. Benutzen Sie Sie und behandeln Sie alle vier Punkte."
         }
       }
+    },
+    {
+      "id": "b1-telc-advice-asking-and-giving__ex0",
+      "lessonId": "b1-telc-advice-asking-and-giving",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Ihre Freundin Nina: „Ich schlafe seit Wochen schlecht. Was soll ich machen?“",
+        "options": [
+          "Du solltest abends weniger Kaffee trinken.",
+          "Ich habe gestern sehr gut geschlafen, danke.",
+          "Herzlichen Glückwunsch zum Geburtstag!",
+          "Das ist mir egal, das ist dein Problem."
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "Your friend asks you for advice. Choose the fitting reaction.",
+          "de": "Ihre Freundin bittet Sie um Rat. Wählen Sie die passende Reaktion."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-advice-asking-and-giving__ex1",
+      "lessonId": "b1-telc-advice-asking-and-giving",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Ihr Nachbar Herr Becker: „Meine Heizung ist schon wieder kaputt. Was würden Sie tun?“",
+        "options": [
+          "An deiner Stelle würde ich den Vermieter anrufen.",
+          "An Ihrer Stelle würde ich den Vermieter anrufen.",
+          "Ruf doch einfach den Vermieter an!",
+          "Du solltest den Vermieter anrufen."
+        ],
+        "correctIndex": 1,
+        "instruction": {
+          "en": "You address your neighbour Herr Becker with Sie. Choose the reaction in the right register.",
+          "de": "Sie siezen Ihren Nachbarn Herrn Becker. Wählen Sie die Reaktion mit der passenden Anrede."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-advice-asking-and-giving__ex2",
+      "lessonId": "b1-telc-advice-asking-and-giving",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Sie haben Streit mit Ihrem Mitbewohner und wissen nicht, was Sie tun sollen. Sie sprechen mit einem Freund.",
+        "options": [
+          "Was würdest du an meiner Stelle machen?",
+          "Du solltest mehr Sport machen.",
+          "Danke, das ist ein guter Tipp.",
+          "An deiner Stelle würde ich das nicht machen."
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "You would like your friend to help you decide. Which sentence do you say?",
+          "de": "Ihr Freund soll Ihnen bei der Entscheidung helfen. Welchen Satz sagen Sie?"
+        }
+      }
+    },
+    {
+      "id": "b1-telc-advice-asking-and-giving__ex3",
+      "lessonId": "b1-telc-advice-asking-and-giving",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Du hast Kopfschmerzen? Dann ___ du eine Pause machen und viel Wasser trinken. (sollen)",
+        "correctAnswer": "solltest",
+        "instruction": {
+          "en": "Put the verb in brackets into the form we use for advice.",
+          "de": "Setzen Sie das Verb in Klammern in die Form, die man für einen Rat benutzt."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-advice-asking-and-giving__ex4",
+      "lessonId": "b1-telc-advice-asking-and-giving",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Dein Chef ist unfreundlich zu dir? An deiner ___ würde ich mal in Ruhe mit ihm sprechen.",
+        "correctAnswer": "Stelle",
+        "instruction": {
+          "en": "Fill in the missing noun.",
+          "de": "Ergänzen Sie das fehlende Nomen."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-advice-asking-and-giving__ex5",
+      "lessonId": "b1-telc-advice-asking-and-giving",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Frau Krause: „Soll ich den Vertrag sofort unterschreiben?“ – „Ich würde ___ empfehlen, ihn vorher genau zu lesen.“",
+        "correctAnswer": "Ihnen",
+        "instruction": {
+          "en": "You address Frau Krause with Sie. Fill in the missing pronoun.",
+          "de": "Sie siezen Frau Krause. Ergänzen Sie das fehlende Pronomen."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-advice-asking-and-giving__ex6",
+      "lessonId": "b1-telc-advice-asking-and-giving",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Ihr Kollege Herr Wolf aus einer anderen Filiale zieht bald in Ihre Stadt. Er schreibt Ihnen, dass er eine Wohnung sucht, und fragt Sie um Rat. Antworten Sie ihm: Geben Sie ihm mindestens zwei Tipps.",
+        "modelAnswer": "Lieber Herr Wolf, vielen Dank für Ihre Nachricht. Schön, dass Sie bald zu uns kommen! Leider ist es hier nicht ganz leicht, eine Wohnung zu finden. An Ihrer Stelle würde ich jeden Tag die Anzeigen im Internet und in der Zeitung lesen. Außerdem sollten Sie allen Kollegen sagen, dass Sie eine Wohnung suchen. Oft hört man so von freien Wohnungen. Am besten bereiten Sie auch schon alle Unterlagen vor, zum Beispiel Ihre Gehaltsnachweise. Ich wünsche Ihnen viel Erfolg! Viele Grüße, Maria Novak",
+        "instruction": {
+          "en": "Write the reply. Use Sie.",
+          "de": "Schreiben Sie die Antwort. Benutzen Sie Sie."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-advice-asking-and-giving__ex7",
+      "lessonId": "b1-telc-advice-asking-and-giving",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Sie möchten ein Fahrrad kaufen, wissen aber nicht, ob Sie ein neues oder ein gebrauchtes Fahrrad nehmen sollen. Ihr Freund Jonas kennt sich gut mit Fahrrädern aus. Schreiben Sie ihm eine Nachricht: Beschreiben Sie Ihr Problem und bitten Sie ihn um Rat.",
+        "modelAnswer": "Hallo Jonas, ich brauche mal deinen Rat. Ich möchte mir ein Fahrrad kaufen, damit ich mit dem Rad zur Arbeit fahren kann. Aber ich weiß nicht, ob ich ein neues oder ein gebrauchtes Fahrrad kaufen soll. Neue Räder sind ziemlich teuer, und bei einem gebrauchten habe ich Angst, dass es schnell kaputtgeht. Was würdest du an meiner Stelle machen? Und hast du vielleicht einen Tipp, wo ich ein gutes Rad finde? Viele Grüße, Sara",
+        "instruction": {
+          "en": "Write the message. Use du.",
+          "de": "Schreiben Sie die Nachricht. Benutzen Sie du."
+        }
+      }
     }
   ],
   "prerequisites": [
@@ -6126,6 +6277,7 @@
       },
       "lessonIds": [
         "b1-telc-adjective-endings-ads-and-offices",
+        "b1-telc-advice-asking-and-giving",
         "b1-telc-appointments-making-moving-cancelling",
         "b1-telc-comparison-flats-and-offers",
         "b1-telc-conditions-wenn-falls",
