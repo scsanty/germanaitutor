@@ -31,6 +31,8 @@ export interface Profile {
   unlockNoticeLevel: CefrLevel | null;
   onboardingChoicesSaved: boolean;
   dailyReviewCap: number;
+  newWordsPerDay: number;
+  deckReviewCap: number;
   updatedAt: string;
 }
 

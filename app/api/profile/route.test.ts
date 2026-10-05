@@ -71,6 +71,21 @@ describe('/api/profile', () => {
     expect((await res.json()).dailyReviewCap).toBe(25);
   });
 
+  it('PATCH saves valid deck settings', async () => {
+    const res = await PATCH(new Request('http://localhost', { method: 'PATCH', body: JSON.stringify({ newWordsPerDay: 0, deckReviewCap: 500 }) }));
+    expect(res.status).toBe(200);
+    expect(await res.json()).toMatchObject({ newWordsPerDay: 0, deckReviewCap: 500 });
+  });
+
+  it('PATCH returns 400 with a specific code for out-of-range deck settings', async () => {
+    const words = await PATCH(new Request('http://localhost', { method: 'PATCH', body: JSON.stringify({ newWordsPerDay: 51 }) }));
+    expect(words.status).toBe(400);
+    expect(await words.json()).toEqual({ error: 'New words per day must be a whole number from 0 to 50', code: 'invalid_new_words_per_day' });
+    const cap = await PATCH(new Request('http://localhost', { method: 'PATCH', body: JSON.stringify({ deckReviewCap: 501 }) }));
+    expect(cap.status).toBe(400);
+    expect(await cap.json()).toEqual({ error: 'The flashcard review limit must be a whole number from 1 to 500', code: 'invalid_deck_review_cap' });
+  });
+
   it('PATCH rejects a sound setting that is not true or false with 400 and does not store it', async () => {
     const res = await PATCH(new Request('http://localhost', { method: 'PATCH', body: JSON.stringify({ soundEnabled: 'false' }) }));
     expect(res.status).toBe(400);

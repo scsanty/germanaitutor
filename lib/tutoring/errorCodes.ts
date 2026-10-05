@@ -15,6 +15,8 @@ export type ErrorCode =
   | 'no_session'
   | 'no_exam'
   | 'invalid_daily_cap'
+  | 'invalid_new_words_per_day'
+  | 'invalid_deck_review_cap'
   | 'lesson_locked'
   | 'testout_unavailable'
   | 'testout_cooldown';
