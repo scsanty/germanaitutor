@@ -6720,10 +6720,10 @@
         "track": "telc",
         "level": "B1",
         "title": "Home, work and inquiries",
-        "description": "Vocabulary for housing and the workplace, indirect questions, and exam tasks for ads, phone calls and getting to know someone.",
+        "description": "The Präteritum, Futur I, reflexive verbs and indirect questions, with vocabulary for housing, work, family, food, health and leisure. Phone calls and voicemails and talking about plans and wishes, plus exam tasks for ads, service calls and getting to know someone.",
         "difficultyRank": 1,
         "titleDe": "Wohnen, Arbeit und Anfragen",
-        "descriptionDe": "Wortschatz für Wohnung und Arbeitsplatz, indirekte Fragen und Prüfungsaufgaben zu Anzeigen, Telefonaten und zum Kennenlernen."
+        "descriptionDe": "Präteritum, Futur I, reflexive Verben und indirekte Fragen, dazu Wortschatz für Wohnung, Arbeit, Familie, Essen, Gesundheit und Freizeit. Telefonieren, Nachrichten auf der Mailbox und über Pläne und Wünsche sprechen, außerdem Prüfungsaufgaben zu Anzeigen, Telefonaten mit Firmen und Ämtern und zum Kennenlernen."
       },
       "lessonIds": [
         "b1-telc-futur-i-plans-and-forecasts",
@@ -6749,10 +6749,10 @@
         "track": "telc",
         "level": "B1",
         "title": "Complaints and the news",
-        "description": "Verbs with prepositions and consumer-rights vocabulary for a complaint letter, plus news broadcasts and a radio interview.",
+        "description": "Prepositional verbs, adjective endings, comparison, conditions, the zu-infinitive, lassen and the Plusquamperfekt, with vocabulary for consumer rights, money, travel and festivals. Appointments, advice and talking about experiences, plus a complaint letter, news broadcasts and a radio interview.",
         "difficultyRank": 2,
         "titleDe": "Beschwerden und Nachrichten",
-        "descriptionDe": "Verben mit Präpositionen und Wortschatz zu Verbraucherrechten für einen Beschwerdebrief, dazu Radionachrichten und ein Radiointerview."
+        "descriptionDe": "Verben mit Präpositionen, Adjektivendungen, Vergleiche, Bedingungen, der Infinitiv mit zu, lassen und das Plusquamperfekt, dazu Wortschatz zu Verbraucherrechten, Geld, Reisen und Festen. Termine, Ratschläge und über Erfahrungen sprechen, außerdem ein Beschwerdebrief, Radionachrichten und ein Radiointerview."
       },
       "lessonIds": [
         "b1-telc-adjective-endings-ads-and-offices",
@@ -6780,10 +6780,10 @@
         "track": "telc",
         "level": "B1",
         "title": "Diplomacy and discussion",
-        "description": "Polite Konjunktiv II and the passive at work, discussing a topic, planning together and writing a formal inquiry.",
+        "description": "Polite Konjunktiv II, the passive, the genitive, the n-declension, and relative, time and purpose clauses, with vocabulary for offices, education and technology. Expressing feelings, discussing a topic, planning together and writing a formal inquiry.",
         "difficultyRank": 3,
         "titleDe": "Diplomatisch sein und diskutieren",
-        "descriptionDe": "Höflicher Konjunktiv II und das Passiv bei der Arbeit, über ein Thema sprechen, gemeinsam planen und eine formelle Anfrage schreiben."
+        "descriptionDe": "Höflicher Konjunktiv II, das Passiv, der Genitiv, die n-Deklination sowie Relativ-, Temporal- und Finalsätze, dazu Wortschatz zu Ämtern, Bildung und Technik. Gefühle ausdrücken, über ein Thema sprechen, gemeinsam planen und eine formelle Anfrage schreiben."
       },
       "lessonIds": [
         "b1-telc-feelings-and-reacting-to-news",
@@ -6808,10 +6808,10 @@
         "track": "telc",
         "level": "B1",
         "title": "Language elements and detailed reading",
-        "description": "The Sprachbausteine grammar and vocabulary gaps, headline matching and detailed reading comprehension.",
+        "description": "Participles as adjectives, two-part connectors and word order for the Sprachbausteine, with vocabulary for media and the environment. Headline matching, detailed reading, a personal or semi-formal letter and using the speaking preparation time.",
         "difficultyRank": 4,
         "titleDe": "Sprachbausteine und genaues Lesen",
-        "descriptionDe": "Grammatik- und Wortschatzlücken in den Sprachbausteinen, Überschriften zuordnen und Texte im Detail verstehen."
+        "descriptionDe": "Partizipien als Adjektive, zweiteilige Konnektoren und die Wortstellung für die Sprachbausteine, dazu Wortschatz zu Medien und Umwelt. Überschriften zuordnen, Texte im Detail verstehen, einen persönlichen oder halbformellen Brief schreiben und die Vorbereitungszeit für die mündliche Prüfung nutzen."
       },
       "lessonIds": [
         "b1-telc-participles-as-adjectives",
@@ -6826,6 +6826,80 @@
         "b1-telc-word-order-sentence-bracket",
         "b1-telc-writing-personal-semi-formal-letter"
       ]
+    }
+  ],
+  "conceptLinks": [
+    {
+      "lessonAId": "b1-goethe-participles-as-adjectives",
+      "lessonBId": "b1-telc-participles-as-adjectives"
+    },
+    {
+      "lessonAId": "b1-goethe-relative-clauses-indefinite-pronouns",
+      "lessonBId": "b1-telc-relative-clauses-housing-and-services"
+    },
+    {
+      "lessonAId": "b1-goethe-subjunctive-ii-advice-opinions",
+      "lessonBId": "b1-telc-advice-asking-and-giving"
+    },
+    {
+      "lessonAId": "b1-goethe-subordinate-clauses-final-consecutive",
+      "lessonBId": "b1-telc-purpose-clauses-um-zu-damit"
+    },
+    {
+      "lessonAId": "b1-goethe-vocab-consumerism-environment",
+      "lessonBId": "b1-telc-vocab-environment-and-nature"
+    },
+    {
+      "lessonAId": "b1-goethe-vocab-education-career-training",
+      "lessonBId": "b1-telc-vocab-education-and-learning"
+    },
+    {
+      "lessonAId": "b1-goethe-vocab-social-trends-relationships",
+      "lessonBId": "b1-telc-vocab-family-relationships"
+    },
+    {
+      "lessonAId": "b1-goethe-writing-aufgabe1-personal-email",
+      "lessonBId": "b1-telc-writing-personal-semi-formal-letter"
+    },
+    {
+      "lessonAId": "b1-infinitive-clauses-zu-um-zu",
+      "lessonBId": "b1-telc-infinitive-with-zu-requests-and-rules"
+    },
+    {
+      "lessonAId": "b1-infinitive-clauses-zu-um-zu",
+      "lessonBId": "b1-telc-purpose-clauses-um-zu-damit"
+    },
+    {
+      "lessonAId": "b1-n-declension-weak-masculine-nouns",
+      "lessonBId": "b1-telc-n-declension-people-at-work"
+    },
+    {
+      "lessonAId": "b1-relative-clauses-cases",
+      "lessonBId": "b1-telc-relative-clauses-housing-and-services"
+    },
+    {
+      "lessonAId": "b1-relative-clauses-prepositions",
+      "lessonBId": "b1-telc-relative-clauses-housing-and-services"
+    },
+    {
+      "lessonAId": "b1-subordinate-clauses-temporal",
+      "lessonBId": "b1-telc-temporal-clauses-work-and-daily-life"
+    },
+    {
+      "lessonAId": "b1-telc-two-part-connectors",
+      "lessonBId": "b1-two-part-connectors"
+    },
+    {
+      "lessonAId": "b1-telc-vocab-environment-and-nature",
+      "lessonBId": "b1-vocab-environment-sustainability"
+    },
+    {
+      "lessonAId": "b1-telc-vocab-media-and-communication",
+      "lessonBId": "b1-vocab-digital-media-technology"
+    },
+    {
+      "lessonAId": "b1-telc-vocab-technology-and-internet",
+      "lessonBId": "b1-vocab-digital-media-technology"
     }
   ]
 }

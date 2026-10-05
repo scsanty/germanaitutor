@@ -46,8 +46,24 @@ describe('telc B1 coverage', () => {
     }
   });
 
-  // Enabled in Task 5, once every gap is filled.
-  it.skip('covers every inventory item', () => {
+  it('covers every inventory item', () => {
     for (const item of inventory) expect(coverage[item.id]?.length ?? 0, item.id).toBeGreaterThan(0);
+  });
+
+  it('lists every concept link in both files it touches', () => {
+    const read = (f: string) => JSON.parse(readFileSync(join(process.cwd(), 'data', 'curriculum-seed', f), 'utf8')) as SeedFile;
+    const files = ['telc-b1.json', 'goethe-b1.json', 'generic-b1.json'].map(read);
+    const owner = new Map<string, number>();
+    files.forEach((f, i) => f.lessons.forEach((l) => owner.set(l.id, i)));
+    files.forEach((f, i) => {
+      for (const link of f.conceptLinks ?? []) {
+        for (const end of [link.lessonAId, link.lessonBId]) {
+          const other = owner.get(end);
+          if (other === undefined || other === i) continue;
+          const listed = (files[other].conceptLinks ?? []).some((x) => x.lessonAId === link.lessonAId && x.lessonBId === link.lessonBId);
+          expect(listed, `${link.lessonAId} ↔ ${link.lessonBId} missing in the other file`).toBe(true);
+        }
+      }
+    });
   });
 });
