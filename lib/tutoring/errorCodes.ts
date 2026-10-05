@@ -19,7 +19,10 @@ export type ErrorCode =
   | 'invalid_deck_review_cap'
   | 'lesson_locked'
   | 'testout_unavailable'
-  | 'testout_cooldown';
+  | 'testout_cooldown'
+  | 'already_in_deck'
+  | 'session_exists'
+  | 'session_ending';
 
 export type ErrorParams = Record<string, string>;
 

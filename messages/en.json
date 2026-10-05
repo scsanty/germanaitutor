@@ -21,7 +21,10 @@
     "invalid_deck_review_cap": "The flashcard review limit must be a whole number from 1 to 500",
     "lesson_locked": "This lesson is still locked",
     "testout_unavailable": "This test-out isn't available",
-    "testout_cooldown": "You can try this test-out again later"
+    "testout_cooldown": "You can try this test-out again later",
+    "already_in_deck": "This word is already in your deck",
+    "session_exists": "A session is already open for this mode",
+    "session_ending": "This session is already ending. Please wait a moment."
   },
   "languageToggle": {
     "lesson": "Lesson language",

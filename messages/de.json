@@ -21,7 +21,10 @@
     "invalid_deck_review_cap": "Das Kartenlimit muss eine ganze Zahl von 1 bis 500 sein",
     "lesson_locked": "Diese Lektion ist noch gesperrt",
     "testout_unavailable": "Dieser Test zum Überspringen ist nicht verfügbar",
-    "testout_cooldown": "Du kannst diesen Test später noch einmal machen"
+    "testout_cooldown": "Du kannst diesen Test später noch einmal machen",
+    "already_in_deck": "Dieses Wort ist schon in deinem Kartenstapel",
+    "session_exists": "Für diesen Modus ist schon eine Sitzung offen",
+    "session_ending": "Diese Sitzung wird gerade beendet. Bitte warte einen Moment."
   },
   "languageToggle": {
     "lesson": "Sprache der Lektion",

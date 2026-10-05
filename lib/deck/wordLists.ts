@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { join, resolve } from 'node:path';
 import type { CefrLevel } from '../types';
 import { lemmaKey } from './lemmaKey';
 
@@ -18,8 +18,11 @@ export interface WordListFile {
   entries: WordListEntry[];
 }
 
-export function readWordList(level: CefrLevel): WordListFile {
-  return JSON.parse(readFileSync(join(process.cwd(), 'data', 'wortlisten', `${level.toLowerCase()}.json`), 'utf8')) as WordListFile;
+export const WORD_LIST_DIR = join('data', 'wortlisten');
+
+// `dir` is relative to the working directory (or absolute); tests point it at fixtures.
+export function readWordList(level: CefrLevel, dir: string = WORD_LIST_DIR): WordListFile {
+  return JSON.parse(readFileSync(resolve(process.cwd(), dir, `${level.toLowerCase()}.json`), 'utf8')) as WordListFile;
 }
 
 const ARTICLE = /^(der|die|das) \S/;
