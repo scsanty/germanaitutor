@@ -1171,6 +1171,27 @@
         "An Ihrer Stelle würde ich den Vermieter sofort schriftlich informieren.",
         "Hast du einen Tipp für mich? Ich finde keine Wohnung. – Am besten fragst du auch Freunde und Kollegen."
       ]
+    },
+    {
+      "id": "b1-telc-plans-and-wishes",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "speaking",
+      "title": "Talking about Plans and Wishes",
+      "explanation": "Asking about plans: 'Was hast du am Wochenende vor?' / 'Hast du schon Pläne für den Sommer?' / 'Was haben Sie nach dem Kurs vor?'\nTalking about plans: 'Am Samstag besuche ich meine Eltern.' (present tense + time expression) / 'Ich habe vor, ... zu ...' / 'Ich plane, ...' / 'Ich möchte nächstes Jahr ...' / 'Ich werde ...' (a firm intention or promise) / 'Ich habe mir vorgenommen, ...'\nWishes and dreams: 'Ich würde gern ...' / 'Am liebsten würde ich ...' / 'Ich wünsche mir ...' / 'Mein Traum ist es, ... zu ...'\nWhen you are not sure yet: 'Vielleicht ...' / 'Wahrscheinlich ...' / 'Ich weiß noch nicht genau.'\nGrammar: vorhaben is separable: 'Was hast du vor?' After 'Ich habe vor', 'Ich plane' and 'Mein Traum ist es' you need zu + infinitive at the end: 'Ich habe vor, einen Kurs zu machen.' For fixed plans Germans very often use the present tense with a time expression rather than werden.\nRegister: with colleagues you do not know well, your boss or at an office use Sie: 'Was haben Sie vor?' With friends use du: 'Was hast du vor?'\nCommon mistake: a plan is a fact ('Im Juli fahre ich nach Wien.'); a wish uses würde or hätte ('Ich würde gern nach Wien fahren.').\n",
+      "examples": [
+        "Was hast du am Wochenende vor? – Am Samstag besuche ich meine Eltern, und am Sonntag will ich endlich mal ausschlafen.",
+        "Ich habe vor, nächstes Jahr eine Ausbildung als Pflegefachfrau anzufangen.",
+        "Am liebsten würde ich ein paar Monate in Spanien arbeiten. Das ist schon lange mein Traum."
+      ],
+      "titleDe": "Über Pläne und Wünsche sprechen",
+      "explanationDe": "Nach Plänen fragen: 'Was hast du am Wochenende vor?' / 'Hast du schon Pläne für den Sommer?' / 'Was haben Sie nach dem Kurs vor?'\nÜber Pläne sprechen: 'Am Samstag besuche ich meine Eltern.' (Präsens + Zeitangabe) / 'Ich habe vor, ... zu ...' / 'Ich plane, ...' / 'Ich möchte nächstes Jahr ...' / 'Ich werde ...' (eine feste Absicht oder ein Versprechen) / 'Ich habe mir vorgenommen, ...'\nWünsche und Träume: 'Ich würde gern ...' / 'Am liebsten würde ich ...' / 'Ich wünsche mir ...' / 'Mein Traum ist es, ... zu ...'\nWenn Sie noch nicht sicher sind: 'Vielleicht ...' / 'Wahrscheinlich ...' / 'Ich weiß noch nicht genau.'\nGrammatik: vorhaben ist trennbar: 'Was hast du vor?' Nach 'Ich habe vor', 'Ich plane' und 'Mein Traum ist es' steht zu + Infinitiv am Ende: 'Ich habe vor, einen Kurs zu machen.' Für feste Pläne benutzt man im Deutschen sehr oft das Präsens mit einer Zeitangabe und nicht werden.\nSie oder du: Mit Kollegen, die Sie nicht gut kennen, mit Ihrem Chef oder auf einem Amt sprechen Sie mit Sie: 'Was haben Sie vor?' Mit Freunden sprechen Sie mit du: 'Was hast du vor?'\nTypischer Fehler: Ein Plan ist eine Tatsache ('Im Juli fahre ich nach Wien.'). Ein Wunsch steht mit würde oder hätte ('Ich würde gern nach Wien fahren.').\n",
+      "examplesDe": [
+        "Was hast du am Wochenende vor? – Am Samstag besuche ich meine Eltern, und am Sonntag will ich endlich mal ausschlafen.",
+        "Ich habe vor, nächstes Jahr eine Ausbildung als Pflegefachfrau anzufangen.",
+        "Am liebsten würde ich ein paar Monate in Spanien arbeiten. Das ist schon lange mein Traum."
+      ]
     }
   ],
   "exercises": [
@@ -6115,6 +6136,142 @@
           "de": "Schreiben Sie die Nachricht. Benutzen Sie du."
         }
       }
+    },
+    {
+      "id": "b1-telc-plans-and-wishes__ex0",
+      "lessonId": "b1-telc-plans-and-wishes",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Ihre Kollegin am Freitagmittag: „Was haben Sie am Wochenende vor?“",
+        "options": [
+          "Am Samstag helfe ich meinem Bruder beim Umzug.",
+          "Letztes Wochenende habe ich meinem Bruder beim Umzug geholfen.",
+          "Danke, ich wünsche Ihnen auch ein schönes Wochenende!",
+          "Nein danke, ich habe keinen Hunger."
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "Your colleague asks about your plans. Choose the fitting answer.",
+          "de": "Ihre Kollegin fragt nach Ihren Plänen. Wählen Sie die passende Antwort."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-plans-and-wishes__ex1",
+      "lessonId": "b1-telc-plans-and-wishes",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Sie haben im Moment kein Geld für eine große Reise, aber Sie träumen schon lange von Kanada. Was sagen Sie?",
+        "options": [
+          "Nächsten Monat fliege ich nach Kanada. Das Ticket habe ich schon.",
+          "Am liebsten würde ich einmal nach Kanada reisen.",
+          "Ich war letztes Jahr drei Wochen in Kanada.",
+          "Morgen fliege ich nach Kanada, mein Koffer ist schon gepackt."
+        ],
+        "correctIndex": 1,
+        "instruction": {
+          "en": "Choose the sentence that fits the situation.",
+          "de": "Wählen Sie den Satz, der zur Situation passt."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-plans-and-wishes__ex2",
+      "lessonId": "b1-telc-plans-and-wishes",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Frage passt?",
+        "options": [
+          "Was hast du im Sommer vor?",
+          "Was haben Sie im Sommer vor?",
+          "Was habt ihr im Sommer vor?",
+          "Hast du schon Pläne für den Sommer?"
+        ],
+        "correctIndex": 1,
+        "instruction": {
+          "en": "At a staff party you want to ask your new boss, Frau Lehmann, about her summer plans. Choose the question in the right register.",
+          "de": "Auf einer Betriebsfeier möchten Sie Ihre neue Chefin, Frau Lehmann, nach ihren Plänen für den Sommer fragen. Wählen Sie die Frage mit der passenden Anrede."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-plans-and-wishes__ex3",
+      "lessonId": "b1-telc-plans-and-wishes",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Was hast du am Samstag ___? – Ich gehe mit Freunden wandern.",
+        "correctAnswer": "vor",
+        "acceptableVariants": [
+          "geplant"
+        ],
+        "instruction": {
+          "en": "Fill in the missing word.",
+          "de": "Ergänzen Sie das fehlende Wort."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-plans-and-wishes__ex4",
+      "lessonId": "b1-telc-plans-and-wishes",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Mein großer ___ ist es, irgendwann ein eigenes Café zu eröffnen. (dream)",
+        "correctAnswer": "Traum",
+        "acceptableVariants": [
+          "Lebenstraum"
+        ],
+        "instruction": {
+          "en": "Fill in the German noun for the English word in brackets.",
+          "de": "Ergänzen Sie das passende Nomen. In Klammern steht das Wort auf Englisch."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-plans-and-wishes__ex5",
+      "lessonId": "b1-telc-plans-and-wishes",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Am ___ würde ich nach dem Deutschkurs in Deutschland studieren.",
+        "correctAnswer": "liebsten",
+        "instruction": {
+          "en": "Fill in the missing word so that the sentence expresses your greatest wish.",
+          "de": "Ergänzen Sie das fehlende Wort. Der Satz drückt Ihren größten Wunsch aus."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-plans-and-wishes__ex6",
+      "lessonId": "b1-telc-plans-and-wishes",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Ihr Freund Tom fragt Sie in einer Nachricht, was Sie in den Sommerferien machen. Antworten Sie ihm: Was haben Sie schon geplant? Was würden Sie am liebsten machen? Fragen Sie Tom auch nach seinen Plänen.",
+        "modelAnswer": "Hallo Tom, danke für deine Nachricht! Im Juli fahre ich zwei Wochen zu meiner Familie nach Polen. Danach habe ich vor, einen Sommerkurs an der Volkshochschule zu machen, weil ich mein Deutsch noch verbessern möchte. Am liebsten würde ich im August auch noch ein paar Tage an die Ostsee fahren, aber ich weiß noch nicht, ob ich genug Geld habe. Und du? Was hast du im Sommer vor? Viele Grüße, Kasia",
+        "instruction": {
+          "en": "Write the message. Use du.",
+          "de": "Schreiben Sie die Nachricht. Benutzen Sie du."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-plans-and-wishes__ex7",
+      "lessonId": "b1-telc-plans-and-wishes",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Ihr Teamleiter Herr Schulz möchte wissen, welche beruflichen Pläne Sie für das nächste Jahr haben. Schreiben Sie ihm eine kurze E-Mail: Was planen Sie? Was wünschen Sie sich? Fragen Sie, ob die Firma Sie dabei unterstützen kann.",
+        "modelAnswer": "Sehr geehrter Herr Schulz, vielen Dank für Ihre Frage. Nächstes Jahr habe ich vor, einen Kurs für Buchhaltung zu machen, weil ich in Zukunft mehr Aufgaben im Bereich Finanzen übernehmen möchte. Außerdem würde ich gern mein Deutsch weiter verbessern und die Prüfung für das Niveau B2 machen. Mein Wunsch wäre es, später eine feste Stelle in der Buchhaltung zu bekommen. Könnte die Firma einen Teil der Kurskosten übernehmen? Mit freundlichen Grüßen, Daniel Haddad",
+        "instruction": {
+          "en": "Write the email. Use Sie.",
+          "de": "Schreiben Sie die E-Mail. Benutzen Sie Sie."
+        }
+      }
     }
   ],
   "prerequisites": [
@@ -6233,6 +6390,10 @@
     {
       "lessonId": "b1-telc-writing-personal-semi-formal-letter",
       "prerequisiteLessonId": "b1-telc-writing-inquiry-request-letter"
+    },
+    {
+      "lessonId": "b1-telc-plans-and-wishes",
+      "prerequisiteLessonId": "b1-telc-futur-i-plans-and-forecasts"
     }
   ],
   "milestones": [
@@ -6252,6 +6413,7 @@
         "b1-telc-indirect-questions-official",
         "b1-telc-listening-teil3-transactional-calls",
         "b1-telc-phone-calls-and-voicemails",
+        "b1-telc-plans-and-wishes",
         "b1-telc-praeteritum-reports-and-letters",
         "b1-telc-reading-teil3-classifieds-matching",
         "b1-telc-reflexive-verbs-acc-dat",
