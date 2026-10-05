@@ -33,17 +33,17 @@ async function answerInOrder(
 }
 
 describe('placementService', () => {
-  it('loads the bundled exam only into an empty table', () => {
+  it('loads the bundled exam into an empty table and leaves an uploaded one alone', () => {
     const db = createDbClient(':memory:');
     const service = createPlacementService(db, { gradeFreeText: vi.fn() });
     const file = join(mkdtempSync(join(tmpdir(), 'gait-exam-')), 'exam.json');
     writeFileSync(file, JSON.stringify({ questions: smallPlacementExam() }));
 
-    service.loadSeedExamIfEmpty(file);
+    service.syncBundledExam(file);
     expect(service.questionCount()).toBe(10);
 
-    service.replaceExam(smallPlacementExam().slice(0, 3));
-    service.loadSeedExamIfEmpty(file);
+    service.replaceExam(smallPlacementExam().slice(0, 3), { source: 'uploaded' });
+    service.syncBundledExam(file);
     expect(service.questionCount()).toBe(3);
   });
 

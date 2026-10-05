@@ -200,10 +200,16 @@ export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; 
         }}
       >
         <div className="flex flex-1 flex-col gap-6">
-          <div className="flex justify-end">
-            <LanguageToggle value={language} onChange={setLanguage} label={tToggle('placement')} />
-          </div>
-          {question.instruction && <p className="text-sm text-text-muted">{pickText(question.instruction, language)}</p>}
+          {/* The toggle switches only the instruction (the tested German never changes), so a
+              question without one has nothing to toggle. */}
+          {question.instruction && (
+            <>
+              <div className="flex justify-end">
+                <LanguageToggle value={language} onChange={setLanguage} label={tToggle('placement')} />
+              </div>
+              <p className="text-sm text-text-muted">{pickText(question.instruction, language)}</p>
+            </>
+          )}
           {question.type === 'multiple_choice' && (
             <fieldset className="m-0 min-w-0 border-0 p-0">
               <legend className={cn(TASK, 'mb-4 p-0')}>{question.question}</legend>

@@ -10,6 +10,12 @@ export function pickText(text: LocalizedText, language: ContentLanguage): string
   return language === 'de' && text.de.trim() ? text.de : text.en;
 }
 
+// True when switching languages would show different text, so a toggle is worth showing.
+export function differsByLanguage(text: LocalizedText): boolean {
+  const de = text.de.trim();
+  return de !== '' && de !== text.en.trim();
+}
+
 export function localized(en: string, de: string | null | undefined): LocalizedText {
   return { en, de: de ?? '' };
 }

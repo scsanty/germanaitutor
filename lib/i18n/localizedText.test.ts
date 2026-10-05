@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { isLocalizedText, localized, pickText, readFeedback, storeFeedback } from './localizedText';
+import { differsByLanguage, isLocalizedText, localized, pickText, readFeedback, storeFeedback } from './localizedText';
 
 describe('localizedText', () => {
   it('picks the language and falls back to English when German is empty', () => {
@@ -24,5 +24,13 @@ describe('localizedText', () => {
     expect(readFeedback({ en: 'x', de: 'y' })).toEqual({ en: 'x', de: 'y' });
     expect(readFeedback(null)).toBeNull();
     expect(readFeedback('')).toBeNull();
+  });
+});
+
+describe('differsByLanguage', () => {
+  it('is true only when the German text exists and differs from the English', () => {
+    expect(differsByLanguage({ en: 'Hi', de: 'Hallo' })).toBe(true);
+    expect(differsByLanguage({ en: 'Hi', de: '' })).toBe(false);
+    expect(differsByLanguage({ en: 'Hi', de: ' Hi ' })).toBe(false);
   });
 });

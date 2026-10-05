@@ -31,7 +31,7 @@ function WizardCard({ step, children }: { step: Step; children: ReactNode }) {
   return (
     <div className="flex min-h-dvh items-center justify-center px-4 py-8">
       <Card className="w-full max-w-md gap-6 px-5 py-8 sm:px-8">
-        <Logo variant="full" className="mx-auto h-20 w-auto" />
+        <Logo className="mx-auto w-full max-w-sm" />
         <ol aria-hidden className="flex items-center justify-center gap-2">
           {DOT_STEPS.map((dot, index) => (
             <li
@@ -160,6 +160,12 @@ export function OnboardingWizard({ initialStep = 'welcome' }: { initialStep?: St
           body: JSON.stringify({ selectedModel }),
         });
         if (!res.ok) throw new Error(String(res.status));
+        // Saving the model re-tests it; a model the provider rejects keeps the student here.
+        const saved = (await res.json()) as { lastValidatedStatus?: string; lastError?: string | null };
+        if (saved.lastValidatedStatus === 'invalid') {
+          setProviderNextError(saved.lastError || t('connectionFailed'));
+          return;
+        }
       } catch {
         setProviderNextError(t('modelSaveFailed'));
         return;

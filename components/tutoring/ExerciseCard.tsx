@@ -9,7 +9,7 @@ import type { GradeResult } from '@/lib/tutoring/grading';
 import type { PracticeGradeOutcome } from '@/lib/tutoring/practiceViews';
 import type { TestOutAnswerOutcome } from '@/lib/tutoring/testOutViews';
 import { LanguageToggle } from '@/components/LanguageToggle';
-import { pickText, type ContentLanguage, type LocalizedText } from '@/lib/i18n/localizedText';
+import { differsByLanguage, pickText, type ContentLanguage, type LocalizedText } from '@/lib/i18n/localizedText';
 import { useApiErrorText } from '@/components/useApiErrorText';
 import { useExerciseShortcuts } from '@/components/focus/useExerciseShortcuts';
 import { useSound } from '@/lib/sound/useSound';
@@ -273,7 +273,8 @@ export function ExerciseCard({
             {shown.feedback && (
               <div className="flex items-start justify-between gap-3">
                 <p className="min-w-0 text-sm leading-relaxed">{t('feedback', { feedback: pickText(shown.feedback, feedbackLanguage) })}</p>
-                <LanguageToggle value={feedbackLanguage} onChange={setFeedbackLanguage} label={tToggle('feedback')} />
+                {/* Legacy plain-text feedback and English-only feedback read the same either way. */}
+                {differsByLanguage(shown.feedback) && <LanguageToggle value={feedbackLanguage} onChange={setFeedbackLanguage} label={tToggle('feedback')} />}
               </div>
             )}
           </div>

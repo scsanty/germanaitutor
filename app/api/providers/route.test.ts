@@ -4,11 +4,11 @@ import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { closeDb } from '@/lib/db/client';
 
-const { listModels } = vi.hoisted(() => ({ listModels: vi.fn() }));
+const { listModels, testConnection } = vi.hoisted(() => ({ listModels: vi.fn(), testConnection: vi.fn() }));
 
 vi.mock('@/lib/providers/registry', () => ({
   getAdapter: () => ({
-    testConnection: vi.fn().mockResolvedValue({ ok: true }),
+    testConnection,
     listModels,
     generateText: vi.fn(),
   }),
@@ -31,6 +31,8 @@ describe('/api/providers', () => {
   beforeEach(() => {
     process.env.GAIT_DATA_DIR = mkdtempSync(join(tmpdir(), 'gait-api-'));
     listModels.mockReset();
+    testConnection.mockReset();
+    testConnection.mockResolvedValue({ ok: true });
   });
 
   afterEach(() => {
@@ -81,6 +83,28 @@ describe('/api/providers', () => {
 
     const deleteRes = await DELETE(new Request('http://localhost'), { params: Promise.resolve({ id: String(created.id) }) });
     expect(deleteRes.status).toBe(204);
+  });
+
+  it('re-tests the connection with the new model when PATCH changes it', async () => {
+    const created = await createConnection({ providerType: 'gemini', apiKey: 'gm-test' });
+    testConnection.mockResolvedValue({ ok: false, error: 'Gemini model gemini-gone returned 404' });
+    const res = await PATCH(
+      new Request('http://localhost', { method: 'PATCH', body: JSON.stringify({ selectedModel: 'gemini-gone' }) }),
+      { params: Promise.resolve({ id: String(created.id) }) }
+    );
+    expect(testConnection).toHaveBeenLastCalledWith({ apiKey: 'gm-test', host: undefined }, { model: 'gemini-gone' });
+    const body = await res.json();
+    expect(body.lastValidatedStatus).toBe('invalid');
+    expect(body.lastError).toBe('Gemini model gemini-gone returned 404');
+  });
+
+  it('does not re-test when PATCH changes only the label', async () => {
+    const created = await createConnection({ providerType: 'gemini', apiKey: 'gm-test' });
+    await PATCH(
+      new Request('http://localhost', { method: 'PATCH', body: JSON.stringify({ label: 'Work' }) }),
+      { params: Promise.resolve({ id: String(created.id) }) }
+    );
+    expect(testConnection).not.toHaveBeenCalled();
   });
 
   it('lists the models available to a connection', async () => {

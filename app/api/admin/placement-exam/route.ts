@@ -31,6 +31,6 @@ export async function PUT(request: Request) {
   const parsed = parsePlacementExam(await request.text(), format);
   if (!parsed.ok) return NextResponse.json({ errors: parsed.errors }, { status: 400 });
   const service = createPlacementService(getDb());
-  service.replaceExam(parsed.questions);
+  service.replaceExam(parsed.questions, { source: 'uploaded' });
   return NextResponse.json({ ok: true, questionCount: service.questionCount() });
 }

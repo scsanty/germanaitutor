@@ -333,6 +333,14 @@ function createTablesIfMissing(db: Database.Database): void {
       content TEXT NOT NULL
     );
 
+    -- Where the stored placement exam came from. A bundled exam is refreshed when the bundled file
+    -- changes (content_hash); an uploaded one is never replaced at seed time.
+    CREATE TABLE IF NOT EXISTS placement_exam_meta (
+      id INTEGER PRIMARY KEY CHECK (id = 1),
+      source TEXT NOT NULL CHECK (source IN ('bundled','uploaded')),
+      content_hash TEXT
+    );
+
     CREATE TABLE IF NOT EXISTS placement_session (
       id INTEGER PRIMARY KEY CHECK (id = 1),
       started_at TEXT NOT NULL,

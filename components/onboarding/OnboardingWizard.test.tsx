@@ -210,4 +210,19 @@ describe('OnboardingWizard', () => {
     expect(await screen.findByRole('alert')).toHaveTextContent('Could not save the model. Please try again.');
     expect(screen.getByText('Test connection')).toBeInTheDocument();
   });
+
+  it('stays on the provider step and shows the error when the chosen model fails its check', async () => {
+    stubFetch({
+      '/api/providers/1': {
+        ok: true,
+        json: async () => ({ id: 1, selectedModel: 'model-a', lastValidatedStatus: 'invalid', lastError: 'Gemini model model-a returned 404' }),
+      },
+    });
+    await connectSuccessfully();
+    await waitFor(() => expect(screen.getByText('Next')).not.toBeDisabled());
+    fireEvent.click(screen.getByText('Next'));
+    expect(await screen.findByRole('alert')).toHaveTextContent('Gemini model model-a returned 404');
+    expect(screen.getByText('Test connection')).toBeInTheDocument();
+    expect(screen.queryByText('Choose your track')).not.toBeInTheDocument();
+  });
 });

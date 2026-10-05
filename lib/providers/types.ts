@@ -35,8 +35,13 @@ export interface GenerateTextResult {
   outputTokens?: number;
 }
 
+export interface TestConnectionOptions {
+  /** The configured model. Adapters that support it also check this model answers, not only the key. */
+  model?: string;
+}
+
 export interface ProviderAdapter {
-  testConnection(creds: ProviderCredentials): Promise<TestConnectionResult>;
+  testConnection(creds: ProviderCredentials, options?: TestConnectionOptions): Promise<TestConnectionResult>;
   listModels(creds: ProviderCredentials): Promise<ModelInfo[]>;
   generateText(creds: ProviderCredentials, params: GenerateTextParams): Promise<GenerateTextResult>;
 }

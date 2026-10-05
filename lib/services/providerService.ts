@@ -67,20 +67,38 @@ export function createProviderService(db: Database.Database, keyFilePath?: strin
     return getConnection(Number(info.lastInsertRowid))!;
   }
 
+  function storedKeyDiffers(existing: Row, apiKey: string): boolean {
+    if (!existing.encrypted_api_key) return true;
+    try {
+      return decrypt(existing.encrypted_api_key, masterKey) !== apiKey;
+    } catch {
+      return true;
+    }
+  }
+
+  // A new model, key or host invalidates the last check, so the status drops to 'untested'
+  // instead of showing a stale "valid" (the caller re-tests; see the PATCH route).
   function updateConnection(
     id: number,
     input: Partial<{ label: string; apiKey: string; ollamaHost: string; selectedModel: string }>
   ): ProviderConnection | null {
     const existing = getRow(id);
     if (!existing) return null;
+    const changed =
+      (input.selectedModel !== undefined && input.selectedModel !== existing.selected_model) ||
+      (input.ollamaHost !== undefined && input.ollamaHost !== existing.ollama_host) ||
+      (input.apiKey !== undefined && storedKeyDiffers(existing, input.apiKey));
     const encryptedKey = input.apiKey !== undefined ? encrypt(input.apiKey, masterKey) : existing.encrypted_api_key;
     db.prepare(
-      `UPDATE provider_connections SET label = ?, encrypted_api_key = ?, ollama_host = ?, selected_model = ? WHERE id = ?`
+      `UPDATE provider_connections SET label = ?, encrypted_api_key = ?, ollama_host = ?, selected_model = ?,
+         last_validated_status = ?, last_error = ? WHERE id = ?`
     ).run(
       input.label ?? existing.label,
       encryptedKey,
       input.ollamaHost ?? existing.ollama_host,
       input.selectedModel ?? existing.selected_model,
+      changed ? 'untested' : existing.last_validated_status,
+      changed ? null : existing.last_error,
       id
     );
     return getConnection(id);
@@ -115,7 +133,7 @@ export function createProviderService(db: Database.Database, keyFilePath?: strin
       return { ok: false, error };
     }
     const creds = { apiKey, host: row.ollama_host ?? undefined };
-    const result = await adapter.testConnection(creds);
+    const result = await adapter.testConnection(creds, row.selected_model ? { model: row.selected_model } : undefined);
     db.prepare(
       `UPDATE provider_connections SET last_validated_status = ?, last_validated_at = datetime('now'), last_error = ? WHERE id = ?`
     ).run(result.ok ? 'valid' : 'invalid', result.error ?? null, id);
