@@ -122,17 +122,15 @@ Generated from `data/curriculum-seed/telc-b1.json`, `data/inventory/b1.json` and
 
 ## 3. Concept links added
 
-19 links, each listed in `telc-b1.json` and in the other file it touches. Before this task no B1 seed file had a `conceptLinks` list.
+17 links, each listed in `telc-b1.json` and in the other file it touches. Before this task no B1 seed file had a `conceptLinks` list.
 
 | telc B1 lesson | Linked lesson | File | Why |
 |---|---|---|---|
 | `b1-telc-participles-as-adjectives` | `b1-goethe-participles-as-adjectives` (Attributive Adjectives Formed from Participles (Partizip I und II)) | goethe-b1.json | Both teach Partizip I and II used as attributive adjectives with adjective endings. |
-| `b1-telc-relative-clauses-housing-and-services` | `b1-goethe-relative-clauses-indefinite-pronouns` (Relative Clauses with Indefinite Pronouns and Neutral References (was, alles)) | goethe-b1.json | Both teach was as the relative pronoun after alles, etwas, nichts and das. |
 | `b1-telc-advice-asking-and-giving` | `b1-goethe-subjunctive-ii-advice-opinions` (Modals in Subjunctive II for Recommendations and Opinions) | goethe-b1.json | Both teach giving advice and recommendations with sollte and other Konjunktiv II forms. |
 | `b1-telc-purpose-clauses-um-zu-damit` | `b1-goethe-subordinate-clauses-final-consecutive` (Final and Consecutive Clauses (damit, um... zu, sodass)) | goethe-b1.json | Both teach purpose clauses with um … zu and damit, and when to use each. |
 | `b1-telc-vocab-environment-and-nature` | `b1-goethe-vocab-consumerism-environment` (Modern Consumption, Media Habits, and Ecological Awareness) | goethe-b1.json | Same theme: waste, packaging and environmentally friendly or harmful behaviour (umweltschädlich, recycling). |
 | `b1-telc-vocab-education-and-learning` | `b1-goethe-vocab-education-career-training` (Education Paths, Vocational Training, and Lifelong Learning) | goethe-b1.json | Same theme: school, vocational training, qualifications and further education. |
-| `b1-telc-vocab-family-relationships` | `b1-goethe-vocab-social-trends-relationships` (Social Trends, Generations, and Cohabitation) | goethe-b1.json | Same theme: family, relationships and living together. |
 | `b1-telc-writing-personal-semi-formal-letter` | `b1-goethe-writing-aufgabe1-personal-email` (Composing an Informal Personal Narrative (Goethe Schreiben Aufgabe 1)) | goethe-b1.json | Both teach the personal letter or email to a friend: content points, du register, openings and closings. |
 | `b1-telc-infinitive-with-zu-requests-and-rules` | `b1-infinitive-clauses-zu-um-zu` (Infinitives with Zu, Um Zu, and Ohne Zu) | generic-b1.json | Both teach the zu-infinitive after verbs, nouns and adjectives, including zu inside separable verbs. |
 | `b1-telc-purpose-clauses-um-zu-damit` | `b1-infinitive-clauses-zu-um-zu` (Infinitives with Zu, Um Zu, and Ohne Zu) | generic-b1.json | Both teach um … zu for purpose with the same-subject rule and damit for a different subject. |
