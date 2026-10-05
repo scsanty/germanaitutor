@@ -6402,7 +6402,7 @@
         "correctAnswer": "Als",
         "instruction": {
           "en": "Fill in the German word for 'when'. The sentence is about one event in the past.",
-          "de": "Ergänzen Sie die passende Konjunktion. Der Satz beschreibt ein einmaliges Ereignis in der Vergangenheit."
+          "de": "Ergänzen Sie das deutsche Wort für 'when'. Der Satz beschreibt ein einmaliges Ereignis in der Vergangenheit."
         }
       }
     },
@@ -6444,7 +6444,7 @@
       "track": "telc",
       "type": "free_text",
       "content": {
-        "prompt": "Frau Berger, die Leiterin Ihres Integrationskurses, bittet ehemalige Teilnehmer, von ihrem Praktikum zu berichten. Schreiben Sie ihr eine E-Mail: Wo haben Sie das Praktikum gemacht? Was waren Ihre Aufgaben? Was war gut, was war schwierig? Würden Sie das Praktikum weiterempfehlen?",
+        "prompt": "Frau Berger, die Leiterin Ihres Integrationskurses, bittet ehemalige Teilnehmer, von ihrem eigenen Praktikum zu berichten. Schreiben Sie ihr eine E-Mail: Wo haben Sie das Praktikum gemacht? Was waren Ihre Aufgaben? Was war gut, was war schwierig? Würden Sie das Praktikum weiterempfehlen?",
         "modelAnswer": "Sehr geehrte Frau Berger, gern berichte ich von meinem Praktikum. Ich habe im Frühling sechs Wochen in einer Autowerkstatt in Bremen gearbeitet. Zuerst musste ich vor allem Reifen wechseln und die Werkstatt aufräumen, später durfte ich auch bei Reparaturen helfen. Die Kollegen waren sehr nett und haben mir viel erklärt. Schwierig waren am Anfang die vielen Fachwörter, aber nach zwei Wochen habe ich fast alles verstanden. Ich habe dort viele gute Erfahrungen gemacht und kann das Praktikum auf jeden Fall weiterempfehlen. Mit freundlichen Grüßen, Yusuf Demir",
         "instruction": {
           "en": "Write the email. Use Sie.",
