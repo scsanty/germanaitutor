@@ -1192,6 +1192,27 @@
         "Ich habe vor, nächstes Jahr eine Ausbildung als Pflegefachfrau anzufangen.",
         "Am liebsten würde ich ein paar Monate in Spanien arbeiten. Das ist schon lange mein Traum."
       ]
+    },
+    {
+      "id": "b1-telc-talking-about-experiences",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "speaking",
+      "title": "Talking about Experiences",
+      "explanation": "Asking about experiences: 'Hast du schon einmal ...?' / 'Warst du schon mal in ...?' / 'Welche Erfahrungen haben Sie mit ... gemacht?' / 'Wie war das für dich?'\nReporting: 'Ich habe gute / schlechte Erfahrungen mit ... gemacht.' / 'Ich habe schon einmal ...' / 'Ich habe noch nie ...' / 'Als ich in ... war, ...' / 'Vor zwei Jahren ...' / 'Zuerst ..., dann ..., am Ende ...'\nEvaluating: 'Das war eine tolle Erfahrung.' / 'Das hat mir sehr gut gefallen.' / 'Daraus habe ich gelernt, dass ...' / 'Das würde ich jederzeit wieder machen.'\nTenses: when you speak or write a personal letter, use the Perfekt for most verbs ('Ich habe dort gearbeitet.', 'Ich bin nach Wien gefahren.'). With sein, haben and the modal verbs the Präteritum is more common: 'Ich war ...', 'Ich hatte ...', 'Ich musste ...'.\nUse als for a single event in the past ('Als ich nach Deutschland kam, ...') and wenn for something that happened again and again ('Immer wenn ich ...').\nCollocations: Erfahrungen machen mit + dative ('Ich habe mit dem Vermieter schlechte Erfahrungen gemacht.'); Erfahrung haben in + dative means having skills in a field ('Ich habe Erfahrung im Verkauf.').\nRegister: in a job interview or with people you do not know well use Sie: 'Haben Sie schon einmal ...?' With friends use du: 'Hast du schon mal ...?'\n",
+      "examples": [
+        "Hast du schon einmal in einem Restaurant gearbeitet? – Ja, als Student habe ich zwei Jahre in einer Pizzeria gekellnert.",
+        "Mit meinem ersten Vermieter habe ich leider schlechte Erfahrungen gemacht: Er hat nie etwas repariert.",
+        "Als ich nach Deutschland kam, war alles neu für mich. Aber ich habe schnell gelernt, dass Pünktlichkeit bei der Arbeit sehr wichtig ist."
+      ],
+      "titleDe": "Über Erfahrungen sprechen",
+      "explanationDe": "Nach Erfahrungen fragen: 'Hast du schon einmal ...?' / 'Warst du schon mal in ...?' / 'Welche Erfahrungen haben Sie mit ... gemacht?' / 'Wie war das für dich?'\nBerichten: 'Ich habe gute / schlechte Erfahrungen mit ... gemacht.' / 'Ich habe schon einmal ...' / 'Ich habe noch nie ...' / 'Als ich in ... war, ...' / 'Vor zwei Jahren ...' / 'Zuerst ..., dann ..., am Ende ...'\nBewerten: 'Das war eine tolle Erfahrung.' / 'Das hat mir sehr gut gefallen.' / 'Daraus habe ich gelernt, dass ...' / 'Das würde ich jederzeit wieder machen.'\nZeitformen: Wenn Sie sprechen oder einen persönlichen Brief schreiben, benutzen Sie für die meisten Verben das Perfekt ('Ich habe dort gearbeitet.', 'Ich bin nach Wien gefahren.'). Bei sein, haben und den Modalverben ist das Präteritum üblicher: 'Ich war ...', 'Ich hatte ...', 'Ich musste ...'.\nals steht für ein einmaliges Ereignis in der Vergangenheit ('Als ich nach Deutschland kam, ...'), wenn für etwas, das oft passiert ist ('Immer wenn ich ...').\nFeste Verbindungen: Erfahrungen machen mit + Dativ ('Ich habe mit dem Vermieter schlechte Erfahrungen gemacht.'). Erfahrung haben in + Dativ bedeutet, dass man etwas gut kann ('Ich habe Erfahrung im Verkauf.').\nSie oder du: Im Vorstellungsgespräch oder mit Menschen, die Sie nicht gut kennen, sprechen Sie mit Sie: 'Haben Sie schon einmal ...?' Mit Freunden sprechen Sie mit du: 'Hast du schon mal ...?'\n",
+      "examplesDe": [
+        "Hast du schon einmal in einem Restaurant gearbeitet? – Ja, als Student habe ich zwei Jahre in einer Pizzeria gekellnert.",
+        "Mit meinem ersten Vermieter habe ich leider schlechte Erfahrungen gemacht: Er hat nie etwas repariert.",
+        "Als ich nach Deutschland kam, war alles neu für mich. Aber ich habe schnell gelernt, dass Pünktlichkeit bei der Arbeit sehr wichtig ist."
+      ]
     }
   ],
   "exercises": [
@@ -6272,6 +6293,143 @@
           "de": "Schreiben Sie die E-Mail. Benutzen Sie Sie."
         }
       }
+    },
+    {
+      "id": "b1-telc-talking-about-experiences__ex0",
+      "lessonId": "b1-telc-talking-about-experiences",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Ihr Freund: „Warst du schon mal in Hamburg?“",
+        "options": [
+          "Ja, vor zwei Jahren. Die Stadt hat mir sehr gut gefallen.",
+          "Ja, nächstes Jahr fahre ich bestimmt hin.",
+          "Nein danke, ich fahre lieber mit dem Bus.",
+          "Gute Reise und viel Spaß in Hamburg!"
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "Choose the fitting answer.",
+          "de": "Wählen Sie die passende Antwort."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-talking-about-experiences__ex1",
+      "lessonId": "b1-telc-talking-about-experiences",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Im Vorstellungsgespräch: „Welche Erfahrungen haben Sie schon in der Pflege gemacht?“",
+        "options": [
+          "Ich habe zwei Jahre in einem Altenheim gearbeitet und dort viel gelernt.",
+          "Ich habe zwei Jahre in einem Altenheim gearbeitet, weißt du?",
+          "Ich pflege meine Pflanzen zu Hause sehr gern.",
+          "Erfahrungen? Das ist doch egal, oder?"
+        ],
+        "correctIndex": 0,
+        "instruction": {
+          "en": "You are at a job interview in a care home. Choose the fitting answer.",
+          "de": "Sie sind in einem Vorstellungsgespräch in einem Pflegeheim. Wählen Sie die passende Antwort."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-talking-about-experiences__ex2",
+      "lessonId": "b1-telc-talking-about-experiences",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Satz ist richtig?",
+        "options": [
+          "Letzten Sommer fahre ich mit meiner Schwester nach Italien.",
+          "Letzten Sommer werde ich mit meiner Schwester nach Italien fahren.",
+          "Letzten Sommer habe ich mit meiner Schwester nach Italien gefahren.",
+          "Letzten Sommer bin ich mit meiner Schwester nach Italien gefahren."
+        ],
+        "correctIndex": 3,
+        "instruction": {
+          "en": "You are telling a friend about your last holiday.",
+          "de": "Sie erzählen einer Freundin von Ihrem letzten Urlaub."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-talking-about-experiences__ex3",
+      "lessonId": "b1-telc-talking-about-experiences",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Mit diesem Handyvertrag habe ich leider schlechte Erfahrungen ___. Ich würde ihn nicht noch einmal abschließen.",
+        "correctAnswer": "gemacht",
+        "acceptableVariants": [
+          "gesammelt"
+        ],
+        "instruction": {
+          "en": "Fill in the missing past participle.",
+          "de": "Ergänzen Sie das fehlende Partizip II."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-talking-about-experiences__ex4",
+      "lessonId": "b1-telc-talking-about-experiences",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "___ ich zum ersten Mal in Deutschland war, habe ich kaum ein Wort verstanden.",
+        "correctAnswer": "Als",
+        "instruction": {
+          "en": "Fill in the German word for 'when'. The sentence is about one event in the past.",
+          "de": "Ergänzen Sie die passende Konjunktion. Der Satz beschreibt ein einmaliges Ereignis in der Vergangenheit."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-talking-about-experiences__ex5",
+      "lessonId": "b1-telc-talking-about-experiences",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Warst du schon ___ in der Schweiz? – Nein, da war ich noch nie. (ever)",
+        "correctAnswer": "einmal",
+        "acceptableVariants": [
+          "mal",
+          "jemals"
+        ],
+        "instruction": {
+          "en": "Fill in the German word for the English word in brackets.",
+          "de": "Ergänzen Sie das passende Wort. In Klammern steht das Wort auf Englisch."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-talking-about-experiences__ex6",
+      "lessonId": "b1-telc-talking-about-experiences",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Ihre Freundin Leonie möchte in eine Wohngemeinschaft (WG) ziehen. Sie haben selbst zwei Jahre in einer WG gewohnt. Schreiben Sie Leonie eine Nachricht: Wann und wo haben Sie in der WG gewohnt? Was war gut, was war schwierig? Was haben Sie daraus gelernt?",
+        "modelAnswer": "Liebe Leonie, toll, dass du in eine WG ziehen möchtest! Ich habe während meines Studiums zwei Jahre in einer WG in Köln gewohnt. Meistens hat es mir sehr gut gefallen: Wir haben oft zusammen gekocht, und ich war nie allein. Schwierig war am Anfang das Putzen, weil nicht alle gleich ordentlich waren. Deshalb haben wir dann einen Putzplan gemacht, und danach hat es gut geklappt. Daraus habe ich gelernt, dass man Probleme in einer WG am besten sofort anspricht. Liebe Grüße, Amira",
+        "instruction": {
+          "en": "Write the message. Use du.",
+          "de": "Schreiben Sie die Nachricht. Benutzen Sie du."
+        }
+      }
+    },
+    {
+      "id": "b1-telc-talking-about-experiences__ex7",
+      "lessonId": "b1-telc-talking-about-experiences",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Frau Berger, die Leiterin Ihres Integrationskurses, bittet ehemalige Teilnehmer, von ihrem Praktikum zu berichten. Schreiben Sie ihr eine E-Mail: Wo haben Sie das Praktikum gemacht? Was waren Ihre Aufgaben? Was war gut, was war schwierig? Würden Sie das Praktikum weiterempfehlen?",
+        "modelAnswer": "Sehr geehrte Frau Berger, gern berichte ich von meinem Praktikum. Ich habe im Frühling sechs Wochen in einer Autowerkstatt in Bremen gearbeitet. Zuerst musste ich vor allem Reifen wechseln und die Werkstatt aufräumen, später durfte ich auch bei Reparaturen helfen. Die Kollegen waren sehr nett und haben mir viel erklärt. Schwierig waren am Anfang die vielen Fachwörter, aber nach zwei Wochen habe ich fast alles verstanden. Ich habe dort viele gute Erfahrungen gemacht und kann das Praktikum auf jeden Fall weiterempfehlen. Mit freundlichen Grüßen, Yusuf Demir",
+        "instruction": {
+          "en": "Write the email. Use Sie.",
+          "de": "Schreiben Sie die E-Mail. Benutzen Sie Sie."
+        }
+      }
     }
   ],
   "prerequisites": [
@@ -6394,6 +6552,10 @@
     {
       "lessonId": "b1-telc-plans-and-wishes",
       "prerequisiteLessonId": "b1-telc-futur-i-plans-and-forecasts"
+    },
+    {
+      "lessonId": "b1-telc-talking-about-experiences",
+      "prerequisiteLessonId": "b1-telc-praeteritum-reports-and-letters"
     }
   ],
   "milestones": [
@@ -6449,6 +6611,7 @@
         "b1-telc-listening-teil2-longer-interview",
         "b1-telc-plusquamperfekt-incident-reports",
         "b1-telc-prepositional-verbs-service-queries",
+        "b1-telc-talking-about-experiences",
         "b1-telc-vocab-consumer-rights-complaints",
         "b1-telc-vocab-festivals-and-traditions",
         "b1-telc-vocab-money-and-banking",
