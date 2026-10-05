@@ -8,9 +8,10 @@ import { createDbClient } from '../db/client';
 import { encrypt } from '../crypto/encrypt';
 import { createProviderService } from './providerService';
 
+const { mockTestConnection } = vi.hoisted(() => ({ mockTestConnection: vi.fn() }));
 vi.mock('../providers/registry', () => ({
   getAdapter: vi.fn(() => ({
-    testConnection: vi.fn().mockResolvedValue({ ok: true }),
+    testConnection: mockTestConnection.mockResolvedValue({ ok: true }),
     listModels: vi.fn(),
     generateText: vi.fn(),
   })),
@@ -53,6 +54,13 @@ describe('providerService', () => {
     const result = await service.testConnection(created.id);
     expect(result.ok).toBe(true);
     expect(service.getConnection(created.id)?.lastValidatedStatus).toBe('valid');
+  });
+
+  it('passes the selected model to the adapter so the check covers it', async () => {
+    const { service } = setup();
+    const created = service.createConnection({ providerType: 'gemini', apiKey: 'gm-test', selectedModel: 'models/gemini-3.5-flash' });
+    await service.testConnection(created.id);
+    expect(mockTestConnection).toHaveBeenLastCalledWith({ apiKey: 'gm-test', host: undefined }, { model: 'models/gemini-3.5-flash' });
   });
 
   it('returns an error instead of throwing when the stored key cannot be decrypted', async () => {

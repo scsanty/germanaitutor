@@ -115,7 +115,7 @@ export function createProviderService(db: Database.Database, keyFilePath?: strin
       return { ok: false, error };
     }
     const creds = { apiKey, host: row.ollama_host ?? undefined };
-    const result = await adapter.testConnection(creds);
+    const result = await adapter.testConnection(creds, row.selected_model ? { model: row.selected_model } : undefined);
     db.prepare(
       `UPDATE provider_connections SET last_validated_status = ?, last_validated_at = datetime('now'), last_error = ? WHERE id = ?`
     ).run(result.ok ? 'valid' : 'invalid', result.error ?? null, id);
