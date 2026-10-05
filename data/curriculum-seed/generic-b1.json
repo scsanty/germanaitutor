@@ -1,5 +1,5 @@
 {
-  "seedVersion": "6",
+  "seedVersion": "7",
   "formatVersion": 3,
   "track": "generic",
   "level": "B1",
@@ -1697,6 +1697,52 @@
         "b1-speaking-presenting-topic",
         "b1-writing-argumentative-forum-post"
       ]
+    }
+  ],
+  "conceptLinks": [
+    {
+      "lessonAId": "b1-infinitive-clauses-zu-um-zu",
+      "lessonBId": "b1-telc-infinitive-with-zu-requests-and-rules"
+    },
+    {
+      "lessonAId": "b1-infinitive-clauses-zu-um-zu",
+      "lessonBId": "b1-telc-purpose-clauses-um-zu-damit"
+    },
+    {
+      "lessonAId": "b1-n-declension-weak-masculine-nouns",
+      "lessonBId": "b1-telc-n-declension-people-at-work"
+    },
+    {
+      "lessonAId": "b1-relative-clauses-cases",
+      "lessonBId": "b1-telc-relative-clauses-housing-and-services"
+    },
+    {
+      "lessonAId": "b1-relative-clauses-prepositions",
+      "lessonBId": "b1-telc-relative-clauses-housing-and-services"
+    },
+    {
+      "lessonAId": "b1-subjunctive-ii-wishes-hypotheticals",
+      "lessonBId": "b1-telc-konjunktiv-ii-wishes-and-unreal-conditions"
+    },
+    {
+      "lessonAId": "b1-subordinate-clauses-temporal",
+      "lessonBId": "b1-telc-temporal-clauses-work-and-daily-life"
+    },
+    {
+      "lessonAId": "b1-telc-two-part-connectors",
+      "lessonBId": "b1-two-part-connectors"
+    },
+    {
+      "lessonAId": "b1-telc-vocab-environment-and-nature",
+      "lessonBId": "b1-vocab-environment-sustainability"
+    },
+    {
+      "lessonAId": "b1-telc-vocab-media-and-communication",
+      "lessonBId": "b1-vocab-digital-media-technology"
+    },
+    {
+      "lessonAId": "b1-telc-vocab-technology-and-internet",
+      "lessonBId": "b1-vocab-digital-media-technology"
     }
   ]
 }
