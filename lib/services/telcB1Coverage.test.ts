@@ -57,6 +57,11 @@ describe('telc B1 coverage', () => {
     files.forEach((f, i) => f.lessons.forEach((l) => owner.set(l.id, i)));
     files.forEach((f, i) => {
       for (const link of f.conceptLinks ?? []) {
+        const ownerA = owner.get(link.lessonAId);
+        const ownerB = owner.get(link.lessonBId);
+        expect(ownerA, `${link.lessonAId} does not exist in any B1 seed file`).toBeDefined();
+        expect(ownerB, `${link.lessonBId} does not exist in any B1 seed file`).toBeDefined();
+        expect(ownerA, `${link.lessonAId} ↔ ${link.lessonBId} is not cross-track`).not.toBe(ownerB);
         for (const end of [link.lessonAId, link.lessonBId]) {
           const other = owner.get(end);
           if (other === undefined || other === i) continue;
