@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import { existsSync, readFileSync } from 'node:fs';
 import type Database from 'better-sqlite3';
 import type { CefrLevel, Profile } from '../types';
@@ -19,6 +20,8 @@ import { gradeFreeText, type FreeTextGradeOutcome } from './freeTextGradingServi
 import { readFeedback } from '../i18n/localizedText';
 import { createProfileService } from './profileService';
 import { createUnlockService } from './unlockService';
+
+export type PlacementExamSource = 'bundled' | 'uploaded';
 
 export type PlacementErrorKind = 'no_exam' | 'no_session' | 'bad_request' | 'grading_failed';
 
@@ -107,21 +110,60 @@ export function createPlacementService(db: Database.Database, deps?: PlacementDe
     return (db.prepare('SELECT COUNT(*) AS n FROM placement_questions').get() as { n: number }).n;
   }
 
-  // An attempt in progress refers to the old questions, so it goes too.
-  function replaceExam(questions: PlacementQuestion[]): void {
+  function examSource(): PlacementExamSource | null {
+    const row = db.prepare('SELECT source FROM placement_exam_meta WHERE id = 1').get() as { source: PlacementExamSource } | undefined;
+    return row?.source ?? null;
+  }
+
+  function setMeta(source: PlacementExamSource, contentHash: string | null): void {
+    db.prepare(
+      `INSERT INTO placement_exam_meta (id, source, content_hash) VALUES (1, ?, ?)
+       ON CONFLICT(id) DO UPDATE SET source = excluded.source, content_hash = excluded.content_hash`
+    ).run(source, contentHash);
+  }
+
+  // An attempt in progress refers to the old questions by position, so it goes too, unless the
+  // caller knows the question order is unchanged (a bundled refresh with the same ids).
+  function replaceExam(
+    questions: PlacementQuestion[],
+    options: { source?: PlacementExamSource; contentHash?: string | null; keepSession?: boolean } = {}
+  ): void {
     db.transaction(() => {
-      db.prepare('DELETE FROM placement_session').run();
+      if (!options.keepSession) db.prepare('DELETE FROM placement_session').run();
       db.prepare('DELETE FROM placement_questions').run();
       const insert = db.prepare('INSERT INTO placement_questions (id, position, level, type, content) VALUES (?, ?, ?, ?, ?)');
       questions.forEach((q, i) => insert.run(q.id, i + 1, q.level, q.type, JSON.stringify(q.content)));
+      setMeta(options.source ?? 'uploaded', options.contentHash ?? null);
     })();
   }
 
-  function loadSeedExamIfEmpty(filePath: string): void {
-    if (questionCount() > 0 || !existsSync(filePath)) return;
-    const parsed = validatePlacementExam(JSON.parse(readFileSync(filePath, 'utf8')));
+  // Seed time: load the bundled exam into an empty table, and refresh a stored exam that came from
+  // an older bundled file. An admin-uploaded exam is never replaced. Installs from before the
+  // metadata existed count as bundled when every stored id is one of the bundled file's ids.
+  function syncBundledExam(filePath: string): void {
+    if (!existsSync(filePath)) return;
+    const text = readFileSync(filePath, 'utf8');
+    const hash = createHash('sha256').update(text).digest('hex');
+    const meta = db.prepare('SELECT source, content_hash FROM placement_exam_meta WHERE id = 1').get() as
+      | { source: PlacementExamSource; content_hash: string | null }
+      | undefined;
+    const stored = getExam();
+    if (stored.length > 0 && meta?.source === 'uploaded') return;
+    if (stored.length > 0 && meta?.content_hash === hash) return;
+
+    const parsed = validatePlacementExam(JSON.parse(text));
     if (!parsed.ok) throw new Error(`Bundled placement exam is invalid: ${parsed.errors.join('; ')}`);
-    replaceExam(parsed.questions);
+    const bundled = parsed.questions;
+
+    if (stored.length > 0 && !meta) {
+      const bundledIds = new Set(bundled.map((q) => q.id));
+      if (!stored.every((q) => bundledIds.has(q.id))) {
+        setMeta('uploaded', null);
+        return;
+      }
+    }
+    const sameOrder = stored.length === bundled.length && stored.every((q, i) => q.id === bundled[i].id);
+    replaceExam(bundled, { source: 'bundled', contentHash: hash, keepSession: sameOrder });
   }
 
   function getSession(): SessionRow {
@@ -294,7 +336,7 @@ export function createPlacementService(db: Database.Database, deps?: PlacementDe
     };
   }
 
-  return { getExam, replaceExam, loadSeedExamIfEmpty, questionCount, start, answer, stop, skip, getBestResult };
+  return { getExam, replaceExam, syncBundledExam, examSource, questionCount, start, answer, stop, skip, getBestResult };
 }
 
 export type PlacementService = ReturnType<typeof createPlacementService>;
