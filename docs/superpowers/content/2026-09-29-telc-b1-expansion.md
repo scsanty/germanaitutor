@@ -1,6 +1,6 @@
 # telc B1 curriculum expansion: review summary
 
-Generated from `data/curriculum-seed/telc-b1.json`, `data/inventory/b1.json` and `data/inventory/telc-b1-coverage.json`. The telc B1 seed now has 58 lessons in 4 milestones; 38 of them are new in this expansion (shown in **bold**). Every one of the 61 inventory items is covered by at least one lesson.
+Compiled from `data/curriculum-seed/telc-b1.json`, `data/inventory/b1.json` and `data/inventory/telc-b1-coverage.json`. The telc B1 seed now has 58 lessons in 4 milestones; 38 of them are new in this expansion (shown in **bold**). Every one of the 61 inventory items is covered by at least one lesson.
 
 ## Milestones
 
