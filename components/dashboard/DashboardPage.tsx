@@ -9,10 +9,21 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
 import { Play, Repeat } from 'lucide-react';
 import type { DashboardView } from '@/lib/tutoring/dashboardViews';
+import { Logo } from '@/components/brand/Logo';
 import { Heatmap } from './Heatmap';
 import { SkillProgress } from './SkillProgress';
 
+// A large hero logo heads the dashboard, wide enough (≥ 540px on desktop, full width on phone) for the tagline to read.
 export function DashboardPage() {
+  return (
+    <div className="flex flex-col gap-4">
+      <Logo className="mx-auto w-full sm:w-[36rem]" />
+      <DashboardContent />
+    </div>
+  );
+}
+
+function DashboardContent() {
   const t = useTranslations('dashboard');
   const [view, setView] = useState<DashboardView | null>(null);
   const [failed, setFailed] = useState(false);

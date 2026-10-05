@@ -27,6 +27,14 @@ describe('DashboardPage', () => {
     expect(screen.getByRole('gridcell', { name: /5 answers/ })).toBeInTheDocument();
   });
 
+  it('heads the page with the large hero logo', async () => {
+    vi.stubGlobal('fetch', vi.fn(() => delayedResponse(VIEW)));
+    renderWithIntl(<DashboardPage />);
+    const logo = screen.getByRole('img', { name: 'NaDoch!' });
+    expect(logo).toHaveTextContent('Ach so!');
+    await screen.findByRole('link', { name: 'Continue: The verb sein' });
+  });
+
   it('says when nothing is due and when there is nothing to continue', async () => {
     vi.stubGlobal('fetch', vi.fn(() => delayedResponse({ ...VIEW, continueLesson: null, reviewsDue: 0 })));
     renderWithIntl(<DashboardPage />);

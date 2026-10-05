@@ -79,8 +79,9 @@ export function AppShell({ children }: { children: ReactNode }) {
     <div className={cn('flex min-h-dvh', !wide && 'flex-col')}>
       {!hidden && wide && (
         <nav aria-label={tNav('main')} className={cn('sticky top-0 flex h-dvh flex-col gap-1 border-r border-border bg-surface p-3', desktop ? 'w-60' : 'w-16')}>
-          <Link href="/" aria-label="NaDoch!" className="mb-4 block">
-            <Logo variant="compact" className={desktop ? 'h-12' : 'h-8'} title="NaDoch!" />
+          {/* Full sidebar width (desktop w-60, tablet rail w-16): the -mx-3 cancels the nav padding. */}
+          <Link href="/" aria-label="NaDoch!" className="-mx-3 mb-2 block">
+            <Logo className="w-full" title="NaDoch!" />
           </Link>
           {navFor('sidebar')
             .filter((item) => item.id !== 'profile' && item.id !== 'settings')
@@ -99,7 +100,8 @@ export function AppShell({ children }: { children: ReactNode }) {
       {phone && (
         <header className="sticky top-0 z-10 flex items-center justify-between border-b border-border bg-background/90 px-4 py-2 backdrop-blur">
           <Link href="/" aria-label="NaDoch!">
-            <Logo variant="compact" className="h-9" title="NaDoch!" />
+            {/* 7.5rem wide is 4rem tall at the logo's 860:460 ratio. */}
+            <Logo className="w-[7.5rem]" title="NaDoch!" />
           </Link>
           {navFor('top').map((item) => (
             <NavLink key={item.id} item={item} due={due} showLabel={false} />

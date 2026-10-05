@@ -43,7 +43,7 @@ export function AdminLogin() {
     <div className="grid min-h-dvh place-items-center px-4 py-8">
       <Card className="w-full max-w-sm">
         <CardHeader className="items-center">
-          <Logo variant="compact" className="mb-2 h-14 w-auto" />
+          <Logo className="w-full max-w-72" />
           <h1 className="text-xl font-bold">{passwordSet ? 'Admin login' : 'Set admin password'}</h1>
         </CardHeader>
         <CardContent>
