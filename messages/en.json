@@ -438,7 +438,7 @@
     "showAnswer": "Show answer",
     "meaningLanguage": "Meaning language",
     "rateFailed": "Could not save your rating. Please try again.",
-    "doneToday": "Done for today: {count} cards reviewed.",
+    "doneToday": "Done for today: {count, plural, one {# card} other {# cards}} reviewed.",
     "nothingDue": "Nothing to review right now.",
     "addWord": "Add a word",
     "add": "Add",

@@ -49,6 +49,11 @@ export function EndSession({ mode, onEnded }: { mode: FreestyleMode; onEnded: ()
         body: JSON.stringify(skipSummary ? { skipSummary: true } : {}),
       });
       const data = await res.json().catch(() => ({}));
+      // L1: no session to end means it has already ended (another tab, an earlier End).
+      if (res.status === 404) {
+        onEnded();
+        return;
+      }
       if (!res.ok) {
         setError(errorText(data, t('endFailed')));
         setPhase('failed');
@@ -98,11 +103,8 @@ export function EndSession({ mode, onEnded }: { mode: FreestyleMode; onEnded: ()
   }
 
   function onOpenChange(open: boolean) {
-    if (open) return;
-    // The session is gone once the summary shows; closing it is the same as Done.
-    if (phase === 'summary') {
-      if (!saving) onEnded();
-    } else if (phase === 'confirm' || phase === 'failed') setPhase('closed');
+    // M1: Done is the only way out of the summary, so Esc can't drop the word picks.
+    if (!open && (phase === 'confirm' || phase === 'failed')) setPhase('closed');
   }
 
   const items: LocalizedText[] = summary ? [...summary.wentWell, ...summary.mistakes] : [];
@@ -115,7 +117,12 @@ export function EndSession({ mode, onEnded }: { mode: FreestyleMode; onEnded: ()
         {t('end')}
       </Button>
       <AlertDialog open={phase !== 'closed'} onOpenChange={onOpenChange}>
-        <AlertDialogContent className="max-h-[85dvh] overflow-y-auto">
+        <AlertDialogContent
+          className="max-h-[85dvh] overflow-y-auto"
+          onEscapeKeyDown={(e) => {
+            if (phase === 'summary' || phase === 'ending') e.preventDefault();
+          }}
+        >
           {phase !== 'summary' || !summary ? (
             <>
               <AlertDialogTitle>{t('endTitle')}</AlertDialogTitle>
@@ -189,7 +196,7 @@ export function EndSession({ mode, onEnded }: { mode: FreestyleMode; onEnded: ()
                             </label>
                           </div>
                           {result && (
-                            <p className={result.kind === 'failed' ? 'text-sm text-danger' : 'text-sm text-text-muted'}>{result.text}</p>
+                            <p role="status" className={result.kind === 'failed' ? 'text-sm text-danger' : 'text-sm text-text-muted'}>{result.text}</p>
                           )}
                         </li>
                       );

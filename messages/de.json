@@ -438,7 +438,7 @@
     "showAnswer": "Antwort zeigen",
     "meaningLanguage": "Sprache der Bedeutung",
     "rateFailed": "Deine Bewertung konnte nicht gespeichert werden. Bitte versuche es erneut.",
-    "doneToday": "Für heute fertig: {count} Karten wiederholt.",
+    "doneToday": "Für heute fertig: {count, plural, one {# Karte} other {# Karten}} wiederholt.",
     "nothingDue": "Gerade gibt es nichts zu wiederholen.",
     "addWord": "Wort hinzufügen",
     "add": "Hinzufügen",

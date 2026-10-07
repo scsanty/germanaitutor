@@ -223,6 +223,7 @@ function LimitField(props: { id: string; field: 'newWordsPerDay' | 'deckReviewCa
         className={FIELD}
         value={value}
         aria-invalid={error ? true : undefined}
+        aria-describedby={error ? `${id}-error` : undefined}
         onChange={(e) => {
           setValue(e.target.value);
           setDone(false);
@@ -235,7 +236,7 @@ function LimitField(props: { id: string; field: 'newWordsPerDay' | 'deckReviewCa
         </p>
       )}
       {error && (
-        <p role="alert" className="text-sm text-danger">
+        <p id={`${id}-error`} role="alert" className="text-sm text-danger">
           {error}
         </p>
       )}

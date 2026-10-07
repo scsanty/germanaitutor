@@ -43,7 +43,7 @@ describe('EndSession', () => {
     fireEvent.click(screen.getByRole('button', { name: 'DE' }));
     expect(screen.getByText('Gute Fragen')).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Save selected' }));
-    expect(await screen.findByText('Saved: der Termin')).toBeInTheDocument();
+    expect(await screen.findByText('Saved: der Termin')).toHaveAttribute('role', 'status');
     expect(await screen.findByText('die Praxis is already in your deck')).toBeInTheDocument();
     const saves = fetchMock.mock.calls.filter(([u]) => u === '/api/flashcards/words');
     expect(saves).toHaveLength(2);
@@ -85,5 +85,38 @@ describe('EndSession', () => {
     fireEvent.click(screen.getByRole('button', { name: 'End without summary' }));
     await waitFor(() => expect(onEnded).toHaveBeenCalled());
     expect(fetchMock).toHaveBeenLastCalledWith('/api/freestyle/conversation/end', expect.objectContaining({ body: JSON.stringify({ skipSummary: true }) }));
+  });
+  it('keeps the summary open on Esc, so only Done leaves', async () => {
+    stub({ 'POST /api/freestyle/conversation/end': [() => delayedResponse({ summary: SUMMARY })] });
+    const onEnded = vi.fn();
+    renderWithIntl(<EndSession mode="conversation" onEnded={onEnded} />);
+    fireEvent.click(screen.getByRole('button', { name: 'End' }));
+    fireEvent.click(screen.getByRole('button', { name: 'End session' }));
+    const dialog = await screen.findByRole('alertdialog');
+    await screen.findByText('Good questions');
+    fireEvent.keyDown(dialog, { key: 'Escape' });
+    expect(onEnded).not.toHaveBeenCalled();
+    expect(screen.getByRole('checkbox', { name: /der Termin/ })).toBeChecked();
+  });
+
+  it('treats a session that is already gone as ended', async () => {
+    stub({ 'POST /api/freestyle/conversation/end': [() => delayedResponse({ error: 'x', code: 'not_found' }, { ok: false, status: 404 })] });
+    const onEnded = vi.fn();
+    renderWithIntl(<EndSession mode="conversation" onEnded={onEnded} />);
+    fireEvent.click(screen.getByRole('button', { name: 'End' }));
+    fireEvent.click(screen.getByRole('button', { name: 'End session' }));
+    await waitFor(() => expect(onEnded).toHaveBeenCalled());
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+  });
+
+  it('sends a single End request on a double click', async () => {
+    const fetchMock = stub({ 'POST /api/freestyle/conversation/end': [() => delayedResponse({ summary: SUMMARY })] });
+    renderWithIntl(<EndSession mode="conversation" onEnded={vi.fn()} />);
+    fireEvent.click(screen.getByRole('button', { name: 'End' }));
+    const confirm = screen.getByRole('button', { name: 'End session' });
+    fireEvent.click(confirm);
+    fireEvent.click(confirm);
+    expect(await screen.findByText('Good questions')).toBeInTheDocument();
+    expect(fetchMock).toHaveBeenCalledTimes(1);
   });
 });

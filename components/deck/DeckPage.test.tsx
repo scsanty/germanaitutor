@@ -5,6 +5,9 @@ import { delayedResponse } from '@/test/delayedResponse';
 import { ShellProvider } from '@/components/shell/ShellContext';
 import { DeckPage } from './DeckPage';
 
+const play = vi.fn();
+vi.mock('@/lib/sound/useSound', () => ({ useSound: () => play }));
+
 const DECK = {
   cards: [
     { itemId: 1, lemma: 'der Hund', plural: 'die Hunde', meaning: { en: 'dog', de: 'ein Tier, das bellt' }, example: 'Der Hund bellt.' },
@@ -25,7 +28,10 @@ function renderPage() {
   );
 }
 
-afterEach(() => vi.unstubAllGlobals());
+afterEach(() => {
+  vi.unstubAllGlobals();
+  play.mockReset();
+});
 
 describe('DeckPage', () => {
   it('reviews cards: flip, rate with keys or buttons, then shows the end', async () => {
@@ -54,13 +60,14 @@ describe('DeckPage', () => {
     expect(screen.queryByRole('group', { name: 'Meaning language' })).not.toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: "Didn't know it" }));
     expect(await screen.findByText('Done for today: 2 cards reviewed.')).toBeInTheDocument();
+    expect(play.mock.calls).toEqual([['correct'], ['wrong']]);
     expect(fetchMock).toHaveBeenCalledWith('/api/flashcards/answer', expect.objectContaining({ body: JSON.stringify({ itemId: 1, rating: 'knew' }) }));
     expect(fetchMock).toHaveBeenCalledWith('/api/flashcards/answer', expect.objectContaining({ body: JSON.stringify({ itemId: 2, rating: 'didnt_know' }) }));
   });
 
   it('keeps the card and shows an alert when a rating cannot be saved', async () => {
     vi.stubGlobal('fetch', vi.fn((url: string) =>
-      url === '/api/flashcards' ? delayedResponse(DECK) : delayedResponse({ error: 'x', code: 'not_due' }, { ok: false, status: 409 })
+      url === '/api/flashcards' ? delayedResponse(DECK) : delayedResponse({ error: 'x', code: 'not_due' }, { ok: false, status: 400 })
     ));
     renderPage();
     fireEvent.click(await screen.findByRole('button', { name: 'Start review (2)' }));
@@ -68,6 +75,33 @@ describe('DeckPage', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Sort of' }));
     expect(await screen.findByRole('alert')).toHaveTextContent('This review is not due right now');
     expect(screen.getByText('der Hund')).toBeInTheDocument();
+    expect(play).not.toHaveBeenCalled();
+  });
+
+  it('plays the right sound for sort of, and says one card in the singular', async () => {
+    vi.stubGlobal('fetch', vi.fn((url: string) => (url === '/api/flashcards' ? delayedResponse({ ...DECK, cards: [DECK.cards[0]] }) : delayedResponse({ nextDueAt: '2026-10-01' }))));
+    renderPage();
+    fireEvent.click(await screen.findByRole('button', { name: 'Start review (1)' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Show answer' }));
+    fireEvent.keyDown(document.body, { key: '2' });
+    expect(await screen.findByText('Done for today: 1 card reviewed.')).toBeInTheDocument();
+    expect(play).toHaveBeenCalledWith('correct');
+  });
+
+  it('leaves the review directly before any answer, and asks first after one', async () => {
+    vi.stubGlobal('fetch', vi.fn((url: string) => (url === '/api/flashcards' ? delayedResponse(DECK) : delayedResponse({ nextDueAt: '2026-10-01' }))));
+    renderPage();
+    fireEvent.click(await screen.findByRole('button', { name: 'Start review (2)' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Leave' }));
+    expect(screen.queryByRole('alertdialog')).not.toBeInTheDocument();
+    fireEvent.click(await screen.findByRole('button', { name: 'Start review (2)' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Show answer' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Knew it' }));
+    expect(await screen.findByText('wohnen')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Leave' }));
+    expect(await screen.findByRole('alertdialog')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Leave anyway' }));
+    expect(await screen.findByRole('button', { name: 'Start review (1)' })).toBeInTheDocument();
   });
 
   it('adds a word and shows duplicates inline', async () => {
