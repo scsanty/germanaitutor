@@ -330,6 +330,48 @@
     "loadFailed": "Could not load the test-out. Please reload the page.",
     "genericError": "Something went wrong: {error}"
   },
+  "freestyle": {
+    "title": "Freestyle",
+    "modes": {
+      "conversation": "Conversation",
+      "grammarDrill": "Grammar drill",
+      "freeReading": "Free reading",
+      "freeWriting": "Free writing"
+    },
+    "descriptions": {
+      "conversation": "Chat in German at your level, with corrections",
+      "grammarDrill": "Practise one grammar topic with quick questions",
+      "freeReading": "Read a short article on any topic, at your level",
+      "freeWriting": "Write freely and get marked-up feedback"
+    },
+    "continue": "Continue your session",
+    "unavailable": "Unavailable",
+    "noAi": "Freestyle needs a working AI provider.",
+    "openSettings": "Open Settings",
+    "loadFailed": "Could not load Freestyle. Please reload the page.",
+    "startFailed": "Could not start the session.",
+    "loading": "Loading Freestyle",
+    "level": "Level",
+    "start": "Start",
+    "starting": "Starting…",
+    "freeTopic": "Free topic",
+    "topic": "Topic",
+    "prompt": "Writing prompt (optional)",
+    "scenario": "Scenario",
+    "suggestions": "Suggestions",
+    "readingSuggestions": {
+      "travel": "Travelling by train",
+      "food": "German food",
+      "sport": "Football",
+      "weather": "The weather"
+    },
+    "writingSuggestions": {
+      "weekend": "My weekend",
+      "family": "My family",
+      "dreamJob": "My dream job",
+      "holiday": "My last holiday"
+    }
+  },
   "nav": {
     "main": "Main",
     "learn": "Learn",

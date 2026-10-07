@@ -330,6 +330,48 @@
     "loadFailed": "Der Test konnte nicht geladen werden. Bitte lade die Seite neu.",
     "genericError": "Etwas ist schiefgelaufen: {error}"
   },
+  "freestyle": {
+    "title": "Freestyle",
+    "modes": {
+      "conversation": "Gespräch",
+      "grammarDrill": "Grammatiktraining",
+      "freeReading": "Freies Lesen",
+      "freeWriting": "Freies Schreiben"
+    },
+    "descriptions": {
+      "conversation": "Sprich auf Deutsch auf deinem Niveau, mit Korrekturen",
+      "grammarDrill": "Übe ein Grammatikthema mit kurzen Fragen",
+      "freeReading": "Lies einen kurzen Artikel zu einem beliebigen Thema, auf deinem Niveau",
+      "freeWriting": "Schreibe frei und erhalte markiertes Feedback"
+    },
+    "continue": "Sitzung fortsetzen",
+    "unavailable": "Nicht verfügbar",
+    "noAi": "Freestyle braucht einen funktionierenden KI-Anbieter.",
+    "openSettings": "Einstellungen öffnen",
+    "loadFailed": "Freestyle konnte nicht geladen werden. Bitte lade die Seite neu.",
+    "startFailed": "Die Sitzung konnte nicht gestartet werden.",
+    "loading": "Freestyle wird geladen",
+    "level": "Niveau",
+    "start": "Starten",
+    "starting": "Wird gestartet…",
+    "freeTopic": "Freies Thema",
+    "topic": "Thema",
+    "prompt": "Schreibaufgabe (optional)",
+    "scenario": "Szenario",
+    "suggestions": "Vorschläge",
+    "readingSuggestions": {
+      "travel": "Zugreisen",
+      "food": "Deutsches Essen",
+      "sport": "Fußball",
+      "weather": "Das Wetter"
+    },
+    "writingSuggestions": {
+      "weekend": "Mein Wochenende",
+      "family": "Meine Familie",
+      "dreamJob": "Mein Traumberuf",
+      "holiday": "Mein letzter Urlaub"
+    }
+  },
   "nav": {
     "main": "Hauptmenü",
     "learn": "Lernen",

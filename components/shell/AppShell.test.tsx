@@ -73,10 +73,14 @@ function FetchingPage({ loads }: { loads: { count: number } }) {
   );
 }
 
+// I5: the stub answers by URL.
+const countsFetch = () =>
+  vi.fn((url: string) => delayedResponse({ due: url === '/api/flashcards/count' ? 4 : url === '/api/tutoring/queue/count' ? 7 : 0 }));
+
 describe('AppShell', () => {
   beforeEach(() => {
     pathname.value = '/';
-    vi.stubGlobal('fetch', vi.fn(() => delayedResponse({ due: 7 })));
+    vi.stubGlobal('fetch', countsFetch());
   });
 
   it('on a phone: logo and Settings at the top, Review as a floating button with its badge, Dashboard and Profile at the bottom', async () => {
@@ -88,14 +92,15 @@ describe('AppShell', () => {
     const bottom = screen.getByRole('navigation', { name: 'Main' });
     expect(bottom).toHaveTextContent('Dashboard');
     expect(bottom).toHaveTextContent('Profile');
-    expect(screen.queryByRole('link', { name: /Freestyle/ })).not.toBeInTheDocument();
+    expect(await screen.findByRole('link', { name: 'Flashcards (4 due)' })).toHaveAttribute('href', '/flashcards');
+    expect(screen.getByRole('link', { name: 'Freestyle' })).toHaveAttribute('href', '/freestyle');
   });
 
   it('on a desktop: one sidebar with every built item', async () => {
     setWidth(true);
     renderShell();
     const sidebar = screen.getByRole('navigation', { name: 'Main' });
-    for (const name of ['Learn', 'Dashboard', 'Profile', 'Settings']) expect(sidebar).toHaveTextContent(name);
+    for (const name of ['Learn', 'Dashboard', 'Freestyle', 'Flashcards', 'Profile', 'Settings']) expect(sidebar).toHaveTextContent(name);
     await waitFor(() => expect(screen.getByRole('link', { name: 'Review (7 due)' })).toBeInTheDocument());
   });
 
@@ -124,16 +129,16 @@ describe('AppShell', () => {
 
   it('refetches the badge on navigation and not on bare routes', async () => {
     setWidth(false);
-    const fetchMock = vi.fn(() => delayedResponse({ due: 7 }));
+    const fetchMock = countsFetch();
     vi.stubGlobal('fetch', fetchMock);
     const { unmount } = renderShell();
     await screen.findByRole('link', { name: 'Review (7 due)' });
-    expect(fetchMock).toHaveBeenCalledTimes(1);
+    expect(fetchMock).toHaveBeenCalledTimes(2);
     unmount();
     pathname.value = '/onboarding';
     renderShell();
     await new Promise((r) => setTimeout(r, 20));
-    expect(fetchMock).toHaveBeenCalledTimes(1);
+    expect(fetchMock).toHaveBeenCalledTimes(2);
   });
 
   // Review Focus 5

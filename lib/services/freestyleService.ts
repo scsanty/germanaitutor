@@ -10,6 +10,8 @@ import { isAtOrBelow, isCefrLevel, levelsUpTo } from '../tutoring/levels';
 import { generateWithActiveProvider, isAiAvailable, type AiRequest, type AiResult } from './aiService';
 import { generateParsed } from './freestyleAi';
 import { createProfileService } from './profileService';
+import { createContentText } from './contentText';
+import { loadLevelGating } from './levelGating';
 
 // Spec: Freestyle never writes to lesson attempts, completions, exercise reviews or anything the
 // tree reads. It touches only freestyle_sessions and freestyle_messages; End deletes both, and the
@@ -274,5 +276,21 @@ export function createFreestyleService(
     }
   }
 
-  return { overview, session, start, turn, newArticle, end };
+  // S16: the active track's grammar lesson titles at an unlocked level, ranked milestones only, in tree order.
+  function grammarTopics(level: unknown): string[] {
+    if (!isCefrLevel(level)) throw new FreestyleError(`Not a level: ${String(level)}`, 'bad_request');
+    const profile = profiles.getProfile();
+    if (!isAtOrBelow(level, profile.highestUnlockedLevel)) {
+      throw new FreestyleError(`Level ${level} is locked`, 'locked', 'level_locked', { level });
+    }
+    const isGrammar = db.prepare('SELECT 1 FROM lessons WHERE id = ? AND skill = ?');
+    const text = createContentText(db);
+    const titles = loadLevelGating(db, profile.activeTrack, level)
+      .lessonsInTreeOrder()
+      .filter((id) => isGrammar.get(id, 'grammar'))
+      .map((id) => text.lessonTitle(id, profile.uiLanguage));
+    return [...new Set(titles)];
+  }
+
+  return { overview, session, start, turn, newArticle, end, grammarTopics };
 }
