@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { useApiErrorText } from '@/components/useApiErrorText';
 import { Alert, AlertDescription } from '@/components/ui/alert';
@@ -10,6 +11,7 @@ import { FREESTYLE_MODES, type FreestyleMode } from '@/lib/freestyle/modes';
 import type { SessionMessage, SessionView } from '@/lib/freestyle/sessionViews';
 import type { CefrLevel } from '@/lib/types';
 import { ChatThread } from './ChatThread';
+import { EndSession } from './EndSession';
 import { ReadingSession } from './ReadingSession';
 import { SessionSetup } from './SessionSetup';
 import { WritingSession } from './WritingSession';
@@ -37,6 +39,7 @@ async function getJson<T>(url: string): Promise<T> {
 export function FreestyleSession({ mode }: { mode: FreestyleMode }) {
   const t = useTranslations('freestyle');
   const errorText = useApiErrorText();
+  const router = useRouter();
   // undefined while loading; null when no session is open.
   const [session, setSession] = useState<SessionView | null | undefined>(undefined);
   const [setupData, setSetupData] = useState<SetupData | null>(null);
@@ -154,8 +157,8 @@ export function FreestyleSession({ mode }: { mode: FreestyleMode }) {
 
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-col gap-5">
-      {/* S15: the title and the level only; Task 10 adds End to this header. */}
-      <header className="flex items-center gap-3">
+      {/* S15: the title, the level, and End once a session is open. */}
+      <header className="flex flex-wrap items-center gap-3">
         <h1 className="font-heading text-2xl font-extrabold">{t(`modes.${labelKey}`)}</h1>
         {session && (
           <Badge variant="secondary" className="text-sm">
@@ -163,6 +166,7 @@ export function FreestyleSession({ mode }: { mode: FreestyleMode }) {
             {session.level}
           </Badge>
         )}
+        {session && <EndSession mode={mode} onEnded={() => router.push('/freestyle')} />}
       </header>
       {body}
     </div>

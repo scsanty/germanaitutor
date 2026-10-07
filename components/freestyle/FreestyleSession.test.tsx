@@ -4,6 +4,9 @@ import { renderWithIntl } from '@/test/renderWithIntl';
 import { delayedResponse } from '@/test/delayedResponse';
 import { FreestyleSession } from './FreestyleSession';
 
+const push = vi.fn();
+vi.mock('next/navigation', () => ({ useRouter: () => ({ push }) }));
+
 type Reply = { body: unknown; ok?: boolean; status?: number };
 
 // Routes fetch by "METHOD url"; unmatched calls fail the test loudly.
@@ -21,7 +24,10 @@ function stubFetch(routes: Record<string, Reply | ((init?: RequestInit) => Reply
 
 const OVERVIEW = { modes: [], aiAvailable: true, levels: ['A1', 'A2'], activeLevel: 'A2' };
 
-afterEach(() => vi.unstubAllGlobals());
+afterEach(() => {
+  vi.unstubAllGlobals();
+  push.mockReset();
+});
 
 describe('FreestyleSession', () => {
   it('shows the setup when no session is open, with topics for the active level, refetched when the level changes', async () => {
@@ -137,5 +143,30 @@ describe('FreestyleSession', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Submit' }));
     expect(await screen.findByRole('heading', { name: 'Version 1' })).toBeInTheDocument();
     expect(screen.getByTestId('corrected')).toHaveTextContent('Ich gehe heim.');
+  });
+  it('ends an open session from the header and goes back to the hub', async () => {
+    stubFetch({
+      'GET /api/freestyle/conversation/session': {
+        body: { session: { mode: 'conversation', level: 'A1', setup: {}, messages: [] } },
+      },
+      'POST /api/freestyle/conversation/end': { body: { summary: { wentWell: [{ en: 'Good questions', de: 'Gute Fragen' }], mistakes: [], words: [] } } },
+    });
+    renderWithIntl(<FreestyleSession mode="conversation" />);
+    fireEvent.click(await screen.findByRole('button', { name: 'End' }));
+    fireEvent.click(screen.getByRole('button', { name: 'End session' }));
+    expect(await screen.findByText('Good questions')).toBeInTheDocument();
+    expect(push).not.toHaveBeenCalled();
+    fireEvent.click(screen.getByRole('button', { name: 'Done' }));
+    expect(push).toHaveBeenCalledWith('/freestyle');
+  });
+
+  it('shows no End button before a session is started', async () => {
+    stubFetch({
+      'GET /api/freestyle/conversation/session': { body: { session: null } },
+      'GET /api/freestyle': { body: OVERVIEW },
+    });
+    renderWithIntl(<FreestyleSession mode="conversation" />);
+    expect(await screen.findByRole('button', { name: 'Start' })).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'End' })).not.toBeInTheDocument();
   });
 });
