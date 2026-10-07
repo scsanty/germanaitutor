@@ -65,6 +65,10 @@ describe('/api/freestyle', () => {
     expect(locked.status).toBe(403);
     expect(await locked.json()).toMatchObject({ code: 'level_locked' });
     expect((await call(startSession, 'conversation', { level: 'A1', setup: 'x' })).status).toBe(400);
+    const unknownKey = await call(startSession, 'conversation', { level: 'A1', setup: { mood: 'x' } });
+    expect(unknownKey.status).toBe(400);
+    expect(await unknownKey.json()).toMatchObject({ code: 'bad_request' });
+    expect((await call(startSession, 'conversation', { level: 'A1', setup: { scenarioId: 'b1-doctor' } })).status).toBe(400);
   });
 
   it('message: 400 for empty text, 404 with no session, 502 ai_bad_reply on a malformed reply', async () => {

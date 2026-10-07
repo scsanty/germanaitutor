@@ -17,7 +17,8 @@ import { createProfileService } from './profileService';
 
 export type FreestyleErrorKind = 'not_found' | 'bad_request' | 'locked' | 'busy' | 'ai_failed';
 const STATUS: Record<FreestyleErrorKind, number> = { not_found: 404, bad_request: 400, locked: 403, busy: 409, ai_failed: 502 };
-// S10: `busy` is only raised by a double End, so it maps to session_ending.
+// S10: `busy` means the session is ending: a second End, or a turn or new article while an End
+// runs. It maps to session_ending.
 const CODE: Record<FreestyleErrorKind, ErrorCode> = {
   not_found: 'not_found',
   bad_request: 'bad_request',
@@ -49,6 +50,17 @@ interface SessionRow {
 
 const isPlainObject = (v: unknown): v is Record<string, unknown> => typeof v === 'object' && v !== null && !Array.isArray(v);
 const nonEmpty = (v: unknown): v is string => typeof v === 'string' && v.trim().length > 0;
+
+// The setup keys each mode accepts (the brief's setup shapes); `article` is written by the server.
+const SETUP_KEYS: Partial<Record<FreestyleMode, readonly string[]>> = {
+  conversation: ['scenarioId', 'topic'],
+  grammar_drill: ['topic'],
+  free_reading: ['topic'],
+  free_writing: ['prompt'],
+};
+export const MAX_SETUP_VALUE_LENGTH = 200;
+// Including the current message, the history sent to the AI stays within the prompts' 20-message window.
+const HISTORY_LIMIT = 19;
 
 export function createFreestyleService(
   db: Database.Database,
@@ -105,10 +117,35 @@ export function createFreestyleService(
   function stillOpen(r: SessionRow): void {
     const current = row(r.mode);
     if (!current || current.id !== r.id) throw new FreestyleError('No open session for this mode', 'not_found');
+    if (current.ending) throw new FreestyleError('This session is already ending', 'busy');
   }
 
-  function history(sessionId: number) {
-    return messagesOf(sessionId).map((m) => ({ role: m.role, content: m.content }));
+  // Some providers reject a conversation that opens with the assistant. The opener or first drill
+  // question carries context, so it stays, behind a synthetic learner turn. The window is trimmed
+  // here so the prompts' own slice(-20) keeps that first learner turn.
+  function history(sessionId: number): { role: 'user' | 'assistant'; content: string }[] {
+    const recent = messagesOf(sessionId)
+      .slice(-HISTORY_LIMIT)
+      .map((m) => ({ role: m.role, content: m.content }));
+    return recent[0]?.role === 'assistant' ? [{ role: 'user', content: 'Start.' }, ...recent] : recent;
+  }
+
+  function validateSetup(mode: FreestyleMode, level: CefrLevel, setup: unknown): Record<string, unknown> {
+    if (!isPlainObject(setup)) throw new FreestyleError('setup must be an object', 'bad_request');
+    const allowed = SETUP_KEYS[mode] ?? [];
+    for (const [key, value] of Object.entries(setup)) {
+      if (!allowed.includes(key)) throw new FreestyleError(`Unknown setup field: ${key}`, 'bad_request');
+      if (typeof value !== 'string' || value.length > MAX_SETUP_VALUE_LENGTH) {
+        throw new FreestyleError(`setup.${key} must be a string of at most ${MAX_SETUP_VALUE_LENGTH} characters`, 'bad_request');
+      }
+    }
+    if (mode === 'conversation' && setup.scenarioId !== undefined) {
+      const scenario = SCENARIOS.find((s) => s.id === setup.scenarioId);
+      if (!scenario) throw new FreestyleError('Unknown scenario', 'bad_request');
+      if (scenario.level !== level) throw new FreestyleError(`Scenario ${scenario.id} is not a ${level} scenario`, 'bad_request');
+    }
+    if ((mode === 'grammar_drill' || mode === 'free_reading') && !nonEmpty(setup.topic)) throw new FreestyleError('Choose a topic', 'bad_request');
+    return { ...setup };
   }
 
   function overview() {
@@ -129,26 +166,21 @@ export function createFreestyleService(
     requireMode(mode);
     // S27: a value that isn't a level is a bad request; a real level above the ceiling is locked.
     if (!isCefrLevel(input.level)) throw new FreestyleError(`Not a level: ${String(input.level)}`, 'bad_request');
-    if (!isPlainObject(input.setup)) throw new FreestyleError('setup must be an object', 'bad_request');
+    const setup = validateSetup(mode, input.level, input.setup);
     const open = row(mode);
     if (open) return view(open);
     if (!isAtOrBelow(input.level, profiles.getProfile().highestUnlockedLevel)) {
       throw new FreestyleError(`Level ${input.level} is locked`, 'locked', 'level_locked', { level: input.level });
     }
-    const setup = { ...input.setup };
     let first: string | null = null;
     if (mode === 'conversation' && setup.scenarioId !== undefined) {
-      const scenario = SCENARIOS.find((s) => s.id === setup.scenarioId);
-      if (!scenario) throw new FreestyleError('Unknown scenario', 'bad_request');
-      first = scenario.opener;
+      first = SCENARIOS.find((s) => s.id === setup.scenarioId)!.opener;
     }
     if (mode === 'grammar_drill') {
-      if (!nonEmpty(setup.topic)) throw new FreestyleError('Choose a topic', 'bad_request');
-      first = (await ask(buildDrillPrompt({ level: input.level, topic: setup.topic, history: [], answer: null }), parseDrillReply)).next;
+      first = (await ask(buildDrillPrompt({ level: input.level, topic: String(setup.topic), history: [], answer: null }), parseDrillReply)).next;
     }
     if (mode === 'free_reading') {
-      if (!nonEmpty(setup.topic)) throw new FreestyleError('Choose a topic', 'bad_request');
-      setup.article = await ask(buildArticlePrompt({ level: input.level, topic: setup.topic }), parseArticleReply);
+      setup.article = await ask(buildArticlePrompt({ level: input.level, topic: String(setup.topic) }), parseArticleReply);
     }
     // A concurrent start may have opened the mode while the AI ran; that one wins and is resumed.
     const raced = row(mode);
@@ -204,6 +236,17 @@ export function createFreestyleService(
     return view(row('free_reading')!);
   }
 
+  // A reading session has no messages; its article is what the summary is about.
+  function transcriptOf(r: SessionRow): string {
+    const lines: string[] = [];
+    const article = (JSON.parse(r.setup) as { article?: { title?: unknown; text?: unknown } }).article;
+    if (r.mode === 'free_reading' && article && typeof article.title === 'string' && typeof article.text === 'string') {
+      lines.push(`Article read by the learner: ${article.title}`, article.text);
+    }
+    lines.push(...messagesOf(r.id).map((m) => `${m.role}: ${m.content}`));
+    return lines.join('\n') || '(no messages)';
+  }
+
   async function end(mode: FreestyleMode, opts: { skipSummary?: boolean }): Promise<SessionSummary | null> {
     const r = requireSession(mode);
     // Review Focus 1: claim the End synchronously, before any await. A second End (with or
@@ -219,7 +262,7 @@ export function createFreestyleService(
       remove();
       return null;
     }
-    const transcript = messagesOf(r.id).map((m) => `${m.role}: ${m.content}`).join('\n') || '(no messages)';
+    const transcript = transcriptOf(r);
     try {
       const summary = await ask(buildSummaryPrompt({ mode, level: r.level, transcript }), parseSummaryReply);
       remove();
