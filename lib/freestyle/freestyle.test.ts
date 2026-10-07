@@ -34,10 +34,18 @@ describe('registries', () => {
     expect(FREESTYLE_MODES.filter((m) => m.enabled).map((m) => m.mode)).toEqual(['conversation', 'grammar_drill', 'free_reading', 'free_writing']);
   });
 
-  it('has scenarios for every level with both title languages and a German opener', () => {
-    for (const level of ['A1', 'A2', 'B1', 'B2', 'C1'] as const) expect(scenariosFor(level).length).toBeGreaterThanOrEqual(2);
+  it('has 6–10 scenarios per level with unique level-prefixed ids, both title languages and a German opener', () => {
+    for (const level of ['A1', 'A2', 'B1', 'B2', 'C1'] as const) {
+      const n = scenariosFor(level).length;
+      expect(n).toBeGreaterThanOrEqual(6);
+      expect(n).toBeLessThanOrEqual(10);
+    }
     for (const s of SCENARIOS) {
-      expect(s.title.en.trim() && s.title.de.trim() && s.opener.trim()).toBeTruthy();
+      expect(s.id).toMatch(/^(a1|a2|b1|b2|c1)-[a-z0-9-]+$/);
+      expect(s.id.startsWith(`${s.level.toLowerCase()}-`)).toBe(true);
+      expect(s.title.en.trim()).not.toBe('');
+      expect(s.title.de.trim()).not.toBe('');
+      expect(s.opener.trim()).not.toBe('');
     }
     expect(new Set(SCENARIOS.map((s) => s.id)).size).toBe(SCENARIOS.length);
   });
