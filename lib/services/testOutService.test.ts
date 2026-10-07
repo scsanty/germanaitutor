@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { createDbClient } from '../db/client';
 import { createTestOutService, TestOutError, type TestOutDeps } from './testOutService';
-import { addSecondMilestone, markComplete, seedTutoringCurriculum } from '@/test/tutoringFixtures';
+import { addSecondMilestone, markComplete, scheduleReview, seedTutoringCurriculum } from '@/test/tutoringFixtures';
 import type { LessonAnswer } from '../tutoring/lessonAnswers';
 
 // Generic A1: "Basics" (rank 1, open) and "Later" (rank 2, the next locked rank) with three
@@ -133,6 +133,16 @@ describe('testOutService.start and answer', () => {
     expect(scheduled).toEqual([{ exercise_id: run.questions[5].id, next_due_at: '2026-09-30' }]);
     expect(deckCard(db)).toEqual({ lemma: 'das Haus', source_ref: 'a1-late3__card', status: 'learning', next_due_at: '2026-09-30' });
     expect(service.state('g-a1-m2').status).toEqual({ status: 'none' });
+  });
+
+  // ON CONFLICT DO NOTHING: an unproven exercise that already has a review keeps it.
+  it('on a pass: keeps the existing review of an exercise that was not proven', async () => {
+    const { db, service } = setup();
+    const run = service.start('g-a1-m2');
+    const missed = run.questions[5].id;
+    scheduleReview(db, missed, '2026-12-01');
+    for (const [i, q] of run.questions.entries()) await service.answer('g-a1-m2', q.id, i === 5 ? wrong(db, q.id) : right(db, q.id));
+    expect(db.prepare('SELECT exercise_id, next_due_at FROM exercise_srs_state').all()).toEqual([{ exercise_id: missed, next_due_at: '2026-12-01' }]);
   });
 
   // S9: a word already in the deck keeps its item and gets the earlier due date.

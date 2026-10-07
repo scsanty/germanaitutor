@@ -226,6 +226,17 @@ describe('attemptService and the vocabulary deck', () => {
     await expect(service.recordAttempt('a1-sein__card', knew, 'queue')).resolves.toMatchObject({ result: 'correct' });
   });
 
+  it('keeps a malformed vocabulary flashcard as an exercise review', async () => {
+    const { db, service, srs } = setup();
+    db.exec(`UPDATE exercises SET content = '{"front":"","back":"the dog"}' WHERE id = 'a1-greet__ex2'`);
+    db.prepare(
+      "INSERT INTO lesson_attempts (exercise_id, lesson_id, source, result, answer_text, answered_at, answered_on) VALUES ('a1-greet__ex2', 'a1-greet', 'lesson', 'correct', 'x', '2026-09-24T08:00:00.000Z', '2026-09-24')"
+    ).run();
+    await service.recordAttempt('a1-greet__ex1', right, 'lesson');
+    expect(srs('a1-greet__ex2')).toEqual({ repetitions: 1, interval_days: 3, next_due_at: '2026-09-27' });
+    expect(db.prepare('SELECT COUNT(*) AS n FROM vocabulary_items').get()).toEqual({ n: 0 });
+  });
+
   // S7: re-answering a flashcard of a completed lesson never pulls the deck's due date earlier.
   it('leaves the deck alone when a completed lesson’s flashcard is answered again', async () => {
     const { db, service, setDay } = setup();

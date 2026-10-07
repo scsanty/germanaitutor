@@ -1,5 +1,7 @@
 import { describe, it, expect } from 'vitest';
-import { lessonCardKey, lessonCardLemma } from './lessonCards';
+import { createDbClient } from '../db/client';
+import { seedTutoringCurriculum } from '@/test/tutoringFixtures';
+import { lessonCardKey, lessonCardLemma, vocabularyCardContent } from './lessonCards';
 
 // Real fronts from data/curriculum-seed (S6).
 describe('lessonCardLemma', () => {
@@ -32,5 +34,21 @@ describe('lessonCardKey', () => {
     expect(lessonCardKey('umsteigen (steigt um, ist umgestiegen)')).toBe('umsteigen');
     expect(lessonCardKey('die Ausbildung (-en)')).toBe('die ausbildung');
     expect(lessonCardKey('das Zeugnis')).toBe('das zeugnis');
+  });
+});
+
+describe('vocabularyCardContent', () => {
+  it('returns a vocabulary flashcard and null for a malformed one or another lesson', () => {
+    const db = createDbClient(':memory:');
+    seedTutoringCurriculum(db);
+    db.exec(`INSERT INTO exercises (id, lesson_id, type, content) VALUES
+      ('a1-greet__bad1', 'a1-greet', 'flashcard', '{'),
+      ('a1-greet__bad2', 'a1-greet', 'flashcard', '{"front":"  ","back":"x"}'),
+      ('a1-greet__bad3', 'a1-greet', 'flashcard', '{"front":"die Katze"}'),
+      ('a1-sein__card', 'a1-sein', 'flashcard', '{"front":"ich bin","back":"I am"}')`);
+    expect(vocabularyCardContent(db, 'a1-greet__ex2')).toEqual({ front: 'der Hund', back: 'the dog' });
+    for (const id of ['a1-greet__bad1', 'a1-greet__bad2', 'a1-greet__bad3', 'a1-sein__card', 'a1-greet__ex1', 'nope']) {
+      expect(vocabularyCardContent(db, id)).toBeNull();
+    }
   });
 });

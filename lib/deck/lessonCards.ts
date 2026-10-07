@@ -91,5 +91,15 @@ export function vocabularyCardContent(db: Database.Database, exerciseId: string)
        WHERE e.id = ? AND e.type = 'flashcard' AND l.skill = 'vocabulary'`
     )
     .get(exerciseId) as { content: string } | undefined;
-  return row ? (JSON.parse(row.content) as { front: string; back: string }) : null;
+  if (!row) return null;
+  // A malformed card stays an exercise review, as the migration leaves it.
+  let parsed: { front?: unknown; back?: unknown } | null;
+  try {
+    parsed = JSON.parse(row.content) as { front?: unknown; back?: unknown } | null;
+  } catch {
+    return null;
+  }
+  const front = parsed?.front;
+  const back = parsed?.back;
+  return typeof front === 'string' && front.trim() && typeof back === 'string' ? { front, back } : null;
 }

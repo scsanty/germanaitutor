@@ -226,7 +226,14 @@ function migrateFlashcardReviewsToDeck(db: Database.Database): void {
   }[];
   const remove = db.prepare('DELETE FROM exercise_srs_state WHERE exercise_id = ?');
   for (const row of rows) {
-    const { front, back } = JSON.parse(row.content) as { front?: unknown; back?: unknown };
+    let parsed: { front?: unknown; back?: unknown } | null;
+    try {
+      parsed = JSON.parse(row.content) as { front?: unknown; back?: unknown } | null;
+    } catch {
+      continue; // broken content stays a review
+    }
+    const front = parsed?.front;
+    const back = parsed?.back;
     if (typeof front !== 'string' || !front.trim() || typeof back !== 'string') continue; // broken content stays a review
     upsertLessonCard(db, {
       ...lessonCardLemma(front),

@@ -69,6 +69,42 @@ describe('migrateFlashcardReviewsToDeck', () => {
     ]);
   });
 
+  it('reuses a learning item, keeps its reps and ease, and takes the earlier due date', () => {
+    const db = setup();
+    const { lastInsertRowid } = db
+      .prepare(
+        "INSERT INTO vocabulary_items (lemma, lemma_key, meaning_en, source, source_ref, status, created_at) VALUES ('der Hund', 'der hund', 'dog', 'manual', NULL, 'learning', '2026-09-01T10:00:00.000Z')"
+      )
+      .run();
+    db.prepare(
+      "INSERT INTO vocabulary_srs_state (item_id, repetitions, ease_factor, interval_days, next_due_at, updated_at) VALUES (?, 5, 2.7, 40, '2026-12-01', '2026-09-01T10:00:00.000Z')"
+    ).run(lastInsertRowid);
+    scheduleReview(db, 'a1-greet__ex2', '2026-10-03');
+    runMigrations(db);
+    expect(deck(db)).toEqual([
+      {
+        lemma: 'der Hund',
+        lemma_key: 'der hund',
+        source_ref: null,
+        status: 'learning',
+        repetitions: 5,
+        ease_factor: 2.7,
+        interval_days: 40,
+        next_due_at: '2026-10-03',
+      },
+    ]);
+    expect(db.prepare('SELECT COUNT(*) AS n FROM exercise_srs_state').get()).toEqual({ n: 0 });
+  });
+
+  it('skips a card whose content is not valid JSON and leaves its review in place', () => {
+    const db = setup();
+    db.exec("UPDATE exercises SET content = '{' WHERE id = 'a1-greet__ex2'");
+    scheduleReview(db, 'a1-greet__ex2', '2026-10-03');
+    expect(() => runMigrations(db)).not.toThrow();
+    expect(db.prepare('SELECT exercise_id FROM exercise_srs_state').all()).toEqual([{ exercise_id: 'a1-greet__ex2' }]);
+    expect(db.prepare('SELECT COUNT(*) AS n FROM vocabulary_items').get()).toEqual({ n: 0 });
+  });
+
   it('changes nothing when the move fails part-way', () => {
     const db = setup();
     scheduleReview(db, 'a1-greet__ex2', '2026-10-03');
