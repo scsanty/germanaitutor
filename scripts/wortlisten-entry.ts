@@ -42,7 +42,9 @@ export function expandPlural(noun: string, notation: string): { plural: string |
   const needsUmlaut = /[¨äöüÄÖÜ]/.test(first);
   const suffix = first.replace(/[-–¨,.;\s]/g, '').replace(/[äöüÄÖÜ]/g, '');
   if (!/^[a-zß]{0,4}$/.test(suffix)) return { plural: null, note: `plural shorthand not understood: ${n}` };
-  const stem = needsUmlaut ? umlaut(noun) : noun;
+  // "das Konto, -en" → "die Konten", "das Thema, -en" → "die Themen": the ending gives way.
+  const base = suffix === 'en' && /(um|us|a|o)$/.test(noun) ? noun.replace(/(um|us|a|o)$/, '') : noun;
+  const stem = needsUmlaut ? umlaut(base) : base;
   if (!stem) return { plural: null, note: `plural shorthand not understood: ${n}` };
   const alts = n.split('/').length > 1 ? `; list gives ${n}` : '';
   return alts ? { plural: `die ${stem}${suffix}`, note: `plural alternatives${alts}` } : { plural: `die ${stem}${suffix}` };
@@ -82,7 +84,7 @@ export function guessPos(lemma: string, hasVerbForms: boolean, lists: PosLists):
   const last = w.split(' ').pop()!;
   if (/\s/.test(w) && !/\//.test(w) && (lists.verbs.has(last) || ['sein', 'tun', 'haben'].includes(last))) return 'verb';
   if (/\s|\/|-$|^[A-ZÄÖÜ]/.test(lemma)) return 'other';
-  if (/(ig|lich|isch|bar|los|sam|voll|haft|iv|ell|al|ent|ant|ös|är|weit|frei|reich|wert)$/.test(w) && w.length > 4) return 'adjective';
+  if (/(ig|lich|isch|bar|los|sam|voll|haft|iv|ell|al|ent|ant|ös|är|weit|frei|reich|wert|gerecht)$/.test(w) && w.length > 4) return 'adjective';
   // Participles used as adjectives: "verheiratet", "geschlossen".
   if (/^(ge|be|ver|er|zer)[a-zäöüß]{3,}t$/.test(w) || /^ge[a-zäöüß]{3,}en$/.test(w)) return 'adjective';
   if (/[a-zäöü](en|ern|eln)$/.test(w) && w.length > 4 && !lists.notVerbs.has(w)) return 'verb';
@@ -122,7 +124,8 @@ export function parseHeadword(raw: string, lists: PosLists): { entries: Candidat
   hw = clean(hw.replace(/\((D|A|CH)(\s*,\s*(D|A|CH))*\)/g, ''));
   // "der Chef, -s / die Chefin, -nen" and "der Student, -en, die Studentin, -nen".
   // "das Datum, die Daten" is a plural, not a second noun: the second noun has its own shorthand.
-  const parts = hw.split(/\s*\/\s*(?=(?:der|die|das) [A-ZÄÖÜ])|\s*,\s*(?=(?:der|die|das) [A-ZÄÖÜ][^,]*,)/);
+  // "der/das Comic" is one noun with two articles, so never split right after a leading article.
+  const parts = hw.split(/(?<!^(?:der|die|das)(?:\/(?:der|die|das))*)\s*\/\s*(?=(?:der|die|das) [A-ZÄÖÜ])|\s*,\s*(?=(?:der|die|das) [A-ZÄÖÜ][^,]*,)/);
   const entries: Candidate[] = [];
   parts.forEach((part, i) => {
     const e = parsePart(part, lists);
