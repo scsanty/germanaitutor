@@ -13,10 +13,9 @@ import type { FreestyleMode } from '@/lib/freestyle/modes';
 import type { SessionMessage } from '@/lib/freestyle/sessionViews';
 import { cn } from '@/lib/utils';
 import { CorrectionList, readCorrections } from './CorrectionList';
+import { GermanLetters } from './GermanLetters';
 import { TappableGerman } from './TappableGerman';
 
-// Until the Writing module's shared German keyboard helper lands.
-const LETTERS = ['ä', 'ö', 'ü', 'ß', 'Ä', 'Ö', 'Ü'] as const;
 const VERDICTS = ['correct', 'almost', 'wrong'] as const;
 type Verdict = (typeof VERDICTS)[number];
 const VERDICT_STYLE: Record<Verdict, string> = {
@@ -86,17 +85,6 @@ function Composer({ onSend }: { onSend: (text: string) => Promise<void> }) {
     }
   }
 
-  function insert(letter: string) {
-    const el = box.current;
-    const start = el?.selectionStart ?? draft.length;
-    const stop = el?.selectionEnd ?? draft.length;
-    setDraft(draft.slice(0, start) + letter + draft.slice(stop));
-    requestAnimationFrame(() => {
-      el?.focus();
-      el?.setSelectionRange(start + letter.length, start + letter.length);
-    });
-  }
-
   return (
     // Phones: pinned above AppShell's bottom nav and floating buttons (as LessonPage does). From 768 px, at the bottom.
     <div className="sticky bottom-[8.75rem] z-[5] flex flex-col gap-2 rounded-xl border border-border bg-background/95 p-3 backdrop-blur supports-[backdrop-filter]:bg-background/80 md:bottom-0 md:rounded-none md:border-x-0 md:border-b-0 md:px-0 md:pb-2">
@@ -130,23 +118,7 @@ function Composer({ onSend }: { onSend: (text: string) => Promise<void> }) {
         className="min-h-16 resize-none text-base"
       />
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <div role="group" aria-label={t('germanLetters')} className="flex flex-wrap gap-1">
-          {LETTERS.map((letter) => (
-            <Button
-              key={letter}
-              type="button"
-              variant="outline"
-              size="sm"
-              disabled={busy}
-              className="min-h-11 min-w-11 px-0 text-base"
-              // Keep the cursor in the text box.
-              onMouseDown={(e) => e.preventDefault()}
-              onClick={() => insert(letter)}
-            >
-              {letter}
-            </Button>
-          ))}
-        </div>
+        <GermanLetters box={box} value={draft} onChange={setDraft} disabled={busy} />
         <Button type="button" onClick={() => void send()} disabled={busy || !draft.trim()} className="min-h-11 px-5">
           <Send aria-hidden />
           {t('send')}

@@ -106,4 +106,36 @@ describe('FreestyleSession', () => {
     renderWithIntl(<FreestyleSession mode="conversation" />);
     expect(await screen.findByRole('alert')).toHaveTextContent('The AI replied in an unexpected format');
   });
+
+  it('shows the reading screen of an open free-reading session and swaps in another article', async () => {
+    const article = (title: string) => ({ title, text: 'Der Zug fährt.', questions: [{ question: 'Was fährt?', options: ['Der Zug', 'Das Auto'], correctIndex: 0 }] });
+    const open = { mode: 'free_reading', level: 'A2', setup: { topic: 'Bahn', article: article('Bahnfahren') }, messages: [] };
+    stubFetch({
+      'GET /api/freestyle/free_reading/session': { body: { session: open } },
+      'POST /api/freestyle/free_reading/article': { body: { ...open, setup: { topic: 'Bahn', article: article('Neue Strecke') } } },
+    });
+    renderWithIntl(<FreestyleSession mode="free_reading" />);
+    expect(await screen.findByRole('heading', { name: 'Bahnfahren' })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Another article' }));
+    expect(await screen.findByRole('heading', { name: 'Neue Strecke' })).toBeInTheDocument();
+  });
+
+  it('adds a submitted text to an open free-writing session as a new version', async () => {
+    stubFetch({
+      'GET /api/freestyle/free_writing/session': { body: { session: { mode: 'free_writing', level: 'B1', setup: { prompt: '' }, messages: [] } } },
+      'POST /api/freestyle/free_writing/message': {
+        body: {
+          messages: [
+            { id: 1, role: 'user', content: 'Ich gehe.', extra: null },
+            { id: 2, role: 'assistant', content: 'Ich gehe heim.', extra: { corrections: [], comment: { en: 'Good.', de: 'Gut.' } } },
+          ],
+        },
+      },
+    });
+    renderWithIntl(<FreestyleSession mode="free_writing" />);
+    fireEvent.change(await screen.findByLabelText('Your text'), { target: { value: 'Ich gehe.' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Submit' }));
+    expect(await screen.findByRole('heading', { name: 'Version 1' })).toBeInTheDocument();
+    expect(screen.getByTestId('corrected')).toHaveTextContent('Ich gehe heim.');
+  });
 });

@@ -10,7 +10,9 @@ import { FREESTYLE_MODES, type FreestyleMode } from '@/lib/freestyle/modes';
 import type { SessionMessage, SessionView } from '@/lib/freestyle/sessionViews';
 import type { CefrLevel } from '@/lib/types';
 import { ChatThread } from './ChatThread';
+import { ReadingSession } from './ReadingSession';
 import { SessionSetup } from './SessionSetup';
+import { WritingSession } from './WritingSession';
 
 interface SetupData {
   levels: CefrLevel[];
@@ -100,7 +102,10 @@ export function FreestyleSession({ mode }: { mode: FreestyleMode }) {
     }
     const data = await res.json().catch(() => ({}));
     if (!res.ok) throw new Error(errorText(data, t('sendFailed')));
-    const added = (data as { messages: SessionMessage[] }).messages;
+    addMessages((data as { messages: SessionMessage[] }).messages);
+  }
+
+  function addMessages(added: SessionMessage[]) {
     setSession((current) => (current ? { ...current, messages: [...current.messages, ...added] } : current));
   }
 
@@ -141,8 +146,11 @@ export function FreestyleSession({ mode }: { mode: FreestyleMode }) {
     );
   } else if (session && (mode === 'conversation' || mode === 'grammar_drill')) {
     body = <ChatThread mode={mode} messages={session.messages} onSend={send} />;
+  } else if (session && mode === 'free_reading') {
+    body = <ReadingSession session={session} onSession={setSession} />;
+  } else if (session && mode === 'free_writing') {
+    body = <WritingSession session={session} onMessages={addMessages} />;
   }
-  // free_reading and free_writing: Task 9 adds their screens here.
 
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-col gap-5">
