@@ -54,7 +54,7 @@ export function ChatThread({ mode, messages, onSend }: Props) {
         )}
       </ol>
       <Composer onSend={onSend} />
-      <div ref={end} aria-hidden />
+      <div ref={end} aria-hidden className="scroll-mb-36 md:scroll-mb-0" />
     </div>
   );
 }
