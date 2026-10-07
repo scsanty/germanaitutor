@@ -30,7 +30,7 @@ In the build order it comes after the design pass and the telc B1 expansion, and
   - starter lists;
   - moving lesson flashcards into the deck.
 - **Content:**
-  - **per-track** official Wortlisten for A1, A2 and B1, parsed from the published PDFs and committed as data: Goethe-Zertifikat lists for the Goethe track, telc lists for the telc track, ÖSD lists for the Generic track (amended 2026-10-08 by the user);
+  - **per-track** official Wortlisten for A1, A2 and B1, parsed from the published PDFs and committed as data: Goethe-Zertifikat lists for the Goethe track and telc lists for the telc track; the Generic track gets a NaDoch A1–B1 list built from the Goethe and telc lists (there is no ÖSD-specific list) (amended 2026-10-08 by the user);
   - Claude-drafted "NaDoch list" B2 and C1 word lists;
   - **Claude-drafted meanings for every word**, in English and simple German.
 - Nav: the 🏂 and 🗂️ items (floating buttons and sidebar) are enabled.
@@ -133,7 +133,7 @@ ALTER TABLE profile ADD COLUMN deck_review_cap INTEGER NOT NULL DEFAULT 50 CHECK
 - **Card:** the front is the German lemma. The back shows the plural, the meaning in the UI language (with the toggle), and the example sentence. Grading is **Knew / Sort of / Didn't know**, using Phase 1's `FLASHCARD_GRADES` and `computeNextReview`.
 - **Deck queue:** due `learning` items, most overdue first, capped by `deck_review_cap` per day. Answers are counted from `vocabulary_answers`, and only the first answer per item per day moves its schedule. It's separate from the Daily Queue, with its own 🗂️ badge.
 - **Starter words:**
-  - **Import:** for every level up to the profile's active level, the level's list is imported as `not_started` items. The import is idempotent by `lemma_key` and runs when the deck opens. Each track imports **its own** A1–B1 list (Goethe → Goethe-Zertifikat, telc → telc, Generic → ÖSD); B2 and C1 use one shared NaDoch list for all tracks. Lists live at `data/wortlisten/<track>/<level>.json` for A1–B1 and `data/wortlisten/shared/<level>.json` for B2/C1. Overlaps between tracks are expected; the deck dedupes by `lemma_key`, so switching tracks imports the new track's words and keeps existing items unchanged. (Amended 2026-10-08.)
+  - **Import:** for every level up to the profile's active level, the level's list is imported as `not_started` items. The import is idempotent by `lemma_key` and runs when the deck opens. Each track imports **its own** A1–B1 list (Goethe → Goethe-Zertifikat, telc → telc, Generic → a NaDoch list built from both); B2 and C1 use one shared NaDoch list for all tracks. Lists live at `data/wortlisten/<track>/<level>.json` for A1–B1 and `data/wortlisten/shared/<level>.json` for B2/C1. Overlaps between tracks are expected; the deck dedupes by `lemma_key`, so switching tracks imports the new track's words and keeps existing items unchanged. (Amended 2026-10-08.)
   - **Introduction:** each day, up to `new_words_per_day` `not_started` items become `learning`, due today. They go lowest level first, then in list order.
   - **Settings:** both numbers are on the deck page.
 - **Adding a word** (tap, summary, manual):
@@ -184,7 +184,7 @@ Errors use the Phase 2 codes (`no_provider`, `ai_failed`, `ai_bad_reply`, `bad_r
 ## Content
 
 1. **Official A1–B1 lists** (`data/wortlisten/a1.json`, `a2.json`, `b1.json`):
-   - **Source:** the user places the published Goethe-Zertifikat, telc and ÖSD Wortliste PDFs (A1, A2, B1 each) in an ignored folder; a script extracts `{ lemma, partOfSpeech, plural, example }` with `pdftotext`.
+   - **Source:** the user places the published Goethe-Zertifikat and telc Wortliste PDFs (A1, A2, B1 each) in an ignored folder; a script extracts `{ lemma, partOfSpeech, plural, example }` with `pdftotext`.
    - **Cleanup:** a content pass fixes what the extraction garbles.
    - **Licensing:** the parsed lists are committed. This is the user's choice, and the copyright must be resolved before a public deployment (see Accounts & hosting).
 2. **B2 and C1 NaDoch lists** (`b2.json`, `c1.json`, marked `"source": "nadoch"`):
