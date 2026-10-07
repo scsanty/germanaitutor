@@ -38,8 +38,9 @@ export function expandPlural(noun: string, notation: string): { plural: string |
   if (!n) return { plural: null, note: 'no plural given' };
   const first = n.split('/')[0].trim();
   if (/^[A-ZÄÖÜ][a-zäöüß]{2,}/.test(first)) return { plural: `die ${first.replace(/,$/, '')}` };
+  if (/^die [A-ZÄÖÜ]/.test(first)) return { plural: first.replace(/,$/, '') };
   const needsUmlaut = /[¨äöüÄÖÜ]/.test(first);
-  const suffix = first.replace(/[-–¨,.\s]/g, '').replace(/[äöüÄÖÜ]/g, '');
+  const suffix = first.replace(/[-–¨,.;\s]/g, '').replace(/[äöüÄÖÜ]/g, '');
   if (!/^[a-zß]{0,4}$/.test(suffix)) return { plural: null, note: `plural shorthand not understood: ${n}` };
   const stem = needsUmlaut ? umlaut(noun) : noun;
   if (!stem) return { plural: null, note: `plural shorthand not understood: ${n}` };
@@ -50,7 +51,7 @@ export function expandPlural(noun: string, notation: string): { plural: string |
 // Removes "(sich)", "(Sg.)", "(von)", "(Bsp. …)" and similar, but not a bracket inside a word
 // ("da(r)"); "(herunter-)fahren" becomes "herunterfahren".
 export function stripParens(s: string): string {
-  return clean(s.replace(/\(([a-zäöüß]+)-\)(?=[a-zäöüß])/g, '$1').replace(/(^|\s+)\([^)]*\)/g, ' '));
+  return clean(s.replace(/\(([a-zäöüß]+)-\)\s?(?=[a-zäöüß])/g, '$1').replace(/(^|\s+)\([^)]*\)/g, ' '));
 }
 
 // Splits on commas outside brackets: "wer (wen, wem)" stays one part.
@@ -77,12 +78,35 @@ export function guessPos(lemma: string, hasVerbForms: boolean, lists: PosLists):
   if (hasVerbForms || lists.verbs.has(w)) return 'verb';
   if (lists.adverbs.has(w)) return 'adverb';
   if (lists.adjectives.has(w)) return 'adjective';
+  // "weh tun", "Rad fahren", "spazieren gehen", "an sein": the last word is the verb.
+  const last = w.split(' ').pop()!;
+  if (/\s/.test(w) && !/\//.test(w) && (lists.verbs.has(last) || ['sein', 'tun', 'haben'].includes(last))) return 'verb';
   if (/\s|\/|-$|^[A-ZÄÖÜ]/.test(lemma)) return 'other';
-  if (/(ig|lich|isch|bar|los|sam|voll|haft|iv|ell|al|ent|ant|ös|är)$/.test(w) && w.length > 4) return 'adjective';
+  if (/(ig|lich|isch|bar|los|sam|voll|haft|iv|ell|al|ent|ant|ös|är|weit|frei|reich|wert)$/.test(w) && w.length > 4) return 'adjective';
   // Participles used as adjectives: "verheiratet", "geschlossen".
   if (/^(ge|be|ver|er|zer)[a-zäöüß]{3,}t$/.test(w) || /^ge[a-zäöüß]{3,}en$/.test(w)) return 'adjective';
   if (/[a-zäöü](en|ern|eln)$/.test(w) && w.length > 4 && !lists.notVerbs.has(w)) return 'verb';
   return 'other';
+}
+
+// A spelling variant of the same noun, not a second noun: close in spelling, and not the "-in"
+// feminine form ("die Disco" / "die Disko", not "der Kollege" / "die Kollegin").
+export function variant(a: string, b: string): boolean {
+  const x = a.replace(/^(der|die|das) /, '');
+  const y = b.replace(/^(der|die|das) /, '');
+  if (/in$/.test(y) && y.length > x.length) return false;
+  return editDistance(x.toLowerCase(), y.toLowerCase()) <= 2;
+}
+
+export function editDistance(a: string, b: string): number {
+  const d: number[][] = Array.from({ length: a.length + 1 }, (_, i) => [i, ...Array(b.length).fill(0)]);
+  for (let j = 1; j <= b.length; j++) d[0][j] = j;
+  for (let i = 1; i <= a.length; i++) {
+    for (let j = 1; j <= b.length; j++) {
+      d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+    }
+  }
+  return d[a.length][b.length];
 }
 
 // One headword may hold several entries ("der Chef, -s / die Chefin, -nen").
@@ -96,12 +120,15 @@ export function parseHeadword(raw: string, lists: PosLists): { entries: Candidat
     return { entries: [], skipped: [{ headword: clean(raw), reason: `regional only (${regions.join('; ')})` }] };
   }
   hw = clean(hw.replace(/\((D|A|CH)(\s*,\s*(D|A|CH))*\)/g, ''));
-  const parts = hw.split(/\s*\/\s*(?=(?:der|die|das) [A-ZÄÖÜ])/);
+  // "der Chef, -s / die Chefin, -nen" and "der Student, -en, die Studentin, -nen".
+  // "das Datum, die Daten" is a plural, not a second noun: the second noun has its own shorthand.
+  const parts = hw.split(/\s*\/\s*(?=(?:der|die|das) [A-ZÄÖÜ])|\s*,\s*(?=(?:der|die|das) [A-ZÄÖÜ][^,]*,)/);
   const entries: Candidate[] = [];
   parts.forEach((part, i) => {
     const e = parsePart(part, lists);
     if (!e) skipped.push({ headword: part, reason: 'empty after cleanup' });
-    else if (i > 0 && e.partOfSpeech !== 'noun' && entries[0]?.partOfSpeech === 'noun') {
+    else if (i > 0 && entries[0]?.partOfSpeech === 'noun' && (e.partOfSpeech !== 'noun' || variant(entries[0].lemma, e.lemma))) {
+      // "der Club, -s / Klub, -s", "die Disco, -s / die Disko, -s": one word, two spellings.
       entries[0].note = [entries[0].note, `also written ${part.replace(/,.*$/, '')}`].filter(Boolean).join('; ');
     } else entries.push(e);
   });
@@ -141,7 +168,7 @@ function parsePart(part: string, lists: PosLists): Candidate | null {
   let lemma = stripParens(commaParts[0].replace(/^\([^)]*\)\/(?=\()/, '').replace(/^\([a-zäöüß]+\)(?=[a-zäöüß])/, ''));
   if (!lemma) return null;
   // "(sich) anmelden" and "sich beeilen" both list as "anmelden"/"beeilen"; idioms keep "sich".
-  const reflexive = /^\(?sich\)? /.test(commaParts[0]);
+  const reflexive = /^\(?sich\)? /.test(commaParts[0]) || /\(sich\)/.test(commaParts[0]);
   if (reflexive) lemma = lemma.replace(/^sich /, '');
   if (reflexive && /\s/.test(lemma)) lemma = `sich ${lemma}`;
   // A missing comma in the source: "festnehmen nimmt fest, nahm fest, …".

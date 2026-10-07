@@ -4,7 +4,7 @@
 // examples wrap too, and B1 numbers its examples ("1.", "2.").
 import type { Row } from './wortlisten-pdf';
 
-export interface RawEntry { headword: string; examples: string[]; page: number; indent: number }
+export interface RawEntry { headword: string; examples: string[]; page: number; indent: number; carry?: RawEntry }
 
 const TERMINAL = /[.!?…“”"»«)]$/;
 const ARTICLE_START = /^(der|die|das)(\/(der|die|das))* /;
@@ -13,6 +13,7 @@ function joinText(a: string, b: string): string {
   if (!a) return b;
   // "Aben-" + "teuergeschichten" → one word; "Tennis-" + "Club" keeps its hyphen.
   if (/[a-zäöüß]-$/.test(a) && /^[a-zäöüß]/.test(b)) return a.slice(0, -1) + b;
+  if (/[a-zäöüß] -$/.test(a) && /^[a-zäöüß]/.test(b)) return a.slice(0, -2) + b; // 'mitge -' + 'macht'
   if (/-$/.test(a) && /^[A-ZÄÖÜ]/.test(b)) return a + b;
   return `${a} ${b}`;
 }
@@ -33,6 +34,8 @@ function continues(cur: string, text: string, idx: number, lastIdx: number, dy: 
   if (next && dy < 12.5 && !cur.includes(',') && !ARTICLE_START.test(cur) && /^(sein|werden|haben),/.test(text)) return true;
   if (/^[-–¨→/)]/.test(text) || /^\((D|A|CH|Pl|Sg)\b/.test(text) || /^(D|A|CH)[,:]/.test(text)) return true;
   if (next && unbalanced(cur)) return true;
+  // A plural shorthand wrapped after its dash: "der Zeitpunkt, -" / "e".
+  if (next && /\s[-–]$/.test(cur) && /^(e|n|en|er|s|se|nen)$/.test(text)) return true;
   // An article left at a row's end: "der/die" / "Bekannte, -n", "die Ehefrau, -en/der" / "Ehemann".
   if (/(^|[\s/])(der|die|das)$/.test(cur)) return true;
   // A bracketed note under the headword: "(z. B. Feierabend)", "(haben/machen)", "(sich), …".
@@ -40,7 +43,7 @@ function continues(cur: string, text: string, idx: number, lastIdx: number, dy: 
   if (/^\(/.test(text) && !/^\([a-zäöüß/-]+\)\/?\(?[a-zäöüß]/.test(text) && !/^\([^)]*\) [a-zäöüß]/.test(text)) return true;
   // A noun's trailing comma only carries a plural or region on: "die Diskothek, -en/Disko," at a
   // column's foot is complete.
-  if (/[,/:→]$/.test(cur) && !(ARTICLE_START.test(cur) && /,$/.test(cur) && !ARTICLE_START.test(text))) return true;
+  if (/[,/:→]$/.test(cur) && !(ARTICLE_START.test(cur) && /,$/.test(cur) && !(next && ARTICLE_START.test(text)))) return true;
   // A cross-reference wraps onto the next rows: "… → D: in Rente" / "gehen/sein; CH: pen-" /
   // "sioniert werden/sein". Headwords never contain ";".
   if (next && cur.includes('→') && /^[a-zäöüß]/.test(text) && (text.includes(';') || /-$/.test(cur) || /^\S+\/\S+$/.test(text))) return true;
@@ -77,6 +80,9 @@ export function groupGoethe(rows: Row[]): RawEntry[] {
     // A long headword's closing region tag can land in the example column: "(D," … "A)".
     const tag = ex.match(/^((?:D|A|CH)(?:,\s*(?:D|A|CH))*\))\s*/);
     if (tag && hw) { hw = `${hw} ${tag[1]}`; ex = ex.slice(tag[0].length); }
+    // Likewise a plural shorthand: "das Wohnzimmer," … "- Die Kinder …", "-en Welche …".
+    const dash = /,$/.test(hw) ? ex.match(/^([-–¨][-–¨a-zäöüß]*)(\s+|$)/) : null;
+    if (dash) { hw = `${hw} ${dash[1]}`; ex = ex.slice(dash[0].length); }
     // pdftotext glues "(pl.)  Die" into one word box, pulling the example's first word left.
     const glued = hw.match(/\)\s+([A-ZÄÖÜ][a-zäöüß]*)$/);
     if (glued) { hw = hw.slice(0, hw.length - glued[1].length).trim(); ex = `${glued[1]} ${ex}`; }
@@ -99,8 +105,15 @@ export function groupGoethe(rows: Row[]): RawEntry[] {
     if (!ex || !cur) return;
     // An unfinished example sentence carries on, even when a new headword starts on this row
     // ("der Absender, -" / "die Absenderin, -nen" share one example).
-    const target: RawEntry = prev && prev.examples.length && !/^\d+\./.test(ex)
-      && !TERMINAL.test(prev.examples[prev.examples.length - 1]) ? prev : cur;
+    // Only a noun pair printed at line spacing shares it; a headword further down starts afresh.
+    const pair = idx > 0 && row.y - rows[idx - 1].y < 13.5 && ARTICLE_START.test(hw);
+    let target: RawEntry = cur;
+    if (prev && pair && prev.examples.length && !/^\d+\./.test(ex) && !TERMINAL.test(prev.examples[prev.examples.length - 1])) {
+      target = prev;
+      cur.carry = prev; // later rows of that sentence go there too
+    } else if (cur.carry && !cur.examples.length && !TERMINAL.test(cur.carry.examples[cur.carry.examples.length - 1])) {
+      target = cur.carry;
+    }
     const items = target.examples;
     const open = items.length && !TERMINAL.test(items[items.length - 1]) && !/^\d+\./.test(ex);
     if (open) items[items.length - 1] = joinText(items[items.length - 1], ex);

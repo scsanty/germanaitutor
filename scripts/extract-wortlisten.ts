@@ -6,34 +6,36 @@ import { join } from 'node:path';
 import { lemmaKey } from '../lib/deck/lemmaKey';
 import { readPages, pageRows, type ColumnSpec, type Page, type Row, type Word } from './wortlisten-pdf';
 import { groupGoethe, firstExample, type RawEntry } from './wortlisten-goethe';
-import { parseHeadword, type Candidate, type PosLists, type Skipped } from './wortlisten-entry';
+import { expandPlural, parseHeadword, type Candidate, type PosLists, type Skipped } from './wortlisten-entry';
 import { groupTelc, lookupNoun, parseTelc, type NounInfo } from './wortlisten-telc';
-import { ADJECTIVES, ADVERBS, NOT_VERBS } from './wortlisten-pos';
+import { ADJECTIVES, ADVERBS, EXTRA_NOUNS, NOT_VERBS } from './wortlisten-pos';
 
 const ROOT = join('.superpowers', 'sdd', '2026-09-29-freestyle', 'wortlisten');
 const PDF_DIR = join(ROOT, 'pdf');
 const OUT_DIR = join(ROOT, 'candidates');
 
-interface Source { id: string; first: number; last: number; columns: ColumnSpec[] }
+// Content lies between `top` and `bottom` (pt): Goethe ~83–777 under running heads at 23–51, telc
+// ~56–790 under a title at 9; page numbers and print codes sit below.
+interface Source { id: string; first: number; last: number; columns: ColumnSpec[]; top: number; bottom: number }
 const ONE: ColumnSpec[] = [{ from: 0, to: 9999 }];
 const TWO: ColumnSpec[] = [{ from: 0, to: 300 }, { from: 300, to: 9999 }];
 // Page ranges of the alphabetical lists (front matter, themed word groups and back pages skipped).
 const GOETHE: Source[] = [
-  { id: 'goethe-a1', first: 9, last: 27, columns: ONE },
-  { id: 'goethe-a2', first: 8, last: 31, columns: TWO },
-  { id: 'goethe-b1', first: 16, last: 102, columns: TWO },
+  { id: 'goethe-a1', first: 9, last: 27, columns: ONE, top: 60, bottom: 785 },
+  { id: 'goethe-a2', first: 8, last: 31, columns: TWO, top: 60, bottom: 785 },
+  { id: 'goethe-b1', first: 16, last: 102, columns: TWO, top: 60, bottom: 785 },
 ];
-const TELC: Source[] = ['a1', 'a2', 'b1'].map((l) => ({ id: `telc-${l}`, first: 1, last: 8, columns: TWO }));
+const TELC: Source[] = ['a1', 'a2', 'b1'].map((l) => ({ id: `telc-${l}`, first: 1, last: 8, columns: TWO, top: 30, bottom: 794 }));
 
 const HEADING = /^(Alphabetische[rn]?|ALPHABETISCHER|Wortliste|Wortschatz|WORTSCHATZ|2)$/;
 // Header and footer bands, side labels ("A2_Wortliste_04_050526", "VS_03"), and the list title on
 // the first page.
-function drop(first: number) {
-  return (w: Word, p: Page) => w.y < 60 || w.y > 765 || /Wortliste_0|^VS_0/.test(w.t) || (p.n === first && HEADING.test(w.t));
+function drop(s: Source) {
+  return (w: Word, p: Page) => w.y < s.top || w.y > s.bottom || /Wortliste_0|^VS_0/.test(w.t) || (p.n === s.first && HEADING.test(w.t));
 }
 
 function rowsOf(s: Source): Row[] {
-  return readPages(join(PDF_DIR, `${s.id}.pdf`), s.first, s.last).flatMap((p) => pageRows(p, s.columns, drop(s.first)));
+  return readPages(join(PDF_DIR, `${s.id}.pdf`), s.first, s.last).flatMap((p) => pageRows(p, s.columns, drop(s)));
 }
 
 interface Parsed { id: string; entries: (Candidate & { source: string; page: number })[]; skipped: Skipped[] }
@@ -79,7 +81,13 @@ function main() {
     if (e.partOfSpeech !== 'noun') continue;
     const [article, ...rest] = e.lemma.split(' ');
     const word = rest.join(' ');
-    if (!nouns.has(word) || (!nouns.get(word)!.plural && e.plural)) nouns.set(word, { article, plural: e.plural });
+    const only = /plural only|singular only/.exec(e.note ?? '')?.[0];
+    if (!nouns.has(word) || (!nouns.get(word)!.plural && e.plural)) nouns.set(word, { article, plural: e.plural, ...(only ? { only } : {}) });
+  }
+  // Days, months and the like sit in the Goethe themed groups, which are not parsed.
+  for (const line of EXTRA_NOUNS) {
+    const [article, word, notation = ''] = line.split(' ');
+    if (!nouns.has(word)) nouns.set(word, { article, plural: notation ? expandPlural(word, notation).plural : null });
   }
   // Goethe headwords printed without an article: look the article up in the other entries.
   for (const p of parsed) for (const e of p.entries) {
@@ -92,6 +100,9 @@ function main() {
     e.plural = e.plural ?? hit.plural;
     e.note = ['article missing in source', hit.note, ...kept].join('; ');
   }
+  const goetheOther = new Set(parsed.flatMap((p) => p.entries)
+    .filter((e) => e.partOfSpeech === 'other' && /^[A-ZÄÖÜ][a-zäöüß]+$/.test(e.lemma) && !e.source.split(' || ')[0].includes(','))
+    .map((e) => e.lemma));
   for (const s of TELC) {
     const entries: Parsed['entries'] = [];
     const heads = groupTelc(rowsOf(s));
@@ -99,7 +110,7 @@ function main() {
     const words = new Set(heads.flatMap((h) => h.headword.split(/[/\s(),]+/)));
     const known = (w: string) => nouns.has(w) || words.has(w);
     for (const h of heads) {
-      for (const c of parseTelc(h.headword, nouns, base, known)) entries.push({ ...c, source: h.headword, page: h.page });
+      for (const c of parseTelc(h.headword, nouns, base, known, goetheOther)) entries.push({ ...c, source: h.headword, page: h.page });
     }
     parsed.push({ id: s.id, entries, skipped: [] });
   }
@@ -118,8 +129,10 @@ function main() {
     const pos = Object.entries(p.entries.reduce<Record<string, number>>((a, e) => ({ ...a, [e.partOfSpeech]: (a[e.partOfSpeech] ?? 0) + 1 }), {}));
     console.log(`${p.id}: ${p.entries.length} entries, ${p.entries.filter((e) => !e.example).length} without example, `
       + `${dups.length} duplicate lemmas [${dups.join(', ')}], ${p.skipped.length} skipped; ${pos.map(([k, n]) => `${k} ${n}`).join(', ')}`);
-    for (let i = 0; i < sample; i++) {
-      const e = p.entries[Math.floor(rand() * p.entries.length)];
+    const picked = new Set<number>();
+    while (picked.size < Math.min(sample, p.entries.length)) picked.add(Math.floor(rand() * p.entries.length));
+    for (const i of picked) {
+      const e = p.entries[i];
       console.log(`  p${e.page} ${JSON.stringify({ lemma: e.lemma, pos: e.partOfSpeech, plural: e.plural, example: e.example, note: e.note })}\n      src: ${e.source}`);
     }
   }

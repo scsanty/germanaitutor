@@ -2,10 +2,10 @@
 // articles, plurals or examples. Nouns take their article (and plural) from the Goethe lists,
 // directly or through the last part of a compound; the rest are left for the meaning step.
 import type { Row } from './wortlisten-pdf';
-import { clean, expandPlural, guessPos, type Candidate, type PosLists } from './wortlisten-entry';
-import { EXTRA_NOUNS, SUFFIX_ARTICLES } from './wortlisten-pos';
+import { clean, editDistance, guessPos, type Candidate, type PosLists } from './wortlisten-entry';
+import { SUFFIX_ARTICLES } from './wortlisten-pos';
 
-export interface NounInfo { article: string; plural: string | null }
+export interface NounInfo { article: string; plural: string | null; only?: string }
 
 // Rows → printed headwords. A headword ends on the row that carries its lesson tag; a long one
 // wraps ("AGB (=Allgemeine" / "Geschäftsbedingungen)   L4").
@@ -35,7 +35,7 @@ export function lookupNoun(word: string, nouns: Map<string, NounInfo>, compounds
     return { info, plural, note: `article inferred from ${info.article} ${word.slice(dash + 1)}` };
   }
   // A compound takes the article of its last part: "Apfelsaft" → "der Saft".
-  for (let i = 3; i <= word.length - 3; i++) {
+  for (let i = 2; i <= word.length - 3; i++) {
     const head = word[i].toUpperCase() + word.slice(i + 1);
     const info = nouns.get(head);
     if (!info) continue;
@@ -45,11 +45,6 @@ export function lookupNoun(word: string, nouns: Map<string, NounInfo>, compounds
   }
   return null;
 }
-
-const EXTRA = new Map<string, NounInfo>(EXTRA_NOUNS.map((line) => {
-  const [article, word, notation = ''] = line.split(' ');
-  return [word, { article, plural: notation ? expandPlural(word, notation).plural : null }];
-}));
 
 // Articles fixed by the ending ("-ung" → die) or, for "-in", by a masculine form in the lists.
 function bySuffix(word: string, known: (w: string) => boolean): { info: NounInfo; plural: string | null; note: string } | null {
@@ -69,27 +64,28 @@ function bySuffix(word: string, known: (w: string) => boolean): { info: NounInfo
 }
 
 function telcNoun(word: string, nouns: Map<string, NounInfo>, known: (w: string) => boolean): Candidate {
-  const extra = EXTRA.get(word);
   const hit = lookupNoun(word, nouns, false)
-    ?? (extra ? { info: extra, plural: extra.plural } : null)
     ?? bySuffix(word, known)
     ?? lookupNoun(word, nouns);
   if (hit?.note === 'article taken from the Goethe lists') hit.note = undefined;
   if (!hit) return { lemma: word, partOfSpeech: 'noun', plural: null, example: '', note: 'article unknown (telc lists print none)' };
-  const notes = [hit.note, hit.plural ? undefined : 'no plural given'].filter(Boolean) as string[];
+  const notes = [hit.note, hit.plural ? undefined : (hit.info.only ?? 'no plural given')].filter(Boolean) as string[];
   return {
     lemma: `${hit.info.article} ${word}`, partOfSpeech: 'noun', plural: hit.plural, example: '',
     ...(notes.length ? { note: notes.join('; ') } : {}),
   };
 }
 
-export function parseTelc(headword: string, nouns: Map<string, NounInfo>, lists: PosLists, known: (w: string) => boolean): Candidate[] {
+// `notNouns`: capitalised words the Goethe lists print without an article ("Achtung", "Prost").
+export function parseTelc(
+  headword: string, nouns: Map<string, NounInfo>, lists: PosLists, known: (w: string) => boolean, notNouns: Set<string>,
+): Candidate[] {
   let hw = headword;
   // "besten (am besten)" → "am besten"; "Abitur (Abi)" and "AGB (=…)" keep the main form.
   const am = hw.match(/\((am \S+)\)/);
   if (am) return [{ lemma: am[1], partOfSpeech: 'adverb', plural: null, example: '' }];
   hw = clean(hw.replace(/\s*\([^)]*\)/g, ''));
-  if (/^[a-zäöüß]/.test(hw) || NOT_NOUNS.has(hw)) {
+  if (/^[a-zäöüß]/.test(hw) || NOT_NOUNS.has(hw) || notNouns.has(hw)) {
     const lemma = hw.includes('/') ? hw : hw.split(',')[0].trim();
     return [{ lemma, partOfSpeech: guessPos(lemma, false, lists), plural: null, example: '' }];
   }
@@ -99,7 +95,7 @@ export function parseTelc(headword: string, nouns: Map<string, NounInfo>, lists:
   for (const p of parts.slice(1)) {
     if (p === 'in') words.push(`${parts[0]}in`); // "Lehrer/in"
     else if (/in$/.test(p) && p.length > parts[0].length) words.push(p); // "Arzt/Ärztin"
-    else if (similar(parts[0], p)) variants.push(p); // "Ellbogen/Ellenbogen"
+    else if (editDistance(parts[0], p) <= 2) variants.push(p); // "Ellbogen/Ellenbogen"
     else words.push(p); // "Hausmann/Hausfrau"
   }
   return words.map((w, i) => {
@@ -107,15 +103,4 @@ export function parseTelc(headword: string, nouns: Map<string, NounInfo>, lists:
     if (i === 0 && variants.length) c.note = [c.note, `also written ${variants.join(', ')}`].filter(Boolean).join('; ');
     return c;
   });
-}
-
-function similar(a: string, b: string): boolean {
-  const d: number[][] = Array.from({ length: a.length + 1 }, (_, i) => [i, ...Array(b.length).fill(0)]);
-  for (let j = 1; j <= b.length; j++) d[0][j] = j;
-  for (let i = 1; i <= a.length; i++) {
-    for (let j = 1; j <= b.length; j++) {
-      d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
-    }
-  }
-  return d[a.length][b.length] <= 2;
 }

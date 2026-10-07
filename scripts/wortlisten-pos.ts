@@ -2,7 +2,7 @@
 // Goethe A2/B1 lists themselves (every verb there carries its forms); these lists cover the rest.
 
 export const ADVERBS = new Set(`
-abends allein also anders auch auf außen außerdem bald bereits besonders bestimmt bisher bitte
+abends allein also anders auch außen außerdem bald bereits besonders bestimmt bisher bitte
 bloß dabei dafür dagegen daher dahin damals damit danach daneben dann darum da dort dorthin
 draußen drinnen drüben dabei ebenfalls eben eigentlich einfach einmal endlich etwa etwas fast
 früher ganz gar genau genauso gerade gern gestern gleich hier heute hinten hoffentlich immer
@@ -29,7 +29,7 @@ wach warm weich weiß weit wenig wichtig wild zufrieden geöffnet geschlossen ve
 geschieden ledig verwitwet getrennt bequem böse doof egal ernst extra fair gemütlich gesamt
 genug gerecht geschickt herzlich interessant kostenlos lila möglich nötig okay orange
 pünktlich richtig rosa schade sicher spannend super sympathisch typisch verboten verrückt
-wunderbar zuverlässig
+wunderbar zuverlässig spät blöd verschieden erwachsen offen golden selten modern dunkel trocken eigen
 `.trim().split(/\s+/));
 
 // Lowercase words ending in -en/-ern/-eln that are not verbs.
@@ -38,7 +38,7 @@ oben unten gegen morgen gestern vorgestern übermorgen innen außen trocken offe
 zufrieden verschieden entgegen wegen neben zwischen selten besten meisten einzeln eben ebenfalls
 seltsam wesentlichen vorn hinten eben zusammen innen draußen drinnen trotzdem ungefähr
 übrigen heutigen sondern indem obwohl bevor nachdem seitdem solange sobald damit dennoch einen
-modern sauer teuer dunkel einmalen allgemeinen
+modern sauer teuer dunkel einmalen allgemeinen erwachsen
 `.trim().split(/\s+/));
 
 // Nouns the Goethe alphabetical lists leave to their themed word groups (days, months, seasons,
