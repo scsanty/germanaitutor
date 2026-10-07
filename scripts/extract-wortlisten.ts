@@ -1,7 +1,7 @@
 // One-off: extracts the official Goethe and telc A1–B1 Wortlisten from their PDFs into candidate
 // files (no meanings yet). PDFs and output stay in the gitignored .superpowers folder.
 // Run: npx tsx scripts/extract-wortlisten.ts [--sample 20] [--seed 1]
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { lemmaKey } from '../lib/deck/lemmaKey';
 import { readPages, pageRows, type ColumnSpec, type Page, type Row, type Word } from './wortlisten-pdf';
@@ -131,7 +131,9 @@ function main() {
       example: example.normalize('NFC'), ...(note ? { note: note.normalize('NFC') } : {}),
     }));
     writeFileSync(join(OUT_DIR, `${p.id}.json`), `${JSON.stringify(out, null, 1)}\n`);
-    if (p.skipped.length) writeFileSync(join(OUT_DIR, `${p.id}.skipped.json`), `${JSON.stringify(p.skipped, null, 1)}\n`);
+    const skippedPath = join(OUT_DIR, `${p.id}.skipped.json`);
+    if (p.skipped.length) writeFileSync(skippedPath, `${JSON.stringify(p.skipped, null, 1)}\n`);
+    else rmSync(skippedPath, { force: true });
     const keys = new Map<string, number>();
     for (const e of p.entries) keys.set(lemmaKey(e.lemma), (keys.get(lemmaKey(e.lemma)) ?? 0) + 1);
     const dups = [...keys].filter(([, n]) => n > 1).map(([k]) => k);
