@@ -370,7 +370,24 @@
       "family": "Meine Familie",
       "dreamJob": "Mein Traumberuf",
       "holiday": "Mein letzter Urlaub"
-    }
+    },
+    "yourMessage": "Deine Nachricht",
+    "send": "Senden",
+    "sending": "Wird gesendet…",
+    "sendFailed": "Deine Nachricht konnte nicht gesendet werden.",
+    "germanLetters": "Deutsche Buchstaben",
+    "thread": "Nachrichten",
+    "corrections": "Korrekturen",
+    "correctionLanguage": "Sprache der Korrektur",
+    "explanationLanguage": "Sprache der Erklärung",
+    "enterHint": "Enter sendet · Umschalt+Enter für eine neue Zeile",
+    "topicsFailed": "Die Grammatikthemen konnten nicht geladen werden. Du kannst trotzdem ein eigenes Thema eingeben."
+  },
+  "deck": {
+    "saveToDeck": "In den Kartenstapel",
+    "saving": "Wird gespeichert…",
+    "saved": "Gespeichert: {lemma}",
+    "saveFailed": "Das Wort konnte nicht gespeichert werden."
   },
   "nav": {
     "main": "Hauptmenü",

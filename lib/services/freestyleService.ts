@@ -155,6 +155,8 @@ export function createFreestyleService(
       modes: FREESTYLE_MODES.filter((m) => m.enabled).map((m) => ({ mode: m.mode, enabled: true, open: !!row(m.mode) })),
       aiAvailable: isAiAvailable(db),
       levels: levelsUpTo(profiles.getProfile().highestUnlockedLevel),
+      // Spec: setup defaults to the active level.
+      activeLevel: profiles.getProfile().activeLevel,
     };
   }
 

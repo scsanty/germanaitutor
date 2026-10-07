@@ -370,7 +370,24 @@
       "family": "My family",
       "dreamJob": "My dream job",
       "holiday": "My last holiday"
-    }
+    },
+    "yourMessage": "Your message",
+    "send": "Send",
+    "sending": "Sending…",
+    "sendFailed": "Could not send your message.",
+    "germanLetters": "German letters",
+    "thread": "Messages",
+    "corrections": "Corrections",
+    "correctionLanguage": "Correction language",
+    "explanationLanguage": "Explanation language",
+    "enterHint": "Enter sends · Shift+Enter adds a line",
+    "topicsFailed": "Could not load the grammar topics. You can still type your own."
+  },
+  "deck": {
+    "saveToDeck": "Save to deck",
+    "saving": "Saving…",
+    "saved": "Saved: {lemma}",
+    "saveFailed": "Could not save the word."
   },
   "nav": {
     "main": "Main",

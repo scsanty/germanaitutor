@@ -27,11 +27,16 @@ describe("GET /api/freestyle/topics", () => {
     expect(track).toBe("generic");
     db.exec(`INSERT INTO lessons (id, track, source_level, skill, title, title_de) VALUES
       ('t-dupe', 'generic', 'A1', 'grammar', 'The verb sein', 'Das Verb sein');
-      INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES ('t-dupe', 'g-a1-m1');`);
+      INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES ('t-dupe', 'g-a1-m1');
+      INSERT INTO milestones (id, track, level, title, difficulty_rank) VALUES ('generic-a1-unsorted', 'generic', 'A1', 'Unsorted', NULL);
+      INSERT INTO lessons (id, track, source_level, skill, title, title_de) VALUES
+        ('t-unsorted', 'generic', 'A1', 'grammar', 'Unplaced grammar', 'Ungeordnete Grammatik');
+      INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES ('t-unsorted', 'generic-a1-unsorted');`);
     const res = await get("?level=A1");
     expect(res.status).toBe(200);
     const { grammarTopics } = (await res.json()) as { grammarTopics: string[] };
-    // a1-greet is vocabulary, the goethe lesson is another track, a2-past is another level; the dupe collapses.
+    // a1-greet is vocabulary, the goethe lesson is another track, a2-past is another level, t-unsorted sits
+    // in the unranked Unsorted milestone; the dupe collapses.
     expect(grammarTopics).toEqual(["The verb sein"]);
   });
 

@@ -40,6 +40,7 @@ describe('/api/freestyle', () => {
       ['conversation', 'grammar_drill', 'free_reading', 'free_writing'].map((mode) => ({ mode, enabled: true, open: false }))
     );
     expect(body.levels).toEqual(['A1']);
+    expect(body.activeLevel).toBe('A1');
     expect(body.aiAvailable).toBe(false);
   });
 
