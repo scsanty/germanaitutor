@@ -17,10 +17,18 @@ interface SetupData {
   activeLevel: CefrLevel;
 }
 
+// A failed response carries its body, so the caller can show the catalog text for its code.
+class LoadError extends Error {
+  constructor(readonly body: unknown) {
+    super('load failed');
+  }
+}
+
 async function getJson<T>(url: string): Promise<T> {
   const res = await fetch(url);
-  if (!res.ok) throw new Error(String(res.status));
-  return (await res.json()) as T;
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) throw new LoadError(data);
+  return data as T;
 }
 
 // Opens a mode: resumes its open session, or shows the setup to start one.
@@ -32,7 +40,7 @@ export function FreestyleSession({ mode }: { mode: FreestyleMode }) {
   const [setupData, setSetupData] = useState<SetupData | null>(null);
   const [topics, setTopics] = useState<string[]>([]);
   const [topicsFailed, setTopicsFailed] = useState(false);
-  const [failed, setFailed] = useState(false);
+  const [loadError, setLoadError] = useState<string | null>(null);
   const topicsFor = useRef<CefrLevel | null>(null);
 
   // S16: the drill topics depend on the level picked in the setup; only the latest request counts.
@@ -40,6 +48,7 @@ export function FreestyleSession({ mode }: { mode: FreestyleMode }) {
     (level: CefrLevel) => {
       if (mode !== 'grammar_drill') return;
       topicsFor.current = level;
+      setTopics([]);
       setTopicsFailed(false);
       getJson<{ grammarTopics: string[] }>(`/api/freestyle/topics?level=${level}`)
         .then((data) => {
@@ -68,13 +77,14 @@ export function FreestyleSession({ mode }: { mode: FreestyleMode }) {
       setSetupData({ levels: overview.levels, activeLevel: overview.activeLevel });
       setSession(null);
       loadTopics(overview.levels.includes(overview.activeLevel) ? overview.activeLevel : overview.levels[0]);
-    })().catch(() => {
-      if (!stale) setFailed(true);
+    })().catch((err) => {
+      if (!stale) setLoadError(errorText(err instanceof LoadError ? err.body : null, t('loadFailed')));
     });
     return () => {
       stale = true;
       topicsFor.current = null;
     };
+    // errorText and t are recreated each render; the load runs once per mode.
   }, [mode, loadTopics]);
 
   async function send(text: string) {
@@ -97,10 +107,10 @@ export function FreestyleSession({ mode }: { mode: FreestyleMode }) {
   const labelKey = FREESTYLE_MODES.find((m) => m.mode === mode)?.labelKey ?? 'conversation';
 
   let body: React.ReactNode;
-  if (failed) {
+  if (loadError) {
     body = (
       <Alert variant="destructive" role="alert">
-        <AlertDescription>{t('loadFailed')}</AlertDescription>
+        <AlertDescription>{loadError}</AlertDescription>
       </Alert>
     );
   } else if (session === undefined) {

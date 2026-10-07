@@ -70,4 +70,19 @@ describe('ChatThread', () => {
     fireEvent.click(screen.getByRole('button', { name: 'ä' }));
     expect(box).toHaveValue('Mädchen');
   });
+
+  it('sends once when Send or Enter is pressed again while sending', async () => {
+    let finish: () => void = () => {};
+    const onSend = vi.fn(() => new Promise<void>((resolve) => (finish = resolve)));
+    renderWithIntl(<ChatThread mode="conversation" messages={[]} onSend={onSend} />);
+    const box = screen.getByLabelText('Your message');
+    fireEvent.change(box, { target: { value: 'Hallo!' } });
+    fireEvent.keyDown(box, { key: 'Enter' });
+    fireEvent.keyDown(box, { key: 'Enter' });
+    fireEvent.click(screen.getByRole('button', { name: 'Send' }));
+    expect(box).toHaveAttribute('readonly');
+    finish();
+    await waitFor(() => expect(box).toHaveValue(''));
+    expect(onSend).toHaveBeenCalledTimes(1);
+  });
 });

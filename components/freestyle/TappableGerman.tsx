@@ -12,15 +12,36 @@ interface Token {
   sentence?: string;
 }
 
-const WORD = /\p{L}(?:[\p{L}'’-]*\p{L})?/gu;
-const SENTENCE = /[^.!?…]*(?:[.!?…]+["'“”»«)]*|$)/gu;
+// Two letters or more: a lone letter (z in "z.B.", a list's "a") is not worth saving.
+const WORD = /\p{L}[\p{L}'’-]*\p{L}/gu;
+const SENTENCE_END = /[.!?…]+["'“”»«)]*/gu;
+// A full stop after one of these, or after a number ("am 3. Mai"), does not end the sentence.
+const ABBREVIATIONS = new Set(['z.b.', 'dr.', 'usw.', 'bzw.', 'ca.', 'd.h.', 'u.a.']);
+
+function endsSentence(text: string, index: number, length: number): boolean {
+  const after = text[index + length];
+  if (after !== undefined && !/\s/u.test(after)) return false; // "3.5", "www.example.de"
+  if (text[index] !== '.' || length > 1) return true;
+  const chunk = text.slice(0, index + 1).match(/[^\s"'“”„»«(]+$/u)?.[0] ?? '';
+  return !ABBREVIATIONS.has(chunk.toLowerCase()) && !/^\d+\.$/u.test(chunk);
+}
+
+export function splitSentences(text: string): { start: number; end: number; text: string }[] {
+  const out: { start: number; end: number; text: string }[] = [];
+  let start = 0;
+  for (const m of text.matchAll(SENTENCE_END)) {
+    if (!endsSentence(text, m.index, m[0].length)) continue;
+    const end = m.index + m[0].length;
+    out.push({ start, end, text: text.slice(start, end).trim() });
+    start = end;
+  }
+  if (text.slice(start).trim()) out.push({ start, end: text.length, text: text.slice(start).trim() });
+  return out;
+}
 
 // Splits text into words and the plain text between them (spaces, punctuation, digits).
 function tokenize(text: string, sentence?: string): Token[] {
-  const sentences: { start: number; end: number; text: string }[] = [];
-  for (const m of text.matchAll(SENTENCE)) {
-    if (m[0]) sentences.push({ start: m.index, end: m.index + m[0].length, text: m[0].trim() });
-  }
+  const sentences = splitSentences(text);
   const tokens: Token[] = [];
   let last = 0;
   for (const m of text.matchAll(WORD)) {
@@ -43,6 +64,8 @@ export function TappableGerman({ text, sentence }: { text: string; sentence?: st
   const tokens = useMemo(() => tokenize(text, sentence), [text, sentence]);
   const anchor = useRef<HTMLButtonElement | null>(null);
   const request = useRef(0);
+  // Set when the popover closes because the student tapped elsewhere: focus then stays where they went.
+  const closedByOutside = useRef(false);
   const [picked, setPicked] = useState<number | null>(null);
   const [state, setState] = useState<SaveState>({ saving: false });
 
@@ -97,13 +120,17 @@ export function TappableGerman({ text, sentence }: { text: string; sentence?: st
       <PopoverContent
         className="flex w-60 flex-col gap-2 p-3"
         aria-label={picked !== null ? tokens[picked].text : undefined}
+        onInteractOutside={() => {
+          closedByOutside.current = true;
+        }}
         onCloseAutoFocus={(e) => {
-          // No Radix trigger here, so hand focus back to the tapped word ourselves.
+          // No Radix trigger here, so on Escape we hand focus back to the tapped word ourselves.
           e.preventDefault();
-          anchor.current?.focus();
+          if (!closedByOutside.current) anchor.current?.focus();
+          closedByOutside.current = false;
         }}
       >
-        {picked !== null && <p className="font-heading text-lg font-bold">{tokens[picked].text}</p>}
+        {picked !== null && <p lang="de" className="font-heading text-lg font-bold">{tokens[picked].text}</p>}
         {state.saved ? (
           <p role="status" className="text-sm font-medium text-success">
             {t('saved', { lemma: state.saved })}

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { memo, useEffect, useRef, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { Send } from 'lucide-react';
 import { LanguageToggle } from '@/components/LanguageToggle';
@@ -33,21 +33,46 @@ interface Props {
 
 export function ChatThread({ mode, messages, onSend }: Props) {
   const t = useTranslations('freestyle');
+  const end = useRef<HTMLDivElement>(null);
+
+  // Keep the newest message in view after every change. The sentinel sits after the sticky
+  // composer, so the newest message lands above it, not underneath.
+  useEffect(() => {
+    const reduce = typeof window.matchMedia === 'function' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    end.current?.scrollIntoView?.({ block: 'end', behavior: reduce ? 'auto' : 'smooth' });
+  }, [messages.length]);
+
+  return (
+    <div data-mode={mode} className="flex flex-col gap-4">
+      <ol aria-label={t('thread')} className="flex flex-col gap-3">
+        {messages.map((message) =>
+          message.role === 'assistant' ? (
+            <AssistantMessage key={message.id} message={message} />
+          ) : (
+            <UserMessage key={message.id} message={message} />
+          )
+        )}
+      </ol>
+      <Composer onSend={onSend} />
+      <div ref={end} aria-hidden />
+    </div>
+  );
+}
+
+// Holds the draft, so typing re-renders only the composer, not the thread.
+function Composer({ onSend }: { onSend: (text: string) => Promise<void> }) {
+  const t = useTranslations('freestyle');
   const [draft, setDraft] = useState('');
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const box = useRef<HTMLTextAreaElement>(null);
-  const end = useRef<HTMLDivElement>(null);
-
-  // Keep the newest message in view after every change.
-  useEffect(() => {
-    const reduce = typeof window.matchMedia === 'function' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    end.current?.scrollIntoView?.({ block: 'end', behavior: reduce ? 'auto' : 'smooth' });
-  }, [messages.length, busy]);
+  // A ref as well as state: a second Enter can land before the re-render that disables sending.
+  const sending = useRef(false);
 
   async function send() {
     const text = draft.trim();
-    if (!text || busy) return;
+    if (!text || sending.current) return;
+    sending.current = true;
     setBusy(true);
     setError(null);
     try {
@@ -56,6 +81,7 @@ export function ChatThread({ mode, messages, onSend }: Props) {
     } catch (err) {
       setError(err instanceof Error && err.message ? err.message : t('sendFailed'));
     } finally {
+      sending.current = false;
       setBusy(false);
     }
   }
@@ -72,76 +98,68 @@ export function ChatThread({ mode, messages, onSend }: Props) {
   }
 
   return (
-    <div data-mode={mode} className="flex flex-col gap-4">
-      <ol aria-label={t('thread')} className="flex flex-col gap-3">
-        {messages.map((message) =>
-          message.role === 'assistant' ? (
-            <AssistantMessage key={message.id} message={message} />
-          ) : (
-            <UserMessage key={message.id} message={message} />
-          )
-        )}
-      </ol>
-      <div ref={end} />
-
-      <div className="sticky bottom-0 flex flex-col gap-2 border-t border-border bg-background/95 pt-3 pb-2 backdrop-blur supports-[backdrop-filter]:bg-background/80">
-        {error && (
-          <Alert variant="destructive" role="alert">
-            <AlertDescription>{error}</AlertDescription>
-          </Alert>
-        )}
-        <label htmlFor="freestyle-message" className="sr-only">
-          {t('yourMessage')}
-        </label>
-        <Textarea
-          id="freestyle-message"
-          ref={box}
-          lang="de"
-          rows={2}
-          value={draft}
-          maxLength={2000}
-          placeholder={t('yourMessage')}
-          aria-describedby="freestyle-message-hint"
-          onChange={(e) => setDraft(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' && !e.shiftKey && !e.nativeEvent.isComposing) {
-              e.preventDefault();
-              void send();
-            }
-          }}
-          className="min-h-16 resize-none text-base"
-        />
-        <div className="flex flex-wrap items-center justify-between gap-2">
-          <div role="group" aria-label={t('germanLetters')} className="flex flex-wrap gap-1">
-            {LETTERS.map((letter) => (
-              <Button
-                key={letter}
-                type="button"
-                variant="outline"
-                size="sm"
-                className="min-h-11 min-w-11 px-0 text-base"
-                // Keep the cursor in the text box.
-                onMouseDown={(e) => e.preventDefault()}
-                onClick={() => insert(letter)}
-              >
-                {letter}
-              </Button>
-            ))}
-          </div>
-          <Button type="button" onClick={() => void send()} disabled={busy || !draft.trim()} className="min-h-11 px-5">
-            <Send aria-hidden />
-            {t('send')}
-          </Button>
+    // Phones: pinned above AppShell's bottom nav and floating buttons (as LessonPage does). From 768 px, at the bottom.
+    <div className="sticky bottom-[8.75rem] z-[5] flex flex-col gap-2 rounded-xl border border-border bg-background/95 p-3 backdrop-blur supports-[backdrop-filter]:bg-background/80 md:bottom-0 md:rounded-none md:border-x-0 md:border-b-0 md:px-0 md:pb-2">
+      {error && (
+        <Alert variant="destructive" role="alert">
+          <AlertDescription>{error}</AlertDescription>
+        </Alert>
+      )}
+      <label htmlFor="freestyle-message" className="sr-only">
+        {t('yourMessage')}
+      </label>
+      <Textarea
+        id="freestyle-message"
+        ref={box}
+        lang="de"
+        rows={2}
+        value={draft}
+        maxLength={2000}
+        // The text being sent stays put until the reply lands (it is cleared then).
+        readOnly={busy}
+        aria-busy={busy}
+        placeholder={t('yourMessage')}
+        aria-describedby="freestyle-message-hint"
+        onChange={(e) => setDraft(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' && !e.shiftKey && !e.nativeEvent.isComposing) {
+            e.preventDefault();
+            void send();
+          }
+        }}
+        className="min-h-16 resize-none text-base"
+      />
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <div role="group" aria-label={t('germanLetters')} className="flex flex-wrap gap-1">
+          {LETTERS.map((letter) => (
+            <Button
+              key={letter}
+              type="button"
+              variant="outline"
+              size="sm"
+              disabled={busy}
+              className="min-h-11 min-w-11 px-0 text-base"
+              // Keep the cursor in the text box.
+              onMouseDown={(e) => e.preventDefault()}
+              onClick={() => insert(letter)}
+            >
+              {letter}
+            </Button>
+          ))}
         </div>
-        <p id="freestyle-message-hint" className="text-xs text-text-muted">
-          {busy ? t('sending') : t('enterHint')}
-        </p>
+        <Button type="button" onClick={() => void send()} disabled={busy || !draft.trim()} className="min-h-11 px-5">
+          <Send aria-hidden />
+          {t('send')}
+        </Button>
       </div>
+      <p id="freestyle-message-hint" className="text-xs text-text-muted">
+        {busy ? t('sending') : t('enterHint')}
+      </p>
     </div>
   );
 }
 
-function UserMessage({ message }: { message: SessionMessage }) {
+const UserMessage = memo(function UserMessage({ message }: { message: SessionMessage }) {
   const corrections = readCorrections(message.extra?.corrections);
   return (
     <li className="flex flex-col items-end gap-2">
@@ -153,9 +171,9 @@ function UserMessage({ message }: { message: SessionMessage }) {
       )}
     </li>
   );
-}
+});
 
-function AssistantMessage({ message }: { message: SessionMessage }) {
+const AssistantMessage = memo(function AssistantMessage({ message }: { message: SessionMessage }) {
   const t = useTranslations('exercise.practiceResult');
   const tFs = useTranslations('freestyle');
   const locale = useLocale() as ContentLanguage;
@@ -185,4 +203,4 @@ function AssistantMessage({ message }: { message: SessionMessage }) {
       </p>
     </li>
   );
-}
+});

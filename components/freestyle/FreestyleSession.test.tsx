@@ -96,8 +96,14 @@ describe('FreestyleSession', () => {
   });
 
   it('shows an alert when the session cannot be loaded', async () => {
-    stubFetch({ 'GET /api/freestyle/conversation/session': { body: { error: 'boom' }, ok: false, status: 500 } });
+    stubFetch({ 'GET /api/freestyle/conversation/session': { body: {}, ok: false, status: 500 } });
     renderWithIntl(<FreestyleSession mode="conversation" />);
     expect(await screen.findByRole('alert')).toHaveTextContent('Could not load Freestyle. Please reload the page.');
+  });
+
+  it('shows the catalog text for a coded load error', async () => {
+    stubFetch({ 'GET /api/freestyle/conversation/session': { body: { error: 'x', code: 'ai_bad_reply' }, ok: false, status: 502 } });
+    renderWithIntl(<FreestyleSession mode="conversation" />);
+    expect(await screen.findByRole('alert')).toHaveTextContent('The AI replied in an unexpected format');
   });
 });
