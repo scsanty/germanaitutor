@@ -39,6 +39,17 @@ describe('WritingSession', () => {
     expect(screen.getByLabelText('Your text')).toHaveValue('Ich habe nach Rom gefahren.');
   });
 
+  it('does not overwrite text the student has typed when Revise is pressed', () => {
+    vi.stubGlobal('fetch', vi.fn());
+    renderWithIntl(<WritingSession session={{ ...SESSION, messages: REPLY.messages as never }} onMessages={vi.fn()} />);
+    fireEvent.change(screen.getByLabelText('Your text'), { target: { value: 'Mein neuer Text' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Revise' }));
+    expect(screen.getByLabelText('Your text')).toHaveValue('Mein neuer Text');
+    fireEvent.change(screen.getByLabelText('Your text'), { target: { value: '  ' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Revise' }));
+    expect(screen.getByLabelText('Your text')).toHaveValue('Ich habe nach Rom gefahren.');
+  });
+
   it('switches the comment language only when it differs', () => {
     vi.stubGlobal('fetch', vi.fn());
     const same = [REPLY.messages[0], { ...REPLY.messages[1], extra: { corrections: [], comment: { en: 'OK', de: 'OK' } } }];

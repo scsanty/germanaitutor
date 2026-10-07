@@ -80,8 +80,9 @@ export function WritingSession({ session, onMessages }: { session: SessionView; 
   }
 
   // Stable, so typing in the box does not re-render the versions above it.
+  // Fills the box only when it is empty or still holds this version, so typed text is never overwritten.
   const revise = useCallback((text: string) => {
-    setDraft(text);
+    setDraft((current) => (current.trim() === '' || current === text ? text : current));
     requestAnimationFrame(() => {
       box.current?.scrollIntoView?.({ block: 'center' });
       box.current?.focus();
@@ -91,7 +92,7 @@ export function WritingSession({ session, onMessages }: { session: SessionView; 
   const words = countWords(draft);
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 pb-6">
       {prompt && (
         <p className="text-text-muted">
           {t('topic')}: <span lang="de" className="font-medium text-text">{prompt}</span>

@@ -77,7 +77,7 @@ export function ReadingSession({ session, onSession }: { session: SessionView; o
   const wrong = questions.filter((q, i) => answers[i] !== q.correctIndex).length;
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 pb-6">
       {article && (
         <article lang="de" className="flex flex-col gap-3 rounded-xl border border-border bg-surface px-5 py-4">
           <h2 ref={top} className="scroll-mt-24 font-heading text-xl font-bold">
