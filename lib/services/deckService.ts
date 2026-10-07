@@ -1,12 +1,12 @@
 import { statSync } from 'node:fs';
 import { resolve } from 'node:path';
 import type Database from 'better-sqlite3';
-import type { CefrLevel } from '../types';
+import type { CefrLevel, Track } from '../types';
 import { lemmaKey } from '../deck/lemmaKey';
 import { activateItem, findItemByKey, insertDeckSrs, lessonCardLemma, upsertLessonCard } from '../deck/lessonCards';
 import { selectIntroductions } from '../deck/introduction';
 import { deckRemaining, selectDeckDue } from '../deck/deckQueue';
-import { readWordList, WORD_LIST_DIR, type WordListFile } from '../deck/wordLists';
+import { readWordList, WORD_LIST_DIR, wordListPath, wordListScope, type WordListFile } from '../deck/wordLists';
 import type { DeckView } from '../deck/deckViews';
 import { errorBodyFor, type ApiErrorBody, type ErrorCode, type ErrorParams } from '../tutoring/errorCodes';
 import { localDate } from '../tutoring/dates';
@@ -56,16 +56,17 @@ interface ItemRow {
 }
 
 // The count badge opens the deck on every navigation, so a parsed list (and its keys) is kept
-// until the file changes on disk.
+// until the file changes on disk. Keyed by the resolved file path, so two tracks' lists never
+// share an entry (and every track shares the one B2/C1 entry).
 const listCache = new Map<string, { stamp: string; file: WordListFile; keys: string }>();
 
-function loadList(level: CefrLevel, dir: string): { file: WordListFile; keys: string } {
-  const path = resolve(process.cwd(), dir, `${level.toLowerCase()}.json`);
+function loadList(track: Track, level: CefrLevel, dir: string): { file: WordListFile; keys: string } {
+  const path = resolve(process.cwd(), wordListPath(track, level, dir));
   const stat = statSync(path);
   const stamp = `${stat.mtimeMs}:${stat.size}`;
   const cached = listCache.get(path);
   if (cached && cached.stamp === stamp) return cached;
-  const file = readWordList(level, dir);
+  const file = readWordList(track, level, dir);
   const entry = { stamp, file, keys: JSON.stringify(file.entries.map((e) => lemmaKey(e.lemma))) };
   listCache.set(path, entry);
   return entry;
@@ -95,7 +96,11 @@ export function createDeckService(
   // a word the student already added keeps its item and state (Review Focus 2). A level is
   // skipped only when every word of its list is already an item, so words added to a list later
   // still arrive (S1).
-  function importStarterLists(activeLevel: CefrLevel): void {
+  // Amended 2026-10-08: A1–B1 come from the active track's own lists, B2/C1 from the shared ones.
+  // source_ref is `<scope>:<level>:<index>` (e.g. `telc:A1:2`, `shared:B2:0`) so refs from two
+  // tracks' lists never collide. A word in several tracks' lists is one item: the first import
+  // wins and later ones are ignored by lemma_key, so switching track keeps every existing item.
+  function importStarterLists(activeTrack: Track, activeLevel: CefrLevel): void {
     const present = db.prepare('SELECT COUNT(*) AS n FROM vocabulary_items WHERE lemma_key IN (SELECT value FROM json_each(?))');
     const insert = db.prepare(
       `INSERT OR IGNORE INTO vocabulary_items
@@ -104,10 +109,11 @@ export function createDeckService(
     );
     const at = now().toISOString();
     for (const level of levelsUpTo(activeLevel)) {
-      const { file, keys } = loadList(level, listDir);
+      const { file, keys } = loadList(activeTrack, level, listDir);
+      const scope = wordListScope(activeTrack, level);
       if ((present.get(keys) as { n: number }).n >= file.entries.length) continue;
       file.entries.forEach((e, index) =>
-        insert.run(e.lemma, lemmaKey(e.lemma), e.partOfSpeech, e.plural, e.meaningEn, e.meaningDe, e.example, level, `${level}:${index}`, at)
+        insert.run(e.lemma, lemmaKey(e.lemma), e.partOfSpeech, e.plural, e.meaningEn, e.meaningDe, e.example, level, `${scope}:${level}:${index}`, at)
       );
     }
   }
@@ -118,13 +124,14 @@ export function createDeckService(
     const day = today();
     const alreadyToday = (db.prepare('SELECT COUNT(*) AS n FROM vocabulary_items WHERE introduced_on = ?').get(day) as { n: number }).n;
     if (perDay - alreadyToday <= 0) return;
+    // The list index is the ref's last part, in `<scope>:<level>:<index>` and the older `<level>:<index>`.
     const candidates = (
       db
         .prepare(
           "SELECT id, level, source_ref FROM vocabulary_items WHERE status = 'not_started' AND source = 'starter' AND level IN (SELECT value FROM json_each(?))"
         )
         .all(JSON.stringify(levelsUpTo(activeLevel))) as { id: number; level: CefrLevel | null; source_ref: string }[]
-    ).map((r) => ({ id: r.id, level: r.level, order: Number(r.source_ref.split(':')[1] ?? 0) }));
+    ).map((r) => ({ id: r.id, level: r.level, order: Number(r.source_ref.split(':').pop() ?? 0) }));
     const ids = selectIntroductions(candidates, alreadyToday, perDay);
     const introduce = db.prepare('UPDATE vocabulary_items SET introduced_on = ? WHERE id = ?');
     const at = now().toISOString();
@@ -154,7 +161,7 @@ export function createDeckService(
   function getDeck(): DeckView {
     const profile = profiles.getProfile();
     db.transaction(() => {
-      importStarterLists(profile.activeLevel);
+      importStarterLists(profile.activeTrack, profile.activeLevel);
       introduceToday(profile.newWordsPerDay, profile.activeLevel);
     })();
     const answered = answeredToday();

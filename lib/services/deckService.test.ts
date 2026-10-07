@@ -4,10 +4,12 @@ import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { createDbClient } from '../db/client';
 import { createProfileService } from './profileService';
+import { wordListPath } from '../deck/wordLists';
 import { createDeckService, DeckError, toDeckErrorResponse, type NormalizeOutcome } from './deckService';
 
 // Fixed copies of the sample lists (3 words per level), so the counts here never move when the
-// real lists in data/wortlisten grow.
+// real lists in data/wortlisten grow. A1–B1 sit in one folder per track and differ in their third
+// word (A1: generic "gestern", goethe "bald", telc "morgen"); B2/C1 sit in shared/.
 const FIXTURES = join('test', 'fixtures', 'wortlisten');
 
 function setup(opts: { day?: number; normalize?: (word: string, sentence: string | null) => Promise<NormalizeOutcome>; listDir?: string } = {}) {
@@ -72,13 +74,65 @@ describe('deckService starter words', () => {
     profiles.updateProfile({ newWordsPerDay: 0 });
     service.getDeck();
     expect(count(db, "SELECT COUNT(*) AS n FROM vocabulary_items WHERE level = 'A1'")).toBe(3);
-    const file = JSON.parse(readFileSync(join(dir, 'a1.json'), 'utf8'));
+    const path = wordListPath('generic', 'A1', dir);
+    const file = JSON.parse(readFileSync(path, 'utf8'));
     file.entries.push({ lemma: 'die Katze', partOfSpeech: 'noun', plural: 'die Katzen', example: 'Die Katze schläft.', meaningEn: 'cat', meaningDe: 'ein Haustier' });
-    writeFileSync(join(dir, 'a1.json'), JSON.stringify(file));
+    writeFileSync(path, JSON.stringify(file));
     service.getDeck();
     service.getDeck();
     expect(count(db, "SELECT COUNT(*) AS n FROM vocabulary_items WHERE level = 'A1'")).toBe(4);
     expect(count(db, "SELECT COUNT(*) AS n FROM vocabulary_items WHERE lemma_key = 'die katze'")).toBe(1);
+  });
+});
+
+const lemmas = (db: ReturnType<typeof createDbClient>, level: string) =>
+  (db.prepare('SELECT lemma FROM vocabulary_items WHERE level = ? ORDER BY id').all(level) as { lemma: string }[]).map((r) => r.lemma);
+
+describe('deckService starter words per track (amended 2026-10-08)', () => {
+  it("imports the active track's own A1 list", () => {
+    const { db, service, profiles } = setup();
+    profiles.updateProfile({ activeTrack: 'goethe', newWordsPerDay: 0 });
+    service.getDeck();
+    expect(lemmas(db, 'A1')).toEqual(['der Hund', 'wohnen', 'bald']);
+    expect(count(db, "SELECT COUNT(*) AS n FROM vocabulary_items WHERE lemma IN ('morgen', 'gestern')")).toBe(0);
+  });
+
+  it("imports the new track's words once after a switch and leaves existing items untouched", () => {
+    const { db, service, profiles } = setup();
+    profiles.updateProfile({ activeTrack: 'goethe', newWordsPerDay: 2 });
+    service.getDeck();
+    const snapshot = () =>
+      db
+        .prepare(
+          `SELECT i.*, s.repetitions, s.ease_factor, s.interval_days, s.next_due_at
+           FROM vocabulary_items i LEFT JOIN vocabulary_srs_state s ON s.item_id = i.id ORDER BY i.id`
+        )
+        .all();
+    const before = snapshot();
+    profiles.updateProfile({ activeTrack: 'telc' });
+    service.getDeck();
+    service.getDeck();
+    expect(snapshot().slice(0, before.length)).toEqual(before);
+    expect(lemmas(db, 'A1')).toEqual(['der Hund', 'wohnen', 'bald', 'morgen']);
+    expect(count(db, "SELECT COUNT(*) AS n FROM vocabulary_items WHERE lemma_key = 'morgen'")).toBe(1);
+    // Both lists hold their third word at index 2; the scope keeps the refs apart.
+    const refs = db.prepare("SELECT lemma, source_ref FROM vocabulary_items WHERE lemma IN ('bald', 'morgen', 'der Hund') ORDER BY id").all();
+    expect(refs).toEqual([
+      { lemma: 'der Hund', source_ref: 'goethe:A1:0' },
+      { lemma: 'bald', source_ref: 'goethe:A1:2' },
+      { lemma: 'morgen', source_ref: 'telc:A1:2' },
+    ]);
+  });
+
+  it('reads B2 from the shared list for every track', () => {
+    for (const track of ['goethe', 'telc', 'generic'] as const) {
+      const { db, service, profiles } = setup();
+      profiles.updateProfile({ activeTrack: track, newWordsPerDay: 0 });
+      profiles.writeLevelState({ highestUnlockedLevel: 'B2', activeLevel: 'B2' });
+      service.getDeck();
+      expect(lemmas(db, 'B2')).toEqual(['der Gedanke', 'formulieren', 'allerdings']);
+      expect(db.prepare("SELECT DISTINCT source_ref FROM vocabulary_items WHERE level = 'B2' AND source_ref NOT LIKE 'shared:B2:%'").all()).toEqual([]);
+    }
   });
 });
 
