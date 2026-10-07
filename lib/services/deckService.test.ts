@@ -4,7 +4,7 @@ import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { createDbClient } from '../db/client';
 import { createProfileService } from './profileService';
-import { createDeckService, DeckError, type NormalizeOutcome } from './deckService';
+import { createDeckService, DeckError, toDeckErrorResponse, type NormalizeOutcome } from './deckService';
 
 // Fixed copies of the sample lists (3 words per level), so the counts here never move when the
 // real lists in data/wortlisten grow.
@@ -98,12 +98,7 @@ describe('deckService answers', () => {
 
   it('rejects an unknown item', () => {
     const { service } = setup();
-    expect(() => service.answer(999, 'knew')).toThrow(DeckError);
-    try {
-      service.answer(999, 'knew');
-    } catch (err) {
-      expect(err).toMatchObject({ kind: 'not_found', code: 'not_found' });
-    }
+    expect(() => service.answer(999, 'knew')).toThrow(expect.objectContaining({ kind: 'not_found', code: 'not_found' }));
   });
 
   // S3
@@ -166,5 +161,20 @@ describe('deckService adding words', () => {
     await service.addWord('Fernweh');
     expect(service.listWords('fern')).toEqual([{ itemId: expect.any(Number), lemma: 'Fernweh', meaning: { en: 'x', de: 'y' } }]);
     expect(service.listWords('nothing')).toEqual([]);
+  });
+});
+
+// M2
+describe('toDeckErrorResponse', () => {
+  it('maps a deck error to its status and code, and fills the detail of an AI failure', () => {
+    expect(toDeckErrorResponse(new DeckError('This word is already in your deck', 'already_in_deck'))).toEqual({
+      status: 409,
+      body: expect.objectContaining({ code: 'already_in_deck' }),
+    });
+    expect(toDeckErrorResponse(new DeckError('The provider timed out', 'ai_failed'))).toEqual({
+      status: 502,
+      body: expect.objectContaining({ code: 'ai_failed', params: { detail: 'The provider timed out' } }),
+    });
+    expect(toDeckErrorResponse(new Error('other'))).toBeNull();
   });
 });

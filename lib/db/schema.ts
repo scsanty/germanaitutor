@@ -1,4 +1,5 @@
 import type Database from 'better-sqlite3';
+import { lessonCardLemma, upsertLessonCard } from '../deck/lessonCards';
 
 /**
  * The `lessons` table gained required `track`/`concept_id` columns when the curriculum
@@ -181,6 +182,7 @@ export function runMigrations(db: Database.Database): void {
     migrateBilingualColumns(db);
     migrateProfilePreferences(db);
     migrateFreestyle(db);
+    migrateFlashcardReviewsToDeck(db);
   });
   migrate();
 }
@@ -198,6 +200,43 @@ function migrateFreestyle(db: Database.Database): void {
   const sessions = (db.prepare('PRAGMA table_info(freestyle_sessions)').all() as { name: string }[]).map((c) => c.name);
   if (!sessions.includes('ending')) db.exec('ALTER TABLE freestyle_sessions ADD COLUMN ending INTEGER NOT NULL DEFAULT 0');
   db.exec('UPDATE freestyle_sessions SET ending = 0');
+}
+
+// Freestyle spec (B1): existing reviews of vocabulary-lesson flashcards move into the vocabulary deck
+// with their state (due date, interval, ease, repetitions), and leave the Daily Queue. Idempotent:
+// a moved card has no exercise review left, so a second run finds nothing. Runs inside the
+// `runMigrations` transaction, so a failure leaves both tables as they were.
+function migrateFlashcardReviewsToDeck(db: Database.Database): void {
+  const rows = db
+    .prepare(
+      `SELECT s.exercise_id, s.repetitions, s.ease_factor, s.interval_days, s.next_due_at, s.updated_at, e.content
+       FROM exercise_srs_state s
+       JOIN exercises e ON e.id = s.exercise_id
+       JOIN lessons l ON l.id = e.lesson_id
+       WHERE e.type = 'flashcard' AND l.skill = 'vocabulary'`
+    )
+    .all() as {
+    exercise_id: string;
+    repetitions: number;
+    ease_factor: number;
+    interval_days: number;
+    next_due_at: string;
+    updated_at: string;
+    content: string;
+  }[];
+  const remove = db.prepare('DELETE FROM exercise_srs_state WHERE exercise_id = ?');
+  for (const row of rows) {
+    const { front, back } = JSON.parse(row.content) as { front?: unknown; back?: unknown };
+    if (typeof front !== 'string' || !front.trim() || typeof back !== 'string') continue; // broken content stays a review
+    upsertLessonCard(db, {
+      ...lessonCardLemma(front),
+      meaningEn: back,
+      exerciseId: row.exercise_id,
+      state: { repetitions: row.repetitions, easeFactor: row.ease_factor, intervalDays: row.interval_days, nextDueAt: row.next_due_at },
+      at: row.updated_at,
+    });
+    remove.run(row.exercise_id);
+  }
 }
 
 // Design pass: theme and sound preferences; the freestyle default setting is removed (Freestyle decision).

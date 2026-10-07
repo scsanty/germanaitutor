@@ -3,6 +3,7 @@ import { resolve } from 'node:path';
 import type Database from 'better-sqlite3';
 import type { CefrLevel } from '../types';
 import { lemmaKey } from '../deck/lemmaKey';
+import { activateItem, findItemByKey, insertDeckSrs, lessonCardLemma, upsertLessonCard } from '../deck/lessonCards';
 import { selectIntroductions } from '../deck/introduction';
 import { deckRemaining, selectDeckDue } from '../deck/deckQueue';
 import { readWordList, WORD_LIST_DIR, type WordListFile } from '../deck/wordLists';
@@ -86,14 +87,6 @@ export function createDeckService(
     return localDate(now());
   }
 
-  // The one place a review state is created. INSERT OR IGNORE: an item keeps the state it has.
-  const insertSrs = db.prepare(
-    `INSERT OR IGNORE INTO vocabulary_srs_state (item_id, repetitions, ease_factor, interval_days, next_due_at, updated_at)
-     VALUES (?, ?, ?, ?, ?, ?)`
-  );
-  function createSrsState(itemId: number, state: SrsState, at: string): void {
-    insertSrs.run(itemId, state.repetitions, state.easeFactor, state.intervalDays, state.nextDueAt, at);
-  }
   function freshState(day: string): SrsState {
     return { repetitions: 0, easeFactor: INITIAL_EASE, intervalDays: 0, nextDueAt: day };
   }
@@ -133,11 +126,11 @@ export function createDeckService(
         .all(JSON.stringify(levelsUpTo(activeLevel))) as { id: number; level: CefrLevel | null; source_ref: string }[]
     ).map((r) => ({ id: r.id, level: r.level, order: Number(r.source_ref.split(':')[1] ?? 0) }));
     const ids = selectIntroductions(candidates, alreadyToday, perDay);
-    const activate = db.prepare("UPDATE vocabulary_items SET status = 'learning', introduced_on = ? WHERE id = ?");
+    const introduce = db.prepare('UPDATE vocabulary_items SET introduced_on = ? WHERE id = ?');
     const at = now().toISOString();
     for (const id of ids) {
-      activate.run(day, id);
-      createSrsState(id, freshState(day), at);
+      introduce.run(day, id);
+      activateItem(db, id, freshState(day), at);
     }
   }
 
@@ -194,18 +187,19 @@ export function createDeckService(
   // S3: only a learning card that is due today can move, and only while the daily cap has room.
   // A repeat answer on the same day returns the stored schedule without moving it again.
   function answer(itemId: number, rating: FlashcardRating): { nextDueAt: string } {
-    const item = db
-      .prepare(
-        `SELECT i.status, s.repetitions, s.ease_factor, s.interval_days, s.next_due_at
-         FROM vocabulary_items i LEFT JOIN vocabulary_srs_state s ON s.item_id = i.id WHERE i.id = ?`
-      )
-      .get(itemId) as
-      | { status: string; repetitions: number | null; ease_factor: number | null; interval_days: number | null; next_due_at: string | null }
-      | undefined;
-    if (!item) throw new DeckError(`Card not found: ${itemId}`, 'not_found');
     const day = today();
     const at = now().toISOString();
+    // M4: the item and its state are read inside the transaction, so a concurrent answer can't slip in between.
     return db.transaction(() => {
+      const item = db
+        .prepare(
+          `SELECT i.status, s.repetitions, s.ease_factor, s.interval_days, s.next_due_at
+           FROM vocabulary_items i LEFT JOIN vocabulary_srs_state s ON s.item_id = i.id WHERE i.id = ?`
+        )
+        .get(itemId) as
+        | { status: string; repetitions: number | null; ease_factor: number | null; interval_days: number | null; next_due_at: string | null }
+        | undefined;
+      if (!item) throw new DeckError(`Card not found: ${itemId}`, 'not_found');
       const repeat = db.prepare('SELECT 1 FROM vocabulary_answers WHERE item_id = ? AND answered_on = ?').get(itemId, day);
       if (repeat && item.next_due_at) return { nextDueAt: item.next_due_at };
       if (item.status !== 'learning' || item.next_due_at === null || item.next_due_at > day) {
@@ -241,13 +235,10 @@ export function createDeckService(
     const at = now().toISOString();
     const day = today();
     return db.transaction(() => {
-      const existing = db.prepare('SELECT id, lemma, status FROM vocabulary_items WHERE lemma_key = ?').get(key) as
-        | { id: number; lemma: string; status: 'not_started' | 'learning' }
-        | undefined;
+      const existing = findItemByKey(db, key);
       if (existing?.status === 'learning') throw new DeckError('This word is already in your deck', 'already_in_deck');
       if (existing) {
-        db.prepare("UPDATE vocabulary_items SET status = 'learning' WHERE id = ?").run(existing.id);
-        createSrsState(existing.id, freshState(day), at);
+        activateItem(db, existing.id, freshState(day), at);
         return { itemId: existing.id, lemma: existing.lemma, status: 'activated' as const };
       }
       const itemId = Number(
@@ -259,7 +250,7 @@ export function createDeckService(
           .run(normalized.lemma, key, normalized.partOfSpeech, normalized.plural, normalized.meaningEn, normalized.meaningDe, sentence, source, at)
           .lastInsertRowid
       );
-      createSrsState(itemId, freshState(day), at);
+      insertDeckSrs(db, itemId, freshState(day), at);
       return { itemId, lemma: normalized.lemma, status: 'added' as const };
     })();
   }
@@ -275,32 +266,10 @@ export function createDeckService(
     ).map((r) => ({ itemId: r.id, lemma: r.lemma, meaning: { en: r.meaning_en, de: r.meaning_de } }));
   }
 
-  // Task 4: a vocabulary-lesson flashcard enters the deck with its review state; an existing item
-  // with the same lemma is kept, activated, and gets the earlier due date.
-  function addFromLesson(input: { lemma: string; meaningEn: string; exerciseId: string; state: SrsState }): void {
-    const key = lemmaKey(input.lemma);
-    const at = now().toISOString();
-    const existing = db.prepare('SELECT id FROM vocabulary_items WHERE lemma_key = ?').get(key) as { id: number } | undefined;
-    let itemId: number;
-    if (existing) {
-      itemId = existing.id;
-      db.prepare("UPDATE vocabulary_items SET status = 'learning' WHERE id = ?").run(itemId);
-    } else {
-      itemId = Number(
-        db
-          .prepare(
-            `INSERT INTO vocabulary_items (lemma, lemma_key, meaning_en, meaning_de, source, source_ref, status, created_at)
-             VALUES (?, ?, ?, '', 'lesson', ?, 'learning', ?)`
-          )
-          .run(input.lemma, key, input.meaningEn, input.exerciseId, at).lastInsertRowid
-      );
-    }
-    const current = db.prepare('SELECT next_due_at FROM vocabulary_srs_state WHERE item_id = ?').get(itemId) as { next_due_at: string } | undefined;
-    if (!current) {
-      createSrsState(itemId, input.state, at);
-    } else if (input.state.nextDueAt < current.next_due_at) {
-      db.prepare('UPDATE vocabulary_srs_state SET next_due_at = ?, updated_at = ? WHERE item_id = ?').run(input.state.nextDueAt, at, itemId);
-    }
+  // Task 4: a vocabulary-lesson flashcard enters the deck with its review state (S6, S8).
+  function addFromLesson(input: { front: string; meaningEn: string; exerciseId: string; state: SrsState }): number {
+    const { lemma, plural } = lessonCardLemma(input.front);
+    return upsertLessonCard(db, { lemma, plural, meaningEn: input.meaningEn, exerciseId: input.exerciseId, state: input.state, at: now().toISOString() });
   }
 
   return { getDeck, dueCount, answer, addWord, listWords, addFromLesson };

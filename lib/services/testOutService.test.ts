@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { createDbClient } from '../db/client';
 import { createTestOutService, TestOutError, type TestOutDeps } from './testOutService';
-import { addSecondMilestone, markComplete, scheduleReview, seedTutoringCurriculum } from '@/test/tutoringFixtures';
+import { addSecondMilestone, markComplete, seedTutoringCurriculum } from '@/test/tutoringFixtures';
 import type { LessonAnswer } from '../tutoring/lessonAnswers';
 
 // Generic A1: "Basics" (rank 1, open) and "Later" (rank 2, the next locked rank) with three
@@ -29,6 +29,14 @@ function setup(deps: Partial<TestOutDeps> = {}) {
     ...deps,
   });
   return { db, service, advance: (hours: number) => (now = new Date(now.getTime() + hours * 3_600_000)) };
+}
+
+function deckCard(db: ReturnType<typeof setup>['db']) {
+  return db
+    .prepare(
+      'SELECT i.lemma, i.source_ref, i.status, s.next_due_at FROM vocabulary_items i JOIN vocabulary_srs_state s ON s.item_id = i.id'
+    )
+    .get();
 }
 
 function exerciseType(db: ReturnType<typeof setup>['db'], id: string): string {
@@ -99,9 +107,8 @@ describe('testOutService.start and answer', () => {
     expect(db.prepare('SELECT COUNT(*) AS n FROM lesson_attempts').get()).toEqual({ n: 0 });
   });
 
-  it('on a pass: completes every lesson, schedules what was not proven, keeps existing reviews, and reviews all answers', async () => {
+  it('on a pass: completes every lesson, schedules what was not proven, sends the flashcard to the deck, and reviews all answers', async () => {
     const { db, service } = setup();
-    scheduleReview(db, 'a1-late3__card', '2026-12-01');
     const run = service.start('g-a1-m2');
     let outcome;
     for (const [i, q] of run.questions.entries()) {
@@ -121,15 +128,41 @@ describe('testOutService.start and answer', () => {
       exercise_id: string;
       next_due_at: string;
     }[];
-    // The wrong answer is due tomorrow; the flashcard keeps its existing review; right answers are not scheduled.
-    expect(scheduled).toHaveLength(2);
-    expect(scheduled).toEqual(
-      expect.arrayContaining([
-        { exercise_id: 'a1-late3__card', next_due_at: '2026-12-01' },
-        { exercise_id: run.questions[5].id, next_due_at: '2026-09-30' },
-      ])
-    );
+    // S9: the wrong answer is due tomorrow; right answers are not scheduled; the vocabulary flashcard
+    // goes to the deck, due tomorrow, and has no exercise review.
+    expect(scheduled).toEqual([{ exercise_id: run.questions[5].id, next_due_at: '2026-09-30' }]);
+    expect(deckCard(db)).toEqual({ lemma: 'das Haus', source_ref: 'a1-late3__card', status: 'learning', next_due_at: '2026-09-30' });
     expect(service.state('g-a1-m2').status).toEqual({ status: 'none' });
+  });
+
+  // S9: a word already in the deck keeps its item and gets the earlier due date.
+  it('on a pass: moves an existing deck item for the flashcard to the earlier due date', async () => {
+    const { db, service } = setup();
+    const { lastInsertRowid } = db
+      .prepare(
+        "INSERT INTO vocabulary_items (lemma, lemma_key, meaning_en, source, source_ref, status, created_at) VALUES ('das Haus', 'das haus', 'the house', 'manual', 'mine', 'learning', '2026-09-01T10:00:00.000Z')"
+      )
+      .run();
+    db.prepare(
+      "INSERT INTO vocabulary_srs_state (item_id, repetitions, ease_factor, interval_days, next_due_at, updated_at) VALUES (?, 3, 2.5, 20, '2026-12-01', '2026-09-01T10:00:00.000Z')"
+    ).run(lastInsertRowid);
+    const run = service.start('g-a1-m2');
+    for (const q of run.questions) await service.answer('g-a1-m2', q.id, right(db, q.id));
+    expect(db.prepare('SELECT COUNT(*) AS n FROM vocabulary_items').get()).toEqual({ n: 1 });
+    expect(deckCard(db)).toEqual({ lemma: 'das Haus', source_ref: 'mine', status: 'learning', next_due_at: '2026-09-30' });
+    expect(db.prepare("SELECT 1 FROM exercise_srs_state WHERE exercise_id = 'a1-late3__card'").get()).toBeUndefined();
+  });
+
+  // B1: a flashcard in a grammar lesson stays an exercise review.
+  it('on a pass: schedules a grammar lesson’s flashcard as an exercise review', async () => {
+    const { db, service } = setup();
+    db.exec(`INSERT INTO exercises (id, lesson_id, type, content) VALUES ('a1-late2__card', 'a1-late2', 'flashcard', '{"front":"ich bin","back":"I am"}')`);
+    const run = service.start('g-a1-m2');
+    for (const q of run.questions) await service.answer('g-a1-m2', q.id, right(db, q.id));
+    expect(db.prepare('SELECT exercise_id, next_due_at FROM exercise_srs_state').all()).toEqual([
+      { exercise_id: 'a1-late2__card', next_due_at: '2026-09-30' },
+    ]);
+    expect(deckCard(db)).toMatchObject({ lemma: 'das Haus' });
   });
 
   it('on a fail: starts a 24-hour cooldown, then offers a fresh attempt', async () => {

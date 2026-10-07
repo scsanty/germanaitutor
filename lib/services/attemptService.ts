@@ -14,7 +14,9 @@ import {
 } from '../tutoring/lessonAnswers';
 import { computeNextReview, seedReview, type SrsState } from '../tutoring/srs';
 import { errorBodyFor, type ApiErrorBody, type ErrorCode, type ErrorParams } from '../tutoring/errorCodes';
+import { findItemByKey, lessonCardKey, lessonCardLemma, vocabularyCardContent } from '../deck/lessonCards';
 import { createCurriculumService } from './curriculumService';
+import { createDeckService } from './deckService';
 import { gradeExerciseAnswer } from './exerciseGrading';
 import { lessonLock } from './levelGating';
 import { gradeFreeText, type FreeTextGradeOutcome } from './freeTextGradingService';
@@ -79,6 +81,7 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
   const profiles = createProfileService(db);
   const progress = createProgressService(db);
   const unlocks = createUnlockService(db);
+  const deck = createDeckService(db, { now });
 
   function getExercise(exerciseId: string): Exercise {
     const row = db.prepare('SELECT * FROM exercises WHERE id = ?').get(exerciseId) as ExerciseRow | undefined;
@@ -105,9 +108,11 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
         `SELECT 1
          FROM exercises e
          JOIN exercise_srs_state st ON st.exercise_id = e.id
+         JOIN lessons l ON l.id = e.lesson_id
          JOIN lesson_placements p ON p.lesson_id = e.lesson_id
          JOIN milestones m ON m.id = p.milestone_id
          WHERE e.id = ? AND m.track = ? AND m.level = ? AND st.next_due_at <= ?
+           AND NOT (e.type = 'flashcard' AND l.skill = 'vocabulary')
            AND NOT EXISTS (
              SELECT 1 FROM lesson_attempts a WHERE a.exercise_id = e.id AND a.source = 'queue' AND a.answered_on = ?
            )`
@@ -150,11 +155,22 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
   }
 
   // Spec: Spaced Repetition, "Entering review" — based on the exercise's first-ever attempt.
+  // Freestyle spec (B1): a vocabulary-lesson flashcard enters the deck instead of the Daily Queue.
   function seedFromFirstAttempt(exerciseId: string, today: string, at: string): void {
     const first = db
       .prepare('SELECT result FROM lesson_attempts WHERE exercise_id = ? ORDER BY id LIMIT 1')
       .get(exerciseId) as { result: GradeResult } | undefined;
-    if (first) writeSrs(exerciseId, seedReview(first.result, today), at);
+    if (!first) return;
+    const state = seedReview(first.result, today);
+    const card = vocabularyCardContent(db, exerciseId);
+    if (card) deck.addFromLesson({ front: card.front, meaningEn: card.back, exerciseId, state });
+    else writeSrs(exerciseId, state, at);
+  }
+
+  // S7: a vocabulary flashcard of a completed lesson enters the deck once (when it was added after
+  // completion). Later lesson answers count for the lesson only and never move the deck's due date.
+  function inDeck(front: string): boolean {
+    return findItemByKey(db, lessonCardKey(lessonCardLemma(front).lemma))?.status === 'learning';
   }
 
   // Stored once and never revoked. The lesson's exercises enter review at this moment, and the
@@ -196,8 +212,11 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
       const wasComplete = progress.isCompleted(lesson.id);
       let justCompleted = false;
       if (wasComplete) {
-        const state = getSrs(exercise.id);
-        if (!state) seedFromFirstAttempt(exercise.id, today, at); // added after the lesson was completed
+        const card = vocabularyCardContent(db, exercise.id);
+        const state = card ? null : getSrs(exercise.id);
+        if (card) {
+          if (!inDeck(card.front)) seedFromFirstAttempt(exercise.id, today, at); // added after the lesson was completed
+        } else if (!state) seedFromFirstAttempt(exercise.id, today, at); // added after the lesson was completed
         else if (firstToday) writeSrs(exercise.id, computeNextReview(state, result, today), at);
       } else {
         const exerciseIds = curriculum.getExercises(lesson.id, lesson.track).map((e) => e.id);
