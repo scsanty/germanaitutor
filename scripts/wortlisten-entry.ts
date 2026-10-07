@@ -143,10 +143,16 @@ function parsePart(part: string, lists: PosLists): Candidate | null {
   if (art || (plOnly && /^[A-ZÄÖÜ]/.test(part))) {
     const articles = art ? art[1].split('/') : ['die'];
     const rest = art ? part.slice(art[0].length) : part;
-    const word = stripParens(rest.split(',')[0]).replace(/\/.*$/, '');
+    // "die Nord-/Ostsee" stays whole; "die Disco/Disko" keeps its first spelling.
+    let word = stripParens(rest.split(',')[0]).replace(/^([^/]*[^-/])\/.*$/, '$1');
     const notation = rest.includes(',') ? stripParens(rest.slice(rest.indexOf(',') + 1)) : '';
     const notes: string[] = [];
     if (articles.length > 1) notes.push(`also ${articles.slice(1).join('/')} ${word}`);
+    // A source slip: "die Kursleiter, -nen" for "die Kursleiterin, -nen".
+    if (articles[0] === 'die' && /^-nen$/.test(notation) && !/in$/.test(word)) {
+      word = `${word}in`;
+      notes.push('source prints the masculine form; feminine -in added');
+    }
     let plural: string | null = null;
     if (plOnly) notes.push('plural only');
     else if (sgOnly) notes.push('singular only');

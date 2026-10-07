@@ -40,6 +40,13 @@ function rowsOf(s: Source): Row[] {
 
 interface Parsed { id: string; entries: (Candidate & { source: string; page: number })[]; skipped: Skipped[] }
 
+const plain = (w: string) => w.slice(4).replace(/ä/g, 'a').replace(/ö/g, 'o').replace(/ü/g, 'u');
+function feminineOf(fem: string, masc: string): boolean {
+  const f = plain(fem);
+  const m = plain(masc);
+  return f === m || f === `${m}in` || f === `${m.replace(/e$/, '')}in`;
+}
+
 function parseGoethe(id: string, raws: RawEntry[], lists: PosLists): Parsed {
   const entries: Parsed['entries'] = [];
   const skipped: Skipped[] = [];
@@ -50,9 +57,11 @@ function parseGoethe(id: string, raws: RawEntry[], lists: PosLists): Parsed {
     for (const e of res.entries) {
       const prev = entries[entries.length - 1];
       let example = ex;
-      // "der Absender" / "die Absenderin": the feminine form shares the example printed beside both.
-      if (!example && prev && e.partOfSpeech === 'noun' && prev.partOfSpeech === 'noun'
-        && e.lemma.slice(4) === `${prev.lemma.slice(4)}in`) example = prev.example;
+      // "der Absender" / "die Absenderin", "der Koch" / "die Köchin", "der Beamte" / "die Beamtin",
+      // "der Angestellte" / "die Angestellte": the feminine form shares the example beside both.
+      if (!example && prev && e.partOfSpeech === 'noun' && prev.partOfSpeech === 'noun' && feminineOf(e.lemma, prev.lemma)) {
+        example = prev.example;
+      }
       entries.push({ ...e, example, source: raw.headword + (raw.examples[0] ? ` || ${raw.examples[0]}` : ''), page: raw.page });
     }
   }
