@@ -98,6 +98,9 @@ describe('reply parsers', () => {
 
   it('reject malformed replies', () => {
     expect(parseNormalizeReply('{"lemma":"der Hund"}')).toBeNull();
+    // M6: a noun lemma needs its article, as in the word lists.
+    expect(parseNormalizeReply('{"lemma":"Hund","partOfSpeech":"noun","plural":"die Hunde","meaningEn":"dog","meaningDe":"ein Haustier"}')).toBeNull();
+    expect(parseNormalizeReply('{"lemma":"laufen","partOfSpeech":"verb","plural":null,"meaningEn":"to run","meaningDe":"rennen"}')).toMatchObject({ lemma: 'laufen' });
     expect(parseConversationReply('{"reply":"x","corrections":[{"wrong":"a"}]}')).toBeNull();
     expect(parseDrillReply('{"verdict":"maybe","next":"x"}')).toBeNull();
     expect(parseArticleReply('{"title":"t","text":"x","questions":[{"question":"q","options":["a"],"correctIndex":3}]}')).toBeNull();

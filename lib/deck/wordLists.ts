@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import type { CefrLevel } from '../types';
-import { lemmaKey } from './lemmaKey';
+import { lemmaKey, nounHasArticle } from './lemmaKey';
 
 export interface WordListEntry {
   lemma: string;
@@ -25,8 +25,6 @@ export function readWordList(level: CefrLevel, dir: string = WORD_LIST_DIR): Wor
   return JSON.parse(readFileSync(resolve(process.cwd(), dir, `${level.toLowerCase()}.json`), 'utf8')) as WordListFile;
 }
 
-const ARTICLE = /^(der|die|das) \S/;
-
 // Spec: Content validation. Messages name the lemma so a content fix is easy to find.
 export function wordListProblems(file: WordListFile, lowerKeys: Set<string>): string[] {
   const problems: string[] = [];
@@ -35,7 +33,7 @@ export function wordListProblems(file: WordListFile, lowerKeys: Set<string>): st
     for (const field of ['lemma', 'partOfSpeech', 'example', 'meaningEn', 'meaningDe'] as const) {
       if (!e[field] || !e[field].trim()) problems.push(`${e.lemma}: ${field} is empty`);
     }
-    if (e.partOfSpeech === 'noun' && !ARTICLE.test(e.lemma)) problems.push(`${e.lemma}: a noun needs its article`);
+    if (e.partOfSpeech === 'noun' && !nounHasArticle(e.lemma)) problems.push(`${e.lemma}: a noun needs its article`);
     const key = lemmaKey(e.lemma);
     if (seen.has(key)) problems.push(`${e.lemma}: duplicate of an earlier entry`);
     else if (lowerKeys.has(key)) problems.push(`${e.lemma}: already in a lower level`);

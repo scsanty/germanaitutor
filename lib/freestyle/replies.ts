@@ -1,6 +1,7 @@
 import { extractJsonObject } from '../ai/json';
 import type { LocalizedText } from '../i18n/localizedText';
 import type { GradeResult } from '../tutoring/grading';
+import { nounHasArticle } from '../deck/lemmaKey';
 
 export interface Correction {
   wrong: string;
@@ -28,6 +29,8 @@ export function parseNormalizeReply(text: string) {
   const o = extractJsonObject(text);
   if (!o || !str(o.lemma) || !str(o.partOfSpeech) || !str(o.meaningEn) || !str(o.meaningDe)) return null;
   if (o.plural !== null && o.plural !== undefined && typeof o.plural !== 'string') return null;
+  // M6: the same article rule as the word lists, so "Hund" never enters the deck.
+  if (o.partOfSpeech === 'noun' && !nounHasArticle(o.lemma.trim())) return null;
   return { lemma: o.lemma.trim(), partOfSpeech: o.partOfSpeech, plural: (o.plural as string | null | undefined) ?? null, meaningEn: o.meaningEn, meaningDe: o.meaningDe };
 }
 
