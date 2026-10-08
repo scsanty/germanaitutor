@@ -100,7 +100,7 @@ interface ClozeContent {
   - `{ type: 'passage_questions'; selected: (number | null)[] }`;
   - `{ type: 'matching'; selected: (number | null)[] }` (null = "x");
   - `{ type: 'cloze'; values: (string | number | null)[] }`.
-- **Grading** is deterministic and returns `{ itemResults: boolean[]; result }`. Typed gaps use the fill-blank comparison (trim, case-insensitive, variants).
+- **Grading** is deterministic and returns `{ itemResults: boolean[]; result }`. Typed gaps use the fill-blank comparison (trim, whitespace-collapse, case-sensitive, variants).
 - **Lesson pass rule:** ≥ 80% of items right is `correct`, ≥ 50% is `almost`, and anything else is `wrong`.
 - **Reviews:** a set is reviewed later as one item.
 - **Test-outs:** all three types are eligible.
