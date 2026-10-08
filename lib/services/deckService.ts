@@ -61,8 +61,11 @@ interface ItemRow {
 const listCache = new Map<string, { stamp: string; file: WordListFile; keys: string }>();
 
 function loadList(track: Track, level: CefrLevel, dir: string): { file: WordListFile; keys: string } {
-  const path = resolve(process.cwd(), wordListPath(track, level, dir));
-  const stat = statSync(path);
+  // The path depends on the track, level and (in tests) the list directory, so Turbopack can't
+  // scope it and would trace the whole project; opt these calls out. The app's lists live in
+  // data/wortlisten and are read at runtime (the build has no standalone output to trace into).
+  const path = resolve(/*turbopackIgnore: true*/ process.cwd(), wordListPath(track, level, dir));
+  const stat = statSync(/*turbopackIgnore: true*/ path);
   const stamp = `${stat.mtimeMs}:${stat.size}`;
   const cached = listCache.get(path);
   if (cached && cached.stamp === stamp) return cached;

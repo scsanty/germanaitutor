@@ -270,3 +270,13 @@ describe('toDeckErrorResponse', () => {
     expect(toDeckErrorResponse(new Error('other'))).toBeNull();
   });
 });
+
+// Final review: the word-list path is fully dynamic, so without the opt-out Turbopack warns and
+// traces the whole project. The build is the real check; this guards against the comment being lost.
+describe('word-list file access', () => {
+  it('opts the dynamic list path out of Turbopack tracing', () => {
+    const source = readFileSync(join(process.cwd(), 'lib', 'services', 'deckService.ts'), 'utf8');
+    expect(source).toContain('resolve(/*turbopackIgnore: true*/ process.cwd(), wordListPath(track, level, dir))');
+    expect(source).toContain('statSync(/*turbopackIgnore: true*/ path)');
+  });
+});
