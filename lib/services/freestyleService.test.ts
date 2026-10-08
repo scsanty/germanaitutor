@@ -167,6 +167,19 @@ describe('freestyleService', () => {
     expect(await end).not.toBeNull();
   });
 
+  it('refuses to start (resume) a session while its End is running, with busy / session_ending', async () => {
+    const db = createDbClient(':memory:');
+    const pending: ((result: AiResult) => void)[] = [];
+    const generate = vi.fn((_request: AiRequest) => new Promise<AiResult>((resolve) => pending.push(resolve)));
+    const service = createFreestyleService(db, { generate });
+    await service.start('free_writing', { level: 'A1', setup: {} });
+    const end = service.end('free_writing', {});
+    await expect(service.start('free_writing', { level: 'A1', setup: {} })).rejects.toMatchObject({ kind: 'busy', code: 'session_ending' });
+    pending[0]({ ok: true, text: summaryReply });
+    expect(await end).not.toBeNull();
+    expect((await service.start('free_writing', { level: 'A1', setup: {} })).messages).toEqual([]);
+  });
+
   // Review Focus 1: a second End while one is running is refused, not doubled.
   it('refuses a second End while one is in progress', async () => {
     const { db, service, generate } = setup([summaryReply]);

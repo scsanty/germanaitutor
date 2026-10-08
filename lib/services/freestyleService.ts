@@ -172,6 +172,8 @@ export function createFreestyleService(
     if (!isCefrLevel(input.level)) throw new FreestyleError(`Not a level: ${String(input.level)}`, 'bad_request');
     const setup = validateSetup(mode, input.level, input.setup);
     const open = row(mode);
+    // A session that is ending can't be resumed; its End is still deciding whether it stays.
+    if (open?.ending) throw new FreestyleError('This session is already ending', 'busy');
     if (open) return view(open);
     if (!isAtOrBelow(input.level, profiles.getProfile().highestUnlockedLevel)) {
       throw new FreestyleError(`Level ${input.level} is locked`, 'locked', 'level_locked', { level: input.level });
@@ -188,6 +190,7 @@ export function createFreestyleService(
     }
     // A concurrent start may have opened the mode while the AI ran; that one wins and is resumed.
     const raced = row(mode);
+    if (raced?.ending) throw new FreestyleError('This session is already ending', 'busy');
     if (raced) return view(raced);
     const created = db.transaction(() => {
       const { lastInsertRowid } = db
