@@ -16,6 +16,8 @@ interface Row {
   unlock_notice_level: CefrLevel | null;
   onboarding_choices_saved: number;
   daily_review_cap: number;
+  new_words_per_day: number;
+  deck_review_cap: number;
   updated_at: string;
 }
 
@@ -33,6 +35,8 @@ function rowToProfile(row: Row): Profile {
     unlockNoticeLevel: row.unlock_notice_level,
     onboardingChoicesSaved: row.onboarding_choices_saved === 1,
     dailyReviewCap: row.daily_review_cap,
+    newWordsPerDay: row.new_words_per_day,
+    deckReviewCap: row.deck_review_cap,
     updatedAt: row.updated_at,
   };
 }
@@ -61,6 +65,10 @@ export function isValidDailyReviewCap(value: unknown): value is number {
   );
 }
 
+function isWholeNumberIn(value: unknown, min: number, max: number): value is number {
+  return typeof value === 'number' && Number.isInteger(value) && value >= min && value <= max;
+}
+
 export interface ProfileUpdate {
   displayName?: string;
   uiLanguage?: 'en' | 'de';
@@ -71,6 +79,8 @@ export interface ProfileUpdate {
   onboardingComplete?: boolean;
   onboardingChoicesSaved?: boolean;
   dailyReviewCap?: number;
+  newWordsPerDay?: number;
+  deckReviewCap?: number;
 }
 
 export interface LevelStateUpdate {
@@ -103,6 +113,12 @@ export function createProfileService(db: Database.Database) {
     if (input.dailyReviewCap !== undefined && !isValidDailyReviewCap(input.dailyReviewCap)) {
       throw new ProfileUpdateError('The daily review limit must be a whole number from 1 to 500', 'invalid_daily_cap');
     }
+    if (input.newWordsPerDay !== undefined && !isWholeNumberIn(input.newWordsPerDay, 0, 50)) {
+      throw new ProfileUpdateError('New words per day must be a whole number from 0 to 50', 'invalid_new_words_per_day');
+    }
+    if (input.deckReviewCap !== undefined && !isWholeNumberIn(input.deckReviewCap, 1, 500)) {
+      throw new ProfileUpdateError('The flashcard review limit must be a whole number from 1 to 500', 'invalid_deck_review_cap');
+    }
     if (input.theme !== undefined && !['dark', 'light', 'system'].includes(input.theme)) {
       throw new ProfileUpdateError('Theme must be dark, light or system', 'bad_request');
     }
@@ -112,7 +128,8 @@ export function createProfileService(db: Database.Database) {
     }
     db.prepare(
       `UPDATE profile SET display_name = ?, ui_language = ?, active_track = ?, active_level = ?, theme = ?, sound_enabled = ?,
-         onboarding_complete = ?, onboarding_choices_saved = ?, daily_review_cap = ?, updated_at = datetime('now')
+         onboarding_complete = ?, onboarding_choices_saved = ?, daily_review_cap = ?,
+         new_words_per_day = ?, deck_review_cap = ?, updated_at = datetime('now')
        WHERE id = 1`
     ).run(
       input.displayName ?? current.displayName,
@@ -123,7 +140,9 @@ export function createProfileService(db: Database.Database) {
       (input.soundEnabled ?? current.soundEnabled) ? 1 : 0,
       (input.onboardingComplete ?? current.onboardingComplete) ? 1 : 0,
       (input.onboardingChoicesSaved ?? current.onboardingChoicesSaved) ? 1 : 0,
-      input.dailyReviewCap ?? current.dailyReviewCap
+      input.dailyReviewCap ?? current.dailyReviewCap,
+      input.newWordsPerDay ?? current.newWordsPerDay,
+      input.deckReviewCap ?? current.deckReviewCap
     );
     return getProfile();
   }

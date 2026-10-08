@@ -1,4 +1,5 @@
 import type Database from 'better-sqlite3';
+import { lessonCardLemma, upsertLessonCard } from '../deck/lessonCards';
 
 /**
  * The `lessons` table gained required `track`/`concept_id` columns when the curriculum
@@ -180,8 +181,69 @@ export function runMigrations(db: Database.Database): void {
     migrateToMilestoneOnlyStructure(db);
     migrateBilingualColumns(db);
     migrateProfilePreferences(db);
+    migrateFreestyle(db);
+    migrateFlashcardReviewsToDeck(db);
   });
   migrate();
+}
+
+// Freestyle and the vocabulary deck: deck settings on the profile, and the End guard on sessions.
+// `ending` is reset on every start so a crashed End can never leave a session busy.
+function migrateFreestyle(db: Database.Database): void {
+  const profile = (db.prepare('PRAGMA table_info(profile)').all() as { name: string }[]).map((c) => c.name);
+  if (!profile.includes('new_words_per_day')) {
+    db.exec('ALTER TABLE profile ADD COLUMN new_words_per_day INTEGER NOT NULL DEFAULT 10 CHECK (new_words_per_day BETWEEN 0 AND 50)');
+  }
+  if (!profile.includes('deck_review_cap')) {
+    db.exec('ALTER TABLE profile ADD COLUMN deck_review_cap INTEGER NOT NULL DEFAULT 50 CHECK (deck_review_cap BETWEEN 1 AND 500)');
+  }
+  const sessions = (db.prepare('PRAGMA table_info(freestyle_sessions)').all() as { name: string }[]).map((c) => c.name);
+  if (!sessions.includes('ending')) db.exec('ALTER TABLE freestyle_sessions ADD COLUMN ending INTEGER NOT NULL DEFAULT 0');
+  db.exec('UPDATE freestyle_sessions SET ending = 0');
+}
+
+// Freestyle spec (B1): existing reviews of vocabulary-lesson flashcards move into the vocabulary deck
+// with their state (due date, interval, ease, repetitions), and leave the Daily Queue. Idempotent:
+// a moved card has no exercise review left, so a second run finds nothing. Runs inside the
+// `runMigrations` transaction, so a failure leaves both tables as they were.
+function migrateFlashcardReviewsToDeck(db: Database.Database): void {
+  const rows = db
+    .prepare(
+      `SELECT s.exercise_id, s.repetitions, s.ease_factor, s.interval_days, s.next_due_at, s.updated_at, e.content
+       FROM exercise_srs_state s
+       JOIN exercises e ON e.id = s.exercise_id
+       JOIN lessons l ON l.id = e.lesson_id
+       WHERE e.type = 'flashcard' AND l.skill = 'vocabulary'`
+    )
+    .all() as {
+    exercise_id: string;
+    repetitions: number;
+    ease_factor: number;
+    interval_days: number;
+    next_due_at: string;
+    updated_at: string;
+    content: string;
+  }[];
+  const remove = db.prepare('DELETE FROM exercise_srs_state WHERE exercise_id = ?');
+  for (const row of rows) {
+    let parsed: { front?: unknown; back?: unknown } | null;
+    try {
+      parsed = JSON.parse(row.content) as { front?: unknown; back?: unknown } | null;
+    } catch {
+      continue; // broken content stays a review
+    }
+    const front = parsed?.front;
+    const back = parsed?.back;
+    if (typeof front !== 'string' || !front.trim() || typeof back !== 'string') continue; // broken content stays a review
+    upsertLessonCard(db, {
+      ...lessonCardLemma(front),
+      meaningEn: back,
+      exerciseId: row.exercise_id,
+      state: { repetitions: row.repetitions, easeFactor: row.ease_factor, intervalDays: row.interval_days, nextDueAt: row.next_due_at },
+      at: row.updated_at,
+    });
+    remove.run(row.exercise_id);
+  }
 }
 
 // Design pass: theme and sound preferences; the freestyle default setting is removed (Freestyle decision).
@@ -210,6 +272,8 @@ function createTablesIfMissing(db: Database.Database): void {
       unlock_notice_level TEXT CHECK (unlock_notice_level IN ('A2','B1','B2','C1')),
       onboarding_choices_saved INTEGER NOT NULL DEFAULT 0,
       daily_review_cap INTEGER NOT NULL DEFAULT 50 CHECK (daily_review_cap BETWEEN 1 AND 500),
+      new_words_per_day INTEGER NOT NULL DEFAULT 10 CHECK (new_words_per_day BETWEEN 0 AND 50),
+      deck_review_cap INTEGER NOT NULL DEFAULT 50 CHECK (deck_review_cap BETWEEN 1 AND 500),
       updated_at TEXT NOT NULL DEFAULT (datetime('now'))
     );
 
@@ -427,5 +491,52 @@ function createTablesIfMissing(db: Database.Database): void {
       practice_exercise_id TEXT PRIMARY KEY REFERENCES practice_exercises(id) ON DELETE CASCADE,
       served_at TEXT NOT NULL
     );
+    CREATE TABLE IF NOT EXISTS freestyle_sessions (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      mode TEXT NOT NULL CHECK (mode IN ('conversation','grammar_drill','free_reading','free_writing','spoken','exam_practice')),
+      level TEXT NOT NULL CHECK (level IN ('A1','A2','B1','B2','C1')),
+      setup TEXT NOT NULL DEFAULT '{}',
+      started_at TEXT NOT NULL,
+      ending INTEGER NOT NULL DEFAULT 0
+    );
+    CREATE UNIQUE INDEX IF NOT EXISTS idx_freestyle_one_open ON freestyle_sessions(mode);
+
+    CREATE TABLE IF NOT EXISTS freestyle_messages (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      session_id INTEGER NOT NULL REFERENCES freestyle_sessions(id) ON DELETE CASCADE,
+      role TEXT NOT NULL CHECK (role IN ('user','assistant')),
+      content TEXT NOT NULL,
+      extra TEXT,
+      created_at TEXT NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS vocabulary_items (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      lemma TEXT NOT NULL,
+      lemma_key TEXT NOT NULL UNIQUE,
+      part_of_speech TEXT,
+      plural TEXT,
+      meaning_en TEXT NOT NULL,
+      meaning_de TEXT NOT NULL DEFAULT '',
+      example TEXT,
+      level TEXT CHECK (level IS NULL OR level IN ('A1','A2','B1','B2','C1')),
+      source TEXT NOT NULL CHECK (source IN ('starter','lesson','freestyle','manual')),
+      source_ref TEXT,
+      status TEXT NOT NULL CHECK (status IN ('not_started','learning')),
+      introduced_on TEXT,
+      created_at TEXT NOT NULL
+    );
+    CREATE TABLE IF NOT EXISTS vocabulary_srs_state (
+      item_id INTEGER PRIMARY KEY REFERENCES vocabulary_items(id) ON DELETE CASCADE,
+      repetitions INTEGER NOT NULL, ease_factor REAL NOT NULL, interval_days REAL NOT NULL,
+      next_due_at TEXT NOT NULL, updated_at TEXT NOT NULL
+    );
+    CREATE TABLE IF NOT EXISTS vocabulary_answers (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      item_id INTEGER NOT NULL REFERENCES vocabulary_items(id) ON DELETE CASCADE,
+      rating TEXT NOT NULL CHECK (rating IN ('knew','sort_of','didnt_know')),
+      answered_on TEXT NOT NULL, answered_at TEXT NOT NULL
+    );
+    CREATE INDEX IF NOT EXISTS idx_vocab_answers_day ON vocabulary_answers(answered_on);
   `);
 }

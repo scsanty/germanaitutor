@@ -207,6 +207,7 @@ export function createProgressService(db: Database.Database) {
          JOIN lesson_placements p ON p.lesson_id = l.id
          JOIN milestones m ON m.id = p.milestone_id
          WHERE m.track = ? AND m.level = ? AND st.next_due_at <= ?
+           AND NOT (e.type = 'flashcard' AND l.skill = 'vocabulary') -- B1: those live in the vocabulary deck
            AND NOT EXISTS (
              SELECT 1 FROM lesson_attempts a WHERE a.exercise_id = e.id AND a.source = 'queue' AND a.answered_on = ?
            )

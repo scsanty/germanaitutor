@@ -104,4 +104,11 @@ describe('profileService', () => {
     expect(() => service.updateProfile({ soundEnabled: 1 as never })).toThrow('Sound must be on or off');
     expect(service.getProfile().soundEnabled).toBe(false);
   });
+
+  it('updates the deck settings within their ranges', () => {
+    const service = createProfileService(createDbClient(':memory:'));
+    expect(service.updateProfile({ newWordsPerDay: 20, deckReviewCap: 100 })).toMatchObject({ newWordsPerDay: 20, deckReviewCap: 100 });
+    expect(() => service.updateProfile({ newWordsPerDay: 51 })).toThrow('New words per day must be a whole number from 0 to 50');
+    expect(() => service.updateProfile({ deckReviewCap: 0 })).toThrow('The flashcard review limit must be a whole number from 1 to 500');
+  });
 });

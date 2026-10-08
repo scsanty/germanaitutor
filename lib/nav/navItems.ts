@@ -10,15 +10,15 @@ export interface NavItem {
   placements: NavPlacement[];
   // Spec: items for unbuilt features stay hidden. Each module's plan flips its own flag.
   enabled: boolean;
-  badge?: 'reviewsDue';
+  badge?: 'reviewsDue' | 'deckDue';
 }
 
 // Order within a placement is the order shown. Spec: Shell and Navigation (thumb zone).
 export const NAV_ITEMS: NavItem[] = [
   { id: 'learn', href: '/', icon: TreeDeciduous, labelKey: 'learn', placements: ['sidebar'], enabled: true },
   { id: 'dashboard', href: '/dashboard', icon: Gauge, labelKey: 'dashboard', placements: ['sidebar', 'bottom'], enabled: true },
-  { id: 'freestyle', href: '/freestyle', icon: Snowflake, labelKey: 'freestyle', placements: ['sidebar', 'fab'], enabled: false },
-  { id: 'flashcards', href: '/flashcards', icon: Layers, labelKey: 'flashcards', placements: ['sidebar', 'fab'], enabled: false },
+  { id: 'freestyle', href: '/freestyle', icon: Snowflake, labelKey: 'freestyle', placements: ['sidebar', 'fab'], enabled: true },
+  { id: 'flashcards', href: '/flashcards', icon: Layers, labelKey: 'flashcards', placements: ['sidebar', 'fab'], enabled: true, badge: 'deckDue' },
   { id: 'review', href: '/queue', icon: Repeat, labelKey: 'review', placements: ['sidebar', 'fab'], enabled: true, badge: 'reviewsDue' },
   { id: 'profile', href: '/profile', icon: User, labelKey: 'profile', placements: ['sidebar', 'bottom'], enabled: true },
   { id: 'settings', href: '/settings', icon: Settings, labelKey: 'settings', placements: ['sidebar', 'top'], enabled: true },

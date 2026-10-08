@@ -10,6 +10,7 @@ import { answerTextFor, correctAnswerFor, type LessonAnswer } from '../tutoring/
 import { INITIAL_EASE } from '../tutoring/srs';
 import { drawTestOut, scoreTestOut, TESTOUT_MIN_QUESTIONS } from '../tutoring/testOut';
 import type { TestOutAnswerOutcome, TestOutResult, TestOutRun, TestOutState } from '../tutoring/testOutViews';
+import { lessonCardLemma, upsertLessonCard, vocabularyCardContent } from '../deck/lessonCards';
 import { isAiAvailable } from './aiService';
 import { gradeExerciseAnswer } from './exerciseGrading';
 import { gradeFreeText, type FreeTextGradeOutcome } from './freeTextGradingService';
@@ -231,11 +232,19 @@ export function createTestOutService(db: Database.Database, deps: TestOutDeps = 
         `INSERT INTO exercise_srs_state (exercise_id, repetitions, ease_factor, interval_days, next_due_at, updated_at)
          VALUES (?, 0, ?, 1, ?, ?) ON CONFLICT(exercise_id) DO NOTHING`
       );
+      // B1: a vocabulary-lesson flashcard enters the deck instead of the Daily Queue.
       const exercisesOf = db.prepare('SELECT id FROM exercises WHERE lesson_id = ? ORDER BY rowid');
       for (const lessonId of lessonIds) {
         complete.run(lessonId, at);
         for (const { id } of exercisesOf.all(lessonId) as { id: string }[]) {
-          if (!proven.has(id)) schedule.run(id, INITIAL_EASE, tomorrow, at);
+          if (proven.has(id)) continue;
+          const card = vocabularyCardContent(db, id);
+          if (card) {
+            const state = { repetitions: 0, easeFactor: INITIAL_EASE, intervalDays: 1, nextDueAt: tomorrow };
+            upsertLessonCard(db, { ...lessonCardLemma(card.front), meaningEn: card.back, exerciseId: id, state, at });
+          } else {
+            schedule.run(id, INITIAL_EASE, tomorrow, at);
+          }
         }
       }
       unlocks.checkLevelFinishedAfterCompletion(milestone.level);

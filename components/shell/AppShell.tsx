@@ -12,33 +12,42 @@ import { useShell } from './ShellContext';
 
 const BARE_ROUTES = ['/onboarding', '/admin/login'];
 
-// Refetched on every navigation so the badge follows the student's progress; skipped where the shell is hidden.
-function useReviewsDue(pathname: string, active: boolean): number | null {
-  const [due, setDue] = useState<number | null>(null);
+type BadgeCounts = Record<NonNullable<NavItem['badge']>, number | null>;
+
+async function fetchDue(url: string): Promise<number | null> {
+  try {
+    const res = await fetch(url);
+    const data = res.ok ? ((await res.json()) as { due?: unknown }) : {};
+    return typeof data.due === 'number' ? data.due : null;
+  } catch {
+    return null;
+  }
+}
+
+// Refetched on every navigation so the badges follow the student's progress; skipped where the shell is hidden.
+// A failed fetch just means no badge.
+function useBadgeCounts(pathname: string, active: boolean): BadgeCounts {
+  const [counts, setCounts] = useState<BadgeCounts>({ reviewsDue: null, deckDue: null });
   useEffect(() => {
     if (!active) return;
     let stale = false;
-    fetch('/api/tutoring/queue/count')
-      .then(async (res) => {
-        const data = res.ok ? ((await res.json()) as { due?: unknown }) : {};
-        if (!stale) setDue(typeof data.due === 'number' ? data.due : null);
-      })
-      .catch(() => {
-        if (!stale) setDue(null);
-      });
+    void Promise.all([fetchDue('/api/tutoring/queue/count'), fetchDue('/api/flashcards/count')]).then(([reviewsDue, deckDue]) => {
+      if (!stale) setCounts({ reviewsDue, deckDue });
+    });
     return () => {
       stale = true;
     };
   }, [pathname, active]);
-  return due;
+  return counts;
 }
 
-function NavLink({ item, due, showLabel, className }: { item: NavItem; due: number | null; showLabel: boolean; className?: string }) {
+function NavLink({ item, counts, showLabel, className }: { item: NavItem; counts: BadgeCounts; showLabel: boolean; className?: string }) {
   const t = useTranslations('nav');
   const pathname = usePathname();
   const Icon = item.icon;
   const label = t(item.labelKey);
-  const badge = item.badge === 'reviewsDue' && due !== null && due > 0 ? due : null;
+  const due = item.badge ? counts[item.badge] : null;
+  const badge = due !== null && due > 0 ? due : null;
   const active = item.href === '/' ? pathname === '/' : pathname.startsWith(item.href);
   return (
     <Link
@@ -66,7 +75,7 @@ export function AppShell({ children }: { children: ReactNode }) {
   const desktop = useMediaQuery('(min-width: 1024px)');
   const tablet = useMediaQuery('(min-width: 768px)');
   const hidden = focus || BARE_ROUTES.some((route) => pathname.startsWith(route));
-  const due = useReviewsDue(pathname, !hidden);
+  const counts = useBadgeCounts(pathname, !hidden);
   const tNav = useTranslations('nav');
 
   const wide = desktop || tablet;
@@ -86,13 +95,13 @@ export function AppShell({ children }: { children: ReactNode }) {
           {navFor('sidebar')
             .filter((item) => item.id !== 'profile' && item.id !== 'settings')
             .map((item) => (
-              <NavLink key={item.id} item={item} due={due} showLabel={desktop} />
+              <NavLink key={item.id} item={item} counts={counts} showLabel={desktop} />
             ))}
           <div className="mt-auto flex flex-col gap-1">
             {navFor('sidebar')
               .filter((item) => item.id === 'profile' || item.id === 'settings')
               .map((item) => (
-                <NavLink key={item.id} item={item} due={due} showLabel={desktop} />
+                <NavLink key={item.id} item={item} counts={counts} showLabel={desktop} />
               ))}
           </div>
         </nav>
@@ -104,7 +113,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             <Logo className="w-[7.5rem]" title="NaDoch!" />
           </Link>
           {navFor('top').map((item) => (
-            <NavLink key={item.id} item={item} due={due} showLabel={false} />
+            <NavLink key={item.id} item={item} counts={counts} showLabel={false} />
           ))}
         </header>
       )}
@@ -112,14 +121,14 @@ export function AppShell({ children }: { children: ReactNode }) {
       {phone && (
         <div className="fixed right-4 bottom-20 z-10 flex gap-3">
           {navFor('fab').map((item) => (
-            <NavLink key={item.id} item={item} due={due} showLabel={false} className="size-14 justify-center rounded-full bg-primary text-primary-foreground shadow-lg hover:bg-primary hover:text-primary-foreground" />
+            <NavLink key={item.id} item={item} counts={counts} showLabel={false} className="size-14 justify-center rounded-full bg-primary text-primary-foreground shadow-lg hover:bg-primary hover:text-primary-foreground" />
           ))}
         </div>
       )}
       {phone && (
         <nav aria-label={tNav('main')} className="fixed inset-x-0 bottom-0 z-10 flex justify-between border-t border-border bg-surface px-6 py-2">
           {navFor('bottom').map((item) => (
-            <NavLink key={item.id} item={item} due={due} showLabel className="flex-col gap-0.5 text-xs" />
+            <NavLink key={item.id} item={item} counts={counts} showLabel className="flex-col gap-0.5 text-xs" />
           ))}
         </nav>
       )}

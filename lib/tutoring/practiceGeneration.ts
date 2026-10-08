@@ -2,6 +2,7 @@ import type { CefrLevel } from '../types';
 import type { ChatMessage } from '../providers/types';
 import type { ExerciseContent, ExerciseType, Skill } from '../curriculum/types';
 import { hasInstructionKey, validateExerciseContent } from '../curriculum/exerciseContentValidation';
+import { extractJsonObject } from '../ai/json';
 
 export const MAX_STYLE_EXAMPLES = 10;
 
@@ -65,16 +66,9 @@ export function parseGeneratedExercises(
   allowedTypes: ExerciseType[],
   skill: Skill
 ): GeneratedExercise[] | null {
-  const start = text.indexOf('{');
-  const end = text.lastIndexOf('}');
-  if (start === -1 || end <= start) return null;
-  let data: unknown;
-  try {
-    data = JSON.parse(text.slice(start, end + 1));
-  } catch {
-    return null;
-  }
-  const list = (data as { exercises?: unknown } | null)?.exercises;
+  const data = extractJsonObject(text);
+  if (!data) return null;
+  const list = data.exercises;
   if (!Array.isArray(list)) return null;
 
   const usable: GeneratedExercise[] = [];

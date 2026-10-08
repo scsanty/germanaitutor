@@ -181,7 +181,7 @@ describe('progressService.getDailyQueue', () => {
     db.exec(`UPDATE lesson_placements SET milestone_id = '${milestoneId}' WHERE lesson_id = 'a1-sein'`);
     scheduleReview(db, 'a1-greet__ex1', '2026-09-24');
     scheduleReview(db, 'a1-sein__ex2', '2026-09-20');
-    scheduleReview(db, 'a1-greet__ex2', '2026-09-25');
+    scheduleReview(db, 'a1-sein__ex10', '2026-09-25');
     scheduleReview(db, 'a1-goethe-greet__ex1', '2026-09-01');
 
     const queue = progress.getDailyQueue(today);
@@ -204,14 +204,24 @@ describe('progressService.getDailyQueue', () => {
     const { db, progress, profiles } = setup();
     profiles.updateProfile({ dailyReviewCap: 2 });
     scheduleReview(db, 'a1-greet__ex1', '2026-09-20');
-    scheduleReview(db, 'a1-greet__ex2', '2026-09-21');
+    scheduleReview(db, 'a1-sein__ex10', '2026-09-21');
     scheduleReview(db, 'a1-sein__ex2', '2026-09-22');
     addAttempt(db, 'a1-greet__ex1', 'correct', { source: 'queue', on: today });
     addAttempt(db, 'a1-sein__ex2', 'correct', { source: 'lesson', on: today });
 
     const queue = progress.getDailyQueue(today);
     expect(queue.answeredToday).toBe(1);
-    expect(queue.items.map((i) => i.exercise.id)).toEqual(['a1-greet__ex2']);
+    expect(queue.items.map((i) => i.exercise.id)).toEqual(['a1-sein__ex10']);
+  });
+
+  // B1: a vocabulary-lesson flashcard lives in the deck; a flashcard in any other lesson stays here.
+  it('never puts vocabulary-lesson flashcards in the Daily Queue', () => {
+    const { db, progress } = setup();
+    db.exec(`INSERT INTO exercises (id, lesson_id, type, content) VALUES ('a1-sein__card', 'a1-sein', 'flashcard', '{"front":"ich bin","back":"I am"}')`);
+    scheduleReview(db, 'a1-greet__ex2', '2026-09-20');
+    scheduleReview(db, 'a1-greet__ex1', '2026-09-20');
+    scheduleReview(db, 'a1-sein__card', '2026-09-20');
+    expect(progress.getDailyQueue('2026-09-29').items.map((i) => i.exercise.id)).toEqual(['a1-greet__ex1', 'a1-sein__card']);
   });
 
   it('suggests the first incomplete lesson whose prerequisites are done', () => {
