@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from "vitest";
-import { screen, fireEvent, waitFor } from "@testing-library/react";
+import { act, screen, fireEvent, waitFor } from "@testing-library/react";
 import { renderWithIntl } from "@/test/renderWithIntl";
 import { delayedResponse } from "@/test/delayedResponse";
 import { SessionSetup } from "./SessionSetup";
@@ -91,5 +91,30 @@ describe("SessionSetup", () => {
     expect(await screen.findByRole("alert")).toHaveTextContent(
       "Level A1 is locked",
     );
+  });
+
+  it("makes one start call on a double click", async () => {
+    const fetchMock = vi.fn(() =>
+      delayedResponse({ mode: "free_writing", level: "A1", setup: {}, messages: [] }),
+    );
+    vi.stubGlobal("fetch", fetchMock);
+    const onStarted = vi.fn();
+    renderWithIntl(
+      <SessionSetup
+        mode="free_writing"
+        levels={["A1"]}
+        activeLevel="A1"
+        grammarTopics={[]}
+        onStarted={onStarted}
+      />,
+    );
+    const button = screen.getByRole("button", { name: "Start" });
+    // Both clicks land in one batch, before `busy` disables the button.
+    act(() => {
+      button.click();
+      button.click();
+    });
+    await waitFor(() => expect(onStarted).toHaveBeenCalledTimes(1));
+    expect(fetchMock).toHaveBeenCalledTimes(1);
   });
 });

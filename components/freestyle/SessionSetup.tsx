@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { useApiErrorText } from "@/components/useApiErrorText";
 import { Alert, AlertDescription } from "@/components/ui/alert";
@@ -51,6 +51,8 @@ export function SessionSetup({
   const [choice, setChoice] = useState(mode === "conversation" ? FREE : "");
   const [text, setText] = useState("");
   const [busy, setBusy] = useState(false);
+  // A double click lands before `busy` re-renders; the ref makes it one start call.
+  const starting = useRef(false);
   const [error, setError] = useState<string | null>(null);
 
   const scenarios = scenariosFor(level);
@@ -86,7 +88,8 @@ export function SessionSetup({
   const setup = buildSetup();
 
   async function start() {
-    if (!setup || busy) return;
+    if (!setup || starting.current) return;
+    starting.current = true;
     setBusy(true);
     setError(null);
     try {
@@ -104,6 +107,7 @@ export function SessionSetup({
     } catch {
       setError(t("startFailed"));
     } finally {
+      starting.current = false;
       setBusy(false);
     }
   }
