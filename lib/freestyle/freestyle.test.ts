@@ -116,4 +116,35 @@ describe('reply parsers', () => {
     expect(parseWritingReply('{"corrected":"x"}')).toBeNull();
     expect(parseSummaryReply('{"wentWell":"good"}')).toBeNull();
   });
+
+  it('normalize: lowercases the part of speech, still needs the article for "Noun", rejects an unknown one', () => {
+    const reply = (lemma: string, partOfSpeech: string) =>
+      parseNormalizeReply(JSON.stringify({ lemma, partOfSpeech, plural: null, meaningEn: 'dog', meaningDe: 'ein Haustier' }));
+    expect(reply('Hund', 'Noun')).toBeNull();
+    expect(reply('Hund', ' NOUN ')).toBeNull();
+    expect(reply('der Hund', 'Noun')).toMatchObject({ lemma: 'der Hund', partOfSpeech: 'noun' });
+    expect(reply('Hund', 'proper noun')).toBeNull();
+    expect(reply('Hund', 'substantive')).toBeNull();
+    for (const pos of ['verb', 'adjective', 'adverb', 'other']) expect(reply('schnell', pos)).toMatchObject({ partOfSpeech: pos });
+  });
+
+  it('summary: dedupes words by lemma key and caps the lists at 3, 3 and 8', () => {
+    const pair = (n: number) => ({ en: `e${n}`, de: `d${n}` });
+    const parsed = parseSummaryReply(
+      JSON.stringify({
+        wentWell: [1, 2, 3, 4, 5].map(pair),
+        mistakes: [1, 2, 3, 4].map(pair),
+        words: [
+          { lemma: 'der Termin', meaningEn: 'appointment' },
+          { lemma: 'Der  Termin', meaningEn: 'appointment again' },
+          ...Array.from({ length: 10 }, (_, i) => ({ lemma: `wort${i}`, meaningEn: `w${i}` })),
+        ],
+      })
+    );
+    expect(parsed?.wentWell).toEqual([1, 2, 3].map(pair));
+    expect(parsed?.mistakes).toEqual([1, 2, 3].map(pair));
+    expect(parsed?.words).toHaveLength(8);
+    expect(parsed?.words[0]).toEqual({ lemma: 'der Termin', meaningEn: 'appointment' });
+    expect(parsed?.words.filter((w) => w.lemma.toLowerCase().includes('termin'))).toHaveLength(1);
+  });
 });
