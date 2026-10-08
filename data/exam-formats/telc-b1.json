@@ -1,0 +1,25 @@
+{
+  "id": "telc-b1",
+  "track": "telc",
+  "level": "B1",
+  "name": "telc Deutsch B1",
+  "sources": ["https://www.telc.net/pruefungsteilnehmende/sprachpruefungen/pruefungen/detail/telc-deutsch-b1.html"],
+  "blocks": [
+    { "id": "written", "title": { "en": "Written exam", "de": "Schriftliche Prüfung" }, "minutes": 150, "partIds": ["lesen-1", "lesen-2", "lesen-3", "sprachbausteine-1", "sprachbausteine-2", "hoeren-1", "hoeren-2", "hoeren-3", "schreiben"], "passRatio": 0.6 },
+    { "id": "oral", "title": { "en": "Oral exam", "de": "Mündliche Prüfung" }, "minutes": 15, "partIds": ["sprechen-1", "sprechen-2", "sprechen-3"], "passRatio": 0.6 }
+  ],
+  "parts": [
+    { "id": "lesen-1", "skill": "reading", "title": { "en": "Reading Part 1", "de": "Leseverstehen Teil 1" }, "taskType": "matching", "items": 5, "points": 25, "minutes": 20, "instructions": "Lesen Sie die Überschriften a–j und die Texte 1–5. Finden Sie für jeden Text die passende Überschrift." },
+    { "id": "lesen-2", "skill": "reading", "title": { "en": "Reading Part 2", "de": "Leseverstehen Teil 2" }, "taskType": "passage_questions", "items": 5, "points": 25, "minutes": 25, "instructions": "Lesen Sie den Text und die Aufgaben 6–10. Welche Lösung (a, b oder c) ist jeweils richtig?" },
+    { "id": "lesen-3", "skill": "reading", "title": { "en": "Reading Part 3", "de": "Leseverstehen Teil 3" }, "taskType": "matching", "items": 10, "points": 25, "minutes": 20, "instructions": "Lesen Sie die Situationen 11–20 und die Anzeigen a–l. Finden Sie für jede Situation die passende Anzeige. Sie können jede Anzeige nur einmal verwenden. Für eine Situation gibt es keine passende Anzeige; markieren Sie dann x." },
+    { "id": "sprachbausteine-1", "skill": "sprachbausteine", "title": { "en": "Language elements Part 1", "de": "Sprachbausteine Teil 1" }, "taskType": "cloze", "items": 10, "points": 15, "minutes": 12, "instructions": "Lesen Sie den folgenden Text und entscheiden Sie, welches Wort (a, b oder c) in die Lücken 21–30 passt." },
+    { "id": "sprachbausteine-2", "skill": "sprachbausteine", "title": { "en": "Language elements Part 2", "de": "Sprachbausteine Teil 2" }, "taskType": "cloze", "items": 10, "points": 15, "minutes": 13, "instructions": "Lesen Sie den folgenden Text und entscheiden Sie, welches Wort aus dem Kasten (a–o) in die Lücken 31–40 passt. Sie können jedes Wort nur einmal verwenden." },
+    { "id": "hoeren-1", "skill": "listening", "title": { "en": "Listening Part 1", "de": "Hörverstehen Teil 1" }, "taskType": "audio_questions", "items": 5, "points": 25, "minutes": 10, "replays": 1, "instructions": "Sie hören jetzt fünf kurze Texte. Sie hören jeden Text nur einmal. Entscheiden Sie, ob die Aussagen richtig oder falsch sind." },
+    { "id": "hoeren-2", "skill": "listening", "title": { "en": "Listening Part 2", "de": "Hörverstehen Teil 2" }, "taskType": "audio_questions", "items": 10, "points": 25, "minutes": 12, "replays": 2, "instructions": "Sie hören jetzt ein Gespräch. Sie hören das Gespräch zweimal. Entscheiden Sie, ob die Aussagen richtig oder falsch sind." },
+    { "id": "hoeren-3", "skill": "listening", "title": { "en": "Listening Part 3", "de": "Hörverstehen Teil 3" }, "taskType": "audio_questions", "items": 5, "points": 25, "minutes": 8, "replays": 2, "instructions": "Sie hören jetzt fünf kurze Texte. Sie hören jeden Text zweimal. Entscheiden Sie, ob die Aussagen richtig oder falsch sind." },
+    { "id": "schreiben", "skill": "writing", "title": { "en": "Writing", "de": "Schriftlicher Ausdruck" }, "taskType": "letter", "items": 3, "points": 45, "minutes": 30, "instructions": "Wählen Sie Aufgabe A oder Aufgabe B. Schreiben Sie einen Brief. Behandeln Sie darin die vier Leitpunkte." },
+    { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Mündlicher Ausdruck Teil 1" }, "taskType": "spoken", "items": 3, "points": 15, "minutes": 3, "instructions": "Kontaktaufnahme: Unterhalten Sie sich mit Ihrem Partner / Ihrer Partnerin." },
+    { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Mündlicher Ausdruck Teil 2" }, "taskType": "spoken", "items": 3, "points": 30, "minutes": 6, "instructions": "Gespräch über ein Thema: Berichten Sie über Ihren Text und sprechen Sie mit Ihrem Partner / Ihrer Partnerin darüber." },
+    { "id": "sprechen-3", "skill": "speaking", "title": { "en": "Speaking Part 3", "de": "Mündlicher Ausdruck Teil 3" }, "taskType": "spoken", "items": 3, "points": 30, "minutes": 6, "instructions": "Gemeinsam etwas planen: Planen Sie zusammen mit Ihrem Partner / Ihrer Partnerin." }
+  ]
+}
