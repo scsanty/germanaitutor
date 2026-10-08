@@ -124,6 +124,44 @@ describe('deckService starter words per track (amended 2026-10-08)', () => {
     ]);
   });
 
+  it("introduces only the active track's words, shared words and legacy refs after a switch (final-review ruling)", () => {
+    const { db, service, profiles, setDay } = setup();
+    profiles.updateProfile({ activeTrack: 'goethe', newWordsPerDay: 1 });
+    profiles.writeLevelState({ highestUnlockedLevel: 'B2', activeLevel: 'B2' });
+    service.getDeck();
+    // A ref from before scopes existed: it counts as the active track's.
+    db.prepare(
+      `INSERT INTO vocabulary_items (lemma, lemma_key, part_of_speech, plural, meaning_en, meaning_de, example, level, source, source_ref, status, created_at)
+       VALUES ('alt', 'alt', 'adjective', NULL, 'old', 'nicht neu', 'Das ist alt.', 'A1', 'starter', 'A1:9', 'not_started', '2026-09-01T00:00:00.000Z')`
+    ).run();
+    profiles.updateProfile({ activeTrack: 'telc', newWordsPerDay: 50 });
+    setDay(30);
+    service.getDeck();
+    const telcKeys = new Set(
+      (['A1', 'A2', 'B1'] as const).flatMap((level) =>
+        (JSON.parse(readFileSync(wordListPath('telc', level, FIXTURES), 'utf8')) as { entries: { lemma: string }[] }).entries.map((e) => e.lemma.toLowerCase())
+      )
+    );
+    const introduced = db.prepare("SELECT lemma, lemma_key, source_ref FROM vocabulary_items WHERE introduced_on = '2026-09-30'").all() as {
+      lemma: string;
+      lemma_key: string;
+      source_ref: string;
+    }[];
+    expect(introduced.length).toBeGreaterThan(0);
+    for (const r of introduced) {
+      const ok = /^(telc|shared):/.test(r.source_ref) || r.source_ref.split(':').length === 2 || telcKeys.has(r.lemma_key);
+      expect(ok, `${r.lemma} (${r.source_ref})`).toBe(true);
+    }
+    expect(introduced.map((r) => r.lemma)).toEqual(expect.arrayContaining(['alt', 'morgen', 'wohnen', 'der Gedanke']));
+    // goethe-only words stay dormant…
+    expect(db.prepare("SELECT status, introduced_on FROM vocabulary_items WHERE lemma = 'bald'").get()).toEqual({ status: 'not_started', introduced_on: null });
+    // …until the student switches back.
+    profiles.updateProfile({ activeTrack: 'goethe' });
+    setDay(31);
+    service.getDeck();
+    expect(db.prepare("SELECT introduced_on FROM vocabulary_items WHERE lemma = 'bald'").get()).toEqual({ introduced_on: '2026-10-01' });
+  });
+
   it('reads B2 from the shared list for every track', () => {
     for (const track of ['goethe', 'telc', 'generic'] as const) {
       const { db, service, profiles } = setup();

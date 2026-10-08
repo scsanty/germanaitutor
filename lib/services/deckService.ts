@@ -120,18 +120,31 @@ export function createDeckService(
 
   // Spec Review Focus 3: words introduced today count, so a second open introduces nothing. Returns
   // before loading candidates when today's quota is used up (S2).
-  function introduceToday(perDay: number, activeLevel: CefrLevel): void {
+  // Final-review ruling: only the active track's scope and `shared` are introduced; a legacy ref
+  // without a scope (`A1:3`) counts as the active scope. A word that is also in the active track's
+  // own lists counts too (it was imported under the first track's ref, but it is this track's word).
+  // Not-started words of a previous track stay dormant until the student switches back.
+  function introduceToday(perDay: number, activeTrack: Track, activeLevel: CefrLevel): void {
     const day = today();
     const alreadyToday = (db.prepare('SELECT COUNT(*) AS n FROM vocabulary_items WHERE introduced_on = ?').get(day) as { n: number }).n;
     if (perDay - alreadyToday <= 0) return;
+    const levels = levelsUpTo(activeLevel);
+    const activeKeys = new Set(levels.flatMap((level) => JSON.parse(loadList(activeTrack, level, listDir).keys) as string[]));
+    const inScope = (ref: string, key: string) => {
+      const parts = ref.split(':');
+      if (parts.length < 3) return true;
+      return parts[0] === activeTrack || parts[0] === 'shared' || activeKeys.has(key);
+    };
     // The list index is the ref's last part, in `<scope>:<level>:<index>` and the older `<level>:<index>`.
     const candidates = (
       db
         .prepare(
-          "SELECT id, level, source_ref FROM vocabulary_items WHERE status = 'not_started' AND source = 'starter' AND level IN (SELECT value FROM json_each(?))"
+          "SELECT id, level, source_ref, lemma_key FROM vocabulary_items WHERE status = 'not_started' AND source = 'starter' AND level IN (SELECT value FROM json_each(?))"
         )
-        .all(JSON.stringify(levelsUpTo(activeLevel))) as { id: number; level: CefrLevel | null; source_ref: string }[]
-    ).map((r) => ({ id: r.id, level: r.level, order: Number(r.source_ref.split(':').pop() ?? 0) }));
+        .all(JSON.stringify(levels)) as { id: number; level: CefrLevel | null; source_ref: string; lemma_key: string }[]
+    )
+      .filter((r) => inScope(r.source_ref, r.lemma_key))
+      .map((r) => ({ id: r.id, level: r.level, order: Number(r.source_ref.split(':').pop() ?? 0) }));
     const ids = selectIntroductions(candidates, alreadyToday, perDay);
     const introduce = db.prepare('UPDATE vocabulary_items SET introduced_on = ? WHERE id = ?');
     const at = now().toISOString();
@@ -162,7 +175,7 @@ export function createDeckService(
     const profile = profiles.getProfile();
     db.transaction(() => {
       importStarterLists(profile.activeTrack, profile.activeLevel);
-      introduceToday(profile.newWordsPerDay, profile.activeLevel);
+      introduceToday(profile.newWordsPerDay, profile.activeTrack, profile.activeLevel);
     })();
     const answered = answeredToday();
     const due = selectDeckDue(
