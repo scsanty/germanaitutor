@@ -213,7 +213,7 @@ export function createFreestyleService(
       const scenario = SCENARIOS.find((s) => s.id === setup.scenarioId);
       const topic = nonEmpty(setup.topic) ? setup.topic : null;
       const reply = await ask(
-        buildConversationPrompt({ level: r.level, scenario: scenario?.title.de ?? topic, history: history(r.id), message: text }),
+        buildConversationPrompt({ level: r.level, scenario: scenario?.title.de ?? null, topic, history: history(r.id), message: text }),
         parseConversationReply
       );
       return save({ corrections: reply.corrections }, reply.reply);
