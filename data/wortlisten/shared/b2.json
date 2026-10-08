@@ -3,8 +3,29 @@
   "scope": "shared",
   "source": "nadoch",
   "entries": [
-    { "lemma": "der Gedanke", "partOfSpeech": "noun", "plural": "die Gedanken", "example": "Ein interessanter Gedanke kam mir in den Sinn.", "meaningEn": "thought", "meaningDe": "eine Idee oder ein Konzept im Kopf" },
-    { "lemma": "formulieren", "partOfSpeech": "verb", "plural": null, "example": "Er formulierte seine Kritik sehr diplomatisch.", "meaningEn": "to formulate", "meaningDe": "etwas in Worte fassen und ausdrücken" },
-    { "lemma": "allerdings", "partOfSpeech": "adverb", "plural": null, "example": "Das ist eine gute Idee, allerdings kostet sie viel Geld.", "meaningEn": "however", "meaningDe": "aber; allerdings auch; mit Einschränkung" }
+    {
+      "lemma": "formulieren",
+      "partOfSpeech": "verb",
+      "plural": null,
+      "example": "Er formulierte seine Kritik sehr diplomatisch.",
+      "meaningEn": "to formulate",
+      "meaningDe": "etwas in Worte fassen und ausdrücken"
+    },
+    {
+      "lemma": "die Nachhaltigkeit",
+      "partOfSpeech": "noun",
+      "plural": null,
+      "example": "Viele Firmen achten heute mehr auf Nachhaltigkeit.",
+      "meaningEn": "sustainability",
+      "meaningDe": "so handeln, dass auch spätere Generationen gut leben können"
+    },
+    {
+      "lemma": "infolgedessen",
+      "partOfSpeech": "adverb",
+      "plural": null,
+      "example": "Es regnete stark; infolgedessen fiel das Konzert aus.",
+      "meaningEn": "as a result",
+      "meaningDe": "als Folge davon; deshalb"
+    }
   ]
 }
