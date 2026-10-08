@@ -21,24 +21,34 @@ export function DeckReview({
   card,
   progress,
   confirmExit,
+  notice = null,
   onRated,
+  onSkipped,
   onExit,
 }: {
   card: DeckCard;
   progress: { current: number; total: number };
   confirmExit: boolean;
+  // Why the previous card was skipped (it was no longer due); shown above the next one.
+  notice?: string | null;
   onRated: () => void;
+  onSkipped: (message: string) => void;
   onExit: () => void;
 }) {
   return (
     <FocusLayout progress={progress} confirmExit={confirmExit} onExit={onExit}>
+      {notice && (
+        <Alert role="alert" className="mb-2">
+          <AlertDescription>{notice}</AlertDescription>
+        </Alert>
+      )}
       {/* Keyed by card, so the flip and the language reset for each card. */}
-      <CardFace key={card.itemId} card={card} onRated={onRated} />
+      <CardFace key={card.itemId} card={card} onRated={onRated} onSkipped={onSkipped} />
     </FocusLayout>
   );
 }
 
-function CardFace({ card, onRated }: { card: DeckCard; onRated: () => void }) {
+function CardFace({ card, onRated, onSkipped }: { card: DeckCard; onRated: () => void; onSkipped: (message: string) => void }) {
   const t = useTranslations('deck');
   const tExercise = useTranslations('exercise');
   const tFocus = useTranslations('focus');
@@ -65,6 +75,12 @@ function CardFace({ card, onRated }: { card: DeckCard; onRated: () => void }) {
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
+        // The card is no longer due (answered elsewhere, or the daily cap was reached): retrying
+        // can't help, so say why and move on. Any other failure keeps the card for a retry.
+        if (res.status === 400 && (data as { code?: unknown }).code === 'not_due') {
+          onSkipped(errorText(data, t('rateFailed')));
+          return;
+        }
         setError(errorText(data, t('rateFailed')));
         return;
       }

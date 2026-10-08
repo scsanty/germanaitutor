@@ -67,15 +67,35 @@ describe('DeckPage', () => {
 
   it('keeps the card and shows an alert when a rating cannot be saved', async () => {
     vi.stubGlobal('fetch', vi.fn((url: string) =>
-      url === '/api/flashcards' ? delayedResponse(DECK) : delayedResponse({ error: 'x', code: 'not_due' }, { ok: false, status: 400 })
+      url === '/api/flashcards' ? delayedResponse(DECK) : delayedResponse({}, { ok: false, status: 500 })
     ));
     renderPage();
     fireEvent.click(await screen.findByRole('button', { name: 'Start review (2)' }));
     fireEvent.click(screen.getByRole('button', { name: 'Show answer' }));
     fireEvent.click(screen.getByRole('button', { name: 'Sort of' }));
-    expect(await screen.findByRole('alert')).toHaveTextContent('This review is not due right now');
+    expect(await screen.findByRole('alert')).toHaveTextContent('Could not save your rating. Please try again.');
     expect(screen.getByText('der Hund')).toBeInTheDocument();
     expect(play).not.toHaveBeenCalled();
+  });
+
+  it('shows why and moves on when a card is no longer due (400 not_due)', async () => {
+    const fetchMock = vi.fn((url: string) =>
+      url === '/api/flashcards' ? delayedResponse(DECK) : delayedResponse({ error: 'x', code: 'not_due' }, { ok: false, status: 400 })
+    );
+    vi.stubGlobal('fetch', fetchMock);
+    renderPage();
+    fireEvent.click(await screen.findByRole('button', { name: 'Start review (2)' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Show answer' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Sort of' }));
+    expect(await screen.findByText('wohnen')).toBeInTheDocument();
+    expect(screen.getByRole('alert')).toHaveTextContent('This review is not due right now');
+    expect(screen.queryByText('der Hund')).not.toBeInTheDocument();
+    expect(play).not.toHaveBeenCalled();
+    // The last card skipped too: the run ends without counting either as reviewed, and the notice stays.
+    fireEvent.click(screen.getByRole('button', { name: 'Show answer' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Knew it' }));
+    expect(await screen.findByText('Nothing to review right now.')).toBeInTheDocument();
+    expect(screen.getByRole('alert')).toHaveTextContent('This review is not due right now');
   });
 
   it('plays the right sound for sort of, and says one card in the singular', async () => {

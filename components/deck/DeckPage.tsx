@@ -25,6 +25,8 @@ export function DeckPage() {
   // In this visit (for the done message), and since the last load (the loaded answeredToday has the rest).
   const [reviewed, setReviewed] = useState(0);
   const [sinceLoad, setSinceLoad] = useState(0);
+  // Why a card was skipped mid-run; shown on the next card, or on the overview when the run ended.
+  const [notice, setNotice] = useState<string | null>(null);
 
   const load = useCallback(async () => {
     try {
@@ -45,18 +47,30 @@ export function DeckPage() {
   }, [load]);
 
   function start() {
+    setNotice(null);
     setRunTotal(queue.length);
     setRunAnswered(0);
     setReviewing(true);
   }
 
-  function rated() {
+  function next() {
     setRunAnswered((n) => n + 1);
-    setReviewed((n) => n + 1);
-    setSinceLoad((n) => n + 1);
     const rest = queue.slice(1);
     setQueue(rest);
     if (rest.length === 0) setReviewing(false);
+  }
+
+  function rated() {
+    setNotice(null);
+    setReviewed((n) => n + 1);
+    setSinceLoad((n) => n + 1);
+    next();
+  }
+
+  // The card was not due any more: it leaves the run without counting as reviewed.
+  function skipped(message: string) {
+    setNotice(message);
+    next();
   }
 
   // Outside a run only: a reload mid-run would swap the cards under the student.
@@ -85,7 +99,9 @@ export function DeckPage() {
         card={queue[0]}
         progress={{ current: runAnswered + 1, total: Math.max(1, runTotal) }}
         confirmExit={runAnswered > 0}
+        notice={notice}
         onRated={rated}
+        onSkipped={skipped}
         onExit={() => setReviewing(false)}
       />
     );
@@ -99,6 +115,11 @@ export function DeckPage() {
       </header>
 
       <section className="flex flex-col gap-4 rounded-2xl border border-border bg-surface px-5 py-5">
+        {notice && (
+          <Alert role="alert">
+            <AlertDescription>{notice}</AlertDescription>
+          </Alert>
+        )}
         <div className="flex flex-wrap gap-2">
           <Badge variant="secondary" className="text-sm">
             {t('dueNow', { count: queue.length })}
