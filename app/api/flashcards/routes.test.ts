@@ -71,4 +71,22 @@ describe('/api/flashcards', () => {
     expect((await post(addWord, { word: 'Katze', source: 'starter' })).status).toBe(400);
     expect((await post(addWord, { word: 'Katze', source: 'manual' })).status).toBe(502);
   });
+
+  it('limits the word to 100 characters and the sentence to 1000', async () => {
+    const word = await post(addWord, { word: 'a'.repeat(101) });
+    expect(word.status).toBe(400);
+    expect(await word.json()).toMatchObject({ code: 'bad_request' });
+    const sentence = await post(addWord, { word: 'Katze', sentence: 'a'.repeat(1001) });
+    expect(sentence.status).toBe(400);
+    expect(await sentence.json()).toMatchObject({ code: 'bad_request' });
+    // At the limits validation passes and the request reaches the (missing) AI provider.
+    expect((await post(addWord, { word: 'a'.repeat(100), sentence: 'a'.repeat(1000) })).status).toBe(502);
+  });
+
+  it('limits the word search query to 100 characters', async () => {
+    const res = await listWords(new Request(`http://localhost/api/flashcards/words?query=${'a'.repeat(101)}`));
+    expect(res.status).toBe(400);
+    expect(await res.json()).toMatchObject({ code: 'bad_request' });
+    expect((await listWords(new Request(`http://localhost/api/flashcards/words?query=${'a'.repeat(100)}`))).status).toBe(200);
+  });
 });

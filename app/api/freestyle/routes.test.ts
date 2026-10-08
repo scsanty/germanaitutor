@@ -87,6 +87,19 @@ describe('/api/freestyle', () => {
     expect(await bad.json()).toMatchObject({ code: 'ai_bad_reply' });
   });
 
+  it('message: text is limited to 2000 characters, 6000 for free writing', async () => {
+    const long = await call(message, 'conversation', { text: 'a'.repeat(2001) });
+    expect(long.status).toBe(400);
+    expect(await long.json()).toMatchObject({ code: 'bad_request' });
+    expect((await call(message, 'grammar_drill', { text: 'a'.repeat(2001) })).status).toBe(400);
+    // Within the limit the request gets past validation (and finds no session).
+    expect((await call(message, 'conversation', { text: 'a'.repeat(2000) })).status).toBe(404);
+    expect((await call(message, 'free_writing', { text: 'a'.repeat(6000) })).status).toBe(404);
+    const tooLong = await call(message, 'free_writing', { text: 'a'.repeat(6001) });
+    expect(tooLong.status).toBe(400);
+    expect(await tooLong.json()).toMatchObject({ code: 'bad_request' });
+  });
+
   it('message returns the new messages', async () => {
     await call(startSession, 'conversation', { level: 'A1', setup: {} });
     vi.mocked(generateWithActiveProvider).mockResolvedValue({ ok: true, text: JSON.stringify({ corrections: [], reply: 'Wie geht es dir?' }) });
