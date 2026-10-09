@@ -257,7 +257,7 @@ export function createTeilSetService(db: Database.Database, deps: TeilSetDeps = 
       else if (BUNDLED_ID.test(id) && !existing) problems.push(`${id}: ids ending in __s<number> are reserved for bundled sets`);
       for (const p of teilSetProblems(entry.set, part)) problems.push(`${id}: ${p}`);
     }
-    if (problems.length > 0) throw new TeilSetError(`The upload was not saved:\n${problems.join('\n')}`, 'bad_request');
+    if (problems.length > 0) throw new TeilSetError(problems.join('; '), 'bad_request');
     const upsert = db.prepare(
       `INSERT INTO teil_sets (id, format_id, part_id, status, content, created_at, reviewed_at) VALUES (?, ?, ?, 'approved', ?, ?, ?)
        ON CONFLICT(id) DO UPDATE SET content = excluded.content, status = 'approved', reviewed_at = excluded.reviewed_at`

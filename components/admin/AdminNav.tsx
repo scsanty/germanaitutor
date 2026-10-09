@@ -11,6 +11,7 @@ const ITEMS = [
   { href: '/admin/curriculum/flashcard-violations', label: 'Flashcard violations' },
   { href: '/admin/placement-exam', label: 'Placement exam' },
   { href: '/admin/practice-review', label: 'Practice review' },
+  { href: '/admin/exam-practice', label: 'Exam practice' },
 ];
 
 // The most specific item whose href prefixes the path wins, so Flashcard violations does not also light up Curriculum.
