@@ -29,7 +29,8 @@ export interface TeilSetRow {
   itemCount: number;
   createdAt: string;
   reviewedAt: string | null;
-  set: TeilSetContent;
+  // Null for reserved sets in the admin list (summary fields only).
+  set: TeilSetContent | null;
 }
 
 export function teilSetProblems(set: TeilSetContent, part: ExamPart): string[] {

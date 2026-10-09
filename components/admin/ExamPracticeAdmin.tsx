@@ -3,6 +3,7 @@
 import { Fragment, useEffect, useRef, useState } from 'react';
 import { Download } from 'lucide-react';
 import type { TeilSetContent, TeilSetRow, TeilSetStatus } from '@/lib/exam/teilSets';
+import type { ClozeContent, MatchingContent, PassageQuestionsContent } from '@/lib/curriculum/types';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -28,6 +29,19 @@ const STATUS_VARIANT: Record<TeilSetStatus, 'default' | 'secondary' | 'outline' 
 
 const JSON_HEADERS = { 'Content-Type': 'application/json' };
 const DANGER = `${BTN} text-destructive hover:text-destructive`;
+
+// Spec: the list shows a short read-only preview of each set's German text.
+export function previewOf(set: TeilSetContent | null): string {
+  if (!set) return '';
+  const text =
+    set.taskType === 'passage_questions'
+      ? (set.content as PassageQuestionsContent).passage
+      : set.taskType === 'matching'
+        ? ((set.content as MatchingContent).items[0] ?? '')
+        : (set.content as ClozeContent).text;
+  const flat = (text ?? '').replace(/\s+/g, ' ').trim();
+  return flat.length > 80 ? `${flat.slice(0, 79)}…` : flat;
+}
 
 async function errorOf(res: Response): Promise<string> {
   const data = await res.json().catch(() => ({}));
@@ -96,7 +110,6 @@ export function ExamPracticeAdmin({ formats }: { formats: ExamPracticeFormatOpti
       }
       setConfirmDelete(null);
       if (after) await after(res);
-      else setEditing(null);
       setReload((n) => n + 1);
     } catch (err) {
       setActionError((err as Error).message);
@@ -111,8 +124,10 @@ export function ExamPracticeAdmin({ formats }: { formats: ExamPracticeFormatOpti
   const duplicate = (id: string) =>
     act(`/api/admin/exam-practice/${id}`, { method: 'POST' }, async (res) => {
       const copy = (await res.json()) as TeilSetRow;
-      setEditing({ id: copy.id, set: copy.set });
+      if (copy.set) setEditing({ id: copy.id, set: copy.set });
     });
+  // Other rows' actions leave an open editor (and its unsaved edits) alone.
+  const closeEditorFor = (id: string) => async () => setEditing((e) => (e?.id === id ? null : e));
 
   async function upload() {
     if (!file || busyRef.current) return;
@@ -226,6 +241,7 @@ export function ExamPracticeAdmin({ formats }: { formats: ExamPracticeFormatOpti
               <tr>
                 <th scope="col" className={TH}>Set</th>
                 <th scope="col" className={TH}>Status</th>
+                <th scope="col" className={TH}>Preview</th>
                 <th scope="col" className={TH}>Items</th>
                 <th scope="col" className={TH}>Created</th>
                 <th scope="col" className={TH}>Actions</th>
@@ -239,6 +255,9 @@ export function ExamPracticeAdmin({ formats }: { formats: ExamPracticeFormatOpti
                     <td className={TD}>
                       <Badge variant={STATUS_VARIANT[row.status]}>{row.status}</Badge>
                     </td>
+                    <td className={`${TD} min-w-48 max-w-80`} lang="de">
+                      {row.set ? previewOf(row.set) : <span className={HINT}>Hidden</span>}
+                    </td>
                     <td className={TD}>{row.itemCount}</td>
                     <td className={`${TD} whitespace-nowrap`}>{row.createdAt.slice(0, 10)}</td>
                     <td className={`${TD} min-w-72`}>
@@ -251,10 +270,10 @@ export function ExamPracticeAdmin({ formats }: { formats: ExamPracticeFormatOpti
                           confirming={confirmDelete === row.id}
                           onApprove={() => patch(row.id, { status: 'approved' })}
                           onReject={() => patch(row.id, { status: 'rejected' })}
-                          onEdit={() => setEditing({ id: row.id, set: row.set })}
+                          onEdit={() => row.set && setEditing({ id: row.id, set: row.set })}
                           onDuplicate={() => duplicate(row.id)}
                           onDelete={() => setConfirmDelete(row.id)}
-                          onConfirmDelete={() => act(`/api/admin/exam-practice/${row.id}`, { method: 'DELETE' })}
+                          onConfirmDelete={() => act(`/api/admin/exam-practice/${row.id}`, { method: 'DELETE' }, closeEditorFor(row.id))}
                           onCancelDelete={() => setConfirmDelete(null)}
                         />
                       )}
@@ -262,13 +281,13 @@ export function ExamPracticeAdmin({ formats }: { formats: ExamPracticeFormatOpti
                   </tr>
                   {editing?.id === row.id && (
                     <tr>
-                      <td colSpan={5} className={TD}>
+                      <td colSpan={6} className={TD}>
                         <TeilSetEditor
                           key={editing.id}
                           setId={row.id}
                           initial={editing.set}
                           saving={busy}
-                          onSave={(set) => patch(row.id, { set })}
+                          onSave={(set) => act(`/api/admin/exam-practice/${row.id}`, { method: 'PATCH', headers: JSON_HEADERS, body: JSON.stringify({ set }) }, closeEditorFor(row.id))}
                           onCancel={() => setEditing(null)}
                         />
                       </td>

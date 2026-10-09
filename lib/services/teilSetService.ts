@@ -63,7 +63,8 @@ function partOf(formatId: string, partId: string): { format: ExamFormat; part: E
   return { format, part };
 }
 
-function toRow(row: SetRow): TeilSetRow {
+// `summary` leaves out a reserved set's content: formal exam sets never leave the server in a list.
+function toRow(row: SetRow, summary = false): TeilSetRow {
   const set = JSON.parse(row.content) as TeilSetContent;
   return {
     id: row.id,
@@ -73,7 +74,7 @@ function toRow(row: SetRow): TeilSetRow {
     itemCount: isSetTaskType(set.taskType) ? itemCount(set.taskType, set.content) : 0,
     createdAt: row.created_at,
     reviewedAt: row.reviewed_at,
-    set,
+    set: summary && row.status === 'reserved' ? null : set,
   };
 }
 
@@ -195,7 +196,7 @@ export function createTeilSetService(db: Database.Database, deps: TeilSetDeps = 
   function list(formatId: string, partId: string): TeilSetRow[] {
     partOf(formatId, partId);
     const rows = db.prepare('SELECT * FROM teil_sets WHERE format_id = ? AND part_id = ? ORDER BY created_at DESC, id DESC').all(formatId, partId) as SetRow[];
-    return rows.map(toRow);
+    return rows.map((r) => toRow(r, true));
   }
 
   function setStatus(id: string, status: string): void {
@@ -206,6 +207,7 @@ export function createTeilSetService(db: Database.Database, deps: TeilSetDeps = 
 
   function update(id: string, set: TeilSetContent): void {
     const row = requireRow(id);
+    if (row.status === 'reserved') throw new TeilSetError('Reserved exam sets cannot be changed here', 'bad_request');
     const { part } = partOf(row.format_id, row.part_id);
     const problems = teilSetProblems(set, part);
     if (problems.length > 0) throw new TeilSetError(problems.join('; '), 'bad_request');
@@ -223,8 +225,10 @@ export function createTeilSetService(db: Database.Database, deps: TeilSetDeps = 
   }
 
   // S18: copy a set under a new pool id, unreviewed, for the admin to edit.
+  // A reserved source is refused: its copy would be unreviewed, which practice serves.
   function duplicate(id: string): TeilSetRow {
     const row = requireRow(id);
+    if (row.status === 'reserved') throw new TeilSetError('Reserved exam sets cannot be copied into practice', 'bad_request');
     const copyId = poolId(row.format_id, row.part_id);
     db.prepare("INSERT INTO teil_sets (id, format_id, part_id, status, content, created_at) VALUES (?, ?, ?, 'unreviewed', ?, ?)").run(
       copyId,

@@ -50,7 +50,7 @@ describe('/api/admin/exam-practice', () => {
     expect(rows.every((r) => r.formatId === 'telc-b1' && r.partId === 'lesen-1')).toBe(true);
     const starter = rows.find((r) => r.id === STARTER)!;
     expect(starter).toMatchObject({ status: 'starter', itemCount: 5 });
-    expect(starter.set.taskType).toBe('matching');
+    expect(starter.set!.taskType).toBe('matching');
   });
 
   it('404s an unknown format or part, and 400s missing params', async () => {
@@ -70,9 +70,9 @@ describe('/api/admin/exam-practice', () => {
 
   it('edits content with PATCH { set } and returns validation problems as given', async () => {
     const starter = (await list()).find((r) => r.id === STARTER)!;
-    const set = { ...starter.set, explanations: starter.set.explanations.map((e) => ({ ...e, en: `${e.en}!` })) };
+    const set = { ...starter.set!, explanations: starter.set!.explanations.map((e) => ({ ...e, en: `${e.en}!` })) };
     expect((await PATCH(json('PATCH', { set }), ctx(STARTER))).status).toBe(200);
-    expect((await list()).find((r) => r.id === STARTER)!.set.explanations[0].en).toMatch(/!$/);
+    expect((await list()).find((r) => r.id === STARTER)!.set!.explanations[0].en).toMatch(/!$/);
 
     const bad = await PATCH(json('PATCH', { set: { ...set, explanations: [] } }), ctx(STARTER));
     expect(bad.status).toBe(400);
@@ -90,12 +90,25 @@ describe('/api/admin/exam-practice', () => {
     expect((await DELETE(json('DELETE', {}), ctx(copy.id))).status).toBe(404);
   });
 
-  it('refuses to delete a reserved set with 400', async () => {
+  it('refuses to delete, edit, re-status or duplicate a reserved set, and lists it without content', async () => {
     const starter = (await list()).find((r) => r.id === STARTER)!;
-    getDb()
-      .prepare("INSERT INTO teil_sets (id, format_id, part_id, status, content, created_at) VALUES ('exam-1', 'telc-b1', 'lesen-1', 'reserved', ?, '2026-01-01')")
-      .run(JSON.stringify(starter.set));
+    const db = getDb();
+    db.prepare("INSERT INTO teil_sets (id, format_id, part_id, status, content, created_at) VALUES ('exam-1', 'telc-b1', 'lesen-1', 'reserved', ?, '2026-01-01')").run(
+      JSON.stringify(starter.set)
+    );
+    const count = () => (db.prepare('SELECT COUNT(*) AS n FROM teil_sets').get() as { n: number }).n;
+    const content = () => (db.prepare("SELECT content, status FROM teil_sets WHERE id = 'exam-1'").get() as { content: string; status: string });
+    const before = count();
     expect((await DELETE(json('DELETE', {}), ctx('exam-1'))).status).toBe(400);
+    const edited = { ...starter.set!, explanations: starter.set!.explanations.map((e) => ({ ...e, en: 'changed' })) };
+    const patched = await PATCH(json('PATCH', { set: edited }), ctx('exam-1'));
+    expect(patched.status).toBe(400);
+    expect((await patched.json()).error).toBe('Reserved exam sets cannot be changed here');
+    expect((await PATCH(json('PATCH', { status: 'approved' }), ctx('exam-1'))).status).toBe(400);
+    expect(content()).toEqual({ content: JSON.stringify(starter.set), status: 'reserved' });
+    expect((await POST(json('POST', {}), ctx('exam-1'))).status).toBe(400);
+    expect(count()).toBe(before);
+    expect((await list()).find((r) => r.id === 'exam-1')).toMatchObject({ status: 'reserved', itemCount: 5, set: null });
   });
 
   it('uploads sets, and rejects a set of the wrong type with an error naming its id', async () => {

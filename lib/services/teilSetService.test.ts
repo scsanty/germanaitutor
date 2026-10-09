@@ -82,6 +82,22 @@ describe('teilSetService', () => {
     expect(service.exportPart('telc-b1', 'lesen-1').sets.map((s) => s.id)).toEqual([STARTER_ID]);
   });
 
+  // Task 9 review Important 1 and 2, Minor 5: no edit, no copy into practice, no content in the list.
+  it('refuses to edit or duplicate a reserved set, and lists it without its content', () => {
+    const { db, service } = setup();
+    service.upload('telc-b1', 'lesen-1', [{ id: 'exam-1', set: STARTER_SET }]);
+    db.exec("UPDATE teil_sets SET status = 'reserved' WHERE id = 'exam-1'");
+    const edited = { ...STARTER_SET, content: { ...STARTER_SET.content, answers: [0, 1, 2, 3, 4] } };
+    expect(() => service.update('exam-1', edited)).toThrow(/Reserved exam sets cannot be changed/);
+    expect(JSON.parse((db.prepare("SELECT content FROM teil_sets WHERE id = 'exam-1'").get() as { content: string }).content)).toEqual(STARTER_SET);
+    const before = (db.prepare('SELECT COUNT(*) AS n FROM teil_sets').get() as { n: number }).n;
+    expect(() => service.duplicate('exam-1')).toThrow(/Reserved exam sets cannot be copied/);
+    expect(db.prepare('SELECT COUNT(*) AS n FROM teil_sets').get()).toEqual({ n: before });
+    const listed = service.list('telc-b1', 'lesen-1');
+    expect(listed.find((r) => r.id === 'exam-1')).toMatchObject({ status: 'reserved', itemCount: 5, set: null });
+    expect(listed.find((r) => r.id === STARTER_ID)!.set).toEqual(STARTER_SET);
+  });
+
   // Review Important 1: uploads can't take bundled ids, so a bundle reload never overwrites them.
   it('refuses new uploads in the bundled id namespace, but allows re-uploading an existing bundled set', () => {
     const { service } = setup();

@@ -127,6 +127,35 @@ describe('ExamPracticeAdmin', () => {
     expect(await screen.findByRole('form', { name: `Edit ${copy.id}` })).toBeInTheDocument();
   });
 
+  it('shows a German preview per set, and hides reserved content and actions', async () => {
+    stubFetch({ [LIST]: () => delayedResponse([STARTER, { ...row('exam-1', 'reserved'), set: null }]) });
+    render(<ExamPracticeAdmin formats={FORMATS} />);
+    await screen.findByText(STARTER.id);
+    expect(within(rowOf(STARTER.id)).getByText('Text eins')).toBeInTheDocument();
+    expect(within(rowOf('exam-1')).getByText('Hidden')).toBeInTheDocument();
+    expect(within(rowOf('exam-1')).getByText('Reserved for formal exams')).toBeInTheDocument();
+    expect(within(rowOf('exam-1')).queryByRole('button')).not.toBeInTheDocument();
+  });
+
+  it('keeps unsaved edits when another row is approved, and closes the editor after its own save', async () => {
+    const fetchMock = stubFetch({
+      [LIST]: () => delayedResponse([STARTER, POOL]),
+      [`PATCH /api/admin/exam-practice/${POOL.id}`]: () => delayedResponse({ ok: true }),
+      [`PATCH /api/admin/exam-practice/${STARTER.id}`]: () => delayedResponse({ ok: true }),
+    });
+    render(<ExamPracticeAdmin formats={FORMATS} />);
+    await screen.findByText(STARTER.id);
+    fireEvent.click(within(rowOf(STARTER.id)).getByRole('button', { name: 'Edit' }));
+    fireEvent.change(screen.getByLabelText('Item 1 explanation (English)'), { target: { value: 'Unsaved' } });
+    fireEvent.click(within(rowOf(POOL.id)).getByRole('button', { name: 'Approve' }));
+    await waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(3));
+    await waitFor(() => expect(within(rowOf(POOL.id)).getByRole('button', { name: 'Approve' })).toBeEnabled());
+    expect(screen.getByLabelText('Item 1 explanation (English)')).toHaveValue('Unsaved');
+
+    fireEvent.click(screen.getByRole('button', { name: 'Save' }));
+    await waitFor(() => expect(screen.queryByRole('form', { name: `Edit ${STARTER.id}` })).not.toBeInTheDocument());
+  });
+
   it('asks before deleting', async () => {
     const lists = [() => delayedResponse([STARTER]), () => delayedResponse([])];
     stubFetch({
