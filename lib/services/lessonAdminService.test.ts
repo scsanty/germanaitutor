@@ -745,6 +745,14 @@ describe('flashcard rule', () => {
       service.createLesson({ ...fields, exercises: [{ type: 'cloze', content: { text: 'Ich {{1}} müde.', gaps: [{ mode: 'typed', answer: '' }] } }] })
     ).toThrow('Exercise 1: gap 1 needs an answer');
     expect(db.prepare('SELECT COUNT(*) AS n FROM lessons').get()).toEqual({ n: 0 });
+    // The editor's own defaults for a new select gap and a new bank are blank: still half-filled.
+    expect(() =>
+      service.createLesson({
+        ...fields,
+        exercises: [{ type: 'cloze', content: { text: 'Ich {{1}} {{2}}.', gaps: [{ mode: 'select', options: ['', ''], correctIndex: 0 }, { mode: 'bank', answer: 0 }], bank: ['', ''] } }],
+      })
+    ).toThrow('Exercise 1: gap 1 needs at least 2 options with text and a correct one; Exercise 1: every word in the bank needs text');
+    expect(db.prepare('SELECT COUNT(*) AS n FROM lessons').get()).toEqual({ n: 0 });
     const ok = service.createLesson({ ...fields, exercises: [{ type: 'cloze', content: { text: 'Ich {{1}} müde.', gaps: [{ mode: 'typed', answer: 'bin' }] } }] });
     expect(ok.id).toBe('a1-cloze');
   });

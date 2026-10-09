@@ -32,6 +32,22 @@ describe('task types', () => {
     expect(validateTask('passage_questions', { ...passage, passage: '' })).toEqual(['passage must be a non-empty string']);
   });
 
+  it('rejects half-filled cloze gaps: blank select options, blank bank words and blank variants', () => {
+    const [typed, select, bank] = cloze.gaps;
+    expect(validateTask('cloze', { ...cloze, gaps: [typed, { mode: 'select', options: ['', ''], correctIndex: 0 }, bank] })).toEqual([
+      'gap 2 needs at least 2 options with text and a correct one',
+    ]);
+    expect(validateTask('cloze', { ...cloze, gaps: [typed, { mode: 'select', options: ['war', ' '], correctIndex: 0 }, bank] })).toEqual([
+      'gap 2 needs at least 2 options with text and a correct one',
+    ]);
+    expect(validateTask('cloze', { ...cloze, gaps: [typed, select, bank, { mode: 'bank', answer: 0 }], text: `${cloze.text} {{4}}`, bank: ['essen', '', 'trinken'] })).toEqual([
+      'every word in the bank needs text',
+    ]);
+    expect(validateTask('cloze', { ...cloze, gaps: [{ mode: 'typed', answer: 'war', variants: [''] }, select, bank] })).toEqual(['gap 1 has an empty variant']);
+    // A bank no gap uses is not checked (the editor drops it anyway).
+    expect(validateTask('cloze', { text: 'Ich {{1}}.', gaps: [typed], bank: [''] })).toEqual([]);
+  });
+
   it('strips every answer from the views', () => {
     const json = JSON.stringify([viewTask('passage_questions', passage), viewTask('matching', matching), viewTask('cloze', cloze)]);
     expect(json).not.toMatch(/correctIndex|"answers"|"answer"|variants/);

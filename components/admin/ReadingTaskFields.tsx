@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import type { ClozeContent, MatchingContent, PassageQuestionsContent } from '@/lib/curriculum/types';
 import { Plus, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -231,9 +231,19 @@ function blankGap(mode: GapMode): ClozeGap {
   return { mode, answer: '' };
 }
 
-// Comma-separated variants: the raw text stays local while typing, so "a, " keeps its comma.
+const parseVariants = (raw: string) => raw.split(',').map((v) => v.trim()).filter(Boolean);
+const sameList = (a: string[], b: string[]) => a.length === b.length && a.every((v, i) => v === b[i]);
+
+// Comma-separated variants: the raw text stays local while typing, so "a, " keeps its comma. When the
+// value changes from outside (gap fieldsets are keyed by index, so removing a gap hands this input
+// another gap's variants), the text resyncs to it instead of keeping stale words.
 function VariantsInput({ label, value, onChange }: { label: string; value: string[] | undefined; onChange: (variants: string[] | undefined) => void }) {
   const [raw, setRaw] = useState((value ?? []).join(', '));
+  const [seen, setSeen] = useState(value);
+  if (value !== seen) {
+    setSeen(value);
+    if (!sameList(parseVariants(raw), value ?? [])) setRaw((value ?? []).join(', '));
+  }
   return (
     <Input
       className={INPUT}
@@ -242,7 +252,7 @@ function VariantsInput({ label, value, onChange }: { label: string; value: strin
       value={raw}
       onChange={(e) => {
         setRaw(e.target.value);
-        const variants = e.target.value.split(',').map((v) => v.trim()).filter(Boolean);
+        const variants = parseVariants(e.target.value);
         onChange(variants.length > 0 ? variants : undefined);
       }}
     />
@@ -251,6 +261,7 @@ function VariantsInput({ label, value, onChange }: { label: string; value: strin
 
 export function ClozeFields({ content, index, onChange }: { content: ClozeContent; index: number; onChange: (content: ClozeContent) => void }) {
   const n = index + 1;
+  const textNoteId = useId();
   // The bank is kept only while some gap uses it.
   const emit = (gaps: ClozeGap[], bank = content.bank) => {
     const { bank: _old, ...rest } = content;
@@ -262,9 +273,13 @@ export function ClozeFields({ content, index, onChange }: { content: ClozeConten
   const usesBank = content.gaps.some((g) => g.mode === 'bank');
   return (
     <div className="flex flex-col gap-4">
+      {/* The label stays as worded; the exercise number joins as the description, like "Exercise n …" elsewhere. */}
+      <span id={textNoteId} className="sr-only">
+        Exercise {n} cloze text
+      </span>
       <label className={FIELD_LABEL}>
         {'Text (use {{1}}, {{2}} … for gaps)'}
-        <Textarea className="min-h-32" value={content.text} onChange={(e) => onChange({ ...content, text: e.target.value })} />
+        <Textarea aria-describedby={textNoteId} className="min-h-32" value={content.text} onChange={(e) => onChange({ ...content, text: e.target.value })} />
       </label>
       <p className={HINT}>Gap n in the list fills the marker {'{{n}}'} in the text.</p>
       {content.gaps.map((gap, gi) => {

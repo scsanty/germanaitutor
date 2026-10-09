@@ -324,4 +324,14 @@ describe('ExerciseCard', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Ask AI' }));
     expect(props.onAskAi).toHaveBeenCalledWith('m1', { answerText: 'Wohnungsmarkt; x', result: 'almost' });
   });
+  it('keeps the per-question mark out of the radio group name after Check (fix #5)', async () => {
+    const PQ: ExerciseView = { id: 'p1', type: 'passage_questions', passage: 'Anna wohnt in Köln.', questions: [{ question: 'Wo wohnt Anna?', options: ['Köln', 'Bonn'] }] };
+    stubAttempts(() => delayedResponse(outcome({ result: 'correct', correctAnswer: 'Köln', itemResults: [true] })));
+    renderCard(PQ);
+    fireEvent.click(screen.getByLabelText('Köln'));
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }));
+    expect(await screen.findByText('Correct!')).toBeInTheDocument();
+    expect(screen.getByRole('radiogroup', { name: '1. Wo wohnt Anna?' })).toBeInTheDocument();
+    expect(screen.getByText('Right')).toBeInTheDocument();
+  });
 });

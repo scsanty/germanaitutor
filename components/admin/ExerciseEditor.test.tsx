@@ -239,4 +239,24 @@ describe('ExerciseEditor flashcard rule', () => {
       },
     ]);
   });
+  it('shows the remaining gap\'s own variants after an earlier gap is removed (fix #1)', () => {
+    const onChange = vi.fn();
+    const content = {
+      text: '{{1}} {{2}}',
+      gaps: [{ mode: 'typed' as const, answer: 'a', variants: ['x'] }, { mode: 'typed' as const, answer: 'b', variants: ['y', 'z'] }],
+    };
+    render(<Host initial={[{ type: 'cloze', content }]} onChange={onChange} />);
+    expect(screen.getByLabelText('Exercise 1 gap 1 variants')).toHaveValue('x');
+    fireEvent.click(screen.getByRole('button', { name: 'Remove gap 1' }));
+    expect(screen.getByLabelText('Exercise 1 gap 1 variants')).toHaveValue('y, z');
+    fireEvent.change(screen.getByLabelText('Exercise 1 gap 1 variants'), { target: { value: 'y, z, w' } });
+    expect(onChange).toHaveBeenLastCalledWith([{ type: 'cloze', content: { text: '{{1}} {{2}}', gaps: [{ mode: 'typed', answer: 'b', variants: ['y', 'z', 'w'] }] } }]);
+  });
+
+  it('names the cloze text field with its exercise number as the description (fix #4)', () => {
+    render(<Host initial={[{ type: 'cloze', content: { text: '', gaps: [] } }, { type: 'cloze', content: { text: '', gaps: [] } }]} onChange={vi.fn()} />);
+    const fields = screen.getAllByLabelText('Text (use {{1}}, {{2}} … for gaps)');
+    expect(fields[0]).toHaveAccessibleDescription('Exercise 1 cloze text');
+    expect(fields[1]).toHaveAccessibleDescription('Exercise 2 cloze text');
+  });
 });

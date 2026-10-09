@@ -77,9 +77,12 @@ function PassageQuestions({ view, value, onChange, disabled, pane, itemResults }
         <ol className="flex flex-col gap-4">
           {view.questions.map((q, qi) => (
             <li key={qi} className="flex flex-col gap-2 rounded-xl border border-border px-4 py-3">
-              <p id={`${id}-q${qi}`} lang="de" className="font-medium leading-relaxed">
-                {qi + 1}. {q.question} <ItemMark results={itemResults} index={qi} />
-              </p>
+              <div className="flex items-start justify-between gap-2">
+                <p id={`${id}-q${qi}`} lang="de" className="font-medium leading-relaxed">
+                  {qi + 1}. {q.question}
+                </p>
+                <ItemMark results={itemResults} index={qi} />
+              </div>
               <RadioGroup
                 aria-labelledby={`${id}-q${qi}`}
                 value={value.selected[qi] === null ? '' : String(value.selected[qi])}

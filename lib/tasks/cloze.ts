@@ -21,6 +21,7 @@ export interface ClozeAnswer {
 }
 
 const GAP = /\{\{(\d+)\}\}/g;
+const nonEmpty = (v: unknown) => typeof v === 'string' && v.trim().length > 0;
 
 export function validateCloze(content: unknown): string[] {
   const c = content as Partial<ClozeContent>;
@@ -32,14 +33,16 @@ export function validateCloze(content: unknown): string[] {
   else if (!marks.every((n, i) => n === i + 1)) problems.push('gaps must be numbered {{1}}, {{2}} … in order');
   gaps.forEach((g, i) => {
     if (g.mode === 'typed' && !(typeof g.answer === 'string' && g.answer.trim())) problems.push(`gap ${i + 1} needs an answer`);
-    if (g.mode === 'select' && (!Array.isArray(g.options) || g.options.length < 2 || !Number.isInteger(g.correctIndex) || g.correctIndex < 0 || g.correctIndex >= g.options.length)) {
-      problems.push(`gap ${i + 1} needs at least 2 options and a correct one`);
+    if (g.mode === 'typed' && g.variants !== undefined && !(Array.isArray(g.variants) && g.variants.every(nonEmpty))) problems.push(`gap ${i + 1} has an empty variant`);
+    if (g.mode === 'select' && (!Array.isArray(g.options) || g.options.length < 2 || !g.options.every(nonEmpty) || !Number.isInteger(g.correctIndex) || g.correctIndex < 0 || g.correctIndex >= g.options.length)) {
+      problems.push(`gap ${i + 1} needs at least 2 options with text and a correct one`);
     }
     if (g.mode === 'bank') {
       if (!Array.isArray(c.bank) || c.bank.length === 0) problems.push(`gap ${i + 1} uses the bank but there is none`);
       else if (!Number.isInteger(g.answer) || g.answer < 0 || g.answer >= c.bank.length) problems.push(`gap ${i + 1} points outside the bank`);
     }
   });
+  if (gaps.some((g) => g?.mode === 'bank') && Array.isArray(c.bank) && !c.bank.every(nonEmpty)) problems.push('every word in the bank needs text');
   return problems;
 }
 

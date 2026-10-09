@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import type { Exercise } from '../curriculum/types';
-import { answerTextFor, correctAnswerFor, isAttemptSource, parseLessonAnswer, taskTextFor, taskTextOf } from './lessonAnswers';
+import { answerTextFor, correctAnswerFor, isAttemptSource, parseLessonAnswer, taskAnswerText, taskTextFor, taskTextOf, type TaskAnswerSource } from './lessonAnswers';
+import { toExerciseView } from './exerciseView';
 
 const mc: Exercise = { id: 'mc', lessonId: 'l', track: null, type: 'multiple_choice', content: { question: 'Hi?', options: ['Hallo', 'Nein'], correctIndex: 0 } };
 const fill: Exercise = { id: 'fb', lessonId: 'l', track: null, type: 'fill_blank', content: { textWithBlank: 'Ich ___.', correctAnswer: 'bin' } };
@@ -109,5 +110,34 @@ describe('the reading task types', () => {
     const text = taskTextFor(long);
     expect(text.length).toBeLessThanOrEqual(4001);
     expect(text.endsWith('…')).toBe(true);
+  });
+});
+
+describe('taskAnswerText (shared by the card and the attempt log)', () => {
+  const passage: Exercise = {
+    id: 'pq', lessonId: 'l', track: null, type: 'passage_questions',
+    content: { passage: 'P', questions: [{ question: 'Q1', options: ['ja', 'nein'], correctIndex: 0 }, { question: 'Q2', options: ['a', 'b'], correctIndex: 1 }] },
+  };
+  const matching: Exercise = {
+    id: 'mt', lessonId: 'l', track: null, type: 'matching',
+    content: { items: ['1', '2', '3'], targets: ['Kino', 'Bank'], answers: [0, 1, null], allowNone: true },
+  };
+  const cloze: Exercise = {
+    id: 'cz', lessonId: 'l', track: null, type: 'cloze',
+    content: {
+      text: '{{1}} {{2}} {{3}} {{4}} {{5}}',
+      gaps: [{ mode: 'typed', answer: 'bin' }, { mode: 'select', options: ['ist', 'war'], correctIndex: 1 }, { mode: 'bank', answer: 0 }, { mode: 'typed', answer: 'x' }, { mode: 'bank', answer: 1 }],
+      bank: ['essen', 'trinken'],
+    },
+  };
+
+  it.each([
+    [passage, { type: 'passage_questions', selected: [1, null] }, 'nein; —'],
+    [matching, { type: 'matching', selected: [1, null, -1] }, 'Bank; x; —'],
+    [cloze, { type: 'cloze', values: [' Bin ', 1, 1, '   ', null] }, 'Bin; war; trinken; —; —'],
+  ] as const)('%#: the view and the content give the same text', (exercise, answer, expected) => {
+    const view = toExerciseView(exercise) as TaskAnswerSource;
+    expect(taskAnswerText(view, answer as never)).toBe(expected);
+    expect(answerTextFor(exercise, answer as never)).toBe(expected);
   });
 });
