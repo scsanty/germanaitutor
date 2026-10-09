@@ -34,10 +34,10 @@ describe('/api/freestyle', () => {
     vi.mocked(generateWithActiveProvider).mockReset();
   });
 
-  it('GET lists the four enabled modes, none open', async () => {
+  it('GET lists the five enabled modes, none open', async () => {
     const body = await (await overview()).json();
     expect(body.modes).toEqual(
-      ['conversation', 'grammar_drill', 'free_reading', 'free_writing'].map((mode) => ({ mode, enabled: true, open: false }))
+      ['conversation', 'grammar_drill', 'free_reading', 'free_writing', 'exam_practice'].map((mode) => ({ mode, enabled: true, open: false }))
     );
     expect(body.levels).toEqual(['A1']);
     expect(body.activeLevel).toBe('A1');

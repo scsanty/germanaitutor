@@ -337,13 +337,15 @@
       "conversation": "Gespräch",
       "grammarDrill": "Grammatiktraining",
       "freeReading": "Freies Lesen",
-      "freeWriting": "Freies Schreiben"
+      "freeWriting": "Freies Schreiben",
+      "examPractice": "Prüfungstraining"
     },
     "descriptions": {
       "conversation": "Sprich auf Deutsch auf deinem Niveau, mit Korrekturen",
       "grammarDrill": "Übe ein Grammatikthema mit kurzen Fragen",
       "freeReading": "Lies einen kurzen Artikel zu einem beliebigen Thema, auf deinem Niveau",
-      "freeWriting": "Schreibe frei und erhalte markiertes Feedback"
+      "freeWriting": "Schreibe frei und erhalte markiertes Feedback",
+      "examPractice": "Prüfungsteile mit Zeitlimit und komplette Modelltests, bewertet wie in der echten Prüfung"
     },
     "continue": "Sitzung fortsetzen",
     "unavailable": "Nicht verfügbar",
@@ -468,5 +470,58 @@
     "settings": "Einstellungen",
     "withDue": "{label} ({count} fällig)"
   },
-  "focus": {"leave": "Verlassen", "progress": "Übung {current} von {total}", "leaveTitle": "Diese Übung verlassen?", "leaveBody": "Dein Fortschritt bei beantworteten Übungen bleibt erhalten.", "stay": "Bleiben", "leaveAnyway": "Trotzdem verlassen", "keysHint": "Tasten: 1–4 wählen · Enter prüfen · Esc verlassen"}
+  "focus": {"leave": "Verlassen", "progress": "Übung {current} von {total}", "leaveTitle": "Diese Übung verlassen?", "leaveBody": "Dein Fortschritt bei beantworteten Übungen bleibt erhalten.", "stay": "Bleiben", "leaveAnyway": "Trotzdem verlassen", "keysHint": "Tasten: 1–4 wählen · Enter prüfen · Esc verlassen"},
+  "exam": {
+    "title": "Prüfungstraining",
+    "loading": "Prüfungstraining wird geladen",
+    "loadFailed": "Das Prüfungstraining konnte nicht geladen werden. Bitte lade die Seite neu.",
+    "timer": "Verbleibende Zeit",
+    "minutesLeft": "{minutes, plural, one {# Minute übrig} other {# Minuten übrig}}",
+    "overtimeNotice": "Die Zeit ist um: Du kannst fertig machen; dieser Versuch wird als Zeitüberschreitung markiert.",
+    "textTab": "Text",
+    "tasksTab": "Aufgaben",
+    "submit": "Abgeben",
+    "submitting": "Wird abgegeben…",
+    "submitFailed": "Deine Antworten konnten nicht abgegeben werden.",
+    "score": "{score} von {max} Punkten ({percent} %)",
+    "overtime": "{minutes} Min. über der Zeit",
+    "yourAnswer": "Deine Antwort: {answer}",
+    "rightAnswer": "Richtige Antwort: {answer}",
+    "right": "Richtig",
+    "wrong": "Falsch oder unbeantwortet",
+    "item": "Aufgabe {n}",
+    "gap": "Lücke {n}",
+    "wordBank": "Wörter zur Auswahl",
+    "explanationLanguage": "Sprache der Erklärung",
+    "askAbout": "Dazu fragen",
+    "ask": "Fragen",
+    "asking": "Wird gefragt…",
+    "question": "Deine Frage",
+    "askFailed": "Es kam keine Antwort.",
+    "practise": "Üben",
+    "starting": "Wird gestartet…",
+    "startFailed": "Dieser Teil konnte nicht gestartet werden.",
+    "minutes": "{minutes} Min.",
+    "lastScore": "Zuletzt: {percent} %",
+    "fullMock": "Kompletter Modelltest",
+    "fullMockBody": "Alle schriftlichen Teile mit Runner nacheinander, mit einer gemeinsamen Zeit ({minutes} Min.).",
+    "comingSoon": "Kommt mit dem Modul {module}",
+    "modules": {
+      "listening": "Hören",
+      "writing": "Schreiben",
+      "speaking": "Sprechen"
+    },
+    "mockOnly": "Wird im Modelltest geübt",
+    "noFormat": "Für diesen Track und dieses Niveau gibt es noch kein Prüfungsformat.",
+    "mockPart": "Teil {current} von {total}",
+    "mockResultTitle": "Ergebnis des Modelltests",
+    "mockPartScore": "{part}: {score} von {max} Punkten",
+    "mockPassed": "{block}: {score} von {max} Punkten — bestanden",
+    "mockFailed": "{block}: {score} von {max} Punkten — nicht bestanden",
+    "mockSoFar": "Bisher: Das umfasst nur die Teile, die schon geübt werden können, nicht den ganzen Block.",
+    "review": "Auswertung",
+    "back": "Zurück zum Prüfungstraining",
+    "unanswered": "—",
+    "none": "x (keine)"
+  }
 }

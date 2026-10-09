@@ -3,6 +3,7 @@ import { getDb } from "@/lib/db/client";
 import { createProfileService } from "@/lib/services/profileService";
 import { isFreestyleMode, isModeEnabled } from "@/lib/freestyle/modes";
 import { FreestyleSession } from "@/components/freestyle/FreestyleSession";
+import { ExamPractice } from "@/components/freestyle/ExamPractice";
 
 export const dynamic = "force-dynamic";
 
@@ -15,5 +16,7 @@ export default async function FreestyleModePage(props: {
   if (!createProfileService(getDb()).getProfile().onboardingComplete) {
     redirect("/onboarding");
   }
+  // S12: exam practice has its own screen and no session (FreestyleSession fetches one on mount).
+  if (mode === "exam_practice") return <ExamPractice />;
   return <FreestyleSession mode={mode} />;
 }

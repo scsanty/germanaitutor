@@ -63,6 +63,25 @@ describe("FreestyleHub", () => {
     );
   });
 
+  // S11: exam practice needs no AI, so it stays a link without an "Unavailable" badge.
+  it("keeps exam practice open without an AI provider", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(() =>
+        delayedResponse({
+          modes: [...FOUR, "exam_practice"].map((mode) => ({ mode, enabled: true, open: false })),
+          aiAvailable: false,
+          levels: ["A1"],
+        }),
+      ),
+    );
+    renderWithIntl(<FreestyleHub />);
+    const link = await screen.findByRole("link", { name: /Exam practice/ });
+    expect(link).toHaveAttribute("href", "/freestyle/exam_practice");
+    expect(link).not.toHaveTextContent("Unavailable");
+    expect(screen.getAllByText("Unavailable")).toHaveLength(4);
+  });
+
   it("shows a load error", async () => {
     vi.stubGlobal(
       "fetch",

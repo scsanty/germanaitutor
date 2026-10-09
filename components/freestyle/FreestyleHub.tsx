@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 import {
   BookOpen,
+  ClipboardCheck,
   MessageCircle,
   PenLine,
   Puzzle,
@@ -25,7 +26,11 @@ const ICONS: Partial<Record<FreestyleMode, LucideIcon>> = {
   grammar_drill: Puzzle,
   free_reading: BookOpen,
   free_writing: PenLine,
+  exam_practice: ClipboardCheck,
 };
+
+// S11: exam practice grades without AI (starter sets, deterministic scoring), so it stays open.
+const NEEDS_AI = (mode: FreestyleMode) => mode !== "exam_practice";
 
 export function FreestyleHub() {
   const t = useTranslations("freestyle");
@@ -80,6 +85,7 @@ export function FreestyleHub() {
           const key = FREESTYLE_MODES.find((m) => m.mode === mode)?.labelKey;
           if (!key) return null;
           const Icon = ICONS[mode] ?? MessageCircle;
+          const usable = overview.aiAvailable || !NEEDS_AI(mode);
           const body = (
             <>
               <Icon aria-hidden className="size-6 shrink-0 text-primary" />
@@ -91,15 +97,15 @@ export function FreestyleHub() {
                   {t(`descriptions.${key}`)}
                 </span>
               </span>
-              {!overview.aiAvailable && (
+              {!usable && (
                 <Badge variant="outline">{t("unavailable")}</Badge>
               )}
-              {overview.aiAvailable && open && <Badge>{t("continue")}</Badge>}
+              {usable && open && <Badge>{t("continue")}</Badge>}
             </>
           );
           return (
             <li key={mode}>
-              {overview.aiAvailable ? (
+              {usable ? (
                 <Link
                   href={`/freestyle/${mode}`}
                   className="block rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2"
