@@ -40,6 +40,7 @@ export interface TeilSetDeps {
 const USABLE = "('starter','approved','unreviewed')";
 // S18: admins approve or reject; reserving belongs to Level exams.
 const ADMIN_STATUSES = new Set(['approved', 'rejected']);
+const BUNDLED_ID = /__s\d+$/;
 
 interface SetRow {
   id: string;
@@ -132,11 +133,16 @@ export function createTeilSetService(db: Database.Database, deps: TeilSetDeps = 
       }
     }
     const loaded = db.prepare('SELECT version FROM teil_bundle_meta WHERE format_id = ? AND part_id = ?');
-    // Only starter ids (…__sNN) are written, so pool sets are never touched.
+    // Bundled ids (…__sNN) can't be uploaded or generated, and the update only touches a row of the
+    // same part that isn't reserved, so pool sets and formal exam sets are never changed.
     const upsert = db.prepare(
       `INSERT INTO teil_sets (id, format_id, part_id, status, content, created_at) VALUES (?, ?, ?, 'starter', ?, ?)
-       ON CONFLICT(id) DO UPDATE SET content = excluded.content`
+       ON CONFLICT(id) DO UPDATE SET content = excluded.content
+       WHERE teil_sets.format_id = excluded.format_id AND teil_sets.part_id = excluded.part_id AND teil_sets.status <> 'reserved'`
     );
+    // A set dropped from a new bundle version stops being served; rejected, not deleted, since attempts may reference it.
+    const starters = db.prepare("SELECT id FROM teil_sets WHERE format_id = ? AND part_id = ? AND status = 'starter'");
+    const retire = db.prepare("UPDATE teil_sets SET status = 'rejected', reviewed_at = ? WHERE id = ?");
     const record = db.prepare(
       'INSERT INTO teil_bundle_meta (format_id, part_id, version) VALUES (?, ?, ?) ON CONFLICT(format_id, part_id) DO UPDATE SET version = excluded.version'
     );
@@ -146,6 +152,8 @@ export function createTeilSetService(db: Database.Database, deps: TeilSetDeps = 
         if (current?.version === bundle.version) continue;
         const at = now();
         for (const { id, set } of bundle.sets) upsert.run(id, bundle.formatId, bundle.partId, JSON.stringify(set), at);
+        const kept = new Set(bundle.sets.map((s) => s.id));
+        for (const { id } of starters.all(bundle.formatId, bundle.partId) as { id: string }[]) if (!kept.has(id)) retire.run(at, id);
         record.run(bundle.formatId, bundle.partId, bundle.version);
       }
     })();
@@ -192,7 +200,7 @@ export function createTeilSetService(db: Database.Database, deps: TeilSetDeps = 
 
   function setStatus(id: string, status: string): void {
     if (!ADMIN_STATUSES.has(status)) throw new TeilSetError(`A set can be approved or rejected, not ${status}`, 'bad_request');
-    requireRow(id);
+    if (requireRow(id).status === 'reserved') throw new TeilSetError('Reserved exam sets cannot be changed here', 'bad_request');
     db.prepare('UPDATE teil_sets SET status = ?, reviewed_at = ? WHERE id = ?').run(status, now(), id);
   }
 
@@ -244,6 +252,9 @@ export function createTeilSetService(db: Database.Database, deps: TeilSetDeps = 
       seen.add(id);
       const existing = getRow(id);
       if (existing && (existing.format_id !== formatId || existing.part_id !== partId)) problems.push(`${id}: belongs to ${existing.format_id}/${existing.part_id}`);
+      else if (existing?.status === 'reserved') problems.push(`${id}: reserved exam sets can't be replaced here`);
+      // The …__sNN namespace belongs to bundled sets; only an existing bundled row of this part (an export round trip) may reuse one.
+      else if (BUNDLED_ID.test(id) && !existing) problems.push(`${id}: ids ending in __s<number> are reserved for bundled sets`);
       for (const p of teilSetProblems(entry.set, part)) problems.push(`${id}: ${p}`);
     }
     if (problems.length > 0) throw new TeilSetError(`The upload was not saved:\n${problems.join('\n')}`, 'bad_request');
@@ -260,11 +271,11 @@ export function createTeilSetService(db: Database.Database, deps: TeilSetDeps = 
     return { count: sets.length };
   }
 
-  // Download: every set of the part except rejected ones, in the bundle file shape.
+  // Download: every set of the part except rejected and reserved ones, in the bundle file shape.
   function exportPart(formatId: string, partId: string): BundledSetFile {
     partOf(formatId, partId);
     const rows = db
-      .prepare("SELECT id, content FROM teil_sets WHERE format_id = ? AND part_id = ? AND status != 'rejected' ORDER BY id")
+      .prepare("SELECT id, content FROM teil_sets WHERE format_id = ? AND part_id = ? AND status NOT IN ('rejected','reserved') ORDER BY id")
       .all(formatId, partId) as { id: string; content: string }[];
     const meta = db.prepare('SELECT version FROM teil_bundle_meta WHERE format_id = ? AND part_id = ?').get(formatId, partId) as { version: string } | undefined;
     return { formatId, partId, version: meta?.version ?? '1', sets: rows.map((r) => ({ id: r.id, set: JSON.parse(r.content) as TeilSetContent })) };

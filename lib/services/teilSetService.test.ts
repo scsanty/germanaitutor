@@ -1,6 +1,6 @@
-import { describe, it, expect, vi } from 'vitest';
+import { afterEach, describe, it, expect, vi } from 'vitest';
 import { createDbClient } from '../db/client';
-import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { createTeilSetService, TeilSetError, toTeilSetErrorResponse } from './teilSetService';
@@ -9,8 +9,14 @@ const starter = JSON.parse(readFileSync(join(process.cwd(), 'data', 'teil-sets',
 const STARTER_SET = starter.sets[0].set;
 const STARTER_ID = starter.sets[0].id as string;
 
+const fixtureDirs: string[] = [];
+afterEach(() => {
+  for (const dir of fixtureDirs.splice(0)) rmSync(dir, { recursive: true, force: true });
+});
+
 function fixtureDir(bundle: unknown): string {
   const dir = mkdtempSync(join(tmpdir(), 'teil-sets-'));
+  fixtureDirs.push(dir);
   mkdirSync(join(dir, 'telc-b1'));
   writeFileSync(join(dir, 'telc-b1', 'lesen-1.json'), JSON.stringify(bundle));
   return dir;
@@ -47,10 +53,40 @@ describe('teilSetService', () => {
   });
 
   it('never serves rejected or reserved sets', async () => {
-    const { db, service } = setup();
+    const { db, service, generate } = setup();
     db.exec("UPDATE teil_sets SET status = 'rejected' WHERE part_id = 'lesen-1'");
     const picked = await service.pickForPractice('telc-b1', 'lesen-1').catch((e) => e);
     expect(picked).toMatchObject({ kind: 'unavailable' });
+    expect(generate).toHaveBeenCalledTimes(1); // an empty part tries one generation first
+  });
+
+  it('skips a reserved set next to an unseen one, and never falls back to it', async () => {
+    const { db, service } = setup();
+    service.upload('telc-b1', 'lesen-1', [{ id: 'a-reserved', set: STARTER_SET }, { id: 'b-approved', set: STARTER_SET }]);
+    db.exec("UPDATE teil_sets SET status = 'reserved' WHERE id = 'a-reserved'");
+    db.exec(`INSERT INTO teil_seen (set_id, seen_at) VALUES ('${STARTER_ID}', '2026-01-01T00:00:00.000Z')`);
+    expect((await service.pickForPractice('telc-b1', 'lesen-1')).id).toBe('b-approved');
+    const fallback = await service.pickForPractice('telc-b1', 'lesen-1'); // all seen, generation fails
+    expect(fallback.id).toBe(STARTER_ID);
+    expect((await service.pickForPractice('telc-b1', 'lesen-1')).id).toBe('b-approved');
+  });
+
+  // Review Important 2: the reserved boundary holds on every admin path.
+  it('keeps reserved sets out of upload, status changes and export', () => {
+    const { db, service } = setup();
+    service.upload('telc-b1', 'lesen-1', [{ id: 'exam-1', set: STARTER_SET }]);
+    db.exec("UPDATE teil_sets SET status = 'reserved' WHERE id = 'exam-1'");
+    expect(() => service.upload('telc-b1', 'lesen-1', [{ id: 'exam-1', set: STARTER_SET }])).toThrow(/exam-1: reserved exam sets can't be replaced here/);
+    expect(() => service.setStatus('exam-1', 'approved')).toThrow(/Reserved/);
+    expect(db.prepare("SELECT status FROM teil_sets WHERE id = 'exam-1'").get()).toEqual({ status: 'reserved' });
+    expect(service.exportPart('telc-b1', 'lesen-1').sets.map((s) => s.id)).toEqual([STARTER_ID]);
+  });
+
+  // Review Important 1: uploads can't take bundled ids, so a bundle reload never overwrites them.
+  it('refuses new uploads in the bundled id namespace, but allows re-uploading an existing bundled set', () => {
+    const { service } = setup();
+    expect(() => service.upload('telc-b1', 'lesen-1', [{ id: 'telc-b1__lesen-1__s02', set: STARTER_SET }])).toThrow(/telc-b1__lesen-1__s02: ids ending in __s<number>/);
+    expect(service.upload('telc-b1', 'lesen-1', [{ id: STARTER_ID, set: STARTER_SET }])).toEqual({ count: 1 });
   });
 
   // Review Focus 5
@@ -151,6 +187,27 @@ describe('teilSetService', () => {
     const rows = service.list('telc-b1', 'lesen-1');
     expect(rows.find((r) => r.id === STARTER_ID)).toMatchObject({ status: 'rejected', set: changed });
     expect(rows.find((r) => r.id === 'pool-1')).toMatchObject({ status: 'approved', set: STARTER_SET });
+  });
+
+  it('a version bump never touches a row of another part or a reserved row, and retires dropped starters', () => {
+    const db = createDbClient(':memory:');
+    const dir = fixtureDir({ ...starter, version: '1' });
+    const service = createTeilSetService(db, { setsDir: dir });
+    service.loadBundled();
+    // Simulate rows that took ids a later bundle ships (e.g. from before the namespace guard).
+    const lesen2 = { taskType: 'passage_questions', content: { passage: 'T', questions: [] }, explanations: [] };
+    db.prepare("INSERT INTO teil_sets (id, format_id, part_id, status, content, created_at) VALUES (?, 'telc-b1', 'lesen-2', 'approved', ?, 'x')").run('telc-b1__lesen-1__s02', JSON.stringify(lesen2));
+    db.prepare("INSERT INTO teil_sets (id, format_id, part_id, status, content, created_at) VALUES (?, 'telc-b1', 'lesen-1', 'reserved', ?, 'x')").run('telc-b1__lesen-1__s03', JSON.stringify(STARTER_SET));
+    const changed = { ...STARTER_SET, content: { ...STARTER_SET.content, answers: [0, 1, 2, 3, 4] } };
+    writeFileSync(
+      join(dir, 'telc-b1', 'lesen-1.json'),
+      JSON.stringify({ ...starter, version: '2', sets: ['telc-b1__lesen-1__s02', 'telc-b1__lesen-1__s03'].map((id) => ({ id, set: changed })) })
+    );
+    service.loadBundled();
+    const content = (id: string) => JSON.parse((db.prepare('SELECT content FROM teil_sets WHERE id = ?').get(id) as { content: string }).content);
+    expect(content('telc-b1__lesen-1__s02')).toEqual(lesen2);
+    expect(content('telc-b1__lesen-1__s03')).toEqual(STARTER_SET);
+    expect(db.prepare('SELECT status FROM teil_sets WHERE id = ?').get(STARTER_ID)).toEqual({ status: 'rejected' });
   });
 
   // Preflight I10: an invalid bundle throws, naming the file, before anything is written.

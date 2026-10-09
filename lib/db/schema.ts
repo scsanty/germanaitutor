@@ -599,7 +599,7 @@ function createTablesIfMissing(db: Database.Database): void {
       started_at TEXT NOT NULL, finished_at TEXT
     );
     CREATE TABLE IF NOT EXISTS teil_bundle_meta (
-      format_id TEXT, part_id TEXT, version TEXT,
+      format_id TEXT NOT NULL, part_id TEXT NOT NULL, version TEXT NOT NULL,
       PRIMARY KEY (format_id, part_id)
     );
   `);
