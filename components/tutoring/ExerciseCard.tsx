@@ -69,6 +69,11 @@ export function taskText(exercise: ExerciseView): string {
       return exercise.front;
     case 'free_text':
       return exercise.prompt;
+    // Reading task types: shown by their own inputs (Task 8), never as a heading line.
+    case 'passage_questions':
+    case 'matching':
+    case 'cloze':
+      return '';
   }
 }
 
@@ -97,6 +102,13 @@ function answerTextOf(exercise: ExerciseView, answer: LessonAnswer): string {
       return answer.text;
     case 'flashcard':
       return answer.rating;
+    // Interim summary until Task 8's inputs; the server's answer_text uses answerTextFor.
+    case 'passage_questions':
+      return answer.selected.map((s) => (s === null ? '—' : String(s + 1))).join('; ');
+    case 'matching':
+      return answer.selected.map((s) => (s === null ? 'x' : s < 0 ? '—' : String(s + 1))).join('; ');
+    case 'cloze':
+      return answer.values.map((v) => (v === null || v === '' ? '—' : String(v))).join('; ');
   }
 }
 

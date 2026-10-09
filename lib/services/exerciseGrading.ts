@@ -6,9 +6,11 @@ import type { FreeTextGradingInput } from '../tutoring/freeTextGrading';
 import { gradeFillBlank, gradeMultipleChoice, type GradeResult } from '../tutoring/grading';
 import { FLASHCARD_GRADES, taskTextOf, type LessonAnswer } from '../tutoring/lessonAnswers';
 import type { FreeTextGradeOutcome } from './freeTextGradingService';
+import { gradeTask, parseTaskAnswer, resultFromItems, type TaskContent } from '../tasks/taskTypes';
 
 export type ExerciseGradeOutcome =
-  | { ok: true; result: GradeResult; feedback: LocalizedText | null }
+  // itemResults only for the reading task types (S17): one entry per question, text or gap.
+  | { ok: true; result: GradeResult; feedback: LocalizedText | null; itemResults?: boolean[] }
   | { ok: false; reason: 'bad_request'; message: string }
   | { ok: false; reason: 'grading_failed'; message: string; code?: ErrorCode; params?: ErrorParams };
 
@@ -17,7 +19,7 @@ export interface ExerciseGradingDeps {
 }
 
 // The one grading rule for authored and practice exercises (spec: Grades): deterministic for
-// multiple choice and fill-in-the-blank, the student's own rating for flashcards, the AI for free text.
+// multiple choice, fill-in-the-blank and the reading task types (item by item), the student's own rating for flashcards, the AI for free text.
 export async function gradeExerciseAnswer(
   exercise: Exercise,
   answer: LessonAnswer,
@@ -52,6 +54,15 @@ export async function gradeExerciseAnswer(
         return { ok: false, reason: 'grading_failed', message: graded.error, code: graded.code, params: graded.params };
       }
       return { ok: true, result: graded.result, feedback: graded.feedback };
+    }
+    case 'passage_questions':
+    case 'matching':
+    case 'cloze': {
+      const content = exercise.content as TaskContent;
+      const parsed = parseTaskAnswer(answer.type, answer, content);
+      if (!parsed) return { ok: false, reason: 'bad_request', message: 'The answer does not fit this task' };
+      const { itemResults } = gradeTask(answer.type, content, parsed);
+      return { ok: true, result: resultFromItems(itemResults), feedback: null, itemResults };
     }
   }
 }

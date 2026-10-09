@@ -45,6 +45,17 @@ describe('attemptService.recordAttempt', () => {
     });
   });
 
+  it('grades a cloze item by item, logs a readable answer, and refuses an answer that does not fit', async () => {
+    const { db, service } = setup();
+    db.prepare("INSERT INTO exercises (id, lesson_id, type, content) VALUES ('a1-greet__ex3', 'a1-greet', 'cloze', ?)").run(
+      JSON.stringify({ text: 'Ich {{1}} Anna, du {{2}} Ben.', gaps: [{ mode: 'typed', answer: 'bin' }, { mode: 'select', options: ['bist', 'ist'], correctIndex: 0 }] })
+    );
+    const outcome = await service.recordAttempt('a1-greet__ex3', { type: 'cloze', values: ['Bin', 0] }, 'lesson');
+    expect(outcome).toMatchObject({ result: 'almost', correctAnswer: 'bin; bist', feedback: null, itemResults: [false, true] });
+    expect(db.prepare("SELECT answer_text FROM lesson_attempts WHERE exercise_id = 'a1-greet__ex3'").get()).toEqual({ answer_text: 'Bin; bist' });
+    await expect(service.recordAttempt('a1-greet__ex3', { type: 'cloze', values: ['bin'] }, 'lesson')).rejects.toMatchObject({ code: 'bad_request' });
+  });
+
   it('completes the lesson once every exercise has passed, and seeds review from first attempts', async () => {
     const { db, service, srs, count } = setup();
     await service.recordAttempt('a1-greet__ex1', wrong, 'lesson');

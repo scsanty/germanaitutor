@@ -11,6 +11,7 @@ export const TESTOUT_COOLDOWN_HOURS = 24;
 // Types added later declare their own eligibility here (letter tasks and spoken answers won't be).
 export function isTestOutEligibleType(type: ExerciseType, aiAvailable: boolean): boolean {
   if (type === 'multiple_choice' || type === 'fill_blank') return true;
+  if (type === 'passage_questions' || type === 'matching' || type === 'cloze') return true; // graded without AI
   if (type === 'free_text') return aiAvailable;
   return false;
 }

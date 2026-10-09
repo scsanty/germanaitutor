@@ -195,7 +195,11 @@ export function createPracticeService(db: Database.Database, deps: PracticeDeps 
       if (graded.reason === 'bad_request') throw new PracticeError(graded.message, 'bad_request');
       throw new PracticeError(graded.message, 'ai_failed', graded.code, graded.params);
     }
-    return { result: graded.result, correctAnswer: correctAnswerFor(exercise) };
+    return {
+      result: graded.result,
+      correctAnswer: correctAnswerFor(exercise),
+      ...(graded.itemResults ? { itemResults: graded.itemResults } : {}),
+    };
   }
 
   return { serveBatch, gradeAnswer };

@@ -33,6 +33,10 @@ describe('isTestOutEligibleType', () => {
     expect(isTestOutEligibleType('fill_blank', false)).toBe(true);
     expect(isTestOutEligibleType('free_text', false)).toBe(false);
     expect(isTestOutEligibleType('free_text', true)).toBe(true);
+    for (const type of ['passage_questions', 'matching', 'cloze'] as const) {
+      expect(isTestOutEligibleType(type, false)).toBe(true);
+      expect(isTestOutEligibleType(type, true)).toBe(true);
+    }
   });
 });
 

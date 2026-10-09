@@ -31,6 +31,13 @@ function blankContentFor(type: ExerciseType): ExerciseContent {
       return { front: '', back: '' };
     case 'free_text':
       return { prompt: '', modelAnswer: '' };
+    // Reading task types: the editor fields arrive with the lesson UI (Task 8).
+    case 'passage_questions':
+      return { passage: '', questions: [{ question: '', options: ['', ''], correctIndex: 0 }] };
+    case 'matching':
+      return { items: [''], targets: ['', ''], answers: [0], allowNone: false };
+    case 'cloze':
+      return { text: '', gaps: [] };
   }
 }
 

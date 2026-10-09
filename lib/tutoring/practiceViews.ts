@@ -10,4 +10,6 @@ export interface PracticeBatch {
 export interface PracticeGradeOutcome {
   result: GradeResult;
   correctAnswer: string | null;
+  // S17: per question, text or gap, for the reading task types only.
+  itemResults?: boolean[];
 }

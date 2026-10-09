@@ -12,6 +12,17 @@ describe('validateExerciseContent', () => {
     expect(validateExerciseContent('free_text', { prompt: 'Write.', modelAnswer: 'Ich schreibe.' })).toEqual([]);
   });
 
+  it('validates the reading task types through their own rules, plus the bilingual instruction rule', () => {
+    expect(validateExerciseContent('passage_questions', { passage: 'P.', questions: [{ question: 'Q?', options: ['a', 'b'], correctIndex: 0 }] })).toEqual([]);
+    expect(validateExerciseContent('matching', { items: ['A'], targets: ['x', 'y'], answers: [0], allowNone: false })).toEqual([]);
+    expect(validateExerciseContent('cloze', { text: 'Ich {{1}}.', gaps: [{ mode: 'typed', answer: 'bin' }] })).toEqual([]);
+    expect(validateExerciseContent('cloze', { text: 'Ich {{1}}.', gaps: [] })).toEqual(['the text has 1 gaps but 0 are defined']);
+    expect(validateExerciseContent('cloze', { text: 'Ich {{1}}.', gaps: [null] })).not.toEqual([]);
+    expect(validateExerciseContent('matching', { items: ['A'], targets: ['x', 'y'], answers: [0], allowNone: false, instruction: { en: 'Match.' } })).toEqual([
+      'instruction needs both English and German',
+    ]);
+  });
+
   it('rejects an unknown type and non-object content', () => {
     expect(validateExerciseContent('essay', {})).toEqual(['unknown exercise type "essay"']);
     expect(validateExerciseContent('flashcard', 'text')).toEqual(['content must be an object']);

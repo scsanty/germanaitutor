@@ -183,8 +183,47 @@ export function runMigrations(db: Database.Database): void {
     migrateProfilePreferences(db);
     migrateFreestyle(db);
     migrateFlashcardReviewsToDeck(db);
+    migrateExerciseTypes(db);
   });
-  migrate();
+  // Table rebuilds (migrateExerciseTypes) must run with foreign keys OFF, or DROP TABLE would cascade
+  // to attempts and reviews. SQLite ignores this pragma inside a transaction, so it wraps the transaction.
+  const foreignKeysWereOn = db.pragma('foreign_keys', { simple: true }) === 1;
+  db.pragma('foreign_keys = OFF');
+  try {
+    migrate();
+  } finally {
+    if (foreignKeysWereOn) db.pragma('foreign_keys = ON');
+  }
+}
+
+// Reading module: the passage, matching and cloze exercise types. SQLite can't change a CHECK in
+// place, so each table still on the old CHECK is rebuilt (create-copy-drop-rename), keeping ids, so
+// attempts, reviews, chat rows and seen markers stay linked. Runs with foreign keys OFF (see
+// runMigrations). A table already on the new CHECK is left alone, so a second run does nothing.
+function migrateExerciseTypes(db: Database.Database): void {
+  let rebuilt = false;
+  for (const table of ['exercises', 'practice_exercises']) {
+    const row = db.prepare("SELECT sql FROM sqlite_master WHERE type = 'table' AND name = ?").get(table) as { sql: string } | undefined;
+    if (!row || row.sql.includes("'cloze'")) continue;
+    const newSql = row.sql
+      .replace(/^CREATE TABLE ("?)(\w+)\1/, `CREATE TABLE ${table}_new`)
+      .replace("'free_text')", "'free_text','passage_questions','matching','cloze')");
+    if (!newSql.startsWith(`CREATE TABLE ${table}_new`) || !newSql.includes("'cloze'")) {
+      throw new Error(`Unexpected ${table} definition; cannot add the reading exercise types`);
+    }
+    const columns = (db.prepare(`PRAGMA table_info(${table})`).all() as { name: string }[]).map((c) => `"${c.name}"`).join(', ');
+    db.exec(newSql);
+    db.exec(`INSERT INTO ${table}_new (${columns}) SELECT ${columns} FROM ${table}; DROP TABLE ${table}; ALTER TABLE ${table}_new RENAME TO ${table};`);
+    rebuilt = true;
+  }
+  // The rebuild dropped the tables' indexes (as defined in createTablesIfMissing).
+  db.exec('CREATE INDEX IF NOT EXISTS idx_practice_exercises_lesson ON practice_exercises(lesson_id)');
+  if (!rebuilt) return;
+  // Only the tables that point at the rebuilt ones (S4): an unrelated old orphan elsewhere must not stop startup.
+  for (const table of ['lesson_attempts', 'exercise_srs_state', 'lesson_chat_messages', 'practice_seen']) {
+    const problems = db.pragma(`foreign_key_check(${table})`) as unknown[];
+    if (problems.length > 0) throw new Error(`Foreign key problems in ${table} after the exercise type migration: ${JSON.stringify(problems)}`);
+  }
 }
 
 // Freestyle and the vocabulary deck: deck settings on the profile, and the End guard on sessions.
@@ -362,7 +401,7 @@ function createTablesIfMissing(db: Database.Database): void {
       id TEXT PRIMARY KEY,
       lesson_id TEXT NOT NULL REFERENCES lessons(id) ON DELETE CASCADE,
       track TEXT CHECK (track IN ('generic','telc','goethe')),
-      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','flashcard','free_text')),
+      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','flashcard','free_text','passage_questions','matching','cloze')),
       content TEXT NOT NULL
     );
 
@@ -479,7 +518,7 @@ function createTablesIfMissing(db: Database.Database): void {
     CREATE TABLE IF NOT EXISTS practice_exercises (
       id TEXT PRIMARY KEY,
       lesson_id TEXT NOT NULL REFERENCES lessons(id) ON DELETE CASCADE,
-      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','flashcard','free_text')),
+      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','flashcard','free_text','passage_questions','matching','cloze')),
       content TEXT NOT NULL,
       review_status TEXT NOT NULL DEFAULT 'unreviewed' CHECK (review_status IN ('unreviewed','approved','rejected')),
       created_at TEXT NOT NULL,

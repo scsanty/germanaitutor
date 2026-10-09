@@ -7,6 +7,9 @@ import type {
   FlashcardContent,
   FreeTextContent,
   MultipleChoiceContent,
+  PassageQuestionsContent,
+  MatchingContent,
+  ClozeContent,
 } from '@/lib/curriculum/types';
 import type { PracticePoolItem, PracticeReviewStatus } from '@/lib/services/practiceAdminService';
 import { LEVELS, TRACKS, TRACK_LABEL } from '@/lib/tutoring/levels';
@@ -30,6 +33,12 @@ function preview(item: PracticePoolItem): string {
     }
     case 'free_text':
       return (item.content as FreeTextContent).prompt;
+    case 'passage_questions':
+      return (item.content as PassageQuestionsContent).passage;
+    case 'matching':
+      return (item.content as MatchingContent).items.join(' | ');
+    case 'cloze':
+      return (item.content as ClozeContent).text;
   }
 }
 
