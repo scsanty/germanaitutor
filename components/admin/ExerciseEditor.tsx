@@ -7,6 +7,9 @@ import type {
   FillBlankContent,
   FlashcardContent,
   FreeTextContent,
+  PassageQuestionsContent,
+  MatchingContent,
+  ClozeContent,
 } from '@/lib/curriculum/types';
 import { Plus, Trash2, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -14,6 +17,7 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { NativeSelect } from '@/components/ui/native-select';
 import { BTN, FOCUS, INPUT } from './adminStyles';
+import { ClozeFields, MatchingFields, PassageQuestionsFields } from './ReadingTaskFields';
 
 export interface ExerciseFormEntry {
   id?: string;
@@ -31,7 +35,7 @@ function blankContentFor(type: ExerciseType): ExerciseContent {
       return { front: '', back: '' };
     case 'free_text':
       return { prompt: '', modelAnswer: '' };
-    // Reading task types: the editor fields arrive with the lesson UI (Task 8).
+    // Reading task types: empty but valid-shaped; saving checks them in full (S19).
     case 'passage_questions':
       return { passage: '', questions: [{ question: '', options: ['', ''], correctIndex: 0 }] };
     case 'matching':
@@ -85,6 +89,9 @@ export function ExerciseEditor({
                 <option value="fill_blank">Fill in the blank</option>
                 {(allowFlashcards || exercise.type === 'flashcard') && <option value="flashcard">Flashcard</option>}
                 <option value="free_text">Free text</option>
+                <option value="passage_questions">Passage + questions</option>
+                <option value="matching">Matching</option>
+                <option value="cloze">Cloze</option>
               </NativeSelect>
               <Button type="button" variant="ghost" className={`${BTN} text-destructive hover:text-destructive`} onClick={() => removeAt(index)}>
                 <Trash2 aria-hidden />
@@ -152,6 +159,12 @@ function typeSpecificFields(type: ExerciseType, content: ExerciseContent, index:
       return <FlashcardFields content={content as FlashcardContent} index={index} onChange={onChange} />;
     case 'free_text':
       return <FreeTextFields content={content as FreeTextContent} index={index} onChange={onChange} />;
+    case 'passage_questions':
+      return <PassageQuestionsFields content={content as PassageQuestionsContent} index={index} onChange={onChange} />;
+    case 'matching':
+      return <MatchingFields content={content as MatchingContent} index={index} onChange={onChange} />;
+    case 'cloze':
+      return <ClozeFields content={content as ClozeContent} index={index} onChange={onChange} />;
   }
 }
 

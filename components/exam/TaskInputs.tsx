@@ -2,6 +2,7 @@
 
 import { Fragment, useId } from 'react';
 import { useTranslations } from 'next-intl';
+import { Check, X } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { NativeSelect } from '@/components/ui/native-select';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
@@ -50,9 +51,24 @@ interface Props<V, A> {
   onChange: (value: A) => void;
   disabled?: boolean;
   pane: TaskPane;
+  itemResults?: boolean[];
 }
 
-function PassageQuestions({ view, value, onChange, disabled, pane }: Props<PassageQuestionsView, PassageQuestionsAnswer>) {
+// S17: after a lesson check, a tick or cross per question, text or gap (named for screen readers).
+function ItemMark({ results, index }: { results?: boolean[]; index: number }) {
+  const t = useTranslations('exam');
+  if (!results || results[index] === undefined) return null;
+  const ok = results[index];
+  const Icon = ok ? Check : X;
+  return (
+    <span className={`inline-flex items-center align-middle ${ok ? 'text-success' : 'text-danger'}`}>
+      <Icon aria-hidden className="size-5" strokeWidth={3} />
+      <span className="sr-only">{ok ? t('right') : t('wrong')}</span>
+    </span>
+  );
+}
+
+function PassageQuestions({ view, value, onChange, disabled, pane, itemResults }: Props<PassageQuestionsView, PassageQuestionsAnswer>) {
   const id = useId();
   return (
     <>
@@ -62,7 +78,7 @@ function PassageQuestions({ view, value, onChange, disabled, pane }: Props<Passa
           {view.questions.map((q, qi) => (
             <li key={qi} className="flex flex-col gap-2 rounded-xl border border-border px-4 py-3">
               <p id={`${id}-q${qi}`} lang="de" className="font-medium leading-relaxed">
-                {qi + 1}. {q.question}
+                {qi + 1}. {q.question} <ItemMark results={itemResults} index={qi} />
               </p>
               <RadioGroup
                 aria-labelledby={`${id}-q${qi}`}
@@ -88,7 +104,7 @@ function PassageQuestions({ view, value, onChange, disabled, pane }: Props<Passa
   );
 }
 
-function Matching({ view, value, onChange, disabled, pane }: Props<MatchingView, MatchingAnswer>) {
+function Matching({ view, value, onChange, disabled, pane, itemResults }: Props<MatchingView, MatchingAnswer>) {
   const t = useTranslations('exam');
   const id = useId();
   const pick = (index: number, raw: string) =>
@@ -111,9 +127,12 @@ function Matching({ view, value, onChange, disabled, pane }: Props<MatchingView,
             const s = value.selected[ii];
             return (
               <li key={ii} className="flex flex-col gap-2 rounded-xl border border-border px-4 py-3">
-                <label htmlFor={`${id}-i${ii}`} lang="de" className="font-medium leading-relaxed whitespace-pre-wrap">
-                  {ii + 1}. {item}
-                </label>
+                <div className="flex items-start justify-between gap-2">
+                  <label htmlFor={`${id}-i${ii}`} lang="de" className="font-medium leading-relaxed whitespace-pre-wrap">
+                    {ii + 1}. {item}
+                  </label>
+                  <ItemMark results={itemResults} index={ii} />
+                </div>
                 <NativeSelect id={`${id}-i${ii}`} value={s === -1 ? '' : s === null ? 'x' : String(s)} onChange={(e) => pick(ii, e.target.value)} disabled={disabled}>
                   <option value="">{t('unanswered')}</option>
                   {view.targets.map((_, ti) => (
@@ -132,7 +151,7 @@ function Matching({ view, value, onChange, disabled, pane }: Props<MatchingView,
   );
 }
 
-function Cloze({ view, value, onChange, disabled, pane }: Props<ClozeView, ClozeAnswer>) {
+function Cloze({ view, value, onChange, disabled, pane, itemResults }: Props<ClozeView, ClozeAnswer>) {
   const t = useTranslations('exam');
   const id = useId();
   const set = (index: number, v: string | number | null) => onChange({ ...value, values: value.values.map((old, i) => (i === index ? v : old)) });
@@ -164,40 +183,45 @@ function Cloze({ view, value, onChange, disabled, pane }: Props<ClozeView, Cloze
             const v = value.values[gi];
             const label = t('gap', { n: gi + 1 });
             if (!gap) return <Fragment key={pi}>{`{{${part}}}`}</Fragment>;
+            const mark = <ItemMark results={itemResults} index={gi} />;
             if (gap.mode === 'typed') {
               return (
-                <Input
-                  key={pi}
-                  aria-label={label}
-                  value={typeof v === 'string' ? v : ''}
-                  onChange={(e) => set(gi, e.target.value === '' ? null : e.target.value)}
-                  disabled={disabled}
-                  spellCheck={false}
-                  autoComplete="off"
-                  autoCapitalize="off"
-                  autoCorrect="off"
-                  className="mx-1 inline-block h-9 w-36 align-baseline"
-                />
+                <Fragment key={pi}>
+                  <Input
+                    aria-label={label}
+                    value={typeof v === 'string' ? v : ''}
+                    onChange={(e) => set(gi, e.target.value === '' ? null : e.target.value)}
+                    disabled={disabled}
+                    spellCheck={false}
+                    autoComplete="off"
+                    autoCapitalize="off"
+                    autoCorrect="off"
+                    className="mx-1 inline-block h-9 w-36 align-baseline"
+                  />
+                  {mark}
+                </Fragment>
               );
             }
             const options = gap.mode === 'select' ? gap.options : (view.bank ?? []);
             return (
-              <NativeSelect
-                key={pi}
-                aria-label={label}
-                wrapperClassName="mx-1 inline-block w-auto min-w-28 align-baseline"
-                className="h-9"
-                value={typeof v === 'number' ? String(v) : ''}
-                onChange={(e) => set(gi, e.target.value === '' ? null : Number(e.target.value))}
-                disabled={disabled}
-              >
-                <option value="">{`${gi + 1}: ${t('unanswered')}`}</option>
-                {options.map((o, oi) => (
-                  <option key={oi} value={String(oi)}>
-                    {gap.mode === 'bank' ? `${letterOf(oi)} ${o}` : o}
-                  </option>
-                ))}
-              </NativeSelect>
+              <Fragment key={pi}>
+                <NativeSelect
+                  aria-label={label}
+                  wrapperClassName="mx-1 inline-block w-auto min-w-28 align-baseline"
+                  className="h-9"
+                  value={typeof v === 'number' ? String(v) : ''}
+                  onChange={(e) => set(gi, e.target.value === '' ? null : Number(e.target.value))}
+                  disabled={disabled}
+                >
+                  <option value="">{`${gi + 1}: ${t('unanswered')}`}</option>
+                  {options.map((o, oi) => (
+                    <option key={oi} value={String(oi)}>
+                      {gap.mode === 'bank' ? `${letterOf(oi)} ${o}` : o}
+                    </option>
+                  ))}
+                </NativeSelect>
+                {mark}
+              </Fragment>
             );
           })}
         </div>
@@ -215,6 +239,7 @@ export function TaskInputs({
   onChange,
   disabled,
   pane = 'all',
+  itemResults,
 }: {
   type: SetTaskType;
   view: TaskView;
@@ -222,9 +247,11 @@ export function TaskInputs({
   onChange: (value: TaskAnswer) => void;
   disabled?: boolean;
   pane?: TaskPane;
+  // Lessons, after Check: one entry per item, shown as a tick or cross beside it.
+  itemResults?: boolean[];
 }) {
   // Each answer shape is a TaskAnswer, so the shared onChange accepts what every input sends.
-  const common = { disabled, pane, onChange };
+  const common = { disabled, pane, onChange, itemResults };
   if (type === 'passage_questions') return <PassageQuestions {...common} view={view as PassageQuestionsView} value={value as PassageQuestionsAnswer} />;
   if (type === 'matching') return <Matching {...common} view={view as MatchingView} value={value as MatchingAnswer} />;
   return <Cloze {...common} view={view as ClozeView} value={value as ClozeAnswer} />;

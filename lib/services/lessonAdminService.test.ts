@@ -722,4 +722,30 @@ describe('flashcard rule', () => {
       })
     ).toThrow('Exercise 1: instruction needs both English and German');
   });
+
+  it('refuses a half-filled reading task, naming the exercise and its problems (S19)', () => {
+    const db = createDbClient(':memory:');
+    seedMilestone(db);
+    const service = createLessonAdminService(db);
+    const fields = {
+      slug: 'cloze',
+      track: 'generic' as const,
+      sourceLevel: 'A1' as const,
+      skill: 'reading' as const,
+      title: 'Cloze',
+      titleDe: 'Lückentext',
+      explanation: null,
+      explanationDe: null,
+      examples: null,
+      examplesDe: null,
+      prerequisiteIds: [],
+      placement: { milestoneId: 'm1' },
+    };
+    expect(() =>
+      service.createLesson({ ...fields, exercises: [{ type: 'cloze', content: { text: 'Ich {{1}} müde.', gaps: [{ mode: 'typed', answer: '' }] } }] })
+    ).toThrow('Exercise 1: gap 1 needs an answer');
+    expect(db.prepare('SELECT COUNT(*) AS n FROM lessons').get()).toEqual({ n: 0 });
+    const ok = service.createLesson({ ...fields, exercises: [{ type: 'cloze', content: { text: 'Ich {{1}} müde.', gaps: [{ mode: 'typed', answer: 'bin' }] } }] });
+    expect(ok.id).toBe('a1-cloze');
+  });
 });

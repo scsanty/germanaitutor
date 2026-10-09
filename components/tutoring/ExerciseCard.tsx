@@ -4,7 +4,9 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import type { ExerciseView } from '@/lib/tutoring/exerciseView';
-import type { AttemptOutcome, AttemptSource, FlashcardRating, LessonAnswer } from '@/lib/tutoring/lessonAnswers';
+import { taskAnswerText, type AttemptOutcome, type AttemptSource, type FlashcardRating, type LessonAnswer, type TaskAnswerSource } from '@/lib/tutoring/lessonAnswers';
+import type { SetTaskType, TaskAnswer, TaskView } from '@/lib/tasks/taskTypes';
+import { answeredCount, emptyAnswer, TaskInputs } from '@/components/exam/TaskInputs';
 import type { GradeResult } from '@/lib/tutoring/grading';
 import type { PracticeGradeOutcome } from '@/lib/tutoring/practiceViews';
 import type { TestOutAnswerOutcome } from '@/lib/tutoring/testOutViews';
@@ -57,6 +59,20 @@ interface Shown {
   correctAnswer: string | null;
   feedback: LocalizedText | null;
   answerText: string;
+  // S17: per question, text or gap, for the reading task types.
+  itemResults?: boolean[];
+}
+
+type TaskExercise = Extract<ExerciseView, { type: SetTaskType }>;
+
+function isTaskExercise(exercise: ExerciseView): exercise is TaskExercise {
+  return exercise.type === 'passage_questions' || exercise.type === 'matching' || exercise.type === 'cloze';
+}
+
+// The exercise view minus its id, as the task inputs and the shared answer-text helper take it.
+function taskViewOf(exercise: TaskExercise): TaskView {
+  const { id: _id, type: _type, ...view } = exercise;
+  return view as TaskView;
 }
 
 export function taskText(exercise: ExerciseView): string {
@@ -69,7 +85,7 @@ export function taskText(exercise: ExerciseView): string {
       return exercise.front;
     case 'free_text':
       return exercise.prompt;
-    // Reading task types: shown by their own inputs (Task 8), never as a heading line.
+    // Reading task types: shown by their own inputs, never as a heading line.
     case 'passage_questions':
     case 'matching':
     case 'cloze':
@@ -102,14 +118,16 @@ function answerTextOf(exercise: ExerciseView, answer: LessonAnswer): string {
       return answer.text;
     case 'flashcard':
       return answer.rating;
-    // Interim summary until Task 8's inputs; the server's answer_text uses answerTextFor.
+    // The same text the server stores (answerTextFor): the chosen options or texts, not indexes.
     case 'passage_questions':
-      return answer.selected.map((s) => (s === null ? '—' : String(s + 1))).join('; ');
     case 'matching':
-      return answer.selected.map((s) => (s === null ? 'x' : s < 0 ? '—' : String(s + 1))).join('; ');
     case 'cloze':
-      return answer.values.map((v) => (v === null || v === '' ? '—' : String(v))).join('; ');
+      return isTaskExercise(exercise) ? taskAnswerText(exercise as TaskAnswerSource, answer) : '';
   }
+}
+
+function itemsOf(answer: TaskAnswer): number {
+  return answer.type === 'cloze' ? answer.values.length : answer.selected.length;
 }
 
 export function ExerciseCard({
@@ -136,6 +154,9 @@ export function ExerciseCard({
   const [feedbackLanguage, setFeedbackLanguage] = useState<ContentLanguage>(locale);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [text, setText] = useState('');
+  const [taskAnswer, setTaskAnswer] = useState<TaskAnswer | null>(() =>
+    isTaskExercise(exercise) ? emptyAnswer(exercise.type, taskViewOf(exercise)) : null
+  );
   const [revealed, setRevealed] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -173,11 +194,11 @@ export function ExerciseCard({
         playSound(graded === 'wrong' ? 'wrong' : 'correct');
         if (practice) {
           const outcome = data as PracticeGradeOutcome;
-          setShown({ result: outcome.result, correctAnswer: outcome.correctAnswer, feedback: null, answerText });
+          setShown({ result: outcome.result, correctAnswer: outcome.correctAnswer, feedback: null, answerText, itemResults: outcome.itemResults });
           onPracticeAnswered?.(outcome);
         } else {
           const outcome = data as AttemptOutcome;
-          setShown({ result: outcome.result, correctAnswer: outcome.correctAnswer, feedback: outcome.feedback, answerText });
+          setShown({ result: outcome.result, correctAnswer: outcome.correctAnswer, feedback: outcome.feedback, answerText, itemResults: outcome.itemResults });
           onAnswered?.(outcome);
         }
         return;
@@ -203,6 +224,8 @@ export function ExerciseCard({
       return selectedIndex === null ? null : { type: 'multiple_choice', selectedIndex };
     }
     if (exercise.type === 'flashcard') return null;
+    // Reading tasks: checkable once any item is answered; typed gaps go exactly as typed (grading is case-sensitive).
+    if (isTaskExercise(exercise)) return taskAnswer && answeredCount(taskAnswer) > 0 ? taskAnswer : null;
     const trimmed = text.trim();
     if (!trimmed) return null;
     return exercise.type === 'fill_blank' ? { type: 'fill_blank', text: trimmed } : { type: 'free_text', text: trimmed };
@@ -221,6 +244,9 @@ export function ExerciseCard({
         if (!revealed) setRevealed(true);
       } else if (!busy) {
         const ready = currentAnswer();
+        // Enter on a multi-item task checks only once every item is answered, so a stray Enter after
+        // the first pick does not send a half-done task; the Check button works from the first answer.
+        if (ready && isTaskExercise(exercise) && answeredCount(ready as TaskAnswer) < (taskAnswer ? itemsOf(taskAnswer) : 0)) return;
         if (ready) submit(ready);
       }
     },
@@ -264,7 +290,15 @@ export function ExerciseCard({
     const ResultIcon = style.icon;
     return (
       <div className="flex flex-1 flex-col gap-6">
-        <ExerciseHeading exercise={exercise} language={language} />
+        {/* S17: a reading task stays visible, read-only, with a tick or cross per item. */}
+        {isTaskExercise(exercise) && taskAnswer ? (
+          <>
+            {instruction && <p className="text-sm text-text-muted">{instruction}</p>}
+            <TaskInputs type={exercise.type} view={taskViewOf(exercise)} value={taskAnswer} onChange={() => {}} disabled itemResults={shown.itemResults} pane="all" />
+          </>
+        ) : (
+          <ExerciseHeading exercise={exercise} language={language} />
+        )}
         {exercise.type === 'flashcard' && <p className="rounded-xl border border-border bg-surface p-4 text-lg">{exercise.back}</p>}
         <div className={FOOTER}>
           {/* The result rises from the bottom (200 ms; none under reduced motion). */}
@@ -379,6 +413,11 @@ export function ExerciseCard({
         <div className="flex flex-col gap-4">
           <p className={TASK}>{exercise.textWithBlank}</p>
           <Input aria-label={t('answerLabel')} value={text} onChange={(e) => setText(e.target.value)} autoComplete="off" autoCapitalize="off" spellCheck={false} className="h-12 text-lg md:text-lg" />
+        </div>
+      )}
+      {isTaskExercise(exercise) && taskAnswer && (
+        <div className="flex flex-col gap-4">
+          <TaskInputs type={exercise.type} view={taskViewOf(exercise)} value={taskAnswer} onChange={setTaskAnswer} disabled={busy} pane="all" />
         </div>
       )}
       {exercise.type === 'free_text' && (

@@ -268,4 +268,60 @@ describe('ExerciseCard', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Check' }));
     await waitFor(() => expect(onTestStale).toHaveBeenCalled());
   });
+  it('answers a cloze exercise inline and shows per-gap results after checking', async () => {
+    const CLOZE = {
+      id: 'c1',
+      type: 'cloze' as const,
+      text: 'Ich {{1}} müde. Er {{2}} hier.',
+      gaps: [{ mode: 'typed' as const }, { mode: 'select' as const, options: ['ist', 'bin'] }],
+    };
+    const fetchMock = stubAttempts(() => delayedResponse(outcome({ result: 'almost', correctAnswer: 'bin; ist' })));
+    renderWithIntl(<ExerciseCard exercise={CLOZE} source="lesson" onAnswered={vi.fn()} onNext={vi.fn()} onSkip={vi.fn()} />);
+    fireEvent.change(screen.getByLabelText('Gap 1'), { target: { value: 'bin' } });
+    fireEvent.change(screen.getByLabelText('Gap 2'), { target: { value: '1' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }));
+    // S16: lesson mode shows exercise.result.almost.
+    expect(await screen.findByText('Almost — that counts as passed.')).toBeInTheDocument();
+    expect(screen.getByText('Correct answer: bin; ist')).toBeInTheDocument();
+    expect(fetchMock).toHaveBeenCalledWith('/api/tutoring/attempts', expect.objectContaining({
+      body: JSON.stringify({ exerciseId: 'c1', answer: { type: 'cloze', values: ['bin', 1] }, source: 'lesson' }),
+    }));
+  });
+
+  it('keeps a reading task visible after Check with a mark per gap, and sends typed gaps exactly as typed (S17)', async () => {
+    const CLOZE: ExerciseView = {
+      id: 'c2',
+      type: 'cloze',
+      text: 'Ich {{1}} müde. Er {{2}} hier.',
+      gaps: [{ mode: 'typed' }, { mode: 'typed' }],
+    };
+    const fetchMock = stubAttempts(() => delayedResponse(outcome({ result: 'wrong', correctAnswer: 'bin; ist', itemResults: [true, false] })));
+    const props = renderCard(CLOZE);
+    const check = screen.getByRole('button', { name: 'Check' });
+    expect(check).toBeDisabled();
+    fireEvent.change(screen.getByLabelText('Gap 1'), { target: { value: ' Bin ' } });
+    expect(check).toBeEnabled();
+    fireEvent.click(check);
+    expect(await screen.findByText('Not quite.')).toBeInTheDocument();
+    expect(JSON.parse(fetchMock.mock.calls[0][1]!.body as string).answer).toEqual({ type: 'cloze', values: [' Bin ', null] });
+    expect(screen.getByLabelText('Gap 1')).toBeDisabled();
+    expect(screen.getByLabelText('Gap 1')).toHaveValue(' Bin ');
+    expect(screen.getByText('Right')).toBeInTheDocument();
+    expect(screen.getByText('Wrong or unanswered')).toBeInTheDocument();
+    expect(screen.queryByText(/\{\{1\}\}/)).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Ask AI' }));
+    expect(props.onAskAi).toHaveBeenCalledWith('c2', { answerText: 'Bin; —', result: 'wrong' });
+  });
+
+  it('answers a matching exercise and asks the AI with the chosen texts, not their numbers', async () => {
+    const MATCH: ExerciseView = { id: 'm1', type: 'matching', items: ['Ich suche ein Zimmer.', 'Ich will kochen.'], targets: ['Wohnungsmarkt', 'Kochkurs'], allowNone: true };
+    stubAttempts(() => delayedResponse(outcome({ result: 'almost', correctAnswer: 'Wohnungsmarkt; Kochkurs', itemResults: [true, false] })));
+    const props = renderCard(MATCH);
+    fireEvent.change(screen.getByLabelText('1. Ich suche ein Zimmer.'), { target: { value: '0' } });
+    fireEvent.change(screen.getByLabelText('2. Ich will kochen.'), { target: { value: 'x' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }));
+    expect(await screen.findByText('Almost — that counts as passed.')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Ask AI' }));
+    expect(props.onAskAi).toHaveBeenCalledWith('m1', { answerText: 'Wohnungsmarkt; x', result: 'almost' });
+  });
 });

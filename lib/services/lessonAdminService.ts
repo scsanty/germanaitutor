@@ -7,7 +7,7 @@ import { wouldCreateCycle } from '../curriculum-admin/cycleDetection';
 import { resolvePlacement, type PlacementInput } from '../curriculum-admin/placementResolver';
 import { reconcileExercises, type ExerciseInput } from '../curriculum-admin/exerciseReconciliation';
 import { lessonTextProblems } from '../curriculum/bilingualValidation';
-import { instructionProblems } from '../curriculum/exerciseContentValidation';
+import { instructionProblems, validateExerciseContent } from '../curriculum/exerciseContentValidation';
 
 export interface CreateLessonInput {
   slug: string;
@@ -54,6 +54,14 @@ function assertFlashcardRule(skill: Skill, exercises: { type: ExerciseType }[]):
   if (violation) throw new Error(violation);
 }
 
+// S19: the reading task types are fully validated on save (a half-filled cloze would break the
+// student view and grading); the older types keep the instruction check alone.
+const FULLY_VALIDATED: readonly ExerciseType[] = ['passage_questions', 'matching', 'cloze'];
+
+function exerciseProblems(type: ExerciseType, content: unknown): string[] {
+  return FULLY_VALIDATED.includes(type) ? validateExerciseContent(type, content) : instructionProblems(type, content);
+}
+
 // Spec: German title, both-or-neither texts and instructions are checked before any write.
 function assertLessonTexts(input: {
   title: string;
@@ -66,7 +74,7 @@ function assertLessonTexts(input: {
 }): void {
   const problems = [
     ...lessonTextProblems(input),
-    ...input.exercises.flatMap((e, i) => instructionProblems(e.type, e.content).map((p) => `Exercise ${i + 1}: ${p}`)),
+    ...input.exercises.flatMap((e, i) => exerciseProblems(e.type, e.content).map((p) => `Exercise ${i + 1}: ${p}`)),
   ];
   if (problems.length > 0) throw new Error(problems.join('; '));
 }

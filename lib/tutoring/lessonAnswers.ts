@@ -90,27 +90,41 @@ export function correctAnswerFor(exercise: Exercise): string | null {
 
 const UNANSWERED = '—';
 
-// One readable entry per question, text or gap: the chosen option or text, "x" for "none fits".
-function taskAnswerParts(exercise: Exercise, answer: PassageQuestionsAnswer | MatchingAnswer | ClozeAnswer): string[] {
-  switch (answer.type) {
-    case 'passage_questions': {
-      const { questions } = exercise.content as PassageQuestionsContent;
-      return answer.selected.map((s, i) => (s === null ? UNANSWERED : (questions[i]?.options[s] ?? UNANSWERED)));
-    }
-    case 'matching': {
-      const { targets } = exercise.content as MatchingContent;
-      return answer.selected.map((s) => (s === null ? 'x' : (targets[s] ?? UNANSWERED)));
-    }
-    case 'cloze': {
-      const { gaps, bank } = exercise.content as ClozeContent;
-      return answer.values.map((v, i) => {
-        const gap = gaps[i];
-        if (v === null || !gap) return UNANSWERED;
-        if (typeof v === 'string') return v.trim() || UNANSWERED;
-        const picked = gap.mode === 'select' ? gap.options[v] : gap.mode === 'bank' ? bank?.[v] : undefined;
-        return picked ?? UNANSWERED;
-      });
-    }
+// The parts of a reading task the answer text needs. The student's view carries all of them, so the
+// card (client) and the attempt log (server) share this function and write the same text.
+export type TaskAnswerSource =
+  | { type: 'passage_questions'; questions: { options: string[] }[] }
+  | { type: 'matching'; targets: string[] }
+  | { type: 'cloze'; gaps: ({ mode: 'typed' } | { mode: 'select'; options: string[] } | { mode: 'bank' })[]; bank?: string[] };
+
+// One readable entry per question, text or gap, joined with '; ': the chosen option or text,
+// "x" for "none fits", "—" when unanswered.
+export function taskAnswerText(source: TaskAnswerSource, answer: PassageQuestionsAnswer | MatchingAnswer | ClozeAnswer): string {
+  let parts: string[] = [];
+  if (answer.type === 'passage_questions' && source.type === 'passage_questions') {
+    parts = answer.selected.map((s, i) => (s === null ? UNANSWERED : (source.questions[i]?.options[s] ?? UNANSWERED)));
+  } else if (answer.type === 'matching' && source.type === 'matching') {
+    parts = answer.selected.map((s) => (s === null ? 'x' : (source.targets[s] ?? UNANSWERED)));
+  } else if (answer.type === 'cloze' && source.type === 'cloze') {
+    parts = answer.values.map((v, i) => {
+      const gap = source.gaps[i];
+      if (v === null || !gap) return UNANSWERED;
+      if (typeof v === 'string') return v.trim() || UNANSWERED;
+      const picked = gap.mode === 'select' ? gap.options[v] : gap.mode === 'bank' ? source.bank?.[v] : undefined;
+      return picked ?? UNANSWERED;
+    });
+  }
+  return parts.join('; ');
+}
+
+function taskAnswerSourceOf(exercise: Exercise): TaskAnswerSource {
+  switch (exercise.type) {
+    case 'passage_questions':
+      return { type: 'passage_questions', ...(exercise.content as PassageQuestionsContent) };
+    case 'matching':
+      return { type: 'matching', ...(exercise.content as MatchingContent) };
+    default:
+      return { type: 'cloze', ...(exercise.content as ClozeContent) };
   }
 }
 
@@ -127,7 +141,7 @@ export function answerTextFor(exercise: Exercise, answer: LessonAnswer): string 
     case 'passage_questions':
     case 'matching':
     case 'cloze':
-      return taskAnswerParts(exercise, answer).join('; ');
+      return taskAnswerText(taskAnswerSourceOf(exercise), answer);
   }
 }
 
