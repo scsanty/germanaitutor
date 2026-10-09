@@ -577,5 +577,30 @@ function createTablesIfMissing(db: Database.Database): void {
       answered_on TEXT NOT NULL, answered_at TEXT NOT NULL
     );
     CREATE INDEX IF NOT EXISTS idx_vocab_answers_day ON vocabulary_answers(answered_on);
+
+    CREATE TABLE IF NOT EXISTS teil_sets (
+      id TEXT PRIMARY KEY,
+      format_id TEXT NOT NULL, part_id TEXT NOT NULL,
+      status TEXT NOT NULL CHECK (status IN ('starter','unreviewed','approved','rejected','reserved')),
+      content TEXT NOT NULL,
+      created_at TEXT NOT NULL, reviewed_at TEXT
+    );
+    CREATE INDEX IF NOT EXISTS idx_teil_sets_part ON teil_sets(format_id, part_id);
+    CREATE TABLE IF NOT EXISTS teil_seen (
+      set_id TEXT PRIMARY KEY REFERENCES teil_sets(id) ON DELETE CASCADE,
+      seen_at TEXT NOT NULL
+    );
+    CREATE TABLE IF NOT EXISTS teil_attempts (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      format_id TEXT NOT NULL, part_id TEXT NOT NULL, set_id TEXT,
+      kind TEXT NOT NULL CHECK (kind IN ('practice','mock')),
+      mock_id TEXT,
+      score REAL, max_score REAL, overtime_seconds INTEGER,
+      started_at TEXT NOT NULL, finished_at TEXT
+    );
+    CREATE TABLE IF NOT EXISTS teil_bundle_meta (
+      format_id TEXT, part_id TEXT, version TEXT,
+      PRIMARY KEY (format_id, part_id)
+    );
   `);
 }

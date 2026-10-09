@@ -1,0 +1,58 @@
+{
+  "formatId": "telc-b1",
+  "partId": "lesen-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b1__lesen-1__s01",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Ab dem 1. März fahren die Busse der Linie 12 am Wochenende nur noch jede halbe Stunde. Grund dafür sind die geringen Fahrgastzahlen an Samstagen und Sonntagen. Unter der Woche bleibt alles wie bisher: Die Busse kommen in der Hauptverkehrszeit alle zehn Minuten. Die neuen Fahrpläne hängen ab Mitte Februar an allen Haltestellen aus und stehen schon jetzt auf der Internetseite der Stadtwerke.",
+            "Immer mehr Menschen in Deutschland arbeiten nicht mehr jeden Tag im Büro. Nach einer neuen Umfrage verbringt fast jeder dritte Angestellte mindestens einen Tag pro Woche im Homeoffice. Viele schätzen, dass sie keine Zeit mehr im Stau verlieren. Gleichzeitig klagen manche darüber, dass ihnen der Kontakt zu den Kolleginnen und Kollegen fehlt und Arbeit und Freizeit schwerer zu trennen sind.",
+            "Sie wollen fit werden, haben aber keine Lust auf ein teures Fitnessstudio? Dann machen Sie mit beim Lauftreff im Stadtpark! Jeden Dienstag und Donnerstag um 18 Uhr treffen sich Anfänger und Fortgeschrittene am Eingang beim Spielplatz. Erfahrene Trainerinnen zeigen Ihnen, wie Sie richtig laufen. Eine Anmeldung ist nicht nötig, und die Teilnahme kostet nichts.",
+            "In der Grundschule am Lindenplatz gibt es seit diesem Schuljahr einen eigenen Schulgarten. Die Kinder der dritten und vierten Klassen pflanzen dort Gemüse, Kräuter und Blumen und kümmern sich in Gruppen um die Beete. Die Lehrerinnen sind begeistert: Die Kinder lernen nicht nur viel über die Natur, sondern auch, Verantwortung zu übernehmen. Die erste Ernte wird beim Sommerfest verkauft.",
+            "Wer im Sommer verreist, sollte rechtzeitig an seinen Reisepass denken. Die Bürgerämter melden schon jetzt lange Wartezeiten: Für einen neuen Pass muss man im Moment bis zu sechs Wochen warten. Die Stadt empfiehlt deshalb, das Ablaufdatum der Dokumente sofort zu prüfen und möglichst früh online einen Termin zu vereinbaren."
+          ],
+          "targets": [
+            "Kostenlos Sport treiben in der Natur",
+            "Neue Buslinie verbindet Stadtzentrum und Flughafen",
+            "Weniger Fahrten an Samstagen und Sonntagen",
+            "Schüler bauen ihr eigenes Gemüse an",
+            "Fitnessstudios erhöhen ihre Preise",
+            "Arbeiten von zu Hause: Vorteile und Nachteile",
+            "Frühzeitig an die Reisedokumente denken",
+            "Stadtpark wird im Sommer geschlossen",
+            "Immer weniger Menschen fahren in den Urlaub",
+            "Firmen suchen dringend neue Mitarbeiter"
+          ],
+          "answers": [2, 5, 0, 3, 6],
+          "allowNone": false
+        },
+        "explanations": [
+          {
+            "en": "Text 1 says buses on line 12 will run only every half hour at the weekend, so there are fewer trips on Saturdays and Sundays (c). It is not a new line to the airport.",
+            "de": "Text 1 sagt: Am Wochenende fahren die Busse der Linie 12 nur noch jede halbe Stunde. Es gibt also weniger Fahrten am Samstag und Sonntag (c). Eine neue Linie zum Flughafen gibt es nicht."
+          },
+          {
+            "en": "Text 2 describes working from home: no time lost in traffic, but less contact with colleagues and work and free time mixing. That is advantages and disadvantages (f).",
+            "de": "Text 2 beschreibt das Homeoffice: Man verliert keine Zeit im Stau, aber der Kontakt zu Kollegen fehlt. Das sind Vorteile und Nachteile (f)."
+          },
+          {
+            "en": "Text 3 invites people to a running group in the city park; it costs nothing. So it is free sport outdoors (a). It does not say gyms raise their prices.",
+            "de": "Text 3 lädt zum Lauftreff im Stadtpark ein, und die Teilnahme kostet nichts. Man treibt also kostenlos Sport in der Natur (a). Von höheren Preisen im Fitnessstudio steht dort nichts."
+          },
+          {
+            "en": "Text 4 is about a school garden where the children plant vegetables, herbs and flowers themselves (d).",
+            "de": "Text 4 handelt von einem Schulgarten. Die Kinder pflanzen dort selbst Gemüse, Kräuter und Blumen (d)."
+          },
+          {
+            "en": "Text 5 warns that a new passport takes up to six weeks and advises checking your documents early (g). It does not say fewer people travel.",
+            "de": "Text 5 warnt: Ein neuer Pass dauert bis zu sechs Wochen. Man soll die Dokumente früh prüfen (g). Dass weniger Menschen reisen, steht nicht im Text."
+          }
+        ]
+      }
+    }
+  ]
+}
