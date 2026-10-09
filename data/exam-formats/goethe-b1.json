@@ -3,7 +3,7 @@
   "track": "goethe",
   "level": "B1",
   "name": "Goethe-Zertifikat B1",
-  "sources": ["https://www.goethe.de/de/spr/kup/prf/prf/gzb1.html", "https://www.goethe.de/de/spr/kup/prf/prf/gzb1/ueb.html"],
+  "sources": ["https://www.goethe.de/pro/relaunch/prf/materialien/B1/b1_modellsatz_erwachsene.pdf", "https://bfu.goethe.de/b1_mod/lesen.php", "https://bfu.goethe.de/b1_mod/hoeren.php", "https://bfu.goethe.de/b1_mod/schreiben.php", "https://bfu.goethe.de/b1_mod/sprechen.php"],
   "blocks": [
     { "id": "written", "title": { "en": "Written exam", "de": "Schriftliche Prüfung" }, "minutes": 165, "partIds": ["lesen-1", "lesen-2", "lesen-3", "lesen-4", "lesen-5", "hoeren-1", "hoeren-2", "hoeren-3", "hoeren-4", "schreiben-1", "schreiben-2", "schreiben-3"], "passRatio": 0.6 },
     { "id": "oral", "title": { "en": "Oral exam", "de": "Mündliche Prüfung" }, "minutes": 15, "partIds": ["sprechen-1", "sprechen-2", "sprechen-3"], "passRatio": 0.6 }
@@ -11,7 +11,7 @@
   "parts": [
     { "id": "lesen-1", "skill": "reading", "title": { "en": "Reading Part 1", "de": "Lesen Teil 1" }, "taskType": "passage_questions", "items": 6, "points": 20, "minutes": 10, "instructions": "Lesen Sie den Text und die Aufgaben 1 bis 6. Wählen Sie: Sind die Aussagen Richtig oder Falsch?" },
     { "id": "lesen-2", "skill": "reading", "title": { "en": "Reading Part 2", "de": "Lesen Teil 2" }, "taskType": "passage_questions", "items": 6, "points": 20, "minutes": 20, "instructions": "Lesen Sie die Texte aus der Presse und die Aufgaben 7 bis 12. Welche Lösung (a, b oder c) ist richtig?" },
-    { "id": "lesen-3", "skill": "reading", "title": { "en": "Reading Part 3", "de": "Lesen Teil 3" }, "taskType": "matching", "items": 7, "points": 23.33, "minutes": 10, "instructions": "Lesen Sie die Situationen 13 bis 19 und die Anzeigen a bis j. Welche Anzeige passt zu welcher Situation? Sie können jede Anzeige nur einmal verwenden. Für eine Situation gibt es keine passende Anzeige; markieren Sie dann x." },
+    { "id": "lesen-3", "skill": "reading", "title": { "en": "Reading Part 3", "de": "Lesen Teil 3" }, "taskType": "matching", "items": 7, "points": 23.33, "minutes": 10, "instructions": "Lesen Sie die Situationen 13 bis 19 und die Anzeigen a bis j. Welche Anzeige passt zu welcher Situation? Sie können jede Anzeige nur einmal verwenden. Für eine Situation gibt es keine passende Anzeige; markieren Sie dann 0." },
     { "id": "lesen-4", "skill": "reading", "title": { "en": "Reading Part 4", "de": "Lesen Teil 4" }, "taskType": "passage_questions", "items": 7, "points": 23.33, "minutes": 15, "instructions": "Lesen Sie die Texte 20 bis 26. Wählen Sie: Ist die Person für das Thema? Ja oder Nein?" },
     { "id": "lesen-5", "skill": "reading", "title": { "en": "Reading Part 5", "de": "Lesen Teil 5" }, "taskType": "passage_questions", "items": 4, "points": 13.34, "minutes": 10, "instructions": "Lesen Sie die Aufgaben 27 bis 30 und den Text dazu. Welche Lösung (a, b oder c) ist richtig?" },
     { "id": "hoeren-1", "skill": "listening", "title": { "en": "Listening Part 1", "de": "Hören Teil 1" }, "taskType": "audio_questions", "items": 10, "points": 33.33, "minutes": 12, "instructions": "Sie hören fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben: Richtig oder Falsch, und a, b oder c.", "replays": 2 },
