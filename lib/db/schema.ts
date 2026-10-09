@@ -184,6 +184,7 @@ export function runMigrations(db: Database.Database): void {
     migrateFreestyle(db);
     migrateFlashcardReviewsToDeck(db);
     migrateExerciseTypes(db);
+    migrateTeilAttemptAnswers(db);
   });
   // Table rebuilds (migrateExerciseTypes) must run with foreign keys OFF, or DROP TABLE would cascade
   // to attempts and reviews. SQLite ignores this pragma inside a transaction, so it wraps the transaction.
@@ -596,11 +597,19 @@ function createTablesIfMissing(db: Database.Database): void {
       kind TEXT NOT NULL CHECK (kind IN ('practice','mock')),
       mock_id TEXT,
       score REAL, max_score REAL, overtime_seconds INTEGER,
-      started_at TEXT NOT NULL, finished_at TEXT
+      started_at TEXT NOT NULL, finished_at TEXT,
+      answers TEXT
     );
     CREATE TABLE IF NOT EXISTS teil_bundle_meta (
       format_id TEXT NOT NULL, part_id TEXT NOT NULL, version TEXT NOT NULL,
       PRIMARY KEY (format_id, part_id)
     );
   `);
+}
+
+// Reading module (S9): a finished attempt keeps its raw answers, only so a repeated submit can return
+// the same review. They never feed the error log or mastery.
+function migrateTeilAttemptAnswers(db: Database.Database): void {
+  const columns = db.prepare('PRAGMA table_info(teil_attempts)').all() as { name: string }[];
+  if (!columns.some((c) => c.name === 'answers')) db.exec('ALTER TABLE teil_attempts ADD COLUMN answers TEXT');
 }

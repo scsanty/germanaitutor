@@ -1,0 +1,96 @@
+{
+  "formatId": "telc-b1",
+  "partId": "lesen-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b1__lesen-3__s01",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Situation 1",
+            "Situation 2",
+            "Situation 3",
+            "Situation 4",
+            "Situation 5",
+            "Situation 6",
+            "Situation 7",
+            "Situation 8",
+            "Situation 9",
+            "Situation 10"
+          ],
+          "targets": [
+            "Anzeige a",
+            "Anzeige b",
+            "Anzeige c",
+            "Anzeige d",
+            "Anzeige e",
+            "Anzeige f",
+            "Anzeige g",
+            "Anzeige h",
+            "Anzeige i",
+            "Anzeige j",
+            "Anzeige k",
+            "Anzeige l"
+          ],
+          "answers": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            null
+          ],
+          "allowNone": true
+        },
+        "explanations": [
+          {
+            "en": "Fixture explanation 1.",
+            "de": "Fixture-Erklärung 1."
+          },
+          {
+            "en": "Fixture explanation 2.",
+            "de": "Fixture-Erklärung 2."
+          },
+          {
+            "en": "Fixture explanation 3.",
+            "de": "Fixture-Erklärung 3."
+          },
+          {
+            "en": "Fixture explanation 4.",
+            "de": "Fixture-Erklärung 4."
+          },
+          {
+            "en": "Fixture explanation 5.",
+            "de": "Fixture-Erklärung 5."
+          },
+          {
+            "en": "Fixture explanation 6.",
+            "de": "Fixture-Erklärung 6."
+          },
+          {
+            "en": "Fixture explanation 7.",
+            "de": "Fixture-Erklärung 7."
+          },
+          {
+            "en": "Fixture explanation 8.",
+            "de": "Fixture-Erklärung 8."
+          },
+          {
+            "en": "Fixture explanation 9.",
+            "de": "Fixture-Erklärung 9."
+          },
+          {
+            "en": "Fixture explanation 10.",
+            "de": "Fixture-Erklärung 10."
+          }
+        ]
+      }
+    }
+  ]
+}

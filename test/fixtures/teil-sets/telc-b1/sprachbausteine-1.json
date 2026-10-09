@@ -1,0 +1,150 @@
+{
+  "formatId": "telc-b1",
+  "partId": "sprachbausteine-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b1__sprachbausteine-1__s01",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Satz {{1}}. Satz {{2}}. Satz {{3}}. Satz {{4}}. Satz {{5}}. Satz {{6}}. Satz {{7}}. Satz {{8}}. Satz {{9}}. Satz {{10}}.",
+          "gaps": [
+            {
+              "mode": "select",
+              "options": [
+                "der",
+                "die",
+                "das"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "der",
+                "die",
+                "das"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "der",
+                "die",
+                "das"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "der",
+                "die",
+                "das"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "der",
+                "die",
+                "das"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "der",
+                "die",
+                "das"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "der",
+                "die",
+                "das"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "der",
+                "die",
+                "das"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "der",
+                "die",
+                "das"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "der",
+                "die",
+                "das"
+              ],
+              "correctIndex": 0
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Fixture explanation 1.",
+            "de": "Fixture-Erklärung 1."
+          },
+          {
+            "en": "Fixture explanation 2.",
+            "de": "Fixture-Erklärung 2."
+          },
+          {
+            "en": "Fixture explanation 3.",
+            "de": "Fixture-Erklärung 3."
+          },
+          {
+            "en": "Fixture explanation 4.",
+            "de": "Fixture-Erklärung 4."
+          },
+          {
+            "en": "Fixture explanation 5.",
+            "de": "Fixture-Erklärung 5."
+          },
+          {
+            "en": "Fixture explanation 6.",
+            "de": "Fixture-Erklärung 6."
+          },
+          {
+            "en": "Fixture explanation 7.",
+            "de": "Fixture-Erklärung 7."
+          },
+          {
+            "en": "Fixture explanation 8.",
+            "de": "Fixture-Erklärung 8."
+          },
+          {
+            "en": "Fixture explanation 9.",
+            "de": "Fixture-Erklärung 9."
+          },
+          {
+            "en": "Fixture explanation 10.",
+            "de": "Fixture-Erklärung 10."
+          }
+        ]
+      }
+    }
+  ]
+}
