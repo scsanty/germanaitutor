@@ -47,6 +47,11 @@
     "noReviews": "Heute ist nichts fällig.",
     "skillsTitle": "Fortschritt nach Fertigkeit",
     "ofTotal": "{done} von {total}",
+    "readinessTitle": "Prüfungsreife {format}",
+    "readinessOnTrack": "{percent} % · auf Kurs",
+    "readinessBelow": "{percent} % · unter 60 %",
+    "readinessOvertime": " · teils Zeitüberschreitung",
+    "readinessNone": "Noch nicht geübt",
     "skill": { "grammar": "Grammatik", "vocabulary": "Wortschatz", "reading": "Lesen", "listening": "Hören", "writing": "Schreiben", "speaking": "Sprechen" },
     "activity": "Aktivität (12 Wochen)",
     "activityCell": "{date}: {count, plural, one {# Antwort} other {# Antworten}}"

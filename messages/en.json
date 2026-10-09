@@ -47,6 +47,11 @@
     "noReviews": "No reviews due today.",
     "skillsTitle": "Progress by skill",
     "ofTotal": "{done} of {total}",
+    "readinessTitle": "{format} readiness",
+    "readinessOnTrack": "{percent}% · on track",
+    "readinessBelow": "{percent}% · below 60%",
+    "readinessOvertime": " · some overtime",
+    "readinessNone": "Not practised yet",
     "skill": { "grammar": "Grammar", "vocabulary": "Vocabulary", "reading": "Reading", "listening": "Listening", "writing": "Writing", "speaking": "Speaking" },
     "activity": "Activity (12 weeks)",
     "activityCell": "{date}: {count, plural, one {# answer} other {# answers}}"
