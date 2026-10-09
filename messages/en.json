@@ -489,7 +489,6 @@
     "rightAnswer": "Right answer: {answer}",
     "right": "Right",
     "wrong": "Wrong or unanswered",
-    "item": "Item {n}",
     "gap": "Gap {n}",
     "wordBank": "Words to use",
     "explanationLanguage": "Explanation language",
@@ -504,7 +503,7 @@
     "minutes": "{minutes} min",
     "lastScore": "Last time: {percent}%",
     "fullMock": "Full mock",
-    "fullMockBody": "All written parts with a runner, one after another, under one timer ({minutes} min).",
+    "fullMockBody": "All written parts available so far, one after another, under one timer ({minutes} min).",
     "comingSoon": "Coming with the {module} module",
     "modules": {
       "listening": "Listening",

@@ -3,6 +3,7 @@ import { screen, fireEvent } from '@testing-library/react';
 import { renderWithIntl } from '@/test/renderWithIntl';
 import { delayedResponse } from '@/test/delayedResponse';
 import { ShellProvider } from '@/components/shell/ShellContext';
+import { axe, expectNoViolations } from '@/test/axe';
 import { ExamPractice } from './ExamPractice';
 
 const LESEN_1 = {
@@ -78,6 +79,8 @@ describe('ExamPractice', () => {
     const lesen = (await screen.findByText('Leseverstehen Teil 1')).closest('[data-slot="card"]') as HTMLElement;
     const hoeren = screen.getByText('Hörverstehen Teil 1').closest('[data-slot="card"]') as HTMLElement;
     expect(lesen.querySelector('button')).toBeEnabled();
+    // Every card's button says "Practise"; the part title tells them apart.
+    expect(lesen.querySelector('button')).toHaveAccessibleDescription('Leseverstehen Teil 1');
     expect(hoeren).toHaveTextContent('Coming with the Listening module');
     expect(hoeren.querySelector('button')).toBeDisabled();
   });
@@ -107,9 +110,13 @@ describe('ExamPractice', () => {
   it('runs a full mock under one clock and shows the result against the pass ratio', async () => {
     const second = { ...RUN, attemptId: 4, part: { ...LESEN_1, id: 'lesen-2', title: { en: 'Reading Part 2', de: 'Leseverstehen Teil 2' } } };
     const mock = { mockId: 'm1', minutes: 40, runs: [RUN, second] };
+    const review = [
+      { index: 0, answerText: 'Text über Hunde', right: true, correct: 'Text über Hunde', explanation: { en: 'Dogs.', de: 'Hunde.' } },
+      { index: 1, answerText: '', right: false, correct: 'Text über Katzen', explanation: { en: 'Cats.', de: 'Katzen.' } },
+    ];
     const results = [
-      { attemptId: 3, score: 20, maxScore: 25, overtimeSeconds: 0, review: [] },
-      { attemptId: 4, score: 10, maxScore: 25, overtimeSeconds: 0, review: [] },
+      { attemptId: 3, score: 20, maxScore: 25, overtimeSeconds: 0, review },
+      { attemptId: 4, score: 10, maxScore: 25, overtimeSeconds: 0, review },
     ];
     let submits = 0;
     vi.stubGlobal('fetch', vi.fn((url: string) => {
@@ -117,15 +124,23 @@ describe('ExamPractice', () => {
       if (url === '/api/exam-practice/mock/start') return delayedResponse(mock);
       return delayedResponse(results[submits++]);
     }));
-    renderPractice();
+    const { container } = renderPractice();
     fireEvent.click(await screen.findByRole('button', { name: 'Full mock' }));
     expect(await screen.findByText('40:00')).toBeInTheDocument();
+    expect(screen.getByText('Part 1 of 2')).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: 'Leseverstehen Teil 1' })).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Submit' }));
     expect(await screen.findByRole('heading', { name: 'Leseverstehen Teil 2' })).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Submit' }));
     expect(await screen.findByText('Written exam: 30 of 50 points — passed')).toBeInTheDocument();
     expect(screen.getByText('Leseverstehen Teil 1: 20 of 25 points')).toBeInTheDocument();
+    // One review per part is in the DOM: their heading ids must not collide.
+    const ids = [...container.querySelectorAll('[id]')].map((el) => el.id);
+    expect(new Set(ids).size).toBe(ids.length);
+    const sections = [...container.querySelectorAll('section[aria-labelledby]')];
+    expect(sections.length).toBeGreaterThanOrEqual(3);
+    vi.useRealTimers();
+    expectNoViolations(await axe(container));
   });
 
   it('says so when the track and level have no format', async () => {

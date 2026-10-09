@@ -489,7 +489,6 @@
     "rightAnswer": "Richtige Antwort: {answer}",
     "right": "Richtig",
     "wrong": "Falsch oder unbeantwortet",
-    "item": "Aufgabe {n}",
     "gap": "Lücke {n}",
     "wordBank": "Wörter zur Auswahl",
     "explanationLanguage": "Sprache der Erklärung",
@@ -504,7 +503,7 @@
     "minutes": "{minutes} Min.",
     "lastScore": "Zuletzt: {percent} %",
     "fullMock": "Kompletter Modelltest",
-    "fullMockBody": "Alle schriftlichen Teile mit Runner nacheinander, mit einer gemeinsamen Zeit ({minutes} Min.).",
+    "fullMockBody": "Alle bisher verfügbaren schriftlichen Teile nacheinander, mit einer gemeinsamen Zeit ({minutes} Min.).",
     "comingSoon": "Kommt mit dem Modul {module}",
     "modules": {
       "listening": "Hören",

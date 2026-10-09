@@ -100,16 +100,18 @@ function AskAbout({ attemptId, itemIndex }: { attemptId: number; itemIndex: numb
 export function TeilReview({ result, run }: { result: PracticeResult; run: PracticeRun }) {
   const t = useTranslations('exam');
   const locale = useLocale() as ContentLanguage;
+  // Unique per review: the mock result renders several at once.
+  const headingId = useId();
   const [language, setLanguage] = useState<ContentLanguage>(locale);
   const toggle = result.review.some((r) => differsByLanguage(r.explanation));
   const none = run.part.taskType === 'matching';
   const shown = (text: string) => (text === '' ? t('unanswered') : none && text === 'x' ? t('none') : text);
 
   return (
-    <section aria-labelledby="teil-review" className="flex flex-col gap-4">
+    <section aria-labelledby={headingId} className="flex flex-col gap-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-col gap-1">
-          <h2 id="teil-review" lang="de" className="font-heading text-xl font-bold">
+          <h2 id={headingId} lang="de" className="font-heading text-xl font-bold">
             {run.part.title.de}
           </h2>
           <p className="text-lg font-semibold">

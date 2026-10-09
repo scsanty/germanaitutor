@@ -22,11 +22,15 @@ export function TeilRunner({
   onFinished,
   onExit,
   progress = null,
+  clockOffsetMs = 0,
 }: {
   run: PracticeRun;
   onFinished: (result: PracticeResult) => void;
   onExit?: () => void;
+  // In a mock: which part this is. Shown as "Part n of m" beside the title.
   progress?: { current: number; total: number } | null;
+  // Server clock minus client clock, measured when the run arrived (see useCountdown).
+  clockOffsetMs?: number;
 }) {
   const t = useTranslations('exam');
   const errorText = useApiErrorText();
@@ -36,7 +40,7 @@ export function TeilRunner({
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const submitting = useRef(false);
-  const { secondsLeft, overtime } = useCountdown(run.startedAt, run.minutes);
+  const { secondsLeft, overtime } = useCountdown(run.startedAt, run.minutes, clockOffsetMs);
   // A cloze is one flowing text with its gaps, so it isn't split into columns.
   const split = type !== 'cloze';
 
@@ -68,7 +72,10 @@ export function TeilRunner({
 
   const header = (
     <div className="flex min-w-0 flex-1 items-center justify-between gap-3">
-      <h1 lang="de" className="truncate font-heading text-base font-bold md:text-lg">{run.part.title.de}</h1>
+      <div className="flex min-w-0 flex-col">
+        <h1 lang="de" className="truncate font-heading text-base font-bold md:text-lg">{run.part.title.de}</h1>
+        {progress && <p className="text-xs text-text-muted">{t('mockPart', progress)}</p>}
+      </div>
       <div
         role="timer"
         aria-label={t('timer')}
@@ -93,12 +100,13 @@ export function TeilRunner({
     <TaskInputs type={type} view={run.set.view} value={answer} onChange={setAnswer} disabled={busy} pane={pane} />
   );
   // Desktop: both columns scroll on their own; phone: one pane at a time, switched by the bottom tabs.
-  const column = 'flex flex-col gap-4 lg:h-[calc(100dvh-10rem)] lg:overflow-y-auto lg:pr-2';
+  // The wide FocusLayout is one viewport tall on desktop; the grid takes what the header and footer leave.
+  const column = 'flex flex-col gap-4 lg:min-h-0 lg:overflow-y-auto lg:pr-2';
 
   return (
-    <FocusLayout progress={progress} confirmExit={answeredCount(answer) > 0} onExit={onExit ?? (() => window.history.back())} header={header} wide>
+    <FocusLayout progress={null} confirmExit={answeredCount(answer) > 0} onExit={onExit ?? (() => window.history.back())} header={header} wide>
       {split ? (
-        <div className="grid flex-1 gap-6 lg:grid-cols-2">
+        <div className="grid flex-1 gap-6 lg:min-h-0 lg:grid-cols-2 lg:grid-rows-[minmax(0,1fr)]">
           <section aria-label={t('textTab')} className={cn(column, tab !== 'text' && 'hidden lg:flex')}>
             {inputs('text')}
           </section>
@@ -108,7 +116,7 @@ export function TeilRunner({
           </section>
         </div>
       ) : (
-        <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-4">
+        <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-4 lg:min-h-0 lg:overflow-y-auto">
           {instructions}
           {inputs('all')}
         </div>

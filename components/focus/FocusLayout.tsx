@@ -53,7 +53,7 @@ export function FocusLayout({
   useExerciseShortcuts({ onEscape: asking ? undefined : requestExit });
 
   return (
-    <div className={cn('mx-auto flex min-h-dvh flex-col px-4', wide ? 'max-w-6xl' : 'max-w-2xl')}>
+    <div className={cn('mx-auto flex min-h-dvh flex-col px-4', wide ? 'max-w-6xl lg:h-dvh' : 'max-w-2xl')}>
       <div className="sticky top-0 z-10 flex items-center gap-3 bg-background py-3">
         <Button variant="ghost" size="icon" aria-label={t('leave')} onClick={requestExit}>
           <X aria-hidden />
@@ -67,7 +67,7 @@ export function FocusLayout({
         )}
         {header}
       </div>
-      <div className="flex flex-1 flex-col pb-6">{children}</div>
+      <div className={cn('flex flex-1 flex-col pb-6', wide && 'lg:min-h-0 lg:pb-2')}>{children}</div>
       <AlertDialog open={asking} onOpenChange={setAsking}>
         <AlertDialogContent>
           <AlertDialogTitle>{t('leaveTitle')}</AlertDialogTitle>{' '}

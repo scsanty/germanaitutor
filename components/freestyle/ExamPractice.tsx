@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { ArrowLeft, ClipboardCheck } from 'lucide-react';
 import { TeilReview } from '@/components/exam/TeilReview';
@@ -17,9 +17,9 @@ import { MockResult } from './MockResult';
 
 type Screen =
   | { kind: 'overview' }
-  | { kind: 'run'; run: PracticeRun }
+  | { kind: 'run'; run: PracticeRun; offsetMs: number }
   | { kind: 'review'; run: PracticeRun; result: PracticeResult }
-  | { kind: 'mock'; mock: MockRun; index: number; results: PracticeResult[] }
+  | { kind: 'mock'; mock: MockRun; index: number; results: PracticeResult[]; offsetMs: number }
   | { kind: 'mockResult'; mock: MockRun; results: PracticeResult[] };
 
 const MODULE_OF: Partial<Record<ExamPart['skill'], 'listening' | 'writing' | 'speaking'>> = {
@@ -30,6 +30,9 @@ const MODULE_OF: Partial<Record<ExamPart['skill'], 'listening' | 'writing' | 'sp
 
 // Spec: Freestyle's exam practice. Single Teile against the clock, or a full mock of the written
 // parts under one timer. Works without AI (S11): only "Ask about this" and pool generation need it.
+
+// The server stamps startedAt just before it answers, so this is (about) server minus client clock.
+const offsetOf = (startedAt: string) => Date.parse(startedAt) - Date.now();
 export function ExamPractice() {
   const t = useTranslations('exam');
   const locale = useLocale() as ContentLanguage;
@@ -41,6 +44,7 @@ export function ExamPractice() {
   const [starting, setStarting] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const startGuard = useRef(false);
+  const cardId = useId();
 
   useEffect(() => {
     let stale = false;
@@ -87,10 +91,10 @@ export function ExamPractice() {
   }
 
   if (screen.kind === 'run') {
-    return <TeilRunner key={screen.run.attemptId} run={screen.run} onExit={back} onFinished={(result) => setScreen({ kind: 'review', run: screen.run, result })} />;
+    return <TeilRunner key={screen.run.attemptId} run={screen.run} clockOffsetMs={screen.offsetMs} onExit={back} onFinished={(result) => setScreen({ kind: 'review', run: screen.run, result })} />;
   }
   if (screen.kind === 'mock') {
-    const { mock, index, results } = screen;
+    const { mock, index, results, offsetMs } = screen;
     const run = mock.runs[index];
     return (
       <TeilRunner
@@ -98,10 +102,11 @@ export function ExamPractice() {
         // The mock has one clock: the shared start and the sum of its parts' minutes.
         run={{ ...run, minutes: mock.minutes }}
         progress={{ current: index + 1, total: mock.runs.length }}
+        clockOffsetMs={offsetMs}
         onExit={back}
         onFinished={(result) => {
           const all = [...results, result];
-          setScreen(index + 1 < mock.runs.length ? { kind: 'mock', mock, index: index + 1, results: all } : { kind: 'mockResult', mock, results: all });
+          setScreen(index + 1 < mock.runs.length ? { kind: 'mock', mock, index: index + 1, results: all, offsetMs } : { kind: 'mockResult', mock, results: all });
         }}
       />
     );
@@ -182,7 +187,10 @@ export function ExamPractice() {
           <Button
             className="min-h-11"
             disabled={starting !== null}
-            onClick={() => start('mock', '/api/exam-practice/mock/start', { formatId: format.id }, (data) => setScreen({ kind: 'mock', mock: data as MockRun, index: 0, results: [] }))}
+            onClick={() => start('mock', '/api/exam-practice/mock/start', { formatId: format.id }, (data) => {
+              const mock = data as MockRun;
+              setScreen({ kind: 'mock', mock, index: 0, results: [], offsetMs: offsetOf(mock.runs[0]?.startedAt ?? '') || 0 });
+            })}
           >
             {starting === 'mock' ? t('starting') : t('fullMock')}
           </Button>
@@ -197,7 +205,7 @@ export function ExamPractice() {
               <Card className="flex-row items-center gap-4 px-5 py-4">
                 <div className="flex flex-1 flex-col gap-1">
                   {/* Part names are the exam's own (German); the English one follows when it differs. */}
-                  <h2 lang="de" className="font-semibold">{part.title.de}</h2>
+                  <h2 id={`${cardId}-${part.id}`} lang="de" className="font-semibold">{part.title.de}</h2>
                   {locale === 'en' && part.title.en !== part.title.de && <p className="text-sm text-text-muted">{part.title.en}</p>}
                   <p className="text-sm text-text-muted">
                     {t('minutes', { minutes: part.minutes })}
@@ -207,9 +215,13 @@ export function ExamPractice() {
                 </div>
                 <Button
                   variant="outline"
+                  aria-describedby={`${cardId}-${part.id}`}
                   className="min-h-11"
                   disabled={!runnable || starting !== null}
-                  onClick={() => start(part.id, '/api/exam-practice/start', { formatId: format.id, partId: part.id }, (data) => setScreen({ kind: 'run', run: data as PracticeRun }))}
+                  onClick={() => start(part.id, '/api/exam-practice/start', { formatId: format.id, partId: part.id }, (data) => {
+                    const run = data as PracticeRun;
+                    setScreen({ kind: 'run', run, offsetMs: offsetOf(run.startedAt) || 0 });
+                  })}
                 >
                   {starting === part.id ? t('starting') : t('practise')}
                 </Button>
