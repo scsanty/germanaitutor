@@ -1,0 +1,24 @@
+{
+  "id": "telc-c1",
+  "track": "telc",
+  "level": "C1",
+  "name": "telc Deutsch C1",
+  "sources": ["https://www.telc.net/pruefungsteilnehmende/sprachpruefungen/pruefungen/detail/telc-deutsch-c1.html"],
+  "blocks": [
+    { "id": "written", "title": { "en": "Written exam", "de": "Schriftliche Prüfung" }, "minutes": 200, "partIds": ["lesen-1", "lesen-2", "lesen-3", "sprachbausteine", "hoeren-1", "hoeren-2", "hoeren-3", "schreiben"], "passRatio": 0.6 },
+    { "id": "oral", "title": { "en": "Oral exam", "de": "Mündliche Prüfung" }, "minutes": 16, "partIds": ["sprechen-1", "sprechen-2", "sprechen-3"], "passRatio": 0.6 }
+  ],
+  "parts": [
+    { "id": "lesen-1", "skill": "reading", "title": { "en": "Reading Part 1", "de": "Leseverstehen Teil 1" }, "taskType": "matching", "items": 6, "points": 12, "minutes": 20, "instructions": "Globalverstehen: Lesen Sie den Text und die Überschriften a–h. Welche Überschrift passt zu welchem Abschnitt 1–6? Sie können jede Überschrift nur einmal verwenden. Zwei Überschriften bleiben übrig." },
+    { "id": "lesen-2", "skill": "reading", "title": { "en": "Reading Part 2", "de": "Leseverstehen Teil 2" }, "taskType": "passage_questions", "items": 6, "points": 12, "minutes": 25, "instructions": "Detailverstehen: Lesen Sie den Text und die Aufgaben 7–12. Welche Lösung (a, b oder c) ist jeweils richtig?" },
+    { "id": "lesen-3", "skill": "reading", "title": { "en": "Reading Part 3", "de": "Leseverstehen Teil 3" }, "taskType": "matching", "items": 12, "points": 24, "minutes": 25, "instructions": "Selektives Verstehen: Lesen Sie die Aussagen 13–24 und die Texte A–D. In welchem Text finden Sie die Information? Sie können jeden Text mehrmals verwenden." },
+    { "id": "sprachbausteine", "skill": "sprachbausteine", "title": { "en": "Language elements", "de": "Sprachbausteine" }, "taskType": "cloze", "items": 22, "points": 22, "minutes": 20, "instructions": "Lesen Sie den Text und entscheiden Sie, welches Wort (a, b, c oder d) in die Lücken 25–46 passt." },
+    { "id": "hoeren-1", "skill": "listening", "title": { "en": "Listening Part 1", "de": "Hörverstehen Teil 1" }, "taskType": "audio_questions", "items": 8, "points": 16, "minutes": 12, "instructions": "Globalverstehen: Sie hören jetzt acht kurze Äußerungen. Sie hören jede Äußerung nur einmal. Welche Aussage a–j passt zu welcher Äußerung?", "replays": 1 },
+    { "id": "hoeren-2", "skill": "listening", "title": { "en": "Listening Part 2", "de": "Hörverstehen Teil 2" }, "taskType": "audio_questions", "items": 10, "points": 20, "minutes": 16, "instructions": "Detailverstehen: Sie hören jetzt ein Interview. Sie hören das Interview zweimal. Welche Lösung (a, b oder c) ist jeweils richtig?", "replays": 2 },
+    { "id": "hoeren-3", "skill": "listening", "title": { "en": "Listening Part 3", "de": "Hörverstehen Teil 3" }, "taskType": "audio_questions", "items": 6, "points": 12, "minutes": 12, "instructions": "Selektives Verstehen: Sie hören jetzt einen Vortrag. Sie hören den Vortrag nur einmal. Ergänzen Sie die Notizen in Stichworten.", "replays": 1 },
+    { "id": "schreiben", "skill": "writing", "title": { "en": "Writing", "de": "Schriftlicher Ausdruck" }, "taskType": "letter", "items": 4, "points": 48, "minutes": 70, "instructions": "Wählen Sie eines der beiden Themen. Schreiben Sie einen zusammenhängenden Text (ca. 350 Wörter), in dem Sie die Leitpunkte behandeln, Ihre Meinung begründen und zu einem Schluss kommen." },
+    { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Mündlicher Ausdruck Teil 1" }, "taskType": "spoken", "items": 3, "points": 18, "minutes": 6, "instructions": "Präsentation: Halten Sie eine kurze Präsentation (ca. 3 Minuten) zu dem Thema, das Sie vorbereitet haben." },
+    { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Mündlicher Ausdruck Teil 2" }, "taskType": "spoken", "items": 2, "points": 6, "minutes": 2, "instructions": "Zusammenfassung: Fassen Sie die Präsentation Ihres Partners / Ihrer Partnerin kurz zusammen und stellen Sie eine Frage dazu." },
+    { "id": "sprechen-3", "skill": "speaking", "title": { "en": "Speaking Part 3", "de": "Mündlicher Ausdruck Teil 3" }, "taskType": "spoken", "items": 3, "points": 24, "minutes": 8, "instructions": "Diskussion: Diskutieren Sie mit Ihrem Partner / Ihrer Partnerin über die Aussage auf dem Aufgabenblatt. Begründen Sie Ihre Position und gehen Sie auf die Argumente Ihres Partners / Ihrer Partnerin ein." }
+  ]
+}

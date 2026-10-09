@@ -1,0 +1,24 @@
+{
+  "id": "telc-a1",
+  "track": "telc",
+  "level": "A1",
+  "name": "telc Deutsch A1 – Start Deutsch 1",
+  "sources": ["https://www.telc.net/pruefungsteilnehmende/sprachpruefungen/pruefungen/detail/start-deutsch-1.html"],
+  "blocks": [
+    { "id": "written", "title": { "en": "Written exam", "de": "Schriftliche Prüfung" }, "minutes": 65, "partIds": ["hoeren-1", "hoeren-2", "hoeren-3", "lesen-1", "lesen-2", "lesen-3", "schreiben-1", "schreiben-2"], "passRatio": 0.6 },
+    { "id": "oral", "title": { "en": "Oral exam", "de": "Mündliche Prüfung" }, "minutes": 15, "partIds": ["sprechen-1", "sprechen-2", "sprechen-3"], "passRatio": 0.6 }
+  ],
+  "parts": [
+    { "id": "hoeren-1", "skill": "listening", "title": { "en": "Listening Part 1", "de": "Hören Teil 1" }, "taskType": "audio_questions", "items": 6, "points": 6, "minutes": 8, "instructions": "Sie hören sechs kurze Gespräche. Sie hören jeden Text zweimal. Kreuzen Sie bei jeder Aufgabe die richtige Lösung an: a, b oder c.", "replays": 2 },
+    { "id": "hoeren-2", "skill": "listening", "title": { "en": "Listening Part 2", "de": "Hören Teil 2" }, "taskType": "audio_questions", "items": 4, "points": 4, "minutes": 5, "instructions": "Sie hören vier Durchsagen. Sie hören jeden Text einmal. Kreuzen Sie an: Richtig oder Falsch.", "replays": 1 },
+    { "id": "hoeren-3", "skill": "listening", "title": { "en": "Listening Part 3", "de": "Hören Teil 3" }, "taskType": "audio_questions", "items": 5, "points": 5, "minutes": 7, "instructions": "Sie hören fünf Ansagen am Telefon. Sie hören jeden Text zweimal. Kreuzen Sie bei jeder Aufgabe die richtige Lösung an: a, b oder c.", "replays": 2 },
+    { "id": "lesen-1", "skill": "reading", "title": { "en": "Reading Part 1", "de": "Lesen Teil 1" }, "taskType": "passage_questions", "items": 5, "points": 5, "minutes": 8, "instructions": "Lesen Sie die zwei Texte und die Aufgaben 1 bis 5. Kreuzen Sie an: Richtig oder Falsch." },
+    { "id": "lesen-2", "skill": "reading", "title": { "en": "Reading Part 2", "de": "Lesen Teil 2" }, "taskType": "passage_questions", "items": 5, "points": 5, "minutes": 9, "instructions": "Lesen Sie die Texte und die Aufgaben 6 bis 10. Wo finden Sie Informationen? Kreuzen Sie an: a oder b." },
+    { "id": "lesen-3", "skill": "reading", "title": { "en": "Reading Part 3", "de": "Lesen Teil 3" }, "taskType": "passage_questions", "items": 5, "points": 5, "minutes": 8, "instructions": "Lesen Sie die Texte und die Aufgaben 11 bis 15. Kreuzen Sie an: Richtig oder Falsch." },
+    { "id": "schreiben-1", "skill": "writing", "title": { "en": "Writing Part 1", "de": "Schreiben Teil 1" }, "taskType": "letter", "items": 5, "points": 5, "minutes": 7, "instructions": "Füllen Sie das Formular aus. Im Formular fehlen fünf Informationen. Schreiben Sie die fehlenden Informationen in die Felder 1 bis 5." },
+    { "id": "schreiben-2", "skill": "writing", "title": { "en": "Writing Part 2", "de": "Schreiben Teil 2" }, "taskType": "letter", "items": 3, "points": 10, "minutes": 13, "instructions": "Schreiben Sie eine kurze Mitteilung (ca. 30 Wörter). Schreiben Sie zu jedem der drei Punkte ein bis zwei Sätze. Vergessen Sie nicht die Anrede und den Gruß." },
+    { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Sprechen Teil 1" }, "taskType": "spoken", "items": 1, "points": 3, "minutes": 3, "instructions": "Sich vorstellen: Stellen Sie sich vor. Sprechen Sie über Name, Alter, Land, Wohnort, Sprachen, Beruf und Hobby. Buchstabieren Sie danach ein Wort und nennen Sie eine Zahl." },
+    { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Sprechen Teil 2" }, "taskType": "spoken", "items": 2, "points": 6, "minutes": 6, "instructions": "Um Informationen bitten und Informationen geben: Ziehen Sie eine Karte, stellen Sie eine Frage zum Thema und antworten Sie auf die Frage Ihres Partners / Ihrer Partnerin." },
+    { "id": "sprechen-3", "skill": "speaking", "title": { "en": "Speaking Part 3", "de": "Sprechen Teil 3" }, "taskType": "spoken", "items": 2, "points": 6, "minutes": 6, "instructions": "Bitten formulieren und darauf reagieren: Ziehen Sie eine Karte, formulieren Sie eine Bitte und reagieren Sie auf die Bitte Ihres Partners / Ihrer Partnerin." }
+  ]
+}

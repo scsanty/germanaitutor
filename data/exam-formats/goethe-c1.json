@@ -1,0 +1,24 @@
+{
+  "id": "goethe-c1",
+  "track": "goethe",
+  "level": "C1",
+  "name": "Goethe-Zertifikat C1",
+  "sources": ["https://www.goethe.de/de/spr/kup/prf/prf/gzc1.html", "https://www.goethe.de/de/spr/kup/prf/prf/gzc1/ueb.html"],
+  "blocks": [
+    { "id": "written", "title": { "en": "Written exam", "de": "Schriftliche Prüfung" }, "minutes": 185, "partIds": ["lesen-1", "lesen-2", "lesen-3", "lesen-4", "hoeren-1", "hoeren-2", "hoeren-3", "schreiben-1", "schreiben-2"], "passRatio": 0.6 },
+    { "id": "oral", "title": { "en": "Oral exam", "de": "Mündliche Prüfung" }, "minutes": 15, "partIds": ["sprechen-1", "sprechen-2"], "passRatio": 0.6 }
+  ],
+  "parts": [
+    { "id": "lesen-1", "skill": "reading", "title": { "en": "Reading Part 1", "de": "Lesen Teil 1" }, "taskType": "cloze", "items": 10, "points": 33.33, "minutes": 12, "instructions": "Lesen Sie den Text. Welches Wort (a, b, c oder d) passt in die Lücken 1 bis 10?" },
+    { "id": "lesen-2", "skill": "reading", "title": { "en": "Reading Part 2", "de": "Lesen Teil 2" }, "taskType": "passage_questions", "items": 6, "points": 20, "minutes": 18, "instructions": "Lesen Sie den Text und die Aufgaben 11 bis 16. Welche Lösung (a, b oder c) ist richtig?" },
+    { "id": "lesen-3", "skill": "reading", "title": { "en": "Reading Part 3", "de": "Lesen Teil 3" }, "taskType": "matching", "items": 8, "points": 26.67, "minutes": 18, "instructions": "Lesen Sie die Texte A bis D und die Aussagen 17 bis 24. Welche Aussage passt zu welchem Text? Sie können jeden Text mehrmals verwenden." },
+    { "id": "lesen-4", "skill": "reading", "title": { "en": "Reading Part 4", "de": "Lesen Teil 4" }, "taskType": "cloze", "items": 6, "points": 20, "minutes": 17, "instructions": "Lesen Sie den Text. Im Text fehlen sechs Sätze. Welcher Satz (a bis h) passt in welche Lücke 25 bis 30? Zwei Sätze passen nicht." },
+    { "id": "hoeren-1", "skill": "listening", "title": { "en": "Listening Part 1", "de": "Hören Teil 1" }, "taskType": "audio_questions", "items": 10, "points": 33.33, "minutes": 12, "instructions": "Sie hören ein Gespräch. Sie hören den Text einmal. Ergänzen Sie die Notizen in Stichworten.", "replays": 1 },
+    { "id": "hoeren-2", "skill": "listening", "title": { "en": "Listening Part 2", "de": "Hören Teil 2" }, "taskType": "audio_questions", "items": 10, "points": 33.33, "minutes": 14, "instructions": "Sie hören fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben. Welche Lösung (a, b oder c) ist richtig?", "replays": 2 },
+    { "id": "hoeren-3", "skill": "listening", "title": { "en": "Listening Part 3", "de": "Hören Teil 3" }, "taskType": "audio_questions", "items": 10, "points": 33.34, "minutes": 14, "instructions": "Sie hören einen Vortrag. Sie hören den Text einmal. Welche Lösung (a, b oder c) ist richtig?", "replays": 1 },
+    { "id": "schreiben-1", "skill": "writing", "title": { "en": "Writing Part 1", "de": "Schreiben Teil 1" }, "taskType": "letter", "items": 4, "points": 60, "minutes": 50, "instructions": "Schreiben Sie einen Forumsbeitrag (ca. 230 Wörter). Wählen Sie drei der vier Punkte, nehmen Sie begründet Stellung und kommen Sie zu einem Schluss." },
+    { "id": "schreiben-2", "skill": "writing", "title": { "en": "Writing Part 2", "de": "Schreiben Teil 2" }, "taskType": "letter", "items": 4, "points": 40, "minutes": 30, "instructions": "Schreiben Sie eine formelle E-Mail (ca. 120 Wörter). Behandeln Sie alle Punkte und achten Sie auf einen angemessenen Stil." },
+    { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Sprechen Teil 1" }, "taskType": "spoken", "items": 4, "points": 50, "minutes": 10, "instructions": "Vortrag halten: Halten Sie einen Vortrag (ca. 3–4 Minuten) zu dem gewählten Thema. Beantworten Sie danach die Fragen Ihres Partners / Ihrer Partnerin." },
+    { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Sprechen Teil 2" }, "taskType": "spoken", "items": 4, "points": 50, "minutes": 5, "instructions": "Diskussion führen: Diskutieren Sie mit Ihrem Partner / Ihrer Partnerin über die Frage. Tauschen Sie Argumente aus, reagieren Sie auf Ihren Partner / Ihre Partnerin und versuchen Sie, zu einem Ergebnis zu kommen." }
+  ]
+}

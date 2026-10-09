@@ -1,0 +1,26 @@
+{
+  "id": "goethe-b2",
+  "track": "goethe",
+  "level": "B2",
+  "name": "Goethe-Zertifikat B2",
+  "sources": ["https://www.goethe.de/de/spr/kup/prf/prf/gzb2.html", "https://www.goethe.de/de/spr/kup/prf/prf/gzb2/ueb.html"],
+  "blocks": [
+    { "id": "written", "title": { "en": "Written exam", "de": "Schriftliche Prüfung" }, "minutes": 180, "partIds": ["lesen-1", "lesen-2", "lesen-3", "lesen-4", "lesen-5", "hoeren-1", "hoeren-2", "hoeren-3", "hoeren-4", "schreiben-1", "schreiben-2"], "passRatio": 0.6 },
+    { "id": "oral", "title": { "en": "Oral exam", "de": "Mündliche Prüfung" }, "minutes": 15, "partIds": ["sprechen-1", "sprechen-2"], "passRatio": 0.6 }
+  ],
+  "parts": [
+    { "id": "lesen-1", "skill": "reading", "title": { "en": "Reading Part 1", "de": "Lesen Teil 1" }, "taskType": "matching", "items": 9, "points": 30, "minutes": 18, "instructions": "Lesen Sie die Texte a bis d und die Aussagen 1 bis 9. Zu welcher Person passt welche Aussage? Sie können jede Person mehrmals wählen." },
+    { "id": "lesen-2", "skill": "reading", "title": { "en": "Reading Part 2", "de": "Lesen Teil 2" }, "taskType": "cloze", "items": 6, "points": 20, "minutes": 12, "instructions": "Lesen Sie den Text. Im Text fehlen sechs Sätze. Welcher Satz (a bis h) passt in welche Lücke? Zwei Sätze passen nicht." },
+    { "id": "lesen-3", "skill": "reading", "title": { "en": "Reading Part 3", "de": "Lesen Teil 3" }, "taskType": "passage_questions", "items": 6, "points": 20, "minutes": 15, "instructions": "Lesen Sie den Text und die Aufgaben 16 bis 21. Welche Lösung (a, b oder c) ist richtig?" },
+    { "id": "lesen-4", "skill": "reading", "title": { "en": "Reading Part 4", "de": "Lesen Teil 4" }, "taskType": "matching", "items": 6, "points": 20, "minutes": 12, "instructions": "Lesen Sie die Meinungen a bis h und die Aussagen 22 bis 27. Welche Meinung passt zu welcher Aussage? Sie können jede Meinung nur einmal verwenden. Für eine Aussage gibt es keine passende Meinung; markieren Sie dann x." },
+    { "id": "lesen-5", "skill": "reading", "title": { "en": "Reading Part 5", "de": "Lesen Teil 5" }, "taskType": "matching", "items": 3, "points": 10, "minutes": 8, "instructions": "Lesen Sie den Text und die Überschriften a bis f. Welche Überschrift passt zu welchem Abschnitt 28 bis 30? Sie können jede Überschrift nur einmal verwenden." },
+    { "id": "hoeren-1", "skill": "listening", "title": { "en": "Listening Part 1", "de": "Hören Teil 1" }, "taskType": "audio_questions", "items": 10, "points": 33.33, "minutes": 12, "instructions": "Sie hören fünf kurze Texte. Sie hören jeden Text einmal. Zu jedem Text lösen Sie zwei Aufgaben: Richtig oder Falsch, und a, b oder c.", "replays": 1 },
+    { "id": "hoeren-2", "skill": "listening", "title": { "en": "Listening Part 2", "de": "Hören Teil 2" }, "taskType": "audio_questions", "items": 6, "points": 20, "minutes": 9, "instructions": "Sie hören ein Interview. Sie hören den Text zweimal. Welche Lösung (a, b oder c) ist richtig?", "replays": 2 },
+    { "id": "hoeren-3", "skill": "listening", "title": { "en": "Listening Part 3", "de": "Hören Teil 3" }, "taskType": "audio_questions", "items": 6, "points": 20, "minutes": 7, "instructions": "Sie hören ein Gespräch im Radio. Sie hören den Text einmal. Wer sagt was? Ordnen Sie die Aussagen zu: Moderator/in, Gast 1 oder Gast 2.", "replays": 1 },
+    { "id": "hoeren-4", "skill": "listening", "title": { "en": "Listening Part 4", "de": "Hören Teil 4" }, "taskType": "audio_questions", "items": 8, "points": 26.67, "minutes": 12, "instructions": "Sie hören einen Vortrag. Sie hören den Text zweimal. Welche Lösung (a, b oder c) ist richtig?", "replays": 2 },
+    { "id": "schreiben-1", "skill": "writing", "title": { "en": "Writing Part 1", "de": "Schreiben Teil 1" }, "taskType": "letter", "items": 4, "points": 60, "minutes": 50, "instructions": "Schreiben Sie einen Forumsbeitrag (ca. 150 Wörter). Äußern Sie Ihre Meinung zum Thema, nennen Sie Gründe und Beispiele und behandeln Sie die vier Punkte in einer sinnvollen Reihenfolge." },
+    { "id": "schreiben-2", "skill": "writing", "title": { "en": "Writing Part 2", "de": "Schreiben Teil 2" }, "taskType": "letter", "items": 4, "points": 40, "minutes": 25, "instructions": "Schreiben Sie eine formelle E-Mail oder Nachricht (ca. 100 Wörter). Behandeln Sie alle vier Punkte und denken Sie an Anrede und Gruß." },
+    { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Sprechen Teil 1" }, "taskType": "spoken", "items": 4, "points": 50, "minutes": 10, "instructions": "Vortrag halten: Wählen Sie ein Thema und halten Sie einen kurzen Vortrag (ca. 4 Minuten). Beantworten Sie danach die Frage Ihres Partners / Ihrer Partnerin." },
+    { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Sprechen Teil 2" }, "taskType": "spoken", "items": 4, "points": 50, "minutes": 5, "instructions": "Diskussion führen: Diskutieren Sie mit Ihrem Partner / Ihrer Partnerin über die Frage auf dem Aufgabenblatt. Begründen Sie Ihre Meinung und gehen Sie auf die Argumente ein." }
+  ]
+}
