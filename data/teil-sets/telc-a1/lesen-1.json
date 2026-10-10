@@ -1,0 +1,226 @@
+{
+  "formatId": "telc-a1",
+  "partId": "lesen-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-a1__lesen-1__s01",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Text 1\n\nLiebe Maria,\nvielen Dank für deine Einladung! Ich komme gern am Samstag zu deiner Geburtstagsparty. Aber ich kann erst um acht Uhr kommen, denn ich arbeite bis sieben. Mein Bruder Tom ist am Wochenende bei mir. Kann er auch mitkommen? Er tanzt sehr gern. Was möchtest du zum Geburtstag haben? Bitte schreib mir bald.\nViele Grüße\nJulia\n\nText 2\n\nLieber Herr Schneider,\nich bin heute nicht im Büro, mein Sohn ist krank. Morgen bin ich wieder da. Die Briefe für Frau Keller liegen auf meinem Schreibtisch. Bitte bringen Sie die Briefe heute noch zur Post. Und bitte rufen Sie um 14 Uhr Herrn Wolf an. Er wartet auf eine Antwort. Seine Nummer ist 0341 55672.\nDanke!\nPetra Lange",
+          "questions": [
+            {
+              "question": "Julia kommt am Samstag zu Marias Party.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Julia kann schon um sieben Uhr bei Maria sein.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Frau Lange ist heute krank.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Herr Schneider soll die Briefe zur Post bringen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Herr Wolf ruft um 14 Uhr bei Herrn Schneider an.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Julia writes: \"Ich komme gern am Samstag zu deiner Geburtstagsparty.\"",
+            "de": "Julia schreibt: „Ich komme gern am Samstag zu deiner Geburtstagsparty.“ Das ist richtig."
+          },
+          {
+            "en": "Julia works until seven: \"ich kann erst um acht Uhr kommen, denn ich arbeite bis sieben.\" She arrives at eight at the earliest.",
+            "de": "Julia arbeitet bis sieben Uhr. Sie schreibt: „Ich kann erst um acht Uhr kommen.“ Das ist falsch."
+          },
+          {
+            "en": "It is her son who is ill: \"mein Sohn ist krank.\" Ms Lange stays at home because of him.",
+            "de": "Nicht Frau Lange ist krank, sondern ihr Sohn: „mein Sohn ist krank.“ Das ist falsch."
+          },
+          {
+            "en": "Ms Lange asks him: \"Bitte bringen Sie die Briefe heute noch zur Post.\"",
+            "de": "Frau Lange schreibt: „Bitte bringen Sie die Briefe heute noch zur Post.“ Das ist richtig."
+          },
+          {
+            "en": "It is the other way round: Mr Schneider should call Mr Wolf: \"bitte rufen Sie um 14 Uhr Herrn Wolf an.\"",
+            "de": "Herr Schneider soll Herrn Wolf anrufen: „bitte rufen Sie um 14 Uhr Herrn Wolf an.“ Herr Wolf ruft nicht an. Das ist falsch."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a1__lesen-1__s02",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Text 1\n\nHallo Ben,\nich bin jetzt in Hamburg! Die Wohnung ist klein, aber schön, und sie ist ganz nah am Bahnhof. Ich habe zwei Zimmer, eine Küche und ein Bad. Leider gibt es keinen Balkon. Am Montag beginnt mein Deutschkurs. Der Kurs ist jeden Tag von neun bis zwölf Uhr. Kommst du mich im Mai besuchen?\nLiebe Grüße\nSofia\n\nText 2\n\nLiebe Eltern der Klasse 2b,\nam Freitag, 14. Juni, machen wir einen Ausflug in den Zoo. Wir fahren um 8:30 Uhr mit dem Bus an der Schule ab und sind um 15 Uhr wieder zurück. Bitte geben Sie Ihrem Kind ein Mittagessen und etwas zu trinken mit. Der Eintritt kostet 4 Euro. Bitte geben Sie das Geld bis Mittwoch bei mir ab.\nViele Grüße\nKarin Vogt, Klassenlehrerin",
+          "questions": [
+            {
+              "question": "Sofias Wohnung hat einen Balkon.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Sofia hat am Vormittag Deutschkurs.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Die Kinder fahren mit dem Zug in den Zoo.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Die Kinder sollen Essen und Trinken mitbringen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Die Lehrerin bekommt das Geld für den Eintritt bis Mittwoch.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Sofia writes: \"Leider gibt es keinen Balkon.\"",
+            "de": "Sofia schreibt: „Leider gibt es keinen Balkon.“ Das ist falsch."
+          },
+          {
+            "en": "The course is \"jeden Tag von neun bis zwölf Uhr\", which is in the morning.",
+            "de": "Der Kurs ist „jeden Tag von neun bis zwölf Uhr“. Das ist am Vormittag. Das ist richtig."
+          },
+          {
+            "en": "They travel by bus: \"Wir fahren um 8:30 Uhr mit dem Bus an der Schule ab.\"",
+            "de": "Die Klasse fährt mit dem Bus: „Wir fahren um 8:30 Uhr mit dem Bus an der Schule ab.“ Das ist falsch."
+          },
+          {
+            "en": "The teacher asks: \"Bitte geben Sie Ihrem Kind ein Mittagessen und etwas zu trinken mit.\"",
+            "de": "Die Lehrerin schreibt: „Bitte geben Sie Ihrem Kind ein Mittagessen und etwas zu trinken mit.“ Das ist richtig."
+          },
+          {
+            "en": "Ms Vogt is the class teacher, and she writes: \"Bitte geben Sie das Geld bis Mittwoch bei mir ab.\"",
+            "de": "Frau Vogt ist die Lehrerin. Sie schreibt: „Bitte geben Sie das Geld bis Mittwoch bei mir ab.“ Das ist richtig."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a1__lesen-1__s03",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Text 1\n\nLiebe Frau Yilmaz,\nich fahre morgen für eine Woche zu meiner Schwester nach Wien. Können Sie bitte meine Blumen gießen? Der Schlüssel ist bei Familie Braun im zweiten Stock. Meine Katze ist nicht hier, sie ist bei meiner Tochter. Am Samstag bin ich wieder zu Hause. Vielen Dank!\nHerzliche Grüße\nIhre Nachbarin Gerda Hoffmann\n\nText 2\n\nHallo Lukas,\nam Sonntag spiele ich mit Freunden Fußball im Park. Hast du auch Zeit? Wir treffen uns um elf Uhr am Eingang beim Café. Danach wollen wir zusammen grillen. Bring bitte etwas zu essen mit, Getränke haben wir schon. Wenn es regnet, spielen wir nicht. Dann gehen wir ins Kino.\nBis Sonntag!\nDaniel",
+          "questions": [
+            {
+              "question": "Frau Hoffmann besucht ihre Schwester.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Frau Yilmaz soll die Katze füttern.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Daniel und seine Freunde treffen sich beim Café.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Lukas soll Getränke mitbringen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Wenn es regnet, gehen die Freunde ins Kino.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "She writes: \"ich fahre morgen für eine Woche zu meiner Schwester nach Wien.\"",
+            "de": "Frau Hoffmann schreibt: „ich fahre morgen für eine Woche zu meiner Schwester nach Wien.“ Das ist richtig."
+          },
+          {
+            "en": "She should water the flowers. The cat is not there: \"Meine Katze ist nicht hier, sie ist bei meiner Tochter.\"",
+            "de": "Frau Yilmaz soll die Blumen gießen. Die Katze ist bei der Tochter: „Meine Katze ist nicht hier.“ Das ist falsch."
+          },
+          {
+            "en": "Daniel writes: \"Wir treffen uns um elf Uhr am Eingang beim Café.\"",
+            "de": "Daniel schreibt: „Wir treffen uns um elf Uhr am Eingang beim Café.“ Das ist richtig."
+          },
+          {
+            "en": "Lukas should bring food; they already have drinks: \"Bring bitte etwas zu essen mit, Getränke haben wir schon.\"",
+            "de": "Lukas soll etwas zu essen mitbringen. Getränke haben sie schon. Das ist falsch."
+          },
+          {
+            "en": "Daniel writes: \"Wenn es regnet, spielen wir nicht. Dann gehen wir ins Kino.\"",
+            "de": "Daniel schreibt: „Wenn es regnet, spielen wir nicht. Dann gehen wir ins Kino.“ Das ist richtig."
+          }
+        ]
+      }
+    }
+  ]
+}

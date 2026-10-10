@@ -1,0 +1,226 @@
+{
+  "formatId": "telc-a1",
+  "partId": "lesen-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-a1__lesen-3__s01",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "1 – An der Tür einer Arztpraxis\nPraxis Dr. Hansen\nSprechstunden:\nMo, Di, Do 8–12 Uhr und 15–18 Uhr\nMi, Fr 8–12 Uhr\n\n2 – Im Kaufhaus\nKundentoiletten im 3. Stock\nAufzug neben der Kasse\n\n3 – An der Bäckerei\nWir machen Urlaub!\nVom 5. bis 19. August geschlossen.\nAb 20. August sind wir wieder für Sie da.\n\n4 – Am Bahnhof\nFahrkarten bekommen Sie jeden Tag von 0 bis 24 Uhr am Automaten.\nDer Schalter ist am Wochenende geschlossen.\n\n5 – In der Sprachschule\nAchtung! Der Kurs A1 von Frau Berger ist heute in Raum 12, nicht in Raum 8.",
+          "questions": [
+            {
+              "question": "Sie können am Mittwochnachmittag zum Arzt gehen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Die Toiletten sind im dritten Stock.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Sie können am 10. August in dieser Bäckerei Brot kaufen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Am Sonntag können Sie eine Fahrkarte kaufen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Der Kurs von Frau Berger ist heute in Raum 8.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "On Wednesday the practice is open only \"8–12 Uhr\", so not in the afternoon.",
+            "de": "Am Mittwoch ist die Praxis nur von 8 bis 12 Uhr offen. Am Nachmittag ist sie zu. Das ist falsch."
+          },
+          {
+            "en": "The sign says: \"Kundentoiletten im 3. Stock\".",
+            "de": "Auf dem Schild steht: „Kundentoiletten im 3. Stock“. Das ist richtig."
+          },
+          {
+            "en": "The bakery is closed \"vom 5. bis 19. August\", and 10 August is in that period.",
+            "de": "Die Bäckerei ist „vom 5. bis 19. August geschlossen“. Am 10. August ist sie zu. Das ist falsch."
+          },
+          {
+            "en": "Only the ticket counter is closed at the weekend. Tickets are available from the machine \"jeden Tag von 0 bis 24 Uhr\".",
+            "de": "Nur der Schalter ist am Wochenende zu. Fahrkarten gibt es „jeden Tag von 0 bis 24 Uhr am Automaten“. Das ist richtig."
+          },
+          {
+            "en": "The notice says the course is \"heute in Raum 12, nicht in Raum 8\".",
+            "de": "Auf dem Zettel steht: „heute in Raum 12, nicht in Raum 8“. Das ist falsch."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a1__lesen-3__s02",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "1 – Am Schwimmbad\nÖffnungszeiten: Mo–Fr 7–21 Uhr, Sa und So 9–18 Uhr\nKinder unter 6 Jahren nur mit Mutter oder Vater!\n\n2 – Im Supermarkt\nHeute frisches Obst!\nÄpfel – 1 kg nur 1,99 €\n\n3 – An der Tür der Post\nWir sind umgezogen!\nSie finden uns jetzt in der Bahnhofstraße 4.\n\n4 – Im Hotel\nFrühstück im Restaurant im Erdgeschoss:\nMontag bis Freitag 6:30–10 Uhr\nSamstag und Sonntag 7:30–11 Uhr\n\n5 – In der Bibliothek\nLesesaal: Bitte nicht essen und nicht trinken!\nKaffee und Kuchen gibt es im Café im Erdgeschoss.",
+          "questions": [
+            {
+              "question": "Ein Kind mit 5 Jahren darf allein schwimmen gehen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Ein Kilo Äpfel kostet heute 1,99 Euro.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Die Post ist jetzt in der Bahnhofstraße.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Am Samstag gibt es um 10:30 Uhr noch Frühstück.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Sie dürfen im Lesesaal Kaffee trinken.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Children under 6 may come only with a parent: \"Kinder unter 6 Jahren nur mit Mutter oder Vater!\"",
+            "de": "Kinder unter 6 Jahren dürfen nur „mit Mutter oder Vater“ kommen. Ein Kind mit 5 Jahren darf nicht allein schwimmen. Das ist falsch."
+          },
+          {
+            "en": "The sign says: \"Äpfel – 1 kg nur 1,99 €\".",
+            "de": "Auf dem Schild steht: „Äpfel – 1 kg nur 1,99 €“. Das ist richtig."
+          },
+          {
+            "en": "The post office has moved: \"Sie finden uns jetzt in der Bahnhofstraße 4.\"",
+            "de": "Die Post ist umgezogen: „Sie finden uns jetzt in der Bahnhofstraße 4.“ Das ist richtig."
+          },
+          {
+            "en": "At the weekend breakfast is served \"7:30–11 Uhr\", so 10:30 on Saturday is still possible.",
+            "de": "Am Samstag gibt es Frühstück von 7:30 bis 11 Uhr. Um 10:30 Uhr geht das noch. Das ist richtig."
+          },
+          {
+            "en": "In the reading room: \"Bitte nicht essen und nicht trinken!\" Coffee is only in the café on the ground floor.",
+            "de": "Im Lesesaal steht: „Bitte nicht essen und nicht trinken!“ Kaffee gibt es nur im Café. Das ist falsch."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a1__lesen-3__s03",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "1 – An der Haustür\nLiebe Mieterinnen und Mieter,\nam Dienstag, 12. März, gibt es von 9 bis 13 Uhr kein Wasser.\nIhre Hausverwaltung\n\n2 – Am Kino\nHeute keine Vorstellung um 20 Uhr!\nDer Film beginnt erst um 21 Uhr.\n\n3 – Im Krankenhaus\nBesuchszeiten: täglich 14–19 Uhr\nBitte nicht mehr als zwei Besucher pro Patient.\n\n4 – In einem Schuhgeschäft\nWir suchen eine Verkäuferin oder einen Verkäufer!\nBitte fragen Sie an der Kasse.\n\n5 – Am Parkplatz\nParken nur für Supermarkt-Kunden\nMo–Sa 8–20 Uhr\nHöchstens 1 Stunde!",
+          "questions": [
+            {
+              "question": "Am Dienstagvormittag gibt es im Haus kein Wasser.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Der Film beginnt heute um 20 Uhr.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Sie können Ihre Freundin um 10 Uhr im Krankenhaus besuchen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "In diesem Geschäft können Sie Arbeit finden.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Kunden können hier zwei Stunden parken.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The notice says there is no water on Tuesday \"von 9 bis 13 Uhr\", which includes the morning.",
+            "de": "Am Dienstag gibt es „von 9 bis 13 Uhr kein Wasser“. Das ist am Vormittag. Das ist richtig."
+          },
+          {
+            "en": "The sign says: \"Heute keine Vorstellung um 20 Uhr! Der Film beginnt erst um 21 Uhr.\"",
+            "de": "Auf dem Schild steht: „Der Film beginnt erst um 21 Uhr.“ Das ist falsch."
+          },
+          {
+            "en": "Visiting hours are \"täglich 14–19 Uhr\", so 10 o'clock is not possible.",
+            "de": "Die Besuchszeiten sind „täglich 14–19 Uhr“. Um 10 Uhr kann man nicht kommen. Das ist falsch."
+          },
+          {
+            "en": "The shop is looking for staff: \"Wir suchen eine Verkäuferin oder einen Verkäufer!\"",
+            "de": "Das Geschäft sucht eine Verkäuferin oder einen Verkäufer. Hier gibt es also Arbeit. Das ist richtig."
+          },
+          {
+            "en": "The sign allows parking for \"Höchstens 1 Stunde!\", so not two hours.",
+            "de": "Man darf „höchstens 1 Stunde“ parken. Zwei Stunden sind zu lang. Das ist falsch."
+          }
+        ]
+      }
+    }
+  ]
+}
