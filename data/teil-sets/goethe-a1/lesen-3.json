@@ -1,0 +1,226 @@
+{
+  "formatId": "goethe-a1",
+  "partId": "lesen-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-a1__lesen-3__s01",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "1 – An der Tür einer Apotheke\nApotheke am Markt\nHeute Notdienst bis 22 Uhr.\nBitte klingeln Sie.\n\n2 – Im Bus\nBitte nur vorne einsteigen und die Fahrkarte beim Fahrer zeigen.\nHinten nur aussteigen!\n\n3 – Am Fitnessstudio\nNeu! Ab 1. Oktober auch sonntags geöffnet: 10–16 Uhr\n\n4 – In einem Restaurant\nHeute Mittagsmenü: Suppe und Hauptgericht 8,50 €\nNur von 11:30 bis 14:30 Uhr!\n\n5 – Am Kindergarten\nLiebe Eltern,\nam Freitag haben wir ein Fest im Haus.\nDer Kindergarten ist an diesem Tag nur bis 12 Uhr offen.",
+          "questions": [
+            {
+              "question": "Sie können heute um 21 Uhr in der Apotheke Medikamente bekommen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Sie dürfen hinten in den Bus einsteigen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Im Oktober können Sie am Sonntagvormittag trainieren.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Das Mittagsmenü gibt es auch am Abend.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Am Freitag können Sie Ihr Kind um 15 Uhr abholen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The pharmacy has \"Notdienst bis 22 Uhr\" today, so it is still open at 21:00.",
+            "de": "Die Apotheke hat heute „Notdienst bis 22 Uhr“. Um 21 Uhr ist sie noch offen. Das ist richtig."
+          },
+          {
+            "en": "You may only get on at the front: \"Bitte nur vorne einsteigen\". The back door is \"nur aussteigen\".",
+            "de": "Sie dürfen „nur vorne einsteigen“. Hinten dürfen Sie nur aussteigen. Das ist falsch."
+          },
+          {
+            "en": "From 1 October the studio is open \"sonntags geöffnet: 10–16 Uhr\", and 10–12 is the morning.",
+            "de": "Ab 1. Oktober ist das Studio „sonntags geöffnet: 10–16 Uhr“. Um 10 Uhr ist Vormittag. Das ist richtig."
+          },
+          {
+            "en": "The lunch menu is \"Nur von 11:30 bis 14:30 Uhr\", so not in the evening.",
+            "de": "Das Menü gibt es „nur von 11:30 bis 14:30 Uhr“. Am Abend gibt es das Menü nicht. Das ist falsch."
+          },
+          {
+            "en": "On Friday the kindergarten is \"nur bis 12 Uhr offen\", so you cannot collect your child at 15:00.",
+            "de": "Am Freitag ist der Kindergarten „nur bis 12 Uhr offen“. Um 15 Uhr ist er zu. Das ist falsch."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a1__lesen-3__s02",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "1 – Am Eingang eines Kaufhauses\nHunde müssen leider draußen bleiben.\n\n2 – An einer Bushaltestelle\nAchtung!\nVom 3. bis 7. Mai hält der Bus 12 nicht hier.\nBitte nehmen Sie die Straßenbahn 4.\n\n3 – Im Getränkemarkt\nLeere Flaschen bitte hier zurückgeben.\nIhr Geld bekommen Sie an der Kasse.\n\n4 – Im Bürgerbüro\nBitte ziehen Sie eine Nummer und warten Sie im Wartezimmer.\nIhre Nummer sehen Sie dann auf dem Bildschirm.\n\n5 – In einer Firma\nDie Kantine ist diese Woche geschlossen.\nMittagessen gibt es im Café im 1. Stock.",
+          "questions": [
+            {
+              "question": "Sie dürfen mit Ihrem Hund in das Kaufhaus gehen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Am 5. Mai können Sie hier mit dem Bus 12 fahren.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Für die leeren Flaschen bekommen Sie Geld.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Sie müssen im Bürgerbüro eine Nummer nehmen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Diese Woche gibt es in der Firma kein Mittagessen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The sign says: \"Hunde müssen leider draußen bleiben.\"",
+            "de": "Auf dem Schild steht: „Hunde müssen leider draußen bleiben.“ Das ist falsch."
+          },
+          {
+            "en": "From 3 to 7 May \"hält der Bus 12 nicht hier\". 5 May is in that time.",
+            "de": "Vom 3. bis 7. Mai „hält der Bus 12 nicht hier“. Der 5. Mai ist in dieser Zeit. Das ist falsch."
+          },
+          {
+            "en": "You return the bottles and \"Ihr Geld bekommen Sie an der Kasse.\"",
+            "de": "Auf dem Schild steht: „Ihr Geld bekommen Sie an der Kasse.“ Das ist richtig."
+          },
+          {
+            "en": "The notice says: \"Bitte ziehen Sie eine Nummer\", and your number appears on the screen.",
+            "de": "Auf dem Schild steht: „Bitte ziehen Sie eine Nummer.“ Das ist richtig."
+          },
+          {
+            "en": "Only the canteen is closed: \"Mittagessen gibt es im Café im 1. Stock.\"",
+            "de": "Die Kantine ist zu, aber „Mittagessen gibt es im Café im 1. Stock“. Das ist falsch."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a1__lesen-3__s03",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "1 – Am Schloss\nFührungen durch das Schloss:\njeden Tag um 11 und um 15 Uhr\nTreffpunkt: an der Kasse\n\n2 – Im Zug\nWagen 5: Ruhebereich\nBitte nicht telefonieren und keine laute Musik!\n\n3 – An einem Kiosk\nZeitungen, Getränke, Briefmarken\nWir sind jeden Tag von 6 bis 22 Uhr für Sie da – auch am Sonntag.\n\n4 – Im Treppenhaus\nDer Aufzug ist kaputt. Bitte nehmen Sie die Treppe.\nAb Montag funktioniert er wieder.\n\n5 – An der Volkshochschule\nAnmeldung für die Herbstkurse:\nab 1. September im Büro, Zimmer 3\nMontag bis Donnerstag 9–12 Uhr",
+          "questions": [
+            {
+              "question": "Es gibt jeden Tag zwei Führungen durch das Schloss.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "In Wagen 5 dürfen Sie mit dem Handy telefonieren.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Sie können hier am Sonntag um 21 Uhr eine Zeitung kaufen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Sie können heute nicht mit dem Aufzug fahren.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Sie können sich am Freitag im Büro für einen Kurs anmelden.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "There are tours \"jeden Tag um 11 und um 15 Uhr\", so two a day.",
+            "de": "Es gibt Führungen „jeden Tag um 11 und um 15 Uhr“. Das sind zwei Führungen. Das ist richtig."
+          },
+          {
+            "en": "Coach 5 is a quiet area: \"Bitte nicht telefonieren\".",
+            "de": "In Wagen 5 steht: „Bitte nicht telefonieren.“ Das ist falsch."
+          },
+          {
+            "en": "The kiosk is open \"jeden Tag von 6 bis 22 Uhr\", \"auch am Sonntag\", and it sells newspapers.",
+            "de": "Der Kiosk ist „von 6 bis 22 Uhr“ offen, „auch am Sonntag“. Er hat Zeitungen. Das ist richtig."
+          },
+          {
+            "en": "The sign says: \"Der Aufzug ist kaputt.\" It works again only from Monday.",
+            "de": "Auf dem Schild steht: „Der Aufzug ist kaputt.“ Er funktioniert erst ab Montag wieder. Das ist richtig."
+          },
+          {
+            "en": "The office is open for registration only \"Montag bis Donnerstag\", not on Friday.",
+            "de": "Das Büro ist nur „Montag bis Donnerstag“ offen. Am Freitag geht es nicht. Das ist falsch."
+          }
+        ]
+      }
+    }
+  ]
+}

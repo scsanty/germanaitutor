@@ -1,0 +1,226 @@
+{
+  "formatId": "goethe-a1",
+  "partId": "lesen-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-a1__lesen-2__s01",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "1a) www.kita-sonnenblume.de\nKindergarten Sonnenblume: Freie Plätze ab September für Kinder von 1 bis 6 Jahren. Montag bis Freitag von 7 bis 16 Uhr.\n\n1b) www.babysitter-mia.de\nBabysitter-Service Mia: Wir passen am Abend und am Wochenende auf Ihre Kinder auf. Rufen Sie uns an!\n\n2a) www.vhs-computerkurs.de\nVolkshochschule: Computer für Anfänger. Sechs Abende, immer dienstags von 18 bis 20 Uhr.\n\n2b) www.computer-laden-bit.de\nComputerladen Bit: Laptops, Drucker und Handys – jetzt zu guten Preisen.\n\n3a) www.paket-schnell.de\nPaketdienst Schnell: Wir bringen Ihre Pakete in alle Länder in Europa.\n\n3b) www.umzug-stark.de\nUmzugsfirma Stark: Wir helfen Ihnen beim Umzug in der Stadt. Auch am Samstag.\n\n4a) www.moebel-wohnwelt.de\nMöbelhaus Wohnwelt: Neue Sofas und Tische jetzt 30 % billiger!\n\n4b) www.flohmarkt-privat.de\nFlohmarkt online: Alte Möbel von privat – Sofas, Tische und Schränke. Oft sehr billig!\n\n5a) www.friseur-schoen.de\nFriseur Schön: Dienstag bis Samstag von 9 bis 18 Uhr geöffnet. Montag geschlossen.\n\n5b) www.salon-haarmonie.de\nSalon Haarmonie: Montag bis Freitag von 8 bis 19 Uhr geöffnet. Sie brauchen keinen Termin.",
+          "questions": [
+            {
+              "question": "Sie möchten am Samstagabend ins Konzert gehen. Jemand soll auf Ihr Kind aufpassen.",
+              "options": [
+                "a) www.kita-sonnenblume.de",
+                "b) www.babysitter-mia.de"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Sie möchten lernen: Wie arbeitet man mit dem Computer?",
+              "options": [
+                "a) www.vhs-computerkurs.de",
+                "b) www.computer-laden-bit.de"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Sie möchten Ihrer Mutter in Polen ein Paket schicken.",
+              "options": [
+                "a) www.paket-schnell.de",
+                "b) www.umzug-stark.de"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Sie suchen ein Sofa. Es soll nicht neu sein und wenig kosten.",
+              "options": [
+                "a) www.moebel-wohnwelt.de",
+                "b) www.flohmarkt-privat.de"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Sie möchten am Montag zum Friseur gehen.",
+              "options": [
+                "a) www.friseur-schoen.de",
+                "b) www.salon-haarmonie.de"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "You need someone on Saturday evening. The babysitters in b work \"am Abend und am Wochenende\". The kindergarten in a is open only Monday to Friday until 16:00.",
+            "de": "Sie brauchen am Samstagabend Hilfe. Der Service auf Seite b passt „am Abend und am Wochenende“ auf Kinder auf. Der Kindergarten auf Seite a ist nur bis 16 Uhr und nicht am Samstag offen."
+          },
+          {
+            "en": "Website a offers a course: \"Computer für Anfänger. Sechs Abende\". The shop in b only sells computers.",
+            "de": "Auf Seite a gibt es einen Kurs: „Computer für Anfänger“. Der Laden auf Seite b verkauft nur Computer."
+          },
+          {
+            "en": "The parcel service in a delivers \"in alle Länder in Europa\", so also to Poland. Company b helps with moving house in the city.",
+            "de": "Der Paketdienst auf Seite a bringt Pakete „in alle Länder in Europa“, also auch nach Polen. Die Firma auf Seite b hilft nur beim Umzug."
+          },
+          {
+            "en": "You want an old, cheap sofa. Website b sells \"Alte Möbel von privat\" that are \"oft sehr billig\". Shop a sells new sofas.",
+            "de": "Sie suchen ein altes Sofa. Auf Seite b gibt es „Alte Möbel von privat“. Das Möbelhaus auf Seite a verkauft neue Sofas."
+          },
+          {
+            "en": "Salon b is open \"Montag bis Freitag\". Hairdresser a says \"Montag geschlossen\".",
+            "de": "Der Salon auf Seite b ist „Montag bis Freitag“ offen. Der Friseur auf Seite a ist am Montag geschlossen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a1__lesen-2__s02",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "1a) www.tierheim-waldweg.de\nTierheim Waldweg: Viele Hunde und Katzen suchen ein neues Zuhause. Besuchen Sie uns!\n\n1b) www.tierarzt-am-see.de\nTierarztpraxis am See: Hilfe für Ihren Hund, Ihre Katze und andere Tiere. Mo–Fr 8–18 Uhr.\n\n2a) www.markt-rathausplatz.de\nWochenmarkt am Rathausplatz: Mittwoch und Samstag von 7 bis 13 Uhr. Obst und Gemüse frisch vom Bauernhof.\n\n2b) www.bioladen-gruen.de\nBioladen Grün: Obst, Gemüse, Käse und Brot. Montag bis Freitag von 9 bis 19 Uhr.\n\n3a) www.disco-nachtschicht.de\nDisco Nachtschicht: Party jeden Freitag und Samstag ab 22 Uhr. Eintritt 8 €.\n\n3b) www.tanzschule-takt.de\nTanzschule Takt: Neue Kurse für Anfänger – Salsa, Tango und Walzer.\n\n4a) www.telefon-welt.de\nTelefon-Welt: Neue Handys mit Vertrag schon ab 9,99 € im Monat.\n\n4b) www.handy-doktor.de\nHandy-Doktor: Ist Ihr Handy kaputt? Wir reparieren es in einer Stunde.\n\n5a) www.partyservice-lecker.de\nPartyservice Lecker: Wir kochen für Ihre Feier und bringen das Essen zu Ihnen nach Hause.\n\n5b) www.gasthaus-linde.de\nGasthaus Linde: Unser Saal ist frei für Ihre Feier – bis 80 Personen. Rufen Sie an!",
+          "questions": [
+            {
+              "question": "Sie möchten einen Hund haben.",
+              "options": [
+                "a) www.tierheim-waldweg.de",
+                "b) www.tierarzt-am-see.de"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Sie möchten am Samstagvormittag Obst und Gemüse kaufen.",
+              "options": [
+                "a) www.markt-rathausplatz.de",
+                "b) www.bioladen-gruen.de"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Sie möchten tanzen lernen.",
+              "options": [
+                "a) www.disco-nachtschicht.de",
+                "b) www.tanzschule-takt.de"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Ihr Handy ist kaputt. Sie möchten es reparieren lassen.",
+              "options": [
+                "a) www.telefon-welt.de",
+                "b) www.handy-doktor.de"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Sie feiern Ihren Geburtstag mit 50 Gästen. Sie brauchen einen Raum.",
+              "options": [
+                "a) www.partyservice-lecker.de",
+                "b) www.gasthaus-linde.de"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "At the animal shelter in a, \"Viele Hunde und Katzen suchen ein neues Zuhause.\" The vet in b only treats animals.",
+            "de": "Im Tierheim auf Seite a steht: „Viele Hunde und Katzen suchen ein neues Zuhause.“ Dort bekommen Sie einen Hund. Der Tierarzt auf Seite b hilft nur kranken Tieren."
+          },
+          {
+            "en": "The market in a is open on Saturday \"von 7 bis 13 Uhr\". The organic shop in b is open only Monday to Friday.",
+            "de": "Der Markt auf Seite a ist am Samstag „von 7 bis 13 Uhr“ offen. Der Bioladen auf Seite b ist am Samstag zu."
+          },
+          {
+            "en": "The dance school in b offers \"Kurse für Anfänger\". The disco in a only has parties.",
+            "de": "Die Tanzschule auf Seite b hat „Kurse für Anfänger“. In der Disco auf Seite a gibt es nur Partys."
+          },
+          {
+            "en": "Website b repairs phones: \"Wir reparieren es in einer Stunde.\" Website a sells new phones.",
+            "de": "Auf Seite b steht: „Wir reparieren es in einer Stunde.“ Seite a verkauft nur neue Handys."
+          },
+          {
+            "en": "You need a room. The inn in b has a hall \"für Ihre Feier – bis 80 Personen\". The party service in a only brings food.",
+            "de": "Sie brauchen einen Raum. Das Gasthaus auf Seite b hat einen Saal „bis 80 Personen“. Der Partyservice auf Seite a bringt nur Essen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a1__lesen-2__s03",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "1a) www.ferien-in-der-stadt.de\nFerienprogramm der Stadt: Spiele, Sport und Ausflüge für Kinder von 6 bis 12 Jahren. Im Juli und August.\n\n1b) www.nachhilfe-plus.de\nNachhilfe Plus: Mathe und Englisch für Schülerinnen und Schüler. Unterricht das ganze Jahr.\n\n2a) www.stadtmuseum-altstadt.de\nStadtmuseum: Dienstag bis Samstag von 10 bis 17 Uhr geöffnet.\n\n2b) www.museum-technik.de\nMuseum für Technik: Jeden Tag von 9 bis 18 Uhr geöffnet – auch am Sonntag.\n\n3a) www.autohaus-berger.de\nAutohaus Berger: Neue und alte Autos – jetzt zu guten Preisen.\n\n3b) www.auto-miete-mobil.de\nAuto-Miete Mobil: Autos für einen Tag oder eine Woche. Ab 29 € pro Tag.\n\n4a) www.yoga-im-park.de\nYoga im Park: jeden Samstag um 10 Uhr. Für alle, auch für Anfänger. Es kostet nichts.\n\n4b) www.sport-aktiv.de\nSportgeschäft Aktiv: Yogamatten, Sportschuhe und Sportkleidung – alles 20 % billiger.\n\n5a) www.drogerie-mehr.de\nDrogerie Mehr: Seife, Shampoo und Putzmittel – diese Woche im Angebot.\n\n5b) www.putzfee-service.de\nPutzfee: Wir putzen Ihre Wohnung oder Ihr Büro. 20 € pro Stunde.",
+          "questions": [
+            {
+              "question": "Ihre Kinder haben im Sommer Ferien. Sie suchen ein Programm für die Kinder.",
+              "options": [
+                "a) www.ferien-in-der-stadt.de",
+                "b) www.nachhilfe-plus.de"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Sie möchten am Sonntag ein Museum besuchen.",
+              "options": [
+                "a) www.stadtmuseum-altstadt.de",
+                "b) www.museum-technik.de"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Sie möchten am Wochenende ans Meer fahren. Sie haben kein Auto und möchten auch keins kaufen.",
+              "options": [
+                "a) www.autohaus-berger.de",
+                "b) www.auto-miete-mobil.de"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Sie möchten Yoga machen. Sie haben nicht viel Geld.",
+              "options": [
+                "a) www.yoga-im-park.de",
+                "b) www.sport-aktiv.de"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Sie haben keine Zeit. Jemand soll Ihre Wohnung putzen.",
+              "options": [
+                "a) www.drogerie-mehr.de",
+                "b) www.putzfee-service.de"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Website a has a holiday programme for children \"Im Juli und August\". Website b offers tutoring in Maths and English.",
+            "de": "Auf Seite a gibt es ein Ferienprogramm „Im Juli und August“. Auf Seite b gibt es nur Nachhilfe in Mathe und Englisch."
+          },
+          {
+            "en": "The museum in b is open every day, \"auch am Sonntag\". The museum in a is open only Tuesday to Saturday.",
+            "de": "Das Museum auf Seite b ist „auch am Sonntag“ offen. Das Museum auf Seite a ist nur von Dienstag bis Samstag offen."
+          },
+          {
+            "en": "You do not want to buy a car. Website b rents cars \"für einen Tag oder eine Woche\". Website a sells cars.",
+            "de": "Sie möchten kein Auto kaufen. Auf Seite b können Sie ein Auto mieten, „für einen Tag oder eine Woche“. Seite a verkauft Autos."
+          },
+          {
+            "en": "Yoga in the park (a) is free: \"Es kostet nichts.\" Shop b only sells yoga mats and clothes.",
+            "de": "Yoga im Park auf Seite a „kostet nichts“. Das Geschäft auf Seite b verkauft nur Matten und Kleidung."
+          },
+          {
+            "en": "The cleaning service in b says: \"Wir putzen Ihre Wohnung oder Ihr Büro.\" The shop in a only sells cleaning products.",
+            "de": "Die Putzfee auf Seite b schreibt: „Wir putzen Ihre Wohnung.“ Die Drogerie auf Seite a verkauft nur Putzmittel."
+          }
+        ]
+      }
+    }
+  ]
+}
