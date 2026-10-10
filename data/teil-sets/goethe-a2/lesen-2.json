@@ -1,0 +1,241 @@
+{
+  "formatId": "goethe-a2",
+  "partId": "lesen-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-a2__lesen-2__s01",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Gesundheitszentrum am Stadtpark – Wer ist wo?\n\n5. Stock: Dr. med. Petra Lang, Frauenärztin · Dr. med. Jonas Weber, Kinderarzt · Dachterrasse\n\n4. Stock: Zahnarztpraxis Dr. Ana Kovač · Kieferorthopädie (Zahnspangen für Kinder und Jugendliche)\n\n3. Stock: Dr. med. Frank Ostermann, Augenarzt · Hals-Nasen-Ohren-Praxis Dr. Meier · Hörgeräte Klang\n\n2. Stock: Physiotherapie Bewegt (Massage, Krankengymnastik) · Trainingsraum für Patienten · Ernährungsberatung\n\n1. Stock: Hausarztpraxis Dr. med. Sven Albers und Dr. med. Leyla Demir · Labor\n\nErdgeschoss: Apotheke am Stadtpark · Sanitätshaus (Rollstühle, Gehhilfen) · Café · Information\n\nUntergeschoss: Tiefgarage",
+          "questions": [
+            {
+              "question": "Sie können mit Ihrer Brille nicht mehr gut lesen. Sie möchten Ihre Augen untersuchen lassen.",
+              "options": [
+                "2. Stock",
+                "3. Stock",
+                "anderes Stockwerk"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Ihre Tochter ist 12 Jahre alt. Sie braucht eine Zahnspange.",
+              "options": [
+                "4. Stock",
+                "5. Stock",
+                "anderes Stockwerk"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Sie haben Rückenschmerzen. Ihr Arzt hat Ihnen Massagen verschrieben.",
+              "options": [
+                "1. Stock",
+                "Erdgeschoss",
+                "anderes Stockwerk"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Sie haben ein Rezept vom Arzt und brauchen jetzt die Tabletten.",
+              "options": [
+                "1. Stock",
+                "Erdgeschoss",
+                "anderes Stockwerk"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Ihr Vater hört schlecht. Er möchte ein Hörgerät kaufen.",
+              "options": [
+                "3. Stock",
+                "5. Stock",
+                "anderes Stockwerk"
+              ],
+              "correctIndex": 0
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "To have your eyes examined you go to the eye doctor: \"3. Stock: Dr. med. Frank Ostermann, Augenarzt\".",
+            "de": "Die Augen untersucht der Augenarzt. Er ist im 3. Stock."
+          },
+          {
+            "en": "Braces are in the orthodontic practice: \"4. Stock: … Kieferorthopädie (Zahnspangen für Kinder und Jugendliche)\". The 5th floor has the paediatrician, but not braces.",
+            "de": "Zahnspangen gibt es bei der Kieferorthopädie im 4. Stock. Im 5. Stock ist der Kinderarzt, aber dort gibt es keine Zahnspangen."
+          },
+          {
+            "en": "Massages are at the physiotherapy: \"2. Stock: Physiotherapie Bewegt (Massage, …)\". The 2nd floor is not a or b, so the answer is c.",
+            "de": "Massagen gibt es bei der Physiotherapie im 2. Stock. Der 2. Stock steht nicht bei a oder b, also ist c richtig."
+          },
+          {
+            "en": "With a prescription you get the tablets at the pharmacy: \"Erdgeschoss: Apotheke am Stadtpark\". The GP on the 1st floor writes prescriptions but does not sell medicine.",
+            "de": "Mit dem Rezept holt man die Tabletten in der Apotheke. Die Apotheke ist im Erdgeschoss. Der Hausarzt im 1. Stock verkauft keine Medikamente."
+          },
+          {
+            "en": "Hearing aids are sold at \"Hörgeräte Klang\" on the 3rd floor.",
+            "de": "Hörgeräte kauft man bei „Hörgeräte Klang“. Das Geschäft ist im 3. Stock."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2__lesen-2__s02",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Rathaus Lindenau – Wegweiser\n\n4. Stock: Standesamt (Eheschließungen, Geburtsurkunden) · Trauzimmer · Büro des Bürgermeisters\n\n3. Stock: Ausländerbehörde (Aufenthaltstitel, Visum) · Integrationsbüro: Beratung zu Sprach- und Integrationskursen\n\n2. Stock: Sozialamt · Wohngeldstelle · Jugendamt (Kita- und Kindergartenplätze)\n\n1. Stock: Bürgerbüro (Anmeldung und Ummeldung der Wohnung, Personalausweis, Reisepass) · Fundbüro\n\nErdgeschoss: Information · Stadtkasse (Gebühren bezahlen) · Kfz-Zulassungsstelle (Autos an- und abmelden)\n\nUntergeschoss: Stadtarchiv · Toiletten",
+          "questions": [
+            {
+              "question": "Sie sind in eine neue Wohnung gezogen und müssen der Stadt Ihre neue Adresse sagen.",
+              "options": [
+                "Erdgeschoss",
+                "2. Stock",
+                "anderes Stockwerk"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Sie haben im Stadtpark Ihren Schlüssel verloren. Vielleicht hat ihn jemand gefunden.",
+              "options": [
+                "1. Stock",
+                "Erdgeschoss",
+                "anderes Stockwerk"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Sie und Ihr Partner möchten heiraten. Sie brauchen einen Termin.",
+              "options": [
+                "3. Stock",
+                "4. Stock",
+                "anderes Stockwerk"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Sie haben ein gebrauchtes Auto gekauft und müssen es anmelden.",
+              "options": [
+                "Erdgeschoss",
+                "1. Stock",
+                "anderes Stockwerk"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Ihr Sohn ist drei Jahre alt. Sie suchen für ihn einen Platz im Kindergarten.",
+              "options": [
+                "Erdgeschoss",
+                "2. Stock",
+                "anderes Stockwerk"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "A new address is registered at the Bürgerbüro: \"1. Stock: Bürgerbüro (Anmeldung und Ummeldung der Wohnung …)\". The 1st floor is not a or b, so the answer is c.",
+            "de": "Die neue Adresse meldet man im Bürgerbüro (Ummeldung der Wohnung). Das Bürgerbüro ist im 1. Stock. Der 1. Stock steht nicht bei a oder b, also ist c richtig."
+          },
+          {
+            "en": "Lost things are collected at the lost-property office: \"1. Stock: … Fundbüro\".",
+            "de": "Verlorene Sachen sind im Fundbüro. Das Fundbüro ist im 1. Stock."
+          },
+          {
+            "en": "Weddings are arranged at the registry office: \"4. Stock: Standesamt (Eheschließungen …) · Trauzimmer\".",
+            "de": "Für eine Hochzeit geht man zum Standesamt. Das Standesamt ist im 4. Stock."
+          },
+          {
+            "en": "Cars are registered at the \"Kfz-Zulassungsstelle (Autos an- und abmelden)\" on the ground floor.",
+            "de": "Autos meldet man bei der Kfz-Zulassungsstelle an. Sie ist im Erdgeschoss."
+          },
+          {
+            "en": "Kindergarten places are handled by the youth office: \"2. Stock: … Jugendamt (Kita- und Kindergartenplätze)\".",
+            "de": "Kindergartenplätze gibt es beim Jugendamt. Das Jugendamt ist im 2. Stock."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2__lesen-2__s03",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Volkshochschule Rheinfeld – Hauptgebäude\n\n4. Stock: Malen und Zeichnen · Fotografie · Töpferwerkstatt\n\n3. Stock: Computerkurse (Räume 301–306) · Kurse für Beruf und Bewerbung\n\n2. Stock: Deutsch als Fremdsprache · Englisch · Spanisch · Italienisch · Prüfungsbüro\n\n1. Stock: Gesundheit: Yoga, Rückengymnastik, Entspannung · Umkleiden und Duschen\n\nErdgeschoss: Anmeldung und Beratung · Kasse · Lehrküche (Kochkurse) · Cafeteria\n\nUntergeschoss: Fahrradkeller · Garderobe",
+          "questions": [
+            {
+              "question": "Sie möchten lernen, wie man am Computer eine Tabelle macht.",
+              "options": [
+                "3. Stock",
+                "4. Stock",
+                "anderes Stockwerk"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Sie sind krank und können nicht mehr zu Ihrem Kurs kommen. Sie möchten sich abmelden.",
+              "options": [
+                "Erdgeschoss",
+                "1. Stock",
+                "anderes Stockwerk"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Sie sind mit dem Fahrrad gekommen und möchten es sicher abstellen.",
+              "options": [
+                "Erdgeschoss",
+                "1. Stock",
+                "anderes Stockwerk"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Sie möchten Teller und Tassen selbst machen.",
+              "options": [
+                "1. Stock",
+                "4. Stock",
+                "anderes Stockwerk"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Ihr Arzt sagt, Sie sollen etwas für Ihren Rücken tun.",
+              "options": [
+                "3. Stock",
+                "1. Stock",
+                "anderes Stockwerk"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Learning to make a table on the computer belongs to the \"Computerkurse\" on the 3rd floor.",
+            "de": "Tabellen am Computer lernt man in einem Computerkurs. Die Computerkurse sind im 3. Stock."
+          },
+          {
+            "en": "Signing up for or cancelling a course is done at \"Anmeldung und Beratung\" on the ground floor.",
+            "de": "An- und Abmeldungen macht man bei „Anmeldung und Beratung“. Das ist im Erdgeschoss."
+          },
+          {
+            "en": "Bikes go in the \"Fahrradkeller\" in the basement (Untergeschoss). The basement is not a or b, so the answer is c.",
+            "de": "Fahrräder stellt man in den Fahrradkeller. Er ist im Untergeschoss. Das Untergeschoss steht nicht bei a oder b, also ist c richtig."
+          },
+          {
+            "en": "Plates and cups are made in the pottery workshop: \"4. Stock: … Töpferwerkstatt\".",
+            "de": "Teller und Tassen macht man in der Töpferwerkstatt. Sie ist im 4. Stock."
+          },
+          {
+            "en": "For your back you can do \"Rückengymnastik\", listed under \"1. Stock: Gesundheit\".",
+            "de": "Für den Rücken gibt es Rückengymnastik. Sie ist im 1. Stock."
+          }
+        ]
+      }
+    }
+  ]
+}
