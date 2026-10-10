@@ -1,0 +1,436 @@
+{
+  "formatId": "telc-b2",
+  "partId": "sprachbausteine-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b2__sprachbausteine-1__s01",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Sehr geehrte Damen und Herren,\n\nim März habe ich an Ihrer Sprachschule einen zweiwöchigen Intensivkurs Spanisch besucht, {{1}} ich mich leider beschweren muss. In Ihrem Prospekt hatten Sie versprochen, dass {{2}} Gruppe höchstens acht Teilnehmende hat. Tatsächlich saßen wir zu vierzehnt in einem viel zu kleinen Raum. {{3}} konnte sich die Lehrerin kaum um die Einzelnen kümmern, und wir kamen nur selten zu Wort. Außerdem fielen in der zweiten Woche zwei Unterrichtstage aus, ohne {{4}} wir rechtzeitig informiert wurden. Da ich mir für den Kurs extra Urlaub genommen hatte, bin ich darüber sehr enttäuscht.\n\nIch bitte Sie daher, mir {{5}} Teil der Kursgebühr zurückzuerstatten; eine Erstattung von 200 Euro halte ich für angemessen. {{6}} Sie mir dieses Angebot nicht machen können, wäre ich auch mit einem kostenlosen Aufbaukurs einverstanden, {{7}} dieser im Herbst an einem Wochenende stattfindet.\n\nIch freue mich {{8}} Ihre Antwort und hoffe, dass wir eine Lösung finden, {{9}} beide Seiten zufrieden sind. Ich wäre Ihnen dankbar, wenn Sie sich bis Ende des Monats bei mir {{10}} würden.\n\nMit freundlichen Grüßen\nSabine Kessler",
+          "gaps": [
+            {
+              "mode": "select",
+              "options": [
+                "über dem",
+                "über den",
+                "über das"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "jede",
+                "jeder",
+                "jedes"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "Obwohl",
+                "Weil",
+                "Deshalb"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "zu",
+                "dass",
+                "um"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "einen",
+                "einem",
+                "eines"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "Ob",
+                "Wann",
+                "Falls"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "sodass",
+                "sofern",
+                "damit"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "an",
+                "zu",
+                "auf"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "mit der",
+                "mit dem",
+                "mit denen"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "meldet",
+                "melden",
+                "gemeldet"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Relative clause: \"sich beschweren über\" + accusative, and the antecedent \"Intensivkurs\" is masculine, so \"über den\".",
+            "de": "Relativsatz: „sich beschweren über“ + Akkusativ. „Der Intensivkurs“ ist maskulin, also „über den“."
+          },
+          {
+            "en": "\"Gruppe\" is feminine and the subject (nominative) of the clause, so \"jede Gruppe\".",
+            "de": "„Die Gruppe“ ist feminin und steht im Nominativ: „jede Gruppe“."
+          },
+          {
+            "en": "The verb follows directly (\"konnte sich …\"), so we need an adverb in position 1: \"Deshalb\". \"Obwohl\" and \"Weil\" would send the verb to the end.",
+            "de": "Nach der Lücke kommt sofort das Verb. Das passt nur zu dem Adverb „Deshalb“. Nach „obwohl“ und „weil“ steht das Verb am Ende."
+          },
+          {
+            "en": "\"ohne dass\" introduces a clause with its own subject (\"wir\"). \"ohne … zu\" needs an infinitive and the same subject.",
+            "de": "„ohne dass“ + Nebensatz mit eigenem Subjekt („wir“). „ohne … zu“ braucht einen Infinitiv."
+          },
+          {
+            "en": "\"jemandem etwas zurückerstatten\": the person is dative (\"mir\"), the thing is accusative, and \"Teil\" is masculine: \"einen Teil\".",
+            "de": "„jemandem etwas zurückerstatten“: Person im Dativ („mir“), Sache im Akkusativ. „Der Teil“ → „einen Teil“."
+          },
+          {
+            "en": "A condition is needed (\"if you cannot make this offer\"): \"Falls\". \"Ob\" introduces indirect questions, \"Wann\" asks about time.",
+            "de": "Hier steht eine Bedingung: „Falls“ (= wenn). „Ob“ und „wann“ passen nicht."
+          },
+          {
+            "en": "\"sofern\" = provided that; it states the condition for agreeing. \"sodass\" expresses a result and \"damit\" a purpose, which make no sense here.",
+            "de": "„sofern“ nennt eine Bedingung (= wenn). „sodass“ (Folge) und „damit“ (Ziel) passen nicht."
+          },
+          {
+            "en": "\"sich freuen auf\" + accusative is used for something in the future, such as an answer you are waiting for.",
+            "de": "„sich freuen auf“ + Akkusativ: für etwas in der Zukunft, z. B. eine Antwort, auf die man wartet."
+          },
+          {
+            "en": "\"zufrieden sein mit\" + dative; the antecedent \"Lösung\" is feminine singular, so \"mit der\".",
+            "de": "„zufrieden sein mit“ + Dativ. „Die Lösung“ ist feminin: „mit der“."
+          },
+          {
+            "en": "\"würden\" + infinitive (Konjunktiv II with würde): \"melden würden\".",
+            "de": "Konjunktiv II mit „würden“ + Infinitiv: „melden würden“."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b2__sprachbausteine-1__s02",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Sehr geehrte Frau Hartmann,\n\nvielen Dank für das freundliche Telefonat {{1}} vergangenen Dienstag. Wie besprochen, möchte ich Ihnen heute die genauen Wünsche unserer Firma für die geplante Jubiläumsfeier mitteilen.\n\nUnser Unternehmen besteht in diesem Jahr seit 25 Jahren, und aus {{2}} Anlass möchten wir am 14. November ein Fest für alle Mitarbeiterinnen und Mitarbeiter veranstalten. Wir rechnen mit etwa 80 Gästen, {{3}} einige mit ihren Kindern kommen werden. Wir benötigen deshalb einen ausreichend großen Saal und, {{4}} möglich, einen separaten Raum, in dem die Kinder spielen können.\n\nWas das Essen betrifft, stellen wir uns ein Buffet vor. Bitte berücksichtigen Sie, dass mehrere Kolleginnen und Kollegen {{5}} Fleisch essen. Es wäre daher schön, {{6}} es auch einige vegetarische Gerichte gäbe. Außerdem {{7}} wir gern wissen, ob wir eine eigene Band mitbringen dürfen oder ob Sie uns Musiker vermitteln können.\n\nKönnten Sie mir bitte ein Angebot schicken, {{8}} alle Kosten enthalten sind? Für Rückfragen stehe ich Ihnen gern zur {{9}}. Ich bedanke mich im Voraus und freue mich darauf, bald von Ihnen zu {{10}}.\n\nMit freundlichen Grüßen\nThomas Berger\nPersonalabteilung",
+          "gaps": [
+            {
+              "mode": "select",
+              "options": [
+                "im",
+                "am",
+                "zum"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "diesem",
+                "dieses",
+                "dieser"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "die",
+                "denen",
+                "von denen"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "wann",
+                "als",
+                "wenn"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "nicht",
+                "kein",
+                "keine"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "wenn",
+                "weil",
+                "ob"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "wären",
+                "werden",
+                "würden"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "in dem",
+                "das",
+                "dem"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "Auskunft",
+                "Verfügung",
+                "Frage"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "hören",
+                "sprechen",
+                "sagen"
+              ],
+              "correctIndex": 0
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Days of the week take \"an\" + dative: \"am (= an dem) vergangenen Dienstag\".",
+            "de": "Bei Wochentagen steht „an“ + Dativ: „am vergangenen Dienstag“."
+          },
+          {
+            "en": "\"aus\" always takes the dative, and \"Anlass\" is masculine: \"aus diesem Anlass\".",
+            "de": "„aus“ + Dativ. „Der Anlass“ ist maskulin: „aus diesem Anlass“."
+          },
+          {
+            "en": "\"einige von den Gästen\" → relative clause \"von denen einige …\" (dative plural after \"von\").",
+            "de": "„einige von den Gästen“ → Relativsatz „von denen einige …“ (Dativ Plural nach „von“)."
+          },
+          {
+            "en": "The fixed shortened expression is \"wenn möglich\" (= if possible). \"wann\" asks about time, and \"als\" refers to the past.",
+            "de": "Die feste Wendung heißt „wenn möglich“. „wann“ fragt nach der Zeit, „als“ steht für die Vergangenheit."
+          },
+          {
+            "en": "A noun without an article is negated with \"kein\"; \"Fleisch\" is neuter, accusative: \"kein Fleisch\".",
+            "de": "Ein Nomen ohne Artikel verneint man mit „kein“. „Das Fleisch“ → „kein Fleisch“."
+          },
+          {
+            "en": "\"Es wäre schön, wenn …\" + Konjunktiv II expresses a polite wish. \"weil\" gives a reason and \"ob\" introduces an indirect question.",
+            "de": "„Es wäre schön, wenn …“ + Konjunktiv II ist ein höflicher Wunsch. „weil“ und „ob“ passen nicht."
+          },
+          {
+            "en": "Polite request with Konjunktiv II: \"wir würden gern wissen\". \"werden\" (future) and \"wären\" do not fit with \"gern wissen\".",
+            "de": "Höfliche Frage mit Konjunktiv II: „Wir würden gern wissen …“."
+          },
+          {
+            "en": "\"in einem Angebot enthalten sein\" → relative clause with preposition: \"ein Angebot, in dem alle Kosten enthalten sind\" (neuter, dative).",
+            "de": "„in dem Angebot enthalten sein“ → Relativsatz mit Präposition: „in dem“ (neutral, Dativ)."
+          },
+          {
+            "en": "Fixed phrase: \"jemandem zur Verfügung stehen\" (to be available to someone).",
+            "de": "Feste Wendung: „jemandem zur Verfügung stehen“."
+          },
+          {
+            "en": "Fixed phrase: \"von jemandem hören\" (to hear from someone), typical at the end of a letter.",
+            "de": "Feste Wendung am Briefende: „bald von Ihnen zu hören“."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b2__sprachbausteine-1__s03",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Sehr geehrte Damen und Herren,\n\nich wohne seit drei Jahren im zweiten Stock des Hauses Gartenstraße 12 und wende mich heute {{1}} einem dringenden Problem an Sie. Seit Anfang der Woche funktioniert die Heizung in meiner Wohnung nicht mehr. Die Heizkörper bleiben kalt, {{2}} ich das Thermostat ganz aufdrehe. Da die Temperaturen nachts inzwischen unter null Grad liegen, ist es in der Wohnung sehr kalt geworden. Ich habe mir zwar einen kleinen Elektroheizer geliehen, {{3}} dieser reicht nicht aus, um alle Räume warm zu halten.\n\nIch habe bereits am Montag versucht, den Hausmeister zu erreichen, {{4}} leider ohne Erfolg. Auch auf meine Nachricht auf dem Anrufbeantworter hat bisher niemand reagiert. Meine Nachbarin, {{5}} Wohnung direkt über meiner liegt, hat übrigens das gleiche Problem.\n\nIch bitte Sie deshalb dringend, sich um die Reparatur zu {{6}}. Bitte teilen Sie mir mit, {{7}} ein Techniker vorbeikommen kann. Ich bin in dieser Woche jeden Tag {{8}} 16 Uhr zu Hause. Sollte die Heizung bis Freitag nicht repariert {{9}}, werde ich die Miete für diesen Monat angemessen mindern. Ich hoffe jedoch, dass das nicht nötig sein wird.\n\nIch danke Ihnen für Ihr Verständnis und {{10}} auf eine schnelle Lösung.\n\nMit freundlichen Grüßen\nDaniel Yilmaz",
+          "gaps": [
+            {
+              "mode": "select",
+              "options": [
+                "bei",
+                "mit",
+                "für"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "selbst wenn",
+                "trotzdem",
+                "deshalb"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "deshalb",
+                "aber",
+                "sonst"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "sondern",
+                "denn",
+                "allerdings"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "dessen",
+                "deren",
+                "die"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "sorgen",
+                "erledigen",
+                "kümmern"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "wann",
+                "als",
+                "wem"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "seit",
+                "ab",
+                "während"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "wird",
+                "worden",
+                "werden"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "hoffe",
+                "freue",
+                "bitte"
+              ],
+              "correctIndex": 0
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Fixed construction: \"sich mit etwas an jemanden wenden\" (to turn to someone with a matter).",
+            "de": "Feste Verbindung: „sich mit einem Problem an jemanden wenden“."
+          },
+          {
+            "en": "\"selbst wenn\" (even if) is a subordinating conjunction, so the verb goes to the end (\"aufdrehe\"). \"trotzdem\" and \"deshalb\" are adverbs and would need the verb right after them.",
+            "de": "„selbst wenn“ leitet einen Nebensatz ein, das Verb steht am Ende. Nach „trotzdem“ und „deshalb“ müsste das Verb direkt folgen."
+          },
+          {
+            "en": "\"zwar …, aber …\" expresses a contrast; \"aber\" sits in position 0, so the normal word order \"dieser reicht\" follows.",
+            "de": "„zwar …, aber …“ zeigt einen Gegensatz. Nach „aber“ bleibt die normale Wortstellung: „dieser reicht“."
+          },
+          {
+            "en": "\"allerdings\" adds a restriction (\"but, however\"). \"sondern\" needs a preceding negation, and \"denn\" gives a reason.",
+            "de": "„allerdings“ schränkt ein (= aber). „sondern“ braucht vorher eine Verneinung, „denn“ nennt einen Grund."
+          },
+          {
+            "en": "Possessive relative pronoun: the antecedent \"Nachbarin\" is feminine, so \"deren Wohnung\".",
+            "de": "Relativpronomen im Genitiv: „die Nachbarin“ ist feminin → „deren Wohnung“."
+          },
+          {
+            "en": "\"sich um etwas kümmern\" = to take care of something. \"sich um etwas sorgen\" means to worry about it, and \"erledigen\" is not reflexive.",
+            "de": "„sich um etwas kümmern“ = etwas erledigen. „sich um etwas sorgen“ bedeutet Angst haben."
+          },
+          {
+            "en": "Indirect question about time: \"wann\" (the next sentence gives his available time). \"als\" and \"wem\" make no sense here.",
+            "de": "Indirekte Frage nach der Zeit: „wann“. Der nächste Satz nennt passende Zeiten."
+          },
+          {
+            "en": "\"ab\" marks a starting point in the future (from 4 p.m. on). \"seit\" refers to a start in the past.",
+            "de": "„ab“ + Zeitpunkt in der Zukunft: ab 16 Uhr. „seit“ steht für einen Beginn in der Vergangenheit."
+          },
+          {
+            "en": "Passive with a modal-like \"sollte\": \"repariert werden\" (participle + infinitive \"werden\").",
+            "de": "Passiv nach „sollte“: Partizip + „werden“ im Infinitiv → „repariert werden“."
+          },
+          {
+            "en": "\"hoffen auf\" + accusative works without a reflexive pronoun. \"freuen\" would need \"mich\", and \"bitten\" takes \"um\".",
+            "de": "„hoffen auf“ + Akkusativ. „sich freuen“ braucht „mich“, „bitten“ braucht „um“."
+          }
+        ]
+      }
+    }
+  ]
+}
