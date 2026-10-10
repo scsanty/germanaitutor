@@ -1,0 +1,262 @@
+{
+  "formatId": "goethe-b1",
+  "partId": "lesen-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-b1__lesen-1__s01",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Ein Wochenende auf der Insel\n\nHallo ihr Lieben,\nlange habe ich hier nichts mehr geschrieben, aber heute muss ich euch von meinem letzten Wochenende erzählen. Meine Freundin Carla hatte Geburtstag, und als Geschenk hatte ich für uns zwei Nächte in einer kleinen Pension auf einer Nordseeinsel gebucht. Carla wusste nichts davon – sie dachte, wir fahren nur zum Essen nach Bremen.\n\nAm Freitag sind wir früh mit dem Zug losgefahren. Leider hatte der Zug eine Stunde Verspätung, und als wir am Hafen ankamen, war die Fähre schon weg. Die nächste fuhr erst drei Stunden später. Zuerst war ich ziemlich sauer, aber Carla hat nur gelacht und gesagt: „Dann trinken wir eben Kaffee und schauen aufs Meer.“ Und genau das haben wir gemacht.\n\nAuf der Insel gibt es keine Autos. Unser Gepäck haben wir auf einem kleinen Wagen zur Pension gezogen. Die Besitzerin, Frau Janssen, hat uns sehr freundlich begrüßt und uns gleich Tipps für die nächsten Tage gegeben. Am Samstag haben wir Fahrräder ausgeliehen und sind einmal um die ganze Insel gefahren. Das Wetter war windig, aber trocken, und am Nachmittag kam sogar die Sonne heraus.\n\nAm Abend wollten wir eigentlich im Hafenrestaurant Fisch essen, aber dort war alles voll. Frau Janssen hat dann für uns gekocht – die beste Fischsuppe meines Lebens! Am Sonntag mussten wir leider schon wieder zurück. Carla hat auf der Fähre gesagt, das war ihr schönster Geburtstag seit Jahren. Im Herbst wollen wir wiederkommen, dann aber für eine ganze Woche.\n\nBis bald,\neure Miriam",
+          "questions": [
+            {
+              "question": "Carla wusste vorher, dass die Reise auf eine Insel geht.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Miriam und Carla haben die Fähre verpasst, weil ihr Zug zu spät war.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Miriam hat sich zuerst über die Situation am Hafen geärgert.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Auf der Insel sind die beiden mit einem Taxi zur Pension gefahren.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Am Samstagabend haben die beiden im Hafenrestaurant gegessen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Miriam und Carla möchten noch einmal auf die Insel fahren.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "False. The trip was a surprise: „Carla wusste nichts davon – sie dachte, wir fahren nur zum Essen nach Bremen.“",
+            "de": "Falsch. Die Reise war eine Überraschung: „Carla wusste nichts davon.“ Sie dachte, sie fahren nur zum Essen nach Bremen."
+          },
+          {
+            "en": "True. „Leider hatte der Zug eine Stunde Verspätung, und als wir am Hafen ankamen, war die Fähre schon weg.“",
+            "de": "Richtig. Der Zug hatte eine Stunde Verspätung, und die Fähre war schon weg."
+          },
+          {
+            "en": "True. Miriam writes: „Zuerst war ich ziemlich sauer.“ Being 'sauer' means being annoyed.",
+            "de": "Richtig. Miriam schreibt: „Zuerst war ich ziemlich sauer.“ „Sauer sein“ bedeutet „sich ärgern“."
+          },
+          {
+            "en": "False. There are no cars on the island: „Unser Gepäck haben wir auf einem kleinen Wagen zur Pension gezogen.“",
+            "de": "Falsch. Auf der Insel gibt es keine Autos. Sie haben ihr Gepäck auf einem kleinen Wagen zur Pension gezogen."
+          },
+          {
+            "en": "False. The harbour restaurant was full („dort war alles voll“), so Frau Janssen cooked for them.",
+            "de": "Falsch. Im Hafenrestaurant war alles voll. Frau Janssen hat für die beiden gekocht."
+          },
+          {
+            "en": "True. „Im Herbst wollen wir wiederkommen, dann aber für eine ganze Woche.“",
+            "de": "Richtig. Miriam schreibt: „Im Herbst wollen wir wiederkommen.“"
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__lesen-1__s02",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Neu in der Stadt – und plötzlich im Chor\n\nVor einem Jahr bin ich wegen meiner neuen Stelle von Hamburg nach Leipzig gezogen. Ich kannte hier niemanden, und die ersten Wochen waren ehrlich gesagt ziemlich einsam. Tagsüber war ich im Büro, abends saß ich allein in meiner Wohnung und habe Serien geschaut. Meine Kolleginnen und Kollegen waren zwar nett, aber nach der Arbeit sind alle schnell nach Hause zu ihren Familien gegangen.\n\nIm November habe ich dann im Treppenhaus einen Zettel gesehen: „Unser Chor sucht neue Stimmen – auch ohne Erfahrung!“ Ich habe als Kind ein bisschen Klavier gespielt, aber gesungen habe ich nie, höchstens unter der Dusche. Trotzdem bin ich am nächsten Mittwoch hingegangen. Ich war sehr nervös, aber die anderen haben mich sofort freundlich aufgenommen. Der Chorleiter, ein älterer Herr mit viel Humor, hat mir erklärt, dass man am Anfang keine Noten lesen können muss.\n\nInzwischen gehe ich jede Woche zur Probe, und danach sitzen wir oft noch in einer kleinen Kneipe um die Ecke zusammen. Im Dezember hatten wir unser Weihnachtskonzert in einer Kirche. Ich durfte noch nicht allein singen – zum Glück! –, aber ich stand in der ersten Reihe, und meine Eltern sind extra aus Hamburg gekommen, um mich zu hören.\n\nDurch den Chor habe ich nicht nur Freunde gefunden, sondern auch die Stadt besser kennengelernt. Eine Sängerin hat mir zum Beispiel gezeigt, wo man am Wochenende günstig Gemüse direkt vom Bauern kaufen kann. Ich kann jedem, der neu in einer Stadt ist, nur raten: Sucht euch ein Hobby, bei dem man andere Menschen trifft!\n\nEuer Jonas",
+          "questions": [
+            {
+              "question": "Jonas ist nach Leipzig gezogen, weil er dort eine Arbeit gefunden hat.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Nach der Arbeit hat Jonas am Anfang oft etwas mit seinen Kollegen unternommen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Bevor Jonas in den Chor kam, hatte er schon viel Erfahrung im Singen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Im Chor muss man am Anfang keine Noten lesen können.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Beim Weihnachtskonzert hat Jonas ein Lied allein gesungen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Eine Frau aus dem Chor hat Jonas gezeigt, wo man günstig einkaufen kann.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "True. „Vor einem Jahr bin ich wegen meiner neuen Stelle von Hamburg nach Leipzig gezogen.“ A 'Stelle' is a job.",
+            "de": "Richtig. Jonas ist „wegen meiner neuen Stelle“ nach Leipzig gezogen. Eine Stelle ist eine Arbeit."
+          },
+          {
+            "en": "False. He spent the evenings alone, and his colleagues „sind alle schnell nach Hause zu ihren Familien gegangen“.",
+            "de": "Falsch. Jonas saß abends allein in seiner Wohnung. Die Kollegen sind nach der Arbeit schnell nach Hause gegangen."
+          },
+          {
+            "en": "False. „Gesungen habe ich nie, höchstens unter der Dusche.“ He only played a little piano as a child.",
+            "de": "Falsch. Jonas schreibt: „Gesungen habe ich nie, höchstens unter der Dusche.“"
+          },
+          {
+            "en": "True. The choir leader explained „dass man am Anfang keine Noten lesen können muss“.",
+            "de": "Richtig. Der Chorleiter sagt, dass man am Anfang keine Noten lesen können muss."
+          },
+          {
+            "en": "False. „Ich durfte noch nicht allein singen“ – he sang in the first row with the others.",
+            "de": "Falsch. Jonas schreibt: „Ich durfte noch nicht allein singen.“ Er stand nur in der ersten Reihe."
+          },
+          {
+            "en": "True. „Eine Sängerin hat mir zum Beispiel gezeigt, wo man am Wochenende günstig Gemüse direkt vom Bauern kaufen kann.“",
+            "de": "Richtig. Eine Sängerin aus dem Chor hat ihm gezeigt, wo man günstig Gemüse kaufen kann."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__lesen-1__s03",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Walzer mit Papa\n\nIm Mai heiratet mein Bruder, und schon vor Monaten hat er gesagt: „Auf meiner Hochzeit wird getanzt – und zwar von allen!“ Mein Problem: Ich kann überhaupt nicht tanzen. Meinem Vater geht es genauso. Meine Mutter tanzt sehr gut, aber sie hatte keine Lust, es uns beizubringen. Stattdessen hat sie uns zum Geburtstag einen Tanzkurs geschenkt – für uns beide zusammen.\n\nDer Kurs findet jeden Donnerstagabend in einer Tanzschule in der Altstadt statt und dauert zehn Wochen. In unserer Gruppe sind acht Paare, die meisten davon junge Paare, die bald heiraten. Wir sind das einzige Paar aus Vater und Tochter, und am ersten Abend haben uns alle etwas überrascht angeschaut. Aber die Tanzlehrerin fand die Idee super und hat uns gleich als Beispiel nach vorne geholt. Das war mir furchtbar peinlich, weil mein Vater mir dabei zweimal auf den Fuß getreten ist.\n\nNach drei Wochen klappt es schon viel besser. Den langsamen Walzer können wir inzwischen ganz gut, nur beim Discofox verlieren wir immer noch den Rhythmus. Zu Hause üben wir manchmal im Wohnzimmer, und meine Mutter sitzt auf dem Sofa und macht Kommentare – meistens lacht sie aber nur.\n\nDas Schönste an dem Kurs ist für mich gar nicht das Tanzen selbst. Seit ich ausgezogen bin, habe ich meinen Vater nur selten gesehen. Jetzt verbringen wir jede Woche einen Abend zusammen und gehen nach dem Kurs oft noch eine Pizza essen. Ich bin gespannt, ob wir auf der Hochzeit eine gute Figur machen!\n\nSelin",
+          "questions": [
+            {
+              "question": "Selins Mutter wollte Selin und ihrem Vater das Tanzen selbst beibringen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Selin und ihr Vater haben den Tanzkurs als Geschenk bekommen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Im Kurs gibt es noch andere Paare aus Eltern und Kindern.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Am ersten Abend war Selin eine Situation im Kurs unangenehm.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Den Discofox tanzen Selin und ihr Vater schon sehr sicher.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Durch den Kurs sieht Selin ihren Vater jetzt regelmäßig.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "False. Her mother dances well, „aber sie hatte keine Lust, es uns beizubringen“.",
+            "de": "Falsch. Die Mutter tanzt gut, aber „sie hatte keine Lust, es uns beizubringen“."
+          },
+          {
+            "en": "True. „Stattdessen hat sie uns zum Geburtstag einen Tanzkurs geschenkt – für uns beide zusammen.“",
+            "de": "Richtig. Die Mutter hat den beiden einen Tanzkurs zum Geburtstag geschenkt."
+          },
+          {
+            "en": "False. „Wir sind das einzige Paar aus Vater und Tochter“; most others are young couples who will marry soon.",
+            "de": "Falsch. Selin schreibt: „Wir sind das einzige Paar aus Vater und Tochter.“"
+          },
+          {
+            "en": "True. When the teacher brought them to the front, „Das war mir furchtbar peinlich“, because her father stepped on her foot.",
+            "de": "Richtig. Die Lehrerin hat sie nach vorne geholt. Selin schreibt: „Das war mir furchtbar peinlich.“"
+          },
+          {
+            "en": "False. „Nur beim Discofox verlieren wir immer noch den Rhythmus.“ Only the slow waltz goes well.",
+            "de": "Falsch. Beim Discofox verlieren sie immer noch den Rhythmus. Nur den langsamen Walzer können sie gut."
+          },
+          {
+            "en": "True. Before, she saw him rarely; „Jetzt verbringen wir jede Woche einen Abend zusammen.“",
+            "de": "Richtig. Früher hat sie ihren Vater nur selten gesehen. Jetzt sind sie jede Woche einen Abend zusammen."
+          }
+        ]
+      }
+    }
+  ]
+}

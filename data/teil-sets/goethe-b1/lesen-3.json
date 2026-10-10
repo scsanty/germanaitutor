@@ -1,0 +1,214 @@
+{
+  "formatId": "goethe-b1",
+  "partId": "lesen-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-b1__lesen-3__s01",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Ihr Kollege möchte lernen, wie er kleine Reparaturen an seinem Fahrrad selbst machen kann. Er hat nur am Wochenende Zeit.",
+            "Ihre Freundin möchte ihr Englisch verbessern. Sie möchte aber keinen Kurs besuchen, sondern sich einfach mit Muttersprachlern unterhalten.",
+            "Ein Bekannter muss in den Sommerferien arbeiten und sucht für eine Woche ein Tagesprogramm für seine zehnjährige Tochter.",
+            "Ihre Schwester möchte Standardtanz lernen. Sie hat aber keinen Tanzpartner und möchte sich allein anmelden.",
+            "Sie möchten lernen, wie man gesund und trotzdem günstig kocht. Sie haben nur abends Zeit.",
+            "Ihr Onkel ist gerade in Rente gegangen und möchte ehrenamtlich mit Kindern arbeiten.",
+            "Ihr Nachbar hat sich eine Kamera gekauft und möchte lernen, draußen in der Natur gute Fotos zu machen."
+          ],
+          "targets": [
+            "Fahrradverleih am Bahnhof: E-Bikes und Tourenräder ab 12 € pro Tag. Ist Ihr eigenes Rad kaputt? Wir reparieren es schnell und günstig für Sie. Geöffnet Mo–Fr 8–18 Uhr.",
+            "Ferien in der Stadt: Abenteuerwoche für Kinder von 8 bis 12 Jahren. Montag bis Freitag, 9–15 Uhr: Klettern, Kanu fahren, Theater spielen. Mittagessen inklusive. Anmeldung im Jugendzentrum Ost.",
+            "English Conversation Café: Jeden Donnerstagabend treffen sich Engländer, Iren, Amerikaner und Deutsche im Café Brücke zum Plaudern auf Englisch. Kein Unterricht, keine Kosten – nur Gespräche! Einfach vorbeikommen.",
+            "Fotostudio Blitz: Passfotos, Bewerbungsfotos und Hochzeitsbilder – professionell und schnell. Termine auch am Samstag. Lindenallee 3.",
+            "Fahrradwerkstatt zum Mitmachen: Bei uns lernen Sie, Ihr Rad selbst zu reparieren – vom Reifenwechsel bis zur Bremse. Workshops jeden Samstag von 10 bis 14 Uhr. Werkzeug ist vorhanden. Radhaus Lenker, Hafenstraße 9.",
+            "Tanzschule Schwung: Neue Anfängerkurse ab Oktober – Walzer, Tango, Discofox. Bitte beachten Sie: Wir nehmen nur Paare an. Einzelpersonen können sich leider nicht anmelden.",
+            "Lesepaten gesucht! Die Grundschule am Wald sucht Menschen mit Zeit und Geduld, die einmal pro Woche mit Kindern lesen üben. Erfahrung ist nicht nötig. Rufen Sie uns an: 0521 34 88 21.",
+            "Englisch für den Beruf: Intensivkurs an der Volkshochschule. 10 Termine mit Grammatik, Geschäftsbriefen und Abschlusstest. Anmeldung bis 15. März.",
+            "Naturfotografie für Einsteiger: Bei vier Ausflügen in den Wald und an den See lernen Sie, wie Sie Tiere und Landschaften richtig fotografieren. Bitte eigene Kamera mitbringen. Naturschutzzentrum Grünau.",
+            "Gesund kochen mit kleinem Budget: Im Kochstudio Pfeffer lernen Sie, wie Sie mit wenig Geld leckere und gesunde Gerichte zubereiten. Vier Abende, jeweils mittwochs 18.30–21 Uhr, 60 €."
+          ],
+          "answers": [
+            4,
+            2,
+            1,
+            null,
+            9,
+            6,
+            8
+          ],
+          "allowNone": true
+        },
+        "explanations": [
+          {
+            "en": "Ad e: „Bei uns lernen Sie, Ihr Rad selbst zu reparieren“, workshops every Saturday. Ad a only repairs bikes for you, on weekdays.",
+            "de": "Anzeige e: Man lernt, das Rad selbst zu reparieren, jeden Samstag. Bei Anzeige a repariert die Firma das Rad, und nur Mo–Fr."
+          },
+          {
+            "en": "Ad c: a conversation café with native speakers, „Kein Unterricht … nur Gespräche“. Ad h is a course, which she does not want.",
+            "de": "Anzeige c: Im Café spricht man mit Engländern, Iren und Amerikanern. Es gibt keinen Unterricht. Anzeige h ist ein Kurs."
+          },
+          {
+            "en": "Ad b: an adventure week for children aged 8 to 12, Monday to Friday, 9–15 Uhr.",
+            "de": "Anzeige b: Eine Abenteuerwoche für Kinder von 8 bis 12 Jahren, von Montag bis Freitag."
+          },
+          {
+            "en": "No ad fits (0). The only dance school, ad f, says „Wir nehmen nur Paare an. Einzelpersonen können sich leider nicht anmelden.“",
+            "de": "Keine Anzeige passt (0). Die Tanzschule in Anzeige f nimmt nur Paare an, Einzelpersonen können sich nicht anmelden."
+          },
+          {
+            "en": "Ad j: healthy cooking „mit wenig Geld“, on Wednesday evenings from 18.30.",
+            "de": "Anzeige j: Man lernt, mit wenig Geld gesund zu kochen. Der Kurs ist mittwochs am Abend."
+          },
+          {
+            "en": "Ad g: a primary school looks for volunteer reading mentors („Lesepaten“) to practise reading with children once a week.",
+            "de": "Anzeige g: Eine Grundschule sucht Lesepaten, die einmal pro Woche mit Kindern lesen üben."
+          },
+          {
+            "en": "Ad i: on trips to the forest and the lake you learn to photograph animals and landscapes; you bring your own camera. Ad d is a studio for passport photos.",
+            "de": "Anzeige i: Man lernt draußen in der Natur fotografieren und bringt die eigene Kamera mit. Anzeige d ist ein Fotostudio für Passfotos."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__lesen-3__s02",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Sie möchten mit Ihrem Hund ein Wochenende an der Ostsee verbringen und suchen eine Unterkunft, in der Tiere erlaubt sind.",
+            "Ihre Eltern möchten eine organisierte Reise nach Italien machen. Sie fliegen aber nicht gern.",
+            "Ein Freund möchte im Sommer zwei Wochen wandern, aber nicht allein.",
+            "Sie möchten mit Ihren Kindern (5 und 9 Jahre) einen Tagesausflug mit dem Schiff machen.",
+            "Ihre Kollegin möchte im Urlaub etwas Sinnvolles tun und auf einem Bauernhof mitarbeiten.",
+            "Ihr Bruder fährt für drei Wochen nach Spanien. Er sucht jemanden, der in dieser Zeit in seiner Wohnung wohnt und sich um die Pflanzen kümmert.",
+            "Sie brauchen für Ihre Reise einen Koffer. Er muss nicht neu sein, soll aber möglichst wenig kosten."
+          ],
+          "targets": [
+            "Urlaub mal anders: Biohof in der Uckermark sucht Helferinnen und Helfer für die Erntezeit. Sie arbeiten vier Stunden am Tag mit und bekommen dafür Zimmer und Essen kostenlos.",
+            "Last Minute nach Sizilien: Flug und Hotel, eine Woche ab 499 €. Nur noch wenige Plätze frei! Reisebüro Sonnenweg.",
+            "Ferienhaus Strandkorb, 200 m zur Ostsee: Gemütliches Haus für 2–4 Personen. Hunde sind herzlich willkommen! Mindestaufenthalt zwei Nächte. Tel. 04503 77 12 90.",
+            "Haus-Service Sorglos: Während Sie verreist sind, schauen wir täglich in Ihrer Wohnung nach dem Rechten, leeren den Briefkasten und gießen die Blumen. Bitte beachten Sie: Wir übernachten nicht bei Ihnen.",
+            "Ausflugsschiff MS Möwe: Rundfahrten auf dem Fluss, täglich um 10, 13 und 16 Uhr. Kinder bis 12 Jahre fahren kostenlos mit. Restaurant an Bord.",
+            "Lederwaren Krüger: Wir reparieren Koffer, Taschen und Schuhe – schnell und zuverlässig. Bringen Sie Ihr kaputtes Stück einfach vorbei.",
+            "Rom entdecken – ganz entspannt im modernen Reisebus! 8 Tage, Hotel mit Frühstück, Stadtführungen auf Deutsch inklusive. Abfahrt in Kassel. Reisebüro Weltweit.",
+            "Hotel Seeblick an der Ostsee: Wellness-Wochenende mit Sauna und Massage, Doppelzimmer ab 149 €. Bitte beachten Sie: Haustiere sind in unserem Haus nicht erlaubt.",
+            "Reiseflohmarkt im Bürgerhaus: Gebrauchte Koffer, Rucksäcke, Reiseführer und Campingartikel zu kleinen Preisen. Sonntag, 11–16 Uhr.",
+            "Gemeinsam unterwegs: Unsere Wandergruppe sucht noch Mitwanderer für eine 14-tägige Tour durch den Schwarzwald im Juli. Übernachtung in Hütten und Pensionen. Infos bei Gerd, Tel. 0761 55 39 02."
+          ],
+          "answers": [
+            2,
+            6,
+            9,
+            4,
+            0,
+            null,
+            8
+          ],
+          "allowNone": true
+        },
+        "explanations": [
+          {
+            "en": "Ad c: a holiday house on the Baltic Sea where „Hunde sind herzlich willkommen“. Hotel h does not allow pets.",
+            "de": "Anzeige c: Ein Ferienhaus an der Ostsee, Hunde sind willkommen. Im Hotel in Anzeige h sind Haustiere nicht erlaubt."
+          },
+          {
+            "en": "Ad g: an organised trip to Rome by coach, with hotel and guided tours. Ad b includes a flight, which the parents do not like.",
+            "de": "Anzeige g: Eine organisierte Busreise nach Rom mit Hotel und Führungen. Anzeige b ist eine Flugreise."
+          },
+          {
+            "en": "Ad j: a hiking group is looking for people to join a 14-day tour in July.",
+            "de": "Anzeige j: Eine Wandergruppe sucht Mitwanderer für eine Tour von 14 Tagen im Juli."
+          },
+          {
+            "en": "Ad e: boat trips every day, and children up to 12 travel free.",
+            "de": "Anzeige e: Schiffsrundfahrten jeden Tag, Kinder bis 12 Jahre fahren kostenlos."
+          },
+          {
+            "en": "Ad a: an organic farm looks for helpers during the harvest, with free room and meals.",
+            "de": "Anzeige a: Ein Biohof sucht Helfer für die Ernte. Zimmer und Essen sind kostenlos."
+          },
+          {
+            "en": "No ad fits (0). Ad d waters plants but says „Wir übernachten nicht bei Ihnen“ – nobody would live in the flat.",
+            "de": "Keine Anzeige passt (0). Der Service in Anzeige d gießt die Blumen, aber „Wir übernachten nicht bei Ihnen“. Niemand wohnt also in der Wohnung."
+          },
+          {
+            "en": "Ad i: a flea market selling used suitcases cheaply. Ad f only repairs suitcases.",
+            "de": "Anzeige i: Auf dem Flohmarkt gibt es gebrauchte Koffer zu kleinen Preisen. Anzeige f repariert nur Koffer."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__lesen-3__s03",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Ihre Nachbarin hat vor drei Monaten ein Baby bekommen und möchte andere Eltern mit kleinen Kindern kennenlernen.",
+            "Sie haben vom vielen Sitzen im Büro Rückenschmerzen und möchten in der Mittagspause etwas dagegen tun.",
+            "Sie sind angestellt und brauchen Hilfe bei Ihrer privaten Steuererklärung.",
+            "Ein Freund zieht um und braucht am Samstag Hilfe beim Transport seiner Möbel.",
+            "Sie möchten Ihre alten Romane nicht wegwerfen, sondern verschenken.",
+            "Ihre Kollegin hat ihren Führerschein schon lange, ist aber seit Jahren nicht mehr Auto gefahren. Sie möchte wieder sicherer fahren.",
+            "Ihr Sohn (14) möchte ein Instrument lernen, aber die Familie hat kein Geld, um ein eigenes Instrument zu kaufen."
+          ],
+          "targets": [
+            "Zwei Studenten mit Transporter helfen Ihnen beim Umzug: Möbel tragen, auf- und abbauen. Auch am Wochenende! Faire Preise. Tel. 0157 82 44 61 03.",
+            "Steuerbüro Hartwig: Beratung und Buchhaltung für Firmen und Selbstständige. Bitte beachten Sie: Für Privatpersonen können wir leider keine Steuererklärungen übernehmen.",
+            "Musikschule am Park: Gitarre, Geige oder Querflöte lernen? Kindern und Jugendlichen bis 18 Jahre leihen wir im ersten Jahr kostenlos ein Instrument. Probestunde gratis.",
+            "Babycafé im Familienzentrum: Jeden Mittwoch von 10 bis 12 Uhr treffen sich Mütter und Väter mit ihren Babys (0–12 Monate) zum Frühstück und Austausch. Kostenlos, ohne Anmeldung.",
+            "Rückenschule am Abend: 10 Termine mit Übungen für einen starken Rücken. Dienstags von 19 bis 20 Uhr in der Turnhalle der Goetheschule.",
+            "Fahrschule Grüne Welle: Lange nicht gefahren? Unsere Auffrischungsstunden helfen Ihnen, wieder sicher im Straßenverkehr unterwegs zu sein. Einzelstunden nach Vereinbarung.",
+            "Gitarrenunterricht für Erwachsene: Kurse für Anfänger und Wiedereinsteiger ab 25 Jahren, donnerstags am Abend. Bitte eigenes Instrument mitbringen.",
+            "Rückenfit in der Mittagspause: 30 Minuten Übungen für alle, die viel am Schreibtisch sitzen. Montag bis Freitag, 12.15–12.45 Uhr, Sporthalle am Rathaus. Keine Sportkleidung nötig.",
+            "Umzugskartons günstig abzugeben: 30 Stück, kaum benutzt, nur 15 € zusammen. Abholung in der Bergstraße 12.",
+            "Bücher gesucht! Die Bibliothek im Seniorenheim Abendrot freut sich über gut erhaltene Romane und Krimis. Bitte bringen Sie Ihre Bücher montags bis freitags zwischen 9 und 17 Uhr an die Rezeption."
+          ],
+          "answers": [
+            3,
+            7,
+            null,
+            0,
+            9,
+            5,
+            2
+          ],
+          "allowNone": true
+        },
+        "explanations": [
+          {
+            "en": "Ad d: a baby café where mothers and fathers with babies up to 12 months meet every Wednesday.",
+            "de": "Anzeige d: Im Babycafé treffen sich jeden Mittwoch Mütter und Väter mit ihren Babys."
+          },
+          {
+            "en": "Ad h: exercises for people who sit at a desk, from 12.15 to 12.45 – during the lunch break. Ad e is in the evening.",
+            "de": "Anzeige h: Übungen für Menschen, die viel am Schreibtisch sitzen, von 12.15 bis 12.45 Uhr. Anzeige e ist am Abend."
+          },
+          {
+            "en": "No ad fits (0). The only tax office, ad b, says „Für Privatpersonen können wir leider keine Steuererklärungen übernehmen.“",
+            "de": "Keine Anzeige passt (0). Das Steuerbüro in Anzeige b hilft nur Firmen und Selbstständigen, nicht Privatpersonen."
+          },
+          {
+            "en": "Ad a: two students with a van carry furniture, „Auch am Wochenende!“ Ad i only sells boxes.",
+            "de": "Anzeige a: Zwei Studenten helfen beim Umzug und tragen Möbel, auch am Wochenende. Anzeige i verkauft nur Kartons."
+          },
+          {
+            "en": "Ad j: the library in a care home is happy to receive „gut erhaltene Romane und Krimis“ as donations.",
+            "de": "Anzeige j: Die Bibliothek im Seniorenheim sucht gut erhaltene Romane und Krimis."
+          },
+          {
+            "en": "Ad f: refresher lessons for people who have not driven for a long time („Lange nicht gefahren?“).",
+            "de": "Anzeige f: Die Fahrschule bietet Auffrischungsstunden für Menschen an, die lange nicht gefahren sind."
+          },
+          {
+            "en": "Ad c: the music school lends instruments free of charge for the first year to young people up to 18. Ad g is for adults from 25 who bring their own instrument.",
+            "de": "Anzeige c: Die Musikschule leiht Jugendlichen bis 18 Jahre im ersten Jahr kostenlos ein Instrument. Anzeige g ist für Erwachsene ab 25."
+          }
+        ]
+      }
+    }
+  ]
+}
