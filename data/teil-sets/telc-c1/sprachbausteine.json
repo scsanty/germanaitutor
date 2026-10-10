@@ -1,0 +1,970 @@
+{
+  "formatId": "telc-c1",
+  "partId": "sprachbausteine",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-c1__sprachbausteine__s01",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Handwerk sucht Nachwuchs\n\nSeit Jahren klagen Handwerksbetriebe {{1}} fehlenden Nachwuchs. Allein im vergangenen Jahr blieben bundesweit Tausende Ausbildungsplätze unbesetzt, {{2}} die Auftragsbücher vieler Betriebe gut gefüllt sind. Kundinnen und Kunden müssen {{3}} oft monatelang auf einen Termin warten, sei es für eine neue Heizung oder eine Badrenovierung.\n\nDie Gründe für den Mangel sind vielfältig. {{4}} entscheiden sich immer mehr Schulabgänger für ein Studium, zum anderen gilt das Handwerk bei vielen Eltern noch immer als weniger angesehen. „Dabei bietet kaum ein anderer Bereich so gute Aufstiegschancen“, betont eine Sprecherin der örtlichen Handwerkskammer. Wer nach der Ausbildung die Meisterprüfung {{5}}, könne einen eigenen Betrieb gründen oder übernehmen – und {{6}} gebe es mehr als genug, da viele Inhaber in den kommenden Jahren in den Ruhestand gingen.\n\nUm junge Menschen {{7}} das Handwerk zu begeistern, setzen die Kammern verstärkt auf Praktika und Schnuppertage. {{8}} Erfahrung zeigt, dass Jugendliche, die einmal selbst in einer Werkstatt gearbeitet haben, eher bereit sind, eine Ausbildung in Betracht zu {{9}}. Darüber hinaus werben die Betriebe zunehmend auch in den sozialen Medien {{10}} Nachwuchs, indem sie Auszubildende von ihrem Arbeitsalltag erzählen lassen.\n\nAuch Studienabbrecher rücken zunehmend in den Fokus. {{11}} sie bereits Vorkenntnisse mitbringen, können sie ihre Ausbildung häufig verkürzen. Spezielle Beratungsstellen helfen ihnen dabei, einen passenden Betrieb zu finden, und {{12}} sie bei Fragen zur Finanzierung.\n\nEine wichtige Rolle spielt auch die Bezahlung. Zwar sind die Ausbildungsvergütungen in den letzten Jahren deutlich {{13}}, doch in manchen Gewerken liegen sie nach wie vor unter dem Durchschnitt. Experten gehen deshalb davon {{14}}, dass sich das Handwerk langfristig nur behaupten kann, {{15}} es attraktive Arbeitsbedingungen bietet – von fairen Löhnen {{16}} hin zu flexiblen Arbeitszeiten.\n\nEinige Betriebe gehen bereits neue Wege. Eine Tischlerei im Landkreis bietet ihren Beschäftigten seit Kurzem eine Vier-Tage-Woche an – mit {{17}} Erfolg: Auf die letzte Stellenanzeige meldeten sich so viele Bewerber {{18}} nie zuvor. „Wir mussten umdenken“, sagt der Inhaber. „Früher haben sich die Leute bei uns beworben, heute bewerben wir uns {{19}} den Leuten.“\n\nOb solche Beispiele Schule machen, bleibt abzuwarten. Fest {{20}} jedenfalls, dass der Bedarf an Fachkräften in den nächsten Jahren eher steigen {{21}} sinken wird – nicht {{22}} wegen der Energiewende, für die zahlreiche Handwerker benötigt werden.",
+          "gaps": [
+            {
+              "mode": "select",
+              "options": [
+                "an",
+                "über",
+                "von",
+                "auf"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "damit",
+                "weil",
+                "obwohl",
+                "sodass"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "trotzdem",
+                "deshalb",
+                "dennoch",
+                "jedoch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "Zum einen",
+                "Entweder",
+                "Weder",
+                "Sowohl"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "abgebe",
+                "ausübe",
+                "ablege",
+                "aufnehme"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "darauf",
+                "davon",
+                "dafür",
+                "daran"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "für",
+                "an",
+                "zu",
+                "von"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "Der",
+                "Dem",
+                "Die",
+                "Den"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "nehmen",
+                "stellen",
+                "kommen",
+                "ziehen"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "mode": "select",
+              "options": [
+                "um",
+                "nach",
+                "auf",
+                "an"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "Ob",
+                "Da",
+                "Obwohl",
+                "Damit"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "helfen",
+                "beistehen",
+                "unterstützen",
+                "dienen"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "gehoben",
+                "gestiegen",
+                "gestellt",
+                "gelegen"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "an",
+                "ab",
+                "hin",
+                "aus"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "mode": "select",
+              "options": [
+                "als",
+                "ob",
+                "da",
+                "wenn"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "mode": "select",
+              "options": [
+                "über",
+                "bis",
+                "nach",
+                "zu"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "großen",
+                "großes",
+                "großem",
+                "großer"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "als",
+                "denn",
+                "wenn",
+                "wie"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "mode": "select",
+              "options": [
+                "bei",
+                "um",
+                "für",
+                "an"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "liegt",
+                "hält",
+                "steht",
+                "bleibt"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "wie",
+                "oder",
+                "als",
+                "noch"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "zuerst",
+                "letztlich",
+                "schließlich",
+                "zuletzt"
+              ],
+              "correctIndex": 3
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "\"klagen über + accusative\" means to complain about something. \"klagen auf\" is legal language (to sue for), and \"an\"/\"von\" do not combine with klagen.",
+            "de": "Es heißt „klagen über + Akkusativ“ (sich beschweren). „Klagen auf“ ist juristisch (vor Gericht etwas fordern)."
+          },
+          {
+            "en": "\"obwohl\" introduces a concession: places stay empty although the order books are full. A purpose (damit), a cause (weil) or a result (sodass) make no sense here.",
+            "de": "„obwohl“ drückt einen Gegensatz aus: Plätze bleiben leer, obwohl es viele Aufträge gibt."
+          },
+          {
+            "en": "\"deshalb\" marks the consequence: because skilled workers are missing, customers have to wait for months. trotzdem, dennoch and jedoch express a contrast.",
+            "de": "„deshalb“ nennt die Folge: Weil Fachkräfte fehlen, warten Kunden lange. Die anderen Wörter drücken einen Gegensatz aus."
+          },
+          {
+            "en": "The two-part connector \"zum einen … zum anderen\" (on the one hand … on the other) is completed later in the sentence by \"zum anderen\".",
+            "de": "Die Konjunktion „zum einen … zum anderen“ gehört zusammen; „zum anderen“ folgt im Satz."
+          },
+          {
+            "en": "Fixed collocation: \"eine Prüfung ablegen\" (to take/pass an exam). The Konjunktiv I form \"ablege\" fits the reported speech (\"könne\").",
+            "de": "Feste Verbindung: „eine Prüfung ablegen“. Der Konjunktiv I „ablege“ passt zur indirekten Rede („könne“)."
+          },
+          {
+            "en": "\"davon gebe es mehr als genug\" — \"davon\" refers back to the businesses (Betriebe) one could take over; \"genug von etwas\" needs \"davon\".",
+            "de": "„davon“ bezieht sich auf die Betriebe: Von ihnen gibt es mehr als genug („genug von etwas“)."
+          },
+          {
+            "en": "\"jemanden für etwas begeistern\" — the verb takes the preposition \"für\".",
+            "de": "„jemanden für etwas begeistern“ – das Verb verlangt „für“."
+          },
+          {
+            "en": "\"Erfahrung\" is feminine and the subject (nominative): \"Die Erfahrung zeigt\".",
+            "de": "„die Erfahrung“ ist feminin und hier Subjekt im Nominativ: „Die Erfahrung zeigt“."
+          },
+          {
+            "en": "Fixed expression: \"etwas in Betracht ziehen\" (to consider something).",
+            "de": "Feste Wendung: „etwas in Betracht ziehen“ (über etwas nachdenken)."
+          },
+          {
+            "en": "\"um jemanden/etwas werben\" means to try to win someone over: \"um Nachwuchs werben\".",
+            "de": "„um jemanden werben“ bedeutet: versuchen, jemanden zu gewinnen – „um Nachwuchs werben“."
+          },
+          {
+            "en": "\"Da\" introduces a known reason: since they already have previous knowledge, they can shorten the training. Ob, obwohl and damit do not give a reason.",
+            "de": "„Da“ nennt einen Grund: Weil sie schon Vorkenntnisse haben, können sie verkürzen."
+          },
+          {
+            "en": "\"sie\" is accusative, so the verb must take an accusative object: \"jemanden unterstützen\". helfen, beistehen and dienen take the dative (ihnen).",
+            "de": "„sie“ steht im Akkusativ. „unterstützen“ braucht den Akkusativ; „helfen“, „beistehen“ und „dienen“ brauchen den Dativ."
+          },
+          {
+            "en": "\"steigen\" (to rise) forms the perfect with \"sein\": \"sind … gestiegen\". The other participles do not mean \"increase\" here.",
+            "de": "„steigen“ bildet das Perfekt mit „sein“: „sind gestiegen“. Die anderen Verben passen inhaltlich nicht."
+          },
+          {
+            "en": "Fixed expression: \"davon ausgehen, dass …\" (to assume that …).",
+            "de": "Feste Wendung: „davon ausgehen, dass …“ (annehmen)."
+          },
+          {
+            "en": "\"nur …, wenn\" introduces the condition: the trade can only hold its own if it offers attractive conditions.",
+            "de": "„nur …, wenn“ nennt eine Bedingung: Nur wenn die Bedingungen gut sind, kann sich das Handwerk behaupten."
+          },
+          {
+            "en": "Fixed pair: \"von … bis hin zu …\" (from … all the way to …).",
+            "de": "Feste Verbindung: „von … bis hin zu …“."
+          },
+          {
+            "en": "\"mit\" takes the dative; \"Erfolg\" is masculine, and without an article the adjective takes the strong ending -em: \"mit großem Erfolg\".",
+            "de": "„mit“ verlangt den Dativ. „Erfolg“ ist maskulin, ohne Artikel heißt es: „mit großem Erfolg“."
+          },
+          {
+            "en": "Comparison of equality: \"so viele … wie nie zuvor\". \"als\" is used after a comparative, which is not the case here.",
+            "de": "Vergleich mit „so … wie“: „so viele Bewerber wie nie zuvor“. „als“ steht nur nach einem Komparativ."
+          },
+          {
+            "en": "\"sich bei jemandem bewerben\" (to apply to someone) — parallel to \"bei uns beworben\" in the previous sentence; \"den Leuten\" is dative.",
+            "de": "„sich bei jemandem bewerben“ – wie „bei uns beworben“ im Satz davor; „den Leuten“ ist Dativ."
+          },
+          {
+            "en": "Fixed expression: \"Fest steht, dass …\" (What is certain is that …).",
+            "de": "Feste Wendung: „Fest steht, dass …“ (Es ist sicher, dass …)."
+          },
+          {
+            "en": "\"eher … als …\" (rather … than …): \"eher steigen als sinken\".",
+            "de": "„eher … als …“: „eher steigen als sinken“."
+          },
+          {
+            "en": "Fixed expression: \"nicht zuletzt\" (not least), which stresses an important reason.",
+            "de": "Feste Wendung: „nicht zuletzt“ (auch und besonders)."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-c1__sprachbausteine__s02",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Antrag auf Förderung des Stadtteilfestes „Nachbarschaft in Bewegung“\n\nSehr geehrte Damen und Herren,\n\nim Namen {{1}} Vereins Bürgerforum Südstadt e. V. wende ich mich {{2}} der Bitte an Sie, unser diesjähriges Stadtteilfest finanziell zu unterstützen. Das Fest findet bereits zum fünften Mal statt und hat sich {{3}} einem festen Bestandteil des kulturellen Lebens in unserem Viertel entwickelt.\n\n{{4}} das Fest in den vergangenen Jahren ausschließlich aus Spenden und Mitgliedsbeiträgen finanziert werden konnte, ist dies inzwischen nicht mehr möglich. Die Kosten für Bühnentechnik, Sicherheitspersonal und Genehmigungen sind erheblich gestiegen, {{5}} die Zahl der Besucher stetig wächst. Im letzten Jahr kamen über 3000 Gäste, {{6}} viele Familien mit Kindern.\n\nIn diesem Jahr möchten wir das Programm {{7}} zusätzliche Angebote erweitern. Geplant sind unter anderem ein Workshop für Jugendliche, {{8}} sie unter Anleitung eigene Lieder schreiben, sowie ein internationaler Kochwettbewerb, an {{9}} sich Familien aller Herkunftsländer beteiligen können. Damit wollen wir einen Beitrag {{10}} leisten, dass sich die Menschen im Stadtteil besser kennenlernen.\n\nFür die Umsetzung {{11}} wir eine Förderung in Höhe von 4500 Euro. Eine ausführliche Kostenaufstellung {{12}} Sie im Anhang. Selbstverständlich sind wir bereit, einen angemessenen Eigenanteil zu {{13}}; außerdem haben uns mehrere örtliche Geschäfte bereits Sachspenden {{14}}.\n\n{{15}} Ihnen noch Unterlagen fehlen, lassen Sie es uns bitte wissen. Gern stellen wir Ihnen unser Konzept auch in einem persönlichen Gespräch {{16}}. Für Rückfragen stehe ich Ihnen jederzeit unter der Telefonnummer 0561 48 27 30 zur {{17}}.\n\nWir würden uns sehr freuen, wenn Sie unser Vorhaben {{18}} könnten, und bedanken uns im Voraus {{19}} Ihre Mühe. Über eine Rückmeldung bis {{20}} 15. April wären wir Ihnen dankbar, {{21}} wir die Planung Ende des Monats abschließen müssen.\n\nMit freundlichen {{22}}\n\nAnna Weber\nVorsitzende des Bürgerforums Südstadt e. V.",
+          "gaps": [
+            {
+              "mode": "select",
+              "options": [
+                "dem",
+                "des",
+                "den",
+                "der"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "für",
+                "in",
+                "zu",
+                "mit"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "mode": "select",
+              "options": [
+                "in",
+                "als",
+                "zu",
+                "auf"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "Während",
+                "Damit",
+                "Weil",
+                "Sobald"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "sodass",
+                "zumal",
+                "obwohl",
+                "damit"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "darunter",
+                "dazwischen",
+                "darüber",
+                "dahinter"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "mit",
+                "an",
+                "um",
+                "für"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "in den",
+                "in die",
+                "in dem",
+                "in der"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "den",
+                "dem",
+                "der",
+                "das"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "dafür",
+                "darauf",
+                "damit",
+                "dazu"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "mode": "select",
+              "options": [
+                "bestellen",
+                "ersuchen",
+                "beantragen",
+                "erkundigen"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "finden",
+                "liegen",
+                "stehen",
+                "befinden"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "halten",
+                "legen",
+                "tragen",
+                "setzen"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "zugestimmt",
+                "zugesagt",
+                "zugelassen",
+                "zugetraut"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "Ob",
+                "Falls",
+                "Damit",
+                "Sodass"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "aus",
+                "an",
+                "ab",
+                "vor"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "mode": "select",
+              "options": [
+                "Hilfe",
+                "Verfügung",
+                "Auskunft",
+                "Hand"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "helfen",
+                "beitragen",
+                "zustimmen",
+                "unterstützen"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "mode": "select",
+              "options": [
+                "für",
+                "bei",
+                "über",
+                "an"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "im",
+                "ab",
+                "zum",
+                "an"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "da",
+                "ob",
+                "damit",
+                "sodass"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "Grüße",
+                "Gruß",
+                "Grüßen",
+                "Grüßens"
+              ],
+              "correctIndex": 2
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "\"im Namen + genitive\": \"der Verein\" becomes \"des Vereins\" in the genitive (note the -s ending).",
+            "de": "„im Namen“ verlangt den Genitiv: „des Vereins“."
+          },
+          {
+            "en": "Fixed expression: \"sich mit einer Bitte an jemanden wenden\" (to approach someone with a request).",
+            "de": "Feste Wendung: „sich mit einer Bitte an jemanden wenden“."
+          },
+          {
+            "en": "\"sich zu etwas entwickeln\" (to develop into something) takes \"zu + dative\": \"zu einem festen Bestandteil\".",
+            "de": "„sich zu etwas entwickeln“ – mit „zu + Dativ“: „zu einem festen Bestandteil“."
+          },
+          {
+            "en": "\"Während\" contrasts past and present: in earlier years donations were enough, now they are not. Damit (purpose), weil (cause) and sobald (time) do not fit the logic of the sentence.",
+            "de": "„Während“ stellt früher und heute gegenüber: Früher reichten Spenden, heute nicht mehr. „Damit“, „weil“ und „sobald“ passen nicht zur Logik des Satzes."
+          },
+          {
+            "en": "\"zumal\" adds a further, reinforcing reason (especially since visitor numbers keep rising). sodass and damit would turn the rising visitor numbers into a result or purpose of the costs.",
+            "de": "„zumal“ nennt einen zusätzlichen Grund: Die Kosten steigen, besonders weil mehr Besucher kommen."
+          },
+          {
+            "en": "\"darunter\" (among them) singles out part of a group: over 3000 guests, among them many families.",
+            "de": "„darunter“ nennt einen Teil einer Gruppe: 3000 Gäste, unter ihnen viele Familien."
+          },
+          {
+            "en": "\"etwas um etwas erweitern\" (to extend something by something): \"das Programm um zusätzliche Angebote erweitern\".",
+            "de": "„etwas um etwas erweitern“: „das Programm um zusätzliche Angebote erweitern“."
+          },
+          {
+            "en": "Relative clause referring to \"ein Workshop\" (masculine) with \"in\" indicating location, so dative: \"in dem\".",
+            "de": "Relativsatz zu „der Workshop“ (maskulin); „in“ steht hier mit Dativ: „in dem“."
+          },
+          {
+            "en": "\"sich an etwas beteiligen\" takes the dative; \"der Kochwettbewerb\" is masculine, so the relative pronoun is \"dem\".",
+            "de": "„sich an etwas (Dativ) beteiligen“; „der Wettbewerb“ ist maskulin, also „an dem“."
+          },
+          {
+            "en": "Fixed expression: \"einen Beitrag dazu leisten, dass …\" (to contribute to …). \"Beitrag zu\" requires \"dazu\".",
+            "de": "Feste Wendung: „einen Beitrag dazu leisten, dass …“ (Beitrag zu → dazu)."
+          },
+          {
+            "en": "In official requests you \"eine Förderung beantragen\" (apply for funding). \"ersuchen\" would need \"um\", \"erkundigen\" is reflexive, and you do not \"bestellen\" funding.",
+            "de": "Bei Behörden „beantragt“ man eine Förderung. „ersuchen“ braucht „um“, „erkundigen“ ist reflexiv."
+          },
+          {
+            "en": "Standard letter phrase: \"Sie finden … im Anhang\" (please find … attached).",
+            "de": "Typische Briefformel: „… finden Sie im Anhang“."
+          },
+          {
+            "en": "Collocation: \"einen Eigenanteil tragen\" (to bear a share of the costs oneself).",
+            "de": "Feste Verbindung: „einen Eigenanteil tragen“ (einen Teil der Kosten selbst bezahlen)."
+          },
+          {
+            "en": "\"jemandem etwas zusagen\" (to promise someone something): the shops have promised donations in kind. \"zustimmen\" has no accusative object, and the others do not fit the meaning.",
+            "de": "„jemandem etwas zusagen“ = versprechen. Die Geschäfte haben Sachspenden versprochen."
+          },
+          {
+            "en": "\"Falls\" introduces a condition (in case documents are missing). \"Ob\" introduces indirect questions, and \"Damit\"/\"Sodass\" express purpose or result.",
+            "de": "„Falls“ nennt eine Bedingung. „Ob“ steht bei indirekten Fragen."
+          },
+          {
+            "en": "Separable verb \"jemandem etwas vorstellen\" (to present something to someone): \"stellen wir Ihnen … vor\".",
+            "de": "Trennbares Verb „vorstellen“: „Gern stellen wir Ihnen unser Konzept … vor“."
+          },
+          {
+            "en": "Fixed expression: \"jemandem zur Verfügung stehen\" (to be available to someone).",
+            "de": "Feste Wendung: „jemandem zur Verfügung stehen“."
+          },
+          {
+            "en": "\"unser Vorhaben\" is an accusative object, so the verb must be transitive: \"etwas unterstützen\". helfen and zustimmen take the dative, beitragen needs \"zu\".",
+            "de": "„unser Vorhaben“ ist Akkusativ. Nur „unterstützen“ passt; „helfen“ und „zustimmen“ brauchen den Dativ, „beitragen“ braucht „zu“."
+          },
+          {
+            "en": "\"sich für etwas bedanken\" (to thank someone for something).",
+            "de": "„sich für etwas bedanken“."
+          },
+          {
+            "en": "Deadline with a date: \"bis zum 15. April\" (bis + zu + dem).",
+            "de": "Frist mit Datum: „bis zum 15. April“."
+          },
+          {
+            "en": "\"da\" gives the reason for the requested deadline: planning must be finished at the end of the month.",
+            "de": "„da“ nennt den Grund für die Frist: Die Planung muss Ende des Monats fertig sein."
+          },
+          {
+            "en": "Fixed closing formula: \"Mit freundlichen Grüßen\" — after \"mit\" the plural takes the dative ending -en.",
+            "de": "Feste Grußformel: „Mit freundlichen Grüßen“ (Dativ Plural)."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-c1__sprachbausteine__s03",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Einmal offline, bitte\n\nDurchschnittlich {{1}} Erwachsene in Deutschland mehr als drei Stunden täglich mit ihrem Smartphone. Viele empfinden das inzwischen selbst als zu viel und versuchen, {{2}} Nutzung bewusst einzuschränken. Unter dem Schlagwort „Digital Detox“ ist ein regelrechter Markt entstanden: Es gibt Ratgeber, Apps, {{3}} die Bildschirmzeit begrenzen, und sogar Hotels, in {{4}} die Gäste ihr Handy beim Einchecken abgeben.\n\nDoch was bringt der Verzicht tatsächlich? In einer Studie wurden Teilnehmende gebeten, zwei Wochen lang {{5}} soziale Netzwerke zu verzichten. Am Ende berichteten die meisten, sie hätten besser geschlafen und sich weniger gestresst {{6}}. Allerdings hielt der Effekt nicht lange {{7}}: Wenige Wochen nach Ende des Experiments hatten sich bei vielen die alten Gewohnheiten wieder eingestellt.\n\nFachleute raten deshalb {{8}} ab, das Smartphone für eine Weile komplett zu verbannen. Sinnvoller sei es, die eigene Nutzung dauerhaft zu verändern, {{9}} man etwa Benachrichtigungen abschaltet oder das Gerät nachts außerhalb des Schlafzimmers auflädt. {{10}} kleine Änderungen könnten eine große Wirkung haben, betont eine Medienpsychologin. „Es geht nicht {{11}}, Technik zu verteufeln, sondern sie so einzusetzen, dass sie uns nützt.“\n\nBesonders schwer fällt der bewusste Umgang {{12}} digitalen Medien offenbar Jugendlichen. {{13}} Umfrage zufolge fühlt sich fast die Hälfte der 14- bis 19-Jährigen unter Druck, ständig erreichbar zu sein. Wer nicht sofort auf eine Nachricht antwortet, {{14}} Gefahr, aus der Gruppe ausgeschlossen zu werden – so jedenfalls die Befürchtung vieler. Einige Schulen haben {{15}} reagiert und handyfreie Pausen eingeführt. Die Erfahrungen seien {{16}} positiv, heißt es: Die Schülerinnen und Schüler unterhielten sich wieder mehr miteinander und bewegten sich häufiger.\n\nAuch Arbeitgeber haben das Thema für sich entdeckt. Manche Unternehmen leiten E-Mails, {{17}} nach Feierabend eingehen, nicht mehr {{18}} oder löschen sie während des Urlaubs automatisch. Kritiker halten {{19}} entgegen, dass solche Regeln die Flexibilität einschränken: Wer lieber abends arbeitet, um tagsüber Zeit für die Familie zu haben, werde dadurch eher behindert {{20}} entlastet.\n\nAm Ende, darin sind sich die meisten Experten {{21}}, kommt es weniger auf feste Regeln an {{22}} auf die Frage, ob man selbst über sein Smartphone bestimmt – oder das Smartphone über einen.",
+          "gaps": [
+            {
+              "mode": "select",
+              "options": [
+                "vergehen",
+                "verlaufen",
+                "verbringen",
+                "verbrauchen"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "seine",
+                "ihre",
+                "ihrer",
+                "ihren"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "denen",
+                "deren",
+                "die",
+                "welcher"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "die",
+                "deren",
+                "dem",
+                "denen"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "mode": "select",
+              "options": [
+                "an",
+                "von",
+                "auf",
+                "für"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "gemerkt",
+                "gefühlt",
+                "gefunden",
+                "gespürt"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "an",
+                "ab",
+                "zu",
+                "ein"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "darauf",
+                "davon",
+                "dazu",
+                "daran"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "sodass",
+                "damit",
+                "indem",
+                "ohne dass"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "Noch",
+                "Schon",
+                "Erst",
+                "Kaum"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "dafür",
+                "davon",
+                "daran",
+                "darum"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "mode": "select",
+              "options": [
+                "von",
+                "an",
+                "zu",
+                "mit"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "mode": "select",
+              "options": [
+                "Eine",
+                "Einer",
+                "Einen",
+                "Eines"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "steht",
+                "geht",
+                "läuft",
+                "hat"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "davon",
+                "darauf",
+                "dafür",
+                "damit"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "übermäßig",
+                "überwiegend",
+                "überhaupt",
+                "überlegen"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "deren",
+                "das",
+                "die",
+                "denen"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "weiter",
+                "fort",
+                "aus",
+                "ab"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "das",
+                "den",
+                "der",
+                "dem"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "mode": "select",
+              "options": [
+                "wie",
+                "als",
+                "oder",
+                "so"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "einverstanden",
+                "einstimmig",
+                "einig",
+                "einheitlich"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "wie",
+                "so",
+                "dann",
+                "als"
+              ],
+              "correctIndex": 3
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "\"Zeit mit etwas verbringen\" (to spend time with/on something): \"Erwachsene verbringen … drei Stunden täglich mit ihrem Smartphone\". vergehen and verlaufen are intransitive.",
+            "de": "„Zeit mit etwas verbringen“: Erwachsene verbringen drei Stunden mit dem Smartphone."
+          },
+          {
+            "en": "The possessive refers to \"viele\" (plural, i.e. the people), so \"ihr\"; \"Nutzung\" is feminine and accusative: \"ihre Nutzung\".",
+            "de": "Das Possessivpronomen bezieht sich auf „viele“ (Plural) → „ihr“; „die Nutzung“ im Akkusativ → „ihre“."
+          },
+          {
+            "en": "Relative pronoun for \"Apps\" (plural) as the subject of the clause: nominative \"die\".",
+            "de": "Relativpronomen zu „Apps“ (Plural), Subjekt im Nominativ: „die“."
+          },
+          {
+            "en": "\"in\" + dative plural relative pronoun for \"Hotels\": \"in denen\".",
+            "de": "„in“ + Dativ Plural zu „Hotels“: „in denen“."
+          },
+          {
+            "en": "\"auf etwas verzichten\" (to do without something).",
+            "de": "„auf etwas verzichten“."
+          },
+          {
+            "en": "\"sich + adjective + fühlen\" (to feel stressed): \"sich weniger gestresst gefühlt\". merken, finden and spüren do not take this reflexive pattern.",
+            "de": "„sich gestresst fühlen“ – nur „fühlen“ passt in diese reflexive Struktur."
+          },
+          {
+            "en": "\"anhalten\" (to last): \"Der Effekt hielt nicht lange an.\"",
+            "de": "„anhalten“ = dauern: „Der Effekt hielt nicht lange an.“"
+          },
+          {
+            "en": "\"jemandem von etwas abraten\" (to advise against something): \"raten davon ab\".",
+            "de": "„von etwas abraten“: „Fachleute raten davon ab …“."
+          },
+          {
+            "en": "\"indem\" states the means: you change your use by switching off notifications. sodass/damit/ohne dass give result, purpose or absence.",
+            "de": "„indem“ nennt das Mittel: Man ändert die Nutzung, indem man Benachrichtigungen abschaltet."
+          },
+          {
+            "en": "\"Schon kleine Änderungen\" (even small changes) stresses that little is needed for a big effect.",
+            "de": "„Schon kleine Änderungen“ = sogar kleine Änderungen können viel bewirken."
+          },
+          {
+            "en": "Fixed expression: \"Es geht (nicht) darum, … zu …\" (it is (not) about …).",
+            "de": "Feste Wendung: „Es geht nicht darum, … zu …“."
+          },
+          {
+            "en": "\"der Umgang mit etwas\" (the handling of / dealing with something).",
+            "de": "„der Umgang mit etwas“."
+          },
+          {
+            "en": "\"zufolge\" follows a dative noun: \"einer Umfrage zufolge\" (according to a survey).",
+            "de": "„zufolge“ steht nach dem Nomen und verlangt den Dativ: „einer Umfrage zufolge“."
+          },
+          {
+            "en": "Fixed expression: \"Gefahr laufen, … zu …\" (to run the risk of …).",
+            "de": "Feste Wendung: „Gefahr laufen, … zu …“."
+          },
+          {
+            "en": "\"auf etwas reagieren\" (to react to something): \"darauf reagiert\" refers to the pressure just described.",
+            "de": "„auf etwas reagieren“ → „darauf reagiert“ (auf den Druck)."
+          },
+          {
+            "en": "\"überwiegend positiv\" (mostly positive). The other words make no sense as a modifier here.",
+            "de": "„überwiegend positiv“ = meistens positiv."
+          },
+          {
+            "en": "Relative pronoun for \"E-Mails\" (plural), subject of \"eingehen\": nominative \"die\".",
+            "de": "Relativpronomen zu „E-Mails“ (Plural), Subjekt: „die“."
+          },
+          {
+            "en": "\"weiterleiten\" (to forward): the company no longer forwards emails received after work.",
+            "de": "„weiterleiten“: Die Firma leitet E-Mails nach Feierabend nicht mehr weiter."
+          },
+          {
+            "en": "\"einer Sache etwas entgegenhalten\" (to object): the dative \"dem\" refers to the measures just described.",
+            "de": "„einer Sache etwas entgegenhalten“ – Dativ: „dem“."
+          },
+          {
+            "en": "\"eher … als …\" (rather … than …): \"eher behindert als entlastet\".",
+            "de": "„eher … als …“: „eher behindert als entlastet“."
+          },
+          {
+            "en": "\"sich (darin) einig sein\" (to agree on something).",
+            "de": "„sich darin einig sein“ = derselben Meinung sein."
+          },
+          {
+            "en": "Comparative \"weniger … als …\": \"weniger auf feste Regeln an als auf die Frage …\".",
+            "de": "Nach dem Komparativ „weniger“ steht „als“."
+          }
+        ]
+      }
+    }
+  ]
+}
