@@ -1,0 +1,172 @@
+{
+  "formatId": "telc-a2",
+  "partId": "lesen-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-a2__lesen-3__s01",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Sie möchten am Wochenende mit Ihren Kindern (6 und 9 Jahre) einen Ausflug machen und Tiere sehen.",
+            "Sie arbeiten jeden Tag bis 17 Uhr und möchten am Abend Deutsch lernen.",
+            "Sie sind 35 Jahre alt und können nicht schwimmen. Das möchten Sie jetzt lernen.",
+            "Ihre Waschmaschine ist kaputt. Sie suchen jemanden, der sie repariert.",
+            "Sie möchten am Samstagabend tanzen gehen."
+          ],
+          "targets": [
+            "Deutsch lernen am Vormittag! Kurse von A1 bis B1, Montag bis Freitag von 8.30 bis 12.00 Uhr. Kinderbetreuung im Haus. Sprachschule Wortwerk, Lindenstraße 5",
+            "Café Havanna: Jeden Samstag ab 21 Uhr Salsa-Party mit DJ. Eintritt 5 Euro, Anfänger sind herzlich willkommen!",
+            "Kinderbauernhof Sonnenwiese: Ziegen füttern, auf Ponys reiten, picknicken! Geöffnet Samstag und Sonntag von 10 bis 17 Uhr. Kinder bis 12 Jahre 2 Euro, Erwachsene 4 Euro.",
+            "Wasserratten aufgepasst! Schwimmkurse für Kinder von 5 bis 8 Jahren im Hallenbad Mitte. Beginn: 15. September. Anmeldung an der Kasse.",
+            "Verkaufe Kühlschrank, zwei Jahre alt, sehr guter Zustand, 120 Euro. Nur Abholung. Tel. 0171 2345678",
+            "Keine Zeit am Tag? Abendkurse Deutsch A2 und B1, zweimal pro Woche von 18.30 bis 20.45 Uhr. Volkshochschule, Raum 204. Information: Tel. 45 67 89",
+            "Tanzschule Schwung: Neuer Tanzkurs für Paare (Walzer, Tango, Cha-Cha-Cha), immer dienstags von 19 bis 20.30 Uhr. 10 Abende für 90 Euro pro Paar.",
+            "Nie zu spät! Schwimmen lernen für Erwachsene, in kleinen Gruppen und ohne Stress. Freitags um 19 Uhr im Hallenbad Nord. Info und Anmeldung: Tel. 30 40 50"
+          ],
+          "answers": [
+            2,
+            5,
+            7,
+            null,
+            1
+          ],
+          "allowNone": true
+        },
+        "explanations": [
+          {
+            "en": "Ad c: the children's farm is open \"Samstag und Sonntag\", and you can feed goats and ride ponies, so you see animals at the weekend.",
+            "de": "Anzeige c: Der Kinderbauernhof ist am Samstag und Sonntag geöffnet. Dort kann man Ziegen füttern und auf Ponys reiten."
+          },
+          {
+            "en": "Ad f: \"Abendkurse Deutsch … von 18.30 bis 20.45 Uhr\". Ad a is in the morning, which does not work if you work until 5 pm.",
+            "de": "Anzeige f: Die Deutschkurse sind am Abend von 18.30 bis 20.45 Uhr. Die Kurse in Anzeige a sind am Vormittag, dann arbeiten Sie."
+          },
+          {
+            "en": "Ad h: \"Schwimmen lernen für Erwachsene\". Ad d is only for children aged 5 to 8.",
+            "de": "Anzeige h: Hier lernen Erwachsene schwimmen. Anzeige d ist nur für Kinder von 5 bis 8 Jahren."
+          },
+          {
+            "en": "No ad fits (x). Nobody offers to repair washing machines; ad e only sells a fridge.",
+            "de": "Keine Anzeige passt (x). Niemand repariert Waschmaschinen. In Anzeige e verkauft jemand nur einen Kühlschrank."
+          },
+          {
+            "en": "Ad b: \"Jeden Samstag ab 21 Uhr Salsa-Party\". The dance course in ad g is on Tuesdays.",
+            "de": "Anzeige b: Jeden Samstag ab 21 Uhr gibt es eine Salsa-Party. Der Tanzkurs in Anzeige g ist am Dienstag."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a2__lesen-3__s02",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Sie studieren und suchen ein günstiges Zimmer. Sie möchten gern mit anderen jungen Leuten zusammenwohnen.",
+            "Ihr Auto ist kaputt und muss in die Werkstatt.",
+            "Sie ziehen nächsten Monat in eine neue Wohnung und brauchen Hilfe beim Transport Ihrer Möbel.",
+            "Ihr Sohn geht in die 7. Klasse und hat Probleme in Mathematik.",
+            "Sie haben unter der Woche keine Zeit, aber Sie möchten am Wochenende Geld verdienen."
+          ],
+          "targets": [
+            "Nachhilfe in Mathe und Englisch für Schüler der Klassen 5 bis 10. Erfahrene Studentin, 15 Euro pro Stunde. Tel. 0157 9988776",
+            "Zimmer frei! Helles WG-Zimmer, 14 m², in netter Dreier-WG, 5 Minuten zur Uni. 380 Euro warm, ab 1. Oktober.",
+            "Wir suchen eine Aushilfe für unser Restaurant: Arbeit nur am Samstag und Sonntag. Deutschkenntnisse A2. Restaurant Zur Linde, Tel. 76 54 32",
+            "Große 3-Zimmer-Wohnung mit Balkon und Garten, ideal für Familien, 1100 Euro kalt. Haustiere erlaubt.",
+            "Umzug? Wir helfen! Zwei starke Männer mit Transporter, auch am Wochenende. Ab 40 Euro pro Stunde. Tel. 0160 1122334",
+            "Babysitterin (22) sucht Familie: abends und am Wochenende, mit Erfahrung und Erste-Hilfe-Kurs. Tel. 0176 5544332",
+            "Fahrradwerkstatt Speiche: Wir reparieren Ihr Fahrrad schnell und günstig, oft noch am selben Tag. Montag bis Freitag 9 bis 18 Uhr.",
+            "Suche Nachmieter für 1-Zimmer-Wohnung im Zentrum, 32 m², 450 Euro warm, sofort frei. Keine Haustiere."
+          ],
+          "answers": [
+            1,
+            null,
+            4,
+            0,
+            2
+          ],
+          "allowNone": true
+        },
+        "explanations": [
+          {
+            "en": "Ad b: a cheap room \"in netter Dreier-WG, 5 Minuten zur Uni\", so you live with other people. Ad h is a flat for one person alone.",
+            "de": "Anzeige b: Das Zimmer ist in einer WG mit drei Personen und nur 5 Minuten von der Uni entfernt. Anzeige h ist eine Wohnung für eine Person allein."
+          },
+          {
+            "en": "No ad fits (x). Ad g is a workshop for bicycles, not for cars.",
+            "de": "Keine Anzeige passt (x). Anzeige g ist eine Werkstatt für Fahrräder, nicht für Autos."
+          },
+          {
+            "en": "Ad e: \"Umzug? Wir helfen! Zwei starke Männer mit Transporter\".",
+            "de": "Anzeige e: Zwei Männer helfen mit einem Transporter beim Umzug."
+          },
+          {
+            "en": "Ad a: maths tutoring \"für Schüler der Klassen 5 bis 10\", and year 7 is in that range.",
+            "de": "Anzeige a: Eine Studentin gibt Nachhilfe in Mathe für die Klassen 5 bis 10. Die 7. Klasse passt."
+          },
+          {
+            "en": "Ad c: the restaurant is looking for help, with work \"nur am Samstag und Sonntag\". In ad f a babysitter is looking for work herself, so it offers no job.",
+            "de": "Anzeige c: Das Restaurant sucht eine Aushilfe nur für Samstag und Sonntag. In Anzeige f sucht eine Babysitterin selbst Arbeit, sie bietet keine Arbeit an."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a2__lesen-3__s03",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Ihre Kinder sind gewachsen. Sie möchten ihre alte Kleidung verkaufen.",
+            "Sie möchten einen Kurs machen und lernen, wie man italienisch kocht.",
+            "Sie möchten einen Tagesausflug machen und dabei auch mit dem Schiff fahren.",
+            "Es ist Sonntagabend. Ihr Kind hat hohes Fieber, und Sie brauchen sofort ein Medikament.",
+            "Sie sind als Tourist in der Stadt und möchten sie einen Tag lang mit dem Fahrrad entdecken."
+          ],
+          "targets": [
+            "Busreise an den Bodensee: Samstag, 14. Juni. Abfahrt 7 Uhr am Hauptbahnhof, zurück um 20 Uhr. Preis mit Schifffahrt: 49 Euro. Reisebüro Sonnenschein",
+            "Kinderladen Hoppla: Sommerschlussverkauf! Alle Kinderkleider, Hosen und Schuhe jetzt 30 % billiger.",
+            "Neu in der Stadt: Fahrradverleih am Bahnhof. Fahrräder ab 10 Euro pro Tag, E-Bikes ab 25 Euro. Täglich von 8 bis 19 Uhr geöffnet.",
+            "Zahnarztpraxis am Ring: Wir haben jetzt auch samstags von 9 bis 13 Uhr geöffnet. Termine unter Tel. 22 33 44.",
+            "Hotel Alpenblick: Wanderwochen im Herbst. 7 Nächte mit Frühstück und Abendessen, Wanderungen mit Führung, ab 520 Euro pro Person.",
+            "Second-Hand-Laden Kleiderkiste: Wir kaufen gut erhaltene Kinderkleidung an. Montag bis Freitag von 10 bis 18 Uhr.",
+            "Kochkurs: Indisch kochen für Anfänger. Drei Abende, immer mittwochs von 18 bis 21 Uhr. 75 Euro mit Lebensmitteln.",
+            "Apotheke am Markt: Diese Woche haben wir Notdienst. Sie erreichen uns auch nachts und am Sonntag. Bitte klingeln Sie an der Seitentür."
+          ],
+          "answers": [
+            5,
+            null,
+            0,
+            7,
+            2
+          ],
+          "allowNone": true
+        },
+        "explanations": [
+          {
+            "en": "Ad f: the second-hand shop says \"Wir kaufen gut erhaltene Kinderkleidung an\". Ad b only sells new children's clothes.",
+            "de": "Anzeige f: Der Second-Hand-Laden kauft Kinderkleidung an. In Anzeige b kann man nur neue Kinderkleidung kaufen."
+          },
+          {
+            "en": "No ad fits (x). The cooking course in ad g is for Indian food, not Italian.",
+            "de": "Keine Anzeige passt (x). Der Kochkurs in Anzeige g ist für indisches Essen, nicht für italienisches."
+          },
+          {
+            "en": "Ad a: a one-day bus trip to Lake Constance, back at 8 pm, and the price includes a boat trip (\"mit Schifffahrt\").",
+            "de": "Anzeige a: Die Busreise dauert einen Tag, und im Preis ist eine Schifffahrt dabei."
+          },
+          {
+            "en": "Ad h: the pharmacy has emergency service this week and can be reached \"auch nachts und am Sonntag\".",
+            "de": "Anzeige h: Die Apotheke hat diese Woche Notdienst. Sie ist auch nachts und am Sonntag da."
+          },
+          {
+            "en": "Ad c: the bike rental at the station rents bikes \"ab 10 Euro pro Tag\" and is open every day.",
+            "de": "Anzeige c: Beim Fahrradverleih am Bahnhof kann man Fahrräder für einen Tag mieten."
+          }
+        ]
+      }
+    }
+  ]
+}

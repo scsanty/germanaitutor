@@ -1,0 +1,241 @@
+{
+  "formatId": "telc-a2",
+  "partId": "lesen-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-a2__lesen-1__s01",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Kaufhaus am Markt – Wegweiser\n\n4. Stock: Restaurant mit Dachterrasse · Kundentoiletten · Kundenservice: Umtausch und Reklamationen · Geschenkverpackung\n\n3. Stock: Möbel · Lampen · Teppiche · Betten und Matratzen · Gardinen\n\n2. Stock: Fernseher · Computer · Handys · Kameras · Haushaltsgeräte · Töpfe und Geschirr\n\n1. Stock: Damenmode · Herrenmode · Kindermode · Sportbekleidung\n\nErdgeschoss: Parfümerie · Schmuck und Uhren · Taschen · Schreibwaren · Zeitschriften · Bäckerei-Café\n\nUntergeschoss: Lebensmittel · Getränke · Schuhreparatur · Schlüsseldienst",
+          "questions": [
+            {
+              "question": "Sie haben gestern eine Kaffeemaschine gekauft, aber sie funktioniert nicht. Sie möchten sie zurückgeben.",
+              "options": [
+                "Erdgeschoss",
+                "2. Stock",
+                "anderer Stock"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Ihre Tochter braucht eine neue Sporthose für die Schule.",
+              "options": [
+                "1. Stock",
+                "2. Stock",
+                "anderer Stock"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Sie möchten Ihrem Freund zum Geburtstag eine Armbanduhr schenken.",
+              "options": [
+                "Untergeschoss",
+                "3. Stock",
+                "anderer Stock"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Sie brauchen einen zweiten Schlüssel für Ihre Wohnung.",
+              "options": [
+                "Erdgeschoss",
+                "Untergeschoss",
+                "anderer Stock"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Sie suchen eine neue Lampe für Ihr Wohnzimmer.",
+              "options": [
+                "2. Stock",
+                "3. Stock",
+                "anderer Stock"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Returns and complaints go to the customer service: \"4. Stock: Kundenservice: Umtausch und Reklamationen\". The 4th floor is not a or b, so the answer is c. The 2nd floor sells household appliances but has no customer service.",
+            "de": "Umtausch und Reklamationen macht der Kundenservice im 4. Stock. Der 4. Stock steht nicht bei a oder b, also ist c richtig. Im 2. Stock gibt es Haushaltsgeräte, aber keinen Kundenservice."
+          },
+          {
+            "en": "Sportswear is on the 1st floor: \"1. Stock: … Kindermode · Sportbekleidung\".",
+            "de": "Sportbekleidung und Kindermode gibt es im 1. Stock."
+          },
+          {
+            "en": "Watches are on the ground floor: \"Erdgeschoss: … Schmuck und Uhren\". The ground floor is not a or b, so the answer is c.",
+            "de": "Uhren gibt es im Erdgeschoss (\"Schmuck und Uhren\"). Das Erdgeschoss steht nicht bei a oder b, also ist c richtig."
+          },
+          {
+            "en": "The key service is in the basement: \"Untergeschoss: … Schlüsseldienst\".",
+            "de": "Der Schlüsseldienst ist im Untergeschoss."
+          },
+          {
+            "en": "Lamps are on the 3rd floor: \"3. Stock: Möbel · Lampen\". The 2nd floor has electronics, but no lamps.",
+            "de": "Lampen gibt es im 3. Stock. Im 2. Stock gibt es Elektrogeräte, aber keine Lampen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a2__lesen-1__s02",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Rathaus Nordstadt – Wegweiser\n\n3. Stock: Standesamt (Heiraten, Geburtsurkunden) · Sozialamt · Wohngeldstelle\n\n2. Stock: Ausländerbehörde (Aufenthaltserlaubnis, Visum) · Beratung zu Integrationskursen\n\n1. Stock: Bürgeramt (Personalausweis, Reisepass, An- und Ummeldung der Wohnung) · Führerscheinstelle\n\nErdgeschoss: Information · Fundbüro · Stadtkasse · Stadtbücherei\n\nUntergeschoss: Kfz-Zulassungsstelle (Autos und Motorräder anmelden) · Fahrradgarage",
+          "questions": [
+            {
+              "question": "Sie sind in eine neue Wohnung umgezogen und müssen Ihre neue Adresse melden.",
+              "options": [
+                "Erdgeschoss",
+                "1. Stock",
+                "anderer Stock"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Sie haben im Bus Ihre Handtasche vergessen. Vielleicht hat jemand sie gefunden und abgegeben.",
+              "options": [
+                "Erdgeschoss",
+                "2. Stock",
+                "anderer Stock"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Sie möchten heiraten und brauchen einen Termin.",
+              "options": [
+                "1. Stock",
+                "2. Stock",
+                "anderer Stock"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Sie haben ein neues Auto gekauft und möchten es anmelden.",
+              "options": [
+                "Untergeschoss",
+                "1. Stock",
+                "anderer Stock"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Ihre Aufenthaltserlaubnis ist bald nicht mehr gültig. Sie brauchen eine neue.",
+              "options": [
+                "1. Stock",
+                "2. Stock",
+                "anderer Stock"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Registering a new address is done at the citizens' office: \"1. Stock: Bürgeramt (… An- und Ummeldung der Wohnung)\".",
+            "de": "Die neue Adresse meldet man im Bürgeramt im 1. Stock (\"An- und Ummeldung der Wohnung\")."
+          },
+          {
+            "en": "Things that people have found are kept at the lost property office: \"Erdgeschoss: … Fundbüro\".",
+            "de": "Gefundene Sachen sind im Fundbüro. Das Fundbüro ist im Erdgeschoss."
+          },
+          {
+            "en": "Weddings are handled by the registry office: \"3. Stock: Standesamt (Heiraten …)\". The 3rd floor is not a or b, so the answer is c.",
+            "de": "Für das Heiraten ist das Standesamt zuständig. Es ist im 3. Stock. Der 3. Stock steht nicht bei a oder b, also ist c richtig."
+          },
+          {
+            "en": "Cars are registered in the basement: \"Untergeschoss: Kfz-Zulassungsstelle (Autos und Motorräder anmelden)\". The driving licence office on the 1st floor is for licences, not for cars.",
+            "de": "Autos meldet man bei der Kfz-Zulassungsstelle im Untergeschoss an. Die Führerscheinstelle im 1. Stock ist nur für den Führerschein."
+          },
+          {
+            "en": "Residence permits are handled by the foreigners' office: \"2. Stock: Ausländerbehörde (Aufenthaltserlaubnis, Visum)\".",
+            "de": "Die Aufenthaltserlaubnis bekommt man bei der Ausländerbehörde im 2. Stock."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a2__lesen-1__s03",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Ärztehaus am Stadtpark – Wegweiser\n\n4. Stock: Dr. med. Petra Lang, Kinderärztin · Physiotherapie Bewegt (Krankengymnastik, Massage)\n\n3. Stock: Dr. med. Jonas Feld, Augenarzt · Optiker Klarblick (Brillen, Kontaktlinsen)\n\n2. Stock: Gemeinschaftspraxis Dr. med. Ruth Behrens und Dr. med. Ali Demir, Hausärzte · Labor (Blutabnahme)\n\n1. Stock: Zahnarztpraxis Dr. Sven Krüger · Dr. med. Anna Wiese, Hautärztin\n\nErdgeschoss: Apotheke am Stadtpark · Sanitätshaus (Krücken, Rollstühle, Bandagen)",
+          "questions": [
+            {
+              "question": "Ihr Sohn ist vier Jahre alt und hat seit zwei Tagen Fieber. Sie möchten mit ihm zu einer Kinderärztin gehen.",
+              "options": [
+                "2. Stock",
+                "4. Stock",
+                "anderer Stock"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Ihre Brille ist kaputt. Sie brauchen eine neue.",
+              "options": [
+                "3. Stock",
+                "Erdgeschoss",
+                "anderer Stock"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Sie haben seit gestern starke Zahnschmerzen.",
+              "options": [
+                "2. Stock",
+                "3. Stock",
+                "anderer Stock"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Ihr Arzt hat Ihnen ein Rezept für Tabletten gegeben. Sie möchten die Tabletten gleich holen.",
+              "options": [
+                "Erdgeschoss",
+                "1. Stock",
+                "anderer Stock"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Nach einem Unfall haben Sie Probleme mit dem Knie. Ihr Arzt hat Ihnen Krankengymnastik verschrieben.",
+              "options": [
+                "2. Stock",
+                "Erdgeschoss",
+                "anderer Stock"
+              ],
+              "correctIndex": 2
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "A small child goes to the paediatrician: \"4. Stock: Dr. med. Petra Lang, Kinderärztin\".",
+            "de": "Mit einem kleinen Kind geht man zur Kinderärztin. Sie ist im 4. Stock."
+          },
+          {
+            "en": "Glasses are sold by the optician: \"3. Stock: … Optiker Klarblick (Brillen, Kontaktlinsen)\".",
+            "de": "Brillen gibt es beim Optiker Klarblick im 3. Stock."
+          },
+          {
+            "en": "Toothache means the dentist: \"1. Stock: Zahnarztpraxis Dr. Sven Krüger\". The 1st floor is not a or b, so the answer is c.",
+            "de": "Bei Zahnschmerzen geht man zum Zahnarzt. Die Zahnarztpraxis ist im 1. Stock. Der 1. Stock steht nicht bei a oder b, also ist c richtig."
+          },
+          {
+            "en": "Medicine on prescription is collected at the pharmacy: \"Erdgeschoss: Apotheke am Stadtpark\".",
+            "de": "Tabletten mit Rezept holt man in der Apotheke. Die Apotheke ist im Erdgeschoss."
+          },
+          {
+            "en": "Physiotherapy is on the 4th floor: \"Physiotherapie Bewegt (Krankengymnastik, Massage)\". The 4th floor is not a or b, so the answer is c. The shop on the ground floor sells crutches and bandages, but offers no therapy.",
+            "de": "Krankengymnastik gibt es bei der Physiotherapie Bewegt im 4. Stock. Der 4. Stock steht nicht bei a oder b, also ist c richtig. Im Sanitätshaus im Erdgeschoss kauft man Krücken oder Bandagen, aber dort gibt es keine Krankengymnastik."
+          }
+        ]
+      }
+    }
+  ]
+}
