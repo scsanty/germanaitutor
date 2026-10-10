@@ -1,0 +1,436 @@
+{
+  "formatId": "telc-b1",
+  "partId": "sprachbausteine-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b1__sprachbausteine-1__s01",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Liebe Julia,\n\nvielen Dank für deinen langen Brief, über {{1}} ich mich sehr gefreut habe. Entschuldige bitte, {{2}} ich erst jetzt antworte. In den letzten Wochen hatte ich nämlich sehr viel zu tun, {{3}} ich bin umgezogen. Meine neue Wohnung liegt nur fünf Minuten {{4}} meiner Arbeit entfernt. Sie ist zwar etwas kleiner {{5}} meine alte Wohnung, aber dafür viel heller.\n\nAm Wochenende habe ich endlich alle Möbel aufgebaut. Nur die Lampen muss ich noch {{6}}. Hast du nicht Lust, mich bald {{7}} besuchen? Du könntest doch im Mai kommen, {{8}} du Urlaub hast. Dann zeige ich dir die Altstadt, und wir machen einen Ausflug in den Schwarzwald. Freiburg wird {{9}} bestimmt gefallen!\n\nIch freue mich schon {{10}} deine Antwort.\n\nViele Grüße\ndeine Anna",
+          "gaps": [
+            {
+              "mode": "select",
+              "options": [
+                "dem",
+                "den",
+                "das"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "dass",
+                "weil",
+                "ob"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "weil",
+                "deshalb",
+                "denn"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "bis",
+                "von",
+                "nach"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "als",
+                "wie",
+                "dann"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "aufgehängt",
+                "aufzuhängen",
+                "aufhängen"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "um",
+                "zu",
+                "für"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "wann",
+                "als",
+                "wenn"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "dir",
+                "dich",
+                "du"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "über",
+                "für",
+                "auf"
+              ],
+              "correctIndex": 2
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "\"sich freuen über\" takes the accusative. \"Brief\" is masculine, so the relative pronoun is \"den\".",
+            "de": "„sich freuen über“ + Akkusativ. „Brief“ ist maskulin, also heißt das Relativpronomen „den“."
+          },
+          {
+            "en": "\"Entschuldige, dass …\": \"dass\" introduces what you apologise for. \"weil\" and \"ob\" do not fit after \"entschuldigen\".",
+            "de": "„Entschuldige, dass …“: Mit „dass“ sagt man, wofür man sich entschuldigt. „weil“ und „ob“ passen nicht."
+          },
+          {
+            "en": "After the gap the verb is in second position (\"ich bin umgezogen\"), so only \"denn\" works. \"weil\" needs the verb at the end, and \"deshalb\" would need \"bin ich\".",
+            "de": "Nach der Lücke steht das Verb an Position 2 („ich bin umgezogen“). Das geht nur mit „denn“. Nach „weil“ steht das Verb am Ende, nach „deshalb“ müsste es „bin ich“ heißen."
+          },
+          {
+            "en": "\"… Minuten von etwas entfernt\": distance is expressed with \"von\" + dative.",
+            "de": "„… Minuten von etwas entfernt“: Die Entfernung nennt man mit „von“ + Dativ."
+          },
+          {
+            "en": "Comparative + \"als\": \"kleiner als meine alte Wohnung\". \"wie\" is used with the base form (\"so klein wie\").",
+            "de": "Komparativ + „als“: „kleiner als meine alte Wohnung“. „wie“ steht nach „so … wie“."
+          },
+          {
+            "en": "The modal verb \"muss\" takes the plain infinitive without \"zu\": \"muss … aufhängen\".",
+            "de": "Nach dem Modalverb „muss“ steht der Infinitiv ohne „zu“: „muss … aufhängen“."
+          },
+          {
+            "en": "\"Lust haben\" is followed by an infinitive with \"zu\": \"Lust, mich … zu besuchen\".",
+            "de": "Nach „Lust haben“ folgt ein Infinitiv mit „zu“: „Lust, mich … zu besuchen“."
+          },
+          {
+            "en": "\"wenn\" introduces a condition or time in the present or future: \"wenn du Urlaub hast\". \"als\" is for one event in the past, \"wann\" for questions.",
+            "de": "„wenn“ steht für Gegenwart oder Zukunft: „wenn du Urlaub hast“. „als“ benutzt man für ein Ereignis in der Vergangenheit, „wann“ für Fragen."
+          },
+          {
+            "en": "\"gefallen\" takes the dative: \"Freiburg wird dir gefallen.\"",
+            "de": "„gefallen“ steht mit Dativ: „Freiburg wird dir gefallen.“"
+          },
+          {
+            "en": "\"sich freuen auf\" is for something in the future: Anna is waiting for Julia's answer. \"sich freuen über\" is for something that has already happened.",
+            "de": "„sich freuen auf“ benutzt man für etwas in der Zukunft: Anna wartet noch auf die Antwort. „sich freuen über“ ist für etwas, das schon passiert ist."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b1__sprachbausteine-1__s02",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Sehr geehrte Frau Schneider,\n\nich wohne seit drei Jahren in der Wohnung im zweiten Stock und war bisher mit allem sehr zufrieden. Leider muss ich mich heute {{1}} einem Problem an Sie wenden. Seit letztem Montag funktioniert die Heizung in meinem Wohnzimmer nicht mehr. {{2}} es draußen schon sehr kalt ist, wird es in der Wohnung abends nur noch 15 Grad warm.\n\nIch habe schon versucht, den Hausmeister {{3}} erreichen, aber er war nicht da. Auch auf meine Nachricht, {{4}} ich ihm am Dienstag geschrieben habe, hat er nicht geantwortet. Ich habe zwei kleine Kinder, und besonders für {{5}} ist die Kälte ein Problem.\n\nDeshalb bitte ich Sie, so schnell {{6}} möglich einen Techniker zu schicken. Ich bin nächste Woche jeden Tag {{7}} 15 Uhr zu Hause. Falls das nicht passt, gebe ich meinen Schlüssel gern {{8}} Nachbarin, Frau Yilmaz. Ich hoffe, {{9}} das Problem bald gelöst wird.\n\nFür eine kurze Antwort {{10}} ich Ihnen sehr dankbar.\n\nMit freundlichen Grüßen\nDaniel Weber",
+          "gaps": [
+            {
+              "mode": "select",
+              "options": [
+                "mit",
+                "für",
+                "von"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "Obwohl",
+                "Da",
+                "Damit"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "um",
+                "zu",
+                "für"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "die",
+                "der",
+                "das"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "ihnen",
+                "sie",
+                "ihr"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "so",
+                "dass",
+                "wie"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "seit",
+                "ab",
+                "von"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "meine",
+                "meinen",
+                "meiner"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "dass",
+                "ob",
+                "wenn"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "hätte",
+                "würde",
+                "wäre"
+              ],
+              "correctIndex": 2
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The fixed expression is \"sich mit etwas an jemanden wenden\" (to turn to someone with something).",
+            "de": "Die feste Wendung heißt „sich mit etwas an jemanden wenden“."
+          },
+          {
+            "en": "The clause gives the reason for the cold flat, so \"Da\" (because) is right. \"Obwohl\" would be a contrast, \"Damit\" a purpose.",
+            "de": "Der Satz nennt den Grund für die Kälte, also „Da“. „Obwohl“ ist ein Gegensatz, „Damit“ ein Ziel."
+          },
+          {
+            "en": "\"versuchen\" is followed by an infinitive with \"zu\": \"versucht, … zu erreichen\".",
+            "de": "Nach „versuchen“ folgt ein Infinitiv mit „zu“: „versucht, … zu erreichen“."
+          },
+          {
+            "en": "Relative pronoun for \"die Nachricht\" (feminine), accusative object of \"geschrieben\": \"die\".",
+            "de": "Relativpronomen für „die Nachricht“ (feminin), im Akkusativ: „die“."
+          },
+          {
+            "en": "\"für\" takes the accusative. The children are plural, so \"für sie\".",
+            "de": "„für“ steht mit Akkusativ. Die Kinder sind Plural, also „für sie“."
+          },
+          {
+            "en": "The fixed expression is \"so schnell wie möglich\" (so + adjective + wie). \"so\" is already in the text, and \"dass\" would need a clause.",
+            "de": "Die feste Wendung heißt „so schnell wie möglich“ (so … wie). „dass“ braucht einen Nebensatz."
+          },
+          {
+            "en": "\"ab 15 Uhr\" means from 3 p.m. onwards in the future. \"seit\" is for something that began in the past, and \"von\" needs \"bis\".",
+            "de": "„ab 15 Uhr“ sagt: von 15 Uhr an, in der Zukunft. „seit“ steht für etwas, das in der Vergangenheit begonnen hat, und „von“ braucht „bis“."
+          },
+          {
+            "en": "\"jemandem etwas geben\": the person receiving is in the dative. \"Nachbarin\" is feminine, so \"meiner Nachbarin\".",
+            "de": "„jemandem etwas geben“: Die Person steht im Dativ. „Nachbarin“ ist feminin, also „meiner Nachbarin“."
+          },
+          {
+            "en": "\"hoffen, dass …\": \"dass\" introduces the content of the hope.",
+            "de": "„hoffen, dass …“: Mit „dass“ sagt man, was man hofft."
+          },
+          {
+            "en": "The polite formula is \"Ich wäre Ihnen dankbar\" (Konjunktiv II of \"sein\" with the adjective \"dankbar\").",
+            "de": "Die höfliche Formel heißt „Ich wäre Ihnen dankbar“ (Konjunktiv II von „sein“ mit „dankbar“)."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b1__sprachbausteine-1__s03",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Liebe Familie Hoffmann,\n\njetzt bin ich schon seit zwei Wochen wieder zu Hause in Lissabon, und ich denke noch oft {{1}} die schöne Zeit bei Ihnen. Ich möchte mich noch einmal herzlich {{2}} bedanken, dass Sie mich so freundlich aufgenommen haben.\n\nDie Rückreise war leider sehr anstrengend. Mein Zug hatte zwei Stunden Verspätung, {{3}} ich mein Flugzeug in Frankfurt fast verpasst hätte. Zum Glück hat {{4}} eine Mitarbeiterin am Flughafen geholfen.\n\nJetzt habe ich wieder Unterricht an der Universität. Seit meinem Aufenthalt in Deutschland verstehe ich die Texte in meinem Deutschkurs viel {{5}}. Meine Lehrerin hat gesagt, {{6}} mein Deutsch jetzt viel natürlicher klingt.\n\nWie geht es Ihnen? Hat Paul die Prüfung bestanden, {{7}} er so viel gelernt hat? Und ist Ihr Garten jetzt fertig? Bitte schicken Sie mir doch ein paar Fotos, {{8}} ich sehen kann, wie schön er geworden ist.\n\nIm nächsten Sommer möchte ich gern wieder nach Deutschland kommen. Vielleicht können wir uns dann {{9}}. Ich würde mich sehr freuen, bald {{10}} Ihnen zu hören.\n\nHerzliche Grüße\nIhre Mariana",
+          "gaps": [
+            {
+              "mode": "select",
+              "options": [
+                "für",
+                "an",
+                "von"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "dafür",
+                "darüber",
+                "davon"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "deshalb",
+                "sodass",
+                "trotzdem"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "mich",
+                "ich",
+                "mir"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "besser",
+                "gut",
+                "am besten"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "ob",
+                "was",
+                "dass"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "für den",
+                "für die",
+                "für der"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "um",
+                "damit",
+                "weil"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "getroffen",
+                "trefft",
+                "treffen"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "von",
+                "aus",
+                "bei"
+              ],
+              "correctIndex": 0
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The verb is \"denken an\" + accusative: \"an die schöne Zeit denken\".",
+            "de": "Das Verb heißt „denken an“ + Akkusativ: „an die schöne Zeit denken“."
+          },
+          {
+            "en": "\"sich für etwas bedanken\": with a following \"dass\" clause the pronominal adverb is \"dafür\".",
+            "de": "„sich für etwas bedanken“: Vor einem „dass“-Satz steht „dafür“."
+          },
+          {
+            "en": "\"sodass\" introduces a consequence with the verb at the end (\"… verpasst hätte\"). \"deshalb\" and \"trotzdem\" need the verb directly after them.",
+            "de": "„sodass“ nennt eine Folge, das Verb steht am Ende („… verpasst hätte“). Nach „deshalb“ und „trotzdem“ steht das Verb direkt dahinter."
+          },
+          {
+            "en": "\"helfen\" takes the dative: \"hat mir geholfen\".",
+            "de": "„helfen“ steht mit Dativ: „hat mir geholfen“."
+          },
+          {
+            "en": "\"viel\" before an adjective needs the comparative: \"viel besser\". \"am besten\" is the superlative.",
+            "de": "Vor dem Adjektiv steht „viel“, deshalb braucht man den Komparativ: „viel besser“. „am besten“ ist der Superlativ."
+          },
+          {
+            "en": "\"sagen, dass …\": a statement is reported with \"dass\". \"ob\" is for yes/no questions.",
+            "de": "„sagen, dass …“: Eine Aussage gibt man mit „dass“ wieder. „ob“ steht bei Ja/Nein-Fragen."
+          },
+          {
+            "en": "\"lernen für\" + accusative; \"die Prüfung\" is feminine, so the relative clause starts with \"für die\".",
+            "de": "„lernen für“ + Akkusativ. „die Prüfung“ ist feminin, also „für die“."
+          },
+          {
+            "en": "\"damit\" expresses a purpose with its own subject (\"ich\"). \"um\" needs \"zu\" + infinitive, and \"weil\" gives a reason, which makes no sense here.",
+            "de": "„damit“ nennt ein Ziel und hat ein eigenes Subjekt („ich“). „um“ braucht „zu“ + Infinitiv, und „weil“ nennt einen Grund – das passt hier nicht."
+          },
+          {
+            "en": "The modal verb \"können\" takes the plain infinitive: \"können wir uns treffen\".",
+            "de": "Nach dem Modalverb „können“ steht der Infinitiv: „können wir uns treffen“."
+          },
+          {
+            "en": "The fixed expression is \"von jemandem hören\" (to hear from someone).",
+            "de": "Die feste Wendung heißt „von jemandem hören“."
+          }
+        ]
+      }
+    }
+  ]
+}

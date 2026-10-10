@@ -27,7 +27,13 @@
             "Immer weniger Menschen fahren in den Urlaub",
             "Firmen suchen dringend neue Mitarbeiter"
           ],
-          "answers": [2, 5, 0, 3, 6],
+          "answers": [
+            2,
+            5,
+            0,
+            3,
+            6
+          ],
           "allowNone": false
         },
         "explanations": [
@@ -50,6 +56,120 @@
           {
             "en": "Text 5 warns that a new passport takes up to six weeks and advises checking your documents early (g). It does not say fewer people travel.",
             "de": "Text 5 warnt: Ein neuer Pass dauert bis zu sechs Wochen. Man soll die Dokumente früh prüfen (g). Dass weniger Menschen reisen, steht nicht im Text."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b1__lesen-1__s02",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Gute Nachricht für alle Leseratten: Ab dem nächsten Monat ist die Stadtbibliothek auch sonntags von 11 bis 17 Uhr geöffnet. Viele Familien und Berufstätige hatten sich das schon lange gewünscht, weil sie unter der Woche kaum Zeit haben. Bücher und Filme kann man am Sonntag allerdings nur an den Automaten ausleihen und zurückgeben. Für Fragen ist aber immer eine Mitarbeiterin da.",
+            "Die Temperaturen steigen in dieser Woche auf über 35 Grad. Ärztinnen und Ärzte raten deshalb, mindestens zwei Liter Wasser am Tag zu trinken und in der Mittagszeit nicht in der Sonne zu sein. Besonders ältere Menschen und kleine Kinder sollten vorsichtig sein. Die Stadt hat außerdem in der Fußgängerzone vier neue Trinkbrunnen aufgestellt, an denen jeder kostenlos Wasser holen kann.",
+            "Der Verein „Nachbarn helfen“ sucht Menschen, die ein paar Stunden pro Woche Zeit haben. Viele ältere Menschen in unserem Viertel leben allein und gehen kaum noch aus dem Haus. Sie freuen sich über Besuch, über einen gemeinsamen Spaziergang oder über jemanden, der ihnen die Zeitung vorliest. Eine Ausbildung in der Pflege brauchen Sie dafür nicht – nur Geduld und ein offenes Ohr.",
+            "Jeden Tag landen in Deutschland Tonnen von Brot und Brötchen im Müll. Mehrere Bäckereien in unserer Stadt wollen das ändern: Ab 18 Uhr verkaufen sie alles, was vom Tag übrig geblieben ist, zum halben Preis. Die Kunden freuen sich über die günstigen Angebote, und die Bäcker müssen weniger wegwerfen. Welche Geschäfte mitmachen, sieht man an einem grünen Aufkleber an der Tür.",
+            "Platter Reifen, quietschende Bremse oder lockere Kette? Im Jugendzentrum am Bahnhof gibt es jeden Freitagnachmittag eine offene Fahrradwerkstatt. Dort finden Sie Werkzeug und Ersatzteile zum Selbstkostenpreis. Zwei erfahrene Mechaniker zeigen Ihnen, wie Sie Ihr Rad selbst wieder fit machen. Die Hilfe ist kostenlos, eine Anmeldung ist nicht nötig."
+          ],
+          "targets": [
+            "Neue Radwege für die Innenstadt",
+            "Tipps für heiße Sommertage",
+            "Bibliothek schließt wegen Umbau",
+            "Das eigene Fahrrad selbst reparieren",
+            "Altenheim sucht neue Pflegekräfte",
+            "Am Abend günstiger einkaufen und weniger wegwerfen",
+            "Bibliothek jetzt auch am Sonntag geöffnet",
+            "Wasser wird im Sommer teurer",
+            "Freiwillige Begleiter für ältere Menschen gesucht",
+            "Bäckereien verkaufen nur noch Bio-Brot"
+          ],
+          "answers": [
+            6,
+            1,
+            8,
+            5,
+            3
+          ],
+          "allowNone": false
+        },
+        "explanations": [
+          {
+            "en": "Text 1: \"Ab dem nächsten Monat ist die Stadtbibliothek auch sonntags … geöffnet.\" So the library now also opens on Sundays (g). It does not close for building work.",
+            "de": "Text 1: „Ab dem nächsten Monat ist die Stadtbibliothek auch sonntags … geöffnet.“ Die Bibliothek ist jetzt also auch am Sonntag offen (g). Von einem Umbau steht dort nichts."
+          },
+          {
+            "en": "Text 2 gives advice for the heat: drink at least two litres of water and avoid the midday sun. These are tips for hot summer days (b). The drinking fountains are free, so water does not get more expensive.",
+            "de": "Text 2 gibt Ratschläge für die Hitze: viel Wasser trinken und mittags nicht in die Sonne gehen. Das sind Tipps für heiße Tage (b). Das Wasser an den Brunnen ist kostenlos, es wird also nicht teurer."
+          },
+          {
+            "en": "Text 3: an association looks for people who visit, walk with or read to older people; \"Eine Ausbildung in der Pflege brauchen Sie dafür nicht\". So volunteers are wanted (i), not professional care staff (e).",
+            "de": "Text 3: Ein Verein sucht Menschen, die ältere Leute besuchen, mit ihnen spazieren gehen oder vorlesen. „Eine Ausbildung in der Pflege brauchen Sie dafür nicht.“ Gesucht sind also Freiwillige (i), keine Pflegekräfte (e)."
+          },
+          {
+            "en": "Text 4: from 6 p.m. bakeries sell what is left \"zum halben Preis\", and the bakers \"müssen weniger wegwerfen\". That is cheaper shopping in the evening and less waste (f).",
+            "de": "Text 4: Ab 18 Uhr verkaufen Bäckereien das übrige Brot „zum halben Preis“, und die Bäcker „müssen weniger wegwerfen“. Man kauft also abends günstiger ein (f)."
+          },
+          {
+            "en": "Text 5: in an open workshop mechanics show you \"wie Sie Ihr Rad selbst wieder fit machen\". That is repairing your own bike (d), not new cycle paths.",
+            "de": "Text 5: In einer offenen Werkstatt zeigen Mechaniker, „wie Sie Ihr Rad selbst wieder fit machen“. Man repariert sein Fahrrad also selbst (d). Neue Radwege gibt es im Text nicht."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b1__lesen-1__s03",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Wegen Bauarbeiten am Rathausplatz findet der Wochenmarkt von Mai bis September auf dem Parkplatz vor der Stadthalle statt. Die Marktzeiten bleiben gleich: dienstags und samstags von 7 bis 13 Uhr. Auch die meisten Händlerinnen und Händler sind wieder dabei. Ab Oktober kehrt der Markt dann an seinen alten Platz zurück.",
+            "Viele Jugendliche schlafen deutlich weniger, als sie eigentlich brauchen. Das zeigt eine neue Studie. Der wichtigste Grund: Sie sehen abends noch lange auf ihr Handy, chatten oder schauen Videos. Das helle Licht des Bildschirms macht wach. Experten empfehlen deshalb, das Smartphone mindestens eine Stunde vor dem Schlafengehen wegzulegen.",
+            "Nach den Sommerferien ist das Tierheim wieder einmal voll. Viele Hunde, Katzen und Kaninchen wurden abgegeben, weil ihre Besitzer in den Urlaub gefahren sind. Das Tierheim braucht deshalb dringend Spenden für Futter und Medikamente. Wer kein Geld geben kann, darf auch gern helfen und zum Beispiel mit den Hunden spazieren gehen.",
+            "Sie lernen Deutsch und möchten mehr sprechen? Dann kommen Sie in unser Sprachcafé! Jeden Mittwochabend treffen sich in der Volkshochschule Menschen aus vielen Ländern. Bei Kaffee und Kuchen unterhalten sie sich über ihren Alltag, ihre Hobbys und ihre Heimat. Es gibt keinen Unterricht und keine Prüfung, und die Teilnahme ist kostenlos.",
+            "Wie kann ich zu Hause Strom und Heizkosten sparen? Diese Frage beantwortet die städtische Energieberatung. Eine Fachfrau oder ein Fachmann kommt zu Ihnen nach Hause, prüft Ihre Geräte, Fenster und Heizung und gibt Ihnen konkrete Tipps. Ein Besuch dauert etwa eine Stunde und kostet für Mieterinnen und Mieter nur zehn Euro."
+          ],
+          "targets": [
+            "Strom wird im nächsten Jahr billiger",
+            "Wochenmarkt künftig auch am Abend",
+            "Smartphone raubt Jugendlichen den Schlaf",
+            "Experten helfen beim Energiesparen zu Hause",
+            "Schulen verbieten Handys im Unterricht",
+            "Tierheim bittet um Hilfe",
+            "Neue Prüfungskurse an der Volkshochschule",
+            "Markt zieht für einige Monate um",
+            "Haustiere dürfen jetzt mit ins Hotel",
+            "Deutsch üben bei Kaffee und Kuchen"
+          ],
+          "answers": [
+            7,
+            2,
+            5,
+            9,
+            3
+          ],
+          "allowNone": false
+        },
+        "explanations": [
+          {
+            "en": "Text 1: from May to September the market takes place \"auf dem Parkplatz vor der Stadthalle\", and from October it returns. So it moves for a few months (h). The times stay the same, so there is no evening market (b).",
+            "de": "Text 1: Von Mai bis September ist der Markt „auf dem Parkplatz vor der Stadthalle“, ab Oktober wieder am alten Platz. Er zieht also für einige Monate um (h). Die Zeiten bleiben gleich, abends gibt es keinen Markt (b)."
+          },
+          {
+            "en": "Text 2: young people sleep less because they look at their phones late in the evening. So the smartphone takes away their sleep (c). Nothing is said about schools banning phones.",
+            "de": "Text 2: Jugendliche schlafen zu wenig, weil sie abends lange auf ihr Handy sehen. Das Smartphone nimmt ihnen also den Schlaf (c). Von einem Handyverbot in der Schule steht nichts im Text."
+          },
+          {
+            "en": "Text 3: the animal shelter is full and \"braucht deshalb dringend Spenden\"; people can also help by walking the dogs. So the shelter is asking for help (f).",
+            "de": "Text 3: Das Tierheim ist voll und „braucht deshalb dringend Spenden“. Man kann auch mit den Hunden spazieren gehen. Das Tierheim bittet also um Hilfe (f)."
+          },
+          {
+            "en": "Text 4: in the language café people talk \"bei Kaffee und Kuchen\" to practise German; \"es gibt keinen Unterricht und keine Prüfung\". So (j) fits, not exam courses (g).",
+            "de": "Text 4: Im Sprachcafé sprechen die Leute „bei Kaffee und Kuchen“ Deutsch. „Es gibt keinen Unterricht und keine Prüfung.“ Also passt (j), nicht (g)."
+          },
+          {
+            "en": "Text 5: an expert from the energy advice service visits your home and gives tips on saving electricity and heating costs (d). The text does not say electricity will get cheaper.",
+            "de": "Text 5: Eine Fachfrau oder ein Fachmann von der Energieberatung kommt zu den Leuten nach Hause und gibt Tipps zum Sparen (d). Dass Strom billiger wird, steht nicht im Text."
           }
         ]
       }

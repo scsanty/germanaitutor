@@ -1,0 +1,337 @@
+{
+  "formatId": "telc-b1",
+  "partId": "sprachbausteine-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b1__sprachbausteine-2__s01",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Liebe Mitglieder,\n\nab Oktober bietet unser Verein einen neuen Kurs {{1}} Menschen an, die sich gern bewegen, aber keinen Leistungssport machen möchten. Der Kurs findet jeden Mittwoch {{2}} 18 bis 19 Uhr in der kleinen Halle statt. Das Training ist besonders für Anfänger geeignet, {{3}} die Übungen sind leicht und man kann sie auch zu Hause nachmachen. Sie brauchen keine teure Ausrüstung, {{4}} nur bequeme Kleidung und Turnschuhe.\n\nGeleitet wird der Kurs von Maria Klein, {{5}} schon seit zehn Jahren als Trainerin arbeitet. Bitte melden Sie sich bis zum 20. September an, {{6}} die Zahl der Plätze begrenzt ist. Mitglieder zahlen nichts, Gäste zahlen 5 Euro {{7}} Termin. Die erste Stunde ist für alle kostenlos. {{8}} können Sie in Ruhe ausprobieren, ob Ihnen der Kurs gefällt.\n\n{{9}} Sie Fragen haben, rufen Sie uns einfach an. Wir freuen uns schon {{10}}, viele neue Gesichter zu sehen!\n\nMit sportlichen Grüßen\nIhr Vorstand",
+          "gaps": [
+            {
+              "mode": "bank",
+              "answer": 2
+            },
+            {
+              "mode": "bank",
+              "answer": 6
+            },
+            {
+              "mode": "bank",
+              "answer": 9
+            },
+            {
+              "mode": "bank",
+              "answer": 5
+            },
+            {
+              "mode": "bank",
+              "answer": 12
+            },
+            {
+              "mode": "bank",
+              "answer": 3
+            },
+            {
+              "mode": "bank",
+              "answer": 8
+            },
+            {
+              "mode": "bank",
+              "answer": 11
+            },
+            {
+              "mode": "bank",
+              "answer": 14
+            },
+            {
+              "mode": "bank",
+              "answer": 0
+            }
+          ],
+          "bank": [
+            "darauf",
+            "seit",
+            "für",
+            "weil",
+            "der",
+            "sondern",
+            "von",
+            "obwohl",
+            "pro",
+            "denn",
+            "ob",
+            "deshalb",
+            "die",
+            "zwischen",
+            "wenn"
+          ]
+        },
+        "explanations": [
+          {
+            "en": "\"ein Kurs für Menschen\": \"für\" + accusative names the target group.",
+            "de": "„ein Kurs für Menschen“: Mit „für“ + Akkusativ nennt man die Zielgruppe."
+          },
+          {
+            "en": "A time span is \"von … bis …\": \"von 18 bis 19 Uhr\".",
+            "de": "Eine Zeitspanne heißt „von … bis …“: „von 18 bis 19 Uhr“."
+          },
+          {
+            "en": "The clause after the gap has main-clause word order (\"die Übungen sind leicht\"), so the reason word is \"denn\". \"weil\" would need the verb at the end.",
+            "de": "Nach der Lücke steht das Verb an Position 2 („die Übungen sind leicht“). Deshalb passt „denn“. Nach „weil“ müsste das Verb am Ende stehen."
+          },
+          {
+            "en": "\"nicht/kein …, sondern …\" corrects a negative statement: no expensive equipment, but only comfortable clothes.",
+            "de": "„kein …, sondern …“: Nach einer Verneinung nennt „sondern“ das Richtige."
+          },
+          {
+            "en": "Relative pronoun for \"Maria Klein\" (feminine), subject of the clause, so nominative \"die\".",
+            "de": "Relativpronomen für „Maria Klein“ (feminin) als Subjekt, also Nominativ „die“."
+          },
+          {
+            "en": "The verb \"ist\" is at the end of the clause, so a subordinating conjunction is needed; the clause gives a reason: \"weil\".",
+            "de": "Das Verb „ist“ steht am Ende, man braucht also eine Konjunktion für einen Nebensatz. Der Satz nennt einen Grund: „weil“."
+          },
+          {
+            "en": "\"5 Euro pro Termin\" means five euros for each session.",
+            "de": "„5 Euro pro Termin“ heißt: fünf Euro für jeden Termin."
+          },
+          {
+            "en": "The free first lesson is the reason why you can try it out: \"Deshalb\" + verb in second position (\"können Sie\").",
+            "de": "Die erste Stunde ist kostenlos – darum kann man den Kurs ausprobieren: „Deshalb“ + Verb an Position 2 („können Sie“)."
+          },
+          {
+            "en": "A condition with the verb at the end (\"Fragen haben\"): \"Wenn Sie Fragen haben, …\".",
+            "de": "Eine Bedingung mit dem Verb am Ende: „Wenn Sie Fragen haben, …“."
+          },
+          {
+            "en": "\"sich freuen auf\" + future event; before an infinitive clause it becomes \"darauf\": \"Wir freuen uns darauf, … zu sehen\".",
+            "de": "„sich freuen auf“ + Zukunft. Vor einem Infinitivsatz steht „darauf“: „Wir freuen uns darauf, … zu sehen“."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b1__sprachbausteine-2__s02",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Stadtfest am Fluss\n\nAm kommenden Wochenende feiert unsere Stadt {{1}} 25. Mal ihr großes Stadtfest. Es beginnt am Freitag um 17 Uhr {{2}} einem Konzert der Musikschule auf dem Marktplatz. Am Samstag können sich Familien auf ein buntes Programm freuen: Es gibt Spiele, Musik und viele Stände, {{3}} man Spezialitäten aus aller Welt probieren kann. Höhepunkt ist {{4}} immer das Feuerwerk über dem Fluss, das um 22 Uhr beginnt.\n\nWeil es in der Innenstadt nur wenige Parkplätze gibt, bittet die Stadt alle Besucher, mit Bus und Bahn {{5}} kommen. Die Busse fahren am Samstag {{6}} 2 Uhr nachts. {{7}} Sie mit dem Fahrrad kommen, können Sie es kostenlos am Bahnhof abstellen.\n\nFür Kinder unter zwölf Jahren ist der Eintritt frei, alle anderen zahlen drei Euro. Das Geld geht an Vereine aus der Region, {{8}} das Fest jedes Jahr organisieren. Wer selbst mithelfen möchte, kann sich noch {{9}} Rathaus melden. Die Veranstalter hoffen auf schönes Wetter, {{10}} bei Regen fällt das Feuerwerk leider aus.",
+          "gaps": [
+            {
+              "mode": "bank",
+              "answer": 9
+            },
+            {
+              "mode": "bank",
+              "answer": 12
+            },
+            {
+              "mode": "bank",
+              "answer": 14
+            },
+            {
+              "mode": "bank",
+              "answer": 7
+            },
+            {
+              "mode": "bank",
+              "answer": 5
+            },
+            {
+              "mode": "bank",
+              "answer": 10
+            },
+            {
+              "mode": "bank",
+              "answer": 2
+            },
+            {
+              "mode": "bank",
+              "answer": 1
+            },
+            {
+              "mode": "bank",
+              "answer": 3
+            },
+            {
+              "mode": "bank",
+              "answer": 6
+            }
+          ],
+          "bank": [
+            "seit",
+            "die",
+            "falls",
+            "im",
+            "aus",
+            "zu",
+            "denn",
+            "wie",
+            "dass",
+            "zum",
+            "bis",
+            "obwohl",
+            "mit",
+            "nachdem",
+            "wo"
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The fixed expression with an ordinal number is \"zum 25. Mal\" (zu + dem).",
+            "de": "Mit einer Ordinalzahl sagt man „zum 25. Mal“ (zu + dem)."
+          },
+          {
+            "en": "\"beginnen mit\" + dative: the festival begins with a concert.",
+            "de": "„beginnen mit“ + Dativ: Das Fest beginnt mit einem Konzert."
+          },
+          {
+            "en": "\"wo\" introduces a relative clause of place: at the stands one can try specialities.",
+            "de": "„wo“ leitet einen Relativsatz für einen Ort ein: An den Ständen kann man Spezialitäten probieren."
+          },
+          {
+            "en": "The fixed expression is \"wie immer\" (as always).",
+            "de": "Die feste Wendung heißt „wie immer“."
+          },
+          {
+            "en": "\"bitten\" is followed by an infinitive with \"zu\": \"mit Bus und Bahn zu kommen\".",
+            "de": "Nach „bitten“ folgt ein Infinitiv mit „zu“: „mit Bus und Bahn zu kommen“."
+          },
+          {
+            "en": "\"bis 2 Uhr nachts\" names the end time of the bus service.",
+            "de": "„bis 2 Uhr nachts“ nennt das Ende: Bis dahin fahren die Busse."
+          },
+          {
+            "en": "A condition with the verb at the end: \"Falls Sie mit dem Fahrrad kommen, …\". \"obwohl\" would be a contrast and makes no sense.",
+            "de": "Eine Bedingung mit dem Verb am Ende: „Falls Sie mit dem Fahrrad kommen, …“. „obwohl“ ist ein Gegensatz und passt nicht."
+          },
+          {
+            "en": "Relative pronoun for \"Vereine\" (plural), subject of the clause: \"die\".",
+            "de": "Relativpronomen für „Vereine“ (Plural) als Subjekt: „die“."
+          },
+          {
+            "en": "Place where you register: \"im Rathaus\" (in + dem).",
+            "de": "Ort, an dem man sich meldet: „im Rathaus“ (in + dem)."
+          },
+          {
+            "en": "The clause after the gap has main-clause word order (\"fällt das Feuerwerk … aus\"), so the reason word is \"denn\".",
+            "de": "Nach der Lücke steht das Verb an Position 2 („fällt das Feuerwerk … aus“). Für einen Grund passt hier nur „denn“."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b1__sprachbausteine-2__s03",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Sehr geehrte Damen und Herren,\n\n{{1}} Internet habe ich gelesen, dass Ihre Sprachschule im Sommer Intensivkurse anbietet. Ich interessiere mich sehr {{2}} einen Kurs auf dem Niveau B2. Ich lerne seit zwei Jahren Deutsch und möchte nächstes Jahr an einer deutschen Universität studieren. {{3}} muss ich meine Sprachkenntnisse noch verbessern.\n\nLeider habe ich nur im August Zeit, {{4}} ich im Juli noch arbeiten muss. Könnten Sie mir bitte mitteilen, {{5}} es in diesem Monat noch freie Plätze gibt? Außerdem hätte ich gern genauere Informationen {{6}} den Kosten. Ich würde auch gern wissen, ob Sie mir bei der Suche {{7}} einem Zimmer helfen können. Am liebsten würde ich bei einer Gastfamilie wohnen, {{8}} auch zu Hause Deutsch zu sprechen.\n\nBitte schicken Sie mir die Unterlagen per E-Mail {{9}} per Post an meine Adresse in Polen. {{10}} Ihre Antwort freue ich mich sehr.\n\nMit freundlichen Grüßen\nKatarzyna Nowak",
+          "gaps": [
+            {
+              "mode": "bank",
+              "answer": 3
+            },
+            {
+              "mode": "bank",
+              "answer": 9
+            },
+            {
+              "mode": "bank",
+              "answer": 5
+            },
+            {
+              "mode": "bank",
+              "answer": 11
+            },
+            {
+              "mode": "bank",
+              "answer": 2
+            },
+            {
+              "mode": "bank",
+              "answer": 14
+            },
+            {
+              "mode": "bank",
+              "answer": 0
+            },
+            {
+              "mode": "bank",
+              "answer": 8
+            },
+            {
+              "mode": "bank",
+              "answer": 12
+            },
+            {
+              "mode": "bank",
+              "answer": 6
+            }
+          ],
+          "bank": [
+            "nach",
+            "dass",
+            "ob",
+            "im",
+            "seit",
+            "deshalb",
+            "auf",
+            "als",
+            "um",
+            "für",
+            "aus",
+            "weil",
+            "oder",
+            "mit",
+            "zu"
+          ]
+        },
+        "explanations": [
+          {
+            "en": "\"im Internet\" (in + dem) is the fixed expression for reading something online.",
+            "de": "„im Internet“ (in + dem) ist die feste Wendung."
+          },
+          {
+            "en": "\"sich interessieren für\" + accusative: \"für einen Kurs\".",
+            "de": "„sich interessieren für“ + Akkusativ: „für einen Kurs“."
+          },
+          {
+            "en": "Because she wants to study in Germany, she must improve her German: \"Deshalb\" + verb in second position (\"muss ich\").",
+            "de": "Sie will in Deutschland studieren, darum muss sie besser Deutsch lernen: „Deshalb“ + Verb an Position 2 („muss ich“)."
+          },
+          {
+            "en": "The clause gives the reason with the verb at the end (\"arbeiten muss\"): \"weil\".",
+            "de": "Der Nebensatz nennt den Grund, das Verb steht am Ende („arbeiten muss“): „weil“."
+          },
+          {
+            "en": "An indirect yes/no question is introduced by \"ob\": are there still free places?",
+            "de": "Eine indirekte Ja/Nein-Frage beginnt mit „ob“: Gibt es noch freie Plätze?"
+          },
+          {
+            "en": "\"Informationen zu\" + dative: \"zu den Kosten\". \"für\" would need the accusative (\"für die Kosten\").",
+            "de": "„Informationen zu“ + Dativ: „zu den Kosten“. „für“ braucht den Akkusativ („für die Kosten“)."
+          },
+          {
+            "en": "\"die Suche nach\" + dative: \"bei der Suche nach einem Zimmer\".",
+            "de": "„die Suche nach“ + Dativ: „bei der Suche nach einem Zimmer“."
+          },
+          {
+            "en": "A purpose with \"zu\" + infinitive at the end (\"zu sprechen\") needs \"um … zu\".",
+            "de": "Ein Ziel mit „zu“ + Infinitiv am Ende („zu sprechen“) braucht „um … zu“."
+          },
+          {
+            "en": "\"oder\" connects two alternatives: by e-mail or by post.",
+            "de": "„oder“ verbindet zwei Möglichkeiten: per E-Mail oder per Post."
+          },
+          {
+            "en": "\"sich freuen auf\" + accusative for something in the future: \"Auf Ihre Antwort freue ich mich.\"",
+            "de": "„sich freuen auf“ + Akkusativ für etwas in der Zukunft: „Auf Ihre Antwort freue ich mich.“"
+          }
+        ]
+      }
+    }
+  ]
+}
