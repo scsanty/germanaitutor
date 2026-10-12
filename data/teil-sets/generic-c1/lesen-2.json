@@ -1,0 +1,358 @@
+{
+  "formatId": "generic-c1",
+  "partId": "lesen-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-c1__lesen-2__s01",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Was vom Leben im Netz bleibt\n\nAls Anna Berger nach dem Tod ihres Vaters dessen Wohnung auflöste, dachte sie an Möbel, Aktenordner und Versicherungen. Dass er auch ein digitales Leben hinterlassen hatte, wurde ihr erst Wochen später bewusst – als ein soziales Netzwerk sie freundlich daran erinnerte, ihm zum Geburtstag zu gratulieren. Nach und nach kam einiges zusammen: zwei E-Mail-Postfächer, Tausende Fotos auf einem Cloud-Speicher, ein Konto bei einem Onlinehändler und mehrere Abonnements, die weiterhin jeden Monat Geld abbuchten. Passwörter kannte sie keine.\n\nSo wie Anna Berger geht es vielen Hinterbliebenen. Umfragen zufolge hat die große Mehrheit der Internetnutzerinnen und -nutzer in Deutschland nicht festgelegt, was nach ihrem Tod mit ihren Konten geschehen soll. Die Gründe sind naheliegend: Mit dem eigenen Tod beschäftigt man sich ungern, und viele halten ihre digitalen Daten ohnehin für weniger wichtig als das Sparbuch oder das Haus. Diese Einschätzung ist allerdings trügerisch. Was jemand im Netz hinterlässt, kann einen erheblichen finanziellen Wert haben, etwa Guthaben bei Bezahldiensten oder laufende Verträge, die Kosten verursachen. Noch schwerer wiegt für viele Angehörige der emotionale Wert: Fotos, Videos und jahrelange Briefwechsel existieren heute oft ausschließlich auf den Servern großer Konzerne.\n\nRechtlich hat sich in den vergangenen Jahren einiges geklärt. Im Jahr 2018 entschied der Bundesgerichtshof, dass Erben grundsätzlich in die Verträge eintreten, die der Verstorbene mit einem Onlinedienst geschlossen hat. Digitale Konten werden damit nicht anders behandelt als Briefe oder Tagebücher, die ebenfalls an die Erben übergehen. Anlass war der Fall einer Mutter, die nach dem Tod ihrer Tochter Zugang zu deren Konto in einem sozialen Netzwerk verlangt hatte. Das Urteil gilt als wegweisend, doch in der Praxis bleibt der Weg zu den Daten oft steinig. Viele Anbieter verlangen eine Sterbeurkunde und einen Erbschein, dessen Ausstellung Monate dauern kann. Hinzu kommt, dass zahlreiche Dienste ihren Sitz im Ausland haben und sich auf eigene Nutzungsbedingungen berufen. Wer nicht weiß, bei welchen Diensten der Verstorbene überhaupt angemeldet war, steht ohnehin vor einem kaum lösbaren Rätsel.\n\nFachleute raten deshalb dazu, frühzeitig vorzusorgen. Am Anfang steht eine vollständige Übersicht aller Konten samt Zugangsdaten. Zu jedem Konto sollte vermerkt sein, was damit geschehen soll: ob es gelöscht, in einen Gedenkzustand versetzt oder von den Angehörigen weitergeführt werden soll. Ins Testament gehören die Passwörter allerdings nicht. Zum einen wird ein Testament häufig erst Wochen nach dem Tod eröffnet, zum anderen ändern sich Zugangsdaten im Laufe der Zeit, sodass die Angaben schnell veralten. Sinnvoller ist es, die Liste an einem sicheren Ort aufzubewahren, etwa in einem Passwortmanager mit Notfallzugang, und im Testament lediglich eine Vertrauensperson zu benennen, die sich um den digitalen Nachlass kümmern soll.\n\nInzwischen haben auch Unternehmen das Thema für sich entdeckt. Gegen eine Gebühr versprechen sie, die Konten Verstorbener aufzuspüren, Verträge zu kündigen und Daten für die Familie zu sichern. Verbraucherschützer sehen solche Angebote zurückhaltend. Manche Firmen verlangen hohe Preise, und wer ihnen den Auftrag erteilt, gewährt Fremden Einblick in äußerst persönliche Informationen. Ob ein Anbieter seriös arbeitet, lässt sich für Laien kaum beurteilen. Die Verbraucherzentralen empfehlen daher, sich nicht unter Zeitdruck setzen zu lassen und Verträge genau zu prüfen. Vieles, so betonen sie, könnten Angehörige mithilfe von Musterbriefen auch selbst erledigen.\n\nNeben den praktischen Fragen stellt der digitale Nachlass Hinterbliebene vor emotionale Herausforderungen. Manche empfinden es als tröstlich, alte Nachrichten noch einmal zu lesen oder auf einem Gedenkprofil Erinnerungen mit anderen zu teilen. Andere trifft es schmerzlich, wenn ihnen das Foto des Verstorbenen unerwartet auf dem Bildschirm begegnet. Die Trauerforscherin Miriam Hölzl hält beide Reaktionen für verständlich. Trauernde bräuchten Orte, an denen sie sich mit dem Verlust auseinandersetzen können, und digitale Räume könnten solche Orte sein. Sie könnten den Abschied aber auch hinauszögern, wenn das Profil weiterhin so wirkt, als sei der Mensch noch da. Entscheidend sei, dass die Angehörigen selbst bestimmen, wie sie damit umgehen – und das falle ihnen leichter, wenn die Verstorbenen ihre Wünsche zu Lebzeiten klar formuliert hätten.\n\nAnna Berger hat das Profil ihres Vaters inzwischen in einen Gedenkzustand versetzen lassen. Bis alle Abonnements gekündigt waren, vergingen fast fünf Monate. Aus dieser Erfahrung hat sie ihre Konsequenzen gezogen: Sie hat eine Liste ihrer eigenen Konten angelegt, für jedes festgehalten, was damit passieren soll, und ihren erwachsenen Kindern gezeigt, wo sie diese findet. „Was ich durchgemacht habe“, sagt sie, „möchte ich ihnen ersparen.“",
+          "questions": [
+            {
+              "question": "Was wurde Anna Berger erst einige Wochen nach dem Tod ihres Vaters bewusst?",
+              "options": [
+                "Dass ihr Vater erhebliche Schulden hinterlassen hatte.",
+                "Dass ihr Vater auch im Internet zahlreiche Spuren hinterlassen hatte.",
+                "Dass sie die Wohnung ihres Vaters nicht allein auflösen konnte."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Warum haben laut Text viele Menschen ihren digitalen Nachlass nicht geregelt?",
+              "options": [
+                "Sie halten ihre digitalen Daten für weniger bedeutend als ihren materiellen Besitz.",
+                "Sie wissen nicht, bei welchen Diensten sie angemeldet sind.",
+                "Sie gehen davon aus, dass die Anbieter die Konten automatisch löschen."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Was hat der Bundesgerichtshof im Jahr 2018 entschieden?",
+              "options": [
+                "Onlinedienste müssen die Konten Verstorbener nach kurzer Zeit löschen.",
+                "Nur Eltern minderjähriger Kinder dürfen auf deren Konten zugreifen.",
+                "Digitale Konten gehen grundsätzlich wie Briefe auf die Erben über."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Wie sieht die Lage nach dem Urteil in der Praxis aus?",
+              "options": [
+                "Der Zugang zu den Daten ist für Erben häufig weiterhin mühsam.",
+                "Ausländische Anbieter halten sich inzwischen an deutsche Vorgaben.",
+                "Die meisten Dienste gewähren den Zugang ohne besondere Nachweise."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Warum sollten Zugangsdaten nicht im Testament stehen?",
+              "options": [
+                "Weil Testamente für alle Erben öffentlich einsehbar sind.",
+                "Weil das Testament oft spät eröffnet wird und die Angaben veralten können.",
+                "Weil Passwörter in einem Testament rechtlich nicht zulässig sind."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Wie beurteilen Verbraucherschützer die kommerziellen Nachlassdienste?",
+              "options": [
+                "Sie halten sie für unverzichtbar, weil Angehörige überfordert sind.",
+                "Sie fordern, solche Angebote gesetzlich zu verbieten.",
+                "Sie raten dazu, solche Angebote mit Vorsicht zu prüfen."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Welche Ansicht vertritt die Trauerforscherin Miriam Hölzl?",
+              "options": [
+                "Gedenkprofile im Netz erschweren das Trauern grundsätzlich.",
+                "Digitale Räume können beim Trauern helfen, den Abschied aber auch verzögern.",
+                "Angehörige sollten die Profile Verstorbener möglichst schnell löschen."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Welche Konsequenz hat Anna Berger aus ihren Erfahrungen gezogen?",
+              "options": [
+                "Sie hat ihren eigenen digitalen Nachlass geordnet und ihre Kinder informiert.",
+                "Sie hat alle ihre eigenen Konten und Abonnements gekündigt.",
+                "Sie hat einen Anbieter beauftragt, ihren Nachlass später zu verwalten."
+              ],
+              "correctIndex": 0
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Only weeks later did she realise \"Dass er auch ein digitales Leben hinterlassen hatte\": e-mail accounts, photos, online accounts, subscriptions. Debts are not mentioned.",
+            "de": "Erst später merkte sie, „dass er auch ein digitales Leben hinterlassen hatte“: Postfächer, Fotos, Konten, Abos."
+          },
+          {
+            "en": "Many \"halten ihre digitalen Daten ohnehin für weniger wichtig als das Sparbuch oder das Haus\". Not knowing the services (b) is mentioned only for heirs, not as a reason.",
+            "de": "Viele „halten ihre digitalen Daten ohnehin für weniger wichtig als das Sparbuch oder das Haus“."
+          },
+          {
+            "en": "Heirs \"in die Verträge eintreten\"; digital accounts are treated \"nicht anders … als Briefe oder Tagebücher\". The mother's case was only the occasion, not a restriction to parents.",
+            "de": "Erben übernehmen die Verträge. Digitale Konten werden „nicht anders behandelt als Briefe oder Tagebücher“."
+          },
+          {
+            "en": "\"in der Praxis bleibt der Weg zu den Daten oft steinig\": providers demand certificates, and foreign services cite their own terms of use.",
+            "de": "„In der Praxis bleibt der Weg zu den Daten oft steinig“: Man braucht Urkunden, und Anbieter im Ausland haben eigene Regeln."
+          },
+          {
+            "en": "A will is \"häufig erst Wochen nach dem Tod eröffnet\", and passwords change, \"sodass die Angaben schnell veralten\".",
+            "de": "Das Testament wird „häufig erst Wochen nach dem Tod eröffnet“, und Passwörter ändern sich, die Angaben „veralten“ also."
+          },
+          {
+            "en": "Consumer advocates \"sehen solche Angebote zurückhaltend\" and recommend checking contracts carefully and not being rushed: caution, not a ban.",
+            "de": "Verbraucherschützer „sehen solche Angebote zurückhaltend“. Man soll Verträge genau prüfen – ein Verbot fordern sie nicht."
+          },
+          {
+            "en": "She says digital spaces \"könnten solche Orte sein\" for grieving, but \"könnten den Abschied aber auch hinauszögern\".",
+            "de": "Digitale Räume „könnten solche Orte sein“, sie „könnten den Abschied aber auch hinauszögern“."
+          },
+          {
+            "en": "She made a list of her own accounts, noted what should happen to each, and showed her children where to find it.",
+            "de": "Sie hat eine Liste ihrer eigenen Konten angelegt und ihren Kindern gezeigt, wo sie diese finden."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-c1__lesen-2__s02",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Wer Fehler zugibt, macht weniger\n\nIn einem Kreiskrankenhaus in Mittelhessen beginnt jede Operation mit einem kurzen Ritual. Bevor das Skalpell angesetzt wird, hält das gesamte Team inne: Die Chirurgin nennt den Namen des Patienten, den geplanten Eingriff und die Körperseite, die Anästhesistin bestätigt Allergien und Vorerkrankungen, die Pflegekraft prüft, ob alle Instrumente vollständig sind. Das Ganze dauert kaum eine Minute. Als die Klinik das Verfahren vor gut fünfzehn Jahren einführte, hielten es manche erfahrene Chirurgen für überflüssig, einige empfanden es sogar als Misstrauensbeweis. Heute stellt es niemand mehr infrage, und in den Jahren seit der Einführung ist es kein einziges Mal zu einer Verwechslung von Patienten oder Körperseiten gekommen. Die Idee stammt aus einer Branche, die mit Medizin auf den ersten Blick wenig gemein hat: der Luftfahrt.\n\nDort hat man früh erkannt, dass sich Unglücke selten auf ein einzelnes Versagen zurückführen lassen. Meist führt eine Verkettung kleiner Versäumnisse zur Katastrophe. Seit Jahrzehnten arbeiten Piloten deshalb mit verbindlichen Checklisten, und Zwischenfälle können anonym gemeldet werden, ohne dass die Meldenden Sanktionen fürchten müssen. Wer einen Unfall untersucht, sucht nicht in erster Linie nach Schuldigen, sondern nach Ursachen. Hinter diesem Vorgehen steht eine nüchterne Annahme: Menschen machen Fehler, auch die besten und erfahrensten. Ein sicheres System muss daher so gebaut sein, dass Fehler früh bemerkt werden, bevor sie Schaden anrichten. Dass das Fliegen heute zu den sichersten Fortbewegungsarten zählt, wird nicht zuletzt dieser Haltung zugeschrieben.\n\nIn der Medizin herrschte lange ein anderes Verständnis. Krankenhäuser waren streng hierarchisch organisiert, und der Chefarzt galt als nahezu unfehlbar. Junge Ärztinnen und Pflegekräfte trauten sich selten, einem Vorgesetzten zu widersprechen, selbst wenn ihnen etwas merkwürdig vorkam. Fehler wurden, wenn irgend möglich, verschwiegen – aus Angst, das eigene Ansehen zu beschädigen oder haftbar gemacht zu werden. Die Folgen lassen sich nur schätzen, doch Fachgesellschaften gehen davon aus, dass in deutschen Krankenhäusern jedes Jahr Tausende Menschen an vermeidbaren Fehlern sterben.\n\nSeit einigen Jahren ändert sich das allmählich. In vielen Kliniken gibt es inzwischen anonyme Berichtssysteme, in die Beschäftigte nicht nur Fehler, sondern auch Beinahe-Fehler eintragen können, also Situationen, in denen gerade noch rechtzeitig jemand eingegriffen hat. Genutzt werden diese Systeme allerdings sehr unterschiedlich. Während auf manchen Stationen regelmäßig Meldungen eingehen, bleiben sie auf anderen fast leer. Das bedeutet jedoch keineswegs, dass dort weniger schiefgeht. Eine Untersuchung an mehreren Universitätskliniken kam sogar zu dem Ergebnis, dass Stationen mit vielen Meldungen im Durchschnitt eher sicherer waren: Wo offen über Probleme gesprochen wird, werden sie auch behoben. Wo dagegen geschwiegen wird, wiederholen sich dieselben Fehler, weil niemand von ihnen erfährt und niemand die Abläufe ändert.\n\nEntscheidend sei das, was Fachleute „psychologische Sicherheit“ nennen, erklärt der Organisationspsychologe Thomas Brenner. Gemeint ist das Vertrauen, Bedenken äußern zu können, ohne bloßgestellt oder bestraft zu werden. Eine solche Atmosphäre lasse sich nicht verordnen, sondern müsse vorgelebt werden. Den Führungskräften komme dabei eine Schlüsselrolle zu. „Wenn eine Chefärztin in der Besprechung erzählt, welcher Fehler ihr letzte Woche unterlaufen ist, sinkt die Hemmschwelle für alle anderen enorm“, sagt Brenner. Umgekehrt genüge eine einzige abfällige Bemerkung, um monatelange Bemühungen zunichtezumachen.\n\nAllerdings warnen Kritiker davor, die Methoden der Luftfahrt eins zu eins zu übertragen. Ein Patient sei kein Flugzeug, dessen Funktionsweise bis ins Detail bekannt ist; jeder Körper reagiere anders, und nicht jede Situation lasse sich in einer Liste abbilden. Werden zu viele Checklisten eingeführt, bestehe zudem die Gefahr, dass sie nur noch mechanisch abgehakt werden, ohne dass jemand wirklich nachdenkt. Und auch eine offene Fehlerkultur hat Grenzen. Sie bedeutet nicht, dass jedes Fehlverhalten folgenlos bleibt. Fachleute unterscheiden zwischen Irrtümern, die jedem passieren können, und bewussten Regelverstößen, etwa wenn jemand Sicherheitsvorschriften wiederholt ignoriert. Während Erstere ohne Sanktionen aufgearbeitet werden sollten, könnten Letztere durchaus Konsequenzen haben.\n\nIn der hessischen Klinik erzählt eine OP-Pflegerin, wie sehr sich ihr Arbeitsalltag verändert hat. Vor einiger Zeit sei ihr während des kurzen Innehaltens vor einer Operation aufgefallen, dass in der Akte eine Allergie gegen ein bestimmtes Desinfektionsmittel vermerkt war, das bereits bereitstand. „Früher hätte ich wahrscheinlich nichts gesagt, um den Operateur nicht zu verärgern“, sagt sie. „Heute ist es selbstverständlich, dass jeder den Mund aufmacht.“",
+          "questions": [
+            {
+              "question": "Was erfährt man über das kurze Ritual vor jeder Operation?",
+              "options": [
+                "Es wurde von den Pflegekräften der Klinik selbst entwickelt.",
+                "Es verlängert jede Operation um etwa eine Viertelstunde.",
+                "Manche erfahrenen Chirurgen hielten es anfangs für unnötig."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Worauf beruht laut Text die hohe Sicherheit in der Luftfahrt?",
+              "options": [
+                "Auf der Annahme, dass Fehler unvermeidlich sind und früh erkannt werden müssen.",
+                "Auf strengen Strafen für Piloten, die Zwischenfälle verursachen.",
+                "Auf der Tatsache, dass Unglücke meist auf ein einzelnes Versagen zurückgehen."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Warum wurden Fehler in Krankenhäusern lange verschwiegen?",
+              "options": [
+                "Weil es keine Möglichkeit gab, sie offiziell zu melden.",
+                "Weil man um seinen Ruf fürchtete und rechtliche Folgen befürchtete.",
+                "Weil die Chefärzte ausdrücklich verboten hatten, darüber zu sprechen."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Was ergab die Untersuchung an mehreren Universitätskliniken?",
+              "options": [
+                "Auf Stationen ohne Meldungen passieren tatsächlich weniger Fehler.",
+                "Die meisten Meldungen betreffen Beinahe-Fehler und nicht echte Fehler.",
+                "Stationen mit vielen Meldungen waren im Durchschnitt eher sicherer."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Welche Rolle spielen Führungskräfte nach Ansicht von Thomas Brenner?",
+              "options": [
+                "Wenn sie eigene Fehler offen ansprechen, fällt es anderen leichter, dasselbe zu tun.",
+                "Sie sollten psychologische Sicherheit durch klare Anweisungen verordnen.",
+                "Sie müssen jede Meldung persönlich prüfen und bewerten."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Wovor warnen Kritiker bei der Übernahme von Methoden aus der Luftfahrt?",
+              "options": [
+                "Davor, dass Ärzte dadurch zu viel Zeit mit Schulungen verbringen.",
+                "Davor, dass Checklisten bei zu großer Zahl gedankenlos abgehakt werden.",
+                "Davor, dass Patienten das Vertrauen in die Medizin verlieren."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Was bedeutet eine offene Fehlerkultur laut Text?",
+              "options": [
+                "Bewusste Regelverstöße können trotzdem Konsequenzen nach sich ziehen.",
+                "Auch wiederholte Regelverstöße bleiben grundsätzlich ohne Folgen.",
+                "Irrtümer sollten ebenso bestraft werden wie Regelverstöße."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Was berichtet die OP-Pflegerin am Ende des Textes?",
+              "options": [
+                "Ein Operateur habe sie kritisiert, weil sie die Operation verzögert habe.",
+                "Sie habe eine Allergie übersehen, die erst nach der Operation bemerkt wurde.",
+                "Sie habe während des Rituals auf ein Risiko hingewiesen, was sie früher kaum getan hätte."
+              ],
+              "correctIndex": 2
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "\"hielten es manche erfahrene Chirurgen für überflüssig\" when it was introduced. It lasts \"kaum eine Minute\", and it comes from aviation, not from the nurses.",
+            "de": "Bei der Einführung „hielten es manche erfahrene Chirurgen für überflüssig“. Es dauert nur „kaum eine Minute“."
+          },
+          {
+            "en": "Aviation assumes \"Menschen machen Fehler\" and builds systems so \"dass Fehler früh bemerkt werden\". Reports are made without sanctions, and accidents are said to have several causes, so b and c are wrong.",
+            "de": "Man geht davon aus: „Menschen machen Fehler“. Das System soll so gebaut sein, „dass Fehler früh bemerkt werden“. Strafen gibt es nicht."
+          },
+          {
+            "en": "Errors were hidden \"aus Angst, das eigene Ansehen zu beschädigen oder haftbar gemacht zu werden\" – fear for one's reputation and liability.",
+            "de": "Man schwieg „aus Angst, das eigene Ansehen zu beschädigen oder haftbar gemacht zu werden“."
+          },
+          {
+            "en": "\"Stationen mit vielen Meldungen [waren] im Durchschnitt eher sicherer\". The text says few reports do not mean fewer mistakes, so a is wrong.",
+            "de": "Die Untersuchung zeigt: „Stationen mit vielen Meldungen [waren] im Durchschnitt eher sicherer“."
+          },
+          {
+            "en": "When a head doctor tells others about her own mistake, \"sinkt die Hemmschwelle für alle anderen enorm\". Brenner says safety \"lasse sich nicht verordnen\", so b is wrong.",
+            "de": "Wenn eine Chefärztin von ihrem Fehler erzählt, „sinkt die Hemmschwelle für alle anderen“. Verordnen kann man das nicht."
+          },
+          {
+            "en": "With too many checklists there is \"die Gefahr, dass sie nur noch mechanisch abgehakt werden, ohne dass jemand wirklich nachdenkt\".",
+            "de": "Bei zu vielen Checklisten besteht „die Gefahr, dass sie nur noch mechanisch abgehakt werden“."
+          },
+          {
+            "en": "An open error culture \"bedeutet nicht, dass jedes Fehlverhalten folgenlos bleibt\": deliberate rule violations \"könnten … durchaus Konsequenzen haben\", while honest mistakes go unpunished.",
+            "de": "Fehlerkultur heißt nicht, dass alles „folgenlos bleibt“. Bewusste Regelverstöße können „Konsequenzen haben“, Irrtümer nicht."
+          },
+          {
+            "en": "During the pause she noticed a recorded allergy and spoke up: \"Früher hätte ich wahrscheinlich nichts gesagt\".",
+            "de": "Sie bemerkte eine Allergie in der Akte und sagte etwas. „Früher hätte ich wahrscheinlich nichts gesagt.“"
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-c1__lesen-2__s03",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Ein Rohstoff, der durch die Finger rinnt\n\nSand scheint es im Überfluss zu geben. Er bedeckt Wüsten, so weit das Auge reicht, säumt Küsten und Flussufer, und wer im Urlaub am Strand liegt, käme kaum auf den Gedanken, dass er knapp werden könnte. Dennoch warnt das Umweltprogramm der Vereinten Nationen seit Jahren vor einer weltweiten Sandkrise. Nach Wasser sind Sand und Kies die Rohstoffe, die der Mensch in den größten Mengen verbraucht: Jahr für Jahr werden schätzungsweise 40 bis 50 Milliarden Tonnen abgebaut. Der weitaus größte Teil fließt in die Herstellung von Beton, ohne den kaum ein Gebäude, keine Straße und keine Brücke auskommt. Aber auch für Glas, Solarzellen und Computerchips wird Sand benötigt.\n\nDass ausgerechnet ein so verbreiteter Stoff zur Mangelware werden kann, liegt an seiner Beschaffenheit. Der Sand der Wüsten ist für den Bau weitgehend unbrauchbar. Über Jahrtausende hat der Wind seine Körner so stark abgeschliffen, dass sie nahezu kugelrund und glatt sind. Im Beton verhaken sie sich nicht miteinander, die Masse bleibt instabil. Gefragt ist daher kantiger Sand, wie er in Flussbetten, an Seeufern und am Meeresgrund vorkommt. Diese Vorkommen sind jedoch begrenzt und erneuern sich nur sehr langsam.\n\nWo die Nachfrage groß ist und Kontrollen fehlen, hat der Abbau dramatische Folgen. In mehreren Ländern Asiens und Afrikas wird Sand in großem Stil illegal aus Flüssen und von Stränden geholt, nicht selten von kriminellen Netzwerken, die Anwohner und Journalisten einschüchtern. Wird einem Fluss zu viel Sand entnommen, gräbt er sich tiefer in sein Bett. Der Grundwasserspiegel in der Umgebung sinkt, Brunnen fallen trocken, und Brückenpfeiler werden unterspült. An den Küsten verstärkt der Abbau die Erosion; in Südostasien sind Berichten zufolge sogar ganze kleine Inseln verschwunden.\n\nIn Deutschland stellt sich die Lage anders dar. Geologisch gesehen gibt es hierzulande genügend Sand und Kies, um den Bedarf noch lange zu decken. Dennoch klagen Bauunternehmen über steigende Preise und Engpässe. Das Problem liegt weniger im Boden als in der Genehmigung. Neue Abbaugebiete stoßen häufig auf den Widerstand von Anwohnern, die Lärm und Lastwagenverkehr fürchten, oder sie kollidieren mit dem Naturschutz. Zudem sind viele Flächen, unter denen sich Vorkommen befinden, längst bebaut. Die Folge sind immer längere Transportwege, die den Rohstoff verteuern und zusätzliche Emissionen verursachen.\n\nAls ein möglicher Ausweg gilt das Recycling. Beim Abriss von Gebäuden fallen gewaltige Mengen Bauschutt an, der zerkleinert und als Zuschlagstoff für neuen Beton verwendet werden kann. Technisch ist das seit Langem möglich, und Untersuchungen zeigen, dass Recyclingbeton für die meisten Anwendungen ebenso geeignet ist wie herkömmlicher. Trotzdem liegt sein Anteil am Markt bislang im niedrigen einstelligen Prozentbereich. Fachleute führen das vor allem auf komplizierte Vorschriften zurück, die die Verwendung einschränken, sowie auf die Skepsis vieler Bauherren, die minderwertige Qualität befürchten. Daneben wird an Verfahren geforscht, mit denen sich Wüstensand oder Altglas als Ersatz nutzen lassen könnten; bis zur Marktreife dürften jedoch noch Jahre vergehen.\n\nDie Bauingenieurin Lena Vogt hält all diese Ansätze für sinnvoll, aber nicht für ausreichend. „Wir reden viel darüber, wie wir Beton anders herstellen können, und zu wenig darüber, wie wir weniger davon brauchen“, sagt sie. Der wirksamste Hebel sei, bestehende Gebäude zu erhalten und umzubauen, statt sie abzureißen und durch Neubauten zu ersetzen. Jeder Abriss vernichte Rohstoffe, die einmal mit großem Aufwand gewonnen worden seien. „Der nachhaltigste Beton ist der, der gar nicht erst gegossen wird.“\n\nAuf internationaler Ebene fordern die Vereinten Nationen, Sand als strategische Ressource zu behandeln und seinen Abbau verbindlich zu regeln. Leicht umzusetzen ist das nicht. Da Sand billig ist und sein Transport im Verhältnis teuer, wird er meist in der Nähe des Abbauorts verkauft; einen Weltmarkt mit transparenten Preisen gibt es kaum. Vor allem aber fehlen verlässliche Zahlen. Wie viel Sand tatsächlich wo entnommen wird, weiß niemand genau, und ohne diese Kenntnis lassen sich weder Grenzen festlegen noch deren Einhaltung überprüfen.\n\nVielleicht ist das größte Hindernis aber ein ganz anderes: unsere Wahrnehmung. Solange Sand als etwas gilt, das buchstäblich wie Sand am Meer vorhanden ist, wird kaum jemand bereit sein, sorgsamer mit ihm umzugehen. Ein Umdenken beginnt erst, wenn sich die Einsicht durchsetzt, dass auch ein scheinbar unerschöpflicher Rohstoff seine Grenzen hat.",
+          "questions": [
+            {
+              "question": "Was sagt der Text über den Verbrauch von Sand?",
+              "options": [
+                "Der größte Teil wird für Glas und Computerchips verwendet.",
+                "Nur Wasser wird in noch größeren Mengen genutzt.",
+                "Der Verbrauch ist in den letzten Jahren deutlich gesunken."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Warum ist Wüstensand für den Bau kaum geeignet?",
+              "options": [
+                "Er enthält zu viel Salz und greift den Beton an.",
+                "Sein Transport aus den Wüsten wäre zu teuer.",
+                "Seine Körner sind so rund und glatt, dass sie keinen festen Halt bieten."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Welche Folge hat übermäßiger Sandabbau in Flüssen?",
+              "options": [
+                "Der Grundwasserspiegel in der Umgebung sinkt.",
+                "Der Fluss tritt häufiger über die Ufer.",
+                "Die Fische finden keine Laichplätze mehr."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Worin besteht das Problem in Deutschland vor allem?",
+              "options": [
+                "Die natürlichen Vorkommen sind weitgehend erschöpft.",
+                "Neue Abbaugebiete lassen sich nur schwer durchsetzen.",
+                "Der Sand muss zunehmend aus dem Ausland eingeführt werden."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Warum wird Recyclingbeton bisher nur wenig verwendet?",
+              "options": [
+                "Weil er für die meisten Bauvorhaben nicht stabil genug ist.",
+                "Weil beim Abriss von Gebäuden zu wenig Schutt anfällt.",
+                "Weil Vorschriften und Vorbehalte von Bauherren seinen Einsatz bremsen."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Was hält Lena Vogt für den wirksamsten Ansatz?",
+              "options": [
+                "Bestehende Gebäude zu erhalten, statt sie abzureißen und neu zu bauen.",
+                "Die Forschung an Ersatzstoffen wie Wüstensand zu beschleunigen.",
+                "Den Anteil von Recyclingbeton gesetzlich vorzuschreiben."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Warum ist eine internationale Regelung des Sandabbaus schwierig?",
+              "options": [
+                "Weil die meisten Länder ihren Sand ins Ausland verkaufen.",
+                "Weil niemand genau weiß, wie viel Sand wo abgebaut wird.",
+                "Weil die Vereinten Nationen eine Regelung ablehnen."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Welche Schlussfolgerung zieht der Text am Ende?",
+              "options": [
+                "Die Sandkrise lässt sich allein durch neue Technik lösen.",
+                "Strände sollten für den Sandabbau vollständig gesperrt werden.",
+                "Ein Umdenken setzt voraus, dass Sand nicht mehr als unbegrenzt gilt."
+              ],
+              "correctIndex": 2
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "\"Nach Wasser sind Sand und Kies die Rohstoffe, die der Mensch in den größten Mengen verbraucht.\" Most sand goes into concrete, not glass or chips.",
+            "de": "„Nach Wasser sind Sand und Kies die Rohstoffe, die der Mensch in den größten Mengen verbraucht.“ Der größte Teil geht in Beton."
+          },
+          {
+            "en": "The wind has made the grains \"nahezu kugelrund und glatt\", so \"Im Beton verhaken sie sich nicht miteinander\".",
+            "de": "Die Körner sind „nahezu kugelrund und glatt“. „Im Beton verhaken sie sich nicht miteinander.“"
+          },
+          {
+            "en": "When too much sand is taken, \"Der Grundwasserspiegel in der Umgebung sinkt\". Flooding and fish are not mentioned.",
+            "de": "Wenn man zu viel Sand entnimmt, gilt: „Der Grundwasserspiegel in der Umgebung sinkt.“"
+          },
+          {
+            "en": "There is enough sand geologically; \"Das Problem liegt weniger im Boden als in der Genehmigung\": new pits meet resistance and conflict with nature protection.",
+            "de": "Es gibt genug Sand. „Das Problem liegt weniger im Boden als in der Genehmigung“: Neue Abbaugebiete stoßen auf Widerstand."
+          },
+          {
+            "en": "Experts blame \"komplizierte Vorschriften\" and \"die Skepsis vieler Bauherren\". Recycled concrete is \"ebenso geeignet\", so a is wrong.",
+            "de": "Gründe sind „komplizierte Vorschriften“ und „die Skepsis vieler Bauherren“. Technisch ist Recyclingbeton „ebenso geeignet“."
+          },
+          {
+            "en": "\"Der wirksamste Hebel sei, bestehende Gebäude zu erhalten und umzubauen, statt sie abzureißen.\"",
+            "de": "„Der wirksamste Hebel sei, bestehende Gebäude zu erhalten und umzubauen, statt sie abzureißen.“"
+          },
+          {
+            "en": "\"Vor allem aber fehlen verlässliche Zahlen. Wie viel Sand tatsächlich wo entnommen wird, weiß niemand genau.\" Sand is mostly sold locally, so a is wrong.",
+            "de": "„Wie viel Sand tatsächlich wo entnommen wird, weiß niemand genau.“ Ohne Zahlen kann man keine Grenzen festlegen."
+          },
+          {
+            "en": "\"Ein Umdenken beginnt erst, wenn sich die Einsicht durchsetzt, dass auch ein scheinbar unerschöpflicher Rohstoff seine Grenzen hat.\"",
+            "de": "Ein Umdenken beginnt erst, wenn man versteht, dass auch ein „scheinbar unerschöpflicher Rohstoff seine Grenzen hat“."
+          }
+        ]
+      }
+    }
+  ]
+}
