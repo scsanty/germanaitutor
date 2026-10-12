@@ -1855,6 +1855,44 @@
       }
     },
     {
+      "id": "b1-telc-reading-teil1-headline-matching__ex4",
+      "lessonId": "b1-telc-reading-teil1-headline-matching",
+      "track": "telc",
+      "type": "matching",
+      "content": {
+        "instruction": {
+          "en": "Read the five texts and find the right headline for each one. Four headlines are left over. Watch out for words from the text that appear in the wrong headline.",
+          "de": "Lesen Sie die fünf Texte und finden Sie für jeden Text die passende Überschrift. Vier Überschriften bleiben übrig. Achten Sie auf Wörter aus dem Text in falschen Überschriften."
+        },
+        "items": [
+          "Die Stadtbibliothek Freiburg verleiht seit diesem Monat nicht nur Bücher, sondern auch Werkzeuge, Campingausrüstung und Partyzubehör. Statt eine Bohrmaschine zu kaufen, die man nur zweimal im Jahr benutzt, holt man sie für ein paar Tage ab. Mit einem gültigen Bibliotheksausweis ist die Ausleihe kostenlos.",
+          "Immer mehr Handwerksbetriebe finden keine Auszubildenden. Eine Bäckerei in Kassel geht deshalb neue Wege: Jugendliche können dort in den Ferien eine Woche lang mitarbeiten und den Beruf kennenlernen. Wer danach eine Ausbildung beginnt, bekommt vom ersten Tag an ein Monatsticket für Bus und Bahn.",
+          "Wer nachts schlecht schläft, sollte abends auf das Handy verzichten. Das zeigt eine Untersuchung der Universität Bremen. Die Forscher baten 300 Testpersonen, eine Stunde vor dem Schlafen keine Bildschirme mehr zu benutzen. Nach zwei Wochen schliefen die meisten schneller ein und fühlten sich am Morgen fitter.",
+          "Der Sommer war in vielen Regionen viel zu trocken. Jetzt bitten mehrere Gemeinden in Brandenburg ihre Einwohner, die Bäume an den Straßen zu gießen. Wer einen Baum vor dem Haus „adoptiert“, bekommt kostenlos einen Wassersack, der das Wasser langsam an die Wurzeln abgibt.",
+          "Ab Januar dürfen Hunde in den Zügen eines regionalen Bahnunternehmens nur noch mit Maulkorb mitfahren. Kleine Hunde in einer Tasche sind davon ausgenommen. Das Unternehmen reagiert damit auf Beschwerden von Fahrgästen. Tierschützer kritisieren die neue Regel als übertrieben."
+        ],
+        "targets": [
+          "Bibliothek kauft neue Bücher für Heimwerker",
+          "Ohne Bildschirm besser schlafen",
+          "Tierschützer fordern Hundeverbot in Zügen",
+          "Bürger sollen Stadtbäumen durch die Trockenheit helfen",
+          "Freie Fahrt mit Bus und Bahn für alle Schüler",
+          "Leihen statt kaufen: neues Angebot der Bibliothek",
+          "Universität sucht Testpersonen für Handy-Studie",
+          "Neue Regel für Vierbeiner in der Bahn",
+          "Mit Ferienwochen gegen den Mangel an Lehrlingen"
+        ],
+        "answers": [
+          5,
+          8,
+          1,
+          3,
+          7
+        ],
+        "allowNone": false
+      }
+    },
+    {
       "id": "b1-telc-reading-teil2-detailed-comprehension__ex0",
       "lessonId": "b1-telc-reading-teil2-detailed-comprehension",
       "track": "telc",
@@ -1896,6 +1934,66 @@
           "en": "Explain why answer options containing absolute words like 'immer', 'alle', or 'nie' are frequently incorrect distractors in telc Teil 2.",
           "de": "Erklären Sie, warum Antworten mit absoluten Wörtern wie 'immer', 'alle' oder 'nie' in telc Teil 2 oft falsch sind."
         }
+      }
+    },
+    {
+      "id": "b1-telc-reading-teil2-detailed-comprehension__ex3",
+      "lessonId": "b1-telc-reading-teil2-detailed-comprehension",
+      "track": "telc",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the article and answer the questions. Which answer (a, b or c) is correct? The questions follow the order of the text.",
+          "de": "Lesen Sie den Text und beantworten Sie die Fragen. Welche Lösung (a, b oder c) ist richtig? Die Fragen folgen der Reihenfolge im Text."
+        },
+        "passage": "Wohnen für Hilfe: Zimmer gegen Unterstützung\n\nBezahlbare Zimmer sind in vielen Universitätsstädten kaum noch zu finden. Gleichzeitig leben zahlreiche ältere Menschen allein in großen Wohnungen. Das Projekt „Wohnen für Hilfe“, das es inzwischen in über 30 deutschen Städten gibt, bringt beide Gruppen zusammen. Die Regel ist einfach: Für jeden Quadratmeter Wohnfläche leistet die Studentin oder der Student eine Stunde Hilfe im Monat. Wer also in einem Zimmer mit 15 Quadratmetern wohnt, hilft 15 Stunden im Monat, zum Beispiel beim Einkaufen, im Garten oder am Computer. Nur die Nebenkosten wie Strom und Wasser müssen die Mieter selbst bezahlen. Pflege gehört ausdrücklich nicht zu den Aufgaben.\n\nVermittelt werden die Wohnpartnerschaften meist vom Studentenwerk. Die Mitarbeiterinnen führen mit beiden Seiten ausführliche Gespräche, bevor sie einen Vorschlag machen. „Nicht jede Kombination passt“, sagt Projektleiterin Sabine Krüger aus Köln. „Ein Student, der gern bis drei Uhr nachts Musik macht, ist bei einer Frau, die um neun ins Bett geht, nicht richtig.“ Nach einem ersten Treffen können beide Seiten noch Nein sagen.\n\nDie Erfahrungen sind überwiegend positiv. Viele Paare bleiben länger zusammen als geplant, manche sogar bis zum Ende des Studiums. Probleme gibt es vor allem dann, wenn die Erwartungen nicht klar besprochen wurden. Deshalb unterschreiben beide Seiten heute einen Vertrag, in dem genau steht, welche Aufgaben übernommen werden.",
+        "questions": [
+          {
+            "question": "Was ist die Idee des Projekts?",
+            "options": [
+              "Ältere Menschen ziehen in Wohnheime für Studierende.",
+              "Die Städte bauen neue, günstige Zimmer für Studierende.",
+              "Studierende bekommen ein Zimmer und helfen dafür älteren Menschen."
+            ],
+            "correctIndex": 2
+          },
+          {
+            "question": "Wie viel hilft eine Studentin, die in einem Zimmer mit 20 Quadratmetern wohnt?",
+            "options": [
+              "20 Stunden im Monat",
+              "15 Stunden im Monat",
+              "20 Stunden pro Woche"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Was müssen die Studierenden bezahlen?",
+            "options": [
+              "eine niedrige Miete",
+              "nur Kosten wie Strom und Wasser",
+              "gar nichts"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Was macht das Studentenwerk, bevor es eine Wohnpartnerschaft vorschlägt?",
+            "options": [
+              "Es führt ausführliche Gespräche mit beiden Seiten.",
+              "Es lässt beide Seiten sofort einen Vertrag unterschreiben.",
+              "Es fragt nach den Noten der Studierenden."
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Wann gibt es laut Text vor allem Probleme?",
+            "options": [
+              "wenn die Studierenden nachts Musik machen",
+              "wenn die Erwartungen nicht klar besprochen wurden",
+              "wenn die Wohnung zu klein ist"
+            ],
+            "correctIndex": 1
+          }
+        ]
       }
     },
     {
@@ -1946,6 +2044,45 @@
       "content": {
         "front": "Vorgehensweise telc Lesen Teil 3",
         "back": "Zuerst Situationen analysieren und Schlüsselwörter markieren, dann gezielt die Anzeigen nach diesen Kriterien scannen."
+      }
+    },
+    {
+      "id": "b1-telc-reading-teil3-classifieds-matching__ex4",
+      "lessonId": "b1-telc-reading-teil3-classifieds-matching",
+      "track": "telc",
+      "type": "matching",
+      "content": {
+        "instruction": {
+          "en": "Read the situations and the adverts. Which advert fits each situation? You can use each advert only once. For one situation there is no matching advert: choose x.",
+          "de": "Lesen Sie die Situationen und die Anzeigen. Welche Anzeige passt zu welcher Situation? Sie können jede Anzeige nur einmal verwenden. Für eine Situation gibt es keine passende Anzeige: Wählen Sie dann x."
+        },
+        "items": [
+          "Frau Lindner möchte ihre Tochter (6) in den Sommerferien eine Woche lang betreuen lassen.",
+          "Eine Studentin möchte am Wochenende Geld verdienen und arbeitet gern mit Tieren.",
+          "Familie Demir sucht jemanden, der während ihres Urlaubs die Blumen gießt.",
+          "Herr Okafor möchte seinen alten Computer reparieren lassen, hat aber erst nach 18 Uhr Zeit.",
+          "Ein Lehrer möchte abends Gebärdensprache lernen, weil ein gehörloses Kind in seine Klasse kommt.",
+          "Ein Rentnerpaar sucht einen Kochkurs für die italienische Küche, der vormittags stattfindet."
+        ],
+        "targets": [
+          "Tierheim Sonnenhof sucht Aushilfen für Samstag und Sonntag: Hunde ausführen, Ställe sauber machen. 12 Euro pro Stunde.",
+          "PC-Doktor: Reparatur von Laptops und PCs. Geöffnet Mo–Fr 9–17 Uhr. Kostenloser Kostenvoranschlag.",
+          "Computerhilfe Meier – ich komme zu Ihnen! Reparaturen auch abends bis 21 Uhr und am Wochenende. Faire Preise.",
+          "Volkshochschule: „Pasta, Pesto & Co.“ – italienisch kochen. Dienstags 10–13 Uhr, 5 Termine.",
+          "Kochabend für Singles: Thailändische Küche, freitags ab 19 Uhr.",
+          "Ferienspaß im Zoo: Betreuung für Kinder von 6 bis 12 Jahren, jeweils eine Woche im Juli oder August, 8–16 Uhr.",
+          "Hundesitter gesucht! Wir suchen eine zuverlässige Person, die unseren Hund werktags mittags ausführt.",
+          "Gebärdensprache für Einsteiger: Abendkurs donnerstags 18.30–20 Uhr im Bürgerhaus. Keine Vorkenntnisse nötig."
+        ],
+        "answers": [
+          5,
+          0,
+          null,
+          2,
+          7,
+          3
+        ],
+        "allowNone": true
       }
     },
     {

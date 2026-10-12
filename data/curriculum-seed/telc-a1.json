@@ -913,6 +913,121 @@
       }
     },
     {
+      "id": "a1-telc-reading-public-notices-signs__ex3",
+      "lessonId": "a1-telc-reading-public-notices-signs",
+      "track": "telc",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the two notices. Are the statements right or wrong?",
+          "de": "Lesen Sie die zwei Aushänge. Sind die Aussagen richtig oder falsch?"
+        },
+        "passage": "Text A – Hausordnung, Lindenstraße 12\nRuhezeiten: Montag bis Samstag von 13 bis 15 Uhr und von 22 bis 7 Uhr. Am Sonntag ist den ganzen Tag Ruhezeit. Fahrräder bitte in den Keller stellen, nicht in den Flur. Der Müll kommt in die Tonnen im Hof.\n\nText B – Schild im Schwimmbad\nLiebe Gäste, die Sauna ist vom 3. bis 10. März geschlossen. Das Schwimmbad ist normal geöffnet: Montag bis Freitag 7 bis 21 Uhr, Samstag und Sonntag 9 bis 18 Uhr. Kinder unter 8 Jahren dürfen nur mit Erwachsenen ins Wasser.",
+        "questions": [
+          {
+            "question": "Am Sonntag um 16 Uhr darf man in der Lindenstraße 12 laute Musik hören.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Man soll das Fahrrad in den Keller stellen.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Am 5. März kann man in die Sauna gehen.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Am Samstag um 10 Uhr ist das Schwimmbad offen.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Ein Kind mit 6 Jahren darf allein ins Wasser.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "a1-telc-reading-public-notices-signs__ex4",
+      "lessonId": "a1-telc-reading-public-notices-signs",
+      "track": "telc",
+      "type": "cloze",
+      "content": {
+        "instruction": {
+          "en": "Read the signs. Choose the right word for each gap.",
+          "de": "Lesen Sie die Schilder. Welches Wort passt in die Lücke?"
+        },
+        "text": "Schild 1: {{1}} – Im Notfall hier hinaus!\nSchild 2: Aufzug im Brandfall nicht {{2}}.\nSchild 3: Bitte nicht rauchen. Rauchen ist hier {{3}}.\nSchild 4: Das Büro ist heute {{4}}. Wir sind morgen ab 8 Uhr wieder da.\nSchild 5: Ruhezeit von 22 bis 7 Uhr. Bitte {{5}} sein!",
+        "gaps": [
+          {
+            "mode": "select",
+            "options": [
+              "Eingang",
+              "Notausgang",
+              "Kasse"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "mode": "select",
+            "options": [
+              "benutzen",
+              "schlafen",
+              "kochen"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "mode": "select",
+            "options": [
+              "geöffnet",
+              "erlaubt",
+              "verboten"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "mode": "select",
+            "options": [
+              "groß",
+              "geschlossen",
+              "billig"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "mode": "select",
+            "options": [
+              "laut",
+              "schnell",
+              "leise"
+            ],
+            "correctIndex": 2
+          }
+        ]
+      }
+    },
+    {
       "id": "a1-telc-reading-classifieds-housing__ex0",
       "lessonId": "a1-telc-reading-classifieds-housing",
       "track": "telc",
@@ -952,6 +1067,104 @@
       "content": {
         "textWithBlank": "Abkürzung in Wohnungsanzeigen: 'EBK' bedeutet Einbau___.",
         "correctAnswer": "küche"
+      }
+    },
+    {
+      "id": "a1-telc-reading-classifieds-housing__ex3",
+      "lessonId": "a1-telc-reading-classifieds-housing",
+      "track": "telc",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the three flat adverts and the questions. Choose the right answer.",
+          "de": "Lesen Sie die drei Wohnungsanzeigen und die Fragen. Kreuzen Sie die richtige Antwort an."
+        },
+        "passage": "a) 2-Zi.-Whg. in Bonn-Beuel, 48 qm, Balkon, KM 520 Euro + NK 130 Euro, ab sof. frei. Tel. 0228 41 77 30 (nur abends).\n\nb) Kleines 1-Zimmer-Appartement für Studenten, 26 qm, EBK, Warmmiete 410 Euro. Frei ab 1. Mai. E-Mail: wohnen.bonn@mail.de\n\nc) Große 4-Zi.-Whg. mit Garten, 98 qm, KM 1.050 Euro + NK 240 Euro, keine Haustiere. Besichtigung am Samstag um 11 Uhr.",
+        "questions": [
+          {
+            "question": "Wie viel kostet Wohnung a im Monat mit Nebenkosten?",
+            "options": [
+              "520 Euro",
+              "650 Euro",
+              "130 Euro"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Welche Wohnung hat eine Einbauküche?",
+            "options": [
+              "Wohnung a",
+              "Wohnung c",
+              "Wohnung b"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "question": "Wann kann man bei Wohnung a anrufen?",
+            "options": [
+              "Am Abend",
+              "Am Morgen",
+              "Am Samstag um 11 Uhr"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "In welcher Wohnung sind Haustiere verboten?",
+            "options": [
+              "Wohnung b",
+              "Wohnung c",
+              "Wohnung a"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Wie groß ist das Appartement für Studenten?",
+            "options": [
+              "48 qm",
+              "98 qm",
+              "26 qm"
+            ],
+            "correctIndex": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "a1-telc-reading-classifieds-housing__ex4",
+      "lessonId": "a1-telc-reading-classifieds-housing",
+      "track": "telc",
+      "type": "matching",
+      "content": {
+        "instruction": {
+          "en": "What do the abbreviations in flat adverts mean? Match each abbreviation to its meaning. One meaning is left over.",
+          "de": "Was bedeuten die Abkürzungen in Wohnungsanzeigen? Ordnen Sie zu. Eine Bedeutung bleibt übrig."
+        },
+        "items": [
+          "KM",
+          "NK",
+          "EBK",
+          "Zi.",
+          "qm",
+          "ab sof."
+        ],
+        "targets": [
+          "Zimmer",
+          "Kaltmiete",
+          "Quadratmeter",
+          "Einbauküche",
+          "Nebenkosten",
+          "ab sofort",
+          "Kaution"
+        ],
+        "answers": [
+          1,
+          4,
+          3,
+          0,
+          2,
+          5
+        ],
+        "allowNone": false
       }
     },
     {
