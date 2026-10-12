@@ -1,0 +1,274 @@
+{
+  "formatId": "goethe-c1",
+  "partId": "lesen-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-c1__lesen-3__s01",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Feierabend heißt Feierabend\n\nEs ist kurz nach 22 Uhr, als das Telefon vibriert. Eine Nachricht der Teamleiterin: Ob man morgen früh die Präsentation noch kurz anpassen könne. {{1}} Und doch bleibt ein ungutes Gefühl, wenn man nicht sofort reagiert. Szenen wie diese gehören für Millionen Beschäftigte zum Alltag – und sie zeigen, wie sehr sich die Grenze zwischen Arbeit und Freizeit verschoben hat.\n\nMöglich gemacht hat das die Technik. Wer ein Diensthandy besitzt oder dienstliche E-Mails auf dem privaten Smartphone abruft, trägt sein Büro buchstäblich in der Hosentasche mit sich herum. {{2}} Doch was als Freiheit begann, ist für viele längst zur Pflicht geworden: Wer nicht antwortet, gilt schnell als wenig engagiert.\n\nDie Folgen sind gut belegt. {{3}} Wer abends noch dienstliche Nachrichten liest, schläft schlechter, erholt sich weniger und ist am nächsten Tag weniger leistungsfähig. Auf Dauer steigt das Risiko, auszubrennen.\n\nAndere Länder sind hier weiter. In Frankreich etwa haben Beschäftigte größerer Unternehmen seit einigen Jahren ein gesetzlich verankertes Recht auf Abschalten. {{4}} Die Betriebe müssen jedoch mit ihren Belegschaften Regeln vereinbaren, wann Mails nicht beantwortet werden müssen.\n\nIn Deutschland setzt man bislang auf Freiwilligkeit. Einige Konzerne leiten E-Mails, die während des Urlaubs eingehen, nicht weiter oder löschen sie automatisch. {{5}} Für die große Mehrheit der Beschäftigten, die in kleinen und mittleren Betrieben arbeiten, ändert sich dadurch jedoch nichts.\n\nKritiker eines gesetzlichen Rechts wenden ein, es passe nicht zur modernen Arbeitswelt. {{6}} Das ist richtig – aber kein Argument gegen klare Regeln. Ein Recht auf Nichterreichbarkeit verbietet niemandem, abends noch am Schreibtisch zu sitzen. {{7}} Genau darin liegt der Unterschied zwischen Flexibilität und Verfügbarkeit auf Abruf.\n\nLetztlich ist das Problem aber nicht nur eines der Gesetze, sondern auch eines der Unternehmenskultur. {{8}} Wer als Führungskraft um 23 Uhr Mails verschickt, sendet eine Botschaft, auch wenn er keine Antwort erwartet. Ein Gesetz kann den Rahmen setzen. Den Feierabend ernst nehmen müssen wir schon selbst.",
+          "gaps": [
+            {
+              "mode": "bank",
+              "answer": 3
+            },
+            {
+              "mode": "bank",
+              "answer": 0
+            },
+            {
+              "mode": "bank",
+              "answer": 7
+            },
+            {
+              "mode": "bank",
+              "answer": 5
+            },
+            {
+              "mode": "bank",
+              "answer": 9
+            },
+            {
+              "mode": "bank",
+              "answer": 2
+            },
+            {
+              "mode": "bank",
+              "answer": 1
+            },
+            {
+              "mode": "bank",
+              "answer": 6
+            }
+          ],
+          "bank": [
+            "Anfangs wurde das als Gewinn an Flexibilität gefeiert.",
+            "Es stellt lediglich sicher, dass niemand Nachteile befürchten muss, wenn er es nicht tut.",
+            "Viele Beschäftigte schätzten es gerade, ihre Arbeitszeit frei einteilen zu können, etwa um nachmittags die Kinder abzuholen und abends weiterzuarbeiten.",
+            "Gemeint ist das nicht als Anweisung, eher als freundliche Bitte.",
+            "Diensthandys sollten deshalb grundsätzlich nur noch an Führungskräfte ausgegeben werden.",
+            "Das bedeutet nicht, dass nach Feierabend keine einzige Nachricht mehr verschickt werden darf.",
+            "Vorgesetzte spielen dabei eine Schlüsselrolle, denn sie prägen durch ihr eigenes Verhalten, was im Team als normal gilt.",
+            "Arbeitsmedizinerinnen und Arbeitsmediziner warnen seit Jahren vor der ständigen Erreichbarkeit.",
+            "Dort hat sich die Regelung allerdings als wirkungslos erwiesen und wurde inzwischen wieder abgeschafft.",
+            "Solche Initiativen sind lobenswert und zeigen, dass es durchaus anders geht."
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Sentence d fits gap 1: it qualifies the late message as a friendly request, not an order. The next sentence contrasts with this – \"Und doch bleibt ein ungutes Gefühl\" – which only makes sense after something reassuring.",
+            "de": "Satz d passt: Die Nachricht ist nur eine „freundliche Bitte“. Der nächste Satz („Und doch bleibt ein ungutes Gefühl …“) bildet dazu einen Gegensatz."
+          },
+          {
+            "en": "Sentence a fits gap 2: \"das\" refers to carrying the office in your pocket, which was first celebrated as flexibility. The next sentence picks this up: \"Doch was als Freiheit begann, ist … zur Pflicht geworden.\"",
+            "de": "Satz a passt: Zuerst sah man darin einen „Gewinn an Flexibilität“. Darauf antwortet der nächste Satz: „Doch was als Freiheit begann …“."
+          },
+          {
+            "en": "Sentence h fits gap 3: after \"Die Folgen sind gut belegt\" it names who documents them (occupational physicians), and the following sentence lists the health effects they warn about.",
+            "de": "Satz h passt: Nach „Die Folgen sind gut belegt“ nennt er die Fachleute, die warnen. Der nächste Satz beschreibt die gesundheitlichen Folgen."
+          },
+          {
+            "en": "Sentence f fits gap 4: it limits what the French right means (messages are still allowed). The following \"Die Betriebe müssen jedoch … Regeln vereinbaren\" explains what the law requires instead. Sentence i (the law was abolished) contradicts \"Andere Länder sind hier weiter\" and \"haben … seit einigen Jahren\".",
+            "de": "Satz f passt: Er erklärt, was das Recht nicht bedeutet. Danach folgt mit „jedoch“, was die Betriebe tun müssen. Satz i passt nicht, denn das Gesetz gilt laut Text noch."
+          },
+          {
+            "en": "Sentence j fits gap 5: \"Solche Initiativen\" refers to the companies that block holiday e-mails. The next sentence limits their reach with \"jedoch\": most employees work in small firms.",
+            "de": "Satz j passt: „Solche Initiativen“ meint die Konzerne, die Urlaubs-Mails löschen. Der nächste Satz schränkt mit „jedoch“ ein."
+          },
+          {
+            "en": "Sentence c fits gap 6: it gives the critics' reason (reported speech, \"schätzten\") – employees value flexible hours. The author then concedes \"Das ist richtig – aber kein Argument gegen klare Regeln.\"",
+            "de": "Satz c passt: Er nennt das Argument der Kritiker (flexible Arbeitszeit). Der Autor antwortet: „Das ist richtig – aber …“."
+          },
+          {
+            "en": "Sentence b fits gap 7: \"Es\" is the right to be unreachable, and \"es nicht tut\" refers to working at the desk in the evening. It explains the difference between flexibility and being on call, named in the next sentence.",
+            "de": "Satz b passt: „Es“ ist das Recht auf Nichterreichbarkeit. Niemand soll Nachteile haben, wenn er abends nicht arbeitet."
+          },
+          {
+            "en": "Sentence g fits gap 8: it explains the cultural side via managers' behaviour, and the next sentence gives the example of a manager sending e-mails at 11 p.m. Sentence e (phones only for managers) is never supported by the argument.",
+            "de": "Satz g passt: Es geht um die Kultur und die Rolle der Vorgesetzten. Der nächste Satz gibt dazu ein Beispiel (Mails um 23 Uhr)."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-c1__lesen-3__s02",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Setzen Sie sich doch!\n\nWer in einer deutschen Innenstadt eine Pause einlegen möchte, hat es oft schwer. Bänke sind rar geworden, und wo es sie noch gibt, sind sie häufig unbequem. {{1}} Was wie eine Nebensache wirkt, ist in Wahrheit eine Frage danach, für wen eine Stadt gebaut wird.\n\nDie Gründe für den Rückzug der Bank sind vielfältig. {{2}} Hinzu kommt der Wunsch, bestimmte Gruppen fernzuhalten: Obdachlose, die auf Bänken schlafen, oder Jugendliche, die sich abends dort treffen. Fachleute sprechen in diesem Zusammenhang von abweisender Architektur. {{3}} Sie trifft aber längst nicht nur jene, gegen die sie gerichtet ist.\n\nDenn auf Sitzgelegenheiten angewiesen sind vor allem ältere Menschen. {{4}} Wer weiß, dass er unterwegs keine Möglichkeit zum Ausruhen findet, bleibt im Zweifel lieber zu Hause – und vereinsamt. Auch Schwangere, Menschen mit Behinderung oder Eltern mit kleinen Kindern brauchen Orte, an denen man ohne Konsumzwang verweilen kann. {{5}} Wer sich dort setzen will, muss in der Regel etwas bestellen.\n\nDabei zeigen Beispiele aus anderen Städten, dass es anders geht. {{6}} Seitdem treffen sich dort Nachbarn, die einander vorher kaum kannten, und die Zahl der Beschwerden über Lärm ist nicht etwa gestiegen, sondern gesunken.\n\nNatürlich lösen Bänke nicht das Problem der Obdachlosigkeit. {{7}} Wer Menschen von der Straße holen will, braucht Wohnungen und Beratung, keine Metallbügel auf Sitzflächen.\n\nEine Stadt, die zum Verweilen einlädt, ist eine lebendigere Stadt. {{8}} Es wäre eine kleine Investition mit großer Wirkung.",
+          "gaps": [
+            {
+              "mode": "bank",
+              "answer": 2
+            },
+            {
+              "mode": "bank",
+              "answer": 6
+            },
+            {
+              "mode": "bank",
+              "answer": 0
+            },
+            {
+              "mode": "bank",
+              "answer": 8
+            },
+            {
+              "mode": "bank",
+              "answer": 4
+            },
+            {
+              "mode": "bank",
+              "answer": 9
+            },
+            {
+              "mode": "bank",
+              "answer": 1
+            },
+            {
+              "mode": "bank",
+              "answer": 7
+            }
+          ],
+          "bank": [
+            "Gemeint sind bauliche Details, die unerwünschtes Verhalten verhindern sollen, ohne dass ein Verbotsschild aufgestellt werden muss.",
+            "Umgekehrt verschwindet dieses Problem aber auch nicht, nur weil man die Bänke abbaut.",
+            "Manche haben Armlehnen in der Mitte, andere sind so schräg, dass man darauf kaum länger als ein paar Minuten sitzen kann.",
+            "Ältere Menschen meiden die Innenstädte allerdings vor allem wegen der hohen Preise.",
+            "Die Außenbereiche von Cafés sind dafür kein Ersatz.",
+            "Gegen nächtlichen Lärm helfen deshalb nur strengere Kontrollen durch das Ordnungsamt.",
+            "Kommunen sparen bei Pflege und Reinigung, und jede Bank, die gar nicht erst aufgestellt wird, verursacht keine Kosten.",
+            "Die Verantwortlichen sollten deshalb jede abgebaute Bank ersetzen und bei neuen Plätzen von Anfang an genügend Sitzgelegenheiten einplanen.",
+            "Für viele von ihnen entscheidet die Zahl der Bänke darüber, ob sie den Weg zum Arzt oder zum Markt noch zu Fuß bewältigen können.",
+            "In einer österreichischen Großstadt etwa wurden vor einigen Jahren auf einem zuvor kahlen Platz Dutzende Sitzgelegenheiten aufgestellt."
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Sentence c fits gap 1: it gives concrete examples of \"unbequem\" from the sentence before (armrests in the middle, slanted seats).",
+            "de": "Satz c passt: Er zeigt mit Beispielen, warum die Bänke „unbequem“ sind (Armlehnen in der Mitte, schräge Sitze)."
+          },
+          {
+            "en": "Sentence g fits gap 2: it names a first reason (saving money on maintenance), and the next sentence adds a second one with \"Hinzu kommt …\".",
+            "de": "Satz g passt: Er nennt den ersten Grund (Kosten sparen). Der nächste Satz nennt mit „Hinzu kommt“ einen weiteren Grund."
+          },
+          {
+            "en": "Sentence a fits gap 3: \"Gemeint sind …\" defines the term \"abweisende Architektur\" just introduced, and the next sentence continues with \"Sie\" (= this architecture).",
+            "de": "Satz a passt: „Gemeint sind …“ erklärt den Begriff „abweisende Architektur“. Im nächsten Satz bezieht sich „Sie“ auf diese Architektur."
+          },
+          {
+            "en": "Sentence i fits gap 4: \"von ihnen\" refers to the older people just mentioned, and the next sentence describes the consequence of having nowhere to rest. Sentence d (high prices) contradicts the author's argument about missing benches.",
+            "de": "Satz i passt: „von ihnen“ meint die älteren Menschen. Danach folgt die Folge: Wer sich nicht ausruhen kann, bleibt zu Hause. Satz d widerspricht dem Argument des Textes."
+          },
+          {
+            "en": "Sentence e fits gap 5: it rejects cafés as an alternative to places without pressure to consume, and the next sentence gives the reason: \"Wer sich dort setzen will, muss … etwas bestellen.\"",
+            "de": "Satz e passt: Cafés sind kein Ersatz, denn dort „muss man etwas bestellen“, wie der nächste Satz sagt."
+          },
+          {
+            "en": "Sentence j fits gap 6: it gives the concrete example announced by \"Beispiele aus anderen Städten\", and \"Seitdem … dort\" in the next sentence refers to that square. Sentence f (stricter checks against noise) contradicts the falling noise complaints.",
+            "de": "Satz j passt: Er nennt das angekündigte Beispiel. „Seitdem … dort“ bezieht sich auf diesen Platz. Satz f passt nicht, weil die Beschwerden über Lärm gesunken sind."
+          },
+          {
+            "en": "Sentence b fits gap 7: \"dieses Problem\" is homelessness, and \"Umgekehrt\" turns the concession around: removing benches does not solve it either. The next sentence names what really helps.",
+            "de": "Satz b passt: „dieses Problem“ ist die Obdachlosigkeit. Bänke lösen es nicht, aber ohne Bänke verschwindet es auch nicht."
+          },
+          {
+            "en": "Sentence h fits gap 8: it draws the practical conclusion (\"deshalb\") from the lively city, and \"Es\" in the last sentence refers to replacing and planning benches as \"eine kleine Investition\".",
+            "de": "Satz h passt: Er zieht mit „deshalb“ die Schlussfolgerung. Der letzte Satz nennt das „eine kleine Investition mit großer Wirkung“."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-c1__lesen-3__s03",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Mehr als Buchstaben\n\nIn immer mehr Klassenzimmern ersetzen Tablets die Schulhefte. {{1}} Doch bei aller Begeisterung für die Digitalisierung sollte eine Fähigkeit nicht unter die Räder kommen, die viele bereits für überholt halten: das Schreiben mit der Hand.\n\nWozu, so lautet ein häufiger Einwand, sollen Kinder mühsam eine verbundene Schrift erlernen, wenn sie als Erwachsene ohnehin fast nur noch tippen? {{2}} Das Argument klingt vernünftig, greift aber zu kurz. Denn beim Schreiben mit der Hand geht es um weit mehr als um ein Werkzeug zur Kommunikation. {{3}} Jeder Buchstabe muss aktiv geformt werden, während beim Tippen jede Taste die gleiche Bewegung erfordert.\n\nStudien deuten darauf hin, dass sich Kinder Buchstaben besser einprägen, wenn sie diese von Hand schreiben, statt sie auf einer Tastatur zu suchen. {{4}} Wer in einer Vorlesung mitschreibt, kann nicht jedes Wort festhalten, sondern muss auswählen und zusammenfassen – und versteht den Stoff dadurch oft gründlicher.\n\nHinzu kommt ein Aspekt, der in der Debatte selten auftaucht. {{5}} Wer ein Heft vor sich hat, wird nicht durch Benachrichtigungen unterbrochen und springt nicht von einem Fenster ins nächste.\n\nNun wäre es töricht, die Uhr zurückdrehen zu wollen. {{6}} Niemand verlangt, dass Schülerinnen und Schüler ihre Referate wieder mit dem Füller schreiben. Es geht vielmehr um ein vernünftiges Gleichgewicht. {{7}} In den ersten Schuljahren sollte die Handschrift deshalb einen festen Platz behalten, und auch später sollten Lehrkräfte Gelegenheiten schaffen, bei denen der Stift wieder zum Einsatz kommt.\n\nEine flüssige, gut lesbare Handschrift ist schließlich kein nostalgisches Relikt. {{8}} Sie ist ein Stück Selbstständigkeit – und funktioniert auch dann, wenn der Akku leer ist.",
+          "gaps": [
+            {
+              "mode": "bank",
+              "answer": 5
+            },
+            {
+              "mode": "bank",
+              "answer": 0
+            },
+            {
+              "mode": "bank",
+              "answer": 7
+            },
+            {
+              "mode": "bank",
+              "answer": 2
+            },
+            {
+              "mode": "bank",
+              "answer": 9
+            },
+            {
+              "mode": "bank",
+              "answer": 3
+            },
+            {
+              "mode": "bank",
+              "answer": 8
+            },
+            {
+              "mode": "bank",
+              "answer": 1
+            }
+          ],
+          "bank": [
+            "Selbst Einkaufszettel und Geburtstagsgrüße entstehen heute meist auf dem Bildschirm.",
+            "Mit ihr kann man jederzeit und überall Gedanken festhalten, ohne auf ein Gerät angewiesen zu sein.",
+            "Ähnliches gilt offenbar auch für Erwachsene, wenn sie sich Notizen machen.",
+            "Digitale Kompetenzen sind unverzichtbar, und die Schule muss sie vermitteln.",
+            "Die Hersteller von Tablets haben darauf längst reagiert und bieten spezielle Eingabestifte an.",
+            "Das hat zweifellos Vorteile: Aufgaben lassen sich individuell anpassen, Materialien sind jederzeit verfügbar, und schwere Schultaschen gehören der Vergangenheit an.",
+            "Füller und Tintenpatronen sind für viele Familien inzwischen ein erheblicher Kostenfaktor.",
+            "Es ist ein komplexer Vorgang, bei dem Feinmotorik, Wahrnehmung und Denken eng zusammenspielen.",
+            "Was man auf dem Tablet besser lernen kann, soll dort gelernt werden; was die Hand besser kann, sollte ihr überlassen bleiben.",
+            "Papier lenkt nicht ab."
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Sentence f fits gap 1: \"Das hat zweifellos Vorteile\" refers to tablets replacing exercise books, and the next sentence answers the concession with \"Doch bei aller Begeisterung …\".",
+            "de": "Satz f passt: Er nennt die Vorteile der Tablets. Der nächste Satz beginnt mit „Doch“ und bildet den Gegensatz."
+          },
+          {
+            "en": "Sentence a fits gap 2: it supports the objection that adults hardly write by hand any more, and the author then calls this \"Das Argument\".",
+            "de": "Satz a passt: Er stützt den Einwand, dass Erwachsene kaum noch mit der Hand schreiben. Danach nennt der Autor das „das Argument“."
+          },
+          {
+            "en": "Sentence h fits gap 3: \"Es\" is handwriting, described as a complex process involving motor skills, perception and thinking. The next sentence illustrates this (each letter has to be formed actively).",
+            "de": "Satz h passt: „Es“ meint das Schreiben mit der Hand. Der nächste Satz erklärt, warum es so komplex ist."
+          },
+          {
+            "en": "Sentence c fits gap 4: \"Ähnliches gilt … für Erwachsene\" moves from children learning letters to adults taking notes, which the lecture example in the next sentence develops.",
+            "de": "Satz c passt: Er führt von den Kindern zu den Erwachsenen. Der nächste Satz gibt das Beispiel einer Vorlesung."
+          },
+          {
+            "en": "Sentence j fits gap 5: it names the rarely mentioned aspect – paper does not distract – which the next sentence explains (no notifications, no jumping between windows).",
+            "de": "Satz j passt: „Papier lenkt nicht ab“ ist der neue Aspekt. Der nächste Satz erklärt ihn (keine Benachrichtigungen)."
+          },
+          {
+            "en": "Sentence d fits gap 6: after \"es wäre töricht, die Uhr zurückdrehen zu wollen\" the author affirms that digital skills are indispensable, and continues that nobody wants handwritten presentations again.",
+            "de": "Satz d passt: Der Autor sagt, dass digitale Kompetenzen wichtig sind. Das passt zu „die Uhr nicht zurückdrehen“."
+          },
+          {
+            "en": "Sentence i fits gap 7: it defines the \"vernünftiges Gleichgewicht\" (each medium for what it does best), from which \"deshalb\" in the next sentence draws the consequence for early school years.",
+            "de": "Satz i passt: Er erklärt das „Gleichgewicht“. Der nächste Satz zieht daraus mit „deshalb“ eine Folgerung."
+          },
+          {
+            "en": "Sentence b fits gap 8: \"Mit ihr\" refers to handwriting, and not needing a device leads to the final point that it works even when the battery is flat. Sentences e (tablet pens) and g (cost of fountain pens) do not connect to any gap.",
+            "de": "Satz b passt: „Mit ihr“ meint die Handschrift. Man braucht kein Gerät – deshalb funktioniert sie auch, „wenn der Akku leer ist“."
+          }
+        ]
+      }
+    }
+  ]
+}
