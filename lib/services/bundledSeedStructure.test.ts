@@ -12,11 +12,11 @@ const files = readdirSync(DIR).filter((f) => f.endsWith('.json'));
 const seeds = files.map((f) => [f, JSON.parse(readFileSync(join(DIR, f), 'utf8')) as SeedFile] as const);
 
 describe('bundled curriculum seeds', () => {
-  it('has all 15 track+level files at seed version 6, format 3', () => {
+  it('has all 15 track+level files at seed version 8, format 3', () => {
     expect(files).toHaveLength(15);
     for (const [, seed] of seeds) {
       expect(seed.formatVersion).toBe(3);
-      expect(seed.seedVersion).toBe('7');
+      expect(seed.seedVersion).toBe('8');
     }
   });
 
@@ -58,8 +58,7 @@ describe('bundled curriculum seeds', () => {
     }
   });
 
-  // TODO(T13): unskip once lesson exercises are merged
-  it.skip.each(seeds)('%s: every reading lesson has a passage, matching, or cloze exercise', (_f, seed) => {
+  it.each(seeds)('%s: every reading lesson has a passage, matching, or cloze exercise', (_f, seed) => {
     for (const lesson of seed.lessons.filter((l) => l.skill === 'reading')) {
       const types = seed.exercises.filter((e) => e.lessonId === lesson.id).map((e) => e.type);
       expect(types.some((t) => ['passage_questions', 'matching', 'cloze'].includes(t)), lesson.id).toBe(true);

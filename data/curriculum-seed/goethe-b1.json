@@ -1,5 +1,5 @@
 {
-  "seedVersion": "7",
+  "seedVersion": "8",
   "formatVersion": 3,
   "track": "goethe",
   "level": "B1",
@@ -998,6 +998,69 @@
       }
     },
     {
+      "id": "b1-goethe-reading-teil1-blog-narrative__ex3",
+      "lessonId": "b1-goethe-reading-teil1-blog-narrative",
+      "track": "goethe",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the blog post. Is each statement true (Richtig) or false (Falsch)?",
+          "de": "Lesen Sie den Blogeintrag. Sind die Aussagen richtig oder falsch?"
+        },
+        "passage": "Leas Blog: Mein Jahr ohne Auto\n\nVor einem Jahr habe ich etwas gemacht, was meine Freunde für verrückt hielten: Ich habe mein Auto verkauft. Damals wohnte ich schon in der Stadt, fuhr aber trotzdem jeden Tag mit dem Wagen ins Büro – wegen der Staus brauchte ich oft länger als mit dem Bus. Der eigentliche Grund für meine Entscheidung war aber ein anderer: Die Reparatur der Bremsen hätte 900 Euro gekostet, und das Geld wollte ich lieber für eine Reise ausgeben.\n\nDie ersten Wochen waren ehrlich gesagt schwierig. Beim Einkaufen musste ich plötzlich planen, weil ich nicht mehr alles auf einmal transportieren konnte. Einmal habe ich im Regen zwanzig Minuten auf einen Bus gewartet, der dann gar nicht kam. An diesem Abend habe ich ernsthaft überlegt, mir wieder ein Auto zu kaufen.\n\nMittlerweile sieht das ganz anders aus. Ich fahre fast alle Strecken mit dem Fahrrad und fühle mich fitter als früher. Für größere Einkäufe leihe ich mir ab und zu ein Lastenrad vom Nachbarschaftsverein. Und wenn ich meine Eltern auf dem Land besuche, nehme ich den Zug – dort kann ich wenigstens lesen, statt mich über andere Autofahrer zu ärgern.\n\nNatürlich ist nicht alles perfekt. Im Winter vermisse ich das Auto manchmal, und meine Eltern müssen mich immer am Bahnhof abholen, weil dort abends kein Bus mehr fährt. Trotzdem: Zurück zum eigenen Auto möchte ich nicht mehr. Und die Reise? Die habe ich im Frühling gemacht – natürlich mit dem Zug.",
+        "questions": [
+          {
+            "question": "Mit dem Auto brauchte Lea manchmal länger ins Büro als mit dem Bus.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Lea hat ihr Auto verkauft, weil ihre Freunde es ihr geraten haben.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Am Anfang war das Leben ohne Auto für Lea nicht leicht.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Nach dem Abend im Regen hat Lea sich wieder ein Auto gekauft.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Für große Einkäufe hat Lea sich ein eigenes Lastenrad gekauft.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Heute ist Lea mit ihrer Entscheidung zufrieden.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0
+          }
+        ]
+      }
+    },
+    {
       "id": "b1-goethe-reading-teil2-press-articles__ex0",
       "lessonId": "b1-goethe-reading-teil2-press-articles",
       "track": "goethe",
@@ -1035,6 +1098,90 @@
       "content": {
         "textWithBlank": "Im Goethe Lesen Teil 2 bearbeitet man insgesamt ___ Pressetexte mit jeweils drei Multiple-Choice-Aufgaben. (number: zwei)",
         "correctAnswer": "zwei"
+      }
+    },
+    {
+      "id": "b1-goethe-reading-teil2-press-articles__ex3",
+      "lessonId": "b1-goethe-reading-teil2-press-articles",
+      "track": "goethe",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the press article. Choose the right answer (a, b or c) for each question.",
+          "de": "Lesen Sie den Text aus der Presse. Welche Lösung (a, b oder c) ist richtig?"
+        },
+        "passage": "Unverpackt-Läden in der Krise\n\nVor fünf Jahren galten sie als Zukunft des Einkaufens: Läden, in denen man Nudeln, Reis oder Waschmittel in mitgebrachte Gläser und Dosen füllt. Allein in Deutschland eröffneten damals über 300 solcher Geschäfte. Inzwischen hat jedoch fast ein Drittel wieder geschlossen. Der Hauptgrund ist nach Angaben des Branchenverbands nicht fehlendes Interesse, sondern das veränderte Einkaufsverhalten: Seit die Preise gestiegen sind, kaufen viele Kunden wieder häufiger im Discounter ein. Außerdem bieten große Supermarktketten mittlerweile eigene Abfüllstationen an, sodass die kleinen Läden ihren besonderen Vorteil verloren haben.\n\nManche Inhaber reagieren mit neuen Ideen. Martina Kraus aus Freiburg zum Beispiel verkauft in ihrem Laden jetzt auch Mittagessen und bietet Workshops an, in denen man Seife oder Putzmittel selbst herstellt. „Allein vom Verkauf von Lebensmitteln könnte ich die Miete nicht mehr bezahlen“, sagt sie. Der Verband ist trotzdem optimistisch: Er erwartet, dass die Zahl der Läden in den nächsten Jahren stabil bleibt.",
+        "questions": [
+          {
+            "question": "In dem Text geht es darum, dass …",
+            "options": [
+              "Unverpackt-Läden immer beliebter werden.",
+              "viele Unverpackt-Läden schließen mussten.",
+              "Supermärkte keine Abfüllstationen anbieten dürfen."
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Warum haben viele Läden geschlossen?",
+            "options": [
+              "Die Kunden interessieren sich nicht mehr für Umweltschutz.",
+              "Die Mieten in den Innenstädten sind stark gestiegen.",
+              "Viele Kunden gehen wegen der Preise wieder in billigere Geschäfte."
+            ],
+            "correctIndex": 2
+          },
+          {
+            "question": "Der Branchenverband …",
+            "options": [
+              "rechnet nicht damit, dass es in Zukunft weniger Läden gibt.",
+              "möchte, dass Supermärkte ihre Abfüllstationen schließen.",
+              "bietet Workshops für Ladenbesitzer an."
+            ],
+            "correctIndex": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "b1-goethe-reading-teil2-press-articles__ex4",
+      "lessonId": "b1-goethe-reading-teil2-press-articles",
+      "track": "goethe",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the press article. Choose the right answer (a, b or c) for each question.",
+          "de": "Lesen Sie den Text aus der Presse. Welche Lösung (a, b oder c) ist richtig?"
+        },
+        "passage": "Jugendliche erklären Senioren das Smartphone\n\nWie verschickt man ein Foto? Wie bucht man online einen Arzttermin? Mit solchen Fragen kommen jeden Mittwochnachmittag rund zwanzig ältere Menschen in die Gesamtschule Nord in Kassel. Dort beantworten Schülerinnen und Schüler der neunten und zehnten Klasse ihre Fragen – geduldig und kostenlos. Das Projekt „Digital-Paten“ gibt es seit zwei Jahren. Die Idee hatte eine Lehrerin, nachdem sich ihre eigene Mutter beschwert hatte, dass ihr niemand die neue Banking-App erklären könne.\n\nFür die Jugendlichen ist das Projekt mehr als ein Hobby: Sie bekommen dafür eine Bescheinigung, die sie später ihren Bewerbungen beilegen können. Viele berichten außerdem, dass sie selbst etwas lernen, vor allem Geduld. „Am Anfang habe ich viel zu schnell erklärt“, gibt der 15-jährige Malik zu. Wegen der großen Nachfrage soll das Angebot im nächsten Schuljahr erweitert werden. Dann wollen die Schüler auch einmal im Monat ins Altenheim gehen – für Senioren, die nicht mehr selbst zur Schule kommen können.",
+        "questions": [
+          {
+            "question": "Die Idee für das Projekt …",
+            "options": [
+              "kam von einer Lehrerin.",
+              "hatten Schüler der zehnten Klasse.",
+              "stammt von einer Bank."
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Was bekommen die Jugendlichen für ihre Hilfe?",
+            "options": [
+              "ein kleines Taschengeld",
+              "eine Bescheinigung für Bewerbungen",
+              "bessere Noten in Informatik"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Was ist für das nächste Schuljahr geplant?",
+            "options": [
+              "Die Senioren sollen dann für die Hilfe bezahlen.",
+              "Das Projekt soll nur noch einmal im Monat stattfinden.",
+              "Die Schüler wollen auch Senioren in einem Heim besuchen."
+            ],
+            "correctIndex": 2
+          }
+        ]
       }
     },
     {
@@ -1078,6 +1225,42 @@
       }
     },
     {
+      "id": "b1-goethe-reading-teil3-classifieds-matching__ex3",
+      "lessonId": "b1-goethe-reading-teil3-classifieds-matching",
+      "track": "goethe",
+      "type": "matching",
+      "content": {
+        "instruction": {
+          "en": "Read the situations and the ads (a–g). Which ad fits which situation? You can use each ad only once. For one situation there is no suitable ad: choose x.",
+          "de": "Lesen Sie die Situationen und die Anzeigen (a–g). Welche Anzeige passt zu welcher Situation? Sie können jede Anzeige nur einmal verwenden. Für eine Situation gibt es keine passende Anzeige: Wählen Sie dann x."
+        },
+        "items": [
+          "Ein Student möchte in den Semesterferien sein Spanisch verbessern. Er hat nur vormittags Zeit.",
+          "Paula (17) sucht für die Sommerferien einen bezahlten Job, bei dem sie draußen arbeiten kann.",
+          "Eine Familie mit zwei kleinen Kindern sucht für die Herbstferien im Oktober eine Ferienwohnung an der Nordsee.",
+          "Herr Bauer zieht am Samstag um und sucht Helfer mit einem Transporter.",
+          "Frau Neumann ist Rentnerin und möchte in ihrer Freizeit ehrenamtlich etwas mit Tieren machen."
+        ],
+        "targets": [
+          "Spanisch-Intensivkurs in den Semesterferien: Montag bis Freitag von 18 bis 21 Uhr, alle Niveaus. Sprachinstitut Cervantes, Hauptstraße 5.",
+          "¡Hablamos! Spanisch-Kompaktkurs im August und September, täglich von 9 bis 12.30 Uhr, für Teilnehmende mit Grundkenntnissen. Studierende erhalten 20 % Rabatt.",
+          "Ferienhaus an der Nordsee: gemütliche Wohnung für zwei Personen in ruhiger Lage. Haustiere und Kinder sind leider nicht erlaubt.",
+          "Familienfreundliche Ferienwohnung an der Nordsee, direkt am Deich: drei Zimmer, Kinderbetten, Spielplatz im Garten. Im Oktober noch frei!",
+          "Das Tierheim Waldfrieden sucht freiwillige Helferinnen und Helfer, die mit unseren Hunden spazieren gehen. Keine Bezahlung, aber viel Dankbarkeit!",
+          "Umzüge schnell und günstig: Zwei kräftige Studenten mit eigenem Transporter helfen Ihnen – auch am Wochenende. Tel. 0151 2389911",
+          "Gärtnerei Grünfink sucht für Juli und August eine Aushilfe (ab 18 Jahren) für die Arbeit im Gewächshaus und auf den Feldern, 20 Stunden pro Woche."
+        ],
+        "answers": [
+          1,
+          null,
+          3,
+          5,
+          4
+        ],
+        "allowNone": true
+      }
+    },
+    {
       "id": "b1-goethe-reading-teil4-forum-comments__ex0",
       "lessonId": "b1-goethe-reading-teil4-forum-comments",
       "track": "goethe",
@@ -1113,6 +1296,69 @@
       "content": {
         "textWithBlank": "In Goethe Lesen Teil 4 bewertet man sieben Kommentare ausschließlich mit den Optionen ___ oder Nein.",
         "correctAnswer": "Ja"
+      }
+    },
+    {
+      "id": "b1-goethe-reading-teil4-forum-comments__ex3",
+      "lessonId": "b1-goethe-reading-teil4-forum-comments",
+      "track": "goethe",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the forum comments. Is each person in favour of the idea? Choose Ja (yes) or Nein (no).",
+          "de": "Lesen Sie die Kommentare im Forum. Ist die Person für die Idee? Wählen Sie Ja oder Nein."
+        },
+        "passage": "Forum „Stadtleben“ – Frage der Woche: Sollen Geschäfte auch am Sonntag öffnen dürfen?\n\nJonas: Ich arbeite unter der Woche bis 19 Uhr und habe samstags oft Termine. Wenn ich am Sonntag in Ruhe einkaufen könnte, wäre das für mich eine große Erleichterung. In vielen anderen Ländern ist das längst normal.\n\nHelga: Der Sonntag ist für mich ein Tag für die Familie. Und wer soll in den Geschäften arbeiten? Die Verkäuferinnen haben schließlich auch Kinder. Sechs Tage zum Einkaufen reichen völlig.\n\nSabine: Als Studentin würde ich sonntags gern im Supermarkt jobben, das Geld könnte ich gut gebrauchen. Trotzdem halte ich es nicht für eine gute Idee: Am Ende müssten alle Angestellten sonntags arbeiten, ob sie wollen oder nicht.\n\nMurat: Ich verstehe die Argumente der Kirchen und Gewerkschaften gut, und auch ich genieße ruhige Sonntage. Aber die Innenstädte sterben, weil alle nur noch online bestellen. Wenn die Läden sonntags öffnen, haben sie wenigstens eine Chance. Deshalb bin ich dafür.\n\nPeter: Bäckereien und Tankstellen haben doch heute schon sonntags geöffnet. Warum soll das nicht auch für andere Geschäfte gelten? Niemand wird gezwungen, am Sonntag einkaufen zu gehen.\n\nElif: Ich habe zehn Jahre im Einzelhandel gearbeitet. Mehr Öffnungstage bringen nicht mehr Umsatz – die Leute geben ihr Geld nur an einem anderen Tag aus. Für die Händler steigen dagegen die Kosten. Das lohnt sich einfach nicht.",
+        "questions": [
+          {
+            "question": "Ist Jonas für Ladenöffnungen am Sonntag?",
+            "options": [
+              "Ja",
+              "Nein"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Ist Helga für Ladenöffnungen am Sonntag?",
+            "options": [
+              "Ja",
+              "Nein"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Ist Sabine für Ladenöffnungen am Sonntag?",
+            "options": [
+              "Ja",
+              "Nein"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Ist Murat für Ladenöffnungen am Sonntag?",
+            "options": [
+              "Ja",
+              "Nein"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Ist Peter für Ladenöffnungen am Sonntag?",
+            "options": [
+              "Ja",
+              "Nein"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Ist Elif für Ladenöffnungen am Sonntag?",
+            "options": [
+              "Ja",
+              "Nein"
+            ],
+            "correctIndex": 1
+          }
+        ]
       }
     },
     {
@@ -1153,6 +1399,117 @@
       "content": {
         "textWithBlank": "Formulierung für 'verboten sein' in behördlichen Ordnungen: 'Das Rauchen ist hier strengstens ___.' (untersagt / gestattet)",
         "correctAnswer": "untersagt"
+      }
+    },
+    {
+      "id": "b1-goethe-reading-teil5-rules-regulations__ex3",
+      "lessonId": "b1-goethe-reading-teil5-rules-regulations",
+      "track": "goethe",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the garden rules. Choose the right answer (a, b or c) for each question.",
+          "de": "Lesen Sie die Gartenordnung. Welche Lösung (a, b oder c) ist richtig?"
+        },
+        "passage": "Gartenordnung des Gemeinschaftsgartens „Grüne Mitte“\n\n§ 1 Nutzung\nDer Garten steht allen Vereinsmitgliedern täglich von 7 bis 21 Uhr offen. Gäste sind gestattet, sofern sie von einem Mitglied begleitet werden.\n\n§ 2 Beete\nJedes Mitglied erhält ein Beet für ein Gartenjahr. Eine Verlängerung ist auf Antrag möglich. Wer sein Beet länger als vier Wochen nicht pflegt, kann es verlieren.\n\n§ 3 Wasser und Geräte\nGartengeräte können im Geräteschuppen ausgeliehen werden; sie sind nach Gebrauch gereinigt zurückzubringen. Das Gießen mit Leitungswasser ist nur in den Abendstunden gestattet. Tagsüber ist das Regenwasser aus den Tonnen zu verwenden.\n\n§ 4 Feuer und Grillen\nOffenes Feuer ist auf dem gesamten Gelände untersagt. Das Grillen ist ausschließlich auf dem gemeinsamen Grillplatz erlaubt und muss vorher beim Vorstand angemeldet werden.\n\n§ 5 Gemeinschaftsarbeit\nJedes Mitglied ist verpflichtet, pro Jahr zehn Stunden bei Gemeinschaftsarbeiten mitzuhelfen. Wer diese Stunden nicht leistet, zahlt pro fehlender Stunde 10 Euro.",
+        "questions": [
+          {
+            "question": "Gäste dürfen den Garten …",
+            "options": [
+              "nur am Wochenende besuchen.",
+              "nur zusammen mit einem Mitglied betreten.",
+              "überhaupt nicht betreten."
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Was gilt für die Beete?",
+            "options": [
+              "Wer sein Beet länger behalten möchte, muss einen Antrag stellen.",
+              "Man kann sein Beet nach einem Jahr automatisch weiter nutzen.",
+              "Man darf ein Beet höchstens vier Wochen lang nutzen."
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Sie möchten mittags Ihre Pflanzen gießen. Was ist richtig?",
+            "options": [
+              "Sie nehmen Leitungswasser.",
+              "Sie nehmen Regenwasser aus den Tonnen.",
+              "Mittags ist das Gießen verboten."
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Wer grillen möchte, …",
+            "options": [
+              "darf das überall im Garten tun.",
+              "braucht dafür ein eigenes Beet.",
+              "muss das vorher beim Vorstand anmelden."
+            ],
+            "correctIndex": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "b1-goethe-reading-teil5-rules-regulations__ex4",
+      "lessonId": "b1-goethe-reading-teil5-rules-regulations",
+      "track": "goethe",
+      "type": "cloze",
+      "content": {
+        "instruction": {
+          "en": "Read the house rules of a student residence. Choose the right word for each gap.",
+          "de": "Lesen Sie die Hausordnung eines Studentenwohnheims. Wählen Sie für jede Lücke das richtige Wort."
+        },
+        "text": "Hausordnung Studentenwohnheim Am Park\n\nDas Rauchen ist in allen Räumen des Wohnheims {{1}}; wer rauchen möchte, muss dafür auf den Hof gehen. Besuch ist bei uns jederzeit willkommen und bis 22 Uhr ohne Anmeldung {{2}}. Möchte ein Gast über Nacht bleiben, ist eine Anmeldung beim Hausmeister {{3}}. Haustiere sind grundsätzlich nicht erlaubt; Ausnahmen können nur {{4}} bewilligt werden. Bei Feueralarm ist das Gebäude sofort über die Treppe zu {{5}}.",
+        "gaps": [
+          {
+            "mode": "select",
+            "options": [
+              "gestattet",
+              "untersagt",
+              "erforderlich"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "mode": "select",
+            "options": [
+              "untersagt",
+              "erforderlich",
+              "gestattet"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "mode": "select",
+            "options": [
+              "erforderlich",
+              "untersagt",
+              "verboten"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "mode": "select",
+            "options": [
+              "ohne Grund",
+              "auf Antrag",
+              "jederzeit"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "mode": "select",
+            "options": [
+              "betreten",
+              "benutzen",
+              "verlassen"
+            ],
+            "correctIndex": 2
+          }
+        ]
       }
     },
     {

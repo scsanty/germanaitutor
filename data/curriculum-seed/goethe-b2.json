@@ -1,5 +1,5 @@
 {
-  "seedVersion": "7",
+  "seedVersion": "8",
   "formatVersion": 3,
   "track": "goethe",
   "level": "B2",
@@ -833,6 +833,45 @@
       }
     },
     {
+      "id": "b2-goethe-lesen-teil1-forenbeitraege-zuordnen__ex2",
+      "lessonId": "b2-goethe-lesen-teil1-forenbeitraege-zuordnen",
+      "track": "goethe",
+      "type": "matching",
+      "content": {
+        "instruction": {
+          "en": "Read the forum posts by four people (a–d) on working from home and the statements. Which person does each statement apply to? A person can be chosen more than once.",
+          "de": "Lesen Sie die Forenbeiträge der vier Personen (a–d) zum Thema Homeoffice und die Aussagen. Auf welche Person trifft die Aussage zu? Die Personen können mehrmals gewählt werden."
+        },
+        "items": [
+          "Wer möchte künftig wieder häufiger im Büro arbeiten?",
+          "Wer findet es schwierig, neue Mitarbeitende aus der Ferne einzuarbeiten?",
+          "Wer hat durch einen ungeeigneten Arbeitsplatz körperliche Beschwerden bekommen?",
+          "Wer verbindet seine Arbeitszeit flexibel mit Sport?",
+          "Wer könnte Unterstützung vom Arbeitgeber bekommen, kann sie aber nicht nutzen?",
+          "Wer betont, dass im Homeoffice nicht weniger geleistet wird?",
+          "Wer vermisst die zufälligen Gespräche mit Kollegen?",
+          "Wer sieht im Homeoffice einen Vorteil bei der Suche nach Personal?"
+        ],
+        "targets": [
+          "Katrin, 38: Seit drei Jahren arbeite ich fast ausschließlich von zu Hause aus. Am Anfang habe ich die Pendelei – täglich zwei Stunden im Zug – überhaupt nicht vermisst. Inzwischen merke ich aber, dass mir der spontane Austausch mit den Kollegen fehlt. Viele gute Ideen sind früher nebenbei in der Kaffeeküche entstanden. Deshalb habe ich mit meiner Chefin vereinbart, dass ich ab nächstem Monat wieder zwei Tage pro Woche in die Firma komme.",
+          "Dominik, 29: Für mich ist das Homeoffice die beste Erfindung seit Langem. Ich kann mir meine Zeit frei einteilen, gehe mittags joggen und arbeite dafür abends eine Stunde länger. Klar, man braucht Disziplin. Aber wer behauptet, zu Hause werde weniger gearbeitet, kennt die Zahlen nicht: In unserer Abteilung ist die Produktivität seit der Umstellung sogar gestiegen.",
+          "Ulrike, 52: Als Teamleiterin sehe ich beide Seiten. Neue Kolleginnen und Kollegen per Videokonferenz einzuarbeiten, ist äußerst mühsam; vieles lernt man eben nur, wenn man jemandem über die Schulter schaut. Andererseits konnte ich dank Homeoffice zwei Fachkräfte einstellen, die 300 Kilometer entfernt wohnen und sonst nie zu uns gekommen wären.",
+          "Ahmet, 44: Bei uns ist Homeoffice schlicht nicht praktikabel. Wir wohnen zu viert in einer Dreizimmerwohnung, einen ruhigen Arbeitsplatz gibt es nicht. Ich habe es eine Weile am Küchentisch versucht, aber nach ein paar Wochen hatte ich ständig Rückenschmerzen. Mein Arbeitgeber hat zwar angeboten, mir einen Schreibtisch zu bezahlen – nur wohin damit?"
+        ],
+        "answers": [
+          0,
+          2,
+          3,
+          1,
+          3,
+          1,
+          0,
+          2
+        ],
+        "allowNone": false
+      }
+    },
+    {
       "id": "b2-goethe-lesen-teil2-textrekonstruktion__ex0",
       "lessonId": "b2-goethe-lesen-teil2-textrekonstruktion",
       "track": "goethe",
@@ -859,6 +898,50 @@
       }
     },
     {
+      "id": "b2-goethe-lesen-teil2-textrekonstruktion__ex2",
+      "lessonId": "b2-goethe-lesen-teil2-textrekonstruktion",
+      "track": "goethe",
+      "type": "cloze",
+      "content": {
+        "instruction": {
+          "en": "Read the article. Five sentences are missing. Which sentence (a–g) fits which gap? Two sentences are not needed.",
+          "de": "Lesen Sie den Artikel. Im Text fehlen fünf Sätze. Welcher Satz (a–g) passt in welche Lücke? Zwei Sätze passen nicht."
+        },
+        "text": "Mehr als Bücher\n\nLange Zeit galten öffentliche Bibliotheken als ruhige, etwas verstaubte Orte, an denen man flüsterte und Bücher auslieh. {{1}} Vielerorts haben sie sich in lebendige Treffpunkte verwandelt, in denen man nähen, programmieren oder Brettspiele spielen kann.\n\nEin gutes Beispiel ist die Stadtbibliothek in Kleinfeld. Dort gibt es seit einem Jahr eine sogenannte Bibliothek der Dinge. {{2}} Besonders gefragt sind Bohrmaschinen, Nähmaschinen und Campingausrüstung – Gegenstände also, die man nur selten braucht und deshalb nicht unbedingt kaufen möchte.\n\nHinter diesem Wandel steht eine nüchterne Überlegung. {{3}} Gleichzeitig wächst in vielen Städten der Bedarf an Räumen, in denen man sich aufhalten kann, ohne etwas konsumieren zu müssen. Bibliotheken können diese Lücke füllen.\n\nNicht alle sind von der Entwicklung begeistert. {{4}} Sie befürchten, dass die Bibliothek ihren Charakter als Ort der Konzentration verliert. Viele Häuser haben darauf reagiert, indem sie Ruhezonen eingerichtet haben, in denen Gespräche und Telefonate tabu sind.\n\nFür die Zukunft planen einige Bibliotheken sogar längere Öffnungszeiten. {{5}} Möglich macht das ein Ausweis mit Chip, mit dem registrierte Nutzer die Eingangstür selbst öffnen können.",
+        "bank": [
+          "Gegen eine kleine Gebühr kann man dort Werkzeuge und Geräte ausleihen.",
+          "Die Stadtverwaltung dagegen lobt das neue Konzept ausdrücklich.",
+          "Dieses Bild ist inzwischen überholt.",
+          "In Kleinfeld ist man schon einen Schritt weiter: Dort ist das Haus auch sonntags geöffnet, allerdings ohne Personal.",
+          "Deshalb haben die meisten Bibliotheken ihre Buchbestände vollständig abgeschafft.",
+          "Da immer mehr Menschen E-Books lesen, werden weniger gedruckte Bücher ausgeliehen.",
+          "Vor allem langjährige Stammleser beklagen sich über den gestiegenen Lärmpegel."
+        ],
+        "gaps": [
+          {
+            "mode": "bank",
+            "answer": 2
+          },
+          {
+            "mode": "bank",
+            "answer": 0
+          },
+          {
+            "mode": "bank",
+            "answer": 5
+          },
+          {
+            "mode": "bank",
+            "answer": 6
+          },
+          {
+            "mode": "bank",
+            "answer": 3
+          }
+        ]
+      }
+    },
+    {
       "id": "b2-goethe-lesen-teil3-sachtext-standpunkte__ex0",
       "lessonId": "b2-goethe-lesen-teil3-sachtext-standpunkte",
       "track": "goethe",
@@ -881,6 +964,57 @@
       "content": {
         "prompt": "Erklären Sie den Unterschied zwischen einer expliziten Aussage und einer Autorenimplikation in einem journalistischen Text.",
         "modelAnswer": "Eine explizite Aussage wird direkt im Wortlaut formuliert; eine Implikation erschließt sich indirekt aus dem Ton, der Wortwahl oder der Argumentationsstruktur des Verfassers."
+      }
+    },
+    {
+      "id": "b2-goethe-lesen-teil3-sachtext-standpunkte__ex2",
+      "lessonId": "b2-goethe-lesen-teil3-sachtext-standpunkte",
+      "track": "goethe",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the commentary. Choose the right answer (a, b or c) for each question. Watch for options that sound true but are not what the author argues.",
+          "de": "Lesen Sie den Kommentar. Welche Lösung (a, b oder c) ist richtig? Achten Sie auf Optionen, die zwar richtig klingen, aber nicht die Meinung des Autors wiedergeben."
+        },
+        "passage": "Weniger arbeiten, mehr leisten?\n\nKaum ein arbeitspolitisches Thema wird derzeit so leidenschaftlich diskutiert wie die Vier-Tage-Woche. Befürworter verweisen auf Pilotprojekte, in denen Beschäftigte bei gleichem Lohn einen Tag weniger arbeiteten und dennoch genauso viel schafften. Weniger Krankmeldungen, zufriedenere Mitarbeiter, seltenere Kündigungen – die Bilanz klingt verlockend.\n\nMan sollte sich von solchen Ergebnissen allerdings nicht blenden lassen. An den Versuchen nahmen fast ausschließlich Unternehmen teil, die sich freiwillig gemeldet hatten, also Firmen, deren Führung von dem Modell ohnehin überzeugt war. Dass es dort funktioniert, sagt wenig darüber aus, ob es auch in einer Klinik, einer Kita oder einem Handwerksbetrieb gelingt. Wer pflegt die Patienten am fünften Tag? Wer betreut die Kinder? In Berufen, in denen die Arbeit an Anwesenheit gebunden ist, lässt sich die Produktivität nicht beliebig steigern.\n\nDas heißt nicht, dass die Idee wertlos wäre. Im Gegenteil: Dass sich so viele Menschen nach mehr freier Zeit sehnen, sollte Arbeitgebern zu denken geben. Offenbar empfinden viele ihre Arbeit als derart belastend, dass ein zusätzlicher freier Tag wie eine Rettung erscheint. Statt aber ein Modell für alle vorzuschreiben, wäre es klüger, den Betrieben Spielräume zu lassen – sei es für kürzere Arbeitstage, flexible Arbeitszeitkonten oder eben vier lange Arbeitstage.\n\nDie Debatte über die Vier-Tage-Woche ist also weniger eine Debatte über einen Wochentag als über die Frage, wie wir arbeiten wollen. Diese Frage verdient eine ehrlichere Antwort als einen Slogan.",
+        "questions": [
+          {
+            "question": "Wie bewertet der Autor die Ergebnisse der Pilotprojekte?",
+            "options": [
+              "Er hält sie für gefälscht.",
+              "Er bezweifelt, dass sie sich auf alle Branchen übertragen lassen.",
+              "Er sieht in ihnen den Beweis, dass das Modell überlegen ist."
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Was kritisiert der Autor an den Versuchen?",
+            "options": [
+              "Die Beschäftigten erhielten weniger Lohn.",
+              "Es nahmen zu wenige Mitarbeiter teil.",
+              "Die teilnehmenden Firmen waren von dem Modell schon vorher überzeugt."
+            ],
+            "correctIndex": 2
+          },
+          {
+            "question": "Was schließt der Autor daraus, dass sich viele Menschen mehr Freizeit wünschen?",
+            "options": [
+              "Viele empfinden ihre Arbeit als zu belastend.",
+              "Die Menschen sind heute weniger fleißig als früher.",
+              "Die Vier-Tage-Woche sollte gesetzlich eingeführt werden."
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Welche Haltung vertritt der Autor insgesamt?",
+            "options": [
+              "Die Vier-Tage-Woche ist eine Modeerscheinung ohne Bedeutung.",
+              "Unternehmen sollten selbst passende Arbeitszeitmodelle wählen dürfen.",
+              "Kliniken und Kitas sollten mit gutem Beispiel vorangehen."
+            ],
+            "correctIndex": 1
+          }
+        ]
       }
     },
     {
@@ -910,6 +1044,41 @@
       }
     },
     {
+      "id": "b2-goethe-lesen-teil4-lesermeinungen-ueberschriften__ex2",
+      "lessonId": "b2-goethe-lesen-teil4-lesermeinungen-ueberschriften",
+      "track": "goethe",
+      "type": "matching",
+      "content": {
+        "instruction": {
+          "en": "Read the reader opinions (a–f) on car-free city centres and the headings. Which opinion fits which heading? Each opinion fits only once. One opinion is not needed.",
+          "de": "Lesen Sie die Lesermeinungen (a–f) zum Thema autofreie Innenstädte und die Überschriften. Welche Meinung passt zu welcher Überschrift? Jede Meinung passt nur einmal. Eine Meinung passt nicht."
+        },
+        "items": [
+          "Gesundheit geht vor",
+          "Händler fürchten um ihre Existenz",
+          "Ältere Menschen werden vergessen",
+          "Erst den Nahverkehr ausbauen",
+          "Mehr Gemeinschaft im Viertel"
+        ],
+        "targets": [
+          "Gerd, Einzelhändler: Meine Kundschaft kommt zu einem großen Teil aus den umliegenden Dörfern. Wenn diese Leute nicht mehr in die Innenstadt fahren dürfen, kaufen sie eben im Einkaufszentrum am Stadtrand ein. Dann kann ich meinen Laden zumachen.",
+          "Mira: Seit unsere Straße zur Fußgängerzone geworden ist, sitzen die Nachbarn abends draußen, und die Kinder spielen auf der Straße. Ich kenne heute mehr Leute in meinem Viertel als in den zehn Jahren davor.",
+          "Hans, 78: Ich bin auf einen Rollator angewiesen und kann nicht weit laufen. Bus und Bahn helfen mir wenig, weil die Haltestellen zu weit von den Geschäften entfernt sind. Ohne ein Auto, das mich bis vor die Tür bringt, bin ich aufgeschmissen.",
+          "Lukas: Das Problem ist nicht das Auto an sich, sondern dass Busse und Bahnen auf dem Land kaum fahren. Bevor man über Verbote redet, sollte man erst einmal ein vernünftiges Angebot schaffen.",
+          "Sandra, Kinderärztin: In meiner Praxis sehe ich täglich Kinder mit Asthma. Abgase und Feinstaub sind in den Innenstädten ein ernstes Risiko. Jede Maßnahme, die den Verkehr verringert, ist aus medizinischer Sicht zu begrüßen.",
+          "Tobias: Ich wohne in der Altstadt und finde die Idee grundsätzlich gut. Aber wer liefert dann die Waren in die Geschäfte? Ohne klare Regeln für Lieferwagen und Handwerker wird das nicht funktionieren."
+        ],
+        "answers": [
+          4,
+          0,
+          2,
+          3,
+          1
+        ],
+        "allowNone": false
+      }
+    },
+    {
       "id": "b2-goethe-lesen-teil5-richtlinien-ordnungen__ex0",
       "lessonId": "b2-goethe-lesen-teil5-richtlinien-ordnungen",
       "track": "goethe",
@@ -933,6 +1102,98 @@
       "content": {
         "textWithBlank": "In Richtlinien bedeutet die Formulierung 'ist unzulässig', dass eine Handlung strengstens ___ ist.",
         "correctAnswer": "verboten"
+      }
+    },
+    {
+      "id": "b2-goethe-lesen-teil5-richtlinien-ordnungen__ex2",
+      "lessonId": "b2-goethe-lesen-teil5-richtlinien-ordnungen",
+      "track": "goethe",
+      "type": "matching",
+      "content": {
+        "instruction": {
+          "en": "Read the sections of the workshop rules. Which heading (a–g) from the table of contents fits each section? Each heading fits only once. Four headings are not needed.",
+          "de": "Lesen Sie die Abschnitte der Werkstattordnung. Welche Überschrift (a–g) aus dem Inhaltsverzeichnis passt zu welchem Abschnitt? Jede Überschrift passt nur einmal. Vier Überschriften werden nicht gebraucht."
+        },
+        "items": [
+          "§ 2: Die Nutzung der Maschinen (Kreissäge, Drehbank, Lasercutter) setzt die erfolgreiche Teilnahme an einer Sicherheitseinweisung voraus. Die Einweisung ist für jede Maschine gesondert nachzuweisen. Personen ohne gültige Einweisung ist die Bedienung untersagt.",
+          "§ 4: Arbeitsplätze und Maschinen sind spätestens 30 Minuten vor Ende der Öffnungszeit zu reinigen. Späne und Reststoffe sind in den dafür vorgesehenen Behältern zu entsorgen. Festgestellte Schäden sind unverzüglich der Aufsicht zu melden.",
+          "§ 6: Für die Benutzung des Lasercutters wird eine Gebühr von 0,50 Euro pro Minute erhoben. Verbrauchsmaterialien wie Holzplatten oder Acrylglas können vor Ort erworben werden. Die Abrechnung erfolgt monatlich per Lastschrift."
+        ],
+        "targets": [
+          "Öffnungszeiten der Werkstatt",
+          "Kosten und Abrechnung",
+          "Voraussetzungen für die Bedienung der Maschinen",
+          "Haftung bei Unfällen",
+          "Sauberkeit und Meldung von Schäden",
+          "Mitgliedschaft und Kündigung",
+          "Ausleihe von Werkzeugen"
+        ],
+        "answers": [
+          2,
+          4,
+          1
+        ],
+        "allowNone": false
+      }
+    },
+    {
+      "id": "b2-goethe-lesen-teil5-richtlinien-ordnungen__ex3",
+      "lessonId": "b2-goethe-lesen-teil5-richtlinien-ordnungen",
+      "track": "goethe",
+      "type": "cloze",
+      "content": {
+        "instruction": {
+          "en": "Read the extract from an IT policy. Choose the word or phrase that fits each gap in this formal style.",
+          "de": "Lesen Sie den Auszug aus einer IT-Richtlinie. Wählen Sie für jede Lücke das Wort oder den Ausdruck, der in diesen formellen Text passt."
+        },
+        "text": "Richtlinie zur Nutzung der IT-Ausstattung\n\n1. Die dienstlichen Geräte sind ausschließlich für berufliche Zwecke zu {{1}}.\n2. Die Installation privater Software {{2}} der vorherigen schriftlichen Zustimmung der IT-Abteilung.\n3. Passwörter sind vertraulich zu behandeln und dürfen {{3}} an Dritte weitergegeben werden.\n4. Das Speichern dienstlicher Daten auf privaten USB-Sticks ist {{4}}; hierfür sind ausschließlich die verschlüsselten Laufwerke des Unternehmens zu nutzen.\n5. Bei Verstößen gegen diese Richtlinie behält sich das Unternehmen arbeitsrechtliche Schritte {{5}}.",
+        "gaps": [
+          {
+            "mode": "select",
+            "options": [
+              "verwendet",
+              "verwenden",
+              "verwendend"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "mode": "select",
+            "options": [
+              "bedarf",
+              "benötigt",
+              "braucht"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "mode": "select",
+            "options": [
+              "unter keinen Umständen",
+              "in jedem Fall",
+              "nach Belieben"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "mode": "select",
+            "options": [
+              "zulässig",
+              "zuständig",
+              "unzulässig"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "mode": "select",
+            "options": [
+              "an",
+              "vor",
+              "aus"
+            ],
+            "correctIndex": 1
+          }
+        ]
       }
     },
     {

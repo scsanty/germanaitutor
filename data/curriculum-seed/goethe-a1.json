@@ -1,5 +1,5 @@
 {
-  "seedVersion": "7",
+  "seedVersion": "8",
   "formatVersion": 3,
   "track": "goethe",
   "level": "A1",
@@ -851,6 +851,61 @@
       }
     },
     {
+      "id": "a1-goethe-reading-teil1-personal-messages__ex3",
+      "lessonId": "a1-goethe-reading-teil1-personal-messages",
+      "track": "goethe",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the two messages. Is each statement true (Richtig) or false (Falsch)?",
+          "de": "Lesen Sie die zwei Texte. Sind die Sätze richtig oder falsch?"
+        },
+        "passage": "Text 1\nHallo Lena,\nam Samstag habe ich Geburtstag. Ich mache eine kleine Party bei mir zu Hause. Sie beginnt um 18 Uhr. Kannst du kommen? Bitte bring kein Geschenk mit, aber vielleicht einen Salat? Ich habe eine neue Adresse: Gartenstraße 12.\nViele Grüße\nTom\n\nText 2\nLiebe Frau Wolf,\nich bin krank und kann morgen nicht zum Deutschkurs kommen. Ich gehe heute Nachmittag zum Arzt. Am Donnerstag bin ich wieder da. Können Sie mir bitte die Hausaufgaben per E-Mail schicken?\nViele Grüße\nAna Costa",
+        "questions": [
+          {
+            "question": "Die Party ist bei Tom zu Hause.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Lena soll ein Geschenk mitbringen.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Tom wohnt jetzt in der Gartenstraße.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Ana geht morgen zum Arzt.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Frau Wolf soll Ana die Hausaufgaben schicken.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0
+          }
+        ]
+      }
+    },
+    {
       "id": "a1-goethe-reading-teil2-information-matching__ex0",
       "lessonId": "a1-goethe-reading-teil2-information-matching",
       "track": "goethe",
@@ -893,6 +948,61 @@
       }
     },
     {
+      "id": "a1-goethe-reading-teil2-information-matching__ex3",
+      "lessonId": "a1-goethe-reading-teil2-information-matching",
+      "track": "goethe",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the websites and the tasks. Where do you find the information: website a or website b?",
+          "de": "Lesen Sie die Webseiten und die Aufgaben. Wo finden Sie Informationen: a oder b?"
+        },
+        "passage": "1a) www.hallenbad-mitte.de\nHallenbad Mitte: Montag bis Samstag von 7 bis 21 Uhr geöffnet. Sonntag geschlossen.\n\n1b) www.freibad-am-see.de\nFreibad am See: Jeden Tag von 9 bis 19 Uhr geöffnet, auch am Sonntag.\n\n2a) www.zahnarzt-notdienst.de\nZahnärztlicher Notdienst: Wir sind in der Nacht und am Wochenende für Sie da.\n\n2b) www.zahnarzt-berger.de\nZahnarztpraxis Dr. Berger: Montag bis Freitag von 8 bis 17 Uhr. Termine nur am Telefon.\n\n3a) www.stadtbibliothek-neustadt.de\nStadtbibliothek: Bücher, Filme und Zeitschriften ausleihen. Der Ausweis ist für Kinder kostenlos.\n\n3b) www.buchladen-seitenweise.de\nBuchladen Seitenweise: Neue Kinderbücher kaufen – jetzt 20 % billiger!\n\n4a) www.fahrrad-meier.de\nFahrrad Meier: Neue Fahrräder für Damen, Herren und Kinder. Gute Preise!\n\n4b) www.radstation-hbf.de\nRadstation am Hauptbahnhof: Fahrräder mieten – für einen Tag oder für eine Woche.\n\n5a) www.kochschule-pfanne.de\nKochschule Pfanne: Kochkurse am Abend – italienisch, thailändisch und indisch.\n\n5b) www.restaurant-roma.de\nRestaurant Roma: Pizza und Pasta. Mittagsmenü für 9,50 Euro.",
+        "questions": [
+          {
+            "question": "Sie möchten am Sonntag schwimmen gehen.",
+            "options": [
+              "www.hallenbad-mitte.de",
+              "www.freibad-am-see.de"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Es ist Samstagabend. Sie haben starke Zahnschmerzen.",
+            "options": [
+              "www.zahnarzt-notdienst.de",
+              "www.zahnarzt-berger.de"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Ihre Tochter (8 Jahre) möchte Bücher lesen. Sie möchten kein Geld bezahlen.",
+            "options": [
+              "www.stadtbibliothek-neustadt.de",
+              "www.buchladen-seitenweise.de"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Sie sind Tourist und haben kein Fahrrad. Sie möchten zwei Tage Fahrrad fahren.",
+            "options": [
+              "www.fahrrad-meier.de",
+              "www.radstation-hbf.de"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Sie möchten italienisch kochen lernen.",
+            "options": [
+              "www.kochschule-pfanne.de",
+              "www.restaurant-roma.de"
+            ],
+            "correctIndex": 0
+          }
+        ]
+      }
+    },
+    {
       "id": "a1-goethe-reading-teil3-public-signs-notices__ex0",
       "lessonId": "a1-goethe-reading-teil3-public-signs-notices",
       "track": "goethe",
@@ -932,6 +1042,61 @@
           "Falsch"
         ],
         "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-goethe-reading-teil3-public-signs-notices__ex3",
+      "lessonId": "a1-goethe-reading-teil3-public-signs-notices",
+      "track": "goethe",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the signs. Is each statement true (Richtig) or false (Falsch)?",
+          "de": "Lesen Sie die Schilder. Sind die Sätze richtig oder falsch?"
+        },
+        "passage": "Schild 1 (an der Tür einer Apotheke)\nHeute von 13 bis 14 Uhr geschlossen. Ab 14 Uhr sind wir wieder für Sie da!\n\nSchild 2 (im Bus)\nBitte vorne einsteigen und die Fahrkarte beim Fahrer zeigen.\n\nSchild 3 (im Kaufhaus)\nToiletten im 2. Stock. Der Aufzug ist heute kaputt. Bitte nehmen Sie die Treppe.\n\nSchild 4 (in der Sprachschule)\nDer Kurs A1.2 ist heute nicht in Raum 5, sondern in Raum 8.\n\nSchild 5 (im Park)\nFahrräder bitte schieben! Hunde nur an der Leine.",
+        "questions": [
+          {
+            "question": "Schild 1: Die Apotheke ist heute um 13.30 Uhr offen.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Schild 2: Man zeigt die Fahrkarte beim Fahrer.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Schild 3: Man kann heute mit dem Aufzug fahren.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Schild 4: Der Kurs A1.2 ist heute in Raum 8.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Schild 5: Im Park darf man nicht Fahrrad fahren.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0
+          }
+        ]
       }
     },
     {

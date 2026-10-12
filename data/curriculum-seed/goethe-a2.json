@@ -1,5 +1,5 @@
 {
-  "seedVersion": "7",
+  "seedVersion": "8",
   "formatVersion": 3,
   "track": "goethe",
   "level": "A2",
@@ -1028,6 +1028,66 @@
       }
     },
     {
+      "id": "a2-goethe-reading-teil1-personal-email__ex3",
+      "lessonId": "a2-goethe-reading-teil1-personal-email",
+      "track": "goethe",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the email. Choose the right answer (a, b or c) for each question.",
+          "de": "Lesen Sie die E-Mail. Welche Lösung (a, b oder c) ist richtig?"
+        },
+        "passage": "Liebe Jana,\nvielen Dank für deine Karte aus Spanien! Schön, dass du so einen tollen Urlaub hattest.\nBei mir gibt es auch Neuigkeiten: Ich bin letzte Woche umgezogen. Die neue Wohnung ist größer als die alte und hat einen Balkon. Leider ist sie weiter weg von meiner Arbeit. Ich fahre jetzt 40 Minuten mit der S-Bahn, aber das ist nicht so schlimm, denn in der Bahn kann ich lesen.\nAm 14. Juni möchte ich eine kleine Party in der neuen Wohnung machen. Hast du Zeit? Mein Bruder Felix kommt auch und bringt seine Gitarre mit. Kannst du vielleicht deinen Nudelsalat machen? Der war bei meinem Geburtstag so lecker!\nÜbrigens: Mein altes Fahrrad brauche ich nicht mehr. Möchtest du es haben? Du kannst es nach der Party mitnehmen.\nLiebe Grüße\nSophie",
+        "questions": [
+          {
+            "question": "Jana war …",
+            "options": [
+              "im Urlaub in Spanien.",
+              "letzte Woche bei Sophie.",
+              "bei Sophies Geburtstag nicht da."
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Sophies neue Wohnung …",
+            "options": [
+              "ist kleiner als die alte.",
+              "hat einen Balkon.",
+              "ist nah bei ihrer Arbeit."
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Was macht Sophie in der S-Bahn?",
+            "options": [
+              "Sie hört Musik.",
+              "Sie arbeitet.",
+              "Sie liest."
+            ],
+            "correctIndex": 2
+          },
+          {
+            "question": "Was soll Jana zur Party mitbringen?",
+            "options": [
+              "eine Gitarre",
+              "einen Nudelsalat",
+              "ein Fahrrad"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Warum schreibt Sophie die E-Mail?",
+            "options": [
+              "Sie lädt Jana zu einer Party ein.",
+              "Sie möchte ihr Fahrrad verkaufen.",
+              "Sie sucht eine neue Wohnung."
+            ],
+            "correctIndex": 0
+          }
+        ]
+      }
+    },
+    {
       "id": "a2-goethe-reading-teil2-service-directory__ex0",
       "lessonId": "a2-goethe-reading-teil2-service-directory",
       "track": "goethe",
@@ -1065,6 +1125,66 @@
       "content": {
         "textWithBlank": "Infotafel: 'Kinderspielzeug, Babybekleidung und Kinderwagen finden Sie im ___ Stock.' (spoken/written: zweiten)",
         "correctAnswer": "zweiten"
+      }
+    },
+    {
+      "id": "a2-goethe-reading-teil2-service-directory__ex3",
+      "lessonId": "a2-goethe-reading-teil2-service-directory",
+      "track": "goethe",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the information board in the town hall. Which floor do you go to? Choose a, b or c.",
+          "de": "Lesen Sie die Informationstafel im Rathaus. In welches Stockwerk gehen Sie? Wählen Sie a, b oder c."
+        },
+        "passage": "Rathaus Neustadt – Wegweiser\n\nUntergeschoss: Fundbüro · Fahrradkeller\nErdgeschoss: Information · Bürgerbüro (Personalausweis, Reisepass, Anmeldung der Wohnung) · Kasse\n1. Stock: Standesamt (Hochzeiten, Geburten) · Ausländerbehörde\n2. Stock: Sozialamt · Wohngeldstelle · Jugendamt (Plätze im Kindergarten)\n3. Stock: Bauamt · Büro des Bürgermeisters · Kantine\n4. Stock: Stadtbibliothek (nur Montag bis Mittwoch geöffnet)",
+        "questions": [
+          {
+            "question": "Sie sind neu in der Stadt und müssen Ihre Wohnung anmelden.",
+            "options": [
+              "Erdgeschoss",
+              "1. Stock",
+              "2. Stock"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Sie haben im Bus Ihre Tasche verloren.",
+            "options": [
+              "Erdgeschoss",
+              "Untergeschoss",
+              "1. Stock"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Sie möchten heiraten.",
+            "options": [
+              "Erdgeschoss",
+              "2. Stock",
+              "1. Stock"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "question": "Sie suchen einen Kindergartenplatz für Ihren Sohn.",
+            "options": [
+              "1. Stock",
+              "2. Stock",
+              "4. Stock"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Sie möchten im Rathaus zu Mittag essen.",
+            "options": [
+              "Erdgeschoss",
+              "4. Stock",
+              "3. Stock"
+            ],
+            "correctIndex": 2
+          }
+        ]
       }
     },
     {
@@ -1112,6 +1232,66 @@
       }
     },
     {
+      "id": "a2-goethe-reading-teil3-newspaper-report__ex3",
+      "lessonId": "a2-goethe-reading-teil3-newspaper-report",
+      "track": "goethe",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the newspaper article. Choose the right answer (a, b or c) for each question.",
+          "de": "Lesen Sie den Text aus der Zeitung. Welche Lösung (a, b oder c) ist richtig?"
+        },
+        "passage": "Kaputt? Nicht wegwerfen!\n\nSeit einem Jahr gibt es im Stadtteil Lindenau ein Repair-Café. Jeden ersten Samstag im Monat treffen sich Menschen im Gemeindehaus und reparieren zusammen alte Sachen: Lampen, Toaster, Fahrräder oder Kleidung. Die Helfer sind Rentner, Studenten und Handwerker. Sie bekommen kein Geld für ihre Arbeit. Die Besucher bezahlen nichts für die Reparatur, aber viele geben eine kleine Spende für Kaffee und Kuchen.\n„Am Anfang kamen nur zehn Leute, heute sind es oft über fünfzig“, sagt die Organisatorin Petra Haas. Nicht alles kann man reparieren: Etwa jedes dritte Gerät bleibt kaputt. Handys repariert das Team nicht, denn dafür fehlt das Werkzeug. Ab Herbst soll es das Repair-Café zweimal im Monat geben.",
+        "questions": [
+          {
+            "question": "Das Repair-Café gibt es im Moment …",
+            "options": [
+              "jeden Samstag.",
+              "einmal im Monat.",
+              "zweimal im Monat."
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Die Helfer …",
+            "options": [
+              "arbeiten ohne Geld.",
+              "sind alle Handwerker.",
+              "kommen aus dem Gemeindehaus."
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Die Besucher …",
+            "options": [
+              "müssen für die Reparatur bezahlen.",
+              "bekommen Kaffee und Kuchen gratis von Petra Haas.",
+              "können etwas Geld spenden."
+            ],
+            "correctIndex": 2
+          },
+          {
+            "question": "Wie viele Besucher kommen heute oft?",
+            "options": [
+              "etwa zehn",
+              "mehr als fünfzig",
+              "jeder dritte"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Was kann das Team nicht reparieren?",
+            "options": [
+              "Handys",
+              "Toaster",
+              "Kleidung"
+            ],
+            "correctIndex": 0
+          }
+        ]
+      }
+    },
+    {
       "id": "a2-goethe-reading-teil4-advertisement-matching__ex0",
       "lessonId": "a2-goethe-reading-teil4-advertisement-matching",
       "track": "goethe",
@@ -1154,6 +1334,41 @@
           "Keine Anzeige passt"
         ],
         "correctIndex": 2
+      }
+    },
+    {
+      "id": "a2-goethe-reading-teil4-advertisement-matching__ex3",
+      "lessonId": "a2-goethe-reading-teil4-advertisement-matching",
+      "track": "goethe",
+      "type": "matching",
+      "content": {
+        "instruction": {
+          "en": "Five people are looking for something online. Which ad (a–f) fits which person? Each ad fits only once. For one person there is no matching ad: choose x.",
+          "de": "Fünf Personen suchen im Internet. Welche Anzeige (a–f) passt zu welcher Person? Jede Anzeige passt nur einmal. Für eine Person gibt es keine Anzeige: Wählen Sie dann x."
+        },
+        "items": [
+          "Mehmet sucht ein Zimmer in einer WG. Er hat eine Katze.",
+          "Frau Schulz möchte Englisch lernen. Sie möchte aber nicht zu einem Kurs fahren.",
+          "Familie Roth braucht dienstags und donnerstags am Nachmittag jemanden für ihre zwei Kinder.",
+          "Lukas (25) möchte am Wochenende Kuchen backen lernen.",
+          "Herr Yilmaz sucht einen gebrauchten Kühlschrank."
+        ],
+        "targets": [
+          "WG im Zentrum: Wir (zwei Studentinnen) suchen ab 1. März eine Mitbewohnerin oder einen Mitbewohner. 18 m², 350 Euro warm. Tiere sind bei uns willkommen!",
+          "Zimmer frei in ruhiger Wohnung, 15 m², 300 Euro. Nur für Nichtraucher, keine Haustiere.",
+          "Englisch lernen von zu Hause! Unser Online-Kurs: zweimal pro Woche am Computer, nur 49 Euro im Monat.",
+          "Backkurs für Kinder von 8 bis 12 Jahren: Am Samstag backen wir zusammen Kuchen und Kekse. Eltern dürfen zuschauen.",
+          "Ich (Studentin, 22) suche einen Job als Babysitterin. Ich habe montags bis freitags ab 14 Uhr Zeit und viel Erfahrung mit kleinen Kindern.",
+          "Wir ziehen um! Verkaufen Waschmaschine und Kühlschrank, beide drei Jahre alt und in sehr gutem Zustand. Tel. 0176 4433221"
+        ],
+        "answers": [
+          0,
+          2,
+          4,
+          null,
+          5
+        ],
+        "allowNone": true
       }
     },
     {
