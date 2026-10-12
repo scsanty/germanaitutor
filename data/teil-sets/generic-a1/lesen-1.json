@@ -1,0 +1,169 @@
+{
+  "formatId": "generic-a1",
+  "partId": "lesen-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-a1__lesen-1__s01",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Liebe Nachbarn, am Samstag feiere ich meinen Geburtstag. Die Party beginnt um 19 Uhr und ist um 23 Uhr zu Ende. Es wird vielleicht ein bisschen laut. Sie sind herzlich eingeladen! Bringen Sie gern Ihre Kinder mit. Es gibt Kuchen und Getränke. Viele Grüße, Ihre Nachbarin Frau Kaya, 2. Stock",
+            "Frisches Obst aus der Region! Diese Woche kosten Äpfel und Birnen nur 1,49 Euro pro Kilo. Auch Erdbeeren sind im Angebot: 500 Gramm für 1,99 Euro. Das Angebot gilt von Montag bis Samstag. Kommen Sie vorbei! Ihr Frischmarkt Becker, Lindenstraße 4",
+            "Die Praxis Dr. Wolf ist vom 3. bis 14. August geschlossen. Wir machen Urlaub. In dringenden Fällen gehen Sie bitte zu Dr. Sommer in der Bahnhofstraße 12. Seine Telefonnummer ist 0341 228190. Ab dem 17. August sind wir wieder für Sie da. Ihr Praxisteam",
+            "Wer hat unsere Katze gesehen? Mimi ist drei Jahre alt, klein und schwarz. Sie hat weiße Füße. Seit Dienstag ist sie nicht mehr nach Hause gekommen. Wir wohnen in der Gartenstraße 8. Bitte rufen Sie uns an: 0176 5534921. Vielen Dank! Familie Ott",
+            "Sie können nicht schwimmen? Kein Problem! Im Hallenbad Süd beginnt im Oktober ein neuer Kurs für Erwachsene. Der Kurs ist immer mittwochs von 19 bis 20 Uhr. Er kostet 60 Euro für zehn Termine. Sie brauchen nur Badekleidung und ein Handtuch. Anmeldung an der Kasse."
+          ],
+          "targets": [
+            "Arztpraxis macht Urlaub",
+            "Neue Ärztin in der Bahnhofstraße",
+            "Einladung zu einer Geburtstagsparty",
+            "Katze gesucht",
+            "Hallenbad bleibt im Oktober geschlossen",
+            "Billiges Obst im Frischmarkt",
+            "Schwimmkurs für Erwachsene"
+          ],
+          "answers": [
+            2,
+            5,
+            0,
+            3,
+            6
+          ],
+          "allowNone": false
+        },
+        "explanations": [
+          {
+            "en": "Text 1 invites the neighbours: \"am Samstag feiere ich meinen Geburtstag … Sie sind herzlich eingeladen!\" So the heading is c.",
+            "de": "Frau Kaya schreibt: „Am Samstag feiere ich meinen Geburtstag.“ und „Sie sind herzlich eingeladen!“ Das passt zu c."
+          },
+          {
+            "en": "Text 2 is an advert: apples and pears \"nur 1,49 Euro pro Kilo\" this week at Frischmarkt Becker. So the heading is f.",
+            "de": "Äpfel und Birnen kosten diese Woche „nur 1,49 Euro“. Das Obst ist billig. Das passt zu f."
+          },
+          {
+            "en": "Text 3 says the practice is closed: \"Wir machen Urlaub.\" Dr. Sommer in the Bahnhofstraße is only the replacement and is not new, so b is wrong. The heading is a.",
+            "de": "Die Praxis ist zu: „Wir machen Urlaub.“ Das passt zu a. Dr. Sommer ist nur die Vertretung, er ist nicht neu. b passt nicht."
+          },
+          {
+            "en": "Text 4: \"Wer hat unsere Katze gesehen?\" The family is looking for their cat. So the heading is d.",
+            "de": "Familie Ott fragt: „Wer hat unsere Katze gesehen?“ Sie suchen ihre Katze. Das passt zu d."
+          },
+          {
+            "en": "Text 5 says a new course for adults who cannot swim starts in October: \"beginnt im Oktober ein neuer Kurs für Erwachsene\". The pool is open, so e is wrong. The heading is g.",
+            "de": "Im Oktober „beginnt … ein neuer Kurs für Erwachsene“. Das Hallenbad ist offen, e passt nicht. Richtig ist g."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-a1__lesen-1__s02",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Hallo Tom, ich bin heute krank und komme nicht ins Büro. Ich habe Fieber und Kopfschmerzen. Kannst du bitte um 10 Uhr das Meeting mit Frau Berger machen? Die Papiere liegen auf meinem Schreibtisch. Morgen bin ich vielleicht wieder da. Danke! Sabine",
+            "Liebe Mieterinnen und Mieter, am Donnerstag, dem 12. Mai, gibt es von 8 bis 12 Uhr kein Wasser im Haus. Ein Techniker repariert die Wasserleitungen im Keller. Bitte stellen Sie am Mittwochabend genug Wasser in Flaschen bereit. Vielen Dank! Ihre Hausverwaltung Krüger",
+            "Ich verkaufe mein Kinderfahrrad. Es ist rot und zwei Jahre alt. Das Fahrrad ist noch sehr gut. Mein Sohn ist jetzt zu groß dafür. Der Preis ist 80 Euro. Sie können das Fahrrad am Wochenende ansehen. Rufen Sie mich bitte ab 17 Uhr an: 0151 4478302.",
+            "Neu in der Altstadt: Das Restaurant „Olivenbaum“ ist jetzt geöffnet! Wir kochen griechisches Essen. Am ersten Tag, Freitag, dem 6. Juni, bekommt jeder Gast ein Getränk gratis. Wir sind von Dienstag bis Sonntag von 12 bis 22 Uhr für Sie da. Montag ist Ruhetag.",
+            "Ich heiße Lucía und komme aus Spanien. Ich lerne seit vier Monaten Deutsch. Ich suche eine Partnerin oder einen Partner zum Sprechen. Wir können zusammen Kaffee trinken: eine Stunde Deutsch, eine Stunde Spanisch. Ich habe am Nachmittag Zeit. Schreib mir: lucia.sprechen@mail.de"
+          ],
+          "targets": [
+            "Spanischkurs an der Volkshochschule",
+            "Am Donnerstag kein Wasser",
+            "Eine Kollegin ist krank",
+            "Sprachpartner gesucht",
+            "Fahrrad zu verkaufen",
+            "Techniker sucht Arbeit",
+            "Griechisches Restaurant neu eröffnet"
+          ],
+          "answers": [
+            2,
+            1,
+            4,
+            6,
+            3
+          ],
+          "allowNone": false
+        },
+        "explanations": [
+          {
+            "en": "Sabine writes to her colleague: \"ich bin heute krank und komme nicht ins Büro.\" So the heading is c.",
+            "de": "Sabine schreibt: „Ich bin heute krank und komme nicht ins Büro.“ Das passt zu c."
+          },
+          {
+            "en": "The notice says: \"am Donnerstag … gibt es von 8 bis 12 Uhr kein Wasser im Haus.\" The technician is working, not looking for work (f). The heading is b.",
+            "de": "Am Donnerstag „gibt es von 8 bis 12 Uhr kein Wasser im Haus“. Das passt zu b. Der Techniker sucht keine Arbeit, f passt nicht."
+          },
+          {
+            "en": "Text 3 is an advert: \"Ich verkaufe mein Kinderfahrrad … Der Preis ist 80 Euro.\" So the heading is e.",
+            "de": "In Text 3 steht: „Ich verkaufe mein Kinderfahrrad.“ Das passt zu e."
+          },
+          {
+            "en": "Text 4: \"Das Restaurant „Olivenbaum“ ist jetzt geöffnet! Wir kochen griechisches Essen.\" So the heading is g.",
+            "de": "Das Restaurant ist neu und jetzt geöffnet. Es kocht „griechisches Essen“. Das passt zu g."
+          },
+          {
+            "en": "Lucía is looking for someone to talk with in German and Spanish: \"Ich suche eine Partnerin oder einen Partner zum Sprechen.\" It is not a course (a). The heading is d.",
+            "de": "Lucía sucht „eine Partnerin oder einen Partner zum Sprechen“. Das passt zu d. Es ist kein Kurs, a passt nicht."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-a1__lesen-1__s03",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Sternwarte am Hügel: Jeden ersten Sonntag im Monat ist der Eintritt frei. Dann können Sie abends kostenlos die Sterne und den Mond sehen. An anderen Tagen kostet der Eintritt 6 Euro, für Kinder 3 Euro. Die Sternwarte ist von Mittwoch bis Sonntag von 19 bis 23 Uhr geöffnet.",
+            "Hallo Jana, es tut mir leid, aber ich kann heute Abend nicht ins Kino kommen. Mein Bruder hat Geburtstag und wir feiern bei meinen Eltern. Können wir am Freitag gehen? Der Film läuft noch bis Sonntag. Schreib mir bitte! Liebe Grüße, Mia",
+            "Tanzen Sie gern? Jeden Freitag ist Salsa-Abend im Gemeindezentrum! Von 19 bis 20 Uhr gibt es einen Kurs für Anfänger. Danach tanzen alle zusammen bis 23 Uhr. Sie brauchen keinen Partner. Der Abend kostet 5 Euro. Getränke gibt es an der Bar.",
+            "Liebe Eltern, am Freitag besuchen wir mit allen Kindern die Bäckerei Mehl & Mehr. Dort backen die Kinder ihr eigenes Brot. Wir gehen um 9 Uhr zu Fuß los und sind um 12 Uhr zurück. Bitte geben Sie Ihrem Kind etwas zu trinken mit. Ihr Team vom Kindergarten Sonnenschein",
+            "Autowerkstatt Kraus: Ab sofort können Sie Ihren Termin auch im Internet machen. Gehen Sie einfach auf unsere Internetseite und wählen Sie Tag und Uhrzeit. Natürlich können Sie auch weiter anrufen oder vorbeikommen. Wir sind von Montag bis Freitag von 7 bis 18 Uhr für Sie da."
+          ],
+          "targets": [
+            "Tanzen lernen am Freitagabend",
+            "Bäckerei sucht Verkäuferin",
+            "Werkstatt-Termin jetzt auch online",
+            "Freier Eintritt am ersten Sonntag",
+            "Kinder backen Brot",
+            "Neuer Film im Kino",
+            "Heute klappt es leider nicht"
+          ],
+          "answers": [
+            3,
+            6,
+            0,
+            4,
+            2
+          ],
+          "allowNone": false
+        },
+        "explanations": [
+          {
+            "en": "Text 1: \"Jeden ersten Sonntag im Monat ist der Eintritt frei.\" So the heading is d.",
+            "de": "In Text 1 steht: „Jeden ersten Sonntag im Monat ist der Eintritt frei.“ Das passt zu d."
+          },
+          {
+            "en": "Mia cancels: \"ich kann heute Abend nicht ins Kino kommen.\" The film is not new (f); she just cannot come today. The heading is g.",
+            "de": "Mia schreibt: „Ich kann heute Abend nicht ins Kino kommen.“ Das passt zu g. Der Film ist nicht neu, f passt nicht."
+          },
+          {
+            "en": "Text 3 is about a salsa evening every Friday with \"einen Kurs für Anfänger\". So the heading is a.",
+            "de": "Jeden Freitag ist Salsa-Abend, und es gibt „einen Kurs für Anfänger“. Man lernt tanzen. Das passt zu a."
+          },
+          {
+            "en": "The kindergarten visits a bakery: \"Dort backen die Kinder ihr eigenes Brot.\" The bakery is not looking for staff (b). The heading is e.",
+            "de": "„Dort backen die Kinder ihr eigenes Brot.“ Das passt zu e. Die Bäckerei sucht keine Verkäuferin, b passt nicht."
+          },
+          {
+            "en": "The garage says: \"Ab sofort können Sie Ihren Termin auch im Internet machen.\" So the heading is c.",
+            "de": "Bei der Werkstatt kann man den Termin jetzt „auch im Internet machen“. Das passt zu c."
+          }
+        ]
+      }
+    }
+  ]
+}

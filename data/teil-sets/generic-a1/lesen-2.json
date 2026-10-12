@@ -1,0 +1,241 @@
+{
+  "formatId": "generic-a1",
+  "partId": "lesen-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-a1__lesen-2__s01",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Lieber Paul,\n\nwie geht es dir? Mir geht es gut. Seit zwei Monaten wohne ich jetzt in Freiburg. Ich habe eine kleine Wohnung im Zentrum. Sie hat zwei Zimmer, eine Küche und einen Balkon. Die Miete ist nicht billig, aber die Wohnung ist sehr schön und ruhig.\n\nIch arbeite jetzt in einer Bäckerei. Ich fange jeden Tag um fünf Uhr morgens an. Das ist sehr früh! Aber um 13 Uhr bin ich fertig und habe am Nachmittag frei. Dann fahre ich oft mit dem Fahrrad in den Wald oder ich gehe schwimmen.\n\nMeine Kollegen sind sehr nett. Am Samstag gehe ich mit zwei Kolleginnen ins Konzert.\n\nMöchtest du mich im Juli besuchen? Du kannst bei mir schlafen. Ich habe ein Sofa im Wohnzimmer. Mit dem Zug von Köln dauert die Fahrt etwa vier Stunden.\n\nViele Grüße\nDaniel",
+          "questions": [
+            {
+              "question": "Daniel wohnt in Freiburg …",
+              "options": [
+                "seit zwei Jahren.",
+                "seit zwei Monaten.",
+                "seit zwei Wochen."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Die Wohnung von Daniel …",
+              "options": [
+                "ist billig.",
+                "hat drei Zimmer.",
+                "ist ruhig."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Daniel beginnt mit der Arbeit …",
+              "options": [
+                "um fünf Uhr.",
+                "um 13 Uhr.",
+                "am Nachmittag."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Was macht Daniel am Nachmittag oft?",
+              "options": [
+                "Er schläft.",
+                "Er fährt Fahrrad oder schwimmt.",
+                "Er arbeitet in der Bäckerei."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Wo kann Paul schlafen?",
+              "options": [
+                "Im Hotel.",
+                "Im Schlafzimmer.",
+                "Im Wohnzimmer."
+              ],
+              "correctIndex": 2
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Daniel writes: \"Seit zwei Monaten wohne ich jetzt in Freiburg.\"",
+            "de": "Daniel schreibt: „Seit zwei Monaten wohne ich jetzt in Freiburg.“"
+          },
+          {
+            "en": "The flat is \"sehr schön und ruhig\". It is not cheap (\"Die Miete ist nicht billig\") and it has two rooms.",
+            "de": "Die Wohnung ist „sehr schön und ruhig“. Sie ist nicht billig und hat zwei Zimmer."
+          },
+          {
+            "en": "\"Ich fange jeden Tag um fünf Uhr morgens an.\" At 13:00 he finishes work.",
+            "de": "Daniel schreibt: „Ich fange jeden Tag um fünf Uhr morgens an.“ Um 13 Uhr ist er fertig."
+          },
+          {
+            "en": "In the afternoon he is free: \"Dann fahre ich oft mit dem Fahrrad in den Wald oder ich gehe schwimmen.\"",
+            "de": "Am Nachmittag hat Daniel frei: „Dann fahre ich oft mit dem Fahrrad in den Wald oder ich gehe schwimmen.“"
+          },
+          {
+            "en": "\"Du kannst bei mir schlafen. Ich habe ein Sofa im Wohnzimmer.\"",
+            "de": "Paul kann auf dem Sofa schlafen: „Ich habe ein Sofa im Wohnzimmer.“"
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-a1__lesen-2__s02",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Herzlich willkommen in der Jugendherberge am See!\n\nHier finden Sie wichtige Informationen für Ihren Aufenthalt.\n\nFrühstück gibt es jeden Tag von 7 bis 9:30 Uhr im Speisesaal im Erdgeschoss. Das Abendessen ist um 18:30 Uhr. Es kostet 8 Euro. Bitte bestellen Sie es bis 14 Uhr an der Rezeption.\n\nDie Rezeption ist von 8 bis 20 Uhr geöffnet. Nach 20 Uhr brauchen Sie für die Haustür Ihren Zimmerschlüssel.\n\nSie möchten um den See fahren? Dann leihen Sie ein Fahrrad bei uns. Ein Fahrrad kostet 10 Euro pro Tag. Handtücher bekommen Sie auch an der Rezeption. Sie kosten 2 Euro.\n\nVon 22 bis 7 Uhr ist Nachtruhe. Bitte seien Sie dann leise.\n\nAm Abreisetag müssen Sie das Zimmer bis 10 Uhr frei machen. Ihr Gepäck können Sie bis zum Nachmittag im Gepäckraum lassen.\n\nWir wünschen Ihnen einen schönen Aufenthalt!",
+          "questions": [
+            {
+              "question": "Das Abendessen …",
+              "options": [
+                "ist kostenlos.",
+                "muss man bis 14 Uhr bestellen.",
+                "gibt es um 20 Uhr."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Nach 20 Uhr …",
+              "options": [
+                "brauchen Sie Ihren Zimmerschlüssel für die Haustür.",
+                "ist die Rezeption noch offen.",
+                "können Sie nicht mehr ins Haus."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Ein Fahrrad kostet …",
+              "options": [
+                "2 Euro pro Tag.",
+                "8 Euro pro Tag.",
+                "10 Euro pro Tag."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Von 22 bis 7 Uhr …",
+              "options": [
+                "gibt es Frühstück.",
+                "sollen die Gäste leise sein.",
+                "ist die Haustür offen."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Am Abreisetag …",
+              "options": [
+                "müssen Sie um 7 Uhr frühstücken.",
+                "können Sie bis zum Nachmittag im Zimmer bleiben.",
+                "können Sie Ihr Gepäck noch bis zum Nachmittag dalassen."
+              ],
+              "correctIndex": 2
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "\"Das Abendessen ist um 18:30 Uhr. Es kostet 8 Euro. Bitte bestellen Sie es bis 14 Uhr an der Rezeption.\"",
+            "de": "Im Text steht: „Bitte bestellen Sie es bis 14 Uhr an der Rezeption.“ Das Abendessen kostet 8 Euro und ist um 18:30 Uhr."
+          },
+          {
+            "en": "\"Nach 20 Uhr brauchen Sie für die Haustür Ihren Zimmerschlüssel.\" The reception closes at 20:00, but guests can still get in.",
+            "de": "„Nach 20 Uhr brauchen Sie für die Haustür Ihren Zimmerschlüssel.“ Die Rezeption ist dann zu, aber man kann ins Haus."
+          },
+          {
+            "en": "\"Ein Fahrrad kostet 10 Euro pro Tag.\" 2 euros is the price of a towel, 8 euros the price of dinner.",
+            "de": "„Ein Fahrrad kostet 10 Euro pro Tag.“ 2 Euro kostet ein Handtuch, 8 Euro das Abendessen."
+          },
+          {
+            "en": "\"Von 22 bis 7 Uhr ist Nachtruhe. Bitte seien Sie dann leise.\"",
+            "de": "„Von 22 bis 7 Uhr ist Nachtruhe. Bitte seien Sie dann leise.“"
+          },
+          {
+            "en": "The room must be free by 10:00, but \"Ihr Gepäck können Sie bis zum Nachmittag im Gepäckraum lassen.\"",
+            "de": "Das Zimmer muss um 10 Uhr frei sein. Aber: „Ihr Gepäck können Sie bis zum Nachmittag im Gepäckraum lassen.“"
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-a1__lesen-2__s03",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Töpfern mit Elena\n\nElena Russo kommt aus Italien. Sie wohnt seit fünf Jahren in unserer Stadt. Sie macht Tassen, Teller und Schüsseln und verkauft sie in ihrem kleinen Laden in der Marktgasse. Jetzt gibt sie auch einen Töpferkurs im Nachbarschaftszentrum.\n\nDer Kurs ist immer donnerstags von 18 bis 21 Uhr. Er beginnt am 7. November und hat fünf Termine. Im Kurs macht jeder Teilnehmer zwei Tassen und eine Schüssel.\n\nDer Kurs kostet 75 Euro. Das Material ist im Preis inklusive. Bitte bringen Sie alte Kleidung mit. Die Sachen aus Ton sind am Ende des Kurses fertig. Dann können Sie sie mit nach Hause nehmen.\n\nEs gibt nur zehn Plätze. Sie möchten mitmachen? Dann melden Sie sich bis zum 31. Oktober an: im Büro des Nachbarschaftszentrums, Montag bis Freitag von 9 bis 12 Uhr, oder per Telefon.\n\nElena sagt: „Sie brauchen keine Erfahrung. Jeder kann töpfern lernen!“",
+          "questions": [
+            {
+              "question": "Elena …",
+              "options": [
+                "hat einen Laden.",
+                "arbeitet im Büro des Nachbarschaftszentrums.",
+                "wohnt in Italien."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Der Kurs ist …",
+              "options": [
+                "jeden Tag.",
+                "einmal pro Woche am Abend.",
+                "am Wochenende."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Im Preis ist …",
+              "options": [
+                "die Kleidung inklusive.",
+                "eine Tasse aus Elenas Laden inklusive.",
+                "das Material inklusive."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Wie viele Personen können mitmachen?",
+              "options": [
+                "Fünf.",
+                "Zehn.",
+                "Fünfundsiebzig."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Man kann sich anmelden …",
+              "options": [
+                "per Telefon.",
+                "nur am Donnerstag.",
+                "bis zum 7. November."
+              ],
+              "correctIndex": 0
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Elena sells her cups and plates \"in ihrem kleinen Laden in der Marktgasse\". She lives in \"unserer Stadt\", not in Italy.",
+            "de": "Elena verkauft ihre Sachen „in ihrem kleinen Laden in der Marktgasse“. Sie hat also einen Laden. Sie wohnt nicht in Italien."
+          },
+          {
+            "en": "\"Der Kurs ist immer donnerstags von 18 bis 21 Uhr\" – once a week, in the evening.",
+            "de": "„Der Kurs ist immer donnerstags von 18 bis 21 Uhr.“ Das ist einmal pro Woche am Abend."
+          },
+          {
+            "en": "\"Das Material ist im Preis inklusive.\" Participants must bring their own old clothes.",
+            "de": "Im Text steht: „Das Material ist im Preis inklusive.“ Alte Kleidung bringt man selbst mit."
+          },
+          {
+            "en": "\"Es gibt nur zehn Plätze.\" Five is the number of course dates, 75 is the price.",
+            "de": "„Es gibt nur zehn Plätze.“ Fünf ist die Zahl der Termine, 75 Euro ist der Preis."
+          },
+          {
+            "en": "You can register in the office \"oder per Telefon\", until 31 October.",
+            "de": "Man meldet sich im Büro an „oder per Telefon“. Das geht bis zum 31. Oktober."
+          }
+        ]
+      }
+    }
+  ]
+}
