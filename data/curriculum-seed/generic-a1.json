@@ -1027,6 +1027,89 @@
       }
     },
     {
+      "id": "a1-reading-short-messages__ex3",
+      "lessonId": "a1-reading-short-messages",
+      "track": "generic",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the message. Choose the right answer for each question.",
+          "de": "Lies die Nachricht. Wähle für jede Frage die richtige Antwort."
+        },
+        "passage": "Hallo Lena,\nich bin heute krank und kann nicht zum Deutschkurs kommen. Kannst du mir bitte die Hausaufgaben schreiben? Morgen um 10 Uhr habe ich einen Termin beim Arzt. Am Donnerstag komme ich wieder in den Kurs. Möchtest du am Freitag mit mir Kaffee trinken? Das Café am Marktplatz ist sehr schön. Ich bezahle!\nLiebe Grüße\nJonas",
+        "questions": [
+          {
+            "question": "Wer schreibt die Nachricht?",
+            "options": [
+              "Lena",
+              "Jonas",
+              "Der Lehrer"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Warum kommt Jonas heute nicht zum Kurs?",
+            "options": [
+              "Er ist krank.",
+              "Er hat einen Termin beim Arzt.",
+              "Er trinkt Kaffee."
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Wann geht Jonas zum Arzt?",
+            "options": [
+              "Heute",
+              "Morgen um 10 Uhr",
+              "Am Donnerstag"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Was möchte Jonas am Freitag machen?",
+            "options": [
+              "Zum Arzt gehen",
+              "In den Kurs gehen",
+              "Mit Lena Kaffee trinken"
+            ],
+            "correctIndex": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "a1-reading-short-messages__ex4",
+      "lessonId": "a1-reading-short-messages",
+      "track": "generic",
+      "type": "matching",
+      "content": {
+        "instruction": {
+          "en": "Read the four messages. What does each writer want? Choose the right sentence for each message. One sentence is left over.",
+          "de": "Lies die vier Nachrichten. Was will die Person? Wähle für jede Nachricht den richtigen Satz. Ein Satz bleibt übrig."
+        },
+        "items": [
+          "Hallo Mia, ich habe am Samstag Geburtstag. Kommst du zu meiner Party? Sie beginnt um 19 Uhr. Gruß, Ben",
+          "Liebe Frau Weber, ich kann heute leider nicht zum Termin kommen. Mein Kind ist krank. Viele Grüße, Petra Lang",
+          "Papa, ich bin im Bus und mein Handy ist fast leer. Kannst du mich um 20 Uhr am Bahnhof abholen? Lisa",
+          "Lieber Herr Kaya, vielen Dank für die schönen Blumen! Ich freue mich sehr. Herzliche Grüße, Anna Roth"
+        ],
+        "targets": [
+          "Die Person sagt einen Termin ab.",
+          "Die Person bedankt sich.",
+          "Die Person lädt zu einer Feier ein.",
+          "Die Person möchte abgeholt werden.",
+          "Die Person sucht eine Wohnung."
+        ],
+        "answers": [
+          2,
+          0,
+          3,
+          1
+        ],
+        "allowNone": false
+      }
+    },
+    {
       "id": "a1-listening-public-announcements__ex0",
       "lessonId": "a1-listening-public-announcements",
       "track": "generic",
@@ -1108,6 +1191,80 @@
       "content": {
         "textWithBlank": "Schild: 'Samstag und Sonntag ___' (word meaning closed: geschlossen)",
         "correctAnswer": "geschlossen"
+      }
+    },
+    {
+      "id": "a1-reading-classified-ads-notices__ex3",
+      "lessonId": "a1-reading-classified-ads-notices",
+      "track": "generic",
+      "type": "matching",
+      "content": {
+        "instruction": {
+          "en": "Read the situations and the ads. Which ad fits each situation? If no ad fits, choose x.",
+          "de": "Lies die Situationen und die Anzeigen. Welche Anzeige passt? Passt keine Anzeige, wähle x."
+        },
+        "items": [
+          "Sie möchten Deutsch lernen. Sie haben nur am Abend Zeit.",
+          "Ihr Kind möchte schwimmen lernen.",
+          "Sie brauchen einen Tisch für Ihre Küche.",
+          "Sie möchten am Sonntag Brot kaufen."
+        ],
+        "targets": [
+          "Sprachschule Lingua: Deutschkurse für Anfänger. Montag bis Donnerstag, 18:30–20:00 Uhr. Tel. 0221 45 67 89.",
+          "Möbel gebraucht! Tisch und 4 Stühle, nur 60 Euro. Abholen am Samstag. Tel. 0176 22 33 44.",
+          "Hallenbad Nord: Schwimmkurse für Kinder ab 5 Jahren. Mittwoch und Freitag, 15 Uhr.",
+          "Bäckerei Krause: Montag bis Samstag 6–18 Uhr. Sonntag geschlossen.",
+          "Volkshochschule: Deutschkurs am Vormittag. Montag bis Freitag, 9–12 Uhr, Raum 12."
+        ],
+        "answers": [
+          0,
+          2,
+          1,
+          null
+        ],
+        "allowNone": true
+      }
+    },
+    {
+      "id": "a1-reading-classified-ads-notices__ex4",
+      "lessonId": "a1-reading-classified-ads-notices",
+      "track": "generic",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the notice in the building. Choose the right answer for each question.",
+          "de": "Lies den Aushang im Haus. Wähle für jede Frage die richtige Antwort."
+        },
+        "passage": "Hausverwaltung Sonnenweg 12\n\nLiebe Mieterinnen und Mieter,\nam Dienstag, 14. Mai, gibt es von 8 bis 13 Uhr kein Wasser. Ein Techniker repariert die Wasserleitung im Keller. Bitte stellen Sie am Montagabend Wasser in Flaschen bereit.\nHaben Sie Fragen? Rufen Sie Herrn Brandt an: 0351 77 88 99 (Montag bis Freitag, 9–16 Uhr).\n\nVielen Dank!\nIhre Hausverwaltung",
+        "questions": [
+          {
+            "question": "Wann gibt es kein Wasser?",
+            "options": [
+              "Am Montagabend",
+              "Am Dienstag von 8 bis 13 Uhr",
+              "Am Dienstag von 9 bis 16 Uhr"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Was macht der Techniker?",
+            "options": [
+              "Er repariert die Wasserleitung.",
+              "Er bringt Wasser in Flaschen.",
+              "Er ruft Herrn Brandt an."
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Wann kann man Herrn Brandt anrufen?",
+            "options": [
+              "Am Samstag um 10 Uhr",
+              "Am Montag um 18 Uhr",
+              "Am Mittwoch um 11 Uhr"
+            ],
+            "correctIndex": 2
+          }
+        ]
       }
     },
     {

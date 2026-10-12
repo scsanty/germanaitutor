@@ -1075,6 +1075,98 @@
       }
     },
     {
+      "id": "b2-sachtexte-global-detailverstehen__ex2",
+      "lessonId": "b2-sachtexte-global-detailverstehen",
+      "track": "generic",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the factual text. Some questions ask for the gist, others for details or the meaning of a term in context. Choose the right answer.",
+          "de": "Lesen Sie den Sachtext. Einige Fragen zielen auf die Kernaussage, andere auf Details oder die Bedeutung eines Begriffs im Kontext. Wählen Sie die richtige Antwort."
+        },
+        "passage": "Landwirtschaft im Hochhaus: Zukunftsmodell oder Nischenprodukt?\n\nIn mehreren europäischen Großstädten wachsen Salat, Kräuter und Erdbeeren inzwischen nicht mehr auf dem Feld, sondern in mehrstöckigen Regalanlagen in ehemaligen Lagerhallen. Beim sogenannten Vertical Farming werden die Pflanzen ohne Erde in Nährlösungen gezogen und mit LED-Licht beleuchtet. Befürworter verweisen auf drei Vorteile: Erstens benötigen die Anlagen pro Kilogramm Ertrag deutlich weniger Wasser als der konventionelle Anbau. Zweitens kommen sie ohne Pestizide aus, weil Schädlinge in den geschlossenen Räumen kaum auftreten. Drittens verkürzen sich die Transportwege, da die Produktion direkt in der Stadt stattfindet.\n\nKritiker halten dem entgegen, dass der Energiebedarf erheblich ist. Was die Sonne auf dem Feld kostenlos liefert, muss hier mit Strom erzeugt werden. Ob die Ökobilanz tatsächlich besser ausfällt, hängt daher maßgeblich davon ab, woher dieser Strom stammt. Hinzu kommt, dass sich bislang nur schnell wachsende Pflanzen mit hohem Verkaufspreis rentieren. Getreide oder Kartoffeln lassen sich auf diese Weise nicht wirtschaftlich anbauen.\n\nMehrere Betreiber mussten in den vergangenen Jahren Insolvenz anmelden und ihre Anlagen schließen, als die Strompreise stark stiegen. Andere Unternehmen setzen hingegen auf eigene Solaranlagen und langfristige Verträge mit regionalen Supermärkten, um ihre Kosten planbar zu halten.\n\nZusammenfassend lässt sich sagen, dass Vertical Farming die herkömmliche Landwirtschaft nicht ersetzen, wohl aber in bestimmten Bereichen sinnvoll ergänzen kann.",
+        "questions": [
+          {
+            "question": "Welche Kernaussage trifft der Text?",
+            "options": [
+              "Vertical Farming wird die klassische Landwirtschaft bald vollständig ablösen.",
+              "Vertical Farming kann den konventionellen Anbau in einzelnen Bereichen ergänzen, aber nicht ersetzen.",
+              "Vertical Farming ist wegen seines hohen Wasserverbrauchs ökologisch fragwürdig."
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Warum kann beim Vertical Farming auf Pestizide verzichtet werden?",
+            "options": [
+              "Weil in den geschlossenen Räumen kaum Schädlinge auftreten.",
+              "Weil die Pflanzen ohne Erde wachsen.",
+              "Weil das LED-Licht Schädlinge vertreibt."
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Wovon hängt laut Text ab, ob die Ökobilanz besser ausfällt?",
+            "options": [
+              "Von der Größe der Lagerhallen",
+              "Von der Art der angebauten Pflanzen",
+              "Von der Herkunft des Stroms"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "question": "Welche Einschränkung nennt der Text in Bezug auf die Wirtschaftlichkeit?",
+            "options": [
+              "Supermärkte weigern sich, die Produkte zu verkaufen.",
+              "Bisher lohnen sich nur schnell wachsende Pflanzen mit hohem Verkaufspreis.",
+              "Die Anlagen verbrauchen zu viel Wasser."
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Was bedeutet „Insolvenz anmelden“ in diesem Zusammenhang?",
+            "options": [
+              "Staatliche Fördermittel beantragen",
+              "Eine zusätzliche Anlage eröffnen",
+              "Zahlungsunfähig werden und den Betrieb aufgeben müssen"
+            ],
+            "correctIndex": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "b2-sachtexte-global-detailverstehen__ex3",
+      "lessonId": "b2-sachtexte-global-detailverstehen",
+      "track": "generic",
+      "type": "matching",
+      "content": {
+        "instruction": {
+          "en": "Read the four paragraphs of a report on a four-day-week pilot. Match each paragraph to the heading that sums up its core statement. One heading is left over.",
+          "de": "Lesen Sie die vier Absätze eines Berichts über ein Pilotprojekt zur Vier-Tage-Woche. Ordnen Sie jedem Absatz die Überschrift zu, die seine Kernaussage zusammenfasst. Eine Überschrift bleibt übrig."
+        },
+        "items": [
+          "In einem sechsmonatigen Pilotprojekt haben 45 Unternehmen aus verschiedenen Branchen ihre Arbeitszeit auf vier Tage pro Woche reduziert – bei vollem Lohn. Begleitet wurde der Versuch von einem Forschungsteam, das die Beschäftigten regelmäßig befragte und betriebliche Kennzahlen auswertete.",
+          "Die Befragungen zeigen ein deutliches Bild: Die Teilnehmenden berichteten über weniger Stress, besseren Schlaf und mehr Zeit für Familie und Hobbys. Krankheitsbedingte Fehltage gingen im Vergleich zum Vorjahreszeitraum spürbar zurück.",
+          "Gemischt fiel die Bilanz hingegen bei der Produktivität aus. Während Büros und Agenturen ihren Umsatz halten konnten, hatten Betriebe mit Schichtdienst, etwa in der Pflege, Schwierigkeiten, die fehlenden Stunden auszugleichen, und mussten zusätzliches Personal einstellen.",
+          "Die Forschenden räumen ein, dass ihre Ergebnisse nur begrenzt verallgemeinerbar sind. Die Betriebe hatten sich freiwillig gemeldet und standen dem Modell daher von Anfang an positiv gegenüber."
+        ],
+        "targets": [
+          "Grenzen der Aussagekraft",
+          "Aufbau und Ablauf der Untersuchung",
+          "Forderungen der Gewerkschaften",
+          "Unterschiede zwischen den Branchen",
+          "Positive Auswirkungen auf das Wohlbefinden"
+        ],
+        "answers": [
+          1,
+          4,
+          3,
+          0
+        ],
+        "allowNone": false
+      }
+    },
+    {
       "id": "b2-kommentare-standpunkte-erfassen__ex0",
       "lessonId": "b2-kommentare-standpunkte-erfassen",
       "track": "generic",
@@ -1098,6 +1190,135 @@
       "content": {
         "prompt": "Erklären Sie die Bedeutung des Wortes 'scheinbar' im Kontrast zu 'anscheinend' in einem journalistischen Text.",
         "modelAnswer": "'Scheinbar' drückt aus, dass etwas nur so aussieht, in Wirklichkeit aber nicht so ist. 'Anscheinend' bedeutet, dass eine Vermutung wahrscheinlich zutrifft."
+      }
+    },
+    {
+      "id": "b2-kommentare-standpunkte-erfassen__ex2",
+      "lessonId": "b2-kommentare-standpunkte-erfassen",
+      "track": "generic",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the satirical column. Pay attention to irony, reported speech and evaluative words. Choose the right answer for each question.",
+          "de": "Lesen Sie die Glosse. Achten Sie auf Ironie, indirekte Rede und wertende Wörter. Wählen Sie für jede Frage die richtige Antwort."
+        },
+        "passage": "Glosse: Mitreden per Mausklick\n\nDie Stadt hat es wieder einmal geschafft: Seit Montag gibt es das neue Online-Portal „Stadt im Dialog“, auf dem Bürgerinnen und Bürger angeblich bei allen wichtigen Entscheidungen mitreden können. Der Oberbürgermeister sprach bei der Vorstellung von einem „Meilenstein der Demokratie“. Die Bürger hätten nun endlich die Möglichkeit, ihre Ideen direkt einzubringen.\n\nWer das Portal ausprobiert, staunt. Zunächst muss man sich mit Ausweis, Steuernummer und einer Bestätigung per Brief registrieren – Bearbeitungszeit: bis zu drei Wochen. Ist diese Hürde genommen, darf man zu genau zwei Themen abstimmen: über die Farbe der neuen Parkbänke und über den Namen eines Kreisverkehrs. Über den umstrittenen Abriss des Hallenbads, der die Stadt seit Monaten beschäftigt, kann man dagegen nicht abstimmen. Dieses Thema sei, so ein Sprecher, „zu komplex für eine Online-Beteiligung“.\n\nMan muss der Verwaltung ja dankbar sein: Wer wollte schon über Schwimmbäder entscheiden, wenn er stattdessen zwischen Dunkelgrün und Anthrazit wählen darf? Das Portal hat übrigens 280.000 Euro gekostet. Ob man darüber auch hätte abstimmen dürfen, ist nicht bekannt.\n\nBürgernähe sieht wohl anders aus.",
+        "questions": [
+          {
+            "question": "Welche Haltung nimmt der Autor gegenüber dem neuen Portal ein?",
+            "options": [
+              "Er begrüßt es als wichtigen Fortschritt für die Demokratie.",
+              "Er hält es für eine Scheinbeteiligung ohne echten Einfluss.",
+              "Er findet die Idee gut und kritisiert nur die lange Registrierung."
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Welche Funktion hat der Konjunktiv in „Die Bürger hätten nun endlich die Möglichkeit …“?",
+            "options": [
+              "Er gibt die Aussage des Oberbürgermeisters wieder, ohne dass der Autor sie sich zu eigen macht.",
+              "Er drückt einen persönlichen Wunsch des Autors aus.",
+              "Er kennzeichnet eine Tatsache, die der Autor selbst überprüft hat."
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Wie ist der Satz „Man muss der Verwaltung ja dankbar sein“ gemeint?",
+            "options": [
+              "Als aufrichtiger Dank an die Verwaltung",
+              "Als Aufforderung an die Leser, sich auf dem Portal zu registrieren",
+              "Ironisch: Der Autor kritisiert, dass nur über Nebensächlichkeiten abgestimmt werden darf."
+            ],
+            "correctIndex": 2
+          },
+          {
+            "question": "Was erfährt man über den Abriss des Hallenbads?",
+            "options": [
+              "Die Bürger haben bereits online darüber abgestimmt.",
+              "Er ist umstritten, steht aber auf dem Portal nicht zur Abstimmung.",
+              "Das Portal wurde eigens für diese Frage eingerichtet."
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Was signalisiert das Wort „angeblich“ im ersten Absatz?",
+            "options": [
+              "Dass die Information aus einer verlässlichen Quelle stammt",
+              "Dass das Portal noch nicht freigeschaltet ist",
+              "Dass der Autor die Behauptung der Stadt bezweifelt"
+            ],
+            "correctIndex": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "b2-kommentare-standpunkte-erfassen__ex3",
+      "lessonId": "b2-kommentare-standpunkte-erfassen",
+      "track": "generic",
+      "type": "cloze",
+      "content": {
+        "instruction": {
+          "en": "Read the commentary. Choose the word that fits each gap. Watch for reported speech in Konjunktiv I and for evaluative words that show the author's distance.",
+          "de": "Lesen Sie den Kommentar. Wählen Sie für jede Lücke das passende Wort. Achten Sie auf den Konjunktiv I der indirekten Rede und auf wertende Wörter, mit denen der Autor Distanz zeigt."
+        },
+        "text": "Das grüne Versprechen\n\nDer Hersteller spart nicht mit großen Worten: Sein neuer Elektroroller {{1}} „der umweltfreundlichste Roller der Welt“. Der Akku {{2}} mindestens 80 Kilometer, und das Gerät sei in zehn Minuten vollständig aufgeladen. Ein Test der Verbraucherzentrale zeigt allerdings, dass der Roller {{3}} nach 35 Kilometern stehen bleibt. Auch bei der Ladezeit klaffen Werbung und Wirklichkeit auseinander: Statt zehn Minuten dauerte es im Test fast zwei Stunden. Auf Nachfrage erklärte das Unternehmen, die Testbedingungen entsprächen nicht dem realen Fahrverhalten seiner Kundschaft – welche Kundschaft das sein soll, blieb offen.\n\nDie {{4}} grüne Technik hat außerdem einen weiteren Haken: Die Akkus lassen sich nicht austauschen und landen nach wenigen Jahren im Müll. Dass der Konzern seine Werbung trotz dieser Ergebnisse nicht ändert, ist mehr als {{5}}. Kundinnen und Kunden sollten es sich {{6}} gut überlegen, ob sie 1.200 Euro für ein solches Versprechen ausgeben.",
+        "gaps": [
+          {
+            "mode": "select",
+            "options": [
+              "seien",
+              "habe",
+              "sei"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "mode": "select",
+            "options": [
+              "hält",
+              "halte",
+              "hielt"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "mode": "select",
+            "options": [
+              "schon",
+              "angeblich",
+              "hoffentlich"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "mode": "select",
+            "options": [
+              "anscheinend",
+              "tatsächlich",
+              "scheinbar"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "mode": "select",
+            "options": [
+              "gelungen",
+              "fragwürdig",
+              "selbstverständlich"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "mode": "select",
+            "options": [
+              "daher",
+              "kaum",
+              "obwohl"
+            ],
+            "correctIndex": 0
+          }
+        ]
       }
     },
     {
