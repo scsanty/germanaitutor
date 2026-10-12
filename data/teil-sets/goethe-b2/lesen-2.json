@@ -1,0 +1,220 @@
+{
+  "formatId": "goethe-b2",
+  "partId": "lesen-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-b2__lesen-2__s01",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Abenteuer vor der Haustür\n\nWer an Abenteuer denkt, hat meist Bilder von fernen Ländern im Kopf: eine Wanderung durch die Anden, eine Kajaktour in Norwegen, eine Nacht in der Wüste. Für solche Reisen braucht man allerdings Zeit, Geld und einen langen Urlaub. {{1}} Gemeint sind kleine Ausflüge, die sich nach Feierabend oder am Wochenende verwirklichen lassen und trotzdem das Gefühl vermitteln, etwas Besonderes zu erleben.\n\nDas bekannteste Beispiel ist die Nacht im Freien. Man fährt nach der Arbeit mit dem Zug oder dem Fahrrad aus der Stadt hinaus, sucht sich einen Platz auf einem Hügel, schaut sich den Sonnenuntergang an und schläft unter freiem Himmel. {{2}} Andere Mikroabenteuer sind noch einfacher: einmal den eigenen Wohnort zu Fuß umrunden, einem Bach bis zu seiner Quelle folgen oder im Winter in einem See baden.\n\nDie Idee stammt aus Großbritannien, hat aber längst auch in Deutschland viele Anhänger gefunden. In sozialen Netzwerken teilen Tausende ihre Erlebnisse, und Verlage bringen Bücher mit Vorschlägen für jede Region heraus. {{3}} Sie erklären, dass Menschen Erlebnisse vor allem dann als wertvoll empfinden, wenn sie ihre Routine durchbrechen. Dafür muss man nicht weit reisen; es reicht, Gewohntes auf neue Weise zu tun.\n\nWer selbst ein Mikroabenteuer plant, sollte allerdings einiges beachten. {{4}} Wer auf Nummer sicher gehen will, informiert sich vorher bei der Gemeinde oder sucht sich einen der offiziellen Trekkingplätze, die es inzwischen in mehreren Regionen gibt. Außerdem gilt: Müll wird wieder mitgenommen, und offenes Feuer ist tabu.\n\nKritiker bemängeln, dass aus einer schlichten Idee inzwischen ein Geschäft geworden ist. {{5}} Dabei war der Grundgedanke gerade, dass man für ein kleines Abenteuer kaum etwas braucht: einen Schlafsack, eine Isomatte, etwas zu essen – und den Mut, einfach loszugehen.\n\nViele, die es ausprobiert haben, berichten, dass sich ihr Blick auf die eigene Umgebung verändert hat. {{6}} Vielleicht ist das die wichtigste Erkenntnis: Das Abenteuer beginnt oft dort, wo man es am wenigsten erwartet.",
+          "gaps": [
+            {
+              "mode": "bank",
+              "answer": 3
+            },
+            {
+              "mode": "bank",
+              "answer": 7
+            },
+            {
+              "mode": "bank",
+              "answer": 1
+            },
+            {
+              "mode": "bank",
+              "answer": 4
+            },
+            {
+              "mode": "bank",
+              "answer": 6
+            },
+            {
+              "mode": "bank",
+              "answer": 2
+            }
+          ],
+          "bank": [
+            "Für die Übernachtung im Freien braucht man daher unbedingt ein teures Zelt.",
+            "Psychologen wundert diese Begeisterung nicht.",
+            "Der Wald am Stadtrand, an dem sie jahrelang achtlos vorbeigefahren sind, wird plötzlich zu einem Ort voller Möglichkeiten.",
+            "Genau hier setzt die Idee der sogenannten Mikroabenteuer an.",
+            "So ist das Übernachten im Wald in vielen Bundesländern grundsätzlich verboten.",
+            "Viele Teilnehmer sind deshalb nach ihrer ersten Nacht im Freien nie wieder losgezogen.",
+            "Outdoorläden bieten spezielle Ausrüstung an, und manche Veranstalter verkaufen geführte Touren für dreistellige Beträge.",
+            "Am nächsten Morgen ist man rechtzeitig zurück im Büro – mit Gras in den Haaren und einem Lächeln im Gesicht."
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Sentence d fits gap 1: big trips need time and money, and \"genau hier\" the idea of micro-adventures comes in. The next sentence \"Gemeint sind kleine Ausflüge …\" explains this new term, so it needs it right before.",
+            "de": "Satz d passt in Lücke 1: Große Reisen kosten Zeit und Geld, „genau hier“ setzt die Idee der Mikroabenteuer an. Der nächste Satz „Gemeint sind …“ erklärt diesen Begriff."
+          },
+          {
+            "en": "Sentence h fits gap 2: it continues the night outdoors after work – you sleep outside and are back at the office \"am nächsten Morgen\".",
+            "de": "Satz h passt in Lücke 2: Man schläft nach der Arbeit draußen und ist „am nächsten Morgen“ wieder im Büro. Das führt die Nacht im Freien weiter."
+          },
+          {
+            "en": "Sentence b fits gap 3: \"diese Begeisterung\" refers to the thousands of posts and the books, and the pronoun \"Sie erklären …\" in the next sentence refers to the psychologists.",
+            "de": "Satz b passt in Lücke 3: „diese Begeisterung“ meint die vielen Beiträge und Bücher. Mit „Sie erklären …“ im nächsten Satz sind die Psychologen gemeint."
+          },
+          {
+            "en": "Sentence e fits gap 4: \"So …\" gives an example of what one must observe, and the next sentence shows how to be on the safe side (ask the municipality, use official trekking sites).",
+            "de": "Satz e passt in Lücke 4: Er nennt ein Beispiel für das, was man beachten muss (Übernachten im Wald ist oft verboten). Danach folgt, wie man sicher sein kann."
+          },
+          {
+            "en": "Sentence g fits gap 5: shops selling special equipment and expensive guided tours show how the idea became \"ein Geschäft\". The next sentence contrasts this with \"Dabei … kaum etwas braucht\". Sentence a (an expensive tent is necessary) contradicts this.",
+            "de": "Satz g passt in Lücke 5: Spezielle Ausrüstung und teure Touren zeigen, dass die Idee ein Geschäft geworden ist. Danach kommt der Gegensatz: Eigentlich braucht man kaum etwas."
+          },
+          {
+            "en": "Sentence c fits gap 6: the forest they used to drive past now becomes a place full of possibilities – an example of their changed view of their surroundings. Sentence f (they never went again) contradicts the positive reports.",
+            "de": "Satz c passt in Lücke 6: Der Wald am Stadtrand ist plötzlich interessant. Das ist ein Beispiel dafür, dass sich der Blick auf die Umgebung verändert hat."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b2__lesen-2__s02",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Mit 71 zurück in den Hörsaal\n\nMontagmorgen, zehn Uhr, Hörsaal 3 der Universität: Zwischen den Studierenden, die gerade ihre Laptops aufklappen, sitzt ein Mann mit grauen Haaren und einem Notizblock. Klaus Berger ist 71 Jahre alt und hört eine Vorlesung über Kunstgeschichte. {{1}} Die meisten Universitäten bieten dafür eigene Programme an, oft unter dem Namen „Studium im Alter“.\n\nAnders als reguläre Studierende brauchen die Seniorinnen und Senioren in der Regel kein Abitur. Sie zahlen eine Gebühr pro Semester und dürfen dafür ausgewählte Lehrveranstaltungen besuchen. {{2}} Für Klaus Berger ist genau das der Reiz: „Ich lerne zum ersten Mal in meinem Leben nur, weil es mich interessiert, und nicht, weil ich eine Note brauche.“\n\nDie Motive sind unterschiedlich. Manche holen nach, was ihnen in jungen Jahren nicht möglich war, weil sie früh Geld verdienen mussten. Andere wollen geistig fit bleiben. {{3}} Hinzu kommt der soziale Aspekt: Wer jede Woche in die Uni geht, hat einen festen Termin im Kalender und trifft Menschen mit ähnlichen Interessen.\n\nNicht überall sind die älteren Gäste jedoch willkommen. {{4}} Einige Hochschulen haben deshalb die Zahl der Gasthörer in stark besuchten Vorlesungen begrenzt.\n\nAuch im Seminar kann es zu Spannungen kommen. Wenn ältere Teilnehmer ausführlich von ihren eigenen Erfahrungen erzählen, verdrehen die Jüngeren manchmal die Augen. {{5}} Meistens überwiegen aber die positiven Erfahrungen.\n\nEine Dozentin für Zeitgeschichte erzählt, dass gerade die Mischung der Generationen ihre Seminare lebendiger mache. {{6}} „So etwas kann kein Lehrbuch ersetzen“, sagt sie. Und Klaus Berger? Er hat sich für das nächste Semester bereits für einen Kurs in Philosophie angemeldet.",
+          "gaps": [
+            {
+              "mode": "bank",
+              "answer": 3
+            },
+            {
+              "mode": "bank",
+              "answer": 0
+            },
+            {
+              "mode": "bank",
+              "answer": 6
+            },
+            {
+              "mode": "bank",
+              "answer": 4
+            },
+            {
+              "mode": "bank",
+              "answer": 7
+            },
+            {
+              "mode": "bank",
+              "answer": 2
+            }
+          ],
+          "bank": [
+            "Prüfungen müssen sie dagegen nicht ablegen, und einen Abschluss erhalten sie auch nicht.",
+            "Deshalb ist das Angebot für Rentner in den meisten Städten kostenlos.",
+            "Wenn es um die Nachkriegszeit geht, können die Älteren oft aus eigener Erinnerung berichten.",
+            "Er ist längst nicht der Einzige: An deutschen Hochschulen sind inzwischen viele Tausend Gasthörerinnen und Gasthörer über 60 eingeschrieben.",
+            "Vor allem in beliebten Fächern klagen junge Studierende darüber, dass ihnen die Älteren die Sitzplätze wegnehmen.",
+            "Wer das Studium erfolgreich abschließt, erhält am Ende ein Zeugnis mit Note.",
+            "Fachleute bestätigen, dass regelmäßiges Lernen im Alter das Gedächtnis trainieren kann.",
+            "Umgekehrt ärgern sich manche Senioren, wenn ihre jungen Kommilitonen während der Sitzung ständig aufs Handy schauen."
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Sentence d fits gap 1: after the example of Klaus Berger, it says he is not the only one. The next sentence's \"dafür\" (programmes for these older guest students) needs this group to be mentioned first.",
+            "de": "Satz d passt in Lücke 1: Klaus Berger ist „nicht der Einzige“, es gibt viele ältere Gasthörer. Das Wort „dafür“ im nächsten Satz bezieht sich auf diese Gruppe."
+          },
+          {
+            "en": "Sentence a fits gap 2: no exams and no degree – \"genau das\" is what Klaus likes, because he learns \"nicht, weil ich eine Note brauche\". Sentence f (certificate with a grade) contradicts this.",
+            "de": "Satz a passt in Lücke 2: Es gibt keine Prüfungen und keinen Abschluss. Genau das gefällt Klaus Berger, denn er braucht keine Note. Satz f widerspricht dem."
+          },
+          {
+            "en": "Sentence g fits gap 3: it supports the motive \"geistig fit bleiben\" with the experts' view on memory, and \"Hinzu kommt der soziale Aspekt\" then adds a second benefit.",
+            "de": "Satz g passt in Lücke 3: Er passt zum Motiv „geistig fit bleiben“ (Gedächtnis). Danach kommt mit „Hinzu kommt“ ein weiterer Vorteil."
+          },
+          {
+            "en": "Sentence e fits gap 4: it explains why the older guests are not welcome everywhere (they take the seats), and \"deshalb\" in the next sentence leads to limiting their number in crowded lectures.",
+            "de": "Satz e passt in Lücke 4: Junge Studierende klagen über fehlende Sitzplätze. „Deshalb“ begrenzen einige Hochschulen die Zahl der Gasthörer."
+          },
+          {
+            "en": "Sentence h fits gap 5: \"Umgekehrt\" mirrors the previous sentence – the young roll their eyes at the old, and the old are annoyed by the young looking at their phones.",
+            "de": "Satz h passt in Lücke 5: „Umgekehrt“ zeigt die andere Seite: Die Jungen ärgern sich über die Alten, und die Alten ärgern sich über die Handys der Jungen."
+          },
+          {
+            "en": "Sentence c fits gap 6: older people reporting from their own memories is an example of how the mix makes seminars livelier, and the lecturer comments \"So etwas kann kein Lehrbuch ersetzen\". Sentence b (free of charge) contradicts the fee mentioned earlier.",
+            "de": "Satz c passt in Lücke 6: Die Älteren erzählen aus eigener Erinnerung. Das macht das Seminar lebendig, und „so etwas“ kann kein Lehrbuch ersetzen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b2__lesen-2__s03",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Würfeln statt Wischen\n\nLange galten Brettspiele als etwas für verregnete Sonntage im Familienkreis. Doch seit einigen Jahren erleben sie einen erstaunlichen Aufschwung. {{1}} Vor allem junge Erwachsene, die mit Smartphone und Spielkonsole groß geworden sind, entdecken das Spielen am Tisch neu.\n\nWoran liegt das? Forscher vermuten, dass gerade die Digitalisierung das analoge Spiel wieder attraktiv macht. {{2}} Hinzu kommt das gemeinsame Erlebnis: Man sitzt sich gegenüber, lacht, ärgert sich und sieht dem anderen dabei ins Gesicht.\n\nAuch die Spiele selbst haben sich verändert. {{3}} Besonders beliebt sind kooperative Spiele, bei denen alle zusammen gegen das Spiel antreten statt gegeneinander.\n\nIn vielen Städten haben inzwischen Spielecafés eröffnet. {{4}} Wer ein Spiel nicht kennt, muss sich nicht durch lange Anleitungen kämpfen: Die Mitarbeiterinnen und Mitarbeiter erklären die Regeln direkt am Tisch.\n\nPädagogen sehen die Entwicklung positiv. {{5}} Aber auch Erwachsene profitieren, denn Strategiespiele trainieren das logische Denken und die Konzentration.\n\nAllerdings hat der Boom auch eine Kehrseite. Weil jedes Jahr über tausend neue Spiele auf den Markt kommen, verlieren selbst begeisterte Fans manchmal den Überblick. {{6}} Die Klassiker dagegen bleiben: Manche Spiele werden seit Jahrzehnten fast unverändert verkauft.",
+          "gaps": [
+            {
+              "mode": "bank",
+              "answer": 6
+            },
+            {
+              "mode": "bank",
+              "answer": 2
+            },
+            {
+              "mode": "bank",
+              "answer": 0
+            },
+            {
+              "mode": "bank",
+              "answer": 7
+            },
+            {
+              "mode": "bank",
+              "answer": 5
+            },
+            {
+              "mode": "bank",
+              "answer": 3
+            }
+          ],
+          "bank": [
+            "Statt nur zu würfeln und Figuren zu ziehen, müssen die Spieler heute oft planen, verhandeln oder gemeinsam eine Aufgabe lösen.",
+            "Deshalb spielen die meisten Jugendlichen heute lieber allein am Computer.",
+            "Wer den ganzen Tag auf Bildschirme schaut, sehnt sich abends nach etwas, das man anfassen kann.",
+            "Viele Titel verschwinden deshalb schon nach wenigen Monaten wieder aus den Regalen.",
+            "Ein Spieleabend zu Hause ist deshalb heute viel teurer als früher.",
+            "Beim Spielen lernen Kinder, Regeln einzuhalten, mit Niederlagen umzugehen und zu warten, bis sie an der Reihe sind.",
+            "Die Branche meldet Jahr für Jahr steigende Umsätze, und auf Spielemessen drängen sich Zehntausende Besucher.",
+            "Für einen kleinen Eintritt kann man dort aus Hunderten von Spielen auswählen und bekommt dazu Getränke und Snacks."
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Sentence g fits gap 1: rising sales and crowded fairs give evidence for the \"erstaunlichen Aufschwung\" mentioned just before.",
+            "de": "Satz g passt in Lücke 1: Steigende Umsätze und volle Messen zeigen den „Aufschwung“, von dem der Satz davor spricht."
+          },
+          {
+            "en": "Sentence c fits gap 2: it explains how digitalisation makes analogue games attractive – after screens all day, people want something they can touch. \"Hinzu kommt\" then adds a second reason. Sentence b (young people prefer playing alone at the computer) contradicts the text.",
+            "de": "Satz c passt in Lücke 2: Er erklärt, warum die Digitalisierung Brettspiele attraktiv macht. Mit „Hinzu kommt“ folgt ein zweiter Grund. Satz b widerspricht dem Text."
+          },
+          {
+            "en": "Sentence a fits gap 3: it says how the games have changed (planning, negotiating, solving a task together), which leads to the cooperative games in the next sentence.",
+            "de": "Satz a passt in Lücke 3: Er beschreibt, wie sich die Spiele verändert haben. Das „gemeinsam eine Aufgabe lösen“ führt zu den kooperativen Spielen."
+          },
+          {
+            "en": "Sentence h fits gap 4: \"dort\" refers to the game cafés, and it describes what they offer before the next sentence adds that staff explain the rules.",
+            "de": "Satz h passt in Lücke 4: „dort“ meint die Spielecafés. Der Satz beschreibt ihr Angebot, danach geht es um die Erklärung der Regeln."
+          },
+          {
+            "en": "Sentence f fits gap 5: it gives the educators' reason (children learn rules, losing and waiting), and the next sentence continues \"Aber auch Erwachsene profitieren\".",
+            "de": "Satz f passt in Lücke 5: Er zeigt, was Kinder beim Spielen lernen. Danach heißt es: „Aber auch Erwachsene profitieren“."
+          },
+          {
+            "en": "Sentence d fits gap 6: because more than a thousand new games appear every year, many titles (\"deshalb\") disappear quickly; \"Die Klassiker dagegen bleiben\" is the contrast. Sentence e (game nights more expensive) has no cause in the text.",
+            "de": "Satz d passt in Lücke 6: Es gibt so viele neue Spiele, „deshalb“ verschwinden viele schnell wieder. Danach folgt der Gegensatz: Die Klassiker bleiben."
+          }
+        ]
+      }
+    }
+  ]
+}

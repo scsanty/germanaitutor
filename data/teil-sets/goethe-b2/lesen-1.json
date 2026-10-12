@@ -1,0 +1,232 @@
+{
+  "formatId": "goethe-b2",
+  "partId": "lesen-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-b2__lesen-1__s01",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Wer hält es für sinnvoll, Kindern zunächst ein Handy ohne Internetzugang zu geben?",
+            "Wer sieht auch Vorteile für den Kontakt zwischen den Generationen?",
+            "Wer kritisiert, dass Erwachsene oft kein gutes Vorbild sind?",
+            "Wer hat dem Druck aus dem Umfeld des Kindes nachgegeben?",
+            "Wer weist darauf hin, dass Firmen die Daten von Kindern auswerten?",
+            "Wer berichtet, dass Streit aus dem Netz in den Unterricht getragen wird?",
+            "Wer hat für die Nutzung zu Hause feste Regeln vereinbart?",
+            "Wer meint, dass digitale Geräte die Kreativität fördern können?",
+            "Wer glaubt nicht, dass ein Verbot das Problem löst?"
+          ],
+          "targets": [
+            "Henrike, 41: Unsere Tochter hat zum neunten Geburtstag ein Smartphone bekommen – eigentlich wollten wir damit bis zum Wechsel aufs Gymnasium warten. Aber in ihrer Klasse hatten fast alle schon eins, und sie fühlte sich ausgeschlossen, weil Verabredungen nur noch über den Gruppenchat liefen. Irgendwann haben wir nachgegeben. Ganz ohne Bedingungen ging das allerdings nicht: Wir haben gemeinsam einen Vertrag aufgeschrieben. Das Handy bleibt nachts in der Küche, neue Apps gibt es nur nach Absprache, und beim Essen sind Bildschirme tabu – auch für uns Eltern. Bisher klappt das erstaunlich gut. Natürlich gibt es manchmal Diskussionen, aber ich habe den Eindruck, dass sie inzwischen selbst ganz gut einschätzen kann, wann es genug ist.",
+            "Jonas, 34: Als Grundschullehrer erlebe ich jeden Tag, was in den Klassenchats passiert. Was abends im Netz geschrieben wird, beschäftigt die Kinder am nächsten Morgen in der Schule – da wird geweint und gestritten, und ich verbringe die erste Stunde oft mit Konfliktgesprächen statt mit Mathematik. Trotzdem halte ich nichts davon, Smartphones einfach zu verbieten. Die Kinder nutzen sie dann heimlich, und niemand spricht mit ihnen darüber. Viel wichtiger fände ich es, dass Medienkompetenz schon ab der ersten Klasse fester Bestandteil des Unterrichts wird. Und den Eltern rate ich: Ein einfaches Tastenhandy, mit dem man telefonieren und kurze Nachrichten schreiben kann, reicht für ein Grundschulkind völlig aus.",
+            "Gisela, 67: Ich bin mit meinen Enkeln oft auf dem Spielplatz, und mir fällt auf, wie wenig dort heute noch gespielt wird. Viele Kinder sitzen auf der Bank und starren auf ein Display. Meine eigenen Kinder waren früher bei jedem Wetter draußen. Ich will aber nicht ungerecht sein: Seit meine Enkelin ein Tablet hat, sprechen wir jeden Sonntag per Video miteinander, obwohl sie 500 Kilometer entfernt wohnt. Das möchte ich nicht mehr missen. Was mich eigentlich mehr ärgert, sind die Erwachsenen. Mein Sohn sagt seinen Kindern ständig, sie sollen das Handy weglegen, und hat dabei selbst dauernd sein eigenes in der Hand. Wie sollen Kinder einen vernünftigen Umgang lernen, wenn es ihnen niemand vormacht?",
+            "Murat, 29: Ich arbeite als Softwareentwickler und habe selbst keine Kinder, aber ich kenne die Technik von innen. Viele Spiele-Apps für Kinder sind kostenlos – bezahlt wird mit Daten. Die Anbieter wissen genau, wie lange ein Kind spielt, wo es sich aufhält und worauf es reagiert. Diese Informationen werden für Werbung genutzt, und kaum ein Elternteil liest die Datenschutzbestimmungen. Gleichzeitig möchte ich vor Panikmache warnen. Ich habe als Zehnjähriger auf dem alten Computer meines Onkels meine ersten kleinen Programme geschrieben, und daraus ist später mein Beruf geworden. Wenn Kinder Geräte aktiv nutzen, also eigene Filme schneiden, Musik machen oder programmieren, statt nur zu konsumieren, können sie dabei unglaublich kreativ werden."
+          ],
+          "answers": [
+            1,
+            2,
+            2,
+            0,
+            3,
+            1,
+            0,
+            3,
+            1
+          ],
+          "allowNone": false
+        },
+        "explanations": [
+          {
+            "en": "Jonas (b) advises parents: \"Ein einfaches Tastenhandy, mit dem man telefonieren und kurze Nachrichten schreiben kann, reicht für ein Grundschulkind völlig aus.\" A basic keypad phone has no internet.",
+            "de": "Jonas (b) rät den Eltern zu einem „einfachen Tastenhandy“. Damit kann man nur telefonieren und Nachrichten schreiben, also kein Internet nutzen."
+          },
+          {
+            "en": "Gisela (c) says that since her granddaughter has a tablet \"sprechen wir jeden Sonntag per Video miteinander\" although she lives 500 km away – an advantage for grandmother and grandchild.",
+            "de": "Gisela (c) spricht jeden Sonntag per Video mit ihrer Enkelin, die weit weg wohnt. Das ist ein Vorteil für Oma und Enkelin."
+          },
+          {
+            "en": "Gisela (c) is annoyed by adults: her son tells his children to put the phone away \"und hat dabei selbst dauernd sein eigenes in der Hand\". She asks how children can learn \"wenn es ihnen niemand vormacht\".",
+            "de": "Gisela (c) ärgert sich über die Erwachsenen: Ihr Sohn hat selbst dauernd das Handy in der Hand. Niemand „macht es vor“, also ist er kein gutes Vorbild."
+          },
+          {
+            "en": "Henrike (a) wanted to wait, but almost everyone in her daughter's class had a phone and she felt excluded: \"Irgendwann haben wir nachgegeben.\"",
+            "de": "Henrike (a) wollte eigentlich warten. Aber fast alle in der Klasse hatten ein Handy, deshalb haben die Eltern „nachgegeben“."
+          },
+          {
+            "en": "Murat (d) explains that free children's apps are \"bezahlt … mit Daten\" and that this information \"wird für Werbung genutzt\".",
+            "de": "Murat (d) erklärt: Kostenlose Apps werden „mit Daten“ bezahlt, und die Firmen nutzen diese Informationen für Werbung."
+          },
+          {
+            "en": "Jonas (b) says what is written in the chats in the evening \"beschäftigt die Kinder am nächsten Morgen in der Schule\" and he spends the first lesson on \"Konfliktgesprächen statt mit Mathematik\".",
+            "de": "Jonas (b) erzählt, dass Streit aus den Klassenchats am nächsten Morgen in der Schule weitergeht. Er führt dann Konfliktgespräche statt Mathematikunterricht."
+          },
+          {
+            "en": "Henrike (a) and her daughter wrote down a contract: the phone stays in the kitchen at night, new apps only after agreement, no screens during meals.",
+            "de": "Henrike (a) hat mit ihrer Tochter einen „Vertrag“ geschrieben: Das Handy bleibt nachts in der Küche, und beim Essen gibt es keine Bildschirme."
+          },
+          {
+            "en": "Murat (d) says that children who use devices actively – making films, music or programs – \"können … unglaublich kreativ werden\".",
+            "de": "Murat (d) meint: Wenn Kinder Geräte aktiv nutzen, zum Beispiel Filme schneiden oder programmieren, können sie sehr kreativ werden."
+          },
+          {
+            "en": "Jonas (b): \"Trotzdem halte ich nichts davon, Smartphones einfach zu verbieten. Die Kinder nutzen sie dann heimlich.\"",
+            "de": "Jonas (b) hält nichts von einem Verbot, weil die Kinder die Smartphones dann heimlich benutzen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b2__lesen-1__s02",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Wer befürchtet, dass die Einrichtungen durch die neuen Kräfte zusätzlich belastet würden?",
+            "Wer findet, dass man nicht nur junge Menschen in die Pflicht nehmen sollte?",
+            "Wer erzählt, dass er durch seinen Dienst Menschen aus ganz anderen Kreisen kennengelernt hat?",
+            "Wer weist auf finanzielle Schwierigkeiten für die Freiwilligen hin?",
+            "Wer meint, dass sich viele Jugendliche schon heute für andere einsetzen?",
+            "Wer betont, dass Hilfskräfte ausgebildetes Personal nicht ersetzen können?",
+            "Wer glaubt, dass ein Zwang die Freude an der Arbeit verderben würde?",
+            "Wer sieht im Pflichtjahr eine Chance für den Zusammenhalt der Gesellschaft?",
+            "Wer hat während des Dienstes entschieden, welchen Beruf er lernen möchte?"
+          ],
+          "targets": [
+            "Fabian, 19: Ich habe nach dem Abitur ein Freiwilliges Soziales Jahr in einem Pflegeheim gemacht, und es war das beste Jahr meines Lebens. Dort habe ich gemerkt, dass ich mit Menschen arbeiten will – im Herbst beginne ich deshalb eine Ausbildung zum Pflegefachmann. Trotzdem bin ich gegen eine Pflicht. Das Jahr hat nur funktioniert, weil ich es selbst wollte. Ich habe Kollegen erlebt, die nur da waren, weil ihre Eltern Druck gemacht hatten, und die hatten keinerlei Spaß an der Arbeit. Mit einem Zwang würde es vielen genauso gehen. Außerdem sollte man ehrlich sein: Von den knapp 500 Euro Taschengeld im Monat kann niemand eine eigene Wohnung bezahlen. Ich konnte mir das Jahr nur leisten, weil ich noch bei meinen Eltern gewohnt habe.",
+            "Ingrid, 52: Ich leite eine Wohneinrichtung für Menschen mit Behinderung und freue mich über jede helfende Hand. Wer jetzt aber glaubt, mit einem Pflichtjahr ließe sich der Personalmangel in sozialen Berufen lösen, irrt sich. Junge Leute ohne Ausbildung dürfen bei uns zum Beispiel keine Medikamente verteilen und keine Pflege übernehmen. Sie können vorlesen, spazieren gehen, beim Essen helfen – das ist wertvoll, aber unsere Fachkräfte können sie nicht ersetzen. Und man darf nicht vergessen: Jede neue Kraft muss eingearbeitet und begleitet werden. Wenn wir plötzlich zwanzig junge Menschen auf einmal bekommen, fehlt meinen Mitarbeiterinnen die Zeit für ihre eigentliche Arbeit.",
+            "Lea, 23: Mich stört an der Debatte vor allem, dass es immer um die Jugend geht. Als ob junge Menschen besonders egoistisch wären! Dabei trainieren viele meiner Freunde ehrenamtlich Kinder im Sportverein, helfen bei der Tafel oder engagieren sich in der Jugendfeuerwehr. Darüber spricht nur niemand. Wenn die Gesellschaft wirklich der Meinung ist, dass ein Dienst für die Allgemeinheit wichtig ist, dann sollte sie ihn von allen verlangen – zum Beispiel auch von Menschen, die gerade in Rente gegangen sind und oft noch viel Energie haben. Dann würde ich ernsthaft darüber nachdenken. Aber nur die Jüngsten zu verpflichten, finde ich ungerecht.",
+            "Werner, 60: Ich habe damals Zivildienst in einem Krankenhaus gemacht und bin bis heute dankbar dafür. Als Sohn eines Arztes aus einem ruhigen Vorort hatte ich vorher nie mit Menschen zu tun, die in schwierigen Verhältnissen leben. Im Krankenhaus habe ich mit Obdachlosen gesprochen, mit Gastarbeitern Karten gespielt und Leute getroffen, denen ich sonst nie begegnet wäre. Heute leben viele junge Leute in ihrer eigenen Blase, im Internet genauso wie im Alltag. Ein gemeinsames Jahr, in dem alle für andere da sind, könnte die Gruppen in unserer Gesellschaft wieder näher zusammenbringen. Ich bin daher klar für eine Dienstpflicht."
+          ],
+          "answers": [
+            1,
+            2,
+            3,
+            0,
+            2,
+            1,
+            0,
+            3,
+            0
+          ],
+          "allowNone": false
+        },
+        "explanations": [
+          {
+            "en": "Ingrid (b) says every new helper \"muss eingearbeitet und begleitet werden\"; with twenty at once \"fehlt meinen Mitarbeiterinnen die Zeit für ihre eigentliche Arbeit\".",
+            "de": "Ingrid (b) sagt: Neue Kräfte muss man einarbeiten. Bei zwanzig neuen jungen Menschen fehlt ihren Mitarbeiterinnen die Zeit für die eigentliche Arbeit."
+          },
+          {
+            "en": "Lea (c) says society should demand the service \"von allen … zum Beispiel auch von Menschen, die gerade in Rente gegangen sind\"; obliging only the youngest is unfair.",
+            "de": "Lea (c) meint, der Dienst sollte für alle gelten, zum Beispiel auch für Rentner. Nur junge Menschen zu verpflichten, findet sie ungerecht."
+          },
+          {
+            "en": "Werner (d), a doctor's son from a quiet suburb, met homeless people and guest workers in the hospital, \"Leute …, denen ich sonst nie begegnet wäre\".",
+            "de": "Werner (d) hat im Zivildienst Obdachlose und Gastarbeiter kennengelernt, also Menschen, die er sonst nie getroffen hätte."
+          },
+          {
+            "en": "Fabian (a): \"Von den knapp 500 Euro Taschengeld im Monat kann niemand eine eigene Wohnung bezahlen.\" He could only afford the year because he lived with his parents.",
+            "de": "Fabian (a) sagt: Mit 500 Euro Taschengeld kann man keine Wohnung bezahlen. Er konnte das Jahr nur machen, weil er bei seinen Eltern gewohnt hat."
+          },
+          {
+            "en": "Lea (c) lists friends who coach children in sports clubs, help at the food bank or are in the youth fire brigade – volunteering that already happens.",
+            "de": "Lea (c) erzählt, dass viele Freunde schon ehrenamtlich arbeiten: im Sportverein, bei der Tafel oder in der Jugendfeuerwehr."
+          },
+          {
+            "en": "Ingrid (b): young helpers may not give medication or do nursing care; their help is valuable \"aber unsere Fachkräfte können sie nicht ersetzen\".",
+            "de": "Ingrid (b) sagt klar: Die jungen Helfer sind wertvoll, aber sie können die Fachkräfte nicht ersetzen."
+          },
+          {
+            "en": "Fabian (a) saw colleagues who were only there because of parental pressure and \"hatten keinerlei Spaß an der Arbeit. Mit einem Zwang würde es vielen genauso gehen.\"",
+            "de": "Fabian (a) hat Kollegen erlebt, die nur wegen Druck da waren und keinen Spaß hatten. Mit einem Zwang ginge es vielen so."
+          },
+          {
+            "en": "Werner (d) hopes a shared year \"könnte die Gruppen in unserer Gesellschaft wieder näher zusammenbringen\".",
+            "de": "Werner (d) glaubt, ein gemeinsames Jahr bringt die Gruppen der Gesellschaft wieder näher zusammen."
+          },
+          {
+            "en": "Fabian (a) noticed during his year in the care home that he wants to work with people and will start training as a \"Pflegefachmann\".",
+            "de": "Fabian (a) hat im Pflegeheim gemerkt, dass er mit Menschen arbeiten will. Deshalb macht er jetzt eine Ausbildung zum Pflegefachmann."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b2__lesen-1__s03",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Wer erzählt von einer Situation, in der nur noch Bargeld funktionierte?",
+            "Wer akzeptiert Kartenzahlungen erst ab einem bestimmten Betrag?",
+            "Wer hält es für unvermeidlich, dass das Bargeld verschwindet?",
+            "Wer weist darauf hin, dass beim Bezahlen mit Karte Spuren entstehen?",
+            "Wer befürchtet, dass ältere Menschen benachteiligt werden?",
+            "Wer beschreibt, dass auch der Umgang mit Bargeld Arbeit macht?",
+            "Wer empfiehlt bestimmten Menschen, bewusst bar zu bezahlen?",
+            "Wer hat im Ausland gute Erfahrungen mit dem bargeldlosen Bezahlen gemacht?",
+            "Wer ärgert sich über die Kosten, die bei jeder Kartenzahlung anfallen?"
+          ],
+          "targets": [
+            "Sabine, 45: Ich betreibe ein kleines Café, und bei mir kann man selbstverständlich auch mit Karte bezahlen. Allerdings verlangt der Anbieter für jede Zahlung eine Gebühr. Bei einem Kaffee für 2,80 Euro bleibt da kaum noch etwas übrig. Deshalb gilt bei mir: Karte erst ab fünf Euro – das sorgt manchmal für Diskussionen, aber anders rechnet es sich einfach nicht. Ich gebe aber zu, dass Bargeld auch nicht kostenlos ist. Jeden Abend zähle ich die Kasse, und zweimal pro Woche bringe ich die Einnahmen zur Bank, was jedes Mal fast eine Stunde dauert. Wenn es eine faire und günstige Lösung für kleine Betriebe gäbe, würde ich sofort umsteigen. So wie es jetzt ist, möchte ich auf Bargeld aber nicht verzichten.",
+            "Paul, 26: Ich habe seit Monaten kein Bargeld mehr in der Tasche. Ich zahle alles mit dem Handy – das geht schneller, und ich muss nie nach Kleingeld suchen. Letzten Sommer war ich drei Wochen in Schweden unterwegs und habe dort kein einziges Mal Scheine gebraucht, nicht einmal auf dem Wochenmarkt. Das war wirklich angenehm. Umso mehr wundere ich mich, wenn ich hier in einer Kneipe stehe und auf dem Schild „Nur Barzahlung“ lese. Ich verstehe, dass manche Leute an Münzen und Scheinen hängen. Aber machen wir uns nichts vor: In zwanzig Jahren wird kaum noch jemand bar bezahlen, egal, was die Politik heute beschließt. Diese Entwicklung lässt sich nicht aufhalten.",
+            "Hildegard, 74: Für junge Leute ist das alles kein Problem, aber viele in meinem Alter kommen mit dem Bezahlen per Handy nicht zurecht. Ich habe eine Bankkarte, mehr nicht. Wenn es irgendwann kein Bargeld mehr gibt, sind wir Älteren die Verlierer, und niemand fragt uns. Außerdem habe ich im letzten Winter etwas erlebt, das mich nachdenklich gemacht hat: Im Supermarkt fiel plötzlich der Strom aus, und die Kartengeräte funktionierten nicht mehr. Wer Scheine im Portemonnaie hatte, konnte trotzdem einkaufen, die anderen mussten ihre vollen Wagen stehen lassen. Seitdem habe ich immer ein bisschen Bargeld dabei.",
+            "Tobias, 38: Ich arbeite in einer Schuldnerberatung, und viele meiner Klientinnen und Klienten haben den Überblick über ihre Ausgaben verloren. Mit Karte oder Handy zahlt man schnell und ohne nachzudenken. Ich rate ihnen deshalb, ihr Wochenbudget am Montag in bar abzuheben und nur damit einzukaufen. Wenn das Portemonnaie leer ist, sieht man sofort, dass Schluss ist. Ein zweiter Punkt wird in der Diskussion oft vergessen: Wer bar bezahlt, bleibt anonym. Jede Kartenzahlung dagegen wird gespeichert, und daraus lässt sich ziemlich genau ablesen, wo jemand einkauft, wann er unterwegs ist und wofür er sein Geld ausgibt."
+          ],
+          "answers": [
+            2,
+            0,
+            1,
+            3,
+            2,
+            0,
+            3,
+            1,
+            0
+          ],
+          "allowNone": false
+        },
+        "explanations": [
+          {
+            "en": "Hildegard (c) describes a power cut in the supermarket: the card machines stopped working, and only people with notes in their purse could still shop.",
+            "de": "Hildegard (c) erzählt vom Stromausfall im Supermarkt. Die Kartengeräte gingen nicht mehr, nur wer Bargeld hatte, konnte einkaufen."
+          },
+          {
+            "en": "Sabine (a): \"Deshalb gilt bei mir: Karte erst ab fünf Euro.\"",
+            "de": "Sabine (a) sagt: „Karte erst ab fünf Euro.“ Kleinere Beträge muss man bar bezahlen."
+          },
+          {
+            "en": "Paul (b): \"In zwanzig Jahren wird kaum noch jemand bar bezahlen … Diese Entwicklung lässt sich nicht aufhalten.\"",
+            "de": "Paul (b) glaubt, dass in zwanzig Jahren kaum noch jemand bar bezahlt. Man kann diese Entwicklung nicht aufhalten."
+          },
+          {
+            "en": "Tobias (d): \"Jede Kartenzahlung dagegen wird gespeichert\", and from this one can see where someone shops and what they spend money on.",
+            "de": "Tobias (d) sagt, dass jede Kartenzahlung gespeichert wird. So kann man sehen, wo und wofür jemand Geld ausgibt."
+          },
+          {
+            "en": "Hildegard (c) says many people her age cannot pay by phone: \"sind wir Älteren die Verlierer, und niemand fragt uns.\"",
+            "de": "Hildegard (c) meint, dass ältere Menschen ohne Bargeld „die Verlierer“ wären, weil viele nicht mit dem Handy bezahlen können."
+          },
+          {
+            "en": "Sabine (a) admits cash is not free either: she counts the till every evening and takes the takings to the bank twice a week, which takes almost an hour each time.",
+            "de": "Sabine (a) zählt jeden Abend die Kasse und bringt das Geld zweimal pro Woche zur Bank. Das kostet Zeit und Arbeit."
+          },
+          {
+            "en": "Tobias (d) advises his debt-counselling clients to withdraw their weekly budget in cash \"und nur damit einzukaufen\".",
+            "de": "Tobias (d) rät Menschen mit Schulden, ihr Wochenbudget bar abzuheben und nur damit einzukaufen."
+          },
+          {
+            "en": "Paul (b) spent three weeks in Sweden and never needed notes, \"nicht einmal auf dem Wochenmarkt. Das war wirklich angenehm.\"",
+            "de": "Paul (b) war drei Wochen in Schweden und hat nie Bargeld gebraucht. Das fand er sehr angenehm."
+          },
+          {
+            "en": "Sabine (a): the provider charges a fee for every payment, and with a 2.80 euro coffee \"bleibt da kaum noch etwas übrig\".",
+            "de": "Sabine (a) muss für jede Kartenzahlung eine Gebühr bezahlen. Bei einem billigen Kaffee verdient sie dann fast nichts mehr."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "formatId": "goethe-b2",
+  "partId": "lesen-5",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-b2__lesen-5__s01",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "(1) Bücher, Hörbücher und Spiele können in der Regel für vier Wochen entliehen werden; für DVDs und Zeitschriften beträgt die Frist eine Woche. (2) Die Frist kann bis zu zweimal um denselben Zeitraum verlängert werden, sofern das Medium nicht von einer anderen Person vorgemerkt wurde. (3) Eine Verlängerung ist über das Kundenkonto im Internet, telefonisch oder an der Servicetheke möglich. Sie muss vor Ablauf der Frist beantragt werden.",
+            "(1) Die Nutzerinnen und Nutzer sind verpflichtet, die entliehenen Medien sorgfältig zu behandeln und vor Nässe und Hitze zu schützen. (2) Wer ein Medium verliert oder beschädigt, hat dafür Ersatz zu leisten. Die Bibliothek entscheidet, ob ein neues Exemplar beschafft oder der Wiederbeschaffungswert in Rechnung gestellt wird; hinzu kommt eine Bearbeitungsgebühr von 5 Euro. (3) Beschädigungen dürfen nicht selbst repariert werden, sondern sind bei der Rückgabe dem Personal mitzuteilen.",
+            "(1) In allen Räumen der Bibliothek ist auf andere Besucherinnen und Besucher Rücksicht zu nehmen. Telefonieren ist nur im Eingangsbereich gestattet. (2) Speisen dürfen nicht mitgebracht werden; Getränke sind nur in verschließbaren Flaschen erlaubt. (3) Taschen, Rucksäcke und Mäntel sind in den Schließfächern im Erdgeschoss abzulegen. Für Wertgegenstände übernimmt die Bibliothek keine Haftung."
+          ],
+          "targets": [
+            "Anmeldung und Bibliotheksausweis",
+            "Leihfristen und Verlängerung",
+            "Gebühren bei verspäteter Rückgabe",
+            "Aufenthalt in den Räumen der Bibliothek",
+            "Nutzung der Computerarbeitsplätze",
+            "Beschädigung und Verlust von Medien",
+            "Öffnungszeiten und Feiertage"
+          ],
+          "answers": [
+            1,
+            5,
+            3
+          ],
+          "allowNone": false
+        },
+        "explanations": [
+          {
+            "en": "The paragraph sets the loan periods (four weeks, one week for DVDs) and explains how to extend them (\"bis zu zweimal … verlängert\"). Late fees are not mentioned, so heading c does not fit.",
+            "de": "Der Paragraph nennt die Leihfristen (vier Wochen, eine Woche) und erklärt die Verlängerung. Von Gebühren für zu spätes Zurückgeben steht hier nichts."
+          },
+          {
+            "en": "It is about lost or damaged items: \"Wer ein Medium verliert oder beschädigt, hat dafür Ersatz zu leisten.\" The 5-euro fee is a processing fee for replacements, not a late fee.",
+            "de": "Es geht um verlorene oder beschädigte Medien: Man muss Ersatz leisten. Die 5 Euro sind eine Bearbeitungsgebühr, keine Gebühr für Verspätung."
+          },
+          {
+            "en": "It sets the rules for behaviour inside the library: consideration, phoning only in the entrance area, no food, bags in lockers.",
+            "de": "Der Paragraph regelt das Verhalten in der Bibliothek: Rücksicht, Telefonieren nur am Eingang, kein Essen, Taschen ins Schließfach."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b2__lesen-5__s02",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "(1) Die Küchen auf den Etagen werden von allen Bewohnerinnen und Bewohnern der jeweiligen Etage gemeinsam genutzt. Geschirr und Töpfe sind unmittelbar nach der Benutzung zu spülen und wegzuräumen. (2) Lebensmittel im Kühlschrank sind mit dem Namen zu kennzeichnen; nicht gekennzeichnete Lebensmittel werden am Monatsende entsorgt. (3) Die Reinigung von Herd, Arbeitsflächen und Boden erfolgt nach dem Putzplan, der an der Küchentür aushängt.",
+            "(1) Bewohnerinnen und Bewohner dürfen Besuch empfangen. Übernachtungsgäste dürfen höchstens drei Nächte hintereinander bleiben und sind vorher bei der Wohnheimverwaltung anzumelden. (2) Für Schäden, die Besucher verursachen, haftet die Person, die sie eingeladen hat. (3) Gäste erhalten keinen eigenen Schlüssel und dürfen die Gemeinschaftsräume nur in Begleitung eines Bewohners nutzen.",
+            "(1) Das Mietverhältnis kann mit einer Frist von drei Monaten zum Ende eines Semesters gekündigt werden. Die Kündigung muss schriftlich erfolgen. (2) Beim Auszug ist das Zimmer gereinigt und mit dem vollständigen Inventar zu übergeben; über die Übergabe wird ein Protokoll angefertigt. (3) Die Kaution wird innerhalb von sechs Wochen nach dem Auszug zurückgezahlt, sofern keine Schäden festgestellt wurden."
+          ],
+          "targets": [
+            "Höhe der Miete und Zahlungstermine",
+            "Ruhezeiten",
+            "Gäste im Wohnheim",
+            "Nutzung der Gemeinschaftsküchen",
+            "Fahrräder und Parkplätze",
+            "Beendigung des Mietverhältnisses",
+            "Internet- und Telefonanschluss"
+          ],
+          "answers": [
+            3,
+            2,
+            5
+          ],
+          "allowNone": false
+        },
+        "explanations": [
+          {
+            "en": "The paragraph regulates the shared kitchens: washing up straight after use, labelling food in the fridge and cleaning according to the rota.",
+            "de": "Der Paragraph regelt die gemeinsamen Küchen: sofort spülen, Lebensmittel mit Namen kennzeichnen, nach Putzplan sauber machen."
+          },
+          {
+            "en": "It is about visitors: overnight guests may stay at most three nights, must be registered, and the host is liable for any damage they cause.",
+            "de": "Es geht um Besuch: Gäste dürfen höchstens drei Nächte bleiben und müssen angemeldet werden. Der Bewohner haftet für Schäden."
+          },
+          {
+            "en": "It covers ending the tenancy: three months' notice in writing, handing over the room and repayment of the deposit after moving out. Rent amounts and payment dates (heading a) are not mentioned.",
+            "de": "Der Paragraph behandelt das Ende des Mietverhältnisses: Kündigung, Übergabe des Zimmers und Rückzahlung der Kaution. Die Höhe der Miete wird nicht genannt."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b2__lesen-5__s03",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "(1) Fahrzeuge können über die App oder telefonisch bis zu 30 Tage im Voraus reserviert werden. Die Reservierung gilt für den gebuchten Zeitraum und das gebuchte Fahrzeug. (2) Eine Reservierung kann bis zwei Stunden vor Fahrtbeginn kostenlos storniert werden. Bei einer späteren Stornierung wird die Hälfte der gebuchten Zeit berechnet. (3) Wer ein Fahrzeug länger braucht, kann die Reservierung während der Fahrt verlängern, sofern das Fahrzeug nicht anschließend von einem anderen Mitglied gebucht ist.",
+            "(1) Bei einem Unfall ist unabhängig von der Höhe des Schadens sofort die Polizei zu verständigen. Außerdem ist die Servicezentrale des Vereins unverzüglich telefonisch zu informieren. (2) Im Handschuhfach liegt ein Unfallbericht, der vollständig auszufüllen und von allen Beteiligten zu unterschreiben ist. (3) Das Mitglied darf gegenüber anderen Beteiligten keine Schuld anerkennen. Schäden, die vor Fahrtantritt bemerkt werden, sind vor der Abfahrt in der App zu melden.",
+            "(1) In jedem Fahrzeug befindet sich eine Tankkarte, mit der an allen Tankstellen der Partnergesellschaft bezahlt werden kann. Ist der Tank weniger als ein Viertel voll, muss das Mitglied vor der Rückgabe tanken. (2) Elektrofahrzeuge sind nach jeder Fahrt an der Ladesäule der Station anzuschließen. (3) Wer ein Elektrofahrzeug mit einem Ladestand unter 20 Prozent zurückgibt, ohne es anzuschließen, muss mit einer Servicepauschale rechnen."
+          ],
+          "targets": [
+            "Voraussetzungen für die Mitgliedschaft",
+            "Tanken und Laden der Fahrzeuge",
+            "Reservierung und Stornierung",
+            "Höhe des Mitgliedsbeitrags",
+            "Mitnahme von Tieren",
+            "Verhalten bei Unfällen und Schäden",
+            "Fahrten ins Ausland"
+          ],
+          "answers": [
+            2,
+            5,
+            1
+          ],
+          "allowNone": false
+        },
+        "explanations": [
+          {
+            "en": "The paragraph explains how to reserve a car (app or phone, up to 30 days ahead), when cancelling is free, and how to extend a booking.",
+            "de": "Der Paragraph erklärt, wie man ein Auto reserviert, bis wann man kostenlos stornieren kann und wie man verlängert."
+          },
+          {
+            "en": "It tells members what to do after an accident: call the police and the service centre, fill in the accident report, do not admit fault.",
+            "de": "Es geht um Unfälle: Polizei und Servicezentrale anrufen, den Unfallbericht ausfüllen und keine Schuld anerkennen."
+          },
+          {
+            "en": "It covers refuelling with the fuel card and plugging electric cars into the charging station after each trip.",
+            "de": "Der Paragraph regelt das Tanken mit der Tankkarte und das Laden der Elektroautos an der Ladesäule."
+          }
+        ]
+      }
+    }
+  ]
+}
