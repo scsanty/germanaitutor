@@ -30,7 +30,7 @@ beforeEach(() => {
   root = mkdtempSync(join(tmpdir(), 'teil-root-'));
   work = mkdtempSync(join(tmpdir(), 'teil-work-'));
   cpSync(join(REAL, 'exam-formats'), join(root, 'exam-formats'), { recursive: true });
-  cpSync(join(REAL, 'teil-sets', 'telc-b1'), join(root, 'teil-sets', 'telc-b1'), { recursive: true });
+  cpSync(join(process.cwd(), 'test', 'fixtures', 'teil-sets', 'telc-b1'), join(root, 'teil-sets', 'telc-b1'), { recursive: true });
 });
 
 describe('mergeTeilSets', () => {

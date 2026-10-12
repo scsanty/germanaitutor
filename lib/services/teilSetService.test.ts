@@ -5,7 +5,9 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { createTeilSetService, TeilSetError, toTeilSetErrorResponse } from './teilSetService';
 
-const starter = JSON.parse(readFileSync(join(process.cwd(), 'data', 'teil-sets', 'telc-b1', 'lesen-1.json'), 'utf8'));
+// Read the starter set from a small fixture, so the tests do not depend on how much content ships in data/teil-sets.
+const FIXTURE_SETS = join(process.cwd(), 'test', 'fixtures', 'teil-sets');
+const starter = JSON.parse(readFileSync(join(FIXTURE_SETS, 'telc-b1', 'lesen-1.json'), 'utf8'));
 const STARTER_SET = starter.sets[0].set;
 const STARTER_ID = starter.sets[0].id as string;
 
@@ -29,7 +31,7 @@ function setup(replies: string[] = []) {
     return text === undefined ? { ok: false as const, error: 'No AI provider is set up', code: 'no_provider' as const } : { ok: true as const, text };
   });
   let clock = 0;
-  const service = createTeilSetService(db, { generate, now: () => new Date(Date.UTC(2026, 8, 29, 10, 0, clock++)) });
+  const service = createTeilSetService(db, { setsDir: fixtureDir(starter), generate, now: () => new Date(Date.UTC(2026, 8, 29, 10, 0, clock++)) });
   service.loadBundled();
   return { db, service, generate };
 }
