@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { createDbClient } from '../db/client';
+import { validateExerciseContent } from '../curriculum/exerciseContentValidation';
 import { prerequisiteScopeViolations } from '../tutoring/gating';
 import { loadSeedIfNeeded, type SeedFile } from './curriculumSeedLoader';
 import { loadLevelGating } from './levelGating';
@@ -49,6 +50,20 @@ describe('bundled curriculum seeds', () => {
     }
     const edges = seed.prerequisites.map((p) => ({ lessonId: p.lessonId, prerequisiteId: p.prerequisiteLessonId }));
     expect(prerequisiteScopeViolations(edges, (id) => placement.get(id))).toEqual([]);
+  });
+
+  it.each(seeds)('%s: every seed exercise passes content validation', (_file, seed) => {
+    for (const e of seed.exercises) {
+      expect(validateExerciseContent(e.type, e.content), e.id).toEqual([]);
+    }
+  });
+
+  // TODO(T13): unskip once lesson exercises are merged
+  it.skip.each(seeds)('%s: every reading lesson has a passage, matching, or cloze exercise', (_f, seed) => {
+    for (const lesson of seed.lessons.filter((l) => l.skill === 'reading')) {
+      const types = seed.exercises.filter((e) => e.lessonId === lesson.id).map((e) => e.type);
+      expect(types.some((t) => ['passage_questions', 'matching', 'cloze'].includes(t)), lesson.id).toBe(true);
+    }
   });
 
   it('loads into a fresh database with the first rank open in every track+level', () => {
