@@ -48,8 +48,30 @@ describe('mailService', () => {
     const sendMail = vi.fn(async () => ({}));
     const createTransport = vi.fn(() => ({ sendMail }));
     await createMailService(db, { keyFilePath: key, createTransport: createTransport as never }).send('Speech service is down', 'body');
-    expect(createTransport).toHaveBeenCalledWith(expect.objectContaining({ host: 'smtp.example.org', port: 465, secure: true, auth: { user: 'admin', pass: 's3cret' } }));
+    expect(createTransport).toHaveBeenCalledWith(
+      expect.objectContaining({ host: 'smtp.example.org', port: 465, secure: true, requireTLS: false, auth: { user: 'admin', pass: 's3cret' } })
+    );
     expect(sendMail).toHaveBeenCalledWith({ from: 'nadoch@example.org', to: 'me@example.org', subject: '[NaDoch!] Speech service is down', text: 'body' });
+  });
+
+  it('requires STARTTLS when the connection is not implicitly secure', async () => {
+    const db = createDbClient(':memory:');
+    const key = keyFile();
+    saveSmtpSettings(db, { ...input, port: 587, secure: false }, key);
+    const createTransport = vi.fn(() => ({ sendMail: vi.fn(async () => ({})) }));
+    await createMailService(db, { keyFilePath: key, createTransport: createTransport as never }).send('s', 't');
+    expect(createTransport).toHaveBeenCalledWith(expect.objectContaining({ port: 587, secure: false, requireTLS: true }));
+  });
+
+  it('checks the from and to address shapes', () => {
+    const db = createDbClient(':memory:');
+    const key = keyFile();
+    expect(() => saveSmtpSettings(db, { ...input, from: 'nadoch' }, key)).toThrow('from must be an email address');
+    expect(() => saveSmtpSettings(db, { ...input, to: 'me@example' }, key)).toThrow('to must be one or more email addresses');
+    expect(() => saveSmtpSettings(db, { ...input, to: 'me@example.org, you' }, key)).toThrow('to must be one or more email addresses');
+    expect(saveSmtpSettings(db, { ...input, from: 'NaDoch! <nadoch@example.org>', to: 'me@example.org, you@example.org' }, key)).toMatchObject({
+      from: 'NaDoch! <nadoch@example.org>',
+    });
   });
 
   it('throws a clear error when email is not set up', async () => {

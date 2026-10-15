@@ -81,16 +81,20 @@ export function createNotificationService(db: Database.Database, deps: Notificat
   const mailer = deps.mailer ?? createMailService(db);
   const now = () => (deps.now ?? (() => new Date()))().toISOString();
 
-  // Sends and records the outcome on the row; never throws.
-  async function email(id: number, subject: string, body: string): Promise<void> {
-    let error: string | null = null;
+  // Sends and records a failure on the row; never throws. Errors accumulate per event (the raise email's
+  // error is kept, the resolve email's is appended), so a later successful send can't hide an earlier failure.
+  async function email(id: number, subject: string, body: string, event: 'raise' | 'resolve'): Promise<void> {
+    let error: string;
     try {
       await mailer.send(subject, body + FOOTER);
+      return;
     } catch (err) {
-      error = messageOf(err);
+      error = event === 'resolve' ? `Resolved email: ${messageOf(err)}` : messageOf(err);
     }
     try {
-      db.prepare('UPDATE admin_notifications SET email_error = ? WHERE id = ?').run(error, id);
+      db.prepare(
+        "UPDATE admin_notifications SET email_error = CASE WHEN email_error IS NULL THEN ? ELSE email_error || '; ' || ? END WHERE id = ?"
+      ).run(error, error, id);
     } catch (err) {
       console.error('Recording the notification email result failed:', err);
     }
@@ -108,7 +112,7 @@ export function createNotificationService(db: Database.Database, deps: Notificat
         )
         .run(kind, problemKey, severity, title, body, now());
       if (result.changes === 0 || severity !== 'problem') return;
-      await email(Number(result.lastInsertRowid), title, body);
+      await email(Number(result.lastInsertRowid), title, body, 'raise');
     } catch (err) {
       console.error('Raising an admin notification failed:', err);
     }
@@ -125,7 +129,7 @@ export function createNotificationService(db: Database.Database, deps: Notificat
         .prepare('UPDATE admin_notifications SET resolved_at = ? WHERE id = ? AND resolved_at IS NULL')
         .run(now(), open.id);
       if (closed.changes === 0 || open.severity !== 'problem') return;
-      await email(open.id, `Resolved: ${open.title}`, `This problem is resolved.\n\n${open.title}: ${open.body}`);
+      await email(open.id, `Resolved: ${open.title}`, `This problem is resolved.\n\n${open.title}: ${open.body}`, 'resolve');
     } catch (err) {
       console.error('Resolving an admin notification failed:', err);
     }

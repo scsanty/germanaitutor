@@ -39,6 +39,26 @@ describe('notificationService', () => {
     expect(service.list({})[0].emailError).toBe('SMTP auth failed');
   });
 
+  it('keeps an earlier email failure when a later email succeeds, and appends a later failure', async () => {
+    const db = createDbClient(':memory:');
+    let fail = true;
+    const mailer = { send: vi.fn(async () => { if (fail) throw new Error('SMTP auth failed'); }) };
+    const service = createNotificationService(db, { mailer });
+    await service.raise('speech_down', 'speech_down', 'Speech service is down', 'x');
+    fail = false;
+    await service.resolve('speech_down');
+    expect(service.list({})[0].emailError).toBe('SMTP auth failed');
+
+    await service.raise('provider_errors', 'provider_errors', 'AI provider errors', 'x');
+    fail = true;
+    await service.resolve('provider_errors');
+    expect(service.list({})[0].emailError).toBe('Resolved email: SMTP auth failed');
+
+    await service.raise('speech_down', 'speech_down', 'Speech service is down', 'y');
+    await service.resolve('speech_down');
+    expect(service.list({})[0].emailError).toBe('SMTP auth failed; Resolved email: SMTP auth failed');
+  });
+
   it('records "Email is not set up" when no SMTP settings exist (default mailer)', async () => {
     const db = createDbClient(':memory:');
     const service = createNotificationService(db);

@@ -62,6 +62,14 @@ export function readSmtpSettingsForDisplay(db: Database.Database): SmtpSettingsD
   return { ...rest, hasPassword: passwordEncrypted !== '' };
 }
 
+// A simple address shape: `a@b.c`, or `Name <a@b.c>`. `to` may list several, separated by commas.
+const ADDRESS = /^[^\s@<>,"]+@[^\s@<>,"]+\.[^\s@<>,"]+$/;
+function isAddress(value: string): boolean {
+  const v = value.trim();
+  const named = /^[^<>]*<([^<>]+)>$/.exec(v);
+  return ADDRESS.test(named ? named[1].trim() : v);
+}
+
 function smtpProblems(input: SmtpSettingsInput): string[] {
   const problems: string[] = [];
   const text = (v: unknown) => typeof v === 'string' && v.trim().length > 0;
@@ -71,7 +79,9 @@ function smtpProblems(input: SmtpSettingsInput): string[] {
   if (input.user !== undefined && typeof input.user !== 'string') problems.push('user must be text');
   if (input.password !== null && typeof input.password !== 'string') problems.push('password must be text or null');
   if (!text(input.from)) problems.push('from is required');
+  else if (!isAddress(input.from)) problems.push('from must be an email address');
   if (!text(input.to)) problems.push('to is required');
+  else if (!input.to.split(',').every(isAddress)) problems.push('to must be one or more email addresses, separated by commas');
   return problems;
 }
 
@@ -127,6 +137,8 @@ export function createMailService(db: Database.Database, deps: MailServiceDeps =
         host: s.host,
         port: s.port,
         secure: s.secure,
+        // Without implicit TLS, STARTTLS is required, so the login never goes out unencrypted.
+        requireTLS: !s.secure,
         auth: s.user ? { user: s.user, pass } : undefined,
         connectionTimeout: 15_000,
         greetingTimeout: 15_000,
