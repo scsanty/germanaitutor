@@ -1,0 +1,10 @@
+# Piper voices the sidecar serves: <name> <path in huggingface.co/rhasspy/piper-voices, no extension>
+# The Dockerfile downloads <path>.onnx and <path>.onnx.json for each line. The names must match the
+# voice pools in lib/audio/transcript.ts (test_core.py checks this).
+# thorsten-high is 22.05 kHz; the low and x_low voices are 16 kHz. The server resamples all to 24 kHz.
+thorsten de/de_DE/thorsten/high/de_DE-thorsten-high
+karlsson de/de_DE/karlsson/low/de_DE-karlsson-low
+pavoque de/de_DE/pavoque/low/de_DE-pavoque-low
+kerstin de/de_DE/kerstin/low/de_DE-kerstin-low
+ramona de/de_DE/ramona/low/de_DE-ramona-low
+eva_k de/de_DE/eva_k/x_low/de_DE-eva_k-x_low

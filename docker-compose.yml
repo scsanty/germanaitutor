@@ -1,0 +1,7 @@
+services:
+  speech:
+    build: ./speech
+    # Loopback only: the sidecar has no auth, so it must not be reachable on the Tailscale interface.
+    ports:
+      - "127.0.0.1:5002:5002"
+    restart: unless-stopped
