@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import type { ExerciseContent } from '@/lib/curriculum/types';
+import type { ExerciseContent, ExerciseType } from '@/lib/curriculum/types';
 import type { LocalizedText } from '@/lib/i18n/localizedText';
 import type { TeilSetContent } from '@/lib/exam/teilSets';
 import { itemCount, type TaskContent } from '@/lib/tasks/taskTypes';
@@ -52,7 +52,8 @@ export function TeilSetEditor({
       }}
     >
       <ExerciseContentFields
-        type={set.taskType}
+        // audio_questions fields arrive with the Listening admin editors (T7); until then the type is cast.
+        type={set.taskType as ExerciseType}
         content={set.content as ExerciseContent}
         index={0}
         allowInstruction={false}

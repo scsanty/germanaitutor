@@ -53,6 +53,7 @@ const SHAPE: Record<SetTaskType, string> = {
   passage_questions: '{"passage": "...", "questions": [{"question": "...", "options": ["...", "...", "..."], "correctIndex": 0}]}',
   matching: '{"items": ["..."], "targets": ["..."], "answers": [0], "allowNone": true | false}',
   cloze: '{"text": "... {{1}} ... {{2}} ...", "gaps": [{"mode": "select", "options": ["...", "...", "..."], "correctIndex": 0} | {"mode": "bank", "answer": 0}], "bank": ["..."] (only with bank gaps)}',
+  audio_questions: '{"transcript": "[Name m|f] … lines, optional first line @filter …", "questions": [{"question": "...", "options": ["...", "...", "..."], "correctIndex": 0, "evidence": "..."}]}',
 };
 
 // Spec: pool sets are CEFR-style and German-only, in the part's exact format.

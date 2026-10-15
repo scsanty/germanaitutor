@@ -10,6 +10,7 @@ import type { GradeResult } from './grading';
 import type { PassageQuestionsAnswer, PassageQuestionsContent } from '../tasks/passageQuestions';
 import type { MatchingAnswer, MatchingContent } from '../tasks/matching';
 import type { ClozeAnswer, ClozeContent } from '../tasks/cloze';
+import type { AudioQuestionsAnswer } from '../tasks/audioQuestions';
 import { correctTexts, type TaskContent } from '../tasks/taskTypes';
 
 export type FlashcardRating = 'knew' | 'sort_of' | 'didnt_know';
@@ -94,14 +95,15 @@ const UNANSWERED = '—';
 // card (client) and the attempt log (server) share this function and write the same text.
 export type TaskAnswerSource =
   | { type: 'passage_questions'; questions: { options: string[] }[] }
+  | { type: 'audio_questions'; questions: { options: string[] }[] }
   | { type: 'matching'; targets: string[] }
   | { type: 'cloze'; gaps: ({ mode: 'typed' } | { mode: 'select'; options: string[] } | { mode: 'bank' })[]; bank?: string[] };
 
 // One readable entry per question, text or gap, joined with '; ': the chosen option or text,
 // "x" for "none fits", "—" when unanswered.
-export function taskAnswerText(source: TaskAnswerSource, answer: PassageQuestionsAnswer | MatchingAnswer | ClozeAnswer): string {
+export function taskAnswerText(source: TaskAnswerSource, answer: PassageQuestionsAnswer | MatchingAnswer | ClozeAnswer | AudioQuestionsAnswer): string {
   let parts: string[] = [];
-  if (answer.type === 'passage_questions' && source.type === 'passage_questions') {
+  if ((answer.type === 'passage_questions' && source.type === 'passage_questions') || (answer.type === 'audio_questions' && source.type === 'audio_questions')) {
     parts = answer.selected.map((s, i) => (s === null ? UNANSWERED : (source.questions[i]?.options[s] ?? UNANSWERED)));
   } else if (answer.type === 'matching' && source.type === 'matching') {
     parts = answer.selected.map((s) => (s === null ? 'x' : (source.targets[s] ?? UNANSWERED)));
