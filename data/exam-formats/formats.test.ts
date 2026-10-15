@@ -26,6 +26,19 @@ describe('bundled exam formats', () => {
     }
   });
 
+  // Practice runs one part on its own and numbers its items from 1, with no example item,
+  // so the instructions shown above it must not cite exam-wide numbers or an example.
+  it('use practice-local item numbers and never mention an example item', () => {
+    const range = /(Aufgaben?|Lücken?|Texte|Situationen|Aussagen?|Fragen|Überschriften|Paragraphen|Zeilen)\s+(\d+)\s*(bis|–|-)\s*\d+/g;
+    for (const f of listFormats()) {
+      for (const p of f.parts) {
+        const where = `${f.id}/${p.id}: ${p.instructions}`;
+        for (const m of p.instructions.matchAll(range)) expect(Number(m[2]), where).toBe(1);
+        expect(p.instructions, where).not.toContain('Beispiel');
+      }
+    }
+  });
+
   it('gives the NaDoch formats a 100-point written and a 50-point oral block', () => {
     for (const f of listFormats().filter((x) => x.track === 'generic')) {
       const sum = (id: string) => f.blocks.find((b) => b.id === id)!.partIds.reduce((s, pid) => s + f.parts.find((p) => p.id === pid)!.points, 0);
