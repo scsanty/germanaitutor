@@ -96,4 +96,14 @@ describe('exercise types migration', () => {
     expect(count(fresh, "SELECT COUNT(*) AS n FROM lesson_attempts WHERE exercise_id = 'a1-greet__ex1'")).toBe(1);
     expect(fresh.pragma('foreign_keys', { simple: true })).toBe(1);
   });
+
+  it('refuses to rebuild while foreign keys are on, and leaves the attempts in place', () => {
+    const db = oldDatabase();
+    // Inside an outer transaction SQLite ignores the foreign_keys pragma, so it stays on.
+    expect(() => db.transaction(() => runMigrations(db))()).toThrow('Cannot rebuild exercises with foreign keys on');
+    expect(count(db, "SELECT COUNT(*) AS n FROM lesson_attempts WHERE exercise_id = 'a1-greet__ex1'")).toBe(1);
+    expect(count(db, "SELECT COUNT(*) AS n FROM exercise_srs_state WHERE exercise_id = 'a1-sein__ex2'")).toBe(1);
+    expect(db.prepare("SELECT sql FROM sqlite_master WHERE name = 'exercises'").get()).not.toMatchObject({ sql: expect.stringContaining("'cloze'") });
+    expect(db.pragma('foreign_keys', { simple: true })).toBe(1);
+  });
 });

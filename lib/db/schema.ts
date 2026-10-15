@@ -212,6 +212,11 @@ function migrateExerciseTypes(db: Database.Database): void {
     if (!newSql.startsWith(`CREATE TABLE ${table}_new`) || !newSql.includes("'cloze'")) {
       throw new Error(`Unexpected ${table} definition; cannot add the reading exercise types`);
     }
+    // With foreign keys on (e.g. runMigrations called inside an outer transaction, where the pragma
+    // is ignored), DROP TABLE would silently cascade-delete every attempt, review and chat link.
+    if (db.pragma('foreign_keys', { simple: true }) !== 0) {
+      throw new Error(`Cannot rebuild ${table} with foreign keys on; run migrations outside any transaction`);
+    }
     const columns = (db.prepare(`PRAGMA table_info(${table})`).all() as { name: string }[]).map((c) => `"${c.name}"`).join(', ');
     db.exec(newSql);
     db.exec(`INSERT INTO ${table}_new (${columns}) SELECT ${columns} FROM ${table}; DROP TABLE ${table}; ALTER TABLE ${table}_new RENAME TO ${table};`);
