@@ -722,4 +722,38 @@ describe('flashcard rule', () => {
       })
     ).toThrow('Exercise 1: instruction needs both English and German');
   });
+
+  it('refuses a half-filled reading task, naming the exercise and its problems (S19)', () => {
+    const db = createDbClient(':memory:');
+    seedMilestone(db);
+    const service = createLessonAdminService(db);
+    const fields = {
+      slug: 'cloze',
+      track: 'generic' as const,
+      sourceLevel: 'A1' as const,
+      skill: 'reading' as const,
+      title: 'Cloze',
+      titleDe: 'Lückentext',
+      explanation: null,
+      explanationDe: null,
+      examples: null,
+      examplesDe: null,
+      prerequisiteIds: [],
+      placement: { milestoneId: 'm1' },
+    };
+    expect(() =>
+      service.createLesson({ ...fields, exercises: [{ type: 'cloze', content: { text: 'Ich {{1}} müde.', gaps: [{ mode: 'typed', answer: '' }] } }] })
+    ).toThrow('Exercise 1: gap 1 needs an answer');
+    expect(db.prepare('SELECT COUNT(*) AS n FROM lessons').get()).toEqual({ n: 0 });
+    // The editor's own defaults for a new select gap and a new bank are blank: still half-filled.
+    expect(() =>
+      service.createLesson({
+        ...fields,
+        exercises: [{ type: 'cloze', content: { text: 'Ich {{1}} {{2}}.', gaps: [{ mode: 'select', options: ['', ''], correctIndex: 0 }, { mode: 'bank', answer: 0 }], bank: ['', ''] } }],
+      })
+    ).toThrow('Exercise 1: gap 1 needs at least 2 options with text and a correct one; Exercise 1: every word in the bank needs text');
+    expect(db.prepare('SELECT COUNT(*) AS n FROM lessons').get()).toEqual({ n: 0 });
+    const ok = service.createLesson({ ...fields, exercises: [{ type: 'cloze', content: { text: 'Ich {{1}} müde.', gaps: [{ mode: 'typed', answer: 'bin' }] } }] });
+    expect(ok.id).toBe('a1-cloze');
+  });
 });

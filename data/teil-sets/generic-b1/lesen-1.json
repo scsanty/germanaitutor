@@ -1,0 +1,211 @@
+{
+  "formatId": "generic-b1",
+  "partId": "lesen-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-b1__lesen-1__s01",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Viele Erwachsene haben nie richtig schwimmen gelernt und schämen sich dafür. Das Hallenbad Nord bietet deshalb ab Oktober einen Kurs nur für Erwachsene an. Er findet dienstags am Abend statt, wenn keine Schulklassen und Vereine im Wasser sind. Die Gruppen sind klein, höchstens acht Personen, und die Trainerinnen nehmen sich viel Zeit. „Viele Teilnehmer haben Angst vor tiefem Wasser. Deshalb beginnen wir im Nichtschwimmerbecken“, erklärt Kursleiterin Anja Brandt. Der Kurs dauert zehn Wochen und kostet 60 Euro. Anmelden kann man sich an der Kasse des Hallenbads.",
+            "Wer nachts aus der Innenstadt nach Hause will, musste bisher oft ein Taxi nehmen. Ab dem 1. Dezember ändert sich das: Am Freitag und am Samstag fahren drei neue Nachtbuslinien bis 4 Uhr morgens. Sie verbinden den Marktplatz mit den Stadtteilen Westend, Hafen und Sonnenberg. Die Busse fahren jede halbe Stunde. Man braucht keine besondere Fahrkarte, es gilt das normale Ticket. Die Verkehrsbetriebe wollen damit vor allem jungen Leuten helfen, sicher nach Hause zu kommen. Wenn genug Fahrgäste die Busse nutzen, sollen sie später auch unter der Woche fahren.",
+            "Schlüssel, Regenschirme, Brillen und sogar Fahrräder: Jedes Jahr landen über 3000 Gegenstände im Fundbüro der Stadt. Bisher musste man persönlich ins Rathaus kommen oder anrufen, wenn man etwas verloren hatte. Jetzt gibt es eine neue Internetseite. Dort kann man mit Fotos und einer kurzen Beschreibung nachsehen, ob der verlorene Gegenstand abgegeben wurde. Wer etwas findet, kann den Fund auch online melden. Abholen muss man seine Sachen aber weiterhin im Rathaus, und zwar mit Ausweis. Gegenstände, die nach sechs Monaten niemand abgeholt hat, werden versteigert.",
+            "Im Nachbarschaftszentrum Lindenhof wird jeden zweiten Donnerstag gemeinsam gekocht – und zwar jedes Mal mit Rezepten aus einem anderen Land. Die Köchinnen und Köche sind Menschen aus dem Viertel, die ihre Heimatküche vorstellen: Letzte Woche gab es syrische Linsensuppe, beim nächsten Mal zeigt eine Frau aus Peru, wie man Ceviche macht. Nach dem Kochen essen alle zusammen an einem langen Tisch. Für die Zutaten zahlt jeder fünf Euro. „Beim Essen lernt man sich am schnellsten kennen“, sagt die Organisatorin. Eine Anmeldung ist nötig, weil die Küche nur Platz für 15 Personen hat.",
+            "Am Samstag öffnet die Freiwillige Feuerwehr Bergheim von 10 bis 16 Uhr ihre Türen. Kinder dürfen in die großen Feuerwehrautos klettern und mit dem Schlauch auf ein kleines Holzhaus spritzen. Für die Erwachsenen gibt es Informationen zum Thema Brandschutz: Wie benutzt man einen Feuerlöscher richtig? Und wo hängt man Rauchmelder am besten auf? Die Feuerwehr sucht außerdem neue Mitglieder. Wer mitmachen möchte, muss mindestens 16 Jahre alt sein; die Ausbildung bekommt man bei der Feuerwehr. Für Essen und Getränke ist gesorgt, der Eintritt ist frei.",
+            "Basilikum, Petersilie, Schnittlauch und Minze: Im Rosenpark wachsen seit diesem Frühling nicht nur Blumen. Die Stadtgärtner haben dort zwölf Hochbeete mit Kräutern und Gemüse angelegt. Kleine Schilder zeigen, welche Pflanzen dort wachsen. Das Besondere daran: Jeder darf ernten, was er für die eigene Küche braucht. Es gibt nur eine Regel: Man soll nicht mehr nehmen, als man selbst essen kann. Bisher klappt das gut, sagt Gärtnermeister Paul Krämer. Viele Anwohner helfen sogar beim Gießen. Im nächsten Jahr sollen auch in anderen Parks solche Beete entstehen.",
+            "Viele ältere Menschen wohnen allein in großen Wohnungen, seit die Kinder ausgezogen sind. Gleichzeitig suchen junge Familien dringend mehr Platz. Die städtische Wohnungsgesellschaft möchte beiden Gruppen helfen und startet eine Tauschbörse. Mieter können dort ihre Wohnung anbieten und eine passende neue suchen. Wer in eine kleinere Wohnung zieht, zahlt pro Quadratmeter nicht mehr als vorher. Außerdem bezahlt die Gesellschaft den Umzug bis zu 2000 Euro. In den ersten zwei Monaten haben schon 40 Haushalte ihre Wohnung getauscht. Eine Beratung im Kundenzentrum ist kostenlos."
+          ],
+          "targets": [
+            "Busfahren wird ab Dezember teurer",
+            "Große gegen kleine Wohnung tauschen",
+            "Schwimmen lernen ist keine Frage des Alters",
+            "Verlorene Sachen jetzt im Internet suchen",
+            "Neues Restaurant mit Gerichten aus aller Welt",
+            "Feuerwehr lädt Groß und Klein ein",
+            "Am Wochenende auch nachts mit dem Bus nach Hause",
+            "Im Park ernten erlaubt",
+            "Nachbarn kochen Gerichte aus ihrer Heimat"
+          ],
+          "answers": [
+            2,
+            6,
+            3,
+            8,
+            5,
+            7,
+            1
+          ],
+          "allowNone": false
+        },
+        "explanations": [
+          {
+            "en": "Text 1: the pool offers \"einen Kurs nur für Erwachsene\" for adults who never learned to swim. So you can learn to swim at any age (c).",
+            "de": "Text 1: Das Hallenbad bietet „einen Kurs nur für Erwachsene“ an. Man kann also auch als Erwachsener schwimmen lernen (c)."
+          },
+          {
+            "en": "Text 2: on Friday and Saturday \"fahren drei neue Nachtbuslinien bis 4 Uhr morgens\" (g). The normal ticket is valid, so nothing gets more expensive (a is wrong).",
+            "de": "Text 2: Am Freitag und Samstag „fahren drei neue Nachtbuslinien bis 4 Uhr morgens“ (g). Es gilt das normale Ticket. Von höheren Preisen steht nichts im Text (a ist falsch)."
+          },
+          {
+            "en": "Text 3: on a new website you can check \"ob der verlorene Gegenstand abgegeben wurde\". So you search for lost things online (d).",
+            "de": "Text 3: Auf einer neuen Internetseite kann man nachsehen, „ob der verlorene Gegenstand abgegeben wurde“ (d)."
+          },
+          {
+            "en": "Text 4: people from the neighbourhood \"ihre Heimatküche vorstellen\" and cook together (i). It is a neighbourhood centre, not a new restaurant (e is wrong).",
+            "de": "Text 4: Menschen aus dem Viertel „ihre Heimatküche vorstellen“ und kochen zusammen (i). Das ist ein Nachbarschaftszentrum, kein Restaurant (e ist falsch)."
+          },
+          {
+            "en": "Text 5: the fire brigade opens its doors with activities for children and information for adults. It invites young and old (f).",
+            "de": "Text 5: Die Feuerwehr öffnet ihre Türen. Es gibt etwas für Kinder und Informationen für Erwachsene. Sie lädt also Groß und Klein ein (f)."
+          },
+          {
+            "en": "Text 6: in the park: \"Jeder darf ernten, was er für die eigene Küche braucht\". Harvesting is allowed (h).",
+            "de": "Text 6: Im Park gilt: „Jeder darf ernten, was er für die eigene Küche braucht“ (h)."
+          },
+          {
+            "en": "Text 7: the housing company starts \"eine Tauschbörse\" so that older people with big flats and families who need more space can swap (b).",
+            "de": "Text 7: Die Wohnungsgesellschaft startet „eine Tauschbörse“. Ältere Menschen mit großen Wohnungen und Familien können tauschen (b)."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-b1__lesen-1__s02",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Nach dem Mittagessen werden viele Menschen müde und können sich schlecht konzentrieren. Eine Versicherungsfirma in Kassel hat deshalb einen Ruheraum eingerichtet. Dort stehen bequeme Liegen, das Licht ist gedämpft, und Handys müssen draußen bleiben. Die Mitarbeiterinnen und Mitarbeiter dürfen sich in der Mittagspause zwanzig Minuten hinlegen. Am Anfang haben einige darüber gelacht, inzwischen ist der Raum fast immer besetzt. „Nach einem kurzen Schlaf arbeite ich viel konzentrierter“, sagt eine Sachbearbeiterin. Die Firma will den Raum deshalb jetzt vergrößern.",
+            "Wer im Rathaus von Neustadt in den vierten Stock will, nimmt meistens den Aufzug. Das soll sich ändern: Vier Wochen lang läuft dort die Aktion „Treppe statt Lift“. Auf den Stufen steht, wie viele Kalorien man schon verbraucht hat, und im Treppenhaus läuft Musik. Wer an mindestens zwanzig Tagen die Treppe nimmt, kann einen Gutschein für das Schwimmbad gewinnen. Ärzte sagen, dass schon wenige Minuten Bewegung am Tag gut für Herz und Kreislauf sind. Der Aufzug bleibt natürlich in Betrieb – für ältere Menschen und für alle, die schwere Sachen tragen.",
+            "Viele Handwerksbetriebe in der Region finden keine Auszubildenden mehr. Bäcker, Elektriker und Dachdecker suchen dringend junge Leute. Am kommenden Wochenende findet deshalb in der Stadthalle eine Messe statt, auf der sich über 60 Betriebe vorstellen. Schülerinnen und Schüler können dort nicht nur Fragen stellen, sondern auch selbst etwas ausprobieren, zum Beispiel eine Wand streichen oder ein Brot backen. Wer möchte, kann direkt einen Termin für ein Praktikum vereinbaren. Die Handwerkskammer rät, den Lebenslauf mitzubringen. Der Eintritt ist kostenlos.",
+            "Seit viele Leute von zu Hause aus arbeiten, klagen mehr Menschen über Rückenschmerzen. Das zeigt eine neue Umfrage einer Krankenkasse. Der Grund: Viele sitzen am Küchentisch oder auf dem Sofa statt an einem richtigen Schreibtisch. Experten empfehlen, den Bildschirm auf Augenhöhe zu stellen und einen Stuhl zu benutzen, den man in der Höhe verstellen kann. Außerdem sollte man jede Stunde kurz aufstehen und sich bewegen. Manche Arbeitgeber zahlen ihren Mitarbeitern inzwischen einen Zuschuss für gute Büromöbel zu Hause.",
+            "Einmal im Jahr besucht Zahnärztin Dr. Meral Aksoy die Kindergärten der Stadt. Mit einem großen Plüschkrokodil und einer riesigen Zahnbürste zeigt sie den Kindern, wie man richtig Zähne putzt. Danach schaut sie jedem Kind in den Mund – ganz ohne Bohrer und ohne Spritze. Die Eltern bekommen anschließend einen Brief, wenn das Kind zum Zahnarzt gehen muss. Ziel ist es, dass Kinder schon früh lernen, ihre Zähne zu pflegen, und keine Angst vor dem Zahnarzt bekommen. Das Programm bezahlt die Stadt zusammen mit den Krankenkassen.",
+            "Husten, Schnupfen, Halsschmerzen: Im Herbst und Winter sind viele Menschen erkältet. Die meisten Viren werden über die Hände weitergegeben, zum Beispiel über Türklinken oder Haltegriffe im Bus. Das Gesundheitsamt erinnert deshalb an eine einfache Regel: Hände regelmäßig mit Seife waschen, und zwar mindestens 20 Sekunden lang. Das ist ungefähr so lang, wie man zweimal „Zum Geburtstag viel Glück“ singt. Auch regelmäßiges Lüften hilft. Wer krank ist, sollte außerdem in den Ellenbogen niesen und lieber zu Hause bleiben, statt die Kollegen anzustecken.",
+            "In der Kantine der Stadtwerke gibt es seit Januar jeden Montag nur vegetarisches Essen. Am Anfang waren viele Mitarbeiter skeptisch, und einige haben sich beschwert. Inzwischen hat sich die Stimmung geändert: Gerichte wie Gemüselasagne oder Linsencurry sind so beliebt, dass sie oft schon um 13 Uhr ausverkauft sind. Der Koch freut sich über das Lob. An den anderen Tagen steht weiterhin auch Fleisch auf dem Speiseplan. Die Stadtwerke wollen mit dem fleischfreien Tag etwas für die Gesundheit und für das Klima tun."
+          ],
+          "targets": [
+            "Zahnpflege spielerisch lernen",
+            "Aufzug im Rathaus wochenlang kaputt",
+            "Ein Tag ohne Fleisch kommt gut an",
+            "Kurz schlafen im Büro",
+            "Mehr Bewegung im Alltag – Stufe für Stufe",
+            "Kantine bleibt montags geschlossen",
+            "Zu Hause arbeiten – aber richtig sitzen",
+            "Gesund durch die Erkältungszeit",
+            "Handwerksbetriebe suchen Nachwuchs"
+          ],
+          "answers": [
+            3,
+            4,
+            8,
+            6,
+            0,
+            7,
+            2
+          ],
+          "allowNone": false
+        },
+        "explanations": [
+          {
+            "en": "Text 1: employees \"dürfen sich in der Mittagspause zwanzig Minuten hinlegen\" in a rest room. That is a short sleep at the office (d).",
+            "de": "Text 1: Die Mitarbeiter „dürfen sich in der Mittagspause zwanzig Minuten hinlegen“. Man schläft also kurz im Büro (d)."
+          },
+          {
+            "en": "Text 2: the campaign \"Treppe statt Lift\" wants people to take the stairs for more exercise (e). \"Der Aufzug bleibt natürlich in Betrieb\", so it is not broken (b is wrong).",
+            "de": "Text 2: Die Aktion „Treppe statt Lift“ soll für mehr Bewegung sorgen (e). „Der Aufzug bleibt natürlich in Betrieb“, er ist also nicht kaputt (b ist falsch)."
+          },
+          {
+            "en": "Text 3: many craft businesses \"finden keine Auszubildenden mehr\" and present themselves at a fair. They are looking for young people (i).",
+            "de": "Text 3: Viele Handwerksbetriebe „finden keine Auszubildenden mehr“ und suchen junge Leute (i)."
+          },
+          {
+            "en": "Text 4: people working from home get back pain because they sit badly; experts explain how to sit correctly (g).",
+            "de": "Text 4: Wer zu Hause arbeitet, sitzt oft falsch und bekommt Rückenschmerzen. Experten erklären, wie man richtig sitzt (g)."
+          },
+          {
+            "en": "Text 5: with a plush crocodile and a giant toothbrush the dentist shows children \"wie man richtig Zähne putzt\". Learning tooth care in a playful way (a).",
+            "de": "Text 5: Mit einem Plüschkrokodil zeigt die Zahnärztin den Kindern, „wie man richtig Zähne putzt“. Das ist spielerisch (a)."
+          },
+          {
+            "en": "Text 6: in autumn and winter many people catch colds; the health office reminds people to wash their hands. Staying healthy during cold season (h).",
+            "de": "Text 6: Im Herbst und Winter sind viele erkältet. Das Gesundheitsamt rät, oft die Hände zu waschen (h)."
+          },
+          {
+            "en": "Text 7: the vegetarian Monday dishes \"sind so beliebt, dass sie oft schon um 13 Uhr ausverkauft sind\" (c). The canteen is open on Mondays (f is wrong).",
+            "de": "Text 7: Die vegetarischen Gerichte am Montag „sind so beliebt, dass sie oft schon um 13 Uhr ausverkauft sind“ (c). Die Kantine ist montags geöffnet (f ist falsch)."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-b1__lesen-1__s03",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Einmal im Jahr bleiben die Museen der Stadt bis Mitternacht geöffnet. Bei der „Langen Nacht der Museen“ am 14. September machen diesmal 18 Häuser mit. Mit einem einzigen Ticket für 15 Euro kann man so viele Museen besuchen, wie man möchte. Zwischen den Museen fahren Sonderbusse, die im Preis enthalten sind. Neben den Ausstellungen gibt es Konzerte, Führungen mit Taschenlampe und Mitmachaktionen für Kinder. Kinder unter zwölf Jahren brauchen kein Ticket. Karten gibt es im Vorverkauf in der Touristeninformation und am Abend direkt an jedem Museum.",
+            "In der Bahnhofstraße hat ein ungewöhnliches Café eröffnet. Im „Würfelglück“ stehen nicht nur Kuchen und Kaffee auf der Karte, sondern auch über 500 Brett- und Kartenspiele in den Regalen. Für drei Euro pro Person kann man so lange spielen, wie man will. Wer die Regeln eines Spiels nicht kennt, bekommt Hilfe von den Mitarbeitern. „Viele Leute sitzen den ganzen Tag vor dem Bildschirm. Bei uns sitzen sie sich gegenüber und lachen zusammen“, sagt Besitzer Tim Hoffmann. Am Wochenende sollte man einen Tisch reservieren.",
+            "Die Stadt einmal mit anderen Augen sehen – das ermöglicht eine neue Führung. Die Stadtführer sind Männer und Frauen, die früher selbst auf der Straße gelebt haben. Sie zeigen den Teilnehmern keine Sehenswürdigkeiten, sondern Orte, die für Menschen ohne Wohnung wichtig sind: die Bahnhofsmission, eine Notunterkunft oder einen Platz, an dem man im Winter nicht friert. Dabei erzählen sie auch aus ihrem eigenen Leben. Die Führung dauert zwei Stunden und kostet zehn Euro. Ein Teil des Geldes geht direkt an die Stadtführer.",
+            "Nach dem vielen Regen wachsen in den Wäldern gerade sehr viele Pilze. Wer gern Pilze sammelt, sollte aber vorsichtig sein: Einige giftige Pilze sehen essbaren Pilzen sehr ähnlich. Jedes Jahr müssen Menschen ins Krankenhaus, weil sie die falschen Pilze gegessen haben. Der Naturschutzverein bietet deshalb jeden Montag von 17 bis 19 Uhr eine kostenlose Pilzberatung im Gemeindehaus an. Dort kontrolliert ein Experte die gesammelten Pilze. Wichtig: Bringen Sie die Pilze ganz und nicht geschnitten mit, sonst kann man sie schlecht erkennen.",
+            "Radfahrer, die auf dem Flussradweg unterwegs sind, haben jetzt eine neue Möglichkeit zum Übernachten. In mehreren Dörfern bieten Privatleute ein Stück Wiese in ihrem Garten an, auf dem man für eine Nacht sein Zelt aufbauen kann. Toilette und Dusche im Haus dürfen die Gäste benutzen, manche Gastgeber bieten sogar ein Frühstück an. Eine Übernachtung kostet zwischen fünf und zehn Euro. Die Adressen findet man auf der Internetseite des Tourismusverbands. „So lernen die Gäste auch die Menschen in der Region kennen“, sagt eine Gastgeberin.",
+            "Stand-up-Paddeln ist in den letzten Jahren sehr beliebt geworden. Auf dem Mühlsee müssen die Paddler ab sofort aber einen Teil des Sees meiden. Im Schilf am Nordufer brüten seltene Wasservögel, die durch die Boote gestört werden. Deshalb hat die Gemeinde dort bis Ende Juli eine Schutzzone eingerichtet, die mit gelben Bojen markiert ist. Wer trotzdem hineinfährt, muss bis zu 500 Euro bezahlen. Der restliche See bleibt für Paddler, Schwimmer und Ruderboote offen. Nach der Brutzeit wird die Zone wieder freigegeben.",
+            "Wenn es dunkel wird, verwandelt sich das Freibad am Stadtwald in ein Kino. An vier Abenden im August wird am Beckenrand eine große Leinwand aufgebaut. Die Besucher können auf Liegestühlen sitzen oder auf Schwimmringen im warmen Wasser liegen und dabei einen Film ansehen. Gezeigt werden Familienfilme und Komödien. Der Film beginnt um 21 Uhr, das Bad öffnet aber schon um 19 Uhr, damit man vorher noch schwimmen kann. Karten kosten acht Euro und sind nur online erhältlich. Bei Regen fällt die Vorstellung aus."
+          ],
+          "targets": [
+            "Ehemalige Obdachlose zeigen ihre Stadt",
+            "Filme schauen im Schwimmbecken",
+            "Pilze sammeln im Wald jetzt verboten",
+            "Kultur bis Mitternacht",
+            "Zelten im fremden Garten",
+            "Experte prüft gesammelte Pilze",
+            "Mühlsee für alle Boote gesperrt",
+            "Würfeln und spielen bei Kaffee und Kuchen",
+            "Rücksicht auf brütende Vögel"
+          ],
+          "answers": [
+            3,
+            7,
+            0,
+            5,
+            4,
+            8,
+            1
+          ],
+          "allowNone": false
+        },
+        "explanations": [
+          {
+            "en": "Text 1: during the \"Langen Nacht der Museen\" the museums \"bleiben … bis Mitternacht geöffnet\" (d).",
+            "de": "Text 1: Bei der „Langen Nacht der Museen“ bleiben die Museen „bis Mitternacht geöffnet“ (d)."
+          },
+          {
+            "en": "Text 2: the café has \"über 500 Brett- und Kartenspiele\" as well as cake and coffee (h).",
+            "de": "Text 2: Im Café gibt es Kuchen, Kaffee und „über 500 Brett- und Kartenspiele“ (h)."
+          },
+          {
+            "en": "Text 3: the guides are people \"die früher selbst auf der Straße gelebt haben\". Former homeless people show their city (a).",
+            "de": "Text 3: Die Stadtführer haben „früher selbst auf der Straße gelebt“. Ehemalige Obdachlose zeigen also die Stadt (a)."
+          },
+          {
+            "en": "Text 4: at the advice service \"kontrolliert ein Experte die gesammelten Pilze\" (f). Collecting mushrooms is not forbidden (c is wrong).",
+            "de": "Text 4: Bei der Beratung „kontrolliert ein Experte die gesammelten Pilze“ (f). Pilze sammeln ist nicht verboten (c ist falsch)."
+          },
+          {
+            "en": "Text 5: private people offer \"ein Stück Wiese in ihrem Garten\" where cyclists can pitch their tent (e).",
+            "de": "Text 5: Privatleute bieten „ein Stück Wiese in ihrem Garten“ an. Dort können Radfahrer zelten (e)."
+          },
+          {
+            "en": "Text 6: a protected zone keeps paddlers away because rare water birds breed in the reeds (i). \"Der restliche See bleibt … offen\", so it is not closed to all boats (g is wrong).",
+            "de": "Text 6: In einer Schutzzone dürfen keine Paddler fahren, weil dort seltene Vögel brüten (i). „Der restliche See bleibt … offen“ (g ist falsch)."
+          },
+          {
+            "en": "Text 7: the outdoor pool becomes a cinema, and visitors can watch the film lying on swim rings \"im warmen Wasser\" (b).",
+            "de": "Text 7: Das Freibad wird zum Kino. Man kann den Film sogar „im warmen Wasser“ auf Schwimmringen ansehen (b)."
+          }
+        ]
+      }
+    }
+  ]
+}

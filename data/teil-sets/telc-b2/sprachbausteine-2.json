@@ -1,0 +1,337 @@
+{
+  "formatId": "telc-b2",
+  "partId": "sprachbausteine-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b2__sprachbausteine-2__s01",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Gemüse mitten in der Stadt\n\nZwischen Hochhäusern und Parkplätzen wachsen Tomaten, Bohnen und Sonnenblumen: Auf einer ehemaligen Brachfläche im Osten der Stadt ist vor vier Jahren ein Gemeinschaftsgarten {{1}}. Rund 60 Menschen aus der Nachbarschaft kümmern sich {{2}} um die Beete. Jeder kann mitmachen, {{3}} man Erfahrung mit Gartenarbeit hat oder nicht.\n\n„Am Anfang waren wir nur eine Handvoll Leute“, erzählt Petra Lange, die das Projekt mitgegründet hat. „Heute kommen Familien, Studierende und Rentner, und viele von ihnen hätten sich ohne den Garten {{4}} kennengelernt.“ Die Ernte wird unter allen geteilt, die mitarbeiten. {{5}} geht es den meisten gar nicht so sehr um das Gemüse, {{6}} um die Gemeinschaft.\n\nDoch das Projekt ist in Gefahr. Die Stadt plant, auf dem Gelände Wohnungen zu bauen, und der Pachtvertrag {{7}} Ende nächsten Jahres aus. Die Gärtnerinnen und Gärtner haben deshalb eine Unterschriftenaktion gestartet. Sie fordern, dass der Garten bei der Planung {{8}} wird – zum Beispiel als grüner Innenhof der neuen Wohnanlage. Bisher haben über 3.000 Menschen unterschrieben. Ob die Stadt auf den Vorschlag {{9}}, ist noch offen; eine Entscheidung soll im Frühjahr fallen. Bis {{10}} wird weiter gepflanzt, gegossen und geerntet.",
+          "gaps": [
+            {
+              "mode": "bank",
+              "answer": 4
+            },
+            {
+              "mode": "bank",
+              "answer": 2
+            },
+            {
+              "mode": "bank",
+              "answer": 6
+            },
+            {
+              "mode": "bank",
+              "answer": 11
+            },
+            {
+              "mode": "bank",
+              "answer": 14
+            },
+            {
+              "mode": "bank",
+              "answer": 5
+            },
+            {
+              "mode": "bank",
+              "answer": 9
+            },
+            {
+              "mode": "bank",
+              "answer": 1
+            },
+            {
+              "mode": "bank",
+              "answer": 12
+            },
+            {
+              "mode": "bank",
+              "answer": 8
+            }
+          ],
+          "bank": [
+            "denn",
+            "berücksichtigt",
+            "gemeinsam",
+            "damals",
+            "entstanden",
+            "sondern",
+            "ob",
+            "gegangen",
+            "dahin",
+            "läuft",
+            "obwohl",
+            "nie",
+            "eingeht",
+            "sieht",
+            "dabei"
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Perfect tense of \"entstehen\" with \"sein\": \"ist … ein Gemeinschaftsgarten entstanden\" (e). \"gegangen\" makes no sense with a garden.",
+            "de": "Perfekt mit „sein“: „ist … entstanden“ (e). „gegangen“ passt nicht zu einem Garten."
+          },
+          {
+            "en": "An adverb describing how they look after the beds: \"gemeinsam\" (together) (c).",
+            "de": "Ein Adverb: Die Menschen kümmern sich „gemeinsam“ (zusammen) um die Beete (c)."
+          },
+          {
+            "en": "\"…, ob … oder nicht\" = whether or not (g). \"obwohl\" cannot combine with \"oder nicht\".",
+            "de": "„ob … oder nicht“ (g). „obwohl“ passt nicht zu „oder nicht“."
+          },
+          {
+            "en": "Without the garden they would \"nie\" (never) have met (l); Konjunktiv II for an unreal past.",
+            "de": "Ohne den Garten hätten sie sich „nie“ kennengelernt (l)."
+          },
+          {
+            "en": "\"dabei\" here means \"and yet / in fact\" and introduces a contrast to the expectation that the harvest matters (o).",
+            "de": "„Dabei“ bedeutet hier: eigentlich, in Wirklichkeit (o). Es zeigt einen Gegensatz."
+          },
+          {
+            "en": "\"nicht (so sehr) …, sondern …\" corrects a negated part (f). \"denn\" gives a reason.",
+            "de": "„nicht …, sondern …“ (f). „denn“ nennt einen Grund und passt nicht."
+          },
+          {
+            "en": "Separable verb \"auslaufen\" (to expire): \"der Pachtvertrag läuft … aus\" (j).",
+            "de": "Trennbares Verb „auslaufen“: „der Vertrag läuft … aus“ (j)."
+          },
+          {
+            "en": "Passive with \"werden\" needs a past participle: \"berücksichtigt wird\" (b) (is taken into account).",
+            "de": "Passiv: „werden“ + Partizip II → „berücksichtigt wird“ (b)."
+          },
+          {
+            "en": "\"auf etwas eingehen\" = to respond to / accept a proposal; verb at the end of the \"ob\" clause (m).",
+            "de": "„auf einen Vorschlag eingehen“ = ihn annehmen. Im Nebensatz steht das Verb am Ende (m)."
+          },
+          {
+            "en": "\"bis dahin\" = until then (i), referring to the decision in spring.",
+            "de": "„bis dahin“ = bis zu diesem Zeitpunkt, also bis zum Frühjahr (i)."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b2__sprachbausteine-2__s02",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Arbeiten, wo man will?\n\nSeit einigen Jahren arbeiten in Deutschland deutlich mehr Menschen zumindest teilweise von zu Hause aus. Was früher {{1}} in wenigen Branchen üblich war, gehört heute für Millionen Beschäftigte zum Alltag. Eine neue Umfrage zeigt, {{2}} die meisten von ihnen damit zufrieden sind: Sie sparen sich den täglichen Weg ins Büro und können ihre Zeit freier {{3}}.\n\nAllerdings bringt das Arbeiten in den eigenen vier Wänden auch Probleme mit {{4}}. Viele Befragte klagen darüber, dass sie abends nur schwer abschalten können, {{5}} der Laptop ständig in Sichtweite steht. Andere vermissen den Austausch mit Kolleginnen und Kollegen, {{6}} in der Kaffeeküche lassen sich manche Fragen viel schneller klären als per E-Mail.\n\nExperten raten deshalb, sich zu Hause einen festen Arbeitsplatz {{7}} und feste Arbeitszeiten einzuhalten. {{8}} wichtig sei es, regelmäßig Pausen zu machen und sich nach Feierabend bewusst zu bewegen. Auch die Unternehmen sind gefragt: Sie sollten dafür sorgen, dass die Teams trotz der Entfernung in Kontakt {{9}}, etwa durch regelmäßige Treffen im Büro. Die meisten Fachleute sind sich einig, dass eine Mischung aus beiden Modellen die beste Lösung ist – {{10}} für die Beschäftigten als auch für die Arbeitgeber.",
+          "gaps": [
+            {
+              "mode": "bank",
+              "answer": 5
+            },
+            {
+              "mode": "bank",
+              "answer": 2
+            },
+            {
+              "mode": "bank",
+              "answer": 1
+            },
+            {
+              "mode": "bank",
+              "answer": 10
+            },
+            {
+              "mode": "bank",
+              "answer": 13
+            },
+            {
+              "mode": "bank",
+              "answer": 7
+            },
+            {
+              "mode": "bank",
+              "answer": 11
+            },
+            {
+              "mode": "bank",
+              "answer": 14
+            },
+            {
+              "mode": "bank",
+              "answer": 4
+            },
+            {
+              "mode": "bank",
+              "answer": 8
+            }
+          ],
+          "bank": [
+            "weder",
+            "einteilen",
+            "dass",
+            "obwohl",
+            "bleiben",
+            "nur",
+            "eingerichtet",
+            "denn",
+            "sowohl",
+            "damit",
+            "sich",
+            "einzurichten",
+            "worüber",
+            "weil",
+            "ebenso"
+          ]
+        },
+        "explanations": [
+          {
+            "en": "\"nur in wenigen Branchen\" = only in a few sectors (f), contrasting with millions of employees today.",
+            "de": "„nur in wenigen Branchen“ (f): früher wenige, heute Millionen."
+          },
+          {
+            "en": "\"zeigen, dass …\" introduces the content of the result, with the verb at the end (\"sind\") (c).",
+            "de": "„zeigen, dass …“ (c). Danach steht das Verb am Ende."
+          },
+          {
+            "en": "\"seine Zeit einteilen\" = to organise one's time; infinitive after the modal \"können\" (b).",
+            "de": "„die Zeit einteilen“ = planen. Nach „können“ steht der Infinitiv (b)."
+          },
+          {
+            "en": "Fixed phrase: \"etwas mit sich bringen\" (to involve, entail) (k).",
+            "de": "Feste Wendung: „etwas mit sich bringen“ (k)."
+          },
+          {
+            "en": "A reason clause with the verb at the end (\"steht\"): \"weil\" (n). \"obwohl\" would express a contradiction that is not meant here.",
+            "de": "Grund mit Verb am Ende: „weil“ (n). „obwohl“ passt inhaltlich nicht."
+          },
+          {
+            "en": "The following clause has verb-second word order (\"lassen sich\"), so the causal conjunction must be \"denn\" (h), not \"weil\" or \"damit\".",
+            "de": "Nach der Lücke steht das Verb an zweiter Stelle („lassen sich“). Das passt nur zu „denn“ (h)."
+          },
+          {
+            "en": "\"raten, … zu + Infinitiv\": separable verb \"einrichten\" → \"einzurichten\" (l), parallel to \"einzuhalten\".",
+            "de": "„raten, etwas zu tun“: „einzurichten“ (l), wie „einzuhalten“."
+          },
+          {
+            "en": "\"Ebenso wichtig\" = just as important (o), adding a further piece of advice.",
+            "de": "„Ebenso wichtig“ = genauso wichtig (o)."
+          },
+          {
+            "en": "\"in Kontakt bleiben\" = to stay in touch; verb at the end of the \"dass\" clause (e).",
+            "de": "„in Kontakt bleiben“ (e). Im „dass“-Satz steht das Verb am Ende."
+          },
+          {
+            "en": "Two-part conjunction \"sowohl … als auch\" = both … and (i). \"weder\" would need \"noch\".",
+            "de": "„sowohl … als auch“ (i). „weder“ braucht „noch“."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b2__sprachbausteine-2__s03",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Mit dem Lastenrad zum Einkaufen\n\nIn vielen deutschen Städten sieht man sie immer häufiger: Lastenräder, mit {{1}} Eltern ihre Kinder in den Kindergarten bringen oder Handwerker ihr Werkzeug transportieren. Für viele Menschen sind sie eine echte Alternative zum Auto geworden, {{2}} in der Innenstadt, wo Parkplätze knapp und teuer sind.\n\nEin neues Lastenrad ist {{3}} nicht billig: Modelle mit Elektromotor kosten oft mehr als 4.000 Euro. Deshalb {{4}} zahlreiche Städte und Gemeinden den Kauf mit Zuschüssen. Wer sich nicht gleich festlegen möchte, kann ein Rad auch für einige Tage {{5}}. In vielen Stadtteilen gibt es inzwischen sogar Initiativen, die Lastenräder kostenlos verleihen. Man muss sich nur im Internet anmelden und einen Termin für die Abholung {{6}}.\n\nNicht alle sind von der Entwicklung begeistert. Fußgänger beschweren sich darüber, dass die breiten Räder oft auf dem Gehweg abgestellt werden {{7}} dort den Weg versperren. Radfahrer wiederum klagen, dass viele Radwege für die großen Fahrzeuge {{8}} schmal sind. Verkehrsplaner fordern deshalb, die Radwege auszubauen und mehr Abstellplätze zu schaffen.\n\n{{9}} der Kritik ist die Zahl der Lastenräder in den letzten Jahren stark gestiegen. Fachleute gehen davon aus, dass dieser Trend auch in Zukunft anhalten wird – vor allem, {{10}} immer mehr Städte das Autofahren in den Zentren einschränken.",
+          "gaps": [
+            {
+              "mode": "bank",
+              "answer": 3
+            },
+            {
+              "mode": "bank",
+              "answer": 0
+            },
+            {
+              "mode": "bank",
+              "answer": 12
+            },
+            {
+              "mode": "bank",
+              "answer": 8
+            },
+            {
+              "mode": "bank",
+              "answer": 6
+            },
+            {
+              "mode": "bank",
+              "answer": 2
+            },
+            {
+              "mode": "bank",
+              "answer": 9
+            },
+            {
+              "mode": "bank",
+              "answer": 14
+            },
+            {
+              "mode": "bank",
+              "answer": 5
+            },
+            {
+              "mode": "bank",
+              "answer": 11
+            }
+          ],
+          "bank": [
+            "besonders",
+            "deswegen",
+            "vereinbaren",
+            "denen",
+            "zum",
+            "trotz",
+            "mieten",
+            "obwohl",
+            "fördern",
+            "und",
+            "deren",
+            "wenn",
+            "allerdings",
+            "verbieten",
+            "zu"
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Relative pronoun after \"mit\" (dative), plural antecedent \"Lastenräder\": \"mit denen\" (d). \"deren\" is genitive and needs a following noun it owns.",
+            "de": "Relativpronomen nach „mit“ (Dativ Plural): „mit denen“ (d)."
+          },
+          {
+            "en": "\"besonders in der Innenstadt\" = especially in the city centre (a), stressing where the advantage is greatest.",
+            "de": "„besonders in der Innenstadt“ = vor allem dort (a)."
+          },
+          {
+            "en": "\"allerdings\" (however) introduces a limitation after the positive paragraph: the bikes are not cheap (m).",
+            "de": "„allerdings“ zeigt eine Einschränkung: Die Räder sind nicht billig (m)."
+          },
+          {
+            "en": "After \"Deshalb\" the verb comes next; \"etwas mit Zuschüssen fördern\" = to subsidise (i).",
+            "de": "Nach „Deshalb“ kommt das Verb: „fördern … mit Zuschüssen“ (i)."
+          },
+          {
+            "en": "Infinitive after \"kann\": \"ein Rad für einige Tage mieten\" (g) (rent for a few days).",
+            "de": "Nach „kann“ steht der Infinitiv: „ein Rad mieten“ (g)."
+          },
+          {
+            "en": "Collocation \"einen Termin vereinbaren\" (to arrange an appointment) (c).",
+            "de": "Feste Verbindung: „einen Termin vereinbaren“ (c)."
+          },
+          {
+            "en": "\"und\" links two verbs of the same \"dass\" clause: \"abgestellt werden und … versperren\" (j).",
+            "de": "„und“ verbindet zwei Verben im selben Nebensatz (j)."
+          },
+          {
+            "en": "\"zu\" + adjective = too: \"zu schmal\" (o) (too narrow).",
+            "de": "„zu“ + Adjektiv = mehr als gut ist: „zu schmal“ (o)."
+          },
+          {
+            "en": "Preposition \"trotz\" + genitive: \"Trotz der Kritik\" (f). \"obwohl\" is a conjunction and would need a clause.",
+            "de": "Präposition „trotz“ + Genitiv: „Trotz der Kritik“ (f). „obwohl“ braucht einen Nebensatz."
+          },
+          {
+            "en": "\"vor allem, wenn …\" = especially if/when (l), a condition with the verb at the end (\"einschränken\").",
+            "de": "„vor allem, wenn …“ (l). Das Verb steht am Ende."
+          }
+        ]
+      }
+    }
+  ]
+}

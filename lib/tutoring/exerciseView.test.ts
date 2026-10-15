@@ -48,4 +48,25 @@ describe('toExerciseView', () => {
     });
     expect(view).toEqual({ id: 'e', type: 'free_text', prompt: '', instruction: { en: 'Say hello.', de: 'Sag hallo.' } });
   });
+
+  it('shows the reading task types without their answers', () => {
+    expect(
+      toExerciseView({
+        id: 'cz', lessonId: 'l', track: null, type: 'cloze',
+        content: { text: 'Ich {{1}} {{2}}.', gaps: [{ mode: 'typed', answer: 'bin' }, { mode: 'bank', answer: 0 }], bank: ['hier', 'da'] },
+      })
+    ).toEqual({ id: 'cz', type: 'cloze', text: 'Ich {{1}} {{2}}.', gaps: [{ mode: 'typed' }, { mode: 'bank' }], bank: ['hier', 'da'] });
+    expect(
+      toExerciseView({
+        id: 'mt', lessonId: 'l', track: null, type: 'matching',
+        content: { items: ['A'], targets: ['x', 'y'], answers: [1], allowNone: false },
+      })
+    ).toEqual({ id: 'mt', type: 'matching', items: ['A'], targets: ['x', 'y'], allowNone: false });
+    expect(
+      toExerciseView({
+        id: 'pq', lessonId: 'l', track: null, type: 'passage_questions',
+        content: { instruction: { en: 'Read.', de: 'Lies.' }, passage: 'P.', questions: [{ question: 'Q?', options: ['a', 'b'], correctIndex: 1 }] },
+      })
+    ).toEqual({ id: 'pq', type: 'passage_questions', instruction: { en: 'Read.', de: 'Lies.' }, passage: 'P.', questions: [{ question: 'Q?', options: ['a', 'b'] }] });
+  });
 });

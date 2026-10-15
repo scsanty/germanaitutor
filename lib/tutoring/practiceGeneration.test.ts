@@ -27,6 +27,13 @@ describe('buildPracticeGenerationPrompt', () => {
     expect(messages[0].content).toContain('"question":"Hi?"');
   });
 
+  it('describes the reading task shapes', () => {
+    const { systemPrompt } = buildPracticeGenerationPrompt(ctx, ['cloze'], 2);
+    expect(systemPrompt).toContain('- cloze: ');
+    expect(systemPrompt).not.toContain('- matching: ');
+    expect(buildPracticeGenerationPrompt(ctx, ['passage_questions', 'matching'], 2).systemPrompt).toMatch(/- passage_questions: [\s\S]*- matching: /);
+  });
+
   it('includes at most 10 authored exercises as style examples', () => {
     const many = Array.from({ length: 12 }, (_, i) => ({
       type: 'fill_blank' as const,

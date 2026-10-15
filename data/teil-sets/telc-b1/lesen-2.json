@@ -1,0 +1,241 @@
+{
+  "formatId": "telc-b1",
+  "partId": "lesen-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b1__lesen-2__s01",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Reparieren statt wegwerfen\n\nJeden ersten Samstag im Monat ist im Gemeindehaus von Altenburg-Süd viel los. Auf langen Tischen stehen Toaster, Lampen, Radios und Kaffeemaschinen, daneben liegen Schraubenzieher und Zangen. Seit zwei Jahren gibt es hier das Reparatur-Café, und es wird immer beliebter.\n\nDie Idee hatte Helmut Berger. Der 67-Jährige war vierzig Jahre lang Elektriker. „Als ich in Rente gegangen bin, habe ich gemerkt, wie viele Geräte bei uns im Haus einfach im Müll landen“, erzählt er. „Oft ist nur ein Kabel kaputt oder ein kleiner Schalter. Das hat mich richtig geärgert.“ Also rief er ein paar frühere Kollegen an und erzählte ihnen von seinem Plan. Heute arbeiten zwölf Helferinnen und Helfer ehrenamtlich mit, darunter auch eine Schneiderin, die Kleidung flickt.\n\nWer etwas reparieren lassen will, muss keinen Termin machen. Man kommt einfach vorbei, schreibt sich in eine Liste ein und wartet bei Kaffee und Kuchen, bis man an der Reihe ist. Aber Achtung: Die Besucher geben ihre Geräte nicht einfach ab. „Wir reparieren gemeinsam“, erklärt Berger. „Die Leute sollen sehen, wie das Gerät funktioniert, und beim nächsten Mal vielleicht selbst etwas machen können.“\n\nFür die Hilfe muss man nichts bezahlen. Neben der Tür steht aber eine Spendenkasse, und die meisten Besucher werfen gern ein paar Euro hinein. Von dem Geld kauft der Verein neues Werkzeug. Ersatzteile müssen die Besucher allerdings selbst mitbringen oder bezahlen.\n\nNicht alles kann gerettet werden. Etwa jedes dritte Gerät ist so alt oder so stark beschädigt, dass auch die Profis nichts mehr machen können. Trotzdem sind die meisten Besucher zufrieden. Die Studentin Lena Wolf war heute mit ihrem Föhn da. „Im Geschäft hätte man mir sicher geraten, einen neuen zu kaufen“, sagt sie. „Hier hat es zwanzig Minuten gedauert, und ich habe sogar verstanden, was kaputt war.“\n\nFür die Zukunft hat Helmut Berger große Pläne. Weil der Raum im Gemeindehaus inzwischen zu klein ist, sucht der Verein eine eigene Werkstatt. Dann könnte das Café auch unter der Woche öffnen. Außerdem möchte Berger Kurse für Schulklassen anbieten. „Junge Leute sollen lernen, dass man Dinge nicht sofort wegwerfen muss“, sagt er.",
+          "questions": [
+            {
+              "question": "Warum hat Helmut Berger das Reparatur-Café gegründet?",
+              "options": [
+                "Er wollte als Rentner etwas Geld dazuverdienen.",
+                "Es störte ihn, dass so viele Geräte weggeworfen werden.",
+                "Seine früheren Kollegen hatten ihn darum gebeten."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Wie läuft ein Besuch im Reparatur-Café ab?",
+              "options": [
+                "Man muss vorher telefonisch einen Termin vereinbaren.",
+                "Man lässt das Gerät dort und holt es später wieder ab.",
+                "Man repariert das Gerät zusammen mit einem Helfer."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Was gilt für die Kosten?",
+              "options": [
+                "Die Hilfe ist kostenlos, Ersatzteile muss man aber selbst bezahlen.",
+                "Jeder Besucher muss eine kleine Spende geben.",
+                "Das Werkzeug muss man selbst mitbringen."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Was sagt Lena Wolf über ihren Besuch?",
+              "options": [
+                "Ihr Föhn konnte leider nicht repariert werden.",
+                "Sie hat erfahren, warum ihr Föhn nicht funktioniert hat.",
+                "Im Geschäft hat man ihr zu einem neuen Föhn geraten."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Was plant der Verein?",
+              "options": [
+                "Er möchte in einen größeren Raum im Gemeindehaus umziehen.",
+                "Er möchte das Café in Zukunft auch an Werktagen öffnen.",
+                "Er sucht mehr junge Helferinnen und Helfer."
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Berger says many devices \"einfach im Müll landen\" although often only a cable is broken: \"Das hat mich richtig geärgert.\" He works as a volunteer, and he called his colleagues himself.",
+            "de": "Berger sagt, dass viele Geräte „einfach im Müll landen“, obwohl oft nur ein Kabel kaputt ist: „Das hat mich richtig geärgert.“ Er arbeitet ehrenamtlich, und er hat die Kollegen selbst angerufen."
+          },
+          {
+            "en": "\"Die Besucher geben ihre Geräte nicht einfach ab. Wir reparieren gemeinsam.\" No appointment is needed, so (a) is wrong.",
+            "de": "„Die Besucher geben ihre Geräte nicht einfach ab. Wir reparieren gemeinsam.“ Einen Termin braucht man nicht, also ist (a) falsch."
+          },
+          {
+            "en": "\"Für die Hilfe muss man nichts bezahlen … Ersatzteile müssen die Besucher allerdings selbst mitbringen oder bezahlen.\" A donation is welcome but not required, and the club buys the tools.",
+            "de": "„Für die Hilfe muss man nichts bezahlen … Ersatzteile müssen die Besucher allerdings selbst mitbringen oder bezahlen.“ Eine Spende ist freiwillig, und das Werkzeug kauft der Verein."
+          },
+          {
+            "en": "Lena says: \"ich habe sogar verstanden, was kaputt war.\" Her hair dryer was repaired in twenty minutes. \"hätte … geraten\" is hypothetical: she did not go to a shop.",
+            "de": "Lena sagt: „ich habe sogar verstanden, was kaputt war.“ Der Föhn wurde in zwanzig Minuten repariert. „hätte … geraten“ bedeutet: Das ist nicht passiert, sie war nicht im Geschäft."
+          },
+          {
+            "en": "The club is looking for its own workshop: \"Dann könnte das Café auch unter der Woche öffnen.\" It wants to leave the community hall, and it plans courses for school classes, not new helpers.",
+            "de": "Der Verein sucht eine eigene Werkstatt: „Dann könnte das Café auch unter der Woche öffnen.“ Er will aus dem Gemeindehaus weg und plant Kurse für Schulklassen, keine neuen Helfer."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b1__lesen-2__s02",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Freitags frei: Ein Malerbetrieb probiert die Vier-Tage-Woche\n\nIm Malerbetrieb Kraus in Neustadt beginnt das Wochenende schon am Donnerstagabend. Seit einem Jahr arbeiten die 14 Mitarbeiterinnen und Mitarbeiter nur noch von Montag bis Donnerstag. Dafür ist jeder Arbeitstag etwas länger: Statt acht Stunden arbeiten sie jetzt neun Stunden pro Tag. Ihren Lohn bekommen sie trotzdem in voller Höhe.\n\nChefin Sabine Kraus hatte lange über diesen Schritt nachgedacht. „Wir haben seit Jahren Probleme, gute Leute zu finden“, erzählt die 48-Jährige. „Junge Menschen wollen heute mehr Zeit für Familie und Hobbys. Ich wollte, dass mein Betrieb für sie interessant ist.“ Bevor sie das neue Modell einführte, hat sie alle Mitarbeiter nach ihrer Meinung gefragt. Nur zwei waren am Anfang dagegen.\n\nDer Plan hat funktioniert. Auf die letzte Stellenanzeige haben sich elf Personen beworben, früher waren es höchstens zwei oder drei. Außerdem sind die Mitarbeiter seltener krank. „Ich glaube, die Leute sind einfach erholter, wenn sie drei Tage frei haben“, sagt Kraus.\n\nDoch es gibt auch Schwierigkeiten. Manche Kunden waren am Anfang nicht begeistert, weil sie am Freitag niemanden im Büro erreichen konnten. Kraus hat deshalb eine Lösung gefunden: Ein Mitarbeiter hat abwechselnd Bereitschaftsdienst und nimmt am Freitag die Anrufe entgegen. Dafür bekommt er an einem anderen Tag frei.\n\nAuch nicht alle Mitarbeiter finden die langen Tage leicht. Der Maler Tom Becker, 56, gehörte zu den Kritikern. „Neun Stunden auf der Leiter, das spürt man abends im Rücken“, sagt er. Inzwischen hat er seine Meinung aber geändert. „Am Freitag kann ich zum Arzt gehen oder Dinge erledigen, für die früher nur der Samstag blieb. Dann habe ich das ganze Wochenende für meine Enkel.“\n\nExperten sehen das Modell positiv, warnen aber vor zu großen Hoffnungen. Nicht in jeder Branche sei eine Vier-Tage-Woche möglich, zum Beispiel in Krankenhäusern oder im Verkauf. Sabine Kraus will auf jeden Fall dabei bleiben. Im nächsten Jahr möchte sie sogar zwei weitere Mitarbeiter einstellen.",
+          "questions": [
+            {
+              "question": "Wie arbeiten die Mitarbeiter seit einem Jahr?",
+              "options": [
+                "Sie arbeiten weniger Stunden und verdienen deshalb weniger.",
+                "Sie arbeiten an vier Tagen länger und bekommen den gleichen Lohn.",
+                "Sie können selbst entscheiden, an welchen Tagen sie arbeiten."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Warum hat Frau Kraus die Vier-Tage-Woche eingeführt?",
+              "options": [
+                "Sie wollte neue Mitarbeiter für ihren Betrieb gewinnen.",
+                "Die Mitarbeiter hatten sich das schon lange gewünscht.",
+                "Sie wollte selbst mehr Zeit für ihre Familie haben."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Welches Problem gab es mit den Kunden?",
+              "options": [
+                "Die Kunden mussten länger auf ihre Aufträge warten.",
+                "Die Kunden wollten keine höheren Preise bezahlen.",
+                "Die Kunden konnten freitags niemanden im Betrieb erreichen."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Was sagt Tom Becker heute über die Vier-Tage-Woche?",
+              "options": [
+                "Er findet die langen Arbeitstage immer noch zu anstrengend.",
+                "Er ist zufrieden, weil er am Freitag private Dinge erledigen kann.",
+                "Er möchte wieder an fünf Tagen pro Woche arbeiten."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Was meinen Experten zur Vier-Tage-Woche?",
+              "options": [
+                "Sie passt nicht für alle Berufe.",
+                "Sie macht die Mitarbeiter auf Dauer krank.",
+                "Sie sollte in allen Betrieben eingeführt werden."
+              ],
+              "correctIndex": 0
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "They work Monday to Thursday, \"neun Stunden pro Tag\" instead of eight, and \"Ihren Lohn bekommen sie trotzdem in voller Höhe.\"",
+            "de": "Sie arbeiten von Montag bis Donnerstag „neun Stunden pro Tag“ statt acht. „Ihren Lohn bekommen sie trotzdem in voller Höhe.“"
+          },
+          {
+            "en": "Kraus: \"Wir haben seit Jahren Probleme, gute Leute zu finden … Ich wollte, dass mein Betrieb für sie interessant ist.\" She wanted to attract new staff. She asked her staff first, but they had not long wished for it.",
+            "de": "Frau Kraus: „Wir haben seit Jahren Probleme, gute Leute zu finden … Ich wollte, dass mein Betrieb für sie interessant ist.“ Sie wollte also neue Mitarbeiter gewinnen."
+          },
+          {
+            "en": "\"Manche Kunden waren … nicht begeistert, weil sie am Freitag niemanden im Büro erreichen konnten.\" Waiting times and prices are not mentioned.",
+            "de": "„Manche Kunden waren … nicht begeistert, weil sie am Freitag niemanden im Büro erreichen konnten.“ Von Wartezeiten oder Preisen steht nichts im Text."
+          },
+          {
+            "en": "Becker has changed his mind: on Friday he can go to the doctor or do errands, and he has the whole weekend for his grandchildren. His back pain was his earlier criticism.",
+            "de": "Herr Becker hat seine Meinung geändert: Am Freitag kann er zum Arzt gehen oder Dinge erledigen. Die Rückenschmerzen waren seine frühere Kritik."
+          },
+          {
+            "en": "Experts say it is not possible in every sector, \"zum Beispiel in Krankenhäusern oder im Verkauf\". So it does not suit all jobs.",
+            "de": "Experten sagen: Nicht in jeder Branche ist das möglich, „zum Beispiel in Krankenhäusern oder im Verkauf“. Es passt also nicht für alle Berufe."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b1__lesen-2__s03",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Ein Dorf rettet seinen Laden\n\nAls vor drei Jahren der letzte Supermarkt in Bergheim schloss, war die Sorge groß. Für Milch oder Brot mussten die 900 Einwohner plötzlich zwölf Kilometer in die nächste Stadt fahren. Für junge Familien mit Auto war das ärgerlich, für viele ältere Menschen war es ein echtes Problem. Ein Bus fährt nämlich nur zweimal am Tag.\n\nHeute gibt es im Ort wieder einen Laden – und er gehört den Bewohnern selbst. Die Idee kam von Petra Lang, die im Gemeinderat sitzt. Sie hatte in einer Fernsehsendung von einem Dorfladen in Süddeutschland gehört und lud zu einer Versammlung ein. „Ich hatte mit zwanzig Leuten gerechnet. Gekommen sind fast zweihundert“, erinnert sie sich. Gemeinsam gründeten sie einen Verein. Wer mitmachen wollte, konnte Anteile für je 100 Euro kaufen. So kamen in wenigen Monaten 60.000 Euro zusammen.\n\nDas Geschäft befindet sich im alten Bahnhofsgebäude. Neben Lebensmitteln gibt es dort auch eine kleine Postfiliale und eine Ecke mit Tischen, wo man Kaffee trinken kann. Besonders wichtig ist den Bewohnern, dass viele Produkte aus der Region kommen: Die Eier stammen vom Hof der Familie Seidel, das Brot von einer Bäckerei aus dem Nachbardorf.\n\nZwei Verkäuferinnen sind fest angestellt. Daneben helfen etwa dreißig Freiwillige mit, zum Beispiel beim Einräumen der Regale oder samstags an der Kasse. Einer von ihnen ist der 74-jährige Walter Henning. „Seit meine Frau gestorben ist, war ich viel allein“, erzählt er. „Hier treffe ich jeden Tag Leute und habe eine Aufgabe.“\n\nGanz einfach ist es aber nicht. Die Preise sind etwas höher als im Supermarkt in der Stadt, und manche Bewohner kaufen trotzdem lieber dort ein. Im ersten Jahr hat der Laden deshalb kaum Gewinn gemacht. Inzwischen sieht es besser aus. „Wenn jeder Haushalt nur einen Teil seiner Einkäufe hier macht, können wir gut überleben“, sagt Petra Lang.\n\nSie hofft, dass das Beispiel Schule macht. Schon zwei andere Gemeinden haben sich bei ihr gemeldet und wollen wissen, wie man einen eigenen Laden gründet.",
+          "questions": [
+            {
+              "question": "Was war nach der Schließung des Supermarkts das Problem?",
+              "options": [
+                "Die Einwohner mussten zum Einkaufen in eine andere Stadt fahren.",
+                "Die Preise im Ort stiegen stark.",
+                "Viele junge Familien zogen aus dem Dorf weg."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Wie ist der Dorfladen entstanden?",
+              "options": [
+                "Die Gemeinde hat das Geld für den Laden bezahlt.",
+                "Viele Bewohner haben sich mit Geld an dem Laden beteiligt.",
+                "Eine Firma aus Süddeutschland hat den Laden eröffnet."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Was erfährt man über das Angebot im Laden?",
+              "options": [
+                "Man kann dort nur Produkte aus der Region kaufen.",
+                "Im Laden gibt es eine Bäckerei, die eigenes Brot backt.",
+                "Man kann dort auch Post erledigen und Kaffee trinken."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Warum arbeitet Walter Henning im Laden mit?",
+              "options": [
+                "Er möchte zu seiner Rente etwas Geld dazuverdienen.",
+                "Er hat dort Kontakt zu anderen Menschen.",
+                "Er war früher selbst Verkäufer."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Wie geht es dem Laden heute?",
+              "options": [
+                "Die Situation ist besser als im ersten Jahr.",
+                "Er macht immer noch keinen Gewinn.",
+                "Er ist billiger als der Supermarkt in der Stadt."
+              ],
+              "correctIndex": 0
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "\"Für Milch oder Brot mussten die 900 Einwohner plötzlich zwölf Kilometer in die nächste Stadt fahren.\" Rising prices and families moving away are not mentioned.",
+            "de": "„Für Milch oder Brot mussten die 900 Einwohner plötzlich zwölf Kilometer in die nächste Stadt fahren.“ Von steigenden Preisen oder Familien, die wegziehen, steht nichts im Text."
+          },
+          {
+            "en": "The residents founded a club and bought shares \"für je 100 Euro\"; 60,000 euros came together. The idea came from a TV programme about southern Germany, not from a company there.",
+            "de": "Die Bewohner gründeten einen Verein und kauften Anteile „für je 100 Euro“. So kamen 60.000 Euro zusammen. Aus Süddeutschland kam nur die Idee, keine Firma."
+          },
+          {
+            "en": "\"Neben Lebensmitteln gibt es dort auch eine kleine Postfiliale und eine Ecke mit Tischen, wo man Kaffee trinken kann.\" Only \"viele\" products are regional, and the bread comes from a bakery in the next village.",
+            "de": "„Neben Lebensmitteln gibt es dort auch eine kleine Postfiliale und eine Ecke mit Tischen, wo man Kaffee trinken kann.“ Nur „viele“ Produkte kommen aus der Region, und das Brot kommt aus dem Nachbardorf."
+          },
+          {
+            "en": "Henning was often alone after his wife died: \"Hier treffe ich jeden Tag Leute und habe eine Aufgabe.\" He is a volunteer, so he earns nothing.",
+            "de": "Herr Henning war nach dem Tod seiner Frau viel allein: „Hier treffe ich jeden Tag Leute und habe eine Aufgabe.“ Er arbeitet freiwillig und verdient kein Geld."
+          },
+          {
+            "en": "In the first year the shop made hardly any profit; \"Inzwischen sieht es besser aus.\" Prices are a little higher than in the town supermarket.",
+            "de": "Im ersten Jahr gab es kaum Gewinn. „Inzwischen sieht es besser aus.“ Die Preise sind etwas höher als im Supermarkt in der Stadt."
+          }
+        ]
+      }
+    }
+  ]
+}

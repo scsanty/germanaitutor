@@ -2,7 +2,15 @@ import type { ExerciseType, Skill } from '../curriculum/types';
 
 export const PRACTICE_BATCH_SIZE = 5;
 
-const TYPE_ORDER: readonly ExerciseType[] = ['multiple_choice', 'fill_blank', 'flashcard', 'free_text'];
+const TYPE_ORDER: readonly ExerciseType[] = [
+  'multiple_choice',
+  'fill_blank',
+  'flashcard',
+  'free_text',
+  'passage_questions',
+  'matching',
+  'cloze',
+];
 
 // Practice mirrors the lesson's own exercise types; flashcards only ever in vocabulary lessons
 // (Phase 1 rule). A lesson with nothing usable authored falls back to the two deterministic types.

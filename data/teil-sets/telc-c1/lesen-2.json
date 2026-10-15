@@ -1,0 +1,181 @@
+{
+  "formatId": "telc-c1",
+  "partId": "lesen-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-c1__lesen-2__s01",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Was müssen Beschäftigte bei einer unbezahlten Auszeit hinsichtlich ihrer Krankenversicherung beachten?",
+            "Haben Arbeitnehmerinnen und Arbeitnehmer grundsätzlich ein Recht auf ein Sabbatical?",
+            "Aus welchen Gründen nehmen Berufstätige eine längere Auszeit?",
+            "Welche Schwierigkeiten können nach der Auszeit am Arbeitsplatz auftreten?",
+            "Mit welchen Argumenten lässt sich der Arbeitgeber für das Vorhaben gewinnen?",
+            "Wie kann man erreichen, dass auch während der Auszeit ein Gehalt gezahlt wird?"
+          ],
+          "targets": [
+            "Drei Monate durch Südamerika reisen, ein Jahr lang einen kranken Elternteil pflegen oder endlich das Studium nachholen, das man einst abgebrochen hat: Die Gründe, aus denen Berufstätige eine längere Auszeit nehmen, sind so verschieden wie die Menschen selbst. Häufig steht dahinter aber auch schlicht das Gefühl, nach vielen Jahren im Beruf ausgelaugt zu sein und Abstand zu brauchen. Umfragen zufolge kann sich gut die Hälfte der Beschäftigten eine solche Pause vorstellen; tatsächlich verwirklicht wird sie allerdings nur von einem Bruchteil. Unter einem Sabbatical versteht man dabei in der Regel eine Freistellung von drei bis zwölf Monaten, nach der man an seinen Arbeitsplatz zurückkehrt.",
+            "Wie sich die Auszeit organisieren lässt, hängt stark vom Arbeitgeber ab, denn einen allgemeinen gesetzlichen Anspruch auf ein Sabbatical gibt es nicht. Lediglich im öffentlichen Dienst und in einigen Tarifverträgen sind entsprechende Regelungen vorgesehen; alle anderen müssen eine individuelle Vereinbarung aushandeln. Besonders beliebt ist das sogenannte Ansparmodell: Man arbeitet beispielsweise vier Jahre lang in vollem Umfang, erhält aber nur achtzig Prozent des Gehalts. Im fünften Jahr bleibt man zu Hause und bekommt weiterhin die gleichen achtzig Prozent ausgezahlt. Wer auf ein solches Modell keinen Zugriff hat, kann auch unbezahlten Urlaub beantragen – muss die Pause dann aber vollständig aus eigenen Ersparnissen finanzieren.",
+            "Gerade beim unbezahlten Urlaub wird ein Punkt oft unterschätzt: die soziale Absicherung. Dauert die Freistellung länger als einen Monat, endet die Mitgliedschaft in der gesetzlichen Krankenversicherung über den Arbeitgeber. Wer dann nicht über den Ehepartner familienversichert ist, muss sich freiwillig versichern und die Beiträge in voller Höhe selbst tragen. Auch in die Rentenkasse fließt in dieser Zeit nichts, was sich später in einer etwas geringeren Rente niederschlägt. Beim Ansparmodell stellt sich dieses Problem hingegen nicht, weil das Arbeitsverhältnis mit allen Pflichten bestehen bleibt.",
+            "Wer eine Auszeit plant, sollte das Gespräch mit der Vorgesetzten frühzeitig suchen – ideal sind ein bis zwei Jahre Vorlauf. Gut vorbereitet ist, wer nicht nur den eigenen Wunsch begründet, sondern auch aufzeigt, wie die Arbeit in der Zwischenzeit erledigt werden kann, etwa durch eine Vertretung, die rechtzeitig eingearbeitet wird. Hilfreich ist außerdem der Hinweis, dass auch das Unternehmen profitiert: Wer erholt und mit neuen Erfahrungen zurückkommt, arbeitet oft motivierter, und Firmen, die Sabbaticals ermöglichen, gelten als attraktive Arbeitgeber. Ist man sich einig, gehört alles Wesentliche in eine schriftliche Vereinbarung – vor allem die Zusage, nach der Rückkehr eine gleichwertige Stelle zu erhalten.",
+            "Viele Rückkehrer berichten, dass ihnen der Wiedereinstieg schwerer gefallen sei als erwartet. Abläufe haben sich verändert, vertraute Kolleginnen und Kollegen sind gegangen, und nicht selten fühlt man sich nach Monaten der Selbstbestimmung vom starren Arbeitsalltag eingeengt. Es empfiehlt sich deshalb, während der Auszeit lose Kontakt zum Team zu halten und die letzten Wochen nicht vollständig zu verplanen, sondern bewusst als Übergang zu nutzen. Wer sich zudem schon vorher überlegt, was er nach der Rückkehr anders machen möchte, kann die Erfahrungen des Sabbaticals leichter in den Alltag mitnehmen."
+          ],
+          "answers": [
+            2,
+            1,
+            0,
+            4,
+            3,
+            1
+          ],
+          "allowNone": false
+        },
+        "explanations": [
+          {
+            "en": "Paragraph c: \"Dauert die Freistellung länger als einen Monat, endet die Mitgliedschaft in der gesetzlichen Krankenversicherung … muss sich freiwillig versichern und die Beiträge in voller Höhe selbst tragen.\"",
+            "de": "Absatz c: Bei mehr als einem Monat unbezahltem Urlaub endet die Krankenversicherung über den Arbeitgeber. Man muss sich freiwillig versichern und alles selbst bezahlen."
+          },
+          {
+            "en": "Paragraph b: \"einen allgemeinen gesetzlichen Anspruch auf ein Sabbatical gibt es nicht\" — only the public sector and some collective agreements have rules.",
+            "de": "Absatz b: „einen allgemeinen gesetzlichen Anspruch auf ein Sabbatical gibt es nicht“. Nur im öffentlichen Dienst und in einigen Tarifverträgen gibt es Regeln."
+          },
+          {
+            "en": "Paragraph a lists the reasons: travelling, caring for a sick parent, finishing a degree, or simply feeling \"ausgelaugt\" and needing distance.",
+            "de": "Absatz a nennt die Gründe: Reisen, Pflege der Eltern, Studium nachholen oder das Gefühl, „ausgelaugt“ zu sein."
+          },
+          {
+            "en": "Paragraph e: returning is \"schwerer … als erwartet\" — processes have changed, colleagues have left, and the rigid routine feels confining.",
+            "de": "Absatz e: Der Wiedereinstieg ist „schwerer … als erwartet“. Abläufe sind anders, Kollegen sind weg, und der Alltag wirkt eng."
+          },
+          {
+            "en": "Paragraph d: show how the work will be covered and point out that the company profits — rested staff are more motivated, and such firms \"gelten als attraktive Arbeitgeber\".",
+            "de": "Absatz d: Man zeigt, wer die Arbeit übernimmt, und betont den Nutzen für die Firma: motivierte Mitarbeiter und ein attraktiver Arbeitgeber."
+          },
+          {
+            "en": "Paragraph b describes the Ansparmodell: you work full time for 80 % pay for four years and in the fifth year at home \"bekommt weiterhin die gleichen achtzig Prozent ausgezahlt\". Paragraph b answers two questions.",
+            "de": "Absatz b beschreibt das Ansparmodell: Vier Jahre arbeitet man für 80 % Gehalt, im fünften Jahr zu Hause bekommt man weiter 80 %. Absatz b beantwortet also zwei Fragen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-c1__lesen-2__s02",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Wie viel Zeit vergeht in der Regel von der ersten Idee bis zum Einzug?",
+            "Wie gehen die Bewohner mit Streitigkeiten untereinander um?",
+            "Wie wird in einer Genossenschaft über gemeinsame Angelegenheiten abgestimmt?",
+            "Wie können Interessierte herausfinden, ob diese Wohnform zu ihnen passt?",
+            "Wie unterstützen manche Kommunen Wohnprojekte bei der Suche nach einem Grundstück?",
+            "Was bewegt Menschen dazu, in ein solches Wohnprojekt zu ziehen?"
+          ],
+          "targets": [
+            "Gemeinschaftliche Wohnprojekte erleben seit einigen Jahren einen regelrechten Aufschwung. Das Prinzip ist einfach: Jede Partei verfügt über eine eigene, abgeschlossene Wohnung, darüber hinaus gibt es Räume, die alle gemeinsam nutzen – etwa eine große Küche für gemeinsame Mahlzeiten, ein Gästezimmer für Besuch, eine Werkstatt oder einen Garten. Oft leben Familien, Alleinstehende und Ältere bewusst unter einem Dach. Viele Bewohnerinnen und Bewohner suchen genau diese Mischung: Sie wollen nicht allein alt werden, Kinder sollen mit Nachbarn aufwachsen, die man kennt, und im Alltag hilft man sich gegenseitig, sei es beim Einkaufen oder bei der Betreuung der Kleinen.",
+            "Rechtlich können solche Projekte sehr unterschiedlich organisiert sein. Weit verbreitet ist die Genossenschaft: Die Mitglieder erwerben Anteile und erhalten dafür ein dauerhaftes Wohnrecht, werden aber nicht Eigentümer ihrer Wohnung. Entscheidungen fallen in der Mitgliederversammlung, wobei jedes Mitglied eine Stimme hat – unabhängig davon, wie viele Anteile es besitzt. Daneben gibt es Projekte, in denen die Beteiligten gemeinsam Eigentum erwerben, sowie Mietmodelle, bei denen ein Investor das Haus baut und es langfristig an eine Bewohnergruppe vermietet.",
+            "Wer ein eigenes Projekt gründen will, braucht vor allem Geduld. Von den ersten Treffen der Gruppe bis zum Einzug vergehen nicht selten fünf bis sieben Jahre. Die größte Hürde ist meist das Grundstück, denn auf dem freien Markt können Gruppen mit begrenzten Mitteln kaum mit professionellen Bauträgern konkurrieren. Einige Städte vergeben Flächen deshalb nicht mehr an den Meistbietenden, sondern an das überzeugendste Konzept, oder sie reservieren bestimmte Grundstücke ausdrücklich für gemeinschaftliche Wohnformen. Für die Finanzierung muss die Gruppe in der Regel Eigenkapital aufbringen; zinsgünstige Förderdarlehen können die Last jedoch spürbar verringern.",
+            "So harmonisch das Zusammenleben in der Werbung wirkt, so konfliktreich kann der Alltag sein. Die einen stört der Lärm spielender Kinder im Hof, die anderen ärgern sich, dass die Gemeinschaftsküche nie aufgeräumt ist, und wieder andere haben das Gefühl, die ganze Arbeit bleibe an wenigen hängen. Erfolgreiche Projekte setzen deshalb auf klare Absprachen, die schriftlich festgehalten werden, und auf regelmäßige Versammlungen, in denen Unmut offen angesprochen werden kann. Verhärten sich die Fronten, holen sich viele Gruppen Hilfe von außen und lassen schwierige Gespräche von einer neutralen Moderatorin leiten.",
+            "Wer nicht selbst gründen, sondern in ein bestehendes Projekt einziehen möchte, findet Angebote vor allem in Online-Börsen und bei regionalen Beratungsstellen, die regelmäßig Informationsabende veranstalten. Da frei werdende Wohnungen begehrt sind, führen viele Projekte Wartelisten. Bevor man sich festlegt, sollte man sich ehrlich fragen, wie viel Gemeinschaft man sich tatsächlich wünscht. Eine gute Gelegenheit, das zu prüfen, bietet das Probewohnen, das zahlreiche Projekte anbieten: Man verbringt einige Tage im Gästezimmer, nimmt an gemeinsamen Mahlzeiten teil und bekommt so einen realistischen Eindruck vom Alltag."
+          ],
+          "answers": [
+            2,
+            3,
+            1,
+            4,
+            2,
+            0
+          ],
+          "allowNone": false
+        },
+        "explanations": [
+          {
+            "en": "Paragraph c: \"Von den ersten Treffen der Gruppe bis zum Einzug vergehen nicht selten fünf bis sieben Jahre.\"",
+            "de": "Absatz c: Vom ersten Treffen bis zum Einzug vergehen oft fünf bis sieben Jahre."
+          },
+          {
+            "en": "Paragraph d: conflicts are handled with written agreements, regular meetings where discontent can be raised, and, if necessary, \"eine neutrale Moderatorin\" from outside.",
+            "de": "Absatz d: Man macht klare, schriftliche Absprachen, trifft sich regelmäßig und holt bei großen Konflikten eine neutrale Moderatorin."
+          },
+          {
+            "en": "Paragraph b: decisions are made in the members' meeting, \"wobei jedes Mitglied eine Stimme hat – unabhängig davon, wie viele Anteile es besitzt\".",
+            "de": "Absatz b: In der Mitgliederversammlung hat jedes Mitglied eine Stimme, egal wie viele Anteile es hat."
+          },
+          {
+            "en": "Paragraph e: you should ask yourself how much community you want, and the \"Probewohnen\" — a few days in the guest room — gives a realistic impression of daily life.",
+            "de": "Absatz e: Beim „Probewohnen“ wohnt man einige Tage im Gästezimmer und sieht so, ob der Alltag zu einem passt."
+          },
+          {
+            "en": "Paragraph c: some cities award land \"nicht mehr an den Meistbietenden, sondern an das überzeugendste Konzept\" or reserve plots for communal housing. Paragraph c answers two questions.",
+            "de": "Absatz c: Manche Städte geben Grundstücke an das beste Konzept statt an den Meistbietenden oder reservieren Flächen für Wohnprojekte. Absatz c beantwortet zwei Fragen."
+          },
+          {
+            "en": "Paragraph a: residents want exactly this mix — they \"wollen nicht allein alt werden\", children should grow up with neighbours they know, and people help each other in everyday life.",
+            "de": "Absatz a: Die Bewohner wollen nicht allein alt werden, Kinder sollen bekannte Nachbarn haben, und man hilft sich im Alltag."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-c1__lesen-2__s03",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Lassen sich die Kosten des Studiums steuerlich geltend machen?",
+            "Wo werden die Prüfungen abgelegt?",
+            "Unter welchen Voraussetzungen kann man auch ohne Abitur studieren?",
+            "Was ist zu beachten, wenn sich der Arbeitgeber an den Kosten beteiligt?",
+            "Mit welchem wöchentlichen Zeitaufwand muss man rechnen?",
+            "Welche Ziele verfolgen die Studierenden mit ihrem Fernstudium?"
+          ],
+          "targets": [
+            "Wer an ein Studium denkt, hat meist junge Menschen vor Augen, die direkt nach der Schule in einen Hörsaal strömen. Im Fernstudium sieht das Bild ganz anders aus: Das Durchschnittsalter liegt hier bei über dreißig Jahren, die große Mehrheit ist berufstätig, und viele haben Kinder. Ihre Beweggründe ähneln sich dennoch: Die einen möchten sich für eine Führungsposition qualifizieren, die nur mit einem akademischen Abschluss erreichbar ist, andere wollen nach Jahren im selben Beruf in ein ganz neues Feld wechseln. Und nicht wenige erfüllen sich schlicht einen lange gehegten Wunsch, für den früher die Gelegenheit fehlte.",
+            "Ein Abitur ist für die Aufnahme eines Fernstudiums keineswegs zwingend erforderlich. Wer eine abgeschlossene Berufsausbildung und mehrere Jahre einschlägige Berufserfahrung nachweisen kann, wird in den meisten Bundesländern als sogenannter beruflich Qualifizierter zugelassen; Meisterinnen und Meister erhalten sogar die allgemeine Hochschulzugangsberechtigung. Darüber hinaus lohnt es sich, bei der Hochschule nachzufragen, ob Kenntnisse aus Ausbildung oder Weiterbildungen angerechnet werden können. Im günstigsten Fall verkürzt sich dadurch die Studienzeit um ein oder zwei Semester.",
+            "Bei den Kosten gibt es erhebliche Unterschiede. Staatliche Fernhochschulen verlangen vergleichsweise moderate Gebühren, während private Anbieter für einen Bachelor schnell fünfstellige Beträge in Rechnung stellen. Einige Unternehmen übernehmen einen Teil davon, wenn das Studium für die Tätigkeit relevant ist. Allerdings enthalten solche Vereinbarungen häufig eine Klausel, nach der das Geld ganz oder teilweise zurückgezahlt werden muss, wenn man die Firma innerhalb einer bestimmten Frist verlässt. Die selbst getragenen Ausgaben können in der Regel als Werbungskosten in der Steuererklärung angegeben werden, was die Belastung spürbar verringert.",
+            "Wie viel Zeit das Studium tatsächlich beansprucht, wird oft unterschätzt. Für ein Teilzeitstudium sollte man realistisch fünfzehn bis zwanzig Stunden pro Woche einplanen – zusätzlich zu Beruf, Haushalt und Familie. Erfahrene Studierende raten deshalb, feste Lernzeiten in den Wochenplan einzutragen und sie ebenso ernst zu nehmen wie berufliche Termine. Ebenso wichtig ist es, Partner und Kinder frühzeitig einzubeziehen, denn ohne ihre Unterstützung lässt sich die Doppelbelastung kaum über mehrere Jahre durchhalten. Nicht umsonst bricht ein beträchtlicher Teil der Fernstudierenden das Studium vorzeitig ab.",
+            "Ganz ohne persönlichen Kontakt kommt auch ein Fernstudium nicht aus. Zwar werden die Inhalte überwiegend über Lernplattformen, Skripte und Online-Seminare vermittelt, die Klausuren müssen jedoch unter Aufsicht in regionalen Studienzentren geschrieben werden, die über das ganze Land verteilt sind. Viele Studierende schätzen diese Termine auch als Gelegenheit, Kommilitoninnen und Kommilitonen kennenzulernen. Wer sich zusätzlich einer Lerngruppe anschließt, die sich virtuell oder vor Ort trifft, beugt dem Gefühl vor, mit dem Stoff allein gelassen zu sein."
+          ],
+          "answers": [
+            2,
+            4,
+            1,
+            2,
+            3,
+            0
+          ],
+          "allowNone": false
+        },
+        "explanations": [
+          {
+            "en": "Paragraph c: \"Die selbst getragenen Ausgaben können in der Regel als Werbungskosten in der Steuererklärung angegeben werden.\"",
+            "de": "Absatz c: Die Kosten, die man selbst bezahlt, kann man als Werbungskosten in der Steuererklärung angeben."
+          },
+          {
+            "en": "Paragraph e: \"die Klausuren müssen jedoch unter Aufsicht in regionalen Studienzentren geschrieben werden\".",
+            "de": "Absatz e: Die Klausuren schreibt man unter Aufsicht in regionalen Studienzentren."
+          },
+          {
+            "en": "Paragraph b: with a completed vocational training and several years of relevant work experience you are admitted as \"beruflich Qualifizierter\"; master craftspeople even get general university entrance.",
+            "de": "Absatz b: Mit Berufsausbildung und mehreren Jahren Berufserfahrung wird man als „beruflich Qualifizierter“ zugelassen; Meister dürfen sogar allgemein studieren."
+          },
+          {
+            "en": "Paragraph c: such agreements often contain a clause that the money must be paid back \"wenn man die Firma innerhalb einer bestimmten Frist verlässt\". Paragraph c answers two questions.",
+            "de": "Absatz c: Oft muss man das Geld zurückzahlen, wenn man die Firma zu früh verlässt. Absatz c beantwortet zwei Fragen."
+          },
+          {
+            "en": "Paragraph d: \"Für ein Teilzeitstudium sollte man realistisch fünfzehn bis zwanzig Stunden pro Woche einplanen.\"",
+            "de": "Absatz d: Man sollte fünfzehn bis zwanzig Stunden pro Woche einplanen."
+          },
+          {
+            "en": "Paragraph a names the goals: qualifying for a management position, switching to a completely new field, or fulfilling a long-held wish.",
+            "de": "Absatz a nennt die Ziele: eine Führungsposition, ein Wechsel in ein neues Berufsfeld oder ein alter Wunsch."
+          }
+        ]
+      }
+    }
+  ]
+}

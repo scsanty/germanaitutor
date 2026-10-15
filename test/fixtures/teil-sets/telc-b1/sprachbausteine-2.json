@@ -1,0 +1,117 @@
+{
+  "formatId": "telc-b1",
+  "partId": "sprachbausteine-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b1__sprachbausteine-2__s01",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Wort {{1}}. Wort {{2}}. Wort {{3}}. Wort {{4}}. Wort {{5}}. Wort {{6}}. Wort {{7}}. Wort {{8}}. Wort {{9}}. Wort {{10}}.",
+          "bank": [
+            "w0",
+            "w1",
+            "w2",
+            "w3",
+            "w4",
+            "w5",
+            "w6",
+            "w7",
+            "w8",
+            "w9",
+            "w10",
+            "w11",
+            "w12",
+            "w13",
+            "w14"
+          ],
+          "gaps": [
+            {
+              "mode": "bank",
+              "answer": 0
+            },
+            {
+              "mode": "bank",
+              "answer": 1
+            },
+            {
+              "mode": "bank",
+              "answer": 2
+            },
+            {
+              "mode": "bank",
+              "answer": 3
+            },
+            {
+              "mode": "bank",
+              "answer": 4
+            },
+            {
+              "mode": "bank",
+              "answer": 5
+            },
+            {
+              "mode": "bank",
+              "answer": 6
+            },
+            {
+              "mode": "bank",
+              "answer": 7
+            },
+            {
+              "mode": "bank",
+              "answer": 8
+            },
+            {
+              "mode": "bank",
+              "answer": 9
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Fixture explanation 1.",
+            "de": "Fixture-Erklärung 1."
+          },
+          {
+            "en": "Fixture explanation 2.",
+            "de": "Fixture-Erklärung 2."
+          },
+          {
+            "en": "Fixture explanation 3.",
+            "de": "Fixture-Erklärung 3."
+          },
+          {
+            "en": "Fixture explanation 4.",
+            "de": "Fixture-Erklärung 4."
+          },
+          {
+            "en": "Fixture explanation 5.",
+            "de": "Fixture-Erklärung 5."
+          },
+          {
+            "en": "Fixture explanation 6.",
+            "de": "Fixture-Erklärung 6."
+          },
+          {
+            "en": "Fixture explanation 7.",
+            "de": "Fixture-Erklärung 7."
+          },
+          {
+            "en": "Fixture explanation 8.",
+            "de": "Fixture-Erklärung 8."
+          },
+          {
+            "en": "Fixture explanation 9.",
+            "de": "Fixture-Erklärung 9."
+          },
+          {
+            "en": "Fixture explanation 10.",
+            "de": "Fixture-Erklärung 10."
+          }
+        ]
+      }
+    }
+  ]
+}

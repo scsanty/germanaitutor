@@ -1,0 +1,202 @@
+{
+  "formatId": "goethe-b1",
+  "partId": "lesen-5",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-b1__lesen-5__s01",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Volkshochschule Lindenfeld – Teilnahmebedingungen\n\nAnmeldung\nSie können sich online, telefonisch oder persönlich in unserer Geschäftsstelle anmelden. Ihre Anmeldung ist verbindlich. Sie erhalten keine schriftliche Bestätigung; wir melden uns nur, wenn ein Kurs bereits voll ist oder ausfällt.\n\nBezahlung\nDie Kursgebühr wird vor Kursbeginn von Ihrem Konto abgebucht. Barzahlung ist nur in der Geschäftsstelle möglich. Schülerinnen und Schüler, Studierende und Menschen mit geringem Einkommen erhalten 30 Prozent Ermäßigung, wenn sie bei der Anmeldung einen Nachweis vorlegen. Später ist keine Ermäßigung mehr möglich.\n\nAbmeldung\nBis zehn Tage vor Kursbeginn können Sie sich kostenlos abmelden. Danach müssen Sie die volle Gebühr bezahlen, außer Sie finden selbst eine Person, die Ihren Platz übernimmt. Die Abmeldung muss schriftlich erfolgen, zum Beispiel per E-Mail.\n\nAusfall von Kursen\nEin Kurs findet nur statt, wenn sich mindestens acht Personen angemeldet haben. Fällt ein Kurs aus, bekommen Sie die bereits bezahlte Gebühr vollständig zurück. Muss ein einzelner Termin ausfallen, zum Beispiel weil die Kursleitung krank ist, wird er nachgeholt.\n\nBescheinigung\nWenn Sie mindestens 80 Prozent der Termine besucht haben, können Sie am Ende des Kurses eine Teilnahmebescheinigung bekommen.",
+          "questions": [
+            {
+              "question": "Nach der Anmeldung …",
+              "options": [
+                "bekommen Sie immer eine Bestätigung per Post.",
+                "hören Sie nur von der Volkshochschule, wenn es ein Problem gibt.",
+                "müssen Sie die Gebühr sofort bar bezahlen."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Eine Ermäßigung bekommt man …",
+              "options": [
+                "wenn man in der Geschäftsstelle bar bezahlt.",
+                "auch noch nach Kursbeginn, wenn man einen Nachweis hat.",
+                "nur, wenn man bei der Anmeldung einen Nachweis zeigt."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Wer sich eine Woche vor Kursbeginn abmeldet, …",
+              "options": [
+                "muss nichts bezahlen, wenn er eine Ersatzperson findet.",
+                "kann sich noch kostenlos abmelden.",
+                "muss nur die Hälfte der Gebühr bezahlen."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Wenn die Kursleiterin an einem Tag krank ist, …",
+              "options": [
+                "bekommen Sie einen Teil der Gebühr zurück.",
+                "endet der Kurs früher.",
+                "wird der Termin später nachgeholt."
+              ],
+              "correctIndex": 2
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "„Sie erhalten keine schriftliche Bestätigung; wir melden uns nur, wenn ein Kurs bereits voll ist oder ausfällt.“",
+            "de": "Es gibt keine schriftliche Bestätigung. Die Volkshochschule meldet sich nur, wenn der Kurs voll ist oder ausfällt."
+          },
+          {
+            "en": "The discount applies „wenn sie bei der Anmeldung einen Nachweis vorlegen. Später ist keine Ermäßigung mehr möglich.“",
+            "de": "Man muss den Nachweis bei der Anmeldung zeigen. „Später ist keine Ermäßigung mehr möglich.“"
+          },
+          {
+            "en": "Free cancellation is only possible until ten days before; after that you pay in full, „außer Sie finden selbst eine Person, die Ihren Platz übernimmt“.",
+            "de": "Kostenlos abmelden kann man nur bis zehn Tage vorher. Danach zahlt man alles, außer man findet eine andere Person für den Platz."
+          },
+          {
+            "en": "„Muss ein einzelner Termin ausfallen, zum Beispiel weil die Kursleitung krank ist, wird er nachgeholt.“ Money back is only for a whole cancelled course.",
+            "de": "Wenn ein Termin ausfällt, weil die Kursleitung krank ist, wird er nachgeholt. Geld zurück gibt es nur, wenn der ganze Kurs ausfällt."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__lesen-5__s02",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Fitnessstudio Kraftwerk – Hausordnung\n\nLiebe Mitglieder,\ndamit sich alle bei uns wohlfühlen, bitten wir Sie, die folgenden Regeln zu beachten.\n\nÖffnungszeiten und Zutritt\nDas Studio ist täglich von 6 bis 23 Uhr geöffnet. Mit Ihrer Mitgliedskarte öffnen Sie die Eingangstür. Die Karte ist persönlich und darf nicht an andere Personen weitergegeben werden. Wenn Sie Ihre Karte verlieren, melden Sie das bitte sofort an der Theke. Eine neue Karte kostet 10 Euro.\n\nTraining\nBitte trainieren Sie nur in sauberen Sportschuhen, die Sie nicht draußen getragen haben. Legen Sie auf jedes Gerät ein Handtuch. Nach dem Training reinigen Sie das Gerät bitte mit dem Spray, das überall bereitsteht. Zwischen 17 und 20 Uhr ist das Studio oft sehr voll. Bitte benutzen Sie die Ausdauergeräte in dieser Zeit höchstens 30 Minuten.\n\nUmkleiden und Schränke\nDie Schränke in den Umkleiden dürfen nur während des Trainings benutzt werden. Bitte nehmen Sie Ihre Sachen mit, wenn Sie das Studio verlassen. Schränke, die nach der Schließung des Studios noch verschlossen sind, werden geöffnet. Der Inhalt wird eine Woche lang an der Theke aufbewahrt. Für Wertsachen übernehmen wir keine Haftung.\n\nKurse\nFür unsere Kurse wie Yoga oder Rückenfit müssen Sie sich vorher in unserer App anmelden. Wer zehn Minuten nach Kursbeginn nicht da ist, verliert seinen Platz.",
+          "questions": [
+            {
+              "question": "Die Mitgliedskarte …",
+              "options": [
+                "dürfen auch Freunde des Mitglieds benutzen.",
+                "darf nur das Mitglied selbst benutzen.",
+                "wird bei Verlust kostenlos ersetzt."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Am frühen Abend …",
+              "options": [
+                "soll man an den Ausdauergeräten nicht länger als eine halbe Stunde trainieren.",
+                "ist das Studio für Kurse reserviert.",
+                "muss man sich für die Geräte an der Theke anmelden."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Wer seine Sachen über Nacht im Schrank lässt, …",
+              "options": [
+                "muss 10 Euro bezahlen.",
+                "darf das Studio eine Woche lang nicht besuchen.",
+                "kann sie später an der Theke abholen."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Bei den Kursen …",
+              "options": [
+                "kann man ohne Anmeldung mitmachen.",
+                "darf man höchstens zehn Minuten zu spät kommen.",
+                "meldet man sich an der Theke an."
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "„Die Karte ist persönlich und darf nicht an andere Personen weitergegeben werden.“ A new card costs 10 euros.",
+            "de": "Die Karte ist persönlich. Man darf sie nicht anderen Personen geben. Eine neue Karte kostet 10 Euro."
+          },
+          {
+            "en": "Between 17 and 20 Uhr, „benutzen Sie die Ausdauergeräte in dieser Zeit höchstens 30 Minuten“.",
+            "de": "Zwischen 17 und 20 Uhr darf man die Ausdauergeräte höchstens 30 Minuten benutzen."
+          },
+          {
+            "en": "Lockers still closed after closing time are opened, and „Der Inhalt wird eine Woche lang an der Theke aufbewahrt.“",
+            "de": "Die Schränke werden geöffnet, und die Sachen liegen eine Woche lang an der Theke. Man kann sie dort abholen."
+          },
+          {
+            "en": "You must register in the app, and „Wer zehn Minuten nach Kursbeginn nicht da ist, verliert seinen Platz.“",
+            "de": "Man meldet sich in der App an. Wer mehr als zehn Minuten zu spät kommt, verliert seinen Platz."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__lesen-5__s03",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Grillplatz am Mühlenteich – Benutzungsordnung der Gemeinde Hollerbach\n\nReservierung\nDer Grillplatz kann von Privatpersonen und Vereinen gemietet werden. Bitte reservieren Sie mindestens zwei Wochen vorher persönlich im Bürgerbüro. Eine Reservierung im Internet ist leider nicht möglich. Der Platz ist für höchstens 40 Personen geeignet.\n\nKosten\nDie Miete beträgt für Einwohnerinnen und Einwohner von Hollerbach 30 Euro pro Tag, für alle anderen 50 Euro. Zusätzlich zahlen alle Mieter bei der Reservierung eine Kaution von 100 Euro. Sie bekommen die Kaution zurück, wenn der Platz sauber und ohne Schäden übergeben wird.\n\nNutzung\nDer Grillplatz darf zwischen 10 und 22 Uhr genutzt werden. Grillen ist nur auf dem fest eingebauten Grill erlaubt, offenes Feuer auf der Wiese ist verboten. Holzkohle bringen Sie bitte selbst mit. Bei großer Trockenheit kann die Gemeinde das Grillen auch kurzfristig verbieten. Sie werden dann telefonisch informiert und können einen neuen Termin wählen.\n\nOrdnung\nMusik ist erlaubt, aber nur in Zimmerlautstärke. Ihren Müll nehmen Sie bitte wieder mit, denn auf dem Platz gibt es keine Mülltonnen. Den Schlüssel für die Toiletten erhalten Sie im Bürgerbüro. Bitte geben Sie ihn am nächsten Werktag dort wieder ab.",
+          "questions": [
+            {
+              "question": "Den Grillplatz …",
+              "options": [
+                "kann man nur online buchen.",
+                "dürfen nur Vereine mieten.",
+                "muss man im Bürgerbüro reservieren."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Die Kaution …",
+              "options": [
+                "bekommt man zurück, wenn man den Platz ordentlich hinterlässt.",
+                "zahlen nur Gäste, die nicht in Hollerbach wohnen.",
+                "ist schon im Mietpreis enthalten."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Wenn es sehr trocken ist, …",
+              "options": [
+                "darf man nur auf der Wiese grillen.",
+                "kann man einen anderen Termin für das Grillfest bekommen.",
+                "bekommt man die Miete nicht zurück."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Auf dem Grillplatz …",
+              "options": [
+                "stehen Mülltonnen für den Abfall.",
+                "kann man Holzkohle kaufen.",
+                "darf man leise Musik hören."
+              ],
+              "correctIndex": 2
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "„Bitte reservieren Sie mindestens zwei Wochen vorher persönlich im Bürgerbüro. Eine Reservierung im Internet ist leider nicht möglich.“ Private persons can rent it too.",
+            "de": "Man reserviert persönlich im Bürgerbüro. Im Internet geht das nicht. Auch Privatpersonen dürfen mieten."
+          },
+          {
+            "en": "„Sie bekommen die Kaution zurück, wenn der Platz sauber und ohne Schäden übergeben wird.“ All tenants pay it, in addition to the rent.",
+            "de": "Die Kaution bekommt man zurück, wenn der Platz sauber ist und nichts kaputt ist. Alle Mieter zahlen sie, zusätzlich zur Miete."
+          },
+          {
+            "en": "If grilling is banned because of dryness, „Sie werden dann telefonisch informiert und können einen neuen Termin wählen.“",
+            "de": "Bei großer Trockenheit kann man einen neuen Termin wählen. Feuer auf der Wiese ist immer verboten."
+          },
+          {
+            "en": "„Musik ist erlaubt, aber nur in Zimmerlautstärke.“ There are no bins, and you bring your own charcoal.",
+            "de": "Musik ist erlaubt, aber nur leise („in Zimmerlautstärke“). Es gibt keine Mülltonnen, und Holzkohle bringt man selbst mit."
+          }
+        ]
+      }
+    }
+  ]
+}

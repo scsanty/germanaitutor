@@ -1,0 +1,220 @@
+{
+  "formatId": "telc-c1",
+  "partId": "lesen-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-c1__lesen-1__s01",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Schatten als Stadtpolitik\n\nWenn im Hochsommer das Thermometer in den Innenstädten über 35 Grad klettert, wird deutlich, wie ungleich die Hitze verteilt ist. Auf einem asphaltierten Platz kann die gefühlte Temperatur um mehr als zehn Grad höher liegen als im benachbarten Park. {{1}} Stadtplaner sprechen deshalb längst nicht mehr nur von Verschönerung, wenn sie über Bäume reden, sondern von Gesundheitsvorsorge.\n\nDie kühlende Wirkung eines großen Baumes beruht vor allem auf zwei Effekten. Zum einen hält die Krone die direkte Sonneneinstrahlung ab, sodass sich Straßen und Fassaden weniger aufheizen. Zum anderen verdunstet ein Baum über seine Blätter an heißen Tagen mehrere Hundert Liter Wasser. {{2}} Ein ausgewachsener Straßenbaum leistet auf diese Weise so viel wie mehrere Klimaanlagen – allerdings ohne Strom zu verbrauchen.\n\nDoch gerade die Bäume, die am dringendsten gebraucht werden, haben es am schwersten. In engen Straßen konkurrieren ihre Wurzeln mit Leitungen, Kabeln und Tiefgaragen, und der verdichtete Boden speichert kaum Regenwasser. {{3}} Viele Kommunen pflanzen daher inzwischen Arten, die mit Trockenheit besser zurechtkommen, etwa die Silberlinde oder die Zerr-Eiche, die ursprünglich aus Südosteuropa stammt.\n\nEin weiteres Problem ist die Zeit. Ein frisch gepflanzter Jungbaum spendet in den ersten Jahren kaum Schatten; bis er seine volle Wirkung entfaltet, vergehen nicht selten zwei Jahrzehnte. {{4}} Manche Städte haben deshalb ihre Baumschutzsatzungen verschärft, die das Fällen gesunder Altbäume nur noch in Ausnahmefällen erlauben.\n\nUm auch kurzfristig für Abkühlung zu sorgen, setzen einige Gemeinden auf ergänzende Maßnahmen: Sonnensegel über Spielplätzen, begrünte Dächer auf Bushaltestellen oder Trinkbrunnen an zentralen Orten. {{5}} Fachleute betonen jedoch, dass solche Lösungen den Baum nicht ersetzen, sondern lediglich die Jahre überbrücken können, bis die Neupflanzungen groß genug sind.\n\nBleibt die Frage, wer sich um die Bäume kümmert, wenn die Sommer immer trockener werden. Die Grünflächenämter sind vielerorts personell knapp besetzt und können nicht jeden Baum regelmäßig wässern. {{6}} In mehreren Städten gibt es mittlerweile Online-Karten, auf denen Freiwillige eintragen, welchen Baum sie gegossen haben – ein kleines Beispiel dafür, wie aus einer kommunalen Aufgabe ein gemeinsames Projekt werden kann.",
+          "gaps": [
+            {
+              "mode": "bank",
+              "answer": 2
+            },
+            {
+              "mode": "bank",
+              "answer": 5
+            },
+            {
+              "mode": "bank",
+              "answer": 7
+            },
+            {
+              "mode": "bank",
+              "answer": 1
+            },
+            {
+              "mode": "bank",
+              "answer": 6
+            },
+            {
+              "mode": "bank",
+              "answer": 3
+            }
+          ],
+          "bank": [
+            "Im Winter dagegen lassen die kahlen Kronen das Sonnenlicht nahezu ungehindert hindurch.",
+            "Umso wichtiger ist es, den vorhandenen alten Baumbestand zu erhalten, statt ihn neuen Bauvorhaben zu opfern.",
+            "Besonders gefährdet sind ältere Menschen und Kleinkinder, deren Körper sich schlechter an große Hitze anpassen kann.",
+            "Immer häufiger springen deshalb Anwohnerinnen und Anwohner ein, die die Bäume vor ihrer Haustür mit Gießkannen versorgen.",
+            "Aus diesem Grund verzichten viele Städte mittlerweile ganz darauf, in engen Straßen neue Bäume zu pflanzen.",
+            "Die dafür benötigte Energie entzieht er der umgebenden Luft, die sich dadurch spürbar abkühlt.",
+            "Diese Maßnahmen lassen sich vergleichsweise schnell und kostengünstig umsetzen.",
+            "Hinzu kommt, dass Hitze und lange Trockenperioden die Bäume zusätzlich schwächen und anfälliger für Schädlinge machen."
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Sentence c fits gap 1: it names who suffers most from the heat (older people and small children), and the next sentence draws the conclusion with \"deshalb … Gesundheitsvorsorge\". Trees become a health issue because of these vulnerable groups.",
+            "de": "Satz c passt in Lücke 1: Er nennt die Menschen, für die Hitze besonders gefährlich ist. Der folgende Satz zieht daraus mit „deshalb … Gesundheitsvorsorge“ die Schlussfolgerung."
+          },
+          {
+            "en": "Sentence f fits gap 2: \"die dafür benötigte Energie\" refers back to the evaporation of several hundred litres of water, and the cooled air explains the following \"auf diese Weise so viel wie mehrere Klimaanlagen\".",
+            "de": "Satz f passt in Lücke 2: „die dafür benötigte Energie“ bezieht sich auf die Verdunstung des Wassers. Die abgekühlte Luft erklärt das folgende „auf diese Weise so viel wie mehrere Klimaanlagen“."
+          },
+          {
+            "en": "Sentence h fits gap 3: \"Hinzu kommt\" adds a further difficulty (heat and drought weaken the trees), and the next sentence reacts to it: municipalities \"daher\" plant species that cope better with dryness. Sentence e (no more planting) contradicts that next sentence.",
+            "de": "Satz h passt in Lücke 3: „Hinzu kommt“ nennt ein weiteres Problem, nämlich Hitze und Trockenheit. Darauf reagieren die Kommunen „daher“ mit Bäumen, die Trockenheit besser vertragen. Satz e widerspricht dem, denn es werden ja weiter Bäume gepflanzt."
+          },
+          {
+            "en": "Sentence b fits gap 4: because young trees need about twenty years to give full shade, it is \"umso wichtiger\" to keep the old trees. The next sentence gives the consequence: stricter tree protection rules against felling healthy old trees.",
+            "de": "Satz b passt in Lücke 4: Junge Bäume brauchen bis zu zwanzig Jahre, deshalb ist es „umso wichtiger“, alte Bäume zu erhalten. Danach folgen passend die strengeren Baumschutzsatzungen."
+          },
+          {
+            "en": "Sentence g fits gap 5: \"Diese Maßnahmen\" refers to the sun sails, green bus-stop roofs and drinking fountains just listed; the advantage (quick and cheap) is then limited by \"Fachleute betonen jedoch …\".",
+            "de": "Satz g passt in Lücke 5: „Diese Maßnahmen“ meint die Sonnensegel, Dächer und Trinkbrunnen. Der Vorteil (schnell und günstig) wird danach mit „jedoch“ eingeschränkt."
+          },
+          {
+            "en": "Sentence d fits gap 6: since the parks departments cannot water every tree, residents step in (\"deshalb\"). The following sentence about volunteers entering on online maps which tree they watered continues this idea.",
+            "de": "Satz d passt in Lücke 6: Die Ämter schaffen das Gießen nicht, „deshalb“ helfen Anwohner mit Gießkannen. Der nächste Satz über Freiwillige und Online-Karten führt diesen Gedanken weiter."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-c1__lesen-1__s02",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Die Bibliothek als Wohnzimmer der Stadt\n\nNoch vor zwanzig Jahren prophezeiten viele Fachleute den öffentlichen Bibliotheken eine düstere Zukunft. Wenn das gesamte Wissen der Welt nur einen Klick entfernt sei, so die Überlegung, brauche niemand mehr Regale voller Bücher. {{1}} Vielerorts verzeichnen die Häuser heute sogar mehr Besucherinnen und Besucher als je zuvor.\n\nAllerdings kommen die Menschen oft aus anderen Gründen als früher. Zwar wird nach wie vor viel ausgeliehen, doch ein großer Teil der Gäste bleibt einfach da: Schülerinnen erledigen ihre Hausaufgaben, Selbstständige arbeiten am Laptop, Rentner lesen Zeitung. {{2}} In der Fachdiskussion ist deshalb gern von einem „dritten Ort“ die Rede – einem Raum neben dem Zuhause und dem Arbeitsplatz, an dem man sich aufhalten kann, ohne etwas kaufen zu müssen.\n\nDiesem Wandel tragen viele Bibliotheken auch baulich Rechnung. Wo früher lange Regalreihen standen, finden sich heute Sitzecken, Gruppenarbeitsräume und mitunter ein Café. {{3}} Manche Häuser verleihen inzwischen auch Nähmaschinen, Werkzeug oder Musikinstrumente, andere bieten Werkstätten mit 3D-Druckern an, in denen Besucher unter Anleitung eigene Ideen umsetzen können.\n\nNicht alle sehen diese Entwicklung ausschließlich positiv. Kritiker befürchten, dass die Bibliothek über ihren zahlreichen neuen Aufgaben ihre eigentliche Kernkompetenz vernachlässigt: die sorgfältig ausgewählte, verlässliche Information. {{4}} Gerade in Zeiten, in denen im Netz Gerüchte und Falschmeldungen kursieren, sei die Fähigkeit, Quellen zu prüfen und einzuordnen, wichtiger denn je.\n\nDie Befürworter des neuen Konzepts halten dagegen, dass sich beides keineswegs ausschließe. {{5}} So bieten zahlreiche Bibliotheken Kurse an, in denen Jugendliche lernen, seriöse von unseriösen Nachrichtenseiten zu unterscheiden, oder in denen ältere Menschen den sicheren Umgang mit dem Smartphone üben.\n\nOffen bleibt freilich die Frage der Finanzierung. Längere Öffnungszeiten, zusätzliche Veranstaltungen und moderne Technik kosten Geld, und Bibliotheken gehören in vielen Kommunen zu den freiwilligen Leistungen, bei denen in Krisenzeiten zuerst gespart wird. {{6}} In einigen Städten öffnen die Häuser daher abends und sonntags ohne Personal: Wer einen gültigen Ausweis besitzt, verschafft sich mit seiner Karte selbst Zutritt.",
+          "gaps": [
+            {
+              "mode": "bank",
+              "answer": 3
+            },
+            {
+              "mode": "bank",
+              "answer": 6
+            },
+            {
+              "mode": "bank",
+              "answer": 0
+            },
+            {
+              "mode": "bank",
+              "answer": 7
+            },
+            {
+              "mode": "bank",
+              "answer": 4
+            },
+            {
+              "mode": "bank",
+              "answer": 2
+            }
+          ],
+          "bank": [
+            "Auch das Angebot selbst hat sich verändert und reicht längst über Bücher und Zeitschriften hinaus.",
+            "Tatsächlich mussten seither die meisten kleineren Bibliotheken ihre Türen schließen.",
+            "Gleichzeitig wünschen sich viele Nutzer gerade dann Zugang, wenn sie selbst Zeit haben, also abends und am Wochenende.",
+            "Eingetreten ist jedoch das Gegenteil.",
+            "Im Gegenteil: Ein offener, belebter Ort sei die beste Voraussetzung dafür, Menschen auch Medienkompetenz zu vermitteln.",
+            "Die Ausleihzahlen gedruckter Bücher sind dabei allerdings dramatisch eingebrochen.",
+            "Für viele ist die Bibliothek damit zu einem Ort geworden, an dem man Zeit verbringt, und nicht nur zu einem, an dem man etwas abholt.",
+            "Eine Einrichtung, die sich vor allem als Treffpunkt verstehe, mache sich auf Dauer austauschbar, so ihr Einwand."
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Sentence d fits gap 1: after the gloomy prophecy, \"Eingetreten ist jedoch das Gegenteil\" turns the argument round, and the next sentence confirms it: libraries have \"sogar mehr\" visitors than ever. Sentence b (most small libraries closed) contradicts this.",
+            "de": "Satz d passt in Lücke 1: Nach der düsteren Prognose sagt „Eingetreten ist jedoch das Gegenteil“, dass es anders kam. Der nächste Satz bestätigt das: Es kommen „sogar mehr“ Besucher. Satz b widerspricht dem."
+          },
+          {
+            "en": "Sentence g fits gap 2: it sums up the examples of people who simply stay (homework, laptop, newspaper) — the library has become a place to spend time. That leads to \"deshalb … dritter Ort\".",
+            "de": "Satz g passt in Lücke 2: Er fasst die Beispiele zusammen – die Menschen bleiben und verbringen Zeit dort. Daraus folgt „deshalb … dritter Ort“."
+          },
+          {
+            "en": "Sentence a fits gap 3: \"Auch das Angebot selbst\" moves from the rooms to the lending offer, which \"reicht längst über Bücher hinaus\"; the next sentence gives the examples: sewing machines, tools, instruments, 3D printers. Sentence f contradicts \"nach wie vor viel ausgeliehen\".",
+            "de": "Satz a passt in Lücke 3: Nach den Räumen geht es um das Angebot, das „über Bücher hinaus“ reicht. Danach kommen die Beispiele: Nähmaschinen, Werkzeug, Instrumente. Satz f widerspricht „nach wie vor viel ausgeliehen“."
+          },
+          {
+            "en": "Sentence h fits gap 4: it continues the critics' view in reported speech (\"verstehe\", \"mache\", \"so ihr Einwand\"), and the next sentence goes on in the same Konjunktiv I (\"sei … wichtiger denn je\").",
+            "de": "Satz h passt in Lücke 4: Er gibt die Meinung der Kritiker in indirekter Rede wieder („so ihr Einwand“). Der nächste Satz setzt diese indirekte Rede mit „sei“ fort."
+          },
+          {
+            "en": "Sentence e fits gap 5: the supporters say both aims do not exclude each other — \"Im Gegenteil\", an open place is ideal for teaching media literacy. \"So bieten … Kurse an\" then gives examples of such teaching.",
+            "de": "Satz e passt in Lücke 5: Die Befürworter sagen, ein offener Ort sei sogar gut, um Medienkompetenz zu vermitteln. Mit „So bieten … Kurse an“ folgen Beispiele dafür."
+          },
+          {
+            "en": "Sentence c fits gap 6: users want access in the evenings and at weekends, and money is short; \"daher\" the libraries open in the evenings and on Sundays without staff.",
+            "de": "Satz c passt in Lücke 6: Die Nutzer möchten abends und am Wochenende kommen, aber das Geld ist knapp. „Daher“ öffnen die Bibliotheken abends und sonntags ohne Personal."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-c1__lesen-1__s03",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Zwei Sprachen, ein Kopf\n\nLange Zeit galt es als ausgemacht, dass Kinder, die mit zwei Sprachen aufwachsen, überfordert seien. Eltern mit Migrationsgeschichte wurde nicht selten geraten, mit ihren Kindern ausschließlich Deutsch zu sprechen, auch wenn sie selbst diese Sprache nur unvollkommen beherrschten. {{1}} Heute weiß man, dass ein solcher Verzicht auf die Familiensprache den Kindern eher schadet als nützt.\n\nDie Forschung der vergangenen Jahrzehnte zeichnet ein deutlich differenzierteres Bild. Zwar kann es vorkommen, dass mehrsprachige Kinder in jeder einzelnen Sprache zunächst einen etwas kleineren Wortschatz haben als gleichaltrige einsprachige Kinder. {{2}} Ein Kind, das „Hund“ auf Deutsch und „perro“ auf Spanisch kennt, verfügt über zwei Wörter für dasselbe Konzept, von denen eine einsprachige Zählung jeweils nur eines erfasst.\n\nAuch das sogenannte Code-Switching, also der Wechsel zwischen den Sprachen innerhalb eines Satzes, wurde früher als Zeichen von Verwirrung gedeutet. {{3}} Kinder greifen meist gezielt auf das Wort zurück, das ihnen in der jeweiligen Situation am treffendsten erscheint, und wechseln die Sprache je nach Gesprächspartner.\n\nOb sich Mehrsprachigkeit darüber hinaus positiv auf andere geistige Fähigkeiten auswirkt, ist dagegen umstritten. Einige Studien deuten darauf hin, dass zweisprachige Kinder besser darin sind, ihre Aufmerksamkeit zu steuern und zwischen Aufgaben zu wechseln. {{4}} Einig sind sich die Fachleute lediglich darin, dass Mehrsprachigkeit der geistigen Entwicklung jedenfalls nicht im Weg steht.\n\nEntscheidend für den Erfolg ist vor allem, wie viel und wie vielfältig ein Kind eine Sprache hört und benutzt. {{5}} Es reicht daher nicht, wenn die Familiensprache nur beim Abendessen gesprochen wird; Bücher, Lieder, Besuche bei Verwandten oder Gleichaltrige, die dieselbe Sprache sprechen, sind mindestens ebenso wichtig.\n\nFür Kitas und Schulen ergibt sich daraus eine anspruchsvolle Aufgabe. Sie sollen den Erwerb des Deutschen fördern, ohne die Herkunftssprachen abzuwerten. {{6}} Manche Einrichtungen laden Eltern deshalb ein, in ihrer Sprache vorzulesen, oder hängen Begrüßungen in allen Sprachen aus, die in der Gruppe gesprochen werden.",
+          "gaps": [
+            {
+              "mode": "bank",
+              "answer": 2
+            },
+            {
+              "mode": "bank",
+              "answer": 7
+            },
+            {
+              "mode": "bank",
+              "answer": 4
+            },
+            {
+              "mode": "bank",
+              "answer": 6
+            },
+            {
+              "mode": "bank",
+              "answer": 1
+            },
+            {
+              "mode": "bank",
+              "answer": 3
+            }
+          ],
+          "bank": [
+            "Wer dagegen erst als Erwachsener eine Fremdsprache lernt, spricht sie meist mit einem deutlichen Akzent.",
+            "Ein Kind, das eine Sprache nur selten und immer in denselben Situationen hört, wird sie kaum auf Dauer sicher beherrschen.",
+            "Man befürchtete, die Kinder könnten sonst keine der beiden Sprachen richtig lernen.",
+            "Gelingt das nicht, erleben Kinder ihre Familiensprache leicht als etwas, wofür sie sich schämen müssen.",
+            "Inzwischen sehen Sprachwissenschaftler darin eher den Ausdruck eines kompetenten Umgangs mit beiden Sprachen.",
+            "Am leichtesten fällt Kindern eine zweite Sprache ohnehin, wenn sie sie erst in der Schule kennenlernen.",
+            "Andere Untersuchungen konnten diese Vorteile jedoch nicht bestätigen.",
+            "Zählt man jedoch die Wörter aus beiden Sprachen zusammen, ist der Unterschied in der Regel verschwunden."
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Sentence c fits gap 1: it gives the reason behind the old advice to speak only German (the fear that the children would learn neither language properly). The next sentence then rejects \"ein solcher Verzicht\".",
+            "de": "Satz c passt in Lücke 1: Er nennt den Grund für den alten Rat, nur Deutsch zu sprechen. Danach wird „ein solcher Verzicht“ als schädlich bewertet."
+          },
+          {
+            "en": "Sentence h fits gap 2: \"Zwar … kleineren Wortschatz\" needs a counter-statement with \"jedoch\": if you add up both languages, the difference disappears. The \"Hund\"/\"perro\" example then explains why.",
+            "de": "Satz h passt in Lücke 2: Auf „Zwar … kleineren Wortschatz“ folgt mit „jedoch“ die Einschränkung: Zusammen gezählt gibt es keinen Unterschied. Das Beispiel „Hund“/„perro“ erklärt das."
+          },
+          {
+            "en": "Sentence e fits gap 3: \"darin\" refers to code-switching, which was once seen as confusion; now linguists see it as competent use of both languages. The next sentence supports this: children choose the most fitting word on purpose.",
+            "de": "Satz e passt in Lücke 3: „darin“ meint das Code-Switching. Früher galt es als Verwirrung, heute als kompetenter Umgang mit Sprachen. Der nächste Satz bestätigt das: Kinder wählen das Wort gezielt."
+          },
+          {
+            "en": "Sentence g fits gap 4: the paragraph says the cognitive benefits are \"umstritten\": some studies find advantages, \"andere … jedoch nicht\". So the experts agree only on the minimum (\"lediglich\").",
+            "de": "Satz g passt in Lücke 4: Die Vorteile sind „umstritten“ – einige Studien finden sie, andere nicht. Deshalb sind sich die Fachleute nur „lediglich“ in einem Punkt einig."
+          },
+          {
+            "en": "Sentence b fits gap 5: it illustrates that how much and how varied a child hears a language decides success; \"Es reicht daher nicht …\" then draws the practical conclusion about speaking it only at dinner.",
+            "de": "Satz b passt in Lücke 5: Er zeigt, dass ein Kind eine Sprache oft und in vielen Situationen hören muss. Daraus folgt: „Es reicht daher nicht“, die Sprache nur beim Abendessen zu sprechen."
+          },
+          {
+            "en": "Sentence d fits gap 6: \"Gelingt das nicht\" refers to promoting German without devaluing home languages; the risk is shame. \"deshalb\" the institutions show respect for the home languages (parents reading aloud, greetings in all languages).",
+            "de": "Satz d passt in Lücke 6: „Gelingt das nicht“ bezieht sich auf die Aufgabe, die Herkunftssprachen nicht abzuwerten. „Deshalb“ zeigen manche Kitas Respekt vor allen Sprachen."
+          }
+        ]
+      }
+    }
+  ]
+}

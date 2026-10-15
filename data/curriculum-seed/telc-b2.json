@@ -1,5 +1,5 @@
 {
-  "seedVersion": "7",
+  "seedVersion": "9",
   "formatVersion": 3,
   "track": "telc",
   "level": "B2",
@@ -795,6 +795,44 @@
       }
     },
     {
+      "id": "b2-telc-leseverstehen-teil1-global__ex2",
+      "lessonId": "b2-telc-leseverstehen-teil1-global",
+      "track": "telc",
+      "type": "matching",
+      "content": {
+        "instruction": {
+          "en": "Read the five texts and find the headline that captures the main message of each. You can use each headline only once. Four headlines are left over.",
+          "de": "Lesen Sie die fünf Texte und finden Sie für jeden Text die Überschrift, die seine Hauptaussage trifft. Sie können jede Überschrift nur einmal verwenden. Vier Überschriften bleiben übrig."
+        },
+        "items": [
+          "Nach mehreren Unwettern in den vergangenen Jahren planen immer mehr Kommunen nach dem Prinzip der sogenannten Schwammstadt. Begrünte Dächer, Mulden in Parks und durchlässige Pflaster sollen Niederschläge aufnehmen, statt sie sofort in die überlastete Kanalisation zu leiten. In heißen Sommern wird das gespeicherte Wasser dann langsam wieder abgegeben und kühlt die Umgebung.",
+          "Nach Jahren flexibler Regelungen verlangen zahlreiche Konzerne wieder mehr Präsenz am Arbeitsplatz. Eine aktuelle Umfrage zeigt jedoch, dass ein Drittel der Beschäftigten eher den Arbeitgeber wechseln würde, als auf das Arbeiten von zu Hause zu verzichten. Personalexperten raten daher zu Kompromissen, etwa zu festen Bürotagen für Teambesprechungen.",
+          "Kurz vor Ladenschluss landen in Bäckereien und Supermärkten oft noch einwandfreie Waren im Müll. Eine Smartphone-App will das ändern: Geschäfte bieten überschüssige Lebensmittel dort stark reduziert an, Kundinnen und Kunden reservieren eine Überraschungstüte und holen sie am Abend ab. Nach Angaben der Betreiber wurden so allein im vergangenen Jahr rund zwei Millionen Mahlzeiten gerettet.",
+          "Zwar melden viele Sportvereine steigende Mitgliederzahlen, doch hinter den Kulissen wird die Lage schwieriger: Für Ämter wie Kassenwart oder Jugendtrainer finden sich kaum noch Freiwillige. Einige Vereine zahlen inzwischen kleine Aufwandsentschädigungen, andere verteilen große Aufgaben auf mehrere Schultern, um die Hemmschwelle zu senken.",
+          "Seit das Landesmuseum an jedem ersten Sonntag im Monat auf Eintrittsgeld verzichtet, hat sich die Besucherstruktur deutlich verändert. Vor allem Familien mit kleinen Kindern und junge Erwachsene, die früher kaum kamen, nutzen das Angebot. Die Museumsleitung will das Modell deshalb auf weitere Tage ausweiten."
+        ],
+        "targets": [
+          "Sportvereine verzeichnen einen Mitgliederrekord",
+          "Rückkehr ins Büro stößt auf Widerstand",
+          "Gratis-Sonntage locken neues Publikum ins Museum",
+          "Unwetter legen Innenstädte lahm",
+          "Wie Städte lernen, Regenwasser zu speichern",
+          "Homeoffice steigert die Produktivität deutlich",
+          "Gesucht: Freiwillige für das Vereinsleben",
+          "Abends günstig: Lebensmittel per App retten",
+          "Supermärkte verlängern ihre Öffnungszeiten"
+        ],
+        "answers": [
+          4,
+          1,
+          7,
+          6,
+          2
+        ],
+        "allowNone": false
+      }
+    },
+    {
       "id": "b2-telc-leseverstehen-teil2-detail__ex0",
       "lessonId": "b2-telc-leseverstehen-teil2-detail",
       "track": "telc",
@@ -817,6 +855,66 @@
       "content": {
         "prompt": "Was ist der Unterschied zwischen der Aussage 'Er hat die Prüfung fast bestanden' und 'Er hat die Prüfung knapp bestanden'?",
         "modelAnswer": "'Fast bestanden' bedeutet, dass er durchgefallen ist (nicht bestanden hat). 'Knapp bestanden' bedeutet, dass er die Prüfung erfolgreich absolviert hat, aber mit einer sehr geringen Punktzahl."
+      }
+    },
+    {
+      "id": "b2-telc-leseverstehen-teil2-detail__ex2",
+      "lessonId": "b2-telc-leseverstehen-teil2-detail",
+      "track": "telc",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the article and the tasks. Which answer (a, b or c) is correct? Pay attention to restrictions such as \"nur teilweise\", \"überwiegend\" or \"nur unter der Voraussetzung\".",
+          "de": "Lesen Sie den Text und die Aufgaben. Welche Lösung (a, b oder c) ist jeweils richtig? Achten Sie auf Einschränkungen wie „nur teilweise“, „überwiegend“ oder „nur unter der Voraussetzung“."
+        },
+        "passage": "Weniger arbeiten, gleich viel schaffen?\n\nAls ein mittelständischer Maschinenbauer aus Schwaben vor zwei Jahren die Vier-Tage-Woche einführte, war die Skepsis groß – vor allem bei den Kunden. Sie befürchteten, freitags niemanden mehr zu erreichen. Inzwischen zieht die Geschäftsführung eine überwiegend positive Bilanz: Die Zahl der Krankheitstage ist um ein Viertel gesunken, und auf Stellenanzeigen melden sich deutlich mehr Bewerberinnen und Bewerber als zuvor.\n\nAllerdings gilt das Modell nicht für alle Beschäftigten gleichermaßen. In der Produktion, wo die Maschinen ohnehin im Schichtbetrieb laufen, ließ sich die Arbeitszeit nur teilweise verkürzen; dort erhalten die Mitarbeitenden stattdessen zusätzliche Urlaubstage. Im Büro dagegen arbeiten alle von Montag bis Donnerstag, wobei ein kleines Team im wöchentlichen Wechsel freitags für Kundenanfragen erreichbar bleibt.\n\nEntscheidend für das Gelingen sei nicht die freie Zeit an sich, betont die Personalleiterin, sondern die Neuorganisation der Abläufe. So wurden Besprechungen auf höchstens 30 Minuten begrenzt und interne E-Mails nach 17 Uhr weitgehend abgeschafft. Wer dennoch Überstunden macht, muss sie innerhalb eines Monats ausgleichen.\n\nWissenschaftler warnen jedoch vor voreiligen Verallgemeinerungen. Die Erfahrungen eines einzelnen Betriebs ließen sich kaum auf Branchen übertragen, in denen Personal ohnehin knapp sei, etwa auf die Pflege oder den Einzelhandel. Dort führe eine kürzere Arbeitswoche nur unter der Voraussetzung zu Verbesserungen, dass zusätzliche Fachkräfte eingestellt würden.",
+        "questions": [
+          {
+            "question": "Was befürchteten die Kunden zu Beginn?",
+            "options": [
+              "dass die Preise des Unternehmens steigen",
+              "dass die Firma freitags nicht erreichbar ist",
+              "dass sich Lieferungen verzögern"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Welche Folge der Vier-Tage-Woche nennt der Text?",
+            "options": [
+              "Die Beschäftigten fehlen seltener wegen Krankheit.",
+              "Das Unternehmen muss weniger Stellen ausschreiben.",
+              "Die Zahl der Kunden ist deutlich gestiegen."
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Wie ist die Arbeitszeit in der Produktion geregelt?",
+            "options": [
+              "Dort gilt die Vier-Tage-Woche genauso wie im Büro.",
+              "Dort wurde der Schichtbetrieb abgeschafft.",
+              "Die Beschäftigten bekommen mehr Urlaub, weil die Arbeitszeit nur zum Teil verkürzt werden konnte."
+            ],
+            "correctIndex": 2
+          },
+          {
+            "question": "Was ist nach Ansicht der Personalleiterin der wichtigste Faktor für den Erfolg?",
+            "options": [
+              "eine bessere Organisation der Arbeitsabläufe",
+              "die zusätzliche Freizeit der Beschäftigten",
+              "ein vollständiges Verbot von Überstunden"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Was meinen die Wissenschaftler zur Pflege?",
+            "options": [
+              "Dort lässt sich das Modell problemlos übernehmen.",
+              "Dort ist eine kürzere Arbeitswoche grundsätzlich unmöglich.",
+              "Dort bringt eine kürzere Woche nur etwas, wenn mehr Fachkräfte eingestellt werden."
+            ],
+            "correctIndex": 2
+          }
+        ]
       }
     },
     {
@@ -843,6 +941,46 @@
       "content": {
         "prompt": "Nennen Sie drei typische Ausschlusskriterien, die bei telc Leseverstehen Teil 3 dazu führen können, dass eine Anzeige unpassend ist.",
         "modelAnswer": "Unpassende Unterrichtszeiten, falscher Veranstaltungsort oder geforderte Mindestqualifikationen."
+      }
+    },
+    {
+      "id": "b2-telc-leseverstehen-teil3-selektiv__ex2",
+      "lessonId": "b2-telc-leseverstehen-teil3-selektiv",
+      "track": "telc",
+      "type": "matching",
+      "content": {
+        "instruction": {
+          "en": "Read the situations and the adverts. Which advert fits each situation? You can use each advert only once. For one situation there is no matching advert: choose x. Check exclusion criteria such as age, qualifications, times and place.",
+          "de": "Lesen Sie die Situationen und die Anzeigen. Welche Anzeige passt zu welcher Situation? Sie können jede Anzeige nur einmal verwenden. Für eine Situation gibt es keine passende Anzeige: Wählen Sie dann x. Prüfen Sie Ausschlusskriterien wie Alter, Qualifikation, Zeit und Ort."
+        },
+        "items": [
+          "Ein Ehepaar möchte sich vor dem Kauf einer Eigentumswohnung unabhängig zur Finanzierung beraten lassen.",
+          "Ein 17-jähriger Schüler möchte am Wochenende in der Gastronomie jobben.",
+          "Eine Lehramtsstudentin möchte im Sommer Erfahrungen in der Arbeit mit Jugendlichen sammeln. Einen Führerschein hat sie nicht.",
+          "Ein Hobbyfotograf sucht einen Wochenendworkshop zur Naturfotografie in der Nähe von Leipzig.",
+          "Eine Krankenpflegerin im Schichtdienst sucht ein Fitnessangebot, das sie zu ganz unterschiedlichen Zeiten nutzen kann.",
+          "Ein pensionierter Buchhalter möchte sich ehrenamtlich engagieren und anderen bei Geldfragen helfen."
+        ],
+        "targets": [
+          "Jugendfreizeit an der Ostsee: Wir suchen Betreuerinnen und Betreuer ab 18 Jahren für zwei Wochen im August. Unterkunft und Verpflegung frei, Anreise im Reisebus.",
+          "Ferienlager im Harz sucht Betreuer für Juli. Voraussetzung: Führerschein Klasse B für Fahrdienste.",
+          "Schuldnerberatung der Diakonie sucht Ehrenamtliche mit kaufmännischem Hintergrund, die Familien bei der Haushaltsplanung unterstützen. Einarbeitung wird geboten.",
+          "Verbraucherzentrale: unabhängige Baufinanzierungsberatung. Termin nach Vereinbarung, 90 Minuten, 180 Euro.",
+          "Ihre Hausbank: kostenlose Beratung zu unseren Immobilienkrediten in allen Filialen.",
+          "FitPoint: Studio rund um die Uhr geöffnet, Kurse im Livestream jederzeit abrufbar, monatlich kündbar.",
+          "Restaurant Seeblick sucht Servicekräfte für Samstag und Sonntag. Mindestalter 18 Jahre wegen Ausschank alkoholischer Getränke.",
+          "Eiscafé Venezia sucht Servicekräfte für Samstag und Sonntag – auch Schülerinnen und Schüler ab 16 Jahren.",
+          "Fotokurs „Licht und Landschaft“: fünf Abende im Volkshochschulhaus Leipzig, jeweils mittwochs 18–21 Uhr."
+        ],
+        "answers": [
+          3,
+          7,
+          0,
+          null,
+          5,
+          2
+        ],
+        "allowNone": true
       }
     },
     {

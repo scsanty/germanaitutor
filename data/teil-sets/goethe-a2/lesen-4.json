@@ -1,0 +1,166 @@
+{
+  "formatId": "goethe-a2",
+  "partId": "lesen-4",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-a2__lesen-4__s01",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Aylin möchte Gitarre spielen lernen. Sie hat aber nur am Wochenende Zeit.",
+            "Familie Weber möchte mit ihren Kindern (4 und 6 Jahre) am Sonntag einen kleinen Ausflug in die Natur machen.",
+            "Jonas fotografiert gern. Er sucht Leute, mit denen er zusammen fotografieren kann.",
+            "Herr Kaya sucht eine Kamera. Sie soll aber nicht viel kosten.",
+            "Frau Berger sucht einen Verein für ihren Sohn Paul (10). Er spielt sehr gern Schach."
+          ],
+          "targets": [
+            "Musikschule Tonleiter: Gitarrenunterricht für Anfänger und Fortgeschrittene. Einzelstunden montags bis freitags zwischen 15 und 20 Uhr. Die erste Stunde ist kostenlos!",
+            "Gitarren-Workshop am Wochenende: In zwei Tagen (Samstag und Sonntag, 10–16 Uhr) lernen Sie Ihre ersten Lieder. Für Erwachsene ohne Vorkenntnisse. Gitarren können geliehen werden.",
+            "Fotoclub Linse: Wir treffen uns jeden zweiten Mittwoch und machen zusammen Fotospaziergänge durch die Stadt. Einmal im Jahr zeigen wir unsere besten Bilder im Rathaus. Neue Mitglieder sind herzlich willkommen!",
+            "Schachclub Springer e. V.: Spielabend für Erwachsene jeden Freitag ab 19 Uhr. Kinder- und Jugendgruppe samstags von 10 bis 12 Uhr. Kommen Sie einfach vorbei!",
+            "Verkaufe meine alte Kamera mit zwei Objektiven, alles funktioniert gut. Nur 80 Euro! Bei Interesse bitte abends anrufen: Tel. 0157 2266884",
+            "Wandergruppe Grüne Stiefel: Jeden Sonntag Tageswanderungen von 15 bis 20 Kilometern. Nur für Erwachsene mit guter Kondition. Treffpunkt: 8 Uhr am Bahnhof."
+          ],
+          "answers": [
+            1,
+            null,
+            2,
+            4,
+            3
+          ],
+          "allowNone": true
+        },
+        "explanations": [
+          {
+            "en": "Ad b: the guitar workshop is \"am Wochenende … Samstag und Sonntag\". The music school in ad a teaches only Monday to Friday.",
+            "de": "Anzeige b: Der Gitarren-Workshop ist am Samstag und Sonntag. Die Musikschule in Anzeige a hat nur von Montag bis Freitag Unterricht."
+          },
+          {
+            "en": "No ad fits (x). The hiking group in ad f walks 15 to 20 km and is \"nur für Erwachsene\", so it is not for small children.",
+            "de": "Keine Anzeige passt (x). Die Wandergruppe in Anzeige f wandert 15 bis 20 Kilometer und ist nur für Erwachsene. Das passt nicht für kleine Kinder."
+          },
+          {
+            "en": "Ad c: the photo club makes \"zusammen Fotospaziergänge\" and welcomes new members, so Jonas can take photos with other people.",
+            "de": "Anzeige c: Im Fotoclub machen die Mitglieder zusammen Fotospaziergänge. Neue Mitglieder sind willkommen."
+          },
+          {
+            "en": "Ad e: an old camera for \"nur 80 Euro\" is cheap. The photo club in ad c does not sell cameras.",
+            "de": "Anzeige e: Die alte Kamera kostet nur 80 Euro. Das ist nicht teuer. Der Fotoclub in Anzeige c verkauft keine Kameras."
+          },
+          {
+            "en": "Ad d: the chess club has a \"Kinder- und Jugendgruppe samstags\", so 10-year-old Paul can join.",
+            "de": "Anzeige d: Der Schachclub hat eine Kinder- und Jugendgruppe am Samstag. Dort kann Paul mitspielen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2__lesen-4__s02",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Frau Lehmann zieht nächsten Monat von Köln nach Berlin. Sie braucht Hilfe mit ihren Möbeln.",
+            "Leon ist 17 Jahre alt. Er arbeitet gern im Garten und möchte neben der Schule etwas Geld verdienen.",
+            "Herr Schmitt möchte die Wände in seiner Wohnung neu streichen lassen. Er hat selbst keine Zeit dafür.",
+            "Tobias studiert und sucht ein günstiges Zimmer in der Nähe der Universität.",
+            "Familie Novak hat ein Baby bekommen. Sie braucht Möbel für das Kinderzimmer, hat aber wenig Geld."
+          ],
+          "targets": [
+            "Umzüge Schnell & Sicher: Wir transportieren Ihre Möbel – in der Stadt und in ganz Deutschland. Auf Wunsch bringen wir auch Kartons mit. Kostenloses Angebot unter Tel. 030 8877665.",
+            "Zu verschenken: Babybett und Wickeltisch aus Holz, gut erhalten. Nur Abholung am Wochenende. Anruf bitte unter Tel. 0151 4433221.",
+            "WG-Zimmer frei: 16 m², möbliert, fünf Minuten zur Uni, 380 Euro warm. Ab 1. Oktober. Wir sind drei Frauen und suchen eine Studentin.",
+            "Hilfe im Garten gesucht! Rentnerin sucht jemanden, der zweimal im Monat den Rasen mäht und die Hecke schneidet. 12 Euro pro Stunde. Tel. 47 11 23",
+            "Malerbetrieb Farbenfroh: Wir streichen Wohnungen, Treppenhäuser und Büros – schnell, sauber und zu fairen Preisen. Rufen Sie uns an!",
+            "Küchenstudio Holzwurm: Ihre neue Küche nach Maß. Wir beraten Sie gern und bauen die Küche auch bei Ihnen ein."
+          ],
+          "answers": [
+            0,
+            3,
+            4,
+            null,
+            1
+          ],
+          "allowNone": true
+        },
+        "explanations": [
+          {
+            "en": "Ad a: the removal company transports furniture \"in der Stadt und in ganz Deutschland\", so also from Cologne to Berlin.",
+            "de": "Anzeige a: Die Firma transportiert Möbel in ganz Deutschland, also auch von Köln nach Berlin."
+          },
+          {
+            "en": "Ad d: a pensioner needs garden help twice a month and pays 12 euros an hour. That fits a pupil who likes garden work.",
+            "de": "Anzeige d: Eine Rentnerin sucht Hilfe im Garten und bezahlt 12 Euro pro Stunde. Das passt für Leon."
+          },
+          {
+            "en": "Ad e: the painting company \"streicht Wohnungen\", so it can paint Herr Schmitt's walls for him.",
+            "de": "Anzeige e: Der Malerbetrieb streicht Wohnungen. Herr Schmitt muss es dann nicht selbst machen."
+          },
+          {
+            "en": "No ad fits (x). The room in ad c is near the university, but the flatmates \"suchen eine Studentin\", a female student. Tobias is a man.",
+            "de": "Keine Anzeige passt (x). Das Zimmer in Anzeige c ist nah an der Uni, aber die WG sucht eine Studentin, also eine Frau. Tobias ist ein Mann."
+          },
+          {
+            "en": "Ad b: a baby bed and changing table are \"zu verschenken\", so they cost nothing.",
+            "de": "Anzeige b: Babybett und Wickeltisch sind zu verschenken. Sie kosten also nichts."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2__lesen-4__s03",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Carla und Ben möchten mit ihren zwei Kindern Ferien auf dem Land machen. Die Kinder lieben Tiere.",
+            "Herr Okafor ist am Wochenende in der Stadt. Er möchte etwas über die Geschichte der Altstadt erfahren.",
+            "Mia ist 16. Sie möchte in den Sommerferien Spanisch lernen.",
+            "Frau Petrović möchte im Juli ihre Schwester in Wien besuchen. Ein Zugticket ist ihr zu teuer.",
+            "Herr und Frau Graf möchten ein ruhiges Wochenende zu zweit verbringen, ohne Kinderlärm."
+          ],
+          "targets": [
+            "Ferienhof Kleeblatt: Urlaub auf dem Bauernhof! Die Kinder dürfen bei den Kühen, Pferden und Hühnern helfen. Ferienwohnungen für 4 bis 6 Personen.",
+            "Altstadtführung: Jeden Samstag und Sonntag um 14 Uhr erzählen wir Ihnen spannende Geschichten aus 800 Jahren. Treffpunkt: vor dem Rathaus. Dauer: 90 Minuten.",
+            "Fahrradverleih am Bahnhof: Tourenräder und E-Bikes ab 15 Euro pro Tag. Auch Kindersitze und Anhänger. Wir geben Ihnen gern Tipps für schöne Radtouren!",
+            "Sprachferien auf Malta: Englisch lernen und Urlaub am Meer! Kurse für Jugendliche von 14 bis 18 Jahren im Juli und August.",
+            "Hotel Seeblick: Wellness-Wochenende für zwei Personen mit Sauna, Massage und Frühstück. Unser Hotel ist nur für Gäste ab 16 Jahren.",
+            "Mitfahrgelegenheit: Ich fahre am 20. Juli mit dem Auto nach Wien und habe noch zwei Plätze frei. Wir teilen das Benzin. Tel. 0172 3344556"
+          ],
+          "answers": [
+            0,
+            1,
+            null,
+            5,
+            4
+          ],
+          "allowNone": true
+        },
+        "explanations": [
+          {
+            "en": "Ad a: holidays on a farm, and the children may help with the cows, horses and chickens.",
+            "de": "Anzeige a: Urlaub auf dem Bauernhof. Die Kinder dürfen bei den Tieren helfen."
+          },
+          {
+            "en": "Ad b: the old-town tour runs \"jeden Samstag und Sonntag\" and tells stories from 800 years of history.",
+            "de": "Anzeige b: Die Altstadtführung ist am Samstag und Sonntag. Man hört Geschichten aus 800 Jahren."
+          },
+          {
+            "en": "No ad fits (x). The language holiday in ad d is for teenagers, but the course is English, not Spanish.",
+            "de": "Keine Anzeige passt (x). Die Sprachferien in Anzeige d sind für Jugendliche, aber man lernt dort Englisch, nicht Spanisch."
+          },
+          {
+            "en": "Ad f: someone drives to Vienna on 20 July and has two free seats. Passengers only share the petrol, so Frau Petrović does not need a train ticket.",
+            "de": "Anzeige f: Jemand fährt am 20. Juli mit dem Auto nach Wien und hat noch zwei Plätze frei. Man teilt nur das Benzin. So braucht Frau Petrović kein Zugticket."
+          },
+          {
+            "en": "Ad e: a wellness weekend for two in a hotel \"nur für Gäste ab 16 Jahren\", so there are no small children.",
+            "de": "Anzeige e: Ein Wellness-Wochenende für zwei Personen. Das Hotel ist nur für Gäste ab 16 Jahren, also gibt es keine kleinen Kinder."
+          }
+        ]
+      }
+    }
+  ]
+}

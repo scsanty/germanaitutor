@@ -1,5 +1,5 @@
 {
-  "seedVersion": "7",
+  "seedVersion": "9",
   "formatVersion": 3,
   "track": "goethe",
   "level": "C1",
@@ -780,6 +780,61 @@
       }
     },
     {
+      "id": "c1-goethe-lesen-teil1-kommentar-und-essay__ex4",
+      "lessonId": "c1-goethe-lesen-teil1-kommentar-und-essay",
+      "track": "goethe",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the essay. Choose the right answer (a, b, c or d) for each question. Distinguish between positions the author reports and the author's own view.",
+          "de": "Lesen Sie den Essay. Wählen Sie bei jeder Aufgabe die richtige Lösung (a, b, c oder d). Unterscheiden Sie zwischen Positionen, die der Autor wiedergibt, und seiner eigenen Sicht."
+        },
+        "passage": "Die Vermessung des Geschmacks\n\nEs gehört zu den Lieblingserzählungen der Digitalwirtschaft, dass Empfehlungsalgorithmen den kulturellen Horizont erweitern. Nie zuvor, so heißt es, hätten Menschen Zugang zu einer derart unüberschaubaren Fülle an Musik, Filmen und Büchern gehabt; die Maschine helfe lediglich dabei, in diesem Überfluss das Passende zu finden. Man mag dieser Darstellung einen gewissen Charme nicht absprechen. Bei näherem Hinsehen entpuppt sie sich jedoch als Halbwahrheit.\n\nDenn ein Algorithmus, der auf Grundlage vergangenen Verhaltens künftige Vorlieben vorhersagt, ist seinem Wesen nach konservativ. Er belohnt das Bekannte und bestraft das Abweichende – nicht aus Böswilligkeit, sondern weil das Ähnliche statistisch die sicherere Wette ist. Wer einmal drei skandinavische Krimiserien gesehen hat, bekommt die vierte, fünfte und sechste vorgeschlagen. Dass er sich womöglich für ein iranisches Familiendrama begeistert hätte, erfährt er nie.\n\nNun ließe sich einwenden, auch der Buchhändler um die Ecke habe seinen Kunden stets empfohlen, was ihrem Geschmack entsprach. Der Vergleich hinkt allerdings. Der gute Buchhändler kannte nicht nur die Kaufgewohnheiten seiner Kundschaft, sondern auch deren Stimmungen, Lebensumstände und gelegentliche Lust auf Widerspruch. Er empfahl bisweilen bewusst das Sperrige – und nahm dabei in Kauf, sich zu irren.\n\nGerade dieses Risiko des Irrtums ist es, das der Kultur verloren zu gehen droht. Entdeckungen, die diesen Namen verdienen, entstehen selten dort, wo man sie erwartet. Sie verdanken sich dem Zufall, dem Umweg, dem versehentlich aufgeschlagenen Buch. Eine Kulturvermittlung, die den Zufall systematisch ausschaltet, mag effizient sein; bereichernd ist sie nicht.\n\nEs wäre freilich naiv, nun die Abschaffung der Algorithmen zu fordern. Wünschenswert wäre jedoch, dass Plattformen ihren Nutzern die Möglichkeit geben, die eigene Filterblase gezielt zu verlassen – etwa durch eine Funktion, die bewusst Unähnliches vorschlägt. Dass kaum ein Anbieter so etwas im Programm hat, spricht Bände.",
+        "questions": [
+          {
+            "question": "Wie steht der Autor zu der Behauptung, Algorithmen erweiterten den kulturellen Horizont?",
+            "options": [
+              "Er hält sie für vollständig widerlegt.",
+              "Er gesteht ihr eine gewisse Überzeugungskraft zu, hält sie aber für einseitig.",
+              "Er teilt sie uneingeschränkt.",
+              "Er sieht in ihr eine bewusste Täuschung der Nutzer."
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Warum bezeichnet der Autor Empfehlungsalgorithmen als „konservativ“?",
+            "options": [
+              "Weil sie von Unternehmen mit konservativen Wertvorstellungen entwickelt werden.",
+              "Weil sie Werke aus anderen Kulturen absichtlich ausschließen.",
+              "Weil sie aus statistischen Gründen Ähnliches gegenüber Neuem bevorzugen.",
+              "Weil sie überwiegend ältere Werke empfehlen."
+            ],
+            "correctIndex": 2
+          },
+          {
+            "question": "Welche Funktion hat der Vergleich mit dem Buchhändler im Text?",
+            "options": [
+              "Der Autor greift einen möglichen Einwand auf und entkräftet ihn.",
+              "Der Autor will zeigen, dass Buchhändler und Algorithmen im Grunde gleich vorgehen.",
+              "Der Autor beklagt das Verschwinden kleiner Buchhandlungen.",
+              "Der Autor belegt damit, dass Menschen schlechtere Empfehlungen geben als Maschinen."
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Was fordert der Autor am Ende des Textes?",
+            "options": [
+              "Empfehlungsalgorithmen sollten verboten werden.",
+              "Unabhängige Buchhandlungen sollten staatlich gefördert werden.",
+              "Nutzer sollten ganz auf Streamingdienste verzichten.",
+              "Plattformen sollten Empfehlungen jenseits des bisherigen Geschmacks ermöglichen."
+            ],
+            "correctIndex": 3
+          }
+        ]
+      }
+    },
+    {
       "id": "c1-goethe-lesen-teil2-textrekonstruktion__ex0",
       "lessonId": "c1-goethe-lesen-teil2-textrekonstruktion",
       "track": "goethe",
@@ -829,6 +884,50 @@
       "content": {
         "prompt": "Beschreiben Sie, wie ein Pronominaladverb wie 'dagegen' bei der Entscheidung in Teil 2 hilft.",
         "modelAnswer": "'Dagegen' signalisiert einen scharfen Gegensatz zum direkt vorausgehenden Gedanken; das passende Fragment muss also eine Gegenposition oder Kontrastinformation enthalten."
+      }
+    },
+    {
+      "id": "c1-goethe-lesen-teil2-textrekonstruktion__ex4",
+      "lessonId": "c1-goethe-lesen-teil2-textrekonstruktion",
+      "track": "goethe",
+      "type": "cloze",
+      "content": {
+        "instruction": {
+          "en": "Read the article. Five sentences have been removed. Which sentence (a–g) fits which gap? Two sentences are not needed. Follow the pronouns and connectors in both directions.",
+          "de": "Lesen Sie den Artikel. Fünf Sätze wurden entfernt. Welcher Satz (a–g) passt in welche Lücke? Zwei Sätze werden nicht gebraucht. Achten Sie auf Verweiswörter und Konnektoren in beide Richtungen."
+        },
+        "text": "Die Stadt als Schwamm\n\nStarkregen und Hitzesommer stellen Städte vor ein Problem, das auf den ersten Blick paradox erscheint: Mal fällt zu viel Wasser in zu kurzer Zeit, mal fehlt es wochenlang. {{1}} Die Kanalisation, über Jahrzehnte darauf ausgelegt, Regenwasser möglichst schnell abzuleiten, ist mit den Wassermassen eines Wolkenbruchs zunehmend überfordert.\n\nStadtplaner setzen deshalb verstärkt auf das Konzept der sogenannten Schwammstadt. {{2}} Begrünte Dächer, Mulden in Parks und durchlässige Pflasterflächen nehmen Niederschläge auf und speichern sie, statt sie in die Kanäle zu leiten. In Hitzeperioden verdunstet das gespeicherte Wasser wieder und kühlt die Umgebung.\n\nWas einleuchtend klingt, ist in der Praxis allerdings mit erheblichen Hürden verbunden. {{3}} Unter Straßen und Gehwegen verlaufen Strom- und Glasfaserleitungen, Gas- und Fernwärmerohre, sodass für Versickerungsflächen und Baumwurzeln oft schlicht kein Platz bleibt. Hinzu kommt, dass die Zuständigkeiten auf zahlreiche Ämter verteilt sind.\n\n{{4}} Kopenhagen etwa hat nach einem verheerenden Unwetter im Jahr 2011 einen umfassenden Plan aufgelegt, der mehrere Hundert Einzelprojekte umfasst. Dazu zählen Straßen, die bei Starkregen gezielt als Notwasserwege dienen, ebenso wie Parks, die sich im Ernstfall in Rückhaltebecken verwandeln.\n\nFachleute betonen allerdings, dass solche Großprojekte allein nicht ausreichen. {{5}} Jeder entsiegelte Vorgarten, jede begrünte Garage trägt dazu bei, das Wasser dort zu halten, wo es fällt.",
+        "bank": [
+          "Dass es dennoch gelingen kann, zeigen Beispiele aus dem Ausland.",
+          "Daher wurde die Kanalisation in den meisten Städten inzwischen deutlich vergrößert.",
+          "Beides hat jedoch dieselbe Ursache: zu viel versiegelte Fläche.",
+          "Mindestens ebenso wichtig sei das Engagement privater Grundstückseigentümer.",
+          "Gemeint ist eine Stadt, die Regenwasser wie ein Schwamm aufsaugt, anstatt es abfließen zu lassen.",
+          "Diese Erkenntnis ist allerdings keineswegs neu: Schon die Römer bauten Zisternen.",
+          "Das größte Hindernis liegt buchstäblich im Untergrund."
+        ],
+        "gaps": [
+          {
+            "mode": "bank",
+            "answer": 2
+          },
+          {
+            "mode": "bank",
+            "answer": 4
+          },
+          {
+            "mode": "bank",
+            "answer": 6
+          },
+          {
+            "mode": "bank",
+            "answer": 0
+          },
+          {
+            "mode": "bank",
+            "answer": 3
+          }
+        ]
       }
     },
     {
@@ -884,6 +983,57 @@
       }
     },
     {
+      "id": "c1-goethe-lesen-teil3-sachtext-detail__ex4",
+      "lessonId": "c1-goethe-lesen-teil3-sachtext-detail",
+      "track": "goethe",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the popular-science article. Choose the right answer (a, b or c) for each question. Watch for overgeneralisations and reversed cause and effect.",
+          "de": "Lesen Sie den populärwissenschaftlichen Artikel. Wählen Sie bei jeder Aufgabe die richtige Lösung (a, b oder c). Achten Sie auf vorschnelle Verallgemeinerungen und vertauschte Ursachen und Wirkungen."
+        },
+        "passage": "Lernen im Schlaf – aber anders als gedacht\n\nDie Vorstellung, man könne im Schlaf Vokabeln lernen, indem man nachts Tonaufnahmen abspielt, hat sich als Mythos erwiesen: Neue Informationen werden im Tiefschlaf praktisch nicht aufgenommen. Dennoch spielt der Schlaf für das Gedächtnis eine zentrale Rolle – allerdings nicht beim Erwerb, sondern bei der Festigung des tagsüber Gelernten.\n\nNach heutigem Kenntnisstand werden neue Erinnerungen zunächst im Hippocampus zwischengespeichert, einer Hirnregion mit begrenzter Kapazität. Während der Tiefschlafphasen wird ein Teil dieser Inhalte gewissermaßen erneut abgespielt und schrittweise in die Großhirnrinde übertragen, wo er langfristig verankert wird. Dabei wird nicht alles gleichermaßen berücksichtigt: Bevorzugt gefestigt werden offenbar Inhalte, die als künftig bedeutsam markiert wurden – etwa weil die Versuchspersonen wussten, dass sie später darüber geprüft würden.\n\nBemerkenswert ist ein Experiment, bei dem Probanden während des Lernens ein bestimmter Duft dargeboten wurde. Wurde derselbe Duft im anschließenden Tiefschlaf erneut verströmt, erinnerten sie sich am nächsten Tag besser an das Gelernte als eine Kontrollgruppe. Kam der Duft hingegen während einer Leichtschlafphase zum Einsatz, blieb der Effekt aus. Die Forscher deuten dies als Hinweis darauf, dass der Reiz die Reaktivierung der Gedächtnisinhalte im Tiefschlaf anstößt.\n\nVor voreiligen Schlüssen warnen die Autoren der Studie allerdings. Der Effekt war zwar messbar, fiel aber moderat aus, und ob er sich auf komplexes Wissen übertragen lässt, ist offen. Zudem nimmt der Anteil des Tiefschlafs mit zunehmendem Alter ab – was zumindest teilweise erklären könnte, warum älteren Menschen das Einprägen neuer Inhalte schwerer fällt.",
+        "questions": [
+          {
+            "question": "Welche Rolle spielt der Schlaf laut Text für das Gedächtnis?",
+            "options": [
+              "Im Tiefschlaf lassen sich neue Vokabeln besonders gut aufnehmen.",
+              "Er dient vor allem dazu, bereits Gelerntes zu festigen.",
+              "Er ist für das Gedächtnis weniger wichtig als bisher angenommen."
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Welche Inhalte werden im Schlaf bevorzugt gefestigt?",
+            "options": [
+              "Inhalte, die als künftig wichtig gekennzeichnet wurden",
+              "sämtliche Inhalte, die im Hippocampus zwischengespeichert sind",
+              "vor allem Inhalte, die mit einem Geruch verbunden sind"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Was zeigte das Experiment mit dem Duft?",
+            "options": [
+              "Der Duft verbesserte die Erinnerung unabhängig von der Schlafphase.",
+              "Mit dem Duft konnten die Probanden im Schlaf neue Inhalte lernen.",
+              "Der Duft wirkte nur, wenn er im Tiefschlaf erneut verströmt wurde."
+            ],
+            "correctIndex": 2
+          },
+          {
+            "question": "Wie erklärt der Text, dass älteren Menschen das Lernen schwerer fällt?",
+            "options": [
+              "Ältere Menschen haben einen kleineren Hippocampus.",
+              "Ein geringerer Anteil an Tiefschlaf könnte ein Teil der Erklärung sein.",
+              "Weil Ältere schwerer lernen, schlafen sie weniger tief."
+            ],
+            "correctIndex": 1
+          }
+        ]
+      }
+    },
+    {
       "id": "c1-goethe-lesen-teil4-kurzinformationen-abgleich__ex0",
       "lessonId": "c1-goethe-lesen-teil4-kurzinformationen-abgleich",
       "track": "goethe",
@@ -933,6 +1083,45 @@
       "content": {
         "prompt": "Nennen Sie drei typische Ausschlusskriterien, die bei Zuordnungsaufgaben in Teil 4 auftreten.",
         "modelAnswer": "Zielgruppenbeschränkung (z. B. nur für Promovierte), zeitliche Restriktionen (z. B. Präsenzzeiten werktags) und Kosten/Zertifizierungshürden."
+      }
+    },
+    {
+      "id": "c1-goethe-lesen-teil4-kurzinformationen-abgleich__ex4",
+      "lessonId": "c1-goethe-lesen-teil4-kurzinformationen-abgleich",
+      "track": "goethe",
+      "type": "matching",
+      "content": {
+        "instruction": {
+          "en": "Read the requirements and the short descriptions of funding programmes (a–f). Which programme fits which person? Check every condition carefully. Each programme fits at most once; where no programme fits, choose x.",
+          "de": "Lesen Sie die Anforderungen und die Kurzbeschreibungen der Förderprogramme (a–f). Welches Programm passt zu welcher Person? Prüfen Sie jede Bedingung genau. Jedes Programm passt höchstens einmal; passt kein Programm, wählen Sie x."
+        },
+        "items": [
+          "Eine promovierte Biologin möchte nach drei Jahren Elternzeit an ihre Forschung anknüpfen, dabei aber nur halbtags arbeiten.",
+          "Ein Gründungsteam mit einer Software-Idee sucht berufsbegleitende Unterstützung, kann dafür aber höchstens 500 Euro ausgeben.",
+          "Eine freie Reporterin möchte ihre Reportage über die Schließung einer Dorfschule einreichen, die vor vier Monaten in einer regionalen Tageszeitung erschienen ist.",
+          "Ein Übersetzer hat für seine Übertragung eines arabischen Erzählbands bereits einen Verlagsvertrag und sucht für die Arbeit daran einen mehrmonatigen Arbeitsaufenthalt.",
+          "Ein 29-jähriger Maler, der sein Studium vor zwei Jahren abgeschlossen hat, möchte ein halbes Jahr lang ungestört arbeiten.",
+          "Eine Übersetzerin möchte einen persischen Roman ins Deutsche übertragen, hat dafür aber noch keinen Verlag gefunden.",
+          "Eine Maschinenbaustudentin wünscht sich Kontakte in die Industrie, kann wegen ihres Nebenjobs aber keine festen Termine wahrnehmen."
+        ],
+        "targets": [
+          "Stiftung Kulturbrücke: fördert Übersetzerinnen und Übersetzer literarischer Werke aus dem Arabischen oder Persischen ins Deutsche mit einem dreimonatigen Arbeitsaufenthalt in Leipzig. Voraussetzung ist ein bestehender Verlagsvertrag.",
+          "Programm „Neustart Wissenschaft“: unterstützt promovierte Forschende, die nach einer mindestens zweijährigen familienbedingten Unterbrechung in die Forschung zurückkehren möchten. Laufzeit 24 Monate, Teilzeit möglich.",
+          "Gründerwerkstatt Rhein-Main: zwölfwöchiges Abendprogramm (dienstags und donnerstags, 18–21 Uhr) für Gründungsteams mit technologieorientierter Geschäftsidee. Teilnahmegebühr: 1.200 Euro.",
+          "Journalistenpreis Lokal: ausgeschrieben für Reportagen, die in den vergangenen zwölf Monaten in einer regionalen Tageszeitung erschienen sind. Freie Journalistinnen und Journalisten sind ausdrücklich zur Teilnahme eingeladen.",
+          "Residenzprogramm Villa Seeblick: sechsmonatiges Wohn- und Arbeitsstipendium für bildende Künstlerinnen und Künstler unter 35 Jahren. Bewerbungen von Studierenden werden nicht berücksichtigt.",
+          "Mentoring-Netzwerk MINT-Frauen: kostenfreie einjährige Begleitung von Studentinnen der Natur- und Ingenieurwissenschaften (z. B. Chemie, Elektrotechnik, Maschinenbau) durch erfahrene Mentorinnen aus der Industrie. Treffen nach individueller Absprache."
+        ],
+        "answers": [
+          1,
+          null,
+          3,
+          0,
+          4,
+          null,
+          5
+        ],
+        "allowNone": true
       }
     },
     {

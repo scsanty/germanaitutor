@@ -24,7 +24,8 @@
     "testout_cooldown": "You can try this test-out again later",
     "already_in_deck": "This word is already in your deck",
     "session_exists": "A session is already open for this mode",
-    "session_ending": "This session is already ending. Please wait a moment."
+    "session_ending": "This session is already ending. Please wait a moment.",
+    "part_unavailable": "This part can't be practised yet"
   },
   "languageToggle": {
     "lesson": "Lesson language",
@@ -46,6 +47,11 @@
     "noReviews": "No reviews due today.",
     "skillsTitle": "Progress by skill",
     "ofTotal": "{done} of {total}",
+    "readinessTitle": "{format} readiness",
+    "readinessOnTrack": "{percent}% · on track",
+    "readinessBelow": "{percent}% · below 60%",
+    "readinessOvertime": " · some overtime",
+    "readinessNone": "Not practised yet",
     "skill": { "grammar": "Grammar", "vocabulary": "Vocabulary", "reading": "Reading", "listening": "Listening", "writing": "Writing", "speaking": "Speaking" },
     "activity": "Activity (12 weeks)",
     "activityCell": "{date}: {count, plural, one {# answer} other {# answers}}"
@@ -336,13 +342,15 @@
       "conversation": "Conversation",
       "grammarDrill": "Grammar drill",
       "freeReading": "Free reading",
-      "freeWriting": "Free writing"
+      "freeWriting": "Free writing",
+      "examPractice": "Exam practice"
     },
     "descriptions": {
       "conversation": "Chat in German at your level, with corrections",
       "grammarDrill": "Practise one grammar topic with quick questions",
       "freeReading": "Read a short article on any topic, at your level",
-      "freeWriting": "Write freely and get marked-up feedback"
+      "freeWriting": "Write freely and get marked-up feedback",
+      "examPractice": "Timed exam parts and full mocks, scored like the real exam"
     },
     "continue": "Continue your session",
     "unavailable": "Unavailable",
@@ -467,5 +475,57 @@
     "settings": "Settings",
     "withDue": "{label} ({count} due)"
   },
-  "focus": {"leave": "Leave", "progress": "Exercise {current} of {total}", "leaveTitle": "Leave this exercise?", "leaveBody": "Your progress on answered exercises is kept.", "stay": "Stay", "leaveAnyway": "Leave anyway", "keysHint": "Keys: 1–4 choose · Enter check · Esc leave"}
+  "focus": {"leave": "Leave", "progress": "Exercise {current} of {total}", "leaveTitle": "Leave this exercise?", "leaveBody": "Your progress on answered exercises is kept.", "stay": "Stay", "leaveAnyway": "Leave anyway", "keysHint": "Keys: 1–4 choose · Enter check · Esc leave"},
+  "exam": {
+    "title": "Exam practice",
+    "loading": "Loading exam practice",
+    "loadFailed": "Could not load exam practice. Please reload the page.",
+    "timer": "Time left",
+    "minutesLeft": "{minutes, plural, one {# minute left} other {# minutes left}}",
+    "overtimeNotice": "Time's up: you can finish; this attempt will be marked as overtime.",
+    "textTab": "Text",
+    "tasksTab": "Tasks",
+    "submit": "Submit",
+    "submitting": "Submitting…",
+    "submitFailed": "Could not submit your answers.",
+    "score": "{score} of {max} points ({percent}%)",
+    "overtime": "{minutes} min over time",
+    "yourAnswer": "Your answer: {answer}",
+    "rightAnswer": "Right answer: {answer}",
+    "right": "Right",
+    "wrong": "Wrong or unanswered",
+    "gap": "Gap {n}",
+    "wordBank": "Words to use",
+    "explanationLanguage": "Explanation language",
+    "askAbout": "Ask about this",
+    "ask": "Ask",
+    "asking": "Asking…",
+    "question": "Your question",
+    "askFailed": "Could not get an answer.",
+    "practise": "Practise",
+    "starting": "Starting…",
+    "startFailed": "Could not start this part.",
+    "minutes": "{minutes} min",
+    "lastScore": "Last time: {percent}%",
+    "fullMock": "Full mock",
+    "fullMockBody": "All written parts available so far, one after another, under one timer ({minutes} min).",
+    "comingSoon": "Coming with the {module} module",
+    "modules": {
+      "listening": "Listening",
+      "writing": "Writing",
+      "speaking": "Speaking"
+    },
+    "mockOnly": "Practised in the full mock",
+    "noFormat": "There's no exam format for this track and level yet.",
+    "mockPart": "Part {current} of {total}",
+    "mockResultTitle": "Mock result",
+    "mockPartScore": "{part}: {score} of {max} points",
+    "mockPassed": "{block}: {score} of {max} points — passed",
+    "mockFailed": "{block}: {score} of {max} points — not passed",
+    "mockSoFar": "So far: this covers only the parts that can be practised yet, not the whole block.",
+    "review": "Review",
+    "back": "Back to exam practice",
+    "unanswered": "—",
+    "none": "x (none)"
+  }
 }

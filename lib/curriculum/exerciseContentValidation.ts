@@ -1,6 +1,15 @@
 import type { ExerciseType } from './types';
+import { validateTask } from '../tasks/taskTypes';
 
-const EXERCISE_TYPES: readonly ExerciseType[] = ['multiple_choice', 'fill_blank', 'flashcard', 'free_text'];
+const EXERCISE_TYPES: readonly ExerciseType[] = [
+  'multiple_choice',
+  'fill_blank',
+  'flashcard',
+  'free_text',
+  'passage_questions',
+  'matching',
+  'cloze',
+];
 
 function isNonEmptyString(value: unknown): value is string {
   return typeof value === 'string' && value.trim().length > 0;
@@ -74,6 +83,17 @@ export function validateExerciseContent(type: unknown, content: unknown): string
         errors.push('prompt must be a non-empty string');
       }
       if (!isNonEmptyString(c.modelAnswer)) errors.push('modelAnswer must be a non-empty string');
+      break;
+    }
+    case 'passage_questions':
+    case 'matching':
+    case 'cloze': {
+      // The task validators assume list entries are objects; malformed (e.g. AI) content must not throw.
+      try {
+        errors.push(...validateTask(type as 'passage_questions' | 'matching' | 'cloze', content));
+      } catch {
+        errors.push('content has the wrong shape');
+      }
       break;
     }
   }

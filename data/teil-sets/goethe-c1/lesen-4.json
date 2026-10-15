@@ -1,0 +1,193 @@
+{
+  "formatId": "goethe-c1",
+  "partId": "lesen-4",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-c1__lesen-4__s01",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Gesetzliche Vorgaben erschweren die Einrichtung von Farmen in bestehenden Gebäuden.",
+            "Vertikale Farmen sind nicht zwangsläufig klimafreundlicher als herkömmliche Anbaumethoden.",
+            "Der hohe Wasserverbrauch ist das größte Problem der Anlagen.",
+            "Der Gehalt an bestimmten Inhaltsstoffen lässt sich beim Anbau in vertikalen Farmen gezielt steuern.",
+            "Leer stehende Gebäude in den Innenstädten könnten durch vertikale Farmen eine neue Funktion bekommen.",
+            "In wenigen Jahren wird der Großteil des in Europa verzehrten Gemüses aus vertikalen Farmen stammen.",
+            "Bislang lohnt sich der Anbau in vertikalen Farmen nur für wenige Pflanzenarten."
+          ],
+          "targets": [
+            "a) Dr. Ulrike Sommerfeld, Agrarwissenschaftlerin\nVertikale Farmen, in denen Salat und Kräuter in mehrstöckigen Regalen unter LED-Licht wachsen, werden oft als Antwort auf die Ernährungsfrage der Zukunft gefeiert. Ich halte diese Erwartung für überzogen. Der größte Kostenfaktor ist die Energie: Was die Sonne auf dem Feld kostenlos liefert, muss hier künstlich erzeugt werden. Solange der Strom nicht vollständig aus erneuerbaren Quellen stammt, fällt die Klimabilanz vieler Anlagen sogar schlechter aus als die eines gewöhnlichen Gewächshauses. Hinzu kommt, dass sich bislang nur schnell wachsende Blattgemüse und Kräuter wirtschaftlich anbauen lassen. Grundnahrungsmittel wie Weizen, Reis oder Kartoffeln in Regalen zu ziehen, wäre schlicht unbezahlbar. Damit will ich die Technik nicht kleinreden. Für Regionen mit extremem Klima oder sehr wenig Ackerfläche kann sie durchaus sinnvoll sein. Für Mitteleuropa sehe ich jedoch eher eine Nische.",
+            "b) Prof. Malte Johannsen, Stadtplaner\nMich interessiert an vertikalen Farmen weniger die Frage, ob sie die Welt ernähren können – das können sie nicht –, sondern was sie für unsere Städte bedeuten. In vielen Innenstädten stehen Kaufhäuser und Bürogebäude leer. Solche Flächen könnten für die Lebensmittelproduktion genutzt werden, statt jahrelang zu verfallen. Das schafft Arbeitsplätze, belebt ganze Viertel und verkürzt die Transportwege erheblich: Der Salat, der morgens geerntet wird, kann mittags im Restaurant nebenan auf dem Teller liegen. Allerdings stoßen solche Projekte in der Praxis oft auf Hürden, die mit der Technik wenig zu tun haben. Das Baurecht unterscheidet streng zwischen Gewerbe- und Landwirtschaftsflächen, und für eine Farm im dritten Stock eines Geschäftshauses gibt es schlicht keine passende Kategorie. Hier müsste der Gesetzgeber dringend nachbessern.",
+            "c) Dr. Selin Arslan, Ernährungswissenschaftlerin\nIn der Debatte wird häufig übersehen, dass sich Gemüse aus vertikalen Farmen auch in seiner Qualität von herkömmlicher Ware unterscheiden kann. Da Licht, Temperatur und Nährstoffzufuhr exakt geregelt werden, lässt sich etwa der Gehalt an bestimmten Vitaminen gezielt beeinflussen. Außerdem kommen die Anlagen in der Regel ohne Pflanzenschutzmittel aus, weil Schädlinge kaum eindringen können. Ob diese Vorteile bei den Verbraucherinnen und Verbrauchern ankommen, ist allerdings eine andere Frage. Befragungen zeigen, dass viele Menschen Lebensmittel aus dem Labor, wie sie es nennen, mit Misstrauen betrachten. Sie verbinden gesunde Ernährung mit Natur, Erde und Sonnenlicht. Die Branche wäre deshalb gut beraten, offen über ihre Verfahren zu informieren, statt mit idyllischen Bildern zu werben, die mit der Realität nichts zu tun haben."
+          ],
+          "answers": [
+            1,
+            0,
+            null,
+            2,
+            1,
+            null,
+            0
+          ],
+          "allowNone": true
+        },
+        "explanations": [
+          {
+            "en": "Johannsen (b): \"Das Baurecht unterscheidet streng zwischen Gewerbe- und Landwirtschaftsflächen, und für eine Farm im dritten Stock … gibt es schlicht keine passende Kategorie.\"",
+            "de": "Johannsen (b) sagt, dass es im Baurecht „keine passende Kategorie“ für eine Farm in einem Geschäftshaus gibt."
+          },
+          {
+            "en": "Sommerfeld (a): as long as the electricity is not fully renewable, \"fällt die Klimabilanz vieler Anlagen sogar schlechter aus als die eines gewöhnlichen Gewächshauses\".",
+            "de": "Sommerfeld (a) sagt, die „Klimabilanz vieler Anlagen“ sei oft „schlechter … als die eines gewöhnlichen Gewächshauses“."
+          },
+          {
+            "en": "Nobody (0): none of the experts mentions water consumption. Sommerfeld names energy, not water, as the biggest cost factor.",
+            "de": "Niemand (0): Keine Person spricht über Wasser. Sommerfeld nennt die Energie als größten Kostenfaktor."
+          },
+          {
+            "en": "Arslan (c): because light, temperature and nutrients are regulated, \"lässt sich etwa der Gehalt an bestimmten Vitaminen gezielt beeinflussen\".",
+            "de": "Arslan (c) sagt, man könne „den Gehalt an bestimmten Vitaminen gezielt beeinflussen“."
+          },
+          {
+            "en": "Johannsen (b): empty department stores and office buildings \"könnten für die Lebensmittelproduktion genutzt werden, statt jahrelang zu verfallen\".",
+            "de": "Johannsen (b) sagt, leere Kaufhäuser und Büros „könnten für die Lebensmittelproduktion genutzt werden“."
+          },
+          {
+            "en": "Nobody (0): no expert predicts this. Sommerfeld sees only a niche in Central Europe, and Johannsen says the farms cannot feed the world.",
+            "de": "Niemand (0): Sommerfeld sieht für Mitteleuropa „eher eine Nische“, und Johannsen sagt, die Farmen können die Welt nicht ernähren."
+          },
+          {
+            "en": "Sommerfeld (a): \"bislang [lassen sich] nur schnell wachsende Blattgemüse und Kräuter wirtschaftlich anbauen\"; staple foods would be unaffordable.",
+            "de": "Sommerfeld (a): Bisher lohnen sich „nur schnell wachsende Blattgemüse und Kräuter“. Weizen oder Kartoffeln wären zu teuer."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-c1__lesen-4__s02",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Unter jungen Leuten ist ein neues Interesse an Mundarten zu beobachten.",
+            "Wer zwischen Dialekt und Standardsprache wechselt, tut sich oft leichter beim Lernen von Fremdsprachen.",
+            "Schülerinnen und Schüler, die Dialekt sprechen, erhalten in Prüfungen grundsätzlich schlechtere Noten.",
+            "Wenn im Unterricht Dialekt gesprochen wird, kann das Kinder benachteiligen, die nicht aus der Region stammen.",
+            "Manche Begriffe aus Dialekten lassen sich nicht genau in die Standardsprache übertragen.",
+            "Der frühere Umgang der Schule mit Dialekten hat bei vielen Menschen negative Spuren hinterlassen.",
+            "Der Dialekt sollte als eigenes Schulfach unterrichtet werden."
+          ],
+          "targets": [
+            "a) Prof. Henrike Vogt, Sprachwissenschaftlerin\nLange galt der Dialekt in der Schule als Störfaktor, den man den Kindern möglichst früh abgewöhnen sollte. Diese Haltung hat erheblichen Schaden angerichtet. Viele Menschen, die mit einer Mundart aufgewachsen sind, berichten bis heute, dass sie sich in der Schulzeit für ihre Sprache geschämt haben. Dabei zeigen Untersuchungen, dass Kinder, die zwischen Dialekt und Standardsprache wechseln, ein besonders feines Gespür für sprachliche Unterschiede entwickeln. Sie lernen früh, dass man je nach Situation anders spricht – eine Fähigkeit, die ihnen auch beim Erwerb von Fremdsprachen zugutekommt. Ich plädiere deshalb nicht dafür, im Unterricht Dialekt zu sprechen, wohl aber dafür, ihn im Deutschunterricht gelegentlich zum Thema zu machen: Woher kommen bestimmte Wörter? Warum spricht man im Nachbardorf anders? Solche Fragen wecken bei Kindern oft mehr Interesse an Sprache als jede Grammatikübung.",
+            "b) Dr. Thomas Berger, Bildungsforscher\nIch verstehe den Wunsch, regionale Sprachformen zu bewahren. Die Aufgabe der Schule sehe ich aber vor allem darin, allen Kindern die gleichen Chancen zu eröffnen. Und dafür ist eine sichere Beherrschung der Standardsprache nach wie vor unerlässlich – in Bewerbungsgesprächen, an der Universität, im Umgang mit Behörden. Problematisch finde ich es, wenn Lehrkräfte selbst im Unterricht in den Dialekt verfallen. Für Kinder, die aus anderen Regionen oder Ländern zugezogen sind, wird es dann schnell schwierig, dem Unterricht zu folgen. Das heißt nicht, dass der Dialekt auf dem Pausenhof verboten werden sollte. Aber im Klassenzimmer sollte die Standardsprache klar Vorrang haben.",
+            "c) Dr. Maria Kofler, Kulturwissenschaftlerin\nDialekte sind weit mehr als eine Variante der Aussprache. In ihnen sind Wissen und Erfahrungen ganzer Generationen gespeichert: Begriffe aus dem Handwerk, aus der Landwirtschaft, für Wetterlagen oder Geländeformen, für die es im Hochdeutschen oft gar kein genaues Gegenstück gibt. Wenn ein Dialekt verschwindet, geht dieses Wissen unwiederbringlich verloren. Erstaunlich finde ich, dass gerade junge Menschen die Mundart wiederentdecken – in Liedern, in sozialen Medien, sogar in der Werbung. Offenbar wächst in einer globalisierten Welt das Bedürfnis nach Zugehörigkeit und Heimat. Die Schule könnte diese Bewegung aufgreifen, etwa durch Projekte mit älteren Menschen aus der Region, die ihre Sprache an die Jüngeren weitergeben. Auf diese Weise würde nicht nur der Dialekt gepflegt, sondern auch der Kontakt zwischen den Generationen gestärkt."
+          ],
+          "answers": [
+            2,
+            0,
+            null,
+            1,
+            2,
+            0,
+            null
+          ],
+          "allowNone": true
+        },
+        "explanations": [
+          {
+            "en": "Kofler (c): \"Erstaunlich finde ich, dass gerade junge Menschen die Mundart wiederentdecken – in Liedern, in sozialen Medien …\"",
+            "de": "Kofler (c) sagt, dass „gerade junge Menschen die Mundart wiederentdecken“."
+          },
+          {
+            "en": "Vogt (a): children who switch between dialect and standard German learn that one speaks differently by situation, \"eine Fähigkeit, die ihnen auch beim Erwerb von Fremdsprachen zugutekommt\".",
+            "de": "Vogt (a) sagt, diese Fähigkeit komme Kindern „auch beim Erwerb von Fremdsprachen“ zugute."
+          },
+          {
+            "en": "Nobody (0): no expert mentions marks or exams. Berger only says standard German is essential for equal opportunities.",
+            "de": "Niemand (0): Über Noten oder Prüfungen spricht keine Person. Berger sagt nur, dass die Standardsprache wichtig ist."
+          },
+          {
+            "en": "Berger (b): if teachers slip into dialect, \"wird es [für zugezogene Kinder] dann schnell schwierig, dem Unterricht zu folgen\".",
+            "de": "Berger (b) sagt: Für Kinder aus anderen Regionen „wird es dann schnell schwierig, dem Unterricht zu folgen“."
+          },
+          {
+            "en": "Kofler (c): dialects contain terms \"für die es im Hochdeutschen oft gar kein genaues Gegenstück gibt\".",
+            "de": "Kofler (c) sagt, für manche Dialektwörter gebe es im Hochdeutschen „kein genaues Gegenstück“."
+          },
+          {
+            "en": "Vogt (a): the old attitude \"hat erheblichen Schaden angerichtet\"; many people say they were ashamed of their language at school.",
+            "de": "Vogt (a) sagt, diese Haltung habe „erheblichen Schaden angerichtet“. Viele haben sich für ihre Sprache geschämt."
+          },
+          {
+            "en": "Nobody (0): Vogt only wants dialect to be a topic now and then in German lessons, and Kofler suggests projects; nobody calls for a separate school subject.",
+            "de": "Niemand (0): Vogt will den Dialekt nur „gelegentlich zum Thema“ machen, Kofler schlägt Projekte vor. Ein eigenes Fach fordert niemand."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-c1__lesen-4__s03",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Schon lange vor der Digitalisierung befürchtete man, eine neue Technik könne dem Gedächtnis schaden.",
+            "Wer bei einem Ereignis ständig fotografiert, nimmt es selbst weniger aufmerksam wahr.",
+            "Smartphones sollten an Schulen verboten werden.",
+            "Ohne eigenes Grundwissen lassen sich Informationen aus dem Internet kaum sinnvoll bewerten.",
+            "Über die langfristigen Folgen digitaler Mediennutzung für das Gedächtnis ist bislang wenig bekannt.",
+            "Der kritische Umgang mit Quellen sollte in der Schule dauerhaft und fächerübergreifend geübt werden.",
+            "Ältere Menschen profitieren besonders von digitalen Gedächtnisstützen."
+          ],
+          "targets": [
+            "a) Prof. Lukas Ehrhardt, Neurowissenschaftler\nDie Sorge, das Smartphone mache uns vergesslich, begleitet die Digitalisierung seit ihren Anfängen. Aus Sicht der Hirnforschung ist sie nur teilweise berechtigt. Tatsächlich merken wir uns Informationen schlechter, wenn wir wissen, dass wir sie jederzeit nachschlagen können – das ist in Experimenten gut belegt. Wir behalten dann eher, wo etwas steht, als was dort steht. Das ist aber keine Fehlfunktion, sondern eine sinnvolle Strategie: Das Gehirn spart Kapazität für andere Aufgaben. Bedenklich wird es erst, wenn wir gar nichts mehr selbst wissen. Denn wer kein Grundwissen besitzt, kann neue Informationen nicht einordnen und auch nicht beurteilen, ob das, was er im Netz findet, plausibel ist.",
+            "b) Dr. Nora Lindner, Psychologin\nIn meiner Forschung beschäftige ich mich mit dem Gedächtnis für persönliche Erlebnisse. Hier beobachten wir einen interessanten Effekt: Menschen, die bei einem Konzert oder einem Ausflug ständig fotografieren, erinnern sich später oft schlechter an Einzelheiten als jene, die einfach zuschauen. Offenbar verlassen wir uns darauf, dass die Kamera das Erlebnis für uns festhält, und schenken dem Moment selbst weniger Aufmerksamkeit. Ich rate deshalb nicht davon ab, Fotos zu machen. Wer aber bewusst auswählt, was er fotografiert, und sich die Bilder später noch einmal ansieht, kann die Erinnerung sogar stärken. Entscheidend ist also nicht das Gerät, sondern wie wir es einsetzen. Leider fehlt es bisher an Langzeitstudien, die zeigen, wie sich der Umgang mit digitalen Medien über Jahrzehnte auf unser Gedächtnis auswirkt.",
+            "c) Dr. Kerstin Albers, Medienpädagogin\nWenn über Smartphones und Gedächtnis diskutiert wird, schwingt oft eine Klage über den Verfall der Bildung mit. Ich halte das für wenig hilfreich. Jede neue Technik hat ähnliche Befürchtungen ausgelöst – schon über die Schrift wurde in der Antike gesagt, sie werde die Menschen vergesslich machen. Viel wichtiger als die Frage, wie viel wir auswendig wissen, ist meines Erachtens, ob wir mit der Fülle an Informationen umgehen können. Und hier sehe ich tatsächlich Nachholbedarf. Viele Jugendliche können zwar blitzschnell etwas im Netz finden, haben aber Mühe, die Glaubwürdigkeit einer Quelle einzuschätzen. Das müssen Schulen systematisch vermitteln, und zwar nicht in einer einzelnen Projektwoche, sondern kontinuierlich in allen Fächern. Ein Handyverbot an Schulen, wie es manche fordern, halte ich dagegen für den falschen Weg."
+          ],
+          "answers": [
+            2,
+            1,
+            null,
+            0,
+            1,
+            2,
+            null
+          ],
+          "allowNone": true
+        },
+        "explanations": [
+          {
+            "en": "Albers (c): \"Jede neue Technik hat ähnliche Befürchtungen ausgelöst – schon über die Schrift wurde in der Antike gesagt, sie werde die Menschen vergesslich machen.\"",
+            "de": "Albers (c) sagt, schon in der Antike habe man gedacht, die Schrift mache die Menschen vergesslich."
+          },
+          {
+            "en": "Lindner (b): people who photograph constantly rely on the camera \"und schenken dem Moment selbst weniger Aufmerksamkeit\".",
+            "de": "Lindner (b) sagt, wer ständig fotografiert, schenke „dem Moment selbst weniger Aufmerksamkeit“."
+          },
+          {
+            "en": "Nobody (0): only Albers mentions a phone ban, and she rejects it: \"halte ich dagegen für den falschen Weg\".",
+            "de": "Niemand (0): Albers spricht über ein Handyverbot, lehnt es aber ab („den falschen Weg“)."
+          },
+          {
+            "en": "Ehrhardt (a): \"wer kein Grundwissen besitzt, kann neue Informationen nicht einordnen und auch nicht beurteilen, ob das, was er im Netz findet, plausibel ist\". Albers links the problem to missing media skills, not missing knowledge.",
+            "de": "Ehrhardt (a) sagt: Wer „kein Grundwissen besitzt“, kann nicht beurteilen, ob Informationen aus dem Netz plausibel sind."
+          },
+          {
+            "en": "Lindner (b): \"Leider fehlt es bisher an Langzeitstudien, die zeigen, wie sich der Umgang mit digitalen Medien über Jahrzehnte auf unser Gedächtnis auswirkt.\"",
+            "de": "Lindner (b) sagt, es fehle „an Langzeitstudien“ zu den Folgen über Jahrzehnte."
+          },
+          {
+            "en": "Albers (c): judging sources must be taught \"nicht in einer einzelnen Projektwoche, sondern kontinuierlich in allen Fächern\".",
+            "de": "Albers (c) sagt, Schulen sollen das „kontinuierlich in allen Fächern“ vermitteln."
+          },
+          {
+            "en": "Nobody (0): none of the experts talks about older people or memory aids for them.",
+            "de": "Niemand (0): Über ältere Menschen spricht keine Person."
+          }
+        ]
+      }
+    }
+  ]
+}

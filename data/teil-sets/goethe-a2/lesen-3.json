@@ -1,0 +1,241 @@
+{
+  "formatId": "goethe-a2",
+  "partId": "lesen-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-a2__lesen-3__s01",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Liebe Sophie,\n\nwie geht es dir? Entschuldige, dass ich so lange nicht geschrieben habe. Aber du weißt ja: Ich bin vor drei Wochen nach Leipzig umgezogen, und es gab sehr viel zu tun.\n\nMeine neue Wohnung gefällt mir sehr gut. Sie ist nicht groß, nur zwei Zimmer, aber sie hat einen Balkon und ist sehr hell. Leider liegt sie im vierten Stock, und es gibt keinen Aufzug. Beim Umzug haben mir zum Glück zwei Kollegen geholfen.\n\nDie Arbeit im Krankenhaus ist anstrengend, aber das Team ist sehr nett. Ich arbeite oft am Wochenende, dafür habe ich manchmal unter der Woche frei.\n\nHast du Lust, mich bald zu besuchen? Am besten passt es mir vom 14. bis 16. Juni, da habe ich drei Tage frei. Du kannst im Wohnzimmer auf dem Sofa schlafen. Wir könnten zusammen die Stadt ansehen oder mit dem Fahrrad zum See fahren. Fahrräder kann man hier überall leihen, du musst deins also nicht mitbringen.\n\nKannst du mir noch dein Rezept für den Apfelkuchen schicken? Ich möchte ihn für meine Kolleginnen backen.\n\nSchreib mir bald!\nLiebe Grüße\nLena",
+          "questions": [
+            {
+              "question": "Lena …",
+              "options": [
+                "wohnt schon lange in Leipzig.",
+                "wohnt seit drei Wochen in Leipzig.",
+                "hat beim Umzug keine Hilfe gehabt."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Lenas Wohnung …",
+              "options": [
+                "hat drei Zimmer.",
+                "ist sehr dunkel.",
+                "hat keinen Aufzug."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Lena …",
+              "options": [
+                "arbeitet in einem Krankenhaus.",
+                "hat am Wochenende immer frei.",
+                "findet ihre Kollegen nicht nett."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Sophie soll …",
+              "options": [
+                "ein Fahrrad mitbringen.",
+                "im Juni nach Leipzig kommen.",
+                "in einem Hotel schlafen."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Lena möchte …",
+              "options": [
+                "einen Apfelkuchen für Sophie backen.",
+                "mit ihren Kolleginnen Sophie besuchen.",
+                "ein Kuchenrezept von Sophie bekommen."
+              ],
+              "correctIndex": 2
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "\"Ich bin vor drei Wochen nach Leipzig umgezogen\": she has lived there for three weeks. Two colleagues helped her with the move.",
+            "de": "„Ich bin vor drei Wochen nach Leipzig umgezogen.“ Sie wohnt also seit drei Wochen dort. Zwei Kollegen haben beim Umzug geholfen."
+          },
+          {
+            "en": "\"Leider liegt sie im vierten Stock, und es gibt keinen Aufzug.\" The flat has only two rooms and is very bright.",
+            "de": "„Leider liegt sie im vierten Stock, und es gibt keinen Aufzug.“ Die Wohnung hat nur zwei Zimmer und ist sehr hell."
+          },
+          {
+            "en": "\"Die Arbeit im Krankenhaus ist anstrengend\": she works in a hospital. She often works at the weekend, and she finds the team very nice.",
+            "de": "„Die Arbeit im Krankenhaus ist anstrengend.“ Lena arbeitet oft am Wochenende, und das Team findet sie sehr nett."
+          },
+          {
+            "en": "\"Am besten passt es mir vom 14. bis 16. Juni\": Sophie should come in June. She can sleep on the sofa and does not need to bring her bike.",
+            "de": "„Am besten passt es mir vom 14. bis 16. Juni.“ Sophie soll im Juni kommen. Sie schläft auf dem Sofa und muss kein Fahrrad mitbringen."
+          },
+          {
+            "en": "\"Kannst du mir noch dein Rezept für den Apfelkuchen schicken?\" Lena wants Sophie's recipe; she wants to bake the cake for her colleagues, not for Sophie.",
+            "de": "„Kannst du mir noch dein Rezept für den Apfelkuchen schicken?“ Lena möchte das Rezept haben. Den Kuchen backt sie für ihre Kolleginnen, nicht für Sophie."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2__lesen-3__s02",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Liebe Kolleginnen und Kollegen,\n\nwie jedes Jahr machen wir auch in diesem Sommer einen Betriebsausflug. Dieses Mal fahren wir am Freitag, dem 12. Juli, nach Seehausen an den Waldsee.\n\nWir treffen uns um 8.30 Uhr vor dem Haupteingang der Firma. Von dort bringt uns ein Bus in ungefähr zwei Stunden nach Seehausen. Am Vormittag machen wir eine Schifffahrt auf dem See. Das Mittagessen gibt es im Restaurant „Fischerhütte“. Bitte sagt mir bis zum 28. Juni, ob ihr Fisch, Fleisch oder vegetarisch essen möchtet.\n\nAm Nachmittag habt ihr freie Zeit. Ihr könnt im See baden, am Ufer spazieren gehen oder das kleine Heimatmuseum besuchen. Um 17 Uhr fahren wir mit dem Bus zurück. Gegen 19 Uhr sind wir dann wieder bei der Firma.\n\nDie Firma bezahlt den Bus, das Schiff und das Mittagessen. Getränke müsst ihr selbst bezahlen. Partner und Kinder dürfen leider nicht mitkommen, weil im Bus nur 50 Plätze sind.\n\nWer an diesem Tag nicht mitfahren kann, muss normal arbeiten oder Urlaub nehmen. Bei Fragen ruft mich einfach an (Durchwahl 214).\n\nViele Grüße\nKatrin Hoffmann\nPersonalabteilung",
+          "questions": [
+            {
+              "question": "Die Kolleginnen und Kollegen …",
+              "options": [
+                "fahren mit dem Zug an den See.",
+                "fahren am Morgen mit dem Bus los.",
+                "machen den Ausflug am Wochenende."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Bis zum 28. Juni sollen alle …",
+              "options": [
+                "sagen, was sie essen möchten.",
+                "das Mittagessen bezahlen.",
+                "ein Restaurant aussuchen."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Am Nachmittag …",
+              "options": [
+                "fahren alle zusammen mit dem Schiff.",
+                "besuchen alle zusammen ein Museum.",
+                "kann jeder machen, was er möchte."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Die Kolleginnen und Kollegen müssen selbst …",
+              "options": [
+                "die Schifffahrt bezahlen.",
+                "die Getränke bezahlen.",
+                "Essen mitbringen."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Partner und Kinder …",
+              "options": [
+                "müssen sich bei Frau Hoffmann anmelden.",
+                "können mit dem Auto nachkommen.",
+                "dürfen nicht mitfahren."
+              ],
+              "correctIndex": 2
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "\"Wir treffen uns um 8.30 Uhr … Von dort bringt uns ein Bus …\": they leave by bus in the morning. The trip is on a Friday, not at the weekend.",
+            "de": "Sie treffen sich um 8.30 Uhr, und dann bringt sie ein Bus nach Seehausen. Der Ausflug ist am Freitag, nicht am Wochenende."
+          },
+          {
+            "en": "\"Bitte sagt mir bis zum 28. Juni, ob ihr Fisch, Fleisch oder vegetarisch essen möchtet\": they must say what they want to eat. The company pays for lunch.",
+            "de": "„Bitte sagt mir bis zum 28. Juni, ob ihr Fisch, Fleisch oder vegetarisch essen möchtet.“ Das Mittagessen bezahlt die Firma."
+          },
+          {
+            "en": "\"Am Nachmittag habt ihr freie Zeit\": everyone can choose to swim, walk or visit the museum. The boat trip is in the morning.",
+            "de": "„Am Nachmittag habt ihr freie Zeit.“ Jeder kann baden, spazieren gehen oder ins Museum gehen. Die Schifffahrt ist am Vormittag."
+          },
+          {
+            "en": "\"Getränke müsst ihr selbst bezahlen.\" The company pays for the bus, the boat and lunch.",
+            "de": "„Getränke müsst ihr selbst bezahlen.“ Den Bus, das Schiff und das Mittagessen bezahlt die Firma."
+          },
+          {
+            "en": "\"Partner und Kinder dürfen leider nicht mitkommen\", because the bus has only 50 seats.",
+            "de": "„Partner und Kinder dürfen leider nicht mitkommen.“ Im Bus sind nur 50 Plätze."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2__lesen-3__s03",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Liebe Frau Schröder,\n\nwie Sie wissen, fahren mein Mann und ich nächste Woche in Urlaub. Wir besuchen unsere Tochter in Wien und bleiben vom 3. bis zum 17. August. Sie haben ja gesagt, dass Sie in dieser Zeit nach unserer Katze Mimi sehen können. Vielen Dank noch einmal dafür!\n\nHier ein paar Informationen: Mimi bekommt zweimal am Tag Futter, morgens und abends. Das Futter steht in der Küche im Schrank neben dem Kühlschrank. Bitte geben Sie ihr auch immer frisches Wasser. Mimi darf nicht nach draußen, lassen Sie also bitte die Balkontür zu.\n\nDie Blumen im Wohnzimmer brauchen nur einmal pro Woche Wasser. Die Pflanzen auf dem Balkon müssen Sie nicht gießen, das macht unser Sohn Tim. Er kommt am Wochenende vorbei und holt auch die Post aus dem Briefkasten.\n\nDen Wohnungsschlüssel bringe ich Ihnen am Sonntagabend vorbei. Wenn Mimi krank ist oder etwas nicht in Ordnung ist, rufen Sie bitte Tim an. Seine Nummer ist 0176 5512340.\n\nAls kleines Dankeschön bringen wir Ihnen etwas aus Wien mit!\n\nHerzliche Grüße\nIhre Gisela Brandl",
+          "questions": [
+            {
+              "question": "Herr und Frau Brandl …",
+              "options": [
+                "fahren für zwei Wochen weg.",
+                "besuchen ihren Sohn in Wien.",
+                "fahren diese Woche in Urlaub."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Frau Schröder soll der Katze …",
+              "options": [
+                "einmal am Tag Futter geben.",
+                "morgens und abends Futter geben.",
+                "neues Futter kaufen."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Die Katze …",
+              "options": [
+                "darf auf den Balkon gehen.",
+                "schläft im Wohnzimmer.",
+                "muss in der Wohnung bleiben."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Tim …",
+              "options": [
+                "gießt die Blumen im Wohnzimmer.",
+                "holt die Post aus dem Briefkasten.",
+                "bringt Frau Schröder den Schlüssel."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Wenn es ein Problem gibt, soll Frau Schröder …",
+              "options": [
+                "Frau Brandl in Wien anrufen.",
+                "mit Mimi zum Tierarzt gehen.",
+                "Tim anrufen."
+              ],
+              "correctIndex": 2
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "They stay \"vom 3. bis zum 17. August\", which is two weeks. They visit their daughter, not their son, and they leave next week.",
+            "de": "Sie bleiben vom 3. bis zum 17. August, also zwei Wochen. Sie besuchen ihre Tochter, nicht ihren Sohn, und sie fahren erst nächste Woche."
+          },
+          {
+            "en": "\"Mimi bekommt zweimal am Tag Futter, morgens und abends.\" The food is already in the kitchen cupboard.",
+            "de": "„Mimi bekommt zweimal am Tag Futter, morgens und abends.“ Das Futter steht schon im Schrank in der Küche."
+          },
+          {
+            "en": "\"Mimi darf nicht nach draußen, lassen Sie also bitte die Balkontür zu\": the cat must stay inside the flat.",
+            "de": "„Mimi darf nicht nach draußen.“ Die Balkontür soll geschlossen bleiben. Die Katze muss also in der Wohnung bleiben."
+          },
+          {
+            "en": "Tim \"holt auch die Post aus dem Briefkasten\". He waters the balcony plants, not the flowers in the living room, and Frau Brandl brings the key herself.",
+            "de": "Tim „holt auch die Post aus dem Briefkasten“. Er gießt die Pflanzen auf dem Balkon. Den Schlüssel bringt Frau Brandl selbst."
+          },
+          {
+            "en": "\"Wenn Mimi krank ist oder etwas nicht in Ordnung ist, rufen Sie bitte Tim an.\"",
+            "de": "„Wenn Mimi krank ist oder etwas nicht in Ordnung ist, rufen Sie bitte Tim an.“"
+          }
+        ]
+      }
+    }
+  ]
+}

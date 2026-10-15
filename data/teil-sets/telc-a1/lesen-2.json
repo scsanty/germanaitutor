@@ -1,0 +1,226 @@
+{
+  "formatId": "telc-a1",
+  "partId": "lesen-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-a1__lesen-2__s01",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "1a) www.zugreisen-nord.de\nFahrkarten online kaufen: Sparpreise für Zugfahrten am Wochenende. Hamburg – Berlin schon ab 19,90 €.\n\n1b) www.fernbus-express.de\nMit dem Bus durch ganz Deutschland: Fahrten nach Berlin jeden Tag ab 9,90 €.\n\n2a) www.restaurant-adler.de\nRestaurant Adler: Montag bis Samstag von 12 bis 22 Uhr geöffnet. Sonntag Ruhetag.\n\n2b) www.pizzeria-roma-mitte.de\nPizzeria Roma: Täglich von 11 bis 23 Uhr geöffnet – auch am Sonntag.\n\n3a) www.sprachschule-lindenhof.de\nDeutschkurse für Anfänger: Montag bis Freitag von 18:00 bis 20:15 Uhr. Neue Kurse ab 1. März.\n\n3b) www.kinder-lernen.de\nEnglisch für Kinder von 6 bis 10 Jahren: Dienstag und Donnerstag von 15 bis 16 Uhr.\n\n4a) www.hotel-am-park.de\nHotel am Park: Schöne Zimmer mit Balkon, 65 € pro Nacht. Frühstück inklusive.\n\n4b) www.wohnen-in-kassel.de\n2-Zimmer-Wohnung, 55 m², Küche, Bad, Balkon. Miete: 520 € im Monat.\n\n5a) www.fahrrad-tour.de\nRadtouren am Wochenende: Wir fahren zusammen an den See. Anmeldung online.\n\n5b) www.rad-doktor.de\nFahrradreparatur – schnell und billig. Montag bis Freitag von 9 bis 18 Uhr.",
+          "questions": [
+            {
+              "question": "Sie möchten am Samstag mit dem Zug von Hamburg nach Berlin fahren.",
+              "options": [
+                "a) www.zugreisen-nord.de",
+                "b) www.fernbus-express.de"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Sie möchten am Sonntagabend in Ihrer Stadt essen gehen.",
+              "options": [
+                "a) www.restaurant-adler.de",
+                "b) www.pizzeria-roma-mitte.de"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Sie lernen Deutsch und suchen einen Kurs am Abend.",
+              "options": [
+                "a) www.sprachschule-lindenhof.de",
+                "b) www.kinder-lernen.de"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Sie möchten eine Wohnung mit Balkon mieten.",
+              "options": [
+                "a) www.hotel-am-park.de",
+                "b) www.wohnen-in-kassel.de"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Ihr Fahrrad ist kaputt. Sie brauchen Hilfe.",
+              "options": [
+                "a) www.fahrrad-tour.de",
+                "b) www.rad-doktor.de"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "You want to go by train. Website a sells tickets for \"Zugfahrten am Wochenende. Hamburg – Berlin\". Website b is about buses.",
+            "de": "Sie möchten mit dem Zug fahren. Auf Seite a gibt es „Zugfahrten am Wochenende. Hamburg – Berlin“. Seite b ist für Busse."
+          },
+          {
+            "en": "Pizzeria Roma is open every day until 23:00, \"auch am Sonntag\". Restaurant Adler is closed on Sunday (\"Sonntag Ruhetag\").",
+            "de": "Die Pizzeria Roma ist „täglich“ offen, „auch am Sonntag“. Das Restaurant Adler hat am Sonntag zu („Sonntag Ruhetag“)."
+          },
+          {
+            "en": "Website a offers German courses \"von 18:00 bis 20:15 Uhr\", in the evening. Website b is an English course for children in the afternoon.",
+            "de": "Seite a hat Deutschkurse „von 18:00 bis 20:15 Uhr“. Das ist am Abend. Seite b ist ein Englischkurs für Kinder."
+          },
+          {
+            "en": "Website b offers a flat to rent: \"2-Zimmer-Wohnung … Balkon. Miete: 520 € im Monat\". Website a is a hotel room per night, not a flat.",
+            "de": "Auf Seite b gibt es eine Wohnung mit Balkon für 520 € „im Monat“. Seite a ist ein Hotel, keine Wohnung."
+          },
+          {
+            "en": "Website b repairs bikes: \"Fahrradreparatur – schnell und billig\". Website a only offers bike tours.",
+            "de": "Seite b repariert Fahrräder: „Fahrradreparatur – schnell und billig“. Seite a macht nur Radtouren."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a1__lesen-2__s02",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "1a) www.zahnarzt-am-rathaus.de\nZahnarztpraxis am Rathaus. Sprechstunden: Montag bis Freitag 8–12 Uhr und 14–18 Uhr.\n\n1b) www.zahn-notdienst.de\nZahnärztlicher Notdienst: am Wochenende und an Feiertagen von 9 bis 20 Uhr.\n\n2a) www.blumen-lotte.de\nBlumen Lotte: Rosen, Tulpen und mehr. Wir bringen Ihre Blumen auch nach Hause.\n\n2b) www.garten-markt.de\nGartenmöbel, Werkzeug und Grills – jetzt alles 20 % billiger!\n\n3a) www.stadtbad-sued.de\nStadtbad Süd: Familientag jeden Sonntag – Kinder bis 12 Jahre bezahlen nichts.\n\n3b) www.segeln-am-see.de\nSegeln lernen für Erwachsene: Kurse von Mai bis September.\n\n4a) www.cafe-sonne.de\nCafé Sonne: Samstag und Sonntag von 9 bis 18 Uhr geöffnet. Frühstück bis 14 Uhr.\n\n4b) www.jobs-in-der-stadt.de\nBäckerei sucht Verkäuferin / Verkäufer für Samstag und Sonntag, 6 bis 12 Uhr.\n\n5a) www.kino-kapitol.de\nKino Kapitol – heute im Programm: „Das große Abenteuer“ um 17:30 und 20:15 Uhr. Karten auch online.\n\n5b) www.stadttheater-nord.de\nHeute Abend um 19:30 Uhr: „Ein Sommer am Meer“ – ein Theaterstück für die ganze Familie.",
+          "questions": [
+            {
+              "question": "Sie haben Zahnschmerzen. Heute ist Samstag.",
+              "options": [
+                "a) www.zahnarzt-am-rathaus.de",
+                "b) www.zahn-notdienst.de"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Sie möchten Ihrer Freundin Blumen schenken.",
+              "options": [
+                "a) www.blumen-lotte.de",
+                "b) www.garten-markt.de"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Sie möchten mit Ihren Kindern schwimmen gehen.",
+              "options": [
+                "a) www.stadtbad-sued.de",
+                "b) www.segeln-am-see.de"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Sie suchen eine Arbeit am Wochenende.",
+              "options": [
+                "a) www.cafe-sonne.de",
+                "b) www.jobs-in-der-stadt.de"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Sie möchten heute Abend einen Film sehen.",
+              "options": [
+                "a) www.kino-kapitol.de",
+                "b) www.stadttheater-nord.de"
+              ],
+              "correctIndex": 0
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Today is Saturday. The emergency dentist in b works \"am Wochenende\". The practice in a is open only Monday to Friday.",
+            "de": "Heute ist Samstag. Der Notdienst auf Seite b ist „am Wochenende“ da. Die Praxis auf Seite a ist nur von Montag bis Freitag offen."
+          },
+          {
+            "en": "Website a is a flower shop: \"Rosen, Tulpen und mehr\". Website b sells garden furniture, tools and grills, not flowers.",
+            "de": "Seite a ist ein Blumengeschäft: „Rosen, Tulpen und mehr“. Seite b hat Gartenmöbel und Grills, aber keine Blumen."
+          },
+          {
+            "en": "Website a is a swimming pool with a family day (\"Familientag\"). Website b offers sailing for adults.",
+            "de": "Seite a ist ein Schwimmbad mit „Familientag“. Seite b ist ein Segelkurs für Erwachsene."
+          },
+          {
+            "en": "Website b is a job ad: a bakery is looking for a sales assistant \"für Samstag und Sonntag\". Website a only gives a café's opening hours.",
+            "de": "Auf Seite b sucht eine Bäckerei eine Verkäuferin oder einen Verkäufer „für Samstag und Sonntag“. Seite a zeigt nur die Öffnungszeiten von einem Café."
+          },
+          {
+            "en": "Website a is a cinema with a film tonight at 20:15. Website b is a theatre play (\"ein Theaterstück\"), not a film.",
+            "de": "Seite a ist ein Kino. Heute Abend läuft dort ein Film um 20:15 Uhr. Seite b ist ein Theaterstück, kein Film."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a1__lesen-2__s03",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "1a) www.reisebuero-sonnenschein.de\nReisebüro Sonnenschein: Urlaub in Spanien und Italien – jetzt günstig buchen!\n\n1b) www.buergeramt-stadt.de\nBürgeramt: Personalausweis und Reisepass. Termine können Sie online buchen.\n\n2a) www.deutsch-am-computer.de\nDeutsch lernen am Computer: Übungen und Tests für alle Niveaus.\n\n2b) www.sprachcafe-mitte.de\nSprachcafé: Jeden Samstag um 15 Uhr treffen sich hier Leute und sprechen zusammen Deutsch.\n\n3a) www.elektro-maier.de\nElektro Maier: Waschmaschinen, Kühlschränke und Herde – neue Geräte zu guten Preisen.\n\n3b) www.waschsalon-ecke.de\nWaschsalon an der Ecke: Hier waschen Sie Ihre Wäsche. Täglich von 7 bis 22 Uhr geöffnet.\n\n4a) www.busreisen-sued.de\nMit dem Bus nach Wien: jeden Freitag ab München.\n\n4b) www.fluege-guenstig.de\nBillige Flüge: München – Wien schon ab 49 €.\n\n5a) www.musikschule-klang.de\nMusikschule Klang: Unterricht für Gitarre, Klavier und Geige – für Kinder und Erwachsene.\n\n5b) www.musikhaus-ton.de\nMusikhaus Ton: Gitarren, Klaviere und Noten – jetzt im Angebot.",
+          "questions": [
+            {
+              "question": "Sie brauchen einen neuen Reisepass.",
+              "options": [
+                "a) www.reisebuero-sonnenschein.de",
+                "b) www.buergeramt-stadt.de"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Sie möchten am Wochenende mit anderen Leuten Deutsch sprechen.",
+              "options": [
+                "a) www.deutsch-am-computer.de",
+                "b) www.sprachcafe-mitte.de"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Ihre Waschmaschine ist kaputt. Sie möchten eine neue kaufen.",
+              "options": [
+                "a) www.elektro-maier.de",
+                "b) www.waschsalon-ecke.de"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Sie möchten mit dem Flugzeug nach Wien fliegen.",
+              "options": [
+                "a) www.busreisen-sued.de",
+                "b) www.fluege-guenstig.de"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Sie möchten Gitarre spielen lernen.",
+              "options": [
+                "a) www.musikschule-klang.de",
+                "b) www.musikhaus-ton.de"
+              ],
+              "correctIndex": 0
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The citizens' office in b handles \"Personalausweis und Reisepass\". The travel agency in a sells holidays, not passports.",
+            "de": "Auf Seite b, beim Bürgeramt, gibt es „Personalausweis und Reisepass“. Das Reisebüro auf Seite a verkauft nur Reisen."
+          },
+          {
+            "en": "Website b: people meet \"jeden Samstag\" and \"sprechen zusammen Deutsch\". Website a is for learning alone at the computer.",
+            "de": "Auf Seite b treffen sich Leute „jeden Samstag“ und sprechen zusammen Deutsch. Auf Seite a lernt man allein am Computer."
+          },
+          {
+            "en": "Website a sells new appliances, including \"Waschmaschinen\". At the launderette in b you can wash clothes, but not buy a machine.",
+            "de": "Seite a verkauft neue „Waschmaschinen“. Im Waschsalon auf Seite b kann man nur Wäsche waschen."
+          },
+          {
+            "en": "Website b offers flights: \"Billige Flüge: München – Wien\". Website a is a bus trip.",
+            "de": "Seite b hat Flüge: „Billige Flüge: München – Wien“. Seite a ist eine Reise mit dem Bus."
+          },
+          {
+            "en": "Website a is a music school with lessons (\"Unterricht für Gitarre\"). Website b only sells instruments.",
+            "de": "Seite a ist eine Musikschule mit „Unterricht für Gitarre“. Seite b verkauft nur Instrumente."
+          }
+        ]
+      }
+    }
+  ]
+}

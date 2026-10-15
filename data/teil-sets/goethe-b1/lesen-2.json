@@ -1,0 +1,280 @@
+{
+  "formatId": "goethe-b1",
+  "partId": "lesen-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-b1__lesen-2__s01",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Text 1\n\nBrot vom Vortag – und trotzdem gut\n\nIn vielen Bäckereien bleibt am Abend Brot übrig. Meistens landet es im Müll oder wird als Tierfutter verkauft. Bäckermeister Thomas Kern aus Wiesenfeld wollte das nicht länger akzeptieren. Vor einem Jahr hat er deshalb neben seiner Bäckerei einen kleinen Laden eröffnet, in dem er nur Brot und Brötchen vom Vortag verkauft – zum halben Preis.\n\nAm Anfang waren viele Kunden skeptisch. „Die Leute dachten, Brot von gestern schmeckt nicht mehr“, erzählt Kern. Deshalb hat er im Laden Zettel mit Tipps aufgehängt: wie man Brot richtig aufbewahrt, wie man es im Ofen wieder knusprig macht und welche Gerichte man aus hartem Brot kochen kann. Inzwischen ist der Laden so beliebt, dass am Nachmittag oft schon alles ausverkauft ist.\n\nBesonders Familien und Studierende kaufen dort ein. Aber auch einige Restaurants kaufen regelmäßig Brot, um daraus Knödel oder Croutons zu machen. Kern freut sich vor allem darüber, dass er heute kaum noch Brot wegwerfen muss. Reich wird er mit dem Laden allerdings nicht: Nach Miete und Personalkosten bleibt nur wenig Gewinn. „Aber darum geht es mir auch nicht“, sagt der Bäcker.\n\nText 2\n\nDigitale Nachhilfe: Schüler erklären Senioren das Smartphone\n\nJeden Dienstagnachmittag wird es im Gemeindezentrum von Burgdorf laut. An zehn Tischen sitzen jeweils ein Jugendlicher und eine ältere Person zusammen, vor ihnen liegen Handys und Tablets. Die Idee stammt von Schülerinnen und Schülern der neunten Klasse der Gesamtschule. Im Rahmen eines Schulprojekts wollten sie etwas für ihre Nachbarschaft tun – und haben gemerkt, dass viele ältere Menschen Probleme mit der Technik haben.\n\n„Meine Oma hat mich jeden Tag angerufen, weil sie keine Fotos verschicken konnte“, erzählt die 15-jährige Lea. „Da dachte ich: Das geht bestimmt vielen so.“ Die Senioren bringen ihre eigenen Geräte mit und stellen Fragen: Wie mache ich einen Videoanruf? Wie kaufe ich eine Fahrkarte online? Wie erkenne ich gefährliche Nachrichten von Betrügern?\n\nDas Angebot ist kostenlos. Eigentlich sollte das Projekt nach drei Monaten enden, doch die Nachfrage war so groß, dass die Schule es nun weiterführt. Inzwischen gibt es sogar eine Warteliste. Auch die Jugendlichen profitieren: Sie lernen, geduldig zu sein und Dinge einfach zu erklären. Und manchmal wird auch getauscht: Herr Albers, 81, hat seinem jungen Lehrer zum Dank gezeigt, wie man Schach spielt.",
+          "questions": [
+            {
+              "question": "In Text 1 geht es um …",
+              "options": [
+                "einen Bäcker, der besonders billiges frisches Brot backt.",
+                "einen Laden, in dem Brot vom Vortag günstiger verkauft wird.",
+                "eine Bäckerei, die altes Brot an Tiere verfüttert."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Als Thomas Kern den Laden eröffnet hat, …",
+              "options": [
+                "haben viele Kunden gedacht, dass das Brot nicht gut schmeckt.",
+                "hat Thomas Kern Zettel mit seinen Preisen aufgehängt.",
+                "war der Laden am Nachmittag oft leer."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Thomas Kern …",
+              "options": [
+                "verdient mit dem neuen Laden sehr viel Geld.",
+                "möchte bald noch einen zweiten Laden eröffnen.",
+                "ist froh, dass er weniger Brot wegwerfen muss."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "In Text 2 geht es um …",
+              "options": [
+                "ältere Menschen, die Jugendlichen Schach beibringen.",
+                "Jugendliche, die älteren Menschen bei der Technik helfen.",
+                "eine Schule, die für Senioren neue Tablets gekauft hat."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Die Senioren …",
+              "options": [
+                "müssen für das Angebot nichts bezahlen.",
+                "bekommen im Gemeindezentrum ein neues Handy.",
+                "lernen dort nur, wie man Fotos verschickt."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Das Projekt …",
+              "options": [
+                "war nach drei Monaten zu Ende.",
+                "findet jetzt jeden Tag statt.",
+                "geht weiter, weil viele Menschen mitmachen wollen."
+              ],
+              "correctIndex": 2
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Kern opened a shop „in dem er nur Brot und Brötchen vom Vortag verkauft – zum halben Preis“. The bread is not fresh, and it is not fed to animals.",
+            "de": "Kern verkauft in seinem Laden „nur Brot und Brötchen vom Vortag … zum halben Preis“. Das Brot ist also von gestern und billiger."
+          },
+          {
+            "en": "„Die Leute dachten, Brot von gestern schmeckt nicht mehr.“ The notes on the wall were tips, not prices, and today the shop often sells out.",
+            "de": "Kern sagt: „Die Leute dachten, Brot von gestern schmeckt nicht mehr.“ Die Zettel haben Tipps, keine Preise."
+          },
+          {
+            "en": "„Kern freut sich vor allem darüber, dass er heute kaum noch Brot wegwerfen muss.“ He makes little profit, and a second shop is not mentioned.",
+            "de": "Kern freut sich, „dass er heute kaum noch Brot wegwerfen muss“. Er verdient nur wenig Geld."
+          },
+          {
+            "en": "Pupils sit with older people and help them with phones and tablets, because „viele ältere Menschen Probleme mit der Technik haben“. Chess is only a small detail.",
+            "de": "Schüler helfen älteren Menschen mit Handys und Tablets, weil viele Probleme mit der Technik haben. Das Schachspiel ist nur ein Detail."
+          },
+          {
+            "en": "„Das Angebot ist kostenlos.“ The seniors bring their own devices and ask about many things, not only photos.",
+            "de": "Im Text steht: „Das Angebot ist kostenlos.“ Die Senioren bringen ihre eigenen Geräte mit."
+          },
+          {
+            "en": "„Eigentlich sollte das Projekt nach drei Monaten enden, doch die Nachfrage war so groß, dass die Schule es nun weiterführt.“",
+            "de": "Das Projekt sollte nach drei Monaten enden, aber die Nachfrage war sehr groß. Deshalb macht die Schule weiter."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__lesen-2__s02",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Text 1\n\nGießkanne statt Fernsehen: Bürger kümmern sich um Stadtbäume\n\nDie letzten Sommer waren heiß und trocken, und das merken auch die Bäume in der Stadt. Viele junge Bäume an den Straßen von Ahlenbeck haben die Hitze nicht überlebt. Die Stadt hat zu wenig Personal, um alle Bäume regelmäßig zu gießen. Deshalb bittet sie die Bürgerinnen und Bürger jetzt, eine Baumpatenschaft zu übernehmen.\n\nWer mitmachen möchte, meldet sich im Internet an und sucht sich auf einer Karte einen Baum in seiner Nähe aus. Die Paten versprechen, ihren Baum in den Sommermonaten mindestens einmal pro Woche mit etwa 50 Litern Wasser zu gießen. Dafür bekommen sie von der Stadt kostenlos einen großen Wassersack, der das Wasser langsam an die Wurzeln abgibt. Wer möchte, darf außerdem Blumen rund um den Baum pflanzen.\n\nSchon in den ersten zwei Wochen haben sich über 300 Menschen gemeldet. Unter ihnen sind viele Familien mit Kindern, aber auch ganze Hausgemeinschaften, die sich die Arbeit teilen. „Ich gieße unseren Baum immer abends zusammen mit meinen Kindern“, erzählt Petra Lorenz. „Sie haben ihm sogar einen Namen gegeben.“ Die Stadt hofft, dass sich bis zum Sommer noch mehr Paten finden.\n\nText 2\n\nMit dem Rad ins Büro – und dafür belohnt\n\nJeden Morgen das gleiche Bild vor dem Bürogebäude der Firma Hellmann in Kellstadt: Wo früher Autos standen, stehen heute Fahrräder. Seit einem halben Jahr bekommen alle Mitarbeiterinnen und Mitarbeiter, die mit dem Fahrrad zur Arbeit kommen, 20 Euro pro Monat extra. Außerdem hat die Firma Duschen und abschließbare Schränke einbauen lassen, damit niemand verschwitzt am Schreibtisch sitzen muss.\n\nDie Idee kam vom Chef selbst. Martin Hellmann fährt seit Jahren jeden Tag zwölf Kilometer mit dem Rad ins Büro. „Ich bin dadurch viel fitter geworden und seltener krank“, sagt er. Das wünscht er sich auch für sein Team. Tatsächlich zeigt die Statistik der Firma, dass die Zahl der Krankheitstage seit dem Start leicht gesunken ist.\n\nNicht alle sind begeistert. Einige Kollegen, die weit draußen auf dem Land wohnen, finden die Regel ungerecht, weil sie keine Chance auf das Extra-Geld haben. Die Firma will deshalb jetzt auch die Mitarbeiter unterstützen, die mit Bus und Bahn kommen: Sie sollen ab dem nächsten Jahr ein günstiges Monatsticket bekommen.",
+          "questions": [
+            {
+              "question": "In Text 1 geht es um …",
+              "options": [
+                "Bürger, die sich um Bäume an der Straße kümmern.",
+                "eine Stadt, die viele neue Bäume pflanzt.",
+                "Familien, die Bäume für ihren Garten kaufen."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Wer Baumpate ist, …",
+              "options": [
+                "muss seinen Baum jeden Tag gießen.",
+                "bekommt von der Stadt etwas, das beim Gießen hilft.",
+                "muss den Wassersack selbst bezahlen."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Petra Lorenz …",
+              "options": [
+                "hat für ihre Kinder einen Baum gekauft.",
+                "teilt sich die Arbeit mit allen Nachbarn im Haus.",
+                "gießt den Baum gemeinsam mit ihren Kindern."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Mitarbeiter, die mit dem Rad zur Arbeit kommen, …",
+              "options": [
+                "dürfen morgens eine Stunde später anfangen.",
+                "bekommen von der Firma ein Fahrrad.",
+                "erhalten jeden Monat einen kleinen Bonus."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Martin Hellmann …",
+              "options": [
+                "findet die neue Regel selbst ungerecht.",
+                "ist durch das Radfahren gesünder geworden.",
+                "wohnt weit draußen auf dem Land."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Für Mitarbeiter, die mit Bus und Bahn fahren, …",
+              "options": [
+                "soll es bald ein günstiges Ticket geben.",
+                "gibt es ab sofort auch 20 Euro im Monat.",
+                "baut die Firma neue Parkplätze."
+              ],
+              "correctIndex": 0
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The city asks residents to take on a „Baumpatenschaft“ and water the street trees because it lacks staff. It is not about planting new trees or buying trees for gardens.",
+            "de": "Die Stadt bittet die Bürger, eine Baumpatenschaft zu übernehmen und die Bäume an den Straßen zu gießen."
+          },
+          {
+            "en": "„Dafür bekommen sie von der Stadt kostenlos einen großen Wassersack, der das Wasser langsam an die Wurzeln abgibt.“ Watering is once a week, not daily.",
+            "de": "Die Paten bekommen von der Stadt kostenlos einen Wassersack. Gießen müssen sie nur mindestens einmal pro Woche."
+          },
+          {
+            "en": "„Ich gieße unseren Baum immer abends zusammen mit meinen Kindern.“ It is other house communities that share the work, not Petra Lorenz.",
+            "de": "Petra Lorenz sagt: „Ich gieße unseren Baum immer abends zusammen mit meinen Kindern.“"
+          },
+          {
+            "en": "They get „20 Euro pro Monat extra“ – a small monthly bonus. Later starting times or free bikes are not mentioned.",
+            "de": "Wer mit dem Rad kommt, bekommt „20 Euro pro Monat extra“. Das ist ein kleiner Bonus."
+          },
+          {
+            "en": "„Ich bin dadurch viel fitter geworden und seltener krank.“ It is some colleagues, not the boss, who find the rule unfair.",
+            "de": "Hellmann sagt: „Ich bin dadurch viel fitter geworden und seltener krank.“ Einige Kollegen finden die Regel ungerecht, nicht der Chef."
+          },
+          {
+            "en": "Bus and train users „sollen ab dem nächsten Jahr ein günstiges Monatsticket bekommen“ – in the future, not now.",
+            "de": "Wer mit Bus und Bahn kommt, soll ab nächstem Jahr ein günstiges Monatsticket bekommen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__lesen-2__s03",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Text 1\n\nDas Dorfkino ist zurück\n\nFast zehn Jahre lang war das Kino in Rodenbach geschlossen. Der letzte Besitzer hatte aufgegeben, weil immer weniger Zuschauer kamen und die alte Technik zu teuer wurde. Seitdem mussten die Menschen aus dem Dorf 30 Kilometer bis in die nächste Stadt fahren, wenn sie einen Film auf der großen Leinwand sehen wollten.\n\nIm vergangenen Jahr haben sich dann zwölf Bürgerinnen und Bürger zusammengetan und einen Verein gegründet. Mit Spenden und Geld vom Land haben sie einen modernen Projektor gekauft. Die Sitze und die Wände haben die Vereinsmitglieder selbst renoviert – an vielen Wochenenden und ohne Bezahlung.\n\nSeit März gibt es nun wieder Vorstellungen, allerdings nur am Freitag, Samstag und Sonntag. Gezeigt werden neue Filme, aber auch ältere Klassiker. Einmal im Monat läuft am Nachmittag ein Kinderfilm, zu dem Eltern mit kleinen Kindern kommen können. An der Kasse und hinter der Theke arbeiten Ehrenamtliche. „Wir verdienen damit kein Geld, aber das Dorf hat endlich wieder einen Treffpunkt“, sagt der Vereinsvorsitzende Klaus Weber. Die ersten Vorstellungen waren fast immer ausverkauft.\n\nText 2\n\nFrische Milch rund um die Uhr\n\nAuf dem Hof der Familie Brüggemann bei Ostrode steht seit dem Frühling ein ungewöhnlicher Automat. Wer frische Milch kaufen möchte, stellt eine Flasche hinein, wirft Geld ein und bekommt einen Liter Milch direkt von den eigenen Kühen – Tag und Nacht, auch am Sonntag. Flaschen kann man mitbringen oder für zwei Euro direkt am Automaten kaufen.\n\nFür Landwirt Jens Brüggemann ist der Automat eine wichtige Einnahmequelle. „Die Molkerei zahlt uns für einen Liter Milch so wenig, dass es sich kaum lohnt“, erklärt er. Am Automaten verdient er deutlich mehr, obwohl die Milch für die Kunden nicht teurer ist als im Supermarkt. Außerdem gefällt ihm der direkte Kontakt: Viele Kunden kommen mit ihren Kindern, schauen sich die Kühe im Stall an und stellen Fragen.\n\nEin paar Regeln gibt es allerdings. Weil die Milch nicht erhitzt wird, sollte man sie vor dem Trinken abkochen. Darauf weist ein großes Schild am Automaten hin. Außerdem sollte die Milch innerhalb von drei Tagen getrunken werden. Inzwischen hat Brüggemann sein Angebot erweitert: Jetzt gibt es am Automaten auch Eier, Käse und Joghurt von einem Nachbarhof.",
+          "questions": [
+            {
+              "question": "In Text 1 geht es um …",
+              "options": [
+                "einen Kinobesitzer, der neue Technik gekauft hat.",
+                "ein Kino in einem Dorf, das wieder geöffnet hat.",
+                "ein Kino, das nur noch alte Filme zeigt."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Das Kino wurde …",
+              "options": [
+                "von einer Baufirma renoviert.",
+                "mit dem Geld von zwölf Firmen gekauft.",
+                "von Mitgliedern des Vereins renoviert."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Im Kino …",
+              "options": [
+                "arbeiten Menschen, ohne dafür Geld zu bekommen.",
+                "gibt es jeden Tag Vorstellungen.",
+                "laufen jeden Nachmittag Kinderfilme."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Am Automaten …",
+              "options": [
+                "kann man nur am Wochenende einkaufen.",
+                "bekommt man zu jeder Zeit Milch.",
+                "muss man immer eine eigene Flasche mitbringen."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Jens Brüggemann …",
+              "options": [
+                "verlangt für seine Milch mehr als der Supermarkt.",
+                "möchte möglichst wenig Kontakt zu den Kunden.",
+                "bekommt für die Milch am Automaten mehr Geld als von der Molkerei."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Die Kunden sollen die Milch …",
+              "options": [
+                "vor dem Trinken kochen.",
+                "innerhalb einer Woche trinken.",
+                "nur für Kinder kaufen."
+              ],
+              "correctIndex": 0
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The cinema in Rodenbach was closed for almost ten years, and „Seit März gibt es nun wieder Vorstellungen“. It shows new films and old classics.",
+            "de": "Das Kino in Rodenbach war fast zehn Jahre geschlossen. Seit März gibt es wieder Vorstellungen."
+          },
+          {
+            "en": "„Die Sitze und die Wände haben die Vereinsmitglieder selbst renoviert.“ The twelve founders are citizens, not companies.",
+            "de": "Die Vereinsmitglieder haben die Sitze und Wände selbst renoviert. Die zwölf Gründer sind Bürger, keine Firmen."
+          },
+          {
+            "en": "„An der Kasse und hinter der Theke arbeiten Ehrenamtliche.“ Volunteers work without pay. Films run only Friday to Sunday, and the children's film once a month.",
+            "de": "An der Kasse und an der Theke arbeiten Ehrenamtliche. Sie bekommen kein Geld. Vorstellungen gibt es nur von Freitag bis Sonntag."
+          },
+          {
+            "en": "Milk is available „Tag und Nacht, auch am Sonntag“. Bottles can also be bought at the machine.",
+            "de": "Man bekommt Milch „Tag und Nacht, auch am Sonntag“. Flaschen kann man auch am Automaten kaufen."
+          },
+          {
+            "en": "The dairy pays little, but „Am Automaten verdient er deutlich mehr“. The milk is not more expensive than in the supermarket, and he likes contact with customers.",
+            "de": "Die Molkerei zahlt wenig. Am Automaten verdient Brüggemann deutlich mehr. Die Milch ist nicht teurer als im Supermarkt."
+          },
+          {
+            "en": "„Weil die Milch nicht erhitzt wird, sollte man sie vor dem Trinken abkochen.“ It should be drunk within three days, not a week.",
+            "de": "Man soll die Milch vor dem Trinken abkochen, weil sie nicht erhitzt wird. Trinken soll man sie innerhalb von drei Tagen."
+          }
+        ]
+      }
+    }
+  ]
+}

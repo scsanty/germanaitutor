@@ -1,0 +1,319 @@
+{
+  "formatId": "generic-b2",
+  "partId": "lesen-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-b2__lesen-2__s01",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Ruhe, bitte! Das Großraumbüro wird neu erfunden\n\nAls ein mittelständischer Versicherer aus Hannover vor acht Jahren in sein neues Verwaltungsgebäude zog, war die Geschäftsführung stolz. Statt langer Flure mit Einzelbüros gab es nun große, helle Flächen, auf denen bis zu 120 Menschen nebeneinander arbeiteten. Die Wände waren gefallen, und mit ihnen, so die Hoffnung, auch die Grenzen zwischen den Abteilungen. Sogar die Abteilungsleiter gaben ihre Einzelbüros auf und saßen nun mitten unter ihren Teams. Man versprach sich kurze Wege, spontane Gespräche und mehr Kreativität.\n\nDie Realität sah anders aus. „Nach wenigen Monaten saßen viele Kolleginnen und Kollegen mit Kopfhörern am Schreibtisch, nur um überhaupt arbeiten zu können“, erinnert sich Personalleiterin Claudia Wendt. Ständig klingelte irgendwo ein Telefon, Gespräche am Nachbartisch lenkten ab, und wer konzentriert einen Vertrag prüfen musste, wich lieber in die Kantine aus. Andere buchten Besprechungsräume, nur um dort ungestört telefonieren zu können. Die Zahl der Krankmeldungen stieg, und in einer internen Umfrage gab fast die Hälfte der Beschäftigten an, sich durch den Lärm erschöpft zu fühlen.\n\nMit dieser Erfahrung steht das Unternehmen nicht allein. Arbeitspsychologen weisen seit Jahren darauf hin, dass offene Büros zwar billiger sind, weil man pro Mitarbeiter weniger Fläche braucht, dass sie die Produktivität aber häufig senken. Eine viel zitierte Untersuchung kam sogar zu dem Ergebnis, dass sich Beschäftigte nach dem Umzug in ein Großraumbüro seltener persönlich unterhielten als vorher und stattdessen mehr E-Mails schrieben. Offenbar ziehen sich viele Menschen zurück, wenn sie das Gefühl haben, ständig beobachtet zu werden. Hinzu kommt, dass sich Erkältungen in großen Räumen schneller verbreiten, weil viele Menschen dieselbe Luft atmen.\n\nZurück zum Einzelbüro wollte man in Hannover dennoch nicht. Stattdessen beauftragte die Firma ein Architekturbüro, die Flächen umzugestalten. Heute gibt es dort unterschiedliche Zonen für unterschiedliche Tätigkeiten: Ruhebereiche, in denen weder telefoniert noch gesprochen werden darf, kleine schallgedämmte Kabinen für Videokonferenzen, Besprechungsräume und eine Art Café, in dem man sich bewusst austauschen kann. Feste Arbeitsplätze hat kaum noch jemand. Morgens sucht sich jeder den Ort, der zu seiner Aufgabe passt.\n\nMöglich wurde das auch, weil sich durch das Homeoffice ohnehin vieles verändert hat. An einem gewöhnlichen Tag ist nur etwa die Hälfte der Belegschaft im Haus. „Wer heute ins Büro kommt, tut das meistens, um Kollegen zu treffen“, sagt Wendt. „Für konzentrierte Einzelarbeit bleiben viele lieber zu Hause.“ Deshalb habe man die Fläche für Begegnungen bewusst vergrößert.\n\nGanz ohne Konflikte verlief der Umbau nicht. Vor allem ältere Mitarbeiter trauerten ihrem festen Schreibtisch mit Familienfotos und eigener Kaffeetasse hinterher. Einige empfanden es als Verlust, jeden Abend alles in einen Rollcontainer räumen zu müssen. Das Unternehmen hat darauf reagiert: Jedes Team hat nun einen festen Bereich, innerhalb dessen man sich zwar frei bewegt, aber immer in der Nähe der vertrauten Kollegen bleibt.\n\nEin Jahr nach dem Umbau fällt die Bilanz positiv aus. Die Zahl der Krankmeldungen ist gesunken, und in der jüngsten Umfrage bewerteten drei Viertel der Beschäftigten ihre Arbeitsumgebung als gut oder sehr gut. Billig war die Umgestaltung allerdings nicht: Rund zwei Millionen Euro hat sie gekostet. Die Geschäftsführung hält das Geld trotzdem für gut angelegt. Schließlich, so Wendt, sei es auf Dauer teurer, gute Leute zu verlieren, weil sie sich an ihrem Arbeitsplatz nicht wohlfühlten.",
+          "questions": [
+            {
+              "question": "Was erhoffte sich die Geschäftsführung ursprünglich vom Großraumbüro?",
+              "options": [
+                "niedrigere Kosten für Miete und Energie",
+                "eine bessere Zusammenarbeit über die Abteilungsgrenzen hinweg",
+                "mehr Platz für zusätzliche Mitarbeiter"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Welche Folge hatte das Großraumbüro in den ersten Jahren?",
+              "options": [
+                "Viele Beschäftigte fühlten sich durch den Lärm erschöpft.",
+                "Zahlreiche Beschäftigte kündigten ihre Stelle.",
+                "Die Abteilungen arbeiteten deutlich enger zusammen."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Was ergab die im Text erwähnte Untersuchung?",
+              "options": [
+                "In offenen Büros wird mehr miteinander gesprochen.",
+                "Offene Büros sind teurer als Einzelbüros.",
+                "Nach dem Umzug kommunizierten die Beschäftigten häufiger schriftlich."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Wie sind die Büroflächen heute organisiert?",
+              "options": [
+                "Jeder Mitarbeiter hat wieder ein eigenes Büro.",
+                "Es gibt verschiedene Bereiche, je nachdem, welche Arbeit man erledigt.",
+                "Im ganzen Gebäude darf nicht mehr telefoniert werden."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Welche Rolle spielt das Homeoffice für das neue Konzept?",
+              "options": [
+                "Viele kommen vor allem ins Büro, um sich mit Kollegen auszutauschen.",
+                "Das Homeoffice wurde nach dem Umbau wieder abgeschafft.",
+                "Konzentrierte Arbeit findet heute vor allem in den Ruhezonen statt."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Wie reagierte das Unternehmen auf die Unzufriedenheit älterer Mitarbeiter?",
+              "options": [
+                "Sie bekamen wieder einen festen Schreibtisch.",
+                "Sie dürfen ihre Sachen über Nacht am Platz lassen.",
+                "Jedes Team bekam einen festen Bereich."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Wie beurteilt die Geschäftsführung die Kosten des Umbaus?",
+              "options": [
+                "Sie hält sie im Nachhinein für zu hoch.",
+                "Sie hält sie für lohnend, weil man so Mitarbeiter halten kann.",
+                "Sie will sie durch kleinere Büroflächen wieder einsparen."
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "With the walls, \"so die Hoffnung, auch die Grenzen zwischen den Abteilungen\" would fall; they expected short distances and spontaneous conversations. Lower costs are mentioned only later, by psychologists.",
+            "de": "Mit den Wänden sollten „so die Hoffnung, auch die Grenzen zwischen den Abteilungen“ fallen. Dass offene Büros billiger sind, sagen erst später die Arbeitspsychologen."
+          },
+          {
+            "en": "\"… gab fast die Hälfte der Beschäftigten an, sich durch den Lärm erschöpft zu fühlen.\" Resignations are not mentioned, and cooperation did not improve.",
+            "de": "„… gab fast die Hälfte der Beschäftigten an, sich durch den Lärm erschöpft zu fühlen.“ Von Kündigungen steht nichts im Text."
+          },
+          {
+            "en": "Employees \"sich … seltener persönlich unterhielten als vorher und stattdessen mehr E-Mails schrieben\". Open offices are described as cheaper, not more expensive.",
+            "de": "Die Untersuchung zeigt, dass sich die Beschäftigten „seltener persönlich unterhielten als vorher und stattdessen mehr E-Mails schrieben“. Offene Büros sind laut Text billiger, nicht teurer."
+          },
+          {
+            "en": "\"Heute gibt es dort unterschiedliche Zonen für unterschiedliche Tätigkeiten.\" Calls are banned only in the quiet areas, and there are no single offices.",
+            "de": "„Heute gibt es dort unterschiedliche Zonen für unterschiedliche Tätigkeiten.“ Telefonieren ist nur in den Ruhebereichen verboten."
+          },
+          {
+            "en": "Wendt: \"Wer heute ins Büro kommt, tut das meistens, um Kollegen zu treffen.\" For focused work many stay at home, so (c) is wrong.",
+            "de": "Wendt sagt: „Wer heute ins Büro kommt, tut das meistens, um Kollegen zu treffen.“ Für konzentrierte Arbeit bleiben viele zu Hause, also ist (c) falsch."
+          },
+          {
+            "en": "\"Das Unternehmen hat darauf reagiert: Jedes Team hat nun einen festen Bereich.\" Fixed desks did not come back, and things still go into a mobile cabinet every evening.",
+            "de": "„Das Unternehmen hat darauf reagiert: Jedes Team hat nun einen festen Bereich.“ Feste Schreibtische gibt es weiterhin nicht."
+          },
+          {
+            "en": "The management \"hält das Geld trotzdem für gut angelegt\", because losing good people would be more expensive in the long run.",
+            "de": "Die Geschäftsführung „hält das Geld trotzdem für gut angelegt“, weil es teurer wäre, gute Leute zu verlieren."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-b2__lesen-2__s02",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Hoch hinaus mit Holz\n\nWer an Hochhäuser denkt, denkt an Beton, Stahl und Glas. Doch in mehreren europäischen Städten wachsen inzwischen Gebäude in die Höhe, die zu einem großen Teil aus Holz bestehen. Auch in Bergstadt wird gerade ein solches Projekt verwirklicht: Am Rand der Innenstadt entsteht ein Wohnturm mit achtzehn Stockwerken, dessen Decken, Wände und Stützen fast vollständig aus Fichtenholz gefertigt sind. Nur das Fundament und der Kern mit Treppenhaus und Aufzügen bestehen aus Beton.\n\nFür die Architektin Miriam Seidel ist das mehr als ein Experiment. „Das Bauen ist für einen erheblichen Teil der CO2-Emissionen verantwortlich, vor allem wegen der Herstellung von Zement“, erklärt sie. Holz dagegen nimmt während seines Wachstums Kohlendioxid auf und speichert es, solange das Gebäude steht. Nach ihren Berechnungen werden in dem Turm rund 3000 Tonnen CO2 gebunden.\n\nViele Menschen haben bei Holzhäusern jedoch vor allem eine Sorge: das Feuer. Seidel kann diese Angst nachvollziehen, hält sie aber für weitgehend unbegründet. Dicke Holzbauteile brennen nämlich nur langsam ab. An der Oberfläche bildet sich eine Schicht aus Holzkohle, die das Innere schützt, sodass die Balken ihre Tragfähigkeit lange behalten. Stahl dagegen verliert bei großer Hitze schnell an Stabilität. Trotzdem mussten für das Projekt zahlreiche Brandversuche durchgeführt werden, denn die Bauvorschriften sehen für Hochhäuser aus Holz bisher strenge Auflagen vor. Allein das Genehmigungsverfahren dauerte fast zwei Jahre.\n\nEin großer Vorteil zeigt sich auf der Baustelle selbst. Die einzelnen Bauteile werden in einer Halle vorgefertigt und dann per Lastwagen angeliefert. Die Monteure setzen sie zusammen wie bei einem Baukasten. Dadurch geht es deutlich schneller: Pro Woche kommt ein komplettes Stockwerk hinzu. Für die Nachbarn bedeutet das außerdem weniger Lärm und Staub als bei einer herkömmlichen Baustelle.\n\nEine Herausforderung war dagegen der Schallschutz. Holz ist leichter als Beton und überträgt Trittgeräusche stärker. Deshalb liegt auf jeder Holzdecke eine schwere Schicht aus Splitt, und darunter dämmen weiche Matten den Schall. Bei Messungen in der Musterwohnung waren die Schritte aus dem Stockwerk darüber kaum noch zu hören.\n\nKritiker geben allerdings zu bedenken, dass Holz kein unbegrenzter Rohstoff ist. Wenn plötzlich sehr viel mehr mit Holz gebaut werde, könnten die Wälder übernutzt werden, warnt ein Forstwissenschaftler. Schon jetzt litten viele Wälder unter Trockenheit und Schädlingen. Seidel hält dagegen, dass in den heimischen Wäldern derzeit jedes Jahr mehr Holz nachwachse, als geerntet werde. Entscheidend sei, das Holz aus nachhaltig bewirtschafteten Wäldern zu beziehen und es möglichst lange zu nutzen – auch nach einem späteren Abriss, wenn die Bauteile wiederverwendet werden können.\n\nAuch die Kosten sind ein Thema. Derzeit ist der Holzbau noch etwa zehn Prozent teurer als ein vergleichbares Gebäude aus Beton. Das liegt vor allem daran, dass es bisher nur wenige spezialisierte Firmen gibt. Die Bauherren gehen jedoch davon aus, dass die Preise sinken, sobald mehr solche Projekte entstehen. Zudem rechnen sie damit, dass sich die kürzere Bauzeit langfristig auszahlt.\n\nDie künftigen Bewohner interessieren sich ohnehin für etwas anderes. Bei einer Besichtigung der Musterwohnung lobten viele vor allem das angenehme Raumklima und den Duft des Holzes, das an Decken und einigen Wänden sichtbar bleibt. „Man fühlt sich ein bisschen wie in einer Berghütte, nur mitten in der Stadt“, sagte eine Besucherin. Mehr als zwei Drittel der 96 Wohnungen sind bereits vermietet, obwohl der Turm erst im nächsten Jahr fertig wird.",
+          "questions": [
+            {
+              "question": "Woraus besteht der Wohnturm in Bergstadt?",
+              "options": [
+                "überwiegend aus Holz, mit einem Kern aus Beton",
+                "vollständig aus Holz, sogar das Fundament",
+                "aus Beton, nur die Fassade ist aus Holz"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Warum hält Miriam Seidel den Holzbau für sinnvoll?",
+              "options": [
+                "Holz ist als Baumaterial billiger als Beton.",
+                "Holz lässt sich leichter über weite Strecken transportieren.",
+                "Holz speichert CO2, während bei der Zementherstellung viel CO2 entsteht."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Was sagt der Text über die Brandgefahr?",
+              "options": [
+                "Für das Projekt waren keine Brandversuche nötig.",
+                "Dicke Holzbalken bleiben im Feuer lange tragfähig.",
+                "Holzgebäude verlieren im Feuer schneller an Stabilität als Stahlgebäude."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Welchen Vorteil hat die Bauweise auf der Baustelle?",
+              "options": [
+                "Man braucht deutlich weniger Arbeiter.",
+                "Die Bauteile werden direkt vor Ort zugeschnitten.",
+                "Weil die Teile vorgefertigt sind, wächst das Gebäude schnell."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Was befürchtet der Forstwissenschaftler?",
+              "options": [
+                "Holzhäuser könnten von Schädlingen befallen werden.",
+                "Den Wäldern könnte zu viel Holz entnommen werden.",
+                "Fichtenholz ist für hohe Gebäude nicht stabil genug."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Was erfährt man über die Kosten?",
+              "options": [
+                "Die Bauherren erwarten sinkende Preise, wenn mehr solche Projekte entstehen.",
+                "Holzbau ist schon heute günstiger als Betonbau.",
+                "Die höheren Kosten liegen vor allem am teuren Holz."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Was gefällt den künftigen Bewohnern besonders?",
+              "options": [
+                "der Blick auf die Berge",
+                "die besonders günstigen Mieten",
+                "das Raumklima und der Duft des Holzes"
+              ],
+              "correctIndex": 2
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Ceilings, walls and supports are \"fast vollständig aus Fichtenholz\"; \"Nur das Fundament und der Kern … bestehen aus Beton.\"",
+            "de": "Decken, Wände und Stützen sind „fast vollständig aus Fichtenholz“. „Nur das Fundament und der Kern … bestehen aus Beton.“"
+          },
+          {
+            "en": "Construction causes many emissions \"vor allem wegen der Herstellung von Zement\", while wood \"nimmt … Kohlendioxid auf und speichert es\". Price and transport are not her arguments.",
+            "de": "Das Bauen verursacht viel CO2, „vor allem wegen der Herstellung von Zement“. Holz „nimmt … Kohlendioxid auf und speichert es“."
+          },
+          {
+            "en": "A charcoal layer protects the inside, \"sodass die Balken ihre Tragfähigkeit lange behalten\". It is steel that loses stability quickly, and many fire tests were needed.",
+            "de": "Eine Schicht aus Holzkohle schützt das Innere, „sodass die Balken ihre Tragfähigkeit lange behalten“. Stahl verliert schnell an Stabilität, und es gab viele Brandversuche."
+          },
+          {
+            "en": "The parts \"werden in einer Halle vorgefertigt\", so \"Pro Woche kommt ein komplettes Stockwerk hinzu.\" They are made in a hall, not cut on site.",
+            "de": "Die Bauteile „werden in einer Halle vorgefertigt“. Deshalb gilt: „Pro Woche kommt ein komplettes Stockwerk hinzu.“"
+          },
+          {
+            "en": "He warns that with much more timber construction \"könnten die Wälder übernutzt werden\". Pests affect the forests, not the houses.",
+            "de": "Er warnt: Wenn viel mehr mit Holz gebaut wird, „könnten die Wälder übernutzt werden“. Schädlinge betreffen die Wälder, nicht die Häuser."
+          },
+          {
+            "en": "\"Die Bauherren gehen jedoch davon aus, dass die Preise sinken, sobald mehr solche Projekte entstehen.\" Wood building is still about 10% more expensive, mainly because there are few specialised firms.",
+            "de": "„Die Bauherren gehen jedoch davon aus, dass die Preise sinken, sobald mehr solche Projekte entstehen.“ Teurer ist der Holzbau vor allem, weil es wenige Spezialfirmen gibt."
+          },
+          {
+            "en": "Visitors \"lobten viele vor allem das angenehme Raumklima und den Duft des Holzes\". The \"Berghütte\" is only a comparison; rents are not mentioned.",
+            "de": "Die Besucher „lobten … vor allem das angenehme Raumklima und den Duft des Holzes“. Die „Berghütte“ ist nur ein Vergleich, über Mieten steht nichts im Text."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-b2__lesen-2__s03",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Mit siebzig im Hörsaal\n\nMontagmorgen, kurz vor zehn, Hörsaal 3 der Universität Lindenau. Rund zweihundert Studierende warten auf die Vorlesung zur europäischen Geschichte. Die meisten sind Anfang zwanzig, doch in der dritten Reihe sitzt ein Mann mit grauem Bart und kariertem Notizblock: Herbert Lang, 71 Jahre alt, ehemaliger Bauingenieur. Seit vier Semestern ist er als Gasthörer eingeschrieben.\n\nLang ist einer von rund 800 älteren Menschen, die an der Universität Lindenau als sogenannte Seniorenstudierende Lehrveranstaltungen besuchen. Ein Abitur brauchen sie dafür nicht, und Prüfungen müssen sie auch nicht ablegen. Gegen eine Gebühr von 120 Euro pro Semester dürfen sie an ausgewählten Vorlesungen und Seminaren teilnehmen. Einen offiziellen Abschluss erwerben sie damit allerdings nicht. „Darum geht es mir auch gar nicht“, sagt Lang. „Ich habe mein ganzes Berufsleben lang Brücken berechnet. Jetzt möchte ich endlich verstehen, wie Europa so geworden ist, wie es ist.“\n\nDie Motive der älteren Studierenden sind unterschiedlich. Eine Befragung der Universität zeigt, dass die meisten aus Neugier und Freude am Lernen kommen. Viele wollen sich mit einem Thema beschäftigen, für das ihnen früher Beruf und Familie keine Zeit gelassen haben. Für andere steht der Kontakt zu Menschen im Vordergrund. Ein kleinerer Teil möchte vor allem geistig fit bleiben. Nach dem Ende des Berufslebens fehle vielen eine feste Struktur im Alltag, erklärt die Koordinatorin des Programms, Dr. Sevgi Aydın. Die Vorlesungen gäben der Woche wieder einen Rhythmus.\n\nNicht alle jungen Studierenden sehen die älteren Kommilitonen gern. In Lehrveranstaltungen mit begrenzten Plätzen, etwa in manchen Seminaren, gab es in der Vergangenheit Beschwerden, weil Senioren Plätze belegten, die junge Studierende für ihren Abschluss brauchten. Die Universität hat deshalb klare Regeln eingeführt: Seminare mit Teilnehmerbegrenzung stehen Seniorenstudierenden nur offen, wenn nach dem Ende der Anmeldefrist noch Plätze frei sind. Seitdem seien die Konflikte deutlich zurückgegangen, berichtet Aydın.\n\nViele Dozenten schätzen die älteren Teilnehmer sogar ausdrücklich. Sie bringen Lebenserfahrung mit, stellen ungewöhnliche Fragen und haben manche historischen Ereignisse selbst erlebt. „Wenn wir über die Wiedervereinigung sprechen, sitzen im Raum Menschen, die damals dabei waren“, sagt ein Geschichtsprofessor. „Das kann kein Lehrbuch ersetzen.“ Eine Dozentin für Kunstgeschichte berichtet, dass die Senioren oft besser vorbereitet seien als die Jüngeren, weil sie die empfohlene Literatur tatsächlich lesen. Allerdings komme es gelegentlich vor, dass einzelne Senioren zu ausführlich von ihren eigenen Erinnerungen erzählten und damit den Ablauf störten.\n\nAuch Herbert Lang musste sich an manches erst gewöhnen. Die Literaturlisten waren anfangs ungewohnt lang, und die Lernplattform im Internet bereitete ihm Schwierigkeiten. Geholfen hat ihm eine junge Studentin, mit der er inzwischen regelmäßig in der Mensa zu Mittag isst. „Sie erklärt mir die Technik, und ich helfe ihr bei Statistik“, erzählt er lachend. Solche Begegnungen sind von der Universität ausdrücklich erwünscht. Seit dem letzten Semester gibt es ein Tandemprogramm, in dem sich junge und ältere Studierende gegenseitig unterstützen.\n\nFür Lang steht fest, dass er weitermachen will. Inzwischen schreibt er sogar freiwillig kurze Hausarbeiten, die ihm ein Dozent mit Anmerkungen zurückgibt. Im nächsten Semester möchte er sich mit Philosophie beschäftigen. „Solange mein Kopf mitmacht“, sagt er, „bleibe ich Student.“",
+          "questions": [
+            {
+              "question": "Was gilt für die Seniorenstudierenden in Lindenau?",
+              "options": [
+                "Sie können nach einigen Semestern einen offiziellen Abschluss machen.",
+                "Sie dürfen alle Lehrveranstaltungen kostenlos besuchen.",
+                "Sie brauchen kein Abitur und müssen keine Prüfungen ablegen."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Warum studiert Herbert Lang?",
+              "options": [
+                "Er möchte beruflich noch einmal etwas Neues anfangen.",
+                "Er möchte ein Thema verstehen, das ihn persönlich interessiert.",
+                "Er braucht einen Abschluss für eine neue Tätigkeit."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Welchen Grund nennt Dr. Aydın für manche Seniorenstudierende?",
+              "options": [
+                "Die Lehrveranstaltungen geben ihrem Alltag eine Struktur.",
+                "Sie möchten mit dem Studium ihre Rente aufbessern.",
+                "Ihre Familien haben sie zum Studium gedrängt."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Wie hat die Universität auf die Beschwerden junger Studierender reagiert?",
+              "options": [
+                "Senioren dürfen grundsätzlich keine Seminare mehr besuchen.",
+                "Senioren bekommen Plätze in begrenzten Seminaren nur, wenn nach der Anmeldefrist noch Plätze frei sind.",
+                "Die betroffenen Seminare wurden vergrößert."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Wie sehen viele Dozenten die älteren Teilnehmer?",
+              "options": [
+                "Sie schätzen deren Erfahrung, auch wenn es manchmal Probleme gibt.",
+                "Sie finden sie meistens störend, weil sie zu viel erzählen.",
+                "Sie meinen, dass ältere Menschen langsamer lernen."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Womit hatte Herbert Lang am Anfang Schwierigkeiten?",
+              "options": [
+                "Er konnte den Vorlesungen inhaltlich nicht folgen.",
+                "Er fand keinen Kontakt zu jüngeren Studierenden.",
+                "Er kam mit der Lernplattform im Internet nicht gut zurecht."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Was ist der Sinn des Tandemprogramms?",
+              "options": [
+                "Ältere Studierende sollen selbst Vorlesungen halten.",
+                "Junge und ältere Studierende sollen sich gegenseitig helfen.",
+                "Junge Studierende sollen Senioren beim Anmelden unterstützen."
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "\"Ein Abitur brauchen sie dafür nicht, und Prüfungen müssen sie auch nicht ablegen.\" They pay 120 euros per semester and get no official degree.",
+            "de": "„Ein Abitur brauchen sie dafür nicht, und Prüfungen müssen sie auch nicht ablegen.“ Sie zahlen 120 Euro pro Semester und bekommen keinen Abschluss."
+          },
+          {
+            "en": "Lang: \"Jetzt möchte ich endlich verstehen, wie Europa so geworden ist, wie es ist.\" A degree does not matter to him: \"Darum geht es mir auch gar nicht.\"",
+            "de": "Lang sagt: „Jetzt möchte ich endlich verstehen, wie Europa so geworden ist, wie es ist.“ Ein Abschluss ist ihm nicht wichtig."
+          },
+          {
+            "en": "Aydın: many lack \"eine feste Struktur im Alltag\", and \"Die Vorlesungen gäben der Woche wieder einen Rhythmus.\"",
+            "de": "Frau Aydın sagt, vielen fehle „eine feste Struktur im Alltag“. Die Vorlesungen geben „der Woche wieder einen Rhythmus“."
+          },
+          {
+            "en": "\"Seminare mit Teilnehmerbegrenzung stehen Seniorenstudierenden nur offen, wenn nach dem Ende der Anmeldefrist noch Plätze frei sind.\"",
+            "de": "„Seminare mit Teilnehmerbegrenzung stehen Seniorenstudierenden nur offen, wenn nach dem Ende der Anmeldefrist noch Plätze frei sind.“"
+          },
+          {
+            "en": "\"Viele Dozenten schätzen die älteren Teilnehmer sogar ausdrücklich\"; only \"gelegentlich\" do individual seniors talk too much.",
+            "de": "„Viele Dozenten schätzen die älteren Teilnehmer sogar ausdrücklich.“ Nur „gelegentlich“ erzählen einzelne Senioren zu viel."
+          },
+          {
+            "en": "\"… die Lernplattform im Internet bereitete ihm Schwierigkeiten.\" He made contact with a young student, so (b) is wrong.",
+            "de": "„… die Lernplattform im Internet bereitete ihm Schwierigkeiten.“ Er hat sogar eine junge Studentin kennengelernt, also ist (b) falsch."
+          },
+          {
+            "en": "In the tandem programme \"sich junge und ältere Studierende gegenseitig unterstützen\".",
+            "de": "Im Tandemprogramm sollen sich „junge und ältere Studierende gegenseitig unterstützen“."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,280 @@
+{
+  "formatId": "generic-b1",
+  "partId": "lesen-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-b1__lesen-2__s01",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Mit 46 Jahren hinter dem Lenkrad\n\nWenn Sabine Kröger morgens um halb sechs ihren Bus aus dem Depot fährt, schlafen die meisten Menschen in Lindau-Ost noch. „Das ist meine Lieblingszeit“, sagt die 46-Jährige. „Die Straßen sind leer, und die ersten Fahrgäste sind oft Bäcker oder Krankenschwestern, die zur Frühschicht müssen. Irgendwann kennt man sich.“\n\nDass sie einmal Busfahrerin werden würde, hätte Sabine Kröger vor drei Jahren selbst nicht gedacht. Fast zwanzig Jahre lang hat sie in einem Reisebüro gearbeitet. Doch immer mehr Kunden buchten ihre Reisen im Internet, und schließlich musste das Büro schließen. „Zuerst war ich ziemlich verzweifelt“, erzählt sie. „Ich dachte, in meinem Alter nimmt mich niemand mehr.“\n\nDann las sie in der Zeitung eine Anzeige der Verkehrsbetriebe. Das Unternehmen suchte dringend Fahrerinnen und Fahrer und bot Quereinsteigern eine bezahlte Ausbildung an. Den teuren Busführerschein, der fast 10.000 Euro kostet, bezahlte der Arbeitgeber. Die Ausbildung dauerte sechs Monate. Neben dem Fahren lernte Kröger viel über Technik, Verkehrsrecht und den Umgang mit schwierigen Fahrgästen.\n\nAm schwierigsten war für sie am Anfang nicht das Fahren selbst, sondern die Verantwortung. „In einem vollen Bus sitzen manchmal achtzig Menschen. Bei der ersten Fahrt allein hatte ich wirklich Herzklopfen“, erinnert sie sich. Heute ist sie ruhiger. Was sie aber immer noch ärgert, ist der Stress im Berufsverkehr: Autofahrer, die in der Busspur parken, und Baustellen, durch die sie den Fahrplan nicht einhalten kann.\n\nTrotzdem hat sie den Wechsel nie bereut. Sie verdient zwar etwas weniger als früher, dafür hat sie einen sicheren Arbeitsplatz. Auch die Schichtarbeit findet sie nicht schlimm. „Wenn ich Frühdienst habe, bin ich um zwei Uhr fertig und kann den ganzen Nachmittag im Garten arbeiten.“\n\nDie Verkehrsbetriebe sind mit ihren Quereinsteigern sehr zufrieden. Inzwischen kommt fast die Hälfte der neuen Fahrer aus anderen Berufen: Es gibt ehemalige Köche, Verkäuferinnen und sogar einen früheren Lehrer. Personalchef Martin Ebert sagt: „Lebenserfahrung ist in diesem Beruf wichtiger als das Alter. Wer freundlich bleibt, wenn es hektisch wird, ist bei uns richtig.“ Vor allem Frauen möchte das Unternehmen stärker ansprechen, denn bisher ist nur jeder fünfte Fahrer weiblich.\n\nSabine Kröger hat schon den nächsten Plan: Sie möchte im kommenden Jahr eine Weiterbildung machen und dann selbst neue Kolleginnen und Kollegen ausbilden.",
+          "questions": [
+            {
+              "question": "Warum hat Sabine Kröger ihren alten Beruf aufgegeben?",
+              "options": [
+                "Sie wollte nicht mehr den ganzen Tag im Büro sitzen.",
+                "Das Reisebüro, in dem sie gearbeitet hat, wurde geschlossen.",
+                "Sie wollte mehr Geld verdienen."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Was erfährt man über die Ausbildung?",
+              "options": [
+                "Kröger musste den Busführerschein selbst bezahlen.",
+                "Sie dauerte ein ganzes Jahr.",
+                "Der Arbeitgeber hat die Kosten für den Führerschein übernommen."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Was fand Kröger am Anfang am schwierigsten?",
+              "options": [
+                "das Fahren durch enge Straßen",
+                "den Umgang mit unfreundlichen Fahrgästen",
+                "die Verantwortung für so viele Menschen"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Was ärgert Kröger heute noch?",
+              "options": [
+                "Autos, die in der Busspur parken",
+                "dass sie sehr früh aufstehen muss",
+                "Fahrgäste, die nicht grüßen"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Wie sieht Kröger ihren Berufswechsel heute?",
+              "options": [
+                "Sie verdient jetzt mehr als im Reisebüro.",
+                "Sie würde gern wieder im Reisebüro arbeiten.",
+                "Sie ist zufrieden, obwohl sie weniger verdient."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Was sagt der Personalchef über neue Fahrerinnen und Fahrer?",
+              "options": [
+                "Sie sollten nicht älter als 50 Jahre sein.",
+                "Sie sollten auch in stressigen Situationen freundlich bleiben.",
+                "Die meisten von ihnen sind Frauen."
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "\"Doch immer mehr Kunden buchten ihre Reisen im Internet, und schließlich musste das Büro schließen.\" She did not leave for more money or to escape the office.",
+            "de": "„Doch immer mehr Kunden buchten ihre Reisen im Internet, und schließlich musste das Büro schließen.“ Sie hat also ihren Arbeitsplatz verloren."
+          },
+          {
+            "en": "\"Den teuren Busführerschein … bezahlte der Arbeitgeber.\" The training lasted six months, not a year.",
+            "de": "„Den teuren Busführerschein … bezahlte der Arbeitgeber.“ Die Ausbildung dauerte sechs Monate, nicht ein Jahr."
+          },
+          {
+            "en": "\"Am schwierigsten war für sie am Anfang nicht das Fahren selbst, sondern die Verantwortung.\" Difficult passengers were only a training topic.",
+            "de": "„Am schwierigsten war für sie am Anfang nicht das Fahren selbst, sondern die Verantwortung.“ Schwierige Fahrgäste waren nur ein Thema in der Ausbildung."
+          },
+          {
+            "en": "\"Was sie aber immer noch ärgert, ist der Stress im Berufsverkehr: Autofahrer, die in der Busspur parken …\" The early start is her favourite time.",
+            "de": "„Was sie aber immer noch ärgert, ist … Autofahrer, die in der Busspur parken.“ Der frühe Morgen ist dagegen ihre Lieblingszeit."
+          },
+          {
+            "en": "\"Trotzdem hat sie den Wechsel nie bereut. Sie verdient zwar etwas weniger als früher …\" So she is happy although she earns less.",
+            "de": "„Trotzdem hat sie den Wechsel nie bereut. Sie verdient zwar etwas weniger als früher …“ Sie ist also zufrieden."
+          },
+          {
+            "en": "Ebert: \"Wer freundlich bleibt, wenn es hektisch wird, ist bei uns richtig.\" He says age is less important, and only one in five drivers is a woman.",
+            "de": "Ebert sagt: „Wer freundlich bleibt, wenn es hektisch wird, ist bei uns richtig.“ Das Alter ist nicht so wichtig, und nur jeder fünfte Fahrer ist eine Frau."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-b1__lesen-2__s02",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Schüler kochen für Schüler\n\nUm Viertel nach zwölf wird es laut in der Mensa der Gesamtschule Am Hang. Hunderte Kinder und Jugendliche warten mit ihren Tabletts an der Theke. Dahinter stehen allerdings keine Köche in weißen Jacken, sondern Schülerinnen und Schüler der zehnten Klasse. Seit eineinhalb Jahren betreiben sie die Mensa selbst – als Schülerfirma.\n\nAngefangen hat alles mit Beschwerden. Das Essen kam damals von einer großen Firma und wurde schon morgens in Kisten geliefert. „Bis zum Mittag war alles kalt oder verkocht“, erinnert sich Schulleiterin Petra Neumann. Immer weniger Schüler aßen in der Mensa, viele kauften sich stattdessen Pommes am Imbiss gegenüber. Als der Vertrag mit der Firma endete, schlug der Hauswirtschaftslehrer Jonas Feld vor, es selbst zu versuchen.\n\nHeute arbeiten rund 25 Jugendliche in der Schülerfirma mit. Sie planen den Speiseplan, bestellen die Lebensmittel, kochen und rechnen am Ende der Woche ab. Unterstützt werden sie von zwei Köchinnen, die von der Stadt bezahlt werden und darauf achten, dass alle Hygieneregeln eingehalten werden. Gekocht wird in zwei Gruppen, die sich jede Woche abwechseln, damit niemand zu viel Unterricht verpasst. Den verpassten Stoff müssen die Jugendlichen allerdings selbstständig nacharbeiten.\n\nEin Mittagessen kostet 3,50 Euro, also etwas mehr als früher. Trotzdem essen inzwischen fast doppelt so viele Schülerinnen und Schüler in der Mensa. Das liegt vor allem an der Qualität: Die Gerichte werden jeden Tag frisch gekocht, und viele Zutaten kommen von Bauernhöfen aus der Umgebung. Einmal im Monat dürfen die Schüler außerdem über ein Wunschgericht abstimmen.\n\nFür die Jugendlichen ist die Arbeit mehr als ein Schulprojekt. „Ich wusste vorher nicht, wie viel Planung hinter einem Mittagessen steckt“, sagt die 16-jährige Lara. „Wenn wir zu wenig einkaufen, fehlt etwas. Wenn wir zu viel kaufen, müssen wir Essen wegwerfen, und wir machen Verlust.“ Ihr Mitschüler Ben hat durch die Mensa sogar seinen Traumberuf gefunden: Nach der Schule will er eine Ausbildung zum Koch beginnen.\n\nNicht alles läuft perfekt. In der Woche vor den Prüfungen fehlen oft Helfer, und dann gibt es manchmal nur ein Gericht statt zwei. Auch die alte Küche ist eigentlich zu klein. Die Stadt hat aber versprochen, sie im nächsten Sommer zu renovieren.",
+          "questions": [
+            {
+              "question": "Was war früher das Problem mit dem Schulessen?",
+              "options": [
+                "Es war zu teuer.",
+                "Es wurde schon morgens geliefert und war mittags nicht mehr gut.",
+                "Es gab zu wenig Auswahl."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Welche Aufgabe haben die beiden Köchinnen?",
+              "options": [
+                "Sie achten darauf, dass die Hygieneregeln eingehalten werden.",
+                "Sie stellen den Speiseplan zusammen.",
+                "Sie rechnen am Ende der Woche ab."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Wie ist die Arbeit in der Schülerfirma organisiert?",
+              "options": [
+                "Alle 25 Jugendlichen kochen jeden Tag.",
+                "Die Jugendlichen kochen nur nach dem Unterricht.",
+                "Zwei Gruppen wechseln sich jede Woche ab."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Warum essen heute mehr Schüler in der Mensa?",
+              "options": [
+                "Das Essen ist billiger als früher.",
+                "Das Essen ist frisch, und viele Zutaten kommen aus der Region.",
+                "Die Schüler dürfen jeden Tag ein Wunschgericht wählen."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Was hat Lara durch die Schülerfirma gelernt?",
+              "options": [
+                "dass man für ein Mittagessen viel planen muss",
+                "dass sie nach der Schule Köchin werden möchte",
+                "dass Kochen einfacher ist, als sie dachte"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Welches Problem gibt es noch?",
+              "options": [
+                "Die Stadt will die Köchinnen nicht mehr bezahlen.",
+                "Die Küche soll im Sommer geschlossen werden.",
+                "Vor den Prüfungen fehlen oft Helfer."
+              ],
+              "correctIndex": 2
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The food \"wurde schon morgens in Kisten geliefert\", and \"Bis zum Mittag war alles kalt oder verkocht\". Price and choice are not mentioned as problems.",
+            "de": "Das Essen „wurde schon morgens in Kisten geliefert“. „Bis zum Mittag war alles kalt oder verkocht.“ Über Preis oder Auswahl steht nichts."
+          },
+          {
+            "en": "The two cooks \"darauf achten, dass alle Hygieneregeln eingehalten werden\". Planning the menu and the accounts are the students' jobs.",
+            "de": "Die Köchinnen sollen „darauf achten, dass alle Hygieneregeln eingehalten werden“. Speiseplan und Abrechnung machen die Schüler."
+          },
+          {
+            "en": "\"Gekocht wird in zwei Gruppen, die sich jede Woche abwechseln.\"",
+            "de": "„Gekocht wird in zwei Gruppen, die sich jede Woche abwechseln.“"
+          },
+          {
+            "en": "\"Das liegt vor allem an der Qualität: Die Gerichte werden jeden Tag frisch gekocht, und viele Zutaten kommen von Bauernhöfen aus der Umgebung.\" The meal costs more than before, and the favourite dish is only once a month.",
+            "de": "„Die Gerichte werden jeden Tag frisch gekocht, und viele Zutaten kommen von Bauernhöfen aus der Umgebung.“ Das Essen ist teurer als früher, und das Wunschgericht gibt es nur einmal im Monat."
+          },
+          {
+            "en": "Lara: \"Ich wusste vorher nicht, wie viel Planung hinter einem Mittagessen steckt.\" It is Ben who wants to become a cook.",
+            "de": "Lara sagt: „Ich wusste vorher nicht, wie viel Planung hinter einem Mittagessen steckt.“ Koch werden möchte Ben, nicht Lara."
+          },
+          {
+            "en": "\"In der Woche vor den Prüfungen fehlen oft Helfer.\" The city will renovate the kitchen, not close it.",
+            "de": "„In der Woche vor den Prüfungen fehlen oft Helfer.“ Die Stadt will die Küche renovieren, nicht schließen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-b1__lesen-2__s03",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Ein Jahr ohne Auto – mitten auf dem Land\n\nIn Großenbach, einem Dorf mit 800 Einwohnern, hat fast jede Familie zwei Autos. Der nächste Supermarkt ist sieben Kilometer entfernt, der Bus fährt nur viermal am Tag. Trotzdem haben Katrin und Michael Albers im letzten Herbst ihr Auto verkauft. Mit ihren beiden Kindern, neun und zwölf Jahre alt, wollten sie ein Jahr lang testen, ob ein Leben ohne eigenes Auto auch auf dem Land funktioniert.\n\nDer Grund war zunächst ganz praktisch. Ihr altes Auto hätte für über 2000 Euro repariert werden müssen. „Wir haben ausgerechnet, was uns das Auto im Jahr kostet – mit Versicherung, Steuer, Benzin und Werkstatt. Das waren fast 4000 Euro“, erzählt Michael Albers. „Da haben wir uns gefragt, ob es nicht auch anders geht.“\n\nDie ersten Wochen waren schwierig. Für den großen Einkauf brauchte die Familie plötzlich einen halben Tag. Deshalb kaufte sie ein Lastenrad mit Elektromotor, mit dem man auch schwere Getränkekisten transportieren kann. Lebensmittel bestellen die Albers heute meistens bei einem Hofladen, der einmal pro Woche ins Dorf liefert. Für längere Strecken nehmen sie den Zug: Den Bahnhof in der Kreisstadt erreicht man mit dem Rad in zwanzig Minuten.\n\nAm meisten hat die Familie aber von den Nachbarn profitiert. Im Dorf gibt es inzwischen eine Gruppe im Internet, in der man Mitfahrgelegenheiten anbieten und suchen kann. „Früher sind drei Leute mit drei Autos zur gleichen Zeit in die Stadt gefahren“, sagt Katrin Albers. „Heute fragt man vorher, ob jemand mitkommen möchte.“ Für Notfälle hat die Familie mit einem Nachbarn vereinbart, dass sie sein Auto gegen eine kleine Gebühr ausleihen darf. Das ist im ganzen Jahr nur zweimal passiert.\n\nDie Kinder waren am Anfang wenig begeistert. Zum Fußballtraining im Nachbarort mussten sie plötzlich mit dem Fahrrad fahren, auch bei Regen. „Inzwischen finden sie es aber gut, dass sie selbstständiger sind“, sagt die Mutter.\n\nNach einem Jahr ziehen Katrin und Michael Albers eine positive Bilanz. Sie haben viel Geld gespart, bewegen sich mehr und haben im Dorf viele neue Kontakte geknüpft. Allerdings sagen sie auch ehrlich, dass ihr Modell nicht für alle passt. Michael Albers arbeitet von zu Hause aus, und Katrins Arbeitsplatz liegt direkt neben dem Bahnhof. „Wer jeden Tag zu einer Baustelle oder in den Schichtdienst muss, hat es viel schwerer“, sagt sie. Ein neues Auto wollen die beiden trotzdem nicht kaufen.",
+          "questions": [
+            {
+              "question": "Warum hat die Familie ihr Auto verkauft?",
+              "options": [
+                "Sie wollte vor allem etwas für die Umwelt tun.",
+                "Das Auto kostete sie zu viel Geld.",
+                "Sie ist in die Nähe des Bahnhofs gezogen."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Wie bekommt die Familie heute meistens ihre Lebensmittel?",
+              "options": [
+                "Ein Hofladen liefert sie ins Dorf.",
+                "Sie fährt mit dem Bus zum Supermarkt.",
+                "Nachbarn kaufen für sie ein."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Wie helfen die Nachbarn im Dorf?",
+              "options": [
+                "Sie fahren die Kinder regelmäßig zum Fußballtraining.",
+                "Über eine Internetgruppe organisiert man gemeinsame Fahrten.",
+                "Ein Nachbar hat der Familie sein altes Auto geschenkt."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Was erfährt man über das Auto des Nachbarn?",
+              "options": [
+                "Die Familie darf es kostenlos benutzen.",
+                "Die Familie benutzt es jede Woche für den Einkauf.",
+                "Die Familie hat es in einem Jahr nur zweimal gebraucht."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Wie fanden die Kinder das Leben ohne Auto?",
+              "options": [
+                "Sie waren von Anfang an begeistert.",
+                "Sie wollten deshalb nicht mehr zum Fußball gehen.",
+                "Zuerst fanden sie es nicht gut, heute sehen sie auch Vorteile."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Was sagen Katrin und Michael Albers über ihr Modell?",
+              "options": [
+                "Jede Familie auf dem Land sollte es ausprobieren.",
+                "Es funktioniert bei ihnen auch wegen ihrer Arbeitssituation gut.",
+                "Sie möchten bald wieder ein Auto kaufen."
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The reason \"war zunächst ganz praktisch\": a repair for over 2000 euros and almost 4000 euros a year in costs. The environment is not named as the reason.",
+            "de": "Der Grund „war zunächst ganz praktisch“: Die Reparatur hätte über 2000 Euro gekostet, und das Auto kostete fast 4000 Euro im Jahr."
+          },
+          {
+            "en": "\"Lebensmittel bestellen die Albers heute meistens bei einem Hofladen, der einmal pro Woche ins Dorf liefert.\"",
+            "de": "„Lebensmittel bestellen die Albers heute meistens bei einem Hofladen, der einmal pro Woche ins Dorf liefert.“"
+          },
+          {
+            "en": "\"Im Dorf gibt es inzwischen eine Gruppe im Internet, in der man Mitfahrgelegenheiten anbieten und suchen kann.\" The children cycle to training themselves, and the neighbour only lends his car.",
+            "de": "„Im Dorf gibt es inzwischen eine Gruppe im Internet, in der man Mitfahrgelegenheiten anbieten und suchen kann.“ Der Nachbar leiht sein Auto nur aus, er hat es nicht verschenkt."
+          },
+          {
+            "en": "They may borrow it \"gegen eine kleine Gebühr\", and \"Das ist im ganzen Jahr nur zweimal passiert.\"",
+            "de": "Sie dürfen es „gegen eine kleine Gebühr“ ausleihen. „Das ist im ganzen Jahr nur zweimal passiert.“"
+          },
+          {
+            "en": "\"Die Kinder waren am Anfang wenig begeistert … Inzwischen finden sie es aber gut, dass sie selbstständiger sind.\"",
+            "de": "„Die Kinder waren am Anfang wenig begeistert.“ Heute gilt: „Inzwischen finden sie es aber gut, dass sie selbstständiger sind.“"
+          },
+          {
+            "en": "They say \"dass ihr Modell nicht für alle passt\": Michael works from home and Katrin's workplace is next to the station. They do not want a new car.",
+            "de": "Sie sagen, „dass ihr Modell nicht für alle passt“. Michael arbeitet zu Hause, Katrin arbeitet direkt neben dem Bahnhof. Ein neues Auto wollen sie nicht."
+          }
+        ]
+      }
+    }
+  ]
+}

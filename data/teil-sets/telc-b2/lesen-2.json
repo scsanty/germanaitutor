@@ -1,0 +1,241 @@
+{
+  "formatId": "telc-b2",
+  "partId": "lesen-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b2__lesen-2__s01",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Großes Glück auf kleinem Raum?\n\nAls Martina Weber vor drei Jahren ihre Dreizimmerwohnung in Freiburg kündigte, hielten ihre Freunde sie für verrückt. Heute lebt die 38-jährige Grafikerin in einem Haus mit 24 Quadratmetern Wohnfläche, das auf einem Anhänger steht und am Rand eines kleinen Dorfes im Schwarzwald geparkt ist. Küche, Bad, Schreibtisch und ein Schlafplatz unter dem Dach – mehr hat in ihrem neuen Zuhause keinen Platz. „Am Anfang musste ich mich von sehr vielen Dingen trennen, und das war schwerer, als ich gedacht hatte“, erzählt sie. „Aber inzwischen vermisse ich nichts davon.“\n\nMartina Weber ist mit ihrer Entscheidung nicht allein. Sogenannte Tiny Houses, also Minihäuser mit meist weniger als 40 Quadratmetern, finden in Deutschland immer mehr Anhänger. Die Gründe sind unterschiedlich. Für die einen steht der Wunsch im Vordergrund, mit weniger Besitz und weniger Verbrauch umweltfreundlicher zu leben. Andere sehen darin vor allem eine Möglichkeit, den hohen Mieten in den Städten zu entkommen. Ein fertiges Minihaus kostet je nach Ausstattung zwischen 40.000 und 100.000 Euro – deutlich weniger als eine Eigentumswohnung.\n\nDoch so einfach, wie es klingt, lässt sich der Traum vom kleinen Haus nicht verwirklichen. Das größte Problem ist meist nicht das Haus selbst, sondern das Grundstück. Denn auch ein Minihaus darf nicht einfach irgendwo aufgestellt werden. Wer dauerhaft darin wohnen will, braucht in der Regel ein Baugrundstück und eine Baugenehmigung – genau wie für ein normales Einfamilienhaus. Gerade in beliebten Regionen sind solche Grundstücke aber knapp und teuer. Martina Weber hatte Glück: Ein Landwirt verpachtet ihr einen Teil seines Grundstücks, und die Gemeinde hat nach monatelangen Verhandlungen zugestimmt. „Ohne die Unterstützung des Bürgermeisters hätte es nicht geklappt“, sagt sie.\n\nEinige Gemeinden haben inzwischen erkannt, dass Minihäuser auch für sie interessant sein können. Vor allem Dörfer, aus denen junge Menschen seit Jahren wegziehen, hoffen auf neue Einwohner. So hat eine Gemeinde in Niedersachsen ein Gelände für zwanzig Minihäuser ausgewiesen, mit gemeinsamem Garten und einem Gemeinschaftshaus, in dem die Bewohner Wäsche waschen, Gäste unterbringen oder Feste feiern können. Die Plätze waren innerhalb weniger Wochen vergeben.\n\nNicht alle Experten sind jedoch begeistert. Stadtplaner weisen darauf hin, dass Minihäuser pro Person oft mehr Fläche verbrauchen als eine Wohnung in einem Mehrfamilienhaus, weil jedes Haus ein eigenes Grundstück benötigt. Auch der Energieverbrauch sei nicht automatisch niedrig: Ein kleines, frei stehendes Haus verliere über Dach, Wände und Boden vergleichsweise viel Wärme. „Wer wirklich Fläche sparen will, sollte lieber in eine kleine Stadtwohnung ziehen“, meint ein Architekt aus Hamburg.\n\nUnd wie sieht es im Alltag aus? Martina Weber gibt zu, dass das Leben auf engem Raum auch Schattenseiten hat. Im Winter, wenn es früh dunkel wird, fällt ihr manchmal die Decke auf den Kopf, und wenn Besuch kommt, wird es schnell eng. Für eine Familie mit Kindern könne sie sich ein Minihaus kaum vorstellen. Trotzdem möchte sie nicht zurück. „Ich arbeite weniger, weil ich weniger Geld brauche, und habe mehr Zeit für die Dinge, die mir wirklich wichtig sind.“ Gerade das sei für sie der größte Gewinn.",
+          "questions": [
+            {
+              "question": "Was fiel Martina Weber am Anfang schwer?",
+              "options": [
+                "Ein Grundstück im Schwarzwald zu kaufen.",
+                "Sich von ihren Sachen zu trennen.",
+                "Ihre Wohnung in Freiburg zu kündigen."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Warum entscheiden sich Menschen für ein Minihaus?",
+              "options": [
+                "Weil sie in der Stadt überhaupt keine Wohnung finden.",
+                "Weil man für Minihäuser keine Baugenehmigung braucht.",
+                "Weil sie umweltfreundlicher oder günstiger wohnen möchten."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Was ist laut Text meistens das größte Problem?",
+              "options": [
+                "Einen geeigneten Platz für das Haus zu finden.",
+                "Die hohen Kosten für das Haus selbst.",
+                "Die langen Wartezeiten bei den Herstellern."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Die Gemeinde in Niedersachsen …",
+              "options": [
+                "verkauft Minihäuser zu besonders günstigen Preisen.",
+                "möchte mit den Minihäusern neue Einwohner gewinnen.",
+                "hat Schwierigkeiten, Interessenten für die Plätze zu finden."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Was kritisieren Fachleute an Minihäusern?",
+              "options": [
+                "Sie bieten zu wenig Platz, wenn Besuch kommt.",
+                "Sie sind für Familien mit Kindern ungeeignet.",
+                "Sie sparen nicht unbedingt Fläche und Energie."
+              ],
+              "correctIndex": 2
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "She says: \"Am Anfang musste ich mich von sehr vielen Dingen trennen, und das war schwerer, als ich gedacht hatte\" (b). She did not buy land; a farmer leases her part of his plot.",
+            "de": "Sie sagt: Am Anfang musste sie sich von vielen Dingen trennen, und das war schwer (b). Sie hat kein Grundstück gekauft, sie pachtet es von einem Landwirt."
+          },
+          {
+            "en": "The text names two reasons: living \"umweltfreundlicher\" with less consumption, and escaping \"den hohen Mieten\" (c). A building permit is in fact needed, and nobody says they find no flat at all.",
+            "de": "Der Text nennt zwei Gründe: umweltfreundlicher leben und den hohen Mieten entkommen (c). Eine Baugenehmigung braucht man trotzdem."
+          },
+          {
+            "en": "\"Das größte Problem ist meist nicht das Haus selbst, sondern das Grundstück\" (a). The house itself is described as relatively cheap.",
+            "de": "Im Text steht: Das größte Problem ist meistens das Grundstück, nicht das Haus (a). Das Haus selbst ist relativ günstig."
+          },
+          {
+            "en": "Villages that young people leave \"hoffen auf neue Einwohner\", and this municipality set aside land for twenty tiny houses (b). The places were taken within a few weeks, so c is wrong.",
+            "de": "Dörfer, aus denen junge Leute wegziehen, hoffen auf neue Einwohner. Darum hat die Gemeinde Platz für zwanzig Minihäuser geschaffen (b). Die Plätze waren schnell vergeben, also ist c falsch."
+          },
+          {
+            "en": "Planners say tiny houses often use more land per person, and the energy use \"sei nicht automatisch niedrig\" (c). Lack of space for visitors and children are Martina Weber's own remarks, not the experts' criticism.",
+            "de": "Die Experten sagen: Minihäuser brauchen pro Person oft mehr Fläche und verlieren viel Wärme (c). Besuch und Kinder erwähnt Martina Weber selbst, nicht die Fachleute."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b2__lesen-2__s02",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Helfen ja – aber nicht für immer\n\nJahrzehntelang funktionierte das Ehrenamt in Deutschland nach einem klaren Muster: Man trat in einen Verein ein, übernahm irgendwann ein Amt als Kassenwart oder Jugendtrainer und blieb dabei, oft bis ins hohe Alter. Dieses Modell gerät zunehmend unter Druck. Zwar engagieren sich nach einer bundesweiten Umfrage nach wie vor fast 40 Prozent der Bevölkerung freiwillig, doch die Art des Engagements hat sich deutlich verändert.\n\n„Die Menschen wollen sich heute nicht mehr über Jahre festlegen“, erklärt die Soziologin Anja Reimers, die seit fünfzehn Jahren zu diesem Thema forscht. „Viele haben einen anspruchsvollen Beruf, ziehen für den Job öfter um oder kümmern sich um Kinder und pflegebedürftige Eltern. Da ist ein Vorstandsposten, der jeden Dienstagabend eine Sitzung bedeutet, für viele schlicht nicht machbar.“ Gefragt seien stattdessen Projekte mit einem klaren Anfang und einem klaren Ende: ein Wochenende lang einen Spielplatz renovieren, drei Monate lang einem Jugendlichen bei den Hausaufgaben helfen, einmal im Jahr beim Stadtlauf Getränke ausgeben.\n\nFür die traditionellen Vereine ist diese Entwicklung eine große Herausforderung. Besonders Sportvereine, Feuerwehren und Chöre auf dem Land klagen darüber, dass sie keine Nachfolger für ihre Vorstände finden. In manchen Fällen mussten sich Vereine bereits auflösen, obwohl sie noch genug Mitglieder hatten – es wollte einfach niemand mehr die Verantwortung übernehmen. „Die Bereitschaft zu helfen ist da“, sagt Reimers, „aber nicht unbedingt die Bereitschaft, sich für ein Amt zu verpflichten.“\n\nEinige Städte versuchen, auf den Wandel zu reagieren. In einer mittelgroßen Stadt in Westfalen etwa gibt es eine Freiwilligenagentur, die Interessierte und Organisationen zusammenbringt. Auf einer Internetplattform können Vereine kurzfristige Aufgaben einstellen, und Freiwillige können sich mit wenigen Klicks dafür melden. „Viele, die zu uns kommen, haben noch nie ehrenamtlich gearbeitet“, berichtet die Leiterin der Agentur. „Manche bleiben nach einem ersten kleinen Einsatz dann doch länger dabei, weil es ihnen Spaß gemacht hat.“ Gerade darin liege die Chance: Wer ohne Druck einsteigen kann, findet oft von selbst den Weg zu einem dauerhaften Engagement.\n\nAuch die Motive haben sich verschoben. Früher stand für viele das Pflichtgefühl im Vordergrund; man engagierte sich, weil es eben dazugehörte. Heute erwarten Freiwillige, dass sie selbst etwas von ihrem Einsatz haben: neue Kontakte, interessante Erfahrungen oder Kenntnisse, die sich vielleicht sogar im Lebenslauf gut machen. Das sei kein Egoismus, betont Reimers, sondern ein ganz normaler Wunsch. Organisationen, die diese Bedürfnisse ernst nehmen, ihren Helfern Fortbildungen anbieten und ihnen Mitsprache ermöglichen, hätten deutlich weniger Nachwuchssorgen.\n\nGanz verschwinden wird das klassische Vereinsleben nach Einschätzung der Forscherin aber nicht. „Es wird immer Menschen geben, denen eine feste Gemeinschaft wichtig ist“, sagt sie. Die Vereine müssten allerdings lernen, flexibler zu werden – zum Beispiel, indem sie Vorstandsaufgaben auf mehrere Schultern verteilen oder Ämter nur noch für ein Jahr vergeben.",
+          "questions": [
+            {
+              "question": "Was sagt der Text über das Ehrenamt in Deutschland?",
+              "options": [
+                "Die Menschen engagieren sich heute anders als früher.",
+                "Immer weniger Menschen sind bereit, freiwillig zu helfen.",
+                "Die meisten Freiwilligen sind ältere Menschen."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Warum übernehmen viele Menschen nach Meinung von Anja Reimers kein festes Amt mehr?",
+              "options": [
+                "Weil sie die Arbeit in Vereinen langweilig finden.",
+                "Weil sie für ihr Engagement bezahlt werden möchten.",
+                "Weil Beruf und Familie ihnen wenig Zeit für regelmäßige Termine lassen."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Manche Vereine mussten sich auflösen, weil …",
+              "options": [
+                "sie zu viele Mitglieder verloren hatten.",
+                "niemand mehr die Leitung übernehmen wollte.",
+                "sie keine finanzielle Unterstützung mehr bekamen."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Die Freiwilligenagentur …",
+              "options": [
+                "verlangt von allen Helfern, mindestens ein Jahr mitzuarbeiten.",
+                "ermöglicht es, sich zunächst für kurze Aufgaben zu melden.",
+                "arbeitet nur mit Menschen, die schon Erfahrung im Ehrenamt haben."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Welche Organisationen haben laut Text weniger Probleme, Nachwuchs zu finden?",
+              "options": [
+                "Organisationen, die ihre Mitglieder an ihre Pflicht erinnern.",
+                "Organisationen, die ihren Mitgliedern feste Ämter auf Dauer anbieten.",
+                "Organisationen, die auf die Wünsche ihrer Helfer eingehen."
+              ],
+              "correctIndex": 2
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Almost 40 percent still volunteer, \"doch die Art des Engagements hat sich deutlich verändert\" (a). So fewer people helping (b) is wrong; age is not discussed.",
+            "de": "Immer noch engagieren sich fast 40 Prozent, aber die Art des Engagements hat sich verändert (a). Es helfen also nicht weniger Menschen."
+          },
+          {
+            "en": "Reimers says many have demanding jobs, move often or care for children and parents, so a weekly board meeting is \"schlicht nicht machbar\" (c).",
+            "de": "Frau Reimers sagt: Viele haben viel Arbeit oder kümmern sich um Kinder und Eltern. Eine Sitzung jede Woche ist für sie nicht machbar (c)."
+          },
+          {
+            "en": "Clubs dissolved \"obwohl sie noch genug Mitglieder hatten – es wollte einfach niemand mehr die Verantwortung übernehmen\" (b). They had not lost too many members.",
+            "de": "Die Vereine hatten noch genug Mitglieder, aber niemand wollte die Verantwortung übernehmen (b)."
+          },
+          {
+            "en": "On the agency's platform clubs post \"kurzfristige Aufgaben\", and volunteers sign up with a few clicks; many have never volunteered before (b).",
+            "de": "Auf der Plattform der Agentur gibt es kurzfristige Aufgaben. Man kann sich schnell melden, auch ohne Erfahrung (b)."
+          },
+          {
+            "en": "Organisations that take volunteers' needs seriously, offer training and a say \"hätten deutlich weniger Nachwuchssorgen\" (c). Duty was the old motive, and the text recommends shorter terms, not permanent posts.",
+            "de": "Organisationen, die die Wünsche der Helfer ernst nehmen, haben weniger Probleme mit Nachwuchs (c). Pflichtgefühl war das alte Motiv, und feste Ämter auf Dauer will heute kaum jemand."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b2__lesen-2__s03",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Zwei Sprachen, ein Kind\n\nWenn Leonie mit ihrer Mutter spricht, redet sie Deutsch. Sobald ihr Vater ins Zimmer kommt, wechselt die Fünfjährige mühelos ins Italienische. Für Leonie ist das völlig normal – für viele Eltern, die ihre Kinder zweisprachig erziehen wollen, ist das Thema dagegen mit großen Unsicherheiten verbunden. Überfordert man das Kind? Lernt es am Ende keine der beiden Sprachen richtig? Solche Fragen hört die Sprachwissenschaftlerin Katrin Albers in ihrer Beratungsstelle fast täglich.\n\n„Die Sorge, dass Kinder mit zwei oder mehr Sprachen überfordert sein könnten, ist weit verbreitet, aber unbegründet“, sagt Albers. Das menschliche Gehirn sei von Geburt an in der Lage, mehrere Sprachen gleichzeitig zu erwerben. Zwar komme es vor, dass mehrsprachige Kinder etwas später anfangen zu sprechen oder eine Zeit lang Wörter aus beiden Sprachen in einem Satz mischen. Das sei aber kein Zeichen für eine Störung, sondern ein ganz normaler Teil der Entwicklung, der sich meist bis zum Schulalter von selbst gibt.\n\nWichtiger als die Frage, ob ein Kind mehrsprachig aufwächst, sei die Frage, wie. Viele Familien orientieren sich an der Regel „eine Person, eine Sprache“: Jeder Elternteil spricht konsequent seine eigene Muttersprache mit dem Kind. Albers hält diese Methode für sinnvoll, warnt aber vor zu großer Strenge. „Entscheidend ist, dass die Kinder viel und in echten Situationen mit einer Sprache in Kontakt kommen. Wenn eine Sprache nur beim Abendessen gesprochen wird, reicht das in der Regel nicht.“\n\nEin häufiges Problem beobachtet die Expertin, wenn die Kinder in den Kindergarten kommen. Dort sprechen alle Deutsch, und plötzlich verliert die Familiensprache an Bedeutung. Manche Kinder weigern sich dann, mit dem Vater oder der Mutter in der anderen Sprache zu sprechen, obwohl sie alles verstehen. „In dieser Phase geben viele Eltern auf“, sagt Albers. „Dabei wäre es wichtig, gerade jetzt dranzubleiben.“ Hilfreich seien zum Beispiel Kontakte zu anderen Kindern, die dieselbe Sprache sprechen, Bücher und Lieder oder Ferien im Herkunftsland der Eltern. So erleben die Kinder, dass die Sprache auch außerhalb der eigenen Familie nützlich ist.\n\nLange Zeit galt Mehrsprachigkeit in Deutschland eher als Nachteil, vor allem wenn es um Sprachen wie Türkisch oder Arabisch ging. Eltern wurde manchmal sogar geraten, zu Hause nur Deutsch zu sprechen, auch wenn sie selbst die Sprache nicht gut beherrschten. Heute sieht man das anders. Studien zeigen, dass Kinder, die ihre Familiensprache gut beherrschen, oft auch leichter Deutsch lernen. Wer eine Sprache sicher kann, versteht nämlich besser, wie Sprache überhaupt funktioniert.\n\nFür Leonies Eltern war deshalb von Anfang an klar, dass sie beide Sprachen weitergeben wollen. Einfach sei es nicht immer gewesen, erzählt die Mutter. Aber wenn Leonie im Sommer bei ihrer Großmutter in Neapel ganz selbstverständlich ihr Eis bestellt, sei alle Mühe vergessen.",
+          "questions": [
+            {
+              "question": "Was sagt Katrin Albers darüber, dass Kinder Wörter aus zwei Sprachen in einem Satz mischen?",
+              "options": [
+                "Das ist ein Hinweis auf eine Sprachstörung.",
+                "Das gehört zur normalen Entwicklung.",
+                "Das sollten die Eltern sofort korrigieren."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Was ist nach Meinung von Albers bei der Regel „eine Person, eine Sprache“ wichtig?",
+              "options": [
+                "Die Eltern sollten nie von der Regel abweichen.",
+                "Jede Sprache sollte nur zu festen Zeiten gesprochen werden.",
+                "Die Kinder sollten oft und in echten Situationen mit jeder Sprache zu tun haben."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Was passiert oft, wenn die Kinder in den Kindergarten kommen?",
+              "options": [
+                "Sie wollen die Familiensprache nicht mehr sprechen.",
+                "Sie verstehen die Familiensprache nicht mehr.",
+                "Sie haben große Probleme, Deutsch zu lernen."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Früher wurde manchen Eltern empfohlen, …",
+              "options": [
+                "ihre Kinder in einen zweisprachigen Kindergarten zu schicken.",
+                "mit ihren Kindern zu Hause nur Deutsch zu sprechen.",
+                "ihren Kindern zuerst die Familiensprache beizubringen."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Was zeigen neuere Studien?",
+              "options": [
+                "Wer seine Familiensprache gut kann, lernt oft leichter Deutsch.",
+                "Mehrsprachige Kinder lernen in der Schule langsamer lesen.",
+                "Kinder lernen schneller Deutsch, wenn zu Hause nur Deutsch gesprochen wird."
+              ],
+              "correctIndex": 0
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Mixing words from both languages in one sentence \"sei aber kein Zeichen für eine Störung, sondern ein ganz normaler Teil der Entwicklung\" (b).",
+            "de": "Albers sagt: Das Mischen ist keine Störung, sondern ein normaler Teil der Entwicklung (b)."
+          },
+          {
+            "en": "Albers warns against being too strict; what matters is that children come into contact with a language \"viel und in echten Situationen\" (c). Only at dinner is not enough, so b is wrong.",
+            "de": "Albers sagt: Die Kinder müssen viel und in echten Situationen mit der Sprache in Kontakt kommen (c). Nur beim Abendessen reicht nicht."
+          },
+          {
+            "en": "\"Manche Kinder weigern sich dann, … in der anderen Sprache zu sprechen, obwohl sie alles verstehen\" (a). So b is wrong: they still understand everything.",
+            "de": "Manche Kinder wollen im Kindergartenalter die Familiensprache nicht mehr sprechen, aber sie verstehen alles (a)."
+          },
+          {
+            "en": "\"Eltern wurde manchmal sogar geraten, zu Hause nur Deutsch zu sprechen\" (b).",
+            "de": "Früher hat man Eltern manchmal geraten, zu Hause nur Deutsch zu sprechen (b)."
+          },
+          {
+            "en": "\"Studien zeigen, dass Kinder, die ihre Familiensprache gut beherrschen, oft auch leichter Deutsch lernen\" (a). Option c states the old, outdated view.",
+            "de": "Studien zeigen: Wer die Familiensprache gut kann, lernt oft leichter Deutsch (a). Antwort c ist die alte Meinung."
+          }
+        ]
+      }
+    }
+  ]
+}

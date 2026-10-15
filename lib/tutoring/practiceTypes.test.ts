@@ -7,6 +7,15 @@ describe('allowedPracticeTypes', () => {
     expect(allowedPracticeTypes('vocabulary', ['flashcard', 'multiple_choice'])).toEqual(['multiple_choice', 'flashcard']);
   });
 
+  it('mirrors the reading task types too', () => {
+    expect(allowedPracticeTypes('reading', ['cloze', 'passage_questions', 'multiple_choice', 'matching'])).toEqual([
+      'multiple_choice',
+      'passage_questions',
+      'matching',
+      'cloze',
+    ]);
+  });
+
   it('never allows flashcards outside a vocabulary lesson', () => {
     expect(allowedPracticeTypes('grammar', ['flashcard', 'fill_blank'])).toEqual(['fill_blank']);
   });

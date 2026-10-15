@@ -1,0 +1,280 @@
+{
+  "formatId": "goethe-b2",
+  "partId": "lesen-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-b2__lesen-3__s01",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Die Frau mit dem Hobel\n\nAls Johanna Petersen vor zwölf Jahren ihre Ausbildung zur Tischlerin begann, waren viele in ihrem Umfeld überrascht. Ihre Eltern, beide Lehrer, hatten gehofft, dass die Tochter nach dem guten Abitur studieren würde. „Ich habe es tatsächlich ein Semester lang mit Architektur versucht“, erzählt die 33-Jährige. „Aber ich saß nur am Computer und habe gemerkt, dass mir etwas fehlt: das Material, der Geruch von Holz, das Ergebnis am Ende des Tages.“ Sie brach das Studium ab und bewarb sich bei einer kleinen Werkstatt in einem Dorf bei Kiel.\n\nHeute führt sie diese Werkstatt selbst. Ihr früherer Chef, Hinrich Lorenzen, suchte vor vier Jahren einen Nachfolger, weil er in den Ruhestand gehen wollte. Seine eigenen Kinder hatten kein Interesse, und auf eine Anzeige meldete sich niemand. „Ohne Johanna hätte ich den Betrieb schließen müssen“, sagt Lorenzen, der heute noch gelegentlich vorbeikommt, um bei größeren Aufträgen zu helfen. Petersen übernahm die Werkstatt mit drei Angestellten; den Kauf finanzierte sie mit einem Kredit und mit Fördergeld des Landes.\n\nAufträge gibt es mehr als genug. Die Kunden müssen zurzeit bis zu einem halben Jahr warten, bis eine Einbauküche oder ein Treppengeländer fertig ist. Das eigentliche Problem sei nicht die Nachfrage, sondern das Personal, sagt Petersen. Seit zwei Jahren sucht sie einen weiteren Gesellen – bisher vergeblich. Auch Auszubildende zu finden, wird immer schwieriger. „Früher kamen jedes Jahr fünf oder sechs Bewerbungen, heute bin ich froh, wenn es eine ist.“\n\nWoran das liegt, darüber hat sie viel nachgedacht. Das Handwerk habe noch immer ein schlechtes Image, glaubt sie. „Viele Eltern denken, dass ihr Kind nur dann etwas erreicht, wenn es studiert.“ Dabei verdiene ein guter Tischlermeister heute oft nicht weniger als jemand mit Hochschulabschluss. Um junge Leute zu erreichen, ist Petersen deshalb neue Wege gegangen. Auf einer Videoplattform zeigt sie, wie in ihrer Werkstatt aus einem Baumstamm ein Esstisch wird. Die kurzen Filme werden zum Teil mehrere Tausend Mal angesehen. Ihr letzter Auszubildender, ein 17-Jähriger aus dem Nachbarort, hat sich direkt nach einem dieser Videos bei ihr gemeldet.\n\nAußerdem hat sie die Arbeitszeiten verändert. Seit dem vergangenen Jahr arbeitet das Team an vier Tagen in der Woche je neun Stunden; der Freitag ist frei. Anfangs war Petersen skeptisch, ob die Kunden das akzeptieren würden. „Tatsächlich hat sich niemand beschwert. Und meine Leute sind ausgeruhter, es passieren weniger Fehler.“\n\nGanz ohne Sorgen blickt sie trotzdem nicht in die Zukunft. Die Preise für Holz sind in den letzten Jahren stark gestiegen, und viele Kunden sind nicht bereit, das zu bezahlen. „Wer eine Küche im Möbelhaus kauft, zahlt oft nur die Hälfte“, sagt sie. Deshalb setzt sie auf das, was industriell gefertigte Möbel nicht bieten können: Stücke, die genau in einen schiefen Altbau passen, und eine Qualität, die mehrere Generationen hält. Ob das auf Dauer reicht, um den Betrieb zu sichern? „Ich bin optimistisch“, sagt sie und streicht über eine frisch geschliffene Tischplatte. „Gute Arbeit setzt sich durch.“",
+          "questions": [
+            {
+              "question": "Warum hat Johanna Petersen ihr Studium aufgegeben?",
+              "options": [
+                "Ihre Eltern wollten, dass sie ein Handwerk lernt.",
+                "Ihr fehlte die praktische Arbeit mit dem Material.",
+                "Ihr Abitur war für das Architekturstudium nicht gut genug."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Wie ist Petersen zu ihrer eigenen Werkstatt gekommen?",
+              "options": [
+                "Sie hat den Betrieb ihres früheren Chefs übernommen.",
+                "Sie hat mit Fördergeld eine neue Werkstatt gegründet.",
+                "Sie hat die Werkstatt zusammen mit Lorenzens Kindern gekauft."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Was ist laut Petersen das größte Problem ihres Betriebs?",
+              "options": [
+                "Sie bekommt zu wenige Aufträge.",
+                "Die Kunden wollen nicht lange warten.",
+                "Sie findet nicht genug Fachkräfte und Auszubildende."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Wie versucht Petersen, junge Menschen für ihren Beruf zu gewinnen?",
+              "options": [
+                "Sie stellt ihren Betrieb in Schulen vor.",
+                "Sie veröffentlicht Filme über ihre Arbeit im Internet.",
+                "Sie zahlt Auszubildenden mehr als andere Betriebe."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Welche Folge hat die Vier-Tage-Woche?",
+              "options": [
+                "Einige Kunden haben sich beschwert.",
+                "Die Werkstatt ist montags geschlossen.",
+                "Die Mitarbeiter machen weniger Fehler."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Wie reagiert Petersen auf die Konkurrenz der Möbelhäuser?",
+              "options": [
+                "Sie bietet Möbel an, die individuell angepasst und sehr haltbar sind.",
+                "Sie senkt ihre Preise auf das Niveau der Industrie.",
+                "Sie verwendet billigeres Holz als früher."
+              ],
+              "correctIndex": 0
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "At university she \"saß nur am Computer\" and missed \"das Material, der Geruch von Holz, das Ergebnis am Ende des Tages\". Her parents actually hoped she would study.",
+            "de": "Im Studium saß sie nur am Computer. Ihr fehlten das Holz und das Ergebnis am Ende des Tages. Die Eltern wollten eigentlich, dass sie studiert."
+          },
+          {
+            "en": "Her former boss Hinrich Lorenzen was looking for a successor, and \"Petersen übernahm die Werkstatt mit drei Angestellten\". The grant only helped finance the purchase.",
+            "de": "Ihr früherer Chef suchte einen Nachfolger, und Petersen hat die Werkstatt übernommen. Das Fördergeld war nur für den Kauf, sie hat nichts Neues gegründet."
+          },
+          {
+            "en": "\"Das eigentliche Problem sei nicht die Nachfrage, sondern das Personal\": she has been looking for a journeyman for two years and gets hardly any applications for apprenticeships.",
+            "de": "Sie sagt: Das Problem ist nicht die Nachfrage, sondern das Personal. Sie findet keinen Gesellen und kaum Auszubildende."
+          },
+          {
+            "en": "\"Auf einer Videoplattform zeigt sie, wie … aus einem Baumstamm ein Esstisch wird\", and her last apprentice applied right after one of these videos.",
+            "de": "Sie zeigt auf einer Videoplattform kurze Filme aus ihrer Werkstatt. Ihr letzter Auszubildender hat sich nach einem Video gemeldet."
+          },
+          {
+            "en": "\"Meine Leute sind ausgeruhter, es passieren weniger Fehler.\" Nobody complained, and the free day is Friday, not Monday.",
+            "de": "Die Mitarbeiter sind ausgeruhter, und es passieren weniger Fehler. Niemand hat sich beschwert, und frei ist am Freitag."
+          },
+          {
+            "en": "She relies on \"Stücke, die genau in einen schiefen Altbau passen, und eine Qualität, die mehrere Generationen hält\" – custom-made, durable furniture.",
+            "de": "Sie baut Möbel, die genau in alte Häuser passen und sehr lange halten. Das können Möbelhäuser nicht bieten."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b2__lesen-3__s02",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Der Duft der Kindheit\n\nEin Hauch von Zimt, und plötzlich steht man wieder in der Küche der Großmutter. Fast jeder kennt dieses Erlebnis: Ein bestimmter Geruch holt eine Erinnerung zurück, an die man jahrelang nicht gedacht hat – und zwar oft mit erstaunlicher Intensität. Man sieht die Situation wieder vor sich, hört die Stimmen und spürt dieselben Gefühle wie damals.\n\nWarum Gerüche so stark wirken, lässt sich mit dem Aufbau des Gehirns erklären. Was wir sehen oder hören, wird zunächst in einer Art Schaltzentrale sortiert, bevor es in die Bereiche gelangt, die für Gefühle und Gedächtnis zuständig sind. Gerüche dagegen nehmen eine Abkürzung: Sie erreichen diese Regionen fast direkt. „Deshalb reagieren wir auf einen Geruch oft emotional, noch bevor wir überhaupt sagen können, was wir da riechen“, erklärt die Neurobiologin Katrin Albers.\n\nInteressant ist auch, aus welcher Lebensphase solche Erinnerungen stammen. In einer Studie mit rund 300 Teilnehmern über 60 Jahren baten Forscher die Probanden, zu verschiedenen Reizen ein Erlebnis aus ihrem Leben zu nennen. Bei Wörtern oder Bildern stammten die meisten Erinnerungen aus dem jungen Erwachsenenalter, also etwa aus der Zeit zwischen 20 und 30. Bei Gerüchen dagegen lagen sie deutlich früher – meist im ersten Lebensjahrzehnt. Die Forscher vermuten, dass wir in der Kindheit viele Gerüche zum ersten Mal wahrnehmen und sie deshalb besonders fest mit der jeweiligen Situation verbinden.\n\nDiese Erkenntnisse werden inzwischen auch praktisch genutzt. In einigen Pflegeheimen arbeitet man mit sogenannten Duftkoffern, in denen kleine Dosen mit typischen Gerüchen aus früheren Jahrzehnten liegen: Bohnerwachs, Kernseife, frisch gemahlener Kaffee. Bei Menschen mit Demenz können diese Düfte Gespräche anregen, die sonst kaum noch möglich wären. „Manche Bewohner, die sonst sehr still sind, fangen plötzlich an, von ihrer Arbeit oder ihrer Hochzeit zu erzählen“, berichtet eine Altenpflegerin. Heilen lässt sich die Krankheit dadurch allerdings nicht.\n\nAuch der Handel hat die Macht der Gerüche entdeckt. Manche Geschäfte verbreiten gezielt angenehme Düfte, damit sich die Kunden wohlfühlen und länger bleiben. Ob sie dadurch tatsächlich mehr kaufen, ist unter Fachleuten umstritten. Verbraucherschützer kritisieren vor allem, dass die Kunden meist gar nicht bemerken, dass sie beeinflusst werden sollen.\n\nÜbrigens lässt sich der Geruchssinn trainieren. Wer einige Wochen lang täglich an vier verschiedenen Düften riecht und sich dabei bewusst auf sie konzentriert, kann seine Fähigkeit, Gerüche zu unterscheiden, messbar verbessern. Ein solches Training wird zum Beispiel Menschen empfohlen, die nach einer Infektion schlechter riechen. Albers rät aber auch allen anderen, ihre Nase im Alltag öfter bewusst zu benutzen: „Wir leben in einer Welt, die vor allem auf die Augen ausgerichtet ist. Dabei entgeht uns sehr viel.“",
+          "questions": [
+            {
+              "question": "Welches Erlebnis beschreibt der Text am Anfang?",
+              "options": [
+                "Ein Geruch weckt plötzlich eine lebendige Erinnerung.",
+                "Man erkennt Gerüche aus der Kindheit sofort mit Namen.",
+                "Gerichte aus der Kindheit schmecken heute anders."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Warum lösen Gerüche so starke Gefühle aus?",
+              "options": [
+                "Weil wir sie bewusster wahrnehmen als Bilder und Töne.",
+                "Weil sie fast direkt die Bereiche für Gefühle und Gedächtnis erreichen.",
+                "Weil sie im Gehirn zuerst in einer Schaltzentrale sortiert werden."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Was hat die Studie mit älteren Menschen gezeigt?",
+              "options": [
+                "Bilder wecken die frühesten Erinnerungen.",
+                "Menschen über 60 riechen deutlich schlechter als jüngere.",
+                "Erinnerungen, die durch Gerüche ausgelöst werden, stammen meist aus der Kindheit."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Wozu werden in Pflegeheimen Duftkoffer eingesetzt?",
+              "options": [
+                "Um Demenz zu heilen.",
+                "Um unangenehme Gerüche in den Zimmern zu überdecken.",
+                "Um Bewohner dazu zu bringen, von früher zu erzählen."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Was kritisieren Verbraucherschützer an Düften in Geschäften?",
+              "options": [
+                "Dass die Kunden dadurch nachweislich mehr Geld ausgeben.",
+                "Dass die Kunden die Beeinflussung meist nicht bemerken.",
+                "Dass die Düfte der Gesundheit schaden können."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Was empfiehlt Katrin Albers?",
+              "options": [
+                "Die Nase im Alltag häufiger bewusst einzusetzen.",
+                "Den Geruchssinn nur nach einer Infektion zu trainieren.",
+                "Zu Hause möglichst viele verschiedene Düfte zu verwenden."
+              ],
+              "correctIndex": 0
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The opening describes how \"Ein bestimmter Geruch holt eine Erinnerung zurück … mit erstaunlicher Intensität\" (cinnamon → grandmother's kitchen).",
+            "de": "Am Anfang steht: Ein Geruch holt eine alte Erinnerung zurück, und zwar sehr intensiv, zum Beispiel Zimt und die Küche der Großmutter."
+          },
+          {
+            "en": "\"Gerüche dagegen nehmen eine Abkürzung: Sie erreichen diese Regionen fast direkt.\" Sorting in a relay centre is what happens to things we see or hear; and we react before we can even say what we smell.",
+            "de": "Gerüche nehmen eine „Abkürzung“ und kommen fast direkt in die Bereiche für Gefühle und Gedächtnis. Nur Gesehenes und Gehörtes wird zuerst sortiert."
+          },
+          {
+            "en": "With smells the memories \"lagen … deutlich früher – meist im ersten Lebensjahrzehnt\"; with words or pictures they came from ages 20 to 30.",
+            "de": "Bei Gerüchen stammten die Erinnerungen meist aus dem ersten Lebensjahrzehnt, also aus der Kindheit. Bei Bildern waren sie später."
+          },
+          {
+            "en": "The scents \"können … Gespräche anregen\": quiet residents start telling about their work or their wedding. The text says explicitly the disease cannot be cured.",
+            "de": "Die Düfte regen Gespräche an: Stille Bewohner erzählen plötzlich von ihrer Arbeit oder Hochzeit. Heilen kann man Demenz damit nicht."
+          },
+          {
+            "en": "\"Verbraucherschützer kritisieren vor allem, dass die Kunden meist gar nicht bemerken, dass sie beeinflusst werden sollen.\" Whether customers buy more is described as disputed.",
+            "de": "Verbraucherschützer kritisieren, dass die Kunden die Beeinflussung nicht bemerken. Ob die Kunden mehr kaufen, ist nicht sicher."
+          },
+          {
+            "en": "Albers advises everyone \"ihre Nase im Alltag öfter bewusst zu benutzen\"; the training is recommended for people after an infection, but not only for them.",
+            "de": "Albers rät allen Menschen, die Nase im Alltag öfter bewusst zu benutzen, nicht nur nach einer Infektion."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b2__lesen-3__s03",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "„Umkehren ist keine Niederlage“ – ein Gespräch mit Lukas Hofer, der seit 15 Jahren ehrenamtlich bei der Bergwacht arbeitet\n\nHerr Hofer, wie oft wurden Sie im vergangenen Jahr gerufen?\nUnsere Bereitschaft im Allgäu wurde etwa 180-mal alarmiert, ich selbst war bei rund 40 Einsätzen dabei. Im Sommer gibt es Wochenenden, an denen das Telefon kaum stillsteht. Die meisten Einsätze sind übrigens keine dramatischen Rettungen aus der Felswand, sondern Wanderer mit verstauchtem Knöchel oder Menschen, die erschöpft sind und nicht mehr weiterkönnen.\n\nHat sich die Zahl der Einsätze verändert?\nDeutlich. Seit einigen Jahren sind viel mehr Menschen in den Bergen unterwegs, darunter viele mit wenig Erfahrung. Ich will niemandem den Spaß verderben – die Berge gehören allen. Aber wir merken, dass viele ihre Tour nur noch nach Fotos in sozialen Netzwerken auswählen. Sie sehen ein schönes Bild von einem Gipfel und wissen nicht, dass der Weg dorthin sechs Stunden dauert und an manchen Stellen sehr steil ist.\n\nWas sind die häufigsten Fehler?\nDie Leute starten zu spät. Wer erst um zwölf Uhr mittags losgeht, gerät leicht in ein Gewitter, wie es sich im Sommer oft am Nachmittag entwickelt, oder kommt erst im Dunkeln zurück. Dazu kommt falsche Ausrüstung: Turnschuhe statt fester Bergschuhe, keine Regenjacke, zu wenig Wasser. Und viele verlassen sich ganz auf ihr Handy. Wenn der Akku leer ist, haben sie weder eine Karte noch irgendeine Orientierung.\n\nSie arbeiten ehrenamtlich. Wie lässt sich das mit Ihrem Beruf vereinbaren?\nIch bin Elektriker und habe einen sehr verständnisvollen Chef. Wenn tagsüber ein Alarm kommt, darf ich gehen, und mein Arbeitgeber bekommt den Lohn für die ausgefallene Zeit erstattet. Schwieriger ist es für die Familie. Meine Frau hat sich daran gewöhnt, dass ich manchmal mitten beim Abendessen aufspringe. Aber als unsere Tochter klein war, gab es deswegen schon Diskussionen.\n\nWie wird man eigentlich Bergretter?\nMan braucht eine gute Kondition und Erfahrung im Klettern und Skifahren. Die Ausbildung dauert etwa drei Jahre und umfasst Erste Hilfe, Rettungstechnik und Wetterkunde. Viele unterschätzen den Aufwand: Neben den Einsätzen gibt es fast jede Woche eine Übung. Von zehn Leuten, die anfangen, bleiben am Ende vielleicht vier dabei.\n\nWas motiviert Sie, trotzdem weiterzumachen?\nGanz ehrlich: der Zusammenhalt. Wir sind eine Mannschaft, in der sich jeder auf den anderen verlassen muss. Und natürlich das Gefühl, wenn man jemanden sicher ins Tal gebracht hat. Vor zwei Jahren haben wir nachts einen Jungen gefunden, der sich verlaufen hatte. Seine Eltern schicken uns seitdem jedes Jahr zu Weihnachten eine Karte. So etwas vergisst man nicht.\n\nWas raten Sie Wanderern?\nFrüh aufbrechen, das Wetter prüfen und ehrlich zu sich selbst sein. Umkehren ist keine Niederlage. Wer merkt, dass die Kraft nicht reicht, sollte lieber eine Stunde früher umdrehen, als uns später rufen zu müssen.",
+          "questions": [
+            {
+              "question": "Was gilt für die meisten Einsätze der Bergwacht?",
+              "options": [
+                "Sie finden vor allem im Winter statt.",
+                "Es geht um leichtere Verletzungen oder erschöpfte Wanderer.",
+                "Es sind schwierige Rettungen aus Felswänden."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Warum geraten nach Hofers Meinung mehr Menschen in den Bergen in Not?",
+              "options": [
+                "Viele wählen ihre Tour nach Fotos aus, ohne die Schwierigkeit zu kennen.",
+                "Die Wanderwege sind schlechter markiert als früher.",
+                "Die Bergwacht hat heute weniger Mitglieder."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Welchen typischen Fehler nennt Hofer?",
+              "options": [
+                "Die Wanderer nehmen zu viel Gepäck mit.",
+                "Die Wanderer brechen zu früh am Morgen auf.",
+                "Die Wanderer verlassen sich nur auf ihr Handy."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Wie geht Hofers Arbeitgeber mit den Einsätzen um?",
+              "options": [
+                "Hofer muss für jeden Einsatz Urlaub nehmen.",
+                "Hofer darf gehen, und der Betrieb bekommt die ausgefallene Zeit bezahlt.",
+                "Hofer darf nur abends und am Wochenende zu Einsätzen."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Was sagt Hofer über die Ausbildung zum Bergretter?",
+              "options": [
+                "Sie ist nach wenigen Monaten abgeschlossen.",
+                "Erfahrung im Klettern ist dafür nicht nötig.",
+                "Viele, die damit beginnen, hören wieder auf."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Was rät Hofer den Wanderern?",
+              "options": [
+                "Im Zweifel rechtzeitig umzukehren.",
+                "Nur in größeren Gruppen zu wandern.",
+                "Erst nachmittags zu starten, wenn es kühler wird."
+              ],
+              "correctIndex": 0
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "\"Die meisten Einsätze sind … keine dramatischen Rettungen aus der Felswand, sondern Wanderer mit verstauchtem Knöchel oder Menschen, die erschöpft sind.\"",
+            "de": "Hofer sagt: Meistens geht es nicht um dramatische Rettungen, sondern um verstauchte Knöchel oder erschöpfte Wanderer."
+          },
+          {
+            "en": "Many choose a tour \"nur noch nach Fotos in sozialen Netzwerken\" and do not know the path takes six hours and is steep in places.",
+            "de": "Viele suchen ihre Tour nach Fotos im Internet aus. Sie wissen nicht, wie lang und steil der Weg ist."
+          },
+          {
+            "en": "\"Und viele verlassen sich ganz auf ihr Handy. Wenn der Akku leer ist, haben sie weder eine Karte noch irgendeine Orientierung.\" He criticises starting too late, not too early.",
+            "de": "Viele verlassen sich nur auf das Handy und haben keine Karte. Hofer kritisiert, dass die Leute zu spät starten, nicht zu früh."
+          },
+          {
+            "en": "\"Wenn tagsüber ein Alarm kommt, darf ich gehen, und mein Arbeitgeber bekommt den Lohn für die ausgefallene Zeit erstattet.\"",
+            "de": "Hofer darf bei einem Alarm auch tagsüber gehen. Sein Chef bekommt das Geld für die verlorene Arbeitszeit zurück."
+          },
+          {
+            "en": "\"Von zehn Leuten, die anfangen, bleiben am Ende vielleicht vier dabei.\" The training takes about three years and climbing experience is required.",
+            "de": "Von zehn Leuten bleiben nur etwa vier dabei, also hören viele auf. Die Ausbildung dauert drei Jahre, und man braucht Klettererfahrung."
+          },
+          {
+            "en": "\"Umkehren ist keine Niederlage. Wer merkt, dass die Kraft nicht reicht, sollte lieber eine Stunde früher umdrehen.\" He also advises starting early, not in the afternoon.",
+            "de": "Hofer sagt: Umkehren ist keine Niederlage. Wer keine Kraft mehr hat, soll lieber früher zurückgehen."
+          }
+        ]
+      }
+    }
+  ]
+}

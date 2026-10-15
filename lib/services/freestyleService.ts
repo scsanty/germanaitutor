@@ -108,8 +108,14 @@ export function createFreestyleService(
     if (!isModeEnabled(mode)) throw new FreestyleError(`Unknown mode: ${mode}`, 'not_found');
   }
 
-  function requireSession(mode: FreestyleMode): SessionRow {
+  // S12: exam practice runs timed Teile on its own routes; it never has a session.
+  function requireSessionMode(mode: FreestyleMode): void {
     requireMode(mode);
+    if (mode === 'exam_practice') throw new FreestyleError('Exam practice has no sessions', 'bad_request');
+  }
+
+  function requireSession(mode: FreestyleMode): SessionRow {
+    requireSessionMode(mode);
     const r = row(mode);
     if (!r) throw new FreestyleError('No open session for this mode', 'not_found');
     return r;
@@ -152,7 +158,7 @@ export function createFreestyleService(
 
   function overview() {
     return {
-      modes: FREESTYLE_MODES.filter((m) => m.enabled).map((m) => ({ mode: m.mode, enabled: true, open: !!row(m.mode) })),
+      modes: FREESTYLE_MODES.filter((m) => m.enabled).map((m) => ({ mode: m.mode, enabled: true, open: m.mode !== 'exam_practice' && !!row(m.mode) })),
       aiAvailable: isAiAvailable(db),
       levels: levelsUpTo(profiles.getProfile().highestUnlockedLevel),
       // Spec: setup defaults to the active level.
@@ -167,7 +173,7 @@ export function createFreestyleService(
   }
 
   async function start(mode: FreestyleMode, input: { level: CefrLevel; setup: Record<string, unknown> }): Promise<SessionView> {
-    requireMode(mode);
+    requireSessionMode(mode);
     // S27: a value that isn't a level is a bad request; a real level above the ceiling is locked.
     if (!isCefrLevel(input.level)) throw new FreestyleError(`Not a level: ${String(input.level)}`, 'bad_request');
     const setup = validateSetup(mode, input.level, input.setup);

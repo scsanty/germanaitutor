@@ -1,0 +1,298 @@
+{
+  "formatId": "goethe-b1",
+  "partId": "lesen-4",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-b1__lesen-4__s01",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Leserbriefe zum Thema: Sollen Kinder schon in der Grundschule ein eigenes Smartphone haben?\n\nLena, 36, Kassel\nMeine Tochter ist acht und fährt allein mit dem Bus zur Schule. Seit sie ein Handy hat, bin ich viel ruhiger, weil sie mich jederzeit anrufen kann. Natürlich haben wir Regeln: Beim Essen und nach 19 Uhr bleibt das Handy aus. Ich finde, Kinder müssen früh lernen, vernünftig mit dem Smartphone umzugehen – und das geht nur, wenn sie eins haben.\n\nMarkus, 42, Erfurt\nAls Lehrer sehe ich jeden Tag, wie sehr Smartphones die Kinder ablenken. In den Pausen spielen sie nicht mehr miteinander, sondern schauen nur noch auf ihre Bildschirme. Außerdem gibt es schon in der dritten Klasse Streit in Chatgruppen. Ein Kind in diesem Alter braucht kein eigenes Smartphone. Wenn es um Sicherheit geht, reicht ein einfaches Telefon ohne Internet völlig aus.\n\nHerbert, 67, Passau\nWir hatten früher auch kein Telefon in der Tasche, und es ist trotzdem nichts passiert. Heute bekommen die Kinder alles, was sie wollen. Meine Enkel sind sieben und neun, und ich bin froh, dass ihre Eltern ihnen noch kein Smartphone gekauft haben. Sollen sie lieber draußen spielen und auf Bäume klettern!\n\nAylin, 33, Bochum\nIch verstehe die Sorgen vieler Eltern, aber Verbote bringen nichts. In der Klasse meines Sohnes haben fast alle ein Handy. Wer keins hat, wird schnell zum Außenseiter. Wichtig ist, dass die Eltern Apps und Zeiten kontrollieren. Mit den richtigen Einstellungen ist ein Smartphone für Kinder kein Problem.\n\nSabine, 45, Rostock\nLange war ich dagegen. Mein Sohn musste warten, bis er zehn war. Heute weiß ich: Das war ein Fehler. Er hatte plötzlich ein Handy und keine Ahnung, wie man damit umgeht. Hätte er schon mit sieben ein Smartphone gehabt, hätte ich ihm Schritt für Schritt alles zeigen können. Deshalb bekommt meine jüngere Tochter ihres schon jetzt, in der zweiten Klasse.\n\nJonas, 19, Mainz\nIch hatte mein erstes Smartphone mit acht und habe viel zu viel Zeit mit Spielen und Videos verbracht. Meine Noten wurden schlechter, und ich habe kaum noch Sport gemacht. Viele denken, junge Leute finden Handys für Kinder automatisch gut. Ich nicht: Hätte ich bis zur weiterführenden Schule gewartet, wäre vieles besser gelaufen.\n\nPetra, 39, Ulm\nMein Sohn wünscht sich zu Weihnachten nichts anderes als ein Smartphone. Ich kann ihn verstehen, aber ich bleibe hart. In der Grundschule sollen Kinder lesen, rechnen und mit Freunden spielen. Für Notfälle hat er eine Uhr, mit der er mich anrufen kann. Ein richtiges Smartphone bekommt er, wenn er aufs Gymnasium wechselt.",
+          "questions": [
+            {
+              "question": "Ist Lena für ein eigenes Smartphone für Grundschulkinder?",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Ist Markus für ein eigenes Smartphone für Grundschulkinder?",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Ist Herbert für ein eigenes Smartphone für Grundschulkinder?",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Ist Aylin für ein eigenes Smartphone für Grundschulkinder?",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Ist Sabine für ein eigenes Smartphone für Grundschulkinder?",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Ist Jonas für ein eigenes Smartphone für Grundschulkinder?",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Ist Petra für ein eigenes Smartphone für Grundschulkinder?",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Yes. Her eight-year-old has a phone, and she thinks children must learn to use it sensibly, „und das geht nur, wenn sie eins haben“.",
+            "de": "Ja. Ihre Tochter hat schon ein Handy. Lena findet, Kinder lernen den richtigen Umgang nur, „wenn sie eins haben“."
+          },
+          {
+            "en": "No. „Ein Kind in diesem Alter braucht kein eigenes Smartphone.“ A simple phone without internet is enough.",
+            "de": "Nein. Markus schreibt: „Ein Kind in diesem Alter braucht kein eigenes Smartphone.“"
+          },
+          {
+            "en": "No. He is glad that his grandchildren have no smartphone yet; they should play outside instead.",
+            "de": "Nein. Herbert ist froh, dass seine Enkel noch kein Smartphone haben. Sie sollen lieber draußen spielen."
+          },
+          {
+            "en": "Yes. Bans do not help; with the right settings „ist ein Smartphone für Kinder kein Problem“.",
+            "de": "Ja. Aylin findet Verbote falsch. Mit den richtigen Einstellungen ist ein Smartphone für Kinder kein Problem."
+          },
+          {
+            "en": "Yes. She used to be against it but changed her mind; her younger daughter gets one now, in Year 2.",
+            "de": "Ja. Früher war Sabine dagegen, aber heute nicht mehr. Ihre jüngere Tochter bekommt schon in der zweiten Klasse ein Smartphone."
+          },
+          {
+            "en": "No. Although he is young, he regrets having a smartphone at eight: „Hätte ich bis zur weiterführenden Schule gewartet, wäre vieles besser gelaufen.“",
+            "de": "Nein. Jonas hatte mit acht ein Smartphone, und das war nicht gut für ihn. Er hätte lieber bis zur weiterführenden Schule gewartet."
+          },
+          {
+            "en": "No. „Ich bleibe hart“: her son gets a smartphone only when he moves to the Gymnasium.",
+            "de": "Nein. Petra sagt: „Ich bleibe hart.“ Ihr Sohn bekommt erst auf dem Gymnasium ein Smartphone."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__lesen-4__s02",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Leserbriefe zum Thema: Sollen Geschäfte auch am Sonntag öffnen dürfen?\n\nTobias, 31, Hannover\nIch arbeite im Schichtdienst, oft auch samstags. Unter der Woche schaffe ich es kaum in den Supermarkt, weil er schon um 20 Uhr schließt. Für Leute wie mich wäre es eine große Hilfe, wenn wir auch sonntags einkaufen könnten. In vielen anderen Ländern ist das ganz normal, und niemand beschwert sich.\n\nGisela, 58, Würzburg\nIch arbeite seit dreißig Jahren als Verkäuferin. Der Sonntag ist der einzige Tag, an dem ich sicher frei habe und meine Familie sehe. Wenn die Läden auch sonntags öffnen, müssen Menschen wie ich noch mehr arbeiten. Einkaufen kann man an sechs Tagen in der Woche – das muss reichen.\n\nAhmet, 44, Dortmund\nIch habe einen kleinen Geschenkeladen in der Innenstadt. Die Konkurrenz aus dem Internet wird immer größer, denn dort kann man rund um die Uhr bestellen, auch am Sonntag. Wenn ich nicht wenigstens an einigen Sonntagen öffnen darf, muss ich meinen Laden bald schließen. Ich würde sogar selbst an der Kasse stehen.\n\nClaudia, 39, Freiburg\nFrüher habe ich mir oft gewünscht, dass die Geschäfte am Sonntag offen sind. Inzwischen genieße ich den ruhigen Tag. Die Straßen sind leer, man trifft sich im Park oder macht einen Ausflug. Wenn alle Läden aufmachen, wird der Sonntag ein Tag wie jeder andere. Das möchte ich nicht.\n\nFelix, 24, Münster\nIch jobbe neben dem Studium in einem Café, und am Sonntag ist dort am meisten los. Warum soll das in Geschäften anders sein? Viele Studierende würden gern am Wochenende arbeiten, weil sie unter der Woche Vorlesungen haben. Offene Geschäfte am Sonntag würden also auch neue Jobs bringen.\n\nRenate, 70, Bremen\nViele meinen, ältere Menschen sind automatisch gegen offene Läden am Sonntag. Bei mir ist das anders. Mein Sohn hat unter der Woche keine Zeit, aber am Sonntag könnte er mit mir zum Einkaufen fahren. Ich sehe nicht, was daran schlecht sein soll.\n\nDirk, 47, Kiel\nIch bin Vater von drei Kindern, und unser Sonntag gehört der Familie. Schon jetzt verbringen viele Menschen ihre Freizeit lieber in Einkaufszentren als in der Natur. Wenn die Geschäfte auch noch sonntags öffnen, wird das noch schlimmer. Ich hoffe sehr, dass die Politik bei der jetzigen Regel bleibt.",
+          "questions": [
+            {
+              "question": "Ist Tobias für offene Geschäfte am Sonntag?",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Ist Gisela für offene Geschäfte am Sonntag?",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Ist Ahmet für offene Geschäfte am Sonntag?",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Ist Claudia für offene Geschäfte am Sonntag?",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Ist Felix für offene Geschäfte am Sonntag?",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Ist Renate für offene Geschäfte am Sonntag?",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Ist Dirk für offene Geschäfte am Sonntag?",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Yes. Shift work leaves him little time to shop; Sunday shopping „wäre eine große Hilfe“ for him.",
+            "de": "Ja. Tobias arbeitet in Schichten. Einkaufen am Sonntag wäre für ihn „eine große Hilfe“."
+          },
+          {
+            "en": "No. Sunday is her only sure day off; „Einkaufen kann man an sechs Tagen in der Woche – das muss reichen.“",
+            "de": "Nein. Gisela sagt: „Einkaufen kann man an sechs Tagen in der Woche – das muss reichen.“"
+          },
+          {
+            "en": "Yes. Without opening on at least some Sundays, he fears he will have to close his shop.",
+            "de": "Ja. Ahmet möchte wenigstens an einigen Sonntagen öffnen, sonst muss er seinen Laden schließen."
+          },
+          {
+            "en": "No. She used to want it, but now she enjoys the quiet day: „Das möchte ich nicht.“",
+            "de": "Nein. Früher wollte Claudia offene Läden, aber heute genießt sie den ruhigen Sonntag. „Das möchte ich nicht.“"
+          },
+          {
+            "en": "Yes. Open shops on Sundays „würden also auch neue Jobs bringen“, for example for students.",
+            "de": "Ja. Felix meint, offene Geschäfte am Sonntag bringen neue Jobs, zum Beispiel für Studierende."
+          },
+          {
+            "en": "Yes. Unlike many older people, she is in favour: her son could take her shopping on Sundays. „Ich sehe nicht, was daran schlecht sein soll.“",
+            "de": "Ja. Renate ist dafür. Ihr Sohn könnte am Sonntag mit ihr einkaufen fahren."
+          },
+          {
+            "en": "No. Sunday belongs to the family, and he hopes „dass die Politik bei der jetzigen Regel bleibt“.",
+            "de": "Nein. Für Dirk gehört der Sonntag der Familie. Er hofft, dass die jetzige Regel bleibt."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__lesen-4__s03",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Leserbriefe zum Thema: Soll es eine Helmpflicht für alle Radfahrer geben?\n\nKarin, 45, Gießen\nIch arbeite als Krankenschwester in der Notaufnahme und sehe fast jede Woche Radfahrer mit schweren Kopfverletzungen. Viele von ihnen hatten keinen Helm auf. Ein Helm kostet nicht viel und kann Leben retten. Freiwillig tragen ihn leider zu wenige Menschen, deshalb brauchen wir ein Gesetz.\n\nMax, 28, Leipzig\nIch fahre jeden Tag mit dem Rad zur Arbeit, manchmal mit Helm, manchmal ohne. Das soll jeder selbst entscheiden. Viel wichtiger als ein Helm wären sichere Radwege. Wenn die Stadt endlich mehr Platz für Fahrräder schafft, passieren auch weniger Unfälle.\n\nUrsula, 63, Koblenz\nIch trage selbst immer einen Helm, und meine Enkel bekommen von mir regelmäßig einen neuen. Trotzdem halte ich nichts von einer Pflicht. In Ländern mit Helmpflicht fahren weniger Menschen Rad, weil es ihnen zu kompliziert ist. Das kann nicht das Ziel sein.\n\nPaul, 17, Osnabrück\nSeit meinem Unfall im letzten Sommer sehe ich das anders als früher. Ich bin auf nasser Straße gestürzt und mit dem Kopf auf den Boden gefallen. Der Helm war danach kaputt, mein Kopf zum Glück nicht. Ich finde, jeder sollte einen tragen müssen – auch die, die es cool finden, ohne zu fahren.\n\nAndreas, 50, Heilbronn\nIch habe ein Fahrradgeschäft. Natürlich würde ich mit einer Helmpflicht mehr Helme verkaufen. Aber ich glaube, viele Kunden würden dann lieber wieder das Auto nehmen. Mit guter Beratung erreicht man mehr: In meinem Laden erkläre ich jedem, warum ein Helm sinnvoll ist, und die meisten kaufen dann freiwillig einen.\n\nNina, 34, Augsburg\nIn vielen Familien müssen die Kinder einen Helm tragen, aber die Eltern selbst fahren ohne. Das ist doch kein gutes Vorbild! Eine Pflicht für alle wäre fair und klar. Nach ein paar Jahren denkt niemand mehr darüber nach – so wie beim Anschnallen im Auto.\n\nWolfgang, 71, Trier\nFrüher habe ich über Helme gelacht. Wir sind als Kinder auch ohne gefahren. Aber der Verkehr ist heute viel dichter, und mit den E-Bikes sind viele Radfahrer sehr schnell unterwegs. Deshalb habe ich meine Meinung geändert: Ohne Helm sollte heute niemand mehr aufs Rad steigen dürfen.",
+          "questions": [
+            {
+              "question": "Ist Karin für eine Helmpflicht?",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Ist Max für eine Helmpflicht?",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Ist Ursula für eine Helmpflicht?",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Ist Paul für eine Helmpflicht?",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Ist Andreas für eine Helmpflicht?",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Ist Nina für eine Helmpflicht?",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Ist Wolfgang für eine Helmpflicht?",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 0
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Yes. Too few people wear a helmet voluntarily, „deshalb brauchen wir ein Gesetz“.",
+            "de": "Ja. Karin schreibt: Zu wenige Menschen tragen freiwillig einen Helm, „deshalb brauchen wir ein Gesetz“."
+          },
+          {
+            "en": "No. „Das soll jeder selbst entscheiden.“ Safe cycle paths matter more to him.",
+            "de": "Nein. Max meint: „Das soll jeder selbst entscheiden.“ Sichere Radwege sind ihm wichtiger."
+          },
+          {
+            "en": "No. She always wears a helmet herself, but „Trotzdem halte ich nichts von einer Pflicht.“",
+            "de": "Nein. Ursula trägt selbst immer einen Helm, aber sie hält nichts von einer Pflicht."
+          },
+          {
+            "en": "Yes. After his accident he thinks „jeder sollte einen tragen müssen“.",
+            "de": "Ja. Nach seinem Unfall findet Paul: „Jeder sollte einen tragen müssen.“"
+          },
+          {
+            "en": "No. Although a law would help his business, he believes good advice works better, and people buy helmets voluntarily.",
+            "de": "Nein. Andreas würde mit einer Pflicht mehr verkaufen, aber er findet Beratung besser. Die Kunden kaufen dann freiwillig einen Helm."
+          },
+          {
+            "en": "Yes. „Eine Pflicht für alle wäre fair und klar.“",
+            "de": "Ja. Nina schreibt: „Eine Pflicht für alle wäre fair und klar.“"
+          },
+          {
+            "en": "Yes. He used to laugh at helmets but changed his mind: „Ohne Helm sollte heute niemand mehr aufs Rad steigen dürfen.“",
+            "de": "Ja. Früher hat Wolfgang über Helme gelacht. Heute sagt er: Ohne Helm soll niemand mehr Rad fahren dürfen."
+          }
+        ]
+      }
+    }
+  ]
+}

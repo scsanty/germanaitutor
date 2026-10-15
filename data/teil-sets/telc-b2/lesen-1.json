@@ -1,0 +1,178 @@
+{
+  "formatId": "telc-b2",
+  "partId": "lesen-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b2__lesen-1__s01",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Auf dem Dach eines Bürogebäudes in der Innenstadt summt es seit dem Frühjahr: Die Versicherungsgesellschaft, die dort ihren Sitz hat, hat vier Bienenvölker aufstellen lassen. Betreut werden sie von einem Hobbyimker, der die Kästen einmal pro Woche kontrolliert. Was zunächst wie ein Werbegag klang, hat sich als Erfolg erwiesen: Im August konnten die ersten 60 Kilogramm Honig geerntet werden. Die Gläser werden in der Kantine verkauft, der Erlös geht an einen Naturschutzverein. Fachleute betonen, dass Bienen in der Stadt oft sogar bessere Bedingungen vorfinden als auf dem Land, weil in Parks und Gärten fast das ganze Jahr über etwas blüht und kaum Pflanzenschutzmittel eingesetzt werden.",
+            "Totgesagte leben länger: Nach einer aktuellen Studie greifen Jugendliche zwischen 14 und 19 Jahren wieder häufiger zum Buch. 42 Prozent gaben an, mindestens einmal pro Woche in ihrer Freizeit zu lesen – fünf Prozentpunkte mehr als vor drei Jahren. Eine wichtige Rolle spielen dabei offenbar soziale Netzwerke, in denen junge Leute einander Romane empfehlen und kurze Videos über ihre Lieblingsbücher drehen. Besonders gefragt sind Fantasy- und Liebesromane. Viele Buchhandlungen haben reagiert und eigene Regale für die Titel eingerichtet, über die im Netz gerade alle sprechen. Ob der Trend anhält, ist allerdings offen: Die Forscher weisen darauf hin, dass Jungen nach wie vor deutlich seltener lesen als Mädchen.",
+            "Seit Januar arbeiten die 85 Beschäftigten eines Maschinenbauunternehmens in Schwaben nur noch von Montag bis Donnerstag – bei vollem Gehalt. Die Geschäftsführung will mit dem Modellversuch, der zunächst auf ein Jahr angelegt ist, herausfinden, ob ausgeruhte Mitarbeiter in weniger Zeit genauso viel schaffen. Die ersten Zwischenergebnisse sind ermutigend: Die Zahl der Krankheitstage ist gesunken, und die Produktion liegt auf dem Niveau des Vorjahres. Ein Nebeneffekt, mit dem kaum jemand gerechnet hatte: Auf ausgeschriebene Stellen bewerben sich plötzlich deutlich mehr Menschen als früher. Kritiker geben jedoch zu bedenken, dass sich das Modell nicht auf jede Branche übertragen lasse, etwa auf die Pflege oder den Einzelhandel.",
+            "Ein wackeliger Stuhl, ein Toaster, der nicht mehr heiß wird, eine Hose mit Loch: Im Reparaturcafé im Gemeindezentrum Nord wird jeden ersten Samstag im Monat geschraubt, gelötet und genäht. Ehrenamtliche Helferinnen und Helfer – darunter pensionierte Elektriker und eine Schneiderin – zeigen den Besuchern, wie sie ihre Sachen selbst wieder in Ordnung bringen können. Bezahlt wird nicht; wer möchte, wirft eine Spende in die Kasse. Die Initiatoren wollen damit ein Zeichen gegen die Wegwerfgesellschaft setzen. „Viele Geräte landen im Müll, obwohl nur ein kleines Teil kaputt ist“, sagt eine der Gründerinnen. Im vergangenen Jahr konnten so rund 70 Prozent der mitgebrachten Gegenstände gerettet werden.",
+            "Wer abends in Hamburg in den Zug steigt und morgens ausgeschlafen in Wien ankommt, spart nicht nur eine Hotelnacht, sondern verursacht auch deutlich weniger CO₂ als mit dem Flugzeug. Nachtzüge erleben in Europa ein überraschendes Comeback: Nachdem viele Verbindungen in den vergangenen Jahrzehnten eingestellt worden waren, kommen nun wieder neue Strecken hinzu. Die Nachfrage ist so groß, dass die Schlafwagenplätze an Wochenenden oft Wochen im Voraus ausgebucht sind. Ganz billig ist das Angebot allerdings nicht, und Verspätungen sorgen immer wieder für Ärger. Dennoch sind Verkehrsexperten überzeugt, dass der Nachtzug auf Strecken bis etwa 1.200 Kilometer eine echte Alternative zum Fliegen sein kann."
+          ],
+          "targets": [
+            "Bienen sterben in der Stadt schneller",
+            "Längeres Wochenende ohne Lohnverlust",
+            "Honig vom Bürodach",
+            "Kaputt heißt nicht wertlos",
+            "Schlafend ans Ziel",
+            "Bahn streicht Verbindungen ins Ausland",
+            "Jugendliche entdecken das Lesen neu",
+            "Neue Elektrogeräte werden immer billiger",
+            "Firmen finden kaum noch Bewerber",
+            "Bibliotheken schließen wegen Geldmangel"
+          ],
+          "answers": [
+            2,
+            6,
+            1,
+            3,
+            4
+          ],
+          "allowNone": false
+        },
+        "explanations": [
+          {
+            "en": "Text 1 is about bee colonies on the roof of an office building; \"im August konnten die ersten 60 Kilogramm Honig geerntet werden\" (c). Heading a is wrong: experts say bees often find better conditions in the city.",
+            "de": "In Text 1 stehen Bienen auf dem Dach eines Bürogebäudes, und man hat schon 60 Kilogramm Honig geerntet (c). Überschrift a passt nicht: Bienen geht es in der Stadt oft sogar besser."
+          },
+          {
+            "en": "Text 2: young people \"greifen … wieder häufiger zum Buch\"; 42 percent read every week, more than three years ago (g). Libraries are not mentioned.",
+            "de": "Text 2: Jugendliche lesen wieder häufiger Bücher, 42 Prozent lesen jede Woche (g). Von Bibliotheken steht nichts im Text."
+          },
+          {
+            "en": "Text 3: staff work only Monday to Thursday \"bei vollem Gehalt\", i.e. a longer weekend without losing pay (b). Heading i is the opposite: more people now apply.",
+            "de": "Text 3: Die Mitarbeiter arbeiten nur von Montag bis Donnerstag und bekommen das volle Gehalt (b). Überschrift i ist falsch, denn es bewerben sich jetzt mehr Menschen."
+          },
+          {
+            "en": "Text 4 describes a repair café that saves broken items: \"Viele Geräte landen im Müll, obwohl nur ein kleines Teil kaputt ist\" (d). Prices of new appliances are not discussed.",
+            "de": "Text 4 beschreibt ein Reparaturcafé. Kaputte Sachen werden repariert und nicht weggeworfen (d). Über Preise für neue Geräte spricht der Text nicht."
+          },
+          {
+            "en": "Text 5: you board in the evening and arrive \"morgens ausgeschlafen\"; night trains are making a comeback (e). Heading f is wrong: new routes are being added, not cut.",
+            "de": "Text 5: Man steigt abends in den Nachtzug und kommt morgens ausgeschlafen an (e). Überschrift f passt nicht, denn es kommen neue Strecken hinzu."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b2__lesen-1__s02",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Ab dem kommenden Frühjahr dürfen in der Altstadt von Lindenau keine privaten Autos mehr fahren. Das hat der Stadtrat am Dienstag nach langer Diskussion mit knapper Mehrheit beschlossen. Ausnahmen gibt es nur für Anwohner mit Parkausweis, Lieferfahrzeuge am frühen Morgen sowie Taxis und Rettungsdienste. Die bisherigen Parkplätze am Marktplatz sollen in Grünflächen, Sitzecken und Fahrradständer umgewandelt werden. Während Umweltverbände den Beschluss begrüßen, fürchten einige Geschäftsleute, dass Kunden aus dem Umland künftig wegbleiben. Die Stadt will deshalb einen kostenlosen Shuttlebus einrichten, der die Parkhäuser am Stadtrand mit dem Zentrum verbindet.",
+            "Wer abends im Bett noch lange auf das Display schaut, schläft schlechter – das bestätigt eine neue Untersuchung der Universitätsklinik. Die Forscher haben über drei Monate das Schlafverhalten von 600 Erwachsenen beobachtet. Das Ergebnis: Teilnehmer, die in der letzten Stunde vor dem Einschlafen ihr Smartphone nutzten, brauchten im Durchschnitt 20 Minuten länger, um einzuschlafen, und wachten nachts häufiger auf. Schuld sei nicht nur das helle Licht, sondern auch die ständige Erreichbarkeit: Wer kurz vor dem Schlafengehen noch dienstliche Nachrichten liest, kann oft nicht abschalten. Die Ärzte empfehlen, das Handy nachts aus dem Schlafzimmer zu verbannen.",
+            "Viele junge Familien wohnen weit entfernt von den eigenen Eltern. Gleichzeitig gibt es ältere Menschen, die gern Zeit mit Kindern verbringen würden, aber keine eigenen Enkel in der Nähe haben. Ein Verein in Kassel bringt beide Seiten zusammen: Er vermittelt sogenannte Leihgroßeltern, die einmal pro Woche Kinder aus der Nachbarschaft vom Kindergarten abholen, mit ihnen spielen oder vorlesen. Bevor es losgeht, lernen sich alle bei mehreren Treffen in Ruhe kennen. Inzwischen sind über 50 solche Paarungen entstanden, und manche Beziehungen bestehen schon seit Jahren. „Für uns ist Oma Gisela längst ein Teil der Familie“, erzählt eine Mutter.",
+            "Eine Gurke, die zu krumm ist, oder Äpfel mit kleinen Flecken: Solches Obst und Gemüse schafft es normalerweise nicht in den Handel, weil es nicht der Norm entspricht. Eine Supermarktkette aus Norddeutschland will das jetzt ändern. In 120 Filialen werden Waren mit Schönheitsfehlern unter dem Namen „Echt natürlich“ verkauft – und zwar rund 30 Prozent günstiger als die übliche Ware. Geschmacklich gebe es keinen Unterschied, betont das Unternehmen. Die Landwirte freuen sich, dass sie einen größeren Teil ihrer Ernte verkaufen können. Ziel ist es, weniger Lebensmittel wegzuwerfen.",
+            "Seit das Stadtmuseum am ersten Sonntag jedes Monats keinen Eintritt mehr verlangt, hat sich an diesen Tagen die Zahl der Besucher fast verdreifacht. Besonders auffällig: Es kommen viele Menschen, die bisher selten oder nie ein Museum betreten haben, darunter auffallend viele Familien mit Kindern und junge Erwachsene. Das Museum bietet an den kostenlosen Sonntagen zusätzlich kurze Führungen und Mitmachaktionen an. Die Einnahmen, die dadurch verloren gehen, übernimmt ein örtlicher Förderverein. Die Museumsleitung spricht von einem vollen Erfolg und denkt bereits darüber nach, das Angebot auf einen weiteren Tag im Monat auszuweiten."
+          ],
+          "targets": [
+            "Parkgebühren in der Innenstadt steigen",
+            "Krummes Gemüse zum kleinen Preis",
+            "Jugendliche schlafen heute länger als früher",
+            "Ersatzgroßeltern gesucht und gefunden",
+            "Museum muss wegen Renovierung schließen",
+            "Das Handy raubt den Schlaf",
+            "Freier Eintritt lockt neues Publikum",
+            "Altstadt gehört bald Fußgängern und Radfahrern",
+            "Bauern fordern höhere Preise für ihr Obst",
+            "Kindergärten fehlen Erzieherinnen"
+          ],
+          "answers": [
+            7,
+            5,
+            3,
+            1,
+            6
+          ],
+          "allowNone": false
+        },
+        "explanations": [
+          {
+            "en": "Text 1: \"dürfen in der Altstadt … keine privaten Autos mehr fahren\"; car parks become green spaces and bicycle stands (h). Parking fees are not mentioned.",
+            "de": "Text 1: In der Altstadt dürfen bald keine privaten Autos mehr fahren. Aus Parkplätzen werden Grünflächen und Fahrradständer (h). Von Parkgebühren steht nichts im Text."
+          },
+          {
+            "en": "Text 2: people who used their smartphone in the last hour before bed needed 20 minutes longer to fall asleep and woke up more often (f). The study is about adults, not about teenagers sleeping longer.",
+            "de": "Text 2: Wer vor dem Schlafen das Smartphone benutzt, schläft später ein und wacht öfter auf (f). Die Studie handelt von Erwachsenen, nicht von Jugendlichen."
+          },
+          {
+            "en": "Text 3: an association arranges \"Leihgroßeltern\" for families who live far from their own parents, and over 50 pairings exist (d). Staff shortages in kindergartens are not the topic.",
+            "de": "Text 3: Ein Verein vermittelt Leihgroßeltern an Familien. Über 50 Paare haben sich schon gefunden (d). Um fehlende Erzieherinnen geht es nicht."
+          },
+          {
+            "en": "Text 4: fruit and vegetables with blemishes are sold \"rund 30 Prozent günstiger\" (b). Farmers are pleased to sell more of their harvest; they do not demand higher prices.",
+            "de": "Text 4: Obst und Gemüse mit kleinen Fehlern kostet etwa 30 Prozent weniger (b). Die Bauern verlangen keine höheren Preise, sie freuen sich."
+          },
+          {
+            "en": "Text 5: since entry is free on the first Sunday of the month, visitor numbers have almost tripled, with many people who rarely went to museums (g). The museum is not closing.",
+            "de": "Text 5: Am ersten Sonntag im Monat ist der Eintritt frei. Jetzt kommen viel mehr und auch neue Besucher (g). Das Museum schließt nicht."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b2__lesen-1__s03",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Jeden Morgen eine Stunde mit dem Auto in die Stadt und abends wieder zurück – für viele Berufstätige auf dem Land ist das Alltag. In der Gemeinde Altenbrück gibt es seit Kurzem eine Alternative: In der ehemaligen Sparkassenfiliale am Dorfplatz ist ein Gemeinschaftsbüro entstanden. Wer dort einen Schreibtisch mietet, bekommt schnelles Internet, einen Drucker und eine Kaffeeküche. Genutzt wird das Angebot vor allem von Angestellten, die einige Tage pro Woche nicht im Firmenbüro sein müssen, sich zu Hause aber nicht konzentrieren können. „Ich spare mir zehn Stunden Fahrt pro Woche und habe trotzdem Kollegen um mich“, sagt eine Nutzerin.",
+            "Am zweiten Maiwochenende sind wieder alle Naturfreunde aufgerufen, eine Stunde lang die Vögel in ihrem Garten, auf dem Balkon oder im Park zu zählen. Die Ergebnisse können online oder per Postkarte an den Naturschutzbund gemeldet werden. Im vergangenen Jahr beteiligten sich mehr als 50.000 Menschen an der Aktion. Für die Wissenschaft sind diese Daten sehr wertvoll, denn so viele Beobachtungen könnten Forscher allein niemals sammeln. Die Zählungen der letzten Jahre zeigen zum Beispiel, dass der Haussperling in vielen Städten seltener wird. Vorkenntnisse sind übrigens nicht nötig: Eine Zählhilfe mit Bildern der häufigsten Arten kann man kostenlos herunterladen.",
+            "Sie möchten Ihr Spanisch verbessern und sprechen selbst gut Deutsch? Dann sind Sie beim Tandemprogramm des Sprachenzentrums richtig. Das Prinzip ist einfach: Zwei Personen mit unterschiedlichen Muttersprachen treffen sich regelmäßig und bringen sich gegenseitig ihre Sprache bei – die Hälfte der Zeit wird in der einen, die andere Hälfte in der anderen Sprache gesprochen. Die Uni vermittelt passende Partner, und zu Beginn des Semesters gibt es einen Workshop mit Tipps, wie man ein Tandem sinnvoll gestaltet. Das Angebot ist kostenlos und steht allen Studierenden und Beschäftigten der Hochschule offen. Derzeit werden besonders Partner für Arabisch und Japanisch gesucht.",
+            "Die Sommer werden heißer – und die Stadt reagiert darauf. Der neue Hitzeaktionsplan sieht unter anderem vor, an 40 Stellen in der Innenstadt kostenlose Trinkbrunnen aufzustellen und Bushaltestellen mit Sonnendächern auszustatten. Auf Schulhöfen sollen Bäume gepflanzt werden, damit die Kinder in den Pausen Schatten finden. Außerdem werden ältere Menschen, die allein leben, an besonders heißen Tagen von Ehrenamtlichen angerufen, um sicherzugehen, dass es ihnen gut geht. Eine Karte im Internet zeigt zudem „kühle Orte“ wie Kirchen und Bibliotheken, in denen man sich bei großer Hitze aufhalten kann.",
+            "Regenschirme, Fahrräder, Brillen, sogar ein Saxofon: Was im Fundbüro der Stadt landet und innerhalb von sechs Monaten nicht abgeholt wird, kommt unter den Hammer. Am Samstag ist es wieder so weit. Ab 10 Uhr werden in der Turnhalle der Gesamtschule über 300 Gegenstände versteigert. Die Gebote beginnen meist bei wenigen Euro, sodass man durchaus ein Schnäppchen machen kann. Besonders beliebt sind erfahrungsgemäß die Fahrräder. Interessierte können sich die Sachen ab 9 Uhr ansehen. Der Erlös fließt in die Stadtkasse. Bezahlt werden muss bar, und die ersteigerten Stücke müssen sofort mitgenommen werden."
+          ],
+          "targets": [
+            "Universität streicht Sprachkurse",
+            "Verlorenes zum Schnäppchenpreis",
+            "Immer mehr Menschen ziehen in die Großstadt",
+            "Vögel zählen für die Forschung",
+            "Freibäder öffnen in diesem Jahr früher",
+            "Schutz vor großer Hitze",
+            "Arbeitsplatz im Dorf statt langer Fahrt",
+            "Seltene Vogelart wieder entdeckt",
+            "Voneinander Sprachen lernen",
+            "Immer mehr Fahrräder werden gestohlen"
+          ],
+          "answers": [
+            6,
+            3,
+            8,
+            5,
+            1
+          ],
+          "allowNone": false
+        },
+        "explanations": [
+          {
+            "en": "Text 1: a shared office in the village saves commuters a long drive; \"Ich spare mir zehn Stunden Fahrt pro Woche\" (g). Nothing says people move to big cities.",
+            "de": "Text 1: Im Dorf gibt es jetzt ein Gemeinschaftsbüro. Man muss nicht mehr lange in die Stadt fahren (g). Dass Menschen in die Großstadt ziehen, steht nicht im Text."
+          },
+          {
+            "en": "Text 2: volunteers count birds, and \"für die Wissenschaft sind diese Daten sehr wertvoll\" (d). Heading h is wrong: the text says the house sparrow is becoming rarer, not that a rare species was found again.",
+            "de": "Text 2: Viele Menschen zählen Vögel, und die Daten sind wertvoll für die Wissenschaft (d). Eine seltene Vogelart wurde nicht wieder entdeckt."
+          },
+          {
+            "en": "Text 3: in a tandem two people with different native languages \"bringen sich gegenseitig ihre Sprache bei\" (i). The university offers this for free; it is not cutting courses.",
+            "de": "Text 3: Im Tandem lernen zwei Personen gegenseitig ihre Sprachen (i). Die Uni streicht keine Kurse, das Angebot ist kostenlos."
+          },
+          {
+            "en": "Text 4: the city's \"Hitzeaktionsplan\" adds drinking fountains, shade and calls to older people on hot days (f). Swimming pools are not mentioned.",
+            "de": "Text 4: Die Stadt hat einen Plan gegen Hitze: Trinkbrunnen, Schatten und Anrufe bei älteren Menschen (f). Freibäder kommen im Text nicht vor."
+          },
+          {
+            "en": "Text 5: unclaimed items from the lost property office are auctioned, and \"man [kann] durchaus ein Schnäppchen machen\" (b). Bicycles are popular at the auction, but theft is not the topic.",
+            "de": "Text 5: Fundsachen werden versteigert, und man kann sie billig kaufen (b). Es geht nicht um gestohlene Fahrräder."
+          }
+        ]
+      }
+    }
+  ]
+}

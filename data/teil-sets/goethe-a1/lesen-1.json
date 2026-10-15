@@ -1,0 +1,226 @@
+{
+  "formatId": "goethe-a1",
+  "partId": "lesen-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-a1__lesen-1__s01",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Text 1\n\nLiebe Jana,\nmein Auto ist kaputt. Es ist jetzt in der Werkstatt, bis Donnerstag. Kannst du mich morgen früh zur Arbeit mitnehmen? Ich muss um halb acht im Büro sein. Ich warte um sieben Uhr vor meinem Haus. Am Abend fahre ich mit dem Bus nach Hause, das ist kein Problem.\nDanke und liebe Grüße\nClara\n\nText 2\n\nHallo Paul,\nich bin heute Nachmittag beim Friseur und komme um fünf Uhr nach Hause. Das Essen steht im Kühlschrank. Du musst es nur warm machen. Bitte mach zuerst deine Hausaufgaben, dann kannst du mit Leon spielen. Papa holt dich um sechs Uhr zum Fußballtraining ab. Deine Sportschuhe stehen im Flur.\nKuss\nMama",
+          "questions": [
+            {
+              "question": "Claras Auto ist bis Donnerstag in der Werkstatt.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Clara möchte am Abend mit Jana nach Hause fahren.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Die Mutter ist am Nachmittag zu Hause.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Paul soll zuerst die Hausaufgaben machen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Paul fährt mit Mama zum Fußballtraining.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Clara writes: \"Es ist jetzt in der Werkstatt, bis Donnerstag.\"",
+            "de": "Clara schreibt: „Es ist jetzt in der Werkstatt, bis Donnerstag.“ Das ist richtig."
+          },
+          {
+            "en": "In the evening Clara goes home alone: \"Am Abend fahre ich mit dem Bus nach Hause.\" She only needs a lift in the morning.",
+            "de": "Clara schreibt: „Am Abend fahre ich mit dem Bus nach Hause.“ Sie fährt nicht mit Jana. Das ist falsch."
+          },
+          {
+            "en": "The mother is out in the afternoon: \"ich bin heute Nachmittag beim Friseur und komme um fünf Uhr nach Hause.\"",
+            "de": "Mama ist am Nachmittag beim Friseur. Sie kommt erst um fünf Uhr nach Hause. Das ist falsch."
+          },
+          {
+            "en": "The note says: \"Bitte mach zuerst deine Hausaufgaben, dann kannst du mit Leon spielen.\"",
+            "de": "Mama schreibt: „Bitte mach zuerst deine Hausaufgaben.“ Das ist richtig."
+          },
+          {
+            "en": "His father takes him: \"Papa holt dich um sechs Uhr zum Fußballtraining ab.\"",
+            "de": "Nicht Mama, sondern Papa fährt mit Paul: „Papa holt dich um sechs Uhr zum Fußballtraining ab.“ Das ist falsch."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a1__lesen-1__s02",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Text 1\n\nSehr geehrte Frau Weber,\nunser Termin am Mittwoch um 10 Uhr geht leider nicht. Ich bin an diesem Tag in Frankfurt. Haben Sie am Donnerstag Zeit? Ich kann um 9 Uhr oder um 14 Uhr. Bitte bringen Sie die neue Preisliste mit. Bitte antworten Sie mir bis morgen.\nMit freundlichen Grüßen\nMurat Akın\n\nText 2\n\nHallo Lena,\nich habe zwei Karten für das Konzert am Freitag. Meine Schwester kann nicht mitkommen, sie muss in der Nacht arbeiten. Möchtest du mit mir gehen? Das Konzert beginnt um 20 Uhr, aber wir können vorher noch zusammen essen. Die Karte kostet dich nichts, ich habe die Karten gewonnen. Ruf mich bitte an!\nTim",
+          "questions": [
+            {
+              "question": "Herr Akın ist am Mittwoch in Frankfurt.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Frau Weber soll eine Preisliste mitbringen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Tims Schwester geht mit ins Konzert.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Das Konzert ist am Freitagabend.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Lena muss für die Karte bezahlen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "He cancels Wednesday because \"Ich bin an diesem Tag in Frankfurt.\"",
+            "de": "Herr Akın schreibt: „Ich bin an diesem Tag in Frankfurt.“ Der Tag ist Mittwoch. Das ist richtig."
+          },
+          {
+            "en": "He asks her: \"Bitte bringen Sie die neue Preisliste mit.\"",
+            "de": "Herr Akın schreibt: „Bitte bringen Sie die neue Preisliste mit.“ Das ist richtig."
+          },
+          {
+            "en": "His sister cannot come: \"Meine Schwester kann nicht mitkommen, sie muss in der Nacht arbeiten.\"",
+            "de": "Tim schreibt: „Meine Schwester kann nicht mitkommen.“ Das ist falsch."
+          },
+          {
+            "en": "The concert is on Friday and \"beginnt um 20 Uhr\", so it is on Friday evening.",
+            "de": "Das Konzert ist am Freitag und „beginnt um 20 Uhr“. Das ist am Abend. Das ist richtig."
+          },
+          {
+            "en": "Tim won the tickets: \"Die Karte kostet dich nichts, ich habe die Karten gewonnen.\"",
+            "de": "Tim schreibt: „Die Karte kostet dich nichts.“ Lena muss nicht bezahlen. Das ist falsch."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a1__lesen-1__s03",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Text 1\n\nLieber Ahmed,\nwir freuen uns sehr auf deinen Besuch! Du kommst am Montag um 16:40 Uhr in Leipzig an, richtig? Ich arbeite leider bis 17 Uhr. Darum holt dich mein Mann Jürgen am Bahnhof ab. Er wartet am Gleis. Du schläfst im Zimmer von unserer Tochter. Sie ist gerade drei Monate in Kanada.\nBis Montag!\nBirgit\n\nText 2\n\nLiebe Spielerinnen und Spieler,\nunser Volleyballtraining ist ab nächster Woche am Dienstag, nicht mehr am Montag. Die Zeit bleibt gleich: von 19 bis 21 Uhr. Neu ist auch der Ort: Wir spielen jetzt in der Sporthalle der Lindenschule. Bitte bringt Hallenschuhe mit. Nach dem Training können wir noch zusammen etwas trinken.\nViele Grüße\nThomas",
+          "questions": [
+            {
+              "question": "Birgit holt Ahmed am Bahnhof ab.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Die Tochter von Birgit ist im Moment nicht zu Hause.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Das Training ist jetzt am Montag.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Das Training beginnt um 19 Uhr.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Die Spieler sollen Hallenschuhe mitbringen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Birgit works until 17:00, so her husband goes: \"Darum holt dich mein Mann Jürgen am Bahnhof ab.\"",
+            "de": "Birgit arbeitet bis 17 Uhr. Ihr Mann Jürgen holt Ahmed ab. Das ist falsch."
+          },
+          {
+            "en": "Ahmed sleeps in the daughter's room because \"Sie ist gerade drei Monate in Kanada.\"",
+            "de": "Die Tochter ist „gerade drei Monate in Kanada“. Sie ist nicht zu Hause. Das ist richtig."
+          },
+          {
+            "en": "The training moves to Tuesday: \"ab nächster Woche am Dienstag, nicht mehr am Montag.\"",
+            "de": "Das Training ist jetzt „am Dienstag, nicht mehr am Montag“. Das ist falsch."
+          },
+          {
+            "en": "The time stays the same: \"von 19 bis 21 Uhr.\"",
+            "de": "Thomas schreibt: „Die Zeit bleibt gleich: von 19 bis 21 Uhr.“ Das ist richtig."
+          },
+          {
+            "en": "Thomas writes: \"Bitte bringt Hallenschuhe mit.\"",
+            "de": "Thomas schreibt: „Bitte bringt Hallenschuhe mit.“ Das ist richtig."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "formatId": "telc-b1",
+  "partId": "lesen-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b1__lesen-1__s01",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Text 1",
+            "Text 2",
+            "Text 3",
+            "Text 4",
+            "Text 5"
+          ],
+          "targets": [
+            "Überschrift a",
+            "Überschrift b",
+            "Überschrift c",
+            "Überschrift d",
+            "Überschrift e",
+            "Überschrift f",
+            "Überschrift g",
+            "Überschrift h",
+            "Überschrift i",
+            "Überschrift j"
+          ],
+          "answers": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "allowNone": false
+        },
+        "explanations": [
+          {
+            "en": "Fixture explanation 1.",
+            "de": "Fixture-Erklärung 1."
+          },
+          {
+            "en": "Fixture explanation 2.",
+            "de": "Fixture-Erklärung 2."
+          },
+          {
+            "en": "Fixture explanation 3.",
+            "de": "Fixture-Erklärung 3."
+          },
+          {
+            "en": "Fixture explanation 4.",
+            "de": "Fixture-Erklärung 4."
+          },
+          {
+            "en": "Fixture explanation 5.",
+            "de": "Fixture-Erklärung 5."
+          }
+        ]
+      }
+    }
+  ]
+}

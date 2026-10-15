@@ -1,5 +1,5 @@
 {
-  "seedVersion": "7",
+  "seedVersion": "9",
   "formatVersion": 3,
   "track": "generic",
   "level": "B1",
@@ -1413,6 +1413,144 @@
           "en": "Read the text. What is the stated goal of car-free city centers?",
           "de": "Lies den Text. Welches Ziel haben autofreie Innenstädte laut Text?"
         }
+      }
+    },
+    {
+      "id": "b1-reading-argumentative-articles__ex4",
+      "lessonId": "b1-reading-argumentative-articles",
+      "track": "generic",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the commentary. Find the main thesis, the arguments and the counter-argument. Choose the right answer for each question.",
+          "de": "Lies den Kommentar. Finde die Hauptthese, die Argumente und das Gegenargument. Wähle für jede Frage die richtige Antwort."
+        },
+        "passage": "Handyverbot an Schulen – eine gute Idee?\n\nImmer mehr Schulen verbieten Smartphones im Unterricht und in den Pausen. Die Gründe sind bekannt: Viele Lehrkräfte berichten, dass Schülerinnen und Schüler sich schlechter konzentrieren, wenn das Handy auf dem Tisch liegt. Außerdem gibt es in den Pausen weniger Gespräche, weil viele nur auf ihren Bildschirm schauen.\n\nEinerseits kann ich diese Sorgen gut verstehen. Andererseits halte ich ein komplettes Verbot für falsch. Das Smartphone gehört heute zum Alltag junger Menschen, und die Schule sollte zeigen, wie man es sinnvoll nutzt. Wer nie lernt, Informationen aus dem Internet kritisch zu prüfen, glaubt später leichter falschen Nachrichten.\n\nIm Gegensatz dazu argumentieren die Befürworter des Verbots, dass Kinder ohnehin genug Zeit am Bildschirm verbringen. Das stimmt zwar, dennoch löst ein Verbot das Problem nicht: Nach der Schule ist das Handy sofort wieder da.\n\nMeiner Meinung nach brauchen Schulen klare Regeln statt Verbote. Im Unterricht bleibt das Handy in der Tasche, außer die Lehrkraft plant eine Aufgabe damit. In den Pausen könnte es handyfreie Zonen geben, zum Beispiel auf dem Schulhof. So lernen Jugendliche, sich selbst Grenzen zu setzen.",
+        "questions": [
+          {
+            "question": "Welche Hauptthese vertritt der Autor?",
+            "options": [
+              "Smartphones sollten an Schulen komplett verboten werden.",
+              "Schulen brauchen klare Regeln für Handys, aber kein komplettes Verbot.",
+              "Schüler sollten ihr Handy in der Schule jederzeit benutzen dürfen."
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Was berichten viele Lehrkräfte?",
+            "options": [
+              "Schüler konzentrieren sich schlechter, wenn das Handy auf dem Tisch liegt.",
+              "Schüler machen wegen des Handys weniger Hausaufgaben.",
+              "Handys helfen den Schülern im Unterricht."
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Warum soll die Schule laut Autor den Umgang mit dem Smartphone lehren?",
+            "options": [
+              "Damit die Lehrkräfte weniger Arbeit haben.",
+              "Damit Schüler in den Pausen mehr miteinander sprechen.",
+              "Damit Jugendliche lernen, Informationen kritisch zu prüfen."
+            ],
+            "correctIndex": 2
+          },
+          {
+            "question": "Welches Argument der Befürworter eines Verbots nennt der Text?",
+            "options": [
+              "Handys sind für viele Familien zu teuer.",
+              "Kinder verbringen ohnehin viel Zeit am Bildschirm.",
+              "Handys stören vor allem den Sportunterricht."
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Was schlägt der Autor für die Pausen vor?",
+            "options": [
+              "Handyfreie Bereiche, zum Beispiel auf dem Schulhof",
+              "Ein Handyverbot auf dem ganzen Schulgelände",
+              "Pausen nur noch im Klassenzimmer"
+            ],
+            "correctIndex": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "b1-reading-argumentative-articles__ex5",
+      "lessonId": "b1-reading-argumentative-articles",
+      "track": "generic",
+      "type": "cloze",
+      "content": {
+        "instruction": {
+          "en": "Read the article. Choose the connector that fits the logic of the argument in each gap.",
+          "de": "Lies den Artikel. Wähle für jede Lücke das Signalwort, das zur Argumentation passt."
+        },
+        "text": "Tempo 30 in der ganzen Stadt?\n\nViele Städte möchten innerorts nur noch Tempo 30 erlauben. {{1}} wird der Verkehr dadurch leiser und sicherer, {{2}} brauchen Autofahrer länger für ihre Wege. Kritiker sagen außerdem, dass Busse ihren Fahrplan nicht mehr einhalten können. {{3}} zeigen erste Erfahrungen aus mehreren Städten, dass sich die Fahrzeiten kaum verändern, {{4}} man an Ampeln ohnehin oft warten muss.\n\n{{5}} bleiben viele Autofahrer skeptisch. Für sie ist Tempo 30 ein Symbol für eine Politik gegen das Auto. In einer Umfrage der Lokalzeitung lehnte rund die Hälfte der befragten Autofahrer das neue Tempo ab. Die Befürworter {{6}} betonen, dass weniger Lärm allen Bewohnern hilft, auch den Autofahrern selbst, wenn sie zu Hause sind. Außerdem passieren bei niedrigerem Tempo weniger schwere Unfälle.\n\nDie Diskussion zeigt: Beide Seiten haben nachvollziehbare Gründe. {{7}} empfehlen Verkehrsexperten, das neue Tempo zuerst in einzelnen Stadtteilen zu testen und die Ergebnisse genau auszuwerten. Erst danach sollte der Stadtrat endgültig entscheiden.",
+        "gaps": [
+          {
+            "mode": "select",
+            "options": [
+              "Einerseits",
+              "Deshalb",
+              "Weil"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "mode": "select",
+            "options": [
+              "außerdem",
+              "andererseits",
+              "deshalb"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "mode": "select",
+            "options": [
+              "Deshalb",
+              "Außerdem",
+              "Im Gegensatz dazu"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "mode": "select",
+            "options": [
+              "obwohl",
+              "weil",
+              "damit"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "mode": "select",
+            "options": [
+              "Dennoch",
+              "Weil",
+              "Deshalb"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "mode": "select",
+            "options": [
+              "deshalb",
+              "dagegen",
+              "obwohl"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "mode": "select",
+            "options": [
+              "Obwohl",
+              "Einerseits",
+              "Aus diesen Gründen"
+            ],
+            "correctIndex": 2
+          }
+        ]
       }
     },
     {

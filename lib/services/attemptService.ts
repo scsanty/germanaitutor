@@ -125,9 +125,9 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
     exercise: Exercise,
     answer: LessonAnswer,
     level: CefrLevel
-  ): Promise<{ result: GradeResult; feedback: LocalizedText | null }> {
+  ): Promise<{ result: GradeResult; feedback: LocalizedText | null; itemResults?: boolean[] }> {
     const graded = await gradeExerciseAnswer(exercise, answer, level, { gradeFreeText: gradeFree });
-    if (graded.ok) return { result: graded.result, feedback: graded.feedback };
+    if (graded.ok) return { result: graded.result, feedback: graded.feedback, itemResults: graded.itemResults };
     if (graded.reason === 'bad_request') throw new AttemptError(graded.message, 'bad_request');
     throw new AttemptError(graded.message, 'grading_failed', graded.code, graded.params);
   }
@@ -194,7 +194,7 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
     const lesson = getUnlockedLesson(exercise.lessonId);
     if (source === 'lesson') assertLessonOpen(lesson.id);
     if (source === 'queue') assertDueInQueue(exercise.id, localDate(now()));
-    const { result, feedback } = await grade(exercise, answer, lesson.sourceLevel);
+    const { result, feedback, itemResults } = await grade(exercise, answer, lesson.sourceLevel);
     const answeredAt = now();
     const at = answeredAt.toISOString();
     const today = localDate(answeredAt);
@@ -233,6 +233,7 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
         passedExerciseIds: progress.passedExerciseIds(lesson.id),
         lessonCompleted: wasComplete || justCompleted,
         justCompleted,
+        ...(itemResults ? { itemResults } : {}),
       };
     })();
   }

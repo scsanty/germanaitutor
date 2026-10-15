@@ -1,5 +1,5 @@
 {
-  "seedVersion": "7",
+  "seedVersion": "9",
   "formatVersion": 3,
   "track": "telc",
   "level": "C1",
@@ -831,6 +831,39 @@
       }
     },
     {
+      "id": "c1-telc-leseverstehen-teil1-sachtext-global__ex4",
+      "lessonId": "c1-telc-leseverstehen-teil1-sachtext-global",
+      "track": "telc",
+      "type": "matching",
+      "content": {
+        "instruction": {
+          "en": "Read the four sections of the article about traffic noise. Which subheading captures the central claim of each section? Two subheadings are left over.",
+          "de": "Lesen Sie die vier Abschnitte des Sachtextes über Verkehrslärm. Welche Zwischenüberschrift trifft die Kernaussage des jeweiligen Abschnitts? Zwei Zwischenüberschriften bleiben übrig."
+        },
+        "items": [
+          "Abschnitt A: Lange Zeit galt Verkehrslärm in erster Linie als Frage des Komforts. Wer sich über laute Straßen beschwerte, wurde nicht selten als überempfindlich abgetan, und die ersten Lärmschutzvorschriften zielten vor allem darauf, Konflikte zwischen Nachbarn zu schlichten. Erst als epidemiologische Langzeitstudien Zusammenhänge zwischen dauerhafter Beschallung und Herz-Kreislauf-Erkrankungen nachwiesen, verschob sich die Wahrnehmung: Heute gilt Umgebungslärm in Europa als einer der bedeutendsten umweltbedingten Gesundheitsfaktoren.",
+          "Abschnitt B: Besonders tückisch ist nächtlicher Lärm, weil er seine Wirkung entfaltet, ohne dass die Betroffenen etwas davon mitbekommen. Auch wer nicht aufwacht, reagiert auf vorbeifahrende Lastwagen mit kurzfristig erhöhtem Puls und einer vermehrten Ausschüttung von Stresshormonen. Viele Menschen geben in Befragungen an, sich an den Lärm gewöhnt zu haben – messbar ist eine solche Gewöhnung auf der Ebene des vegetativen Nervensystems jedoch kaum.",
+          "Abschnitt C: Hinzu kommt eine soziale Dimension, die in der Debatte häufig übersehen wird. Wohnungen an stark befahrenen Hauptstraßen sind in der Regel günstiger, weshalb dort überproportional viele Haushalte mit geringem Einkommen leben. Diese sind somit nicht nur höheren Belastungen ausgesetzt, sondern verfügen zugleich seltener über die Mittel, sich durch Schallschutzfenster oder einen Umzug zu entlasten.",
+          "Abschnitt D: An Instrumenten zur Lärmminderung mangelt es nicht: Tempo-30-Zonen, lärmarme Fahrbahnbeläge und Schallschutzwände senken die Pegel nachweislich. Doch jede dieser Maßnahmen hat ihren Preis. Geschwindigkeitsbegrenzungen stoßen auf den Widerstand von Pendlern und Lieferdiensten, offenporiger Asphalt verliert nach einigen Jahren an Wirkung, und Wände zerschneiden gewachsene Stadtquartiere. Lärmschutz erweist sich damit weniger als technisches denn als politisches Abwägungsproblem."
+        ],
+        "targets": [
+          "Ungleich verteilte Belastung: Wer an lauten Straßen wohnt",
+          "Leise Motoren: Die Autoindustrie als Vorreiterin des Lärmschutzes",
+          "Vom bloßen Ärgernis zum anerkannten Gesundheitsrisiko",
+          "Unbemerkte Reaktionen des Körpers im Schlaf",
+          "Wirksame Maßnahmen und ihre Zielkonflikte",
+          "Wie Schlafmangel die Leistungsfähigkeit am Tag mindert"
+        ],
+        "answers": [
+          2,
+          3,
+          0,
+          4
+        ],
+        "allowNone": false
+      }
+    },
+    {
       "id": "c1-telc-leseverstehen-teil2-textrekonstruktion__ex0",
       "lessonId": "c1-telc-leseverstehen-teil2-textrekonstruktion",
       "track": "telc",
@@ -883,6 +916,105 @@
       }
     },
     {
+      "id": "c1-telc-leseverstehen-teil2-textrekonstruktion__ex4",
+      "lessonId": "c1-telc-leseverstehen-teil2-textrekonstruktion",
+      "track": "telc",
+      "type": "cloze",
+      "content": {
+        "instruction": {
+          "en": "Reconstruct the text: which of the sentences in the box belongs in each gap? Use the pronouns, connectors and repeated ideas around each gap. Two sentences are left over.",
+          "de": "Rekonstruieren Sie den Text: Welcher Satz aus dem Kasten gehört in welche Lücke? Nutzen Sie Pronomen, Konnektoren und Wiederaufnahmen vor und nach der Lücke. Zwei Sätze bleiben übrig."
+        },
+        "text": "Jahrzehntelang galt es als ausgemacht, dass Mehrsprachigkeit nicht nur kommunikative, sondern auch kognitive Vorteile mit sich bringt. Zahlreiche Studien schienen zu belegen, dass zweisprachig aufgewachsene Kinder bei Aufgaben, die das Unterdrücken irrelevanter Informationen erfordern, besser abschneiden als einsprachige Gleichaltrige. {{1}} Wer ständig zwischen zwei Sprachsystemen wählen müsse, trainiere gewissermaßen nebenbei die exekutiven Funktionen des Gehirns.\n\nIn den vergangenen Jahren ist dieses Bild jedoch ins Wanken geraten. {{2}} Auffällig war zudem, dass vor allem Untersuchungen mit positivem Ergebnis veröffentlicht worden waren, während Studien ohne messbaren Effekt häufig in der Schublade verschwanden. {{3}}\n\nDaraus zu schließen, Mehrsprachigkeit sei kognitiv bedeutungslos, wäre allerdings voreilig. {{4}} Zudem lassen sich Vorteile, die über das Sprachliche hinausgehen – etwa der Zugang zu anderen Kulturen oder bessere Chancen auf dem Arbeitsmarkt –, mit Reaktionszeittests ohnehin nicht erfassen.",
+        "bank": [
+          "Diese Verzerrung dürfte dazu beigetragen haben, dass das Ausmaß des Effekts lange überschätzt wurde.",
+          "Folglich raten Fachleute inzwischen dazu, Kinder ausschließlich einsprachig zu erziehen.",
+          "Groß angelegte Replikationsstudien mit mehreren Tausend Teilnehmenden konnten den vermeintlichen Vorsprung nicht bestätigen.",
+          "Ähnliche Ergebnisse erbrachten Studien zur Wirkung von Musikunterricht auf die Rechenleistung von Grundschulkindern.",
+          "Erklärt wurde dieser Befund mit einem permanenten Kontrolltraining.",
+          "Einige Forschende vermuten, dass sich positive Effekte erst im höheren Alter zeigen, etwa in einem späteren Auftreten von Demenzsymptomen."
+        ],
+        "gaps": [
+          {
+            "mode": "bank",
+            "answer": 4
+          },
+          {
+            "mode": "bank",
+            "answer": 2
+          },
+          {
+            "mode": "bank",
+            "answer": 0
+          },
+          {
+            "mode": "bank",
+            "answer": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "c1-telc-leseverstehen-teil2-textrekonstruktion__ex5",
+      "lessonId": "c1-telc-leseverstehen-teil2-textrekonstruktion",
+      "track": "telc",
+      "type": "cloze",
+      "content": {
+        "instruction": {
+          "en": "Choose the cohesive device that links each gap logically and grammatically to the text around it.",
+          "de": "Wählen Sie das Verknüpfungsmittel, das die Lücke logisch und grammatisch mit dem umgebenden Text verbindet."
+        },
+        "text": "Kopenhagen investiert seit Jahrzehnten konsequent in seine Radinfrastruktur. {{1}} legen heute mehr als 40 Prozent der Pendlerinnen und Pendler ihren Arbeitsweg mit dem Fahrrad zurück. In vielen deutschen Städten wurden ebenfalls Radwege gebaut; {{2}} stagniert der Anteil des Radverkehrs dort vielerorts. Fachleute führen {{3}} vor allem auf die mangelnde Durchgängigkeit der Netze zurück: Ein Radweg, der nach wenigen hundert Metern abrupt endet, nützt wenig. {{4}} ergibt sich eine klare Konsequenz für die Planung: Nicht die Zahl der gebauten Kilometer ist entscheidend, sondern die lückenlose Verbindung wichtiger Ziele. {{5}} haben sich Ansätze, die vorrangig auf Werbekampagnen setzen, als weitgehend wirkungslos erwiesen.",
+        "gaps": [
+          {
+            "mode": "select",
+            "options": [
+              "Folglich",
+              "Dennoch",
+              "Demgegenüber"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "mode": "select",
+            "options": [
+              "folglich",
+              "dennoch",
+              "hieraus"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "mode": "select",
+            "options": [
+              "diesen",
+              "jene",
+              "dies"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "mode": "select",
+            "options": [
+              "Dennoch",
+              "Hieraus",
+              "Demgegenüber"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "mode": "select",
+            "options": [
+              "Hieraus",
+              "Trotzdem",
+              "Demgegenüber"
+            ],
+            "correctIndex": 2
+          }
+        ]
+      }
+    },
+    {
       "id": "c1-telc-leseverstehen-teil3-selektiv-detail__ex0",
       "lessonId": "c1-telc-leseverstehen-teil3-selektiv-detail",
       "track": "telc",
@@ -932,6 +1064,144 @@
       "content": {
         "prompt": "Formulieren Sie eine Paraphrase für den Satz: 'Die These entbehrt jeglicher wissenschaftlicher Grundlage.'",
         "modelAnswer": "Für diese Annahme existiert keinerlei empirischer oder theoretischer Beleg."
+      }
+    },
+    {
+      "id": "c1-telc-leseverstehen-teil3-selektiv-detail__ex4",
+      "lessonId": "c1-telc-leseverstehen-teil3-selektiv-detail",
+      "track": "telc",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the commentary and the tasks. Which answer (a, b or c) is directly supported by the text? Distinguish the author's view from opinions that are only quoted.",
+          "de": "Lesen Sie den Kommentar und die Aufgaben. Welche Lösung (a, b oder c) wird direkt vom Text gestützt? Unterscheiden Sie die Sicht des Autors von Meinungen, die nur zitiert werden."
+        },
+        "passage": "Die Renaissance der Nachtzüge – ein Comeback mit Fragezeichen\n\nNoch vor einem Jahrzehnt schien das Schicksal des Nachtzugs besiegelt. Die Bahnunion AG, damals der größte Anbieter des Landes, stellte ihre letzten Verbindungen mit der Begründung ein, sie seien dauerhaft defizitär, und kaum jemand trauerte ihnen öffentlich nach. Dass ausgerechnet ein kleiner Konkurrent, die Lunaria Nachtreisen GmbH, die Strecken übernahm und das Angebot seither schrittweise ausbaute, wurde damals in Fachkreisen eher belächelt.\n\nInzwischen hat sich das Blatt gewendet. Angesichts der Klimadebatte erscheint der Schlafwagen vielen Reisenden als Alternative zum Kurzstreckenflug, und auf einigen beliebten Verbindungen sind die Liegewagen in der Hauptsaison oft wochenlang im Voraus ausgebucht. Politikerinnen und Politiker überbieten sich mit Ankündigungen eines europäischen Nachtzugnetzes.\n\nDoch wer genauer hinsieht, stößt auf strukturelle Hindernisse, die sich mit gutem Willen allein nicht beseitigen lassen. Ein Nachtzug bewältigt pro Tag nur eine Strecke in eine Richtung; seine Wagen stehen tagsüber ungenutzt herum, während die Kosten für Personal und Instandhaltung weiterlaufen. Hinzu kommen Trassengebühren, die in jedem durchfahrenen Land neu und nach unterschiedlichen Regeln erhoben werden. Ein Dresdner Verkehrsökonom hält es daher für „illusorisch“, dass Nachtzüge ohne staatliche Zuschüsse jemals kostendeckend betrieben werden könnten.\n\nErschwerend wirkt ein Mangel an geeignetem Wagenmaterial. Neue Schlafwagen werden nur in geringen Stückzahlen gebaut, weil sich die Hersteller auf einen unsicheren Markt nicht festlegen wollen; die Betreiber wiederum zögern mit Bestellungen, solange die Förderpolitik unklar bleibt. Es ist ein Teufelskreis, den letztlich nur die Politik durchbrechen kann – etwa durch langfristige Abnahmegarantien.\n\nOb der Nachtzug mehr wird als ein Nischenprodukt für umweltbewusste Reisende mit viel Zeit, entscheidet sich also weniger an der Nachfrage als an der Bereitschaft, ihn als Teil der öffentlichen Daseinsvorsorge zu begreifen und entsprechend zu finanzieren.",
+        "questions": [
+          {
+            "question": "Wie wurde die Übernahme der Strecken durch die Lunaria Nachtreisen GmbH in Fachkreisen zunächst bewertet?",
+            "options": [
+              "als längst überfälliger Schritt",
+              "als wenig aussichtsreiches Unterfangen",
+              "als Anlass für öffentliche Proteste"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Was sagt der Text über die Nachfrage?",
+            "options": [
+              "Auf manchen beliebten Strecken sind die Plätze in der Hauptsaison oft lange im Voraus vergeben.",
+              "Nachtzüge sind inzwischen auf allen Strecken das ganze Jahr über ausgebucht.",
+              "Die Nachfrage ist seit der Einstellung durch die Bahnunion AG stetig gesunken."
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Warum ist der Betrieb von Nachtzügen laut Text besonders kostspielig?",
+            "options": [
+              "weil das Personal in Nachtzügen höhere Zuschläge erhält",
+              "weil die Trassengebühren in Deutschland europaweit am höchsten sind",
+              "weil die Wagen tagsüber stillstehen, aber weiterhin Kosten verursachen"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "question": "Welche Einschätzung gibt der zitierte Verkehrsökonom ab?",
+            "options": [
+              "Nachtzüge werden in absehbarer Zeit ohne Subventionen rentabel sein.",
+              "Ohne staatliche Zuschüsse werden Nachtzüge nie kostendeckend fahren.",
+              "Nachtzüge sind aus ökologischer Sicht nicht sinnvoll."
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Worin besteht der im Text beschriebene „Teufelskreis“?",
+            "options": [
+              "Hersteller bauen wegen des unsicheren Marktes wenig, und Betreiber bestellen wegen der unklaren Förderung kaum.",
+              "Die Politik hat jede Förderung von Nachtzügen endgültig abgelehnt.",
+              "Die Betreiber bestellen zu viele Wagen, die dann ungenutzt bleiben."
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Welche Position vertritt der Autor am Schluss?",
+            "options": [
+              "Die Zukunft des Nachtzugs hängt vor allem von der Nachfrage ab.",
+              "Der Nachtzug wird auf Dauer ein Nischenprodukt bleiben.",
+              "Die Zukunft des Nachtzugs hängt vor allem davon ab, ob der Staat ihn als öffentliche Aufgabe finanziert."
+            ],
+            "correctIndex": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "c1-telc-leseverstehen-teil3-selektiv-detail__ex5",
+      "lessonId": "c1-telc-leseverstehen-teil3-selektiv-detail",
+      "track": "telc",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the text and the statements. Is each statement right (+), wrong (–) or not in the text at all (x)?",
+          "de": "Lesen Sie den Text und die Aussagen. Ist die Aussage richtig (+), falsch (–) oder gar nicht im Text enthalten (x)?"
+        },
+        "passage": "Bibliotheken als „dritte Orte“\n\nDer amerikanische Soziologe Ray Oldenburg prägte in den 1980er-Jahren den Begriff des „dritten Ortes“: Neben dem Zuhause und dem Arbeitsplatz brauche eine Gesellschaft Räume, in denen Menschen einander zwanglos begegnen können. Lange dachte man dabei an Cafés oder Kneipen. Heute beanspruchen ausgerechnet öffentliche Bibliotheken diese Rolle für sich.\n\nDie Stadtbibliothek einer norddeutschen Großstadt etwa hat ihren Bestand an gedruckten Büchern in den letzten zehn Jahren um ein Drittel verringert. Der frei gewordene Platz wird für Arbeitsplätze, einen Makerspace mit 3D-Druckern und einen Veranstaltungsraum genutzt. Seitdem ist die Zahl der Besuche deutlich gestiegen, während die Ausleihzahlen weitgehend stabil geblieben sind.\n\nKritiker sehen in dieser Entwicklung allerdings eine schleichende Aushöhlung des Bildungsauftrags. Eine Bibliothek, so argumentiert ein Kulturwissenschaftler, dürfe sich nicht zum beliebigen Aufenthaltsraum wandeln, nur um ihre Besucherstatistik aufzubessern. Die Leiterin des Hauses hält dagegen, gerade Menschen ohne eigenen ruhigen Arbeitsplatz – etwa Schülerinnen und Schüler aus beengten Wohnverhältnissen – profitierten von dem neuen Konzept.",
+        "questions": [
+          {
+            "question": "Oldenburg zählte das Zuhause zu den „dritten Orten“.",
+            "options": [
+              "richtig (+)",
+              "falsch (–)",
+              "nicht im Text (x)"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Die Bibliothek hat ihren Bestand an gedruckten Büchern um ein Drittel reduziert.",
+            "options": [
+              "richtig (+)",
+              "falsch (–)",
+              "nicht im Text (x)"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Seit dem Umbau wird in der Bibliothek deutlich weniger ausgeliehen.",
+            "options": [
+              "richtig (+)",
+              "falsch (–)",
+              "nicht im Text (x)"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Der Makerspace wird vor allem von Schülerinnen und Schülern genutzt.",
+            "options": [
+              "richtig (+)",
+              "falsch (–)",
+              "nicht im Text (x)"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "question": "Der Kulturwissenschaftler befürchtet, dass die Bibliothek ihren Bildungsauftrag vernachlässigt.",
+            "options": [
+              "richtig (+)",
+              "falsch (–)",
+              "nicht im Text (x)"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Der Umbau wurde überwiegend durch Spenden finanziert.",
+            "options": [
+              "richtig (+)",
+              "falsch (–)",
+              "nicht im Text (x)"
+            ],
+            "correctIndex": 2
+          }
+        ]
       }
     },
     {

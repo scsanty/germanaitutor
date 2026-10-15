@@ -1,0 +1,21 @@
+{
+  "id": "generic-c1",
+  "track": "generic",
+  "level": "C1",
+  "name": "NaDoch! C1",
+  "sources": [],
+  "blocks": [
+    { "id": "written", "title": { "en": "Written exam", "de": "Schriftliche Prüfung" }, "minutes": 153, "partIds": ["lesen-1", "lesen-2", "hoeren-1", "hoeren-2", "schreiben-1", "schreiben-2"], "passRatio": 0.6 },
+    { "id": "oral", "title": { "en": "Oral exam", "de": "Mündliche Prüfung" }, "minutes": 15, "partIds": ["sprechen-1", "sprechen-2"], "passRatio": 0.6 }
+  ],
+  "parts": [
+    { "id": "lesen-1", "skill": "reading", "title": { "en": "Reading Part 1", "de": "Lesen Teil 1" }, "taskType": "matching", "items": 8, "points": 17, "minutes": 20, "instructions": "Lesen Sie die Texte 1–8 und die Überschriften. Das sind anspruchsvolle Texte (ca. 150–200 Wörter). Welche Überschrift passt zu welchem Text? Sie können jede Überschrift nur einmal verwenden. Zwei Überschriften passen nicht." },
+    { "id": "lesen-2", "skill": "reading", "title": { "en": "Reading Part 2", "de": "Lesen Teil 2" }, "taskType": "passage_questions", "items": 8, "points": 17, "minutes": 30, "instructions": "Lesen Sie einen komplexen Text (ca. 700 Wörter) und die Aufgaben 1–8. Welche Lösung (a, b oder c) ist richtig?" },
+    { "id": "hoeren-1", "skill": "listening", "title": { "en": "Listening Part 1", "de": "Hören Teil 1" }, "taskType": "audio_questions", "items": 8, "points": 17, "minutes": 15, "instructions": "Sie hören 8 kurze Texte. Sie hören jeden Text einmal. Sind die Aussagen richtig oder falsch?", "replays": 1 },
+    { "id": "hoeren-2", "skill": "listening", "title": { "en": "Listening Part 2", "de": "Hören Teil 2" }, "taskType": "audio_questions", "items": 10, "points": 17, "minutes": 18, "instructions": "Sie hören ein Gespräch. Sie hören das Gespräch einmal. Welche Lösung (a, b oder c) ist richtig?", "replays": 1 },
+    { "id": "schreiben-1", "skill": "writing", "title": { "en": "Writing Part 1", "de": "Schreiben Teil 1" }, "taskType": "letter", "items": 4, "points": 16, "minutes": 40, "instructions": "Schreiben Sie einen Beitrag für ein Forum (ca. 220 Wörter). Nehmen Sie Stellung, begründen Sie Ihre Meinung und behandeln Sie alle Punkte der Aufgabe." },
+    { "id": "schreiben-2", "skill": "writing", "title": { "en": "Writing Part 2", "de": "Schreiben Teil 2" }, "taskType": "letter", "items": 4, "points": 16, "minutes": 30, "instructions": "Schreiben Sie eine formelle E-Mail (ca. 150 Wörter). Behandeln Sie alle Punkte der Aufgabe und achten Sie auf einen angemessenen Stil." },
+    { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Sprechen Teil 1" }, "taskType": "spoken", "items": 4, "points": 25, "minutes": 7, "instructions": "Ein Thema präsentieren: Sprechen Sie zusammenhängend über das Thema auf Ihrer Karte und beantworten Sie anschließend die Fragen." },
+    { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Sprechen Teil 2" }, "taskType": "spoken", "items": 4, "points": 25, "minutes": 8, "instructions": "Diskussion: Diskutieren Sie über die Frage auf dem Aufgabenblatt. Begründen Sie Ihre Meinung und reagieren Sie auf die Argumente." }
+  ]
+}

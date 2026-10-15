@@ -1,8 +1,21 @@
 import type { Track, CefrLevel } from '../types';
 import type { LocalizedText } from '../i18n/localizedText';
+import type { PassageQuestionsContent } from '../tasks/passageQuestions';
+import type { MatchingContent } from '../tasks/matching';
+import type { ClozeContent } from '../tasks/cloze';
+
+export type { PassageQuestionsContent, MatchingContent, ClozeContent };
 
 export type Skill = 'grammar' | 'vocabulary' | 'reading' | 'listening' | 'writing' | 'speaking';
-export type ExerciseType = 'multiple_choice' | 'fill_blank' | 'flashcard' | 'free_text';
+export type ExerciseType =
+  | 'multiple_choice'
+  | 'fill_blank'
+  | 'flashcard'
+  | 'free_text'
+  // Reading module: the set task types (lib/tasks)
+  | 'passage_questions'
+  | 'matching'
+  | 'cloze';
 
 export interface Milestone {
   id: string;
@@ -70,7 +83,14 @@ export interface FreeTextContent {
   instruction?: LocalizedText;
 }
 
-export type ExerciseContent = MultipleChoiceContent | FillBlankContent | FlashcardContent | FreeTextContent;
+export type ExerciseContent =
+  | MultipleChoiceContent
+  | FillBlankContent
+  | FlashcardContent
+  | FreeTextContent
+  | PassageQuestionsContent
+  | MatchingContent
+  | ClozeContent;
 
 export interface Exercise {
   id: string;

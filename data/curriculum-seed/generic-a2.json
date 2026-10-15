@@ -1,5 +1,5 @@
 {
-  "seedVersion": "7",
+  "seedVersion": "9",
   "formatVersion": 3,
   "track": "generic",
   "level": "A2",
@@ -1352,6 +1352,117 @@
       }
     },
     {
+      "id": "a2-reading-travel-itineraries__ex3",
+      "lessonId": "a2-reading-travel-itineraries",
+      "track": "generic",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the booking confirmation. Choose the right answer for each question.",
+          "de": "Lies die Buchungsbestätigung. Wähle für jede Frage die richtige Antwort."
+        },
+        "passage": "Buchungsbestätigung – Pension Seeblick, Konstanz\n\nSehr geehrte Frau Petrović,\nvielen Dank für Ihre Buchung. Sie haben ein Doppelzimmer mit Balkon vom 12. bis 15. Juli (3 Nächte) gebucht. Der Preis beträgt 89 Euro pro Nacht.\nInklusive: Frühstück, WLAN und ein Fahrrad pro Gast.\nAnreise: ab 14 Uhr. Die Rezeption ist nur bis 20 Uhr geöffnet. Kommen Sie später an? Dann rufen Sie uns bitte vorher an.\nParkplatz: 8 Euro pro Tag, bitte vorher reservieren.\nStornierungsbedingungen: Bis 7 Tage vor der Anreise ist die Stornierung kostenlos. Danach bezahlen Sie 50 Prozent des Preises.\n\nWir freuen uns auf Ihren Besuch!",
+        "questions": [
+          {
+            "question": "Was ist im Preis inklusive?",
+            "options": [
+              "Frühstück und ein Fahrrad",
+              "Der Parkplatz",
+              "Das Abendessen"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Frau Petrović kommt um 21 Uhr an. Was muss sie tun?",
+            "options": [
+              "Nichts, die Rezeption ist dann noch offen.",
+              "Vorher in der Pension anrufen.",
+              "Einen Parkplatz reservieren."
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Frau Petrović storniert am 10. Juli. Was passiert?",
+            "options": [
+              "Sie bezahlt nichts.",
+              "Sie bezahlt die Hälfte des Preises.",
+              "Sie bezahlt den ganzen Preis."
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Wie viele Nächte bleibt Frau Petrović?",
+            "options": [
+              "Zwei",
+              "Vier",
+              "Drei"
+            ],
+            "correctIndex": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "a2-reading-travel-itineraries__ex4",
+      "lessonId": "a2-reading-travel-itineraries",
+      "track": "generic",
+      "type": "cloze",
+      "content": {
+        "instruction": {
+          "en": "Read the travel plan. Choose the right word for each gap.",
+          "de": "Lies den Reiseplan. Wähle für jede Lücke das richtige Wort."
+        },
+        "text": "Ihr Reiseplan: Hamburg – Kopenhagen\n\nAbfahrt: Hamburg Hbf um 07:28 Uhr von {{1}} 13. Ankunft in Kopenhagen: 12:15 Uhr. Sie müssen einmal {{2}}, und zwar in Flensburg. Dort fährt Ihr zweiter Zug nach 15 Minuten ab. Ihr Sitzplatz ist im {{3}} 6, Platz 54. Die Fahrkarte ist nur mit Ihrem Ausweis {{4}}. Im Zug gibt es ein Bistro. Getränke und Snacks sind nicht im Preis {{5}}.",
+        "gaps": [
+          {
+            "mode": "select",
+            "options": [
+              "Zimmer",
+              "Gleis",
+              "Kasse"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "mode": "select",
+            "options": [
+              "einsteigen",
+              "bezahlen",
+              "umsteigen"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "mode": "select",
+            "options": [
+              "Wagen",
+              "Gleis",
+              "Hotel"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "mode": "select",
+            "options": [
+              "geschlossen",
+              "gültig",
+              "besetzt"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "mode": "select",
+            "options": [
+              "frei",
+              "erforderlich",
+              "enthalten"
+            ],
+            "correctIndex": 2
+          }
+        ]
+      }
+    },
+    {
       "id": "a2-reading-short-news-reports__ex0",
       "lessonId": "a2-reading-short-news-reports",
       "track": "generic",
@@ -1395,6 +1506,89 @@
           "en": "Read the text. Why are the offices closed on Friday?",
           "de": "Lies den Text. Warum sind die Ämter am Freitag geschlossen?"
         }
+      }
+    },
+    {
+      "id": "a2-reading-short-news-reports__ex3",
+      "lessonId": "a2-reading-short-news-reports",
+      "track": "generic",
+      "type": "matching",
+      "content": {
+        "instruction": {
+          "en": "Read the four short news reports. Which headline fits each report? One headline is left over.",
+          "de": "Lies die vier kurzen Nachrichten. Welche Überschrift passt? Eine Überschrift bleibt übrig."
+        },
+        "items": [
+          "Am Samstag haben Polizisten in Bremen einen kleinen Hund aus der Weser gerettet. Das Tier war ins Wasser gefallen. Jetzt ist es wieder bei seiner Familie.",
+          "Ab dem 1. Juni kostet eine Fahrt mit dem Bus in Leipzig 3,20 Euro. Das sind 20 Cent mehr als bisher. Monatskarten werden nicht teurer.",
+          "Die Grundschule am Park bekommt einen neuen Spielplatz. Die Eltern haben dafür 12.000 Euro gesammelt. Die Bauarbeiten beginnen im Herbst.",
+          "Wegen des starken Regens ist das Stadtfest am Sonntag ausgefallen. Die Organisatoren wollen es im August nachholen."
+        ],
+        "targets": [
+          "Busfahren wird teurer",
+          "Fest wegen Wetter abgesagt",
+          "Tier aus Fluss gerettet",
+          "Eltern sammeln Geld für Schule",
+          "Neue Buslinie zum Flughafen"
+        ],
+        "answers": [
+          2,
+          0,
+          3,
+          1
+        ],
+        "allowNone": false
+      }
+    },
+    {
+      "id": "a2-reading-short-news-reports__ex4",
+      "lessonId": "a2-reading-short-news-reports",
+      "track": "generic",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the local news report. Answer the questions Who? What? Where? by choosing the right option.",
+          "de": "Lies die Nachricht aus der Stadt. Beantworte die W-Fragen: Wähle die richtige Antwort."
+        },
+        "passage": "Neuer Gemeinschaftsgarten in Kassel\n\nSeit letzter Woche gibt es im Stadtteil Wesertor einen Gemeinschaftsgarten. Auf einer alten Wiese hinter dem Bürgerhaus pflanzen jetzt rund 30 Nachbarn Gemüse, Kräuter und Blumen. Die Idee hatte die Rentnerin Helga Sommer (68). „Viele Leute hier haben keinen Balkon. Hier können sie gärtnern und sich kennenlernen“, sagt sie. Die Stadt hat das Grundstück kostenlos zur Verfügung gestellt. Die Werkzeuge wurden von einem Baumarkt gespendet. Jeden Samstag von 10 bis 14 Uhr ist der Garten für alle offen. Wer mitmachen möchte, kann einfach vorbeikommen.",
+        "questions": [
+          {
+            "question": "Wo ist der Garten?",
+            "options": [
+              "Auf einem Balkon",
+              "Hinter dem Bürgerhaus",
+              "Neben einem Baumarkt"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Wer hatte die Idee für den Garten?",
+            "options": [
+              "Eine Rentnerin aus dem Stadtteil",
+              "Die Stadt Kassel",
+              "Ein Baumarkt"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Woher kommen die Werkzeuge?",
+            "options": [
+              "Von der Stadt",
+              "Von den Nachbarn",
+              "Von einem Baumarkt"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "question": "Was muss man tun, wenn man mitmachen möchte?",
+            "options": [
+              "Sich bei der Stadt anmelden",
+              "Am Samstag einfach in den Garten kommen",
+              "Helga Sommer anrufen"
+            ],
+            "correctIndex": 1
+          }
+        ]
       }
     },
     {

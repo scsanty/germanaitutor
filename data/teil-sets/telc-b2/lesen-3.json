@@ -1,0 +1,274 @@
+{
+  "formatId": "telc-b2",
+  "partId": "lesen-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b2__lesen-3__s01",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Ihr Nachbar hat oft Rückenschmerzen und möchte etwas dagegen tun, ohne viel Geld auszugeben.",
+            "Ihre Schwester hat sich gerade selbstständig gemacht und möchte lernen, ihre Finanzen selbst zu verwalten.",
+            "Sie müssen im Beruf demnächst regelmäßig Präsentationen halten und sind dabei sehr nervös.",
+            "Sie machen gerade den Führerschein und brauchen noch den Nachweis über einen Erste-Hilfe-Kurs.",
+            "Ihr Mann möchte gern lernen, wie man Pasta und andere italienische Gerichte zubereitet.",
+            "Ihr zwölfjähriger Neffe interessiert sich sehr für Computer und sucht eine Beschäftigung für die Sommerferien.",
+            "Ein Kollege muss bald Kundengespräche auf Englisch führen, kann aber wegen seiner Schichtarbeit keinen Kurs mit festen Terminen besuchen.",
+            "Sie möchten Ihre Kleidung selbst nähen, haben aber keine eigene Nähmaschine.",
+            "Ihre Freundin bekommt bald ihr erstes Kind und möchte wissen, was man bei Unfällen mit kleinen Kindern tun muss.",
+            "Ihr Vater hat früher Gitarre gespielt und möchte wieder anfangen. Seit einer Operation kann er aber nur schlecht das Haus verlassen."
+          ],
+          "targets": [
+            "Volkshochschule Mitte – Buchhaltung für Selbstständige: In acht Abendterminen (dienstags, 19–21 Uhr) lernen Gründerinnen und Gründer, Rechnungen zu schreiben, Belege richtig abzulegen und die Steuererklärung vorzubereiten. Keine Vorkenntnisse nötig.",
+            "Fotografie-Workshop am Wochenende: Lernen Sie die wichtigsten Funktionen Ihrer Digitalkamera kennen und machen Sie bessere Bilder bei Tag und Nacht. Samstag und Sonntag, 10–16 Uhr. Bitte eigene Kamera mitbringen. 180 €.",
+            "Business English online (Niveau B1/B2): Telefonieren, Verhandeln, Kundengespräche. Sie lernen, wann und wo Sie wollen – rund um die Uhr. Einmal pro Woche bespricht eine Tutorin Ihre Fortschritte per Video, den Termin vereinbaren Sie selbst. Mit Zertifikat.",
+            "Kochschule Gewürzhaus: Entdecken Sie die indische Küche! Gemeinsam bereiten wir Currys, Linsengerichte und frisches Fladenbrot zu. Kurs für Anfänger, freitags ab 18 Uhr, Zutaten und Getränke inklusive. Höchstens zehn Teilnehmende.",
+            "Erste Hilfe für Führerscheinbewerber: Der vorgeschriebene Kurs an einem Tag, jeden Samstag von 9 bis 17 Uhr. Die Bescheinigung für die Fahrerlaubnisbehörde erhalten Sie sofort im Anschluss. Anmeldung online beim Rettungsdienst Nord.",
+            "Erste Hilfe am Kind: Was tun bei Fieberkrampf, Verbrennungen oder wenn das Baby sich verschluckt? Zwei Abende für werdende Eltern, Großeltern und Babysitter. Mit praktischen Übungen an Puppen.",
+            "Sicher auftreten: In unserem zweitägigen Rhetorik-Seminar üben Sie, vor Publikum frei zu sprechen und mit Lampenfieber umzugehen. Mit Videoanalyse und persönlichem Feedback. In vielen Bundesländern als Bildungsurlaub anerkannt.",
+            "Nähcafé im Stadtteilzentrum: Jeden Mittwoch von 17 bis 21 Uhr stehen sechs Nähmaschinen zur freien Verfügung. Erfahrene Näherinnen helfen Anfängern bei ihren ersten Projekten. 5 € pro Abend, Stoffe bitte selbst mitbringen.",
+            "Gitarrenunterricht für Erwachsene: Ob Anfänger oder Wiedereinsteiger – ich unterrichte geduldig und mit viel Spaß. Einzelunterricht bei Ihnen zu Hause im ganzen Stadtgebiet, Termine nach Absprache. Erste Stunde kostenlos. Tel. 0176 / 5532 1180",
+            "Gesunder Rücken: Sanftes Yoga gegen Verspannungen und Rückenschmerzen. Zehn Termine, montags um 8 Uhr. Der Kurs ist von den Krankenkassen anerkannt; die meisten Kassen erstatten bis zu 80 Prozent der Kursgebühr.",
+            "Italienisch für die Reise: Crashkurs für Anfänger in der ersten Juliwoche, täglich von 9 bis 12 Uhr. Sie lernen, im Restaurant zu bestellen, nach dem Weg zu fragen und im Hotel einzuchecken. Andiamo!",
+            "Code-Camp für Kinder von 10 bis 14 Jahren: In den Sommerferien programmieren die Teilnehmenden ihr eigenes kleines Computerspiel. Fünf Tage, jeweils 9 bis 15 Uhr, mit Mittagessen. Laptops werden gestellt."
+          ],
+          "answers": [
+            9,
+            0,
+            6,
+            4,
+            null,
+            11,
+            2,
+            7,
+            5,
+            8
+          ],
+          "allowNone": true
+        },
+        "explanations": [
+          {
+            "en": "Ad j is a yoga course \"gegen Verspannungen und Rückenschmerzen\", and most health insurers refund up to 80 percent, so it costs little.",
+            "de": "Anzeige j bietet Yoga gegen Rückenschmerzen. Die Krankenkasse zahlt bis zu 80 Prozent, also ist es günstig."
+          },
+          {
+            "en": "Ad a teaches founders to write invoices, file receipts and prepare the tax return: \"Buchhaltung für Selbstständige\".",
+            "de": "Anzeige a ist ein Kurs „Buchhaltung für Selbstständige“. Dort lernt man, die eigenen Finanzen zu verwalten."
+          },
+          {
+            "en": "Ad g is a rhetoric seminar where you practise speaking in front of an audience and dealing with \"Lampenfieber\" (stage fright).",
+            "de": "In Anzeige g übt man, vor Publikum zu sprechen und mit Lampenfieber umzugehen."
+          },
+          {
+            "en": "Ad e is the required first-aid course for driving-licence applicants; the certificate for the licensing authority is issued immediately. Ad f is about children, not the licence.",
+            "de": "Anzeige e ist der Erste-Hilfe-Kurs für den Führerschein, mit Bescheinigung. Anzeige f ist für Unfälle mit Kindern."
+          },
+          {
+            "en": "No ad fits (x). Ad d teaches Indian cooking, and ad k is an Italian language course for travellers, not a cooking course.",
+            "de": "Keine Anzeige passt (x). Anzeige d ist ein Kochkurs für indische Küche, und Anzeige k ist ein Sprachkurs, kein Kochkurs."
+          },
+          {
+            "en": "Ad l is a summer-holiday \"Code-Camp\" for children aged 10 to 14 who program their own computer game.",
+            "de": "Anzeige l ist ein Ferienkurs für Kinder von 10 bis 14 Jahren. Sie programmieren ein Computerspiel."
+          },
+          {
+            "en": "Ad c is an online Business English course for customer conversations; you learn \"wann und wo Sie wollen\" and arrange the tutor appointment yourself, so shift work is no problem.",
+            "de": "Anzeige c ist ein Online-Kurs für Englisch im Beruf. Man lernt, wann man will, und hat keine festen Termine."
+          },
+          {
+            "en": "Ad h: at the sewing café \"stehen sechs Nähmaschinen zur freien Verfügung\", so you need no machine of your own.",
+            "de": "Im Nähcafé (h) gibt es Nähmaschinen. Man braucht keine eigene Maschine."
+          },
+          {
+            "en": "Ad f is first aid for children, e.g. when a baby chokes, for \"werdende Eltern\" (parents-to-be). Ad e is the course for the driving licence.",
+            "de": "Anzeige f ist ein Erste-Hilfe-Kurs für Kinder und Babys, auch für werdende Eltern."
+          },
+          {
+            "en": "Ad i offers guitar lessons for adults including \"Wiedereinsteiger\", given \"bei Ihnen zu Hause\", so the father does not have to leave the house.",
+            "de": "Anzeige i bietet Gitarrenunterricht für Wiedereinsteiger zu Hause. Der Vater muss nicht aus dem Haus gehen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b2__lesen-3__s02",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Sie haben sich spätabends aus Ihrer Wohnung ausgesperrt; der Schlüssel liegt drinnen auf dem Tisch.",
+            "Ihre Nebenkostenabrechnung ist viel höher als erwartet, und Sie vermuten, dass sie Fehler enthält.",
+            "Sie ziehen aus und müssen die Wohnung sauber übergeben, haben dafür aber selbst keine Zeit.",
+            "Ihre Kollegin arbeitet ab nächstem Monat für ein halbes Jahr an einem Projekt in Frankfurt und sucht dort eine möblierte Unterkunft.",
+            "Ein Freund zieht nur ein paar Straßen weiter und möchte seine Möbel zusammen mit Freunden selbst transportieren.",
+            "Ihre Großmutter sitzt im Rollstuhl und sucht eine neue Wohnung.",
+            "Nach dem Tod Ihres Onkels müssen Sie seine vollgestellte Wohnung leer räumen lassen.",
+            "Ihre Familie zieht nach Hamburg und möchte, dass eine Firma alles erledigt – auch das Abbauen und Aufbauen der Schränke.",
+            "Ihr Sohn beginnt ein Studium. Er ist Raucher und sucht ein günstiges Zimmer.",
+            "Bevor Sie aus Ihrer Mietwohnung ausziehen, müssen alle Wände neu gestrichen werden."
+          ],
+          "targets": [
+            "Umzüge Schneller & Partner: Wir übernehmen Ihren kompletten Umzug – vom Verpacken über den Abbau und Aufbau Ihrer Möbel bis zur Halteverbotszone vor dem Haus. Auch Fernumzüge in ganz Deutschland. Kostenlose Besichtigung und Festpreisangebot.",
+            "Transporter-Vermietung am Bahnhof: Kleintransporter bis 3,5 t ab 49 € pro Tag, inklusive 100 Freikilometer. Fahren dürfen Sie ihn mit einem normalen Pkw-Führerschein. Sackkarren und Spanngurte leihen wir kostenlos dazu.",
+            "Zimmer frei! In unserer netten Vierer-WG in der Nähe der Uni wird zum 1. Oktober ein Zimmer (16 m²) frei. 380 € warm. Wir suchen eine Nichtraucherin oder einen Nichtraucher, gern Studierende.",
+            "2-Zimmer-Wohnung im Erdgeschoss, komplett barrierefrei: breite Türen, ebenerdige Dusche, kein Treppenabsatz bis zur Haustür. Mit kleinem Garten. 780 € kalt, frei ab sofort. Besichtigung nach Vereinbarung.",
+            "Ferienhaus Strandläufer an der Ostsee: Gemütliches Häuschen für bis zu vier Personen, 200 Meter zum Strand. Vermietung von April bis Oktober, mindestens drei Nächte.",
+            "Wohnen auf Zeit in Frankfurt: Voll möblierte Apartments in zentraler Lage für Berufstätige, die vorübergehend in der Stadt arbeiten. Mietdauer ab einem Monat, WLAN und wöchentliche Reinigung inklusive.",
+            "Malermeister Brandt: Streichen, Tapezieren und Lackieren – auch Schönheitsreparaturen beim Auszug. Saubere Arbeit, kurzfristige Termine, kostenloser Kostenvoranschlag.",
+            "Entrümpelung und Haushaltsauflösung: Wir räumen Keller, Dachböden oder ganze Wohnungen schnell und besenrein. Gut erhaltene Möbel spenden wir an soziale Einrichtungen. Rufen Sie uns an!",
+            "Schlüsselnotdienst – Tag und Nacht erreichbar: Tür zugefallen? Wir öffnen Ihre Tür in der Regel innerhalb von 30 Minuten und ohne Schaden. Faire Festpreise, auch am Wochenende.",
+            "Reinigungsservice Glanzpunkt: Endreinigung nach dem Auszug mit Abnahmegarantie – falls Ihr Vermieter etwas beanstandet, reinigen wir kostenlos nach. Auch regelmäßige Haushaltsreinigung.",
+            "Tierpension Pfötchen: Während Urlaub, Krankenhausaufenthalt oder Umzug kümmern wir uns liebevoll um Ihren Hund oder Ihre Katze. Großes Freigelände, tägliche Spaziergänge.",
+            "Mieterverein Rheinstadt: Ärger mit dem Vermieter? Wir beraten Sie in allen Mietfragen und prüfen Ihre Nebenkostenabrechnung. Mitgliedschaft ab 6 € im Monat, Beratung für Mitglieder kostenlos."
+          ],
+          "answers": [
+            8,
+            11,
+            9,
+            5,
+            1,
+            3,
+            7,
+            0,
+            null,
+            6
+          ],
+          "allowNone": true
+        },
+        "explanations": [
+          {
+            "en": "Ad i is a locksmith emergency service, \"Tag und Nacht erreichbar\": \"Tür zugefallen? Wir öffnen Ihre Tür\".",
+            "de": "Anzeige i ist ein Schlüsselnotdienst. Er kommt Tag und Nacht und öffnet die Tür."
+          },
+          {
+            "en": "Ad l: the tenants' association advises on rental questions and \"prüfen Ihre Nebenkostenabrechnung\".",
+            "de": "Der Mieterverein (l) prüft die Nebenkostenabrechnung."
+          },
+          {
+            "en": "Ad j offers an \"Endreinigung nach dem Auszug\" (final cleaning after moving out) with a guarantee that the landlord accepts it.",
+            "de": "Anzeige j macht die Endreinigung nach dem Auszug. Man muss nicht selbst putzen."
+          },
+          {
+            "en": "Ad f offers furnished apartments in Frankfurt for people working there temporarily, \"Mietdauer ab einem Monat\". Ad e is a holiday house on the Baltic coast.",
+            "de": "Anzeige f bietet möblierte Wohnungen in Frankfurt für Berufstätige auf Zeit. Anzeige e ist ein Ferienhaus an der Ostsee."
+          },
+          {
+            "en": "Ad b rents out vans with which you can move your things yourself; a normal car licence is enough.",
+            "de": "Bei Anzeige b kann man einen Transporter mieten und die Möbel selbst transportieren."
+          },
+          {
+            "en": "Ad d is a flat that is \"komplett barrierefrei\" with wide doors, a level-access shower and no steps, which suits a wheelchair user.",
+            "de": "Die Wohnung in Anzeige d ist barrierefrei: breite Türen, keine Treppen. Das passt für einen Rollstuhl."
+          },
+          {
+            "en": "Ad h clears out cellars, attics \"oder ganze Wohnungen\" (Haushaltsauflösung).",
+            "de": "Anzeige h räumt ganze Wohnungen leer."
+          },
+          {
+            "en": "Ad a does the whole move, including \"Abbau und Aufbau Ihrer Möbel\", and also long-distance moves across Germany.",
+            "de": "Die Firma in Anzeige a macht den ganzen Umzug, auch Fernumzüge, und baut die Möbel ab und auf."
+          },
+          {
+            "en": "No ad fits (x). The only room on offer (c) is in a shared flat that wants a \"Nichtraucherin oder einen Nichtraucher\", but the son smokes.",
+            "de": "Keine Anzeige passt (x). Die WG in Anzeige c sucht nur Nichtraucher, aber der Sohn raucht."
+          },
+          {
+            "en": "Ad g is a painter: \"Streichen … auch Schönheitsreparaturen beim Auszug\".",
+            "de": "Anzeige g ist ein Malerbetrieb. Er streicht auch Wände beim Auszug."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b2__lesen-3__s03",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Ihre Kinder (8 und 10 Jahre) sind große Dinosaurier-Fans, und Sie suchen für den Sonntag ein passendes Ausflugsziel.",
+            "Ein befreundetes Paar heiratet in sechs Wochen und möchte auf der Feier einen Walzer tanzen, kann es aber noch nicht.",
+            "Ihre Gäste aus Frankreich möchten die Altstadt kennenlernen, sprechen aber kaum Deutsch.",
+            "Ihr zehnjähriger Sohn möchte unbedingt einmal eine Bootstour auf einem Fluss machen.",
+            "Sie möchten am Wochenende eine längere Radtour durch die Umgebung machen, haben aber kein eigenes Fahrrad dabei.",
+            "Ein Kollege interessiert sich sehr für Planeten und Sterne und möchte sie einmal durch ein großes Teleskop sehen.",
+            "Sie möchten zum ersten Mal ausprobieren, wie Klettern ist, besitzen aber keine Ausrüstung.",
+            "Sie möchten mit Ihrem Hund ein paar Tage Urlaub in den Bergen machen.",
+            "Ihre Freundin träumt davon, auf einer Bühne zu stehen, hat aber noch nie Theater gespielt.",
+            "Ihre Eltern möchten an einem Wochenende eine Stadt im Ausland besichtigen, aber nicht selbst mit dem Auto fahren."
+          ],
+          "targets": [
+            "Kanu-Abenteuer auf der Lahn: Geführte Tagestour mit Picknickpause, Boote und Schwimmwesten inklusive. Teilnahme ab 12 Jahren, Schwimmkenntnisse sind Voraussetzung. Treffpunkt: Bootshaus am Wehr, 9 Uhr.",
+            "Altstadtführung „Gassen, Giebel und Geschichten“: Täglich um 14 Uhr ab dem Rathaus, Dauer ca. 90 Minuten. Führungen auf Deutsch, Englisch und Französisch. Keine Anmeldung erforderlich.",
+            "Naturkundemuseum: Unsere neue Ausstellung „Riesen der Urzeit“ zeigt lebensgroße Saurier-Modelle. Jeden Sonntag um 11 Uhr spezielle Kinderführung für 6- bis 12-Jährige. Kindergeburtstage buchbar.",
+            "Radstation am Hauptbahnhof: Verleih von Tourenrädern, E-Bikes und Kinderanhängern, tage- oder wochenweise. Kostenlose Tourenkarten für die schönsten Strecken in der Region. Täglich ab 7 Uhr geöffnet.",
+            "Wanderfreunde Taunus e. V.: Jeden zweiten Sonntag geführte Wanderungen zwischen 10 und 20 Kilometern. Gäste sind herzlich willkommen, Mitfahrgelegenheiten zum Startpunkt werden organisiert.",
+            "Volkssternwarte am Kirchberg: Öffentliche Beobachtungsabende jeden Freitag ab 21 Uhr – bei klarem Himmel blicken Sie durch unser großes Spiegelteleskop auf Mond, Planeten und ferne Galaxien.",
+            "Kletterhalle Vertikal: Schnupperkurs für Einsteiger jeden Samstag, 10–13 Uhr. Gurt, Schuhe und Seil stellen wir Ihnen, Sie brauchen nur bequeme Sportkleidung. Ab 14 Jahren.",
+            "Weingut Sonnenhang: Weinprobe mit sechs Weinen und regionalen Spezialitäten, danach Übernachtung in unserem Gästehaus mit Blick über die Weinberge. Nur am Wochenende.",
+            "Wochenendtrip ins Ausland – Busreise nach Prag: Freitag bis Sonntag, Abfahrt am Busbahnhof, Übernachtung im Mittelklassehotel mit Frühstück, Stadtrundgang mit deutschsprachiger Reiseleitung. Ab 249 € pro Person.",
+            "Tanzschule Takt: Crashkurs für Brautpaare – in vier Abenden lernen Sie den Hochzeitswalzer, auch ganz ohne Vorkenntnisse. Termine individuell nach Vereinbarung.",
+            "Improvisationstheater für alle: In unserem Workshop für Laien lernen Sie spielerisch, spontan auf der Bühne zu reagieren. Zum Abschluss gibt es einen Auftritt vor Publikum. Keine Erfahrung nötig.",
+            "Ferienhaus Waldblick im Harz: Ruhig gelegenes Haus in den Bergen mit eingezäuntem Garten, direkt am Wanderweg. Hunde sind bei uns ausdrücklich willkommen, Näpfe und Hundedecken sind vorhanden."
+          ],
+          "answers": [
+            2,
+            9,
+            1,
+            null,
+            3,
+            5,
+            6,
+            11,
+            10,
+            8
+          ],
+          "allowNone": true
+        },
+        "explanations": [
+          {
+            "en": "Ad c: the natural history museum shows life-size dinosaur models and has a children's tour every Sunday for ages 6 to 12.",
+            "de": "Im Naturkundemuseum (c) gibt es Saurier-Modelle und sonntags eine Kinderführung für 6- bis 12-Jährige."
+          },
+          {
+            "en": "Ad j is a crash course for bridal couples: \"in vier Abenden lernen Sie den Hochzeitswalzer, auch ganz ohne Vorkenntnisse\".",
+            "de": "Anzeige j: Brautpaare lernen an vier Abenden den Hochzeitswalzer, auch ohne Vorkenntnisse."
+          },
+          {
+            "en": "Ad b offers old-town tours \"auf Deutsch, Englisch und Französisch\".",
+            "de": "Die Altstadtführung in Anzeige b gibt es auch auf Französisch."
+          },
+          {
+            "en": "No ad fits (x). The only boat tour (a) is for participants \"ab 12 Jahren\", and the son is ten.",
+            "de": "Keine Anzeige passt (x). Die Kanutour in Anzeige a ist erst ab 12 Jahren, der Sohn ist zehn."
+          },
+          {
+            "en": "Ad d rents out touring bikes and e-bikes and gives free route maps for the region.",
+            "de": "Bei der Radstation (d) kann man Fahrräder leihen und bekommt Tourenkarten."
+          },
+          {
+            "en": "Ad f: at the observatory you look \"durch unser großes Spiegelteleskop auf Mond, Planeten und ferne Galaxien\".",
+            "de": "In der Sternwarte (f) kann man durch ein großes Teleskop Planeten sehen."
+          },
+          {
+            "en": "Ad g is a taster course for beginners; \"Gurt, Schuhe und Seil stellen wir Ihnen\", so no equipment is needed.",
+            "de": "Anzeige g ist ein Kletterkurs für Anfänger. Die Ausrüstung bekommt man in der Halle."
+          },
+          {
+            "en": "Ad l is a holiday house \"in den Bergen\" where \"Hunde sind … ausdrücklich willkommen\".",
+            "de": "Das Ferienhaus (l) liegt in den Bergen, und Hunde sind dort willkommen."
+          },
+          {
+            "en": "Ad k is an improvisation theatre workshop for amateurs, ending with a performance; \"Keine Erfahrung nötig\".",
+            "de": "Anzeige k ist ein Theater-Workshop für Laien mit Auftritt auf der Bühne. Man braucht keine Erfahrung."
+          },
+          {
+            "en": "Ad i is a weekend coach trip \"ins Ausland\" (to Prague), so the parents see a city abroad without driving themselves.",
+            "de": "Anzeige i ist eine Busreise ins Ausland (nach Prag) am Wochenende. Die Eltern müssen nicht selbst fahren."
+          }
+        ]
+      }
+    }
+  ]
+}

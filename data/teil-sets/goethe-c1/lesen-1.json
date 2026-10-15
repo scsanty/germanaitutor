@@ -1,0 +1,382 @@
+{
+  "formatId": "goethe-c1",
+  "partId": "lesen-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-c1__lesen-1__s01",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Die Kunst des kurzen Schlafs\n\nIn vielen südeuropäischen Ländern gehört die Siesta seit Jahrhunderten zum Alltag, hierzulande dagegen galt der Mittagsschlaf lange als Zeichen von Bequemlichkeit. Wer sich nach dem Essen hinlegte, musste sich den Vorwurf gefallen lassen, er nehme seine Arbeit nicht ernst. Inzwischen {{1}} sich jedoch ein Umdenken ab: Immer mehr Unternehmen richten Ruheräume ein, in die sich die Beschäftigten für eine Viertelstunde zurückziehen können.\n\nDie Schlafforschung gibt ihnen recht. Zahlreiche Studien belegen, dass ein kurzes Nickerchen Konzentration und Reaktionsvermögen deutlich verbessert – {{2}} es nicht länger als etwa zwanzig Minuten dauert. Wer länger schläft, riskiert, in eine Tiefschlafphase zu gelangen. Wird man daraus geweckt, fühlt man sich oft benommener als zuvor, ein Zustand, den Fachleute als „Schlafträgheit“ {{3}}. Am besten eignet sich die Zeit kurz nach dem Mittagessen, wenn die Leistungskurve {{4}} natürlichen Gründen ohnehin absinkt. Wer abends schlecht einschläft, sollte allerdings ganz auf den Mittagsschlaf {{5}}, da dieser den Schlafdruck am Abend verringert.\n\nDie Erfahrungen der Betriebe, die das Modell bereits erproben, sind überwiegend positiv. Ein Logistikunternehmen aus Norddeutschland, das vor drei Jahren einen sogenannten Power-Nap-Raum eingerichtet hat, berichtet, dass die Zahl der Fehler beim Zusammenstellen der Lieferungen seitdem spürbar {{6}} ist. Auch die Zufriedenheit der Belegschaft sei gestiegen.\n\n{{7}} der positiven Erfahrungen bleibt die Skepsis in vielen Chefetagen groß. Und auch unter den Beschäftigten selbst nutzt längst nicht jeder das Angebot. Wer sich während der Arbeitszeit hinlegt, so die verbreitete Sorge, könnte bei Kolleginnen und Kollegen in den {{8}} geraten, weniger zu leisten als andere. Bis der Mittagsschlaf auch hierzulande als selbstverständlich gilt, dürfte es also noch eine Weile dauern.",
+          "gaps": [
+            {
+              "mode": "select",
+              "options": [
+                "setzt",
+                "hebt",
+                "zeichnet",
+                "stellt"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "sodass",
+                "sofern",
+                "obwohl",
+                "damit"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "bezeichnen",
+                "nennen",
+                "heißen",
+                "ernennen"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "mit",
+                "aus",
+                "von",
+                "zu"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "absehen",
+                "ablehnen",
+                "weglassen",
+                "verzichten"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "mode": "select",
+              "options": [
+                "zurückgetreten",
+                "zurückgezogen",
+                "zurückgegangen",
+                "zurückgeblieben"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "Infolge",
+                "Angesichts",
+                "Statt",
+                "Trotz"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "mode": "select",
+              "options": [
+                "Verdacht",
+                "Verruf",
+                "Zweifel",
+                "Vorwurf"
+              ],
+              "correctIndex": 0
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The fixed reflexive verb is \"sich abzeichnen\" (to emerge, become apparent): \"Inzwischen zeichnet sich ein Umdenken ab.\" \"Sich absetzen\", \"sich abheben\" and \"abstellen\" do not mean that a change is becoming visible.",
+            "de": "Die feste Verbindung lautet „sich abzeichnen“ (sichtbar werden): „Inzwischen zeichnet sich ein Umdenken ab.“ Die anderen Verben haben eine andere Bedeutung."
+          },
+          {
+            "en": "The clause states a condition for the positive effect: the nap only helps if (\"sofern\") it lasts no more than about twenty minutes. The next sentence confirms this by describing what happens when you sleep longer.",
+            "de": "Der Nebensatz nennt eine Bedingung: Der Mittagsschlaf hilft nur, „sofern“ (wenn) er nicht länger als zwanzig Minuten dauert. Der nächste Satz erklärt, was passiert, wenn man länger schläft."
+          },
+          {
+            "en": "\"Etwas als … bezeichnen\" is the verb that takes \"als\" to name something: \"ein Zustand, den Fachleute als ‚Schlafträgheit‘ bezeichnen\". \"Nennen\" works without \"als\", \"heißen\" cannot take an accusative object here, and \"ernennen\" means to appoint someone to a post.",
+            "de": "Nur „bezeichnen“ verbindet man mit „als“: „etwas als … bezeichnen“. „Nennen“ steht ohne „als“, und „ernennen“ bedeutet, jemanden in ein Amt einzusetzen."
+          },
+          {
+            "en": "The fixed phrase for a cause is \"aus … Gründen\": \"aus natürlichen Gründen\". The other prepositions do not combine with \"Gründen\" in this sense.",
+            "de": "Die feste Wendung heißt „aus … Gründen“: „aus natürlichen Gründen“. Mit den anderen Präpositionen ist das nicht möglich."
+          },
+          {
+            "en": "Only \"verzichten\" takes the preposition \"auf\": \"auf den Mittagsschlaf verzichten\". \"Absehen\" needs \"von\", while \"ablehnen\" and \"weglassen\" take a direct object without a preposition.",
+            "de": "Nur „verzichten“ steht mit „auf“: „auf etwas verzichten“. „Absehen“ braucht „von“, „ablehnen“ und „weglassen“ haben keine Präposition."
+          },
+          {
+            "en": "A number that falls is said to \"zurückgehen\": \"die Zahl der Fehler ist spürbar zurückgegangen\". \"Zurückgetreten\" means resigned, \"zurückgezogen\" withdrawn, and \"zurückgeblieben\" lagged behind.",
+            "de": "Wenn eine Zahl kleiner wird, sagt man „zurückgehen“: „Die Zahl der Fehler ist zurückgegangen.“ Die anderen Verben bedeuten etwas anderes (z. B. „zurücktreten“ = ein Amt aufgeben)."
+          },
+          {
+            "en": "The sentence contrasts positive experiences with lasting scepticism, so a concessive preposition is needed: \"Trotz der positiven Erfahrungen bleibt die Skepsis groß.\" \"Infolge\" and \"angesichts\" would make the experiences the reason for the scepticism, which is illogical.",
+            "de": "Der Satz enthält einen Gegensatz: Die Erfahrungen sind gut, aber die Skepsis bleibt. Deshalb passt nur „trotz“."
+          },
+          {
+            "en": "The fixed expression is \"in den Verdacht geraten, etwas zu tun\" (to come under suspicion). \"In Verruf geraten\" has no article and no infinitive clause, and the other nouns do not combine with \"geraten\" this way.",
+            "de": "Die feste Wendung lautet „in den Verdacht geraten, … zu …“. „In Verruf geraten“ steht ohne Artikel und ohne Infinitiv."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-c1__lesen-1__s02",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Wenn die Nacht zum Tag wird\n\nNoch vor hundert Jahren konnte man in fast jedem Dorf die Milchstraße mit bloßem Auge erkennen. Heute ist das für einen Großteil der Bevölkerung Europas nicht mehr möglich. Straßenlaternen, beleuchtete Schaufenster und angestrahlte Fassaden tauchen den Himmel über den Städten in ein diffuses Licht, das noch in Dutzenden Kilometern Entfernung {{1}} ist. Fachleute sprechen von Lichtverschmutzung – ein Begriff, der zunächst übertrieben klingen mag, sich bei genauerem Hinsehen aber als durchaus berechtigt {{2}}. Denn künstliches Licht in der Nacht hat Folgen für Mensch und Natur, die lange {{3}} wurden.\n\nBesonders deutlich zeigt sich das bei Insekten. Nachtfalter etwa orientieren sich am Mond; geraten sie {{4}} den Lichtkegel einer Laterne, umkreisen sie diese oft so lange, bis sie erschöpft zu Boden fallen. Schätzungen zufolge verenden allein in Deutschland jede Sommernacht Millionen Insekten an Straßenbeleuchtungen. Das wiederum trifft Vögel und Fledermäuse, denen die Insekten als Nahrung fehlen.\n\nAuch der Mensch ist betroffen. Helles, bläuliches Licht am Abend hemmt die Ausschüttung des Hormons Melatonin, das den Schlaf-wach-Rhythmus {{5}}. Ob ständig erhellte Schlafzimmer langfristig das Risiko für bestimmte Krankheiten erhöhen, wird derzeit {{6}} untersucht.\n\nDabei ließe sich das Problem vergleichsweise einfach {{7}}. Laternen, die nur nach unten strahlen, warmweißes statt kaltweißes Licht und Bewegungsmelder würden bereits viel bewirken – und nebenbei Energie sparen. Einige Gemeinden haben sich sogar zu sogenannten Sternenparks zusammengeschlossen und sich {{8}}, die nächtliche Beleuchtung auf ein Minimum zu reduzieren. Für Hobbyastronomen sind diese Orte längst ein beliebtes Reiseziel.",
+          "gaps": [
+            {
+              "mode": "select",
+              "options": [
+                "bemerkenswert",
+                "wahrnehmbar",
+                "wahrscheinlich",
+                "verständlich"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "erweist",
+                "beweist",
+                "ergibt",
+                "verhält"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "unterbrochen",
+                "unterzeichnet",
+                "unterschätzt",
+                "unterlegt"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "in",
+                "an",
+                "auf",
+                "unter"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "verwaltet",
+                "steuert",
+                "betreibt",
+                "bedient"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "eingehend",
+                "ausgehend",
+                "entgehend",
+                "hergehend"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "eindecken",
+                "eingehen",
+                "einräumen",
+                "eindämmen"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "mode": "select",
+              "options": [
+                "verpflichten",
+                "vereinbart",
+                "verpflichtet",
+                "beschlossen"
+              ],
+              "correctIndex": 2
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The light can still be perceived dozens of kilometres away, so the adjective must mean \"perceptible\": \"wahrnehmbar\". \"Bemerkenswert\" means remarkable, \"wahrscheinlich\" probable and \"verständlich\" understandable, none of which describe visibility.",
+            "de": "Das Licht kann man noch weit entfernt sehen, also passt „wahrnehmbar“. „Bemerkenswert“, „wahrscheinlich“ und „verständlich“ beschreiben nicht, dass man etwas sehen kann."
+          },
+          {
+            "en": "The fixed reflexive structure is \"sich als … erweisen\" (to turn out to be): \"sich … als durchaus berechtigt erweist\". \"Beweisen\", \"ergeben\" and \"verhalten\" are not used with \"sich als\" + adjective in this meaning.",
+            "de": "Die feste Struktur heißt „sich als … erweisen“: „Der Begriff erweist sich als berechtigt.“ Die anderen Verben passen nicht in diese Konstruktion."
+          },
+          {
+            "en": "The text argues the term is justified because the effects were long underestimated (\"unterschätzt\"). The other verbs (interrupted, signed, underlaid) make no sense with \"Folgen\".",
+            "de": "Der Text will zeigen, dass die Folgen größer sind, als man dachte: Sie wurden lange „unterschätzt“. Die anderen Verben passen nicht zu „Folgen“."
+          },
+          {
+            "en": "\"Geraten\" with a direction takes \"in\" + accusative: \"in den Lichtkegel geraten\" (to get into the beam of light).",
+            "de": "„Geraten“ steht hier mit „in“ und Akkusativ: „in den Lichtkegel geraten“."
+          },
+          {
+            "en": "Melatonin controls (\"steuert\") the sleep-wake rhythm. \"Verwalten\" (administer), \"betreiben\" (operate a business) and \"bedienen\" (operate a machine, serve) do not collocate with a biological rhythm.",
+            "de": "Ein Hormon „steuert“ den Schlaf-wach-Rhythmus. „Verwalten“, „betreiben“ und „bedienen“ benutzt man für Büros, Firmen oder Maschinen."
+          },
+          {
+            "en": "\"Eingehend untersuchen\" means to examine thoroughly. \"Ausgehend\", \"entgehend\" and \"hergehend\" are participles that cannot modify \"untersucht\" in this way.",
+            "de": "„Eingehend untersuchen“ bedeutet „gründlich untersuchen“. Die anderen Wörter ergeben hier keinen Sinn."
+          },
+          {
+            "en": "The following sentence lists simple measures that reduce light pollution, so the problem could be contained: \"eindämmen\". \"Eindecken\" (stock up), \"eingehen\" (enter into, die) and \"einräumen\" (admit, put away) do not fit.",
+            "de": "Danach folgen einfache Maßnahmen gegen das Problem. Man kann es also „eindämmen“ (kleiner machen, begrenzen). Die anderen Verben haben eine andere Bedeutung."
+          },
+          {
+            "en": "The perfect tense continues from \"haben sich … zusammengeschlossen und sich …\", so a past participle is needed, and \"sich verpflichten, etwas zu tun\" means to commit oneself. \"Verpflichten\" is the wrong form, and \"vereinbaren\" and \"beschließen\" are not reflexive, so they cannot follow \"sich\".",
+            "de": "Der Satz steht im Perfekt („haben … zusammengeschlossen und sich …“), also braucht man ein Partizip. „Sich verpflichten, etwas zu tun“ heißt, etwas fest zuzusagen. „Vereinbaren“ und „beschließen“ stehen nicht mit „sich“."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-c1__lesen-1__s03",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Unterschätzte Klimaschützer\n\nLange hielt man Moore für nutzloses Land, das möglichst urbar gemacht werden sollte. Über Jahrhunderte wurden sie entwässert, um Torf zu stechen oder Weiden und Äcker anzulegen. In Deutschland sind heute über neunzig Prozent der einstigen Moorflächen {{1}} diese Weise verloren gegangen. Erst in den letzten Jahren ist stärker ins öffentliche Bewusstsein {{2}}, welche Bedeutung diese Landschaften für das Klima haben.\n\nObwohl Moore nur etwa drei Prozent der Landfläche der Erde bedecken, speichern sie doppelt so viel Kohlenstoff wie alle Wälder der Welt. Der Grund {{3}} im Wasser: Weil abgestorbene Pflanzen im nassen Boden kaum Sauerstoff bekommen, werden sie nicht vollständig zersetzt, sondern lagern sich über Jahrtausende als Torf ab. Wird ein Moor jedoch trockengelegt, kehrt sich dieser Prozess {{4}}: Der Torf kommt mit Luft in Berührung, zersetzt sich und setzt große Mengen Kohlendioxid frei. Entwässerte Moore {{5}} in Deutschland für rund sieben Prozent der gesamten Treibhausgasemissionen verantwortlich.\n\nDie Lösung klingt zunächst einfach: Die Flächen müssen wieder vernässt werden. In der Praxis {{6}} dies aber auf erhebliche Widerstände. Denn viele der betroffenen Flächen werden landwirtschaftlich genutzt, und für die Betriebe {{7}} eine Wiedervernässung meist das Ende der bisherigen Bewirtschaftung. Kühe lassen sich auf einer nassen Wiese nicht halten, und mit schweren Maschinen kommt man dort nicht weit.\n\nEin Ausweg könnte die sogenannte Paludikultur sein, also der Anbau von Pflanzen, die auch auf dauerhaft nassen Böden {{8}}, etwa Schilf oder Rohrkolben. Aus ihnen lassen sich Dämmstoffe, Baumaterialien oder Verpackungen herstellen. Noch ist der Markt für solche Produkte klein. Fachleute sind jedoch überzeugt, dass er wachsen wird, sobald die Landwirte für den Klimaschutz auf ihren Flächen angemessen entlohnt werden.",
+          "gaps": [
+            {
+              "mode": "select",
+              "options": [
+                "auf",
+                "in",
+                "durch",
+                "mit"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "gezogen",
+                "gebracht",
+                "gerückt",
+                "gestellt"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "stellt",
+                "liegt",
+                "setzt",
+                "legt"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "ab",
+                "aus",
+                "um",
+                "zu"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "mode": "select",
+              "options": [
+                "gelten",
+                "werden",
+                "machen",
+                "sind"
+              ],
+              "correctIndex": 3
+            },
+            {
+              "mode": "select",
+              "options": [
+                "stößt",
+                "gerät",
+                "fällt",
+                "läuft"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "mode": "select",
+              "options": [
+                "besagt",
+                "bedeutet",
+                "beträgt",
+                "bezeichnet"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "mode": "select",
+              "options": [
+                "genesen",
+                "geraten",
+                "gelingen",
+                "gedeihen"
+              ],
+              "correctIndex": 3
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The fixed phrase is \"auf diese Weise\" (in this way), with \"auf\" + accusative. \"In dieser Weise\" would need the dative, so \"in diese Weise\" is wrong.",
+            "de": "Die feste Wendung heißt „auf diese Weise“. Mit „in“ müsste es „in dieser Weise“ (Dativ) heißen."
+          },
+          {
+            "en": "The idiom is \"ins Bewusstsein rücken\" (to come to people's attention), which forms the perfect with \"sein\": \"ist … ins Bewusstsein gerückt\". \"Gebracht\" and \"gestellt\" would need a passive (\"gebracht/gestellt worden\") or \"haben\" with an object, and \"gezogen\" is not used in this idiom.",
+            "de": "Die Wendung heißt „ins Bewusstsein rücken“, im Perfekt mit „sein“: „ist ins Bewusstsein gerückt“. „Gebracht“ und „gestellt“ bräuchten „worden“ oder „haben“ mit einem Objekt."
+          },
+          {
+            "en": "\"Der Grund liegt in …\" is the standard way to say where the reason lies. \"Stellen\", \"setzen\" and \"legen\" describe putting something somewhere and do not fit.",
+            "de": "Man sagt „Der Grund liegt in …“. „Stellen“, „setzen“ und „legen“ beschreiben eine Handlung und passen nicht."
+          },
+          {
+            "en": "\"Sich umkehren\" means to reverse: when a bog is drained, the storing process reverses and carbon is released. The colon and the description that follows (the peat decomposes and releases CO₂) confirm the reversal.",
+            "de": "„Sich umkehren“ heißt „in die Gegenrichtung gehen“. Nach dem Doppelpunkt steht, dass der Torf jetzt CO₂ freisetzt, statt es zu speichern."
+          },
+          {
+            "en": "\"Für etwas verantwortlich sein\" is complete with \"sind\". \"Gelten\" would need \"als\", \"werden\" would need \"gemacht\" (\"verantwortlich gemacht werden\"), and \"machen\" lacks an object.",
+            "de": "„Für etwas verantwortlich sein“ ist vollständig. „Gelten“ bräuchte „als“, und „werden“ bräuchte „gemacht“."
+          },
+          {
+            "en": "The collocation is \"auf Widerstand stoßen\" (to meet resistance). \"Geraten\", \"fallen\" and \"laufen\" do not combine with \"auf Widerstände\" in this meaning.",
+            "de": "Die feste Verbindung heißt „auf Widerstand stoßen“. Die anderen Verben passen nicht zu „auf Widerstände“."
+          },
+          {
+            "en": "Rewetting \"means\" (\"bedeutet\") the end of farming as before. \"Besagt\" (states, of a rule or text), \"beträgt\" (amounts to a number) and \"bezeichnet\" (designates) do not fit.",
+            "de": "Die Wiedervernässung „bedeutet“ das Ende der bisherigen Landwirtschaft. „Beträgt“ benutzt man für Zahlen, „besagt“ für Regeln oder Texte."
+          },
+          {
+            "en": "Plants that \"thrive\" on wet soil \"gedeihen\" there. \"Genesen\" means to recover from illness, \"gelingen\" to succeed (of a plan) and \"geraten\" to get into something.",
+            "de": "Pflanzen, die gut wachsen, „gedeihen“. „Genesen“ heißt „gesund werden“, und „gelingen“ benutzt man für Pläne oder Aufgaben."
+          }
+        ]
+      }
+    }
+  ]
+}

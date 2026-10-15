@@ -1,0 +1,190 @@
+{
+  "formatId": "generic-a2",
+  "partId": "lesen-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-a2__lesen-1__s01",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Ab dem 1. April gibt es im Stadtteil Ostend ein neues Angebot: Fünf Autos stehen auf dem Parkplatz an der Kirche, und alle Bewohnerinnen und Bewohner können sie mieten. Man meldet sich einmal im Internet an und bucht das Auto dann mit einer App, für eine Stunde oder für einen ganzen Tag. Man bezahlt nur, wenn man fährt. Für Leute, die nur selten ein Auto brauchen, ist das viel billiger als ein eigenes Auto.",
+            "Liebe Bürgerinnen und Bürger, im Sommer riecht der Biomüll oft unangenehm, wenn er lange in der Tonne bleibt. Deshalb leeren wir die braunen Tonnen von Juni bis September nicht mehr alle zwei Wochen, sondern jede Woche. Der Abholtag bleibt gleich: In Ihrer Straße kommt die Müllabfuhr weiterhin am Dienstag. Bitte stellen Sie die Tonne bis 6 Uhr morgens an die Straße.",
+            "Sie möchten Ihren Enkeln eine E-Mail schreiben oder einen Arzttermin online buchen, aber Sie wissen nicht genau, wie das geht? Dann kommen Sie in unsere Sprechstunde! Jeden Mittwoch von 10 bis 12 Uhr erklären Ihnen Schülerinnen und Schüler im Seniorentreff, wie Computer, Tablet und Smartphone funktionieren. Bringen Sie Ihr eigenes Gerät mit. Die Hilfe ist kostenlos, und eine Anmeldung ist nicht nötig.",
+            "Das Tierheim am Stadtrand sucht Menschen, die gern draußen sind und Tiere mögen. Viele unserer Hunde warten schon lange auf eine neue Familie. Damit sie genug Bewegung bekommen, brauchen wir Hilfe: Sie kommen am Wochenende oder nach der Arbeit vorbei und gehen eine Stunde mit einem Hund spazieren. Vorher zeigt Ihnen unser Team, worauf Sie achten müssen. Sie müssen mindestens 16 Jahre alt sein.",
+            "Strom wird immer teurer. Mit ein paar einfachen Tipps können Sie aber viel Geld sparen: Schalten Sie Fernseher und Computer am Abend ganz aus und lassen Sie sie nicht im Stand-by. Waschen Sie Ihre Wäsche bei 30 oder 40 Grad, das reicht meistens. Und legen Sie beim Kochen immer einen Deckel auf den Topf. So brauchen Sie weniger Energie und das Essen ist schneller fertig.",
+            "Der Spielplatz im Lindenpark ist alt und viele Spielgeräte sind kaputt. Deshalb ist er ab Montag für drei Monate geschlossen. Die Stadt baut dort eine neue Rutsche, ein Klettergerüst und einen großen Sandkasten. Auch die Bänke für die Eltern werden erneuert. Wenn alles klappt, können die Kinder Anfang Oktober wieder spielen. Bis dahin können Familien den Spielplatz in der Schulstraße benutzen."
+          ],
+          "targets": [
+            "Neuer Spielplatz im Herbst",
+            "Hundesteuer wird teurer",
+            "Autos teilen statt kaufen",
+            "So sparen Sie Strom zu Hause",
+            "Mit Hunden spazieren gehen: Helfer gesucht",
+            "Elektroautos jetzt günstiger",
+            "Hilfe am Computer für Seniorinnen und Senioren",
+            "Die Biotonne kommt öfter"
+          ],
+          "answers": [
+            2,
+            7,
+            6,
+            4,
+            3,
+            0
+          ],
+          "allowNone": false
+        },
+        "explanations": [
+          {
+            "en": "Text 1: residents can rent five shared cars, and this is \"viel billiger als ein eigenes Auto\". Electric cars are not mentioned (f). The heading is c.",
+            "de": "Alle Bewohner können die fünf Autos mieten. Das ist „viel billiger als ein eigenes Auto“. Das passt zu c. Von Elektroautos steht nichts im Text."
+          },
+          {
+            "en": "Text 2: the brown bins are emptied \"nicht mehr alle zwei Wochen, sondern jede Woche\" in summer – more often. The heading is h.",
+            "de": "Die braunen Tonnen werden im Sommer „nicht mehr alle zwei Wochen, sondern jede Woche“ geleert. Die Müllabfuhr kommt also öfter. Das passt zu h."
+          },
+          {
+            "en": "Text 3: pupils explain \"wie Computer, Tablet und Smartphone funktionieren\" at the senior citizens' meeting place. The heading is g.",
+            "de": "Schüler erklären im Seniorentreff, „wie Computer, Tablet und Smartphone funktionieren“. Das passt zu g."
+          },
+          {
+            "en": "Text 4: the animal shelter needs volunteers who \"gehen eine Stunde mit einem Hund spazieren\". There is nothing about a dog tax (b). The heading is e.",
+            "de": "Das Tierheim sucht Helfer, die „eine Stunde mit einem Hund spazieren“ gehen. Das passt zu e. Über eine Hundesteuer steht nichts im Text."
+          },
+          {
+            "en": "Text 5 gives tips: switch devices off, wash at 30 or 40 degrees, use a lid. \"So brauchen Sie weniger Energie.\" The heading is d.",
+            "de": "Text 5 gibt Tipps: Geräte ganz ausschalten, bei 30 oder 40 Grad waschen, einen Deckel auf den Topf legen. So spart man Strom. Das passt zu d."
+          },
+          {
+            "en": "Text 6: the city builds new play equipment, and \"Anfang Oktober\" children can play there again. The heading is a.",
+            "de": "Die Stadt baut neue Spielgeräte. „Anfang Oktober“ können die Kinder wieder spielen. Der neue Spielplatz kommt also im Herbst. Das passt zu a."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-a2__lesen-1__s02",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Die Firma Holzmann Logistik möchte, dass mehr Mitarbeiter mit dem Fahrrad zur Arbeit kommen. Deshalb bekommen alle, die das wollen, ab Mai ein neues Fahrrad oder E-Bike. Die Firma bezahlt einen großen Teil, den Rest bezahlen die Mitarbeiter in kleinen Raten vom Gehalt. Außerdem gibt es jetzt hinter dem Gebäude einen überdachten Parkplatz für Fahrräder und Duschen für alle, die nach der Fahrt verschwitzt sind.",
+            "Viele Jugendliche zwischen 13 und 17 Jahren schlafen in der Woche nur sechs oder sieben Stunden. Das zeigt eine neue Studie. Ärzte sagen aber, dass junge Menschen acht bis zehn Stunden Schlaf brauchen. Ein wichtiger Grund für das Problem ist das Smartphone: Viele schauen noch spät im Bett Videos oder schreiben Nachrichten. Am nächsten Morgen sind sie dann in der Schule müde und können sich schlecht konzentrieren.",
+            "Sie sind am Wochenende oder in der Nacht krank, und Ihre Arztpraxis ist geschlossen? Dann müssen Sie nicht sofort ins Krankenhaus fahren. Rufen Sie den ärztlichen Bereitschaftsdienst an. Dort sagt man Ihnen, wo Sie schnell Hilfe bekommen. Wenn Sie nicht selbst fahren können, kommt eine Ärztin oder ein Arzt auch zu Ihnen nach Hause. Bei einem Notfall, zum Beispiel bei einem schweren Unfall, rufen Sie aber immer die 112.",
+            "Einmal im Monat wird es im Gemeindehaus der Nordstadt bunt und lecker: Beim Abend „Rezepte aus aller Welt“ kochen Nachbarinnen und Nachbarn aus verschiedenen Ländern zusammen. Jedes Mal zeigt eine andere Person ein Gericht aus ihrer Heimat – letztes Mal gab es Suppe aus Syrien, davor Pfannkuchen aus Polen. Danach essen alle zusammen. Wer mitmachen möchte, bringt nur gute Laune und fünf Euro für die Zutaten mit.",
+            "Was möchte ich nach der Schule machen? Diese Frage stellen sich viele junge Leute. Antworten gibt es am Samstag, dem 18. März, in der Stadthalle. Dort stellen sich mehr als 60 Firmen, Krankenhäuser und Behörden vor und informieren über ihre Ausbildungsplätze. Die Besucher können mit Azubis sprechen und an vielen Ständen auch selbst etwas ausprobieren. Bringen Sie am besten gleich Ihren Lebenslauf mit. Der Eintritt ist frei.",
+            "Im Herbst fallen in vielen Gärten Blätter und Äste an. Diese Gartenabfälle können Sie im Oktober und November kostenlos beim Wertstoffhof in der Industriestraße abgeben. Sonst kostet das drei Euro pro Sack. Der Wertstoffhof ist montags bis freitags von 8 bis 17 Uhr und samstags von 8 bis 13 Uhr geöffnet. Bitte beachten Sie: Erde, Steine und Holz mit Farbe nehmen wir nicht an."
+          ],
+          "targets": [
+            "Gartenabfälle im Herbst kostenlos abgeben",
+            "Den passenden Beruf finden",
+            "Arztpraxen öffnen jetzt auch am Wochenende",
+            "Jugendliche schlafen zu wenig",
+            "Mit dem Rad zur Arbeit: Firma hilft",
+            "Neue Handys für alle Schüler",
+            "Gerichte aus der Heimat für die Nachbarn",
+            "Hilfe, wenn die Arztpraxis geschlossen ist"
+          ],
+          "answers": [
+            4,
+            3,
+            7,
+            6,
+            1,
+            0
+          ],
+          "allowNone": false
+        },
+        "explanations": [
+          {
+            "en": "Text 1: the company pays \"einen großen Teil\" of a new bike and builds bike parking and showers so staff cycle to work. The heading is e.",
+            "de": "Die Firma bezahlt „einen großen Teil“ von einem neuen Fahrrad und baut Parkplätze für Räder und Duschen. Das passt zu e."
+          },
+          {
+            "en": "Text 2: many teenagers sleep \"nur sechs oder sieben Stunden\", but they need eight to ten. The smartphone is only a reason; nobody gets new phones (f). The heading is d.",
+            "de": "Viele Jugendliche schlafen „nur sechs oder sieben Stunden“. Sie brauchen aber acht bis zehn. Das passt zu d. Neue Handys gibt es nicht, f passt nicht."
+          },
+          {
+            "en": "Text 3 explains what to do when \"Ihre Arztpraxis ist geschlossen\": call the medical on-call service. Nothing says that practices now open at weekends (c). The heading is h.",
+            "de": "Text 3 sagt, was man tun kann, wenn die „Arztpraxis … geschlossen“ ist: den Bereitschaftsdienst anrufen. Das passt zu h. Im Text steht nicht, dass die Praxen jetzt am Wochenende öffnen. c passt nicht."
+          },
+          {
+            "en": "Text 4: neighbours from different countries cook, and each time someone shows \"ein Gericht aus ihrer Heimat\". The heading is g.",
+            "de": "Nachbarn aus verschiedenen Ländern kochen zusammen. Jedes Mal zeigt jemand „ein Gericht aus ihrer Heimat“. Das passt zu g."
+          },
+          {
+            "en": "Text 5 is about a fair where companies \"informieren über ihre Ausbildungsplätze\" for young people who ask what to do after school. The heading is b.",
+            "de": "Auf der Messe „informieren“ Firmen „über ihre Ausbildungsplätze“. Junge Leute können so einen Beruf finden. Das passt zu b."
+          },
+          {
+            "en": "Text 6: garden waste can be left \"im Oktober und November kostenlos\" at the recycling centre. The heading is a.",
+            "de": "Gartenabfälle kann man „im Oktober und November kostenlos“ abgeben. Das passt zu a."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-a2__lesen-1__s03",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Sie sind neu in Talheim und kennen die Stadt noch nicht? Dann kommen Sie mit auf unseren Spaziergang durch die Altstadt! Jeden ersten Samstag im Monat zeigt Ihnen eine Stadtführerin die wichtigsten Plätze: das Rathaus, die Bibliothek, das Bürgerbüro und den Markt. Außerdem bekommen Sie Tipps für Sportvereine und Kurse. Die Führung dauert zwei Stunden und ist für neue Bürgerinnen und Bürger kostenlos. Treffpunkt ist um 10 Uhr am Brunnen.",
+            "Achtung, Badegäste! Im Mühlsee gibt es zurzeit sehr viele Algen. Das Wasser ist deshalb nicht sauber genug, und Baden kann für die Gesundheit gefährlich sein, besonders für Kinder und Hunde. Bis auf Weiteres ist das Schwimmen im See verboten. Die Liegewiese und der Kiosk bleiben aber geöffnet. Die Stadt prüft das Wasser jede Woche und informiert auf ihrer Internetseite, wann man wieder baden darf.",
+            "Ihr Kleiderschrank ist voll, aber Sie haben trotzdem nichts zum Anziehen? Bringen Sie am Sonntag bis zu zehn Kleidungsstücke ins Jugendzentrum, die Sie nicht mehr tragen: Hosen, Pullover, Jacken oder Schuhe. Die Sachen müssen sauber und noch gut sein. Dafür dürfen Sie andere Kleidung mitnehmen, die Ihnen gefällt. Geld brauchen Sie nicht. Was am Ende übrig bleibt, bekommt die Kleiderkammer der Stadt.",
+            "Wir sind zwei Studentinnen und ein Student und suchen ab dem 1. Oktober eine neue Mitbewohnerin für unsere Wohnung in der Uhlandstraße. Das freie Zimmer ist 16 Quadratmeter groß und hat einen Balkon. Küche und Bad teilen wir. Die Miete beträgt 390 Euro warm. Wir kochen gern zusammen und machen manchmal Spieleabende, aber wir brauchen auch Ruhe zum Lernen. Interesse? Dann schreib uns eine kurze Nachricht!",
+            "Ein Umzug macht viel Arbeit. Damit Sie nichts vergessen, hier einige Tipps: Melden Sie sich innerhalb von zwei Wochen beim Bürgeramt an Ihrer neuen Adresse an. Sagen Sie auch Ihrer Bank, Ihrer Krankenkasse und Ihrem Arbeitgeber die neue Adresse. Bei der Post können Sie einen Nachsendeauftrag machen, dann kommen Ihre Briefe ein paar Monate lang automatisch in die neue Wohnung.",
+            "Wie entsteht ein Theaterstück? Am Sonntag, dem 22. Oktober, öffnet das Stadttheater von 11 bis 17 Uhr alle Türen. Die Besucher können sich die Werkstätten ansehen, in denen Kostüme genäht und Möbel für die Bühne gebaut werden. Schauspielerinnen und Schauspieler zeigen, wie eine Probe funktioniert, und Kinder dürfen sich schminken lassen. Der Eintritt ist frei, eine Anmeldung ist nicht nötig."
+          ],
+          "targets": [
+            "Zurzeit kein Baden im See",
+            "Theater sucht Schauspieler",
+            "Kleidung tauschen statt kaufen",
+            "Die Stadt kennenlernen: Führung für Neue",
+            "Was man beim Umzug nicht vergessen darf",
+            "Neue Mitbewohnerin gesucht",
+            "Neues Freibad am See eröffnet",
+            "Blick hinter die Bühne"
+          ],
+          "answers": [
+            3,
+            0,
+            2,
+            5,
+            4,
+            7
+          ],
+          "allowNone": false
+        },
+        "explanations": [
+          {
+            "en": "Text 1 offers new residents a free walk: a guide \"zeigt Ihnen die wichtigsten Plätze\". The heading is d.",
+            "de": "Für neue Bürger gibt es einen Spaziergang. Eine Stadtführerin „zeigt Ihnen die wichtigsten Plätze“. Das passt zu d."
+          },
+          {
+            "en": "Text 2: \"Bis auf Weiteres ist das Schwimmen im See verboten.\" No new pool is opening (g). The heading is a.",
+            "de": "Im Text steht: „Bis auf Weiteres ist das Schwimmen im See verboten.“ Das passt zu a. Ein neues Freibad gibt es nicht, g passt nicht."
+          },
+          {
+            "en": "Text 3: you bring clothes you no longer wear and take other clothes; \"Geld brauchen Sie nicht.\" The heading is c.",
+            "de": "Man bringt alte Kleidung mit und nimmt andere Kleidung mit. „Geld brauchen Sie nicht.“ Man tauscht also. Das passt zu c."
+          },
+          {
+            "en": "Text 4: three students \"suchen … eine neue Mitbewohnerin für unsere Wohnung\". The heading is f.",
+            "de": "Drei Studenten „suchen … eine neue Mitbewohnerin“. Das passt zu f."
+          },
+          {
+            "en": "Text 5 gives tips for moving house \"damit Sie nichts vergessen\": register at the new address, tell the bank, forward the post. The heading is e.",
+            "de": "Text 5 gibt Tipps für den Umzug, „damit Sie nichts vergessen“. Das passt zu e."
+          },
+          {
+            "en": "Text 6: at the theatre's open day visitors see the workshops and how a rehearsal works – a look behind the stage. The theatre is not looking for actors (b). The heading is h.",
+            "de": "Beim Tag der offenen Tür sieht man die Werkstätten und eine Probe. Man sieht also, was hinter der Bühne passiert. Das passt zu h. Das Theater sucht keine Schauspieler, b passt nicht."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -6,15 +6,7 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { BTN, FOCUS, HINT, LINK, PAGE_TITLE } from './adminStyles';
-
-function readText(file: File): Promise<string> {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => resolve(String(reader.result));
-    reader.onerror = () => reject(reader.error ?? new Error('Could not read the file'));
-    reader.readAsText(file);
-  });
-}
+import { readText } from './readText';
 
 export function PlacementExamAdmin({ questionCount }: { questionCount: number }) {
   const [count, setCount] = useState(questionCount);

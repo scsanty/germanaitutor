@@ -183,8 +183,58 @@ export function runMigrations(db: Database.Database): void {
     migrateProfilePreferences(db);
     migrateFreestyle(db);
     migrateFlashcardReviewsToDeck(db);
+    migrateExerciseTypes(db);
+    migrateTeilAttemptAnswers(db);
   });
-  migrate();
+  // Table rebuilds (migrateExerciseTypes) must run with foreign keys OFF, or DROP TABLE would cascade
+  // to attempts and reviews. SQLite ignores this pragma inside a transaction, so it wraps the transaction.
+  const foreignKeysWereOn = db.pragma('foreign_keys', { simple: true }) === 1;
+  db.pragma('foreign_keys = OFF');
+  try {
+    migrate();
+  } finally {
+    if (foreignKeysWereOn) db.pragma('foreign_keys = ON');
+  }
+}
+
+// Reading module: the passage, matching and cloze exercise types. SQLite can't change a CHECK in
+// place, so each table still on the old CHECK is rebuilt (create-copy-drop-rename), keeping ids, so
+// attempts, reviews, chat rows and seen markers stay linked. Runs with foreign keys OFF (see
+// runMigrations). A table already on the new CHECK is left alone, so a second run does nothing.
+function migrateExerciseTypes(db: Database.Database): void {
+  let rebuilt = false;
+  for (const table of ['exercises', 'practice_exercises']) {
+    const row = db.prepare("SELECT sql FROM sqlite_master WHERE type = 'table' AND name = ?").get(table) as { sql: string } | undefined;
+    if (!row || row.sql.includes("'cloze'")) continue;
+    const newSql = row.sql
+      .replace(/^CREATE TABLE ("?)(\w+)\1/, `CREATE TABLE ${table}_new`)
+      .replace("'free_text')", "'free_text','passage_questions','matching','cloze')");
+    if (!newSql.startsWith(`CREATE TABLE ${table}_new`) || !newSql.includes("'cloze'")) {
+      throw new Error(`Unexpected ${table} definition; cannot add the reading exercise types`);
+    }
+    // With foreign keys on (e.g. runMigrations called inside an outer transaction, where the pragma
+    // is ignored), DROP TABLE would silently cascade-delete every attempt, review and chat link.
+    if (db.pragma('foreign_keys', { simple: true }) !== 0) {
+      throw new Error(`Cannot rebuild ${table} with foreign keys on; run migrations outside any transaction`);
+    }
+    const columns = (db.prepare(`PRAGMA table_info(${table})`).all() as { name: string }[]).map((c) => `"${c.name}"`).join(', ');
+    db.exec(newSql);
+    db.exec(`INSERT INTO ${table}_new (${columns}) SELECT ${columns} FROM ${table}; DROP TABLE ${table}; ALTER TABLE ${table}_new RENAME TO ${table};`);
+    rebuilt = true;
+  }
+  // The rebuild dropped the tables' indexes (as defined in createTablesIfMissing).
+  db.exec('CREATE INDEX IF NOT EXISTS idx_practice_exercises_lesson ON practice_exercises(lesson_id)');
+  if (!rebuilt) return;
+  // Only links into the rebuilt tables are fatal (S4). These tables also point elsewhere (e.g.
+  // lesson_attempts.lesson_id → lessons); an unrelated old orphan is logged, not allowed to stop startup.
+  const rebuiltParents = new Set(['exercises', 'practice_exercises']);
+  for (const table of ['lesson_attempts', 'exercise_srs_state', 'lesson_chat_messages', 'practice_seen']) {
+    const rows = db.pragma(`foreign_key_check(${table})`) as { parent: string }[];
+    const fatal = rows.filter((r) => rebuiltParents.has(r.parent));
+    const unrelated = rows.filter((r) => !rebuiltParents.has(r.parent));
+    if (unrelated.length > 0) console.warn(`Ignoring ${unrelated.length} older foreign key problem(s) in ${table}: ${JSON.stringify(unrelated)}`);
+    if (fatal.length > 0) throw new Error(`Foreign key problems in ${table} after the exercise type migration: ${JSON.stringify(fatal)}`);
+  }
 }
 
 // Freestyle and the vocabulary deck: deck settings on the profile, and the End guard on sessions.
@@ -362,7 +412,7 @@ function createTablesIfMissing(db: Database.Database): void {
       id TEXT PRIMARY KEY,
       lesson_id TEXT NOT NULL REFERENCES lessons(id) ON DELETE CASCADE,
       track TEXT CHECK (track IN ('generic','telc','goethe')),
-      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','flashcard','free_text')),
+      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','flashcard','free_text','passage_questions','matching','cloze')),
       content TEXT NOT NULL
     );
 
@@ -479,7 +529,7 @@ function createTablesIfMissing(db: Database.Database): void {
     CREATE TABLE IF NOT EXISTS practice_exercises (
       id TEXT PRIMARY KEY,
       lesson_id TEXT NOT NULL REFERENCES lessons(id) ON DELETE CASCADE,
-      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','flashcard','free_text')),
+      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','flashcard','free_text','passage_questions','matching','cloze')),
       content TEXT NOT NULL,
       review_status TEXT NOT NULL DEFAULT 'unreviewed' CHECK (review_status IN ('unreviewed','approved','rejected')),
       created_at TEXT NOT NULL,
@@ -538,5 +588,38 @@ function createTablesIfMissing(db: Database.Database): void {
       answered_on TEXT NOT NULL, answered_at TEXT NOT NULL
     );
     CREATE INDEX IF NOT EXISTS idx_vocab_answers_day ON vocabulary_answers(answered_on);
+
+    CREATE TABLE IF NOT EXISTS teil_sets (
+      id TEXT PRIMARY KEY,
+      format_id TEXT NOT NULL, part_id TEXT NOT NULL,
+      status TEXT NOT NULL CHECK (status IN ('starter','unreviewed','approved','rejected','reserved')),
+      content TEXT NOT NULL,
+      created_at TEXT NOT NULL, reviewed_at TEXT
+    );
+    CREATE INDEX IF NOT EXISTS idx_teil_sets_part ON teil_sets(format_id, part_id);
+    CREATE TABLE IF NOT EXISTS teil_seen (
+      set_id TEXT PRIMARY KEY REFERENCES teil_sets(id) ON DELETE CASCADE,
+      seen_at TEXT NOT NULL
+    );
+    CREATE TABLE IF NOT EXISTS teil_attempts (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      format_id TEXT NOT NULL, part_id TEXT NOT NULL, set_id TEXT,
+      kind TEXT NOT NULL CHECK (kind IN ('practice','mock')),
+      mock_id TEXT,
+      score REAL, max_score REAL, overtime_seconds INTEGER,
+      started_at TEXT NOT NULL, finished_at TEXT,
+      answers TEXT
+    );
+    CREATE TABLE IF NOT EXISTS teil_bundle_meta (
+      format_id TEXT NOT NULL, part_id TEXT NOT NULL, version TEXT NOT NULL,
+      PRIMARY KEY (format_id, part_id)
+    );
   `);
+}
+
+// Reading module (S9): a finished attempt keeps its raw answers, only so a repeated submit can return
+// the same review. They never feed the error log or mastery.
+function migrateTeilAttemptAnswers(db: Database.Database): void {
+  const columns = db.prepare('PRAGMA table_info(teil_attempts)').all() as { name: string }[];
+  if (!columns.some((c) => c.name === 'answers')) db.exec('ALTER TABLE teil_attempts ADD COLUMN answers TEXT');
 }

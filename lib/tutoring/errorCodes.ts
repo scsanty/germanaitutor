@@ -22,7 +22,8 @@ export type ErrorCode =
   | 'testout_cooldown'
   | 'already_in_deck'
   | 'session_exists'
-  | 'session_ending';
+  | 'session_ending'
+  | 'part_unavailable';
 
 export type ErrorParams = Record<string, string>;
 

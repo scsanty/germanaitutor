@@ -12,6 +12,7 @@ import type { DashboardView } from '@/lib/tutoring/dashboardViews';
 import { Logo } from '@/components/brand/Logo';
 import { Heatmap } from './Heatmap';
 import { SkillProgress } from './SkillProgress';
+import { ReadinessCard } from './ReadinessCard';
 
 // A large hero logo heads the dashboard, wide enough (≥ 540px on desktop, full width on phone) for the tagline to read.
 export function DashboardPage() {
@@ -106,6 +107,7 @@ function DashboardContent() {
           <SkillProgress skills={view.skills} />
         </CardContent>
       </Card>
+      <ReadinessCard />
       <Card>
         <CardHeader>
           <CardTitle>{t('activity')}</CardTitle>

@@ -1,0 +1,319 @@
+{
+  "formatId": "goethe-c1",
+  "partId": "lesen-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-c1__lesen-2__s01",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Zwei Sprachen, ein Kind – was die Forschung über mehrsprachiges Aufwachsen weiß\n\nAls Mira Okonjo ihren Sohn zum ersten Mal zur Kinderärztin brachte, bekam sie einen Rat, den sie bis heute nicht vergessen hat: Sie solle mit dem Kind lieber nur Deutsch sprechen, zwei Sprachen würden es überfordern. Die gebürtige Nigerianerin, die mit ihrem Sohn Yoruba spricht, während ihr Mann ihn auf Deutsch anspricht, hielt sich nicht daran – zum Glück, wie sie heute sagt. Ihr Sohn ist inzwischen acht, spricht beide Sprachen fließend und gehört zu den besten Lesern seiner Klasse.\n\nDie Sorge, die die Ärztin damals äußerte, ist weit verbreitet – und nach heutigem Stand der Forschung unbegründet. „Das menschliche Gehirn ist von Anfang an darauf eingestellt, mehr als eine Sprache zu lernen“, sagt die Sprachwissenschaftlerin Katrin Wendel, die an einer norddeutschen Universität zum kindlichen Spracherwerb forscht. Weltweit wachse ohnehin die Mehrheit der Kinder mit zwei oder mehr Sprachen auf; die einsprachige Kindheit, die in Mitteleuropa lange als Normalfall galt, sei global betrachtet eher die Ausnahme.\n\nRichtig sei allerdings, dass mehrsprachige Kinder in jeder einzelnen Sprache zunächst oft einen kleineren Wortschatz haben als gleichaltrige einsprachige Kinder. Das liege schlicht daran, dass sich ihre Zeit und ihre Erfahrungen auf zwei Sprachen verteilen: Wörter aus dem Kindergarten kennen sie vielleicht nur auf Deutsch, Wörter aus der Küche nur in der Familiensprache. „Zählt man beide Sprachen zusammen, ist der Wortschatz in der Regel genauso groß, oft sogar größer“, erklärt Wendel. Wer das nicht wisse, ziehe bei Sprachstandstests mitunter falsche Schlüsse.\n\nAuch das Mischen der Sprachen, das viele Eltern beunruhigt, ist kein Alarmzeichen. Wenn ein Kind mitten im Satz von einer Sprache in die andere wechselt, zeigt das nicht, dass es die Sprachen durcheinanderbringt. Vielmehr nutzt es geschickt alle Mittel, die ihm zur Verfügung stehen – ähnlich wie Erwachsene, die in einer Fremdsprache ein fehlendes Wort durch eines aus ihrer Muttersprache ersetzen. Untersuchungen zeigen, dass schon Kleinkinder sehr genau unterscheiden, mit wem sie welche Sprache sprechen können.\n\nLange hielt sich in Ratgebern die Regel „eine Person, eine Sprache“: Jeder Elternteil solle konsequent nur seine eigene Sprache verwenden. Wendel hält diese Empfehlung für zu starr. Entscheidend sei nicht ein bestimmtes System, sondern wie viel und wie lebendig ein Kind eine Sprache erlebe. „Wenn eine Sprache nur beim Abendessen vorkommt und sonst nirgends, wird sie sich kaum gegen die Umgebungssprache behaupten können.“ Hilfreich seien deshalb Bücher, Lieder, Kontakte zu Verwandten oder Spielgruppen, in denen die Familiensprache gesprochen wird.\n\nEin häufig genannter Vorteil der Mehrsprachigkeit ist dagegen mit Vorsicht zu genießen. Lange wurde behauptet, zweisprachige Kinder könnten sich besser konzentrieren und schneller zwischen Aufgaben wechseln. Neuere, größer angelegte Studien konnten diesen Effekt jedoch nicht durchgängig bestätigen. „Man sollte Kinder nicht deshalb mehrsprachig erziehen, weil man sich davon klügeren Nachwuchs verspricht“, sagt Wendel. „Der eigentliche Gewinn ist ein anderer: Das Kind kann mit seinen Großeltern sprechen, versteht die Kultur beider Eltern und besitzt später eine Fähigkeit, die auf dem Arbeitsmarkt gefragt ist.“\n\nKritik übt die Forscherin auch am Umgang mancher Bildungseinrichtungen mit Familiensprachen. Noch immer werde Kindern in einigen Kitas untersagt, untereinander ihre Herkunftssprache zu sprechen, in der Annahme, dies verbessere ihr Deutsch. Dafür gebe es keinerlei Belege. Im Gegenteil: Kinder, deren Erstsprache wertgeschätzt werde, lernten die zweite oft motivierter. Einige Bundesländer bieten deshalb inzwischen herkunftssprachlichen Unterricht an Schulen an – allerdings bei Weitem nicht für alle Sprachen und häufig nur am Nachmittag.\n\nMira Okonjo hat für ihren Sohn eine eigene Lösung gefunden: Einmal im Monat trifft sich eine kleine Gruppe von Familien in einem Gemeindezentrum, die Kinder spielen, singen und hören Geschichten auf Yoruba. „Am Anfang hat er sich gesträubt, weil keiner seiner Schulfreunde dabei war“, erzählt sie. „Heute fragt er jeden Monat, wann wir endlich wieder hingehen.“",
+          "questions": [
+            {
+              "question": "Die Kinderärztin befürchtete, dass …",
+              "options": [
+                "der Junge später in der Schule Nachteile haben würde.",
+                "das Kind durch zwei Sprachen überfordert würde.",
+                "die Eltern sich auf keine gemeinsame Familiensprache einigen könnten."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Was sagt der Text über die einsprachige Kindheit?",
+              "options": [
+                "Sie bietet die besten Voraussetzungen für den Spracherwerb.",
+                "Sie wird in Mitteleuropa zunehmend seltener.",
+                "Sie ist weltweit seltener als das Aufwachsen mit mehreren Sprachen."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Mehrsprachige Kinder kennen in einer einzelnen Sprache oft weniger Wörter, weil …",
+              "options": [
+                "sie Wörter je nach Lebensbereich in unterschiedlichen Sprachen lernen.",
+                "sie die beiden Sprachen häufig verwechseln.",
+                "Sprachstandstests ihren Wortschatz nicht richtig erfassen."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Wenn Kinder mitten im Satz die Sprache wechseln, …",
+              "options": [
+                "ist das ein Hinweis darauf, dass sie die Sprachen noch nicht trennen können.",
+                "sollten die Eltern sie behutsam korrigieren.",
+                "nutzen sie alle sprachlichen Mittel, über die sie verfügen."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Wie beurteilt Katrin Wendel die Regel „eine Person, eine Sprache“?",
+              "options": [
+                "Sie sei die wirksamste Methode der mehrsprachigen Erziehung.",
+                "Sie sei zu wenig flexibel.",
+                "Sie sei nur bei Kleinkindern sinnvoll."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Die Annahme, Mehrsprachigkeit verbessere die Konzentrationsfähigkeit, …",
+              "options": [
+                "wurde in neueren Studien nicht durchgängig bestätigt.",
+                "gilt inzwischen als eindeutig widerlegt.",
+                "trifft nur auf Erwachsene zu."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Was kritisiert Katrin Wendel an manchen Kitas?",
+              "options": [
+                "Sie legen zu wenig Wert auf die Förderung der deutschen Sprache.",
+                "Sie bieten Unterricht in den Herkunftssprachen nur am Nachmittag an.",
+                "Sie verbieten den Kindern, untereinander ihre Herkunftssprache zu sprechen."
+              ],
+              "correctIndex": 2
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The doctor advised speaking only German because \"zwei Sprachen würden es überfordern\". School disadvantages and a disagreement between the parents are not mentioned.",
+            "de": "Die Ärztin sagte: „zwei Sprachen würden es überfordern“. Von der Schule oder von Streit zwischen den Eltern ist nicht die Rede."
+          },
+          {
+            "en": "The text says that worldwide most children grow up with two or more languages, and a monolingual childhood \"sei global betrachtet eher die Ausnahme\". It does not say it is becoming rarer in Central Europe or that it is the best basis for learning.",
+            "de": "Im Text steht, dass die einsprachige Kindheit „global betrachtet eher die Ausnahme“ ist. Dass sie in Mitteleuropa seltener wird, steht nicht im Text."
+          },
+          {
+            "en": "Their time and experience are split between languages: \"Wörter aus dem Kindergarten kennen sie vielleicht nur auf Deutsch, Wörter aus der Küche nur in der Familiensprache.\" The text explicitly denies that they confuse the languages, and the tests are only said to lead to wrong conclusions.",
+            "de": "Die Kinder lernen manche Wörter nur in einer Sprache: „Wörter aus dem Kindergarten … nur auf Deutsch, Wörter aus der Küche nur in der Familiensprache.“"
+          },
+          {
+            "en": "Switching languages mid-sentence does not mean confusion: \"Vielmehr nutzt es geschickt alle Mittel, die ihm zur Verfügung stehen.\" Correction by the parents is not recommended anywhere.",
+            "de": "Im Text steht: „Vielmehr nutzt es geschickt alle Mittel, die ihm zur Verfügung stehen.“ Das Mischen ist also kein Problem."
+          },
+          {
+            "en": "\"Wendel hält diese Empfehlung für zu starr\" – too rigid, i.e. not flexible enough. What matters for her is how much and how vividly the child experiences a language, not a fixed system.",
+            "de": "Wendel findet die Regel „zu starr“, also nicht flexibel genug. Für sie ist wichtig, wie oft und wie lebendig ein Kind eine Sprache erlebt."
+          },
+          {
+            "en": "\"Neuere, größer angelegte Studien konnten diesen Effekt jedoch nicht durchgängig bestätigen.\" Not consistently confirmed is weaker than \"clearly refuted\", and adults are not mentioned.",
+            "de": "Im Text steht, dass neuere Studien den Effekt „nicht durchgängig bestätigen“ konnten. Das heißt nicht, dass er eindeutig widerlegt ist."
+          },
+          {
+            "en": "\"Noch immer werde Kindern in einigen Kitas untersagt, untereinander ihre Herkunftssprache zu sprechen.\" Afternoon lessons in heritage languages concern schools, not Kitas, and are only a remark by the author.",
+            "de": "In manchen Kitas dürfen die Kinder ihre Herkunftssprache nicht sprechen („untersagt“). Das kritisiert Wendel. Der Nachmittagsunterricht betrifft Schulen, nicht Kitas."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-c1__lesen-2__s02",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Forschen ohne Doktortitel: Wie Laien die Wissenschaft voranbringen\n\nJeden Morgen um sechs Uhr steht Bernd Hallstein mit einem Fernglas am Ufer eines kleinen Sees in der Uckermark. Der pensionierte Bauingenieur zählt Wasservögel – nicht nur zum Vergnügen, sondern für ein Forschungsprojekt, das die Bestandsentwicklung seltener Arten erfasst. Seine Beobachtungen trägt er in eine App ein, von wo aus sie direkt in eine wissenschaftliche Datenbank gelangen. Hallstein ist einer von schätzungsweise mehreren Hunderttausend Menschen in Deutschland, die sich in ihrer Freizeit an wissenschaftlichen Projekten beteiligen.\n\nCitizen Science, zu Deutsch Bürgerwissenschaft, nennt sich dieses Phänomen. Neu ist es keineswegs: Schon im 19. Jahrhundert waren es häufig Pfarrer, Lehrer oder Apotheker, die nebenbei Pflanzen bestimmten, Wetterdaten aufzeichneten oder Fossilien sammelten und so wesentlich zum Wissen ihrer Zeit beitrugen. Erst mit der Professionalisierung der Wissenschaft wurden Laien zunehmend an den Rand gedrängt. Dass sie nun zurückkehren, hat vor allem mit dem Internet und dem Smartphone zu tun: Beobachtungen lassen sich heute mit wenigen Klicks erfassen, mit Foto und Ortsangabe versehen und weltweit teilen.\n\nFür die Forschung ist das ein enormer Gewinn. „Viele Fragen ließen sich ohne die Mithilfe Freiwilliger schlicht nicht beantworten“, sagt die Ökologin Hanna Brückner, die ein Projekt zur Verbreitung von Wildbienen leitet. „Kein Institut der Welt könnte genug Personal bezahlen, um an Tausenden Orten gleichzeitig zu beobachten.“ Gerade wenn es um langfristige Veränderungen gehe, etwa durch den Klimawandel, seien flächendeckende Daten über viele Jahre unverzichtbar.\n\nDoch wie zuverlässig sind Daten, die von Laien erhoben werden? Diese Frage begleitet die Bürgerwissenschaft seit ihren Anfängen. Brückner räumt ein, dass Fehler vorkommen, etwa wenn ähnlich aussehende Arten verwechselt werden. Die Projekte haben jedoch Verfahren entwickelt, um solche Fehler aufzufangen: Fotos werden von Fachleuten oder inzwischen auch von Bilderkennungsprogrammen geprüft, auffällige Meldungen werden nachrecherchiert, und neue Teilnehmende durchlaufen häufig kurze Schulungen. Vergleichsstudien zeigen, dass die Qualität der Daten bei sorgfältig betreuten Projekten kaum hinter der von Fachleuten zurückbleibt.\n\nInteressanter als die Frage nach der Datenqualität finden manche Fachleute ohnehin eine andere: Was haben die Freiwilligen selbst davon? Befragungen zeigen, dass die meisten nicht nur Freude an der Beobachtung haben, sondern auch ihr Wissen erheblich erweitern. Wer ein Jahr lang Schmetterlinge zählt, kennt am Ende nicht nur deutlich mehr Arten, sondern versteht auch, warum bestimmte Lebensräume verschwinden. Viele Teilnehmende engagieren sich danach stärker im Naturschutz vor Ort.\n\nKritische Stimmen gibt es dennoch. Einige Forschende bemängeln, dass Laien in vielen Projekten lediglich als Datensammler eingesetzt würden, während Fragestellung, Auswertung und Veröffentlichung allein in der Hand der Wissenschaft blieben. Echte Bürgerwissenschaft, so ihr Argument, müsse die Beteiligten auch an der Entwicklung der Forschungsfragen mitwirken lassen. Erste Projekte versuchen genau das: In einem Vorhaben zur Luftqualität in Großstädten legen Anwohnerinnen und Anwohner selbst fest, an welchen Straßen gemessen wird und welchen Fragen nachgegangen werden soll.\n\nHinzu kommt ein Ungleichgewicht bei den Teilnehmenden. Wer sich an Citizen-Science-Projekten beteiligt, ist überdurchschnittlich oft gut ausgebildet, älter und lebt eher in ländlichen Regionen oder Vorstädten. Bestimmte Gruppen – etwa Jugendliche oder Menschen aus einkommensschwachen Stadtteilen – sind kaum vertreten. Das kann sich auch auf die Ergebnisse auswirken: Wenn vor allem in gut erreichbaren, grünen Gegenden beobachtet wird, entsteht ein verzerrtes Bild.\n\nBernd Hallstein sind solche Debatten nicht fremd, beirren lassen will er sich davon aber nicht. Im vergangenen Frühjahr hat er an seinem See eine Entenart entdeckt, die in der Region seit Jahrzehnten nicht mehr gesichtet worden war. Die Meldung wurde von einem Experten bestätigt und in einem Fachartikel erwähnt – mit seinem Namen. „Da war ich schon ein bisschen stolz“, sagt er.",
+          "questions": [
+            {
+              "question": "Bernd Hallstein zählt Wasservögel, weil …",
+              "options": [
+                "er als Bauingenieur beruflich dazu verpflichtet ist.",
+                "er damit ein wissenschaftliches Projekt unterstützt.",
+                "er eine eigene Datenbank über seltene Arten aufbauen möchte."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Was sagt der Text über die Geschichte der Bürgerwissenschaft?",
+              "options": [
+                "Sie ist erst durch das Internet entstanden.",
+                "Sie wurde im 19. Jahrhundert von Universitäten ins Leben gerufen.",
+                "Laien haben schon früher einen wichtigen Beitrag zur Forschung geleistet."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Nach Hanna Brückner sind Freiwillige für die Forschung wichtig, weil …",
+              "options": [
+                "nur mit ihrer Hilfe an sehr vielen Orten zugleich beobachtet werden kann.",
+                "sie häufig besser ausgebildet sind als bezahltes Personal.",
+                "sie neue Forschungsfragen in die Wissenschaft einbringen."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Wie wird die Zuverlässigkeit der Daten von Laien gesichert?",
+              "options": [
+                "Nur Personen mit einer Fachausbildung dürfen Beobachtungen melden.",
+                "Die Meldungen werden auf unterschiedliche Weise überprüft.",
+                "Schwer zu unterscheidende Arten werden grundsätzlich nicht erfasst."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Was erfährt man über die Freiwilligen?",
+              "options": [
+                "Die meisten verlieren nach einem Jahr das Interesse.",
+                "Sie interessieren sich vor allem für Schmetterlinge.",
+                "Sie lernen durch ihre Mitarbeit viel dazu."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Kritikerinnen und Kritiker bemängeln, dass …",
+              "options": [
+                "Laien oft nur Daten sammeln dürfen.",
+                "Laien zu viel Einfluss auf die Forschungsfragen haben.",
+                "die Luftqualität in Großstädten zu wenig erforscht wird."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Welches Problem ergibt sich aus der Zusammensetzung der Teilnehmenden?",
+              "options": [
+                "Jugendliche liefern häufiger fehlerhafte Daten.",
+                "Die Ergebnisse können verzerrt sein.",
+                "Projekte in Großstädten finden keine Freiwilligen."
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "He counts birds \"nicht nur zum Vergnügen, sondern für ein Forschungsprojekt\", and his data go into a scientific database. He is retired, so it is not a professional duty, and the database is not his own.",
+            "de": "Er zählt die Vögel „für ein Forschungsprojekt“. Er ist pensioniert, also ist es keine berufliche Pflicht."
+          },
+          {
+            "en": "\"Schon im 19. Jahrhundert waren es häufig Pfarrer, Lehrer oder Apotheker, die … wesentlich zum Wissen ihrer Zeit beitrugen.\" So it did not begin with the internet, and universities are not named as founders.",
+            "de": "Schon im 19. Jahrhundert haben Laien „wesentlich zum Wissen ihrer Zeit beigetragen“. Die Bürgerwissenschaft ist also nicht neu."
+          },
+          {
+            "en": "\"Kein Institut der Welt könnte genug Personal bezahlen, um an Tausenden Orten gleichzeitig zu beobachten.\" Brückner says nothing about volunteers being better trained or bringing new questions.",
+            "de": "Brückner sagt, kein Institut könnte genug Personal bezahlen, „um an Tausenden Orten gleichzeitig zu beobachten“."
+          },
+          {
+            "en": "Photos are checked by experts or image recognition, unusual reports are followed up, and newcomers are trained – several different checks. Anyone may take part, and nothing says difficult species are excluded.",
+            "de": "Fotos werden geprüft, auffällige Meldungen werden nachrecherchiert, und es gibt Schulungen. Das sind verschiedene Arten der Kontrolle."
+          },
+          {
+            "en": "\"Befragungen zeigen, dass die meisten … auch ihr Wissen erheblich erweitern.\" The butterflies are only an example, and nothing indicates they lose interest.",
+            "de": "Die meisten Freiwilligen „erweitern ihr Wissen erheblich“. Die Schmetterlinge sind nur ein Beispiel."
+          },
+          {
+            "en": "Critics complain \"dass Laien in vielen Projekten lediglich als Datensammler eingesetzt würden\". They want more influence for lay people, not less; the air-quality project is a positive example.",
+            "de": "Die Kritik lautet, dass Laien „lediglich als Datensammler“ arbeiten. Die Kritiker wollen also mehr Mitsprache für Laien, nicht weniger."
+          },
+          {
+            "en": "Because participants mostly observe in accessible, green areas, \"entsteht ein verzerrtes Bild\" – the results can be distorted. Young people are only said to be under-represented, not unreliable.",
+            "de": "Weil vor allem in grünen, gut erreichbaren Gegenden beobachtet wird, „entsteht ein verzerrtes Bild“. Über fehlerhafte Daten von Jugendlichen steht nichts im Text."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-c1__lesen-2__s03",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Die unterschätzte Kraft der Langeweile\n\nWann haben Sie sich zuletzt gelangweilt? Für viele Menschen ist diese Frage gar nicht so leicht zu beantworten. Kaum entsteht im Alltag eine Lücke – an der Bushaltestelle, im Wartezimmer, in der Schlange an der Supermarktkasse –, greifen wir zum Smartphone. Die Langeweile, früher ein vertrauter Begleiter, scheint aus unserem Leben nahezu verschwunden zu sein. Psychologinnen und Psychologen sehen das mit gemischten Gefühlen.\n\nLange Zeit hat sich die Forschung für Langeweile kaum interessiert. Sie galt als banales Gefühl, das keiner wissenschaftlichen Untersuchung bedürfe. Erst seit etwa zwanzig Jahren beschäftigen sich Fachleute systematisch damit – und kommen zu überraschenden Ergebnissen. „Langeweile ist kein Zustand der Leere, sondern ein Signal“, erklärt der Psychologe Jonas Reiter, der an einer süddeutschen Hochschule zu Emotionen forscht. „Sie zeigt uns an, dass das, was wir gerade tun, uns nicht ausfüllt, und drängt uns dazu, etwas zu verändern.“ In diesem Sinne sei sie mit Hunger vergleichbar: unangenehm, aber nützlich.\n\nBesonders viel Aufmerksamkeit hat eine Reihe von Experimenten erhalten, in denen Versuchspersonen zunächst eine eintönige Aufgabe erledigen mussten, etwa Nummern aus einem Telefonbuch abschreiben. Anschließend sollten sie sich möglichst viele Verwendungsmöglichkeiten für einen alltäglichen Gegenstand ausdenken. Wer sich vorher gelangweilt hatte, kam im Durchschnitt auf mehr und originellere Ideen als die Vergleichsgruppe. Reiter warnt allerdings davor, aus solchen Befunden zu viel abzuleiten: Die Effekte seien eher klein, und nicht alle Folgestudien hätten sie bestätigt.\n\nUnstrittig ist dagegen, dass Phasen ohne äußere Reize dem Gehirn Gelegenheit geben, in einen besonderen Modus zu wechseln. Wenn wir nicht auf eine Aufgabe konzentriert sind, schweifen die Gedanken ab: Wir erinnern uns an Vergangenes, spielen Zukunftsszenarien durch oder verknüpfen scheinbar unzusammenhängende Informationen. Dieses Tagträumen hilft unter anderem dabei, Erlebtes zu verarbeiten und Pläne zu entwickeln. Wer jede freie Minute mit Nachrichten, Videos oder Spielen füllt, nimmt sich diese Möglichkeit.\n\nDabei beseitigt das Smartphone die Langeweile keineswegs. Befragungen deuten vielmehr darauf hin, dass sich viele Menschen trotz ständiger Unterhaltung häufiger gelangweilt fühlen als früher. Reiter erklärt das mit der Art der Ablenkung: Kurze Inhalte, die schnell aufeinanderfolgen, verschaffen nur flüchtige Befriedigung. Die Schwelle, ab der uns etwas fesselt, steigt – und alles, was langsamer ist, ein Buch, ein Gespräch, ein Spaziergang, erscheint uns dann umso eintöniger.\n\nFür Kinder kann das besonders problematisch sein. Viele Eltern empfinden es als ihre Aufgabe, ihren Nachwuchs rund um die Uhr zu beschäftigen, und füllen den Wochenplan mit Kursen und Terminen. Pädagoginnen und Pädagogen raten zu mehr Gelassenheit. Kinder, die lernen, mit Leerlauf umzugehen, entwickeln häufig eigene Spielideen und werden selbstständiger. „Man muss Kinder nicht vor der Langeweile retten“, sagt Reiter. „Man sollte ihnen nur nicht sofort einen Bildschirm in die Hand drücken, wenn sie sich beklagen.“\n\nHeißt das, wir sollten uns möglichst oft langweilen? So einfach ist es nicht. Chronische Langeweile, etwa in einem Beruf, der dauerhaft unterfordert, kann krank machen und geht mit einem erhöhten Risiko für Niedergeschlagenheit einher. Entscheidend ist, wie man auf das Gefühl reagiert. Wer Langeweile als Anstoß versteht, über die eigenen Wünsche nachzudenken, kann davon profitieren. Wer sie dagegen bloß betäubt, überhört die Botschaft, die sie enthält.\n\nReiter selbst hat sich eine kleine Regel auferlegt: Auf dem Weg zur Arbeit bleibt sein Telefon in der Tasche. „Die ersten Wochen waren ehrlich gesagt quälend“, gibt er zu. „Inzwischen kommen mir in der Straßenbahn die besten Einfälle.“",
+          "questions": [
+            {
+              "question": "Warum scheint die Langeweile aus dem Alltag vieler Menschen verschwunden zu sein?",
+              "options": [
+                "Weil es im Alltag kaum noch Wartezeiten gibt.",
+                "Weil die Menschen heute mehr arbeiten als früher.",
+                "Weil viele jede freie Minute sofort mit dem Smartphone füllen."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Wie beschreibt Jonas Reiter die Langeweile?",
+              "options": [
+                "Als Gefühl, das man möglichst vermeiden sollte.",
+                "Als Hinweis darauf, dass man etwas ändern sollte.",
+                "Als Zustand völliger innerer Leere."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Was sagt der Text über die Experimente zur Langeweile?",
+              "options": [
+                "Ihre Ergebnisse sind nicht ganz eindeutig.",
+                "Sie beweisen, dass Langeweile kreativ macht.",
+                "Die Versuchspersonen sollten Telefonnummern auswendig lernen."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Phasen ohne äußere Reize …",
+              "options": [
+                "helfen dabei, sich besser auf eine Aufgabe zu konzentrieren.",
+                "ermöglichen dem Gehirn eine vollständige Ruhepause.",
+                "geben dem Gehirn die Möglichkeit, Erlebtes zu verarbeiten."
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Warum fühlen sich viele Menschen trotz ständiger Unterhaltung gelangweilt?",
+              "options": [
+                "Weil die Inhalte im Internet meist zu lang sind.",
+                "Weil ihnen langsamere Tätigkeiten im Vergleich zunehmend eintönig vorkommen.",
+                "Weil sie das Smartphone vor allem für die Arbeit nutzen."
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Was rät Jonas Reiter Eltern?",
+              "options": [
+                "Gelangweilten Kindern nicht gleich einen Bildschirm zu geben.",
+                "Ihre Kinder mit Kursen sinnvoll zu beschäftigen.",
+                "Ihre Kinder möglichst vor Langeweile zu bewahren."
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Was sagt der Text über chronische Langeweile?",
+              "options": [
+                "Sie fördert die Kreativität besonders stark.",
+                "Sie tritt vor allem bei Kindern auf.",
+                "Sie kann die Gesundheit beeinträchtigen."
+              ],
+              "correctIndex": 2
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "\"Kaum entsteht im Alltag eine Lücke – an der Bushaltestelle, im Wartezimmer … –, greifen wir zum Smartphone.\" The waiting times still exist; we just fill them. Working hours are not mentioned.",
+            "de": "Sobald im Alltag eine Lücke entsteht, „greifen wir zum Smartphone“. Wartezeiten gibt es also noch, aber wir füllen sie sofort."
+          },
+          {
+            "en": "\"Langeweile ist kein Zustand der Leere, sondern ein Signal … und drängt uns dazu, etwas zu verändern.\" Reiter compares it to hunger: unpleasant but useful, so not something to avoid.",
+            "de": "Reiter sagt, Langeweile sei „ein Signal“, das uns dazu „drängt, etwas zu verändern“. Sie ist also nützlich und keine Leere."
+          },
+          {
+            "en": "Reiter warns against over-interpreting them: \"Die Effekte seien eher klein, und nicht alle Folgestudien hätten sie bestätigt.\" So they prove nothing conclusively; the participants copied numbers, they did not memorise them.",
+            "de": "Die Effekte sind „eher klein“, und „nicht alle Folgestudien“ haben sie bestätigt. Die Ergebnisse sind also nicht eindeutig."
+          },
+          {
+            "en": "Without external stimuli the mind wanders, and \"dieses Tagträumen hilft unter anderem dabei, Erlebtes zu verarbeiten und Pläne zu entwickeln\". The text describes a different mode of the brain, not concentration on a task or complete rest.",
+            "de": "Das Tagträumen „hilft … dabei, Erlebtes zu verarbeiten und Pläne zu entwickeln“. Das Gehirn arbeitet also weiter, nur anders."
+          },
+          {
+            "en": "Short, rapid content raises the threshold for being gripped, \"und alles, was langsamer ist … erscheint uns dann umso eintöniger\". The text says the contents are short, not long, and does not mention work.",
+            "de": "Kurze Inhalte machen uns ungeduldig. Darum erscheint uns alles, „was langsamer ist“, „umso eintöniger“."
+          },
+          {
+            "en": "\"Man sollte ihnen nur nicht sofort einen Bildschirm in die Hand drücken, wenn sie sich beklagen.\" He explicitly says children need not be rescued from boredom, and educators advise against full schedules.",
+            "de": "Reiter sagt: Man solle Kindern „nicht sofort einen Bildschirm in die Hand drücken“. Man muss sie nicht vor Langeweile „retten“."
+          },
+          {
+            "en": "Chronic boredom \"kann krank machen und geht mit einem erhöhten Risiko für Niedergeschlagenheit einher\" – it can harm health. Nothing links it particularly to creativity or to children.",
+            "de": "Chronische Langeweile „kann krank machen“. Sie schadet also der Gesundheit."
+          }
+        ]
+      }
+    }
+  ]
+}

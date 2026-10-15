@@ -1,0 +1,226 @@
+{
+  "formatId": "telc-a2",
+  "partId": "lesen-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-a2__lesen-2__s01",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Neue Stadtbibliothek: Lesen, lernen, treffen\n\nNach zwei Jahren Bauzeit ist es endlich so weit: Am kommenden Samstag öffnet die neue Stadtbibliothek am Bahnhofsplatz. Das alte Gebäude in der Schillerstraße war zu klein und zu dunkel. Im neuen Haus gibt es auf drei Etagen mehr als 60 000 Bücher, Zeitschriften, Filme und Spiele.\n\nBesonders stolz ist die Leiterin, Frau Kowalski, auf die Kinderabteilung im Erdgeschoss. Dort können die Kleinen nicht nur lesen, sondern auch malen und basteln. Für Schüler und Studenten gibt es im zweiten Stock ruhige Arbeitsplätze mit kostenlosem Internet.\n\nNeu sind auch die Öffnungszeiten: Die Bibliothek ist jetzt von Dienstag bis Samstag von 10 bis 20 Uhr geöffnet. Am Sonntag und am Montag bleibt sie geschlossen. Einen Bibliotheksausweis bekommen Kinder und Jugendliche bis 18 Jahre kostenlos, Erwachsene zahlen 15 Euro im Jahr.\n\nZur Eröffnung am Samstag gibt es ab 11 Uhr ein Programm für die ganze Familie mit Musik, einem Bücherflohmarkt und Kaffee und Kuchen. Wer an diesem Tag einen Ausweis macht, muss für das erste Jahr nichts bezahlen.",
+          "questions": [
+            {
+              "question": "Die neue Bibliothek ist in der Schillerstraße.",
+              "options": [
+                "richtig",
+                "falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Kinder können in der Bibliothek auch malen.",
+              "options": [
+                "richtig",
+                "falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Die Bibliothek ist jeden Tag geöffnet.",
+              "options": [
+                "richtig",
+                "falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Erwachsene müssen für den Ausweis normalerweise bezahlen.",
+              "options": [
+                "richtig",
+                "falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Das Programm am Samstag ist nur für Kinder.",
+              "options": [
+                "richtig",
+                "falsch"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "False. The new library is \"am Bahnhofsplatz\". The Schillerstraße was the address of the old building.",
+            "de": "Falsch. Die neue Bibliothek ist am Bahnhofsplatz. In der Schillerstraße war das alte Gebäude."
+          },
+          {
+            "en": "True. In the children's section \"können die Kleinen nicht nur lesen, sondern auch malen und basteln\".",
+            "de": "Richtig. In der Kinderabteilung können die Kinder lesen, malen und basteln."
+          },
+          {
+            "en": "False. It is open from Tuesday to Saturday; \"Am Sonntag und am Montag bleibt sie geschlossen.\"",
+            "de": "Falsch. Die Bibliothek ist von Dienstag bis Samstag offen. Am Sonntag und am Montag ist sie geschlossen."
+          },
+          {
+            "en": "True. \"Erwachsene zahlen 15 Euro im Jahr.\" Only on the opening day is the first year free.",
+            "de": "Richtig. Erwachsene zahlen 15 Euro im Jahr. Nur am Eröffnungstag ist das erste Jahr kostenlos."
+          },
+          {
+            "en": "False. The opening programme is \"für die ganze Familie\".",
+            "de": "Falsch. Das Programm ist für die ganze Familie, nicht nur für Kinder."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a2__lesen-2__s02",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Portugiesischer Kuchen in der Altstadt\n\nSeit drei Monaten gibt es in der Altstadt ein neues Café: die „Pastelaria Lisboa“. Die Besitzerin, Ana Ferreira, kommt aus Lissabon und lebt seit acht Jahren in Deutschland. Zuerst hat sie in einem Hotel an der Rezeption gearbeitet. In ihrer Freizeit hat sie immer gern gebacken, am liebsten die kleinen Puddingtörtchen aus ihrer Heimat.\n\n„Meine Kolleginnen haben meine Kuchen geliebt“, erzählt sie und lacht. „Sie haben immer gesagt: Ana, du musst ein Café aufmachen!“ Vor einem Jahr hat sie dann ihre Stelle im Hotel gekündigt und einen Kurs für Existenzgründer besucht. Eine Bank hat ihr Geld geliehen, und ihr Bruder hat beim Renovieren geholfen.\n\nHeute arbeiten im Café vier Personen. Morgens um fünf Uhr beginnt Ana in der Backstube, um sieben Uhr kommen die ersten Gäste. Am Wochenende ist das Café oft so voll, dass man draußen warten muss. Sonntags gibt es ein portugiesisches Frühstück. Dafür sollte man aber einen Tisch reservieren. Montags ist Ruhetag.",
+          "questions": [
+            {
+              "question": "Ana Ferreira hat früher in einem Hotel gearbeitet.",
+              "options": [
+                "richtig",
+                "falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Ana hat das Geld für das Café von ihrem Bruder bekommen.",
+              "options": [
+                "richtig",
+                "falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Das Café öffnet morgens um fünf Uhr.",
+              "options": [
+                "richtig",
+                "falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Am Wochenende kommen sehr viele Gäste ins Café.",
+              "options": [
+                "richtig",
+                "falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Für das Frühstück am Sonntag reserviert man am besten einen Tisch.",
+              "options": [
+                "richtig",
+                "falsch"
+              ],
+              "correctIndex": 0
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "True. \"Zuerst hat sie in einem Hotel an der Rezeption gearbeitet.\"",
+            "de": "Richtig. Ana hat zuerst in einem Hotel an der Rezeption gearbeitet."
+          },
+          {
+            "en": "False. \"Eine Bank hat ihr Geld geliehen.\" Her brother only helped with the renovation.",
+            "de": "Falsch. Das Geld hat sie von einer Bank bekommen. Ihr Bruder hat nur beim Renovieren geholfen."
+          },
+          {
+            "en": "False. Ana starts baking at five, but \"um sieben Uhr kommen die ersten Gäste\".",
+            "de": "Falsch. Um fünf Uhr beginnt Ana in der Backstube. Die ersten Gäste kommen erst um sieben Uhr."
+          },
+          {
+            "en": "True. \"Am Wochenende ist das Café oft so voll, dass man draußen warten muss.\"",
+            "de": "Richtig. Am Wochenende ist das Café oft so voll, dass man draußen warten muss."
+          },
+          {
+            "en": "True. For the Sunday breakfast \"sollte man aber einen Tisch reservieren\".",
+            "de": "Richtig. Für das Frühstück am Sonntag soll man einen Tisch reservieren."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a2__lesen-2__s03",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Hauptstraße: Drei Wochen Bauarbeiten\n\nAutofahrer in Neustadt brauchen in den nächsten Wochen Geduld: Ab Montag, dem 4. August, wird die Hauptstraße zwischen dem Marktplatz und der Goethestraße repariert. Die Straße hat viele Löcher, und auch die alten Wasserleitungen unter der Straße müssen erneuert werden. Die Arbeiten dauern voraussichtlich bis zum 22. August.\n\nIn dieser Zeit ist die Hauptstraße für Autos gesperrt. Eine Umleitung über die Bahnhofstraße ist ausgeschildert. Fußgänger und Radfahrer können die Hauptstraße aber weiter benutzen. Auch alle Geschäfte bleiben geöffnet.\n\nDie Buslinie 3 fährt in dieser Zeit nicht über den Marktplatz. Die Haltestellen „Marktplatz“ und „Goethestraße“ werden in die Bahnhofstraße verlegt. Die Stadt hat die Arbeiten extra in die Sommerferien gelegt, weil dann weniger Verkehr ist. Für Fragen gibt es ein Info-Telefon unter der Nummer 06123 456780. Es ist montags bis freitags von 8 bis 16 Uhr erreichbar.",
+          "questions": [
+            {
+              "question": "Die Bauarbeiten dauern ungefähr drei Wochen.",
+              "options": [
+                "richtig",
+                "falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Mit dem Fahrrad darf man während der Bauarbeiten nicht durch die Hauptstraße fahren.",
+              "options": [
+                "richtig",
+                "falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Die Geschäfte in der Hauptstraße sind während der Bauarbeiten geschlossen.",
+              "options": [
+                "richtig",
+                "falsch"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Die Busse der Linie 3 halten in dieser Zeit in der Bahnhofstraße.",
+              "options": [
+                "richtig",
+                "falsch"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Das Info-Telefon kann man auch am Wochenende anrufen.",
+              "options": [
+                "richtig",
+                "falsch"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "True. The work runs from 4 August \"voraussichtlich bis zum 22. August\", which is about three weeks, as the headline says.",
+            "de": "Richtig. Die Arbeiten dauern vom 4. bis zum 22. August. Das sind ungefähr drei Wochen."
+          },
+          {
+            "en": "False. The street is closed only to cars: \"Fußgänger und Radfahrer können die Hauptstraße aber weiter benutzen.\"",
+            "de": "Falsch. Nur Autos dürfen nicht fahren. Fußgänger und Radfahrer können die Hauptstraße weiter benutzen."
+          },
+          {
+            "en": "False. \"Auch alle Geschäfte bleiben geöffnet.\"",
+            "de": "Falsch. Im Text steht: Alle Geschäfte bleiben geöffnet."
+          },
+          {
+            "en": "True. The stops \"Marktplatz\" and \"Goethestraße\" \"werden in die Bahnhofstraße verlegt\".",
+            "de": "Richtig. Die Haltestellen der Linie 3 sind in dieser Zeit in der Bahnhofstraße."
+          },
+          {
+            "en": "False. The info line can be reached \"montags bis freitags von 8 bis 16 Uhr\", so not at the weekend.",
+            "de": "Falsch. Das Info-Telefon ist nur von Montag bis Freitag erreichbar, nicht am Wochenende."
+          }
+        ]
+      }
+    }
+  ]
+}

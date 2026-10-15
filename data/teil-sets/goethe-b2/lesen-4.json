@@ -1,0 +1,187 @@
+{
+  "formatId": "goethe-b2",
+  "partId": "lesen-4",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-b2__lesen-4__s01",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Endlich wieder entspannte Abende in der Familie",
+            "Gleiche Chancen für alle Kinder",
+            "Wer nicht übt, vergisst",
+            "Eltern fehlt der Einblick",
+            "Selbstständigkeit für das spätere Berufsleben",
+            "Schwierigkeiten werden früher erkannt"
+          ],
+          "targets": [
+            "Seit die Grundschule bei uns im Viertel keine Hausaufgaben mehr aufgibt, melden sich bei mir deutlich mehr Eltern für Nachhilfe. Viele erzählen mir dasselbe: Früher haben sie am Nachmittag gesehen, womit ihr Kind Probleme hat. Heute bekommen sie davon nichts mehr mit und erfahren erst beim Zeugnis, dass es in Mathe nicht gut läuft. (Sabine T., Nachhilfelehrerin, Kassel)",
+            "Ehrlich gesagt vermisse ich die Hausaufgaben manchmal. In Mathe verstehe ich im Unterricht zwar meistens, was der Lehrer erklärt, aber zwei Tage später weiß ich es nicht mehr. Wenn ich zu Hause ein paar Aufgaben gerechnet habe, ist es viel besser hängen geblieben. Jetzt muss ich mich selbst zwingen, freiwillig zu üben, und das schaffe ich nicht immer. (Jannik, 15, Schüler, Erfurt)",
+            "Ich trainiere eine Fußballmannschaft mit Zehn- bis Zwölfjährigen. Früher haben die Kinder oft abgesagt, weil sie noch so viel für die Schule erledigen mussten. Seit es an ihrer Schule keine Hausaufgaben mehr gibt, kommen fast alle regelmäßig zum Training, und wir haben sogar eine zweite Mannschaft gegründet. Bewegung ist doch genauso wichtig wie Rechnen! (Detlef K., Jugendtrainer, Göttingen)",
+            "Bei uns war jeder Nachmittag ein Kampf. Mein Sohn saß weinend am Küchentisch, ich war nach der Arbeit gereizt, und am Ende haben wir uns beide angeschrien. Seit die Hausaufgaben abgeschafft wurden, ist zu Hause endlich Ruhe eingekehrt. Wir spielen abends wieder zusammen oder reden einfach miteinander. Für unsere Familie war das die beste Entscheidung der Schule. (Melanie W., Mutter, Rostock)",
+            "Statt Hausaufgaben gibt es an unserer Schule jetzt jeden Tag eine Lernzeit, in der die Kinder in der Klasse üben. Für mich als Lehrerin hat das einen großen Vorteil: Ich sitze daneben und sehe genau, wer bei welcher Aufgabe hängen bleibt. Früher habe ich von solchen Problemen oft erst nach Wochen erfahren, weil zu Hause jemand geholfen hat. (Aylin D., Grundschullehrerin, Mannheim)",
+            "Ich halte die Abschaffung für einen Fehler. Hausaufgaben sind nicht nur zum Üben da. Kinder lernen dabei, sich ihre Zeit einzuteilen, an etwas dranzubleiben und Verantwortung für ihre Aufgaben zu übernehmen. Genau das erwartet später jeder Chef von ihnen. Wer das nie gelernt hat, wird es in der Ausbildung oder im Studium schwer haben. (Gerhard P., Rentner, Würzburg)",
+            "Ich finde die Entscheidung richtig. Hausaufgaben waren immer ungerecht: Kinder, deren Eltern studiert haben oder Nachhilfe bezahlen können, bekamen zu Hause Unterstützung. Andere saßen allein vor ihren Heften, weil die Eltern lange arbeiten oder selbst kein gutes Deutsch sprechen. Wenn alle in der Schule üben, haben endlich alle dieselben Voraussetzungen. (Nadia S., Sozialarbeiterin, Dortmund)"
+          ],
+          "answers": [
+            3,
+            6,
+            1,
+            0,
+            5,
+            4
+          ],
+          "allowNone": false
+        },
+        "explanations": [
+          {
+            "en": "Melanie W. (d): afternoons used to be \"ein Kampf\" at the kitchen table; since homework was abolished \"ist zu Hause endlich Ruhe eingekehrt\" and they play together in the evenings.",
+            "de": "Melanie W. (d) erzählt: Früher gab es jeden Nachmittag Streit. Jetzt ist zu Hause Ruhe, und die Familie spielt abends zusammen."
+          },
+          {
+            "en": "Nadia S. (g): homework was unfair because some children got help at home and others did not; now \"haben endlich alle dieselben Voraussetzungen\".",
+            "de": "Nadia S. (g) sagt: Manche Kinder bekamen zu Hause Hilfe, andere nicht. Wenn alle in der Schule üben, haben alle dieselben Chancen."
+          },
+          {
+            "en": "Jannik (b): two days after the lesson \"weiß ich es nicht mehr\"; when he practised at home \"ist es viel besser hängen geblieben\".",
+            "de": "Jannik (b) vergisst den Mathestoff ohne Übung schnell. Mit Hausaufgaben hat er sich mehr gemerkt."
+          },
+          {
+            "en": "Sabine T. (a): parents used to see their child's problems in the afternoon; now \"bekommen sie davon nichts mehr mit\" until the school report.",
+            "de": "Sabine T. (a) sagt: Die Eltern sehen nicht mehr, wo ihr Kind Probleme hat. Sie merken es erst beim Zeugnis."
+          },
+          {
+            "en": "Gerhard P. (f): through homework children learn to manage their time and take responsibility – \"Genau das erwartet später jeder Chef von ihnen.\"",
+            "de": "Gerhard P. (f) meint: Bei Hausaufgaben lernen Kinder, sich die Zeit einzuteilen und Verantwortung zu übernehmen. Das braucht man später im Beruf."
+          },
+          {
+            "en": "Aylin D. (e): in the daily study time she sees \"genau, wer bei welcher Aufgabe hängen bleibt\"; before, she often found out only weeks later. Comment c (the football coach) fits none of the headings.",
+            "de": "Aylin D. (e) sieht in der Lernzeit sofort, wer Probleme hat. Früher hat sie das erst nach Wochen gemerkt. Äußerung c passt zu keiner Überschrift."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b2__lesen-4__s02",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Fahrgäste verpassen ihre Anschlüsse",
+            "Endlich ruhige Nächte",
+            "Eine Regel, an die sich kaum jemand hält",
+            "Kaum länger unterwegs als vorher",
+            "Der Schulweg wird sicherer",
+            "Weniger Patienten pro Tag"
+          ],
+          "targets": [
+            "Ich fahre jeden Tag mit dem Auto quer durch die Stadt zur Arbeit und hatte vor Tempo 30 große Sorgen. Inzwischen habe ich nachgemessen: Ich brauche höchstens zwei Minuten länger als früher. Die Zeit verliert man in der Stadt sowieso an den Ampeln und im Stau, nicht auf freier Strecke. Die ganze Aufregung war also übertrieben. (Kerstin B., Pendlerin, Hannover)",
+            "Ich wohne direkt an der Ringstraße, und früher bin ich jede Nacht mehrmals aufgewacht, wenn Lastwagen oder Motorräder vorbeigedonnert sind. Seit dort nachts Tempo 30 gilt, kann ich zum ersten Mal seit Jahren bei offenem Fenster schlafen. Der Unterschied ist viel größer, als ich gedacht hätte. (Renate H., Anwohnerin, Augsburg)",
+            "Ich leite einen ambulanten Pflegedienst. Unsere Mitarbeiterinnen fahren jeden Tag von Wohnung zu Wohnung, und jede Minute ist genau geplant. Seit überall Tempo 30 gilt, schaffen wir pro Schicht ein bis zwei Hausbesuche weniger. Das klingt nach wenig, aber bei über zwanzig Touren bedeutet es, dass wir neue Patienten inzwischen ablehnen müssen. (Thomas L., Pflegedienstleiter, Bremen)",
+            "Ich habe einen kleinen Buchladen an der Hauptstraße. Seit die Autos langsamer fahren, ist die Straße viel angenehmer geworden. Die Leute bummeln, bleiben vor dem Schaufenster stehen und kommen spontan herein. Mein Umsatz ist im letzten Jahr um fast zehn Prozent gestiegen, und den Nachbargeschäften geht es ähnlich. (Miriam O., Buchhändlerin, Freiburg)",
+            "Unsere Tochter ist neun und wollte schon lange allein mit dem Fahrrad zur Schule fahren. Früher habe ich es ihr nicht erlaubt, weil die Autos auf der Straße vor der Schule viel zu schnell waren. Seit dort Tempo 30 gilt, fährt sie jeden Morgen selbst, und ich mache mir deutlich weniger Sorgen. (Martin S., Vater, Leipzig)",
+            "Ich fahre seit zwanzig Jahren Linienbus. Die Fahrpläne wurden für Tempo 50 gemacht, und mit Tempo 30 schaffen wir sie einfach nicht mehr. Am Bahnhof kommen wir oft drei, vier Minuten zu spät an, und dann ist der Zug weg. Die Fahrgäste beschweren sich bei mir, obwohl ich nichts dafür kann. (Bernd F., Busfahrer, Kiel)",
+            "Auf dem Papier klingt Tempo 30 gut, aber in der Praxis fährt kaum jemand wirklich so langsam. Wir haben nicht genug Personal, um regelmäßig zu kontrollieren, und das wissen die Autofahrer genau. Ohne Blitzer und spürbare Strafen bleibt so eine Regel ein Schild am Straßenrand. (Jürgen M., Polizeibeamter, Kassel)"
+          ],
+          "answers": [
+            5,
+            1,
+            6,
+            0,
+            4,
+            2
+          ],
+          "allowNone": false
+        },
+        "explanations": [
+          {
+            "en": "Bernd F. (f), a bus driver: with the slower speed buses arrive late at the station \"und dann ist der Zug weg\".",
+            "de": "Bernd F. (f) sagt: Der Bus kommt zu spät am Bahnhof an, und dann ist der Zug weg. Die Fahrgäste verpassen also ihren Anschluss."
+          },
+          {
+            "en": "Renate H. (b) used to wake up at night because of lorries; now she can sleep \"bei offenem Fenster\".",
+            "de": "Renate H. (b) ist früher nachts vom Verkehr aufgewacht. Jetzt kann sie bei offenem Fenster schlafen."
+          },
+          {
+            "en": "Jürgen M. (g): \"in der Praxis fährt kaum jemand wirklich so langsam\", because there are not enough checks.",
+            "de": "Jürgen M. (g) sagt, dass kaum jemand wirklich 30 fährt, weil es zu wenige Kontrollen gibt."
+          },
+          {
+            "en": "Kerstin B. (a) measured her commute: \"Ich brauche höchstens zwei Minuten länger als früher.\"",
+            "de": "Kerstin B. (a) braucht nur höchstens zwei Minuten länger als früher."
+          },
+          {
+            "en": "Martin S. (e) now lets his nine-year-old daughter cycle to school alone because cars in front of the school are slower.",
+            "de": "Martin S. (e) lässt seine Tochter jetzt allein mit dem Fahrrad zur Schule fahren, weil die Autos langsamer sind."
+          },
+          {
+            "en": "Thomas L. (c) runs a home-care service: they manage one or two fewer home visits per shift and must turn down new patients. Comment d (the bookshop) fits none of the headings.",
+            "de": "Thomas L. (c) schafft pro Schicht weniger Hausbesuche und muss neue Patienten ablehnen. Äußerung d passt zu keiner Überschrift."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b2__lesen-4__s03",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Eine Allergie macht den Arbeitstag schwer",
+            "Bessere Stimmung im Team",
+            "Mehr Bewegung in der Mittagspause",
+            "Nicht jeder Hund passt ins Büro",
+            "Ein Argument bei der Suche nach Personal",
+            "Wer zahlt, wenn etwas passiert?"
+          ],
+          "targets": [
+            "Ich arbeite in der Personalabteilung einer Softwarefirma, und Sie würden staunen, wie oft Bewerberinnen und Bewerber im Vorstellungsgespräch fragen, ob sie ihren Hund mitbringen dürfen. Für manche ist das sogar entscheidend. In unserer Branche sind Fachkräfte schwer zu finden, und unsere hundefreundliche Regel hat uns schon mehrere gute Leute gebracht. (Julia R., Personalreferentin, München)",
+            "Ich reinige seit Jahren mehrere Büros in einem großen Gebäude. Seit dort Hunde erlaubt sind, brauche ich für eine Etage fast doppelt so lange. Überall liegen Haare, auf dem Teppich sind Pfotenabdrücke, und manchmal steht ein Wassernapf umgekippt unter dem Schreibtisch. Mehr Zeit bekomme ich dafür aber nicht. (Halina W., Reinigungskraft, Köln)",
+            "Ich mag Hunde eigentlich sehr, aber ich bin gegen Tierhaare allergisch. Seit zwei Kollegen ihre Hunde mitbringen, tränen mir ständig die Augen, und ich muss jeden Morgen Tabletten nehmen. Inzwischen sitze ich in einem kleinen Raum am Ende des Flurs, weit weg von den anderen. Das ist eine Lösung, aber schön ist sie nicht. (Petra N., Sachbearbeiterin, Dresden)",
+            "Viele Firmen erlauben Hunde, ohne vorher an die rechtliche Seite zu denken. Was ist, wenn ein Hund ein Kabel durchbeißt, einen Kunden anspringt oder einen Kollegen beißt? Grundsätzlich haftet der Halter, aber nicht jede Haftpflichtversicherung zahlt für Schäden am Arbeitsplatz. Ich rate deshalb, das vorher schriftlich zu klären. (Dr. Stefan A., Rechtsanwalt, Frankfurt)",
+            "Früher habe ich in der Mittagspause mein Brot am Schreibtisch gegessen und weitergearbeitet. Seit mein Hund Bruno mit ins Büro kommt, gehe ich jeden Tag eine halbe Stunde mit ihm in den Park, egal bei welchem Wetter. Mein Rücken dankt es mir, und am Nachmittag bin ich viel konzentrierter als früher. (Ole J., Grafiker, Hamburg)",
+            "Als Hundetrainerin werde ich oft gefragt, ob man seinen Hund mit zur Arbeit nehmen soll. Meine Antwort: Es kommt auf das Tier an. Ein ruhiger, gut erzogener Hund liegt den ganzen Tag zufrieden unter dem Schreibtisch. Ein ängstlicher oder sehr junger Hund dagegen leidet unter Telefonklingeln, fremden Menschen und Hektik. Dem tut man damit keinen Gefallen. (Anja K., Hundetrainerin, Stuttgart)",
+            "Ich war anfangs skeptisch, als unsere Abteilung beschlossen hat, Bürohunde zuzulassen. Heute bin ich überzeugt. Die Atmosphäre ist viel lockerer geworden. Kolleginnen und Kollegen, die früher kaum ein Wort miteinander gewechselt haben, unterhalten sich jetzt in der Küche über ihre Tiere, und selbst bei Stress wird mehr gelacht. (Markus E., Teamleiter, Nürnberg)"
+          ],
+          "answers": [
+            2,
+            6,
+            4,
+            5,
+            0,
+            3
+          ],
+          "allowNone": false
+        },
+        "explanations": [
+          {
+            "en": "Petra N. (c) is allergic to animal hair: her eyes water, she takes tablets every morning and now works in a small room away from the others.",
+            "de": "Petra N. (c) ist gegen Tierhaare allergisch. Sie muss Tabletten nehmen und sitzt jetzt allein in einem kleinen Raum."
+          },
+          {
+            "en": "Markus E. (g): \"Die Atmosphäre ist viel lockerer geworden\"; colleagues talk to each other more and laugh more.",
+            "de": "Markus E. (g) sagt, die Atmosphäre ist lockerer geworden. Die Kollegen reden mehr miteinander und lachen mehr."
+          },
+          {
+            "en": "Ole J. (e) now walks with his dog in the park for half an hour every lunch break instead of eating at his desk.",
+            "de": "Ole J. (e) geht jetzt jede Mittagspause eine halbe Stunde mit seinem Hund in den Park."
+          },
+          {
+            "en": "Anja K. (f): \"Es kommt auf das Tier an\" – a calm dog is fine, but an anxious or very young dog suffers in the office.",
+            "de": "Anja K. (f) meint: Ein ruhiger Hund ist im Büro zufrieden, ein ängstlicher oder junger Hund leidet dort."
+          },
+          {
+            "en": "Julia R. (a) works in HR: applicants ask about bringing their dog, and the dog-friendly rule \"hat uns schon mehrere gute Leute gebracht\".",
+            "de": "Julia R. (a) sagt: Viele Bewerber fragen nach dem Hund. Durch die Regel hat die Firma schon gute Mitarbeiter gefunden."
+          },
+          {
+            "en": "Dr. Stefan A. (d), a lawyer, asks what happens if a dog causes damage: the owner is liable, but not every liability insurance pays. Comment b (the cleaner) fits none of the headings.",
+            "de": "Dr. Stefan A. (d) spricht über Schäden: Der Halter haftet, aber nicht jede Versicherung zahlt. Äußerung b passt zu keiner Überschrift."
+          }
+        ]
+      }
+    }
+  ]
+}

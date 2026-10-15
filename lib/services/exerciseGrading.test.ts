@@ -42,6 +42,29 @@ describe('gradeExerciseAnswer', () => {
     expect(await gradeExerciseAnswer(free, { type: 'free_text', text: '   ' }, 'A1', d)).toMatchObject({ ok: false, reason: 'bad_request' });
   });
 
+  it('grades the set types item by item with the lesson pass rule', async () => {
+    const ex = {
+      id: 'p', lessonId: 'l', track: null, type: 'passage_questions' as const,
+      content: { passage: 'Text.', questions: [0, 1, 2, 3, 4].map((n) => ({ question: `F${n}`, options: ['a', 'b'], correctIndex: 0 })) },
+    };
+    const d = { gradeFreeText: vi.fn() };
+    // S17: the per-item results travel with the grade.
+    expect(await gradeExerciseAnswer(ex, { type: 'passage_questions', selected: [0, 0, 0, 0, 1] }, 'B1', d)).toEqual({ ok: true, result: 'correct', feedback: null, itemResults: [true, true, true, true, false] });
+    expect(await gradeExerciseAnswer(ex, { type: 'passage_questions', selected: [0, 0, 1, 1, 1] }, 'B1', d)).toEqual({ ok: true, result: 'wrong', feedback: null, itemResults: [true, true, false, false, false] });
+    expect(await gradeExerciseAnswer(ex, { type: 'passage_questions', selected: [0] }, 'B1', d)).toMatchObject({ ok: false, reason: 'bad_request' });
+    expect(d.gradeFreeText).not.toHaveBeenCalled();
+  });
+
+  it('grades cloze case-sensitively and matching with -1 as unanswered', async () => {
+    const d = { gradeFreeText: vi.fn() };
+    const cloze: Exercise = { id: 'c', lessonId: 'l', track: null, type: 'cloze', content: { text: 'Ich {{1}} hier, du {{2}} da.', gaps: [{ mode: 'typed', answer: 'bin' }, { mode: 'select', options: ['bist', 'ist'], correctIndex: 0 }] } };
+    expect(await gradeExerciseAnswer(cloze, { type: 'cloze', values: [' bin ', 0] }, 'A1', d)).toMatchObject({ ok: true, result: 'correct', itemResults: [true, true] });
+    expect(await gradeExerciseAnswer(cloze, { type: 'cloze', values: ['Bin', 0] }, 'A1', d)).toMatchObject({ ok: true, result: 'almost', itemResults: [false, true] });
+    const matching: Exercise = { id: 'm', lessonId: 'l', track: null, type: 'matching', content: { items: ['A', 'B'], targets: ['x', 'y', 'z'], answers: [0, 1], allowNone: false } };
+    expect(await gradeExerciseAnswer(matching, { type: 'matching', selected: [0, -1] }, 'A1', d)).toMatchObject({ ok: true, result: 'almost', itemResults: [true, false] });
+    expect(await gradeExerciseAnswer(matching, { type: 'cloze', values: [null, null] }, 'A1', d)).toMatchObject({ ok: false, reason: 'bad_request' });
+  });
+
   it('passes an AI failure on with its code', async () => {
     const d = deps({ ok: false, error: 'No AI provider is set up', code: 'no_provider' });
     expect(await gradeExerciseAnswer(free, { type: 'free_text', text: 'x' }, 'A1', d)).toEqual({

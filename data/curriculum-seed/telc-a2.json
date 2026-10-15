@@ -1,5 +1,5 @@
 {
-  "seedVersion": "7",
+  "seedVersion": "9",
   "formatVersion": 3,
   "track": "telc",
   "level": "A2",
@@ -1029,6 +1029,66 @@
       }
     },
     {
+      "id": "a2-telc-reading-teil1-directory-matching__ex3",
+      "lessonId": "a2-telc-reading-teil1-directory-matching",
+      "track": "telc",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the store directory and the tasks. Where do you go? Choose a, b or c.",
+          "de": "Lesen Sie den Wegweiser und die Aufgaben. Wohin gehen Sie? Kreuzen Sie an: a, b oder c."
+        },
+        "passage": "Kaufhaus Neumann – Wegweiser\n\nUntergeschoss: Lebensmittel, Getränke, Obst und Gemüse, Schlüsseldienst\nErdgeschoss: Kosmetik, Schmuck, Uhren, Taschen, Information\n1. Stock: Damenmode, Damenschuhe, Wäsche\n2. Stock: Herrenmode, Herrenschuhe, Sportbekleidung\n3. Stock: Kinderabteilung (Kleidung und Spielwaren), Schreibwaren, Bücher\n4. Stock: Haushaltswaren, Lampen, Elektrogeräte, Restaurant mit Dachterrasse, Kundentoiletten",
+        "questions": [
+          {
+            "question": "Sie brauchen einen neuen Schlüssel für Ihre Wohnungstür.",
+            "options": [
+              "Untergeschoss",
+              "Erdgeschoss",
+              "4. Stock"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Ihr Neffe hat Geburtstag. Sie möchten ihm ein Spiel schenken.",
+            "options": [
+              "2. Stock",
+              "3. Stock",
+              "Erdgeschoss"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Sie möchten im Kaufhaus warm zu Mittag essen.",
+            "options": [
+              "Untergeschoss",
+              "3. Stock",
+              "4. Stock"
+            ],
+            "correctIndex": 2
+          },
+          {
+            "question": "Ihre Kaffeemaschine ist kaputt. Sie brauchen eine neue.",
+            "options": [
+              "Untergeschoss",
+              "4. Stock",
+              "Erdgeschoss"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Sie suchen ein Geschenk für Ihre Mutter: eine Halskette.",
+            "options": [
+              "Erdgeschoss",
+              "1. Stock",
+              "3. Stock"
+            ],
+            "correctIndex": 0
+          }
+        ]
+      }
+    },
+    {
       "id": "a2-telc-reading-teil2-informational-article__ex0",
       "lessonId": "a2-telc-reading-teil2-informational-article",
       "track": "telc",
@@ -1071,6 +1131,69 @@
       }
     },
     {
+      "id": "a2-telc-reading-teil2-informational-article__ex3",
+      "lessonId": "a2-telc-reading-teil2-informational-article",
+      "track": "telc",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the text and the statements. Are the statements right or wrong?",
+          "de": "Lesen Sie den Text und die Aussagen. Sind die Aussagen richtig oder falsch?"
+        },
+        "passage": "Gemeinschaftsgarten am Fluss sucht Helfer\n\nSeit drei Jahren gibt es im Stadtteil Lindenau einen Gemeinschaftsgarten. Hier bauen Nachbarn zusammen Gemüse, Kräuter und Blumen an. Mitmachen kann jeder, auch ohne Erfahrung. Die Gruppe trifft sich jeden Mittwoch ab 17 Uhr, im Sommer zusätzlich am Samstagvormittag. Werkzeug ist da, man braucht nur feste Schuhe und Handschuhe. Die Mitgliedschaft kostet 20 Euro im Jahr; Kinder und Jugendliche zahlen nichts. Das Gemüse wird am Ende der Saison unter allen Mitgliedern verteilt. Wer mitmachen möchte, schreibt einfach eine E-Mail an die Gruppe.",
+        "questions": [
+          {
+            "question": "Den Garten gibt es seit drei Jahren.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Man muss schon Erfahrung im Garten haben.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Im Sommer trifft sich die Gruppe zweimal pro Woche.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Man muss eigenes Werkzeug mitbringen.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Jugendliche müssen keinen Beitrag bezahlen.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Jedes Mitglied kann das Gemüse jederzeit mit nach Hause nehmen.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1
+          }
+        ]
+      }
+    },
+    {
       "id": "a2-telc-reading-teil3-classifieds-matching__ex0",
       "lessonId": "a2-telc-reading-teil3-classifieds-matching",
       "track": "telc",
@@ -1110,6 +1233,41 @@
           "Anzeige f"
         ],
         "correctIndex": 1
+      }
+    },
+    {
+      "id": "a2-telc-reading-teil3-classifieds-matching__ex3",
+      "lessonId": "a2-telc-reading-teil3-classifieds-matching",
+      "track": "telc",
+      "type": "matching",
+      "content": {
+        "instruction": {
+          "en": "Read the situations and the adverts. Which advert fits which situation? One situation has no matching advert: choose x.",
+          "de": "Lesen Sie die Situationen und die Anzeigen. Welche Anzeige passt zu welcher Situation? Für eine Situation gibt es keine Anzeige: Wählen Sie dann x."
+        },
+        "items": [
+          "Ihr Sohn ist in der 7. Klasse und hat schlechte Noten in Englisch.",
+          "Sie möchten am Freitagabend tanzen lernen.",
+          "Sie möchten Gitarre spielen lernen.",
+          "Sie möchten vor der Arbeit Sport machen.",
+          "Ihre Nachbarin studiert und sucht nachmittags einen Nebenjob mit Kindern."
+        ],
+        "targets": [
+          "Fahrradwerkstatt Kette: Reparaturen schnell und günstig. Mo–Fr 9–18 Uhr, Sa 9–13 Uhr. Gebrauchte Räder ab 80 Euro.",
+          "Nachhilfe in Mathe und Englisch für Schüler der Klassen 5 bis 10. Bei Ihnen zu Hause, 15 Euro pro Stunde. Tel. 0176 22 31 90",
+          "Verkaufe Kinderwagen, fast neu, nur 3 Monate benutzt. 150 Euro. Nur Abholung in Kassel.",
+          "Tanzschule Rhythmus: Salsa-Kurs für Anfänger, immer freitags von 19 bis 20.30 Uhr. Paare und Singles willkommen!",
+          "Suche Babysitterin für meine Tochter (4 Jahre), zweimal pro Woche nachmittags. Gute Bezahlung.",
+          "Yoga am Morgen: Montag bis Freitag 6.30–7.30 Uhr im Stadtpark. Matte bitte mitbringen. Erste Stunde gratis."
+        ],
+        "answers": [
+          1,
+          3,
+          null,
+          5,
+          4
+        ],
+        "allowNone": true
       }
     },
     {

@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { createDbClient } from '../db/client';
+import { validateExerciseContent } from '../curriculum/exerciseContentValidation';
 import { prerequisiteScopeViolations } from '../tutoring/gating';
 import { loadSeedIfNeeded, type SeedFile } from './curriculumSeedLoader';
 import { loadLevelGating } from './levelGating';
@@ -11,11 +12,11 @@ const files = readdirSync(DIR).filter((f) => f.endsWith('.json'));
 const seeds = files.map((f) => [f, JSON.parse(readFileSync(join(DIR, f), 'utf8')) as SeedFile] as const);
 
 describe('bundled curriculum seeds', () => {
-  it('has all 15 track+level files at seed version 6, format 3', () => {
+  it('has all 15 track+level files at seed version 9, format 3', () => {
     expect(files).toHaveLength(15);
     for (const [, seed] of seeds) {
       expect(seed.formatVersion).toBe(3);
-      expect(seed.seedVersion).toBe('7');
+      expect(seed.seedVersion).toBe('9');
     }
   });
 
@@ -49,6 +50,19 @@ describe('bundled curriculum seeds', () => {
     }
     const edges = seed.prerequisites.map((p) => ({ lessonId: p.lessonId, prerequisiteId: p.prerequisiteLessonId }));
     expect(prerequisiteScopeViolations(edges, (id) => placement.get(id))).toEqual([]);
+  });
+
+  it.each(seeds)('%s: every seed exercise passes content validation', (_file, seed) => {
+    for (const e of seed.exercises) {
+      expect(validateExerciseContent(e.type, e.content), e.id).toEqual([]);
+    }
+  });
+
+  it.each(seeds)('%s: every reading lesson has a passage, matching, or cloze exercise', (_f, seed) => {
+    for (const lesson of seed.lessons.filter((l) => l.skill === 'reading')) {
+      const types = seed.exercises.filter((e) => e.lessonId === lesson.id).map((e) => e.type);
+      expect(types.some((t) => ['passage_questions', 'matching', 'cloze'].includes(t)), lesson.id).toBe(true);
+    }
   });
 
   it('loads into a fresh database with the first rank open in every track+level', () => {

@@ -1,0 +1,514 @@
+{
+  "formatId": "telc-c1",
+  "partId": "lesen-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-c1__lesen-3__s01",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Schrauben statt wegwerfen\n\nSamstagnachmittag im Gemeindesaal einer Kleinstadt in Nordhessen: An langen Tischen sitzen Menschen über Toaster, Nähmaschinen und Fahrradlampen gebeugt, es riecht nach Lötzinn und Kaffee. Wer hier etwas mitbringt, wird nicht bedient, sondern beteiligt. „Wir reparieren nicht für die Leute, sondern mit ihnen“, sagt Gerhard Albers, ein pensionierter Elektromeister, der das Repair-Café vor sechs Jahren mitgegründet hat. Einmal im Monat öffnet der Treffpunkt seine Türen; im Durchschnitt kommen rund fünfzig Besucherinnen und Besucher.\n\nDie Idee stammt ursprünglich aus den Niederlanden, wo 2009 das erste Repair-Café eröffnet wurde. Inzwischen gibt es allein im deutschsprachigen Raum mehr als tausend solcher Initiativen. Sie sind in der Regel ehrenamtlich organisiert und finanzieren sich über Spenden: Eine feste Gebühr wird nicht erhoben, doch am Ausgang steht eine Kasse, in die jeder gibt, was ihm die Hilfe wert war. Ersatzteile müssen die Besucher allerdings selbst bezahlen.\n\nWas die Ehrenamtlichen antreibt, ist zum einen der Ärger über eine Wegwerfkultur, die sie für verschwenderisch halten. Viele Geräte, so Albers, landeten im Müll, obwohl nur ein Kabel gebrochen oder eine Sicherung durchgebrannt sei. Zum anderen geht es ihnen um Wissen, das verloren zu gehen droht. „Früher hat man so etwas in der Familie gelernt. Heute wissen viele junge Leute nicht einmal mehr, wie man einen Knopf annäht.“ Gerade deshalb freut er sich, dass zunehmend auch Studierende kommen – manche als Hilfesuchende, einige inzwischen als Helfer.\n\nDie Erfolgsquote kann sich sehen lassen. Nach den Aufzeichnungen des Vereins gelingt die Reparatur in etwa sechs von zehn Fällen. Bei den übrigen Geräten fehlt entweder ein passendes Ersatzteil, oder der Aufwand stünde in keinem Verhältnis zum Nutzen. Besonders häufig scheitern die Helfer an modernen Elektronikgeräten, deren Gehäuse verklebt statt verschraubt sind. „Man merkt, dass manche Produkte gar nicht dafür gemacht sind, geöffnet zu werden“, sagt die Informatikerin Lena Dörr, die sich um Laptops und Smartphones kümmert.\n\nAn diesem Punkt setzt eine politische Debatte an, die seit einigen Jahren an Fahrt gewinnt. Unter dem Stichwort „Recht auf Reparatur“ fordern Verbraucherverbände, dass Hersteller Ersatzteile über einen längeren Zeitraum bereithalten und Reparaturanleitungen öffentlich zugänglich machen müssen. Auf europäischer Ebene sind entsprechende Vorgaben für einige Produktgruppen bereits beschlossen worden. Den Mitgliedern des Repair-Cafés geht das noch nicht weit genug: Sie wünschen sich, dass die Reparierbarkeit eines Geräts beim Kauf ebenso deutlich erkennbar ist wie sein Energieverbrauch.\n\nGanz ohne Konflikte verläuft die Arbeit allerdings nicht. Örtliche Handwerksbetriebe sahen in dem Angebot anfangs eine unliebsame Konkurrenz. Inzwischen hat sich das Verhältnis entspannt: Wenn eine Reparatur Spezialwerkzeug erfordert oder Sicherheitsfragen berührt, etwa bei Gasgeräten, verweisen die Ehrenamtlichen ausdrücklich an einen Fachbetrieb. Ein Elektrofachgeschäft aus dem Nachbarort stellt dem Verein sogar regelmäßig gebrauchte Messgeräte zur Verfügung.\n\nOb Repair-Cafés tatsächlich messbar zur Müllvermeidung beitragen, ist schwer zu beziffern. Albers sieht ihren Wert ohnehin woanders. „Wer einmal erlebt hat, dass sein alter Mixer wieder läuft, wirft beim nächsten Mal nicht so schnell etwas weg.“ Und noch etwas hat er beobachtet: Während die Besucher auf ihre Geräte warten, kommen Menschen ins Gespräch, die sich sonst wohl nie begegnet wären.",
+          "questions": [
+            {
+              "question": "Im Repair-Café werden die Geräte gemeinsam mit ihren Besitzern repariert.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Das erste Repair-Café wurde in Deutschland eröffnet.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Für die Hilfe im Repair-Café muss man einen festen Betrag bezahlen.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Gerhard Albers hat das Reparieren als Kind von seinem Vater gelernt.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Unter den Helfern sind inzwischen auch einige Studierende.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Mehr als die Hälfte der mitgebrachten Gegenstände kann repariert werden.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Elektronikgeräte mit verklebten Gehäusen lassen sich besonders leicht reparieren.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Lena Dörr hat sich das Reparieren von Smartphones selbst beigebracht.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Die Mitglieder des Repair-Cafés halten die europäischen Vorgaben für ausreichend.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Bei Gasgeräten schicken die Ehrenamtlichen die Besucher zu einem Fachbetrieb.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Die Zahl der Besucher ist in den letzten Jahren stark gestiegen.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Welche Überschrift trifft die Aussage des Textes am besten?",
+              "options": [
+                "Konkurrenz für das Handwerk: Streit um kostenlose Reparaturen",
+                "Reparieren im Ehrenamt: Wie ein Repair-Café Geräte rettet und Menschen zusammenbringt",
+                "Neue EU-Regeln machen Repair-Cafés überflüssig"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Richtig: \"Wer hier etwas mitbringt, wird nicht bedient, sondern beteiligt\" and \"Wir reparieren nicht für die Leute, sondern mit ihnen.\"",
+            "de": "Richtig: „Wir reparieren nicht für die Leute, sondern mit ihnen.“ Die Besitzer machen also mit."
+          },
+          {
+            "en": "Falsch: \"Die Idee stammt ursprünglich aus den Niederlanden, wo 2009 das erste Repair-Café eröffnet wurde.\"",
+            "de": "Falsch: Das erste Repair-Café wurde 2009 in den Niederlanden eröffnet."
+          },
+          {
+            "en": "Falsch: \"Eine feste Gebühr wird nicht erhoben\" — everyone gives what the help was worth to them (only spare parts must be paid).",
+            "de": "Falsch: Es gibt keine feste Gebühr. Jeder gibt, so viel er möchte; nur Ersatzteile muss man bezahlen."
+          },
+          {
+            "en": "Nicht im Text: Albers only says that in the past people learned such things \"in der Familie\" in general; the text says nothing about how he himself learned it.",
+            "de": "Nicht im Text: Albers sagt nur allgemein, dass man so etwas früher in der Familie gelernt hat. Wie er selbst es gelernt hat, steht nicht im Text."
+          },
+          {
+            "en": "Richtig: students come increasingly, \"manche als Hilfesuchende, einige inzwischen als Helfer\".",
+            "de": "Richtig: Studierende kommen „manche als Hilfesuchende, einige inzwischen als Helfer“."
+          },
+          {
+            "en": "Richtig: \"gelingt die Reparatur in etwa sechs von zehn Fällen\" — that is more than half.",
+            "de": "Richtig: Die Reparatur gelingt in sechs von zehn Fällen, also bei mehr als der Hälfte."
+          },
+          {
+            "en": "Falsch: the helpers \"scheitern\" especially often at modern devices \"deren Gehäuse verklebt statt verschraubt sind\".",
+            "de": "Falsch: Gerade bei verklebten Gehäusen „scheitern“ die Helfer besonders häufig."
+          },
+          {
+            "en": "Nicht im Text: we only learn that Lena Dörr is a computer scientist who looks after laptops and smartphones, not how she acquired her repair skills.",
+            "de": "Nicht im Text: Man erfährt nur, dass Lena Dörr Informatikerin ist und sich um Laptops und Smartphones kümmert, aber nicht, wie sie das gelernt hat."
+          },
+          {
+            "en": "Falsch: \"Den Mitgliedern des Repair-Cafés geht das noch nicht weit genug.\"",
+            "de": "Falsch: Den Mitgliedern „geht das noch nicht weit genug“."
+          },
+          {
+            "en": "Richtig: when safety is involved, \"etwa bei Gasgeräten, verweisen die Ehrenamtlichen ausdrücklich an einen Fachbetrieb\".",
+            "de": "Richtig: Bei Sicherheitsfragen, „etwa bei Gasgeräten“, schicken die Helfer die Leute zu einem Fachbetrieb."
+          },
+          {
+            "en": "Nicht im Text: the text gives an average of about fifty visitors per meeting but says nothing about how the number has developed.",
+            "de": "Nicht im Text: Es kommen im Durchschnitt etwa fünfzig Besucher. Ob die Zahl gestiegen ist, steht nicht im Text."
+          },
+          {
+            "en": "b: the text describes how volunteers repair devices together with their owners, why they do it, and ends with people getting into conversation. The conflict with craftsmen (a) is only one paragraph and has eased; the EU rules (c) are called not far-reaching enough, not a reason to make repair cafés unnecessary.",
+            "de": "b: Der Text beschreibt die ehrenamtliche Reparaturarbeit und am Ende auch die Begegnungen zwischen Menschen. Der Konflikt mit dem Handwerk (a) ist nur ein Absatz und hat sich entspannt. Die EU-Regeln (c) gehen den Mitgliedern nicht weit genug."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-c1__lesen-3__s02",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Freitags ist frei\n\nAls Martina Kessler, Geschäftsführerin eines mittelständischen Herstellers von Messinstrumenten in Ostwestfalen, ihrer Belegschaft vor drei Jahren ankündigte, man werde die Vier-Tage-Woche ausprobieren, war die Skepsis groß – und zwar auf beiden Seiten. Die Abteilungsleiter fürchteten, Aufträge nicht mehr rechtzeitig abarbeiten zu können. Viele Beschäftigte wiederum vermuteten, hinter dem Angebot verberge sich eine versteckte Lohnkürzung. „Beides war verständlich“, sagt Kessler heute. „Deshalb haben wir von Anfang an klar gesagt: Das Gehalt bleibt gleich, und wenn es nicht funktioniert, kehren wir zum alten Modell zurück.“\n\nDas Unternehmen mit rund 140 Mitarbeitenden entschied sich für ein Modell, bei dem die Wochenarbeitszeit von 38 auf 34 Stunden sinkt, verteilt auf vier Tage. Eine bloße Verdichtung der bisherigen Arbeitszeit auf weniger Tage – also vier Zehn-Stunden-Tage – lehnte die Geschäftsführung ausdrücklich ab. Damit die Rechnung aufgeht, wurden zunächst sämtliche Abläufe auf den Prüfstand gestellt. Regelmäßige Besprechungen wurden auf höchstens 30 Minuten begrenzt, interne Berichte, die ohnehin kaum jemand las, abgeschafft. In der Produktion stimmte man die Schichten so ab, dass die Maschinen weiterhin an fünf Tagen laufen.\n\nNach einer Probephase von einem Jahr fiel die Bilanz überraschend positiv aus. Der Umsatz blieb stabil, die Zahl der Krankheitstage ging um knapp ein Viertel zurück. Besonders deutlich zeigte sich der Effekt bei der Personalgewinnung: Auf ausgeschriebene Stellen meldeten sich plötzlich drei- bis viermal so viele Interessenten wie zuvor, darunter auch Fachkräfte aus Großstädten, die bereit waren, für das neue Arbeitszeitmodell umzuziehen.\n\nDoch nicht alle profitieren gleichermaßen. Im Kundendienst, der für Anfragen von Montag bis Freitag erreichbar sein muss, war die Umstellung deutlich schwieriger. Hier arbeiten die Beschäftigten in rotierenden Teams, sodass der freie Tag nicht immer der Freitag ist. „Wer gern lange Wochenenden hat, hat hier manchmal Pech“, räumt Kessler ein. Einige Mitarbeitende empfinden zudem den verdichteten Arbeitstag als belastend: Weniger Pausengespräche und straffere Termine bedeuten auch, dass der soziale Austausch zu kurz kommen kann.\n\nArbeitsforscher beobachten solche Pilotprojekte mit großem Interesse, warnen jedoch vor voreiligen Schlüssen. Die Unternehmen, die sich freiwillig auf ein solches Experiment einließen, seien häufig ohnehin besonders gut organisiert und innovationsfreudig. Ob sich die Ergebnisse auf die gesamte Wirtschaft übertragen ließen, etwa auf Krankenhäuser oder den Einzelhandel, sei daher offen. Hinzu komme, dass in vielen Studien die Beschäftigten selbst Auskunft über ihre Zufriedenheit gäben – und wer ein Modell schätze, berichte möglicherweise positiver darüber.\n\nIm Betrieb von Martina Kessler ist die Vier-Tage-Woche inzwischen fester Bestandteil der Betriebsvereinbarung. Eine Rückkehr zum alten Modell, so berichtet der Betriebsrat, wünsche sich niemand. Die Geschäftsführerin selbst hält sich allerdings nicht immer an die neue Regel: „Freitags schaue ich dann doch oft in meine E-Mails“, gibt sie lachend zu. „Aber das ist meine eigene Entscheidung.“",
+          "questions": [
+            {
+              "question": "Ein Teil der Belegschaft befürchtete anfangs, künftig weniger zu verdienen.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Die Geschäftsführung schloss eine Rückkehr zum alten Arbeitszeitmodell von vornherein aus.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Die Beschäftigten arbeiten jetzt an vier Tagen jeweils zehn Stunden.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Vor der Einführung wurden die Mitarbeitenden in einer Umfrage nach ihrem Wunschmodell gefragt.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Die Maschinen in der Produktion stehen freitags still.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Seit der Umstellung fehlen die Beschäftigten seltener wegen Krankheit.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Auf freie Stellen bewarben sich auch Menschen, die dafür ihren Wohnort wechseln mussten.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Im Kundendienst haben alle Beschäftigten freitags frei.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Die Beschäftigten im Kundendienst erhalten für die wechselnden freien Tage einen finanziellen Ausgleich.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Arbeitsforscher halten die Ergebnisse nicht ohne Weiteres für übertragbar auf andere Branchen.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Martina Kessler plant, die Vier-Tage-Woche auch an einem zweiten Standort einzuführen.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Welche Überschrift trifft die Aussage des Textes am besten?",
+              "options": [
+                "Warum die Vier-Tage-Woche im Mittelstand gescheitert ist",
+                "Arbeitsforscher fordern die Vier-Tage-Woche für alle Branchen",
+                "Weniger Tage, gleicher Lohn: Bilanz eines Experiments mit der Vier-Tage-Woche"
+              ],
+              "correctIndex": 2
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Richtig: \"Viele Beschäftigte wiederum vermuteten, hinter dem Angebot verberge sich eine versteckte Lohnkürzung.\"",
+            "de": "Richtig: Viele Beschäftigte vermuteten eine „versteckte Lohnkürzung“, also weniger Geld."
+          },
+          {
+            "en": "Falsch: from the start the management said \"wenn es nicht funktioniert, kehren wir zum alten Modell zurück\" — a return was explicitly possible.",
+            "de": "Falsch: Die Chefin sagte von Anfang an: „Wenn es nicht funktioniert, kehren wir zum alten Modell zurück.“"
+          },
+          {
+            "en": "Falsch: weekly hours went down from 38 to 34; \"vier Zehn-Stunden-Tage\" were \"ausdrücklich\" rejected.",
+            "de": "Falsch: Die Arbeitszeit sank von 38 auf 34 Stunden. Vier Zehn-Stunden-Tage lehnte die Geschäftsführung ausdrücklich ab."
+          },
+          {
+            "en": "Nicht im Text: the text only says \"Das Unternehmen … entschied sich für ein Modell\"; there is no information about a staff survey.",
+            "de": "Nicht im Text: Es steht nur, dass sich das Unternehmen für ein Modell entschied. Von einer Umfrage steht nichts im Text."
+          },
+          {
+            "en": "Falsch: the shifts were arranged \"so …, dass die Maschinen weiterhin an fünf Tagen laufen\".",
+            "de": "Falsch: Die Schichten sind so geplant, dass die Maschinen weiter an fünf Tagen laufen."
+          },
+          {
+            "en": "Richtig: \"die Zahl der Krankheitstage ging um knapp ein Viertel zurück\".",
+            "de": "Richtig: Die Krankheitstage gingen um fast ein Viertel zurück."
+          },
+          {
+            "en": "Richtig: among the applicants were \"Fachkräfte aus Großstädten, die bereit waren, für das neue Arbeitszeitmodell umzuziehen\".",
+            "de": "Richtig: Es bewarben sich auch Fachkräfte aus Großstädten, die dafür umziehen wollten."
+          },
+          {
+            "en": "Falsch: in customer service teams rotate, \"sodass der freie Tag nicht immer der Freitag ist\".",
+            "de": "Falsch: Im Kundendienst wechseln die Teams, deshalb ist der freie Tag nicht immer der Freitag."
+          },
+          {
+            "en": "Nicht im Text: the rotation and the occasional \"Pech\" are mentioned, but no compensation of any kind.",
+            "de": "Nicht im Text: Die Rotation wird erwähnt, aber ein finanzieller Ausgleich nicht."
+          },
+          {
+            "en": "Richtig: researchers warn \"vor voreiligen Schlüssen\"; whether results can be transferred to hospitals or retail \"sei daher offen\".",
+            "de": "Richtig: Die Forscher warnen vor voreiligen Schlüssen. Ob die Ergebnisse für Krankenhäuser oder den Handel gelten, „sei offen“."
+          },
+          {
+            "en": "Nicht im Text: the text only says the model is now part of the works agreement in her company; a second site is never mentioned.",
+            "de": "Nicht im Text: Ein zweiter Standort wird nirgends erwähnt."
+          },
+          {
+            "en": "c: the text reports the experiment with unchanged pay and its mostly positive results, plus some limits. It did not fail (a), and the researchers are cautious rather than demanding it for all sectors (b).",
+            "de": "c: Der Text zieht Bilanz eines Experiments mit gleichem Gehalt – meist positiv, mit einigen Grenzen. Gescheitert ist es nicht (a), und die Forscher sind vorsichtig, statt es für alle zu fordern (b)."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-c1__lesen-3__s03",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Die verlorene Nacht\n\nWer in einer deutschen Großstadt aufwächst, hat die Milchstraße womöglich noch nie mit eigenen Augen gesehen. Der Grund dafür ist kein Wetterphänomen, sondern ein menschengemachtes Problem: Straßenlaternen, beleuchtete Schaufenster, Werbetafeln und angestrahlte Gebäude tauchen den Nachthimmel in einen gelblich-grauen Schimmer, der schwächere Sterne schlicht überstrahlt. Fachleute sprechen von Lichtverschmutzung – ein Begriff, der lange als übertrieben galt, inzwischen aber in Forschung und Politik angekommen ist.\n\nMessungen zeigen, dass die künstliche Helligkeit des Nachthimmels weltweit um mehrere Prozent pro Jahr zunimmt. Paradoxerweise hat ausgerechnet eine an sich umweltfreundliche Technik diese Entwicklung beschleunigt: Seit Kommunen ihre Straßenbeleuchtung auf sparsame LED-Leuchten umstellen, ist Licht so billig geworden, dass vielerorts mehr und heller beleuchtet wird als zuvor. Hinzu kommt, dass viele LED-Lampen einen hohen Blauanteil haben, der in der Atmosphäre besonders stark gestreut wird.\n\nDie Folgen reichen weit über den Verlust des Sternenhimmels hinaus. Biologen schätzen, dass in Deutschland in jeder Sommernacht Milliarden von Insekten an Lichtquellen zugrunde gehen, weil sie die Lampen umkreisen, bis sie erschöpft sind, oder leichte Beute für Fledermäuse und Spinnen werden. Zugvögel, die sich nachts an den Sternen orientieren, werden von hell erleuchteten Hochhäusern abgelenkt und kollidieren mit Glasfassaden. Selbst Bäume reagieren auf künstliches Licht: In der Nähe von Laternen behalten sie ihr Laub im Herbst mitunter deutlich länger.\n\nAuch beim Menschen bleibt die ständige Helligkeit nicht ohne Wirkung. Licht am Abend hemmt die Ausschüttung des Hormons Melatonin, das den Schlaf-wach-Rhythmus steuert. Ob die Straßenbeleuchtung allein ausreicht, um gesundheitliche Schäden zu verursachen, ist unter Medizinern allerdings umstritten; als wesentlich bedeutsamer gilt das Licht von Bildschirmen im eigenen Schlafzimmer.\n\nDabei ließe sich mit vergleichsweise einfachen Mitteln viel erreichen. Leuchten, die ausschließlich nach unten strahlen, verhindern, dass Licht ungenutzt in den Himmel entweicht. Wärmere Lichtfarben mit geringem Blauanteil sind für Insekten weniger anziehend. Und nicht jede Straße muss die ganze Nacht über in voller Stärke beleuchtet sein: Bewegungsmelder oder eine Absenkung der Helligkeit nach Mitternacht sparen zudem Energie und Geld.\n\nEinige Gemeinden haben aus der Dunkelheit sogar ein Markenzeichen gemacht. Sie haben sich als sogenannte Sternenparks oder Sternenstädte zertifizieren lassen und verpflichten sich, ihre Beleuchtung dauerhaft nach strengen Kriterien zu gestalten. Ein Dorf in der Rhön etwa zieht seither Besucher an, die eigens anreisen, um unter einem klaren Nachthimmel Sternbilder zu beobachten. Gastgeber berichten von Übernachtungsgästen, die zum ersten Mal in ihrem Leben eine Sternschnuppe gesehen haben.\n\nKritiker geben zu bedenken, dass dunkle Straßen das Sicherheitsgefühl beeinträchtigen können, insbesondere bei Frauen und älteren Menschen. Befürworter einer maßvolleren Beleuchtung halten dem entgegen, dass es nicht darum gehe, Städte in Finsternis zu versetzen, sondern Licht gezielter einzusetzen: dort, wo es gebraucht wird, und nur dann, wenn es gebraucht wird.",
+          "questions": [
+            {
+              "question": "Der Begriff „Lichtverschmutzung“ wurde lange Zeit nicht ernst genommen.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Die Umstellung auf LED-Leuchten hat dazu geführt, dass an manchen Orten mehr beleuchtet wird.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Licht mit hohem Blauanteil wird in der Atmosphäre weniger stark gestreut.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Die Zahl der Insekten in Deutschland hat sich in den letzten zehn Jahren halbiert.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Bäume in der Nähe von Laternen verlieren ihre Blätter im Herbst teilweise später.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Mediziner sind sich einig, dass Straßenbeleuchtung krank macht.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Leuchten, die nur nach unten strahlen, sind in der Anschaffung teurer als herkömmliche Modelle.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Eine geringere Helligkeit nach Mitternacht verursacht höhere Kosten.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Für die Zertifizierung als Sternenpark muss eine Gemeinde eine Gebühr bezahlen.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Die Besucher, die eigens in das Dorf in der Rhön anreisen, kommen vor allem wegen der Wanderwege.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Manche Menschen fühlen sich auf dunklen Straßen weniger sicher, geben Kritiker zu bedenken.",
+              "options": [
+                "richtig",
+                "falsch",
+                "nicht im Text"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Welche Überschrift trifft die Aussage des Textes am besten?",
+              "options": [
+                "Zu viel Licht in der Nacht: Ursachen, Folgen und Auswege",
+                "Sternenparks: Neue Urlaubsziele für Naturfreunde",
+                "Warum LED-Leuchten verboten werden sollten"
+              ],
+              "correctIndex": 0
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Richtig: the term \"lange als übertrieben galt\" — it was not taken seriously for a long time.",
+            "de": "Richtig: Der Begriff „galt lange als übertrieben“."
+          },
+          {
+            "en": "Richtig: since the switch to LEDs light has become so cheap \"dass vielerorts mehr und heller beleuchtet wird als zuvor\".",
+            "de": "Richtig: Durch LED ist Licht billig geworden, deshalb wird vielerorts „mehr und heller beleuchtet“."
+          },
+          {
+            "en": "Falsch: the blue component \"in der Atmosphäre besonders stark gestreut wird\".",
+            "de": "Falsch: Blaues Licht wird „besonders stark gestreut“."
+          },
+          {
+            "en": "Nicht im Text: the text estimates that billions of insects die at lights every summer night, but says nothing about how the total insect population has changed.",
+            "de": "Nicht im Text: Es steht nur, dass jede Nacht Milliarden Insekten an Lampen sterben. Wie sich die Zahl der Insekten insgesamt entwickelt hat, steht nicht im Text."
+          },
+          {
+            "en": "Richtig: near street lamps trees \"behalten … ihr Laub im Herbst mitunter deutlich länger\".",
+            "de": "Richtig: Bäume bei Laternen behalten ihr Laub im Herbst manchmal länger."
+          },
+          {
+            "en": "Falsch: whether street lighting alone causes health damage \"ist unter Medizinern allerdings umstritten\".",
+            "de": "Falsch: Unter Medizinern ist das „umstritten“, sie sind sich also nicht einig."
+          },
+          {
+            "en": "Nicht im Text: downward-facing lamps are recommended, but their price is never mentioned.",
+            "de": "Nicht im Text: Der Preis solcher Leuchten wird nicht genannt."
+          },
+          {
+            "en": "Falsch: motion sensors or dimming after midnight \"sparen zudem Energie und Geld\".",
+            "de": "Falsch: Weniger Licht nach Mitternacht spart „Energie und Geld“."
+          },
+          {
+            "en": "Nicht im Text: municipalities commit to strict lighting criteria; a fee is not mentioned.",
+            "de": "Nicht im Text: Die Gemeinden verpflichten sich zu strengen Regeln. Von einer Gebühr steht nichts im Text."
+          },
+          {
+            "en": "Falsch: the visitors \"eigens anreisen, um unter einem klaren Nachthimmel Sternbilder zu beobachten\" — they come specifically for the night sky, not for hiking.",
+            "de": "Falsch: Die Besucher reisen „eigens“ an, um Sternbilder zu beobachten, nicht zum Wandern."
+          },
+          {
+            "en": "Richtig: \"Kritiker geben zu bedenken, dass dunkle Straßen das Sicherheitsgefühl beeinträchtigen können.\"",
+            "de": "Richtig: Kritiker sagen, dass dunkle Straßen das Sicherheitsgefühl stören können."
+          },
+          {
+            "en": "a: the text explains the causes (lamps, LEDs), the consequences (insects, birds, people) and possible solutions. Star parks (b) are only one example, and the text does not call for banning LEDs (c).",
+            "de": "a: Der Text nennt Ursachen, Folgen und Lösungen. Sternenparks (b) sind nur ein Beispiel, und ein Verbot von LED-Leuchten (c) fordert der Text nicht."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -26,6 +26,12 @@ const SHAPES: Record<ExerciseType, string> = {
     'fill_blank: {"textWithBlank": a sentence with ___ for the gap, "correctAnswer": string, "acceptableVariants": optional array of other accepted answers}',
   flashcard: 'flashcard: {"front": a German word or phrase, "back": its meaning}',
   free_text: 'free_text: {"prompt": the task, "modelAnswer": one good answer}',
+  passage_questions:
+    'passage_questions: {"passage": German text of 60–150 words, "questions": [{"question": string, "options": 3 options, "correctIndex": index of the right option}] (3–5 questions)}',
+  matching:
+    'matching: {"items": 3–5 short German texts, "targets": one more headline than items, "answers": target index per item, "allowNone": false}',
+  cloze:
+    'cloze: {"text": a German text with gaps {{1}}…{{n}} (4–8 gaps), "gaps": [{"mode": "select", "options": 3 options, "correctIndex": index of the right option}] (one per gap, in order)}',
 };
 
 export function buildPracticeGenerationPrompt(

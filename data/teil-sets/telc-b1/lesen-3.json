@@ -1,0 +1,274 @@
+{
+  "formatId": "telc-b1",
+  "partId": "lesen-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b1__lesen-3__s01",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Ihre Nachbarin möchte lernen, wie man mit dem Computer arbeitet. Sie hat nur am Wochenende Zeit.",
+            "Ein Freund macht im Sommer ein Praktikum in Ihrer Stadt und sucht für zwei Monate ein möbliertes Zimmer.",
+            "Sie haben ein neues Sofa gekauft. Ihr altes Sofa ist noch gut, und Sie möchten, dass es jemand kostenlos bei Ihnen abholt.",
+            "Ihre Kollegin fährt drei Wochen in den Urlaub und sucht jemanden, der sich um ihre Katze kümmert.",
+            "Sie möchten Spanisch lernen. Weil Sie den ganzen Tag arbeiten, haben Sie nur abends Zeit.",
+            "Das Fahrrad eines Bekannten ist kaputt. Er hat kein Auto und kann es nicht selbst in eine Werkstatt bringen.",
+            "Ihr Sohn ist 16 Jahre alt und möchte in den Sommerferien etwas Geld verdienen.",
+            "Sie möchten Ihren 40. Geburtstag mit etwa 30 Gästen in einem Restaurant feiern.",
+            "Ihre Mutter ist 58 Jahre alt und hat nie schwimmen gelernt. Jetzt möchte sie es endlich lernen.",
+            "Ihre Tochter wächst schnell. Sie möchten am Samstag günstig gebrauchte Kinderkleidung kaufen."
+          ],
+          "targets": [
+            "Spanisch für Berufstätige – Lernen Sie in kleinen Gruppen mit erfahrenen Lehrkräften. Kurse dienstags und donnerstags von 19 bis 20.30 Uhr. Sprachschule Hablamos, Gartenstraße 4.",
+            "Hundepension Waldblick: Sie fahren in den Urlaub? Wir kümmern uns liebevoll um Ihren Hund, mit großem Garten und täglichen Spaziergängen. Bitte beachten Sie: Katzen und andere Tiere können wir leider nicht aufnehmen.",
+            "Großer Kinderflohmarkt in der Turnhalle der Schillerschule! Kleidung, Spielzeug und Bücher für Kinder von 0 bis 12 Jahren. Samstag, 9–13 Uhr. Für Kaffee und Kuchen ist gesorgt.",
+            "Studentin vermietet ihr möbliertes Zimmer in einer netten WG für Juli und August, 10 Minuten zur Innenstadt, 350 € warm. Tel. 0176 4425109.",
+            "PC-Crashkurs am Wochenende: Computer und Internet für Einsteiger. Samstag und Sonntag, jeweils 10–16 Uhr. Keine Vorkenntnisse nötig. Computerschule Klick, Am Markt 7.",
+            "Gasthaus Zur Linde – Feiern Sie bei uns! Unser Saal bietet Platz für bis zu 60 Personen. Gern stellen wir Ihnen ein Menü oder ein Buffet nach Ihren Wünschen zusammen.",
+            "Volkshochschule: Computer-Grundkurs für Anfänger. Montags und mittwochs von 9 bis 11 Uhr, acht Wochen. Anmeldung im VHS-Büro.",
+            "Schwimmen lernen ist nie zu spät! Kurse für Erwachsene, auch für Menschen mit Angst vor dem Wasser. Hallenbad Nord, donnerstags 18 Uhr.",
+            "Gebrauchtwarenhaus „Zweite Chance“: Wir holen gut erhaltene Möbel kostenlos bei Ihnen ab und verkaufen sie günstig weiter. Rufen Sie einfach an: 0351 228840.",
+            "3-Zimmer-Wohnung, 75 m², unmöbliert, Balkon, ab sofort für mindestens zwei Jahre zu vermieten. Hausverwaltung Berg.",
+            "Eiscafé am Markt sucht für die Sommerferien freundliche Aushilfen ab 16 Jahren. Auch ohne Erfahrung! Einfach vorbeikommen und nach Frau Rossi fragen.",
+            "Rad-Doktor mobil: Ihr Fahrrad hat einen Platten oder die Bremsen funktionieren nicht? Wir kommen zu Ihnen und reparieren es direkt vor Ihrer Haustür."
+          ],
+          "answers": [
+            4,
+            3,
+            8,
+            null,
+            0,
+            11,
+            10,
+            5,
+            7,
+            2
+          ],
+          "allowNone": true
+        },
+        "explanations": [
+          {
+            "en": "Ad e is a computer course for beginners on \"Samstag und Sonntag\". The adult-education course (g) is on Monday and Wednesday mornings, so it does not fit.",
+            "de": "Anzeige e ist ein Computerkurs für Einsteiger am „Samstag und Sonntag“. Der VHS-Kurs (g) ist montags und mittwochs vormittags, er passt also nicht."
+          },
+          {
+            "en": "Ad d offers a furnished room \"für Juli und August\", exactly two months in summer. The flat in j is unfurnished and for at least two years.",
+            "de": "Anzeige d bietet ein möbliertes Zimmer „für Juli und August“, also zwei Monate im Sommer. Die Wohnung in j ist unmöbliert und für mindestens zwei Jahre."
+          },
+          {
+            "en": "Ad i: \"Wir holen gut erhaltene Möbel kostenlos bei Ihnen ab.\"",
+            "de": "Anzeige i: „Wir holen gut erhaltene Möbel kostenlos bei Ihnen ab.“"
+          },
+          {
+            "en": "No ad fits (x). The boarding kennel (b) looks after dogs only: \"Katzen … können wir leider nicht aufnehmen.\"",
+            "de": "Keine Anzeige passt (x). Die Hundepension (b) nimmt nur Hunde: „Katzen … können wir leider nicht aufnehmen.“"
+          },
+          {
+            "en": "Ad a: Spanish for working people, Tuesdays and Thursdays from 7 to 8.30 p.m., so in the evening.",
+            "de": "Anzeige a: Spanisch für Berufstätige, dienstags und donnerstags von 19 bis 20.30 Uhr, also abends."
+          },
+          {
+            "en": "Ad l: the mobile bike service comes to you and repairs the bike \"direkt vor Ihrer Haustür\", so he does not need to transport it.",
+            "de": "Anzeige l: Der Rad-Doktor kommt zu Ihnen und repariert das Rad „direkt vor Ihrer Haustür“. Man muss es also nicht transportieren."
+          },
+          {
+            "en": "Ad k: the ice-cream café is looking for summer-holiday helpers \"ab 16 Jahren\".",
+            "de": "Anzeige k: Das Eiscafé sucht für die Sommerferien Aushilfen „ab 16 Jahren“."
+          },
+          {
+            "en": "Ad f: the inn has a hall \"für bis zu 60 Personen\", so 30 guests fit.",
+            "de": "Anzeige f: Das Gasthaus hat einen Saal „für bis zu 60 Personen“. 30 Gäste haben also Platz."
+          },
+          {
+            "en": "Ad h offers swimming courses \"für Erwachsene\": \"Schwimmen lernen ist nie zu spät!\"",
+            "de": "Anzeige h bietet Schwimmkurse „für Erwachsene“: „Schwimmen lernen ist nie zu spät!“"
+          },
+          {
+            "en": "Ad c: a children's flea market with clothing for children on Saturday from 9 to 1.",
+            "de": "Anzeige c: Ein Kinderflohmarkt mit Kinderkleidung am Samstag von 9 bis 13 Uhr."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b1__lesen-3__s02",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Sie möchten am Wochenende mit Ihren Kindern (6 und 9 Jahre) einen Ausflug machen, bei dem sie etwas über Tiere lernen.",
+            "Ihr Mann hat oft Rückenschmerzen und sucht einen Sportkurs, der dagegen hilft.",
+            "Sie und Ihr Partner möchten zusammen tanzen lernen. Sie haben nur abends Zeit.",
+            "Eine Freundin kommt für eine Nacht in Ihre Stadt und sucht eine günstige Übernachtung.",
+            "Sie möchten Ihren Geburtstag mit Freunden auf einem Schiff feiern.",
+            "Ein Kollege möchte gern ein Konzert mit klassischer Musik besuchen.",
+            "Sie möchten in den Ferien an einer geführten Wanderung in den Bergen teilnehmen.",
+            "Ihre Tochter ist 14 Jahre alt und möchte in den Ferien klettern lernen.",
+            "Sie gehen gern in die Sauna, haben aber erst spät am Abend Zeit.",
+            "Ein Bekannter isst kein Fleisch und möchte lernen, wie man gesund und vegetarisch kocht."
+          ],
+          "targets": [
+            "Grillkurs für Männer: Steaks, Würstchen und Spareribs perfekt zubereiten. Freitag, 18 Uhr, Metzgerei Huber. Getränke inklusive.",
+            "Rückenfit: Mit gezielten Übungen stärken Sie Ihre Muskeln und beugen Rückenschmerzen vor. Kurs mit einer Physiotherapeutin, montags 18 Uhr, Turnverein 1890.",
+            "Sinfoniekonzert im Stadttheater: Das Philharmonische Orchester spielt Werke von Mozart und Beethoven. Freitag, 20 Uhr. Karten an der Abendkasse.",
+            "Erlebnistag auf dem Bauernhof Sonnenwiese: Jeden Samstag und Sonntag dürfen Kinder die Tiere füttern und erfahren, wie Kühe, Schweine und Hühner leben. Für Familien mit Kindern ab 4 Jahren.",
+            "Ballettschule Pirouette: Tanzkurse für Kinder von 4 bis 10 Jahren, mittwochs nachmittags. Eine Probestunde ist kostenlos.",
+            "Hostel am Hauptbahnhof: Saubere Betten im Mehrbettzimmer ab 24 € pro Nacht, auch für nur eine Nacht. Frühstück auf Wunsch.",
+            "Geführte Radtouren in den Alpen! Unsere erfahrenen Guides zeigen Ihnen die schönsten Strecken. Touren von Juni bis September, Leihräder vorhanden.",
+            "Saunalandschaft Thermalis: Entspannen Sie in fünf verschiedenen Saunen. Täglich geöffnet von 10 bis 23 Uhr.",
+            "Grün und lecker: In unserem Kochkurs lernen Sie, wie Sie gesunde Gerichte ganz ohne Fleisch zubereiten. Volkshochschule, Donnerstag 18–21 Uhr.",
+            "Kletterhalle Hochhinaus: Ferienkurse für Jugendliche von 12 bis 16 Jahren. In fünf Tagen lernen sie die wichtigsten Techniken. Ausrüstung kann geliehen werden.",
+            "Feiern auf dem Wasser: Mieten Sie unser Partyschiff „Möwe“ für private Feste mit bis zu 50 Gästen – mit Musik und Buffet.",
+            "Tanzschule Takt: Neue Kurse für Paare – Walzer, Tango und Salsa. Jeden Dienstag und Freitag um 20 Uhr. Anfänger herzlich willkommen!"
+          ],
+          "answers": [
+            3,
+            1,
+            11,
+            5,
+            10,
+            2,
+            null,
+            9,
+            7,
+            8
+          ],
+          "allowNone": true
+        },
+        "explanations": [
+          {
+            "en": "Ad d: at the weekend children may feed the animals and learn \"wie Kühe, Schweine und Hühner leben\"; for children from 4.",
+            "de": "Anzeige d: Am Wochenende dürfen Kinder die Tiere füttern und erfahren, „wie Kühe, Schweine und Hühner leben“. Kinder ab 4 Jahren können mitmachen."
+          },
+          {
+            "en": "Ad b: with targeted exercises \"beugen Sie Rückenschmerzen vor\".",
+            "de": "Anzeige b: Mit gezielten Übungen „beugen Sie Rückenschmerzen vor“."
+          },
+          {
+            "en": "Ad l: courses \"für Paare\" at 8 p.m. The ballet school (e) is for children in the afternoon.",
+            "de": "Anzeige l: Kurse „für Paare“ um 20 Uhr. Die Ballettschule (e) ist für Kinder und nachmittags."
+          },
+          {
+            "en": "Ad f: beds from 24 euros, \"auch für nur eine Nacht\".",
+            "de": "Anzeige f: Betten ab 24 €, „auch für nur eine Nacht“."
+          },
+          {
+            "en": "Ad k: you can hire the party boat \"für private Feste\".",
+            "de": "Anzeige k: Man kann das Partyschiff „für private Feste“ mieten."
+          },
+          {
+            "en": "Ad c: a symphony concert with works by Mozart and Beethoven, which is classical music.",
+            "de": "Anzeige c: Ein Sinfoniekonzert mit Mozart und Beethoven, also klassische Musik."
+          },
+          {
+            "en": "No ad fits (x). Ad g offers guided tours in the mountains, but by bike (\"Radtouren\"), not on foot.",
+            "de": "Keine Anzeige passt (x). Anzeige g bietet geführte Touren in den Bergen, aber mit dem Fahrrad („Radtouren“), nicht zu Fuß."
+          },
+          {
+            "en": "Ad j: holiday climbing courses \"für Jugendliche von 12 bis 16 Jahren\".",
+            "de": "Anzeige j: Ferienkurse im Klettern „für Jugendliche von 12 bis 16 Jahren“."
+          },
+          {
+            "en": "Ad h: the sauna is open every day \"von 10 bis 23 Uhr\", so also late in the evening.",
+            "de": "Anzeige h: Die Sauna ist täglich „von 10 bis 23 Uhr“ geöffnet, also auch spät am Abend."
+          },
+          {
+            "en": "Ad i: you learn to cook healthy dishes \"ganz ohne Fleisch\". The barbecue course (a) is about meat.",
+            "de": "Anzeige i: Man lernt gesunde Gerichte „ganz ohne Fleisch“. Im Grillkurs (a) geht es um Fleisch."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b1__lesen-3__s03",
+      "set": {
+        "taskType": "matching",
+        "content": {
+          "items": [
+            "Ihre Waschmaschine ist kaputt. Sie brauchen schnell jemanden, der sie bei Ihnen zu Hause repariert.",
+            "Sie möchten Ihre Wohnung neu streichen lassen, weil Sie bald ausziehen.",
+            "Ein Freund sucht eine Teilzeitstelle im Büro. Er kann nur vormittags arbeiten, weil er nachmittags seine Kinder betreut.",
+            "Ihre Schwester versteht die Formulare für ihre Steuererklärung nicht und braucht Hilfe.",
+            "Sie suchen jemanden, der freitagabends auf Ihre Kinder aufpasst.",
+            "Sie ziehen um und möchten Ihre Möbel selbst transportieren. Dafür brauchen Sie für einen Tag einen großen Wagen.",
+            "Ihr Nachbar möchte den Führerschein machen. Er hat nur in den Sommerferien Zeit und möchte möglichst schnell fertig werden.",
+            "Sie bewerben sich um eine neue Stelle und möchten, dass jemand Ihre Bewerbungsunterlagen prüft.",
+            "Der Sohn Ihrer Kollegin geht in die 8. Klasse und hat Probleme in Mathematik.",
+            "Sie haben sehr große Fenster und möchten sie von einer Firma putzen lassen."
+          ],
+          "targets": [
+            "Fahrschule Grünlicht: Führerschein in nur drei Wochen! Unser Intensivkurs in den Sommerferien: Theorie und Fahrstunden jeden Tag. Jetzt anmelden!",
+            "Nachhilfe in Englisch und Französisch für alle Klassen. Erfahrene Lehrerin, auch Vorbereitung auf Prüfungen. Tel. 0221 553071.",
+            "Studentin der Pädagogik (23) passt gern abends und am Wochenende auf Ihre Kinder auf. Viel Erfahrung, sehr zuverlässig.",
+            "Steuer leicht gemacht: Wir helfen Arbeitnehmern und Rentnern bei der Steuererklärung. Termine nach Vereinbarung im Steuerbüro Lehmann & Partner.",
+            "Wir suchen ab sofort eine Bürokraft in Vollzeit (40 Stunden). Arbeitszeit Montag bis Freitag, 8 bis 17 Uhr. Bewerbungen an: Autohaus Seifert.",
+            "Glasklar Reinigungsservice: Wir putzen Fenster jeder Größe, auch Wintergärten und Schaufenster. Schnell, gründlich und zu fairen Preisen.",
+            "Ihr Kühlschrank, Herd oder Ihre Waschmaschine funktioniert nicht mehr? Unser Hausgeräte-Service kommt noch am selben Tag zu Ihnen. Tel. 0800 7712345.",
+            "Umzüge Meier: Wir packen, tragen und transportieren Ihre Möbel. Sie müssen nichts tun – wir erledigen alles für Sie!",
+            "Bewerbung ohne Fehler: Wir lesen Ihren Lebenslauf und Ihr Anschreiben und geben Ihnen Tipps für das Vorstellungsgespräch.",
+            "Arztpraxis in der Innenstadt sucht eine Bürokraft in Teilzeit für Empfang und Verwaltung. Arbeitszeit: Montag bis Freitag von 8 bis 12 Uhr.",
+            "Autovermietung Rollmobil: Transporter und Kleinbusse schon ab 59 € pro Tag. Ideal für Ihren Umzug!",
+            "Malermeister Franke: Wir streichen Ihre Wände und Decken – sauber, schnell und günstig. Kostenloses Angebot unter Tel. 0351 908812."
+          ],
+          "answers": [
+            6,
+            11,
+            9,
+            3,
+            2,
+            10,
+            0,
+            8,
+            null,
+            5
+          ],
+          "allowNone": true
+        },
+        "explanations": [
+          {
+            "en": "Ad g: the appliance service repairs washing machines and \"kommt noch am selben Tag zu Ihnen\".",
+            "de": "Anzeige g: Der Hausgeräte-Service repariert auch Waschmaschinen und „kommt noch am selben Tag zu Ihnen“."
+          },
+          {
+            "en": "Ad l: the master painter offers \"Wir streichen Ihre Wände und Decken\".",
+            "de": "Anzeige l: Der Malermeister schreibt: „Wir streichen Ihre Wände und Decken.“"
+          },
+          {
+            "en": "Ad j: a part-time office job \"von 8 bis 12 Uhr\", so only in the morning. The job in e is full-time until 5 p.m.",
+            "de": "Anzeige j: Eine Bürostelle in Teilzeit „von 8 bis 12 Uhr“, also nur vormittags. Die Stelle in e ist Vollzeit bis 17 Uhr."
+          },
+          {
+            "en": "Ad d: \"Wir helfen … bei der Steuererklärung.\"",
+            "de": "Anzeige d: „Wir helfen … bei der Steuererklärung.“"
+          },
+          {
+            "en": "Ad c: a student looks after children \"abends und am Wochenende\", so also on Friday evenings.",
+            "de": "Anzeige c: Eine Studentin passt „abends und am Wochenende“ auf Kinder auf, also auch freitagabends."
+          },
+          {
+            "en": "Ad k: you can rent a van for 59 euros \"pro Tag\" and move yourself. The removal firm (h) does all the work, but you want to do it yourself.",
+            "de": "Anzeige k: Man kann einen Transporter für 59 € „pro Tag“ mieten. Die Umzugsfirma (h) macht alles selbst, aber Sie wollen selbst transportieren."
+          },
+          {
+            "en": "Ad a: an intensive course \"in den Sommerferien\", driving licence \"in nur drei Wochen\".",
+            "de": "Anzeige a: Ein Intensivkurs „in den Sommerferien“, Führerschein „in nur drei Wochen“."
+          },
+          {
+            "en": "Ad i: \"Wir lesen Ihren Lebenslauf und Ihr Anschreiben.\"",
+            "de": "Anzeige i: „Wir lesen Ihren Lebenslauf und Ihr Anschreiben.“"
+          },
+          {
+            "en": "No ad fits (x). The tutor in b teaches only English and French, not maths.",
+            "de": "Keine Anzeige passt (x). Die Nachhilfe in b gibt es nur in Englisch und Französisch, nicht in Mathematik."
+          },
+          {
+            "en": "Ad f: the cleaning service cleans \"Fenster jeder Größe\".",
+            "de": "Anzeige f: Der Reinigungsservice putzt „Fenster jeder Größe“."
+          }
+        ]
+      }
+    }
+  ]
+}

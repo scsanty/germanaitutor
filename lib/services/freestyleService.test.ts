@@ -41,6 +41,15 @@ describe('freestyleService', () => {
     await expect(service.start('spoken', { level: 'B1', setup: {} })).rejects.toMatchObject({ kind: 'not_found' });
   });
 
+  it('refuses sessions for exam practice, which has its own screen (S12)', async () => {
+    const { service, generate } = setup([]);
+    await expect(service.start('exam_practice', { level: 'B1', setup: {} })).rejects.toMatchObject({ kind: 'bad_request', code: 'bad_request' });
+    await expect(service.turn('exam_practice', 'Hallo')).rejects.toMatchObject({ kind: 'bad_request', code: 'bad_request' });
+    await expect(service.end('exam_practice', {})).rejects.toMatchObject({ kind: 'bad_request', code: 'bad_request' });
+    expect(service.overview().modes.find((m) => m.mode === 'exam_practice')).toEqual({ mode: 'exam_practice', enabled: true, open: false });
+    expect(generate).not.toHaveBeenCalled();
+  });
+
   it('starts a grammar drill with a first question and judges answers', async () => {
     const { service } = setup([
       '{"verdict":null,"explanation_en":null,"explanation_de":null,"next":"Bilde das Perfekt: ich gehe."}',

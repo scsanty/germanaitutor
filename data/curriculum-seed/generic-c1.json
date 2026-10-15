@@ -1,5 +1,5 @@
 {
-  "seedVersion": "7",
+  "seedVersion": "9",
   "formatVersion": 3,
   "track": "generic",
   "level": "C1",
@@ -1049,6 +1049,101 @@
       }
     },
     {
+      "id": "c1-rezeption-komplexer-sachtexte__ex4",
+      "lessonId": "c1-rezeption-komplexer-sachtexte",
+      "track": "generic",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the essay. Reconstruct its argument: separate the main thread from digressions and identify the author's position. Choose the right answer for each question.",
+          "de": "Lesen Sie den Essay. Rekonstruieren Sie die Argumentation: Unterscheiden Sie den Hauptstrang von Nebenüberlegungen und bestimmen Sie die Position des Verfassers. Wählen Sie für jede Frage die richtige Antwort."
+        },
+        "passage": "Sanfte Steuerung: Zur Ambivalenz des Nudging\n\nSeit verhaltensökonomische Erkenntnisse vor rund zwei Jahrzehnten Eingang in die Politikberatung gefunden haben, erfreut sich das sogenannte Nudging wachsender Beliebtheit. Gemeint sind Eingriffe, die Entscheidungen weder durch Verbote noch durch finanzielle Anreize lenken, sondern durch die Gestaltung der Entscheidungssituation selbst: Das Obst steht in der Kantine auf Augenhöhe, die Organspende wird zur Voreinstellung, von der man aktiv abweichen muss. Die Wahlfreiheit bleibt formal unangetastet – und eben darin sehen die Befürworter den entscheidenden Vorzug gegenüber klassischer Regulierung.\n\nGerade dieser Vorzug erweist sich bei näherer Betrachtung jedoch als Kern des Problems. Denn ein Nudge wirkt in aller Regel nur, solange er unbemerkt bleibt; er setzt auf jene Trägheit und jene Faustregeln, die die Verhaltensökonomie als Schwächen menschlicher Rationalität beschrieben hat. Ein Staat, der systematisch auf diese Schwächen baut, behandelt seine Bürger nicht als mündige Subjekte, sondern als Objekte wohlmeinender Optimierung. Dass die verfolgten Ziele – gesündere Ernährung, höhere Sparquoten – in der Sache meist unstrittig sind, ändert an diesem Befund wenig; es verschleiert ihn allenfalls.\n\nMan mag einwenden, jede Entscheidungssituation sei ohnehin gestaltet, eine neutrale Anordnung der Kantinentheke gebe es nicht. Das trifft zu, verfehlt aber den Punkt: Zwischen einer beiläufigen und einer gezielt auf Verhaltensänderung angelegten Gestaltung besteht ein Unterschied, der demokratischer Rechenschaft bedarf. (Nebenbei bemerkt: Die Werbeindustrie praktiziert dergleichen seit jeher, ohne dass es dafür eines eigenen Begriffs bedurft hätte.)\n\nDaraus folgt nicht, dass Nudging grundsätzlich abzulehnen wäre. Wohl aber folgt daraus, dass seine Legitimität an Transparenz gebunden sein muss: Nur ein Nudge, der offengelegt werden könnte, ohne seine Wirkung vollständig einzubüßen, ist mit dem Leitbild des mündigen Bürgers vereinbar.",
+        "questions": [
+          {
+            "question": "Welche Grundthese vertritt der Verfasser?",
+            "options": [
+              "Nudging ist als politisches Instrument grundsätzlich abzulehnen.",
+              "Nudging ist nur dann legitim, wenn es offengelegt werden kann, ohne seine Wirkung ganz zu verlieren.",
+              "Nudging ist klassischer Regulierung in jeder Hinsicht überlegen."
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Warum sieht der Verfasser gerade in der formal erhaltenen Wahlfreiheit ein Problem?",
+            "options": [
+              "Weil Nudges meist nur unbemerkt wirken und gezielt Schwächen menschlicher Rationalität ausnutzen.",
+              "Weil Bürger mit zu vielen Wahlmöglichkeiten überfordert sind.",
+              "Weil die Ziele des Nudging in der Sache höchst umstritten sind."
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Wie geht der Verfasser mit dem Einwand um, jede Entscheidungssituation sei ohnehin gestaltet?",
+            "options": [
+              "Er weist ihn als sachlich falsch zurück.",
+              "Er übernimmt ihn und gibt seine These auf.",
+              "Er räumt ihn ein, hält ihn aber nicht für entscheidend."
+            ],
+            "correctIndex": 2
+          },
+          {
+            "question": "Welche Funktion hat die Bemerkung über die Werbeindustrie?",
+            "options": [
+              "Sie liefert den zentralen Beleg für die These des Textes.",
+              "Sie ist eine Nebenüberlegung, die für die Argumentation nicht tragend ist.",
+              "Sie leitet die Schlussfolgerung des Textes ein."
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Was meint der Verfasser, wenn er schreibt, die Unstrittigkeit der Ziele „verschleiere“ den Befund „allenfalls“?",
+            "options": [
+              "Die eigentlichen Ziele des Nudging werden vor den Bürgern verborgen.",
+              "Gute Ziele rechtfertigen die Methode vollständig.",
+              "Unstrittige Ziele lenken eher vom Problem ab, als dass sie es beseitigen."
+            ],
+            "correctIndex": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "c1-rezeption-komplexer-sachtexte__ex5",
+      "lessonId": "c1-rezeption-komplexer-sachtexte",
+      "track": "generic",
+      "type": "matching",
+      "content": {
+        "instruction": {
+          "en": "These sentences come from an essay on nudging. Match each sentence to its function in the structure of the argument. One function is left over.",
+          "de": "Diese Sätze stammen aus einem Essay über Nudging. Ordnen Sie jedem Satz seine Funktion im Aufbau der Argumentation zu. Eine Funktion bleibt übrig."
+        },
+        "items": [
+          "Die Wahlfreiheit bleibt formal unangetastet – und eben darin sehen die Befürworter den entscheidenden Vorzug gegenüber klassischer Regulierung.",
+          "Man mag einwenden, jede Entscheidungssituation sei ohnehin gestaltet, eine neutrale Anordnung der Kantinentheke gebe es nicht.",
+          "Nebenbei bemerkt: Die Werbeindustrie praktiziert dergleichen seit jeher, ohne dass es dafür eines eigenen Begriffs bedurft hätte.",
+          "Nur ein Nudge, der offengelegt werden könnte, ohne seine Wirkung vollständig einzubüßen, ist mit dem Leitbild des mündigen Bürgers vereinbar.",
+          "Das Obst steht in der Kantine auf Augenhöhe, die Organspende wird zur Voreinstellung, von der man aktiv abweichen muss."
+        ],
+        "targets": [
+          "vorweggenommener Einwand, den der Verfasser anschließend relativiert",
+          "Veranschaulichung eines Begriffs durch Beispiele",
+          "abschließende normative Folgerung des Verfassers",
+          "Wiedergabe der Position der Gegenseite",
+          "Exkurs ohne tragende Funktion für die Argumentation",
+          "empirischer Beleg durch Studienergebnisse"
+        ],
+        "answers": [
+          3,
+          0,
+          4,
+          2,
+          1
+        ],
+        "allowNone": false
+      }
+    },
+    {
       "id": "c1-erfassen-impliziter-bedeutungen__ex0",
       "lessonId": "c1-erfassen-impliziter-bedeutungen",
       "track": "generic",
@@ -1098,6 +1193,102 @@
       "content": {
         "prompt": "Formulieren Sie eine scheinbar lobende Aussage über ein miserables Buch, die durch Ironie Kritik ausdrückt.",
         "modelAnswer": "Ein faszinierendes Werk, dem das seltene Kunststück gelingt, den Leser auf jeder einzelnen Seite vollkommen unberührt von neuen Erkenntnissen zu lassen."
+      }
+    },
+    {
+      "id": "c1-erfassen-impliziter-bedeutungen__ex4",
+      "lessonId": "c1-erfassen-impliziter-bedeutungen",
+      "track": "generic",
+      "type": "passage_questions",
+      "content": {
+        "instruction": {
+          "en": "Read the satirical column. Look for the gap between what is said literally and what is meant. Choose the right answer for each question.",
+          "de": "Lesen Sie die Glosse. Achten Sie auf die Diskrepanz zwischen dem wörtlich Gesagten und dem Gemeinten. Wählen Sie für jede Frage die richtige Antwort."
+        },
+        "passage": "Glosse: Eine Kultur der Wertschätzung\n\nEs gibt Nachrichten, die einem das Herz erwärmen. So verkündete der Vorstand eines mittelständischen Versicherers kürzlich, man habe sich nach intensivem Nachdenken zu einer „neuen Kultur der Wertschätzung“ entschlossen. Konkret bedeutet das: Die Kantine wird geschlossen, an ihre Stelle tritt ein Obstkorb, der – so die interne Mitteilung – „gesunde Ernährung und spontane Begegnungen fördern“ soll. Dass der Korb zweimal pro Woche befüllt wird, für rund 400 Beschäftigte, zeugt von einem bemerkenswerten Vertrauen in die Selbstbeherrschung der Belegschaft.\n\nAuch sonst hat man an alles gedacht. Die bisherigen Einzelbüros weichen einer „agilen Arbeitslandschaft“, in der sich, rein rechnerisch, drei Mitarbeiter zwei Schreibtische teilen. Wer morgens nach halb neun kommt, kann so seine Flexibilität unter Beweis stellen. Ein eigens eingestellter „Chief Happiness Officer“ soll darüber wachen, dass die Stimmung nicht leidet; seine erste Amtshandlung bestand in der Einführung eines Smiley-Feedbacksystems am Ausgang.\n\nDie Kritik des Betriebsrats, hier würden schlicht Kosten gesenkt und mit wohlklingenden Etiketten versehen, wies der Vorstand entschieden zurück. Es gehe ausschließlich um die Menschen. Dass die eingesparten Mittel in die Boni der Führungsebene flössen, sei ein reiner Zufall der Haushaltsplanung.\n\nMan wird den Verantwortlichen zugutehalten müssen, dass sie konsequent sind: Wer von Wertschätzung spricht, muss sie ja nicht gleich praktizieren.",
+        "questions": [
+          {
+            "question": "Welche implizite Kernaussage enthält die Glosse?",
+            "options": [
+              "Der Versicherer verbessert die Arbeitsbedingungen seiner Beschäftigten spürbar.",
+              "Hinter wohlklingenden Begriffen verbergen sich Sparmaßnahmen zulasten der Beschäftigten.",
+              "Der Betriebsrat übertreibt seine Kritik an sinnvollen Reformen."
+            ],
+            "correctIndex": 1
+          },
+          {
+            "question": "Wie ist die Bemerkung über das „bemerkenswerte Vertrauen in die Selbstbeherrschung der Belegschaft“ gemeint?",
+            "options": [
+              "Der Obstkorb reicht für die Belegschaft bei Weitem nicht aus.",
+              "Die Beschäftigten essen erfahrungsgemäß zu viel Obst.",
+              "Der Vorstand lobt aufrichtig die Disziplin seiner Mitarbeiter."
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Was impliziert der Satz „Wer morgens nach halb neun kommt, kann so seine Flexibilität unter Beweis stellen“?",
+            "options": [
+              "Wer später kommt, darf von zu Hause aus arbeiten.",
+              "Wer später kommt, wird für seine Flexibilität belohnt.",
+              "Wer später kommt, findet keinen freien Schreibtisch mehr."
+            ],
+            "correctIndex": 2
+          },
+          {
+            "question": "Wodurch distanziert sich der Autor von der Behauptung, die Verwendung der eingesparten Mittel sei Zufall?",
+            "options": [
+              "Durch den Konjunktiv der indirekten Rede",
+              "Durch eine offene Beschimpfung des Vorstands",
+              "Durch ein wörtliches Zitat des Betriebsrats"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "question": "Wie ist der Schlusssatz zu verstehen?",
+            "options": [
+              "Als ernst gemeinte Anerkennung der Konsequenz des Vorstands",
+              "Als Hinweis, dass eine neue Unternehmenskultur Zeit braucht",
+              "Als Vorwurf, dass der Vorstand von Wertschätzung nur redet, sie aber nicht lebt"
+            ],
+            "correctIndex": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "c1-erfassen-impliziter-bedeutungen__ex5",
+      "lessonId": "c1-erfassen-impliziter-bedeutungen",
+      "track": "generic",
+      "type": "matching",
+      "content": {
+        "instruction": {
+          "en": "Read the five statements. Each one says something different from what it literally means. Match each statement to its intended meaning. Two meanings are left over.",
+          "de": "Lesen Sie die fünf Aussagen. Jede meint etwas anderes, als sie wörtlich sagt. Ordnen Sie jeder Aussage die gemeinte Bedeutung zu. Zwei Bedeutungen bleiben übrig."
+        },
+        "items": [
+          "Die Bahn hat Wort gehalten: Der Zug kam nur 50 Minuten zu spät – für ihre Verhältnisse geradezu ein Rekord.",
+          "Der Bericht der sogenannten Expertenkommission umfasst stolze 400 Seiten, von denen immerhin zwei eine konkrete Empfehlung enthalten.",
+          "Die Opposition hat dem Gesetz zugestimmt – nicht ganz ohne Bauchschmerzen, wie man hört.",
+          "Natürlich ist der neue Flughafen ein voller Erfolg. Er ist ja schon seit drei Jahren beinahe fertig.",
+          "Eine beachtliche Leistung des Trainers: Mit dem teuersten Kader der Liga hat er den Abstieg knapp vermieden."
+        ],
+        "targets": [
+          "Das Projekt ist noch immer nicht abgeschlossen und alles andere als ein Erfolg.",
+          "Die Kommission hat außergewöhnlich gründlich gearbeitet.",
+          "Gemessen an den Voraussetzungen ist das Ergebnis enttäuschend.",
+          "Unpünktlichkeit ist bei diesem Unternehmen der Normalfall.",
+          "Das Gesetz wurde gegen den Willen der Opposition beschlossen.",
+          "Der Umfang des Dokuments steht in keinem Verhältnis zu seinem Nutzen.",
+          "Die Zustimmung erfolgte nur widerwillig und mit erheblichen Vorbehalten."
+        ],
+        "answers": [
+          3,
+          5,
+          6,
+          0,
+          2
+        ],
+        "allowNone": false
       }
     },
     {

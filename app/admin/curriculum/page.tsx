@@ -26,6 +26,9 @@ export default async function AdminCurriculumPage() {
           <a href="/admin/practice-review" className={LINK}>Practice exercises to review</a>
         </li>
         <li>
+          <a href="/admin/exam-practice" className={LINK}>Exam practice sets</a>
+        </li>
+        <li>
           <a href="/api/admin/curriculum/export" className={LINK}>
             <Download aria-hidden className="size-4" />
             Download all as seed files (zip)

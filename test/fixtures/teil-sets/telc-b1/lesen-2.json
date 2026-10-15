@@ -1,0 +1,85 @@
+{
+  "formatId": "telc-b1",
+  "partId": "lesen-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b1__lesen-2__s01",
+      "set": {
+        "taskType": "passage_questions",
+        "content": {
+          "passage": "Ein kurzer Testtext.",
+          "questions": [
+            {
+              "question": "Frage 1?",
+              "options": [
+                "a",
+                "b",
+                "c"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Frage 2?",
+              "options": [
+                "a",
+                "b",
+                "c"
+              ],
+              "correctIndex": 1
+            },
+            {
+              "question": "Frage 3?",
+              "options": [
+                "a",
+                "b",
+                "c"
+              ],
+              "correctIndex": 2
+            },
+            {
+              "question": "Frage 4?",
+              "options": [
+                "a",
+                "b",
+                "c"
+              ],
+              "correctIndex": 0
+            },
+            {
+              "question": "Frage 5?",
+              "options": [
+                "a",
+                "b",
+                "c"
+              ],
+              "correctIndex": 1
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Fixture explanation 1.",
+            "de": "Fixture-Erklärung 1."
+          },
+          {
+            "en": "Fixture explanation 2.",
+            "de": "Fixture-Erklärung 2."
+          },
+          {
+            "en": "Fixture explanation 3.",
+            "de": "Fixture-Erklärung 3."
+          },
+          {
+            "en": "Fixture explanation 4.",
+            "de": "Fixture-Erklärung 4."
+          },
+          {
+            "en": "Fixture explanation 5.",
+            "de": "Fixture-Erklärung 5."
+          }
+        ]
+      }
+    }
+  ]
+}
