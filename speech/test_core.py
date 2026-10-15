@@ -337,10 +337,10 @@ class RenderWithRealFfmpegTest(unittest.TestCase):
         segs = [("Gleis drei.", "kerstin"), ("Bitte einsteigen.", "thorsten")]
         plain = audio_core.render(segs, "none", 300, fake_synth)
         station = audio_core.render(segs, "station", 300, fake_synth)
-        # Longer by the chime, plus up to aecho's 120 ms tail (newer ffmpeg flushes it).
+        # Longer by the chime plus aecho's 120 ms delay tail, which ffmpeg (5.1 in the image, 8 here)
+        # flushes after the input ends.
         extra = ogg_seconds(station) - ogg_seconds(plain)
-        self.assertGreaterEqual(extra, audio_core.CHIME_SECONDS - 0.05)
-        self.assertLessEqual(extra, audio_core.CHIME_SECONDS + 0.12 + 0.05)
+        self.assertAlmostEqual(extra, audio_core.CHIME_SECONDS + 0.12, delta=0.05)
         self.assertEqual(opus_head(station), (1, 24000))
 
     def test_station_noise_bed_sits_about_30_db_under_the_voice(self):
@@ -423,10 +423,12 @@ class BuildGuardsTest(unittest.TestCase):
         self.assertNotEqual(run.returncode, 0, run.stderr)
         self.assertNotIn("skipped", run.stderr)
 
+    @unittest.skipUnless(os.path.exists(DOCKERFILE), "the Dockerfile is not next to the sidecar (e.g. in the image)")
     def test_dockerfile_requires_the_server_tests(self):
         with open(self.DOCKERFILE, encoding="utf-8") as f:
             self.assertIn("RUN SPEECH_REQUIRE_FULL_TESTS=1 python -m pytest", f.read())
 
+    @unittest.skipUnless(os.path.exists(DOCKERFILE), "the Dockerfile is not next to the sidecar (e.g. in the image)")
     @unittest.skipUnless(shutil.which("sh") and shutil.which("sed"), "needs sh and sed")
     def test_dockerfile_manifest_reader_matches_the_parser(self):
         with open(self.DOCKERFILE, encoding="utf-8") as f:

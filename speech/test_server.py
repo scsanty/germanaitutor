@@ -14,12 +14,15 @@ import wave
 REQUIRE_FULL = os.environ.get("SPEECH_REQUIRE_FULL_TESTS") == "1"
 HAVE_DEPS = REQUIRE_FULL or all(importlib.util.find_spec(m) is not None for m in ("fastapi", "httpx", "piper"))
 VOICE_DIR = os.environ.get("VOICE_DIR", "/voices")
+# aecho's longest delay (station's 60|120 ms taps): ffmpeg flushes this tail after the input ends.
+ECHO_TAIL_SECONDS = 0.12
 HAVE_VOICES = REQUIRE_FULL or os.path.exists(os.path.join(VOICE_DIR, "de_DE-thorsten-high.onnx"))
 
 if HAVE_DEPS:
     from fastapi.testclient import TestClient
 
     import audio_core
+    import server
     from server import app
 
     client = TestClient(app)
@@ -79,21 +82,30 @@ class ServerTest(unittest.TestCase):
 
     @unittest.skipUnless(HAVE_VOICES, f"no voice files in {VOICE_DIR}")
     def test_station_adds_the_chime(self):
-        seg = {"segments": [{"text": "Gleis drei, bitte einsteigen.", "voice": "kerstin"}], "pauseMs": 0}
-        plain = ogg_seconds(client.post("/render", json={**seg, "filter": "none"}).content)
-        station = ogg_seconds(client.post("/render", json={**seg, "filter": "station"}).content)
-        self.assertAlmostEqual(station - plain, audio_core.CHIME_SECONDS + 0.06, delta=0.15)  # + aecho's tail
+        # Piper's phoneme lengths are randomized (noise_w), so the same text varies by about +-0.15 s
+        # between syntheses. Synthesize once and render that same audio both ways.
+        wav = server.synth_wav("Gleis drei, bitte einsteigen.", "kerstin")
+        same = lambda _text, _voice: wav
+        plain = ogg_seconds(audio_core.render([("x", "kerstin")], "none", 0, same))
+        station_ogg = audio_core.render([("x", "kerstin")], "station", 0, same)
+        # The chime, plus aecho's 120 ms delay tail, which ffmpeg (5.1 in the image) flushes at the end.
+        self.assertAlmostEqual(ogg_seconds(station_ogg) - plain, audio_core.CHIME_SECONDS + ECHO_TAIL_SECONDS, delta=0.05)
+        self.assertEqual(station_ogg[:4], b"OggS")
 
     @unittest.skipUnless(HAVE_VOICES, f"no voice files in {VOICE_DIR}")
     def test_mixed_rate_voices_keep_their_duration(self):
         # S16: thorsten-high is 22.05 kHz and kerstin-low 16 kHz; joined, the length must be the sum.
-        a = {"text": "Hallo, hier ist Thomas.", "voice": "thorsten"}
-        b = {"text": "Guten Tag, wie geht es Ihnen?", "voice": "kerstin"}
-        alone = [ogg_seconds(client.post("/render", json={"segments": [s], "pauseMs": 0}).content) for s in (a, b)]
-        both = ogg_seconds(client.post("/render", json={"segments": [a, b], "pauseMs": 500}).content)
+        # Each line is synthesized once (Piper's lengths vary per synthesis) and reused for every render.
+        wavs = {
+            "Hallo, hier ist Thomas.": server.synth_wav("Hallo, hier ist Thomas.", "thorsten"),
+            "Guten Tag, wie geht es Ihnen?": server.synth_wav("Guten Tag, wie geht es Ihnen?", "kerstin"),
+        }
+        same = lambda text, _voice: wavs[text]
+        segs = [("Hallo, hier ist Thomas.", "thorsten"), ("Guten Tag, wie geht es Ihnen?", "kerstin")]
+        alone = [ogg_seconds(audio_core.render([seg], "none", 0, same)) for seg in segs]
+        both = ogg_seconds(audio_core.render(segs, "none", 500, same))
         expected = sum(alone) + 0.5
         self.assertAlmostEqual(both, expected, delta=expected * 0.1)
-
 
 if __name__ == "__main__":
     unittest.main()
