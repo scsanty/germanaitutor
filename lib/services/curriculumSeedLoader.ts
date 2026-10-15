@@ -5,6 +5,7 @@ import type { Track, CefrLevel } from '../types';
 import { ensureUnsortedExists } from '../curriculum-admin/unsortedBucket';
 import { lessonTextProblems, milestoneTextProblems } from '../curriculum/bilingualValidation';
 import { hasInstructionKey, instructionProblems } from '../curriculum/exerciseContentValidation';
+import { createAudioService } from './audioService';
 
 export const SEED_FORMAT_VERSION = 3;
 
@@ -145,8 +146,11 @@ function upsertSeedFile(db: Database.Database, seed: SeedFile): void {
     );
   }
   replaceStructure(db, seed);
+  // Listening: each transcript is queued for the background renderer (rows only; nothing is rendered here).
+  const audio = createAudioService(db);
   for (const exercise of seed.exercises) {
     upsertExercise.run(exercise.id, exercise.lessonId, exercise.track, exercise.type, JSON.stringify(exercise.content));
+    audio.enqueueFromContent(exercise.type, exercise.content);
   }
   for (const prereq of seed.prerequisites) {
     upsertPrerequisite.run(prereq.lessonId, prereq.prerequisiteLessonId);
@@ -172,6 +176,7 @@ function upsertSeedFile(db: Database.Database, seed: SeedFile): void {
   for (const item of seed.practice ?? []) {
     if (!lessonExists.get(item.lessonId)) continue;
     insertPractice.run(item.id, item.lessonId, item.type, JSON.stringify(item.content), practiceAt, practiceAt);
+    audio.enqueueFromContent(item.type, item.content);
   }
 }
 

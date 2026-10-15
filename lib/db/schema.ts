@@ -197,20 +197,35 @@ export function runMigrations(db: Database.Database): void {
   }
 }
 
-// Reading module: the passage, matching and cloze exercise types. SQLite can't change a CHECK in
-// place, so each table still on the old CHECK is rebuilt (create-copy-drop-rename), keeping ids, so
-// attempts, reviews, chat rows and seen markers stay linked. Runs with foreign keys OFF (see
-// runMigrations). A table already on the new CHECK is left alone, so a second run does nothing.
+// Every exercise type the two exercise tables accept (the Reading types, then Listening's audio_questions).
+export const EXERCISE_TYPES = [
+  'multiple_choice',
+  'fill_blank',
+  'flashcard',
+  'free_text',
+  'passage_questions',
+  'matching',
+  'cloze',
+  'audio_questions',
+] as const;
+
+// SQLite can't change a CHECK in place, so each table whose type CHECK lacks a type is rebuilt
+// (create-copy-drop-rename), keeping ids, so attempts, reviews, chat rows and seen markers stay linked.
+// S12: the whole `CHECK (type IN (...))` list is rewritten, so a pre-Reading table (ends in 'free_text')
+// and a Reading table (ends in 'cloze') both migrate. Runs with foreign keys OFF (see runMigrations).
+// A table already on the full list is left alone, so a second run does nothing.
 function migrateExerciseTypes(db: Database.Database): void {
+  const typeCheck = /CHECK\s*\(\s*type\s+IN\s*\(([^)]*)\)\s*\)/;
+  const wanted = `CHECK (type IN (${EXERCISE_TYPES.map((t) => `'${t}'`).join(',')}))`;
   let rebuilt = false;
   for (const table of ['exercises', 'practice_exercises']) {
     const row = db.prepare("SELECT sql FROM sqlite_master WHERE type = 'table' AND name = ?").get(table) as { sql: string } | undefined;
-    if (!row || row.sql.includes("'cloze'")) continue;
-    const newSql = row.sql
-      .replace(/^CREATE TABLE ("?)(\w+)\1/, `CREATE TABLE ${table}_new`)
-      .replace("'free_text')", "'free_text','passage_questions','matching','cloze')");
-    if (!newSql.startsWith(`CREATE TABLE ${table}_new`) || !newSql.includes("'cloze'")) {
-      throw new Error(`Unexpected ${table} definition; cannot add the reading exercise types`);
+    if (!row) continue;
+    const current = typeCheck.exec(row.sql);
+    if (current && EXERCISE_TYPES.every((t) => current[1].includes(`'${t}'`))) continue;
+    const newSql = row.sql.replace(/^CREATE TABLE ("?)(\w+)\1/, `CREATE TABLE ${table}_new`).replace(typeCheck, wanted);
+    if (!current || !newSql.startsWith(`CREATE TABLE ${table}_new`)) {
+      throw new Error(`Unexpected ${table} definition; cannot add the new exercise types`);
     }
     // With foreign keys on (e.g. runMigrations called inside an outer transaction, where the pragma
     // is ignored), DROP TABLE would silently cascade-delete every attempt, review and chat link.
@@ -412,7 +427,7 @@ function createTablesIfMissing(db: Database.Database): void {
       id TEXT PRIMARY KEY,
       lesson_id TEXT NOT NULL REFERENCES lessons(id) ON DELETE CASCADE,
       track TEXT CHECK (track IN ('generic','telc','goethe')),
-      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','flashcard','free_text','passage_questions','matching','cloze')),
+      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','flashcard','free_text','passage_questions','matching','cloze','audio_questions')),
       content TEXT NOT NULL
     );
 
@@ -529,7 +544,7 @@ function createTablesIfMissing(db: Database.Database): void {
     CREATE TABLE IF NOT EXISTS practice_exercises (
       id TEXT PRIMARY KEY,
       lesson_id TEXT NOT NULL REFERENCES lessons(id) ON DELETE CASCADE,
-      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','flashcard','free_text','passage_questions','matching','cloze')),
+      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','flashcard','free_text','passage_questions','matching','cloze','audio_questions')),
       content TEXT NOT NULL,
       review_status TEXT NOT NULL DEFAULT 'unreviewed' CHECK (review_status IN ('unreviewed','approved','rejected')),
       created_at TEXT NOT NULL,
@@ -613,6 +628,19 @@ function createTablesIfMissing(db: Database.Database): void {
     CREATE TABLE IF NOT EXISTS teil_bundle_meta (
       format_id TEXT NOT NULL, part_id TEXT NOT NULL, version TEXT NOT NULL,
       PRIMARY KEY (format_id, part_id)
+    );
+
+    -- Listening: install-wide settings (the speech service URL, later SMTP), and the audio render queue.
+    -- One job per audio hash; 'uploaded' marks an admin recording the worker must never replace.
+    CREATE TABLE IF NOT EXISTS app_settings (key TEXT PRIMARY KEY, value TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS audio_jobs (
+      hash TEXT PRIMARY KEY,
+      transcript TEXT NOT NULL,
+      status TEXT NOT NULL CHECK (status IN ('pending','done','failed','uploaded')),
+      attempts INTEGER NOT NULL DEFAULT 0,
+      last_error TEXT,
+      next_try_at TEXT,
+      updated_at TEXT NOT NULL
     );
   `);
 }

@@ -8,6 +8,7 @@ import { resolvePlacement, type PlacementInput } from '../curriculum-admin/place
 import { reconcileExercises, type ExerciseInput } from '../curriculum-admin/exerciseReconciliation';
 import { lessonTextProblems } from '../curriculum/bilingualValidation';
 import { instructionProblems, validateExerciseContent } from '../curriculum/exerciseContentValidation';
+import { createAudioService } from './audioService';
 
 export interface CreateLessonInput {
   slug: string;
@@ -81,6 +82,11 @@ function assertLessonTexts(input: {
 
 export function createLessonAdminService(db: Database.Database) {
   const reads = createCurriculumService(db);
+  // Listening: a saved transcript is queued for the background renderer (rows only; nothing renders here).
+  const enqueueAudio = (exercises: { type: ExerciseType; content: unknown }[]) => {
+    const audio = createAudioService(db);
+    for (const e of exercises) audio.enqueueFromContent(e.type, e.content);
+  };
 
   function createLesson(input: CreateLessonInput): Lesson {
     const id = `${input.sourceLevel.toLowerCase()}-${input.slug}`;
@@ -108,6 +114,7 @@ export function createLessonAdminService(db: Database.Database) {
       );
 
       reconcileExercises(db, id, input.exercises);
+      enqueueAudio(input.exercises);
 
       // Placement is resolved before prerequisites so that a cycle-check failure below
       // rolls back any milestone resolvePlacement just created too — the whole
@@ -174,6 +181,7 @@ export function createLessonAdminService(db: Database.Database) {
       );
 
       reconcileExercises(db, id, input.exercises);
+      enqueueAudio(input.exercises);
 
       // Placement is resolved before prerequisites so that a cycle-check failure below
       // rolls back any milestone resolvePlacement just created too — the whole
