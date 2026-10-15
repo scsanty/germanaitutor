@@ -7,6 +7,7 @@ import { buildTeilSetPrompt, parseTeilSetReply, teilSetProblems, type BundledSet
 import { isSetTaskType, itemCount } from '../tasks/taskTypes';
 import { errorBodyFor, type ApiErrorBody, type ErrorCode } from '../tutoring/errorCodes';
 import { generateWithActiveProvider, type AiRequest, type AiResult } from './aiService';
+import { createNotificationService, type NotificationService } from './notificationService';
 import { createAudioService } from './audioService';
 
 export type TeilSetErrorKind = 'not_found' | 'unavailable' | 'bad_request';
@@ -35,6 +36,8 @@ export interface TeilSetDeps {
   now?: () => Date;
   // The bundled sets folder; tests point it at a fixture.
   setsDir?: string;
+  // Admin notifications: new AI pool items awaiting review (in-app only).
+  notify?: Pick<NotificationService, 'info'>;
 }
 
 // Spec: starter, approved and unreviewed sets are served; rejected never, reserved only in formal exams.
@@ -192,6 +195,7 @@ export function createTeilSetService(db: Database.Database, deps: TeilSetDeps = 
         now()
       );
       enqueueAudio(set);
+      void (deps.notify ?? createNotificationService(db)).info('pool_items', 'New pool items', '1 new item to review');
       markSeen(id);
       return { id, set };
     }

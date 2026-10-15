@@ -65,6 +65,10 @@ describe('practiceService.serveBatch', () => {
     ]);
     expect(count("SELECT COUNT(*) AS n FROM practice_exercises WHERE review_status = 'unreviewed'")).toBe(5);
     expect(count('SELECT COUNT(*) AS n FROM practice_seen')).toBe(5);
+    // Admin notifications: the new pool items, in-app only.
+    expect(db.prepare("SELECT kind, severity, body FROM admin_notifications").all()).toEqual([
+      { kind: 'pool_items', severity: 'info', body: '3 new items to review' },
+    ]);
     const { systemPrompt } = generate.mock.calls[0][0];
     expect(systemPrompt).toContain('Write exactly 3 new exercises. Use only these types: multiple_choice, flashcard.');
   });

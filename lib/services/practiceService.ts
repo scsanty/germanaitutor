@@ -9,6 +9,7 @@ import { buildPracticeGenerationPrompt, contentKey, parseGeneratedExercises, typ
 import { allowedPracticeTypes, PRACTICE_BATCH_SIZE } from '../tutoring/practiceTypes';
 import type { PracticeBatch, PracticeGradeOutcome } from '../tutoring/practiceViews';
 import { generateWithActiveProvider, type AiRequest, type AiResult } from './aiService';
+import { createNotificationService, type NotificationService } from './notificationService';
 import { createCurriculumService } from './curriculumService';
 import { gradeExerciseAnswer } from './exerciseGrading';
 import { gradeFreeText, type FreeTextGradeOutcome } from './freeTextGradingService';
@@ -55,6 +56,8 @@ export interface PracticeDeps {
   generate?: (request: AiRequest) => Promise<AiResult>;
   gradeFreeText?: (input: FreeTextGradingInput) => Promise<FreeTextGradeOutcome>;
   now?: () => Date;
+  // Admin notifications: new AI pool items awaiting review (in-app only).
+  notify?: Pick<NotificationService, 'info'>;
 }
 
 interface PoolRow {
@@ -179,6 +182,10 @@ export function createPracticeService(db: Database.Database, deps: PracticeDeps 
       for (const row of rows) markSeen.run(row.id, at);
       return rows;
     })();
+    if (generated.exercises.length > 0) {
+      const n = generated.exercises.length;
+      void (deps.notify ?? createNotificationService(db)).info('pool_items', 'New pool items', `${n} new item${n === 1 ? '' : 's'} to review`);
+    }
     return { exercises: served.map((row) => toExerciseView(rowToExercise(row))) };
   }
 

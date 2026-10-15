@@ -642,6 +642,19 @@ function createTablesIfMissing(db: Database.Database): void {
       next_try_at TEXT,
       updated_at TEXT NOT NULL
     );
+
+    -- Listening: admin notifications. A problem keeps one open row per problem_key; email_error records
+    -- an email that could not be sent (it never fails the caller).
+    CREATE TABLE IF NOT EXISTS admin_notifications (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      kind TEXT NOT NULL,
+      problem_key TEXT,
+      severity TEXT NOT NULL CHECK (severity IN ('problem','info')),
+      title TEXT NOT NULL, body TEXT NOT NULL,
+      created_at TEXT NOT NULL, resolved_at TEXT, read_at TEXT,
+      email_error TEXT
+    );
+    CREATE UNIQUE INDEX IF NOT EXISTS idx_admin_notifications_open ON admin_notifications(problem_key) WHERE resolved_at IS NULL;
   `);
 }
 

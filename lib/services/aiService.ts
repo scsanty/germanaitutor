@@ -4,6 +4,7 @@ import { getAdapter } from '../providers/registry';
 import type { ErrorCode, ErrorParams } from '../tutoring/errorCodes';
 import { createProviderService } from './providerService';
 import { createUsageService } from './usageService';
+import { recordProviderFailure, recordProviderSuccess } from './notificationService';
 
 export type AiResult = { ok: true; text: string } | { ok: false; error: string; code?: ErrorCode; params?: ErrorParams };
 
@@ -12,6 +13,8 @@ export interface AiRequest {
   messages: ChatMessage[];
 }
 
+// Listening (admin notifications): every failure except "no provider set up" counts toward the
+// provider_errors problem (3 within 10 minutes); a success resolves it. Neither ever throws.
 export async function generateWithActiveProvider(
   db: Database.Database,
   request: AiRequest,
@@ -20,12 +23,16 @@ export async function generateWithActiveProvider(
   const providers = createProviderService(db, keyFilePath);
   const active = providers.getActiveConnection();
   if (!active) return { ok: false, error: 'No AI provider is set up', code: 'no_provider' };
-  if (!active.selectedModel) return { ok: false, error: 'The active AI provider has no model selected', code: 'no_model' };
+  if (!active.selectedModel) {
+    void recordProviderFailure(db);
+    return { ok: false, error: 'The active AI provider has no model selected', code: 'no_model' };
+  }
 
   let apiKey: string | undefined;
   try {
     apiKey = providers.getDecryptedApiKey(active.id) ?? undefined;
   } catch {
+    void recordProviderFailure(db);
     return { ok: false, error: 'Stored credentials could not be decrypted', code: 'credentials_unreadable' };
   }
 
@@ -36,10 +43,12 @@ export async function generateWithActiveProvider(
     );
     createUsageService(db).recordUsage(active.id, 1, (result.inputTokens ?? 0) + (result.outputTokens ?? 0));
     providers.recordSuccess(active.id);
+    void recordProviderSuccess(db);
     return { ok: true, text: result.text };
   } catch (err) {
     const message = (err as Error).message;
     providers.recordFailure(active.id, message);
+    void recordProviderFailure(db);
     return { ok: false, error: message, code: 'ai_failed', params: { detail: message } };
   }
 }
