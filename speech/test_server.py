@@ -1,6 +1,9 @@
 """HTTP tests for the sidecar. They need FastAPI, httpx, Piper and the voice files, so they run in the
 Docker build (`RUN python -m pytest -q`) and are skipped elsewhere, e.g. under `python3 -m unittest`
 on a machine without those packages.
+
+The Dockerfile sets SPEECH_REQUIRE_FULL_TESTS=1: then nothing here is skipped, so a missing package,
+a wrong import or a missing voice file fails the image build instead of passing it silently.
 """
 import importlib.util
 import os
@@ -8,9 +11,10 @@ import tempfile
 import unittest
 import wave
 
-HAVE_DEPS = all(importlib.util.find_spec(m) is not None for m in ("fastapi", "httpx", "piper"))
+REQUIRE_FULL = os.environ.get("SPEECH_REQUIRE_FULL_TESTS") == "1"
+HAVE_DEPS = REQUIRE_FULL or all(importlib.util.find_spec(m) is not None for m in ("fastapi", "httpx", "piper"))
 VOICE_DIR = os.environ.get("VOICE_DIR", "/voices")
-HAVE_VOICES = os.path.exists(os.path.join(VOICE_DIR, "de_DE-thorsten-high.onnx"))
+HAVE_VOICES = REQUIRE_FULL or os.path.exists(os.path.join(VOICE_DIR, "de_DE-thorsten-high.onnx"))
 
 if HAVE_DEPS:
     from fastapi.testclient import TestClient
@@ -67,6 +71,18 @@ class ServerTest(unittest.TestCase):
         self.assertEqual(res.status_code, 200)
         self.assertEqual(res.content[:4], b"OggS")
         self.assertEqual(client.post("/convert", content=b"").status_code, 400)
+
+    def test_oversized_bodies_are_413(self):
+        res = client.post("/render", content=b"{" + b" " * audio_core.MAX_RENDER_BYTES + b"}")
+        self.assertEqual((res.status_code, res.json()), (413, {"error": f"request body is larger than {audio_core.MAX_RENDER_BYTES} bytes"}))
+        self.assertEqual(client.post("/convert", content=b"\0" * (audio_core.MAX_CONVERT_BYTES + 1)).status_code, 413)
+
+    @unittest.skipUnless(HAVE_VOICES, f"no voice files in {VOICE_DIR}")
+    def test_station_adds_the_chime(self):
+        seg = {"segments": [{"text": "Gleis drei, bitte einsteigen.", "voice": "kerstin"}], "pauseMs": 0}
+        plain = ogg_seconds(client.post("/render", json={**seg, "filter": "none"}).content)
+        station = ogg_seconds(client.post("/render", json={**seg, "filter": "station"}).content)
+        self.assertAlmostEqual(station - plain, audio_core.CHIME_SECONDS + 0.06, delta=0.15)  # + aecho's tail
 
     @unittest.skipUnless(HAVE_VOICES, f"no voice files in {VOICE_DIR}")
     def test_mixed_rate_voices_keep_their_duration(self):
