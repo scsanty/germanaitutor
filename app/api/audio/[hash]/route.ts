@@ -6,9 +6,11 @@ import { errorBody } from '@/lib/tutoring/errorCodes';
 export const dynamic = 'force-dynamic';
 
 // S13: an upload or a regenerate replaces the bytes behind the same URL, so the browser must revalidate
-// (no-cache) and the ETag (size and mtime) lets an unchanged clip answer 304.
-function etagOf(stat: { size: number; mtimeMs: number }): string {
-  return `"${stat.size.toString(16)}-${Math.floor(stat.mtimeMs).toString(16)}"`;
+// (no-cache) and the ETag lets an unchanged clip answer 304. The job's updated_at is part of the tag,
+// so a same-size replacement within a coarse (exFAT) mtime still gets a new one.
+function etagOf(stat: { size: number; mtimeMs: number }, version: string | null): string {
+  const v = version ? Date.parse(version) : NaN;
+  return `"${stat.size.toString(16)}-${Math.floor(stat.mtimeMs).toString(16)}-${Number.isNaN(v) ? '0' : v.toString(16)}"`;
 }
 
 function matches(ifNoneMatch: string | null, etag: string): boolean {
@@ -45,12 +47,16 @@ export async function GET(request: Request, props: { params: Promise<{ hash: str
   const { hash } = await props.params;
   if (!isAudioHash(hash)) return Response.json(errorBody('Invalid audio id', 'bad_request'), { status: 400 });
 
+  const audio = createAudioService(getDb());
   const known = statAudio(hash);
-  if (known && matches(request.headers.get('if-none-match'), etagOf(known))) {
-    return new Response(null, { status: 304, headers: { ETag: etagOf(known), 'Cache-Control': 'private, no-cache' } });
+  if (known) {
+    const etag = etagOf(known, audio.version(hash));
+    if (matches(request.headers.get('if-none-match'), etag)) {
+      return new Response(null, { status: 304, headers: { ETag: etag, 'Cache-Control': 'private, no-cache' } });
+    }
   }
 
-  const buf = await createAudioService(getDb()).getOrRender(hash);
+  const buf = await audio.getOrRender(hash);
   if (!buf) return Response.json(errorBody('This audio is not available right now', 'audio_unavailable'), { status: 503 });
 
   const stat = statAudio(hash);
@@ -59,7 +65,7 @@ export async function GET(request: Request, props: { params: Promise<{ hash: str
     'Cache-Control': 'private, no-cache',
     'Accept-Ranges': 'bytes',
   };
-  if (stat && stat.size === buf.length) headers.ETag = etagOf(stat);
+  if (stat && stat.size === buf.length) headers.ETag = etagOf(stat, audio.version(hash));
 
   const range = parseRange(request.headers.get('range'), buf.length);
   if (range === 'unsatisfiable') {

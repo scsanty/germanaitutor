@@ -1,7 +1,7 @@
 import type Database from 'better-sqlite3';
 import { audioHash, parseTranscript, PAUSE_MS, type ParsedTranscript } from '../audio/transcript';
 import { audioPath, deleteAudio, hasAudio, isAudioHash, readAudio, writeAudio } from '../audio/audioStore';
-import { getSpeechProvider, isUnreachableError, type SpeechProvider } from '../speech/speechProvider';
+import { getSpeechProvider, isUnreachableError, SpeechServiceError, type SpeechProvider } from '../speech/speechProvider';
 
 // Admin notifications (Task 4 implements them). I7: a sink may be async; it is never awaited and
 // its failures are swallowed, so a notification problem can't break rendering.
@@ -27,6 +27,9 @@ interface JobRow {
 }
 
 export const MAX_ATTEMPTS = 5;
+// A render that times out or loses its connection while the service is healthy waits this long before
+// its next try (not an attempt), so it can't hold the head of the queue.
+export const UNREACHABLE_BACKOFF_MS = 5 * 60_000;
 
 const NO_NOTIFY: NotificationSink = { raise() {}, resolve() {} };
 
@@ -121,8 +124,9 @@ export function createAudioService(db: Database.Database, deps: AudioServiceDeps
     return typeof transcript === 'string' ? enqueue(transcript) : null;
   }
 
-  // Spec: the worker renders due jobs. S1: with the service down nothing is attempted, and a
-  // connection-level error mid-run stops the run without counting; only a real render error counts.
+  // Spec: the worker renders due jobs. S1: with the service down nothing is attempted or raised; only a
+  // real render error counts. A render that times out or loses its connection is not an attempt either,
+  // but the job is pushed back (next_try_at, updated_at) so it can't block the jobs behind it.
   async function processPending(limit = 3): Promise<void> {
     const due = db
       .prepare(
@@ -151,10 +155,18 @@ export function createAudioService(db: Database.Database, deps: AudioServiceDeps
         await renderShared(job.hash, parsed);
         markDone(current);
       } catch (err) {
-        if (isUnreachableError(err)) return;
         const error = messageOf(err);
+        if (isUnreachableError(err)) {
+          const next = new Date(nowDate().getTime() + UNREACHABLE_BACKOFF_MS).toISOString();
+          db.prepare("UPDATE audio_jobs SET next_try_at = ?, updated_at = ? WHERE hash = ? AND status = 'pending'").run(next, now(), job.hash);
+          // The service went down mid-run: stop here. Still up: this job was the problem, go on.
+          if (!(await speech().health()).ok) return;
+          continue;
+        }
         const attempts = current.attempts + 1;
-        if (attempts >= MAX_ATTEMPTS) {
+        // A 4xx (a request the service refuses, or one too large to send) can never succeed.
+        const permanent = err instanceof SpeechServiceError && err.status >= 400 && err.status < 500;
+        if (permanent || attempts >= MAX_ATTEMPTS) {
           db.prepare('UPDATE audio_jobs SET attempts = ? WHERE hash = ?').run(attempts, job.hash);
           markFailed(job.hash, error);
         } else {
@@ -172,7 +184,8 @@ export function createAudioService(db: Database.Database, deps: AudioServiceDeps
   }
 
   // The cached file, or one render now for a known job. Never renders over an upload, and never
-  // renders a hash no content has queued.
+  // renders a hash no content has queued. The health check (3 s) comes first, so a down or
+  // unreachable service answers fast instead of waiting out the render timeout.
   async function getOrRender(hash: string): Promise<Buffer | null> {
     if (!isAudioHash(hash)) return null;
     const cached = readAudio(hash);
@@ -181,6 +194,10 @@ export function createAudioService(db: Database.Database, deps: AudioServiceDeps
     if (!job || job.status === 'uploaded') return null;
     const parsed = parseTranscript(job.transcript);
     if ('error' in parsed) return null;
+    if (!(await speech().health()).ok) return null;
+    // A worker render may have finished during the health check.
+    const ready = readAudio(hash);
+    if (ready) return ready;
     try {
       const buf = await renderShared(hash, parsed);
       if (statusOf(hash) !== 'uploaded') markDone(job);
@@ -188,6 +205,12 @@ export function createAudioService(db: Database.Database, deps: AudioServiceDeps
     } catch {
       return null;
     }
+  }
+
+  // When the clip for a hash last changed (render, upload, regenerate); part of the route's ETag.
+  function version(hash: string): string | null {
+    const row = db.prepare('SELECT updated_at FROM audio_jobs WHERE hash = ?').get(hash) as { updated_at: string } | undefined;
+    return row?.updated_at ?? null;
   }
 
   // Explicit admin action: drop the file (an upload included) and queue a fresh render.
@@ -242,11 +265,13 @@ export function createAudioService(db: Database.Database, deps: AudioServiceDeps
 
     let requeued = 0;
     let lostUploads = 0;
-    for (const job of db.prepare("SELECT hash, status FROM audio_jobs WHERE status IN ('done','uploaded')").all() as JobRow[]) {
+    for (const job of db.prepare("SELECT hash, transcript, status FROM audio_jobs WHERE status IN ('done','uploaded')").all() as JobRow[]) {
       if (!isAudioHash(job.hash) || hasAudio(job.hash)) continue;
+      if (job.status === 'uploaded') lostUploads += 1;
+      // An upload for a hash no content owns has no transcript to synthesize; it stays lost until re-uploaded.
+      if (job.transcript === '') continue;
       db.prepare("UPDATE audio_jobs SET status = 'pending', attempts = 0, last_error = NULL, next_try_at = NULL, updated_at = ? WHERE hash = ?").run(now(), job.hash);
       requeued += 1;
-      if (job.status === 'uploaded') lostUploads += 1;
     }
     if (lostUploads > 0) {
       safely(() =>
@@ -254,14 +279,14 @@ export function createAudioService(db: Database.Database, deps: AudioServiceDeps
           'content_issues',
           'audio_upload_lost',
           'Uploaded recordings are missing',
-          `${lostUploads} uploaded recording(s) are no longer in the audio folder. They are queued for speech synthesis; upload them again to replace the synthesized audio.`
+          `${lostUploads} uploaded recording(s) are no longer in the audio folder. Those with a transcript are queued for speech synthesis; upload them again to restore the recordings.`
         )
       );
     }
     return { queued, requeued, lostUploads };
   }
 
-  return { enqueue, enqueueFromContent, processPending, getOrRender, regenerate, upload, sweep };
+  return { enqueue, enqueueFromContent, processPending, getOrRender, version, regenerate, upload, sweep };
 }
 
 export type AudioService = ReturnType<typeof createAudioService>;

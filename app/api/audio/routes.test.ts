@@ -49,6 +49,25 @@ describe('/api/audio/[hash]', () => {
     expect(Buffer.from(await replaced.arrayBuffer()).toString()).toBe('OggS-uploaded');
   });
 
+  it('gives a same-size replacement with an unchanged mtime a new ETag (review finding 5)', async () => {
+    const { createAudioService } = await import('@/lib/services/audioService');
+    const db = getDb();
+    const convert = async (b: Buffer) => b;
+    const provider = { health: async () => ({ ok: true, voices: [] }), render: async () => Buffer.from('OggS-AAAA'), convert };
+    const hash = createAudioService(db, { provider, now: () => new Date('2026-09-29T10:00:00Z') }).enqueue('[Anrufer m] Hallo.')!;
+    await createAudioService(db, { provider, now: () => new Date('2026-09-29T10:00:00Z') }).upload(hash, Buffer.from('OggS-AAAA'));
+    const mtime = new Date('2026-09-29T10:00:00Z');
+    utimesSync(audioPath(hash), mtime, mtime);
+    const etag = (await get(hash)).headers.get('ETag')!;
+
+    await createAudioService(db, { provider, now: () => new Date('2026-09-29T10:00:01Z') }).upload(hash, Buffer.from('OggS-BBBB'));
+    utimesSync(audioPath(hash), mtime, mtime);
+    const res = await get(hash, { 'If-None-Match': etag });
+    expect(res.status).toBe(200);
+    expect(res.headers.get('ETag')).not.toBe(etag);
+    expect(Buffer.from(await res.arrayBuffer()).toString()).toBe('OggS-BBBB');
+  });
+
   it('answers byte ranges for Safari (S14)', async () => {
     writeAudio(HASH, BYTES);
     const first = await get(HASH, { Range: 'bytes=0-1' });

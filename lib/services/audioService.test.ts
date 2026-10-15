@@ -10,7 +10,7 @@ import { createAudioService } from './audioService';
 import { createTeilSetService } from './teilSetService';
 import { audioDir, audioPath, hasAudio, listAudioFiles, writeAudio } from '../audio/audioStore';
 import { createLocalSpeechProvider } from '../speech/localSpeechProvider';
-import { getSpeechUrl, isUnreachableError } from '../speech/speechProvider';
+import { getSpeechUrl, isUnreachableError, SpeechServiceError } from '../speech/speechProvider';
 import { setSetting } from './appSettings';
 
 const T = '@filter phone\n[Anrufer m] Hallo, hier ist Thomas.';
@@ -110,13 +110,69 @@ describe('audioService', () => {
     expect(down.render).not.toHaveBeenCalled();
     expect(notify.raise).not.toHaveBeenCalled();
 
-    // Healthy at the check, then the connection drops mid-render: still not an attempt.
+    // Healthy at the check, then the connection drops mid-render: still not an attempt, but the job
+    // backs off instead of being retried every tick.
     const flaky = { ...fakeProvider(false), health: vi.fn(async () => ({ ok: true, voices: [] })) };
     const second = createAudioService(db, { provider: flaky, notify, now: () => now });
     for (let i = 0; i < 10; i++) await second.processPending();
-    expect(flaky.render).toHaveBeenCalledTimes(10);
+    expect(flaky.render).toHaveBeenCalledTimes(1);
     expect(job(db, hash)).toEqual({ status: 'pending', attempts: 0 });
+    expect(db.prepare('SELECT next_try_at FROM audio_jobs WHERE hash = ?').get(hash)).toEqual({ next_try_at: new Date(now.getTime() + 5 * 60_000).toISOString() });
     expect(notify.raise).not.toHaveBeenCalled();
+  });
+
+  // Review finding 1: a render that keeps timing out must not starve the jobs behind it.
+  it('a job whose render keeps timing out does not block the rest of the queue', async () => {
+    const db = createDbClient(':memory:');
+    const notify = { raise: vi.fn(), resolve: vi.fn() };
+    let now = new Date('2026-09-29T10:00:00Z');
+    const slow = '[Sprecher m] Ein sehr langer Text.';
+    const provider = {
+      ...fakeProvider(),
+      render: vi.fn(async (input: { segments: { text: string }[] }) => {
+        if (input.segments[0].text === 'Ein sehr langer Text.') {
+          const err = new Error('The operation was aborted due to timeout');
+          err.name = 'TimeoutError';
+          throw err;
+        }
+        return Buffer.from('OggS-fake');
+      }),
+    };
+    const service = createAudioService(db, { provider, notify, now: () => now });
+    const stuck = service.enqueue(slow)!;
+    now = new Date(now.getTime() + 1000);
+    const other = service.enqueue(T)!;
+    // One job per run, so the stuck job is first in line every time it is due.
+    for (let i = 0; i < 4; i++) {
+      await service.processPending(1);
+      now = new Date(now.getTime() + 5000);
+    }
+    expect(job(db, other)).toEqual({ status: 'done', attempts: 0 });
+    expect(job(db, stuck)).toEqual({ status: 'pending', attempts: 0 });
+    expect(notify.raise).not.toHaveBeenCalled();
+    // Once its backoff has passed it is tried again.
+    now = new Date(now.getTime() + 5 * 60_000);
+    await service.processPending(1);
+    expect(provider.render.mock.calls.filter(([input]) => input.segments[0].text === 'Ein sehr langer Text.')).toHaveLength(2);
+  });
+
+  // Review finding 4
+  it('fails a job at once when the service refuses the request (4xx)', async () => {
+    const db = createDbClient(':memory:');
+    const notify = { raise: vi.fn(), resolve: vi.fn() };
+    const provider = {
+      ...fakeProvider(),
+      render: vi.fn(async (): Promise<Buffer> => {
+        throw new SpeechServiceError('speech service 400: too many segments (max 200)', 400);
+      }),
+    };
+    const service = createAudioService(db, { provider, notify });
+    const hash = service.enqueue(T)!;
+    await service.processPending();
+    expect(job(db, hash)).toEqual({ status: 'failed', attempts: 1 });
+    expect(notify.raise).toHaveBeenCalledWith('audio_failed', `audio_failed:${hash}`, expect.any(String), expect.stringContaining('too many segments'));
+    await service.processPending();
+    expect(provider.render).toHaveBeenCalledTimes(1);
   });
 
   it('marks an unparseable transcript failed without retrying (S21)', async () => {
@@ -182,10 +238,14 @@ describe('audioService', () => {
 
   it('returns null from getOrRender when the file is missing and the service is down', async () => {
     const db = createDbClient(':memory:');
-    const service = createAudioService(db, { provider: fakeProvider(false) });
+    const down = fakeProvider(false);
+    const service = createAudioService(db, { provider: down });
     const hash = service.enqueue(T)!;
     expect(await service.getOrRender(hash)).toBeNull();
     expect(await service.getOrRender('b'.repeat(64))).toBeNull();
+    // Review finding 2: the health check answers first, so no render waits out its timeout.
+    expect(down.health).toHaveBeenCalledTimes(1);
+    expect(down.render).not.toHaveBeenCalled();
   });
 
   it('renders on demand and marks the job done', async () => {
@@ -213,13 +273,19 @@ describe('audioService', () => {
     await service.processPending();
     expect(job(db, hash)?.status).toBe('done');
     rmSync(audioPath(hash));
-    const uploaded = 'c'.repeat(64);
-    await service.upload(uploaded, Buffer.from('x'));
-    rmSync(audioPath(uploaded));
-    // The missing rendered clip is re-queued through its content; the lost upload by the file check.
-    expect(service.sweep()).toEqual({ queued: 1, requeued: 1, lostUploads: 1 });
+    // A lost upload with a transcript (it replaced a rendered clip) and one without (review finding 6).
+    await service.upload(hash, Buffer.from('mine'));
+    rmSync(audioPath(hash));
+    const orphan = 'c'.repeat(64);
+    await service.upload(orphan, Buffer.from('x'));
+    rmSync(audioPath(orphan));
+    expect(service.sweep()).toEqual({ queued: 1, requeued: 1, lostUploads: 2 });
     expect(job(db, hash)?.status).toBe('pending');
-    expect(notify.raise).toHaveBeenCalledWith('content_issues', 'audio_upload_lost', expect.any(String), expect.stringContaining('1 uploaded'));
+    expect(job(db, orphan)?.status).toBe('uploaded');
+    expect(notify.raise).toHaveBeenCalledWith('content_issues', 'audio_upload_lost', expect.any(String), expect.stringContaining('2 uploaded'));
+    await service.processPending();
+    expect(job(db, orphan)?.status).toBe('uploaded');
+    expect(notify.raise).not.toHaveBeenCalledWith('audio_failed', expect.anything(), expect.anything(), expect.anything());
   });
 
   it('a notification sink that throws or rejects never breaks rendering', async () => {
