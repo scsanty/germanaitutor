@@ -1,5 +1,5 @@
 {
-  "seedVersion": "8",
+  "seedVersion": "9",
   "formatVersion": 3,
   "track": "telc",
   "level": "B1",
@@ -256,13 +256,13 @@
       "sourceLevel": "B1",
       "skill": "reading",
       "title": "Selective Reading and Classified Ads Matching (telc Leseverstehen Teil 3)",
-      "explanation": "In telc Leseverstehen Teil 3, candidates match ten personal profiles (situations/needs) to twelve classified advertisements or service postings.\nTwo situations have no matching advertisement in the pool; candidates must mark these as 'x' (keine passende Anzeige vorhanden).\nCandidates must read the requirements of each profile carefully, noting restrictive criteria such as opening hours, locations, age limits, and price caps.\n",
+      "explanation": "In telc Leseverstehen Teil 3, candidates match ten personal profiles (situations/needs) to twelve classified advertisements or service postings.\nOne situation has no matching advertisement in the pool; candidates must mark it as 'x' (keine passende Anzeige vorhanden).\nCandidates must read the requirements of each profile carefully, noting restrictive criteria such as opening hours, locations, age limits, and price caps.\n",
       "examples": [
         "Situation: Eine Familie sucht eine 4-Zimmer-Wohnung mit Garten im Grünen. -> Anzeige D: 'Geräumige Doppelhaushälfte am Stadtrand mit 5 Zimmern und Garten zu vermieten.'",
         "Situation: Ein Student sucht samstags Nachhilfeunterricht in Spanisch. In den Anzeigen gibt es nur Angebote für Englisch und Mathematik. -> Richtige Lösung: x."
       ],
       "titleDe": "Leseverstehen Teil 3: Anzeigen zuordnen",
-      "explanationDe": "In telc Leseverstehen Teil 3 ordnen Sie zehn Personen mit ihren Situationen und Wünschen zwölf Kleinanzeigen oder Angeboten zu.\nFür zwei Situationen gibt es keine passende Anzeige. Dort markieren Sie 'x' (keine passende Anzeige vorhanden).\nLesen Sie die Wünsche jeder Person genau und achten Sie auf Bedingungen wie Öffnungszeiten, Orte, Altersgrenzen und Höchstpreise.\n",
+      "explanationDe": "In telc Leseverstehen Teil 3 ordnen Sie zehn Personen mit ihren Situationen und Wünschen zwölf Kleinanzeigen oder Angeboten zu.\nFür eine Situation gibt es keine passende Anzeige. Dort markieren Sie 'x' (keine passende Anzeige vorhanden).\nLesen Sie die Wünsche jeder Person genau und achten Sie auf Bedingungen wie Öffnungszeiten, Orte, Altersgrenzen und Höchstpreise.\n",
       "examplesDe": [
         "Situation: Eine Familie sucht eine 4-Zimmer-Wohnung mit Garten im Grünen. -> Anzeige D: 'Geräumige Doppelhaushälfte am Stadtrand mit 5 Zimmern und Garten zu vermieten.'",
         "Situation: Ein Student sucht samstags Nachhilfeunterricht in Spanisch. In den Anzeigen gibt es nur Angebote für Englisch und Mathematik. -> Richtige Lösung: x."
@@ -2032,7 +2032,7 @@
       "track": "telc",
       "type": "fill_blank",
       "content": {
-        "textWithBlank": "In telc Teil 3 gibt es für zwei Situationen kein passendes Angebot; hier markiert man den Buchstaben ___ auf dem Antwortbogen.",
+        "textWithBlank": "In telc Teil 3 gibt es für eine Situation kein passendes Angebot; hier markiert man den Buchstaben ___ auf dem Antwortbogen.",
         "correctAnswer": "x"
       }
     },
