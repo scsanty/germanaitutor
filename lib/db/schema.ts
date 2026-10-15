@@ -225,10 +225,15 @@ function migrateExerciseTypes(db: Database.Database): void {
   // The rebuild dropped the tables' indexes (as defined in createTablesIfMissing).
   db.exec('CREATE INDEX IF NOT EXISTS idx_practice_exercises_lesson ON practice_exercises(lesson_id)');
   if (!rebuilt) return;
-  // Only the tables that point at the rebuilt ones (S4): an unrelated old orphan elsewhere must not stop startup.
+  // Only links into the rebuilt tables are fatal (S4). These tables also point elsewhere (e.g.
+  // lesson_attempts.lesson_id → lessons); an unrelated old orphan is logged, not allowed to stop startup.
+  const rebuiltParents = new Set(['exercises', 'practice_exercises']);
   for (const table of ['lesson_attempts', 'exercise_srs_state', 'lesson_chat_messages', 'practice_seen']) {
-    const problems = db.pragma(`foreign_key_check(${table})`) as unknown[];
-    if (problems.length > 0) throw new Error(`Foreign key problems in ${table} after the exercise type migration: ${JSON.stringify(problems)}`);
+    const rows = db.pragma(`foreign_key_check(${table})`) as { parent: string }[];
+    const fatal = rows.filter((r) => rebuiltParents.has(r.parent));
+    const unrelated = rows.filter((r) => !rebuiltParents.has(r.parent));
+    if (unrelated.length > 0) console.warn(`Ignoring ${unrelated.length} older foreign key problem(s) in ${table}: ${JSON.stringify(unrelated)}`);
+    if (fatal.length > 0) throw new Error(`Foreign key problems in ${table} after the exercise type migration: ${JSON.stringify(fatal)}`);
   }
 }
 

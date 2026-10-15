@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import type Database from 'better-sqlite3';
 import { createDbClient } from './client';
 import { seedTutoringCurriculum, addAttempt, addPracticeExercise, scheduleReview } from '@/test/tutoringFixtures';
@@ -105,5 +105,28 @@ describe('exercise types migration', () => {
     expect(count(db, "SELECT COUNT(*) AS n FROM exercise_srs_state WHERE exercise_id = 'a1-sein__ex2'")).toBe(1);
     expect(db.prepare("SELECT sql FROM sqlite_master WHERE name = 'exercises'").get()).not.toMatchObject({ sql: expect.stringContaining("'cloze'") });
     expect(db.pragma('foreign_keys', { simple: true })).toBe(1);
+  });
+
+  it('logs an unrelated old orphan instead of failing, but still fails on a broken link to an exercise', () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    try {
+      const db = oldDatabase();
+      db.pragma('foreign_keys = OFF');
+      db.exec(`INSERT INTO lesson_attempts (exercise_id, lesson_id, source, result, answered_at, answered_on)
+               VALUES ('a1-greet__ex1', 'ghost-lesson', 'lesson', 'wrong', '2026-09-01T10:00:00.000Z', '2026-09-01')`);
+      db.pragma('foreign_keys = ON');
+      expect(() => runMigrations(db)).not.toThrow();
+      expect(count(db, "SELECT COUNT(*) AS n FROM lesson_attempts WHERE lesson_id = 'ghost-lesson'")).toBe(1);
+      expect(warn).toHaveBeenCalledWith(expect.stringContaining('Ignoring 1 older foreign key problem(s) in lesson_attempts'));
+
+      const broken = oldDatabase();
+      broken.pragma('foreign_keys = OFF');
+      broken.exec(`INSERT INTO lesson_attempts (exercise_id, lesson_id, source, result, answered_at, answered_on)
+                   VALUES ('ghost-exercise', 'a1-greet', 'lesson', 'wrong', '2026-09-01T10:00:00.000Z', '2026-09-01')`);
+      broken.pragma('foreign_keys = ON');
+      expect(() => runMigrations(broken)).toThrow('Foreign key problems in lesson_attempts');
+    } finally {
+      warn.mockRestore();
+    }
   });
 });
