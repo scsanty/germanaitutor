@@ -22,6 +22,7 @@ export interface ClozeAnswer {
 
 const GAP = /\{\{(\d+)\}\}/g;
 const nonEmpty = (v: unknown) => typeof v === 'string' && v.trim().length > 0;
+const GAP_MODES = new Set(['typed', 'select', 'bank']);
 
 export function validateCloze(content: unknown): string[] {
   const c = content as Partial<ClozeContent>;
@@ -32,6 +33,11 @@ export function validateCloze(content: unknown): string[] {
   if (marks.length !== gaps.length) problems.push(`the text has ${marks.length} gaps but ${gaps.length} are defined`);
   else if (!marks.every((n, i) => n === i + 1)) problems.push('gaps must be numbered {{1}}, {{2}} … in order');
   gaps.forEach((g, i) => {
+    // AI and uploaded content can hold anything here; an unknown mode would be ungradeable, and null would throw.
+    if (typeof g !== 'object' || g === null || !GAP_MODES.has((g as { mode?: unknown }).mode as string)) {
+      problems.push(`gap ${i + 1} needs a mode of typed, select or bank`);
+      return;
+    }
     if (g.mode === 'typed' && !(typeof g.answer === 'string' && g.answer.trim())) problems.push(`gap ${i + 1} needs an answer`);
     if (g.mode === 'typed' && g.variants !== undefined && !(Array.isArray(g.variants) && g.variants.every(nonEmpty))) problems.push(`gap ${i + 1} has an empty variant`);
     if (g.mode === 'select' && (!Array.isArray(g.options) || g.options.length < 2 || !g.options.every(nonEmpty) || !Number.isInteger(g.correctIndex) || g.correctIndex < 0 || g.correctIndex >= g.options.length)) {

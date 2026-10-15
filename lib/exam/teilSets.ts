@@ -75,5 +75,10 @@ export function parseTeilSetReply(text: string, part: ExamPart): TeilSetContent 
   const o = extractJsonObject(text);
   if (!o || !isSetTaskType(part.taskType)) return null;
   const set: TeilSetContent = { taskType: part.taskType, content: o.content as TaskContent, explanations: o.explanations as LocalizedText[] };
-  return teilSetProblems(set, part).length === 0 ? set : null;
+  // Any malformed reply means no set, so practice falls back instead of failing.
+  try {
+    return teilSetProblems(set, part).length === 0 ? set : null;
+  } catch {
+    return null;
+  }
 }

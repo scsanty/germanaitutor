@@ -33,6 +33,16 @@ describe('teil sets', () => {
     expect(parseTeilSetReply(JSON.stringify({ content: withInstruction.content, explanations: set.explanations }), part)).toBeNull();
   });
 
+  it('parses a cloze reply with a null or unknown-mode gap to null instead of throwing', () => {
+    const clozePart: ExamPart = { ...part, id: 'sb-1', taskType: 'cloze', items: 2 };
+    const explanations = set.explanations;
+    const reply = (gap: unknown) => JSON.stringify({ content: { text: 'Ich {{1}} {{2}}.', gaps: [{ mode: 'select', options: ['a', 'b'], correctIndex: 0 }, gap] }, explanations });
+    expect(parseTeilSetReply(reply({ mode: 'select', options: ['a', 'b'], correctIndex: 1 }), clozePart)).not.toBeNull();
+    expect(parseTeilSetReply(reply(null), clozePart)).toBeNull();
+    expect(parseTeilSetReply(reply({ mode: 'dropdown' }), clozePart)).toBeNull();
+    expect(parseTeilSetReply(JSON.stringify({ content: null, explanations }), clozePart)).toBeNull();
+  });
+
   it('needs English and German in every explanation', () => {
     expect(teilSetProblems({ ...set, explanations: [set.explanations[0], { en: 'Because.', de: ' ' }] }, part)).toContain('every explanation needs English and German');
   });

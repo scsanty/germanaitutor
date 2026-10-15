@@ -81,6 +81,25 @@ describe('/api/exam-practice', () => {
     expect(await failed.json()).toMatchObject({ code: 'no_provider' });
   });
 
+  // Sprachbausteine parts run only in the mock, so the mock start is where a bad cloze reply would surface.
+  it('mock start falls back to a seen set when the AI reply has a null cloze gap, instead of failing', async () => {
+    const db = getDb();
+    db.prepare(
+      "INSERT INTO teil_seen (set_id, seen_at) SELECT id, '2026-01-01T00:00:00.000Z' FROM teil_sets WHERE format_id = 'telc-b1' AND part_id = 'sprachbausteine-1'"
+    ).run();
+    const gaps = Array.from({ length: 10 }, (_, i) => (i === 3 ? null : { mode: 'select', options: ['a', 'b', 'c'], correctIndex: 0 }));
+    const text = Array.from({ length: 10 }, (_, i) => `Wort {{${i + 1}}}`).join(' ');
+    const explanations = gaps.map(() => ({ en: 'Because.', de: 'Weil.' }));
+    vi.mocked(generateWithActiveProvider).mockResolvedValueOnce({ ok: true, text: JSON.stringify({ content: { text, gaps }, explanations }) } as never);
+    const res = await post(startMock, { formatId: 'telc-b1' });
+    expect(res.status).toBe(200);
+    const mock = await res.json();
+    expect(mock.runs.find((r: { part: { id: string } }) => r.part.id === 'sprachbausteine-1')).toBeTruthy();
+    expect(generateWithActiveProvider).toHaveBeenCalledTimes(1);
+    const pool = db.prepare("SELECT COUNT(*) AS n FROM teil_sets WHERE format_id = 'telc-b1' AND part_id = 'sprachbausteine-1' AND status = 'unreviewed'").get() as { n: number };
+    expect(pool.n).toBe(0);
+  });
+
   it('mock start validates its body', async () => {
     expect((await post(startMock, {})).status).toBe(400);
     expect((await post(startMock, { formatId: 'telc-z9' })).status).toBe(404);

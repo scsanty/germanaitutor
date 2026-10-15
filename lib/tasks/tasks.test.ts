@@ -48,6 +48,15 @@ describe('task types', () => {
     expect(validateTask('cloze', { text: 'Ich {{1}}.', gaps: [typed], bank: [''] })).toEqual([]);
   });
 
+  it('rejects a cloze gap that is null, has no mode, or has an unknown mode, without throwing', () => {
+    const [typed] = cloze.gaps;
+    const two = (gap: unknown) => ({ text: 'Ich {{1}} {{2}}.', gaps: [typed, gap] });
+    expect(validateTask('cloze', two(null))).toEqual(['gap 2 needs a mode of typed, select or bank']);
+    expect(validateTask('cloze', two({}))).toEqual(['gap 2 needs a mode of typed, select or bank']);
+    expect(validateTask('cloze', two({ mode: 'dropdown', options: ['a', 'b'], correctIndex: 0 }))).toEqual(['gap 2 needs a mode of typed, select or bank']);
+    expect(validateTask('cloze', two('war'))).toEqual(['gap 2 needs a mode of typed, select or bank']);
+  });
+
   it('strips every answer from the views', () => {
     const json = JSON.stringify([viewTask('passage_questions', passage), viewTask('matching', matching), viewTask('cloze', cloze)]);
     expect(json).not.toMatch(/correctIndex|"answers"|"answer"|variants/);

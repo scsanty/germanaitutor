@@ -125,6 +125,20 @@ describe('/api/admin/exam-practice', () => {
     expect((await list()).some((r) => r.id === 'wrong-1')).toBe(false);
   });
 
+  it('answers 400 with the problem list for an uploaded cloze set with a null or unknown-mode gap', async () => {
+    const put = (gap: unknown) => {
+      const gaps = Array.from({ length: 10 }, (_, i) => (i === 0 ? gap : { mode: 'select', options: ['a', 'b', 'c'], correctIndex: 0 }));
+      const text = Array.from({ length: 10 }, (_, i) => `Wort {{${i + 1}}}`).join(' ');
+      const set = { taskType: 'cloze', content: { text, gaps }, explanations: gaps.map(() => ({ en: 'a', de: 'b' })) };
+      return PUT(json('PUT', { formatId: 'telc-b1', partId: 'sprachbausteine-1', format: 'json', text: JSON.stringify([{ id: 'bad-gap', set }]) }));
+    };
+    for (const gap of [null, { mode: 'dropdown' }, {}]) {
+      const res = await put(gap);
+      expect(res.status).toBe(400);
+      expect((await res.json()).error).toBe('bad-gap: gap 1 needs a mode of typed, select or bank');
+    }
+  });
+
   it('rejects unparseable text, a file for another part, and a bad format', async () => {
     const put = (body: unknown) => PUT(json('PUT', body));
     expect((await put({ formatId: 'telc-b1', partId: 'lesen-1', format: 'yaml', text: 'a: [' })).status).toBe(400);
