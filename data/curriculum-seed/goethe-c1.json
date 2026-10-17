@@ -1125,13 +1125,68 @@
       }
     },
     {
-      "id": "c1-goethe-hoeren-teil1-dialog-notizen__ex0",
+      "id": "c1-goethe-hoeren-teil1-dialog-notizen__ex4",
       "lessonId": "c1-goethe-hoeren-teil1-dialog-notizen",
       "track": "goethe",
-      "type": "fill_blank",
+      "type": "audio_questions",
       "content": {
-        "textWithBlank": "Hörtext: 'Die Tagung findet dieses Jahr nicht in Leipzig, sondern im Kongresszentrum Dresden statt.' -> Notiz: Veranstaltungsort: Kongresszentrum ___.",
-        "correctAnswer": "Dresden"
+        "instruction": {
+          "en": "Listen to the phone call and complete your notes: choose the correct answer for each point. Watch out for speakers who correct themselves.",
+          "de": "Hören Sie das Telefongespräch und ergänzen Sie Ihre Notizen: Wählen Sie zu jedem Punkt die richtige Lösung. Achten Sie darauf, wenn sich jemand korrigiert."
+        },
+        "transcript": "@filter phone\n[Frau Albrecht f] Albrecht, guten Tag.\n[Herr Kessler m] Hallo Frau Albrecht, hier Kessler. Ich rufe wegen der Jahrestagung an. Es gibt ein paar Änderungen, die Sie bitte in Ihre Unterlagen übernehmen.\n[Frau Albrecht f] Gern, ich schreibe mit.\n[Herr Kessler m] Also, erstens: Die Tagung findet dieses Jahr nicht wie geplant in Leipzig statt, sondern im Kongresszentrum Dresden, weil der Saal in Leipzig doppelt vergeben war.\n[Frau Albrecht f] Ach herrje. Und bleibt es beim Termin?\n[Herr Kessler m] Das Datum bleibt. Die Vorbesprechung mit den Referenten ist um zehn. Ach nein, Moment, da habe ich ja selbst noch einen Termin. Sagen wir lieber halb elf.\n[Frau Albrecht f] Gut, notiert. Wie sieht es mit der Teilnehmerzahl aus?\n[Herr Kessler m] Wir rechnen inzwischen mit gut dreihundert Anmeldungen, also etwa fünfzig mehr als im letzten Jahr.\n[Frau Albrecht f] Dann reicht das Budget für die Verpflegung aber nicht.\n[Herr Kessler m] Genau deshalb hat die Geschäftsführung einer Erhöhung zugestimmt, allerdings unter der Bedingung, dass wir auf das Abendessen verzichten und stattdessen einen Empfang mit Fingerfood anbieten.",
+        "questions": [
+          {
+            "question": "Veranstaltungsort der Tagung:",
+            "options": [
+              "Kongresszentrum Leipzig",
+              "Kongresszentrum Dresden",
+              "Ein Hotel in Leipzig"
+            ],
+            "correctIndex": 1,
+            "evidence": "sondern im Kongresszentrum Dresden"
+          },
+          {
+            "question": "Grund für den Ortswechsel:",
+            "options": [
+              "Der Saal war zweimal gebucht.",
+              "Dresden ist günstiger.",
+              "Die meisten Referenten wohnen in Dresden."
+            ],
+            "correctIndex": 0,
+            "evidence": "weil der Saal in Leipzig doppelt vergeben war"
+          },
+          {
+            "question": "Beginn der Vorbesprechung:",
+            "options": [
+              "Zehn Uhr",
+              "Zehn Uhr dreißig",
+              "Elf Uhr"
+            ],
+            "correctIndex": 1,
+            "evidence": "Sagen wir lieber halb elf"
+          },
+          {
+            "question": "Erwartete Teilnehmerzahl:",
+            "options": [
+              "Rund zweihundertfünfzig",
+              "Etwa dreihundertfünfzig",
+              "Etwas mehr als dreihundert"
+            ],
+            "correctIndex": 2,
+            "evidence": "mit gut dreihundert Anmeldungen"
+          },
+          {
+            "question": "Bedingung für das höhere Budget:",
+            "options": [
+              "Statt eines Abendessens gibt es einen Empfang.",
+              "Die Teilnahmegebühr steigt.",
+              "Es werden weniger Referenten eingeladen."
+            ],
+            "correctIndex": 0,
+            "evidence": "dass wir auf das Abendessen verzichten"
+          }
+        ]
       }
     },
     {
@@ -1151,22 +1206,6 @@
       }
     },
     {
-      "id": "c1-goethe-hoeren-teil1-dialog-notizen__ex2",
-      "lessonId": "c1-goethe-hoeren-teil1-dialog-notizen",
-      "track": "goethe",
-      "type": "multiple_choice",
-      "content": {
-        "question": "Ein Sprecher korrigiert sich selbst: 'Wir treffen uns um 10... ach nein, da habe ich einen Termin, sagen wir lieber halb elf.' Welche Uhrzeit ist korrekt?",
-        "options": [
-          "10:00 Uhr",
-          "10:30 Uhr",
-          "11:00 Uhr",
-          "11:30 Uhr"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
       "id": "c1-goethe-hoeren-teil1-dialog-notizen__ex3",
       "lessonId": "c1-goethe-hoeren-teil1-dialog-notizen",
       "track": "goethe",
@@ -1177,19 +1216,68 @@
       }
     },
     {
-      "id": "c1-goethe-hoeren-teil2-radiointerview-monolog__ex0",
+      "id": "c1-goethe-hoeren-teil2-radiointerview-monolog__ex4",
       "lessonId": "c1-goethe-hoeren-teil2-radiointerview-monolog",
       "track": "goethe",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Im Radiofeature sagt der Sprecher: 'Das Vorhaben entbehrt nicht einer gewissen Tragik.' Was meint er?",
-        "options": [
-          "Es ist ein heiteres Lustspiel.",
-          "Das Vorhaben enthält bedauernswerte, tragische Momente des Scheiterns.",
-          "Niemand weiß, was passieren wird.",
-          "Es ist völlig emotionslos."
-        ],
-        "correctIndex": 1
+        "instruction": {
+          "en": "Listen to the radio feature. Choose the correct answer (a, b or c). Pay attention to hidden judgements and idioms.",
+          "de": "Hören Sie das Radiofeature. Wählen Sie die richtige Lösung (a, b oder c). Achten Sie auf versteckte Wertungen und Redewendungen."
+        },
+        "transcript": "@filter radio\n[Sprecher m] Als die Kleinstadt Brenningen vor zwölf Jahren beschloss, ein eigenes Konzerthaus zu bauen, war die Begeisterung groß.\n[Sprecher m] Heute steht dort ein halbfertiger Rohbau, und die Kosten haben sich mehr als verdreifacht.\n[Sprecher m] Das Vorhaben entbehrt nicht einer gewissen Tragik, denn kaum jemand bezweifelt, dass die Idee an sich gut war.\n[Anwohnerin f] Wir haben uns alle darauf gefreut. Aber irgendwann hat keiner mehr ehrlich gesagt, was das Ganze wirklich kostet.\n[Sprecher m] Den damaligen Bürgermeister sehen viele als Hauptverantwortlichen. Ein Stadtrat formuliert es drastisch.\n[Stadtrat m] Er hat den Karren an die Wand gefahren, und zwar mit Ansage. Die Warnungen der Gutachter lagen ja alle auf dem Tisch.\n[Sprecher m] Der frühere Bürgermeister selbst weist die Vorwürfe zurück. Er verweist auf gestiegene Baupreise, die niemand habe vorhersehen können.\n[Sprecher m] Ob das Haus je eröffnet wird, ist offen. Das Land hat zwar Hilfe angeboten, will aber erst ein neues Finanzierungskonzept sehen.",
+        "questions": [
+          {
+            "question": "Wie bewertet der Sprecher das Projekt?",
+            "options": [
+              "Als gute Idee, die auf bedauerliche Weise gescheitert ist",
+              "Als von Anfang an unsinnigen Plan",
+              "Als Erfolg, der nur etwas länger dauert"
+            ],
+            "correctIndex": 0,
+            "evidence": "kaum jemand bezweifelt, dass die Idee an sich gut war"
+          },
+          {
+            "question": "Was kritisiert die Anwohnerin?",
+            "options": [
+              "Dass das Konzerthaus zu klein geplant war",
+              "Dass über die Kosten nicht offen gesprochen wurde",
+              "Dass die Bürger nicht gefragt wurden"
+            ],
+            "correctIndex": 1,
+            "evidence": "hat keiner mehr ehrlich gesagt, was das Ganze wirklich kostet"
+          },
+          {
+            "question": "Was wirft der Stadtrat dem früheren Bürgermeister vor?",
+            "options": [
+              "Er hat das Projekt zu früh aufgegeben.",
+              "Er hat Gutachten zurückgehalten.",
+              "Er hat das Projekt trotz bekannter Risiken scheitern lassen."
+            ],
+            "correctIndex": 2,
+            "evidence": "Er hat den Karren an die Wand gefahren, und zwar mit Ansage"
+          },
+          {
+            "question": "Womit verteidigt sich der frühere Bürgermeister?",
+            "options": [
+              "Mit unerwartet gestiegenen Baukosten",
+              "Mit fehlender Unterstützung durch das Land",
+              "Mit Fehlern der Gutachter"
+            ],
+            "correctIndex": 0,
+            "evidence": "Er verweist auf gestiegene Baupreise"
+          },
+          {
+            "question": "Was gilt für die Zukunft des Konzerthauses?",
+            "options": [
+              "Es wird im nächsten Jahr eröffnet.",
+              "Das Land hilft erst, wenn ein neuer Finanzplan vorliegt.",
+              "Der Rohbau wird abgerissen."
+            ],
+            "correctIndex": 1,
+            "evidence": "will aber erst ein neues Finanzierungskonzept sehen"
+          }
+        ]
       }
     },
     {
@@ -1206,16 +1294,6 @@
           "Den Prüfer um Wiederholung bitten"
         ],
         "correctIndex": 1
-      }
-    },
-    {
-      "id": "c1-goethe-hoeren-teil2-radiointerview-monolog__ex2",
-      "lessonId": "c1-goethe-hoeren-teil2-radiointerview-monolog",
-      "track": "goethe",
-      "type": "fill_blank",
-      "content": {
-        "textWithBlank": "Hörtext-Wendungsanalyse: 'Er hat den Karren an die Wand ___.' (crashed / ruined)",
-        "correctAnswer": "gefahren"
       }
     },
     {

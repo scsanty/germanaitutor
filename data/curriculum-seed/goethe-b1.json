@@ -1513,32 +1513,56 @@
       }
     },
     {
-      "id": "b1-goethe-listening-teil1-daily-announcements__ex0",
+      "id": "b1-goethe-listening-teil1-daily-announcements__ex3",
       "lessonId": "b1-goethe-listening-teil1-daily-announcements",
       "track": "goethe",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Hörtext (2x): 'Hier Praxis Dr. Bergmann. Wegen einer technischen Störung bleibt das Labor heute geschlossen. Termine zur Blutabnahme verschieben sich auf morgen ab 7:30 Uhr.' - Aufgabe: Finden heute Blutabnahmen statt?",
-        "options": [
-          "Richtig",
-          "Falsch"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "b1-goethe-listening-teil1-daily-announcements__ex1",
-      "lessonId": "b1-goethe-listening-teil1-daily-announcements",
-      "track": "goethe",
-      "type": "multiple_choice",
-      "content": {
-        "question": "Gleicher Hörtext: Wann können Patienten morgen zur Blutabnahme kommen?",
-        "options": [
-          "Ab 7:00 Uhr",
-          "Ab 7:30 Uhr",
-          "Erst am Nachmittag"
-        ],
-        "correctIndex": 1
+        "instruction": {
+          "en": "Listen to the message on the answering machine. Decide whether the statements are Richtig or Falsch, and answer the a, b or c questions.",
+          "de": "Hören Sie die Nachricht auf dem Anrufbeantworter. Sind die Aussagen Richtig oder Falsch? Welche Lösung (a, b oder c) ist richtig?"
+        },
+        "transcript": "@filter phone\n[Praxisteam f] Guten Tag, hier ist die Praxis Doktor Bergmann.\n[Praxisteam f] Wegen einer technischen Störung bleibt unser Labor heute leider geschlossen.\n[Praxisteam f] Alle Termine zur Blutabnahme verschieben sich deshalb auf morgen.\n[Praxisteam f] Sie können morgen ab sieben Uhr dreißig ohne neuen Termin zu uns kommen.\n[Praxisteam f] Bitte denken Sie daran, vor der Blutabnahme nichts zu essen.\n[Praxisteam f] Die normale Sprechstunde bei Doktor Bergmann findet heute aber wie gewohnt statt.",
+        "questions": [
+          {
+            "question": "Heute kann man in der Praxis Blut abnehmen lassen.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1,
+            "evidence": "bleibt unser Labor heute leider geschlossen"
+          },
+          {
+            "question": "Wann können die Patienten morgen zur Blutabnahme kommen?",
+            "options": [
+              "Ab sieben Uhr",
+              "Ab halb acht",
+              "Erst am Nachmittag"
+            ],
+            "correctIndex": 1,
+            "evidence": "ab sieben Uhr dreißig"
+          },
+          {
+            "question": "Was sollen die Patienten vor der Blutabnahme tun?",
+            "options": [
+              "Ohne Frühstück kommen",
+              "Vorher anrufen",
+              "Die Versichertenkarte mitbringen"
+            ],
+            "correctIndex": 0,
+            "evidence": "vor der Blutabnahme nichts zu essen"
+          },
+          {
+            "question": "Die Sprechstunde fällt heute aus.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1,
+            "evidence": "findet heute aber wie gewohnt statt"
+          }
+        ]
       }
     },
     {
@@ -1552,33 +1576,68 @@
       }
     },
     {
-      "id": "b1-goethe-listening-teil2-guided-tour-presentation__ex0",
+      "id": "b1-goethe-listening-teil2-guided-tour-presentation__ex3",
       "lessonId": "b1-goethe-listening-teil2-guided-tour-presentation",
       "track": "goethe",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Führung (nur 1x!): 'Wir beginnen unseren Rundgang im historischen Weinkeller aus dem 14. Jahrhundert. Danach steigen wir hinauf zum Turm. Am Ende der Tour haben Sie Gelegenheit, im Museumsshop Souvenirs zu erwerben.' - Wo beginnt die Führung?",
-        "options": [
-          "Auf dem Aussichtsturm",
-          "Im historischen Weinkeller",
-          "Im Museumsshop"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "b1-goethe-listening-teil2-guided-tour-presentation__ex1",
-      "lessonId": "b1-goethe-listening-teil2-guided-tour-presentation",
-      "track": "goethe",
-      "type": "multiple_choice",
-      "content": {
-        "question": "Führung: 'Wegen Renovierungsarbeiten ist die Gemäldegalerie heute leider nicht zugänglich.' - Welcher Bereich ist geschlossen?",
-        "options": [
-          "Die Gemäldegalerie",
-          "Das Café",
-          "Der gesamte Schlossgarten"
-        ],
-        "correctIndex": 0
+        "instruction": {
+          "en": "Listen to the guided tour. Which answer (a, b or c) is correct? In the exam you hear this text only once.",
+          "de": "Hören Sie die Führung. Welche Lösung (a, b oder c) ist richtig? In der Prüfung hören Sie diesen Text nur einmal."
+        },
+        "transcript": "[Führerin f] Herzlich willkommen auf Burg Falkenau! Ich bin Sabine und begleite Sie heute durch die Burg.\n[Führerin f] Die Führung dauert ungefähr eine Stunde.\n[Führerin f] Wir beginnen unseren Rundgang im historischen Weinkeller aus dem vierzehnten Jahrhundert.\n[Führerin f] Bitte fotografieren Sie dort nicht mit Blitz, denn das Licht schadet den alten Wandmalereien.\n[Führerin f] Danach steigen wir hinauf zum Turm. Von oben haben Sie einen wunderbaren Blick über das ganze Tal.\n[Führerin f] Eine Information noch: Wegen Renovierungsarbeiten ist die Gemäldegalerie heute leider nicht zugänglich.\n[Führerin f] Wer die Bilder trotzdem sehen möchte, bekommt an der Kasse einen Gutschein für einen zweiten Besuch.\n[Führerin f] Am Ende der Tour haben Sie Gelegenheit, im Museumsshop Souvenirs zu kaufen.",
+        "questions": [
+          {
+            "question": "Wo beginnt die Führung?",
+            "options": [
+              "Auf dem Aussichtsturm",
+              "Im historischen Weinkeller",
+              "Im Museumsshop"
+            ],
+            "correctIndex": 1,
+            "evidence": "im historischen Weinkeller aus dem vierzehnten Jahrhundert"
+          },
+          {
+            "question": "Warum soll man im Keller nicht mit Blitz fotografieren?",
+            "options": [
+              "Weil es andere Besucher stört.",
+              "Weil es dort zu dunkel ist.",
+              "Weil die Wandbilder Schaden nehmen."
+            ],
+            "correctIndex": 2,
+            "evidence": "das Licht schadet den alten Wandmalereien"
+          },
+          {
+            "question": "Was kann man vom Turm aus sehen?",
+            "options": [
+              "Das Tal",
+              "Die Altstadt",
+              "Die Weinberge"
+            ],
+            "correctIndex": 0,
+            "evidence": "einen wunderbaren Blick über das ganze Tal"
+          },
+          {
+            "question": "Welcher Bereich ist heute geschlossen?",
+            "options": [
+              "Das Café",
+              "Die Gemäldegalerie",
+              "Der Burggarten"
+            ],
+            "correctIndex": 1,
+            "evidence": "ist die Gemäldegalerie heute leider nicht zugänglich"
+          },
+          {
+            "question": "Was bekommen Besucher, die die Bilder sehen möchten?",
+            "options": [
+              "Einen Katalog mit allen Bildern",
+              "Einen Rabatt im Museumsshop",
+              "Einen Gutschein für einen weiteren Besuch"
+            ],
+            "correctIndex": 2,
+            "evidence": "einen Gutschein für einen zweiten Besuch"
+          }
+        ]
       }
     },
     {
@@ -1596,31 +1655,63 @@
       }
     },
     {
-      "id": "b1-goethe-listening-teil3-casual-conversation__ex0",
+      "id": "b1-goethe-listening-teil3-casual-conversation__ex3",
       "lessonId": "b1-goethe-listening-teil3-casual-conversation",
       "track": "goethe",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Gespräch (nur 1x!): Mann: 'Wollen wir am Freitagabend ins Kino gehen? Es läuft der neue Film von Wim Wenders.' Frau: 'Am Freitag muss ich leider lange arbeiten, aber Samstagabend hätte ich Zeit.' - Aussage: Die Frau möchte am Freitag ins Kino gehen.",
-        "options": [
-          "Richtig",
-          "Falsch"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "b1-goethe-listening-teil3-casual-conversation__ex1",
-      "lessonId": "b1-goethe-listening-teil3-casual-conversation",
-      "track": "goethe",
-      "type": "multiple_choice",
-      "content": {
-        "question": "Gleiches Gespräch: Mann: 'Prima, dann reserviere ich die Karten für Samstag um acht.' - Aussage: Die beiden treffen sich am Samstag.",
-        "options": [
-          "Richtig",
-          "Falsch"
-        ],
-        "correctIndex": 0
+        "instruction": {
+          "en": "Listen to the conversation. Are the statements Richtig or Falsch? In the exam you hear the conversation only once.",
+          "de": "Hören Sie das Gespräch. Sind die Aussagen Richtig oder Falsch? In der Prüfung hören Sie das Gespräch nur einmal."
+        },
+        "transcript": "[Jonas m] Sag mal, Lena, wollen wir am Freitagabend ins Kino gehen? Da läuft doch der neue Film von Wim Wenders.\n[Lena f] Oh, den möchte ich unbedingt sehen! Aber am Freitag muss ich leider lange arbeiten. Samstagabend hätte ich Zeit.\n[Jonas m] Samstag passt mir auch. Gehen wir ins Odeon am Marktplatz?\n[Lena f] Lieber nicht, da sind die Sitze so unbequem. Was hältst du vom kleinen Kino in der Bahnhofstraße?\n[Jonas m] Gute Idee, das ist auch günstiger. Prima, dann reserviere ich die Karten für Samstag um acht.\n[Lena f] Super. Und vorher könnten wir noch eine Kleinigkeit essen. Ich lade dich ein, du hast mir ja letzte Woche beim Umzug geholfen.\n[Jonas m] Das musst du nicht, aber ich sage nicht Nein. Treffen wir uns um sieben vor dem Kino?\n[Lena f] Halb sieben wäre besser, sonst wird es mit dem Essen zu knapp.\n[Jonas m] Okay, also halb sieben. Bis Samstag!",
+        "questions": [
+          {
+            "question": "Lena möchte am Freitag ins Kino gehen.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1,
+            "evidence": "am Freitag muss ich leider lange arbeiten"
+          },
+          {
+            "question": "Lena findet die Sitze im Kino am Marktplatz bequem.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1,
+            "evidence": "da sind die Sitze so unbequem"
+          },
+          {
+            "question": "Die beiden gehen am Samstag ins Kino.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0,
+            "evidence": "dann reserviere ich die Karten für Samstag um acht"
+          },
+          {
+            "question": "Lena will das Essen bezahlen.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0,
+            "evidence": "Ich lade dich ein"
+          },
+          {
+            "question": "Die beiden treffen sich um sieben Uhr vor dem Kino.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1,
+            "evidence": "Halb sieben wäre besser"
+          }
+        ]
       }
     },
     {
@@ -1634,33 +1725,78 @@
       }
     },
     {
-      "id": "b1-goethe-listening-teil4-radio-discussion__ex0",
+      "id": "b1-goethe-listening-teil4-radio-discussion__ex3",
       "lessonId": "b1-goethe-listening-teil4-radio-discussion",
       "track": "goethe",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Debatte (2x): Frau Sommer: 'Mitarbeiter, die von zu Hause arbeiten, leisten oft mehr unbezahlte Überstunden als im Büro.' - Wer äußert diese Feststellung?",
-        "options": [
-          "Die Moderatorin",
-          "Herr Wolf",
-          "Frau Sommer"
-        ],
-        "correctIndex": 2
-      }
-    },
-    {
-      "id": "b1-goethe-listening-teil4-radio-discussion__ex1",
-      "lessonId": "b1-goethe-listening-teil4-radio-discussion",
-      "track": "goethe",
-      "type": "multiple_choice",
-      "content": {
-        "question": "Debatte: Moderatorin: 'Ich begrüße Sie herzlich zu unserer heutigen Diskussionsrunde über flexible Arbeitsmodelle.' - Wer leitet die Diskussion ein?",
-        "options": [
-          "Die Moderatorin",
-          "Herr Wolf",
-          "Frau Sommer"
-        ],
-        "correctIndex": 0
+        "instruction": {
+          "en": "Listen to the radio discussion. Who says what? Choose the moderator, Herr Wolf or Frau Sommer.",
+          "de": "Hören Sie die Diskussion im Radio. Wer sagt was? Wählen Sie: die Moderatorin, Herr Wolf oder Frau Sommer."
+        },
+        "transcript": "@filter radio\n[Moderatorin f] Guten Abend und herzlich willkommen zu unserer Diskussionsrunde. Unser Thema heute: Homeoffice, Fluch oder Segen?\n[Moderatorin f] Zu Gast sind Herr Wolf vom Arbeitgeberverband und Frau Sommer von der Gewerkschaft. Herr Wolf, was meinen Sie?\n[Herr Wolf m] Ich finde, Firmen brauchen feste Tage im Büro. Neue Ideen entstehen meistens, wenn sich die Kollegen persönlich treffen.\n[Frau Sommer f] Da muss ich widersprechen. Wer zu Hause arbeitet, spart sich den langen Weg zur Arbeit und ist oft viel konzentrierter.\n[Moderatorin f] Ich habe selbst zwei Jahre im Homeoffice gearbeitet, und mir hat der Kontakt zu den Kollegen sehr gefehlt.\n[Frau Sommer f] Das verstehe ich. Aber man muss auch sehen: Viele Mitarbeiter machen zu Hause mehr unbezahlte Überstunden als im Büro.\n[Herr Wolf m] Das mag sein, aber das ist ein Problem der Organisation und kein Argument gegen das Büro.\n[Herr Wolf m] Ich könnte mir zwei feste Bürotage pro Woche vorstellen, die die Firma festlegt.\n[Frau Sommer f] Mit so einem Kompromiss könnte ich leben, aber nur, wenn die Beschäftigten bei der Wahl der Tage mitreden dürfen.",
+        "questions": [
+          {
+            "question": "Kreativität braucht den direkten Austausch im Team.",
+            "options": [
+              "Die Moderatorin",
+              "Herr Wolf",
+              "Frau Sommer"
+            ],
+            "correctIndex": 1,
+            "evidence": "Neue Ideen entstehen meistens, wenn sich die Kollegen persönlich treffen"
+          },
+          {
+            "question": "Ohne Arbeitsweg kann man sich besser auf die Arbeit konzentrieren.",
+            "options": [
+              "Die Moderatorin",
+              "Herr Wolf",
+              "Frau Sommer"
+            ],
+            "correctIndex": 2,
+            "evidence": "spart sich den langen Weg zur Arbeit"
+          },
+          {
+            "question": "Mir haben die Kollegen gefehlt, als ich von zu Hause gearbeitet habe.",
+            "options": [
+              "Die Moderatorin",
+              "Herr Wolf",
+              "Frau Sommer"
+            ],
+            "correctIndex": 0,
+            "evidence": "mir hat der Kontakt zu den Kollegen sehr gefehlt"
+          },
+          {
+            "question": "Im Homeoffice arbeiten viele länger, ohne dafür Geld zu bekommen.",
+            "options": [
+              "Die Moderatorin",
+              "Herr Wolf",
+              "Frau Sommer"
+            ],
+            "correctIndex": 2,
+            "evidence": "mehr unbezahlte Überstunden"
+          },
+          {
+            "question": "Der Arbeitgeber soll bestimmen, an welchen Tagen man im Büro ist.",
+            "options": [
+              "Die Moderatorin",
+              "Herr Wolf",
+              "Frau Sommer"
+            ],
+            "correctIndex": 1,
+            "evidence": "zwei feste Bürotage pro Woche vorstellen, die die Firma festlegt"
+          },
+          {
+            "question": "Die Mitarbeiter sollen mitbestimmen, wann sie ins Büro kommen.",
+            "options": [
+              "Die Moderatorin",
+              "Herr Wolf",
+              "Frau Sommer"
+            ],
+            "correctIndex": 2,
+            "evidence": "bei der Wahl der Tage mitreden dürfen"
+          }
+        ]
       }
     },
     {

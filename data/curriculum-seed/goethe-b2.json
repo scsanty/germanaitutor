@@ -1197,47 +1197,111 @@
       }
     },
     {
-      "id": "b2-goethe-hoeren-teil1-alltag-nachrichten__ex0",
+      "id": "b2-goethe-hoeren-teil1-alltag-nachrichten__ex2",
       "lessonId": "b2-goethe-hoeren-teil1-alltag-nachrichten",
       "track": "goethe",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Hörtext (1x): 'Liebe Hörer, der ADAC warnt vor Glatteisbildung auf der A3 zwischen Würzburg und Nürnberg. Fahren Sie bitte besonders vorsichtig. Die Streudienste sind bereits im Einsatz.' - Aufgabe 1: Auf der A3 besteht Rutschgefahr durch Glatteis.",
-        "options": [
-          "Richtig",
-          "Falsch"
-        ],
-        "correctIndex": 0
+        "instruction": {
+          "en": "Listen to the traffic report. Decide whether the statements are Richtig or Falsch, and answer the a, b or c questions. In the exam you hear each text only once.",
+          "de": "Hören Sie die Verkehrsmeldung. Sind die Aussagen Richtig oder Falsch? Welche Lösung (a, b oder c) ist richtig? In der Prüfung hören Sie jeden Text nur einmal."
+        },
+        "transcript": "@filter radio\n[Verkehrsfunk f] Und nun zur Verkehrslage. Liebe Hörerinnen und Hörer, der Automobilclub warnt vor Glatteis auf der Autobahn drei zwischen Würzburg und Nürnberg.\n[Verkehrsfunk f] Besonders auf den Brücken ist die Fahrbahn spiegelglatt. Fahren Sie bitte langsam und halten Sie ausreichend Abstand.\n[Verkehrsfunk f] Die Streudienste sind bereits seit den frühen Morgenstunden im Einsatz.\n[Verkehrsfunk f] Eine Sperrung der Strecke ist derzeit nicht geplant, es kann aber zu Verzögerungen von bis zu einer halben Stunde kommen.\n[Verkehrsfunk f] Wer nicht unbedingt fahren muss, sollte das Auto heute lieber stehen lassen und auf die Bahn umsteigen.",
+        "questions": [
+          {
+            "question": "Zwischen Würzburg und Nürnberg besteht auf der Autobahn Rutschgefahr.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0,
+            "evidence": "warnt vor Glatteis auf der Autobahn drei"
+          },
+          {
+            "question": "Am gefährlichsten ist es in den Tunneln.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1,
+            "evidence": "Besonders auf den Brücken ist die Fahrbahn spiegelglatt"
+          },
+          {
+            "question": "Welche Maßnahme wurde bereits ergriffen?",
+            "options": [
+              "Die Autobahn wurde komplett gesperrt.",
+              "Die Streufahrzeuge sind unterwegs.",
+              "Die Geschwindigkeit wurde begrenzt."
+            ],
+            "correctIndex": 1,
+            "evidence": "Die Streudienste sind bereits seit den frühen Morgenstunden im Einsatz"
+          },
+          {
+            "question": "Mit welcher Verspätung müssen Autofahrer rechnen?",
+            "options": [
+              "Mit bis zu zehn Minuten",
+              "Mit bis zu einer Stunde",
+              "Mit bis zu dreißig Minuten"
+            ],
+            "correctIndex": 2,
+            "evidence": "Verzögerungen von bis zu einer halben Stunde"
+          }
+        ]
       }
     },
     {
-      "id": "b2-goethe-hoeren-teil1-alltag-nachrichten__ex1",
-      "lessonId": "b2-goethe-hoeren-teil1-alltag-nachrichten",
-      "track": "goethe",
-      "type": "multiple_choice",
-      "content": {
-        "question": "Basierend auf demselben Hörtext: Welche Maßnahme wurde bereits ergriffen?",
-        "options": [
-          "Die Autobahn wurde komplett gesperrt.",
-          "Die Streufahrzeuge sind bereits unterwegs.",
-          "Geschwindigkeitsbegrenzungen wurden aufgehoben."
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "b2-goethe-hoeren-teil2-experteninterview__ex0",
+      "id": "b2-goethe-hoeren-teil2-experteninterview__ex2",
       "lessonId": "b2-goethe-hoeren-teil2-experteninterview",
       "track": "goethe",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Interviewauszug: 'Unsere ursprüngliche Hypothese war, dass Jugendliche primär durch Unterhaltungsvideos lernen. Überraschenderweise zeigte sich jedoch, dass kurze Erklärformate zu naturwissenschaftlichen Themen die höchsten Abrufzahlen erzielen.' - Was war das überraschende Ergebnis?",
-        "options": [
-          "Jugendliche meiden naturwissenschaftliche Themen im Netz.",
-          "Wissenschaftliche Erklärvideos werden häufiger aufgerufen als erwartet.",
-          "Unterhaltungsvideos sind das beliebteste Bildungsmedium."
-        ],
-        "correctIndex": 1
+        "instruction": {
+          "en": "Listen to the radio interview. Which answer (a, b or c) is correct?",
+          "de": "Hören Sie das Radiointerview. Welche Lösung (a, b oder c) ist richtig?"
+        },
+        "transcript": "@filter radio\n[Moderator m] Frau Professorin Kraus, Sie haben untersucht, wie Jugendliche im Internet lernen. Womit hatten Sie gerechnet?\n[Professorin Kraus f] Unsere ursprüngliche Hypothese war, dass Jugendliche vor allem durch Unterhaltungsvideos lernen, also eher nebenbei.\n[Professorin Kraus f] Überraschenderweise hat sich aber gezeigt, dass kurze Erklärvideos zu naturwissenschaftlichen Themen die höchsten Abrufzahlen erzielen.\n[Moderator m] Wie sind Sie bei der Studie vorgegangen?\n[Professorin Kraus f] Wir haben ein halbes Jahr lang die Nutzungsdaten von rund zweitausend Schülerinnen und Schülern ausgewertet und zusätzlich Gruppeninterviews geführt.\n[Moderator m] Und was macht ein gutes Erklärvideo aus?\n[Professorin Kraus f] Entscheidend ist nicht die technische Qualität, sondern dass jemand einen komplizierten Sachverhalt in wenigen Minuten verständlich und mit Begeisterung erklärt.\n[Moderator m] Sollten Schulen solche Videos stärker einsetzen?\n[Professorin Kraus f] Ja, allerdings nur als Ergänzung. Ohne das Gespräch im Unterricht bleibt vieles oberflächlich.",
+        "questions": [
+          {
+            "question": "Was war das überraschende Ergebnis der Studie?",
+            "options": [
+              "Jugendliche meiden naturwissenschaftliche Themen im Netz.",
+              "Wissenschaftliche Erklärvideos werden häufiger aufgerufen als erwartet.",
+              "Unterhaltungsvideos sind das beliebteste Lernmedium."
+            ],
+            "correctIndex": 1,
+            "evidence": "kurze Erklärvideos zu naturwissenschaftlichen Themen die höchsten Abrufzahlen erzielen"
+          },
+          {
+            "question": "Wie wurden die Daten gewonnen?",
+            "options": [
+              "Durch die Auswertung von Nutzungsdaten und Gespräche mit Gruppen",
+              "Durch eine Online-Umfrage unter Lehrkräften",
+              "Durch Tests vor und nach dem Unterricht"
+            ],
+            "correctIndex": 0,
+            "evidence": "die Nutzungsdaten von rund zweitausend Schülerinnen und Schülern ausgewertet"
+          },
+          {
+            "question": "Was macht laut Frau Kraus ein gutes Erklärvideo aus?",
+            "options": [
+              "Eine professionelle Bild- und Tonqualität",
+              "Möglichst viele Details",
+              "Eine klare und engagierte Darstellung"
+            ],
+            "correctIndex": 2,
+            "evidence": "in wenigen Minuten verständlich und mit Begeisterung erklärt"
+          },
+          {
+            "question": "Wie sollen Schulen solche Videos nutzen?",
+            "options": [
+              "Als Ersatz für Hausaufgaben",
+              "Zusätzlich zum Unterricht",
+              "Anstelle von Lehrbüchern"
+            ],
+            "correctIndex": 1,
+            "evidence": "allerdings nur als Ergänzung"
+          }
+        ]
       }
     },
     {
@@ -1251,18 +1315,68 @@
       }
     },
     {
-      "id": "b2-goethe-hoeren-teil3-drei-sprecher-zuordnen__ex0",
+      "id": "b2-goethe-hoeren-teil3-drei-sprecher-zuordnen__ex2",
       "lessonId": "b2-goethe-hoeren-teil3-drei-sprecher-zuordnen",
       "track": "goethe",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Moderator: 'Frau Dr. Sommer, teilen Sie diese Ansicht?' - Frau Dr. Sommer: 'Ganz im Gegenteil. Wenn wir jetzt nicht einschreiten, kollabiert das System in spätestens fünf Jahren.' - Wer sieht dringenden gesetzlichen Handlungsbedarf?",
-        "options": [
-          "Der Moderator",
-          "Frau Dr. Sommer",
-          "Der zweite Gast (Herr Meyer)"
-        ],
-        "correctIndex": 1
+        "instruction": {
+          "en": "Listen to the radio conversation. Who says what? Choose the moderator, Frau Sommer or Herr Meyer.",
+          "de": "Hören Sie das Gespräch im Radio. Wer sagt was? Wählen Sie: der Moderator, Frau Sommer oder Herr Meyer."
+        },
+        "transcript": "@filter radio\n[Moderator m] Herzlich willkommen zu unserem Gespräch. Heute geht es um die Frage, ob ein soziales Pflichtjahr für junge Menschen die Lage in der Pflege verbessern könnte.\n[Moderator m] Herr Meyer, Sie halten die Situation noch für beherrschbar, richtig?\n[Herr Meyer m] Ja. Natürlich fehlen Pflegekräfte, aber ein Zwangsdienst wäre ein zu großer Eingriff in die Freiheit junger Menschen. Wir sollten lieber auf Freiwilligkeit setzen.\n[Moderator m] Frau Sommer, teilen Sie diese Ansicht?\n[Frau Sommer f] Ganz im Gegenteil. Wenn wir jetzt nicht einschreiten, kollabiert das System in spätestens fünf Jahren.\n[Frau Sommer f] Außerdem lernen junge Leute in so einem Jahr unglaublich viel über das Leben. Das weiß ich aus meinem eigenen Freiwilligenjahr im Krankenhaus.\n[Herr Meyer m] Das bestreite ich gar nicht. Aber ungelernte Helfer lösen das Problem nicht. Wir brauchen vor allem bessere Löhne für Fachkräfte.\n[Moderator m] Ich darf kurz ergänzen: Laut einer aktuellen Umfrage ist eine knappe Mehrheit der Bevölkerung für ein Pflichtjahr.\n[Frau Sommer f] Das überrascht mich nicht. Die Menschen merken ja jeden Tag, wie sehr die Pflege am Limit ist.",
+        "questions": [
+          {
+            "question": "Hält eine Verpflichtung für einen unangemessenen Eingriff in die persönliche Freiheit.",
+            "options": [
+              "Der Moderator",
+              "Frau Sommer",
+              "Herr Meyer"
+            ],
+            "correctIndex": 2,
+            "evidence": "ein Zwangsdienst wäre ein zu großer Eingriff"
+          },
+          {
+            "question": "Sieht dringenden Handlungsbedarf, um einen Zusammenbruch zu verhindern.",
+            "options": [
+              "Der Moderator",
+              "Frau Sommer",
+              "Herr Meyer"
+            ],
+            "correctIndex": 1,
+            "evidence": "kollabiert das System in spätestens fünf Jahren"
+          },
+          {
+            "question": "Hat selbst ein soziales Jahr gemacht.",
+            "options": [
+              "Der Moderator",
+              "Frau Sommer",
+              "Herr Meyer"
+            ],
+            "correctIndex": 1,
+            "evidence": "aus meinem eigenen Freiwilligenjahr im Krankenhaus"
+          },
+          {
+            "question": "Fordert eine bessere Bezahlung für ausgebildetes Personal.",
+            "options": [
+              "Der Moderator",
+              "Frau Sommer",
+              "Herr Meyer"
+            ],
+            "correctIndex": 2,
+            "evidence": "bessere Löhne für Fachkräfte"
+          },
+          {
+            "question": "Nennt das Ergebnis einer Befragung.",
+            "options": [
+              "Der Moderator",
+              "Frau Sommer",
+              "Herr Meyer"
+            ],
+            "correctIndex": 0,
+            "evidence": "Laut einer aktuellen Umfrage"
+          }
+        ]
       }
     },
     {
@@ -1276,18 +1390,58 @@
       }
     },
     {
-      "id": "b2-goethe-hoeren-teil4-fachvortrag__ex0",
+      "id": "b2-goethe-hoeren-teil4-fachvortrag__ex2",
       "lessonId": "b2-goethe-hoeren-teil4-fachvortrag",
       "track": "goethe",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Vortragender: 'Entscheidend für den Erfolg der Renaturierungsmaßnahme war nicht primär die Neuanpflanzung von Bäumen, sondern die Wiederherstellung des ursprünglichen Flussbetts.' - Was war laut Referent der wichtigste Erfolgsfaktor?",
-        "options": [
-          "Das Pflanzen neuer Baumarten.",
-          "Die Begradigung des Gewässers.",
-          "Die Reaktivierung des natürlichen Flussverlaufs."
-        ],
-        "correctIndex": 2
+        "instruction": {
+          "en": "Listen to the lecture. Which answer (a, b or c) is correct?",
+          "de": "Hören Sie den Vortrag. Welche Lösung (a, b oder c) ist richtig?"
+        },
+        "transcript": "[Referent m] Meine Damen und Herren, ich möchte Ihnen heute die Renaturierung des Weilbachs vorstellen, die wir zehn Jahre lang wissenschaftlich begleitet haben.\n[Referent m] Der Bach war in den Sechzigerjahren begradigt worden, um mehr Fläche für die Landwirtschaft zu gewinnen.\n[Referent m] Die Folge waren häufige Überschwemmungen in den Dörfern flussabwärts und ein dramatischer Rückgang der Fischbestände.\n[Referent m] Methodisch sind wir so vorgegangen, dass wir jedes Frühjahr an zwölf Messstellen die Wasserqualität und die Artenvielfalt erfasst haben.\n[Referent m] Entscheidend für den Erfolg der Maßnahme war nicht in erster Linie die Neuanpflanzung von Bäumen, sondern die Wiederherstellung des ursprünglichen Flussbetts.\n[Referent m] Bereits nach drei Jahren kehrten Fischarten zurück, die hier seit Jahrzehnten nicht mehr beobachtet worden waren.\n[Referent m] Kritisch muss ich allerdings anmerken, dass einige Landwirte bis heute über den Verlust von Ackerflächen klagen.\n[Referent m] Für künftige Projekte empfehlen wir daher, die Betroffenen von Anfang an in die Planung einzubeziehen.",
+        "questions": [
+          {
+            "question": "Warum wurde der Bach früher begradigt?",
+            "options": [
+              "Um Überschwemmungen zu verhindern",
+              "Um Ackerland zu gewinnen",
+              "Um den Schiffsverkehr zu erleichtern"
+            ],
+            "correctIndex": 1,
+            "evidence": "um mehr Fläche für die Landwirtschaft zu gewinnen"
+          },
+          {
+            "question": "Was war laut Referent der wichtigste Erfolgsfaktor?",
+            "options": [
+              "Das Pflanzen neuer Bäume",
+              "Eine erneute Begradigung des Gewässers",
+              "Die Rückkehr zum natürlichen Flussverlauf"
+            ],
+            "correctIndex": 2,
+            "evidence": "die Wiederherstellung des ursprünglichen Flussbetts"
+          },
+          {
+            "question": "Was zeigte sich nach drei Jahren?",
+            "options": [
+              "Lange verschwundene Fischarten waren wieder da.",
+              "Die Zahl der Messstellen wurde verdoppelt.",
+              "Die neuen Bäume waren schon hoch gewachsen."
+            ],
+            "correctIndex": 0,
+            "evidence": "kehrten Fischarten zurück, die hier seit Jahrzehnten nicht mehr beobachtet worden waren"
+          },
+          {
+            "question": "Was empfiehlt der Referent für künftige Projekte?",
+            "options": [
+              "Landwirte finanziell zu entschädigen",
+              "Betroffene früh an der Planung zu beteiligen",
+              "Mehr Messstellen einzurichten"
+            ],
+            "correctIndex": 1,
+            "evidence": "die Betroffenen von Anfang an in die Planung einzubeziehen"
+          }
+        ]
       }
     },
     {
