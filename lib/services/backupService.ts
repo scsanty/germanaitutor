@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync, renameSync, existsSync, unlinkSync, readdirSync, mkdirSync, rmSync } from 'node:fs';
 import { join } from 'node:path';
 import { Readable, pipeline } from 'node:stream';
+import { constants as bufferConstants } from 'node:buffer';
 import { createGzip, gunzipSync } from 'node:zlib';
 import { createHash, randomBytes } from 'node:crypto';
 import { isAudioFileName } from '../audio/audioStore';
@@ -14,6 +15,26 @@ const SUPPORTED_VERSIONS = new Set([1, 2]);
 // (`MAX_UPLOAD_BYTES`), and a rendered clip is far smaller, so this only stops a hostile or broken
 // archive from writing huge files. Export skips a larger file so the archive stays importable.
 export const MAX_BACKUP_AUDIO_BYTES = 50 * 1024 * 1024;
+
+// The whole decompressed envelope is at most this big, on export and on import (zip-bomb guard).
+// The JSON must become one JS string to be parsed, and V8 caps a string at about 512 MiB
+// (`buffer.constants.MAX_STRING_LENGTH`, 536,870,888 on Node 26), so a 1 GB ceiling could never be
+// reached: the cap is 1 GB or the string limit, whichever is lower. A real backup is far below it:
+// 200 clips of 0.5 MB are about 135 MB of base64, plus the database.
+export const MAX_BACKUP_JSON_BYTES = Math.min(1024 * 1024 * 1024, bufferConstants.MAX_STRING_LENGTH);
+// The uploaded (compressed) archive is never larger than what it inflates to, so the same ceiling
+// bounds the request body.
+export const MAX_BACKUP_ARCHIVE_BYTES = MAX_BACKUP_JSON_BYTES;
+
+export class InvalidBackupError extends Error {}
+// Too large to export or import; the routes answer 413.
+export class BackupTooLargeError extends InvalidBackupError {}
+
+export interface BackupSizeOptions {
+  maxJsonBytes?: number;
+}
+
+const base64Length = (bytes: number) => Math.ceil(bytes / 3) * 4;
 
 interface BackupEnvelope {
   version: number;
@@ -37,17 +58,13 @@ function listBackupAudio(audioDir: string | undefined): string[] {
 // The envelope as a sequence of chunks, built lazily: each audio file is read and base64-encoded only
 // when the gzip stream asks for more, so at most one encoded file is in memory at a time. Base64 and
 // the validated file names never need JSON escaping, so they are written between quotes as they are.
-function* envelopeChunks(dbBuf: Buffer, keyBuf: Buffer, audioDir: string | undefined, names: string[]): Generator<Buffer> {
-  const head = {
-    version: BACKUP_VERSION,
-    exportedAt: new Date().toISOString(),
-    dbHash: sha256(dbBuf),
-    key: keyBuf.toString('base64'),
-    keyHash: sha256(keyBuf),
-  };
-  yield Buffer.from(`${JSON.stringify(head).slice(0, -1)},"db":"`);
+// Once the envelope would pass `maxJsonBytes`, further clips are skipped with a warning, so the
+// archive always stays importable (the post-import sweep re-renders what's missing).
+function* envelopeChunks(head: string, dbBuf: Buffer, audioDir: string | undefined, names: string[], maxJsonBytes: number): Generator<Buffer> {
+  yield Buffer.from(head);
   yield Buffer.from(dbBuf.toString('base64'));
   yield Buffer.from('","audio":{');
+  let total = head.length + base64Length(dbBuf.length) + '","audio":{'.length + '}}'.length;
   let first = true;
   for (const name of names) {
     let buf: Buffer;
@@ -62,7 +79,14 @@ function* envelopeChunks(dbBuf: Buffer, keyBuf: Buffer, audioDir: string | undef
       console.warn(`Backup: skipping ${name}, larger than ${MAX_BACKUP_AUDIO_BYTES} bytes`);
       continue;
     }
-    yield Buffer.from(`${first ? '' : ','}"${name}":"`);
+    const entry = `${first ? '' : ','}"${name}":"`;
+    const entryBytes = entry.length + base64Length(buf.length) + 1;
+    if (total + entryBytes > maxJsonBytes) {
+      console.warn(`Backup: skipping ${name}, the backup would pass ${maxJsonBytes} bytes`);
+      continue;
+    }
+    total += entryBytes;
+    yield Buffer.from(entry);
     yield Buffer.from(buf.toString('base64'));
     yield Buffer.from('"');
     first = false;
@@ -72,26 +96,38 @@ function* envelopeChunks(dbBuf: Buffer, keyBuf: Buffer, audioDir: string | undef
 
 // Review Focus 5: the archive is streamed through gzip in one pass. The database and key are read
 // now (the caller has just checkpointed the WAL), the audio files as the stream is consumed.
-export function createBackupStream(dbPath: string, keyFilePath: string, audioDir?: string): Readable {
+// Throws BackupTooLargeError up front when the database alone would pass the size cap.
+export function createBackupStream(dbPath: string, keyFilePath: string, audioDir?: string, options: BackupSizeOptions = {}): Readable {
+  const maxJsonBytes = options.maxJsonBytes ?? MAX_BACKUP_JSON_BYTES;
   const dbBuf = readFileSync(dbPath);
   const keyBuf = readFileSync(keyFilePath);
+  const meta = {
+    version: BACKUP_VERSION,
+    exportedAt: new Date().toISOString(),
+    dbHash: sha256(dbBuf),
+    key: keyBuf.toString('base64'),
+    keyHash: sha256(keyBuf),
+  };
+  const head = `${JSON.stringify(meta).slice(0, -1)},"db":"`;
+  if (head.length + base64Length(dbBuf.length) + '","audio":{}}'.length > maxJsonBytes) {
+    throw new BackupTooLargeError('The database is too large to back up');
+  }
   const names = listBackupAudio(audioDir);
   const gzip = createGzip();
-  pipeline(Readable.from(envelopeChunks(dbBuf, keyBuf, audioDir, names)), gzip, () => {
-    // An error destroys `gzip` with it, which is what the consumer sees.
+  pipeline(Readable.from(envelopeChunks(head, dbBuf, audioDir, names, maxJsonBytes)), gzip, (err) => {
+    // An error destroys `gzip` with it, which aborts the download; log it, since the client can't see why.
+    if (err) console.error('Backup export failed:', err);
   });
   return gzip;
 }
 
-export async function exportBackup(dbPath: string, keyFilePath: string, audioDir?: string): Promise<Buffer> {
+export async function exportBackup(dbPath: string, keyFilePath: string, audioDir?: string, options: BackupSizeOptions = {}): Promise<Buffer> {
   const chunks: Buffer[] = [];
-  for await (const chunk of createBackupStream(dbPath, keyFilePath, audioDir)) chunks.push(chunk as Buffer);
+  for await (const chunk of createBackupStream(dbPath, keyFilePath, audioDir, options)) chunks.push(chunk as Buffer);
   return Buffer.concat(chunks);
 }
 
-export class InvalidBackupError extends Error {}
-
-export interface ImportBackupOptions {
+export interface ImportBackupOptions extends BackupSizeOptions {
   maxAudioBytes?: number;
 }
 
@@ -130,7 +166,7 @@ function writeAtomically(target: string, buf: Buffer): void {
   }
 }
 
-// I13: the envelope is still parsed whole; at a few hundred clips that is well within limits.
+// I13: the envelope is still parsed whole, bounded by MAX_BACKUP_JSON_BYTES.
 // Audio files already in `audioDir` that the backup doesn't list are kept: they are a cache keyed by
 // content hash, and the post-import sweep decides what the restored database still needs.
 export function importBackup(
@@ -140,9 +176,19 @@ export function importBackup(
   audioDir?: string,
   options: ImportBackupOptions = {}
 ): void {
+  let json: string;
+  try {
+    // Zip-bomb guard: inflation stops at the cap instead of filling memory.
+    json = gunzipSync(archive, { maxOutputLength: options.maxJsonBytes ?? MAX_BACKUP_JSON_BYTES }).toString('utf8');
+  } catch (err) {
+    if (err instanceof RangeError || (err as NodeJS.ErrnoException).code === 'ERR_BUFFER_TOO_LARGE') {
+      throw new BackupTooLargeError('Backup archive is too large');
+    }
+    throw new InvalidBackupError('Archive is not a valid backup file');
+  }
   let envelope: BackupEnvelope;
   try {
-    envelope = JSON.parse(gunzipSync(archive).toString('utf8'));
+    envelope = JSON.parse(json);
   } catch {
     throw new InvalidBackupError('Archive is not a valid backup file');
   }
@@ -163,6 +209,14 @@ export function importBackup(
   if (sha256(dbBuf) !== envelope.dbHash || sha256(keyBuf) !== envelope.keyHash) {
     throw new InvalidBackupError('Backup archive is corrupt (checksum mismatch)');
   }
+  // The audio goes first: the files are a cache keyed by content hash, so if a write fails (a full disk)
+  // the old database and key are still in place, and any clips already written are harmless.
+  const names = audioDir ? Object.keys(audio) : [];
+  if (names.length > 0) mkdirSync(audioDir!, { recursive: true });
+  for (const name of names) {
+    // Decoded one at a time, so only one restored clip is held besides the parsed envelope.
+    writeAtomically(join(audioDir!, name), Buffer.from(audio[name], 'base64'));
+  }
   writeFileSync(`${dbPath}.tmp`, dbBuf);
   renameSync(`${dbPath}.tmp`, dbPath);
   writeFileSync(`${keyFilePath}.tmp`, keyBuf, { mode: 0o600 });
@@ -171,13 +225,5 @@ export function importBackup(
   // the old file and would be replayed over the restored one on next open.
   for (const sidecar of [`${dbPath}-wal`, `${dbPath}-shm`]) {
     if (existsSync(sidecar)) unlinkSync(sidecar);
-  }
-  if (!audioDir) return;
-  const names = Object.keys(audio);
-  if (names.length === 0) return;
-  mkdirSync(audioDir, { recursive: true });
-  for (const name of names) {
-    // Decoded one at a time, so only one restored clip is held besides the parsed envelope.
-    writeAtomically(join(audioDir, name), Buffer.from(audio[name], 'base64'));
   }
 }

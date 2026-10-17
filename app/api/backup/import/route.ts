@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
-import { importBackup, InvalidBackupError } from '@/lib/services/backupService';
+import { BackupTooLargeError, importBackup, InvalidBackupError, MAX_BACKUP_ARCHIVE_BYTES } from '@/lib/services/backupService';
+import { declaresMoreThan, readCappedBody } from '@/lib/http/readCappedBody';
 import { getDb, getDbPath, closeDb } from '@/lib/db/client';
 import { defaultKeyFilePath } from '@/lib/crypto/keyfile';
 import { loadBundledSeeds } from '@/lib/services/bundledSeeds';
@@ -7,14 +8,19 @@ import { audioDir } from '@/lib/audio/audioStore';
 import { createAudioService } from '@/lib/services/audioService';
 import { createNotificationService } from '@/lib/services/notificationService';
 
+const TOO_LARGE = 'The backup file is too large';
+
+// No auth yet: Accounts adds it. The size caps keep an anonymous upload from exhausting memory.
 export async function POST(request: Request) {
-  const arrayBuffer = await request.arrayBuffer();
+  if (declaresMoreThan(request, MAX_BACKUP_ARCHIVE_BYTES)) return NextResponse.json({ error: TOO_LARGE }, { status: 413 });
+  const archive = await readCappedBody(request, MAX_BACKUP_ARCHIVE_BYTES);
+  if (archive === null) return NextResponse.json({ error: TOO_LARGE }, { status: 413 });
   // Close the DB *before* overwriting the file: an open WAL-mode connection
   // would otherwise replay its stale `-wal` frames over the restored database.
   // S2: the background worker resolves getDb() on every tick, so it picks up the reopened handle.
   closeDb();
   try {
-    importBackup(Buffer.from(arrayBuffer), getDbPath(), defaultKeyFilePath(), audioDir());
+    importBackup(archive, getDbPath(), defaultKeyFilePath(), audioDir());
     // A backup from before the bundled seeds existed (or one taken right after
     // a reset) can restore an empty curriculum/placement table; reload the
     // bundled seeds now instead of leaving that to the next server restart (I-1).
@@ -25,6 +31,9 @@ export async function POST(request: Request) {
     createAudioService(db, { notify: createNotificationService(db) }).sweep();
     return NextResponse.json({ ok: true });
   } catch (error) {
+    if (error instanceof BackupTooLargeError) {
+      return NextResponse.json({ error: error.message }, { status: 413 });
+    }
     if (error instanceof InvalidBackupError) {
       return NextResponse.json({ error: error.message }, { status: 400 });
     }

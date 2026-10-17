@@ -1,6 +1,6 @@
 import { Readable } from 'node:stream';
 import { NextResponse } from 'next/server';
-import { createBackupStream } from '@/lib/services/backupService';
+import { BackupTooLargeError, createBackupStream } from '@/lib/services/backupService';
 import { getDb, getDbPath } from '@/lib/db/client';
 import { defaultKeyFilePath } from '@/lib/crypto/keyfile';
 import { audioDir } from '@/lib/audio/audioStore';
@@ -14,7 +14,13 @@ export async function GET() {
   getDb().pragma('wal_checkpoint(TRUNCATE)');
   // Review Focus 5: the gzip stream goes straight to the response, so the archive (with every
   // audio file) is never held whole in memory.
-  const archive = createBackupStream(getDbPath(), defaultKeyFilePath(), audioDir());
+  let archive: Readable;
+  try {
+    archive = createBackupStream(getDbPath(), defaultKeyFilePath(), audioDir());
+  } catch (error) {
+    if (error instanceof BackupTooLargeError) return NextResponse.json({ error: error.message }, { status: 413 });
+    throw error;
+  }
   return new NextResponse(Readable.toWeb(archive) as ReadableStream<Uint8Array>, {
     headers: {
       'Content-Type': 'application/gzip',

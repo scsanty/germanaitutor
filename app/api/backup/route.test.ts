@@ -11,6 +11,7 @@ import { createProfileService } from '@/lib/services/profileService';
 import { POST as startPlacement } from '@/app/api/placement/start/route';
 import { GET as exportRoute } from './export/route';
 import { POST as importRoute } from './import/route';
+import { MAX_BACKUP_ARCHIVE_BYTES } from '@/lib/services/backupService';
 import { audioDir } from '@/lib/audio/audioStore';
 import { decrypt } from '@/lib/crypto/encrypt';
 import { readSmtpSettings, saveSmtpSettings } from '@/lib/services/mailService';
@@ -155,5 +156,18 @@ describe('/api/backup', () => {
     expect(loadOrCreateMasterKey().equals(otherKey)).toBe(false);
     const smtp = readSmtpSettings(getDb())!;
     expect(decrypt(smtp.passwordEncrypted, loadOrCreateMasterKey())).toBe('s3cret');
+  });
+
+  it('refuses an oversized body with 413 and leaves the data untouched', async () => {
+    createProfileService(getDb()).updateProfile({ displayName: 'kept' });
+    const declared = new Request('http://localhost/api/backup/import', {
+      method: 'POST',
+      body: new Uint8Array(4),
+      headers: { 'content-length': String(MAX_BACKUP_ARCHIVE_BYTES + 1) },
+    });
+    const res = await importRoute(declared);
+    expect(res.status).toBe(413);
+    expect((await res.json()).error).toBe('The backup file is too large');
+    expect(createProfileService(getDb()).getProfile().displayName).toBe('kept');
   });
 });

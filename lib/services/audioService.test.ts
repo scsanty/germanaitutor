@@ -220,6 +220,24 @@ describe('audioService', () => {
     expect(job(db, hash)?.status).toBe('uploaded');
   });
 
+  it('a render that finishes after a backup import closed its database never overwrites the restored file', async () => {
+    const db = createDbClient(':memory:');
+    let finish!: (b: Buffer) => void;
+    const provider = { ...fakeProvider(), render: vi.fn(() => new Promise<Buffer>((r) => (finish = r))) };
+    const service = createAudioService(db, { provider });
+    const hash = service.enqueue(T)!;
+    const tick = service.processPending();
+    await vi.waitFor(() => expect(provider.render).toHaveBeenCalled());
+    // The import closes the handle and restores the uploaded recording for this hash.
+    db.close();
+    writeAudio(hash, Buffer.from('restored-upload'));
+    finish(Buffer.from('OggS-late'));
+    await tick.catch(() => {}); // the closed handle throws; the worker's tick catches it (S2)
+    expect(readdirSync(audioDir())).toEqual([`${hash}.ogg`]);
+    const { readFileSync } = await import('node:fs');
+    expect(readFileSync(audioPath(hash), 'utf8')).toBe('restored-upload');
+  });
+
   it('shares one render between the worker and an on-demand request (S15)', async () => {
     const db = createDbClient(':memory:');
     let finish!: (b: Buffer) => void;

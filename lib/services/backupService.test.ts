@@ -5,7 +5,7 @@ import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { createHash, randomBytes } from 'node:crypto';
 import { gzipSync, gunzipSync } from 'node:zlib';
-import { exportBackup, importBackup, InvalidBackupError } from './backupService';
+import { BackupTooLargeError, exportBackup, importBackup, InvalidBackupError, MAX_BACKUP_JSON_BYTES } from './backupService';
 
 const HASH_A = 'a'.repeat(64);
 const HASH_B = '0123456789abcdef'.repeat(4);
@@ -218,5 +218,55 @@ describe('backupService', () => {
 
     const { restoredDb, restoredKey } = restoreTarget();
     expect(() => importBackup(regzip(envelope), restoredDb, restoredKey)).toThrow(InvalidBackupError);
+  });
+
+  it('caps the decompressed size: a small gzip that inflates past the cap is refused (zip bomb)', () => {
+    const bomb = gzipSync(Buffer.alloc(10 * 1024 * 1024)); // ~10 KB that inflates to 10 MB
+    expect(bomb.length).toBeLessThan(64 * 1024);
+    const { restoredDb, restoredKey, restoredAudio } = restoreTarget();
+    expect(() => importBackup(bomb, restoredDb, restoredKey, restoredAudio, { maxJsonBytes: 1024 * 1024 })).toThrow(
+      new BackupTooLargeError('Backup archive is too large')
+    );
+    expect(existsSync(restoredDb)).toBe(false);
+    // A BackupTooLargeError is an InvalidBackupError, so older callers still treat it as a bad file.
+    expect(() => importBackup(bomb, restoredDb, restoredKey, restoredAudio, { maxJsonBytes: 1024 * 1024 })).toThrow(InvalidBackupError);
+  });
+
+  it('uses a ceiling that fits a real backup and a JS string', () => {
+    expect(MAX_BACKUP_JSON_BYTES).toBeGreaterThan(400 * 1024 * 1024);
+    expect(MAX_BACKUP_JSON_BYTES).toBeLessThanOrEqual(1024 * 1024 * 1024);
+  });
+
+  it('keeps an export under the cap by skipping clips, so it always imports', async () => {
+    const { dbPath, keyPath, audioDir } = setupFiles();
+    mkdirSync(audioDir);
+    writeFileSync(join(audioDir, `${HASH_A}.ogg`), randomBytes(3000));
+    writeFileSync(join(audioDir, `${HASH_B}.ogg`), randomBytes(3000));
+    const cap = 6000; // room for the head and one clip (4000 base64 chars), not two
+    const archive = await exportBackup(dbPath, keyPath, audioDir, { maxJsonBytes: cap });
+    expect(gunzipSync(archive).length).toBeLessThanOrEqual(cap);
+    expect(Object.keys(envelopeOf(archive).audio as object)).toHaveLength(1);
+    const { restoredDb, restoredKey, restoredAudio } = restoreTarget();
+    importBackup(archive, restoredDb, restoredKey, restoredAudio, { maxJsonBytes: cap });
+    expect(readdirSync(restoredAudio)).toHaveLength(1);
+  });
+
+  it('refuses to export a database that alone passes the cap', async () => {
+    const { dbPath, keyPath } = setupFiles();
+    await expect(exportBackup(dbPath, keyPath, undefined, { maxJsonBytes: 100 })).rejects.toThrow(BackupTooLargeError);
+  });
+
+  it('writes the audio before the database and key, so a failed audio write leaves them untouched', async () => {
+    const { dbPath, keyPath, audioDir } = setupFiles();
+    mkdirSync(audioDir);
+    writeFileSync(join(audioDir, `${HASH_A}.ogg`), 'clip');
+    const archive = await exportBackup(dbPath, keyPath, audioDir);
+    const { restoredDb, restoredKey, restoredAudio } = restoreTarget();
+    writeFileSync(restoredDb, 'old-db');
+    writeFileSync(restoredKey, 'old-key');
+    writeFileSync(restoredAudio, 'a file where the audio folder should be'); // mkdir fails
+    expect(() => importBackup(archive, restoredDb, restoredKey, restoredAudio)).toThrow();
+    expect(readFileSync(restoredDb, 'utf8')).toBe('old-db');
+    expect(readFileSync(restoredKey, 'utf8')).toBe('old-key');
   });
 });
