@@ -1372,125 +1372,258 @@
       }
     },
     {
-      "id": "a2-goethe-listening-teil1-everyday-dialogues__ex0",
+      "id": "a2-goethe-listening-teil1-everyday-dialogues__ex3",
       "lessonId": "a2-goethe-listening-teil1-everyday-dialogues",
       "track": "goethe",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Hörtext (2x): 'Entschuldigung, wie viel kostet dieses T-Shirt?' - 'Es war ursprünglich 30 Euro, aber heute ist es um 50 Prozent reduziert, also 15 Euro.' - Wie viel kostet das T-Shirt?",
-        "options": [
-          "30 Euro",
-          "15 Euro",
-          "50 Euro"
-        ],
-        "correctIndex": 1
+        "instruction": {
+          "en": "Listen to the conversation. Which answer (a, b or c) is right?",
+          "de": "Sie hören ein Gespräch. Welche Lösung (a, b oder c) ist richtig?"
+        },
+        "transcript": "@filter none\n[Kundin f] Entschuldigung, wie viel kostet dieses T-Shirt? Auf dem Schild steht dreißig Euro.\n[Verkäufer m] Das ist der alte Preis. Diese Woche ist alles um die Hälfte reduziert.\n[Kundin f] Ach so, dann kostet es nur fünfzehn Euro?\n[Verkäufer m] Genau. Und die Hosen dort hinten sind auch im Angebot.\n[Kundin f] Nein danke, ich nehme nur das T-Shirt. Aber lieber in Blau, nicht in Weiß.",
+        "questions": [
+          {
+            "question": "Wie viel kostet das T-Shirt jetzt?",
+            "options": [
+              "30 Euro",
+              "15 Euro",
+              "50 Euro"
+            ],
+            "correctIndex": 1,
+            "evidence": "dann kostet es nur fünfzehn Euro"
+          },
+          {
+            "question": "Was kauft die Frau?",
+            "options": [
+              "Ein weißes T-Shirt",
+              "Eine Hose",
+              "Ein blaues T-Shirt"
+            ],
+            "correctIndex": 2,
+            "evidence": "Aber lieber in Blau"
+          }
+        ]
       }
     },
     {
-      "id": "a2-goethe-listening-teil1-everyday-dialogues__ex1",
+      "id": "a2-goethe-listening-teil1-everyday-dialogues__ex4",
       "lessonId": "a2-goethe-listening-teil1-everyday-dialogues",
       "track": "goethe",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Hörtext (2x): 'Kommen Sie mit dem Auto zum Vorstellungsgespräch?' - 'Nein, es gibt dort keine Parkplätze. Ich nehme lieber die U-Bahn.' - Wie fährt der Mann zum Gespräch?",
-        "options": [
-          "Mit dem Auto",
-          "Mit dem Bus",
-          "Mit der U-Bahn"
-        ],
-        "correctIndex": 2
+        "instruction": {
+          "en": "Listen to the conversation. Which answer (a, b or c) is right?",
+          "de": "Sie hören ein Gespräch. Welche Lösung (a, b oder c) ist richtig?"
+        },
+        "transcript": "@filter none\n[Anna f] Morgen ist doch dein Vorstellungsgespräch, oder? Fährst du mit dem Auto hin?\n[Paul m] Nein, in der Innenstadt gibt es fast keine Parkplätze. Und der Bus braucht zu lange.\n[Anna f] Und mit dem Fahrrad?\n[Paul m] Im Anzug? Lieber nicht. Ich nehme die U-Bahn, die fährt alle fünf Minuten.\n[Anna f] Gute Idee. Um wie viel Uhr musst du denn da sein?\n[Paul m] Um zehn. Ich fahre schon um neun los, dann bin ich sicher pünktlich.",
+        "questions": [
+          {
+            "question": "Wie fährt Paul zum Vorstellungsgespräch?",
+            "options": [
+              "Mit der U-Bahn",
+              "Mit dem Bus",
+              "Mit dem Auto"
+            ],
+            "correctIndex": 0,
+            "evidence": "Ich nehme die U-Bahn"
+          },
+          {
+            "question": "Wann beginnt das Vorstellungsgespräch?",
+            "options": [
+              "Um neun Uhr",
+              "Um zehn Uhr",
+              "Um fünf Uhr"
+            ],
+            "correctIndex": 1,
+            "evidence": "Um zehn."
+          }
+        ]
       }
     },
     {
-      "id": "a2-goethe-listening-teil1-everyday-dialogues__ex2",
+      "id": "a2-goethe-listening-teil1-everyday-dialogues__ex5",
       "lessonId": "a2-goethe-listening-teil1-everyday-dialogues",
       "track": "goethe",
-      "type": "fill_blank",
+      "type": "audio_questions",
       "content": {
-        "textWithBlank": "Hörtext: 'Der Zug fährt heute nicht von Gleis 3, sondern von Gleis ___ ab.' (spoken: sieben)",
-        "correctAnswer": "7"
+        "instruction": {
+          "en": "Listen to the conversation. Which answer (a, b or c) is right?",
+          "de": "Sie hören ein Gespräch. Welche Lösung (a, b oder c) ist richtig?"
+        },
+        "transcript": "@filter none\n[Reisender m] Entschuldigung, fährt der Zug nach Hamburg von Gleis drei?\n[Mitarbeiterin f] Normalerweise schon, aber heute nicht. Gleis drei ist gesperrt. Der Zug fährt heute von Gleis sieben ab.\n[Reisender m] Und fährt er pünktlich?\n[Mitarbeiterin f] Nein, leider hat er heute zehn Minuten Verspätung.",
+        "questions": [
+          {
+            "question": "Von welchem Gleis fährt der Zug nach Hamburg heute?",
+            "options": [
+              "Von Gleis 3",
+              "Von Gleis 10",
+              "Von Gleis 7"
+            ],
+            "correctIndex": 2,
+            "evidence": "von Gleis sieben ab"
+          },
+          {
+            "question": "Was ist heute mit dem Zug nach Hamburg?",
+            "options": [
+              "Er kommt später.",
+              "Er fährt pünktlich.",
+              "Er fällt aus."
+            ],
+            "correctIndex": 0,
+            "evidence": "zehn Minuten Verspätung"
+          }
+        ]
       }
     },
     {
-      "id": "a2-goethe-listening-teil2-guided-monologues__ex0",
+      "id": "a2-goethe-listening-teil2-guided-monologues__ex3",
       "lessonId": "a2-goethe-listening-teil2-guided-monologues",
       "track": "goethe",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Führung: 'Im Erdgeschoss finden Sie die antiken Skulpturen, im ersten Stock unsere Gemäldegalerie und im zweiten Stock das Museumscafé.' - Wo befindet sich das Café?",
-        "options": [
-          "Im Erdgeschoss",
-          "Im 1. Stock",
-          "Im 2. Stock"
-        ],
-        "correctIndex": 2
+        "instruction": {
+          "en": "Listen to the guided tour. Choose the right answer: a, b or c.",
+          "de": "Sie hören eine Führung. Welche Lösung (a, b oder c) ist richtig?"
+        },
+        "transcript": "@filter none\n[Frau Becker f] Herzlich willkommen im Stadtmuseum! Mein Name ist Becker, und ich mache heute die Führung mit Ihnen.\n[Frau Becker f] Unsere Führung dauert insgesamt zwei Stunden. Nach einer Stunde machen wir eine kurze Pause.\n[Frau Becker f] Wir beginnen hier im Erdgeschoss. Hier sehen Sie alte Skulpturen aus der Römerzeit.\n[Frau Becker f] Im ersten Stock ist unsere Galerie. Dort hängen Bilder aus dem neunzehnten Jahrhundert.\n[Frau Becker f] Ganz oben, im zweiten Stock, finden Sie das Museumscafé. Dort machen wir auch unsere Pause.\n[Frau Becker f] Noch eine Bitte: In der Galerie dürfen Sie leider nicht fotografieren. In den anderen Räumen ist das kein Problem.",
+        "questions": [
+          {
+            "question": "Wie lange dauert die Führung?",
+            "options": [
+              "Zwei Stunden",
+              "Eine Stunde",
+              "Drei Stunden"
+            ],
+            "correctIndex": 0,
+            "evidence": "dauert insgesamt zwei Stunden"
+          },
+          {
+            "question": "Was gibt es im ersten Stock?",
+            "options": [
+              "Skulpturen",
+              "Bilder",
+              "Ein Café"
+            ],
+            "correctIndex": 1,
+            "evidence": "Dort hängen Bilder"
+          },
+          {
+            "question": "Wo ist das Café?",
+            "options": [
+              "Im Erdgeschoss",
+              "Im ersten Stock",
+              "Im zweiten Stock"
+            ],
+            "correctIndex": 2,
+            "evidence": "im zweiten Stock, finden Sie das Museumscafé"
+          },
+          {
+            "question": "Wo darf man keine Fotos machen?",
+            "options": [
+              "In der Galerie",
+              "Im Erdgeschoss",
+              "Im Café"
+            ],
+            "correctIndex": 0,
+            "evidence": "In der Galerie dürfen Sie leider nicht fotografieren"
+          }
+        ]
       }
     },
     {
-      "id": "a2-goethe-listening-teil2-guided-monologues__ex1",
+      "id": "a2-goethe-listening-teil2-guided-monologues__ex4",
       "lessonId": "a2-goethe-listening-teil2-guided-monologues",
       "track": "goethe",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Durchsage im Tierpark: 'Die Fütterung der Pinguine beginnt um 14:00 Uhr, die Elefanten werden um 15:30 Uhr gefüttert.' - Wann werden die Pinguine gefüttert?",
-        "options": [
-          "Um 14:00 Uhr",
-          "Um 15:00 Uhr",
-          "Um 15:30 Uhr"
-        ],
-        "correctIndex": 0
+        "instruction": {
+          "en": "Listen to the zookeeper. Choose the right answer: a, b or c.",
+          "de": "Sie hören einen Tierpfleger im Tierpark. Welche Lösung (a, b oder c) ist richtig?"
+        },
+        "transcript": "@filter none\n[Tierpfleger m] Hallo und willkommen im Tierpark! Ich heiße Max und arbeite hier als Tierpfleger.\n[Tierpfleger m] Heute gibt es zwei Fütterungen. Um vierzehn Uhr bekommen die Pinguine ihren Fisch.\n[Tierpfleger m] Die Elefanten füttern wir erst um halb vier. Dabei dürfen Kinder auch helfen.\n[Tierpfleger m] Und noch eine Bitte: Geben Sie den Tieren kein Brot, das macht sie krank.",
+        "questions": [
+          {
+            "question": "Wann bekommen die Pinguine ihr Essen?",
+            "options": [
+              "Um 15:00 Uhr",
+              "Um 14:00 Uhr",
+              "Um 15:30 Uhr"
+            ],
+            "correctIndex": 1,
+            "evidence": "Um vierzehn Uhr bekommen die Pinguine"
+          },
+          {
+            "question": "Bei welchen Tieren dürfen Kinder helfen?",
+            "options": [
+              "Bei den Pinguinen",
+              "Bei den Affen",
+              "Bei den Elefanten"
+            ],
+            "correctIndex": 2,
+            "evidence": "Dabei dürfen Kinder auch helfen"
+          }
+        ]
       }
     },
     {
-      "id": "a2-goethe-listening-teil2-guided-monologues__ex2",
-      "lessonId": "a2-goethe-listening-teil2-guided-monologues",
-      "track": "goethe",
-      "type": "fill_blank",
-      "content": {
-        "textWithBlank": "Führung: 'Die Stadtführung dauert insgesamt ___ Stunden.' (spoken: zwei)",
-        "correctAnswer": "2"
-      }
-    },
-    {
-      "id": "a2-goethe-listening-teil4-radio-interview__ex0",
+      "id": "a2-goethe-listening-teil4-radio-interview__ex3",
       "lessonId": "a2-goethe-listening-teil4-radio-interview",
       "track": "goethe",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Interview (2x): 'Journalist: Frau Jansen, arbeiten Sie gerne im Homeoffice? - Frau Jansen: Am Anfang fand ich es schwierig, aber mittlerweile schätze ich die Ruhe und spare zwei Stunden Fahrtzeit jeden Tag.' - Aussage: Frau Jansen findet die Arbeit von zu Hause positiv.",
-        "options": [
-          "Ja / Richtig",
-          "Nein / Falsch"
-        ],
-        "correctIndex": 0
-      }
-    },
-    {
-      "id": "a2-goethe-listening-teil4-radio-interview__ex1",
-      "lessonId": "a2-goethe-listening-teil4-radio-interview",
-      "track": "goethe",
-      "type": "multiple_choice",
-      "content": {
-        "question": "Interview (2x): 'Sprecher: Ich habe früher Fußball im Verein gespielt, aber wegen einer Knieverletzung fahre ich heute nur noch Rennrad.' - Aussage: Der Sprecher spielt heute noch aktiv Fußball im Verein.",
-        "options": [
-          "Ja / Richtig",
-          "Nein / Falsch"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "a2-goethe-listening-teil4-radio-interview__ex2",
-      "lessonId": "a2-goethe-listening-teil4-radio-interview",
-      "track": "goethe",
-      "type": "multiple_choice",
-      "content": {
-        "question": "Interview (2x): 'Sprecherin: Ich bin vor drei Jahren von der Großstadt aufs Land gezogen und habe diesen Schritt nie bereut.' - Aussage: Die Sprecherin möchte wieder zurück in die Großstadt ziehen.",
-        "options": [
-          "Ja / Richtig",
-          "Nein / Falsch"
-        ],
-        "correctIndex": 1
+        "instruction": {
+          "en": "Listen to the radio interview. Decide for each statement: yes (Ja) or no (Nein)?",
+          "de": "Sie hören ein Interview im Radio. Entscheiden Sie: Ja oder Nein?"
+        },
+        "transcript": "@filter radio\n[Moderator m] Herzlich willkommen bei Radio Mitte! Heute ist Frau Jansen bei uns im Studio. Frau Jansen, Sie arbeiten seit einem Jahr im Homeoffice. Arbeiten Sie gern zu Hause?\n[Frau Jansen f] Am Anfang fand ich es schwierig, ich war oft allein. Aber jetzt finde ich es toll. Es ist ruhig, und ich spare jeden Tag zwei Stunden Fahrzeit.\n[Moderator m] Und was machen Sie mit der Zeit?\n[Frau Jansen f] Ich mache mehr Sport. Früher habe ich im Verein Fußball gespielt, aber nach einer Knieverletzung ging das nicht mehr. Heute fahre ich Rennrad, fast jeden Morgen vor der Arbeit.\n[Moderator m] Sie wohnen auch nicht mehr in der Stadt, oder?\n[Frau Jansen f] Stimmt. Vor drei Jahren bin ich von Köln in ein kleines Dorf gezogen. Das war eine gute Entscheidung. Wieder in einer Großstadt wohnen? Nein, das möchte ich nicht.\n[Moderator m] Vermissen Sie denn gar nichts?\n[Frau Jansen f] Doch, manchmal das Kino. Aber meine Freunde besuchen mich oft am Wochenende.",
+        "questions": [
+          {
+            "question": "Frau Jansen hat von Anfang an gern zu Hause gearbeitet.",
+            "options": [
+              "Ja",
+              "Nein"
+            ],
+            "correctIndex": 1,
+            "evidence": "Am Anfang fand ich es schwierig"
+          },
+          {
+            "question": "Frau Jansen nutzt die freie Zeit für Sport.",
+            "options": [
+              "Ja",
+              "Nein"
+            ],
+            "correctIndex": 0,
+            "evidence": "Ich mache mehr Sport."
+          },
+          {
+            "question": "Frau Jansen spielt heute noch im Verein Fußball.",
+            "options": [
+              "Ja",
+              "Nein"
+            ],
+            "correctIndex": 1,
+            "evidence": "nach einer Knieverletzung ging das nicht mehr"
+          },
+          {
+            "question": "Frau Jansen möchte zurück in eine große Stadt ziehen.",
+            "options": [
+              "Ja",
+              "Nein"
+            ],
+            "correctIndex": 1,
+            "evidence": "Nein, das möchte ich nicht"
+          },
+          {
+            "question": "Frau Jansen bekommt am Wochenende oft Besuch.",
+            "options": [
+              "Ja",
+              "Nein"
+            ],
+            "correctIndex": 0,
+            "evidence": "meine Freunde besuchen mich oft am Wochenende"
+          }
+        ]
       }
     },
     {
