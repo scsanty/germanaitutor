@@ -324,3 +324,37 @@ describe('testOutService listening', () => {
     }
   });
 });
+
+// Listening items reveal their transcript and evidence in the finished result only.
+describe('testOutService listening reveal', () => {
+  it('adds the reveal to a listening item in the result, and to no other item', async () => {
+    const hash = await listeningHash();
+    let checked = false;
+    for (const r of [0, 0.2, 0.4, 0.6, 0.8, 0.99]) {
+      const { db } = setup();
+      addListeningExercise(db, 'a1-late2__ex3', 'a1-late2');
+      const service = createTestOutService(db, { random: () => r, aiAvailable: () => false, audioCached: (h) => h === hash });
+      const run = service.start('g-a1-m2');
+      if (!run.questions.some((q) => q.id === 'a1-late2__ex3')) continue;
+      let last: Awaited<ReturnType<typeof service.answer>> | null = null;
+      for (const q of run.questions) {
+        const given: LessonAnswer = q.id === 'a1-late2__ex3' ? { type: 'audio_questions', selected: [1] } : right(db, q.id);
+        last = await service.answer('g-a1-m2', q.id, given);
+      }
+      expect(last?.finished).toBe(true);
+      if (!last?.finished) return;
+      const listening = last.result.review.find((i) => i.exercise.id === 'a1-late2__ex3');
+      expect(listening?.reveal).toEqual({
+        transcript: expect.objectContaining({ lines: expect.arrayContaining([expect.objectContaining({ label: 'Anna', text: 'Nein, mit dem Bus.' })]) }),
+        evidence: ['Nein, mit dem Bus.'],
+        evidenceLines: [2],
+      });
+      expect(last.result.review.filter((i) => i.reveal)).toHaveLength(1);
+      // The stored result read back after a reload carries it too.
+      expect(service.state('g-a1-m2').lastResult?.review.find((i) => i.exercise.id === 'a1-late2__ex3')?.reveal).toBeDefined();
+      checked = true;
+      break;
+    }
+    expect(checked).toBe(true);
+  });
+});

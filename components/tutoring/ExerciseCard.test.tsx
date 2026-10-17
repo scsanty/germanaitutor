@@ -334,4 +334,29 @@ describe('ExerciseCard', () => {
     expect(screen.getByRole('radiogroup', { name: '1. Wo wohnt Anna?' })).toBeInTheDocument();
     expect(screen.getByText('Right')).toBeInTheDocument();
   });
+  it('plays a listening task and reveals the transcript with its evidence only after Check', async () => {
+    const AQ: ExerciseView = {
+      id: 'a1',
+      type: 'audio_questions',
+      audio: { hash: 'c'.repeat(64), available: true },
+      questions: [{ question: 'Wann kommt Anna?', options: ['um acht', 'um neun'] }],
+    };
+    const reveal = {
+      transcript: { filter: 'none', lines: [{ label: 'Anna', gender: 'f', text: 'Ich komme um acht Uhr.', voice: 'kerstin' }] },
+      evidence: ['um acht Uhr'],
+      evidenceLines: [0],
+    };
+    stubAttempts(() => delayedResponse(outcome({ result: 'correct', correctAnswer: 'um acht', itemResults: [true], reveal })));
+    renderCard(AQ);
+    // Lesson mode: unlimited plays, −5 s and 0.75×; no transcript before answering.
+    expect(document.querySelector('audio')).toHaveAttribute('src', `/api/audio/${'c'.repeat(64)}`);
+    expect(screen.getByRole('button', { name: 'Back 5 seconds' })).toBeInTheDocument();
+    expect(screen.queryByText('Transcript')).toBeNull();
+    expect(screen.queryByText(/Ich komme/)).toBeNull();
+    fireEvent.click(screen.getByLabelText('um acht'));
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }));
+    expect(await screen.findByRole('heading', { name: 'Transcript' })).toBeInTheDocument();
+    expect(document.querySelector('mark')).toHaveTextContent('um acht Uhr');
+    expect(screen.getByText('Anna:')).toBeInTheDocument();
+  });
 });

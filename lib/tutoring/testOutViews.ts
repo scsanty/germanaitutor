@@ -1,5 +1,6 @@
 import type { ExerciseView } from './exerciseView';
 import type { GradeResult } from './grading';
+import type { AudioReveal } from '../tasks/audioQuestions';
 
 export type TestOutStatus =
   | { status: 'none' }
@@ -13,6 +14,8 @@ export interface TestOutReviewItem {
   answerText: string;
   result: GradeResult;
   correctAnswer: string | null;
+  // Listening items: the transcript and per-question evidence, in the finished result only.
+  reveal?: AudioReveal;
 }
 
 export interface TestOutResult {

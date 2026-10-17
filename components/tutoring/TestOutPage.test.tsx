@@ -158,4 +158,21 @@ describe('TestOutPage', () => {
     renderWithIntl(<TestOutPage milestoneId="m2" />);
     expect(await screen.findByText('Pick the right verb')).toBeInTheDocument();
   });
+
+  it("shows a listening item's transcript with its evidence in the review", async () => {
+    const q = { id: 'q4', type: 'audio_questions', audio: { hash: 'e'.repeat(64), available: true }, questions: [{ question: 'Wie?', options: ['Zug', 'Bus'] }] };
+    const reveal = {
+      transcript: { filter: 'none', lines: [{ label: 'Anna', gender: 'f', text: 'Nein, mit dem Bus.', voice: 'kerstin' }] },
+      evidence: ['mit dem Bus'],
+      evidenceLines: [0],
+    };
+    stub({
+      [`GET ${BASE}`]: [
+        () => delayedResponse(STATE({ status: 'none' }, { passed: true, score: 1, maxScore: 1, review: [{ exercise: q, answerText: 'Bus', result: 'correct', correctAnswer: 'Bus', reveal }] })),
+      ],
+    });
+    const { container } = renderWithIntl(<TestOutPage milestoneId="m2" />);
+    expect(await screen.findByRole('heading', { name: 'Transcript' })).toBeInTheDocument();
+    expect(container.querySelector('mark')).toHaveTextContent('mit dem Bus');
+  });
 });

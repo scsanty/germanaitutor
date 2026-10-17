@@ -10,6 +10,8 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { differsByLanguage, pickText, type ContentLanguage } from '@/lib/i18n/localizedText';
 import type { ItemReview, PracticeResult, PracticeRun } from '@/lib/exam/practiceViews';
+import { TranscriptReveal } from '@/components/audio/TranscriptReveal';
+import type { AudioQuestionsView } from '@/lib/tasks/audioQuestions';
 import type { MatchingView } from '@/lib/tasks/matching';
 import type { PassageQuestionsView } from '@/lib/tasks/passageQuestions';
 import { cn } from '@/lib/utils';
@@ -22,6 +24,7 @@ export const percentOf = (score: number, max: number) => (max > 0 ? Math.round((
 function itemLabel(run: PracticeRun, index: number, gapLabel: (n: number) => string): string {
   const view = run.set.view;
   if (run.part.taskType === 'passage_questions') return (view as PassageQuestionsView).questions[index]?.question ?? '';
+  if (run.part.taskType === 'audio_questions') return (view as AudioQuestionsView).questions[index]?.question ?? '';
   if (run.part.taskType === 'matching') return (view as MatchingView).items[index] ?? '';
   return gapLabel(index + 1);
 }
@@ -121,6 +124,8 @@ export function TeilReview({ result, run }: { result: PracticeResult; run: Pract
         </div>
         {toggle && <LanguageToggle value={language} onChange={setLanguage} label={t('explanationLanguage')} />}
       </div>
+      {/* Listening: the transcript only now, after submit, with each item's evidence highlighted. */}
+      {result.reveal && <TranscriptReveal transcript={result.reveal.transcript} evidence={result.reveal.evidence} evidenceLines={result.reveal.evidenceLines} />}
       <ol className="flex flex-col gap-3">
         {result.review.map((item: ItemReview) => (
           <li

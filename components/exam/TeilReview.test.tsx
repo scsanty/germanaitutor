@@ -101,4 +101,30 @@ describe('TaskInputs', () => {
     expect(onAnswer).toHaveBeenLastCalledWith({ type: 'cloze', values: ['trinke', 1, 0] });
     expect(screen.getByText('Words to use')).toBeInTheDocument();
   });
+
+  it("reveals a listening part's transcript with the evidence, and names each item by its question", () => {
+    const run = {
+      ...RUN,
+      part: { ...RUN.part, id: 'hoeren-1', skill: 'listening', title: { en: 'Listening Part 1', de: 'Hörverstehen Teil 1' }, taskType: 'audio_questions', replays: 2 },
+      set: { id: 's2', view: { audio: { hash: 'f'.repeat(64), available: true }, questions: [{ question: 'Wie fährt Anna?', options: ['Zug', 'Bus'] }] } },
+    };
+    const result = {
+      attemptId: 7, score: 5, maxScore: 5, overtimeSeconds: 0,
+      review: [{ index: 0, answerText: 'Bus', right: true, correct: 'Bus', explanation: { en: '', de: '' } }],
+      reveal: {
+      transcript: { filter: 'none', lines: [{ label: 'Anna', gender: 'f', text: 'Nein, mit dem Bus.', voice: 'kerstin' }] },
+      evidence: ['mit dem Bus'],
+      evidenceLines: [0],
+    },
+    };
+    const { container } = renderWithIntl(<TeilReview result={result as never} run={run as never} />);
+    expect(screen.getByText('1. Wie fährt Anna?')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Transcript' })).toBeInTheDocument();
+    expect(container.querySelector('mark')).toHaveTextContent('mit dem Bus');
+  });
+
+  it('starts a listening task with every question unanswered', () => {
+    const view = { audio: { hash: 'f'.repeat(64), available: false }, questions: [{ question: 'A?', options: ['x', 'y'] }, { question: 'B?', options: ['x', 'y'] }] };
+    expect(emptyAnswer('audio_questions', view as TaskView)).toEqual({ type: 'audio_questions', selected: [null, null] });
+  });
 });

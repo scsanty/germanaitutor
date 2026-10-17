@@ -8,7 +8,7 @@ import { useApiErrorText } from '@/components/useApiErrorText';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import type { PracticeResult, PracticeRun } from '@/lib/exam/practiceViews';
-import type { TaskAnswer } from '@/lib/tasks/taskTypes';
+import type { SetTaskType, TaskAnswer } from '@/lib/tasks/taskTypes';
 import { cn } from '@/lib/utils';
 import { answeredCount, emptyAnswer, TaskInputs } from './TaskInputs';
 import { formatClock, useCountdown } from './useCountdown';
@@ -34,15 +34,19 @@ export function TeilRunner({
 }) {
   const t = useTranslations('exam');
   const errorText = useApiErrorText();
-  const type = run.part.taskType as 'passage_questions' | 'matching' | 'cloze';
+  // Only the Teil task types reach the runner (RUNTIME_TASK_TYPES).
+  const type = run.part.taskType as SetTaskType;
   const [answer, setAnswer] = useState<TaskAnswer>(() => emptyAnswer(type, run.set.view));
   const [tab, setTab] = useState<Tab>('text');
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const submitting = useRef(false);
   const { secondsLeft, overtime } = useCountdown(run.startedAt, run.minutes, clockOffsetMs);
-  // A cloze is one flowing text with its gaps, so it isn't split into columns.
-  const split = type !== 'cloze';
+  // A cloze is one flowing text with its gaps, so it isn't split into columns. A listening task keeps
+  // its player above the questions, so the student needn't switch panes while listening.
+  const split = type !== 'cloze' && type !== 'audio_questions';
+  // Spec: Replay rules. The part's replays, no seeking, counted on the client for this attempt.
+  const audio = { mode: 'exam' as const, replays: run.part.replays, playsKey: `audio-plays:${run.attemptId}` };
 
   async function submit() {
     // S20: a double click submits once.
@@ -97,7 +101,7 @@ export function TeilRunner({
     </p>
   );
   const inputs = (pane: 'text' | 'tasks' | 'all') => (
-    <TaskInputs type={type} view={run.set.view} value={answer} onChange={setAnswer} disabled={busy} pane={pane} />
+    <TaskInputs type={type} view={run.set.view} value={answer} onChange={setAnswer} disabled={busy} pane={pane} audio={audio} />
   );
   // Desktop: both columns scroll on their own; phone: one pane at a time, switched by the bottom tabs.
   // The wide FocusLayout is one viewport tall on desktop; the grid takes what the header and footer leave.

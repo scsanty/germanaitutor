@@ -7,6 +7,8 @@ import type { ExerciseView } from '@/lib/tutoring/exerciseView';
 import { taskAnswerText, type AttemptOutcome, type AttemptSource, type FlashcardRating, type LessonAnswer, type TaskAnswerSource } from '@/lib/tutoring/lessonAnswers';
 import type { SetTaskType, TaskAnswer, TaskView } from '@/lib/tasks/taskTypes';
 import { answeredCount, emptyAnswer, TaskInputs } from '@/components/exam/TaskInputs';
+import { TranscriptReveal } from '@/components/audio/TranscriptReveal';
+import type { AudioReveal } from '@/lib/tasks/audioQuestions';
 import type { GradeResult } from '@/lib/tutoring/grading';
 import type { PracticeGradeOutcome } from '@/lib/tutoring/practiceViews';
 import type { TestOutAnswerOutcome } from '@/lib/tutoring/testOutViews';
@@ -61,6 +63,8 @@ interface Shown {
   answerText: string;
   // S17: per question, text or gap, for the reading task types.
   itemResults?: boolean[];
+  // Listening: the transcript and evidence, shown only now that the student has answered.
+  reveal?: AudioReveal;
 }
 
 type TaskExercise = Extract<ExerciseView, { type: SetTaskType }>;
@@ -198,11 +202,18 @@ export function ExerciseCard({
         playSound(graded === 'wrong' ? 'wrong' : 'correct');
         if (practice) {
           const outcome = data as PracticeGradeOutcome;
-          setShown({ result: outcome.result, correctAnswer: outcome.correctAnswer, feedback: null, answerText, itemResults: outcome.itemResults });
+          setShown({ result: outcome.result, correctAnswer: outcome.correctAnswer, feedback: null, answerText, itemResults: outcome.itemResults, reveal: outcome.reveal });
           onPracticeAnswered?.(outcome);
         } else {
           const outcome = data as AttemptOutcome;
-          setShown({ result: outcome.result, correctAnswer: outcome.correctAnswer, feedback: outcome.feedback, answerText, itemResults: outcome.itemResults });
+          setShown({
+            result: outcome.result,
+            correctAnswer: outcome.correctAnswer,
+            feedback: outcome.feedback,
+            answerText,
+            itemResults: outcome.itemResults,
+            reveal: outcome.reveal,
+          });
           onAnswered?.(outcome);
         }
         return;
@@ -229,7 +240,6 @@ export function ExerciseCard({
     }
     if (exercise.type === 'flashcard') return null;
     // Reading tasks: checkable once any item is answered; typed gaps go exactly as typed (grading is case-sensitive).
-    // Lesson exercises can't be audio_questions until the Listening lesson task (T5/T6), so the cast is safe for now.
     if (isTaskExercise(exercise)) return taskAnswer && answeredCount(taskAnswer) > 0 ? taskAnswer : null;
     const trimmed = text.trim();
     if (!trimmed) return null;
@@ -300,6 +310,7 @@ export function ExerciseCard({
           <>
             {instruction && <p className="text-sm text-text-muted">{instruction}</p>}
             <TaskInputs type={exercise.type} view={taskViewOf(exercise)} value={taskAnswer} onChange={() => {}} disabled itemResults={shown.itemResults} pane="all" />
+            {shown.reveal && <TranscriptReveal transcript={shown.reveal.transcript} evidence={shown.reveal.evidence} evidenceLines={shown.reveal.evidenceLines} />}
           </>
         ) : (
           <ExerciseHeading exercise={exercise} language={language} />

@@ -6,7 +6,7 @@ import { errorBody, type ApiErrorBody, type ErrorCode, type ErrorParams } from '
 import { toExerciseView } from '../tutoring/exerciseView';
 import type { FreeTextGradingInput } from '../tutoring/freeTextGrading';
 import type { GradeResult } from '../tutoring/grading';
-import { answerTextFor, correctAnswerFor, type LessonAnswer } from '../tutoring/lessonAnswers';
+import { answerTextFor, correctAnswerFor, revealFor, type LessonAnswer } from '../tutoring/lessonAnswers';
 import { INITIAL_EASE } from '../tutoring/srs';
 import { drawTestOut, scoreTestOut, TESTOUT_MIN_QUESTIONS } from '../tutoring/testOut';
 import type { TestOutAnswerOutcome, TestOutResult, TestOutRun, TestOutState } from '../tutoring/testOutViews';
@@ -140,7 +140,10 @@ export function createTestOutService(db: Database.Database, deps: TestOutDeps = 
       maxScore,
       review: answers.flatMap((a) => {
         const exercise = getExercise(a.exerciseId);
-        return exercise ? [{ exercise: viewOf(exercise), answerText: a.answerText, result: a.result, correctAnswer: a.correctAnswer }] : [];
+        if (!exercise) return [];
+        // Listening: the transcript and evidence, now that the test-out is over (never during it).
+        const reveal = revealFor(exercise);
+        return [{ exercise: viewOf(exercise), answerText: a.answerText, result: a.result, correctAnswer: a.correctAnswer, ...(reveal ? { reveal } : {}) }];
       }),
     };
   }

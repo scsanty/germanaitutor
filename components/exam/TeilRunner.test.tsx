@@ -56,3 +56,50 @@ describe('TeilRunner', () => {
     expect(screen.getByRole('radio', { name: 'Köln' })).toBeChecked();
   });
 });
+
+describe('TeilRunner with a listening part', () => {
+  const AUDIO_RUN = {
+    ...RUN,
+    attemptId: 11,
+    formatId: 'telc-b1',
+    part: { id: 'hoeren-1', skill: 'listening', title: { en: 'Listening Part 1', de: 'Hörverstehen Teil 1' }, taskType: 'audio_questions', items: 1, points: 5, minutes: 1, instructions: 'Sie hören …', replays: 1 },
+    set: { id: 's2', view: { audio: { hash: 'd'.repeat(64), available: true }, questions: [{ question: 'Anna kommt um acht.', options: ['Richtig', 'Falsch'] }] } },
+  };
+
+  beforeEach(() => {
+    sessionStorage.clear();
+    vi.spyOn(HTMLMediaElement.prototype, 'play').mockImplementation(async function (this: HTMLMediaElement) {
+      this.dispatchEvent(new Event('play'));
+    });
+    vi.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(function (this: HTMLMediaElement) {
+      this.dispatchEvent(new Event('pause'));
+    });
+  });
+
+  it('starts with every question unanswered, plays within the part replays, and submits', async () => {
+    const result = { attemptId: 11, score: 5, maxScore: 5, overtimeSeconds: 0, review: [] };
+    const fetchMock = vi.fn(() => delayedResponse(result));
+    vi.stubGlobal('fetch', fetchMock);
+    const onFinished = vi.fn();
+    const { container } = renderWithIntl(
+      <ShellProvider>
+        <TeilRunner run={AUDIO_RUN as never} onFinished={onFinished} />
+      </ShellProvider>
+    );
+    const audio = container.ownerDocument.querySelector('audio')!;
+    expect(audio).toHaveAttribute('src', `/api/audio/${'d'.repeat(64)}`);
+    // Exam mode: no rewind or speed, and no transcript.
+    expect(screen.queryByRole('button', { name: 'Back 5 seconds' })).toBeNull();
+    expect(screen.getByText('Played 0 of 1 times')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Play' }));
+    fireEvent(audio, new Event('ended'));
+    expect(screen.getByText('Played 1 of 1 times')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Play' })).toBeDisabled();
+    fireEvent.click(screen.getByRole('radio', { name: 'Falsch' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Submit' }));
+    await vi.waitFor(() => expect(onFinished).toHaveBeenCalledWith(result));
+    expect(fetchMock).toHaveBeenCalledWith('/api/exam-practice/submit', expect.objectContaining({
+      body: JSON.stringify({ attemptId: 11, answers: { type: 'audio_questions', selected: [1] } }),
+    }));
+  });
+});

@@ -6,6 +6,9 @@ import { Check, X } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { NativeSelect } from '@/components/ui/native-select';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { AudioPlayer } from '@/components/audio/AudioPlayer';
+// I2: type-only imports; the audio task module pulls in node:crypto on the server.
+import type { AudioQuestionsAnswer, AudioQuestionsView } from '@/lib/tasks/audioQuestions';
 import type { ClozeAnswer, ClozeView } from '@/lib/tasks/cloze';
 import type { MatchingAnswer, MatchingView } from '@/lib/tasks/matching';
 import type { PassageQuestionsAnswer, PassageQuestionsView } from '@/lib/tasks/passageQuestions';
@@ -17,9 +20,10 @@ const LETTERS = 'abcdefghijklmnopqrstuvwxyz';
 export const letterOf = (i: number) => LETTERS[i] ?? String(i + 1);
 const GAP = /\{\{(\d+)\}\}/g;
 
-// Answers start all-unanswered: null for passage questions and cloze gaps, -1 for matching.
+// Answers start all-unanswered: null for passage and audio questions and cloze gaps, -1 for matching.
 export function emptyAnswer(type: SetTaskType, view: TaskView): TaskAnswer {
   if (type === 'passage_questions') return { type, selected: (view as PassageQuestionsView).questions.map(() => null) };
+  if (type === 'audio_questions') return { type, selected: (view as AudioQuestionsView).questions.map(() => null) };
   if (type === 'matching') return { type, selected: (view as MatchingView).items.map(() => -1) };
   return { type: 'cloze', values: (view as ClozeView).gaps.map(() => null) };
 }
@@ -68,40 +72,80 @@ function ItemMark({ results, index }: { results?: boolean[]; index: number }) {
   );
 }
 
-function PassageQuestions({ view, value, onChange, disabled, pane, itemResults }: Props<PassageQuestionsView, PassageQuestionsAnswer>) {
+// The multiple-choice (or Richtig/Falsch) questions shared by reading passages and listening tasks.
+function Questions({
+  questions,
+  value,
+  onChange,
+  disabled,
+  itemResults,
+}: {
+  questions: { question: string; options: string[] }[];
+  value: PassageQuestionsAnswer | AudioQuestionsAnswer;
+  onChange: (value: PassageQuestionsAnswer | AudioQuestionsAnswer) => void;
+  disabled?: boolean;
+  itemResults?: boolean[];
+}) {
   const id = useId();
+  return (
+    <ol className="flex flex-col gap-4">
+      {questions.map((q, qi) => (
+        <li key={qi} className="flex flex-col gap-2 rounded-xl border border-border px-4 py-3">
+          <div className="flex items-start justify-between gap-2">
+            <p id={`${id}-q${qi}`} lang="de" className="font-medium leading-relaxed">
+              {qi + 1}. {q.question}
+            </p>
+            <ItemMark results={itemResults} index={qi} />
+          </div>
+          <RadioGroup
+            aria-labelledby={`${id}-q${qi}`}
+            value={value.selected[qi] === null ? '' : String(value.selected[qi])}
+            onValueChange={(v) => onChange({ ...value, selected: value.selected.map((s, i) => (i === qi ? Number(v) : s)) })}
+            disabled={disabled}
+            className="gap-1"
+          >
+            {q.options.map((option, oi) => (
+              <div key={oi} className="flex items-center gap-3">
+                <RadioGroupItem id={`${id}-q${qi}-o${oi}`} value={String(oi)} className="size-5" />
+                <label htmlFor={`${id}-q${qi}-o${oi}`} lang="de" className="flex-1 py-2 text-base">
+                  {option}
+                </label>
+              </div>
+            ))}
+          </RadioGroup>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+function PassageQuestions({ view, value, onChange, disabled, pane, itemResults }: Props<PassageQuestionsView, PassageQuestionsAnswer>) {
   return (
     <>
       {pane !== 'tasks' && <Paragraphs text={view.passage} />}
       {pane !== 'text' && (
-        <ol className="flex flex-col gap-4">
-          {view.questions.map((q, qi) => (
-            <li key={qi} className="flex flex-col gap-2 rounded-xl border border-border px-4 py-3">
-              <div className="flex items-start justify-between gap-2">
-                <p id={`${id}-q${qi}`} lang="de" className="font-medium leading-relaxed">
-                  {qi + 1}. {q.question}
-                </p>
-                <ItemMark results={itemResults} index={qi} />
-              </div>
-              <RadioGroup
-                aria-labelledby={`${id}-q${qi}`}
-                value={value.selected[qi] === null ? '' : String(value.selected[qi])}
-                onValueChange={(v) => onChange({ ...value, selected: value.selected.map((s, i) => (i === qi ? Number(v) : s)) })}
-                disabled={disabled}
-                className="gap-1"
-              >
-                {q.options.map((option, oi) => (
-                  <div key={oi} className="flex items-center gap-3">
-                    <RadioGroupItem id={`${id}-q${qi}-o${oi}`} value={String(oi)} className="size-5" />
-                    <label htmlFor={`${id}-q${qi}-o${oi}`} lang="de" className="flex-1 py-2 text-base">
-                      {option}
-                    </label>
-                  </div>
-                ))}
-              </RadioGroup>
-            </li>
-          ))}
-        </ol>
+        <Questions questions={view.questions} value={value} onChange={(v) => onChange(v as PassageQuestionsAnswer)} disabled={disabled} itemResults={itemResults} />
+      )}
+    </>
+  );
+}
+
+// How a listening task's player behaves: the runner passes the part's replays (exam), lessons the default.
+export interface AudioMode {
+  mode: 'lesson' | 'exam';
+  replays?: number;
+  // Exam: where the play count for this attempt is kept (see AudioPlayer).
+  playsKey?: string;
+}
+
+// Listening: the player in place of the reading text, then the questions as for passages. The
+// transcript is never part of the view; it is revealed only after answering.
+function AudioQuestions({ view, value, onChange, disabled, pane, itemResults, audio }: Props<AudioQuestionsView, AudioQuestionsAnswer> & { audio: AudioMode }) {
+  return (
+    <>
+      {pane !== 'tasks' && <AudioPlayer hash={view.audio.hash} available={view.audio.available} {...audio} />}
+      {pane !== 'text' && (
+        <Questions questions={view.questions} value={value} onChange={(v) => onChange(v as AudioQuestionsAnswer)} disabled={disabled} itemResults={itemResults} />
       )}
     </>
   );
@@ -233,8 +277,8 @@ function Cloze({ view, value, onChange, disabled, pane, itemResults }: Props<Clo
   );
 }
 
-// The inputs for the three Teil task types, shared by the exam runner and lessons. `pane` lets the
-// runner put the reading text and the tasks in separate columns; lessons use 'all'.
+// The inputs for the Teil task types, shared by the exam runner and lessons. `pane` lets the
+// runner put the reading text (or the audio player) and the tasks in separate columns; lessons use 'all'.
 export function TaskInputs({
   type,
   view,
@@ -243,6 +287,7 @@ export function TaskInputs({
   disabled,
   pane = 'all',
   itemResults,
+  audio = { mode: 'lesson' },
 }: {
   type: SetTaskType;
   view: TaskView;
@@ -252,10 +297,13 @@ export function TaskInputs({
   pane?: TaskPane;
   // Lessons, after Check: one entry per item, shown as a tick or cross beside it.
   itemResults?: boolean[];
+  // Listening only: exam (the part's replays, no seeking) or lesson (unlimited, −5 s, 0.75×).
+  audio?: AudioMode;
 }) {
   // Each answer shape is a TaskAnswer, so the shared onChange accepts what every input sends.
   const common = { disabled, pane, onChange, itemResults };
   if (type === 'passage_questions') return <PassageQuestions {...common} view={view as PassageQuestionsView} value={value as PassageQuestionsAnswer} />;
+  if (type === 'audio_questions') return <AudioQuestions {...common} audio={audio} view={view as AudioQuestionsView} value={value as AudioQuestionsAnswer} />;
   if (type === 'matching') return <Matching {...common} view={view as MatchingView} value={value as MatchingAnswer} />;
   return <Cloze {...common} view={view as ClozeView} value={value as ClozeAnswer} />;
 }

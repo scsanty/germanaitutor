@@ -9,6 +9,7 @@ import type { ExerciseView } from '@/lib/tutoring/exerciseView';
 import type { TestOutAnswerOutcome, TestOutResult, TestOutRun, TestOutState } from '@/lib/tutoring/testOutViews';
 import type { ContentLanguage } from '@/lib/i18n/localizedText';
 import { ExerciseCard, ExerciseHeading } from './ExerciseCard';
+import { TranscriptReveal } from '@/components/audio/TranscriptReveal';
 import { FocusLayout } from '@/components/focus/FocusLayout';
 import { ONWARD, ResultCard, ReviewBadge } from '@/components/focus/ResultCard';
 import { Alert, AlertDescription } from '@/components/ui/alert';
@@ -47,6 +48,7 @@ function ResultView({ result, top, action }: { result: TestOutResult; top?: Reac
                     <p className="font-semibold break-words text-success">{t('correctAnswer', { answer: item.correctAnswer })}</p>
                   )}
                 </div>
+                {item.reveal && <TranscriptReveal transcript={item.reveal.transcript} evidence={item.reveal.evidence} evidenceLines={item.reveal.evidenceLines} />}
               </Card>
             </li>
           );

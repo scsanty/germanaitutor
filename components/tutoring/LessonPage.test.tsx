@@ -51,6 +51,19 @@ async function answer(option: string) {
 }
 
 describe('LessonPage', () => {
+  it('says when some listening exercises are left out because their audio is unavailable', async () => {
+    stubFetch({ 'GET /api/tutoring/lessons/a1-greet': () => delayedResponse({ ...LESSON, unavailableAudio: 2 }) });
+    renderWithIntl(<LessonPage lessonId="a1-greet" />);
+    expect(await screen.findByText('Some listening exercises are unavailable right now.')).toBeInTheDocument();
+  });
+
+  it('shows no audio note when every exercise can be played', async () => {
+    stubFetch({ 'GET /api/tutoring/lessons/a1-greet': () => delayedResponse({ ...LESSON, unavailableAudio: 0 }) });
+    renderWithIntl(<LessonPage lessonId="a1-greet" />);
+    expect(await screen.findByRole('heading', { name: 'Saying hello' })).toBeInTheDocument();
+    expect(screen.queryByText('Some listening exercises are unavailable right now.')).toBeNull();
+  });
+
   it('switches the lesson between English and German, starting in the UI language', async () => {
     stubFetch({ 'GET /api/tutoring/lessons/a1-greet': () => delayedResponse(LESSON) });
     renderWithIntl(<LessonPage lessonId="a1-greet" />);

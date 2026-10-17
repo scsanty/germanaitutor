@@ -178,7 +178,8 @@
     "markFailed": "Die Lektion konnte nicht als erledigt markiert werden: {error}",
     "done": "Erledigt – diese Lektion ist abgeschlossen.",
     "exerciseLabel": "Übung {number}",
-    "practiceExerciseLabel": "eine Übung der Übungsrunde"
+    "practiceExerciseLabel": "eine Übung der Übungsrunde",
+    "audioUnavailableNote": "Einige Hörübungen sind gerade nicht verfügbar."
   },
   "tree": {
     "heading": "{track} {level}",
@@ -530,5 +531,15 @@
     "back": "Zurück zum Prüfungstraining",
     "unanswered": "—",
     "none": "x (keine)"
+  },
+  "audio": {
+    "play": "Abspielen",
+    "pause": "Pause",
+    "back5": "5 Sekunden zurück",
+    "slow": "0,75×",
+    "played": "{n} von {max} Mal abgespielt",
+    "unavailable": "Audio gerade nicht verfügbar",
+    "transcript": "Transkript",
+    "evidenceFor": "Beleg für Frage {n}"
   }
 }

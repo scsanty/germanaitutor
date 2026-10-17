@@ -178,7 +178,8 @@
     "markFailed": "Could not mark this lesson as done: {error}",
     "done": "Done — this lesson is complete.",
     "exerciseLabel": "exercise {number}",
-    "practiceExerciseLabel": "a practice exercise"
+    "practiceExerciseLabel": "a practice exercise",
+    "audioUnavailableNote": "Some listening exercises are unavailable right now."
   },
   "tree": {
     "heading": "{track} {level}",
@@ -530,5 +531,15 @@
     "back": "Back to exam practice",
     "unanswered": "—",
     "none": "x (none)"
+  },
+  "audio": {
+    "play": "Play",
+    "pause": "Pause",
+    "back5": "Back 5 seconds",
+    "slow": "0.75×",
+    "played": "Played {n} of {max} times",
+    "unavailable": "Audio unavailable right now",
+    "transcript": "Transcript",
+    "evidenceFor": "Evidence for question {n}"
   }
 }
