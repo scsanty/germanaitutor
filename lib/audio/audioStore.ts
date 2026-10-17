@@ -11,6 +11,11 @@ export function isAudioHash(hash: unknown): hash is string {
   return typeof hash === 'string' && HASH.test(hash);
 }
 
+// A cache file name: `<sha256>.ogg`. Backups export and import only names that pass this.
+export function isAudioFileName(name: unknown): name is string {
+  return typeof name === 'string' && FILE.test(name);
+}
+
 export function audioDir(): string {
   return join(dataDir(), 'audio');
 }
