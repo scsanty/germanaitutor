@@ -156,6 +156,33 @@ describe('ExamPracticeAdmin', () => {
     await waitFor(() => expect(screen.queryByRole('form', { name: `Edit ${STARTER.id}` })).not.toBeInTheDocument());
   });
 
+  it('previews a listening set and offers Regenerate and Upload for its audio', async () => {
+    const audioSet = {
+      taskType: 'audio_questions',
+      content: { transcript: '@filter station\n[Ansage m] Der Zug nach Köln fährt heute von Gleis 7.', questions: [{ question: 'Gleis?', options: ['7', '9'], correctIndex: 0, evidence: 'Gleis 7' }] },
+      explanations: [{ en: 'Seven', de: 'Sieben' }],
+    };
+    const hash = 'b'.repeat(64);
+    const fetchMock = stubFetch({
+      [LIST]: () => delayedResponse([{ ...row('telc-b1__hoeren-1__s01', 'starter'), set: audioSet, itemCount: 1 }]),
+      'POST /api/admin/audio': () => delayedResponse({ hash, status: 'done', hasFile: true, lastError: null, saved: true }),
+    });
+    render(<ExamPracticeAdmin formats={FORMATS} />);
+    await screen.findByText('telc-b1__hoeren-1__s01');
+    const r = rowOf('telc-b1__hoeren-1__s01');
+    expect(within(r).getByText('Der Zug nach Köln fährt heute von Gleis 7.')).toBeInTheDocument();
+    expect(await within(r).findByText('Generated audio ready')).toBeInTheDocument();
+    expect(within(r).getByRole('button', { name: 'Regenerate' })).toBeEnabled();
+    expect(within(r).getByLabelText('Set telc-b1__hoeren-1__s01 recording')).toBeInTheDocument();
+    expect(JSON.parse(String(fetchMock.mock.calls.find(([u]) => u === '/api/admin/audio')![1]!.body))).toEqual({ transcript: audioSet.content.transcript });
+
+    // The editor has the listening fields, German-only (no instruction fields).
+    fireEvent.click(within(r).getByRole('button', { name: 'Edit' }));
+    expect(screen.getByLabelText('Exercise 1 transcript')).toHaveValue(audioSet.content.transcript);
+    expect(screen.getByLabelText('Exercise 1 question 1 evidence')).toHaveValue('Gleis 7');
+    expect(screen.queryByLabelText(/instruction/i)).not.toBeInTheDocument();
+  });
+
   it('asks before deleting', async () => {
     const lists = [() => delayedResponse([STARTER]), () => delayedResponse([])];
     stubFetch({

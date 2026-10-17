@@ -114,7 +114,7 @@ describe('ExerciseEditor flashcard rule', () => {
       />
     );
     const options = Array.from(screen.getByLabelText('Exercise 1 type').querySelectorAll('option')).map((o) => o.value);
-    expect(options).toEqual(['multiple_choice', 'fill_blank', 'free_text', 'passage_questions', 'matching', 'cloze']);
+    expect(options).toEqual(['multiple_choice', 'fill_blank', 'free_text', 'passage_questions', 'matching', 'cloze', 'audio_questions']);
   });
 
   it('still shows an existing flashcard as a flashcard so it can be changed', () => {
@@ -258,5 +258,56 @@ describe('ExerciseEditor flashcard rule', () => {
     const fields = screen.getAllByLabelText('Text (use {{1}}, {{2}} … for gaps)');
     expect(fields[0]).toHaveAccessibleDescription('Exercise 1 cloze text');
     expect(fields[1]).toHaveAccessibleDescription('Exercise 2 cloze text');
+  });
+});
+
+describe('ExerciseEditor listening exercises', () => {
+  function Host({ initial, onChange }: { initial: ExerciseFormEntry[]; onChange: (e: ExerciseFormEntry[]) => void }) {
+    const [exercises, setExercises] = useState(initial);
+    return (
+      <ExerciseEditor
+        exercises={exercises}
+        onChange={(next) => {
+          setExercises(next);
+          onChange(next);
+        }}
+      />
+    );
+  }
+
+  it('offers the listening type and authors a transcript, a question and its evidence', () => {
+    const onChange = vi.fn();
+    render(<Host initial={[{ type: 'multiple_choice', content: { question: '', options: ['', ''], correctIndex: 0 } }]} onChange={onChange} />);
+    fireEvent.change(screen.getByLabelText('Exercise 1 type'), { target: { value: 'audio_questions' } });
+    expect(screen.getByLabelText('Exercise 1 transcript')).toHaveAccessibleDescription(/\[Anna f\] Wann fährt der Zug\?/);
+    fireEvent.change(screen.getByLabelText('Exercise 1 transcript'), { target: { value: '[Anna f] Der Zug fährt um neun.' } });
+    fireEvent.change(screen.getByLabelText('Exercise 1 question 1'), { target: { value: 'Wann?' } });
+    fireEvent.change(screen.getByLabelText('Exercise 1 question 1 option 1'), { target: { value: 'um acht' } });
+    fireEvent.change(screen.getByLabelText('Exercise 1 question 1 option 2'), { target: { value: 'um neun' } });
+    fireEvent.click(screen.getByLabelText('Exercise 1 question 1 option 2 is correct'));
+    fireEvent.change(screen.getByLabelText('Exercise 1 question 1 evidence'), { target: { value: 'um neun' } });
+    expect(onChange).toHaveBeenLastCalledWith([
+      {
+        type: 'audio_questions',
+        content: { transcript: '[Anna f] Der Zug fährt um neun.', questions: [{ question: 'Wann?', options: ['um acht', 'um neun'], correctIndex: 1, evidence: 'um neun' }] },
+      },
+    ]);
+    expect(screen.queryByText('Fix before saving')).not.toBeInTheDocument();
+    fireEvent.change(screen.getByLabelText('Exercise 1 question 1 evidence'), { target: { value: '' } });
+    expect(onChange.mock.lastCall![0][0].content.questions[0]).not.toHaveProperty('evidence');
+  });
+
+  it('shows the validation problems of a transcript being written', () => {
+    render(
+      <Host
+        initial={[{ type: 'audio_questions', content: { transcript: '', questions: [{ question: 'Q', options: ['a', 'b'], correctIndex: 0, evidence: 'Gleis 9' }] } }]}
+        onChange={vi.fn()}
+      />
+    );
+    expect(screen.queryByText('Fix before saving')).not.toBeInTheDocument();
+    fireEvent.change(screen.getByLabelText('Exercise 1 transcript'), { target: { value: 'kein Tag' } });
+    expect(screen.getByText('transcript: line 1 needs a speaker tag like [Name m]')).toBeInTheDocument();
+    fireEvent.change(screen.getByLabelText('Exercise 1 transcript'), { target: { value: '[Ben m] Gleis 7.' } });
+    expect(screen.getByText('question 1: evidence must appear in the transcript')).toBeInTheDocument();
   });
 });

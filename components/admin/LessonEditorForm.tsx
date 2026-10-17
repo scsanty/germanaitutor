@@ -257,7 +257,7 @@ export function LessonEditorForm(
         </CardContent>
       </Card>
 
-      <ExerciseEditor exercises={exercises} onChange={setExercises} allowFlashcards={skill === 'vocabulary'} />
+      <ExerciseEditor exercises={exercises} onChange={setExercises} allowFlashcards={skill === 'vocabulary'} audioActions />
 
       <PrerequisitePicker candidates={candidates} selectedIds={prerequisiteIds} onChange={setPrerequisiteIds} />
 
