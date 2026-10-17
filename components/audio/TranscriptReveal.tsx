@@ -1,7 +1,7 @@
 'use client';
 
 import { Fragment, useId, type ReactNode } from 'react';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 // I2: type-only, since lib/audio/transcript imports node:crypto.
 import type { ParsedTranscript } from '@/lib/audio/transcript';
 
@@ -32,6 +32,7 @@ export function evidenceSpans(text: string, lineIndex: number, evidence: (string
       last.questions.push(...s.questions);
     } else merged.push({ ...s, questions: [...s.questions] });
   }
+  for (const m of merged) m.questions.sort((a, b) => a - b);
   return merged;
 }
 
@@ -46,6 +47,7 @@ export function TranscriptReveal({
   evidenceLines?: (number | null)[];
 }) {
   const t = useTranslations('audio');
+  const locale = useLocale();
   const headingId = useId();
   return (
     <section aria-labelledby={headingId} className="flex flex-col gap-3 rounded-xl border border-border bg-surface px-4 py-3">
@@ -63,7 +65,10 @@ export function TranscriptReveal({
               <Fragment key={`m${si}`}>
                 <mark className="rounded bg-warning/25 px-0.5 text-foreground">{line.text.slice(s.start, s.end)}</mark>
                 <sup className="ml-0.5 text-xs font-semibold text-text-muted">
-                  <span className="sr-only">{t('evidenceFor', { n: s.questions.join(', ') })}</span>
+                  {/* UI language inside the German transcript, so it isn't read with German pronunciation. */}
+                  <span lang={locale} className="sr-only">
+                    {t(s.questions.length > 1 ? 'evidenceForMany' : 'evidenceFor', { n: s.questions.join(', ') })}
+                  </span>
                   <span aria-hidden>{s.questions.join(',')}</span>
                 </sup>
               </Fragment>

@@ -27,6 +27,13 @@ describe('TranscriptReveal', () => {
     expect(items[0].querySelector('mark')!.nextElementSibling).toHaveTextContent('Evidence for question 1');
   });
 
+  it('names merged evidence by all its questions, in the UI language', () => {
+    renderWithIntl(<TranscriptReveal transcript={TRANSCRIPT} evidence={['acht Uhr', 'um acht']} evidenceLines={[0, 0]} />);
+    const label = screen.getByText('Evidence for questions 1, 2');
+    expect(label).toHaveAttribute('lang', 'en');
+    expect(label.closest('ol')).toHaveAttribute('lang', 'de');
+  });
+
   it('highlights only on the line the server names, and merges overlaps', () => {
     expect(evidenceSpans('ab ab', 0, ['ab'], [1])).toEqual([]);
     expect(evidenceSpans('ab ab', 1, ['ab'], [1])).toEqual([{ start: 0, end: 2, questions: [1] }]);

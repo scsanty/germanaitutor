@@ -134,8 +134,6 @@ function PassageQuestions({ view, value, onChange, disabled, pane, itemResults }
 export interface AudioMode {
   mode: 'lesson' | 'exam';
   replays?: number;
-  // Exam: where the play count for this attempt is kept (see AudioPlayer).
-  playsKey?: string;
 }
 
 // Listening: the player in place of the reading text, then the questions as for passages. The

@@ -537,9 +537,11 @@
     "pause": "Pause",
     "back5": "5 Sekunden zurück",
     "slow": "0,75×",
-    "played": "{n} von {max} Mal abgespielt",
+    "played": "{n} von {max, plural, one {# Mal} other {# Mal}} abgespielt",
     "unavailable": "Audio gerade nicht verfügbar",
     "transcript": "Transkript",
-    "evidenceFor": "Beleg für Frage {n}"
+    "evidenceFor": "Beleg für Frage {n}",
+    "evidenceForMany": "Beleg für Fragen {n}",
+    "retry": "Erneut versuchen"
   }
 }

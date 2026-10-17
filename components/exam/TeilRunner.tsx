@@ -45,8 +45,9 @@ export function TeilRunner({
   // A cloze is one flowing text with its gaps, so it isn't split into columns. A listening task keeps
   // its player above the questions, so the student needn't switch panes while listening.
   const split = type !== 'cloze' && type !== 'audio_questions';
-  // Spec: Replay rules. The part's replays, no seeking, counted on the client for this attempt.
-  const audio = { mode: 'exam' as const, replays: run.part.replays, playsKey: `audio-plays:${run.attemptId}` };
+  // Spec: Replay rules. The part's replays, no seeking, counted on the client for this attempt (this
+  // runner is keyed by attemptId, so a new attempt starts a fresh count).
+  const audio = { mode: 'exam' as const, replays: run.part.replays };
 
   async function submit() {
     // S20: a double click submits once.

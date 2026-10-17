@@ -67,7 +67,6 @@ describe('TeilRunner with a listening part', () => {
   };
 
   beforeEach(() => {
-    sessionStorage.clear();
     vi.spyOn(HTMLMediaElement.prototype, 'play').mockImplementation(async function (this: HTMLMediaElement) {
       this.dispatchEvent(new Event('play'));
     });
@@ -90,10 +89,10 @@ describe('TeilRunner with a listening part', () => {
     expect(audio).toHaveAttribute('src', `/api/audio/${'d'.repeat(64)}`);
     // Exam mode: no rewind or speed, and no transcript.
     expect(screen.queryByRole('button', { name: 'Back 5 seconds' })).toBeNull();
-    expect(screen.getByText('Played 0 of 1 times')).toBeInTheDocument();
+    expect(screen.getByText('Played 0 of 1 time')).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Play' }));
     fireEvent(audio, new Event('ended'));
-    expect(screen.getByText('Played 1 of 1 times')).toBeInTheDocument();
+    expect(screen.getByText('Played 1 of 1 time')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Play' })).toBeDisabled();
     fireEvent.click(screen.getByRole('radio', { name: 'Falsch' }));
     fireEvent.click(screen.getByRole('button', { name: 'Submit' }));
