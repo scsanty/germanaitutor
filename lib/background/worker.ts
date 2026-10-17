@@ -4,6 +4,7 @@ import { createNotificationService } from '../services/notificationService';
 import { getSpeechProvider, getSpeechUrl } from '../speech/speechProvider';
 import { runHealthCheck } from './healthCheck';
 import { runContentCheck } from './contentCheck';
+import { sharedSpeechAvailability } from '../speech/speechAvailability';
 
 const started = Symbol.for('nadoch.worker');
 
@@ -48,7 +49,9 @@ export function startBackgroundWorker(getDb: () => Database.Database): void {
   });
   const health = createTick('health', async () => {
     const db = getDb();
-    await runHealthCheck(getSpeechProvider(db), createNotificationService(db), getSpeechUrl(db));
+    const url = getSpeechUrl(db);
+    const ok = await runHealthCheck(getSpeechProvider(db), createNotificationService(db), url);
+    sharedSpeechAvailability().record(url, ok); // S7: requests reuse what the health tick saw
   });
   const content = createTick('content', async () => {
     await runContentCheck(getDb());

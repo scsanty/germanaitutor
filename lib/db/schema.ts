@@ -183,10 +183,10 @@ export function runMigrations(db: Database.Database): void {
     migrateProfilePreferences(db);
     migrateFreestyle(db);
     migrateFlashcardReviewsToDeck(db);
-    migrateExerciseTypes(db);
+    migrateExerciseTypeCheck(db, EXERCISE_TYPES);
     migrateTeilAttemptAnswers(db);
   });
-  // Table rebuilds (migrateExerciseTypes) must run with foreign keys OFF, or DROP TABLE would cascade
+  // Table rebuilds (migrateExerciseTypeCheck) must run with foreign keys OFF, or DROP TABLE would cascade
   // to attempts and reviews. SQLite ignores this pragma inside a transaction, so it wraps the transaction.
   const foreignKeysWereOn = db.pragma('foreign_keys', { simple: true }) === 1;
   db.pragma('foreign_keys = OFF');
@@ -214,15 +214,15 @@ export const EXERCISE_TYPES = [
 // S12: the whole `CHECK (type IN (...))` list is rewritten, so a pre-Reading table (ends in 'free_text')
 // and a Reading table (ends in 'cloze') both migrate. Runs with foreign keys OFF (see runMigrations).
 // A table already on the full list is left alone, so a second run does nothing.
-function migrateExerciseTypes(db: Database.Database): void {
+function migrateExerciseTypeCheck(db: Database.Database, types: readonly string[]): void {
   const typeCheck = /CHECK\s*\(\s*type\s+IN\s*\(([^)]*)\)\s*\)/;
-  const wanted = `CHECK (type IN (${EXERCISE_TYPES.map((t) => `'${t}'`).join(',')}))`;
+  const wanted = `CHECK (type IN (${types.map((t) => `'${t}'`).join(',')}))`;
   let rebuilt = false;
   for (const table of ['exercises', 'practice_exercises']) {
     const row = db.prepare("SELECT sql FROM sqlite_master WHERE type = 'table' AND name = ?").get(table) as { sql: string } | undefined;
     if (!row) continue;
     const current = typeCheck.exec(row.sql);
-    if (current && EXERCISE_TYPES.every((t) => current[1].includes(`'${t}'`))) continue;
+    if (current && types.every((t) => current[1].includes(`'${t}'`))) continue;
     const newSql = row.sql.replace(/^CREATE TABLE ("?)(\w+)\1/, `CREATE TABLE ${table}_new`).replace(typeCheck, wanted);
     if (!current || !newSql.startsWith(`CREATE TABLE ${table}_new`)) {
       throw new Error(`Unexpected ${table} definition; cannot add the new exercise types`);

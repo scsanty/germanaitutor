@@ -1,9 +1,13 @@
-import { describe, it, expect } from 'vitest';
+import { afterEach, beforeEach, describe, it, expect, vi } from 'vitest';
+import { mkdtempSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { writeAudio } from '../audio/audioStore';
 import { createDbClient } from '../db/client';
 import { ensureUnsortedExists } from '../curriculum-admin/unsortedBucket';
 import { createProfileService } from './profileService';
 import { createProgressService } from './progressService';
-import { addAttempt, addSecondMilestone, markComplete, scheduleReview, seedTutoringCurriculum } from '@/test/tutoringFixtures';
+import { addAttempt, addListeningExercise, addSecondMilestone, listeningHash, markComplete, scheduleReview, seedTutoringCurriculum } from '@/test/tutoringFixtures';
 
 function setup() {
   const db = createDbClient(':memory:');
@@ -16,7 +20,7 @@ function lessonsOf(tree: ReturnType<ReturnType<typeof createProgressService>['ge
 }
 
 describe('progressService bilingual views', () => {
-  it('resolves the tree and locked views to the UI language, and gives the open lesson both languages', () => {
+  it('resolves the tree and locked views to the UI language, and gives the open lesson both languages', async () => {
     const { db, progress, profiles } = setup();
     db.exec(`UPDATE lessons SET title_de = 'Begrüßen', explanation = 'Say Hallo.', explanation_de = 'Sag Hallo.' WHERE id = 'a1-greet';
       UPDATE milestones SET title_de = 'Grundlagen' WHERE id = 'g-a1-m1';`);
@@ -24,7 +28,7 @@ describe('progressService bilingual views', () => {
     const tree = progress.getTree();
     expect(tree.milestones[0].title).toBe('Grundlagen');
     expect(tree.milestones[0].lessons.find((l) => l.id === 'a1-greet')?.title).toBe('Begrüßen');
-    const view = progress.getLessonView('a1-greet');
+    const view = await progress.getLessonView('a1-greet');
     expect(view).toMatchObject({
       locked: false,
       title: { en: 'Saying hello', de: 'Begrüßen' },
@@ -34,7 +38,7 @@ describe('progressService bilingual views', () => {
 });
 
 describe('progressService.getTree', () => {
-  it('lists the active track+level in tree order and hides the Unsorted bucket', () => {
+  it('lists the active track+level in tree order and hides the Unsorted bucket', async () => {
     const { db, progress } = setup();
     const { milestoneId } = ensureUnsortedExists(db, 'generic', 'A1');
     db.exec(`
@@ -48,7 +52,7 @@ describe('progressService.getTree', () => {
     expect(lessonsOf(tree).map((l) => l.id)).toEqual(['a1-greet', 'a1-sein']);
   });
 
-  it('shows not started, in progress, and complete', () => {
+  it('shows not started, in progress, and complete', async () => {
     const { db, progress } = setup();
     expect(lessonsOf(progress.getTree()).map((l) => l.status)).toEqual(['not_started', 'not_started']);
     addAttempt(db, 'a1-sein__ex2', 'wrong');
@@ -56,7 +60,7 @@ describe('progressService.getTree', () => {
     expect(lessonsOf(progress.getTree()).map((l) => l.status)).toEqual(['complete', 'in_progress']);
   });
 
-  it('shows a lesson completed through a concept link as covered via that track', () => {
+  it('shows a lesson completed through a concept link as covered via that track', async () => {
     const { db, progress, profiles } = setup();
     markComplete(db, 'a1-greet');
     profiles.updateProfile({ activeTrack: 'goethe' });
@@ -65,7 +69,7 @@ describe('progressService.getTree', () => {
     ]);
   });
 
-  it('locks a lesson until its prerequisites are done, counting shared completion, and lays out branches', () => {
+  it('locks a lesson until its prerequisites are done, counting shared completion, and lays out branches', async () => {
     const { db, progress } = setup();
     const lesson = (id: string) => progress.getTree().milestones.flatMap((m) => m.lessons).find((l) => l.id === id)!;
     expect(lesson('a1-greet')).toMatchObject({ locked: false, branch: 0, column: 0, row: 0 });
@@ -75,7 +79,7 @@ describe('progressService.getTree', () => {
     expect(lesson('a1-sein').locked).toBe(false);
   });
 
-  it('ranks milestones, gates the next rank, shows earlier prerequisites as chips, and reports the test-out', () => {
+  it('ranks milestones, gates the next rank, shows earlier prerequisites as chips, and reports the test-out', async () => {
     const { db, progress } = setup();
     addSecondMilestone(db);
     db.exec("INSERT INTO lesson_prerequisites (lesson_id, prerequisite_lesson_id) VALUES ('a1-late', 'a1-greet')");
@@ -96,7 +100,7 @@ describe('progressService.getTree', () => {
 });
 
 describe('progressService.isLevelFinished', () => {
-  it('needs every visible lesson done, own or shared, and ignores Unsorted', () => {
+  it('needs every visible lesson done, own or shared, and ignores Unsorted', async () => {
     const { db, progress } = setup();
     const { milestoneId } = ensureUnsortedExists(db, 'generic', 'A1');
     db.exec(`
@@ -110,19 +114,19 @@ describe('progressService.isLevelFinished', () => {
     expect(progress.isLevelFinished('generic', 'A1')).toBe(true);
   });
 
-  it('never counts a level without visible lessons as finished', () => {
+  it('never counts a level without visible lessons as finished', async () => {
     const { progress } = setup();
     expect(progress.isLevelFinished('telc', 'A1')).toBe(false);
   });
 });
 
 describe('progressService.getLessonView', () => {
-  it('returns null for an unknown lesson', () => {
-    expect(setup().progress.getLessonView('nope')).toBeNull();
+  it('returns null for an unknown lesson', async () => {
+    expect(await setup().progress.getLessonView('nope')).toBeNull();
   });
 
-  it('shows a lesson above the unlocked range as locked', () => {
-    expect(setup().progress.getLessonView('a2-past')).toEqual({
+  it('shows a lesson above the unlocked range as locked', async () => {
+    expect(await setup().progress.getLessonView('a2-past')).toEqual({
       locked: 'level',
       id: 'a2-past',
       title: 'The past of sein',
@@ -131,19 +135,19 @@ describe('progressService.getLessonView', () => {
     });
   });
 
-  it('does not list a prerequisite that sits in Unsorted', () => {
+  it('does not list a prerequisite that sits in Unsorted', async () => {
     const { db, progress } = setup();
     const { milestoneId } = ensureUnsortedExists(db, 'generic', 'A1');
     db.prepare('UPDATE lesson_placements SET milestone_id = ? WHERE lesson_id = ?').run(milestoneId, 'a1-greet');
-    expect(progress.getLessonView('a1-sein')).toMatchObject({ locked: false, prerequisites: [] });
+    expect(await progress.getLessonView('a1-sein')).toMatchObject({ locked: false, prerequisites: [] });
   });
 
-  it('returns content, exercises in authored order without answers, progress, and prerequisites', () => {
+  it('returns content, exercises in authored order without answers, progress, and prerequisites', async () => {
     const { db, progress } = setup();
     markComplete(db, 'a1-greet');
     addAttempt(db, 'a1-sein__ex10', 'wrong');
     addAttempt(db, 'a1-sein__ex10', 'almost');
-    const view = progress.getLessonView('a1-sein');
+    const view = await progress.getLessonView('a1-sein');
     expect(view).toEqual({
       locked: false,
       id: 'a1-sein',
@@ -157,16 +161,17 @@ describe('progressService.getLessonView', () => {
         { id: 'a1-sein__ex2', type: 'fill_blank', textWithBlank: 'Ich ___ müde.' },
         { id: 'a1-sein__ex10', type: 'free_text', prompt: 'Say that you are tired.' },
       ],
+      unavailableAudio: 0,
       passedExerciseIds: ['a1-sein__ex10'],
       completed: false,
       prerequisites: [{ id: 'a1-greet', title: 'Saying hello', done: true }],
     });
   });
 
-  it('reports a completed lesson', () => {
+  it('reports a completed lesson', async () => {
     const { db, progress } = setup();
     markComplete(db, 'a1-greet');
-    expect(progress.getLessonView('a1-greet')).toMatchObject({ locked: false, completed: true });
+    expect(await progress.getLessonView('a1-greet')).toMatchObject({ locked: false, completed: true });
     expect(progress.isCompleted('a1-greet')).toBe(true);
     expect(progress.isCompleted('a1-sein')).toBe(false);
   });
@@ -175,7 +180,7 @@ describe('progressService.getLessonView', () => {
 describe('progressService.getDailyQueue', () => {
   const today = '2026-09-24';
 
-  it('lists due exercises of the active track+level, most overdue first, including Unsorted', () => {
+  it('lists due exercises of the active track+level, most overdue first, including Unsorted', async () => {
     const { db, progress } = setup();
     const { milestoneId } = ensureUnsortedExists(db, 'generic', 'A1');
     db.exec(`UPDATE lesson_placements SET milestone_id = '${milestoneId}' WHERE lesson_id = 'a1-sein'`);
@@ -184,7 +189,7 @@ describe('progressService.getDailyQueue', () => {
     scheduleReview(db, 'a1-sein__ex10', '2026-09-25');
     scheduleReview(db, 'a1-goethe-greet__ex1', '2026-09-01');
 
-    const queue = progress.getDailyQueue(today);
+    const queue = await progress.getDailyQueue(today);
     expect(queue).toMatchObject({ track: 'generic', level: 'A1', cap: 50, answeredToday: 0 });
     expect(queue.items).toEqual([
       {
@@ -200,7 +205,7 @@ describe('progressService.getDailyQueue', () => {
     ]);
   });
 
-  it('counts queue answers today against the cap and drops what was already answered', () => {
+  it('counts queue answers today against the cap and drops what was already answered', async () => {
     const { db, progress, profiles } = setup();
     profiles.updateProfile({ dailyReviewCap: 2 });
     scheduleReview(db, 'a1-greet__ex1', '2026-09-20');
@@ -209,36 +214,36 @@ describe('progressService.getDailyQueue', () => {
     addAttempt(db, 'a1-greet__ex1', 'correct', { source: 'queue', on: today });
     addAttempt(db, 'a1-sein__ex2', 'correct', { source: 'lesson', on: today });
 
-    const queue = progress.getDailyQueue(today);
+    const queue = await progress.getDailyQueue(today);
     expect(queue.answeredToday).toBe(1);
     expect(queue.items.map((i) => i.exercise.id)).toEqual(['a1-sein__ex10']);
   });
 
   // B1: a vocabulary-lesson flashcard lives in the deck; a flashcard in any other lesson stays here.
-  it('never puts vocabulary-lesson flashcards in the Daily Queue', () => {
+  it('never puts vocabulary-lesson flashcards in the Daily Queue', async () => {
     const { db, progress } = setup();
     db.exec(`INSERT INTO exercises (id, lesson_id, type, content) VALUES ('a1-sein__card', 'a1-sein', 'flashcard', '{"front":"ich bin","back":"I am"}')`);
     scheduleReview(db, 'a1-greet__ex2', '2026-09-20');
     scheduleReview(db, 'a1-greet__ex1', '2026-09-20');
     scheduleReview(db, 'a1-sein__card', '2026-09-20');
-    expect(progress.getDailyQueue('2026-09-29').items.map((i) => i.exercise.id)).toEqual(['a1-greet__ex1', 'a1-sein__card']);
+    expect((await progress.getDailyQueue('2026-09-29')).items.map((i) => i.exercise.id)).toEqual(['a1-greet__ex1', 'a1-sein__card']);
   });
 
-  it('suggests the first incomplete lesson whose prerequisites are done', () => {
+  it('suggests the first incomplete lesson whose prerequisites are done', async () => {
     const { db, progress } = setup();
-    expect(progress.getDailyQueue(today).suggestedLesson).toEqual({ id: 'a1-greet', title: 'Saying hello' });
+    expect((await progress.getDailyQueue(today)).suggestedLesson).toEqual({ id: 'a1-greet', title: 'Saying hello' });
     markComplete(db, 'a1-greet');
-    expect(progress.getDailyQueue(today).suggestedLesson).toEqual({ id: 'a1-sein', title: 'The verb sein' });
+    expect((await progress.getDailyQueue(today)).suggestedLesson).toEqual({ id: 'a1-sein', title: 'The verb sein' });
     markComplete(db, 'a1-sein');
-    expect(progress.getDailyQueue(today).suggestedLesson).toBeNull();
+    expect((await progress.getDailyQueue(today)).suggestedLesson).toBeNull();
   });
 });
 
 describe('progressService.getLessonView locks', () => {
-  it('returns a lesson-locked view naming the reason, and the open view once unlocked', () => {
+  it('returns a lesson-locked view naming the reason, and the open view once unlocked', async () => {
     const { db, progress } = setup();
     addSecondMilestone(db);
-    expect(progress.getLessonView('a1-late')).toEqual({
+    expect(await progress.getLessonView('a1-late')).toEqual({
       locked: 'lesson',
       id: 'a1-late',
       title: 'A later lesson',
@@ -249,13 +254,68 @@ describe('progressService.getLessonView locks', () => {
     });
     markComplete(db, 'a1-greet');
     markComplete(db, 'a1-sein');
-    expect(progress.getLessonView('a1-late')).toMatchObject({ locked: false, id: 'a1-late' });
+    expect(await progress.getLessonView('a1-late')).toMatchObject({ locked: false, id: 'a1-late' });
   });
 
-  it('suggests the first open lesson that is not done', () => {
+  it('suggests the first open lesson that is not done', async () => {
     const { db, progress } = setup();
     addSecondMilestone(db);
     markComplete(db, 'a1-greet');
-    expect(progress.getDailyQueue('2026-09-29').suggestedLesson).toEqual({ id: 'a1-sein', title: 'The verb sein' });
+    expect((await progress.getDailyQueue('2026-09-29')).suggestedLesson).toEqual({ id: 'a1-sein', title: 'The verb sein' });
+  });
+});
+
+// Spec: availability rules. The speech service is injected (S7); the cache is real, in a temp data dir.
+describe('progressService listening availability', () => {
+  let dataDir: string;
+  beforeEach(() => {
+    dataDir = mkdtempSync(join(tmpdir(), 'gait-progress-audio-'));
+    process.env.GAIT_DATA_DIR = dataDir;
+  });
+  afterEach(() => {
+    rmSync(dataDir, { recursive: true, force: true });
+    delete process.env.GAIT_DATA_DIR;
+  });
+
+  function listeningSetup(speechUp: () => Promise<boolean>) {
+    const db = createDbClient(':memory:');
+    seedTutoringCurriculum(db);
+    addListeningExercise(db, 'a1-greet__ex3', 'a1-greet');
+    return { db, progress: createProgressService(db, { audio: { speechUp } }) };
+  }
+
+  it('drops a listening exercise without a cached file while the speech service is down', async () => {
+    const { progress } = listeningSetup(async () => false);
+    const view = await progress.getLessonView('a1-greet');
+    expect(view).toMatchObject({ locked: false, unavailableAudio: 1 });
+    expect(view && !view.locked && view.exercises.map((e) => e.id)).toEqual(['a1-greet__ex1', 'a1-greet__ex2']);
+  });
+
+  it('keeps it when the file is cached, without asking the speech service', async () => {
+    writeAudio(await listeningHash(), Buffer.from('ogg'));
+    const speechUp = vi.fn(async () => false);
+    const { progress } = listeningSetup(speechUp);
+    const view = await progress.getLessonView('a1-greet');
+    expect(view).toMatchObject({ locked: false, unavailableAudio: 0 });
+    const listening = view && !view.locked ? view.exercises.find((e) => e.id === 'a1-greet__ex3') : undefined;
+    expect(listening).toMatchObject({ type: 'audio_questions', audio: { hash: await listeningHash(), available: true } });
+    expect(JSON.stringify(listening)).not.toContain('Nein, mit dem Bus'); // no transcript or evidence before answering
+    expect(speechUp).not.toHaveBeenCalled();
+  });
+
+  it('keeps it while the speech service is up (rendered on demand)', async () => {
+    const { progress } = listeningSetup(async () => true);
+    const view = await progress.getLessonView('a1-greet');
+    expect(view).toMatchObject({ locked: false, unavailableAudio: 0 });
+    expect(view && !view.locked && view.exercises.find((e) => e.id === 'a1-greet__ex3')).toMatchObject({ audio: { available: true } });
+  });
+
+  it('skips a due listening review in the queue while it cannot be heard; it stays due (S9)', async () => {
+    const { db, progress } = listeningSetup(async () => false);
+    scheduleReview(db, 'a1-greet__ex1', '2026-09-20');
+    scheduleReview(db, 'a1-greet__ex3', '2026-09-19');
+    expect((await progress.getDailyQueue('2026-09-24')).items.map((i) => i.exercise.id)).toEqual(['a1-greet__ex1']);
+    writeAudio(await listeningHash(), Buffer.from('ogg'));
+    expect((await progress.getDailyQueue('2026-09-24')).items.map((i) => i.exercise.id)).toEqual(['a1-greet__ex3', 'a1-greet__ex1']);
   });
 });

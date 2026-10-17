@@ -42,6 +42,9 @@ function blankContentFor(type: ExerciseType): ExerciseContent {
       return { items: [''], targets: ['', ''], answers: [0], allowNone: false };
     case 'cloze':
       return { text: '', gaps: [] };
+    // Listening: authoring fields arrive with the admin UI (Task 7); not offered in the type picker yet.
+    case 'audio_questions':
+      return { transcript: '', questions: [{ question: '', options: ['', ''], correctIndex: 0 }] };
   }
 }
 

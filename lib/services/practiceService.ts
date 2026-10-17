@@ -4,7 +4,10 @@ import { randomSuffix } from '../curriculum-admin/randomId';
 import { errorBodyFor, type ApiErrorBody, type ErrorCode, type ErrorParams } from '../tutoring/errorCodes';
 import { toExerciseView } from '../tutoring/exerciseView';
 import type { FreeTextGradingInput } from '../tutoring/freeTextGrading';
-import { correctAnswerFor, type LessonAnswer } from '../tutoring/lessonAnswers';
+import { correctAnswerFor, revealFor, type LessonAnswer } from '../tutoring/lessonAnswers';
+import { resolveAudioGate, type AudioAvailabilityDeps } from '../audio/audioAvailability';
+import { isSpeechUp } from '../speech/speechAvailability';
+import { createAudioService } from './audioService';
 import { buildPracticeGenerationPrompt, contentKey, parseGeneratedExercises, type GeneratedExercise } from '../tutoring/practiceGeneration';
 import { allowedPracticeTypes, PRACTICE_BATCH_SIZE } from '../tutoring/practiceTypes';
 import type { PracticeBatch, PracticeGradeOutcome } from '../tutoring/practiceViews';
@@ -58,6 +61,8 @@ export interface PracticeDeps {
   now?: () => Date;
   // Admin notifications: new AI pool items awaiting review (in-app only).
   notify?: Pick<NotificationService, 'info'>;
+  // Listening availability (S7): tests inject fakes for the speech service and the audio cache.
+  audio?: AudioAvailabilityDeps;
 }
 
 interface PoolRow {
@@ -96,15 +101,23 @@ export function createPracticeService(db: Database.Database, deps: PracticeDeps 
     return { id: row.id, lessonId: row.lesson_id, track: null, type: row.type, content: JSON.parse(row.content) as ExerciseContent };
   }
 
+  // S9: listening exercises are generated only while the speech service is up (their audio must render).
   async function generateMissing(
     lesson: NonNullable<ReturnType<typeof curriculum.getLesson>>,
-    need: number
+    need: number,
+    speechUp: () => Promise<boolean>
   ): Promise<{ exercises: GeneratedExercise[]; failure: GenerationFailure | null }> {
     const authored = curriculum.getExercises(lesson.id, lesson.track);
-    const allowed = allowedPracticeTypes(
+    let allowed = allowedPracticeTypes(
       lesson.skill,
       authored.map((e) => e.type)
     );
+    if (allowed.includes('audio_questions') && !(await speechUp())) {
+      allowed = allowed.filter((t) => t !== 'audio_questions');
+      if (allowed.length === 0) {
+        return { exercises: [], failure: { message: 'Listening practice needs the speech service, which is unavailable right now', code: 'audio_unavailable' } };
+      }
+    }
     const reply = await generate(
       buildPracticeGenerationPrompt(
         {
@@ -148,19 +161,27 @@ export function createPracticeService(db: Database.Database, deps: PracticeDeps 
   // Spec: Student Flow, "Starting a batch". Unseen pool exercises first; the AI fills the rest.
   async function serveBatch(lessonId: string): Promise<PracticeBatch> {
     const lesson = getPracticeLesson(lessonId);
-    const unseen = db
+    const candidates = db
       .prepare(
         `SELECT p.id, p.lesson_id, p.type, p.content FROM practice_exercises p
          WHERE p.lesson_id = ? AND p.review_status != 'rejected'
            AND (p.type != 'flashcard' OR ? = 'vocabulary')
            AND NOT EXISTS (SELECT 1 FROM practice_seen s WHERE s.practice_exercise_id = p.id)
-         ORDER BY p.created_at, p.rowid
-         LIMIT ?`
+         ORDER BY p.created_at, p.rowid`
       )
-      .all(lesson.id, lesson.skill, PRACTICE_BATCH_SIZE) as PoolRow[];
+      .all(lesson.id, lesson.skill) as PoolRow[];
+    // S9: an unseen listening item that can't be heard right now is skipped and stays unseen.
+    let speechAnswer: Promise<boolean> | undefined;
+    const speechUp = () => (speechAnswer ??= (deps.audio?.speechUp ?? (() => isSpeechUp(db)))());
+    const gate = await resolveAudioGate(
+      db,
+      candidates.map((row) => ({ type: row.type, content: JSON.parse(row.content) as unknown })),
+      { cached: deps.audio?.cached, speechUp }
+    );
+    const unseen = candidates.filter((row) => gate.usable(row.type, JSON.parse(row.content))).slice(0, PRACTICE_BATCH_SIZE);
 
     const need = PRACTICE_BATCH_SIZE - unseen.length;
-    const generated = need > 0 ? await generateMissing(lesson, need) : { exercises: [], failure: null };
+    const generated = need > 0 ? await generateMissing(lesson, need, speechUp) : { exercises: [], failure: null };
     if (unseen.length === 0 && generated.exercises.length === 0) {
       const failure = generated.failure ?? { message: 'No practice exercises could be prepared', code: 'ai_failed' as const };
       throw new PracticeError(failure.message, 'ai_failed', failure.code, failure.params);
@@ -182,11 +203,17 @@ export function createPracticeService(db: Database.Database, deps: PracticeDeps 
       for (const row of rows) markSeen.run(row.id, at);
       return rows;
     })();
+    // Generated listening items queue their audio (they were generated while the service was up).
+    const audio = createAudioService(db);
+    for (const exercise of generated.exercises) audio.enqueueFromContent(exercise.type, exercise.content);
+    const generatedPlayable = generated.exercises.some((e) => e.type === 'audio_questions') ? await speechUp() : false;
     if (generated.exercises.length > 0) {
       const n = generated.exercises.length;
       void (deps.notify ?? createNotificationService(db)).info('pool_items', 'New pool items', `${n} new item${n === 1 ? '' : 's'} to review`);
     }
-    return { exercises: served.map((row) => toExerciseView(rowToExercise(row))) };
+    return {
+      exercises: served.map((row) => toExerciseView(rowToExercise(row), (hash) => gate.playable(hash) || generatedPlayable)),
+    };
   }
 
   // Spec: Student Flow, "Answering". Graded like a lesson answer; nothing is written.
@@ -202,10 +229,12 @@ export function createPracticeService(db: Database.Database, deps: PracticeDeps 
       if (graded.reason === 'bad_request') throw new PracticeError(graded.message, 'bad_request');
       throw new PracticeError(graded.message, 'ai_failed', graded.code, graded.params);
     }
+    const reveal = revealFor(exercise);
     return {
       result: graded.result,
       correctAnswer: correctAnswerFor(exercise),
       ...(graded.itemResults ? { itemResults: graded.itemResults } : {}),
+      ...(reveal ? { reveal } : {}),
     };
   }
 

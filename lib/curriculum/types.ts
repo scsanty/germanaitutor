@@ -3,8 +3,9 @@ import type { LocalizedText } from '../i18n/localizedText';
 import type { PassageQuestionsContent } from '../tasks/passageQuestions';
 import type { MatchingContent } from '../tasks/matching';
 import type { ClozeContent } from '../tasks/cloze';
+import type { AudioQuestionsContent } from '../tasks/audioQuestions';
 
-export type { PassageQuestionsContent, MatchingContent, ClozeContent };
+export type { PassageQuestionsContent, MatchingContent, ClozeContent, AudioQuestionsContent };
 
 export type Skill = 'grammar' | 'vocabulary' | 'reading' | 'listening' | 'writing' | 'speaking';
 export type ExerciseType =
@@ -15,7 +16,9 @@ export type ExerciseType =
   // Reading module: the set task types (lib/tasks)
   | 'passage_questions'
   | 'matching'
-  | 'cloze';
+  | 'cloze'
+  // Listening module: questions about a spoken transcript (lib/tasks/audioQuestions)
+  | 'audio_questions';
 
 export interface Milestone {
   id: string;
@@ -90,7 +93,8 @@ export type ExerciseContent =
   | FreeTextContent
   | PassageQuestionsContent
   | MatchingContent
-  | ClozeContent;
+  | ClozeContent
+  | AudioQuestionsContent;
 
 export interface Exercise {
   id: string;

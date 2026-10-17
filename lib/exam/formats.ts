@@ -6,8 +6,8 @@ import type { LocalizedText } from '../i18n/localizedText';
 export type TaskTypeId = 'passage_questions' | 'matching' | 'cloze' | 'audio_questions' | 'letter' | 'spoken';
 const TASK_TYPES: TaskTypeId[] = ['passage_questions', 'matching', 'cloze', 'audio_questions', 'letter', 'spoken'];
 
-// Types that have a runner. Listening, Writing and Speaking add theirs.
-export const RUNTIME_TASK_TYPES = new Set<TaskTypeId>(['passage_questions', 'matching', 'cloze']);
+// Types that have a runner. Writing and Speaking add theirs.
+export const RUNTIME_TASK_TYPES = new Set<TaskTypeId>(['passage_questions', 'matching', 'cloze', 'audio_questions']);
 
 export interface ExamPart {
   id: string;

@@ -58,7 +58,9 @@ export type LessonView =
       skill: Skill;
       explanation: LocalizedText | null;
       examples: LocalizedText[] | null;
+      // Spec: listening exercises whose audio can't be played right now are left out and counted here.
       exercises: ExerciseView[];
+      unavailableAudio: number;
       passedExerciseIds: string[];
       completed: boolean;
       prerequisites: { id: string; title: string; done: boolean }[];

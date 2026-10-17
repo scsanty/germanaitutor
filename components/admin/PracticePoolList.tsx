@@ -10,6 +10,7 @@ import type {
   PassageQuestionsContent,
   MatchingContent,
   ClozeContent,
+  AudioQuestionsContent,
 } from '@/lib/curriculum/types';
 import type { PracticePoolItem, PracticeReviewStatus } from '@/lib/services/practiceAdminService';
 import { LEVELS, TRACKS, TRACK_LABEL } from '@/lib/tutoring/levels';
@@ -39,6 +40,8 @@ function preview(item: PracticePoolItem): string {
       return (item.content as MatchingContent).items.join(' | ');
     case 'cloze':
       return (item.content as ClozeContent).text;
+    case 'audio_questions':
+      return (item.content as AudioQuestionsContent).transcript;
   }
 }
 

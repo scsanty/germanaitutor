@@ -94,3 +94,26 @@ export function addSecondMilestone(db: Database.Database): void {
       ('a1-late__ex2', 'a1-late', 'fill_blank', '{"textWithBlank":"Ich ___ hier.","correctAnswer":"bin"}');
   `);
 }
+
+// A small listening exercise (audio_questions). `variant` changes the transcript, so each one has its own audio hash.
+export function listeningContent(variant = 'Berlin') {
+  return {
+    transcript: `[Anna f] Ich fahre morgen nach ${variant}.\n[Ben m] Mit dem Zug?\n[Anna f] Nein, mit dem Bus.`,
+    questions: [
+      { question: `Wie fährt Anna nach ${variant}?`, options: ['Mit dem Zug', 'Mit dem Bus', 'Mit dem Auto'], correctIndex: 1, evidence: 'Nein, mit dem Bus.' },
+    ],
+  };
+}
+
+export function addListeningExercise(db: Database.Database, id: string, lessonId: string, variant = 'Berlin'): string {
+  db.prepare("INSERT INTO exercises (id, lesson_id, type, content) VALUES (?, ?, 'audio_questions', ?)").run(id, lessonId, JSON.stringify(listeningContent(variant)));
+  return id;
+}
+
+// The cache key of a listening exercise made by `listeningContent`.
+export async function listeningHash(variant = 'Berlin'): Promise<string> {
+  const { audioHash, parseTranscript } = await import('@/lib/audio/transcript');
+  const parsed = parseTranscript(listeningContent(variant).transcript);
+  if ('error' in parsed) throw new Error(parsed.error);
+  return audioHash(parsed);
+}

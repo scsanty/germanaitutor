@@ -19,6 +19,7 @@ import { createContentText } from './contentText';
 import { createProfileService } from './profileService';
 import { eligibleCandidates, testOutStatusFor } from './testOutStatus';
 import { createUnlockService } from './unlockService';
+import { hasAudio } from '../audio/audioStore';
 
 export type TestOutErrorKind = 'not_found' | 'unavailable' | 'cooldown' | 'bad_request' | 'grading_failed';
 
@@ -61,6 +62,8 @@ export interface TestOutDeps {
   now?: () => Date;
   random?: () => number;
   aiAvailable?: () => boolean;
+  // Listening: whether a clip is cached (test-outs draw only cached listening items).
+  audioCached?: (hash: string) => boolean;
 }
 
 interface StoredAnswer {
@@ -83,6 +86,9 @@ export function createTestOutService(db: Database.Database, deps: TestOutDeps = 
   const now = deps.now ?? (() => new Date());
   const random = deps.random ?? Math.random;
   const aiAvailable = deps.aiAvailable ?? (() => isAiAvailable(db));
+  const audioCached = deps.audioCached ?? hasAudio;
+  // Drawn listening items have cached audio; one whose file went missing since shows "unavailable".
+  const viewOf = (exercise: Exercise) => toExerciseView(exercise, audioCached);
   const gradeFree = deps.gradeFreeText ?? ((input: FreeTextGradingInput) => gradeFreeText(db, input));
   const profiles = createProfileService(db);
   const text = createContentText(db);
@@ -134,7 +140,7 @@ export function createTestOutService(db: Database.Database, deps: TestOutDeps = 
       maxScore,
       review: answers.flatMap((a) => {
         const exercise = getExercise(a.exerciseId);
-        return exercise ? [{ exercise: toExerciseView(exercise), answerText: a.answerText, result: a.result, correctAnswer: a.correctAnswer }] : [];
+        return exercise ? [{ exercise: viewOf(exercise), answerText: a.answerText, result: a.result, correctAnswer: a.correctAnswer }] : [];
       }),
     };
   }
@@ -161,12 +167,13 @@ export function createTestOutService(db: Database.Database, deps: TestOutDeps = 
 
   function currentStatus(milestoneId: string) {
     const { gating } = context(milestoneId);
-    let status = testOutStatusFor(db, gating, milestoneId, { now: now(), aiAvailable: aiAvailable() });
+    let status = testOutStatusFor(db, gating, milestoneId, { now: now(), aiAvailable: aiAvailable(), audioCached });
     if (status.status === 'in_progress') {
       settle(milestoneId); // prunes deleted questions; may end the attempt
       status = testOutStatusFor(db, loadLevelGating(db, gating.track, gating.level), milestoneId, {
         now: now(),
         aiAvailable: aiAvailable(),
+        audioCached,
       });
     }
     return status;
@@ -194,7 +201,7 @@ export function createTestOutService(db: Database.Database, deps: TestOutDeps = 
       throw new TestOutError('You can try this test-out again later', 'cooldown', undefined, { retryAt: status.retryAt });
     }
     if (status.status === 'available') {
-      const ids = drawTestOut(eligibleCandidates(db, gating, milestoneId, aiAvailable()), random);
+      const ids = drawTestOut(eligibleCandidates(db, gating, milestoneId, aiAvailable(), audioCached), random);
       db.prepare(
         "INSERT INTO milestone_testouts (milestone_id, status, exercise_ids, started_at) VALUES (?, 'in_progress', ?, ?)"
       ).run(milestoneId, JSON.stringify(ids), now().toISOString());
@@ -205,7 +212,7 @@ export function createTestOutService(db: Database.Database, deps: TestOutDeps = 
     const { ids, answers } = pruned(row);
     return {
       attemptId: row.id,
-      questions: ids.map((id) => getExercise(id)).filter((e): e is Exercise => e !== null).map(toExerciseView),
+      questions: ids.map((id) => getExercise(id)).filter((e): e is Exercise => e !== null).map(viewOf),
       answered: answers.length,
     };
   }

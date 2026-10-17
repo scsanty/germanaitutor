@@ -55,9 +55,9 @@ function assertFlashcardRule(skill: Skill, exercises: { type: ExerciseType }[]):
   if (violation) throw new Error(violation);
 }
 
-// S19: the reading task types are fully validated on save (a half-filled cloze would break the
-// student view and grading); the older types keep the instruction check alone.
-const FULLY_VALIDATED: readonly ExerciseType[] = ['passage_questions', 'matching', 'cloze'];
+// S19: the reading and listening task types are fully validated on save (a half-filled cloze or an
+// untagged transcript would break the student view and grading); the older types keep the instruction check alone.
+const FULLY_VALIDATED: readonly ExerciseType[] = ['passage_questions', 'matching', 'cloze', 'audio_questions'];
 
 function exerciseProblems(type: ExerciseType, content: unknown): string[] {
   return FULLY_VALIDATED.includes(type) ? validateExerciseContent(type, content) : instructionProblems(type, content);

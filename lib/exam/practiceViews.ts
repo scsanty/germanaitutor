@@ -1,5 +1,6 @@
 import type { LocalizedText } from '../i18n/localizedText';
 import type { TaskView } from '../tasks/taskTypes';
+import type { AudioReveal } from '../tasks/audioQuestions';
 import type { ExamFormat, ExamPart } from './formats';
 
 // One timed Teil attempt as the runner sees it: the set's view never carries the answers.
@@ -27,12 +28,18 @@ export interface PracticeResult {
   maxScore: number;
   overtimeSeconds: number;
   review: ItemReview[];
+  // Listening parts: the transcript and per-item evidence, after submit only.
+  reveal?: AudioReveal;
 }
 
 export interface PracticeOverview {
   format: ExamFormat | null;
   // runnable: practisable as a single Teil. mockOnly (S10): has a runner but is practised only in the full mock.
-  parts: { part: ExamPart; runnable: boolean; mockOnly: boolean; lastPercent: number | null }[];
+  // Listening (S10): with the speech service down, a listening part is runnable only with a usable set
+  // whose audio is cached; `mockRunnable` says whether the full mock can start.
+  // audioUnavailable: a listening part that would run but can't be heard right now.
+  parts: { part: ExamPart; runnable: boolean; mockOnly: boolean; audioUnavailable: boolean; lastPercent: number | null }[];
+  mockRunnable: boolean;
 }
 
 export interface MockRun {

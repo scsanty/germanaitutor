@@ -84,7 +84,13 @@ export function correctTextAudioQuestions(c: AudioQuestionsContent): string[] {
 }
 
 // After submit only: the transcript, and per question its evidence and the line that holds it.
-export function audioReveal(c: AudioQuestionsContent): { transcript: ParsedTranscript; evidence: (string | null)[]; evidenceLines: (number | null)[] } {
+export interface AudioReveal {
+  transcript: ParsedTranscript;
+  evidence: (string | null)[];
+  evidenceLines: (number | null)[];
+}
+
+export function audioReveal(c: AudioQuestionsContent): AudioReveal {
   const parsed = parseTranscript(c.transcript);
   if ('error' in parsed) throw new Error(`Invalid transcript: ${parsed.error}`);
   const evidence = c.questions.map((q) => q.evidence ?? null);

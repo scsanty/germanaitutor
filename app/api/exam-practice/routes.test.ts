@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
-import { mkdtempSync } from 'node:fs';
+import { mkdtempSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 
@@ -12,6 +12,8 @@ import { getDb, closeDb } from '@/lib/db/client';
 import { generateWithActiveProvider } from '@/lib/services/aiService';
 import { createProfileService } from '@/lib/services/profileService';
 import { createTeilSetService } from '@/lib/services/teilSetService';
+import { sharedSpeechAvailability } from '@/lib/speech/speechAvailability';
+import { getSpeechUrl } from '@/lib/speech/speechProvider';
 import { GET as overview } from './route';
 import { POST as start } from './start/route';
 import { POST as submit } from './submit/route';
@@ -29,10 +31,13 @@ describe('/api/exam-practice', () => {
     createProfileService(db).updateProfile({ activeTrack: 'telc' });
     createProfileService(db).writeLevelState({ highestUnlockedLevel: 'B1', activeLevel: 'B1' });
     createTeilSetService(db).loadBundled();
+    // S7: the speech service is down for these tests, without any network call.
+    sharedSpeechAvailability().record(getSpeechUrl(db), false);
   });
 
   afterEach(() => {
     closeDb();
+    sharedSpeechAvailability().clear();
     delete process.env.GAIT_DATA_DIR;
     vi.mocked(generateWithActiveProvider).mockClear();
   });
@@ -62,7 +67,11 @@ describe('/api/exam-practice', () => {
   });
 
   it('answers 409 part_unavailable for a part without a runner (S7), 404 for an unknown part (S1)', async () => {
-    const res = await post(start, { formatId: 'telc-b1', partId: 'hoeren-1' });
+    // Listening without cached audio while the speech service is down is unavailable too.
+    const listening = await post(start, { formatId: 'telc-b1', partId: 'hoeren-1' });
+    expect(listening.status).toBe(409);
+    expect(await listening.json()).toMatchObject({ code: 'part_unavailable' });
+    const res = await post(start, { formatId: 'telc-b1', partId: 'schreiben' });
     expect(res.status).toBe(409);
     expect(await res.json()).toMatchObject({ code: 'part_unavailable' });
     expect((await post(start, { formatId: '../../etc', partId: 'lesen-1' })).status).toBe(404);
@@ -84,6 +93,12 @@ describe('/api/exam-practice', () => {
   // Sprachbausteine parts run only in the mock, so the mock start is where a bad cloze reply would surface.
   it('mock start falls back to a seen set when the AI reply has a null cloze gap, instead of failing', async () => {
     const db = getDb();
+    // The mock includes the listening parts: give each one a set, and the speech service is up.
+    sharedSpeechAvailability().record(getSpeechUrl(db), true);
+    for (const part of ['hoeren-2', 'hoeren-3']) {
+      const fixture = JSON.parse(readFileSync(join(process.cwd(), 'test', 'fixtures', 'teil-sets', 'telc-b1', `${part}.json`), 'utf8'));
+      createTeilSetService(db).upload('telc-b1', part, [{ id: `fixture-${part}`, set: fixture.sets[0].set }]);
+    }
     db.prepare(
       "INSERT INTO teil_seen (set_id, seen_at) SELECT id, '2026-01-01T00:00:00.000Z' FROM teil_sets WHERE format_id = 'telc-b1' AND part_id = 'sprachbausteine-1'"
     ).run();

@@ -1,7 +1,9 @@
 import { describe, it, expect, vi } from 'vitest';
 import { createDbClient } from '../db/client';
 import { createTestOutService, TestOutError, type TestOutDeps } from './testOutService';
-import { addSecondMilestone, markComplete, scheduleReview, seedTutoringCurriculum } from '@/test/tutoringFixtures';
+import { addListeningExercise, addSecondMilestone, listeningHash, markComplete, scheduleReview, seedTutoringCurriculum } from '@/test/tutoringFixtures';
+import { eligibleCandidates } from './testOutStatus';
+import { loadLevelGating } from './levelGating';
 import type { LessonAnswer } from '../tutoring/lessonAnswers';
 
 // Generic A1: "Basics" (rank 1, open) and "Later" (rank 2, the next locked rank) with three
@@ -296,5 +298,29 @@ describe('testOutService.start and answer', () => {
     expect(service.state('g-a1-m2').status).toEqual({ status: 'too_few_questions' });
     expect(db.prepare('SELECT COUNT(*) AS n FROM milestone_testouts').get()).toEqual({ n: 0 });
     expect(db.prepare("SELECT COUNT(*) AS n FROM lesson_completions WHERE source = 'testout'").get()).toEqual({ n: 0 });
+  });
+});
+
+// Spec: a listening exercise is eligible for a test-out only when its audio is cached (I15).
+describe('testOutService listening', () => {
+  it("doesn't draw an audio_questions exercise without cached audio", async () => {
+    const hash = await listeningHash();
+    for (const cached of [false, true]) {
+      const { db, service } = setup({ audioCached: (h) => cached && h === hash });
+      addListeningExercise(db, 'a1-late2__ex3', 'a1-late2');
+      const pool = eligibleCandidates(db, loadLevelGating(db, 'generic', 'A1'), 'g-a1-m2', false, (h) => cached && h === hash);
+      expect(pool.find((c) => c.lessonId === 'a1-late2')?.exerciseIds.includes('a1-late2__ex3')).toBe(cached);
+      if (!cached) {
+        for (let i = 0; i < 3; i++) {
+          const run = service.start('g-a1-m2');
+          expect(run.questions.map((q) => q.id)).not.toContain('a1-late2__ex3');
+          db.exec('DELETE FROM milestone_testouts');
+        }
+      } else {
+        const run = createTestOutService(db, { random: () => 0, aiAvailable: () => false, audioCached: (h) => h === hash }).start('g-a1-m2');
+        const drawn = run.questions.find((q) => q.id === 'a1-late2__ex3');
+        if (drawn) expect(drawn).toMatchObject({ type: 'audio_questions', audio: { hash, available: true } });
+      }
+    }
   });
 });

@@ -122,9 +122,10 @@ function upsertSeedFile(db: Database.Database, seed: SeedFile): void {
      ON CONFLICT(id) DO UPDATE SET title = excluded.title, explanation = excluded.explanation, examples = excluded.examples,
        title_de = excluded.title_de, explanation_de = excluded.explanation_de, examples_de = excluded.examples_de`
   );
+  // B1: the type is updated too, so a converted exercise never keeps its old type with new content.
   const upsertExercise = db.prepare(
     `INSERT INTO exercises (id, lesson_id, track, type, content) VALUES (?, ?, ?, ?, ?)
-     ON CONFLICT(id) DO UPDATE SET content = excluded.content`
+     ON CONFLICT(id) DO UPDATE SET type = excluded.type, content = excluded.content`
   );
   const upsertPrerequisite = db.prepare(
     'INSERT OR IGNORE INTO lesson_prerequisites (lesson_id, prerequisite_lesson_id) VALUES (?, ?)'
@@ -152,6 +153,7 @@ function upsertSeedFile(db: Database.Database, seed: SeedFile): void {
     upsertExercise.run(exercise.id, exercise.lessonId, exercise.track, exercise.type, JSON.stringify(exercise.content));
     audio.enqueueFromContent(exercise.type, exercise.content);
   }
+  removeDroppedSeedExercises(db, seed);
   for (const prereq of seed.prerequisites) {
     upsertPrerequisite.run(prereq.lessonId, prereq.prerequisiteLessonId);
   }
@@ -177,6 +179,24 @@ function upsertSeedFile(db: Database.Database, seed: SeedFile): void {
     if (!lessonExists.get(item.lessonId)) continue;
     insertPractice.run(item.id, item.lessonId, item.type, JSON.stringify(item.content), practiceAt, practiceAt);
     audio.enqueueFromContent(item.type, item.content);
+  }
+}
+
+const escapeRegExp = (text: string) => text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+// B1: the file is the authority for its lessons' seed exercises (ids `<lessonId>__ex<N>`). One that
+// left the file (e.g. printed-audio exercises merged into one listening exercise) is deleted, with
+// its attempts and review state (ON DELETE CASCADE). Lesson completions stay. Admin-made exercises
+// (`<lessonId>__ex-<suffix>`) are never touched.
+function removeDroppedSeedExercises(db: Database.Database, seed: SeedFile): void {
+  const inFile = new Set(seed.exercises.map((e) => e.id));
+  const exercisesOf = db.prepare('SELECT id FROM exercises WHERE lesson_id = ?');
+  const remove = db.prepare('DELETE FROM exercises WHERE id = ?');
+  for (const lesson of seed.lessons) {
+    const seedId = new RegExp(`^${escapeRegExp(lesson.id)}__ex\\d+$`);
+    for (const { id } of exercisesOf.all(lesson.id) as { id: string }[]) {
+      if (seedId.test(id) && !inFile.has(id)) remove.run(id);
+    }
   }
 }
 

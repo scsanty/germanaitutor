@@ -5,6 +5,7 @@ import { hasInstructionKey, validateExerciseContent } from '../curriculum/exerci
 import { randomSuffix } from '../curriculum-admin/randomId';
 import { correctAnswerFor } from '../tutoring/lessonAnswers';
 import { flashcardRuleViolation } from './lessonAdminService';
+import { createAudioService } from './audioService';
 
 export type PracticeReviewStatus = 'unreviewed' | 'approved' | 'rejected';
 
@@ -110,6 +111,7 @@ export function createPracticeAdminService(db: Database.Database, deps: { now?: 
       now().toISOString(),
       id
     );
+    createAudioService(db).enqueueFromContent(row.type, content); // an edited transcript needs new audio
     return rowToItem(getRow(id));
   }
 

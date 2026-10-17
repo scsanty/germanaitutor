@@ -66,7 +66,9 @@ interface Shown {
 type TaskExercise = Extract<ExerciseView, { type: SetTaskType }>;
 
 function isTaskExercise(exercise: ExerciseView): exercise is TaskExercise {
-  return exercise.type === 'passage_questions' || exercise.type === 'matching' || exercise.type === 'cloze';
+  return (
+    exercise.type === 'passage_questions' || exercise.type === 'matching' || exercise.type === 'cloze' || exercise.type === 'audio_questions'
+  );
 }
 
 // The exercise view minus its id, as the task inputs and the shared answer-text helper take it.
@@ -85,10 +87,11 @@ export function taskText(exercise: ExerciseView): string {
       return exercise.front;
     case 'free_text':
       return exercise.prompt;
-    // Reading task types: shown by their own inputs, never as a heading line.
+    // Reading and listening task types: shown by their own inputs, never as a heading line.
     case 'passage_questions':
     case 'matching':
     case 'cloze':
+    case 'audio_questions':
       return '';
   }
 }
@@ -122,6 +125,7 @@ function answerTextOf(exercise: ExerciseView, answer: LessonAnswer): string {
     case 'passage_questions':
     case 'matching':
     case 'cloze':
+    case 'audio_questions':
       return isTaskExercise(exercise) ? taskAnswerText(exercise as TaskAnswerSource, answer) : '';
   }
 }
@@ -226,7 +230,7 @@ export function ExerciseCard({
     if (exercise.type === 'flashcard') return null;
     // Reading tasks: checkable once any item is answered; typed gaps go exactly as typed (grading is case-sensitive).
     // Lesson exercises can't be audio_questions until the Listening lesson task (T5/T6), so the cast is safe for now.
-    if (isTaskExercise(exercise)) return taskAnswer && answeredCount(taskAnswer) > 0 ? (taskAnswer as LessonAnswer) : null;
+    if (isTaskExercise(exercise)) return taskAnswer && answeredCount(taskAnswer) > 0 ? taskAnswer : null;
     const trimmed = text.trim();
     if (!trimmed) return null;
     return exercise.type === 'fill_blank' ? { type: 'fill_blank', text: trimmed } : { type: 'free_text', text: trimmed };

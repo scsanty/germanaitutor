@@ -6,5 +6,5 @@ import { localDate } from '@/lib/tutoring/dates';
 export const dynamic = 'force-dynamic';
 
 export async function GET() {
-  return NextResponse.json(createProgressService(getDb()).getDailyQueue(localDate()));
+  return NextResponse.json(await createProgressService(getDb()).getDailyQueue(localDate()));
 }

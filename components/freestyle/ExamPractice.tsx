@@ -163,7 +163,7 @@ export function ExamPractice() {
   }
 
   const written = format.blocks.find((b) => b.id === 'written');
-  const mockParts = overview.parts.filter((p) => (p.runnable || p.mockOnly) && written?.partIds.includes(p.part.id));
+  const mockParts = overview.parts.filter((p) => (p.runnable || p.mockOnly || p.audioUnavailable) && written?.partIds.includes(p.part.id));
   const mockMinutes = mockParts.reduce((s, p) => s + p.part.minutes, 0);
 
   return (
@@ -183,10 +183,11 @@ export function ExamPractice() {
           <div className="flex flex-1 flex-col gap-1">
             <h2 className="text-lg font-semibold">{t('fullMock')}</h2>
             <p className="text-sm text-text-muted">{t('fullMockBody', { minutes: mockMinutes })}</p>
+            {!overview.mockRunnable && <p className="text-sm text-text-muted">{t('mockAudioUnavailable')}</p>}
           </div>
           <Button
             className="min-h-11"
-            disabled={starting !== null}
+            disabled={!overview.mockRunnable || starting !== null}
             onClick={() => start('mock', '/api/exam-practice/mock/start', { formatId: format.id }, (data) => {
               const mock = data as MockRun;
               setScreen({ kind: 'mock', mock, index: 0, results: [], offsetMs: offsetOf(mock.runs[0]?.startedAt ?? '') || 0 });
@@ -197,9 +198,17 @@ export function ExamPractice() {
         </Card>
       )}
       <ul className="flex flex-col gap-3">
-        {overview.parts.map(({ part, runnable, mockOnly, lastPercent }) => {
+        {overview.parts.map(({ part, runnable, mockOnly, audioUnavailable, lastPercent }) => {
           const mod = MODULE_OF[part.skill];
-          const hint = runnable ? null : mockOnly ? t('mockOnly') : mod ? t('comingSoon', { module: t(`modules.${mod}`) }) : null;
+          const hint = runnable
+            ? null
+            : audioUnavailable
+              ? t('audioUnavailable')
+              : mockOnly
+                ? t('mockOnly')
+                : mod
+                  ? t('comingSoon', { module: t(`modules.${mod}`) })
+                  : null;
           return (
             <li key={part.id}>
               <Card className="flex-row items-center gap-4 px-5 py-4">

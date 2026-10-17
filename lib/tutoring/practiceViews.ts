@@ -1,5 +1,6 @@
 import type { ExerciseView } from './exerciseView';
 import type { GradeResult } from './grading';
+import type { AudioReveal } from '../tasks/audioQuestions';
 
 // What `POST /api/tutoring/lessons/[id]/practice` returns: never the answers.
 export interface PracticeBatch {
@@ -10,6 +11,8 @@ export interface PracticeBatch {
 export interface PracticeGradeOutcome {
   result: GradeResult;
   correctAnswer: string | null;
-  // S17: per question, text or gap, for the reading task types only.
+  // S17: per question, text or gap, for the reading and listening task types only.
   itemResults?: boolean[];
+  // Listening: the transcript and evidence, after answering only.
+  reveal?: AudioReveal;
 }

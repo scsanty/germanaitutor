@@ -9,6 +9,7 @@ import type { LocalizedText } from '../i18n/localizedText';
 import type { PassageQuestionsView } from '../tasks/passageQuestions';
 import type { MatchingView } from '../tasks/matching';
 import type { ClozeView } from '../tasks/cloze';
+import type { AudioQuestionsView } from '../tasks/audioQuestions';
 import { viewTask, type TaskContent } from '../tasks/taskTypes';
 
 // What the student sees of an exercise before answering: never the answer. A flashcard keeps
@@ -20,13 +21,16 @@ export type ExerciseView =
   | { id: string; type: 'free_text'; prompt: string; instruction?: LocalizedText }
   | ({ id: string; type: 'passage_questions' } & PassageQuestionsView)
   | ({ id: string; type: 'matching' } & MatchingView)
-  | ({ id: string; type: 'cloze' } & ClozeView);
+  | ({ id: string; type: 'cloze' } & ClozeView)
+  | ({ id: string; type: 'audio_questions' } & AudioQuestionsView);
 
 function instructionOf(content: { instruction?: LocalizedText }): { instruction?: LocalizedText } {
   return content.instruction ? { instruction: content.instruction } : {};
 }
 
-export function toExerciseView(exercise: Exercise): ExerciseView {
+// `playable(hash)`: whether a listening exercise's audio can be played now (cached, or the speech
+// service is up to render it on demand). S9: every caller passes its request's availability.
+export function toExerciseView(exercise: Exercise, playable: (hash: string) => boolean = () => false): ExerciseView {
   switch (exercise.type) {
     case 'multiple_choice': {
       const content = exercise.content as MultipleChoiceContent;
@@ -56,5 +60,11 @@ export function toExerciseView(exercise: Exercise): ExerciseView {
       return { id: exercise.id, type: 'matching', ...(viewTask('matching', exercise.content as TaskContent) as MatchingView) };
     case 'cloze':
       return { id: exercise.id, type: 'cloze', ...(viewTask('cloze', exercise.content as TaskContent) as ClozeView) };
+    case 'audio_questions':
+      return {
+        id: exercise.id,
+        type: 'audio_questions',
+        ...(viewTask('audio_questions', exercise.content as TaskContent, playable) as AudioQuestionsView),
+      };
   }
 }
