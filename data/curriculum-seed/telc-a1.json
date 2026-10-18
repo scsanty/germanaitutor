@@ -1168,87 +1168,128 @@
       }
     },
     {
-      "id": "a1-telc-listening-station-store-announcements__ex0",
+      "id": "a1-telc-listening-station-store-announcements__ex3",
       "lessonId": "a1-telc-listening-station-store-announcements",
       "track": "telc",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Durchsage: 'Achtung an Gleis 7: Der ICE nach Stuttgart hält heute an Gleis 9.' - Wo fährt der Zug nach Stuttgart ab?",
-        "options": [
-          "An Gleis 7",
-          "An Gleis 9",
-          "Er fällt aus",
-          "An Gleis 11"
-        ],
-        "correctIndex": 1
+        "instruction": {
+          "en": "Listen to the announcements at the station and answer the questions.",
+          "de": "Hören Sie die Durchsagen am Bahnhof und beantworten Sie die Fragen."
+        },
+        "transcript": "@filter station\n[Durchsage f] Achtung an Gleis sieben: Der Intercity nach Stuttgart fährt heute nicht von Gleis sieben ab.\n[Durchsage f] Der Zug nach Stuttgart fährt heute von Gleis neun. Ich wiederhole: Gleis neun.\n[Bahnhofsansage m] Eine Information zum Regionalexpress nach Frankfurt: Der Zug hat heute etwa zehn Minuten Verspätung. Wir bitten um Entschuldigung.",
+        "questions": [
+          {
+            "question": "Wo fährt der Zug nach Stuttgart heute ab?",
+            "options": [
+              "An Gleis sieben",
+              "An Gleis neun",
+              "An Gleis elf"
+            ],
+            "correctIndex": 1,
+            "evidence": "Der Zug nach Stuttgart fährt heute von Gleis neun."
+          },
+          {
+            "question": "Was ist mit dem Zug nach Frankfurt?",
+            "options": [
+              "Er kommt etwa zehn Minuten später.",
+              "Er fällt heute aus.",
+              "Er fährt zehn Minuten früher ab."
+            ],
+            "correctIndex": 0,
+            "evidence": "Der Zug hat heute etwa zehn Minuten Verspätung."
+          }
+        ]
       }
     },
     {
-      "id": "a1-telc-listening-station-store-announcements__ex1",
+      "id": "a1-telc-listening-station-store-announcements__ex4",
       "lessonId": "a1-telc-listening-station-store-announcements",
       "track": "telc",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Durchsage: 'Kundenhinweis: Ein kleiner Junge mit roter Jacke sucht seine Eltern an der Information.' - Wer wird gesucht?",
-        "options": [
-          "Ein Busfahrer",
-          "Die Eltern eines kleinen Jungen",
-          "Ein Kassenmitarbeiter",
-          "Ein Arzt"
-        ],
-        "correctIndex": 1
+        "instruction": {
+          "en": "Listen to the announcement in the supermarket and answer the questions.",
+          "de": "Hören Sie die Durchsage im Supermarkt und beantworten Sie die Fragen."
+        },
+        "transcript": "@filter station\n[Durchsage f] Liebe Kundinnen und Kunden, eine kurze Information.\n[Durchsage f] Der kleine Max, vier Jahre alt, mit roter Jacke, ist an der Information im Erdgeschoss. Er sucht seine Eltern.\n[Durchsage f] Liebe Eltern von Max, bitte kommen Sie zur Information im Erdgeschoss.\n[Durchsage f] Und noch ein Tipp für Sie: Heute kosten alle Äpfel nur ein Euro fünfzig das Kilo.",
+        "questions": [
+          {
+            "question": "Wer soll zur Information kommen?",
+            "options": [
+              "Ein Verkäufer",
+              "Die Eltern von Max",
+              "Ein Arzt"
+            ],
+            "correctIndex": 1,
+            "evidence": "Liebe Eltern von Max, bitte kommen Sie"
+          },
+          {
+            "question": "Wo ist die Information?",
+            "options": [
+              "Im Erdgeschoss",
+              "Im ersten Stock",
+              "An der Kasse"
+            ],
+            "correctIndex": 0,
+            "evidence": "ist an der Information im Erdgeschoss"
+          },
+          {
+            "question": "Wie viel kostet ein Kilo Äpfel heute?",
+            "options": [
+              "Ein Euro",
+              "Fünf Euro",
+              "Ein Euro fünfzig"
+            ],
+            "correctIndex": 2,
+            "evidence": "nur ein Euro fünfzig das Kilo"
+          }
+        ]
       }
     },
     {
-      "id": "a1-telc-listening-station-store-announcements__ex2",
-      "lessonId": "a1-telc-listening-station-store-announcements",
-      "track": "telc",
-      "type": "fill_blank",
-      "content": {
-        "textWithBlank": "Durchsage: 'Der Zug nach Frankfurt hat voraussichtlich zehn Minuten ___ .' (delay)",
-        "correctAnswer": "Verspätung"
-      }
-    },
-    {
-      "id": "a1-telc-listening-voicemail-appointments__ex0",
+      "id": "a1-telc-listening-voicemail-appointments__ex3",
       "lessonId": "a1-telc-listening-voicemail-appointments",
       "track": "telc",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Nachricht: 'Hier Praxis Dr. Weber. Ihr Termin am Montag verschiebt sich auf Dienstag, 14:00 Uhr.' - Wann ist der neue Termin?",
-        "options": [
-          "Montag um 14:00 Uhr",
-          "Dienstag um 14:00 Uhr",
-          "Dienstag um 10:00 Uhr",
-          "Mittwoch um 14:00 Uhr"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "a1-telc-listening-voicemail-appointments__ex1",
-      "lessonId": "a1-telc-listening-voicemail-appointments",
-      "track": "telc",
-      "type": "fill_blank",
-      "content": {
-        "textWithBlank": "Nachricht: 'Bitte bringen Sie zum Arzttermin Ihre Kranken___ mit.' (insurance card: Versichertenkarte/Krankenkassenkarte)",
-        "correctAnswer": "kassenkarte"
-      }
-    },
-    {
-      "id": "a1-telc-listening-voicemail-appointments__ex2",
-      "lessonId": "a1-telc-listening-voicemail-appointments",
-      "track": "telc",
-      "type": "multiple_choice",
-      "content": {
-        "question": "Nachricht: 'Rufen Sie uns bitte unter 0171-45678 zurück.' - Was soll der Angerufene tun?",
-        "options": [
-          "Eine E-Mail schreiben",
-          "Sofort vorbeikommen",
-          "Zurückrufen",
-          "Ein Formular abschicken"
-        ],
-        "correctIndex": 2
+        "instruction": {
+          "en": "Listen to the message on the answering machine and answer the questions.",
+          "de": "Hören Sie die Nachricht auf dem Anrufbeantworter und beantworten Sie die Fragen."
+        },
+        "transcript": "@filter phone\n[Arzthelferin f] Guten Tag, Herr Demir, hier ist die Praxis Doktor Weber.\n[Arzthelferin f] Ihr Termin am Montag geht leider nicht. Der Doktor ist am Montag nicht da.\n[Arzthelferin f] Ihr neuer Termin ist am Dienstag um vierzehn Uhr.\n[Arzthelferin f] Bitte bringen Sie Ihre Krankenkassenkarte mit. Den Impfpass brauchen Sie dieses Mal nicht.\n[Arzthelferin f] Haben Sie am Dienstag keine Zeit? Dann rufen Sie uns bitte zurück. Die Nummer ist null sechs neun, vier fünf sechs sieben acht. Auf Wiederhören!",
+        "questions": [
+          {
+            "question": "Wann ist der neue Termin?",
+            "options": [
+              "Am Montag um vierzehn Uhr",
+              "Am Dienstag um vierzehn Uhr",
+              "Am Dienstag um zehn Uhr"
+            ],
+            "correctIndex": 1,
+            "evidence": "Ihr neuer Termin ist am Dienstag um vierzehn Uhr."
+          },
+          {
+            "question": "Was soll Herr Demir mitbringen?",
+            "options": [
+              "Seine Krankenkassenkarte",
+              "Seinen Impfpass",
+              "Seine Medikamente"
+            ],
+            "correctIndex": 0,
+            "evidence": "Bitte bringen Sie Ihre Krankenkassenkarte mit."
+          },
+          {
+            "question": "Was soll Herr Demir tun, wenn er am Dienstag keine Zeit hat?",
+            "options": [
+              "Eine E-Mail schreiben",
+              "Am Montag in die Praxis kommen",
+              "In der Praxis anrufen"
+            ],
+            "correctIndex": 2,
+            "evidence": "Dann rufen Sie uns bitte zurück."
+          }
+        ]
       }
     },
     {

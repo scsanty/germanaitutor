@@ -1271,123 +1271,158 @@
       }
     },
     {
-      "id": "a2-telc-listening-teil1-voicemail-notes__ex0",
+      "id": "a2-telc-listening-teil1-voicemail-notes__ex3",
       "lessonId": "a2-telc-listening-teil1-voicemail-notes",
       "track": "telc",
-      "type": "fill_blank",
+      "type": "audio_questions",
       "content": {
-        "textWithBlank": "Nachricht: 'Hier Schreinerei Holz. Die Lieferung kommt am Freitag um ___ Uhr.' (spoken: elf)",
-        "correctAnswer": "11"
-      }
-    },
-    {
-      "id": "a2-telc-listening-teil1-voicemail-notes__ex1",
-      "lessonId": "a2-telc-listening-teil1-voicemail-notes",
-      "track": "telc",
-      "type": "multiple_choice",
-      "content": {
-        "question": "Nachricht: 'Guten Tag, hier Kundendienst Becker. Unser Techniker kommt morgen zwischen 8 und 12 Uhr. Bitte stellen Sie sicher, dass jemand zu Hause ist.' - Was soll der Kunde tun?",
-        "options": [
-          "In die Werkstatt kommen",
-          "Morgen Vormittag zu Hause sein",
-          "Eine neue Rechnung bezahlen"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "a2-telc-listening-teil1-voicemail-notes__ex2",
-      "lessonId": "a2-telc-listening-teil1-voicemail-notes",
-      "track": "telc",
-      "type": "fill_blank",
-      "content": {
-        "textWithBlank": "Nachricht: 'Bitte rufen Sie mich unter der Nummer 0172-___ zurück.' (spoken: acht-fünf-zwei)",
-        "correctAnswer": "852"
-      }
-    },
-    {
-      "id": "a2-telc-listening-teil2-radio-announcements__ex0",
-      "lessonId": "a2-telc-listening-teil2-radio-announcements",
-      "track": "telc",
-      "type": "multiple_choice",
-      "content": {
-        "question": "Radio (1x): 'Verkehrsmeldung für die A5: Wegen einer Wanderbaustelle zwischen Karlsruhe und Rastatt stockt der Verkehr auf vier Kilometern.' - Was ist auf der A5?",
-        "options": [
-          "Ein Unfall",
-          "Vier Kilometer stockender Verkehr wegen Baustelle",
-          "Eine Vollsperrung"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "a2-telc-listening-teil2-radio-announcements__ex1",
-      "lessonId": "a2-telc-listening-teil2-radio-announcements",
-      "track": "telc",
-      "type": "multiple_choice",
-      "content": {
-        "question": "Radio (1x): 'Verbrauchertipp: Frisches Obst und Gemüse auf dem Wochenmarkt am Rathausplatz heute bis 14 Uhr mit Sonderrabatten.' - Wo gibt es die Rabatte?",
-        "options": [
-          "Im Supermarkt",
-          "Auf dem Wochenmarkt",
-          "Im Einkaufszentrum"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "a2-telc-listening-teil2-radio-announcements__ex2",
-      "lessonId": "a2-telc-listening-teil2-radio-announcements",
-      "track": "telc",
-      "type": "fill_blank",
-      "content": {
-        "textWithBlank": "Radio: 'Das Bürgertelefon der Stadt ist heute bis ___ Uhr erreichbar.' (spoken: neunzehn)",
-        "correctAnswer": "19"
-      }
-    },
-    {
-      "id": "a2-telc-listening-teil3-conversational-matching__ex0",
-      "lessonId": "a2-telc-listening-teil3-conversational-matching",
-      "track": "telc",
-      "type": "multiple_choice",
-      "content": {
-        "question": "Gespräch: 'Was machen die Kollegen am Wochenende? Markus repariert sein Fahrrad, während Sabine wandern geht.' - Was macht Sabine?",
-        "options": [
-          "Fahrrad reparieren",
-          "Wandern gehen",
-          "Zu Hause schlafen",
-          "Ein Fest organisieren"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "a2-telc-listening-teil3-conversational-matching__ex1",
-      "lessonId": "a2-telc-listening-teil3-conversational-matching",
-      "track": "telc",
-      "type": "multiple_choice",
-      "content": {
-        "question": "Gespräch: 'Wer übernimmt den Wochenenddienst im Krankenhaus? Dr. Klein hat Samstag Dienst und Dr. Frank übernimmt den Sonntag.' - Wer arbeitet am Sonntag?",
-        "options": [
-          "Dr. Klein",
-          "Dr. Frank",
-          "Beide Ärzte gemeinsam"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "a2-telc-listening-teil3-conversational-matching__ex2",
-      "lessonId": "a2-telc-listening-teil3-conversational-matching",
-      "track": "telc",
-      "type": "free_text",
-      "content": {
-        "prompt": "Dialog: 'Lena kauft die Getränke für die Party und Felix backt einen Kuchen.'",
-        "modelAnswer": "Felix backt einen Kuchen.",
         "instruction": {
-          "en": "What does Felix do?",
-          "de": "Was macht Felix?"
-        }
+          "en": "Listen to three phone messages and complete the phone notes: a, b or c.",
+          "de": "Sie hören drei Ansagen am Telefon. Ergänzen Sie die Telefonnotizen: a, b oder c."
+        },
+        "transcript": "@filter phone\n[Ansage f] Text 1.\n[Herr Holz m] Guten Tag, hier ist Thomas Holz von der Schreinerei Holz. Es geht um Ihren neuen Schrank.\n[Herr Holz m] Am Donnerstag um zehn Uhr können wir leider nicht kommen. Die Lieferung kommt am Freitag um elf Uhr. Bis dann!\n[Ansage f] Text 2.\n[Frau Becker f] Guten Tag, hier ist der Kundendienst Becker. Unser Techniker kommt morgen zwischen acht und zwölf Uhr und repariert Ihre Waschmaschine.\n[Frau Becker f] Bitte sorgen Sie dafür, dass morgen Vormittag jemand zu Hause ist. Am Nachmittag geht es leider nicht. Vielen Dank.\n[Ansage f] Text 3.\n[Herr Yilmaz m] Hallo, hier ist Can Yilmaz vom Sportverein. Ich habe eine Frage zum Kurs am Mittwoch.\n[Herr Yilmaz m] Bitte rufen Sie mich zurück. Meine Handynummer ist null eins sieben zwei, acht fünf zwei, drei drei null.",
+        "questions": [
+          {
+            "question": "Telefonnotiz: Lieferung des Schranks am Freitag um …",
+            "options": [
+              "elf Uhr",
+              "zehn Uhr",
+              "zwölf Uhr"
+            ],
+            "correctIndex": 0,
+            "evidence": "Die Lieferung kommt am Freitag um elf Uhr."
+          },
+          {
+            "question": "Telefonnotiz: Techniker kommt morgen. Bitte …",
+            "options": [
+              "den ganzen Tag zu Hause sein",
+              "am Vormittag zu Hause sein",
+              "am Nachmittag zu Hause sein"
+            ],
+            "correctIndex": 1,
+            "evidence": "dass morgen Vormittag jemand zu Hause ist"
+          },
+          {
+            "question": "Telefonnotiz: Herrn Yilmaz zurückrufen, Nummer null eins sieben zwei, …",
+            "options": [
+              "fünf acht zwei, drei drei null",
+              "acht fünf zwei, null drei drei",
+              "acht fünf zwei, drei drei null"
+            ],
+            "correctIndex": 2,
+            "evidence": "acht fünf zwei, drei drei null"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a2-telc-listening-teil2-radio-announcements__ex3",
+      "lessonId": "a2-telc-listening-teil2-radio-announcements",
+      "track": "telc",
+      "type": "audio_questions",
+      "content": {
+        "instruction": {
+          "en": "Listen to three short items from the radio and choose a, b or c. In the exam you hear each text only once.",
+          "de": "Sie hören drei Informationen aus dem Radio. Kreuzen Sie an: a, b oder c. In der Prüfung hören Sie jeden Text nur einmal."
+        },
+        "transcript": "@filter radio\n[Ansage f] Text 1.\n[Moderator m] Und jetzt der Verkehr. Auf der A fünf zwischen Karlsruhe und Rastatt gibt es eine Baustelle. Deshalb stockt der Verkehr dort auf vier Kilometern. Unfälle gibt es zurzeit keine.\n[Ansage f] Text 2.\n[Moderatorin f] Ein Tipp für alle, die heute noch einkaufen wollen: Auf dem Wochenmarkt am Rathausplatz gibt es bis vierzehn Uhr frisches Obst und Gemüse besonders günstig.\n[Ansage f] Text 3.\n[Moderator m] Eine Information der Stadt: Das Bürgertelefon ist heute länger erreichbar, nicht wie sonst bis sechzehn Uhr, sondern bis neunzehn Uhr.",
+        "questions": [
+          {
+            "question": "Was ist auf der A fünf los?",
+            "options": [
+              "Es gab einen Unfall.",
+              "Die Autobahn ist ganz gesperrt.",
+              "Wegen einer Baustelle gibt es Stau."
+            ],
+            "correctIndex": 2,
+            "evidence": "gibt es eine Baustelle. Deshalb stockt der Verkehr"
+          },
+          {
+            "question": "Wo kann man heute günstig Obst kaufen?",
+            "options": [
+              "Auf dem Wochenmarkt",
+              "Im Supermarkt",
+              "Im Einkaufszentrum"
+            ],
+            "correctIndex": 0,
+            "evidence": "Auf dem Wochenmarkt am Rathausplatz"
+          },
+          {
+            "question": "Bis wann kann man heute beim Bürgertelefon anrufen?",
+            "options": [
+              "Bis sechzehn Uhr",
+              "Bis neunzehn Uhr",
+              "Bis vierzehn Uhr"
+            ],
+            "correctIndex": 1,
+            "evidence": "sondern bis neunzehn Uhr"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a2-telc-listening-teil3-conversational-matching__ex3",
+      "lessonId": "a2-telc-listening-teil3-conversational-matching",
+      "track": "telc",
+      "type": "audio_questions",
+      "content": {
+        "instruction": {
+          "en": "Listen to the conversation. Who does what for the summer party? Choose the right answer.",
+          "de": "Sie hören ein Gespräch. Wer macht was für das Sommerfest? Wählen Sie die richtige Antwort."
+        },
+        "transcript": "[Jana f] Tom, hast du schon die Liste fürs Sommerfest? Wer macht was?\n[Tom m] Ja, hier. Also, Lena kauft die Getränke. Sie hat ja ein großes Auto.\n[Jana f] Gut. Und der Kuchen? Backt Sabine wieder ihren Apfelkuchen?\n[Tom m] Nein, Sabine hat dieses Mal keine Zeit zum Backen. Felix backt den Kuchen. Sabine macht die Fotos.\n[Jana f] Und Markus? Der wollte doch Musik machen, oder?\n[Tom m] Das wollte er, aber er bringt jetzt nur seine Lautsprecher mit. Die Musik sucht Herr Frank aus.\n[Jana f] Herr Frank? Unser Chef? Das ist ja lustig!\n[Tom m] Ja, er hat selbst gefragt. Und ich hole am Samstag früh die Tische und Stühle.",
+        "questions": [
+          {
+            "question": "Was macht Lena?",
+            "options": [
+              "Sie kauft die Getränke.",
+              "Sie backt einen Kuchen.",
+              "Sie macht Fotos."
+            ],
+            "correctIndex": 0,
+            "evidence": "Lena kauft die Getränke."
+          },
+          {
+            "question": "Was macht Felix?",
+            "options": [
+              "Er holt die Tische.",
+              "Er backt den Kuchen.",
+              "Er sucht die Musik aus."
+            ],
+            "correctIndex": 1,
+            "evidence": "Felix backt den Kuchen."
+          },
+          {
+            "question": "Was macht Sabine?",
+            "options": [
+              "Sie backt Apfelkuchen.",
+              "Sie kauft die Getränke.",
+              "Sie macht die Fotos."
+            ],
+            "correctIndex": 2,
+            "evidence": "Sabine macht die Fotos."
+          },
+          {
+            "question": "Was bringt Markus mit?",
+            "options": [
+              "Lautsprecher",
+              "Stühle",
+              "Getränke"
+            ],
+            "correctIndex": 0,
+            "evidence": "er bringt jetzt nur seine Lautsprecher mit"
+          },
+          {
+            "question": "Wer sucht die Musik aus?",
+            "options": [
+              "Markus",
+              "Herr Frank",
+              "Tom"
+            ],
+            "correctIndex": 1,
+            "evidence": "Die Musik sucht Herr Frank aus."
+          }
+        ]
       }
     },
     {

@@ -984,18 +984,58 @@
       }
     },
     {
-      "id": "b2-telc-hoerverstehen-teil1-meinungen__ex0",
+      "id": "b2-telc-hoerverstehen-teil1-meinungen__ex2",
       "lessonId": "b2-telc-hoerverstehen-teil1-meinungen",
       "track": "telc",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Sprecherin: 'Ich finde es prima, von zu Hause aus zu arbeiten, spare mir den Arbeitsweg und habe mehr Ruhe. Aber nach einem halben Jahr habe ich gemerkt, wie sehr mir der direkte Austausch mit den Kollegen fehlt. Dauerhaft vereinsamt man doch.' - Welche Haltung hat die Sprecherin?",
-        "options": [
-          "Sie lehnt Homeoffice ausnahmslos ab.",
-          "Sie sieht trotz anfänglicher Begeisterung die Gefahr sozialer Isolation.",
-          "Sie möchte nie wieder im Büro arbeiten."
-        ],
-        "correctIndex": 1
+        "instruction": {
+          "en": "Listen to four people giving their opinion on working from home. Which statement matches each speaker? Choose a, b or c.",
+          "de": "Sie hören vier Personen, die ihre Meinung zum Homeoffice sagen. Welche Aussage passt zu welcher Person? Wählen Sie a, b oder c."
+        },
+        "transcript": "@filter radio\n[Moderatorin f] Homeoffice: Für die einen ist es ein Segen, für die anderen eine Belastung. Wir haben unsere Hörerinnen und Hörer nach ihren Erfahrungen gefragt.\n[Frau Albers f] Ich fand es anfangs großartig, von zu Hause aus zu arbeiten. Ich hab mir den Arbeitsweg gespart und hatte endlich meine Ruhe. Aber nach einem halben Jahr hab ich gemerkt, wie sehr mir der direkte Austausch mit den Kollegen fehlt. Auf Dauer vereinsamt man da einfach.\n[Herr Kühn m] Zugegeben, die Gespräche in der Kaffeeküche vermisse ich schon manchmal. Letztlich bin ich aber der Meinung, dass ich zu Hause viel konzentrierter arbeite. Ins Büro zurück möchte ich auf keinen Fall.\n[Herr Öztürk m] Bei mir funktioniert Homeoffice überhaupt nicht. Ich habe drei kleine Kinder und keinen eigenen Raum zum Arbeiten. Ich bin froh, dass mein Arbeitgeber mir meinen Platz im Büro lässt, auch wenn viele Kollegen inzwischen lieber zu Hause bleiben.\n[Frau Sommer f] Für mich ist die Mischung entscheidend. Zwei Tage zu Hause, drei im Büro, so bekomme ich beides: Ruhe für konzentrierte Arbeit und Kontakt zum Team. Ganz ohne Büro könnte ich mir das nicht vorstellen, ganz ohne Homeoffice aber genauso wenig.",
+        "questions": [
+          {
+            "question": "Wie sieht Frau Albers das Homeoffice heute?",
+            "options": [
+              "Sie lehnt es grundsätzlich ab.",
+              "Sie sieht trotz anfänglicher Begeisterung die Gefahr sozialer Isolation.",
+              "Sie möchte nie wieder im Büro arbeiten."
+            ],
+            "correctIndex": 1,
+            "evidence": "Auf Dauer vereinsamt man da einfach."
+          },
+          {
+            "question": "Welche Haltung hat Herr Kühn?",
+            "options": [
+              "Er arbeitet lieber zu Hause, obwohl ihm der Kontakt zu den Kollegen manchmal fehlt.",
+              "Er möchte so bald wie möglich zurück ins Büro.",
+              "Er hält die Kaffeeküche für den wichtigsten Ort im Büro."
+            ],
+            "correctIndex": 0,
+            "evidence": "dass ich zu Hause viel konzentrierter arbeite"
+          },
+          {
+            "question": "Warum arbeitet Herr Öztürk im Büro?",
+            "options": [
+              "Weil sein Arbeitgeber kein Homeoffice erlaubt.",
+              "Weil er den Austausch mit den Kollegen braucht.",
+              "Weil er zu Hause keine ruhigen Arbeitsbedingungen hat."
+            ],
+            "correctIndex": 2,
+            "evidence": "keinen eigenen Raum zum Arbeiten"
+          },
+          {
+            "question": "Was meint Frau Sommer?",
+            "options": [
+              "Sie arbeitet am liebsten nur zu Hause.",
+              "Sie hält eine Kombination aus Büro und Homeoffice für ideal.",
+              "Sie findet die Arbeit im Team zu anstrengend."
+            ],
+            "correctIndex": 1,
+            "evidence": "Für mich ist die Mischung entscheidend."
+          }
+        ]
       }
     },
     {
@@ -1009,17 +1049,63 @@
       }
     },
     {
-      "id": "b2-telc-hoerverstehen-teil2-interview__ex0",
+      "id": "b2-telc-hoerverstehen-teil2-interview__ex2",
       "lessonId": "b2-telc-hoerverstehen-teil2-interview",
       "track": "telc",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Aussage: 'Die Forscherin finanzierte das Projekt vollständig aus eigenen Mitteln.' - Audio: 'Ohne die großzügigen Fördergelder des Ministeriums hätten wir die Studie niemals durchführen können.' - Ist die Aussage richtig oder falsch?",
-        "options": [
-          "Richtig",
-          "Falsch"
-        ],
-        "correctIndex": 1
+        "instruction": {
+          "en": "Listen to the radio interview and decide whether the statements are true or false. Note that the statements paraphrase what is said.",
+          "de": "Sie hören ein Interview aus dem Radio. Entscheiden Sie, ob die Aussagen richtig oder falsch sind. Achten Sie darauf, dass die Aussagen andere Wörter verwenden als der Hörtext."
+        },
+        "transcript": "@filter radio\n[Moderator m] Frau Professorin Hartmann, Sie haben drei Jahre lang untersucht, wie sich Stadtbäume auf die Gesundheit der Anwohner auswirken. Wie kam es zu dieser Studie?\n[Frau Hartmann f] Die Idee hatten wir schon lange, aber eine so große Studie kostet viel Geld. Ohne die großzügigen Fördergelder des Ministeriums hätten wir sie niemals durchführen können.\n[Moderator m] Was genau haben Sie gemessen?\n[Frau Hartmann f] Wir haben in vier Städten die Temperatur in Straßen mit und ohne Bäume verglichen und parallel rund zweitausend Anwohner zu ihrem Wohlbefinden befragt.\n[Moderator m] Und was kam dabei heraus?\n[Frau Hartmann f] In Straßen mit vielen Bäumen war es an heißen Tagen bis zu vier Grad kühler. Überraschend war für uns aber etwas anderes: Die Menschen dort gaben auch an, deutlich besser zu schlafen.\n[Moderator m] Viele Städte sagen, Bäume seien in der Pflege zu teuer.\n[Frau Hartmann f] Das höre ich oft. Die Pflege kostet tatsächlich Geld, das will ich gar nicht kleinreden. Aber wenn man die Kosten für hitzebedingte Krankheiten dagegenrechnet, lohnt sich jeder Baum.\n[Moderator m] Was raten Sie den Städten?\n[Frau Hartmann f] Nicht nur neue Bäume pflanzen, sondern vor allem die alten besser schützen. Ein alter Baum spendet viel mehr Schatten als zehn junge.",
+        "questions": [
+          {
+            "question": "Die Forscherin finanzierte das Projekt vollständig aus eigenen Mitteln.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1,
+            "evidence": "Ohne die großzügigen Fördergelder des Ministeriums"
+          },
+          {
+            "question": "Für die Studie wurden auch Bewohner der untersuchten Straßen interviewt.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0,
+            "evidence": "rund zweitausend Anwohner zu ihrem Wohlbefinden befragt"
+          },
+          {
+            "question": "Am meisten überraschte das Team, dass es in Straßen mit Bäumen kühler ist.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1,
+            "evidence": "Überraschend war für uns aber etwas anderes"
+          },
+          {
+            "question": "Frau Hartmann bestreitet, dass die Pflege von Stadtbäumen Kosten verursacht.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1,
+            "evidence": "Die Pflege kostet tatsächlich Geld"
+          },
+          {
+            "question": "Sie empfiehlt, den vorhandenen alten Baumbestand stärker zu schützen.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0,
+            "evidence": "sondern vor allem die alten besser schützen"
+          }
+        ]
       }
     },
     {
@@ -1036,27 +1122,45 @@
       }
     },
     {
-      "id": "b2-telc-hoerverstehen-teil3-ansagen-nachrichten__ex0",
+      "id": "b2-telc-hoerverstehen-teil3-ansagen-nachrichten__ex2",
       "lessonId": "b2-telc-hoerverstehen-teil3-ansagen-nachrichten",
       "track": "telc",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Nachricht: 'Das Museum für Moderne Kunst bietet kommenden Sonntag freien Eintritt für Jugendliche bis 18 Jahre. Erwachsene zahlen den regulären Tarif von 12 Euro.' - Aussage: Am Sonntag können alle Besucher das Museum kostenlos besuchen.",
-        "options": [
-          "Richtig",
-          "Falsch"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "b2-telc-hoerverstehen-teil3-ansagen-nachrichten__ex1",
-      "lessonId": "b2-telc-hoerverstehen-teil3-ansagen-nachrichten",
-      "track": "telc",
-      "type": "free_text",
-      "content": {
-        "prompt": "Hörtext: 'Wegen eines Warnstreiks des Sicherheitspersonals müssen Flugreisende am Flughafen Frankfurt heute mit massiven Flugausfällen und Verspätungen rechnen.' - Welcher Grund wird für die Verspätungen genannt?",
-        "modelAnswer": "Ein Warnstreik des Sicherheitspersonals."
+        "instruction": {
+          "en": "Listen to three short radio items and decide whether the statements are true or false. Focus on concrete details.",
+          "de": "Sie hören drei kurze Texte aus dem Radio. Entscheiden Sie, ob die Aussagen richtig oder falsch sind. Achten Sie auf konkrete Details."
+        },
+        "transcript": "@filter radio\n[Ansage f] Text 1.\n[Moderatorin f] Ein Kulturtipp für das Wochenende: Das Museum für Moderne Kunst feiert seinen fünfzigsten Geburtstag. Kinder und Jugendliche bis achtzehn Jahre haben deshalb am kommenden Sonntag freien Eintritt. Erwachsene zahlen den normalen Preis von zwölf Euro.\n[Ansage f] Text 2.\n[Moderator m] Flugreisende in Frankfurt müssen heute viel Geduld mitbringen. Wegen eines Warnstreiks des Sicherheitspersonals fallen zahlreiche Flüge aus, viele weitere starten mit Verspätung. Die Flughafengesellschaft rät, vor der Fahrt zum Flughafen den Status des eigenen Fluges online zu prüfen.\n[Ansage f] Text 3.\n[Moderatorin f] Und jetzt der Verkehr: Die A sieben ist zwischen Hamburg-Nord und Quickborn ab Freitagabend zweiundzwanzig Uhr bis Montag früh voll gesperrt. Grund sind Bauarbeiten an einer Brücke. Eine Umleitung ist ausgeschildert.",
+        "questions": [
+          {
+            "question": "Am Sonntag können alle Besucher das Museum kostenlos besuchen.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1,
+            "evidence": "Erwachsene zahlen den normalen Preis von zwölf Euro."
+          },
+          {
+            "question": "Die Ausfälle am Flughafen haben mit einem Streik zu tun.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0,
+            "evidence": "Wegen eines Warnstreiks des Sicherheitspersonals"
+          },
+          {
+            "question": "Wer am Wochenende zwischen Hamburg-Nord und Quickborn unterwegs ist, muss einen anderen Weg nehmen.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0,
+            "evidence": "ab Freitagabend zweiundzwanzig Uhr bis Montag früh voll gesperrt"
+          }
+        ]
       }
     },
     {

@@ -2086,31 +2086,45 @@
       }
     },
     {
-      "id": "b1-telc-listening-teil1-news-broadcasts__ex0",
+      "id": "b1-telc-listening-teil1-news-broadcasts__ex3",
       "lessonId": "b1-telc-listening-teil1-news-broadcasts",
       "track": "telc",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Radiomeldung (1x): 'Das beliebte Straßenfest findet wegen des angekündigten Sturms dieses Jahr nicht am Rathausplatz, sondern in der Stadthalle statt.' - Aussage: Das Fest fällt komplett aus.",
-        "options": [
-          "Richtig",
-          "Falsch"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "b1-telc-listening-teil1-news-broadcasts__ex1",
-      "lessonId": "b1-telc-listening-teil1-news-broadcasts",
-      "track": "telc",
-      "type": "multiple_choice",
-      "content": {
-        "question": "Wetterbericht (1x): 'Nach einem kühlen Morgen klettern die Temperaturen am Nachmittag auf sommerliche 27 Grad bei strahlendem Sonnenschein.' - Aussage: Es wird am Nachmittag warm und sonnig.",
-        "options": [
-          "Richtig",
-          "Falsch"
-        ],
-        "correctIndex": 0
+        "instruction": {
+          "en": "Listen to three short radio texts and decide whether the statements are true or false. In the exam you hear each text only once.",
+          "de": "Sie hören drei kurze Texte aus dem Radio. Entscheiden Sie, ob die Aussagen richtig oder falsch sind. In der Prüfung hören Sie jeden Text nur einmal."
+        },
+        "transcript": "@filter radio\n[Ansage f] Text 1.\n[Moderator m] Eine Nachricht für alle Freunde des Straßenfests: Das Fest findet auch dieses Jahr statt, allerdings nicht wie geplant auf dem Rathausplatz.\n[Moderator m] Wegen des angekündigten Sturms ziehen die Veranstalter in die Stadthalle um. Beginn ist wie immer am Samstag um vierzehn Uhr.\n[Ansage f] Text 2.\n[Moderatorin f] Und nun das Wetter. Der Morgen beginnt noch kühl, an manchen Orten auch neblig.\n[Moderatorin f] Am Nachmittag wird es dann sommerlich: Bei strahlendem Sonnenschein klettern die Temperaturen auf bis zu siebenundzwanzig Grad.\n[Ansage f] Text 3.\n[Reporter m] Gute Nachricht für alle, die abends mit dem Bus unterwegs sind: Ab Montag fährt die Linie zwölf auch am Abend alle fünfzehn Minuten.\n[Reporter m] Bisher fuhr der Bus nach zwanzig Uhr nur jede halbe Stunde.",
+        "questions": [
+          {
+            "question": "Das Straßenfest fällt dieses Jahr aus.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1,
+            "evidence": "Das Fest findet auch dieses Jahr statt"
+          },
+          {
+            "question": "Am Nachmittag wird es warm und sonnig.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0,
+            "evidence": "Bei strahlendem Sonnenschein klettern die Temperaturen"
+          },
+          {
+            "question": "Ab Montag fährt die Linie zwölf abends nur noch jede halbe Stunde.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1,
+            "evidence": "auch am Abend alle fünfzehn Minuten"
+          }
+        ]
       }
     },
     {
@@ -2124,31 +2138,63 @@
       }
     },
     {
-      "id": "b1-telc-listening-teil2-longer-interview__ex0",
+      "id": "b1-telc-listening-teil2-longer-interview__ex3",
       "lessonId": "b1-telc-listening-teil2-longer-interview",
       "track": "telc",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Interview: 'Herr Brand, warum haben Sie Ihren Bürojob aufgegeben, um Tischler zu werden?' - Gast: 'Ich wollte am Ende des Tages sehen, was ich mit meinen eigenen Händen geschaffen habe.' - Aussage: Herr Brand wechselte den Beruf, weil er handwerklich arbeiten wollte.",
-        "options": [
-          "Richtig",
-          "Falsch"
-        ],
-        "correctIndex": 0
-      }
-    },
-    {
-      "id": "b1-telc-listening-teil2-longer-interview__ex1",
-      "lessonId": "b1-telc-listening-teil2-longer-interview",
-      "track": "telc",
-      "type": "multiple_choice",
-      "content": {
-        "question": "Gast im Interview: 'Am Anfang war die Selbstständigkeit extrem schwierig, weil mir jegliche betriebswirtschaftliche Erfahrung fehlte.' - Aussage: Der Einstieg in die Selbstständigkeit fiel dem Gast sehr leicht.",
-        "options": [
-          "Richtig",
-          "Falsch"
-        ],
-        "correctIndex": 1
+        "instruction": {
+          "en": "Listen to the radio interview and decide whether the statements are true or false.",
+          "de": "Sie hören ein Interview aus dem Radio. Entscheiden Sie, ob die Aussagen richtig oder falsch sind."
+        },
+        "transcript": "@filter radio\n[Moderatorin f] Herzlich willkommen zu unserer Sendung über Menschen, die beruflich ganz neu anfangen. Mein Gast heute ist Jonas Brand. Herr Brand, Sie waren zehn Jahre lang Versicherungskaufmann und sind jetzt Tischler. Warum haben Sie Ihren Bürojob aufgegeben?\n[Herr Brand m] Na ja, das Geld war gut, das will ich gar nicht bestreiten. Aber ich wollte am Ende des Tages sehen, was ich mit meinen eigenen Händen gemacht habe.\n[Moderatorin f] Und wie haben Ihre Familie und Ihre Freunde reagiert?\n[Herr Brand m] Meine Frau hat mich von Anfang an unterstützt. Meine Eltern waren dagegen skeptisch, die fanden das ziemlich verrückt.\n[Moderatorin f] Sie haben dann eine richtige Ausbildung gemacht?\n[Herr Brand m] Ja, drei Jahre lang, mit fünfunddreißig. In der Berufsschule war ich natürlich der Älteste, aber das hat mich nicht gestört.\n[Moderatorin f] Heute haben Sie eine eigene Werkstatt. War der Start leicht?\n[Herr Brand m] Überhaupt nicht. Am Anfang war die Selbstständigkeit extrem schwierig, weil ich keine Ahnung von Buchhaltung und Preisen hatte. Da habe ich viele Fehler gemacht.\n[Moderatorin f] Würden Sie es trotzdem wieder machen?\n[Herr Brand m] Sofort. Ich verdiene weniger als früher, aber ich bin viel zufriedener.",
+        "questions": [
+          {
+            "question": "Herr Brand hat den Beruf gewechselt, weil er handwerklich arbeiten wollte.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0,
+            "evidence": "was ich mit meinen eigenen Händen gemacht habe"
+          },
+          {
+            "question": "Herrn Brands Eltern fanden seine Entscheidung von Anfang an gut.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1,
+            "evidence": "Meine Eltern waren dagegen skeptisch"
+          },
+          {
+            "question": "In der Berufsschule war Herr Brand älter als alle anderen.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0,
+            "evidence": "In der Berufsschule war ich natürlich der Älteste"
+          },
+          {
+            "question": "Der Einstieg in die Selbstständigkeit fiel Herrn Brand sehr leicht.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1,
+            "evidence": "Am Anfang war die Selbstständigkeit extrem schwierig"
+          },
+          {
+            "question": "Mit seinem neuen Beruf ist Herr Brand glücklicher als früher.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0,
+            "evidence": "aber ich bin viel zufriedener"
+          }
+        ]
       }
     },
     {
@@ -2166,31 +2212,45 @@
       }
     },
     {
-      "id": "b1-telc-listening-teil3-transactional-calls__ex0",
+      "id": "b1-telc-listening-teil3-transactional-calls__ex3",
       "lessonId": "b1-telc-listening-teil3-transactional-calls",
       "track": "telc",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Telefonnachricht: 'Guten Tag Frau Klein, hier Praxis Dr. Lenz. Die Praxis bleibt morgen wegen einer Fortbildung zu. Ihr Termin wird auf Donnerstag verschoben.' - Aussage: Frau Klein kann morgen nicht in die Praxis kommen.",
-        "options": [
-          "Richtig",
-          "Falsch"
-        ],
-        "correctIndex": 0
-      }
-    },
-    {
-      "id": "b1-telc-listening-teil3-transactional-calls__ex1",
-      "lessonId": "b1-telc-listening-teil3-transactional-calls",
-      "track": "telc",
-      "type": "multiple_choice",
-      "content": {
-        "question": "Anrufbeantworter: 'Hallo Mark, der Zug nach Berlin fällt aus. Ich nehme den Bus um 17 Uhr und bin erst um 21 Uhr da.' - Aussage: Der Anrufer kommt wie geplant um 17 Uhr in Berlin an.",
-        "options": [
-          "Richtig",
-          "Falsch"
-        ],
-        "correctIndex": 1
+        "instruction": {
+          "en": "Listen to three short phone messages and decide whether the statements are true or false. In the exam you hear each text twice.",
+          "de": "Sie hören drei kurze Texte am Telefon. Entscheiden Sie, ob die Aussagen richtig oder falsch sind. In der Prüfung hören Sie jeden Text zweimal."
+        },
+        "transcript": "@filter phone\n[Ansage f] Text 1.\n[Arzthelferin f] Guten Tag, Frau Klein, hier ist die Praxis Doktor Lenz. Die Praxis bleibt morgen wegen einer Fortbildung geschlossen.\n[Arzthelferin f] Ihren Termin haben wir deshalb auf Donnerstag um neun Uhr verschoben. Wenn das nicht passt, rufen Sie uns bitte an.\n[Ansage f] Text 2.\n[Paul m] Hallo Mark, hier ist Paul. Du, mein Zug nach Berlin fällt aus.\n[Paul m] Ich nehme jetzt den Bus um siebzehn Uhr, aber der braucht länger. Ich bin also erst um einundzwanzig Uhr da. Kannst du mich trotzdem abholen?\n[Ansage f] Text 3.\n[Bandansage m] Sie sind mit dem Bürgeramt Nordstadt verbunden. Bitte beachten Sie: Unsere Öffnungszeiten haben sich geändert.\n[Bandansage m] Ab sofort sind wir montags bis freitags von acht bis vierzehn Uhr für Sie da, donnerstags zusätzlich bis achtzehn Uhr. Für einen neuen Personalausweis brauchen Sie immer einen Termin.",
+        "questions": [
+          {
+            "question": "Frau Klein kann morgen nicht in die Praxis kommen.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0,
+            "evidence": "Die Praxis bleibt morgen wegen einer Fortbildung geschlossen."
+          },
+          {
+            "question": "Paul fährt mit dem Zug nach Berlin.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1,
+            "evidence": "mein Zug nach Berlin fällt aus"
+          },
+          {
+            "question": "Am Donnerstag hat das Bürgeramt länger geöffnet als an den anderen Tagen.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0,
+            "evidence": "donnerstags zusätzlich bis achtzehn Uhr"
+          }
+        ]
       }
     },
     {
