@@ -1,0 +1,346 @@
+{
+  "formatId": "telc-a2",
+  "partId": "hoeren-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-a2__hoeren-3__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Lena f] Jonas, am Samstag ist der Umzug. Wer hilft uns denn jetzt eigentlich?\n[Jonas m] Also, Malte kommt auf jeden Fall. Er darf doch große Autos fahren, deshalb fährt er den Transporter.\n[Lena f] Super. Und Sophie? Die wollte doch auch kommen.\n[Jonas m] Ja, aber sie hat Probleme mit dem Rücken. Bücher und andere schwere Sachen kann sie nicht tragen.\n[Jonas m] Sie hat gesagt, sie putzt dafür die Küche in der alten Wohnung.\n[Lena f] Das ist auch wichtig. Der Vermieter will die Wohnung ja sauber zurück.\n[Jonas m] Genau. Und meine Oma hat angerufen. Sie möchte unbedingt auch etwas machen.\n[Lena f] Deine Oma? Die ist doch schon über achtzig!\n[Jonas m] Ja, sie trägt natürlich nichts. Aber sie kocht für alle und bringt uns um eins einen großen Topf Gulasch vorbei.\n[Lena f] Wie lieb! Dann müssen wir keine Pizza bestellen. Und die Getränke?\n[Jonas m] Die kaufe ich am Freitag selbst.\n[Lena f] Gut. Was ist mit Paul? Kann er vielleicht den großen Schrank aufbauen?\n[Jonas m] Das habe ich ihn auch gefragt. Aber das macht Herr Yilmaz, unser neuer Nachbar. Er hat es mir gestern im Treppenhaus angeboten.\n[Lena f] Ach, wie nett. Und Paul?\n[Jonas m] Paul ist doch Elektriker. Er kümmert sich um die Lampen in der neuen Wohnung.\n[Lena f] Perfekt. Wir haben aber noch viel zu wenig Kartons.\n[Jonas m] Die hole ich morgen im Supermarkt, da bekommt man sie umsonst.\n[Lena f] Okay. Und meine Pflanzen nehme ich selbst im Auto von meiner Schwester mit.",
+          "questions": [
+            {
+              "question": "Was macht Malte beim Umzug?",
+              "options": [
+                "a) Bücher tragen",
+                "b) Getränke kaufen",
+                "c) den Transporter fahren",
+                "d) Kartons besorgen",
+                "e) die Lampen anschließen",
+                "f) das Mittagessen kochen",
+                "g) die Pflanzen mitnehmen",
+                "h) die alte Küche putzen",
+                "i) den Schrank aufbauen"
+              ],
+              "correctIndex": 2,
+              "evidence": "deshalb fährt er den Transporter"
+            },
+            {
+              "question": "Was macht Sophie?",
+              "options": [
+                "a) Bücher tragen",
+                "b) Getränke kaufen",
+                "c) den Transporter fahren",
+                "d) Kartons besorgen",
+                "e) die Lampen anschließen",
+                "f) das Mittagessen kochen",
+                "g) die Pflanzen mitnehmen",
+                "h) die alte Küche putzen",
+                "i) den Schrank aufbauen"
+              ],
+              "correctIndex": 7,
+              "evidence": "sie putzt dafür die Küche in der alten Wohnung"
+            },
+            {
+              "question": "Was macht Jonas’ Oma?",
+              "options": [
+                "a) Bücher tragen",
+                "b) Getränke kaufen",
+                "c) den Transporter fahren",
+                "d) Kartons besorgen",
+                "e) die Lampen anschließen",
+                "f) das Mittagessen kochen",
+                "g) die Pflanzen mitnehmen",
+                "h) die alte Küche putzen",
+                "i) den Schrank aufbauen"
+              ],
+              "correctIndex": 5,
+              "evidence": "sie kocht für alle und bringt uns um eins einen großen Topf Gulasch vorbei"
+            },
+            {
+              "question": "Was macht Herr Yilmaz?",
+              "options": [
+                "a) Bücher tragen",
+                "b) Getränke kaufen",
+                "c) den Transporter fahren",
+                "d) Kartons besorgen",
+                "e) die Lampen anschließen",
+                "f) das Mittagessen kochen",
+                "g) die Pflanzen mitnehmen",
+                "h) die alte Küche putzen",
+                "i) den Schrank aufbauen"
+              ],
+              "correctIndex": 8,
+              "evidence": "Aber das macht Herr Yilmaz, unser neuer Nachbar."
+            },
+            {
+              "question": "Was macht Paul?",
+              "options": [
+                "a) Bücher tragen",
+                "b) Getränke kaufen",
+                "c) den Transporter fahren",
+                "d) Kartons besorgen",
+                "e) die Lampen anschließen",
+                "f) das Mittagessen kochen",
+                "g) die Pflanzen mitnehmen",
+                "h) die alte Küche putzen",
+                "i) den Schrank aufbauen"
+              ],
+              "correctIndex": 4,
+              "evidence": "Er kümmert sich um die Lampen in der neuen Wohnung."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Malte is allowed to drive large vehicles, so he drives the van.",
+            "de": "Malte darf große Autos fahren. Deshalb fährt er den Transporter."
+          },
+          {
+            "en": "Sophie can't carry books or heavy things because of her back, so she cleans the kitchen in the old flat.",
+            "de": "Sophie kann wegen ihres Rückens keine Bücher tragen. Sie putzt die Küche in der alten Wohnung."
+          },
+          {
+            "en": "Grandma doesn't carry anything, but she cooks goulash for everyone and brings it at one.",
+            "de": "Die Oma trägt nichts. Sie kocht für alle Gulasch und bringt es um eins."
+          },
+          {
+            "en": "Lena asks if Paul can assemble the wardrobe, but Jonas says the new neighbour Herr Yilmaz is doing it.",
+            "de": "Lena fragt, ob Paul den Schrank aufbaut. Jonas sagt: Das macht Herr Yilmaz, der neue Nachbar."
+          },
+          {
+            "en": "Paul is an electrician and takes care of the lamps in the new flat. The wardrobe is Herr Yilmaz's job.",
+            "de": "Paul ist Elektriker. Er kümmert sich um die Lampen. Den Schrank baut Herr Yilmaz auf."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a2__hoeren-3__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Anna f] Michael, nächste Woche sind Herbstferien. Wir müssen mal planen, was wir mit den Kindern machen.\n[Michael m] Ja, gute Idee. Am Montag muss Lisa doch zum Zahnarzt, oder?\n[Anna f] Nein, der Termin ist erst im November. Am Montag sind die Kinder bei meinen Eltern. Meine Mutter holt sie morgens ab.\n[Michael m] Ach so. Und am Dienstag? Da habe ich frei.\n[Anna f] Dann geht doch zusammen ins Schwimmbad.\n[Michael m] Das Hallenbad ist am Dienstag leider geschlossen. Aber Tim möchte schon so lange in die Kletterhalle. Das mache ich mit den beiden.\n[Anna f] Okay. Am Mittwoch soll es den ganzen Tag regnen. Eigentlich wollte ich in den Zoo, aber im Regen macht das keinen Spaß.\n[Anna f] Da gehen wir lieber ins Kino, es läuft gerade ein neuer Kinderfilm.\n[Michael m] Gut. Und am Donnerstag? Da soll das Wetter wieder schön sein.\n[Anna f] Dann machen wir mit den Rädern einen Ausflug an den See und nehmen ein Picknick mit.\n[Michael m] Schön. Und am Freitag? Da hat doch Lisas Freundin Geburtstag.\n[Anna f] Nein, die Party ist erst am Samstag. Am Freitag fahren wir alle zusammen ins Naturkundemuseum. Da gibt es jetzt eine Ausstellung über Dinosaurier.\n[Michael m] Toll, da komme ich auch mit.",
+          "questions": [
+            {
+              "question": "Was machen die Kinder am Montag?",
+              "options": [
+                "a) in den Zoo gehen",
+                "b) zum Zahnarzt gehen",
+                "c) ins Kino gehen",
+                "d) ins Schwimmbad gehen",
+                "e) eine Fahrradtour machen",
+                "f) zu den Großeltern fahren",
+                "g) zu einer Geburtstagsparty gehen",
+                "h) in die Kletterhalle gehen",
+                "i) ins Museum gehen"
+              ],
+              "correctIndex": 5,
+              "evidence": "Am Montag sind die Kinder bei meinen Eltern."
+            },
+            {
+              "question": "Was machen die Kinder am Dienstag?",
+              "options": [
+                "a) in den Zoo gehen",
+                "b) zum Zahnarzt gehen",
+                "c) ins Kino gehen",
+                "d) ins Schwimmbad gehen",
+                "e) eine Fahrradtour machen",
+                "f) zu den Großeltern fahren",
+                "g) zu einer Geburtstagsparty gehen",
+                "h) in die Kletterhalle gehen",
+                "i) ins Museum gehen"
+              ],
+              "correctIndex": 7,
+              "evidence": "Tim möchte schon so lange in die Kletterhalle"
+            },
+            {
+              "question": "Was machen die Kinder am Mittwoch?",
+              "options": [
+                "a) in den Zoo gehen",
+                "b) zum Zahnarzt gehen",
+                "c) ins Kino gehen",
+                "d) ins Schwimmbad gehen",
+                "e) eine Fahrradtour machen",
+                "f) zu den Großeltern fahren",
+                "g) zu einer Geburtstagsparty gehen",
+                "h) in die Kletterhalle gehen",
+                "i) ins Museum gehen"
+              ],
+              "correctIndex": 2,
+              "evidence": "Da gehen wir lieber ins Kino"
+            },
+            {
+              "question": "Was machen die Kinder am Donnerstag?",
+              "options": [
+                "a) in den Zoo gehen",
+                "b) zum Zahnarzt gehen",
+                "c) ins Kino gehen",
+                "d) ins Schwimmbad gehen",
+                "e) eine Fahrradtour machen",
+                "f) zu den Großeltern fahren",
+                "g) zu einer Geburtstagsparty gehen",
+                "h) in die Kletterhalle gehen",
+                "i) ins Museum gehen"
+              ],
+              "correctIndex": 4,
+              "evidence": "Dann machen wir mit den Rädern einen Ausflug an den See"
+            },
+            {
+              "question": "Was machen die Kinder am Freitag?",
+              "options": [
+                "a) in den Zoo gehen",
+                "b) zum Zahnarzt gehen",
+                "c) ins Kino gehen",
+                "d) ins Schwimmbad gehen",
+                "e) eine Fahrradtour machen",
+                "f) zu den Großeltern fahren",
+                "g) zu einer Geburtstagsparty gehen",
+                "h) in die Kletterhalle gehen",
+                "i) ins Museum gehen"
+              ],
+              "correctIndex": 8,
+              "evidence": "Am Freitag fahren wir alle zusammen ins Naturkundemuseum."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The dentist appointment is only in November. On Monday the children are at Anna's parents'.",
+            "de": "Der Zahnarzttermin ist erst im November. Am Montag sind die Kinder bei Annas Eltern."
+          },
+          {
+            "en": "The indoor pool is closed on Tuesday, so Michael takes the children to the climbing hall.",
+            "de": "Das Hallenbad ist am Dienstag zu. Michael geht mit den Kindern in die Kletterhalle."
+          },
+          {
+            "en": "It will rain on Wednesday, so they go to the cinema instead of the zoo.",
+            "de": "Am Mittwoch regnet es. Deshalb gehen sie ins Kino und nicht in den Zoo."
+          },
+          {
+            "en": "On Thursday the weather is nice, so they ride their bikes to the lake.",
+            "de": "Am Donnerstag ist das Wetter schön. Sie fahren mit den Rädern an den See."
+          },
+          {
+            "en": "The birthday party is on Saturday. On Friday they all go to the natural history museum.",
+            "de": "Die Geburtstagsparty ist erst am Samstag. Am Freitag fahren alle ins Naturkundemuseum."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a2__hoeren-3__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter phone\n[Sabine f] Hallo Daniel, hast du kurz Zeit? Wir müssen noch über die Weihnachtsgeschenke sprechen.\n[Daniel m] Ja, klar. Fangen wir mit Papa an. Wieder ein Buch?\n[Sabine f] Nein, er hat schon so viele Bücher. Er wünscht sich neue Kopfhörer. Dann kann er abends Musik hören, und Mama stört das nicht.\n[Daniel m] Gute Idee. Und Mama? Sie kocht doch so gern. Vielleicht ein Kochkurs?\n[Sabine f] Ach, sie kann doch schon alles. Ich dachte an einen Kalender mit Fotos von uns allen. Die Bilder suche ich am Wochenende aus.\n[Daniel m] Schön. Für Oma habe ich übrigens schon einen warmen Schal gekauft. Er liegt bei mir im Schrank.\n[Sabine f] Super. Und Onkel Bernd? Für ihn ist es immer so schwierig.\n[Daniel m] Er mag doch alte Rockmusik. Im März spielt hier eine Band aus den Siebzigern. Ich besorge zwei Karten, dann kann er mit Tante Ute hingehen.\n[Sabine f] Toll, das gefällt ihm bestimmt. Und Mia? Kinokarten?\n[Daniel m] Die hat sie doch letztes Jahr bekommen.\n[Sabine f] Stimmt. Sie macht doch so gern Puzzles. Ich habe eins mit tausend Teilen gesehen, mit einem Bild von Paris. Das kaufe ich für sie.\n[Daniel m] Perfekt. Dann sind wir ja fast fertig!",
+          "questions": [
+            {
+              "question": "Was bekommt Papa?",
+              "options": [
+                "a) ein Buch",
+                "b) einen Schal",
+                "c) einen Kochkurs",
+                "d) Kinokarten",
+                "e) eine Pflanze",
+                "f) einen Kalender mit Fotos",
+                "g) Kopfhörer",
+                "h) ein Puzzle",
+                "i) Konzertkarten"
+              ],
+              "correctIndex": 6,
+              "evidence": "Er wünscht sich neue Kopfhörer."
+            },
+            {
+              "question": "Was bekommt Mama?",
+              "options": [
+                "a) ein Buch",
+                "b) einen Schal",
+                "c) einen Kochkurs",
+                "d) Kinokarten",
+                "e) eine Pflanze",
+                "f) einen Kalender mit Fotos",
+                "g) Kopfhörer",
+                "h) ein Puzzle",
+                "i) Konzertkarten"
+              ],
+              "correctIndex": 5,
+              "evidence": "Ich dachte an einen Kalender mit Fotos von uns allen."
+            },
+            {
+              "question": "Was bekommt Oma?",
+              "options": [
+                "a) ein Buch",
+                "b) einen Schal",
+                "c) einen Kochkurs",
+                "d) Kinokarten",
+                "e) eine Pflanze",
+                "f) einen Kalender mit Fotos",
+                "g) Kopfhörer",
+                "h) ein Puzzle",
+                "i) Konzertkarten"
+              ],
+              "correctIndex": 1,
+              "evidence": "Für Oma habe ich übrigens schon einen warmen Schal gekauft."
+            },
+            {
+              "question": "Was bekommt Onkel Bernd?",
+              "options": [
+                "a) ein Buch",
+                "b) einen Schal",
+                "c) einen Kochkurs",
+                "d) Kinokarten",
+                "e) eine Pflanze",
+                "f) einen Kalender mit Fotos",
+                "g) Kopfhörer",
+                "h) ein Puzzle",
+                "i) Konzertkarten"
+              ],
+              "correctIndex": 8,
+              "evidence": "Ich besorge zwei Karten, dann kann er mit Tante Ute hingehen."
+            },
+            {
+              "question": "Was bekommt Mia?",
+              "options": [
+                "a) ein Buch",
+                "b) einen Schal",
+                "c) einen Kochkurs",
+                "d) Kinokarten",
+                "e) eine Pflanze",
+                "f) einen Kalender mit Fotos",
+                "g) Kopfhörer",
+                "h) ein Puzzle",
+                "i) Konzertkarten"
+              ],
+              "correctIndex": 7,
+              "evidence": "Sie macht doch so gern Puzzles."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Papa already has lots of books. He wants new headphones.",
+            "de": "Papa hat schon viele Bücher. Er wünscht sich neue Kopfhörer."
+          },
+          {
+            "en": "Sabine thinks a cooking course is pointless because Mama can already cook everything. She suggests a photo calendar.",
+            "de": "Ein Kochkurs passt nicht, Mama kann schon alles. Sabine schlägt einen Kalender mit Fotos vor."
+          },
+          {
+            "en": "Daniel has already bought a warm scarf for Grandma.",
+            "de": "Daniel hat für Oma schon einen warmen Schal gekauft."
+          },
+          {
+            "en": "Uncle Bernd likes old rock music, so Daniel gets two tickets for a band playing in March.",
+            "de": "Onkel Bernd mag alte Rockmusik. Daniel besorgt zwei Karten für das Konzert im März."
+          },
+          {
+            "en": "Mia got cinema tickets last year. She loves puzzles, so Sabine buys her one of Paris.",
+            "de": "Kinokarten hat Mia letztes Jahr bekommen. Sie macht gern Puzzles, deshalb kauft Sabine ein Puzzle."
+          }
+        ]
+      }
+    }
+  ]
+}
