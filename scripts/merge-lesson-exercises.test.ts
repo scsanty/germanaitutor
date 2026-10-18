@@ -50,7 +50,9 @@ beforeEach(() => {
   root = mkdtempSync(join(tmpdir(), 'lesson-root-'));
   work = mkdtempSync(join(tmpdir(), 'lesson-work-'));
   mkdirSync(join(root, 'curriculum-seed'), { recursive: true });
-  cpSync(join(process.cwd(), 'data', 'curriculum-seed', `${STEM}.json`), seedPath());
+  // A trimmed copy of the pre-conversion telc-b1 seed (git 56d7a19): one grammar, one reading and one
+  // still-unconverted listening lesson, so these tests don't depend on the live seed's content.
+  cpSync(join(process.cwd(), 'test', 'fixtures', 'curriculum-seed', `${STEM}.json`), seedPath());
 });
 
 describe('merge-lesson-exercises', () => {

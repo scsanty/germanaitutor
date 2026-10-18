@@ -39,6 +39,12 @@ describe('bundled exam formats', () => {
     }
   });
 
+  it('gives every listening part one or two plays', () => {
+    const listening = listFormats().flatMap((f) => f.parts.filter((p) => p.taskType === 'audio_questions').map((p) => [f, p] as const));
+    expect(listening.length).toBeGreaterThan(0);
+    for (const [f, p] of listening) expect([1, 2], `${f.id}/${p.id}`).toContain(p.replays);
+  });
+
   it('gives the NaDoch formats a 100-point written and a 50-point oral block', () => {
     for (const f of listFormats().filter((x) => x.track === 'generic')) {
       const sum = (id: string) => f.blocks.find((b) => b.id === id)!.partIds.reduce((s, pid) => s + f.parts.find((p) => p.id === pid)!.points, 0);
