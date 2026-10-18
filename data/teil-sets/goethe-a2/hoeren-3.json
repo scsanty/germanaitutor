@@ -1,0 +1,256 @@
+{
+  "formatId": "goethe-a2",
+  "partId": "hoeren-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-a2__hoeren-3__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Ansage f] Text 1.\n[Frau f] Thomas, wann holst du mich morgen vom Büro ab? Um fünf?\n[Mann m] Um fünf schaffe ich es leider nicht, ich habe bis halb sechs einen Termin. Geht es auch um sechs?\n[Frau f] Sechs ist mir zu spät. Dann fahre ich lieber mit dem Bus nach Hause.\n[Ansage f] Text 2.\n[Frau f] Entschuldigung, ich suche diese Jacke in Größe achtunddreißig.\n[Verkäufer m] Die blaue Jacke haben wir leider nur noch in vierzig. In Grün gibt es sie aber noch in achtunddreißig.\n[Frau f] Grün steht mir nicht so gut. Ich probiere mal die blaue in vierzig. Ja, die passt, die nehme ich.\n[Ansage f] Text 3.\n[Kollege m] Sag mal, Petra, wo ist denn heute die Besprechung? Wieder im Raum im ersten Stock?\n[Kollegin f] Nein, da arbeiten heute die Handwerker. Wir treffen uns im Büro vom Chef, im dritten Stock.\n[Kollege m] Alles klar. Um zehn, wie immer?\n[Kollegin f] Ja, genau.\n[Ansage f] Text 4.\n[Mann m] Was nimmst du? Den Fisch? Der ist hier sehr gut.\n[Frau f] Fisch hatte ich gestern schon. Vielleicht nur die Gemüsesuppe.\n[Mann m] Nur eine Suppe? Du hast doch gesagt, du hast großen Hunger.\n[Frau f] Stimmt. Dann nehme ich die Nudeln mit Tomatensoße.\n[Ansage f] Text 5.\n[Mann m] Guten Tag, Frau Kühn! Sie sind ja ganz braun. Waren Sie am Meer?\n[Frau f] Nein, dieses Jahr nicht. Wir waren zwei Wochen in den Bergen, in Österreich. Wir sind jeden Tag gewandert.\n[Mann m] Schön! Und wohin fahren Sie nächstes Jahr?\n[Frau f] Da möchten wir nach Italien, an den Gardasee.",
+          "questions": [
+            {
+              "question": "Wie kommt die Frau morgen vom Büro nach Hause?",
+              "options": [
+                "Thomas holt sie um fünf ab.",
+                "Thomas holt sie um sechs ab.",
+                "Sie fährt mit dem Bus."
+              ],
+              "correctIndex": 2,
+              "evidence": "Dann fahre ich lieber mit dem Bus nach Hause"
+            },
+            {
+              "question": "Was kauft die Frau?",
+              "options": [
+                "eine blaue Jacke in Größe 40",
+                "eine grüne Jacke in Größe 38",
+                "eine blaue Jacke in Größe 38"
+              ],
+              "correctIndex": 0,
+              "evidence": "Ich probiere mal die blaue in vierzig"
+            },
+            {
+              "question": "Wo ist die Besprechung heute?",
+              "options": [
+                "im ersten Stock",
+                "im dritten Stock",
+                "in der Kantine"
+              ],
+              "correctIndex": 1,
+              "evidence": "Wir treffen uns im Büro vom Chef, im dritten Stock."
+            },
+            {
+              "question": "Was isst die Frau?",
+              "options": [
+                "Fisch",
+                "Gemüsesuppe",
+                "Nudeln"
+              ],
+              "correctIndex": 2,
+              "evidence": "Dann nehme ich die Nudeln mit Tomatensoße"
+            },
+            {
+              "question": "Wo war Frau Kühn im Urlaub?",
+              "options": [
+                "am Meer",
+                "in den Bergen",
+                "am Gardasee"
+              ],
+              "correctIndex": 1,
+              "evidence": "Wir waren zwei Wochen in den Bergen, in Österreich."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Thomas cannot come at five, and six is too late for her, so she takes the bus.",
+            "de": "Thomas kann nicht um fünf kommen, und sechs ist ihr zu spät. Deshalb fährt sie mit dem Bus."
+          },
+          {
+            "en": "The blue jacket only exists in size 40; she doesn't like green, tries the blue one in 40 and buys it.",
+            "de": "Die blaue Jacke gibt es nur noch in vierzig. Grün gefällt ihr nicht. Sie probiert die blaue in vierzig und nimmt sie."
+          },
+          {
+            "en": "Workers are in the first-floor room today, so the meeting is in the boss's office on the third floor.",
+            "de": "Im ersten Stock arbeiten heute die Handwerker. Die Besprechung ist im Büro vom Chef im dritten Stock."
+          },
+          {
+            "en": "She had fish yesterday and a soup is too little because she is very hungry, so she orders the pasta.",
+            "de": "Fisch hatte sie gestern, und eine Suppe ist zu wenig, weil sie großen Hunger hat. Sie nimmt die Nudeln."
+          },
+          {
+            "en": "She was not at the sea this year; she spent two weeks in the mountains in Austria. Lake Garda is next year's plan.",
+            "de": "Sie war dieses Jahr nicht am Meer, sondern zwei Wochen in den Bergen in Österreich. An den Gardasee will sie nächstes Jahr."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2__hoeren-3__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Ansage f] Text 1.\n[Frau f] Guten Morgen. Ich hätte gern sechs Brötchen und ein Roggenbrot.\n[Verkäufer m] Das Roggenbrot ist leider schon weg. Wir haben aber noch Vollkornbrot und Weißbrot.\n[Frau f] Weißbrot mögen meine Kinder nicht. Dann nehme ich das Vollkornbrot.\n[Ansage f] Text 2.\n[Mann m] Schatz, hast du meine Autoschlüssel gesehen? Auf dem Tisch im Flur sind sie nicht.\n[Frau f] Hast du schon in deiner Jacke nachgesehen?\n[Mann m] Ja, da sind sie auch nicht.\n[Frau f] Moment, ich habe sie vorhin im Bad gesehen, neben dem Waschbecken. Ja, hier liegen sie!\n[Ansage f] Text 3.\n[Kollegin f] Kommst du mit in die Kantine?\n[Kollege m] Heute nicht. Das Essen dort ist mir zu teuer. Ich habe mir ein Brot von zu Hause mitgebracht.\n[Kollegin f] Schade. Und morgen? Morgen gibt es Pizza.\n[Kollege m] Okay, morgen komme ich mit, versprochen.\n[Ansage f] Text 4.\n[Frau f] Der Film fängt um acht an. Treffen wir uns um halb acht vor dem Kino?\n[Mann m] Ich möchte vorher noch etwas essen. Wollen wir uns schon um sieben im Restaurant neben dem Kino treffen?\n[Frau f] Gute Idee. Dann bis sieben!\n[Ansage f] Text 5.\n[Mann m] Guten Tag, mein Fahrrad ist kaputt. Das Licht geht nicht mehr.\n[Verkäufer m] Das kann ich sofort machen, es dauert nur zehn Minuten. Aber Ihre Reifen sind auch schon sehr alt.\n[Mann m] Neue Reifen kaufe ich nächsten Monat. Heute nur das Licht, bitte.",
+          "questions": [
+            {
+              "question": "Welches Brot kauft die Frau?",
+              "options": [
+                "Roggenbrot",
+                "Vollkornbrot",
+                "Weißbrot"
+              ],
+              "correctIndex": 1,
+              "evidence": "Dann nehme ich das Vollkornbrot."
+            },
+            {
+              "question": "Wo sind die Autoschlüssel?",
+              "options": [
+                "auf dem Tisch im Flur",
+                "in der Jacke",
+                "im Bad"
+              ],
+              "correctIndex": 2,
+              "evidence": "ich habe sie vorhin im Bad gesehen"
+            },
+            {
+              "question": "Was isst der Kollege heute in der Mittagspause?",
+              "options": [
+                "sein Brot von zu Hause",
+                "das Essen in der Kantine",
+                "Pizza"
+              ],
+              "correctIndex": 0,
+              "evidence": "Ich habe mir ein Brot von zu Hause mitgebracht."
+            },
+            {
+              "question": "Wann treffen sich die beiden?",
+              "options": [
+                "um 19.30 Uhr",
+                "um 20 Uhr",
+                "um 19 Uhr"
+              ],
+              "correctIndex": 2,
+              "evidence": "Dann bis sieben!"
+            },
+            {
+              "question": "Was soll der Verkäufer heute reparieren?",
+              "options": [
+                "das Licht",
+                "die Reifen",
+                "die Bremsen"
+              ],
+              "correctIndex": 0,
+              "evidence": "Heute nur das Licht, bitte."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The rye bread is sold out and her children don't like white bread, so she takes the wholemeal bread.",
+            "de": "Das Roggenbrot ist weg, und Weißbrot mögen ihre Kinder nicht. Sie nimmt das Vollkornbrot."
+          },
+          {
+            "en": "The keys are not on the hall table or in the jacket. They are in the bathroom next to the sink.",
+            "de": "Die Schlüssel sind nicht im Flur und nicht in der Jacke. Sie liegen im Bad neben dem Waschbecken."
+          },
+          {
+            "en": "The canteen is too expensive for him, so today he eats the sandwich he brought from home. Pizza is tomorrow.",
+            "de": "Die Kantine ist ihm zu teuer. Heute isst er sein Brot von zu Hause. Pizza gibt es erst morgen."
+          },
+          {
+            "en": "The man wants to eat first, so they meet at seven in the restaurant. Half past seven was the first idea; the film starts at eight.",
+            "de": "Der Mann möchte vorher essen. Sie treffen sich um sieben im Restaurant. Halb acht war die erste Idee, der Film beginnt um acht."
+          },
+          {
+            "en": "The man wants only the light repaired today. He will buy new tyres next month.",
+            "de": "Der Mann möchte heute nur das Licht reparieren lassen. Neue Reifen kauft er nächsten Monat."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2__hoeren-3__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Ansage f] Text 1.\n[Frau f] Was machen wir am Sonntag? Wollen wir mit den Kindern in den Wald gehen?\n[Mann m] Am Sonntag soll es den ganzen Tag regnen. Wie wäre es mit dem Museum? Da gibt es gerade eine Ausstellung über Dinosaurier.\n[Frau f] Super, das finden die Kinder bestimmt toll. Und in den Wald gehen wir dann nächstes Wochenende.\n[Ansage f] Text 2.\n[Kollege m] Der Drucker hier funktioniert schon wieder nicht. Weißt du, wo ich noch drucken kann?\n[Kollegin f] Der im zweiten Stock ist leider auch kaputt. Geh doch ins Sekretariat unten im Erdgeschoss, da geht er.\n[Kollege m] Danke, dann gehe ich schnell runter.\n[Ansage f] Text 3.\n[Mann m] Entschuldigung, was kosten die Äpfel?\n[Verkäufer m] Das Kilo kostet zwei Euro zwanzig. Die grünen hier sind heute im Angebot, das Kilo nur ein Euro fünfzig.\n[Mann m] Gut, dann nehme ich zwei Kilo von den grünen.\n[Ansage f] Text 4.\n[Kollegin f] Wann machst du dieses Jahr Urlaub? Im August, wie immer?\n[Kollege m] Nein, im August ist es überall so voll. Diesmal fahre ich schon im Juni ans Meer.\n[Kollege m] Und im Oktober nehme ich dann noch eine Woche frei und renoviere meine Wohnung.\n[Ansage f] Text 5.\n[Frau f] Wir fahren ja am Freitag weg. Wer füttert denn unsere Katze? Deine Schwester?\n[Mann m] Die ist selbst im Urlaub. Aber Herr Ziegler von nebenan hat gesagt, er macht das gern.\n[Frau f] Wie nett! Dann bringe ich ihm morgen den Schlüssel.",
+          "questions": [
+            {
+              "question": "Was macht die Familie am Sonntag?",
+              "options": [
+                "Sie geht in den Wald.",
+                "Sie geht ins Museum.",
+                "Sie bleibt zu Hause."
+              ],
+              "correctIndex": 1,
+              "evidence": "Wie wäre es mit dem Museum?"
+            },
+            {
+              "question": "Wo kann der Kollege drucken?",
+              "options": [
+                "im Erdgeschoss",
+                "im zweiten Stock",
+                "in seinem Büro"
+              ],
+              "correctIndex": 0,
+              "evidence": "Geh doch ins Sekretariat unten im Erdgeschoss"
+            },
+            {
+              "question": "Wie viel bezahlt der Mann?",
+              "options": [
+                "1,50 Euro",
+                "3,00 Euro",
+                "4,40 Euro"
+              ],
+              "correctIndex": 1,
+              "evidence": "dann nehme ich zwei Kilo von den grünen"
+            },
+            {
+              "question": "Wann macht der Kollege seinen Urlaub am Meer?",
+              "options": [
+                "im Juni",
+                "im August",
+                "im Oktober"
+              ],
+              "correctIndex": 0,
+              "evidence": "Diesmal fahre ich schon im Juni ans Meer."
+            },
+            {
+              "question": "Wer füttert die Katze?",
+              "options": [
+                "die Schwester",
+                "die Frau",
+                "der Nachbar"
+              ],
+              "correctIndex": 2,
+              "evidence": "Aber Herr Ziegler von nebenan hat gesagt, er macht das gern."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "It will rain on Sunday, so they go to the dinosaur exhibition at the museum. The forest is planned for next weekend.",
+            "de": "Am Sonntag regnet es. Deshalb gehen sie ins Museum zu den Dinosauriern. In den Wald gehen sie nächstes Wochenende."
+          },
+          {
+            "en": "His printer and the one on the second floor are broken. The printer in the office on the ground floor works.",
+            "de": "Sein Drucker und der Drucker im zweiten Stock sind kaputt. Im Sekretariat im Erdgeschoss geht es."
+          },
+          {
+            "en": "He buys two kilos of the green apples, which cost one euro fifty per kilo: three euros in total.",
+            "de": "Er kauft zwei Kilo grüne Äpfel. Ein Kilo kostet ein Euro fünfzig, also bezahlt er drei Euro."
+          },
+          {
+            "en": "August is too crowded, so this time he goes to the sea in June. In October he takes a week off to renovate his flat.",
+            "de": "Im August ist es zu voll. Diesmal fährt er im Juni ans Meer. Im Oktober renoviert er seine Wohnung."
+          },
+          {
+            "en": "The sister is on holiday herself. Herr Ziegler, the neighbour next door, will feed the cat.",
+            "de": "Die Schwester ist selbst im Urlaub. Herr Ziegler, der Nachbar, füttert die Katze."
+          }
+        ]
+      }
+    }
+  ]
+}

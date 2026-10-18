@@ -1,0 +1,346 @@
+{
+  "formatId": "goethe-a2",
+  "partId": "hoeren-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-a2__hoeren-2__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Sara f] Hallo Tim! Du warst letzte Woche gar nicht im Büro. Warst du verreist?\n[Tim m] Nein, ich hatte Urlaub, aber ich bin zu Hause geblieben. Es war trotzdem eine volle Woche.\n[Sara f] Erzähl mal! Was hast du am Montag gemacht?\n[Tim m] Am Montag habe ich endlich die Küche gestrichen. Sie ist jetzt hellgelb.\n[Sara f] Schön! Und am Dienstag? Du wolltest doch mit deinem Neffen in den Zoo.\n[Tim m] Ja, aber das hat nicht geklappt. Es hat den ganzen Tag geregnet, und ich hatte Zahnschmerzen.\n[Tim m] Deshalb war ich am Dienstag beim Zahnarzt.\n[Sara f] Oh je. Und jetzt? Geht es dir wieder gut?\n[Tim m] Ja, alles in Ordnung. Am Mittwoch war das Wetter dann super. Da habe ich eine lange Tour mit dem Rad an den See gemacht.\n[Sara f] Toll. Am Donnerstag spielst du doch immer Fußball, oder?\n[Tim m] Normalerweise schon. Aber diesmal war mein Freund Ben krank, und das Spiel ist ausgefallen.\n[Tim m] Dafür sind am Donnerstagabend meine Eltern mit dem Zug gekommen. Ich habe sie am Bahnhof abgeholt.\n[Sara f] Und was habt ihr am Freitag gemacht?\n[Tim m] Meine Mutter wollte unbedingt bei mir die Fenster putzen. Das habe ich aber nicht erlaubt!\n[Tim m] Wir sind lieber zusammen ins Kino gegangen, in einen lustigen französischen Film.\n[Sara f] Gut so! Und ich habe für dich etwas gebacken: einen Apfelkuchen. Willkommen zurück im Büro!",
+          "questions": [
+            {
+              "question": "Was hat Tim am Montag gemacht?",
+              "options": [
+                "a) Fahrrad fahren",
+                "b) ins Kino gehen",
+                "c) Fußball spielen",
+                "d) die Küche streichen",
+                "e) in den Zoo gehen",
+                "f) zum Arzt gehen",
+                "g) Kuchen backen",
+                "h) Fenster putzen",
+                "i) Besuch vom Bahnhof abholen"
+              ],
+              "correctIndex": 3,
+              "evidence": "habe ich endlich die Küche gestrichen"
+            },
+            {
+              "question": "Was hat Tim am Dienstag gemacht?",
+              "options": [
+                "a) Fahrrad fahren",
+                "b) ins Kino gehen",
+                "c) Fußball spielen",
+                "d) die Küche streichen",
+                "e) in den Zoo gehen",
+                "f) zum Arzt gehen",
+                "g) Kuchen backen",
+                "h) Fenster putzen",
+                "i) Besuch vom Bahnhof abholen"
+              ],
+              "correctIndex": 5,
+              "evidence": "Deshalb war ich am Dienstag beim Zahnarzt."
+            },
+            {
+              "question": "Was hat Tim am Mittwoch gemacht?",
+              "options": [
+                "a) Fahrrad fahren",
+                "b) ins Kino gehen",
+                "c) Fußball spielen",
+                "d) die Küche streichen",
+                "e) in den Zoo gehen",
+                "f) zum Arzt gehen",
+                "g) Kuchen backen",
+                "h) Fenster putzen",
+                "i) Besuch vom Bahnhof abholen"
+              ],
+              "correctIndex": 0,
+              "evidence": "eine lange Tour mit dem Rad an den See"
+            },
+            {
+              "question": "Was hat Tim am Donnerstag gemacht?",
+              "options": [
+                "a) Fahrrad fahren",
+                "b) ins Kino gehen",
+                "c) Fußball spielen",
+                "d) die Küche streichen",
+                "e) in den Zoo gehen",
+                "f) zum Arzt gehen",
+                "g) Kuchen backen",
+                "h) Fenster putzen",
+                "i) Besuch vom Bahnhof abholen"
+              ],
+              "correctIndex": 8,
+              "evidence": "Ich habe sie am Bahnhof abgeholt."
+            },
+            {
+              "question": "Was hat Tim am Freitag gemacht?",
+              "options": [
+                "a) Fahrrad fahren",
+                "b) ins Kino gehen",
+                "c) Fußball spielen",
+                "d) die Küche streichen",
+                "e) in den Zoo gehen",
+                "f) zum Arzt gehen",
+                "g) Kuchen backen",
+                "h) Fenster putzen",
+                "i) Besuch vom Bahnhof abholen"
+              ],
+              "correctIndex": 1,
+              "evidence": "Wir sind lieber zusammen ins Kino gegangen"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "On Monday Tim finally painted the kitchen. It is now light yellow.",
+            "de": "Am Montag hat Tim die Küche gestrichen. Sie ist jetzt hellgelb."
+          },
+          {
+            "en": "The zoo trip did not happen because of the rain and his toothache, so on Tuesday he went to the dentist.",
+            "de": "Der Zoo hat nicht geklappt, weil es geregnet hat und Tim Zahnschmerzen hatte. Am Dienstag war er beim Zahnarzt."
+          },
+          {
+            "en": "On Wednesday the weather was great and he rode his bike to the lake.",
+            "de": "Am Mittwoch war das Wetter super. Tim ist mit dem Rad an den See gefahren."
+          },
+          {
+            "en": "Football was cancelled because Ben was ill. Instead Tim picked up his parents from the station.",
+            "de": "Das Fußballspiel ist ausgefallen, weil Ben krank war. Tim hat seine Eltern vom Bahnhof abgeholt."
+          },
+          {
+            "en": "His mother wanted to clean the windows, but Tim didn't let her. They went to the cinema instead.",
+            "de": "Die Mutter wollte die Fenster putzen, aber Tim hat es nicht erlaubt. Sie sind zusammen ins Kino gegangen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2__hoeren-2__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Marta f] Paolo, am Freitag ist unser Kursfest. Weißt du schon, wer was mitbringt?\n[Paolo m] Ja, ich habe eine Liste gemacht. Also, Ahmed wollte zuerst Würstchen grillen. Aber im Kursraum dürfen wir nicht grillen.\n[Paolo m] Deshalb macht er jetzt einen großen Salat mit Tomaten und Gurken.\n[Marta f] Gut. Und Olga? Sie backt doch so gern.\n[Paolo m] Ja, aber Kuchen bringt schon unsere Lehrerin mit, Frau Berger. Sie hat Geburtstag und backt selbst einen.\n[Paolo m] Olga kauft deshalb Erdbeeren und Bananen auf dem Markt.\n[Marta f] Prima. Und Herr Tanaka?\n[Paolo m] Der kommt direkt von der Arbeit und hat keine Zeit zum Kochen. Er bringt Wasser und Apfelsaft mit, für alle.\n[Marta f] Sehr gut. Und was ist mit Lucia?\n[Paolo m] Lucia wollte eigentlich Eis mitbringen. Aber wir haben ja keinen Kühlschrank im Kursraum.\n[Paolo m] Jetzt kocht sie eine Suppe aus ihrer Heimat, aus Kolumbien.\n[Marta f] Lecker! Und wir zwei? Ich kann Brot mitbringen.\n[Paolo m] Super, und ich bringe Käse aus Italien. Dann haben wir alles.",
+          "questions": [
+            {
+              "question": "Was bringt Ahmed mit?",
+              "options": [
+                "a) Würstchen",
+                "b) Obst",
+                "c) Brot",
+                "d) Eis",
+                "e) Salat",
+                "f) Käse",
+                "g) Getränke",
+                "h) Kuchen",
+                "i) Suppe"
+              ],
+              "correctIndex": 4,
+              "evidence": "Deshalb macht er jetzt einen großen Salat"
+            },
+            {
+              "question": "Was bringt Olga mit?",
+              "options": [
+                "a) Würstchen",
+                "b) Obst",
+                "c) Brot",
+                "d) Eis",
+                "e) Salat",
+                "f) Käse",
+                "g) Getränke",
+                "h) Kuchen",
+                "i) Suppe"
+              ],
+              "correctIndex": 1,
+              "evidence": "Olga kauft deshalb Erdbeeren und Bananen"
+            },
+            {
+              "question": "Was bringt Frau Berger mit?",
+              "options": [
+                "a) Würstchen",
+                "b) Obst",
+                "c) Brot",
+                "d) Eis",
+                "e) Salat",
+                "f) Käse",
+                "g) Getränke",
+                "h) Kuchen",
+                "i) Suppe"
+              ],
+              "correctIndex": 7,
+              "evidence": "Sie hat Geburtstag und backt selbst einen"
+            },
+            {
+              "question": "Was bringt Herr Tanaka mit?",
+              "options": [
+                "a) Würstchen",
+                "b) Obst",
+                "c) Brot",
+                "d) Eis",
+                "e) Salat",
+                "f) Käse",
+                "g) Getränke",
+                "h) Kuchen",
+                "i) Suppe"
+              ],
+              "correctIndex": 6,
+              "evidence": "Er bringt Wasser und Apfelsaft mit"
+            },
+            {
+              "question": "Was bringt Lucia mit?",
+              "options": [
+                "a) Würstchen",
+                "b) Obst",
+                "c) Brot",
+                "d) Eis",
+                "e) Salat",
+                "f) Käse",
+                "g) Getränke",
+                "h) Kuchen",
+                "i) Suppe"
+              ],
+              "correctIndex": 8,
+              "evidence": "Jetzt kocht sie eine Suppe aus ihrer Heimat"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Ahmed wanted to grill sausages, but grilling is not allowed in the classroom, so he makes a big salad.",
+            "de": "Ahmed wollte Würstchen grillen, aber das ist im Kursraum verboten. Deshalb macht er einen großen Salat."
+          },
+          {
+            "en": "Olga likes baking, but the teacher already brings cake. So Olga buys strawberries and bananas: fruit.",
+            "de": "Olga backt gern, aber die Lehrerin bringt schon Kuchen mit. Olga kauft Erdbeeren und Bananen, also Obst."
+          },
+          {
+            "en": "Frau Berger, the teacher, has her birthday and bakes a cake herself.",
+            "de": "Frau Berger, die Lehrerin, hat Geburtstag und backt selbst einen Kuchen."
+          },
+          {
+            "en": "Herr Tanaka has no time to cook, so he brings water and apple juice: drinks.",
+            "de": "Herr Tanaka hat keine Zeit zum Kochen. Er bringt Wasser und Apfelsaft mit, also Getränke."
+          },
+          {
+            "en": "Lucia wanted to bring ice cream, but there is no fridge. Now she cooks a soup from Colombia.",
+            "de": "Lucia wollte Eis mitbringen, aber es gibt keinen Kühlschrank. Jetzt kocht sie eine Suppe aus Kolumbien."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2__hoeren-2__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Lisa f] Papa, ich mache gerade den Plan für die Hochzeit. Weißt du, wie Tante Helga kommt? Sie wohnt doch in Hamburg.\n[Papa m] Sie wollte zuerst mit dem Auto fahren, aber die Fahrt ist ihr zu lang. Sie nimmt jetzt den Zug und kommt schon am Freitag.\n[Lisa f] Gut. Und Onkel Rolf? Der fährt doch überall mit seinem Motorrad hin.\n[Papa m] Ja, aber nicht zu einer Hochzeit, im Anzug! Er nimmt diesmal das Auto und bringt Oma gleich mit.\n[Lisa f] Und Mia kommt aus Wien. Fliegt sie?\n[Papa m] Nein, sie hat Angst vor dem Fliegen. Sie kommt mit dem Bus, der ist billig und fährt direkt bis München.\n[Lisa f] Und Opa Karl? Er kann ja nicht mehr so gut laufen.\n[Papa m] Ich wollte ihn abholen. Aber er möchte lieber selbst ein Taxi bestellen. Er ist eben gern unabhängig.\n[Lisa f] Und unsere Nachbarn, die Novaks?\n[Papa m] Die Kirche ist doch nur fünf Minuten von ihrem Haus entfernt. Die gehen zu Fuß.\n[Lisa f] Prima. Und Max und ich fahren nach der Kirche ganz romantisch mit dem Fahrrad zum Restaurant!\n[Papa m] Mit dem Fahrrad? Im Hochzeitskleid? Na, dann viel Glück!",
+          "questions": [
+            {
+              "question": "Wie kommt Tante Helga zur Hochzeit?",
+              "options": [
+                "a) mit dem Auto",
+                "b) mit dem Zug",
+                "c) mit dem Flugzeug",
+                "d) mit dem Fahrrad",
+                "e) mit dem Bus",
+                "f) mit dem Taxi",
+                "g) mit dem Schiff",
+                "h) zu Fuß",
+                "i) mit dem Motorrad"
+              ],
+              "correctIndex": 1,
+              "evidence": "Sie nimmt jetzt den Zug"
+            },
+            {
+              "question": "Wie kommt Onkel Rolf zur Hochzeit?",
+              "options": [
+                "a) mit dem Auto",
+                "b) mit dem Zug",
+                "c) mit dem Flugzeug",
+                "d) mit dem Fahrrad",
+                "e) mit dem Bus",
+                "f) mit dem Taxi",
+                "g) mit dem Schiff",
+                "h) zu Fuß",
+                "i) mit dem Motorrad"
+              ],
+              "correctIndex": 0,
+              "evidence": "Er nimmt diesmal das Auto"
+            },
+            {
+              "question": "Wie kommt Mia zur Hochzeit?",
+              "options": [
+                "a) mit dem Auto",
+                "b) mit dem Zug",
+                "c) mit dem Flugzeug",
+                "d) mit dem Fahrrad",
+                "e) mit dem Bus",
+                "f) mit dem Taxi",
+                "g) mit dem Schiff",
+                "h) zu Fuß",
+                "i) mit dem Motorrad"
+              ],
+              "correctIndex": 4,
+              "evidence": "Sie kommt mit dem Bus"
+            },
+            {
+              "question": "Wie kommt Opa Karl zur Hochzeit?",
+              "options": [
+                "a) mit dem Auto",
+                "b) mit dem Zug",
+                "c) mit dem Flugzeug",
+                "d) mit dem Fahrrad",
+                "e) mit dem Bus",
+                "f) mit dem Taxi",
+                "g) mit dem Schiff",
+                "h) zu Fuß",
+                "i) mit dem Motorrad"
+              ],
+              "correctIndex": 5,
+              "evidence": "er möchte lieber selbst ein Taxi bestellen"
+            },
+            {
+              "question": "Wie kommen die Novaks zur Hochzeit?",
+              "options": [
+                "a) mit dem Auto",
+                "b) mit dem Zug",
+                "c) mit dem Flugzeug",
+                "d) mit dem Fahrrad",
+                "e) mit dem Bus",
+                "f) mit dem Taxi",
+                "g) mit dem Schiff",
+                "h) zu Fuß",
+                "i) mit dem Motorrad"
+              ],
+              "correctIndex": 7,
+              "evidence": "Die gehen zu Fuß."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Aunt Helga wanted to drive, but the trip is too long for her. She is taking the train.",
+            "de": "Tante Helga wollte mit dem Auto fahren, aber die Fahrt ist zu lang. Sie nimmt den Zug."
+          },
+          {
+            "en": "Uncle Rolf usually rides his motorbike, but not in a suit. This time he takes the car.",
+            "de": "Onkel Rolf fährt sonst Motorrad, aber nicht im Anzug. Diesmal nimmt er das Auto."
+          },
+          {
+            "en": "Mia is afraid of flying, so she comes by bus.",
+            "de": "Mia hat Angst vor dem Fliegen. Sie kommt mit dem Bus."
+          },
+          {
+            "en": "Lisa's father wanted to pick him up, but Grandpa Karl prefers to order a taxi himself.",
+            "de": "Lisas Vater wollte ihn abholen, aber Opa Karl bestellt lieber selbst ein Taxi."
+          },
+          {
+            "en": "The church is only five minutes from their house, so the Novaks walk.",
+            "de": "Die Kirche ist nur fünf Minuten von ihrem Haus entfernt. Die Novaks gehen zu Fuß."
+          }
+        ]
+      }
+    }
+  ]
+}

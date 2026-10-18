@@ -1,0 +1,256 @@
+{
+  "formatId": "goethe-a2",
+  "partId": "hoeren-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-a2__hoeren-1__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Ansage f] Text 1.\n[Moderatorin f] Und jetzt das Wetter für das Wochenende. Am Samstag bleibt es noch trocken, aber es ist windig und kühl, nur zwölf Grad.\n[Moderatorin f] Am Sonntag kommt dann der Regen, und zwar schon am Morgen. Erst am Montag scheint wieder die Sonne.\n[Ansage f] Text 2.\n[Sprecher m] Hier sind die Verkehrsmeldungen. Auf der Autobahn zwischen Kassel und Göttingen gibt es nach einem Unfall zehn Kilometer Stau.\n[Sprecher m] Fahren Sie bitte schon in Kassel von der Autobahn ab und nehmen Sie die Bundesstraße. Die Polizei glaubt, der Stau dauert bis zum Mittag.\n[Ansage f] Text 3.\n[Moderator m] Neu in der Altstadt: das Café Mohnblume! Zur Eröffnung bekommen Sie diese Woche zu jedem Kaffee ein Stück Kuchen gratis.\n[Moderator m] Frühstück gibt es jeden Tag bis vierzehn Uhr. Am Montag haben wir Ruhetag.\n[Ansage f] Text 4.\n[Moderatorin f] Sie möchten mal wieder tanzen? Am Freitagabend gibt es im Gemeindehaus einen Tanzabend für alle über fünfzig. Der Eintritt kostet fünf Euro.\n[Moderatorin f] Anfänger sind herzlich willkommen: Von neunzehn bis zwanzig Uhr gibt es einen kleinen Tanzkurs. Danach spielt eine Band bis Mitternacht.\n[Ansage f] Text 5.\n[Moderator m] Liebe Hörerinnen und Hörer, eine Information in eigener Sache: Unsere Sendung Musik am Nachmittag beginnt ab nächster Woche nicht mehr um fünfzehn Uhr, sondern schon um vierzehn Uhr.\n[Moderator m] Am Freitag fällt die Sendung leider aus. Da hören Sie bei uns das Fußballspiel live.",
+          "questions": [
+            {
+              "question": "Wie wird das Wetter am Sonntag?",
+              "options": [
+                "sonnig",
+                "regnerisch",
+                "trocken und windig"
+              ],
+              "correctIndex": 1,
+              "evidence": "Am Sonntag kommt dann der Regen"
+            },
+            {
+              "question": "Was sollen die Autofahrer machen?",
+              "options": [
+                "die Bundesstraße nehmen",
+                "bis zum Mittag warten",
+                "in Göttingen abfahren"
+              ],
+              "correctIndex": 0,
+              "evidence": "nehmen Sie die Bundesstraße"
+            },
+            {
+              "question": "Was bekommt man diese Woche im Café Mohnblume kostenlos?",
+              "options": [
+                "einen Kaffee",
+                "ein Frühstück",
+                "ein Stück Kuchen"
+              ],
+              "correctIndex": 2,
+              "evidence": "zu jedem Kaffee ein Stück Kuchen gratis"
+            },
+            {
+              "question": "Was gibt es am Anfang des Abends im Gemeindehaus?",
+              "options": [
+                "ein Konzert",
+                "einen Tanzkurs",
+                "ein Abendessen"
+              ],
+              "correctIndex": 1,
+              "evidence": "Von neunzehn bis zwanzig Uhr gibt es einen kleinen Tanzkurs"
+            },
+            {
+              "question": "Wann beginnt die Sendung Musik am Nachmittag ab nächster Woche?",
+              "options": [
+                "um 14 Uhr",
+                "um 15 Uhr",
+                "am Freitag"
+              ],
+              "correctIndex": 0,
+              "evidence": "sondern schon um vierzehn Uhr"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "On Sunday the rain arrives, already in the morning. Saturday is dry and windy; the sun only returns on Monday.",
+            "de": "Am Sonntag kommt der Regen, schon am Morgen. Am Samstag ist es trocken und windig, die Sonne kommt erst am Montag."
+          },
+          {
+            "en": "Drivers should leave the motorway at Kassel and take the main road. The jam lasts until midday, but nobody is told to wait.",
+            "de": "Die Autofahrer sollen in Kassel von der Autobahn abfahren und die Bundesstraße nehmen. Der Stau dauert bis zum Mittag, aber man soll nicht warten."
+          },
+          {
+            "en": "With every coffee you get a piece of cake for free. The coffee and the breakfast are not free.",
+            "de": "Zu jedem Kaffee gibt es ein Stück Kuchen gratis. Den Kaffee und das Frühstück muss man bezahlen."
+          },
+          {
+            "en": "From seven to eight there is a short dance class for beginners. The band only plays afterwards.",
+            "de": "Von neunzehn bis zwanzig Uhr gibt es einen kleinen Tanzkurs. Die Band spielt erst danach."
+          },
+          {
+            "en": "The show will start at two o'clock instead of three. On Friday it is cancelled because of the football match.",
+            "de": "Die Sendung beginnt nicht mehr um fünfzehn Uhr, sondern um vierzehn Uhr. Am Freitag fällt sie aus."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2__hoeren-1__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Ansage f] Text 1.\n[Sprecherin f] Achtung, Autofahrer in Bremen: Die Weserbrücke ist ab heute für zwei Wochen gesperrt. Die Stadt repariert dort die Straße.\n[Sprecherin f] Busse und Fahrräder dürfen aber weiter über die Brücke fahren.\n[Ansage f] Text 2.\n[Moderator m] Das Wetter für morgen: Am Vormittag gibt es noch viele Wolken, aber es bleibt trocken.\n[Moderator m] Am Nachmittag wird es dann sonnig und warm, bis zu fünfundzwanzig Grad. Am Abend kann es im Süden Gewitter geben.\n[Ansage f] Text 3.\n[Sprecher m] Möbelhaus Krone sagt danke: Wir werden zwanzig Jahre alt! Deshalb gibt es am Samstag auf alle Sofas dreißig Prozent Rabatt.\n[Sprecher m] Betten und Schränke kosten an diesem Tag den normalen Preis. Für die Kinder haben wir eine Spielecke mit Clown.\n[Ansage f] Text 4.\n[Moderatorin f] Am Sonntag ist wieder Flohmarkt auf dem Marktplatz, von acht bis fünfzehn Uhr.\n[Moderatorin f] Sie möchten selbst etwas verkaufen? Dann melden Sie sich bitte bis Donnerstag im Rathaus an. Ein Platz kostet zehn Euro.\n[Ansage f] Text 5.\n[Moderator m] Unser Radiobus ist heute in Neustadt. Gestern haben wir gesagt, der Bus steht am Bahnhof. Das stimmt leider nicht.\n[Moderator m] Sie finden unseren Reporter Max bis siebzehn Uhr vor der Stadthalle. Kommen Sie vorbei, es gibt kleine Geschenke!",
+          "questions": [
+            {
+              "question": "Wer darf in den nächsten zwei Wochen über die Weserbrücke fahren?",
+              "options": [
+                "Busse und Fahrräder",
+                "nur Autos",
+                "niemand"
+              ],
+              "correctIndex": 0,
+              "evidence": "Busse und Fahrräder dürfen aber weiter über die Brücke fahren"
+            },
+            {
+              "question": "Wie wird das Wetter morgen Nachmittag?",
+              "options": [
+                "viele Wolken",
+                "Gewitter",
+                "Sonne"
+              ],
+              "correctIndex": 2,
+              "evidence": "Am Nachmittag wird es dann sonnig und warm"
+            },
+            {
+              "question": "Was ist am Samstag im Möbelhaus Krone billiger?",
+              "options": [
+                "Betten",
+                "Sofas",
+                "Schränke"
+              ],
+              "correctIndex": 1,
+              "evidence": "auf alle Sofas dreißig Prozent Rabatt"
+            },
+            {
+              "question": "Bis wann muss man sich als Verkäufer für den Flohmarkt anmelden?",
+              "options": [
+                "bis Donnerstag",
+                "bis Sonntag",
+                "bis fünfzehn Uhr"
+              ],
+              "correctIndex": 0,
+              "evidence": "melden Sie sich bitte bis Donnerstag im Rathaus an"
+            },
+            {
+              "question": "Wo steht der Radiobus heute?",
+              "options": [
+                "auf dem Marktplatz",
+                "am Bahnhof",
+                "vor der Stadthalle"
+              ],
+              "correctIndex": 2,
+              "evidence": "bis siebzehn Uhr vor der Stadthalle"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The bridge is closed to cars, but buses and bicycles may still cross it.",
+            "de": "Die Brücke ist für Autos gesperrt. Busse und Fahrräder dürfen aber weiter darüber fahren."
+          },
+          {
+            "en": "In the afternoon it will be sunny and warm. The clouds are in the morning, and storms are possible in the evening.",
+            "de": "Am Nachmittag wird es sonnig und warm. Wolken gibt es am Vormittag, Gewitter vielleicht am Abend."
+          },
+          {
+            "en": "There is a thirty percent discount on all sofas. Beds and wardrobes cost the normal price.",
+            "de": "Auf alle Sofas gibt es dreißig Prozent Rabatt. Betten und Schränke kosten den normalen Preis."
+          },
+          {
+            "en": "Sellers must register at the town hall by Thursday. The market itself is on Sunday until three.",
+            "de": "Verkäufer müssen sich bis Donnerstag im Rathaus anmelden. Der Flohmarkt ist am Sonntag bis fünfzehn Uhr."
+          },
+          {
+            "en": "The bus is in front of the town hall (Stadthalle). The station was a mistake from yesterday.",
+            "de": "Der Bus steht vor der Stadthalle. Die Information von gestern mit dem Bahnhof war falsch."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2__hoeren-1__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Ansage f] Text 1.\n[Sprecher m] Im Tierpark Sonnenberg gibt es seit gestern ein kleines Elefantenbaby. Besucher können es ab Samstag sehen.\n[Sprecher m] Einen Namen hat das Baby noch nicht. Alle Kinder aus der Stadt dürfen bis Ende des Monats einen Namen vorschlagen.\n[Ansage f] Text 2.\n[Sprecherin f] Eine Meldung für alle Fahrgäste in Frankfurt: Wegen eines Streiks fahren heute keine Busse.\n[Sprecherin f] Die Straßenbahnen fahren aber ganz normal. Ab morgen früh fahren dann auch die Busse wieder.\n[Ansage f] Text 3.\n[Moderator m] Und nun zum Wetter. Heute Nacht wird es sehr kalt, bis minus acht Grad. Fahren Sie vorsichtig, die Straßen können glatt sein.\n[Moderator m] Morgen scheint den ganzen Tag die Sonne, aber es bleibt kalt. Schnee kommt erst wieder am Wochenende.\n[Ansage f] Text 4.\n[Sprecher m] Sie lernen gern Sprachen? Die Sprachschule Lingua hat neue Kurse für Spanisch und Italienisch, immer am Abend, zweimal pro Woche.\n[Sprecher m] Melden Sie sich bis Ende Mai an, dann bekommen Sie das Kursbuch gratis dazu.\n[Ansage f] Text 5.\n[Moderatorin f] Noch ein Tipp für Samstag: Im Stadtpark ist das große Drachenfest. Bringen Sie Ihren Drachen mit, oder bauen Sie am Vormittag mit uns einen neuen.\n[Moderatorin f] Und wenn es am Samstag regnet? Dann machen wir das Fest eine Woche später.",
+          "questions": [
+            {
+              "question": "Was dürfen die Kinder aus der Stadt machen?",
+              "options": [
+                "den Elefanten füttern",
+                "einen Namen für das Baby vorschlagen",
+                "kostenlos in den Zoo gehen"
+              ],
+              "correctIndex": 1,
+              "evidence": "Alle Kinder aus der Stadt dürfen bis Ende des Monats einen Namen vorschlagen"
+            },
+            {
+              "question": "Was fährt heute in Frankfurt nicht?",
+              "options": [
+                "die Busse",
+                "die Straßenbahnen",
+                "die Taxis"
+              ],
+              "correctIndex": 0,
+              "evidence": "Wegen eines Streiks fahren heute keine Busse"
+            },
+            {
+              "question": "Wann soll es wieder schneien?",
+              "options": [
+                "heute Nacht",
+                "morgen",
+                "am Wochenende"
+              ],
+              "correctIndex": 2,
+              "evidence": "Schnee kommt erst wieder am Wochenende"
+            },
+            {
+              "question": "Was bekommt man, wenn man sich bis Ende Mai anmeldet?",
+              "options": [
+                "das Kursbuch kostenlos",
+                "eine kostenlose Probestunde",
+                "einen Kurs am Wochenende"
+              ],
+              "correctIndex": 0,
+              "evidence": "dann bekommen Sie das Kursbuch gratis dazu"
+            },
+            {
+              "question": "Was passiert, wenn es am Samstag regnet?",
+              "options": [
+                "Das Fest ist in einer Halle.",
+                "Das Fest ist eine Woche später.",
+                "Das Fest fällt ganz aus."
+              ],
+              "correctIndex": 1,
+              "evidence": "Dann machen wir das Fest eine Woche später"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Children may suggest a name for the baby elephant until the end of the month. Feeding or free entry is not mentioned.",
+            "de": "Die Kinder dürfen bis Ende des Monats einen Namen für das Elefantenbaby vorschlagen. Füttern oder freien Eintritt gibt es nicht."
+          },
+          {
+            "en": "Because of a strike there are no buses today. The trams run normally.",
+            "de": "Wegen eines Streiks fahren heute keine Busse. Die Straßenbahnen fahren normal."
+          },
+          {
+            "en": "Snow only comes back at the weekend. Tonight is very cold and tomorrow is sunny.",
+            "de": "Schnee kommt erst am Wochenende. Heute Nacht wird es sehr kalt, und morgen scheint die Sonne."
+          },
+          {
+            "en": "If you register by the end of May, you get the course book for free. The courses are in the evening, not at the weekend.",
+            "de": "Wer sich bis Ende Mai anmeldet, bekommt das Kursbuch gratis. Die Kurse sind am Abend, nicht am Wochenende."
+          },
+          {
+            "en": "If it rains, the kite festival takes place one week later.",
+            "de": "Wenn es regnet, ist das Drachenfest eine Woche später."
+          }
+        ]
+      }
+    }
+  ]
+}
