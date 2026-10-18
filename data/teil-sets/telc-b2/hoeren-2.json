@@ -1,0 +1,436 @@
+{
+  "formatId": "telc-b2",
+  "partId": "hoeren-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b2__hoeren-2__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Moderator m] Herzlich willkommen zu unserer Reihe Berufe mit Geschichte. Mein Gast ist heute Lena Hartung, sie ist Orgelbauerin. Frau Hartung, wie kommt man zu so einem Beruf?\n[Frau Hartung f] Bei mir war das eher Zufall. Ich wollte eigentlich Tischlerin werden und habe nach der Schule ein Praktikum in einer Möbelwerkstatt gesucht. Da war aber nichts frei, und ein Bekannter meines Vaters hatte eine Orgelbauwerkstatt.\n[Moderator m] Und dann hat es Sie gepackt?\n[Frau Hartung f] Ja, sofort. Mich hat fasziniert, dass man in diesem Beruf so viele verschiedene Dinge können muss: Man arbeitet mit Holz und mit Metall, man braucht technisches Verständnis, und am Ende muss man auch noch ein sehr gutes Gehör haben.\n[Moderator m] Wie lange dauert die Ausbildung?\n[Frau Hartung f] Dreieinhalb Jahre. Die Berufsschule ist allerdings nicht gleich um die Ecke. Weil es so wenige Auszubildende gibt, gibt es für ganz Deutschland nur eine einzige Berufsschule für Orgelbauer. Da fährt man mehrmals im Jahr für einige Wochen hin.\n[Moderator m] Bauen Sie denn heute noch neue Orgeln, oder reparieren Sie vor allem alte?\n[Frau Hartung f] Neue Orgeln sind inzwischen die Ausnahme, vielleicht eine im Jahr, wenn es gut läuft. Den größten Teil unserer Arbeit machen Restaurierungen und die regelmäßige Pflege aus, also das Stimmen und kleinere Reparaturen.\n[Moderator m] Was ist bei einer Restaurierung die größte Herausforderung?\n[Frau Hartung f] Dass man der Orgel nichts Fremdes aufzwingt. Wir untersuchen vorher ganz genau, wie der ursprüngliche Erbauer gearbeitet hat, welches Holz er benutzt hat, wie er die Pfeifen geformt hat. Unser Ziel ist, dass die Orgel danach wieder so klingt wie vor zweihundert Jahren, und nicht so, wie es uns persönlich am besten gefällt.\n[Moderator m] Das klingt nach sehr viel Geduld. Wie lange dauert so eine Restaurierung?\n[Frau Hartung f] Bei einer großen Kirchenorgel kann das gut und gern zwei Jahre dauern. Viele Teile bauen wir aus und nehmen sie mit in die Werkstatt. Manche Arbeiten, zum Beispiel das Stimmen der Pfeifen, kann man aber nur in der Kirche selbst machen, weil der Raum den Klang so stark beeinflusst.\n[Moderator m] Und das auch im Winter, in einer kalten Kirche?\n[Frau Hartung f] Das ist tatsächlich der unangenehme Teil des Berufs. Wir stimmen oft bei sechs oder sieben Grad, mit Mütze und dicken Socken. Heizen hilft leider nicht, weil sich die Stimmung sonst wieder verändert, sobald die Kirche abkühlt.\n[Moderator m] Sie haben vorhin gesagt, es gibt wenige Auszubildende. Hat der Beruf ein Nachwuchsproblem?\n[Frau Hartung f] Ein bisschen schon, ja. Viele junge Leute wissen gar nicht, dass es diesen Beruf gibt. Dabei sind die Chancen hervorragend: Wer die Ausbildung abschließt, findet praktisch sofort eine Stelle, auch im Ausland, zum Beispiel in Skandinavien oder in Japan.\n[Moderator m] Und wie sieht es mit Frauen in Ihrem Beruf aus?\n[Frau Hartung f] Als ich angefangen habe, war ich in der Berufsschule die einzige Frau in der Klasse. Heute ist es ungefähr ein Viertel. Das ist noch nicht viel, aber es werden langsam mehr.\n[Moderator m] Zum Schluss: Haben Sie eine Lieblingsorgel?\n[Frau Hartung f] Ja, aber das ist keine berühmte. Es ist eine kleine Dorforgel im Allgäu, meine erste Restaurierung als Gesellin. Wenn ich in der Gegend bin, gehe ich immer kurz hinein und höre zu, wenn jemand spielt. Selbst spielen kann ich übrigens nur ein bisschen, das überrascht viele.\n[Moderator m] Frau Hartung, vielen Dank für das Gespräch.",
+          "questions": [
+            {
+              "question": "Frau Hartung wollte schon als Kind Orgelbauerin werden.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Ich wollte eigentlich Tischlerin werden"
+            },
+            {
+              "question": "Frau Hartung gefällt besonders, dass der Beruf sehr vielseitig ist.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "dass man in diesem Beruf so viele verschiedene Dinge können muss"
+            },
+            {
+              "question": "In Deutschland gibt es mehrere Berufsschulen für Orgelbauer, zwischen denen man wählen kann.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "nur eine einzige Berufsschule für Orgelbauer"
+            },
+            {
+              "question": "Die Werkstatt baut hauptsächlich neue Instrumente.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Neue Orgeln sind inzwischen die Ausnahme"
+            },
+            {
+              "question": "Bei einer Restaurierung soll die Orgel ihren ursprünglichen Klang zurückbekommen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "dass die Orgel danach wieder so klingt wie vor zweihundert Jahren"
+            },
+            {
+              "question": "Einige Arbeiten müssen direkt vor Ort in der Kirche gemacht werden.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "kann man aber nur in der Kirche selbst machen"
+            },
+            {
+              "question": "Frau Hartung findet die Arbeit in kalten Kirchen unangenehm.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Das ist tatsächlich der unangenehme Teil des Berufs."
+            },
+            {
+              "question": "Nach der Ausbildung ist es schwer, eine Arbeitsstelle zu finden.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "findet praktisch sofort eine Stelle"
+            },
+            {
+              "question": "Der Anteil der Frauen im Orgelbau ist gestiegen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "aber es werden langsam mehr"
+            },
+            {
+              "question": "Frau Hartung spielt selbst sehr gut Orgel.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Selbst spielen kann ich übrigens nur ein bisschen"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "She actually wanted to become a carpenter; she came to organ building by chance.",
+            "de": "Sie wollte eigentlich Tischlerin werden. Zum Orgelbau kam sie durch Zufall."
+          },
+          {
+            "en": "She was fascinated that the job needs so many different skills: wood, metal, technology and a good ear.",
+            "de": "Sie war fasziniert, dass man so viele verschiedene Dinge können muss: Holz, Metall, Technik und ein gutes Gehör."
+          },
+          {
+            "en": "There is only one vocational school for organ builders in the whole of Germany.",
+            "de": "Für ganz Deutschland gibt es nur eine einzige Berufsschule für Orgelbauer."
+          },
+          {
+            "en": "New organs are now the exception; most of the work is restoration and maintenance.",
+            "de": "Neue Orgeln sind die Ausnahme. Die meiste Arbeit sind Restaurierungen und Pflege."
+          },
+          {
+            "en": "The aim is for the organ to sound as it did two hundred years ago, not as the restorers personally like it.",
+            "de": "Das Ziel ist, dass die Orgel wieder so klingt wie vor zweihundert Jahren, nicht so, wie es den Restauratoren gefällt."
+          },
+          {
+            "en": "Some jobs, such as tuning the pipes, can only be done in the church, because the room affects the sound.",
+            "de": "Manche Arbeiten, zum Beispiel das Stimmen, kann man nur in der Kirche machen, weil der Raum den Klang beeinflusst."
+          },
+          {
+            "en": "Asked about cold churches in winter, she calls it the unpleasant part of the job.",
+            "de": "Auf die Frage nach kalten Kirchen im Winter sagt sie, das sei der unangenehme Teil des Berufs."
+          },
+          {
+            "en": "The opposite is true: anyone who finishes the training finds a job almost immediately, even abroad.",
+            "de": "Das Gegenteil stimmt: Wer die Ausbildung abschließt, findet praktisch sofort eine Stelle, auch im Ausland."
+          },
+          {
+            "en": "She was once the only woman in her class; today it is about a quarter, and the number is slowly growing.",
+            "de": "Früher war sie die einzige Frau in der Klasse. Heute ist es etwa ein Viertel, und es werden langsam mehr."
+          },
+          {
+            "en": "She says she can only play a little herself, which surprises many people.",
+            "de": "Sie sagt, sie kann selbst nur ein bisschen spielen. Das überrascht viele."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b2__hoeren-2__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Moderatorin f] Bei uns im Studio ist heute Tobias Demir. Er arbeitet als Fluglotse in der Kontrollzentrale in Langen. Herr Demir, viele Menschen stellen sich Ihren Beruf sehr stressig vor. Stimmt das?\n[Herr Demir m] Es gibt stressige Momente, natürlich. Aber das Bild, das viele aus Filmen kennen, mit Leuten, die ständig schwitzen und durcheinanderschreien, hat mit der Realität wenig zu tun. Bei uns ist es eigentlich erstaunlich ruhig, fast wie in einer Bibliothek.\n[Moderatorin f] Wie wird man denn Fluglotse?\n[Herr Demir m] Zuerst muss man einen ziemlich anspruchsvollen Eignungstest bestehen. Da geht es weniger um Schulwissen als um räumliches Vorstellungsvermögen, um Konzentration und um die Fähigkeit, mehrere Dinge gleichzeitig im Blick zu behalten. Von den Bewerbern schafft das nur ein kleiner Teil.\n[Moderatorin f] Und danach?\n[Herr Demir m] Danach kommt die Ausbildung, die dauert ungefähr drei Jahre. Das Besondere ist, dass man von Anfang an ein Gehalt bekommt. Man muss also nichts bezahlen, im Gegenteil.\n[Moderatorin f] Wie sieht ein normaler Arbeitstag bei Ihnen aus?\n[Herr Demir m] Wir arbeiten in Schichten, auch nachts und am Wochenende. Wichtig ist: Man sitzt nie stundenlang am Stück vor dem Bildschirm. Spätestens nach zwei Stunden gibt es eine Pause, weil die Konzentration sonst nachlässt.\n[Moderatorin f] Arbeiten Sie allein oder im Team?\n[Herr Demir m] Immer zu zweit. Einer spricht mit den Piloten, der andere plant voraus und stimmt sich mit den Nachbarsektoren ab. Und wir tauschen regelmäßig die Rollen.\n[Moderatorin f] Welche Sprache sprechen Sie mit den Piloten?\n[Herr Demir m] Englisch, auch mit deutschen Piloten. Das hat Sicherheitsgründe: Alle anderen Piloten auf derselben Frequenz sollen verstehen können, was gesagt wird. So wissen sie, was um sie herum passiert.\n[Moderatorin f] Was war die schwierigste Situation, die Sie erlebt haben?\n[Herr Demir m] Das war ein Gewitter im Sommer vor einigen Jahren. Plötzlich wollten fast alle Piloten gleichzeitig ihre Route ändern, um den Wolken auszuweichen. Da muss man sehr schnell entscheiden, wer wohin darf. Hinterher war ich völlig erschöpft, aber auch ein bisschen stolz.\n[Moderatorin f] Nimmt man so etwas mit nach Hause?\n[Herr Demir m] Am Anfang schon. Inzwischen kann ich gut abschalten. Was mir hilft, ist Sport, vor allem Klettern. Da muss man sich auch voll konzentrieren, aber eben auf etwas ganz anderes.\n[Moderatorin f] Man hört immer wieder, dass Computer Ihren Beruf irgendwann überflüssig machen könnten. Was sagen Sie dazu?\n[Herr Demir m] Die Technik unterstützt uns schon heute enorm. Zum Beispiel warnt das System, wenn sich zwei Flugzeuge zu nahe kommen könnten. Aber die Entscheidung trifft am Ende immer ein Mensch. Dass sich das in den nächsten zwanzig Jahren ändert, glaube ich ehrlich gesagt nicht.\n[Moderatorin f] Würden Sie den Beruf jungen Leuten empfehlen?\n[Herr Demir m] Auf jeden Fall, wenn man mit Verantwortung umgehen kann. Man sollte nur wissen, dass man sich den Arbeitsort nicht aussuchen kann. Wo man eingesetzt wird, entscheidet der Arbeitgeber, und das kann eine ganz andere Gegend sein als die, in der man aufgewachsen ist.\n[Moderatorin f] Herr Demir, herzlichen Dank für das Gespräch.",
+          "questions": [
+            {
+              "question": "Laut Herrn Demir geht es in der Kontrollzentrale meist laut und hektisch zu.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Bei uns ist es eigentlich erstaunlich ruhig"
+            },
+            {
+              "question": "Im Eignungstest wird unter anderem geprüft, ob man auf mehrere Dinge gleichzeitig achten kann.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "die Fähigkeit, mehrere Dinge gleichzeitig im Blick zu behalten"
+            },
+            {
+              "question": "Die Auszubildenden verdienen schon während der Ausbildung Geld.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "dass man von Anfang an ein Gehalt bekommt"
+            },
+            {
+              "question": "Fluglotsen machen regelmäßig Pausen, damit sie konzentriert bleiben.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Spätestens nach zwei Stunden gibt es eine Pause"
+            },
+            {
+              "question": "Ein Fluglotse ist für seinen Sektor ganz allein verantwortlich.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Immer zu zweit."
+            },
+            {
+              "question": "Mit deutschen Piloten spricht Herr Demir Deutsch.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Englisch, auch mit deutschen Piloten."
+            },
+            {
+              "question": "Bei dem Gewitter wollten viele Piloten auf einmal anders fliegen als geplant.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "wollten fast alle Piloten gleichzeitig ihre Route ändern"
+            },
+            {
+              "question": "Herr Demir kann nach der Arbeit bis heute nur schwer abschalten.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Inzwischen kann ich gut abschalten."
+            },
+            {
+              "question": "Schon heute hilft die Technik den Fluglotsen, gefährliche Situationen zu erkennen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "warnt das System, wenn sich zwei Flugzeuge zu nahe kommen könnten"
+            },
+            {
+              "question": "Fluglotsen können selbst entscheiden, in welcher Gegend sie arbeiten.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Wo man eingesetzt wird, entscheidet der Arbeitgeber"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "He says the film image is wrong: in the control centre it is surprisingly quiet, almost like a library.",
+            "de": "Er sagt, das Bild aus Filmen ist falsch. In der Kontrollzentrale ist es erstaunlich ruhig, fast wie in einer Bibliothek."
+          },
+          {
+            "en": "The aptitude test checks spatial thinking, concentration and the ability to keep track of several things at once.",
+            "de": "Der Test prüft räumliches Vorstellungsvermögen, Konzentration und die Fähigkeit, mehrere Dinge gleichzeitig im Blick zu behalten."
+          },
+          {
+            "en": "Trainees receive a salary from the very beginning of their training.",
+            "de": "Man bekommt schon von Beginn der Ausbildung an ein Gehalt."
+          },
+          {
+            "en": "There is a break after two hours at the latest, because concentration would otherwise drop.",
+            "de": "Spätestens nach zwei Stunden gibt es eine Pause, weil sonst die Konzentration nachlässt."
+          },
+          {
+            "en": "Controllers always work in pairs: one talks to the pilots, the other plans ahead.",
+            "de": "Fluglotsen arbeiten immer zu zweit: Einer spricht mit den Piloten, der andere plant voraus."
+          },
+          {
+            "en": "He speaks English even with German pilots, so that all pilots on the frequency understand what is said.",
+            "de": "Er spricht auch mit deutschen Piloten Englisch, damit alle Piloten auf der Frequenz alles verstehen."
+          },
+          {
+            "en": "During the storm almost all pilots wanted to change their route at the same time to avoid the clouds.",
+            "de": "Bei dem Gewitter wollten fast alle Piloten gleichzeitig ihre Route ändern, um den Wolken auszuweichen."
+          },
+          {
+            "en": "That was only true at the beginning; now he can switch off well, helped by climbing.",
+            "de": "Das war nur am Anfang so. Inzwischen kann er gut abschalten, auch dank Klettern."
+          },
+          {
+            "en": "The system already warns them when two planes might get too close to each other.",
+            "de": "Das System warnt schon heute, wenn sich zwei Flugzeuge zu nahe kommen könnten."
+          },
+          {
+            "en": "The employer decides where a controller works; it can be far from where they grew up.",
+            "de": "Der Arbeitgeber entscheidet, wo man arbeitet. Das kann weit weg von der Heimat sein."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b2__hoeren-2__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Moderator m] Ich begrüße jetzt Anja Brückner. Sie ist Försterin im Stadtwald von Hagenburg. Frau Brückner, was ist an einem Stadtwald anders als an einem ganz normalen Wald?\n[Frau Brückner f] Vor allem die vielen Menschen. An einem sonnigen Sonntag haben wir mehrere tausend Besucher: Spaziergänger, Jogger, Familien, Radfahrer. Holz verkaufen wir zwar auch, aber das ist bei uns nicht die Hauptaufgabe. Wichtiger ist, dass der Wald ein Ort zur Erholung ist.\n[Moderator m] Gibt es da nicht ständig Konflikte?\n[Frau Brückner f] Die gibt es, ja. Das größte Thema sind tatsächlich die Hunde. Viele Besitzer lassen sie frei laufen, obwohl im Frühjahr Leinenpflicht gilt, weil dann die Wildtiere ihre Jungen bekommen.\n[Moderator m] Wie geht es dem Wald denn insgesamt?\n[Frau Brückner f] Ehrlich gesagt: nicht gut. Die trockenen Sommer der letzten Jahre haben vor allem den Fichten geschadet. Auf manchen Flächen mussten wir fast alle Bäume fällen, weil sie vom Borkenkäfer befallen waren.\n[Moderator m] Was pflanzen Sie stattdessen?\n[Frau Brückner f] Wir setzen auf Mischung. Eichen, Buchen, Ahorn, aber auch ein paar Baumarten aus wärmeren Regionen, zum Beispiel die Esskastanie. Niemand weiß genau, welche Bäume in fünfzig Jahren mit dem Klima zurechtkommen. Deshalb wäre es falsch, wieder alles auf eine Karte zu setzen.\n[Moderator m] Ich habe gehört, dass Sie manche Flächen auch einfach in Ruhe lassen.\n[Frau Brückner f] Genau. Auf etwa einem Zehntel des Waldes greifen wir gar nicht mehr ein. Dort bleiben auch umgestürzte Bäume liegen. Das sieht für manche Besucher unordentlich aus, ist aber ein wertvoller Lebensraum für Insekten, Pilze und Vögel.\n[Moderator m] Bekommen Sie deswegen Beschwerden?\n[Frau Brückner f] Am Anfang häufig. Wir haben dann Schilder aufgestellt, die erklären, warum das so ist, und seitdem ist es viel besser geworden. Die meisten Leute finden es eigentlich gut, wenn sie den Grund kennen.\n[Moderator m] Wie sieht Ihr Arbeitsalltag aus? Sind Sie viel draußen?\n[Frau Brückner f] Weniger, als man denkt. Bestimmt die Hälfte meiner Zeit sitze ich im Büro, plane, schreibe Berichte oder beantworte Anfragen von Bürgern. Aber ich versuche, jeden Morgen wenigstens eine Runde durch mein Revier zu machen.\n[Moderator m] Sie bieten auch Führungen an, oder?\n[Frau Brückner f] Ja, einmal im Monat, und die sind immer schnell ausgebucht. Am meisten Spaß machen mir die Führungen mit Schulklassen. Kinder stellen die besten Fragen, und viele waren vorher noch nie richtig im Wald.\n[Moderator m] Was wünschen Sie sich von den Besuchern?\n[Frau Brückner f] Eigentlich nur ein bisschen Rücksicht. Auf den Wegen bleiben, keinen Müll liegen lassen und im Sommer auf keinen Fall rauchen oder grillen. Die Waldbrandgefahr ist inzwischen auch bei uns ein echtes Problem.\n[Moderator m] Zum Schluss: Wenn Sie in fünfzig Jahren durch Ihren Wald gehen könnten, was würden Sie sich wünschen?\n[Frau Brückner f] Dass er anders aussieht als heute, aber immer noch ein Wald ist. Ich bin da vorsichtig optimistisch. Die jungen Bäume, die wir gepflanzt haben, entwickeln sich bisher besser, als wir befürchtet hatten.\n[Moderator m] Frau Brückner, vielen Dank für das Gespräch.",
+          "questions": [
+            {
+              "question": "Im Stadtwald steht der Verkauf von Holz im Vordergrund.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "aber das ist bei uns nicht die Hauptaufgabe"
+            },
+            {
+              "question": "Im Frühjahr müssen Hunde im Stadtwald angeleint sein.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "obwohl im Frühjahr Leinenpflicht gilt"
+            },
+            {
+              "question": "Unter den trockenen Sommern haben vor allem die Fichten gelitten.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "haben vor allem den Fichten geschadet"
+            },
+            {
+              "question": "Frau Brückner pflanzt vor allem eine einzige, besonders robuste Baumart.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Wir setzen auf Mischung."
+            },
+            {
+              "question": "Umgestürzte Bäume werden im ganzen Wald sofort weggeräumt.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Dort bleiben auch umgestürzte Bäume liegen."
+            },
+            {
+              "question": "Seit es erklärende Schilder gibt, beschweren sich weniger Besucher.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "seitdem ist es viel besser geworden"
+            },
+            {
+              "question": "Frau Brückner verbringt fast ihre ganze Arbeitszeit im Wald.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Bestimmt die Hälfte meiner Zeit sitze ich im Büro"
+            },
+            {
+              "question": "Bei den Führungen ist Frau Brückner am liebsten mit Kindern unterwegs.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Am meisten Spaß machen mir die Führungen mit Schulklassen."
+            },
+            {
+              "question": "Frau Brückner hält Waldbrände in ihrem Wald für ein reales Risiko.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Die Waldbrandgefahr ist inzwischen auch bei uns ein echtes Problem."
+            },
+            {
+              "question": "Die neu gepflanzten Bäume wachsen schlechter als erwartet.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "entwickeln sich bisher besser, als wir befürchtet hatten"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Selling wood is not the main task; it is more important that the forest is a place to relax.",
+            "de": "Holzverkauf ist nicht die Hauptaufgabe. Wichtiger ist, dass der Wald ein Ort zur Erholung ist."
+          },
+          {
+            "en": "Dogs must be kept on a lead in spring, because that is when wild animals have their young.",
+            "de": "Im Frühjahr gilt Leinenpflicht, weil die Wildtiere dann ihre Jungen bekommen."
+          },
+          {
+            "en": "The dry summers harmed the spruces most of all; many had to be felled because of bark beetles.",
+            "de": "Die trockenen Sommer haben vor allem den Fichten geschadet. Viele mussten wegen des Borkenkäfers gefällt werden."
+          },
+          {
+            "en": "She plants a mix of species, because nobody knows which trees will cope with the climate in fifty years.",
+            "de": "Sie pflanzt eine Mischung aus vielen Baumarten, weil niemand weiß, welche Bäume in fünfzig Jahren mit dem Klima zurechtkommen."
+          },
+          {
+            "en": "On about a tenth of the forest nothing is done, and fallen trees are left lying as a habitat.",
+            "de": "Auf etwa einem Zehntel des Waldes bleiben umgestürzte Bäume liegen. Sie sind ein Lebensraum für Insekten, Pilze und Vögel."
+          },
+          {
+            "en": "After signs explaining the reason were put up, the situation became much better.",
+            "de": "Nachdem Schilder den Grund erklärt haben, ist es viel besser geworden."
+          },
+          {
+            "en": "She spends about half her time in the office, planning, writing reports and answering enquiries.",
+            "de": "Sie sitzt etwa die Hälfte ihrer Zeit im Büro. Sie plant, schreibt Berichte und beantwortet Anfragen."
+          },
+          {
+            "en": "She enjoys the tours with school classes most, because children ask the best questions.",
+            "de": "Die Führungen mit Schulklassen machen ihr am meisten Spaß, weil Kinder die besten Fragen stellen."
+          },
+          {
+            "en": "She says the risk of forest fires is now a real problem in her forest too.",
+            "de": "Sie sagt, die Waldbrandgefahr ist inzwischen auch in ihrem Wald ein echtes Problem."
+          },
+          {
+            "en": "The young trees are doing better than they had feared, so she is cautiously optimistic.",
+            "de": "Die jungen Bäume entwickeln sich besser, als man befürchtet hatte. Deshalb ist sie vorsichtig optimistisch."
+          }
+        ]
+      }
+    }
+  ]
+}

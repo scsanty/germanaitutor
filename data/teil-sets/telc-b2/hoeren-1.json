@@ -1,0 +1,241 @@
+{
+  "formatId": "telc-b2",
+  "partId": "hoeren-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b2__hoeren-1__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Ansage f] Text 1.\n[Sprecher m] Fahrgäste in Gelsenbach können künftig auch nachts mit dem Bus nach Hause fahren.\n[Sprecher m] Der Stadtrat hat gestern beschlossen, freitags und samstags zwischen Mitternacht und vier Uhr morgens drei Nachtlinien einzurichten.\n[Sprecher m] Das Angebot gilt zunächst nur für ein Jahr.\n[Sprecher m] Ob es danach weitergeht, hängt davon ab, wie viele Menschen die Busse tatsächlich nutzen.\n[Ansage f] Text 2.\n[Sprecherin f] Auf dem Land wird es immer schwieriger, eine Apotheke in der Nähe zu finden.\n[Sprecherin f] Nach Angaben des Apothekerverbandes haben im vergangenen Jahr landesweit über zweihundert Apotheken geschlossen, die meisten davon in kleinen Gemeinden.\n[Sprecherin f] Als Hauptgrund nennt der Verband fehlendes Personal: Viele Inhaber finden keine Nachfolger, wenn sie in Rente gehen.\n[Sprecherin f] Der Verband fordert nun, dass Apotheken in ländlichen Regionen finanziell stärker unterstützt werden.\n[Ansage f] Text 3.\n[Sprecher m] Am Flussufer in Niederau beginnen am Montag die Arbeiten an einem neuen Hochwasserschutz.\n[Sprecher m] Der alte Deich wird auf einer Länge von drei Kilometern erhöht und verstärkt.\n[Sprecher m] Für die Anwohner bedeutet das vor allem Lärm: Die Bauarbeiten werden voraussichtlich bis zum Herbst nächsten Jahres dauern.\n[Sprecher m] Der beliebte Radweg am Fluss bleibt während dieser Zeit gesperrt; eine Umleitung ist ausgeschildert.\n[Ansage f] Text 4.\n[Sprecherin f] Das Stadtmuseum Hellbrück zeigt ab Samstag wieder ein Gemälde, das über vierzig Jahre lang als verschollen galt.\n[Sprecherin f] Das Bild war in den Siebzigerjahren bei einem Einbruch gestohlen worden.\n[Sprecherin f] Im Frühjahr tauchte es überraschend bei einer Auktion in Belgien auf, wo eine Mitarbeiterin des Auktionshauses misstrauisch wurde und die Polizei informierte.\n[Sprecherin f] Das Museum will die Rückkehr des Gemäldes nun mit einer kleinen Sonderausstellung über seine Geschichte feiern.\n[Ansage f] Text 5.\n[Sprecher m] Und zum Sport: Die Fußballerinnen des Sportvereins Rotbach haben den Aufstieg in die zweite Liga geschafft.\n[Sprecher m] Mit einem Sieg gegen den Tabellenzweiten sicherten sie sich zwei Spieltage vor Saisonende den ersten Platz.\n[Sprecher m] Die Freude ist allerdings gedämpft: Das Stadion des Vereins erfüllt die Vorschriften der zweiten Liga nicht.\n[Sprecher m] Die Mannschaft muss deshalb in der nächsten Saison ihre Heimspiele in der Nachbarstadt austragen.",
+          "questions": [
+            {
+              "question": "Die Nachtbusse in Gelsenbach sollen auf jeden Fall dauerhaft fahren.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "hängt davon ab, wie viele Menschen die Busse tatsächlich nutzen"
+            },
+            {
+              "question": "Laut Verband schließen Apotheken vor allem, weil zu wenige Kunden kommen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Als Hauptgrund nennt der Verband fehlendes Personal"
+            },
+            {
+              "question": "Radfahrer können den Weg am Fluss während der Bauarbeiten nicht benutzen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Der beliebte Radweg am Fluss bleibt während dieser Zeit gesperrt"
+            },
+            {
+              "question": "Das Gemälde ist wieder da, weil der Dieb es zurückgegeben hat.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "wo eine Mitarbeiterin des Auktionshauses misstrauisch wurde und die Polizei informierte"
+            },
+            {
+              "question": "Die Fußballerinnen werden ihre Heimspiele vorerst nicht im eigenen Stadion spielen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "ihre Heimspiele in der Nachbarstadt austragen"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The night buses are a one-year trial; whether they continue depends on how many people use them.",
+            "de": "Die Nachtbusse fahren zuerst nur ein Jahr. Ob es weitergeht, hängt davon ab, wie viele Fahrgäste sie nutzen."
+          },
+          {
+            "en": "The association names a lack of staff as the main reason, not a lack of customers: many owners find no successor.",
+            "de": "Der Verband nennt als Hauptgrund fehlendes Personal, nicht fehlende Kunden: Viele Inhaber finden keinen Nachfolger."
+          },
+          {
+            "en": "The cycle path along the river stays closed while the work goes on; there is a signposted diversion.",
+            "de": "Der Radweg am Fluss ist während der Bauarbeiten gesperrt. Es gibt eine Umleitung."
+          },
+          {
+            "en": "The painting turned up at an auction, where an employee became suspicious and called the police. Nobody says the thief returned it.",
+            "de": "Das Bild tauchte bei einer Auktion auf. Eine Mitarbeiterin wurde misstrauisch und rief die Polizei. Der Dieb hat es nicht zurückgegeben."
+          },
+          {
+            "en": "Their stadium does not meet the second-division rules, so next season they play their home games in the neighbouring town.",
+            "de": "Das Stadion erfüllt die Vorschriften der zweiten Liga nicht. Deshalb spielt die Mannschaft ihre Heimspiele in der Nachbarstadt."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b2__hoeren-1__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Ansage f] Text 1.\n[Sprecherin f] Wegen der anhaltenden Trockenheit hat der Landkreis Oberhain neue Regeln für den Wasserverbrauch erlassen.\n[Sprecherin f] Ab sofort ist es verboten, tagsüber Gärten zu bewässern oder Autos mit dem Gartenschlauch zu waschen.\n[Sprecherin f] Wer seine Pflanzen gießen möchte, darf das nur noch zwischen zwanzig Uhr abends und sechs Uhr morgens tun.\n[Sprecherin f] Bei Verstößen drohen Bußgelder von bis zu tausend Euro.\n[Ansage f] Text 2.\n[Sprecher m] Der Fahrradhersteller Velomann holt einen Teil seiner Produktion aus Asien zurück nach Deutschland.\n[Sprecher m] Im Werk in Thüringen sollen bis Ende nächsten Jahres rund hundertfünfzig neue Arbeitsplätze entstehen.\n[Sprecher m] Das Unternehmen begründet den Schritt mit den langen Lieferzeiten der vergangenen Jahre, die zu vielen verärgerten Kunden geführt hätten.\n[Sprecher m] Die Räder würden dadurch zwar etwas teurer, aber man könne wieder zuverlässig liefern.\n[Ansage f] Text 3.\n[Sprecherin f] Immer mehr Kinder verlassen die Grundschule, ohne sicher schwimmen zu können.\n[Sprecherin f] Das zeigt eine neue Umfrage der Wasserwacht.\n[Sprecherin f] Ein Grund dafür sind geschlossene Hallenbäder: In vielen Orten müssen Schulklassen inzwischen über eine Stunde fahren, um ein Schwimmbad zu erreichen.\n[Sprecherin f] Die Landesregierung kündigte an, im nächsten Jahr zusätzliche Kurse in den Sommerferien zu finanzieren.\n[Ansage f] Text 4.\n[Sprecher m] Die Talbrücke bei Steinfurt ist ab sofort für Lastwagen gesperrt.\n[Sprecher m] Bei einer Routineprüfung hatten Ingenieure Risse im Beton entdeckt.\n[Sprecher m] Für Autos bleibt die Brücke vorerst geöffnet, allerdings nur einspurig und mit höchstens sechzig Stundenkilometern.\n[Sprecher m] Lastwagen werden über die Landstraße umgeleitet, was in den umliegenden Dörfern bereits zu langen Staus führt.\n[Ansage f] Text 5.\n[Sprecherin f] Das internationale Puppentheaterfestival in Wallhausen ist am Sonntag mit einem Besucherrekord zu Ende gegangen.\n[Sprecherin f] Mehr als zwölftausend Menschen sahen die Vorstellungen der Gruppen aus achtzehn Ländern.\n[Sprecherin f] Besonders gefragt waren die Aufführungen für Erwachsene, die zum ersten Mal auf dem Programm standen.\n[Sprecherin f] Die Veranstalter wollen dieses Angebot im nächsten Jahr deshalb ausbauen.",
+          "questions": [
+            {
+              "question": "Im Landkreis Oberhain ist das Gießen von Gärten jetzt vollständig verboten.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "darf das nur noch zwischen zwanzig Uhr abends und sechs Uhr morgens tun"
+            },
+            {
+              "question": "Als Grund für die Entscheidung nennt das Unternehmen Probleme bei der Lieferung.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "begründet den Schritt mit den langen Lieferzeiten der vergangenen Jahre"
+            },
+            {
+              "question": "Die Landesregierung will zusätzliche Schwimmkurse bezahlen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "im nächsten Jahr zusätzliche Kurse in den Sommerferien zu finanzieren"
+            },
+            {
+              "question": "Die Talbrücke ist zurzeit für alle Fahrzeuge gesperrt.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Für Autos bleibt die Brücke vorerst geöffnet"
+            },
+            {
+              "question": "Die Veranstalter wollen die Vorstellungen für Erwachsene künftig wieder streichen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Die Veranstalter wollen dieses Angebot im nächsten Jahr deshalb ausbauen."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Watering is only banned during the day; it is still allowed between eight in the evening and six in the morning.",
+            "de": "Gießen ist nur tagsüber verboten. Zwischen zwanzig Uhr abends und sechs Uhr morgens ist es weiter erlaubt."
+          },
+          {
+            "en": "The company explains the move with the long delivery times of recent years, which annoyed many customers.",
+            "de": "Das Unternehmen begründet den Schritt mit den langen Lieferzeiten der letzten Jahre. Viele Kunden waren verärgert."
+          },
+          {
+            "en": "The state government announced that it will fund extra courses in the summer holidays next year.",
+            "de": "Die Landesregierung hat angekündigt, im nächsten Jahr zusätzliche Kurse in den Sommerferien zu finanzieren."
+          },
+          {
+            "en": "Only lorries are banned. Cars can still use the bridge, on one lane and at no more than sixty kilometres per hour.",
+            "de": "Nur Lastwagen dürfen nicht mehr über die Brücke. Autos dürfen weiter fahren, aber nur einspurig und mit höchstens sechzig Stundenkilometern."
+          },
+          {
+            "en": "The performances for adults were very popular, so the organisers want to expand them, not drop them.",
+            "de": "Die Aufführungen für Erwachsene waren sehr gefragt. Die Veranstalter wollen sie deshalb ausbauen, nicht streichen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b2__hoeren-1__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Ansage f] Text 1.\n[Sprecher m] Im Kreis Ostwalde ist seit heute ein sogenannter Telenotarzt im Einsatz.\n[Sprecher m] Dabei fährt nicht mehr bei jedem Notfall ein Arzt mit; stattdessen ist ein Arzt in der Leitstelle per Video mit den Sanitätern verbunden.\n[Sprecher m] Der Kreis verspricht sich davon, dass Notärzte schneller dort sind, wo sie wirklich gebraucht werden.\n[Sprecher m] Kritiker befürchten dagegen, dass auf diese Weise langfristig Stellen eingespart werden sollen.\n[Ansage f] Text 2.\n[Sprecherin f] Immer mehr Störche verbringen den Winter nicht mehr in Afrika, sondern bleiben in Spanien oder sogar in Deutschland.\n[Sprecherin f] Das berichten Vogelkundler, die die Tiere mit kleinen Sendern ausgestattet haben.\n[Sprecherin f] Ein Grund seien die milderen Winter, ein anderer offene Mülldeponien in Südeuropa, auf denen die Vögel das ganze Jahr über Futter finden.\n[Sprecherin f] Für die Störche bedeutet der kürzere Flug weniger Gefahren unterwegs.\n[Ansage f] Text 3.\n[Sprecher m] Kurz vor Semesterbeginn suchen in Kranstadt noch fast tausend Studierende eine Unterkunft.\n[Sprecher m] Das Studierendenwerk hat deshalb eine ungewöhnliche Aktion gestartet: Ältere Menschen, die allein in großen Wohnungen leben, sollen ein Zimmer an Studierende vergeben.\n[Sprecher m] Statt Miete zu zahlen, helfen die jungen Leute im Haushalt, beim Einkaufen oder im Garten.\n[Sprecher m] Bisher haben sich allerdings erst etwa vierzig Seniorinnen und Senioren gemeldet.\n[Ansage f] Text 4.\n[Sprecherin f] Die Supermarktkette Frischkorb testet in drei Filialen das Einkaufen ohne Kassenpersonal.\n[Sprecherin f] Kunden scannen ihre Waren selbst mit dem Handy und bezahlen beim Hinausgehen automatisch.\n[Sprecherin f] Bargeld wird in diesen Läden nicht mehr angenommen, was vor allem bei älteren Kunden auf Kritik stößt.\n[Sprecherin f] Das Unternehmen betont, dass es in den anderen Filialen weiterhin normale Kassen geben werde.\n[Ansage f] Text 5.\n[Sprecher m] Und nun das Wetter: Der Wetterdienst warnt für die Nacht zum Donnerstag vor schweren Sturmböen an der Küste.\n[Sprecher m] Im Binnenland wird es zwar ebenfalls windig, die Böen bleiben dort aber deutlich schwächer.\n[Sprecher m] Die Fährverbindungen zu den Inseln fallen morgen früh voraussichtlich aus.\n[Sprecher m] Ab Donnerstagmittag beruhigt sich das Wetter wieder.",
+          "questions": [
+            {
+              "question": "Beim neuen System ist an der Behandlung kein Arzt mehr beteiligt.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "ein Arzt in der Leitstelle per Video mit den Sanitätern verbunden"
+            },
+            {
+              "question": "Laut den Forschern finden die Störche in Südeuropa auch im Winter genug zu fressen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "auf denen die Vögel das ganze Jahr über Futter finden"
+            },
+            {
+              "question": "Die Studierenden bezahlen für ihr Zimmer mit Hilfe statt mit Geld.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Statt Miete zu zahlen, helfen die jungen Leute im Haushalt"
+            },
+            {
+              "question": "In den Testfilialen kann man weiterhin mit Bargeld bezahlen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Bargeld wird in diesen Läden nicht mehr angenommen"
+            },
+            {
+              "question": "Wer morgen früh auf eine der Inseln fahren will, muss mit Problemen rechnen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Die Fährverbindungen zu den Inseln fallen morgen früh voraussichtlich aus."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "A doctor is still involved: he or she is connected to the paramedics by video from the control centre.",
+            "de": "Ein Arzt ist weiter beteiligt. Er sitzt in der Leitstelle und ist per Video mit den Sanitätern verbunden."
+          },
+          {
+            "en": "One reason given is the open rubbish dumps in southern Europe, where the birds find food all year round.",
+            "de": "Ein Grund sind offene Mülldeponien in Südeuropa. Dort finden die Vögel das ganze Jahr Futter."
+          },
+          {
+            "en": "Instead of paying rent, the students help with the housework, the shopping or the garden.",
+            "de": "Die Studierenden zahlen keine Miete. Sie helfen dafür im Haushalt, beim Einkaufen oder im Garten."
+          },
+          {
+            "en": "The test shops no longer accept cash, which older customers in particular criticise.",
+            "de": "In den Testfilialen wird kein Bargeld mehr angenommen. Das kritisieren vor allem ältere Kunden."
+          },
+          {
+            "en": "The ferries to the islands are expected to be cancelled tomorrow morning.",
+            "de": "Die Fähren zu den Inseln fallen morgen früh wahrscheinlich aus."
+          }
+        ]
+      }
+    }
+  ]
+}

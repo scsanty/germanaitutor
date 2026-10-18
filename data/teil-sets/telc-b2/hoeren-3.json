@@ -1,0 +1,241 @@
+{
+  "formatId": "telc-b2",
+  "partId": "hoeren-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b2__hoeren-3__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter phone\n[Ansage f] Text 1.\n[Jana f] Hallo Malte, hier ist Jana. Du, wegen Samstag: Der Grillabend bei Corinna findet leider nicht im Garten statt, weil für den Nachmittag Gewitter angesagt sind.\n[Jana f] Wir treffen uns stattdessen bei ihr in der Wohnung. Die Uhrzeit bleibt gleich, also um sieben.\n[Jana f] Könntest du vielleicht statt Würstchen einen Salat mitbringen? Fleisch haben wir inzwischen mehr als genug.\n[Jana f] Ruf mich kurz zurück, ja? Tschüss!\n[Ansage f] Text 2.\n[Herr Albers m] Guten Tag, Herr Brenner, hier ist Albers von der Autowerkstatt Kümmerle.\n[Herr Albers m] Wir haben uns Ihren Wagen angesehen. Die Bremsen sind in Ordnung, das Geräusch kommt vom Auspuff.\n[Herr Albers m] Das Ersatzteil müssen wir allerdings bestellen, das dauert etwa drei Tage.\n[Herr Albers m] Wenn Sie in der Zwischenzeit ein Auto brauchen, geben wir Ihnen gern einen Leihwagen, der kostet Sie nichts. Melden Sie sich einfach, wie Sie es haben möchten.\n[Ansage f] Text 3.\n[Frau Pietsch f] Guten Tag, Herr Brenner, hier spricht Pietsch von der Hausverwaltung Sonnenhof. Ich rufe an wegen der Ablesung der Heizkosten nächste Woche.\n[Frau Pietsch f] Der Techniker kommt am Dienstag zwischen acht und zwölf Uhr.\n[Frau Pietsch f] Falls Sie da nicht zu Hause sind, können Sie den Schlüssel bei Ihrer Nachbarin, Frau Okafor, abgeben. Sie hat sich freundlicherweise bereit erklärt.\n[Frau Pietsch f] Eine Rückmeldung ist nur nötig, wenn beides nicht klappt. Vielen Dank und auf Wiederhören.\n[Ansage f] Text 4.\n[Paul m] Hallo Malte, Paul hier. Ich wollte dir nur sagen, dass die Besprechung mit dem Kunden aus Hamburg auf Donnerstag verschoben worden ist.\n[Paul m] Die Präsentation musst du also nicht schon morgen fertig haben.\n[Paul m] Aber der Chef möchte vorher noch einen Blick darauf werfen, am besten bis Mittwochmittag.\n[Paul m] Schick sie ihm einfach per Mail, ich bin ja ab morgen im Urlaub. Mach's gut!\n[Ansage f] Text 5.\n[Jana f] Malte, ich bin's noch mal, Jana. Vergiss das mit dem Salat, Corinna hat gerade gesagt, dass ihre Schwester schon zwei mitbringt.\n[Jana f] Bring lieber etwas zu trinken mit, am besten Saft oder Wasser. Bier haben wir genug.\n[Jana f] Ach, und wir fangen doch erst um halb acht an. Bis Samstag!",
+          "questions": [
+            {
+              "question": "Der Grillabend findet wegen des Wetters drinnen statt.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Wir treffen uns stattdessen bei ihr in der Wohnung."
+            },
+            {
+              "question": "Herr Brenner muss für das Ersatzauto bezahlen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "der kostet Sie nichts"
+            },
+            {
+              "question": "Herr Brenner muss sich auf jeden Fall bei der Hausverwaltung melden.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Eine Rückmeldung ist nur nötig, wenn beides nicht klappt."
+            },
+            {
+              "question": "Malte soll die Präsentation dem Chef noch vor der Besprechung zeigen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "der Chef möchte vorher noch einen Blick darauf werfen"
+            },
+            {
+              "question": "Das Treffen am Samstag beginnt später als zuerst geplant.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "wir fangen doch erst um halb acht an"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Because thunderstorms are forecast, the barbecue moves from the garden into Corinna's flat.",
+            "de": "Weil Gewitter angesagt sind, findet der Grillabend nicht im Garten, sondern in Corinnas Wohnung statt."
+          },
+          {
+            "en": "The garage offers him a courtesy car free of charge.",
+            "de": "Die Werkstatt bietet ihm einen Leihwagen an, der nichts kostet."
+          },
+          {
+            "en": "He only needs to call back if he can neither be at home nor leave the key with his neighbour.",
+            "de": "Er muss sich nur melden, wenn er nicht zu Hause ist und den Schlüssel auch nicht bei der Nachbarin abgeben kann."
+          },
+          {
+            "en": "The boss wants to look at the presentation beforehand, ideally by Wednesday noon.",
+            "de": "Der Chef möchte die Präsentation vorher sehen, am besten bis Mittwochmittag."
+          },
+          {
+            "en": "In her first message Jana said seven o'clock; now they are starting at half past seven.",
+            "de": "In der ersten Nachricht hat Jana sieben Uhr gesagt. Jetzt fangen sie erst um halb acht an."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b2__hoeren-3__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter station\n[Ansage f] Text 1.\n[Sprecherin f] Information zu Gleis sieben: Der Intercity nach Stuttgart, planmäßige Abfahrt vierzehn Uhr zwölf, hat heute etwa zwanzig Minuten Verspätung.\n[Sprecherin f] Grund dafür ist eine Störung an einem Stellwerk.\n[Sprecherin f] Reisende nach Ulm erreichen ihr Ziel schneller mit dem Regionalexpress, der in wenigen Minuten auf Gleis neun bereitgestellt wird.\n[Sprecherin f] Fahrkarten für den Intercity gelten heute ausnahmsweise auch in diesem Zug.\n[Ansage f] Text 2.\n[Sprecher m] Sehr geehrte Fahrgäste, wegen Bauarbeiten fahren am kommenden Wochenende zwischen Neustadt und Kirchheim keine Züge.\n[Sprecher m] Von Freitagabend zweiundzwanzig Uhr bis Montag früh um vier Uhr ist ein Ersatzverkehr mit Bussen eingerichtet.\n[Sprecher m] Bitte beachten Sie, dass die Busse nicht an allen Bahnhöfen halten und die Fahrt bis zu vierzig Minuten länger dauert.\n[Sprecher m] Fahrräder können in den Bussen leider nicht mitgenommen werden.\n[Ansage f] Text 3.\n[Sprecherin f] Achtung an Gleis drei: Der Regionalzug nach Bad Lingen fährt heute in umgekehrter Wagenreihung.\n[Sprecherin f] Die erste Klasse befindet sich daher am Ende des Zuges.\n[Sprecherin f] Reisende mit Kinderwagen oder Fahrrad steigen bitte in den mittleren Wagen ein, dort ist das Mehrzweckabteil.\n[Sprecherin f] Wir bitten um Beachtung.\n[Ansage f] Text 4.\n[Sprecher m] Eine Information für alle Reisenden: Der Aufzug zu den Gleisen vier bis sechs ist zurzeit außer Betrieb.\n[Sprecher m] Reisende, die auf den Aufzug angewiesen sind, wenden sich bitte an den Informationsschalter in der Haupthalle.\n[Sprecher m] Unsere Mitarbeiter begleiten Sie gern über den Seiteneingang zum Bahnsteig.\n[Sprecher m] Die Reparatur wird voraussichtlich bis morgen Nachmittag dauern.\n[Ansage f] Text 5.\n[Sprecherin f] Der Fahrgast, der im Regionalexpress aus Kirchheim einen schwarzen Rucksack mit einem Laptop vergessen hat, wird gebeten, sich im Reisezentrum zu melden.\n[Sprecherin f] Bitte bringen Sie einen Ausweis mit.\n[Sprecherin f] Das Reisezentrum ist heute bis einundzwanzig Uhr geöffnet. Danach können Sie den Rucksack ab morgen früh um sechs Uhr im Fundbüro abholen.",
+          "questions": [
+            {
+              "question": "Mit einer Fahrkarte für den Intercity darf man heute auch den Regionalexpress benutzen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Fahrkarten für den Intercity gelten heute ausnahmsweise auch in diesem Zug."
+            },
+            {
+              "question": "Die Ersatzbusse halten an jedem Bahnhof der Strecke.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "die Busse nicht an allen Bahnhöfen halten"
+            },
+            {
+              "question": "Das Abteil für Fahrräder ist heute am Ende des Zuges.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "steigen bitte in den mittleren Wagen ein"
+            },
+            {
+              "question": "Wer keine Treppen steigen kann, bekommt Hilfe vom Bahnhofspersonal.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Unsere Mitarbeiter begleiten Sie gern über den Seiteneingang zum Bahnsteig."
+            },
+            {
+              "question": "Den Rucksack kann man rund um die Uhr abholen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Das Reisezentrum ist heute bis einundzwanzig Uhr geöffnet."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Because of the delay, Intercity tickets are valid on the regional express today as an exception.",
+            "de": "Wegen der Verspätung gelten Intercity-Fahrkarten heute ausnahmsweise auch im Regionalexpress."
+          },
+          {
+            "en": "The replacement buses do not stop at every station, and the journey takes up to forty minutes longer.",
+            "de": "Die Ersatzbusse halten nicht an allen Bahnhöfen, und die Fahrt dauert bis zu vierzig Minuten länger."
+          },
+          {
+            "en": "The first class is at the end; passengers with bikes or prams should board the middle carriage.",
+            "de": "Am Ende des Zuges ist die erste Klasse. Reisende mit Fahrrad sollen in den mittleren Wagen einsteigen."
+          },
+          {
+            "en": "Staff will accompany people who need the lift to the platform through the side entrance.",
+            "de": "Mitarbeiter begleiten Reisende, die den Aufzug brauchen, über den Seiteneingang zum Bahnsteig."
+          },
+          {
+            "en": "The travel centre is only open until nine p.m.; after that the bag can be collected from six the next morning.",
+            "de": "Das Reisezentrum ist nur bis einundzwanzig Uhr offen. Danach kann man den Rucksack erst ab sechs Uhr morgens abholen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b2__hoeren-3__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Ansage f] Text 1.\n[Moderatorin f] In unserem Verbrauchertipp geht es heute um Verträge, die man im Internet abgeschlossen hat.\n[Moderatorin f] Seit einiger Zeit müssen Unternehmen auf ihrer Webseite einen gut sichtbaren Kündigungsknopf anbieten.\n[Moderatorin f] Damit können Sie zum Beispiel Ihr Fitnessstudio oder Ihr Zeitschriftenabo mit wenigen Klicks kündigen, ohne einen Brief schreiben zu müssen.\n[Moderatorin f] Wichtig: Speichern Sie unbedingt die Bestätigung, die Sie danach per E-Mail bekommen.\n[Ansage f] Text 2.\n[Moderator m] Und hier unser Tipp fürs Wochenende: Im alten Wasserwerk in Lindtal öffnet am Samstag eine Ausstellung über die Geschichte des Fahrrads.\n[Moderator m] Zu sehen sind über hundert Räder, vom Hochrad bis zum modernen Lastenrad.\n[Moderator m] Besucher dürfen einige der historischen Modelle im Hof sogar selbst ausprobieren.\n[Moderator m] Der Eintritt kostet sechs Euro, Kinder unter zwölf Jahren zahlen nichts.\n[Ansage f] Text 3.\n[Moderatorin f] Zu Gast in unserer Gesundheitsecke ist heute die Sportmedizinerin Katrin Wendt. Frau Wendt, darf man mit einer Erkältung joggen gehen?\n[Expertin f] Das kommt darauf an. Bei einem leichten Schnupfen spricht nichts gegen einen ruhigen Lauf.\n[Expertin f] Sobald man aber Fieber hat oder die Beschwerden tiefer sitzen, also etwa Husten oder Gliederschmerzen, sollte man auf jeden Fall pausieren.\n[Expertin f] Und danach bitte langsam wieder anfangen, nicht gleich mit dem alten Pensum.\n[Ansage f] Text 4.\n[Werbesprecher m] Ihr Sofa ist durchgesessen, aber zum Wegwerfen viel zu schade?\n[Werbesprecher m] Dann kommen Sie zu Polster Brandt in der Mühlenstraße.\n[Werbesprecher m] Wir beziehen Ihre Möbel neu, ganz nach Ihren Wünschen, und holen sie sogar kostenlos bei Ihnen zu Hause ab.\n[Werbesprecher m] Polster Brandt. Damit Ihr Lieblingsstück noch lange Ihr Lieblingsstück bleibt.\n[Ansage f] Text 5.\n[Moderatorin f] Und zum Schluss der Pollenbericht: Allergiker müssen sich in den nächsten Tagen auf eine hohe Belastung durch Birkenpollen einstellen.\n[Moderatorin f] Erst ab dem Wochenende, wenn Regen erwartet wird, lässt der Pollenflug nach.\n[Moderatorin f] Experten raten, abends die Haare zu waschen, damit die Pollen nicht ins Bett gelangen.",
+          "questions": [
+            {
+              "question": "Für eine Kündigung im Internet braucht man zusätzlich einen schriftlichen Brief.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "ohne einen Brief schreiben zu müssen"
+            },
+            {
+              "question": "In der Ausstellung darf man manche alten Fahrräder auch fahren.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Besucher dürfen einige der historischen Modelle im Hof sogar selbst ausprobieren."
+            },
+            {
+              "question": "Laut der Ärztin sollte man bei jeder Erkältung auf Sport verzichten.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Bei einem leichten Schnupfen spricht nichts gegen einen ruhigen Lauf."
+            },
+            {
+              "question": "Polster Brandt holt die Möbel ohne zusätzliche Kosten bei den Kunden ab.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "holen sie sogar kostenlos bei Ihnen zu Hause ab"
+            },
+            {
+              "question": "Die Pollenbelastung soll schon in den nächsten Tagen deutlich zurückgehen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Erst ab dem Wochenende, wenn Regen erwartet wird, lässt der Pollenflug nach."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "With the cancellation button you can cancel in a few clicks, without writing a letter.",
+            "de": "Mit dem Kündigungsknopf kann man mit wenigen Klicks kündigen, ohne einen Brief zu schreiben."
+          },
+          {
+            "en": "Visitors may try out some of the historic bikes themselves in the courtyard.",
+            "de": "Besucher dürfen einige historische Räder im Hof selbst ausprobieren."
+          },
+          {
+            "en": "With a slight cold a gentle run is fine; only with fever, a cough or aching limbs should you stop.",
+            "de": "Bei einem leichten Schnupfen ist ein ruhiger Lauf in Ordnung. Nur bei Fieber, Husten oder Gliederschmerzen soll man pausieren."
+          },
+          {
+            "en": "The advert says the shop even collects the furniture from your home for free.",
+            "de": "In der Werbung heißt es, die Firma holt die Möbel sogar kostenlos zu Hause ab."
+          },
+          {
+            "en": "The pollen count stays high for the next few days and only drops at the weekend, when rain is expected.",
+            "de": "Die Belastung bleibt in den nächsten Tagen hoch. Erst am Wochenende, wenn es regnet, lässt der Pollenflug nach."
+          }
+        ]
+      }
+    }
+  ]
+}
