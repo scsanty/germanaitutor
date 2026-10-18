@@ -1,0 +1,466 @@
+{
+  "formatId": "telc-c1",
+  "partId": "hoeren-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-c1__hoeren-3__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Moderator m] Meine Damen und Herren, herzlich willkommen zu unserer Vortragsreihe „Klima vor der Haustür“. Heute spricht die Landschaftsökologin Annika Severin über ein Thema, das lange unterschätzt wurde: Moore.\n[Frau Severin f] Vielen Dank für die Einladung. Bevor wir über Klimaschutz sprechen, kurz zu den Grundlagen: Ein Moor entsteht dort, wo der Boden dauerhaft nass ist und sich abgestorbene Pflanzen deshalb nicht vollständig zersetzen.\n[Frau Severin f] Daraus bildet sich Torf, und zwar unglaublich langsam: Ein Moor wächst nur etwa einen Millimeter pro Jahr. Im Brookmoor bei Oldenburg, wo wir unser Pilotprojekt haben, ist der Torf an manchen Stellen bis zu sechs Meter dick. Das sind rund sechstausend Jahre Geschichte.\n[Frau Severin f] Auf der nächsten Folie sehen Sie die Lage in unserem Landkreis, und die ist, vorsichtig gesagt, ernüchternd: Nur noch etwa jede achte Moorfläche ist in einem naturnahen Zustand, alle anderen sind entwässert.\n[Frau Severin f] Früher wurde vor allem Torf gestochen, als Brennstoff und später für Blumenerde. Auch Siedlungen und Straßen wurden auf trockengelegten Mooren gebaut.\n[Frau Severin f] Auf dem mit Abstand größten Teil wird bei uns heute aber Mais angebaut, vor allem für die Biogasanlagen der Region. Weideland gibt es nur noch auf einem kleinen Teil der Flächen.\n[Frau Severin f] Das Problem dabei: Sobald das Wasser weg ist, dringt Luft in den Torf ein, und der gespeicherte Kohlenstoff entweicht als Kohlendioxid.\n[Frau Severin f] In unserem Landkreis verursachen die entwässerten Moore dadurch fast ein Drittel aller Treibhausgasemissionen, mehr als der gesamte Straßenverkehr.\n[Frau Severin f] Die Lösung klingt einfach: Man muss die Moore wieder vernässen, also die Gräben schließen und den Wasserstand anheben. Genau das versuchen wir seit vier Jahren in unserem Pilotprojekt im Brookmoor, auf einer Fläche von rund vierhundert Hektar.\n[Frau Severin f] Technisch ist das gar nicht so schwer, und auch die Finanzierung war schnell gesichert. Die eigentliche Hürde war, alle Grundeigentümer an einen Tisch zu bekommen, denn auf unserer Fläche gehören die Parzellen über achtzig verschiedenen Familien.\n[Frau Severin f] Überzeugt hat viele schließlich die sogenannte Paludikultur. Das heißt: Die Flächen werden weiter landwirtschaftlich genutzt, nur eben nass.\n[Frau Severin f] In anderen Projekten wird Torfmoos für Gärtnereien gezüchtet oder Schilf als Dachmaterial geerntet. Wir haben uns für Rohrkolben entschieden, aus dem ein Partnerbetrieb Dämmplatten für Häuser herstellt.\n[Frau Severin f] Und damit sich das für die Landwirte rechnet, erhalten sie zwanzig Jahre lang einen Ausgleich vom Land, der die geringeren Erträge auffängt.\n[Frau Severin f] Was haben wir bisher erreicht? Unsere Messungen zeigen, dass die Fläche schon im zweiten Jahr deutlich weniger Kohlendioxid abgegeben hat als vorher.\n[Frau Severin f] Und es gab eine Überraschung: Eigentlich hatten wir auf die Rückkehr des Weißstorchs gehofft, gekommen sind aber zuerst die Kraniche. Im letzten Herbst haben über zweitausend Tiere auf der Fläche Rast gemacht.\n[Frau Severin f] Wie geht es weiter? Im nächsten Schritt wollen wir das Projekt auf die beiden Nachbargemeinden ausweiten, sodass am Ende ein zusammenhängendes Moorgebiet entsteht.\n[Frau Severin f] Und zum Schluss noch ein praktischer Tipp für Sie alle: Achten Sie beim Kauf von Blumenerde darauf, dass sie torffrei ist. Vielen Dank.",
+          "questions": [
+            {
+              "question": "Folie 1 – Torfschicht im Brookmoor: an manchen Stellen bis zu …",
+              "options": [
+                "zwei Meter",
+                "sechs Meter",
+                "zwölf Meter"
+              ],
+              "correctIndex": 1,
+              "evidence": "an manchen Stellen bis zu sechs Meter dick"
+            },
+            {
+              "question": "Folie 2 – Moore im Landkreis: in naturnahem Zustand ist nur noch etwa …",
+              "options": [
+                "jede achte Fläche",
+                "jede dritte Fläche",
+                "jede zwanzigste Fläche"
+              ],
+              "correctIndex": 0,
+              "evidence": "Nur noch etwa jede achte Moorfläche ist in einem naturnahen Zustand"
+            },
+            {
+              "question": "Folie 2 – Hauptnutzung entwässerter Moore im Landkreis heute",
+              "options": [
+                "Torfabbau",
+                "Weideland",
+                "Maisanbau"
+              ],
+              "correctIndex": 2,
+              "evidence": "wird bei uns heute aber Mais angebaut"
+            },
+            {
+              "question": "Folie 3 – Anteil entwässerter Moore an den Treibhausgasemissionen des Landkreises: fast …",
+              "options": [
+                "ein Zehntel",
+                "ein Drittel",
+                "die Hälfte"
+              ],
+              "correctIndex": 1,
+              "evidence": "fast ein Drittel aller Treibhausgasemissionen"
+            },
+            {
+              "question": "Folie 4 – Pilotprojekt Brookmoor: Fläche",
+              "options": [
+                "rund vierhundert Hektar",
+                "rund vierzig Hektar",
+                "rund viertausend Hektar"
+              ],
+              "correctIndex": 0,
+              "evidence": "auf einer Fläche von rund vierhundert Hektar"
+            },
+            {
+              "question": "Folie 4 – größte Schwierigkeit beim Wiedervernässen",
+              "options": [
+                "Finanzierung",
+                "Technik",
+                "Einigung mit den Grundeigentümern"
+              ],
+              "correctIndex": 2,
+              "evidence": "alle Grundeigentümer an einen Tisch zu bekommen"
+            },
+            {
+              "question": "Folie 5 – Paludikultur im Projekt: Anbau von … für Dämmplatten",
+              "options": [
+                "Torfmoos",
+                "Schilf",
+                "Rohrkolben"
+              ],
+              "correctIndex": 2,
+              "evidence": "Wir haben uns für Rohrkolben entschieden"
+            },
+            {
+              "question": "Folie 5 – Ausgleichszahlungen für Landwirte: Laufzeit",
+              "options": [
+                "zehn Jahre",
+                "zwanzig Jahre",
+                "dreißig Jahre"
+              ],
+              "correctIndex": 1,
+              "evidence": "erhalten sie zwanzig Jahre lang einen Ausgleich vom Land"
+            },
+            {
+              "question": "Folie 6 – unerwarteter Effekt: Rastplatz für …",
+              "options": [
+                "Kraniche",
+                "Weißstörche",
+                "Wildgänse"
+              ],
+              "correctIndex": 0,
+              "evidence": "gekommen sind aber zuerst die Kraniche"
+            },
+            {
+              "question": "Folie 7 – nächster Schritt: Ausweitung auf …",
+              "options": [
+                "andere Bundesländer",
+                "Flächen im Ausland",
+                "die beiden Nachbargemeinden"
+              ],
+              "correctIndex": 2,
+              "evidence": "auf die beiden Nachbargemeinden ausweiten"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "In the Brookmoor the peat is up to six metres thick in places, which stands for about six thousand years of history.",
+            "de": "Im Brookmoor ist der Torf an manchen Stellen bis zu sechs Meter dick. Das entspricht rund sechstausend Jahren Geschichte."
+          },
+          {
+            "en": "In the district only about one bog area in eight is still in a near-natural state; all the others have been drained.",
+            "de": "Im Landkreis ist nur noch etwa jede achte Moorfläche in einem naturnahen Zustand, alle anderen sind entwässert."
+          },
+          {
+            "en": "Peat cutting is mentioned for the past and pasture only for a small part of the land; by far the largest share today is used for growing maize, mainly for biogas plants.",
+            "de": "Torfabbau wird für früher genannt, Weideland gibt es nur noch auf einem kleinen Teil. Auf dem mit Abstand größten Teil wird heute Mais angebaut, vor allem für Biogasanlagen."
+          },
+          {
+            "en": "In the district, drained bogs cause almost a third of all greenhouse gas emissions, more than all road traffic.",
+            "de": "Im Landkreis verursachen die entwässerten Moore fast ein Drittel aller Treibhausgasemissionen, mehr als der gesamte Straßenverkehr."
+          },
+          {
+            "en": "The pilot project covers about four hundred hectares.",
+            "de": "Das Pilotprojekt umfasst eine Fläche von rund vierhundert Hektar."
+          },
+          {
+            "en": "Technology and funding were not the problem; the real hurdle was getting more than eighty landowning families to agree.",
+            "de": "Technik und Finanzierung waren kein Problem. Die eigentliche Hürde war, über achtzig Eigentümerfamilien an einen Tisch zu bekommen."
+          },
+          {
+            "en": "Other projects grow peat moss or reed; this project chose bulrush (cattail), which a partner turns into insulation boards.",
+            "de": "Andere Projekte nutzen Torfmoos oder Schilf. Dieses Projekt baut Rohrkolben an, aus dem ein Partnerbetrieb Dämmplatten herstellt."
+          },
+          {
+            "en": "Farmers receive compensation from the state for twenty years.",
+            "de": "Die Landwirte erhalten zwanzig Jahre lang einen Ausgleich vom Land."
+          },
+          {
+            "en": "They had hoped for white storks, but cranes came first, with over two thousand resting there.",
+            "de": "Man hatte auf Weißstörche gehofft, gekommen sind aber zuerst die Kraniche, über zweitausend Tiere."
+          },
+          {
+            "en": "Next, the project is to be extended to the two neighbouring municipalities.",
+            "de": "Als Nächstes soll das Projekt auf die beiden Nachbargemeinden ausgeweitet werden."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-c1__hoeren-3__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Moderatorin f] Guten Abend, ich freue mich, Ihnen heute Matthias Lorenz vorzustellen. Er ist Verkehrshistoriker und spricht über die Frage, ob der Nachtzug eine Zukunft hat.\n[Herr Lorenz m] Vielen Dank. Meine erste Folie zeigt ein Foto aus den Sechzigerjahren: den Bahnsteig in München, von dem jeden Abend Schlafwagen nach Rom, Paris und Kopenhagen abfuhren.\n[Herr Lorenz m] Damals war der Nachtzug vor allem für Geschäftsreisende die bequemste Art, eine Großstadt im Ausland zu erreichen: Man stieg nach dem Abendessen ein und war morgens ausgeschlafen am Ziel.\n[Herr Lorenz m] Ab den Achtzigerjahren ging es dann bergab. Der wichtigste Grund war nicht etwa das Auto, sondern der Ausbau der Schnellfahrstrecken, durch den viele Verbindungen plötzlich auch tagsüber in wenigen Stunden zu schaffen waren.\n[Herr Lorenz m] Später kamen die Billigflieger hinzu, gegen deren Preise kaum ein Zug ankam.\n[Herr Lorenz m] Die Nordbahn, damals der größte Anbieter im Fernverkehr, hat ihre letzten eigenen Nachtzüge im Jahr zweitausendelf eingestellt, mit der Begründung, das Geschäft bringe dauerhaft Verluste.\n[Herr Lorenz m] Übernommen hat damals ein kleiner privater Anbieter, die Firma Lunaris Nachtreisen, und zwar mit einem überraschenden Ergebnis: Die meisten Strecken waren schon nach kurzer Zeit gut ausgelastet.\n[Herr Lorenz m] Warum? Weil sich das Publikum verändert hat. Heute fahren vor allem Familien mit kleinen Kindern mit, die sich den Stress am Flughafen ersparen wollen, und erstaunlich viele junge Leute unter dreißig.\n[Herr Lorenz m] Trotzdem ist der Nachtzug wirtschaftlich ein schwieriges Produkt. Ein Schlafwagen bietet nur etwa ein Drittel so viele Plätze wie ein normaler Sitzwagen, braucht aber genauso viel Platz auf der Schiene.\n[Herr Lorenz m] Dazu kommen die Trassenpreise, also die Gebühren für die Nutzung der Schienen. Die müssen in jedem Land neu bezahlt werden, und auf manchen Verbindungen machen sie fast die Hälfte der Kosten aus.\n[Herr Lorenz m] Ein weiteres Problem sind die Fahrzeuge. Neue Schlafwagen werden nur in kleinen Stückzahlen bestellt und sind deshalb sehr teuer. Auf manche Wagen warten die Betreiber inzwischen mehrere Jahre.\n[Herr Lorenz m] Was müsste also passieren? Erstens bräuchten wir eine europaweite Buchungsplattform. Heute ist es oft leichter, einen Flug nach Lissabon zu buchen als eine Zugreise mit zwei Umstiegen.\n[Herr Lorenz m] Zweitens sollten die Trassenpreise für Nachtzüge deutlich gesenkt werden, so wie es Österreich und Frankreich teilweise schon tun.\n[Herr Lorenz m] Und drittens, das ist mein persönlicher Favorit: Nachtzüge müssen bequemer werden. Kleine Abteile für eine oder zwei Personen mit eigener Dusche, das nennen die Fahrgäste in unseren Umfragen am häufigsten.\n[Herr Lorenz m] Ob der Nachtzug eine echte Wiedergeburt erlebt, hängt also weniger von der Technik ab als von politischen Entscheidungen. Ich danke Ihnen für Ihre Aufmerksamkeit.",
+          "questions": [
+            {
+              "question": "Folie 1 – wichtigste Zielgruppe in den Sechzigerjahren",
+              "options": [
+                "Urlaubsfamilien",
+                "Geschäftsreisende",
+                "Studierende"
+              ],
+              "correctIndex": 1,
+              "evidence": "vor allem für Geschäftsreisende die bequemste Art"
+            },
+            {
+              "question": "Folie 2 – wichtigste Ursache des Niedergangs ab den Achtzigerjahren",
+              "options": [
+                "Konkurrenz durch das Auto",
+                "Billigflüge",
+                "schnellere Tagesverbindungen"
+              ],
+              "correctIndex": 2,
+              "evidence": "der Ausbau der Schnellfahrstrecken"
+            },
+            {
+              "question": "Folie 2 – Ende der eigenen Nachtzüge der Nordbahn: Jahr",
+              "options": [
+                "2011",
+                "2016",
+                "2006"
+              ],
+              "correctIndex": 0,
+              "evidence": "im Jahr zweitausendelf eingestellt"
+            },
+            {
+              "question": "Folie 3 – heutige Fahrgäste: neben jungen Leuten vor allem …",
+              "options": [
+                "Familien mit kleinen Kindern",
+                "Geschäftsreisende",
+                "Rentnerinnen und Rentner"
+              ],
+              "correctIndex": 0,
+              "evidence": "vor allem Familien mit kleinen Kindern"
+            },
+            {
+              "question": "Folie 4 – Plätze im Schlafwagen im Vergleich zum Sitzwagen",
+              "options": [
+                "etwa die Hälfte",
+                "etwa ein Viertel",
+                "etwa ein Drittel"
+              ],
+              "correctIndex": 2,
+              "evidence": "nur etwa ein Drittel so viele Plätze"
+            },
+            {
+              "question": "Folie 4 – Anteil der Trassenpreise an den Kosten mancher Verbindungen",
+              "options": [
+                "etwa ein Viertel",
+                "fast die Hälfte",
+                "über zwei Drittel"
+              ],
+              "correctIndex": 1,
+              "evidence": "machen sie fast die Hälfte der Kosten aus"
+            },
+            {
+              "question": "Folie 5 – Problem bei neuen Schlafwagen",
+              "options": [
+                "lange Wartezeiten",
+                "fehlende Zulassung",
+                "zu geringe Geschwindigkeit"
+              ],
+              "correctIndex": 0,
+              "evidence": "Auf manche Wagen warten die Betreiber inzwischen mehrere Jahre."
+            },
+            {
+              "question": "Folie 6 – Forderung eins",
+              "options": [
+                "einheitlicher Fahrpreis in Europa",
+                "staatliche Nachtzuggesellschaft",
+                "europaweite Buchungsplattform"
+              ],
+              "correctIndex": 2,
+              "evidence": "Erstens bräuchten wir eine europaweite Buchungsplattform."
+            },
+            {
+              "question": "Folie 6 – Forderung zwei: … der Trassenpreise",
+              "options": [
+                "Abschaffung",
+                "Senkung",
+                "Vereinheitlichung"
+              ],
+              "correctIndex": 1,
+              "evidence": "die Trassenpreise für Nachtzüge deutlich gesenkt werden"
+            },
+            {
+              "question": "Folie 7 – häufigster Wunsch der Fahrgäste",
+              "options": [
+                "kleine Abteile mit eigener Dusche",
+                "günstigere Liegeplätze",
+                "kürzere Fahrzeiten"
+              ],
+              "correctIndex": 0,
+              "evidence": "das nennen die Fahrgäste in unseren Umfragen am häufigsten"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "In the 1960s the night train was the most comfortable option above all for business travellers.",
+            "de": "In den Sechzigerjahren war der Nachtzug vor allem für Geschäftsreisende die bequemste Möglichkeit."
+          },
+          {
+            "en": "Not the car but the expansion of high-speed lines, which made many trips possible in a few hours by day; budget flights came later.",
+            "de": "Nicht das Auto, sondern der Ausbau der Schnellfahrstrecken war der Hauptgrund. Die Billigflieger kamen erst später hinzu."
+          },
+          {
+            "en": "The Nordbahn, then the largest long-distance operator, stopped its last own night trains in 2011.",
+            "de": "Die Nordbahn, damals der größte Anbieter im Fernverkehr, hat ihre letzten eigenen Nachtzüge im Jahr zweitausendelf eingestellt."
+          },
+          {
+            "en": "Today the passengers are above all families with small children who want to avoid the stress of airports, plus surprisingly many young people under thirty.",
+            "de": "Heute fahren vor allem Familien mit kleinen Kindern mit, die sich den Stress am Flughafen ersparen wollen, und erstaunlich viele junge Leute unter dreißig."
+          },
+          {
+            "en": "A sleeper car has only about a third as many places as a normal seating car.",
+            "de": "Ein Schlafwagen hat nur etwa ein Drittel so viele Plätze wie ein normaler Sitzwagen."
+          },
+          {
+            "en": "On some routes track access charges make up almost half of the costs.",
+            "de": "Auf manchen Verbindungen machen die Trassenpreise fast die Hälfte der Kosten aus."
+          },
+          {
+            "en": "New sleeper cars are ordered in small numbers, are expensive, and operators wait several years for some of them.",
+            "de": "Neue Schlafwagen werden in kleinen Stückzahlen bestellt, sind teuer, und auf manche warten die Betreiber mehrere Jahre."
+          },
+          {
+            "en": "The first demand is a Europe-wide booking platform.",
+            "de": "Die erste Forderung ist eine europaweite Buchungsplattform."
+          },
+          {
+            "en": "The second demand is to cut track access charges for night trains significantly.",
+            "de": "Die zweite Forderung ist, die Trassenpreise für Nachtzüge deutlich zu senken."
+          },
+          {
+            "en": "Small compartments for one or two people with their own shower are what passengers mention most often in surveys.",
+            "de": "Kleine Abteile für eine oder zwei Personen mit eigener Dusche nennen die Fahrgäste in Umfragen am häufigsten."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-c1__hoeren-3__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Moderator m] Liebe Gäste, unser heutiger Vortrag beschäftigt sich mit einem Umweltproblem, das man nicht sieht, aber ständig hört. Ich begrüße die Umweltmedizinerin Katrin Albrecht.\n[Frau Albrecht f] Vielen Dank. Wenn wir an Umweltgefahren denken, fallen uns zuerst Feinstaub oder Abgase ein. Lärm dagegen wird oft als bloße Belästigung abgetan.\n[Frau Albrecht f] Das zeigt auch unsere letzte Bürgerbefragung: Unter den Umweltsorgen der Befragten landete Lärm nur auf Platz sechs, weit hinter Hitze, Müll und schlechter Luft.\n[Frau Albrecht f] Interessant ist, worüber sich die Menschen tatsächlich beschweren. In unserer Stadt betreffen die meisten Beschwerden beim Ordnungsamt nicht den Verkehr, sondern Nachbarschaftslärm, also laute Musik, bellende Hunde oder Baustellen.\n[Frau Albrecht f] Wie wirkt Lärm auf den Körper? Unser Gehör schaltet nie ab, auch nicht im Schlaf, und jedes laute Geräusch löst eine kleine Stressreaktion aus.\n[Frau Albrecht f] Nach unseren Daten steigt das Risiko für Bluthochdruck ab einem nächtlichen Dauerpegel von etwa vierzig Dezibel messbar an.\n[Frau Albrecht f] Das Tückische: Viele Menschen glauben, sie hätten sich an den Lärm gewöhnt. Subjektiv mag das stimmen, aber Herzschlag und Blutdruck reagieren trotzdem weiter, selbst wenn man nicht aufwacht.\n[Frau Albrecht f] In unserer eigenen Studie haben wir zweitausend Anwohnerinnen und Anwohner einer Hauptverkehrsstraße über fünf Jahre begleitet.\n[Frau Albrecht f] Das deutlichste Ergebnis betraf nicht das Herz, wie wir erwartet hatten, sondern die Psyche: Depressive Verstimmungen traten bei den stark belasteten Menschen fast doppelt so häufig auf.\n[Frau Albrecht f] Besonders betroffen sind übrigens Kinder. Bei Grundschülern in der Nähe von Flughäfen hat man festgestellt, dass sie beim Lesen bis zu zwei Monate hinter Gleichaltrigen aus ruhigen Gegenden zurückliegen.\n[Frau Albrecht f] Was kann man tun? Am wirksamsten ist es, den Lärm an der Quelle zu verringern. Tempo dreißig statt fünfzig senkt den Pegel um etwa drei Dezibel, und das empfindet das Ohr so, als wäre nur noch halb so viel Verkehr unterwegs.\n[Frau Albrecht f] Auch sogenannter Flüsterasphalt hilft, er verliert seine Wirkung aber nach einigen Jahren, weil sich die Poren mit Schmutz zusetzen.\n[Frau Albrecht f] Lärmschutzwände wiederum sind teuer und in Innenstädten meist gar nicht möglich.\n[Frau Albrecht f] Und zum Schluss noch etwas, das jeder von Ihnen selbst tun kann: Wenn Sie umziehen, achten Sie darauf, dass das Schlafzimmer zur ruhigen Hofseite liegt. Allein das kann die nächtliche Belastung deutlich verringern. Vielen Dank für Ihre Aufmerksamkeit.",
+          "questions": [
+            {
+              "question": "Folie 1 – Lärm unter den Umweltsorgen in der Bürgerbefragung: Platz …",
+              "options": [
+                "vier",
+                "sechs",
+                "neun"
+              ],
+              "correctIndex": 1,
+              "evidence": "landete Lärm nur auf Platz sechs"
+            },
+            {
+              "question": "Folie 2 – häufigster Beschwerdegrund beim Ordnungsamt der Stadt",
+              "options": [
+                "Nachbarschaftslärm",
+                "Straßenverkehr",
+                "Fluglärm"
+              ],
+              "correctIndex": 0,
+              "evidence": "nicht den Verkehr, sondern Nachbarschaftslärm"
+            },
+            {
+              "question": "Folie 3 – höheres Risiko für Bluthochdruck ab einem nächtlichen Dauerpegel von ca. …",
+              "options": [
+                "dreißig Dezibel",
+                "vierzig Dezibel",
+                "fünfundfünfzig Dezibel"
+              ],
+              "correctIndex": 1,
+              "evidence": "Dauerpegel von etwa vierzig Dezibel"
+            },
+            {
+              "question": "Folie 3 – Gewöhnung an Lärm: nur …",
+              "options": [
+                "bei jungen Menschen",
+                "tagsüber",
+                "subjektiv"
+              ],
+              "correctIndex": 2,
+              "evidence": "Subjektiv mag das stimmen"
+            },
+            {
+              "question": "Folie 4 – eigene Studie: Dauer",
+              "options": [
+                "zwei Jahre",
+                "fünf Jahre",
+                "zehn Jahre"
+              ],
+              "correctIndex": 1,
+              "evidence": "über fünf Jahre begleitet"
+            },
+            {
+              "question": "Folie 4 – eigene Studie: deutlichste Auswirkung auf …",
+              "options": [
+                "die Psyche",
+                "das Herz",
+                "den Schlaf"
+              ],
+              "correctIndex": 0,
+              "evidence": "sondern die Psyche"
+            },
+            {
+              "question": "Folie 5 – Grundschüler in Flughafennähe: Rückstand beim Lesen bis zu …",
+              "options": [
+                "zwei Wochen",
+                "ein Jahr",
+                "zwei Monate"
+              ],
+              "correctIndex": 2,
+              "evidence": "bis zu zwei Monate hinter Gleichaltrigen"
+            },
+            {
+              "question": "Folie 6 – Tempo dreißig statt fünfzig: wirkt auf das Ohr wie …",
+              "options": [
+                "halb so viel Verkehr",
+                "ein Viertel weniger Verkehr",
+                "eine Lärmschutzwand"
+              ],
+              "correctIndex": 0,
+              "evidence": "als wäre nur noch halb so viel Verkehr unterwegs"
+            },
+            {
+              "question": "Folie 6 – Nachteil von Flüsterasphalt",
+              "options": [
+                "hohe Kosten",
+                "nachlassende Wirkung",
+                "schlechter Halt bei Regen"
+              ],
+              "correctIndex": 1,
+              "evidence": "er verliert seine Wirkung aber nach einigen Jahren"
+            },
+            {
+              "question": "Folie 7 – persönlicher Tipp beim Umzug: Schlafzimmer …",
+              "options": [
+                "im obersten Stockwerk",
+                "mit Dreifachverglasung",
+                "zur Hofseite"
+              ],
+              "correctIndex": 2,
+              "evidence": "dass das Schlafzimmer zur ruhigen Hofseite liegt"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "In the city's latest residents' survey, noise came only sixth among environmental concerns, far behind heat, rubbish and poor air.",
+            "de": "In der letzten Bürgerbefragung landete Lärm unter den Umweltsorgen nur auf Platz sechs, weit hinter Hitze, Müll und schlechter Luft."
+          },
+          {
+            "en": "In her city most complaints are not about traffic but about noise from neighbours.",
+            "de": "In ihrer Stadt betreffen die meisten Beschwerden nicht den Verkehr, sondern Nachbarschaftslärm."
+          },
+          {
+            "en": "The risk of high blood pressure rises measurably from a constant night-time level of about forty decibels.",
+            "de": "Ab einem nächtlichen Dauerpegel von etwa vierzig Dezibel steigt das Risiko für Bluthochdruck messbar an."
+          },
+          {
+            "en": "People may feel used to noise, but only subjectively; heart rate and blood pressure still react.",
+            "de": "Man gewöhnt sich nur subjektiv an Lärm. Herzschlag und Blutdruck reagieren trotzdem weiter."
+          },
+          {
+            "en": "The study followed two thousand residents for five years.",
+            "de": "Die Studie hat zweitausend Anwohner über fünf Jahre begleitet."
+          },
+          {
+            "en": "Contrary to expectations, the clearest result concerned mental health, not the heart: depressive moods were almost twice as frequent.",
+            "de": "Anders als erwartet betraf das deutlichste Ergebnis nicht das Herz, sondern die Psyche: Depressive Verstimmungen traten fast doppelt so häufig auf."
+          },
+          {
+            "en": "Primary school children near airports are up to two months behind in reading.",
+            "de": "Grundschüler in der Nähe von Flughäfen liegen beim Lesen bis zu zwei Monate zurück."
+          },
+          {
+            "en": "Lowering the speed limit reduces the level by about three decibels, which the ear perceives as half as much traffic.",
+            "de": "Tempo dreißig senkt den Pegel um etwa drei Dezibel. Das Ohr empfindet das, als wäre nur noch halb so viel Verkehr unterwegs."
+          },
+          {
+            "en": "Low-noise asphalt loses its effect after a few years because its pores clog with dirt; high cost is mentioned for noise barriers, not asphalt.",
+            "de": "Flüsterasphalt verliert nach einigen Jahren seine Wirkung, weil sich die Poren zusetzen. Hohe Kosten werden bei den Lärmschutzwänden genannt."
+          },
+          {
+            "en": "When moving, make sure the bedroom faces the quiet courtyard side.",
+            "de": "Beim Umzug sollte man darauf achten, dass das Schlafzimmer zur ruhigen Hofseite liegt."
+          }
+        ]
+      }
+    }
+  ]
+}
