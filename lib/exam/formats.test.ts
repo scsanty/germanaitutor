@@ -41,6 +41,43 @@ describe('formatProblems', () => {
   });
 });
 
+describe('formatProblems for letter parts', () => {
+  const crit = (id: string) => ({ id, name: { en: id, de: id }, descriptors: { A: 'x', D: 'y' }, points: { A: 10, D: 0 } });
+  const letter = (over: Partial<ExamFormat['parts'][number]>): ExamFormat => ({
+    ...base,
+    blocks: [{ ...base.blocks[0], partIds: ['schreiben'], minutes: 30 }],
+    parts: [{ id: 'schreiben', skill: 'writing', title: { en: 'W', de: 'S' }, taskType: 'letter', items: 2, points: 20, minutes: 30, instructions: 'Schreiben Sie …', ...over }],
+  });
+
+  it('does not require a rubric until a part starts to carry writing fields (TODO(T10))', () => {
+    expect(formatProblems(letter({}))).toEqual([]);
+  });
+
+  it('accepts a complete letter part', () => {
+    expect(formatProblems(letter({ rubric: { criteria: [crit('a'), crit('b')] }, wordTarget: { min: 100, max: 150 }, choices: 1 }))).toEqual([]);
+  });
+
+  it('names a broken rubric, a mismatched item count and maximum, a bad word target and choices', () => {
+    expect(
+      formatProblems(letter({ rubric: { criteria: [crit('a'), crit('a'), crit('b')] }, wordTarget: { min: 150, max: 100 }, choices: 3 as never }))
+    ).toEqual([
+      'part schreiben: criterion a: duplicate id',
+      "part schreiben: items must equal the rubric's 3 criteria",
+      "part schreiben: the rubric's maximum 30 must equal the part's points 20",
+      'part schreiben: wordTarget needs 0 < min < max',
+      'part schreiben: choices must be 1 or 2',
+    ]);
+  });
+
+  it('asks for the missing pieces of a partly filled letter part', () => {
+    expect(formatProblems(letter({ choices: 1 }))).toEqual(['part schreiben: a writing part needs a rubric', 'part schreiben: wordTarget needs 0 < min < max']);
+  });
+
+  it('skips cloze parts, which carry no rubric', () => {
+    expect(formatProblems(letter({ taskType: 'cloze', items: 5, points: 5, choices: undefined }))).toEqual([]);
+  });
+});
+
 describe('readFormat', () => {
   it('reads a known format and builds ids', () => {
     expect(formatId('telc', 'B1')).toBe('telc-b1');

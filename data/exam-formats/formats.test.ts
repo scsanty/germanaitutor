@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { formatProblems, listFormats } from '@/lib/exam/formats';
+import { rubricMaxPoints, rubricProblems } from '@/lib/writing/rubric';
 
 const LEVELS = ['a1', 'a2', 'b1', 'b2', 'c1'];
 const IDS = ['generic', 'goethe', 'telc'].flatMap((track) => LEVELS.map((level) => `${track}-${level}`));
@@ -49,6 +50,28 @@ describe('bundled exam formats', () => {
     for (const f of listFormats().filter((x) => x.track === 'generic')) {
       const sum = (id: string) => f.blocks.find((b) => b.id === id)!.partIds.reduce((s, pid) => s + f.parts.find((p) => p.id === pid)!.points, 0);
       expect([sum('written'), sum('oral')], f.id).toEqual([100, 50]);
+    }
+  });
+
+  // TODO(T10): drop the 'rubric' in part filter; every letter part must have one by then.
+  it('gives every letter part that has a rubric a valid rubric, a word target and a choice count', () => {
+    const letters = listFormats().flatMap((f) => f.parts.filter((p) => p.taskType === 'letter' && 'rubric' in p).map((p) => [f, p] as const));
+    expect(letters.length).toBeGreaterThan(0);
+    for (const [f, p] of letters) {
+      const where = `${f.id}/${p.id}`;
+      expect(rubricProblems(p.rubric!), where).toEqual([]);
+      expect(rubricMaxPoints(p.rubric!), where).toBe(p.points);
+      expect(p.items, where).toBe(p.rubric!.criteria.length);
+      expect(p.wordTarget!.min, where).toBeGreaterThan(0);
+      expect(p.wordTarget!.max, where).toBeGreaterThan(p.wordTarget!.min);
+      expect([1, 2], where).toContain(p.choices);
+    }
+  });
+
+  it('keeps the three form-filling parts as typed cloze parts with no rubric', () => {
+    for (const [fid, pid] of [['goethe-a1', 'schreiben-1'], ['telc-a1', 'schreiben-1'], ['telc-a2', 'schreiben-1']]) {
+      const p = listFormats().find((f) => f.id === fid)!.parts.find((x) => x.id === pid)!;
+      expect([p.skill, p.taskType, p.items, p.points, p.rubric, p.wordTarget], `${fid}/${pid}`).toEqual(['writing', 'cloze', 5, 5, undefined, undefined]);
     }
   });
 });
