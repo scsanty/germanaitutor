@@ -2,6 +2,7 @@ import { describe, it, expect, vi } from 'vitest';
 import { useState } from 'react';
 import { screen, fireEvent, within } from '@testing-library/react';
 import { renderWithIntl } from '@/test/renderWithIntl';
+import { axe, expectNoViolations } from '@/test/axe';
 import { LESSON_LETTER_RUBRIC } from '@/lib/writing/rubric';
 import type { LetterGrade } from '@/lib/writing/letterGrading';
 import type { LetterAnswer, LetterContent } from '@/lib/tasks/letter';
@@ -94,9 +95,11 @@ describe('LetterResult', () => {
     expect(onCopy).toHaveBeenCalled();
   });
 
-  it('has no copy button without onCopyToFreestyle', () => {
-    renderWithIntl(<LetterResult grade={GRADE} text={TEXT} rubric={LESSON_LETTER_RUBRIC} />);
+  it('has no copy button without onCopyToFreestyle, and no axe violations', async () => {
+    const { container } = renderWithIntl(<LetterResult grade={GRADE} text={TEXT} rubric={LESSON_LETTER_RUBRIC} />);
     expect(screen.queryByRole('button', { name: 'Copy into free writing' })).toBeNull();
+    fireEvent.click(screen.getByRole('button', { name: 'Corrected version' }));
+    expectNoViolations(await axe(container));
   });
 });
 
@@ -122,9 +125,10 @@ describe('LetterTaskInput', () => {
     expect(screen.getByText('5 / 30–50 words')).toBeInTheDocument();
   });
 
-  it('turns spellcheck off when timed', () => {
-    renderWithIntl(<Input timed />);
+  it('turns spellcheck off when timed, with no axe violations', async () => {
+    const { container } = renderWithIntl(<Input timed />);
     expect(screen.getByRole('textbox', { name: 'Your letter' })).toHaveAttribute('spellcheck', 'false');
+    expectNoViolations(await axe(container));
   });
 
   it('shows a single task without a choice', () => {
