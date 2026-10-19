@@ -65,6 +65,24 @@ describe("SessionSetup", () => {
     expect(screen.getByRole("button", { name: "Start" })).not.toBeDisabled();
   });
 
+  it("preselects the matching grammar topic from the Dashboard link once the topics load", () => {
+    vi.stubGlobal("fetch", vi.fn());
+    const props = { mode: "grammar_drill" as const, levels: ["B1" as const], activeLevel: "B1" as const, initialTopic: "passiv", onStarted: vi.fn() };
+    const { rerender } = renderWithIntl(<SessionSetup {...props} grammarTopics={[]} />);
+    rerender(<SessionSetup {...props} grammarTopics={["Relativsätze", "Passiv"]} />);
+    expect(screen.getByRole("radio", { name: "Passiv" })).toBeChecked();
+    expect(screen.getByRole("button", { name: "Start" })).not.toBeDisabled();
+  });
+
+  it("falls back to the free topic, pre-filled, when no grammar topic matches", () => {
+    vi.stubGlobal("fetch", vi.fn());
+    renderWithIntl(
+      <SessionSetup mode="grammar_drill" levels={["B1"]} activeLevel="B1" initialTopic="Verb conjugation" grammarTopics={["Passiv"]} onStarted={vi.fn()} />,
+    );
+    expect(screen.getByRole("textbox", { name: "Free topic" })).toHaveValue("Verb conjugation");
+    expect(screen.getByRole("button", { name: "Start" })).not.toBeDisabled();
+  });
+
   it("fills a reading topic from a suggestion chip and shows start errors", async () => {
     vi.stubGlobal(
       "fetch",

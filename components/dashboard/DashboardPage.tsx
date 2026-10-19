@@ -13,6 +13,7 @@ import { Logo } from '@/components/brand/Logo';
 import { Heatmap } from './Heatmap';
 import { SkillProgress } from './SkillProgress';
 import { ReadinessCard } from './ReadinessCard';
+import { TopMistakesCard } from './TopMistakesCard';
 
 // A large hero logo heads the dashboard, wide enough (≥ 540px on desktop, full width on phone) for the tagline to read.
 export function DashboardPage() {
@@ -108,6 +109,7 @@ function DashboardContent() {
         </CardContent>
       </Card>
       <ReadinessCard />
+      <TopMistakesCard />
       <Card>
         <CardHeader>
           <CardTitle>{t('activity')}</CardTitle>

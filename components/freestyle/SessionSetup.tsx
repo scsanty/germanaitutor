@@ -28,6 +28,8 @@ interface Props {
   levels: CefrLevel[];
   activeLevel: CefrLevel;
   grammarTopics: string[];
+  // S21: a grammar drill topic from the Dashboard; preselects a matching topic, else fills the free-topic box.
+  initialTopic?: string;
   onStarted: (view: SessionView) => void;
   // S16: the topics depend on the level, so the parent refetches them when it changes.
   onLevelChange?: (level: CefrLevel) => void;
@@ -38,6 +40,7 @@ export function SessionSetup({
   levels,
   activeLevel,
   grammarTopics,
+  initialTopic,
   onStarted,
   onLevelChange,
 }: Props) {
@@ -48,8 +51,12 @@ export function SessionSetup({
     levels.includes(activeLevel) ? activeLevel : levels[0],
   );
   // conversation: a scenario id or FREE; grammar drill: a lesson title or FREE ('' = nothing chosen yet).
-  const [choice, setChoice] = useState(mode === "conversation" ? FREE : "");
-  const [text, setText] = useState("");
+  const drillTopic = mode === "grammar_drill" ? initialTopic?.trim() || "" : "";
+  const [choice, setChoice] = useState(mode === "conversation" || drillTopic ? FREE : "");
+  const [text, setText] = useState(drillTopic);
+  // The topics load after the first render, so a matching one is picked up until the learner chooses.
+  const [untouched, setUntouched] = useState(true);
+  const matchedTopic = untouched && drillTopic ? grammarTopics.find((g) => g.toLowerCase() === drillTopic.toLowerCase()) : undefined;
   const [busy, setBusy] = useState(false);
   // A double click lands before `busy` re-renders; the ref makes it one start call.
   const starting = useRef(false);
@@ -59,8 +66,9 @@ export function SessionSetup({
   const trimmed = text.trim();
   const choiceList =
     mode === "conversation" ? scenarios.map((s) => s.id) : grammarTopics;
-  const effectiveChoice =
-    choice === FREE || choiceList.includes(choice)
+  const effectiveChoice = matchedTopic
+    ? matchedTopic
+    : choice === FREE || choiceList.includes(choice)
       ? choice
       : mode === "conversation"
         ? FREE
@@ -68,6 +76,7 @@ export function SessionSetup({
 
   function changeLevel(next: CefrLevel) {
     setLevel(next);
+    setUntouched(false);
     if (mode === "conversation") setChoice(FREE);
     onLevelChange?.(next);
   }
@@ -161,7 +170,10 @@ export function SessionSetup({
       {choosing && (
         <RadioGroup
           value={effectiveChoice}
-          onValueChange={setChoice}
+          onValueChange={(value) => {
+            setUntouched(false);
+            setChoice(value);
+          }}
           aria-label={mode === "conversation" ? t("scenario") : t("topic")}
         >
           {mode === "conversation"

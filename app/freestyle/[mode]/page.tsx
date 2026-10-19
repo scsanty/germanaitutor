@@ -10,13 +10,17 @@ export const dynamic = "force-dynamic";
 // S14: the mode screen. Unknown or hidden modes are a 404.
 export default async function FreestyleModePage(props: {
   params: Promise<{ mode: string }>;
+  searchParams: Promise<{ topic?: string | string[] }>;
 }) {
   const { mode } = await props.params;
+  const { topic } = await props.searchParams;
   if (!isFreestyleMode(mode) || !isModeEnabled(mode)) notFound();
   if (!createProfileService(getDb()).getProfile().onboardingComplete) {
     redirect("/onboarding");
   }
   // S12: exam practice has its own screen and no session (FreestyleSession fetches one on mount).
   if (mode === "exam_practice") return <ExamPractice />;
-  return <FreestyleSession mode={mode} />;
+  // S21: the Dashboard's "Practise in Freestyle" link pre-fills the grammar drill topic.
+  const initialTopic = typeof topic === "string" ? topic.trim().slice(0, 200) : undefined;
+  return <FreestyleSession mode={mode} initialTopic={initialTopic || undefined} />;
 }

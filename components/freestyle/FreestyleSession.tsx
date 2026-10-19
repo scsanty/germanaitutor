@@ -36,7 +36,7 @@ async function getJson<T>(url: string): Promise<T> {
 }
 
 // Opens a mode: resumes its open session, or shows the setup to start one.
-export function FreestyleSession({ mode }: { mode: FreestyleMode }) {
+export function FreestyleSession({ mode, initialTopic }: { mode: FreestyleMode; initialTopic?: string }) {
   const t = useTranslations('freestyle');
   const errorText = useApiErrorText();
   const router = useRouter();
@@ -142,6 +142,7 @@ export function FreestyleSession({ mode }: { mode: FreestyleMode }) {
           levels={setupData.levels}
           activeLevel={setupData.activeLevel}
           grammarTopics={topics}
+          initialTopic={initialTopic}
           onStarted={setSession}
           onLevelChange={loadTopics}
         />
