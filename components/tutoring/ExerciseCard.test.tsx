@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
-import { screen, fireEvent, waitFor } from '@testing-library/react';
+import { screen, fireEvent, waitFor, within } from '@testing-library/react';
 import { renderWithIntl } from '@/test/renderWithIntl';
 import { delayedResponse } from '@/test/delayedResponse';
 import type { ExerciseView } from '@/lib/tutoring/exerciseView';
@@ -367,26 +367,87 @@ describe('ExerciseCard', () => {
   });
 });
 
-describe('ExerciseCard lesson letters (T6: a plain letter input until T7)', () => {
-  it('shows the situation and Leitpunkte, checks only a non-empty letter, posts it, and shows the summary', async () => {
-    const fetchMock = stubAttempts(() =>
-      delayedResponse(outcome({ result: 'almost', correctAnswer: null, feedback: { en: 'A good start.', de: 'Ein guter Anfang.' } }))
+function letterGrade(points: number, percent: number, text: string) {
+  return {
+    marks: [{ start: 0, end: 5, original: text.slice(0, 5), correction: 'Liebe', type: 'spelling', category: 'spelling', reason: { en: 'Spelling.', de: 'Rechtschreibung.' } }],
+    criteria: [
+      { id: 'task', grade: 'B', justification: { en: 'One point is thin.', de: 'Ein Punkt ist knapp.' } },
+      { id: 'communication', grade: 'B', justification: { en: 'Fine.', de: 'Gut.' } },
+      { id: 'accuracy', grade: points >= 9 ? 'B' : 'C', justification: { en: 'Errors.', de: 'Fehler.' } },
+    ],
+    points,
+    maxPoints: 15,
+    percent,
+    corrected: 'Liebe Anna, vielen Dank!',
+    summary: { en: 'A good start.', de: 'Ein guter Anfang.' },
+  };
+}
+
+// S12: lesson letters — Task A/B, Check, the graded letter, Revise, and earlier versions (client-side).
+describe('ExerciseCard lesson letters', () => {
+  const TWO: ExerciseView = {
+    ...LETTER,
+    tasks: [
+      (LETTER as Extract<ExerciseView, { type: 'letter' }>).tasks[0],
+      { situation: 'Sie beschweren sich beim Vermieter.', leitpunkte: ['Problem', 'Bitte', 'Frist'], register: 'formal', wordTarget: { min: 30, max: 50 } },
+    ],
+  };
+
+  it('grades the chosen task, shows the graded letter, and keeps earlier versions when revising', async () => {
+    const fetchMock = stubAttempts(
+      () => delayedResponse(outcome({ result: 'almost', correctAnswer: null, feedback: { en: 'A good start.', de: 'Ein guter Anfang.' }, letter: letterGrade(7, 47, 'Libe Vermieter') })),
+      () => delayedResponse(outcome({ result: 'correct', correctAnswer: null, feedback: { en: 'Better.', de: 'Besser.' }, letter: letterGrade(9, 60, 'Libe Vermieter, bitte') }))
     );
-    const props = renderCard(LETTER);
-    expect(screen.getByText('Ihre Freundin hat Sie eingeladen.')).toBeInTheDocument();
-    expect(screen.getByText('Absage')).toBeInTheDocument();
+    const props = renderCard(TWO);
+    expect(screen.getByText('Write to your friend.')).toBeInTheDocument();
     const check = screen.getByRole('button', { name: 'Check' });
     expect(check).toBeDisabled();
-    fireEvent.change(screen.getByRole('textbox', { name: /answer/i }), { target: { value: '   ' } });
+    fireEvent.click(screen.getByRole('radio', { name: /Task B/ }));
+    expect(screen.getByText('Frist')).toBeInTheDocument();
+    const box = screen.getByRole('textbox', { name: 'Your letter' });
+    expect(box).not.toHaveAttribute('spellcheck');
+    fireEvent.change(box, { target: { value: '   ' } });
     expect(check).toBeDisabled();
-    fireEvent.change(screen.getByRole('textbox', { name: /answer/i }), { target: { value: 'Liebe Anna, danke!' } });
+    fireEvent.change(box, { target: { value: 'Libe Vermieter' } });
     fireEvent.click(check);
 
-    expect(await screen.findByText(/A good start\./)).toBeInTheDocument();
-    expect(screen.getByText('Liebe Anna, danke!')).toBeInTheDocument();
-    const body = JSON.parse(fetchMock.mock.calls[0][1]!.body as string);
-    expect(body).toEqual({ exerciseId: 'ex5', answer: { type: 'letter', taskIndex: 0, text: 'Liebe Anna, danke!' }, source: 'lesson' });
-    await waitFor(() => expect(props.onAnswered).toHaveBeenCalled());
+    expect(await screen.findByText('7 of 15 points (47%)')).toBeInTheDocument();
+    expect(screen.getByText('Almost — that counts as passed.')).toBeInTheDocument();
+    expect(screen.getByRole('listitem', { name: 'Task completion' })).toHaveTextContent('Grade B');
+    expect(screen.getByRole('button', { name: 'Libe' })).toBeInTheDocument();
+    expect(JSON.parse(fetchMock.mock.calls[0][1]!.body as string)).toEqual({ exerciseId: 'ex5', answer: { type: 'letter', taskIndex: 1, text: 'Libe Vermieter' }, source: 'lesson' });
+    expect(screen.queryByText('Version 1: 47%')).toBeNull();
+
+    // Revise keeps the text and the chosen task; each submission is a new attempt.
+    fireEvent.click(screen.getByRole('button', { name: 'Revise' }));
+    const again = screen.getByRole('textbox', { name: 'Your letter' });
+    expect(again).toHaveValue('Libe Vermieter');
+    expect(screen.getByRole('radio', { name: /Task B/ })).toBeChecked();
+    fireEvent.change(again, { target: { value: 'Libe Vermieter, bitte' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }));
+    expect(await screen.findByText('9 of 15 points (60%)')).toBeInTheDocument();
+    expect(JSON.parse(fetchMock.mock.calls[1][1]!.body as string).answer).toEqual({ type: 'letter', taskIndex: 1, text: 'Libe Vermieter, bitte' });
+    const earlier = screen.getByRole('group', { name: 'Earlier versions' });
+    expect(within(earlier).getByText('Version 1: 47%')).toBeInTheDocument();
+    expect(within(earlier).queryByText('Version 2: 60%')).toBeNull();
+    expect(props.onAnswered).toHaveBeenCalledTimes(2);
+    fireEvent.click(screen.getByRole('button', { name: 'Next' }));
+    expect(props.onNext).toHaveBeenCalled();
+  });
+
+  it('keeps the letter and offers a retry when grading fails', async () => {
+    const fetchMock = stubAttempts(
+      () => delayedResponse({ error: 'The AI replied in an unexpected format', code: 'ai_bad_reply' }, { ok: false, status: 502 }),
+      () => delayedResponse(outcome({ result: 'almost', correctAnswer: null, feedback: null, letter: letterGrade(7, 47, 'Liebe Anna') }))
+    );
+    renderCard(LETTER);
+    expect(screen.queryByRole('radiogroup')).toBeNull();
+    fireEvent.change(screen.getByRole('textbox', { name: 'Your letter' }), { target: { value: 'Liebe Anna' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }));
+    expect(await screen.findByRole('alert')).toHaveTextContent('could not be graded');
+    expect(screen.getByRole('textbox', { name: 'Your letter' })).toHaveValue('Liebe Anna');
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }));
+    expect(await screen.findByText('7 of 15 points (47%)')).toBeInTheDocument();
+    expect(fetchMock).toHaveBeenCalledTimes(2);
   });
 });
-
