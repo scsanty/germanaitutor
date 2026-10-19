@@ -40,7 +40,8 @@ describe('examPracticeService', () => {
     expect(format?.id).toBe('telc-b1');
     expect(parts.find((p) => p.part.id === 'lesen-1')).toMatchObject({ runnable: true, mockOnly: false, lastPercent: null });
     expect(parts.find((p) => p.part.id === 'hoeren-1')).toMatchObject({ runnable: true, audioUnavailable: false });
-    expect(parts.find((p) => p.part.id === 'schreiben')?.runnable).toBe(false);
+    expect(parts.find((p) => p.part.id === 'schreiben')?.runnable).toBe(true);
+    expect(parts.find((p) => p.part.id === 'sprechen-1')?.runnable).toBe(false);
     expect(parts.find((p) => p.part.id === 'sprachbausteine-1')).toMatchObject({ runnable: false, mockOnly: true });
   });
 
@@ -51,11 +52,11 @@ describe('examPracticeService', () => {
     expect(run.mockId).toBeNull();
     expect(JSON.stringify(run.set.view)).not.toContain('answers');
     advance(21 * 60);
-    const result = service.submit(run.attemptId, allRight(db, run.set.id));
+    const result = await service.submit(run.attemptId, allRight(db, run.set.id));
     expect(result).toMatchObject({ score: 25, maxScore: 25, overtimeSeconds: 60 });
     expect(result.review).toHaveLength(5);
     expect(result.review[0]).toMatchObject({ index: 0, right: true, correct: 'Überschrift a', answerText: 'Überschrift a', explanation: { en: expect.any(String), de: expect.any(String) } });
-    expect(service.submit(run.attemptId, { type: 'matching', selected: [-1, -1, -1, -1, -1] })).toEqual(result); // Review Focus 1
+    expect(await service.submit(run.attemptId, { type: 'matching', selected: [-1, -1, -1, -1, -1] })).toEqual(result); // Review Focus 1
     expect((await service.overview()).parts.find((p) => p.part.id === 'lesen-1')?.lastPercent).toBe(100);
   });
 
@@ -63,7 +64,7 @@ describe('examPracticeService', () => {
     const { db, service } = setup();
     const run = await service.start('telc-b1', 'lesen-1');
     const right = allRight(db, run.set.id);
-    const result = service.submit(run.attemptId, { ...right, selected: right.selected.map((s: number, i: number) => (i < 3 ? s : -1)) });
+    const result = await service.submit(run.attemptId, { ...right, selected: right.selected.map((s: number, i: number) => (i < 3 ? s : -1)) });
     expect(result).toMatchObject({ score: 15, maxScore: 25, overtimeSeconds: 0 });
     expect(result.review[4]).toMatchObject({ right: false, answerText: '' });
   });
@@ -73,20 +74,20 @@ describe('examPracticeService', () => {
     const { db, service, advance } = setup();
     const run = await service.start('telc-b1', 'lesen-1');
     advance(3 * 3600 + 1);
-    expect(() => service.submit(run.attemptId, allRight(db, run.set.id))).toThrow(expect.objectContaining({ kind: 'not_found' }));
-    expect(() => service.submit(9999, allRight(db, run.set.id))).toThrow(expect.objectContaining({ kind: 'not_found' }));
+    await expect(service.submit(run.attemptId, allRight(db, run.set.id))).rejects.toMatchObject({ kind: 'not_found' });
+    await expect(service.submit(9999, allRight(db, run.set.id))).rejects.toMatchObject({ kind: 'not_found' });
   });
 
   it('refuses parts without a runner, mock-only parts, unknown parts and malformed answers', async () => {
     const { service } = setup();
-    await expect(service.start('telc-b1', 'schreiben')).rejects.toMatchObject({ kind: 'unavailable', code: 'part_unavailable' });
+    await expect(service.start('telc-b1', 'sprechen-1')).rejects.toMatchObject({ kind: 'unavailable', code: 'part_unavailable' });
     await expect(service.start('telc-b1', 'sprachbausteine-1')).rejects.toMatchObject({ kind: 'unavailable', code: 'part_unavailable' });
     await expect(service.start('telc-b1', 'nope')).rejects.toMatchObject({ kind: 'not_found' });
     await expect(service.start('../../x', 'lesen-1')).rejects.toMatchObject({ kind: 'not_found' });
     const run = await service.start('telc-b1', 'lesen-1');
-    expect(() => service.submit(run.attemptId, { type: 'matching', selected: [0] })).toThrow(expect.objectContaining({ kind: 'bad_request' }));
+    await expect(service.submit(run.attemptId, { type: 'matching', selected: [0] })).rejects.toMatchObject({ kind: 'bad_request' });
     // I9: "none" is not an answer when the part has no "x" option.
-    expect(() => service.submit(run.attemptId, { type: 'matching', selected: [null, 0, 0, 0, 0] })).toThrow(expect.objectContaining({ kind: 'bad_request' }));
+    await expect(service.submit(run.attemptId, { type: 'matching', selected: [null, 0, 0, 0, 0] })).rejects.toMatchObject({ kind: 'bad_request' });
   });
 
   it('turns a part with no usable set into part_unavailable', async () => {
@@ -100,28 +101,29 @@ describe('examPracticeService', () => {
     for (let i = 0; i < 6; i++) {
       const run = await service.start('telc-b1', 'lesen-1');
       const right = allRight(db, run.set.id);
-      service.submit(run.attemptId, i === 0 ? { type: 'matching', selected: right.selected.map(() => -1) } : right);
+      await service.submit(run.attemptId, i === 0 ? { type: 'matching', selected: right.selected.map(() => -1) } : right);
     }
     const view = service.readiness();
     expect(view).toMatchObject({ formatId: 'telc-b1', formatName: expect.any(String) });
     expect(view.parts.find((p) => p.partId === 'lesen-1')).toMatchObject({ averagePercent: 100, attempts: 5, overtime: false });
     expect(view.parts.find((p) => p.partId === 'lesen-2')).toMatchObject({ averagePercent: null, attempts: 0, overtime: false });
     expect(view.parts.some((p) => p.partId === 'hoeren-1')).toBe(true);
-    expect(view.parts.some((p) => p.partId === 'schreiben')).toBe(false);
+    expect(view.parts.some((p) => p.partId === 'schreiben')).toBe(true);
+    expect(view.parts.some((p) => p.partId === 'sprechen-1')).toBe(false);
   });
 
   it('runs a mock over every runnable written part with one shared timer (B2)', async () => {
     const { db, service, advance } = setup();
     const mock = await service.startMock('telc-b1');
-    expect(mock.runs.map((r) => r.part.id)).toEqual(['lesen-1', 'lesen-2', 'lesen-3', 'sprachbausteine-1', 'sprachbausteine-2', 'hoeren-1', 'hoeren-2', 'hoeren-3']);
-    expect(mock.minutes).toBe(120);
+    expect(mock.runs.map((r) => r.part.id)).toEqual(['lesen-1', 'lesen-2', 'lesen-3', 'sprachbausteine-1', 'sprachbausteine-2', 'hoeren-1', 'hoeren-2', 'hoeren-3', 'schreiben']);
+    expect(mock.minutes).toBe(150);
     expect(new Set(mock.runs.map((r) => r.startedAt)).size).toBe(1);
     expect(mock.runs.every((r) => r.mockId === mock.mockId)).toBe(true);
     // Overtime runs against the mock's total time, not the part's own minutes.
     advance(30 * 60);
-    expect(service.submit(mock.runs[0].attemptId, allRight(db, mock.runs[0].set.id)).overtimeSeconds).toBe(0);
-    advance(91 * 60); // 121 min against the mock's 120
-    expect(service.submit(mock.runs[2].attemptId, { type: 'matching', selected: Array(10).fill(-1) }).overtimeSeconds).toBe(60);
+    expect((await service.submit(mock.runs[0].attemptId, allRight(db, mock.runs[0].set.id))).overtimeSeconds).toBe(0);
+    advance(121 * 60); // 151 min against the mock's 150
+    expect((await service.submit(mock.runs[2].attemptId, { type: 'matching', selected: Array(10).fill(-1) })).overtimeSeconds).toBe(60);
     expect(service.readiness().parts.find((p) => p.partId === 'lesen-3')).toMatchObject({ overtime: true, averagePercent: 0 });
   });
 
@@ -137,7 +139,7 @@ describe('examPracticeService', () => {
     const { db, service } = setup(generate);
     const run = await service.start('telc-b1', 'lesen-1');
     await expect(service.explain(run.attemptId, 0, 'Warum?')).rejects.toMatchObject({ kind: 'bad_request' });
-    service.submit(run.attemptId, allRight(db, run.set.id));
+    await service.submit(run.attemptId, allRight(db, run.set.id));
     await expect(service.explain(run.attemptId, 5, 'Warum?')).rejects.toMatchObject({ kind: 'bad_request' });
 
     generate.mockImplementation(async () => ({ ok: true as const, text: '  Weil Text 1 von a handelt.  ' }));
@@ -237,11 +239,11 @@ describe('examPracticeService listening', () => {
     const { service } = setup(failing, DOWN, setsDir);
     const run = await service.start('telc-b1', 'hoeren-1');
     const answers = { type: 'audio_questions', selected: REAL_SET.content.questions.map((q: { correctIndex: number }) => q.correctIndex) };
-    const result = service.submit(run.attemptId, answers);
+    const result = await service.submit(run.attemptId, answers);
     expect(result).toMatchObject({ score: 25, maxScore: 25 });
     expect(result.reveal?.transcript.lines.length).toBeGreaterThan(0);
     expect(result.reveal?.evidence).toEqual(REAL_SET.content.questions.map((q: { evidence: string }) => q.evidence));
-    expect(service.submit(run.attemptId, answers).reveal).toEqual(result.reveal);
+    expect((await service.submit(run.attemptId, answers)).reveal).toEqual(result.reveal);
   });
 
   it('gives the explain prompt the transcript and the item evidence (S11)', async () => {
@@ -249,10 +251,128 @@ describe('examPracticeService listening', () => {
     const generate = vi.fn(async (_request: AiRequest): Promise<AiResult> => ({ ok: true, text: 'Weil.' }));
     const { service } = setup(generate, DOWN, setsDir);
     const run = await service.start('telc-b1', 'hoeren-1');
-    service.submit(run.attemptId, { type: 'audio_questions', selected: [0, 0, 0, 0, 0] });
+    await service.submit(run.attemptId, { type: 'audio_questions', selected: [0, 0, 0, 0, 0] });
     await service.explain(run.attemptId, 4, 'Warum?');
     const prompt = generate.mock.lastCall![0].systemPrompt;
     expect(prompt).toContain('Stadtbibliothek');
     expect(prompt).toContain('aber das Wasser sollte nicht eiskalt sein');
+  });
+});
+
+// Writing (B4, S4, S17): a letter part is graded by the AI on the part's rubric; the grade is stored and replayed.
+describe('examPracticeService letters', () => {
+  const TEXT = 'Sehr geehrte Damen und Herren, ich habe ein Problem mit mein Zimmer. Mit freundlichen Grüßen';
+  // aufgabe B (10) + gestaltung B (10) + richtigkeit C (5) = 25 of 45.
+  const REPLY = JSON.stringify({
+    marks: [{ original: 'mit mein Zimmer', correction: 'mit meinem Zimmer', type: 'grammar', category: 'case_dative', reason_en: 'Dative after mit.', reason_de: 'Dativ nach mit.' }],
+    criteria: [
+      { id: 'aufgabe', grade: 'B', justification_en: 'One point thin.', justification_de: 'Ein Punkt knapp.' },
+      { id: 'gestaltung', grade: 'B', justification_en: 'Fine.', justification_de: 'Gut.' },
+      { id: 'richtigkeit', grade: 'C', justification_en: 'Errors.', justification_de: 'Fehler.' },
+    ],
+    corrected: 'Sehr geehrte Damen und Herren, ich habe ein Problem mit meinem Zimmer. Mit freundlichen Grüßen',
+    summary_en: 'A fair letter.',
+    summary_de: 'Ein ordentlicher Brief.',
+  });
+  const graded = async (_request: AiRequest): Promise<AiResult> => ({ ok: true, text: REPLY });
+  const letter = (text = TEXT, taskIndex = 1) => ({ type: 'letter', taskIndex, text });
+  const row = (db: ReturnType<typeof setup>['db'], id: number) =>
+    db.prepare('SELECT score, max_score, overtime_seconds, finished_at, grading_started_at, answers, result FROM teil_attempts WHERE id = ?').get(id) as Record<string, unknown>;
+
+  it('grades a letter on the rubric with the German-only task, logs its marks as teil, and replays the stored grade', async () => {
+    const generate = vi.fn(graded);
+    const { db, service, advance } = setup(generate);
+    const run = await service.start('telc-b1', 'schreiben');
+    expect(run.set.view).toMatchObject({ tasks: [{ situation: expect.stringContaining('Aufgabe A') }, { situation: expect.stringContaining('Aufgabe B') }] });
+    advance(31 * 60);
+    // S4: grading time never counts as overtime.
+    generate.mockImplementationOnce(async (request) => {
+      advance(80);
+      return graded(request);
+    });
+    const result = await service.submit(run.attemptId, letter());
+    expect(result).toMatchObject({ score: 25, maxScore: 45, overtimeSeconds: 60, review: [], text: TEXT, taskIndex: 1 });
+    expect(result.letter).toMatchObject({ points: 25, maxPoints: 45, percent: 56, corrected: expect.stringContaining('meinem') });
+    expect(result.letter!.marks[0]).toMatchObject({ original: 'mit mein Zimmer', start: TEXT.indexOf('mit mein Zimmer') });
+    expect(result.tips).toEqual([{ en: 'Fixture tip 1.', de: 'Fixture-Tipp 1.' }, { en: 'Fixture tip 2.', de: 'Fixture-Tipp 2.' }, { en: 'Fixture tip 3.', de: 'Fixture-Tipp 3.' }]);
+    const prompt = generate.mock.calls[0][0].systemPrompt;
+    expect(prompt).toContain('Fixture-Aufgabe B');
+    expect(prompt).not.toContain('Fixture-Aufgabe A');
+    expect(prompt).toContain('telc');
+    expect(db.prepare('SELECT source, wrong, "right" FROM error_log').all()).toEqual([{ source: 'teil', wrong: 'mit mein Zimmer', right: 'mit meinem Zimmer' }]);
+    expect(row(db, run.attemptId)).toMatchObject({ score: 25, max_score: 45, grading_started_at: null, answers: JSON.stringify(letter()) });
+
+    // Review Focus 1 / B4: a repeated submit replays the stored grade without another AI call.
+    expect(await service.submit(run.attemptId, letter('Ganz anders.', 0))).toEqual(result);
+    expect(generate).toHaveBeenCalledTimes(1);
+    expect((await service.overview()).parts.find((p) => p.part.id === 'schreiben')?.lastPercent).toBe(56);
+    expect(service.readiness().parts.find((p) => p.partId === 'schreiben')).toMatchObject({ averagePercent: 56, attempts: 1, overtime: true });
+  });
+
+  // Review Focus 3: the lock is taken atomically, so a second submit never starts a second grading call.
+  it('refuses a concurrent submit with letter_grading while the first is being graded', async () => {
+    let release!: (result: AiResult) => void;
+    const generate = vi.fn(() => new Promise<AiResult>((resolve) => (release = resolve)));
+    const { db, service } = setup(generate);
+    const run = await service.start('telc-b1', 'schreiben');
+    const first = service.submit(run.attemptId, letter());
+    await vi.waitFor(() => expect(generate).toHaveBeenCalledTimes(1));
+    await expect(service.submit(run.attemptId, letter())).rejects.toMatchObject({ kind: 'unavailable', code: 'letter_grading' });
+    expect(row(db, run.attemptId).grading_started_at).toEqual(expect.any(String));
+    release({ ok: true, text: REPLY });
+    expect(await first).toMatchObject({ score: 25 });
+    expect(generate).toHaveBeenCalledTimes(1);
+  });
+
+  it('treats a lock older than 120 s as stale', async () => {
+    const generate = vi.fn(graded);
+    const { db, service } = setup(generate);
+    const run = await service.start('telc-b1', 'schreiben');
+    const lockAt = (secondsAgo: number) =>
+      db.prepare('UPDATE teil_attempts SET grading_started_at = ? WHERE id = ?').run(new Date(Date.parse('2026-09-29T10:00:00Z') - secondsAgo * 1000).toISOString(), run.attemptId);
+    lockAt(119);
+    await expect(service.submit(run.attemptId, letter())).rejects.toMatchObject({ code: 'letter_grading' });
+    lockAt(121);
+    expect(await service.submit(run.attemptId, letter())).toMatchObject({ score: 25 });
+  });
+
+  it('leaves the attempt open and unlocked when grading fails, so it can be resubmitted', async () => {
+    const generate = vi.fn(async (_request: AiRequest): Promise<AiResult> => ({ ok: false, error: 'offline', code: 'ai_failed' }));
+    const { db, service } = setup(generate);
+    const run = await service.start('telc-b1', 'schreiben');
+    await expect(service.submit(run.attemptId, letter())).rejects.toMatchObject({ kind: 'ai_failed', code: 'ai_failed' });
+    expect(row(db, run.attemptId)).toMatchObject({ finished_at: null, grading_started_at: null, result: null });
+    generate.mockImplementationOnce(async () => ({ ok: true, text: 'not json' }));
+    await expect(service.submit(run.attemptId, letter())).rejects.toMatchObject({ kind: 'ai_failed', code: 'ai_bad_reply' });
+    expect(row(db, run.attemptId)).toMatchObject({ finished_at: null, grading_started_at: null });
+    generate.mockImplementationOnce(graded);
+    expect(await service.submit(run.attemptId, letter())).toMatchObject({ score: 25 });
+  });
+
+  it('scores an empty letter 0 without asking the AI, and refuses a task that does not exist', async () => {
+    const generate = vi.fn(graded);
+    const { service } = setup(generate);
+    const run = await service.start('telc-b1', 'schreiben');
+    await expect(service.submit(run.attemptId, letter(TEXT, 2))).rejects.toMatchObject({ kind: 'bad_request' });
+    const result = await service.submit(run.attemptId, letter('   ', 0));
+    expect(result).toMatchObject({ score: 0, maxScore: 45, text: '   ' });
+    expect(result.letter).toMatchObject({ points: 0, percent: 0, marks: [] });
+    expect(result.letter!.criteria.map((c) => c.grade)).toEqual(['D', 'D', 'D']);
+    expect(generate).not.toHaveBeenCalled();
+  });
+
+  it('refuses to explain a letter (S17)', async () => {
+    const { service } = setup(graded);
+    const run = await service.start('telc-b1', 'schreiben');
+    await service.submit(run.attemptId, letter());
+    await expect(service.explain(run.attemptId, 0, 'Warum?')).rejects.toMatchObject({ kind: 'bad_request' });
+  });
+
+  it('has no runner for a letter part without a rubric yet', async () => {
+    const { db, service } = setup();
+    createProfileService(db).updateProfile({ activeTrack: 'goethe' });
+    const parts = (await service.overview()).parts;
+    expect(parts.find((p) => p.part.id === 'schreiben-1')).toMatchObject({ runnable: false, mockOnly: false });
+    await expect(service.start('goethe-b1', 'schreiben-1')).rejects.toMatchObject({ kind: 'unavailable' });
   });
 });

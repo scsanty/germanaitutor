@@ -1,0 +1,34 @@
+{
+  "formatId": "telc-b1",
+  "partId": "schreiben",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b1__schreiben__s01",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Fixture-Aufgabe A: Ihre Freundin hat Sie eingeladen.",
+              "leitpunkte": ["Dank", "Absage", "Grund", "Vorschlag"],
+              "register": "informal",
+              "wordTarget": { "min": 120, "max": 180 }
+            },
+            {
+              "situation": "Fixture-Aufgabe B: Sie beschweren sich beim Hotel.",
+              "leitpunkte": ["Aufenthalt", "Problem", "Erwartung", "Frist"],
+              "register": "formal",
+              "wordTarget": { "min": 120, "max": 180 }
+            }
+          ]
+        },
+        "explanations": [
+          { "en": "Fixture tip 1.", "de": "Fixture-Tipp 1." },
+          { "en": "Fixture tip 2.", "de": "Fixture-Tipp 2." },
+          { "en": "Fixture tip 3.", "de": "Fixture-Tipp 3." }
+        ]
+      }
+    }
+  ]
+}

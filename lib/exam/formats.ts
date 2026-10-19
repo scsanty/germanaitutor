@@ -7,8 +7,8 @@ import { rubricMaxPoints, rubricProblems, type WritingRubric } from '../writing/
 export type TaskTypeId = 'passage_questions' | 'matching' | 'cloze' | 'audio_questions' | 'letter' | 'spoken';
 const TASK_TYPES: TaskTypeId[] = ['passage_questions', 'matching', 'cloze', 'audio_questions', 'letter', 'spoken'];
 
-// Types that have a runner. Writing and Speaking add theirs.
-export const RUNTIME_TASK_TYPES = new Set<TaskTypeId>(['passage_questions', 'matching', 'cloze', 'audio_questions']);
+// Types that have a runner. Speaking adds its own. (A letter part also needs its rubric to be graded.)
+export const RUNTIME_TASK_TYPES = new Set<TaskTypeId>(['passage_questions', 'matching', 'cloze', 'audio_questions', 'letter']);
 
 export interface ExamPart {
   id: string;

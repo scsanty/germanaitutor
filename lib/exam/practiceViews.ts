@@ -1,6 +1,7 @@
 import type { LocalizedText } from '../i18n/localizedText';
 import type { TaskView } from '../tasks/taskTypes';
 import type { AudioReveal } from '../tasks/audioQuestions';
+import type { LetterGrade } from '../writing/letterGrading';
 import type { ExamFormat, ExamPart } from './formats';
 
 // One timed Teil attempt as the runner sees it: the set's view never carries the answers.
@@ -30,6 +31,12 @@ export interface PracticeResult {
   review: ItemReview[];
   // Listening parts: the transcript and per-item evidence, after submit only.
   reveal?: AudioReveal;
+  // Writing (S17): a letter has no item review; it carries its grade, the text and the chosen task,
+  // and the set's tips, one per rubric criterion in rubric order (I16).
+  letter?: LetterGrade;
+  text?: string;
+  taskIndex?: number;
+  tips?: LocalizedText[];
 }
 
 export interface PracticeOverview {

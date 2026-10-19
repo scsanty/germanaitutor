@@ -184,7 +184,7 @@ export function runMigrations(db: Database.Database): void {
     migrateFreestyle(db);
     migrateFlashcardReviewsToDeck(db);
     migrateExerciseTypeCheck(db, EXERCISE_TYPES);
-    migrateTeilAttemptAnswers(db);
+    migrateTeilAttemptColumns(db);
   });
   // Table rebuilds (migrateExerciseTypeCheck) must run with foreign keys OFF, or DROP TABLE would cascade
   // to attempts and reviews. SQLite ignores this pragma inside a transaction, so it wraps the transaction.
@@ -624,7 +624,8 @@ function createTablesIfMissing(db: Database.Database): void {
       mock_id TEXT,
       score REAL, max_score REAL, overtime_seconds INTEGER,
       started_at TEXT NOT NULL, finished_at TEXT,
-      answers TEXT
+      answers TEXT,
+      grading_started_at TEXT, result TEXT
     );
     CREATE TABLE IF NOT EXISTS teil_bundle_meta (
       format_id TEXT NOT NULL, part_id TEXT NOT NULL, version TEXT NOT NULL,
@@ -669,9 +670,13 @@ function createTablesIfMissing(db: Database.Database): void {
   `);
 }
 
-// Reading module (S9): a finished attempt keeps its raw answers, only so a repeated submit can return
-// the same review. They never feed the error log or mastery.
-function migrateTeilAttemptAnswers(db: Database.Database): void {
-  const columns = db.prepare('PRAGMA table_info(teil_attempts)').all() as { name: string }[];
-  if (!columns.some((c) => c.name === 'answers')) db.exec('ALTER TABLE teil_attempts ADD COLUMN answers TEXT');
+// Reading module (S9): a finished attempt keeps its raw answers, so a repeated submit can return the
+// same review. They never feed mastery; only a letter's grading marks reach the error log (source 'teil').
+// Writing (B4): `grading_started_at` locks a letter attempt while the AI grades it (stale after 120 s),
+// and `result` keeps the letter's grade, so a repeated submit replays it instead of grading again.
+function migrateTeilAttemptColumns(db: Database.Database): void {
+  const columns = new Set((db.prepare('PRAGMA table_info(teil_attempts)').all() as { name: string }[]).map((c) => c.name));
+  for (const name of ['answers', 'grading_started_at', 'result']) {
+    if (!columns.has(name)) db.exec(`ALTER TABLE teil_attempts ADD COLUMN ${name} TEXT`);
+  }
 }

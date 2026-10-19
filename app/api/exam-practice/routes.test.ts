@@ -93,9 +93,9 @@ describe('/api/exam-practice', () => {
   // Sprachbausteine parts run only in the mock, so the mock start is where a bad cloze reply would surface.
   it('mock start falls back to a seen set when the AI reply has a null cloze gap, instead of failing', async () => {
     const db = getDb();
-    // The mock includes the listening parts: give each one a set, and the speech service is up.
+    // The mock includes the listening and writing parts: give each one a set, and the speech service is up.
     sharedSpeechAvailability().record(getSpeechUrl(db), true);
-    for (const part of ['hoeren-2', 'hoeren-3']) {
+    for (const part of ['hoeren-2', 'hoeren-3', 'schreiben']) {
       const fixture = JSON.parse(readFileSync(join(process.cwd(), 'test', 'fixtures', 'teil-sets', 'telc-b1', `${part}.json`), 'utf8'));
       createTeilSetService(db).upload('telc-b1', part, [{ id: `fixture-${part}`, set: fixture.sets[0].set }]);
     }
@@ -113,6 +113,19 @@ describe('/api/exam-practice', () => {
     expect(generateWithActiveProvider).toHaveBeenCalledTimes(1);
     const pool = db.prepare("SELECT COUNT(*) AS n FROM teil_sets WHERE format_id = 'telc-b1' AND part_id = 'sprachbausteine-1' AND status = 'unreviewed'").get() as { n: number };
     expect(pool.n).toBe(0);
+  });
+
+  // S4: a letter that is being graded refuses a second submit with 409 letter_grading.
+  it('submit answers 409 letter_grading while the letter is being graded', async () => {
+    const db = getDb();
+    const fixture = JSON.parse(readFileSync(join(process.cwd(), 'test', 'fixtures', 'teil-sets', 'telc-b1', 'schreiben.json'), 'utf8'));
+    createTeilSetService(db).upload('telc-b1', 'schreiben', [{ id: 'fixture-schreiben', set: fixture.sets[0].set }]);
+    const run = await (await post(start, { formatId: 'telc-b1', partId: 'schreiben' })).json();
+    db.prepare('UPDATE teil_attempts SET grading_started_at = ? WHERE id = ?').run(new Date().toISOString(), run.attemptId);
+    const res = await post(submit, { attemptId: run.attemptId, answers: { type: 'letter', taskIndex: 0, text: 'Liebe Anna, danke!' } });
+    expect(res.status).toBe(409);
+    expect(await res.json()).toMatchObject({ code: 'letter_grading' });
+    expect(generateWithActiveProvider).not.toHaveBeenCalled();
   });
 
   it('mock start validates its body', async () => {

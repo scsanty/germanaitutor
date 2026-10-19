@@ -24,7 +24,8 @@ export type ErrorCode =
   | 'session_exists'
   | 'session_ending'
   | 'part_unavailable'
-  | 'audio_unavailable';
+  | 'audio_unavailable'
+  | 'letter_grading';
 
 export type ErrorParams = Record<string, string>;
 

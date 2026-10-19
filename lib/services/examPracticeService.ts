@@ -14,6 +14,10 @@ import { audioHashOf, type AudioAvailabilityDeps } from '../audio/audioAvailabil
 import { hasAudio } from '../audio/audioStore';
 import { isSpeechUp } from '../speech/speechAvailability';
 import { audioReveal, type AudioQuestionsContent, type AudioReveal } from '../tasks/audioQuestions';
+import type { LetterAnswer, LetterContent } from '../tasks/letter';
+import type { LetterGrade } from '../writing/letterGrading';
+import { pointsFor, rubricMaxPoints, type Grade, type WritingRubric } from '../writing/rubric';
+import { gradeLetter } from './letterGradingService';
 
 export type PracticeErrorKind = 'not_found' | 'bad_request' | 'unavailable' | 'ai_failed';
 const STATUS: Record<PracticeErrorKind, number> = { not_found: 404, bad_request: 400, unavailable: 409, ai_failed: 502 };
@@ -59,14 +63,32 @@ interface AttemptRow {
   started_at: string;
   finished_at: string | null;
   answers: string | null;
+  grading_started_at: string | null;
+  result: string | null;
 }
 
-const hasRunner = (part: ExamPart) => RUNTIME_TASK_TYPES.has(part.taskType);
+// A letter part is graded on its rubric, so it has no runner until its rubric exists (T10 adds the rest).
+const hasRunner = (part: ExamPart) => RUNTIME_TASK_TYPES.has(part.taskType) && (part.taskType !== 'letter' || part.rubric !== undefined);
 const isListening = (part: ExamPart) => part.taskType === 'audio_questions';
 // S10: Sprachbausteine are practised only inside the full mock.
 const singlyRunnable = (part: ExamPart) => hasRunner(part) && part.skill !== 'sprachbausteine';
 const percent = (score: number, max: number) => (max > 0 ? (score / max) * 100 : 0);
 const round2 = (n: number) => Math.round(n * 100) / 100;
+// B4: a letter's grading lock older than this is stale (the provider times out after 90 s).
+const GRADING_LOCK_MS = 120 * 1000;
+
+// Nothing was written: every criterion at its lowest grade, and no AI call.
+function emptyLetterGrade(rubric: WritingRubric): LetterGrade {
+  const nothing = { en: 'Nothing was written.', de: 'Es wurde nichts geschrieben.' };
+  const criteria = rubric.criteria.map((c) => {
+    const graded = Object.entries(c.points).filter(([, p]) => p !== undefined) as [Grade, number][];
+    const lowest = graded.reduce((low, g) => (g[1] < low[1] ? g : low))[0];
+    return { id: c.id, grade: lowest, justification: nothing };
+  });
+  const maxPoints = rubricMaxPoints(rubric);
+  const points = pointsFor(rubric, Object.fromEntries(criteria.map((c) => [c.id, c.grade])));
+  return { marks: [], criteria, points, maxPoints, percent: 0, corrected: '', summary: nothing };
+}
 
 function translate(err: unknown): never {
   if (err instanceof TeilSetError) throw new PracticeError(err.message, err.kind);
@@ -235,7 +257,9 @@ export function createExamPracticeService(db: Database.Database, deps: ExamPract
     return ids.reduce((s, { part_id }) => s + (format.parts.find((p) => p.id === part_id)?.minutes ?? 0), 0);
   }
 
+  // A letter has no per-item review (gradeTask throws for letters): its grade is stored instead (B4).
   function reviewOf(set: TeilSetContent, answer: TaskAnswer): { review: ItemReview[]; right: number } {
+    if (set.taskType === 'letter') return { review: [], right: 0 };
     const { itemResults } = gradeTask(set.taskType, set.content, answer);
     const correct = correctTexts(set.taskType, set.content);
     const given = answerTexts(set.taskType, set.content, answer);
@@ -259,13 +283,97 @@ export function createExamPracticeService(db: Database.Database, deps: ExamPract
     }
   }
 
+  function letterResult(row: AttemptRow, set: TeilSetContent, answer: LetterAnswer, grade: LetterGrade): PracticeResult {
+    return {
+      attemptId: row.id,
+      score: row.score!,
+      maxScore: row.max_score!,
+      overtimeSeconds: row.overtime_seconds ?? 0,
+      review: [],
+      letter: grade,
+      text: answer.text,
+      taskIndex: answer.taskIndex,
+      tips: set.explanations,
+    };
+  }
+
   function storedResult(row: AttemptRow): PracticeResult {
     const set = setOf(row.set_id);
-    const { review } = reviewOf(set, JSON.parse(row.answers!) as TaskAnswer);
+    const answer = JSON.parse(row.answers!) as TaskAnswer;
+    // B4: a letter replays its stored grade; it is never graded again.
+    if (answer.type === 'letter') return letterResult(row, set, answer, JSON.parse(row.result!) as LetterGrade);
+    const { review } = reviewOf(set, answer);
     return { attemptId: row.id, score: row.score!, maxScore: row.max_score!, overtimeSeconds: row.overtime_seconds ?? 0, review, ...revealOf(set) };
   }
 
-  function submit(attemptId: number, answers: unknown): PracticeResult {
+  // Writes a finished attempt, guarded on finished_at so two racing submits can't both write. A letter
+  // also stores its grade and releases its grading lock. Returns the stored result when another write won.
+  function finish(row: AttemptRow, score: number, maxScore: number, overtimeSeconds: number, now: Date, answer: TaskAnswer, grade: LetterGrade | null) {
+    return db
+      .prepare(
+        `UPDATE teil_attempts SET score = ?, max_score = ?, overtime_seconds = ?, finished_at = ?, answers = ?, result = ?, grading_started_at = NULL
+         WHERE id = ? AND finished_at IS NULL`
+      )
+      .run(score, maxScore, overtimeSeconds, now.toISOString(), JSON.stringify(answer), grade ? JSON.stringify(grade) : null, row.id).changes > 0;
+  }
+
+  // S4 + B4: a letter is graded by the AI while the attempt holds a grading lock, taken atomically, so a
+  // second submit never starts a second grading call. A failure releases the lock and leaves it open.
+  async function submitLetter(
+    row: AttemptRow,
+    format: ExamFormat,
+    part: ExamPart,
+    set: TeilSetContent,
+    answer: LetterAnswer,
+    now: Date,
+    overtimeSeconds: number
+  ): Promise<PracticeResult> {
+    const rubric = part.rubric;
+    if (!rubric) throw new PracticeError(`${part.id} has no rubric yet`, 'unavailable');
+    const task = (set.content as LetterContent).tasks[answer.taskIndex];
+    if (!task) throw new PracticeError('That task does not exist', 'bad_request');
+
+    if (!answer.text.trim()) {
+      const grade = emptyLetterGrade(rubric);
+      if (!finish(row, grade.points, part.points, overtimeSeconds, now, answer, grade)) return storedResult(requireAttempt(row.id));
+      return letterResult(requireAttempt(row.id), set, answer, grade);
+    }
+
+    const lockedAt = clock();
+    const locked = db
+      .prepare(
+        'UPDATE teil_attempts SET grading_started_at = ? WHERE id = ? AND finished_at IS NULL AND (grading_started_at IS NULL OR grading_started_at < ?)'
+      )
+      .run(lockedAt.toISOString(), row.id, new Date(lockedAt.getTime() - GRADING_LOCK_MS).toISOString());
+    if (locked.changes === 0) {
+      const current = requireAttempt(row.id);
+      if (current.finished_at) return storedResult(current);
+      throw new PracticeError('This letter is being graded', 'unavailable', 'letter_grading');
+    }
+    const unlock = () => db.prepare('UPDATE teil_attempts SET grading_started_at = NULL WHERE id = ? AND finished_at IS NULL').run(row.id);
+
+    let outcome: Awaited<ReturnType<typeof gradeLetter>>;
+    try {
+      outcome = await gradeLetter(
+        db,
+        { level: format.level, formatId: format.id, partId: part.id, formatName: format.name, rubric, task, text: answer.text, source: 'teil', germanOnlyTask: true },
+        { generate, now: clock }
+      );
+    } catch (err) {
+      unlock();
+      throw err;
+    }
+    if (!outcome.ok) {
+      unlock();
+      throw new PracticeError(outcome.error, outcome.code === 'bad_request' ? 'bad_request' : 'ai_failed', outcome.code, outcome.params);
+    }
+    // S15: the score is the rubric points, out of the part's points (equal to the rubric's maximum).
+    const score = round2(outcome.grade.points);
+    if (!finish(row, score, part.points, overtimeSeconds, now, answer, outcome.grade)) return storedResult(requireAttempt(row.id));
+    return letterResult(requireAttempt(row.id), set, answer, outcome.grade);
+  }
+
+  async function submit(attemptId: number, answers: unknown): Promise<PracticeResult> {
     const row = requireAttempt(attemptId);
     // Review Focus 1: a repeated submit returns the first result unchanged.
     if (row.finished_at) return storedResult(row);
@@ -279,14 +387,12 @@ export function createExamPracticeService(db: Database.Database, deps: ExamPract
     const noneWithoutOption =
       answer?.type === 'matching' && !(set.content as MatchingContent).allowNone && answer.selected.some((s) => s === null);
     if (!answer || noneWithoutOption) throw new PracticeError('The answers do not fit this task', 'bad_request');
+    // S4: measured at request entry, before any AI call, so grading time never counts as overtime.
+    const overtimeSeconds = Math.max(0, Math.floor(elapsedMs / 1000 - allowedMinutes(row, part, format) * 60));
+    if (answer.type === 'letter') return submitLetter(row, format, part, set, answer, now, overtimeSeconds);
     const { review, right } = reviewOf(set, answer);
     const score = round2((right * part.points) / review.length);
-    const overtimeSeconds = Math.max(0, Math.floor(elapsedMs / 1000 - allowedMinutes(row, part, format) * 60));
-    // Guarded on finished_at so two racing submits can't both write.
-    const written = db
-      .prepare('UPDATE teil_attempts SET score = ?, max_score = ?, overtime_seconds = ?, finished_at = ?, answers = ? WHERE id = ? AND finished_at IS NULL')
-      .run(score, part.points, overtimeSeconds, now.toISOString(), JSON.stringify(answer), row.id);
-    if (written.changes === 0) return storedResult(requireAttempt(row.id));
+    if (!finish(row, score, part.points, overtimeSeconds, now, answer, null)) return storedResult(requireAttempt(row.id));
     return { attemptId: row.id, score, maxScore: part.points, overtimeSeconds, review, ...revealOf(set) };
   }
 
@@ -295,6 +401,8 @@ export function createExamPracticeService(db: Database.Database, deps: ExamPract
     if (!row.finished_at) throw new PracticeError('Submit the part before asking about it', 'bad_request');
     const { part } = partOf(row.format_id, row.part_id);
     const set = setOf(row.set_id);
+    // S17: a letter's feedback is its grade; there is no item to ask about.
+    if (set.taskType === 'letter') throw new PracticeError('A letter has no items to ask about', 'bad_request');
     const { review } = reviewOf(set, JSON.parse(row.answers!) as TaskAnswer);
     const item = Number.isInteger(itemIndex) ? review[itemIndex] : undefined;
     if (!item) throw new PracticeError('There is no such item', 'bad_request');
