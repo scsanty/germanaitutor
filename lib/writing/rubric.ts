@@ -35,8 +35,13 @@ export function rubricProblems(r: WritingRubric): string[] {
       problems.push(`criterion ${c.id} has no grades`);
     } else {
       for (const g of GRADES) {
-        if ((c.points[g] === undefined) !== (c.descriptors[g] === undefined)) {
+        const p = c.points[g];
+        if ((p === undefined) !== (c.descriptors[g] === undefined)) {
           problems.push(`criterion ${c.id}: grade ${g} needs both points and a descriptor`);
+        }
+        // Not only whole numbers: Goethe's bands use halves and quarters (10 / 7.5 / 5 / 2.5 / 0).
+        if (p !== undefined && !(typeof p === 'number' && Number.isFinite(p) && p >= 0)) {
+          problems.push(`criterion ${c.id}: grade ${g} points must be a non-negative number`);
         }
       }
     }

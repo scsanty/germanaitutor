@@ -29,6 +29,21 @@ describe('rubrics', () => {
     ).toEqual(['criterion a: grade B needs both points and a descriptor', 'criterion a: grade C needs both points and a descriptor']);
   });
 
+  // Goethe's bands use halves and quarters (10 / 7.5 / 5 / 2.5 / 0), so points are numbers, not only whole numbers.
+  it('names points that are negative or not finite numbers', () => {
+    expect(
+      rubricProblems({
+        criteria: [
+          { id: 'a', name: { en: 'A', de: 'A' }, descriptors: { A: 'x', B: 'y', C: 'z', D: 'w' }, points: { A: 7.5, B: -1, C: '2' as never, D: Number.NaN } },
+        ],
+      })
+    ).toEqual([
+      'criterion a: grade B points must be a non-negative number',
+      'criterion a: grade C points must be a non-negative number',
+      'criterion a: grade D points must be a non-negative number',
+    ]);
+  });
+
   it('counts a missing grade as 0 points', () => {
     expect(pointsFor(LESSON_LETTER_RUBRIC, { task: 'A' })).toBe(5);
   });

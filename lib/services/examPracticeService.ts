@@ -67,7 +67,7 @@ interface AttemptRow {
   result: string | null;
 }
 
-// A letter part is graded on its rubric, so it has no runner until its rubric exists (T10 adds the rest).
+// A letter part is graded on its rubric, so it has no runner without one (formatProblems requires it for bundled formats).
 const hasRunner = (part: ExamPart) => RUNTIME_TASK_TYPES.has(part.taskType) && (part.taskType !== 'letter' || part.rubric !== undefined);
 const isListening = (part: ExamPart) => part.taskType === 'audio_questions';
 // S10: Sprachbausteine are practised only inside the full mock.

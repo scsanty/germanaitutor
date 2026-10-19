@@ -49,8 +49,18 @@ describe('formatProblems for letter parts', () => {
     parts: [{ id: 'schreiben', skill: 'writing', title: { en: 'W', de: 'S' }, taskType: 'letter', items: 2, points: 20, minutes: 30, instructions: 'Schreiben Sie …', ...over }],
   });
 
-  it('does not require a rubric until a part starts to carry writing fields (TODO(T10))', () => {
-    expect(formatProblems(letter({}))).toEqual([]);
+  it('requires every letter part to have a rubric, a word target and a choice count', () => {
+    expect(formatProblems(letter({}))).toEqual([
+      'part schreiben: a writing part needs a rubric',
+      'part schreiben: wordTarget needs 0 < min < max',
+      'part schreiben: choices must be 1 or 2',
+    ]);
+  });
+
+  it('names a word target or choice count that is not a number', () => {
+    expect(
+      formatProblems(letter({ rubric: { criteria: [crit('a'), crit('b')] }, wordTarget: { min: '100', max: '150' } as never, choices: '1' as never }))
+    ).toEqual(['part schreiben: wordTarget needs 0 < min < max', 'part schreiben: choices must be 1 or 2']);
   });
 
   it('accepts a complete letter part', () => {
