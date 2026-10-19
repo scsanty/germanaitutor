@@ -1,0 +1,256 @@
+{
+  "formatId": "goethe-b1",
+  "partId": "hoeren-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-b1__hoeren-2__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Herr Lorenz m] Guten Tag, meine Damen und Herren, herzlich willkommen im Besucherbergwerk Grube Klara. Mein Name ist Peter Lorenz. Ich habe selbst fünfundzwanzig Jahre hier unten gearbeitet, bevor das Bergwerk geschlossen wurde. Heute zeige ich Ihnen, wie die Arbeit früher war.\n[Herr Lorenz m] Zuerst ein paar wichtige Hinweise. Unsere Führung dauert ungefähr anderthalb Stunden. Bitte setzen Sie alle einen Helm auf, die Helme liegen hier vorne in der Kiste.\n[Herr Lorenz m] Unten im Berg ist es das ganze Jahr über nur etwa zehn Grad warm. Ziehen Sie also Ihre Jacken an, auch wenn draußen die Sonne scheint.\n[Herr Lorenz m] Wir fahren gleich mit einem kleinen Zug in den Berg hinein. Während der Fahrt bleiben Sie bitte sitzen und halten Ihre Hände im Wagen. Fotos dürfen Sie gern machen, aber bitte ohne Blitz, weil das Licht in den engen Gängen andere Besucher blendet.\n[Herr Lorenz m] Im Berg sehen wir zuerst die alten Werkzeuge. Früher haben die Bergleute hier mit Hammer und Meißel gearbeitet, später mit großen Maschinen.\n[Herr Lorenz m] Eine von diesen Maschinen schalte ich für Sie ein. Sie ist sehr laut, deshalb bekommen Sie vorher Ohrenschützer von mir.\n[Herr Lorenz m] Am Ende der Führung kommen wir wieder hier am Eingang an. Im Museumsladen können Sie dann echte Steine aus dem Bergwerk kaufen.\n[Herr Lorenz m] Und für die Kinder gibt es dort eine kleine Überraschung: Wer möchte, darf mit einer Lampe selbst nach kleinen Kristallen suchen. So, und jetzt gehen wir zum Zug.",
+          "questions": [
+            {
+              "question": "Herr Lorenz …",
+              "options": [
+                "hat früher im Bergwerk gearbeitet.",
+                "ist der Besitzer des Museums.",
+                "hat Geschichte studiert."
+              ],
+              "correctIndex": 0,
+              "evidence": "Ich habe selbst fünfundzwanzig Jahre hier unten gearbeitet"
+            },
+            {
+              "question": "Wie lange dauert die Führung?",
+              "options": [
+                "etwa eine Stunde",
+                "etwa anderthalb Stunden",
+                "etwa zwei Stunden"
+              ],
+              "correctIndex": 1,
+              "evidence": "Unsere Führung dauert ungefähr anderthalb Stunden."
+            },
+            {
+              "question": "Was sagt Herr Lorenz über das Fotografieren?",
+              "options": [
+                "Es ist im Bergwerk verboten.",
+                "Man muss ihn vorher fragen.",
+                "Man darf keinen Blitz benutzen."
+              ],
+              "correctIndex": 2,
+              "evidence": "aber bitte ohne Blitz"
+            },
+            {
+              "question": "Warum bekommen die Besucher Ohrenschützer?",
+              "options": [
+                "Eine Maschine macht viel Lärm.",
+                "Der Zug ist sehr laut.",
+                "Im Berg wird gerade gebaut."
+              ],
+              "correctIndex": 0,
+              "evidence": "Sie ist sehr laut, deshalb bekommen Sie vorher Ohrenschützer"
+            },
+            {
+              "question": "Was können Kinder am Ende machen?",
+              "options": [
+                "noch einmal mit dem Zug fahren",
+                "selbst nach Kristallen suchen",
+                "einen Stein geschenkt bekommen"
+              ],
+              "correctIndex": 1,
+              "evidence": "darf mit einer Lampe selbst nach kleinen Kristallen suchen"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "He worked down in the mine himself for twenty-five years.",
+            "de": "Er hat selbst fünfundzwanzig Jahre im Bergwerk gearbeitet."
+          },
+          {
+            "en": "The tour takes about an hour and a half.",
+            "de": "Die Führung dauert ungefähr anderthalb Stunden."
+          },
+          {
+            "en": "Photos are allowed, but without flash.",
+            "de": "Fotos sind erlaubt, aber ohne Blitz."
+          },
+          {
+            "en": "He switches on a very loud machine, so visitors get ear protection.",
+            "de": "Er schaltet eine sehr laute Maschine ein. Deshalb bekommen die Besucher Ohrenschützer."
+          },
+          {
+            "en": "In the museum shop, children can look for small crystals with a lamp. The stones are for sale, not free.",
+            "de": "Im Museumsladen dürfen Kinder mit einer Lampe nach kleinen Kristallen suchen. Die Steine muss man kaufen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__hoeren-2__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Frau Sonnleitner f] Herzlich willkommen auf dem Obsthof Sonnleitner! Ich bin Anna Sonnleitner. Den Hof führe ich zusammen mit meinem Bruder, und unsere Familie macht das schon in der dritten Generation. Schön, dass Sie heute beim Apfeltag dabei sind.\n[Frau Sonnleitner f] Zuerst kurz zum Ablauf. Wir gehen gleich gemeinsam in den Obstgarten. Dort zeige ich Ihnen, wie man Äpfel richtig pflückt: Man dreht den Apfel vorsichtig nach oben, man zieht nicht daran.\n[Frau Sonnleitner f] Sonst bricht der Zweig ab, und an dieser Stelle wachsen im nächsten Jahr keine Äpfel.\n[Frau Sonnleitner f] Jeder bekommt am Eingang zum Garten einen Korb. Bezahlt wird nach Gewicht, ein Kilo kostet einen Euro zwanzig. Die vollen Körbe wiegen wir hier am Hofladen, bevor Sie nach Hause fahren.\n[Frau Sonnleitner f] Wir haben über zwanzig Apfelsorten. Viele davon finden Sie in keinem Supermarkt, weil sie nicht lange halten. Probieren Sie ruhig direkt am Baum, das ist ausdrücklich erlaubt!\n[Frau Sonnleitner f] Um vierzehn Uhr pressen wir in der Scheune Apfelsaft. Die Kinder dürfen dabei helfen, und jedes Kind bekommt am Ende eine kleine Flasche Saft geschenkt.\n[Frau Sonnleitner f] Eine Bitte noch: Die Leitern in den Bäumen sind nur für unsere Mitarbeiter. Bitte klettern Sie nicht hinauf, die Äpfel, die man vom Boden aus erreicht, reichen völlig. Und jetzt viel Spaß!",
+          "questions": [
+            {
+              "question": "Frau Sonnleitner …",
+              "options": [
+                "hat den Hof vor kurzem gekauft.",
+                "leitet den Hof mit ihrem Bruder.",
+                "hat den Hof allein von ihren Eltern übernommen."
+              ],
+              "correctIndex": 1,
+              "evidence": "Den Hof führe ich zusammen mit meinem Bruder"
+            },
+            {
+              "question": "Wie soll man die Äpfel pflücken?",
+              "options": [
+                "kräftig nach unten ziehen",
+                "mit einer Schere abschneiden",
+                "vorsichtig nach oben drehen"
+              ],
+              "correctIndex": 2,
+              "evidence": "Man dreht den Apfel vorsichtig nach oben"
+            },
+            {
+              "question": "Was passiert am Hofladen?",
+              "options": [
+                "Die Äpfel werden gewogen.",
+                "Man bekommt einen Korb.",
+                "Man kann Apfelsaft probieren."
+              ],
+              "correctIndex": 0,
+              "evidence": "Die vollen Körbe wiegen wir hier am Hofladen"
+            },
+            {
+              "question": "Was sagt Frau Sonnleitner über die Apfelsorten?",
+              "options": [
+                "Man findet sie in jedem Supermarkt.",
+                "Sie halten sehr lange.",
+                "Man darf sie direkt im Garten probieren."
+              ],
+              "correctIndex": 2,
+              "evidence": "Probieren Sie ruhig direkt am Baum"
+            },
+            {
+              "question": "Was bekommen die Kinder beim Saftpressen?",
+              "options": [
+                "einen eigenen Apfelbaum",
+                "eine Flasche Saft",
+                "einen Korb Äpfel"
+              ],
+              "correctIndex": 1,
+              "evidence": "jedes Kind bekommt am Ende eine kleine Flasche Saft geschenkt"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "She runs the farm together with her brother; it has been in the family for three generations.",
+            "de": "Sie führt den Hof zusammen mit ihrem Bruder. Die Familie hat den Hof schon in der dritten Generation."
+          },
+          {
+            "en": "You turn the apple carefully upwards and don't pull it.",
+            "de": "Man dreht den Apfel vorsichtig nach oben und zieht nicht daran."
+          },
+          {
+            "en": "The full baskets are weighed at the farm shop; the baskets are handed out at the garden entrance.",
+            "de": "Am Hofladen werden die vollen Körbe gewogen. Die Körbe bekommt man am Eingang zum Garten."
+          },
+          {
+            "en": "Visitors are explicitly allowed to taste the apples straight from the tree.",
+            "de": "Die Besucher dürfen die Äpfel direkt am Baum probieren."
+          },
+          {
+            "en": "Every child gets a small bottle of juice as a present.",
+            "de": "Jedes Kind bekommt eine kleine Flasche Saft geschenkt."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__hoeren-2__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Herr Dietrich m] Hallo und herzlich willkommen bei der Segelschule am Mühlsee! Ich bin Max Dietrich und an diesem Wochenende Ihr Segellehrer.\n[Herr Dietrich m] Die meisten von Ihnen haben mir geschrieben, dass sie noch nie gesegelt sind. Das ist überhaupt kein Problem, der Kurs ist genau für Anfänger gedacht.\n[Herr Dietrich m] Heute Vormittag bleiben wir erst mal an Land. Ich erkläre Ihnen die wichtigsten Teile eines Bootes, und wir üben die Knoten, die man beim Segeln braucht. Erst nach dem Mittagessen gehen wir aufs Wasser.\n[Herr Dietrich m] Auf dem Wasser sitzen immer drei Personen in einem Boot, und ich fahre mit dem Motorboot nebenher. Jeder trägt die ganze Zeit eine Schwimmweste, auch wer sehr gut schwimmen kann. Die Westen bekommen Sie von uns, die müssen Sie nicht mitbringen.\n[Herr Dietrich m] Was Sie aber unbedingt brauchen, sind Schuhe mit heller Sohle, die nass werden dürfen. Dunkle Sohlen machen auf dem Boot Streifen, die man kaum wieder wegbekommt.\n[Herr Dietrich m] Für morgen Nachmittag sind Gewitter angesagt. Deshalb fangen wir morgen schon um acht Uhr an, eine Stunde früher als geplant, und sind dann mittags fertig.\n[Herr Dietrich m] Am Ende des Kurses bekommen alle eine Teilnahmebestätigung. Wer möchte, kann im Herbst bei uns den Segelschein machen. Kursteilnehmer bekommen dafür zehn Prozent Rabatt. So, jetzt holen wir erst mal die Seile.",
+          "questions": [
+            {
+              "question": "Für wen ist der Kurs?",
+              "options": [
+                "für Leute mit etwas Erfahrung",
+                "für Anfänger",
+                "für Kinder und Jugendliche"
+              ],
+              "correctIndex": 1,
+              "evidence": "der Kurs ist genau für Anfänger gedacht"
+            },
+            {
+              "question": "Was machen die Teilnehmer am ersten Vormittag?",
+              "options": [
+                "Sie segeln mit dem Lehrer.",
+                "Sie fahren mit dem Motorboot.",
+                "Sie lernen Knoten."
+              ],
+              "correctIndex": 2,
+              "evidence": "wir üben die Knoten"
+            },
+            {
+              "question": "Die Schwimmwesten …",
+              "options": [
+                "bekommt man von der Segelschule.",
+                "muss jeder selbst mitbringen.",
+                "tragen nur Leute, die nicht gut schwimmen."
+              ],
+              "correctIndex": 0,
+              "evidence": "Die Westen bekommen Sie von uns"
+            },
+            {
+              "question": "Warum beginnt der Kurs morgen früher?",
+              "options": [
+                "Der Lehrer hat nachmittags einen Termin.",
+                "Am Nachmittag soll ein Gewitter kommen.",
+                "Mittags sind zu viele Boote auf dem See."
+              ],
+              "correctIndex": 1,
+              "evidence": "Für morgen Nachmittag sind Gewitter angesagt."
+            },
+            {
+              "question": "Was ist für Kursteilnehmer günstiger?",
+              "options": [
+                "Schwimmwesten",
+                "Segelschuhe",
+                "der Segelschein im Herbst"
+              ],
+              "correctIndex": 2,
+              "evidence": "Kursteilnehmer bekommen dafür zehn Prozent Rabatt."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The course is designed for beginners.",
+            "de": "Der Kurs ist für Anfänger gedacht."
+          },
+          {
+            "en": "In the morning they stay on land and practise knots; they only go on the water after lunch.",
+            "de": "Am Vormittag bleiben sie an Land und üben Knoten. Aufs Wasser gehen sie erst nach dem Mittagessen."
+          },
+          {
+            "en": "The sailing school provides the life jackets, and everyone wears one.",
+            "de": "Die Segelschule gibt allen eine Schwimmweste, und jeder muss sie tragen."
+          },
+          {
+            "en": "Thunderstorms are forecast for the afternoon, so they start an hour earlier.",
+            "de": "Für den Nachmittag sind Gewitter angesagt. Deshalb fangen sie eine Stunde früher an."
+          },
+          {
+            "en": "Course participants get a ten per cent discount on the sailing licence in autumn.",
+            "de": "Kursteilnehmer bekommen zehn Prozent Rabatt auf den Segelschein im Herbst."
+          }
+        ]
+      }
+    }
+  ]
+}

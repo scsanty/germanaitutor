@@ -1,0 +1,451 @@
+{
+  "formatId": "goethe-b1",
+  "partId": "hoeren-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-b1__hoeren-1__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter phone\n[Ansage f] Text 1.\n[Herr Krause m] Guten Tag, Frau Yilmaz, hier ist Krause von der Autowerkstatt Kranich. Ich rufe wegen Ihres Autos an.\n[Herr Krause m] Die Inspektion ist fertig, aber wir haben gesehen, dass die vorderen Bremsen nicht mehr gut sind. Das Ersatzteil müssen wir erst bestellen, es kommt wahrscheinlich am Freitag.\n[Herr Krause m] Sie können das Auto bis dahin trotzdem fahren, aber bitte nicht mehr auf der Autobahn. Rufen Sie uns doch kurz zurück, ob wir die Bremsen wechseln sollen. Danke und auf Wiederhören.\n[Ansage f] Text 2.\n[Lena f] Hallo Tobi, hier ist Lena. Du, wegen Samstag: Wir feiern meinen Geburtstag jetzt doch nicht im Garten, der Wetterbericht sagt Regen.\n[Lena f] Wir treffen uns stattdessen in der kleinen Pizzeria neben dem Kino, ich hab schon einen Tisch reserviert. Die Uhrzeit bleibt gleich, also um acht.\n[Lena f] Und bitte bring kein Geschenk mit! Wenn du magst, kannst du aber deine Gitarre mitbringen, später gehen wir nämlich noch zu mir. Bis Samstag!\n[Ansage f] Text 3.\n[Herr Weber m] Guten Tag, Herr Brandt, hier ist die Praxis für Physiotherapie am Sonnenhof, Sie sprechen mit Jonas Weber.\n[Herr Weber m] Ihr Termin morgen um zehn Uhr muss leider ausfallen, weil unsere Kollegin krank ist. Wir können Ihnen zwei neue Termine anbieten: Donnerstag um sieben Uhr dreißig oder Freitag um sechzehn Uhr.\n[Herr Weber m] Wenn Sie den Termin am Freitag nehmen, bringen Sie bitte eine neue Überweisung vom Arzt mit, denn die alte ist dann nicht mehr gültig. Bitte melden Sie sich bis heute Abend bei uns.\n[Ansage f] Text 4.\n[Frau Lindner f] Guten Tag, hier spricht Lindner von der Hausverwaltung Berger. Diese Nachricht geht an alle Mieter in der Gartenstraße fünf.\n[Frau Lindner f] Am Mittwoch wird im Keller eine neue Wasserleitung eingebaut. Deshalb gibt es von neun bis ungefähr fünfzehn Uhr kein Wasser im ganzen Haus. Bitte füllen Sie sich vorher ein paar Flaschen ab.\n[Frau Lindner f] Außerdem muss der Handwerker in jede Wohnung, um die Wasserzähler zu kontrollieren. Wenn Sie an dem Tag nicht zu Hause sind, geben Sie Ihren Schlüssel bitte bis Dienstag beim Hausmeister ab.\n[Ansage f] Text 5.\n[Herr Ahmadi m] Hallo, hier ist die Stadtbibliothek Neuweiler, Ahmadi am Apparat. Frau Schubert, das Buch, das Sie vorbestellt haben, ist jetzt da. Wir legen es Ihnen zehn Tage lang zurück.\n[Herr Ahmadi m] Und noch ein Hinweis: Wir haben neue Öffnungszeiten. Montags ist die Bibliothek jetzt geschlossen, dafür haben wir samstags bis achtzehn Uhr geöffnet.\n[Herr Ahmadi m] Ein anderes Buch von Ihnen ist übrigens seit einer Woche überfällig. Sie können es auch auf unserer Internetseite verlängern, dann zahlen Sie keine Gebühr.",
+          "questions": [
+            {
+              "question": "Das Auto von Frau Yilmaz ist schon vollständig repariert.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Das Ersatzteil müssen wir erst bestellen"
+            },
+            {
+              "question": "Was soll Frau Yilmaz tun?",
+              "options": [
+                "das Auto am Freitag abholen",
+                "in der Werkstatt anrufen",
+                "das Ersatzteil selbst bestellen"
+              ],
+              "correctIndex": 1,
+              "evidence": "Rufen Sie uns doch kurz zurück"
+            },
+            {
+              "question": "Lena hat in einem Restaurant einen Tisch bestellt.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "ich hab schon einen Tisch reserviert"
+            },
+            {
+              "question": "Was kann Tobi zur Feier mitbringen?",
+              "options": [
+                "ein Geschenk",
+                "etwas zu essen",
+                "ein Musikinstrument"
+              ],
+              "correctIndex": 2,
+              "evidence": "kannst du aber deine Gitarre mitbringen"
+            },
+            {
+              "question": "Herr Brandt kann zwischen zwei Terminen wählen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Wir können Ihnen zwei neue Termine anbieten"
+            },
+            {
+              "question": "Was braucht Herr Brandt, wenn er am Freitag kommt?",
+              "options": [
+                "ein neues Papier vom Arzt",
+                "seine Versichertenkarte",
+                "bequeme Kleidung"
+              ],
+              "correctIndex": 0,
+              "evidence": "bringen Sie bitte eine neue Überweisung vom Arzt mit"
+            },
+            {
+              "question": "Am Mittwoch gibt es den ganzen Tag kein Wasser.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "von neun bis ungefähr fünfzehn Uhr kein Wasser"
+            },
+            {
+              "question": "Was sollen Mieter tun, die am Mittwoch nicht zu Hause sind?",
+              "options": [
+                "den Handwerker anrufen",
+                "den Wohnungsschlüssel beim Hausmeister lassen",
+                "einen neuen Termin vereinbaren"
+              ],
+              "correctIndex": 1,
+              "evidence": "geben Sie Ihren Schlüssel bitte bis Dienstag beim Hausmeister ab"
+            },
+            {
+              "question": "Frau Schubert kann das bestellte Buch zehn Tage lang abholen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Wir legen es Ihnen zehn Tage lang zurück."
+            },
+            {
+              "question": "Wann ist die Bibliothek jetzt geschlossen?",
+              "options": [
+                "am Samstag",
+                "am Mittwochvormittag",
+                "am Montag"
+              ],
+              "correctIndex": 2,
+              "evidence": "Montags ist die Bibliothek jetzt geschlossen"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The workshop still has to order the brake part, so the car is not fully repaired.",
+            "de": "Die Werkstatt muss das Ersatzteil erst bestellen. Das Auto ist also noch nicht fertig repariert."
+          },
+          {
+            "en": "Mr Krause asks her to call the workshop back.",
+            "de": "Herr Krause bittet sie, die Werkstatt zurückzurufen."
+          },
+          {
+            "en": "Lena has already reserved a table in the small pizzeria.",
+            "de": "Lena hat schon einen Tisch in der Pizzeria reserviert."
+          },
+          {
+            "en": "Lena says he can bring his guitar, but no present.",
+            "de": "Lena sagt, er kann seine Gitarre mitbringen, aber kein Geschenk."
+          },
+          {
+            "en": "The practice offers him two new appointments: Thursday or Friday.",
+            "de": "Die Praxis bietet ihm zwei neue Termine an: Donnerstag oder Freitag."
+          },
+          {
+            "en": "For the Friday appointment he needs a new referral from his doctor.",
+            "de": "Für den Termin am Freitag braucht er eine neue Überweisung vom Arzt."
+          },
+          {
+            "en": "The water is only off from nine until about three in the afternoon, not all day.",
+            "de": "Es gibt nur von neun bis ungefähr fünfzehn Uhr kein Wasser, nicht den ganzen Tag."
+          },
+          {
+            "en": "They should leave their key with the caretaker by Tuesday.",
+            "de": "Sie sollen ihren Schlüssel bis Dienstag beim Hausmeister abgeben."
+          },
+          {
+            "en": "The library keeps the book for her for ten days.",
+            "de": "Die Bibliothek legt ihr das Buch zehn Tage lang zurück."
+          },
+          {
+            "en": "Under the new opening hours the library is closed on Mondays.",
+            "de": "Mit den neuen Öffnungszeiten ist die Bibliothek montags geschlossen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__hoeren-1__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Ansage f] Text 1.\n[Verkehrsredaktion m] Und jetzt die Verkehrsmeldungen. Auf der Autobahn zwischen dem Kreuz Neuweiler und Steinbach gibt es nach einem Unfall acht Kilometer Stau. Die rechte Spur ist gesperrt.\n[Verkehrsredaktion m] Wenn Sie in Richtung Steinbach unterwegs sind, nehmen Sie am besten die Umleitung über die Bundesstraße.\n[Verkehrsredaktion m] In der Innenstadt von Neuweiler ist ab heute die Brückenstraße wegen Bauarbeiten gesperrt, und zwar bis Ende des Monats. Die Busse fahren in dieser Zeit eine andere Strecke.\n[Ansage f] Text 2.\n[Wetterredaktion f] Das Wetter für morgen: Am Vormittag ist es noch sonnig und trocken, ab Mittag ziehen von Westen dicke Wolken auf. Am Nachmittag regnet es überall, im Bergland gibt es auch Gewitter.\n[Wetterredaktion f] Die Temperaturen liegen bei vierzehn bis siebzehn Grad. Am Wochenende wird es dann deutlich wärmer, mit bis zu vierundzwanzig Grad. Wer am Samstag grillen möchte, hat also Glück.\n[Ansage f] Text 3.\n[Moderator m] Unser Tipp für heute Abend: Im Stadtpark von Neuweiler beginnt das Lichterfest. Über zweihundert Laternen machen den Park zu einem bunten Märchenwald. Los geht es, wenn es dunkel wird, also gegen zwanzig Uhr.\n[Moderator m] Der Eintritt ist frei, die Veranstalter freuen sich aber über eine Spende für den neuen Spielplatz.\n[Moderator m] Parkplätze gibt es leider kaum, deshalb kommen Sie am besten mit dem Fahrrad oder mit der Straßenbahn.\n[Ansage f] Text 4.\n[Werbesprecher m] Möbelhaus Wohnwelt Hartmann: Bei uns ist Sommerschlussverkauf! Nur diese Woche bekommen Sie alle Gartenmöbel zum halben Preis.\n[Werbesprecher m] Und für Familien: Kinder bis zwölf Jahre essen am Samstag in unserem Restaurant kostenlos. Wer ein neues Sofa kauft, bekommt die Lieferung nach Hause gratis dazu.\n[Werbesprecher m] Wohnwelt Hartmann, direkt an der Ausfahrt Neuweiler Nord. Montag bis Samstag von zehn bis zwanzig Uhr.\n[Ansage f] Text 5.\n[Moderatorin f] Und jetzt zu unserem Gewinnspiel. Heute verlosen wir zwei Karten für das Konzert der Band Nordlicht am Freitag in der Stadthalle.\n[Moderatorin f] Die Frage lautet: Wie heißt das neue Album der Band? Kleiner Tipp: Wir haben heute Morgen schon ein Lied daraus gespielt.\n[Moderatorin f] Bitte rufen Sie diesmal nicht an, sondern schreiben Sie uns die Antwort über das Formular auf unserer Internetseite, und zwar bis vierzehn Uhr. Den Gewinner oder die Gewinnerin rufen wir dann am Nachmittag an.",
+          "questions": [
+            {
+              "question": "Nach dem Unfall ist die ganze Autobahn gesperrt.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Die rechte Spur ist gesperrt."
+            },
+            {
+              "question": "Was ist in der Brückenstraße los?",
+              "options": [
+                "Dort wird gebaut.",
+                "Dort gab es einen Unfall.",
+                "Dort fahren mehr Busse."
+              ],
+              "correctIndex": 0,
+              "evidence": "wegen Bauarbeiten gesperrt"
+            },
+            {
+              "question": "Am Vormittag braucht man morgen noch keinen Regenschirm.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Am Vormittag ist es noch sonnig und trocken"
+            },
+            {
+              "question": "Wie wird das Wetter am Wochenende?",
+              "options": [
+                "kühler als morgen",
+                "wärmer als morgen",
+                "genauso wie morgen"
+              ],
+              "correctIndex": 1,
+              "evidence": "Am Wochenende wird es dann deutlich wärmer"
+            },
+            {
+              "question": "Für das Lichterfest muss man nichts bezahlen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Der Eintritt ist frei"
+            },
+            {
+              "question": "Wofür sammeln die Veranstalter Geld?",
+              "options": [
+                "für neue Laternen",
+                "für mehr Parkplätze",
+                "für einen Spielplatz"
+              ],
+              "correctIndex": 2,
+              "evidence": "über eine Spende für den neuen Spielplatz"
+            },
+            {
+              "question": "Das Angebot für Gartenmöbel gilt einen ganzen Monat.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Nur diese Woche bekommen Sie alle Gartenmöbel zum halben Preis."
+            },
+            {
+              "question": "Was bekommt man, wenn man ein Sofa kauft?",
+              "options": [
+                "die Lieferung ohne Kosten",
+                "ein Essen im Restaurant",
+                "ein zweites Sofa zum halben Preis"
+              ],
+              "correctIndex": 0,
+              "evidence": "bekommt die Lieferung nach Hause gratis dazu"
+            },
+            {
+              "question": "Bei dem Gewinnspiel kann man Konzertkarten gewinnen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Heute verlosen wir zwei Karten für das Konzert"
+            },
+            {
+              "question": "Wie soll man beim Gewinnspiel mitmachen?",
+              "options": [
+                "beim Radiosender anrufen",
+                "die Antwort über die Internetseite schicken",
+                "am Freitag zur Stadthalle kommen"
+              ],
+              "correctIndex": 1,
+              "evidence": "schreiben Sie uns die Antwort über das Formular auf unserer Internetseite"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Only the right lane is closed, not the whole motorway.",
+            "de": "Nur die rechte Spur ist gesperrt, nicht die ganze Autobahn."
+          },
+          {
+            "en": "The street is closed because of building work.",
+            "de": "Die Straße ist wegen Bauarbeiten gesperrt."
+          },
+          {
+            "en": "In the morning it will still be sunny and dry; the rain only comes in the afternoon.",
+            "de": "Am Vormittag ist es noch sonnig und trocken. Der Regen kommt erst am Nachmittag."
+          },
+          {
+            "en": "At the weekend it will be clearly warmer, up to twenty-four degrees.",
+            "de": "Am Wochenende wird es deutlich wärmer, bis zu vierundzwanzig Grad."
+          },
+          {
+            "en": "Entry is free; a donation is welcome but not required.",
+            "de": "Der Eintritt ist frei. Eine Spende ist willkommen, aber nicht nötig."
+          },
+          {
+            "en": "The donations are for the new playground.",
+            "de": "Die Spenden sind für den neuen Spielplatz."
+          },
+          {
+            "en": "The garden furniture offer is only valid this week.",
+            "de": "Das Angebot für Gartenmöbel gilt nur diese Woche."
+          },
+          {
+            "en": "Anyone who buys a sofa gets free home delivery.",
+            "de": "Wer ein Sofa kauft, bekommt die Lieferung nach Hause kostenlos."
+          },
+          {
+            "en": "The prize is two tickets for the band's concert.",
+            "de": "Man kann zwei Karten für das Konzert gewinnen."
+          },
+          {
+            "en": "Listeners should send their answer using the form on the website, not by phone.",
+            "de": "Man soll die Antwort über das Formular auf der Internetseite schicken und nicht anrufen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__hoeren-1__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter station\n[Ansage f] Text 1.\n[Bahnhofsansage m] Achtung an Gleis vier. Der Regionalexpress nach Steinbach, planmäßige Abfahrt neun Uhr zwölf, fährt heute von Gleis sieben. Bitte beachten Sie den Gleiswechsel.\n[Bahnhofsansage m] Wegen Bauarbeiten endet dieser Zug heute bereits in Altdorf. Reisende nach Steinbach steigen in Altdorf in die Busse des Ersatzverkehrs um. Ihre Fahrkarten gelten auch im Bus.\n[Ansage f] Text 2.\n[Flughafen f] Information für die Passagiere des Fluges nach Lissabon. Ihr Flug hat leider etwa fünfzig Minuten Verspätung, weil das Flugzeug später angekommen ist.\n[Flughafen f] Das Einsteigen beginnt jetzt um zehn Uhr fünfzehn am Ausgang vierzehn statt am Ausgang neun.\n[Flughafen f] Als kleine Entschuldigung bekommen alle Passagiere dieses Fluges am Kiosk neben Ausgang vierzehn ein kostenloses Getränk. Bitte zeigen Sie dort Ihre Bordkarte.\n[Ansage f] Text 3.\n[Kaufhaus m] Liebe Kundinnen und Kunden, nur heute in unserer Sportabteilung im dritten Stock: Alle Wanderschuhe sind um dreißig Prozent reduziert.\n[Kaufhaus m] Außerdem können Sie dort von fünfzehn bis achtzehn Uhr Ihre Laufschuhe kostenlos testen. Unsere Fachleute sehen sich Ihren Laufstil auf dem Laufband an.\n[Kaufhaus m] Bitte beachten Sie: Die Rolltreppe zwischen dem zweiten und dem dritten Stock ist zurzeit außer Betrieb. Bitte benutzen Sie die Aufzüge am Haupteingang.\n[Ansage f] Text 4.\n[Kapitän m] Meine Damen und Herren, hier spricht Ihr Kapitän. In wenigen Minuten erreichen wir die Insel Hellwerder. Wir legen dort eine Pause von neunzig Minuten ein.\n[Kapitän m] Die Rückfahrt beginnt pünktlich um sechzehn Uhr dreißig. Bitte seien Sie rechtzeitig zurück, denn wir können nicht warten.\n[Kapitän m] Wegen des starken Windes bleibt das obere Deck ab sofort geschlossen. Kaffee und Kuchen bekommen Sie weiterhin im Restaurant auf dem Hauptdeck.\n[Ansage f] Text 5.\n[Tierpark f] Liebe Besucherinnen und Besucher, in einer halben Stunde, um siebzehn Uhr, schließt der Tierpark Lindenau. Die Kassen sind bereits geschlossen.\n[Tierpark f] Die Fütterung der Seehunde findet heute ausnahmsweise nicht statt, weil eine Tierärztin die Tiere untersucht.\n[Tierpark f] Dafür können Kinder jetzt noch im Streichelzoo die Ziegen füttern. Das Futter gibt es kostenlos am Eingang des Streichelzoos. Wir wünschen Ihnen einen schönen Abend.",
+          "questions": [
+            {
+              "question": "Der Zug nach Steinbach fährt heute von einem anderen Gleis ab.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "fährt heute von Gleis sieben"
+            },
+            {
+              "question": "Wie kommen die Reisenden von Altdorf nach Steinbach?",
+              "options": [
+                "mit einem anderen Zug",
+                "mit dem Bus",
+                "mit dem Taxi"
+              ],
+              "correctIndex": 1,
+              "evidence": "steigen in Altdorf in die Busse des Ersatzverkehrs um"
+            },
+            {
+              "question": "Der Flug ist verspätet, weil das Wetter schlecht ist.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "weil das Flugzeug später angekommen ist"
+            },
+            {
+              "question": "Was bekommen die Passagiere am Kiosk?",
+              "options": [
+                "etwas zu trinken",
+                "einen Gutschein für ein Essen",
+                "eine neue Bordkarte"
+              ],
+              "correctIndex": 0,
+              "evidence": "ein kostenloses Getränk"
+            },
+            {
+              "question": "Die Sportabteilung ist im zweiten Stock.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "in unserer Sportabteilung im dritten Stock"
+            },
+            {
+              "question": "Wie kommt man im Moment am besten in die Sportabteilung?",
+              "options": [
+                "mit der Rolltreppe",
+                "über die Treppe am Ausgang",
+                "mit dem Aufzug"
+              ],
+              "correctIndex": 2,
+              "evidence": "Bitte benutzen Sie die Aufzüge am Haupteingang."
+            },
+            {
+              "question": "Auf der Insel haben die Passagiere eineinhalb Stunden Zeit.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Wir legen dort eine Pause von neunzig Minuten ein."
+            },
+            {
+              "question": "Warum ist das obere Deck geschlossen?",
+              "options": [
+                "wegen des Wetters",
+                "weil es geputzt wird",
+                "weil zu viele Passagiere an Bord sind"
+              ],
+              "correctIndex": 0,
+              "evidence": "Wegen des starken Windes bleibt das obere Deck ab sofort geschlossen."
+            },
+            {
+              "question": "Man kann heute keine Eintrittskarten mehr kaufen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Die Kassen sind bereits geschlossen."
+            },
+            {
+              "question": "Was können Kinder jetzt noch machen?",
+              "options": [
+                "die Seehunde füttern",
+                "die Ziegen füttern",
+                "Tierfutter kaufen"
+              ],
+              "correctIndex": 1,
+              "evidence": "Dafür können Kinder jetzt noch im Streichelzoo die Ziegen füttern."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The train leaves from platform seven today instead of platform four.",
+            "de": "Der Zug fährt heute von Gleis sieben, nicht von Gleis vier."
+          },
+          {
+            "en": "From Altdorf, passengers change to replacement buses.",
+            "de": "Ab Altdorf fahren die Reisenden mit Bussen weiter."
+          },
+          {
+            "en": "The delay is because the plane arrived late, not because of the weather.",
+            "de": "Der Flug ist verspätet, weil das Flugzeug später angekommen ist, nicht wegen des Wetters."
+          },
+          {
+            "en": "Passengers on this flight get a free drink at the kiosk.",
+            "de": "Die Passagiere bekommen am Kiosk ein kostenloses Getränk."
+          },
+          {
+            "en": "The sports department is on the third floor.",
+            "de": "Die Sportabteilung ist im dritten Stock."
+          },
+          {
+            "en": "The escalator is out of order, so customers should use the lifts.",
+            "de": "Die Rolltreppe ist kaputt, deshalb soll man den Aufzug nehmen."
+          },
+          {
+            "en": "The break on the island is ninety minutes, which is an hour and a half.",
+            "de": "Die Pause auf der Insel dauert neunzig Minuten, also eineinhalb Stunden."
+          },
+          {
+            "en": "The upper deck is closed because of the strong wind.",
+            "de": "Das obere Deck ist wegen des starken Windes geschlossen."
+          },
+          {
+            "en": "The ticket desks are already closed.",
+            "de": "Die Kassen sind schon geschlossen."
+          },
+          {
+            "en": "Children can still feed the goats in the petting zoo; the food is free.",
+            "de": "Kinder können im Streichelzoo noch die Ziegen füttern. Das Futter ist kostenlos."
+          }
+        ]
+      }
+    }
+  ]
+}

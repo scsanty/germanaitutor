@@ -1,0 +1,382 @@
+{
+  "formatId": "goethe-b1",
+  "partId": "hoeren-4",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-b1__hoeren-4__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Moderatorin f] Herzlich willkommen zu unserer Sendung Thema am Abend. Bald beginnen die Sommerferien, und viele Jugendliche suchen einen Ferienjob. Ist das eine gute Idee, oder sollen Ferien Ferien bleiben?\n[Moderatorin f] Darüber spreche ich heute mit zwei Gästen. Mein erster Gast ist Herr Brenner, Lehrer an einer Gesamtschule. Mein zweiter Gast ist Frau Okafor. Sie ist achtzehn und hat schon in mehreren Ferien gejobbt. Herr Brenner, was meinen Sie?\n[Herr Brenner m] Ich bin da eher skeptisch. Die Schüler haben ein anstrengendes Schuljahr hinter sich. Ich finde, in den Ferien sollen sie sich zuerst einmal richtig erholen.\n[Frau Okafor f] Also, ich sehe das anders. Ich habe letzten Sommer vier Wochen in einer Gärtnerei gearbeitet, und das war für mich gar nicht anstrengend. Im Gegenteil, nach dem vielen Sitzen in der Schule tat mir die Arbeit draußen richtig gut.\n[Moderatorin f] Ich erinnere mich noch an meinen ersten Ferienjob in einer Eisdiele. Da habe ich zum ersten Mal gemerkt, wie lange man für zehn Euro arbeiten muss.\n[Frau Okafor f] Genau. Und ich habe mein Geld nicht einfach ausgegeben. Ich spare für den Führerschein, und den bezahle ich ganz allein, ohne meine Eltern.\n[Herr Brenner m] Das ist natürlich gut. Mich stört aber etwas anderes: Manche Firmen nutzen die Jugendlichen aus. Ich kenne Schüler, die zehn Stunden am Tag Kisten getragen haben, für sehr wenig Geld.\n[Moderatorin f] Was würden Sie den Eltern denn raten, Herr Brenner?\n[Herr Brenner m] Sie sollten den Vertrag genau lesen und mit ihren Kindern über die Arbeitszeiten sprechen. Und ich würde sagen: höchstens die Hälfte der Ferien arbeiten, nicht mehr.\n[Frau Okafor f] Das mit dem Vertrag finde ich wichtig. Bei meinem ersten Job gab es gar keinen, das würde ich heute nicht mehr machen. Und noch etwas: Durch die Arbeit in der Gärtnerei habe ich gemerkt, dass ich später gern einen Beruf mit Pflanzen lernen möchte.\n[Moderatorin f] Viele Jugendliche finden aber gar keinen Job. Gerade auf dem Land gibt es oft nur wenige Angebote, und ohne Auto kommt man nicht hin.\n[Moderatorin f] Herr Brenner, Frau Okafor, vielen Dank für das Gespräch.",
+          "questions": [
+            {
+              "question": "Die Ferien sind vor allem zum Ausruhen da.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Herr Brenner",
+                "Gast 2: Frau Okafor"
+              ],
+              "correctIndex": 1,
+              "evidence": "in den Ferien sollen sie sich zuerst einmal richtig erholen"
+            },
+            {
+              "question": "Arbeit an der frischen Luft ist ein guter Ausgleich zum Schulalltag.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Herr Brenner",
+                "Gast 2: Frau Okafor"
+              ],
+              "correctIndex": 2,
+              "evidence": "nach dem vielen Sitzen in der Schule tat mir die Arbeit draußen richtig gut"
+            },
+            {
+              "question": "Bei einem Ferienjob lernt man, was Geld wert ist.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Herr Brenner",
+                "Gast 2: Frau Okafor"
+              ],
+              "correctIndex": 0,
+              "evidence": "wie lange man für zehn Euro arbeiten muss"
+            },
+            {
+              "question": "Mit dem verdienten Geld bezahle ich etwas Wichtiges selbst.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Herr Brenner",
+                "Gast 2: Frau Okafor"
+              ],
+              "correctIndex": 2,
+              "evidence": "den bezahle ich ganz allein, ohne meine Eltern"
+            },
+            {
+              "question": "Nicht alle Arbeitgeber behandeln Schüler fair.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Herr Brenner",
+                "Gast 2: Frau Okafor"
+              ],
+              "correctIndex": 1,
+              "evidence": "Manche Firmen nutzen die Jugendlichen aus."
+            },
+            {
+              "question": "Schüler sollten nur einen Teil der Ferien arbeiten.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Herr Brenner",
+                "Gast 2: Frau Okafor"
+              ],
+              "correctIndex": 1,
+              "evidence": "höchstens die Hälfte der Ferien arbeiten"
+            },
+            {
+              "question": "Ein Ferienjob kann bei der Berufswahl helfen.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Herr Brenner",
+                "Gast 2: Frau Okafor"
+              ],
+              "correctIndex": 2,
+              "evidence": "dass ich später gern einen Beruf mit Pflanzen lernen möchte"
+            },
+            {
+              "question": "Jugendliche in Dörfern haben schlechtere Chancen auf einen Ferienjob.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Herr Brenner",
+                "Gast 2: Frau Okafor"
+              ],
+              "correctIndex": 0,
+              "evidence": "Gerade auf dem Land gibt es oft nur wenige Angebote"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Mr Brenner says pupils should first of all have a proper rest in the holidays.",
+            "de": "Herr Brenner sagt, dass sich die Schüler in den Ferien zuerst richtig erholen sollen."
+          },
+          {
+            "en": "Ms Okafor says that after sitting so much at school, working outdoors did her good.",
+            "de": "Frau Okafor sagt, dass ihr die Arbeit draußen nach dem vielen Sitzen in der Schule gutgetan hat."
+          },
+          {
+            "en": "The presenter says her first job showed her how long you have to work for ten euros.",
+            "de": "Die Moderatorin sagt, dass sie bei ihrem ersten Job gemerkt hat, wie lange man für zehn Euro arbeiten muss."
+          },
+          {
+            "en": "Ms Okafor is paying for her driving licence herself, without her parents.",
+            "de": "Frau Okafor bezahlt ihren Führerschein selbst, ohne ihre Eltern."
+          },
+          {
+            "en": "Mr Brenner says some companies exploit young people.",
+            "de": "Herr Brenner sagt, dass manche Firmen die Jugendlichen ausnutzen."
+          },
+          {
+            "en": "Mr Brenner advises working for at most half of the holidays.",
+            "de": "Herr Brenner rät, höchstens die Hälfte der Ferien zu arbeiten."
+          },
+          {
+            "en": "Through her job Ms Okafor realised she would like to train for a job with plants.",
+            "de": "Durch den Job hat Frau Okafor gemerkt, dass sie später einen Beruf mit Pflanzen lernen möchte."
+          },
+          {
+            "en": "The presenter points out that in the countryside there are often only a few jobs on offer.",
+            "de": "Die Moderatorin sagt, dass es auf dem Land oft nur wenige Angebote gibt."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__hoeren-4__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Moderator m] Guten Abend und willkommen bei Familie heute. Unser Thema ist das Taschengeld: Ab wann sollen Kinder eigenes Geld bekommen, und wie viel?\n[Moderator m] Mein erster Gast ist Frau Seidel, sie arbeitet als Familienberaterin. Mein zweiter Gast ist Herr Demir, Vater von drei Kindern. Frau Seidel, ab welchem Alter empfehlen Sie Taschengeld?\n[Frau Seidel f] Sobald Kinder ein bisschen rechnen können, also meistens ab dem Schulanfang. Am Anfang reicht ein kleiner Betrag jede Woche. Kleine Kinder können sich einen ganzen Monat noch nicht vorstellen.\n[Herr Demir m] Bei uns war das ein bisschen anders. Unser Ältester hat erst mit neun Taschengeld bekommen, und ehrlich gesagt war das zu spät. Er hatte keine Ahnung, was Dinge kosten.\n[Moderator m] Ich habe als Kind nie ein festes Taschengeld bekommen. Meine Eltern haben mir Geld gegeben, wenn ich im Haushalt geholfen habe.\n[Frau Seidel f] Genau davon rate ich ab. Hilfe im Haushalt ist in einer Familie normal, die sollte man nicht bezahlen. Sonst fragen die Kinder bald bei jeder Kleinigkeit: Was bekomme ich dafür?\n[Herr Demir m] Bei uns gibt es eine andere Regel: Ein Teil des Geldes kommt jede Woche in eine Spardose. Für größere Wünsche müssen die Kinder dann selbst sparen.\n[Moderator m] Viele Eltern fragen sich auch, wie viel es sein soll. In einer Klasse bekommen die Kinder oft ganz unterschiedlich viel, und das führt manchmal zu Streit.\n[Herr Demir m] Das kenne ich. Mein Sohn kam nach Hause und hat gesagt, alle anderen bekommen mehr. Wir haben dann mit anderen Eltern aus der Klasse gesprochen, und es stimmte gar nicht.\n[Frau Seidel f] Für Jugendliche empfehle ich übrigens ein eigenes Konto mit einer Karte. Dann lernen sie auch, mit Geld umzugehen, das sie nicht in der Hand halten.\n[Moderator m] Frau Seidel, Herr Demir, vielen Dank für das Gespräch.",
+          "questions": [
+            {
+              "question": "Jüngere Kinder sollten ihr Geld jede Woche bekommen.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Frau Seidel",
+                "Gast 2: Herr Demir"
+              ],
+              "correctIndex": 1,
+              "evidence": "Am Anfang reicht ein kleiner Betrag jede Woche."
+            },
+            {
+              "question": "Unser erstes Kind hat zu spät Taschengeld bekommen.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Frau Seidel",
+                "Gast 2: Herr Demir"
+              ],
+              "correctIndex": 2,
+              "evidence": "und ehrlich gesagt war das zu spät"
+            },
+            {
+              "question": "Ich habe früher für meine Hilfe zu Hause Geld bekommen.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Frau Seidel",
+                "Gast 2: Herr Demir"
+              ],
+              "correctIndex": 0,
+              "evidence": "wenn ich im Haushalt geholfen habe"
+            },
+            {
+              "question": "Für Arbeit im Haushalt sollten Kinder kein Geld bekommen.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Frau Seidel",
+                "Gast 2: Herr Demir"
+              ],
+              "correctIndex": 1,
+              "evidence": "die sollte man nicht bezahlen"
+            },
+            {
+              "question": "Kinder sollen lernen, für teurere Dinge Geld zurückzulegen.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Frau Seidel",
+                "Gast 2: Herr Demir"
+              ],
+              "correctIndex": 2,
+              "evidence": "Für größere Wünsche müssen die Kinder dann selbst sparen."
+            },
+            {
+              "question": "Unterschiedliche Beträge können zu Konflikten zwischen Kindern führen.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Frau Seidel",
+                "Gast 2: Herr Demir"
+              ],
+              "correctIndex": 0,
+              "evidence": "das führt manchmal zu Streit"
+            },
+            {
+              "question": "Ich habe mich bei anderen Familien informiert, wie viel Taschengeld üblich ist.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Frau Seidel",
+                "Gast 2: Herr Demir"
+              ],
+              "correctIndex": 2,
+              "evidence": "Wir haben dann mit anderen Eltern aus der Klasse gesprochen"
+            },
+            {
+              "question": "Ältere Kinder sollten auch das Bezahlen ohne Bargeld üben.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Frau Seidel",
+                "Gast 2: Herr Demir"
+              ],
+              "correctIndex": 1,
+              "evidence": "ein eigenes Konto mit einer Karte"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Ms Seidel recommends a small weekly amount at first, because young children cannot imagine a whole month.",
+            "de": "Frau Seidel empfiehlt am Anfang einen kleinen Betrag jede Woche, weil sich kleine Kinder einen Monat nicht vorstellen können."
+          },
+          {
+            "en": "Mr Demir says his eldest only got pocket money at nine, which was too late.",
+            "de": "Herr Demir sagt, dass sein Ältester erst mit neun Taschengeld bekommen hat, und das war zu spät."
+          },
+          {
+            "en": "The presenter got money from his parents when he helped with the housework.",
+            "de": "Der Moderator hat Geld bekommen, wenn er im Haushalt geholfen hat."
+          },
+          {
+            "en": "Ms Seidel says helping at home is normal in a family and shouldn't be paid.",
+            "de": "Frau Seidel sagt, dass Hilfe im Haushalt normal ist und nicht bezahlt werden sollte."
+          },
+          {
+            "en": "Mr Demir's children put part of their money in a money box and save up for bigger wishes.",
+            "de": "Bei Herrn Demir kommt ein Teil des Geldes in eine Spardose. Für größere Wünsche sparen die Kinder selbst."
+          },
+          {
+            "en": "The presenter says different amounts in one class sometimes lead to arguments.",
+            "de": "Der Moderator sagt, dass unterschiedlich viel Geld in einer Klasse manchmal zu Streit führt."
+          },
+          {
+            "en": "Mr Demir talked to other parents in the class and found out his son's claim wasn't true.",
+            "de": "Herr Demir hat mit anderen Eltern aus der Klasse gesprochen. Was sein Sohn gesagt hat, stimmte nicht."
+          },
+          {
+            "en": "Ms Seidel recommends their own account with a card for teenagers.",
+            "de": "Frau Seidel empfiehlt für Jugendliche ein eigenes Konto mit einer Karte."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__hoeren-4__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Moderatorin f] Guten Abend und herzlich willkommen zu Mitreden. Immer mehr ältere Menschen wollen nicht allein wohnen, aber auch nicht ins Heim. Eine Lösung kann eine Wohngemeinschaft sein.\n[Moderatorin f] Mein erster Gast ist Frau Jansen. Sie ist vierundsiebzig und lebt seit drei Jahren mit vier anderen Senioren zusammen. Mein zweiter Gast ist Herr Schulte, er arbeitet in einer Beratungsstelle für ältere Menschen. Frau Jansen, warum sind Sie in eine Wohngemeinschaft gezogen?\n[Frau Jansen f] Nach dem Tod meines Mannes war das Haus plötzlich viel zu groß und furchtbar still. Ich habe manchmal tagelang mit niemandem gesprochen. Das wollte ich nicht mehr.\n[Herr Schulte m] Das hören wir in der Beratung sehr oft. Aber ich muss auch sagen: Eine Wohngemeinschaft passt nicht zu jedem. Wer sein ganzes Leben allein gewohnt hat, hat es oft schwer, plötzlich Küche und Bad zu teilen.\n[Moderatorin f] Ich habe während des Studiums in einer Wohngemeinschaft gewohnt, und wir haben uns ständig über den Putzplan gestritten.\n[Frau Jansen f] Das gibt es bei uns auch, glauben Sie mir! Aber wir haben einmal im Monat eine Hausversammlung. Da kommt alles auf den Tisch, und danach ist die Luft wieder sauber.\n[Herr Schulte m] Ein wichtiger Punkt sind auch die Kosten. Viele denken, so eine Wohngemeinschaft ist billig. Aber Wohnungen ohne Stufen, mit breiten Türen und einem Aufzug sind oft ziemlich teuer.\n[Moderatorin f] Und was passiert, wenn jemand in der Wohngemeinschaft krank wird und Pflege braucht?\n[Herr Schulte m] Dann braucht man auf jeden Fall einen professionellen Pflegedienst. Die Mitbewohner können helfen, aber sie dürfen nicht die ganze Pflege übernehmen. Damit wären sie überfordert.\n[Frau Jansen f] Ich habe mir letzten Winter das Bein gebrochen. Meine Mitbewohnerinnen haben damals für mich eingekauft und gekocht. Allein in meinem alten Haus hätte ich das nie geschafft.\n[Moderatorin f] Zum Schluss noch etwas aus unserer Stadt: Hier ist gerade ein Wohnprojekt geplant, in dem Studenten und Senioren zusammen wohnen. Ich finde die Idee spannend, weil beide Seiten voneinander lernen können.\n[Moderatorin f] Frau Jansen, Herr Schulte, vielen Dank für das Gespräch.",
+          "questions": [
+            {
+              "question": "Nach dem Verlust des Partners habe ich mich sehr einsam gefühlt.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Frau Jansen",
+                "Gast 2: Herr Schulte"
+              ],
+              "correctIndex": 1,
+              "evidence": "Ich habe manchmal tagelang mit niemandem gesprochen."
+            },
+            {
+              "question": "Nicht alle älteren Menschen kommen mit dem Leben in einer Gruppe zurecht.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Frau Jansen",
+                "Gast 2: Herr Schulte"
+              ],
+              "correctIndex": 2,
+              "evidence": "Eine Wohngemeinschaft passt nicht zu jedem."
+            },
+            {
+              "question": "In meiner Jugend hatte ich beim Zusammenwohnen selbst oft Ärger.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Frau Jansen",
+                "Gast 2: Herr Schulte"
+              ],
+              "correctIndex": 0,
+              "evidence": "wir haben uns ständig über den Putzplan gestritten"
+            },
+            {
+              "question": "Regelmäßige Treffen helfen, Konflikte zu lösen.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Frau Jansen",
+                "Gast 2: Herr Schulte"
+              ],
+              "correctIndex": 1,
+              "evidence": "wir haben einmal im Monat eine Hausversammlung"
+            },
+            {
+              "question": "Viele unterschätzen, was das Wohnen in einer Wohngemeinschaft kostet.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Frau Jansen",
+                "Gast 2: Herr Schulte"
+              ],
+              "correctIndex": 2,
+              "evidence": "Viele denken, so eine Wohngemeinschaft ist billig."
+            },
+            {
+              "question": "Die Pflege sollte man nicht den Mitbewohnern überlassen.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Frau Jansen",
+                "Gast 2: Herr Schulte"
+              ],
+              "correctIndex": 2,
+              "evidence": "aber sie dürfen nicht die ganze Pflege übernehmen"
+            },
+            {
+              "question": "Ohne die Hilfe der anderen hätte ich eine schwierige Zeit nicht geschafft.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Frau Jansen",
+                "Gast 2: Herr Schulte"
+              ],
+              "correctIndex": 1,
+              "evidence": "Allein in meinem alten Haus hätte ich das nie geschafft."
+            },
+            {
+              "question": "Junge und alte Menschen können beim gemeinsamen Wohnen voneinander profitieren.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Frau Jansen",
+                "Gast 2: Herr Schulte"
+              ],
+              "correctIndex": 0,
+              "evidence": "weil beide Seiten voneinander lernen können"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "After her husband died, Ms Jansen sometimes spoke to no one for days.",
+            "de": "Nach dem Tod ihres Mannes hat Frau Jansen manchmal tagelang mit niemandem gesprochen."
+          },
+          {
+            "en": "Mr Schulte says a shared flat doesn't suit everyone, especially people who have always lived alone.",
+            "de": "Herr Schulte sagt, dass eine Wohngemeinschaft nicht zu jedem passt, besonders nicht zu Menschen, die immer allein gewohnt haben."
+          },
+          {
+            "en": "The presenter says that as a student she constantly argued about the cleaning rota.",
+            "de": "Die Moderatorin sagt, dass sie sich als Studentin ständig über den Putzplan gestritten hat."
+          },
+          {
+            "en": "Ms Jansen says their monthly house meeting clears the air.",
+            "de": "Frau Jansen sagt, dass die Hausversammlung einmal im Monat die Probleme löst."
+          },
+          {
+            "en": "Mr Schulte says many people think it's cheap, but suitable flats are often expensive.",
+            "de": "Herr Schulte sagt, dass viele denken, es ist billig. Aber passende Wohnungen sind oft teuer."
+          },
+          {
+            "en": "Mr Schulte says housemates can help but must not take over all the care.",
+            "de": "Herr Schulte sagt, dass die Mitbewohner helfen können, aber nicht die ganze Pflege übernehmen dürfen."
+          },
+          {
+            "en": "When Ms Jansen broke her leg, her housemates shopped and cooked for her.",
+            "de": "Als Frau Jansen das Bein gebrochen hatte, haben ihre Mitbewohnerinnen für sie eingekauft und gekocht."
+          },
+          {
+            "en": "The presenter likes the idea of students and seniors living together because both sides can learn from each other.",
+            "de": "Die Moderatorin findet die Idee gut, weil Studenten und Senioren voneinander lernen können."
+          }
+        ]
+      }
+    }
+  ]
+}
