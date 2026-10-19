@@ -1,4 +1,7 @@
-import { describe, it, expect } from 'vitest';
+import { copyFileSync, mkdirSync, mkdtempSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { afterEach, describe, it, expect, vi } from 'vitest';
 import { anchorProblems, readAnchors, selectAnchors, type AnchorFile } from './anchors';
 import type { Anchor } from './letterGrading';
 import type { Grade, WritingRubric } from './rubric';
@@ -70,9 +73,26 @@ describe('anchorProblems', () => {
   it('wants exactly four anchors, including an all-A and a mostly-D one', () => {
     expect(anchorProblems(file([B, C]), RUBRIC)).toEqual([
       'expected 4 anchors, found 2',
-      'no anchor is graded A on every criterion',
-      'no anchor is graded D on most criteria',
+      'no anchor has the top grade on every criterion',
+      'no anchor has the lowest grade on every criterion, or all but one',
     ]);
+  });
+
+  it('wants the bottom anchor at the lowest grade on all criteria but at most one', () => {
+    const soft = anchor('D', 'D', 'C', 'C');
+    expect(anchorProblems(file([A, B, C, soft]), RUBRIC)).toEqual(['no anchor has the lowest grade on every criterion, or all but one']);
+  });
+
+  it('takes the top and bottom grades from the rubric points, so an E band works', () => {
+    const withE: WritingRubric = {
+      criteria: RUBRIC.criteria.map((c) => ({ ...c, points: { A: 4, B: 3, C: 2, D: 1, E: 0 }, descriptors: { ...DESCRIPTORS, E: 'e' } })),
+    };
+    expect(anchorProblems(file([A, B, C, anchor('D', 'D', 'D', 'D')]), withE)).toEqual([
+      'no anchor has the lowest grade on every criterion, or all but one',
+    ]);
+    const E = anchor('E', 'E', 'D', 'E');
+    expect(anchorProblems(file([A, B, C, E]), withE)).toEqual([]);
+    expect(selectAnchors([B, E, C, A], withE)).toEqual([A, E, B]);
   });
 
   it('wants a letter, a justification and a valid task', () => {
@@ -86,6 +106,43 @@ describe('anchorProblems', () => {
 });
 
 describe('readAnchors', () => {
+  afterEach(() => vi.restoreAllMocks());
+
+  // A scratch project root holding the telc B1 format and the given anchor list.
+  const rootWith = (anchors: unknown) => {
+    const root = mkdtempSync(join(tmpdir(), 'anchors-'));
+    mkdirSync(join(root, 'data', 'exam-formats'), { recursive: true });
+    mkdirSync(join(root, 'data', 'writing-anchors', 'telc-b1'), { recursive: true });
+    copyFileSync(join(process.cwd(), 'data', 'exam-formats', 'telc-b1.json'), join(root, 'data', 'exam-formats', 'telc-b1.json'));
+    writeFileSync(join(root, 'data', 'writing-anchors', 'telc-b1', 'schreiben.json'), JSON.stringify({ formatId: 'telc-b1', partId: 'schreiben', anchors }));
+    vi.spyOn(process, 'cwd').mockReturnValue(root);
+  };
+
+  it('reads a valid file', () => {
+    rootWith([A, B, C, D]);
+    expect(readAnchors('telc-b1', 'schreiben')).toEqual([A, B, C, D]);
+  });
+
+  it('returns null when an entry has no grades object', () => {
+    rootWith([A, { ...B, grades: undefined }, C, D]);
+    expect(readAnchors('telc-b1', 'schreiben')).toBeNull();
+    rootWith([A, { ...B, grades: ['B'] }, C, D]);
+    expect(readAnchors('telc-b1', 'schreiben')).toBeNull();
+  });
+
+  it('returns null when fewer than 2 anchors would be selected', () => {
+    rootWith([]);
+    expect(readAnchors('telc-b1', 'schreiben')).toBeNull();
+    rootWith([A]);
+    expect(readAnchors('telc-b1', 'schreiben')).toBeNull();
+  });
+
+  it('returns null for unparsable JSON', () => {
+    rootWith([]);
+    writeFileSync(join(process.cwd(), 'data', 'writing-anchors', 'telc-b1', 'schreiben.json'), '{ not json');
+    expect(readAnchors('telc-b1', 'schreiben')).toBeNull();
+  });
+
   it('refuses ids that are not format or part shapes', () => {
     expect(readAnchors('../etc', 'schreiben')).toBeNull();
     expect(readAnchors('telc-b1', '../../package')).toBeNull();

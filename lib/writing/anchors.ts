@@ -1,10 +1,10 @@
 // Server-only: reads anchor files with node:fs. Client components must never import this module.
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { FORMAT_ID } from '../exam/formats';
+import { FORMAT_ID, readFormat } from '../exam/formats';
 import { validateLetter } from '../tasks/letter';
 import type { Anchor } from './letterGrading';
-import { pointsFor, type Grade, type WritingRubric } from './rubric';
+import { pointsFor, type Grade, type RubricCriterion, type WritingRubric } from './rubric';
 
 export type { Anchor };
 
@@ -21,31 +21,48 @@ const DIR = () => join(/*turbopackIgnore: true*/ process.cwd(), 'data', 'writing
 // Ids can come from request data; only these shapes ever reach the filesystem.
 const PART_ID = /^[a-z0-9-]+$/;
 
-// The anchors for one format part, or null when the ids are malformed or the file is missing or unreadable.
+// The anchors for one format part, or null when the ids are malformed, the part has no rubric, the file is
+// missing or unreadable, an entry has no grades, or fewer than 2 anchors would be selected.
 // Null is the caller's cue to grade with the rubric only and notify the admin.
 export function readAnchors(formatId: string, partId: string): Anchor[] | null {
   if (!FORMAT_ID.test(formatId) || !PART_ID.test(partId)) return null;
+  const rubric = readFormat(formatId)?.parts.find((p) => p.id === partId)?.rubric;
   const path = join(DIR(), formatId, `${partId}.json`);
-  if (!existsSync(path)) return null;
+  if (!rubric || !existsSync(path)) return null;
+  let anchors: unknown;
   try {
-    const file = JSON.parse(readFileSync(/*turbopackIgnore: true*/ path, 'utf8')) as Partial<AnchorFile>;
-    return Array.isArray(file.anchors) ? file.anchors : null;
+    anchors = (JSON.parse(readFileSync(/*turbopackIgnore: true*/ path, 'utf8')) as Partial<AnchorFile>).anchors;
   } catch {
     return null;
   }
+  if (!Array.isArray(anchors)) return null;
+  const graded = anchors.every((a) => typeof a?.grades === 'object' && a.grades !== null && !Array.isArray(a.grades));
+  if (!graded || selectAnchors(anchors as Anchor[], rubric).length < 2) return null;
+  return anchors as Anchor[];
 }
 
-const gradesOf = (a: Anchor, r: WritingRubric) => r.criteria.map((c) => a.grades[c.id]);
-const allA = (a: Anchor, r: WritingRubric) => gradesOf(a, r).every((g) => g === 'A');
-const mostlyD = (a: Anchor, r: WritingRubric) => gradesOf(a, r).filter((g) => g === 'D').length * 2 > r.criteria.length;
+// A criterion's highest-points (sign 1) or lowest-points (sign -1) grade, so rubrics with an E band work too.
+function extremeGrade(c: RubricCriterion, sign: 1 | -1): Grade | undefined {
+  let best: [Grade, number] | undefined;
+  for (const [g, p] of Object.entries(c.points) as [Grade, number | undefined][]) {
+    if (p !== undefined && (!best || sign * (p - best[1]) > 0)) best = [g, p];
+  }
+  return best?.[0];
+}
 
-// The 2-3 anchors for a grading call, in prompt order: the all-A anchor, the mostly-D anchor, and the
+// The top anchor has every criterion's highest-points grade.
+const isTop = (a: Anchor, r: WritingRubric) => r.criteria.every((c) => a.grades?.[c.id] === extremeGrade(c, 1));
+// The bottom anchor has every criterion's lowest-points grade, or all but one.
+const isBottom = (a: Anchor, r: WritingRubric) =>
+  r.criteria.filter((c) => a.grades?.[c.id] === extremeGrade(c, -1)).length >= Math.max(1, r.criteria.length - 1);
+
+// The 2-3 anchors for a grading call, in prompt order: the top anchor, the bottom anchor, and the
 // remaining anchor nearest an all-B grade (the pass band). Anchors that don't exist are simply left out.
 export function selectAnchors(anchors: Anchor[], rubric: WritingRubric): Anchor[] {
   const picked: Anchor[] = [];
-  const top = anchors.find((a) => allA(a, rubric));
+  const top = anchors.find((a) => isTop(a, rubric));
   if (top) picked.push(top);
-  const bottom = anchors.find((a) => !picked.includes(a) && mostlyD(a, rubric));
+  const bottom = anchors.find((a) => !picked.includes(a) && isBottom(a, rubric));
   if (bottom) picked.push(bottom);
   const allB = Object.fromEntries(rubric.criteria.map((c) => [c.id, 'B' as Grade]));
   const target = pointsFor(rubric, allB);
@@ -78,7 +95,7 @@ export function anchorProblems(file: AnchorFile, rubric: WritingRubric): string[
     }
     for (const id of Object.keys(grades)) if (!ids.has(id)) problems.push(`${n}: unknown criterion ${id}`);
   });
-  if (!anchors.some((a) => allA(a, rubric))) problems.push('no anchor is graded A on every criterion');
-  if (!anchors.some((a) => mostlyD(a, rubric))) problems.push('no anchor is graded D on most criteria');
+  if (!anchors.some((a) => isTop(a, rubric))) problems.push('no anchor has the top grade on every criterion');
+  if (!anchors.some((a) => isBottom(a, rubric))) problems.push('no anchor has the lowest grade on every criterion, or all but one');
   return problems;
 }

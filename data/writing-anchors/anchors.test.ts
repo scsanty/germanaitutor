@@ -3,6 +3,7 @@ import { join } from 'node:path';
 import { describe, it, expect } from 'vitest';
 import { readFormat } from '@/lib/exam/formats';
 import { anchorProblems, type AnchorFile } from '@/lib/writing/anchors';
+import { pointsFor } from '@/lib/writing/rubric';
 
 const DIR = join(__dirname);
 const files = readdirSync(DIR, { withFileTypes: true })
@@ -30,10 +31,15 @@ describe('bundled writing anchors', () => {
     expect(anchorProblems(file, part!.rubric!)).toEqual([]);
   });
 
-  it.each(files.map((f) => [`${f.dir}/${f.name}`, f.file] as const))('%s keeps the A letter within its word target', (_, file) => {
-    const top = file.anchors.find((a) => Object.values(a.grades).every((g) => g === 'A'))!;
-    const n = words(top.letter);
-    expect(n).toBeGreaterThanOrEqual(top.task.wordTarget.min);
-    expect(n).toBeLessThanOrEqual(top.task.wordTarget.max);
+  // Only the bottom anchor may miss the word target (too short is part of what makes it a D).
+  it.each(files.map((f) => [`${f.dir}/${f.name}`, f.file] as const))('%s keeps every letter but the lowest within its word target', (_, file) => {
+    const rubric = readFormat(file.formatId)!.parts.find((p) => p.id === file.partId)!.rubric!;
+    const ranked = [...file.anchors].sort((x, y) => pointsFor(rubric, y.grades) - pointsFor(rubric, x.grades));
+    for (const a of ranked.slice(0, -1)) {
+      const n = words(a.letter);
+      const where = `${Object.values(a.grades).join('')}: ${n} words`;
+      expect(n, where).toBeGreaterThanOrEqual(a.task.wordTarget.min);
+      expect(n, where).toBeLessThanOrEqual(a.task.wordTarget.max);
+    }
   });
 });
