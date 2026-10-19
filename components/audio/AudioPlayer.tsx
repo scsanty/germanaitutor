@@ -90,14 +90,25 @@ export function AudioPlayer({ hash, available, mode, replays }: { hash: string; 
       setPlaying(false);
       setFailed(true);
     };
+    // Final review M3: after a retry the fresh element starts at 0 s. Put it back where the broken-off
+    // play was, so an exam retry resumes instead of replaying for free. Our own seek is not snapped back.
+    const restorePosition = () => {
+      if (s.position > 0 && Math.abs(audio.currentTime - s.position) > 0.5) {
+        s.snapping = true;
+        audio.currentTime = s.position;
+      }
+    };
     audio.addEventListener('play', onPlay);
+    audio.addEventListener('loadedmetadata', restorePosition);
     audio.addEventListener('pause', onPause);
     audio.addEventListener('ended', onEnded);
     audio.addEventListener('timeupdate', onTimeUpdate);
     audio.addEventListener('seeking', onSeeking);
     audio.addEventListener('error', onError);
+    if (audio.readyState >= 1) restorePosition();
     if (s.exam) setSeekHandlers(() => {});
     return () => {
+      audio.removeEventListener('loadedmetadata', restorePosition);
       audio.removeEventListener('play', onPlay);
       audio.removeEventListener('pause', onPause);
       audio.removeEventListener('ended', onEnded);
@@ -107,6 +118,16 @@ export function AudioPlayer({ hash, available, mode, replays }: { hash: string; 
       if (s.exam) setSeekHandlers(null);
     };
   }, [available, hash, failed]);
+
+  // T6: a retry mounts a fresh element at 1×; keep it in step with the 0.75× toggle. The default rate
+  // too, since loading a source resets playbackRate to it.
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    const rate = slow ? SLOW_RATE : 1;
+    audio.defaultPlaybackRate = rate;
+    audio.playbackRate = rate;
+  }, [slow, available, hash, failed]);
 
   if (!available) {
     return (
@@ -119,7 +140,8 @@ export function AudioPlayer({ hash, available, mode, replays }: { hash: string; 
 
   if (failed) {
     // A transient failure (say, a 503 while the clip renders) shouldn't cost the whole part: a retry
-    // mounts a fresh element. The count and any play in progress are kept, so it resumes uncounted.
+    // mounts a fresh element. The count, any play in progress and its position are kept, so it resumes
+    // uncounted from where it stopped.
     return (
       <div className="flex flex-wrap items-center gap-3 rounded-xl border border-border bg-surface px-4 py-3">
         <p role="status" className="flex flex-1 items-center gap-2 text-sm text-text-muted">
@@ -156,7 +178,10 @@ export function AudioPlayer({ hash, available, mode, replays }: { hash: string; 
     const audio = audioRef.current;
     const next = !slow;
     setSlow(next);
-    if (audio) audio.playbackRate = next ? SLOW_RATE : 1;
+    if (audio) {
+      audio.defaultPlaybackRate = next ? SLOW_RATE : 1;
+      audio.playbackRate = next ? SLOW_RATE : 1;
+    }
   }
 
   return (

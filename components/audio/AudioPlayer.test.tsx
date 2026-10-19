@@ -147,6 +147,40 @@ describe('AudioPlayer', () => {
     expect(screen.getByRole('button', { name: 'Pause' })).toBeInTheDocument();
   });
 
+  // Final review M3: a retry is not a free replay from 0 s; the new element resumes where the play broke off.
+  it('in exam mode a retry after an error resumes at the saved position, not from the start', () => {
+    const { container } = renderWithIntl(<AudioPlayer hash={'a'.repeat(64)} available mode="exam" replays={1} />);
+    const first = container.querySelector('audio')!;
+    fireEvent.click(screen.getByRole('button', { name: 'Play' }));
+    first.currentTime = 10;
+    fireEvent(first, new Event('timeupdate'));
+    fireEvent(first, new Event('error'));
+    fireEvent.click(screen.getByRole('button', { name: 'Try again' }));
+    const audio = container.querySelector('audio')!;
+    expect(audio).not.toBe(first);
+    fireEvent(audio, new Event('loadedmetadata'));
+    expect(audio.currentTime).toBe(10);
+    // The seek that restores the position is ours, so it isn't snapped back.
+    fireEvent(audio, new Event('seeking'));
+    expect(audio.currentTime).toBe(10);
+    fireEvent.click(screen.getByRole('button', { name: 'Play' }));
+    expect(screen.getByText('Played 1 of 1 time')).toBeInTheDocument();
+  });
+
+  // T6 deferred: after Try again the 0.75× toggle and the new element agree.
+  it('in lesson mode keeps the slow speed on the new element after a retry', () => {
+    const { container } = renderWithIntl(<AudioPlayer hash={'a'.repeat(64)} available mode="lesson" />);
+    fireEvent.click(screen.getByRole('button', { name: '0.75×' }));
+    fireEvent(container.querySelector('audio')!, new Event('error'));
+    fireEvent.click(screen.getByRole('button', { name: 'Try again' }));
+    const audio = container.querySelector('audio')!;
+    expect(screen.getByRole('button', { name: '0.75×' })).toHaveAttribute('aria-pressed', 'true');
+    expect(audio.playbackRate).toBe(0.75);
+    expect(audio.defaultPlaybackRate).toBe(0.75);
+    fireEvent.click(screen.getByRole('button', { name: '0.75×' }));
+    expect(audio.playbackRate).toBe(1);
+  });
+
   it('is accessible in both modes', async () => {
     const lesson = renderWithIntl(<AudioPlayer hash={'a'.repeat(64)} available mode="lesson" />);
     expectNoViolations(await axe(lesson.container));
