@@ -1,0 +1,382 @@
+{
+  "formatId": "generic-b2",
+  "partId": "hoeren-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-b2__hoeren-2__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Nora f] Emre, hast du schon in den Briefkasten geschaut? Die Nebenkostenabrechnung ist gekommen. Wir sollen fast sechshundert Euro nachzahlen.\n[Emre m] Sechshundert? Das kann doch nicht sein. Letztes Jahr haben wir sogar etwas zurückbekommen.\n[Nora f] Eben. Ich hab mir das mal genauer angeschaut. Die Heizkosten sind ungefähr gleich geblieben, daran liegt es nicht. Das Problem ist das Wasser.\n[Emre m] Das Wasser? Wir sind doch nur zu dritt, und Lukas ist die Hälfte der Zeit bei seiner Freundin.\n[Nora f] Genau das hab ich mir auch gedacht. Laut Abrechnung haben wir fast doppelt so viel verbraucht wie im Jahr davor. Ich vermute, dass mit dem Zähler etwas nicht stimmt. Der wurde doch im Frühjahr ausgetauscht.\n[Emre m] Stimmt, da war so ein Techniker da. Und was machen wir jetzt? Einfach nicht zahlen?\n[Nora f] Lieber nicht, dann gibt es nur Ärger. Ich würde den Betrag erst mal unter Vorbehalt überweisen und der Hausverwaltung gleichzeitig schreiben, dass wir die Abrechnung prüfen lassen wollen.\n[Emre m] Unter Vorbehalt? Was heißt das genau?\n[Nora f] Dass wir das Geld zurückfordern können, wenn sich herausstellt, dass die Abrechnung falsch ist.\n[Emre m] Okay. Aber sollten wir nicht lieber gleich zum Mieterverein gehen? Mein Kollege ist da Mitglied, und die haben ihm bei so etwas sehr geholfen.\n[Nora f] Daran hab ich auch gedacht. Die Mitgliedschaft kostet allerdings sechzig Euro im Jahr, und eine Beratung bekommt man erst nach drei Monaten Mitgliedschaft.\n[Emre m] Ach so. Dann bringt uns das jetzt gar nichts.\n[Nora f] Jedenfalls nicht sofort. Aber wir haben zum Glück Zeit. Einwände gegen die Abrechnung kann man bis zu einem Jahr lang erheben.\n[Emre m] Hm. Sechzig Euro durch drei, das sind zwanzig für jeden. Das wäre es mir eigentlich wert.\n[Nora f] Finde ich auch. Dann melden wir uns diese Woche noch an. Außerdem bitten wir die Hausverwaltung, uns die Werte vom alten und vom neuen Zähler zu zeigen. Das dürfen wir als Mieter nämlich verlangen.\n[Emre m] Soll ich das übernehmen? Ich kenne Frau Haberland von der Verwaltung, die ist eigentlich ganz freundlich. Ich könnte sie morgen einfach anrufen.\n[Nora f] Gern. Aber bitte nicht am Telefon, sondern schriftlich. Dann haben wir etwas in der Hand.\n[Emre m] Mach ich. Und was ist mit Lukas? Der weiß noch gar nichts.\n[Nora f] Der kommt heute erst spät zurück. Ich schreib ihm gleich eine Nachricht. Ich glaube aber nicht, dass er etwas dagegen hat.\n[Emre m] Gut. Und wer überweist das Geld?\n[Nora f] Das mach ich, das Konto für die Miete läuft ja sowieso über mich. Ihr gebt mir dann einfach euren Anteil.",
+          "questions": [
+            {
+              "question": "Warum ist Emre überrascht?",
+              "options": [
+                "Im letzten Jahr haben sie Geld zurückbekommen.",
+                "Die Miete ist gerade gestiegen.",
+                "Die Hausverwaltung hat gewechselt."
+              ],
+              "correctIndex": 0,
+              "evidence": "Letztes Jahr haben wir sogar etwas zurückbekommen."
+            },
+            {
+              "question": "Woran liegt die hohe Nachzahlung laut Nora?",
+              "options": [
+                "an den Heizkosten",
+                "an einem neuen Mitbewohner",
+                "am Wasserverbrauch"
+              ],
+              "correctIndex": 2,
+              "evidence": "Das Problem ist das Wasser."
+            },
+            {
+              "question": "Was vermutet Nora?",
+              "options": [
+                "Die Hausverwaltung hat falsch gerechnet.",
+                "Der neue Zähler funktioniert nicht richtig.",
+                "In der Wohnung gibt es ein Leck."
+              ],
+              "correctIndex": 1,
+              "evidence": "Ich vermute, dass mit dem Zähler etwas nicht stimmt."
+            },
+            {
+              "question": "Was schlägt Nora zuerst vor?",
+              "options": [
+                "vorerst gar nichts zu zahlen",
+                "zu zahlen, sich eine Rückforderung aber vorzubehalten",
+                "nur die Hälfte zu zahlen"
+              ],
+              "correctIndex": 1,
+              "evidence": "Ich würde den Betrag erst mal unter Vorbehalt überweisen"
+            },
+            {
+              "question": "Warum kann der Mieterverein im Moment nicht helfen?",
+              "options": [
+                "Er ist für Wohngemeinschaften nicht zuständig.",
+                "Die Mitgliedschaft ist zu teuer.",
+                "Neue Mitglieder werden erst nach einer Wartezeit beraten."
+              ],
+              "correctIndex": 2,
+              "evidence": "eine Beratung bekommt man erst nach drei Monaten Mitgliedschaft"
+            },
+            {
+              "question": "Was beschließen die beiden zum Mieterverein?",
+              "options": [
+                "Sie warten zuerst auf eine Antwort der Hausverwaltung.",
+                "Sie werden Mitglied, obwohl es ihnen jetzt noch nicht hilft.",
+                "Sie verzichten darauf und suchen einen Anwalt."
+              ],
+              "correctIndex": 1,
+              "evidence": "Dann melden wir uns diese Woche noch an."
+            },
+            {
+              "question": "Was soll Emre tun?",
+              "options": [
+                "Frau Haberland morgen anrufen",
+                "einen Techniker bestellen",
+                "die Hausverwaltung schriftlich um die Zählerwerte bitten"
+              ],
+              "correctIndex": 2,
+              "evidence": "Aber bitte nicht am Telefon, sondern schriftlich."
+            },
+            {
+              "question": "Wer überweist die Nachzahlung?",
+              "options": [
+                "Emre",
+                "Lukas",
+                "Nora"
+              ],
+              "correctIndex": 2,
+              "evidence": "Das mach ich, das Konto für die Miete läuft ja sowieso über mich."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Last year they even got money back, so a large back payment surprises him.",
+            "de": "Letztes Jahr haben sie sogar Geld zurückbekommen. Deshalb überrascht ihn die hohe Nachzahlung."
+          },
+          {
+            "en": "Heating costs stayed about the same. The problem is the water.",
+            "de": "Die Heizkosten sind ungefähr gleich geblieben. Das Problem ist das Wasser."
+          },
+          {
+            "en": "She suspects the meter, which was replaced in spring.",
+            "de": "Sie vermutet, dass mit dem Zähler etwas nicht stimmt. Er wurde im Frühjahr ausgetauscht."
+          },
+          {
+            "en": "She wants to pay \"under reserve\", so they can reclaim the money if the bill turns out to be wrong.",
+            "de": "Sie will den Betrag unter Vorbehalt zahlen. So können sie das Geld zurückfordern, wenn die Abrechnung falsch ist."
+          },
+          {
+            "en": "Members only get advice after three months of membership.",
+            "de": "Eine Beratung bekommt man erst nach drei Monaten Mitgliedschaft."
+          },
+          {
+            "en": "They have up to a year to object, so they decide to join this week even though advice only comes later.",
+            "de": "Sie haben ein Jahr Zeit für Einwände. Deshalb melden sie sich noch diese Woche an, auch wenn die Beratung erst später kommt."
+          },
+          {
+            "en": "Emre offered to phone, but Nora wants the request made in writing, not by phone, so they have proof.",
+            "de": "Emre wollte anrufen, aber Nora möchte die Anfrage nicht telefonisch, sondern schriftlich, damit sie etwas in der Hand haben."
+          },
+          {
+            "en": "Nora pays, because the rent account is in her name. The others give her their share.",
+            "de": "Nora überweist das Geld, weil das Mietkonto über sie läuft. Die anderen geben ihr ihren Anteil."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-b2__hoeren-2__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Moderator m] Willkommen zurück bei „Land und Leute“. Mein Gast ist heute Sabine Kroll. Sie ist Bibliothekarin, aber ihr Arbeitsplatz hat Räder: Sie fährt den Bücherbus im Landkreis Ostheide. Frau Kroll, wie viele Orte fahren Sie eigentlich an?\n[Frau Kroll f] Zurzeit sind es achtundzwanzig Dörfer. Jedes Dorf besuchen wir alle zwei Wochen, immer am selben Wochentag und zur selben Uhrzeit. Das ist wichtig, denn viele unserer Leserinnen und Leser planen ihre Woche danach.\n[Moderator m] Wer kommt denn zu Ihnen in den Bus?\n[Frau Kroll f] Man denkt ja oft, das wären vor allem ältere Menschen, die nicht mehr in die Stadt fahren können. Die gibt es auch, aber die größte Gruppe sind tatsächlich Grundschulkinder. In vielen Dörfern halten wir direkt vor der Schule, und die Lehrerinnen kommen mit der ganzen Klasse.\n[Moderator m] Wie viele Bücher passen denn in so einen Bus?\n[Frau Kroll f] Etwa viertausend Medien, also nicht nur Bücher, sondern auch Hörbücher, Spiele und Zeitschriften. Das ist natürlich viel weniger als in einer normalen Bibliothek. Deshalb kann man bei uns auch Bücher aus der Kreisbibliothek bestellen. Die bringen wir dann beim nächsten Termin mit.\n[Moderator m] Wie sind Sie zu diesem Beruf gekommen? Einen Bus zu fahren, lernt man ja nicht im Studium.\n[Frau Kroll f] Nein, wirklich nicht. Ich habe zehn Jahre in der Kreisbibliothek an der Ausleihe gearbeitet. Als die Stelle im Bücherbus frei wurde, hat mich vor allem gereizt, dass ich mehr unterwegs bin. Den Busführerschein musste ich dann aber erst noch machen. Den hat der Landkreis bezahlt.\n[Moderator m] War das schwer?\n[Frau Kroll f] Die Theorie ging, aber das Rückwärtsfahren auf engen Dorfstraßen, das hat mich am Anfang wirklich nervös gemacht. Inzwischen fahre ich seit sechs Jahren und hatte noch keinen einzigen Unfall.\n[Moderator m] Im letzten Jahr stand der Bücherbus ja kurz vor dem Aus. Was war da los?\n[Frau Kroll f] Der alte Bus war über zwanzig Jahre alt und musste ersetzt werden. Ein neuer kostet sehr viel Geld, und im Kreistag gab es Stimmen, die meinten, das Geld sei woanders besser angelegt. Gerettet haben uns am Ende die Leute selbst: Über dreitausend Menschen haben unterschrieben, dass der Bus bleiben soll.\n[Moderator m] Und jetzt gibt es einen neuen Bus?\n[Frau Kroll f] Ja, seit März. Er hat eine Rampe für Rollstühle, und er fährt elektrisch. Das klingt modern, hat aber einen Nachteil: Bei großer Kälte schafft er nicht mehr die ganze Strecke an einem Tag. Im Winter haben wir deshalb die Touren etwas verkürzt.\n[Moderator m] Was ist für Sie das Schönste an Ihrer Arbeit?\n[Frau Kroll f] Dass der Bus für viele mehr ist als eine Bibliothek. In manchen Dörfern gibt es keinen Laden und keine Kneipe mehr. Dann ist der Bus für eine Stunde der Ort, an dem man sich trifft und sich erzählt, was es Neues gibt. Manche kommen gar nicht wegen der Bücher, sondern wegen des Kaffees, den ich immer dabeihabe.",
+          "questions": [
+            {
+              "question": "Wie oft hält der Bücherbus in einem Dorf?",
+              "options": [
+                "jede Woche",
+                "alle zwei Wochen",
+                "einmal im Monat"
+              ],
+              "correctIndex": 1,
+              "evidence": "Jedes Dorf besuchen wir alle zwei Wochen"
+            },
+            {
+              "question": "Wer nutzt den Bücherbus am häufigsten?",
+              "options": [
+                "ältere Menschen",
+                "Lehrerinnen und Lehrer",
+                "Grundschulkinder"
+              ],
+              "correctIndex": 2,
+              "evidence": "die größte Gruppe sind tatsächlich Grundschulkinder"
+            },
+            {
+              "question": "Was können Leser tun, wenn ein Buch nicht im Bus ist?",
+              "options": [
+                "Sie bestellen es und bekommen es beim nächsten Halt.",
+                "Sie müssen es in der Stadt selbst abholen.",
+                "Sie bekommen es per Post nach Hause."
+              ],
+              "correctIndex": 0,
+              "evidence": "Die bringen wir dann beim nächsten Termin mit."
+            },
+            {
+              "question": "Warum hat Frau Kroll die Stelle im Bücherbus angenommen?",
+              "options": [
+                "Sie wollte mehr verdienen.",
+                "Die Ausleihe in der Kreisbibliothek wurde geschlossen.",
+                "Sie wollte mehr unterwegs sein."
+              ],
+              "correctIndex": 2,
+              "evidence": "hat mich vor allem gereizt, dass ich mehr unterwegs bin"
+            },
+            {
+              "question": "Was war für Frau Kroll am Anfang besonders schwierig?",
+              "options": [
+                "die theoretische Prüfung",
+                "das Rückwärtsfahren",
+                "der Umgang mit den Kindern"
+              ],
+              "correctIndex": 1,
+              "evidence": "das Rückwärtsfahren auf engen Dorfstraßen"
+            },
+            {
+              "question": "Warum gibt es den Bücherbus heute noch?",
+              "options": [
+                "Viele Bürgerinnen und Bürger haben sich für ihn eingesetzt.",
+                "Eine Firma hat den neuen Bus bezahlt.",
+                "Der Kreistag war von Anfang an dafür."
+              ],
+              "correctIndex": 0,
+              "evidence": "Gerettet haben uns am Ende die Leute selbst"
+            },
+            {
+              "question": "Welchen Nachteil hat der neue Bus?",
+              "options": [
+                "Er hat weniger Platz als der alte.",
+                "Er ist für Rollstuhlfahrer schwer zugänglich.",
+                "Bei starker Kälte kann er nicht so weit fahren."
+              ],
+              "correctIndex": 2,
+              "evidence": "Bei großer Kälte schafft er nicht mehr die ganze Strecke an einem Tag."
+            },
+            {
+              "question": "Was gefällt Frau Kroll an ihrer Arbeit am besten?",
+              "options": [
+                "dass sie ständig neue Bücher kennenlernt",
+                "dass der Bus ein Treffpunkt für die Dorfbewohner ist",
+                "dass sie meistens allein arbeiten kann"
+              ],
+              "correctIndex": 1,
+              "evidence": "Dann ist der Bus für eine Stunde der Ort, an dem man sich trifft"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Each village gets a visit every two weeks, always on the same day and at the same time.",
+            "de": "Der Bus kommt alle zwei Wochen in jedes Dorf, immer am selben Tag und zur selben Uhrzeit."
+          },
+          {
+            "en": "Contrary to what people expect, the largest group of users are primary school children.",
+            "de": "Anders als viele denken, sind Grundschulkinder die größte Gruppe."
+          },
+          {
+            "en": "Books can be ordered from the district library and are brought along on the next visit.",
+            "de": "Man kann Bücher aus der Kreisbibliothek bestellen. Der Bus bringt sie beim nächsten Termin mit."
+          },
+          {
+            "en": "What attracted her most was being on the road more.",
+            "de": "Vor allem hat sie gereizt, dass sie mehr unterwegs ist."
+          },
+          {
+            "en": "The theory was fine, but reversing on narrow village roads made her nervous.",
+            "de": "Die Theorie war kein Problem, aber das Rückwärtsfahren auf engen Dorfstraßen hat sie nervös gemacht."
+          },
+          {
+            "en": "More than three thousand people signed in favour of keeping the bus.",
+            "de": "Über dreitausend Menschen haben unterschrieben, dass der Bus bleiben soll."
+          },
+          {
+            "en": "The electric bus cannot cover the whole route in one day when it is very cold, so winter tours are shorter.",
+            "de": "Bei großer Kälte schafft der elektrische Bus nicht die ganze Strecke. Im Winter sind die Touren deshalb kürzer."
+          },
+          {
+            "en": "In villages without a shop or pub, the bus becomes a meeting place for an hour.",
+            "de": "In Dörfern ohne Laden und Kneipe ist der Bus für eine Stunde ein Treffpunkt."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-b2__hoeren-2__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter phone\n[Frau Reuter f] Umzüge Kaltenbach, Reuter am Apparat, guten Tag.\n[Herr Sommerfeld m] Guten Tag, Sommerfeld mein Name. Ich ziehe Ende des Monats von Göttingen nach Kassel und hätte gern ein Angebot für den Umzug.\n[Frau Reuter f] Gern. Um welchen Tag geht es denn genau?\n[Herr Sommerfeld m] Am liebsten am Samstag, dem achtundzwanzigsten. Da habe ich frei.\n[Frau Reuter f] Oh, die Samstage am Monatsende sind bei uns fast immer ausgebucht, und der achtundzwanzigste leider auch. Am Freitag davor hätte ich aber noch ein Team frei. Und unter der Woche sind wir auch etwas günstiger.\n[Herr Sommerfeld m] Freitag … da müsste ich mir freinehmen. Aber wenn es günstiger ist, mache ich das. Gut, dann nehmen wir den Freitag.\n[Frau Reuter f] Prima. Wie groß ist denn Ihre jetzige Wohnung?\n[Herr Sommerfeld m] Drei Zimmer, ungefähr siebzig Quadratmeter, im dritten Stock. Ohne Aufzug, leider.\n[Frau Reuter f] Das ist kein Problem, das sind wir gewohnt. Und in Kassel?\n[Herr Sommerfeld m] Da gibt es einen Aufzug, aber der ist ziemlich klein. Das Sofa passt da bestimmt nicht hinein.\n[Frau Reuter f] Dann tragen die Kollegen das Sofa eben über die Treppe, das kostet keinen Aufpreis. Möchten Sie die Kartons selbst packen, oder sollen wir das übernehmen?\n[Herr Sommerfeld m] Die Bücher und die Kleidung packe ich selbst. Aber die Küche, also Geschirr und Gläser, das würde ich lieber Ihnen überlassen. Da habe ich Angst, dass etwas kaputtgeht.\n[Frau Reuter f] Machen wir. Dafür rechne ich mit etwa zwei Stunden zusätzlich. Die Kartons bringen wir Ihnen eine Woche vorher vorbei, die sind im Preis enthalten.\n[Herr Sommerfeld m] Sehr gut. Und was ist mit dem Parken? Vor meinem Haus ist es immer total voll.\n[Frau Reuter f] Dann empfehlen wir eine Halteverbotszone. Die beantragen wir für Sie bei der Stadt, das dauert aber etwa zwei Wochen. Für Kassel bräuchten wir dann noch eine zweite.\n[Herr Sommerfeld m] In Kassel ist das nicht nötig. Das Haus hat einen eigenen Hof, da kann der Lastwagen direkt vor die Tür fahren.\n[Frau Reuter f] Wunderbar, dann nur eine in Göttingen. Ich schicke Ihnen das Angebot heute noch per E-Mail. Der Preis gilt allerdings nur, wenn Sie bis Mittwoch zusagen. Danach kann ich Ihnen den Freitag nicht mehr garantieren.\n[Herr Sommerfeld m] Verstanden. Ich melde mich spätestens am Dienstag.",
+          "questions": [
+            {
+              "question": "Warum findet der Umzug nicht am Samstag statt?",
+              "options": [
+                "Herr Sommerfeld muss am Samstag arbeiten.",
+                "An diesem Tag hat die Firma kein Team mehr frei.",
+                "Am Samstag darf der Lastwagen in Kassel nicht parken."
+              ],
+              "correctIndex": 1,
+              "evidence": "und der achtundzwanzigste leider auch"
+            },
+            {
+              "question": "Warum ist Herr Sommerfeld mit dem Freitag einverstanden?",
+              "options": [
+                "Der Umzug ist dann billiger.",
+                "Er hat freitags sowieso frei.",
+                "Seine Freunde können dann helfen."
+              ],
+              "correctIndex": 0,
+              "evidence": "Aber wenn es günstiger ist, mache ich das."
+            },
+            {
+              "question": "Was passiert mit dem Sofa in Kassel?",
+              "options": [
+                "Es kommt in den Aufzug.",
+                "Herr Sommerfeld muss für den Transport extra bezahlen.",
+                "Die Möbelpacker tragen es ohne Aufpreis die Treppe hinauf."
+              ],
+              "correctIndex": 2,
+              "evidence": "Dann tragen die Kollegen das Sofa eben über die Treppe"
+            },
+            {
+              "question": "Was soll die Umzugsfirma einpacken?",
+              "options": [
+                "die Bücher",
+                "die Kleidung",
+                "das Geschirr"
+              ],
+              "correctIndex": 2,
+              "evidence": "die Küche, also Geschirr und Gläser, das würde ich lieber Ihnen überlassen"
+            },
+            {
+              "question": "Was gilt für die Kartons?",
+              "options": [
+                "Sie werden vorher geliefert und kosten nichts extra.",
+                "Herr Sommerfeld muss sie selbst besorgen.",
+                "Sie werden erst am Umzugstag mitgebracht."
+              ],
+              "correctIndex": 0,
+              "evidence": "die sind im Preis enthalten"
+            },
+            {
+              "question": "Wie lange dauert es, eine Halteverbotszone zu beantragen?",
+              "options": [
+                "ein paar Tage",
+                "etwa einen Monat",
+                "ungefähr zwei Wochen"
+              ],
+              "correctIndex": 2,
+              "evidence": "das dauert aber etwa zwei Wochen"
+            },
+            {
+              "question": "Warum braucht man in Kassel keine Halteverbotszone?",
+              "options": [
+                "Der Lastwagen kann im Hof des Hauses halten.",
+                "Dort gibt es auf der Straße genug Platz.",
+                "Die Stadt Kassel erlaubt so etwas nicht."
+              ],
+              "correctIndex": 0,
+              "evidence": "Das Haus hat einen eigenen Hof"
+            },
+            {
+              "question": "Bis wann muss Herr Sommerfeld zusagen, damit das Angebot gilt?",
+              "options": [
+                "bis Dienstag",
+                "bis Mittwoch",
+                "bis Freitag"
+              ],
+              "correctIndex": 1,
+              "evidence": "Der Preis gilt allerdings nur, wenn Sie bis Mittwoch zusagen."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Saturdays at the end of the month are almost always fully booked, and the twenty-eighth is too.",
+            "de": "Die Samstage am Monatsende sind fast immer ausgebucht, auch der achtundzwanzigste."
+          },
+          {
+            "en": "He would have to take a day off, but he accepts because moving on a weekday is cheaper.",
+            "de": "Er muss sich freinehmen, aber er ist einverstanden, weil der Umzug unter der Woche günstiger ist."
+          },
+          {
+            "en": "The sofa will not fit in the small lift, so the movers carry it up the stairs at no extra cost.",
+            "de": "Das Sofa passt nicht in den kleinen Aufzug. Die Kollegen tragen es über die Treppe, ohne Aufpreis."
+          },
+          {
+            "en": "He packs books and clothes himself, but leaves the kitchen, the dishes and glasses, to the company.",
+            "de": "Bücher und Kleidung packt er selbst. Die Küche, also Geschirr und Gläser, packt die Firma."
+          },
+          {
+            "en": "The boxes are delivered a week in advance and are included in the price.",
+            "de": "Die Kartons kommen eine Woche vorher und sind im Preis enthalten."
+          },
+          {
+            "en": "The company applies to the city for the no-parking zone, which takes about two weeks.",
+            "de": "Die Firma beantragt die Halteverbotszone bei der Stadt. Das dauert etwa zwei Wochen."
+          },
+          {
+            "en": "The building in Kassel has its own courtyard, so the lorry can drive right up to the door.",
+            "de": "Das Haus in Kassel hat einen eigenen Hof. Der Lastwagen kann direkt vor die Tür fahren."
+          },
+          {
+            "en": "The price is only valid if he confirms by Wednesday. He himself plans to call by Tuesday at the latest.",
+            "de": "Der Preis gilt nur, wenn er bis Mittwoch zusagt. Er selbst will sich spätestens am Dienstag melden."
+          }
+        ]
+      }
+    }
+  ]
+}
