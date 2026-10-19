@@ -240,6 +240,69 @@ class FfmpegArgsTest(unittest.TestCase):
         self.assertEqual(audio_core.convert_args("up")[-len(ogg) - 2 :], ["-i", "up", *ogg])
 
 
+class RenderCancellationTest(unittest.TestCase):
+    def ffmpeg(self, calls):
+        return lambda args: calls.append(args) or b"OggS"
+
+    def test_stops_before_the_next_segment_once_cancelled(self):
+        synthed, ff = [], []
+        flag = {"on": False}
+
+        def synth(text, voice):
+            synthed.append(text)
+            flag["on"] = True  # the client goes away while the first segment is synthesised
+            return b"RIFF"
+
+        with self.assertRaises(SpeechError) as ctx:
+            audio_core.render([("a", "thorsten"), ("b", "kerstin"), ("c", "kerstin")], "none", 300, synth,
+                              self.ffmpeg(ff), cancelled=lambda: flag["on"])
+        self.assertEqual(ctx.exception.status, 499)
+        self.assertEqual(synthed, ["a"])
+
+    def test_stops_before_the_final_mix(self):
+        ff = []
+        n = {"checks": 0}
+
+        def cancelled():
+            n["checks"] += 1
+            return n["checks"] > 1  # false for the one segment, true before the mix
+
+        with self.assertRaises(SpeechError):
+            audio_core.render([("a", "thorsten")], "none", 0, lambda t, v: b"RIFF", self.ffmpeg(ff), cancelled=cancelled)
+        self.assertFalse(any("concat" in a for a in ff))
+
+    def test_none_or_false_is_unchanged(self):
+        for cancelled in (None, lambda: False):
+            ff = []
+            out = audio_core.render([("a", "thorsten"), ("b", "kerstin")], "none", 250, lambda t, v: b"RIFF",
+                                    self.ffmpeg(ff), cancelled=cancelled)
+            self.assertEqual(out, b"OggS")
+            self.assertEqual(len(ff), 4)
+
+    def test_serialized_rechecks_after_taking_the_lock(self):
+        calls = []
+        s = audio_core.serialized(lambda t, v: calls.append(t) or b"x")
+        with self.assertRaises(SpeechError) as ctx:
+            s("a", "thorsten", cancelled=lambda: True)
+        self.assertEqual(ctx.exception.status, 499)
+        self.assertEqual(calls, [])
+        self.assertEqual(s("b", "thorsten", cancelled=lambda: False), b"x")
+        self.assertEqual(s("c", "thorsten"), b"x")
+
+    def test_watcher_sets_the_event_when_the_client_disconnects(self):
+        async def run():
+            answers = iter([False, False, True])
+
+            async def is_disconnected():
+                return next(answers)
+
+            ev = threading.Event()
+            await asyncio.wait_for(audio_core.watch_disconnect(is_disconnected, ev, interval=0.01), 2)
+            return ev.is_set()
+
+        self.assertTrue(asyncio.run(run()))
+
+
 class RenderWithFakeFfmpegTest(unittest.TestCase):
     """The pipeline's ffmpeg calls, recorded without running ffmpeg."""
 

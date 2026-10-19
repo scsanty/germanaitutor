@@ -8,6 +8,7 @@ Every segment and the pause are resampled to one format (24 kHz, mono, s16 WAV) 
 demuxer joins them: the Piper voices differ in sample rate (thorsten-high is 22.05 kHz, the low and
 x_low voices are 16 kHz), and the concat demuxer needs identical stream parameters.
 """
+import asyncio
 import json
 import os
 import subprocess
@@ -252,30 +253,61 @@ Synth = Callable[[str, str], bytes]
 Ffmpeg = Callable[[list[str]], bytes]
 
 
-def serialized(fn: Synth) -> Synth:
+Cancelled = Callable[[], bool]
+
+
+def check_cancelled(cancelled: Cancelled | None) -> None:
+    """499 when the client of this render has disconnected (nobody is waiting for the audio)."""
+    if cancelled is not None and cancelled():
+        raise SpeechError(499, "client disconnected")
+
+
+def serialized(fn: Synth) -> Callable[..., bytes]:
     """Wrap a synth so only one call runs at a time. espeak-ng (inside Piper) keeps process-global
-    state and isn't thread-safe; ffmpeg work around it still runs in parallel."""
+    state and isn't thread-safe; ffmpeg work around it still runs in parallel.
+
+    The wrapper takes an optional `cancelled` check, run right after the lock is taken: a render
+    whose client left while it queued behind others skips its synthesis entirely."""
     lock = threading.Lock()
 
-    def run(text: str, voice: str) -> bytes:
+    def run(text: str, voice: str, cancelled: Cancelled | None = None) -> bytes:
         with lock:
+            check_cancelled(cancelled)
             return fn(text, voice)
 
     return run
 
 
-def render(segments: list[tuple[str, str]], filter_name: str, pause_ms: int, synth: Synth, ffmpeg: Ffmpeg = run_ffmpeg) -> bytes:
+async def watch_disconnect(is_disconnected: Callable[[], "asyncio.Future | object"], event: threading.Event, interval: float = 0.5) -> None:
+    """Poll `is_disconnected()` (an async callable, e.g. Starlette's `request.is_disconnected`) until
+    it reports true, then set `event`. Meant to run as a task that the caller cancels when done."""
+    while not await is_disconnected():
+        await asyncio.sleep(interval)
+    event.set()
+
+
+def render(
+    segments: list[tuple[str, str]],
+    filter_name: str,
+    pause_ms: int,
+    synth: Synth,
+    ffmpeg: Ffmpeg = run_ffmpeg,
+    cancelled: Cancelled | None = None,
+) -> bytes:
     """Synthesize each (text, voice) to WAV, resample all to 24 kHz, join with pauses (and the chime
-    for `station`), filter, encode."""
+    for `station`), filter, encode. If `cancelled()` turns true (the client disconnected) the render
+    stops before the next segment and before the final mix, raising SpeechError(499)."""
     with tempfile.TemporaryDirectory() as tmp:
         parts = []
         for i, (text, voice) in enumerate(segments):
+            check_cancelled(cancelled)
             raw = os.path.join(tmp, f"raw{i}.wav")
             with open(raw, "wb") as f:
                 f.write(synth(text, voice))
             norm = os.path.join(tmp, f"seg{i}.wav")
             ffmpeg(resample_args(raw, norm))
             parts.append(norm)
+        check_cancelled(cancelled)
         silence = None
         if pause_ms > 0 and len(parts) > 1:
             silence = os.path.join(tmp, "silence.wav")
@@ -288,6 +320,7 @@ def render(segments: list[tuple[str, str]], filter_name: str, pause_ms: int, syn
         listing = os.path.join(tmp, "list.txt")
         with open(listing, "w", encoding="utf-8") as f:
             f.write(concat_list(files))
+        check_cancelled(cancelled)
         return ffmpeg(encode_args(listing, filter_name))
 
 

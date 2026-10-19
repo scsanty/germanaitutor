@@ -7,9 +7,11 @@ ffmpeg fails (or anything else goes wrong).
 
 The pure parts (parsing, ffmpeg arguments, the render pipeline) are in audio_core.py.
 """
+import asyncio
 import io
 import logging
 import os
+import threading
 import wave
 
 from fastapi import FastAPI, Request, Response
@@ -76,8 +78,19 @@ def health():
 async def render(request: Request):
     raw = await audio_core.read_limited(request.stream(), audio_core.MAX_RENDER_BYTES, request.headers.get("content-length"))
     segments, filter_name, pause_ms = audio_core.parse_render_body(raw)
-    # Synthesis and ffmpeg block, so they run off the event loop.
-    audio = await run_in_threadpool(audio_core.render, segments, filter_name, pause_ms, synth_wav)
+    # If the client gives up (the app times out and retries), the render must stop: otherwise every
+    # abandoned render still queues for the synth lock and the queue never drains.
+    gone = threading.Event()
+    watcher = asyncio.create_task(audio_core.watch_disconnect(request.is_disconnected, gone))
+
+    def synth(text: str, voice_name: str) -> bytes:
+        return synth_wav(text, voice_name, cancelled=gone.is_set)
+
+    try:
+        # Synthesis and ffmpeg block, so they run off the event loop.
+        audio = await run_in_threadpool(audio_core.render, segments, filter_name, pause_ms, synth, audio_core.run_ffmpeg, gone.is_set)
+    finally:
+        watcher.cancel()
     return Response(content=audio, media_type="audio/ogg")
 
 
