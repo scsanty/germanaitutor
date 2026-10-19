@@ -1,0 +1,256 @@
+{
+  "formatId": "generic-a1",
+  "partId": "hoeren-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-a1__hoeren-2__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Verkäufer m] Guten Tag. Kann ich Ihnen helfen?\n[Frau f] Ja, ich suche ein Fahrrad. Für die Stadt, nicht für die Berge.\n[Verkäufer m] Hier haben wir ein Stadtrad. Es ist neu und kostet vierhundert Euro.\n[Frau f] Hm, das ist zu teuer. Ich möchte nur dreihundert Euro bezahlen.\n[Verkäufer m] Dann nehmen Sie dieses hier. Es ist nicht neu, aber sehr gut. Es kostet zweihundertachtzig Euro.\n[Frau f] Gut. Gibt es das Fahrrad auch in Grün?\n[Verkäufer m] Nein, leider nur in Schwarz oder in Weiß.\n[Frau f] Schwarz sieht man am Abend nicht gut. Dann nehme ich Weiß.\n[Verkäufer m] Möchten Sie auch ein Schloss? Ein Schloss kostet zwanzig Euro.\n[Frau f] Nein, danke, ein Schloss habe ich schon. Aber ich brauche einen Helm.\n[Verkäufer m] Die Helme sind da hinten. Und wann möchten Sie das Fahrrad abholen? Heute noch?\n[Frau f] Heute habe ich keine Zeit. Geht es am Freitag?\n[Verkäufer m] Ja. Wir öffnen am Freitag um neun Uhr, aber das Fahrrad ist erst um zehn fertig.\n[Frau f] Dann komme ich um zehn. Danke!",
+          "questions": [
+            {
+              "question": "Was für ein Fahrrad sucht die Frau?",
+              "options": [
+                "ein Fahrrad für die Berge",
+                "ein Fahrrad für Kinder",
+                "ein Fahrrad für die Stadt"
+              ],
+              "correctIndex": 2,
+              "evidence": "Für die Stadt, nicht für die Berge."
+            },
+            {
+              "question": "Wie viel bezahlt die Frau für das Fahrrad?",
+              "options": [
+                "280 Euro",
+                "300 Euro",
+                "400 Euro"
+              ],
+              "correctIndex": 0,
+              "evidence": "Es kostet zweihundertachtzig Euro."
+            },
+            {
+              "question": "Welche Farbe hat ihr Fahrrad?",
+              "options": [
+                "Grün",
+                "Weiß",
+                "Schwarz"
+              ],
+              "correctIndex": 1,
+              "evidence": "Dann nehme ich Weiß."
+            },
+            {
+              "question": "Was braucht die Frau noch?",
+              "options": [
+                "ein Schloss",
+                "einen Helm",
+                "eine Lampe"
+              ],
+              "correctIndex": 1,
+              "evidence": "Aber ich brauche einen Helm."
+            },
+            {
+              "question": "Wann holt die Frau das Fahrrad ab?",
+              "options": [
+                "Freitag, 10 Uhr",
+                "Freitag, 9 Uhr",
+                "heute"
+              ],
+              "correctIndex": 0,
+              "evidence": "Dann komme ich um zehn."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "She wants a bike for the city, not for the mountains.",
+            "de": "Sie sucht ein Fahrrad für die Stadt, nicht für die Berge."
+          },
+          {
+            "en": "The new bike costs 400 euros, which is too expensive. She takes the used one for 280 euros.",
+            "de": "Das neue Fahrrad kostet vierhundert Euro. Das ist zu teuer. Sie nimmt das Fahrrad für zweihundertachtzig Euro."
+          },
+          {
+            "en": "There is no green bike, and black is hard to see in the evening, so she takes white.",
+            "de": "Grün gibt es nicht, und Schwarz sieht man am Abend nicht gut. Sie nimmt Weiß."
+          },
+          {
+            "en": "She already has a lock, but she needs a helmet.",
+            "de": "Ein Schloss hat sie schon. Aber sie braucht einen Helm."
+          },
+          {
+            "en": "She has no time today. The shop opens at nine on Friday, but the bike is only ready at ten.",
+            "de": "Heute hat sie keine Zeit. Am Freitag öffnet der Laden um neun Uhr, aber das Fahrrad ist erst um zehn fertig."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-a1__hoeren-2__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Petra f] Guten Morgen! Du bist Amir, richtig? Ich bin Petra. Willkommen in der Firma!\n[Amir m] Danke! Ich bin ein bisschen nervös. Heute ist mein erster Tag.\n[Petra f] Kein Problem. Komm, ich zeige dir alles. Hier ist dein Büro. Du arbeitest mit Tom und Sandra zusammen.\n[Amir m] Schön. Und wo ist die Küche? Ist sie hier im ersten Stock?\n[Petra f] Nein, die Küche ist im zweiten Stock, neben dem Aufzug. Dort gibt es Kaffee und Tee.\n[Amir m] Super. Und wann machen wir Mittagspause?\n[Petra f] Normalerweise um zwölf. Aber heute essen wir um halb eins. Um zwölf haben wir ein Meeting.\n[Amir m] Ein Meeting? Muss ich da etwas sagen?\n[Petra f] Ja, bitte stell dich kurz vor. Das ist alles.\n[Amir m] Okay. Und wie lange arbeite ich heute?\n[Petra f] Heute nur bis fünfzehn Uhr. Ab morgen arbeitest du bis siebzehn Uhr.\n[Amir m] Gut. Ach, noch eine Frage: Wo kann ich parken? Ich bin mit dem Auto hier.\n[Petra f] Der Parkplatz hinter dem Haus ist nur für Kunden. Du parkst bitte in der Garage. Den Schlüssel bekommst du von Herrn Kaiser.",
+          "questions": [
+            {
+              "question": "Wo ist die Küche?",
+              "options": [
+                "im ersten Stock",
+                "im zweiten Stock",
+                "im Erdgeschoss"
+              ],
+              "correctIndex": 1,
+              "evidence": "die Küche ist im zweiten Stock"
+            },
+            {
+              "question": "Wann ist heute die Mittagspause?",
+              "options": [
+                "um 12 Uhr",
+                "um 13 Uhr",
+                "um 12.30 Uhr"
+              ],
+              "correctIndex": 2,
+              "evidence": "Aber heute essen wir um halb eins."
+            },
+            {
+              "question": "Was soll Amir im Meeting machen?",
+              "options": [
+                "sich vorstellen",
+                "Kaffee kochen",
+                "einen Plan zeigen"
+              ],
+              "correctIndex": 0,
+              "evidence": "bitte stell dich kurz vor"
+            },
+            {
+              "question": "Bis wann arbeitet Amir heute?",
+              "options": [
+                "bis 17 Uhr",
+                "bis 15 Uhr",
+                "bis 12 Uhr"
+              ],
+              "correctIndex": 1,
+              "evidence": "Heute nur bis fünfzehn Uhr."
+            },
+            {
+              "question": "Wo parkt Amir sein Auto?",
+              "options": [
+                "hinter dem Haus",
+                "vor dem Haus",
+                "in der Garage"
+              ],
+              "correctIndex": 2,
+              "evidence": "Du parkst bitte in der Garage."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Amir thinks it is on the first floor, but the kitchen is on the second floor, next to the lift.",
+            "de": "Amir denkt, die Küche ist im ersten Stock. Aber sie ist im zweiten Stock, neben dem Aufzug."
+          },
+          {
+            "en": "Lunch is normally at twelve, but today it is at half past twelve because of a meeting.",
+            "de": "Normalerweise ist die Pause um zwölf. Heute ist sie um halb eins, denn um zwölf gibt es ein Meeting."
+          },
+          {
+            "en": "Petra asks him to introduce himself briefly.",
+            "de": "Petra sagt: Er soll sich kurz vorstellen."
+          },
+          {
+            "en": "Today he works until three pm. From tomorrow he works until five pm.",
+            "de": "Heute arbeitet er bis fünfzehn Uhr. Ab morgen arbeitet er bis siebzehn Uhr."
+          },
+          {
+            "en": "The car park behind the building is only for customers. Amir parks in the garage.",
+            "de": "Der Parkplatz hinter dem Haus ist nur für Kunden. Amir parkt in der Garage."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-a1__hoeren-2__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Mann m] Guten Tag. Ich bin zwei Tage hier in der Stadt. Was kann man hier machen?\n[Mitarbeiterin f] Guten Tag! Wir haben eine Stadtführung. Sie ist jeden Tag um vierzehn Uhr.\n[Mann m] Und wo beginnt die Führung? Hier bei Ihnen?\n[Mitarbeiterin f] Nein, nicht hier. Sie beginnt am Brunnen auf dem Marktplatz.\n[Mann m] Was kostet die Führung?\n[Mitarbeiterin f] Normal kostet sie zehn Euro. Mit der Gästekarte vom Hotel kostet sie nur sieben Euro.\n[Mann m] Ich habe eine Gästekarte. Super! Gibt es auch eine Fahrt mit dem Schiff auf dem Fluss?\n[Mitarbeiterin f] Ja, aber heute nicht. Heute ist es zu windig. Morgen fährt das Schiff wieder, um zehn und um sechzehn Uhr.\n[Mann m] Am Nachmittag besuche ich morgen meine Tante. Dann fahre ich morgen um zehn.\n[Mitarbeiterin f] Gut. Brauchen Sie noch einen Stadtplan?\n[Mann m] Nein, danke, ich habe eine App. Aber ich habe Hunger. Kennen Sie ein gutes Restaurant?\n[Mitarbeiterin f] Ja, das Gasthaus Zur Mühle. Das Essen ist sehr gut, und es ist nicht teuer.",
+          "questions": [
+            {
+              "question": "Wo beginnt die Stadtführung?",
+              "options": [
+                "in der Touristeninformation",
+                "auf dem Marktplatz",
+                "am Fluss"
+              ],
+              "correctIndex": 1,
+              "evidence": "Sie beginnt am Brunnen auf dem Marktplatz."
+            },
+            {
+              "question": "Wie viel bezahlt der Mann für die Führung?",
+              "options": [
+                "7 Euro",
+                "10 Euro",
+                "17 Euro"
+              ],
+              "correctIndex": 0,
+              "evidence": "Mit der Gästekarte vom Hotel kostet sie nur sieben Euro."
+            },
+            {
+              "question": "Warum fährt heute kein Schiff?",
+              "options": [
+                "Es regnet.",
+                "Es ist zu windig.",
+                "Das Schiff ist kaputt."
+              ],
+              "correctIndex": 1,
+              "evidence": "Heute ist es zu windig."
+            },
+            {
+              "question": "Wann fährt der Mann mit dem Schiff?",
+              "options": [
+                "morgen um 16 Uhr",
+                "heute um 16 Uhr",
+                "morgen um 10 Uhr"
+              ],
+              "correctIndex": 2,
+              "evidence": "Dann fahre ich morgen um zehn."
+            },
+            {
+              "question": "Was möchte der Mann noch?",
+              "options": [
+                "einen Tipp für ein Restaurant",
+                "einen Stadtplan",
+                "eine App"
+              ],
+              "correctIndex": 0,
+              "evidence": "Kennen Sie ein gutes Restaurant?"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The tour does not start at the tourist office but at the fountain on the market square.",
+            "de": "Die Führung beginnt nicht hier, sondern am Brunnen auf dem Marktplatz."
+          },
+          {
+            "en": "The tour normally costs ten euros, but he has a guest card, so he pays seven euros.",
+            "de": "Normal kostet die Führung zehn Euro. Er hat eine Gästekarte, deshalb bezahlt er sieben Euro."
+          },
+          {
+            "en": "There is no boat today because it is too windy.",
+            "de": "Heute fährt kein Schiff, denn es ist zu windig."
+          },
+          {
+            "en": "He visits his aunt tomorrow afternoon, so he takes the boat tomorrow at ten.",
+            "de": "Morgen am Nachmittag besucht er seine Tante. Deshalb fährt er morgen um zehn Uhr."
+          },
+          {
+            "en": "He doesn't need a map because he has an app, but he asks for a good restaurant.",
+            "de": "Einen Stadtplan braucht er nicht, er hat eine App. Aber er fragt nach einem guten Restaurant."
+          }
+        ]
+      }
+    }
+  ]
+}
