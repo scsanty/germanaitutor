@@ -67,10 +67,10 @@ describe("SessionSetup", () => {
 
   it("preselects the matching grammar topic from the Dashboard link once the topics load", () => {
     vi.stubGlobal("fetch", vi.fn());
-    const props = { mode: "grammar_drill" as const, levels: ["B1" as const], activeLevel: "B1" as const, initialTopic: "passiv", onStarted: vi.fn() };
+    const props = { mode: "grammar_drill" as const, levels: ["B1" as const], activeLevel: "B1" as const, initialTopic: "The accusative case", onStarted: vi.fn() };
     const { rerender } = renderWithIntl(<SessionSetup {...props} grammarTopics={[]} />);
-    rerender(<SessionSetup {...props} grammarTopics={["Relativsätze", "Passiv"]} />);
-    expect(screen.getByRole("radio", { name: "Passiv" })).toBeChecked();
+    rerender(<SessionSetup {...props} grammarTopics={["Relative clauses", "The Accusative Case"]} />);
+    expect(screen.getByRole("radio", { name: "The Accusative Case" })).toBeChecked();
     expect(screen.getByRole("button", { name: "Start" })).not.toBeDisabled();
   });
 

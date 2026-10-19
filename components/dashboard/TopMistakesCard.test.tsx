@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
-import { screen } from '@testing-library/react';
+import { act, screen } from '@testing-library/react';
 import { renderWithIntl } from '@/test/renderWithIntl';
 import { delayedResponse } from '@/test/delayedResponse';
 import { TopMistakesCard } from './TopMistakesCard';
@@ -11,6 +11,7 @@ const ITEMS = [
     count: 4,
     example: { wrong: 'dem Tisch', right: 'den Tisch' },
     lesson: { id: 'g-akk', title: 'The accusative' },
+    drillTopic: null,
   },
   {
     categoryId: 'word_order',
@@ -18,6 +19,7 @@ const ITEMS = [
     count: 2,
     example: { wrong: 'ich habe gestern gegangen', right: 'ich bin gestern gegangen' },
     lesson: null,
+    drillTopic: 'Word order in main clauses',
   },
 ];
 
@@ -32,7 +34,7 @@ describe('TopMistakesCard', () => {
     expect(screen.getByRole('link', { name: 'The accusative' })).toHaveAttribute('href', '/lesson/g-akk');
     expect(screen.getByRole('link', { name: 'Practise in Freestyle' })).toHaveAttribute(
       'href',
-      '/freestyle/grammar_drill?topic=Word%20order'
+      '/freestyle/grammar_drill?topic=Word%20order%20in%20main%20clauses'
     );
   });
 
@@ -41,7 +43,7 @@ describe('TopMistakesCard', () => {
     vi.stubGlobal('fetch', fetchMock);
     const { container } = renderWithIntl(<TopMistakesCard />);
     await vi.waitFor(() => expect(fetchMock).toHaveBeenCalled());
-    await new Promise((r) => setTimeout(r, 50));
+    await act(async () => {});
     expect(container.querySelector('[data-slot="card"]')).toBeNull();
     expect(screen.queryByText('Your top mistakes')).toBeNull();
   });
@@ -51,7 +53,7 @@ describe('TopMistakesCard', () => {
     vi.stubGlobal('fetch', fetchMock);
     const { container } = renderWithIntl(<TopMistakesCard />);
     await vi.waitFor(() => expect(fetchMock).toHaveBeenCalled());
-    await new Promise((r) => setTimeout(r, 50));
+    await act(async () => {});
     expect(container.querySelector('[data-slot="card"]')).toBeNull();
   });
 });

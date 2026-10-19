@@ -49,7 +49,7 @@ export function TopMistakesCard() {
                   <s className="text-text-muted">{item.example.wrong}</s> → {item.example.right}
                 </p>
                 <Link
-                  href={item.lesson ? `/lesson/${item.lesson.id}` : `/freestyle/grammar_drill?topic=${encodeURIComponent(label)}`}
+                  href={item.lesson ? `/lesson/${item.lesson.id}` : `/freestyle/grammar_drill?topic=${encodeURIComponent(item.drillTopic ?? label)}`}
                   className="text-sm font-medium text-primary underline underline-offset-2"
                 >
                   {item.lesson ? item.lesson.title : t('practiseInFreestyle')}

@@ -2,6 +2,7 @@ import { notFound, redirect } from "next/navigation";
 import { getDb } from "@/lib/db/client";
 import { createProfileService } from "@/lib/services/profileService";
 import { isFreestyleMode, isModeEnabled } from "@/lib/freestyle/modes";
+import { parseInitialTopic } from "@/lib/freestyle/initialTopic";
 import { FreestyleSession } from "@/components/freestyle/FreestyleSession";
 import { ExamPractice } from "@/components/freestyle/ExamPractice";
 
@@ -21,6 +22,5 @@ export default async function FreestyleModePage(props: {
   // S12: exam practice has its own screen and no session (FreestyleSession fetches one on mount).
   if (mode === "exam_practice") return <ExamPractice />;
   // S21: the Dashboard's "Practise in Freestyle" link pre-fills the grammar drill topic.
-  const initialTopic = typeof topic === "string" ? topic.trim().slice(0, 200) : undefined;
-  return <FreestyleSession mode={mode} initialTopic={initialTopic || undefined} />;
+  return <FreestyleSession mode={mode} initialTopic={parseInitialTopic(topic)} />;
 }

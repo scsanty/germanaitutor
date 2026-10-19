@@ -59,7 +59,8 @@ export function createErrorLogService(db: Database.Database, deps: ErrorLogDeps 
     });
   }
 
-  function lessonFor(categoryId: string, track: string, level: string): { id: string; title: string } | null {
+  // The grammar lesson matching the most keywords wins; ties go to the earlier (lower-ranked) milestone.
+  function bestLesson(categoryId: string, scope: { track: string; level: string } | null): { id: string; title: string } | null {
     const keywords = TAXONOMY.find((c) => c.id === categoryId)?.keywords ?? [];
     if (keywords.length === 0) return null;
     const lessons = db
@@ -67,11 +68,11 @@ export function createErrorLogService(db: Database.Database, deps: ErrorLogDeps 
         `SELECT l.id, l.title, l.title_de FROM lessons l
          JOIN lesson_placements p ON p.lesson_id = l.id
          JOIN milestones m ON m.id = p.milestone_id
-         WHERE l.skill = 'grammar' AND l.track = ? AND l.source_level = ? AND m.difficulty_rank IS NOT NULL
+         WHERE l.skill = 'grammar' AND m.difficulty_rank IS NOT NULL
+           AND (? IS NULL OR (l.track = ? AND l.source_level = ?))
          ORDER BY m.difficulty_rank, l.title, l.id`
       )
-      .all(track, level) as { id: string; title: string; title_de: string }[];
-    // The lesson matching the most keywords wins; ties go to the earlier (lower-ranked) milestone.
+      .all(scope ? 1 : null, scope?.track ?? null, scope?.level ?? null) as { id: string; title: string; title_de: string }[];
     let hit: { id: string; title: string } | null = null;
     let best = 0;
     for (const l of lessons) {
@@ -84,7 +85,16 @@ export function createErrorLogService(db: Database.Database, deps: ErrorLogDeps 
     return hit ? { id: hit.id, title: hit.title } : null;
   }
 
-  return { record, topMistakes, lessonFor };
+  function lessonFor(categoryId: string, track: string, level: string): { id: string; title: string } | null {
+    return bestLesson(categoryId, { track, level });
+  }
+
+  // The best grammar lesson for a category in any track or level, for the Freestyle drill topic.
+  function anyLessonFor(categoryId: string): { id: string; title: string } | null {
+    return bestLesson(categoryId, null);
+  }
+
+  return { record, topMistakes, lessonFor, anyLessonFor };
 }
 
 export type ErrorLogService = ReturnType<typeof createErrorLogService>;
