@@ -1,0 +1,382 @@
+{
+  "formatId": "generic-b1",
+  "partId": "hoeren-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-b1__hoeren-2__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Frau Wendt f] Herr Rosner, schön, dass Sie da sind! Kommen Sie rein. Wie geht's denn Ihrer Tochter?\n[Herr Rosner m] Danke, sehr gut. Lina ist jetzt ein Jahr alt und läuft schon fast allein. Die Elternzeit war wirklich schön, aber ich freu mich auch wieder auf die Arbeit.\n[Frau Wendt f] Das hör ich gern. Sie wollten ja mit mir über Ihre Arbeitszeit sprechen. Was stellen Sie sich vor?\n[Herr Rosner m] Ich würde gern erst einmal dreißig Stunden pro Woche arbeiten, nicht mehr vierzig. Meine Frau fängt auch wieder an, und Lina geht ab nächstem Monat in die Kita.\n[Frau Wendt f] Dreißig Stunden sind kein Problem. Und wie möchten Sie die Stunden verteilen?\n[Herr Rosner m] Die Kita macht um sechzehn Uhr zu. Deshalb muss ich jeden Tag um halb vier gehen. Dafür kann ich morgens schon um sieben anfangen.\n[Frau Wendt f] Um sieben ist hier zwar noch niemand, aber das ist ja egal. Haben Sie auch an Homeoffice gedacht?\n[Herr Rosner m] Ja, wenn es geht, zwei Tage pro Woche.\n[Frau Wendt f] Hm, zwei Tage sind schwierig, weil am Montag immer unsere Teambesprechung ist und am Donnerstag die Kunden zu uns kommen.\n[Frau Wendt f] Einen Tag kann ich Ihnen anbieten, den Freitag.\n[Herr Rosner m] Ein Tag ist auch schon eine große Hilfe. Der Freitag passt gut.\n[Frau Wendt f] Gut. Dann noch etwas: Ihr altes Projekt, die Kundendatenbank, hat ja Frau Celik übernommen, und das läuft sehr gut. Ich möchte, dass sie das weitermacht.\n[Herr Rosner m] Ach so. Schade, aber das verstehe ich natürlich.\n[Frau Wendt f] Dafür habe ich etwas Neues für Sie. Im Herbst bekommen wir drei Auszubildende, und ich hätte gern, dass Sie sich um die drei kümmern.\n[Herr Rosner m] Das klingt interessant. Mit jungen Leuten arbeite ich gern.\n[Frau Wendt f] Prima. Ihr Computer ist übrigens noch nicht fertig, die Technikabteilung braucht noch zwei Tage. So lange können Sie den Laptop von Herrn Brandl benutzen, der ist gerade im Urlaub.\n[Herr Rosner m] Alles klar. Und ab wann bin ich offiziell wieder da?\n[Frau Wendt f] Ab dem ersten Juni. Aber kommen Sie doch schon am Freitag davor zu unserem Sommerfest. Dann sehen Sie alle Kollegen wieder.\n[Herr Rosner m] Sehr gern, da komme ich.",
+          "questions": [
+            {
+              "question": "Was erzählt Herr Rosner über seine Tochter?",
+              "options": [
+                "Sie geht schon in die Kita.",
+                "Sie ist ein Jahr alt.",
+                "Sie kann schon allein laufen."
+              ],
+              "correctIndex": 1,
+              "evidence": "Lina ist jetzt ein Jahr alt"
+            },
+            {
+              "question": "Wie viele Stunden möchte Herr Rosner jetzt arbeiten?",
+              "options": [
+                "dreißig Stunden pro Woche",
+                "vierzig Stunden pro Woche",
+                "zwanzig Stunden pro Woche"
+              ],
+              "correctIndex": 0,
+              "evidence": "Ich würde gern erst einmal dreißig Stunden pro Woche arbeiten"
+            },
+            {
+              "question": "Wann will Herr Rosner jeden Tag Feierabend machen?",
+              "options": [
+                "um sechzehn Uhr",
+                "um halb vier",
+                "um sieben Uhr"
+              ],
+              "correctIndex": 1,
+              "evidence": "Deshalb muss ich jeden Tag um halb vier gehen."
+            },
+            {
+              "question": "Wie oft darf Herr Rosner im Homeoffice arbeiten?",
+              "options": [
+                "zwei Tage pro Woche",
+                "überhaupt nicht",
+                "einen Tag pro Woche"
+              ],
+              "correctIndex": 2,
+              "evidence": "Einen Tag kann ich Ihnen anbieten, den Freitag."
+            },
+            {
+              "question": "Warum ist Homeoffice am Montag nicht möglich?",
+              "options": [
+                "Dann trifft sich das Team.",
+                "Dann kommen die Kunden.",
+                "Dann ist die Kita geschlossen."
+              ],
+              "correctIndex": 0,
+              "evidence": "weil am Montag immer unsere Teambesprechung ist"
+            },
+            {
+              "question": "Was passiert mit Herrn Rosners altem Projekt?",
+              "options": [
+                "Er übernimmt es wieder.",
+                "Eine Kollegin macht es weiter.",
+                "Es ist schon zu Ende."
+              ],
+              "correctIndex": 1,
+              "evidence": "Ich möchte, dass sie das weitermacht."
+            },
+            {
+              "question": "Was ist Herrn Rosners neue Aufgabe?",
+              "options": [
+                "Er betreut die neuen Auszubildenden.",
+                "Er organisiert das Sommerfest.",
+                "Er baut eine neue Datenbank auf."
+              ],
+              "correctIndex": 0,
+              "evidence": "ich hätte gern, dass Sie sich um die drei kümmern"
+            },
+            {
+              "question": "Mit welchem Computer arbeitet Herr Rosner in den ersten Tagen?",
+              "options": [
+                "mit seinem neuen Computer",
+                "mit seinem alten Computer",
+                "mit dem Laptop eines Kollegen"
+              ],
+              "correctIndex": 2,
+              "evidence": "So lange können Sie den Laptop von Herrn Brandl benutzen"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Lina is one year old. She can almost walk on her own, and she only starts nursery next month.",
+            "de": "Lina ist ein Jahr alt. Sie läuft fast allein, und in die Kita geht sie erst ab nächstem Monat."
+          },
+          {
+            "en": "He wants to work thirty hours a week for now instead of forty.",
+            "de": "Er möchte erst einmal dreißig Stunden pro Woche arbeiten, nicht mehr vierzig."
+          },
+          {
+            "en": "The nursery closes at four, so he has to leave at half past three every day. Seven o'clock is when he wants to start.",
+            "de": "Die Kita schließt um sechzehn Uhr. Deshalb muss er jeden Tag um halb vier gehen. Um sieben will er anfangen."
+          },
+          {
+            "en": "He asked for two days, but Frau Wendt can only offer one day a week, Friday.",
+            "de": "Er wollte zwei Tage, aber Frau Wendt kann ihm nur einen Tag anbieten, den Freitag."
+          },
+          {
+            "en": "There is always a team meeting on Monday. The customers come on Thursday.",
+            "de": "Am Montag ist immer die Teambesprechung. Die Kunden kommen am Donnerstag."
+          },
+          {
+            "en": "Frau Celik took over the customer database project, it is going well, and Frau Wendt wants her to continue it.",
+            "de": "Frau Celik hat die Kundendatenbank übernommen. Es läuft gut, und sie soll das Projekt weitermachen."
+          },
+          {
+            "en": "Three trainees start in the autumn, and Frau Wendt wants him to look after them.",
+            "de": "Im Herbst kommen drei Auszubildende. Herr Rosner soll sich um sie kümmern."
+          },
+          {
+            "en": "His computer is not ready for another two days, so he uses the laptop of his colleague Herr Brandl, who is on holiday.",
+            "de": "Sein Computer ist noch nicht fertig. So lange benutzt er den Laptop von Herrn Brandl, der im Urlaub ist."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-b1__hoeren-2__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Svenja f] Tarik, du hast doch mal erzählt, dass du in der Schule Theater gespielt hast, oder?\n[Tarik m] Ja, aber das ist schon ewig her. Warum fragst du?\n[Svenja f] Ich spiele ja seit zwei Jahren in der Theatergruppe Rampenlicht. Und uns fehlt gerade ein Mann für das neue Stück. Unser Schauspieler Bernd ist nämlich nach Hamburg gezogen.\n[Tarik m] Oh je. Und was ist das für ein Stück?\n[Svenja f] Eine Komödie. Eine Familie fährt zusammen in den Urlaub, und alles geht schief. Du würdest den Vater spielen.\n[Tarik m] Den Vater? Da muss ich bestimmt total viel Text lernen.\n[Svenja f] Es geht. Die größte Rolle hat die Großmutter, und die spiele ich. Der Vater hat vielleicht zwanzig Sätze.\n[Tarik m] Na gut. Und wann probt ihr?\n[Svenja f] Normalerweise jeden Dienstag von sieben bis halb zehn. Vor der Premiere kommen dann noch zwei Wochenenden dazu.\n[Tarik m] Dienstag ist schlecht, da hab ich meinen Spanischkurs. Der ist allerdings im März zu Ende.\n[Svenja f] Das passt doch! Bis März lesen wir das Stück nur zusammen und besprechen die Rollen. Richtig geprobt wird erst ab April.\n[Tarik m] Und was kostet das? Muss man da in einen Verein?\n[Svenja f] Ja, wir sind ein Verein. Der Beitrag ist fünf Euro im Monat. Davon bezahlen wir die Miete für den Probenraum im Jugendzentrum. Die Kostüme nähen wir selbst.\n[Tarik m] Fünf Euro, das ist ja fast nichts. Und wann ist die Premiere?\n[Svenja f] Am zwanzigsten Juni im Bürgerhaus. Danach spielen wir noch dreimal.\n[Tarik m] Und wenn ich merke, dass mir das gar keinen Spaß macht?\n[Svenja f] Dann komm doch erst mal vorbei und schau dir alles an. Diesen Sonntag treffen wir uns ausnahmsweise am Nachmittag, weil wir die Plakate gestalten.\n[Tarik m] Sonntag geht. Soll ich was mitbringen?\n[Svenja f] Nur gute Laune. Und vielleicht einen Kuchen, wenn du Lust hast.",
+          "questions": [
+            {
+              "question": "Warum sucht die Theatergruppe einen neuen Spieler?",
+              "options": [
+                "Ein Schauspieler wohnt jetzt in einer anderen Stadt.",
+                "Ein Schauspieler ist krank geworden.",
+                "Das neue Stück hat mehr Rollen als das alte."
+              ],
+              "correctIndex": 0,
+              "evidence": "Unser Schauspieler Bernd ist nämlich nach Hamburg gezogen."
+            },
+            {
+              "question": "Worum geht es in dem neuen Stück?",
+              "options": [
+                "um eine Schulklasse auf Klassenfahrt",
+                "um einen Familienurlaub mit vielen Problemen",
+                "um einen Kriminalfall in einem Hotel"
+              ],
+              "correctIndex": 1,
+              "evidence": "Eine Familie fährt zusammen in den Urlaub, und alles geht schief."
+            },
+            {
+              "question": "Welche Rolle spielt Svenja?",
+              "options": [
+                "die Mutter",
+                "die Tochter",
+                "die Großmutter"
+              ],
+              "correctIndex": 2,
+              "evidence": "Die größte Rolle hat die Großmutter, und die spiele ich."
+            },
+            {
+              "question": "Warum hat Tarik dienstags im Moment keine Zeit?",
+              "options": [
+                "Er muss abends lange arbeiten.",
+                "Er lernt eine Fremdsprache.",
+                "Er hat Fußballtraining."
+              ],
+              "correctIndex": 1,
+              "evidence": "da hab ich meinen Spanischkurs"
+            },
+            {
+              "question": "Was macht die Gruppe bis März?",
+              "options": [
+                "Sie liest das Stück und spricht über die Rollen.",
+                "Sie probt an jedem Wochenende.",
+                "Sie macht eine lange Pause."
+              ],
+              "correctIndex": 0,
+              "evidence": "Bis März lesen wir das Stück nur zusammen und besprechen die Rollen."
+            },
+            {
+              "question": "Wofür bezahlt die Gruppe mit dem Mitgliedsbeitrag?",
+              "options": [
+                "für die Kostüme",
+                "für den Raum, in dem sie probt",
+                "für die Plakate"
+              ],
+              "correctIndex": 1,
+              "evidence": "Davon bezahlen wir die Miete für den Probenraum im Jugendzentrum."
+            },
+            {
+              "question": "Wie oft spielt die Gruppe das Stück insgesamt?",
+              "options": [
+                "einmal",
+                "dreimal",
+                "viermal"
+              ],
+              "correctIndex": 2,
+              "evidence": "Danach spielen wir noch dreimal."
+            },
+            {
+              "question": "Wann soll Tarik die Gruppe zum ersten Mal besuchen?",
+              "options": [
+                "am Sonntagnachmittag",
+                "am nächsten Dienstag",
+                "erst im April"
+              ],
+              "correctIndex": 0,
+              "evidence": "Diesen Sonntag treffen wir uns ausnahmsweise am Nachmittag"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The group needs a man because their actor Bernd has moved to Hamburg.",
+            "de": "Der Gruppe fehlt ein Mann, weil ihr Schauspieler Bernd nach Hamburg gezogen ist."
+          },
+          {
+            "en": "The play is a comedy about a family whose holiday goes wrong in every way.",
+            "de": "Das Stück ist eine Komödie über eine Familie im Urlaub, bei der alles schiefgeht."
+          },
+          {
+            "en": "Svenja plays the grandmother, the biggest part. Tarik would play the father.",
+            "de": "Svenja spielt die Großmutter, das ist die größte Rolle. Tarik soll den Vater spielen."
+          },
+          {
+            "en": "On Tuesdays he has his Spanish course, which ends in March.",
+            "de": "Am Dienstag hat er seinen Spanischkurs. Der Kurs ist im März zu Ende."
+          },
+          {
+            "en": "Until March they only read the play together and discuss the roles. Real rehearsals start in April.",
+            "de": "Bis März lesen sie das Stück nur und besprechen die Rollen. Richtig geprobt wird erst ab April."
+          },
+          {
+            "en": "The five euros a month pay the rent for the rehearsal room in the youth centre. They make the costumes themselves.",
+            "de": "Mit den fünf Euro im Monat bezahlt die Gruppe die Miete für den Probenraum. Die Kostüme nähen sie selbst."
+          },
+          {
+            "en": "After the premiere on the twentieth of June they perform three more times, so four times in total.",
+            "de": "Nach der Premiere am zwanzigsten Juni spielen sie noch dreimal. Das sind zusammen vier Aufführungen."
+          },
+          {
+            "en": "Svenja invites him to come and watch this Sunday afternoon, when the group is designing the posters.",
+            "de": "Svenja lädt ihn für diesen Sonntagnachmittag ein. Dann gestaltet die Gruppe die Plakate."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-b1__hoeren-2__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Frau Lehmann f] So, Lucas, das ist dein Zimmer. Ich hoffe, es gefällt dir. Die Reise war bestimmt anstrengend.\n[Lucas m] Ja, ein bisschen. Ich war fast zwanzig Stunden unterwegs. Aber das Zimmer ist super, danke!\n[Frau Lehmann f] Ich erkläre dir kurz, wie es bei uns so läuft. Unter der Woche gibt es um halb sieben Frühstück, weil mein Mann und ich früh zur Arbeit müssen. Am Wochenende frühstücken wir später, so gegen neun, alle zusammen.\n[Lucas m] Okay. Und wann fängt die Schule an?\n[Frau Lehmann f] Um Viertel vor acht. Mit dem Rad brauchst du nur zehn Minuten. Wir haben ein Fahrrad für dich in der Garage. Nur im Winter, wenn es glatt ist, nimmst du besser den Bus.\n[Lucas m] Ich bin noch nicht oft Fahrrad gefahren, aber ich probier's.\n[Frau Lehmann f] Am ersten Tag fährt Jonas mit dir, unser Sohn. Er geht auf dieselbe Schule, eine Klasse über dir.\n[Lucas m] Ah, toll. Und wo esse ich mittags?\n[Frau Lehmann f] Montags, mittwochs und donnerstags hast du Nachmittagsunterricht, da isst du in der Mensa. An den anderen Tagen bist du um eins zu Hause, und dann macht Jonas dir und sich etwas warm.\n[Lucas m] Gut. Darf ich auch mal Freunde mitbringen?\n[Frau Lehmann f] Natürlich, sag uns nur vorher Bescheid. Und abends bist du unter der Woche bitte um zehn zu Hause, am Wochenende um Mitternacht.\n[Lucas m] Das ist in Ordnung. Ach, und habt ihr Internet? Ich möchte meinen Eltern Bescheid sagen, dass ich gut angekommen bin.\n[Frau Lehmann f] Ja, das Passwort steht auf einem Zettel am Kühlschrank. Ruf sie am besten sofort an, sie warten bestimmt schon. Ausruhen kannst du dich danach.\n[Lucas m] Mach ich. Kann ich hier auch meine Wäsche waschen? Meine Sachen sind nach der Reise ziemlich schmutzig.\n[Frau Lehmann f] Leg sie einfach in den Korb im Bad. Ich wasche einmal pro Woche, immer am Samstag. Wenn du mal etwas schnell brauchst, zeige ich dir die Maschine.\n[Lucas m] Danke. Eine Frage noch: Soll ich im Haushalt helfen?\n[Frau Lehmann f] Ja, bei uns hilft jeder mit. Jonas bringt den Müll raus, und du könntest nach dem Abendessen den Tisch abräumen und die Spülmaschine einräumen.\n[Lucas m] Klar, kein Problem.",
+          "questions": [
+            {
+              "question": "Wann frühstückt die Familie an Schultagen?",
+              "options": [
+                "um halb sieben",
+                "um Viertel vor acht",
+                "gegen neun Uhr"
+              ],
+              "correctIndex": 0,
+              "evidence": "Unter der Woche gibt es um halb sieben Frühstück"
+            },
+            {
+              "question": "Wie kommt Lucas normalerweise zur Schule?",
+              "options": [
+                "mit dem Bus",
+                "zu Fuß",
+                "mit dem Fahrrad"
+              ],
+              "correctIndex": 2,
+              "evidence": "Wir haben ein Fahrrad für dich in der Garage."
+            },
+            {
+              "question": "Wer ist Jonas?",
+              "options": [
+                "ein Mitschüler aus Lucas' Klasse",
+                "der Sohn der Familie",
+                "ein anderer Austauschschüler"
+              ],
+              "correctIndex": 1,
+              "evidence": "Am ersten Tag fährt Jonas mit dir, unser Sohn."
+            },
+            {
+              "question": "Was passiert an den Tagen ohne Nachmittagsunterricht?",
+              "options": [
+                "Lucas isst in der Mensa.",
+                "Lucas isst mittags mit Jonas zu Hause.",
+                "Lucas kocht für die ganze Familie."
+              ],
+              "correctIndex": 1,
+              "evidence": "und dann macht Jonas dir und sich etwas warm"
+            },
+            {
+              "question": "Bis wann soll Lucas unter der Woche abends zu Hause sein?",
+              "options": [
+                "bis zehn Uhr",
+                "bis Mitternacht",
+                "bis neun Uhr"
+              ],
+              "correctIndex": 0,
+              "evidence": "Und abends bist du unter der Woche bitte um zehn zu Hause"
+            },
+            {
+              "question": "Was soll Lucas als Erstes machen?",
+              "options": [
+                "sich hinlegen und schlafen",
+                "seine Wäsche waschen",
+                "seine Eltern anrufen"
+              ],
+              "correctIndex": 2,
+              "evidence": "Ruf sie am besten sofort an"
+            },
+            {
+              "question": "Wann wäscht Frau Lehmann normalerweise die Wäsche?",
+              "options": [
+                "jeden Tag",
+                "am Samstag",
+                "nur wenn jemand fragt"
+              ],
+              "correctIndex": 1,
+              "evidence": "Ich wasche einmal pro Woche, immer am Samstag."
+            },
+            {
+              "question": "Wie soll Lucas im Haushalt helfen?",
+              "options": [
+                "Er soll den Müll rausbringen.",
+                "Er soll am Wochenende kochen.",
+                "Er soll nach dem Abendessen aufräumen."
+              ],
+              "correctIndex": 2,
+              "evidence": "du könntest nach dem Abendessen den Tisch abräumen"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "On weekdays breakfast is at half past six because the parents start work early. At the weekend they eat at about nine.",
+            "de": "Unter der Woche gibt es um halb sieben Frühstück, weil die Eltern früh arbeiten. Am Wochenende frühstücken sie gegen neun."
+          },
+          {
+            "en": "The family has a bike for him and the ride takes ten minutes. He should only take the bus in winter when it is icy.",
+            "de": "Die Familie hat ein Fahrrad für ihn, und er braucht zehn Minuten. Nur im Winter, wenn es glatt ist, soll er den Bus nehmen."
+          },
+          {
+            "en": "Jonas is the Lehmanns' son. He goes to the same school but is one class above Lucas.",
+            "de": "Jonas ist der Sohn der Familie. Er geht auf dieselbe Schule, aber eine Klasse über Lucas."
+          },
+          {
+            "en": "On days without afternoon lessons Lucas is home at one, and Jonas heats up something for both of them.",
+            "de": "An Tagen ohne Nachmittagsunterricht ist Lucas um eins zu Hause. Dann macht Jonas für beide etwas warm."
+          },
+          {
+            "en": "On weekdays he should be home by ten. Midnight is the rule for the weekend.",
+            "de": "Unter der Woche soll er um zehn zu Hause sein. Am Wochenende ist es Mitternacht."
+          },
+          {
+            "en": "Frau Lehmann tells him to call his parents straight away because they are waiting. He can rest afterwards.",
+            "de": "Frau Lehmann sagt, er soll seine Eltern sofort anrufen, weil sie warten. Ausruhen kann er sich danach."
+          },
+          {
+            "en": "She does the washing once a week, always on Saturday. Only if Lucas needs something quickly will she show him the machine.",
+            "de": "Sie wäscht einmal pro Woche, immer am Samstag. Nur wenn Lucas etwas schnell braucht, zeigt sie ihm die Maschine."
+          },
+          {
+            "en": "Jonas takes out the rubbish. Lucas is asked to clear the table after dinner and load the dishwasher.",
+            "de": "Jonas bringt den Müll raus. Lucas soll nach dem Abendessen den Tisch abräumen und die Spülmaschine einräumen."
+          }
+        ]
+      }
+    }
+  ]
+}
