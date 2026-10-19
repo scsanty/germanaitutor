@@ -11,6 +11,7 @@ import { GermanTextarea } from '@/components/typing/GermanTextarea';
 import { WordCounter, countWords } from '@/components/typing/WordCounter';
 import { differsByLanguage, isLocalizedText, pickText, type ContentLanguage } from '@/lib/i18n/localizedText';
 import type { SessionMessage, SessionView } from '@/lib/freestyle/sessionViews';
+import { takeWritingDraft } from '@/components/writing/writingDraft';
 import { CorrectionList, readCorrections } from './CorrectionList';
 import { TappableGerman } from './TappableGerman';
 
@@ -44,6 +45,12 @@ export function WritingSession({ session, onMessages }: { session: SessionView; 
   const shown = useRef(versions.length);
   // A ref as well as state: a second click can land before the re-render that disables submitting.
   const sending = useRef(false);
+
+  // S11: a letter copied from a Teil result fills the box, only while it is still empty.
+  useEffect(() => {
+    const copied = takeWritingDraft();
+    if (copied) setDraft((current) => (current.trim() === '' ? copied : current));
+  }, []);
 
   // Bring a newly added version into view; opening a session with versions leaves the page at the top.
   useEffect(() => {

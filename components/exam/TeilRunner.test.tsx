@@ -102,3 +102,67 @@ describe('TeilRunner with a listening part', () => {
     }));
   });
 });
+
+// Writing (Review Focus 3): the Teil letter runner.
+describe('TeilRunner with a letter part', () => {
+  const LETTER_RUN = {
+    ...RUN,
+    attemptId: 21,
+    part: { id: 'schreiben', skill: 'writing', title: { en: 'Writing', de: 'Schriftlicher Ausdruck' }, taskType: 'letter', items: 3, points: 45, minutes: 30, instructions: 'Wählen Sie Aufgabe A oder Aufgabe B.' },
+    set: {
+      id: 's3',
+      view: {
+        tasks: [
+          { situation: 'Aufgabe A: Einladung.', leitpunkte: ['Dank', 'Absage', 'Vorschlag'], register: 'informal', wordTarget: { min: 120, max: 180 } },
+          { situation: 'Aufgabe B: Beschwerde.', leitpunkte: ['Problem', 'Erwartung', 'Frist'], register: 'formal', wordTarget: { min: 120, max: 180 } },
+        ],
+      },
+    },
+    minutes: 30,
+  };
+
+  it('chooses a task, keeps spellcheck off, and grades once however often Submit is clicked', async () => {
+    const result = { attemptId: 21, score: 25, maxScore: 45, overtimeSeconds: 0, review: [], text: 'Sehr geehrte Damen und Herren', taskIndex: 1 };
+    const fetchMock = vi.fn(() => delayedResponse(result, { ms: 200 }));
+    vi.stubGlobal('fetch', fetchMock);
+    const onFinished = vi.fn();
+    renderWithIntl(
+      <ShellProvider>
+        <TeilRunner run={LETTER_RUN as never} onFinished={onFinished} />
+      </ShellProvider>
+    );
+    fireEvent.click(screen.getByRole('radio', { name: /Task B/ }));
+    const box = screen.getByRole('textbox', { name: 'Your letter' });
+    expect(box).toHaveAttribute('spellcheck', 'false');
+    fireEvent.change(box, { target: { value: 'Sehr geehrte Damen und Herren' } });
+    const submit = screen.getByRole('button', { name: 'Submit' });
+    fireEvent.click(submit);
+    fireEvent.click(submit);
+    const grading = screen.getByRole('button', { name: 'Grading your letter…' });
+    expect(grading).toBeDisabled();
+    fireEvent.click(grading);
+    expect(screen.getByRole('status')).toHaveTextContent('Grading your letter…');
+    // Halfway through the (delayed) grading call, the button is still disabled.
+    await act(() => new Promise((resolve) => setTimeout(resolve, 100)));
+    expect(screen.getByRole('button', { name: 'Grading your letter…' })).toBeDisabled();
+    await vi.waitFor(() => expect(onFinished).toHaveBeenCalledWith(result));
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    expect(fetchMock).toHaveBeenCalledWith('/api/exam-practice/submit', expect.objectContaining({
+      body: JSON.stringify({ attemptId: 21, answers: { type: 'letter', taskIndex: 1, text: 'Sehr geehrte Damen und Herren' } }),
+    }));
+  });
+
+  it('keeps the letter and allows a resubmit when grading fails', async () => {
+    vi.stubGlobal('fetch', vi.fn(() => delayedResponse({ error: 'x', code: 'ai_bad_reply' }, { ok: false, status: 502 })));
+    renderWithIntl(
+      <ShellProvider>
+        <TeilRunner run={LETTER_RUN as never} onFinished={vi.fn()} />
+      </ShellProvider>
+    );
+    fireEvent.change(screen.getByRole('textbox', { name: 'Your letter' }), { target: { value: 'Liebe Anna' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Submit' }));
+    expect(await screen.findByRole('alert')).toBeInTheDocument();
+    expect(screen.getByRole('textbox', { name: 'Your letter' })).toHaveValue('Liebe Anna');
+    expect(screen.getByRole('button', { name: 'Submit' })).toBeEnabled();
+  });
+});

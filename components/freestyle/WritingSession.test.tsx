@@ -83,3 +83,25 @@ describe('WritingSession', () => {
     expect(onMessages).not.toHaveBeenCalled();
   });
 });
+
+// S11: "Copy into free writing" leaves the letter in sessionStorage; the box takes it once.
+describe('WritingSession draft from a Teil letter', () => {
+  afterEach(() => sessionStorage.clear());
+
+  it('pre-fills the empty box with the stored draft and removes it', () => {
+    sessionStorage.setItem('nadoch.writingDraft', 'Sehr geehrte Damen und Herren');
+    renderWithIntl(<WritingSession session={SESSION} onMessages={vi.fn()} />);
+    expect(screen.getByLabelText('Your text')).toHaveValue('Sehr geehrte Damen und Herren');
+    expect(sessionStorage.getItem('nadoch.writingDraft')).toBeNull();
+  });
+
+  it('works without a stored draft, and when storage throws', () => {
+    renderWithIntl(<WritingSession session={SESSION} onMessages={vi.fn()} />);
+    expect(screen.getByLabelText('Your text')).toHaveValue('');
+    const spy = vi.spyOn(Storage.prototype, 'getItem').mockImplementation(() => {
+      throw new Error('blocked');
+    });
+    renderWithIntl(<WritingSession session={SESSION} onMessages={vi.fn()} />);
+    spy.mockRestore();
+  });
+});
