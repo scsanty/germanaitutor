@@ -38,7 +38,7 @@
 <body>
 <header>
   <h1>GermanLearner — project board</h1>
-  <div class="sub">Last updated: 2026-10-19 · Current step: Listening — last NaDoch sets</div>
+  <div class="sub">Last updated: 2026-10-20 · Current step: Listening merged; Writing build starting</div>
   <div class="legend">
     <span class="done">Done</span><span class="progress">In progress</span><span class="next">Ready to build</span>
    <span class="todo">Not started</span>
@@ -47,7 +47,7 @@
 
 <main class="board">
   <section class="col">
-    <h2>Done <span class="n">14</span></h2>
+    <h2>Done <span class="n">15</span></h2>
     <div class="card done"><h3>#1 Core platform</h3><div class="tag">Sub-project 1</div>
       <ul><li class="ok">Onboarding wizard</li><li class="ok">Settings, backup/import, reset</li><li class="ok">BYOK providers (Anthropic, OpenAI, Gemini, Ollama), encrypted keys, usage</li><li class="ok">Structured memory store (infra)</li></ul></div>
     <div class="card done"><h3>#2 CEFR frameworks</h3><div class="tag">Sub-project 2</div>
@@ -76,13 +76,13 @@
       <ul><li class="ok">Spec (amended: per-track word lists)</li><li class="ok">Plan (12 tasks + per-track lists)</li><li class="ok">Build: 1,143 tests, tsc + next build clean</li><li class="ok">Word lists: Goethe, telc, Generic A1–B1; shared B2/C1 (~16,000 entries, each sample-checked)</li><li class="ok">45 conversation scenarios</li></ul></div>
     <div class="card done"><h3>3 · Reading module</h3><div class="tag">Merged 2026-10-15 · 15 exam formats, Teil engine, timed runner, readiness card, admin, 153 reviewed starter sets, new task types in 44 lessons</div>
       <ul><li class="ok">13 of 13 tasks, final review, fix wave</li><li class="ok">Migration rehearsed on a copy of your DB; backup taken</li><li class="todo">Your spot-checks: telc B1 Teil 3 “one x”, 6 format details, runner layout at desktop width</li></ul></div>
+    <div class="card done"><h3>4 · Listening module</h3><div class="tag">Merged 2026-10-20 · Piper speech sidecar, cached audio, player and reveal rules, admin notifications and email, 38 lessons converted, 294 telc + 375 Goethe + 204 NaDoch listening items</div>
+      <ul><li class="ok">12 of 12 tasks (Task 12 added: the speech service drops abandoned renders), final review, fix wave</li><li class="ok">All 184 audio clips rendered, none failed</li><li class="ok">Migration rehearsed on a copy of your DB; backup taken</li><li class="todo">You: rebuild the speech image (<code>docker compose build speech &amp;&amp; docker compose up -d speech</code>) — the Docker credential helper hung, so the running one lacks Task 12</li></ul></div>
   </section>
 
   <section class="col">
-    <h2>Ready to build <span class="n">6</span></h2>
-    <div class="card progress"><h3>4 · Listening module</h3><div class="tag">Building now · Build 5 of 10 · Piper speech sidecar, cached audio, admin notifications, email alerts</div>
-      <ul><li class="ok">Spec</li><li class="ok">Plan (11 tasks)</li><li class="ok">Pre-flight check: 4 blocking + 21 smaller rulings</li><li class="todo">Build — 10 of 11 done (all code, 38 listening lessons converted, all telc listening sets); all Goethe listening sets, NaDoch A1–A2; NaDoch B1–C1 writing</li><li class="ok">Voices and audio effects approved by you (2026-10-17)</li></ul></div>
-    <div class="card next"><h3>5 · Writing module</h3><div class="tag">Build 6 of 10 · Rubric grading with anchor letters, error log, typing helpers</div>
+    <h2>Ready to build <span class="n">5</span></h2>
+    <div class="card progress"><h3>5 · Writing module</h3><div class="tag">Building now · Build 6 of 10 · Rubric grading with anchor letters, error log, typing helpers</div>
       <ul><li class="ok">Spec</li><li class="ok">Plan (13 tasks)</li><li class="todo">Build</li></ul></div>
     <div class="card next"><h3>6 · Speaking module</h3><div class="tag">Build 7 of 10 · faster-whisper, AI exam partner, pronunciation estimate</div>
       <ul><li class="ok">Spec</li><li class="ok">Plan (12 tasks)</li><li class="todo">Build</li></ul></div>
