@@ -29,7 +29,7 @@
       { "id": "kohaerenz", "name": { "en": "Coherence", "de": "Kohärenz" }, "points": { "A": 10, "B": 7.5, "C": 5, "D": 2.5, "E": 0 }, "descriptors": {
         "A": "Der Text ist zusammenhängend und gut gegliedert; die Sätze sind mit passenden Konnektoren (z. B. weil, deshalb, trotzdem, außerdem) und Verweiswörtern verbunden; Anrede und Gruß passen.",
         "B": "Der Text ist überwiegend zusammenhängend; Konnektoren werden meist richtig, aber eher einförmig eingesetzt.",
-        "C": "Der Zusammenhang ist stellenweise unklar; es gibt nur wenige, einfache Konnektoren, oder Anrede bzw. Gruß fehlen.",
+        "C": "Der Zusammenhang ist stellenweise unklar; es gibt nur wenige, einfache Konnektoren, oder Anrede bzw. Gruß fehlt.",
         "D": "Der Text besteht weitgehend aus unverbundenen Einzelsätzen ohne Konnektoren.",
         "E": "Es ist kein Zusammenhang erkennbar." } },
       { "id": "wortschatz", "name": { "en": "Vocabulary", "de": "Wortschatz" }, "points": { "A": 10, "B": 7.5, "C": 5, "D": 2.5, "E": 0 }, "descriptors": {
@@ -85,7 +85,7 @@
       { "id": "kohaerenz", "name": { "en": "Coherence", "de": "Kohärenz" }, "points": { "A": 5, "B": 3.75, "C": 2.5, "D": 1.25, "E": 0 }, "descriptors": {
         "A": "Der Text ist zusammenhängend und gut gegliedert; die Sätze sind mit passenden Konnektoren (z. B. weil, deshalb, trotzdem, außerdem) und Verweiswörtern verbunden; Anrede, Einleitung, Schluss und Gruß passen zum Register.",
         "B": "Der Text ist überwiegend zusammenhängend; Konnektoren werden meist richtig, aber eher einförmig eingesetzt.",
-        "C": "Der Zusammenhang ist stellenweise unklar; es gibt nur wenige, einfache Konnektoren, oder Anrede bzw. Gruß fehlen.",
+        "C": "Der Zusammenhang ist stellenweise unklar; es gibt nur wenige, einfache Konnektoren, oder Anrede bzw. Gruß fehlt.",
         "D": "Der Text besteht weitgehend aus unverbundenen Einzelsätzen ohne Konnektoren.",
         "E": "Es ist kein Zusammenhang erkennbar." } },
       { "id": "wortschatz", "name": { "en": "Vocabulary", "de": "Wortschatz" }, "points": { "A": 5, "B": 3.75, "C": 2.5, "D": 1.25, "E": 0 }, "descriptors": {

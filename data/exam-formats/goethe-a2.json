@@ -56,7 +56,7 @@
       { "id": "kohaerenz", "name": { "en": "Coherence", "de": "Kohärenz" }, "points": { "A": 2, "B": 1.5, "C": 1, "D": 0.5, "E": 0 }, "descriptors": {
         "A": "Die Sätze sind mit einfachen Konnektoren (z. B. und, aber, denn, dann) sinnvoll verbunden; Anrede und Gruß passen.",
         "B": "Die Sätze sind meist verbunden; Konnektoren fehlen manchmal oder werden falsch verwendet.",
-        "C": "Es gibt nur vereinzelt Konnektoren; die Sätze stehen meist unverbunden nebeneinander, oder Anrede bzw. Gruß fehlen.",
+        "C": "Es gibt nur vereinzelt Konnektoren; die Sätze stehen meist unverbunden nebeneinander, oder Anrede bzw. Gruß fehlt.",
         "D": "Ein Zusammenhang zwischen den Sätzen ist kaum erkennbar.",
         "E": "Es ist kein Zusammenhang erkennbar." } },
       { "id": "wortschatz", "name": { "en": "Vocabulary", "de": "Wortschatz" }, "points": { "A": 2, "B": 1.5, "C": 1, "D": 0.5, "E": 0 }, "descriptors": {

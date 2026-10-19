@@ -24,12 +24,12 @@
         "A": "Anrede und Gruß passen, die Sätze sind mit passenden Konnektoren (z. B. und, aber, denn, dann) sinnvoll verbunden, und der Ton passt zur Empfängerin oder zum Empfänger.",
         "B": "Anrede, Gruß und Ton passen meistens; die Sätze sind teilweise verbunden, aber Konnektoren fehlen manchmal.",
         "C": "Anrede oder Gruß fehlt, die Sätze stehen meist ohne Konnektoren nebeneinander, oder der Ton passt oft nicht.",
-        "D": "Es gibt keinen erkennbaren Aufbau, und die Nachricht passt nicht zur Empfängerin oder zum Empfänger." } },
+        "D": "Es gibt keinen erkennbaren Aufbau, oder die Nachricht passt nicht zur Empfängerin oder zum Empfänger." } },
       { "id": "richtigkeit", "name": { "en": "Formal accuracy", "de": "Formale Richtigkeit" }, "points": { "A": 6, "B": 4, "C": 2, "D": 0 }, "descriptors": {
         "A": "Wortschatz und Grammatik sind dem Niveau A2 angemessen und fast fehlerfrei; Rechtschreibfehler sind selten.",
         "B": "Es gibt einige Fehler, die das Verständnis aber kaum stören.",
         "C": "Viele Fehler erschweren stellenweise das Verständnis.",
-        "D": "So viele Fehler, dass der Text größtenteils unverständlich ist." } }
+        "D": "Es gibt so viele Fehler, dass der Text größtenteils unverständlich ist." } }
     ] },
       "instructions": "Schreiben Sie eine Nachricht (ca. 50 Wörter). Behandeln Sie alle Punkte der Aufgabe und denken Sie an Anrede und Gruß." },
     { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Sprechen Teil 1" }, "taskType": "spoken", "items": 4, "points": 25, "minutes": 4, "instructions": "Sich vorstellen und Fragen beantworten: Erzählen Sie etwas über sich und beantworten Sie die Fragen." },

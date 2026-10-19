@@ -79,7 +79,9 @@ describe('bundled exam formats', () => {
   it('names cohesion and connectors in every letter rubric', () => {
     for (const f of listFormats()) {
       for (const p of f.parts.filter((x) => x.taskType === 'letter')) {
-        const text = p.rubric!.criteria.map((c) => Object.values(c.descriptors).join(' ')).join(' ');
+        const design = p.rubric!.criteria.filter((c) => c.id === 'gestaltung' || c.id === 'kohaerenz');
+        expect(design.length, `${f.id}/${p.id}`).toBe(1);
+        const text = Object.values(design[0].descriptors).join(' ');
         expect(text, `${f.id}/${p.id}`).toContain("Konnektoren");
       }
     }

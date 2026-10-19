@@ -16,39 +16,39 @@
     { "id": "schreiben-1", "skill": "writing", "title": { "en": "Writing Part 1", "de": "Schreiben Teil 1" }, "taskType": "letter", "items": 3, "points": 16, "minutes": 40, "choices": 1, "wordTarget": { "min": 176, "max": 264 },
       "rubric": { "criteria": [
       { "id": "aufgabe", "name": { "en": "Task completion", "de": "Aufgabenbewältigung" }, "points": { "A": 6, "B": 4, "C": 2, "D": 0 }, "descriptors": {
-        "A": "Die eigene Meinung wird klar formuliert und überzeugend begründet, und alle Punkte der Aufgabe werden ausführlich behandelt.",
-        "B": "Die Meinung ist erkennbar und begründet, aber ein Punkt bleibt knapp oder fehlt.",
+        "A": "Die eigene Meinung wird klar formuliert und differenziert begründet, auch Gegenargumente werden abgewogen, und alle Punkte der Aufgabe werden ausführlich behandelt.",
+        "B": "Die Meinung ist begründet, aber die Argumentation bleibt stellenweise allgemein, oder ein Punkt bleibt knapp.",
         "C": "Die Meinung wird kaum begründet, oder mehrere Punkte fehlen oder werden nur gestreift.",
         "D": "Die Aufgabe wird verfehlt oder kaum bearbeitet." } },
       { "id": "gestaltung", "name": { "en": "Communicative design", "de": "Kommunikative Gestaltung" }, "points": { "A": 5, "B": 3, "C": 2, "D": 0 }, "descriptors": {
-        "A": "Der Beitrag ist logisch aufgebaut (Einleitung, Argumentation, Schluss); die Gedanken sind mit vielfältigen Konnektoren verknüpft, und der Stil passt zu einem Forum.",
-        "B": "Der Aufbau ist nachvollziehbar; die Konnektoren sind etwas einförmig, oder Übergänge wirken stellenweise holprig.",
+        "A": "Der Beitrag ist schlüssig aufgebaut, die Argumentation entwickelt sich folgerichtig, und die Gedanken sind mit präzisen, vielfältigen Konnektoren und Verweismitteln eng verknüpft; der Stil passt zu einem Forum.",
+        "B": "Der Aufbau ist schlüssig; die Konnektoren wirken aber stellenweise mechanisch oder wiederholen sich.",
         "C": "Der Gedankengang ist oft sprunghaft, und Konnektoren fehlen häufig oder werden falsch verwendet.",
         "D": "Es gibt keinen erkennbaren Aufbau; die Sätze stehen ohne Konnektoren unverbunden nebeneinander." } },
       { "id": "richtigkeit", "name": { "en": "Formal accuracy", "de": "Formale Richtigkeit" }, "points": { "A": 5, "B": 3, "C": 2, "D": 0 }, "descriptors": {
         "A": "Wortschatz und Strukturen sind abwechslungsreich und dem Niveau C1 angemessen; Fehler sind selten und stören nicht.",
         "B": "Es gibt einige Fehler, auch bei komplexeren Strukturen, die das Verständnis aber kaum stören.",
         "C": "Häufige Fehler oder ein für C1 zu einfacher Ausdruck erschweren das Verständnis stellenweise.",
-        "D": "So viele Fehler, dass der Text größtenteils unverständlich ist." } }
+        "D": "Es gibt so viele Fehler, dass der Text größtenteils unverständlich ist." } }
     ] },
       "instructions": "Schreiben Sie einen Beitrag für ein Forum (ca. 220 Wörter). Nehmen Sie Stellung, begründen Sie Ihre Meinung und behandeln Sie alle Punkte der Aufgabe." },
     { "id": "schreiben-2", "skill": "writing", "title": { "en": "Writing Part 2", "de": "Schreiben Teil 2" }, "taskType": "letter", "items": 3, "points": 16, "minutes": 30, "choices": 1, "wordTarget": { "min": 120, "max": 180 },
       "rubric": { "criteria": [
       { "id": "aufgabe", "name": { "en": "Task completion", "de": "Aufgabenbewältigung" }, "points": { "A": 6, "B": 4, "C": 2, "D": 0 }, "descriptors": {
-        "A": "Alle Punkte der Aufgabe werden vollständig und passend zur Situation behandelt, und das formelle Register wird durchgehend eingehalten.",
+        "A": "Alle Punkte der Aufgabe werden vollständig, differenziert und passend zur Situation behandelt, Anliegen werden genau begründet, und das formelle Register wird sicher und stilistisch angemessen eingehalten.",
         "B": "Alle Punkte kommen vor, aber einer bleibt knapp, oder das Register schwankt stellenweise.",
         "C": "Mehrere Punkte fehlen oder werden nur gestreift, oder das Register passt oft nicht.",
         "D": "Die Aufgabe wird verfehlt oder kaum bearbeitet." } },
       { "id": "gestaltung", "name": { "en": "Communicative design", "de": "Kommunikative Gestaltung" }, "points": { "A": 5, "B": 3, "C": 2, "D": 0 }, "descriptors": {
-        "A": "Die E-Mail ist klar gegliedert, mit formeller Anrede, Einleitung, Schluss und Gruß; die Sätze sind mit passenden Konnektoren verknüpft, und der Ton ist höflich und sachlich.",
+        "A": "Die E-Mail ist klar gegliedert, mit formeller Anrede, Einleitung, Schluss und Gruß; die Gedanken sind mit präzisen, vielfältigen Konnektoren und Verweismitteln verknüpft, und der Ton ist höflich und sachlich.",
         "B": "Der Aufbau ist meist klar; Konnektoren, Anrede, Schluss oder Ton passen nicht immer.",
         "C": "Der Aufbau ist schwer nachzuvollziehen, Konnektoren fehlen häufig, oder Anrede und Gruß passen nicht zum formellen Register.",
-        "D": "Es gibt keinen erkennbaren Aufbau, und die E-Mail passt nicht zum Adressaten." } },
+        "D": "Es gibt keinen erkennbaren Aufbau, oder die E-Mail passt nicht zum Adressaten." } },
       { "id": "richtigkeit", "name": { "en": "Formal accuracy", "de": "Formale Richtigkeit" }, "points": { "A": 5, "B": 3, "C": 2, "D": 0 }, "descriptors": {
         "A": "Wortschatz und Strukturen sind abwechslungsreich und dem Niveau C1 angemessen; Fehler sind selten und stören nicht.",
         "B": "Es gibt einige Fehler, auch bei komplexeren Strukturen, die das Verständnis aber kaum stören.",
         "C": "Häufige Fehler oder ein für C1 zu einfacher Ausdruck erschweren das Verständnis stellenweise.",
-        "D": "So viele Fehler, dass der Text größtenteils unverständlich ist." } }
+        "D": "Es gibt so viele Fehler, dass der Text größtenteils unverständlich ist." } }
     ] },
       "instructions": "Schreiben Sie eine formelle E-Mail (ca. 150 Wörter). Behandeln Sie alle Punkte der Aufgabe und achten Sie auf einen angemessenen Stil." },
     { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Sprechen Teil 1" }, "taskType": "spoken", "items": 4, "points": 25, "minutes": 7, "instructions": "Ein Thema präsentieren: Sprechen Sie zusammenhängend über das Thema auf Ihrer Karte und beantworten Sie anschließend die Fragen." },

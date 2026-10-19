@@ -262,7 +262,7 @@ describe('examPracticeService listening', () => {
 // Writing (B4, S4, S17): a letter part is graded by the AI on the part's rubric; the grade is stored and replayed.
 describe('examPracticeService letters', () => {
   const TEXT = 'Sehr geehrte Damen und Herren, ich habe ein Problem mit mein Zimmer. Mit freundlichen Grüßen';
-  // aufgabe B (10) + gestaltung B (10) + richtigkeit C (5) = 25 of 45.
+  // aufgabe B (9) + gestaltung B (9) + richtigkeit C (3) = 21 of 45.
   const REPLY = JSON.stringify({
     marks: [{ original: 'mit mein Zimmer', correction: 'mit meinem Zimmer', type: 'grammar', category: 'case_dative', reason_en: 'Dative after mit.', reason_de: 'Dativ nach mit.' }],
     criteria: [
@@ -291,8 +291,8 @@ describe('examPracticeService letters', () => {
       return graded(request);
     });
     const result = await service.submit(run.attemptId, letter());
-    expect(result).toMatchObject({ score: 25, maxScore: 45, overtimeSeconds: 60, review: [], text: TEXT, taskIndex: 1 });
-    expect(result.letter).toMatchObject({ points: 25, maxPoints: 45, percent: 56, corrected: expect.stringContaining('meinem') });
+    expect(result).toMatchObject({ score: 21, maxScore: 45, overtimeSeconds: 60, review: [], text: TEXT, taskIndex: 1 });
+    expect(result.letter).toMatchObject({ points: 21, maxPoints: 45, percent: 47, corrected: expect.stringContaining('meinem') });
     expect(result.letter!.marks[0]).toMatchObject({ original: 'mit mein Zimmer', start: TEXT.indexOf('mit mein Zimmer') });
     expect(result.tips).toEqual([{ en: 'Fixture tip 1.', de: 'Fixture-Tipp 1.' }, { en: 'Fixture tip 2.', de: 'Fixture-Tipp 2.' }, { en: 'Fixture tip 3.', de: 'Fixture-Tipp 3.' }]);
     const prompt = generate.mock.calls[0][0].systemPrompt;
@@ -300,13 +300,13 @@ describe('examPracticeService letters', () => {
     expect(prompt).not.toContain('Fixture-Aufgabe A');
     expect(prompt).toContain('telc');
     expect(db.prepare('SELECT source, wrong, "right" FROM error_log').all()).toEqual([{ source: 'teil', wrong: 'mit mein Zimmer', right: 'mit meinem Zimmer' }]);
-    expect(row(db, run.attemptId)).toMatchObject({ score: 25, max_score: 45, grading_started_at: null, answers: JSON.stringify(letter()) });
+    expect(row(db, run.attemptId)).toMatchObject({ score: 21, max_score: 45, grading_started_at: null, answers: JSON.stringify(letter()) });
 
     // Review Focus 1 / B4: a repeated submit replays the stored grade without another AI call.
     expect(await service.submit(run.attemptId, letter('Ganz anders.', 0))).toEqual(result);
     expect(generate).toHaveBeenCalledTimes(1);
-    expect((await service.overview()).parts.find((p) => p.part.id === 'schreiben')?.lastPercent).toBe(56);
-    expect(service.readiness().parts.find((p) => p.partId === 'schreiben')).toMatchObject({ averagePercent: 56, attempts: 1, overtime: true });
+    expect((await service.overview()).parts.find((p) => p.part.id === 'schreiben')?.lastPercent).toBe(47);
+    expect(service.readiness().parts.find((p) => p.partId === 'schreiben')).toMatchObject({ averagePercent: 47, attempts: 1, overtime: true });
   });
 
   // Review Focus 3: the lock is taken atomically, so a second submit never starts a second grading call.
@@ -320,7 +320,7 @@ describe('examPracticeService letters', () => {
     await expect(service.submit(run.attemptId, letter())).rejects.toMatchObject({ kind: 'unavailable', code: 'letter_grading' });
     expect(row(db, run.attemptId).grading_started_at).toEqual(expect.any(String));
     release({ ok: true, text: REPLY });
-    expect(await first).toMatchObject({ score: 25 });
+    expect(await first).toMatchObject({ score: 21 });
     expect(generate).toHaveBeenCalledTimes(1);
   });
 
@@ -333,7 +333,7 @@ describe('examPracticeService letters', () => {
     lockAt(119);
     await expect(service.submit(run.attemptId, letter())).rejects.toMatchObject({ code: 'letter_grading' });
     lockAt(121);
-    expect(await service.submit(run.attemptId, letter())).toMatchObject({ score: 25 });
+    expect(await service.submit(run.attemptId, letter())).toMatchObject({ score: 21 });
   });
 
   it('leaves the attempt open and unlocked when grading fails, so it can be resubmitted', async () => {
@@ -346,7 +346,7 @@ describe('examPracticeService letters', () => {
     await expect(service.submit(run.attemptId, letter())).rejects.toMatchObject({ kind: 'ai_failed', code: 'ai_bad_reply' });
     expect(row(db, run.attemptId)).toMatchObject({ finished_at: null, grading_started_at: null });
     generate.mockImplementationOnce(graded);
-    expect(await service.submit(run.attemptId, letter())).toMatchObject({ score: 25 });
+    expect(await service.submit(run.attemptId, letter())).toMatchObject({ score: 21 });
   });
 
   it('scores an empty letter 0 without asking the AI, and refuses a task that does not exist', async () => {

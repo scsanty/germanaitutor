@@ -29,7 +29,7 @@
         "A": "Wortschatz und Strukturen sind abwechslungsreich und dem Niveau B2 angemessen; Fehler sind selten und stören nicht.",
         "B": "Es gibt einige Fehler, auch bei komplexeren Strukturen, die das Verständnis aber kaum stören.",
         "C": "Häufige Fehler oder ein für B2 zu einfacher Ausdruck erschweren das Verständnis stellenweise.",
-        "D": "So viele Fehler, dass der Text größtenteils unverständlich ist." } }
+        "D": "Es gibt so viele Fehler, dass der Text größtenteils unverständlich ist." } }
     ] },
       "instructions": "Schreiben Sie einen Beitrag für ein Forum (ca. 150 Wörter). Nehmen Sie Stellung, begründen Sie Ihre Meinung und behandeln Sie alle Punkte der Aufgabe." },
     { "id": "schreiben-2", "skill": "writing", "title": { "en": "Writing Part 2", "de": "Schreiben Teil 2" }, "taskType": "letter", "items": 3, "points": 16, "minutes": 25, "choices": 1, "wordTarget": { "min": 80, "max": 120 },
@@ -43,12 +43,12 @@
         "A": "Die E-Mail ist klar gegliedert, mit formeller Anrede, Einleitung, Schluss und Gruß; die Sätze sind mit passenden Konnektoren verknüpft, und der Ton ist höflich und sachlich.",
         "B": "Der Aufbau ist meist klar; Konnektoren, Anrede, Schluss oder Ton passen nicht immer.",
         "C": "Der Aufbau ist schwer nachzuvollziehen, Konnektoren fehlen häufig, oder Anrede und Gruß passen nicht zum formellen Register.",
-        "D": "Es gibt keinen erkennbaren Aufbau, und die E-Mail passt nicht zum Adressaten." } },
+        "D": "Es gibt keinen erkennbaren Aufbau, oder die E-Mail passt nicht zum Adressaten." } },
       { "id": "richtigkeit", "name": { "en": "Formal accuracy", "de": "Formale Richtigkeit" }, "points": { "A": 5, "B": 3, "C": 2, "D": 0 }, "descriptors": {
         "A": "Wortschatz und Strukturen sind abwechslungsreich und dem Niveau B2 angemessen; Fehler sind selten und stören nicht.",
         "B": "Es gibt einige Fehler, auch bei komplexeren Strukturen, die das Verständnis aber kaum stören.",
         "C": "Häufige Fehler oder ein für B2 zu einfacher Ausdruck erschweren das Verständnis stellenweise.",
-        "D": "So viele Fehler, dass der Text größtenteils unverständlich ist." } }
+        "D": "Es gibt so viele Fehler, dass der Text größtenteils unverständlich ist." } }
     ] },
       "instructions": "Schreiben Sie eine formelle E-Mail (ca. 100 Wörter). Behandeln Sie alle Punkte der Aufgabe und achten Sie auf einen angemessenen Stil." },
     { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Sprechen Teil 1" }, "taskType": "spoken", "items": 4, "points": 25, "minutes": 6, "instructions": "Ein Thema präsentieren: Sprechen Sie zusammenhängend über das Thema auf Ihrer Karte und beantworten Sie anschließend die Fragen." },
