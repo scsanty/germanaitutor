@@ -20,9 +20,9 @@ import { useSound } from '@/lib/sound/useSound';
 import { Check, CircleAlert, MessageCircle, X } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import { GermanTextInput } from '@/components/typing/GermanTextInput';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { Textarea } from '@/components/ui/textarea';
+import { GermanTextarea } from '@/components/typing/GermanTextarea';
 import { cn } from '@/lib/utils';
 
 const RATINGS: FlashcardRating[] = ['knew', 'sort_of', 'didnt_know'];
@@ -428,7 +428,7 @@ export function ExerciseCard({
       {exercise.type === 'fill_blank' && (
         <div className="flex flex-col gap-4">
           <p className={TASK}>{exercise.textWithBlank}</p>
-          <Input aria-label={t('answerLabel')} value={text} onChange={(e) => setText(e.target.value)} autoComplete="off" autoCapitalize="off" spellCheck={false} className="h-12 text-lg md:text-lg" />
+          <GermanTextInput aria-label={t('answerLabel')} value={text} onChange={(e) => setText(e.target.value)} autoComplete="off" autoCapitalize="off" spellCheck={false} className="h-12 text-lg md:text-lg" />
         </div>
       )}
       {isTaskExercise(exercise) && taskAnswer && (
@@ -439,7 +439,7 @@ export function ExerciseCard({
       {exercise.type === 'free_text' && (
         <div className="flex flex-col gap-4">
           <p className={TASK}>{exercise.prompt}</p>
-          <Textarea aria-label={t('answerLabel')} value={text} onChange={(e) => setText(e.target.value)} spellCheck={false} className="min-h-32 text-base md:text-base" />
+          <GermanTextarea aria-label={t('answerLabel')} value={text} onChange={(e) => setText(e.target.value)} spellCheck={false} className="min-h-32 text-base md:text-base" />
         </div>
       )}
       <div className={FOOTER}>

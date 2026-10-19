@@ -1,11 +1,12 @@
 'use client';
 
-import { Fragment, useId } from 'react';
+import { Fragment, useId, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { Check, X } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { NativeSelect } from '@/components/ui/native-select';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { UmlautControls } from '@/components/typing/UmlautRow';
 import { AudioPlayer } from '@/components/audio/AudioPlayer';
 // I2: type-only imports; the audio task module pulls in node:crypto on the server.
 import type { AudioQuestionsAnswer, AudioQuestionsView } from '@/lib/tasks/audioQuestions';
@@ -201,6 +202,9 @@ function Cloze({ view, value, onChange, disabled, pane, itemResults }: Props<Clo
   const id = useId();
   const set = (index: number, v: string | number | null) => onChange({ ...value, values: value.values.map((old, i) => (i === index ? v : old)) });
   const parts = view.text.split(GAP);
+  // One umlaut row serves every typed gap, acting on the one focused last.
+  const lastGap = useRef<HTMLInputElement | null>(null);
+  const hasTyped = view.gaps.some((g) => g.mode === 'typed');
   const usesBank = !!view.bank && view.gaps.some((g) => g.mode === 'bank');
   return (
     <>
@@ -237,6 +241,7 @@ function Cloze({ view, value, onChange, disabled, pane, itemResults }: Props<Clo
                     value={typeof v === 'string' ? v : ''}
                     onChange={(e) => set(gi, e.target.value === '' ? null : e.target.value)}
                     disabled={disabled}
+                    onFocus={(e) => (lastGap.current = e.currentTarget)}
                     spellCheck={false}
                     autoComplete="off"
                     autoCapitalize="off"
@@ -271,6 +276,7 @@ function Cloze({ view, value, onChange, disabled, pane, itemResults }: Props<Clo
           })}
         </div>
       )}
+      {pane !== 'text' && hasTyped && <UmlautControls target={() => lastGap.current} disabled={disabled} />}
     </>
   );
 }

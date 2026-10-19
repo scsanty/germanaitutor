@@ -7,13 +7,12 @@ import { LanguageToggle } from '@/components/LanguageToggle';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
+import { GermanTextarea } from '@/components/typing/GermanTextarea';
 import { differsByLanguage, isLocalizedText, pickText, type ContentLanguage, type LocalizedText } from '@/lib/i18n/localizedText';
 import type { FreestyleMode } from '@/lib/freestyle/modes';
 import type { SessionMessage } from '@/lib/freestyle/sessionViews';
 import { cn } from '@/lib/utils';
 import { CorrectionList, readCorrections } from './CorrectionList';
-import { GermanLetters } from './GermanLetters';
 import { TappableGerman } from './TappableGerman';
 
 const VERDICTS = ['correct', 'almost', 'wrong'] as const;
@@ -96,7 +95,7 @@ function Composer({ onSend }: { onSend: (text: string) => Promise<void> }) {
       <label htmlFor="freestyle-message" className="sr-only">
         {t('yourMessage')}
       </label>
-      <Textarea
+      <GermanTextarea
         id="freestyle-message"
         ref={box}
         lang="de"
@@ -118,7 +117,6 @@ function Composer({ onSend }: { onSend: (text: string) => Promise<void> }) {
         className="min-h-16 resize-none text-base"
       />
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <GermanLetters box={box} value={draft} onChange={setDraft} disabled={busy} />
         <Button type="button" onClick={() => void send()} disabled={busy || !draft.trim()} className="min-h-11 px-5">
           <Send aria-hidden />
           {t('send')}

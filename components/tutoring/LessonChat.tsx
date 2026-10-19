@@ -11,7 +11,7 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { Skeleton } from '@/components/ui/skeleton';
-import { Textarea } from '@/components/ui/textarea';
+import { GermanTextarea } from '@/components/typing/GermanTextarea';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { cn } from '@/lib/utils';
 
@@ -187,7 +187,8 @@ export function LessonChat({ lessonId, open, onToggle, askAbout, onClearAskAbout
               </p>
             )}
             <div className="flex items-end gap-2">
-              <Textarea
+              <GermanTextarea
+                wrapperClassName="flex-1"
                 aria-label={t('messageLabel')}
                 value={draft}
                 disabled={!aiAvailable || busy}

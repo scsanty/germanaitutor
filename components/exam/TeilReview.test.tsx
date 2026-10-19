@@ -102,6 +102,20 @@ describe('TaskInputs', () => {
     expect(screen.getByText('Words to use')).toBeInTheDocument();
   });
 
+  it('cloze: one shared umlaut row acts on the last-focused typed gap', () => {
+    localStorage.clear();
+    const view = { text: 'Das {{1}} und {{2}}.', gaps: [{ mode: 'typed' }, { mode: 'typed' }] };
+    renderWithIntl(<Harness type="cloze" view={view as never} onAnswer={vi.fn()} />);
+    expect(screen.getAllByRole('button', { name: 'äöü' })).toHaveLength(1);
+    fireEvent.click(screen.getByRole('button', { name: 'äöü' }));
+    const two = screen.getByLabelText('Gap 2') as HTMLInputElement;
+    two.focus();
+    fireEvent.click(screen.getByRole('button', { name: 'Insert ö' }));
+    expect(two).toHaveValue('ö');
+    expect(screen.getByLabelText('Gap 1')).toHaveValue('');
+    localStorage.clear();
+  });
+
   it("reveals a listening part's transcript with the evidence, and names each item by its question", () => {
     const run = {
       ...RUN,

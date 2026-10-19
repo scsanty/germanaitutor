@@ -386,7 +386,6 @@
     "send": "Send",
     "sending": "Sending…",
     "sendFailed": "Could not send your message.",
-    "germanLetters": "German letters",
     "thread": "Messages",
     "corrections": "Corrections",
     "correctionLanguage": "Correction language",
@@ -404,7 +403,6 @@
     "loadingArticle": "Writing a new article…",
     "articleFailed": "Could not load a new article.",
     "yourText": "Your text",
-    "words": "{count, plural, one {# word} other {# words}}",
     "submit": "Submit",
     "submitting": "Checking your text…",
     "submitFailed": "Could not check your text.",
@@ -544,5 +542,11 @@
     "evidenceFor": "Evidence for question {n}",
     "evidenceForMany": "Evidence for questions {n}",
     "retry": "Try again"
+  },
+  "typing": {
+    "umlauts": "German letters",
+    "insert": "Insert {letter}",
+    "count": "{count} / {min}–{max} words",
+    "words": "{count, plural, one {# word} other {# words}}"
   }
 }

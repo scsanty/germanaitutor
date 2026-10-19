@@ -7,11 +7,11 @@ import { LanguageToggle } from '@/components/LanguageToggle';
 import { useApiErrorText } from '@/components/useApiErrorText';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
+import { GermanTextarea } from '@/components/typing/GermanTextarea';
+import { WordCounter, countWords } from '@/components/typing/WordCounter';
 import { differsByLanguage, isLocalizedText, pickText, type ContentLanguage } from '@/lib/i18n/localizedText';
 import type { SessionMessage, SessionView } from '@/lib/freestyle/sessionViews';
 import { CorrectionList, readCorrections } from './CorrectionList';
-import { GermanLetters } from './GermanLetters';
 import { TappableGerman } from './TappableGerman';
 
 interface Version {
@@ -29,7 +29,6 @@ function pairVersions(messages: SessionMessage[]): Version[] {
   return versions;
 }
 
-const countWords = (text: string) => (text.trim() ? text.trim().split(/\s+/).length : 0);
 
 // Spec: free writing is AI correction, not in exam format. Versions are stacked, newest last (I15).
 export function WritingSession({ session, onMessages }: { session: SessionView; onMessages: (messages: SessionMessage[]) => void }) {
@@ -125,7 +124,7 @@ export function WritingSession({ session, onMessages }: { session: SessionView; 
         <label htmlFor="freestyle-writing" className="text-sm font-medium">
           {t('yourText')}
         </label>
-        <Textarea
+        <GermanTextarea
           id="freestyle-writing"
           ref={box}
           lang="de"
@@ -139,11 +138,8 @@ export function WritingSession({ session, onMessages }: { session: SessionView; 
           className="min-h-48 text-base leading-relaxed"
         />
         <div className="flex flex-wrap items-center justify-between gap-2">
-          <GermanLetters box={box} value={draft} onChange={setDraft} disabled={busy} />
           <div className="flex items-center gap-3">
-            <span id="freestyle-writing-count" className="text-sm text-text-muted tabular-nums">
-              {t('words', { count: words })}
-            </span>
+            <WordCounter id="freestyle-writing-count" text={draft} />
             <Button type="button" className="min-h-11 px-5" disabled={busy || words === 0} onClick={() => void submit()}>
               <Send aria-hidden />
               {t('submit')}

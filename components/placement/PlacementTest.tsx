@@ -18,9 +18,9 @@ import { ONWARD, ResultCard, ReviewBadge, SCORE } from '@/components/focus/Resul
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
+import { GermanTextInput } from '@/components/typing/GermanTextInput';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { Textarea } from '@/components/ui/textarea';
+import { GermanTextarea } from '@/components/typing/GermanTextarea';
 import { cn } from '@/lib/utils';
 import { Compass } from 'lucide-react';
 
@@ -244,13 +244,13 @@ export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; 
           {question.type === 'fill_blank' && (
             <div className="flex flex-col gap-4">
               <p className={TASK}>{question.textWithBlank}</p>
-              <Input aria-label={t('answerLabel')} value={text} onChange={(e) => setText(e.target.value)} autoComplete="off" autoCapitalize="off" spellCheck={false} className="h-12 text-lg md:text-lg" />
+              <GermanTextInput aria-label={t('answerLabel')} value={text} onChange={(e) => setText(e.target.value)} autoComplete="off" autoCapitalize="off" spellCheck={false} className="h-12 text-lg md:text-lg" />
             </div>
           )}
           {question.type === 'free_text' && (
             <div className="flex flex-col gap-4">
               <p className={TASK}>{question.prompt}</p>
-              <Textarea aria-label={t('answerLabel')} value={text} onChange={(e) => setText(e.target.value)} spellCheck={false} className="min-h-32 text-base md:text-base" />
+              <GermanTextarea aria-label={t('answerLabel')} value={text} onChange={(e) => setText(e.target.value)} spellCheck={false} className="min-h-32 text-base md:text-base" />
             </div>
           )}
           <div className={FOOTER}>

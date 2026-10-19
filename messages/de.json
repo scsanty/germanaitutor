@@ -386,7 +386,6 @@
     "send": "Senden",
     "sending": "Wird gesendet…",
     "sendFailed": "Deine Nachricht konnte nicht gesendet werden.",
-    "germanLetters": "Deutsche Buchstaben",
     "thread": "Nachrichten",
     "corrections": "Korrekturen",
     "correctionLanguage": "Sprache der Korrektur",
@@ -404,7 +403,6 @@
     "loadingArticle": "Ein neuer Artikel wird geschrieben…",
     "articleFailed": "Der neue Artikel konnte nicht geladen werden.",
     "yourText": "Dein Text",
-    "words": "{count, plural, one {# Wort} other {# Wörter}}",
     "submit": "Abschicken",
     "submitting": "Dein Text wird geprüft…",
     "submitFailed": "Dein Text konnte nicht geprüft werden.",
@@ -544,5 +542,11 @@
     "evidenceFor": "Beleg für Frage {n}",
     "evidenceForMany": "Beleg für Fragen {n}",
     "retry": "Erneut versuchen"
+  },
+  "typing": {
+    "umlauts": "Deutsche Buchstaben",
+    "insert": "{letter} einfügen",
+    "count": "{count} / {min}–{max} Wörter",
+    "words": "{count, plural, one {# Wort} other {# Wörter}}"
   }
 }

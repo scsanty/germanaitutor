@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useApiErrorText } from "@/components/useApiErrorText";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { GermanTextInput } from '@/components/typing/GermanTextInput';
 import { NativeSelect } from "@/components/ui/native-select";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { pickText, type ContentLanguage } from "@/lib/i18n/localizedText";
@@ -180,7 +180,7 @@ export function SessionSetup({
                 ? t("prompt")
                 : t("topic")}
           </label>
-          <Input
+          <GermanTextInput
             id="freestyle-text"
             value={text}
             maxLength={200}
