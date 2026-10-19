@@ -1,10 +1,11 @@
 import type { CefrLevel } from '../types';
 import type { ChatMessage } from '../providers/types';
+import { taxonomyIds } from '../errors/taxonomy';
 import type { FreestyleMode } from './modes';
 
 export const ARTICLE_WORDS: Record<CefrLevel, number> = { A1: 120, A2: 180, B1: 250, B2: 350, C1: 450 };
 const CORRECTIONS =
-  '"corrections": a list (possibly empty) of the learner\'s mistakes in their last message, each {"wrong": the exact wrong words, "right": the corrected words, "reason_en": one short English sentence, "reason_de": the same reason in simple German}';
+  `"corrections": a list (possibly empty) of the learner's mistakes in their last message, each {"wrong": the exact wrong words, "right": the corrected words, "category": one of [${taxonomyIds().join(', ')}], "reason_en": one short English sentence, "reason_de": the same reason in simple German}`;
 
 type Built = { systemPrompt: string; messages: ChatMessage[] };
 type History = { role: 'user' | 'assistant'; content: string }[];

@@ -1,5 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { extractJsonObject } from '../ai/json';
+import { taxonomyIds } from '../errors/taxonomy';
+import { locateMarks } from '../writing/marks';
 import { FREESTYLE_MODES } from './modes';
 import { SCENARIOS, scenariosFor } from './scenarios';
 import {
@@ -106,6 +108,44 @@ describe('prompts', () => {
   });
 });
 
+describe('correction categories (T8)', () => {
+  it('asks for a category from the taxonomy in the conversation and writing prompts', () => {
+    const ids = taxonomyIds().join(', ');
+    const conversation = buildConversationPrompt({ level: 'B1', scenario: null, history: [], message: 'Hallo' }).systemPrompt;
+    const writing = buildWritingPrompt({ level: 'B1', prompt: '', text: 'Ich war…' }).systemPrompt;
+    for (const prompt of [conversation, writing]) {
+      expect(prompt).toContain('"category"');
+      expect(prompt).toContain(ids);
+    }
+  });
+
+  it('returns the category, with unknown and missing ones as other', () => {
+    const c = (extra: Record<string, unknown>) => ({ ...correction, ...extra });
+    const chat = parseConversationReply(JSON.stringify({ corrections: [c({ category: 'perfect_auxiliary' }), c({ category: 'bogus' }), c({})], reply: 'Wann?' }))!;
+    expect(chat.corrections.map((x) => x.category)).toEqual(['perfect_auxiliary', 'other', 'other']);
+    const writing = parseWritingReply(
+      JSON.stringify({ corrections: [c({ category: 'spelling' }), c({ category: 7 })], corrected: 'X.', comment_en: 'Good.', comment_de: 'Gut.' })
+    )!;
+    expect(writing.corrections.map((x) => x.category)).toEqual(['spelling', 'other']);
+  });
+});
+
+describe('locateMarks and Unicode (T8)', () => {
+  it('finds a precomposed echo in decomposed text, with offsets into the NFC text', () => {
+    const nfd = 'Ich m\u0061\u0308chte M\u0075\u0308nchen sehen.'.normalize('NFD');
+    expect(nfd).not.toBe(nfd.normalize('NFC'));
+    const nfc = nfd.normalize('NFC');
+    const marks = locateMarks(nfd, [{ original: 'möchte'.normalize('NFC').replace('ö', 'ä') }, { original: 'München' }]);
+    expect(marks.map((m) => nfc.slice(m.start, m.end))).toEqual(['mächte', 'München']);
+  });
+
+  it('finds a decomposed echo in precomposed text', () => {
+    const text = 'Ich möchte nach München.';
+    const marks = locateMarks(text, [{ original: 'München'.normalize('NFD') }]);
+    expect(marks.map((m) => text.slice(m.start, m.end))).toEqual(['München']);
+  });
+});
+
 describe('reply parsers', () => {
   it('parse well-formed replies', () => {
     expect(parseNormalizeReply('{"lemma":"der Hund","partOfSpeech":"noun","plural":"die Hunde","meaningEn":"dog","meaningDe":"ein Haustier"}')).toEqual({
@@ -116,7 +156,7 @@ describe('reply parsers', () => {
       meaningDe: 'ein Haustier',
     });
     expect(parseConversationReply(JSON.stringify({ corrections: [correction], reply: 'Wann?' }))).toEqual({
-      corrections: [{ wrong: 'Ich habe gegangen', right: 'Ich bin gegangen', reason: { en: 'gehen uses sein', de: 'gehen mit sein' } }],
+      corrections: [{ wrong: 'Ich habe gegangen', right: 'Ich bin gegangen', category: 'other', reason: { en: 'gehen uses sein', de: 'gehen mit sein' } }],
       reply: 'Wann?',
     });
     expect(parseDrillReply('{"verdict":null,"explanation_en":null,"explanation_de":null,"next":"Frage 1?"}')).toEqual({

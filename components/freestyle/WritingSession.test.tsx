@@ -105,3 +105,40 @@ describe('WritingSession draft from a Teil letter', () => {
     spy.mockRestore();
   });
 });
+
+describe('WritingSession marked-up corrections (T8)', () => {
+  const withReply = (content: string, corrections: unknown[]) => ({
+    ...SESSION,
+    messages: [
+      { id: 1, role: 'user', content, extra: null },
+      { id: 2, role: 'assistant', content: 'Korrigiert.', extra: { corrections, comment: { en: 'Nice!', de: 'Schön!' } } },
+    ] as never,
+  });
+
+  it('marks each correction in the submitted text and opens the fix, and lists every correction', () => {
+    vi.stubGlobal('fetch', vi.fn());
+    const corrections = [
+      { wrong: 'habe', right: 'bin', category: 'perfect_auxiliary', reason: { en: 'fahren takes sein', de: 'fahren mit sein' } },
+      { wrong: 'nicht im Text', right: 'x', category: 'other', reason: { en: 'missing', de: 'fehlt' } },
+    ];
+    renderWithIntl(<WritingSession session={withReply('Ich habe nach Rom gefahren.', corrections)} onMessages={vi.fn()} />);
+    fireEvent.click(screen.getByRole('button', { name: 'habe' }));
+    expect(screen.getByRole('dialog', { name: 'habe' })).toHaveTextContent('bin');
+    expect(screen.getAllByRole('button', { name: /habe|nicht im Text/ })).toHaveLength(1);
+    expect(screen.getByRole('list', { name: 'Corrections' })).toHaveTextContent('nicht im Text');
+  });
+
+  it('renders an old message without categories or a findable text without crashing', () => {
+    vi.stubGlobal('fetch', vi.fn());
+    const old = [{ wrong: 'habe', right: 'bin', reason: { en: 'sein', de: 'sein' } }];
+    renderWithIntl(<WritingSession session={withReply('Ich habe nach Rom gefahren.', old)} onMessages={vi.fn()} />);
+    expect(screen.getByRole('button', { name: 'habe' })).toBeInTheDocument();
+  });
+
+  it('marks text typed with decomposed umlauts', () => {
+    vi.stubGlobal('fetch', vi.fn());
+    const corrections = [{ wrong: 'Müller'.normalize('NFC'), right: 'Mueller', category: 'spelling', reason: { en: 'x', de: 'y' } }];
+    renderWithIntl(<WritingSession session={withReply('Herr Müller kommt.'.normalize('NFD'), corrections)} onMessages={vi.fn()} />);
+    expect(screen.getByRole('button', { name: 'Müller' })).toBeInTheDocument();
+  });
+});

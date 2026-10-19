@@ -1,6 +1,6 @@
 'use client';
 
-import { memo, useCallback, useEffect, useRef, useState } from 'react';
+import { memo, useCallback, useMemo, useEffect, useRef, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { PenLine, Send } from 'lucide-react';
 import { LanguageToggle } from '@/components/LanguageToggle';
@@ -10,7 +10,11 @@ import { Button } from '@/components/ui/button';
 import { GermanTextarea } from '@/components/typing/GermanTextarea';
 import { WordCounter, countWords } from '@/components/typing/WordCounter';
 import { differsByLanguage, isLocalizedText, pickText, type ContentLanguage } from '@/lib/i18n/localizedText';
+import type { MarkType } from '@/lib/writing/letterGrading';
+import type { Correction } from '@/lib/freestyle/replies';
 import type { SessionMessage, SessionView } from '@/lib/freestyle/sessionViews';
+import { MarkedText, type TextMark } from '@/components/writing/MarkedText';
+import { locateMarks } from '@/lib/writing/marks';
 import { takeWritingDraft } from '@/components/writing/writingDraft';
 import { CorrectionList, readCorrections } from './CorrectionList';
 import { TappableGerman } from './TappableGerman';
@@ -161,6 +165,17 @@ export function WritingSession({ session, onMessages }: { session: SessionView; 
   );
 }
 
+// S10: offsets are found client-side over the stored text, so old messages work too. Corrections whose
+// wrong text isn't found have no mark; they stay in the list below.
+function marksOf(text: string, corrections: Correction[]): TextMark[] {
+  return locateMarks(
+    text,
+    corrections.map((c) => ({ original: c.wrong, correction: c.right, reason: c.reason, type: markTypeOf(c.category) }))
+  );
+}
+
+const markTypeOf = (category: string): MarkType => (category === 'spelling' || category === 'register' ? category : 'grammar');
+
 const VersionCard = memo(function VersionCard({
   n,
   student,
@@ -177,7 +192,10 @@ const VersionCard = memo(function VersionCard({
   const t = useTranslations('freestyle');
   const locale = useLocale() as ContentLanguage;
   const [language, setLanguage] = useState<ContentLanguage>(locale);
-  const corrections = readCorrections(reply?.extra?.corrections);
+  const stored = reply?.extra?.corrections;
+  const corrections = useMemo(() => readCorrections(stored), [stored]);
+  const shownText = student.content.normalize('NFC');
+  const marks = useMemo(() => marksOf(shownText, corrections), [shownText, corrections]);
   const comment = isLocalizedText(reply?.extra?.comment) ? reply.extra.comment : null;
 
   return (
@@ -197,9 +215,7 @@ const VersionCard = memo(function VersionCard({
       <div className="grid gap-3 md:grid-cols-2">
         <div className="flex flex-col gap-1">
           <h3 className="text-xs font-semibold tracking-wide text-text-muted uppercase">{t('yourVersion')}</h3>
-          <p lang="de" className="leading-relaxed whitespace-pre-wrap">
-            {student.content}
-          </p>
+          <MarkedText text={shownText} marks={marks} className="leading-relaxed" />
         </div>
         {reply && (
           <div className="flex flex-col gap-1">

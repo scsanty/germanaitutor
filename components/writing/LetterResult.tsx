@@ -58,7 +58,7 @@ export function LetterResult({
         </div>
         <div className={cn('grid gap-3', showCorrected && 'md:grid-cols-2')}>
           <div className="rounded-xl border border-border bg-surface px-4 py-3">
-            <MarkedText text={text} marks={grade.marks} />
+            <MarkedText text={text.normalize('NFC')} marks={grade.marks} />
             {grade.marks.length === 0 && <p className="mt-2 text-sm text-text-muted">{t('noMarks')}</p>}
           </div>
           {showCorrected && (
