@@ -1,0 +1,382 @@
+{
+  "formatId": "goethe-c1",
+  "partId": "hoeren-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-c1__hoeren-3__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Ansage f] Abschnitt eins.\n[Moderatorin f] Guten Abend und willkommen zu „Streitfrage“. Bohrmaschinen, so heißt es gern, werden im Durchschnitt nur wenige Minuten in ihrem ganzen Leben benutzt. Warum also nicht leihen statt kaufen? Darüber diskutiere ich heute mit drei Gästen. Herr Albers, Sie haben vor vier Jahren in Rendorf den Leihladen „Ausleihbar“ gegründet. Wie funktioniert das?\n[Herr Albers m] Ganz einfach: Man zahlt einen Jahresbeitrag von dreißig Euro und kann dann bis zu drei Gegenstände pro Woche mitnehmen, vom Zelt über die Nähmaschine bis zum Raclette-Gerät. Inzwischen haben wir über tausend Dinge im Regal.\n[Moderatorin f] Und vermutlich ist die berühmte Bohrmaschine der Spitzenreiter?\n[Herr Albers m] Das dachten wir anfangs auch, und wir hatten gleich fünf Stück angeschafft. Aber mit großem Abstand am meisten gefragt ist bei uns der Teppichreiniger. Den braucht jeder irgendwann, und niemand will so ein sperriges Ding in der Wohnung stehen haben.\n[Moderatorin f] Wovon lebt so ein Laden eigentlich?\n[Herr Albers m] Die Beiträge decken ungefähr die Hälfte der Kosten. Den Rest hat in den ersten Jahren die Stadt übernommen, aber dieser Zuschuss läuft im Dezember aus. Wie es danach weitergeht, ist offen, und das bereitet mir, ehrlich gesagt, schlaflose Nächte.\n[Ansage f] Abschnitt zwei.\n[Moderatorin f] Frau Petrović, Sie vertreten den regionalen Einzelhandelsverband. Für Ihre Mitglieder dürfte so ein Leihladen doch ein rotes Tuch sein.\n[Frau Petrović f] Das hätte ich vor ein paar Jahren vielleicht auch gesagt. Inzwischen sehe ich das differenzierter. Natürlich gibt es Händler, die fürchten, dass weniger gekauft wird. Aber ich sehe darin auch eine Chance, wenn man sich darauf einlässt.\n[Moderatorin f] Inwiefern?\n[Frau Petrović f] Nehmen Sie das Eisenwarengeschäft Kranz hier bei uns. Herr Kranz wartet und repariert inzwischen sämtliche Geräte des Leihladens. Er verkauft dadurch keine einzige Bohrmaschine mehr als früher, aber seine Werkstatt ist so ausgelastet, dass er einen zusätzlichen Mechaniker eingestellt hat.\n[Herr Albers m] Und unsere Mitglieder kaufen dort ihre Bohrer und Schrauben. Das vergisst man oft.\n[Ansage f] Abschnitt drei.\n[Moderatorin f] Herr Yilmaz, Sie sind Konsumforscher und haben Mitglieder von Leihläden befragt. Wer leiht eigentlich?\n[Herr Yilmaz m] Das Ergebnis hat uns selbst überrascht. Wir hatten erwartet, vor allem Menschen mit wenig Geld anzutreffen. Tatsächlich sind die meisten Mitglieder zwischen fünfundzwanzig und vierzig, gut ausgebildet und wohnen in der Innenstadt.\n[Moderatorin f] Dann geht es ihnen vermutlich vor allem um die Umwelt?\n[Herr Yilmaz m] Das sagen viele zuerst, wenn man direkt fragt. Wenn man aber genauer nachhakt und sie die Gründe in eine Reihenfolge bringen lässt, landet ganz oben etwas viel Profaneres: Sie haben in ihren kleinen Wohnungen schlicht keinen Platz für all die Dinge. Umweltschutz und Sparen kommen erst danach.\n[Herr Yilmaz m] Kaum erreicht werden dagegen ältere Menschen. Die besitzen die Geräte meistens schon seit Jahrzehnten und sehen gar keinen Anlass, etwas zu leihen.\n[Ansage f] Abschnitt vier.\n[Moderatorin f] Zum Schluss ein Blick nach vorn. Herr Albers, was haben Sie vor?\n[Herr Albers m] Unser größtes Ärgernis sind die Öffnungszeiten. Wir sind ja alle Ehrenamtliche und haben nur an drei Nachmittagen geöffnet. Deshalb wollen wir im Frühjahr Schließfächer aufstellen, die man rund um die Uhr per Code öffnen kann.\n[Frau Petrović f] Ich könnte mir außerdem vorstellen, dass Geschäfte selbst ein kleines Leihregal anbieten. Wer das Gerät erst einmal ausprobiert hat, kauft es vielleicht später doch.\n[Herr Yilmaz m] Ich will da ein bisschen Wasser in den Wein gießen. In unserer Befragung haben die Mitglieder kaum weniger gekauft als vorher. Sie leihen meist Dinge, die sie sich ohnehin nie angeschafft hätten. Man sollte die Wirkung auf den Konsum also nicht überschätzen.\n[Moderatorin f] Damit sind wir am Ende. Ich danke Ihnen allen für die lebhafte Diskussion.",
+          "questions": [
+            {
+              "question": "Was wird im Leihladen „Ausleihbar“ am häufigsten ausgeliehen?",
+              "options": [
+                "die Bohrmaschine",
+                "das Zelt",
+                "der Teppichreiniger"
+              ],
+              "correctIndex": 2,
+              "evidence": "mit großem Abstand am meisten gefragt ist bei uns der Teppichreiniger"
+            },
+            {
+              "question": "Warum macht sich Herr Albers Sorgen um die Zukunft des Ladens?",
+              "options": [
+                "Die Mitgliederzahl geht seit einiger Zeit zurück.",
+                "Ein Teil der Finanzierung fällt bald weg.",
+                "Der Verein muss sich neue Räume suchen."
+              ],
+              "correctIndex": 1,
+              "evidence": "dieser Zuschuss läuft im Dezember aus"
+            },
+            {
+              "question": "Wie steht Frau Petrović heute zu Leihläden?",
+              "options": [
+                "Sie sieht neben Risiken auch Möglichkeiten für den Handel.",
+                "Sie hält sie für eine Bedrohung des Einzelhandels.",
+                "Sie meint, dass sie für den Handel keine Rolle spielen."
+              ],
+              "correctIndex": 0,
+              "evidence": "Aber ich sehe darin auch eine Chance, wenn man sich darauf einlässt."
+            },
+            {
+              "question": "Was hat sich für das Eisenwarengeschäft Kranz verändert?",
+              "options": [
+                "Es verkauft deutlich mehr Bohrmaschinen.",
+                "Es hat einen Mitarbeiter mehr.",
+                "Es verleiht jetzt selbst Werkzeug."
+              ],
+              "correctIndex": 1,
+              "evidence": "dass er einen zusätzlichen Mechaniker eingestellt hat"
+            },
+            {
+              "question": "Was hat Herrn Yilmaz an seiner Befragung überrascht?",
+              "options": [
+                "Die meisten Mitglieder haben ein geringes Einkommen.",
+                "Die meisten Mitglieder sind junge Familien vom Land.",
+                "Die meisten Mitglieder sind gut ausgebildete Stadtbewohner."
+              ],
+              "correctIndex": 2,
+              "evidence": "gut ausgebildet und wohnen in der Innenstadt"
+            },
+            {
+              "question": "Was ist laut der Befragung der wichtigste Grund fürs Leihen?",
+              "options": [
+                "fehlender Platz zu Hause",
+                "der Schutz der Umwelt",
+                "der Wunsch, Geld zu sparen"
+              ],
+              "correctIndex": 0,
+              "evidence": "Sie haben in ihren kleinen Wohnungen schlicht keinen Platz für all die Dinge."
+            },
+            {
+              "question": "Was plant Herr Albers für das Frühjahr?",
+              "options": [
+                "längere Öffnungszeiten mit bezahltem Personal",
+                "Schließfächer, die jederzeit zugänglich sind",
+                "eine Zusammenarbeit mit Geschäften der Stadt"
+              ],
+              "correctIndex": 1,
+              "evidence": "Schließfächer aufstellen, die man rund um die Uhr per Code öffnen kann"
+            },
+            {
+              "question": "Wovor warnt Herr Yilmaz zum Schluss?",
+              "options": [
+                "Leihläden könnten kleine Geschäfte verdrängen.",
+                "Leihläden würden von älteren Menschen bald nicht mehr genutzt.",
+                "Leihläden verringern den Konsum weniger, als man denkt."
+              ],
+              "correctIndex": 2,
+              "evidence": "Man sollte die Wirkung auf den Konsum also nicht überschätzen."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Albers says that by far the most popular item is the carpet cleaner, not the drill they had expected.",
+            "de": "Albers sagt, dass mit großem Abstand der Teppichreiniger am meisten gefragt ist, nicht die Bohrmaschine, wie erwartet."
+          },
+          {
+            "en": "The fees cover only half of the costs, and the city's grant runs out in December.",
+            "de": "Die Beiträge decken nur die Hälfte der Kosten, und der Zuschuss der Stadt läuft im Dezember aus."
+          },
+          {
+            "en": "She now takes a more differentiated view: some retailers fear losing sales, but she also sees an opportunity.",
+            "de": "Sie sieht das heute differenzierter: Manche Händler fürchten weniger Umsatz, aber sie sieht auch eine Chance."
+          },
+          {
+            "en": "Kranz now services the shop's devices; he sells no more drills than before, but he has hired an extra mechanic.",
+            "de": "Kranz repariert jetzt die Geräte des Leihladens. Er verkauft nicht mehr Bohrmaschinen, hat aber einen zusätzlichen Mechaniker eingestellt."
+          },
+          {
+            "en": "He had expected people with little money, but most members are aged twenty-five to forty, well educated and live in the city centre.",
+            "de": "Er hatte Menschen mit wenig Geld erwartet. Die meisten Mitglieder sind aber zwischen fünfundzwanzig und vierzig, gut ausgebildet und wohnen in der Innenstadt."
+          },
+          {
+            "en": "Members first mention the environment, but when they rank their reasons, lack of space in small flats comes first.",
+            "de": "Zuerst nennen die Mitglieder die Umwelt. Wenn sie die Gründe ordnen, steht aber der fehlende Platz in kleinen Wohnungen ganz oben."
+          },
+          {
+            "en": "Because the volunteers can open only three afternoons a week, he wants lockers that can be opened around the clock with a code.",
+            "de": "Weil die Ehrenamtlichen nur an drei Nachmittagen öffnen können, will er Schließfächer, die man rund um die Uhr mit einem Code öffnet."
+          },
+          {
+            "en": "In his survey members hardly bought less than before, so the effect on consumption should not be overestimated.",
+            "de": "In seiner Befragung haben die Mitglieder kaum weniger gekauft als vorher. Man sollte die Wirkung auf den Konsum deshalb nicht überschätzen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-c1__hoeren-3__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Ansage m] Abschnitt eins.\n[Frau Sommer f] Gut, dann fangen wir an. Ich habe Sie beide gebeten, weil wir uns über unser Publikum Gedanken machen müssen. Noch halten sich die Abonnements einigermaßen, aber unsere Abonnenten sind im Schnitt über siebzig, und jedes Jahr kündigen mehr aus Altersgründen, als neue dazukommen.\n[Herr Kühn m] Und unter dreißig sieht man im Saal praktisch niemanden.\n[Frau Sommer f] Genau. Frau Asante, Sie haben dazu eine Umfrage an der Hochschule gemacht.\n[Frau Asante f] Ja, mit gut zweihundert Studierenden. Und das Ergebnis hat mich überrascht. Der Preis spielt eine viel kleinere Rolle, als wir dachten. Die meisten sagen, sie wüssten einfach nicht, was sie bei uns erwartet, wie lange ein Stück dauert, ob man sich schick anziehen muss, ob man in der Pause etwas falsch machen kann.\n[Herr Kühn m] Also eine Hemmschwelle, kein Geldproblem.\n[Frau Asante f] So würde ich es zusammenfassen.\n[Ansage m] Abschnitt zwei.\n[Herr Kühn m] Trotzdem möchte ich meinen Vorschlag noch einmal auf den Tisch legen: Zahl, was du willst. Einmal im Monat, immer am ersten Montag, entscheidet jeder selbst, was er für seine Karte zahlt.\n[Frau Sommer f] Herr Kühn, ich verstehe die Idee, aber wir sind auf jeden Euro angewiesen. Wenn alle nur einen Euro in die Kasse werfen, haben wir ein Problem.\n[Herr Kühn m] Das befürchten alle, und es tritt fast nie ein. Das Theater am Hafenbecken in Mardorf macht das seit drei Jahren. Dort zahlen die Leute im Schnitt nur ein bisschen weniger als den regulären Preis, aber die Vorstellungen sind ausverkauft, und ein Drittel der Besucher war vorher noch nie im Haus.\n[Frau Sommer f] Gut, das überzeugt mich zumindest so weit, dass ich darüber nachdenke. Aber Montag ist bei uns eigentlich spielfrei, das hieße Zusatzschichten für die Technik.\n[Ansage m] Abschnitt drei.\n[Frau Asante f] Darf ich noch eine Ergänzung machen? Wenn das eigentliche Problem die Unsicherheit ist, sollten wir die Leute vorher hinter die Kulissen lassen. Ich denke an offene Proben, nach denen die Schauspieler noch eine halbe Stunde mit dem Publikum reden.\n[Herr Kühn m] Da sehe ich ehrlich gesagt Schwierigkeiten. Proben sind ein geschützter Raum. Da wird ausprobiert, abgebrochen, auch mal gestritten. Die meisten aus dem Ensemble würden das ablehnen, das weiß ich aus vielen Gesprächen.\n[Frau Asante f] Es müsste ja nicht jede Probe sein. Und die Gespräche danach könnte man auch in den sozialen Medien zeigen, kurze Ausschnitte, damit man mal ein Gesicht zu den Namen auf dem Plakat bekommt.\n[Frau Sommer f] Das mit den Ausschnitten gefällt mir, das kostet uns fast nichts.\n[Ansage m] Abschnitt vier.\n[Frau Sommer f] Ich schlage Folgendes vor: Wir probieren beides eine Spielzeit lang aus, aber in kleinem Rahmen. Zahl, was du willst gibt es nicht jeden Monat, sondern an vier Abenden in der Saison, und zwar an normalen Spieltagen, nicht montags.\n[Herr Kühn m] Damit kann ich leben.\n[Frau Sommer f] Und offen ist pro Inszenierung nur die Generalprobe, mit anschließendem Gespräch. Da ist das Stück fertig, und ich denke, das kann man dem Ensemble zumuten.\n[Frau Asante f] Und wer wertet das Ganze aus?\n[Frau Sommer f] Das würde ich gern Ihnen überlassen, Frau Asante. Sie kennen die Umfrage am besten. Zum Ende der Spielzeit hätte ich gern einen kurzen Bericht, und dann entscheiden wir, ob wir weitermachen.",
+          "questions": [
+            {
+              "question": "Was macht Frau Sommer Sorgen?",
+              "options": [
+                "Die Zahl der Abonnements nimmt allmählich ab.",
+                "Immer weniger Besucher kaufen Einzelkarten.",
+                "Die Abonnenten sind mit dem Programm unzufrieden."
+              ],
+              "correctIndex": 0,
+              "evidence": "jedes Jahr kündigen mehr aus Altersgründen, als neue dazukommen"
+            },
+            {
+              "question": "Warum kommen laut der Umfrage wenige junge Leute ins Theater?",
+              "options": [
+                "Die Karten sind ihnen zu teuer.",
+                "Sie wissen nicht, was sie dort erwartet.",
+                "Die Stücke interessieren sie nicht."
+              ],
+              "correctIndex": 1,
+              "evidence": "sie wüssten einfach nicht, was sie bei uns erwartet"
+            },
+            {
+              "question": "Was befürchtet Frau Sommer bei Herrn Kühns Vorschlag?",
+              "options": [
+                "zu geringe Einnahmen",
+                "zu wenig Zuschauer",
+                "Ärger mit den Abonnenten"
+              ],
+              "correctIndex": 0,
+              "evidence": "wir sind auf jeden Euro angewiesen"
+            },
+            {
+              "question": "Was berichtet Herr Kühn über das Theater in Mardorf?",
+              "options": [
+                "Dort zahlen die Leute oft mehr als den normalen Preis.",
+                "Dort kommen viele Menschen zum ersten Mal ins Theater.",
+                "Dort hat man das Modell nach drei Jahren wieder aufgegeben."
+              ],
+              "correctIndex": 1,
+              "evidence": "ein Drittel der Besucher war vorher noch nie im Haus"
+            },
+            {
+              "question": "Warum ist Herr Kühn gegen offene Proben?",
+              "options": [
+                "Er glaubt, dass das junge Publikum sich dafür nicht interessiert.",
+                "Er fürchtet, dass die Proben dadurch zu lange dauern.",
+                "Er weiß, dass viele Schauspieler das nicht wollen."
+              ],
+              "correctIndex": 2,
+              "evidence": "Die meisten aus dem Ensemble würden das ablehnen"
+            },
+            {
+              "question": "Was gefällt Frau Sommer an Frau Asantes Idee?",
+              "options": [
+                "dass sie neue Sponsoren anlockt",
+                "dass sie kaum Kosten verursacht",
+                "dass sie das Ensemble entlastet"
+              ],
+              "correctIndex": 1,
+              "evidence": "das kostet uns fast nichts"
+            },
+            {
+              "question": "Was wird für die nächste Spielzeit beschlossen?",
+              "options": [
+                "Zahl, was du willst gibt es jeden ersten Montag im Monat.",
+                "Zahl, was du willst gibt es an einigen normalen Spieltagen.",
+                "Zahl, was du willst gibt es nur bei Generalproben."
+              ],
+              "correctIndex": 1,
+              "evidence": "an vier Abenden in der Saison, und zwar an normalen Spieltagen, nicht montags"
+            },
+            {
+              "question": "Welche Aufgabe übernimmt Frau Asante?",
+              "options": [
+                "Sie organisiert die Gespräche nach den Proben.",
+                "Sie macht eine neue Umfrage unter Studierenden.",
+                "Sie überprüft, wie gut die Versuche funktionieren."
+              ],
+              "correctIndex": 2,
+              "evidence": "Das würde ich gern Ihnen überlassen, Frau Asante."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Subscribers are mostly over seventy, and each year more cancel for reasons of age than new ones sign up.",
+            "de": "Die Abonnenten sind meist über siebzig, und jedes Jahr kündigen mehr aus Altersgründen, als neue dazukommen."
+          },
+          {
+            "en": "Price plays a smaller role than expected; most students say they do not know what to expect at the theatre.",
+            "de": "Der Preis spielt eine kleinere Rolle als gedacht. Die meisten Studierenden wissen nicht, was sie im Theater erwartet."
+          },
+          {
+            "en": "She fears that people would pay very little, and the theatre depends on every euro.",
+            "de": "Sie befürchtet, dass die Leute sehr wenig zahlen, und das Theater ist auf jeden Euro angewiesen."
+          },
+          {
+            "en": "In Mardorf people pay slightly less than the normal price, but shows sell out and a third of the audience are first-time visitors.",
+            "de": "In Mardorf zahlen die Leute etwas weniger als den normalen Preis, aber die Vorstellungen sind ausverkauft, und ein Drittel der Besucher war noch nie dort."
+          },
+          {
+            "en": "Rehearsals are a protected space, and from many conversations he knows most of the company would refuse.",
+            "de": "Proben sind ein geschützter Raum, und er weiß aus vielen Gesprächen, dass die meisten im Ensemble das ablehnen würden."
+          },
+          {
+            "en": "She likes the idea of short clips on social media because it costs the theatre almost nothing.",
+            "de": "Ihr gefallen die kurzen Ausschnitte in den sozialen Medien, weil sie das Theater fast nichts kosten."
+          },
+          {
+            "en": "The pay-what-you-want model will be tried on four evenings in the season, on normal performance days, not on Mondays.",
+            "de": "Zahl, was du willst gibt es an vier Abenden in der Saison, an normalen Spieltagen und nicht montags."
+          },
+          {
+            "en": "Ms Sommer asks Ms Asante to evaluate the trial and write a short report at the end of the season.",
+            "de": "Frau Sommer bittet Frau Asante, den Versuch auszuwerten und am Ende der Spielzeit einen kurzen Bericht zu schreiben."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-c1__hoeren-3__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Ansage m] Abschnitt eins.\n[Clara f] So, Mama schläft. Dann können wir endlich reden. Ihr wisst ja, warum ich euch beide hergebeten habe.\n[Felix m] Wegen letzter Woche.\n[Clara f] Genau. Sie ist abends auf der Kellertreppe ausgerutscht. Zum Glück hat sie sich nur das Handgelenk verstaucht, aber sie lag fast eine Stunde da, bevor die Nachbarin sie gehört hat. Das Telefon lag oben in der Küche.\n[Jana f] Das Schlimmste ist ja, dass sie es uns erst drei Tage später erzählt hat, und auch nur, weil ich den Verband gesehen habe.\n[Felix m] Und was sagt sie selbst dazu?\n[Jana f] Dass das jedem passieren kann und dass sie hier nur rausgeht, wenn man sie mit den Füßen voran raustragen muss. Ihr kennt ja ihren Humor.\n[Ansage m] Abschnitt zwei.\n[Clara f] Ich will sie ja zu nichts zwingen. Aber ich habe mich mal umgesehen. Bei mir in der Stadt, keine zehn Minuten von uns entfernt, wird gerade ein Haus mit barrierefreien Wohnungen fertig, mit Aufzug und einem Hausmeister, der im Notfall da ist.\n[Felix m] Clara, ehrlich, das würde sie eingehen lassen. Sie singt seit vierzig Jahren im Kirchenchor, sie geht jeden Donnerstag mit ihren Freundinnen zum Kartenspielen. Wenn du ihr das wegnimmst, sitzt sie in dieser schönen barrierefreien Wohnung und wartet darauf, dass du nach Feierabend vorbeikommst.\n[Clara f] Das ist unfair. Ich würde sie jeden Tag besuchen.\n[Felix m] Das glaube ich dir sogar. Aber ein Ersatz für ihr Leben hier ist das nicht.\n[Ansage m] Abschnitt drei.\n[Felix m] Ich hätte einen anderen Vorschlag. Sandra und ich haben schon länger überlegt, aus der Stadt wegzuziehen. Wir könnten mit den Kindern hier einziehen und das Erdgeschoss für Mama umbauen, mit eigenem Bad und eigenem Eingang. Dann wäre immer jemand im Haus.\n[Jana f] Das klingt erst mal schön. Aber ich muss das jetzt ansprechen, auch wenn es unangenehm ist: Ihr würdet dann mietfrei in einem Haus wohnen, das uns später allen dreien gehört.\n[Felix m] So habe ich das gar nicht gemeint.\n[Jana f] Das weiß ich. Ich will nur nicht, dass wir uns in zehn Jahren deswegen zerstreiten. Wenn ihr hier einzieht, solltet ihr jeden Monat einen Betrag auf ein gemeinsames Konto zahlen, von dem wir später Reparaturen am Haus bezahlen.\n[Felix m] Na gut. Darüber kann man reden, das finde ich fair.\n[Ansage m] Abschnitt vier.\n[Clara f] Wir reden hier die ganze Zeit über Mama, aber nicht mit ihr. Bevor irgendetwas entschieden wird, muss sie gefragt werden.\n[Jana f] Das sehe ich auch so. Und ich glaube, ich sollte das übernehmen. Mir gegenüber ist sie am offensten, mit euch beiden würde sie sofort auf stur schalten.\n[Felix m] Einverstanden. Aber egal, was sie sagt, die Treppe muss sicherer werden. Ich würde vorschlagen, dass wir sofort einen Treppenlift einbauen lassen, und die Kosten teilen wir durch drei.\n[Clara f] Damit bin ich einverstanden. Dann treffen wir uns an Ostern wieder hier, und bis dahin hat Jana mit ihr gesprochen.",
+          "questions": [
+            {
+              "question": "Warum hat es nach dem Sturz der Mutter lange gedauert, bis Hilfe kam?",
+              "options": [
+                "Die Nachbarin war an diesem Abend nicht zu Hause.",
+                "Die Mutter hatte kein Telefon in der Nähe.",
+                "Die Mutter wollte niemanden stören."
+              ],
+              "correctIndex": 1,
+              "evidence": "Das Telefon lag oben in der Küche."
+            },
+            {
+              "question": "Wie haben die Geschwister von dem Unfall erfahren?",
+              "options": [
+                "Die Nachbarin hat sie sofort angerufen.",
+                "Die Mutter hat es am selben Abend erzählt.",
+                "Jana hat zufällig etwas bemerkt."
+              ],
+              "correctIndex": 2,
+              "evidence": "auch nur, weil ich den Verband gesehen habe"
+            },
+            {
+              "question": "Was schlägt Clara vor?",
+              "options": [
+                "Die Mutter soll in eine Wohnung in Claras Nähe ziehen.",
+                "Die Mutter soll zu Clara in die Wohnung ziehen.",
+                "Die Mutter soll einen Hausmeister für ihr Haus einstellen."
+              ],
+              "correctIndex": 0,
+              "evidence": "keine zehn Minuten von uns entfernt"
+            },
+            {
+              "question": "Warum ist Felix gegen Claras Vorschlag?",
+              "options": [
+                "Er hält die Wohnung für zu teuer.",
+                "Die Mutter würde ihr soziales Umfeld verlieren.",
+                "Clara hätte nicht genug Zeit für die Mutter."
+              ],
+              "correctIndex": 1,
+              "evidence": "Sie singt seit vierzig Jahren im Kirchenchor"
+            },
+            {
+              "question": "Was stört Jana an Felix' Plan?",
+              "options": [
+                "Sie findet es ungerecht, dass Felix' Familie umsonst im Haus wohnen würde.",
+                "Sie glaubt, dass der Umbau des Erdgeschosses zu teuer wäre.",
+                "Sie meint, dass die Mutter mit den Kindern überfordert wäre."
+              ],
+              "correctIndex": 0,
+              "evidence": "Ihr würdet dann mietfrei in einem Haus wohnen"
+            },
+            {
+              "question": "Was soll mit Felix' monatlichen Zahlungen geschehen?",
+              "options": [
+                "Sie sollen an Clara und Jana ausgezahlt werden.",
+                "Sie sollen für die Pflege der Mutter verwendet werden.",
+                "Sie sollen für Reparaturen am Haus gespart werden."
+              ],
+              "correctIndex": 2,
+              "evidence": "von dem wir später Reparaturen am Haus bezahlen"
+            },
+            {
+              "question": "Warum will Jana mit der Mutter sprechen?",
+              "options": [
+                "Sie wohnt am nächsten bei der Mutter.",
+                "Die Mutter ist ihr gegenüber am ehrlichsten.",
+                "Sie hat die meiste Zeit dafür."
+              ],
+              "correctIndex": 1,
+              "evidence": "Mir gegenüber ist sie am offensten"
+            },
+            {
+              "question": "Was beschließen die Geschwister unabhängig von der Antwort der Mutter?",
+              "options": [
+                "Sie lassen einen Treppenlift einbauen.",
+                "Sie bauen das Erdgeschoss um.",
+                "Sie suchen einen Pflegedienst."
+              ],
+              "correctIndex": 0,
+              "evidence": "dass wir sofort einen Treppenlift einbauen lassen"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "She lay on the cellar stairs for almost an hour because her phone was upstairs in the kitchen; the neighbour eventually heard her.",
+            "de": "Sie lag fast eine Stunde auf der Kellertreppe, weil das Telefon oben in der Küche lag. Schließlich hat die Nachbarin sie gehört."
+          },
+          {
+            "en": "The mother only told them three days later, and only because Jana saw the bandage.",
+            "de": "Die Mutter hat es erst drei Tage später erzählt, und nur, weil Jana den Verband gesehen hat."
+          },
+          {
+            "en": "Clara has found an accessible flat in a new building less than ten minutes from her home.",
+            "de": "Clara hat eine barrierefreie Wohnung in einem neuen Haus gefunden, keine zehn Minuten von ihr entfernt."
+          },
+          {
+            "en": "Felix says the mother would lose her church choir and her card evenings with friends; he even believes Clara would visit daily.",
+            "de": "Felix sagt, dass die Mutter ihren Kirchenchor und ihre Kartenabende mit den Freundinnen verlieren würde. Er glaubt Clara sogar, dass sie täglich käme."
+          },
+          {
+            "en": "Jana points out that Felix's family would live rent-free in a house that will later belong to all three siblings.",
+            "de": "Jana weist darauf hin, dass Felix' Familie mietfrei in einem Haus wohnen würde, das später allen drei Geschwistern gehört."
+          },
+          {
+            "en": "Felix's family would pay a monthly amount into a joint account used later for repairs to the house.",
+            "de": "Felix' Familie soll jeden Monat einen Betrag auf ein gemeinsames Konto zahlen, von dem später Reparaturen am Haus bezahlt werden."
+          },
+          {
+            "en": "Jana says their mother is most open with her and would immediately become stubborn with the other two.",
+            "de": "Jana sagt, dass die Mutter ihr gegenüber am offensten ist und bei den anderen beiden sofort stur würde."
+          },
+          {
+            "en": "Whatever the mother says, the stairs must be made safer: they will install a stair lift straight away and split the cost three ways.",
+            "de": "Egal, was die Mutter sagt, die Treppe muss sicherer werden: Sie lassen sofort einen Treppenlift einbauen und teilen die Kosten durch drei."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,340 @@
+{
+  "formatId": "goethe-c1",
+  "partId": "hoeren-4",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-c1__hoeren-4__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Moderatorin f] Meine Damen und Herren, ich begrüße Sie herzlich zum dritten Abend unserer Reihe „Stadtgeschichte im Gespräch“. Heute spricht der Historiker Bernd Ostermann vom Stadtarchiv Wellerstedt über ein Thema, an dem wir alle täglich vorbeigehen. Herr Ostermann, bitte.\n[Herr Ostermann m] Vielen Dank. Meine Damen und Herren, wenn Sie heute Abend nach Hause gehen, werden Sie auf mindestens ein Straßenschild und eine Hausnummer schauen, ohne einen Gedanken daran zu verschwenden. Dabei sind beide alles andere als selbstverständlich.\n[Herr Ostermann m] Bis weit ins achtzehnte Jahrhundert hinein kam man in Wellerstedt ganz ohne Hausnummern aus. Man beschrieb ein Haus nach seinem Besitzer oder nach einem Merkmal: das Haus beim Brunnen, das Haus zum roten Ochsen. Das funktionierte erstaunlich gut, solange jeder jeden kannte.\n[Herr Ostermann m] Eingeführt wurden die Nummern nicht etwa, um Briefträgern die Arbeit zu erleichtern, wie man oft liest. Die Post spielte damals kaum eine Rolle. Den Ausschlag gab vielmehr die neu gegründete städtische Feuerkasse. Sie musste genau wissen, welches Haus versichert war und wer dafür wie viel zu zahlen hatte.\n[Herr Ostermann m] Entsprechend unbeliebt war die Maßnahme, denn mit der Nummer kam die Beitragspflicht. In den Akten unseres Archivs findet sich der Fall eines Bäckermeisters, der die frisch aufgemalte Nummer an seinem Haus Nacht für Nacht übertünchte, bis man ihm eine empfindliche Geldstrafe auferlegte.\n[Herr Ostermann m] Kurios ist auch die Art der Zählung. Die ersten Nummern liefen nicht straßenweise, sondern einfach fortlaufend durch die ganze Stadt, in der Reihenfolge, in der der Schreiber die Häuser abging. Das Rathaus bekam die Nummer eins, und das letzte Haus am Mühlbach die Nummer vierhundertzwölf.\n[Herr Ostermann m] Sie ahnen das Problem: Wurde irgendwo ein neues Haus gebaut, bekam es einfach die nächste freie Zahl, und so stand bald die Nummer fünfhundert neben der Nummer drei. Erst um achtzehnhundertsechzig stellte man auf die Zählung nach Straßen um, mit geraden Zahlen auf der einen und ungeraden auf der anderen Seite.\n[Herr Ostermann m] Kommen wir zu den Straßennamen. Viele davon sind ja viel älter als die Nummern. Die Gerbergasse oder der Kornmarkt verraten bis heute, welches Gewerbe sich dort einmal befand.\n[Herr Ostermann m] Spannend wird es, wenn Namen geändert werden. Man denkt dabei sofort an politische Umbrüche, und die hat es natürlich gegeben: Die heutige Lindenallee hat in den letzten hundertfünfzig Jahren fünf verschiedene Namen getragen. Der häufigste Anlass war in Wellerstedt aber ein ganz banaler. Nach der Eingemeindung der Nachbardörfer gab es plötzlich drei Bahnhofstraßen und vier Kirchgassen, und die Feuerwehr ist mehr als einmal zur falschen Adresse gefahren.\n[Herr Ostermann m] Auch heute wird darüber gestritten. Als der Stadtrat vor einigen Jahren beschloss, die Hindenstraße umzubenennen, kam der heftigste Widerstand nicht von politischer Seite, sondern von den Anwohnern selbst. Die fürchteten vor allem den Aufwand: neue Ausweise, neues Briefpapier, die Adresse bei unzähligen Stellen ändern.\n[Herr Ostermann m] Die Stadt hat daraufhin etwas Kluges getan. Sie hat sämtliche Gebühren für die Ummeldung übernommen und den Anwohnern ein Jahr Zeit gelassen, in dem auch Post an die alte Adresse zugestellt wurde. Danach hat sich der Ärger erstaunlich schnell gelegt.\n[Herr Ostermann m] Lassen Sie mich mit einer Beobachtung schließen. Bei der letzten Umbenennung haben wir die Bürgerinnen und Bürger erstmals selbst Vorschläge einreichen lassen. Es kamen über dreihundert, und fast die Hälfte davon schlug nicht Persönlichkeiten vor, sondern Pflanzen, Tiere oder Flurnamen. Offenbar wünschen sich viele Namen, über die man sich in fünfzig Jahren nicht wieder streiten muss.\n[Herr Ostermann m] Ich danke Ihnen für Ihre Aufmerksamkeit und freue mich auf Ihre Fragen.",
+          "questions": [
+            {
+              "question": "Wie unterschied man in Wellerstedt früher die Häuser voneinander?",
+              "options": [
+                "nach dem Namen der Straße",
+                "nach dem Eigentümer oder einer Besonderheit",
+                "nach dem Gewerbe der Bewohner"
+              ],
+              "correctIndex": 1,
+              "evidence": "Man beschrieb ein Haus nach seinem Besitzer oder nach einem Merkmal"
+            },
+            {
+              "question": "Warum wurden die Hausnummern eingeführt?",
+              "options": [
+                "Die Post brauchte genaue Adressen.",
+                "Der Landesherr wollte mögliche Soldaten erfassen.",
+                "Eine Versicherung musste die Häuser eindeutig zuordnen."
+              ],
+              "correctIndex": 2,
+              "evidence": "Sie musste genau wissen, welches Haus versichert war"
+            },
+            {
+              "question": "Was erfährt man über den Bäckermeister?",
+              "options": [
+                "Er hat sich gegen seine Hausnummer gewehrt.",
+                "Er hat als Erster eine Hausnummer bekommen.",
+                "Er hat die Nummern an die Häuser gemalt."
+              ],
+              "correctIndex": 0,
+              "evidence": "Nacht für Nacht übertünchte"
+            },
+            {
+              "question": "Welches Problem hatte das erste Nummernsystem?",
+              "options": [
+                "Manche Häuser bekamen zwei verschiedene Nummern.",
+                "Neubauten erhielten Nummern, die nicht zu ihrer Lage passten.",
+                "Die Nummern waren an den Häusern schlecht zu lesen."
+              ],
+              "correctIndex": 1,
+              "evidence": "so stand bald die Nummer fünfhundert neben der Nummer drei"
+            },
+            {
+              "question": "Was war in Wellerstedt der häufigste Grund, eine Straße umzubenennen?",
+              "options": [
+                "gleiche Straßennamen in verschiedenen Ortsteilen",
+                "ein Wechsel der politischen Verhältnisse",
+                "der Neubau oder die Verlängerung von Straßen"
+              ],
+              "correctIndex": 0,
+              "evidence": "Nach der Eingemeindung der Nachbardörfer gab es plötzlich drei Bahnhofstraßen und vier Kirchgassen"
+            },
+            {
+              "question": "Wie reagierte die Stadt auf den Protest gegen die Umbenennung der Hindenstraße?",
+              "options": [
+                "Sie verschob die Umbenennung um ein Jahr.",
+                "Sie ließ die Anwohner über den neuen Namen abstimmen.",
+                "Sie erleichterte den Anwohnern den Wechsel der Adresse."
+              ],
+              "correctIndex": 2,
+              "evidence": "Sie hat sämtliche Gebühren für die Ummeldung übernommen"
+            },
+            {
+              "question": "Was zeigen die Vorschläge der Bürger bei der letzten Umbenennung?",
+              "options": [
+                "Viele halten die bisherigen Namen für zu kompliziert.",
+                "Viele bevorzugen Namen, die politisch unverfänglich sind.",
+                "Viele möchten die alten Straßennamen zurück."
+              ],
+              "correctIndex": 1,
+              "evidence": "Offenbar wünschen sich viele Namen, über die man sich in fünfzig Jahren nicht wieder streiten muss."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Before house numbers, a house was described by its owner or by a feature, such as the house by the well.",
+            "de": "Vor den Hausnummern beschrieb man ein Haus nach dem Besitzer oder nach einem Merkmal, zum Beispiel das Haus beim Brunnen."
+          },
+          {
+            "en": "The town's new fire insurance fund had to know exactly which house was insured and who had to pay. The post office, Ostermann says, hardly mattered.",
+            "de": "Die neue städtische Feuerkasse musste genau wissen, welches Haus versichert war und wer wie viel zahlen musste. Die Post spielte laut Ostermann kaum eine Rolle."
+          },
+          {
+            "en": "The baker painted over his newly painted house number night after night until he was fined.",
+            "de": "Der Bäcker hat die neue Hausnummer Nacht für Nacht übermalt, bis er eine Geldstrafe bekam."
+          },
+          {
+            "en": "Numbers ran through the whole town, so each new house simply got the next free number, and number five hundred ended up next to number three.",
+            "de": "Die Nummern liefen durch die ganze Stadt. Jedes neue Haus bekam einfach die nächste freie Zahl, und so stand die Nummer fünfhundert neben der Nummer drei."
+          },
+          {
+            "en": "Political upheavals did lead to renamings, but in Wellerstedt the most common reason was a mundane one: after the neighbouring villages were incorporated, there were suddenly several streets with the same name.",
+            "de": "Politische Umbrüche haben zwar auch zu Umbenennungen geführt. Der häufigste Anlass in Wellerstedt war aber banal: Nach der Eingemeindung der Nachbardörfer gab es plötzlich mehrere Straßen mit demselben Namen."
+          },
+          {
+            "en": "The city paid all fees for changing the registration and delivered post to the old address for a year.",
+            "de": "Die Stadt hat alle Gebühren für die Ummeldung bezahlt und ein Jahr lang auch Post an die alte Adresse zugestellt."
+          },
+          {
+            "en": "Almost half of the suggestions were plants, animals or field names rather than people, which suggests a wish for names no one will argue about later.",
+            "de": "Fast die Hälfte der Vorschläge waren Pflanzen, Tiere oder Flurnamen statt Personen. Viele wünschen sich also Namen, über die man später nicht streiten muss."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-c1__hoeren-4__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Moderator m] Guten Abend, meine Damen und Herren. In unserer Vortragsreihe „Wirtschaft verstehen“ begrüße ich heute Svenja Roloff. Sie leitet am Institut für Konsumforschung in Tellbach eine Arbeitsgruppe, die sich mit einem Sinn beschäftigt, den wir gern unterschätzen: dem Geruch.\n[Frau Roloff f] Danke für die Einladung. Meine Damen und Herren, wir glauben gern, dass wir mit dem Kopf einkaufen. Wir vergleichen Preise, lesen Bewertungen, wägen ab. Und doch lassen wir uns von Dingen beeinflussen, die wir überhaupt nicht bewusst wahrnehmen. Gerüche gehören an die erste Stelle.\n[Frau Roloff f] Als wir Kundinnen und Kunden nach dem Einkauf gefragt haben, was ihnen im Geschäft aufgefallen sei, hat kaum einer den Geruch erwähnt. Sie nannten die Beleuchtung, die Musik, das Personal, obwohl der Duft ihre Bewertung nachweislich beeinflusst hatte.\n[Frau Roloff f] Wir haben das vor zwei Jahren in einem Möbelhaus untersucht. In einer Abteilung mit Bettwäsche haben wir an manchen Tagen einen dezenten Lavendelduft verströmt, an anderen nicht. Die Kunden blieben an den Dufttagen im Schnitt fast ein Viertel länger in der Abteilung.\n[Frau Roloff f] Das Überraschende war aber: Gekauft haben sie deshalb nicht mehr. Der Umsatz blieb praktisch gleich. Die Kunden beschrieben die Abteilung im Fragebogen allerdings als deutlich hochwertiger und gepflegter. Der Duft verändert also eher das Bild, das man von einem Geschäft hat, als den Inhalt des Einkaufswagens.\n[Frau Roloff f] Ganz entscheidend ist dabei, dass der Duft zum Produkt passt. In einer zweiten Untersuchung haben wir in einer Buchhandlung einen frischen Zitrusduft eingesetzt, weil wir dachten, er wirke anregend. Das Ergebnis war ernüchternd: Viele Kunden fanden ihn aufdringlich, und einige fühlten sich an ein Putzmittel erinnert.\n[Frau Roloff f] Erst als wir auf einen Duft umgestiegen sind, der an altes Papier und Holz erinnert, haben die Kunden die Buchhandlung als gemütlicher bewertet. Ein Duft, der nicht passt, ist schlechter als gar keiner.\n[Frau Roloff f] Und noch etwas: die Dosierung. Wir haben in der Buchhandlung drei Stärken getestet. Am besten schnitt zu unserer eigenen Überraschung die schwächste Stufe ab, die auf Nachfrage kaum jemand bemerkt hatte. Schon die mittlere empfanden viele als zu viel, und bei der stärksten fühlten sich einige regelrecht manipuliert.\n[Frau Roloff f] Damit bin ich bei der ethischen Frage, die mir in Diskussionen immer wieder gestellt wird: Ist das nicht unlauter? Ich halte ein generelles Verbot für den falschen Weg, denn auch frisches Brot in einer Bäckerei verbreitet Duft, und das stört niemanden.\n[Frau Roloff f] Ich plädiere aber für Transparenz. Ein kleines Schild am Eingang, auf dem steht, dass hier ein Duft eingesetzt wird, schadet der Wirkung nach unseren Daten übrigens kaum. Die Kunden haben dann nicht das Gefühl, hintergangen zu werden.\n[Frau Roloff f] Zum Schluss ein Hinweis auf eine Gruppe, die oft vergessen wird. Etwa jeder zehnte Kunde in unseren Studien reagierte auf Raumdüfte mit Kopfschmerzen oder Reizungen der Atemwege. Für diese Menschen ist ein beduftetes Geschäft keine angenehme Atmosphäre, sondern schlicht ein Ort, den sie meiden.\n[Frau Roloff f] Wer Düfte einsetzt, sollte deshalb immer auch an die denken, die sie nicht vertragen. Vielen Dank.",
+          "questions": [
+            {
+              "question": "Was zeigte die Befragung der Kunden nach dem Einkauf?",
+              "options": [
+                "Die meisten konnten den Duft genau beschreiben.",
+                "Kaum jemand nannte den Geruch als Eindruck.",
+                "Viele hatten sich über die Musik geärgert."
+              ],
+              "correctIndex": 1,
+              "evidence": "hat kaum einer den Geruch erwähnt"
+            },
+            {
+              "question": "Was zeigte die Untersuchung im Möbelhaus?",
+              "options": [
+                "Die Kunden kauften an den Dufttagen mehr Bettwäsche.",
+                "Die Kunden hielten sich länger in der Abteilung auf.",
+                "Die Kunden bemerkten den Lavendelduft sofort."
+              ],
+              "correctIndex": 1,
+              "evidence": "Die Kunden blieben an den Dufttagen im Schnitt fast ein Viertel länger in der Abteilung."
+            },
+            {
+              "question": "Was verändert ein Duft laut der Studie vor allem?",
+              "options": [
+                "den Eindruck, den ein Geschäft macht",
+                "die Menge der gekauften Waren",
+                "die Bereitschaft, höhere Preise zu zahlen"
+              ],
+              "correctIndex": 0,
+              "evidence": "Der Duft verändert also eher das Bild, das man von einem Geschäft hat"
+            },
+            {
+              "question": "Warum war der Zitrusduft in der Buchhandlung ein Misserfolg?",
+              "options": [
+                "Er war zu schwach, um bemerkt zu werden.",
+                "Er wurde von den Mitarbeitern abgelehnt.",
+                "Er erinnerte manche Kunden an Reinigungsmittel."
+              ],
+              "correctIndex": 2,
+              "evidence": "einige fühlten sich an ein Putzmittel erinnert"
+            },
+            {
+              "question": "Welche Duftstärke schnitt in der Buchhandlung am besten ab?",
+              "options": [
+                "die schwächste",
+                "die mittlere",
+                "die stärkste"
+              ],
+              "correctIndex": 0,
+              "evidence": "Am besten schnitt zu unserer eigenen Überraschung die schwächste Stufe ab"
+            },
+            {
+              "question": "Was schlägt Frau Roloff in der ethischen Frage vor?",
+              "options": [
+                "Raumdüfte im Handel ganz zu verbieten",
+                "Kunden auf den Einsatz von Düften hinzuweisen",
+                "die Duftstärke gesetzlich zu begrenzen"
+              ],
+              "correctIndex": 1,
+              "evidence": "Ich plädiere aber für Transparenz."
+            },
+            {
+              "question": "Was sagt Frau Roloff am Ende über einen Teil der Kunden?",
+              "options": [
+                "Sie kaufen in bedufteten Geschäften mehr ein.",
+                "Sie bemerken Raumdüfte überhaupt nicht.",
+                "Sie bekommen von Raumdüften Beschwerden."
+              ],
+              "correctIndex": 2,
+              "evidence": "reagierte auf Raumdüfte mit Kopfschmerzen oder Reizungen der Atemwege"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "When asked after shopping what they had noticed, hardly anyone mentioned the smell, although it had measurably influenced their rating.",
+            "de": "Nach dem Einkauf hat kaum ein Kunde den Geruch erwähnt, obwohl der Duft ihre Bewertung nachweislich beeinflusst hatte."
+          },
+          {
+            "en": "On scent days customers stayed almost a quarter longer in the department, but they did not buy more.",
+            "de": "An den Dufttagen blieben die Kunden fast ein Viertel länger in der Abteilung, kauften aber nicht mehr."
+          },
+          {
+            "en": "Sales stayed the same, but customers described the department as higher quality; scent changes the image of a shop rather than what people buy.",
+            "de": "Der Umsatz blieb gleich, aber die Kunden fanden die Abteilung hochwertiger. Der Duft verändert eher das Bild eines Geschäfts als den Einkauf."
+          },
+          {
+            "en": "Many customers found the citrus scent intrusive, and some were reminded of a cleaning product.",
+            "de": "Viele Kunden fanden den Zitrusduft aufdringlich, und einige fühlten sich an ein Putzmittel erinnert."
+          },
+          {
+            "en": "Of the three strengths tested, the weakest did best; many found even the medium one too much.",
+            "de": "Von den drei getesteten Stärken schnitt die schwächste am besten ab. Schon die mittlere empfanden viele als zu viel."
+          },
+          {
+            "en": "She rejects a general ban and argues for transparency, for example a small sign at the entrance.",
+            "de": "Sie lehnt ein generelles Verbot ab und plädiert für Transparenz, zum Beispiel für ein kleines Schild am Eingang."
+          },
+          {
+            "en": "About one customer in ten in her studies reacted to room scents with headaches or respiratory irritation.",
+            "de": "Etwa jeder zehnte Kunde in ihren Studien reagierte auf Raumdüfte mit Kopfschmerzen oder gereizten Atemwegen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-c1__hoeren-4__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Moderator m] Liebe Zuhörerinnen und Zuhörer, herzlich willkommen zur heutigen Ringvorlesung. Unser Gast ist Ines Wolter, Chefredakteurin des „Großen Brandauer Wörterbuchs“. Sie wird uns erklären, wie ein Wort ins Wörterbuch kommt und manchmal auch wieder hinaus. Frau Wolter, Sie haben das Wort.\n[Frau Wolter f] Vielen Dank. Ich werde oft gefragt, wer eigentlich entscheidet, was ein richtiges deutsches Wort ist. Die ehrliche Antwort lautet: niemand. Ein Wörterbuch schreibt nicht vor, wie die Leute sprechen sollen, es beschreibt, wie sie tatsächlich sprechen. Wir sind gewissermaßen Protokollanten, keine Richter.\n[Frau Wolter f] Unsere wichtigste Quelle ist ein riesiges elektronisches Textarchiv. Es enthält inzwischen mehrere Milliarden Wörter aus Zeitungen, Romanen, Fachzeitschriften, aber auch aus Internetforen. Ein Computerprogramm meldet uns jedes Jahr Wörter, die plötzlich deutlich häufiger auftauchen als zuvor.\n[Frau Wolter f] Häufigkeit allein reicht aber nicht. Viele Wörter erleben einen kurzen Höhenflug und sind nach einem Sommer wieder vergessen. Wir nehmen ein Wort deshalb erst auf, wenn es mindestens drei Jahre lang regelmäßig belegt ist, und zwar nicht nur in einer einzigen Textsorte. Ein Wort, das nur in Sportberichten vorkommt, ist noch kein Teil der Allgemeinsprache.\n[Frau Wolter f] Ein überraschend wichtiger Faktor sind übrigens die Zuschriften unserer Leserinnen und Leser. Wir bekommen jedes Jahr Tausende. Die meisten Vorschläge für neue Wörter können wir nicht übernehmen, aber die Leser sind unschlagbar, wenn es darum geht, uns auf Fehler hinzuweisen, etwa auf eine Bedeutung, die wir falsch oder zu eng beschrieben haben.\n[Frau Wolter f] Und dann gibt es natürlich den umgekehrten Fall: Wörter, die verschwinden. Wir streichen ein Wort nicht, nur weil es altmodisch klingt. Es wird erst dann entfernt, wenn es auch in der Literatur der letzten Jahrzehnte kaum noch vorkommt. Denn wer einen Roman aus den Fünfzigerjahren liest, muss das Wort ja nachschlagen können.\n[Frau Wolter f] Die meisten Beschwerden erreichen uns aber nicht wegen gestrichener Wörter, sondern wegen der Wörter aus dem Englischen. Jedes Mal, wenn wir eines aufnehmen, bekommen wir Briefe, in denen uns vorgeworfen wird, wir würden die deutsche Sprache verraten.\n[Frau Wolter f] Dazu zwei Bemerkungen. Erstens: Unsere Auswertung zeigt, dass der Anteil der englischen Wörter an den Neuaufnahmen seit zwanzig Jahren nicht gestiegen ist, sondern ziemlich konstant geblieben ist. Die gefühlte Flut ist also vor allem eine Frage der Wahrnehmung.\n[Frau Wolter f] Zweitens: Viele dieser Wörter werden im Deutschen ganz eigenständig verwendet, mit eigener Aussprache, eigener Grammatik und oft sogar mit einer Bedeutung, die es im Englischen gar nicht gibt. Sie sind längst zu deutschen Wörtern geworden.\n[Frau Wolter f] Zum Schluss ein Blick in die Zukunft. Die gedruckte Ausgabe erscheint nur noch alle fünf Jahre, die Onlineausgabe dagegen wird jeden Monat aktualisiert. Das hat einen Nachteil, den viele unterschätzen: Früher war ein Eintrag gewissermaßen in Stein gemeißelt. Heute müssen wir uns gut überlegen, wie wir dokumentieren, wann sich eine Definition geändert hat, damit Forscher das später noch nachvollziehen können.\n[Frau Wolter f] Ein Wörterbuch ist also nie fertig. Es ist eine Momentaufnahme einer Sprache, die sich ständig bewegt. Ich danke Ihnen.",
+          "questions": [
+            {
+              "question": "Wobei hilft der Redaktion ein Computerprogramm?",
+              "options": [
+                "beim Schreiben der Definitionen",
+                "beim Erkennen von Wörtern, die häufiger werden",
+                "beim Auswerten der Leserbriefe"
+              ],
+              "correctIndex": 1,
+              "evidence": "meldet uns jedes Jahr Wörter, die plötzlich deutlich häufiger auftauchen"
+            },
+            {
+              "question": "Unter welcher Bedingung wird ein neues Wort aufgenommen?",
+              "options": [
+                "wenn es in einem Jahr besonders häufig vorkommt",
+                "wenn es über längere Zeit in verschiedenen Textarten belegt ist",
+                "wenn viele Leser es dem Verlag vorschlagen"
+              ],
+              "correctIndex": 1,
+              "evidence": "wenn es mindestens drei Jahre lang regelmäßig belegt ist"
+            },
+            {
+              "question": "Wobei sind die Zuschriften der Leser besonders hilfreich?",
+              "options": [
+                "beim Finden neuer Wörter",
+                "beim Streichen veralteter Wörter",
+                "beim Korrigieren von Einträgen"
+              ],
+              "correctIndex": 2,
+              "evidence": "die Leser sind unschlagbar, wenn es darum geht, uns auf Fehler hinzuweisen"
+            },
+            {
+              "question": "Wann wird ein Wort aus dem Wörterbuch gestrichen?",
+              "options": [
+                "wenn es auch in neuerer Literatur kaum noch auftaucht",
+                "wenn es von jüngeren Menschen nicht mehr verstanden wird",
+                "wenn es altmodisch oder unpassend wirkt"
+              ],
+              "correctIndex": 0,
+              "evidence": "wenn es auch in der Literatur der letzten Jahrzehnte kaum noch vorkommt"
+            },
+            {
+              "question": "Was zeigt die Auswertung des Wörterbuchs zu englischen Wörtern?",
+              "options": [
+                "Ihr Anteil an neuen Wörtern ist stark gestiegen.",
+                "Ihr Anteil an neuen Wörtern ist etwa gleich geblieben.",
+                "Ihr Anteil an neuen Wörtern geht deutlich zurück."
+              ],
+              "correctIndex": 1,
+              "evidence": "seit zwanzig Jahren nicht gestiegen ist, sondern ziemlich konstant geblieben ist"
+            },
+            {
+              "question": "Was sagt Frau Wolter über viele englische Wörter im Deutschen?",
+              "options": [
+                "Sie werden meist nur von Fachleuten benutzt.",
+                "Sie verdrängen ältere deutsche Wörter.",
+                "Sie haben sich im Deutschen selbstständig weiterentwickelt."
+              ],
+              "correctIndex": 2,
+              "evidence": "Sie sind längst zu deutschen Wörtern geworden."
+            },
+            {
+              "question": "Welches Problem bringt die häufige Aktualisierung der Onlineausgabe mit sich?",
+              "options": [
+                "Änderungen an Einträgen müssen nachvollziehbar dokumentiert werden.",
+                "Die gedruckte Ausgabe verkauft sich immer schlechter.",
+                "Die Redaktion kann die Einträge nicht mehr gründlich prüfen."
+              ],
+              "correctIndex": 0,
+              "evidence": "wie wir dokumentieren, wann sich eine Definition geändert hat"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "A computer program reports words every year that suddenly appear much more often in the text archive.",
+            "de": "Ein Computerprogramm meldet jedes Jahr Wörter, die im Textarchiv plötzlich deutlich häufiger vorkommen."
+          },
+          {
+            "en": "A word is only included once it has been used regularly for at least three years and in more than one type of text.",
+            "de": "Ein Wort wird erst aufgenommen, wenn es mindestens drei Jahre regelmäßig belegt ist, und zwar in mehr als einer Textsorte."
+          },
+          {
+            "en": "Most suggested new words cannot be used, but readers are unbeatable at pointing out mistakes, such as a meaning described wrongly.",
+            "de": "Die meisten vorgeschlagenen Wörter kann man nicht übernehmen, aber die Leser weisen hervorragend auf Fehler hin, zum Beispiel auf falsch beschriebene Bedeutungen."
+          },
+          {
+            "en": "A word is not removed for sounding old-fashioned, only when it hardly appears even in the literature of recent decades.",
+            "de": "Ein Wort wird nicht gestrichen, weil es altmodisch klingt, sondern erst, wenn es auch in der Literatur der letzten Jahrzehnte kaum noch vorkommt."
+          },
+          {
+            "en": "The share of English words among new entries has stayed fairly constant for twenty years; the sense of a flood is mainly perception.",
+            "de": "Der Anteil englischer Wörter an den Neuaufnahmen ist seit zwanzig Jahren ziemlich konstant geblieben. Die gefühlte Flut ist vor allem Wahrnehmung."
+          },
+          {
+            "en": "Many are used independently in German, with their own pronunciation, grammar and sometimes a meaning that does not exist in English.",
+            "de": "Viele werden im Deutschen eigenständig verwendet, mit eigener Aussprache, Grammatik und manchmal einer Bedeutung, die es im Englischen nicht gibt."
+          },
+          {
+            "en": "Because entries now change monthly, the team must document when a definition changed so researchers can trace it later.",
+            "de": "Weil sich Einträge jetzt jeden Monat ändern können, muss die Redaktion dokumentieren, wann sich eine Definition geändert hat, damit Forscher das nachvollziehen können."
+          }
+        ]
+      }
+    }
+  ]
+}

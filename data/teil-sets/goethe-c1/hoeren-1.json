@@ -1,0 +1,298 @@
+{
+  "formatId": "goethe-c1",
+  "partId": "hoeren-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-c1__hoeren-1__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Lena f] Herzlich willkommen zu einer neuen Folge von „Zwischen den Zeilen“, dem Podcast für alle, die nicht nur lesen, sondern über das Gelesene auch streiten wollen. Ich bin Lena Hartwig.\n[Tobias m] Und ich bin Tobias Grell. Wir haben heute wieder drei Neuerscheinungen mitgebracht, die uns in den letzten Wochen beschäftigt haben, und zwar ganz unterschiedlich.\n[Lena f] Fangen wir mit meinem Favoriten an: „Das Salz der Förde“ von Marta Kessel. Die Heldin, Ilse, ist siebzig, frisch verwitwet und erbt völlig überraschend eine heruntergekommene Bootswerkstatt an der Ostsee.\n[Tobias m] Und statt sie zu verkaufen, wie ihre Kinder es ihr dringend nahelegen, zieht sie hin und fängt an, alte Holzboote zu reparieren.\n[Lena f] Das Besondere ist die Form: Der Roman besteht von der ersten bis zur letzten Seite aus Briefen, die Ilse an ihren verstorbenen Mann schreibt. Sie erzählt ihm von ihrem Alltag, sie streitet mit ihm, sie macht ihm Vorwürfe, und man begreift erst nach und nach, wie schwierig diese Ehe eigentlich war.\n[Tobias m] Wobei ich sagen muss: Das Handwerkliche ist so genau beschrieben, dass ich zuerst dachte, die Autorin hätte selbst jahrelang in einer Werft gestanden.\n[Lena f] Hat sie aber nicht. Kessel war Lokaljournalistin und hat, wie sie in einem Interview erzählt, für das Buch monatelang einem Bootsbauer über die Schulter geschaut.\n[Tobias m] Und hast du gar nichts auszusetzen?\n[Lena f] Doch. Ungefähr in der Mitte zieht sich das Ganze ziemlich. Da folgt ein Winterbrief auf den nächsten, und es passiert so gut wie nichts. Durch diese achtzig Seiten habe ich mich, ehrlich gesagt, ein bisschen gequält. Aber das Ende entschädigt einen dafür.\n[Tobias m] Mein Buch ist etwas ganz anderes, nämlich gar kein Roman: „Kartografie des Verschwindens“ von Jonas Ebert. Ebert ist in einem kleinen Dorf im Mittelgebirge aufgewachsen, das Anfang der Neunzigerjahre einem Stausee weichen musste.\n[Lena f] Das heißt, das Dorf gibt es gar nicht mehr?\n[Tobias m] Es liegt buchstäblich unter Wasser. Und Ebert hat sich nach über dreißig Jahren auf die Suche nach den ehemaligen Bewohnern gemacht, die damals in alle Himmelsrichtungen verstreut wurden.\n[Tobias m] Mehr als vierzig von ihnen hat er ausfindig gemacht und stundenlang mit ihnen gesprochen. Aus diesen Erinnerungen ist das Buch im Wesentlichen zusammengesetzt: der Bäcker, der seinen Ofen nicht zurücklassen wollte, die Lehrerin, die die allerletzte Schulstunde gehalten hat.\n[Lena f] Klingt ziemlich melancholisch.\n[Tobias m] Erstaunlicherweise gar nicht so sehr. Ebert ist kein Nostalgiker. Er fragt auch, was die Leute durch den Umzug gewonnen haben, und einige geben ganz offen zu, dass sie heilfroh waren, endlich aus der Enge des Dorfes herauszukommen.\n[Tobias m] Und am Schluss steht er selbst am Ufer, genau über der Stelle, wo sein Elternhaus lag. Das gehört zu den stärksten Szenen, die ich dieses Jahr gelesen habe.\n[Lena f] Kommen wir zu Nummer drei, und da sind wir uns, glaube ich, nicht ganz einig: „Nachtschicht im Paradies“, der erste Roman von Selin Arslan.\n[Tobias m] Allerdings nicht.\n[Lena f] Der Roman spielt in der Küche eines Luxushotels in den Alpen, und zwar fast ausschließlich nachts. Erzählt wird abwechselnd aus der Sicht von vier Leuten, die dort arbeiten: einem Spüler, einer Konditorin, einem Koch und der Nachtportierin.\n[Lena f] Arslan weiß genau, wovon sie schreibt. Sie hat zehn Jahre lang in Hotelküchen geschuftet, bevor sie mit dem Schreiben angefangen hat, und das merkt man jeder Seite an: der Lärm, die Hitze, der raue Ton untereinander.\n[Tobias m] Das gebe ich zu. Und es ist wirklich komisch, ich habe oft laut gelacht. Mein Problem ist der Schluss.\n[Lena f] Ich wusste, dass das kommt.\n[Tobias m] Im letzten Kapitel verschwindet einer der vier spurlos, und was aus ihm geworden ist, bleibt bis zur letzten Zeile im Dunkeln. Mir ist schon klar, dass das Absicht ist, aber ich habe das Buch zugeklappt und mich ein bisschen betrogen gefühlt.\n[Lena f] Und ich fand gerade das großartig, weil es so gut zu diesen Nächten passt, in denen man nie alles erfährt. Na ja, entscheiden Sie selbst. Das war's für heute von „Zwischen den Zeilen“.",
+          "questions": [
+            {
+              "question": "Das Buch beruht im Wesentlichen auf den Erzählungen von Betroffenen.",
+              "options": [
+                "Buch 1: „Das Salz der Förde“",
+                "Buch 2: „Kartografie des Verschwindens“",
+                "Buch 3: „Nachtschicht im Paradies“"
+              ],
+              "correctIndex": 1,
+              "evidence": "Aus diesen Erinnerungen ist das Buch im Wesentlichen zusammengesetzt"
+            },
+            {
+              "question": "Die Geschichte wird ausschließlich in Briefform erzählt.",
+              "options": [
+                "Buch 1: „Das Salz der Förde“",
+                "Buch 2: „Kartografie des Verschwindens“",
+                "Buch 3: „Nachtschicht im Paradies“"
+              ],
+              "correctIndex": 0,
+              "evidence": "Der Roman besteht von der ersten bis zur letzten Seite aus Briefen"
+            },
+            {
+              "question": "Ein längerer Abschnitt ist der Rezensentin zu ereignislos.",
+              "options": [
+                "Buch 1: „Das Salz der Förde“",
+                "Buch 2: „Kartografie des Verschwindens“",
+                "Buch 3: „Nachtschicht im Paradies“"
+              ],
+              "correctIndex": 0,
+              "evidence": "Ungefähr in der Mitte zieht sich das Ganze ziemlich."
+            },
+            {
+              "question": "Die Schilderung der Arbeitswelt stützt sich auf eigene Erfahrungen.",
+              "options": [
+                "Buch 1: „Das Salz der Förde“",
+                "Buch 2: „Kartografie des Verschwindens“",
+                "Buch 3: „Nachtschicht im Paradies“"
+              ],
+              "correctIndex": 2,
+              "evidence": "Sie hat zehn Jahre lang in Hotelküchen geschuftet"
+            },
+            {
+              "question": "Manche Menschen empfanden die Veränderung als Befreiung.",
+              "options": [
+                "Buch 1: „Das Salz der Förde“",
+                "Buch 2: „Kartografie des Verschwindens“",
+                "Buch 3: „Nachtschicht im Paradies“"
+              ],
+              "correctIndex": 1,
+              "evidence": "dass sie heilfroh waren, endlich aus der Enge des Dorfes herauszukommen"
+            },
+            {
+              "question": "Eine wichtige Frage der Handlung wird nicht beantwortet.",
+              "options": [
+                "Buch 1: „Das Salz der Förde“",
+                "Buch 2: „Kartografie des Verschwindens“",
+                "Buch 3: „Nachtschicht im Paradies“"
+              ],
+              "correctIndex": 2,
+              "evidence": "was aus ihm geworden ist, bleibt bis zur letzten Zeile im Dunkeln"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Ebert tracked down more than forty former villagers, talked to them for hours, and the book is essentially built from their memories.",
+            "de": "Ebert hat über vierzig ehemalige Bewohner gefunden und lange mit ihnen gesprochen. Das Buch besteht im Wesentlichen aus ihren Erinnerungen."
+          },
+          {
+            "en": "Kessel's novel consists entirely of letters that Ilse writes to her late husband.",
+            "de": "Kessels Roman besteht vollständig aus Briefen, die Ilse an ihren verstorbenen Mann schreibt."
+          },
+          {
+            "en": "Lena says the middle of Kessel's novel drags: letter after letter in which almost nothing happens.",
+            "de": "Lena sagt, dass sich die Mitte von Kessels Roman zieht: ein Brief folgt auf den anderen, und fast nichts passiert."
+          },
+          {
+            "en": "Arslan worked in hotel kitchens for ten years herself. Kessel, by contrast, only researched boat-building as a journalist.",
+            "de": "Arslan hat selbst zehn Jahre in Hotelküchen gearbeitet. Kessel dagegen hat als Journalistin den Bootsbau nur recherchiert."
+          },
+          {
+            "en": "Some of the villagers in Ebert's book admit they were glad to get away from the narrow village.",
+            "de": "Einige ehemalige Bewohner in Eberts Buch geben zu, dass sie froh waren, aus dem engen Dorf wegzukommen."
+          },
+          {
+            "en": "In Arslan's novel one of the four characters disappears, and the reader never learns what happened to him.",
+            "de": "In Arslans Roman verschwindet eine der vier Figuren, und man erfährt nie, was mit ihr passiert ist."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-c1__hoeren-1__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Miriam f] Hallo und herzlich willkommen bei „Lesestoff“. Mein Name ist Miriam Voss, und mir gegenüber sitzt wie immer mein Kollege Georg Hellmann.\n[Georg m] Hallo zusammen. Heute dreht sich bei uns alles um Familien, genauer gesagt um drei Bücher, in denen Familiengeschichten auf sehr unterschiedliche Art erzählt werden.\n[Miriam f] Ich beginne mit „Was die Großmutter verschwieg“ von Henrike Laub. Laub hat nach dem Tod ihrer Großmutter auf dem Dachboden einen Karton mit Tagebüchern gefunden, von deren Existenz niemand in der Familie etwas ahnte.\n[Miriam f] Daraus erfährt sie, dass die Großmutter als junge Schneiderin nach Argentinien ausgewandert und nach sieben Jahren zurückgekehrt ist, ohne je ein Wort darüber zu verlieren.\n[Georg m] Und Laub fährt dann selbst nach Buenos Aires, um die Spuren zu suchen.\n[Miriam f] Genau. Und das Buch springt ständig hin und her: ein Kapitel in der Gegenwart, in dem sie recherchiert, ein Kapitel in den Zwanzigerjahren, in dem sie das Leben der Großmutter rekonstruiert. Das klingt anstrengend, funktioniert aber erstaunlich gut.\n[Miriam f] Und was ich besonders schön finde: Zwischen den Kapiteln sind immer wieder Seiten aus den echten Tagebüchern abgedruckt, mit der krakeligen Handschrift, den Flecken, den durchgestrichenen Wörtern. Das macht die Großmutter unglaublich lebendig.\n[Georg m] Ich hatte allerdings manchmal das Gefühl, dass die Enkelin sich ein bisschen zu sehr in den Vordergrund schiebt.\n[Miriam f] Das kann man so sehen. Aber erzähl du jetzt von deinem Buch.\n[Georg m] „Die Brüder Falk“ von Arne Wittkamp, ein richtig dicker Familienroman, über sechshundert Seiten. Es geht um eine Brauerei in einer Kleinstadt in Franken, die seit vier Generationen der Familie Falk gehört.\n[Georg m] Im Zentrum stehen zwei Brüder, die die Brauerei gemeinsam geerbt haben. Der ältere will an einen großen Getränkekonzern verkaufen, weil die Zahlen seit Jahren schlecht sind, der jüngere will um jeden Preis weitermachen. Und über diesen Streit ums Geld zerbricht im Grunde die ganze Familie.\n[Miriam f] Ich habe es angefangen, aber nach fünfzig Seiten wusste ich nicht mehr, wer wer ist.\n[Georg m] Ja, das ist tatsächlich ein Problem. Da treten Onkel, Cousinen, Schwiegertöchter und Braumeister auf, und man verliert leicht den Überblick. Zum Glück hat der Verlag vorne einen Stammbaum abgedruckt, ohne den wäre ich, ehrlich gesagt, verloren gewesen.\n[Georg m] Aber wenn man einmal drin ist, kann man kaum aufhören. Wittkamp erzählt ganz chronologisch, ohne Rückblenden, und trotzdem hat man nie das Gefühl, dass es langweilig wird.\n[Miriam f] Dann zu Buch Nummer drei, und das ist wirklich eine Überraschung: „Tante Vera fährt Taxi“ von Paula Meinhold.\n[Georg m] Ein Comic.\n[Miriam f] Eine Graphic Novel, bitte. Es geht um Meinholds Tante, die mit sechzig, nachdem ihre Firma pleitegegangen ist, beschließt, in Hamburg Taxi zu fahren, und dabei die merkwürdigsten Leute kennenlernt.\n[Georg m] Und die Zeichnungen stammen von Meinhold selbst. Die hat ja eigentlich Illustration studiert und vorher Kinderbücher bebildert.\n[Miriam f] Was nicht heißt, dass das hier ein Kinderbuch wäre. Da geht es ganz schön zur Sache, um Einsamkeit, um Altersarmut, um nächtliche Fahrgäste, die nicht mehr nach Hause wollen.\n[Georg m] Mir hat es sehr gefallen. Mein einziger Kritikpunkt: Es ist viel zu schnell vorbei. Ich habe es an einem Abend in knapp einer Stunde durchgelesen und hätte gern noch hundert Seiten mehr gehabt.\n[Miriam f] Das ist doch eigentlich das schönste Kompliment. Gut, das war's für heute. Bis zum nächsten Mal bei „Lesestoff“.",
+          "questions": [
+            {
+              "question": "Die Bilder in diesem Buch hat die Autorin selbst angefertigt.",
+              "options": [
+                "Buch 1: „Was die Großmutter verschwieg“",
+                "Buch 2: „Die Brüder Falk“",
+                "Buch 3: „Tante Vera fährt Taxi“"
+              ],
+              "correctIndex": 2,
+              "evidence": "Und die Zeichnungen stammen von Meinhold selbst."
+            },
+            {
+              "question": "Zwei Zeitebenen wechseln sich regelmäßig ab.",
+              "options": [
+                "Buch 1: „Was die Großmutter verschwieg“",
+                "Buch 2: „Die Brüder Falk“",
+                "Buch 3: „Tante Vera fährt Taxi“"
+              ],
+              "correctIndex": 0,
+              "evidence": "ein Kapitel in der Gegenwart, in dem sie recherchiert, ein Kapitel in den Zwanzigerjahren"
+            },
+            {
+              "question": "Ohne eine zusätzliche Orientierungshilfe verliert man leicht den Überblick über die Figuren.",
+              "options": [
+                "Buch 1: „Was die Großmutter verschwieg“",
+                "Buch 2: „Die Brüder Falk“",
+                "Buch 3: „Tante Vera fährt Taxi“"
+              ],
+              "correctIndex": 1,
+              "evidence": "Zum Glück hat der Verlag vorne einen Stammbaum abgedruckt"
+            },
+            {
+              "question": "Ein Konflikt um wirtschaftliche Fragen spaltet die Familie.",
+              "options": [
+                "Buch 1: „Was die Großmutter verschwieg“",
+                "Buch 2: „Die Brüder Falk“",
+                "Buch 3: „Tante Vera fährt Taxi“"
+              ],
+              "correctIndex": 1,
+              "evidence": "über diesen Streit ums Geld zerbricht im Grunde die ganze Familie"
+            },
+            {
+              "question": "Das Buch enthält Abbildungen von Originaldokumenten.",
+              "options": [
+                "Buch 1: „Was die Großmutter verschwieg“",
+                "Buch 2: „Die Brüder Falk“",
+                "Buch 3: „Tante Vera fährt Taxi“"
+              ],
+              "correctIndex": 0,
+              "evidence": "Seiten aus den echten Tagebüchern abgedruckt"
+            },
+            {
+              "question": "Die Lektüre ist für den Rezensenten zu kurz.",
+              "options": [
+                "Buch 1: „Was die Großmutter verschwieg“",
+                "Buch 2: „Die Brüder Falk“",
+                "Buch 3: „Tante Vera fährt Taxi“"
+              ],
+              "correctIndex": 2,
+              "evidence": "Es ist viel zu schnell vorbei."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Meinhold drew the pictures for her graphic novel herself. Laub's book contains reproduced diary pages, which she did not make.",
+            "de": "Meinhold hat die Zeichnungen ihrer Graphic Novel selbst gemacht. In Laubs Buch sind Tagebuchseiten abgedruckt, die sie nicht selbst gestaltet hat."
+          },
+          {
+            "en": "Laub's book alternates between chapters in the present and chapters in the nineteen-twenties. Wittkamp's novel, by contrast, is told chronologically.",
+            "de": "Laubs Buch wechselt zwischen Kapiteln in der Gegenwart und Kapiteln in den Zwanzigerjahren. Wittkamps Roman wird dagegen chronologisch erzählt."
+          },
+          {
+            "en": "Wittkamp's novel has so many characters that Georg relied on the family tree the publisher printed at the front.",
+            "de": "Wittkamps Roman hat so viele Figuren, dass Georg den Stammbaum gebraucht hat, den der Verlag vorne abgedruckt hat."
+          },
+          {
+            "en": "In Wittkamp's novel the brothers fight over whether to sell the brewery, and this quarrel about money breaks the family apart.",
+            "de": "In Wittkamps Roman streiten die Brüder darüber, ob die Brauerei verkauft wird, und an diesem Streit ums Geld zerbricht die Familie."
+          },
+          {
+            "en": "Pages from the grandmother's real diaries are reproduced between the chapters of Laub's book.",
+            "de": "Zwischen den Kapiteln von Laubs Buch sind Seiten aus den echten Tagebüchern der Großmutter abgedruckt."
+          },
+          {
+            "en": "Georg read Meinhold's graphic novel in under an hour and would have liked a hundred more pages.",
+            "de": "Georg hat Meinholds Graphic Novel in knapp einer Stunde gelesen und hätte gern noch hundert Seiten mehr gehabt."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-c1__hoeren-1__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Carla f] Willkommen bei „Tatort Bücherregal“, dem Podcast für Leute, die nachts nicht schlafen können, weil sie unbedingt wissen müssen, wer es war. Ich bin Carla Neumeister.\n[Ben m] Und ich bin Ben Okoro. Heute haben wir drei Kriminalromane aus diesem Herbst dabei, und ich verspreche: keiner davon ist ein gewöhnlicher Krimi.\n[Carla f] Den Anfang macht „Grauwasser“ von Wiebke Sander. Der Roman spielt im Winter auf einer kleinen Nordseeinsel, auf der außerhalb der Saison kaum noch jemand wohnt.\n[Carla f] Ermittelt wird nicht etwa von einem Kommissar vom Festland, sondern von Hanne Lüders, einer pensionierten Hebamme, die auf der Insel praktisch jeden zur Welt gebracht hat und deshalb auch jedes Geheimnis kennt.\n[Ben m] Und das Ungewöhnliche ist ja, dass gar nicht gerätselt wird, wer der Mörder ist.\n[Carla f] Richtig. Das erste Kapitel wird aus der Sicht des Täters erzählt, man sieht also gleich, wer es getan hat. Die Spannung entsteht nur aus der Frage, ob Hanne ihm auf die Schliche kommt und wie.\n[Ben m] Ich fand das am Anfang irritierend, muss ich gestehen, aber nach einer Weile hat es mich total gepackt. Es ist sehr ruhig erzählt, mit viel Wind, Nebel und trockenem Humor.\n[Ben m] Mein Buch ist so ziemlich das Gegenteil: „Der stille Teilhaber“ von Konstantin Rehm, ein Wirtschaftskrimi, der in einer Frankfurter Investmentfirma spielt.\n[Ben m] Ein junger Unternehmensberater stößt zufällig auf Zahlungen an eine Firma, die es offenbar gar nicht gibt, und plötzlich stirbt sein Chef bei einem angeblichen Unfall.\n[Carla f] Und dann geht es Schlag auf Schlag?\n[Ben m] Und wie. Kaum ein Kapitel ist länger als zwei, drei Seiten, ständig wechselt der Schauplatz, und man hetzt regelrecht durch das Buch. Ich habe es in einer Nacht gelesen.\n[Ben m] Allerdings sollte man wissen, dass die Geschichte nicht abgeschlossen ist. Auf der letzten Seite steht ganz unverblümt: Fortsetzung folgt im nächsten Herbst. Da war ich schon etwas verärgert.\n[Carla f] Das ist ja wie bei einer Fernsehserie. Gut, dann das dritte Buch: „Die Akte Rosenthal“ von Ida Brenner, ein historischer Krimi, der im Wien der Zwanzigerjahre spielt.\n[Carla f] Inspektor Anton Weidlich von der Wiener Polizei soll den Tod eines Juweliers aufklären, der in seinem verschlossenen Laden gefunden wurde.\n[Carla f] Brenner hat dafür, wie sie sagt, eine Akte aus einem Stadtarchiv als Vorlage genommen, und im Anhang erklärt sie auf mehreren Seiten sehr genau, welche Figuren und Ereignisse belegt sind und was sie hinzuerfunden hat.\n[Ben m] Das fand ich wirklich vorbildlich. Die Atmosphäre ist großartig, die Kaffeehäuser, die Armut in den Vorstädten.\n[Carla f] Ja, aber bei den Dialogen bin ich immer wieder gestolpert. Da sagen Leute im Jahr neunzehnhundertvierundzwanzig Sätze, die man eher von einer Achtzehnjährigen in der U-Bahn von heute erwarten würde.\n[Ben m] Na ja, ein bisschen streng bist du da schon.\n[Carla f] Vielleicht. Aber es hat mich jedes Mal aus der Geschichte gerissen. So, das war's für heute bei „Tatort Bücherregal“. Schlafen Sie gut, wenn Sie können.",
+          "questions": [
+            {
+              "question": "Die einzelnen Kapitel sind auffallend kurz.",
+              "options": [
+                "Buch 1: „Grauwasser“",
+                "Buch 2: „Der stille Teilhaber“",
+                "Buch 3: „Die Akte Rosenthal“"
+              ],
+              "correctIndex": 1,
+              "evidence": "Kaum ein Kapitel ist länger als zwei, drei Seiten"
+            },
+            {
+              "question": "Die Leser kennen den Täter von Anfang an.",
+              "options": [
+                "Buch 1: „Grauwasser“",
+                "Buch 2: „Der stille Teilhaber“",
+                "Buch 3: „Die Akte Rosenthal“"
+              ],
+              "correctIndex": 0,
+              "evidence": "Das erste Kapitel wird aus der Sicht des Täters erzählt"
+            },
+            {
+              "question": "Die Sprache der Figuren passt nicht zur Zeit der Handlung.",
+              "options": [
+                "Buch 1: „Grauwasser“",
+                "Buch 2: „Der stille Teilhaber“",
+                "Buch 3: „Die Akte Rosenthal“"
+              ],
+              "correctIndex": 2,
+              "evidence": "Sätze, die man eher von einer Achtzehnjährigen in der U-Bahn von heute erwarten würde"
+            },
+            {
+              "question": "Ermittelt wird von einer Frau, die beruflich nie mit Verbrechen zu tun hatte.",
+              "options": [
+                "Buch 1: „Grauwasser“",
+                "Buch 2: „Der stille Teilhaber“",
+                "Buch 3: „Die Akte Rosenthal“"
+              ],
+              "correctIndex": 0,
+              "evidence": "einer pensionierten Hebamme"
+            },
+            {
+              "question": "Die Autorin legt offen, was in ihrem Buch erfunden ist.",
+              "options": [
+                "Buch 1: „Grauwasser“",
+                "Buch 2: „Der stille Teilhaber“",
+                "Buch 3: „Die Akte Rosenthal“"
+              ],
+              "correctIndex": 2,
+              "evidence": "welche Figuren und Ereignisse belegt sind und was sie hinzuerfunden hat"
+            },
+            {
+              "question": "Die Handlung wird in einem weiteren Band fortgesetzt.",
+              "options": [
+                "Buch 1: „Grauwasser“",
+                "Buch 2: „Der stille Teilhaber“",
+                "Buch 3: „Die Akte Rosenthal“"
+              ],
+              "correctIndex": 1,
+              "evidence": "Fortsetzung folgt im nächsten Herbst"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "In Rehm's thriller hardly any chapter is longer than two or three pages.",
+            "de": "In Rehms Krimi ist kaum ein Kapitel länger als zwei oder drei Seiten."
+          },
+          {
+            "en": "Sander's novel opens with a chapter from the murderer's point of view, so the reader knows from the start who did it.",
+            "de": "Sanders Roman beginnt mit einem Kapitel aus der Sicht des Täters, deshalb weiß man von Anfang an, wer es war."
+          },
+          {
+            "en": "Carla says characters in Brenner's novel, set in the nineteen-twenties, speak like teenagers today.",
+            "de": "Carla sagt, dass die Figuren in Brenners Roman, der in den Zwanzigerjahren spielt, wie Jugendliche von heute sprechen."
+          },
+          {
+            "en": "In Sander's novel the investigator is a retired midwife. Rehm's main character is a young man, and Brenner's investigator is a police inspector.",
+            "de": "In Sanders Roman ermittelt eine pensionierte Hebamme. Bei Rehm ist die Hauptfigur ein junger Mann, und bei Brenner ermittelt ein Inspektor der Polizei."
+          },
+          {
+            "en": "In the appendix Brenner explains which characters and events are documented and which she invented.",
+            "de": "Im Anhang erklärt Brenner, welche Figuren und Ereignisse belegt sind und was sie erfunden hat."
+          },
+          {
+            "en": "Rehm's story is not finished: the last page announces a sequel for next autumn.",
+            "de": "Rehms Geschichte ist nicht abgeschlossen: Auf der letzten Seite wird eine Fortsetzung für den nächsten Herbst angekündigt."
+          }
+        ]
+      }
+    }
+  ]
+}

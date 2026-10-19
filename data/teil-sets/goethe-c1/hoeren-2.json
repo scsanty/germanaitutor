@@ -1,0 +1,424 @@
+{
+  "formatId": "goethe-c1",
+  "partId": "hoeren-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-c1__hoeren-2__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Moderatorin f] Guten Tag und willkommen bei „Werkstattgespräch“, der Sendung über Berufe, die man selten zu Gesicht bekommt. Mein Gast ist heute Johanna Vogt, Gemälderestauratorin am Landesmuseum in Bernsfeld. Frau Vogt, schön, dass Sie da sind.\n[Frau Vogt f] Ich freue mich sehr über die Einladung.\n[Moderatorin f] Viele stellen sich vor, dass man von klein auf davon träumt, alte Meister zu retten. War das bei Ihnen so?\n[Frau Vogt f] Überhaupt nicht. Als Kind hatte ich keine Ahnung, dass es diesen Beruf überhaupt gibt. Ich habe zunächst Chemie studiert und bin über ein Praktikum in einer Museumswerkstatt eher zufällig hängen geblieben.\n[Moderatorin f] Und wie sieht Ihr Arbeitsalltag aus? Stehen Sie den ganzen Tag mit dem Pinsel vor der Staffelei?\n[Frau Vogt f] Das ist das große Missverständnis. Mit dem Pinsel arbeite ich vielleicht ein Fünftel der Zeit. Den Löwenanteil meiner Arbeitszeit sitze ich am Schreibtisch: Ich dokumentiere jeden Zustand, jeden Eingriff, schreibe Gutachten für Leihgaben und Berichte für die Versicherungen.\n[Moderatorin f] Wenn Sie dann doch zum Pinsel greifen, etwa weil an einer Stelle Farbe fehlt, malen Sie die einfach nach?\n[Frau Vogt f] Nein, und zwar aus Prinzip. Wir ergänzen Fehlstellen mit feinen senkrechten Strichen. Aus der Entfernung schließt das Auge die Lücke, aber wer dicht herantritt, sieht sofort, was original ist und was von uns stammt.\n[Frau Vogt f] Außerdem muss alles, was wir auftragen, wieder entfernbar sein. Spätere Generationen sollen unsere Arbeit rückgängig machen können, falls sie bessere Methoden haben.\n[Moderatorin f] Sie haben vor zwei Jahren eine ziemlich spektakuläre Entdeckung gemacht.\n[Frau Vogt f] Ja, bei einer Röntgenaufnahme einer Flusslandschaft aus dem neunzehnten Jahrhundert. Unter der Landschaft kam ein vollständiges Frauenporträt zum Vorschein. Der Maler hatte die Leinwand offenbar einfach wiederverwendet.\n[Moderatorin f] Und wird das Porträt jetzt freigelegt?\n[Frau Vogt f] Darüber haben wir lange diskutiert, und die Entscheidung war eindeutig: Das Porträt bleibt, wo es ist. Um es sichtbar zu machen, müssten wir die Landschaft zerstören, und die ist schließlich das Werk, das der Künstler der Nachwelt hinterlassen wollte.\n[Moderatorin f] Welche Gefahren drohen den Bildern in Ihrem Haus eigentlich am meisten? Man denkt ja zuerst an zu viel Licht.\n[Frau Vogt f] Das Licht haben wir inzwischen gut im Griff. Unser eigentliches Sorgenkind ist die alte Heizung. Im Winter wird die Luft in den Sälen so trocken, dass sich die Holztafeln verziehen und die Farbschicht Risse bekommt.\n[Moderatorin f] Seit einiger Zeit kann man Ihnen bei der Arbeit sogar zusehen.\n[Frau Vogt f] Richtig, jeden Donnerstagnachmittag öffnen wir unsere gläserne Werkstatt. Die Besucher stehen hinter einer Scheibe und können mir Fragen stellen. Am häufigsten werde ich gefragt, ob ich nicht furchtbare Angst habe, etwas kaputt zu machen.\n[Moderatorin f] Und, haben Sie?\n[Frau Vogt f] Respekt, ja. Angst wäre ein schlechter Ratgeber.\n[Moderatorin f] Würden Sie jungen Leuten heute zu diesem Beruf raten?\n[Frau Vogt f] Mit einem gewissen Bauchweh. Feste Stellen an Museen sind rar, und die meisten jungen Kolleginnen und Kollegen schlagen sich nach dem Studium jahrelang mit befristeten Aufträgen als Freiberufler durch.\n[Moderatorin f] Frau Vogt, vielen Dank für diesen Blick hinter die Kulissen.",
+          "questions": [
+            {
+              "question": "Frau Vogt wusste schon früh, dass sie Restauratorin werden wollte.",
+              "options": [
+                "stimmt",
+                "stimmt nicht",
+                "dazu wird nichts gesagt"
+              ],
+              "correctIndex": 1,
+              "evidence": "Als Kind hatte ich keine Ahnung, dass es diesen Beruf überhaupt gibt."
+            },
+            {
+              "question": "Die meiste Zeit verbringt Frau Vogt mit schriftlichen Arbeiten.",
+              "options": [
+                "stimmt",
+                "stimmt nicht",
+                "dazu wird nichts gesagt"
+              ],
+              "correctIndex": 0,
+              "evidence": "Den Löwenanteil meiner Arbeitszeit sitze ich am Schreibtisch"
+            },
+            {
+              "question": "Ergänzte Stellen bleiben für aufmerksame Betrachter erkennbar.",
+              "options": [
+                "stimmt",
+                "stimmt nicht",
+                "dazu wird nichts gesagt"
+              ],
+              "correctIndex": 0,
+              "evidence": "wer dicht herantritt, sieht sofort, was original ist"
+            },
+            {
+              "question": "Das entdeckte Porträt soll demnächst sichtbar gemacht werden.",
+              "options": [
+                "stimmt",
+                "stimmt nicht",
+                "dazu wird nichts gesagt"
+              ],
+              "correctIndex": 1,
+              "evidence": "Das Porträt bleibt, wo es ist."
+            },
+            {
+              "question": "Inzwischen weiß man, wen das versteckte Porträt darstellt.",
+              "options": [
+                "stimmt",
+                "stimmt nicht",
+                "dazu wird nichts gesagt"
+              ],
+              "correctIndex": 2,
+              "evidence": "Unter der Landschaft kam ein vollständiges Frauenporträt zum Vorschein."
+            },
+            {
+              "question": "Im Museum ist vor allem die Beleuchtung ein Problem für die Bilder.",
+              "options": [
+                "stimmt",
+                "stimmt nicht",
+                "dazu wird nichts gesagt"
+              ],
+              "correctIndex": 1,
+              "evidence": "Das Licht haben wir inzwischen gut im Griff."
+            },
+            {
+              "question": "Für den Besuch der gläsernen Werkstatt muss man sich vorher anmelden.",
+              "options": [
+                "stimmt",
+                "stimmt nicht",
+                "dazu wird nichts gesagt"
+              ],
+              "correctIndex": 2,
+              "evidence": "jeden Donnerstagnachmittag öffnen wir unsere gläserne Werkstatt"
+            },
+            {
+              "question": "Viele Berufsanfänger arbeiten lange ohne feste Anstellung.",
+              "options": [
+                "stimmt",
+                "stimmt nicht",
+                "dazu wird nichts gesagt"
+              ],
+              "correctIndex": 0,
+              "evidence": "schlagen sich nach dem Studium jahrelang mit befristeten Aufträgen als Freiberufler durch"
+            },
+            {
+              "question": "Frau Vogt bildet selbst Studierende der Restaurierung aus.",
+              "options": [
+                "stimmt",
+                "stimmt nicht",
+                "dazu wird nichts gesagt"
+              ],
+              "correctIndex": 2,
+              "evidence": "Mit einem gewissen Bauchweh."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Not true: as a child she did not even know the job existed; she studied chemistry and stayed after an internship by chance.",
+            "de": "Stimmt nicht: Als Kind kannte sie den Beruf gar nicht. Sie hat Chemie studiert und ist nach einem Praktikum zufällig geblieben."
+          },
+          {
+            "en": "True: she spends most of her time at her desk documenting and writing reports; she uses the brush only about a fifth of the time.",
+            "de": "Stimmt: Sie sitzt die meiste Zeit am Schreibtisch, dokumentiert und schreibt Berichte. Mit dem Pinsel arbeitet sie nur etwa ein Fünftel der Zeit."
+          },
+          {
+            "en": "True: gaps are filled with fine vertical strokes, so anyone looking closely can see what is original.",
+            "de": "Stimmt: Fehlstellen werden mit feinen Strichen ergänzt, sodass man aus der Nähe sieht, was original ist."
+          },
+          {
+            "en": "Not true: the museum decided to leave the portrait hidden, because uncovering it would destroy the landscape.",
+            "de": "Stimmt nicht: Das Museum hat entschieden, das Porträt nicht freizulegen, weil sonst die Landschaft zerstört würde."
+          },
+          {
+            "en": "Not mentioned: she only says a portrait of a woman was found under the landscape, not who the woman is.",
+            "de": "Dazu wird nichts gesagt: Sie sagt nur, dass unter der Landschaft ein Frauenporträt gefunden wurde, aber nicht, wen es zeigt."
+          },
+          {
+            "en": "Not true: light is under control; the real problem is the old heating, which makes the air too dry in winter.",
+            "de": "Stimmt nicht: Das Licht ist unter Kontrolle. Das eigentliche Problem ist die alte Heizung, die im Winter die Luft zu trocken macht."
+          },
+          {
+            "en": "Not mentioned: she says when the glass workshop is open, but nothing about booking in advance.",
+            "de": "Dazu wird nichts gesagt: Sie sagt, wann die gläserne Werkstatt geöffnet ist, aber nichts über eine Anmeldung."
+          },
+          {
+            "en": "True: permanent posts are rare, and most young restorers work freelance on temporary jobs for years.",
+            "de": "Stimmt: Feste Stellen sind selten, und die meisten jungen Kollegen arbeiten jahrelang freiberuflich mit befristeten Aufträgen."
+          },
+          {
+            "en": "Not mentioned: she talks about the job market for young restorers but never says whether she trains students herself.",
+            "de": "Dazu wird nichts gesagt: Sie spricht über die Berufschancen junger Restauratoren, aber nicht darüber, ob sie selbst Studierende ausbildet."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-c1__hoeren-2__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Moderatorin f] Sie hören „Kulturzeit am Abend“. Wenn Sie ins Kino gehen, haben Sie seine Stimme mit großer Wahrscheinlichkeit schon gehört, ohne sein Gesicht zu kennen. Bei mir im Studio ist der Synchronsprecher Matthias Korn. Guten Abend, Herr Korn.\n[Herr Korn m] Guten Abend.\n[Moderatorin f] Sie sind seit fast zwanzig Jahren die deutsche Stimme des amerikanischen Schauspielers Dean Morrow. Wie sind Sie zur Synchronisation gekommen?\n[Herr Korn m] Über Umwege. Ich war zwölf Jahre lang festes Ensemblemitglied an einem Stadttheater, und unter Bühnenschauspielern galt Synchron damals als etwas, worüber man lieber nicht sprach. Man machte es heimlich, um die Miete zu bezahlen.\n[Moderatorin f] Wie muss man sich so eine Aufnahme vorstellen? Stehen Sie da mit den anderen Sprechern zusammen vor dem Mikrofon?\n[Herr Korn m] Das war früher so, heute praktisch nie mehr. Ich stehe allein in einer kleinen, schalldichten Kabine, sehe die Szene auf einem Bildschirm und spreche meine Sätze in kurzen Abschnitten von ein paar Sekunden. Die Partnerin, mit der ich mich im Film streite, ist vielleicht eine Woche später dran.\n[Moderatorin f] Und der Text, den Sie sprechen, steht dann fest?\n[Herr Korn m] Den schreibt ein Synchronautor so, dass er möglichst zu den Lippenbewegungen passt. Wenn mir ein Satz unnatürlich vorkommt, kann ich durchaus eine andere Formulierung anbieten. Das letzte Wort hat aber immer die Synchronregisseurin.\n[Moderatorin f] Haben Sie Dean Morrow eigentlich einmal getroffen?\n[Herr Korn m] Ein einziges Mal, bei einer Premiere in Berlin. Er spricht kein Wort Deutsch, und wir haben uns ein paar Minuten über Fußball unterhalten. Über meine Arbeit haben wir kein Wort verloren.\n[Moderatorin f] Was ist für Sie das Schwierigste?\n[Herr Korn m] Viele denken, es seien die langen Dialoge, aber die sind eigentlich reines Handwerk. Richtig schwer sind Weinen, Lachen und Schreien. Wenn der Schauspieler auf der Leinwand zusammenbricht, muss ich das in einer engen Kabine, morgens um zehn, glaubwürdig hinbekommen.\n[Moderatorin f] Tun Sie eigentlich etwas Besonderes für Ihre Stimme? Ingwertee, kein Alkohol?\n[Herr Korn m] Kollegen schwören auf alles Mögliche, ich halte von solchen Ritualen ehrlich gesagt nicht viel. Ich esse und trinke, was ich will. Das Einzige, worauf ich achte, ist genug Schlaf.\n[Moderatorin f] Ein Thema, das Ihre Branche gerade sehr umtreibt, ist die künstliche Intelligenz. Computer können Stimmen inzwischen täuschend echt nachahmen.\n[Herr Korn m] Das beunruhigt mich sehr. Ich habe deshalb in meine Verträge schreiben lassen, dass meine Aufnahmen nicht dazu verwendet werden dürfen, eine künstliche Stimme zu trainieren. Ob das auf Dauer reicht, weiß niemand.\n[Moderatorin f] Erkennen die Leute Sie eigentlich, wenn Sie zum Beispiel beim Bäcker etwas bestellen?\n[Herr Korn m] Das passiert tatsächlich gar nicht so selten. Man sieht dann förmlich, wie es in den Köpfen arbeitet: Diese Stimme kenne ich doch irgendwoher.\n[Moderatorin f] Herr Korn, vielen Dank, dass Sie uns heute Ihre Stimme geliehen haben.",
+          "questions": [
+            {
+              "question": "Herr Korn war früher als Schauspieler an einer Bühne engagiert.",
+              "options": [
+                "stimmt",
+                "stimmt nicht",
+                "dazu wird nichts gesagt"
+              ],
+              "correctIndex": 0,
+              "evidence": "Ich war zwölf Jahre lang festes Ensemblemitglied an einem Stadttheater"
+            },
+            {
+              "question": "Dialogszenen werden heute meist gemeinsam mit den Partnern aufgenommen.",
+              "options": [
+                "stimmt",
+                "stimmt nicht",
+                "dazu wird nichts gesagt"
+              ],
+              "correctIndex": 1,
+              "evidence": "Ich stehe allein in einer kleinen, schalldichten Kabine"
+            },
+            {
+              "question": "Herr Korn kann eigene Formulierungen vorschlagen.",
+              "options": [
+                "stimmt",
+                "stimmt nicht",
+                "dazu wird nichts gesagt"
+              ],
+              "correctIndex": 0,
+              "evidence": "kann ich durchaus eine andere Formulierung anbieten"
+            },
+            {
+              "question": "Die Synchronregisseurin war früher selbst Sprecherin.",
+              "options": [
+                "stimmt",
+                "stimmt nicht",
+                "dazu wird nichts gesagt"
+              ],
+              "correctIndex": 2,
+              "evidence": "Das letzte Wort hat aber immer die Synchronregisseurin."
+            },
+            {
+              "question": "Herr Korn ist Dean Morrow schon mehrmals begegnet.",
+              "options": [
+                "stimmt",
+                "stimmt nicht",
+                "dazu wird nichts gesagt"
+              ],
+              "correctIndex": 1,
+              "evidence": "Ein einziges Mal, bei einer Premiere in Berlin."
+            },
+            {
+              "question": "Dean Morrow hat die deutsche Fassung seiner Filme gelobt.",
+              "options": [
+                "stimmt",
+                "stimmt nicht",
+                "dazu wird nichts gesagt"
+              ],
+              "correctIndex": 2,
+              "evidence": "Über meine Arbeit haben wir kein Wort verloren."
+            },
+            {
+              "question": "Am schwersten fallen Herrn Korn lange Gesprächsszenen.",
+              "options": [
+                "stimmt",
+                "stimmt nicht",
+                "dazu wird nichts gesagt"
+              ],
+              "correctIndex": 1,
+              "evidence": "aber die sind eigentlich reines Handwerk"
+            },
+            {
+              "question": "Ein Studio hat bereits versucht, Herrn Korns Stimme künstlich nachzubilden.",
+              "options": [
+                "stimmt",
+                "stimmt nicht",
+                "dazu wird nichts gesagt"
+              ],
+              "correctIndex": 2,
+              "evidence": "Das beunruhigt mich sehr."
+            },
+            {
+              "question": "Herr Korn wird im Alltag gelegentlich an seiner Stimme erkannt.",
+              "options": [
+                "stimmt",
+                "stimmt nicht",
+                "dazu wird nichts gesagt"
+              ],
+              "correctIndex": 0,
+              "evidence": "Das passiert tatsächlich gar nicht so selten."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "True: he was a permanent member of a city theatre company for twelve years.",
+            "de": "Stimmt: Er war zwölf Jahre lang festes Ensemblemitglied an einem Stadttheater."
+          },
+          {
+            "en": "Not true: today he records alone in a booth; his scene partner may record a week later.",
+            "de": "Stimmt nicht: Heute nimmt er allein in einer Kabine auf. Die Partnerin ist vielleicht erst eine Woche später dran."
+          },
+          {
+            "en": "True: if a line sounds unnatural he can offer a different wording, although the dubbing director decides.",
+            "de": "Stimmt: Wenn ihm ein Satz unnatürlich vorkommt, kann er eine andere Formulierung anbieten. Die Regisseurin entscheidet aber."
+          },
+          {
+            "en": "Not mentioned: he says the dubbing director has the final say, but nothing about her career.",
+            "de": "Dazu wird nichts gesagt: Er sagt, dass die Synchronregisseurin entscheidet, aber nichts über ihren beruflichen Werdegang."
+          },
+          {
+            "en": "Not true: he met Morrow only once, at a premiere.",
+            "de": "Stimmt nicht: Er hat Morrow nur ein einziges Mal getroffen, bei einer Premiere."
+          },
+          {
+            "en": "Not mentioned: they talked only about football and never about Korn's work, so we do not know Morrow's opinion.",
+            "de": "Dazu wird nichts gesagt: Die beiden haben nur über Fußball gesprochen, nicht über Korns Arbeit. Morrows Meinung kennt man also nicht."
+          },
+          {
+            "en": "Not true: long dialogues are pure craft for him; the hard part is crying, laughing and screaming.",
+            "de": "Stimmt nicht: Lange Dialoge sind für ihn reines Handwerk. Schwer sind Weinen, Lachen und Schreien."
+          },
+          {
+            "en": "Not mentioned: he is worried and has protected himself in his contracts, but he does not say that anyone has tried to copy his voice.",
+            "de": "Dazu wird nichts gesagt: Er ist beunruhigt und hat sich vertraglich abgesichert, sagt aber nicht, dass jemand seine Stimme schon nachgebildet hat."
+          },
+          {
+            "en": "True: he says people quite often recognise his voice, for example at the bakery.",
+            "de": "Stimmt: Er sagt, dass Leute ihn ziemlich oft an der Stimme erkennen, zum Beispiel beim Bäcker."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-c1__hoeren-2__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Moderator m] Willkommen bei „Familienrat“, Ihrem Ratgebermagazin am Sonntagmorgen. Draußen ist es nass und kalt, und genau deshalb haben wir heute jemanden eingeladen, der bei jedem Wetter im Freien arbeitet: Dörte Brandt, Leiterin des Waldkindergartens „Fuchsbau“ in Kellingen. Guten Morgen, Frau Brandt.\n[Frau Brandt f] Guten Morgen.\n[Moderator m] Frau Brandt, Sie haben den „Fuchsbau“ vor zwölf Jahren ins Leben gerufen, richtig?\n[Frau Brandt f] Das wird oft so erzählt, stimmt aber nicht ganz. Die Idee kam von einer Elterninitiative, ich bin erst ein Jahr später als Erzieherin dazugekommen und habe dann die Leitung übernommen.\n[Moderator m] Die Kinder sind wirklich den ganzen Tag draußen?\n[Frau Brandt f] Von acht bis halb zwei, bei Sonne, Regen und Schnee. Wir haben einen beheizten Bauwagen, in den wir uns bei großer Kälte zum Aufwärmen zurückziehen.\n[Frau Brandt f] Nur bei Sturmwarnung ist der Wald tabu, weil Äste herabfallen können. Dann verbringen wir den Tag in einem Raum im Gemeindehaus, den uns die Kirchengemeinde zur Verfügung stellt.\n[Moderator m] Ein Vorurteil, das man oft hört, lautet: Waldkinder sind schlecht auf die Schule vorbereitet. Was ist da dran?\n[Frau Brandt f] Wir haben die Grundschulen in der Umgebung gefragt. Die Rückmeldung war überwiegend positiv, die Kinder können sich gut konzentrieren und sind sozial sehr selbstständig.\n[Frau Brandt f] Aber es gab einen Punkt, den wir ernst genommen haben: Einige hatten in der ersten Klasse Mühe, einen Stift richtig zu halten oder mit der Schere sauber an einer Linie entlangzuschneiden. Deshalb gibt es für die Vorschulkinder jetzt eine Werkstattstunde mit Papier, Stiften und Scheren.\n[Moderator m] Und wie sieht es mit der Gesundheit aus?\n[Frau Brandt f] Was die Gesundheit angeht, werde ich am allerhäufigsten nach Zecken gefragt. Die gibt es natürlich. Wir tragen lange Kleidung, und die Eltern verpflichten sich, ihr Kind jeden Abend gründlich abzusuchen.\n[Moderator m] Ist es schwer, einen Platz bei Ihnen zu bekommen?\n[Frau Brandt f] Leider ja. Wir haben etwa dreimal so viele Anmeldungen wie Plätze. Geschwisterkinder werden bevorzugt, und unter allen anderen entscheidet das Los. Das ist zwar nicht schön, aber wenigstens gerecht.\n[Moderator m] Und das Personal? Bei dem Wetter stelle ich mir die Suche nach Erzieherinnen nicht einfach vor.\n[Frau Brandt f] Das ist tatsächlich schwierig. Bezahlt wird bei uns genau wie in jeder anderen Kita der Gemeinde, die Bedingungen sind aber härter. Dafür bleiben die, die einmal da sind, meistens sehr lange.\n[Moderator m] Was müssen Eltern mitbringen, außer Gummistiefeln?\n[Frau Brandt f] Gelassenheit. Ein Kind, das abends sauber nach Hause kommt, hatte bei uns einen langweiligen Tag. Die Waschmaschine läuft in unseren Familien praktisch täglich.\n[Moderator m] Haben Sie noch Pläne für die Zukunft?\n[Frau Brandt f] Ja, wir würden gern eine Waldgruppe für Grundschulkinder am Nachmittag anbieten, eine Art Hort im Freien. Den Antrag haben wir im Frühjahr bei der Gemeinde eingereicht.\n[Moderator m] Frau Brandt, herzlichen Dank und weiterhin viel Freude im Wald.",
+          "questions": [
+            {
+              "question": "Frau Brandt hat den Waldkindergarten gegründet.",
+              "options": [
+                "stimmt",
+                "stimmt nicht",
+                "dazu wird nichts gesagt"
+              ],
+              "correctIndex": 1,
+              "evidence": "Die Idee kam von einer Elterninitiative"
+            },
+            {
+              "question": "Bei Sturm bleiben die Kinder im beheizten Bauwagen.",
+              "options": [
+                "stimmt",
+                "stimmt nicht",
+                "dazu wird nichts gesagt"
+              ],
+              "correctIndex": 1,
+              "evidence": "Dann verbringen wir den Tag in einem Raum im Gemeindehaus"
+            },
+            {
+              "question": "Manche ehemaligen Kinder des Kindergartens hatten in der Schule Probleme mit der Feinmotorik.",
+              "options": [
+                "stimmt",
+                "stimmt nicht",
+                "dazu wird nichts gesagt"
+              ],
+              "correctIndex": 0,
+              "evidence": "Einige hatten in der ersten Klasse Mühe, einen Stift richtig zu halten"
+            },
+            {
+              "question": "Die Kinder im „Fuchsbau“ sind seltener erkältet als Kinder in anderen Kitas.",
+              "options": [
+                "stimmt",
+                "stimmt nicht",
+                "dazu wird nichts gesagt"
+              ],
+              "correctIndex": 2,
+              "evidence": "werde ich am allerhäufigsten nach Zecken gefragt"
+            },
+            {
+              "question": "Die Eltern müssen ihr Kind täglich auf Zecken untersuchen.",
+              "options": [
+                "stimmt",
+                "stimmt nicht",
+                "dazu wird nichts gesagt"
+              ],
+              "correctIndex": 0,
+              "evidence": "die Eltern verpflichten sich, ihr Kind jeden Abend gründlich abzusuchen"
+            },
+            {
+              "question": "Ein Teil der Plätze wird durch Zufall vergeben.",
+              "options": [
+                "stimmt",
+                "stimmt nicht",
+                "dazu wird nichts gesagt"
+              ],
+              "correctIndex": 0,
+              "evidence": "unter allen anderen entscheidet das Los"
+            },
+            {
+              "question": "Die Erzieherinnen im Waldkindergarten verdienen mehr als ihre Kolleginnen in anderen Kitas.",
+              "options": [
+                "stimmt",
+                "stimmt nicht",
+                "dazu wird nichts gesagt"
+              ],
+              "correctIndex": 1,
+              "evidence": "Bezahlt wird bei uns genau wie in jeder anderen Kita der Gemeinde"
+            },
+            {
+              "question": "Viele Eltern beschweren sich über die schmutzige Kleidung ihrer Kinder.",
+              "options": [
+                "stimmt",
+                "stimmt nicht",
+                "dazu wird nichts gesagt"
+              ],
+              "correctIndex": 2,
+              "evidence": "Die Waschmaschine läuft in unseren Familien praktisch täglich."
+            },
+            {
+              "question": "Die Gemeinde hat der geplanten Nachmittagsgruppe bereits zugestimmt.",
+              "options": [
+                "stimmt",
+                "stimmt nicht",
+                "dazu wird nichts gesagt"
+              ],
+              "correctIndex": 2,
+              "evidence": "Den Antrag haben wir im Frühjahr bei der Gemeinde eingereicht."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Not true: the kindergarten was started by a parents' initiative; she joined a year later and then took over as head.",
+            "de": "Stimmt nicht: Der Kindergarten wurde von einer Elterninitiative gegründet. Sie kam erst ein Jahr später dazu und übernahm dann die Leitung."
+          },
+          {
+            "en": "Not true: the heated trailer is for warming up in great cold; when there is a storm warning the group spends the day in the parish hall.",
+            "de": "Stimmt nicht: Der Bauwagen ist zum Aufwärmen bei Kälte da. Bei Sturmwarnung verbringt die Gruppe den Tag im Gemeindehaus."
+          },
+          {
+            "en": "True: some children had trouble holding a pencil or cutting with scissors in first grade, so a workshop hour was introduced.",
+            "de": "Stimmt: Einige Kinder hatten in der ersten Klasse Mühe mit dem Stift und der Schere, deshalb gibt es jetzt eine Werkstattstunde."
+          },
+          {
+            "en": "Not mentioned: on the subject of health she only talks about ticks, not about colds.",
+            "de": "Dazu wird nichts gesagt: Zum Thema Gesundheit spricht sie nur über Zecken, nicht über Erkältungen."
+          },
+          {
+            "en": "True: parents commit to checking their child thoroughly every evening.",
+            "de": "Stimmt: Die Eltern verpflichten sich, ihr Kind jeden Abend gründlich abzusuchen."
+          },
+          {
+            "en": "True: siblings get priority, and among all other applicants places are drawn by lot.",
+            "de": "Stimmt: Geschwisterkinder werden bevorzugt, unter allen anderen entscheidet das Los."
+          },
+          {
+            "en": "Not true: the pay is exactly the same as in every other nursery in the municipality, even though conditions are harder.",
+            "de": "Stimmt nicht: Die Bezahlung ist genau wie in jeder anderen Kita der Gemeinde, obwohl die Bedingungen härter sind."
+          },
+          {
+            "en": "Not mentioned: she says parents need composure and wash almost every day, but not that they complain.",
+            "de": "Dazu wird nichts gesagt: Sie sagt, dass Eltern Gelassenheit brauchen und fast täglich waschen, aber nicht, dass sie sich beschweren."
+          },
+          {
+            "en": "Not mentioned: the application was submitted in spring, but she does not say whether it has been approved.",
+            "de": "Dazu wird nichts gesagt: Der Antrag wurde im Frühjahr eingereicht, aber sie sagt nicht, ob er schon genehmigt ist."
+          }
+        ]
+      }
+    }
+  ]
+}
