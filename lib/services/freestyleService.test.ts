@@ -52,6 +52,26 @@ describe('freestyleService', () => {
     expect(calls[1][0].maxTokens).toBe(4096);
   });
 
+  it('still resolves with the saved messages when the error-log write fails', async () => {
+    const writingReply = JSON.stringify({ corrections: [{ wrong: 'habe', right: 'bin', reason_en: 's', reason_de: 's' }], corrected: 'Ich bin gefahren.', comment_en: 'G', comment_de: 'G' });
+    const { db, service } = setup([conversationReply, writingReply]);
+    db.exec('DROP TABLE error_log');
+    const quiet = vi.spyOn(console, 'error').mockImplementation(() => {});
+    await service.start('conversation', { level: 'B1', setup: {} });
+    expect((await service.turn('conversation', 'Ich habe gegangen zum Arzt.')).map((m) => m.role)).toEqual(['user', 'assistant']);
+    await service.start('free_writing', { level: 'B1', setup: {} });
+    expect((await service.turn('free_writing', 'Ich habe gefahren.')).map((m) => m.role)).toEqual(['user', 'assistant']);
+    expect(service.session('free_writing')!.messages).toHaveLength(2);
+    quiet.mockRestore();
+  });
+
+  it('logs nothing when a free-writing turn gets a bad reply', async () => {
+    const { db, service } = setup(['not json']);
+    await service.start('free_writing', { level: 'B1', setup: {} });
+    await expect(service.turn('free_writing', 'Ich habe gefahren.')).rejects.toMatchObject({ code: 'ai_bad_reply' });
+    expect((db.prepare('SELECT COUNT(*) AS n FROM error_log').get() as { n: number }).n).toBe(0);
+  });
+
   it('logs nothing when the turn fails', async () => {
     const { db, service } = setup(['not json']);
     await service.start('conversation', { level: 'B1', setup: {} });

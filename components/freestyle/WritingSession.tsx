@@ -168,9 +168,20 @@ export function WritingSession({ session, onMessages }: { session: SessionView; 
 // S10: offsets are found client-side over the stored text, so old messages work too. Corrections whose
 // wrong text isn't found have no mark; they stay in the list below.
 function marksOf(text: string, corrections: Correction[]): TextMark[] {
+  // The model's list isn't ordered by position, and locateMarks searches forward. Give each correction the
+  // position of its own occurrence (the second "habe" gets the second occurrence), then order by position.
+  const nfc = text.normalize('NFC');
+  const from = new Map<string, number>();
+  const placed = corrections.map((c) => {
+    const needle = c.wrong.normalize('NFC');
+    const i = needle ? nfc.indexOf(needle, from.get(needle) ?? 0) : -1;
+    if (i >= 0) from.set(needle, i + needle.length);
+    return { c, at: i < 0 ? Infinity : i };
+  });
+  const ordered = placed.sort((x, y) => x.at - y.at).map(({ c }) => c);
   return locateMarks(
     text,
-    corrections.map((c) => ({ original: c.wrong, correction: c.right, reason: c.reason, type: markTypeOf(c.category) }))
+    ordered.map((c) => ({ original: c.wrong, correction: c.right, reason: c.reason, type: markTypeOf(c.category) }))
   );
 }
 

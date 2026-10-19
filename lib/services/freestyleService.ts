@@ -9,7 +9,7 @@ import { errorBodyFor, type ApiErrorBody, type ErrorCode, type ErrorParams } fro
 import { isAtOrBelow, isCefrLevel, levelsUpTo } from '../tutoring/levels';
 import { generateWithActiveProvider, isAiAvailable, type AiRequest, type AiResult } from './aiService';
 import { generateParsed } from './freestyleAi';
-import { createErrorLogService } from './errorLogService';
+import { recordMistakes } from './errorLogService';
 import { createProfileService } from './profileService';
 import { createContentText } from './contentText';
 import { loadLevelGating } from './levelGating';
@@ -73,7 +73,6 @@ export function createFreestyleService(
   const generate = deps.generate ?? ((request: AiRequest) => generateWithActiveProvider(db, request));
   const now = deps.now ?? (() => new Date());
   const profiles = createProfileService(db);
-  const errorLog = createErrorLogService(db, { now });
 
   function row(mode: FreestyleMode): SessionRow | undefined {
     return db.prepare('SELECT id, mode, level, setup, ending FROM freestyle_sessions WHERE mode = ?').get(mode) as SessionRow | undefined;
@@ -229,7 +228,7 @@ export function createFreestyleService(
         parseConversationReply
       );
       const added = save({ corrections: reply.corrections }, reply.reply);
-      errorLog.record('freestyle_chat', reply.corrections);
+      recordMistakes(db, 'freestyle_chat', reply.corrections, { now });
       return added;
     }
     if (mode === 'grammar_drill') {
@@ -242,7 +241,7 @@ export function createFreestyleService(
       const reply = await ask({ ...buildWritingPrompt({ level: r.level, prompt, text }), maxTokens: WRITING_MAX_TOKENS }, parseWritingReply);
       const added = save(null, reply.corrected, { corrections: reply.corrections, comment: reply.comment });
       // I5: a resubmission logs its corrections again.
-      errorLog.record('freestyle_writing', reply.corrections);
+      recordMistakes(db, 'freestyle_writing', reply.corrections, { now });
       return added;
     }
     throw new FreestyleError('This mode has no turns', 'bad_request');

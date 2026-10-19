@@ -141,4 +141,11 @@ describe('WritingSession marked-up corrections (T8)', () => {
     renderWithIntl(<WritingSession session={withReply('Herr Müller kommt.'.normalize('NFD'), corrections)} onMessages={vi.fn()} />);
     expect(screen.getByRole('button', { name: 'Müller' })).toBeInTheDocument();
   });
+
+  it('marks corrections the model listed out of text order, keeping repeats in order', () => {
+    vi.stubGlobal('fetch', vi.fn());
+    const c = (wrong: string) => ({ wrong, right: 'x', category: 'other', reason: { en: 'r', de: 'r' } });
+    renderWithIntl(<WritingSession session={withReply('Ich habe nach Rom gefahren und habe gegessen.', [c('gefahren'), c('habe'), c('habe')])} onMessages={vi.fn()} />);
+    expect(screen.getAllByRole('button', { name: /^(habe|gefahren)$/ }).map((b) => b.textContent)).toEqual(['habe', 'gefahren', 'habe']);
+  });
 });
