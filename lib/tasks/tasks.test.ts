@@ -162,7 +162,7 @@ describe('audio_questions', () => {
 });
 
 describe('letter task type', () => {
-  const task = { situation: 'Sie waren im Urlaub.', leitpunkte: ['Wohin?', 'Mit wem?'], register: 'informal' as const, wordTarget: { min: 80, max: 100 } };
+  const task = { situation: 'Sie waren im Urlaub.', leitpunkte: ['Wohin?', 'Mit wem?', 'Einladung'], register: 'informal' as const, wordTarget: { min: 80, max: 100 } };
   const content = { tasks: [task] };
 
   it('validates tasks, leitpunkte, register and word target', () => {
@@ -171,6 +171,8 @@ describe('letter task type', () => {
     expect(validateTask('letter', { tasks: [task, task, task] })).toHaveLength(1);
     const problems = validateTask('letter', { tasks: [{ situation: ' ', leitpunkte: ['x'], register: 'rude', wordTarget: { min: 100, max: 80 } }] });
     expect(problems).toHaveLength(4);
+    expect(validateTask('letter', { tasks: [{ ...task, register: 'semi_formal' }] })).toEqual([]);
+    expect(validateTask('letter', { tasks: [{ ...task, leitpunkte: ['a', 'b'] }] })).toEqual(['task 1: leitpunkte must be 3 to 4 non-empty strings']);
   });
 
   it('parses an answer in range and views the content as it is', () => {

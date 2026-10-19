@@ -65,7 +65,7 @@ export function TeilSetEditor({
           content={set.content as ExerciseContent}
           index={0}
           allowInstruction={false}
-          onChange={(content) => changeContent(content as unknown as TaskContent)}
+          onChange={(content) => changeContent(content as TaskContent)}
         />
       )}
       <fieldset className="flex flex-col gap-3">

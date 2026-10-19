@@ -71,19 +71,24 @@ const SHAPE: Record<SetTaskType, string> = {
   matching: '{"items": ["..."], "targets": ["..."], "answers": [0], "allowNone": true | false}',
   cloze: '{"text": "... {{1}} ... {{2}} ...", "gaps": [{"mode": "select", "options": ["...", "...", "..."], "correctIndex": 0} | {"mode": "bank", "answer": 0}], "bank": ["..."] (only with bank gaps)}',
   audio_questions: '{"transcript": "[Name m|f] … lines, optional first line @filter …", "questions": [{"question": "...", "options": ["...", "...", "..."], "correctIndex": 0, "evidence": "..."}]}',
-  letter: '{"tasks": [{"situation": "...", "leitpunkte": ["...", "..."], "register": "formal" | "informal", "wordTarget": {"min": 80, "max": 100}}]}',
+  letter: '{"tasks": [{"situation": "...", "leitpunkte": ["...", "...", "..."], "register": "informal" | "semi_formal" | "formal", "wordTarget": {"min": 80, "max": 100}}]}',
 };
 
 // Spec: pool sets are CEFR-style and German-only, in the part's exact format.
 export function buildTeilSetPrompt(part: ExamPart, level: CefrLevel): { systemPrompt: string; messages: ChatMessage[] } {
   if (!isSetTaskType(part.taskType)) throw new Error(`No set generation for ${part.taskType}`);
+  const isLetter = part.taskType === 'letter';
   return {
     systemPrompt: [
       `You write one practice set for the exam part "${part.title.de}" at CEFR level ${level}.`,
       `Follow the real exam format. The task instructions are: ${part.instructions}`,
-      `Write everything entirely in German, using vocabulary and grammar appropriate for CEFR level ${level}. The set must have exactly ${part.items} scored items.`,
+      isLetter
+        ? `Write everything entirely in German, using vocabulary and grammar appropriate for CEFR level ${level}. Write exactly ${part.choices ?? 1} task(s). Each task's wordTarget must be ${JSON.stringify(part.wordTarget)}.`
+        : `Write everything entirely in German, using vocabulary and grammar appropriate for CEFR level ${level}. The set must have exactly ${part.items} scored items.`,
       'Do not add an "instruction" field; the task instructions above are the only task text.',
-      'For every item, add an explanation of the right answer in English and in simple German.',
+      isLetter
+        ? `Explanations: one tip per rubric criterion, in English and in simple German, in this order: ${(part.rubric?.criteria ?? []).map((c) => c.name.en).join(', ')}.`
+        : 'For every item, add an explanation of the right answer in English and in simple German.',
       `Reply with only a JSON object: {"content": ${SHAPE[part.taskType]}, "explanations": [{"en": "...", "de": "..."}]}`,
     ].join('\n'),
     messages: [{ role: 'user', content: 'Write the set now.' }],

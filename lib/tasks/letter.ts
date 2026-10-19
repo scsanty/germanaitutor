@@ -1,6 +1,6 @@
 import type { LocalizedText } from '../i18n/localizedText';
 
-export type LetterRegister = 'formal' | 'informal';
+export type LetterRegister = 'informal' | 'semi_formal' | 'formal';
 
 export interface LetterTask {
   situation: string;
@@ -30,10 +30,10 @@ export function validateLetter(content: unknown): string[] {
   c.tasks.forEach((t, i) => {
     const n = `task ${i + 1}`;
     if (!nonEmpty(t?.situation)) problems.push(`${n}: situation must be a non-empty string`);
-    if (!Array.isArray(t?.leitpunkte) || t.leitpunkte.length < 2 || t.leitpunkte.length > 5 || !t.leitpunkte.every(nonEmpty)) {
-      problems.push(`${n}: leitpunkte must be 2 to 5 non-empty strings`);
+    if (!Array.isArray(t?.leitpunkte) || t.leitpunkte.length < 3 || t.leitpunkte.length > 4 || !t.leitpunkte.every(nonEmpty)) {
+      problems.push(`${n}: leitpunkte must be 3 to 4 non-empty strings`);
     }
-    if (t?.register !== 'formal' && t?.register !== 'informal') problems.push(`${n}: register must be formal or informal`);
+    if (!['informal', 'semi_formal', 'formal'].includes(t?.register as string)) problems.push(`${n}: register must be informal, semi_formal or formal`);
     const w = t?.wordTarget;
     if (!(typeof w?.min === 'number' && typeof w?.max === 'number' && w.min > 0 && w.min < w.max)) problems.push(`${n}: wordTarget needs 0 < min < max`);
   });

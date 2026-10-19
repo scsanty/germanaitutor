@@ -87,4 +87,29 @@ describe('letter grading', () => {
     expect(parseLetterGrade(reply({ corrected: '' }), text, LESSON_LETTER_RUBRIC)).toBeNull();
     expect(parseLetterGrade('not json', text, LESSON_LETTER_RUBRIC)).toBeNull();
   });
+
+  it('rejects a reply that drops one of three criteria', () => {
+    const bad = JSON.parse(reply());
+    bad.criteria = bad.criteria.slice(0, 2);
+    expect(parseLetterGrade(JSON.stringify(bad), text, LESSON_LETTER_RUBRIC)).toBeNull();
+  });
+
+  it('rejects a grade the rubric has no points for (E on the lesson rubric)', () => {
+    const bad = JSON.parse(reply());
+    bad.criteria[1].grade = 'E';
+    expect(parseLetterGrade(JSON.stringify(bad), text, LESSON_LETTER_RUBRIC)).toBeNull();
+  });
+
+  it('drops a mark with an empty original', () => {
+    const mark = { original: '', correction: 'x', type: 'grammar', category: 'other', reason_en: 'x', reason_de: 'x' };
+    expect(parseLetterGrade(reply({ marks: [mark] }), text, LESSON_LETTER_RUBRIC)!.marks).toEqual([]);
+  });
+
+  it('lets the first of a repeated criterion win', () => {
+    const base = JSON.parse(reply());
+    base.criteria.unshift({ id: 'accuracy', grade: 'A', justification_en: 'first', justification_de: 'erste' });
+    const grade = parseLetterGrade(JSON.stringify(base), text, LESSON_LETTER_RUBRIC)!;
+    expect(grade.criteria.find((c) => c.id === 'accuracy')).toMatchObject({ grade: 'A', justification: { en: 'first' } });
+    expect(grade.points).toBe(11);
+  });
 });

@@ -54,7 +54,7 @@ describe('letter sets', () => {
     id: 'schreiben', skill: 'writing', title: { en: 'W', de: 'S' }, taskType: 'letter', items: 3, points: 15, minutes: 30, instructions: 'Schreiben Sie …',
     rubric: { criteria: [crit('a'), crit('b'), crit('c')] }, wordTarget: { min: 80, max: 100 }, choices: 2,
   };
-  const task = { situation: 'Sie waren im Urlaub.', leitpunkte: ['Wohin?', 'Mit wem?'], register: 'informal' as const, wordTarget: { min: 80, max: 100 } };
+  const task = { situation: 'Sie waren im Urlaub.', leitpunkte: ['Wohin?', 'Mit wem?', 'Einladung'], register: 'informal' as const, wordTarget: { min: 80, max: 100 } };
   const tip = { en: 'Tip.', de: 'Tipp.' };
   const letterSet = { taskType: 'letter' as const, content: { tasks: [task, task] }, explanations: [tip, tip, tip] };
 
@@ -76,5 +76,11 @@ describe('letter sets', () => {
 
   it('builds a generation prompt with the letter shape', () => {
     expect(buildTeilSetPrompt(letterPart, 'B1').systemPrompt).toContain('"leitpunkte"');
+    const p = buildTeilSetPrompt(letterPart, 'B1').systemPrompt;
+    expect(p).toContain('Write exactly 2 task(s)');
+    expect(p).toContain('wordTarget must be {"min":80,"max":100}');
+    expect(p).toContain('in this order: a, b, c');
+    expect(p).not.toContain('scored items');
+    expect(p).not.toContain('right answer');
   });
 });
