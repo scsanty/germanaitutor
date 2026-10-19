@@ -49,7 +49,7 @@ export interface ExamFormat {
 const DIR = () => join(/*turbopackIgnore: true*/ process.cwd(), 'data', 'exam-formats');
 
 // Format ids can arrive from request bodies; only these shapes ever reach the filesystem.
-const FORMAT_ID = /^(generic|goethe|telc)-(a1|a2|b1|b2|c1)$/;
+export const FORMAT_ID = /^(generic|goethe|telc)-(a1|a2|b1|b2|c1)$/;
 
 export function formatId(track: Track, level: CefrLevel): string {
   return `${track}-${level.toLowerCase()}`;

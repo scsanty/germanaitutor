@@ -1,0 +1,98 @@
+{
+  "formatId": "telc-b1",
+  "partId": "schreiben",
+  "anchors": [
+    {
+      "task": {
+        "situation": "Sie sind vor einem Monat in eine andere Stadt umgezogen. Ihre Freundin Katrin hat Ihnen geschrieben und möchte wissen, wie es Ihnen geht. Antworten Sie ihr mit einem persönlichen Brief.",
+        "leitpunkte": [
+          "Grund für den Umzug",
+          "Ihre neue Wohnung",
+          "Ihre neuen Nachbarn",
+          "Einladung zu einem Besuch"
+        ],
+        "register": "informal",
+        "wordTarget": {
+          "min": 120,
+          "max": 180
+        }
+      },
+      "letter": "Liebe Katrin,\n\nvielen Dank für deinen netten Brief! Entschuldige, dass ich erst jetzt antworte, aber die letzten Wochen waren ziemlich chaotisch.\n\nWie du weißt, bin ich nach Freiburg gezogen, weil ich dort eine Stelle als Krankenpfleger bekommen habe. Außerdem wollte ich schon lange in einer kleineren Stadt wohnen, in der man alles mit dem Fahrrad erreichen kann.\n\nMeine neue Wohnung liegt im dritten Stock und hat zwei helle Zimmer, eine kleine Küche und sogar einen Balkon. Sie ist zwar etwas teurer als meine alte, dafür ist sie aber ruhig und nur zehn Minuten vom Krankenhaus entfernt.\n\nAuch mit den Nachbarn habe ich Glück gehabt. Gleich am ersten Abend hat mir Frau Lindner von nebenan einen Kuchen gebracht, und letztes Wochenende haben wir alle zusammen im Hof gegrillt.\n\nHast du Lust, mich im Juni zu besuchen? Dann könnten wir einen Ausflug in den Schwarzwald machen. Sag mir einfach Bescheid, welches Wochenende dir passt!\n\nViele liebe Grüße\ndein Jonas",
+      "grades": {
+        "aufgabe": "A",
+        "gestaltung": "A",
+        "richtigkeit": "A"
+      },
+      "justification": "Aufgabe A: Alle vier Leitpunkte werden ausführlich und passend zur Situation behandelt, vom Grund für den Umzug bis zur konkreten Einladung mit Terminvorschlag. Gestaltung A: Der Brief ist klar in Absätze gegliedert, Anrede, Einstieg und Schluss passen zu einer Freundin, und Verbindungen wie „außerdem“, „zwar … dafür“ und „gleich am ersten Abend“ führen flüssig durch den Text. Richtigkeit A: Wortschatz und Satzbau sind abwechslungsreich, mit Relativ- und Infinitivsätzen, und es gibt praktisch keine Fehler."
+    },
+    {
+      "task": {
+        "situation": "Sie sind vor einem Monat in eine andere Stadt umgezogen. Ihre Freundin Katrin hat Ihnen geschrieben und möchte wissen, wie es Ihnen geht. Antworten Sie ihr mit einem persönlichen Brief.",
+        "leitpunkte": [
+          "Grund für den Umzug",
+          "Ihre neue Wohnung",
+          "Ihre neuen Nachbarn",
+          "Einladung zu einem Besuch"
+        ],
+        "register": "informal",
+        "wordTarget": {
+          "min": 120,
+          "max": 180
+        }
+      },
+      "letter": "Liebe Katrin,\n\ndanke für deinen Brief. Mir geht es gut, aber ich habe im Moment sehr viel zu tun.\n\nIch bin nach Freiburg umgezogen, weil ich habe dort eine neue Arbeit gefunden. Jetzt arbeite ich als Krankenpfleger in einem großen Krankenhaus. Die Arbeit ist anstrengend, aber meine Kollegen sind sehr nett.\n\nMeine neue Wohnung ist schön. Sie hat zwei Zimmer und eine kleine Küche und auch einen Balkon. Leider die Wohnung ist ein bisschen teuer, aber sie ist ruhig und ich kann mit dem Fahrrad zu Arbeit fahren. Am Abend ich sitze gern auf dem Balkon und lese ein Buch.\n\nMöchtest du mich besuchen? Du kannst im Juni kommen, dann ist das Wetter besser. Wir können zusammen in die Altstadt gehen und in einem Café sitzen. Ich freue mich sehr, wenn du kommst.\n\nSchreib mir bald!\n\nViele Grüße\nJonas",
+      "grades": {
+        "aufgabe": "B",
+        "gestaltung": "B",
+        "richtigkeit": "B"
+      },
+      "justification": "Aufgabe B: Umzugsgrund, Wohnung und Einladung werden gut behandelt, aber der Leitpunkt zu den neuen Nachbarn fehlt ganz; stattdessen schreibt Jonas über die Kollegen. Gestaltung B: Anrede, Absätze und Schluss passen, doch die Sätze sind oft einfach aneinandergereiht („und … und auch“), und auf Katrins Brief wird kaum eingegangen. Richtigkeit B: Einige Wortstellungsfehler („weil ich habe dort … gefunden“, „Leider die Wohnung ist“, „Am Abend ich sitze“) und ein fehlender Artikel („zu Arbeit“) stören das Verständnis kaum."
+    },
+    {
+      "task": {
+        "situation": "Sie sind vor einem Monat in eine andere Stadt umgezogen. Ihre Freundin Katrin hat Ihnen geschrieben und möchte wissen, wie es Ihnen geht. Antworten Sie ihr mit einem persönlichen Brief.",
+        "leitpunkte": [
+          "Grund für den Umzug",
+          "Ihre neue Wohnung",
+          "Ihre neuen Nachbarn",
+          "Einladung zu einem Besuch"
+        ],
+        "register": "informal",
+        "wordTarget": {
+          "min": 120,
+          "max": 180
+        }
+      },
+      "letter": "Hallo Katrin,\n\nwie geht es Ihnen? Mir geht gut. Ich habe dein Brief bekommen, danke.\n\nIch wohne jetzt in Freiburg. Ich bin umgezieht wegen die Arbeit. Die neue Wohnung ist gross, zwei Zimmer und Küche ist klein, Balkon auch. Aber die Miete ist so teuer, ich muss viel bezahlen jeden Monat, das ist nicht gut für mir. Die alte Wohnung war billig aber zu weit von die Arbeit, ich bin jeden Tag mit Bus eine Stunde gefahrt. Jetzt ich fahre mit Fahrrad. Die Nachbarn ist okay. Meine Arbeit im Krankenhaus ist viel, ich arbeite auch an Wochenende und in die Nacht, darum ich bin immer müde und habe keine Zeit für Sport oder für Freunde treffen. Das ist schwer für mich. Die Stadt ich kenne noch nicht so gut, vielleicht später.\n\nTschüss\nJonas",
+      "grades": {
+        "aufgabe": "C",
+        "gestaltung": "C",
+        "richtigkeit": "C"
+      },
+      "justification": "Aufgabe C: Nur die Wohnung wird etwas genauer beschrieben; Umzugsgrund und Nachbarn werden mit einem knappen Satz abgehakt, die Einladung fehlt, und ein großer Teil des Textes handelt von der Arbeit, nach der nicht gefragt wurde. Gestaltung C: Der Brief ist ein einziger ungegliederter Block mit abruptem Schluss, und der Wechsel zwischen „Ihnen“ und „dein“ passt nicht zu einem Brief an eine Freundin. Richtigkeit C: Viele Fehler bei Verbformen („umgezieht“, „gefahrt“), Kasus („wegen die Arbeit“, „für mir“) und Wortstellung („Jetzt ich fahre“) erschweren stellenweise das Lesen."
+    },
+    {
+      "task": {
+        "situation": "Sie sind vor einem Monat in eine andere Stadt umgezogen. Ihre Freundin Katrin hat Ihnen geschrieben und möchte wissen, wie es Ihnen geht. Antworten Sie ihr mit einem persönlichen Brief.",
+        "leitpunkte": [
+          "Grund für den Umzug",
+          "Ihre neue Wohnung",
+          "Ihre neuen Nachbarn",
+          "Einladung zu einem Besuch"
+        ],
+        "register": "informal",
+        "wordTarget": {
+          "min": 120,
+          "max": 180
+        }
+      },
+      "letter": "Hallo,\n\nWohnung neu ist in Freiburg gut, weil Arbeit da ich. Umzug nicht mag, Kartons viel, müde sehr. Mein Auto kaputt und ich kaufen neu Fahrrad, Fahrrad ist rot und schnell. Du hast Fahrrad? Ich fahren jeden Tag mit er.\n\nBis dann\nJonas",
+      "grades": {
+        "aufgabe": "D",
+        "gestaltung": "C",
+        "richtigkeit": "D"
+      },
+      "justification": "Aufgabe D: Der Text ist viel zu kurz und erwähnt nur nebenbei die Wohnung; Umzugsgrund, Nachbarn und Einladung fehlen, stattdessen geht es um ein neues Fahrrad. Gestaltung C: Es gibt zwar eine Begrüßung und einen Schluss, aber keine persönliche Anrede, keinen Bezug zu Katrins Brief und keinen erkennbaren Zusammenhang zwischen den Sätzen. Richtigkeit D: Fast jeder Satz enthält schwere Fehler bei Wortstellung, Konjugation und Artikeln („weil Arbeit da ich“, „ich kaufen neu Fahrrad“), sodass der Text größtenteils kaum verständlich ist."
+    }
+  ]
+}
