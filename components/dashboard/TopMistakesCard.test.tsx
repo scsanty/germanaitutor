@@ -4,6 +4,15 @@ import { renderWithIntl } from '@/test/renderWithIntl';
 import { delayedResponse } from '@/test/delayedResponse';
 import { TopMistakesCard } from './TopMistakesCard';
 
+// Waits for the (delayed) response itself, then lets React apply what the card did with it.
+async function settled(fetchMock: { mock: { results: { value: unknown }[] } }) {
+  await vi.waitFor(() => expect(fetchMock.mock.results.length).toBeGreaterThan(0));
+  await act(async () => {
+    const res = (await fetchMock.mock.results[0].value) as { json: () => Promise<unknown> };
+    await res.json();
+  });
+}
+
 const ITEMS = [
   {
     categoryId: 'case',
@@ -42,18 +51,16 @@ describe('TopMistakesCard', () => {
     const fetchMock = vi.fn(() => delayedResponse({ items: [] }));
     vi.stubGlobal('fetch', fetchMock);
     const { container } = renderWithIntl(<TopMistakesCard />);
-    await vi.waitFor(() => expect(fetchMock).toHaveBeenCalled());
-    await act(async () => {});
+    await settled(fetchMock);
     expect(container.querySelector('[data-slot="card"]')).toBeNull();
     expect(screen.queryByText('Your top mistakes')).toBeNull();
   });
 
   it('renders nothing when the load fails', async () => {
-    const fetchMock = vi.fn(() => delayedResponse({}, { ok: false, status: 500 }));
+    const fetchMock = vi.fn(() => delayedResponse({ items: ITEMS }, { ok: false, status: 500 }));
     vi.stubGlobal('fetch', fetchMock);
     const { container } = renderWithIntl(<TopMistakesCard />);
-    await vi.waitFor(() => expect(fetchMock).toHaveBeenCalled());
-    await act(async () => {});
+    await settled(fetchMock);
     expect(container.querySelector('[data-slot="card"]')).toBeNull();
   });
 });
