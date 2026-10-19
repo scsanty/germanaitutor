@@ -13,8 +13,44 @@
     { "id": "lesen-2", "skill": "reading", "title": { "en": "Reading Part 2", "de": "Lesen Teil 2" }, "taskType": "passage_questions", "items": 7, "points": 17, "minutes": 25, "instructions": "Lesen Sie einen anspruchsvollen Text (ca. 550 Wörter) und die Aufgaben 1–7. Welche Lösung (a, b oder c) ist richtig?" },
     { "id": "hoeren-1", "skill": "listening", "title": { "en": "Listening Part 1", "de": "Hören Teil 1" }, "taskType": "audio_questions", "items": 7, "points": 17, "minutes": 12, "instructions": "Sie hören 7 kurze Texte. Sie hören jeden Text einmal. Sind die Aussagen richtig oder falsch?", "replays": 1 },
     { "id": "hoeren-2", "skill": "listening", "title": { "en": "Listening Part 2", "de": "Hören Teil 2" }, "taskType": "audio_questions", "items": 8, "points": 17, "minutes": 15, "instructions": "Sie hören ein Gespräch. Sie hören das Gespräch zweimal. Welche Lösung (a, b oder c) ist richtig?", "replays": 2 },
-    { "id": "schreiben-1", "skill": "writing", "title": { "en": "Writing Part 1", "de": "Schreiben Teil 1" }, "taskType": "letter", "items": 4, "points": 16, "minutes": 30, "instructions": "Schreiben Sie einen Beitrag für ein Forum (ca. 150 Wörter). Nehmen Sie Stellung, begründen Sie Ihre Meinung und behandeln Sie alle Punkte der Aufgabe." },
-    { "id": "schreiben-2", "skill": "writing", "title": { "en": "Writing Part 2", "de": "Schreiben Teil 2" }, "taskType": "letter", "items": 4, "points": 16, "minutes": 25, "instructions": "Schreiben Sie eine formelle E-Mail (ca. 100 Wörter). Behandeln Sie alle Punkte der Aufgabe und achten Sie auf einen angemessenen Stil." },
+    { "id": "schreiben-1", "skill": "writing", "title": { "en": "Writing Part 1", "de": "Schreiben Teil 1" }, "taskType": "letter", "items": 3, "points": 16, "minutes": 30, "choices": 1, "wordTarget": { "min": 120, "max": 180 },
+      "rubric": { "criteria": [
+      { "id": "aufgabe", "name": { "en": "Task completion", "de": "Aufgabenbewältigung" }, "points": { "A": 6, "B": 4, "C": 2, "D": 0 }, "descriptors": {
+        "A": "Die eigene Meinung wird klar formuliert und überzeugend begründet, und alle Punkte der Aufgabe werden ausführlich behandelt.",
+        "B": "Die Meinung ist erkennbar und begründet, aber ein Punkt bleibt knapp oder fehlt.",
+        "C": "Die Meinung wird kaum begründet, oder mehrere Punkte fehlen oder werden nur gestreift.",
+        "D": "Die Aufgabe wird verfehlt oder kaum bearbeitet." } },
+      { "id": "gestaltung", "name": { "en": "Communicative design", "de": "Kommunikative Gestaltung" }, "points": { "A": 5, "B": 3, "C": 2, "D": 0 }, "descriptors": {
+        "A": "Der Beitrag ist logisch aufgebaut (Einleitung, Argumentation, Schluss); die Gedanken sind mit vielfältigen Konnektoren verknüpft, und der Stil passt zu einem Forum.",
+        "B": "Der Aufbau ist nachvollziehbar; die Konnektoren sind etwas einförmig, oder Übergänge wirken stellenweise holprig.",
+        "C": "Der Gedankengang ist oft sprunghaft, und Konnektoren fehlen häufig oder werden falsch verwendet.",
+        "D": "Es gibt keinen erkennbaren Aufbau; die Sätze stehen ohne Konnektoren unverbunden nebeneinander." } },
+      { "id": "richtigkeit", "name": { "en": "Formal accuracy", "de": "Formale Richtigkeit" }, "points": { "A": 5, "B": 3, "C": 2, "D": 0 }, "descriptors": {
+        "A": "Wortschatz und Strukturen sind abwechslungsreich und dem Niveau B2 angemessen; Fehler sind selten und stören nicht.",
+        "B": "Es gibt einige Fehler, auch bei komplexeren Strukturen, die das Verständnis aber kaum stören.",
+        "C": "Häufige Fehler oder ein für B2 zu einfacher Ausdruck erschweren das Verständnis stellenweise.",
+        "D": "So viele Fehler, dass der Text größtenteils unverständlich ist." } }
+    ] },
+      "instructions": "Schreiben Sie einen Beitrag für ein Forum (ca. 150 Wörter). Nehmen Sie Stellung, begründen Sie Ihre Meinung und behandeln Sie alle Punkte der Aufgabe." },
+    { "id": "schreiben-2", "skill": "writing", "title": { "en": "Writing Part 2", "de": "Schreiben Teil 2" }, "taskType": "letter", "items": 3, "points": 16, "minutes": 25, "choices": 1, "wordTarget": { "min": 80, "max": 120 },
+      "rubric": { "criteria": [
+      { "id": "aufgabe", "name": { "en": "Task completion", "de": "Aufgabenbewältigung" }, "points": { "A": 6, "B": 4, "C": 2, "D": 0 }, "descriptors": {
+        "A": "Alle Punkte der Aufgabe werden vollständig und passend zur Situation behandelt, und das formelle Register wird durchgehend eingehalten.",
+        "B": "Alle Punkte kommen vor, aber einer bleibt knapp, oder das Register schwankt stellenweise.",
+        "C": "Mehrere Punkte fehlen oder werden nur gestreift, oder das Register passt oft nicht.",
+        "D": "Die Aufgabe wird verfehlt oder kaum bearbeitet." } },
+      { "id": "gestaltung", "name": { "en": "Communicative design", "de": "Kommunikative Gestaltung" }, "points": { "A": 5, "B": 3, "C": 2, "D": 0 }, "descriptors": {
+        "A": "Die E-Mail ist klar gegliedert, mit formeller Anrede, Einleitung, Schluss und Gruß; die Sätze sind mit passenden Konnektoren verknüpft, und der Ton ist höflich und sachlich.",
+        "B": "Der Aufbau ist meist klar; Konnektoren, Anrede, Schluss oder Ton passen nicht immer.",
+        "C": "Der Aufbau ist schwer nachzuvollziehen, Konnektoren fehlen häufig, oder Anrede und Gruß passen nicht zum formellen Register.",
+        "D": "Es gibt keinen erkennbaren Aufbau, und die E-Mail passt nicht zum Adressaten." } },
+      { "id": "richtigkeit", "name": { "en": "Formal accuracy", "de": "Formale Richtigkeit" }, "points": { "A": 5, "B": 3, "C": 2, "D": 0 }, "descriptors": {
+        "A": "Wortschatz und Strukturen sind abwechslungsreich und dem Niveau B2 angemessen; Fehler sind selten und stören nicht.",
+        "B": "Es gibt einige Fehler, auch bei komplexeren Strukturen, die das Verständnis aber kaum stören.",
+        "C": "Häufige Fehler oder ein für B2 zu einfacher Ausdruck erschweren das Verständnis stellenweise.",
+        "D": "So viele Fehler, dass der Text größtenteils unverständlich ist." } }
+    ] },
+      "instructions": "Schreiben Sie eine formelle E-Mail (ca. 100 Wörter). Behandeln Sie alle Punkte der Aufgabe und achten Sie auf einen angemessenen Stil." },
     { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Sprechen Teil 1" }, "taskType": "spoken", "items": 4, "points": 25, "minutes": 6, "instructions": "Ein Thema präsentieren: Sprechen Sie zusammenhängend über das Thema auf Ihrer Karte und beantworten Sie anschließend die Fragen." },
     { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Sprechen Teil 2" }, "taskType": "spoken", "items": 4, "points": 25, "minutes": 7, "instructions": "Diskussion: Diskutieren Sie über die Frage auf dem Aufgabenblatt. Begründen Sie Ihre Meinung und reagieren Sie auf die Argumente." }
   ]

@@ -17,8 +17,62 @@
     { "id": "hoeren-2", "skill": "listening", "title": { "en": "Listening Part 2", "de": "Hören Teil 2" }, "taskType": "audio_questions", "items": 9, "points": 30, "minutes": 12, "instructions": "Sie hören ein Radiointerview. Sie hören den Text zweimal. Wählen Sie bei jeder Aufgabe 1 bis 9: stimmt, stimmt nicht oder dazu wird nichts gesagt.", "replays": 2 },
     { "id": "hoeren-3", "skill": "listening", "title": { "en": "Listening Part 3", "de": "Hören Teil 3" }, "taskType": "audio_questions", "items": 8, "points": 26.67, "minutes": 10, "instructions": "Sie hören ein Gespräch mit mehreren Personen. Sie hören den Text in vier Abschnitten jeweils einmal. Zu jedem Abschnitt gibt es zwei Aufgaben (1 bis 8). Wählen Sie bei jeder Aufgabe die richtige Lösung (a, b oder c).", "replays": 1 },
     { "id": "hoeren-4", "skill": "listening", "title": { "en": "Listening Part 4", "de": "Hören Teil 4" }, "taskType": "audio_questions", "items": 7, "points": 23.33, "minutes": 10, "instructions": "Sie hören einen Vortrag. Sie hören den Text zweimal. Wählen Sie bei jeder Aufgabe 1 bis 7 die richtige Lösung (a, b oder c).", "replays": 2 },
-    { "id": "schreiben-1", "skill": "writing", "title": { "en": "Writing Part 1", "de": "Schreiben Teil 1" }, "taskType": "letter", "items": 4, "points": 60, "minutes": 50, "instructions": "Schreiben Sie einen Diskussionsbeitrag für ein Internetforum (ca. 230 Wörter). Behandeln Sie alle vier Inhaltspunkte." },
-    { "id": "schreiben-2", "skill": "writing", "title": { "en": "Writing Part 2", "de": "Schreiben Teil 2" }, "taskType": "letter", "items": 4, "points": 40, "minutes": 25, "instructions": "Schreiben Sie eine (halb-)formelle E-Mail (ca. 120 Wörter). Behandeln Sie alle vier Inhaltspunkte und achten Sie auf einen angemessenen, höflichen Stil." },
+    { "id": "schreiben-1", "skill": "writing", "title": { "en": "Writing Part 1", "de": "Schreiben Teil 1" }, "taskType": "letter", "items": 4, "points": 60, "minutes": 50, "choices": 1, "wordTarget": { "min": 184, "max": 276 },
+      "rubric": { "criteria": [
+      { "id": "erfuellung", "name": { "en": "Task fulfilment", "de": "Erfüllung" }, "points": { "A": 15, "B": 11.25, "C": 7.5, "D": 3.75, "E": 0 }, "descriptors": {
+        "A": "Alle vier Inhaltspunkte werden differenziert und überzeugend ausgeführt; Textsorte, Register und Umfang passen.",
+        "B": "Alle Inhaltspunkte kommen vor, einer bleibt aber knapp oder allgemein.",
+        "C": "Ein Inhaltspunkt fehlt, oder mehrere werden nur oberflächlich behandelt.",
+        "D": "Nur ein Teil der Aufgabe wird behandelt, oder der Text ist deutlich zu kurz.",
+        "E": "Die Aufgabe wird nicht erfüllt: Der Text geht am Thema vorbei oder ist kaum vorhanden." } },
+      { "id": "kohaerenz", "name": { "en": "Coherence", "de": "Kohärenz" }, "points": { "A": 15, "B": 11.25, "C": 7.5, "D": 3.75, "E": 0 }, "descriptors": {
+        "A": "Der Text ist klar und schlüssig aufgebaut; die Gedanken sind mit vielfältigen, präzise eingesetzten Konnektoren und Verweismitteln eng verknüpft.",
+        "B": "Der Text ist schlüssig aufgebaut; die Konnektoren wirken aber stellenweise mechanisch oder wiederholen sich.",
+        "C": "Der Aufbau ist stellenweise unklar, und Konnektoren werden wenig oder ungenau eingesetzt.",
+        "D": "Der Text ist kaum gegliedert, und die Aussagen stehen weitgehend ohne Konnektoren nebeneinander.",
+        "E": "Es ist kein Zusammenhang erkennbar." } },
+      { "id": "wortschatz", "name": { "en": "Vocabulary", "de": "Wortschatz" }, "points": { "A": 15, "B": 11.25, "C": 7.5, "D": 3.75, "E": 0 }, "descriptors": {
+        "A": "Der Wortschatz ist reichhaltig, idiomatisch und präzise; Fehler sind sehr selten.",
+        "B": "Der Wortschatz ist breit und meist präzise; einzelne Fehler oder Ungenauigkeiten stören nicht.",
+        "C": "Der Wortschatz ist für C1 oft zu allgemein oder ungenau; Fehler beeinträchtigen das Verständnis gelegentlich.",
+        "D": "Der Wortschatz ist begrenzt, und viele Fehler behindern das Verständnis.",
+        "E": "Der Wortschatz reicht für die Aufgabe nicht aus." } },
+      { "id": "strukturen", "name": { "en": "Structures", "de": "Strukturen" }, "points": { "A": 15, "B": 11.25, "C": 7.5, "D": 3.75, "E": 0 }, "descriptors": {
+        "A": "Ein breites Spektrum komplexer Strukturen wird sicher und fast fehlerfrei eingesetzt.",
+        "B": "Komplexe Strukturen werden überwiegend korrekt verwendet; einzelne Fehler stören nicht.",
+        "C": "Die Strukturen sind für C1 wenig abwechslungsreich, und Fehler beeinträchtigen das Verständnis gelegentlich.",
+        "D": "Viele Fehler auch in einfachen Strukturen behindern das Verständnis.",
+        "E": "Die Strukturen sind so fehlerhaft, dass der Text kaum verständlich ist." } }
+    ] },
+      "instructions": "Schreiben Sie einen Diskussionsbeitrag für ein Internetforum (ca. 230 Wörter). Behandeln Sie alle vier Inhaltspunkte." },
+    { "id": "schreiben-2", "skill": "writing", "title": { "en": "Writing Part 2", "de": "Schreiben Teil 2" }, "taskType": "letter", "items": 4, "points": 40, "minutes": 25, "choices": 1, "wordTarget": { "min": 96, "max": 144 },
+      "rubric": { "criteria": [
+      { "id": "erfuellung", "name": { "en": "Task fulfilment", "de": "Erfüllung" }, "points": { "A": 10, "B": 7.5, "C": 5, "D": 2.5, "E": 0 }, "descriptors": {
+        "A": "Alle vier Inhaltspunkte werden vollständig und passend zur Situation behandelt; Textsorte, höflicher (halb-)formeller Stil und Umfang passen.",
+        "B": "Alle Inhaltspunkte kommen vor, einer bleibt aber knapp oder unklar, oder Textsorte, höflicher (halb-)formeller Stil und Umfang passen nicht ganz.",
+        "C": "Ein Inhaltspunkt fehlt, oder mehrere bleiben sehr knapp.",
+        "D": "Nur ein Teil der Aufgabe wird behandelt, oder der Text ist deutlich zu kurz.",
+        "E": "Die Aufgabe wird nicht erfüllt: Der Text passt nicht zur Situation oder ist kaum vorhanden." } },
+      { "id": "kohaerenz", "name": { "en": "Coherence", "de": "Kohärenz" }, "points": { "A": 10, "B": 7.5, "C": 5, "D": 2.5, "E": 0 }, "descriptors": {
+        "A": "Der Text ist klar und schlüssig aufgebaut; die Gedanken sind mit vielfältigen, präzise eingesetzten Konnektoren und Verweismitteln eng verknüpft; Anrede, Einleitung, Schluss und Gruß passen zum Register.",
+        "B": "Der Text ist schlüssig aufgebaut; die Konnektoren wirken aber stellenweise mechanisch oder wiederholen sich.",
+        "C": "Der Aufbau ist stellenweise unklar, und Konnektoren werden wenig oder ungenau eingesetzt, oder Anrede bzw. Gruß fehlen.",
+        "D": "Der Text ist kaum gegliedert, und die Aussagen stehen weitgehend ohne Konnektoren nebeneinander.",
+        "E": "Es ist kein Zusammenhang erkennbar." } },
+      { "id": "wortschatz", "name": { "en": "Vocabulary", "de": "Wortschatz" }, "points": { "A": 10, "B": 7.5, "C": 5, "D": 2.5, "E": 0 }, "descriptors": {
+        "A": "Der Wortschatz ist reichhaltig, idiomatisch und präzise; Fehler sind sehr selten.",
+        "B": "Der Wortschatz ist breit und meist präzise; einzelne Fehler oder Ungenauigkeiten stören nicht.",
+        "C": "Der Wortschatz ist für C1 oft zu allgemein oder ungenau; Fehler beeinträchtigen das Verständnis gelegentlich.",
+        "D": "Der Wortschatz ist begrenzt, und viele Fehler behindern das Verständnis.",
+        "E": "Der Wortschatz reicht für die Aufgabe nicht aus." } },
+      { "id": "strukturen", "name": { "en": "Structures", "de": "Strukturen" }, "points": { "A": 10, "B": 7.5, "C": 5, "D": 2.5, "E": 0 }, "descriptors": {
+        "A": "Ein breites Spektrum komplexer Strukturen wird sicher und fast fehlerfrei eingesetzt.",
+        "B": "Komplexe Strukturen werden überwiegend korrekt verwendet; einzelne Fehler stören nicht.",
+        "C": "Die Strukturen sind für C1 wenig abwechslungsreich, und Fehler beeinträchtigen das Verständnis gelegentlich.",
+        "D": "Viele Fehler auch in einfachen Strukturen behindern das Verständnis.",
+        "E": "Die Strukturen sind so fehlerhaft, dass der Text kaum verständlich ist." } }
+    ] },
+      "instructions": "Schreiben Sie eine (halb-)formelle E-Mail (ca. 120 Wörter). Behandeln Sie alle vier Inhaltspunkte und achten Sie auf einen angemessenen, höflichen Stil." },
     { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Sprechen Teil 1" }, "taskType": "spoken", "items": 4, "points": 50, "minutes": 15, "instructions": "Vortrag halten: Wählen Sie eines von zwei Themen und halten Sie einen Vortrag (ca. 5 Minuten). Gehen Sie auf alle vier Punkte ein. Beantworten Sie danach die Fragen Ihres Partners / Ihrer Partnerin (ca. 2 Minuten)." },
     { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Sprechen Teil 2" }, "taskType": "spoken", "items": 4, "points": 50, "minutes": 5, "instructions": "Diskussion führen: Diskutieren Sie mit Ihrem Partner / Ihrer Partnerin über die kontroverse Frage. Gehen Sie auf die vier Stichpunkte ein, tauschen Sie Argumente aus und kommen Sie zu einer Einigung oder Zusammenfassung." }
   ]

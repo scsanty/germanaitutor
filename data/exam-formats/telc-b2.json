@@ -17,7 +17,25 @@
     { "id": "hoeren-1", "skill": "listening", "title": { "en": "Listening Part 1", "de": "Hörverstehen Teil 1" }, "taskType": "audio_questions", "items": 5, "points": 25, "minutes": 5, "instructions": "Sie hören jetzt fünf kurze Texte. Sie hören jeden Text nur einmal. Entscheiden Sie, ob die Aussagen 1–5 richtig oder falsch sind.", "replays": 1 },
     { "id": "hoeren-2", "skill": "listening", "title": { "en": "Listening Part 2", "de": "Hörverstehen Teil 2" }, "taskType": "audio_questions", "items": 10, "points": 25, "minutes": 9, "instructions": "Sie hören jetzt ein Interview. Sie hören das Interview zweimal. Entscheiden Sie, ob die Aussagen 1–10 richtig oder falsch sind.", "replays": 2 },
     { "id": "hoeren-3", "skill": "listening", "title": { "en": "Listening Part 3", "de": "Hörverstehen Teil 3" }, "taskType": "audio_questions", "items": 5, "points": 25, "minutes": 6, "instructions": "Sie hören jetzt fünf kurze Texte. Sie hören jeden Text zweimal. Entscheiden Sie, ob die Aussagen 1–5 richtig oder falsch sind.", "replays": 2 },
-    { "id": "schreiben", "skill": "writing", "title": { "en": "Writing", "de": "Schriftlicher Ausdruck" }, "taskType": "letter", "items": 4, "points": 45, "minutes": 30, "instructions": "Wählen Sie Aufgabe A oder Aufgabe B. Schreiben Sie eine halbformelle E-Mail als Antwort auf eine Anzeige (mindestens 150 Wörter). Behandeln Sie die vier Leitpunkte und achten Sie auf eine passende Reihenfolge, Anrede und Gruß." },
+    { "id": "schreiben", "skill": "writing", "title": { "en": "Writing", "de": "Schriftlicher Ausdruck" }, "taskType": "letter", "items": 3, "points": 45, "minutes": 30, "choices": 2, "wordTarget": { "min": 150, "max": 200 },
+      "rubric": { "criteria": [
+      { "id": "aufgabe", "name": { "en": "Task completion", "de": "Aufgabenbewältigung" }, "points": { "A": 15, "B": 10, "C": 5, "D": 0 }, "descriptors": {
+        "A": "Alle vier Leitpunkte werden ausführlich und mit Bezug auf die Anzeige behandelt; Textsorte und halbformelles Register passen.",
+        "B": "Alle Leitpunkte kommen vor, aber einer bleibt knapp, oder das Register passt stellenweise nicht.",
+        "C": "Ein oder zwei Leitpunkte fehlen, oder die meisten werden nur gestreift.",
+        "D": "Die Aufgabe wird verfehlt: Der Text passt nicht zur Situation, oder kaum ein Leitpunkt wird behandelt." } },
+      { "id": "gestaltung", "name": { "en": "Communicative design", "de": "Kommunikative Gestaltung" }, "points": { "A": 15, "B": 10, "C": 5, "D": 0 }, "descriptors": {
+        "A": "Die E-Mail ist logisch aufgebaut, die Leitpunkte stehen in einer sinnvollen Reihenfolge, und Sätze und Absätze sind mit vielfältigen Konnektoren (z. B. darüber hinaus, allerdings, folglich) verbunden; Anrede, Einleitung, Schluss und Gruß sind angemessen.",
+        "B": "Der Aufbau ist im Ganzen nachvollziehbar; die Konnektoren sind eher einförmig, oder Übergänge, Einleitung oder Schluss wirken stellenweise holprig.",
+        "C": "Der Gedankengang ist oft sprunghaft, Konnektoren fehlen häufig oder werden falsch verwendet, oder Anrede und Gruß passen nicht.",
+        "D": "Der Text hat keinen erkennbaren Aufbau; die Sätze stehen ohne Konnektoren unverbunden nebeneinander." } },
+      { "id": "richtigkeit", "name": { "en": "Formal accuracy", "de": "Formale Richtigkeit" }, "points": { "A": 15, "B": 10, "C": 5, "D": 0 }, "descriptors": {
+        "A": "Wortschatz und Satzbau sind abwechslungsreich und dem Niveau B2 angemessen; Fehler sind selten und stören nie.",
+        "B": "Es gibt einige Fehler, auch bei komplexeren Strukturen, aber das Verständnis wird kaum beeinträchtigt.",
+        "C": "Häufige Fehler und ein eingeschränkter Wortschatz erschweren das Verständnis stellenweise.",
+        "D": "Die Fehler sind so zahlreich, dass der Text über weite Strecken unverständlich ist." } }
+    ] },
+      "instructions": "Wählen Sie Aufgabe A oder Aufgabe B. Schreiben Sie eine halbformelle E-Mail als Antwort auf eine Anzeige (mindestens 150 Wörter). Behandeln Sie die vier Leitpunkte und achten Sie auf eine passende Reihenfolge, Anrede und Gruß." },
     { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Mündlicher Ausdruck Teil 1" }, "taskType": "spoken", "items": 3, "points": 25, "minutes": 5, "instructions": "Über Erfahrungen sprechen: Sprechen Sie über das Thema, das Sie vorbereitet haben, und beantworten Sie anschließend die Fragen Ihres Partners / Ihrer Partnerin." },
     { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Mündlicher Ausdruck Teil 2" }, "taskType": "spoken", "items": 3, "points": 25, "minutes": 5, "instructions": "Diskussion: Geben Sie die Hauptaussagen des Zeitungsartikels wieder, den Sie in der Vorbereitungszeit gelesen haben. Diskutieren Sie mit Ihrem Partner / Ihrer Partnerin darüber, begründen Sie Ihre Meinung und reagieren Sie auf seine / ihre Argumente." },
     { "id": "sprechen-3", "skill": "speaking", "title": { "en": "Speaking Part 3", "de": "Mündlicher Ausdruck Teil 3" }, "taskType": "spoken", "items": 3, "points": 25, "minutes": 5, "instructions": "Gemeinsam etwas planen: Planen Sie zusammen mit Ihrem Partner / Ihrer Partnerin eine Aktivität. Bringen Sie eigene Ideen ein, machen Sie Vorschläge, reagieren Sie auf die Vorschläge und einigen Sie sich." }

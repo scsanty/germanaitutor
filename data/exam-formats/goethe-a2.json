@@ -17,8 +17,62 @@
     { "id": "hoeren-2", "skill": "listening", "title": { "en": "Listening Part 2", "de": "Hören Teil 2" }, "taskType": "audio_questions", "items": 5, "points": 5, "minutes": 7, "instructions": "Sie hören ein Gespräch. Sie hören den Text einmal. Wählen Sie für die Aufgaben 1 bis 5 ein passendes Bild aus a bis i. Wählen Sie jeden Buchstaben nur einmal.", "replays": 1 },
     { "id": "hoeren-3", "skill": "listening", "title": { "en": "Listening Part 3", "de": "Hören Teil 3" }, "taskType": "audio_questions", "items": 5, "points": 5, "minutes": 7, "instructions": "Sie hören fünf kurze Gespräche. Sie hören jeden Text einmal. Welche Lösung (a, b oder c) ist richtig?", "replays": 1 },
     { "id": "hoeren-4", "skill": "listening", "title": { "en": "Listening Part 4", "de": "Hören Teil 4" }, "taskType": "audio_questions", "items": 5, "points": 5, "minutes": 8, "instructions": "Sie hören ein Interview. Sie hören den Text zweimal. Entscheiden Sie: Ja oder Nein?", "replays": 2 },
-    { "id": "schreiben-1", "skill": "writing", "title": { "en": "Writing Part 1", "de": "Schreiben Teil 1" }, "taskType": "letter", "items": 3, "points": 10, "minutes": 12, "instructions": "Schreiben Sie eine SMS (20–30 Wörter). Schreiben Sie zu allen drei Punkten." },
-    { "id": "schreiben-2", "skill": "writing", "title": { "en": "Writing Part 2", "de": "Schreiben Teil 2" }, "taskType": "letter", "items": 3, "points": 10, "minutes": 18, "instructions": "Schreiben Sie eine E-Mail (30–40 Wörter). Schreiben Sie zu allen drei Punkten. Vergessen Sie nicht die Anrede und den Gruß." },
+    { "id": "schreiben-1", "skill": "writing", "title": { "en": "Writing Part 1", "de": "Schreiben Teil 1" }, "taskType": "letter", "items": 4, "points": 10, "minutes": 12, "choices": 1, "wordTarget": { "min": 20, "max": 30 },
+      "rubric": { "criteria": [
+      { "id": "erfuellung", "name": { "en": "Task fulfilment", "de": "Erfüllung" }, "points": { "A": 4, "B": 3, "C": 2, "D": 1, "E": 0 }, "descriptors": {
+        "A": "Alle drei Inhaltspunkte werden verständlich behandelt; Textsorte (SMS) und Umfang passen.",
+        "B": "Alle Inhaltspunkte kommen vor, einer bleibt aber knapp oder unklar, oder Textsorte (SMS) und Umfang passen nicht ganz.",
+        "C": "Ein Inhaltspunkt fehlt, oder mehrere bleiben sehr knapp.",
+        "D": "Nur ein Teil der Aufgabe wird behandelt, oder der Text ist deutlich zu kurz.",
+        "E": "Die Aufgabe wird nicht erfüllt: Der Text passt nicht zur Situation oder ist kaum vorhanden." } },
+      { "id": "kohaerenz", "name": { "en": "Coherence", "de": "Kohärenz" }, "points": { "A": 2, "B": 1.5, "C": 1, "D": 0.5, "E": 0 }, "descriptors": {
+        "A": "Die Sätze sind mit einfachen Konnektoren (z. B. und, aber, denn, dann) sinnvoll verbunden.",
+        "B": "Die Sätze sind meist verbunden; Konnektoren fehlen manchmal oder werden falsch verwendet.",
+        "C": "Es gibt nur vereinzelt Konnektoren; die Sätze stehen meist unverbunden nebeneinander.",
+        "D": "Ein Zusammenhang zwischen den Sätzen ist kaum erkennbar.",
+        "E": "Es ist kein Zusammenhang erkennbar." } },
+      { "id": "wortschatz", "name": { "en": "Vocabulary", "de": "Wortschatz" }, "points": { "A": 2, "B": 1.5, "C": 1, "D": 0.5, "E": 0 }, "descriptors": {
+        "A": "Der Wortschatz reicht für die Aufgabe gut aus; kleine Fehler stören das Verständnis nicht.",
+        "B": "Der Wortschatz reicht meist aus; einige Fehler stören kaum.",
+        "C": "Der Wortschatz ist sehr einfach, und Fehler erschweren stellenweise das Verständnis.",
+        "D": "Fehlende Wörter und viele Fehler behindern das Verständnis stark.",
+        "E": "Der Wortschatz reicht für die Aufgabe nicht aus." } },
+      { "id": "strukturen", "name": { "en": "Structures", "de": "Strukturen" }, "points": { "A": 2, "B": 1.5, "C": 1, "D": 0.5, "E": 0 }, "descriptors": {
+        "A": "Einfache Sätze und Strukturen (z. B. Verbstellung, Perfekt, Modalverben) sind weitgehend korrekt.",
+        "B": "Einfache Strukturen sind meist korrekt; Fehler stören das Verständnis kaum.",
+        "C": "Häufige Fehler in einfachen Strukturen erschweren stellenweise das Verständnis.",
+        "D": "Viele Fehler behindern das Verständnis stark.",
+        "E": "Die Sätze sind kaum zu verstehen." } }
+    ] },
+      "instructions": "Schreiben Sie eine SMS (20–30 Wörter). Schreiben Sie zu allen drei Punkten." },
+    { "id": "schreiben-2", "skill": "writing", "title": { "en": "Writing Part 2", "de": "Schreiben Teil 2" }, "taskType": "letter", "items": 4, "points": 10, "minutes": 18, "choices": 1, "wordTarget": { "min": 30, "max": 40 },
+      "rubric": { "criteria": [
+      { "id": "erfuellung", "name": { "en": "Task fulfilment", "de": "Erfüllung" }, "points": { "A": 4, "B": 3, "C": 2, "D": 1, "E": 0 }, "descriptors": {
+        "A": "Alle drei Inhaltspunkte werden verständlich behandelt; Textsorte, Register und Umfang passen.",
+        "B": "Alle Inhaltspunkte kommen vor, einer bleibt aber knapp oder unklar, oder Textsorte, Register und Umfang passen nicht ganz.",
+        "C": "Ein Inhaltspunkt fehlt, oder mehrere bleiben sehr knapp.",
+        "D": "Nur ein Teil der Aufgabe wird behandelt, oder der Text ist deutlich zu kurz.",
+        "E": "Die Aufgabe wird nicht erfüllt: Der Text passt nicht zur Situation oder ist kaum vorhanden." } },
+      { "id": "kohaerenz", "name": { "en": "Coherence", "de": "Kohärenz" }, "points": { "A": 2, "B": 1.5, "C": 1, "D": 0.5, "E": 0 }, "descriptors": {
+        "A": "Die Sätze sind mit einfachen Konnektoren (z. B. und, aber, denn, dann) sinnvoll verbunden; Anrede und Gruß passen.",
+        "B": "Die Sätze sind meist verbunden; Konnektoren fehlen manchmal oder werden falsch verwendet.",
+        "C": "Es gibt nur vereinzelt Konnektoren; die Sätze stehen meist unverbunden nebeneinander, oder Anrede bzw. Gruß fehlen.",
+        "D": "Ein Zusammenhang zwischen den Sätzen ist kaum erkennbar.",
+        "E": "Es ist kein Zusammenhang erkennbar." } },
+      { "id": "wortschatz", "name": { "en": "Vocabulary", "de": "Wortschatz" }, "points": { "A": 2, "B": 1.5, "C": 1, "D": 0.5, "E": 0 }, "descriptors": {
+        "A": "Der Wortschatz reicht für die Aufgabe gut aus; kleine Fehler stören das Verständnis nicht.",
+        "B": "Der Wortschatz reicht meist aus; einige Fehler stören kaum.",
+        "C": "Der Wortschatz ist sehr einfach, und Fehler erschweren stellenweise das Verständnis.",
+        "D": "Fehlende Wörter und viele Fehler behindern das Verständnis stark.",
+        "E": "Der Wortschatz reicht für die Aufgabe nicht aus." } },
+      { "id": "strukturen", "name": { "en": "Structures", "de": "Strukturen" }, "points": { "A": 2, "B": 1.5, "C": 1, "D": 0.5, "E": 0 }, "descriptors": {
+        "A": "Einfache Sätze und Strukturen (z. B. Verbstellung, Perfekt, Modalverben) sind weitgehend korrekt.",
+        "B": "Einfache Strukturen sind meist korrekt; Fehler stören das Verständnis kaum.",
+        "C": "Häufige Fehler in einfachen Strukturen erschweren stellenweise das Verständnis.",
+        "D": "Viele Fehler behindern das Verständnis stark.",
+        "E": "Die Sätze sind kaum zu verstehen." } }
+    ] },
+      "instructions": "Schreiben Sie eine E-Mail (30–40 Wörter). Schreiben Sie zu allen drei Punkten. Vergessen Sie nicht die Anrede und den Gruß." },
     { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Sprechen Teil 1" }, "taskType": "spoken", "items": 4, "points": 4, "minutes": 4, "instructions": "Fragen zur Person stellen und beantworten: Ziehen Sie vier Karten. Stellen Sie mit jedem Wort eine Frage und antworten Sie auf die Fragen Ihres Partners / Ihrer Partnerin." },
     { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Sprechen Teil 2" }, "taskType": "spoken", "items": 4, "points": 8, "minutes": 5, "instructions": "Über das eigene Leben erzählen: Sprechen Sie über das Thema auf Ihrer Karte. Die vier Stichpunkte helfen Ihnen." },
     { "id": "sprechen-3", "skill": "speaking", "title": { "en": "Speaking Part 3", "de": "Sprechen Teil 3" }, "taskType": "spoken", "items": 4, "points": 13, "minutes": 6, "instructions": "Gemeinsam etwas planen: Sie möchten sich mit Ihrem Partner / Ihrer Partnerin treffen. Finden Sie mit Hilfe Ihres Kalenders einen gemeinsamen Termin." }

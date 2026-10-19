@@ -368,11 +368,12 @@ describe('examPracticeService letters', () => {
     await expect(service.explain(run.attemptId, 0, 'Warum?')).rejects.toMatchObject({ kind: 'bad_request' });
   });
 
-  it('has no runner for a letter part without a rubric yet', async () => {
+  // Every bundled letter part has a rubric (T10), so each one has a runner.
+  it('runs every letter part of a format, now that each has a rubric', async () => {
     const { db, service } = setup();
     createProfileService(db).updateProfile({ activeTrack: 'goethe' });
-    const parts = (await service.overview()).parts;
-    expect(parts.find((p) => p.part.id === 'schreiben-1')).toMatchObject({ runnable: false, mockOnly: false });
-    await expect(service.start('goethe-b1', 'schreiben-1')).rejects.toMatchObject({ kind: 'unavailable' });
+    const letters = (await service.overview()).parts.filter((p) => p.part.taskType === 'letter');
+    expect(letters.map((p) => p.part.id)).toEqual(['schreiben-1', 'schreiben-2', 'schreiben-3']);
+    for (const p of letters) expect(p, p.part.id).toMatchObject({ runnable: true, mockOnly: false });
   });
 });

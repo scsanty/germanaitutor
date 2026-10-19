@@ -16,7 +16,26 @@
     { "id": "lesen-2", "skill": "reading", "title": { "en": "Reading Part 2", "de": "Lesen Teil 2" }, "taskType": "passage_questions", "items": 5, "points": 5, "minutes": 9, "instructions": "Lesen Sie die Texte und die Aufgaben 1 bis 5. Wo finden Sie Informationen? Kreuzen Sie an: a oder b." },
     { "id": "lesen-3", "skill": "reading", "title": { "en": "Reading Part 3", "de": "Lesen Teil 3" }, "taskType": "passage_questions", "items": 5, "points": 5, "minutes": 8, "instructions": "Lesen Sie die Texte und die Aufgaben 1 bis 5. Kreuzen Sie an: Richtig oder Falsch." },
     { "id": "schreiben-1", "skill": "writing", "title": { "en": "Writing Part 1", "de": "Schreiben Teil 1" }, "taskType": "cloze", "items": 5, "points": 5, "minutes": 7, "instructions": "Füllen Sie das Formular aus. Im Formular fehlen fünf Informationen. Schreiben Sie die fehlenden Informationen in die Felder 1 bis 5." },
-    { "id": "schreiben-2", "skill": "writing", "title": { "en": "Writing Part 2", "de": "Schreiben Teil 2" }, "taskType": "letter", "items": 4, "points": 10, "minutes": 13, "instructions": "Schreiben Sie eine kurze Mitteilung (ca. 30 Wörter). Schreiben Sie zu jedem der drei Punkte ein bis zwei Sätze. Vergessen Sie nicht die Anrede und den Gruß." },
+    { "id": "schreiben-2", "skill": "writing", "title": { "en": "Writing Part 2", "de": "Schreiben Teil 2" }, "taskType": "letter", "items": 4, "points": 10, "minutes": 13, "choices": 1, "wordTarget": { "min": 24, "max": 36 },
+      "rubric": { "criteria": [
+      { "id": "punkt-1", "name": { "en": "Task completion: content point 1", "de": "Aufgabenerfüllung: Inhaltspunkt 1" }, "points": { "A": 3, "B": 1.5, "C": 0 }, "descriptors": {
+        "A": "Der erste Punkt der Aufgabe wird inhaltlich passend und verständlich behandelt.",
+        "B": "Der erste Punkt der Aufgabe wird nur teilweise behandelt, oder Fehler machen ihn schwer verständlich.",
+        "C": "Der erste Punkt der Aufgabe fehlt oder ist nicht zu verstehen." } },
+      { "id": "punkt-2", "name": { "en": "Task completion: content point 2", "de": "Aufgabenerfüllung: Inhaltspunkt 2" }, "points": { "A": 3, "B": 1.5, "C": 0 }, "descriptors": {
+        "A": "Der zweite Punkt der Aufgabe wird inhaltlich passend und verständlich behandelt.",
+        "B": "Der zweite Punkt der Aufgabe wird nur teilweise behandelt, oder Fehler machen ihn schwer verständlich.",
+        "C": "Der zweite Punkt der Aufgabe fehlt oder ist nicht zu verstehen." } },
+      { "id": "punkt-3", "name": { "en": "Task completion: content point 3", "de": "Aufgabenerfüllung: Inhaltspunkt 3" }, "points": { "A": 3, "B": 1.5, "C": 0 }, "descriptors": {
+        "A": "Der dritte Punkt der Aufgabe wird inhaltlich passend und verständlich behandelt.",
+        "B": "Der dritte Punkt der Aufgabe wird nur teilweise behandelt, oder Fehler machen ihn schwer verständlich.",
+        "C": "Der dritte Punkt der Aufgabe fehlt oder ist nicht zu verstehen." } },
+      { "id": "gestaltung", "name": { "en": "Communicative design", "de": "Kommunikative Gestaltung" }, "points": { "A": 1, "B": 0.5, "C": 0 }, "descriptors": {
+        "A": "Anfang und Gruß passen zur Situation, und die Sätze sind mit einfachen Konnektoren (z. B. und, aber) verbunden.",
+        "B": "Anfang oder Gruß fehlt oder passt nicht, oder die Sätze stehen ohne Konnektoren nebeneinander.",
+        "C": "Anfang und Gruß fehlen, und der Text ist nicht als Mitteilung erkennbar." } }
+    ] },
+      "instructions": "Schreiben Sie eine kurze Mitteilung (ca. 30 Wörter). Schreiben Sie zu jedem der drei Punkte ein bis zwei Sätze. Vergessen Sie nicht die Anrede und den Gruß." },
     { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Sprechen Teil 1" }, "taskType": "spoken", "items": 3, "points": 3, "minutes": 3, "instructions": "Sich vorstellen: Stellen Sie sich vor. Sprechen Sie über Name, Alter, Land, Wohnort, Sprachen, Beruf und Hobby. Buchstabieren Sie danach ein Wort und nennen Sie eine Zahl." },
     { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Sprechen Teil 2" }, "taskType": "spoken", "items": 4, "points": 6, "minutes": 6, "instructions": "Um Informationen bitten und Informationen geben: Ziehen Sie eine Karte, stellen Sie eine Frage zum Thema und antworten Sie auf die Frage Ihres Partners / Ihrer Partnerin." },
     { "id": "sprechen-3", "skill": "speaking", "title": { "en": "Speaking Part 3", "de": "Sprechen Teil 3" }, "taskType": "spoken", "items": 4, "points": 6, "minutes": 6, "instructions": "Bitten formulieren und darauf reagieren: Ziehen Sie eine Karte, formulieren Sie eine Bitte und reagieren Sie auf die Bitte Ihres Partners / Ihrer Partnerin." }

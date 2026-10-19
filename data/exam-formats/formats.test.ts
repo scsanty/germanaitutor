@@ -53,18 +53,35 @@ describe('bundled exam formats', () => {
     }
   });
 
-  // TODO(T10): drop the 'rubric' in part filter; every letter part must have one by then.
-  it('gives every letter part that has a rubric a valid rubric, a word target and a choice count', () => {
-    const letters = listFormats().flatMap((f) => f.parts.filter((p) => p.taskType === 'letter' && 'rubric' in p).map((p) => [f, p] as const));
-    expect(letters.length).toBeGreaterThan(0);
+  // A letter part without a rubric has no runner, so none may stay unrunnable unnoticed.
+  it('gives every letter part a valid rubric, a word target and a choice count', () => {
+    const letters = listFormats().flatMap((f) => f.parts.filter((p) => p.taskType === 'letter').map((p) => [f, p] as const));
+    expect(letters.length).toBe(22);
     for (const [f, p] of letters) {
       const where = `${f.id}/${p.id}`;
+      expect(p.rubric, where).toBeDefined();
       expect(rubricProblems(p.rubric!), where).toEqual([]);
       expect(rubricMaxPoints(p.rubric!), where).toBe(p.points);
       expect(p.items, where).toBe(p.rubric!.criteria.length);
       expect(p.wordTarget!.min, where).toBeGreaterThan(0);
       expect(p.wordTarget!.max, where).toBeGreaterThan(p.wordTarget!.min);
       expect([1, 2], where).toContain(p.choices);
+    }
+  });
+
+  // telc B1, B2 and C1 offer two tasks to choose from; every other letter part has one.
+  it('offers a choice of two tasks only in telc B1, B2 and C1', () => {
+    const two = listFormats().flatMap((f) => f.parts.filter((p) => p.taskType === 'letter' && p.choices === 2).map((p) => `${f.id}/${p.id}`));
+    expect(two).toEqual(['telc-b1/schreiben', 'telc-b2/schreiben', 'telc-c1/schreiben']);
+  });
+
+  // The anchors grade cohesion and connectors, so the rubric's text-design criterion must name them too.
+  it('names cohesion and connectors in every letter rubric', () => {
+    for (const f of listFormats()) {
+      for (const p of f.parts.filter((x) => x.taskType === 'letter')) {
+        const text = p.rubric!.criteria.map((c) => Object.values(c.descriptors).join(' ')).join(' ');
+        expect(text, `${f.id}/${p.id}`).toContain("Konnektoren");
+      }
     }
   });
 

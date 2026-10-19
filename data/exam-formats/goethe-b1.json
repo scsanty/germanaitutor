@@ -18,9 +18,90 @@
     { "id": "hoeren-2", "skill": "listening", "title": { "en": "Listening Part 2", "de": "Hören Teil 2" }, "taskType": "audio_questions", "items": 5, "points": 16.67, "minutes": 8, "instructions": "Sie hören einen Text. Sie hören den Text einmal. Zu diesem Text lösen Sie fünf Aufgaben. Welche Lösung (a, b oder c) ist richtig?", "replays": 1 },
     { "id": "hoeren-3", "skill": "listening", "title": { "en": "Listening Part 3", "de": "Hören Teil 3" }, "taskType": "audio_questions", "items": 7, "points": 23.33, "minutes": 8, "instructions": "Sie hören ein Gespräch. Sie hören das Gespräch einmal. Sind die Aussagen Richtig oder Falsch?", "replays": 1 },
     { "id": "hoeren-4", "skill": "listening", "title": { "en": "Listening Part 4", "de": "Hören Teil 4" }, "taskType": "audio_questions", "items": 8, "points": 26.67, "minutes": 12, "instructions": "Sie hören eine Diskussion. Sie hören die Diskussion zweimal. Wer sagt was? Ordnen Sie die Aussagen zu: Moderator/in, Gast 1 oder Gast 2.", "replays": 2 },
-    { "id": "schreiben-1", "skill": "writing", "title": { "en": "Writing Part 1", "de": "Schreiben Teil 1" }, "taskType": "letter", "items": 4, "points": 40, "minutes": 20, "instructions": "Schreiben Sie eine E-Mail an einen Freund / eine Freundin (ca. 80 Wörter). Behandeln Sie alle drei Punkte. Denken Sie an eine passende Einleitung und einen passenden Schluss." },
-    { "id": "schreiben-2", "skill": "writing", "title": { "en": "Writing Part 2", "de": "Schreiben Teil 2" }, "taskType": "letter", "items": 4, "points": 40, "minutes": 25, "instructions": "Sie haben im Internet einen Diskussionsbeitrag gelesen. Schreiben Sie Ihre Meinung dazu (ca. 80 Wörter)." },
-    { "id": "schreiben-3", "skill": "writing", "title": { "en": "Writing Part 3", "de": "Schreiben Teil 3" }, "taskType": "letter", "items": 4, "points": 20, "minutes": 15, "instructions": "Schreiben Sie eine höfliche E-Mail (ca. 40 Wörter). Entschuldigen Sie sich, erklären Sie den Grund und denken Sie an Anrede und Gruß." },
+    { "id": "schreiben-1", "skill": "writing", "title": { "en": "Writing Part 1", "de": "Schreiben Teil 1" }, "taskType": "letter", "items": 4, "points": 40, "minutes": 20, "choices": 1, "wordTarget": { "min": 64, "max": 96 },
+      "rubric": { "criteria": [
+      { "id": "erfuellung", "name": { "en": "Task fulfilment", "de": "Erfüllung" }, "points": { "A": 10, "B": 7.5, "C": 5, "D": 2.5, "E": 0 }, "descriptors": {
+        "A": "Alle drei Inhaltspunkte werden angemessen behandelt; Textsorte, informelles Register und Umfang passen.",
+        "B": "Alle Inhaltspunkte kommen vor, einer bleibt aber knapp oder unklar, oder Textsorte, informelles Register und Umfang passen nicht ganz.",
+        "C": "Ein Inhaltspunkt fehlt, oder mehrere bleiben sehr knapp.",
+        "D": "Nur ein Teil der Aufgabe wird behandelt, oder der Text ist deutlich zu kurz.",
+        "E": "Die Aufgabe wird nicht erfüllt: Der Text passt nicht zur Situation oder ist kaum vorhanden." } },
+      { "id": "kohaerenz", "name": { "en": "Coherence", "de": "Kohärenz" }, "points": { "A": 10, "B": 7.5, "C": 5, "D": 2.5, "E": 0 }, "descriptors": {
+        "A": "Der Text ist zusammenhängend und gut gegliedert; die Sätze sind mit passenden Konnektoren (z. B. weil, deshalb, trotzdem, außerdem) und Verweiswörtern verbunden; Anrede und Gruß passen.",
+        "B": "Der Text ist überwiegend zusammenhängend; Konnektoren werden meist richtig, aber eher einförmig eingesetzt.",
+        "C": "Der Zusammenhang ist stellenweise unklar; es gibt nur wenige, einfache Konnektoren, oder Anrede bzw. Gruß fehlen.",
+        "D": "Der Text besteht weitgehend aus unverbundenen Einzelsätzen ohne Konnektoren.",
+        "E": "Es ist kein Zusammenhang erkennbar." } },
+      { "id": "wortschatz", "name": { "en": "Vocabulary", "de": "Wortschatz" }, "points": { "A": 10, "B": 7.5, "C": 5, "D": 2.5, "E": 0 }, "descriptors": {
+        "A": "Der Wortschatz ist für B1 breit und passend; kleine Fehler stören das Verständnis nicht.",
+        "B": "Der Wortschatz reicht für die Aufgabe; einige Fehler oder Wiederholungen stören kaum.",
+        "C": "Der Wortschatz ist begrenzt, und Fehler erschweren das Verständnis stellenweise.",
+        "D": "Der Wortschatz ist sehr begrenzt, und viele Fehler behindern das Verständnis.",
+        "E": "Der Wortschatz reicht für die Aufgabe nicht aus." } },
+      { "id": "strukturen", "name": { "en": "Structures", "de": "Strukturen" }, "points": { "A": 10, "B": 7.5, "C": 5, "D": 2.5, "E": 0 }, "descriptors": {
+        "A": "Einfache und auch komplexere Strukturen (z. B. Nebensätze) werden weitgehend korrekt verwendet.",
+        "B": "Die Strukturen sind meist korrekt; Fehler bei komplexeren Sätzen stören das Verständnis kaum.",
+        "C": "Es werden vor allem einfache Strukturen verwendet, mit häufigen Fehlern, die stellenweise das Verständnis erschweren.",
+        "D": "Viele Fehler auch in einfachen Strukturen behindern das Verständnis.",
+        "E": "Die Strukturen sind so fehlerhaft, dass der Text kaum verständlich ist." } }
+    ] },
+      "instructions": "Schreiben Sie eine E-Mail an einen Freund / eine Freundin (ca. 80 Wörter). Behandeln Sie alle drei Punkte. Denken Sie an eine passende Einleitung und einen passenden Schluss." },
+    { "id": "schreiben-2", "skill": "writing", "title": { "en": "Writing Part 2", "de": "Schreiben Teil 2" }, "taskType": "letter", "items": 4, "points": 40, "minutes": 25, "choices": 1, "wordTarget": { "min": 64, "max": 96 },
+      "rubric": { "criteria": [
+      { "id": "erfuellung", "name": { "en": "Task fulfilment", "de": "Erfüllung" }, "points": { "A": 10, "B": 7.5, "C": 5, "D": 2.5, "E": 0 }, "descriptors": {
+        "A": "Die eigene Meinung zum Thema wird klar ausgedrückt und begründet; der Bezug zum Diskussionsbeitrag ist erkennbar, und Register und Umfang passen.",
+        "B": "Die Meinung ist erkennbar, die Begründung bleibt aber knapp, oder der Umfang passt nicht ganz.",
+        "C": "Die Meinung wird kaum begründet, oder der Bezug zum Thema ist nur teilweise erkennbar.",
+        "D": "Eine eigene Meinung ist kaum erkennbar, oder der Text ist deutlich zu kurz.",
+        "E": "Die Aufgabe wird nicht erfüllt: Der Text geht am Thema vorbei oder ist kaum vorhanden." } },
+      { "id": "kohaerenz", "name": { "en": "Coherence", "de": "Kohärenz" }, "points": { "A": 10, "B": 7.5, "C": 5, "D": 2.5, "E": 0 }, "descriptors": {
+        "A": "Der Text ist zusammenhängend und gut gegliedert; die Sätze sind mit passenden Konnektoren (z. B. weil, deshalb, trotzdem, außerdem) und Verweiswörtern verbunden.",
+        "B": "Der Text ist überwiegend zusammenhängend; Konnektoren werden meist richtig, aber eher einförmig eingesetzt.",
+        "C": "Der Zusammenhang ist stellenweise unklar; es gibt nur wenige, einfache Konnektoren.",
+        "D": "Der Text besteht weitgehend aus unverbundenen Einzelsätzen ohne Konnektoren.",
+        "E": "Es ist kein Zusammenhang erkennbar." } },
+      { "id": "wortschatz", "name": { "en": "Vocabulary", "de": "Wortschatz" }, "points": { "A": 10, "B": 7.5, "C": 5, "D": 2.5, "E": 0 }, "descriptors": {
+        "A": "Der Wortschatz ist für B1 breit und passend; kleine Fehler stören das Verständnis nicht.",
+        "B": "Der Wortschatz reicht für die Aufgabe; einige Fehler oder Wiederholungen stören kaum.",
+        "C": "Der Wortschatz ist begrenzt, und Fehler erschweren das Verständnis stellenweise.",
+        "D": "Der Wortschatz ist sehr begrenzt, und viele Fehler behindern das Verständnis.",
+        "E": "Der Wortschatz reicht für die Aufgabe nicht aus." } },
+      { "id": "strukturen", "name": { "en": "Structures", "de": "Strukturen" }, "points": { "A": 10, "B": 7.5, "C": 5, "D": 2.5, "E": 0 }, "descriptors": {
+        "A": "Einfache und auch komplexere Strukturen (z. B. Nebensätze) werden weitgehend korrekt verwendet.",
+        "B": "Die Strukturen sind meist korrekt; Fehler bei komplexeren Sätzen stören das Verständnis kaum.",
+        "C": "Es werden vor allem einfache Strukturen verwendet, mit häufigen Fehlern, die stellenweise das Verständnis erschweren.",
+        "D": "Viele Fehler auch in einfachen Strukturen behindern das Verständnis.",
+        "E": "Die Strukturen sind so fehlerhaft, dass der Text kaum verständlich ist." } }
+    ] },
+      "instructions": "Sie haben im Internet einen Diskussionsbeitrag gelesen. Schreiben Sie Ihre Meinung dazu (ca. 80 Wörter)." },
+    { "id": "schreiben-3", "skill": "writing", "title": { "en": "Writing Part 3", "de": "Schreiben Teil 3" }, "taskType": "letter", "items": 4, "points": 20, "minutes": 15, "choices": 1, "wordTarget": { "min": 32, "max": 48 },
+      "rubric": { "criteria": [
+      { "id": "erfuellung", "name": { "en": "Task fulfilment", "de": "Erfüllung" }, "points": { "A": 5, "B": 3.75, "C": 2.5, "D": 1.25, "E": 0 }, "descriptors": {
+        "A": "Entschuldigung und Grund werden klar formuliert, alle Punkte der Aufgabe kommen vor, und das höfliche, formelle Register passt.",
+        "B": "Alle Punkte kommen vor, einer bleibt aber knapp, oder das Register passt nicht ganz.",
+        "C": "Die Entschuldigung oder der Grund fehlt, oder das Register passt oft nicht.",
+        "D": "Die Aufgabe wird nur in Ansätzen bearbeitet, oder der Text ist deutlich zu kurz.",
+        "E": "Die Aufgabe wird nicht erfüllt: Der Text passt nicht zur Situation oder ist kaum vorhanden." } },
+      { "id": "kohaerenz", "name": { "en": "Coherence", "de": "Kohärenz" }, "points": { "A": 5, "B": 3.75, "C": 2.5, "D": 1.25, "E": 0 }, "descriptors": {
+        "A": "Der Text ist zusammenhängend und gut gegliedert; die Sätze sind mit passenden Konnektoren (z. B. weil, deshalb, trotzdem, außerdem) und Verweiswörtern verbunden; Anrede, Einleitung, Schluss und Gruß passen zum Register.",
+        "B": "Der Text ist überwiegend zusammenhängend; Konnektoren werden meist richtig, aber eher einförmig eingesetzt.",
+        "C": "Der Zusammenhang ist stellenweise unklar; es gibt nur wenige, einfache Konnektoren, oder Anrede bzw. Gruß fehlen.",
+        "D": "Der Text besteht weitgehend aus unverbundenen Einzelsätzen ohne Konnektoren.",
+        "E": "Es ist kein Zusammenhang erkennbar." } },
+      { "id": "wortschatz", "name": { "en": "Vocabulary", "de": "Wortschatz" }, "points": { "A": 5, "B": 3.75, "C": 2.5, "D": 1.25, "E": 0 }, "descriptors": {
+        "A": "Der Wortschatz ist für B1 breit und passend; kleine Fehler stören das Verständnis nicht.",
+        "B": "Der Wortschatz reicht für die Aufgabe; einige Fehler oder Wiederholungen stören kaum.",
+        "C": "Der Wortschatz ist begrenzt, und Fehler erschweren das Verständnis stellenweise.",
+        "D": "Der Wortschatz ist sehr begrenzt, und viele Fehler behindern das Verständnis.",
+        "E": "Der Wortschatz reicht für die Aufgabe nicht aus." } },
+      { "id": "strukturen", "name": { "en": "Structures", "de": "Strukturen" }, "points": { "A": 5, "B": 3.75, "C": 2.5, "D": 1.25, "E": 0 }, "descriptors": {
+        "A": "Einfache und auch komplexere Strukturen (z. B. Nebensätze) werden weitgehend korrekt verwendet.",
+        "B": "Die Strukturen sind meist korrekt; Fehler bei komplexeren Sätzen stören das Verständnis kaum.",
+        "C": "Es werden vor allem einfache Strukturen verwendet, mit häufigen Fehlern, die stellenweise das Verständnis erschweren.",
+        "D": "Viele Fehler auch in einfachen Strukturen behindern das Verständnis.",
+        "E": "Die Strukturen sind so fehlerhaft, dass der Text kaum verständlich ist." } }
+    ] },
+      "instructions": "Schreiben Sie eine höfliche E-Mail (ca. 40 Wörter). Entschuldigen Sie sich, erklären Sie den Grund und denken Sie an Anrede und Gruß." },
     { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Sprechen Teil 1" }, "taskType": "spoken", "items": 4, "points": 28, "minutes": 3, "instructions": "Gemeinsam etwas planen: Planen Sie zusammen mit Ihrem Partner / Ihrer Partnerin etwas. Machen Sie Vorschläge, reagieren Sie auf die Vorschläge und einigen Sie sich." },
     { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Sprechen Teil 2" }, "taskType": "spoken", "items": 4, "points": 40, "minutes": 8, "instructions": "Ein Thema präsentieren: Präsentieren Sie Ihr Thema in fünf Schritten (Thema vorstellen, persönliche Erfahrungen, Situation im Heimatland, Vor- und Nachteile mit Ihrer Meinung, Abschluss und Dank)." },
     { "id": "sprechen-3", "skill": "speaking", "title": { "en": "Speaking Part 3", "de": "Sprechen Teil 3" }, "taskType": "spoken", "items": 4, "points": 32, "minutes": 4, "instructions": "Über ein Thema sprechen: Reagieren Sie auf die Rückmeldung und die Frage Ihres Partners / Ihrer Partnerin zu Ihrer Präsentation. Geben Sie auch eine Rückmeldung zu seiner / ihrer Präsentation und stellen Sie eine Frage." }
