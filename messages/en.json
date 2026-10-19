@@ -549,5 +549,36 @@
     "insert": "Insert {letter}",
     "count": "{count} / {min}–{max} words",
     "words": "{count, plural, one {# word} other {# words}}"
+  },
+  "writing": {
+    "chooseTask": "Choose a task",
+    "taskA": "Task A",
+    "taskB": "Task B",
+    "leitpunkte": "Cover these points",
+    "grading": "Grading your letter…",
+    "points": "{points} of {max} points ({percent}%)",
+    "corrected": "Corrected version",
+    "copyToFreestyle": "Copy into free writing",
+    "revise": "Revise",
+    "version": "Version {n}: {percent}%",
+    "markType": {
+      "grammar": "Grammar",
+      "vocabulary": "Vocabulary",
+      "spelling": "Spelling",
+      "register": "Register"
+    },
+    "yourLetter": "Your letter",
+    "criteria": "Criteria",
+    "criterionPoints": "{points} of {max} points",
+    "grade": "Grade {grade}",
+    "tip": "Tip: {tip}",
+    "summary": "Summary",
+    "feedbackLanguage": "Feedback language",
+    "reasonLanguage": "Explanation language",
+    "noMarks": "Nothing was marked in your letter.",
+    "earlierVersions": "Earlier versions",
+    "copying": "Opening free writing…",
+    "copyFailed": "Free writing could not be opened.",
+    "tryAgain": "Try again"
   }
 }

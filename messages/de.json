@@ -549,5 +549,36 @@
     "insert": "{letter} einfügen",
     "count": "{count} / {min}–{max} Wörter",
     "words": "{count, plural, one {# Wort} other {# Wörter}}"
+  },
+  "writing": {
+    "chooseTask": "Wähle eine Aufgabe",
+    "taskA": "Aufgabe A",
+    "taskB": "Aufgabe B",
+    "leitpunkte": "Behandle diese Punkte",
+    "grading": "Dein Brief wird bewertet …",
+    "points": "{points} von {max} Punkten ({percent} %)",
+    "corrected": "Korrigierte Fassung",
+    "copyToFreestyle": "In freies Schreiben übernehmen",
+    "revise": "Überarbeiten",
+    "version": "Version {n}: {percent} %",
+    "markType": {
+      "grammar": "Grammatik",
+      "vocabulary": "Wortschatz",
+      "spelling": "Rechtschreibung",
+      "register": "Register"
+    },
+    "yourLetter": "Dein Brief",
+    "criteria": "Kriterien",
+    "criterionPoints": "{points} von {max} Punkten",
+    "grade": "Note {grade}",
+    "tip": "Tipp: {tip}",
+    "summary": "Zusammenfassung",
+    "feedbackLanguage": "Sprache des Feedbacks",
+    "reasonLanguage": "Sprache der Erklärung",
+    "noMarks": "In deinem Brief wurde nichts markiert.",
+    "earlierVersions": "Frühere Versionen",
+    "copying": "Freies Schreiben wird geöffnet …",
+    "copyFailed": "Freies Schreiben konnte nicht geöffnet werden.",
+    "tryAgain": "Erneut versuchen"
   }
 }
