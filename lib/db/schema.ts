@@ -655,6 +655,16 @@ function createTablesIfMissing(db: Database.Database): void {
       email_error TEXT
     );
     CREATE UNIQUE INDEX IF NOT EXISTS idx_admin_notifications_open ON admin_notifications(problem_key) WHERE resolved_at IS NULL;
+
+    -- Writing: the cross-module error log (short snippets only). "right" is quoted: it is an SQL keyword.
+    CREATE TABLE IF NOT EXISTS error_log (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      source TEXT NOT NULL CHECK (source IN ('lesson','teil','freestyle_chat','freestyle_writing','speaking')),
+      category TEXT NOT NULL,
+      wrong TEXT NOT NULL, "right" TEXT NOT NULL,
+      created_at TEXT NOT NULL
+    );
+    CREATE INDEX IF NOT EXISTS idx_error_log_created ON error_log(created_at);
   `);
 }
 
