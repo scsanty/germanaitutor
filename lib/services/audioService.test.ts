@@ -9,9 +9,10 @@ import { createDbClient } from '../db/client';
 import { createAudioService } from './audioService';
 import { createTeilSetService } from './teilSetService';
 import { audioDir, audioPath, hasAudio, listAudioFiles, writeAudio } from '../audio/audioStore';
-import { createLocalSpeechProvider } from '../speech/localSpeechProvider';
-import { getSpeechUrl, isUnreachableError, SpeechServiceError } from '../speech/speechProvider';
+import { createLocalSpeechProvider, renderTimeoutMs } from '../speech/localSpeechProvider';
+import { getSpeechUrl, isUnreachableError, SpeechServiceError, SpeechUnreachableError } from '../speech/speechProvider';
 import { setSetting } from './appSettings';
+import { createNotificationService } from './notificationService';
 
 const T = '@filter phone\n[Anrufer m] Hallo, hier ist Thomas.';
 
@@ -110,11 +111,21 @@ describe('audioService', () => {
     expect(down.render).not.toHaveBeenCalled();
     expect(notify.raise).not.toHaveBeenCalled();
 
-    // Healthy at the check, then the connection drops mid-render: still not an attempt, but the job
-    // backs off instead of being retried every tick.
-    const flaky = { ...fakeProvider(false), health: vi.fn(async () => ({ ok: true, voices: [] })) };
+    // Healthy at the check, then the service goes down mid-render (the health check after the error
+    // fails): still not an attempt, but the job backs off instead of being retried every tick.
+    let up = true;
+    const flaky = {
+      ...fakeProvider(false),
+      health: vi.fn(async () => ({ ok: up, voices: [] })),
+      render: vi.fn(async (): Promise<Buffer> => {
+        up = false;
+        throw new Error('connect ECONNREFUSED');
+      }),
+    };
     const second = createAudioService(db, { provider: flaky, notify, now: () => now });
-    for (let i = 0; i < 10; i++) await second.processPending();
+    await second.processPending();
+    up = true;
+    for (let i = 0; i < 9; i++) await second.processPending();
     expect(flaky.render).toHaveBeenCalledTimes(1);
     expect(job(db, hash)).toEqual({ status: 'pending', attempts: 0 });
     expect(db.prepare('SELECT next_try_at FROM audio_jobs WHERE hash = ?').get(hash)).toEqual({ next_try_at: new Date(now.getTime() + 5 * 60_000).toISOString() });
@@ -148,12 +159,48 @@ describe('audioService', () => {
       now = new Date(now.getTime() + 5000);
     }
     expect(job(db, other)).toEqual({ status: 'done', attempts: 0 });
-    expect(job(db, stuck)).toEqual({ status: 'pending', attempts: 0 });
+    // Final review I1: with the service healthy, a timeout is an attempt.
+    expect(job(db, stuck)).toEqual({ status: 'pending', attempts: 1 });
     expect(notify.raise).not.toHaveBeenCalled();
     // Once its backoff has passed it is tried again.
     now = new Date(now.getTime() + 5 * 60_000);
     await service.processPending(1);
     expect(provider.render.mock.calls.filter(([input]) => input.segments[0].text === 'Ein sehr langer Text.')).toHaveLength(2);
+  });
+
+  // Final review I1: "retried, then notified". A render that times out every time while /health is OK
+  // must reach failed and raise the problem, not stay queued for ever.
+  it('a render that keeps timing out while the service is healthy fails after 5 attempts and is notified', async () => {
+    const db = createDbClient(':memory:');
+    const notify = { raise: vi.fn(), resolve: vi.fn() };
+    let now = new Date('2026-09-29T10:00:00Z');
+    const provider = {
+      ...fakeProvider(),
+      render: vi.fn(async (): Promise<Buffer> => {
+        throw new SpeechUnreachableError('speech service unreachable: timed out');
+      }),
+    };
+    const service = createAudioService(db, { provider, notify, now: () => now });
+    const hash = service.enqueue(T)!;
+    await service.processPending();
+    expect(job(db, hash)).toEqual({ status: 'pending', attempts: 1 });
+    expect(db.prepare('SELECT last_error FROM audio_jobs WHERE hash = ?').get(hash)).toEqual({ last_error: 'speech service unreachable: timed out' });
+    for (let i = 0; i < 6; i++) {
+      now = new Date(now.getTime() + 3_600_000);
+      await service.processPending();
+    }
+    expect(job(db, hash)).toEqual({ status: 'failed', attempts: 5 });
+    expect(provider.render).toHaveBeenCalledTimes(5);
+    expect(notify.raise).toHaveBeenCalledTimes(1);
+    expect(notify.raise).toHaveBeenCalledWith('audio_failed', `audio_failed:${hash}`, expect.any(String), expect.stringContaining('timed out'));
+  });
+
+  it('gives a long transcript a longer render timeout, capped below two minutes', () => {
+    const input = (chars: number) => ({ segments: [{ text: 'x'.repeat(chars), voice: 'thorsten' }], filter: 'none' as const, pauseMs: 600 });
+    expect(renderTimeoutMs(input(0))).toBe(60_000);
+    expect(renderTimeoutMs(input(1000))).toBe(75_000);
+    expect(renderTimeoutMs(input(4600))).toBe(115_000);
+    expect(renderTimeoutMs(input(100_000))).toBe(115_000);
   });
 
   // Review finding 4
@@ -254,6 +301,30 @@ describe('audioService', () => {
     expect(readdirSync(audioDir())).toEqual([`${hash}.ogg`]);
   });
 
+  // Final review M4: Next loads the worker (instrumentation) and the routes as separate bundles, so two
+  // copies of this module must still share one in-flight render per hash.
+  it('shares one render between two copies of the module (in-flight map on globalThis)', async () => {
+    const db = createDbClient(':memory:');
+    let finish!: (b: Buffer) => void;
+    const provider = { ...fakeProvider(), render: vi.fn(() => new Promise<Buffer>((r) => (finish = r))) };
+    vi.resetModules();
+    const first = await import('./audioService');
+    vi.resetModules();
+    const second = await import('./audioService');
+    expect(second.createAudioService).not.toBe(first.createAudioService);
+    const worker = first.createAudioService(db, { provider });
+    const route = second.createAudioService(db, { provider });
+    const hash = worker.enqueue(T)!;
+    const tick = worker.processPending();
+    await vi.waitFor(() => expect(provider.render).toHaveBeenCalled());
+    const served = route.getOrRender(hash);
+    await new Promise((r) => setTimeout(r, 10));
+    finish(Buffer.from('OggS-once'));
+    await tick;
+    expect((await served)?.toString()).toBe('OggS-once');
+    expect(provider.render).toHaveBeenCalledTimes(1);
+  });
+
   it('returns null from getOrRender when the file is missing and the service is down', async () => {
     const db = createDbClient(':memory:');
     const down = fakeProvider(false);
@@ -300,10 +371,53 @@ describe('audioService', () => {
     expect(service.sweep()).toEqual({ queued: 1, requeued: 1, lostUploads: 2 });
     expect(job(db, hash)?.status).toBe('pending');
     expect(job(db, orphan)?.status).toBe('uploaded');
+    await new Promise((r) => setTimeout(r, 0)); // the notice is replaced asynchronously
+    expect(notify.resolve).toHaveBeenCalledWith('audio_upload_lost');
     expect(notify.raise).toHaveBeenCalledWith('content_issues', 'audio_upload_lost', expect.any(String), expect.stringContaining('2 uploaded'));
     await service.processPending();
     expect(job(db, orphan)?.status).toBe('uploaded');
     expect(notify.raise).not.toHaveBeenCalledWith('audio_failed', expect.anything(), expect.anything(), expect.anything());
+  });
+
+  // Final review M1: the lost-upload notice used to stay open for good, so later losses added nothing.
+  it('reports each sweep that finds lost uploads, and clears the notice once none are lost', async () => {
+    const db = createDbClient(':memory:');
+    const notifications = createNotificationService(db);
+    const service = createAudioService(db, { provider: fakeProvider(), notify: notifications });
+    const rows = () =>
+      db.prepare("SELECT body, resolved_at FROM admin_notifications WHERE problem_key = 'audio_upload_lost' ORDER BY id").all() as {
+        body: string;
+        resolved_at: string | null;
+      }[];
+    const settle = () => new Promise((r) => setTimeout(r, 0));
+    const lose = async (hash: string) => {
+      await service.upload(hash, Buffer.from('x'));
+      rmSync(audioPath(hash));
+    };
+
+    await lose('c'.repeat(64));
+    service.sweep();
+    await settle();
+    expect(rows()).toEqual([{ body: expect.stringContaining('1 uploaded'), resolved_at: null }]);
+
+    // A second recording goes missing while the first notice is still open: a fresh notice with the count.
+    await lose('d'.repeat(64));
+    service.sweep();
+    await settle();
+    expect(rows().filter((r) => r.resolved_at === null)).toEqual([{ body: expect.stringContaining('2 uploaded'), resolved_at: null }]);
+
+    // Both re-uploaded: the next sweep finds nothing lost and closes the notice.
+    await service.upload('c'.repeat(64), Buffer.from('x'));
+    await service.upload('d'.repeat(64), Buffer.from('x'));
+    service.sweep();
+    await settle();
+    expect(rows().filter((r) => r.resolved_at === null)).toEqual([]);
+
+    // A later loss is reported again.
+    rmSync(audioPath('c'.repeat(64)));
+    service.sweep();
+    await settle();
+    expect(rows().filter((r) => r.resolved_at === null)).toEqual([{ body: expect.stringContaining('1 uploaded'), resolved_at: null }]);
   });
 
   it('a notification sink that throws or rejects never breaks rendering', async () => {

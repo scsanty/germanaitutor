@@ -27,16 +27,22 @@ interface JobRow {
 }
 
 export const MAX_ATTEMPTS = 5;
-// A render that times out or loses its connection while the service is healthy waits this long before
-// its next try (not an attempt), so it can't hold the head of the queue.
+// A render that fails because the service went down mid-render waits this long before its next try
+// (not an attempt), so it can't hold the head of the queue.
 export const UNREACHABLE_BACKOFF_MS = 5 * 60_000;
 
 const NO_NOTIFY: NotificationSink = { raise() {}, resolve() {} };
 
 // S15: one render per file at a time in this process, shared by the worker and on-demand requests.
-const inflight = new Map<string, Promise<Buffer>>();
+// Final review M4: kept on globalThis, since Next loads the instrumentation bundle (the worker) and the
+// route bundles as separate module instances; a module-level map would exist once per bundle.
+const INFLIGHT_KEY = Symbol.for('nadoch.audioInflight');
+const inflight: Map<string, Promise<Buffer>> = ((globalThis as Record<symbol, unknown>)[INFLIGHT_KEY] as
+  | Map<string, Promise<Buffer>>
+  | undefined) ?? ((globalThis as Record<symbol, unknown>)[INFLIGHT_KEY] = new Map<string, Promise<Buffer>>());
 
 const failedKey = (hash: string) => `audio_failed:${hash}`;
+const LOST_UPLOAD_KEY = 'audio_upload_lost';
 
 function renderInput(parsed: ParsedTranscript) {
   return { segments: parsed.lines.map((l) => ({ text: l.text, voice: l.voice })), filter: parsed.filter, pauseMs: PAUSE_MS };
@@ -124,9 +130,11 @@ export function createAudioService(db: Database.Database, deps: AudioServiceDeps
     return typeof transcript === 'string' ? enqueue(transcript) : null;
   }
 
-  // Spec: the worker renders due jobs. S1: with the service down nothing is attempted or raised; only a
-  // real render error counts. A render that times out or loses its connection is not an attempt either,
-  // but the job is pushed back (next_try_at, updated_at) so it can't block the jobs behind it.
+  // Spec: the worker renders due jobs. S1: with the service down nothing is attempted or raised. A
+  // render that times out or loses its connection is checked against /health: if the service is down
+  // now, it is not an attempt (the job is pushed back so it can't block the queue). Final review I1: if
+  // the service is still healthy, the render itself is the problem, so it counts like any other failure
+  // ("retried, then notified").
   async function processPending(limit = 3): Promise<void> {
     const due = db
       .prepare(
@@ -156,12 +164,11 @@ export function createAudioService(db: Database.Database, deps: AudioServiceDeps
         markDone(current);
       } catch (err) {
         const error = messageOf(err);
-        if (isUnreachableError(err)) {
+        if (isUnreachableError(err) && !(await speech().health()).ok) {
+          // The service went down mid-run: not an attempt, and stop here.
           const next = new Date(nowDate().getTime() + UNREACHABLE_BACKOFF_MS).toISOString();
           db.prepare("UPDATE audio_jobs SET next_try_at = ?, updated_at = ? WHERE hash = ? AND status = 'pending'").run(next, now(), job.hash);
-          // The service went down mid-run: stop here. Still up: this job was the problem, go on.
-          if (!(await speech().health()).ok) return;
-          continue;
+          return;
         }
         const attempts = current.attempts + 1;
         // A 4xx (a request the service refuses, or one too large to send) can never succeed.
@@ -234,7 +241,7 @@ export function createAudioService(db: Database.Database, deps: AudioServiceDeps
 
   // S19: at worker start and after a backup import. Queues every listening transcript (content loaded
   // before this queue existed has no job), and puts done or uploaded jobs whose file is gone back in
-  // the queue. A lost upload is reported once, since only the admin has the recording.
+  // the queue. Lost uploads are reported, since only the admin has the recording.
   function sweep(): { queued: number; requeued: number; lostUploads: number } {
     const contents: { type: string; content: string }[] = [
       ...(db.prepare("SELECT type, content FROM exercises WHERE type = 'audio_questions'").all() as { type: string; content: string }[]),
@@ -273,15 +280,21 @@ export function createAudioService(db: Database.Database, deps: AudioServiceDeps
       db.prepare("UPDATE audio_jobs SET status = 'pending', attempts = 0, last_error = NULL, next_try_at = NULL, updated_at = ? WHERE hash = ?").run(now(), job.hash);
       requeued += 1;
     }
+    // Final review M1: each sweep replaces the notice with the current count (raise is idempotent while
+    // a row is open, so without the resolve a later loss would add nothing), and a sweep that finds
+    // nothing lost closes it.
     if (lostUploads > 0) {
-      safely(() =>
-        notify.raise(
+      safely(async () => {
+        await notify.resolve(LOST_UPLOAD_KEY);
+        await notify.raise(
           'content_issues',
-          'audio_upload_lost',
+          LOST_UPLOAD_KEY,
           'Uploaded recordings are missing',
           `${lostUploads} uploaded recording(s) are no longer in the audio folder. Those with a transcript are queued for speech synthesis; upload them again to restore the recordings.`
-        )
-      );
+        );
+      });
+    } else {
+      safely(() => notify.resolve(LOST_UPLOAD_KEY));
     }
     return { queued, requeued, lostUploads };
   }

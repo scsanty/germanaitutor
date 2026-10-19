@@ -1,5 +1,5 @@
-// The service couldn't be reached at all (refused, reset, timed out). S1: this is "the service is down",
-// not a failed render, so it never counts as an attempt.
+// The service couldn't be reached (refused, reset, timed out). S1: with /health failing too, this is
+// "the service is down" and never counts as an attempt; with /health OK it is a failed render (I1).
 export class SpeechUnreachableError extends Error {
   constructor(message: string) {
     super(message);
