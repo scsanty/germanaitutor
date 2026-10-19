@@ -1,0 +1,358 @@
+{
+  "formatId": "generic-c1",
+  "partId": "hoeren-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-c1__hoeren-1__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Ansage f] Text 1.\n[Sprecher m] Bäume, für die Bürgerinnen und Bürger eine Patenschaft übernommen haben, überstehen trockene Sommer deutlich besser als andere. Zu diesem Ergebnis kommt eine Auswertung des Grünflächenamts in Marbeck, das seit fünf Jahren den Zustand von rund achthundert Straßenbäumen dokumentiert.\n[Sprecher m] Bemerkenswert ist dabei weniger die Wassermenge, denn die Paten gießen im Schnitt kaum mehr als die städtischen Kolonnen, sondern der Zeitpunkt: Sie greifen bereits zur Gießkanne, wenn die ersten Blätter welken, und nicht erst nach einer festgelegten Zahl trockener Tage. Das Amt will seine Gießpläne nun entsprechend umstellen.\n[Ansage f] Text 2.\n[Korrespondentin f] Die Porzellanmanufaktur Gerlach in Heidmark, seit über zweihundert Jahren für ihr Tafelgeschirr bekannt, stellt sich neu auf. Künftig soll der Großteil der Produktion auf technische Keramik entfallen, etwa auf Isolierteile für die Elektroindustrie.\n[Korrespondentin f] Das klassische Geschirr wird nicht aufgegeben, aber nur noch auf Bestellung gefertigt. Die Geschäftsführung betont, dass dabei keine einzige Stelle wegfallen werde; für die neue Sparte würden im Gegenteil sogar zusätzliche Fachkräfte gesucht. Die Gewerkschaft bleibt dennoch skeptisch, da sich viele Porzellanmalerinnen auf völlig neue Tätigkeiten einstellen müssten.\n[Ansage f] Text 3.\n[Reporter m] Wer am Samstag die Premiere von „Tiefe Wasser“ im stillgelegten Hallenbad Nord besuchte, saß auf den alten Startblöcken und blickte hinab ins leere Becken, in dem das Ensemble des Theaters Wendhagen spielte.\n[Reporter m] Der Ort ist zweifellos das Ereignis dieses Abends. Das Stück selbst, eine Familiengeschichte über drei Generationen, kommt dagegen über weite Strecken nicht über Andeutungen hinaus, und die Akustik im gefliesten Raum verschluckt so manchen Satz. Sehenswert ist der Abend trotzdem, aber eher wegen des Hauses als wegen des Textes.\n[Ansage f] Text 4.\n[Sprecherin f] Die Stadt Altenried will gegen leer stehende Ladenlokale in der Innenstadt vorgehen. Wer ein Geschäft länger als ein Jahr leer stehen lässt, soll künftig eine Abgabe zahlen.\n[Sprecherin f] Ausgenommen sind Eigentümer, die nachweisen können, dass sie sich ernsthaft um neue Mieter bemühen, etwa durch Anzeigen oder die Beauftragung eines Maklers. Der Einzelhandelsverband begrüßt die Pläne grundsätzlich, warnt aber vor zu viel Bürokratie. Endgültig entscheiden soll der Stadtrat im Herbst.\n[Ansage f] Text 5.\n[Sprecher m] Darf ein Vermieter verbieten, dass Mieter ihre Wäsche auf dem Balkon trocknen? Das Landgericht Wiesbach hat diese Frage gestern verneint, jedenfalls dann, wenn die Wäsche nicht über die Brüstung hinausragt.\n[Sprecher m] Geklagt hatte eine Wohnungsgesellschaft, die das Erscheinungsbild ihrer frisch sanierten Anlage gefährdet sah. Das Gericht befand jedoch, der Wunsch nach einer einheitlichen Fassade wiege weniger schwer als das Interesse der Mieter, Strom für den Trockner zu sparen.\n[Ansage f] Text 6.\n[Reporter m] Beim Ruderverein Seehausen am Wellsee übersteigt die Nachfrage seit zwei Jahren das Angebot: Auf jeden freien Platz kommen inzwischen fünf Bewerbungen. Der Vorstand hat deshalb beschlossen, neue Mitglieder künftig per Los auszuwählen.\n[Reporter m] Bislang galt die Reihenfolge der Anmeldung. Das habe aber dazu geführt, dass fast nur noch Menschen aus der Stadt aufgenommen wurden, die sich gleich in der ersten Stunde online anmelden konnten. Mit dem Losverfahren, so der Vorsitzende, hätten auch Bewerberinnen und Bewerber aus den umliegenden Dörfern wieder eine faire Chance.\n[Ansage f] Text 7.\n[Kommentator m] Dass der „Talbote“ ab Januar montags nur noch digital erscheint, wird in der Chefredaktion als Schritt in die Zukunft verkauft. Man kann das so sehen. Man kann aber auch fragen, wer eigentlich den Preis dafür zahlt.\n[Kommentator m] Es sind ja nicht die jungen Leserinnen und Leser, die ohnehin längst am Bildschirm lesen, sondern jene, die seit Jahrzehnten jeden Morgen die gedruckte Zeitung aus dem Briefkasten holen. Ein Abonnement, das weniger liefert, aber gleich viel kostet, ist jedenfalls kein Fortschritt, sondern eine Preiserhöhung durch die Hintertür.\n[Ansage f] Text 8.\n[Sprecherin f] Kehlberg hat seit dieser Woche eine sogenannte Nachtbürgermeisterin. Die Stelle ist nicht im Rathaus angesiedelt, sondern beim Verband der örtlichen Clubbetreiber, wird aber zur Hälfte von der Stadt finanziert.\n[Sprecherin f] Ihre Aufgabe ist es, zwischen Anwohnern, Clubs und Verwaltung zu vermitteln, wenn es Streit um Lärm oder Müll gibt. Anders als der Titel vermuten lässt, hat sie allerdings keinerlei Befugnis, Strafen zu verhängen oder Sperrstunden festzulegen.",
+          "questions": [
+            {
+              "question": "Die Paten-Bäume in Marbeck überstehen Trockenheit vor allem deshalb besser, weil sie mehr Wasser bekommen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "denn die Paten gießen im Schnitt kaum mehr als die städtischen Kolonnen"
+            },
+            {
+              "question": "Nach Angaben des Unternehmens soll die Neuausrichtung der Manufaktur nicht zu Entlassungen führen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "dass dabei keine einzige Stelle wegfallen werde"
+            },
+            {
+              "question": "Nach Ansicht des Kritikers lohnt sich ein Besuch der Aufführung vor allem wegen des Spielorts.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "aber eher wegen des Hauses als wegen des Textes"
+            },
+            {
+              "question": "Eigentümer, die aktiv nach neuen Mietern suchen, sollen die Abgabe nicht zahlen müssen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Ausgenommen sind Eigentümer, die nachweisen können, dass sie sich ernsthaft um neue Mieter bemühen"
+            },
+            {
+              "question": "Nach dem Urteil dürfen Mieter in Wiesbach ihre Wäsche auch über die Balkonbrüstung hängen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "wenn die Wäsche nicht über die Brüstung hinausragt"
+            },
+            {
+              "question": "Unter dem bisherigen Verfahren hatten vor allem Bewerber aus den Dörfern rund um den Wellsee Vorteile.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "dass fast nur noch Menschen aus der Stadt aufgenommen wurden"
+            },
+            {
+              "question": "Der Kommentator begrüßt die Entscheidung des „Talboten“ als zeitgemäß.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "sondern eine Preiserhöhung durch die Hintertür"
+            },
+            {
+              "question": "Die Stelle der Nachtbürgermeisterin wird nicht allein von der Stadt bezahlt.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "wird aber zur Hälfte von der Stadt finanziert"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The sponsors hardly use more water than the city crews. What matters is that they water earlier, as soon as the first leaves wilt.",
+            "de": "Die Paten gießen kaum mehr als die städtischen Kolonnen. Entscheidend ist, dass sie früher gießen, sobald die ersten Blätter welken."
+          },
+          {
+            "en": "Management stresses that not a single job will be lost, and that the new division even needs extra skilled staff.",
+            "de": "Die Geschäftsführung betont, dass keine Stelle wegfällt. Für die neue Sparte werden sogar zusätzliche Fachkräfte gesucht."
+          },
+          {
+            "en": "The critic finds the play itself weak, but thinks the evening is worth seeing because of the old swimming pool.",
+            "de": "Der Kritiker findet das Stück eher schwach. Sehenswert ist der Abend für ihn aber wegen des alten Hallenbads."
+          },
+          {
+            "en": "Owners who can prove they are genuinely trying to find tenants, for example through adverts or an estate agent, are exempt.",
+            "de": "Wer nachweist, dass er ernsthaft neue Mieter sucht, etwa mit Anzeigen oder einem Makler, ist von der Abgabe ausgenommen."
+          },
+          {
+            "en": "The court only allows drying laundry on the balcony as long as it does not stick out over the railing.",
+            "de": "Das Gericht erlaubt das Wäschetrocknen auf dem Balkon nur, solange die Wäsche nicht über die Brüstung hinausragt."
+          },
+          {
+            "en": "First come, first served meant that almost only people from the town got in. The lottery is meant to give village applicants a fair chance again.",
+            "de": "Bisher wurden fast nur Menschen aus der Stadt aufgenommen. Das Los soll den Bewerbern aus den Dörfern wieder eine faire Chance geben."
+          },
+          {
+            "en": "He criticises the decision: loyal print readers lose out, and paying the same for less is a hidden price rise.",
+            "de": "Er kritisiert die Entscheidung: Die treuen Leser der gedruckten Zeitung verlieren, und gleicher Preis für weniger Leistung ist eine versteckte Preiserhöhung."
+          },
+          {
+            "en": "The post sits with the club operators' association, and the city pays only half of it.",
+            "de": "Die Stelle ist beim Verband der Clubbetreiber angesiedelt. Die Stadt bezahlt nur die Hälfte."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-c1__hoeren-1__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter phone\n[Ansage f] Text 1.\n[Mitarbeiterin f] Guten Tag, Herr Lambrecht, hier spricht Verena Ott aus der Kanzlei Bergner und Partner. Es geht um Ihre Auseinandersetzung mit dem Bauträger.\n[Mitarbeiterin f] Die Gegenseite hat sich inzwischen gemeldet und bietet an, die Mängel an der Terrasse auf eigene Kosten zu beheben, sofern Sie im Gegenzug auf die Minderung des Kaufpreises verzichten.\n[Mitarbeiterin f] Frau Bergner rät Ihnen dringend davon ab, sich vorschnell darauf einzulassen, weil die Feuchtigkeit im Keller in dem Angebot mit keinem Wort erwähnt wird. Sie würde das gern persönlich mit Ihnen besprechen, bevor wir antworten.\n[Ansage f] Text 2.\n[Anrufer m] Guten Tag, Frau Seidel, hier ist Matthias Kern vom Lindwurm Verlag. Vielen Dank noch einmal für Ihr Manuskript.\n[Anrufer m] Ich will ehrlich sein: Als Roman, so wie er jetzt ist, können wir ihn nicht ins Programm nehmen. Aber die Kapitel, in denen Ihre Großmutter von ihrer Arbeit in der Weberei erzählt, haben im Lektorat alle sehr beeindruckt.\n[Anrufer m] Könnten Sie sich vorstellen, daraus ein Sachbuch zu machen, also eine dokumentarische Erzählung? Wenn ja, würde ich Sie gern zu einem Gespräch einladen.\n[Ansage f] Text 3.\n[Mitarbeiter m] Hallo, Frau Brückner, hier ist Jan Feldmann vom Architekturbüro. Eine kurze Rückmeldung zum Bauantrag für Ihren Anbau.\n[Mitarbeiter m] Das Bauamt hat grundsätzlich keine Einwände, verlangt aber, dass der Anbau einen halben Meter weiter von der Grundstücksgrenze entfernt steht, als wir geplant hatten. Das heißt, der Wintergarten wird etwas schmaler.\n[Mitarbeiter m] Ich habe die Pläne schon angepasst und schicke sie Ihnen heute Abend. Wenn Sie einverstanden sind, kann der Antrag noch diese Woche raus.\n[Ansage f] Text 4.\n[Kollege m] Hallo Sabine, hier ist Holger. Ich sitze gerade am Flughafen und wollte dir kurz von der Tagung erzählen, bevor ich alles wieder vergesse.\n[Kollege m] Der Vortrag von Doktor Imhof über die neuen Messverfahren war, ehrlich gesagt, eine Enttäuschung, lauter Ergebnisse, die wir längst kennen. Viel ergiebiger war das Gespräch danach mit ihrer Doktorandin. Die arbeitet an genau dem Problem, an dem wir seit Monaten hängen.\n[Kollege m] Ich hab ihr vorgeschlagen, uns im Labor zu besuchen. Sie meldet sich nächste Woche bei dir.\n[Ansage f] Text 5.\n[Anruferin f] Guten Tag, Frau Haas, hier ist Lena Brandt von der Gutsverwaltung Wiesenhof. Sie hatten bei uns die Scheune für Ihre Firmenfeier im September angefragt.\n[Anruferin f] Ihr Wunschtermin ist leider inzwischen vergeben. Am Wochenende davor ist aber noch alles frei, und da könnten wir Ihnen zusätzlich den Garten zur Verfügung stellen, was im September sonst nicht möglich ist.\n[Anruferin f] Ich halte Ihnen dieses Datum bis Ende der Woche unverbindlich frei. Danach müsste ich es wieder anderen Interessenten anbieten.\n[Ansage f] Text 6.\n[Mitarbeiterin f] Guten Tag, Herr Vogt, hier spricht Miriam Sauer vom Institut für Sprachentwicklung der Hochschule Halmstedt. Sie hatten Ihre Tochter Lina für unsere Studie angemeldet.\n[Mitarbeiterin f] Leider kann Lina an der ersten Runde nicht teilnehmen. Wir suchen dafür Kinder, die mit genau zwei Sprachen aufwachsen, und bei Ihnen zu Hause werden ja drei gesprochen.\n[Mitarbeiterin f] Im Frühjahr beginnt aber eine zweite Untersuchung, die sich gezielt mit dreisprachigen Familien beschäftigt. Wenn Sie einverstanden sind, bewahren wir Ihre Kontaktdaten bis dahin auf.\n[Ansage f] Text 7.\n[Anrufer m] Guten Tag, Frau Nowak, hier ist Weber von der Hausverwaltung Kramer. Sie hatten schriftlich um Erlaubnis gebeten, Ihre Wohnung während Ihres Auslandsjahres unterzuvermieten.\n[Anrufer m] Der Eigentümer ist damit einverstanden, allerdings unter zwei Bedingungen: Sie nennen uns vorher den Namen der Untermieterin, und die Miete, die Sie von ihr verlangen, darf nicht höher sein als Ihre eigene. Die Erlaubnis bekommen Sie dann schriftlich, sobald wir den Namen haben.\n[Ansage f] Text 8.\n[Anruferin f] Hallo Tom, hier ist Ines. Ich weiß, das kommt jetzt sehr kurzfristig, und du hattest ja gesagt, dass du an dem Wochenende eigentlich deine Ruhe haben willst. Aber könntest du am Samstag vielleicht doch auf Bruno aufpassen?\n[Anruferin f] Meine Mutter, die das sonst macht, liegt mit ihrer Hüfte im Krankenhaus, nichts Schlimmes, aber sie kann natürlich nicht mit ihm raus. Er ist ganz pflegeleicht, zweimal am Tag spazieren gehen, mehr braucht er nicht.\n[Anruferin f] Und falls es wirklich nicht geht, sag einfach ehrlich Nein, dann frag ich die Nachbarin. Die hat allerdings selbst zwei Katzen, und das finden die drei vermutlich weniger lustig.",
+          "questions": [
+            {
+              "question": "Die Kanzlei empfiehlt Herrn Lambrecht, das Angebot des Bauträgers anzunehmen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Frau Bergner rät Ihnen dringend davon ab, sich vorschnell darauf einzulassen"
+            },
+            {
+              "question": "Der Verlag interessiert sich für einen Teil des Manuskripts.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Könnten Sie sich vorstellen, daraus ein Sachbuch zu machen"
+            },
+            {
+              "question": "Der Wintergarten wird kleiner, als er ursprünglich geplant war.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "der Wintergarten wird etwas schmaler"
+            },
+            {
+              "question": "Holger fand den Vortrag von Doktor Imhof besonders aufschlussreich.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "war, ehrlich gesagt, eine Enttäuschung"
+            },
+            {
+              "question": "Frau Haas muss sich sofort verbindlich entscheiden, wenn sie das andere Datum haben möchte.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Ich halte Ihnen dieses Datum bis Ende der Woche unverbindlich frei."
+            },
+            {
+              "question": "Lina passt nicht in die erste Untersuchung, weil in ihrer Familie mehr als zwei Sprachen gesprochen werden.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "und bei Ihnen zu Hause werden ja drei gesprochen"
+            },
+            {
+              "question": "Frau Nowak darf von der Untermieterin mehr Miete verlangen, als sie selbst zahlt.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "darf nicht höher sein als Ihre eigene"
+            },
+            {
+              "question": "Ines hat noch eine andere Lösung, falls Tom absagt.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "dann frag ich die Nachbarin"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The lawyer strongly advises against accepting quickly, because the offer does not mention the damp in the basement.",
+            "de": "Die Anwältin rät dringend davon ab, weil die Feuchtigkeit im Keller in dem Angebot gar nicht vorkommt."
+          },
+          {
+            "en": "The novel is rejected, but the publisher wants to turn the grandmother's weaving-mill chapters into a non-fiction book.",
+            "de": "Den Roman lehnt der Verlag ab, aber aus den Kapiteln über die Großmutter in der Weberei möchte er ein Sachbuch machen."
+          },
+          {
+            "en": "The building authority wants the extension half a metre further from the boundary, so the conservatory becomes narrower.",
+            "de": "Das Bauamt verlangt einen halben Meter mehr Abstand zur Grenze. Deshalb wird der Wintergarten schmaler."
+          },
+          {
+            "en": "He found the talk disappointing. The useful part was the conversation with her doctoral student afterwards.",
+            "de": "Er fand den Vortrag enttäuschend. Ergiebig war erst das Gespräch mit der Doktorandin danach."
+          },
+          {
+            "en": "The alternative date is held for her without obligation until the end of the week.",
+            "de": "Das andere Datum wird bis Ende der Woche unverbindlich für sie freigehalten."
+          },
+          {
+            "en": "The first round is only for children growing up with exactly two languages. Lina's family speaks three.",
+            "de": "Die erste Runde ist nur für Kinder mit genau zwei Sprachen. In Linas Familie werden drei gesprochen."
+          },
+          {
+            "en": "One of the owner's conditions is that the sublet rent may not be higher than her own rent.",
+            "de": "Eine Bedingung des Eigentümers ist, dass die Untermiete nicht höher sein darf als ihre eigene Miete."
+          },
+          {
+            "en": "If Tom says no, she will ask her neighbour, although the neighbour's cats make this less ideal.",
+            "de": "Wenn Tom Nein sagt, fragt sie die Nachbarin, auch wenn deren Katzen das schwierig machen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-c1__hoeren-1__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Ansage f] Text 1.\n[Rednerin f] Meine sehr verehrten Damen und Herren, als wir vor drei Jahren begannen, den Nachlass der Fotografin Hedda Marquart zu sichten, ahnten wir nicht, wie viel Arbeit vor uns lag. Rund vierzigtausend Negative, kaum eines beschriftet.\n[Rednerin f] Dass diese Ausstellung heute überhaupt eröffnet werden kann, verdanken wir nicht zuletzt den vielen Bürgerinnen und Bürgern, die auf unseren Aufruf hin in ihren eigenen Fotoalben nachgesehen und uns geholfen haben, Orte und Personen zu erkennen. Ohne sie hingen hier heute Bilder ohne Geschichte.\n[Ansage f] Text 2.\n[Sprecher m] So, wir stehen jetzt direkt vor der Papiermaschine. Sie ist fast hundert Meter lang und läuft, abgesehen von zwei Wartungstagen im Jahr, rund um die Uhr.\n[Sprecher m] Viele Besucher fragen mich, wie viel Holz hier verarbeitet wird. Die Antwort überrascht meistens: Frisches Holz kommt bei uns kaum noch zum Einsatz. Gut neun Zehntel unseres Rohstoffs sind Altpapier, vor allem aus den Haushalten der Region. Und bitte bleiben Sie hinter der gelben Linie.\n[Ansage f] Text 3.\n[Dozent m] Bevor wir inhaltlich einsteigen, ein paar Worte zum Ablauf dieses Seminars. Anders als im Vorlesungsverzeichnis angekündigt, wird es am Ende keine Klausur geben.\n[Dozent m] Stattdessen übernimmt jede und jeder von Ihnen im Laufe des Semesters eine Sitzung, und zwar nicht als klassisches Referat, sondern als moderierte Diskussion. Bewertet wird dabei weniger, wie viel Sie wissen, als vielmehr, wie gut es Ihnen gelingt, die anderen ins Gespräch zu bringen.\n[Ansage f] Text 4.\n[Rednerin f] Liebe Gisela, als du vor einunddreißig Jahren bei uns angefangen hast, gab es in der Buchhaltung noch Karteikarten und eine einzige Schreibmaschine, um die regelmäßig gestritten wurde.\n[Rednerin f] Du hast seitdem drei Umzüge, vier Geschäftsführer und, wenn ich richtig gezählt habe, sieben Computersysteme überstanden. Und jedes Mal warst du diejenige, die als Erste verstanden hat, wie das Neue funktioniert, und es uns anderen geduldig erklärt hat. Dass du ausgerechnet jetzt gehst, wo wir endlich ein System haben, das funktioniert, nehmen wir dir ein bisschen übel.\n[Ansage f] Text 5.\n[Leiterin f] Liebe Helferinnen und Helfer, schön, dass so viele gekommen sind. Ein paar Hinweise, bevor Sie zu den Eimern am Krötenzaun gehen. Die Tiere werden morgens und abends eingesammelt, nicht nur abends, wie es im Aushang stand. Das war leider ein Fehler von uns.\n[Leiterin f] Bitte tragen Sie die Kröten immer auf die Seite der Straße, auf die sie wollten, also zum Teich hin. Und zählen Sie bitte getrennt nach Männchen und Weibchen. Wie man die unterscheidet, zeige ich Ihnen gleich.\n[Ansage f] Text 6.\n[Trainer m] Leute, hört mal kurz zu. Ich bin nicht sauer wegen des Gegentors, so was passiert. Was mich stört, ist, dass ihr danach aufgehört habt, miteinander zu reden. Jeder hat nur noch für sich gespielt.\n[Trainer m] In der zweiten Halbzeit machen wir genau da weiter, wo wir in der ersten Viertelstunde waren. Ich wechsle nicht, auch wenn einige von euch müde sind. Ihr habt das am Anfang super gemacht, und das schafft ihr auch jetzt.\n[Ansage f] Text 7.\n[Sprecher m] Guten Morgen zusammen. Wie Sie wissen, haben wir ab Montag für zwei Wochen die Jahrestagung eines Ärzteverbands im Haus. Das heißt: volles Haus, und zwar jeden Tag.\n[Sprecher m] Ich weiß, dass einige von Ihnen für diese Zeit Urlaub beantragt hatten. Diese Anträge werden nicht einfach abgelehnt; wir versuchen, mit Aushilfen aus unserem Partnerhotel in Brandau auszukommen. Ob das reicht, kann ich Ihnen aber erst am Freitag sagen.\n[Ansage f] Text 8.\n[Leiterin f] Liebe Eltern, zur neuen Handyregel kursieren gerade einige Gerüchte, deshalb kurz zur Klarstellung. Die Handys werden nicht eingesammelt, wie in der Zeitung zu lesen war. Die Kinder behalten sie, aber ausgeschaltet in der Tasche.\n[Leiterin f] Wer sein Handy trotzdem benutzt, gibt es bis zum Ende des Schultags im Sekretariat ab. Wir haben das übrigens gemeinsam mit der Schülervertretung beschlossen, die zum Teil sogar strengere Regeln wollte als wir.",
+          "questions": [
+            {
+              "question": "Bei der Bestimmung der Fotos hat das Museum Hilfe aus der Bevölkerung bekommen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "die auf unseren Aufruf hin in ihren eigenen Fotoalben nachgesehen"
+            },
+            {
+              "question": "Die Papierfabrik verarbeitet hauptsächlich frisches Holz.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Frisches Holz kommt bei uns kaum noch zum Einsatz."
+            },
+            {
+              "question": "Bei der Bewertung im Seminar zählt vor allem das Fachwissen der Studierenden.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Bewertet wird dabei weniger, wie viel Sie wissen"
+            },
+            {
+              "question": "Die Rednerin beschreibt Gisela als jemanden, der den Kollegen bei technischen Neuerungen geholfen hat.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "und es uns anderen geduldig erklärt hat"
+            },
+            {
+              "question": "Die Kröten werden zweimal am Tag eingesammelt.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Die Tiere werden morgens und abends eingesammelt"
+            },
+            {
+              "question": "Der Trainer will in der zweiten Halbzeit einige müde Spieler auswechseln.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Ich wechsle nicht, auch wenn einige von euch müde sind."
+            },
+            {
+              "question": "Die Urlaubsanträge für die Zeit der Tagung sind bereits abgelehnt worden.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Diese Anträge werden nicht einfach abgelehnt"
+            },
+            {
+              "question": "Die Schülerinnen und Schüler waren an der Entscheidung über die Handyregel beteiligt.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Wir haben das übrigens gemeinsam mit der Schülervertretung beschlossen"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Many residents answered an appeal and helped identify places and people in the photos.",
+            "de": "Viele Bürgerinnen und Bürger haben auf einen Aufruf hin geholfen, Orte und Personen auf den Fotos zu erkennen."
+          },
+          {
+            "en": "Fresh wood is hardly used any more. Over nine tenths of the raw material is waste paper.",
+            "de": "Frisches Holz wird kaum noch verwendet. Gut neun Zehntel des Rohstoffs sind Altpapier."
+          },
+          {
+            "en": "Assessment focuses less on knowledge than on how well students get the others talking.",
+            "de": "Bewertet wird weniger das Wissen als die Fähigkeit, die anderen ins Gespräch zu bringen."
+          },
+          {
+            "en": "Each time a new system came, Gisela understood it first and patiently explained it to the others.",
+            "de": "Bei jedem neuen System hat Gisela es als Erste verstanden und den anderen geduldig erklärt."
+          },
+          {
+            "en": "The toads are collected in the morning and in the evening, not only in the evening as the notice said.",
+            "de": "Die Tiere werden morgens und abends eingesammelt, nicht nur abends, wie es fälschlich im Aushang stand."
+          },
+          {
+            "en": "He explicitly says he will not make substitutions, even though some players are tired.",
+            "de": "Er sagt ausdrücklich, dass er nicht wechselt, obwohl einige Spieler müde sind."
+          },
+          {
+            "en": "The requests are not simply refused. The hotel is trying to cope with temporary staff and will decide on Friday.",
+            "de": "Die Anträge werden nicht einfach abgelehnt. Das Hotel versucht es mit Aushilfen und entscheidet am Freitag."
+          },
+          {
+            "en": "The rule was decided together with the student council, some of whom even wanted stricter rules.",
+            "de": "Die Regel wurde gemeinsam mit der Schülervertretung beschlossen, die zum Teil sogar strengere Regeln wollte."
+          }
+        ]
+      }
+    }
+  ]
+}
