@@ -1,0 +1,382 @@
+{
+  "formatId": "goethe-b2",
+  "partId": "hoeren-4",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-b2__hoeren-4__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Moderator m] Meine Damen und Herren, herzlich willkommen zu unserer Vortragsreihe Natur im Wandel hier in der Volkshochschule. Heute spricht Doktor Petra Wenzel, die Leiterin der Sternwarte Hollerbach, über ein Thema, das uns alle betrifft, auch wenn wir selten darüber nachdenken: das künstliche Licht in der Nacht. Frau Wenzel, bitte.\n[Frau Wenzel f] Vielen Dank. Ich möchte mit einer kleinen Geschichte beginnen. Als ich vor dreißig Jahren als Studentin nach Hollerbach kam, konnte man von unserer Sternwarte aus mit bloßem Auge die Milchstraße sehen. Heute gelingt das nur noch in wenigen Nächten im Jahr, und auch nur, wenn man weit hinaus aufs Feld fährt.\n[Frau Wenzel f] Wir haben im letzten Jahr gemeinsam mit Schülerinnen und Schülern des Gymnasiums gemessen, wie hell der Nachthimmel über Hollerbach ist, und zwar an vierzig Stellen in der Stadt. Das Ergebnis hat selbst mich überrascht: Die hellste Stelle war nicht die Innenstadt mit ihren Geschäften, sondern das neue Gewerbegebiet im Norden. Dort werden riesige Parkplätze und Lagerhallen die ganze Nacht beleuchtet, obwohl nach zweiundzwanzig Uhr praktisch niemand mehr da ist.\n[Frau Wenzel f] Nun könnte man sagen: Licht gibt Sicherheit. Aber hier lohnt sich ein genauerer Blick. Die Polizei hat uns ihre Zahlen zur Verfügung gestellt. In den Straßen, in denen die Stadt vor drei Jahren nachts das Licht abgeschaltet hat, gab es danach genauso viele Einbrüche wie vorher, nicht mehr und nicht weniger. Einige Anwohner berichten sogar, dass ihnen eine fremde Taschenlampe im Dunkeln jetzt viel eher auffällt.\n[Frau Wenzel f] Das zweite Thema sind die Tiere. Ich bin keine Biologin, deshalb habe ich mit dem örtlichen Naturschutzverein gesprochen. Dort zählt man seit Jahren die Nachtfalter an der alten Mühle. Seit dort vor fünf Jahren ein beleuchteter Radweg gebaut wurde, ist ihre Zahl um mehr als die Hälfte zurückgegangen. Der Verein hat deshalb vorgeschlagen, den Radweg nur noch dann zu beleuchten, wenn wirklich jemand kommt, mit Bewegungsmeldern.\n[Frau Wenzel f] Und wir Menschen? Viele von Ihnen kennen das: die Straßenlaterne direkt vor dem Schlafzimmerfenster, der Nachbar mit dem Strahler über der Garage. Bei uns in der Sternwarte melden sich inzwischen jede Woche Bürgerinnen und Bürger, die sich über so etwas beschweren. Leider können wir ihnen nicht helfen, denn für Licht auf Privatgrundstücken gibt es in unserer Stadt bisher kaum Regeln.\n[Frau Wenzel f] Immerhin hat die Stadt inzwischen reagiert. Der Stadtrat hat im Frühjahr beschlossen, alle Straßenlaternen bis zum Jahr zweitausenddreißig auszutauschen. Die neuen Lampen leuchten nur nach unten und haben ein wärmeres Licht. Das Geld dafür kommt allerdings nicht aus dem Umweltschutz, sondern aus dem Energiesparprogramm, denn die neuen Lampen verbrauchen nur noch ein Drittel des Stroms.\n[Frau Wenzel f] Und dann habe ich noch einen großen Wunsch. Gemeinsam mit den Nachbargemeinden möchten wir erreichen, dass das Moorgebiet südlich der Stadt ein Schutzgebiet für die Nacht wird, ein sogenannter Sternenpark. Das würde nicht nur der Natur helfen, sondern auch Besucher anlocken. Schon jetzt kommen zu unseren Beobachtungsabenden Gäste von weit her, und mehrere Hotels in der Gegend haben bereits gefragt, ob sie mit uns zusammenarbeiten können.\n[Frau Wenzel f] Zum Schluss eine Bitte an Sie alle: Machen Sie heute Abend auf dem Heimweg einen kleinen Versuch. Bleiben Sie an einer dunklen Stelle stehen und warten Sie zehn Minuten. So lange brauchen die Augen, um sich an die Dunkelheit zu gewöhnen. Sie werden staunen, wie viele Sterne plötzlich zu sehen sind. Vielen Dank für Ihre Aufmerksamkeit.",
+          "questions": [
+            {
+              "question": "Wann kann man die Milchstraße in Hollerbach heute noch sehen?",
+              "options": [
+                "in jeder klaren Nacht von der Sternwarte aus",
+                "nur selten und weit außerhalb der Stadt",
+                "nur mit einem Teleskop"
+              ],
+              "correctIndex": 1,
+              "evidence": "Heute gelingt das nur noch in wenigen Nächten im Jahr"
+            },
+            {
+              "question": "Wo war der Himmel bei der Messung am hellsten?",
+              "options": [
+                "über der Innenstadt",
+                "über dem Gymnasium",
+                "über dem Gewerbegebiet"
+              ],
+              "correctIndex": 2,
+              "evidence": "sondern das neue Gewerbegebiet im Norden"
+            },
+            {
+              "question": "Was zeigen die Zahlen der Polizei?",
+              "options": [
+                "Ohne Licht gab es mehr Einbrüche.",
+                "Die Zahl der Einbrüche hat sich nicht verändert.",
+                "Ohne Licht gab es weniger Einbrüche."
+              ],
+              "correctIndex": 1,
+              "evidence": "genauso viele Einbrüche wie vorher"
+            },
+            {
+              "question": "Was hat der Naturschutzverein vorgeschlagen?",
+              "options": [
+                "den Radweg für Radfahrer zu sperren",
+                "die Lampen nur bei Bedarf einzuschalten",
+                "an der Mühle neue Bäume zu pflanzen"
+              ],
+              "correctIndex": 1,
+              "evidence": "nur noch dann zu beleuchten, wenn wirklich jemand kommt"
+            },
+            {
+              "question": "Warum kann die Sternwarte bei Beschwerden über Nachbarn nicht helfen?",
+              "options": [
+                "Es gibt kaum Vorschriften für private Beleuchtung.",
+                "Ihr fehlt dafür das Personal.",
+                "Für Beschwerden ist nur die Polizei zuständig."
+              ],
+              "correctIndex": 0,
+              "evidence": "für Licht auf Privatgrundstücken gibt es in unserer Stadt bisher kaum Regeln"
+            },
+            {
+              "question": "Woher kommt das Geld für die neuen Straßenlaternen?",
+              "options": [
+                "aus Spenden der Bürger",
+                "aus Mitteln für den Umweltschutz",
+                "aus einem Programm zum Energiesparen"
+              ],
+              "correctIndex": 2,
+              "evidence": "sondern aus dem Energiesparprogramm"
+            },
+            {
+              "question": "Welchen Vorteil hätte ein Sternenpark außerdem?",
+              "options": [
+                "Er würde Touristen in die Region bringen.",
+                "Er würde die Forschung der Sternwarte verbessern.",
+                "Er würde Arbeitsplätze in der Sternwarte schaffen."
+              ],
+              "correctIndex": 0,
+              "evidence": "sondern auch Besucher anlocken"
+            },
+            {
+              "question": "Was sollen die Zuhörer auf dem Heimweg tun?",
+              "options": [
+                "die Lampen in ihrem Garten ausschalten",
+                "eine Weile an einem dunklen Ort warten",
+                "die Helligkeit des Himmels messen"
+              ],
+              "correctIndex": 1,
+              "evidence": "Bleiben Sie an einer dunklen Stelle stehen und warten Sie zehn Minuten."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Today it is only possible on a few nights a year, and only far out in the fields.",
+            "de": "Heute geht das nur noch in wenigen Nächten im Jahr und nur weit draußen auf dem Feld."
+          },
+          {
+            "en": "The brightest spot was the new industrial estate in the north, not the city centre.",
+            "de": "Die hellste Stelle war das neue Gewerbegebiet im Norden, nicht die Innenstadt."
+          },
+          {
+            "en": "After the lights were switched off there were exactly as many burglaries as before.",
+            "de": "Nach dem Abschalten gab es genauso viele Einbrüche wie vorher."
+          },
+          {
+            "en": "The association suggested lighting the cycle path only when someone comes, using motion sensors.",
+            "de": "Der Verein schlägt vor, den Radweg nur noch mit Bewegungsmeldern zu beleuchten, wenn jemand kommt."
+          },
+          {
+            "en": "There are hardly any rules for lighting on private property in the town.",
+            "de": "Für Licht auf Privatgrundstücken gibt es in der Stadt bisher kaum Regeln."
+          },
+          {
+            "en": "The money comes from the energy-saving programme, not from environmental protection, because the new lamps use only a third of the electricity.",
+            "de": "Das Geld kommt aus dem Energiesparprogramm, nicht aus dem Umweltschutz, weil die neuen Lampen nur ein Drittel des Stroms brauchen."
+          },
+          {
+            "en": "Besides helping nature, it would attract visitors; hotels have already asked about cooperating.",
+            "de": "Neben der Natur würde er auch Besucher anlocken. Hotels haben schon nach einer Zusammenarbeit gefragt."
+          },
+          {
+            "en": "She asks them to stand somewhere dark for ten minutes so their eyes can adjust.",
+            "de": "Sie sollen zehn Minuten an einer dunklen Stelle warten, damit sich die Augen an die Dunkelheit gewöhnen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b2__hoeren-4__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Moderatorin f] Guten Abend, ich freue mich, dass Sie so zahlreich ins Stadtmuseum gekommen sind. Unser Referent ist heute Doktor Ulrich Baumgart. Er hat ein Buch über die Kaffeehäuser unserer Stadt geschrieben und nimmt uns mit auf eine Reise durch über zweihundert Jahre Wallsteiner Kaffeegeschichte.\n[Herr Baumgart m] Danke schön. Meine Damen und Herren, das erste Kaffeehaus in Wallstein wurde im Jahr siebzehnhundertachtundneunzig eröffnet, und zwar nicht von einem Wallsteiner, sondern von einem Kaufmann aus Venedig, Antonio Pellegrini. Er hatte auf seinen Reisen gesehen, wie beliebt Kaffeehäuser anderswo waren, und wollte die Idee hierherbringen. Die Wallsteiner waren am Anfang allerdings sehr misstrauisch.\n[Herr Baumgart m] Was das Kaffeehaus Pellegrini so besonders machte, war nicht in erster Linie der Kaffee, und auch nicht die Zeitungen, die es dort natürlich ebenfalls gab. Es war die Tatsache, dass Frauen hier auch ohne männliche Begleitung willkommen waren. Das war damals ein kleiner Skandal, und der Pfarrer hat sogar in einer Predigt davor gewarnt.\n[Herr Baumgart m] Im neunzehnten Jahrhundert erlebten die Kaffeehäuser in Wallstein ihre Blütezeit. Um achtzehnhundertachtzig gab es in der Stadt, die damals nur etwa dreißigtausend Einwohner hatte, mehr als vierzig davon. Und jedes hatte sein eigenes Publikum: Es gab ein Kaffeehaus der Studenten, eines der Schachspieler, eines der Handwerker. Man sagte damals: Sag mir, in welches Café du gehst, und ich sage dir, wer du bist.\n[Herr Baumgart m] Dann kam der Erste Weltkrieg, und echter Kaffee war jahrelang kaum zu bekommen. Die Kaffeehäuser servierten stattdessen einen Ersatz aus gerösteter Gerste. Viele Gäste blieben trotzdem, und das zeigt, worum es eigentlich ging: nicht um das Getränk, sondern um den Ort. Bis neunzehnhundertzwanzig musste dennoch mehr als die Hälfte der Häuser schließen, weil die Besitzer die Mieten nicht mehr bezahlen konnten.\n[Herr Baumgart m] Ein Haus hat alle Krisen überstanden, nämlich das Café Lindenhof am Marktplatz, das viele von Ihnen kennen. Sein Geheimnis? Ich habe mit der heutigen Besitzerin gesprochen, der Urenkelin des Gründers. Die Einrichtung ist seit neunzehnhundertzwölf praktisch unverändert. Als in den Siebzigerjahren alle anderen Cafés Plastikstühle und bunte Lampen bekamen, hat ihr Großvater die alten Holzstühle behalten, ganz einfach, weil er kein Geld für neue hatte.\n[Herr Baumgart m] Heute erleben wir in Wallstein eine Art Rückkehr der Kaffeehäuser, allerdings in neuer Form. In den letzten zehn Jahren haben in der Altstadt fünfzehn neue Cafés eröffnet, und viele rösten ihren Kaffee selbst. Wieder sitzen die Leute dort stundenlang, nur lesen sie heute keine Zeitung, sondern arbeiten am Laptop. Manche Cafés bieten deshalb am Wochenende Bereiche an, in denen Laptops nicht erlaubt sind, damit auch Familien einen Platz finden.\n[Herr Baumgart m] Für mein Buch habe ich übrigens mit über hundert Wallsteinerinnen und Wallsteinern gesprochen, die ältesten waren über neunzig. Fast alle konnten sich genau an ihren ersten Besuch im Kaffeehaus erinnern. Eine Dame erzählte mir, dass sie dort neunzehnhundertfünfzig ihren Mann kennengelernt hat, weil er ihr aus Versehen seinen Kaffee über das Kleid geschüttet hatte.\n[Herr Baumgart m] Zum Schluss noch eine Bitte: Das Stadtmuseum plant für den nächsten Herbst eine Ausstellung zu diesem Thema, und dafür suchen wir noch Material: alte Speisekarten, Fotos, Tassen, Geschichten. Wenn Sie zu Hause etwas haben, bringen Sie es gern vorbei. Sie bekommen alles nach der Ausstellung selbstverständlich zurück.",
+          "questions": [
+            {
+              "question": "Wer hat das erste Kaffeehaus in Wallstein eröffnet?",
+              "options": [
+                "ein reicher Wallsteiner Bürger",
+                "ein Arzt aus der Stadt",
+                "ein Kaufmann aus Italien"
+              ],
+              "correctIndex": 2,
+              "evidence": "sondern von einem Kaufmann aus Venedig"
+            },
+            {
+              "question": "Was war das Besondere am Kaffeehaus Pellegrini?",
+              "options": [
+                "Es gab dort Zeitungen aus dem Ausland.",
+                "Frauen konnten allein dorthin gehen.",
+                "Der Pfarrer traf sich dort mit Bürgern."
+              ],
+              "correctIndex": 1,
+              "evidence": "dass Frauen hier auch ohne männliche Begleitung willkommen waren"
+            },
+            {
+              "question": "Was sagt Herr Baumgart über die Kaffeehäuser im neunzehnten Jahrhundert?",
+              "options": [
+                "Verschiedene Gruppen hatten ihre eigenen Kaffeehäuser.",
+                "Sie waren vor allem bei Studenten beliebt.",
+                "Es gab nur wenige, aber sehr große Häuser."
+              ],
+              "correctIndex": 0,
+              "evidence": "Und jedes hatte sein eigenes Publikum"
+            },
+            {
+              "question": "Warum mussten nach dem Ersten Weltkrieg viele Kaffeehäuser schließen?",
+              "options": [
+                "Die Gäste blieben weg.",
+                "Es gab keinen echten Kaffee mehr.",
+                "Die Besitzer konnten die Miete nicht mehr zahlen."
+              ],
+              "correctIndex": 2,
+              "evidence": "weil die Besitzer die Mieten nicht mehr bezahlen konnten"
+            },
+            {
+              "question": "Warum hat das Café Lindenhof seine alten Stühle behalten?",
+              "options": [
+                "Der Denkmalschutz hat es verlangt.",
+                "Dem Besitzer fehlte das Geld für neue.",
+                "Die Stammgäste wollten es so."
+              ],
+              "correctIndex": 1,
+              "evidence": "weil er kein Geld für neue hatte"
+            },
+            {
+              "question": "Wie reagieren manche neuen Cafés auf die vielen Gäste mit Laptop?",
+              "options": [
+                "Sie verlangen Geld für das Internet.",
+                "Sie haben am Wochenende Bereiche ohne Laptops.",
+                "Sie schließen am Wochenende früher."
+              ],
+              "correctIndex": 1,
+              "evidence": "in denen Laptops nicht erlaubt sind"
+            },
+            {
+              "question": "Was erzählte eine ältere Dame Herrn Baumgart?",
+              "options": [
+                "Sie hat im Kaffeehaus ihren späteren Ehemann kennengelernt.",
+                "Sie hat dort viele Jahre als Kellnerin gearbeitet.",
+                "Sie hat dort einmal ihr bestes Kleid verloren."
+              ],
+              "correctIndex": 0,
+              "evidence": "dass sie dort neunzehnhundertfünfzig ihren Mann kennengelernt hat"
+            },
+            {
+              "question": "Worum bittet Herr Baumgart das Publikum?",
+              "options": [
+                "um Geldspenden für das Museum",
+                "um Hilfe bei seinem nächsten Buch",
+                "um alte Gegenstände für eine Ausstellung"
+              ],
+              "correctIndex": 2,
+              "evidence": "dafür suchen wir noch Material"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "It was opened by a merchant from Venice, not by someone from Wallstein.",
+            "de": "Ein Kaufmann aus Venedig hat es eröffnet, kein Wallsteiner."
+          },
+          {
+            "en": "What made it special was that women were welcome there without a male companion. Newspapers existed too but were not the special feature.",
+            "de": "Besonders war, dass Frauen dort auch ohne Begleitung eines Mannes willkommen waren. Zeitungen gab es auch, aber das war nicht das Besondere."
+          },
+          {
+            "en": "Each coffee house had its own clientele, such as students, chess players or craftsmen.",
+            "de": "Jedes Kaffeehaus hatte sein eigenes Publikum, zum Beispiel Studenten, Schachspieler oder Handwerker."
+          },
+          {
+            "en": "Many guests stayed despite the ersatz coffee; the houses closed because the owners couldn't pay the rent.",
+            "de": "Viele Gäste blieben trotz des Ersatzkaffees. Die Häuser schlossen, weil die Besitzer die Mieten nicht mehr bezahlen konnten."
+          },
+          {
+            "en": "The great-granddaughter's grandfather simply had no money for new chairs.",
+            "de": "Der Großvater der Besitzerin hatte einfach kein Geld für neue Stühle."
+          },
+          {
+            "en": "Some cafés offer areas at the weekend where laptops are not allowed, so families can find a seat.",
+            "de": "Manche Cafés haben am Wochenende Bereiche ohne Laptops, damit auch Familien einen Platz finden."
+          },
+          {
+            "en": "She met her husband there in nineteen fifty when he spilled his coffee on her dress.",
+            "de": "Sie hat dort neunzehnhundertfünfzig ihren Mann kennengelernt, als er ihr Kaffee über das Kleid geschüttet hat."
+          },
+          {
+            "en": "The museum is looking for old menus, photos, cups and stories for an exhibition next autumn.",
+            "de": "Das Museum sucht für eine Ausstellung im nächsten Herbst alte Speisekarten, Fotos, Tassen und Geschichten."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b2__hoeren-4__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Moderator m] Liebe Gäste, herzlich willkommen im Naturkundemuseum. Der Herbst ist Pilzzeit, und deshalb haben wir heute Marta Kowalczyk eingeladen. Sie ist geprüfte Pilzsachverständige und berät seit über zwanzig Jahren Sammlerinnen und Sammler im Landkreis.\n[Frau Kowalczyk f] Danke für die Einladung. Ich werde oft gefragt, wie man eigentlich Pilzsachverständige wird. Bei mir fing es mit meiner Großmutter an, die jeden Herbst mit mir in den Wald ging. Aber das, was sie mir beigebracht hat, war leider nicht immer richtig. Erst als ich mit dreißig die Prüfung ablegen wollte, habe ich gemerkt, wie wenig ich eigentlich wusste.\n[Frau Kowalczyk f] In meiner Beratungsstelle im Rathaus sehe ich jedes Jahr Hunderte von Körben. Und das Auffällige ist: Die meisten Fehler machen nicht die Anfänger, sondern Leute, die schon seit Jahrzehnten sammeln. Anfänger sind vorsichtig, sie bringen alles zu mir. Die Erfahrenen dagegen sind sich sicher, und genau das ist das Problem.\n[Frau Kowalczyk f] Ein Beispiel aus dem letzten Herbst: Ein älterer Herr kam mit einem Korb voller Pilze, die er für Champignons hielt. Er sammelte sie seit vierzig Jahren an derselben Stelle. Diesmal waren aber zwischen den Champignons drei hochgiftige Knollenblätterpilze. Er war so geschockt, dass er gesagt hat, er sammelt nie wieder. Ich habe ihm dann einen Kurs angeboten, und inzwischen ist er einer meiner fleißigsten Teilnehmer.\n[Frau Kowalczyk f] Was hat sich in den letzten Jahren verändert? Vor allem die Apps. Viele zeigen mir stolz ihr Handy und sagen: Die App sagt, der ist essbar. Ich habe selbst einmal zwanzig Pilze mit drei verschiedenen Apps getestet. Bei fünf davon lag mindestens eine App falsch, zweimal sogar bei einem giftigen Pilz.\n[Frau Kowalczyk f] Ich will die Apps nicht verteufeln, für einen ersten Hinweis sind sie durchaus nützlich. Aber einen Pilz kann man oft nur bestimmen, wenn man an ihm riecht, die Unterseite anschaut oder den Stiel aufschneidet. Das kann kein Foto. Deshalb mein Rat: Nutzen Sie die App gern zum Lernen, aber essen Sie nichts, was nicht ein Mensch geprüft hat.\n[Frau Kowalczyk f] Ein Thema, über das wenig gesprochen wird, sind übrigens die Haustiere. Im letzten Jahr hatten wir im Landkreis mehr Pilzvergiftungen bei Hunden als bei Menschen. Hunde fressen im Wald manchmal Pilze, und viele Besitzer bemerken es gar nicht. Wenn Ihr Hund nach einem Spaziergang plötzlich sehr müde ist, gehen Sie bitte sofort zum Tierarzt.\n[Frau Kowalczyk f] Noch etwas Praktisches: Die Beratungsstelle ist von September bis November montags und donnerstags von siebzehn bis neunzehn Uhr geöffnet, und die Beratung ist kostenlos. Bringen Sie die Pilze bitte in einem Korb, nicht in einer Plastiktüte. Und schneiden Sie sie nicht ab, sondern drehen Sie sie vorsichtig ganz aus dem Boden. Für die Bestimmung brauche ich nämlich den ganzen Pilz, auch den unteren Teil.\n[Frau Kowalczyk f] Und wenn Sie mehr lernen möchten: Im Oktober biete ich wieder zwei Wanderungen an, bei denen wir gemeinsam sammeln und die Funde danach bestimmen. Die Plätze sind begrenzt, die erste Wanderung ist schon fast ausgebucht. Anmelden können Sie sich hier am Museumsempfang, gleich nach dem Vortrag.",
+          "questions": [
+            {
+              "question": "Was sagt Frau Kowalczyk über das Wissen ihrer Großmutter?",
+              "options": [
+                "Es war die Grundlage für ihre Prüfung.",
+                "Es war teilweise falsch.",
+                "Es ist heute in einem Buch veröffentlicht."
+              ],
+              "correctIndex": 1,
+              "evidence": "war leider nicht immer richtig"
+            },
+            {
+              "question": "Wer macht laut Frau Kowalczyk die meisten Fehler?",
+              "options": [
+                "Kinder",
+                "Anfänger",
+                "erfahrene Sammler"
+              ],
+              "correctIndex": 2,
+              "evidence": "sondern Leute, die schon seit Jahrzehnten sammeln"
+            },
+            {
+              "question": "Was hat der ältere Herr nach dem Vorfall getan?",
+              "options": [
+                "Er hat mit dem Sammeln aufgehört.",
+                "Er hat einen Kurs bei Frau Kowalczyk besucht.",
+                "Er sammelt jetzt an einer anderen Stelle."
+              ],
+              "correctIndex": 1,
+              "evidence": "inzwischen ist er einer meiner fleißigsten Teilnehmer"
+            },
+            {
+              "question": "Was hat Frau Kowalczyk bei ihrem Test mit den Apps festgestellt?",
+              "options": [
+                "Alle Apps haben die Pilze richtig erkannt.",
+                "Bei einem Viertel der Pilze gab es mindestens einen Fehler.",
+                "Bei giftigen Pilzen waren die Apps immer zuverlässig."
+              ],
+              "correctIndex": 1,
+              "evidence": "Bei fünf davon lag mindestens eine App falsch"
+            },
+            {
+              "question": "Wie beurteilt Frau Kowalczyk die Apps?",
+              "options": [
+                "Sie helfen beim Lernen, ersetzen aber keine Kontrolle durch einen Menschen.",
+                "Sie sind nützlich, aber nur für erfahrene Sammler.",
+                "Sie sind meistens zuverlässig, vor allem bei giftigen Pilzen."
+              ],
+              "correctIndex": 0,
+              "evidence": "aber essen Sie nichts, was nicht ein Mensch geprüft hat"
+            },
+            {
+              "question": "Was sagt Frau Kowalczyk über Hunde?",
+              "options": [
+                "Im Landkreis gab es mehr Vergiftungen bei Hunden als bei Menschen.",
+                "Hunde erkennen giftige Pilze am Geruch.",
+                "Hunde dürfen im Wald nicht frei laufen."
+              ],
+              "correctIndex": 0,
+              "evidence": "mehr Pilzvergiftungen bei Hunden als bei Menschen"
+            },
+            {
+              "question": "Warum soll man die Pilze ganz aus dem Boden drehen?",
+              "options": [
+                "damit sie länger frisch bleiben",
+                "weil es im Wald so vorgeschrieben ist",
+                "weil der untere Teil für die Bestimmung wichtig ist"
+              ],
+              "correctIndex": 2,
+              "evidence": "Für die Bestimmung brauche ich nämlich den ganzen Pilz"
+            },
+            {
+              "question": "Was erfahren die Zuhörer über die Pilzwanderungen?",
+              "options": [
+                "Sie sind kostenlos.",
+                "Man kann sich im Museum dafür anmelden.",
+                "Sie finden jeden Montag statt."
+              ],
+              "correctIndex": 1,
+              "evidence": "Anmelden können Sie sich hier am Museumsempfang"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "What her grandmother taught her was unfortunately not always correct.",
+            "de": "Was die Großmutter ihr beigebracht hat, war leider nicht immer richtig."
+          },
+          {
+            "en": "Most mistakes are made by people who have been collecting for decades, because they are too sure of themselves.",
+            "de": "Die meisten Fehler machen Leute, die schon seit Jahrzehnten sammeln, weil sie sich zu sicher sind."
+          },
+          {
+            "en": "He first said he would never collect again, but he took her course and is now one of her keenest participants.",
+            "de": "Zuerst wollte er nie wieder sammeln, aber dann hat er ihren Kurs besucht und ist jetzt ein fleißiger Teilnehmer."
+          },
+          {
+            "en": "For five of the twenty mushrooms, that is a quarter, at least one app was wrong, twice even with a poisonous one.",
+            "de": "Bei fünf von zwanzig Pilzen, also einem Viertel, lag mindestens eine App falsch, zweimal sogar bei einem giftigen Pilz."
+          },
+          {
+            "en": "She thinks apps are useful for learning, but you should only eat what a person has checked.",
+            "de": "Sie findet Apps zum Lernen nützlich, aber man soll nur essen, was ein Mensch geprüft hat."
+          },
+          {
+            "en": "Last year there were more mushroom poisonings among dogs than among people in the district.",
+            "de": "Im letzten Jahr gab es im Landkreis mehr Pilzvergiftungen bei Hunden als bei Menschen."
+          },
+          {
+            "en": "She needs the whole mushroom, including the lower part, to identify it.",
+            "de": "Sie braucht für die Bestimmung den ganzen Pilz, auch den unteren Teil."
+          },
+          {
+            "en": "You can register at the museum reception right after the talk.",
+            "de": "Man kann sich gleich nach dem Vortrag am Museumsempfang anmelden."
+          }
+        ]
+      }
+    }
+  ]
+}

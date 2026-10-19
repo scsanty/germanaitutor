@@ -1,0 +1,298 @@
+{
+  "formatId": "goethe-b2",
+  "partId": "hoeren-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-b2__hoeren-3__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Moderatorin f] Guten Abend und willkommen bei Diskussion am Abend. Ein Jahr raus aus dem Job, reisen, etwas Neues lernen oder einfach mal durchatmen: Immer mehr Beschäftigte träumen von einem Sabbatjahr. Aber ist das wirklich für alle eine gute Idee? Darüber spreche ich mit Jörg Faber, Personalleiter eines mittelgroßen Maschinenbauunternehmens, und mit Ines Lemke. Sie ist Lehrerin und gerade aus einer einjährigen Auszeit zurückgekommen.\n[Moderatorin f] Frau Lemke, warum haben Sie sich für die Auszeit entschieden?\n[Frau Lemke f] Ich war nach fünfzehn Jahren an derselben Schule einfach leer. Ich habe gemerkt, dass ich ungeduldig mit den Kindern wurde, und das hat mich erschreckt. Also habe ich vier Jahre lang auf einen Teil meines Gehalts verzichtet, und im fünften Jahr hatte ich dann frei, bei gleichem Einkommen.\n[Moderatorin f] Herr Faber, in Ihrem Unternehmen ist so ein Modell auch möglich?\n[Herr Faber m] Seit drei Jahren, ja. Und ich gebe zu, am Anfang war ich skeptisch. Ich hatte Angst, dass gerade die besten Leute gehen und nicht wiederkommen. Diese Angst war unbegründet: Von bisher elf Kolleginnen und Kollegen, die eine Auszeit genommen haben, sind alle zurückgekommen.\n[Moderatorin f] Das klingt sehr positiv. Aber ehrlich gesagt frage ich mich, wer sich so etwas überhaupt leisten kann. Mit einem kleinen Gehalt und zwei Kindern verzichtet man nicht einfach vier Jahre lang auf Geld.\n[Frau Lemke f] Ich glaube, das hängt weniger vom Gehalt ab, als man denkt. Viele Kolleginnen von mir verdienen nicht mehr als ich und haben es trotzdem geschafft, weil sie sehr früh angefangen haben, dafür zu sparen.\n[Moderatorin f] Herr Faber, was hat eigentlich Ihr Unternehmen davon?\n[Herr Faber m] Ganz praktisch: Wir finden leichter neue Leute. In Vorstellungsgesprächen fragen junge Bewerberinnen und Bewerber inzwischen oft nach solchen Möglichkeiten, und wer da nichts anbieten kann, hat es schwer. Ich will aber nichts schönreden. Für die Kollegen, die bleiben, bedeutet eine Auszeit oft Mehrarbeit, weil wir nicht jede Stelle für ein Jahr neu besetzen können.\n[Moderatorin f] Frau Lemke, wie war die Rückkehr in die Schule?\n[Frau Lemke f] Schwieriger als gedacht. In dem Jahr hatte sich viel verändert, es gab eine neue Schulleitung und neue Regeln für den Unterricht mit Tablets. Die ersten Wochen habe ich mich wie eine Anfängerin gefühlt. Aber ich bin viel gelassener geworden, und das merken die Kinder.\n[Moderatorin f] Ich persönlich glaube ja, dass man so eine Auszeit gut vorbereiten muss, sonst sitzt man nach drei Wochen auf dem Sofa und langweilt sich.\n[Herr Faber m] Bei uns muss der Antrag übrigens mindestens ein Jahr im Voraus gestellt werden. Sonst können wir die Vertretung einfach nicht organisieren.\n[Moderatorin f] Vielen Dank Ihnen beiden für das Gespräch.",
+          "questions": [
+            {
+              "question": "Hat für die Auszeit mehrere Jahre lang weniger Geld bekommen.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Herr Faber",
+                "Gast 2: Frau Lemke"
+              ],
+              "correctIndex": 2,
+              "evidence": "Also habe ich vier Jahre lang auf einen Teil meines Gehalts verzichtet"
+            },
+            {
+              "question": "Befürchtete ursprünglich, dass Mitarbeiter nach der Auszeit nicht zurückkehren.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Herr Faber",
+                "Gast 2: Frau Lemke"
+              ],
+              "correctIndex": 1,
+              "evidence": "Ich hatte Angst, dass gerade die besten Leute gehen und nicht wiederkommen."
+            },
+            {
+              "question": "Bezweifelt, dass sich jeder eine solche Auszeit finanziell leisten kann.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Herr Faber",
+                "Gast 2: Frau Lemke"
+              ],
+              "correctIndex": 0,
+              "evidence": "wer sich so etwas überhaupt leisten kann"
+            },
+            {
+              "question": "Sieht in dem Angebot einen Vorteil bei der Suche nach Personal.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Herr Faber",
+                "Gast 2: Frau Lemke"
+              ],
+              "correctIndex": 1,
+              "evidence": "Wir finden leichter neue Leute."
+            },
+            {
+              "question": "Musste sich nach der Rückkehr erst wieder zurechtfinden.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Herr Faber",
+                "Gast 2: Frau Lemke"
+              ],
+              "correctIndex": 2,
+              "evidence": "Die ersten Wochen habe ich mich wie eine Anfängerin gefühlt."
+            },
+            {
+              "question": "Meint, man sollte vorher überlegen, wie man die freie Zeit verbringt.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Herr Faber",
+                "Gast 2: Frau Lemke"
+              ],
+              "correctIndex": 0,
+              "evidence": "sonst sitzt man nach drei Wochen auf dem Sofa und langweilt sich"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Ms Lemke gave up part of her salary for four years to finance the year off.",
+            "de": "Frau Lemke hat vier Jahre lang auf einen Teil ihres Gehalts verzichtet."
+          },
+          {
+            "en": "Mr Faber admits he was afraid the best staff would leave and not come back.",
+            "de": "Herr Faber hatte Angst, dass die besten Leute gehen und nicht wiederkommen."
+          },
+          {
+            "en": "The presenter wonders who can afford it, for example with a small salary and two children.",
+            "de": "Die Moderatorin fragt sich, wer sich das mit einem kleinen Gehalt und zwei Kindern leisten kann."
+          },
+          {
+            "en": "Mr Faber says the company finds new staff more easily because applicants ask about such options.",
+            "de": "Herr Faber sagt, dass die Firma leichter neue Leute findet, weil Bewerber danach fragen."
+          },
+          {
+            "en": "Many things had changed at school, and Ms Lemke felt like a beginner for the first weeks.",
+            "de": "An der Schule hatte sich viel verändert, und Frau Lemke fühlte sich die ersten Wochen wie eine Anfängerin."
+          },
+          {
+            "en": "The presenter thinks a year off must be well prepared, otherwise you end up bored on the sofa.",
+            "de": "Die Moderatorin meint, dass man die Auszeit gut vorbereiten muss, sonst langweilt man sich auf dem Sofa."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b2__hoeren-3__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Moderator m] Willkommen bei Streitfrage. Vier Tage arbeiten, drei Tage frei, und das bei gleichem Lohn: Was wie ein Traum klingt, probieren immer mehr Betriebe aus. Bei mir sind Martina Hollmann, sie führt eine Bäckerei mit vierzig Beschäftigten, und Henrik Petersen, der sich am Institut für Arbeit und Region mit Arbeitszeitmodellen beschäftigt. Frau Hollmann, Sie haben die Vier-Tage-Woche vor zwei Jahren eingeführt. Warum?\n[Frau Hollmann f] Aus purer Not. Ich habe einfach keine Bäcker und Verkäuferinnen mehr gefunden. Auf eine Stellenanzeige kam keine einzige Bewerbung. Seit wir die Vier-Tage-Woche haben, bewerben sich Leute aus Orten, die vierzig Kilometer entfernt sind.\n[Moderator m] Herr Petersen, ist das ein Einzelfall?\n[Herr Petersen m] Nein, aber man muss genau hinschauen. In unserer Befragung von hundertzwanzig Betrieben in der Region waren die meisten zufrieden. Viele haben die Stunden allerdings gar nicht reduziert, sondern nur auf vier längere Tage verteilt. Zehn Stunden am Stück in einer Backstube, das ist auf Dauer eine echte Belastung.\n[Frau Hollmann f] Bei uns ist das nicht so. Wir arbeiten wirklich weniger, nämlich zweiunddreißig statt achtunddreißig Stunden. Dafür haben wir die Abläufe geändert: Wir backen weniger Sorten, und der Laden öffnet morgens eine Stunde später.\n[Moderator m] Mal ehrlich, als Kunde finde ich das nicht so toll. Ich kaufe meine Brötchen um sechs, bevor ich zur Arbeit fahre, und dann stehe ich vor einer verschlossenen Tür.\n[Herr Petersen m] Ich würde das gern etwas allgemeiner sehen. Die Vier-Tage-Woche funktioniert nicht in jeder Branche gleich gut. In einem Büro kann man vieles umorganisieren. In einem Krankenhaus oder im Busverkehr braucht man aber einfach mehr Personal, wenn jeder weniger arbeitet, und genau dieses Personal fehlt.\n[Moderator m] Zum Schluss eine persönliche Frage an Sie beide: Würden Sie selbst gern nur vier Tage arbeiten? Ich gebe zu, ich hätte nichts dagegen, aber in meiner Redaktion ist das undenkbar.\n[Frau Hollmann f] Ich arbeite ja schon vier Tage, wie alle anderen im Betrieb auch. Und ehrlich gesagt bin ich seitdem viel weniger gestresst.\n[Herr Petersen m] Ich arbeite seit einem Jahr nur noch vier Tage, allerdings bei weniger Gehalt. Das war meine eigene Entscheidung, und ich habe sie nicht bereut.",
+          "questions": [
+            {
+              "question": "Konnte vor der Umstellung keine neuen Mitarbeiter finden.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Frau Hollmann",
+                "Gast 2: Herr Petersen"
+              ],
+              "correctIndex": 1,
+              "evidence": "Ich habe einfach keine Bäcker und Verkäuferinnen mehr gefunden."
+            },
+            {
+              "question": "Weist darauf hin, dass in vielen Betrieben die Arbeitstage länger geworden sind.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Frau Hollmann",
+                "Gast 2: Herr Petersen"
+              ],
+              "correctIndex": 2,
+              "evidence": "sondern nur auf vier längere Tage verteilt"
+            },
+            {
+              "question": "Bietet im eigenen Geschäft heute eine kleinere Auswahl an.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Frau Hollmann",
+                "Gast 2: Herr Petersen"
+              ],
+              "correctIndex": 1,
+              "evidence": "Wir backen weniger Sorten"
+            },
+            {
+              "question": "Findet die Veränderungen aus Sicht der Kundschaft unpraktisch.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Frau Hollmann",
+                "Gast 2: Herr Petersen"
+              ],
+              "correctIndex": 0,
+              "evidence": "Ich kaufe meine Brötchen um sechs"
+            },
+            {
+              "question": "Hält das Modell nicht in allen Bereichen für gleich gut umsetzbar.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Frau Hollmann",
+                "Gast 2: Herr Petersen"
+              ],
+              "correctIndex": 2,
+              "evidence": "funktioniert nicht in jeder Branche gleich gut"
+            },
+            {
+              "question": "Hält eine Vier-Tage-Woche am eigenen Arbeitsplatz für ausgeschlossen.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Frau Hollmann",
+                "Gast 2: Herr Petersen"
+              ],
+              "correctIndex": 0,
+              "evidence": "in meiner Redaktion ist das undenkbar"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Ms Hollmann introduced the four-day week because she couldn't find bakers or sales staff any more.",
+            "de": "Frau Hollmann hat die Vier-Tage-Woche eingeführt, weil sie keine Bäcker und Verkäuferinnen mehr fand."
+          },
+          {
+            "en": "Mr Petersen says many companies didn't cut hours but spread them over four longer days.",
+            "de": "Herr Petersen sagt, dass viele Betriebe die Stunden nur auf vier längere Tage verteilt haben."
+          },
+          {
+            "en": "Ms Hollmann's bakery now bakes fewer kinds of bread and opens later.",
+            "de": "Die Bäckerei von Frau Hollmann backt heute weniger Sorten und öffnet später."
+          },
+          {
+            "en": "As a customer, the presenter is annoyed that the bakery is closed when he wants his rolls at six.",
+            "de": "Als Kunde ärgert sich der Moderator, dass die Bäckerei um sechs noch geschlossen ist."
+          },
+          {
+            "en": "Mr Petersen says hospitals or bus companies would need more staff, which is lacking.",
+            "de": "Herr Petersen sagt, dass Krankenhäuser oder der Busverkehr mehr Personal bräuchten, das fehlt."
+          },
+          {
+            "en": "The presenter would like it but says it is unthinkable in his editorial office.",
+            "de": "Der Moderator hätte nichts dagegen, aber in seiner Redaktion ist das undenkbar."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b2__hoeren-3__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Moderatorin f] Herzlich willkommen bei Treffpunkt. Wir kaufen immer mehr Kleidung und tragen sie immer kürzer. Muss das so sein? Darüber spreche ich heute mit Anja Brandl, Schneidermeisterin mit eigener Änderungsschneiderei, und mit Malte Matthies, der ein Geschäft für gebrauchte Kinderkleidung betreibt. Frau Brandl, merken Sie in Ihrer Werkstatt, dass sich etwas verändert?\n[Frau Brandl f] Ja, und zwar in zwei Richtungen. Einerseits kommen viel mehr junge Leute als früher, die ihre Lieblingsjeans retten wollen. Andererseits bringen mir Leute Sachen, bei denen sich eine Reparatur gar nicht lohnt, weil der Stoff so dünn ist, dass er beim nächsten Waschen wieder reißt.\n[Moderatorin f] Ich muss gestehen, ich habe selbst einen Schrank voller Sachen, die ich kaum anziehe. Viele davon habe ich im Sonderangebot gekauft, einfach weil sie billig waren.\n[Frau Brandl f] Damit sind Sie nicht allein. Ich sage meinen Kundinnen immer: Bevor Sie etwas kaufen, fragen Sie sich, ob Sie es mindestens dreißigmal tragen werden. Wenn nicht, lassen Sie es im Laden hängen.\n[Moderatorin f] Herr Matthies, wer kauft eigentlich bei Ihnen?\n[Herr Matthies m] Früher vor allem Familien, die sparen mussten. Heute kommen auch viele, die sich neue Sachen leisten könnten, aber ganz bewusst gebraucht kaufen. Kinder wachsen ja so schnell, eine Hose wird manchmal nur drei Monate getragen. Was mich überrascht hat: Die Großeltern sind inzwischen meine treuesten Kunden.\n[Moderatorin f] Kann ein kleiner Laden wie Ihrer überhaupt gegen die großen Plattformen im Internet bestehen?\n[Herr Matthies m] Leicht ist es nicht. Im Internet ist die Auswahl größer, das stimmt. Aber bei mir kann man die Sachen anfassen und anprobieren, und ich prüfe jedes Teil, bevor es in den Laden kommt. Flecken oder kaputte Reißverschlüsse gibt es bei mir nicht, und dafür zahlen die Leute gern ein paar Euro mehr.\n[Moderatorin f] Ich denke, am Ende müssen auch die Hersteller mehr Verantwortung übernehmen. Es kann nicht sein, dass nur wir Kunden etwas ändern sollen.\n[Frau Brandl f] Und ich würde mir wünschen, dass Nähen wieder in der Schule unterrichtet wird. Viele junge Leute können nicht einmal einen Knopf annähen.\n[Moderatorin f] Vielen Dank Ihnen beiden.",
+          "questions": [
+            {
+              "question": "Berichtet, dass sich manche Kleidungsstücke wegen schlechter Qualität kaum reparieren lassen.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Frau Brandl",
+                "Gast 2: Herr Matthies"
+              ],
+              "correctIndex": 1,
+              "evidence": "weil der Stoff so dünn ist"
+            },
+            {
+              "question": "Gibt zu, selbst viel ungenutzte Kleidung zu besitzen.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Frau Brandl",
+                "Gast 2: Herr Matthies"
+              ],
+              "correctIndex": 0,
+              "evidence": "ich habe selbst einen Schrank voller Sachen, die ich kaum anziehe"
+            },
+            {
+              "question": "Empfiehlt, vor dem Kauf zu überlegen, wie oft man ein Stück anziehen wird.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Frau Brandl",
+                "Gast 2: Herr Matthies"
+              ],
+              "correctIndex": 1,
+              "evidence": "ob Sie es mindestens dreißigmal tragen werden"
+            },
+            {
+              "question": "Hat festgestellt, dass Großeltern zur wichtigsten Kundschaft gehören.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Frau Brandl",
+                "Gast 2: Herr Matthies"
+              ],
+              "correctIndex": 2,
+              "evidence": "Die Großeltern sind inzwischen meine treuesten Kunden."
+            },
+            {
+              "question": "Kontrolliert alle Waren, bevor sie verkauft werden.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Frau Brandl",
+                "Gast 2: Herr Matthies"
+              ],
+              "correctIndex": 2,
+              "evidence": "ich prüfe jedes Teil, bevor es in den Laden kommt"
+            },
+            {
+              "question": "Fordert, dass die Produzenten mehr Verantwortung tragen.",
+              "options": [
+                "Moderator/in",
+                "Gast 1: Frau Brandl",
+                "Gast 2: Herr Matthies"
+              ],
+              "correctIndex": 0,
+              "evidence": "müssen auch die Hersteller mehr Verantwortung übernehmen"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Ms Brandl says repairs are sometimes not worth it because the fabric is so thin it tears again.",
+            "de": "Frau Brandl sagt, dass sich manche Reparaturen nicht lohnen, weil der Stoff zu dünn ist."
+          },
+          {
+            "en": "The presenter admits she has a wardrobe full of clothes she hardly wears.",
+            "de": "Die Moderatorin gibt zu, dass sie einen Schrank voller Sachen hat, die sie kaum anzieht."
+          },
+          {
+            "en": "Ms Brandl advises asking yourself whether you will wear something at least thirty times.",
+            "de": "Frau Brandl rät, sich zu fragen, ob man ein Stück mindestens dreißigmal tragen wird."
+          },
+          {
+            "en": "Mr Matthies was surprised that grandparents are now his most loyal customers.",
+            "de": "Herr Matthies ist überrascht, dass die Großeltern heute seine treuesten Kunden sind."
+          },
+          {
+            "en": "Mr Matthies checks every item before it goes into his shop.",
+            "de": "Herr Matthies prüft jedes Teil, bevor es in den Laden kommt."
+          },
+          {
+            "en": "The presenter says manufacturers must take more responsibility, not only customers.",
+            "de": "Die Moderatorin sagt, dass auch die Hersteller mehr Verantwortung übernehmen müssen, nicht nur die Kunden."
+          }
+        ]
+      }
+    }
+  ]
+}

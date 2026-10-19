@@ -1,0 +1,451 @@
+{
+  "formatId": "goethe-b2",
+  "partId": "hoeren-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-b2__hoeren-1__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Ansage f] Text 1.\n[Moderator m] Und jetzt unser Kulturtipp fürs Wochenende. In der Kunsthalle Brenndorf ist ab Samstag die Ausstellung Zwischen den Trümmern zu sehen, mit rund zweihundert Fotografien aus den Jahren nach dem Krieg.\n[Moderator m] Die meisten Bilder stammen übrigens nicht von bekannten Fotografen, sondern aus privaten Familienalben, die Menschen aus der Region der Kunsthalle überlassen haben. Wegen des großen Interesses ist die Ausstellung donnerstags sogar bis zweiundzwanzig Uhr geöffnet, und für Schülerinnen und Schüler ist der Eintritt frei.\n[Moderator m] Wer an einer Führung teilnehmen möchte, sollte sich allerdings vorher anmelden, denn die Gruppen sind auf fünfzehn Personen begrenzt. Das geht telefonisch oder direkt an der Kasse.\n[Ansage f] Text 2.\n[Sprecherin f] Fahrraddiebe haben in Brenndorf gerade Hochsaison. Die Polizei bietet deshalb am kommenden Samstag auf dem Rathausplatz wieder eine Fahrradcodierung an. Dabei wird eine persönliche Nummer in den Rahmen graviert, sodass ein gestohlenes Rad später seinem Besitzer zugeordnet werden kann.\n[Sprecherin f] Ganz umsonst ist die Aktion nicht: Pro Fahrrad werden zehn Euro fällig, das Geld geht an den örtlichen Fahrradverein. Auch Elektroräder können codiert werden, bei Rahmen aus Carbon ist das aus technischen Gründen jedoch nicht möglich.\n[Sprecherin f] Bringen Sie unbedingt Ihren Personalausweis und einen Nachweis mit, dass das Fahrrad wirklich Ihnen gehört, also zum Beispiel den Kaufvertrag. Ohne diese Unterlagen darf die Polizei leider nicht codieren.\n[Ansage f] Text 3.\n[Reporter m] Der Brenndorfer Stadtrat hat gestern Abend nach langer Diskussion beschlossen, den Marktplatz umzubauen. Künftig sollen dort keine Autos mehr parken, stattdessen sind Bäume, Sitzbänke und ein Wasserspiel für Kinder geplant.\n[Reporter m] Die Bauarbeiten beginnen im März und dauern voraussichtlich anderthalb Jahre. In dieser Zeit zieht der Wochenmarkt auf den Parkplatz vor dem Stadion um. Die Händler hatten zunächst gegen diesen Standort protestiert, weil sie befürchten, dass dort weniger Kundschaft hinkommt.\n[Reporter m] Die Stadt hat ihnen nun angeboten, während der Bauzeit auf die Standgebühren zu verzichten. Ob sie das Angebot annehmen, wollen die Händler in der nächsten Woche entscheiden.\n[Ansage f] Text 4.\n[Moderatorin f] Und jetzt wird's spannend, liebe Hörerinnen und Hörer: Unser großes Herbsträtsel geht in die letzte Runde. Zu gewinnen gibt es diesmal zwei Karten für das ausverkaufte Abschlusskonzert des Brenndorfer Jazzfestivals, und dazu eine Übernachtung im Hotel am Stadtpark.\n[Moderatorin f] Die Frage lautet: Seit wie vielen Jahren gibt es das Festival schon? Kleiner Tipp: Die Antwort haben wir heute Morgen in den Nachrichten genannt. Anrufen können Sie ab sofort, aber nur bis vierzehn Uhr.\n[Moderatorin f] Ganz wichtig: Wer schon im letzten Monat bei uns etwas gewonnen hat, darf diesmal leider nicht mitmachen. Die Gewinnerin oder den Gewinner geben wir dann am Freitag in unserer Morgensendung bekannt.\n[Ansage f] Text 5.\n[Redakteur m] Wie wirkt sich Nachtarbeit auf Dauer auf unseren Schlaf aus? Dieser Frage geht ein Forschungsteam der Hochschule Brenndorf nach und sucht dafür noch Teilnehmende. Gesucht werden Menschen, die im Schichtdienst arbeiten, zum Beispiel in der Pflege oder bei der Feuerwehr.\n[Redakteur m] Die Teilnehmenden tragen zwei Wochen lang ein Armband, das ihren Schlaf aufzeichnet, und führen zusätzlich ein kurzes Tagebuch. Ins Labor muss man nur zweimal kommen, nämlich zu Beginn und am Ende der Studie.\n[Redakteur m] Als Dankeschön gibt es eine Aufwandsentschädigung von hundertfünfzig Euro. Außerdem bekommt jeder am Ende eine persönliche Auswertung seiner Schlafdaten.",
+          "questions": [
+            {
+              "question": "Viele der ausgestellten Fotos haben Privatleute aus der Gegend zur Verfügung gestellt.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "sondern aus privaten Familienalben"
+            },
+            {
+              "question": "Was gilt für die Führungen?",
+              "options": [
+                "Sie finden nur donnerstags statt.",
+                "Man muss sich dafür anmelden.",
+                "Sie sind für Schüler kostenlos."
+              ],
+              "correctIndex": 1,
+              "evidence": "sollte sich allerdings vorher anmelden"
+            },
+            {
+              "question": "Für die Fahrradcodierung muss man nichts bezahlen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Pro Fahrrad werden zehn Euro fällig"
+            },
+            {
+              "question": "Was muss man zur Codierung mitbringen?",
+              "options": [
+                "eine Rechnung über die letzte Reparatur",
+                "ein Foto des Fahrrads",
+                "ein Dokument, das den Besitz belegt"
+              ],
+              "correctIndex": 2,
+              "evidence": "einen Nachweis mit, dass das Fahrrad wirklich Ihnen gehört"
+            },
+            {
+              "question": "Auf dem umgebauten Marktplatz wird man nicht mehr parken können.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Künftig sollen dort keine Autos mehr parken"
+            },
+            {
+              "question": "Was hat die Stadt den Markthändlern angeboten?",
+              "options": [
+                "einen anderen Standort in der Innenstadt",
+                "dass sie vorübergehend nichts für ihre Stände zahlen",
+                "dass die Bauarbeiten schneller gehen"
+              ],
+              "correctIndex": 1,
+              "evidence": "auf die Standgebühren zu verzichten"
+            },
+            {
+              "question": "Man kann den ganzen Tag beim Sender anrufen, um mitzuspielen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "aber nur bis vierzehn Uhr"
+            },
+            {
+              "question": "Wer darf nicht am Gewinnspiel teilnehmen?",
+              "options": [
+                "Personen, die vor kurzem schon etwas gewonnen haben",
+                "Personen, die nicht in Brenndorf wohnen",
+                "Personen, die schon Konzertkarten besitzen"
+              ],
+              "correctIndex": 0,
+              "evidence": "Wer schon im letzten Monat bei uns etwas gewonnen hat"
+            },
+            {
+              "question": "Die Teilnehmenden halten ihren Schlaf auch schriftlich fest.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "führen zusätzlich ein kurzes Tagebuch"
+            },
+            {
+              "question": "Was erhalten die Teilnehmenden außer dem Geld?",
+              "options": [
+                "das Armband zum Behalten",
+                "eine Beratung durch einen Arzt",
+                "eine Analyse ihres eigenen Schlafs"
+              ],
+              "correctIndex": 2,
+              "evidence": "eine persönliche Auswertung seiner Schlafdaten"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Most pictures come from private family albums that people from the region gave to the gallery.",
+            "de": "Die meisten Bilder kommen aus privaten Familienalben von Menschen aus der Region."
+          },
+          {
+            "en": "Groups are limited to fifteen people, so you have to register in advance. Free entry for pupils refers to admission, not to the tours.",
+            "de": "Die Gruppen sind auf fünfzehn Personen begrenzt, deshalb muss man sich vorher anmelden. Freier Eintritt für Schüler betrifft die Ausstellung, nicht die Führungen."
+          },
+          {
+            "en": "It costs ten euros per bike.",
+            "de": "Die Codierung kostet zehn Euro pro Fahrrad."
+          },
+          {
+            "en": "You need your ID card and proof that the bike belongs to you, for example the purchase contract.",
+            "de": "Man braucht den Ausweis und einen Nachweis, dass das Fahrrad einem gehört, zum Beispiel den Kaufvertrag."
+          },
+          {
+            "en": "After the rebuild, no cars will park on the square any more.",
+            "de": "Nach dem Umbau sollen auf dem Marktplatz keine Autos mehr parken."
+          },
+          {
+            "en": "The town offered to waive the stall fees during the construction period.",
+            "de": "Die Stadt will während der Bauzeit keine Standgebühren verlangen."
+          },
+          {
+            "en": "Calls are only accepted until two p.m.",
+            "de": "Man kann nur bis vierzehn Uhr anrufen."
+          },
+          {
+            "en": "Anyone who already won something last month is excluded.",
+            "de": "Wer im letzten Monat schon etwas gewonnen hat, darf nicht mitmachen."
+          },
+          {
+            "en": "Besides wearing the wristband, participants keep a short diary.",
+            "de": "Neben dem Armband führen die Teilnehmenden ein kurzes Tagebuch."
+          },
+          {
+            "en": "At the end everyone gets a personal evaluation of their sleep data.",
+            "de": "Am Ende bekommt jeder eine persönliche Auswertung seiner Schlafdaten."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b2__hoeren-1__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter phone\n[Ansage f] Text 1.\n[Frau Hartmann f] Guten Tag, Herr Okonkwo, hier spricht Sabine Hartmann von der Werbeagentur Lichtblick. Vielen Dank noch einmal für das angenehme Gespräch letzte Woche. Ich freue mich, Ihnen mitteilen zu können, dass Sie in die engere Auswahl gekommen sind.\n[Frau Hartmann f] Als nächsten Schritt laden wir Sie zu einem Probetag ein, und zwar am Mittwoch, dem zwölften. Sie würden den Tag mit unserem Grafikteam verbringen und an einem echten Kundenauftrag mitarbeiten.\n[Frau Hartmann f] Ihre Arbeitsproben brauchen Sie nicht noch einmal mitzubringen, die kennen wir ja schon. Die Fahrtkosten übernehmen wir selbstverständlich. Bitte bestätigen Sie mir den Termin bis Freitag per E-Mail.\n[Ansage f] Text 2.\n[Herr Vogel m] Ja, guten Tag, Frau Bechtold, Vogel hier von der Schreinerei Vogel und Sohn. Es geht um Ihre neue Küche. Leider gibt es ein Problem: Die Arbeitsplatte, die bei uns angekommen ist, hat die falsche Farbe, und eine neue kommt frühestens in drei Wochen.\n[Herr Vogel m] Wir hätten jetzt zwei Möglichkeiten. Entweder wir verschieben den ganzen Einbau, oder wir kommen wie geplant am Montag, bauen die Schränke und die Geräte ein und montieren die Platte dann später.\n[Herr Vogel m] Bei der zweiten Lösung könnten Sie allerdings drei Wochen lang nicht richtig kochen, weil das Spülbecken erst zusammen mit der Platte angeschlossen werden kann. Überlegen Sie es sich in Ruhe und geben Sie mir bis Donnerstag Bescheid.\n[Ansage f] Text 3.\n[Jens m] Hallo Mira, Jens hier. Du hattest doch erzählt, dass deine Schwester ab Oktober ein Zimmer sucht, weil sie hier ihr Studium anfängt. Bei uns in der Wohngemeinschaft wird nämlich überraschend eins frei, Paul zieht zu seiner Freundin.\n[Jens m] Das Zimmer hat ungefähr fünfzehn Quadratmeter und kostet warm dreihundertachtzig Euro. Ich hab den anderen schon von deiner Schwester erzählt, aber wir müssen sie natürlich erst kennenlernen. Es haben sich nämlich auch schon zwei andere Leute gemeldet.\n[Jens m] Könnte sie vielleicht morgen Abend vorbeikommen? Wenn sie das nicht schafft, wäre auch ein Videoanruf in Ordnung. Sag ihr einfach, sie soll sich direkt bei mir melden, meine Nummer kannst du ihr ruhig geben.\n[Ansage f] Text 4.\n[Frau Albers f] Guten Tag, Herr Lindqvist, hier ist Albers aus der Tierarztpraxis am Mühlbach. Die Ergebnisse von Bellas Blutuntersuchung sind da, und ich kann Sie beruhigen: Es ist nichts Ernstes, die Leberwerte sind nur leicht erhöht.\n[Frau Albers f] Ich vermute, dass das mit dem neuen Futter zusammenhängt. Stellen Sie bitte wieder auf das alte Futter um, in vier Wochen machen wir dann eine Kontrolle. Ein Medikament braucht Bella im Moment nicht.\n[Frau Albers f] Wenn sie aber wieder so wenig frisst wie letzte Woche oder sich übergibt, kommen Sie bitte sofort vorbei. Dafür brauchen Sie dann auch keinen Termin.\n[Ansage f] Text 5.\n[Herr Kühn m] Guten Tag, Frau Nowak, mein Name ist Kühn von der Nordlicht Versicherung. Ich bearbeite Ihren Wasserschaden vom letzten Wochenende. Vielen Dank für die Fotos, die Sie uns geschickt haben, die helfen uns sehr.\n[Herr Kühn m] Damit wir den Schaden regulieren können, kommt am Donnerstag zwischen acht und zwölf Uhr ein Gutachter zu Ihnen. Bitte werfen Sie die beschädigten Möbel bis dahin noch nicht weg, auch wenn das unangenehm ist.\n[Herr Kühn m] Falls Sie für das Trocknen der Wände eine Firma beauftragen, heben Sie bitte die Rechnung auf. Diese Kosten übernehmen wir in der Regel ebenfalls.",
+          "questions": [
+            {
+              "question": "Herr Okonkwo soll einen Tag lang in der Agentur mitarbeiten.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "an einem echten Kundenauftrag mitarbeiten"
+            },
+            {
+              "question": "Was soll Herr Okonkwo tun?",
+              "options": [
+                "den Termin schriftlich bestätigen",
+                "seine Arbeitsproben mitbringen",
+                "seine Fahrkarten vorher einreichen"
+              ],
+              "correctIndex": 0,
+              "evidence": "Bitte bestätigen Sie mir den Termin bis Freitag per E-Mail."
+            },
+            {
+              "question": "Die Küche kann am Montag komplett fertig eingebaut werden.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "eine neue kommt frühestens in drei Wochen"
+            },
+            {
+              "question": "Was wäre ein Nachteil der zweiten Lösung?",
+              "options": [
+                "Der Einbau würde teurer werden.",
+                "Die Schränke müssten später noch einmal abgebaut werden.",
+                "Die Spüle könnte noch nicht benutzt werden."
+              ],
+              "correctIndex": 2,
+              "evidence": "weil das Spülbecken erst zusammen mit der Platte angeschlossen werden kann"
+            },
+            {
+              "question": "Jens hat mit seinen Mitbewohnern schon über Miras Schwester gesprochen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Ich hab den anderen schon von deiner Schwester erzählt"
+            },
+            {
+              "question": "Was schlägt Jens vor?",
+              "options": [
+                "Mira soll sich das Zimmer für ihre Schwester ansehen.",
+                "Die Schwester soll Jens selbst kontaktieren.",
+                "Die Schwester soll den anderen Bewerbern absagen."
+              ],
+              "correctIndex": 1,
+              "evidence": "sie soll sich direkt bei mir melden"
+            },
+            {
+              "question": "Bella soll ab sofort ein Medikament bekommen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Ein Medikament braucht Bella im Moment nicht."
+            },
+            {
+              "question": "Wann soll Herr Lindqvist sofort in die Praxis kommen?",
+              "options": [
+                "wenn Bella wieder schlecht frisst",
+                "wenn er das alte Futter nicht mehr bekommt",
+                "wenn die vier Wochen vorbei sind"
+              ],
+              "correctIndex": 0,
+              "evidence": "wieder so wenig frisst wie letzte Woche"
+            },
+            {
+              "question": "Frau Nowak hat der Versicherung schon Bilder von dem Schaden geschickt.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Vielen Dank für die Fotos, die Sie uns geschickt haben"
+            },
+            {
+              "question": "Was soll Frau Nowak aufbewahren?",
+              "options": [
+                "die Fotos vom Schaden",
+                "die Rechnung einer Trocknungsfirma",
+                "die Telefonnummer des Gutachters"
+              ],
+              "correctIndex": 1,
+              "evidence": "heben Sie bitte die Rechnung auf"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "He is invited to a trial day working on a real client project with the design team.",
+            "de": "Er ist zu einem Probetag eingeladen und soll an einem echten Kundenauftrag mitarbeiten."
+          },
+          {
+            "en": "He should confirm the date by email by Friday. He does not need to bring his work samples again.",
+            "de": "Er soll den Termin bis Freitag per E-Mail bestätigen. Die Arbeitsproben muss er nicht mitbringen."
+          },
+          {
+            "en": "The worktop has the wrong colour and the new one will take at least three weeks, so the kitchen cannot be finished on Monday.",
+            "de": "Die Arbeitsplatte hat die falsche Farbe, und eine neue kommt frühestens in drei Wochen. Die Küche kann also am Montag nicht fertig werden."
+          },
+          {
+            "en": "The sink can only be connected together with the worktop, so she couldn't cook properly for three weeks.",
+            "de": "Das Spülbecken kann erst mit der Platte angeschlossen werden, deshalb könnte sie drei Wochen nicht richtig kochen."
+          },
+          {
+            "en": "He has already told the others in the flat-share about her.",
+            "de": "Er hat den anderen in der WG schon von ihr erzählt."
+          },
+          {
+            "en": "He asks Mira to tell her sister to get in touch with him directly.",
+            "de": "Mira soll ihrer Schwester sagen, dass sie sich direkt bei Jens melden soll."
+          },
+          {
+            "en": "The vet says Bella doesn't need any medicine at the moment, only her old food.",
+            "de": "Die Tierärztin sagt, dass Bella im Moment kein Medikament braucht, nur wieder das alte Futter."
+          },
+          {
+            "en": "If Bella eats as little as last week again or vomits, he should come straight away.",
+            "de": "Wenn Bella wieder so wenig frisst wie letzte Woche oder sich übergibt, soll er sofort kommen."
+          },
+          {
+            "en": "Mr Kühn thanks her for the photos she sent.",
+            "de": "Herr Kühn bedankt sich für die Fotos, die sie geschickt hat."
+          },
+          {
+            "en": "If she hires a company to dry the walls, she should keep the invoice.",
+            "de": "Wenn sie eine Firma für das Trocknen der Wände beauftragt, soll sie die Rechnung aufheben."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b2__hoeren-1__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter station\n[Ansage f] Text 1.\n[Flughafen m] Information für alle Passagiere des Fluges dreihundertzwölf nach Lissabon. Aufgrund eines technischen Problems verzögert sich der Abflug um voraussichtlich zwei Stunden. Die neue Abflugzeit ist dreizehn Uhr vierzig.\n[Flughafen m] Bitte beachten Sie außerdem, dass Ihr Flug nicht mehr von Gate A sieben, sondern von Gate B zwölf abgeht.\n[Flughafen m] Für die Wartezeit erhalten Sie gegen Vorlage Ihrer Bordkarte einen Gutschein über fünfzehn Euro, den Sie in allen Restaurants im Terminal einlösen können. Die Gutscheine gibt es am Informationsschalter in der Abflughalle.\n[Ansage f] Text 2.\n[Möbelhaus f] Liebe Kundinnen und Kunden, herzlich willkommen in der Wohnwelt Kessler. Heute ist Aktionstag: Auf alle Sofas und Sessel aus unserer Ausstellung bekommen Sie zwanzig Prozent Nachlass. Für Ware aus dem Lager gilt das Angebot allerdings nicht.\n[Möbelhaus f] Außerdem liefern wir heute alle Einkäufe ab einem Wert von fünfhundert Euro kostenlos zu Ihnen nach Hause. Fragen Sie einfach an der Kasse nach einem Liefertermin.\n[Möbelhaus f] Und bitte beachten Sie: Unser Restaurant im ersten Stock schließt heute wegen einer geschlossenen Gesellschaft bereits um sechzehn Uhr. Kaffee und Kuchen bekommen Sie danach noch im Bistro am Eingang.\n[Ansage f] Text 3.\n[Tagung m] Sehr geehrte Teilnehmerinnen und Teilnehmer der Fachtagung Grüne Stadt, bitte beachten Sie eine Programmänderung. Der Vortrag von Professorin Brandes um vierzehn Uhr muss leider entfallen, da sie wegen eines Streiks nicht anreisen konnte.\n[Tagung m] An ihrer Stelle findet zur selben Zeit eine Podiumsdiskussion mit Gärtnerinnen und Gärtnern aus drei Städten statt, allerdings nicht im großen Saal, sondern in Raum B im zweiten Stock.\n[Tagung m] Die Präsentation von Frau Brandes wird allen Teilnehmenden nach der Tagung per E-Mail zugeschickt. Das Mittagessen wird wie geplant ab zwölf Uhr dreißig im Foyer serviert.\n[Ansage f] Text 4.\n[Freizeitbad f] Liebe Badegäste, wegen eines aufziehenden Gewitters müssen wir das Außenbecken und die Liegewiese ab sofort schließen. Bitte verlassen Sie den Außenbereich und kommen Sie ins Hallenbad.\n[Freizeitbad f] Die Rutsche und das Wellenbecken im Innenbereich bleiben selbstverständlich geöffnet. Außerdem können heute alle Gäste mit einer Tageskarte die Sauna ohne Aufpreis nutzen.\n[Freizeitbad f] Wer das Bad wegen des Wetters vorzeitig verlassen möchte, bekommt an der Kasse eine Freikarte für einen weiteren Besuch. Dafür zeigen Sie bitte Ihren Kassenbon vor.\n[Ansage f] Text 5.\n[Fähre m] Achtung, eine wichtige Durchsage für alle Fahrgäste zur Insel Sandholm. Wegen des angekündigten Sturms fährt die letzte Fähre heute nicht um neunzehn Uhr, sondern bereits um siebzehn Uhr fünfzehn. Danach wird der Fährverkehr bis morgen früh eingestellt.\n[Fähre m] Fahrgäste mit Auto werden gebeten, sich spätestens eine halbe Stunde vor der Abfahrt an der Verladestelle einzufinden. Fahrräder können heute leider nicht mitgenommen werden.\n[Fähre m] Bereits gekaufte Fahrkarten für die Abendfähre bleiben gültig und können ohne Umtausch für die frühere Verbindung genutzt werden.",
+          "questions": [
+            {
+              "question": "Der Flug startet von einem anderen Gate als ursprünglich geplant.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "sondern von Gate B zwölf abgeht"
+            },
+            {
+              "question": "Was bekommen die Passagiere wegen der Verspätung?",
+              "options": [
+                "eine neue Bordkarte",
+                "einen Gutschein fürs Essen",
+                "einen Platz in einem anderen Flug"
+              ],
+              "correctIndex": 1,
+              "evidence": "den Sie in allen Restaurants im Terminal einlösen können"
+            },
+            {
+              "question": "Der Rabatt gilt für alle Sofas, die man im Möbelhaus kaufen kann.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Für Ware aus dem Lager gilt das Angebot allerdings nicht."
+            },
+            {
+              "question": "Was ist heute im Möbelhaus anders als sonst?",
+              "options": [
+                "Das Restaurant macht früher zu.",
+                "Die Kasse befindet sich im ersten Stock.",
+                "Das Bistro bleibt geschlossen."
+              ],
+              "correctIndex": 0,
+              "evidence": "bereits um sechzehn Uhr"
+            },
+            {
+              "question": "Die Ersatzveranstaltung findet in einem anderen Raum statt als geplant.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "nicht im großen Saal, sondern in Raum B"
+            },
+            {
+              "question": "Wie erhalten die Teilnehmenden die Inhalte des ausgefallenen Vortrags?",
+              "options": [
+                "als Ausdruck am Eingang",
+                "bei der Podiumsdiskussion",
+                "nachträglich per E-Mail"
+              ],
+              "correctIndex": 2,
+              "evidence": "wird allen Teilnehmenden nach der Tagung per E-Mail zugeschickt"
+            },
+            {
+              "question": "Gäste mit Tageskarte müssen heute für die Sauna nicht extra bezahlen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "die Sauna ohne Aufpreis nutzen"
+            },
+            {
+              "question": "Was bekommen Gäste, die wegen des Wetters früher gehen?",
+              "options": [
+                "ihr Eintrittsgeld zurück",
+                "einen Saunabesuch",
+                "freien Eintritt bei einem späteren Besuch"
+              ],
+              "correctIndex": 2,
+              "evidence": "eine Freikarte für einen weiteren Besuch"
+            },
+            {
+              "question": "Fahrgäste mit Fahrrad können heute wie gewohnt mitfahren.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Fahrräder können heute leider nicht mitgenommen werden."
+            },
+            {
+              "question": "Was gilt für Fahrgäste mit einer Fahrkarte für die Abendfähre?",
+              "options": [
+                "Sie müssen ihre Karte am Schalter umtauschen.",
+                "Sie können ohne Weiteres die frühere Fähre nehmen.",
+                "Sie bekommen den Fahrpreis erstattet."
+              ],
+              "correctIndex": 1,
+              "evidence": "können ohne Umtausch für die frühere Verbindung genutzt werden"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The flight now leaves from gate B twelve instead of A seven.",
+            "de": "Der Flug geht jetzt von Gate B zwölf statt von Gate A sieben."
+          },
+          {
+            "en": "They get a fifteen-euro voucher they can use in the terminal restaurants.",
+            "de": "Sie bekommen einen Gutschein über fünfzehn Euro für die Restaurants im Terminal."
+          },
+          {
+            "en": "The discount only applies to items from the showroom, not to stock from the warehouse.",
+            "de": "Der Nachlass gilt nur für Möbel aus der Ausstellung, nicht für Ware aus dem Lager."
+          },
+          {
+            "en": "Because of a private party, the restaurant closes at four p.m. today.",
+            "de": "Wegen einer geschlossenen Gesellschaft schließt das Restaurant heute schon um sechzehn Uhr."
+          },
+          {
+            "en": "The panel discussion takes place in room B, not in the main hall.",
+            "de": "Die Podiumsdiskussion findet in Raum B statt, nicht im großen Saal."
+          },
+          {
+            "en": "The professor's presentation will be emailed to everyone after the conference.",
+            "de": "Die Präsentation wird nach der Tagung an alle per E-Mail geschickt."
+          },
+          {
+            "en": "Day-ticket holders can use the sauna at no extra charge today.",
+            "de": "Gäste mit Tageskarte können die Sauna heute ohne Aufpreis nutzen."
+          },
+          {
+            "en": "They receive a free ticket for another visit at the till.",
+            "de": "Sie bekommen an der Kasse eine Freikarte für einen weiteren Besuch."
+          },
+          {
+            "en": "Bikes cannot be taken on the ferry today.",
+            "de": "Fahrräder dürfen heute nicht mitgenommen werden."
+          },
+          {
+            "en": "Their tickets remain valid and can be used for the earlier ferry without exchanging them.",
+            "de": "Die Fahrkarten bleiben gültig und gelten ohne Umtausch für die frühere Fähre."
+          }
+        ]
+      }
+    }
+  ]
+}
