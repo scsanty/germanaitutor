@@ -4,6 +4,7 @@ import type { ChatMessage } from '../providers/types';
 import type { CefrLevel } from '../types';
 import type { LocalizedText } from '../i18n/localizedText';
 import { itemCount, isSetTaskType, validateTask, type SetTaskType, type TaskContent } from '../tasks/taskTypes';
+import type { LetterContent } from '../tasks/letter';
 import type { ExamPart } from './formats';
 
 export interface TeilSetContent {
@@ -33,13 +34,29 @@ export interface TeilSetRow {
   set: TeilSetContent | null;
 }
 
+function letterSetProblems(set: TeilSetContent, part: ExamPart): string[] {
+  const { tasks } = set.content as LetterContent;
+  const problems: string[] = [];
+  if (part.choices !== undefined && tasks.length !== part.choices) problems.push(`the part offers ${part.choices} task(s), the set has ${tasks.length}`);
+  if (part.wordTarget) {
+    tasks.forEach((t, i) => {
+      if (t.wordTarget.min !== part.wordTarget!.min || t.wordTarget.max !== part.wordTarget!.max) {
+        problems.push(`task ${i + 1}: wordTarget must be ${part.wordTarget!.min}-${part.wordTarget!.max} like the part`);
+      }
+    });
+  }
+  return problems;
+}
+
 export function teilSetProblems(set: TeilSetContent, part: ExamPart): string[] {
   if (set?.taskType !== part.taskType) return [`the part needs ${part.taskType}, not ${set?.taskType}`];
   const problems = validateTask(set.taskType, set.content);
   // Spec (bilingual content): exam content is German-only; the part's German instructions are the only task text.
   if (hasInstructionKey(set.content)) problems.push('Teil sets are German-only and cannot have an instruction');
   if (problems.length > 0) return problems;
-  const items = itemCount(set.taskType, set.content);
+  if (set.taskType === 'letter') problems.push(...letterSetProblems(set, part));
+  // A letter set has one explanation per rubric criterion, which is the part's item count.
+  const items = set.taskType === 'letter' ? part.items : itemCount(set.taskType, set.content);
   if (items !== part.items) problems.push(`the part has ${part.items} items, the set has ${items}`);
   if (!Array.isArray(set.explanations) || set.explanations.length !== items) {
     problems.push(`${items} items need ${items} explanations, found ${Array.isArray(set.explanations) ? set.explanations.length : 0}`);
@@ -54,6 +71,7 @@ const SHAPE: Record<SetTaskType, string> = {
   matching: '{"items": ["..."], "targets": ["..."], "answers": [0], "allowNone": true | false}',
   cloze: '{"text": "... {{1}} ... {{2}} ...", "gaps": [{"mode": "select", "options": ["...", "...", "..."], "correctIndex": 0} | {"mode": "bank", "answer": 0}], "bank": ["..."] (only with bank gaps)}',
   audio_questions: '{"transcript": "[Name m|f] … lines, optional first line @filter …", "questions": [{"question": "...", "options": ["...", "...", "..."], "correctIndex": 0, "evidence": "..."}]}',
+  letter: '{"tasks": [{"situation": "...", "leitpunkte": ["...", "..."], "register": "formal" | "informal", "wordTarget": {"min": 80, "max": 100}}]}',
 };
 
 // Spec: pool sets are CEFR-style and German-only, in the part's exact format.

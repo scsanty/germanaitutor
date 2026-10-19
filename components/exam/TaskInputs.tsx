@@ -23,6 +23,7 @@ const GAP = /\{\{(\d+)\}\}/g;
 
 // Answers start all-unanswered: null for passage and audio questions and cloze gaps, -1 for matching.
 export function emptyAnswer(type: SetTaskType, view: TaskView): TaskAnswer {
+  if (type === 'letter') return { type, taskIndex: 0, text: '' };
   if (type === 'passage_questions') return { type, selected: (view as PassageQuestionsView).questions.map(() => null) };
   if (type === 'audio_questions') return { type, selected: (view as AudioQuestionsView).questions.map(() => null) };
   if (type === 'matching') return { type, selected: (view as MatchingView).items.map(() => -1) };
@@ -30,6 +31,7 @@ export function emptyAnswer(type: SetTaskType, view: TaskView): TaskAnswer {
 }
 
 export function answeredCount(answer: TaskAnswer): number {
+  if (answer.type === 'letter') return answer.text.trim() ? 1 : 0;
   if (answer.type === 'cloze') return answer.values.filter((v) => v !== null && v !== '').length;
   if (answer.type === 'matching') return answer.selected.filter((s) => s !== -1).length;
   return answer.selected.filter((s) => s !== null).length;
@@ -306,6 +308,8 @@ export function TaskInputs({
 }) {
   // Each answer shape is a TaskAnswer, so the shared onChange accepts what every input sends.
   const common = { disabled, pane, onChange, itemResults };
+  // T7 renders the letter editor; a letter must never fall through to the cloze input.
+  if (type === 'letter') return null;
   if (type === 'passage_questions') return <PassageQuestions {...common} view={view as PassageQuestionsView} value={value as PassageQuestionsAnswer} />;
   if (type === 'audio_questions') return <AudioQuestions {...common} audio={audio} view={view as AudioQuestionsView} value={value as AudioQuestionsAnswer} />;
   if (type === 'matching') return <Matching {...common} view={view as MatchingView} value={value as MatchingAnswer} />;

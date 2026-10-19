@@ -3,6 +3,7 @@
 import { Fragment, useEffect, useRef, useState } from 'react';
 import { Download } from 'lucide-react';
 import type { TeilSetContent, TeilSetRow, TeilSetStatus } from '@/lib/exam/teilSets';
+import type { LetterContent } from '@/lib/tasks/letter';
 import type { AudioQuestionsContent, ClozeContent, MatchingContent, PassageQuestionsContent } from '@/lib/curriculum/types';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
@@ -39,6 +40,8 @@ function previewText(set: TeilSetContent): string {
       return (set.content as MatchingContent).items[0] ?? '';
     case 'cloze':
       return (set.content as ClozeContent).text;
+    case 'letter':
+      return (set.content as LetterContent).tasks[0]?.situation ?? '';
     case 'audio_questions':
       // The spoken words without the speaker tags and the filter line.
       return (set.content as AudioQuestionsContent).transcript

@@ -3,14 +3,15 @@ import * as pq from './passageQuestions';
 import * as mt from './matching';
 import * as cz from './cloze';
 import * as aq from './audioQuestions';
+import * as lt from './letter';
 
-export type SetTaskType = 'passage_questions' | 'matching' | 'cloze' | 'audio_questions';
-export type TaskContent = pq.PassageQuestionsContent | mt.MatchingContent | cz.ClozeContent | aq.AudioQuestionsContent;
-export type TaskView = pq.PassageQuestionsView | mt.MatchingView | cz.ClozeView | aq.AudioQuestionsView;
-export type TaskAnswer = pq.PassageQuestionsAnswer | mt.MatchingAnswer | cz.ClozeAnswer | aq.AudioQuestionsAnswer;
+export type SetTaskType = 'passage_questions' | 'matching' | 'cloze' | 'audio_questions' | 'letter';
+export type TaskContent = pq.PassageQuestionsContent | mt.MatchingContent | cz.ClozeContent | aq.AudioQuestionsContent | lt.LetterContent;
+export type TaskView = pq.PassageQuestionsView | mt.MatchingView | cz.ClozeView | aq.AudioQuestionsView | lt.LetterView;
+export type TaskAnswer = pq.PassageQuestionsAnswer | mt.MatchingAnswer | cz.ClozeAnswer | aq.AudioQuestionsAnswer | lt.LetterAnswer;
 
 export function isSetTaskType(v: unknown): v is SetTaskType {
-  return v === 'passage_questions' || v === 'matching' || v === 'cloze' || v === 'audio_questions';
+  return v === 'passage_questions' || v === 'matching' || v === 'cloze' || v === 'audio_questions' || v === 'letter';
 }
 
 export function validateTask(type: SetTaskType, content: unknown): string[] {
@@ -23,6 +24,8 @@ export function validateTask(type: SetTaskType, content: unknown): string[] {
       return cz.validateCloze(content);
     case 'audio_questions':
       return aq.validateAudioQuestions(content);
+    case 'letter':
+      return lt.validateLetter(content);
   }
 }
 
@@ -37,6 +40,8 @@ export function viewTask(type: SetTaskType, content: TaskContent, available: (ha
       return cz.viewCloze(content as cz.ClozeContent);
     case 'audio_questions':
       return aq.viewAudioQuestions(content as aq.AudioQuestionsContent, available);
+    case 'letter':
+      return lt.viewLetter(content as lt.LetterContent);
   }
 }
 
@@ -50,6 +55,8 @@ export function parseTaskAnswer(type: SetTaskType, raw: unknown, content: TaskCo
       return cz.parseClozeAnswer(raw, content as cz.ClozeContent);
     case 'audio_questions':
       return aq.parseAudioQuestionsAnswer(raw, content as aq.AudioQuestionsContent);
+    case 'letter':
+      return lt.parseLetterAnswer(raw, content as lt.LetterContent);
   }
 }
 
@@ -63,6 +70,8 @@ export function gradeTask(type: SetTaskType, content: TaskContent, answer: TaskA
       return cz.gradeCloze(content as cz.ClozeContent, answer as cz.ClozeAnswer);
     case 'audio_questions':
       return aq.gradeAudioQuestions(content as aq.AudioQuestionsContent, answer as aq.AudioQuestionsAnswer);
+    case 'letter':
+      throw new Error('a letter is graded by the AI');
   }
 }
 
@@ -76,6 +85,8 @@ export function correctTexts(type: SetTaskType, content: TaskContent): string[] 
       return cz.correctTextCloze(content as cz.ClozeContent);
     case 'audio_questions':
       return aq.correctTextAudioQuestions(content as aq.AudioQuestionsContent);
+    case 'letter':
+      throw new Error('a letter has no single correct text');
   }
 }
 
@@ -94,5 +105,7 @@ export function itemCount(type: SetTaskType, content: TaskContent): number {
       return (content as cz.ClozeContent).gaps.length;
     case 'audio_questions':
       return (content as aq.AudioQuestionsContent).questions.length;
+    case 'letter':
+      throw new Error('a letter set has one item per rubric criterion; use the part');
   }
 }

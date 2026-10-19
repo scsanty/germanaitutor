@@ -160,3 +160,31 @@ describe('audio_questions', () => {
     expect(viewTask('audio_questions', content)).toMatchObject({ audio: { available: false } });
   });
 });
+
+describe('letter task type', () => {
+  const task = { situation: 'Sie waren im Urlaub.', leitpunkte: ['Wohin?', 'Mit wem?'], register: 'informal' as const, wordTarget: { min: 80, max: 100 } };
+  const content = { tasks: [task] };
+
+  it('validates tasks, leitpunkte, register and word target', () => {
+    expect(validateTask('letter', content)).toEqual([]);
+    expect(validateTask('letter', { tasks: [] })).toEqual(['a letter needs 1 or 2 tasks']);
+    expect(validateTask('letter', { tasks: [task, task, task] })).toHaveLength(1);
+    const problems = validateTask('letter', { tasks: [{ situation: ' ', leitpunkte: ['x'], register: 'rude', wordTarget: { min: 100, max: 80 } }] });
+    expect(problems).toHaveLength(4);
+  });
+
+  it('parses an answer in range and views the content as it is', () => {
+    expect(parseTaskAnswer('letter', { type: 'letter', taskIndex: 0, text: 'Hallo' }, content)).toEqual({ type: 'letter', taskIndex: 0, text: 'Hallo' });
+    expect(parseTaskAnswer('letter', { type: 'letter', taskIndex: 1, text: 'Hallo' }, content)).toBeNull();
+    expect(parseTaskAnswer('letter', { type: 'letter', taskIndex: 0, text: 5 }, content)).toBeNull();
+    expect(viewTask('letter', content)).toEqual(content);
+    expect(answerTexts('letter', content, { type: 'letter', taskIndex: 0, text: 'Hallo' })).toEqual(['Hallo']);
+  });
+
+  it('is graded by the AI, so the single-answer helpers throw rather than fall through', () => {
+    const answer = { type: 'letter' as const, taskIndex: 0, text: 'x' };
+    expect(() => gradeTask('letter', content, answer)).toThrow(/AI/);
+    expect(() => correctTexts('letter', content)).toThrow();
+    expect(() => itemCount('letter', content)).toThrow(/use the part/);
+  });
+});

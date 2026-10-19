@@ -47,3 +47,34 @@ describe('teil sets', () => {
     expect(teilSetProblems({ ...set, explanations: [set.explanations[0], { en: 'Because.', de: ' ' }] }, part)).toContain('every explanation needs English and German');
   });
 });
+
+describe('letter sets', () => {
+  const crit = (id: string) => ({ id, name: { en: id, de: id }, descriptors: { A: 'a', D: 'd' }, points: { A: 5, D: 0 } });
+  const letterPart: ExamPart = {
+    id: 'schreiben', skill: 'writing', title: { en: 'W', de: 'S' }, taskType: 'letter', items: 3, points: 15, minutes: 30, instructions: 'Schreiben Sie …',
+    rubric: { criteria: [crit('a'), crit('b'), crit('c')] }, wordTarget: { min: 80, max: 100 }, choices: 2,
+  };
+  const task = { situation: 'Sie waren im Urlaub.', leitpunkte: ['Wohin?', 'Mit wem?'], register: 'informal' as const, wordTarget: { min: 80, max: 100 } };
+  const tip = { en: 'Tip.', de: 'Tipp.' };
+  const letterSet = { taskType: 'letter' as const, content: { tasks: [task, task] }, explanations: [tip, tip, tip] };
+
+  it('uses the part for the item count: one explanation per criterion', () => {
+    expect(teilSetProblems(letterSet, letterPart)).toEqual([]);
+    expect(teilSetProblems({ ...letterSet, explanations: [tip, tip] }, letterPart)).toContain('3 items need 3 explanations, found 2');
+  });
+
+  it('requires the part\'s number of tasks and its word target', () => {
+    expect(teilSetProblems({ ...letterSet, content: { tasks: [task] } }, letterPart)).toContain('the part offers 2 task(s), the set has 1');
+    const off = { ...task, wordTarget: { min: 50, max: 100 } };
+    expect(teilSetProblems({ ...letterSet, content: { tasks: [task, off] } }, letterPart)).toContain('task 2: wordTarget must be 80-100 like the part');
+  });
+
+  it('is German-only: no instruction', () => {
+    const withInstruction = { ...letterSet, content: { instruction: { en: 'x', de: 'y' }, tasks: [task, task] } };
+    expect(teilSetProblems(withInstruction, letterPart)).toContain('Teil sets are German-only and cannot have an instruction');
+  });
+
+  it('builds a generation prompt with the letter shape', () => {
+    expect(buildTeilSetPrompt(letterPart, 'B1').systemPrompt).toContain('"leitpunkte"');
+  });
+});
