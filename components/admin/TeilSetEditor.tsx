@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import type { LocalizedText } from '@/lib/i18n/localizedText';
 import type { TeilSetContent } from '@/lib/exam/teilSets';
-import type { ExerciseContent } from '@/lib/curriculum/types';
 import { itemCount, type TaskContent } from '@/lib/tasks/taskTypes';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
@@ -62,7 +61,7 @@ export function TeilSetEditor({
       ) : (
         <ExerciseContentFields
           type={set.taskType}
-          content={set.content as ExerciseContent}
+          content={set.content}
           index={0}
           allowInstruction={false}
           onChange={(content) => changeContent(content as TaskContent)}

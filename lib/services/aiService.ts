@@ -11,6 +11,10 @@ export type AiResult = { ok: true; text: string } | { ok: false; error: string; 
 export interface AiRequest {
   systemPrompt: string;
   messages: ChatMessage[];
+  // B1: an output cap above the adapter default (letter grading asks for 4096).
+  maxTokens?: number;
+  // S1: abort the provider call after this long; a timeout is ai_failed with detail "timed out".
+  timeoutMs?: number;
 }
 
 // Listening (admin notifications): every failure except "no provider set up" counts toward the
@@ -39,14 +43,20 @@ export async function generateWithActiveProvider(
   try {
     const result = await getAdapter(active.providerType).generateText(
       { apiKey, host: active.ollamaHost ?? undefined },
-      { model: active.selectedModel, systemPrompt: request.systemPrompt, messages: request.messages }
+      {
+        model: active.selectedModel,
+        systemPrompt: request.systemPrompt,
+        messages: request.messages,
+        ...(request.maxTokens ? { maxTokens: request.maxTokens } : {}),
+        ...(request.timeoutMs ? { timeoutMs: request.timeoutMs } : {}),
+      }
     );
     createUsageService(db).recordUsage(active.id, 1, (result.inputTokens ?? 0) + (result.outputTokens ?? 0));
     providers.recordSuccess(active.id);
     void recordProviderSuccess(db);
     return { ok: true, text: result.text };
   } catch (err) {
-    const message = (err as Error).message;
+    const message = (err as Error).name === 'TimeoutError' ? 'timed out' : (err as Error).message;
     providers.recordFailure(active.id, message);
     void recordProviderFailure(db);
     return { ok: false, error: message, code: 'ai_failed', params: { detail: message } };

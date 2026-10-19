@@ -10,6 +10,7 @@ import type { PassageQuestionsView } from '../tasks/passageQuestions';
 import type { MatchingView } from '../tasks/matching';
 import type { ClozeView } from '../tasks/cloze';
 import type { AudioQuestionsView } from '../tasks/audioQuestions';
+import { viewLetter, type LetterContent, type LetterView } from '../tasks/letter';
 import { viewTask, type TaskContent } from '../tasks/taskTypes';
 
 // What the student sees of an exercise before answering: never the answer. A flashcard keeps
@@ -22,7 +23,9 @@ export type ExerciseView =
   | ({ id: string; type: 'passage_questions' } & PassageQuestionsView)
   | ({ id: string; type: 'matching' } & MatchingView)
   | ({ id: string; type: 'cloze' } & ClozeView)
-  | ({ id: string; type: 'audio_questions' } & AudioQuestionsView);
+  | ({ id: string; type: 'audio_questions' } & AudioQuestionsView)
+  // Writing: nothing in a letter task is secret, so the view is the content.
+  | ({ id: string; type: 'letter' } & LetterView);
 
 function instructionOf(content: { instruction?: LocalizedText }): { instruction?: LocalizedText } {
   return content.instruction ? { instruction: content.instruction } : {};
@@ -66,5 +69,7 @@ export function toExerciseView(exercise: Exercise, playable: (hash: string) => b
         type: 'audio_questions',
         ...(viewTask('audio_questions', exercise.content as TaskContent, playable) as AudioQuestionsView),
       };
+    case 'letter':
+      return { id: exercise.id, type: 'letter', ...viewLetter(exercise.content as LetterContent) };
   }
 }

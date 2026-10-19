@@ -4,8 +4,9 @@ import type { PassageQuestionsContent } from '../tasks/passageQuestions';
 import type { MatchingContent } from '../tasks/matching';
 import type { ClozeContent } from '../tasks/cloze';
 import type { AudioQuestionsContent } from '../tasks/audioQuestions';
+import type { LetterContent } from '../tasks/letter';
 
-export type { PassageQuestionsContent, MatchingContent, ClozeContent, AudioQuestionsContent };
+export type { PassageQuestionsContent, MatchingContent, ClozeContent, AudioQuestionsContent, LetterContent };
 
 export type Skill = 'grammar' | 'vocabulary' | 'reading' | 'listening' | 'writing' | 'speaking';
 export type ExerciseType =
@@ -18,7 +19,9 @@ export type ExerciseType =
   | 'matching'
   | 'cloze'
   // Listening module: questions about a spoken transcript (lib/tasks/audioQuestions)
-  | 'audio_questions';
+  | 'audio_questions'
+  // Writing module: a letter graded by the AI against a rubric (lib/tasks/letter)
+  | 'letter';
 
 export interface Milestone {
   id: string;
@@ -94,7 +97,8 @@ export type ExerciseContent =
   | PassageQuestionsContent
   | MatchingContent
   | ClozeContent
-  | AudioQuestionsContent;
+  | AudioQuestionsContent
+  | LetterContent;
 
 export interface Exercise {
   id: string;

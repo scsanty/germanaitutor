@@ -38,6 +38,11 @@ describe('isTestOutEligibleType', () => {
       expect(isTestOutEligibleType(type, true)).toBe(true);
     }
   });
+
+  it('never allows letter tasks (I2)', () => {
+    expect(isTestOutEligibleType('letter', true)).toBe(false);
+    expect(isTestOutEligibleType('letter', false)).toBe(false);
+  });
 });
 
 describe('drawTestOut', () => {

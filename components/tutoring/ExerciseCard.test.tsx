@@ -10,6 +10,12 @@ const MC: ExerciseView = { id: 'ex1', type: 'multiple_choice', question: 'How do
 const FILL: ExerciseView = { id: 'ex2', type: 'fill_blank', textWithBlank: 'Ich ___ müde.' };
 const CARD: ExerciseView = { id: 'ex3', type: 'flashcard', front: 'der Hund', back: 'the dog' };
 const FREE: ExerciseView = { id: 'ex4', type: 'free_text', prompt: 'Say that you are tired.' };
+const LETTER: ExerciseView = {
+  id: 'ex5',
+  type: 'letter',
+  instruction: { en: 'Write to your friend.', de: 'Schreib deiner Freundin.' },
+  tasks: [{ situation: 'Ihre Freundin hat Sie eingeladen.', leitpunkte: ['Dank', 'Absage', 'Vorschlag'], register: 'informal', wordTarget: { min: 30, max: 50 } }],
+};
 
 function outcome(overrides: Record<string, unknown> = {}) {
   return {
@@ -360,3 +366,27 @@ describe('ExerciseCard', () => {
     expect(screen.getByText('Anna:')).toBeInTheDocument();
   });
 });
+
+describe('ExerciseCard lesson letters (T6: a plain letter input until T7)', () => {
+  it('shows the situation and Leitpunkte, checks only a non-empty letter, posts it, and shows the summary', async () => {
+    const fetchMock = stubAttempts(() =>
+      delayedResponse(outcome({ result: 'almost', correctAnswer: null, feedback: { en: 'A good start.', de: 'Ein guter Anfang.' } }))
+    );
+    const props = renderCard(LETTER);
+    expect(screen.getByText('Ihre Freundin hat Sie eingeladen.')).toBeInTheDocument();
+    expect(screen.getByText('Absage')).toBeInTheDocument();
+    const check = screen.getByRole('button', { name: 'Check' });
+    expect(check).toBeDisabled();
+    fireEvent.change(screen.getByRole('textbox', { name: /answer/i }), { target: { value: '   ' } });
+    expect(check).toBeDisabled();
+    fireEvent.change(screen.getByRole('textbox', { name: /answer/i }), { target: { value: 'Liebe Anna, danke!' } });
+    fireEvent.click(check);
+
+    expect(await screen.findByText(/A good start\./)).toBeInTheDocument();
+    expect(screen.getByText('Liebe Anna, danke!')).toBeInTheDocument();
+    const body = JSON.parse(fetchMock.mock.calls[0][1]!.body as string);
+    expect(body).toEqual({ exerciseId: 'ex5', answer: { type: 'letter', taskIndex: 0, text: 'Liebe Anna, danke!' }, source: 'lesson' });
+    await waitFor(() => expect(props.onAnswered).toHaveBeenCalled());
+  });
+});
+

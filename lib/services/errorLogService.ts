@@ -88,3 +88,13 @@ export function createErrorLogService(db: Database.Database, deps: ErrorLogDeps 
 }
 
 export type ErrorLogService = ReturnType<typeof createErrorLogService>;
+
+// S7: graders log after a successful grade, and a logging failure must never break grading.
+export function recordMistakes(db: Database.Database, source: ErrorSource, entries: ErrorEntry[], deps: ErrorLogDeps = {}): void {
+  if (entries.length === 0) return;
+  try {
+    createErrorLogService(db, deps).record(source, entries);
+  } catch (err) {
+    console.error(`Recording ${source} mistakes in the error log failed:`, err);
+  }
+}

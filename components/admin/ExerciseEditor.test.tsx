@@ -114,7 +114,7 @@ describe('ExerciseEditor flashcard rule', () => {
       />
     );
     const options = Array.from(screen.getByLabelText('Exercise 1 type').querySelectorAll('option')).map((o) => o.value);
-    expect(options).toEqual(['multiple_choice', 'fill_blank', 'free_text', 'passage_questions', 'matching', 'cloze', 'audio_questions']);
+    expect(options).toEqual(['multiple_choice', 'fill_blank', 'free_text', 'passage_questions', 'matching', 'cloze', 'audio_questions', 'letter']);
   });
 
   it('still shows an existing flashcard as a flashcard so it can be changed', () => {
@@ -295,6 +295,29 @@ describe('ExerciseEditor listening exercises', () => {
     expect(screen.queryByText('Fix before saving')).not.toBeInTheDocument();
     fireEvent.change(screen.getByLabelText('Exercise 1 question 1 evidence'), { target: { value: '' } });
     expect(onChange.mock.lastCall![0][0].content.questions[0]).not.toHaveProperty('evidence');
+  });
+
+  it('offers the letter task and authors a situation, Leitpunkte, register, word target, a Task B and the instruction (S19)', () => {
+    const onChange = vi.fn();
+    render(<Host initial={[{ type: 'multiple_choice', content: { question: '', options: ['', ''], correctIndex: 0 } }]} onChange={onChange} />);
+    fireEvent.change(screen.getByLabelText('Exercise 1 type'), { target: { value: 'letter' } });
+    fireEvent.change(screen.getByLabelText('Exercise 1 task situation'), { target: { value: 'Ihre Freundin hat Sie eingeladen.' } });
+    fireEvent.change(screen.getByLabelText('Exercise 1 task Leitpunkt 1'), { target: { value: 'Dank' } });
+    fireEvent.change(screen.getByLabelText('Exercise 1 task Leitpunkt 2'), { target: { value: 'Absage' } });
+    expect(screen.getByLabelText('Exercise 1 letter problems')).toHaveTextContent('task 1: leitpunkte must be 3 to 4 non-empty strings');
+    fireEvent.change(screen.getByLabelText('Exercise 1 task Leitpunkt 3'), { target: { value: 'Vorschlag' } });
+    fireEvent.change(screen.getByLabelText('Exercise 1 task register'), { target: { value: 'formal' } });
+    fireEvent.change(screen.getByLabelText('Exercise 1 task maximum words'), { target: { value: '60' } });
+    fireEvent.change(screen.getByLabelText('Exercise 1 instruction (English)'), { target: { value: 'Write a reply.' } });
+    fireEvent.change(screen.getByLabelText('Exercise 1 instruction (German)'), { target: { value: 'Schreib eine Antwort.' } });
+    const task = { situation: 'Ihre Freundin hat Sie eingeladen.', leitpunkte: ['Dank', 'Absage', 'Vorschlag'], register: 'formal', wordTarget: { min: 30, max: 60 } };
+    expect(onChange).toHaveBeenLastCalledWith([{ type: 'letter', content: { tasks: [task], instruction: { en: 'Write a reply.', de: 'Schreib eine Antwort.' } } }]);
+    expect(screen.queryByLabelText('Exercise 1 letter problems')).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: 'Add Task B' }));
+    expect(screen.getByLabelText('Exercise 1 task b situation')).toHaveValue('');
+    fireEvent.click(screen.getByRole('button', { name: 'Remove Task B' }));
+    expect(onChange.mock.lastCall![0][0].content.tasks).toEqual([task]);
   });
 
   it('shows the validation problems of a transcript being written', () => {

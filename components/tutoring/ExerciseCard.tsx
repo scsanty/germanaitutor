@@ -67,13 +67,16 @@ interface Shown {
   reveal?: AudioReveal;
 }
 
-// A letter is a Teil type for now; T6 makes it a lesson exercise type.
-type LessonTaskType = Exclude<SetTaskType, 'letter'>;
-type TaskExercise = Extract<ExerciseView, { type: LessonTaskType }>;
+// Every set task type is also a lesson exercise type (Writing: letters too).
+type TaskExercise = Extract<ExerciseView, { type: SetTaskType }>;
 
 function isTaskExercise(exercise: ExerciseView): exercise is TaskExercise {
   return (
-    exercise.type === 'passage_questions' || exercise.type === 'matching' || exercise.type === 'cloze' || exercise.type === 'audio_questions'
+    exercise.type === 'passage_questions' ||
+    exercise.type === 'matching' ||
+    exercise.type === 'cloze' ||
+    exercise.type === 'audio_questions' ||
+    exercise.type === 'letter'
   );
 }
 
@@ -99,6 +102,9 @@ export function taskText(exercise: ExerciseView): string {
     case 'cloze':
     case 'audio_questions':
       return '';
+    // A lesson letter has one task (T7 adds the choice between two).
+    case 'letter':
+      return exercise.tasks[0]?.situation ?? '';
   }
 }
 
@@ -124,6 +130,7 @@ function answerTextOf(exercise: ExerciseView, answer: LessonAnswer): string {
       return exercise.type === 'multiple_choice' ? (exercise.options[answer.selectedIndex] ?? '') : '';
     case 'fill_blank':
     case 'free_text':
+    case 'letter':
       return answer.text;
     case 'flashcard':
       return answer.rating;
@@ -243,7 +250,7 @@ export function ExerciseCard({
     }
     if (exercise.type === 'flashcard') return null;
     // Reading tasks: checkable once any item is answered; typed gaps go exactly as typed (grading is case-sensitive).
-    if (isTaskExercise(exercise)) return taskAnswer && answeredCount(taskAnswer) > 0 ? (taskAnswer as LessonAnswer) : null; // lesson exercises are never letters before T6
+    if (isTaskExercise(exercise)) return taskAnswer && answeredCount(taskAnswer) > 0 ? taskAnswer : null;
     const trimmed = text.trim();
     if (!trimmed) return null;
     return exercise.type === 'fill_blank' ? { type: 'fill_blank', text: trimmed } : { type: 'free_text', text: trimmed };
@@ -309,7 +316,7 @@ export function ExerciseCard({
     return (
       <div className="flex flex-1 flex-col gap-6">
         {/* S17: a reading task stays visible, read-only, with a tick or cross per item. */}
-        {isTaskExercise(exercise) && taskAnswer ? (
+        {isTaskExercise(exercise) && exercise.type !== 'letter' && taskAnswer ? (
           <>
             {instruction && <p className="text-sm text-text-muted">{instruction}</p>}
             <TaskInputs type={exercise.type} view={taskViewOf(exercise)} value={taskAnswer} onChange={() => {}} disabled itemResults={shown.itemResults} pane="all" />
@@ -319,6 +326,7 @@ export function ExerciseCard({
           <ExerciseHeading exercise={exercise} language={language} />
         )}
         {exercise.type === 'flashcard' && <p className="rounded-xl border border-border bg-surface p-4 text-lg">{exercise.back}</p>}
+        {exercise.type === 'letter' && <p className="whitespace-pre-wrap rounded-xl border border-border bg-surface p-4">{shown.answerText}</p>}
         <div className={FOOTER}>
           {/* The result rises from the bottom (200 ms; none under reduced motion). */}
           <div className={cn('flex animate-rise-in flex-col gap-2 rounded-2xl border-2 p-4', style.box)}>
@@ -437,6 +445,24 @@ export function ExerciseCard({
       {isTaskExercise(exercise) && taskAnswer && (
         <div className="flex flex-col gap-4">
           <TaskInputs type={exercise.type} view={taskViewOf(exercise)} value={taskAnswer} onChange={setTaskAnswer} disabled={busy} pane="all" />
+        </div>
+      )}
+      {/* A plain letter input until T7's letter editor; spellcheck stays the browser default (S9). */}
+      {exercise.type === 'letter' && taskAnswer?.type === 'letter' && exercise.tasks[0] && (
+        <div className="flex flex-col gap-4">
+          <p className={cn(TASK, 'whitespace-pre-wrap')}>{exercise.tasks[0].situation}</p>
+          <ul lang="de" className="list-disc pl-6">
+            {exercise.tasks[0].leitpunkte.map((point) => (
+              <li key={point}>{point}</li>
+            ))}
+          </ul>
+          <GermanTextarea
+            aria-label={t('answerLabel')}
+            value={taskAnswer.text}
+            onChange={(e) => setTaskAnswer({ type: 'letter', taskIndex: 0, text: e.target.value })}
+            disabled={busy}
+            className="min-h-48 text-base md:text-base"
+          />
         </div>
       )}
       {exercise.type === 'free_text' && (

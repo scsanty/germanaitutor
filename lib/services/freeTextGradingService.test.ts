@@ -19,6 +19,7 @@ describe('gradeFreeText', () => {
       ok: true,
       result: 'almost',
       feedback: { en: 'Ending.', de: 'Endung.' },
+      mistakes: [],
     });
   });
 

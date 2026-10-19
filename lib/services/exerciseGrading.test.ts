@@ -1,6 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import type { Exercise } from '../curriculum/types';
 import { gradeExerciseAnswer } from './exerciseGrading';
+import type { LetterGrade } from '../writing/letterGrading';
 
 const mc: Exercise = { id: 'mc', lessonId: 'l', track: null, type: 'multiple_choice', content: { question: 'Hi?', options: ['Hallo', 'Nein'], correctIndex: 0 } };
 const fill: Exercise = { id: 'fb', lessonId: 'l', track: null, type: 'fill_blank', content: { textWithBlank: 'Ich ___.', correctAnswer: 'bin' } };
@@ -26,6 +27,7 @@ describe('gradeExerciseAnswer', () => {
       ok: true,
       result: 'almost',
       feedback: { en: 'Almost.', de: 'Fast.' },
+      mistakes: [],
     });
     expect(d.gradeFreeText).toHaveBeenCalledWith({
       prompt: 'Write.',
@@ -76,3 +78,41 @@ describe('gradeExerciseAnswer', () => {
     });
   });
 });
+
+describe('gradeExerciseAnswer for letters (S6)', () => {
+  const task = { situation: 'S', leitpunkte: ['a', 'b', 'c'], register: 'informal' as const, wordTarget: { min: 20, max: 40 } };
+  const letterExercise: Exercise = { id: 'lt', lessonId: 'l', track: null, type: 'letter', content: { tasks: [task] } };
+  const grade = (percent: number) => ({ percent, summary: { en: 'Sum.', de: 'Zus.' } }) as LetterGrade;
+  const answer = (text: string, taskIndex = 0) => ({ type: 'letter' as const, taskIndex, text });
+
+  it('applies the lesson pass rule: >= 60% correct, >= 40% almost, else wrong; the summary is the feedback', async () => {
+    for (const [percent, result] of [[60, 'correct'], [59, 'almost'], [40, 'almost'], [39, 'wrong']] as const) {
+      const gradeLetter = vi.fn().mockResolvedValue({ ok: true, grade: grade(percent) });
+      expect(await gradeExerciseAnswer(letterExercise, answer('Liebe Anna'), 'B1', { ...deps(), gradeLetter })).toEqual({
+        ok: true,
+        result,
+        feedback: { en: 'Sum.', de: 'Zus.' },
+        letter: grade(percent),
+      });
+      expect(gradeLetter).toHaveBeenCalledWith({ level: 'B1', content: letterExercise.content, answer: answer('Liebe Anna') });
+    }
+  });
+
+  it('refuses an empty letter, a task that does not exist, or no letter grader, before any AI call', async () => {
+    const gradeLetter = vi.fn();
+    expect(await gradeExerciseAnswer(letterExercise, answer(' \n '), 'B1', { ...deps(), gradeLetter })).toMatchObject({ ok: false, reason: 'bad_request' });
+    expect(await gradeExerciseAnswer(letterExercise, answer('Hallo', 1), 'B1', { ...deps(), gradeLetter })).toMatchObject({ ok: false, reason: 'bad_request' });
+    expect(await gradeExerciseAnswer(letterExercise, answer('Hallo'), 'B1', deps())).toMatchObject({ ok: false, reason: 'bad_request' });
+    expect(gradeLetter).not.toHaveBeenCalled();
+  });
+
+  it('maps a grading failure to grading_failed with its code', async () => {
+    const gradeLetter = vi.fn().mockResolvedValue({ ok: false, error: 'bad', code: 'ai_bad_reply' });
+    expect(await gradeExerciseAnswer(letterExercise, answer('Hallo'), 'B1', { ...deps(), gradeLetter })).toMatchObject({
+      ok: false,
+      reason: 'grading_failed',
+      code: 'ai_bad_reply',
+    });
+  });
+});
+

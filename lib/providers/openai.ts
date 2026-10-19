@@ -6,6 +6,7 @@ import type {
   GenerateTextResult,
   FetchLike,
 } from './types';
+import { timeoutSignal } from './types';
 
 const API_BASE = 'https://api.openai.com/v1';
 
@@ -39,6 +40,7 @@ export function createOpenAIAdapter(fetchImpl: FetchLike = fetch): ProviderAdapt
             ? [{ role: 'system', content: params.systemPrompt }, ...params.messages]
             : params.messages,
         }),
+        ...timeoutSignal(params),
       });
       if (!res.ok) throw new Error(`OpenAI returned ${res.status}`);
       const data = await res.json();

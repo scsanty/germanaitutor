@@ -34,4 +34,17 @@ describe('createAnthropicAdapter', () => {
     );
     expect(result).toEqual({ text: 'Hallo!', inputTokens: 10, outputTokens: 5 });
   });
+
+  it('sends the requested max_tokens (default 1024) and a timeout signal when asked (B1, S1)', async () => {
+    const fetchImpl = vi.fn().mockResolvedValue({ ok: true, status: 200, json: async () => ({}) });
+    const adapter = createAnthropicAdapter(fetchImpl);
+    const messages = [{ role: 'user' as const, content: 'Hi' }];
+    await adapter.generateText({ apiKey: 'k' }, { model: 'm', messages, maxTokens: 4096, timeoutMs: 90_000 });
+    await adapter.generateText({ apiKey: 'k' }, { model: 'm', messages });
+    const [first, second] = fetchImpl.mock.calls.map((c) => c[1]);
+    expect(JSON.parse(first.body).max_tokens).toBe(4096);
+    expect(first.signal).toBeInstanceOf(AbortSignal);
+    expect(JSON.parse(second.body).max_tokens).toBe(1024);
+    expect(second.signal).toBeUndefined();
+  });
 });

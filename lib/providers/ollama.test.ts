@@ -31,4 +31,16 @@ describe('createOllamaAdapter', () => {
     );
     expect(result).toEqual({ text: 'Hallo!', inputTokens: 7, outputTokens: 2 });
   });
+
+  it('maps maxTokens to options.num_predict only when given, and passes a timeout signal', async () => {
+    const fetchImpl = vi.fn().mockResolvedValue({ ok: true, status: 200, json: async () => ({}) });
+    const adapter = createOllamaAdapter(fetchImpl);
+    const messages = [{ role: 'user' as const, content: 'Hi' }];
+    await adapter.generateText({}, { model: 'm', messages, maxTokens: 4096, timeoutMs: 90_000 });
+    await adapter.generateText({}, { model: 'm', messages });
+    const [first, second] = fetchImpl.mock.calls.map((c) => c[1]);
+    expect(JSON.parse(first.body).options).toEqual({ num_predict: 4096 });
+    expect(first.signal).toBeInstanceOf(AbortSignal);
+    expect(JSON.parse(second.body).options).toBeUndefined();
+  });
 });

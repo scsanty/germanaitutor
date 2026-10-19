@@ -27,6 +27,15 @@ export interface GenerateTextParams {
   model: string;
   systemPrompt?: string;
   messages: ChatMessage[];
+  /** Output cap. Anthropic needs one (default 1024); Gemini and Ollama map it when given; OpenAI ignores it. */
+  maxTokens?: number;
+  /** Abort the request after this many milliseconds (S1). */
+  timeoutMs?: number;
+}
+
+/** The fetch signal for a request's timeout, when one is asked for. */
+export function timeoutSignal(params: { timeoutMs?: number }): { signal?: AbortSignal } {
+  return params.timeoutMs ? { signal: AbortSignal.timeout(params.timeoutMs) } : {};
 }
 
 export interface GenerateTextResult {

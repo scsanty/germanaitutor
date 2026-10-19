@@ -71,4 +71,16 @@ describe('createGeminiAdapter', () => {
     await adapter.testConnection({ apiKey: 'gm-test' });
     expect(fetchImpl).toHaveBeenCalledTimes(1);
   });
+
+  it('maps maxTokens to generationConfig.maxOutputTokens only when given, and passes a timeout signal', async () => {
+    const fetchImpl = vi.fn().mockResolvedValue({ ok: true, status: 200, json: async () => ({}) });
+    const adapter = createGeminiAdapter(fetchImpl);
+    const messages = [{ role: 'user' as const, content: 'Hi' }];
+    await adapter.generateText({ apiKey: 'k' }, { model: 'm', messages, maxTokens: 4096, timeoutMs: 90_000 });
+    await adapter.generateText({ apiKey: 'k' }, { model: 'm', messages });
+    const [first, second] = fetchImpl.mock.calls.map((c) => c[1]);
+    expect(JSON.parse(first.body).generationConfig).toEqual({ maxOutputTokens: 4096 });
+    expect(first.signal).toBeInstanceOf(AbortSignal);
+    expect(JSON.parse(second.body).generationConfig).toBeUndefined();
+  });
 });

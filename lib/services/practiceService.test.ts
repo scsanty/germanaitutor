@@ -134,6 +134,23 @@ describe('practiceService.gradeAnswer', () => {
     expect(gradeFreeText).toHaveBeenCalledWith(expect.objectContaining({ prompt: 'Greet a friend.', modelAnswer: 'Hallo!', level: 'A1' }));
   });
 
+  it('records the free-text grader’s mistakes in the error log with source lesson (S7)', async () => {
+    const { db, service, gradeFreeText } = setup();
+    gradeFreeText.mockResolvedValueOnce({ ok: true, result: 'almost', feedback: null, mistakes: [{ category: 'spelling', wrong: 'Halo', right: 'Hallo' }] });
+    addPracticeExercise(db, 'px-free', 'a1-greet', { type: 'free_text', content: { prompt: 'Greet a friend.', modelAnswer: 'Hallo!' } });
+    await service.gradeAnswer('px-free', { type: 'free_text', text: 'Halo!' });
+    expect(db.prepare('SELECT source, category, wrong FROM error_log').all()).toEqual([{ source: 'lesson', category: 'spelling', wrong: 'Halo' }]);
+  });
+
+  it('refuses a letter answer: practice never grades letters', async () => {
+    const { db, service } = setup();
+    addPracticeExercise(db, 'px-letter', 'a1-greet', {
+      type: 'letter',
+      content: { tasks: [{ situation: 'S', leitpunkte: ['a', 'b', 'c'], register: 'informal', wordTarget: { min: 20, max: 40 } }] },
+    });
+    await expect(service.gradeAnswer('px-letter', { type: 'letter', taskIndex: 0, text: 'Liebe Anna' })).rejects.toMatchObject({ kind: 'bad_request' });
+  });
+
   it('reports a missing exercise, a mismatched answer, and an AI failure', async () => {
     const { db, service, gradeFreeText } = setup();
     // Review Focus 2: an exercise promoted or deleted mid-batch is simply gone.

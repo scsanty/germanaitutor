@@ -54,6 +54,17 @@ describe('validateExerciseContent', () => {
   });
 });
 
+describe('letter content', () => {
+  const task = { situation: 'Schreiben Sie Ihrer Freundin.', leitpunkte: ['Dank', 'Absage', 'Vorschlag'], register: 'informal', wordTarget: { min: 30, max: 50 } };
+
+  it('accepts a letter with a bilingual instruction, and reports a broken task or a one-language instruction', () => {
+    expect(validateExerciseContent('letter', { instruction: { en: 'Write.', de: 'Schreib.' }, tasks: [task] })).toEqual([]);
+    expect(validateExerciseContent('letter', { tasks: [{ ...task, leitpunkte: ['Dank'] }] })).toEqual(['task 1: leitpunkte must be 3 to 4 non-empty strings']);
+    expect(validateExerciseContent('letter', { tasks: [] })).toEqual(['a letter needs 1 or 2 tasks']);
+    expect(validateExerciseContent('letter', { instruction: { en: 'Write.', de: '' }, tasks: [task] })).toEqual(['instruction needs both English and German']);
+  });
+});
+
 describe('instructions', () => {
   it('accepts an instruction with both languages, and an empty question or prompt only then', () => {
     const instruction = { en: 'Choose the right greeting.', de: 'Wähle die richtige Begrüßung.' };

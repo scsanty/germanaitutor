@@ -11,6 +11,7 @@ import type {
   MatchingContent,
   ClozeContent,
   AudioQuestionsContent,
+  LetterContent,
 } from '@/lib/curriculum/types';
 import { Plus, Trash2, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -21,6 +22,7 @@ import { BTN, FOCUS, INPUT } from './adminStyles';
 import { ClozeFields, MatchingFields, PassageQuestionsFields } from './ReadingTaskFields';
 import { AudioQuestionsFields } from './ListeningTaskFields';
 import { AudioActions } from './AudioActions';
+import { blankLetterTask, LetterTaskFields } from './LetterTaskFields';
 
 export interface ExerciseFormEntry {
   id?: string;
@@ -48,6 +50,9 @@ function blankContentFor(type: ExerciseType): ExerciseContent {
     // Listening: a transcript and its questions; saving checks them in full.
     case 'audio_questions':
       return { transcript: '', questions: [{ question: '', options: ['', ''], correctIndex: 0 }] };
+    // Writing: one task to start; saving checks it in full.
+    case 'letter':
+      return { tasks: [blankLetterTask()] };
   }
 }
 
@@ -102,6 +107,7 @@ export function ExerciseEditor({
                 <option value="matching">Matching</option>
                 <option value="cloze">Cloze</option>
                 <option value="audio_questions">Listening + questions</option>
+                <option value="letter">Letter task</option>
               </NativeSelect>
               <Button type="button" variant="ghost" className={`${BTN} text-destructive hover:text-destructive`} onClick={() => removeAt(index)}>
                 <Trash2 aria-hidden />
@@ -180,6 +186,8 @@ function typeSpecificFields(type: ExerciseType, content: ExerciseContent, index:
       return <ClozeFields content={content as ClozeContent} index={index} onChange={onChange} />;
     case 'audio_questions':
       return <AudioQuestionsFields content={content as AudioQuestionsContent} index={index} onChange={onChange} />;
+    case 'letter':
+      return <LetterTaskFields content={content as LetterContent} index={index} onChange={onChange} />;
   }
 }
 
