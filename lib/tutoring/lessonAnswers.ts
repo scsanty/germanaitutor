@@ -10,6 +10,7 @@ import type { GradeResult } from './grading';
 import type { PassageQuestionsAnswer, PassageQuestionsContent } from '../tasks/passageQuestions';
 import type { MatchingAnswer, MatchingContent } from '../tasks/matching';
 import type { ClozeAnswer, ClozeContent } from '../tasks/cloze';
+import { audioReveal, type AudioQuestionsAnswer, type AudioQuestionsContent, type AudioReveal } from '../tasks/audioQuestions';
 import { correctTexts, type TaskContent } from '../tasks/taskTypes';
 
 export type FlashcardRating = 'knew' | 'sort_of' | 'didnt_know';
@@ -22,7 +23,10 @@ export type LessonAnswer =
   | { type: 'free_text'; text: string }
   | PassageQuestionsAnswer
   | MatchingAnswer
-  | ClozeAnswer;
+  | ClozeAnswer
+  | AudioQuestionsAnswer;
+
+export type { AudioReveal };
 
 // What the student gets back after answering an exercise.
 export interface AttemptOutcome {
@@ -32,8 +36,10 @@ export interface AttemptOutcome {
   passedExerciseIds: string[];
   lessonCompleted: boolean;
   justCompleted: boolean;
-  // S17: one entry per question, text or gap, for the reading task types only.
+  // S17: one entry per question, text or gap, for the reading and listening task types only.
   itemResults?: boolean[];
+  // Listening: shown only after answering (audio_questions only).
+  reveal?: AudioReveal;
 }
 
 const FLASHCARD_RATINGS: readonly FlashcardRating[] = ['knew', 'sort_of', 'didnt_know'];
@@ -57,7 +63,7 @@ export function parseLessonAnswer(raw: unknown): LessonAnswer | null {
   }
   if (a.type === 'free_text' && typeof a.text === 'string') return { type: 'free_text', text: a.text };
   // The reading task types are checked against their content when graded (parseTaskAnswer).
-  if ((a.type === 'passage_questions' || a.type === 'matching') && Array.isArray(a.selected)) {
+  if ((a.type === 'passage_questions' || a.type === 'matching' || a.type === 'audio_questions') && Array.isArray(a.selected)) {
     return { type: a.type, selected: a.selected as (number | null)[] };
   }
   if (a.type === 'cloze' && Array.isArray(a.values)) return { type: 'cloze', values: a.values as (string | number | null)[] };
@@ -84,7 +90,18 @@ export function correctAnswerFor(exercise: Exercise): string | null {
     case 'passage_questions':
     case 'matching':
     case 'cloze':
+    case 'audio_questions':
       return correctTexts(exercise.type, exercise.content as TaskContent).join('; ');
+  }
+}
+
+// The reveal for an answered listening exercise; null for every other type (or broken content).
+export function revealFor(exercise: Exercise): AudioReveal | null {
+  if (exercise.type !== 'audio_questions') return null;
+  try {
+    return audioReveal(exercise.content as AudioQuestionsContent);
+  } catch {
+    return null;
   }
 }
 
@@ -94,14 +111,15 @@ const UNANSWERED = '—';
 // card (client) and the attempt log (server) share this function and write the same text.
 export type TaskAnswerSource =
   | { type: 'passage_questions'; questions: { options: string[] }[] }
+  | { type: 'audio_questions'; questions: { options: string[] }[] }
   | { type: 'matching'; targets: string[] }
   | { type: 'cloze'; gaps: ({ mode: 'typed' } | { mode: 'select'; options: string[] } | { mode: 'bank' })[]; bank?: string[] };
 
 // One readable entry per question, text or gap, joined with '; ': the chosen option or text,
 // "x" for "none fits", "—" when unanswered.
-export function taskAnswerText(source: TaskAnswerSource, answer: PassageQuestionsAnswer | MatchingAnswer | ClozeAnswer): string {
+export function taskAnswerText(source: TaskAnswerSource, answer: PassageQuestionsAnswer | MatchingAnswer | ClozeAnswer | AudioQuestionsAnswer): string {
   let parts: string[] = [];
-  if (answer.type === 'passage_questions' && source.type === 'passage_questions') {
+  if ((answer.type === 'passage_questions' && source.type === 'passage_questions') || (answer.type === 'audio_questions' && source.type === 'audio_questions')) {
     parts = answer.selected.map((s, i) => (s === null ? UNANSWERED : (source.questions[i]?.options[s] ?? UNANSWERED)));
   } else if (answer.type === 'matching' && source.type === 'matching') {
     parts = answer.selected.map((s) => (s === null ? 'x' : (source.targets[s] ?? UNANSWERED)));
@@ -123,6 +141,8 @@ function taskAnswerSourceOf(exercise: Exercise): TaskAnswerSource {
       return { type: 'passage_questions', ...(exercise.content as PassageQuestionsContent) };
     case 'matching':
       return { type: 'matching', ...(exercise.content as MatchingContent) };
+    case 'audio_questions':
+      return { type: 'audio_questions', questions: (exercise.content as AudioQuestionsContent).questions };
     default:
       return { type: 'cloze', ...(exercise.content as ClozeContent) };
   }
@@ -141,6 +161,7 @@ export function answerTextFor(exercise: Exercise, answer: LessonAnswer): string 
     case 'passage_questions':
     case 'matching':
     case 'cloze':
+    case 'audio_questions':
       return taskAnswerText(taskAnswerSourceOf(exercise), answer);
   }
 }
@@ -158,6 +179,14 @@ function setTaskText(exercise: Exercise): string {
       const { passage, questions } = exercise.content as PassageQuestionsContent;
       const list = questions.map((q, i) => `${i + 1}. ${q.question} (options: ${q.options.join(' | ')})`);
       return `${passage}\n\n${list.join('\n')}`;
+    }
+    // The lesson chat runs only after an answer, so the AI may see what was spoken (S11).
+    case 'audio_questions': {
+      const { transcript, questions } = exercise.content as AudioQuestionsContent;
+      const list = questions.map(
+        (q, i) => `${i + 1}. ${q.question} (options: ${q.options.join(' | ')})${q.evidence ? ` [evidence: "${q.evidence}"]` : ''}`
+      );
+      return `Transcript of the audio:\n${transcript}\n\n${list.join('\n')}`;
     }
     case 'matching': {
       const { items, targets, allowNone } = exercise.content as MatchingContent;
@@ -191,6 +220,7 @@ export function taskTextFor(exercise: Exercise): string {
     case 'passage_questions':
     case 'matching':
     case 'cloze':
+    case 'audio_questions':
       return capped(setTaskText(exercise));
   }
 }

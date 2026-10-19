@@ -1,5 +1,5 @@
 {
-  "seedVersion": "9",
+  "seedVersion": "10",
   "formatVersion": 3,
   "track": "goethe",
   "level": "A1",
@@ -1100,121 +1100,312 @@
       }
     },
     {
-      "id": "a1-goethe-listening-teil1-dialogues-with-images__ex0",
+      "id": "a1-goethe-listening-teil1-dialogues-with-images__ex3",
       "lessonId": "a1-goethe-listening-teil1-dialogues-with-images",
       "track": "goethe",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Hörtext (2x): 'Guten Tag, ich möchte zwei Tickets für das Konzert am Samstag.' - 'Gerne, das macht 40 Euro.' - Wie viel bezahlt der Mann?",
-        "options": [
-          "14 Euro",
-          "40 Euro",
-          "44 Euro"
-        ],
-        "correctIndex": 1
+        "instruction": {
+          "en": "Listen to the conversation. Choose the right answer: a, b or c.",
+          "de": "Sie hören ein Gespräch. Kreuzen Sie die richtige Lösung an: a, b oder c."
+        },
+        "transcript": "@filter none\n[Kunde m] Guten Tag, ich möchte zwei Karten für das Konzert am Samstag.\n[Verkäuferin f] Gern. Eine Karte kostet zwanzig Euro.\n[Kunde m] Gibt es auch Karten für Studenten?\n[Verkäuferin f] Ja, für Studenten kostet eine Karte nur vierzehn Euro. Sind Sie Student?\n[Kunde m] Nein, leider nicht. Also zwei normale Karten, bitte.\n[Verkäuferin f] Gut, das macht dann vierzig Euro.",
+        "questions": [
+          {
+            "question": "Wie viel bezahlt der Mann?",
+            "options": [
+              "14 Euro",
+              "20 Euro",
+              "40 Euro"
+            ],
+            "correctIndex": 2,
+            "evidence": "das macht dann vierzig Euro"
+          },
+          {
+            "question": "Wann ist das Konzert?",
+            "options": [
+              "Am Samstag",
+              "Am Sonntag",
+              "Am Freitag"
+            ],
+            "correctIndex": 0,
+            "evidence": "das Konzert am Samstag"
+          }
+        ]
       }
     },
     {
-      "id": "a1-goethe-listening-teil1-dialogues-with-images__ex1",
+      "id": "a1-goethe-listening-teil1-dialogues-with-images__ex4",
       "lessonId": "a1-goethe-listening-teil1-dialogues-with-images",
       "track": "goethe",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Hörtext (2x): 'Wann treffen wir uns am Bahnhof?' - 'Der Zug kommt um 15 Uhr, lass uns um viertel nach drei treffen.' - Um wie viel Uhr treffen sie sich?",
-        "options": [
-          "15:00 Uhr",
-          "15:15 Uhr",
-          "15:30 Uhr"
-        ],
-        "correctIndex": 1
+        "instruction": {
+          "en": "Listen to the conversation. Choose the right answer: a, b or c.",
+          "de": "Sie hören ein Gespräch. Kreuzen Sie die richtige Lösung an: a, b oder c."
+        },
+        "transcript": "@filter none\n[Lena f] Hallo Jonas! Holst du mich morgen vom Bahnhof ab?\n[Jonas m] Ja, gern. Wann kommt dein Zug an?\n[Lena f] Um fünfzehn Uhr.\n[Jonas m] Hm, bis drei arbeite ich. Geht es auch um halb vier?\n[Lena f] Ja, kein Problem. Dann trinke ich im Bahnhof einen Kaffee.\n[Jonas m] Super, bis morgen!",
+        "questions": [
+          {
+            "question": "Wann treffen sich Lena und Jonas?",
+            "options": [
+              "Um 15:00 Uhr",
+              "Um 15:30 Uhr",
+              "Um 13:30 Uhr"
+            ],
+            "correctIndex": 1,
+            "evidence": "Geht es auch um halb vier?"
+          },
+          {
+            "question": "Was macht Lena im Bahnhof?",
+            "options": [
+              "Sie arbeitet.",
+              "Sie kauft eine Fahrkarte.",
+              "Sie trinkt einen Kaffee."
+            ],
+            "correctIndex": 2,
+            "evidence": "Dann trinke ich im Bahnhof einen Kaffee"
+          }
+        ]
       }
     },
     {
-      "id": "a1-goethe-listening-teil1-dialogues-with-images__ex2",
+      "id": "a1-goethe-listening-teil1-dialogues-with-images__ex5",
       "lessonId": "a1-goethe-listening-teil1-dialogues-with-images",
       "track": "goethe",
-      "type": "fill_blank",
+      "type": "audio_questions",
       "content": {
-        "textWithBlank": "Hörtext: 'Was möchten Sie essen?' - 'Ich nehme ein Stück ___ bitte.' (spoken word: Kuchen)",
-        "correctAnswer": "Kuchen"
+        "instruction": {
+          "en": "Listen to the conversation. Choose the right answer: a, b or c.",
+          "de": "Sie hören ein Gespräch. Kreuzen Sie die richtige Lösung an: a, b oder c."
+        },
+        "transcript": "@filter none\n[Kellner m] Guten Tag. Was möchten Sie trinken?\n[Gast f] Einen Tee, bitte. Haben Sie auch Kuchen?\n[Kellner m] Ja, wir haben Apfelkuchen und Käsekuchen. Schokoladenkuchen haben wir heute leider nicht.\n[Gast f] Dann nehme ich ein Stück Käsekuchen.\n[Kellner m] Gern. Möchten Sie Sahne dazu?\n[Gast f] Nein, danke.",
+        "questions": [
+          {
+            "question": "Was isst die Frau?",
+            "options": [
+              "Apfelkuchen",
+              "Käsekuchen",
+              "Schokoladenkuchen"
+            ],
+            "correctIndex": 1,
+            "evidence": "Dann nehme ich ein Stück Käsekuchen"
+          },
+          {
+            "question": "Was trinkt die Frau?",
+            "options": [
+              "Tee",
+              "Kaffee",
+              "Wasser"
+            ],
+            "correctIndex": 0,
+            "evidence": "Einen Tee, bitte"
+          }
+        ]
       }
     },
     {
-      "id": "a1-goethe-listening-teil2-announcements__ex0",
+      "id": "a1-goethe-listening-teil2-announcements__ex3",
       "lessonId": "a1-goethe-listening-teil2-announcements",
       "track": "goethe",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Durchsage (nur 1x!): 'Sehr geehrte Fahrgäste an Gleis 2, der Zug nach Berlin fällt heute aus. Bitte nutzen Sie den Zug um 14:30 Uhr auf Gleis 4.' - Aussage: Der Zug nach Berlin fährt wie gewohnt auf Gleis 2.",
-        "options": [
-          "Richtig",
-          "Falsch"
-        ],
-        "correctIndex": 1
+        "instruction": {
+          "en": "Listen to the announcement. Is each statement true (Richtig) or false (Falsch)?",
+          "de": "Sie hören eine Durchsage. Kreuzen Sie an: Richtig oder Falsch."
+        },
+        "transcript": "@filter station\n[Ansage f] Sehr geehrte Fahrgäste an Gleis zwei: Der Zug nach Berlin fällt heute leider aus.\n[Ansage f] Bitte nehmen Sie den Zug um vierzehn Uhr dreißig auf Gleis vier.",
+        "questions": [
+          {
+            "question": "Der Zug nach Berlin fährt heute von Gleis zwei.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1,
+            "evidence": "fällt heute leider aus"
+          },
+          {
+            "question": "Die Fahrgäste nach Berlin sollen zu einem anderen Gleis gehen.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0,
+            "evidence": "auf Gleis vier"
+          }
+        ]
       }
     },
     {
-      "id": "a1-goethe-listening-teil2-announcements__ex1",
+      "id": "a1-goethe-listening-teil2-announcements__ex4",
       "lessonId": "a1-goethe-listening-teil2-announcements",
       "track": "goethe",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Durchsage (nur 1x!): 'Achtung im Kaufhaus: Das Geschäft schließt in fünf Minuten. Bitte gehen Sie zur Kasse.' - Aussage: Das Geschäft macht gleich zu.",
-        "options": [
-          "Richtig",
-          "Falsch"
-        ],
-        "correctIndex": 0
+        "instruction": {
+          "en": "Listen to the announcement. Is each statement true (Richtig) or false (Falsch)?",
+          "de": "Sie hören eine Durchsage. Kreuzen Sie an: Richtig oder Falsch."
+        },
+        "transcript": "@filter station\n[Ansage m] Liebe Kundinnen und Kunden, unser Reisezentrum in der Bahnhofshalle schließt in fünf Minuten.\n[Ansage m] Fahrkarten bekommen Sie danach an unseren Automaten.",
+        "questions": [
+          {
+            "question": "Das Reisezentrum macht gleich zu.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0,
+            "evidence": "schließt in fünf Minuten"
+          },
+          {
+            "question": "Nach fünf Minuten kann man im Bahnhof keine Fahrkarten mehr kaufen.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1,
+            "evidence": "an unseren Automaten"
+          }
+        ]
       }
     },
     {
-      "id": "a1-goethe-listening-teil2-announcements__ex2",
+      "id": "a1-goethe-listening-teil2-announcements__ex5",
       "lessonId": "a1-goethe-listening-teil2-announcements",
       "track": "goethe",
-      "type": "fill_blank",
+      "type": "audio_questions",
       "content": {
-        "textWithBlank": "Durchsage: 'Fahrgäste nach München steigen bitte um in den ICE auf Gleis ___ .' (spoken: fünf)",
-        "correctAnswer": "5"
+        "instruction": {
+          "en": "Listen to the announcement. Is each statement true (Richtig) or false (Falsch)?",
+          "de": "Sie hören eine Durchsage. Kreuzen Sie an: Richtig oder Falsch."
+        },
+        "transcript": "@filter station\n[Ansage f] Eine Information für Fahrgäste nach München: Heute gibt es keinen direkten Zug. Bitte steigen Sie in Nürnberg um.\n[Ansage f] Der Zug nach Nürnberg fährt heute von Gleis fünf, nicht von Gleis sieben.",
+        "questions": [
+          {
+            "question": "Der Zug nach Nürnberg fährt heute von Gleis sieben.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 1,
+            "evidence": "von Gleis fünf"
+          },
+          {
+            "question": "Die Fahrgäste nach München müssen den Zug wechseln.",
+            "options": [
+              "Richtig",
+              "Falsch"
+            ],
+            "correctIndex": 0,
+            "evidence": "Bitte steigen Sie in Nürnberg um"
+          }
+        ]
       }
     },
     {
-      "id": "a1-goethe-listening-teil3-phone-messages__ex0",
+      "id": "a1-goethe-listening-teil3-phone-messages__ex3",
       "lessonId": "a1-goethe-listening-teil3-phone-messages",
       "track": "goethe",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Nachricht (2x): 'Hallo David, hier Thomas. Hast du am Sonntag Zeit? Wir wollen grillen. Ruf mich bitte unter 0172-1234 an.' - Was soll David tun?",
-        "options": [
-          "Thomas eine E-Mail schreiben",
-          "Thomas anrufen",
-          "Sofort zum Grillen kommen"
-        ],
-        "correctIndex": 1
+        "instruction": {
+          "en": "Listen to the message on the answering machine. Choose the right answer: a, b or c.",
+          "de": "Sie hören eine Nachricht auf dem Anrufbeantworter. Kreuzen Sie die richtige Lösung an: a, b oder c."
+        },
+        "transcript": "@filter phone\n[Thomas m] Hallo David, hier ist Thomas. Hast du am Sonntag Zeit? Wir grillen bei mir im Garten.\n[Thomas m] Du musst nichts mitbringen, wir haben genug Essen und Getränke.\n[Thomas m] Ruf mich bitte an! Meine Nummer ist null eins sieben zwei, zwölf, vierunddreißig. Tschüss!",
+        "questions": [
+          {
+            "question": "Was soll David tun?",
+            "options": [
+              "Essen mitbringen",
+              "Thomas anrufen",
+              "Thomas eine E-Mail schreiben"
+            ],
+            "correctIndex": 1,
+            "evidence": "Ruf mich bitte an!"
+          },
+          {
+            "question": "Wann ist das Grillfest?",
+            "options": [
+              "Heute",
+              "Am Samstag",
+              "Am Sonntag"
+            ],
+            "correctIndex": 2,
+            "evidence": "Hast du am Sonntag Zeit?"
+          }
+        ]
       }
     },
     {
-      "id": "a1-goethe-listening-teil3-phone-messages__ex1",
+      "id": "a1-goethe-listening-teil3-phone-messages__ex4",
       "lessonId": "a1-goethe-listening-teil3-phone-messages",
       "track": "goethe",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Nachricht (2x): 'Guten Tag, hier Sprachschule Aktiv. Der Kurs am Montag fällt aus und beginnt erst am Mittwoch um 18 Uhr.' - Wann beginnt der Kurs?",
-        "options": [
-          "Am Montag",
-          "Am Dienstag",
-          "Am Mittwoch"
-        ],
-        "correctIndex": 2
+        "instruction": {
+          "en": "Listen to the message on the answering machine. Choose the right answer: a, b or c.",
+          "de": "Sie hören eine Nachricht auf dem Anrufbeantworter. Kreuzen Sie die richtige Lösung an: a, b oder c."
+        },
+        "transcript": "@filter phone\n[Frau Wolf f] Guten Tag, hier ist Frau Wolf von der Sprachschule Aktiv.\n[Frau Wolf f] Der Deutschkurs am Montag fällt leider aus. Wir beginnen erst am Mittwoch um achtzehn Uhr.\n[Frau Wolf f] Der Kurs ist dann in Raum zwölf, nicht in Raum drei. Vielen Dank und auf Wiederhören!",
+        "questions": [
+          {
+            "question": "Wann beginnt der Kurs?",
+            "options": [
+              "Am Montag",
+              "Am Mittwoch",
+              "Am Dienstag"
+            ],
+            "correctIndex": 1,
+            "evidence": "erst am Mittwoch"
+          },
+          {
+            "question": "In welchem Raum ist der Kurs?",
+            "options": [
+              "In Raum 12",
+              "In Raum 3",
+              "In Raum 2"
+            ],
+            "correctIndex": 0,
+            "evidence": "in Raum zwölf"
+          }
+        ]
       }
     },
     {
-      "id": "a1-goethe-listening-teil3-phone-messages__ex2",
+      "id": "a1-goethe-listening-teil3-phone-messages__ex5",
       "lessonId": "a1-goethe-listening-teil3-phone-messages",
       "track": "goethe",
-      "type": "fill_blank",
+      "type": "audio_questions",
       "content": {
-        "textWithBlank": "Nachricht: 'Bitte rufen Sie mich um ___ Uhr zurück.' (spoken number: siebzehn)",
-        "correctAnswer": "17"
+        "instruction": {
+          "en": "Listen to the message on the answering machine. Choose the right answer: a, b or c.",
+          "de": "Sie hören eine Nachricht auf dem Anrufbeantworter. Kreuzen Sie die richtige Lösung an: a, b oder c."
+        },
+        "transcript": "@filter phone\n[Herr Brandt m] Guten Tag, Frau Yilmaz, hier ist Brandt von der Autowerkstatt. Ihr Auto ist fertig.\n[Herr Brandt m] Sie können es morgen ab neun Uhr abholen.\n[Herr Brandt m] Haben Sie noch Fragen? Dann rufen Sie mich bitte heute um siebzehn Uhr zurück. Vorher bin ich leider nicht im Büro.",
+        "questions": [
+          {
+            "question": "Wann soll Frau Yilmaz Herrn Brandt anrufen?",
+            "options": [
+              "Um 7 Uhr",
+              "Um 9 Uhr",
+              "Um 17 Uhr"
+            ],
+            "correctIndex": 2,
+            "evidence": "heute um siebzehn Uhr zurück"
+          },
+          {
+            "question": "Wann kann Frau Yilmaz ihr Auto holen?",
+            "options": [
+              "Morgen",
+              "Heute",
+              "Am Wochenende"
+            ],
+            "correctIndex": 0,
+            "evidence": "morgen ab neun Uhr"
+          }
+        ]
       }
     },
     {

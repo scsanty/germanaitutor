@@ -1,0 +1,241 @@
+{
+  "formatId": "goethe-a2",
+  "partId": "hoeren-4",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-a2__hoeren-4__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Moderatorin f] Guten Tag und herzlich willkommen bei Unsere Gäste am Morgen. Heute ist Jan Möller bei mir im Studio. Er ist Busfahrer hier in Kiel. Herr Möller, sind Sie schon lange Busfahrer?\n[Herr Möller m] Seit acht Jahren. Vorher war ich Koch in einem Hotel. Aber die Arbeitszeiten dort waren schrecklich, oft bis Mitternacht.\n[Moderatorin f] Und wie sind die Arbeitszeiten jetzt?\n[Herr Möller m] Ich fange meistens sehr früh an, um halb fünf. Das ist nicht leicht, aber dafür bin ich schon am Mittag fertig. Dann habe ich den ganzen Nachmittag Zeit für meine Kinder.\n[Moderatorin f] Wie sind denn die Fahrgäste so?\n[Herr Möller m] Die meisten sind sehr nett. Viele kenne ich schon, sie fahren jeden Morgen mit mir. Manche bringen mir zu Weihnachten sogar Kekse mit.\n[Moderatorin f] Und in Ihrer Freizeit? Fahren Sie dann auch gern Auto?\n[Herr Möller m] Nein, ehrlich gesagt nicht. Wir haben gar kein Auto. Am Wochenende fahren wir alle Fahrrad, am liebsten an der Ostsee.\n[Moderatorin f] Möchten Sie immer Busfahrer bleiben?\n[Herr Möller m] Nicht ganz. Nächstes Jahr mache ich eine Weiterbildung. Dann möchte ich in unserer Firma die neuen Kollegen ausbilden.",
+          "questions": [
+            {
+              "question": "Herr Möller arbeitet schon immer als Busfahrer.",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 1,
+              "evidence": "Vorher war ich Koch in einem Hotel."
+            },
+            {
+              "question": "Herr Möller hat am Nachmittag frei.",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 0,
+              "evidence": "dafür bin ich schon am Mittag fertig"
+            },
+            {
+              "question": "Die Fahrgäste sind oft unfreundlich zu Herrn Möller.",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 1,
+              "evidence": "Die meisten sind sehr nett."
+            },
+            {
+              "question": "Herr Möller fährt am Wochenende mit seiner Familie oft Auto.",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 1,
+              "evidence": "Wir haben gar kein Auto."
+            },
+            {
+              "question": "Herr Möller möchte später neuen Busfahrern bei der Arbeit helfen und sie unterrichten.",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 0,
+              "evidence": "Dann möchte ich in unserer Firma die neuen Kollegen ausbilden."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "No. He has been a bus driver for eight years; before that he was a cook in a hotel.",
+            "de": "Nein. Er ist seit acht Jahren Busfahrer. Vorher war er Koch in einem Hotel."
+          },
+          {
+            "en": "Yes. He starts very early and finishes at midday, so he has the afternoon for his children.",
+            "de": "Ja. Er fängt sehr früh an und ist am Mittag fertig. Am Nachmittag hat er Zeit für seine Kinder."
+          },
+          {
+            "en": "No. Most passengers are very nice; some even bring him biscuits at Christmas.",
+            "de": "Nein. Die meisten Fahrgäste sind sehr nett. Manche bringen ihm sogar Kekse mit."
+          },
+          {
+            "en": "No. The family has no car at all; at the weekend they ride their bikes.",
+            "de": "Nein. Die Familie hat kein Auto. Am Wochenende fahren sie Fahrrad."
+          },
+          {
+            "en": "Yes. After further training next year he wants to train the new colleagues in his company.",
+            "de": "Ja. Nach einer Weiterbildung möchte er in seiner Firma die neuen Kollegen ausbilden."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2__hoeren-4__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Moderator m] Willkommen zu unserer Sendung Neu in Deutschland. Bei mir ist heute Nina Petrova. Sie kommt aus Bulgarien und arbeitet als Krankenpflegerin in Leipzig. Frau Petrova, seit wann sind Sie in Deutschland?\n[Frau Petrova f] Seit vier Jahren. In Bulgarien habe ich in der Schule nur Englisch gelernt. Mit Deutsch habe ich erst hier angefangen, in einem Kurs an der Volkshochschule.\n[Moderator m] Und wie war der Anfang im Krankenhaus?\n[Frau Petrova f] Ehrlich gesagt sehr schwer. Die Patienten sprechen oft schnell oder Dialekt, und ich habe viel nicht verstanden. Aber meine Kolleginnen haben mir immer geholfen.\n[Moderator m] Arbeiten Sie oft nachts?\n[Frau Petrova f] Früher ja, fast jede Woche. Seit letztem Jahr arbeite ich aber nur noch am Tag, weil meine Tochter jetzt in die Schule geht.\n[Moderator m] Vermissen Sie Ihre Familie in Bulgarien?\n[Frau Petrova f] Ja, sehr. Meine Eltern kommen leider nicht so oft, sie fliegen nicht gern. Aber wir telefonieren jeden Sonntag mit Video.\n[Moderator m] Und was sind Ihre Pläne für die Zukunft?\n[Frau Petrova f] Mein Mann und ich haben gerade eine Wohnung gekauft. Wir bleiben also hier. Und vielleicht mache ich noch eine Ausbildung als Hebamme.",
+          "questions": [
+            {
+              "question": "Frau Petrova hat schon in Bulgarien Deutsch gelernt.",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 1,
+              "evidence": "Mit Deutsch habe ich erst hier angefangen"
+            },
+            {
+              "question": "Am Anfang hatte Frau Petrova bei der Arbeit Probleme mit der Sprache.",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 0,
+              "evidence": "ich habe viel nicht verstanden"
+            },
+            {
+              "question": "Frau Petrova arbeitet zurzeit oft in der Nacht.",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 1,
+              "evidence": "Seit letztem Jahr arbeite ich aber nur noch am Tag"
+            },
+            {
+              "question": "Frau Petrova spricht jede Woche mit ihren Eltern.",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 0,
+              "evidence": "wir telefonieren jeden Sonntag mit Video"
+            },
+            {
+              "question": "Frau Petrova möchte bald wieder in Bulgarien leben.",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 1,
+              "evidence": "Wir bleiben also hier."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "No. In Bulgaria she only learned English at school; she started German in Germany at an adult education centre.",
+            "de": "Nein. In Bulgarien hat sie nur Englisch gelernt. Mit Deutsch hat sie erst in Deutschland angefangen."
+          },
+          {
+            "en": "Yes. Patients spoke fast or in dialect, and she didn't understand a lot at first.",
+            "de": "Ja. Die Patienten haben schnell oder Dialekt gesprochen, und sie hat am Anfang viel nicht verstanden."
+          },
+          {
+            "en": "No. She used to work nights, but since last year she only works during the day because of her daughter.",
+            "de": "Nein. Früher hat sie nachts gearbeitet. Seit letztem Jahr arbeitet sie nur am Tag, wegen ihrer Tochter."
+          },
+          {
+            "en": "Yes. Her parents rarely visit, but they make a video call every Sunday.",
+            "de": "Ja. Ihre Eltern kommen nicht oft, aber sie telefonieren jeden Sonntag mit Video."
+          },
+          {
+            "en": "No. She and her husband have just bought a flat and are staying in Germany.",
+            "de": "Nein. Sie und ihr Mann haben eine Wohnung gekauft. Sie bleiben in Deutschland."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2__hoeren-4__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Moderatorin f] Hallo und willkommen bei Junges Radio. Mein Gast ist heute Leon Schulz. Er ist neunzehn Jahre alt und arbeitet seit September in einem Altenheim. Leon, warum machst du das?\n[Leon m] Nach dem Abitur wusste ich nicht genau, was ich studieren soll. Deshalb wollte ich zuerst ein Jahr lang etwas Praktisches machen. Jetzt mache ich ein Freiwilliges Soziales Jahr.\n[Moderatorin f] Und was machst du da genau?\n[Leon m] Ich helfe beim Essen, ich lese den Leuten die Zeitung vor, und am Nachmittag gehe ich mit ihnen im Park spazieren. Waschen und Medikamente geben, das machen die Pflegerinnen.\n[Moderatorin f] Bekommst du eigentlich Geld für die Arbeit?\n[Leon m] Ein bisschen, ungefähr vierhundert Euro im Monat. Das ist nicht viel. Aber ich wohne ja noch bei meinen Eltern, da brauche ich keine Miete zu bezahlen.\n[Moderatorin f] Was gefällt dir am besten?\n[Leon m] Die Geschichten! Frau Wagner zum Beispiel war früher Pilotin. Sie erzählt mir oft von ihren Reisen.\n[Moderatorin f] Und was machst du nach dem Jahr?\n[Leon m] Jetzt weiß ich es endlich: Ich möchte Altenpfleger werden. Die Ausbildung beginnt im nächsten Herbst.",
+          "questions": [
+            {
+              "question": "Leon hat direkt nach dem Abitur mit einem Studium angefangen.",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 1,
+              "evidence": "Deshalb wollte ich zuerst ein Jahr lang etwas Praktisches machen."
+            },
+            {
+              "question": "Leon gibt den alten Menschen ihre Medikamente.",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 1,
+              "evidence": "das machen die Pflegerinnen"
+            },
+            {
+              "question": "Leon bekommt für seine Arbeit etwas Geld.",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 0,
+              "evidence": "ungefähr vierhundert Euro im Monat"
+            },
+            {
+              "question": "Leon muss jeden Monat Miete bezahlen.",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 1,
+              "evidence": "Aber ich wohne ja noch bei meinen Eltern"
+            },
+            {
+              "question": "Leon weiß jetzt, welchen Beruf er lernen will.",
+              "options": [
+                "Ja",
+                "Nein"
+              ],
+              "correctIndex": 0,
+              "evidence": "Ich möchte Altenpfleger werden."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "No. He didn't know what to study, so he first wanted to do something practical for a year.",
+            "de": "Nein. Er wusste nicht, was er studieren soll. Deshalb macht er zuerst ein Jahr etwas Praktisches."
+          },
+          {
+            "en": "No. He helps with meals, reads aloud and goes for walks; washing and medication are done by the nurses.",
+            "de": "Nein. Er hilft beim Essen, liest vor und geht spazieren. Medikamente geben die Pflegerinnen."
+          },
+          {
+            "en": "Yes. He gets about four hundred euros a month.",
+            "de": "Ja. Er bekommt ungefähr vierhundert Euro im Monat."
+          },
+          {
+            "en": "No. He still lives with his parents, so he doesn't pay rent.",
+            "de": "Nein. Er wohnt noch bei seinen Eltern und bezahlt keine Miete."
+          },
+          {
+            "en": "Yes. He now knows he wants to become a geriatric nurse; the training starts next autumn.",
+            "de": "Ja. Er weiß jetzt, dass er Altenpfleger werden möchte. Die Ausbildung beginnt im Herbst."
+          }
+        ]
+      }
+    }
+  ]
+}

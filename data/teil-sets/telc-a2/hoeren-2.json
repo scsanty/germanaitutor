@@ -1,0 +1,256 @@
+{
+  "formatId": "telc-a2",
+  "partId": "hoeren-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-a2__hoeren-2__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Ansage f] Text 1.\n[Moderatorin f] Gute Nachricht für alle Schwimmer: Normalerweise beginnt die Saison im Freibad erst Mitte Mai.\n[Moderatorin f] Weil es schon so warm ist, öffnet das Freibad am Stadtwald in diesem Jahr aber schon am ersten Mai.\n[Moderatorin f] Das Hallenbad schließt dafür im Juni für drei Wochen, weil es renoviert wird.\n[Ansage f] Text 2.\n[Reporter m] Eine Information für alle Fahrgäste: Am Wochenende gibt es Bauarbeiten an den Schienen.\n[Reporter m] Zwischen Hauptbahnhof und Messe fährt deshalb keine Straßenbahn.\n[Reporter m] Statt der Straßenbahn fahren Busse, ungefähr alle zehn Minuten. Ab Montag ist dann alles wieder normal.\n[Ansage f] Text 3.\n[Moderator m] Und jetzt unser Gewinnspiel! Letzte Woche gab es bei uns Kinokarten.\n[Moderator m] Heute verlosen wir etwas Besonderes: zwei Karten für das Jazzkonzert am Samstag in der Stadthalle.\n[Moderator m] Rufen Sie einfach bis achtzehn Uhr bei uns im Studio an. Viel Glück!\n[Ansage f] Text 4.\n[Reporterin f] Am Sonntag hat die Feuerwehr in Neustadt Tag der offenen Tür, von zehn bis sechzehn Uhr.\n[Reporterin f] Die Kinder dürfen in einem richtigen Feuerwehrauto sitzen.\n[Reporterin f] Auf die große Leiter dürfen aber nur die Feuerwehrleute. Für Essen ist gesorgt: Es gibt Würstchen und Kuchen.\n[Ansage f] Text 5.\n[Moderatorin f] Die Stadt sucht Helfer für den Frühjahrsputz im Rosenpark. Treffpunkt ist am Samstag um neun Uhr am Eingang.\n[Moderatorin f] Handschuhe und Müllsäcke bekommen alle Helfer von der Stadt.\n[Moderatorin f] Bringen Sie bitte nur feste Schuhe mit. Nach der Arbeit gibt es ein kleines Frühstück für alle.",
+          "questions": [
+            {
+              "question": "Wann öffnet das Freibad in diesem Jahr?",
+              "options": [
+                "Mitte Mai",
+                "am ersten Mai",
+                "im Juni"
+              ],
+              "correctIndex": 1,
+              "evidence": "öffnet das Freibad am Stadtwald in diesem Jahr aber schon am ersten Mai"
+            },
+            {
+              "question": "Wie kommen die Fahrgäste am Wochenende vom Hauptbahnhof zur Messe?",
+              "options": [
+                "mit dem Bus",
+                "mit der Straßenbahn",
+                "mit dem Taxi"
+              ],
+              "correctIndex": 0,
+              "evidence": "Statt der Straßenbahn fahren Busse"
+            },
+            {
+              "question": "Was können die Hörer heute gewinnen?",
+              "options": [
+                "Kinokarten",
+                "ein Abendessen",
+                "Konzertkarten"
+              ],
+              "correctIndex": 2,
+              "evidence": "zwei Karten für das Jazzkonzert am Samstag"
+            },
+            {
+              "question": "Was dürfen Kinder bei der Feuerwehr machen?",
+              "options": [
+                "auf die große Leiter steigen",
+                "in einem Feuerwehrauto sitzen",
+                "Würstchen grillen"
+              ],
+              "correctIndex": 1,
+              "evidence": "Die Kinder dürfen in einem richtigen Feuerwehrauto sitzen."
+            },
+            {
+              "question": "Was sollen die Helfer selbst mitbringen?",
+              "options": [
+                "Handschuhe",
+                "Müllsäcke",
+                "feste Schuhe"
+              ],
+              "correctIndex": 2,
+              "evidence": "Bringen Sie bitte nur feste Schuhe mit."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The season usually starts in mid-May, but this year the outdoor pool opens on the first of May. June is when the indoor pool closes.",
+            "de": "Normalerweise beginnt die Saison Mitte Mai. Dieses Jahr öffnet das Freibad schon am ersten Mai. Im Juni schließt das Hallenbad."
+          },
+          {
+            "en": "Because of the works there is no tram at the weekend. Buses run instead.",
+            "de": "Wegen der Bauarbeiten fährt am Wochenende keine Straßenbahn. Es fahren Busse."
+          },
+          {
+            "en": "Cinema tickets were last week's prize. Today it is two tickets for the jazz concert.",
+            "de": "Kinokarten gab es letzte Woche. Heute gibt es zwei Karten für das Jazzkonzert."
+          },
+          {
+            "en": "Children may sit in a real fire engine. Only the firefighters may go up the big ladder.",
+            "de": "Die Kinder dürfen in einem Feuerwehrauto sitzen. Auf die Leiter dürfen nur die Feuerwehrleute."
+          },
+          {
+            "en": "The city provides gloves and rubbish bags. Helpers only need to bring sturdy shoes.",
+            "de": "Handschuhe und Müllsäcke gibt die Stadt. Die Helfer bringen nur feste Schuhe mit."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a2__hoeren-2__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Ansage f] Text 1.\n[Moderator m] Am Samstag ist wieder die Lange Nacht der Museen. Zwanzig Museen haben bis zwei Uhr nachts geöffnet.\n[Moderator m] Mit dem Ticket fahren Sie außerdem kostenlos mit den Sonderbussen von Museum zu Museum.\n[Moderator m] Getränke und Essen müssen Sie aber extra bezahlen.\n[Ansage f] Text 2.\n[Reporterin f] Eine Meldung für Bahnfahrer: Wegen eines Sturms fahren heute keine Züge zwischen Hamburg und Bremen.\n[Reporterin f] Ersatzbusse gibt es leider nicht, und auch über Hannover ist die Strecke gesperrt.\n[Reporterin f] Die Bahn bittet alle Reisenden, ihre Fahrt wenn möglich auf morgen zu verschieben.\n[Ansage f] Text 3.\n[Moderatorin f] Und heute um zwanzig Uhr gibt es wieder unsere Sendung „Gesund leben“.\n[Moderatorin f] Letzte Woche ging es um gesundes Essen. Heute sprechen wir über Rückenschmerzen.\n[Moderatorin f] Eine Physiotherapeutin ist bei uns im Studio, und Sie können anrufen und Fragen stellen.\n[Ansage f] Text 4.\n[Reporter m] Im Tierpark gibt es Nachwuchs: Vor einer Woche ist eine kleine Giraffe auf die Welt gekommen.\n[Reporter m] Die Kleine und ihre Mutter brauchen jetzt noch Ruhe. Ab Montag können Besucher die junge Giraffe dann im Giraffenhaus sehen.\n[Reporter m] Bis Ende des Monats können Sie außerdem einen Namen für sie vorschlagen.\n[Ansage f] Text 5.\n[Moderatorin f] Eine Information für alle, die gern frisch einkaufen: Der Marktplatz wird ab nächster Woche renoviert.\n[Moderatorin f] Der Wochenmarkt findet deshalb auf dem Parkplatz am Rathaus statt.\n[Moderatorin f] Die Markttage bleiben gleich, also wie immer Mittwoch und Samstag.",
+          "questions": [
+            {
+              "question": "Was ist im Ticket für die Museumsnacht dabei?",
+              "options": [
+                "ein Getränk",
+                "die Fahrt mit dem Bus",
+                "ein Abendessen"
+              ],
+              "correctIndex": 1,
+              "evidence": "fahren Sie außerdem kostenlos mit den Sonderbussen"
+            },
+            {
+              "question": "Was sollen die Reisenden tun?",
+              "options": [
+                "mit einem Ersatzbus fahren",
+                "über Hannover fahren",
+                "erst morgen fahren"
+              ],
+              "correctIndex": 2,
+              "evidence": "ihre Fahrt wenn möglich auf morgen zu verschieben"
+            },
+            {
+              "question": "Was ist heute das Thema in der Sendung?",
+              "options": [
+                "Rückenschmerzen",
+                "gesundes Essen",
+                "Sport im Alter"
+              ],
+              "correctIndex": 0,
+              "evidence": "Heute sprechen wir über Rückenschmerzen."
+            },
+            {
+              "question": "Ab wann kann man die kleine Giraffe sehen?",
+              "options": [
+                "ab heute",
+                "ab Montag",
+                "ab Ende des Monats"
+              ],
+              "correctIndex": 1,
+              "evidence": "Ab Montag können Besucher die junge Giraffe dann im Giraffenhaus sehen."
+            },
+            {
+              "question": "Wo ist der Wochenmarkt ab nächster Woche?",
+              "options": [
+                "auf dem Marktplatz",
+                "am Bahnhof",
+                "am Rathaus"
+              ],
+              "correctIndex": 2,
+              "evidence": "auf dem Parkplatz am Rathaus"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The ticket includes free rides on the special buses. Food and drinks cost extra.",
+            "de": "Mit dem Ticket fährt man kostenlos mit den Sonderbussen. Essen und Getränke kosten extra."
+          },
+          {
+            "en": "There are no replacement buses and the route via Hanover is closed too. Travellers should travel tomorrow if possible.",
+            "de": "Es gibt keine Ersatzbusse, und auch die Strecke über Hannover ist gesperrt. Die Reisenden sollen lieber morgen fahren."
+          },
+          {
+            "en": "Healthy eating was last week's topic. Today's topic is back pain.",
+            "de": "Gesundes Essen war das Thema letzte Woche. Heute geht es um Rückenschmerzen."
+          },
+          {
+            "en": "The baby and its mother still need rest. Visitors can see the giraffe from Monday. The end of the month is the deadline for name ideas.",
+            "de": "Die kleine Giraffe und ihre Mutter brauchen noch Ruhe. Besucher können sie ab Montag sehen. Bis Ende des Monats kann man Namen vorschlagen."
+          },
+          {
+            "en": "The market square is being renovated, so the market moves to the car park by the town hall.",
+            "de": "Der Marktplatz wird renoviert. Deshalb ist der Markt auf dem Parkplatz am Rathaus."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a2__hoeren-2__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Ansage f] Text 1.\n[Reporterin f] Endlich Winter! Am Freitag öffnet die Eisbahn im Stadtpark.\n[Reporterin f] Geöffnet ist jeden Tag von zehn bis einundzwanzig Uhr, nur am Montag bleibt die Eisbahn zu.\n[Reporterin f] Schlittschuhe kann man dort leihen, und am Sonntag gibt es außerdem Musik.\n[Ansage f] Text 2.\n[Moderator m] Und hier unser Buchtipp der Woche: „Zwei Räder, fünf Köpfe“.\n[Moderator m] Das Buch erzählt von einer Familie mit drei Kindern. Eigentlich wollen sie in den Ferien nach Frankreich.\n[Moderator m] Aber dann fahren sie mit dem Fahrrad bis nach Italien. Ein lustiges Buch für die ganze Familie!\n[Ansage f] Text 3.\n[Reporter m] Die Polizei bittet um Hilfe: Gestern hat jemand am Hauptbahnhof einen kleinen braunen Hund gefunden.\n[Reporter m] Im Tierheim ist leider kein Platz mehr frei. Deshalb bleibt der Hund erst mal bei der Polizei in der Waldstraße.\n[Reporter m] Wer den Hund kennt, meldet sich bitte dort.\n[Ansage f] Text 4.\n[Moderatorin f] Sie möchten Deutsch sprechen und neue Leute kennenlernen? Die Volkshochschule hat jetzt ein Sprachcafé.\n[Moderatorin f] Treffpunkt ist jeden Donnerstag um achtzehn Uhr in der Cafeteria. Eine Anmeldung ist nicht nötig.\n[Moderatorin f] Am Dienstag gibt es dort übrigens schon den Computerkurs für Senioren.\n[Ansage f] Text 5.\n[Reporterin f] Neu in Hallbach? Die Stadt lädt alle, die in diesem Jahr nach Hallbach gezogen sind, am Sonntag zu einer kostenlosen Führung durch die Altstadt ein.\n[Reporterin f] Treffpunkt ist um elf Uhr vor dem Rathaus, die Führung dauert zwei Stunden.\n[Reporterin f] Für Touristen gibt es wie immer die normalen Stadtführungen für acht Euro.",
+          "questions": [
+            {
+              "question": "An welchem Tag ist die Eisbahn geschlossen?",
+              "options": [
+                "am Freitag",
+                "am Sonntag",
+                "am Montag"
+              ],
+              "correctIndex": 2,
+              "evidence": "nur am Montag bleibt die Eisbahn zu"
+            },
+            {
+              "question": "Wohin fährt die Familie in dem Buch?",
+              "options": [
+                "nach Italien",
+                "nach Frankreich",
+                "nach Spanien"
+              ],
+              "correctIndex": 0,
+              "evidence": "Aber dann fahren sie mit dem Fahrrad bis nach Italien."
+            },
+            {
+              "question": "Wo ist der Hund jetzt?",
+              "options": [
+                "bei der Polizei",
+                "im Tierheim",
+                "am Hauptbahnhof"
+              ],
+              "correctIndex": 0,
+              "evidence": "bleibt der Hund erst mal bei der Polizei"
+            },
+            {
+              "question": "Wann ist das Sprachcafé?",
+              "options": [
+                "am Dienstag",
+                "am Donnerstag",
+                "am Samstag"
+              ],
+              "correctIndex": 1,
+              "evidence": "Treffpunkt ist jeden Donnerstag um achtzehn Uhr in der Cafeteria."
+            },
+            {
+              "question": "Für wen ist die kostenlose Führung?",
+              "options": [
+                "für Touristen",
+                "für Schulklassen",
+                "für neue Einwohner"
+              ],
+              "correctIndex": 2,
+              "evidence": "die in diesem Jahr nach Hallbach gezogen sind"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The rink opens on Friday and has music on Sunday. It is closed on Mondays.",
+            "de": "Die Eisbahn öffnet am Freitag, und am Sonntag gibt es Musik. Am Montag ist sie geschlossen."
+          },
+          {
+            "en": "They first wanted to go to France, but in the end they cycle to Italy.",
+            "de": "Zuerst wollen sie nach Frankreich, aber dann fahren sie mit dem Fahrrad nach Italien."
+          },
+          {
+            "en": "The dog was found at the station. There is no room at the animal shelter, so it is staying with the police for now.",
+            "de": "Man hat den Hund am Bahnhof gefunden. Im Tierheim ist kein Platz, deshalb bleibt er erst mal bei der Polizei."
+          },
+          {
+            "en": "The language café is on Thursdays. Tuesday is the computer course for seniors.",
+            "de": "Das Sprachcafé ist jeden Donnerstag. Am Dienstag ist der Computerkurs für Senioren."
+          },
+          {
+            "en": "The free tour is for people who moved to Hallbach this year. Tourists have the normal tours for eight euros.",
+            "de": "Die kostenlose Führung ist für Leute, die dieses Jahr nach Hallbach gezogen sind. Touristen bezahlen acht Euro."
+          }
+        ]
+      }
+    }
+  ]
+}

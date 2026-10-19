@@ -9,6 +9,7 @@ const EXERCISE_TYPES: readonly ExerciseType[] = [
   'passage_questions',
   'matching',
   'cloze',
+  'audio_questions',
 ];
 
 function isNonEmptyString(value: unknown): value is string {
@@ -87,10 +88,11 @@ export function validateExerciseContent(type: unknown, content: unknown): string
     }
     case 'passage_questions':
     case 'matching':
-    case 'cloze': {
+    case 'cloze':
+    case 'audio_questions': {
       // The task validators assume list entries are objects; malformed (e.g. AI) content must not throw.
       try {
-        errors.push(...validateTask(type as 'passage_questions' | 'matching' | 'cloze', content));
+        errors.push(...validateTask(type as 'passage_questions' | 'matching' | 'cloze' | 'audio_questions', content));
       } catch {
         errors.push('content has the wrong shape');
       }

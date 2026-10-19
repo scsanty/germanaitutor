@@ -23,7 +23,8 @@ export type ErrorCode =
   | 'already_in_deck'
   | 'session_exists'
   | 'session_ending'
-  | 'part_unavailable';
+  | 'part_unavailable'
+  | 'audio_unavailable';
 
 export type ErrorParams = Record<string, string>;
 

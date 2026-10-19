@@ -10,6 +10,7 @@ import type {
   PassageQuestionsContent,
   MatchingContent,
   ClozeContent,
+  AudioQuestionsContent,
 } from '@/lib/curriculum/types';
 import { Plus, Trash2, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -18,6 +19,8 @@ import { Input } from '@/components/ui/input';
 import { NativeSelect } from '@/components/ui/native-select';
 import { BTN, FOCUS, INPUT } from './adminStyles';
 import { ClozeFields, MatchingFields, PassageQuestionsFields } from './ReadingTaskFields';
+import { AudioQuestionsFields } from './ListeningTaskFields';
+import { AudioActions } from './AudioActions';
 
 export interface ExerciseFormEntry {
   id?: string;
@@ -42,6 +45,9 @@ function blankContentFor(type: ExerciseType): ExerciseContent {
       return { items: [''], targets: ['', ''], answers: [0], allowNone: false };
     case 'cloze':
       return { text: '', gaps: [] };
+    // Listening: a transcript and its questions; saving checks them in full.
+    case 'audio_questions':
+      return { transcript: '', questions: [{ question: '', options: ['', ''], correctIndex: 0 }] };
   }
 }
 
@@ -49,10 +55,13 @@ export function ExerciseEditor({
   exercises,
   onChange,
   allowFlashcards = true,
+  audioActions = false,
 }: {
   exercises: ExerciseFormEntry[];
   onChange: (exercises: ExerciseFormEntry[]) => void;
   allowFlashcards?: boolean;
+  // Regenerate and Upload under each listening exercise (the lesson editor).
+  audioActions?: boolean;
 }) {
   function updateAt(index: number, entry: ExerciseFormEntry) {
     const next = [...exercises];
@@ -92,6 +101,7 @@ export function ExerciseEditor({
                 <option value="passage_questions">Passage + questions</option>
                 <option value="matching">Matching</option>
                 <option value="cloze">Cloze</option>
+                <option value="audio_questions">Listening + questions</option>
               </NativeSelect>
               <Button type="button" variant="ghost" className={`${BTN} text-destructive hover:text-destructive`} onClick={() => removeAt(index)}>
                 <Trash2 aria-hidden />
@@ -106,6 +116,9 @@ export function ExerciseEditor({
               index={index}
               onChange={(content) => updateAt(index, { ...exercise, content })}
             />
+            {audioActions && exercise.type === 'audio_questions' && (
+              <AudioActions transcript={(exercise.content as AudioQuestionsContent).transcript} label={`Exercise ${index + 1}`} />
+            )}
           </CardContent>
         </Card>
       ))}
@@ -165,6 +178,8 @@ function typeSpecificFields(type: ExerciseType, content: ExerciseContent, index:
       return <MatchingFields content={content as MatchingContent} index={index} onChange={onChange} />;
     case 'cloze':
       return <ClozeFields content={content as ClozeContent} index={index} onChange={onChange} />;
+    case 'audio_questions':
+      return <AudioQuestionsFields content={content as AudioQuestionsContent} index={index} onChange={onChange} />;
   }
 }
 

@@ -1,0 +1,241 @@
+{
+  "formatId": "telc-b1",
+  "partId": "hoeren-1",
+  "version": "2",
+  "sets": [
+    {
+      "id": "telc-b1__hoeren-1__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Ansage f] Text 1.\n[Moderator m] Gute Nachrichten für alle Leserinnen und Leser: Die Stadtbibliothek hat ab nächster Woche länger geöffnet.\n[Moderator m] Von Montag bis Freitag können Sie jetzt bis zwanzig Uhr kommen, am Samstag bis sechzehn Uhr.\n[Moderator m] Neu ist außerdem ein kleines Café im Erdgeschoss.\n[Moderator m] Wer einen Bibliotheksausweis hat, bekommt dort den ersten Kaffee umsonst.\n[Ansage f] Text 2.\n[Reporterin f] Und jetzt der Verkehr.\n[Reporterin f] Auf der Autobahn zwischen Kassel und Göttingen gibt es nach einem Unfall einen Stau von etwa acht Kilometern.\n[Reporterin f] Verletzt wurde zum Glück niemand.\n[Reporterin f] Die Polizei bittet alle Autofahrer, die Strecke zu meiden und über die Bundesstraße zu fahren.\n[Ansage f] Text 3.\n[Moderator m] Das Wetter für morgen: Am Vormittag ist es noch sonnig, aber ab Mittag kommen von Westen dicke Wolken.\n[Moderator m] Am Nachmittag regnet es dann überall in der Region, und es kann auch Gewitter geben.\n[Moderator m] Die Temperaturen liegen zwischen achtzehn und zweiundzwanzig Grad.\n[Moderator m] Am Wochenende wird es wieder freundlicher und deutlich wärmer.\n[Ansage f] Text 4.\n[Reporter m] Ein Tipp für das Wochenende: Am Samstag findet auf dem Marktplatz das große Stadtfest statt.\n[Reporter m] Es gibt Musik, Essen aus vielen Ländern und ein Programm für Kinder.\n[Reporter m] Der Eintritt ist frei.\n[Reporter m] Weil es in der Innenstadt nur wenige Parkplätze gibt, empfehlen die Veranstalter, mit dem Bus oder mit dem Fahrrad zu kommen.\n[Ansage f] Text 5.\n[Reporterin f] Viele Menschen schlafen schlecht, wenn es draußen heiß ist.\n[Reporterin f] Ärzte raten deshalb, das Schlafzimmer am Tag dunkel zu halten und erst am späten Abend zu lüften.\n[Reporterin f] Außerdem sollte man abends nicht zu viel essen.\n[Reporterin f] Eine kühle Dusche vor dem Schlafengehen kann auch helfen, aber das Wasser sollte nicht eiskalt sein.",
+          "questions": [
+            {
+              "question": "Die Bibliothek hat am Samstag bis zwanzig Uhr geöffnet.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "am Samstag bis sechzehn Uhr"
+            },
+            {
+              "question": "Bei dem Unfall hat sich niemand verletzt.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Verletzt wurde zum Glück niemand."
+            },
+            {
+              "question": "Für morgen Nachmittag sind Gewitter möglich.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "es kann auch Gewitter geben"
+            },
+            {
+              "question": "Die Veranstalter empfehlen, mit dem Auto zum Stadtfest zu fahren.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "empfehlen die Veranstalter, mit dem Bus oder mit dem Fahrrad zu kommen"
+            },
+            {
+              "question": "Man soll vor dem Schlafengehen sehr kalt duschen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "aber das Wasser sollte nicht eiskalt sein"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The library is open until eight in the evening on weekdays, but only until four on Saturday.",
+            "de": "Die Bibliothek hat nur von Montag bis Freitag bis zwanzig Uhr geöffnet. Am Samstag schließt sie um sechzehn Uhr."
+          },
+          {
+            "en": "The traffic report says that luckily nobody was hurt in the accident.",
+            "de": "In der Verkehrsmeldung heißt es: Zum Glück wurde niemand verletzt."
+          },
+          {
+            "en": "The forecast says it rains in the afternoon and there may also be thunderstorms.",
+            "de": "Laut Wetterbericht regnet es am Nachmittag, und es kann auch Gewitter geben."
+          },
+          {
+            "en": "There are few parking spaces, so the organisers recommend coming by bus or by bike, not by car.",
+            "de": "Es gibt nur wenige Parkplätze. Deshalb empfehlen die Veranstalter den Bus oder das Fahrrad, nicht das Auto."
+          },
+          {
+            "en": "A cool shower can help, but the water should not be ice-cold.",
+            "de": "Eine kühle Dusche kann helfen, aber das Wasser soll nicht eiskalt sein."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b1__hoeren-1__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Ansage f] Text 1.\n[Nachrichtensprecher m] In Bremen startet ab Juni ein neues Projekt: An zwanzig Stationen in der Stadt kann man Lastenräder ausleihen.\n[Nachrichtensprecher m] Die erste Stunde ist kostenlos, danach kostet jede weitere Stunde zwei Euro.\n[Nachrichtensprecher m] Zum Ausleihen braucht man eine App und einen gültigen Ausweis.\n[Ansage f] Text 2.\n[Reporterin f] Wer morgen in München mit Bus oder Straßenbahn fahren möchte, braucht Geduld.\n[Reporterin f] Wegen eines Streiks fahren Busse und Straßenbahnen von vier Uhr morgens bis Mitternacht nicht.\n[Reporterin f] Die U-Bahn ist nicht betroffen, sie fährt nach dem normalen Fahrplan.\n[Reporterin f] Die Gewerkschaft fordert mehr Lohn und kürzere Arbeitszeiten.\n[Ansage f] Text 3.\n[Nachrichtensprecher m] Das Hallenbad in der Weststadt bleibt länger geschlossen als geplant.\n[Nachrichtensprecher m] Eigentlich sollte es nach der Renovierung im September wieder öffnen.\n[Nachrichtensprecher m] Jetzt fehlen aber noch Teile für die neue Heizung, und die Arbeiten dauern voraussichtlich bis Ende des Jahres.\n[Nachrichtensprecher m] Schulklassen können so lange das Bad in Nordheim benutzen.\n[Ansage f] Text 4.\n[Reporterin f] Eine neue Umfrage zeigt: Immer mehr junge Menschen kochen wieder selbst.\n[Reporterin f] Fast die Hälfte der Befragten zwischen achtzehn und dreißig Jahren kocht mindestens viermal pro Woche.\n[Reporterin f] Die meisten haben das Kochen von ihren Eltern oder Großeltern gelernt.\n[Reporterin f] Nur jeder Fünfte sucht Rezepte im Internet.\n[Ansage f] Text 5.\n[Nachrichtensprecher m] Das Stadtmuseum in Freiburg zeigt ab Samstag eine Ausstellung über die Geschichte des Spielzeugs.\n[Nachrichtensprecher m] Zu sehen sind Puppen, Holzautos und Brettspiele aus über zweihundert Jahren.\n[Nachrichtensprecher m] Kinder dürfen viele Spielsachen auch selbst ausprobieren.\n[Nachrichtensprecher m] Für Schüler und Studenten ist der Eintritt frei, Erwachsene zahlen sechs Euro.",
+          "questions": [
+            {
+              "question": "Wer ein Lastenrad nur eine Stunde benutzt, muss nichts bezahlen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Die erste Stunde ist kostenlos"
+            },
+            {
+              "question": "Morgen fahren in München auch keine U-Bahnen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Die U-Bahn ist nicht betroffen"
+            },
+            {
+              "question": "Schulklassen dürfen in der Zwischenzeit in einem anderen Bad schwimmen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Schulklassen können so lange das Bad in Nordheim benutzen."
+            },
+            {
+              "question": "Die meisten jungen Leute suchen ihre Rezepte im Internet.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Nur jeder Fünfte sucht Rezepte im Internet."
+            },
+            {
+              "question": "In der Ausstellung dürfen Kinder die Spielsachen nur ansehen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Kinder dürfen viele Spielsachen auch selbst ausprobieren."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The first hour is free; only each further hour costs two euros.",
+            "de": "Die erste Stunde ist kostenlos. Erst danach kostet jede Stunde zwei Euro."
+          },
+          {
+            "en": "Only buses and trams are on strike; the underground runs to the normal timetable.",
+            "de": "Nur Busse und Straßenbahnen streiken. Die U-Bahn fährt normal."
+          },
+          {
+            "en": "While the pool is closed, school classes can use the pool in Nordheim.",
+            "de": "Solange das Bad geschlossen ist, können Schulklassen in das Bad in Nordheim gehen."
+          },
+          {
+            "en": "Only one in five looks for recipes online; most learned to cook from their parents or grandparents.",
+            "de": "Nur jeder Fünfte sucht Rezepte im Internet. Die meisten haben das Kochen von den Eltern oder Großeltern gelernt."
+          },
+          {
+            "en": "Children may try out many of the toys themselves.",
+            "de": "Kinder dürfen viele Spielsachen selbst ausprobieren, nicht nur ansehen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b1__hoeren-1__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Ansage f] Text 1.\n[Moderatorin f] Der Flughafen Hamburg testet ab Montag neue Geräte für die Sicherheitskontrolle.\n[Moderatorin f] Fluggäste müssen Laptops und Flüssigkeiten dann nicht mehr aus dem Handgepäck nehmen.\n[Moderatorin f] Die Kontrolle soll dadurch deutlich schneller gehen.\n[Moderatorin f] Trotzdem bittet der Flughafen alle Reisenden, wie bisher zwei Stunden vor dem Abflug da zu sein.\n[Ansage f] Text 2.\n[Reporter m] Eine Bäckerei in Leipzig kämpft gegen die Verschwendung von Lebensmitteln.\n[Reporter m] Brot vom Vortag verkauft sie jetzt zum halben Preis, und was am Abend übrig bleibt, bekommt die Leipziger Tafel.\n[Reporter m] So landet fast nichts mehr im Müll.\n[Reporter m] Die Idee hatte eine Auszubildende aus der Backstube.\n[Ansage f] Text 3.\n[Moderatorin f] Kinder sind heute viel weniger an der frischen Luft als früher.\n[Moderatorin f] Eine Studie aus Österreich zeigt, dass Schulkinder im Durchschnitt nur noch vierzig Minuten pro Tag im Freien sind.\n[Moderatorin f] Ärzte empfehlen mindestens eine Stunde.\n[Moderatorin f] Viele Schulen wollen deshalb eine Unterrichtsstunde pro Woche im Wald oder im Park machen.\n[Ansage f] Text 4.\n[Reporter m] Eine Nachricht für alle Musikfans: Das Konzert der Band Nordlicht im Stadtpark muss leider ausfallen, weil der Sänger krank ist.\n[Reporter m] Es wird am vierzehnten Oktober nachgeholt.\n[Reporter m] Die Karten bleiben gültig.\n[Reporter m] Wer an dem neuen Termin keine Zeit hat, bekommt sein Geld an der Vorverkaufsstelle zurück.\n[Ansage f] Text 5.\n[Moderatorin f] Die Stadt Kiel sucht Freiwillige für ihr Projekt Lesepaten.\n[Moderatorin f] Lesepaten treffen sich einmal pro Woche mit einem Grundschulkind und lesen gemeinsam Bücher.\n[Moderatorin f] Man braucht keine pädagogische Ausbildung, nur etwas Zeit und Geduld.\n[Moderatorin f] Wer Interesse hat, kann sich bis Ende des Monats im Rathaus melden.",
+          "questions": [
+            {
+              "question": "Wegen der neuen Geräte kann man jetzt später zum Flughafen kommen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "wie bisher zwei Stunden vor dem Abflug da zu sein"
+            },
+            {
+              "question": "Die Idee kam von einer Frau, die in der Bäckerei eine Ausbildung macht.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Die Idee hatte eine Auszubildende aus der Backstube."
+            },
+            {
+              "question": "Laut der Studie sind Schulkinder täglich weniger als eine Stunde draußen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "nur noch vierzig Minuten pro Tag im Freien"
+            },
+            {
+              "question": "Für den neuen Konzerttermin muss man neue Karten kaufen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Die Karten bleiben gültig."
+            },
+            {
+              "question": "Die Lesepaten sehen ihr Kind jede Woche.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "treffen sich einmal pro Woche mit einem Grundschulkind"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The airport still asks passengers to arrive two hours before departure, as before.",
+            "de": "Der Flughafen bittet trotzdem, wie bisher zwei Stunden vor dem Abflug da zu sein."
+          },
+          {
+            "en": "The idea came from a trainee in the bakery.",
+            "de": "Eine Auszubildende aus der Backstube hatte die Idee."
+          },
+          {
+            "en": "The study says school children spend only forty minutes a day outdoors.",
+            "de": "Laut der Studie sind Schulkinder nur vierzig Minuten pro Tag draußen, also weniger als eine Stunde."
+          },
+          {
+            "en": "The tickets stay valid for the new date.",
+            "de": "Die Karten bleiben auch für den neuen Termin gültig."
+          },
+          {
+            "en": "Reading mentors meet a primary school child once a week.",
+            "de": "Die Lesepaten treffen das Kind einmal pro Woche."
+          }
+        ]
+      }
+    }
+  ]
+}

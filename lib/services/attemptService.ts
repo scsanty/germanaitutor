@@ -8,6 +8,7 @@ import type { GradeResult } from '../tutoring/grading';
 import {
   answerTextFor,
   correctAnswerFor,
+  revealFor,
   type AttemptOutcome,
   type AttemptSource,
   type LessonAnswer,
@@ -24,6 +25,7 @@ import { storeFeedback, type LocalizedText } from '../i18n/localizedText';
 import { createProfileService } from './profileService';
 import { createProgressService } from './progressService';
 import { createUnlockService } from './unlockService';
+import type { AudioAvailabilityDeps } from '../audio/audioAvailability';
 
 export type AttemptErrorKind = 'not_found' | 'locked' | 'bad_request' | 'grading_failed';
 
@@ -57,6 +59,8 @@ export function toAttemptErrorResponse(err: unknown): { status: number; body: Ap
 export interface AttemptDeps {
   gradeFreeText?: (input: FreeTextGradingInput) => Promise<FreeTextGradeOutcome>;
   now?: () => Date;
+  // Listening availability (S7): tests inject fakes for the speech service and the audio cache.
+  audio?: AudioAvailabilityDeps;
 }
 
 interface ExerciseRow {
@@ -79,7 +83,7 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
   const gradeFree = deps.gradeFreeText ?? ((input: FreeTextGradingInput) => gradeFreeText(db, input));
   const curriculum = createCurriculumService(db);
   const profiles = createProfileService(db);
-  const progress = createProgressService(db);
+  const progress = createProgressService(db, { audio: deps.audio });
   const unlocks = createUnlockService(db);
   const deck = createDeckService(db, { now });
 
@@ -195,6 +199,10 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
     if (source === 'lesson') assertLessonOpen(lesson.id);
     if (source === 'queue') assertDueInQueue(exercise.id, localDate(now()));
     const { result, feedback, itemResults } = await grade(exercise, answer, lesson.sourceLevel);
+    // S8: availability is async (the speech service), so it's settled before the sync transaction.
+    // Spec: completion counts only the exercises available at this moment.
+    const exerciseIds = (await progress.availableExercises(lesson)).available.map((e) => e.id);
+    const reveal = revealFor(exercise);
     const answeredAt = now();
     const at = answeredAt.toISOString();
     const today = localDate(answeredAt);
@@ -219,7 +227,6 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
         } else if (!state) seedFromFirstAttempt(exercise.id, today, at); // added after the lesson was completed
         else if (firstToday) writeSrs(exercise.id, computeNextReview(state, result, today), at);
       } else {
-        const exerciseIds = curriculum.getExercises(lesson.id, lesson.track).map((e) => e.id);
         if (meetsCompletionRule(exerciseIds, new Set(progress.passedExerciseIds(lesson.id)))) {
           completeLesson(lesson.id, lesson.sourceLevel, exerciseIds, today, at);
           justCompleted = true;
@@ -234,6 +241,7 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
         lessonCompleted: wasComplete || justCompleted,
         justCompleted,
         ...(itemResults ? { itemResults } : {}),
+        ...(reveal ? { reveal } : {}),
       };
     })();
   }
@@ -241,11 +249,14 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
   // Spec: Completion — a lesson with no exercises completes when the student taps "Mark as done".
   // I-1: a lesson whose remaining exercises are all passed (an admin deleted the rest) can also
   // complete this way, since `recordAttempt` will never see another answer to trigger it.
-  function markLessonDone(lessonId: string): { completed: true } {
+  // Listening: the rule counts the available exercises only; a lesson whose exercises are all
+  // unavailable right now can't be marked done (nothing was shown to answer).
+  async function markLessonDone(lessonId: string): Promise<{ completed: true }> {
     const lesson = getUnlockedLesson(lessonId);
     assertLessonOpen(lesson.id);
-    const exerciseIds = curriculum.getExercises(lesson.id, lesson.track).map((e) => e.id);
-    if (exerciseIds.length > 0 && !meetsCompletionRule(exerciseIds, new Set(progress.passedExerciseIds(lesson.id)))) {
+    const { all, available } = await progress.availableExercises(lesson);
+    const exerciseIds = available.map((e) => e.id);
+    if (all.length > 0 && !meetsCompletionRule(exerciseIds, new Set(progress.passedExerciseIds(lesson.id)))) {
       throw new AttemptError('This lesson has exercises; answer them to complete it', 'bad_request');
     }
     const doneAt = now();

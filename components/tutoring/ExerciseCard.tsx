@@ -7,6 +7,8 @@ import type { ExerciseView } from '@/lib/tutoring/exerciseView';
 import { taskAnswerText, type AttemptOutcome, type AttemptSource, type FlashcardRating, type LessonAnswer, type TaskAnswerSource } from '@/lib/tutoring/lessonAnswers';
 import type { SetTaskType, TaskAnswer, TaskView } from '@/lib/tasks/taskTypes';
 import { answeredCount, emptyAnswer, TaskInputs } from '@/components/exam/TaskInputs';
+import { TranscriptReveal } from '@/components/audio/TranscriptReveal';
+import type { AudioReveal } from '@/lib/tasks/audioQuestions';
 import type { GradeResult } from '@/lib/tutoring/grading';
 import type { PracticeGradeOutcome } from '@/lib/tutoring/practiceViews';
 import type { TestOutAnswerOutcome } from '@/lib/tutoring/testOutViews';
@@ -61,12 +63,16 @@ interface Shown {
   answerText: string;
   // S17: per question, text or gap, for the reading task types.
   itemResults?: boolean[];
+  // Listening: the transcript and evidence, shown only now that the student has answered.
+  reveal?: AudioReveal;
 }
 
 type TaskExercise = Extract<ExerciseView, { type: SetTaskType }>;
 
 function isTaskExercise(exercise: ExerciseView): exercise is TaskExercise {
-  return exercise.type === 'passage_questions' || exercise.type === 'matching' || exercise.type === 'cloze';
+  return (
+    exercise.type === 'passage_questions' || exercise.type === 'matching' || exercise.type === 'cloze' || exercise.type === 'audio_questions'
+  );
 }
 
 // The exercise view minus its id, as the task inputs and the shared answer-text helper take it.
@@ -85,10 +91,11 @@ export function taskText(exercise: ExerciseView): string {
       return exercise.front;
     case 'free_text':
       return exercise.prompt;
-    // Reading task types: shown by their own inputs, never as a heading line.
+    // Reading and listening task types: shown by their own inputs, never as a heading line.
     case 'passage_questions':
     case 'matching':
     case 'cloze':
+    case 'audio_questions':
       return '';
   }
 }
@@ -122,6 +129,7 @@ function answerTextOf(exercise: ExerciseView, answer: LessonAnswer): string {
     case 'passage_questions':
     case 'matching':
     case 'cloze':
+    case 'audio_questions':
       return isTaskExercise(exercise) ? taskAnswerText(exercise as TaskAnswerSource, answer) : '';
   }
 }
@@ -194,11 +202,18 @@ export function ExerciseCard({
         playSound(graded === 'wrong' ? 'wrong' : 'correct');
         if (practice) {
           const outcome = data as PracticeGradeOutcome;
-          setShown({ result: outcome.result, correctAnswer: outcome.correctAnswer, feedback: null, answerText, itemResults: outcome.itemResults });
+          setShown({ result: outcome.result, correctAnswer: outcome.correctAnswer, feedback: null, answerText, itemResults: outcome.itemResults, reveal: outcome.reveal });
           onPracticeAnswered?.(outcome);
         } else {
           const outcome = data as AttemptOutcome;
-          setShown({ result: outcome.result, correctAnswer: outcome.correctAnswer, feedback: outcome.feedback, answerText, itemResults: outcome.itemResults });
+          setShown({
+            result: outcome.result,
+            correctAnswer: outcome.correctAnswer,
+            feedback: outcome.feedback,
+            answerText,
+            itemResults: outcome.itemResults,
+            reveal: outcome.reveal,
+          });
           onAnswered?.(outcome);
         }
         return;
@@ -295,6 +310,7 @@ export function ExerciseCard({
           <>
             {instruction && <p className="text-sm text-text-muted">{instruction}</p>}
             <TaskInputs type={exercise.type} view={taskViewOf(exercise)} value={taskAnswer} onChange={() => {}} disabled itemResults={shown.itemResults} pane="all" />
+            {shown.reveal && <TranscriptReveal transcript={shown.reveal.transcript} evidence={shown.reveal.evidence} evidenceLines={shown.reveal.evidenceLines} />}
           </>
         ) : (
           <ExerciseHeading exercise={exercise} language={language} />

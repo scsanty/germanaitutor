@@ -7,7 +7,7 @@ export const dynamic = 'force-dynamic';
 
 export async function GET(_request: Request, props: { params: Promise<{ id: string }> }) {
   const params = await props.params;
-  const view = createProgressService(getDb()).getLessonView(params.id);
+  const view = await createProgressService(getDb()).getLessonView(params.id);
   if (!view) return NextResponse.json(errorBody('Lesson not found', 'not_found'), { status: 404 });
   return NextResponse.json(view);
 }

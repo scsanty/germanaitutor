@@ -1,0 +1,241 @@
+{
+  "formatId": "generic-a1",
+  "partId": "hoeren-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-a1__hoeren-1__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Ansage f] Text 1.\n[Mann m] Guten Tag. Ich möchte das Paket nach Polen schicken. Kostet das zwölf Euro?\n[Verkäuferin f] Nein, das Paket ist schwer, es hat drei Kilo. Es kostet sechzehn Euro.\n[Mann m] Okay, kein Problem. Hier, bitte.\n[Ansage f] Text 2.\n[Frau f] Eine Zeitung, bitte. Und haben Sie auch Briefmarken?\n[Verkäufer m] Nein, Briefmarken haben wir leider nicht. Die gibt es bei der Post.\n[Frau f] Schade. Dann nehme ich noch ein Wasser.\n[Verkäufer m] Das macht drei Euro zehn.\n[Ansage f] Text 3.\n[Kollege m] Hallo, ich bin Daniel. Ich bin neu hier im Büro.\n[Frau f] Hallo Daniel, ich heiße Mira. Woher kommst du?\n[Kollege m] Ich komme aus Kanada, aber ich wohne schon drei Jahre in Deutschland.\n[Frau f] Ah, deshalb sprichst du so gut Deutsch!\n[Ansage f] Text 4.\n[Mann m] Eine Fahrkarte nach Ulm, bitte. Für heute.\n[Verkäuferin f] Hin und zurück?\n[Mann m] Nein, nur hin. Am Sonntag fährt mich ein Freund zurück.\n[Verkäuferin f] Gut. Das kostet einunddreißig Euro. Der Zug fährt um zehn Uhr von Gleis vier.\n[Ansage f] Text 5.\n[Frau f] Hallo, Herr Wolf! Haben Sie vielleicht eine Leiter? Ich möchte eine Lampe aufhängen.\n[Mann m] Ja, die Leiter ist im Keller. Ich hole sie gleich.\n[Frau f] Super, danke! Ich bringe sie heute Abend zurück.\n[Mann m] Kein Problem. Sie können sie auch bis morgen haben.",
+          "questions": [
+            {
+              "question": "Der Mann bezahlt sechzehn Euro für das Paket.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Es kostet sechzehn Euro."
+            },
+            {
+              "question": "Die Frau kauft am Kiosk Briefmarken.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Briefmarken haben wir leider nicht"
+            },
+            {
+              "question": "Daniel ist seit drei Jahren in Deutschland.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "aber ich wohne schon drei Jahre in Deutschland"
+            },
+            {
+              "question": "Der Mann kauft eine Fahrkarte hin und zurück.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Nein, nur hin."
+            },
+            {
+              "question": "Die Frau kann die Leiter auch morgen zurückbringen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Sie können sie auch bis morgen haben."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "He asks if it costs twelve euros, but the parcel is heavy and costs sixteen euros. He pays.",
+            "de": "Er fragt: „Kostet das zwölf Euro?“ Aber das Paket ist schwer und kostet sechzehn Euro. Er bezahlt."
+          },
+          {
+            "en": "The kiosk has no stamps; they are sold at the post office. She buys water instead.",
+            "de": "Der Kiosk hat keine Briefmarken. Die gibt es bei der Post. Sie kauft ein Wasser."
+          },
+          {
+            "en": "Daniel is from Canada, but he has lived in Germany for three years.",
+            "de": "Daniel kommt aus Kanada, aber er wohnt schon drei Jahre in Deutschland."
+          },
+          {
+            "en": "He only buys a one-way ticket. A friend drives him back on Sunday.",
+            "de": "Er kauft nur eine Fahrkarte hin. Am Sonntag fährt ihn ein Freund zurück."
+          },
+          {
+            "en": "She wants to bring it back this evening, but Herr Wolf says she can keep it until tomorrow.",
+            "de": "Sie möchte die Leiter heute Abend zurückbringen. Aber Herr Wolf sagt: Sie kann sie bis morgen haben."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-a1__hoeren-1__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter phone\n[Ansage f] Text 1.\n[Mitarbeiter m] Pizzeria Sole, guten Abend.\n[Frau f] Guten Abend. Ich möchte zwei Pizzas bestellen, eine Margherita und eine mit Pilzen.\n[Mitarbeiter m] Gern. Wie ist Ihre Adresse?\n[Frau f] Lindenweg sieben.\n[Mitarbeiter m] Danke. Die Pizzas sind in vierzig Minuten bei Ihnen.\n[Ansage f] Text 2.\n[Mitarbeiterin f] Taxi Stern, guten Tag.\n[Mann m] Guten Tag, ich brauche ein Taxi. Ich bin am Hotel Amsel.\n[Mitarbeiterin f] Wohin möchten Sie fahren? Zum Bahnhof?\n[Mann m] Nein, nicht zum Bahnhof. Zum Flughafen, bitte.\n[Mitarbeiterin f] Gut. Das Taxi ist in zehn Minuten da.\n[Ansage f] Text 3.\n[Mitarbeiterin f] Musikschule Klangwerk, guten Tag.\n[Frau f] Guten Tag. Ich möchte Gitarre lernen. Wann ist der Kurs für Erwachsene?\n[Mitarbeiterin f] Der Kurs ist am Montag und am Mittwoch, von achtzehn bis neunzehn Uhr.\n[Frau f] Am Abend? Das ist gut. Ich arbeite bis siebzehn Uhr.\n[Ansage f] Text 4.\n[Frau f] Hallo, Herr Brandl? Hier ist Frau Weiss aus Wohnung fünf. Die Heizung im Bad ist kalt.\n[Hausmeister m] Oh, das tut mir leid. Heute habe ich keine Zeit. Aber ich komme morgen früh, um acht Uhr. Geht das?\n[Frau f] Ja, das geht. Ich bin zu Hause.\n[Ansage f] Text 5.\n[Mann m] Hallo Sophie, hier ist Ben. Wir spielen heute Abend Karten bei mir. Kommst du auch?\n[Frau f] Gern! Soll ich etwas mitbringen?\n[Mann m] Ja, bring bitte Chips mit. Getränke habe ich schon.\n[Frau f] Okay, bis später!",
+          "questions": [
+            {
+              "question": "Die Pizzas kommen in einer halben Stunde.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "in vierzig Minuten bei Ihnen"
+            },
+            {
+              "question": "Der Mann fährt mit dem Taxi zum Flughafen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Zum Flughafen, bitte."
+            },
+            {
+              "question": "Der Gitarrenkurs ist am Vormittag.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "von achtzehn bis neunzehn Uhr"
+            },
+            {
+              "question": "Der Hausmeister kommt morgen zu Frau Weiss.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Aber ich komme morgen früh, um acht Uhr."
+            },
+            {
+              "question": "Sophie soll Getränke mitbringen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "bring bitte Chips mit"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The pizzas arrive in forty minutes, not in half an hour.",
+            "de": "Die Pizzas kommen in vierzig Minuten, nicht in dreißig Minuten."
+          },
+          {
+            "en": "The woman asks about the station, but he wants to go to the airport.",
+            "de": "Die Frau fragt: „Zum Bahnhof?“ Aber er möchte zum Flughafen fahren."
+          },
+          {
+            "en": "The course is in the evening, from six to seven pm.",
+            "de": "Der Kurs ist am Abend, von achtzehn bis neunzehn Uhr."
+          },
+          {
+            "en": "He has no time today, but he comes tomorrow at eight.",
+            "de": "Heute hat er keine Zeit. Er kommt morgen um acht Uhr."
+          },
+          {
+            "en": "Ben already has drinks. Sophie should bring crisps.",
+            "de": "Ben hat schon Getränke. Sophie soll Chips mitbringen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-a1__hoeren-1__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter station\n[Ansage f] Text 1.\n[Sprecher m] Nächste Haltestelle: Marktplatz. Achtung, heute ist am Rathaus ein Fest.\n[Sprecher m] Dieser Bus hält heute nicht am Rathaus. Fahrgäste zum Rathaus steigen bitte am Marktplatz aus und gehen fünf Minuten zu Fuß.\n[Ansage f] Text 2.\n[Sprecherin f] Liebe Besucherinnen und Besucher, das Museum schließt heute schon um sechzehn Uhr.\n[Sprecherin f] Morgen sind wir wieder von zehn bis achtzehn Uhr für Sie da. Vielen Dank für Ihren Besuch!\n[Ansage f] Text 3.\n[Sprecher m] Liebe Kundinnen und Kunden, heute im Baumarkt Werkmann: Alle Gartenstühle kosten nur zwölf Euro.\n[Sprecher m] Die Gartenstühle finden Sie nicht im ersten Stock, sondern im Erdgeschoss, gleich neben dem Eingang.\n[Ansage f] Text 4.\n[Sprecherin f] Eine Information zum Zug nach Kassel. Der Zug kommt heute nicht an Gleis zwei, sondern an Gleis fünf.\n[Sprecherin f] Der Zug fährt pünktlich um elf Uhr zehn ab.\n[Ansage f] Text 5.\n[Sprecher m] Liebe Kundinnen und Kunden, wir haben eine kleine blaue Tasche gefunden.\n[Sprecher m] Die Tasche ist nicht an der Information. Sie liegt an der Kasse drei. Bitte holen Sie sie dort ab.",
+          "questions": [
+            {
+              "question": "Der Bus hält heute am Rathaus.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Dieser Bus hält heute nicht am Rathaus."
+            },
+            {
+              "question": "Morgen ist das Museum länger offen als heute.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Morgen sind wir wieder von zehn bis achtzehn Uhr für Sie da."
+            },
+            {
+              "question": "Die Gartenstühle sind im ersten Stock.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "sondern im Erdgeschoss, gleich neben dem Eingang"
+            },
+            {
+              "question": "Der Zug nach Kassel fährt heute von Gleis fünf.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "sondern an Gleis fünf"
+            },
+            {
+              "question": "Man kann die blaue Tasche an einer Kasse abholen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Sie liegt an der Kasse drei."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Because of a festival the bus does not stop at the town hall today. People get off at the market square.",
+            "de": "Am Rathaus ist ein Fest. Der Bus hält dort heute nicht. Man steigt am Marktplatz aus."
+          },
+          {
+            "en": "Today the museum closes at four pm. Tomorrow it is open until six pm.",
+            "de": "Heute schließt das Museum um sechzehn Uhr. Morgen ist es bis achtzehn Uhr offen."
+          },
+          {
+            "en": "The garden chairs are on the ground floor, next to the entrance, not on the first floor.",
+            "de": "Die Gartenstühle sind nicht im ersten Stock, sondern im Erdgeschoss neben dem Eingang."
+          },
+          {
+            "en": "The train does not come to platform two today but to platform five.",
+            "de": "Der Zug kommt heute nicht an Gleis zwei, sondern an Gleis fünf."
+          },
+          {
+            "en": "The bag is not at the information desk. It is at checkout three.",
+            "de": "Die Tasche ist nicht an der Information. Sie liegt an der Kasse drei."
+          }
+        ]
+      }
+    }
+  ]
+}

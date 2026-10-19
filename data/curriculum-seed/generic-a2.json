@@ -1,5 +1,5 @@
 {
-  "seedVersion": "9",
+  "seedVersion": "10",
   "formatVersion": 3,
   "track": "generic",
   "level": "A2",
@@ -1592,91 +1592,123 @@
       }
     },
     {
-      "id": "a2-listening-weather-traffic-announcements__ex0",
+      "id": "a2-listening-weather-traffic-announcements__ex3",
       "lessonId": "a2-listening-weather-traffic-announcements",
       "track": "generic",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Radiomeldung: 'A3 Frankfurt Richtung Köln zwischen Limburg und Montabaur: 10 Kilometer Stau wegen einer Baustelle.' - Warum gibt es Stau?",
-        "options": [
-          "Wegen eines Unfalls",
-          "Wegen einer Baustelle",
-          "Wegen Glatteis",
-          "Wegen eines Streiks"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "a2-listening-weather-traffic-announcements__ex1",
-      "lessonId": "a2-listening-weather-traffic-announcements",
-      "track": "generic",
-      "type": "multiple_choice",
-      "content": {
-        "question": "Wetterbericht: 'Morgen im ganzen Land sonnig und trocken bei angenehmen 24 Grad.' - Wie wird das Wetter?",
-        "options": [
-          "Es regnet stark",
-          "Es wird kalt",
-          "Es gibt Sonne und keine Niederschläge",
-          "Es stürmt"
-        ],
-        "correctIndex": 2
-      }
-    },
-    {
-      "id": "a2-listening-weather-traffic-announcements__ex2",
-      "lessonId": "a2-listening-weather-traffic-announcements",
-      "track": "generic",
-      "type": "fill_blank",
-      "content": {
-        "textWithBlank": "Durchsage: 'Achtung Autofahrer: Auf der A7 liegt ein Reifen auf der Fahrbahn. Bitte fahren Sie ___ !' (carefully/slowly)",
-        "correctAnswer": "vorsichtig"
-      }
-    },
-    {
-      "id": "a2-listening-conversations-past-events__ex0",
-      "lessonId": "a2-listening-conversations-past-events",
-      "track": "generic",
-      "type": "multiple_choice",
-      "content": {
-        "question": "Gespräch: 'Hallo Julia, hast du am Wochenende deine Eltern besucht?' - 'Nein, ich hatte so viel zu tun, ich habe nur geputzt und eingekauft.' - Was hat Julia gemacht?",
-        "options": [
-          "Sie hat ihre Eltern besucht.",
-          "Sie ist verreist.",
-          "Sie hat geputzt und eingekauft.",
-          "Sie war im Theater."
-        ],
-        "correctIndex": 2
-      }
-    },
-    {
-      "id": "a2-listening-conversations-past-events__ex1",
-      "lessonId": "a2-listening-conversations-past-events",
-      "track": "generic",
-      "type": "multiple_choice",
-      "content": {
-        "question": "Gespräch: 'Wie war das Konzert am Freitag?' - 'Die Band hat super gespielt, aber die Akustik in der Halle war leider sehr schlecht.' - Wie fand der Sprecher das Konzert insgesamt?",
-        "options": [
-          "Die Musik war gut, aber der Ton in der Halle war schlecht.",
-          "Die Band war schrecklich.",
-          "Er konnte gar nicht hingehen.",
-          "Es war perfekt ohne Probleme."
-        ],
-        "correctIndex": 0
-      }
-    },
-    {
-      "id": "a2-listening-conversations-past-events__ex2",
-      "lessonId": "a2-listening-conversations-past-events",
-      "track": "generic",
-      "type": "free_text",
-      "content": {
-        "prompt": "Wir sind im Urlaub zwei Wochen durch Norwegen gewandert.",
-        "modelAnswer": "In Norwegen.",
         "instruction": {
-          "en": "Read the spoken text. Where did they spend their vacation?",
-          "de": "Lies den gesprochenen Text. Wo haben sie ihren Urlaub gemacht?"
-        }
+          "en": "Listen to the traffic news and the weather report on the radio and answer the questions.",
+          "de": "Hör die Verkehrsmeldungen und den Wetterbericht im Radio und beantworte die Fragen."
+        },
+        "transcript": "@filter radio\n[Moderatorin f] Und jetzt die Verkehrsmeldungen.\n[Moderatorin f] Auf der A drei von Frankfurt Richtung Köln gibt es zwischen Limburg und Montabaur zehn Kilometer Stau wegen einer Baustelle.\n[Moderatorin f] Achtung, Autofahrer auf der A sieben: Zwischen Hannover und Hamburg liegt ein Reifen auf der Fahrbahn. Bitte fahren Sie dort langsam und vorsichtig.\n[Moderator m] Und hier das Wetter für morgen: Im ganzen Land wird es sonnig und trocken.\n[Moderator m] Die Temperaturen liegen bei angenehmen vierundzwanzig Grad.\n[Moderator m] Erst am Sonntag kommt von Westen Regen.",
+        "questions": [
+          {
+            "question": "Warum gibt es zwischen Limburg und Montabaur Stau?",
+            "options": [
+              "wegen eines Unfalls",
+              "wegen einer Baustelle",
+              "wegen Schnee"
+            ],
+            "correctIndex": 1,
+            "evidence": "Stau wegen einer Baustelle"
+          },
+          {
+            "question": "Wie lang ist der Stau?",
+            "options": [
+              "10 Kilometer",
+              "12 Kilometer",
+              "20 Kilometer"
+            ],
+            "correctIndex": 0,
+            "evidence": "zehn Kilometer Stau"
+          },
+          {
+            "question": "Was sollen die Autofahrer auf der A7 tun?",
+            "options": [
+              "schneller fahren",
+              "vorsichtig fahren",
+              "die Autobahn verlassen"
+            ],
+            "correctIndex": 1,
+            "evidence": "langsam und vorsichtig"
+          },
+          {
+            "question": "Wie wird das Wetter morgen?",
+            "options": [
+              "Es regnet den ganzen Tag.",
+              "Es ist kalt und windig.",
+              "Die Sonne scheint und es bleibt trocken."
+            ],
+            "correctIndex": 2,
+            "evidence": "sonnig und trocken"
+          },
+          {
+            "question": "Wie warm wird es morgen?",
+            "options": [
+              "24 Grad",
+              "28 Grad",
+              "34 Grad"
+            ],
+            "correctIndex": 0,
+            "evidence": "vierundzwanzig Grad"
+          }
+        ]
+      }
+    },
+    {
+      "id": "a2-listening-conversations-past-events__ex3",
+      "lessonId": "a2-listening-conversations-past-events",
+      "track": "generic",
+      "type": "audio_questions",
+      "content": {
+        "instruction": {
+          "en": "Listen to two colleagues talking on Monday morning and answer the questions.",
+          "de": "Hör das Gespräch von zwei Kollegen am Montagmorgen und beantworte die Fragen."
+        },
+        "transcript": "@filter none\n[Tom m] Hallo Julia! Wie war dein Wochenende? Hast du deine Eltern besucht?\n[Julia f] Nein, leider nicht. Ich hatte so viel zu tun. Ich habe nur geputzt und eingekauft.\n[Julia f] Und du, Tom? Wie war das Konzert am Freitag?\n[Tom m] Na ja, die Band hat super gespielt, aber die Akustik in der Halle war leider sehr schlecht.\n[Julia f] Schade! Und wann fährst du in Urlaub?\n[Tom m] Erst im August. Dieses Jahr fahren wir nach Italien ans Meer.\n[Julia f] Wart ihr letztes Jahr nicht auch am Meer?\n[Tom m] Nein, letztes Jahr sind wir zwei Wochen durch Norwegen gewandert. Das war toll, aber auch ziemlich anstrengend.",
+        "questions": [
+          {
+            "question": "Was hat Julia am Wochenende gemacht?",
+            "options": [
+              "Sie hat ihre Eltern besucht.",
+              "Sie hat geputzt und eingekauft.",
+              "Sie war im Theater."
+            ],
+            "correctIndex": 1,
+            "evidence": "Ich habe nur geputzt und eingekauft"
+          },
+          {
+            "question": "Wie fand Tom das Konzert?",
+            "options": [
+              "Die Musik war gut, aber der Ton in der Halle war schlecht.",
+              "Die Band hat schlecht gespielt.",
+              "Alles war perfekt."
+            ],
+            "correctIndex": 0,
+            "evidence": "die Band hat super gespielt, aber die Akustik in der Halle war leider sehr schlecht"
+          },
+          {
+            "question": "Wo hat Tom letztes Jahr Urlaub gemacht?",
+            "options": [
+              "in Italien",
+              "in Österreich",
+              "in Norwegen"
+            ],
+            "correctIndex": 2,
+            "evidence": "durch Norwegen gewandert"
+          },
+          {
+            "question": "Wie lange war Tom dort?",
+            "options": [
+              "eine Woche",
+              "zwei Wochen",
+              "einen Monat"
+            ],
+            "correctIndex": 1,
+            "evidence": "zwei Wochen durch Norwegen"
+          }
+        ]
       }
     },
     {

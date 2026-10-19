@@ -1,0 +1,298 @@
+{
+  "formatId": "goethe-a1",
+  "partId": "hoeren-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-a1__hoeren-1__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Ansage f] Text 1.\n[Frau f] Guten Morgen. Acht Brötchen, bitte.\n[Verkäufer m] Oh, tut mir leid. Wir haben nur noch sechs Brötchen.\n[Frau f] Gut, dann nehme ich die sechs. Und ein Brot, bitte.\n[Verkäufer m] Gern. Das macht vier Euro zwanzig.\n[Ansage f] Text 2.\n[Mann m] Entschuldigung, ich suche den Deutschkurs. Ist der Kurs im ersten Stock?\n[Frau f] Normalerweise ja, in Raum zwölf. Aber heute ist der Kurs im dritten Stock, in Raum dreißig.\n[Mann m] Im dritten Stock. Danke schön!\n[Ansage f] Text 3.\n[Mann m] Fahrt ihr im August wieder nach Italien?\n[Frau f] Nein, Italien ist im August zu heiß. Mein Mann möchte nach Österreich in die Berge.\n[Mann m] Und die Kinder?\n[Frau f] Die Kinder wollen ans Meer. Also fahren wir nach Dänemark.\n[Ansage f] Text 4.\n[Mann m] Lena, dein Geburtstag ist am zwölften Mai, richtig?\n[Frau f] Ja. Aber am zwölften ist Donnerstag, da arbeite ich lange.\n[Frau f] Die Party ist am Samstag, am vierzehnten. Kommst du?\n[Mann m] Ja, natürlich!\n[Ansage f] Text 5.\n[Ärztin f] Guten Tag. Was fehlt Ihnen? Haben Sie Kopfschmerzen?\n[Mann m] Nein, der Kopf ist in Ordnung. Aber mein Bauch tut seit gestern weh.\n[Ärztin f] Haben Sie auch Fieber?\n[Mann m] Nein, Fieber habe ich nicht.\n[Ansage f] Text 6.\n[Frau f] Was machen wir am Sonntag? Gehen wir schwimmen?\n[Mann m] Das Schwimmbad ist am Sonntag geschlossen. Und ins Museum?\n[Frau f] Ach nein, das Museum finde ich langweilig. Das Wetter ist doch schön. Fahren wir mit dem Fahrrad an den See?\n[Mann m] Gute Idee! Das machen wir.",
+          "questions": [
+            {
+              "question": "Wie viele Brötchen kauft die Frau?",
+              "options": [
+                "vier",
+                "sechs",
+                "acht"
+              ],
+              "correctIndex": 1,
+              "evidence": "dann nehme ich die sechs"
+            },
+            {
+              "question": "Wo ist der Deutschkurs heute?",
+              "options": [
+                "im ersten Stock",
+                "im zweiten Stock",
+                "im dritten Stock"
+              ],
+              "correctIndex": 2,
+              "evidence": "Aber heute ist der Kurs im dritten Stock"
+            },
+            {
+              "question": "Wohin fährt die Familie im Urlaub?",
+              "options": [
+                "nach Dänemark",
+                "nach Italien",
+                "nach Österreich"
+              ],
+              "correctIndex": 0,
+              "evidence": "Also fahren wir nach Dänemark."
+            },
+            {
+              "question": "Wann ist Lenas Party?",
+              "options": [
+                "am vierzehnten Mai",
+                "am zwölften Mai",
+                "am sechzehnten Mai"
+              ],
+              "correctIndex": 0,
+              "evidence": "Die Party ist am Samstag, am vierzehnten."
+            },
+            {
+              "question": "Was tut dem Mann weh?",
+              "options": [
+                "der Kopf",
+                "der Bauch",
+                "der Rücken"
+              ],
+              "correctIndex": 1,
+              "evidence": "mein Bauch tut seit gestern weh"
+            },
+            {
+              "question": "Was machen die beiden am Sonntag?",
+              "options": [
+                "schwimmen gehen",
+                "ins Museum gehen",
+                "eine Fahrradtour machen"
+              ],
+              "correctIndex": 2,
+              "evidence": "Fahren wir mit dem Fahrrad an den See?"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "She asks for eight rolls, but there are only six left, so she takes the six.",
+            "de": "Sie möchte acht Brötchen, aber es gibt nur noch sechs. Sie nimmt die sechs."
+          },
+          {
+            "en": "The course is normally on the first floor, but today it is on the third floor.",
+            "de": "Normalerweise ist der Kurs im ersten Stock. Heute ist er im dritten Stock."
+          },
+          {
+            "en": "Italy is too hot in August. The husband wants to go to Austria, but the children want the sea, so they go to Denmark.",
+            "de": "Italien ist im August zu heiß. Der Mann möchte nach Österreich, aber die Kinder wollen ans Meer. Sie fahren nach Dänemark."
+          },
+          {
+            "en": "Her birthday is on the twelfth, but the party is on Saturday, the fourteenth.",
+            "de": "Ihr Geburtstag ist am zwölften Mai. Die Party ist am Samstag, am vierzehnten."
+          },
+          {
+            "en": "His head is fine, but his stomach has hurt since yesterday.",
+            "de": "Der Kopf ist in Ordnung. Aber der Bauch tut seit gestern weh."
+          },
+          {
+            "en": "The pool is closed on Sunday and she finds the museum boring. She suggests a bike ride to the lake, and he agrees.",
+            "de": "Das Schwimmbad ist am Sonntag zu, und das Museum findet sie langweilig. Sie fahren mit dem Fahrrad an den See."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a1__hoeren-1__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Ansage f] Text 1.\n[Frau f] Entschuldigung, wo finde ich Reis?\n[Verkäufer m] Nicht hier bei den Nudeln. Der Reis ist hinten links, neben dem Zucker.\n[Frau f] Hinten links. Vielen Dank!\n[Ansage f] Text 2.\n[Frau f] Entschuldigung, wie spät ist es?\n[Mann m] Moment, es ist Viertel nach drei.\n[Frau f] Was? Schon Viertel nach drei? Mein Zug fährt um halb vier!\n[Ansage f] Text 3.\n[Frau f] Tom, spielst du gern Fußball?\n[Mann m] Nein, Fußball finde ich langweilig. Ich spiele lieber Tischtennis, zweimal pro Woche.\n[Frau f] Und Schwimmen?\n[Mann m] Schwimmen? Nicht so gern. Das Wasser ist immer so kalt.\n[Ansage f] Text 4.\n[Mann m] Na, wie ist deine neue Wohnung? Hat sie drei Zimmer?\n[Frau f] Nein, leider nur zwei Zimmer. Aber die Küche ist groß, und es gibt einen Balkon.\n[Ansage f] Text 5.\n[Mann m] Arbeiten Sie auch hier im Krankenhaus? Sind Sie Ärztin?\n[Frau f] Ja, ich arbeite hier, aber ich bin keine Ärztin. Ich bin Krankenpflegerin.\n[Mann m] Ah, und ich bin Lehrer. Ich besuche hier meinen Vater.\n[Ansage f] Text 6.\n[Kellnerin f] Das macht zusammen achtzehn Euro fünfzig.\n[Mann m] Kann ich mit Karte bezahlen?\n[Kellnerin f] Tut mir leid, unser Kartengerät ist heute kaputt.\n[Mann m] Ach so. Dann bezahle ich bar. Hier sind zwanzig Euro. Stimmt so.",
+          "questions": [
+            {
+              "question": "Wo ist der Reis?",
+              "options": [
+                "vorne rechts",
+                "hinten links",
+                "bei den Nudeln"
+              ],
+              "correctIndex": 1,
+              "evidence": "Der Reis ist hinten links"
+            },
+            {
+              "question": "Wie spät ist es?",
+              "options": [
+                "halb vier",
+                "Viertel vor drei",
+                "Viertel nach drei"
+              ],
+              "correctIndex": 2,
+              "evidence": "es ist Viertel nach drei"
+            },
+            {
+              "question": "Welchen Sport macht Tom gern?",
+              "options": [
+                "Fußball",
+                "Schwimmen",
+                "Tischtennis"
+              ],
+              "correctIndex": 2,
+              "evidence": "Ich spiele lieber Tischtennis"
+            },
+            {
+              "question": "Wie viele Zimmer hat die neue Wohnung?",
+              "options": [
+                "zwei",
+                "drei",
+                "vier"
+              ],
+              "correctIndex": 0,
+              "evidence": "leider nur zwei Zimmer"
+            },
+            {
+              "question": "Was ist die Frau von Beruf?",
+              "options": [
+                "Lehrerin",
+                "Krankenpflegerin",
+                "Ärztin"
+              ],
+              "correctIndex": 1,
+              "evidence": "Ich bin Krankenpflegerin."
+            },
+            {
+              "question": "Wie bezahlt der Mann?",
+              "options": [
+                "bar",
+                "mit Karte",
+                "mit dem Handy"
+              ],
+              "correctIndex": 0,
+              "evidence": "Dann bezahle ich bar."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The rice is not with the pasta. It is at the back on the left, next to the sugar.",
+            "de": "Der Reis ist nicht bei den Nudeln. Er ist hinten links, neben dem Zucker."
+          },
+          {
+            "en": "The man says it is quarter past three. Half past three is when her train leaves.",
+            "de": "Der Mann sagt: Es ist Viertel nach drei. Um halb vier fährt ihr Zug."
+          },
+          {
+            "en": "Tom finds football boring and does not like swimming much. He prefers table tennis.",
+            "de": "Fußball findet Tom langweilig, und er schwimmt nicht so gern. Er spielt lieber Tischtennis."
+          },
+          {
+            "en": "He asks if it has three rooms. She says no, only two.",
+            "de": "Er fragt: drei Zimmer? Sie sagt: Nein, nur zwei Zimmer."
+          },
+          {
+            "en": "She works at the hospital but is not a doctor. She is a nurse. The man is the teacher.",
+            "de": "Sie arbeitet im Krankenhaus, aber sie ist keine Ärztin. Sie ist Krankenpflegerin. Der Mann ist Lehrer."
+          },
+          {
+            "en": "He wants to pay by card, but the card machine is broken today, so he pays cash.",
+            "de": "Er möchte mit Karte bezahlen, aber das Kartengerät ist kaputt. Er bezahlt bar."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a1__hoeren-1__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Ansage f] Text 1.\n[Frau f] Haben Sie diese Schuhe in Größe neununddreißig?\n[Verkäufer m] Neununddreißig haben wir leider nicht mehr. Aber achtunddreißig und vierzig.\n[Frau f] Achtunddreißig ist sicher zu klein. Ich probiere die vierzig.\n[Ansage f] Text 2.\n[Frau f] Guten Tag. Ich brauche einen Termin, bitte.\n[Mann m] Geht es am Dienstag um neun Uhr?\n[Frau f] Am Dienstag arbeite ich. Geht es am Mittwoch?\n[Mann m] Am Mittwoch ist die Praxis geschlossen. Am Donnerstag um zehn Uhr ist noch frei.\n[Frau f] Donnerstag ist gut.\n[Ansage f] Text 3.\n[Mann m] Sag mal, regnet es morgen? Wir wollen doch wandern.\n[Frau f] Nein, morgen ist es sonnig, aber kalt. Der Regen kommt erst am Sonntag.\n[Ansage f] Text 4.\n[Mann m] Sarah, ist das dein Bruder auf dem Foto? Wie alt ist er? Zehn?\n[Frau f] Nein, er sieht jung aus, aber er ist schon dreizehn. Meine Schwester ist zehn.\n[Ansage f] Text 5.\n[Mann m] Ich möchte diese drei Bücher ausleihen. Wie lange kann ich sie behalten?\n[Bibliothekarin f] Normalerweise vier Wochen. Aber diese Bücher sind neu. Neue Bücher dürfen Sie nur zwei Wochen behalten.\n[Ansage f] Text 6.\n[Frau f] Was kochen wir heute Abend? Fisch?\n[Mann m] Fisch hatten wir doch gestern. Ich mache eine Suppe.\n[Frau f] Schon wieder Suppe? Machen wir doch zusammen eine Pizza!\n[Mann m] Na gut, dann Pizza.",
+          "questions": [
+            {
+              "question": "Welche Größe probiert die Frau?",
+              "options": [
+                "Größe achtunddreißig",
+                "Größe neununddreißig",
+                "Größe vierzig"
+              ],
+              "correctIndex": 2,
+              "evidence": "Ich probiere die vierzig."
+            },
+            {
+              "question": "Wann hat die Frau den Termin?",
+              "options": [
+                "am Donnerstag",
+                "am Dienstag",
+                "am Mittwoch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Donnerstag ist gut."
+            },
+            {
+              "question": "Wie ist das Wetter morgen?",
+              "options": [
+                "Es regnet.",
+                "Es ist sonnig.",
+                "Es schneit."
+              ],
+              "correctIndex": 1,
+              "evidence": "morgen ist es sonnig"
+            },
+            {
+              "question": "Wie alt ist Sarahs Bruder?",
+              "options": [
+                "zehn Jahre",
+                "dreizehn Jahre",
+                "sechzehn Jahre"
+              ],
+              "correctIndex": 1,
+              "evidence": "er ist schon dreizehn"
+            },
+            {
+              "question": "Wie lange darf der Mann die Bücher haben?",
+              "options": [
+                "zwei Wochen",
+                "drei Wochen",
+                "vier Wochen"
+              ],
+              "correctIndex": 0,
+              "evidence": "nur zwei Wochen"
+            },
+            {
+              "question": "Was essen die beiden heute Abend?",
+              "options": [
+                "Fisch",
+                "Suppe",
+                "Pizza"
+              ],
+              "correctIndex": 2,
+              "evidence": "dann Pizza"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Size thirty-nine is sold out and thirty-eight is too small, so she tries on size forty.",
+            "de": "Größe neununddreißig gibt es nicht mehr, und achtunddreißig ist zu klein. Sie probiert die vierzig."
+          },
+          {
+            "en": "She works on Tuesday and the practice is closed on Wednesday, so she takes Thursday.",
+            "de": "Am Dienstag arbeitet sie, und am Mittwoch ist die Praxis geschlossen. Sie nimmt den Termin am Donnerstag."
+          },
+          {
+            "en": "Tomorrow will be sunny but cold. The rain only comes on Sunday.",
+            "de": "Morgen ist es sonnig, aber kalt. Der Regen kommt erst am Sonntag."
+          },
+          {
+            "en": "Her brother looks young, but he is already thirteen. Her sister is ten.",
+            "de": "Der Bruder sieht jung aus, aber er ist schon dreizehn. Die Schwester ist zehn."
+          },
+          {
+            "en": "Normally it is four weeks, but these books are new, and new books can only be kept for two weeks.",
+            "de": "Normalerweise sind es vier Wochen. Aber die Bücher sind neu, und neue Bücher darf man nur zwei Wochen behalten."
+          },
+          {
+            "en": "They had fish yesterday. He suggests soup, but she wants pizza, and he agrees.",
+            "de": "Fisch gab es gestern. Er möchte Suppe kochen, aber sie möchte Pizza. Er sagt: Na gut, dann Pizza."
+          }
+        ]
+      }
+    }
+  ]
+}

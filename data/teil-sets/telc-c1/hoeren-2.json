@@ -1,0 +1,466 @@
+{
+  "formatId": "telc-c1",
+  "partId": "hoeren-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-c1__hoeren-2__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Moderatorin f] Guten Abend und willkommen bei „Stadt, Land, Natur“. Heute geht es um ein Hobby, das in den letzten Jahren einen erstaunlichen Aufschwung erlebt hat: die Imkerei in der Stadt.\n[Moderatorin f] Bei mir im Studio ist Konrad Brunner, Biologe und seit fünfzehn Jahren Imker mitten in Leipzig. Herr Brunner, wie sind Sie eigentlich zu den Bienen gekommen?\n[Herr Brunner m] Ganz zufällig, muss ich gestehen. Ein Nachbar von mir ist damals ins Pflegeheim gezogen und hat mir seine zwei Bienenvölker überlassen, mit den Worten: Du bist doch Biologe, du kriegst das schon hin.\n[Herr Brunner m] Ich hatte ehrlich gesagt keine Ahnung, und im ersten Winter sind mir beide Völker eingegangen. Das war eine ziemlich bittere Lektion.\n[Moderatorin f] Heute gibt es in vielen Großstädten mehr Bienenvölker als je zuvor. Ist das eine gute Nachricht?\n[Herr Brunner m] Das ist leider ein Missverständnis. Viele Leute stellen sich einen Bienenkasten auf den Balkon, weil sie glauben, damit das Insektensterben aufzuhalten.\n[Herr Brunner m] Aber die Honigbiene ist ein Nutztier, sie ist überhaupt nicht vom Aussterben bedroht. Gefährdet sind vor allem die Wildbienen, und die konkurrieren in der Stadt mit den Honigbienen um dasselbe Futter.\n[Moderatorin f] Das heißt, man tut der Natur mit einem eigenen Bienenvolk gar keinen Gefallen?\n[Herr Brunner m] Nicht unbedingt. Wer wirklich etwas für Insekten tun will, sollte lieber heimische Blühpflanzen auf den Balkon stellen, statt sich ein Volk anzuschaffen. Davon profitieren alle Arten.\n[Moderatorin f] Trotzdem ist Stadthonig sehr gefragt. Schmeckt der eigentlich anders als Honig vom Land?\n[Herr Brunner m] Oft sogar vielfältiger. Auf dem Land stehen die Bienen häufig neben riesigen Rapsfeldern, und dann schmeckt der Honig eben nach Raps.\n[Herr Brunner m] In der Stadt finden sie Linden, Robinien, Obstbäume in Hinterhöfen und Kräuter auf Balkonen, und das schmeckt man.\n[Moderatorin f] Und wie sieht es mit Schadstoffen aus? Viele fragen sich ja, ob Honig von Bienen, die neben einer Hauptstraße fliegen, überhaupt gesund ist.\n[Herr Brunner m] Die Sorge ist verständlich, aber Untersuchungen haben gezeigt, dass Stadthonig in der Regel nicht stärker belastet ist als Honig aus ländlichen Gegenden.\n[Herr Brunner m] Die Bienen filtern vieles heraus, und auf dem Land kommen dafür oft Pflanzenschutzmittel hinzu.\n[Moderatorin f] Angenommen, jemand hört uns gerade zu und möchte trotzdem mit dem Imkern anfangen. Was muss man beachten?\n[Herr Brunner m] Zuerst einmal muss man sein Volk beim Veterinäramt anmelden. Das ist Pflicht, auch wenn man nur einen einzigen Kasten hat.\n[Herr Brunner m] Und dann sollte man unbedingt mit den Nachbarn reden, bevor die Bienen kommen. Die meisten Konflikte entstehen nicht durch Stiche, sondern weil sich jemand übergangen fühlt.\n[Moderatorin f] Wie viel Zeit muss man denn einplanen?\n[Herr Brunner m] Im Frühjahr und Sommer, wenn die Völker wachsen, sollte man jede Woche nach ihnen sehen, mindestens eine Stunde pro Volk. Im Winter dagegen gibt es kaum etwas zu tun.\n[Herr Brunner m] Viele unterschätzen außerdem die Varroamilbe. Das ist ein Parasit, der ein Volk ohne Behandlung innerhalb von ein, zwei Jahren zugrunde richtet.\n[Moderatorin f] Ist das der Grund, warum so viele Anfänger wieder aufhören?\n[Herr Brunner m] Zum Teil. Aber meiner Erfahrung nach ist es noch häufiger die Enttäuschung darüber, dass man doch nicht so viel Honig erntet, wie man sich erträumt hat.\n[Moderatorin f] Zum Schluss: Wenn Sie einen Wunsch an die Stadtpolitik frei hätten, welcher wäre das?\n[Herr Brunner m] Weniger kurz gemähter Rasen in den Parks. Lasst die Wiesen doch einfach mal wachsen. Das kostet die Stadt weniger und hilft Bienen, Schmetterlingen und Käfern gleichermaßen.\n[Moderatorin f] Herr Brunner, vielen Dank für das Gespräch.",
+          "questions": [
+            {
+              "question": "Wie ist Herr Brunner zur Imkerei gekommen?",
+              "options": [
+                "Er hat im Studium ein Projekt über Bienen betreut.",
+                "Er hat die Bienen eines Nachbarn übernommen.",
+                "Er hat einen Imkerkurs geschenkt bekommen."
+              ],
+              "correctIndex": 1,
+              "evidence": "hat mir seine zwei Bienenvölker überlassen"
+            },
+            {
+              "question": "Was hält Herr Brunner von der wachsenden Zahl der Bienenvölker in Städten?",
+              "options": [
+                "Sie kann den Wildbienen schaden.",
+                "Sie ist vor allem ein Gewinn für die Bestäubung von Obstbäumen.",
+                "Sie führt dazu, dass Honigbienen in der Stadt häufiger krank werden."
+              ],
+              "correctIndex": 0,
+              "evidence": "die konkurrieren in der Stadt mit den Honigbienen um dasselbe Futter"
+            },
+            {
+              "question": "Was empfiehlt Herr Brunner Menschen, die Insekten helfen wollen?",
+              "options": [
+                "Nisthilfen für Wildbienen aufzuhängen",
+                "sich einem Imkerverein anzuschließen",
+                "einheimische Blühpflanzen anzupflanzen"
+              ],
+              "correctIndex": 2,
+              "evidence": "sollte lieber heimische Blühpflanzen auf den Balkon stellen"
+            },
+            {
+              "question": "Warum schmeckt Stadthonig laut Herrn Brunner oft vielfältiger?",
+              "options": [
+                "Weil die Bienen in der Stadt länger fliegen.",
+                "Weil Stadtimker den Honig schonender verarbeiten.",
+                "Weil die Bienen in der Stadt viele verschiedene Pflanzen finden."
+              ],
+              "correctIndex": 2,
+              "evidence": "Linden, Robinien, Obstbäume in Hinterhöfen und Kräuter auf Balkonen"
+            },
+            {
+              "question": "Was sagt Herr Brunner über Schadstoffe im Stadthonig?",
+              "options": [
+                "Er ist meist nicht stärker belastet als Honig vom Land.",
+                "Er enthält deutlich mehr Rückstände von Abgasen.",
+                "Er sollte vor dem Verkauf immer untersucht werden."
+              ],
+              "correctIndex": 0,
+              "evidence": "Stadthonig in der Regel nicht stärker belastet ist"
+            },
+            {
+              "question": "Was ist für neue Imker vorgeschrieben?",
+              "options": [
+                "eine Prüfung bei einem Imkerverband",
+                "die Anmeldung der Bienen bei einer Behörde",
+                "eine Versicherung gegen Bienenstiche"
+              ],
+              "correctIndex": 1,
+              "evidence": "muss man sein Volk beim Veterinäramt anmelden"
+            },
+            {
+              "question": "Wodurch entstehen laut Herrn Brunner die meisten Streitigkeiten mit Nachbarn?",
+              "options": [
+                "durch Bienenstiche auf dem Balkon",
+                "durch Verschmutzungen an Autos und Wäsche",
+                "dadurch, dass Nachbarn nicht vorher einbezogen wurden"
+              ],
+              "correctIndex": 2,
+              "evidence": "weil sich jemand übergangen fühlt"
+            },
+            {
+              "question": "Wie viel Arbeit macht ein Bienenvolk?",
+              "options": [
+                "Im Winter ist der Aufwand am größten.",
+                "In der warmen Jahreszeit muss man es wöchentlich kontrollieren.",
+                "Es genügt, einmal im Monat nach den Bienen zu sehen."
+              ],
+              "correctIndex": 1,
+              "evidence": "sollte man jede Woche nach ihnen sehen"
+            },
+            {
+              "question": "Was ist laut Herrn Brunner der häufigste Grund, warum Anfänger aufgeben?",
+              "options": [
+                "Die Honigernte fällt geringer aus als erhofft.",
+                "Ihre Völker sterben an Parasiten.",
+                "Die Arbeit kostet mehr Zeit als gedacht."
+              ],
+              "correctIndex": 0,
+              "evidence": "dass man doch nicht so viel Honig erntet"
+            },
+            {
+              "question": "Was wünscht sich Herr Brunner von der Stadtpolitik?",
+              "options": [
+                "mehr Stellplätze für Bienenkästen in Parks",
+                "Zuschüsse für Imkerinnen und Imker",
+                "dass Grünflächen seltener gemäht werden"
+              ],
+              "correctIndex": 2,
+              "evidence": "Weniger kurz gemähter Rasen in den Parks."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "A neighbour who moved into a care home left him his two bee colonies.",
+            "de": "Ein Nachbar, der ins Pflegeheim zog, hat ihm seine beiden Bienenvölker überlassen."
+          },
+          {
+            "en": "He says honeybees are not endangered and compete with the threatened wild bees for the same food.",
+            "de": "Er erklärt, dass Honigbienen nicht bedroht sind und mit den gefährdeten Wildbienen um dasselbe Futter konkurrieren."
+          },
+          {
+            "en": "He recommends putting native flowering plants on the balcony instead of keeping a colony.",
+            "de": "Er empfiehlt, statt eines Bienenvolks lieber heimische Blühpflanzen auf den Balkon zu stellen."
+          },
+          {
+            "en": "In the city the bees find many different plants, whereas in the countryside they often only have rapeseed.",
+            "de": "In der Stadt finden die Bienen viele verschiedene Pflanzen, auf dem Land dagegen oft nur Raps."
+          },
+          {
+            "en": "According to studies, city honey is usually no more contaminated than honey from rural areas.",
+            "de": "Laut Untersuchungen ist Stadthonig in der Regel nicht stärker belastet als Honig aus ländlichen Gegenden."
+          },
+          {
+            "en": "Every colony must be registered with the veterinary office, even a single hive.",
+            "de": "Jedes Volk muss beim Veterinäramt angemeldet werden, auch wenn man nur einen Kasten hat."
+          },
+          {
+            "en": "Most conflicts arise not from stings but because a neighbour feels left out, so one should talk to them beforehand.",
+            "de": "Die meisten Konflikte entstehen nicht durch Stiche, sondern weil sich jemand übergangen fühlt. Man sollte also vorher mit den Nachbarn sprechen."
+          },
+          {
+            "en": "In spring and summer you should check the colonies every week; in winter there is hardly anything to do.",
+            "de": "Im Frühjahr und Sommer sollte man jede Woche nach den Völkern sehen, im Winter gibt es kaum etwas zu tun."
+          },
+          {
+            "en": "He says the parasite is only part of the reason; more often beginners are disappointed by a smaller honey harvest than they had hoped for.",
+            "de": "Der Parasit ist nur ein Teil der Erklärung. Noch häufiger sind Anfänger enttäuscht, weil sie weniger Honig ernten als erhofft."
+          },
+          {
+            "en": "He wishes that parks would mow less often and let the meadows grow, which would help many insects.",
+            "de": "Er wünscht sich, dass in Parks seltener gemäht wird und die Wiesen wachsen dürfen, weil das vielen Insekten hilft."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-c1__hoeren-2__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Moderator m] Willkommen bei „Sprachzeit“. Wer in den Siebzigerjahren in einem bayerischen oder schwäbischen Dorf aufwuchs, sprach zu Hause fast selbstverständlich Dialekt. Heute sieht das ganz anders aus.\n[Moderator m] Darüber spreche ich mit der Sprachwissenschaftlerin Svenja Hollmann, die seit Jahren erforscht, wie Jugendliche in Süddeutschland sprechen. Frau Hollmann, stirbt der Dialekt aus?\n[Frau Hollmann f] So pauschal würde ich das nicht sagen. Was wir beobachten, ist eher ein Umbau. Die ganz kleinräumigen Ortsmundarten verschwinden tatsächlich, aber es entstehen großräumigere Umgangssprachen, die regional immer noch klar erkennbar sind.\n[Moderator m] Woran liegt es, dass die Ortsmundarten verschwinden?\n[Frau Hollmann f] Ein ganz wichtiger Faktor ist die Mobilität. Früher hat man ins Nachbardorf geheiratet, heute pendelt man zur Arbeit in die Stadt, und die Kinder besuchen weiterführende Schulen, an denen Jugendliche aus vielen Orten zusammenkommen.\n[Frau Hollmann f] Das Fernsehen, das man lange für den Hauptschuldigen gehalten hat, spielt nach unseren Daten dagegen eine erstaunlich geringe Rolle.\n[Moderator m] Sie haben für Ihre Studie mehrere hundert Jugendliche befragt. Was hat Sie dabei am meisten überrascht?\n[Frau Hollmann f] Dass die Einstellung zum Dialekt viel positiver ist als das tatsächliche Sprechen. Fast alle finden Dialekt sympathisch und sagen, er gehöre zur Heimat. Aber nur eine Minderheit spricht ihn selbst im Alltag.\n[Moderator m] Woher kommt dieser Widerspruch?\n[Frau Hollmann f] Viele Eltern haben in den Achtziger- und Neunzigerjahren bewusst Hochdeutsch mit ihren Kindern gesprochen, weil sie fürchteten, der Dialekt könnte in der Schule oder später im Beruf ein Nachteil sein.\n[Frau Hollmann f] Diese Kinder verstehen den Dialekt ihrer Großeltern noch problemlos, aber sie trauen sich nicht mehr, ihn selbst zu sprechen. Wir nennen das passive Kompetenz.\n[Moderator m] Gibt es Situationen, in denen auch diese Jugendlichen Dialekt verwenden?\n[Frau Hollmann f] Ja, und das ist spannend. In Kurznachrichten unter Freunden schreiben viele plötzlich Dialekt, mit ganz eigenen Schreibweisen. Das wirkt locker und vertraut, gerade weil es nicht der Norm entspricht.\n[Moderator m] Und wie sieht es im Berufsleben aus? Ist Dialekt dort tatsächlich ein Nachteil?\n[Frau Hollmann f] Das hängt stark von der Branche ab. Im Handwerk oder in der Pflege kann ein Dialekt sogar Vertrauen schaffen, weil die Kundschaft sich verstanden fühlt.\n[Frau Hollmann f] Problematisch wird es eher bei Bewerbungen in großen Unternehmen. Experimente haben gezeigt, dass Bewerber mit starkem Dialekt bei gleicher Qualifikation als weniger kompetent eingeschätzt werden.\n[Moderator m] Sollte die Schule mehr tun, um Dialekte zu erhalten?\n[Frau Hollmann f] Ich halte nichts davon, Dialekt als Unterrichtsfach einzuführen, das würde ihn eher zum Museumsstück machen. Viel wichtiger wäre, dass Lehrkräfte Dialekt nicht mehr als Fehler anstreichen, sondern als eigene Sprachform anerkennen.\n[Moderator m] Viele behaupten ja, Kinder mit Dialekt hätten es im Fach Deutsch schwerer. Stimmt das?\n[Frau Hollmann f] Nein, das ist ein hartnäckiges Vorurteil. Mehrere Untersuchungen zeigen, dass Dialekt sprechende Kinder in Rechtschreibtests nicht schlechter abschneiden als ihre Mitschüler.\n[Moderator m] Zum Schluss: Wie wird man in fünfzig Jahren in Süddeutschland sprechen?\n[Frau Hollmann f] Ich wage keine Prognose, aber ich bin optimistisch. Solange Menschen zeigen wollen, woher sie kommen, wird es regionale Färbungen geben, vielleicht nur nicht mehr in der Form, die unsere Großeltern kannten.\n[Moderator m] Frau Hollmann, herzlichen Dank.",
+          "questions": [
+            {
+              "question": "Wie beschreibt Frau Hollmann die Entwicklung der Dialekte?",
+              "options": [
+                "Dialekte verschwinden innerhalb einer Generation vollständig.",
+                "Dialekte werden bei jungen Leuten wieder beliebter.",
+                "Örtliche Mundarten gehen in größeren regionalen Umgangssprachen auf."
+              ],
+              "correctIndex": 2,
+              "evidence": "es entstehen großräumigere Umgangssprachen"
+            },
+            {
+              "question": "Welche Rolle spielt das Fernsehen laut Frau Hollmann?",
+              "options": [
+                "Es ist die Hauptursache für den Rückgang der Dialekte.",
+                "Es hat weniger Einfluss, als man lange angenommen hat.",
+                "Es trägt heute zur Verbreitung von Dialekten bei."
+              ],
+              "correctIndex": 1,
+              "evidence": "spielt nach unseren Daten dagegen eine erstaunlich geringe Rolle"
+            },
+            {
+              "question": "Was hat die Forscherin in ihrer Studie überrascht?",
+              "options": [
+                "Jugendliche bewerten Dialekt positiver, als sie ihn selbst nutzen.",
+                "Viele Jugendliche schämen sich für ihren Dialekt.",
+                "Jugendliche in der Stadt sprechen häufiger Dialekt als auf dem Land."
+              ],
+              "correctIndex": 0,
+              "evidence": "Aber nur eine Minderheit spricht ihn selbst im Alltag."
+            },
+            {
+              "question": "Warum haben viele Eltern früher mit ihren Kindern Hochdeutsch gesprochen?",
+              "options": [
+                "Sie befürchteten Nachteile für die Kinder in Schule und Beruf.",
+                "Sie beherrschten selbst keinen Dialekt mehr.",
+                "Die Schulen hatten es ausdrücklich verlangt."
+              ],
+              "correctIndex": 0,
+              "evidence": "weil sie fürchteten, der Dialekt könnte in der Schule oder später im Beruf ein Nachteil sein"
+            },
+            {
+              "question": "Was versteht Frau Hollmann unter passiver Kompetenz?",
+              "options": [
+                "Man spricht Dialekt nur innerhalb der Familie.",
+                "Man versteht einen Dialekt, spricht ihn aber nicht selbst.",
+                "Man kann Dialekt schreiben, aber nicht sprechen."
+              ],
+              "correctIndex": 1,
+              "evidence": "aber sie trauen sich nicht mehr, ihn selbst zu sprechen"
+            },
+            {
+              "question": "Wo verwenden diese Jugendlichen häufig Dialekt?",
+              "options": [
+                "in schriftlichen Nachrichten an Freunde",
+                "im Gespräch mit Lehrkräften",
+                "in Referaten in der Schule"
+              ],
+              "correctIndex": 0,
+              "evidence": "In Kurznachrichten unter Freunden schreiben viele plötzlich Dialekt"
+            },
+            {
+              "question": "Was haben laut Frau Hollmann Experimente zu Bewerbungen gezeigt?",
+              "options": [
+                "Bewerber mit Dialekt werden häufiger eingestellt.",
+                "Personalverantwortliche achten kaum auf die Aussprache.",
+                "Ein starker Dialekt kann den Eindruck von Kompetenz verschlechtern."
+              ],
+              "correctIndex": 2,
+              "evidence": "als weniger kompetent eingeschätzt werden"
+            },
+            {
+              "question": "Was erwartet Frau Hollmann von der Schule?",
+              "options": [
+                "Dialekt als eigenes Unterrichtsfach einzuführen",
+                "im Unterricht nur noch Hochdeutsch zuzulassen",
+                "Dialekt nicht länger als Fehler zu werten"
+              ],
+              "correctIndex": 2,
+              "evidence": "dass Lehrkräfte Dialekt nicht mehr als Fehler anstreichen"
+            },
+            {
+              "question": "Was zeigen Untersuchungen über Kinder, die Dialekt sprechen?",
+              "options": [
+                "Sie schneiden in der Rechtschreibung nicht schlechter ab.",
+                "Sie machen in der Rechtschreibung mehr Fehler.",
+                "Sie lernen schneller Fremdsprachen."
+              ],
+              "correctIndex": 0,
+              "evidence": "in Rechtschreibtests nicht schlechter abschneiden als ihre Mitschüler"
+            },
+            {
+              "question": "Wie sieht Frau Hollmann die Zukunft der regionalen Sprechweisen?",
+              "options": [
+                "Sie werden bald ganz verschwinden.",
+                "Die alten Ortsmundarten werden zurückkehren.",
+                "Sie werden in veränderter Form weiterbestehen."
+              ],
+              "correctIndex": 2,
+              "evidence": "wird es regionale Färbungen geben"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "She speaks of a transformation: local dialects disappear, but broader regional varieties emerge.",
+            "de": "Sie spricht von einem Umbau: Die Ortsmundarten verschwinden, aber es entstehen großräumigere regionale Umgangssprachen."
+          },
+          {
+            "en": "Television was long seen as the main culprit, but according to her data it plays a surprisingly small role.",
+            "de": "Das Fernsehen galt lange als Hauptschuldiger, spielt nach ihren Daten aber eine erstaunlich geringe Rolle."
+          },
+          {
+            "en": "Almost all young people like dialect, but only a minority actually speaks it in everyday life.",
+            "de": "Fast alle Jugendlichen finden Dialekt sympathisch, aber nur eine Minderheit spricht ihn selbst im Alltag."
+          },
+          {
+            "en": "The parents feared that dialect could be a disadvantage at school or later at work.",
+            "de": "Die Eltern fürchteten, der Dialekt könne in der Schule oder später im Beruf ein Nachteil sein."
+          },
+          {
+            "en": "The children still understand their grandparents' dialect but no longer dare to speak it themselves.",
+            "de": "Die Kinder verstehen den Dialekt der Großeltern noch, trauen sich aber nicht mehr, ihn selbst zu sprechen."
+          },
+          {
+            "en": "Many write in dialect in text messages to friends because it feels casual and familiar.",
+            "de": "Viele schreiben in Kurznachrichten an Freunde Dialekt, weil das locker und vertraut wirkt."
+          },
+          {
+            "en": "Applicants with a strong dialect were judged less competent despite equal qualifications.",
+            "de": "Bewerber mit starkem Dialekt wurden bei gleicher Qualifikation als weniger kompetent eingeschätzt."
+          },
+          {
+            "en": "She rejects dialect as a school subject; teachers should simply stop marking dialect as a mistake.",
+            "de": "Sie lehnt Dialekt als Unterrichtsfach ab. Lehrkräfte sollten Dialekt aber nicht mehr als Fehler anstreichen."
+          },
+          {
+            "en": "Studies show that dialect-speaking children do no worse in spelling tests than their classmates.",
+            "de": "Untersuchungen zeigen, dass Kinder, die Dialekt sprechen, in Rechtschreibtests nicht schlechter abschneiden."
+          },
+          {
+            "en": "She is optimistic: regional colouring will remain, though perhaps not in the form our grandparents knew.",
+            "de": "Sie ist optimistisch: Regionale Färbungen wird es weiter geben, aber vielleicht nicht in der früheren Form."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-c1__hoeren-2__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Moderatorin f] Hallo und willkommen zu „Land in Sicht“, unserer Sendung über das Leben abseits der Großstädte. Heute geht es um eine Einrichtung, ohne die in vielen Dörfern im Ernstfall niemand käme: die freiwillige Feuerwehr.\n[Moderatorin f] Zu Gast sind Bernd Ostermann, seit zwölf Jahren Leiter einer Wehr in der Eifel, und Derya Yilmaz, die mit neunzehn zu den jüngsten Mitgliedern gehört. Herr Ostermann, man hört immer wieder, dass den Wehren die Leute ausgehen. Ist es so dramatisch?\n[Herr Ostermann m] Die Mitgliederzahlen auf dem Papier sehen gar nicht so schlecht aus. Das eigentliche Problem ist, wer tagsüber verfügbar ist.\n[Herr Ostermann m] Die meisten unserer Leute arbeiten dreißig, vierzig Kilometer entfernt. Wenn um zehn Uhr morgens der Alarm geht, kriegen wir manchmal kaum ein Fahrzeug besetzt.\n[Moderatorin f] Frau Yilmaz, was hat Sie dazu gebracht mitzumachen?\n[Frau Yilmaz f] Bei mir war es ein Erlebnis in der Nachbarschaft. Als ich vierzehn war, hat bei uns gegenüber ein Dachstuhl gebrannt, und ich habe gesehen, wie ruhig und organisiert die Leute dort gearbeitet haben.\n[Frau Yilmaz f] Am nächsten Tag habe ich mich bei der Jugendfeuerwehr angemeldet. Meine Eltern waren übrigens alles andere als begeistert.\n[Moderatorin f] Wie haben die anderen reagiert, als eine junge Frau dazukam?\n[Frau Yilmaz f] Ganz ehrlich, besser als befürchtet. Am Anfang gab es ein paar Sprüche, aber spätestens nach der ersten gemeinsamen Übung hat niemand mehr darüber geredet. Was zählt, ist, dass man sich aufeinander verlassen kann.\n[Moderatorin f] Herr Ostermann, was tun Sie, um mehr Leute zu gewinnen?\n[Herr Ostermann m] Wir haben gemerkt, dass Plakate und Zeitungsanzeigen fast nichts bringen. Was funktioniert, ist ein Tag der offenen Tür, an dem Familien selbst einmal einen Schlauch halten oder in die Drehleiter steigen dürfen.\n[Herr Ostermann m] Außerdem versuchen wir, Leute zu gewinnen, die tagsüber im Ort sind, also Mitarbeiter des Bauhofs oder Landwirte. Mit dem Bürgermeister haben wir vereinbart, dass Gemeindemitarbeiter bei Alarm sofort freigestellt werden.\n[Moderatorin f] Und wie reagieren private Arbeitgeber, wenn jemand mitten in der Schicht zum Einsatz muss?\n[Herr Ostermann m] Gesetzlich müssen sie ihn gehen lassen, und den Lohnausfall bekommen sie erstattet. Aber in der Praxis trauen sich gerade in kleinen Betrieben viele nicht, ständig wegzulaufen, weil sie wissen, dass dann die Arbeit liegen bleibt.\n[Moderatorin f] Frau Yilmaz, Sie studieren inzwischen in Köln. Wie bringen Sie das unter einen Hut?\n[Frau Yilmaz f] Unter der Woche gar nicht, das muss ich ehrlich sagen. Ich bin nur am Wochenende im Dorf und dann auch einsatzbereit. Ideal wäre es, wenn ich während des Semesters bei einer Wehr in Köln mitmachen könnte, ohne meine Heimatwehr aufzugeben.\n[Herr Ostermann m] Diese doppelte Mitgliedschaft ist übrigens genau das, was wir seit Jahren fordern. In manchen Bundesländern geht das schon, bei uns ist es bürokratisch noch sehr kompliziert.\n[Moderatorin f] Viele Gemeinden überlegen ja, ob man Feuerwehrleute stärker belohnen sollte, etwa mit Prämien oder Vergünstigungen.\n[Herr Ostermann m] Ich sehe das zwiespältig. Eine kleine Anerkennung, etwa ein Zuschuss zur Rente, finde ich richtig. Aber wenn wir anfangen, pro Einsatz zu bezahlen, verändert das den Charakter des Ehrenamts, und am Ende kommen manche nur noch wegen des Geldes.\n[Moderatorin f] Frau Yilmaz, was würden Sie jemandem sagen, der noch zögert?\n[Frau Yilmaz f] Dass man nicht schon alles können muss. Die meisten denken, man müsse besonders mutig oder sportlich sein. Aber alles, was man braucht, lernt man in der Ausbildung, und es gibt auch Aufgaben jenseits der Atemschutzgeräte, etwa in der Funkzentrale.\n[Moderatorin f] Vielen Dank Ihnen beiden.",
+          "questions": [
+            {
+              "question": "Worin sieht Herr Ostermann das Hauptproblem seiner Feuerwehr?",
+              "options": [
+                "Tagsüber sind zu wenige Einsatzkräfte vor Ort.",
+                "Die Zahl der Mitglieder sinkt stark.",
+                "Die Fahrzeuge sind veraltet."
+              ],
+              "correctIndex": 0,
+              "evidence": "kriegen wir manchmal kaum ein Fahrzeug besetzt"
+            },
+            {
+              "question": "Warum ist Frau Yilmaz zur Feuerwehr gegangen?",
+              "options": [
+                "Ihre Eltern waren selbst bei der Feuerwehr.",
+                "Freunde haben sie zur Jugendfeuerwehr mitgenommen.",
+                "Sie hat einen Brand in ihrer Nachbarschaft miterlebt."
+              ],
+              "correctIndex": 2,
+              "evidence": "hat bei uns gegenüber ein Dachstuhl gebrannt"
+            },
+            {
+              "question": "Wie wurde Frau Yilmaz von den anderen Mitgliedern aufgenommen?",
+              "options": [
+                "Sie wurde lange nicht ernst genommen.",
+                "Nach anfänglichen Bemerkungen wurde sie schnell akzeptiert.",
+                "Sie wurde von Anfang an besonders gefördert."
+              ],
+              "correctIndex": 1,
+              "evidence": "spätestens nach der ersten gemeinsamen Übung hat niemand mehr darüber geredet"
+            },
+            {
+              "question": "Welche Werbemaßnahme hat sich laut Herrn Ostermann bewährt?",
+              "options": [
+                "Anzeigen in der Lokalzeitung",
+                "Besuche in Schulen",
+                "Veranstaltungen, bei denen Besucher selbst etwas ausprobieren"
+              ],
+              "correctIndex": 2,
+              "evidence": "an dem Familien selbst einmal einen Schlauch halten"
+            },
+            {
+              "question": "Was hat Herr Ostermann mit dem Bürgermeister vereinbart?",
+              "options": [
+                "Feuerwehrleute erhalten einen Zuschuss zur Miete.",
+                "Gemeindemitarbeiter dürfen bei einem Alarm sofort ihre Arbeit verlassen.",
+                "Die Gemeinde stellt hauptberufliche Feuerwehrleute ein."
+              ],
+              "correctIndex": 1,
+              "evidence": "dass Gemeindemitarbeiter bei Alarm sofort freigestellt werden"
+            },
+            {
+              "question": "Warum gehen viele Feuerwehrleute aus kleinen Betrieben nicht zu jedem Einsatz?",
+              "options": [
+                "Weil sonst im Betrieb Arbeit unerledigt bleibt.",
+                "Weil ihr Arbeitgeber den Lohn nicht weiterzahlt.",
+                "Weil sie dafür Urlaub nehmen müssen."
+              ],
+              "correctIndex": 0,
+              "evidence": "weil sie wissen, dass dann die Arbeit liegen bleibt"
+            },
+            {
+              "question": "Was wünscht sich Frau Yilmaz?",
+              "options": [
+                "ihr Studium in die Nähe ihres Dorfes zu verlegen",
+                "für Einsätze von der Universität freigestellt zu werden",
+                "an zwei Orten gleichzeitig Mitglied einer Feuerwehr sein zu können"
+              ],
+              "correctIndex": 2,
+              "evidence": "ohne meine Heimatwehr aufzugeben"
+            },
+            {
+              "question": "Was sagt Herr Ostermann zur doppelten Mitgliedschaft?",
+              "options": [
+                "Er fordert sie schon lange.",
+                "Sie ist in seinem Bundesland bereits problemlos möglich.",
+                "Sie würde die Ausbildung zu kompliziert machen."
+              ],
+              "correctIndex": 0,
+              "evidence": "genau das, was wir seit Jahren fordern"
+            },
+            {
+              "question": "Wie steht Herr Ostermann zu finanziellen Anreizen?",
+              "options": [
+                "Er lehnt jede Form von Geld ab.",
+                "Eine kleine Anerkennung ja, eine Bezahlung pro Einsatz nein.",
+                "Er befürwortet eine Bezahlung pro Einsatz."
+              ],
+              "correctIndex": 1,
+              "evidence": "Eine kleine Anerkennung, etwa ein Zuschuss zur Rente, finde ich richtig."
+            },
+            {
+              "question": "Was möchte Frau Yilmaz zögernden Menschen vermitteln?",
+              "options": [
+                "Man muss vor allem körperlich sehr fit sein.",
+                "Man sollte erst nach dem Studium einsteigen.",
+                "Man braucht keine Vorkenntnisse, weil man alles in der Ausbildung lernt."
+              ],
+              "correctIndex": 2,
+              "evidence": "alles, was man braucht, lernt man in der Ausbildung"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Membership figures are fine, but most members work far away, so during the day there are hardly enough people for one vehicle.",
+            "de": "Die Mitgliederzahlen sind nicht schlecht, aber die meisten arbeiten weit entfernt, sodass tagsüber kaum ein Fahrzeug besetzt werden kann."
+          },
+          {
+            "en": "At fourteen she watched a roof fire across the street and was impressed by the firefighters; her parents were not enthusiastic.",
+            "de": "Mit vierzehn hat sie einen Dachstuhlbrand gegenüber miterlebt und war beeindruckt. Ihre Eltern waren nicht begeistert."
+          },
+          {
+            "en": "There were a few remarks at first, but after the first joint exercise nobody talked about it any more.",
+            "de": "Am Anfang gab es ein paar Sprüche, aber nach der ersten gemeinsamen Übung hat niemand mehr darüber geredet."
+          },
+          {
+            "en": "Posters and adverts do not work; an open day where families can try things themselves does.",
+            "de": "Plakate und Anzeigen bringen fast nichts. Erfolgreich ist ein Tag der offenen Tür, an dem Familien selbst etwas ausprobieren."
+          },
+          {
+            "en": "Municipal employees are released from work immediately when the alarm goes off.",
+            "de": "Gemeindemitarbeiter werden bei einem Alarm sofort von der Arbeit freigestellt."
+          },
+          {
+            "en": "Employers are reimbursed for lost wages, but people in small firms hold back because their work would be left undone.",
+            "de": "Den Lohnausfall bekommen die Arbeitgeber erstattet, aber in kleinen Betrieben bliebe sonst die Arbeit liegen."
+          },
+          {
+            "en": "She would like to join a fire brigade in Cologne during the semester without leaving the one in her home village.",
+            "de": "Sie möchte während des Semesters bei einer Wehr in Köln mitmachen, ohne ihre Heimatwehr aufzugeben."
+          },
+          {
+            "en": "He says that this is exactly what they have been demanding for years; in his state it is still bureaucratically complicated.",
+            "de": "Er sagt, genau das fordern sie seit Jahren. In seinem Bundesland ist es bürokratisch noch kompliziert."
+          },
+          {
+            "en": "He supports a small recognition such as a pension supplement, but warns that paying per call-out would change the nature of volunteering.",
+            "de": "Er befürwortet eine kleine Anerkennung wie einen Rentenzuschuss, warnt aber davor, pro Einsatz zu bezahlen."
+          },
+          {
+            "en": "She says you don't have to be able to do everything already; you learn everything in the training.",
+            "de": "Sie sagt, man müsse nicht schon alles können, denn alles Nötige lerne man in der Ausbildung."
+          }
+        ]
+      }
+    }
+  ]
+}

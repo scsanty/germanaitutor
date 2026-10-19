@@ -15,8 +15,8 @@ function quotedSegments(text: string): string[] {
 }
 
 describe('bundled German content', () => {
-  it.each(seeds)('%s: is seed version 9', (_f, seed) => {
-    expect(seed.seedVersion).toBe('9');
+  it.each(seeds)('%s: is seed version 10', (_f, seed) => {
+    expect(seed.seedVersion).toBe('10');
   });
 
   it.each(seeds)('%s: has real German titles, descriptions and explanations (not English copies)', (_f, seed) => {

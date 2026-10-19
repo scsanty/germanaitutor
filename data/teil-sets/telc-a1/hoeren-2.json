@@ -1,0 +1,202 @@
+{
+  "formatId": "telc-a1",
+  "partId": "hoeren-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-a1__hoeren-2__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter station\n[Ansage f] Text 1.\n[Sprecher m] Achtung an Gleis drei, eine Information zum Regionalexpress nach Leipzig.\n[Sprecher m] Der Zug, Abfahrt zehn Uhr zwanzig, fährt heute von Gleis sieben ab. Bitte beachten Sie die Änderung.\n[Ansage f] Text 2.\n[Sprecherin f] Information für die Passagiere des Fluges nach Rom.\n[Sprecherin f] Ihr Flug hat leider eine Stunde Verspätung. Die neue Abflugzeit ist fünfzehn Uhr dreißig.\n[Sprecherin f] Am Ausgang bekommen Sie ein Getränk. Das Getränk kostet nichts.\n[Ansage f] Text 3.\n[Sprecher m] Meine Damen und Herren, in wenigen Minuten erreichen wir Hannover Hauptbahnhof.\n[Sprecher m] Das Bordrestaurant ist heute leider geschlossen. Kaffee und Brötchen bekommen Sie bei unserem Service am Platz.\n[Ansage f] Text 4.\n[Sprecherin f] Information für alle Fahrgäste am Busbahnhof.\n[Sprecherin f] Wegen einer Baustelle hält die Linie fünf heute nicht am Marktplatz. Bitte steigen Sie an der Haltestelle Rathaus aus.",
+          "questions": [
+            {
+              "question": "Der Zug nach Leipzig fährt heute von Gleis drei ab.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "fährt heute von Gleis sieben ab"
+            },
+            {
+              "question": "Die Passagiere nach Rom müssen für ein Getränk nichts bezahlen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Das Getränk kostet nichts."
+            },
+            {
+              "question": "Man kann heute im Restaurant im Zug essen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Das Bordrestaurant ist heute leider geschlossen."
+            },
+            {
+              "question": "Der Bus Nummer fünf hält heute nicht am Marktplatz.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "hält die Linie fünf heute nicht am Marktplatz"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The announcement is made at platform three, but the train to Leipzig leaves from platform seven today.",
+            "de": "Die Durchsage ist an Gleis drei. Aber der Zug nach Leipzig fährt heute von Gleis sieben ab."
+          },
+          {
+            "en": "Because of the delay, the passengers get a drink at the gate, and the drink costs nothing.",
+            "de": "Wegen der Verspätung bekommen die Passagiere am Ausgang ein Getränk. Das Getränk kostet nichts."
+          },
+          {
+            "en": "The restaurant on the train is closed today. Coffee and rolls are brought to the seat.",
+            "de": "Das Restaurant im Zug ist heute geschlossen. Kaffee und Brötchen bekommt man am Platz."
+          },
+          {
+            "en": "Because of building work, line five does not stop at the market square today.",
+            "de": "Wegen einer Baustelle hält die Linie fünf heute nicht am Marktplatz."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a1__hoeren-2__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter station\n[Ansage f] Text 1.\n[Sprecherin f] Eine Information zu Gleis zwei: Der Intercity nach Köln, Abfahrt elf Uhr fünf, hat heute etwa zwanzig Minuten Verspätung.\n[Sprecherin f] Wir bitten um Entschuldigung.\n[Ansage f] Text 2.\n[Sprecher m] Liebe Fahrgäste, am Wochenende fährt die U-Bahn-Linie zwei nicht.\n[Sprecher m] Bitte nehmen Sie die Ersatzbusse vor dem Bahnhof. Die Busse fahren alle zehn Minuten.\n[Ansage f] Text 3.\n[Sprecherin f] Eine Durchsage für die Eltern von Paul Becker.\n[Sprecherin f] Der kleine Paul sucht seine Eltern. Er wartet an der Information im Erdgeschoss.\n[Sprecherin f] Bitte kommen Sie zur Information.\n[Ansage f] Text 4.\n[Sprecher m] Liebe Gäste, die Fähre nach Helgoland fährt heute wegen Sturm nicht.\n[Sprecher m] Sie können Ihre Fahrkarte am Schalter zurückgeben und bekommen Ihr Geld zurück.",
+          "questions": [
+            {
+              "question": "Der Zug nach Köln fährt heute später ab.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "hat heute etwa zwanzig Minuten Verspätung"
+            },
+            {
+              "question": "Am Wochenende fahren die Busse nur jede halbe Stunde.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Die Busse fahren alle zehn Minuten."
+            },
+            {
+              "question": "Paul wartet im ersten Stock.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Er wartet an der Information im Erdgeschoss."
+            },
+            {
+              "question": "Man bekommt das Geld für die Fahrkarte wieder.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "bekommen Ihr Geld zurück"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The train to Cologne is about twenty minutes late today, so it leaves later.",
+            "de": "Der Zug nach Köln hat etwa zwanzig Minuten Verspätung. Er fährt also später ab."
+          },
+          {
+            "en": "The replacement buses run every ten minutes, not every half hour.",
+            "de": "Die Busse fahren alle zehn Minuten, nicht jede halbe Stunde."
+          },
+          {
+            "en": "Paul is waiting at the information desk on the ground floor, not on the first floor.",
+            "de": "Paul wartet an der Information im Erdgeschoss, nicht im ersten Stock."
+          },
+          {
+            "en": "The ferry does not go today. Passengers can return their ticket and get their money back.",
+            "de": "Die Fähre fährt heute nicht. Man gibt die Fahrkarte am Schalter zurück und bekommt das Geld zurück."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a1__hoeren-2__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter station\n[Ansage f] Text 1.\n[Sprecher m] Eine Information für unsere Fahrgäste: Der Fahrkartenschalter ist heute ab achtzehn Uhr geschlossen.\n[Sprecher m] Fahrkarten bekommen Sie dann am Automaten neben dem Eingang.\n[Ansage f] Text 2.\n[Sprecherin f] Passagiere des Fluges nach Wien, bitte gehen Sie jetzt zum Ausgang neun.\n[Sprecherin f] Das Einsteigen beginnt in zehn Minuten.\n[Ansage f] Text 3.\n[Sprecher m] Nächster Halt: Frankfurt Flughafen. Dort können Sie in die S-Bahn zur Innenstadt umsteigen.\n[Sprecher m] Der Ausstieg ist in Fahrtrichtung rechts.\n[Ansage f] Text 4.\n[Sprecherin f] Achtung, eine Änderung für die Fahrgäste nach Dresden.\n[Sprecherin f] Der Bus nach Dresden fährt heute nicht um vierzehn Uhr, sondern schon um dreizehn Uhr dreißig.\n[Sprecherin f] Er fährt wie immer von Steig vier.",
+          "questions": [
+            {
+              "question": "Am Abend kann man am Automaten Fahrkarten kaufen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Fahrkarten bekommen Sie dann am Automaten neben dem Eingang."
+            },
+            {
+              "question": "Der Flug nach Wien geht von Ausgang neun.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "bitte gehen Sie jetzt zum Ausgang neun"
+            },
+            {
+              "question": "In Frankfurt Flughafen steigt man links aus.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Der Ausstieg ist in Fahrtrichtung rechts."
+            },
+            {
+              "question": "Der Bus nach Dresden fährt heute später als normal.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "sondern schon um dreizehn Uhr dreißig"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The ticket office closes at six in the evening. After that, tickets are available from the machine.",
+            "de": "Der Schalter ist ab achtzehn Uhr geschlossen. Dann gibt es Fahrkarten am Automaten."
+          },
+          {
+            "en": "The passengers for Vienna are asked to go to gate nine now.",
+            "de": "Die Passagiere nach Wien sollen jetzt zum Ausgang neun gehen."
+          },
+          {
+            "en": "The announcement says the exit is on the right in the direction of travel.",
+            "de": "In der Durchsage heißt es: Der Ausstieg ist in Fahrtrichtung rechts, nicht links."
+          },
+          {
+            "en": "The bus leaves at half past one instead of two o'clock, so it leaves earlier, not later.",
+            "de": "Der Bus fährt schon um dreizehn Uhr dreißig, nicht um vierzehn Uhr. Er fährt also früher."
+          }
+        ]
+      }
+    }
+  ]
+}

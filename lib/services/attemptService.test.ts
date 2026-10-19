@@ -1,10 +1,14 @@
-import { describe, it, expect, vi, type Mock } from 'vitest';
+import { afterEach, beforeEach, describe, it, expect, vi, type Mock } from 'vitest';
+import { mkdtempSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { writeAudio } from '../audio/audioStore';
 import { createDbClient } from '../db/client';
 import { reconcileExercises } from '../curriculum-admin/exerciseReconciliation';
 import { createProfileService } from './profileService';
 import { createProgressService } from './progressService';
 import { AttemptError, createAttemptService, toAttemptErrorResponse, type AttemptDeps } from './attemptService';
-import { markComplete, seedTutoringCurriculum } from '@/test/tutoringFixtures';
+import { addListeningExercise, listeningHash, markComplete, seedTutoringCurriculum } from '@/test/tutoringFixtures';
 
 type GradeFreeText = NonNullable<AttemptDeps['gradeFreeText']>;
 
@@ -232,7 +236,7 @@ describe('attemptService and the vocabulary deck', () => {
     expect(srs('a1-sein__card')).toEqual({ repetitions: 1, interval_days: 3, next_due_at: '2026-09-27' });
     expect(db.prepare('SELECT COUNT(*) AS n FROM vocabulary_items').get()).toEqual({ n: 0 });
     setDay(27);
-    const queue = createProgressService(db).getDailyQueue('2026-09-27');
+    const queue = await createProgressService(db).getDailyQueue('2026-09-27');
     expect(queue.items.map((i) => i.exercise.id)).toContain('a1-sein__card');
     await expect(service.recordAttempt('a1-sein__card', knew, 'queue')).resolves.toMatchObject({ result: 'correct' });
   });
@@ -278,21 +282,21 @@ describe('attemptService and the vocabulary deck', () => {
 });
 
 describe('attemptService.markLessonDone', () => {
-  it('completes a lesson without exercises, and refuses one with exercises', () => {
+  it('completes a lesson without exercises, and refuses one with exercises', async () => {
     const { db, service, count } = setup();
     db.exec(`
       INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('a1-read', 'generic', 'A1', 'reading', 'Just read');
       INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES ('a1-read', 'g-a1-m1');
     `);
-    expect(service.markLessonDone('a1-read')).toEqual({ completed: true });
-    expect(service.markLessonDone('a1-read')).toEqual({ completed: true });
+    expect(await service.markLessonDone('a1-read')).toEqual({ completed: true });
+    expect(await service.markLessonDone('a1-read')).toEqual({ completed: true });
     expect(count('lesson_completions')).toBe(1);
-    expect(() => service.markLessonDone('a1-greet')).toThrow(AttemptError);
+    await expect(service.markLessonDone('a1-greet')).rejects.toThrow(AttemptError);
   });
 
-  it('refuses a locked lesson', () => {
+  it('refuses a locked lesson', async () => {
     const { service } = setup();
-    expect(() => service.markLessonDone('a2-past')).toThrow('Level A2 is locked');
+    await expect(service.markLessonDone('a2-past')).rejects.toThrow('Level A2 is locked');
   });
 
   // I-1: an admin deleting the only unpassed exercise must not strand the lesson.
@@ -309,26 +313,76 @@ describe('attemptService.markLessonDone', () => {
       },
     ]);
 
-    expect(service.markLessonDone('a1-greet')).toEqual({ completed: true });
+    expect(await service.markLessonDone('a1-greet')).toEqual({ completed: true });
     expect(count('lesson_completions')).toBe(1);
     expect(srs('a1-greet__ex1')).toEqual({ repetitions: 1, interval_days: 3, next_due_at: '2026-09-27' });
     // Completing a1-greet also covers Goethe A1's only lesson via the concept link, finishing Goethe A1.
     expect(profiles.getProfile()).toMatchObject({ highestUnlockedLevel: 'A2', unlockNoticeLevel: 'A2' });
   });
 
-  it('still refuses a lesson that has an unpassed exercise', () => {
+  it('still refuses a lesson that has an unpassed exercise', async () => {
     const { service } = setup();
-    expect(() => service.markLessonDone('a1-greet')).toThrow(AttemptError);
-    expect(() => service.markLessonDone('a1-greet')).toThrow('This lesson has exercises; answer them to complete it');
+    await expect(service.markLessonDone('a1-greet')).rejects.toThrow(AttemptError);
+    await expect(service.markLessonDone('a1-greet')).rejects.toThrow('This lesson has exercises; answer them to complete it');
   });
 });
 
 describe('toAttemptErrorResponse', () => {
-  it('maps error kinds to HTTP statuses', () => {
+  it('maps error kinds to HTTP statuses', async () => {
     expect(toAttemptErrorResponse(new AttemptError('x', 'not_found'))).toEqual({ status: 404, body: { error: 'x', code: 'not_found' } });
     expect(toAttemptErrorResponse(new AttemptError('x', 'locked'))).toEqual({ status: 403, body: { error: 'x', code: 'level_locked' } });
     expect(toAttemptErrorResponse(new AttemptError('x', 'bad_request'))).toEqual({ status: 400, body: { error: 'x', code: 'bad_request' } });
     expect(toAttemptErrorResponse(new AttemptError('x', 'grading_failed'))).toEqual({ status: 502, body: { error: 'x', code: 'ai_failed', params: { detail: 'x' } } });
     expect(toAttemptErrorResponse(new Error('x'))).toBeNull();
+  });
+});
+
+// Spec: completion counts only the exercises available at that moment.
+describe('attemptService listening availability', () => {
+  let dataDir: string;
+  beforeEach(() => {
+    dataDir = mkdtempSync(join(tmpdir(), 'gait-attempt-audio-'));
+    process.env.GAIT_DATA_DIR = dataDir;
+  });
+  afterEach(() => {
+    rmSync(dataDir, { recursive: true, force: true });
+    delete process.env.GAIT_DATA_DIR;
+  });
+
+  function listeningSetup(speechUp: () => Promise<boolean>) {
+    const db = createDbClient(':memory:');
+    seedTutoringCurriculum(db);
+    addListeningExercise(db, 'a1-greet__ex3', 'a1-greet');
+    const service = createAttemptService(db, { now: () => new Date(2026, 8, 24, 10, 0), audio: { speechUp } });
+    return { db, service };
+  }
+
+  it('completes a lesson once every available exercise is passed while its audio-only exercise is unavailable', async () => {
+    const { db, service } = listeningSetup(async () => false);
+    await service.recordAttempt('a1-greet__ex1', right, 'lesson');
+    const outcome = await service.recordAttempt('a1-greet__ex2', knew, 'lesson');
+    expect(outcome).toMatchObject({ lessonCompleted: true, justCompleted: true });
+    expect(db.prepare("SELECT 1 FROM exercise_srs_state WHERE exercise_id = 'a1-greet__ex3'").get()).toBeUndefined();
+  });
+
+  it('waits for the listening exercise when it is available, and returns the reveal with its outcome', async () => {
+    writeAudio(await listeningHash(), Buffer.from('ogg'));
+    const { service } = listeningSetup(async () => false);
+    await service.recordAttempt('a1-greet__ex1', right, 'lesson');
+    expect(await service.recordAttempt('a1-greet__ex2', knew, 'lesson')).toMatchObject({ lessonCompleted: false });
+    const outcome = await service.recordAttempt('a1-greet__ex3', { type: 'audio_questions', selected: [1] }, 'lesson');
+    expect(outcome).toMatchObject({ result: 'correct', correctAnswer: 'Mit dem Bus', itemResults: [true], lessonCompleted: true });
+    expect(outcome.reveal?.evidence).toEqual(['Nein, mit dem Bus.']);
+    expect(outcome.reveal?.transcript.lines.map((l) => l.label)).toEqual(['Anna', 'Ben', 'Anna']);
+  });
+
+  it('refuses "mark as done" when every exercise of a lesson is unavailable', async () => {
+    const { db, service } = listeningSetup(async () => false);
+    db.exec(`
+      INSERT INTO lessons (id, track, source_level, skill, title) VALUES ('a1-hear', 'generic', 'A1', 'listening', 'Hear');
+      INSERT INTO lesson_placements (lesson_id, milestone_id) VALUES ('a1-hear', 'g-a1-m1');
+    `);
+    addListeningExercise(db, 'a1-hear__ex1', 'a1-hear', 'Hamburg');
+    await expect(service.markLessonDone('a1-hear')).rejects.toThrow(AttemptError);
   });
 });

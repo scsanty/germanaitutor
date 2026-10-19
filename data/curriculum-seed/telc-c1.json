@@ -1,5 +1,5 @@
 {
-  "seedVersion": "9",
+  "seedVersion": "10",
   "formatVersion": 3,
   "track": "telc",
   "level": "C1",
@@ -1257,13 +1257,58 @@
       }
     },
     {
-      "id": "c1-telc-hoerverstehen-teil1-vorlesungsmitschrift__ex0",
+      "id": "c1-telc-hoerverstehen-teil1-vorlesungsmitschrift__ex4",
       "lessonId": "c1-telc-hoerverstehen-teil1-vorlesungsmitschrift",
       "track": "telc",
-      "type": "fill_blank",
+      "type": "audio_questions",
       "content": {
-        "textWithBlank": "Notizaufgabe: 'Hörtext: Das Experiment scheiterte an unzureichender Kühlung der Supraleiter.' -> Notiz: Ursache des Scheiterns: Mangelhafte ___ der Supraleiter.",
-        "correctAnswer": "Kühlung"
+        "instruction": {
+          "en": "Listen to an extract from a lecture and complete the notes: choose a, b or c.",
+          "de": "Sie hören einen Ausschnitt aus einer Vorlesung. Ergänzen Sie die Notizen: Wählen Sie a, b oder c."
+        },
+        "transcript": "[Dozent m] Meine Damen und Herren, wir kommen heute zu einem Experiment, das in der Fachliteratur gern verschwiegen wird, weil es gescheitert ist. Gerade daraus lässt sich aber einiges lernen.\n[Dozent m] Ziel war es, ein Magnetfeld mit supraleitenden Spulen über mehrere Stunden stabil zu halten. Das Team hatte die Spulen sorgfältig berechnet, die Materialien waren erstklassig.\n[Dozent m] Woran ist es also gescheitert? Nicht an der Konstruktion, wie man anfangs vermutet hatte, sondern an der unzureichenden Kühlung der Supraleiter. Nach etwa vierzig Minuten stieg die Temperatur über den kritischen Wert, und die Supraleitung brach zusammen.\n[Dozent m] Halten wir fest: Eine durchgehend stabile Kühlung ist hier keine Nebensache, sondern eine conditio sine qua non. Ohne sie ist jeder weitere Schritt sinnlos.\n[Dozent m] Das Team hat übrigens nicht aufgegeben. Im zweiten Anlauf hat man das Kühlsystem komplett umgestellt, und siehe da: Das Feld blieb über sechs Stunden stabil.",
+        "questions": [
+          {
+            "question": "Notiz: Ursache des Scheiterns: mangelhafte … der Supraleiter",
+            "options": [
+              "Konstruktion",
+              "Kühlung",
+              "Berechnung"
+            ],
+            "correctIndex": 1,
+            "evidence": "sondern an der unzureichenden Kühlung der Supraleiter"
+          },
+          {
+            "question": "Notiz: Zusammenbruch der Supraleitung nach etwa …",
+            "options": [
+              "vierzig Minuten",
+              "zwei Stunden",
+              "sechs Stunden"
+            ],
+            "correctIndex": 0,
+            "evidence": "Nach etwa vierzig Minuten stieg die Temperatur über den kritischen Wert"
+          },
+          {
+            "question": "Notiz: Stabile Kühlung = …",
+            "options": [
+              "ein bereits gelöstes Problem",
+              "eine wünschenswerte, aber verzichtbare Ergänzung",
+              "eine unabdingbare Voraussetzung"
+            ],
+            "correctIndex": 2,
+            "evidence": "Ohne sie ist jeder weitere Schritt sinnlos."
+          },
+          {
+            "question": "Notiz: Ergebnis des zweiten Versuchs: Feld stabil über …",
+            "options": [
+              "vierzig Minuten",
+              "sechs Stunden",
+              "mehrere Tage"
+            ],
+            "correctIndex": 1,
+            "evidence": "Das Feld blieb über sechs Stunden stabil."
+          }
+        ]
       }
     },
     {
@@ -1283,22 +1328,6 @@
       }
     },
     {
-      "id": "c1-telc-hoerverstehen-teil1-vorlesungsmitschrift__ex2",
-      "lessonId": "c1-telc-hoerverstehen-teil1-vorlesungsmitschrift",
-      "track": "telc",
-      "type": "multiple_choice",
-      "content": {
-        "question": "Der Dozent sagt: 'Hierbei handelt es sich um eine conditio sine qua non.' Was notieren Sie zur Bedeutung für das Experiment?",
-        "options": [
-          "Unwichtige Randbedingung",
-          "Zwingende / unabdingbare Voraussetzung",
-          "Verbotene Maßnahme",
-          "Bereits abgeschlossener Test"
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
       "id": "c1-telc-hoerverstehen-teil1-vorlesungsmitschrift__ex3",
       "lessonId": "c1-telc-hoerverstehen-teil1-vorlesungsmitschrift",
       "track": "telc",
@@ -1309,18 +1338,68 @@
       }
     },
     {
-      "id": "c1-telc-hoerverstehen-teil2-fachgespraech-interview__ex0",
+      "id": "c1-telc-hoerverstehen-teil2-fachgespraech-interview__ex4",
       "lessonId": "c1-telc-hoerverstehen-teil2-fachgespraech-interview",
       "track": "telc",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Experte: 'Die Datenlage ist zwar dünn, doch deutet vieles auf eine Trendwende hin.' - Wie schätzt der Experte die Situation ein?",
-        "options": [
-          "Er ist sich absolut sicher, dass alles beim Alten bleibt.",
-          "Er sieht begründete Anzeichen für einen Wandel, räumt aber Unsicherheiten ein.",
-          "Er hält die Untersuchung für komplett unseriös."
-        ],
-        "correctIndex": 1
+        "instruction": {
+          "en": "Listen to an extract from a radio discussion and choose the statement that fits best: a, b or c.",
+          "de": "Sie hören einen Ausschnitt aus einer Radiodiskussion. Welche Aussage passt am besten: a, b oder c?"
+        },
+        "transcript": "@filter radio\n[Moderatorin f] Seit Jahren heißt es, Jugendliche läsen immer weniger. Eine neue Erhebung zeichnet nun ein anderes Bild. Herr Vogt, Sie haben die Zahlen ausgewertet. Ist die Lesekrise vorbei?\n[Herr Vogt m] Vorbei wäre deutlich zu viel gesagt. Die Datenlage ist zwar noch dünn, wir haben bislang nur zwei Jahrgänge, doch deutet vieles auf eine Trendwende hin.\n[Moderatorin f] Frau Lindner, Sie forschen seit Langem zur Leseförderung. Wie überrascht sind Sie?\n[Frau Lindner f] Ehrlich gesagt: Das Ergebnis überrascht mich nicht im Geringsten. Wir beobachten seit drei, vier Jahren, dass die Bibliotheken wieder voller werden, vor allem durch Jugendbücher, die in sozialen Netzwerken empfohlen werden.\n[Herr Vogt m] Wobei ich da vorsichtig wäre. Dass mehr Bücher ausgeliehen werden, heißt noch lange nicht, dass sie auch zu Ende gelesen werden.\n[Frau Lindner f] Das ist richtig, aber das galt früher genauso. Entscheidend ist doch, dass überhaupt wieder gelesen wird.\n[Moderatorin f] Was folgt daraus für die Schulen?\n[Herr Vogt m] Ich halte nichts davon, die Leseförderung jetzt zurückzufahren, nur weil die Zahlen etwas besser aussehen. Im Gegenteil: Gerade jetzt sollte man nachlegen.",
+        "questions": [
+          {
+            "question": "Wie schätzt Herr Vogt die neuen Zahlen ein?",
+            "options": [
+              "Er hält die Lesekrise für endgültig überwunden.",
+              "Er sieht begründete Anzeichen für einen Wandel, räumt aber Unsicherheiten ein.",
+              "Er hält die Erhebung für methodisch unbrauchbar."
+            ],
+            "correctIndex": 1,
+            "evidence": "Die Datenlage ist zwar noch dünn, wir haben bislang nur zwei Jahrgänge, doch deutet vieles auf eine Trendwende hin."
+          },
+          {
+            "question": "Was drückt Frau Lindner mit ihrer Reaktion aus?",
+            "options": [
+              "Sie hatte genau dieses Ergebnis erwartet.",
+              "Sie zweifelt an der Aussagekraft des Ergebnisses.",
+              "Sie hält das Ergebnis für bedeutungslos."
+            ],
+            "correctIndex": 0,
+            "evidence": "Das Ergebnis überrascht mich nicht im Geringsten."
+          },
+          {
+            "question": "Worauf führt Frau Lindner die Entwicklung unter anderem zurück?",
+            "options": [
+              "auf neue Lehrpläne an den Schulen",
+              "auf längere Öffnungszeiten der Bibliotheken",
+              "auf Buchempfehlungen im Internet"
+            ],
+            "correctIndex": 2,
+            "evidence": "durch Jugendbücher, die in sozialen Netzwerken empfohlen werden"
+          },
+          {
+            "question": "Welchen Einwand bringt Herr Vogt vor?",
+            "options": [
+              "Ausleihzahlen sagen nichts darüber aus, ob Bücher vollständig gelesen werden.",
+              "Die Bibliotheken zählen ihre Ausleihen falsch.",
+              "Jugendbücher aus dem Internet seien literarisch wertlos."
+            ],
+            "correctIndex": 0,
+            "evidence": "heißt noch lange nicht, dass sie auch zu Ende gelesen werden"
+          },
+          {
+            "question": "Was empfiehlt Herr Vogt den Schulen?",
+            "options": [
+              "die Leseförderung vorerst zu reduzieren",
+              "die Leseförderung gerade jetzt zu verstärken",
+              "abzuwarten, bis mehr Daten vorliegen"
+            ],
+            "correctIndex": 1,
+            "evidence": "Gerade jetzt sollte man nachlegen."
+          }
+        ]
       }
     },
     {
@@ -1353,28 +1432,48 @@
       }
     },
     {
-      "id": "c1-telc-hoerverstehen-teil2-fachgespraech-interview__ex3",
-      "lessonId": "c1-telc-hoerverstehen-teil2-fachgespraech-interview",
-      "track": "telc",
-      "type": "free_text",
-      "content": {
-        "prompt": "Wie deuten Sie die Aussage einer Forscherin: 'Das Ergebnis überrascht mich nicht im Geringsten'?",
-        "modelAnswer": "Die Forscherin hatte genau diesen Ausgang erwartet; das Resultat bestätigt vollkommen ihre ursprüngliche Hypothese."
-      }
-    },
-    {
-      "id": "c1-telc-hoerverstehen-teil3-kurzvortraege__ex0",
+      "id": "c1-telc-hoerverstehen-teil3-kurzvortraege__ex4",
       "lessonId": "c1-telc-hoerverstehen-teil3-kurzvortraege",
       "track": "telc",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Ein Sprecher betont die Chancen internationaler Studiengänge, verweist aber auf Sprachbarrieren. Welche Aussage trifft zu?",
-        "options": [
-          "Er lehnt Internationalisierung grundsätzlich ab.",
-          "Er befürwortet die Programme, sieht jedoch sprachliche Hürden als Herausforderung.",
-          "Er fordert die Abschaffung aller Fremdsprachen an Universitäten."
-        ],
-        "correctIndex": 1
+        "instruction": {
+          "en": "Listen to three short statements on English-taught degree programmes. Which statement matches each speaker? Choose a, b or c.",
+          "de": "Sie hören drei kurze Beiträge zu englischsprachigen Studiengängen. Welche Aussage passt zu welcher Person? Wählen Sie a, b oder c."
+        },
+        "transcript": "[Herr Berger m] Englischsprachige Masterstudiengänge sind für unsere Hochschule ein enormer Gewinn: Wir ziehen Talente aus aller Welt an, und unsere eigenen Studierenden profitieren vom internationalen Umfeld. Man darf allerdings nicht so tun, als gäbe es keine Sprachbarrieren. Viele ausländische Absolventen finden hier keine Stelle, weil ihnen das Deutsche fehlt. Deshalb sollten verpflichtende Deutschkurse von Anfang an dazugehören.\n[Frau Roth f] Man verkauft uns die Umstellung auf Englisch gern als Modernisierung. Ich stehe dieser Neuerung äußerst skeptisch gegenüber. Wenn Fachbegriffe nur noch auf Englisch gelehrt werden, verarmt die deutsche Wissenschaftssprache, und das trifft am Ende auch die Schulen und die breite Öffentlichkeit.\n[Frau Haas f] Ich unterrichte seit Jahren auf Englisch, und ehrlich gesagt ist die Sprachfrage für mich zweitrangig. Was mich viel mehr umtreibt, ist die Betreuung: Ausländische Studierende brauchen Hilfe bei der Wohnungssuche und bei Behörden, und dafür gibt es schlicht zu wenig Personal.",
+        "questions": [
+          {
+            "question": "Welche Position vertritt Herr Berger?",
+            "options": [
+              "Er lehnt englischsprachige Studiengänge grundsätzlich ab.",
+              "Er befürwortet die Programme, hält aber Deutschkenntnisse der Studierenden für unverzichtbar.",
+              "Er fordert, alle Studiengänge auf Englisch umzustellen."
+            ],
+            "correctIndex": 1,
+            "evidence": "Deshalb sollten verpflichtende Deutschkurse von Anfang an dazugehören."
+          },
+          {
+            "question": "Wie steht Frau Roth zur Umstellung auf Englisch?",
+            "options": [
+              "Sie sieht sie sehr kritisch.",
+              "Sie will erst einmal abwarten.",
+              "Sie begrüßt sie als Modernisierung."
+            ],
+            "correctIndex": 0,
+            "evidence": "Ich stehe dieser Neuerung äußerst skeptisch gegenüber."
+          },
+          {
+            "question": "Was ist für Frau Haas das größte Problem?",
+            "options": [
+              "die Sprachkenntnisse der Lehrenden",
+              "die Studiengebühren für ausländische Studierende",
+              "zu wenig Unterstützung für ausländische Studierende im Alltag"
+            ],
+            "correctIndex": 2,
+            "evidence": "Was mich viel mehr umtreibt, ist die Betreuung"
+          }
+        ]
       }
     },
     {
@@ -1391,16 +1490,6 @@
           "Zehn Personen gleichzeitig durcheinander"
         ],
         "correctIndex": 1
-      }
-    },
-    {
-      "id": "c1-telc-hoerverstehen-teil3-kurzvortraege__ex2",
-      "lessonId": "c1-telc-hoerverstehen-teil3-kurzvortraege",
-      "track": "telc",
-      "type": "fill_blank",
-      "content": {
-        "textWithBlank": "Sprecherin: 'Ich stehe dieser Neuerung äußerst ___ gegenüber.' (skeptisch / abwartend)",
-        "correctAnswer": "skeptisch"
       }
     },
     {

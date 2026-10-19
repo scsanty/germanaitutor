@@ -1,14 +1,20 @@
 // app/api/backup/route.test.ts
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
-import { mkdtempSync } from 'node:fs';
+import { mkdtempSync, mkdirSync, writeFileSync, readFileSync, rmSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
-import { getDb, closeDb } from '@/lib/db/client';
-import { loadOrCreateMasterKey } from '@/lib/crypto/keyfile';
+import { createHash, randomBytes } from 'node:crypto';
+import { gzipSync } from 'node:zlib';
+import { getDb, closeDb, getDbPath } from '@/lib/db/client';
+import { loadOrCreateMasterKey, defaultKeyFilePath } from '@/lib/crypto/keyfile';
 import { createProfileService } from '@/lib/services/profileService';
 import { POST as startPlacement } from '@/app/api/placement/start/route';
 import { GET as exportRoute } from './export/route';
 import { POST as importRoute } from './import/route';
+import { MAX_BACKUP_ARCHIVE_BYTES } from '@/lib/services/backupService';
+import { audioDir } from '@/lib/audio/audioStore';
+import { decrypt } from '@/lib/crypto/encrypt';
+import { readSmtpSettings, saveSmtpSettings } from '@/lib/services/mailService';
 
 function importRequest(archive: Buffer): Request {
   return new Request('http://localhost/api/backup/import', {
@@ -70,5 +76,98 @@ describe('/api/backup', () => {
 
     const res = await startPlacement();
     expect(res.status).toBe(200);
+  });
+
+  const HASH = 'c'.repeat(64);
+
+  function addJob(hash: string, status: string, transcript = 'A: Hallo.') {
+    getDb()
+      .prepare('INSERT INTO audio_jobs (hash, transcript, status, attempts, updated_at) VALUES (?, ?, ?, 0, ?)')
+      .run(hash, transcript, status, new Date().toISOString());
+  }
+  const jobStatus = (hash: string) =>
+    (getDb().prepare('SELECT status FROM audio_jobs WHERE hash = ?').get(hash) as { status: string } | undefined)?.status;
+
+  it('restores the audio files, and an uploaded recording keeps its status', async () => {
+    const clip = randomBytes(5000);
+    addJob(HASH, 'uploaded');
+    mkdirSync(audioDir(), { recursive: true });
+    writeFileSync(join(audioDir(), `${HASH}.ogg`), clip);
+
+    const archive = Buffer.from(await (await exportRoute()).arrayBuffer());
+    rmSync(audioDir(), { recursive: true });
+
+    const importRes = await importRoute(importRequest(archive));
+    expect((await importRes.json()).ok).toBe(true);
+    expect(readFileSync(join(audioDir(), `${HASH}.ogg`)).equals(clip)).toBe(true);
+    // The post-import sweep found the file, so the recording is not re-queued for synthesis.
+    expect(jobStatus(HASH)).toBe('uploaded');
+  });
+
+  it('imports a version-1 archive and re-queues audio whose file is missing', async () => {
+    addJob(HASH, 'done');
+    getDb().pragma('wal_checkpoint(TRUNCATE)');
+    const db = readFileSync(getDbPath());
+    const key = readFileSync(defaultKeyFilePath());
+    const sha = (b: Buffer) => createHash('sha256').update(b).digest('hex');
+    const v1 = gzipSync(
+      Buffer.from(
+        JSON.stringify({
+          version: 1,
+          exportedAt: new Date().toISOString(),
+          db: db.toString('base64'),
+          dbHash: sha(db),
+          key: key.toString('base64'),
+          keyHash: sha(key),
+        })
+      )
+    );
+
+    const importRes = await importRoute(importRequest(v1));
+    expect((await importRes.json()).ok).toBe(true);
+    expect(existsSync(join(audioDir(), `${HASH}.ogg`))).toBe(false);
+    expect(jobStatus(HASH)).toBe('pending');
+  });
+
+  it('rejects an archive with an invalid audio file name', async () => {
+    const archive = Buffer.from(await (await exportRoute()).arrayBuffer());
+    const { gunzipSync } = await import('node:zlib');
+    const envelope = JSON.parse(gunzipSync(archive).toString('utf8'));
+    envelope.audio = { '../evil.ogg': 'ZXZpbA==' };
+    const res = await importRoute(importRequest(gzipSync(Buffer.from(JSON.stringify(envelope)))));
+    expect(res.status).toBe(400);
+    expect((await res.json()).error).toBe('Backup archive has an invalid audio file name');
+    expect(existsSync(join(process.env.GAIT_DATA_DIR!, 'evil.ogg'))).toBe(false);
+  });
+
+  it('keeps the SMTP password usable after a restore on a machine with another master key', async () => {
+    saveSmtpSettings(getDb(), { host: 'smtp.example.com', port: 587, secure: false, user: 'u', password: 's3cret', from: 'a@b.de', to: 'c@d.de' });
+    const archive = Buffer.from(await (await exportRoute()).arrayBuffer());
+
+    // A different machine: a fresh data folder with its own master key.
+    closeDb();
+    process.env.GAIT_DATA_DIR = mkdtempSync(join(tmpdir(), 'gait-api-other-'));
+    getDb();
+    const otherKey = loadOrCreateMasterKey();
+
+    const importRes = await importRoute(importRequest(archive));
+    expect((await importRes.json()).ok).toBe(true);
+    // The archive carries the master key, so the restore replaces this machine's key with it.
+    expect(loadOrCreateMasterKey().equals(otherKey)).toBe(false);
+    const smtp = readSmtpSettings(getDb())!;
+    expect(decrypt(smtp.passwordEncrypted, loadOrCreateMasterKey())).toBe('s3cret');
+  });
+
+  it('refuses an oversized body with 413 and leaves the data untouched', async () => {
+    createProfileService(getDb()).updateProfile({ displayName: 'kept' });
+    const declared = new Request('http://localhost/api/backup/import', {
+      method: 'POST',
+      body: new Uint8Array(4),
+      headers: { 'content-length': String(MAX_BACKUP_ARCHIVE_BYTES + 1) },
+    });
+    const res = await importRoute(declared);
+    expect(res.status).toBe(413);
+    expect((await res.json()).error).toBe('The backup file is too large');
+    expect(createProfileService(getDb()).getProfile().displayName).toBe('kept');
   });
 });

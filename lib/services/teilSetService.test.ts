@@ -126,6 +126,9 @@ describe('teilSetService', () => {
     expect(fresh.set).toEqual(STARTER_SET);
     expect(db.prepare('SELECT status FROM teil_sets WHERE id = ?').get(fresh.id)).toEqual({ status: 'unreviewed' });
     expect(db.prepare('SELECT COUNT(*) AS n FROM teil_seen WHERE set_id = ?').get(fresh.id)).toEqual({ n: 1 });
+    expect(db.prepare('SELECT kind, severity, body FROM admin_notifications').all()).toEqual([
+      { kind: 'pool_items', severity: 'info', body: '1 new item to review' },
+    ]);
     const prompt = (generate.mock.calls[0] as unknown as [{ systemPrompt: string }])[0].systemPrompt;
     expect(prompt).toContain('CEFR level B1');
   });

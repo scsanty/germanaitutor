@@ -1,0 +1,150 @@
+{
+  "formatId": "telc-b1",
+  "partId": "hoeren-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b1__hoeren-2__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "[Sprecher m] Fixture hoeren-2 Satz 1.\n[Sprecher m] Fixture hoeren-2 Satz 2.\n[Sprecher m] Fixture hoeren-2 Satz 3.\n[Sprecher m] Fixture hoeren-2 Satz 4.\n[Sprecher m] Fixture hoeren-2 Satz 5.\n[Sprecher m] Fixture hoeren-2 Satz 6.\n[Sprecher m] Fixture hoeren-2 Satz 7.\n[Sprecher m] Fixture hoeren-2 Satz 8.\n[Sprecher m] Fixture hoeren-2 Satz 9.\n[Sprecher m] Fixture hoeren-2 Satz 10.",
+          "questions": [
+            {
+              "question": "Aussage 1.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Satz 1."
+            },
+            {
+              "question": "Aussage 2.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Satz 2."
+            },
+            {
+              "question": "Aussage 3.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Satz 3."
+            },
+            {
+              "question": "Aussage 4.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Satz 4."
+            },
+            {
+              "question": "Aussage 5.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Satz 5."
+            },
+            {
+              "question": "Aussage 6.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Satz 6."
+            },
+            {
+              "question": "Aussage 7.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Satz 7."
+            },
+            {
+              "question": "Aussage 8.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Satz 8."
+            },
+            {
+              "question": "Aussage 9.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Satz 9."
+            },
+            {
+              "question": "Aussage 10.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Satz 10."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Fixture explanation 1.",
+            "de": "Fixture-Erklärung 1."
+          },
+          {
+            "en": "Fixture explanation 2.",
+            "de": "Fixture-Erklärung 2."
+          },
+          {
+            "en": "Fixture explanation 3.",
+            "de": "Fixture-Erklärung 3."
+          },
+          {
+            "en": "Fixture explanation 4.",
+            "de": "Fixture-Erklärung 4."
+          },
+          {
+            "en": "Fixture explanation 5.",
+            "de": "Fixture-Erklärung 5."
+          },
+          {
+            "en": "Fixture explanation 6.",
+            "de": "Fixture-Erklärung 6."
+          },
+          {
+            "en": "Fixture explanation 7.",
+            "de": "Fixture-Erklärung 7."
+          },
+          {
+            "en": "Fixture explanation 8.",
+            "de": "Fixture-Erklärung 8."
+          },
+          {
+            "en": "Fixture explanation 9.",
+            "de": "Fixture-Erklärung 9."
+          },
+          {
+            "en": "Fixture explanation 10.",
+            "de": "Fixture-Erklärung 10."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,319 @@
+{
+  "formatId": "goethe-b1",
+  "partId": "hoeren-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-b1__hoeren-3__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Murat m] Jana! Hallo! Dich hab ich ja ewig nicht gesehen. Wohin fährst du denn mit der großen Tasche?\n[Jana f] Hallo Murat! Zu meinem Garten. Stell dir vor, ich habe seit April einen Kleingarten, draußen am Stadtrand.\n[Murat m] Echt? Du? Du hast doch früher immer gesagt, Gartenarbeit ist nichts für dich.\n[Jana f] Ich weiß. Aber seit ich von zu Hause aus arbeite, sitze ich den ganzen Tag in meiner kleinen Wohnung. Ich wollte unbedingt mehr draußen sein.\n[Murat m] Und, war es schwer, einen zu bekommen? Ich habe gehört, da wartet man jahrelang.\n[Jana f] Normalerweise schon. Ich stand auch über zwei Jahre auf der Warteliste. Dann hat eine ältere Dame ihren Garten abgegeben, weil sie zu ihrer Tochter gezogen ist, und ich war die Nächste auf der Liste.\n[Murat m] Da hattest du ja Glück. Was baust du denn an?\n[Jana f] Vor allem Kartoffeln, Bohnen und Kräuter. Die Tomaten sind leider nichts geworden, es hat im Juni zu viel geregnet. Aber die Kartoffeln waren super.\n[Murat m] Und darfst du da machen, was du willst?\n[Jana f] Nein, gar nicht. Es gibt ziemlich viele Regeln. Ein Drittel der Fläche muss zum Beispiel für Obst und Gemüse sein, nur Rasen geht nicht. Und mittags darf man keinen Rasenmäher benutzen.\n[Murat m] Klingt ganz schön streng. Und die Nachbarn?\n[Jana f] Die sind total nett. Mein Nachbar, Herr Pohl, ist schon über achtzig. Er hat mir am Anfang viel gezeigt, zum Beispiel, wie man Obstbäume schneidet.\n[Murat m] Ich würde dich gern mal besuchen. Meine Kinder würden sich freuen, wir haben ja keinen Garten.\n[Jana f] Gern! Am Samstag in zwei Wochen gibt es ein Sommerfest in der Anlage. Da darf jeder Gäste mitbringen. Komm doch mit den Kindern vorbei!\n[Murat m] Oh, das passt, da hab ich frei. Ich muss jetzt aussteigen. Schreib mir einfach die Adresse!",
+          "questions": [
+            {
+              "question": "Jana hat schon immer gern im Garten gearbeitet.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Gartenarbeit ist nichts für dich"
+            },
+            {
+              "question": "Jana wollte einen Garten, weil sie viel Zeit in ihrer Wohnung verbringt.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "sitze ich den ganzen Tag in meiner kleinen Wohnung"
+            },
+            {
+              "question": "Jana hat sehr schnell einen Garten bekommen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Ich stand auch über zwei Jahre auf der Warteliste."
+            },
+            {
+              "question": "Die Tomaten sind in diesem Jahr gut gewachsen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Die Tomaten sind leider nichts geworden"
+            },
+            {
+              "question": "Ein Teil des Gartens muss für Obst und Gemüse genutzt werden.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Ein Drittel der Fläche muss zum Beispiel für Obst und Gemüse sein"
+            },
+            {
+              "question": "Janas Nachbar hat ihr am Anfang geholfen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Er hat mir am Anfang viel gezeigt"
+            },
+            {
+              "question": "Zum Sommerfest dürfen nur die Gartenbesitzer kommen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Da darf jeder Gäste mitbringen."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Murat reminds her that she always used to say gardening wasn't for her.",
+            "de": "Murat sagt, dass Jana früher immer gesagt hat, Gartenarbeit ist nichts für sie."
+          },
+          {
+            "en": "Since working from home she sits in her small flat all day and wanted to be outside more.",
+            "de": "Sie arbeitet von zu Hause und sitzt den ganzen Tag in ihrer Wohnung. Deshalb wollte sie mehr draußen sein."
+          },
+          {
+            "en": "She was on the waiting list for more than two years.",
+            "de": "Sie stand über zwei Jahre auf der Warteliste."
+          },
+          {
+            "en": "The tomatoes failed because it rained too much in June.",
+            "de": "Die Tomaten sind nichts geworden, weil es im Juni zu viel geregnet hat."
+          },
+          {
+            "en": "A third of the plot has to be used for fruit and vegetables.",
+            "de": "Ein Drittel der Fläche muss für Obst und Gemüse sein."
+          },
+          {
+            "en": "Her neighbour Mr Pohl showed her a lot at the beginning, for example how to prune fruit trees.",
+            "de": "Ihr Nachbar Herr Pohl hat ihr am Anfang viel gezeigt, zum Beispiel das Schneiden von Obstbäumen."
+          },
+          {
+            "en": "Everyone may bring guests to the summer party.",
+            "de": "Zum Sommerfest darf jeder Gäste mitbringen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__hoeren-3__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Sandra f] Na, Felix, wie war der Urlaub? Du siehst richtig erholt aus.\n[Felix m] Danke, es war toll. Wir waren drei Wochen in Schweden, in einem Haus direkt an einem See.\n[Sandra f] Drei Wochen in Schweden? Das ist doch total teuer.\n[Felix m] Eben nicht. Wir haben unser Haus getauscht. Eine schwedische Familie hat in der Zeit bei uns gewohnt, und wir in ihrem Haus.\n[Sandra f] Ach, so ein Haustausch! Davon hab ich schon gehört. Aber ist das nicht komisch, wenn fremde Leute in deinem Bett schlafen?\n[Felix m] Am Anfang hatte meine Frau auch Bedenken. Aber wir haben vorher ein paar Mal mit der Familie telefoniert, und die waren total sympathisch. Am Ende waren das gar keine Fremden mehr.\n[Sandra f] Und wie habt ihr die gefunden?\n[Felix m] Über eine Internetseite für Haustausch. Da zahlt man einen Beitrag pro Jahr, und dann kann man so oft tauschen, wie man will.\n[Sandra f] Und was ist, wenn etwas kaputtgeht?\n[Felix m] Das kann natürlich passieren. Die Kinder der Familie haben bei uns eine Lampe kaputtgemacht. Aber die Eltern haben sofort eine neue gekauft, das war überhaupt kein Problem.\n[Sandra f] Und seid ihr mit dem Auto nach Schweden gefahren?\n[Felix m] Nein, wir sind geflogen. Wir konnten das Auto der Familie benutzen, und sie unseres. So war es abgemacht.\n[Sandra f] Und eure Katze? Die war doch nicht etwa allein?\n[Felix m] Nein, die Schweden haben sich um sie gekümmert. Das war sogar eine Bedingung von uns. Und dafür haben wir dort ihre Hühner gefüttert.\n[Sandra f] Klingt wirklich gut. Ich glaube, das muss ich meinem Mann erzählen.\n[Felix m] Mach das! Wir wollen nächstes Jahr wieder tauschen, vielleicht mit einer Familie aus Portugal.",
+          "questions": [
+            {
+              "question": "Felix hat seinen Urlaub in einem Hotel verbracht.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "in einem Haus direkt an einem See"
+            },
+            {
+              "question": "Felix' Frau war am Anfang skeptisch.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Am Anfang hatte meine Frau auch Bedenken."
+            },
+            {
+              "question": "Für jeden Tausch muss man auf der Internetseite extra bezahlen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "dann kann man so oft tauschen, wie man will"
+            },
+            {
+              "question": "Die schwedische Familie hat einen Schaden selbst bezahlt.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Aber die Eltern haben sofort eine neue gekauft"
+            },
+            {
+              "question": "Felix ist mit dem eigenen Auto nach Schweden gefahren.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Nein, wir sind geflogen."
+            },
+            {
+              "question": "Die Katze war während des Urlaubs bei Nachbarn.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "die Schweden haben sich um sie gekümmert"
+            },
+            {
+              "question": "Felix möchte wieder einen Haustausch machen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Wir wollen nächstes Jahr wieder tauschen"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "They stayed in a house by a lake, which belonged to the family they swapped with.",
+            "de": "Sie haben in einem Haus an einem See gewohnt, dem Haus der Tauschfamilie."
+          },
+          {
+            "en": "His wife had doubts at first.",
+            "de": "Seine Frau hatte am Anfang Bedenken."
+          },
+          {
+            "en": "You pay a yearly fee and can then swap as often as you like.",
+            "de": "Man zahlt einen Beitrag pro Jahr und kann dann so oft tauschen, wie man will."
+          },
+          {
+            "en": "The parents immediately bought a new lamp to replace the broken one.",
+            "de": "Die Eltern haben sofort eine neue Lampe gekauft."
+          },
+          {
+            "en": "They flew and used the Swedish family's car there.",
+            "de": "Sie sind geflogen und haben dort das Auto der Familie benutzt."
+          },
+          {
+            "en": "The Swedish family looked after the cat.",
+            "de": "Die schwedische Familie hat sich um die Katze gekümmert."
+          },
+          {
+            "en": "They want to swap again next year, perhaps with a family from Portugal.",
+            "de": "Sie wollen nächstes Jahr wieder tauschen, vielleicht mit einer Familie aus Portugal."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__hoeren-3__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Dennis m] Entschuldigung, bist du nicht … Tanja? Tanja Krüger?\n[Tanja f] Ja! Und du bist … Dennis! Mensch, wir haben uns seit dem Abitur nicht mehr gesehen. Das ist jetzt fast zwanzig Jahre her.\n[Dennis m] Unglaublich, oder? Wohnst du wieder hier in der Stadt?\n[Tanja f] Seit einem halben Jahr. Ich war lange in Hamburg, aber meine Eltern werden älter, und ich wollte in ihrer Nähe sein. Und du?\n[Dennis m] Ich bin nie weggegangen. Ich hab eine kleine Fahrradwerkstatt in der Altstadt.\n[Tanja f] Ach, wirklich? Du wolltest doch damals unbedingt Pilot werden!\n[Dennis m] Ja, aber das hat nicht geklappt, meine Augen waren nicht gut genug. Heute bin ich aber ganz froh darüber. Die Arbeit mit den Rädern macht mir echt Spaß.\n[Tanja f] Sag mal, hast du noch Kontakt zu den anderen aus unserer Klasse?\n[Dennis m] Zu ein paar Leuten. Und genau deshalb ist es lustig, dass ich dich treffe: Ich organisiere gerade ein Klassentreffen, zum zwanzigsten Jubiläum.\n[Tanja f] Super Idee! Wann soll das sein?\n[Dennis m] Im September, an einem Samstag. Wir treffen uns zuerst in der Schule, unser alter Kunstlehrer macht eine Führung. Danach gehen wir zusammen essen.\n[Tanja f] Herr Wagner? Der war doch damals schon ziemlich alt.\n[Dennis m] Der ist jetzt Mitte siebzig und total fit. Er fährt jeden Tag mit dem Fahrrad, er ist sogar Kunde bei mir.\n[Tanja f] Wie schön. Kann ich dir irgendwie helfen? Ich habe noch die Telefonnummern von ein paar Leuten aus der Klasse.\n[Dennis m] Das wäre toll! Mir fehlen noch ungefähr zehn Adressen. Gib mir doch deine Nummer, dann schicke ich dir die Liste.",
+          "questions": [
+            {
+              "question": "Tanja und Dennis haben sich nach der Schule regelmäßig getroffen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "wir haben uns seit dem Abitur nicht mehr gesehen"
+            },
+            {
+              "question": "Tanja ist wegen ihrer Eltern zurückgekommen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "ich wollte in ihrer Nähe sein"
+            },
+            {
+              "question": "Dennis arbeitet heute als Pilot.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Ich hab eine kleine Fahrradwerkstatt in der Altstadt."
+            },
+            {
+              "question": "Dennis ist heute zufrieden, dass er einen anderen Beruf hat.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Heute bin ich aber ganz froh darüber."
+            },
+            {
+              "question": "Das Klassentreffen beginnt in einem Restaurant.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Wir treffen uns zuerst in der Schule"
+            },
+            {
+              "question": "Der frühere Kunstlehrer fährt regelmäßig Rad.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Er fährt jeden Tag mit dem Fahrrad"
+            },
+            {
+              "question": "Dennis hat schon die Kontaktdaten von allen aus der Klasse.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Mir fehlen noch ungefähr zehn Adressen."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "They have not seen each other since finishing school almost twenty years ago.",
+            "de": "Sie haben sich seit dem Abitur nicht mehr gesehen, also fast zwanzig Jahre."
+          },
+          {
+            "en": "Her parents are getting older and she wanted to live near them.",
+            "de": "Ihre Eltern werden älter, und sie wollte in ihrer Nähe wohnen."
+          },
+          {
+            "en": "He has a small bicycle workshop; his eyes were not good enough to become a pilot.",
+            "de": "Er hat eine Fahrradwerkstatt. Für den Beruf als Pilot waren seine Augen nicht gut genug."
+          },
+          {
+            "en": "He says he is glad about it today and enjoys working with bikes.",
+            "de": "Er sagt, dass er heute froh darüber ist. Die Arbeit mit den Rädern macht ihm Spaß."
+          },
+          {
+            "en": "They meet at the school first and only go out to eat afterwards.",
+            "de": "Sie treffen sich zuerst in der Schule und gehen erst danach essen."
+          },
+          {
+            "en": "Mr Wagner rides his bike every day.",
+            "de": "Herr Wagner fährt jeden Tag mit dem Fahrrad."
+          },
+          {
+            "en": "He is still missing about ten addresses.",
+            "de": "Ihm fehlen noch ungefähr zehn Adressen."
+          }
+        ]
+      }
+    }
+  ]
+}

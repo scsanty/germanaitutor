@@ -51,6 +51,37 @@ async function answer(option: string) {
 }
 
 describe('LessonPage', () => {
+  it('says when some listening exercises are left out because their audio is unavailable', async () => {
+    stubFetch({ 'GET /api/tutoring/lessons/a1-greet': () => delayedResponse({ ...LESSON, unavailableAudio: 2 }) });
+    renderWithIntl(<LessonPage lessonId="a1-greet" />);
+    expect(await screen.findByText('Some listening exercises are unavailable right now.')).toBeInTheDocument();
+  });
+
+  // Final review I2: the server refuses "Mark as done" when every exercise is unavailable, so it isn't offered.
+  it('offers no Mark as done when every exercise is unavailable, only a come-back-later note', async () => {
+    stubFetch({ 'GET /api/tutoring/lessons/a1-greet': () => delayedResponse({ ...LESSON, exercises: [], unavailableAudio: 2 }) });
+    renderWithIntl(<LessonPage lessonId="a1-greet" />);
+    expect(
+      await screen.findByText("This lesson's listening exercises are unavailable right now. Come back later to do them.")
+    ).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Mark as done' })).toBeNull();
+    expect(screen.queryByRole('button', { name: 'Start the exercises' })).toBeNull();
+  });
+
+  it('still offers Mark as done for a lesson with no exercises at all', async () => {
+    stubFetch({ 'GET /api/tutoring/lessons/a1-greet': () => delayedResponse({ ...LESSON, exercises: [], unavailableAudio: 0 }) });
+    renderWithIntl(<LessonPage lessonId="a1-greet" />);
+    expect(await screen.findByRole('button', { name: 'Mark as done' })).toBeInTheDocument();
+    expect(screen.queryByText('Some listening exercises are unavailable right now.')).toBeNull();
+  });
+
+  it('shows no audio note when every exercise can be played', async () => {
+    stubFetch({ 'GET /api/tutoring/lessons/a1-greet': () => delayedResponse({ ...LESSON, unavailableAudio: 0 }) });
+    renderWithIntl(<LessonPage lessonId="a1-greet" />);
+    expect(await screen.findByRole('heading', { name: 'Saying hello' })).toBeInTheDocument();
+    expect(screen.queryByText('Some listening exercises are unavailable right now.')).toBeNull();
+  });
+
   it('switches the lesson between English and German, starting in the UI language', async () => {
     stubFetch({ 'GET /api/tutoring/lessons/a1-greet': () => delayedResponse(LESSON) });
     renderWithIntl(<LessonPage lessonId="a1-greet" />);

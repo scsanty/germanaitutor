@@ -8,6 +8,7 @@ import { resolvePlacement, type PlacementInput } from '../curriculum-admin/place
 import { reconcileExercises, type ExerciseInput } from '../curriculum-admin/exerciseReconciliation';
 import { lessonTextProblems } from '../curriculum/bilingualValidation';
 import { instructionProblems, validateExerciseContent } from '../curriculum/exerciseContentValidation';
+import { createAudioService } from './audioService';
 
 export interface CreateLessonInput {
   slug: string;
@@ -54,9 +55,9 @@ function assertFlashcardRule(skill: Skill, exercises: { type: ExerciseType }[]):
   if (violation) throw new Error(violation);
 }
 
-// S19: the reading task types are fully validated on save (a half-filled cloze would break the
-// student view and grading); the older types keep the instruction check alone.
-const FULLY_VALIDATED: readonly ExerciseType[] = ['passage_questions', 'matching', 'cloze'];
+// S19: the reading and listening task types are fully validated on save (a half-filled cloze or an
+// untagged transcript would break the student view and grading); the older types keep the instruction check alone.
+const FULLY_VALIDATED: readonly ExerciseType[] = ['passage_questions', 'matching', 'cloze', 'audio_questions'];
 
 function exerciseProblems(type: ExerciseType, content: unknown): string[] {
   return FULLY_VALIDATED.includes(type) ? validateExerciseContent(type, content) : instructionProblems(type, content);
@@ -81,6 +82,11 @@ function assertLessonTexts(input: {
 
 export function createLessonAdminService(db: Database.Database) {
   const reads = createCurriculumService(db);
+  // Listening: a saved transcript is queued for the background renderer (rows only; nothing renders here).
+  const enqueueAudio = (exercises: { type: ExerciseType; content: unknown }[]) => {
+    const audio = createAudioService(db);
+    for (const e of exercises) audio.enqueueFromContent(e.type, e.content);
+  };
 
   function createLesson(input: CreateLessonInput): Lesson {
     const id = `${input.sourceLevel.toLowerCase()}-${input.slug}`;
@@ -108,6 +114,7 @@ export function createLessonAdminService(db: Database.Database) {
       );
 
       reconcileExercises(db, id, input.exercises);
+      enqueueAudio(input.exercises);
 
       // Placement is resolved before prerequisites so that a cycle-check failure below
       // rolls back any milestone resolvePlacement just created too — the whole
@@ -174,6 +181,7 @@ export function createLessonAdminService(db: Database.Database) {
       );
 
       reconcileExercises(db, id, input.exercises);
+      enqueueAudio(input.exercises);
 
       // Placement is resolved before prerequisites so that a cycle-check failure below
       // rolls back any milestone resolvePlacement just created too — the whole

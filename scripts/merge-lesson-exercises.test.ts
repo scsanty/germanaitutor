@@ -7,6 +7,7 @@ import { mergeLessonExercises } from './merge-lesson-exercises';
 
 const STEM = 'telc-b1';
 const READING = 'b1-telc-reading-teil1-headline-matching';
+const LISTEN = 'b1-telc-listening-teil1-news-broadcasts'; // ex0, ex1 print audio; ex2 is a strategy fill_blank
 let root: string;
 let work: string;
 
@@ -32,13 +33,26 @@ function draft(lessonId: string, items: unknown, stem = STEM) {
   mkdirSync(join(work, stem), { recursive: true });
   writeFileSync(join(work, stem, `${lessonId}.json`), JSON.stringify(items));
 }
+const audio = (topic = 'Straßenfest') => ({
+  type: 'audio_questions',
+  instruction: { en: 'Listen and decide: true or false?', de: 'Hören Sie und entscheiden Sie: richtig oder falsch?' },
+  content: {
+    transcript: `@filter radio\n[Sprecherin f] Das ${topic} findet dieses Jahr in der Stadthalle statt.\n[Sprecher m] Am Nachmittag wird es warm und sonnig.`,
+    questions: [
+      { question: `Das ${topic} fällt aus.`, options: ['Richtig', 'Falsch'], correctIndex: 1, evidence: 'in der Stadthalle statt' },
+      { question: 'Am Nachmittag regnet es.', options: ['Richtig', 'Falsch'], correctIndex: 1, evidence: 'warm und sonnig' },
+    ],
+  },
+});
 const run = (extra: { checkOnly?: boolean; seed?: string } = {}) => mergeLessonExercises({ workDir: work, dataRoot: root, ...extra });
 
 beforeEach(() => {
   root = mkdtempSync(join(tmpdir(), 'lesson-root-'));
   work = mkdtempSync(join(tmpdir(), 'lesson-work-'));
   mkdirSync(join(root, 'curriculum-seed'), { recursive: true });
-  cpSync(join(process.cwd(), 'data', 'curriculum-seed', `${STEM}.json`), seedPath());
+  // A trimmed copy of the pre-conversion telc-b1 seed (git 56d7a19): one grammar, one reading and one
+  // still-unconverted listening lesson, so these tests don't depend on the live seed's content.
+  cpSync(join(process.cwd(), 'test', 'fixtures', 'curriculum-seed', `${STEM}.json`), seedPath());
 });
 
 describe('merge-lesson-exercises', () => {
@@ -70,7 +84,7 @@ describe('merge-lesson-exercises', () => {
     const r = run();
     expect(r.ok).toBe(true);
     expect(r.added).toBe(0);
-    expect(r.lines.join('\n')).toContain('0 added, 2 already merged');
+    expect(r.lines.join('\n')).toContain('0 added, 0 replaced, 2 already merged');
     expect(readFileSync(seedPath(), 'utf8')).toBe(first);
   });
 
@@ -147,5 +161,113 @@ describe('merge-lesson-exercises', () => {
     const a = after.split('\n');
     expect(a.slice(0, 5)).toEqual(o.slice(0, 5));
     expect(a.length).toBeGreaterThan(o.length);
+  });
+
+  describe('listening lessons and replaces', () => {
+    const ids = () => exercisesOf(LISTEN).map((e: { id: string }) => e.id);
+
+    it('replaces the named exercises in place with a new id', () => {
+      const all = seed().exercises.length;
+      const at = seed().exercises.findIndex((e: { id: string }) => e.id === `${LISTEN}__ex0`);
+      draft(LISTEN, [{ ...audio(), replaces: [`${LISTEN}__ex0`, `${LISTEN}__ex1`] }]);
+      const r = run();
+      expect(r.ok).toBe(true);
+      expect(r.added).toBe(1);
+      expect(r.replaced).toBe(2);
+      expect(r.lines).toContain(`${STEM}/${LISTEN}: 1 added, 2 replaced, 0 already merged`);
+      expect(ids()).toEqual([`${LISTEN}__ex3`, `${LISTEN}__ex2`]);
+      expect(seed().exercises).toHaveLength(all - 1);
+      const row = seed().exercises[at];
+      expect(row).toMatchObject({ id: `${LISTEN}__ex3`, lessonId: LISTEN, track: 'telc', type: 'audio_questions' });
+      expect(row.content.instruction).toEqual(audio().instruction);
+    });
+
+    it('is idempotent once the replaced exercises are gone', () => {
+      draft(LISTEN, [{ ...audio(), replaces: [`${LISTEN}__ex0`, `${LISTEN}__ex1`] }]);
+      run();
+      const first = readFileSync(seedPath(), 'utf8');
+      const r = run();
+      expect(r.ok).toBe(true);
+      expect(r.lines).toContain(`${STEM}/${LISTEN}: 0 added, 0 replaced, 1 already merged`);
+      expect(readFileSync(seedPath(), 'utf8')).toBe(first);
+    });
+
+    it('never reuses a replaced id', () => {
+      draft(LISTEN, [{ ...audio(), replaces: [`${LISTEN}__ex0`, `${LISTEN}__ex1`] }, { ...audio('Stadtfest') }]);
+      expect(run().ok).toBe(true);
+      expect(ids()).toEqual([`${LISTEN}__ex3`, `${LISTEN}__ex2`, `${LISTEN}__ex4`]);
+    });
+
+    it('fails while another exercise still prints spoken text, and writes nothing', () => {
+      const original = readFileSync(seedPath(), 'utf8');
+      draft(LISTEN, [{ ...audio(), replaces: [`${LISTEN}__ex0`] }]);
+      const r = run();
+      expect(r.ok).toBe(false);
+      expect(r.lines.join('\n')).toContain(`${LISTEN}__ex1 still prints spoken text`);
+      expect(readFileSync(seedPath(), 'utf8')).toBe(original);
+      draft(LISTEN, [audio()]);
+      expect(run().lines.join('\n')).toContain(`${LISTEN}__ex0 still prints spoken text`);
+    });
+
+    it('allows only audio_questions in a listening lesson', () => {
+      draft(LISTEN, [{ ...matching(), replaces: [`${LISTEN}__ex0`, `${LISTEN}__ex1`] }]);
+      const r = run();
+      expect(r.ok).toBe(false);
+      expect(r.lines.join('\n')).toContain('type must be one of audio_questions in a listening lesson');
+    });
+
+    it('rejects replaced ids from another lesson, unknown ids and ids claimed twice', () => {
+      draft(LISTEN, [{ ...audio(), replaces: [`${READING}__ex0`] }]);
+      expect(run().lines.join('\n')).toContain(`replaces ${READING}__ex0, which is not an exercise of this lesson`);
+      draft(LISTEN, [{ ...audio(), replaces: [`${LISTEN}__ex0`, `${LISTEN}__ex9`] }]);
+      expect(run().lines.join('\n')).toContain(`replaces ${LISTEN}__ex9, which is not an exercise of this lesson`);
+      draft(LISTEN, [{ ...audio(), replaces: [`${LISTEN}__ex0`] }, { ...audio('Stadtfest'), replaces: [`${LISTEN}__ex0`, `${LISTEN}__ex1`] }]);
+      expect(run().lines.join('\n')).toContain(`exercise 2: ${LISTEN}__ex0 is already replaced by exercise 1`);
+      draft(LISTEN, [{ ...audio(), replaces: [] }]);
+      expect(run().lines.join('\n')).toContain('replaces must be a non-empty array of exercise ids');
+    });
+
+    it('fails when the content is already merged but a replaced id remains', () => {
+      draft(LISTEN, [{ ...audio(), replaces: [`${LISTEN}__ex0`, `${LISTEN}__ex1`] }]);
+      run();
+      draft(LISTEN, [{ ...audio(), replaces: [`${LISTEN}__ex2`] }]);
+      const r = run();
+      expect(r.ok).toBe(false);
+      expect(r.lines.join('\n')).toContain(`already merged, but ${LISTEN}__ex2 still in the lesson`);
+    });
+
+    it('requires evidence and checks it against one transcript line', () => {
+      const a = audio();
+      delete (a.content.questions[0] as { evidence?: string }).evidence;
+      a.content.questions[1].evidence = 'gibt es nicht';
+      draft(LISTEN, [{ ...a, replaces: [`${LISTEN}__ex0`, `${LISTEN}__ex1`] }]);
+      const text = run().lines.join('\n');
+      expect(text).toContain('exercise 1: question 1: evidence is required');
+      expect(text).toContain('exercise 1: question 2: evidence must appear in the transcript');
+    });
+
+    it('rejects a one-language instruction on an audio exercise', () => {
+      draft(LISTEN, [{ ...audio(), instruction: { en: 'Listen.', de: '' }, replaces: [`${LISTEN}__ex0`, `${LISTEN}__ex1`] }]);
+      expect(run().lines.join('\n')).toContain('instruction needs both English and German');
+    });
+
+    it('prints TTS hazards as warnings and still merges', () => {
+      const a = audio();
+      a.content.transcript = a.content.transcript.replace('Am Nachmittag', 'Um 15:30');
+      a.content.questions[1].evidence = 'warm und sonnig';
+      draft(LISTEN, [{ ...a, replaces: [`${LISTEN}__ex0`, `${LISTEN}__ex1`] }]);
+      const r = run();
+      expect(r.ok).toBe(true);
+      expect(r.lines.join('\n')).toContain(`${STEM}/${LISTEN}: warning: exercise 1: transcript line 2: TTS hazard, clock time "15:30"`);
+    });
+
+    it('lets a reading draft replace a reading exercise too', () => {
+      draft(READING, [{ ...matching(), replaces: [`${READING}__ex0`] }]);
+      const before = exercisesOf(READING).length;
+      const r = run();
+      expect(r.ok).toBe(true);
+      expect(exercisesOf(READING)).toHaveLength(before);
+      expect(exercisesOf(READING)[0].id).toBe(`${READING}__ex${before}`);
+    });
   });
 });

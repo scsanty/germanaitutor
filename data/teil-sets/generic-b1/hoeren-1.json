@@ -1,0 +1,280 @@
+{
+  "formatId": "generic-b1",
+  "partId": "hoeren-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-b1__hoeren-1__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter phone\n[Ansage f] Text 1.\n[Herr Kranzler m] Guten Tag, Frau Albrecht, hier ist Kranzler von Umzüge Kranzler. Es geht um Ihren Umzug am nächsten Freitag. Unser Wagen kommt wie besprochen um sieben Uhr morgens.\n[Herr Kranzler m] Vor Ihrem Haus ist die Straße sehr eng, deshalb brauchen wir dort einen Platz für den Lastwagen. Die Genehmigung beim Ordnungsamt beantragen wir für Sie, das kostet Sie nichts extra.\n[Herr Kranzler m] Sie müssen nur am Donnerstagabend die Schilder aufstellen, die wir Ihnen vorher vorbeibringen. Wenn Sie noch Fragen haben, rufen Sie mich einfach zurück.\n[Ansage f] Text 2.\n[Mitarbeiterin f] Hallo, Herr Kowalski, hier spricht Dietz von der Volkshochschule. Sie haben sich für den Töpferkurs am Mittwochabend angemeldet.\n[Mitarbeiterin f] Leider ist die Kursleiterin krank, deshalb fällt der erste Abend aus. Der Kurs beginnt also eine Woche später.\n[Mitarbeiterin f] Die Gebühr bleibt gleich, und Sie verlieren auch keinen Termin, denn wir hängen am Ende einfach einen Abend dran. Bitte bringen Sie zum ersten Treffen eine alte Schürze mit.\n[Ansage f] Text 3.\n[Jonas m] Hey Mira, hier ist Jonas. Du hast doch gefragt, ob du für euer Festival unser Zelt leihen kannst. Klar, gar kein Problem!\n[Jonas m] Nur die Luftmatratzen kann ich dir leider nicht geben, die hat mein Bruder mit in den Urlaub genommen.\n[Jonas m] Ich bin ab Mittwoch wieder zu Hause. Komm einfach abends vorbei, dann zeig ich dir auch, wie man das Zelt aufbaut. Das ist nämlich ein bisschen kompliziert.\n[Ansage f] Text 4.\n[Herr Faber m] Guten Tag, hier ist der Kundendienst von Haushaltstechnik Brenner, Sie sprechen mit Faber. Sie hatten uns wegen Ihrer Waschmaschine angerufen.\n[Herr Faber m] Unser Techniker kann am Dienstag zwischen acht und zwölf Uhr zu Ihnen kommen. Die Anfahrt kostet normalerweise neunundzwanzig Euro.\n[Herr Faber m] Wenn die Maschine noch Garantie hat, müssen Sie aber gar nichts bezahlen. Legen Sie deshalb bitte die Rechnung vom Kauf bereit. Und bestätigen Sie den Termin bitte bis morgen Mittag.\n[Ansage f] Text 5.\n[Tierärztin f] Guten Tag, Herr Lindemann, hier ist Doktor Behrens von der Tierarztpraxis am Stadtrand. Die Ergebnisse von Bellos Blutuntersuchung sind da, und es ist alles in Ordnung.\n[Tierärztin f] Sie müssen also nicht noch einmal mit ihm kommen. Wegen seiner trockenen Haut sollten Sie aber das Futter wechseln.\n[Tierärztin f] Ich habe Ihnen ein spezielles Futter an der Anmeldung zurückgelegt. Sie können es während unserer Sprechzeiten jederzeit abholen.\n[Ansage f] Text 6.\n[Mitarbeiterin f] Guten Tag, Frau Hoffmann, hier ist das Hotel Seeblick in Waldau. Sie haben für die Tagung Ihrer Firma zwei Nächte bei uns gebucht.\n[Mitarbeiterin f] Leider ist unser Tagungsraum im Erdgeschoss an diesem Wochenende schon vergeben. Wir können Ihnen aber den größeren Raum im ersten Stock geben, ohne Aufpreis. Dort haben Sie sogar einen Balkon mit Blick auf den See.\n[Mitarbeiterin f] Das Frühstück ist natürlich wie immer im Zimmerpreis enthalten. Bitte sagen Sie uns kurz, ob Ihnen das passt.",
+          "questions": [
+            {
+              "question": "Die Umzugsfirma kümmert sich um die Erlaubnis für den Parkplatz.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Die Genehmigung beim Ordnungsamt beantragen wir für Sie"
+            },
+            {
+              "question": "Der erste Kursabend findet trotz der Krankheit statt.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "deshalb fällt der erste Abend aus"
+            },
+            {
+              "question": "Mira soll das Zelt an einem Abend bei Jonas abholen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Komm einfach abends vorbei"
+            },
+            {
+              "question": "Der Kunde muss die Anfahrt des Technikers auf jeden Fall bezahlen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Wenn die Maschine noch Garantie hat, müssen Sie aber gar nichts bezahlen."
+            },
+            {
+              "question": "Herr Lindemann soll mit Bello noch einmal zur Untersuchung kommen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Sie müssen also nicht noch einmal mit ihm kommen."
+            },
+            {
+              "question": "Das Hotel bietet für die Tagung einen anderen Raum an.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Wir können Ihnen aber den größeren Raum im ersten Stock geben"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The removal firm applies to the authorities for the permit itself, at no extra cost. Frau Albrecht only has to put up the signs.",
+            "de": "Die Firma beantragt die Genehmigung beim Ordnungsamt selbst, und das kostet nichts extra. Frau Albrecht muss nur die Schilder aufstellen."
+          },
+          {
+            "en": "The teacher is ill, so the first evening is cancelled and the course starts a week later.",
+            "de": "Die Kursleiterin ist krank. Deshalb fällt der erste Abend aus, und der Kurs beginnt eine Woche später."
+          },
+          {
+            "en": "Jonas is home from Wednesday and tells Mira to come round in the evening. Then he will also show her how to put the tent up.",
+            "de": "Jonas ist ab Mittwoch zu Hause. Mira soll abends vorbeikommen, dann zeigt er ihr auch, wie man das Zelt aufbaut."
+          },
+          {
+            "en": "The call-out fee is normally twenty-nine euros, but if the machine is still under guarantee the customer pays nothing.",
+            "de": "Die Anfahrt kostet normalerweise neunundzwanzig Euro. Wenn die Maschine noch Garantie hat, muss der Kunde aber nichts bezahlen."
+          },
+          {
+            "en": "The blood test results are fine, so he does not need to bring the dog back. He only has to collect the special food.",
+            "de": "Die Ergebnisse sind in Ordnung, deshalb muss er nicht noch einmal mit dem Hund kommen. Er soll nur das spezielle Futter abholen."
+          },
+          {
+            "en": "The meeting room on the ground floor is already taken, so the hotel offers the bigger room on the first floor at no extra charge.",
+            "de": "Der Tagungsraum im Erdgeschoss ist schon vergeben. Das Hotel bietet deshalb den größeren Raum im ersten Stock an, ohne Aufpreis."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-b1__hoeren-1__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Ansage f] Text 1.\n[Moderator m] In Talheim gibt es ab sofort einen Reparaturtreff. Jeden ersten Samstag im Monat helfen Freiwillige im Gemeindehaus dabei, kaputte Toaster, Lampen oder Kleidung wieder in Ordnung zu bringen.\n[Moderator m] Die Hilfe ist kostenlos, nur Ersatzteile muss man selbst bezahlen. Die Organisatoren bitten aber darum, die Sachen nicht einfach abzugeben. Wer kommt, soll bleiben und mithelfen. So lernt man, wie man selbst etwas repariert.\n[Ansage f] Text 2.\n[Reporterin f] Das Tierheim Talheim sucht Menschen, die mit den Hunden spazieren gehen. Viele Tiere warten dort schon lange auf ein neues Zuhause und brauchen viel Bewegung.\n[Reporterin f] Wer mitmachen möchte, muss mindestens achtzehn Jahre alt sein und zuerst an einem kurzen Kennenlernkurs teilnehmen. Der nächste Kurs ist am Samstagvormittag. Erfahrung mit Hunden braucht man dafür übrigens nicht.\n[Ansage f] Text 3.\n[Reporter m] Eine Information der Abfallwirtschaft Talheim: Von Juni bis August wird die Biotonne jede Woche geleert und nicht wie sonst nur alle zwei Wochen. So soll es in der warmen Jahreszeit weniger unangenehm riechen.\n[Reporter m] Bei der gelben Tonne und beim Restmüll ändert sich nichts. Den neuen Abfallkalender finden Sie im Internet, er liegt aber auch im Rathaus aus.\n[Ansage f] Text 4.\n[Moderatorin f] Am Sonntag findet in der Turnhalle der Lindenschule wieder die Kinderkleiderbörse statt. Von zehn bis vierzehn Uhr können Eltern gebrauchte Kinderkleidung, Spielzeug und Kinderwagen kaufen.\n[Moderatorin f] Wer selbst etwas verkaufen möchte, muss sich vorher anmelden, denn es gibt nur wenige Tische. Für schwangere Frauen öffnet die Börse schon um halb zehn.\n[Moderatorin f] Der Elternbeirat verkauft außerdem Kaffee und Kuchen. Das Geld bekommt die Schule für einen neuen Spielplatz.\n[Ansage f] Text 5.\n[Moderator m] Auf dem Kirchturm von Hollbach brütet seit diesem Frühjahr wieder ein Storchenpaar, zum ersten Mal seit über dreißig Jahren. Der Naturschutzverein hat neben dem Nest eine Kamera aufgestellt.\n[Moderator m] Auf der Internetseite des Vereins kann man die Vögel jetzt live beobachten. Der Verein bittet aber alle Besucher, nicht direkt unter dem Turm stehen zu bleiben, damit die Tiere ihre Ruhe haben.\n[Ansage f] Text 6.\n[Reporterin f] Die Stadt Talheim verschenkt im Herbst zweihundert Obstbäume an ihre Bürgerinnen und Bürger. Wer einen Apfel-, Birnen- oder Kirschbaum haben möchte, meldet sich bis Ende September im Rathaus an.\n[Reporterin f] Abholen kann man die Bäume dann am ersten Samstag im November auf dem Bauhof. Die Stadt bittet darum, nur dann einen Baum zu bestellen, wenn man im Garten genug Platz hat. Für Balkone sind die Bäume leider zu groß.",
+          "questions": [
+            {
+              "question": "Beim Reparaturtreff kann man ein kaputtes Gerät abgeben und später wieder abholen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Wer kommt, soll bleiben und mithelfen."
+            },
+            {
+              "question": "Bevor man mit den Hunden spazieren gehen darf, muss man einen Kurs besuchen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "zuerst an einem kurzen Kennenlernkurs teilnehmen"
+            },
+            {
+              "question": "Im Sommer wird die Biotonne öfter geleert als im Rest des Jahres.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "nicht wie sonst nur alle zwei Wochen"
+            },
+            {
+              "question": "Alle Besucherinnen und Besucher dürfen schon vor zehn Uhr in die Turnhalle.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Für schwangere Frauen öffnet die Börse schon um halb zehn."
+            },
+            {
+              "question": "In Hollbach brüten jedes Jahr Störche auf dem Kirchturm.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "zum ersten Mal seit über dreißig Jahren"
+            },
+            {
+              "question": "Wer nur einen Balkon hat, sollte keinen Obstbaum bestellen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Für Balkone sind die Bäume leider zu groß."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The organisers ask people not to just drop things off. Whoever comes should stay and help, so they learn how to repair things themselves.",
+            "de": "Man soll die Sachen nicht einfach abgeben. Wer kommt, soll bleiben und mithelfen. So lernt man selbst reparieren."
+          },
+          {
+            "en": "Volunteers must be at least eighteen and first take part in a short introductory course. Experience with dogs is not needed.",
+            "de": "Man muss mindestens achtzehn sein und zuerst einen kurzen Kennenlernkurs machen. Erfahrung mit Hunden braucht man nicht."
+          },
+          {
+            "en": "From June to August the organic waste bin is emptied every week instead of every two weeks as usual.",
+            "de": "Von Juni bis August wird die Biotonne jede Woche geleert. Sonst passiert das nur alle zwei Wochen."
+          },
+          {
+            "en": "The sale is open from ten to two. Only pregnant women may come in earlier, at half past nine.",
+            "de": "Die Börse ist von zehn bis vierzehn Uhr geöffnet. Nur schwangere Frauen dürfen schon um halb zehn kommen."
+          },
+          {
+            "en": "A pair of storks is nesting on the church tower again for the first time in more than thirty years, so not every year.",
+            "de": "Ein Storchenpaar brütet zum ersten Mal seit über dreißig Jahren wieder auf dem Kirchturm. Das passiert also nicht jedes Jahr."
+          },
+          {
+            "en": "The town asks people to order a tree only if they have enough space in a garden, because the trees are too big for balconies.",
+            "de": "Man soll nur einen Baum bestellen, wenn man im Garten genug Platz hat. Für Balkone sind die Bäume zu groß."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-b1__hoeren-1__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter station\n[Ansage f] Text 1.\n[Sprecherin f] Liebe Besucherinnen und Besucher der Gartenmesse, der Parkplatz Nord ist bereits voll. Bitte fahren Sie zum Parkplatz Süd. Von dort bringt Sie ein Bus kostenlos zum Haupteingang, alle zehn Minuten.\n[Sprecherin f] Außerdem eine Änderung im Programm: Der Vortrag über Rosen ist heute nicht in Halle drei, sondern in Halle fünf. Er beginnt wie geplant um vierzehn Uhr.\n[Ansage f] Text 2.\n[Stadionsprecher m] Liebe Fans, eine wichtige Information für Ihre Heimfahrt nach dem Spiel. Wegen eines Wasserrohrbruchs fährt die Straßenbahn heute nicht von der Haltestelle am Stadion ab.\n[Stadionsprecher m] Bitte gehen Sie zu Fuß zur Haltestelle Messeplatz, das dauert etwa zehn Minuten. Dort fahren nach dem Spiel zusätzliche Bahnen in die Innenstadt. Ihre Eintrittskarte gilt wie immer auch als Fahrkarte.\n[Ansage f] Text 3.\n[Sprecherin f] Liebe Kundinnen und Kunden, leider ist unser Pfandautomat am Eingang im Moment außer Betrieb. Ihre leeren Flaschen können Sie aber an der Information neben Kasse eins abgeben.\n[Sprecherin f] Dort bekommen Sie einen Bon, den Sie an der Kasse einlösen können. Ein Techniker ist schon unterwegs. Außerdem öffnen wir jetzt für Sie Kasse vier. Vielen Dank für Ihr Verständnis.\n[Ansage f] Text 4.\n[Sprecher m] Achtung, eine Information für alle Fahrgäste des Fernbusses nach Prag. Ihr Bus hat heute etwa zwanzig Minuten Verspätung, weil es auf der Autobahn einen Stau gibt.\n[Sprecher m] Er fährt außerdem nicht wie geplant von Bussteig drei ab, sondern von Bussteig neun am Ende des Busbahnhofs. Bitte halten Sie Ihre Fahrkarte und Ihren Ausweis bereit.\n[Ansage f] Text 5.\n[Sprecherin f] Liebe Gäste im Freizeitpark Wolkenland, wegen des starken Windes müssen wir das Riesenrad und die Achterbahn leider für einige Zeit schließen. Alle anderen Attraktionen bleiben geöffnet.\n[Sprecherin f] Die Piratenshow um fünfzehn Uhr findet heute nicht auf der Seebühne statt, sondern in der Halle neben dem Haupteingang. Wir informieren Sie, sobald das Riesenrad wieder fährt.\n[Ansage f] Text 6.\n[Sprecher m] Liebe Kundinnen und Kunden, im Kinderland im Erdgeschoss wartet der kleine Paul auf seinen Vater. Paul ist vier Jahre alt und trägt eine rote Jacke.\n[Sprecher m] Herr Novak, bitte kommen Sie nicht zur Kasse, sondern direkt ins Kinderland neben dem Restaurant. Eine Mitarbeiterin ist bei Paul und passt auf ihn auf.",
+          "questions": [
+            {
+              "question": "Vom Parkplatz Süd kommt man ohne zusätzliche Kosten zum Eingang.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Von dort bringt Sie ein Bus kostenlos zum Haupteingang"
+            },
+            {
+              "question": "Für die Straßenbahn nach dem Spiel braucht man heute eine extra Fahrkarte.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Ihre Eintrittskarte gilt wie immer auch als Fahrkarte."
+            },
+            {
+              "question": "Kunden bekommen ihr Pfand trotz des Problems zurück.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Dort bekommen Sie einen Bon, den Sie an der Kasse einlösen können."
+            },
+            {
+              "question": "Der Bus nach Prag fährt vom geplanten Bussteig ab.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "sondern von Bussteig neun am Ende des Busbahnhofs"
+            },
+            {
+              "question": "Die Piratenshow fällt heute wegen des Wetters aus.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "sondern in der Halle neben dem Haupteingang"
+            },
+            {
+              "question": "Eine Angestellte kümmert sich gerade um Paul.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Eine Mitarbeiterin ist bei Paul und passt auf ihn auf."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The north car park is full. From the south car park a free bus runs to the main entrance every ten minutes.",
+            "de": "Der Parkplatz Nord ist voll. Vom Parkplatz Süd fährt alle zehn Minuten ein kostenloser Bus zum Haupteingang."
+          },
+          {
+            "en": "Only the stop changes. As always, the match ticket is also valid as a tram ticket.",
+            "de": "Nur die Haltestelle ist anders. Die Eintrittskarte gilt wie immer auch als Fahrkarte."
+          },
+          {
+            "en": "The bottle machine is out of order, but customers can hand in their bottles at the information desk and get a voucher to redeem at the till.",
+            "de": "Der Pfandautomat ist kaputt. Man kann die Flaschen an der Information abgeben und bekommt einen Bon für die Kasse."
+          },
+          {
+            "en": "The bus is late and also leaves from bay nine instead of bay three.",
+            "de": "Der Bus hat Verspätung und fährt außerdem nicht von Bussteig drei, sondern von Bussteig neun ab."
+          },
+          {
+            "en": "The show is not cancelled. It takes place at the usual time, but in the hall next to the main entrance instead of on the lake stage.",
+            "de": "Die Show fällt nicht aus. Sie findet nur an einem anderen Ort statt, in der Halle neben dem Haupteingang."
+          },
+          {
+            "en": "Paul is not alone: a member of staff is with him in the children's area and is looking after him.",
+            "de": "Paul ist nicht allein. Eine Mitarbeiterin ist bei ihm im Kinderland und passt auf ihn auf."
+          }
+        ]
+      }
+    }
+  ]
+}

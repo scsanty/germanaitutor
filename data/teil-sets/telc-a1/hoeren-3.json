@@ -1,0 +1,256 @@
+{
+  "formatId": "telc-a1",
+  "partId": "hoeren-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-a1__hoeren-3__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter phone\n[Ansage f] Text 1.\n[Frau Albers f] Guten Tag, Herr Kraus, hier ist Albers von der Autowerkstatt Sommer.\n[Frau Albers f] Ihr Auto ist fertig. Sie können es heute bis achtzehn Uhr abholen. Morgen haben wir leider geschlossen.\n[Ansage f] Text 2.\n[Max m] Hallo Julia, hier ist Max. Ich bin leider krank und kann heute nicht zum Tennis kommen.\n[Max m] Können wir nächsten Dienstag spielen? Ruf mich bitte zurück.\n[Ansage f] Text 3.\n[Herr Brandt m] Guten Tag, hier spricht Brandt von der Volkshochschule.\n[Herr Brandt m] Ihr Englischkurs beginnt nicht am Montag, sondern erst am Mittwoch. Der Raum ist auch neu: Raum zwanzig.\n[Ansage f] Text 4.\n[Oma f] Hallo Lisa, hier ist Oma. Ich komme am Samstag mit dem Zug.\n[Oma f] Um zwölf Uhr bin ich am Bahnhof. Kannst du mich abholen? Bis Samstag!\n[Ansage f] Text 5.\n[Herr Yilmaz m] Guten Tag, hier ist das Möbelhaus Wohnfein, Yilmaz am Apparat.\n[Herr Yilmaz m] Ihr neuer Schrank kommt am Freitag. Unser Fahrer ist zwischen acht und zehn Uhr bei Ihnen. Bitte seien Sie dann zu Hause.",
+          "questions": [
+            {
+              "question": "Wann kann Herr Kraus das Auto abholen?",
+              "options": [
+                "heute bis achtzehn Uhr",
+                "morgen früh",
+                "morgen bis achtzehn Uhr"
+              ],
+              "correctIndex": 0,
+              "evidence": "Sie können es heute bis achtzehn Uhr abholen."
+            },
+            {
+              "question": "Warum ruft Max an?",
+              "options": [
+                "Er möchte Tennis lernen.",
+                "Er kann heute nicht spielen.",
+                "Er hat einen neuen Tennisschläger."
+              ],
+              "correctIndex": 1,
+              "evidence": "kann heute nicht zum Tennis kommen"
+            },
+            {
+              "question": "Wann beginnt der Kurs?",
+              "options": [
+                "am Montag",
+                "am Dienstag",
+                "am Mittwoch"
+              ],
+              "correctIndex": 2,
+              "evidence": "sondern erst am Mittwoch"
+            },
+            {
+              "question": "Was soll Lisa machen?",
+              "options": [
+                "Oma vom Bahnhof abholen",
+                "Oma am Samstag anrufen",
+                "eine Fahrkarte kaufen"
+              ],
+              "correctIndex": 0,
+              "evidence": "Kannst du mich abholen?"
+            },
+            {
+              "question": "Was bringt das Möbelhaus am Freitag?",
+              "options": [
+                "einen Tisch",
+                "ein Bett",
+                "einen Schrank"
+              ],
+              "correctIndex": 2,
+              "evidence": "Ihr neuer Schrank kommt am Freitag."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "He can collect the car today until six o'clock. The garage is closed tomorrow.",
+            "de": "Er kann das Auto heute bis achtzehn Uhr abholen. Morgen ist die Werkstatt geschlossen."
+          },
+          {
+            "en": "Max is ill and cannot come to tennis today.",
+            "de": "Max ist krank. Er kann heute nicht zum Tennis kommen."
+          },
+          {
+            "en": "The course does not start on Monday but only on Wednesday.",
+            "de": "Der Kurs beginnt nicht am Montag, sondern erst am Mittwoch."
+          },
+          {
+            "en": "Grandma arrives at the station at twelve and asks Lisa to pick her up.",
+            "de": "Oma ist um zwölf Uhr am Bahnhof. Lisa soll sie abholen."
+          },
+          {
+            "en": "The furniture shop says the new wardrobe arrives on Friday.",
+            "de": "Das Möbelhaus sagt: Der neue Schrank kommt am Freitag."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a1__hoeren-3__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter phone\n[Ansage f] Text 1.\n[Frau Lange f] Guten Tag, Frau Petrović, hier ist Lange von der Tierarztpraxis Doktor Hoffmann.\n[Frau Lange f] Ihr Hund ist wieder gesund. Sie können ihn morgen Vormittag abholen. Bitte bringen Sie seine Decke mit.\n[Ansage f] Text 2.\n[Jan m] Hallo Sophie, hier ist Jan. Wir treffen uns heute doch nicht im Café, sondern bei mir zu Hause.\n[Jan m] Meine Adresse ist Lindenweg acht. Bis später!\n[Ansage f] Text 3.\n[Frau Krüger f] Hallo Herr Ahmadi, hier ist Krüger, Ihre Nachbarin. Ich habe ein Paket für Sie.\n[Frau Krüger f] Ich bin heute bis siebzehn Uhr zu Hause, dann gehe ich zur Arbeit.\n[Ansage f] Text 4.\n[Herr Vogel m] Guten Tag, hier ist das Fundbüro der Stadt, Vogel am Apparat. Wir haben Ihre Tasche gefunden.\n[Herr Vogel m] Sie können sie von Montag bis Freitag zwischen neun und fünfzehn Uhr abholen. Bitte bringen Sie Ihren Ausweis mit.\n[Ansage f] Text 5.\n[Papa m] Hallo Emma, hier ist Papa. Ich bin noch im Büro und komme heute später, so um acht.\n[Papa m] Kochst du bitte schon Nudeln für dich und Mama? Salat ist im Kühlschrank.",
+          "questions": [
+            {
+              "question": "Was soll Frau Petrović mitbringen?",
+              "options": [
+                "Futter",
+                "eine Decke",
+                "Geld"
+              ],
+              "correctIndex": 1,
+              "evidence": "Bitte bringen Sie seine Decke mit."
+            },
+            {
+              "question": "Wo treffen sich Jan und Sophie?",
+              "options": [
+                "im Café",
+                "bei Sophie",
+                "bei Jan"
+              ],
+              "correctIndex": 2,
+              "evidence": "sondern bei mir zu Hause"
+            },
+            {
+              "question": "Bis wann kann Herr Ahmadi das Paket holen?",
+              "options": [
+                "bis siebzehn Uhr",
+                "bis sieben Uhr",
+                "bis zwölf Uhr"
+              ],
+              "correctIndex": 0,
+              "evidence": "Ich bin heute bis siebzehn Uhr zu Hause"
+            },
+            {
+              "question": "Was hat das Fundbüro gefunden?",
+              "options": [
+                "einen Schlüssel",
+                "eine Tasche",
+                "einen Ausweis"
+              ],
+              "correctIndex": 1,
+              "evidence": "Wir haben Ihre Tasche gefunden."
+            },
+            {
+              "question": "Was soll Emma machen?",
+              "options": [
+                "Salat kaufen",
+                "Papa abholen",
+                "Nudeln kochen"
+              ],
+              "correctIndex": 2,
+              "evidence": "Kochst du bitte schon Nudeln für dich und Mama?"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "She should bring the dog's blanket when she collects him.",
+            "de": "Sie soll die Decke von ihrem Hund mitbringen."
+          },
+          {
+            "en": "They are not meeting in the café but at Jan's home.",
+            "de": "Sie treffen sich nicht im Café, sondern bei Jan zu Hause."
+          },
+          {
+            "en": "The neighbour is at home until five o'clock today and then goes to work.",
+            "de": "Die Nachbarin ist heute bis siebzehn Uhr zu Hause. Dann geht sie zur Arbeit."
+          },
+          {
+            "en": "The lost property office has found the bag. The ID card is what the caller must bring.",
+            "de": "Das Fundbüro hat die Tasche gefunden. Den Ausweis soll man mitbringen."
+          },
+          {
+            "en": "Dad asks Emma to cook pasta for herself and Mum. The salad is already in the fridge.",
+            "de": "Papa fragt: Kochst du schon Nudeln für dich und Mama? Salat ist schon im Kühlschrank."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a1__hoeren-3__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter phone\n[Ansage f] Text 1.\n[Herr Schmitt m] Guten Tag, Frau Neumann, hier spricht Schmitt vom Elektrogeschäft Funke.\n[Herr Schmitt m] Ihre Waschmaschine ist repariert. Die Reparatur kostet neunundfünfzig Euro. Wir bringen die Maschine am Donnerstag.\n[Ansage f] Text 2.\n[Carla f] Hallo Tom, hier ist Carla. Danke für das Buch! Ich habe es schon gelesen.\n[Carla f] Ich bringe es dir am Mittwoch in die Uni mit. Oder brauchst du es schon morgen? Dann schreib mir bitte.\n[Ansage f] Text 3.\n[Frau Berger f] Guten Tag, hier ist Berger vom Sportverein Blau-Weiß.\n[Frau Berger f] Der Schwimmkurs für Ihren Sohn ist am Samstag um neun Uhr. Bitte bringen Sie zwanzig Euro für den Kurs mit.\n[Ansage f] Text 4.\n[Kellner m] Guten Abend, hier ist das Restaurant Bella Napoli. Sie haben für heute Abend einen Tisch für vier Personen bestellt.\n[Kellner m] Leider ist um neunzehn Uhr kein Tisch frei. Können Sie auch um zwanzig Uhr kommen? Bitte rufen Sie uns zurück.\n[Ansage f] Text 5.\n[David m] Hallo Mia, hier ist David. Ich bin am Bahnhof, aber mein Zug fährt heute nicht. Ich nehme jetzt den Bus.\n[David m] Ich bin also nicht um neun bei dir, sondern um halb zehn.",
+          "questions": [
+            {
+              "question": "Wie viel kostet die Reparatur?",
+              "options": [
+                "neunzehn Euro",
+                "neunundfünfzig Euro",
+                "neunundneunzig Euro"
+              ],
+              "correctIndex": 1,
+              "evidence": "Die Reparatur kostet neunundfünfzig Euro."
+            },
+            {
+              "question": "Wann gibt Carla das Buch zurück?",
+              "options": [
+                "am Mittwoch",
+                "heute",
+                "am Wochenende"
+              ],
+              "correctIndex": 0,
+              "evidence": "Ich bringe es dir am Mittwoch in die Uni mit."
+            },
+            {
+              "question": "Wann ist der Schwimmkurs?",
+              "options": [
+                "am Sonntag um neun Uhr",
+                "am Samstag um zehn Uhr",
+                "am Samstag um neun Uhr"
+              ],
+              "correctIndex": 2,
+              "evidence": "Der Schwimmkurs für Ihren Sohn ist am Samstag um neun Uhr."
+            },
+            {
+              "question": "Was möchte das Restaurant wissen?",
+              "options": [
+                "Kommen Sie mit vier Personen?",
+                "Können Sie später kommen?",
+                "Möchten Sie Pizza bestellen?"
+              ],
+              "correctIndex": 1,
+              "evidence": "Können Sie auch um zwanzig Uhr kommen?"
+            },
+            {
+              "question": "Wann kommt David zu Mia?",
+              "options": [
+                "um halb zehn",
+                "um neun Uhr",
+                "um halb neun"
+              ],
+              "correctIndex": 0,
+              "evidence": "sondern um halb zehn"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The repair of the washing machine costs fifty-nine euros.",
+            "de": "Die Reparatur von der Waschmaschine kostet neunundfünfzig Euro."
+          },
+          {
+            "en": "Carla plans to bring the book back to Tom on Wednesday at the university.",
+            "de": "Carla bringt Tom das Buch am Mittwoch in die Uni mit."
+          },
+          {
+            "en": "The swimming course is on Saturday at nine o'clock.",
+            "de": "Der Schwimmkurs ist am Samstag um neun Uhr."
+          },
+          {
+            "en": "No table is free at seven, so the restaurant asks if they can come later, at eight.",
+            "de": "Um neunzehn Uhr ist kein Tisch frei. Das Restaurant fragt: Können Sie um zwanzig Uhr kommen?"
+          },
+          {
+            "en": "His train is not running, so he takes the bus and arrives at half past nine instead of nine.",
+            "de": "Sein Zug fährt nicht, er nimmt den Bus. Er kommt nicht um neun, sondern um halb zehn."
+          }
+        ]
+      }
+    }
+  ]
+}

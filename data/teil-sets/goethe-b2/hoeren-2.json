@@ -1,0 +1,298 @@
+{
+  "formatId": "goethe-b2",
+  "partId": "hoeren-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-b2__hoeren-2__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Moderator m] Herzlich willkommen zu Menschen und Berufe. Wenn im Fernsehen eine Pressekonferenz übertragen wird, sieht man manchmal am Bildrand eine Person, die mit den Händen spricht. Eine von ihnen ist heute mein Gast: Miriam Tessendorf arbeitet als Gebärdensprachdolmetscherin. Frau Tessendorf, wie sind Sie zu diesem Beruf gekommen?\n[Frau Tessendorf f] Über meine Nachbarn, ehrlich gesagt. Ich bin in einem großen Mietshaus aufgewachsen, und im Erdgeschoss wohnte eine gehörlose Familie mit einer Tochter in meinem Alter. Wir haben jeden Nachmittag zusammen gespielt, und so habe ich die Gebärden ganz nebenbei gelernt, ohne es richtig zu merken. Trotzdem habe ich zuerst Sozialpädagogik studiert. Für die Ausbildung zur Dolmetscherin habe ich mich erst mit Ende zwanzig entschieden.\n[Moderator m] Wie bereiten Sie sich auf einen Einsatz vor?\n[Frau Tessendorf f] Das ist oft der aufwendigste Teil der Arbeit. Morgen dolmetsche ich zum Beispiel auf einer Fachtagung über Brückenbau, und davon habe ich keine Ahnung. Also lese ich heute Abend die Vorträge, falls die Veranstalter sie mir rechtzeitig schicken. Für viele Fachbegriffe gibt es nämlich gar keine feste Gebärde. Dann spreche ich vorher mit der gehörlosen Teilnehmerin ab, welches Zeichen wir dafür benutzen.\n[Moderator m] Bei längeren Veranstaltungen sieht man oft zwei Dolmetscherinnen nebeneinander. Warum eigentlich?\n[Frau Tessendorf f] Weil wir uns ungefähr alle zwanzig Minuten abwechseln müssen. Das klingt nach wenig, aber man hört zu, übersetzt und achtet gleichzeitig darauf, ob man verstanden wird. Nach einer halben Stunde ohne Pause mache ich deutlich mehr Fehler. Und die Kollegin, die gerade nicht dran ist, ruht sich nicht einfach aus. Sie bleibt aufmerksam und springt ein, wenn ich eine Zahl oder einen Namen nicht mitbekommen habe.\n[Moderator m] Gab es einen Einsatz, der Ihnen besonders schwergefallen ist?\n[Frau Tessendorf f] Viele erwarten jetzt, dass ich von einer Sendung im Fernsehen erzähle, aber das ist reine Routine. Am schwierigsten war für mich eine Geburt. Eine gehörlose Frau hatte mich gebeten, im Kreißsaal für sie und die Hebamme zu dolmetschen. Es ging alles sehr schnell, die Hebamme sprach hinter einer Maske, und ich musste ruhig bleiben und trotzdem ganz genau sein. Am Ende haben wir beide geweint, die Mutter und ich.\n[Moderator m] Hat sich Ihr Beruf in den letzten Jahren verändert?\n[Frau Tessendorf f] Sehr. Früher bin ich für jeden Termin durch die halbe Region gefahren, manchmal drei Stunden für ein Arztgespräch von zwanzig Minuten. Heute dolmetsche ich vieles per Video vom Schreibtisch aus. Das spart Zeit, und gehörlose Menschen bekommen viel schneller einen Termin bei uns. Aber bei schwierigen Gesprächen, etwa wenn ein Arzt eine ernste Diagnose mitteilt, bin ich lieber persönlich dabei. Über den Bildschirm geht da zu viel verloren.\n[Moderator m] Zum Schluss: Was raten Sie jungen Leuten, die sich für diesen Beruf interessieren?\n[Frau Tessendorf f] Sie sollten unbedingt Kontakt zu gehörlosen Menschen suchen, und zwar schon vor der Ausbildung. Aus Büchern oder Lernvideos allein lernt man diese Sprache nicht. In unserer Stadt gibt es zum Beispiel jeden ersten Freitag im Monat einen Gebärdenstammtisch, und Anfänger sind dort ausdrücklich willkommen. Wer da ein paar Monate regelmäßig hingeht, merkt schnell, ob der Beruf wirklich zu ihm passt.",
+          "questions": [
+            {
+              "question": "Wie hat Frau Tessendorf die Gebärdensprache zuerst gelernt?",
+              "options": [
+                "in einem Kurs während ihres Studiums",
+                "beim Spielen mit einem Kind aus dem Haus",
+                "von ihren eigenen Eltern"
+              ],
+              "correctIndex": 1,
+              "evidence": "Wir haben jeden Nachmittag zusammen gespielt"
+            },
+            {
+              "question": "Was macht Frau Tessendorf, wenn es für einen Fachbegriff keine Gebärde gibt?",
+              "options": [
+                "Sie lässt den Begriff bei der Übersetzung weg.",
+                "Sie zeigt den Begriff schriftlich auf einem Bildschirm.",
+                "Sie vereinbart vorher ein Zeichen mit der gehörlosen Person."
+              ],
+              "correctIndex": 2,
+              "evidence": "welches Zeichen wir dafür benutzen"
+            },
+            {
+              "question": "Was tut die zweite Dolmetscherin, während sie nicht dolmetscht?",
+              "options": [
+                "Sie hilft ihrer Kollegin, wenn diese etwas verpasst.",
+                "Sie bereitet schon den nächsten Termin vor.",
+                "Sie erholt sich außerhalb des Saals."
+              ],
+              "correctIndex": 0,
+              "evidence": "springt ein, wenn ich eine Zahl oder einen Namen nicht mitbekommen habe"
+            },
+            {
+              "question": "Welcher Einsatz war für Frau Tessendorf am schwierigsten?",
+              "options": [
+                "ein Auftritt in einer Fernsehsendung",
+                "ein Arztgespräch über eine ernste Diagnose",
+                "ein Einsatz bei einer Entbindung"
+              ],
+              "correctIndex": 2,
+              "evidence": "Am schwierigsten war für mich eine Geburt."
+            },
+            {
+              "question": "Wie beurteilt Frau Tessendorf das Dolmetschen per Video?",
+              "options": [
+                "Es ist bequem, aber für die Dolmetscher anstrengender.",
+                "Es ist praktisch, passt aber nicht für jedes Gespräch.",
+                "Es geht schneller, aber gehörlose Menschen lehnen es meistens ab."
+              ],
+              "correctIndex": 1,
+              "evidence": "bin ich lieber persönlich dabei"
+            },
+            {
+              "question": "Was rät Frau Tessendorf jungen Leuten?",
+              "options": [
+                "schon früh gehörlose Menschen kennenzulernen",
+                "zuerst ein anderes Fach zu studieren",
+                "die Sprache vor allem mit Videos zu lernen"
+              ],
+              "correctIndex": 0,
+              "evidence": "Sie sollten unbedingt Kontakt zu gehörlosen Menschen suchen"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "She played every afternoon with the daughter of a deaf family in her building and picked up the signs along the way.",
+            "de": "Sie hat jeden Nachmittag mit der Tochter einer gehörlosen Familie aus ihrem Haus gespielt und die Gebärden dabei nebenbei gelernt."
+          },
+          {
+            "en": "Before the event she agrees with the deaf participant which sign they will use for the term.",
+            "de": "Sie spricht vorher mit der gehörlosen Teilnehmerin ab, welches Zeichen sie für den Begriff benutzen."
+          },
+          {
+            "en": "She doesn't just rest: she stays alert and steps in when her colleague misses a number or a name.",
+            "de": "Sie ruht sich nicht einfach aus. Sie bleibt aufmerksam und hilft, wenn die Kollegin eine Zahl oder einen Namen nicht mitbekommen hat."
+          },
+          {
+            "en": "The hardest assignment was a birth in a delivery room. Television work is routine for her.",
+            "de": "Am schwierigsten war eine Geburt im Kreißsaal. Fernsehsendungen sind für sie Routine."
+          },
+          {
+            "en": "Video saves time and deaf people get appointments faster, but for difficult conversations she prefers to be there in person.",
+            "de": "Video spart Zeit, und gehörlose Menschen bekommen schneller einen Termin. Bei schwierigen Gesprächen ist sie aber lieber persönlich dabei."
+          },
+          {
+            "en": "She advises them to seek contact with deaf people before training, for example at a monthly sign language get-together.",
+            "de": "Sie rät, schon vor der Ausbildung Kontakt zu gehörlosen Menschen zu suchen, zum Beispiel bei einem Gebärdenstammtisch."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b2__hoeren-2__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Moderatorin f] Willkommen bei Neustart, unserer Sendung über berufliche Veränderungen. Bei mir im Studio ist Thomas Brückner. Er war zwanzig Jahre lang Bankkaufmann und fährt heute Güterzüge. Herr Brückner, was hat Sie zu diesem Schritt bewegt?\n[Herr Brückner m] Ein plötzlicher Entschluss war das nicht. Meine Filiale wurde geschlossen, und man hat mir eine Stelle in der Zentrale angeboten, mit noch mehr Bildschirmarbeit. Da habe ich gemerkt, dass ich das nicht noch zwanzig Jahre machen will. Züge haben mich schon als Kind fasziniert, aber dass man daraus mit Mitte vierzig noch einen Beruf machen kann, wusste ich lange nicht.\n[Moderatorin f] Wie lief die Umschulung ab?\n[Herr Brückner m] Ich habe die Ausbildung bei einem privaten Güterbahnunternehmen gemacht, der Ostland Güterbahn. Das hat knapp ein Jahr gedauert, also viel kürzer als eine normale Ausbildung, weil ich ja schon einen Berufsabschluss hatte. Das Schwierigste war für mich übrigens nicht die Technik, sondern die vielen Vorschriften. Da gibt es dicke Ordner, und in der Prüfung muss man jede Regel kennen.\n[Moderatorin f] Und jetzt, nach drei Jahren: Wie sieht Ihr Alltag aus?\n[Herr Brückner m] Sehr unregelmäßig. Güterzüge fahren oft nachts, und ich weiß manchmal erst eine Woche vorher, wann ich arbeite. Für meine Familie war das eine große Umstellung. Meine Frau hat am Anfang gesagt: Früher warst du um sechs zu Hause, jetzt weiß ich nie, wann du kommst. Inzwischen haben wir uns daran gewöhnt, und dafür habe ich oft mehrere Tage am Stück frei.\n[Moderatorin f] Viele stellen sich das Lokführen sehr romantisch vor. Ist es das?\n[Herr Brückner m] Manchmal schon, wenn man morgens durch das Flusstal fährt und die Sonne aufgeht. Aber man ist auch viel allein, auf einer langen Fahrt spricht man oft stundenlang mit niemandem. Was viele nicht wissen: Das Gefährlichste sind nicht technische Probleme, sondern Menschen, die über die Gleise laufen. Davor hatte ich am Anfang am meisten Angst.\n[Moderatorin f] Verdienen Sie heute eigentlich mehr oder weniger als in der Bank?\n[Herr Brückner m] Wenn man nur das Grundgehalt sieht, etwas weniger. Aber durch die Zuschläge für Nacht- und Wochenendarbeit komme ich am Ende ungefähr auf dasselbe. Finanziell habe ich also nichts verloren, aber reich wird man in dem Beruf auch nicht.\n[Moderatorin f] Würden Sie den Schritt anderen empfehlen?\n[Herr Brückner m] Ja, aber nicht jedem. Man muss körperlich fit sein, es gibt regelmäßig ärztliche Untersuchungen, und man muss mit dem Alleinsein umgehen können. Wer gern im Team arbeitet und den ganzen Tag mit Kollegen redet, wird in diesem Beruf nicht glücklich. Ich selbst bereue es keine Sekunde.",
+          "questions": [
+            {
+              "question": "Warum hat Herr Brückner den Beruf gewechselt?",
+              "options": [
+                "Er wurde von seiner Bank entlassen.",
+                "Er wollte nicht noch mehr am Computer arbeiten.",
+                "Er hatte schon als Kind geplant, Lokführer zu werden."
+              ],
+              "correctIndex": 1,
+              "evidence": "mit noch mehr Bildschirmarbeit"
+            },
+            {
+              "question": "Was fiel Herrn Brückner in der Ausbildung am schwersten?",
+              "options": [
+                "die vielen Vorschriften",
+                "die Technik der Lokomotiven",
+                "die lange Dauer der Ausbildung"
+              ],
+              "correctIndex": 0,
+              "evidence": "sondern die vielen Vorschriften"
+            },
+            {
+              "question": "Was sagt Herr Brückner über seine Arbeitszeiten?",
+              "options": [
+                "Er arbeitet fast nur am Wochenende.",
+                "Er ist meistens um sechs Uhr zu Hause.",
+                "Er erfährt seine Dienstzeiten oft erst kurz vorher."
+              ],
+              "correctIndex": 2,
+              "evidence": "ich weiß manchmal erst eine Woche vorher, wann ich arbeite"
+            },
+            {
+              "question": "Wovor hatte Herr Brückner anfangs die größte Angst?",
+              "options": [
+                "vor technischen Störungen",
+                "vor Personen auf den Gleisen",
+                "vor dem langen Alleinsein"
+              ],
+              "correctIndex": 1,
+              "evidence": "sondern Menschen, die über die Gleise laufen"
+            },
+            {
+              "question": "Wie hat sich sein Einkommen verändert?",
+              "options": [
+                "Er verdient heute deutlich mehr.",
+                "Insgesamt verdient er etwa gleich viel.",
+                "Er hat spürbar an Geld verloren."
+              ],
+              "correctIndex": 1,
+              "evidence": "komme ich am Ende ungefähr auf dasselbe"
+            },
+            {
+              "question": "Für wen ist der Beruf laut Herrn Brückner nicht geeignet?",
+              "options": [
+                "für Menschen, die gern mit anderen zusammenarbeiten",
+                "für Menschen über vierzig",
+                "für Menschen ohne Berufsabschluss"
+              ],
+              "correctIndex": 0,
+              "evidence": "Wer gern im Team arbeitet und den ganzen Tag mit Kollegen redet"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "After his branch closed he was offered a job at headquarters with even more screen work, and he didn't want to do that for another twenty years.",
+            "de": "Nach der Schließung seiner Filiale bekam er eine Stelle mit noch mehr Bildschirmarbeit angeboten. Das wollte er nicht noch zwanzig Jahre machen."
+          },
+          {
+            "en": "The hardest part was not the technology but the many regulations.",
+            "de": "Am schwersten fand er nicht die Technik, sondern die vielen Vorschriften."
+          },
+          {
+            "en": "He sometimes only knows a week in advance when he will be working.",
+            "de": "Er weiß manchmal erst eine Woche vorher, wann er arbeitet."
+          },
+          {
+            "en": "The most dangerous thing is people walking on the tracks, and that is what he feared most at first.",
+            "de": "Das Gefährlichste sind Menschen auf den Gleisen, und davor hatte er am Anfang am meisten Angst."
+          },
+          {
+            "en": "His basic salary is a bit lower, but with the night and weekend bonuses he ends up earning about the same.",
+            "de": "Das Grundgehalt ist etwas niedriger, aber mit den Zuschlägen verdient er am Ende ungefähr dasselbe."
+          },
+          {
+            "en": "People who like working in a team and talking to colleagues all day won't be happy in this job.",
+            "de": "Wer gern im Team arbeitet und viel mit Kollegen redet, wird in dem Beruf nicht glücklich."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b2__hoeren-2__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Moderator m] In unserer Reihe Ungewöhnliche Berufe begrüße ich heute Lea Szabo. Sie entwirft Rätselräume, also Räume, aus denen man nur wieder herauskommt, wenn man in der Gruppe innerhalb einer Stunde eine Reihe von Rätseln löst. Frau Szabo, wie kommt man auf so eine Idee?\n[Frau Szabo f] Eigentlich bin ich Bühnenbildnerin, ich habe jahrelang Kulissen fürs Theater gebaut. Vor sechs Jahren war ich mit Freunden zum ersten Mal in so einem Rätselraum und war ehrlich gesagt enttäuscht. Die Rätsel waren gut, aber der Raum sah aus wie ein Büro mit ein paar alten Möbeln. Da habe ich gedacht: Das kann ich besser.\n[Moderator m] Wie entsteht denn bei Ihnen ein neuer Raum?\n[Frau Szabo f] Am Anfang steht immer eine Geschichte. Unser neuester Raum spielt zum Beispiel in einer Sternwarte im Jahr neunzehnhundertzwanzig, aus der ein Astronom spurlos verschwunden ist. Erst wenn die Geschichte steht, überlegen wir uns die Rätsel, und zwar so, dass sie zur Handlung passen. Ein Zahlenschloss nur um des Zahlenschlosses willen gibt es bei uns nicht. Für einen Raum brauchen wir ungefähr acht Monate.\n[Moderator m] Bevor ein Raum eröffnet wird, testen Sie ihn sicher ausführlich.\n[Frau Szabo f] Sehr oft sogar. Wir laden Testgruppen ein, ganz unterschiedliche Leute: Familien, Studierende, Kollegen aus Firmen. Und wir beobachten sie über Kameras. Das ist manchmal schmerzhaft, wenn eine Gruppe an einem Rätsel, auf das wir sehr stolz sind, zwanzig Minuten hängen bleibt. Dann müssen wir ehrlich sein und das Rätsel umbauen, auch wenn es uns leidtut.\n[Moderator m] Wer sind eigentlich Ihre Kunden?\n[Frau Szabo f] Viel gemischter, als man denkt. Am Wochenende kommen vor allem Freundesgruppen und Familien mit Jugendlichen. Unter der Woche buchen uns aber erstaunlich viele Firmen. Die Chefs möchten sehen, wie ihre Leute unter Zeitdruck zusammenarbeiten. Manchmal ist das richtig aufschlussreich: Der Abteilungsleiter redet am meisten, aber die Praktikantin löst das Rätsel.\n[Moderator m] Was ist das Schwierigste an Ihrem Beruf?\n[Frau Szabo f] Dass die Räume so schnell kaputtgehen. Im Eifer des Spiels sind die Leute nicht gerade vorsichtig. Wir hatten schon Gruppen, die eine Schublade herausgerissen haben, weil sie dachten, dahinter sei ein Schlüssel versteckt. Deshalb bauen wir inzwischen alles doppelt so stabil, wie es aussieht, und ein Techniker kontrolliert jeden Morgen alles.\n[Moderator m] Und was planen Sie als Nächstes?\n[Frau Szabo f] Wir arbeiten an einem Raum für Menschen im Rollstuhl. Bisher sind fast alle Rätselräume für sie kaum zugänglich, weil man kriechen oder klettern muss. Unser neuer Raum soll so gestaltet sein, dass wirklich jeder mitspielen kann, ohne dass es wie eine Sonderlösung wirkt.",
+          "questions": [
+            {
+              "question": "Was hat Frau Szabo bei ihrem ersten Besuch in einem Rätselraum gestört?",
+              "options": [
+                "Die Rätsel waren zu schwer.",
+                "Der Raum war langweilig gestaltet.",
+                "Die Gruppe war zu groß."
+              ],
+              "correctIndex": 1,
+              "evidence": "der Raum sah aus wie ein Büro mit ein paar alten Möbeln"
+            },
+            {
+              "question": "Womit beginnt die Entwicklung eines neuen Raums?",
+              "options": [
+                "mit der Auswahl der Rätsel",
+                "mit dem Bau der Kulisse",
+                "mit einer Geschichte"
+              ],
+              "correctIndex": 2,
+              "evidence": "Am Anfang steht immer eine Geschichte."
+            },
+            {
+              "question": "Was passiert, wenn eine Testgruppe lange an einem Rätsel hängt?",
+              "options": [
+                "Das Rätsel wird verändert.",
+                "Die Gruppe bekommt mehr Zeit.",
+                "Die Gruppe darf das Rätsel überspringen."
+              ],
+              "correctIndex": 0,
+              "evidence": "Dann müssen wir ehrlich sein und das Rätsel umbauen"
+            },
+            {
+              "question": "Warum buchen Firmen die Rätselräume?",
+              "options": [
+                "als Belohnung für gute Verkaufszahlen",
+                "um die Zusammenarbeit ihrer Mitarbeiter zu beobachten",
+                "um neue Mitarbeiter auszuwählen"
+              ],
+              "correctIndex": 1,
+              "evidence": "wie ihre Leute unter Zeitdruck zusammenarbeiten"
+            },
+            {
+              "question": "Welches Problem nennt Frau Szabo?",
+              "options": [
+                "Es fehlen gute Techniker.",
+                "Viele Gruppen kommen zu spät.",
+                "Die Einrichtung wird oft beschädigt."
+              ],
+              "correctIndex": 2,
+              "evidence": "Dass die Räume so schnell kaputtgehen."
+            },
+            {
+              "question": "Was ist das Ziel des nächsten Projekts?",
+              "options": [
+                "ein Raum speziell für Kinder",
+                "ein Raum, in dem alle mitspielen können",
+                "ein Raum im Freien"
+              ],
+              "correctIndex": 1,
+              "evidence": "dass wirklich jeder mitspielen kann"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The puzzles were good, but the room looked like an office with a few old pieces of furniture.",
+            "de": "Die Rätsel waren gut, aber der Raum sah aus wie ein Büro mit ein paar alten Möbeln."
+          },
+          {
+            "en": "Every room starts with a story; the puzzles are designed afterwards to fit it.",
+            "de": "Jeder Raum beginnt mit einer Geschichte. Die Rätsel kommen erst danach."
+          },
+          {
+            "en": "If a test group gets stuck for a long time, the team changes the puzzle.",
+            "de": "Wenn eine Testgruppe lange hängen bleibt, baut das Team das Rätsel um."
+          },
+          {
+            "en": "Bosses want to see how their staff work together under time pressure.",
+            "de": "Die Chefs wollen sehen, wie ihre Leute unter Zeitdruck zusammenarbeiten."
+          },
+          {
+            "en": "The rooms get damaged quickly because players aren't careful in the heat of the game.",
+            "de": "Die Räume gehen schnell kaputt, weil die Spieler im Eifer des Spiels nicht vorsichtig sind."
+          },
+          {
+            "en": "The new room is meant to be accessible to wheelchair users, so that really everyone can take part.",
+            "de": "Der neue Raum soll auch für Menschen im Rollstuhl zugänglich sein, damit wirklich jeder mitspielen kann."
+          }
+        ]
+      }
+    }
+  ]
+}

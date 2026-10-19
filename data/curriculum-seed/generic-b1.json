@@ -1,5 +1,5 @@
 {
-  "seedVersion": "9",
+  "seedVersion": "10",
   "formatVersion": 3,
   "track": "generic",
   "level": "B1",
@@ -1554,59 +1554,58 @@
       }
     },
     {
-      "id": "b1-listening-interviews-podcasts__ex0",
+      "id": "b1-listening-interviews-podcasts__ex4",
       "lessonId": "b1-listening-interviews-podcasts",
       "track": "generic",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Hörsituation: 'Eine Expertin äußert: Die Investitionen sind zwar beachtlich, doch die Umsetzung verläuft viel zu langsam.' - Was meint die Sprecherin?",
-        "options": [
-          "Sie ist vollkommen zufrieden mit dem Tempo.",
-          "Sie lobt das Geld, kritisiert aber die langsame Realisierung.",
-          "Es wird überhaupt kein Geld investiert.",
-          "Die Umsetzung ist schneller als gedacht."
-        ],
-        "correctIndex": 1
-      }
-    },
-    {
-      "id": "b1-listening-interviews-podcasts__ex1",
-      "lessonId": "b1-listening-interviews-podcasts",
-      "track": "generic",
-      "type": "multiple_choice",
-      "content": {
-        "question": "Ein Befragter sagt: 'Ich halte gar nichts davon, Haustiere im Internet zu bestellen.' - Welche Haltung drückt er aus?",
-        "options": [
-          "Klare Ablehnung",
-          "Große Begeisterung",
-          "Neutrale Zustimmung",
-          "Gleichgültigkeit"
-        ],
-        "correctIndex": 0
-      }
-    },
-    {
-      "id": "b1-listening-interviews-podcasts__ex2",
-      "lessonId": "b1-listening-interviews-podcasts",
-      "track": "generic",
-      "type": "fill_blank",
-      "content": {
-        "textWithBlank": "Aussage im Podcast: 'Unser Hauptziel besteht ___, die CO2-Emissionen bis 2030 zu halbieren.' (darin / darauf)",
-        "correctAnswer": "darin"
-      }
-    },
-    {
-      "id": "b1-listening-interviews-podcasts__ex3",
-      "lessonId": "b1-listening-interviews-podcasts",
-      "track": "generic",
-      "type": "free_text",
-      "content": {
-        "prompt": "Für mich kommt eine Reise ohne Bahn nicht mehr infrage, weil mir der Klimaschutz am Herzen liegt.",
-        "modelAnswer": "Der Sprecher reist aus Gründen des Klimaschutzes nur noch mit der Bahn.",
         "instruction": {
-          "en": "Summarize the speaker's statement.",
-          "de": "Fasse die Aussage des Sprechers zusammen."
-        }
+          "en": "Listen to the radio programme about climate protection in the city and answer the questions.",
+          "de": "Hör die Radiosendung über Klimaschutz in der Stadt und beantworte die Fragen."
+        },
+        "transcript": "@filter radio\n[Moderator m] Willkommen zu unserem Stadtmagazin. Heute geht es um Klimaschutz in unserer Stadt, und bei mir im Studio ist Anna Berger vom Umweltamt.\n[Moderator m] Frau Berger, die Stadt hat letztes Jahr viel Geld in neue Radwege und Busse investiert. Sind Sie zufrieden?\n[Anna Berger f] Na ja, die Investitionen sind zwar beachtlich, doch die Umsetzung verläuft viel zu langsam. Viele Radwege sind immer noch nicht fertig.\n[Moderator m] Und was ist Ihr wichtigstes Ziel?\n[Anna Berger f] Unser Hauptziel besteht darin, den Ausstoß von Treibhausgasen bis zweitausenddreißig zu halbieren.\n[Moderator m] Wir haben auch Menschen in der Innenstadt gefragt, wie sie verreisen.\n[Passantin f] Für mich kommt eine Reise ohne Bahn nicht mehr infrage, weil mir der Klimaschutz am Herzen liegt. In ein Flugzeug steige ich nicht mehr.\n[Passant m] Ich sehe das ehrlich gesagt anders. Ich fahre lieber mit dem Auto, denn mit zwei kleinen Kindern ist die Bahn einfach zu kompliziert.",
+        "questions": [
+          {
+            "question": "Was meint Frau Berger zu den Investitionen der Stadt?",
+            "options": [
+              "Sie ist mit allem zufrieden.",
+              "Es gibt viel Geld, aber es geht zu langsam voran.",
+              "Die Stadt hat kaum Geld investiert."
+            ],
+            "correctIndex": 1,
+            "evidence": "die Investitionen sind zwar beachtlich, doch die Umsetzung verläuft viel zu langsam"
+          },
+          {
+            "question": "Was ist das wichtigste Ziel des Umweltamts?",
+            "options": [
+              "bis 2030 doppelt so viele Busse",
+              "bis 2030 keine Autos mehr in der Innenstadt",
+              "die Treibhausgase bis 2030 um die Hälfte reduzieren"
+            ],
+            "correctIndex": 2,
+            "evidence": "bis zweitausenddreißig zu halbieren"
+          },
+          {
+            "question": "Warum reist die Frau nur noch mit der Bahn?",
+            "options": [
+              "Die Bahn ist billiger als das Flugzeug.",
+              "Das Klima ist ihr wichtig.",
+              "Sie hat Angst vor dem Fliegen."
+            ],
+            "correctIndex": 1,
+            "evidence": "weil mir der Klimaschutz am Herzen liegt"
+          },
+          {
+            "question": "Was denkt der Mann über Reisen mit der Bahn?",
+            "options": [
+              "Mit Kindern ist es ihm zu umständlich.",
+              "Er findet die Bahn am bequemsten.",
+              "Er hat dazu keine Meinung."
+            ],
+            "correctIndex": 0,
+            "evidence": "mit zwei kleinen Kindern ist die Bahn einfach zu kompliziert"
+          }
+        ]
       }
     },
     {

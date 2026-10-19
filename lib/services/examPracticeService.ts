@@ -10,6 +10,10 @@ import { errorBodyFor, type ApiErrorBody, type ErrorCode, type ErrorParams } fro
 import { generateWithActiveProvider, type AiRequest, type AiResult } from './aiService';
 import { createProfileService } from './profileService';
 import { createTeilSetService, TeilSetError } from './teilSetService';
+import { audioHashOf, type AudioAvailabilityDeps } from '../audio/audioAvailability';
+import { hasAudio } from '../audio/audioStore';
+import { isSpeechUp } from '../speech/speechAvailability';
+import { audioReveal, type AudioQuestionsContent, type AudioReveal } from '../tasks/audioQuestions';
 
 export type PracticeErrorKind = 'not_found' | 'bad_request' | 'unavailable' | 'ai_failed';
 const STATUS: Record<PracticeErrorKind, number> = { not_found: 404, bad_request: 400, unavailable: 409, ai_failed: 502 };
@@ -34,6 +38,8 @@ export interface ExamPracticeDeps {
   now?: () => Date;
   // The bundled Teil sets folder (B2); tests point it at a fixture.
   setsDir?: string;
+  // Listening availability (S7): tests inject fakes for the speech service and the audio cache.
+  audio?: AudioAvailabilityDeps;
 }
 
 // Review Focus 2: an attempt left open longer than this can't be submitted any more.
@@ -56,6 +62,7 @@ interface AttemptRow {
 }
 
 const hasRunner = (part: ExamPart) => RUNTIME_TASK_TYPES.has(part.taskType);
+const isListening = (part: ExamPart) => part.taskType === 'audio_questions';
 // S10: Sprachbausteine are practised only inside the full mock.
 const singlyRunnable = (part: ExamPart) => hasRunner(part) && part.skill !== 'sprachbausteine';
 const percent = (score: number, max: number) => (max > 0 ? (score / max) * 100 : 0);
@@ -70,6 +77,24 @@ export function createExamPracticeService(db: Database.Database, deps: ExamPract
   const generate = deps.generate ?? ((request: AiRequest) => generateWithActiveProvider(db, request));
   const clock = deps.now ?? (() => new Date());
   const teilSets = createTeilSetService(db, { generate, now: clock, setsDir: deps.setsDir });
+  const cached = deps.audio?.cached ?? hasAudio;
+  const askSpeech = deps.audio?.speechUp ?? (() => isSpeechUp(db));
+  // One speech check per request (the answer is memoized in-process for 30 s anyway).
+  const speechCheck = () => {
+    let answer: Promise<boolean> | undefined;
+    return () => (answer ??= askSpeech());
+  };
+  const setCached = (set: TeilSetContent) => {
+    const hash = audioHashOf(set.taskType, set.content);
+    return hash !== null && cached(hash);
+  };
+
+  // Spec + S10: a listening part needs at least one usable set (no AI set from nothing), and then the
+  // speech service up or a usable set whose audio is cached. Cached sets answer without a check.
+  async function listeningRunnable(formatId: string, part: ExamPart, speechUp: () => Promise<boolean>): Promise<boolean> {
+    if (!teilSets.hasUsableSet(formatId, part.id, () => true)) return false;
+    return teilSets.hasUsableSet(formatId, part.id, setCached) || (await speechUp());
+  }
 
   function partOf(formatId: string, partId: string): { format: ExamFormat; part: ExamPart } {
     // S1: readFormat accepts only known format-id shapes.
@@ -90,9 +115,23 @@ export function createExamPracticeService(db: Database.Database, deps: ExamPract
     return JSON.parse(row.content) as TeilSetContent;
   }
 
-  async function pick(formatId: string, partId: string) {
+  // S10: while the speech service is down a listening part serves only sets with cached audio and
+  // never asks the AI for a new set (its audio couldn't be rendered). `playable` feeds the view.
+  async function pick(
+    formatId: string,
+    part: ExamPart,
+    speechUp: () => Promise<boolean>
+  ): Promise<{ id: string; set: TeilSetContent; playable: (hash: string) => boolean }> {
+    if (isListening(part) && !(await listeningRunnable(formatId, part, speechUp))) {
+      throw new PracticeError(`The audio for ${part.id} is unavailable right now`, 'unavailable');
+    }
+    const up = isListening(part) ? await speechUp() : true;
+    if (!up && !teilSets.hasUsableSet(formatId, part.id, setCached)) {
+      throw new PracticeError(`The audio for ${part.id} is unavailable right now`, 'unavailable');
+    }
     try {
-      return await teilSets.pickForPractice(formatId, partId);
+      const picked = await teilSets.pickForPractice(formatId, part.id, up ? {} : { accept: setCached, generate: false });
+      return { ...picked, playable: (hash: string) => up || cached(hash) };
     } catch (err) {
       translate(err);
     }
@@ -105,40 +144,62 @@ export function createExamPracticeService(db: Database.Database, deps: ExamPract
     return Number(info.lastInsertRowid);
   }
 
-  const runOf = (attemptId: number, formatId: string, part: ExamPart, picked: { id: string; set: TeilSetContent }, startedAt: string, mockId: string | null): PracticeRun => ({
+  const runOf = (
+    attemptId: number,
+    formatId: string,
+    part: ExamPart,
+    picked: { id: string; set: TeilSetContent; playable: (hash: string) => boolean },
+    startedAt: string,
+    mockId: string | null
+  ): PracticeRun => ({
     attemptId,
     formatId,
     part,
-    set: { id: picked.id, view: viewTask(picked.set.taskType, picked.set.content) },
+    set: { id: picked.id, view: viewTask(picked.set.taskType, picked.set.content, picked.playable) },
     minutes: part.minutes,
     startedAt,
     mockId,
   });
 
-  function overview(): PracticeOverview {
+  // The written-block parts a mock runs, in block order.
+  function mockParts(format: ExamFormat): ExamPart[] {
+    const block = format.blocks.find((b) => b.id === 'written');
+    return (block?.partIds ?? []).map((id) => format.parts.find((p) => p.id === id)!).filter(hasRunner);
+  }
+
+  async function overview(): Promise<PracticeOverview> {
     const format = activeFormat();
-    if (!format) return { format: null, parts: [] };
+    if (!format) return { format: null, parts: [], mockRunnable: false };
     const last = db.prepare(
       'SELECT score, max_score FROM teil_attempts WHERE format_id = ? AND part_id = ? AND finished_at IS NOT NULL ORDER BY finished_at DESC, id DESC LIMIT 1'
     );
+    const speechUp = speechCheck();
+    const listeningOk = new Map<string, boolean>();
+    for (const part of format.parts.filter((p) => hasRunner(p) && isListening(p))) {
+      listeningOk.set(part.id, await listeningRunnable(format.id, part, speechUp));
+    }
+    const available = (part: ExamPart) => listeningOk.get(part.id) ?? true;
+    const inMock = mockParts(format);
     return {
       format,
       parts: format.parts.map((part) => {
         const row = last.get(format.id, part.id) as { score: number; max_score: number } | undefined;
         return {
           part,
-          runnable: singlyRunnable(part),
+          runnable: singlyRunnable(part) && available(part),
           mockOnly: hasRunner(part) && !singlyRunnable(part),
+          audioUnavailable: !available(part),
           lastPercent: row ? Math.round(percent(row.score, row.max_score)) : null,
         };
       }),
+      mockRunnable: inMock.length > 0 && inMock.every(available),
     };
   }
 
   async function start(formatId: string, partId: string): Promise<PracticeRun> {
     const { part } = partOf(formatId, partId);
     if (!singlyRunnable(part)) throw new PracticeError(`${partId} can't be practised on its own`, 'unavailable');
-    const picked = await pick(formatId, partId);
+    const picked = await pick(formatId, part, speechCheck());
     const startedAt = clock().toISOString();
     return runOf(insertAttempt(formatId, part, picked.id, 'practice', null, startedAt), formatId, part, picked, startedAt, null);
   }
@@ -148,11 +209,17 @@ export function createExamPracticeService(db: Database.Database, deps: ExamPract
   async function startMock(formatId: string): Promise<MockRun> {
     const format = typeof formatId === 'string' ? readFormat(formatId) : null;
     if (!format) throw new PracticeError(`Unknown exam format: ${formatId}`, 'not_found');
-    const block = format.blocks.find((b) => b.id === 'written');
-    const parts = (block?.partIds ?? []).map((id) => format.parts.find((p) => p.id === id)!).filter(hasRunner);
+    const parts = mockParts(format);
     if (parts.length === 0) throw new PracticeError('This exam has no parts to practise yet', 'unavailable');
-    const picks: { id: string; set: TeilSetContent }[] = [];
-    for (const part of parts) picks.push(await pick(format.id, part.id));
+    // S10: a listening part that can't be heard right now stops the mock before anything is picked.
+    const speechUp = speechCheck();
+    for (const part of parts.filter(isListening)) {
+      if (!(await listeningRunnable(format.id, part, speechUp))) {
+        throw new PracticeError(`The audio for ${part.id} is unavailable right now`, 'unavailable');
+      }
+    }
+    const picks: { id: string; set: TeilSetContent; playable: (hash: string) => boolean }[] = [];
+    for (const part of parts) picks.push(await pick(format.id, part, speechUp));
     const mockId = randomUUID();
     const startedAt = clock().toISOString();
     const runs = db.transaction(() =>
@@ -182,10 +249,20 @@ export function createExamPracticeService(db: Database.Database, deps: ExamPract
     return row;
   }
 
+  // Listening: after submit the transcript and evidence are shown (spec: never before answering).
+  function revealOf(set: TeilSetContent): { reveal?: AudioReveal } {
+    if (set.taskType !== 'audio_questions') return {};
+    try {
+      return { reveal: audioReveal(set.content as AudioQuestionsContent) };
+    } catch {
+      return {};
+    }
+  }
+
   function storedResult(row: AttemptRow): PracticeResult {
     const set = setOf(row.set_id);
     const { review } = reviewOf(set, JSON.parse(row.answers!) as TaskAnswer);
-    return { attemptId: row.id, score: row.score!, maxScore: row.max_score!, overtimeSeconds: row.overtime_seconds ?? 0, review };
+    return { attemptId: row.id, score: row.score!, maxScore: row.max_score!, overtimeSeconds: row.overtime_seconds ?? 0, review, ...revealOf(set) };
   }
 
   function submit(attemptId: number, answers: unknown): PracticeResult {
@@ -210,7 +287,7 @@ export function createExamPracticeService(db: Database.Database, deps: ExamPract
       .prepare('UPDATE teil_attempts SET score = ?, max_score = ?, overtime_seconds = ?, finished_at = ?, answers = ? WHERE id = ? AND finished_at IS NULL')
       .run(score, part.points, overtimeSeconds, now.toISOString(), JSON.stringify(answer), row.id);
     if (written.changes === 0) return storedResult(requireAttempt(row.id));
-    return { attemptId: row.id, score, maxScore: part.points, overtimeSeconds, review };
+    return { attemptId: row.id, score, maxScore: part.points, overtimeSeconds, review, ...revealOf(set) };
   }
 
   async function explain(attemptId: number, itemIndex: number, question: string): Promise<{ reply: string }> {
@@ -221,10 +298,19 @@ export function createExamPracticeService(db: Database.Database, deps: ExamPract
     const { review } = reviewOf(set, JSON.parse(row.answers!) as TaskAnswer);
     const item = Number.isInteger(itemIndex) ? review[itemIndex] : undefined;
     if (!item) throw new PracticeError('There is no such item', 'bad_request');
+    // S11: the view leaves the transcript out, so a listening item gets it (and its evidence) here.
+    const listening =
+      set.taskType === 'audio_questions'
+        ? [
+            `The transcript of what the learner heard: ${(set.content as AudioQuestionsContent).transcript}`,
+            `The words in the transcript that give this item's answer: ${(set.content as AudioQuestionsContent).questions[item.index]?.evidence ?? '(not stored)'}`,
+          ]
+        : [];
     const systemPrompt = [
       `You help a German learner understand one item of the exam part "${part.title.de}" they just practised.`,
       `The part's instructions: ${part.instructions}`,
       `The task (JSON, without answers): ${JSON.stringify(viewTask(set.taskType, set.content))}`,
+      ...listening,
       `The item: number ${item.index + 1}.`,
       `The learner's answer: ${item.answerText || '(no answer)'}. The right answer: ${item.correct}.`,
       `The stored explanation: ${item.explanation.en} / ${item.explanation.de}`,

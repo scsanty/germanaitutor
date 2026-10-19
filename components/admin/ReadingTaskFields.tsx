@@ -1,6 +1,6 @@
 'use client';
 
-import { useId, useState } from 'react';
+import { useId, useState, type ReactNode } from 'react';
 import type { ClozeContent, MatchingContent, PassageQuestionsContent } from '@/lib/curriculum/types';
 import { Plus, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -69,15 +69,37 @@ function TextList({
 
 export function PassageQuestionsFields({ content, index, onChange }: { content: PassageQuestionsContent; index: number; onChange: (content: PassageQuestionsContent) => void }) {
   const n = index + 1;
-  type Question = PassageQuestionsContent['questions'][number];
-  const setQuestion = (qi: number, q: Question) => onChange({ ...content, questions: replaceAt(content.questions, qi, q) });
   return (
     <div className="flex flex-col gap-4">
       <label className={FIELD_LABEL}>
         Passage
         <Textarea aria-label={`Exercise ${n} passage`} className="min-h-40" value={content.passage} onChange={(e) => onChange({ ...content, passage: e.target.value })} />
       </label>
-      {content.questions.map((q, qi) => (
+      <QuestionList questions={content.questions} index={index} onChange={(questions) => onChange({ ...content, questions })} />
+    </div>
+  );
+}
+
+type ChoiceQuestion = PassageQuestionsContent['questions'][number];
+
+// Multiple-choice questions with options and one correct answer, shared by the passage and listening
+// editors. `extra` adds fields under a question's options (the listening evidence).
+export function QuestionList<Q extends ChoiceQuestion>({
+  questions,
+  index,
+  onChange,
+  extra,
+}: {
+  questions: Q[];
+  index: number;
+  onChange: (questions: Q[]) => void;
+  extra?: (q: Q, qi: number, set: (q: Q) => void) => ReactNode;
+}) {
+  const n = index + 1;
+  const setQuestion = (qi: number, q: Q) => onChange(replaceAt(questions, qi, q));
+  return (
+    <>
+      {questions.map((q, qi) => (
         <fieldset key={qi} className="flex flex-col gap-2 rounded-lg border p-3">
           <legend className="px-1 text-sm font-semibold">Question {qi + 1}</legend>
           <Input className={INPUT} aria-label={`Exercise ${n} question ${qi + 1}`} placeholder="Question" value={q.question} onChange={(e) => setQuestion(qi, { ...q, question: e.target.value })} />
@@ -112,13 +134,14 @@ export function PassageQuestionsFields({ content, index, onChange }: { content: 
               )}
             </div>
           ))}
+          {extra?.(q, qi, (next) => setQuestion(qi, next))}
           <div className="flex flex-wrap gap-2">
             <Button type="button" variant="outline" className={BTN} onClick={() => setQuestion(qi, { ...q, options: [...q.options, ''] })}>
               <Plus aria-hidden />
               Add option
             </Button>
-            {content.questions.length > 1 && (
-              <Button type="button" variant="ghost" className={REMOVE} onClick={() => onChange({ ...content, questions: content.questions.filter((_, j) => j !== qi) })}>
+            {questions.length > 1 && (
+              <Button type="button" variant="ghost" className={REMOVE} onClick={() => onChange(questions.filter((_, j) => j !== qi))}>
                 <X aria-hidden />
                 Remove question {qi + 1}
               </Button>
@@ -130,12 +153,12 @@ export function PassageQuestionsFields({ content, index, onChange }: { content: 
         type="button"
         variant="outline"
         className={`${BTN} self-start`}
-        onClick={() => onChange({ ...content, questions: [...content.questions, { question: '', options: ['', ''], correctIndex: 0 }] })}
+        onClick={() => onChange([...questions, { question: '', options: ['', ''], correctIndex: 0 } as Q])}
       >
         <Plus aria-hidden />
         Add question
       </Button>
-    </div>
+    </>
   );
 }
 

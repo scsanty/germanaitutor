@@ -37,9 +37,10 @@ const OVERVIEW = {
     parts: [LESEN_1, HOEREN_1],
   },
   parts: [
-    { part: LESEN_1, runnable: true, mockOnly: false, lastPercent: 80 },
-    { part: HOEREN_1, runnable: false, mockOnly: false, lastPercent: null },
+    { part: LESEN_1, runnable: true, mockOnly: false, audioUnavailable: false, lastPercent: 80 },
+    { part: HOEREN_1, runnable: false, mockOnly: false, audioUnavailable: false, lastPercent: null },
   ],
+  mockRunnable: true,
 };
 
 const RUN = {
@@ -83,6 +84,22 @@ describe('ExamPractice', () => {
     expect(lesen.querySelector('button')).toHaveAccessibleDescription('Leseverstehen Teil 1');
     expect(hoeren).toHaveTextContent('Coming with the Listening module');
     expect(hoeren.querySelector('button')).toBeDisabled();
+  });
+
+  it('says when a listening part or the mock cannot be heard right now', async () => {
+    stubFetch({
+      '/api/exam-practice': {
+        ...OVERVIEW,
+        parts: [OVERVIEW.parts[0], { ...OVERVIEW.parts[1], audioUnavailable: true }],
+        mockRunnable: false,
+      },
+    });
+    renderPractice();
+    const hoeren = (await screen.findByText('Hörverstehen Teil 1')).closest('[data-slot="card"]') as HTMLElement;
+    expect(hoeren).toHaveTextContent('Audio unavailable right now');
+    expect(hoeren.querySelector('button')).toBeDisabled();
+    expect(screen.getByText("The full mock needs listening audio that isn't available right now.")).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Full mock' })).toBeDisabled();
   });
 
   it('starts a part and shows the runner with its timer', async () => {

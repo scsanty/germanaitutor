@@ -1,5 +1,5 @@
 {
-  "seedVersion": "9",
+  "seedVersion": "10",
   "formatVersion": 3,
   "track": "generic",
   "level": "C1",
@@ -1344,6 +1344,61 @@
       }
     },
     {
+      "id": "c1-verstaendnis-akademischer-fachvortraege__ex4",
+      "lessonId": "c1-verstaendnis-akademischer-fachvortraege",
+      "track": "generic",
+      "type": "audio_questions",
+      "content": {
+        "instruction": {
+          "en": "Listen to an excerpt from a university lecture and answer the questions.",
+          "de": "Hören Sie einen Ausschnitt aus einer Vorlesung und beantworten Sie die Fragen."
+        },
+        "transcript": "@filter none\n[Dozentin f] Nachdem wir in der letzten Sitzung die theoretischen Grundlagen des sogenannten Nudging erörtert haben, wenden wir uns heute den empirischen Befunden zu.\n[Dozentin f] Gemeint sind damit, zur Erinnerung, kleine Veränderungen der Entscheidungsumgebung, die ein bestimmtes Verhalten wahrscheinlicher machen, ohne Optionen zu verbieten.\n[Dozentin f] Das wohl bekannteste Beispiel stammt aus Kantinen: Wird das Obst auf Augenhöhe platziert und der Nachtisch weiter hinten, greifen deutlich mehr Gäste zum Obst.\n[Dozentin f] Lassen Sie mich an dieser Stelle kurz einhaken: Solche Studien messen meist nur, was am selben Tag auf dem Tablett landet, nicht aber, ob sich die Ernährung langfristig verändert.\n[Dozentin f] Dies vorausgeschickt, müssen wir einschränkend festhalten, dass die Effekte in neueren Metaanalysen deutlich kleiner ausfallen als in den frühen, viel zitierten Einzelstudien.\n[Dozentin f] Dem ist allerdings entgegenzuhalten, dass Nudges äußerst kostengünstig sind; selbst ein kleiner Effekt kann sich daher politisch lohnen.\n[Dozentin f] Zusammenfassend lässt sich festhalten: Nudging ist kein Allheilmittel, wohl aber ein sinnvolles Instrument, sofern man es mit klassischen Maßnahmen wie Aufklärung und Preisanreizen kombiniert.",
+        "questions": [
+          {
+            "question": "Was bemängelt die Dozentin an den Kantinenstudien?",
+            "options": [
+              "Sie wurden nur in sehr wenigen Kantinen durchgeführt.",
+              "Sie erfassen nicht, ob sich das Essverhalten dauerhaft ändert.",
+              "Sie schränken die Wahlfreiheit der Gäste unzulässig ein."
+            ],
+            "correctIndex": 1,
+            "evidence": "nicht aber, ob sich die Ernährung langfristig verändert"
+          },
+          {
+            "question": "Was ergeben neuere Metaanalysen laut der Dozentin?",
+            "options": [
+              "Die Wirkung ist geringer, als frühe Einzelstudien nahelegten.",
+              "Nudging wirkt nur in Verbindung mit Verboten.",
+              "Die frühen Studien wurden inzwischen vollständig widerlegt."
+            ],
+            "correctIndex": 0,
+            "evidence": "deutlich kleiner ausfallen als in den frühen, viel zitierten Einzelstudien"
+          },
+          {
+            "question": "Welches Argument spricht laut der Dozentin trotz allem für Nudging?",
+            "options": [
+              "Nudges stoßen in der Bevölkerung auf große Zustimmung.",
+              "Nudges können teure Aufklärungskampagnen ersetzen.",
+              "Nudges verursachen kaum Kosten."
+            ],
+            "correctIndex": 2,
+            "evidence": "Nudges äußerst kostengünstig sind"
+          },
+          {
+            "question": "Zu welchem Fazit kommt die Dozentin?",
+            "options": [
+              "Nudging hat sich als wirkungslos erwiesen.",
+              "Nudging ist sinnvoll, aber nur als Ergänzung zu herkömmlichen Maßnahmen.",
+              "Nudging ist allen anderen politischen Instrumenten überlegen."
+            ],
+            "correctIndex": 1,
+            "evidence": "sofern man es mit klassischen Maßnahmen wie Aufklärung und Preisanreizen kombiniert"
+          }
+        ]
+      }
+    },
+    {
       "id": "c1-rezeption-mehrstimmiger-debatten__ex0",
       "lessonId": "c1-rezeption-mehrstimmiger-debatten",
       "track": "generic",
@@ -1360,19 +1415,68 @@
       }
     },
     {
-      "id": "c1-rezeption-mehrstimmiger-debatten__ex1",
+      "id": "c1-rezeption-mehrstimmiger-debatten__ex4",
       "lessonId": "c1-rezeption-mehrstimmiger-debatten",
       "track": "generic",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Wie reagiert ein Diskussionsteilnehmer, der sagt: 'Das führt doch jetzt völlig vom eigentlichen Thema weg'?",
-        "options": [
-          "Er wechselt begeistert auf den neuen Diskussionsstrang.",
-          "Er rügt eine thematische Abschweifung (Derailment) und fordert Fokus.",
-          "Er beendet sein Statement vorzeitig.",
-          "Er stimmt dem Vorredner in vollem Umfang zu."
-        ],
-        "correctIndex": 1
+        "instruction": {
+          "en": "Listen to an excerpt from a radio panel discussion and answer the questions.",
+          "de": "Hören Sie einen Ausschnitt aus einer Diskussionsrunde im Radio und beantworten Sie die Fragen."
+        },
+        "transcript": "@filter radio\n[Moderatorin f] Willkommen zurück zu unserer Diskussion über die Vier-Tage-Woche. Herr Kessler, Sie vertreten die mittelständischen Arbeitgeber. Ist das Modell für Ihre Betriebe denkbar?\n[Herr Kessler m] Für Büros vielleicht, aber in der Pflege oder im Handwerk? Wer soll denn am Freitag die Heizung reparieren, wenn der Kunde friert?\n[Frau Yilmaz f] Herr Kessler, niemand verlangt, dass am Freitag alle Betriebe schließen. Es geht um versetzte Arbeitszeiten, und die Pilotstudien zeigen, dass die Produktivität dabei nicht sinkt.\n[Herr Kessler m] Pilotstudien mit ein paar Dutzend Werbeagenturen! Und überhaupt, wenn ich sehe, wie die Politik seit Jahren bei der Bürokratie versagt, dann frage ich mich schon...\n[Moderatorin f] Herr Kessler, das führt doch jetzt völlig vom eigentlichen Thema weg. Bleiben wir bitte bei der Arbeitszeit.\n[Herr Kessler m] Gut. Ich sage ja nicht, dass ich das Modell grundsätzlich ablehne. Über freiwillige Lösungen in einzelnen Betrieben könnte man durchaus reden.\n[Frau Yilmaz f] Mit Verlaub, genau das ist der Punkt: Freiwillig heißt in der Praxis, dass es für die meisten Beschäftigten nie kommt. Eine gesetzliche Regelung ist für uns nicht verhandelbar.",
+        "questions": [
+          {
+            "question": "Wie entkräftet Frau Yilmaz Herrn Kesslers Einwand?",
+            "options": [
+              "Handwerksbetriebe sollen von der Regelung ausgenommen werden.",
+              "Die Betriebe müssten nicht schließen, weil die Arbeitszeiten gestaffelt würden.",
+              "Kunden könnten Reparaturen ebenso gut am Wochenende bestellen."
+            ],
+            "correctIndex": 1,
+            "evidence": "Es geht um versetzte Arbeitszeiten"
+          },
+          {
+            "question": "Wie reagiert Herr Kessler auf die Pilotstudien?",
+            "options": [
+              "Er zweifelt an ihrer Aussagekraft, weil zu wenige und zu spezielle Betriebe teilgenommen haben.",
+              "Er erkennt ihre Ergebnisse ausdrücklich an.",
+              "Er verweist auf eigene Erhebungen mit gegenteiligen Ergebnissen."
+            ],
+            "correctIndex": 0,
+            "evidence": "Pilotstudien mit ein paar Dutzend Werbeagenturen!"
+          },
+          {
+            "question": "Warum unterbricht die Moderatorin Herrn Kessler?",
+            "options": [
+              "Seine Redezeit ist abgelaufen.",
+              "Er hat Frau Yilmaz persönlich angegriffen.",
+              "Er schweift auf ein anderes Thema ab."
+            ],
+            "correctIndex": 2,
+            "evidence": "das führt doch jetzt völlig vom eigentlichen Thema weg"
+          },
+          {
+            "question": "Welche Haltung lässt Herr Kessler in seinem letzten Beitrag erkennen?",
+            "options": [
+              "Er lehnt das Modell weiterhin kategorisch ab.",
+              "Er signalisiert Gesprächsbereitschaft über betriebliche Einzellösungen.",
+              "Er fordert nun selbst eine gesetzliche Regelung."
+            ],
+            "correctIndex": 1,
+            "evidence": "Über freiwillige Lösungen in einzelnen Betrieben könnte man durchaus reden"
+          },
+          {
+            "question": "Wie positioniert sich Frau Yilmaz am Ende?",
+            "options": [
+              "Sie beharrt auf einer verbindlichen Vorgabe durch den Gesetzgeber.",
+              "Sie nimmt das Angebot freiwilliger Lösungen an.",
+              "Sie schlägt eine weitere Pilotphase vor."
+            ],
+            "correctIndex": 0,
+            "evidence": "Eine gesetzliche Regelung ist für uns nicht verhandelbar"
+          }
+        ]
       }
     },
     {

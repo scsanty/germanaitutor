@@ -1,0 +1,241 @@
+{
+  "formatId": "generic-a2",
+  "partId": "hoeren-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-a2__hoeren-1__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter phone\n[Ansage f] Text 1.\n[Paketbote m] Guten Tag, Herr Lorenz, hier ist Ihr Paketbote von Blitzpaket. Ich war heute um elf Uhr bei Ihnen, aber Sie waren nicht zu Hause.\n[Paketbote m] Ich habe Ihr Paket nicht bei den Nachbarn abgegeben, weil dort auch niemand da war.\n[Paketbote m] Sie können es ab morgen in der Postfiliale in der Bahnhofstraße abholen. Bitte bringen Sie Ihren Ausweis mit.\n[Ansage f] Text 2.\n[Mitarbeiterin f] Guten Tag, Frau Sommer, hier ist die Autovermietung Rapido. Sie haben für Samstag einen kleinen Wagen bestellt.\n[Mitarbeiterin f] Leider ist dieser Wagen kaputt. Wir haben aber ein größeres Auto für Sie, zum gleichen Preis.\n[Mitarbeiterin f] Bitte rufen Sie uns kurz zurück. Vielen Dank!\n[Ansage f] Text 3.\n[Anrufer m] Hallo Nele, hier ist Felix. Es geht um unser Tennisspiel am Sonntag.\n[Anrufer m] Unser Platz im Tennisclub ist leider schon besetzt. Aber ich habe einen anderen Platz gefunden, im Sportpark Ost.\n[Anrufer m] Wir spielen dort zur gleichen Zeit, um zehn. Bis Sonntag!\n[Ansage f] Text 4.\n[Lehrerin f] Guten Tag, Frau Aydin, hier ist Frau Krämer, die Klassenlehrerin von Emil.\n[Lehrerin f] Nächste Woche fährt die Klasse für zwei Tage in den Wald. Ich brauche noch Ihre Unterschrift und fünfundzwanzig Euro.\n[Lehrerin f] Sie müssen nicht in die Schule kommen. Emil kann das Geld und das Formular bis Freitag mitbringen.\n[Ansage f] Text 5.\n[Fotograf m] Hallo, Herr Bauer, hier ist das Fotostudio Lichtblick. Ihre Passfotos sind fertig.\n[Fotograf m] Sie können sie heute bis achtzehn Uhr abholen. Morgen ist das Studio geschlossen, aber am Donnerstag sind wir ab neun Uhr wieder da.",
+          "questions": [
+            {
+              "question": "Das Paket für Herrn Lorenz ist bei seinen Nachbarn.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Ich habe Ihr Paket nicht bei den Nachbarn abgegeben"
+            },
+            {
+              "question": "Die Autovermietung hat für Frau Sommer ein anderes Auto.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Wir haben aber ein größeres Auto für Sie, zum gleichen Preis."
+            },
+            {
+              "question": "Das Tennisspiel ist am Sonntag später als geplant.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Wir spielen dort zur gleichen Zeit, um zehn."
+            },
+            {
+              "question": "Das Geld für die Klassenfahrt bringt Emil in die Schule.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Emil kann das Geld und das Formular bis Freitag mitbringen."
+            },
+            {
+              "question": "Herr Bauer kann die Fotos morgen abholen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Morgen ist das Studio geschlossen"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Nobody was at the neighbours' either, so the parcel is at the post office branch from tomorrow.",
+            "de": "Bei den Nachbarn war auch niemand. Das Paket liegt ab morgen in der Postfiliale."
+          },
+          {
+            "en": "The small car she booked is broken, so she gets a bigger car for the same price.",
+            "de": "Der kleine Wagen ist kaputt. Sie bekommt ein größeres Auto zum gleichen Preis."
+          },
+          {
+            "en": "Only the place changes: they play in another park, but at the same time, ten o'clock.",
+            "de": "Nur der Ort ist neu: Sie spielen im Sportpark Ost, aber zur gleichen Zeit, um zehn Uhr."
+          },
+          {
+            "en": "Frau Aydin does not have to come to school. Emil can bring the money and the form by Friday.",
+            "de": "Frau Aydin muss nicht in die Schule kommen. Emil kann das Geld und das Formular bis Freitag mitbringen."
+          },
+          {
+            "en": "The studio is closed tomorrow. He can collect the photos today until six pm or on Thursday from nine am.",
+            "de": "Morgen ist das Studio geschlossen. Er kann die Fotos heute bis achtzehn Uhr oder am Donnerstag ab neun Uhr abholen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-a2__hoeren-1__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Ansage f] Text 1.\n[Moderator m] Am Sonntag ist in Bergheim wieder der Stadtlauf. Deshalb ist die Hauptstraße von acht bis vierzehn Uhr gesperrt.\n[Moderator m] Die Busse der Linien drei und sieben fahren in dieser Zeit eine andere Strecke. Autofahrer parken am besten am Sportplatz.\n[Ansage f] Text 2.\n[Moderatorin f] Eine Nachricht für alle Leserinnen und Leser: Die Stadtbibliothek hat ab Juni neue Öffnungszeiten.\n[Moderatorin f] Sie ist dann auch am Samstag offen, von zehn bis vierzehn Uhr. Dafür ist sie am Montag geschlossen. Von Dienstag bis Freitag bleibt alles wie immer.\n[Ansage f] Text 3.\n[Reporter m] Das Sommerkonzert im Schlosspark findet am Freitag statt, aber nicht im Park. Für Freitag ist starker Regen angesagt.\n[Reporter m] Deshalb spielt das Orchester in der Stadthalle. Die Karten bleiben gültig. Wer noch keine Karte hat, kann an der Abendkasse eine kaufen.\n[Ansage f] Text 4.\n[Moderator m] Der Wochenmarkt zieht um: Auf dem Rathausplatz wird ab nächster Woche gebaut.\n[Moderator m] Deshalb finden Sie die Marktstände für zwei Monate auf dem Parkplatz vor dem Hallenbad. Die Markttage bleiben gleich, also Mittwoch und Samstag.\n[Ansage f] Text 5.\n[Moderatorin f] Das Krankenhaus Sankt Anna sucht Menschen, die Blut spenden möchten.\n[Moderatorin f] Am Dienstag können Sie von fünfzehn bis neunzehn Uhr im Gemeindehaus Blut spenden. Bitte bringen Sie Ihren Ausweis mit.",
+          "questions": [
+            {
+              "question": "Am Sonntag fahren einige Busse anders als sonst.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "fahren in dieser Zeit eine andere Strecke"
+            },
+            {
+              "question": "Ab Juni kann man am Montag nicht in die Bibliothek gehen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Dafür ist sie am Montag geschlossen."
+            },
+            {
+              "question": "Das Konzert am Freitag fällt aus.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Deshalb spielt das Orchester in der Stadthalle."
+            },
+            {
+              "question": "Der Wochenmarkt ist für einige Zeit an einem anderen Ort.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Deshalb finden Sie die Marktstände für zwei Monate auf dem Parkplatz vor dem Hallenbad."
+            },
+            {
+              "question": "Man kann am Dienstagvormittag Blut spenden.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "von fünfzehn bis neunzehn Uhr"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Because of the city run, bus lines three and seven take a different route.",
+            "de": "Wegen des Stadtlaufs fahren die Linien drei und sieben eine andere Strecke."
+          },
+          {
+            "en": "From June the library opens on Saturdays, but it is closed on Mondays.",
+            "de": "Ab Juni ist die Bibliothek am Samstag offen, aber am Montag geschlossen."
+          },
+          {
+            "en": "The concert still takes place, but in the town hall instead of the park because of the rain.",
+            "de": "Das Konzert fällt nicht aus. Wegen des Regens spielt das Orchester in der Stadthalle."
+          },
+          {
+            "en": "Because of building work, the market is in the car park in front of the indoor pool for two months.",
+            "de": "Wegen der Bauarbeiten ist der Markt zwei Monate auf dem Parkplatz vor dem Hallenbad."
+          },
+          {
+            "en": "Blood donation is on Tuesday afternoon and evening, from three to seven pm.",
+            "de": "Man kann am Dienstag von fünfzehn bis neunzehn Uhr Blut spenden, also nicht am Vormittag."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-a2__hoeren-1__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Ansage f] Text 1.\n[Mitarbeiterin f] So, hier ist Ihr Medikament. Nehmen Sie bitte zweimal am Tag eine Tablette, morgens und abends, immer nach dem Essen.\n[Mann m] Nach dem Essen, gut. Und darf ich dazu Kaffee trinken?\n[Mitarbeiterin f] Kaffee ist kein Problem. Aber bitte trinken Sie keinen Alkohol.\n[Ansage f] Text 2.\n[Mitarbeiter m] Für die Anmeldung brauche ich Ihren Pass und die Bestätigung von Ihrem Vermieter.\n[Frau f] Den Pass habe ich hier. Aber die Bestätigung habe ich leider zu Hause vergessen.\n[Mitarbeiter m] Dann kann ich Sie heute leider nicht anmelden. Machen Sie bitte einen neuen Termin, das geht auch online.\n[Ansage f] Text 3.\n[Mann m] Guten Tag, ich möchte einen Blumenstrauß für meine Mutter bestellen. Sie hat am Donnerstag Geburtstag.\n[Mitarbeiterin f] Gern. Sie können den Strauß am Mittwochabend hier abholen. Oder wir bringen ihn am Donnerstag zu Ihrer Mutter, das kostet sieben Euro extra.\n[Mann m] Meine Mutter wohnt in einer anderen Stadt. Bringen Sie die Blumen bitte zu ihr.\n[Ansage f] Text 4.\n[Frau f] Guten Tag, ich möchte dieses Kleid reinigen lassen. Wann ist es fertig?\n[Mitarbeiter m] Normalerweise dauert es zwei Tage. Aber Montag ist ein Feiertag, deshalb ist es erst am Mittwoch fertig.\n[Frau f] Mittwoch ist okay. Ich brauche es erst am Wochenende.\n[Ansage f] Text 5.\n[Mann m] Guten Tag, ich möchte die Winterreifen wechseln lassen. Geht das heute noch?\n[Mitarbeiter m] Heute nicht mehr, wir haben sehr viele Kunden. Aber morgen um halb neun ist noch ein Termin frei.\n[Mann m] Morgen früh? Ja, das passt. Wie lange dauert das?\n[Mitarbeiter m] Ungefähr eine Stunde. Sie können hier warten, wir haben Kaffee.",
+          "questions": [
+            {
+              "question": "Der Mann soll die Tabletten vor dem Essen nehmen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "immer nach dem Essen"
+            },
+            {
+              "question": "Die Frau braucht einen neuen Termin.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Machen Sie bitte einen neuen Termin"
+            },
+            {
+              "question": "Der Mann holt den Blumenstrauß am Mittwoch selbst ab.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Bringen Sie die Blumen bitte zu ihr."
+            },
+            {
+              "question": "Das Kleid ist dieses Mal nach zwei Tagen fertig.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "deshalb ist es erst am Mittwoch fertig"
+            },
+            {
+              "question": "Der Mann kann morgen früh die Reifen wechseln lassen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Aber morgen um halb neun ist noch ein Termin frei."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "He should take the tablets twice a day, always after meals.",
+            "de": "Er soll die Tabletten zweimal am Tag nehmen, immer nach dem Essen."
+          },
+          {
+            "en": "She forgot the landlord's confirmation, so she cannot register today and needs a new appointment.",
+            "de": "Sie hat die Bestätigung vom Vermieter vergessen. Heute geht die Anmeldung nicht, sie braucht einen neuen Termin."
+          },
+          {
+            "en": "His mother lives in another town, so the shop delivers the flowers on Thursday.",
+            "de": "Seine Mutter wohnt in einer anderen Stadt. Das Geschäft bringt die Blumen am Donnerstag zu ihr."
+          },
+          {
+            "en": "It normally takes two days, but because of the public holiday on Monday it is only ready on Wednesday.",
+            "de": "Normalerweise dauert es zwei Tage. Wegen des Feiertags am Montag ist das Kleid erst am Mittwoch fertig."
+          },
+          {
+            "en": "There is no time today, but there is a free appointment tomorrow at half past eight, and he takes it.",
+            "de": "Heute geht es nicht mehr. Morgen um halb neun ist ein Termin frei, und das passt für ihn."
+          }
+        ]
+      }
+    }
+  ]
+}

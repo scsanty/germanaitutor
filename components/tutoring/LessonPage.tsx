@@ -15,7 +15,7 @@ import { useApiErrorText } from '@/components/useApiErrorText';
 import { FocusLayout } from '@/components/focus/FocusLayout';
 import { Celebration } from '@/components/focus/Celebration';
 import { useSound } from '@/lib/sound/useSound';
-import { ArrowLeft, Check, Circle, CircleCheck, Lock, Play } from 'lucide-react';
+import { ArrowLeft, Check, Circle, CircleCheck, Lock, Play, VolumeX } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -316,6 +316,15 @@ export function LessonPage({ lessonId }: { lessonId: string }) {
           </section>
         )}
 
+        {/* Spec: listening exercises whose audio can't play right now are left out of the run. When that
+            leaves none, the note says to come back later. */}
+        {lesson.unavailableAudio > 0 && (
+          <p className="flex items-center gap-2 rounded-xl border border-border bg-surface px-4 py-3 text-sm text-text-muted">
+            <VolumeX aria-hidden className="size-4 shrink-0" />
+            {lesson.exercises.length === 0 && !lesson.completed ? t('audioUnavailableAll') : t('audioUnavailableNote')}
+          </p>
+        )}
+
         {lesson.exercises.length === 0 ? (
           lesson.completed ? (
             <p className="flex items-center gap-2 font-semibold text-success">
@@ -323,7 +332,9 @@ export function LessonPage({ lessonId }: { lessonId: string }) {
               {t('done')}
             </p>
           ) : (
-            markDoneBlock
+            // Final review I2: a lesson whose exercises are all unavailable can't be marked done (the
+            // server refuses it), so it shows only the note above.
+            !(lesson.unavailableAudio > 0) && markDoneBlock
           )
         ) : !run ? (
           // A practice batch in progress is already marked seen; starting a lesson run would unmount it.

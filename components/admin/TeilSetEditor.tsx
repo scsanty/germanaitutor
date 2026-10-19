@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import type { ExerciseContent } from '@/lib/curriculum/types';
 import type { LocalizedText } from '@/lib/i18n/localizedText';
 import type { TeilSetContent } from '@/lib/exam/teilSets';
 import { itemCount, type TaskContent } from '@/lib/tasks/taskTypes';
@@ -53,7 +52,7 @@ export function TeilSetEditor({
     >
       <ExerciseContentFields
         type={set.taskType}
-        content={set.content as ExerciseContent}
+        content={set.content}
         index={0}
         allowInstruction={false}
         onChange={(content) => changeContent(content as TaskContent)}

@@ -1,0 +1,466 @@
+{
+  "formatId": "generic-c1",
+  "partId": "hoeren-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-c1__hoeren-2__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Moderatorin f] Willkommen bei „Kopfsache“, unserer Sendung über Psychologie im Alltag. Mein Gast ist Konrad Wiesner. Er leitet an der Universität Rabenau eine Arbeitsgruppe, die sich mit einem Gefühl beschäftigt, das die meisten von uns lieber vermeiden: mit Langeweile. Herr Wiesner, warum erforscht man so etwas?\n[Herr Wiesner m] Weil Langeweile erstaunlich wenig verstanden ist. Über Angst oder Freude gibt es ganze Bibliotheken, über Langeweile vergleichsweise wenig. Dabei ist sie ein ziemlich verlässliches Signal: Sie zeigt uns, dass das, was wir gerade tun, uns nichts mehr bedeutet. Insofern ist sie weniger ein Problem als vielmehr ein Hinweis.\n[Moderatorin f] Sie haben im vergangenen Jahr eine Studie durchgeführt, die einiges Aufsehen erregt hat. Worum ging es da?\n[Herr Wiesner m] Wir haben rund zweihundert Menschen eine Woche lang mehrmals am Tag eine Nachricht aufs Handy geschickt, und sie sollten jeweils angeben, was sie gerade tun und wie gelangweilt sie sich fühlen. Wir hatten erwartet, dass die Langeweile vor allem bei eintönigen Tätigkeiten auftritt, beim Warten oder beim Putzen. Tatsächlich war sie am stärksten in Situationen, in denen die Leute sich nicht aussuchen konnten, was sie tun, also etwa in Besprechungen, die sie für überflüssig hielten.\n[Moderatorin f] Und das Handy selbst? Man würde ja vermuten, dass es die Langeweile vertreibt.\n[Herr Wiesner m] Da muss man unterscheiden. Wer sich gelangweilt durch Schlagzeilen oder Videos geklickt hat, fühlte sich eine halbe Stunde später genauso gelangweilt wie vorher. Wer stattdessen einer Freundin geschrieben oder jemanden angerufen hat, dem ging es auch später noch deutlich besser. Es kommt also weniger auf das Gerät an als darauf, wofür man es benutzt.\n[Moderatorin f] Gibt es Menschen, die sich besonders leicht langweilen?\n[Herr Wiesner m] Es gibt ein verbreitetes Vorurteil, nämlich dass sich besonders intelligente Menschen schneller langweilen. Dafür haben wir keinerlei Belege gefunden. Was wir aber gefunden haben: Wer Schwierigkeiten hat, die eigenen Gefühle zu benennen, langweilt sich häufiger. Diese Menschen spüren zwar, dass etwas nicht stimmt, wissen aber nicht, was ihnen fehlt.\n[Moderatorin f] Viele Eltern haben ja geradezu Angst davor, dass ihre Kinder sich langweilen. Zu Recht?\n[Herr Wiesner m] Ich halte das für übertrieben. In einem zweiten Projekt haben wir Grundschulkinder beobachtet, die in den Ferien bewusst Nachmittage ohne Programm hatten. Die ersten zwanzig Minuten wurde oft gequengelt, danach haben sich die meisten selbst etwas ausgedacht. Allerdings nur, wenn kein Bildschirm in Sichtweite war. Es reichte schon, dass ein ausgeschaltetes Tablet auf dem Tisch lag, und die Kinder kamen über das Quengeln nicht hinaus.\n[Moderatorin f] Und wie sieht es mit Langeweile im Beruf aus?\n[Herr Wiesner m] Darüber wird kaum gesprochen, weil es ein Tabu ist. Wer zugibt, sich bei der Arbeit zu langweilen, gilt schnell als undankbar oder faul. Dabei kann dauerhafte Unterforderung genauso krank machen wie Überlastung.\n[Moderatorin f] Was raten Sie Unternehmen?\n[Herr Wiesner m] Ganz sicher nicht, die Leute mit noch mehr Aufgaben zuzuschütten, das ist der häufigste Fehler. In einem Betrieb, mit dem wir zusammengearbeitet haben, durften die Beschäftigten stattdessen einen Teil ihrer Aufgaben untereinander tauschen. Die Arbeit wurde dadurch weder mehr noch weniger, aber die Langeweile ging spürbar zurück, weil die Leute wieder mitentscheiden konnten.\n[Moderatorin f] Sie sagen, Langeweile sei ein Signal. Heißt das, man sollte sie einfach aushalten?\n[Herr Wiesner m] Nicht unbedingt aushalten, aber ernst nehmen. Ich rate meinen Studierenden immer: Wenn ihr euch langweilt, fragt euch nicht, womit ihr euch ablenken könnt, sondern was genau euch gerade fehlt. Manchmal ist die Antwort überraschend banal: Hunger, Müdigkeit oder einfach der Wunsch, mit jemandem zu reden.\n[Moderatorin f] Zum Schluss: Langweilen Sie sich eigentlich selbst manchmal?\n[Herr Wiesner m] Ständig, vor allem auf Fachkonferenzen, paradoxerweise ausgerechnet auf denen über Langeweile. Aber da habe ich inzwischen eine Strategie: Ich nehme mir vor, in jedem Vortrag einen einzigen Gedanken zu finden, über den ich mich ärgern kann. Ärger ist nämlich das Gegenteil von Langeweile. Man ist wieder beteiligt.",
+          "questions": [
+            {
+              "question": "Wie versteht Herr Wiesner die Langeweile?",
+              "options": [
+                "als Gefühl, das man möglichst unterdrücken sollte",
+                "als Zeichen, dass eine Tätigkeit für einen keine Bedeutung mehr hat",
+                "als typisches Problem von Menschen mit zu wenig Arbeit"
+              ],
+              "correctIndex": 1,
+              "evidence": "Sie zeigt uns, dass das, was wir gerade tun, uns nichts mehr bedeutet."
+            },
+            {
+              "question": "Wann waren die Teilnehmer der Studie am stärksten gelangweilt?",
+              "options": [
+                "bei eintönigen Tätigkeiten im Haushalt",
+                "beim Warten",
+                "wenn sie über ihre Tätigkeit nicht selbst bestimmen konnten"
+              ],
+              "correctIndex": 2,
+              "evidence": "in denen die Leute sich nicht aussuchen konnten, was sie tun"
+            },
+            {
+              "question": "Welche Teilnehmer fühlten sich nach der Nutzung des Handys auch später noch besser?",
+              "options": [
+                "diejenigen, die mit anderen Menschen Kontakt aufgenommen hatten",
+                "diejenigen, die Schlagzeilen und Videos angeschaut hatten",
+                "diejenigen, die das Handy nur kurz benutzt hatten"
+              ],
+              "correctIndex": 0,
+              "evidence": "Wer stattdessen einer Freundin geschrieben oder jemanden angerufen hat"
+            },
+            {
+              "question": "Wer langweilt sich laut der Forschung häufiger?",
+              "options": [
+                "Menschen, die ihre Gefühle schlecht benennen können",
+                "besonders intelligente Menschen",
+                "Menschen mit eintönigen Berufen"
+              ],
+              "correctIndex": 0,
+              "evidence": "Wer Schwierigkeiten hat, die eigenen Gefühle zu benennen, langweilt sich häufiger."
+            },
+            {
+              "question": "Unter welcher Bedingung dachten sich die Kinder selbst etwas aus?",
+              "options": [
+                "wenn ein Erwachsener in der Nähe war",
+                "wenn sie zu zweit oder zu dritt waren",
+                "wenn kein Bildschirm zu sehen war, auch kein ausgeschalteter"
+              ],
+              "correctIndex": 2,
+              "evidence": "Es reichte schon, dass ein ausgeschaltetes Tablet auf dem Tisch lag"
+            },
+            {
+              "question": "Warum spricht man laut Herrn Wiesner selten über Langeweile im Beruf?",
+              "options": [
+                "Betroffene fürchten, als undankbar oder faul zu gelten.",
+                "Sie kommt im Berufsleben kaum vor.",
+                "Sie gilt als gesundheitlich unbedenklich."
+              ],
+              "correctIndex": 0,
+              "evidence": "gilt schnell als undankbar oder faul"
+            },
+            {
+              "question": "Was half in dem Betrieb gegen die Langeweile?",
+              "options": [
+                "zusätzliche Aufgaben",
+                "die Möglichkeit, Aufgaben mit Kollegen zu tauschen",
+                "kürzere Arbeitszeiten"
+              ],
+              "correctIndex": 1,
+              "evidence": "einen Teil ihrer Aufgaben untereinander tauschen"
+            },
+            {
+              "question": "Was rät Herr Wiesner seinen Studierenden?",
+              "options": [
+                "sich zu fragen, was ihnen in dem Moment fehlt",
+                "sich bei Langeweile möglichst schnell abzulenken",
+                "Langeweile grundsätzlich auszuhalten"
+              ],
+              "correctIndex": 0,
+              "evidence": "sondern was genau euch gerade fehlt"
+            },
+            {
+              "question": "Wann langweilt sich Herr Wiesner selbst?",
+              "options": [
+                "bei seiner eigenen Forschung",
+                "im Urlaub",
+                "auf Fachkonferenzen"
+              ],
+              "correctIndex": 2,
+              "evidence": "Ständig, vor allem auf Fachkonferenzen"
+            },
+            {
+              "question": "Wie geht er auf Konferenzen gegen die Langeweile vor?",
+              "options": [
+                "Er verlässt den Saal und führt Gespräche.",
+                "Er sucht in jedem Vortrag einen Gedanken, über den er sich ärgern kann.",
+                "Er macht sich Notizen für eigene Projekte."
+              ],
+              "correctIndex": 1,
+              "evidence": "einen einzigen Gedanken zu finden, über den ich mich ärgern kann"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "He sees boredom as a reliable signal that what we are doing no longer means anything to us.",
+            "de": "Für ihn ist Langeweile ein Signal dafür, dass uns das, was wir gerade tun, nichts mehr bedeutet."
+          },
+          {
+            "en": "Contrary to expectations, boredom was strongest when people could not choose what they were doing, for example in pointless meetings.",
+            "de": "Anders als erwartet war die Langeweile am stärksten, wenn die Leute nicht selbst wählen konnten, was sie tun, etwa in überflüssigen Besprechungen."
+          },
+          {
+            "en": "Clicking through headlines or videos did not help, but writing to or calling someone still made people feel better later.",
+            "de": "Schlagzeilen oder Videos halfen nicht. Wer aber jemandem geschrieben oder jemanden angerufen hat, fühlte sich auch später noch besser."
+          },
+          {
+            "en": "There is no evidence for the idea about intelligent people. People who struggle to name their feelings get bored more often.",
+            "de": "Für das Vorurteil über intelligente Menschen gibt es keine Belege. Wer seine Gefühle schlecht benennen kann, langweilt sich häufiger."
+          },
+          {
+            "en": "The children only became inventive with no screen in sight. Even a switched-off tablet on the table was enough to stop them.",
+            "de": "Die Kinder wurden nur kreativ, wenn kein Bildschirm zu sehen war. Schon ein ausgeschaltetes Tablet auf dem Tisch hat das verhindert."
+          },
+          {
+            "en": "It is a taboo: anyone who admits being bored at work is quickly seen as ungrateful or lazy.",
+            "de": "Es ist ein Tabu: Wer zugibt, sich bei der Arbeit zu langweilen, gilt schnell als undankbar oder faul."
+          },
+          {
+            "en": "Employees were allowed to swap some tasks with each other. The workload stayed the same, but they could have a say again.",
+            "de": "Die Beschäftigten durften einen Teil ihrer Aufgaben tauschen. Die Arbeit blieb gleich, aber sie konnten wieder mitentscheiden."
+          },
+          {
+            "en": "Instead of looking for a distraction, they should ask themselves what exactly they are missing at that moment.",
+            "de": "Statt nach Ablenkung zu suchen, sollen sie sich fragen, was ihnen gerade genau fehlt."
+          },
+          {
+            "en": "He gets bored above all at conferences, ironically even at those about boredom.",
+            "de": "Er langweilt sich vor allem auf Fachkonferenzen, ausgerechnet auch auf denen über Langeweile."
+          },
+          {
+            "en": "He looks for one idea in each talk that annoys him, because annoyance is the opposite of boredom.",
+            "de": "Er sucht in jedem Vortrag einen Gedanken, über den er sich ärgern kann, denn Ärger ist das Gegenteil von Langeweile."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-c1__hoeren-2__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Katrin f] Gut, dann fangen wir an. Ich habe euch beide dazugeholt, weil wir bis Freitag entscheiden müssen, wie es mit „Leuchtfeuer“ weitergeht. Matthias, wie ist der Stand in der Produktion?\n[Matthias m] Leider nicht gut. Die Druckerei hat uns gestern mitgeteilt, dass sich die Auslieferung um mindestens sechs Wochen verschiebt. Nicht wegen des Papiers, wie wir zuerst dachten, sondern weil eine ihrer beiden Stanzmaschinen ausgefallen ist und das Ersatzteil erst bestellt werden muss.\n[Katrin f] Sechs Wochen. Dann haben wir das Spiel zu den Spieltagen in Dornheim nicht.\n[Jana f] Genau das ist mein Problem. Der Stand ist gebucht, die Anzeigen laufen schon, und die Händler rechnen fest mit uns. Ich würde trotzdem hinfahren und das Spiel mit Prototypen vorstellen. Die Leute können es am Stand ausprobieren und gleich vorbestellen.\n[Matthias m] Mit Prototypen? Wir haben genau drei handgebaute Exemplare, und die sehen, ehrlich gesagt, auch so aus. Das wirkt unfertig. Bei einem Spiel, das wir vor allem über die Optik verkaufen wollen, halte ich das für riskant.\n[Jana f] Das sehe ich anders. Die Grafikerin könnte uns bis zur Messe zehn weitere Exemplare im Digitaldruck machen. Die sind nicht perfekt, aber deutlich besser als die jetzigen.\n[Katrin f] Was würde das kosten?\n[Jana f] Sie hat von ungefähr zweitausend Euro gesprochen. Das ist nicht wenig. Aber wenn wir ohne neues Spiel nach Dornheim fahren, haben wir das Geld für den Stand praktisch umsonst ausgegeben, und der war um einiges teurer.\n[Katrin f] Das klingt vernünftig. Matthias, wäre das für dich in Ordnung?\n[Matthias m] Wenn die Exemplare wirklich besser aussehen, ja. Dann bestehe ich aber darauf, dass am Stand gut sichtbar steht, dass es sich um Vorabexemplare handelt. Sonst beschweren sich die Leute hinterher, dass die fertige Schachtel anders aussieht.\n[Katrin f] Einverstanden. Dann zur zweiten Frage, den Vorbestellungen. Jana, du wolltest ja mit einem Rabatt arbeiten.\n[Jana f] Ja. Wer auf der Messe vorbestellt, bekommt das Spiel zehn Prozent günstiger. Und, was mir eigentlich noch wichtiger ist, eine zusätzliche Karte mit einem eigenen Leuchtturm, die es später im Handel nicht gibt. Sammler lieben so etwas.\n[Matthias m] Gegen die Karte habe ich nichts. Aber beim Rabatt bin ich skeptisch. Die Händler haben uns letztes Jahr ziemlich deutlich gesagt, dass es ihnen nicht gefällt, wenn wir direkt billiger verkaufen als sie.\n[Katrin f] Da hat Matthias recht. Mit den Händlern dürfen wir es uns nicht verscherzen, über sie läuft immer noch der größte Teil unseres Umsatzes. Lassen wir den Rabatt weg und bleiben bei der Karte.\n[Jana f] Na gut. Dann brauche ich aber wenigstens ein Datum, das ich den Leuten nennen kann. Wann können wir verbindlich ausliefern?\n[Matthias m] Wenn das Ersatzteil wie angekündigt kommt, Mitte November. Ich würde aber vorsichtshalber Anfang Dezember sagen. Lieber liefern wir früher als angekündigt als umgekehrt.\n[Katrin f] Sehe ich auch so. Ein Spiel, das wir versprechen und dann nicht liefern, schadet uns mehr als eines, das ein paar Tage später kommt. Wir nennen also Anfang Dezember. Und noch etwas, Matthias: Sollten wir nicht für die nächsten Spiele eine zweite Druckerei haben, damit wir nicht noch einmal so abhängig sind?\n[Matthias m] Darüber habe ich schon mit einer Druckerei in Thüringen gesprochen. Die ist etwa ein Fünftel teurer, aber deutlich schneller. Für große Auflagen lohnt sich das nicht, für Nachdrucke vielleicht schon.\n[Katrin f] Gut, mach mir da bitte bis Ende des Monats einen Vorschlag. Jana, du kümmerst dich um die Exemplare bei der Grafikerin und um die Sonderkarten.\n[Jana f] Mache ich. Die Karten kann übrigens dieselbe Druckerei machen wie die Messeexemplare, dann sparen wir uns eine zweite Lieferung.\n[Katrin f] Sehr gut. Und den Händlern schreibe ich selbst. Die sollen von der Verspätung lieber von mir hören als aus der Gerüchteküche.",
+          "questions": [
+            {
+              "question": "Warum verzögert sich die Produktion von „Leuchtfeuer“?",
+              "options": [
+                "Eine Maschine in der Druckerei ist ausgefallen.",
+                "Es fehlt an Papier.",
+                "Die Druckerei hat einen anderen Auftrag vorgezogen."
+              ],
+              "correctIndex": 0,
+              "evidence": "weil eine ihrer beiden Stanzmaschinen ausgefallen ist"
+            },
+            {
+              "question": "Was spricht für Matthias gegen die Vorstellung mit den vorhandenen Prototypen?",
+              "options": [
+                "Sie könnten auf der Messe kaputtgehen.",
+                "Sie wirken unfertig, und gerade das Aussehen soll das Spiel verkaufen.",
+                "Sie zeigen noch nicht alle Spielregeln."
+              ],
+              "correctIndex": 1,
+              "evidence": "Bei einem Spiel, das wir vor allem über die Optik verkaufen wollen, halte ich das für riskant."
+            },
+            {
+              "question": "Wie begründet Jana die Kosten für die zusätzlichen Exemplare?",
+              "options": [
+                "Die Grafikerin macht ihnen einen Sonderpreis.",
+                "Die Exemplare können später noch verkauft werden.",
+                "Sonst wäre das deutlich höhere Geld für den Stand verschwendet."
+              ],
+              "correctIndex": 2,
+              "evidence": "haben wir das Geld für den Stand praktisch umsonst ausgegeben"
+            },
+            {
+              "question": "Unter welcher Bedingung ist Matthias mit den neuen Exemplaren einverstanden?",
+              "options": [
+                "Die Grafikerin muss sie kostenlos herstellen.",
+                "Die Besucher müssen erfahren, dass es noch keine endgültigen Exemplare sind.",
+                "Das Spiel darf auf der Messe nicht verkauft werden."
+              ],
+              "correctIndex": 1,
+              "evidence": "dass am Stand gut sichtbar steht, dass es sich um Vorabexemplare handelt"
+            },
+            {
+              "question": "Warum verzichtet der Verlag auf den Rabatt?",
+              "options": [
+                "Er will die Händler nicht verärgern, über die er am meisten verkauft.",
+                "Der Rabatt würde den Verlag zu viel kosten.",
+                "Sammler interessieren sich nicht für niedrigere Preise."
+              ],
+              "correctIndex": 0,
+              "evidence": "Mit den Händlern dürfen wir es uns nicht verscherzen"
+            },
+            {
+              "question": "Was bekommen Kunden, die auf der Messe vorbestellen?",
+              "options": [
+                "einen Preisnachlass",
+                "eine besondere Spielkarte",
+                "einen Preisnachlass und eine besondere Spielkarte"
+              ],
+              "correctIndex": 1,
+              "evidence": "Lassen wir den Rabatt weg und bleiben bei der Karte."
+            },
+            {
+              "question": "Welchen Liefertermin nennt der Verlag den Kunden?",
+              "options": [
+                "Mitte November",
+                "Ende Oktober",
+                "Anfang Dezember"
+              ],
+              "correctIndex": 2,
+              "evidence": "Wir nennen also Anfang Dezember."
+            },
+            {
+              "question": "Was sagt Matthias über die Druckerei in Thüringen?",
+              "options": [
+                "Sie ist günstiger als die bisherige.",
+                "Sie kommt eher für Nachdrucke in Frage.",
+                "Sie hat schon früher für den Verlag gearbeitet."
+              ],
+              "correctIndex": 1,
+              "evidence": "für Nachdrucke vielleicht schon"
+            },
+            {
+              "question": "Wie will Jana bei den Sonderkarten sparen?",
+              "options": [
+                "Sie lässt sie zusammen mit den Messeexemplaren herstellen.",
+                "Sie lässt sie in Thüringen drucken.",
+                "Sie verzichtet auf eine eigene Gestaltung."
+              ],
+              "correctIndex": 0,
+              "evidence": "dann sparen wir uns eine zweite Lieferung"
+            },
+            {
+              "question": "Wer informiert die Händler über die Verspätung?",
+              "options": [
+                "Jana",
+                "Matthias",
+                "Katrin"
+              ],
+              "correctIndex": 2,
+              "evidence": "Und den Händlern schreibe ich selbst."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "It is not the paper, as they first thought. One of the printer's two die-cutting machines has broken down.",
+            "de": "Es liegt nicht am Papier, wie sie zuerst dachten. Eine der beiden Stanzmaschinen der Druckerei ist ausgefallen."
+          },
+          {
+            "en": "The three handmade copies look unfinished, which is risky for a game they want to sell mainly on its looks.",
+            "de": "Die drei handgebauten Exemplare wirken unfertig. Das ist riskant, weil das Spiel vor allem über die Optik verkauft werden soll."
+          },
+          {
+            "en": "Without a new game at the fair, the much more expensive stand would be money wasted.",
+            "de": "Ohne neues Spiel auf der Messe wäre das Geld für den viel teureren Stand praktisch umsonst ausgegeben."
+          },
+          {
+            "en": "He insists that a clearly visible sign says they are advance copies, so nobody complains later.",
+            "de": "Er besteht darauf, dass am Stand gut sichtbar steht, dass es Vorabexemplare sind, damit sich später niemand beschwert."
+          },
+          {
+            "en": "The retailers dislike being undercut, and most of the publisher's sales still go through them.",
+            "de": "Die Händler mögen es nicht, wenn der Verlag billiger verkauft, und über sie läuft der größte Teil des Umsatzes."
+          },
+          {
+            "en": "The discount is dropped, but pre-orders still get the extra lighthouse card.",
+            "de": "Der Rabatt fällt weg, aber die zusätzliche Leuchtturmkarte bleibt."
+          },
+          {
+            "en": "Mid-November is possible if the spare part arrives, but to be safe they announce early December.",
+            "de": "Mitte November wäre möglich, wenn das Ersatzteil kommt. Zur Sicherheit nennen sie aber Anfang Dezember."
+          },
+          {
+            "en": "It is about a fifth more expensive but faster, so it is not worth it for large print runs, but perhaps for reprints.",
+            "de": "Sie ist etwa ein Fünftel teurer, aber schneller. Für große Auflagen lohnt sie sich nicht, für Nachdrucke vielleicht schon."
+          },
+          {
+            "en": "The same printer that makes the fair copies can print the cards, which saves a second delivery.",
+            "de": "Dieselbe Druckerei wie für die Messeexemplare kann die Karten drucken. So spart man eine zweite Lieferung."
+          },
+          {
+            "en": "Katrin writes to the retailers herself, so they hear about the delay from her rather than through rumours.",
+            "de": "Katrin schreibt den Händlern selbst. Sie sollen von der Verspätung von ihr hören und nicht durch Gerüchte."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-c1__hoeren-2__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Anke f] Also, Flo, ich hab den Brief vom Notar jetzt dreimal gelesen. Das Haus am Wiesensee gehört offiziell uns beiden, und wir müssen uns überlegen, was wir damit machen.\n[Florian m] Ich weiß. Ehrlich gesagt hatte ich gehofft, dass wir das noch ein paar Monate vor uns herschieben können.\n[Anke f] Können wir nicht. Die Gemeinde hat geschrieben, dass das Dach bis zum Herbst repariert werden muss, weil sich schon Ziegel lösen. Der Dachdecker hat von etwa vierzigtausend Euro gesprochen.\n[Florian m] Vierzigtausend. Die hab ich nicht. Du?\n[Anke f] Allein auch nicht. Deshalb finde ich ja, wir sollten ernsthaft über einen Verkauf nachdenken. Ein Makler aus der Gegend meinte, für ein Haus mit Seegrundstück bekämen wir problemlos einen guten Preis, selbst mit dem kaputten Dach.\n[Florian m] Ein Makler. Natürlich sagt der das, der will ja verdienen. Anke, das ist das Haus, in dem wir jeden Sommer verbracht haben. Papa hat den Steg selbst gebaut.\n[Anke f] Glaubst du, mir fällt das leicht? Aber ich wohne fünf Stunden entfernt, und du warst in den letzten drei Jahren genau zweimal dort. Ein Haus, um das sich keiner kümmert, verfällt. Das hätte Papa auch nicht gewollt.\n[Florian m] Und wenn wir es an Feriengäste vermieten? Im Sommer ist am See doch alles ausgebucht. Damit könnten wir das Dach abbezahlen.\n[Anke f] Daran hab ich auch schon gedacht. Aber wer soll die Gäste empfangen, die Wäsche wechseln, putzen? Das kann man nicht aus der Ferne machen.\n[Florian m] Dafür gibt es Agenturen. Frau Möller von nebenan vermietet ihr Haus über eine Agentur in Seedorf. Die kümmern sich um alles, behalten dafür aber ein Viertel der Einnahmen.\n[Anke f] Ein Viertel. Und dann noch Steuern, Versicherung … Hast du das mal durchgerechnet?\n[Florian m] Grob, ja, gestern Abend. Wenn das Haus von Juni bis September vermietet ist, bleiben nach allen Kosten ungefähr zwölftausend im Jahr übrig. Dann wäre das Dach in gut drei Jahren bezahlt.\n[Anke f] Wenn. Und was ist mit den anderen acht Monaten? Da steht das Haus leer und kostet nur.\n[Florian m] Im Winter wollte ich es ohnehin selbst nutzen. Ich überlege nämlich, ob ich nicht ganz von dort aus arbeite. Meine Firma hätte nichts dagegen, solange ich einmal im Monat ins Büro komme.\n[Anke f] Moment. Du willst an den See ziehen? Davon hast du nie etwas gesagt.\n[Florian m] Weil ich mir selbst noch nicht sicher bin. Aber seit Papas Tod denke ich viel darüber nach. In der Stadt hält mich eigentlich nur noch die Wohnung.\n[Anke f] Hm. Das ändert natürlich einiges. Aber eins muss dir klar sein: Wenn du das Haus im Winter nutzt, kann ich nicht die Hälfte der Kosten tragen, ohne etwas davon zu haben.\n[Florian m] Das ist fair. Was hältst du davon: Ich zahle dir für die Wintermonate eine Miete für deine Hälfte. Und im Sommer halten wir dir zwei Wochen frei, die nicht vermietet werden, für dich und die Kinder.\n[Anke f] Das klingt gar nicht so schlecht. Aber das Dach ist trotzdem in ein paar Monaten fällig und nicht in drei Jahren. Woher nehmen wir das Geld bis dahin?\n[Florian m] Von der Bank. Ich hab schon mit meinem Berater gesprochen. Weil auf dem Haus keine Schulden liegen, würden sie uns einen Kredit geben, und zwar zu ziemlich guten Bedingungen.\n[Anke f] Einen Kredit, für den wir beide haften. Flo, ich hab zwei Kinder. Ich unterschreibe so etwas nicht, nur weil es sich gut anhört.\n[Florian m] Das verlange ich ja auch nicht. Lass uns zusammen zu dem Berater gehen, und du stellst alle Fragen, die du hast. Und wenn du danach immer noch Nein sagst, dann reden wir ernsthaft über den Verkauf. Versprochen.\n[Anke f] Gut. Aber ich will vorher noch einen zweiten Dachdecker fragen. Vierzigtausend kommen mir viel vor, und der erste war ein Bekannter des Maklers.\n[Florian m] Siehst du, dem Makler traust du also auch nicht ganz. Ich ruf morgen den Dachdecker in Seedorf an, den Frau Möller empfohlen hat.",
+          "questions": [
+            {
+              "question": "Warum müssen die Geschwister bald eine Entscheidung treffen?",
+              "options": [
+                "Ein Käufer wartet auf eine Antwort.",
+                "Das Dach muss bald repariert werden.",
+                "Der Notar hat ihnen eine Frist gesetzt."
+              ],
+              "correctIndex": 1,
+              "evidence": "dass das Dach bis zum Herbst repariert werden muss"
+            },
+            {
+              "question": "Welches Argument nennt Anke für einen Verkauf?",
+              "options": [
+                "Sie braucht dringend Geld für ihre Familie.",
+                "Sie verbindet keine guten Erinnerungen mit dem Haus.",
+                "Keiner von beiden kann sich regelmäßig um das Haus kümmern."
+              ],
+              "correctIndex": 2,
+              "evidence": "Ein Haus, um das sich keiner kümmert, verfällt."
+            },
+            {
+              "question": "Was erfährt man über die Agentur in Seedorf?",
+              "options": [
+                "Sie übernimmt die ganze Arbeit, behält aber einen Teil der Einnahmen.",
+                "Sie gehört Frau Möller.",
+                "Sie vermietet Häuser nur im Sommer."
+              ],
+              "correctIndex": 0,
+              "evidence": "Die kümmern sich um alles, behalten dafür aber ein Viertel der Einnahmen."
+            },
+            {
+              "question": "Was hat Florian für die Wintermonate vor?",
+              "options": [
+                "Er will das Haus an Dauermieter vermieten.",
+                "Er möchte selbst dort wohnen und arbeiten.",
+                "Er will das Haus in dieser Zeit renovieren."
+              ],
+              "correctIndex": 1,
+              "evidence": "Im Winter wollte ich es ohnehin selbst nutzen."
+            },
+            {
+              "question": "Was schlägt Florian Anke vor?",
+              "options": [
+                "Er kauft ihr ihre Hälfte sofort ab.",
+                "Er zahlt ihr Miete dafür, dass er das Haus im Winter nutzt.",
+                "Sie teilen alle Kosten genau zur Hälfte."
+              ],
+              "correctIndex": 1,
+              "evidence": "Ich zahle dir für die Wintermonate eine Miete für deine Hälfte."
+            },
+            {
+              "question": "Was soll Anke im Sommer bekommen?",
+              "options": [
+                "zwei Wochen, in denen sie das Haus selbst nutzen kann",
+                "die gesamten Mieteinnahmen",
+                "einen ganzen Monat ohne Gäste"
+              ],
+              "correctIndex": 0,
+              "evidence": "im Sommer halten wir dir zwei Wochen frei"
+            },
+            {
+              "question": "Warum zögert Anke beim Kredit?",
+              "options": [
+                "Die Zinsen sind ihr zu hoch.",
+                "Die Bank hat noch keine Zusage gegeben.",
+                "Sie will nicht leichtfertig eine gemeinsame Haftung übernehmen."
+              ],
+              "correctIndex": 2,
+              "evidence": "Ich unterschreibe so etwas nicht, nur weil es sich gut anhört."
+            },
+            {
+              "question": "Was verspricht Florian?",
+              "options": [
+                "Er nimmt den Kredit allein auf.",
+                "Sie sprechen über einen Verkauf, wenn Anke nach dem Bankgespräch weiter dagegen ist.",
+                "Er zieht auf jeden Fall an den See."
+              ],
+              "correctIndex": 1,
+              "evidence": "dann reden wir ernsthaft über den Verkauf"
+            },
+            {
+              "question": "Warum will Anke einen zweiten Dachdecker fragen?",
+              "options": [
+                "Sie misstraut dem ersten Angebot.",
+                "Der erste Dachdecker hat erst im Winter Zeit.",
+                "Die Gemeinde verlangt zwei Angebote."
+              ],
+              "correctIndex": 0,
+              "evidence": "der erste war ein Bekannter des Maklers"
+            },
+            {
+              "question": "Wer kümmert sich um das zweite Angebot für das Dach?",
+              "options": [
+                "Anke",
+                "Florian",
+                "Frau Möller"
+              ],
+              "correctIndex": 1,
+              "evidence": "Ich ruf morgen den Dachdecker in Seedorf an"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The municipality has written that the roof must be repaired by autumn, which will cost about forty thousand euros.",
+            "de": "Die Gemeinde verlangt, dass das Dach bis zum Herbst repariert wird. Das kostet etwa vierzigtausend Euro."
+          },
+          {
+            "en": "She lives five hours away and Florian has hardly been there, and a house nobody looks after falls into disrepair.",
+            "de": "Sie wohnt fünf Stunden entfernt, Florian war kaum dort, und ein Haus, um das sich keiner kümmert, verfällt."
+          },
+          {
+            "en": "The agency takes care of everything, but keeps a quarter of the income.",
+            "de": "Die Agentur kümmert sich um alles, behält aber ein Viertel der Einnahmen."
+          },
+          {
+            "en": "He wants to use the house himself in winter and work from there, which his employer would allow.",
+            "de": "Er will das Haus im Winter selbst nutzen und von dort aus arbeiten. Seine Firma hätte nichts dagegen."
+          },
+          {
+            "en": "So that Anke is not paying half the costs for nothing, he offers to pay her rent for her half during the winter.",
+            "de": "Damit Anke nicht die Hälfte der Kosten trägt, ohne etwas davon zu haben, will er ihr für den Winter Miete für ihre Hälfte zahlen."
+          },
+          {
+            "en": "Two summer weeks will not be let, so she and her children can use the house.",
+            "de": "Zwei Wochen im Sommer werden nicht vermietet. Dann können sie und die Kinder das Haus nutzen."
+          },
+          {
+            "en": "Both would be liable, and with two children she will not sign just because it sounds good.",
+            "de": "Beide würden haften, und mit zwei Kindern unterschreibt sie nicht, nur weil es gut klingt."
+          },
+          {
+            "en": "They will see the adviser together. If Anke still says no afterwards, they will seriously discuss selling.",
+            "de": "Sie gehen zusammen zum Berater. Wenn Anke danach immer noch Nein sagt, reden sie ernsthaft über den Verkauf."
+          },
+          {
+            "en": "Forty thousand seems a lot to her, and the first roofer is an acquaintance of the estate agent.",
+            "de": "Vierzigtausend kommen ihr viel vor, und der erste Dachdecker ist ein Bekannter des Maklers."
+          },
+          {
+            "en": "Florian will call the roofer in Seedorf whom Frau Möller recommended.",
+            "de": "Florian ruft morgen den Dachdecker in Seedorf an, den Frau Möller empfohlen hat."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -12,6 +12,8 @@ export const TESTOUT_COOLDOWN_HOURS = 24;
 export function isTestOutEligibleType(type: ExerciseType, aiAvailable: boolean): boolean {
   if (type === 'multiple_choice' || type === 'fill_blank') return true;
   if (type === 'passage_questions' || type === 'matching' || type === 'cloze') return true; // graded without AI
+  // Spec: drawn only when its audio is cached (checked by the caller, eligibleCandidates).
+  if (type === 'audio_questions') return true;
   if (type === 'free_text') return aiAvailable;
   return false;
 }

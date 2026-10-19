@@ -1,0 +1,241 @@
+{
+  "formatId": "telc-b1",
+  "partId": "hoeren-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b1__hoeren-3__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter phone\n[Ansage f] Text 1.\n[Sprechstundenhilfe f] Guten Tag, hier ist die Zahnarztpraxis Doktor Hansen. Wir rufen wegen Ihres Termins am Mittwoch an.\n[Sprechstundenhilfe f] Leider ist Doktor Hansen an diesem Tag krank. Wir können Ihnen einen neuen Termin am Freitag um zehn Uhr anbieten.\n[Sprechstundenhilfe f] Bitte rufen Sie uns kurz zurück und sagen Sie, ob das für Sie passt.\n[Ansage f] Text 2.\n[Markus m] Hallo Anna, hier ist Markus. Du, wegen Samstag: Wir grillen nicht bei Jens im Garten, weil Regen angesagt ist.\n[Markus m] Wir treffen uns stattdessen in seiner Wohnung, gleiche Zeit. Bring bitte trotzdem den Salat mit, den du versprochen hast. Bis dann!\n[Ansage f] Text 3.\n[Herr Berger m] Guten Tag, Frau Novak, hier ist Berger von der Autowerkstatt. Ihr Wagen ist fertig. Wir mussten nur die Bremsen erneuern, das kostet zweihundertdreißig Euro.\n[Herr Berger m] Sie können das Auto heute noch bis achtzehn Uhr abholen oder morgen ab sieben Uhr.\n[Ansage f] Text 4.\n[Frau Lang f] Hallo, Herr Schulz, hier spricht Sabine Lang aus der Buchhaltung. Ich brauche bis morgen noch Ihre Rechnungen von der Dienstreise nach Wien.\n[Frau Lang f] Sie können sie mir einfach per E-Mail schicken. Die Originale brauche ich erst nächste Woche.\n[Ansage f] Text 5.\n[Ansage f] Herzlich willkommen beim Bürgeramt. Unsere Telefonzeiten sind montags bis freitags von acht bis zwölf Uhr.\n[Ansage f] Wenn Sie einen neuen Personalausweis beantragen möchten, buchen Sie bitte vorher einen Termin im Internet.",
+          "questions": [
+            {
+              "question": "Der Termin beim Zahnarzt findet wie geplant am Mittwoch statt.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Leider ist Doktor Hansen an diesem Tag krank."
+            },
+            {
+              "question": "Anna soll etwas zum Essen mitbringen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Bring bitte trotzdem den Salat mit"
+            },
+            {
+              "question": "Frau Novak kann ihr Auto schon heute abholen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Sie können das Auto heute noch bis achtzehn Uhr abholen"
+            },
+            {
+              "question": "Herr Schulz muss die Originalrechnungen bis morgen abgeben.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Die Originale brauche ich erst nächste Woche."
+            },
+            {
+              "question": "Telefonisch erreicht man das Bürgeramt nur am Vormittag.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Unsere Telefonzeiten sind montags bis freitags von acht bis zwölf Uhr."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The dentist is ill on Wednesday, so the practice offers a new appointment on Friday.",
+            "de": "Doktor Hansen ist am Mittwoch krank. Die Praxis bietet einen neuen Termin am Freitag an."
+          },
+          {
+            "en": "Markus asks Anna to bring the salad she promised.",
+            "de": "Markus bittet Anna, den Salat mitzubringen."
+          },
+          {
+            "en": "The car is ready and can be collected today until six in the evening.",
+            "de": "Das Auto ist fertig. Sie kann es heute bis achtzehn Uhr abholen."
+          },
+          {
+            "en": "By tomorrow he only has to email the receipts; the originals are needed next week.",
+            "de": "Bis morgen reicht eine E-Mail. Die Originale braucht Frau Lang erst nächste Woche."
+          },
+          {
+            "en": "The phone hours are from eight to twelve, so only in the morning.",
+            "de": "Die Telefonzeiten sind von acht bis zwölf Uhr, also nur am Vormittag."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b1__hoeren-3__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter station\n[Ansage f] Text 1.\n[Bahnsprecher m] Achtung an Gleis sieben. Der Regionalexpress nach Würzburg, planmäßige Abfahrt neun Uhr zwölf, fährt heute von Gleis drei.\n[Bahnsprecher m] Grund ist eine Störung an der Weiche. Wir bitten um Ihr Verständnis.\n[Ansage f] Text 2.\n[Zugbegleiterin f] Sehr geehrte Fahrgäste, in wenigen Minuten erreichen wir Hannover Hauptbahnhof. Leider haben wir zurzeit zwanzig Minuten Verspätung.\n[Zugbegleiterin f] Ihre Anschlusszüge nach Berlin und nach Hamburg können heute nicht warten. Bitte informieren Sie sich im Reisezentrum über andere Verbindungen.\n[Ansage f] Text 3.\n[Kaufhaussprecher m] Liebe Kundinnen und Kunden, heute ist bei uns Familientag. In der Spielwarenabteilung im dritten Stock gibt es bis sechzehn Uhr ein Programm mit Basteln und Kinderschminken.\n[Kaufhaussprecher m] Und in unserem Restaurant im Erdgeschoss essen Kinder unter zehn Jahren heute kostenlos.\n[Ansage f] Text 4.\n[Flughafensprecherin f] Passagiere des Fluges nach Palma de Mallorca werden gebeten, sofort zum Ausgang B zwölf zu kommen. Das Einsteigen ist fast beendet.\n[Flughafensprecherin f] Ich wiederhole: Flug nach Palma de Mallorca, Ausgang B zwölf.\n[Ansage f] Text 5.\n[Bahnsprecher m] Eine Information für alle Reisenden: Wegen Bauarbeiten fahren am Wochenende zwischen Fulda und Kassel keine Züge. Es gibt einen Ersatzverkehr mit Bussen.\n[Bahnsprecher m] Die Busse fahren vor dem Haupteingang ab. Bitte rechnen Sie mit etwa einer Stunde mehr Fahrzeit.",
+          "questions": [
+            {
+              "question": "Der Zug nach Würzburg fährt heute an einem anderen Gleis ab.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "fährt heute von Gleis drei"
+            },
+            {
+              "question": "Der Anschlusszug nach Berlin wartet auf die Fahrgäste.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Ihre Anschlusszüge nach Berlin und nach Hamburg können heute nicht warten."
+            },
+            {
+              "question": "Das Restaurant des Kaufhauses ist im dritten Stock.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "in unserem Restaurant im Erdgeschoss"
+            },
+            {
+              "question": "Die Passagiere nach Palma sollen sich beeilen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "werden gebeten, sofort zum Ausgang B zwölf zu kommen"
+            },
+            {
+              "question": "Die Ersatzbusse fahren hinter dem Bahnhof ab.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Die Busse fahren vor dem Haupteingang ab."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Because of a points failure, the train leaves from platform three today instead of platform seven.",
+            "de": "Wegen einer Störung fährt der Zug heute von Gleis drei, nicht von Gleis sieben."
+          },
+          {
+            "en": "The connecting trains to Berlin and Hamburg cannot wait today.",
+            "de": "Die Anschlusszüge nach Berlin und Hamburg können heute nicht warten."
+          },
+          {
+            "en": "The restaurant is on the ground floor; the toy department is on the third floor.",
+            "de": "Das Restaurant ist im Erdgeschoss. Im dritten Stock ist die Spielwarenabteilung."
+          },
+          {
+            "en": "They are asked to come to gate B twelve immediately because boarding is almost over.",
+            "de": "Sie sollen sofort zum Ausgang B zwölf kommen, weil das Einsteigen fast beendet ist."
+          },
+          {
+            "en": "The replacement buses leave in front of the main entrance.",
+            "de": "Die Busse fahren vor dem Haupteingang ab."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b1__hoeren-3__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter phone\n[Ansage f] Text 1.\n[Kinoansage m] Herzlich willkommen im Kino Lichtspielhaus. Heute Abend zeigen wir um achtzehn Uhr dreißig den Familienfilm Der kleine Drache und um einundzwanzig Uhr den Krimi Nebel über Hamburg.\n[Kinoansage m] Am Montag ist Kinotag, dann kosten alle Karten nur sechs Euro fünfzig. Karten können Sie bis eine halbe Stunde vor Beginn reservieren.\n[Ansage f] Text 2.\n[Julia f] Hallo Tom, hier ist Julia. Ich kann morgen leider nicht zum Deutschkurs kommen, mein Sohn hat Fieber.\n[Julia f] Kannst du mir bitte die Hausaufgaben schicken? Und sag der Lehrerin bitte, dass ich den Test nächste Woche trotzdem mitschreibe.\n[Ansage f] Text 3.\n[Herr Wolf m] Guten Tag, Herr Kaya, hier ist Wolf vom Fitnessstudio Aktiv. Ihr Vertrag endet am dreißigsten Juni.\n[Herr Wolf m] Wenn Sie ihn bis Ende Mai verlängern, bekommen Sie einen Monat gratis. Rufen Sie uns einfach an oder kommen Sie an der Theke vorbei.\n[Ansage f] Text 4.\n[Frau Wagner f] Guten Tag, Frau Schmitz, hier ist Wagner von der Hausverwaltung. Am Donnerstag wird im ganzen Haus das Wasser abgestellt, weil die Rohre im Keller repariert werden.\n[Frau Wagner f] Das dauert von acht bis ungefähr vierzehn Uhr. Bitte stellen Sie sich vorher etwas Wasser bereit.\n[Ansage f] Text 5.\n[Ansage f] Sie sind verbunden mit der Apotheke am Markt. Wir haben zurzeit geschlossen.\n[Ansage f] Den Notdienst hat heute die Löwen-Apotheke in der Bahnhofstraße. Sie ist bis morgen früh um acht Uhr geöffnet.",
+          "questions": [
+            {
+              "question": "Am Montag sind die Kinokarten billiger.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Am Montag ist Kinotag, dann kosten alle Karten nur sechs Euro fünfzig."
+            },
+            {
+              "question": "Julia kann morgen nicht zum Kurs, weil sie selbst krank ist.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "mein Sohn hat Fieber"
+            },
+            {
+              "question": "Herr Kaya bekommt einen Monat umsonst, wenn er den Vertrag rechtzeitig verlängert.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "bekommen Sie einen Monat gratis"
+            },
+            {
+              "question": "Am Donnerstag gibt es den ganzen Tag kein Wasser.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Das dauert von acht bis ungefähr vierzehn Uhr."
+            },
+            {
+              "question": "Die Apotheke am Markt hat heute Notdienst.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Den Notdienst hat heute die Löwen-Apotheke in der Bahnhofstraße."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Monday is cinema day, when all tickets cost only six euros fifty.",
+            "de": "Am Montag ist Kinotag. Dann kosten alle Karten nur sechs Euro fünfzig."
+          },
+          {
+            "en": "Julia is not ill herself; her son has a fever.",
+            "de": "Nicht Julia ist krank, sondern ihr Sohn hat Fieber."
+          },
+          {
+            "en": "If he extends the contract by the end of May, he gets one month free.",
+            "de": "Wenn er bis Ende Mai verlängert, bekommt er einen Monat gratis."
+          },
+          {
+            "en": "The water is only off from eight until about two in the afternoon.",
+            "de": "Das Wasser ist nur von acht bis ungefähr vierzehn Uhr abgestellt."
+          },
+          {
+            "en": "The Apotheke am Markt is closed; the Löwen-Apotheke has the emergency service today.",
+            "de": "Die Apotheke am Markt ist geschlossen. Den Notdienst hat heute die Löwen-Apotheke."
+          }
+        ]
+      }
+    }
+  ]
+}

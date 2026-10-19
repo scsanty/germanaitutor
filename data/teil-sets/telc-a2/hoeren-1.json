@@ -1,0 +1,256 @@
+{
+  "formatId": "telc-a2",
+  "partId": "hoeren-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-a2__hoeren-1__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter phone\n[Ansage f] Text 1.\n[Mitarbeiter m] Guten Tag, Frau Novak, hier ist Thomas Brandt von der Fahrschule Brandt.\n[Mitarbeiter m] Leider kann ich am Donnerstag nicht. Können wir Ihre Fahrstunde auf Freitag um sechzehn Uhr dreißig legen?\n[Mitarbeiter m] Wir treffen uns diesmal nicht vor der Fahrschule, sondern am Bahnhof, direkt vor dem Haupteingang.\n[Mitarbeiter m] Wenn das nicht geht, rufen Sie mich bitte zurück. Tschüs!\n[Ansage f] Text 2.\n[Mitarbeiterin f] Hallo, hier ist die Änderungsschneiderei Kaya. Ihre Hose ist fertig.\n[Mitarbeiterin f] Ich hatte Ihnen zehn Euro gesagt, aber die Arbeit war schwieriger. Deshalb kostet es jetzt zwölf Euro.\n[Mitarbeiterin f] Sie können die Hose ab morgen abholen. Am Samstag haben wir geschlossen. Auf Wiederhören!\n[Ansage f] Text 3.\n[Anrufer m] Hey, hier ist Lukas. Du kommst doch am Samstag zu meiner Geburtstagsparty, oder?\n[Anrufer m] Bitte bring keinen Wein mit, Getränke haben wir genug. Meine Schwester macht auch schon einen großen Salat.\n[Anrufer m] Aber kannst du vielleicht deine Gitarre mitbringen? Dann können wir am Abend zusammen singen. Bis Samstag!\n[Ansage f] Text 4.\n[Mitarbeiterin f] Guten Tag, hier spricht Lindner von der Hausverwaltung. Ich habe eine wichtige Information für alle Mieter.\n[Mitarbeiterin f] Am Dienstag repariert ein Handwerker die Wasserleitung im Keller.\n[Mitarbeiterin f] Er kommt schon um acht Uhr, aber das Wasser stellt er erst später ab. Im ganzen Haus gibt es dann von neun bis zwölf Uhr kein Wasser.\n[Mitarbeiterin f] Vielen Dank für Ihr Verständnis.\n[Ansage f] Text 5.\n[Anruferin f] Hallo, hier ist Jana. Es geht um heute Abend.\n[Anruferin f] Ich habe mich geirrt: Der Film fängt schon um neunzehn Uhr fünfundvierzig an, nicht erst um zwanzig Uhr.\n[Anruferin f] Wollen wir uns deshalb schon um Viertel nach sieben vor dem Kino treffen? Dann können wir noch Popcorn kaufen. Bis später!",
+          "questions": [
+            {
+              "question": "Fahrschule Brandt – Fahrstunde am Freitag, Treffpunkt:",
+              "options": [
+                "vor der Fahrschule",
+                "am Bahnhof",
+                "vor dem Rathaus"
+              ],
+              "correctIndex": 1,
+              "evidence": "sondern am Bahnhof, direkt vor dem Haupteingang"
+            },
+            {
+              "question": "Änderungsschneiderei – Preis für die Hose:",
+              "options": [
+                "10 Euro",
+                "20 Euro",
+                "12 Euro"
+              ],
+              "correctIndex": 2,
+              "evidence": "Deshalb kostet es jetzt zwölf Euro."
+            },
+            {
+              "question": "Party bei Lukas – bitte mitbringen:",
+              "options": [
+                "Gitarre",
+                "Wein",
+                "Salat"
+              ],
+              "correctIndex": 0,
+              "evidence": "kannst du vielleicht deine Gitarre mitbringen"
+            },
+            {
+              "question": "Hausverwaltung – am Dienstag kein Wasser:",
+              "options": [
+                "8 bis 12 Uhr",
+                "9 bis 12 Uhr",
+                "9 bis 14 Uhr"
+              ],
+              "correctIndex": 1,
+              "evidence": "von neun bis zwölf Uhr kein Wasser"
+            },
+            {
+              "question": "Jana – Treffen vor dem Kino um:",
+              "options": [
+                "19.45 Uhr",
+                "20.00 Uhr",
+                "19.15 Uhr"
+              ],
+              "correctIndex": 2,
+              "evidence": "schon um Viertel nach sieben vor dem Kino treffen"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "This time they are not meeting in front of the driving school but at the station, in front of the main entrance.",
+            "de": "Dieses Mal treffen sie sich nicht vor der Fahrschule, sondern am Bahnhof vor dem Haupteingang."
+          },
+          {
+            "en": "The tailor first said ten euros, but the work was harder, so it now costs twelve euros.",
+            "de": "Zuerst waren es zehn Euro. Die Arbeit war schwieriger, deshalb kostet die Hose jetzt zwölf Euro."
+          },
+          {
+            "en": "Lukas says not to bring wine, and his sister is making the salad. He asks for the guitar.",
+            "de": "Lukas möchte keinen Wein, und den Salat macht seine Schwester. Er bittet um die Gitarre."
+          },
+          {
+            "en": "The plumber arrives at eight, but there is no water from nine to twelve.",
+            "de": "Der Handwerker kommt um acht Uhr, aber von neun bis zwölf Uhr gibt es kein Wasser."
+          },
+          {
+            "en": "The film starts at 7.45 pm, so Jana wants to meet at a quarter past seven.",
+            "de": "Der Film beginnt um neunzehn Uhr fünfundvierzig. Jana möchte sich schon um Viertel nach sieben treffen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a2__hoeren-1__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter phone\n[Ansage f] Text 1.\n[Mitarbeiterin f] Guten Tag, hier ist die Fahrradwerkstatt Speiche. Ihr Fahrrad ist fertig, die neuen Bremsen sind drin.\n[Mitarbeiterin f] Normalerweise haben wir bis achtzehn Uhr offen, aber heute schließen wir schon um sechzehn Uhr.\n[Mitarbeiterin f] Sie können das Rad also morgen ab zehn Uhr abholen. Danke und auf Wiederhören!\n[Ansage f] Text 2.\n[Anrufer m] Hallo Sandra, hier ist Tobias. Ich bin leider krank und komme morgen nicht ins Büro.\n[Anrufer m] Kannst du bitte den Schlüssel für den Besprechungsraum holen? Normalerweise liegt er am Empfang, aber diese Woche hat ihn Frau Peters aus dem zweiten Stock.\n[Anrufer m] Und sag bitte auch Herrn Albers, dass ich nicht komme. Danke dir!\n[Ansage f] Text 3.\n[Mitarbeiter m] Guten Tag, Herr Schulze, hier ist das Möbelhaus Wohnwelt. Es geht um Ihr neues Sofa.\n[Mitarbeiter m] Leider klappt es am Mittwoch nicht. Wir bringen das Sofa jetzt am Donnerstag, zwischen acht und zwölf Uhr.\n[Mitarbeiter m] Wenn Sie da nicht zu Hause sind, rufen Sie uns bitte an. Vielen Dank!\n[Ansage f] Text 4.\n[Anruferin f] Hallo Schatz, hier ist Mama. Ich habe jetzt die Fahrkarte für Sonntag.\n[Anruferin f] Eigentlich wollte ich den Zug um zehn Uhr nehmen, aber der war schon voll.\n[Anruferin f] Ich komme jetzt um elf Uhr zwanzig am Hauptbahnhof an. Holst du mich ab? Bis Sonntag!\n[Ansage f] Text 5.\n[Mitarbeiterin f] Guten Tag, hier ist die Volkshochschule. Wir haben eine Information zu Ihrem Spanischkurs am Montagabend.\n[Mitarbeiterin f] Der Kurs ist ab nächster Woche nicht mehr in Raum zwölf. Er findet jetzt in Raum zwanzig statt, das ist im Erdgeschoss.\n[Mitarbeiterin f] Die Uhrzeit bleibt gleich. Auf Wiederhören!",
+          "questions": [
+            {
+              "question": "Fahrradwerkstatt – Fahrrad abholen: morgen ab",
+              "options": [
+                "10 Uhr",
+                "16 Uhr",
+                "18 Uhr"
+              ],
+              "correctIndex": 0,
+              "evidence": "morgen ab zehn Uhr abholen"
+            },
+            {
+              "question": "Tobias – Schlüssel für den Besprechungsraum holen:",
+              "options": [
+                "am Empfang",
+                "bei Frau Peters",
+                "bei Herrn Albers"
+              ],
+              "correctIndex": 1,
+              "evidence": "diese Woche hat ihn Frau Peters"
+            },
+            {
+              "question": "Möbelhaus Wohnwelt – Lieferung Sofa am:",
+              "options": [
+                "Mittwoch",
+                "Freitag",
+                "Donnerstag"
+              ],
+              "correctIndex": 2,
+              "evidence": "Wir bringen das Sofa jetzt am Donnerstag"
+            },
+            {
+              "question": "Mama – Ankunft am Sonntag um:",
+              "options": [
+                "10.00 Uhr",
+                "11.20 Uhr",
+                "12.20 Uhr"
+              ],
+              "correctIndex": 1,
+              "evidence": "Ich komme jetzt um elf Uhr zwanzig am Hauptbahnhof an."
+            },
+            {
+              "question": "Volkshochschule – Spanischkurs, neuer Raum:",
+              "options": [
+                "Raum 12",
+                "Raum 2",
+                "Raum 20"
+              ],
+              "correctIndex": 2,
+              "evidence": "Er findet jetzt in Raum zwanzig statt"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The shop closes at four today, so the bike can be collected from ten o'clock tomorrow.",
+            "de": "Heute schließt die Werkstatt schon um sechzehn Uhr. Man kann das Rad morgen ab zehn Uhr abholen."
+          },
+          {
+            "en": "Usually the key is at reception, but this week Frau Peters has it. Herr Albers only needs to be told that Tobias is ill.",
+            "de": "Normalerweise liegt der Schlüssel am Empfang, aber diese Woche hat ihn Frau Peters. Herr Albers soll nur wissen, dass Tobias krank ist."
+          },
+          {
+            "en": "Wednesday doesn't work, so the sofa is now delivered on Thursday.",
+            "de": "Am Mittwoch klappt es nicht. Das Sofa kommt jetzt am Donnerstag."
+          },
+          {
+            "en": "The ten o'clock train was full, so she arrives at 11.20.",
+            "de": "Der Zug um zehn Uhr war voll. Mama kommt jetzt um elf Uhr zwanzig an."
+          },
+          {
+            "en": "The course moves from room twelve to room twenty on the ground floor.",
+            "de": "Der Kurs ist nicht mehr in Raum zwölf, sondern jetzt in Raum zwanzig im Erdgeschoss."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a2__hoeren-1__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter phone\n[Ansage f] Text 1.\n[Anruferin f] Hallo, hier ist Sabine von nebenan. Ich habe heute Morgen ein Paket für Sie angenommen.\n[Anruferin f] Ich arbeite heute bis siebzehn Uhr und muss danach noch einkaufen. Ich bin also erst ab achtzehn Uhr zu Hause.\n[Anruferin f] Klingeln Sie einfach bei mir. Bis dann!\n[Ansage f] Text 2.\n[Mitarbeiter m] Guten Tag, hier ist die Tierarztpraxis am Park. Leider müssen wir den Termin für Ihren Hund am Montag absagen, die Ärztin ist krank.\n[Mitarbeiter m] Am Donnerstag ist leider schon alles voll, aber am Mittwoch um neun Uhr hätten wir noch einen Termin frei.\n[Mitarbeiter m] Bitte rufen Sie uns kurz zurück. Danke!\n[Ansage f] Text 3.\n[Anrufer m] Hi, hier ist Murat. Das Fußballtraining heute Abend fällt aus. Die Sporthalle ist diese Woche geschlossen.\n[Anrufer m] Auf dem Schulhof geht es leider auch nicht, da ist am Wochenende ein Flohmarkt.\n[Anrufer m] Wir spielen deshalb am Samstag um zehn im Stadtpark, direkt neben dem Spielplatz. Bis Samstag!\n[Ansage f] Text 4.\n[Mitarbeiterin f] Guten Tag, hier ist das Bürgerbüro. Ihr neuer Personalausweis ist da.\n[Mitarbeiterin f] Sie können ihn ab Montag abholen. Ein neues Foto brauchen Sie nicht mehr.\n[Mitarbeiterin f] Bitte bringen Sie aber Ihren alten Ausweis mit. Auf Wiederhören!\n[Ansage f] Text 5.\n[Mitarbeiter m] Guten Tag, hier ist das Restaurant Olivo. Sie wollten für Freitag einen Tisch für sechs Personen um neunzehn Uhr dreißig.\n[Mitarbeiter m] Um diese Zeit ist leider alles voll.\n[Mitarbeiter m] Wir können Ihnen aber einen Tisch um zwanzig Uhr geben. Bitte sagen Sie uns bis morgen Bescheid.",
+          "questions": [
+            {
+              "question": "Paket bei der Nachbarin abholen: heute ab",
+              "options": [
+                "17 Uhr",
+                "18 Uhr",
+                "8 Uhr"
+              ],
+              "correctIndex": 1,
+              "evidence": "Ich bin also erst ab achtzehn Uhr zu Hause."
+            },
+            {
+              "question": "Tierarztpraxis – neuer Termin für den Hund am:",
+              "options": [
+                "Mittwoch",
+                "Montag",
+                "Donnerstag"
+              ],
+              "correctIndex": 0,
+              "evidence": "aber am Mittwoch um neun Uhr hätten wir noch einen Termin frei"
+            },
+            {
+              "question": "Murat – Fußball am Samstag, Ort:",
+              "options": [
+                "in der Sporthalle",
+                "auf dem Schulhof",
+                "im Stadtpark"
+              ],
+              "correctIndex": 2,
+              "evidence": "Wir spielen deshalb am Samstag um zehn im Stadtpark"
+            },
+            {
+              "question": "Bürgerbüro – zum Abholen mitbringen:",
+              "options": [
+                "ein neues Foto",
+                "den alten Ausweis",
+                "den Reisepass"
+              ],
+              "correctIndex": 1,
+              "evidence": "Bitte bringen Sie aber Ihren alten Ausweis mit."
+            },
+            {
+              "question": "Restaurant Olivo – freier Tisch am Freitag um:",
+              "options": [
+                "19.00 Uhr",
+                "19.30 Uhr",
+                "20.00 Uhr"
+              ],
+              "correctIndex": 2,
+              "evidence": "einen Tisch um zwanzig Uhr geben"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Sabine works until five and then goes shopping, so she is only home from six.",
+            "de": "Sabine arbeitet bis siebzehn Uhr und kauft danach ein. Sie ist erst ab achtzehn Uhr zu Hause."
+          },
+          {
+            "en": "Monday is cancelled and Thursday is full. There is a free appointment on Wednesday at nine.",
+            "de": "Der Termin am Montag fällt aus, und am Donnerstag ist alles voll. Am Mittwoch um neun Uhr ist noch frei."
+          },
+          {
+            "en": "The sports hall is closed and the schoolyard has a flea market, so they play in the city park.",
+            "de": "Die Sporthalle ist zu, und auf dem Schulhof ist ein Flohmarkt. Sie spielen im Stadtpark."
+          },
+          {
+            "en": "A new photo is not needed any more, but the old ID card must be brought along.",
+            "de": "Ein neues Foto braucht man nicht mehr. Man soll aber den alten Ausweis mitbringen."
+          },
+          {
+            "en": "Half past seven is fully booked, but the restaurant can offer a table at eight.",
+            "de": "Um neunzehn Uhr dreißig ist alles voll. Das Restaurant hat aber um zwanzig Uhr einen Tisch frei."
+          }
+        ]
+      }
+    }
+  ]
+}

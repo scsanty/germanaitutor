@@ -1,5 +1,5 @@
 {
-  "seedVersion": "9",
+  "seedVersion": "10",
   "formatVersion": 3,
   "track": "generic",
   "level": "A1",
@@ -1110,45 +1110,93 @@
       }
     },
     {
-      "id": "a1-listening-public-announcements__ex0",
+      "id": "a1-listening-public-announcements__ex3",
       "lessonId": "a1-listening-public-announcements",
       "track": "generic",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Ansage: 'Achtung an Gleis 3: Der Regionalzug nach Köln hat 20 Minuten Verspätung.' - Wie viel Verspätung hat der Zug?",
-        "options": [
-          "10 Minuten",
-          "20 Minuten",
-          "30 Minuten",
-          "Er ist pünktlich"
-        ],
-        "correctIndex": 1
+        "instruction": {
+          "en": "Listen to the announcements at the train station and answer the questions.",
+          "de": "Hör die Durchsagen am Bahnhof und beantworte die Fragen."
+        },
+        "transcript": "@filter station\n[Ansage f] Achtung an Gleis drei: Der Regionalzug nach Köln hat heute zwanzig Minuten Verspätung.\n[Ansage f] Wir bitten um Entschuldigung.\n[Ansage f] Achtung, eine Gleisänderung: Der Zug nach Bonn fährt heute nicht von Gleis zwei, sondern von Gleis vier ab.\n[Ansage f] Abfahrt ist um zehn Uhr fünfzehn.",
+        "questions": [
+          {
+            "question": "Wie viel Verspätung hat der Zug nach Köln?",
+            "options": [
+              "10 Minuten",
+              "20 Minuten",
+              "30 Minuten"
+            ],
+            "correctIndex": 1,
+            "evidence": "zwanzig Minuten Verspätung"
+          },
+          {
+            "question": "Von welchem Gleis fährt der Zug nach Bonn heute ab?",
+            "options": [
+              "Gleis 2",
+              "Gleis 3",
+              "Gleis 4"
+            ],
+            "correctIndex": 2,
+            "evidence": "sondern von Gleis vier ab"
+          },
+          {
+            "question": "Wann fährt der Zug nach Bonn ab?",
+            "options": [
+              "um 10:15 Uhr",
+              "um 10:50 Uhr",
+              "um 11:15 Uhr"
+            ],
+            "correctIndex": 0,
+            "evidence": "zehn Uhr fünfzehn"
+          }
+        ]
       }
     },
     {
-      "id": "a1-listening-public-announcements__ex1",
+      "id": "a1-listening-public-announcements__ex4",
       "lessonId": "a1-listening-public-announcements",
       "track": "generic",
-      "type": "fill_blank",
+      "type": "audio_questions",
       "content": {
-        "textWithBlank": "Ansage: 'Der Zug fährt heute nicht von Gleis 2, sondern von Gleis ___ ab.' (spoken number: vier)",
-        "correctAnswer": "4"
-      }
-    },
-    {
-      "id": "a1-listening-public-announcements__ex2",
-      "lessonId": "a1-listening-public-announcements",
-      "track": "generic",
-      "type": "multiple_choice",
-      "content": {
-        "question": "Ansage: 'Liebe Kunden, Sonderangebot in der Obstabteilung: Ein Kilo Orangen heute für nur 1 Euro 50.' - Was ist im Angebot?",
-        "options": [
-          "Äpfel",
-          "Bananen",
-          "Orangen",
-          "Kartoffeln"
-        ],
-        "correctIndex": 2
+        "instruction": {
+          "en": "Listen to the announcement in the supermarket and answer the questions.",
+          "de": "Hör die Durchsage im Supermarkt und beantworte die Fragen."
+        },
+        "transcript": "@filter station\n[Ansage m] Liebe Kundinnen und Kunden, heute haben wir ein Sonderangebot in der Obstabteilung.\n[Ansage m] Ein Kilo Orangen kostet heute nur einen Euro fünfzig.\n[Ansage m] Und bitte beachten Sie: Unser Markt schließt heute schon um achtzehn Uhr.",
+        "questions": [
+          {
+            "question": "Was ist heute im Angebot?",
+            "options": [
+              "Äpfel",
+              "Bananen",
+              "Orangen"
+            ],
+            "correctIndex": 2,
+            "evidence": "Ein Kilo Orangen"
+          },
+          {
+            "question": "Wie viel kostet das Angebot pro Kilo?",
+            "options": [
+              "1,15 Euro",
+              "1,50 Euro",
+              "5,10 Euro"
+            ],
+            "correctIndex": 1,
+            "evidence": "nur einen Euro fünfzig"
+          },
+          {
+            "question": "Wann schließt der Markt heute?",
+            "options": [
+              "um 18 Uhr",
+              "um 19 Uhr",
+              "um 20 Uhr"
+            ],
+            "correctIndex": 0,
+            "evidence": "schon um achtzehn Uhr"
+          }
+        ]
       }
     },
     {
@@ -1268,45 +1316,138 @@
       }
     },
     {
-      "id": "a1-listening-dialogues-numbers-prices__ex0",
+      "id": "a1-listening-dialogues-numbers-prices__ex3",
       "lessonId": "a1-listening-dialogues-numbers-prices",
       "track": "generic",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Gespräch: 'Wie viel kostet der Pullover?' - 'Er ist reduziert und kostet jetzt 29 Euro.' - Was kostet der Pullover?",
-        "options": [
-          "19 Euro",
-          "29 Euro",
-          "39 Euro",
-          "92 Euro"
-        ],
-        "correctIndex": 1
+        "instruction": {
+          "en": "Listen to the conversation in a clothes shop and answer the questions.",
+          "de": "Hör das Gespräch im Kleidergeschäft und beantworte die Fragen."
+        },
+        "transcript": "@filter none\n[Kundin f] Entschuldigung, wie viel kostet der Pullover hier?\n[Verkäufer m] Der blaue? Der ist reduziert. Er kostet jetzt nur noch neunundzwanzig Euro.\n[Kundin f] Oh, und vorher?\n[Verkäufer m] Vorher hat er neunundvierzig Euro gekostet.\n[Kundin f] Super, den nehme ich. Haben Sie ihn auch in Größe achtunddreißig?\n[Verkäufer m] Moment, ja, hier ist noch einer.",
+        "questions": [
+          {
+            "question": "Was kostet der Pullover jetzt?",
+            "options": [
+              "19 Euro",
+              "29 Euro",
+              "49 Euro"
+            ],
+            "correctIndex": 1,
+            "evidence": "nur noch neunundzwanzig Euro"
+          },
+          {
+            "question": "Wie viel hat der Pullover vorher gekostet?",
+            "options": [
+              "29 Euro",
+              "39 Euro",
+              "49 Euro"
+            ],
+            "correctIndex": 2,
+            "evidence": "neunundvierzig Euro"
+          },
+          {
+            "question": "Welche Größe möchte die Frau?",
+            "options": [
+              "Größe 38",
+              "Größe 40",
+              "Größe 42"
+            ],
+            "correctIndex": 0,
+            "evidence": "in Größe achtunddreißig"
+          }
+        ]
       }
     },
     {
-      "id": "a1-listening-dialogues-numbers-prices__ex1",
+      "id": "a1-listening-dialogues-numbers-prices__ex4",
       "lessonId": "a1-listening-dialogues-numbers-prices",
       "track": "generic",
-      "type": "fill_blank",
+      "type": "audio_questions",
       "content": {
-        "textWithBlank": "Verkäufer: 'Zwei Brote kosten genau ___ Euro.' (spoken: sechs)",
-        "correctAnswer": "6"
+        "instruction": {
+          "en": "Listen to the conversation in the bakery and answer the questions.",
+          "de": "Hör das Gespräch in der Bäckerei und beantworte die Fragen."
+        },
+        "transcript": "@filter none\n[Verkäuferin f] Guten Morgen! Was darf es sein?\n[Kunde m] Zwei Brote, bitte. Was kosten die zusammen?\n[Verkäuferin f] Zwei Brote kosten genau sechs Euro.\n[Kunde m] Gut. Und noch vier Brötchen, bitte.\n[Verkäuferin f] Gern. Das macht dann zusammen sieben Euro sechzig.",
+        "questions": [
+          {
+            "question": "Was kosten die zwei Brote?",
+            "options": [
+              "6 Euro",
+              "7 Euro",
+              "16 Euro"
+            ],
+            "correctIndex": 0,
+            "evidence": "genau sechs Euro"
+          },
+          {
+            "question": "Wie viele Brötchen kauft der Mann?",
+            "options": [
+              "zwei",
+              "vier",
+              "sechs"
+            ],
+            "correctIndex": 1,
+            "evidence": "noch vier Brötchen"
+          },
+          {
+            "question": "Wie viel bezahlt der Mann insgesamt?",
+            "options": [
+              "6,70 Euro",
+              "7,16 Euro",
+              "7,60 Euro"
+            ],
+            "correctIndex": 2,
+            "evidence": "sieben Euro sechzig"
+          }
+        ]
       }
     },
     {
-      "id": "a1-listening-dialogues-numbers-prices__ex2",
+      "id": "a1-listening-dialogues-numbers-prices__ex5",
       "lessonId": "a1-listening-dialogues-numbers-prices",
       "track": "generic",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Frau: 'Wann kommt der Bus?' - Mann: 'Um dreizehn Uhr fünfundvierzig.' - Welche Uhrzeit ist gemeint?",
-        "options": [
-          "13:15",
-          "13:45",
-          "14:15",
-          "14:45"
-        ],
-        "correctIndex": 1
+        "instruction": {
+          "en": "Listen to the conversation at the bus stop and answer the questions.",
+          "de": "Hör das Gespräch an der Bushaltestelle und beantworte die Fragen."
+        },
+        "transcript": "@filter none\n[Frau f] Entschuldigung, wann fährt die Linie acht zum Bahnhof?\n[Mann m] Um dreizehn Uhr fünfundvierzig.\n[Frau f] Oh, erst in zwanzig Minuten? Das ist zu spät für mich.\n[Mann m] Die Linie zwölf fährt auch zum Bahnhof, und zwar schon um dreizehn Uhr dreißig.",
+        "questions": [
+          {
+            "question": "Wann fährt die Linie 8 zum Bahnhof?",
+            "options": [
+              "um 13:15 Uhr",
+              "um 13:45 Uhr",
+              "um 14:45 Uhr"
+            ],
+            "correctIndex": 1,
+            "evidence": "dreizehn Uhr fünfundvierzig"
+          },
+          {
+            "question": "Welcher Bus fährt früher zum Bahnhof?",
+            "options": [
+              "Linie 2",
+              "Linie 8",
+              "Linie 12"
+            ],
+            "correctIndex": 2,
+            "evidence": "Die Linie zwölf fährt auch zum Bahnhof, und zwar schon um dreizehn Uhr dreißig"
+          },
+          {
+            "question": "Wie lange muss die Frau auf die Linie 8 warten?",
+            "options": [
+              "20 Minuten",
+              "25 Minuten",
+              "30 Minuten"
+            ],
+            "correctIndex": 0,
+            "evidence": "erst in zwanzig Minuten"
+          }
+        ]
       }
     },
     {

@@ -1,0 +1,298 @@
+{
+  "formatId": "telc-a1",
+  "partId": "hoeren-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-a1__hoeren-1__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Ansage f] Text 1.\n[Frau f] Entschuldigung, was kostet der Käse hier?\n[Verkäufer m] Der Gouda? Hundert Gramm kosten einen Euro neunzig.\n[Frau f] Und der Bergkäse?\n[Verkäufer m] Der ist teurer. Hundert Gramm kosten zwei Euro vierzig.\n[Frau f] Dann nehme ich zweihundert Gramm Gouda, bitte.\n[Ansage f] Text 2.\n[Frau f] Paul, hast du am Donnerstag Zeit? Wir können zusammen Mittag essen.\n[Mann m] Am Donnerstag? Nein, da habe ich einen Kurs. Aber am Freitag geht es.\n[Frau f] Freitag ist gut. Um zwölf Uhr in der Kantine?\n[Mann m] Ja, super. Bis dann!\n[Ansage f] Text 3.\n[Frau f] Entschuldigung, gibt es hier eine Apotheke?\n[Mann m] Ja. Gehen Sie hier geradeaus bis zur Ampel. Da sehen Sie eine Kirche.\n[Mann m] An der Kirche gehen Sie links. Die Apotheke ist dann neben der Bank.\n[Frau f] Vielen Dank!\n[Ansage f] Text 4.\n[Mann m] Guten Tag. Haben Sie diese Jacke auch in Blau?\n[Verkäufer m] Nein, leider nicht. Wir haben sie nur in Schwarz und in Grün.\n[Mann m] Hm, eine schwarze Jacke habe ich schon. Dann nehme ich die grüne.\n[Ansage f] Text 5.\n[Frau f] Wann bist du heute zurück?\n[Mann m] Nach der Arbeit gehe ich noch mit Max ins Fitnessstudio.\n[Frau f] Gut, aber um sechs Uhr essen wir.\n[Mann m] Kein Problem, ich bin um halb sechs zu Hause.\n[Ansage f] Text 6.\n[Kellnerin f] Guten Abend. Was möchten Sie trinken?\n[Mann m] Ein Bier, bitte.\n[Kellnerin f] Tut mir leid, Bier haben wir heute nicht mehr. Wir haben Wein oder Apfelsaft.\n[Mann m] Hm, ich muss noch Auto fahren. Dann einen Apfelsaft, bitte.",
+          "questions": [
+            {
+              "question": "Wie viel kosten hundert Gramm Bergkäse?",
+              "options": [
+                "ein Euro neunzig",
+                "zwei Euro vierzig",
+                "drei Euro achtzig"
+              ],
+              "correctIndex": 1,
+              "evidence": "Hundert Gramm kosten zwei Euro vierzig."
+            },
+            {
+              "question": "Wann essen die beiden zusammen?",
+              "options": [
+                "am Mittwoch",
+                "am Donnerstag",
+                "am Freitag"
+              ],
+              "correctIndex": 2,
+              "evidence": "Aber am Freitag geht es."
+            },
+            {
+              "question": "Wo ist die Apotheke?",
+              "options": [
+                "neben der Bank",
+                "hinter der Kirche",
+                "an der Ampel"
+              ],
+              "correctIndex": 0,
+              "evidence": "Die Apotheke ist dann neben der Bank."
+            },
+            {
+              "question": "Welche Jacke kauft der Mann?",
+              "options": [
+                "die blaue",
+                "die schwarze",
+                "die grüne"
+              ],
+              "correctIndex": 2,
+              "evidence": "Dann nehme ich die grüne."
+            },
+            {
+              "question": "Wann ist der Mann wieder zu Hause?",
+              "options": [
+                "um fünf Uhr",
+                "um halb sechs",
+                "um sechs Uhr"
+              ],
+              "correctIndex": 1,
+              "evidence": "ich bin um halb sechs zu Hause"
+            },
+            {
+              "question": "Was trinkt der Mann?",
+              "options": [
+                "Apfelsaft",
+                "Bier",
+                "Wein"
+              ],
+              "correctIndex": 0,
+              "evidence": "Dann einen Apfelsaft, bitte."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The seller says the mountain cheese is more expensive: one hundred grams cost two euros forty.",
+            "de": "Der Verkäufer sagt: Der Bergkäse ist teurer. Hundert Gramm kosten zwei Euro vierzig."
+          },
+          {
+            "en": "Paul has a course on Thursday, but Friday works, so they eat together on Friday.",
+            "de": "Paul hat am Donnerstag einen Kurs. Am Freitag hat er Zeit, also essen sie am Freitag zusammen."
+          },
+          {
+            "en": "The man says the pharmacy is next to the bank. The church and the traffic lights are only on the way.",
+            "de": "Der Mann sagt: Die Apotheke ist neben der Bank. Die Ampel und die Kirche sind nur auf dem Weg."
+          },
+          {
+            "en": "There is no blue jacket, and he already has a black one, so he takes the green one.",
+            "de": "Eine blaue Jacke gibt es nicht, und eine schwarze hat er schon. Er nimmt die grüne."
+          },
+          {
+            "en": "He says he will be home at half past five. Six o'clock is when they eat.",
+            "de": "Er sagt: Ich bin um halb sechs zu Hause. Um sechs Uhr essen sie."
+          },
+          {
+            "en": "There is no more beer, and he has to drive, so he orders an apple juice.",
+            "de": "Es gibt kein Bier mehr, und er muss noch Auto fahren. Er bestellt einen Apfelsaft."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a1__hoeren-1__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Ansage f] Text 1.\n[Frau f] Guten Tag, ich möchte einen Termin zum Haareschneiden.\n[Friseur m] Gern. Morgen um zehn Uhr?\n[Frau f] Morgen Vormittag arbeite ich. Geht es auch am Nachmittag?\n[Friseur m] Ja, um fünfzehn Uhr dreißig ist noch frei.\n[Frau f] Prima, das passt.\n[Ansage f] Text 2.\n[Mann m] Hallo, bist du auch neu im Deutschkurs?\n[Frau f] Ja, ich heiße Ana.\n[Mann m] Kommst du aus Spanien?\n[Frau f] Nein, aus Portugal. Aber ich habe zwei Jahre in Madrid gewohnt.\n[Ansage f] Text 3.\n[Frau f] Kannst du bitte noch einkaufen? Wir brauchen Milch und Eier.\n[Mann m] Milch haben wir noch. Ich habe gestern zwei Liter gekauft.\n[Frau f] Ach so. Und vielleicht Tomaten?\n[Mann m] Nein, Tomaten haben wir genug. Ich kaufe nur die Eier.\n[Ansage f] Text 4.\n[Mann m] Fährst du mit dem Bus zum Yoga?\n[Frau f] Nein, der Bus ist am Abend immer so voll. Und mit dem Auto finde ich keinen Parkplatz.\n[Mann m] Und wie fährst du dann?\n[Frau f] Ich fahre mit dem Rad. Das geht schnell.\n[Ansage f] Text 5.\n[Mann m] Guten Abend. Ich habe ein Zimmer für zwei Nächte. Mein Name ist Novak.\n[Hotelangestellte f] Ja, Herr Novak, Zimmer vierzehn. Frühstück gibt es von sieben bis zehn Uhr.\n[Mann m] Am Sonntag auch?\n[Hotelangestellte f] Am Sonntag erst ab acht Uhr.\n[Ansage f] Text 6.\n[Mann m] Wo ist denn mein Handy? Ich finde es nicht.\n[Frau f] Hast du in deiner Tasche gesucht?\n[Mann m] Ja, da ist es nicht. Und im Wohnzimmer auch nicht.\n[Frau f] Vielleicht in der Küche?\n[Mann m] Ach ja, da liegt es, auf dem Küchentisch! Danke!",
+          "questions": [
+            {
+              "question": "Wann hat die Frau ihren Termin?",
+              "options": [
+                "morgen um zehn Uhr",
+                "morgen um fünfzehn Uhr dreißig",
+                "heute um fünfzehn Uhr"
+              ],
+              "correctIndex": 1,
+              "evidence": "um fünfzehn Uhr dreißig ist noch frei"
+            },
+            {
+              "question": "Woher kommt Ana?",
+              "options": [
+                "aus Spanien",
+                "aus Brasilien",
+                "aus Portugal"
+              ],
+              "correctIndex": 2,
+              "evidence": "Nein, aus Portugal."
+            },
+            {
+              "question": "Was kauft der Mann?",
+              "options": [
+                "Eier",
+                "Milch",
+                "Tomaten"
+              ],
+              "correctIndex": 0,
+              "evidence": "Ich kaufe nur die Eier."
+            },
+            {
+              "question": "Wie kommt die Frau zum Yoga?",
+              "options": [
+                "mit dem Bus",
+                "mit dem Fahrrad",
+                "mit dem Auto"
+              ],
+              "correctIndex": 1,
+              "evidence": "Ich fahre mit dem Rad."
+            },
+            {
+              "question": "Wann beginnt das Frühstück am Sonntag?",
+              "options": [
+                "um sieben Uhr",
+                "um zehn Uhr",
+                "um acht Uhr"
+              ],
+              "correctIndex": 2,
+              "evidence": "Am Sonntag erst ab acht Uhr."
+            },
+            {
+              "question": "Wo ist das Handy?",
+              "options": [
+                "in der Küche",
+                "in der Tasche",
+                "im Wohnzimmer"
+              ],
+              "correctIndex": 0,
+              "evidence": "auf dem Küchentisch"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "She works tomorrow morning, so she takes the free appointment at three thirty in the afternoon.",
+            "de": "Am Vormittag arbeitet sie. Sie nimmt den Termin morgen um fünfzehn Uhr dreißig."
+          },
+          {
+            "en": "Ana says she is from Portugal. She only lived in Madrid for two years.",
+            "de": "Ana kommt aus Portugal. In Madrid hat sie nur zwei Jahre gewohnt."
+          },
+          {
+            "en": "They still have milk and enough tomatoes, so he only buys eggs.",
+            "de": "Milch und Tomaten haben sie noch. Er kauft nur Eier."
+          },
+          {
+            "en": "The bus is too full and she finds no parking space, so she goes by bike.",
+            "de": "Der Bus ist zu voll, und für das Auto gibt es keinen Parkplatz. Sie fährt mit dem Rad."
+          },
+          {
+            "en": "Breakfast normally starts at seven, but on Sunday only at eight.",
+            "de": "Normalerweise gibt es ab sieben Uhr Frühstück, aber am Sonntag erst ab acht Uhr."
+          },
+          {
+            "en": "The phone is not in the bag or the living room. He finds it on the kitchen table.",
+            "de": "Das Handy ist nicht in der Tasche und nicht im Wohnzimmer. Es liegt auf dem Küchentisch."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a1__hoeren-1__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Ansage f] Text 1.\n[Frau f] Guten Tag. Was kosten die Rosen?\n[Verkäufer m] Eine Rose kostet zwei Euro. Zehn Rosen kosten nur fünfzehn Euro.\n[Frau f] Dann nehme ich zehn Rosen, bitte.\n[Ansage f] Text 2.\n[Frau f] Was machst du am Dienstagabend, Ali?\n[Mann m] Am Dienstag habe ich Gitarrenkurs. Und am Donnerstag gehe ich schwimmen.\n[Frau f] Schade. Ich möchte mit dir ins Theater gehen.\n[Mann m] Geht es vielleicht am Mittwoch?\n[Ansage f] Text 3.\n[Frau f] Lea, heute regnet es. Nimm bitte deinen Regenschirm mit.\n[Mädchen f] Der Regenschirm ist kaputt, Mama.\n[Frau f] Dann zieh deine Regenjacke an.\n[Mädchen f] Ja, gut. Die Jacke nehme ich.\n[Ansage f] Text 4.\n[Frau f] Entschuldigung, fährt der Bus Nummer zwölf zum Zoo?\n[Mann m] Nein, die Zwölf fährt zum Bahnhof. Zum Zoo fahren Sie mit der Achtzehn.\n[Frau f] Und wo ist die Haltestelle?\n[Mann m] Gleich hier, auf der anderen Straßenseite.\n[Ansage f] Text 5.\n[Mann m] Guten Tag, ich möchte bitte mit Frau Schulz sprechen.\n[Frau f] Frau Schulz ist heute nicht im Büro. Sie ist krank.\n[Mann m] Oh. Und morgen?\n[Frau f] Morgen ist sie wahrscheinlich wieder da. Rufen Sie am besten morgen früh an.\n[Ansage f] Text 6.\n[Frau f] Wir machen am Sonntag ein Picknick im Park. Kommst du mit, Ben?\n[Mann m] Gern! Soll ich etwas mitbringen? Vielleicht einen Kuchen?\n[Frau f] Einen Kuchen bringt Sara schon mit. Bring doch etwas zu trinken mit.\n[Mann m] Gut, dann bringe ich Wasser und Limonade mit.",
+          "questions": [
+            {
+              "question": "Wie viel bezahlt die Frau?",
+              "options": [
+                "zwei Euro",
+                "zehn Euro",
+                "fünfzehn Euro"
+              ],
+              "correctIndex": 2,
+              "evidence": "Zehn Rosen kosten nur fünfzehn Euro."
+            },
+            {
+              "question": "Was macht Ali am Dienstagabend?",
+              "options": [
+                "Er geht schwimmen.",
+                "Er hat Gitarrenkurs.",
+                "Er geht ins Theater."
+              ],
+              "correctIndex": 1,
+              "evidence": "Am Dienstag habe ich Gitarrenkurs."
+            },
+            {
+              "question": "Was nimmt Lea mit?",
+              "options": [
+                "eine Regenjacke",
+                "einen Regenschirm",
+                "eine Mütze"
+              ],
+              "correctIndex": 0,
+              "evidence": "Die Jacke nehme ich."
+            },
+            {
+              "question": "Mit welchem Bus fährt die Frau zum Zoo?",
+              "options": [
+                "mit dem Bus Nummer zwölf",
+                "mit dem Bus Nummer acht",
+                "mit dem Bus Nummer achtzehn"
+              ],
+              "correctIndex": 2,
+              "evidence": "Zum Zoo fahren Sie mit der Achtzehn."
+            },
+            {
+              "question": "Was soll der Mann machen?",
+              "options": [
+                "eine E-Mail schreiben",
+                "morgen anrufen",
+                "heute wiederkommen"
+              ],
+              "correctIndex": 1,
+              "evidence": "Rufen Sie am besten morgen früh an."
+            },
+            {
+              "question": "Was bringt Ben zum Picknick mit?",
+              "options": [
+                "Getränke",
+                "einen Kuchen",
+                "einen Salat"
+              ],
+              "correctIndex": 0,
+              "evidence": "dann bringe ich Wasser und Limonade mit"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "She buys ten roses, and ten roses cost fifteen euros.",
+            "de": "Sie kauft zehn Rosen. Zehn Rosen kosten fünfzehn Euro."
+          },
+          {
+            "en": "On Tuesday Ali has his guitar course. He goes swimming on Thursday.",
+            "de": "Am Dienstag hat Ali Gitarrenkurs. Schwimmen geht er am Donnerstag."
+          },
+          {
+            "en": "Her umbrella is broken, so Lea takes her rain jacket.",
+            "de": "Der Regenschirm ist kaputt. Lea nimmt ihre Regenjacke."
+          },
+          {
+            "en": "Bus number twelve goes to the station. To get to the zoo she takes number eighteen.",
+            "de": "Der Bus Nummer zwölf fährt zum Bahnhof. Zum Zoo fährt die Achtzehn."
+          },
+          {
+            "en": "Ms Schulz is ill today. The woman tells him to call tomorrow morning.",
+            "de": "Frau Schulz ist heute krank. Der Mann soll morgen früh anrufen."
+          },
+          {
+            "en": "Sara is already bringing a cake, so Ben brings drinks: water and lemonade.",
+            "de": "Sara bringt schon einen Kuchen mit. Ben bringt Getränke mit: Wasser und Limonade."
+          }
+        ]
+      }
+    }
+  ]
+}

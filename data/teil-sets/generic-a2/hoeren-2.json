@@ -1,0 +1,298 @@
+{
+  "formatId": "generic-a2",
+  "partId": "hoeren-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-a2__hoeren-2__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Katrin f] Markus, hast du kurz Zeit? Wir müssen den Betriebsausflug planen. Die Chefin möchte bis Freitag eine Idee haben.\n[Markus m] Ja, klar. Letztes Jahr waren wir im Kletterpark. Das hat aber nicht allen gefallen.\n[Katrin f] Stimmt. Frau Pohl hatte Angst, und Herr Stein hatte Probleme mit dem Knie. Dieses Jahr möchte ich etwas, das alle machen können.\n[Markus m] Wie wäre es mit einem Kochkurs? Meine Schwester arbeitet in einer Kochschule.\n[Katrin f] Für dreißig Leute ist ein Kochkurs zu teuer. Aber was denkst du über eine Führung durch die alte Schokoladenfabrik in Brunnfeld? Danach können wir dort im Garten grillen.\n[Markus m] Super Idee! Das gefällt bestimmt allen. Und wann? Im Juni?\n[Katrin f] Im Juni haben viele Kollegen Urlaub. Besser im Mai, am letzten Freitag.\n[Markus m] Okay. Und wie kommen wir nach Brunnfeld? Mit dem Zug?\n[Katrin f] Mit dem Zug müssen wir zweimal umsteigen. Ich bestelle lieber einen Bus. Der holt uns direkt vor der Firma ab.\n[Markus m] Gut. Und wer bezahlt das alles?\n[Katrin f] Die Firma bezahlt die Führung und den Bus. Nur das Essen beim Grillen bezahlt jeder selbst, zehn Euro pro Person.\n[Markus m] Das ist fair. Soll ich den Kollegen eine E-Mail schreiben?\n[Katrin f] Nein, das mache ich. Aber kannst du bitte die Führung buchen? Du kennst doch den Mann von der Fabrik.\n[Markus m] Ja, mache ich. Ich rufe ihn morgen an.",
+          "questions": [
+            {
+              "question": "Was haben die Kollegen letztes Jahr gemacht?",
+              "options": [
+                "Sie haben zusammen gekocht.",
+                "Sie haben eine Fabrik besucht.",
+                "Sie waren im Kletterpark."
+              ],
+              "correctIndex": 2,
+              "evidence": "Letztes Jahr waren wir im Kletterpark."
+            },
+            {
+              "question": "Warum machen sie keinen Kochkurs?",
+              "options": [
+                "Die Kochschule ist zu weit weg.",
+                "Er ist für so viele Leute zu teuer.",
+                "Frau Pohl kocht nicht gern."
+              ],
+              "correctIndex": 1,
+              "evidence": "Für dreißig Leute ist ein Kochkurs zu teuer."
+            },
+            {
+              "question": "Wann ist der Ausflug?",
+              "options": [
+                "am letzten Freitag im Mai",
+                "an einem Freitag im Juni",
+                "am ersten Freitag im Mai"
+              ],
+              "correctIndex": 0,
+              "evidence": "Besser im Mai, am letzten Freitag."
+            },
+            {
+              "question": "Wie fahren die Kollegen nach Brunnfeld?",
+              "options": [
+                "mit dem Zug",
+                "mit dem Auto",
+                "mit dem Bus"
+              ],
+              "correctIndex": 2,
+              "evidence": "Ich bestelle lieber einen Bus."
+            },
+            {
+              "question": "Was bezahlen die Kollegen selbst?",
+              "options": [
+                "den Bus",
+                "das Essen",
+                "die Führung"
+              ],
+              "correctIndex": 1,
+              "evidence": "Nur das Essen beim Grillen bezahlt jeder selbst"
+            },
+            {
+              "question": "Was macht Markus?",
+              "options": [
+                "Er bucht die Führung.",
+                "Er schreibt eine E-Mail an alle.",
+                "Er bestellt den Bus."
+              ],
+              "correctIndex": 0,
+              "evidence": "Aber kannst du bitte die Führung buchen?"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Last year the team went to the climbing park, but not everyone liked it.",
+            "de": "Letztes Jahr waren sie im Kletterpark. Das hat nicht allen gefallen."
+          },
+          {
+            "en": "A cooking course for thirty people is too expensive.",
+            "de": "Ein Kochkurs für dreißig Leute ist zu teuer."
+          },
+          {
+            "en": "Many colleagues are on holiday in June, so the outing is on the last Friday in May.",
+            "de": "Im Juni haben viele Kollegen Urlaub. Deshalb ist der Ausflug am letzten Freitag im Mai."
+          },
+          {
+            "en": "By train they would have to change twice, so Katrin books a bus that picks them up at the company.",
+            "de": "Mit dem Zug müssen sie zweimal umsteigen. Katrin bestellt einen Bus, er holt sie vor der Firma ab."
+          },
+          {
+            "en": "The company pays for the tour and the bus. Everyone pays for their own food at the barbecue.",
+            "de": "Die Firma bezahlt die Führung und den Bus. Das Essen beim Grillen bezahlt jeder selbst."
+          },
+          {
+            "en": "Katrin writes the email herself and asks Markus to book the tour. He agrees.",
+            "de": "Die E-Mail schreibt Katrin. Markus soll die Führung buchen, und er sagt ja."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-a2__hoeren-2__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Mutter f] Finn, da bist du ja! Wie war dein erster Tag beim Praktikum?\n[Finn m] Echt gut! Aber ich bin total müde. Wir haben schon um sieben Uhr angefangen.\n[Mutter f] Um sieben? Ich dachte, um acht.\n[Finn m] Das dachte ich auch. Aber im Sommer fangen sie in der Gärtnerei früher an, weil es am Nachmittag zu heiß ist.\n[Mutter f] Und was hast du gemacht?\n[Finn m] Am Vormittag habe ich Blumen gegossen und Pflanzen in Töpfe gesetzt. Am Nachmittag durfte ich im Laden an der Kasse helfen. Das hat mir am meisten Spaß gemacht.\n[Mutter f] Wirklich? Ich dachte, du arbeitest lieber draußen.\n[Finn m] Ich auch. Aber an der Kasse spricht man mit vielen Leuten. Das finde ich toll.\n[Mutter f] Und die Kollegen? Sind sie nett?\n[Finn m] Ja, besonders Frau Ott. Sie ist die Chefin, aber sehr locker. Sie hat mir alles erklärt.\n[Mutter f] Wie lange dauert das Praktikum noch mal? Drei Wochen?\n[Finn m] Nein, nur zwei Wochen. Bis zum vierundzwanzigsten Juli.\n[Mutter f] Und wie kommst du morgen hin? Wieder mit dem Rad?\n[Finn m] Nein, das ist zu weit, heute war ich ganz kaputt. Papa kann mich auch nicht fahren, er muss früh ins Büro. Morgen nehme ich den Bus.\n[Mutter f] Brauchst du noch etwas für morgen?\n[Finn m] Arbeitsschuhe brauche ich nicht, die bekomme ich dort. Aber ich brauche Handschuhe. Hast du welche?\n[Mutter f] Ja, im Keller liegen Gartenhandschuhe. Die kannst du nehmen.",
+          "questions": [
+            {
+              "question": "Wann hat Finn heute mit der Arbeit angefangen?",
+              "options": [
+                "um 8 Uhr",
+                "um 7 Uhr",
+                "um 9 Uhr"
+              ],
+              "correctIndex": 1,
+              "evidence": "Wir haben schon um sieben Uhr angefangen."
+            },
+            {
+              "question": "Welche Arbeit hat Finn heute am besten gefallen?",
+              "options": [
+                "an der Kasse helfen",
+                "Blumen gießen",
+                "Pflanzen in Töpfe setzen"
+              ],
+              "correctIndex": 0,
+              "evidence": "Das hat mir am meisten Spaß gemacht."
+            },
+            {
+              "question": "Wer ist Frau Ott?",
+              "options": [
+                "eine Kundin",
+                "die Chefin",
+                "Finns Lehrerin"
+              ],
+              "correctIndex": 1,
+              "evidence": "Sie ist die Chefin, aber sehr locker."
+            },
+            {
+              "question": "Wie lange dauert das Praktikum?",
+              "options": [
+                "drei Wochen",
+                "eine Woche",
+                "zwei Wochen"
+              ],
+              "correctIndex": 2,
+              "evidence": "Nein, nur zwei Wochen."
+            },
+            {
+              "question": "Wie fährt Finn morgen zur Gärtnerei?",
+              "options": [
+                "mit dem Bus",
+                "mit dem Fahrrad",
+                "mit dem Auto von Papa"
+              ],
+              "correctIndex": 0,
+              "evidence": "Morgen nehme ich den Bus."
+            },
+            {
+              "question": "Was braucht Finn für morgen?",
+              "options": [
+                "Handschuhe",
+                "Arbeitsschuhe",
+                "eine Mütze"
+              ],
+              "correctIndex": 0,
+              "evidence": "Aber ich brauche Handschuhe."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "His mother thought eight, but in summer the nursery starts at seven.",
+            "de": "Die Mutter dachte, um acht Uhr. Aber im Sommer fängt die Gärtnerei schon um sieben Uhr an."
+          },
+          {
+            "en": "In the morning he watered flowers and potted plants, but helping at the till in the afternoon was the most fun.",
+            "de": "Am Vormittag hat er Blumen gegossen und Pflanzen in Töpfe gesetzt. Am meisten Spaß hat ihm die Arbeit an der Kasse gemacht."
+          },
+          {
+            "en": "Frau Ott is the boss of the nursery, and she is very relaxed.",
+            "de": "Frau Ott ist die Chefin von der Gärtnerei, und sie ist sehr locker."
+          },
+          {
+            "en": "His mother thinks three weeks, but it is only two weeks.",
+            "de": "Die Mutter denkt, drei Wochen. Aber das Praktikum dauert nur zwei Wochen."
+          },
+          {
+            "en": "The bike ride is too far and his father has to go to the office early, so he takes the bus.",
+            "de": "Mit dem Rad ist es zu weit, und Papa muss früh ins Büro. Finn nimmt den Bus."
+          },
+          {
+            "en": "He gets work shoes at the nursery, but he needs gloves.",
+            "de": "Arbeitsschuhe bekommt er in der Gärtnerei. Aber er braucht Handschuhe."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-a2__hoeren-2__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter phone\n[Frau Haas f] Ferienwohnungen Haas, guten Tag.\n[Herr Petersen m] Guten Tag, mein Name ist Petersen. Ich suche eine Ferienwohnung für meine Familie, vom zweiten bis zum neunten August. Haben Sie noch etwas frei?\n[Frau Haas f] Moment, ja, die Wohnung Sonnenblume ist noch frei. Wie viele Personen sind Sie?\n[Herr Petersen m] Wir sind zwei Erwachsene und drei Kinder. Und wir haben einen Hund. Ist das ein Problem?\n[Frau Haas f] Kinder sind kein Problem, die Wohnung hat drei Schlafzimmer. Aber Hunde sind in dieser Wohnung leider nicht erlaubt.\n[Frau Haas f] In der Wohnung Lavendel geht es. Sie ist kleiner und hat nur zwei Schlafzimmer, aber dafür einen großen Garten.\n[Herr Petersen m] Ein Garten ist toll für den Hund. Dann nehmen wir die Wohnung Lavendel. Was kostet sie?\n[Frau Haas f] Neunzig Euro pro Nacht. Für den Hund kommen noch fünf Euro pro Nacht dazu.\n[Herr Petersen m] Okay. Gibt es dort Internet? Ich muss leider ein bisschen arbeiten.\n[Frau Haas f] Ja, Internet gibt es, und es ist kostenlos.\n[Herr Petersen m] Sehr gut. Und ab wann können wir am ersten Tag in die Wohnung?\n[Frau Haas f] Ab fünfzehn Uhr. Und am letzten Tag müssen Sie bis zehn Uhr aus der Wohnung sein.\n[Herr Petersen m] Wir kommen mit dem Auto, aber wahrscheinlich erst am Abend, so gegen neunzehn Uhr. Sind Sie dann noch da?\n[Frau Haas f] Nein, dann bin ich nicht mehr im Büro. Aber der Schlüssel liegt für Sie in einem kleinen Kasten neben der Tür. Den Code schicke ich Ihnen aufs Handy.\n[Herr Petersen m] Prima. Muss ich schon vorher etwas bezahlen?\n[Frau Haas f] Ja, bitte überweisen Sie zweihundert Euro bis Ende Juni. Den Rest bezahlen Sie am letzten Tag.",
+          "questions": [
+            {
+              "question": "Warum nimmt Familie Petersen nicht die Wohnung Sonnenblume?",
+              "options": [
+                "Sie ist zu klein.",
+                "Hunde dürfen dort nicht wohnen.",
+                "Sie ist im August nicht frei."
+              ],
+              "correctIndex": 1,
+              "evidence": "Aber Hunde sind in dieser Wohnung leider nicht erlaubt."
+            },
+            {
+              "question": "Was hat die Wohnung Lavendel?",
+              "options": [
+                "einen großen Garten",
+                "drei Schlafzimmer",
+                "einen Blick auf den See"
+              ],
+              "correctIndex": 0,
+              "evidence": "aber dafür einen großen Garten"
+            },
+            {
+              "question": "Wie viel kostet eine Nacht mit Hund?",
+              "options": [
+                "90 Euro",
+                "100 Euro",
+                "95 Euro"
+              ],
+              "correctIndex": 2,
+              "evidence": "Für den Hund kommen noch fünf Euro pro Nacht dazu."
+            },
+            {
+              "question": "Wann kommt die Familie am ersten Tag an?",
+              "options": [
+                "gegen 19 Uhr",
+                "um 15 Uhr",
+                "um 10 Uhr"
+              ],
+              "correctIndex": 0,
+              "evidence": "so gegen neunzehn Uhr"
+            },
+            {
+              "question": "Wie bekommt die Familie den Schlüssel?",
+              "options": [
+                "Frau Haas gibt ihn ihnen im Büro.",
+                "Er liegt in einem Kasten neben der Tür.",
+                "Er liegt bei den Nachbarn."
+              ],
+              "correctIndex": 1,
+              "evidence": "der Schlüssel liegt für Sie in einem kleinen Kasten neben der Tür"
+            },
+            {
+              "question": "Was soll Herr Petersen bis Ende Juni machen?",
+              "options": [
+                "die ganze Miete bezahlen",
+                "den Code schicken",
+                "200 Euro überweisen"
+              ],
+              "correctIndex": 2,
+              "evidence": "bitte überweisen Sie zweihundert Euro bis Ende Juni"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The Sonnenblume flat is free and big enough, but dogs are not allowed there.",
+            "de": "Die Wohnung Sonnenblume ist frei und groß genug. Aber Hunde sind dort nicht erlaubt."
+          },
+          {
+            "en": "The Lavendel flat is smaller, with only two bedrooms, but it has a big garden.",
+            "de": "Die Wohnung Lavendel ist kleiner und hat nur zwei Schlafzimmer, aber einen großen Garten."
+          },
+          {
+            "en": "The flat costs ninety euros a night, plus five euros for the dog, so ninety-five euros.",
+            "de": "Die Wohnung kostet neunzig Euro pro Nacht. Für den Hund kommen fünf Euro dazu, also fünfundneunzig Euro."
+          },
+          {
+            "en": "They could move in from three pm, but they will probably arrive around seven pm.",
+            "de": "Sie können ab fünfzehn Uhr in die Wohnung. Aber sie kommen wahrscheinlich erst gegen neunzehn Uhr."
+          },
+          {
+            "en": "Frau Haas is not in the office in the evening. The key is in a small box next to the door.",
+            "de": "Am Abend ist Frau Haas nicht mehr im Büro. Der Schlüssel liegt in einem kleinen Kasten neben der Tür."
+          },
+          {
+            "en": "He transfers two hundred euros by the end of June and pays the rest on the last day.",
+            "de": "Er überweist bis Ende Juni zweihundert Euro. Den Rest bezahlt er am letzten Tag."
+          }
+        ]
+      }
+    }
+  ]
+}

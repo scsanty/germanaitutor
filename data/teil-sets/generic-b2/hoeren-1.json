@@ -1,0 +1,319 @@
+{
+  "formatId": "generic-b2",
+  "partId": "hoeren-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-b2__hoeren-1__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Ansage f] Text 1.\n[Sprecher m] In Lindtal dürfen Laubbläser mit Benzinmotor ab dem ersten Oktober in Wohngebieten nicht mehr benutzt werden. Das hat der Gemeinderat gestern Abend mit knapper Mehrheit beschlossen.\n[Sprecher m] Geräte mit Akku bleiben erlaubt, allerdings nur werktags zwischen neun und siebzehn Uhr. Für den städtischen Bauhof gilt eine Übergangsfrist bis zum Frühjahr, weil die neuen Geräte erst bestellt werden müssen.\n[Ansage f] Text 2.\n[Reporterin f] Zum ersten Mal durften die Bürgerinnen und Bürger in Kressbach selbst entscheiden, wofür die Stadt zweihunderttausend Euro ausgibt. Knapp dreitausend Menschen haben abgestimmt, deutlich mehr, als die Verwaltung erwartet hatte.\n[Reporterin f] Auf dem ersten Platz landete nicht, wie viele vermutet hatten, der neue Skatepark, sondern eine Beleuchtung für den Radweg zum Bahnhof. Der Skatepark kam auf Platz zwei und soll trotzdem gebaut werden, allerdings erst im nächsten Jahr.\n[Ansage f] Text 3.\n[Sprecher m] Der Haushaltsgerätehersteller Bergmann und Kühn ruft einen Wasserkocher zurück. Betroffen ist das Modell „Aquaflott“ in der Farbe Weiß, das seit März in Baumärkten verkauft wurde. Bei einigen Geräten kann sich der Griff lösen, wenn der Kocher voll ist.\n[Sprecher m] Kundinnen und Kunden sollen den Wasserkocher nicht mehr benutzen und ihn in den Markt zurückbringen, in dem sie ihn gekauft haben. Den Kaufpreis bekommen sie auch ohne Kassenbon zurück.\n[Ansage f] Text 4.\n[Reporterin f] Der Blutspendedienst Mittelland schlägt Alarm: Die Vorräte reichen im Moment nur noch für zwei Tage, normal wären fünf. Vor allem in den Sommerferien kommen weniger Spenderinnen und Spender, gleichzeitig werden in den Kliniken viele Operationen nachgeholt.\n[Reporterin f] Deshalb öffnet der Spendedienst ab nächster Woche zusätzlich am Samstagvormittag, und zwar in der Stadthalle von Ellerbach. Eine Anmeldung ist dort nicht nötig.\n[Ansage f] Text 5.\n[Reporter m] In der Innenstadt von Hallweiler stehen ab heute sechs neue Trinkbrunnen. Das Wasser ist kostenlos und wird regelmäßig vom Gesundheitsamt kontrolliert.\n[Reporter m] Eigentlich wollte die Stadt schon im letzten Sommer zwölf Brunnen aufstellen. Weil die Wasserleitungen in der Altstadt aber älter waren als gedacht, wurde das Projekt erst einmal verkleinert. Die übrigen Brunnen sollen folgen, sobald die Leitungen erneuert sind.\n[Ansage f] Text 6.\n[Sportreporter m] Und zum Sport: Die Handballerinnen des Turnvereins Rosenau haben gestern ihr letztes Heimspiel der Saison gegen Grünstadt mit achtundzwanzig zu dreißig verloren.\n[Sportreporter m] Den Aufstieg in die zweite Liga haben sie trotzdem geschafft, weil die Konkurrentinnen aus Mühlbach am selben Abend ebenfalls verloren haben. Trainerin Nadine Fuchs war nach dem Spiel aber nicht zufrieden: Ihre Mannschaft habe in der zweiten Halbzeit zu viele Fehler gemacht.\n[Ansage f] Text 7.\n[Sprecherin f] Das kleine Skigebiet am Feldkopf stellt den Betrieb seiner beiden Schlepplifte endgültig ein. In den letzten zehn Wintern lag dort nur noch an durchschnittlich dreißig Tagen genug Schnee.\n[Sprecherin f] Die Gemeinde will das Gelände aber nicht aufgeben: Im Sommer sollen dort ein Barfußpfad und ein Aussichtsturm entstehen. Die Lifte selbst werden abgebaut und an einen Skiclub in Österreich verkauft.",
+          "questions": [
+            {
+              "question": "Der städtische Bauhof in Lindtal muss sich schon ab Oktober an das neue Verbot halten.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Für den städtischen Bauhof gilt eine Übergangsfrist bis zum Frühjahr"
+            },
+            {
+              "question": "Die meisten Stimmen bekam in Kressbach der Vorschlag für einen Skatepark.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "sondern eine Beleuchtung für den Radweg zum Bahnhof"
+            },
+            {
+              "question": "Wer den Wasserkocher zurückgibt, braucht keinen Beleg über den Kauf.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Den Kaufpreis bekommen sie auch ohne Kassenbon zurück."
+            },
+            {
+              "question": "Am Samstag kann man in Ellerbach Blut spenden, ohne vorher einen Termin zu vereinbaren.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Eine Anmeldung ist dort nicht nötig."
+            },
+            {
+              "question": "Alle geplanten Trinkbrunnen in Hallweiler sind jetzt in Betrieb.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Die übrigen Brunnen sollen folgen, sobald die Leitungen erneuert sind."
+            },
+            {
+              "question": "Die Handballerinnen aus Rosenau spielen in der nächsten Saison in einer höheren Liga.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Den Aufstieg in die zweite Liga haben sie trotzdem geschafft"
+            },
+            {
+              "question": "Die Schlepplifte am Feldkopf sollen im Sommer weiter für Wanderer fahren.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Die Lifte selbst werden abgebaut"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The town's maintenance depot has a transition period until spring, because the new machines still have to be ordered.",
+            "de": "Für den Bauhof gibt es eine Übergangsfrist bis zum Frühjahr, weil die neuen Geräte erst bestellt werden müssen."
+          },
+          {
+            "en": "First place went to lighting for the cycle path to the station. The skate park came second.",
+            "de": "Auf dem ersten Platz landete die Beleuchtung für den Radweg zum Bahnhof. Der Skatepark kam nur auf Platz zwei."
+          },
+          {
+            "en": "Customers get their money back even without a receipt.",
+            "de": "Die Kunden bekommen den Kaufpreis auch ohne Kassenbon zurück."
+          },
+          {
+            "en": "On Saturday mornings people can donate at the town hall in Ellerbach, and no registration is needed.",
+            "de": "Am Samstagvormittag kann man in der Stadthalle Ellerbach spenden. Eine Anmeldung ist nicht nötig."
+          },
+          {
+            "en": "Only six of the twelve planned fountains are working. The rest will follow once the old pipes have been replaced.",
+            "de": "Nur sechs von zwölf geplanten Brunnen stehen schon. Die übrigen kommen erst, wenn die alten Leitungen erneuert sind."
+          },
+          {
+            "en": "They lost the game, but they were still promoted to the second division because their rivals also lost.",
+            "de": "Sie haben das Spiel verloren, aber trotzdem den Aufstieg in die zweite Liga geschafft, weil die Konkurrentinnen auch verloren haben."
+          },
+          {
+            "en": "The lifts are being dismantled and sold. In summer there will be a barefoot trail and a viewing tower instead.",
+            "de": "Die Lifte werden abgebaut und verkauft. Im Sommer gibt es dort stattdessen einen Barfußpfad und einen Aussichtsturm."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-b2__hoeren-1__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter phone\n[Ansage f] Text 1.\n[Mitarbeiterin f] Guten Tag, Herr Wiegand, hier ist Selin Arslan von der Hausverwaltung Brandner. Ich rufe wegen der Reparatur an den Wasserleitungen in Ihrem Haus an.\n[Mitarbeiterin f] Wir hatten ja angekündigt, dass das Wasser am Donnerstag den ganzen Tag abgestellt wird. Die Firma hat jetzt aber mitgeteilt, dass sie schneller fertig wird. Das Wasser ist also nur von acht bis etwa dreizehn Uhr weg.\n[Mitarbeiterin f] Könnten Sie das bitte auch Ihrer Nachbarin, Frau Lenz, sagen? Sie ist telefonisch leider nicht zu erreichen. Vielen Dank!\n[Ansage f] Text 2.\n[Mitarbeiter m] Guten Tag, Frau Petersen, hier ist Krüger von der Werkstatt im Autohaus Reimann. Wir haben Ihren Wagen jetzt durchgesehen.\n[Mitarbeiter m] Die Bremsen müssen tatsächlich erneuert werden, das hatten wir ja schon vermutet. Dabei ist uns aber aufgefallen, dass auch der Auspuff durchgerostet ist. Das würde noch einmal etwa dreihundert Euro zusätzlich kosten.\n[Mitarbeiter m] Bevor wir da weitermachen, brauchen wir Ihr Einverständnis. Rufen Sie uns bitte bis heute Nachmittag zurück, sonst schaffen wir es nicht mehr bis Freitag.\n[Ansage f] Text 3.\n[Anruferin f] Hey Jonas, hier ist Merle. Du, ich hab leider schlechte Nachrichten wegen Samstag. Meine Schwester feiert ihre Hochzeit jetzt doch an dem Wochenende, und da kann ich natürlich nicht absagen.\n[Anruferin f] Ich hab mein Konzertticket deshalb an Clara weitergegeben, die wollte sowieso unbedingt mit. Du musst also nichts ändern, sie holt dich um sieben ab, genau wie wir es ausgemacht hatten. Viel Spaß euch beiden!\n[Ansage f] Text 4.\n[Anrufer m] Guten Tag, Frau Demir, hier spricht Tobias Hein aus der Personalabteilung von Kranich Logistik. Wir hatten Sie ja für Dienstag zum Vorstellungsgespräch eingeladen.\n[Anrufer m] Leider ist unser Abteilungsleiter an dem Tag auf Dienstreise. Wir würden das Gespräch deshalb gern auf Mittwoch verschieben, gleiche Uhrzeit, also um zehn.\n[Anrufer m] Falls Ihnen das nicht passt, können wir das Gespräch auch per Video führen, dann aber am Dienstag. Geben Sie mir einfach kurz Bescheid, welche Variante Ihnen lieber ist.\n[Ansage f] Text 5.\n[Mitarbeiterin f] Guten Tag, Herr Brenner, hier ist Katrin Wolff aus der Steuerkanzlei Haller. Wir sitzen gerade an Ihrer Steuererklärung.\n[Mitarbeiterin f] Es ist so weit alles da, nur die Rechnung für die neue Heizung fehlt noch. Ohne Rechnung können wir die Handwerkerkosten leider nicht angeben.\n[Mitarbeiterin f] Sie müssen deswegen nicht extra vorbeikommen. Ein Foto der Rechnung per E-Mail reicht uns völlig.\n[Ansage f] Text 6.\n[Kollege m] Hallo Anja, hier ist Ralf. Ich hab gerade gehört, dass du morgen die Präsentation für die Kunden aus Lyon allein machen musst, weil Peter krank ist.\n[Kollege m] Ich kann dir gern helfen. Die Zahlen zum Umsatz habe ich ohnehin schon vorbereitet, die schicke ich dir gleich. Bei der Präsentation selbst kann ich aber nicht dabei sein, ich sitze morgen den ganzen Vormittag im Zug nach Hamburg.\n[Ansage f] Text 7.\n[Anruferin f] Guten Tag, Frau Schäfer, hier ist Petra Albrecht, die Leiterin der Kita Sonnenblume. Wie Sie wahrscheinlich schon gehört haben, wird am kommenden Montag gestreikt.\n[Anruferin f] Wir bieten an dem Tag eine Notbetreuung an, allerdings nur bis zwölf Uhr und nur für Kinder, deren Eltern beide arbeiten müssen. Wenn Sie Paul bringen möchten, melden Sie ihn bitte bis Freitag bei uns an. Danach können wir leider niemanden mehr aufnehmen.",
+          "questions": [
+            {
+              "question": "Am Donnerstag gibt es in Herrn Wiegands Haus den ganzen Tag kein Wasser.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Das Wasser ist also nur von acht bis etwa dreizehn Uhr weg."
+            },
+            {
+              "question": "Die Werkstatt repariert den Auspuff erst, wenn Frau Petersen zugestimmt hat.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Bevor wir da weitermachen, brauchen wir Ihr Einverständnis."
+            },
+            {
+              "question": "Jonas muss sich selbst eine neue Begleitung für das Konzert suchen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Ich hab mein Konzertticket deshalb an Clara weitergegeben"
+            },
+            {
+              "question": "Frau Demir kann wählen, ob sie an einem anderen Tag kommt oder das Gespräch online führt.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Geben Sie mir einfach kurz Bescheid, welche Variante Ihnen lieber ist."
+            },
+            {
+              "question": "Herr Brenner soll die Rechnung persönlich in der Kanzlei abgeben.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Ein Foto der Rechnung per E-Mail reicht uns völlig."
+            },
+            {
+              "question": "Anja bekommt von Ralf Material für die Präsentation.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Die Zahlen zum Umsatz habe ich ohnehin schon vorbereitet, die schicke ich dir gleich."
+            },
+            {
+              "question": "Wenn Frau Schäfer Paul am Montag in die Kita bringen will, muss sie ihn vorher anmelden.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "melden Sie ihn bitte bis Freitag bei uns an"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The repair firm will finish sooner than planned, so the water is only off from eight until about one o'clock.",
+            "de": "Die Firma ist schneller fertig. Das Wasser ist nur von acht bis etwa dreizehn Uhr abgestellt."
+          },
+          {
+            "en": "The garage needs her consent before it does the extra work on the exhaust.",
+            "de": "Die Werkstatt braucht ihr Einverständnis, bevor sie die zusätzliche Reparatur am Auspuff macht."
+          },
+          {
+            "en": "Merle has already given her ticket to Clara, who will pick Jonas up as planned.",
+            "de": "Merle hat ihr Ticket schon an Clara weitergegeben. Clara holt Jonas wie geplant ab."
+          },
+          {
+            "en": "She is offered two options: an interview in person on Wednesday or a video interview on Tuesday.",
+            "de": "Sie hat zwei Möglichkeiten: ein persönliches Gespräch am Mittwoch oder ein Videogespräch am Dienstag."
+          },
+          {
+            "en": "He does not need to come in. A photo of the invoice sent by email is enough.",
+            "de": "Er muss nicht vorbeikommen. Ein Foto der Rechnung per E-Mail reicht."
+          },
+          {
+            "en": "Ralf cannot attend, but he is sending her the sales figures he has already prepared.",
+            "de": "Ralf kann nicht dabei sein, aber er schickt ihr die Umsatzzahlen, die er schon vorbereitet hat."
+          },
+          {
+            "en": "Emergency care on the strike day is only for children who are registered by Friday.",
+            "de": "Die Notbetreuung am Streiktag gibt es nur für Kinder, die bis Freitag angemeldet sind."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-b2__hoeren-1__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter none\n[Ansage f] Text 1.\n[Mann m] Guten Morgen. Ich brauche eine Überweisung zum Hautarzt. Mein Termin dort ist schon morgen früh.\n[Frau f] Das ist kein Problem, aber die Ärztin muss die Überweisung unterschreiben, und sie ist gerade bei einem Hausbesuch. Sie kommt erst gegen elf zurück.\n[Mann m] Hm, ich muss aber gleich zur Arbeit.\n[Frau f] Dann legen wir Ihnen die Überweisung unterschrieben hier vorne an den Empfang, und Sie holen sie heute Abend ab. Wir haben bis neunzehn Uhr geöffnet.\n[Ansage f] Text 2.\n[Sprecher m] Herzlich willkommen auf Burg Hohenwald! Bevor wir losgehen, noch ein Hinweis: Im Rittersaal wird gerade die Decke restauriert. Den können wir heute deshalb leider nur von der Tür aus anschauen.\n[Sprecher m] Zum Ausgleich dürfen Sie heute ausnahmsweise auf den Turm, der sonst nur für Schulklassen geöffnet ist. Die Treppe ist allerdings eng und steil. Wer nicht so gut zu Fuß ist, kann unten im Hof auf uns warten.\n[Ansage f] Text 3.\n[Frau f] Sag mal, Stefan, kann ich den kleinen Besprechungsraum für morgen einfach bei dir reservieren? Du machst das doch immer.\n[Kollege m] Nicht mehr. Seit dieser Woche bucht jeder die Räume selbst über das Intranet. Und wer einen Raum gebucht hat und ihn dann doch nicht braucht, muss ihn spätestens eine Stunde vorher wieder freigeben.\n[Frau f] Und wenn ich das vergesse?\n[Kollege m] Dann kann man zwei Wochen lang gar nichts mehr buchen. Das hat die Geschäftsleitung so beschlossen, weil die Räume ständig reserviert waren und trotzdem leer standen.\n[Ansage f] Text 4.\n[Mann m] Guten Tag. Ich habe einen Brief bekommen, dass mein Konto ab Juli Gebühren kostet. Bisher war es doch kostenlos.\n[Sprecherin f] Das stimmt, das Konto kostet künftig vier Euro im Monat. Es sei denn, es gehen jeden Monat mindestens tausend Euro darauf ein. Dann bleibt es weiterhin kostenlos.\n[Mann m] Mein Gehalt kommt ja jeden Monat auf dieses Konto, und das sind mehr als tausend Euro.\n[Sprecherin f] Dann ändert sich für Sie gar nichts. Sie müssen auch nichts unterschreiben.\n[Ansage f] Text 5.\n[Sprecher m] So, alle mal herhören, bevor wir anfangen. Ab nächster Woche findet dieser Kurs nicht mehr hier im großen Saal statt, sondern unten im Keller, in Raum drei, weil hier oben der Boden erneuert wird.\n[Sprecher m] Die Uhrzeit bleibt gleich. Aber weil der Raum unten kleiner ist, können nur noch fünfzehn Leute mitmachen. Bitte tragt euch deshalb ab sofort vorher in die Liste am Empfang ein.\n[Ansage f] Text 6.\n[Frau f] Hallo, Herr Yildiz! Ich wollte nur kurz Bescheid sagen: Wir feiern am Samstag den Geburtstag meines Mannes im Garten. Es könnte also etwas lauter werden.\n[Mann m] Danke, dass Sie das sagen. Bis wann geht das denn ungefähr?\n[Frau f] Draußen hören wir um zehn auf, danach gehen wir rein. Und falls Sie Lust haben: Sie sind herzlich eingeladen, ab sechs gibt es Essen.\n[Mann m] Das ist nett. Am Samstag bin ich aber leider bei meiner Tochter in Kassel. Feiern Sie schön!\n[Ansage f] Text 7.\n[Sprecherin f] So, Tim, an deinem ersten Tag schneidest du erst mal nur Gemüse. Ans Fleisch gehst du bitte noch nicht, das macht heute Ahmet.\n[Kollege m] Alles klar. Und die Schürze, nehme ich die abends mit nach Hause zum Waschen?\n[Sprecherin f] Nein, die kommt abends in den grauen Korb neben der Tür. Die Wäscherei holt alles zweimal pro Woche ab.",
+          "questions": [
+            {
+              "question": "Der Mann wartet in der Praxis, bis die Ärztin zurückkommt.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "und Sie holen sie heute Abend ab"
+            },
+            {
+              "question": "Die Besucher dürfen heute einen Ort besichtigen, der normalerweise nicht für alle geöffnet ist.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "der sonst nur für Schulklassen geöffnet ist"
+            },
+            {
+              "question": "Wer eine Raumbuchung nicht rechtzeitig zurücknimmt, kann eine Zeit lang keine Räume reservieren.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Dann kann man zwei Wochen lang gar nichts mehr buchen."
+            },
+            {
+              "question": "Der Mann muss ab Juli Gebühren für sein Konto bezahlen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Dann ändert sich für Sie gar nichts."
+            },
+            {
+              "question": "Der Kurs findet ab nächster Woche zu einer anderen Uhrzeit statt.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Die Uhrzeit bleibt gleich."
+            },
+            {
+              "question": "Nach zehn Uhr wird die Feier im Haus fortgesetzt.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Draußen hören wir um zehn auf, danach gehen wir rein."
+            },
+            {
+              "question": "Tim soll seine Schürze zu Hause waschen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "die kommt abends in den grauen Korb neben der Tür"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "He has to go to work, so the signed referral will be left at the reception and he collects it in the evening.",
+            "de": "Er muss zur Arbeit. Die unterschriebene Überweisung liegt am Empfang, und er holt sie am Abend ab."
+          },
+          {
+            "en": "As an exception, the group may go up the tower, which is usually only open to school classes.",
+            "de": "Die Gruppe darf heute ausnahmsweise auf den Turm. Er ist sonst nur für Schulklassen geöffnet."
+          },
+          {
+            "en": "Anyone who forgets to release a room in time is blocked from booking for two weeks.",
+            "de": "Wer vergisst, den Raum rechtzeitig freizugeben, kann zwei Wochen lang nichts mehr buchen."
+          },
+          {
+            "en": "His salary of more than a thousand euros is paid into the account every month, so it stays free.",
+            "de": "Sein Gehalt von mehr als tausend Euro kommt jeden Monat auf das Konto. Deshalb bleibt es kostenlos."
+          },
+          {
+            "en": "Only the room changes, to a smaller one in the basement. The time stays the same.",
+            "de": "Nur der Raum ändert sich, der Kurs ist dann im kleineren Raum im Keller. Die Uhrzeit bleibt gleich."
+          },
+          {
+            "en": "They stop outside at ten and then carry on indoors.",
+            "de": "Um zehn Uhr hören sie draußen auf und feiern dann im Haus weiter."
+          },
+          {
+            "en": "The apron goes into the grey basket by the door, and a laundry service collects it.",
+            "de": "Die Schürze kommt in den grauen Korb neben der Tür. Die Wäscherei holt sie ab."
+          }
+        ]
+      }
+    }
+  ]
+}

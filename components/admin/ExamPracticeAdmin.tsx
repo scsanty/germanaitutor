@@ -3,7 +3,7 @@
 import { Fragment, useEffect, useRef, useState } from 'react';
 import { Download } from 'lucide-react';
 import type { TeilSetContent, TeilSetRow, TeilSetStatus } from '@/lib/exam/teilSets';
-import type { ClozeContent, MatchingContent, PassageQuestionsContent } from '@/lib/curriculum/types';
+import type { AudioQuestionsContent, ClozeContent, MatchingContent, PassageQuestionsContent } from '@/lib/curriculum/types';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -11,6 +11,7 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { NativeSelect } from '@/components/ui/native-select';
 import { BTN, FIELD_LABEL, FOCUS, HINT, LINK, TABLE, TABLE_WRAP, TD, TH } from './adminStyles';
 import { TeilSetEditor } from './TeilSetEditor';
+import { AudioActions } from './AudioActions';
 import { readText } from './readText';
 
 export interface ExamPracticeFormatOption {
@@ -30,15 +31,28 @@ const STATUS_VARIANT: Record<TeilSetStatus, 'default' | 'secondary' | 'outline' 
 const JSON_HEADERS = { 'Content-Type': 'application/json' };
 const DANGER = `${BTN} text-destructive hover:text-destructive`;
 
+function previewText(set: TeilSetContent): string {
+  switch (set.taskType) {
+    case 'passage_questions':
+      return (set.content as PassageQuestionsContent).passage;
+    case 'matching':
+      return (set.content as MatchingContent).items[0] ?? '';
+    case 'cloze':
+      return (set.content as ClozeContent).text;
+    case 'audio_questions':
+      // The spoken words without the speaker tags and the filter line.
+      return (set.content as AudioQuestionsContent).transcript
+        .split('\n')
+        .filter((l) => !l.trim().startsWith('@filter'))
+        .map((l) => l.replace(/^\s*\[[^\]]*\]\s*/, ''))
+        .join(' ');
+  }
+}
+
 // Spec: the list shows a short read-only preview of each set's German text.
 export function previewOf(set: TeilSetContent | null): string {
   if (!set) return '';
-  const text =
-    set.taskType === 'passage_questions'
-      ? (set.content as PassageQuestionsContent).passage
-      : set.taskType === 'matching'
-        ? ((set.content as MatchingContent).items[0] ?? '')
-        : (set.content as ClozeContent).text;
+  const text = previewText(set);
   const flat = (text ?? '').replace(/\s+/g, ' ').trim();
   return flat.length > 80 ? `${flat.slice(0, 79)}…` : flat;
 }
@@ -276,6 +290,11 @@ export function ExamPracticeAdmin({ formats }: { formats: ExamPracticeFormatOpti
                           onConfirmDelete={() => act(`/api/admin/exam-practice/${row.id}`, { method: 'DELETE' }, closeEditorFor(row.id))}
                           onCancelDelete={() => setConfirmDelete(null)}
                         />
+                      )}
+                      {row.status !== 'reserved' && row.set?.taskType === 'audio_questions' && (
+                        <div className="mt-2">
+                          <AudioActions transcript={(row.set.content as AudioQuestionsContent).transcript} label={`Set ${row.id}`} />
+                        </div>
                       )}
                     </td>
                   </tr>

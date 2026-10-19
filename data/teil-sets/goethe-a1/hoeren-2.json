@@ -1,0 +1,202 @@
+{
+  "formatId": "goethe-a1",
+  "partId": "hoeren-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-a1__hoeren-2__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter station\n[Ansage f] Text 1.\n[Sprecherin f] Liebe Kundinnen und Kunden, heute ist Sporttag im Kaufhaus Lindner!\n[Sprecherin f] In unserer Sportabteilung im zweiten Stock kosten alle Sportschuhe heute zwanzig Prozent weniger.\n[Ansage f] Text 2.\n[Sprecher m] Liebe Kundinnen und Kunden, an Kasse eins warten sehr viele Leute.\n[Sprecher m] Wir öffnen jetzt für Sie auch Kasse vier. Vielen Dank!\n[Ansage f] Text 3.\n[Sprecherin f] Herr Jonas Wagner, Passagier nach Istanbul, bitte kommen Sie zur Information in der Abflughalle.\n[Sprecherin f] Wir haben Ihren Pass gefunden.\n[Ansage f] Text 4.\n[Sprecher m] Liebe Besucherinnen und Besucher, heute schließt der Tierpark schon um siebzehn Uhr.\n[Sprecher m] Um sechzehn Uhr bekommen die Pinguine ihr Essen. Kommen Sie zum Pinguinhaus!",
+          "questions": [
+            {
+              "question": "Im zweiten Stock sind die Sportschuhe heute billiger.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "kosten alle Sportschuhe heute zwanzig Prozent weniger"
+            },
+            {
+              "question": "Kasse vier ist heute geschlossen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Wir öffnen jetzt für Sie auch Kasse vier."
+            },
+            {
+              "question": "Jemand hat den Pass von Herrn Wagner gefunden.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Wir haben Ihren Pass gefunden."
+            },
+            {
+              "question": "Der Tierpark ist heute bis achtzehn Uhr offen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "heute schließt der Tierpark schon um siebzehn Uhr"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "In the sports department on the second floor, all sports shoes cost twenty percent less today.",
+            "de": "In der Sportabteilung im zweiten Stock kosten alle Sportschuhe heute zwanzig Prozent weniger."
+          },
+          {
+            "en": "Checkout four is opening now because many people are waiting at checkout one.",
+            "de": "Kasse vier ist nicht geschlossen. Sie öffnet jetzt, weil an Kasse eins viele Leute warten."
+          },
+          {
+            "en": "The announcement says his passport has been found and he should come to the information desk.",
+            "de": "In der Durchsage heißt es: Wir haben Ihren Pass gefunden. Herr Wagner soll zur Information kommen."
+          },
+          {
+            "en": "The zoo closes at five p.m. today, not at six.",
+            "de": "Der Tierpark schließt heute schon um siebzehn Uhr, nicht um achtzehn Uhr."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a1__hoeren-2__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter station\n[Ansage f] Text 1.\n[Sprecher m] Eine Information zu Gleis sechs: Der Regionalzug nach Bremen, Abfahrt acht Uhr zwölf, fällt heute aus.\n[Sprecher m] Bitte nehmen Sie den nächsten Zug um acht Uhr zweiundvierzig.\n[Ansage f] Text 2.\n[Sprecherin f] Liebe Kunden, heute im Angebot: ein Kilo Äpfel für nur einen Euro neunundneunzig.\n[Sprecherin f] Das Angebot gibt es nur heute.\n[Ansage f] Text 3.\n[Sprecher m] Eine Information für alle Fluggäste nach Wien: Ihr Flug hat leider eine Stunde Verspätung.\n[Sprecher m] Das Flugzeug startet erst um fünfzehn Uhr dreißig. Vielen Dank.\n[Ansage f] Text 4.\n[Sprecherin f] Liebe Kundinnen und Kunden, besuchen Sie unser Café im vierten Stock.\n[Sprecherin f] Heute bekommen Sie zu jedem Stück Kuchen einen Kaffee. Der Kaffee kostet nichts.",
+          "questions": [
+            {
+              "question": "Der Zug um acht Uhr zwölf fährt heute nicht.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "fällt heute aus"
+            },
+            {
+              "question": "Die Äpfel sind die ganze Woche billig.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Das Angebot gibt es nur heute."
+            },
+            {
+              "question": "Der Flug nach Wien startet pünktlich.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Ihr Flug hat leider eine Stunde Verspätung."
+            },
+            {
+              "question": "Heute muss man für den Kaffee zum Kuchen nichts bezahlen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Der Kaffee kostet nichts."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The regional train at eight twelve is cancelled today. Passengers should take the train at eight forty-two.",
+            "de": "Der Regionalzug um acht Uhr zwölf fällt heute aus. Man soll den Zug um acht Uhr zweiundvierzig nehmen."
+          },
+          {
+            "en": "The cheap apples are a special offer for today only, not for the whole week.",
+            "de": "Das Angebot gibt es nur heute, nicht die ganze Woche."
+          },
+          {
+            "en": "The flight to Vienna is one hour late. It only takes off at half past three in the afternoon.",
+            "de": "Der Flug nach Wien hat eine Stunde Verspätung. Er startet erst um fünfzehn Uhr dreißig."
+          },
+          {
+            "en": "Today you get a coffee with every piece of cake, and the coffee costs nothing.",
+            "de": "Heute bekommt man zu jedem Stück Kuchen einen Kaffee. Der Kaffee kostet nichts."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a1__hoeren-2__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter station\n[Ansage f] Text 1.\n[Sprecher m] Achtung an Gleis eins. Gleich kommt ein Zug. Er hält hier nicht.\n[Sprecher m] Bitte gehen Sie zurück.\n[Ansage f] Text 2.\n[Sprecherin f] Liebe Kundinnen und Kunden, unser Supermarkt sucht eine neue Kollegin oder einen neuen Kollegen für die Kasse.\n[Sprecherin f] Haben Sie Interesse? Dann sprechen Sie bitte mit Frau Meier an der Information.\n[Ansage f] Text 3.\n[Sprecher m] Herzlich willkommen auf der Fähre nach Helgoland. Wir sind in etwa zwei Stunden da.\n[Sprecher m] Im Restaurant auf Deck zwei gibt es Frühstück bis zehn Uhr.\n[Ansage f] Text 4.\n[Sprecherin f] Liebe Badegäste, das Hallenbad schließt in zwanzig Minuten.\n[Sprecherin f] Bitte kommen Sie jetzt aus dem Wasser.",
+          "questions": [
+            {
+              "question": "Der Zug an Gleis eins hält hier.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Er hält hier nicht."
+            },
+            {
+              "question": "Der Supermarkt sucht eine Person für die Arbeit an der Kasse.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "sucht eine neue Kollegin oder einen neuen Kollegen für die Kasse"
+            },
+            {
+              "question": "Frühstück bekommt man bis elf Uhr.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "gibt es Frühstück bis zehn Uhr"
+            },
+            {
+              "question": "Die Gäste sollen jetzt nicht mehr schwimmen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Bitte kommen Sie jetzt aus dem Wasser."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "A train is coming to platform one, but it does not stop there, so people must step back.",
+            "de": "Gleich kommt ein Zug, aber er hält hier nicht. Man soll zurückgehen."
+          },
+          {
+            "en": "The supermarket is looking for a new colleague for the checkout. Interested people should talk to Ms Meier.",
+            "de": "Der Supermarkt sucht eine neue Kollegin oder einen neuen Kollegen für die Kasse. Man soll mit Frau Meier sprechen."
+          },
+          {
+            "en": "Breakfast is served until ten o'clock, not eleven.",
+            "de": "Frühstück gibt es bis zehn Uhr, nicht bis elf Uhr."
+          },
+          {
+            "en": "The pool closes in twenty minutes, and the guests are asked to get out of the water now.",
+            "de": "Das Hallenbad schließt in zwanzig Minuten. Die Gäste sollen jetzt aus dem Wasser kommen."
+          }
+        ]
+      }
+    }
+  ]
+}

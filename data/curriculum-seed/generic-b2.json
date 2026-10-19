@@ -1,5 +1,5 @@
 {
-  "seedVersion": "9",
+  "seedVersion": "10",
   "formatVersion": 3,
   "track": "generic",
   "level": "B2",
@@ -1322,29 +1322,93 @@
       }
     },
     {
-      "id": "b2-fachvortraege-podcasts-verstehen__ex0",
+      "id": "b2-fachvortraege-podcasts-verstehen__ex2",
       "lessonId": "b2-fachvortraege-podcasts-verstehen",
       "track": "generic",
-      "type": "multiple_choice",
+      "type": "audio_questions",
       "content": {
-        "question": "Sprecher: 'Man darf nicht übersehen, dass die Kosten für Solaranlagen zwar drastisch gesunken sind, die Speicherkapazitäten jedoch nach wie vor einen Engpass darstellen.' - Worin besteht das verbleibende Hauptproblem?",
-        "options": [
-          "In den extrem hohen Anschaffungskosten für Solarmodule.",
-          "In der mangelnden gesellschaftlichen Akzeptanz von Solarenergie.",
-          "In den unzureichenden Möglichkeiten zur Speicherung des erzeugten Stroms.",
-          "Im Mangel an ausgebildeten Handwerkern."
-        ],
-        "correctIndex": 2
+        "instruction": {
+          "en": "Listen to an excerpt from a talk on solar energy and answer the questions.",
+          "de": "Hören Sie einen Ausschnitt aus einem Vortrag über Solarenergie und beantworten Sie die Fragen."
+        },
+        "transcript": "@filter none\n[Referentin f] Ich möchte nun auf den nächsten Punkt eingehen, nämlich die Kosten der Solarenergie.\n[Referentin f] Man darf nicht übersehen, dass die Preise für Solaranlagen in den letzten zehn Jahren drastisch gesunken sind.\n[Referentin f] Die Speicherkapazitäten stellen jedoch nach wie vor einen Engpass dar: Was mittags erzeugt wird, fehlt abends, wenn der Verbrauch am höchsten ist.\n[Referentin f] Besonders hervorzuheben ist deshalb ein Pilotprojekt in Freiburg, bei dem dreihundert Haushalte ihre Batteriespeicher gemeinsam nutzen.\n[Referentin f] Daraus ergibt sich folgendes Fazit: Nicht neue Module, sondern intelligente Speicher- und Netzlösungen müssen jetzt gefördert werden.",
+        "questions": [
+          {
+            "question": "Worin sieht die Referentin das größte verbleibende Problem?",
+            "options": [
+              "in den hohen Anschaffungskosten für Solarmodule",
+              "in den fehlenden Möglichkeiten, den Strom zu speichern",
+              "in der geringen Akzeptanz in der Bevölkerung"
+            ],
+            "correctIndex": 1,
+            "evidence": "Die Speicherkapazitäten stellen jedoch nach wie vor einen Engpass dar"
+          },
+          {
+            "question": "Was ist das Besondere an dem Projekt in Freiburg?",
+            "options": [
+              "Die Haushalte teilen sich ihre Stromspeicher.",
+              "300 Haushalte haben neue Solarmodule bekommen.",
+              "Der Strom wird abends günstiger verkauft."
+            ],
+            "correctIndex": 0,
+            "evidence": "ihre Batteriespeicher gemeinsam nutzen"
+          },
+          {
+            "question": "Was fordert die Referentin am Schluss?",
+            "options": [
+              "mehr Fördergeld für neue Solarmodule",
+              "niedrigere Strompreise am Abend",
+              "die Förderung von Speicher- und Netztechnik"
+            ],
+            "correctIndex": 2,
+            "evidence": "intelligente Speicher- und Netzlösungen müssen jetzt gefördert werden"
+          }
+        ]
       }
     },
     {
-      "id": "b2-fachvortraege-podcasts-verstehen__ex1",
+      "id": "b2-fachvortraege-podcasts-verstehen__ex3",
       "lessonId": "b2-fachvortraege-podcasts-verstehen",
       "track": "generic",
-      "type": "free_text",
+      "type": "audio_questions",
       "content": {
-        "prompt": "Notieren Sie die Kernbotschaft: 'Ohne eine gezielte Modernisierung unserer Schulen werden wir den Anschluss an führende Technologienationen unausweichlich verlieren.'",
-        "modelAnswer": "Schulen müssen modernisiert werden, um technologisch konkurrenzfähig zu bleiben."
+        "instruction": {
+          "en": "Listen to an excerpt from an education podcast and answer the questions.",
+          "de": "Hören Sie einen Ausschnitt aus einem Bildungspodcast und beantworten Sie die Fragen."
+        },
+        "transcript": "@filter radio\n[Moderator m] Herzlich willkommen zu einer neuen Folge unseres Bildungspodcasts. Mein Gast ist heute die Bildungsforscherin Lena Hartmann aus Hamburg.\n[Moderator m] Frau Hartmann, wie gut sind unsere Schulen auf die Zukunft vorbereitet?\n[Lena Hartmann f] Ehrlich gesagt: nicht gut genug. Ohne eine gezielte Modernisierung unserer Schulen werden wir den Anschluss an führende Technologienationen verlieren.\n[Moderator m] Aber in den letzten Jahren wurden doch sehr viele Tablets angeschafft.\n[Lena Hartmann f] Das stimmt, nur nützen Geräte wenig, wenn die Lehrkräfte nicht wissen, wie man sie sinnvoll im Unterricht einsetzt.\n[Lena Hartmann f] Deshalb schlage ich vor, dass jede Lehrkraft pro Schuljahr mindestens fünf Tage Fortbildung bekommt, und zwar während der Arbeitszeit.",
+        "questions": [
+          {
+            "question": "Was ist die Kernbotschaft von Frau Hartmann?",
+            "options": [
+              "Die Schulen haben schon genug moderne Technik.",
+              "Ohne Modernisierung der Schulen fällt das Land technologisch zurück.",
+              "Die Schulen sollten weniger Technik einsetzen."
+            ],
+            "correctIndex": 1,
+            "evidence": "werden wir den Anschluss an führende Technologienationen verlieren"
+          },
+          {
+            "question": "Wo sieht Frau Hartmann das Problem bei den Tablets?",
+            "options": [
+              "Es gibt noch zu wenige Geräte.",
+              "Die Geräte sind schon veraltet.",
+              "Viele Lehrkräfte können sie im Unterricht nicht richtig nutzen."
+            ],
+            "correctIndex": 2,
+            "evidence": "wenn die Lehrkräfte nicht wissen, wie man sie sinnvoll im Unterricht einsetzt"
+          },
+          {
+            "question": "Was schlägt Frau Hartmann vor?",
+            "options": [
+              "jedes Jahr mindestens fünf Fortbildungstage während der Arbeitszeit",
+              "fünf neue Tablets für jede Klasse",
+              "Fortbildungen für Lehrkräfte in den Ferien"
+            ],
+            "correctIndex": 0,
+            "evidence": "fünf Tage Fortbildung bekommt, und zwar während der Arbeitszeit"
+          }
+        ]
       }
     },
     {

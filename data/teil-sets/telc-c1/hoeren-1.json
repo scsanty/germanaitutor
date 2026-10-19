@@ -1,0 +1,550 @@
+{
+  "formatId": "telc-c1",
+  "partId": "hoeren-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-c1__hoeren-1__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Ansage f] Text 1.\n[Passant m] Also, ich finde, man hat den Unternehmen lange genug vertraut.\n[Passant m] Seit Jahren gibt es diese Selbstverpflichtungen, und was ist dabei herausgekommen? Die Mengen im Müll sind praktisch gleich geblieben.\n[Passant m] Wenn man nur auf Freiwilligkeit setzt, passiert eben nichts. Deshalb bin ich ganz klar für ein Gesetz.\n[Ansage f] Text 2.\n[Passantin f] Ehrlich gesagt halte ich die ganze Debatte für ein bisschen scheinheilig.\n[Passantin f] Die Supermärkte sind doch gar nicht die Hauptverursacher. Der größte Teil landet in den privaten Haushalten in der Tonne, weil wir zu viel einkaufen und den Überblick verlieren.\n[Passantin f] Da müsste man ansetzen, bei uns selbst, und nicht bei den Händlern.\n[Ansage f] Text 3.\n[Befragter m] Ich habe ein paar Jahre in Frankreich gelebt, und dort gibt es so eine Regelung ja schon länger.\n[Befragter m] Große Märkte dürfen genießbare Ware nicht einfach vernichten, sie müssen mit gemeinnützigen Organisationen zusammenarbeiten.\n[Befragter m] Und soweit ich das beurteilen kann, klappt das dort ziemlich reibungslos. Warum sollte das bei uns anders sein?\n[Ansage f] Text 4.\n[Befragte f] Ich führe selbst einen kleinen Bioladen, und ich sage Ihnen: Für die großen Ketten ist das vielleicht machbar.\n[Befragte f] Aber wer soll bei uns die Ware sortieren, dokumentieren und abholen lassen? Wir sind zu dritt im Laden.\n[Befragte f] Dieser Aufwand würde uns schlicht über den Kopf wachsen.\n[Ansage f] Text 5.\n[Passant m] Mich ärgert vor allem, dass junge Leute vor Gericht landen, nur weil sie nachts Joghurt aus einem Abfallcontainer geholt haben.\n[Passant m] Die Ware ist doch schon weggeworfen, da kann man nicht ernsthaft von Diebstahl sprechen.\n[Passant m] Bevor man über neue Pflichten redet, sollte man erst einmal aufhören, diese Menschen zu bestrafen.\n[Ansage f] Text 6.\n[Passantin f] Ich engagiere mich seit Jahren bei der Tafel in unserer Stadt.\n[Passantin f] Grundsätzlich freuen wir uns über jede Spende, aber man muss realistisch bleiben: Wir haben nur zwei Kühlwagen und arbeiten fast ausschließlich mit Ehrenamtlichen.\n[Passantin f] Wenn plötzlich die doppelte Menge käme, wüssten wir gar nicht, wohin damit.\n[Ansage f] Text 7.\n[Befragter m] Ich bin dafür, ganz klar, aber man darf sich nichts vormachen.\n[Befragter m] Solange die Märkte bewusst mehr ins Regal stellen, als sie verkaufen können, damit die Auslage immer voll aussieht, bekämpft man nur die Symptome.\n[Befragter m] Das Gesetz wäre ein Anfang, mehr nicht.\n[Ansage f] Text 8.\n[Befragte f] Ich habe während des Studiums zwei Jahre lang abends in einem Supermarkt gearbeitet.\n[Befragte f] Kurz vor Ladenschluss haben wir regelmäßig ganze Kisten mit Brot, Obst und Milchprodukten in die Tonnen gekippt, und das war alles noch völlig in Ordnung.\n[Befragte f] Das hat mich damals richtig mitgenommen, und seitdem sehe ich solche Diskussionen mit anderen Augen.",
+          "questions": [
+            {
+              "question": "Person 1: Welche Aussage passt?",
+              "options": [
+                "a) Eine gesetzliche Pflicht würde vor allem kleine Geschäfte überfordern.",
+                "b) Das eigentliche Problem liegt beim Verhalten der Verbraucher zu Hause.",
+                "c) Die sozialen Hilfsorganisationen könnten die zusätzlichen Mengen gar nicht bewältigen.",
+                "d) Freiwillige Vereinbarungen mit dem Handel haben nichts bewirkt.",
+                "e) Man sollte lieber das Mindesthaltbarkeitsdatum abschaffen.",
+                "f) Wer weggeworfene Lebensmittel mitnimmt, sollte nicht bestraft werden.",
+                "g) Die Person hat selbst miterlebt, wie viele gute Lebensmittel weggeworfen werden.",
+                "h) Eine solche Pflicht ist sinnvoll, löst aber nicht das Grundproblem des Überangebots.",
+                "i) Der Handel sollte für Spenden Steuererleichterungen bekommen.",
+                "j) Erfahrungen aus dem Ausland zeigen, dass eine solche Regelung funktioniert."
+              ],
+              "correctIndex": 3,
+              "evidence": "Die Mengen im Müll sind praktisch gleich geblieben."
+            },
+            {
+              "question": "Person 2: Welche Aussage passt?",
+              "options": [
+                "a) Eine gesetzliche Pflicht würde vor allem kleine Geschäfte überfordern.",
+                "b) Das eigentliche Problem liegt beim Verhalten der Verbraucher zu Hause.",
+                "c) Die sozialen Hilfsorganisationen könnten die zusätzlichen Mengen gar nicht bewältigen.",
+                "d) Freiwillige Vereinbarungen mit dem Handel haben nichts bewirkt.",
+                "e) Man sollte lieber das Mindesthaltbarkeitsdatum abschaffen.",
+                "f) Wer weggeworfene Lebensmittel mitnimmt, sollte nicht bestraft werden.",
+                "g) Die Person hat selbst miterlebt, wie viele gute Lebensmittel weggeworfen werden.",
+                "h) Eine solche Pflicht ist sinnvoll, löst aber nicht das Grundproblem des Überangebots.",
+                "i) Der Handel sollte für Spenden Steuererleichterungen bekommen.",
+                "j) Erfahrungen aus dem Ausland zeigen, dass eine solche Regelung funktioniert."
+              ],
+              "correctIndex": 1,
+              "evidence": "Der größte Teil landet in den privaten Haushalten in der Tonne"
+            },
+            {
+              "question": "Person 3: Welche Aussage passt?",
+              "options": [
+                "a) Eine gesetzliche Pflicht würde vor allem kleine Geschäfte überfordern.",
+                "b) Das eigentliche Problem liegt beim Verhalten der Verbraucher zu Hause.",
+                "c) Die sozialen Hilfsorganisationen könnten die zusätzlichen Mengen gar nicht bewältigen.",
+                "d) Freiwillige Vereinbarungen mit dem Handel haben nichts bewirkt.",
+                "e) Man sollte lieber das Mindesthaltbarkeitsdatum abschaffen.",
+                "f) Wer weggeworfene Lebensmittel mitnimmt, sollte nicht bestraft werden.",
+                "g) Die Person hat selbst miterlebt, wie viele gute Lebensmittel weggeworfen werden.",
+                "h) Eine solche Pflicht ist sinnvoll, löst aber nicht das Grundproblem des Überangebots.",
+                "i) Der Handel sollte für Spenden Steuererleichterungen bekommen.",
+                "j) Erfahrungen aus dem Ausland zeigen, dass eine solche Regelung funktioniert."
+              ],
+              "correctIndex": 9,
+              "evidence": "soweit ich das beurteilen kann, klappt das dort ziemlich reibungslos"
+            },
+            {
+              "question": "Person 4: Welche Aussage passt?",
+              "options": [
+                "a) Eine gesetzliche Pflicht würde vor allem kleine Geschäfte überfordern.",
+                "b) Das eigentliche Problem liegt beim Verhalten der Verbraucher zu Hause.",
+                "c) Die sozialen Hilfsorganisationen könnten die zusätzlichen Mengen gar nicht bewältigen.",
+                "d) Freiwillige Vereinbarungen mit dem Handel haben nichts bewirkt.",
+                "e) Man sollte lieber das Mindesthaltbarkeitsdatum abschaffen.",
+                "f) Wer weggeworfene Lebensmittel mitnimmt, sollte nicht bestraft werden.",
+                "g) Die Person hat selbst miterlebt, wie viele gute Lebensmittel weggeworfen werden.",
+                "h) Eine solche Pflicht ist sinnvoll, löst aber nicht das Grundproblem des Überangebots.",
+                "i) Der Handel sollte für Spenden Steuererleichterungen bekommen.",
+                "j) Erfahrungen aus dem Ausland zeigen, dass eine solche Regelung funktioniert."
+              ],
+              "correctIndex": 0,
+              "evidence": "Dieser Aufwand würde uns schlicht über den Kopf wachsen."
+            },
+            {
+              "question": "Person 5: Welche Aussage passt?",
+              "options": [
+                "a) Eine gesetzliche Pflicht würde vor allem kleine Geschäfte überfordern.",
+                "b) Das eigentliche Problem liegt beim Verhalten der Verbraucher zu Hause.",
+                "c) Die sozialen Hilfsorganisationen könnten die zusätzlichen Mengen gar nicht bewältigen.",
+                "d) Freiwillige Vereinbarungen mit dem Handel haben nichts bewirkt.",
+                "e) Man sollte lieber das Mindesthaltbarkeitsdatum abschaffen.",
+                "f) Wer weggeworfene Lebensmittel mitnimmt, sollte nicht bestraft werden.",
+                "g) Die Person hat selbst miterlebt, wie viele gute Lebensmittel weggeworfen werden.",
+                "h) Eine solche Pflicht ist sinnvoll, löst aber nicht das Grundproblem des Überangebots.",
+                "i) Der Handel sollte für Spenden Steuererleichterungen bekommen.",
+                "j) Erfahrungen aus dem Ausland zeigen, dass eine solche Regelung funktioniert."
+              ],
+              "correctIndex": 5,
+              "evidence": "da kann man nicht ernsthaft von Diebstahl sprechen"
+            },
+            {
+              "question": "Person 6: Welche Aussage passt?",
+              "options": [
+                "a) Eine gesetzliche Pflicht würde vor allem kleine Geschäfte überfordern.",
+                "b) Das eigentliche Problem liegt beim Verhalten der Verbraucher zu Hause.",
+                "c) Die sozialen Hilfsorganisationen könnten die zusätzlichen Mengen gar nicht bewältigen.",
+                "d) Freiwillige Vereinbarungen mit dem Handel haben nichts bewirkt.",
+                "e) Man sollte lieber das Mindesthaltbarkeitsdatum abschaffen.",
+                "f) Wer weggeworfene Lebensmittel mitnimmt, sollte nicht bestraft werden.",
+                "g) Die Person hat selbst miterlebt, wie viele gute Lebensmittel weggeworfen werden.",
+                "h) Eine solche Pflicht ist sinnvoll, löst aber nicht das Grundproblem des Überangebots.",
+                "i) Der Handel sollte für Spenden Steuererleichterungen bekommen.",
+                "j) Erfahrungen aus dem Ausland zeigen, dass eine solche Regelung funktioniert."
+              ],
+              "correctIndex": 2,
+              "evidence": "wüssten wir gar nicht, wohin damit"
+            },
+            {
+              "question": "Person 7: Welche Aussage passt?",
+              "options": [
+                "a) Eine gesetzliche Pflicht würde vor allem kleine Geschäfte überfordern.",
+                "b) Das eigentliche Problem liegt beim Verhalten der Verbraucher zu Hause.",
+                "c) Die sozialen Hilfsorganisationen könnten die zusätzlichen Mengen gar nicht bewältigen.",
+                "d) Freiwillige Vereinbarungen mit dem Handel haben nichts bewirkt.",
+                "e) Man sollte lieber das Mindesthaltbarkeitsdatum abschaffen.",
+                "f) Wer weggeworfene Lebensmittel mitnimmt, sollte nicht bestraft werden.",
+                "g) Die Person hat selbst miterlebt, wie viele gute Lebensmittel weggeworfen werden.",
+                "h) Eine solche Pflicht ist sinnvoll, löst aber nicht das Grundproblem des Überangebots.",
+                "i) Der Handel sollte für Spenden Steuererleichterungen bekommen.",
+                "j) Erfahrungen aus dem Ausland zeigen, dass eine solche Regelung funktioniert."
+              ],
+              "correctIndex": 7,
+              "evidence": "bekämpft man nur die Symptome"
+            },
+            {
+              "question": "Person 8: Welche Aussage passt?",
+              "options": [
+                "a) Eine gesetzliche Pflicht würde vor allem kleine Geschäfte überfordern.",
+                "b) Das eigentliche Problem liegt beim Verhalten der Verbraucher zu Hause.",
+                "c) Die sozialen Hilfsorganisationen könnten die zusätzlichen Mengen gar nicht bewältigen.",
+                "d) Freiwillige Vereinbarungen mit dem Handel haben nichts bewirkt.",
+                "e) Man sollte lieber das Mindesthaltbarkeitsdatum abschaffen.",
+                "f) Wer weggeworfene Lebensmittel mitnimmt, sollte nicht bestraft werden.",
+                "g) Die Person hat selbst miterlebt, wie viele gute Lebensmittel weggeworfen werden.",
+                "h) Eine solche Pflicht ist sinnvoll, löst aber nicht das Grundproblem des Überangebots.",
+                "i) Der Handel sollte für Spenden Steuererleichterungen bekommen.",
+                "j) Erfahrungen aus dem Ausland zeigen, dass eine solche Regelung funktioniert."
+              ],
+              "correctIndex": 6,
+              "evidence": "das war alles noch völlig in Ordnung"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Person 1 says that years of voluntary commitments have changed nothing, because the amounts thrown away have stayed the same: statement d.",
+            "de": "Person 1 kritisiert, dass die jahrelangen Selbstverpflichtungen nichts verändert hätten, da die weggeworfenen Mengen gleich geblieben seien. Das entspricht Aussage d."
+          },
+          {
+            "en": "Person 2 thinks most food is wasted in private households and that consumers should change their own behaviour: statement b.",
+            "de": "Person 2 meint, dass der größte Teil der Lebensmittel in privaten Haushalten weggeworfen wird und man deshalb beim eigenen Verhalten ansetzen müsse. Das entspricht Aussage b."
+          },
+          {
+            "en": "Person 3 refers to France, where such a rule already exists and, in his view, works smoothly: statement j.",
+            "de": "Person 3 verweist auf Frankreich, wo es eine solche Regelung schon gibt und sie seiner Einschätzung nach reibungslos funktioniert. Das entspricht Aussage j."
+          },
+          {
+            "en": "Person 4 runs a small shop with three staff and says the extra work of such a duty would be too much for them: statement a.",
+            "de": "Person 4 führt einen kleinen Laden mit drei Personen und sagt, der zusätzliche Aufwand wäre für sie nicht zu bewältigen. Das entspricht Aussage a."
+          },
+          {
+            "en": "Person 5 objects to people being prosecuted for taking food that was already thrown away: statement f.",
+            "de": "Person 5 ärgert sich darüber, dass Menschen bestraft werden, die bereits weggeworfene Lebensmittel mitnehmen. Das entspricht Aussage f."
+          },
+          {
+            "en": "Person 6 volunteers at a food bank and says they would not know where to put twice the amount of food: statement c.",
+            "de": "Person 6 arbeitet ehrenamtlich bei der Tafel und sagt, sie wüssten nicht, wohin mit der doppelten Menge. Das entspricht Aussage c."
+          },
+          {
+            "en": "Person 7 supports the law but says that as long as shops deliberately stock too much, it only treats the symptoms: statement h.",
+            "de": "Person 7 befürwortet das Gesetz, meint aber, man bekämpfe nur die Symptome, solange die Märkte bewusst zu viel Ware anbieten. Das entspricht Aussage h."
+          },
+          {
+            "en": "Person 8 worked in a supermarket and saw whole crates of perfectly good food being thrown away: statement g.",
+            "de": "Person 8 hat in einem Supermarkt gearbeitet und erlebt, wie ganze Kisten einwandfreier Lebensmittel weggeworfen wurden. Das entspricht Aussage g."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-c1__hoeren-1__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Ansage f] Text 1.\n[Hörer m] Ich sehe das eigentlich positiv.\n[Hörer m] Bei uns im Viertel leben die Leute doch völlig nebeneinander her: Die Akademikerkinder bleiben unter sich, die anderen auch.\n[Hörer m] Wenn alle ein Jahr lang Seite an Seite im Krankenhaus oder im Sportverein mit anpacken, lernt man Menschen kennen, denen man sonst nie begegnet wäre.\n[Ansage f] Text 2.\n[Hörerin f] Ich halte davon gar nichts.\n[Hörerin f] Mit achtzehn ist man volljährig, und dann soll der Staat einem vorschreiben, was man ein ganzes Jahr lang tut? Das ist für mich ein massiver Eingriff in die persönliche Freiheit.\n[Hörerin f] Jeder sollte selbst bestimmen dürfen, wie er seinen Weg nach der Schule gestaltet.\n[Ansage f] Text 3.\n[Anrufer m] Was in der Diskussion meistens untergeht, ist die Finanzierung.\n[Anrufer m] Wir reden über mehrere hunderttausend junge Menschen pro Jahrgang, die untergebracht, betreut, versichert und bezahlt werden müssen.\n[Anrufer m] Da kommen schnell Milliardenbeträge zusammen, und darüber spricht kaum jemand ehrlich.\n[Ansage f] Text 4.\n[Anruferin f] Ich habe nach dem Abitur ein freiwilliges Jahr in einer Behindertenwerkstatt gemacht, eigentlich nur, um Zeit zu überbrücken.\n[Anruferin f] Aber dort habe ich gemerkt, dass mir die Arbeit mit Menschen unglaublich liegt.\n[Anruferin f] Heute bin ich Heilerziehungspflegerin, und ohne dieses Jahr wäre ich nie auf die Idee gekommen.\n[Ansage f] Text 5.\n[Hörer m] Warum eigentlich immer nur die Jungen?\n[Hörer m] Es gibt doch genug fitte Rentnerinnen und Rentner oder Leute in der Lebensmitte, die der Gesellschaft auch etwas zurückgeben könnten.\n[Hörer m] Wenn schon Pflicht, dann bitte gerecht verteilt, sonst ist das eine Belastung allein für eine Generation.\n[Ansage f] Text 6.\n[Hörerin f] Ich finde, man fängt am falschen Ende an.\n[Hörerin f] Es gibt doch schon das freiwillige soziale Jahr, aber das Taschengeld ist lächerlich gering, und viele Interessierte stehen auf Wartelisten.\n[Hörerin f] Würde man da investieren, kämen genug Leute von selbst, ganz ohne Verpflichtung.\n[Ansage f] Text 7.\n[Anrufer m] Mich stört an der Debatte dieser Unterton, als wären die jungen Leute heute alle bequem und egoistisch.\n[Anrufer m] Mein Sohn trainiert ehrenamtlich eine Fußballmannschaft, seine Freundin hilft in einer Flüchtlingsunterkunft, und das ist in ihrem Freundeskreis ganz normal.\n[Anrufer m] Die Jugend ist viel aktiver, als ihr Ruf es vermuten lässt.\n[Ansage f] Text 8.\n[Anruferin f] Ich bin Pflegedienstleiterin in einem Seniorenheim.\n[Anruferin f] Natürlich klingt es verlockend, jedes Jahr neue Hilfskräfte zu bekommen, aber unsere Bewohner brauchen Fachpersonal und feste Bezugspersonen.\n[Anruferin f] Den Pflegenotstand mit Schulabgängern lösen zu wollen, die nach zwölf Monaten wieder weg sind, halte ich für verantwortungslos.",
+          "questions": [
+            {
+              "question": "Person 1: Welche Aussage passt?",
+              "options": [
+                "a) Ein Pflichtdienst verletzt das Recht, selbst über das eigene Leben zu entscheiden.",
+                "b) Ein solches Jahr hat der Person bei der Berufswahl geholfen.",
+                "c) Pflegeeinrichtungen dürfen Personallücken nicht mit Ungelernten füllen.",
+                "d) Statt Zwang sollte man die bestehenden Freiwilligendienste attraktiver machen.",
+                "e) Ein solcher Dienst müsste für alle Altersgruppen gelten.",
+                "f) Ein Pflichtjahr würde Menschen aus unterschiedlichen Milieus zusammenbringen.",
+                "g) Ein späterer Berufseinstieg würde der Wirtschaft schaden.",
+                "h) Die Kosten für den Staat werden in der Debatte unterschätzt.",
+                "i) Junge Menschen engagieren sich schon jetzt mehr, als viele glauben.",
+                "j) Das Jahr sollte man auch im Ausland ableisten können."
+              ],
+              "correctIndex": 5,
+              "evidence": "lernt man Menschen kennen, denen man sonst nie begegnet wäre"
+            },
+            {
+              "question": "Person 2: Welche Aussage passt?",
+              "options": [
+                "a) Ein Pflichtdienst verletzt das Recht, selbst über das eigene Leben zu entscheiden.",
+                "b) Ein solches Jahr hat der Person bei der Berufswahl geholfen.",
+                "c) Pflegeeinrichtungen dürfen Personallücken nicht mit Ungelernten füllen.",
+                "d) Statt Zwang sollte man die bestehenden Freiwilligendienste attraktiver machen.",
+                "e) Ein solcher Dienst müsste für alle Altersgruppen gelten.",
+                "f) Ein Pflichtjahr würde Menschen aus unterschiedlichen Milieus zusammenbringen.",
+                "g) Ein späterer Berufseinstieg würde der Wirtschaft schaden.",
+                "h) Die Kosten für den Staat werden in der Debatte unterschätzt.",
+                "i) Junge Menschen engagieren sich schon jetzt mehr, als viele glauben.",
+                "j) Das Jahr sollte man auch im Ausland ableisten können."
+              ],
+              "correctIndex": 0,
+              "evidence": "ein massiver Eingriff in die persönliche Freiheit"
+            },
+            {
+              "question": "Person 3: Welche Aussage passt?",
+              "options": [
+                "a) Ein Pflichtdienst verletzt das Recht, selbst über das eigene Leben zu entscheiden.",
+                "b) Ein solches Jahr hat der Person bei der Berufswahl geholfen.",
+                "c) Pflegeeinrichtungen dürfen Personallücken nicht mit Ungelernten füllen.",
+                "d) Statt Zwang sollte man die bestehenden Freiwilligendienste attraktiver machen.",
+                "e) Ein solcher Dienst müsste für alle Altersgruppen gelten.",
+                "f) Ein Pflichtjahr würde Menschen aus unterschiedlichen Milieus zusammenbringen.",
+                "g) Ein späterer Berufseinstieg würde der Wirtschaft schaden.",
+                "h) Die Kosten für den Staat werden in der Debatte unterschätzt.",
+                "i) Junge Menschen engagieren sich schon jetzt mehr, als viele glauben.",
+                "j) Das Jahr sollte man auch im Ausland ableisten können."
+              ],
+              "correctIndex": 7,
+              "evidence": "Da kommen schnell Milliardenbeträge zusammen"
+            },
+            {
+              "question": "Person 4: Welche Aussage passt?",
+              "options": [
+                "a) Ein Pflichtdienst verletzt das Recht, selbst über das eigene Leben zu entscheiden.",
+                "b) Ein solches Jahr hat der Person bei der Berufswahl geholfen.",
+                "c) Pflegeeinrichtungen dürfen Personallücken nicht mit Ungelernten füllen.",
+                "d) Statt Zwang sollte man die bestehenden Freiwilligendienste attraktiver machen.",
+                "e) Ein solcher Dienst müsste für alle Altersgruppen gelten.",
+                "f) Ein Pflichtjahr würde Menschen aus unterschiedlichen Milieus zusammenbringen.",
+                "g) Ein späterer Berufseinstieg würde der Wirtschaft schaden.",
+                "h) Die Kosten für den Staat werden in der Debatte unterschätzt.",
+                "i) Junge Menschen engagieren sich schon jetzt mehr, als viele glauben.",
+                "j) Das Jahr sollte man auch im Ausland ableisten können."
+              ],
+              "correctIndex": 1,
+              "evidence": "ohne dieses Jahr wäre ich nie auf die Idee gekommen"
+            },
+            {
+              "question": "Person 5: Welche Aussage passt?",
+              "options": [
+                "a) Ein Pflichtdienst verletzt das Recht, selbst über das eigene Leben zu entscheiden.",
+                "b) Ein solches Jahr hat der Person bei der Berufswahl geholfen.",
+                "c) Pflegeeinrichtungen dürfen Personallücken nicht mit Ungelernten füllen.",
+                "d) Statt Zwang sollte man die bestehenden Freiwilligendienste attraktiver machen.",
+                "e) Ein solcher Dienst müsste für alle Altersgruppen gelten.",
+                "f) Ein Pflichtjahr würde Menschen aus unterschiedlichen Milieus zusammenbringen.",
+                "g) Ein späterer Berufseinstieg würde der Wirtschaft schaden.",
+                "h) Die Kosten für den Staat werden in der Debatte unterschätzt.",
+                "i) Junge Menschen engagieren sich schon jetzt mehr, als viele glauben.",
+                "j) Das Jahr sollte man auch im Ausland ableisten können."
+              ],
+              "correctIndex": 4,
+              "evidence": "Wenn schon Pflicht, dann bitte gerecht verteilt"
+            },
+            {
+              "question": "Person 6: Welche Aussage passt?",
+              "options": [
+                "a) Ein Pflichtdienst verletzt das Recht, selbst über das eigene Leben zu entscheiden.",
+                "b) Ein solches Jahr hat der Person bei der Berufswahl geholfen.",
+                "c) Pflegeeinrichtungen dürfen Personallücken nicht mit Ungelernten füllen.",
+                "d) Statt Zwang sollte man die bestehenden Freiwilligendienste attraktiver machen.",
+                "e) Ein solcher Dienst müsste für alle Altersgruppen gelten.",
+                "f) Ein Pflichtjahr würde Menschen aus unterschiedlichen Milieus zusammenbringen.",
+                "g) Ein späterer Berufseinstieg würde der Wirtschaft schaden.",
+                "h) Die Kosten für den Staat werden in der Debatte unterschätzt.",
+                "i) Junge Menschen engagieren sich schon jetzt mehr, als viele glauben.",
+                "j) Das Jahr sollte man auch im Ausland ableisten können."
+              ],
+              "correctIndex": 3,
+              "evidence": "kämen genug Leute von selbst, ganz ohne Verpflichtung"
+            },
+            {
+              "question": "Person 7: Welche Aussage passt?",
+              "options": [
+                "a) Ein Pflichtdienst verletzt das Recht, selbst über das eigene Leben zu entscheiden.",
+                "b) Ein solches Jahr hat der Person bei der Berufswahl geholfen.",
+                "c) Pflegeeinrichtungen dürfen Personallücken nicht mit Ungelernten füllen.",
+                "d) Statt Zwang sollte man die bestehenden Freiwilligendienste attraktiver machen.",
+                "e) Ein solcher Dienst müsste für alle Altersgruppen gelten.",
+                "f) Ein Pflichtjahr würde Menschen aus unterschiedlichen Milieus zusammenbringen.",
+                "g) Ein späterer Berufseinstieg würde der Wirtschaft schaden.",
+                "h) Die Kosten für den Staat werden in der Debatte unterschätzt.",
+                "i) Junge Menschen engagieren sich schon jetzt mehr, als viele glauben.",
+                "j) Das Jahr sollte man auch im Ausland ableisten können."
+              ],
+              "correctIndex": 8,
+              "evidence": "Die Jugend ist viel aktiver, als ihr Ruf es vermuten lässt."
+            },
+            {
+              "question": "Person 8: Welche Aussage passt?",
+              "options": [
+                "a) Ein Pflichtdienst verletzt das Recht, selbst über das eigene Leben zu entscheiden.",
+                "b) Ein solches Jahr hat der Person bei der Berufswahl geholfen.",
+                "c) Pflegeeinrichtungen dürfen Personallücken nicht mit Ungelernten füllen.",
+                "d) Statt Zwang sollte man die bestehenden Freiwilligendienste attraktiver machen.",
+                "e) Ein solcher Dienst müsste für alle Altersgruppen gelten.",
+                "f) Ein Pflichtjahr würde Menschen aus unterschiedlichen Milieus zusammenbringen.",
+                "g) Ein späterer Berufseinstieg würde der Wirtschaft schaden.",
+                "h) Die Kosten für den Staat werden in der Debatte unterschätzt.",
+                "i) Junge Menschen engagieren sich schon jetzt mehr, als viele glauben.",
+                "j) Das Jahr sollte man auch im Ausland ableisten können."
+              ],
+              "correctIndex": 2,
+              "evidence": "Den Pflegenotstand mit Schulabgängern lösen zu wollen"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Person 1 hopes that a compulsory year would bring together people who normally never meet: statement f.",
+            "de": "Person 1 hofft, dass ein Pflichtjahr Menschen zusammenbringt, die sich sonst nie begegnen würden. Das entspricht Aussage f."
+          },
+          {
+            "en": "Person 2 sees a compulsory service as a serious interference with personal freedom and self-determination: statement a.",
+            "de": "Person 2 sieht in einem Pflichtdienst einen massiven Eingriff in die persönliche Freiheit und Selbstbestimmung. Das entspricht Aussage a."
+          },
+          {
+            "en": "Person 3 points out that housing, supervising and paying the young people would cost billions, which hardly anyone discusses: statement h.",
+            "de": "Person 3 weist darauf hin, dass Unterbringung, Betreuung und Bezahlung Milliarden kosten würden und kaum jemand darüber spricht. Das entspricht Aussage h."
+          },
+          {
+            "en": "Person 4 found her profession through a voluntary year after school: statement b.",
+            "de": "Person 4 hat durch ein freiwilliges Jahr nach der Schule ihren Beruf gefunden. Das entspricht Aussage b."
+          },
+          {
+            "en": "Person 5 asks why only young people should serve and wants pensioners and middle-aged people included too: statement e.",
+            "de": "Person 5 fragt, warum nur junge Menschen dienen sollen, und möchte auch Rentner und Menschen mittleren Alters einbeziehen. Das entspricht Aussage e."
+          },
+          {
+            "en": "Person 6 wants better pay and more places in the existing voluntary year instead of compulsion: statement d.",
+            "de": "Person 6 möchte statt einer Pflicht das bestehende freiwillige Jahr besser ausstatten, dann kämen genug Leute freiwillig. Das entspricht Aussage d."
+          },
+          {
+            "en": "Person 7 rejects the idea that young people are lazy and gives examples of their voluntary work: statement i.",
+            "de": "Person 7 widerspricht dem Bild der bequemen Jugend und nennt Beispiele für ehrenamtliches Engagement. Das entspricht Aussage i."
+          },
+          {
+            "en": "Person 8 says care homes need trained staff and it is irresponsible to fill the gaps with school leavers: statement c.",
+            "de": "Person 8 betont, dass Pflegeheime Fachpersonal brauchen und es verantwortungslos sei, den Personalmangel mit Schulabgängern zu beheben. Das entspricht Aussage c."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-c1__hoeren-1__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Ansage f] Text 1.\n[Passantin f] Wir sind eine Familie mit drei Kindern, und ein Museumsbesuch ist für uns eine echte Rechenaufgabe.\n[Passantin f] Mit Sonderausstellung und Garderobe sind wir schnell bei über fünfzig Euro, bevor überhaupt jemand etwas getrunken hat.\n[Passantin f] Da überlegt man sich zweimal, ob man an einem verregneten Samstag nicht doch lieber zu Hause bleibt.\n[Ansage f] Text 2.\n[Passant m] Ich arbeite in der Besucherforschung, und die Zahlen sind ziemlich ernüchternd.\n[Passant m] Wo man den Eintritt abgeschafft hat, gab es zwar mehr Besuche, aber es kamen überwiegend dieselben gebildeten Leute, nur eben häufiger.\n[Passant m] Wer bisher nie im Museum war, bleibt auch dann weg, wenn es nichts kostet.\n[Ansage f] Text 3.\n[Befragte f] Ich wohne in einer Stadt, in die jedes Jahr Millionen Touristen strömen.\n[Befragte f] Die zahlen gern zwanzig Euro für ein berühmtes Gemälde, das gehört für sie zum Urlaub einfach dazu.\n[Befragte f] Aber wir Einheimischen sollten unsere eigenen Museen umsonst besuchen dürfen, so wie es manche Städte ja schon machen.\n[Ansage f] Text 4.\n[Befragter m] Ich bin selbst Aufsicht in einem Landesmuseum.\n[Befragter m] Wenn die Eintrittsgelder wegfallen, wird das Loch im Haushalt ja nicht durch ein Wunder gestopft.\n[Befragter m] Dann werden als Erstes Stellen bei der Aufsicht und in der Vermittlung gestrichen, das haben wir bei der letzten Sparrunde schon erlebt.\n[Ansage f] Text 5.\n[Passantin f] Für mich ist das eine Grundsatzfrage.\n[Passantin f] Die Sammlungen gehören doch der Allgemeinheit, und die Häuser werden zum allergrößten Teil aus öffentlichen Mitteln finanziert.\n[Passantin f] Dass man dann noch einmal an der Kasse zahlen muss, um zu sehen, was einem eigentlich schon gehört, leuchtet mir nicht ein.\n[Ansage f] Text 6.\n[Passant m] Ich bin Student, und ehrlich gesagt plane ich meine Museumsbesuche inzwischen nach dem Kalender.\n[Passant m] In unserer Stadt ist der erste Sonntag im Monat frei, und genau dann gehe ich, an allen anderen Tagen ist es mir einfach zu teuer.\n[Passant m] Und da bin ich in meinem Semester keineswegs der Einzige.\n[Ansage f] Text 7.\n[Befragte f] Ich bin da ganz altmodisch.\n[Befragte f] Was nichts kostet, ist in den Augen vieler Leute auch nichts wert.\n[Befragte f] Wenn ich für eine Ausstellung bezahlt habe, nehme ich mir Zeit, lese die Texte und schaue genau hin, statt nur schnell durchzulaufen.\n[Ansage f] Text 8.\n[Befragter m] Ich bin Restaurator, und ich sehe das aus konservatorischer Sicht kritisch.\n[Befragter m] Schon jetzt sind an den kostenlosen Tagen die Säle so überfüllt, dass Besucher gegen Vitrinen stoßen und die Luftfeuchtigkeit steigt.\n[Befragter m] Für empfindliche Objekte wie alte Textilien oder Papierarbeiten ist das auf Dauer pures Gift.",
+          "questions": [
+            {
+              "question": "Person 1: Welche Aussage passt?",
+              "options": [
+                "a) Freier Eintritt allein lockt keine neuen Besuchergruppen an.",
+                "b) Wer für etwas bezahlt, schätzt es auch mehr.",
+                "c) Museen werden aus öffentlichen Geldern bezahlt und sollten daher kostenlos sein.",
+                "d) Mehr Besucher würden den ausgestellten Objekten schaden.",
+                "e) Die Person geht nur noch an Tagen ins Museum, an denen der Eintritt frei ist.",
+                "f) Fehlende Einnahmen würden am Ende beim Personal eingespart.",
+                "g) Touristen sollten weiterhin zahlen, Einheimische nicht.",
+                "h) Museen müssten zuerst ihre Ausstellungen moderner gestalten.",
+                "i) Für Familien sind die Eintrittspreise heute eine echte Hürde.",
+                "j) Museen sollten Eintritt verlangen, dafür aber länger öffnen."
+              ],
+              "correctIndex": 8,
+              "evidence": "sind wir schnell bei über fünfzig Euro"
+            },
+            {
+              "question": "Person 2: Welche Aussage passt?",
+              "options": [
+                "a) Freier Eintritt allein lockt keine neuen Besuchergruppen an.",
+                "b) Wer für etwas bezahlt, schätzt es auch mehr.",
+                "c) Museen werden aus öffentlichen Geldern bezahlt und sollten daher kostenlos sein.",
+                "d) Mehr Besucher würden den ausgestellten Objekten schaden.",
+                "e) Die Person geht nur noch an Tagen ins Museum, an denen der Eintritt frei ist.",
+                "f) Fehlende Einnahmen würden am Ende beim Personal eingespart.",
+                "g) Touristen sollten weiterhin zahlen, Einheimische nicht.",
+                "h) Museen müssten zuerst ihre Ausstellungen moderner gestalten.",
+                "i) Für Familien sind die Eintrittspreise heute eine echte Hürde.",
+                "j) Museen sollten Eintritt verlangen, dafür aber länger öffnen."
+              ],
+              "correctIndex": 0,
+              "evidence": "es kamen überwiegend dieselben gebildeten Leute, nur eben häufiger"
+            },
+            {
+              "question": "Person 3: Welche Aussage passt?",
+              "options": [
+                "a) Freier Eintritt allein lockt keine neuen Besuchergruppen an.",
+                "b) Wer für etwas bezahlt, schätzt es auch mehr.",
+                "c) Museen werden aus öffentlichen Geldern bezahlt und sollten daher kostenlos sein.",
+                "d) Mehr Besucher würden den ausgestellten Objekten schaden.",
+                "e) Die Person geht nur noch an Tagen ins Museum, an denen der Eintritt frei ist.",
+                "f) Fehlende Einnahmen würden am Ende beim Personal eingespart.",
+                "g) Touristen sollten weiterhin zahlen, Einheimische nicht.",
+                "h) Museen müssten zuerst ihre Ausstellungen moderner gestalten.",
+                "i) Für Familien sind die Eintrittspreise heute eine echte Hürde.",
+                "j) Museen sollten Eintritt verlangen, dafür aber länger öffnen."
+              ],
+              "correctIndex": 6,
+              "evidence": "wir Einheimischen sollten unsere eigenen Museen umsonst besuchen dürfen"
+            },
+            {
+              "question": "Person 4: Welche Aussage passt?",
+              "options": [
+                "a) Freier Eintritt allein lockt keine neuen Besuchergruppen an.",
+                "b) Wer für etwas bezahlt, schätzt es auch mehr.",
+                "c) Museen werden aus öffentlichen Geldern bezahlt und sollten daher kostenlos sein.",
+                "d) Mehr Besucher würden den ausgestellten Objekten schaden.",
+                "e) Die Person geht nur noch an Tagen ins Museum, an denen der Eintritt frei ist.",
+                "f) Fehlende Einnahmen würden am Ende beim Personal eingespart.",
+                "g) Touristen sollten weiterhin zahlen, Einheimische nicht.",
+                "h) Museen müssten zuerst ihre Ausstellungen moderner gestalten.",
+                "i) Für Familien sind die Eintrittspreise heute eine echte Hürde.",
+                "j) Museen sollten Eintritt verlangen, dafür aber länger öffnen."
+              ],
+              "correctIndex": 5,
+              "evidence": "werden als Erstes Stellen bei der Aufsicht und in der Vermittlung gestrichen"
+            },
+            {
+              "question": "Person 5: Welche Aussage passt?",
+              "options": [
+                "a) Freier Eintritt allein lockt keine neuen Besuchergruppen an.",
+                "b) Wer für etwas bezahlt, schätzt es auch mehr.",
+                "c) Museen werden aus öffentlichen Geldern bezahlt und sollten daher kostenlos sein.",
+                "d) Mehr Besucher würden den ausgestellten Objekten schaden.",
+                "e) Die Person geht nur noch an Tagen ins Museum, an denen der Eintritt frei ist.",
+                "f) Fehlende Einnahmen würden am Ende beim Personal eingespart.",
+                "g) Touristen sollten weiterhin zahlen, Einheimische nicht.",
+                "h) Museen müssten zuerst ihre Ausstellungen moderner gestalten.",
+                "i) Für Familien sind die Eintrittspreise heute eine echte Hürde.",
+                "j) Museen sollten Eintritt verlangen, dafür aber länger öffnen."
+              ],
+              "correctIndex": 2,
+              "evidence": "die Häuser werden zum allergrößten Teil aus öffentlichen Mitteln finanziert"
+            },
+            {
+              "question": "Person 6: Welche Aussage passt?",
+              "options": [
+                "a) Freier Eintritt allein lockt keine neuen Besuchergruppen an.",
+                "b) Wer für etwas bezahlt, schätzt es auch mehr.",
+                "c) Museen werden aus öffentlichen Geldern bezahlt und sollten daher kostenlos sein.",
+                "d) Mehr Besucher würden den ausgestellten Objekten schaden.",
+                "e) Die Person geht nur noch an Tagen ins Museum, an denen der Eintritt frei ist.",
+                "f) Fehlende Einnahmen würden am Ende beim Personal eingespart.",
+                "g) Touristen sollten weiterhin zahlen, Einheimische nicht.",
+                "h) Museen müssten zuerst ihre Ausstellungen moderner gestalten.",
+                "i) Für Familien sind die Eintrittspreise heute eine echte Hürde.",
+                "j) Museen sollten Eintritt verlangen, dafür aber länger öffnen."
+              ],
+              "correctIndex": 4,
+              "evidence": "der erste Sonntag im Monat frei, und genau dann gehe ich"
+            },
+            {
+              "question": "Person 7: Welche Aussage passt?",
+              "options": [
+                "a) Freier Eintritt allein lockt keine neuen Besuchergruppen an.",
+                "b) Wer für etwas bezahlt, schätzt es auch mehr.",
+                "c) Museen werden aus öffentlichen Geldern bezahlt und sollten daher kostenlos sein.",
+                "d) Mehr Besucher würden den ausgestellten Objekten schaden.",
+                "e) Die Person geht nur noch an Tagen ins Museum, an denen der Eintritt frei ist.",
+                "f) Fehlende Einnahmen würden am Ende beim Personal eingespart.",
+                "g) Touristen sollten weiterhin zahlen, Einheimische nicht.",
+                "h) Museen müssten zuerst ihre Ausstellungen moderner gestalten.",
+                "i) Für Familien sind die Eintrittspreise heute eine echte Hürde.",
+                "j) Museen sollten Eintritt verlangen, dafür aber länger öffnen."
+              ],
+              "correctIndex": 1,
+              "evidence": "nehme ich mir Zeit, lese die Texte und schaue genau hin"
+            },
+            {
+              "question": "Person 8: Welche Aussage passt?",
+              "options": [
+                "a) Freier Eintritt allein lockt keine neuen Besuchergruppen an.",
+                "b) Wer für etwas bezahlt, schätzt es auch mehr.",
+                "c) Museen werden aus öffentlichen Geldern bezahlt und sollten daher kostenlos sein.",
+                "d) Mehr Besucher würden den ausgestellten Objekten schaden.",
+                "e) Die Person geht nur noch an Tagen ins Museum, an denen der Eintritt frei ist.",
+                "f) Fehlende Einnahmen würden am Ende beim Personal eingespart.",
+                "g) Touristen sollten weiterhin zahlen, Einheimische nicht.",
+                "h) Museen müssten zuerst ihre Ausstellungen moderner gestalten.",
+                "i) Für Familien sind die Eintrittspreise heute eine echte Hürde.",
+                "j) Museen sollten Eintritt verlangen, dafür aber länger öffnen."
+              ],
+              "correctIndex": 3,
+              "evidence": "dass Besucher gegen Vitrinen stoßen und die Luftfeuchtigkeit steigt"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Person 1 is a mother of three and says a museum visit quickly costs the family over fifty euros: statement i.",
+            "de": "Person 1 ist Mutter von drei Kindern und sagt, ein Museumsbesuch koste die Familie schnell über fünfzig Euro. Das entspricht Aussage i."
+          },
+          {
+            "en": "Person 2 cites research showing that free entry mainly brings the same visitors more often, not new groups: statement a.",
+            "de": "Person 2 beruft sich auf die Forschung: Ohne Eintritt kommen vor allem dieselben Besucher häufiger, aber keine neuen Gruppen. Das entspricht Aussage a."
+          },
+          {
+            "en": "Person 3 thinks tourists can keep paying, but local residents should get in for free: statement g.",
+            "de": "Person 3 findet, Touristen könnten weiter zahlen, die Einheimischen aber sollten freien Eintritt haben. Das entspricht Aussage g."
+          },
+          {
+            "en": "Person 4 expects that the lost income would be saved by cutting staff positions: statement f.",
+            "de": "Person 4 befürchtet, dass die fehlenden Einnahmen durch den Abbau von Stellen ausgeglichen würden. Das entspricht Aussage f."
+          },
+          {
+            "en": "Person 5 argues that museums are mostly paid for with public money, so people should not have to pay again: statement c.",
+            "de": "Person 5 argumentiert, die Museen würden größtenteils öffentlich finanziert, deshalb solle man nicht noch einmal zahlen müssen. Das entspricht Aussage c."
+          },
+          {
+            "en": "Person 6 only visits museums on the free first Sunday of the month: statement e.",
+            "de": "Person 6 geht nur noch am kostenlosen ersten Sonntag im Monat ins Museum. Das entspricht Aussage e."
+          },
+          {
+            "en": "Person 7 says that when she has paid, she takes more time and looks more carefully, so paying increases appreciation: statement b.",
+            "de": "Person 7 sagt, dass sie sich mehr Zeit nimmt und genauer hinschaut, wenn sie bezahlt hat. Bezahlen erhöht also die Wertschätzung: Aussage b."
+          },
+          {
+            "en": "Person 8 is a restorer and warns that crowded rooms harm fragile exhibits: statement d.",
+            "de": "Person 8 ist Restaurator und warnt, dass überfüllte Säle empfindlichen Objekten schaden. Das entspricht Aussage d."
+          }
+        ]
+      }
+    }
+  ]
+}

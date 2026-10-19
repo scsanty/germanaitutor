@@ -4,12 +4,14 @@ import { dirname, join } from 'node:path';
 import { homedir } from 'node:os';
 import { runMigrations } from './schema';
 
-function defaultDataDir(): string {
+// The app's data folder: the database (unless GAIT_DB_PATH points elsewhere) and the audio cache.
+// One helper, so the audio store and the backup routes can't disagree about where files live.
+export function dataDir(): string {
   return process.env.GAIT_DATA_DIR ?? join(homedir(), '.germanaitutor');
 }
 
 export function getDbPath(): string {
-  return process.env.GAIT_DB_PATH ?? join(defaultDataDir(), 'app.db');
+  return process.env.GAIT_DB_PATH ?? join(dataDir(), 'app.db');
 }
 
 export function createDbClient(path: string): Database.Database {

@@ -1,0 +1,436 @@
+{
+  "formatId": "telc-b1",
+  "partId": "hoeren-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b1__hoeren-2__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Moderatorin f] Guten Tag und herzlich willkommen zu unserer Sendung Menschen in der Stadt. Heute ist Herr Albrecht bei uns im Studio. Herr Albrecht, Sie sind seit zwei Jahren ein sogenannter Leihopa. Was macht man da eigentlich?\n[Herr Albrecht m] Guten Tag. Also, ich kümmere mich um zwei Kinder aus einer Familie in meiner Nachbarschaft, um Mia und Jonas. Die Eltern arbeiten beide, und die richtigen Großeltern wohnen weit weg, in Portugal.\n[Moderatorin f] Wie sind Sie denn zu dieser Aufgabe gekommen?\n[Herr Albrecht m] Das war eigentlich Zufall. Meine Frau hat im Supermarkt einen Zettel am schwarzen Brett gesehen. Da stand, dass ein Verein Leihgroßeltern sucht.\n[Moderatorin f] Und Sie haben sofort ja gesagt?\n[Herr Albrecht m] Nein, gar nicht. Ich war am Anfang unsicher. Ich war vierzig Jahre lang Busfahrer, mit kleinen Kindern hatte ich beruflich nie etwas zu tun.\n[Herr Albrecht m] Aber der Verein bietet einen Kurs an. Da lernt man zum Beispiel, was man bei einem Notfall macht.\n[Moderatorin f] Wie oft sehen Sie die Kinder?\n[Herr Albrecht m] Normalerweise zweimal pro Woche, am Dienstag und am Donnerstag. Ich hole sie vom Kindergarten ab, und dann sind wir bis zum Abend zusammen.\n[Moderatorin f] Bekommen Sie dafür eigentlich Geld?\n[Herr Albrecht m] Nein, das ist ein Ehrenamt. Die Familie bezahlt nur die Fahrkarten, wenn wir zusammen etwas unternehmen, zum Beispiel in den Zoo fahren. Ich mache das nicht wegen des Geldes.\n[Moderatorin f] Was machen Sie am liebsten mit Mia und Jonas?\n[Herr Albrecht m] Wir sind viel draußen. Ich habe einen kleinen Garten, und die beiden haben dort ihr eigenes Beet. Jonas hat dieses Jahr zum ersten Mal Tomaten geerntet, darauf war er sehr stolz.\n[Moderatorin f] Gibt es auch schwierige Momente?\n[Herr Albrecht m] Natürlich. Wenn die Kinder müde sind, streiten sie sich manchmal. Am Anfang wusste ich dann nicht, was ich machen soll.\n[Herr Albrecht m] Heute rufe ich in so einer Situation nicht mehr die Mutter an, sondern lese den beiden eine Geschichte vor. Das beruhigt sie fast immer.\n[Moderatorin f] Was hat sich für Sie selbst verändert?\n[Herr Albrecht m] Sehr viel. Nach der Rente war ich oft allein zu Hause und habe zu viel ferngesehen. Jetzt habe ich wieder einen festen Rhythmus in der Woche.\n[Herr Albrecht m] Und ich bewege mich viel mehr, denn die zwei wollen immer spielen oder Fahrrad fahren.\n[Moderatorin f] Würden Sie das anderen Rentnern empfehlen?\n[Herr Albrecht m] Auf jeden Fall. Der Verein sucht übrigens dringend neue Leihgroßeltern, vor allem Männer. Im Moment gibt es viel mehr Leihomas als Leihopas.\n[Moderatorin f] Herr Albrecht, vielen Dank für das Gespräch.",
+          "questions": [
+            {
+              "question": "Die Großeltern von Mia und Jonas leben in Deutschland.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "die richtigen Großeltern wohnen weit weg, in Portugal"
+            },
+            {
+              "question": "Herr Albrecht hat in der Zeitung von dem Verein gelesen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Meine Frau hat im Supermarkt einen Zettel am schwarzen Brett gesehen."
+            },
+            {
+              "question": "Am Anfang wusste Herr Albrecht nicht, ob er Leihopa werden möchte.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Ich war am Anfang unsicher."
+            },
+            {
+              "question": "Der Verein bereitet die Leihgroßeltern mit einem Kurs vor.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "der Verein bietet einen Kurs an"
+            },
+            {
+              "question": "Herr Albrecht holt die Kinder jeden Tag vom Kindergarten ab.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Normalerweise zweimal pro Woche, am Dienstag und am Donnerstag."
+            },
+            {
+              "question": "Herr Albrecht bekommt von der Familie einen Lohn.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Nein, das ist ein Ehrenamt."
+            },
+            {
+              "question": "Mia und Jonas haben im Garten von Herrn Albrecht ein eigenes Beet.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "die beiden haben dort ihr eigenes Beet"
+            },
+            {
+              "question": "Wenn die Kinder streiten, ruft Herr Albrecht heute sofort die Mutter an.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Heute rufe ich in so einer Situation nicht mehr die Mutter an"
+            },
+            {
+              "question": "Seit er Leihopa ist, ist Herr Albrecht körperlich aktiver.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Und ich bewege mich viel mehr"
+            },
+            {
+              "question": "Im Verein gibt es zurzeit mehr Leihopas als Leihomas.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Im Moment gibt es viel mehr Leihomas als Leihopas."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The children's real grandparents live far away, in Portugal.",
+            "de": "Die richtigen Großeltern wohnen weit weg, in Portugal."
+          },
+          {
+            "en": "His wife saw a notice on the board in the supermarket; there was no newspaper.",
+            "de": "Seine Frau hat einen Zettel im Supermarkt gesehen, nicht in der Zeitung."
+          },
+          {
+            "en": "He says he was unsure at the beginning.",
+            "de": "Er sagt, dass er am Anfang unsicher war."
+          },
+          {
+            "en": "The association offers a course, for example on what to do in an emergency.",
+            "de": "Der Verein bietet einen Kurs an, zum Beispiel zum Thema Notfall."
+          },
+          {
+            "en": "He normally sees the children twice a week, on Tuesday and Thursday.",
+            "de": "Er sieht die Kinder normalerweise nur zweimal pro Woche."
+          },
+          {
+            "en": "It is voluntary work; the family only pays for tickets on outings.",
+            "de": "Es ist ein Ehrenamt. Die Familie bezahlt nur die Fahrkarten bei Ausflügen."
+          },
+          {
+            "en": "The two children have their own bed in his garden.",
+            "de": "Die beiden Kinder haben in seinem Garten ein eigenes Beet."
+          },
+          {
+            "en": "Today he no longer calls the mother; he reads the children a story instead.",
+            "de": "Heute ruft er die Mutter nicht mehr an. Er liest den Kindern eine Geschichte vor."
+          },
+          {
+            "en": "He says he moves around much more, because the children always want to play or cycle.",
+            "de": "Er bewegt sich jetzt viel mehr, weil die Kinder immer spielen oder Fahrrad fahren wollen."
+          },
+          {
+            "en": "At the moment there are many more grandmothers than grandfathers, so men are especially needed.",
+            "de": "Im Moment gibt es viel mehr Leihomas als Leihopas. Deshalb sucht der Verein vor allem Männer."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b1__hoeren-2__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Moderator m] Willkommen zurück. Bei mir im Studio sitzt jetzt Lena Kessler. Sie ist Köchin und arbeitet seit drei Jahren auf einem Kreuzfahrtschiff. Frau Kessler, wie sieht ein normaler Arbeitstag bei Ihnen aus?\n[Lena Kessler f] Hallo! Also, ein normaler Arbeitstag ist ziemlich lang. Ich fange um sechs Uhr morgens an und bin meistens erst um einundzwanzig Uhr fertig. Dazwischen habe ich drei Stunden Pause.\n[Moderator m] Das klingt anstrengend. Und wie viele Tage arbeiten Sie hintereinander?\n[Lena Kessler f] Ein Vertrag dauert immer vier Monate, und in dieser Zeit gibt es keinen freien Tag. Danach habe ich dann zwei Monate Urlaub zu Hause.\n[Moderator m] Wie viele Leute arbeiten denn in der Küche?\n[Lena Kessler f] Auf unserem Schiff sind es über hundert Köche und Küchenhelfer aus mehr als zwanzig Ländern. In der Küche sprechen wir deshalb Englisch, aber ich habe auch ein bisschen Spanisch gelernt.\n[Moderator m] Was haben Sie vorher gemacht?\n[Lena Kessler f] Ich habe meine Ausbildung in einem Hotel in Dresden gemacht und danach noch zwei Jahre in einem kleinen Restaurant gearbeitet. Das war super, aber ich wollte unbedingt etwas von der Welt sehen.\n[Moderator m] Und sehen Sie wirklich etwas von der Welt? Sie stehen doch die ganze Zeit in der Küche.\n[Lena Kessler f] Das fragen alle! Wenn das Schiff im Hafen liegt, habe ich oft ein paar Stunden frei. Dann gehe ich mit Kollegen in die Stadt. So war ich schon in Lissabon, in Athen und in Barcelona.\n[Moderator m] Was ist das Schwierigste an der Arbeit auf dem Schiff?\n[Lena Kessler f] Für mich ist es nicht die Arbeit, sondern dass ich meine Familie und meine Freunde so lange nicht sehe.\n[Lena Kessler f] Das Internet an Bord ist teuer und oft langsam, deshalb telefoniere ich nur einmal pro Woche mit meinen Eltern.\n[Moderator m] Und wenn das Meer unruhig ist? Wird man da nicht seekrank?\n[Lena Kessler f] Am Anfang schon, ehrlich gesagt. In den ersten Wochen ging es mir bei hohen Wellen richtig schlecht. Aber inzwischen merke ich fast nichts mehr.\n[Moderator m] Kochen Sie eigentlich auch deutsche Gerichte?\n[Lena Kessler f] Ja, einmal pro Reise gibt es einen deutschen Abend. Dann machen wir Schnitzel, Kartoffelsalat und Apfelstrudel. Der Apfelstrudel ist bei den Gästen immer am beliebtesten, egal aus welchem Land sie kommen.\n[Moderator m] Wie lange wollen Sie noch auf dem Schiff bleiben?\n[Lena Kessler f] Noch ein Jahr, glaube ich. Dann möchte ich zurück nach Sachsen und dort ein eigenes Café eröffnen. Dafür spare ich gerade jeden Monat Geld.\n[Moderator m] Dann wünschen wir Ihnen viel Glück. Vielen Dank, Frau Kessler.",
+          "questions": [
+            {
+              "question": "Frau Kessler arbeitet von morgens bis abends ohne Pause.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Dazwischen habe ich drei Stunden Pause."
+            },
+            {
+              "question": "Während eines Vertrags arbeitet Frau Kessler jeden Tag.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "in dieser Zeit gibt es keinen freien Tag"
+            },
+            {
+              "question": "In der Küche des Schiffs spricht man Deutsch.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "In der Küche sprechen wir deshalb Englisch"
+            },
+            {
+              "question": "Frau Kessler hat ihren Beruf in einem Hotel gelernt.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Ich habe meine Ausbildung in einem Hotel in Dresden gemacht"
+            },
+            {
+              "question": "Wenn das Schiff in einem Hafen ist, kann Frau Kessler manchmal in die Stadt gehen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Wenn das Schiff im Hafen liegt, habe ich oft ein paar Stunden frei."
+            },
+            {
+              "question": "Am schwierigsten findet Frau Kessler die viele Arbeit.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Für mich ist es nicht die Arbeit, sondern dass ich meine Familie und meine Freunde so lange nicht sehe."
+            },
+            {
+              "question": "Frau Kessler spricht jeden Tag mit ihren Eltern.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "deshalb telefoniere ich nur einmal pro Woche mit meinen Eltern"
+            },
+            {
+              "question": "In der ersten Zeit auf dem Schiff hatte Frau Kessler Probleme mit den Wellen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "In den ersten Wochen ging es mir bei hohen Wellen richtig schlecht."
+            },
+            {
+              "question": "Beim deutschen Abend essen die Gäste das Schnitzel am liebsten.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Der Apfelstrudel ist bei den Gästen immer am beliebtesten"
+            },
+            {
+              "question": "Frau Kessler möchte später ein eigenes Café haben.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "dort ein eigenes Café eröffnen"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Her day is long, but she has a three-hour break in between.",
+            "de": "Ihr Arbeitstag ist lang, aber sie hat dazwischen drei Stunden Pause."
+          },
+          {
+            "en": "During a four-month contract there is no day off.",
+            "de": "Während eines Vertrags von vier Monaten hat sie keinen freien Tag."
+          },
+          {
+            "en": "Because the cooks come from over twenty countries, they speak English in the kitchen.",
+            "de": "Die Köche kommen aus über zwanzig Ländern. Deshalb spricht man in der Küche Englisch."
+          },
+          {
+            "en": "She did her training at a hotel in Dresden.",
+            "de": "Sie hat ihre Ausbildung in einem Hotel in Dresden gemacht."
+          },
+          {
+            "en": "When the ship is in port, she often has a few hours off and goes into town.",
+            "de": "Im Hafen hat sie oft ein paar Stunden frei und geht dann in die Stadt."
+          },
+          {
+            "en": "The hardest part is not the work but not seeing family and friends for so long.",
+            "de": "Am schwierigsten ist nicht die Arbeit, sondern dass sie Familie und Freunde lange nicht sieht."
+          },
+          {
+            "en": "Because the internet on board is expensive and slow, she phones her parents only once a week.",
+            "de": "Das Internet ist teuer und langsam. Deshalb telefoniert sie nur einmal pro Woche mit den Eltern."
+          },
+          {
+            "en": "In the first weeks she felt really bad when the waves were high.",
+            "de": "In den ersten Wochen ging es ihr bei hohen Wellen richtig schlecht."
+          },
+          {
+            "en": "The apple strudel, not the schnitzel, is always the guests' favourite.",
+            "de": "Am beliebtesten ist immer der Apfelstrudel, nicht das Schnitzel."
+          },
+          {
+            "en": "In about a year she wants to go back to Saxony and open her own café.",
+            "de": "In einem Jahr möchte sie zurück nach Sachsen und dort ein eigenes Café eröffnen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b1__hoeren-2__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter radio\n[Moderator m] Und jetzt zu unserem Gast. Tobias Brandt ist Lehrer, aber in seiner Freizeit hält er Bienen, und zwar mitten in der Stadt, auf dem Dach eines Hochhauses. Herr Brandt, wie kommt man auf so eine Idee?\n[Herr Brandt m] Mein Großvater war Imker auf dem Land, und als Kind habe ich ihm oft geholfen. Als ich dann in die Stadt gezogen bin, hat mir das sehr gefehlt.\n[Moderator m] Aber warum gerade auf einem Dach?\n[Herr Brandt m] Ich wohne in einer Mietwohnung ohne Garten. Ich habe dann den Vermieter gefragt, und er hat erlaubt, dass ich zwei Bienenkästen auf das Dach stelle. Heute sind es sechs.\n[Moderator m] Finden die Bienen in der Stadt denn genug Blüten?\n[Herr Brandt m] Oh ja, das glauben viele Leute nicht. Aber in der Stadt gibt es Parks, Balkone, Friedhöfe und viele Bäume an den Straßen. Und es wird weniger Gift gegen Insekten benutzt als auf dem Land.\n[Herr Brandt m] Meine Bienen machen oft mehr Honig als die Bienen meines Großvaters damals.\n[Moderator m] Haben die Nachbarn keine Angst?\n[Herr Brandt m] Am Anfang gab es ein paar Beschwerden. Eine Nachbarin hatte Angst, weil ihr Sohn eine Allergie hat. Ich habe dann alle Nachbarn zu einem kleinen Fest eingeladen und ihnen die Bienen erklärt.\n[Herr Brandt m] Seitdem gibt es keine Probleme mehr, und jeder im Haus bekommt im Herbst ein Glas Honig.\n[Moderator m] Wie viel Zeit kostet das Hobby?\n[Herr Brandt m] Im Winter fast keine. Aber von April bis Juli bin ich jede Woche mindestens fünf Stunden auf dem Dach.\n[Herr Brandt m] Zum Glück habe ich als Lehrer in den Sommerferien Zeit, denn im Juli ernte ich den meisten Honig.\n[Moderator m] Verkaufen Sie den Honig auch?\n[Herr Brandt m] Ja, aber nur einen kleinen Teil, auf dem Wochenmarkt bei uns im Viertel. Mit dem Geld kaufe ich neue Geräte. Reich wird man damit bestimmt nicht.\n[Moderator m] Was sollte man tun, wenn man selbst Imker werden möchte?\n[Herr Brandt m] Auf keinen Fall einfach Bienen kaufen und anfangen. Man sollte zuerst einen Kurs bei einem Imkerverein machen. Der dauert ein ganzes Jahr, weil man alle Jahreszeiten kennenlernen muss.\n[Moderator m] Und gibt es etwas, das jeder für die Bienen tun kann, auch ohne eigene Bienen?\n[Herr Brandt m] Ja, ganz einfach: Pflanzen Sie auf dem Balkon Blumen und Kräuter, zum Beispiel Lavendel oder Thymian. Und mähen Sie den Rasen nicht so oft.\n[Moderator m] Vielen Dank, Herr Brandt, und weiterhin viel Erfolg mit Ihren Bienen.",
+          "questions": [
+            {
+              "question": "Herr Brandt hatte schon als Kind mit Bienen zu tun.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "als Kind habe ich ihm oft geholfen"
+            },
+            {
+              "question": "Herr Brandt hat heute weniger Bienenkästen als am Anfang.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Heute sind es sechs."
+            },
+            {
+              "question": "Die Bienen von Herrn Brandt produzieren oft mehr Honig als früher die Bienen auf dem Land.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Meine Bienen machen oft mehr Honig als die Bienen meines Großvaters damals."
+            },
+            {
+              "question": "Die Nachbarn fanden die Bienen von Anfang an gut.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Am Anfang gab es ein paar Beschwerden."
+            },
+            {
+              "question": "Die Leute im Haus bekommen im Herbst Honig geschenkt.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "jeder im Haus bekommt im Herbst ein Glas Honig"
+            },
+            {
+              "question": "Im Winter braucht Herr Brandt viel Zeit für die Bienen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Im Winter fast keine."
+            },
+            {
+              "question": "Den meisten Honig erntet Herr Brandt im Frühling.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "denn im Juli ernte ich den meisten Honig"
+            },
+            {
+              "question": "Herr Brandt verkauft einen Teil seines Honigs in seinem Stadtteil.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "auf dem Wochenmarkt bei uns im Viertel"
+            },
+            {
+              "question": "Ein Kurs für Imker dauert nur wenige Wochen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 1,
+              "evidence": "Der dauert ein ganzes Jahr"
+            },
+            {
+              "question": "Herr Brandt rät, den Rasen seltener zu mähen.",
+              "options": [
+                "Richtig",
+                "Falsch"
+              ],
+              "correctIndex": 0,
+              "evidence": "Und mähen Sie den Rasen nicht so oft."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "As a child he often helped his grandfather, who was a beekeeper.",
+            "de": "Als Kind hat er seinem Großvater, einem Imker, oft geholfen."
+          },
+          {
+            "en": "He started with two hives and now has six.",
+            "de": "Am Anfang hatte er zwei Bienenkästen, heute sind es sechs."
+          },
+          {
+            "en": "His city bees often make more honey than his grandfather's bees in the countryside did.",
+            "de": "Seine Bienen in der Stadt machen oft mehr Honig als die Bienen seines Großvaters auf dem Land."
+          },
+          {
+            "en": "At first there were some complaints, for example from a neighbour whose son has an allergy.",
+            "de": "Am Anfang gab es Beschwerden, zum Beispiel von einer Nachbarin mit einem allergischen Sohn."
+          },
+          {
+            "en": "Everyone in the building gets a jar of honey in autumn.",
+            "de": "Jeder im Haus bekommt im Herbst ein Glas Honig."
+          },
+          {
+            "en": "In winter the hobby takes almost no time; the busy months are April to July.",
+            "de": "Im Winter braucht er fast keine Zeit. Viel Arbeit gibt es von April bis Juli."
+          },
+          {
+            "en": "He harvests most honey in July, during the summer holidays.",
+            "de": "Den meisten Honig erntet er im Juli, also im Sommer."
+          },
+          {
+            "en": "He sells a small part at the weekly market in his neighbourhood.",
+            "de": "Er verkauft einen kleinen Teil auf dem Wochenmarkt in seinem Viertel."
+          },
+          {
+            "en": "The course lasts a whole year, so you get to know all the seasons.",
+            "de": "Der Kurs dauert ein ganzes Jahr, weil man alle Jahreszeiten kennenlernen muss."
+          },
+          {
+            "en": "He advises not mowing the lawn so often.",
+            "de": "Er empfiehlt, den Rasen nicht so oft zu mähen."
+          }
+        ]
+      }
+    }
+  ]
+}

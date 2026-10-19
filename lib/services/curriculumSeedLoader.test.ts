@@ -233,3 +233,69 @@ describe('loadSeedIfNeeded (format v3)', () => {
     expect(db.prepare('SELECT COUNT(*) AS n FROM milestones').get()).toEqual({ n: 0 });
   });
 });
+
+// B1: the file is the authority for its lessons' seed exercises.
+describe('loadSeedIfNeeded exercise conversion', () => {
+  const lesson = { id: 'l1', track: 'generic', sourceLevel: 'A1', skill: 'listening', title: 'L1', titleDe: 'L1 (de)', explanation: null, explanationDe: null, examples: null, examplesDe: null };
+  const mc = (q: string) => ({ question: q, options: ['ja', 'nein'], correctIndex: 0 });
+  const audio = {
+    transcript: '[Anna f] Ich komme heute.\n[Ben m] Gut.',
+    questions: [{ question: 'Kommt Anna?', options: ['Ja', 'Nein'], correctIndex: 0, evidence: 'Ich komme heute.' }],
+  };
+  function write(dir: string, seedVersion: string, exercises: { id: string; type: string; content: unknown }[]) {
+    writeFileSync(
+      join(dir, 'generic-a1.json'),
+      JSON.stringify({
+        seedVersion,
+        formatVersion: 3,
+        track: 'generic',
+        level: 'A1',
+        milestones: [
+          { milestone: { id: 'm1', track: 'generic', level: 'A1', title: 'M1', titleDe: 'M1 (de)', description: null, descriptionDe: null, difficultyRank: 1 }, lessonIds: ['l1'] },
+        ],
+        lessons: [lesson],
+        exercises: exercises.map((e) => ({ ...e, lessonId: 'l1', track: null })),
+        prerequisites: [],
+      })
+    );
+  }
+  const ids = (db: ReturnType<typeof createDbClient>) =>
+    (db.prepare("SELECT id, type FROM exercises WHERE lesson_id = 'l1' ORDER BY id").all() as { id: string; type: string }[]);
+
+  it('removes seed exercises that left the file, with their attempts, and keeps completions and admin exercises', () => {
+    const db = createDbClient(':memory:');
+    const dir = mkdtempSync(join(tmpdir(), 'gait-seed-'));
+    write(dir, '1', [
+      { id: 'l1__ex0', type: 'multiple_choice', content: mc('A?') },
+      { id: 'l1__ex1', type: 'multiple_choice', content: mc('B?') },
+    ]);
+    loadSeedIfNeeded(db, dir);
+    db.exec(`
+      INSERT INTO exercises (id, lesson_id, type, content) VALUES ('l1__ex-ab12', 'l1', 'multiple_choice', '{"question":"Admin?","options":["ja","nein"],"correctIndex":0}');
+      INSERT INTO lesson_attempts (exercise_id, lesson_id, source, result, answer_text, answered_at, answered_on)
+        VALUES ('l1__ex0', 'l1', 'lesson', 'correct', 'ja', '2026-09-24T10:00:00.000Z', '2026-09-24');
+      INSERT INTO lesson_completions (lesson_id, completed_at) VALUES ('l1', '2026-09-24T10:00:00.000Z');
+    `);
+
+    write(dir, '2', [{ id: 'l1__ex2', type: 'audio_questions', content: audio }]);
+    loadSeedIfNeeded(db, dir);
+
+    expect(ids(db)).toEqual([
+      { id: 'l1__ex-ab12', type: 'multiple_choice' },
+      { id: 'l1__ex2', type: 'audio_questions' },
+    ]);
+    expect(db.prepare("SELECT COUNT(*) AS n FROM lesson_attempts WHERE exercise_id = 'l1__ex0'").get()).toEqual({ n: 0 });
+    expect(db.prepare("SELECT COUNT(*) AS n FROM lesson_completions WHERE lesson_id = 'l1'").get()).toEqual({ n: 1 });
+  });
+
+  it('updates the type of an exercise that keeps its id', () => {
+    const db = createDbClient(':memory:');
+    const dir = mkdtempSync(join(tmpdir(), 'gait-seed-'));
+    write(dir, '1', [{ id: 'l1__ex1', type: 'multiple_choice', content: mc('A?') }]);
+    loadSeedIfNeeded(db, dir);
+    write(dir, '2', [{ id: 'l1__ex1', type: 'audio_questions', content: audio }]);
+    loadSeedIfNeeded(db, dir);
+    expect(ids(db)).toEqual([{ id: 'l1__ex1', type: 'audio_questions' }]);
+    expect(JSON.parse((db.prepare("SELECT content FROM exercises WHERE id = 'l1__ex1'").get() as { content: string }).content)).toEqual(audio);
+  });
+});

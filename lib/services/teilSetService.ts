@@ -7,6 +7,8 @@ import { buildTeilSetPrompt, parseTeilSetReply, teilSetProblems, type BundledSet
 import { isSetTaskType, itemCount } from '../tasks/taskTypes';
 import { errorBodyFor, type ApiErrorBody, type ErrorCode } from '../tutoring/errorCodes';
 import { generateWithActiveProvider, type AiRequest, type AiResult } from './aiService';
+import { createNotificationService, type NotificationService } from './notificationService';
+import { createAudioService } from './audioService';
 
 export type TeilSetErrorKind = 'not_found' | 'unavailable' | 'bad_request';
 
@@ -34,6 +36,8 @@ export interface TeilSetDeps {
   now?: () => Date;
   // The bundled sets folder; tests point it at a fixture.
   setsDir?: string;
+  // Admin notifications: new AI pool items awaiting review (in-app only).
+  notify?: Pick<NotificationService, 'info'>;
 }
 
 // Spec: starter, approved and unreviewed sets are served; rejected never, reserved only in formal exams.
@@ -107,6 +111,9 @@ export function createTeilSetService(db: Database.Database, deps: TeilSetDeps = 
   const generate = deps.generate ?? ((request: AiRequest) => generateWithActiveProvider(db, request));
   const now = () => (deps.now ?? (() => new Date()))().toISOString();
   const setsDir = deps.setsDir ?? defaultSetsDir();
+  // Listening sets queue their transcript for the background renderer (rows only; nothing renders here).
+  const audio = createAudioService(db);
+  const enqueueAudio = (set: TeilSetContent) => audio.enqueueFromContent(set.taskType, set.content);
 
   const getRow = (id: string) => db.prepare('SELECT * FROM teil_sets WHERE id = ?').get(id) as SetRow | undefined;
   const markSeen = (id: string) =>
@@ -152,7 +159,10 @@ export function createTeilSetService(db: Database.Database, deps: TeilSetDeps = 
         const current = loaded.get(bundle.formatId, bundle.partId) as { version: string } | undefined;
         if (current?.version === bundle.version) continue;
         const at = now();
-        for (const { id, set } of bundle.sets) upsert.run(id, bundle.formatId, bundle.partId, JSON.stringify(set), at);
+        for (const { id, set } of bundle.sets) {
+          upsert.run(id, bundle.formatId, bundle.partId, JSON.stringify(set), at);
+          enqueueAudio(set);
+        }
         const kept = new Set(bundle.sets.map((s) => s.id));
         for (const { id } of starters.all(bundle.formatId, bundle.partId) as { id: string }[]) if (!kept.has(id)) retire.run(at, id);
         record.run(bundle.formatId, bundle.partId, bundle.version);
@@ -160,21 +170,38 @@ export function createTeilSetService(db: Database.Database, deps: TeilSetDeps = 
     })();
   }
 
-  // Spec: unseen first (in id order); an exhausted part gets one new AI set; if that fails, the least recently seen.
-  async function pickForPractice(formatId: string, partId: string): Promise<{ id: string; set: TeilSetContent }> {
-    const { format, part } = partOf(formatId, partId);
-    if (!isSetTaskType(part.taskType)) throw new TeilSetError(`No practice sets for ${part.taskType}`, 'unavailable');
-    const usable = db
+  // The part's servable sets (starter, approved, unreviewed), in id order, with when each was last seen.
+  function usableSets(formatId: string, partId: string) {
+    return db
       .prepare(
         `SELECT s.id, s.content, k.seen_at FROM teil_sets s LEFT JOIN teil_seen k ON k.set_id = s.id
          WHERE s.format_id = ? AND s.part_id = ? AND s.status IN ${USABLE} ORDER BY s.id`
       )
       .all(formatId, partId) as { id: string; content: string; seen_at: string | null }[];
+  }
+
+  // Whether the part has a servable set that passes `accept` (e.g. a listening set with cached audio).
+  function hasUsableSet(formatId: string, partId: string, accept: (set: TeilSetContent) => boolean): boolean {
+    return usableSets(formatId, partId).some((r) => accept(JSON.parse(r.content) as TeilSetContent));
+  }
+
+  // Spec: unseen first (in id order); an exhausted part gets one new AI set; if that fails, the least recently seen.
+  // S10: `accept` narrows the sets served (listening sets with cached audio while the speech service is
+  // down), and `generate: false` skips the AI set, whose audio couldn't be rendered then.
+  async function pickForPractice(
+    formatId: string,
+    partId: string,
+    opts: { accept?: (set: TeilSetContent) => boolean; generate?: boolean } = {}
+  ): Promise<{ id: string; set: TeilSetContent }> {
+    const { format, part } = partOf(formatId, partId);
+    if (!isSetTaskType(part.taskType)) throw new TeilSetError(`No practice sets for ${part.taskType}`, 'unavailable');
+    const accept = opts.accept;
+    const usable = accept ? usableSets(formatId, partId).filter((r) => accept(JSON.parse(r.content) as TeilSetContent)) : usableSets(formatId, partId);
     const unseen = usable.find((r) => r.seen_at === null);
     if (unseen) return served(unseen);
 
-    const reply = await generate(buildTeilSetPrompt(part, format.level));
-    const set = reply.ok ? parseTeilSetReply(reply.text, part) : null;
+    const reply = opts.generate === false ? null : await generate(buildTeilSetPrompt(part, format.level));
+    const set = reply?.ok ? parseTeilSetReply(reply.text, part) : null;
     if (set) {
       const id = poolId(formatId, partId);
       db.prepare("INSERT INTO teil_sets (id, format_id, part_id, status, content, created_at) VALUES (?, ?, ?, 'unreviewed', ?, ?)").run(
@@ -184,6 +211,8 @@ export function createTeilSetService(db: Database.Database, deps: TeilSetDeps = 
         JSON.stringify(set),
         now()
       );
+      enqueueAudio(set);
+      void (deps.notify ?? createNotificationService(db)).info('pool_items', 'New pool items', '1 new item to review');
       markSeen(id);
       return { id, set };
     }
@@ -212,6 +241,7 @@ export function createTeilSetService(db: Database.Database, deps: TeilSetDeps = 
     const problems = teilSetProblems(set, part);
     if (problems.length > 0) throw new TeilSetError(problems.join('; '), 'bad_request');
     db.prepare('UPDATE teil_sets SET content = ? WHERE id = ?').run(JSON.stringify(set), id);
+    enqueueAudio(set);
   }
 
   // Starter and pool sets only; reserved sets belong to the formal exams.
@@ -270,6 +300,7 @@ export function createTeilSetService(db: Database.Database, deps: TeilSetDeps = 
       for (const { id, set } of sets) {
         const at = now();
         upsert.run(id, formatId, partId, JSON.stringify(set), at, at);
+        enqueueAudio(set);
       }
     })();
     return { count: sets.length };
@@ -285,5 +316,5 @@ export function createTeilSetService(db: Database.Database, deps: TeilSetDeps = 
     return { formatId, partId, version: meta?.version ?? '1', sets: rows.map((r) => ({ id: r.id, set: JSON.parse(r.content) as TeilSetContent })) };
   }
 
-  return { loadBundled, pickForPractice, list, setStatus, update, remove, duplicate, upload, exportPart };
+  return { loadBundled, pickForPractice, hasUsableSet, list, setStatus, update, remove, duplicate, upload, exportPart };
 }

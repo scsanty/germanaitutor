@@ -1,0 +1,256 @@
+{
+  "formatId": "goethe-a1",
+  "partId": "hoeren-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-a1__hoeren-3__s01",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter phone\n[Ansage f] Text 1.\n[Mitarbeiterin f] Guten Tag, Frau Yilmaz, hier ist die Zahnarztpraxis Berger. Sie haben morgen um neun Uhr einen Termin.\n[Mitarbeiterin f] Leider ist Doktor Berger morgen krank. Können Sie am Freitag um elf Uhr kommen? Bitte rufen Sie uns zurück.\n[Ansage f] Text 2.\n[Mann m] Hallo Sara, hier ist Jonas. Ich bin gerade im Supermarkt. Wir brauchen für heute Abend noch Getränke, oder?\n[Mann m] Ich kaufe Wasser und Saft. Kannst du bitte das Brot vom Bäcker mitbringen? Danke, bis später!\n[Ansage f] Text 3.\n[Frau f] Hallo Leon, hier ist Mama. Ich komme heute erst um sieben Uhr nach Hause.\n[Frau f] Im Kühlschrank ist noch Pizza. Und denk bitte an den Hund: Er muss um fünf Uhr noch raus. Geh bitte mit ihm in den Park.\n[Ansage f] Text 4.\n[Mitarbeiter m] Guten Tag, Herr Schmitt, hier ist das Hotel Seeblick. Sie haben ein Zimmer zum Garten für Samstag und Sonntag.\n[Mitarbeiter m] Leider ist das Zimmer nicht frei. Sie bekommen ein Zimmer zum See. Das kostet nicht mehr. Wir freuen uns auf Sie!\n[Ansage f] Text 5.\n[Freund m] Hallo Eva, hier ist Paul. Wir wollen doch am Sonntag ins Kino gehen. Am Nachmittag kann ich leider nicht, da muss ich arbeiten.\n[Freund m] Gehen wir am Abend, um acht Uhr? Ruf mich bitte an!",
+          "questions": [
+            {
+              "question": "Wann soll Frau Yilmaz zum Zahnarzt kommen?",
+              "options": [
+                "morgen um neun Uhr",
+                "am Freitag um elf Uhr",
+                "am Freitag um neun Uhr"
+              ],
+              "correctIndex": 1,
+              "evidence": "Können Sie am Freitag um elf Uhr kommen?"
+            },
+            {
+              "question": "Was soll Sara kaufen?",
+              "options": [
+                "Brot",
+                "Wasser",
+                "Saft"
+              ],
+              "correctIndex": 0,
+              "evidence": "Kannst du bitte das Brot vom Bäcker mitbringen?"
+            },
+            {
+              "question": "Was soll Leon machen?",
+              "options": [
+                "Pizza kaufen",
+                "für Mama kochen",
+                "mit dem Hund rausgehen"
+              ],
+              "correctIndex": 2,
+              "evidence": "Geh bitte mit ihm in den Park."
+            },
+            {
+              "question": "Welches Zimmer bekommt Herr Schmitt?",
+              "options": [
+                "ein Zimmer zum Garten",
+                "ein Zimmer zum See",
+                "ein Zimmer zur Straße"
+              ],
+              "correctIndex": 1,
+              "evidence": "Sie bekommen ein Zimmer zum See."
+            },
+            {
+              "question": "Wann möchte Paul ins Kino gehen?",
+              "options": [
+                "am Sonntagabend",
+                "am Sonntagnachmittag",
+                "am Samstagabend"
+              ],
+              "correctIndex": 0,
+              "evidence": "Gehen wir am Abend, um acht Uhr?"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The dentist is ill tomorrow, so the practice asks her to come on Friday at eleven instead.",
+            "de": "Der Zahnarzt ist morgen krank. Frau Yilmaz soll am Freitag um elf Uhr kommen."
+          },
+          {
+            "en": "Jonas buys the water and juice himself. He asks Sara to bring the bread from the bakery.",
+            "de": "Jonas kauft Wasser und Saft. Sara soll das Brot vom Bäcker mitbringen."
+          },
+          {
+            "en": "There is pizza in the fridge already. Leon should take the dog out to the park at five.",
+            "de": "Pizza ist schon im Kühlschrank. Leon soll um fünf Uhr mit dem Hund in den Park gehen."
+          },
+          {
+            "en": "His garden-view room is not free, so he gets a room facing the lake at the same price.",
+            "de": "Das Zimmer zum Garten ist nicht frei. Herr Schmitt bekommt ein Zimmer zum See. Es kostet nicht mehr."
+          },
+          {
+            "en": "Paul has to work on Sunday afternoon, so he suggests Sunday evening at eight.",
+            "de": "Paul muss am Sonntagnachmittag arbeiten. Er möchte am Sonntagabend um acht Uhr ins Kino gehen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a1__hoeren-3__s02",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter phone\n[Ansage f] Text 1.\n[Mann m] Guten Tag, Frau Klein, hier ist Herr Brückner, der Hausmeister. Morgen um zehn Uhr kommt der Elektriker in Ihre Wohnung.\n[Mann m] Sie sind dann bei der Arbeit, oder? Kein Problem. Ich habe einen Schlüssel und mache dem Elektriker die Tür auf.\n[Ansage f] Text 2.\n[Frau f] Hallo Marco, hier ist Julia aus dem Deutschkurs. Du warst heute nicht da.\n[Frau f] Die Hausaufgabe ist Seite vierundzwanzig, Übung drei. Und der Test ist nicht am Montag, er ist am Mittwoch. Tschüss!\n[Ansage f] Text 3.\n[Mitarbeiterin f] Guten Tag, Herr Okafor, hier ist der Kindergarten Sonnenblume. Ihre Tochter Amara hat Fieber.\n[Mitarbeiterin f] Bitte holen Sie Amara heute schon um zwölf Uhr ab, nicht erst um vier Uhr.\n[Ansage f] Text 4.\n[Mitarbeiter m] Guten Tag, Frau Novak, hier ist Optik Lange. Ihre neue Brille ist fertig. Sie können sie ab Donnerstag abholen.\n[Mitarbeiter m] Wir haben von neun bis achtzehn Uhr geöffnet, am Samstag bis vierzehn Uhr. Auf Wiederhören!\n[Ansage f] Text 5.\n[Frau f] Hallo Ali, hier ist Dilara. Mein Computer ist kaputt, und ich brauche ihn für die Arbeit.\n[Frau f] Kannst du am Wochenende kommen und ihn reparieren? Ich koche dann auch für dich!",
+          "questions": [
+            {
+              "question": "Wer macht dem Elektriker die Tür auf?",
+              "options": [
+                "Frau Klein",
+                "der Hausmeister",
+                "die Nachbarin"
+              ],
+              "correctIndex": 1,
+              "evidence": "Ich habe einen Schlüssel und mache dem Elektriker die Tür auf."
+            },
+            {
+              "question": "Wann ist der Test?",
+              "options": [
+                "am Montag",
+                "am Dienstag",
+                "am Mittwoch"
+              ],
+              "correctIndex": 2,
+              "evidence": "er ist am Mittwoch"
+            },
+            {
+              "question": "Warum soll Herr Okafor früher kommen?",
+              "options": [
+                "Seine Tochter ist krank.",
+                "Der Kindergarten schließt früher.",
+                "Im Kindergarten gibt es ein Fest."
+              ],
+              "correctIndex": 0,
+              "evidence": "Ihre Tochter Amara hat Fieber."
+            },
+            {
+              "question": "Ab wann kann Frau Novak die Brille abholen?",
+              "options": [
+                "ab Dienstag",
+                "ab Donnerstag",
+                "ab Samstag"
+              ],
+              "correctIndex": 1,
+              "evidence": "Sie können sie ab Donnerstag abholen."
+            },
+            {
+              "question": "Was soll Ali machen?",
+              "options": [
+                "für Dilara kochen",
+                "einen neuen Computer kaufen",
+                "den Computer reparieren"
+              ],
+              "correctIndex": 2,
+              "evidence": "Kannst du am Wochenende kommen und ihn reparieren?"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Ms Klein is at work, so the caretaker, Mr Brückner, opens the door with his key.",
+            "de": "Frau Klein ist bei der Arbeit. Der Hausmeister, Herr Brückner, hat einen Schlüssel und macht die Tür auf."
+          },
+          {
+            "en": "Julia says the test is not on Monday but on Wednesday.",
+            "de": "Julia sagt: Der Test ist nicht am Montag, er ist am Mittwoch."
+          },
+          {
+            "en": "His daughter has a fever, so he should pick her up at twelve instead of four.",
+            "de": "Seine Tochter hat Fieber. Deshalb soll er sie schon um zwölf Uhr abholen."
+          },
+          {
+            "en": "The glasses are ready and can be collected from Thursday. Saturday is only mentioned for the opening hours.",
+            "de": "Die Brille kann sie ab Donnerstag abholen. Der Samstag ist nur bei den Öffnungszeiten."
+          },
+          {
+            "en": "Dilara asks Ali to come at the weekend and repair her computer. She will cook for him.",
+            "de": "Dilara möchte: Ali soll am Wochenende kommen und den Computer reparieren. Sie kocht dann für ihn."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a1__hoeren-3__s03",
+      "set": {
+        "taskType": "audio_questions",
+        "content": {
+          "transcript": "@filter phone\n[Ansage f] Text 1.\n[Mitarbeiterin f] Guten Tag, Herr Fischer, hier ist das Reisebüro Sonne. Ihre Reise nach Wien ist fertig. Der Zug fährt am zehnten Juni.\n[Mitarbeiterin f] Leider gibt es in der Stadtmitte kein Hotel mehr. Wir haben ein schönes Hotel am Bahnhof für Sie.\n[Ansage f] Text 2.\n[Mann m] Hallo Anna, hier ist Stefan. Ich stehe im Stau und bin erst um halb zehn im Büro.\n[Mann m] Die Besprechung ist um neun Uhr. Kannst du bitte schon anfangen? Die Papiere liegen auf meinem Schreibtisch.\n[Ansage f] Text 3.\n[Frau f] Hallo Lukas, hier ist Oma. Danke für die schönen Blumen zum Geburtstag! Am Sonntag gibt es Kaffee und Kuchen. Kommst du um drei Uhr?\n[Frau f] Bring doch deine Freundin Sophie mit! Deine Eltern kommen leider nicht, sie sind im Urlaub.\n[Ansage f] Text 4.\n[Mitarbeiter m] Guten Tag, Frau Schulte, hier ist das Fitnessstudio Aktiv. Ihr Probetraining ist am Montag um achtzehn Uhr.\n[Mitarbeiter m] Bitte bringen Sie Sportschuhe und ein Handtuch mit. Wasser bekommen Sie bei uns.\n[Ansage f] Text 5.\n[Frau f] Hallo Herr Demir, hier ist Frau Roth von nebenan. Ich fahre morgen für eine Woche weg. Können Sie bitte meine Blumen gießen?\n[Frau f] Der Schlüssel ist nicht unter der Matte. Er ist bei meiner Tochter im zweiten Stock.",
+          "questions": [
+            {
+              "question": "Wo ist das Hotel von Herrn Fischer?",
+              "options": [
+                "in der Stadtmitte",
+                "am Flughafen",
+                "am Bahnhof"
+              ],
+              "correctIndex": 2,
+              "evidence": "Wir haben ein schönes Hotel am Bahnhof für Sie."
+            },
+            {
+              "question": "Was soll Anna machen?",
+              "options": [
+                "Stefan abholen",
+                "mit der Besprechung beginnen",
+                "Papiere schreiben"
+              ],
+              "correctIndex": 1,
+              "evidence": "Kannst du bitte schon anfangen?"
+            },
+            {
+              "question": "Wer soll mit Lukas zu Oma kommen?",
+              "options": [
+                "seine Freundin",
+                "seine Eltern",
+                "sein Bruder"
+              ],
+              "correctIndex": 0,
+              "evidence": "Bring doch deine Freundin Sophie mit!"
+            },
+            {
+              "question": "Was bekommt Frau Schulte im Fitnessstudio?",
+              "options": [
+                "ein Handtuch",
+                "Wasser",
+                "Sportschuhe"
+              ],
+              "correctIndex": 1,
+              "evidence": "Wasser bekommen Sie bei uns."
+            },
+            {
+              "question": "Wo ist der Schlüssel?",
+              "options": [
+                "im Briefkasten",
+                "unter der Matte",
+                "bei ihrer Tochter"
+              ],
+              "correctIndex": 2,
+              "evidence": "Er ist bei meiner Tochter im zweiten Stock."
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "There are no hotels left in the city centre, so the travel agency has a hotel at the station for him.",
+            "de": "In der Stadtmitte gibt es kein Hotel mehr. Das Reisebüro hat ein Hotel am Bahnhof für ihn."
+          },
+          {
+            "en": "Stefan is stuck in traffic and asks Anna to start the nine o'clock meeting.",
+            "de": "Stefan steht im Stau. Anna soll die Besprechung um neun Uhr schon anfangen."
+          },
+          {
+            "en": "Grandma asks Lukas to bring his girlfriend Sophie. His parents are on holiday.",
+            "de": "Oma sagt: Lukas soll seine Freundin Sophie mitbringen. Die Eltern sind im Urlaub."
+          },
+          {
+            "en": "She must bring her own sports shoes and towel. The gym gives her water.",
+            "de": "Sportschuhe und ein Handtuch soll sie mitbringen. Wasser bekommt sie im Studio."
+          },
+          {
+            "en": "The key is not under the mat. Her daughter on the second floor has it.",
+            "de": "Der Schlüssel ist nicht unter der Matte. Er ist bei ihrer Tochter im zweiten Stock."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -5,5 +5,5 @@ import { createDashboardService } from '@/lib/services/dashboardService';
 export const dynamic = 'force-dynamic';
 
 export async function GET() {
-  return NextResponse.json(createDashboardService(getDb()).getDashboard());
+  return NextResponse.json(await createDashboardService(getDb()).getDashboard());
 }

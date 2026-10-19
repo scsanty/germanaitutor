@@ -9,7 +9,7 @@ import type { FreeTextGradeOutcome } from './freeTextGradingService';
 import { gradeTask, parseTaskAnswer, resultFromItems, type TaskContent } from '../tasks/taskTypes';
 
 export type ExerciseGradeOutcome =
-  // itemResults only for the reading task types (S17): one entry per question, text or gap.
+  // itemResults only for the reading and listening task types (S17): one entry per question, text or gap.
   | { ok: true; result: GradeResult; feedback: LocalizedText | null; itemResults?: boolean[] }
   | { ok: false; reason: 'bad_request'; message: string }
   | { ok: false; reason: 'grading_failed'; message: string; code?: ErrorCode; params?: ErrorParams };
@@ -57,7 +57,8 @@ export async function gradeExerciseAnswer(
     }
     case 'passage_questions':
     case 'matching':
-    case 'cloze': {
+    case 'cloze':
+    case 'audio_questions': {
       const content = exercise.content as TaskContent;
       const parsed = parseTaskAnswer(answer.type, answer, content);
       if (!parsed) return { ok: false, reason: 'bad_request', message: 'The answer does not fit this task' };

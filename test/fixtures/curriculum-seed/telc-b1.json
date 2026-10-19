@@ -1,0 +1,264 @@
+{
+  "seedVersion": "9",
+  "formatVersion": 3,
+  "track": "telc",
+  "level": "B1",
+  "lessons": [
+    {
+      "id": "b1-telc-sprachbausteine-connectors-grammar",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "grammar",
+      "title": "Syntactic Connectors and Particle Accuracy (telc Sprachbausteine Teil 1)",
+      "explanation": "In telc Sprachbausteine Teil 1, candidates complete a ten-gap semi-formal or formal letter evaluating morphosyntactic precision.\nSuccess depends on recognizing whether a connector coordinates two main clauses in position zero (und, denn, aber, oder, sondern), inverts subject and verb in position one (deshalb, trotzdem, sonst, außerdem), or introduces a subordinate verb-final clause (weil, dass, obwohl, wenn, da).\nPrepositions paired with proper case declensions (trotz + Gen./Dat., wegen + Gen./Dat., seit + Dat.) represent additional frequent test targets.\n",
+      "examples": [
+        "Wir wollten gestern pünktlich abreisen, aber der Zug hatte erhebliche Verspätung.",
+        "Er war gesundheitlich angeschlagen, trotzdem erschien er pünktlich zum Arbeitseinsatz.",
+        "Ich schreibe Ihnen diese Mitteilung, weil ich um eine Terminverschiebung bitten möchte.",
+        "Wegen eines technischen Defekts bleibt unsere Filiale heute geschlossen."
+      ],
+      "titleDe": "Konnektoren und Grammatik (telc Sprachbausteine Teil 1)",
+      "explanationDe": "In telc Sprachbausteine Teil 1 ergänzen Sie einen halbformellen oder formellen Brief mit zehn Lücken. Hier wird vor allem die Grammatik geprüft.\nWichtig ist, welche Art von Konnektor in die Lücke passt: Manche verbinden zwei Hauptsätze auf Position 0 (und, denn, aber, oder, sondern), nach anderen stehen Verb und Subjekt vertauscht auf Position 1 (deshalb, trotzdem, sonst, außerdem), und wieder andere leiten einen Nebensatz mit dem Verb am Ende ein (weil, dass, obwohl, wenn, da).\nAuch Präpositionen mit dem richtigen Kasus werden oft geprüft (trotz + Gen./Dat., wegen + Gen./Dat., seit + Dat.).\n",
+      "examplesDe": [
+        "Wir wollten gestern pünktlich abreisen, aber der Zug hatte erhebliche Verspätung.",
+        "Er war gesundheitlich angeschlagen, trotzdem erschien er pünktlich zum Arbeitseinsatz.",
+        "Ich schreibe Ihnen diese Mitteilung, weil ich um eine Terminverschiebung bitten möchte.",
+        "Wegen eines technischen Defekts bleibt unsere Filiale heute geschlossen."
+      ]
+    },
+    {
+      "id": "b1-telc-reading-teil1-headline-matching",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "reading",
+      "title": "Global Reading and Headline Matching (telc Leseverstehen Teil 1)",
+      "explanation": "In telc Leseverstehen Teil 1, candidates match five short journalistic texts or reports to the most suitable headline from a list of eight options (three are distractors).\nSuccess requires global comprehension (*Globalverstehen*).\nFocus on understanding the central message of each paragraph rather than fixating on unfamiliar vocabulary.\nWatch out for lexical traps: distractors often contain the exact same individual words as the text while conveying a completely different overall meaning.\n",
+      "examples": [
+        "Text: 'Ein Verein in Hamburg organisiert Reparatur-Cafés, in denen Bürger kaputte Geräte gemeinsam instand setzen.' -> Überschrift: 'Reparieren statt wegwerfen'.",
+        "Text: 'Neue Studie belegt: Wer regelmäßig mit dem Rad zur Arbeit fährt, leidet seltener unter Herz-Kreislauf-Erkrankungen.' -> Überschrift: 'Mit dem Fahrrad gesund durch den Alltag'."
+      ],
+      "titleDe": "Leseverstehen Teil 1: Überschriften zuordnen",
+      "explanationDe": "In telc Leseverstehen Teil 1 ordnen Sie fünf kurzen Zeitungstexten oder Berichten die passende Überschrift zu. Es gibt acht Überschriften, drei davon passen nicht.\nHier brauchen Sie das Globalverstehen.\nAchten Sie auf die Hauptaussage jedes Abschnitts und bleiben Sie nicht an unbekannten Wörtern hängen.\nVorsicht vor Wortfallen: Falsche Überschriften enthalten oft genau dieselben Wörter wie der Text, sagen aber insgesamt etwas ganz anderes.\n",
+      "examplesDe": [
+        "Text: 'Ein Verein in Hamburg organisiert Reparatur-Cafés, in denen Bürger kaputte Geräte gemeinsam instand setzen.' -> Überschrift: 'Reparieren statt wegwerfen'.",
+        "Text: 'Neue Studie belegt: Wer regelmäßig mit dem Rad zur Arbeit fährt, leidet seltener unter Herz-Kreislauf-Erkrankungen.' -> Überschrift: 'Mit dem Fahrrad gesund durch den Alltag'."
+      ]
+    },
+    {
+      "id": "b1-telc-listening-teil1-news-broadcasts",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "listening",
+      "title": "Global Listening to Radio Broadcasts and News (telc Hörverstehen Teil 1)",
+      "explanation": "In telc Hörverstehen Teil 1, candidates listen to five short authentic spoken texts (news items, radio reports, public interest announcements) played only once.\nEach audio passage is accompanied by one True/False (Richtig/Falsch) statement.\nCandidates have a short preparation time before each clip to read the statement, highlight the core assertion, and prepare for synonyms or contrasting information in the broadcast.\n",
+      "examples": [
+        "Radiotext: 'Wegen eines Unfalls auf der A3 zwischen Köln und Frankfurt kommt es derzeit zu zehn Kilometern Stau. Autofahrern wird empfohlen, das Gebiet weiträumig zu umfahren.' - Aussage: Auf der A3 läuft der Verkehr flüssig. -> Falsch.",
+        "Durchsage: 'Das Bürgerbüro Mitte bleibt am Freitag wegen einer internen Fortbildung geschlossen.' - Aussage: Am Freitag kann man das Bürgerbüro nicht besuchen. -> Richtig."
+      ],
+      "titleDe": "Hörverstehen Teil 1: Radiomeldungen und Nachrichten",
+      "explanationDe": "In telc Hörverstehen Teil 1 hören Sie fünf kurze authentische Texte (Nachrichten, Radiomeldungen, öffentliche Durchsagen). Sie hören jeden Text nur einmal.\nZu jedem Text gibt es eine Aussage, die richtig oder falsch ist.\nVor jedem Text haben Sie kurz Zeit: Lesen Sie die Aussage, markieren Sie die Kernaussage und rechnen Sie mit Synonymen oder widersprüchlichen Informationen im Hörtext.\n",
+      "examplesDe": [
+        "Radiotext: 'Wegen eines Unfalls auf der A3 zwischen Köln und Frankfurt kommt es derzeit zu zehn Kilometern Stau. Autofahrern wird empfohlen, das Gebiet weiträumig zu umfahren.' - Aussage: Auf der A3 läuft der Verkehr flüssig. -> Falsch.",
+        "Durchsage: 'Das Bürgerbüro Mitte bleibt am Freitag wegen einer internen Fortbildung geschlossen.' - Aussage: Am Freitag kann man das Bürgerbüro nicht besuchen. -> Richtig."
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b1-telc-sprachbausteine-connectors-grammar__ex0",
+      "lessonId": "b1-telc-sprachbausteine-connectors-grammar",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Klausurtext: 'Herr Meyer war krank, ___ konnte er den Auftrag rechtzeitig abschließen.' (Verb folgt sofort)",
+        "options": [
+          "obwohl",
+          "trotzdem",
+          "weil",
+          "denn"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-telc-sprachbausteine-connectors-grammar__ex1",
+      "lessonId": "b1-telc-sprachbausteine-connectors-grammar",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Wir bitten um Entschuldigung, ___ die Lieferung sich um zwei Tage verzögert hat. (da / dass)",
+        "correctAnswer": "dass"
+      }
+    },
+    {
+      "id": "b1-telc-sprachbausteine-connectors-grammar__ex2",
+      "lessonId": "b1-telc-sprachbausteine-connectors-grammar",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Konnektor fordert die Verb-Letzt-Stellung?",
+        "options": [
+          "deshalb",
+          "denn",
+          "obwohl",
+          "außerdem"
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "b1-telc-sprachbausteine-connectors-grammar__ex3",
+      "lessonId": "b1-telc-sprachbausteine-connectors-grammar",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Die Baustelle wurde ___ des starken Regens für drei Tage stillgelegt. (wegen / trotz)",
+        "correctAnswer": "wegen"
+      }
+    },
+    {
+      "id": "b1-telc-sprachbausteine-connectors-grammar__ex4",
+      "lessonId": "b1-telc-sprachbausteine-connectors-grammar",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "Konnektoren auf Position 0 (ADUSO)",
+        "back": "aber, denn, und, sondern, oder (no change to standard subject-verb word order)"
+      }
+    },
+    {
+      "id": "b1-telc-reading-teil1-headline-matching__ex0",
+      "lessonId": "b1-telc-reading-teil1-headline-matching",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Text: 'Viele Kommunen setzen auf Carsharing-Modelle. Bürger teilen sich Fahrzeuge und verzichten zunehmend auf das eigene Auto, was Kosten spart und die Umwelt schont.' - Welche Überschrift passt?",
+        "options": [
+          "Höhere Benzinpreise belasten Autofahrer",
+          "Gemeinsam fahren: Autos teilen liegt im Trend",
+          "Autobauer melden Rekordverkäufe",
+          "Fahrradwege in Innenstädten werden ausgebaut"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-telc-reading-teil1-headline-matching__ex1",
+      "lessonId": "b1-telc-reading-teil1-headline-matching",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Text: 'Immer mehr ältere Menschen nutzen digitale Angebote, um mit ihren Familien über Videoanrufe in Kontakt zu bleiben oder online Bankgeschäfte zu erledigen.' - Welche Überschrift fasst den Text zusammen?",
+        "options": [
+          "Senioren erobern die digitale Welt",
+          "Banken schließen ihre Filialen",
+          "Jugendliche verbringen zu viel Zeit online",
+          "Gefahren beim Online-Shopping"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "b1-telc-reading-teil1-headline-matching__ex2",
+      "lessonId": "b1-telc-reading-teil1-headline-matching",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Lesestrategie für Teil 1: Man liest nicht jedes Wort, sondern sucht das ___ des gesamten Abschnitts. (Hauptthema / Fremdwort)",
+        "correctAnswer": "Hauptthema"
+      }
+    },
+    {
+      "id": "b1-telc-reading-teil1-headline-matching__ex3",
+      "lessonId": "b1-telc-reading-teil1-headline-matching",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "Selektives vs. Globales Lesen",
+        "back": "Global: overall gist (Teil 1); Selektiv: targeted specific details (Teil 3)"
+      }
+    },
+    {
+      "id": "b1-telc-reading-teil1-headline-matching__ex4",
+      "lessonId": "b1-telc-reading-teil1-headline-matching",
+      "track": "telc",
+      "type": "matching",
+      "content": {
+        "instruction": {
+          "en": "Read the five texts and find the right headline for each one. Four headlines are left over. Watch out for words from the text that appear in the wrong headline.",
+          "de": "Lesen Sie die fünf Texte und finden Sie für jeden Text die passende Überschrift. Vier Überschriften bleiben übrig. Achten Sie auf Wörter aus dem Text in falschen Überschriften."
+        },
+        "items": [
+          "Die Stadtbibliothek Freiburg verleiht seit diesem Monat nicht nur Bücher, sondern auch Werkzeuge, Campingausrüstung und Partyzubehör. Statt eine Bohrmaschine zu kaufen, die man nur zweimal im Jahr benutzt, holt man sie für ein paar Tage ab. Mit einem gültigen Bibliotheksausweis ist die Ausleihe kostenlos.",
+          "Immer mehr Handwerksbetriebe finden keine Auszubildenden. Eine Bäckerei in Kassel geht deshalb neue Wege: Jugendliche können dort in den Ferien eine Woche lang mitarbeiten und den Beruf kennenlernen. Wer danach eine Ausbildung beginnt, bekommt vom ersten Tag an ein Monatsticket für Bus und Bahn.",
+          "Wer nachts schlecht schläft, sollte abends auf das Handy verzichten. Das zeigt eine Untersuchung der Universität Bremen. Die Forscher baten 300 Testpersonen, eine Stunde vor dem Schlafen keine Bildschirme mehr zu benutzen. Nach zwei Wochen schliefen die meisten schneller ein und fühlten sich am Morgen fitter.",
+          "Der Sommer war in vielen Regionen viel zu trocken. Jetzt bitten mehrere Gemeinden in Brandenburg ihre Einwohner, die Bäume an den Straßen zu gießen. Wer einen Baum vor dem Haus „adoptiert“, bekommt kostenlos einen Wassersack, der das Wasser langsam an die Wurzeln abgibt.",
+          "Ab Januar dürfen Hunde in den Zügen eines regionalen Bahnunternehmens nur noch mit Maulkorb mitfahren. Kleine Hunde in einer Tasche sind davon ausgenommen. Das Unternehmen reagiert damit auf Beschwerden von Fahrgästen. Tierschützer kritisieren die neue Regel als übertrieben."
+        ],
+        "targets": [
+          "Bibliothek kauft neue Bücher für Heimwerker",
+          "Ohne Bildschirm besser schlafen",
+          "Tierschützer fordern Hundeverbot in Zügen",
+          "Bürger sollen Stadtbäumen durch die Trockenheit helfen",
+          "Freie Fahrt mit Bus und Bahn für alle Schüler",
+          "Leihen statt kaufen: neues Angebot der Bibliothek",
+          "Universität sucht Testpersonen für Handy-Studie",
+          "Neue Regel für Vierbeiner in der Bahn",
+          "Mit Ferienwochen gegen den Mangel an Lehrlingen"
+        ],
+        "answers": [
+          5,
+          8,
+          1,
+          3,
+          7
+        ],
+        "allowNone": false
+      }
+    },
+    {
+      "id": "b1-telc-listening-teil1-news-broadcasts__ex0",
+      "lessonId": "b1-telc-listening-teil1-news-broadcasts",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Radiomeldung (1x): 'Das beliebte Straßenfest findet wegen des angekündigten Sturms dieses Jahr nicht am Rathausplatz, sondern in der Stadthalle statt.' - Aussage: Das Fest fällt komplett aus.",
+        "options": [
+          "Richtig",
+          "Falsch"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-telc-listening-teil1-news-broadcasts__ex1",
+      "lessonId": "b1-telc-listening-teil1-news-broadcasts",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Wetterbericht (1x): 'Nach einem kühlen Morgen klettern die Temperaturen am Nachmittag auf sommerliche 27 Grad bei strahlendem Sonnenschein.' - Aussage: Es wird am Nachmittag warm und sonnig.",
+        "options": [
+          "Richtig",
+          "Falsch"
+        ],
+        "correctIndex": 0
+      }
+    },
+    {
+      "id": "b1-telc-listening-teil1-news-broadcasts__ex2",
+      "lessonId": "b1-telc-listening-teil1-news-broadcasts",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Strategie für Teil 1: Da die Texte nur ___ abgespielt werden, muss man vorab die Leitwörter der Aussage lesen. (once: einmal)",
+        "correctAnswer": "einmal"
+      }
+    }
+  ],
+  "prerequisites": [],
+  "milestones": [],
+  "conceptLinks": []
+}

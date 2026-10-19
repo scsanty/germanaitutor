@@ -25,7 +25,8 @@
     "already_in_deck": "Dieses Wort ist schon in deinem Kartenstapel",
     "session_exists": "Für diesen Modus ist schon eine Sitzung offen",
     "session_ending": "Diese Sitzung wird gerade beendet. Bitte warte einen Moment.",
-    "part_unavailable": "Dieser Teil kann noch nicht geübt werden"
+    "part_unavailable": "Dieser Teil kann noch nicht geübt werden",
+    "audio_unavailable": "Dieses Audio ist gerade nicht verfügbar"
   },
   "languageToggle": {
     "lesson": "Sprache der Lektion",
@@ -177,7 +178,9 @@
     "markFailed": "Die Lektion konnte nicht als erledigt markiert werden: {error}",
     "done": "Erledigt – diese Lektion ist abgeschlossen.",
     "exerciseLabel": "Übung {number}",
-    "practiceExerciseLabel": "eine Übung der Übungsrunde"
+    "practiceExerciseLabel": "eine Übung der Übungsrunde",
+    "audioUnavailableNote": "Einige Hörübungen sind gerade nicht verfügbar.",
+    "audioUnavailableAll": "Die Hörübungen dieser Lektion sind gerade nicht verfügbar. Komm später wieder, um sie zu machen."
   },
   "tree": {
     "heading": "{track} {level}",
@@ -516,6 +519,8 @@
       "speaking": "Sprechen"
     },
     "mockOnly": "Wird im Modelltest geübt",
+    "audioUnavailable": "Audio gerade nicht verfügbar",
+    "mockAudioUnavailable": "Der Modelltest braucht Hör-Audio, das gerade nicht verfügbar ist.",
     "noFormat": "Für diesen Track und dieses Niveau gibt es noch kein Prüfungsformat.",
     "mockPart": "Teil {current} von {total}",
     "mockResultTitle": "Ergebnis des Modelltests",
@@ -527,5 +532,17 @@
     "back": "Zurück zum Prüfungstraining",
     "unanswered": "—",
     "none": "x (keine)"
+  },
+  "audio": {
+    "play": "Abspielen",
+    "pause": "Pause",
+    "back5": "5 Sekunden zurück",
+    "slow": "0,75×",
+    "played": "{n} von {max, plural, one {# Mal} other {# Mal}} abgespielt",
+    "unavailable": "Audio gerade nicht verfügbar",
+    "transcript": "Transkript",
+    "evidenceFor": "Beleg für Frage {n}",
+    "evidenceForMany": "Beleg für Fragen {n}",
+    "retry": "Erneut versuchen"
   }
 }

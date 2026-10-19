@@ -1,7 +1,7 @@
 import type Database from 'better-sqlite3';
 import { localized } from '../i18n/localizedText';
 import type { CefrLevel, Track } from '../types';
-import type { ExerciseType, Skill } from '../curriculum/types';
+import type { Exercise, ExerciseType, Skill } from '../curriculum/types';
 import { unsortedMilestoneId } from '../curriculum-admin/unsortedBucket';
 import { lessonStatus } from '../tutoring/completion';
 import { toExerciseView } from '../tutoring/exerciseView';
@@ -15,6 +15,12 @@ import { createCurriculumService } from './curriculumService';
 import { lessonLock, loadDoneState, loadLevelGating, loadPrerequisites, type DoneState } from './levelGating';
 import { createProfileService } from './profileService';
 import { testOutStatusFor } from './testOutStatus';
+import { resolveAudioGate, type AudioAvailabilityDeps } from '../audio/audioAvailability';
+
+export interface ProgressDeps {
+  // Listening availability (S7): tests inject fakes for the speech service and the audio cache.
+  audio?: AudioAvailabilityDeps;
+}
 
 interface VisibleLessonRow {
   id: string;
@@ -35,7 +41,7 @@ interface DueRow {
 
 const isDone = (state: DoneState, id: string) => state.completed.has(id) || state.coveredVia.has(id);
 
-export function createProgressService(db: Database.Database) {
+export function createProgressService(db: Database.Database, deps: ProgressDeps = {}) {
   const profiles = createProfileService(db);
   const curriculum = createCurriculumService(db);
   const text = createContentText(db);
@@ -61,7 +67,7 @@ export function createProgressService(db: Database.Database) {
     const attempted = new Set(
       (db.prepare('SELECT DISTINCT lesson_id FROM lesson_attempts').all() as { lesson_id: string }[]).map((r) => r.lesson_id)
     );
-    const statusOpts = { now: new Date(), aiAvailable: isAiAvailable(db) };
+    const statusOpts = { now: new Date(), aiAvailable: isAiAvailable(db), audioCached: deps.audio?.cached };
 
     return {
       track,
@@ -139,7 +145,15 @@ export function createProgressService(db: Database.Database) {
     return rows.map((r) => r.id);
   }
 
-  function getLessonView(lessonId: string): LessonView | null {
+  // Spec: availability rules. The lesson's exercises that can be served now (listening exercises
+  // need cached audio or a running speech service), and the gate used to build their views.
+  async function availableExercises(lesson: { id: string; track: Track }) {
+    const all = curriculum.getExercises(lesson.id, lesson.track);
+    const gate = await resolveAudioGate(db, all, deps.audio);
+    return { all, available: all.filter((e) => gate.usable(e.type, e.content)), gate };
+  }
+
+  async function getLessonView(lessonId: string): Promise<LessonView | null> {
     const lesson = curriculum.getLesson(lessonId, 'generic'); // getLesson ignores its track argument
     if (!lesson) return null;
     const { highestUnlockedLevel, uiLanguage: language } = profiles.getProfile();
@@ -170,6 +184,7 @@ export function createProgressService(db: Database.Database) {
        WHERE p.lesson_id = ? AND m.difficulty_rank IS NULL`
     );
     const inUnsorted = (id: string) => !!unsortedStmt.get(id);
+    const { all, available, gate } = await availableExercises(lesson);
     return {
       locked: false,
       id: lesson.id,
@@ -179,7 +194,8 @@ export function createProgressService(db: Database.Database) {
       skill: lesson.skill,
       explanation: lesson.explanation ? localized(lesson.explanation, lesson.explanationDe) : null,
       examples: lesson.examples ? lesson.examples.map((example, i) => localized(example, lesson.examplesDe?.[i])) : null,
-      exercises: curriculum.getExercises(lesson.id, lesson.track).map(toExerciseView),
+      exercises: available.map((e) => toExerciseView(e, gate.playable)),
+      unavailableAudio: all.length - available.length,
       passedExerciseIds: passedExerciseIds(lesson.id),
       completed: done.completed.has(lesson.id),
       // Prerequisites placed in Unsorted are ignored by gating, so the view doesn't list them either.
@@ -191,7 +207,8 @@ export function createProgressService(db: Database.Database) {
 
   // Spec: Pages and Navigation, `/queue`. Reviews follow what was learned, not where it's
   // filed, so lessons an admin moved into Unsorted still count.
-  function getDailyQueue(today: string): DailyQueue {
+  // S9: a due listening review whose audio can't be played right now is skipped (it stays due).
+  async function getDailyQueue(today: string): Promise<DailyQueue> {
     const { activeTrack: track, activeLevel: level, dailyReviewCap: cap, uiLanguage: language } = profiles.getProfile();
     const answeredToday = (
       db.prepare(`SELECT COUNT(*) AS n FROM lesson_attempts WHERE source = 'queue' AND answered_on = ?`).get(today) as {
@@ -214,8 +231,14 @@ export function createProgressService(db: Database.Database) {
          ORDER BY st.next_due_at, COALESCE(m.difficulty_rank, 1000000), m.id, e.rowid`
       )
       .all(track, level, today, today) as DueRow[];
+    const parsed = rows.map((row) => ({ ...row, parsedContent: JSON.parse(row.content) as unknown }));
+    const gate = await resolveAudioGate(
+      db,
+      parsed.map((r) => ({ type: r.type, content: r.parsedContent })),
+      deps.audio
+    );
     const due = selectDueItems(
-      rows.map((row) => ({ ...row, exerciseId: row.id, nextDueAt: row.next_due_at })),
+      parsed.filter((r) => gate.usable(r.type, r.parsedContent)).map((row) => ({ ...row, exerciseId: row.id, nextDueAt: row.next_due_at })),
       today,
       remainingReviews(cap, answeredToday)
     );
@@ -239,14 +262,14 @@ export function createProgressService(db: Database.Database) {
           lessonId: row.lesson_id,
           track: row.track,
           type: row.type,
-          content: JSON.parse(row.content),
-        }),
+          content: row.parsedContent as Exercise['content'],
+        }, gate.playable),
       })),
       suggestedLesson: suggested ? { id: suggested.id, title: text.lessonTitle(suggested.id, language) } : null,
     };
   }
 
-  return { getTree, getLessonView, isLevelFinished, isCompleted, passedExerciseIds, getDailyQueue };
+  return { getTree, getLessonView, availableExercises, isLevelFinished, isCompleted, passedExerciseIds, getDailyQueue };
 }
 
 export type ProgressService = ReturnType<typeof createProgressService>;

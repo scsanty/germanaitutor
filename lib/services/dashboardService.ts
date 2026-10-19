@@ -6,21 +6,22 @@ import { createContentText } from './contentText';
 import { loadLevelGating } from './levelGating';
 import { createProfileService } from './profileService';
 import { createProgressService } from './progressService';
+import type { AudioAvailabilityDeps } from '../audio/audioAvailability';
 
 export const ACTIVITY_DAYS = 84;
 const SKILL_ORDER: Skill[] = ['grammar', 'vocabulary', 'reading', 'listening', 'writing', 'speaking'];
 
 // Spec: Pages, Dashboard.
-export function createDashboardService(db: Database.Database, deps: { now?: () => Date } = {}) {
+export function createDashboardService(db: Database.Database, deps: { now?: () => Date; audio?: AudioAvailabilityDeps } = {}) {
   const now = deps.now ?? (() => new Date());
   const profiles = createProfileService(db);
-  const progress = createProgressService(db);
+  const progress = createProgressService(db, { audio: deps.audio });
   const text = createContentText(db);
 
-  function getDashboard(): DashboardView {
+  async function getDashboard(): Promise<DashboardView> {
     const { activeTrack, activeLevel, uiLanguage } = profiles.getProfile();
     const today = localDate(now());
-    const queue = progress.getDailyQueue(today);
+    const queue = await progress.getDailyQueue(today);
     const gating = loadLevelGating(db, activeTrack, activeLevel);
 
     // Most recently attempted unfinished lesson in the active level's ranked milestones that is still open; never a locked one.

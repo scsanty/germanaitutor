@@ -32,6 +32,8 @@ const SHAPES: Record<ExerciseType, string> = {
     'matching: {"items": 3–5 short German texts, "targets": one more headline than items, "answers": target index per item, "allowNone": false}',
   cloze:
     'cloze: {"text": a German text with gaps {{1}}…{{n}} (4–8 gaps), "gaps": [{"mode": "select", "options": 3 options, "correctIndex": index of the right option}] (one per gap, in order)}',
+  audio_questions:
+    'audio_questions: {"transcript": "[Name m|f] German lines (60–150 words, 1–3 speakers)", "questions": [{"question": string, "options": 3 options, "correctIndex": index of the right option, "evidence": exact words from the transcript}] (3–5 questions)}. Every transcript line starts with a speaker tag like [Anna f] or [Herr Weber m]; write numbers, times and prices as words.',
 };
 
 export function buildPracticeGenerationPrompt(

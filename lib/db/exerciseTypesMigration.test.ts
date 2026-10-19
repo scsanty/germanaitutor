@@ -23,12 +23,17 @@ const OLD_PRACTICE = `CREATE TABLE practice_exercises_old (
       reviewed_at TEXT
     )`;
 
-function oldDatabase(): Database.Database {
+// S12: the tables as the Reading module left them (CHECK ends in 'cloze', no 'audio_questions').
+const READING_TYPES = "'multiple_choice','fill_blank','flashcard','free_text','passage_questions','matching','cloze'";
+const READING_EXERCISES = OLD_EXERCISES.replace("'multiple_choice','fill_blank','flashcard','free_text'", READING_TYPES);
+const READING_PRACTICE = OLD_PRACTICE.replace("'multiple_choice','fill_blank','flashcard','free_text'", READING_TYPES);
+
+function oldDatabase(state: 'pre-reading' | 'reading' = 'pre-reading'): Database.Database {
   const db = createDbClient(':memory:');
   db.pragma('foreign_keys = OFF');
   for (const [table, ddl] of [
-    ['exercises', OLD_EXERCISES],
-    ['practice_exercises', OLD_PRACTICE],
+    ['exercises', state === 'reading' ? READING_EXERCISES : OLD_EXERCISES],
+    ['practice_exercises', state === 'reading' ? READING_PRACTICE : OLD_PRACTICE],
   ] as const) {
     db.exec(`${ddl}; DROP TABLE ${table}; ALTER TABLE ${table}_old RENAME TO ${table};`);
   }
@@ -78,6 +83,30 @@ describe('exercise types migration', () => {
     expect(count(db, 'SELECT COUNT(*) AS n FROM practice_seen')).toBe(0);
   });
 
+  it('rebuilds a database already on the Reading types so audio_questions inserts, keeping the links (S12)', () => {
+    const db = oldDatabase('reading');
+    expect(() =>
+      db.prepare("INSERT INTO exercises (id, lesson_id, type, content) VALUES ('a1-greet__ex8', 'a1-greet', 'audio_questions', '{}')").run()
+    ).toThrow();
+
+    runMigrations(db);
+
+    expect(() =>
+      db.prepare("INSERT INTO exercises (id, lesson_id, type, content) VALUES ('a1-greet__ex9', 'a1-greet', 'audio_questions', '{}')").run()
+    ).not.toThrow();
+    expect(() => addPracticeExercise(db, 'p2', 'a1-sein', { type: 'audio_questions', content: {} })).not.toThrow();
+    expect(() => addPracticeExercise(db, 'p3', 'a1-sein', { type: 'nonsense', content: {} })).toThrow();
+    expect(count(db, "SELECT COUNT(*) AS n FROM lesson_attempts WHERE exercise_id = 'a1-greet__ex1'")).toBe(1);
+    expect(count(db, "SELECT COUNT(*) AS n FROM exercise_srs_state WHERE exercise_id = 'a1-sein__ex2'")).toBe(1);
+    expect(count(db, 'SELECT COUNT(*) AS n FROM lesson_chat_messages')).toBe(2);
+    expect(count(db, "SELECT COUNT(*) AS n FROM practice_seen WHERE practice_exercise_id = 'p1'")).toBe(1);
+    expect(db.pragma('foreign_keys', { simple: true })).toBe(1);
+
+    const before = db.prepare("SELECT name, sql FROM sqlite_master WHERE tbl_name IN ('exercises','practice_exercises') ORDER BY name").all();
+    runMigrations(db);
+    expect(db.prepare("SELECT name, sql FROM sqlite_master WHERE tbl_name IN ('exercises','practice_exercises') ORDER BY name").all()).toEqual(before);
+  });
+
   it('is a no-op on a second run and on a fresh database', () => {
     const db = oldDatabase();
     runMigrations(db);
@@ -92,6 +121,9 @@ describe('exercise types migration', () => {
     runMigrations(fresh);
     expect(() =>
       fresh.prepare("INSERT INTO exercises (id, lesson_id, type, content) VALUES ('a1-greet__ex9', 'a1-greet', 'cloze', '{}')").run()
+    ).not.toThrow();
+    expect(() =>
+      fresh.prepare("INSERT INTO exercises (id, lesson_id, type, content) VALUES ('a1-greet__ex10', 'a1-greet', 'audio_questions', '{}')").run()
     ).not.toThrow();
     expect(count(fresh, "SELECT COUNT(*) AS n FROM lesson_attempts WHERE exercise_id = 'a1-greet__ex1'")).toBe(1);
     expect(fresh.pragma('foreign_keys', { simple: true })).toBe(1);

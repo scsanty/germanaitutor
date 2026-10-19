@@ -1,6 +1,9 @@
 import { describe, it, expect } from 'vitest';
 import type { ClozeContent } from './cloze';
 import { gradeTask, itemCount, parseTaskAnswer, resultFromItems, validateTask, viewTask, correctTexts } from './taskTypes';
+import { answerTexts } from './answerTexts';
+import { audioReveal } from './audioQuestions';
+import { audioHash, parseTranscript } from '../audio/transcript';
 
 const passage = {
   passage: 'Anna wohnt in Köln. Sie arbeitet in einer Bäckerei.',
@@ -92,5 +95,68 @@ describe('task types', () => {
     expect(correctTexts('cloze', cloze)).toEqual(['war', 'war', 'aßen']);
     expect(correctTexts('matching', matching)).toEqual(['c', 'a', 'x']);
     expect(correctTexts('passage_questions', passage)).toEqual(['Falsch', 'Bäckerei']);
+  });
+});
+
+describe('audio_questions', () => {
+  const content = {
+    transcript: '[Ansage f] Der Zug nach Köln fährt heute von Gleis 7.',
+    questions: [{ question: 'Der Zug fährt von Gleis 5.', options: ['Richtig', 'Falsch'], correctIndex: 1, evidence: 'fährt heute von Gleis 7' }],
+  };
+
+  it('validates, including that evidence appears in the transcript (Review Focus 3)', () => {
+    expect(validateTask('audio_questions', content)).toEqual([]);
+    expect(validateTask('audio_questions', { ...content, questions: [{ ...content.questions[0], evidence: 'Gleis 9' }] })).toEqual([
+      'question 1: evidence must appear in the transcript',
+    ]);
+    expect(validateTask('audio_questions', { ...content, transcript: 'no tag' })).toEqual(['transcript: line 1 needs a speaker tag like [Name m]']);
+  });
+
+  it('never puts the transcript or evidence in the view, and grades like a passage', () => {
+    const view = viewTask('audio_questions', content, () => true);
+    expect(JSON.stringify(view)).not.toMatch(/Gleis 7|transcript|evidence|correctIndex/);
+    expect(view).toMatchObject({ audio: { available: true } });
+    expect(gradeTask('audio_questions', content, { type: 'audio_questions', selected: [1] }).itemResults).toEqual([true]);
+  });
+
+  // S5: evidence must sit inside one line's text, so it can be highlighted; spanning a tag or a line fails.
+  it('rejects evidence that spans a speaker tag or a line break, and skips evidence checks when parsing fails', () => {
+    const two = { ...content, transcript: '[Ansage f] Der Zug fährt.\n[Mann m] Danke schön.' };
+    const at = (evidence: string) => validateTask('audio_questions', { ...two, questions: [{ ...content.questions[0], evidence }] });
+    expect(at('Danke schön')).toEqual([]);
+    expect(at('fährt.\n[Mann m] Danke')).toEqual(['question 1: evidence must appear in the transcript']);
+    expect(at('[Mann m] Danke')).toEqual(['question 1: evidence must appear in the transcript']);
+    expect(at('')).toEqual(['question 1: evidence must appear in the transcript']);
+    expect(validateTask('audio_questions', { ...content, transcript: 'no tag', questions: [{ ...content.questions[0], evidence: 'Gleis 9' }] })).toEqual([
+      'transcript: line 1 needs a speaker tag like [Name m]',
+    ]);
+  });
+
+  it('reveals the parsed transcript and each evidence with its line', () => {
+    const c = {
+      ...content,
+      transcript: '@filter station\n[Ansage f] Achtung bitte.\n[Ansage f] Der Zug nach Köln fährt heute von Gleis 7.',
+      questions: [...content.questions, { question: 'Es gibt eine Ansage.', options: ['Richtig', 'Falsch'], correctIndex: 0 }],
+    };
+    const r = audioReveal(c);
+    expect(r.transcript.filter).toBe('station');
+    expect(r.transcript.lines.map((l) => l.text)).toEqual(['Achtung bitte.', 'Der Zug nach Köln fährt heute von Gleis 7.']);
+    expect(r.evidence).toEqual(['fährt heute von Gleis 7', null]);
+    expect(r.evidenceLines).toEqual([1, null]);
+  });
+
+  it('counts items, gives correct texts and parses answers like a passage; the view hash matches the transcript', () => {
+    expect(itemCount('audio_questions', content)).toBe(1);
+    expect(correctTexts('audio_questions', content)).toEqual(['Falsch']);
+    expect(answerTexts('audio_questions', content, { type: 'audio_questions', selected: [0] })).toEqual(['Richtig']);
+    expect(parseTaskAnswer('audio_questions', { type: 'audio_questions', selected: [1] }, content)).toEqual({ type: 'audio_questions', selected: [1] });
+    expect(parseTaskAnswer('audio_questions', { type: 'passage_questions', selected: [1] }, content)).toBeNull();
+    const parsed = parseTranscript(content.transcript);
+    if ('error' in parsed) throw new Error(parsed.error);
+    const seen: string[] = [];
+    const view = viewTask('audio_questions', content, (h) => (seen.push(h), false));
+    expect(view).toMatchObject({ audio: { hash: audioHash(parsed), available: false } });
+    expect(seen).toEqual([audioHash(parsed)]);
+    expect(viewTask('audio_questions', content)).toMatchObject({ audio: { available: false } });
   });
 });

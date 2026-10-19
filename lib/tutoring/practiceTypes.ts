@@ -10,6 +10,7 @@ const TYPE_ORDER: readonly ExerciseType[] = [
   'passage_questions',
   'matching',
   'cloze',
+  'audio_questions',
 ];
 
 // Practice mirrors the lesson's own exercise types; flashcards only ever in vocabulary lessons

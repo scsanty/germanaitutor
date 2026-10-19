@@ -1,7 +1,10 @@
-import { describe, it, expect, vi } from 'vitest';
+import { afterEach, beforeEach, describe, it, expect, vi } from 'vitest';
+import { mkdtempSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import { createDbClient } from '../db/client';
 import { createPracticeService, PracticeError, toPracticeErrorResponse } from './practiceService';
-import { addPracticeExercise, markComplete, seedTutoringCurriculum } from '@/test/tutoringFixtures';
+import { addListeningExercise, addPracticeExercise, listeningContent, listeningHash, markComplete, seedTutoringCurriculum } from '@/test/tutoringFixtures';
 
 function reply(exercises: unknown[]) {
   return { ok: true as const, text: JSON.stringify({ exercises }) };
@@ -65,6 +68,10 @@ describe('practiceService.serveBatch', () => {
     ]);
     expect(count("SELECT COUNT(*) AS n FROM practice_exercises WHERE review_status = 'unreviewed'")).toBe(5);
     expect(count('SELECT COUNT(*) AS n FROM practice_seen')).toBe(5);
+    // Admin notifications: the new pool items, in-app only.
+    expect(db.prepare("SELECT kind, severity, body FROM admin_notifications").all()).toEqual([
+      { kind: 'pool_items', severity: 'info', body: '3 new items to review' },
+    ]);
     const { systemPrompt } = generate.mock.calls[0][0];
     expect(systemPrompt).toContain('Write exactly 3 new exercises. Use only these types: multiple_choice, flashcard.');
   });
@@ -150,5 +157,52 @@ describe('toPracticeErrorResponse', () => {
     expect(toPracticeErrorResponse(new PracticeError('x', 'bad_request'))).toEqual({ status: 400, body: { error: 'x', code: 'bad_request' } });
     expect(toPracticeErrorResponse(new PracticeError('x', 'ai_failed', 'no_provider'))).toEqual({ status: 502, body: { error: 'x', code: 'no_provider' } });
     expect(toPracticeErrorResponse(new Error('x'))).toBeNull();
+  });
+});
+
+// S9: practice skips listening items that can't be heard now, and generates them only while the service is up.
+describe('practiceService listening', () => {
+  let dataDir: string;
+  beforeEach(() => {
+    dataDir = mkdtempSync(join(tmpdir(), 'gait-practice-audio-'));
+    process.env.GAIT_DATA_DIR = dataDir;
+  });
+  afterEach(() => {
+    rmSync(dataDir, { recursive: true, force: true });
+    delete process.env.GAIT_DATA_DIR;
+  });
+
+  function listeningSetup(speechUp: () => Promise<boolean>, generate = vi.fn().mockResolvedValue(reply([]))) {
+    const db = createDbClient(':memory:');
+    seedTutoringCurriculum(db);
+    addListeningExercise(db, 'a1-greet__ex3', 'a1-greet');
+    markComplete(db, 'a1-greet');
+    const service = createPracticeService(db, { generate, now: () => new Date('2026-09-29T10:00:00.000Z'), audio: { speechUp }, notify: { info: async () => {} } });
+    return { db, service, generate };
+  }
+
+  it('skips an unseen listening item while it cannot be heard, and asks for no listening exercises', async () => {
+    const generate = vi.fn().mockResolvedValue(reply([mc('Neu?')]));
+    const { db, service } = listeningSetup(async () => false, generate);
+    addPracticeExercise(db, 'px-audio', 'a1-greet', { type: 'audio_questions', content: listeningContent('Köln') });
+    addPracticeExercise(db, 'px-mc', 'a1-greet');
+    const batch = await service.serveBatch('a1-greet');
+    expect(batch.exercises.map((e) => e.id)).not.toContain('px-audio');
+    expect(batch.exercises.map((e) => e.id)).toContain('px-mc');
+    expect(db.prepare("SELECT 1 FROM practice_seen WHERE practice_exercise_id = 'px-audio'").get()).toBeUndefined();
+    expect(generate.mock.lastCall![0].systemPrompt).not.toContain('audio_questions');
+  });
+
+  it('generates listening exercises while the service is up, queues their audio, and reveals after answering', async () => {
+    const generate = vi.fn().mockResolvedValue(reply([{ type: 'audio_questions', content: listeningContent('Bonn') }]));
+    const { db, service } = listeningSetup(async () => true, generate);
+    expect(generate).not.toHaveBeenCalled();
+    const batch = await service.serveBatch('a1-greet');
+    expect(generate.mock.lastCall![0].systemPrompt).toContain('audio_questions: {"transcript"');
+    const served = batch.exercises.find((e) => e.type === 'audio_questions');
+    expect(served).toMatchObject({ audio: { hash: await listeningHash('Bonn'), available: true } });
+    expect(db.prepare('SELECT status FROM audio_jobs WHERE hash = ?').get(await listeningHash('Bonn'))).toEqual({ status: 'pending' });
+    const outcome = await service.gradeAnswer(served!.id, { type: 'audio_questions', selected: [1] });
+    expect(outcome).toMatchObject({ result: 'correct', itemResults: [true], reveal: { evidence: ['Nein, mit dem Bus.'] } });
   });
 });
