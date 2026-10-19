@@ -43,14 +43,17 @@ export type LetterGradeOutcome =
 
 export interface LetterGradingDeps {
   generate?: (request: AiRequest) => Promise<AiResult>;
+  // The error log's clock (tests inject it, like the free-text path).
+  now?: () => Date;
 }
 
-// The 2-3 anchors of the first part that has a valid anchor file, selected on that part's own rubric.
-function anchorsOf(parts: AnchorPart[]): Anchor[] | null {
+// The 2-3 anchors of the first part that has a valid anchor file, selected on that part's own rubric,
+// which comes back too: lesson letters show the anchors' grades by that rubric's criterion names.
+function anchorsOf(parts: AnchorPart[]): { anchors: Anchor[]; rubric: WritingRubric } | null {
   for (const { formatId, partId } of parts) {
     const anchors = readAnchors(formatId, partId);
     const rubric = readFormat(formatId)?.parts.find((p) => p.id === partId)?.rubric;
-    if (anchors && rubric) return selectAnchors(anchors, rubric);
+    if (anchors && rubric) return { anchors: selectAnchors(anchors, rubric), rubric };
   }
   return null;
 }
@@ -65,8 +68,8 @@ export async function gradeLetter(
   if (!input.text.trim()) return { ok: false, error: 'Write your letter first', code: 'bad_request' };
   const generate = deps.generate ?? ((request: AiRequest) => generateWithActiveProvider(db, request));
 
-  const anchors = anchorsOf([input, ...(input.fallback ? [input.fallback] : [])]);
-  if (!anchors) {
+  const found = anchorsOf([input, ...(input.fallback ? [input.fallback] : [])]);
+  if (!found) {
     const part = `${input.formatId}/${input.partId}`;
     await createNotificationService(db).raise(
       'content_issues',
@@ -81,7 +84,8 @@ export async function gradeLetter(
     formatName: input.formatName,
     rubric: input.rubric,
     task: input.task,
-    anchors: anchors ?? [],
+    anchors: found?.anchors ?? [],
+    ...(found ? { anchorRubric: found.rubric } : {}),
     text: input.text,
     germanOnlyTask: input.germanOnlyTask,
     instruction: input.instruction,
@@ -97,7 +101,8 @@ export async function gradeLetter(
   recordMistakes(
     db,
     input.source,
-    graded.value.marks.map((m) => ({ category: m.category, wrong: m.original, right: m.correction }))
+    graded.value.marks.map((m) => ({ category: m.category, wrong: m.original, right: m.correction })),
+    deps.now ? { now: deps.now } : {}
   );
   return { ok: true, grade: graded.value };
 }

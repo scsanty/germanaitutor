@@ -45,6 +45,8 @@ export interface LetterPromptInput {
   rubric: WritingRubric;
   task: LetterTask;
   anchors: Anchor[];
+  // The rubric the anchors were graded on (their exam part's), when it isn't `rubric` (lesson letters).
+  anchorRubric?: WritingRubric;
   text: string;
   // Exam tasks are German-only. Lesson tasks may also carry the English instruction the learner saw.
   germanOnlyTask: boolean;
@@ -58,7 +60,14 @@ const taskLines = (t: LetterTask) => [
 ];
 
 export function buildLetterGradingPrompt(input: LetterPromptInput): { systemPrompt: string; messages: ChatMessage[] } {
-  const { level, formatName, rubric, task, anchors, text, germanOnlyTask, instruction } = input;
+  const { level, formatName, rubric, task, anchors, anchorRubric, text, germanOnlyTask, instruction } = input;
+  const ids = (r: WritingRubric) => r.criteria.map((c) => c.id).join(',');
+  // Lesson letters use exam anchors: their grades are shown by criterion name, never as reply ids.
+  const foreign = anchorRubric && ids(anchorRubric) !== ids(rubric) ? anchorRubric : null;
+  const gradesOf = (a: Anchor) =>
+    foreign
+      ? `Grades (on the exam rubric): ${foreign.criteria.map((c) => `${c.name.de} ${a.grades[c.id] ?? '-'}`).join(', ')}`
+      : `Grades: ${Object.entries(a.grades).map(([id, g]) => `${id} ${g}`).join(', ')}`;
   const lines: string[] = [
     `You grade a German letter written by a learner at CEFR level ${level} for ${formatName ?? 'a lesson'}.`,
     'Grade each criterion with one grade, using these descriptors:',
@@ -71,12 +80,17 @@ export function buildLetterGradingPrompt(input: LetterPromptInput): { systemProm
   if (!germanOnlyTask && instruction) lines.push(`Instructions the learner saw: ${instruction.en}`);
   if (anchors.length > 0) {
     lines.push('', 'Reference letters (already graded; grade consistently with them):');
+    if (foreign) {
+      lines.push(
+        "The reference letters were graded on the exam's criteria; use them only to calibrate overall quality, and grade this letter on the criteria above."
+      );
+    }
     anchors.forEach((a, i) => {
       lines.push(
         `Reference ${i + 1}:`,
         ...taskLines(a.task),
         `Letter: ${a.letter}`,
-        `Grades: ${Object.entries(a.grades).map(([id, g]) => `${id} ${g}`).join(', ')}`,
+        gradesOf(a),
         `Why: ${a.justification}`,
       );
     });
@@ -89,6 +103,7 @@ export function buildLetterGradingPrompt(input: LetterPromptInput): { systemProm
     '- Grade every criterion.',
     "- Write a fully corrected version of the letter that keeps the learner's content.",
     '- Summarise in English and in simple German.',
+    `- Reply with exactly these criterion ids: ${rubric.criteria.map((c) => c.id).join(', ')}.`,
     'Reply with only a JSON object:',
     '{"marks": [{"original": "...", "correction": "...", "type": "grammar", "category": "...", "reason_en": "...", "reason_de": "..."}],',
     ' "criteria": [{"id": "...", "grade": "A", "justification_en": "...", "justification_de": "..."}],',

@@ -39,7 +39,8 @@ describe('createOpenAIAdapter', () => {
     const adapter = createOpenAIAdapter(fetchImpl);
     await adapter.generateText({ apiKey: 'k' }, { model: 'm', messages: [{ role: 'user', content: 'Hi' }], maxTokens: 4096, timeoutMs: 90_000 });
     const init = fetchImpl.mock.calls[0][1];
-    expect(JSON.parse(init.body).max_tokens).toBeUndefined();
+    // No output cap of any name reaches OpenAI: the body is only the model and the messages.
+    expect(Object.keys(JSON.parse(init.body)).sort()).toEqual(['messages', 'model']);
     expect(init.signal).toBeInstanceOf(AbortSignal);
   });
 });

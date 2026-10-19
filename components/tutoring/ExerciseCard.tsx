@@ -452,8 +452,8 @@ export function ExerciseCard({
         <div className="flex flex-col gap-4">
           <p className={cn(TASK, 'whitespace-pre-wrap')}>{exercise.tasks[0].situation}</p>
           <ul lang="de" className="list-disc pl-6">
-            {exercise.tasks[0].leitpunkte.map((point) => (
-              <li key={point}>{point}</li>
+            {exercise.tasks[0].leitpunkte.map((point, i) => (
+              <li key={i}>{point}</li>
             ))}
           </ul>
           <GermanTextarea

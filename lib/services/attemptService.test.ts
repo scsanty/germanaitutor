@@ -9,7 +9,7 @@ import { createProfileService } from './profileService';
 import { createProgressService } from './progressService';
 import { AttemptError, createAttemptService, toAttemptErrorResponse, type AttemptDeps } from './attemptService';
 import type { LetterGrade } from '../writing/letterGrading';
-import { addListeningExercise, listeningHash, markComplete, seedTutoringCurriculum } from '@/test/tutoringFixtures';
+import { addListeningExercise, listeningHash, markComplete, scheduleReview, seedTutoringCurriculum } from '@/test/tutoringFixtures';
 
 type GradeFreeText = NonNullable<AttemptDeps['gradeFreeText']>;
 
@@ -293,6 +293,13 @@ describe('attemptService lesson letters', () => {
     });
     expect(gradeLetter).not.toHaveBeenCalled();
     expect(db.prepare('SELECT COUNT(*) AS n FROM lesson_attempts').get()).toEqual({ n: 0 });
+  });
+
+  it('refuses a queue answer to a letter even if a review row exists for it', async () => {
+    const { db, service, gradeLetter } = letterSetup();
+    scheduleReview(db, 'a1-sein__ex11', '2026-09-20');
+    await expect(service.recordAttempt('a1-sein__ex11', letter('Liebe Anna.'), 'queue')).rejects.toMatchObject({ code: 'not_due' });
+    expect(gradeLetter).not.toHaveBeenCalled();
   });
 
   it('maps a letter grading failure to grading_failed and stores nothing', async () => {

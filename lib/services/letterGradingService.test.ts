@@ -71,6 +71,12 @@ describe('gradeLetter', () => {
     ]);
   });
 
+  it('stamps the logged marks with the injected clock', async () => {
+    const { db, generate, rows } = setup();
+    await gradeLetter(db, input(), { generate, now: () => new Date('2026-09-30T08:00:00.000Z') });
+    expect(rows('SELECT created_at FROM error_log')).toEqual([{ created_at: '2026-09-30T08:00:00.000Z' }]);
+  });
+
   it('maps a malformed reply to ai_bad_reply and logs nothing', async () => {
     const { db, generate, rows } = setup({ ok: true, text: '{"criteria": []}' });
     expect(await gradeLetter(db, input(), { generate })).toMatchObject({ ok: false, code: 'ai_bad_reply' });
@@ -141,8 +147,11 @@ describe('gradeLessonLetter', () => {
     expect(prompt).toContain('Situation: Aufgabe B');
     expect(prompt).toContain('Instructions the learner saw: Write to your friend.');
     expect(prompt).toContain('task (Task completion)');
-    // telc B1's writing part has anchors.
+    // telc B1's writing part has anchors, graded on the exam rubric: shown by name, never as reply ids.
     expect(prompt).toContain('Reference letters');
+    expect(prompt).toContain('Grades (on the exam rubric): Aufgabenbewältigung A');
+    expect(prompt).toContain('Reply with exactly these criterion ids: task, communication, accuracy.');
+    expect(prompt).not.toContain('Grades: aufgabe');
     expect(rows('SELECT DISTINCT source FROM error_log')).toEqual([{ source: 'lesson' }]);
   });
 

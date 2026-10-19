@@ -34,6 +34,31 @@ const promptInput = (germanOnlyTask: boolean) => ({
   instruction: { en: 'Write to your friend.', de: 'Schreiben Sie.' },
 });
 
+describe('letter grading prompt: reply ids and exam anchors on a lesson rubric', () => {
+  const examRubric = {
+    criteria: [
+      { id: 'aufgabe', name: { en: 'Task completion', de: 'Aufgabenbewältigung' }, points: { A: 15, D: 0 }, descriptors: { A: 'a', D: 'd' } },
+      { id: 'gestaltung', name: { en: 'Communicative design', de: 'Kommunikative Gestaltung' }, points: { A: 15, D: 0 }, descriptors: { A: 'a', D: 'd' } },
+    ],
+  };
+  const examAnchor = { task, letter: 'Liebe Anna …', grades: { aufgabe: 'A' as const, gestaltung: 'D' as const }, justification: 'Gut.' };
+
+  it('a lesson prompt lists the lesson ids to reply with and shows exam anchor grades by name, not id', () => {
+    const { systemPrompt } = buildLetterGradingPrompt({ ...promptInput(false), anchors: [examAnchor], anchorRubric: examRubric });
+    expect(systemPrompt).toContain('Reply with exactly these criterion ids: task, communication, accuracy.');
+    expect(systemPrompt).toContain('Grades (on the exam rubric): Aufgabenbewältigung A, Kommunikative Gestaltung D');
+    expect(systemPrompt).toContain("graded on the exam's criteria; use them only to calibrate overall quality");
+    expect(systemPrompt).not.toMatch(/\baufgabe\b|\bgestaltung\b/);
+  });
+
+  it('an exam-part prompt lists its own ids and keeps the anchor grades by id', () => {
+    const { systemPrompt } = buildLetterGradingPrompt({ ...promptInput(true), rubric: examRubric, anchors: [examAnchor], anchorRubric: examRubric });
+    expect(systemPrompt).toContain('Reply with exactly these criterion ids: aufgabe, gestaltung.');
+    expect(systemPrompt).toContain('Grades: aufgabe A, gestaltung D');
+    expect(systemPrompt).not.toContain('calibrate overall quality');
+  });
+});
+
 describe('letter grading', () => {
   it('builds a prompt with the rubric, the anchors, the word target, and the register', () => {
     const { systemPrompt, messages } = buildLetterGradingPrompt(promptInput(true));

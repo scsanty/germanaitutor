@@ -61,7 +61,8 @@ export function buildPracticeGenerationPrompt(
   if (ctx.examples && ctx.examples.length > 0) {
     parts.push(`Lesson examples:\n${ctx.examples.map((example) => `- ${example}`).join('\n')}`);
   }
-  const style = ctx.authoredExercises.slice(0, MAX_STYLE_EXAMPLES);
+  // Only exercises of the requested types are style examples (a lesson letter is never one).
+  const style = ctx.authoredExercises.filter((e) => allowedTypes.includes(e.type)).slice(0, MAX_STYLE_EXAMPLES);
   if (style.length > 0) parts.push(`Example exercises:\n${JSON.stringify(style)}`);
   parts.push(`Write ${count} new exercises now.`);
 
