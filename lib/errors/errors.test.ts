@@ -19,8 +19,10 @@ describe('trimSnippet', () => {
     expect(trimSnippet('wegen dem Regen')).toBe('wegen dem Regen');
     const long = 'Ich habe gestern mit meinem Freund über die Arbeit gesprochen und wir haben lange diskutiert';
     const cut = trimSnippet(long, 40);
-    expect(cut.length).toBeLessThanOrEqual(41);
+    expect(cut.length).toBeLessThanOrEqual(40);
     expect(cut.endsWith('…')).toBe(true);
     expect(long.startsWith(cut.slice(0, -1).trimEnd())).toBe(true);
+    // the ellipsis counts toward max, even when the cut falls exactly on a space
+    for (let max = 10; max < 60; max++) expect(trimSnippet(long, max).length).toBeLessThanOrEqual(max);
   });
 });

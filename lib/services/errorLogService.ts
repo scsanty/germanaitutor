@@ -1,5 +1,5 @@
 import type Database from 'better-sqlite3';
-import { TAXONOMY, normalizeCategory, type ErrorCategory } from '../errors/taxonomy';
+import { TAXONOMY, keywordMatches, normalizeCategory, type ErrorCategory } from '../errors/taxonomy';
 import { trimSnippet } from '../errors/snippets';
 
 // Spec: Error Log. Cross-module record of mistakes (lessons, Teil, Freestyle, later Speaking).
@@ -71,10 +71,16 @@ export function createErrorLogService(db: Database.Database, deps: ErrorLogDeps 
          ORDER BY m.difficulty_rank, l.title, l.id`
       )
       .all(track, level) as { id: string; title: string; title_de: string }[];
-    const hit = lessons.find((l) => {
-      const text = `${l.title}\n${l.title_de}`.toLowerCase();
-      return keywords.some((k) => text.includes(k));
-    });
+    // The lesson matching the most keywords wins; ties go to the earlier (lower-ranked) milestone.
+    let hit: { id: string; title: string } | null = null;
+    let best = 0;
+    for (const l of lessons) {
+      const score = keywords.filter((k) => keywordMatches(l.title, k) || keywordMatches(l.title_de, k)).length;
+      if (score > best) {
+        best = score;
+        hit = l;
+      }
+    }
     return hit ? { id: hit.id, title: hit.title } : null;
   }
 
