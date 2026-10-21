@@ -1,0 +1,98 @@
+{
+  "formatId": "goethe-a2",
+  "partId": "schreiben-2",
+  "anchors": [
+    {
+      "task": {
+        "situation": "Ihre Kursleiterin, Frau Brandt, hat alle Kursteilnehmer am Freitagabend zu einem Abschlussessen eingeladen. Sie können nicht kommen. Schreiben Sie Frau Brandt eine E-Mail.",
+        "leitpunkte": [
+          "Bedanken Sie sich für die Einladung.",
+          "Warum können Sie am Freitag nicht kommen?",
+          "Machen Sie einen Vorschlag für ein anderes Treffen."
+        ],
+        "register": "semi_formal",
+        "wordTarget": {
+          "min": 30,
+          "max": 40
+        }
+      },
+      "letter": "Liebe Frau Brandt,\n\nvielen Dank für Ihre Einladung zum Abschlussessen. Leider kann ich am Freitag nicht kommen, denn meine Tochter hat Geburtstag. Vielleicht können wir uns nächste Woche im Café treffen? Passt Ihnen Dienstag?\n\nViele Grüße\nAna Moreno",
+      "grades": {
+        "punkt-1": "A",
+        "punkt-2": "A",
+        "punkt-3": "A",
+        "gestaltung": "A"
+      },
+      "justification": "Punkt 1 A: Ana bedankt sich klar („vielen Dank für Ihre Einladung zum Abschlussessen“). Punkt 2 A: Der Grund ist verständlich („denn meine Tochter hat Geburtstag“). Punkt 3 A: Sie macht einen konkreten Vorschlag mit Ort und Tag („nächste Woche im Café“, „Passt Ihnen Dienstag?“). Gestaltung A: „Liebe Frau Brandt“ und „Viele Grüße“ passen zur Kursleiterin, und die Sätze sind mit „denn“ verbunden."
+    },
+    {
+      "task": {
+        "situation": "Ihre Kursleiterin, Frau Brandt, hat alle Kursteilnehmer am Freitagabend zu einem Abschlussessen eingeladen. Sie können nicht kommen. Schreiben Sie Frau Brandt eine E-Mail.",
+        "leitpunkte": [
+          "Bedanken Sie sich für die Einladung.",
+          "Warum können Sie am Freitag nicht kommen?",
+          "Machen Sie einen Vorschlag für ein anderes Treffen."
+        ],
+        "register": "semi_formal",
+        "wordTarget": {
+          "min": 30,
+          "max": 40
+        }
+      },
+      "letter": "Hallo Frau Brandt,\n\ndanke für die Einladung, das ist sehr nett. Ich kann am Freitag leider nicht kommen, weil ich muss arbeiten. Wir können vielleicht später mal treffen. Ich wünsche allen einen schönen Abend.\n\nTschüss\nAna",
+      "grades": {
+        "punkt-1": "A",
+        "punkt-2": "A",
+        "punkt-3": "B",
+        "gestaltung": "B"
+      },
+      "justification": "Punkt 1 A: Der Dank ist klar („danke für die Einladung, das ist sehr nett“). Punkt 2 A: Der Grund ist trotz der falschen Wortstellung („weil ich muss arbeiten“) gut verständlich. Punkt 3 B: Der Vorschlag bleibt vage („vielleicht später mal treffen“), ohne Tag oder Ort, und „uns“ fehlt. Gestaltung B: Die Sätze sind mit „weil“ verbunden, aber der Gruß „Tschüss“ passt nicht zu einer E-Mail an die Kursleiterin."
+    },
+    {
+      "task": {
+        "situation": "Ihre Kursleiterin, Frau Brandt, hat alle Kursteilnehmer am Freitagabend zu einem Abschlussessen eingeladen. Sie können nicht kommen. Schreiben Sie Frau Brandt eine E-Mail.",
+        "leitpunkte": [
+          "Bedanken Sie sich für die Einladung.",
+          "Warum können Sie am Freitag nicht kommen?",
+          "Machen Sie einen Vorschlag für ein anderes Treffen."
+        ],
+        "register": "semi_formal",
+        "wordTarget": {
+          "min": 30,
+          "max": 40
+        }
+      },
+      "letter": "Liebe Frau Brandt,\n\nEinladung ist schön. Am Freitag ich habe keine Zeit, ich habe ein Termin. Wir machen ein andere Tag ein Treffen? Sie sagen mir, wann. Ich komme gern.\n\nViele Grüße\nAna",
+      "grades": {
+        "punkt-1": "B",
+        "punkt-2": "B",
+        "punkt-3": "B",
+        "gestaltung": "B"
+      },
+      "justification": "Punkt 1 B: Ana bedankt sich nicht direkt, sie schreibt nur „Einladung ist schön“. Punkt 2 B: Ana nennt nur einen ungenauen Grund („ich habe ein Termin“). Punkt 3 B: Der Vorschlag ist unklar und ohne Tag („Wir machen ein andere Tag ein Treffen?“), die Entscheidung überlässt sie Frau Brandt. Gestaltung B: Anrede und Gruß passen, aber die Sätze stehen ohne Konnektoren nebeneinander, und Fehler wie „Am Freitag ich habe“ und „ein andere Tag“ erschweren das Lesen."
+    },
+    {
+      "task": {
+        "situation": "Ihre Kursleiterin, Frau Brandt, hat alle Kursteilnehmer am Freitagabend zu einem Abschlussessen eingeladen. Sie können nicht kommen. Schreiben Sie Frau Brandt eine E-Mail.",
+        "leitpunkte": [
+          "Bedanken Sie sich für die Einladung.",
+          "Warum können Sie am Freitag nicht kommen?",
+          "Machen Sie einen Vorschlag für ein anderes Treffen."
+        ],
+        "register": "semi_formal",
+        "wordTarget": {
+          "min": 30,
+          "max": 40
+        }
+      },
+      "letter": "Hallo,\n\nich gehe gern in Restaurant. Essen ist gut. Was kostet?\n\nAna",
+      "grades": {
+        "punkt-1": "C",
+        "punkt-2": "C",
+        "punkt-3": "C",
+        "gestaltung": "B"
+      },
+      "justification": "Punkt 1 C: Ana bedankt sich nicht für die Einladung. Punkt 2 C: Sie schreibt nicht, warum sie am Freitag nicht kommen kann, sie schreibt sogar „ich gehe gern in Restaurant“. Punkt 3 C: Ein Vorschlag für ein anderes Treffen fehlt ganz. Gestaltung B: Eine Anrede ist da, aber ein Gruß fehlt, und die Sätze stehen ohne Konnektoren nebeneinander."
+    }
+  ]
+}
