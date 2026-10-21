@@ -1,0 +1,98 @@
+{
+  "formatId": "generic-b1",
+  "partId": "schreiben",
+  "anchors": [
+    {
+      "task": {
+        "situation": "Sie besuchen jeden Donnerstag einen Kochkurs für Anfänger. Nächste Woche können Sie nicht kommen. Schreiben Sie Ihrer Kursleiterin, Frau Schubert, eine E-Mail.",
+        "leitpunkte": [
+          "Grund, warum Sie nicht kommen können",
+          "Bitte um die Rezepte",
+          "Frage nach einem Ersatztermin",
+          "Was Ihnen am Kurs gefällt"
+        ],
+        "register": "semi_formal",
+        "wordTarget": {
+          "min": 80,
+          "max": 120
+        }
+      },
+      "letter": "Liebe Frau Schubert,\n\nleider kann ich am nächsten Donnerstag nicht zum Kochkurs kommen, weil ich an diesem Tag zu einer Schulung nach Kassel fahren muss. Das finde ich sehr schade, denn der Kurs macht mir großen Spaß. Besonders gefällt mir, dass wir jedes Mal ein ganzes Menü zusammen kochen und danach gemeinsam essen.\n\nKönnten Sie mir bitte die Rezepte per E-Mail schicken? Dann kann ich das Gericht am Wochenende zu Hause nachkochen. Außerdem möchte ich fragen, ob ich die Stunde vielleicht in der Montagsgruppe nachholen kann.\n\nVielen Dank im Voraus!\n\nMit freundlichen Grüßen\nDaniel Weber",
+      "grades": {
+        "aufgabe": "A",
+        "gestaltung": "A",
+        "richtigkeit": "A"
+      },
+      "justification": "Aufgabe A: Alle vier Punkte werden passend behandelt: der Grund („zu einer Schulung nach Kassel“), die Bitte um die Rezepte, die Frage nach einem Ersatztermin in der Montagsgruppe und was ihm gefällt („ein ganzes Menü zusammen kochen“). Gestaltung A: Anrede und Gruß passen zu einer Kursleiterin, der Ton ist höflich, und Konnektoren wie „weil“, „denn“, „dann“ und „außerdem“ verbinden die Sätze sinnvoll. Richtigkeit A: Wortschatz und Satzbau sind dem Niveau B1 angemessen, mit Neben- und indirekten Fragesätzen („ob ich die Stunde … nachholen kann“), und es gibt keine Fehler."
+    },
+    {
+      "task": {
+        "situation": "Sie besuchen jeden Donnerstag einen Kochkurs für Anfänger. Nächste Woche können Sie nicht kommen. Schreiben Sie Ihrer Kursleiterin, Frau Schubert, eine E-Mail.",
+        "leitpunkte": [
+          "Grund, warum Sie nicht kommen können",
+          "Bitte um die Rezepte",
+          "Frage nach einem Ersatztermin",
+          "Was Ihnen am Kurs gefällt"
+        ],
+        "register": "semi_formal",
+        "wordTarget": {
+          "min": 80,
+          "max": 120
+        }
+      },
+      "letter": "Liebe Frau Schubert,\n\nich kann nächste Woche nicht zum Kurs kommen, weil meine Tochter hat am Donnerstag ein Konzert in der Schule. Ich möchte sie natürlich hören, deshalb ich bleibe an diesem Abend zu Hause.\n\nDer Kurs gefällt mir sehr gut. Die Gruppe ist nett und Sie erklären alles sehr gut. Ich habe schon viel gelernt, zum Beispiel wie man kocht eine Suppe ohne Fertigprodukte.\n\nKönnen Sie mir bitte die Rezepte für nächste Woche schicken? Dann kann ich die Gerichte zu Hause alleine kochen.\n\nViele Grüße\nDaniel Weber",
+      "grades": {
+        "aufgabe": "B",
+        "gestaltung": "B",
+        "richtigkeit": "B"
+      },
+      "justification": "Aufgabe B: Grund, Bitte um die Rezepte und was ihm am Kurs gefällt werden gut behandelt, aber die Frage nach einem Ersatztermin fehlt. Gestaltung B: Anrede, Gruß und Ton passen, doch im zweiten Absatz stehen die Sätze oft ohne Konnektoren nebeneinander („Der Kurs gefällt mir sehr gut. Die Gruppe ist nett …“), und der Schluss ist etwas knapp. Richtigkeit B: Einige Wortstellungsfehler („weil meine Tochter hat … ein Konzert“, „deshalb ich bleibe“, „wie man kocht eine Suppe“) stören das Verständnis kaum."
+    },
+    {
+      "task": {
+        "situation": "Sie besuchen jeden Donnerstag einen Kochkurs für Anfänger. Nächste Woche können Sie nicht kommen. Schreiben Sie Ihrer Kursleiterin, Frau Schubert, eine E-Mail.",
+        "leitpunkte": [
+          "Grund, warum Sie nicht kommen können",
+          "Bitte um die Rezepte",
+          "Frage nach einem Ersatztermin",
+          "Was Ihnen am Kurs gefällt"
+        ],
+        "register": "semi_formal",
+        "wordTarget": {
+          "min": 80,
+          "max": 120
+        }
+      },
+      "letter": "Hallo Frau Schubert,\n\nnächste Woche ich komme nicht, ich habe Termin. Kannst du mir schicken die Rezept? Der Kurs ist gut, aber die Küche ist zu klein für so viel Leute und manchmal wir warten lange für den Herd. Letzte Woche mein Kuchen war nicht gut, er ist nicht gegangen hoch, ich weiß nicht warum, vielleicht der Ofen ist kaputt oder ich habe vergesst das Backpulver. Ich habe zu Hause probiert noch mal und dann es war besser. Mein Mann hat alles gegessen, er hat gesagt, er ist sehr lecker.\n\nDaniel",
+      "grades": {
+        "aufgabe": "C",
+        "gestaltung": "C",
+        "richtigkeit": "C"
+      },
+      "justification": "Aufgabe C: Ein Grund wird nur sehr knapp genannt („ich habe Termin“), die Bitte um die Rezepte ist kurz, die Frage nach einem Ersatztermin fehlt, was ihm gefällt, bleibt bei „Der Kurs ist gut“, und stattdessen erzählt Daniel lange von einem misslungenen Kuchen. Gestaltung C: Der Gruß fehlt, „Kannst du“ passt nicht zur Anrede „Frau Schubert“, und der Text ist ein ungegliederter Block mit wenigen passenden Konnektoren. Richtigkeit C: Viele Fehler bei Wortstellung, Verbformen und Präpositionen („nächste Woche ich komme“, „er ist nicht gegangen hoch“, „habe vergesst“, „warten lange für den Herd“) erschweren stellenweise das Verständnis."
+    },
+    {
+      "task": {
+        "situation": "Sie besuchen jeden Donnerstag einen Kochkurs für Anfänger. Nächste Woche können Sie nicht kommen. Schreiben Sie Ihrer Kursleiterin, Frau Schubert, eine E-Mail.",
+        "leitpunkte": [
+          "Grund, warum Sie nicht kommen können",
+          "Bitte um die Rezepte",
+          "Frage nach einem Ersatztermin",
+          "Was Ihnen am Kurs gefällt"
+        ],
+        "register": "semi_formal",
+        "wordTarget": {
+          "min": 80,
+          "max": 120
+        }
+      },
+      "letter": "Hallo,\n\nich nicht Donnerstag Kurs. Mein Auto kaputt, Werkstatt teuer sehr. Ich fahren Bus, Bus spät immer. Du weißt gut Werkstatt billig?\n\nDaniel",
+      "grades": {
+        "aufgabe": "D",
+        "gestaltung": "D",
+        "richtigkeit": "D"
+      },
+      "justification": "Aufgabe D: Der Text ist viel zu kurz und geht an der Aufgabe vorbei: Die Absage ist nur angedeutet („ich nicht Donnerstag Kurs“), Rezepte, Ersatztermin und was ihm gefällt fehlen ganz, und stattdessen fragt er nach einer billigen Werkstatt. Gestaltung D: Es gibt keine Anrede an Frau Schubert, das „Du“ passt nicht zu einer Kursleiterin, und die Wortgruppen stehen ohne erkennbaren Aufbau nebeneinander. Richtigkeit D: Fast jeder Satz ist schwer fehlerhaft („Werkstatt teuer sehr“, „Ich fahren Bus“, „Du weißt gut Werkstatt billig?“), sodass der Text größtenteils unverständlich ist."
+    }
+  ]
+}

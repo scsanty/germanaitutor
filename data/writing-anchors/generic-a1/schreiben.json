@@ -1,0 +1,94 @@
+{
+  "formatId": "generic-a1",
+  "partId": "schreiben",
+  "anchors": [
+    {
+      "task": {
+        "situation": "Sie sind am Samstag mit Ihrer Freundin Lena im Kino verabredet. Sie können aber nicht kommen. Schreiben Sie Lena eine Nachricht.",
+        "leitpunkte": [
+          "Absage für Samstag und Grund",
+          "Neuer Termin: Tag und Uhrzeit",
+          "Bitte um Antwort"
+        ],
+        "register": "informal",
+        "wordTarget": {
+          "min": 24,
+          "max": 36
+        }
+      },
+      "letter": "Liebe Lena,\n\nes tut mir leid, aber ich kann am Samstag nicht ins Kino kommen. Meine Mutter hat Geburtstag. Hast du am Sonntag um 18 Uhr Zeit? Schreib mir bitte bald!\n\nViele Grüße\nTom",
+      "grades": {
+        "aufgabe": "A",
+        "gestaltung": "A",
+        "richtigkeit": "A"
+      },
+      "justification": "Aufgabe A: Alle drei Punkte werden klar behandelt: Absage mit Grund („Meine Mutter hat Geburtstag“), neuer Termin mit Tag und Uhrzeit („am Sonntag um 18 Uhr“) und Bitte um Antwort („Schreib mir bitte bald!“). Gestaltung A: Anrede und Gruß passen zu einer Freundin, die Absage ist mit „aber“ verbunden, und der Ton ist freundlich und persönlich. Richtigkeit A: Wortschatz und Satzbau sind einfach und dem Niveau A1 angemessen, und es gibt keine Fehler."
+    },
+    {
+      "task": {
+        "situation": "Sie sind am Samstag mit Ihrer Freundin Lena im Kino verabredet. Sie können aber nicht kommen. Schreiben Sie Lena eine Nachricht.",
+        "leitpunkte": [
+          "Absage für Samstag und Grund",
+          "Neuer Termin: Tag und Uhrzeit",
+          "Bitte um Antwort"
+        ],
+        "register": "informal",
+        "wordTarget": {
+          "min": 24,
+          "max": 36
+        }
+      },
+      "letter": "Hallo Lena,\n\nich kann am Samstag nicht in Kino gehen, weil ich muss arbeiten. Am Sonntag habe ich frei. Wir können um 18 Uhr gehen. Das Film ist sehr gut.\n\nViele Grüße\nTom",
+      "grades": {
+        "aufgabe": "B",
+        "gestaltung": "B",
+        "richtigkeit": "B"
+      },
+      "justification": "Aufgabe B: Absage mit Grund und neuer Termin („am Sonntag“, „um 18 Uhr“) werden behandelt, aber die Bitte um Antwort fehlt. Gestaltung B: Anrede und Gruß passen, doch nach dem „weil“-Satz stehen die kurzen Sätze ohne Konnektoren nebeneinander („Am Sonntag habe ich frei. Wir können um 18 Uhr gehen.“). Richtigkeit B: Einige Fehler („in Kino“, „weil ich muss arbeiten“, „Das Film“) stören das Verständnis kaum."
+    },
+    {
+      "task": {
+        "situation": "Sie sind am Samstag mit Ihrer Freundin Lena im Kino verabredet. Sie können aber nicht kommen. Schreiben Sie Lena eine Nachricht.",
+        "leitpunkte": [
+          "Absage für Samstag und Grund",
+          "Neuer Termin: Tag und Uhrzeit",
+          "Bitte um Antwort"
+        ],
+        "register": "informal",
+        "wordTarget": {
+          "min": 24,
+          "max": 36
+        }
+      },
+      "letter": "Lena,\n\nSamstag ich nicht kann Kino. Ich bin krank vielleicht, mein Kopf ist weh. Ich gehen zu Arzt morgen. Du gehen Kino mit Anna? Film ist gut, ich habe sehen Trailer.\n\nTom",
+      "grades": {
+        "aufgabe": "C",
+        "gestaltung": "C",
+        "richtigkeit": "C"
+      },
+      "justification": "Aufgabe C: Nur die Absage mit Grund wird behandelt („ich nicht kann Kino“, „Ich bin krank“); ein neuer Termin und die Bitte um Antwort fehlen, stattdessen geht es um den Arztbesuch und den Trailer. Gestaltung C: Es gibt keine richtige Anrede („Lena,“) und keinen Gruß, und die Sätze stehen ohne Konnektoren nebeneinander. Richtigkeit C: Viele Fehler bei Wortstellung und Verbformen („Samstag ich nicht kann Kino“, „Ich gehen zu Arzt“, „ich habe sehen“) erschweren stellenweise das Verständnis."
+    },
+    {
+      "task": {
+        "situation": "Sie sind am Samstag mit Ihrer Freundin Lena im Kino verabredet. Sie können aber nicht kommen. Schreiben Sie Lena eine Nachricht.",
+        "leitpunkte": [
+          "Absage für Samstag und Grund",
+          "Neuer Termin: Tag und Uhrzeit",
+          "Bitte um Antwort"
+        ],
+        "register": "informal",
+        "wordTarget": {
+          "min": 24,
+          "max": 36
+        }
+      },
+      "letter": "Hallo\n\nich Samstag nein. Pizza gut, ich essen gern Pizza. Du?\n\nTom",
+      "grades": {
+        "aufgabe": "D",
+        "gestaltung": "D",
+        "richtigkeit": "D"
+      },
+      "justification": "Aufgabe D: Die Absage ist nur mit „ich Samstag nein“ angedeutet, ein Grund, ein neuer Termin und die Bitte um Antwort fehlen, und stattdessen geht es um Pizza. Gestaltung D: Es gibt keine persönliche Anrede und keinen erkennbaren Aufbau; die Wortgruppen stehen ohne Zusammenhang nebeneinander. Richtigkeit D: Fast jeder Satz ist schwer fehlerhaft („ich Samstag nein“, „ich essen“), sodass die Nachricht größtenteils unverständlich ist."
+    }
+  ]
+}
