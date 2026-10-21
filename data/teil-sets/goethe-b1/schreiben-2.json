@@ -1,0 +1,130 @@
+{
+  "formatId": "goethe-b1",
+  "partId": "schreiben-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-b1__schreiben-2__s01",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie haben in einer Zeitschrift einen Artikel zum Thema „Ein fleischfreier Tag in der Kantine“ gelesen. Im Online-Forum der Zeitschrift finden Sie folgenden Beitrag:\n\nTanja: „In unserer Firmenkantine gibt es seit Januar jeden Donnerstag nur vegetarisches Essen. Ich finde das super: Es ist gesünder und besser für das Klima.\n\nViele Kollegen beschweren sich, aber das verstehe ich nicht. Wer unbedingt Fleisch essen will, kann das ja am Wochenende zu Hause tun.“\n\nSchreiben Sie Ihre Meinung zu diesem Thema.",
+              "leitpunkte": [
+                "Ihre Meinung zu einem fleischfreien Tag in der Kantine",
+                "Gründe für Ihre Meinung",
+                "Bezug zum Beitrag von Tanja"
+              ],
+              "register": "semi_formal",
+              "wordTarget": {
+                "min": 64,
+                "max": 96
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Say clearly whether you are for or against a meat-free day, give at least two reasons (health, climate, taste, free choice) and refer to one of Tanja's arguments, such as health or her advice to eat meat at home. Only a post that misses the topic or hardly exists gets an E, and then the whole text scores 0; a thin reason or a missing reference to the post only costs points.",
+            "de": "Sagen Sie klar, ob Sie für oder gegen einen fleischfreien Tag sind, nennen Sie mindestens zwei Gründe (Gesundheit, Klima, Geschmack, freie Wahl) und gehen Sie auf eines von Tanjas Argumenten ein, etwa die Gesundheit oder ihren Rat, Fleisch zu Hause zu essen. Ein E gibt es nur, wenn der Beitrag am Thema vorbeigeht oder kaum vorhanden ist; dann zählt der ganze Text 0 Punkte. Eine knappe Begründung oder ein fehlender Bezug zum Beitrag kostet nur Punkte."
+          },
+          {
+            "en": "A forum post needs no Anrede and no Gruß: start directly with your view, e.g. with a sentence about Tanja's post. Build introduction, reasons and a short conclusion, and link them with weil, denn, außerdem, trotzdem and deshalb.",
+            "de": "Ein Forumsbeitrag braucht keine Anrede und keinen Gruß: Beginnen Sie direkt mit Ihrer Meinung, zum Beispiel mit einem Satz zum Beitrag von Tanja. Bauen Sie Einleitung, Gründe und einen kurzen Schluss auf und verbinden Sie sie mit weil, denn, außerdem, trotzdem und deshalb."
+          },
+          {
+            "en": "Use phrases for opinions: Meiner Meinung nach …, Ich bin (nicht) der Meinung, dass …, Einerseits … andererseits …. Topic words: die Kantine, vegetarisch, das Klima, die Gesundheit, freiwillig, vorschreiben.",
+            "de": "Verwenden Sie Redemittel für die Meinung: Meiner Meinung nach …, Ich bin (nicht) der Meinung, dass …, Einerseits … andererseits …. Wörter zum Thema: die Kantine, vegetarisch, das Klima, die Gesundheit, freiwillig, vorschreiben."
+          },
+          {
+            "en": "Use dass- and wenn-clauses with the verb at the end (Ich finde es gut, dass die Kantine … anbietet; Wenn das Essen lecker ist, vermisst niemand das Fleisch) and an inversion after Meiner Meinung nach (Meiner Meinung nach sollte die Kantine …).",
+            "de": "Verwenden Sie dass- und wenn-Sätze mit dem Verb am Ende (Ich finde es gut, dass die Kantine … anbietet; Wenn das Essen lecker ist, vermisst niemand das Fleisch) und die Umstellung nach Meiner Meinung nach (Meiner Meinung nach sollte die Kantine …)."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__schreiben-2__s02",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie haben im Radio eine Sendung zum Thema „Arbeiten von zu Hause“ gehört. Im Online-Gästebuch der Sendung finden Sie folgenden Beitrag:\n\nSelin: „Seit zwei Jahren arbeite ich nur noch im Homeoffice. Ich stehe nicht mehr im Stau, kann mir die Zeit selbst einteilen und mittags in Ruhe kochen.\n\nBüros sind für mich ein Modell von gestern. Die Firmen sollten ihr Geld lieber sparen und alle Mitarbeiter zu Hause arbeiten lassen.“\n\nSchreiben Sie Ihre Meinung zu diesem Thema.",
+              "leitpunkte": [
+                "Ihre Meinung zum Arbeiten im Homeoffice",
+                "Gründe für Ihre Meinung",
+                "Bezug zum Beitrag von Selin"
+              ],
+              "register": "semi_formal",
+              "wordTarget": {
+                "min": 64,
+                "max": 96
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "State your own view on working from home, support it with reasons or your own experience, and react to Selin's claim that offices are outdated. Only a post that misses the topic or hardly exists gets an E, and then the whole text scores 0; a thin reason or a missing reference to the post only costs points.",
+            "de": "Sagen Sie Ihre eigene Meinung zum Homeoffice, begründen Sie sie mit Argumenten oder eigenen Erfahrungen und reagieren Sie auf Selins Aussage, dass Büros veraltet sind. Ein E gibt es nur, wenn der Beitrag am Thema vorbeigeht oder kaum vorhanden ist; dann zählt der ganze Text 0 Punkte. Eine knappe Begründung oder ein fehlender Bezug zum Beitrag kostet nur Punkte."
+          },
+          {
+            "en": "A guestbook entry needs no Anrede and no Gruß: start directly with your view, e.g. with a sentence about Selin's post. Build introduction, reasons and a short conclusion, and link them with weil, denn, außerdem, trotzdem and deshalb.",
+            "de": "Ein Gästebucheintrag braucht keine Anrede und keinen Gruß: Beginnen Sie direkt mit Ihrer Meinung, zum Beispiel mit einem Satz zum Beitrag von Selin. Bauen Sie Einleitung, Gründe und einen kurzen Schluss auf und verbinden Sie sie mit weil, denn, außerdem, trotzdem und deshalb."
+          },
+          {
+            "en": "Useful topic words: der Arbeitsweg, der Stau, die Kollegen, sich austauschen, allein sein, die Zeit einteilen, sich konzentrieren. To agree only in part: Da hat Selin recht, aber …",
+            "de": "Nützliche Wörter zum Thema: der Arbeitsweg, der Stau, die Kollegen, sich austauschen, allein sein, die Zeit einteilen, sich konzentrieren. Für teilweise Zustimmung: Da hat Selin recht, aber …"
+          },
+          {
+            "en": "Combine main and subordinate clauses: Ich verstehe, dass …; Obwohl …, …; …, weil …. A sentence with trotzdem (verb straight after it) shows a contrast clearly: Trotzdem gehe ich gern ins Büro.",
+            "de": "Verbinden Sie Haupt- und Nebensätze: Ich verstehe, dass …; Obwohl …, …; …, weil …. Ein Satz mit trotzdem (das Verb steht direkt danach) zeigt einen Gegensatz deutlich: Trotzdem gehe ich gern ins Büro."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__schreiben-2__s03",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie haben im Fernsehen eine Sendung zum Thema „Autofreie Innenstadt“ gesehen. Im Online-Gästebuch der Sendung finden Sie folgenden Beitrag:\n\nBernd: „Ich wohne am Stadtrand und fahre jeden Tag mit dem Auto in die Stadt, weil die Busse bei uns nur einmal pro Stunde fahren. Wenn die Innenstadt autofrei wird, kann ich dort nicht mehr einkaufen.\n\nDie Politiker denken nur an die Leute im Zentrum. Für uns am Stadtrand ist das eine schlechte Idee.“\n\nSchreiben Sie Ihre Meinung zu diesem Thema.",
+              "leitpunkte": [
+                "Ihre Meinung zu einer autofreien Innenstadt",
+                "Gründe für Ihre Meinung",
+                "Bezug zum Beitrag von Bernd"
+              ],
+              "register": "semi_formal",
+              "wordTarget": {
+                "min": 64,
+                "max": 96
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Make clear whether you are for or against a car-free city centre, give reasons (air, noise, safety, shops, public transport), and respond to Bernd's problem with the infrequent buses. Only a post that misses the topic or hardly exists gets an E, and then the whole text scores 0; a thin reason or a missing reference to the post only costs points.",
+            "de": "Machen Sie klar, ob Sie für oder gegen eine autofreie Innenstadt sind, nennen Sie Gründe (Luft, Lärm, Sicherheit, Geschäfte, Busse und Bahnen) und gehen Sie auf Bernds Problem mit den seltenen Bussen ein. Ein E gibt es nur, wenn der Beitrag am Thema vorbeigeht oder kaum vorhanden ist; dann zählt der ganze Text 0 Punkte. Eine knappe Begründung oder ein fehlender Bezug zum Beitrag kostet nur Punkte."
+          },
+          {
+            "en": "A guestbook entry needs no Anrede and no Gruß: start directly with your view, e.g. with a sentence about Bernd's post. Build introduction, reasons and a short conclusion, and link them with weil, denn, außerdem, trotzdem and deshalb.",
+            "de": "Ein Gästebucheintrag braucht keine Anrede und keinen Gruß: Beginnen Sie direkt mit Ihrer Meinung, zum Beispiel mit einem Satz zum Beitrag von Bernd. Bauen Sie Einleitung, Gründe und einen kurzen Schluss auf und verbinden Sie sie mit weil, denn, außerdem, trotzdem und deshalb."
+          },
+          {
+            "en": "Topic words: der Verkehr, der Lärm, die Abgase, der Parkplatz, die Fußgängerzone, öffentliche Verkehrsmittel, die Verbindung. Polite disagreement: Ich verstehe Bernd, aber … / Das sehe ich anders.",
+            "de": "Wörter zum Thema: der Verkehr, der Lärm, die Abgase, der Parkplatz, die Fußgängerzone, öffentliche Verkehrsmittel, die Verbindung. Höflicher Widerspruch: Ich verstehe Bernd, aber … / Das sehe ich anders."
+          },
+          {
+            "en": "Use wenn-clauses for consequences (Wenn weniger Autos fahren, ist die Luft besser) and sollte for proposals (Die Stadt sollte zuerst mehr Busse anbieten). Check the verb position after weil, dass and wenn.",
+            "de": "Verwenden Sie wenn-Sätze für Folgen (Wenn weniger Autos fahren, ist die Luft besser) und sollte für Vorschläge (Die Stadt sollte zuerst mehr Busse anbieten). Prüfen Sie die Verbstellung nach weil, dass und wenn."
+          }
+        ]
+      }
+    }
+  ]
+}

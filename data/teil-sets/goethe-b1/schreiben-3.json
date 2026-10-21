@@ -1,0 +1,130 @@
+{
+  "formatId": "goethe-b1",
+  "partId": "schreiben-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-b1__schreiben-3__s01",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie haben morgen um 10 Uhr einen Termin bei Ihrer Zahnärztin, Frau Dr. Kessler. Sie können aber nicht kommen. Schreiben Sie Frau Dr. Kessler eine E-Mail.",
+              "leitpunkte": [
+                "Entschuldigen Sie sich.",
+                "Nennen Sie den Grund.",
+                "Bitten Sie um einen neuen Termin."
+              ],
+              "register": "formal",
+              "wordTarget": {
+                "min": 32,
+                "max": 48
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "In about 40 words, apologise politely, give a short believable reason and ask for a new appointment, ideally with a day or time that suits you. Only a message that does not fit the situation or hardly exists gets an E, and then the whole text scores 0; a missing or very short point only costs points.",
+            "de": "Entschuldigen Sie sich in etwa 40 Wörtern höflich, nennen Sie einen kurzen, glaubhaften Grund und bitten Sie um einen neuen Termin, am besten mit einem Tag oder einer Uhrzeit, die Ihnen passt. Ein E gibt es nur, wenn die Nachricht nicht zur Situation passt oder kaum vorhanden ist; dann zählt der ganze Text 0 Punkte. Ein fehlender oder sehr knapper Punkt kostet nur Punkte."
+          },
+          {
+            "en": "Use a formal frame: „Sehr geehrte Frau Dr. Kessler“, Sie throughout, a closing like „Vielen Dank für Ihr Verständnis“ and „Mit freundlichen Grüßen“ plus your full name. Link apology and reason with weil or denn.",
+            "de": "Achten Sie auf den formellen Rahmen: „Sehr geehrte Frau Dr. Kessler“, durchgehend Sie, ein Schluss wie „Vielen Dank für Ihr Verständnis“ und „Mit freundlichen Grüßen“ mit vollem Namen. Verbinden Sie Entschuldigung und Grund mit weil oder denn."
+          },
+          {
+            "en": "Polite set phrases fit here: Leider kann ich … nicht kommen, Es tut mir leid, den Termin absagen / verschieben, Hätten Sie nächste Woche einen Termin frei? Avoid casual words like sorry or Hallo.",
+            "de": "Hier passen höfliche Redemittel: Leider kann ich … nicht kommen, Es tut mir leid, den Termin absagen / verschieben, Hätten Sie nächste Woche einen Termin frei? Vermeiden Sie lockere Wörter wie sorry oder Hallo."
+          },
+          {
+            "en": "A weil-clause with the verb at the end (… weil ich kurzfristig verreisen muss) and a polite question in the Konjunktiv II (Könnten Sie mir … geben?) are enough for a good grade in so short a text.",
+            "de": "Ein weil-Satz mit dem Verb am Ende (… weil ich kurzfristig verreisen muss) und eine höfliche Frage im Konjunktiv II (Könnten Sie mir … geben?) reichen in so einem kurzen Text für eine gute Note."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__schreiben-3__s02",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Ihre Vermieterin, Frau Petersen, hat alle Mieter zu einer Hausversammlung am Mittwochabend eingeladen. Thema ist die Renovierung des Treppenhauses. Sie können nicht teilnehmen. Schreiben Sie Frau Petersen eine E-Mail.",
+              "leitpunkte": [
+                "Entschuldigen Sie sich.",
+                "Nennen Sie den Grund.",
+                "Bitten Sie um Informationen über die Ergebnisse."
+              ],
+              "register": "formal",
+              "wordTarget": {
+                "min": 32,
+                "max": 48
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Keep to about 40 words and cover the three points: a polite apology for missing the meeting, a concrete reason, and a request to be told what was decided about the stairwell. Only a message that does not fit the situation or hardly exists gets an E, and then the whole text scores 0; a missing or very short point only costs points.",
+            "de": "Bleiben Sie bei etwa 40 Wörtern und behandeln Sie die drei Punkte: eine höfliche Entschuldigung für die Versammlung, einen konkreten Grund und die Bitte, Sie über die Entscheidungen zum Treppenhaus zu informieren. Ein E gibt es nur, wenn die Nachricht nicht zur Situation passt oder kaum vorhanden ist; dann zählt der ganze Text 0 Punkte. Ein fehlender oder sehr knapper Punkt kostet nur Punkte."
+          },
+          {
+            "en": "Start with „Sehr geehrte Frau Petersen“, thank her for the invitation in your opening sentence and end with „Mit freundlichen Grüßen“ and your name. Use aber or leider to move from the thanks to the apology.",
+            "de": "Beginnen Sie mit „Sehr geehrte Frau Petersen“, danken Sie im ersten Satz für die Einladung und enden Sie mit „Mit freundlichen Grüßen“ und Ihrem Namen. Leiten Sie mit aber oder leider vom Dank zur Entschuldigung über."
+          },
+          {
+            "en": "Useful words: die Einladung, die Hausversammlung, teilnehmen an, die Spätschicht, das Protokoll, informieren über. Keep the tone respectful; she is your landlady, not a friend.",
+            "de": "Nützliche Wörter: die Einladung, die Hausversammlung, teilnehmen an, die Spätschicht, das Protokoll, informieren über. Bleiben Sie respektvoll; sie ist Ihre Vermieterin, keine Freundin."
+          },
+          {
+            "en": "Watch the preposition and case: an der Versammlung teilnehmen, über die Ergebnisse informieren. A Konjunktiv II request (Würden Sie mich bitte … informieren?) and one weil-clause show B1 structures.",
+            "de": "Achten Sie auf Präposition und Kasus: an der Versammlung teilnehmen, über die Ergebnisse informieren. Eine Bitte im Konjunktiv II (Würden Sie mich bitte … informieren?) und ein weil-Satz zeigen B1-Strukturen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__schreiben-3__s03",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Ihr Chef, Herr Albers, hat Sie gebeten, am Samstag am Stand Ihrer Firma auf einer Messe zu helfen. Sie haben an diesem Tag aber keine Zeit. Schreiben Sie Herrn Albers eine E-Mail.",
+              "leitpunkte": [
+                "Entschuldigen Sie sich.",
+                "Nennen Sie den Grund.",
+                "Machen Sie einen Vorschlag, wie Sie anders helfen können."
+              ],
+              "register": "formal",
+              "wordTarget": {
+                "min": 32,
+                "max": 48
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Apologise to your boss, explain briefly why Saturday is impossible, and offer a concrete alternative, for example preparing material on Friday or helping on Sunday. Stay close to 40 words. Only a message that does not fit the situation or hardly exists gets an E, and then the whole text scores 0; a missing or very short point only costs points.",
+            "de": "Entschuldigen Sie sich bei Ihrem Chef, erklären Sie kurz, warum der Samstag nicht geht, und bieten Sie eine konkrete Alternative an, zum Beispiel am Freitag Material vorbereiten oder am Sonntag helfen. Bleiben Sie nah an 40 Wörtern. Ein E gibt es nur, wenn die Nachricht nicht zur Situation passt oder kaum vorhanden ist; dann zählt der ganze Text 0 Punkte. Ein fehlender oder sehr knapper Punkt kostet nur Punkte."
+          },
+          {
+            "en": "Address him as „Sehr geehrter Herr Albers“ and use Sie throughout; close with „Mit freundlichen Grüßen“ and your name. Link the reason with weil or denn and the offer with aber or stattdessen.",
+            "de": "Sprechen Sie ihn mit „Sehr geehrter Herr Albers“ an und bleiben Sie beim Sie; schließen Sie mit „Mit freundlichen Grüßen“ und Ihrem Namen. Verbinden Sie den Grund mit weil oder denn und das Angebot mit aber oder stattdessen."
+          },
+          {
+            "en": "Work words help: die Messe, der Stand, die Prospekte, vorbereiten, einspringen, die Familienfeier. Phrases like Leider ist es mir nicht möglich, … sound polite and professional.",
+            "de": "Wörter aus dem Berufsleben helfen: die Messe, der Stand, die Prospekte, vorbereiten, einspringen, die Familienfeier. Wendungen wie Leider ist es mir nicht möglich, … klingen höflich und professionell."
+          },
+          {
+            "en": "Make the offer with the Konjunktiv II (Ich könnte am Freitag … vorbereiten) and the reason with a weil-clause, verb at the end. Keep the sentences short but complete.",
+            "de": "Formulieren Sie das Angebot im Konjunktiv II (Ich könnte am Freitag … vorbereiten) und den Grund mit einem weil-Satz, Verb am Ende. Halten Sie die Sätze kurz, aber vollständig."
+          }
+        ]
+      }
+    }
+  ]
+}
