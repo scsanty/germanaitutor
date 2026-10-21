@@ -1,0 +1,133 @@
+{
+  "formatId": "goethe-c1",
+  "partId": "schreiben-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-c1__schreiben-2__s01",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie haben sich bei der Firma Kestner Logistik um eine Stelle als Projektkoordinator/in beworben und wurden für nächsten Dienstag zu einem Vorstellungsgespräch eingeladen. An diesem Tag haben Sie jedoch eine wichtige Prüfung, die sich nicht verschieben lässt. Schreiben Sie dem Personalleiter, Herrn Dr. Falkenberg, eine E-Mail.",
+              "leitpunkte": [
+                "Dank für die Einladung und Ihr weiterhin großes Interesse",
+                "Grund, warum Sie den Termin nicht wahrnehmen können",
+                "Vorschlag für eine andere Lösung",
+                "Frage zum Ablauf des Gesprächs"
+              ],
+              "register": "formal",
+              "wordTarget": {
+                "min": 96,
+                "max": 144
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Cover all four points fully: thank him and make clear you are still very interested, explain briefly why the date is impossible, offer a concrete alternative (other dates or a video interview), and ask a precise question about the interview. Only a text that misses the situation or hardly touches the Leitpunkte gets an E here and scores 0 overall; a missing or thin point only costs points.",
+            "de": "Behandeln Sie alle vier Punkte vollständig: Bedanken Sie sich und machen Sie deutlich, dass Ihr Interesse unverändert groß ist, erklären Sie kurz, warum der Termin nicht möglich ist, bieten Sie eine konkrete Alternative an (andere Termine oder ein Videogespräch) und stellen Sie eine genaue Frage zum Ablauf. Nur ein Text, der die Situation verfehlt oder die Leitpunkte kaum berührt, bekommt hier ein E und erhält insgesamt 0 Punkte; ein fehlender oder knapper Punkt kostet nur Punkte."
+          },
+          {
+            "en": "Use a fitting greeting (Sehr geehrter Herr Dr. Falkenberg,) and closing (Mit freundlichen Grüßen). Keep the message compact and logical: thanks, reason, alternative, question, polite closing sentence. Link sentences with precise connectors and reference words (leider, da, stattdessen, in diesem Zusammenhang).",
+            "de": "Verwenden Sie eine passende Anrede (Sehr geehrter Herr Dr. Falkenberg,) und einen passenden Gruß (Mit freundlichen Grüßen). Halten Sie die Nachricht kompakt und logisch: Dank, Grund, Alternative, Frage, höflicher Schlusssatz. Verbinden Sie die Sätze mit präzisen Konnektoren und Verweiswörtern (leider, da, stattdessen, in diesem Zusammenhang)."
+          },
+          {
+            "en": "Choose a polished formal style, for example den Termin wahrnehmen, sich terminlich überschneiden, einen Ausweichtermin vorschlagen, Ihnen entgegenkommen, nach wie vor großes Interesse. Avoid sounding casual or overly apologetic.",
+            "de": "Wählen Sie einen gepflegten formellen Stil, zum Beispiel den Termin wahrnehmen, sich terminlich überschneiden, einen Ausweichtermin vorschlagen, Ihnen entgegenkommen, nach wie vor großes Interesse. Klingen Sie weder salopp noch übertrieben entschuldigend."
+          },
+          {
+            "en": "Use C1 structures for politeness: Konjunktiv II (Wäre es möglich, …, Ich wäre Ihnen dankbar, wenn …), indirect questions with the verb at the end, and passive alternatives (die sich nicht verschieben lässt). Check comma placement before dass, ob and infinitive clauses.",
+            "de": "Nutzen Sie C1-Strukturen für Höflichkeit: Konjunktiv II (Wäre es möglich, …, Ich wäre Ihnen dankbar, wenn …), indirekte Fragen mit dem Verb am Ende und Passiversatzformen (die sich nicht verschieben lässt). Prüfen Sie die Kommasetzung vor dass, ob und Infinitivsätzen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-c1__schreiben-2__s02",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie singen seit mehreren Jahren im Chor „Cantabile“ in Lindmark. Die Vorsitzende, Frau Lindqvist, hat allen Mitgliedern mitgeteilt, dass der Mitgliedsbeitrag im nächsten Jahr deutlich steigen soll, weil die Miete für den Probenraum erhöht wurde. Frau Lindqvist bittet die Mitglieder um Rückmeldungen. Schreiben Sie Frau Lindqvist eine E-Mail.",
+              "leitpunkte": [
+                "Ihr Verständnis für die Lage des Chors",
+                "Ihre Bedenken gegenüber der Erhöhung",
+                "Ein Vorschlag, wie der Chor auf andere Weise Geld bekommen könnte",
+                "Ihre Bereitschaft, sich dafür zu engagieren"
+              ],
+              "register": "semi_formal",
+              "wordTarget": {
+                "min": 96,
+                "max": 144
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Address all four points: show understanding for the choir's situation, explain your concerns about the increase (for example for students or pensioners), suggest a concrete alternative source of money (a benefit concert, sponsors, a cheaper rehearsal room), and offer your own help. Only a text that misses the situation or hardly touches the Leitpunkte gets an E here and scores 0 overall; a missing or thin point only costs points.",
+            "de": "Gehen Sie auf alle vier Punkte ein: Zeigen Sie Verständnis für die Lage des Chors, erklären Sie Ihre Bedenken gegenüber der Erhöhung (zum Beispiel für Studierende oder Rentner), schlagen Sie eine konkrete andere Geldquelle vor (ein Benefizkonzert, Sponsoren, ein günstigerer Probenraum) und bieten Sie Ihre Mithilfe an. Nur ein Text, der die Situation verfehlt oder die Leitpunkte kaum berührt, bekommt hier ein E und erhält insgesamt 0 Punkte; ein fehlender oder knapper Punkt kostet nur Punkte."
+          },
+          {
+            "en": "As a fellow member you can write semi-formally: Liebe Frau Lindqvist, and Viele Grüße or Herzliche Grüße fit, but stay polite. Move from understanding to concerns to your suggestion and offer, and link the steps with connectors and reference words (gleichwohl, gerade deshalb, darüber hinaus, in diesem Sinne).",
+            "de": "Als Mitglied können Sie halbformell schreiben: Liebe Frau Lindqvist, und Viele Grüße oder Herzliche Grüße passen, bleiben Sie aber höflich. Führen Sie vom Verständnis über die Bedenken zu Vorschlag und Angebot und verbinden Sie die Schritte mit Konnektoren und Verweiswörtern (gleichwohl, gerade deshalb, darüber hinaus, in diesem Sinne)."
+          },
+          {
+            "en": "Use precise vocabulary, for example Mitgliedsbeitrag, Mieterhöhung, finanzielle Belastung, Benefizkonzert, Fördermittel beantragen, sich einbringen. Express criticism tactfully (ich gebe zu bedenken, dass …, ich befürchte, dass …).",
+            "de": "Verwenden Sie präzisen Wortschatz, zum Beispiel Mitgliedsbeitrag, Mieterhöhung, finanzielle Belastung, Benefizkonzert, Fördermittel beantragen, sich einbringen. Äußern Sie Kritik taktvoll (ich gebe zu bedenken, dass …, ich befürchte, dass …)."
+          },
+          {
+            "en": "Use C1 structures: concessive clauses (so nachvollziehbar die Erhöhung auch ist, …), Konjunktiv II for suggestions (Man könnte …, Es wäre denkbar, …), and infinitive clauses (Ich wäre bereit, … zu organisieren). Check commas and verb position in subordinate clauses.",
+            "de": "Verwenden Sie C1-Strukturen: Konzessivsätze (so nachvollziehbar die Erhöhung auch ist, …), Konjunktiv II für Vorschläge (Man könnte …, Es wäre denkbar, …) und Infinitivsätze (Ich wäre bereit, … zu organisieren). Prüfen Sie Kommas und Verbstellung in Nebensätzen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-c1__schreiben-2__s03",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie haben für Ihre Abteilung eine zweitägige Klausurtagung im Tagungshotel Seeterrasse in Ellernsee organisiert. Während der Tagung gab es mehrere Probleme: Der Beamer im Seminarraum fiel wiederholt aus, und das Mittagessen wurde am zweiten Tag mit fast einer Stunde Verspätung serviert. Schreiben Sie der Veranstaltungsleiterin des Hotels, Frau Haberland, eine E-Mail.",
+              "leitpunkte": [
+                "Was insgesamt gut funktioniert hat",
+                "Welche Probleme aufgetreten sind",
+                "Welche Folgen das für die Tagung hatte",
+                "Was Sie vom Hotel erwarten"
+              ],
+              "register": "formal",
+              "wordTarget": {
+                "min": 96,
+                "max": 144
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Cover all four points: start with what went well, describe the problems precisely, explain the consequences for the meeting (lost time, a shortened programme), and state clearly what you expect, for example a partial refund or a discount for your next booking. Only a text that misses the situation or hardly touches the Leitpunkte gets an E here and scores 0 overall; a missing or thin point only costs points.",
+            "de": "Behandeln Sie alle vier Punkte: Beginnen Sie mit dem, was gut lief, beschreiben Sie die Probleme genau, erklären Sie die Folgen für die Tagung (verlorene Zeit, gekürztes Programm) und sagen Sie klar, was Sie erwarten, zum Beispiel eine teilweise Erstattung oder einen Nachlass bei der nächsten Buchung. Nur ein Text, der die Situation verfehlt oder die Leitpunkte kaum berührt, bekommt hier ein E und erhält insgesamt 0 Punkte; ein fehlender oder knapper Punkt kostet nur Punkte."
+          },
+          {
+            "en": "Use a formal greeting and closing (Sehr geehrte Frau Haberland, … Mit freundlichen Grüßen). Structure the complaint clearly from praise to problem to consequence to demand, and connect the parts with precise connectors and reference words (insgesamt, umso bedauerlicher, infolgedessen, vor diesem Hintergrund).",
+            "de": "Verwenden Sie eine formelle Anrede und einen formellen Gruß (Sehr geehrte Frau Haberland, … Mit freundlichen Grüßen). Gliedern Sie die Beschwerde klar von Lob über Problem und Folge bis zur Forderung und verbinden Sie die Teile mit präzisen Konnektoren und Verweiswörtern (insgesamt, umso bedauerlicher, infolgedessen, vor diesem Hintergrund)."
+          },
+          {
+            "en": "Use precise, businesslike vocabulary, for example Klausurtagung, technische Ausstattung, Ausfall, Verzögerung, Tagesordnung, Preisnachlass, Kulanz, eine Erstattung anbieten. Keep the tone firm but courteous and avoid emotional exaggeration.",
+            "de": "Verwenden Sie präzisen, sachlichen Wortschatz, zum Beispiel Klausurtagung, technische Ausstattung, Ausfall, Verzögerung, Tagesordnung, Preisnachlass, Kulanz, eine Erstattung anbieten. Bleiben Sie bestimmt, aber höflich, und vermeiden Sie emotionale Übertreibungen."
+          },
+          {
+            "en": "Use C1 structures: nominal style (aufgrund des wiederholten Ausfalls des Beamers), Präteritum and Plusquamperfekt for what happened, consequence clauses (sodass …, was zur Folge hatte, dass …) and Konjunktiv II for your demand (Ich würde es begrüßen, wenn …).",
+            "de": "Verwenden Sie C1-Strukturen: Nominalstil (aufgrund des wiederholten Ausfalls des Beamers), Präteritum und Plusquamperfekt für das Geschehene, Folgesätze (sodass …, was zur Folge hatte, dass …) und Konjunktiv II für Ihre Forderung (Ich würde es begrüßen, wenn …)."
+          }
+        ]
+      }
+    }
+  ]
+}

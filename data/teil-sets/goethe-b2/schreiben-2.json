@@ -1,0 +1,133 @@
+{
+  "formatId": "goethe-b2",
+  "partId": "schreiben-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-b2__schreiben-2__s01",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Ihr Abteilungsleiter, Herr Brenner, möchte im Herbst einen gemeinsamen Ausflug für das ganze Team organisieren. Er bittet alle Mitarbeiterinnen und Mitarbeiter um Vorschläge. Schreiben Sie Herrn Brenner eine Nachricht.",
+              "leitpunkte": [
+                "Dank für die Idee",
+                "Ihr Vorschlag für Ziel und Programm",
+                "Gründe für Ihren Vorschlag",
+                "Termine, an denen Sie nicht können"
+              ],
+              "register": "formal",
+              "wordTarget": {
+                "min": 100,
+                "max": 150
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Cover all four points: thank him for the idea, describe a concrete destination and programme, explain why it suits the team, and name the dates when you are not available. Only a text that misses the situation or hardly touches the Leitpunkte gets an E here and scores 0 overall; a missing or thin point only costs points.",
+            "de": "Behandeln Sie alle vier Punkte: Bedanken Sie sich für die Idee, beschreiben Sie ein konkretes Ziel und Programm, erklären Sie, warum es zum Team passt, und nennen Sie die Termine, an denen Sie nicht können. Nur ein Text, der die Situation verfehlt oder die Leitpunkte kaum berührt, bekommt hier ein E und erhält insgesamt 0 Punkte; ein fehlender oder knapper Punkt kostet nur Punkte."
+          },
+          {
+            "en": "Begin with Sehr geehrter Herr Brenner, and end with Mit freundlichen Grüßen and your name. Give each point its own short paragraph and link them with connectors such as außerdem, deshalb, zum Beispiel, allerdings.",
+            "de": "Beginnen Sie mit Sehr geehrter Herr Brenner, und enden Sie mit Mit freundlichen Grüßen und Ihrem Namen. Behandeln Sie jeden Punkt in einem eigenen kurzen Absatz und verbinden Sie sie mit Konnektoren wie außerdem, deshalb, zum Beispiel, allerdings."
+          },
+          {
+            "en": "Use polite, work-appropriate vocabulary, for example Teamausflug, Zusammenhalt stärken, Tagesprogramm, Anreise, verhindert sein, Urlaub eingereicht haben. Keep the tone friendly but formal and avoid colloquial words.",
+            "de": "Verwenden Sie höflichen, berufstypischen Wortschatz, zum Beispiel Teamausflug, Zusammenhalt stärken, Tagesprogramm, Anreise, verhindert sein, Urlaub eingereicht haben. Bleiben Sie freundlich, aber formell, und vermeiden Sie umgangssprachliche Wörter."
+          },
+          {
+            "en": "Make polite suggestions with Konjunktiv II (Ich würde vorschlagen, …, Wir könnten …) and give reasons with weil or da. Use correct time expressions for dates (am 14. Oktober, in der ersten Novemberwoche) and check your article and adjective endings.",
+            "de": "Formulieren Sie höfliche Vorschläge mit dem Konjunktiv II (Ich würde vorschlagen, …, Wir könnten …) und begründen Sie mit weil oder da. Verwenden Sie korrekte Zeitangaben (am 14. Oktober, in der ersten Novemberwoche) und prüfen Sie Artikel- und Adjektivendungen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b2__schreiben-2__s02",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Ihre Kollegin Frau Yilmaz geht in drei Monaten für ein Jahr in Elternzeit. Ihre Vorgesetzte, Frau Martens, hat das Team gefragt, wer einen Teil der Aufgaben von Frau Yilmaz übernehmen kann. Schreiben Sie Frau Martens eine Nachricht.",
+              "leitpunkte": [
+                "Ihre Bereitschaft, Aufgaben zu übernehmen",
+                "Welche Aufgaben Sie übernehmen könnten",
+                "Was Sie dafür brauchen, z. B. Entlastung bei anderen Aufgaben",
+                "Ein Vorschlag für die Einarbeitung"
+              ],
+              "register": "formal",
+              "wordTarget": {
+                "min": 100,
+                "max": 150
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Answer all four points: say that you are willing to help, name specific tasks you could take on, explain what support or relief you would need, and suggest how the handover could be organised. Only a text that misses the situation or hardly touches the Leitpunkte gets an E here and scores 0 overall; a missing or thin point only costs points.",
+            "de": "Gehen Sie auf alle vier Punkte ein: Sagen Sie, dass Sie bereit sind zu helfen, nennen Sie konkrete Aufgaben, die Sie übernehmen könnten, erklären Sie, welche Unterstützung oder Entlastung Sie bräuchten, und schlagen Sie vor, wie die Übergabe organisiert werden könnte. Nur ein Text, der die Situation verfehlt oder die Leitpunkte kaum berührt, bekommt hier ein E und erhält insgesamt 0 Punkte; ein fehlender oder knapper Punkt kostet nur Punkte."
+          },
+          {
+            "en": "Use a formal greeting (Sehr geehrte Frau Martens,) and closing (Mit freundlichen Grüßen). Structure the message in short paragraphs and connect them logically, for example with allerdings, außerdem, deshalb, abschließend.",
+            "de": "Verwenden Sie eine formelle Anrede (Sehr geehrte Frau Martens,) und einen formellen Gruß (Mit freundlichen Grüßen). Gliedern Sie die Nachricht in kurze Absätze und verbinden Sie sie logisch, zum Beispiel mit allerdings, außerdem, deshalb, abschließend."
+          },
+          {
+            "en": "Use workplace vocabulary, for example Aufgaben übernehmen, Vertretung, Kundenbetreuung, Arbeitsbelastung, Einarbeitung, Übergabe, Überstunden. Be precise about the tasks instead of writing vaguely about „einige Sachen“.",
+            "de": "Verwenden Sie Wortschatz aus dem Arbeitsleben, zum Beispiel Aufgaben übernehmen, Vertretung, Kundenbetreuung, Arbeitsbelastung, Einarbeitung, Übergabe, Überstunden. Nennen Sie die Aufgaben genau, statt allgemein von „einigen Sachen“ zu schreiben."
+          },
+          {
+            "en": "Make conditions and suggestions politely with Konjunktiv II (Ich könnte …, es wäre gut, wenn …) and use conditional clauses with wenn or falls. Use infinitive clauses with zu (Ich bin bereit, … zu übernehmen) and check comma placement.",
+            "de": "Formulieren Sie Bedingungen und Vorschläge höflich mit dem Konjunktiv II (Ich könnte …, es wäre gut, wenn …) und verwenden Sie Bedingungssätze mit wenn oder falls. Nutzen Sie Infinitivsätze mit zu (Ich bin bereit, … zu übernehmen) und prüfen Sie die Kommasetzung."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b2__schreiben-2__s03",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Ihr Arbeitgeber, die Firma Brandt Medizintechnik, plant, die Kantine im Frühjahr umzubauen. Der zuständige Mitarbeiter aus der Verwaltung, Herr Ziegler, hat alle Mitarbeiterinnen und Mitarbeiter gebeten, ihre Meinung zu den Plänen mitzuteilen. Schreiben Sie Herrn Ziegler eine Nachricht.",
+              "leitpunkte": [
+                "Ihre Meinung zu den Plänen",
+                "Ihre Wünsche für die neue Kantine",
+                "Ihre Sorgen wegen der Umbauzeit",
+                "Eine Frage zu den Preisen in der neuen Kantine"
+              ],
+              "register": "formal",
+              "wordTarget": {
+                "min": 100,
+                "max": 150
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Deal with all four points: give your opinion on the plans, describe concrete wishes for the new canteen (more vegetarian dishes, quiet seating, longer opening hours), name your worries about the building period (where staff will eat, noise), and ask a clear question about the prices. Only a text that misses the situation or hardly touches the Leitpunkte gets an E here and scores 0 overall; a missing or thin point only costs points.",
+            "de": "Behandeln Sie alle vier Punkte: Äußern Sie Ihre Meinung zu den Plänen, beschreiben Sie konkrete Wünsche für die neue Kantine (mehr vegetarische Gerichte, ruhige Sitzplätze, längere Öffnungszeiten), nennen Sie Ihre Sorgen wegen der Umbauzeit (wo die Mitarbeitenden essen, Lärm) und stellen Sie eine klare Frage zu den Preisen. Nur ein Text, der die Situation verfehlt oder die Leitpunkte kaum berührt, bekommt hier ein E und erhält insgesamt 0 Punkte; ein fehlender oder knapper Punkt kostet nur Punkte."
+          },
+          {
+            "en": "Start with Sehr geehrter Herr Ziegler, and a sentence that refers to his request, then one paragraph per point, and finish with a polite closing such as Über eine Antwort würde ich mich freuen and Mit freundlichen Grüßen. Use connectors such as zunächst, außerdem, allerdings, deshalb.",
+            "de": "Beginnen Sie mit Sehr geehrter Herr Ziegler, und einem Satz, der sich auf seine Bitte bezieht, schreiben Sie dann einen Absatz pro Punkt und enden Sie höflich, zum Beispiel mit Über eine Antwort würde ich mich freuen und Mit freundlichen Grüßen. Verwenden Sie Konnektoren wie zunächst, außerdem, allerdings, deshalb."
+          },
+          {
+            "en": "Use vocabulary about the workplace and food, for example Kantine, Umbau, Speiseangebot, Mittagspause, Übergangslösung, Essenszuschuss, Preiserhöhung. Choose polite verbs such as begrüßen, bedauern, befürchten instead of simple finden.",
+            "de": "Verwenden Sie Wortschatz zu Arbeitsplatz und Essen, zum Beispiel Kantine, Umbau, Speiseangebot, Mittagspause, Übergangslösung, Essenszuschuss, Preiserhöhung. Wählen Sie höfliche Verben wie begrüßen, bedauern, befürchten statt nur finden."
+          },
+          {
+            "en": "Ask your question as a polite indirect question (Könnten Sie mir mitteilen, ob …, Ich wüsste gern, wie teuer …) with the verb at the end. Express wishes with Konjunktiv II (Ich würde mich über … freuen) and check the cases after prepositions such as wegen and während.",
+            "de": "Stellen Sie Ihre Frage als höfliche indirekte Frage (Könnten Sie mir mitteilen, ob …, Ich wüsste gern, wie teuer …) mit dem Verb am Ende. Äußern Sie Wünsche mit dem Konjunktiv II (Ich würde mich über … freuen) und prüfen Sie die Kasus nach Präpositionen wie wegen und während."
+          }
+        ]
+      }
+    }
+  ]
+}

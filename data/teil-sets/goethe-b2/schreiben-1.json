@@ -1,0 +1,133 @@
+{
+  "formatId": "goethe-b2",
+  "partId": "schreiben-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-b2__schreiben-1__s01",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie lesen in einem Online-Forum zum Thema Wohnen folgende Meldung:\n\n„Die Wohnungsgesellschaft Am Talbach, der in Neustett über 2.000 Mietwohnungen gehören, will in neuen Mietverträgen keine Hunde und Katzen mehr erlauben. Als Grund nennt sie Beschwerden über Lärm und Schäden in den Wohnungen. Der Tierschutzverein der Stadt befürchtet dagegen, dass bald noch mehr Tiere im Tierheim landen.“\n\nSchreiben Sie einen Beitrag für das Forum.",
+              "leitpunkte": [
+                "Ihre Meinung zu einem Haustierverbot in Mietwohnungen",
+                "Gründe für Ihre Meinung",
+                "Die Bedeutung von Haustieren für Kinder oder ältere Menschen",
+                "Regeln für ein gutes Zusammenleben von Mietern mit und ohne Tiere"
+              ],
+              "register": "semi_formal",
+              "wordTarget": {
+                "min": 150,
+                "max": 200
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "State clearly whether you support the ban, back it up with concrete reasons (noise and damage on one side, the welfare of animals and owners on the other), explain what pets mean for children or older people, and suggest house rules for tenants with and without pets. Only a text that misses the situation or hardly touches the Leitpunkte gets an E here and scores 0 overall; a missing or thin point only costs points.",
+            "de": "Sagen Sie klar, ob Sie das Verbot unterstützen, und begründen Sie es mit konkreten Argumenten (Lärm und Schäden auf der einen Seite, das Wohl von Tieren und Haltern auf der anderen), erklären Sie, was Haustiere für Kinder oder ältere Menschen bedeuten, und schlagen Sie Hausregeln für Mieter mit und ohne Tiere vor. Nur ein Text, der die Situation verfehlt oder die Leitpunkte kaum berührt, bekommt hier ein E und erhält insgesamt 0 Punkte; ein fehlender oder knapper Punkt kostet nur Punkte."
+          },
+          {
+            "en": "Start by referring to the news, then give each point its own paragraph in a sensible order and end with a short conclusion. Link your ideas with varied connectors such as einerseits … andererseits, außerdem, deshalb or trotzdem.",
+            "de": "Beziehen Sie sich am Anfang auf die Meldung, behandeln Sie dann jeden Punkt in einem eigenen Absatz in einer sinnvollen Reihenfolge und schließen Sie mit einem kurzen Fazit. Verknüpfen Sie Ihre Gedanken mit abwechslungsreichen Konnektoren wie einerseits … andererseits, außerdem, deshalb oder trotzdem."
+          },
+          {
+            "en": "Use precise vocabulary for the topic, for example Mietvertrag, Tierhaltung, Haustierhalter, Rücksicht nehmen, Lärmbelästigung, Hausordnung. Vary how you give your opinion (meiner Meinung nach, ich bin der Ansicht, dass …, ich halte es für falsch, …).",
+            "de": "Verwenden Sie genauen Wortschatz zum Thema, zum Beispiel Mietvertrag, Tierhaltung, Haustierhalter, Rücksicht nehmen, Lärmbelästigung, Hausordnung. Variieren Sie Ihre Meinungsäußerungen (meiner Meinung nach, ich bin der Ansicht, dass …, ich halte es für falsch, …)."
+          },
+          {
+            "en": "Show B2 structures: subordinate clauses with weil, obwohl and wenn, relative clauses (Mieter, die einen Hund haben, …), Konjunktiv II for suggestions (Es wäre sinnvoll, …) and the passive (Die Regeln sollten gemeinsam festgelegt werden). Check verb position and endings before you finish.",
+            "de": "Zeigen Sie B2-Strukturen: Nebensätze mit weil, obwohl und wenn, Relativsätze (Mieter, die einen Hund haben, …), Konjunktiv II für Vorschläge (Es wäre sinnvoll, …) und das Passiv (Die Regeln sollten gemeinsam festgelegt werden). Prüfen Sie am Ende Verbstellung und Endungen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b2__schreiben-1__s02",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie lesen in einem Online-Forum zum Thema Einkaufen folgende Meldung:\n\n„Der Online-Modehändler Kleiderwerk verlangt ab März für jede Rücksendung eine Gebühr von 2,95 Euro. Das Unternehmen erklärt, dass viele Kundinnen und Kunden dieselbe Hose in drei Größen bestellen und zwei davon zurückschicken. Das koste viel Geld und belaste die Umwelt. Verbraucherschützer kritisieren, dass Kunden im Internet die Ware nicht vorher anprobieren können.“\n\nSchreiben Sie einen Beitrag für das Forum.",
+              "leitpunkte": [
+                "Ihre Meinung zu Gebühren für Rücksendungen",
+                "Gründe für Ihre Meinung",
+                "Ihre eigenen Erfahrungen mit dem Einkaufen im Internet",
+                "Möglichkeiten, die Zahl der Rücksendungen zu verringern"
+              ],
+              "register": "semi_formal",
+              "wordTarget": {
+                "min": 150,
+                "max": 200
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Say clearly whether you find the return fee fair and justify it with concrete reasons (costs and the environment versus the customer's right to try things on), describe a real experience of your own with online shopping, and suggest ways to reduce returns. Only a text that misses the situation or hardly touches the Leitpunkte gets an E here and scores 0 overall; a missing or thin point only costs points.",
+            "de": "Sagen Sie klar, ob Sie die Rücksendegebühr fair finden, und begründen Sie das mit konkreten Argumenten (Kosten und Umwelt gegenüber dem Recht der Kunden, Ware anzuprobieren), beschreiben Sie eine eigene Erfahrung mit dem Einkaufen im Internet und schlagen Sie Wege vor, die Rücksendungen zu verringern. Nur ein Text, der die Situation verfehlt oder die Leitpunkte kaum berührt, bekommt hier ein E und erhält insgesamt 0 Punkte; ein fehlender oder knapper Punkt kostet nur Punkte."
+          },
+          {
+            "en": "Open with a sentence that refers to the news, then work through the points in a logical order, one paragraph each, and close with a short summary of your view. Use connectors that show contrast and consequence, such as zwar … aber, dagegen, deshalb, folglich.",
+            "de": "Beginnen Sie mit einem Satz, der sich auf die Meldung bezieht, behandeln Sie die Punkte dann in einer logischen Reihenfolge in je einem Absatz und schließen Sie mit einer kurzen Zusammenfassung Ihrer Meinung. Verwenden Sie Konnektoren für Gegensatz und Folge, zum Beispiel zwar … aber, dagegen, deshalb, folglich."
+          },
+          {
+            "en": "Use vocabulary from the topic of shopping and the environment, for example Rücksendung, Versandkosten, anprobieren, die Größe passt nicht, Verpackungsmüll, Größentabelle. Avoid repeating gut and schlecht; use more precise adjectives such as sinnvoll, ärgerlich or umweltschädlich.",
+            "de": "Verwenden Sie Wortschatz zu den Themen Einkaufen und Umwelt, zum Beispiel Rücksendung, Versandkosten, anprobieren, die Größe passt nicht, Verpackungsmüll, Größentabelle. Wiederholen Sie nicht ständig gut und schlecht, sondern nutzen Sie genauere Adjektive wie sinnvoll, ärgerlich oder umweltschädlich."
+          },
+          {
+            "en": "Tell your experience in the Perfekt or Präteritum and use subordinate clauses (als ich …, nachdem …, da …). Express suggestions with Konjunktiv II (Händler könnten …, es wäre besser, wenn …) and check word order after connectors such as deshalb and trotzdem.",
+            "de": "Erzählen Sie Ihre Erfahrung im Perfekt oder Präteritum und verwenden Sie Nebensätze (als ich …, nachdem …, da …). Formulieren Sie Vorschläge mit dem Konjunktiv II (Händler könnten …, es wäre besser, wenn …) und prüfen Sie die Wortstellung nach Konnektoren wie deshalb und trotzdem."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b2__schreiben-1__s03",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie lesen in einem Online-Forum zum Thema Leben in der Stadt folgende Meldung:\n\n„Das Bürgeramt der Stadt Rehnstadt vergibt ab dem nächsten Monat Termine nur noch über das Internet. Wer einen neuen Ausweis braucht oder umzieht, muss sich vorher online anmelden. Die Stadt verspricht kürzere Wartezeiten. Der Seniorenbeirat warnt dagegen, dass viele ältere Menschen ohne Computer oder Smartphone ausgeschlossen werden.“\n\nSchreiben Sie einen Beitrag für das Forum.",
+              "leitpunkte": [
+                "Ihre Meinung zur Terminvergabe nur über das Internet",
+                "Gründe für Ihre Meinung",
+                "Mögliche Folgen für Menschen ohne Internet",
+                "Wie man diese Menschen unterstützen könnte"
+              ],
+              "register": "semi_formal",
+              "wordTarget": {
+                "min": 150,
+                "max": 200
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Give a clear opinion on online-only appointments and back it up with reasons (shorter waiting times versus fair access for everyone), describe what the change means for people without the internet, and make concrete suggestions for how they could be supported. Only a text that misses the situation or hardly touches the Leitpunkte gets an E here and scores 0 overall; a missing or thin point only costs points.",
+            "de": "Äußern Sie eine klare Meinung zur Terminvergabe nur über das Internet und begründen Sie sie (kürzere Wartezeiten gegenüber gleichem Zugang für alle), beschreiben Sie, was die Änderung für Menschen ohne Internet bedeutet, und machen Sie konkrete Vorschläge, wie man sie unterstützen könnte. Nur ein Text, der die Situation verfehlt oder die Leitpunkte kaum berührt, bekommt hier ein E und erhält insgesamt 0 Punkte; ein fehlender oder knapper Punkt kostet nur Punkte."
+          },
+          {
+            "en": "Refer to the news in your first sentence, then deal with the four points in a sensible order with clear paragraphs, and end with a short conclusion. Connect your sentences with varied connectors such as auf der einen Seite … auf der anderen Seite, darüber hinaus, aus diesem Grund.",
+            "de": "Beziehen Sie sich im ersten Satz auf die Meldung, behandeln Sie dann die vier Punkte in einer sinnvollen Reihenfolge mit klaren Absätzen und enden Sie mit einem kurzen Fazit. Verbinden Sie Ihre Sätze mit abwechslungsreichen Konnektoren wie auf der einen Seite … auf der anderen Seite, darüber hinaus, aus diesem Grund."
+          },
+          {
+            "en": "Use vocabulary about public services and digital life, for example Behörde, Termin vereinbaren, Wartezeit, benachteiligt sein, Telefonhotline, ehrenamtliche Helfer. Vary your opinion phrases (ich finde es problematisch, dass …, meines Erachtens …).",
+            "de": "Verwenden Sie Wortschatz zu Behörden und digitalem Alltag, zum Beispiel Behörde, Termin vereinbaren, Wartezeit, benachteiligt sein, Telefonhotline, ehrenamtliche Helfer. Variieren Sie Ihre Meinungsäußerungen (ich finde es problematisch, dass …, meines Erachtens …)."
+          },
+          {
+            "en": "Use B2 structures: the passive (Termine werden nur online vergeben), Konjunktiv II for suggestions (Die Stadt sollte …, es wäre hilfreich, wenn …), and subordinate clauses with damit, ohne dass or obwohl. Check that the verb is at the end of each subordinate clause.",
+            "de": "Verwenden Sie B2-Strukturen: das Passiv (Termine werden nur online vergeben), den Konjunktiv II für Vorschläge (Die Stadt sollte …, es wäre hilfreich, wenn …) und Nebensätze mit damit, ohne dass oder obwohl. Prüfen Sie, dass das Verb in jedem Nebensatz am Ende steht."
+          }
+        ]
+      }
+    }
+  ]
+}
