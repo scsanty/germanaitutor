@@ -1,7 +1,7 @@
-import { readdirSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, it, expect } from 'vitest';
-import { readFormat } from '@/lib/exam/formats';
+import { listFormats, readFormat } from '@/lib/exam/formats';
 import { anchorProblems, type AnchorFile } from '@/lib/writing/anchors';
 import { pointsFor } from '@/lib/writing/rubric';
 
@@ -19,6 +19,13 @@ const words = (text: string) => text.trim().split(/\s+/).length;
 describe('bundled writing anchors', () => {
   it('exist', () => {
     expect(files.length).toBeGreaterThan(0);
+  });
+
+  it('cover every letter part of every exam format', () => {
+    const missing = listFormats()
+      .flatMap((f) => f.parts.filter((p) => p.taskType === 'letter').map((p) => `${f.id}/${p.id}`))
+      .filter((key) => !existsSync(join(DIR, `${key}.json`)));
+    expect(missing).toEqual([]);
   });
 
   it.each(files.map((f) => [`${f.dir}/${f.name}`, f] as const))('%s is valid for its format part', (_, { dir, name, file }) => {
