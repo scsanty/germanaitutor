@@ -19,58 +19,42 @@
     { "id": "hoeren-4", "skill": "listening", "title": { "en": "Listening Part 4", "de": "Hören Teil 4" }, "taskType": "audio_questions", "items": 5, "points": 5, "minutes": 8, "instructions": "Sie hören ein Interview. Sie hören den Text zweimal. Entscheiden Sie: Ja oder Nein?", "replays": 2 },
     { "id": "schreiben-1", "skill": "writing", "title": { "en": "Writing Part 1", "de": "Schreiben Teil 1" }, "taskType": "letter", "items": 4, "points": 10, "minutes": 12, "choices": 1, "wordTarget": { "min": 20, "max": 30 },
       "rubric": { "criteria": [
-      { "id": "erfuellung", "name": { "en": "Task fulfilment", "de": "Erfüllung" }, "points": { "A": 4, "B": 3, "C": 2, "D": 1, "E": 0 }, "descriptors": {
-        "A": "Alle drei Inhaltspunkte werden verständlich behandelt; Textsorte (SMS) und Umfang passen.",
-        "B": "Alle Inhaltspunkte kommen vor, einer bleibt aber knapp oder unklar, oder Textsorte (SMS) und Umfang passen nicht ganz.",
-        "C": "Ein Inhaltspunkt fehlt, oder mehrere bleiben sehr knapp.",
-        "D": "Nur ein Teil der Aufgabe wird behandelt, oder der Text ist deutlich zu kurz.",
-        "E": "Die Aufgabe wird nicht erfüllt: Der Text passt nicht zur Situation oder ist kaum vorhanden." } },
-      { "id": "kohaerenz", "name": { "en": "Coherence", "de": "Kohärenz" }, "points": { "A": 2, "B": 1.5, "C": 1, "D": 0.5, "E": 0 }, "descriptors": {
-        "A": "Die Sätze sind mit einfachen Konnektoren (z. B. und, aber, denn, dann) sinnvoll verbunden.",
-        "B": "Die Sätze sind meist verbunden; Konnektoren fehlen manchmal oder werden falsch verwendet.",
-        "C": "Es gibt nur vereinzelt Konnektoren; die Sätze stehen meist unverbunden nebeneinander.",
-        "D": "Ein Zusammenhang zwischen den Sätzen ist kaum erkennbar.",
-        "E": "Es ist kein Zusammenhang erkennbar." } },
-      { "id": "wortschatz", "name": { "en": "Vocabulary", "de": "Wortschatz" }, "points": { "A": 2, "B": 1.5, "C": 1, "D": 0.5, "E": 0 }, "descriptors": {
-        "A": "Der Wortschatz reicht für die Aufgabe gut aus; kleine Fehler stören das Verständnis nicht.",
-        "B": "Der Wortschatz reicht meist aus; einige Fehler stören kaum.",
-        "C": "Der Wortschatz ist sehr einfach, und Fehler erschweren stellenweise das Verständnis.",
-        "D": "Fehlende Wörter und viele Fehler behindern das Verständnis stark.",
-        "E": "Der Wortschatz reicht für die Aufgabe nicht aus." } },
-      { "id": "strukturen", "name": { "en": "Structures", "de": "Strukturen" }, "points": { "A": 2, "B": 1.5, "C": 1, "D": 0.5, "E": 0 }, "descriptors": {
-        "A": "Einfache Sätze und Strukturen (z. B. Verbstellung, Perfekt, Modalverben) sind weitgehend korrekt.",
-        "B": "Einfache Strukturen sind meist korrekt; Fehler stören das Verständnis kaum.",
-        "C": "Häufige Fehler in einfachen Strukturen erschweren stellenweise das Verständnis.",
-        "D": "Viele Fehler behindern das Verständnis stark.",
-        "E": "Die Sätze sind kaum zu verstehen." } }
+      { "id": "punkt-1", "name": { "en": "Task completion: content point 1", "de": "Aufgabenerfüllung: Inhaltspunkt 1" }, "points": { "A": 3, "B": 1.5, "C": 0 }, "descriptors": {
+        "A": "Der erste Punkt der Aufgabe wird inhaltlich passend und verständlich behandelt.",
+        "B": "Der erste Punkt der Aufgabe wird nur teilweise behandelt, oder Fehler machen ihn schwer verständlich.",
+        "C": "Der erste Punkt der Aufgabe fehlt oder ist nicht zu verstehen." } },
+      { "id": "punkt-2", "name": { "en": "Task completion: content point 2", "de": "Aufgabenerfüllung: Inhaltspunkt 2" }, "points": { "A": 3, "B": 1.5, "C": 0 }, "descriptors": {
+        "A": "Der zweite Punkt der Aufgabe wird inhaltlich passend und verständlich behandelt.",
+        "B": "Der zweite Punkt der Aufgabe wird nur teilweise behandelt, oder Fehler machen ihn schwer verständlich.",
+        "C": "Der zweite Punkt der Aufgabe fehlt oder ist nicht zu verstehen." } },
+      { "id": "punkt-3", "name": { "en": "Task completion: content point 3", "de": "Aufgabenerfüllung: Inhaltspunkt 3" }, "points": { "A": 3, "B": 1.5, "C": 0 }, "descriptors": {
+        "A": "Der dritte Punkt der Aufgabe wird inhaltlich passend und verständlich behandelt.",
+        "B": "Der dritte Punkt der Aufgabe wird nur teilweise behandelt, oder Fehler machen ihn schwer verständlich.",
+        "C": "Der dritte Punkt der Aufgabe fehlt oder ist nicht zu verstehen." } },
+      { "id": "gestaltung", "name": { "en": "Language and form", "de": "Sprache und Form" }, "points": { "A": 1, "B": 0.5, "C": 0 }, "descriptors": {
+        "A": "Der Text passt als SMS zur Situation, die Sätze sind mit einfachen Konnektoren (z. B. und, aber, denn, dann) verbunden, und Wortschatz und Grammatik sind trotz kleiner Fehler gut verständlich.",
+        "B": "Die Sätze stehen oft ohne Konnektoren nebeneinander, oder Fehler in Wortschatz und Grammatik erschweren das Lesen stellenweise.",
+        "C": "Der Text ist nicht als SMS erkennbar, oder Fehler machen ihn größtenteils unverständlich." } }
     ] },
       "instructions": "Schreiben Sie eine SMS (20–30 Wörter). Schreiben Sie zu allen drei Punkten." },
     { "id": "schreiben-2", "skill": "writing", "title": { "en": "Writing Part 2", "de": "Schreiben Teil 2" }, "taskType": "letter", "items": 4, "points": 10, "minutes": 18, "choices": 1, "wordTarget": { "min": 30, "max": 40 },
       "rubric": { "criteria": [
-      { "id": "erfuellung", "name": { "en": "Task fulfilment", "de": "Erfüllung" }, "points": { "A": 4, "B": 3, "C": 2, "D": 1, "E": 0 }, "descriptors": {
-        "A": "Alle drei Inhaltspunkte werden verständlich behandelt; Textsorte, Register und Umfang passen.",
-        "B": "Alle Inhaltspunkte kommen vor, einer bleibt aber knapp oder unklar, oder Textsorte, Register und Umfang passen nicht ganz.",
-        "C": "Ein Inhaltspunkt fehlt, oder mehrere bleiben sehr knapp.",
-        "D": "Nur ein Teil der Aufgabe wird behandelt, oder der Text ist deutlich zu kurz.",
-        "E": "Die Aufgabe wird nicht erfüllt: Der Text passt nicht zur Situation oder ist kaum vorhanden." } },
-      { "id": "kohaerenz", "name": { "en": "Coherence", "de": "Kohärenz" }, "points": { "A": 2, "B": 1.5, "C": 1, "D": 0.5, "E": 0 }, "descriptors": {
-        "A": "Die Sätze sind mit einfachen Konnektoren (z. B. und, aber, denn, dann) sinnvoll verbunden; Anrede und Gruß passen.",
-        "B": "Die Sätze sind meist verbunden; Konnektoren fehlen manchmal oder werden falsch verwendet.",
-        "C": "Es gibt nur vereinzelt Konnektoren; die Sätze stehen meist unverbunden nebeneinander, oder Anrede bzw. Gruß fehlt.",
-        "D": "Ein Zusammenhang zwischen den Sätzen ist kaum erkennbar.",
-        "E": "Es ist kein Zusammenhang erkennbar." } },
-      { "id": "wortschatz", "name": { "en": "Vocabulary", "de": "Wortschatz" }, "points": { "A": 2, "B": 1.5, "C": 1, "D": 0.5, "E": 0 }, "descriptors": {
-        "A": "Der Wortschatz reicht für die Aufgabe gut aus; kleine Fehler stören das Verständnis nicht.",
-        "B": "Der Wortschatz reicht meist aus; einige Fehler stören kaum.",
-        "C": "Der Wortschatz ist sehr einfach, und Fehler erschweren stellenweise das Verständnis.",
-        "D": "Fehlende Wörter und viele Fehler behindern das Verständnis stark.",
-        "E": "Der Wortschatz reicht für die Aufgabe nicht aus." } },
-      { "id": "strukturen", "name": { "en": "Structures", "de": "Strukturen" }, "points": { "A": 2, "B": 1.5, "C": 1, "D": 0.5, "E": 0 }, "descriptors": {
-        "A": "Einfache Sätze und Strukturen (z. B. Verbstellung, Perfekt, Modalverben) sind weitgehend korrekt.",
-        "B": "Einfache Strukturen sind meist korrekt; Fehler stören das Verständnis kaum.",
-        "C": "Häufige Fehler in einfachen Strukturen erschweren stellenweise das Verständnis.",
-        "D": "Viele Fehler behindern das Verständnis stark.",
-        "E": "Die Sätze sind kaum zu verstehen." } }
+      { "id": "punkt-1", "name": { "en": "Task completion: content point 1", "de": "Aufgabenerfüllung: Inhaltspunkt 1" }, "points": { "A": 3, "B": 1.5, "C": 0 }, "descriptors": {
+        "A": "Der erste Punkt der Aufgabe wird inhaltlich passend und verständlich behandelt.",
+        "B": "Der erste Punkt der Aufgabe wird nur teilweise behandelt, oder Fehler machen ihn schwer verständlich.",
+        "C": "Der erste Punkt der Aufgabe fehlt oder ist nicht zu verstehen." } },
+      { "id": "punkt-2", "name": { "en": "Task completion: content point 2", "de": "Aufgabenerfüllung: Inhaltspunkt 2" }, "points": { "A": 3, "B": 1.5, "C": 0 }, "descriptors": {
+        "A": "Der zweite Punkt der Aufgabe wird inhaltlich passend und verständlich behandelt.",
+        "B": "Der zweite Punkt der Aufgabe wird nur teilweise behandelt, oder Fehler machen ihn schwer verständlich.",
+        "C": "Der zweite Punkt der Aufgabe fehlt oder ist nicht zu verstehen." } },
+      { "id": "punkt-3", "name": { "en": "Task completion: content point 3", "de": "Aufgabenerfüllung: Inhaltspunkt 3" }, "points": { "A": 3, "B": 1.5, "C": 0 }, "descriptors": {
+        "A": "Der dritte Punkt der Aufgabe wird inhaltlich passend und verständlich behandelt.",
+        "B": "Der dritte Punkt der Aufgabe wird nur teilweise behandelt, oder Fehler machen ihn schwer verständlich.",
+        "C": "Der dritte Punkt der Aufgabe fehlt oder ist nicht zu verstehen." } },
+      { "id": "gestaltung", "name": { "en": "Language and form", "de": "Sprache und Form" }, "points": { "A": 1, "B": 0.5, "C": 0 }, "descriptors": {
+        "A": "Anrede und Gruß passen zur Situation, die Sätze sind mit einfachen Konnektoren (z. B. und, aber, denn, dann) verbunden, und Wortschatz und Grammatik sind trotz kleiner Fehler gut verständlich.",
+        "B": "Anrede oder Gruß fehlt oder passt nicht, die Sätze stehen oft ohne Konnektoren nebeneinander, oder Fehler in Wortschatz und Grammatik erschweren das Lesen stellenweise.",
+        "C": "Anrede und Gruß fehlen und der Text ist nicht als E-Mail erkennbar, oder Fehler machen ihn größtenteils unverständlich." } }
     ] },
       "instructions": "Schreiben Sie eine E-Mail (30–40 Wörter). Schreiben Sie zu allen drei Punkten. Vergessen Sie nicht die Anrede und den Gruß." },
     { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Sprechen Teil 1" }, "taskType": "spoken", "items": 4, "points": 4, "minutes": 4, "instructions": "Fragen zur Person stellen und beantworten: Ziehen Sie vier Karten. Stellen Sie mit jedem Wort eine Frage und antworten Sie auf die Fragen Ihres Partners / Ihrer Partnerin." },

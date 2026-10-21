@@ -16,23 +16,28 @@
     { "id": "hoeren-1", "skill": "listening", "title": { "en": "Listening Part 1", "de": "Hörverstehen Teil 1" }, "taskType": "audio_questions", "items": 8, "points": 8, "minutes": 12, "instructions": "Globalverstehen: Sie hören die Meinungen von acht Personen. Sie hören die Meinungen nur einmal. Welche Aussage (a–j) passt zu welcher Person (1–8)? Zwei Aussagen passen nicht.", "replays": 1 },
     { "id": "hoeren-2", "skill": "listening", "title": { "en": "Listening Part 2", "de": "Hörverstehen Teil 2" }, "taskType": "audio_questions", "items": 10, "points": 20, "minutes": 16, "instructions": "Detailverstehen: Sie hören eine Radiosendung. Sie hören die Sendung nur einmal. Welche Aussage (a, b oder c) passt am besten zu den Aufgaben 1–10?", "replays": 1 },
     { "id": "hoeren-3", "skill": "listening", "title": { "en": "Listening Part 3", "de": "Hörverstehen Teil 3" }, "taskType": "audio_questions", "items": 10, "points": 20, "minutes": 12, "instructions": "Informationstransfer: Sie hören einen Vortrag. Sie hören den Vortrag nur einmal. Sie haben Handzettel mit den Folien der Präsentation. Schreiben Sie die fehlenden Informationen stichwortartig in die Zeilen 1–10.", "replays": 1 },
-    { "id": "schreiben", "skill": "writing", "title": { "en": "Writing", "de": "Schriftlicher Ausdruck" }, "taskType": "letter", "items": 3, "points": 48, "minutes": 70, "choices": 2, "wordTarget": { "min": 280, "max": 420 },
+    { "id": "schreiben", "skill": "writing", "title": { "en": "Writing", "de": "Schriftlicher Ausdruck" }, "taskType": "letter", "items": 4, "points": 48, "minutes": 70, "choices": 2, "wordTarget": { "min": 280, "max": 420 },
       "rubric": { "criteria": [
-      { "id": "aufgabe", "name": { "en": "Task completion", "de": "Aufgabenbewältigung" }, "points": { "A": 16, "B": 11, "C": 5, "D": 0 }, "descriptors": {
+      { "id": "aufgabe", "name": { "en": "Task completion", "de": "Aufgabenbewältigung" }, "points": { "A": 12, "B": 8, "C": 4, "D": 0 }, "descriptors": {
         "A": "Der eigene Standpunkt wird klar erarbeitet: Argumente, Vor- und Nachteile werden differenziert ausgeführt, und die eigene Position wird am Schluss überzeugend begründet.",
         "B": "Alle Teile der Aufgabe werden behandelt, aber einige Argumente bleiben allgemein, oder die Begründung der eigenen Position ist knapp.",
         "C": "Ein wesentlicher Teil der Aufgabe fehlt (etwa die Gegenseite oder die eigene Position), oder die Argumentation bleibt oberflächlich.",
         "D": "Das Thema wird verfehlt oder kaum bearbeitet." } },
-      { "id": "gestaltung", "name": { "en": "Communicative design", "de": "Kommunikative Gestaltung" }, "points": { "A": 16, "B": 11, "C": 5, "D": 0 }, "descriptors": {
+      { "id": "gestaltung", "name": { "en": "Communicative design", "de": "Kommunikative Gestaltung" }, "points": { "A": 12, "B": 8, "C": 4, "D": 0 }, "descriptors": {
         "A": "Der Text ist klar gegliedert, die Argumentation entwickelt sich schlüssig, und die Gedanken sind mit vielfältigen, präzise gewählten Konnektoren und Verweismitteln verknüpft; Einleitung und Schluss runden den Text ab.",
         "B": "Der Aufbau ist schlüssig; die Verknüpfung durch Konnektoren wirkt aber stellenweise mechanisch oder wiederholt sich.",
         "C": "Die Gliederung ist schwer erkennbar, Übergänge fehlen oft, und Konnektoren werden kaum oder ungenau eingesetzt.",
         "D": "Es gibt keinen erkennbaren Aufbau; der Text ist eine lose Folge von Aussagen ohne Konnektoren." } },
-      { "id": "richtigkeit", "name": { "en": "Formal accuracy", "de": "Formale Richtigkeit" }, "points": { "A": 16, "B": 11, "C": 5, "D": 0 }, "descriptors": {
-        "A": "Wortschatz und Strukturen sind reichhaltig, präzise und stilistisch passend; Fehler sind sehr selten.",
-        "B": "Wortschatz und Strukturen sind breit gefächert; einzelne Fehler oder ungenaue Formulierungen stören das Verständnis nicht.",
-        "C": "Der Ausdruck ist für C1 oft zu einfach oder ungenau, und Fehler beeinträchtigen das Verständnis gelegentlich.",
-        "D": "Zahlreiche Fehler und ein sehr begrenzter Ausdruck machen den Text weitgehend unverständlich." } }
+      { "id": "ausdruck", "name": { "en": "Expression and vocabulary", "de": "Ausdruck und Wortschatz" }, "points": { "A": 12, "B": 8, "C": 4, "D": 0 }, "descriptors": {
+        "A": "Der Wortschatz ist reichhaltig und präzise, auch abstrakte Sachverhalte werden treffend benannt; Formulierungen sind abwechslungsreich, idiomatisch und passen durchgehend zum sachlichen Stil.",
+        "B": "Der Wortschatz ist breit genug für das Thema; manche Formulierungen wiederholen sich oder sind ungenau, und der Stil schwankt gelegentlich.",
+        "C": "Der Ausdruck ist für C1 oft zu einfach, allgemein oder umständlich; Wortwahl und Stil passen häufig nicht.",
+        "D": "Der Wortschatz ist so begrenzt oder unpassend, dass die Gedanken kaum ausgedrückt werden können." } },
+      { "id": "richtigkeit", "name": { "en": "Formal accuracy", "de": "Formale Richtigkeit" }, "points": { "A": 12, "B": 8, "C": 4, "D": 0 }, "descriptors": {
+        "A": "Auch komplexe Satzstrukturen werden sicher beherrscht; Fehler in Grammatik, Rechtschreibung und Zeichensetzung sind sehr selten.",
+        "B": "Die Strukturen sind vielfältig und überwiegend korrekt; einzelne Fehler stören das Verständnis nicht.",
+        "C": "Es gibt immer wieder Fehler, auch in einfacheren Strukturen, die das Verständnis gelegentlich beeinträchtigen.",
+        "D": "Zahlreiche Fehler machen den Text weitgehend unverständlich." } }
     ] },
       "instructions": "Wählen Sie eines der beiden Themen. Schreiben Sie einen Text (ca. 350 Wörter), in dem Sie Ihren eigenen Standpunkt erarbeiten und argumentativ darlegen: Führen Sie Argumente an, legen Sie Vor- und Nachteile dar und begründen Sie am Schluss Ihre eigene Position." },
     { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1A", "de": "Mündlicher Ausdruck Teil 1A" }, "taskType": "spoken", "items": 3, "points": 18, "minutes": 6, "instructions": "Präsentation: Wählen Sie eines von zwei Themen und präsentieren Sie es (ca. 3 Minuten). Denken Sie an eine Einleitung und einen Schluss bzw. ein Fazit." },
