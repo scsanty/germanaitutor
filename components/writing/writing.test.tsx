@@ -95,6 +95,30 @@ describe('LetterResult', () => {
     expect(onCopy).toHaveBeenCalled();
   });
 
+  // The zero rule: a lowest task grade makes the whole letter worth 0, and the result says why.
+  it('shows 0 points and the reason when the zero rule applies, and no reason otherwise', () => {
+    const zeroed = { ...LESSON_LETTER_RUBRIC, zeroesTextOn: { criterion: 'task', grade: 'D' as const } };
+    const offTopic: LetterGrade = {
+      ...GRADE,
+      criteria: [{ ...GRADE.criteria[0], grade: 'D' }, GRADE.criteria[1], GRADE.criteria[2]],
+      points: 0,
+      percent: 0,
+    };
+    const { unmount } = renderWithIntl(<LetterResult grade={offTopic} text={TEXT} rubric={zeroed} />);
+    expect(screen.getByText('0 of 15 points (0%)')).toBeInTheDocument();
+    expect(screen.getByText('Task completion got the lowest grade, so the whole letter scores 0 points.')).toBeInTheDocument();
+    unmount();
+    renderWithIntl(<LetterResult grade={offTopic} text={TEXT} rubric={LESSON_LETTER_RUBRIC} />);
+    expect(screen.queryByText(/whole letter scores 0/)).toBeNull();
+  });
+
+  it('shows the zero-rule reason in German', () => {
+    const zeroed = { ...LESSON_LETTER_RUBRIC, zeroesTextOn: { criterion: 'task', grade: 'D' as const } };
+    const offTopic: LetterGrade = { ...GRADE, criteria: [{ ...GRADE.criteria[0], grade: 'D' }, GRADE.criteria[1], GRADE.criteria[2]], points: 0, percent: 0 };
+    renderWithIntl(<LetterResult grade={offTopic} text={TEXT} rubric={zeroed} />, 'de');
+    expect(screen.getByText('Aufgabenbewältigung hat die niedrigste Bewertung, deshalb zählt der ganze Text 0 Punkte.')).toBeInTheDocument();
+  });
+
   it('has no copy button without onCopyToFreestyle, and no axe violations', async () => {
     const { container } = renderWithIntl(<LetterResult grade={GRADE} text={TEXT} rubric={LESSON_LETTER_RUBRIC} />);
     expect(screen.queryByRole('button', { name: 'Copy into free writing' })).toBeNull();

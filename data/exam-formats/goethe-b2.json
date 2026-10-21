@@ -44,7 +44,7 @@
         "C": "Es werden überwiegend einfache Strukturen verwendet, mit Fehlern, die stellenweise das Verständnis erschweren.",
         "D": "Viele Fehler auch in einfachen Strukturen behindern das Verständnis.",
         "E": "Die Strukturen sind so fehlerhaft, dass der Text kaum verständlich ist." } }
-    ] },
+    ], "zeroesTextOn": { "criterion": "erfuellung", "grade": "E" } },
       "instructions": "Schreiben Sie einen Forumsbeitrag (mindestens 150 Wörter). Äußern Sie Ihre Meinung zum Thema und behandeln Sie die vier Punkte in einer sinnvollen Reihenfolge." },
     { "id": "schreiben-2", "skill": "writing", "title": { "en": "Writing Part 2", "de": "Schreiben Teil 2" }, "taskType": "letter", "items": 4, "points": 40, "minutes": 25, "choices": 1, "wordTarget": { "min": 100, "max": 150 },
       "rubric": { "criteria": [
@@ -72,7 +72,7 @@
         "C": "Es werden überwiegend einfache Strukturen verwendet, mit Fehlern, die stellenweise das Verständnis erschweren.",
         "D": "Viele Fehler auch in einfachen Strukturen behindern das Verständnis.",
         "E": "Die Strukturen sind so fehlerhaft, dass der Text kaum verständlich ist." } }
-    ] },
+    ], "zeroesTextOn": { "criterion": "erfuellung", "grade": "E" } },
       "instructions": "Schreiben Sie eine Nachricht (mindestens 100 Wörter). Behandeln Sie alle vier Punkte und denken Sie an Anrede und Gruß." },
     { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Sprechen Teil 1" }, "taskType": "spoken", "items": 4, "points": 50, "minutes": 10, "instructions": "Vortrag halten: Wählen Sie ein Thema und halten Sie einen kurzen Vortrag (ca. 4 Minuten) mit Einleitung, Hauptteil und Schluss. Beantworten Sie danach die Fragen Ihres Partners / Ihrer Partnerin." },
     { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Sprechen Teil 2" }, "taskType": "spoken", "items": 4, "points": 50, "minutes": 5, "instructions": "Diskussion führen: Diskutieren Sie mit Ihrem Partner / Ihrer Partnerin über die Frage auf dem Aufgabenblatt. Begründen Sie Ihre Meinung und gehen Sie auf die Argumente ein." }

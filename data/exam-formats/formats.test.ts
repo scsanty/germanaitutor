@@ -87,6 +87,25 @@ describe('bundled exam formats', () => {
     }
   });
 
+  // User decision 2026-10-21: the lowest task grade zeroes the letter in telc B1-C1 and Goethe B1-C1 only.
+  it('puts the zero rule on telc B1-C1 (aufgabe D) and Goethe B1-C1 (erfuellung E) letter parts only', () => {
+    const rules = listFormats().flatMap((f) =>
+      f.parts.filter((p) => p.taskType === 'letter' && p.rubric!.zeroesTextOn).map((p) => `${f.id}/${p.id}: ${p.rubric!.zeroesTextOn!.criterion} ${p.rubric!.zeroesTextOn!.grade}`)
+    );
+    expect(rules).toEqual([
+      'goethe-b1/schreiben-1: erfuellung E',
+      'goethe-b1/schreiben-2: erfuellung E',
+      'goethe-b1/schreiben-3: erfuellung E',
+      'goethe-b2/schreiben-1: erfuellung E',
+      'goethe-b2/schreiben-2: erfuellung E',
+      'goethe-c1/schreiben-1: erfuellung E',
+      'goethe-c1/schreiben-2: erfuellung E',
+      'telc-b1/schreiben: aufgabe D',
+      'telc-b2/schreiben: aufgabe D',
+      'telc-c1/schreiben: aufgabe D',
+    ]);
+  });
+
   it('keeps the three form-filling parts as typed cloze parts with no rubric', () => {
     for (const [fid, pid] of [['goethe-a1', 'schreiben-1'], ['telc-a1', 'schreiben-1'], ['telc-a2', 'schreiben-1']]) {
       const p = listFormats().find((f) => f.id === fid)!.parts.find((x) => x.id === pid)!;

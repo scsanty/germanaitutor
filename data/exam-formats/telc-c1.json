@@ -38,7 +38,7 @@
         "B": "Die Strukturen sind vielfältig und überwiegend korrekt; einzelne Fehler stören das Verständnis nicht.",
         "C": "Es gibt immer wieder Fehler, auch in einfacheren Strukturen, die das Verständnis gelegentlich beeinträchtigen.",
         "D": "Zahlreiche Fehler machen den Text weitgehend unverständlich." } }
-    ] },
+    ], "zeroesTextOn": { "criterion": "aufgabe", "grade": "D" } },
       "instructions": "Wählen Sie eines der beiden Themen. Schreiben Sie einen Text (ca. 350 Wörter), in dem Sie Ihren eigenen Standpunkt erarbeiten und argumentativ darlegen: Führen Sie Argumente an, legen Sie Vor- und Nachteile dar und begründen Sie am Schluss Ihre eigene Position." },
     { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1A", "de": "Mündlicher Ausdruck Teil 1A" }, "taskType": "spoken", "items": 3, "points": 18, "minutes": 6, "instructions": "Präsentation: Wählen Sie eines von zwei Themen und präsentieren Sie es (ca. 3 Minuten). Denken Sie an eine Einleitung und einen Schluss bzw. ein Fazit." },
     { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 1B", "de": "Mündlicher Ausdruck Teil 1B" }, "taskType": "spoken", "items": 2, "points": 12, "minutes": 4, "instructions": "Zusammenfassung und Anschlussfragen: Fassen Sie zusammen, was Ihr Partner / Ihre Partnerin vorgetragen hat (ca. 2 Minuten), und stellen Sie mindestens eine Anschlussfrage." },

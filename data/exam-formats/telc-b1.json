@@ -34,7 +34,7 @@
         "B": "Es gibt einige Fehler, die das Verständnis aber kaum stören.",
         "C": "Viele Fehler erschweren stellenweise das Verständnis.",
         "D": "Es gibt so viele Fehler, dass der Text größtenteils unverständlich ist." } }
-    ] },
+    ], "zeroesTextOn": { "criterion": "aufgabe", "grade": "D" } },
       "instructions": "Wählen Sie Aufgabe A oder Aufgabe B. Schreiben Sie einen Brief. Behandeln Sie darin die vier Leitpunkte." },
     { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Mündlicher Ausdruck Teil 1" }, "taskType": "spoken", "items": 3, "points": 15, "minutes": 3, "instructions": "Kontaktaufnahme: Unterhalten Sie sich mit Ihrem Partner / Ihrer Partnerin." },
     { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Mündlicher Ausdruck Teil 2" }, "taskType": "spoken", "items": 3, "points": 30, "minutes": 6, "instructions": "Gespräch über ein Thema: Berichten Sie über Ihren Text und sprechen Sie mit Ihrem Partner / Ihrer Partnerin darüber." },

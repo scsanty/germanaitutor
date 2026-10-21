@@ -43,7 +43,7 @@
         "C": "Die Strukturen sind für C1 wenig abwechslungsreich, und Fehler beeinträchtigen das Verständnis gelegentlich.",
         "D": "Viele Fehler auch in einfachen Strukturen behindern das Verständnis.",
         "E": "Die Strukturen sind so fehlerhaft, dass der Text kaum verständlich ist." } }
-    ] },
+    ], "zeroesTextOn": { "criterion": "erfuellung", "grade": "E" } },
       "instructions": "Schreiben Sie einen Diskussionsbeitrag für ein Internetforum (ca. 230 Wörter). Behandeln Sie alle vier Inhaltspunkte." },
     { "id": "schreiben-2", "skill": "writing", "title": { "en": "Writing Part 2", "de": "Schreiben Teil 2" }, "taskType": "letter", "items": 4, "points": 40, "minutes": 25, "choices": 1, "wordTarget": { "min": 96, "max": 144 },
       "rubric": { "criteria": [
@@ -71,7 +71,7 @@
         "C": "Die Strukturen sind für C1 wenig abwechslungsreich, und Fehler beeinträchtigen das Verständnis gelegentlich.",
         "D": "Viele Fehler auch in einfachen Strukturen behindern das Verständnis.",
         "E": "Die Strukturen sind so fehlerhaft, dass der Text kaum verständlich ist." } }
-    ] },
+    ], "zeroesTextOn": { "criterion": "erfuellung", "grade": "E" } },
       "instructions": "Schreiben Sie eine (halb-)formelle E-Mail (ca. 120 Wörter). Behandeln Sie alle vier Inhaltspunkte und achten Sie auf einen angemessenen, höflichen Stil." },
     { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Sprechen Teil 1" }, "taskType": "spoken", "items": 4, "points": 50, "minutes": 15, "instructions": "Vortrag halten: Wählen Sie eines von zwei Themen und halten Sie einen Vortrag (ca. 5 Minuten). Gehen Sie auf alle vier Punkte ein. Beantworten Sie danach die Fragen Ihres Partners / Ihrer Partnerin (ca. 2 Minuten)." },
     { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Sprechen Teil 2" }, "taskType": "spoken", "items": 4, "points": 50, "minutes": 5, "instructions": "Diskussion führen: Diskutieren Sie mit Ihrem Partner / Ihrer Partnerin über die kontroverse Frage. Gehen Sie auf die vier Stichpunkte ein, tauschen Sie Argumente aus und kommen Sie zu einer Einigung oder Zusammenfassung." }

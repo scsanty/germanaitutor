@@ -76,6 +76,10 @@ export function buildLetterGradingPrompt(input: LetterPromptInput): { systemProm
     lines.push(`- ${c.id} (${c.name.en}):`);
     for (const g of GRADES) if (c.points[g] !== undefined) lines.push(`  ${g} (${c.points[g]} points): ${c.descriptors[g]}`);
   }
+  if (rubric.zeroesTextOn) {
+    const { criterion, grade } = rubric.zeroesTextOn;
+    lines.push(`If ${criterion} gets grade ${grade}, the whole text is worth 0 points; still grade every criterion.`);
+  }
   lines.push('', 'The task:', ...taskLines(task));
   if (!germanOnlyTask && instruction) lines.push(`Instructions the learner saw: ${instruction.en}`);
   if (anchors.length > 0) {

@@ -44,7 +44,7 @@
         "C": "Es werden vor allem einfache Strukturen verwendet, mit häufigen Fehlern, die stellenweise das Verständnis erschweren.",
         "D": "Viele Fehler auch in einfachen Strukturen behindern das Verständnis.",
         "E": "Die Strukturen sind so fehlerhaft, dass der Text kaum verständlich ist." } }
-    ] },
+    ], "zeroesTextOn": { "criterion": "erfuellung", "grade": "E" } },
       "instructions": "Schreiben Sie eine E-Mail an einen Freund / eine Freundin (ca. 80 Wörter). Behandeln Sie alle drei Punkte. Denken Sie an eine passende Einleitung und einen passenden Schluss." },
     { "id": "schreiben-2", "skill": "writing", "title": { "en": "Writing Part 2", "de": "Schreiben Teil 2" }, "taskType": "letter", "items": 4, "points": 40, "minutes": 25, "choices": 1, "wordTarget": { "min": 64, "max": 96 },
       "rubric": { "criteria": [
@@ -72,7 +72,7 @@
         "C": "Es werden vor allem einfache Strukturen verwendet, mit häufigen Fehlern, die stellenweise das Verständnis erschweren.",
         "D": "Viele Fehler auch in einfachen Strukturen behindern das Verständnis.",
         "E": "Die Strukturen sind so fehlerhaft, dass der Text kaum verständlich ist." } }
-    ] },
+    ], "zeroesTextOn": { "criterion": "erfuellung", "grade": "E" } },
       "instructions": "Sie haben im Internet einen Diskussionsbeitrag gelesen. Schreiben Sie Ihre Meinung dazu (ca. 80 Wörter)." },
     { "id": "schreiben-3", "skill": "writing", "title": { "en": "Writing Part 3", "de": "Schreiben Teil 3" }, "taskType": "letter", "items": 4, "points": 20, "minutes": 15, "choices": 1, "wordTarget": { "min": 32, "max": 48 },
       "rubric": { "criteria": [
@@ -100,7 +100,7 @@
         "C": "Es werden vor allem einfache Strukturen verwendet, mit häufigen Fehlern, die stellenweise das Verständnis erschweren.",
         "D": "Viele Fehler auch in einfachen Strukturen behindern das Verständnis.",
         "E": "Die Strukturen sind so fehlerhaft, dass der Text kaum verständlich ist." } }
-    ] },
+    ], "zeroesTextOn": { "criterion": "erfuellung", "grade": "E" } },
       "instructions": "Schreiben Sie eine höfliche E-Mail (ca. 40 Wörter). Entschuldigen Sie sich, erklären Sie den Grund und denken Sie an Anrede und Gruß." },
     { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Sprechen Teil 1" }, "taskType": "spoken", "items": 4, "points": 28, "minutes": 3, "instructions": "Gemeinsam etwas planen: Planen Sie zusammen mit Ihrem Partner / Ihrer Partnerin etwas. Machen Sie Vorschläge, reagieren Sie auf die Vorschläge und einigen Sie sich." },
     { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Sprechen Teil 2" }, "taskType": "spoken", "items": 4, "points": 40, "minutes": 8, "instructions": "Ein Thema präsentieren: Präsentieren Sie Ihr Thema in fünf Schritten (Thema vorstellen, persönliche Erfahrungen, Situation im Heimatland, Vor- und Nachteile mit Ihrer Meinung, Abschluss und Dank)." },

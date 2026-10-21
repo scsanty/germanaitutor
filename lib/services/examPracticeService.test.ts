@@ -361,6 +361,25 @@ describe('examPracticeService letters', () => {
     expect(generate).not.toHaveBeenCalled();
   });
 
+  // telc B1: the lowest Aufgabenbewältigung grade makes the whole letter worth 0, whatever the other grades.
+  it('scores a letter 0 when aufgabe gets D (zero rule), keeping every criterion grade', async () => {
+    const offTopic = JSON.parse(REPLY);
+    offTopic.criteria = [
+      { id: 'aufgabe', grade: 'D', justification_en: 'Off topic.', justification_de: 'Thema verfehlt.' },
+      { id: 'gestaltung', grade: 'A', justification_en: 'Fine.', justification_de: 'Gut.' },
+      { id: 'richtigkeit', grade: 'A', justification_en: 'Fine.', justification_de: 'Gut.' },
+    ];
+    const generate = vi.fn(async (_request: AiRequest): Promise<AiResult> => ({ ok: true, text: JSON.stringify(offTopic) }));
+    const { db, service } = setup(generate);
+    const run = await service.start('telc-b1', 'schreiben');
+    const result = await service.submit(run.attemptId, letter());
+    expect(result).toMatchObject({ score: 0, maxScore: 45 });
+    expect(result.letter).toMatchObject({ points: 0, maxPoints: 45, percent: 0 });
+    expect(result.letter!.criteria.map((c) => c.grade)).toEqual(['D', 'A', 'A']);
+    expect(row(db, run.attemptId)).toMatchObject({ score: 0, max_score: 45 });
+    expect(generate.mock.calls[0][0].systemPrompt).toContain('If aufgabe gets grade D, the whole text is worth 0 points');
+  });
+
   it('refuses to explain a letter (S17)', async () => {
     const { service } = setup(graded);
     const run = await service.start('telc-b1', 'schreiben');

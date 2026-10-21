@@ -138,3 +138,25 @@ describe('letter grading', () => {
     expect(grade.points).toBe(11);
   });
 });
+
+describe('letter grading: zero rule', () => {
+  const ZEROED = { ...LESSON_LETTER_RUBRIC, zeroesTextOn: { criterion: 'task', grade: 'D' as const } };
+
+  it('tells the model the lowest task grade makes the text worth 0, and still asks for every grade', () => {
+    const { systemPrompt } = buildLetterGradingPrompt({ ...promptInput(true), rubric: ZEROED });
+    expect(systemPrompt).toContain('If task gets grade D, the whole text is worth 0 points; still grade every criterion.');
+    expect(buildLetterGradingPrompt(promptInput(true)).systemPrompt).not.toContain('worth 0 points');
+  });
+
+  it('scores a reply with that grade 0 of the maximum, keeping every criterion grade', () => {
+    const criteria = [
+      { id: 'task', grade: 'D', justification_en: 'Off topic', justification_de: 'Thema verfehlt' },
+      { id: 'communication', grade: 'A', justification_en: 'ok', justification_de: 'ok' },
+      { id: 'accuracy', grade: 'B', justification_en: 'ok', justification_de: 'ok' },
+    ];
+    const grade = parseLetterGrade(reply({ criteria }), text, ZEROED)!;
+    expect(grade).toMatchObject({ points: 0, maxPoints: 15, percent: 0 });
+    expect(grade.criteria.map((c) => c.grade)).toEqual(['D', 'A', 'B']);
+    expect(parseLetterGrade(reply({ criteria }), text, LESSON_LETTER_RUBRIC)).toMatchObject({ points: 8 });
+  });
+});

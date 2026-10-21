@@ -48,6 +48,16 @@ describe('selectAnchors', () => {
   it('returns nothing for no anchors', () => {
     expect(selectAnchors([], RUBRIC)).toEqual([]);
   });
+
+  // The zero rule scores a lowest task grade 0, so such a letter is never the pass-band reference,
+  // and a zeroed bottom anchor is still the bottom.
+  it('applies the zero rule when picking the middle anchor, and still finds the top and bottom', () => {
+    const zeroed: WritingRubric = { ...RUBRIC, zeroesTextOn: { criterion: 'aufgabe', grade: 'D' } };
+    const offTopic = anchor('X', 'D', 'A', 'A');
+    expect(selectAnchors([offTopic, C, D, A], RUBRIC)).toEqual([A, D, offTopic]);
+    expect(selectAnchors([offTopic, C, D, A], zeroed)).toEqual([A, D, C]);
+    expect(anchorProblems({ formatId: 'telc-b1', partId: 'schreiben', anchors: [A, B, C, D] }, zeroed)).toEqual([]);
+  });
 });
 
 describe('anchorProblems', () => {

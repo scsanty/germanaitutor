@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { LESSON_LETTER_RUBRIC, pointsFor, rubricMaxPoints, rubricProblems } from './rubric';
+import { LESSON_LETTER_RUBRIC, isZeroed, pointsFor, rubricMaxPoints, rubricProblems, type WritingRubric } from './rubric';
 
 describe('rubrics', () => {
   it('scores the lesson rubric out of 15', () => {
@@ -46,5 +46,30 @@ describe('rubrics', () => {
 
   it('counts a missing grade as 0 points', () => {
     expect(pointsFor(LESSON_LETTER_RUBRIC, { task: 'A' })).toBe(5);
+  });
+
+  // telc B1-C1 and Goethe B1-C1: the lowest grade on task completion makes the whole text worth 0 points.
+  describe('zero rule', () => {
+    const ZEROED: WritingRubric = { ...LESSON_LETTER_RUBRIC, zeroesTextOn: { criterion: 'task', grade: 'D' } };
+
+    it('scores the whole text 0 when the criterion has the grade, and normally otherwise', () => {
+      expect(pointsFor(ZEROED, { task: 'D', communication: 'A', accuracy: 'A' })).toBe(0);
+      expect(isZeroed(ZEROED, { task: 'D', communication: 'A', accuracy: 'A' })).toBe(true);
+      expect(pointsFor(ZEROED, { task: 'C', communication: 'A', accuracy: 'A' })).toBe(11);
+      expect(isZeroed(ZEROED, { task: 'C', communication: 'A', accuracy: 'A' })).toBe(false);
+      // Without the rule, the same grades keep their points.
+      expect(pointsFor(LESSON_LETTER_RUBRIC, { task: 'D', communication: 'A', accuracy: 'A' })).toBe(10);
+      expect(isZeroed(LESSON_LETTER_RUBRIC, { task: 'D', communication: 'A', accuracy: 'A' })).toBe(false);
+      expect(rubricProblems(ZEROED)).toEqual([]);
+    });
+
+    it('names a zero rule on a criterion or grade the rubric does not have', () => {
+      expect(rubricProblems({ ...LESSON_LETTER_RUBRIC, zeroesTextOn: { criterion: 'nope', grade: 'D' } })).toEqual([
+        'zero rule: unknown criterion nope',
+      ]);
+      expect(rubricProblems({ ...LESSON_LETTER_RUBRIC, zeroesTextOn: { criterion: 'task', grade: 'E' } })).toEqual([
+        'zero rule: criterion task has no grade E',
+      ]);
+    });
   });
 });

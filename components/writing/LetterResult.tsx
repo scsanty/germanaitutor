@@ -8,7 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { differsByLanguage, pickText, type ContentLanguage, type LocalizedText } from '@/lib/i18n/localizedText';
 import type { LetterGrade } from '@/lib/writing/letterGrading';
-import type { WritingRubric } from '@/lib/writing/rubric';
+import { isZeroed, type WritingRubric } from '@/lib/writing/rubric';
 import { cn } from '@/lib/utils';
 import { MarkedText } from './MarkedText';
 
@@ -37,6 +37,9 @@ export function LetterResult({
   const [language, setLanguage] = useState<ContentLanguage>(locale);
   const [showCorrected, setShowCorrected] = useState(false);
   const id = useId();
+  const zeroedBy = isZeroed(rubric, Object.fromEntries(grade.criteria.map((c) => [c.id, c.grade])))
+    ? rubric.criteria.find((c) => c.id === rubric.zeroesTextOn!.criterion)
+    : undefined;
   const toggle =
     differsByLanguage(grade.summary) || grade.criteria.some((c) => differsByLanguage(c.justification)) || (tips ?? []).some(differsByLanguage);
 
@@ -46,6 +49,7 @@ export function LetterResult({
         <p className="text-lg font-semibold">{t('points', { points: grade.points, max: grade.maxPoints, percent: grade.percent })}</p>
         {toggle && <LanguageToggle value={language} onChange={setLanguage} label={t('feedbackLanguage')} />}
       </div>
+      {zeroedBy && <p className="-mt-3 text-sm text-text-muted">{t('zeroedByTask', { criterion: pickText(zeroedBy.name, locale) })}</p>}
 
       <section aria-labelledby={`${id}-letter`} className="flex flex-col gap-3">
         <div className="flex flex-wrap items-center justify-between gap-2">

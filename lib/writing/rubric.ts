@@ -12,6 +12,8 @@ export interface RubricCriterion {
 
 export interface WritingRubric {
   criteria: RubricCriterion[];
+  // telc B1-C1 and Goethe B1-C1: this grade on this criterion makes the whole text worth 0 points.
+  zeroesTextOn?: { criterion: string; grade: Grade };
 }
 
 const maxOf = (c: RubricCriterion) => Math.max(0, ...Object.values(c.points).map((p) => p ?? 0));
@@ -20,7 +22,14 @@ export function rubricMaxPoints(r: WritingRubric): number {
   return r.criteria.reduce((sum, c) => sum + maxOf(c), 0);
 }
 
+// True when the rubric's zero rule applies to these grades.
+export function isZeroed(r: WritingRubric, grades: Record<string, Grade>): boolean {
+  return r.zeroesTextOn !== undefined && grades[r.zeroesTextOn.criterion] === r.zeroesTextOn.grade;
+}
+
+// The one scoring function: letter grading, Teil scoring, lesson scoring and anchor selection all use it.
 export function pointsFor(r: WritingRubric, grades: Record<string, Grade>): number {
+  if (isZeroed(r, grades)) return 0;
   return r.criteria.reduce((sum, c) => {
     const g = grades[c.id];
     return sum + (g ? (c.points[g] ?? 0) : 0);
@@ -47,6 +56,12 @@ export function rubricProblems(r: WritingRubric): string[] {
     }
     if (seen.has(c.id)) problems.push(`criterion ${c.id}: duplicate id`);
     seen.add(c.id);
+  }
+  const zero = r.zeroesTextOn;
+  if (zero) {
+    const c = r.criteria.find((x) => x.id === zero.criterion);
+    if (!c) problems.push(`zero rule: unknown criterion ${zero.criterion}`);
+    else if (c.points[zero.grade] === undefined) problems.push(`zero rule: criterion ${c.id} has no grade ${zero.grade}`);
   }
   return problems;
 }
