@@ -1,0 +1,130 @@
+{
+  "formatId": "goethe-a2",
+  "partId": "schreiben-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-a2__schreiben-2__s01",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Ihr Vermieter, Herr Albers, schreibt: Am Dienstag um 10 Uhr kommt ein Techniker und repariert Ihre Waschmaschine. Sie sind am Dienstag nicht zu Hause. Schreiben Sie Herrn Albers eine E-Mail.",
+              "leitpunkte": [
+                "Warum sind Sie am Dienstag nicht zu Hause?",
+                "Schlagen Sie einen anderen Termin vor.",
+                "Fragen Sie: Kann der Techniker den Schlüssel bei Ihrer Nachbarin holen?"
+              ],
+              "register": "formal",
+              "wordTarget": {
+                "min": 30,
+                "max": 40
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Give a clear reason, e.g. \"Am Dienstag bin ich leider auf einer Dienstreise.\"",
+            "de": "Nennen Sie einen klaren Grund, z. B. „Am Dienstag bin ich leider auf einer Dienstreise.“"
+          },
+          {
+            "en": "Suggest a concrete day and time, e.g. \"Geht es auch am Donnerstag ab 16 Uhr?\"",
+            "de": "Schlagen Sie einen konkreten Tag und eine Uhrzeit vor, z. B. „Geht es auch am Donnerstag ab 16 Uhr?“"
+          },
+          {
+            "en": "Ask the question politely, e.g. \"Kann der Techniker sonst den Schlüssel bei Frau Hahn im ersten Stock holen?\"",
+            "de": "Stellen Sie die Frage höflich, z. B. „Kann der Techniker sonst den Schlüssel bei Frau Hahn im ersten Stock holen?“"
+          },
+          {
+            "en": "Herr Albers is your landlord: start with \"Sehr geehrter Herr Albers,\", use \"Sie\" and end with \"Mit freundlichen Grüßen\". Join sentences with \"aber\", \"denn\" or \"dann\".",
+            "de": "Herr Albers ist Ihr Vermieter: Beginnen Sie mit „Sehr geehrter Herr Albers,“, schreiben Sie „Sie“ und enden Sie mit „Mit freundlichen Grüßen“. Verbinden Sie die Sätze mit „aber“, „denn“ oder „dann“."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2__schreiben-2__s02",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Ihre Freundin Nina bekommt eine neue Arbeit in Ihrer Stadt. Sie sucht dort jetzt eine Wohnung und fragt Sie um Hilfe. Schreiben Sie Nina eine E-Mail.",
+              "leitpunkte": [
+                "In welchem Stadtteil kann Nina gut wohnen? Warum?",
+                "Wie teuer sind die Wohnungen dort?",
+                "Wie können Sie Nina helfen?"
+              ],
+              "register": "informal",
+              "wordTarget": {
+                "min": 30,
+                "max": 40
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Name a part of town and a reason, e.g. \"Wohn doch in der Altstadt, denn dort ist alles nah.\"",
+            "de": "Nennen Sie einen Stadtteil und einen Grund, z. B. „Wohn doch in der Altstadt, denn dort ist alles nah.“"
+          },
+          {
+            "en": "Give a price, e.g. \"Eine Zweizimmerwohnung kostet dort etwa 700 Euro.\"",
+            "de": "Nennen Sie einen Preis, z. B. „Eine Zweizimmerwohnung kostet dort etwa 700 Euro.“"
+          },
+          {
+            "en": "Offer concrete help, e.g. \"Ich kann mit dir Wohnungen ansehen.\"",
+            "de": "Bieten Sie konkrete Hilfe an, z. B. „Ich kann mit dir Wohnungen ansehen.“"
+          },
+          {
+            "en": "Nina is a friend: start with \"Liebe Nina,\" and end with \"Liebe Grüße\". Join sentences with \"und\", \"aber\", \"denn\" or \"dann\".",
+            "de": "Nina ist eine Freundin: Beginnen Sie mit „Liebe Nina,“ und enden Sie mit „Liebe Grüße“. Verbinden Sie die Sätze mit „und“, „aber“, „denn“ oder „dann“."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2__schreiben-2__s03",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Ihr Trainer im Tennisverein, Herr Kramer, organisiert am Sonntag ein Turnier für alle Mitglieder. Sie möchten gern mitspielen. Schreiben Sie Herrn Kramer eine E-Mail.",
+              "leitpunkte": [
+                "Sagen Sie: Sie möchten mitspielen.",
+                "Fragen Sie: Wann beginnt das Turnier?",
+                "Fragen Sie: Darf ein Freund zuschauen?"
+              ],
+              "register": "semi_formal",
+              "wordTarget": {
+                "min": 30,
+                "max": 40
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Say clearly that you want to take part, e.g. \"Ich möchte am Sonntag gern beim Turnier mitspielen.\"",
+            "de": "Sagen Sie klar, dass Sie mitspielen möchten, z. B. „Ich möchte am Sonntag gern beim Turnier mitspielen.“"
+          },
+          {
+            "en": "Ask a real question about the time, e.g. \"Um wie viel Uhr beginnt das Turnier?\"",
+            "de": "Stellen Sie eine echte Frage zur Uhrzeit, z. B. „Um wie viel Uhr beginnt das Turnier?“"
+          },
+          {
+            "en": "Ask about your friend, e.g. \"Darf mein Freund Ali auch kommen und zuschauen?\"",
+            "de": "Fragen Sie nach Ihrem Freund, z. B. „Darf mein Freund Ali auch kommen und zuschauen?“"
+          },
+          {
+            "en": "You know Herr Kramer from the club: start with \"Lieber Herr Kramer,\", use \"Sie\" and end with \"Viele Grüße\". Join sentences with \"und\", \"aber\" or \"dann\".",
+            "de": "Sie kennen Herrn Kramer aus dem Verein: Beginnen Sie mit „Lieber Herr Kramer,“, schreiben Sie „Sie“ und enden Sie mit „Viele Grüße“. Verbinden Sie die Sätze mit „und“, „aber“ oder „dann“."
+          }
+        ]
+      }
+    }
+  ]
+}
