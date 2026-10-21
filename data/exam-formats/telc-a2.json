@@ -15,8 +15,27 @@
     { "id": "lesen-1", "skill": "reading", "title": { "en": "Reading Part 1", "de": "Lesen Teil 1" }, "taskType": "passage_questions", "items": 5, "points": 5, "minutes": 10, "instructions": "Lesen Sie die Aufgaben 1 bis 5 und die Information (Wegweiser). Kreuzen Sie an: a, b oder c." },
     { "id": "lesen-2", "skill": "reading", "title": { "en": "Reading Part 2", "de": "Lesen Teil 2" }, "taskType": "passage_questions", "items": 5, "points": 5, "minutes": 10, "instructions": "Lesen Sie den Text und die Aufgaben 1 bis 5. Sind die Aussagen richtig (+) oder falsch (–)? Kreuzen Sie an." },
     { "id": "lesen-3", "skill": "reading", "title": { "en": "Reading Part 3", "de": "Lesen Teil 3" }, "taskType": "matching", "items": 5, "points": 5, "minutes": 10, "instructions": "Lesen Sie die Anzeigen a bis h und die Aufgaben 1 bis 5. Welche Anzeige passt zu welcher Situation? Für eine Aufgabe gibt es keine Lösung. Schreiben Sie hier den Buchstaben x." },
-    { "id": "schreiben-1", "skill": "writing", "title": { "en": "Writing Part 1", "de": "Schreiben Teil 1" }, "taskType": "letter", "items": 5, "points": 5, "minutes": 5, "instructions": "Lesen Sie den Text und füllen Sie das Formular aus. Schreiben Sie die fünf fehlenden Informationen in das Formular." },
-    { "id": "schreiben-2", "skill": "writing", "title": { "en": "Writing Part 2", "de": "Schreiben Teil 2" }, "taskType": "letter", "items": 4, "points": 10, "minutes": 15, "instructions": "Schreiben Sie einen kurzen Brief (ca. 40 Wörter). Hier finden Sie vier Punkte. Wählen Sie drei aus und schreiben Sie zu jedem dieser drei Punkte ein bis zwei Sätze. Vergessen Sie nicht den passenden Anfang und den Gruß am Schluss." },
+    { "id": "schreiben-1", "skill": "writing", "title": { "en": "Writing Part 1", "de": "Schreiben Teil 1" }, "taskType": "cloze", "items": 5, "points": 5, "minutes": 5, "instructions": "Lesen Sie den Text und füllen Sie das Formular aus. Schreiben Sie die fünf fehlenden Informationen in das Formular." },
+    { "id": "schreiben-2", "skill": "writing", "title": { "en": "Writing Part 2", "de": "Schreiben Teil 2" }, "taskType": "letter", "items": 4, "points": 10, "minutes": 15, "choices": 1, "wordTarget": { "min": 32, "max": 48 },
+      "rubric": { "criteria": [
+      { "id": "punkt-1", "name": { "en": "Task completion: content point 1", "de": "Aufgabenerfüllung: Inhaltspunkt 1" }, "points": { "A": 3, "B": 1.5, "C": 0 }, "descriptors": {
+        "A": "Der erste der drei gewählten Punkte wird inhaltlich passend und verständlich behandelt.",
+        "B": "Der erste der drei gewählten Punkte wird nur teilweise behandelt, oder Fehler machen ihn schwer verständlich.",
+        "C": "Der erste der drei gewählten Punkte fehlt oder ist nicht zu verstehen." } },
+      { "id": "punkt-2", "name": { "en": "Task completion: content point 2", "de": "Aufgabenerfüllung: Inhaltspunkt 2" }, "points": { "A": 3, "B": 1.5, "C": 0 }, "descriptors": {
+        "A": "Der zweite der drei gewählten Punkte wird inhaltlich passend und verständlich behandelt.",
+        "B": "Der zweite der drei gewählten Punkte wird nur teilweise behandelt, oder Fehler machen ihn schwer verständlich.",
+        "C": "Der zweite der drei gewählten Punkte fehlt oder ist nicht zu verstehen." } },
+      { "id": "punkt-3", "name": { "en": "Task completion: content point 3", "de": "Aufgabenerfüllung: Inhaltspunkt 3" }, "points": { "A": 3, "B": 1.5, "C": 0 }, "descriptors": {
+        "A": "Der dritte der drei gewählten Punkte wird inhaltlich passend und verständlich behandelt.",
+        "B": "Der dritte der drei gewählten Punkte wird nur teilweise behandelt, oder Fehler machen ihn schwer verständlich.",
+        "C": "Der dritte der drei gewählten Punkte fehlt oder ist nicht zu verstehen." } },
+      { "id": "gestaltung", "name": { "en": "Communicative design", "de": "Kommunikative Gestaltung" }, "points": { "A": 1, "B": 0.5, "C": 0 }, "descriptors": {
+        "A": "Anfang und Gruß passen zur Situation, und die Sätze sind mit einfachen Konnektoren (z. B. und, aber, denn, dann) verbunden.",
+        "B": "Anfang oder Gruß fehlt oder passt nicht, oder die Sätze stehen ohne Konnektoren nebeneinander.",
+        "C": "Anfang und Gruß fehlen, und der Text ist nicht als Mitteilung erkennbar." } }
+    ] },
+      "instructions": "Schreiben Sie einen kurzen Brief (ca. 40 Wörter). Hier finden Sie vier Punkte. Wählen Sie drei aus und schreiben Sie zu jedem dieser drei Punkte ein bis zwei Sätze. Vergessen Sie nicht den passenden Anfang und den Gruß am Schluss." },
     { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Sprechen Teil 1" }, "taskType": "spoken", "items": 2, "points": 3, "minutes": 3, "instructions": "Sich vorstellen: Stellen Sie sich Ihrem Partner / Ihrer Partnerin vor. Die Stichworte auf dem Aufgabenblatt helfen Ihnen. Beantworten Sie danach zwei Zusatzfragen." },
     { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Sprechen Teil 2" }, "taskType": "spoken", "items": 6, "points": 6, "minutes": 4, "instructions": "Ein Alltagsgespräch führen: Ziehen Sie drei Karten. Stellen Sie Ihrem Partner / Ihrer Partnerin zu jeder Karte eine Frage zum Thema und beantworten Sie seine / ihre Fragen." },
     { "id": "sprechen-3", "skill": "speaking", "title": { "en": "Speaking Part 3", "de": "Sprechen Teil 3" }, "taskType": "spoken", "items": 2, "points": 6, "minutes": 4, "instructions": "Etwas aushandeln: Planen Sie zusammen mit Ihrem Partner / Ihrer Partnerin eine gemeinsame Aktivität. Machen Sie Vorschläge, reagieren Sie auf die Vorschläge und einigen Sie sich." }

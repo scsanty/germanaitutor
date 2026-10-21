@@ -17,8 +17,46 @@
     { "id": "hoeren-2", "skill": "listening", "title": { "en": "Listening Part 2", "de": "Hören Teil 2" }, "taskType": "audio_questions", "items": 5, "points": 5, "minutes": 7, "instructions": "Sie hören ein Gespräch. Sie hören den Text einmal. Wählen Sie für die Aufgaben 1 bis 5 ein passendes Bild aus a bis i. Wählen Sie jeden Buchstaben nur einmal.", "replays": 1 },
     { "id": "hoeren-3", "skill": "listening", "title": { "en": "Listening Part 3", "de": "Hören Teil 3" }, "taskType": "audio_questions", "items": 5, "points": 5, "minutes": 7, "instructions": "Sie hören fünf kurze Gespräche. Sie hören jeden Text einmal. Welche Lösung (a, b oder c) ist richtig?", "replays": 1 },
     { "id": "hoeren-4", "skill": "listening", "title": { "en": "Listening Part 4", "de": "Hören Teil 4" }, "taskType": "audio_questions", "items": 5, "points": 5, "minutes": 8, "instructions": "Sie hören ein Interview. Sie hören den Text zweimal. Entscheiden Sie: Ja oder Nein?", "replays": 2 },
-    { "id": "schreiben-1", "skill": "writing", "title": { "en": "Writing Part 1", "de": "Schreiben Teil 1" }, "taskType": "letter", "items": 3, "points": 10, "minutes": 12, "instructions": "Schreiben Sie eine SMS (20–30 Wörter). Schreiben Sie zu allen drei Punkten." },
-    { "id": "schreiben-2", "skill": "writing", "title": { "en": "Writing Part 2", "de": "Schreiben Teil 2" }, "taskType": "letter", "items": 3, "points": 10, "minutes": 18, "instructions": "Schreiben Sie eine E-Mail (30–40 Wörter). Schreiben Sie zu allen drei Punkten. Vergessen Sie nicht die Anrede und den Gruß." },
+    { "id": "schreiben-1", "skill": "writing", "title": { "en": "Writing Part 1", "de": "Schreiben Teil 1" }, "taskType": "letter", "items": 4, "points": 10, "minutes": 12, "choices": 1, "wordTarget": { "min": 20, "max": 30 },
+      "rubric": { "criteria": [
+      { "id": "punkt-1", "name": { "en": "Task completion: content point 1", "de": "Aufgabenerfüllung: Inhaltspunkt 1" }, "points": { "A": 3, "B": 1.5, "C": 0 }, "descriptors": {
+        "A": "Der erste Punkt der Aufgabe wird inhaltlich passend und verständlich behandelt.",
+        "B": "Der erste Punkt der Aufgabe wird nur teilweise behandelt, oder Fehler machen ihn schwer verständlich.",
+        "C": "Der erste Punkt der Aufgabe fehlt oder ist nicht zu verstehen." } },
+      { "id": "punkt-2", "name": { "en": "Task completion: content point 2", "de": "Aufgabenerfüllung: Inhaltspunkt 2" }, "points": { "A": 3, "B": 1.5, "C": 0 }, "descriptors": {
+        "A": "Der zweite Punkt der Aufgabe wird inhaltlich passend und verständlich behandelt.",
+        "B": "Der zweite Punkt der Aufgabe wird nur teilweise behandelt, oder Fehler machen ihn schwer verständlich.",
+        "C": "Der zweite Punkt der Aufgabe fehlt oder ist nicht zu verstehen." } },
+      { "id": "punkt-3", "name": { "en": "Task completion: content point 3", "de": "Aufgabenerfüllung: Inhaltspunkt 3" }, "points": { "A": 3, "B": 1.5, "C": 0 }, "descriptors": {
+        "A": "Der dritte Punkt der Aufgabe wird inhaltlich passend und verständlich behandelt.",
+        "B": "Der dritte Punkt der Aufgabe wird nur teilweise behandelt, oder Fehler machen ihn schwer verständlich.",
+        "C": "Der dritte Punkt der Aufgabe fehlt oder ist nicht zu verstehen." } },
+      { "id": "gestaltung", "name": { "en": "Language and form", "de": "Sprache und Form" }, "points": { "A": 1, "B": 0.5, "C": 0 }, "descriptors": {
+        "A": "Der Text passt als SMS zur Situation, die Sätze sind mit einfachen Konnektoren (z. B. und, aber, denn, dann) verbunden, und Wortschatz und Grammatik sind trotz kleiner Fehler gut verständlich.",
+        "B": "Die Sätze stehen oft ohne Konnektoren nebeneinander, oder Fehler in Wortschatz und Grammatik erschweren das Lesen stellenweise.",
+        "C": "Der Text ist nicht als SMS erkennbar, oder Fehler machen ihn größtenteils unverständlich." } }
+    ] },
+      "instructions": "Schreiben Sie eine SMS (20–30 Wörter). Schreiben Sie zu allen drei Punkten." },
+    { "id": "schreiben-2", "skill": "writing", "title": { "en": "Writing Part 2", "de": "Schreiben Teil 2" }, "taskType": "letter", "items": 4, "points": 10, "minutes": 18, "choices": 1, "wordTarget": { "min": 30, "max": 40 },
+      "rubric": { "criteria": [
+      { "id": "punkt-1", "name": { "en": "Task completion: content point 1", "de": "Aufgabenerfüllung: Inhaltspunkt 1" }, "points": { "A": 3, "B": 1.5, "C": 0 }, "descriptors": {
+        "A": "Der erste Punkt der Aufgabe wird inhaltlich passend und verständlich behandelt.",
+        "B": "Der erste Punkt der Aufgabe wird nur teilweise behandelt, oder Fehler machen ihn schwer verständlich.",
+        "C": "Der erste Punkt der Aufgabe fehlt oder ist nicht zu verstehen." } },
+      { "id": "punkt-2", "name": { "en": "Task completion: content point 2", "de": "Aufgabenerfüllung: Inhaltspunkt 2" }, "points": { "A": 3, "B": 1.5, "C": 0 }, "descriptors": {
+        "A": "Der zweite Punkt der Aufgabe wird inhaltlich passend und verständlich behandelt.",
+        "B": "Der zweite Punkt der Aufgabe wird nur teilweise behandelt, oder Fehler machen ihn schwer verständlich.",
+        "C": "Der zweite Punkt der Aufgabe fehlt oder ist nicht zu verstehen." } },
+      { "id": "punkt-3", "name": { "en": "Task completion: content point 3", "de": "Aufgabenerfüllung: Inhaltspunkt 3" }, "points": { "A": 3, "B": 1.5, "C": 0 }, "descriptors": {
+        "A": "Der dritte Punkt der Aufgabe wird inhaltlich passend und verständlich behandelt.",
+        "B": "Der dritte Punkt der Aufgabe wird nur teilweise behandelt, oder Fehler machen ihn schwer verständlich.",
+        "C": "Der dritte Punkt der Aufgabe fehlt oder ist nicht zu verstehen." } },
+      { "id": "gestaltung", "name": { "en": "Language and form", "de": "Sprache und Form" }, "points": { "A": 1, "B": 0.5, "C": 0 }, "descriptors": {
+        "A": "Anrede und Gruß passen zur Situation, die Sätze sind mit einfachen Konnektoren (z. B. und, aber, denn, dann) verbunden, und Wortschatz und Grammatik sind trotz kleiner Fehler gut verständlich.",
+        "B": "Anrede oder Gruß fehlt oder passt nicht, die Sätze stehen oft ohne Konnektoren nebeneinander, oder Fehler in Wortschatz und Grammatik erschweren das Lesen stellenweise.",
+        "C": "Anrede und Gruß fehlen und der Text ist nicht als E-Mail erkennbar, oder Fehler machen ihn größtenteils unverständlich." } }
+    ] },
+      "instructions": "Schreiben Sie eine E-Mail (30–40 Wörter). Schreiben Sie zu allen drei Punkten. Vergessen Sie nicht die Anrede und den Gruß." },
     { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Sprechen Teil 1" }, "taskType": "spoken", "items": 4, "points": 4, "minutes": 4, "instructions": "Fragen zur Person stellen und beantworten: Ziehen Sie vier Karten. Stellen Sie mit jedem Wort eine Frage und antworten Sie auf die Fragen Ihres Partners / Ihrer Partnerin." },
     { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Sprechen Teil 2" }, "taskType": "spoken", "items": 4, "points": 8, "minutes": 5, "instructions": "Über das eigene Leben erzählen: Sprechen Sie über das Thema auf Ihrer Karte. Die vier Stichpunkte helfen Ihnen." },
     { "id": "sprechen-3", "skill": "speaking", "title": { "en": "Speaking Part 3", "de": "Sprechen Teil 3" }, "taskType": "spoken", "items": 4, "points": 13, "minutes": 6, "instructions": "Gemeinsam etwas planen: Sie möchten sich mit Ihrem Partner / Ihrer Partnerin treffen. Finden Sie mit Hilfe Ihres Kalenders einen gemeinsamen Termin." }

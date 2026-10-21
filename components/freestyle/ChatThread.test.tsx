@@ -66,8 +66,9 @@ describe('ChatThread', () => {
     renderWithIntl(<ChatThread mode="grammar_drill" messages={[]} onSend={vi.fn()} />);
     const box = screen.getByLabelText('Your message') as HTMLTextAreaElement;
     fireEvent.change(box, { target: { value: 'Mdchen' } });
+    fireEvent.click(screen.getByRole('button', { name: 'äöü' }));
     box.setSelectionRange(1, 1);
-    fireEvent.click(screen.getByRole('button', { name: 'ä' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Insert ä' }));
     expect(box).toHaveValue('Mädchen');
   });
 

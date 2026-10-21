@@ -20,7 +20,8 @@ export interface GeneratedExercise {
   content: ExerciseContent;
 }
 
-const SHAPES: Record<ExerciseType, string> = {
+// Letters are never generated for the practice pool (allowedPracticeTypes leaves them out), so they have no shape.
+const SHAPES: Partial<Record<ExerciseType, string>> = {
   multiple_choice: 'multiple_choice: {"question": string, "options": [2 to 5 strings], "correctIndex": index of the right option}',
   fill_blank:
     'fill_blank: {"textWithBlank": a sentence with ___ for the gap, "correctAnswer": string, "acceptableVariants": optional array of other accepted answers}',
@@ -51,7 +52,7 @@ export function buildPracticeGenerationPrompt(
     "Match the style and difficulty of the lesson's example exercises.",
     'Do not repeat the example exercises or each other.',
     'Content shapes:',
-    ...allowedTypes.map((type) => `- ${SHAPES[type]}`),
+    ...allowedTypes.flatMap((type) => (SHAPES[type] ? [`- ${SHAPES[type]}`] : [])),
     'Reply with only a JSON object: {"exercises": [{"type": "...", "content": {...}}]}',
   ].join('\n');
 
@@ -60,7 +61,8 @@ export function buildPracticeGenerationPrompt(
   if (ctx.examples && ctx.examples.length > 0) {
     parts.push(`Lesson examples:\n${ctx.examples.map((example) => `- ${example}`).join('\n')}`);
   }
-  const style = ctx.authoredExercises.slice(0, MAX_STYLE_EXAMPLES);
+  // Only exercises of the requested types are style examples (a lesson letter is never one).
+  const style = ctx.authoredExercises.filter((e) => allowedTypes.includes(e.type)).slice(0, MAX_STYLE_EXAMPLES);
   if (style.length > 0) parts.push(`Example exercises:\n${JSON.stringify(style)}`);
   parts.push(`Write ${count} new exercises now.`);
 

@@ -1,0 +1,118 @@
+{
+  "formatId": "generic-a1",
+  "partId": "schreiben",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-a1__schreiben__s01",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Am Sonntag ist im Park ein Flohmarkt. Sie möchten mit Ihrem Freund Jonas hingehen. Schreiben Sie Jonas eine Nachricht.",
+              "leitpunkte": [
+                "Wann gehen Sie zum Flohmarkt?",
+                "Was möchten Sie kaufen?",
+                "Wo treffen Sie sich?"
+              ],
+              "register": "informal",
+              "wordTarget": {
+                "min": 24,
+                "max": 36
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Cover all three points: the day and time, what you want to buy (e.g. books or a lamp), and a meeting place, e.g. \"Wir treffen uns am Parkeingang.\"",
+            "de": "Behandeln Sie alle drei Punkte: Tag und Uhrzeit, was Sie kaufen möchten (z. B. Bücher oder eine Lampe) und einen Treffpunkt, z. B. „Wir treffen uns am Parkeingang.“"
+          },
+          {
+            "en": "Jonas is a friend: start with \"Lieber Jonas,\" or \"Hallo Jonas,\" and end with \"Viele Grüße\" and your name. Join sentences with \"und\" or \"aber\".",
+            "de": "Jonas ist ein Freund: Beginnen Sie mit „Lieber Jonas,“ oder „Hallo Jonas,“ und enden Sie mit „Viele Grüße“ und Ihrem Namen. Verbinden Sie die Sätze mit „und“ oder „aber“."
+          },
+          {
+            "en": "Use simple sentences with the verb in second place, e.g. \"Am Sonntag um 10 Uhr gehe ich zum Flohmarkt.\" Write \"du\", not \"Sie\": \"Kommst du mit?\"",
+            "de": "Schreiben Sie einfache Sätze mit dem Verb auf Position 2, z. B. „Am Sonntag um 10 Uhr gehe ich zum Flohmarkt.“ Schreiben Sie „du“, nicht „Sie“: „Kommst du mit?“"
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-a1__schreiben__s02",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie sind krank und können morgen nicht zum Deutschkurs kommen. Schreiben Sie Ihrer Lehrerin, Frau Klein, eine Nachricht.",
+              "leitpunkte": [
+                "Warum kommen Sie nicht?",
+                "Wann kommen Sie wieder?",
+                "Frage nach den Hausaufgaben"
+              ],
+              "register": "semi_formal",
+              "wordTarget": {
+                "min": 24,
+                "max": 36
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Answer all three points: say that you are ill, when you will be back, and ask about the homework, e.g. \"Welche Hausaufgaben haben wir?\"",
+            "de": "Behandeln Sie alle drei Punkte: Sagen Sie, dass Sie krank sind, wann Sie wiederkommen, und fragen Sie nach den Hausaufgaben, z. B. „Welche Hausaufgaben haben wir?“"
+          },
+          {
+            "en": "Frau Klein is your teacher: start with \"Liebe Frau Klein,\" and end with \"Viele Grüße\" and your name. Stay polite and use \"Sie\". Join sentences with \"aber\" or \"und\".",
+            "de": "Frau Klein ist Ihre Lehrerin: Beginnen Sie mit „Liebe Frau Klein,“ und enden Sie mit „Viele Grüße“ und Ihrem Namen. Bleiben Sie höflich und schreiben Sie „Sie“. Verbinden Sie die Sätze mit „aber“ oder „und“."
+          },
+          {
+            "en": "Watch the verb forms with \"Sie\": \"Können Sie mir ... schreiben?\" Days take \"am\": \"am Montag\".",
+            "de": "Achten Sie auf die Verbformen mit „Sie“: „Können Sie mir … schreiben?“ Tage stehen mit „am“: „am Montag“."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-a1__schreiben__s03",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie wohnen mit Aylin zusammen. Sie gehen heute einkaufen. Schreiben Sie Aylin eine Nachricht.",
+              "leitpunkte": [
+                "Wann gehen Sie einkaufen?",
+                "Was kaufen Sie?",
+                "Frage: Was braucht Aylin?"
+              ],
+              "register": "informal",
+              "wordTarget": {
+                "min": 24,
+                "max": 36
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Cover all three points: when you go shopping, what you buy (e.g. milk, bread, apples) and ask what Aylin needs, e.g. \"Brauchst du etwas?\"",
+            "de": "Behandeln Sie alle drei Punkte: wann Sie einkaufen gehen, was Sie kaufen (z. B. Milch, Brot, Äpfel), und fragen Sie, was Aylin braucht, z. B. „Brauchst du etwas?“"
+          },
+          {
+            "en": "Aylin is your flatmate: start with \"Liebe Aylin,\" or \"Hallo Aylin,\" and end with \"Liebe Grüße\" and your name. Link sentences with \"und\" or \"oder\".",
+            "de": "Aylin ist Ihre Mitbewohnerin: Beginnen Sie mit „Liebe Aylin,“ oder „Hallo Aylin,“ und enden Sie mit „Liebe Grüße“ und Ihrem Namen. Verbinden Sie die Sätze mit „und“ oder „oder“."
+          },
+          {
+            "en": "Use the accusative after \"kaufen\" and \"brauchen\": \"Ich kaufe einen Kuchen und eine Flasche Milch.\" In yes/no questions the verb comes first: \"Brauchst du Brot?\"",
+            "de": "Benutzen Sie den Akkusativ nach „kaufen“ und „brauchen“: „Ich kaufe einen Kuchen und eine Flasche Milch.“ Bei Ja/Nein-Fragen steht das Verb vorne: „Brauchst du Brot?“"
+          }
+        ]
+      }
+    }
+  ]
+}

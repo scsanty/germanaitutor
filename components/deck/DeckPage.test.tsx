@@ -161,6 +161,14 @@ describe('DeckPage', () => {
     expect(fetchMock).toHaveBeenCalledWith('/api/flashcards/words?query=hu');
   });
 
+  // Final review Minor 6: the German search field has the umlaut row too.
+  it('offers the umlaut row on the search field as well as the add field', async () => {
+    vi.stubGlobal('fetch', vi.fn(() => delayedResponse(DECK)));
+    renderPage();
+    await screen.findByLabelText('Search your words');
+    expect(screen.getAllByRole('button', { name: 'äöü' })).toHaveLength(2);
+  });
+
   it('saves a daily limit on blur and shows a rejected value inline', async () => {
     const fetchMock = vi.fn((url: string, init?: RequestInit) => {
       if (url === '/api/flashcards') return delayedResponse(DECK);

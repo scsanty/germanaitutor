@@ -1,0 +1,98 @@
+{
+  "formatId": "generic-a2",
+  "partId": "schreiben",
+  "anchors": [
+    {
+      "task": {
+        "situation": "Sie fahren nächste Woche in Urlaub. Ihre Nachbarin, Frau Becker, soll in dieser Zeit Ihre Blumen gießen. Schreiben Sie ihr eine Nachricht.",
+        "leitpunkte": [
+          "Wann und wohin Sie fahren",
+          "Was Frau Becker tun soll",
+          "Wie sie den Schlüssel bekommt",
+          "Dank für die Hilfe"
+        ],
+        "register": "semi_formal",
+        "wordTarget": {
+          "min": 40,
+          "max": 60
+        }
+      },
+      "letter": "Liebe Frau Becker,\n\nich fahre am Samstag für eine Woche zu meiner Schwester nach Hamburg. Könnten Sie bitte jeden zweiten Tag meine Blumen gießen? Den Schlüssel bringe ich Ihnen am Freitagabend vorbei, denn dann bin ich zu Hause. Vielen Dank für Ihre Hilfe! Ich bringe Ihnen auch etwas aus Hamburg mit.\n\nHerzliche Grüße\nIhre Maria Novak",
+      "grades": {
+        "aufgabe": "A",
+        "gestaltung": "A",
+        "richtigkeit": "A"
+      },
+      "justification": "Aufgabe A: Alle vier Punkte werden genau behandelt: Zeit und Ziel („am Samstag für eine Woche … nach Hamburg“), die Bitte („jeden zweiten Tag meine Blumen gießen“), der Schlüssel („am Freitagabend vorbei“) und der Dank. Gestaltung A: Anrede und Gruß passen zu einer Nachbarin, die höfliche Bitte mit „Könnten Sie“ trifft den Ton, und „denn“ verbindet die Sätze sinnvoll. Richtigkeit A: Wortschatz und Grammatik sind dem Niveau A2 angemessen, mit Modalverb im Konjunktiv und trennbaren Verben, und es gibt keine Fehler."
+    },
+    {
+      "task": {
+        "situation": "Sie fahren nächste Woche in Urlaub. Ihre Nachbarin, Frau Becker, soll in dieser Zeit Ihre Blumen gießen. Schreiben Sie ihr eine Nachricht.",
+        "leitpunkte": [
+          "Wann und wohin Sie fahren",
+          "Was Frau Becker tun soll",
+          "Wie sie den Schlüssel bekommt",
+          "Dank für die Hilfe"
+        ],
+        "register": "semi_formal",
+        "wordTarget": {
+          "min": 40,
+          "max": 60
+        }
+      },
+      "letter": "Liebe Frau Becker,\n\nich fahre am Samstag mit meine Familie nach Hamburg, wir bleiben eine Woche dort. Können Sie bitte meine Blumen gießen? Die Blumen sind in die Küche und auf dem Balkon. Ich gebe Ihnen den Schlüssel am Freitag, dann Sie können in die Wohnung gehen.\n\nBis bald, tschüss!\nMaria",
+      "grades": {
+        "aufgabe": "B",
+        "gestaltung": "B",
+        "richtigkeit": "B"
+      },
+      "justification": "Aufgabe B: Reise, Bitte und Schlüssel werden klar behandelt, aber ein Dank für die Hilfe fehlt. Gestaltung B: Die Anrede passt, und „dann“ verbindet die Sätze teilweise, doch der Gruß „Bis bald, tschüss!“ ist für eine Nachbarin, die man siezt, zu locker. Richtigkeit B: Einige Kasus- und Wortstellungsfehler („mit meine Familie“, „in die Küche“, „dann Sie können“) stören das Verständnis kaum."
+    },
+    {
+      "task": {
+        "situation": "Sie fahren nächste Woche in Urlaub. Ihre Nachbarin, Frau Becker, soll in dieser Zeit Ihre Blumen gießen. Schreiben Sie ihr eine Nachricht.",
+        "leitpunkte": [
+          "Wann und wohin Sie fahren",
+          "Was Frau Becker tun soll",
+          "Wie sie den Schlüssel bekommt",
+          "Dank für die Hilfe"
+        ],
+        "register": "semi_formal",
+        "wordTarget": {
+          "min": 40,
+          "max": 60
+        }
+      },
+      "letter": "Hallo Frau Becker,\n\nich fahre Urlaub nächste Woche. Kannst du meine Blumen geben Wasser? Bitte jeden Tag. Der Schlüssel ist bei die Tür unter die Matte. Ich habe viel Blumen, die Blumen sind schön, ich kauft neue Blumen im Markt letzte Woche, sie war billig.\n\nMaria",
+      "grades": {
+        "aufgabe": "C",
+        "gestaltung": "C",
+        "richtigkeit": "C"
+      },
+      "justification": "Aufgabe C: Die Bitte und der Schlüssel werden genannt, die Reise nur vage („nächste Woche“, ohne Ziel), der Dank fehlt, und ein großer Teil handelt vom Blumenkauf. Gestaltung C: Ein Gruß fehlt, die Sätze stehen meist ohne Konnektoren nebeneinander, und „Kannst du“ passt nicht zur Anrede „Frau Becker“. Richtigkeit C: Viele Fehler bei Wortstellung, Kasus und Verbformen („meine Blumen geben Wasser“, „bei die Tür unter die Matte“, „ich kauft“, „sie war“) erschweren stellenweise das Verständnis."
+    },
+    {
+      "task": {
+        "situation": "Sie fahren nächste Woche in Urlaub. Ihre Nachbarin, Frau Becker, soll in dieser Zeit Ihre Blumen gießen. Schreiben Sie ihr eine Nachricht.",
+        "leitpunkte": [
+          "Wann und wohin Sie fahren",
+          "Was Frau Becker tun soll",
+          "Wie sie den Schlüssel bekommt",
+          "Dank für die Hilfe"
+        ],
+        "register": "semi_formal",
+        "wordTarget": {
+          "min": 40,
+          "max": 60
+        }
+      },
+      "letter": "Hallo,\n\nich Urlaub gut. Wetter schön Sonne, ich gehen Strand jeden Tag. Essen hier sehr lecker. Du kommen auch?\n\nMaria",
+      "grades": {
+        "aufgabe": "D",
+        "gestaltung": "D",
+        "richtigkeit": "D"
+      },
+      "justification": "Aufgabe D: Die Nachricht geht an der Aufgabe vorbei: Sie beschreibt den Urlaub, als wäre er schon da, und Blumen, Schlüssel und Dank fehlen ganz. Gestaltung D: Es gibt keine Anrede an Frau Becker, das „Du“ passt nicht zu einer Nachbarin, die man siezt, und die Wortgruppen haben keinen erkennbaren Aufbau. Richtigkeit D: Fast kein Satz ist korrekt („ich Urlaub gut“, „ich gehen Strand“, „Du kommen auch?“), sodass der Text größtenteils unverständlich ist."
+    }
+  ]
+}

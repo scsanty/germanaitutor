@@ -4,16 +4,16 @@ import { useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { LanguageToggle } from '@/components/LanguageToggle';
 import { differsByLanguage, isLocalizedText, pickText, type ContentLanguage } from '@/lib/i18n/localizedText';
+import { normalizeCategory } from '@/lib/errors/taxonomy';
 import type { Correction } from '@/lib/freestyle/replies';
 import { cn } from '@/lib/utils';
 
 // Reads `extra.corrections` from a stored message; anything malformed is dropped.
 export function readCorrections(value: unknown): Correction[] {
   if (!Array.isArray(value)) return [];
-  return value.filter(
-    (c): c is Correction =>
-      !!c && typeof c === 'object' && typeof c.wrong === 'string' && typeof c.right === 'string' && isLocalizedText(c.reason)
-  );
+  return value
+    .filter((c) => !!c && typeof c === 'object' && typeof c.wrong === 'string' && typeof c.right === 'string' && isLocalizedText(c.reason))
+    .map((c) => ({ ...c, category: normalizeCategory(c.category) }) as Correction); // rows from before T8 have no category
 }
 
 // S22: shared by ChatThread and the writing screen. One language toggle per list (S20: only when a reason differs).

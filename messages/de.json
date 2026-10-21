@@ -26,7 +26,8 @@
     "session_exists": "Für diesen Modus ist schon eine Sitzung offen",
     "session_ending": "Diese Sitzung wird gerade beendet. Bitte warte einen Moment.",
     "part_unavailable": "Dieser Teil kann noch nicht geübt werden",
-    "audio_unavailable": "Dieses Audio ist gerade nicht verfügbar"
+    "audio_unavailable": "Dieses Audio ist gerade nicht verfügbar",
+    "letter_grading": "Dein Brief wird gerade bewertet."
   },
   "languageToggle": {
     "lesson": "Sprache der Lektion",
@@ -53,6 +54,9 @@
     "readinessBelow": "{percent} % · unter 60 %",
     "readinessOvertime": " · teils Zeitüberschreitung",
     "readinessNone": "Noch nicht geübt",
+    "mistakesTitle": "Deine häufigsten Fehler",
+    "practiseInFreestyle": "In Freestyle üben",
+    "times": "{count}×",
     "skill": { "grammar": "Grammatik", "vocabulary": "Wortschatz", "reading": "Lesen", "listening": "Hören", "writing": "Schreiben", "speaking": "Sprechen" },
     "activity": "Aktivität (12 Wochen)",
     "activityCell": "{date}: {count, plural, one {# Antwort} other {# Antworten}}"
@@ -386,7 +390,6 @@
     "send": "Senden",
     "sending": "Wird gesendet…",
     "sendFailed": "Deine Nachricht konnte nicht gesendet werden.",
-    "germanLetters": "Deutsche Buchstaben",
     "thread": "Nachrichten",
     "corrections": "Korrekturen",
     "correctionLanguage": "Sprache der Korrektur",
@@ -404,7 +407,6 @@
     "loadingArticle": "Ein neuer Artikel wird geschrieben…",
     "articleFailed": "Der neue Artikel konnte nicht geladen werden.",
     "yourText": "Dein Text",
-    "words": "{count, plural, one {# Wort} other {# Wörter}}",
     "submit": "Abschicken",
     "submitting": "Dein Text wird geprüft…",
     "submitFailed": "Dein Text konnte nicht geprüft werden.",
@@ -544,5 +546,42 @@
     "evidenceFor": "Beleg für Frage {n}",
     "evidenceForMany": "Beleg für Fragen {n}",
     "retry": "Erneut versuchen"
+  },
+  "typing": {
+    "umlauts": "Deutsche Buchstaben",
+    "insert": "{letter} einfügen",
+    "count": "{count} / {min}–{max} Wörter",
+    "words": "{count, plural, one {# Wort} other {# Wörter}}"
+  },
+  "writing": {
+    "chooseTask": "Wähle eine Aufgabe",
+    "taskA": "Aufgabe A",
+    "taskB": "Aufgabe B",
+    "leitpunkte": "Behandle diese Punkte",
+    "grading": "Dein Brief wird bewertet …",
+    "points": "{points} von {max} Punkten ({percent} %)",
+    "corrected": "Korrigierte Fassung",
+    "copyToFreestyle": "In freies Schreiben übernehmen",
+    "revise": "Überarbeiten",
+    "version": "Version {n}: {percent} %",
+    "markType": {
+      "grammar": "Grammatik",
+      "vocabulary": "Wortschatz",
+      "spelling": "Rechtschreibung",
+      "register": "Register"
+    },
+    "yourLetter": "Dein Brief",
+    "criteria": "Kriterien",
+    "zeroedByTask": "{criterion} hat die niedrigste Bewertung, deshalb zählt der ganze Text 0 Punkte.",
+    "criterionPoints": "{points} von {max} Punkten",
+    "grade": "Note {grade}",
+    "tip": "Tipp: {tip}",
+    "summary": "Zusammenfassung",
+    "feedbackLanguage": "Sprache des Feedbacks",
+    "reasonLanguage": "Sprache der Erklärung",
+    "noMarks": "In deinem Brief wurde nichts markiert.",
+    "earlierVersions": "Frühere Versionen",
+    "copying": "Freies Schreiben wird geöffnet …",
+    "copyFailed": "Freies Schreiben konnte nicht geöffnet werden."
   }
 }

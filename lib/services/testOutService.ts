@@ -13,6 +13,7 @@ import type { TestOutAnswerOutcome, TestOutResult, TestOutRun, TestOutState } fr
 import { lessonCardLemma, upsertLessonCard, vocabularyCardContent } from '../deck/lessonCards';
 import { isAiAvailable } from './aiService';
 import { gradeExerciseAnswer } from './exerciseGrading';
+import { recordMistakes } from './errorLogService';
 import { gradeFreeText, type FreeTextGradeOutcome } from './freeTextGradingService';
 import { loadLevelGating } from './levelGating';
 import { createContentText } from './contentText';
@@ -243,7 +244,8 @@ export function createTestOutService(db: Database.Database, deps: TestOutDeps = 
          VALUES (?, 0, ?, 1, ?, ?) ON CONFLICT(exercise_id) DO NOTHING`
       );
       // B1: a vocabulary-lesson flashcard enters the deck instead of the Daily Queue.
-      const exercisesOf = db.prepare('SELECT id FROM exercises WHERE lesson_id = ? ORDER BY rowid');
+      // Writing: a letter task never enters review.
+      const exercisesOf = db.prepare("SELECT id FROM exercises WHERE lesson_id = ? AND type <> 'letter' ORDER BY rowid");
       for (const lessonId of lessonIds) {
         complete.run(lessonId, at);
         for (const { id } of exercisesOf.all(lessonId) as { id: string }[]) {
@@ -277,6 +279,8 @@ export function createTestOutService(db: Database.Database, deps: TestOutDeps = 
       if (graded.reason === 'bad_request') throw new TestOutError(graded.message, 'bad_request');
       throw new TestOutError(graded.message, 'grading_failed', graded.code, graded.params);
     }
+    // S7: free-text mistakes from lesson content feed the error log; logging never breaks grading.
+    recordMistakes(db, 'lesson', graded.mistakes ?? []);
 
     return db.transaction((): TestOutAnswerOutcome => {
       // Re-read inside the transaction: a concurrent submit may have answered this question already.

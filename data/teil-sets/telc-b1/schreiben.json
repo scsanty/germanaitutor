@@ -1,0 +1,163 @@
+{
+  "formatId": "telc-b1",
+  "partId": "schreiben",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b1__schreiben__s01",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Ihr Freund Martin hat Ihnen geschrieben. Er hat nächsten Monat in Ihrer Stadt ein Vorstellungsgespräch und fragt, ob er zwei Nächte bei Ihnen übernachten kann. Antworten Sie ihm mit einem persönlichen Brief.",
+              "leitpunkte": [
+                "Ihre Freude über den Besuch",
+                "Wo Martin bei Ihnen schlafen kann",
+                "Wie er vom Bahnhof zu Ihnen kommt",
+                "Ein Vorschlag für den Abend"
+              ],
+              "register": "informal",
+              "wordTarget": {
+                "min": 120,
+                "max": 180
+              }
+            },
+            {
+              "situation": "Sie haben beim Möbelhaus „Möbel Kranich“ einen Kleiderschrank bestellt. Der Schrank wurde eine Woche zu spät geliefert, und eine Tür ist beschädigt. Schreiben Sie einen Brief an den Kundenservice.",
+              "leitpunkte": [
+                "Was Sie wann bestellt haben",
+                "Welche Probleme es gibt",
+                "Was Sie schon unternommen haben",
+                "Was Sie jetzt vom Möbelhaus erwarten"
+              ],
+              "register": "formal",
+              "wordTarget": {
+                "min": 120,
+                "max": 180
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Cover all four Leitpunkte with a few sentences each: for Martin, show you are happy, describe where he will sleep, explain the way from the station and suggest an evening plan; for the furniture store, name the order and date, describe both problems, say what you already did and state your demand. Only a letter that hardly deals with the task gets a D, and then the whole letter scores 0.",
+            "de": "Behandeln Sie alle vier Leitpunkte mit jeweils einigen Sätzen: Zeigen Sie Martin Ihre Freude, beschreiben Sie den Schlafplatz, erklären Sie den Weg vom Bahnhof und schlagen Sie etwas für den Abend vor; nennen Sie dem Möbelhaus Bestellung und Datum, beschreiben Sie beide Probleme, sagen Sie, was Sie schon getan haben, und stellen Sie Ihre Forderung. Ein D gibt es nur, wenn der Brief die Aufgabe kaum oder gar nicht bearbeitet; dann zählt der ganze Brief 0 Punkte."
+          },
+          {
+            "en": "Write one paragraph per Leitpunkt and link them with connectors such as weil, deshalb and außerdem. Martin gets „Lieber Martin“, du and „Viele Grüße“; the store gets „Sehr geehrte Damen und Herren“, Sie and „Mit freundlichen Grüßen“, with a polite but firm tone.",
+            "de": "Schreiben Sie zu jedem Leitpunkt einen Absatz und verbinden Sie sie mit Konnektoren wie weil, deshalb und außerdem. Martin bekommt „Lieber Martin“, du und „Viele Grüße“; das Möbelhaus bekommt „Sehr geehrte Damen und Herren“, Sie und „Mit freundlichen Grüßen“, in einem höflichen, aber bestimmten Ton."
+          },
+          {
+            "en": "Vary your sentences and check the verb position: the verb goes to the end after weil and dass (… weil die Tür beschädigt ist). Useful here are the Perfekt (Der Schrank ist zu spät gekommen) and polite requests (Könnten Sie …?).",
+            "de": "Bauen Sie abwechslungsreiche Sätze und prüfen Sie die Verbstellung: Nach weil und dass steht das Verb am Ende (… weil die Tür beschädigt ist). Nützlich sind hier das Perfekt (Der Schrank ist zu spät gekommen) und höfliche Bitten (Könnten Sie …?)."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b1__schreiben__s02",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Ihre Freundin Sabine heiratet im Juli und hat Sie zu ihrer Hochzeit eingeladen. Sie können leider nicht kommen. Antworten Sie ihr mit einem persönlichen Brief.",
+              "leitpunkte": [
+                "Ihre Glückwünsche",
+                "Warum Sie nicht kommen können",
+                "Ein Geschenk für das Brautpaar",
+                "Ein Vorschlag für ein Treffen nach der Hochzeit"
+              ],
+              "register": "informal",
+              "wordTarget": {
+                "min": 120,
+                "max": 180
+              }
+            },
+            {
+              "situation": "Sie möchten im Herbst an der Volkshochschule Lindenau einen Abendkurs „Fotografieren für Anfänger“ besuchen. Schreiben Sie einen Brief an die Volkshochschule.",
+              "leitpunkte": [
+                "Warum Sie sich für den Kurs interessieren",
+                "Ihre Erfahrungen mit dem Fotografieren",
+                "Fragen zu Kurszeiten und Kosten",
+                "Ob Sie eine eigene Kamera brauchen"
+              ],
+              "register": "formal",
+              "wordTarget": {
+                "min": 120,
+                "max": 180
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Treat every Leitpunkt fully: for Sabine, congratulate her, give a believable reason why you cannot come, describe a gift and suggest a concrete date to meet later; for the adult education centre, explain your interest, describe your experience, ask about times and costs and ask about the camera. Only a letter that hardly deals with the task gets a D, and then the whole letter scores 0.",
+            "de": "Behandeln Sie jeden Leitpunkt vollständig: Gratulieren Sie Sabine, nennen Sie einen glaubhaften Grund für Ihre Absage, beschreiben Sie ein Geschenk und schlagen Sie einen konkreten Termin für ein späteres Treffen vor; erklären Sie der Volkshochschule Ihr Interesse, beschreiben Sie Ihre Erfahrungen, fragen Sie nach Zeiten und Kosten und nach der Kamera. Ein D gibt es nur, wenn der Brief die Aufgabe kaum oder gar nicht bearbeitet; dann zählt der ganze Brief 0 Punkte."
+          },
+          {
+            "en": "Give the letter a clear order with paragraphs and connectors such as leider, trotzdem and außerdem. Sabine gets a warm du letter („Liebe Sabine“, „Alles Liebe“); the adult education centre gets a formal Sie letter with „Sehr geehrte Damen und Herren“ and „Mit freundlichen Grüßen“.",
+            "de": "Geben Sie dem Brief eine klare Ordnung mit Absätzen und Konnektoren wie leider, trotzdem und außerdem. Sabine bekommt einen herzlichen Du-Brief („Liebe Sabine“, „Alles Liebe“); die Volkshochschule bekommt einen formellen Sie-Brief mit „Sehr geehrte Damen und Herren“ und „Mit freundlichen Grüßen“."
+          },
+          {
+            "en": "Use varied structures and watch the details: polite questions with würde or könnte (Ich würde gern wissen, ob …), indirect questions with ob and the verb at the end, and the correct case after prepositions (an der Hochzeit, für den Kurs).",
+            "de": "Verwenden Sie abwechslungsreiche Strukturen und achten Sie auf Details: höfliche Fragen mit würde oder könnte (Ich würde gern wissen, ob …), indirekte Fragen mit ob und dem Verb am Ende und den richtigen Kasus nach Präpositionen (an der Hochzeit, für den Kurs)."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b1__schreiben__s03",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie haben vor zwei Wochen eine neue Arbeitsstelle angefangen. Ihr Freund Tobias hat Ihnen geschrieben und möchte wissen, wie es Ihnen dort gefällt. Antworten Sie ihm mit einem persönlichen Brief.",
+              "leitpunkte": [
+                "Ihre neuen Aufgaben",
+                "Ihre Kolleginnen und Kollegen",
+                "Ihre Arbeitszeiten",
+                "Ein Vorschlag für ein Treffen"
+              ],
+              "register": "informal",
+              "wordTarget": {
+                "min": 120,
+                "max": 180
+              }
+            },
+            {
+              "situation": "Sie haben letzte Woche zwei Nächte im Hotel Seeblick in Bad Lauterbach übernachtet. Zu Hause haben Sie gemerkt, dass Sie Ihre Jacke im Hotel vergessen haben. Schreiben Sie einen Brief an das Hotel.",
+              "leitpunkte": [
+                "Wann Sie im Hotel waren",
+                "Wie Ihre Jacke aussieht",
+                "Wo Sie die Jacke vielleicht vergessen haben",
+                "Wie Sie die Jacke zurückbekommen möchten"
+              ],
+              "register": "formal",
+              "wordTarget": {
+                "min": 120,
+                "max": 180
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Say something concrete about each Leitpunkt: for Tobias, describe your tasks, your colleagues and your working hours, and suggest a day and place to meet; for the hotel, give the dates (and room number), describe the jacket exactly, name the likely place and say whether you will collect it or want it sent. Only a letter that hardly deals with the task gets a D, and then the whole letter scores 0.",
+            "de": "Schreiben Sie zu jedem Leitpunkt etwas Konkretes: Beschreiben Sie Tobias Ihre Aufgaben, Ihre Kollegen und Ihre Arbeitszeiten und schlagen Sie einen Tag und einen Ort für ein Treffen vor; nennen Sie dem Hotel die Daten (und die Zimmernummer), beschreiben Sie die Jacke genau, nennen Sie den wahrscheinlichen Ort und sagen Sie, ob Sie sie abholen oder zugeschickt haben möchten. Ein D gibt es nur, wenn der Brief die Aufgabe kaum oder gar nicht bearbeitet; dann zählt der ganze Brief 0 Punkte."
+          },
+          {
+            "en": "Start by reacting to the situation (thanks for Tobias's letter, or why you are writing to the hotel), then follow the Leitpunkte in paragraphs linked by connectors such as zuerst, danach and deshalb. Keep the du tone for Tobias and a polite Sie tone with a formal greeting and closing for the hotel.",
+            "de": "Beginnen Sie mit einem Bezug zur Situation (Dank für Tobias’ Brief oder der Grund, warum Sie dem Hotel schreiben), und folgen Sie dann den Leitpunkten in Absätzen, die mit Konnektoren wie zuerst, danach und deshalb verbunden sind. Bleiben Sie bei Tobias beim Du-Ton und beim Hotel beim höflichen Sie mit formeller Anrede und formellem Gruß."
+          },
+          {
+            "en": "Show a range of B1 grammar: adjective endings when you describe the jacket (eine dunkelblaue Jacke mit einem großen Kragen), the Perfekt for past events and subordinate clauses with dass, weil or wenn, with the verb at the end.",
+            "de": "Zeigen Sie verschiedene B1-Strukturen: Adjektivendungen bei der Beschreibung der Jacke (eine dunkelblaue Jacke mit einem großen Kragen), das Perfekt für Vergangenes und Nebensätze mit dass, weil oder wenn, mit dem Verb am Ende."
+          }
+        ]
+      }
+    }
+  ]
+}

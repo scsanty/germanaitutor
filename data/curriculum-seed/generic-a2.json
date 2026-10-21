@@ -1,5 +1,5 @@
 {
-  "seedVersion": "10",
+  "seedVersion": "11",
   "formatVersion": 3,
   "track": "generic",
   "level": "A2",
@@ -1749,6 +1749,34 @@
           "Hochachtungsvoll,"
         ],
         "correctIndex": 2
+      }
+    },
+    {
+      "id": "a2-writing-informal-email-vacation__ex3",
+      "lessonId": "a2-writing-informal-email-vacation",
+      "track": "generic",
+      "type": "letter",
+      "content": {
+        "instruction": {
+          "en": "Write an informal email to your friend Tobias about your holiday. Use the Perfekt and cover all four points.",
+          "de": "Schreib eine E-Mail an deinen Freund Tobias über deinen Urlaub. Benutze das Perfekt und schreib zu allen vier Punkten."
+        },
+        "tasks": [
+          {
+            "situation": "Sie waren eine Woche mit Ihrer Familie im Urlaub am Meer, in dem kleinen Ort Möwenhagen. Jetzt sind Sie wieder zu Hause. Schreiben Sie Ihrem Freund Tobias eine E-Mail.",
+            "leitpunkte": [
+              "Wo waren Sie und wie lange?",
+              "Was haben Sie dort gemacht?",
+              "Was hat Ihnen gefallen, was nicht? Warum?",
+              "Fragen Sie Tobias nach seinen Ferien."
+            ],
+            "register": "informal",
+            "wordTarget": {
+              "min": 40,
+              "max": 60
+            }
+          }
+        ]
       }
     },
     {

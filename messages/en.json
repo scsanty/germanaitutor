@@ -26,7 +26,8 @@
     "session_exists": "A session is already open for this mode",
     "session_ending": "This session is already ending. Please wait a moment.",
     "part_unavailable": "This part can't be practised yet",
-    "audio_unavailable": "This audio isn't available right now"
+    "audio_unavailable": "This audio isn't available right now",
+    "letter_grading": "This letter is being graded."
   },
   "languageToggle": {
     "lesson": "Lesson language",
@@ -53,6 +54,9 @@
     "readinessBelow": "{percent}% · below 60%",
     "readinessOvertime": " · some overtime",
     "readinessNone": "Not practised yet",
+    "mistakesTitle": "Your top mistakes",
+    "practiseInFreestyle": "Practise in Freestyle",
+    "times": "{count}×",
     "skill": { "grammar": "Grammar", "vocabulary": "Vocabulary", "reading": "Reading", "listening": "Listening", "writing": "Writing", "speaking": "Speaking" },
     "activity": "Activity (12 weeks)",
     "activityCell": "{date}: {count, plural, one {# answer} other {# answers}}"
@@ -386,7 +390,6 @@
     "send": "Send",
     "sending": "Sending…",
     "sendFailed": "Could not send your message.",
-    "germanLetters": "German letters",
     "thread": "Messages",
     "corrections": "Corrections",
     "correctionLanguage": "Correction language",
@@ -404,7 +407,6 @@
     "loadingArticle": "Writing a new article…",
     "articleFailed": "Could not load a new article.",
     "yourText": "Your text",
-    "words": "{count, plural, one {# word} other {# words}}",
     "submit": "Submit",
     "submitting": "Checking your text…",
     "submitFailed": "Could not check your text.",
@@ -544,5 +546,42 @@
     "evidenceFor": "Evidence for question {n}",
     "evidenceForMany": "Evidence for questions {n}",
     "retry": "Try again"
+  },
+  "typing": {
+    "umlauts": "German letters",
+    "insert": "Insert {letter}",
+    "count": "{count} / {min}–{max} words",
+    "words": "{count, plural, one {# word} other {# words}}"
+  },
+  "writing": {
+    "chooseTask": "Choose a task",
+    "taskA": "Task A",
+    "taskB": "Task B",
+    "leitpunkte": "Cover these points",
+    "grading": "Grading your letter…",
+    "points": "{points} of {max} points ({percent}%)",
+    "corrected": "Corrected version",
+    "copyToFreestyle": "Copy into free writing",
+    "revise": "Revise",
+    "version": "Version {n}: {percent}%",
+    "markType": {
+      "grammar": "Grammar",
+      "vocabulary": "Vocabulary",
+      "spelling": "Spelling",
+      "register": "Register"
+    },
+    "yourLetter": "Your letter",
+    "criteria": "Criteria",
+    "zeroedByTask": "{criterion} got the lowest grade, so the whole letter scores 0 points.",
+    "criterionPoints": "{points} of {max} points",
+    "grade": "Grade {grade}",
+    "tip": "Tip: {tip}",
+    "summary": "Summary",
+    "feedbackLanguage": "Feedback language",
+    "reasonLanguage": "Explanation language",
+    "noMarks": "Nothing was marked in your letter.",
+    "earlierVersions": "Earlier versions",
+    "copying": "Opening free writing…",
+    "copyFailed": "Free writing could not be opened."
   }
 }

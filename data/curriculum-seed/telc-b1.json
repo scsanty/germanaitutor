@@ -1,5 +1,5 @@
 {
-  "seedVersion": "10",
+  "seedVersion": "11",
   "formatVersion": 3,
   "track": "telc",
   "level": "B1",
@@ -2314,6 +2314,34 @@
       }
     },
     {
+      "id": "b1-telc-writing-complaint-letter__ex4",
+      "lessonId": "b1-telc-writing-complaint-letter",
+      "track": "telc",
+      "type": "letter",
+      "content": {
+        "instruction": {
+          "en": "Write a formal letter of complaint (about 150 words) and cover all four points.",
+          "de": "Schreiben Sie einen formellen Beschwerdebrief (ca. 150 Wörter). Schreiben Sie zu allen vier Punkten."
+        },
+        "tasks": [
+          {
+            "situation": "Sie haben vor zwei Wochen Ihr Fahrrad zur Inspektion zum Zweirad-Service Kieselhofen gebracht und 95 Euro bezahlt (Rechnungsnummer 2291-F). Die Werkstatt hat versprochen, die Bremsen und das Licht zu reparieren. Zu Hause haben Sie gemerkt: Die Bremsen funktionieren immer noch schlecht, und das Licht geht nicht. Außerdem hat der Rahmen jetzt einen langen Kratzer. Schreiben Sie einen Brief an die Werkstatt.",
+            "leitpunkte": [
+              "Welche Reparatur Sie wann in Auftrag gegeben haben",
+              "Was nach der Reparatur nicht in Ordnung ist",
+              "Warum Sie das Fahrrad dringend brauchen",
+              "Was die Werkstatt jetzt tun soll und bis wann"
+            ],
+            "register": "formal",
+            "wordTarget": {
+              "min": 120,
+              "max": 180
+            }
+          }
+        ]
+      }
+    },
+    {
       "id": "b1-telc-writing-inquiry-request-letter__ex0",
       "lessonId": "b1-telc-writing-inquiry-request-letter",
       "track": "telc",
@@ -2361,6 +2389,34 @@
       "content": {
         "front": "Vollständigkeit bei telc Schreiben",
         "back": "Alle 4 vorgegebenen Leitpunkte müssen im Text eigenständig und sinnvoll behandelt werden!"
+      }
+    },
+    {
+      "id": "b1-telc-writing-inquiry-request-letter__ex4",
+      "lessonId": "b1-telc-writing-inquiry-request-letter",
+      "track": "telc",
+      "type": "letter",
+      "content": {
+        "instruction": {
+          "en": "Write a formal letter of inquiry (about 150 words) and cover all four points.",
+          "de": "Schreiben Sie eine formelle Anfrage (ca. 150 Wörter). Schreiben Sie zu allen vier Punkten."
+        },
+        "tasks": [
+          {
+            "situation": "Sie möchten im nächsten Jahr eine Ausbildung zur Erzieherin oder zum Erzieher machen. Weil Sie ein kleines Kind haben, können Sie nur in Teilzeit lernen. In einer Anzeige haben Sie gelesen, dass das Berufsbildungszentrum Kieselhofen eine Teilzeitausbildung und kostenlose Beratungstermine anbietet. Schreiben Sie einen Brief an das Berufsbildungszentrum.",
+            "leitpunkte": [
+              "Stellen Sie sich vor und beschreiben Sie Ihre Situation.",
+              "Zu welchen Zeiten Sie lernen können",
+              "Fragen zu Voraussetzungen und Kosten",
+              "Bitte um einen Beratungstermin"
+            ],
+            "register": "formal",
+            "wordTarget": {
+              "min": 120,
+              "max": 180
+            }
+          }
+        ]
       }
     },
     {
@@ -6267,6 +6323,34 @@
           "en": "Write the semi-formal letter. Use Sie and cover all four points.",
           "de": "Schreiben Sie den halbformellen Brief. Benutzen Sie Sie und behandeln Sie alle vier Punkte."
         }
+      }
+    },
+    {
+      "id": "b1-telc-writing-personal-semi-formal-letter__ex8",
+      "lessonId": "b1-telc-writing-personal-semi-formal-letter",
+      "track": "telc",
+      "type": "letter",
+      "content": {
+        "instruction": {
+          "en": "Write a semi-formal letter (about 150 words) to your former teacher and cover all four points.",
+          "de": "Schreiben Sie Ihrer früheren Lehrerin einen halbformellen Brief (ca. 150 Wörter). Schreiben Sie zu allen vier Punkten."
+        },
+        "tasks": [
+          {
+            "situation": "Ihre frühere Deutschlehrerin, Frau Hollerbach, hat Ihnen geschrieben. Sie möchte wissen, wie es Ihnen nach dem Deutschkurs geht. Außerdem fragt sie, ob Sie im nächsten Kurs den neuen Teilnehmerinnen und Teilnehmern von Ihren Erfahrungen erzählen möchten. Sie kennen Frau Hollerbach gut, siezen sie aber. Antworten Sie ihr mit einem Brief.",
+            "leitpunkte": [
+              "Dank für den Brief",
+              "Was Sie seit dem Kurs machen",
+              "Ob und wann Sie in den Kurs kommen können",
+              "Was Sie den neuen Teilnehmenden erzählen möchten"
+            ],
+            "register": "semi_formal",
+            "wordTarget": {
+              "min": 120,
+              "max": 180
+            }
+          }
+        ]
       }
     },
     {

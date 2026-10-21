@@ -1,0 +1,121 @@
+{
+  "formatId": "generic-b2",
+  "partId": "schreiben-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-b2__schreiben-2__s01",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie sind Mitglied im Fitnessstudio „Vitalpunkt“ in Rehnstadt. Ihr Yogakurs am Abend, für den Sie einen höheren Monatsbeitrag zahlen, wurde vor sechs Wochen ohne Ankündigung gestrichen. Der höhere Beitrag wird aber weiterhin abgebucht. Schreiben Sie eine E-Mail an die Studioleitung.",
+              "leitpunkte": [
+                "Grund Ihres Schreibens",
+                "Was Sie gebucht haben und was sich geändert hat",
+                "Was Sie vom Studio fordern",
+                "Was Sie tun, wenn Sie keine Antwort bekommen"
+              ],
+              "register": "formal",
+              "wordTarget": {
+                "min": 80,
+                "max": 120
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Cover all four points: why you are writing, what you booked (the evening yoga course at a higher fee) and what changed, what you want (e.g. a refund of the difference or a replacement course), and what you will do if they do not reply, such as cancelling your membership.",
+            "de": "Behandeln Sie alle vier Punkte: warum Sie schreiben, was Sie gebucht haben (den Yogakurs am Abend zum höheren Beitrag) und was sich geändert hat, was Sie fordern (z. B. die Erstattung der Differenz oder einen Ersatzkurs) und was Sie tun, wenn keine Antwort kommt, etwa die Mitgliedschaft kündigen."
+          },
+          {
+            "en": "Write a formal e-mail with \"Sehr geehrte Damen und Herren,\" and \"Mit freundlichen Grüßen\". Give each point its own short paragraph, link sentences with \"obwohl\", \"seitdem\" and \"daher\", and keep the tone firm but polite.",
+            "de": "Schreiben Sie eine formelle E-Mail mit „Sehr geehrte Damen und Herren,“ und „Mit freundlichen Grüßen“. Geben Sie jedem Punkt einen eigenen kurzen Absatz, verbinden Sie die Sätze mit „obwohl“, „seitdem“ und „daher“, und bleiben Sie bestimmt, aber höflich."
+          },
+          {
+            "en": "Use the passive for what happened (\"Der Kurs wurde gestrichen\", \"Der Beitrag wird abgebucht\") and polite requests (\"Ich bitte Sie, …\", \"Ich wäre Ihnen dankbar, wenn …\"). Check the word order in subordinate clauses.",
+            "de": "Verwenden Sie das Passiv für das, was passiert ist („Der Kurs wurde gestrichen“, „Der Beitrag wird abgebucht“), und höfliche Bitten („Ich bitte Sie, …“, „Ich wäre Ihnen dankbar, wenn …“). Kontrollieren Sie die Wortstellung in Nebensätzen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-b2__schreiben-2__s02",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie wohnen zur Miete in einem Mehrfamilienhaus in Ihrer Stadt. Seit zwei Wochen funktioniert die Heizung in Ihrer Wohnung nicht mehr richtig. Sie haben den Hausmeister schon zweimal angerufen, aber es ist nichts passiert. Schreiben Sie eine E-Mail an die Hausverwaltung Kolbe & Partner.",
+              "leitpunkte": [
+                "Was genau nicht funktioniert und seit wann",
+                "Was Sie bisher unternommen haben",
+                "Welche Folgen das Problem für Sie hat",
+                "Was Sie von der Hausverwaltung erwarten und bis wann"
+              ],
+              "register": "formal",
+              "wordTarget": {
+                "min": 80,
+                "max": 120
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Deal with all four points: describe the fault precisely and since when it has existed, mention your two calls to the caretaker, explain the consequences (e.g. cold rooms, a sick child, working from home), and set a clear request with a deadline.",
+            "de": "Behandeln Sie alle vier Punkte: Beschreiben Sie den Defekt genau und seit wann er besteht, erwähnen Sie Ihre zwei Anrufe beim Hausmeister, erklären Sie die Folgen (z. B. kalte Räume, ein krankes Kind, Arbeit im Homeoffice) und nennen Sie eine klare Forderung mit Frist."
+          },
+          {
+            "en": "Use a formal greeting and closing and a clear order: problem, what you have done, consequences, request. Connect the sentences with \"seit\", \"obwohl\", \"deshalb\" and \"außerdem\", and stay factual even though you are annoyed.",
+            "de": "Verwenden Sie eine formelle Anrede und einen formellen Gruß und eine klare Reihenfolge: Problem, Ihre bisherigen Schritte, Folgen, Forderung. Verbinden Sie die Sätze mit „seit“, „obwohl“, „deshalb“ und „außerdem“, und bleiben Sie sachlich, auch wenn Sie verärgert sind."
+          },
+          {
+            "en": "Use the Perfekt and Präteritum correctly for past events (\"Ich habe angerufen\", \"Niemand kam\") and \"seit\" with the present tense (\"Seit zwei Wochen funktioniert …\"). Formal requests such as \"Ich fordere Sie auf, …\" fit B2 well.",
+            "de": "Verwenden Sie Perfekt und Präteritum richtig für Vergangenes („Ich habe angerufen“, „Niemand kam“) und „seit“ mit dem Präsens („Seit zwei Wochen funktioniert …“). Formelle Aufforderungen wie „Ich fordere Sie auf, …“ passen gut zu B2."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-b2__schreiben-2__s03",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie arbeiten seit Kurzem freiberuflich als Grafikerin oder Grafiker und möchten nicht mehr nur zu Hause arbeiten. Im Internet haben Sie eine Anzeige des Gemeinschaftsbüros „Werkraum Elbufer“ gefunden, das Arbeitsplätze tage- und monatsweise vermietet. Schreiben Sie eine E-Mail an das Gemeinschaftsbüro.",
+              "leitpunkte": [
+                "Wer Sie sind und warum Sie schreiben",
+                "Was Sie für Ihre Arbeit brauchen",
+                "Fragen zu Preisen und Vertragsbedingungen",
+                "Bitte um einen Probetag oder eine Besichtigung"
+              ],
+              "register": "formal",
+              "wordTarget": {
+                "min": 80,
+                "max": 120
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Cover all four points: introduce yourself briefly and say why you are writing, name concrete needs (e.g. a large screen, quiet hours, a meeting room), ask specific questions about prices and notice periods, and ask for a trial day or a visit.",
+            "de": "Behandeln Sie alle vier Punkte: Stellen Sie sich kurz vor und sagen Sie, warum Sie schreiben, nennen Sie konkrete Bedürfnisse (z. B. einen großen Bildschirm, ruhige Arbeitszeiten, einen Besprechungsraum), stellen Sie genaue Fragen zu Preisen und Kündigungsfristen und bitten Sie um einen Probetag oder eine Besichtigung."
+          },
+          {
+            "en": "This is a formal enquiry, not a complaint: open with \"Sehr geehrte Damen und Herren,\", keep the tone friendly and polite, and close with \"Mit freundlichen Grüßen\". Link your questions smoothly, e.g. with \"außerdem\", \"darüber hinaus\" and \"zuletzt\".",
+            "de": "Das ist eine formelle Anfrage, keine Beschwerde: Beginnen Sie mit „Sehr geehrte Damen und Herren,“, bleiben Sie freundlich und höflich und schließen Sie mit „Mit freundlichen Grüßen“. Verbinden Sie Ihre Fragen flüssig, z. B. mit „außerdem“, „darüber hinaus“ und „zuletzt“."
+          },
+          {
+            "en": "Use indirect questions with the verb at the end (\"Könnten Sie mir mitteilen, wie hoch die Miete ist?\", \"Ich möchte wissen, ob …\") and the Konjunktiv II for polite requests (\"Wäre es möglich, …?\").",
+            "de": "Verwenden Sie indirekte Fragen mit dem Verb am Ende („Könnten Sie mir mitteilen, wie hoch die Miete ist?“, „Ich möchte wissen, ob …“) und den Konjunktiv II für höfliche Bitten („Wäre es möglich, …?“)."
+          }
+        ]
+      }
+    }
+  ]
+}

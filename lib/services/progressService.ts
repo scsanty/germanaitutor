@@ -225,6 +225,7 @@ export function createProgressService(db: Database.Database, deps: ProgressDeps 
          JOIN milestones m ON m.id = p.milestone_id
          WHERE m.track = ? AND m.level = ? AND st.next_due_at <= ?
            AND NOT (e.type = 'flashcard' AND l.skill = 'vocabulary') -- B1: those live in the vocabulary deck
+           AND e.type <> 'letter' -- Writing: a letter task never enters review
            AND NOT EXISTS (
              SELECT 1 FROM lesson_attempts a WHERE a.exercise_id = e.id AND a.source = 'queue' AND a.answered_on = ?
            )

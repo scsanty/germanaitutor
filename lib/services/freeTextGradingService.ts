@@ -1,12 +1,13 @@
 import type Database from 'better-sqlite3';
 import type { LocalizedText } from '../i18n/localizedText';
 import type { GradeResult } from '../tutoring/grading';
-import { buildFreeTextGradingPrompt, parseFreeTextGrade, type FreeTextGradingInput } from '../tutoring/freeTextGrading';
+import { buildFreeTextGradingPrompt, parseFreeTextGrade, type FreeTextGradingInput, type FreeTextMistake } from '../tutoring/freeTextGrading';
 import type { ErrorCode, ErrorParams } from '../tutoring/errorCodes';
 import { generateWithActiveProvider } from './aiService';
 
 export type FreeTextGradeOutcome =
-  | { ok: true; result: GradeResult; feedback: LocalizedText | null }
+  // S7: mistakes are returned, never logged here (placement shares this grader and never logs).
+  | { ok: true; result: GradeResult; feedback: LocalizedText | null; mistakes?: FreeTextMistake[] }
   | { ok: false; error: string; code?: ErrorCode; params?: ErrorParams };
 
 export async function gradeFreeText(

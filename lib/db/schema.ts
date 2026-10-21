@@ -184,7 +184,7 @@ export function runMigrations(db: Database.Database): void {
     migrateFreestyle(db);
     migrateFlashcardReviewsToDeck(db);
     migrateExerciseTypeCheck(db, EXERCISE_TYPES);
-    migrateTeilAttemptAnswers(db);
+    migrateTeilAttemptColumns(db);
   });
   // Table rebuilds (migrateExerciseTypeCheck) must run with foreign keys OFF, or DROP TABLE would cascade
   // to attempts and reviews. SQLite ignores this pragma inside a transaction, so it wraps the transaction.
@@ -197,7 +197,7 @@ export function runMigrations(db: Database.Database): void {
   }
 }
 
-// Every exercise type the two exercise tables accept (the Reading types, then Listening's audio_questions).
+// Every exercise type the two exercise tables accept (the Reading types, Listening's audio_questions, Writing's letter).
 export const EXERCISE_TYPES = [
   'multiple_choice',
   'fill_blank',
@@ -207,6 +207,7 @@ export const EXERCISE_TYPES = [
   'matching',
   'cloze',
   'audio_questions',
+  'letter',
 ] as const;
 
 // SQLite can't change a CHECK in place, so each table whose type CHECK lacks a type is rebuilt
@@ -427,7 +428,7 @@ function createTablesIfMissing(db: Database.Database): void {
       id TEXT PRIMARY KEY,
       lesson_id TEXT NOT NULL REFERENCES lessons(id) ON DELETE CASCADE,
       track TEXT CHECK (track IN ('generic','telc','goethe')),
-      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','flashcard','free_text','passage_questions','matching','cloze','audio_questions')),
+      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','flashcard','free_text','passage_questions','matching','cloze','audio_questions','letter')),
       content TEXT NOT NULL
     );
 
@@ -544,7 +545,7 @@ function createTablesIfMissing(db: Database.Database): void {
     CREATE TABLE IF NOT EXISTS practice_exercises (
       id TEXT PRIMARY KEY,
       lesson_id TEXT NOT NULL REFERENCES lessons(id) ON DELETE CASCADE,
-      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','flashcard','free_text','passage_questions','matching','cloze','audio_questions')),
+      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','flashcard','free_text','passage_questions','matching','cloze','audio_questions','letter')),
       content TEXT NOT NULL,
       review_status TEXT NOT NULL DEFAULT 'unreviewed' CHECK (review_status IN ('unreviewed','approved','rejected')),
       created_at TEXT NOT NULL,
@@ -623,7 +624,8 @@ function createTablesIfMissing(db: Database.Database): void {
       mock_id TEXT,
       score REAL, max_score REAL, overtime_seconds INTEGER,
       started_at TEXT NOT NULL, finished_at TEXT,
-      answers TEXT
+      answers TEXT,
+      grading_started_at TEXT, result TEXT
     );
     CREATE TABLE IF NOT EXISTS teil_bundle_meta (
       format_id TEXT NOT NULL, part_id TEXT NOT NULL, version TEXT NOT NULL,
@@ -655,12 +657,26 @@ function createTablesIfMissing(db: Database.Database): void {
       email_error TEXT
     );
     CREATE UNIQUE INDEX IF NOT EXISTS idx_admin_notifications_open ON admin_notifications(problem_key) WHERE resolved_at IS NULL;
+
+    -- Writing: the cross-module error log (short snippets only). "right" is quoted: it is an SQL keyword.
+    CREATE TABLE IF NOT EXISTS error_log (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      source TEXT NOT NULL CHECK (source IN ('lesson','teil','freestyle_chat','freestyle_writing','speaking')),
+      category TEXT NOT NULL,
+      wrong TEXT NOT NULL, "right" TEXT NOT NULL,
+      created_at TEXT NOT NULL
+    );
+    CREATE INDEX IF NOT EXISTS idx_error_log_created ON error_log(created_at);
   `);
 }
 
-// Reading module (S9): a finished attempt keeps its raw answers, only so a repeated submit can return
-// the same review. They never feed the error log or mastery.
-function migrateTeilAttemptAnswers(db: Database.Database): void {
-  const columns = db.prepare('PRAGMA table_info(teil_attempts)').all() as { name: string }[];
-  if (!columns.some((c) => c.name === 'answers')) db.exec('ALTER TABLE teil_attempts ADD COLUMN answers TEXT');
+// Reading module (S9): a finished attempt keeps its raw answers, so a repeated submit can return the
+// same review. They never feed mastery; only a letter's grading marks reach the error log (source 'teil').
+// Writing (B4): `grading_started_at` locks a letter attempt while the AI grades it (stale after 120 s),
+// and `result` keeps the letter's grade, so a repeated submit replays it instead of grading again.
+function migrateTeilAttemptColumns(db: Database.Database): void {
+  const columns = new Set((db.prepare('PRAGMA table_info(teil_attempts)').all() as { name: string }[]).map((c) => c.name));
+  for (const name of ['answers', 'grading_started_at', 'result']) {
+    if (!columns.has(name)) db.exec(`ALTER TABLE teil_attempts ADD COLUMN ${name} TEXT`);
+  }
 }

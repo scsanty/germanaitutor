@@ -1,4 +1,8 @@
 import { describe, it, expect, vi, afterEach } from 'vitest';
+
+const push = vi.fn();
+vi.mock('next/navigation', () => ({ useRouter: () => ({ push }) }));
+
 import { useState } from 'react';
 import { screen, fireEvent } from '@testing-library/react';
 import { renderWithIntl } from '@/test/renderWithIntl';
@@ -102,6 +106,20 @@ describe('TaskInputs', () => {
     expect(screen.getByText('Words to use')).toBeInTheDocument();
   });
 
+  it('cloze: one shared umlaut row acts on the last-focused typed gap', () => {
+    localStorage.clear();
+    const view = { text: 'Das {{1}} und {{2}}.', gaps: [{ mode: 'typed' }, { mode: 'typed' }] };
+    renderWithIntl(<Harness type="cloze" view={view as never} onAnswer={vi.fn()} />);
+    expect(screen.getAllByRole('button', { name: 'äöü' })).toHaveLength(1);
+    fireEvent.click(screen.getByRole('button', { name: 'äöü' }));
+    const two = screen.getByLabelText('Gap 2') as HTMLInputElement;
+    two.focus();
+    fireEvent.click(screen.getByRole('button', { name: 'Insert ö' }));
+    expect(two).toHaveValue('ö');
+    expect(screen.getByLabelText('Gap 1')).toHaveValue('');
+    localStorage.clear();
+  });
+
   it("reveals a listening part's transcript with the evidence, and names each item by its question", () => {
     const run = {
       ...RUN,
@@ -126,5 +144,92 @@ describe('TaskInputs', () => {
   it('starts a listening task with every question unanswered', () => {
     const view = { audio: { hash: 'f'.repeat(64), available: false }, questions: [{ question: 'A?', options: ['x', 'y'] }, { question: 'B?', options: ['x', 'y'] }] };
     expect(emptyAnswer('audio_questions', view as TaskView)).toEqual({ type: 'audio_questions', selected: [null, null] });
+  });
+});
+
+// Writing (S11, S17): a letter's review is its grade, with no "Ask about this", and a copy into free writing.
+describe('TeilReview for a letter', () => {
+  const RUBRIC = {
+    criteria: ['aufgabe', 'gestaltung', 'richtigkeit'].map((id, i) => ({
+      id,
+      name: { en: ['Task completion', 'Communicative design', 'Formal accuracy'][i], de: ['Aufgabenbewältigung', 'Kommunikative Gestaltung', 'Formale Richtigkeit'][i] },
+      points: { A: 15, B: 10, C: 5, D: 0 },
+      descriptors: { A: 'a', B: 'b', C: 'c', D: 'd' },
+    })),
+  };
+  const SITUATION = 'Sie haben in einem Hotel übernachtet. '.repeat(8).trim();
+  const LETTER_RUN = {
+    ...RUN,
+    attemptId: 21,
+    part: { id: 'schreiben', skill: 'writing', title: { en: 'Writing', de: 'Schriftlicher Ausdruck' }, taskType: 'letter', items: 3, points: 45, minutes: 30, instructions: 'Wählen Sie …', rubric: RUBRIC },
+    set: { id: 's3', view: { tasks: [{ situation: 'Aufgabe A', leitpunkte: ['a', 'b', 'c'], register: 'informal', wordTarget: { min: 120, max: 180 } }, { situation: SITUATION, leitpunkte: ['a', 'b', 'c'], register: 'formal', wordTarget: { min: 120, max: 180 } }] } },
+  };
+  const TEXT = 'Sehr geehrte Damen und Herren, ich habe ein Problem mit mein Zimmer.';
+  const LETTER_RESULT = {
+    attemptId: 21,
+    score: 25,
+    maxScore: 45,
+    overtimeSeconds: 0,
+    review: [],
+    text: TEXT,
+    taskIndex: 1,
+    tips: [{ en: 'Cover all points.', de: 'Behandle alle Punkte.' }, { en: 'Tip 2.', de: 'Tipp 2.' }, { en: 'Tip 3.', de: 'Tipp 3.' }],
+    letter: {
+      marks: [{ start: TEXT.indexOf('mit mein Zimmer'), end: TEXT.indexOf('mit mein Zimmer') + 15, original: 'mit mein Zimmer', correction: 'mit meinem Zimmer', type: 'grammar', category: 'case', reason: { en: 'Dative.', de: 'Dativ.' } }],
+      criteria: [
+        { id: 'aufgabe', grade: 'B', justification: { en: 'One point thin.', de: 'Ein Punkt knapp.' } },
+        { id: 'gestaltung', grade: 'B', justification: { en: 'Fine.', de: 'Gut.' } },
+        { id: 'richtigkeit', grade: 'C', justification: { en: 'Errors.', de: 'Fehler.' } },
+      ],
+      points: 25,
+      maxPoints: 45,
+      percent: 56,
+      corrected: 'Sehr geehrte Damen und Herren, ich habe ein Problem mit meinem Zimmer.',
+      summary: { en: 'A fair letter.', de: 'Ein ordentlicher Brief.' },
+    },
+  };
+
+  afterEach(() => {
+    push.mockClear();
+    sessionStorage.clear();
+    vi.unstubAllGlobals();
+  });
+
+  it('shows the letter result without Ask about this, and copies the letter into free writing', async () => {
+    const fetchMock = vi.fn((_url: string, _init?: RequestInit) => delayedResponse({ id: 1, mode: 'free_writing' }));
+    vi.stubGlobal('fetch', fetchMock);
+    renderWithIntl(<TeilReview result={LETTER_RESULT as never} run={LETTER_RUN as never} />);
+    expect(screen.getByText('25 of 45 points (56%)')).toBeInTheDocument();
+    expect(screen.getByRole('listitem', { name: 'Task completion' })).toHaveTextContent('Grade B');
+    expect(screen.getByText('Tip: Cover all points.')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'mit mein Zimmer' })).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Ask about this' })).toBeNull();
+
+    fireEvent.click(screen.getByRole('button', { name: 'Copy into free writing' }));
+    await vi.waitFor(() => expect(push).toHaveBeenCalledWith('/freestyle/free_writing?draft=1'));
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    const [url, init] = fetchMock.mock.calls[0];
+    expect(url).toBe('/api/freestyle/free_writing/session');
+    const body = JSON.parse(init!.body as string);
+    // S11: the prompt is the chosen task's situation, cut to the Freestyle setup limit of 200 characters.
+    expect(body.level).toBe('B1');
+    expect(body.setup.prompt.length).toBeLessThanOrEqual(200);
+    expect(SITUATION.startsWith(body.setup.prompt.replace(/…$/, ''))).toBe(true);
+    expect(sessionStorage.getItem('nadoch.writingDraft')).toBe(TEXT);
+  });
+
+  it('shows the error and stays when free writing cannot be opened', async () => {
+    vi.stubGlobal('fetch', vi.fn(() => delayedResponse({ error: 'x', code: 'level_locked', params: { level: 'B1' } }, { ok: false, status: 403 })));
+    renderWithIntl(<TeilReview result={LETTER_RESULT as never} run={LETTER_RUN as never} />);
+    fireEvent.click(screen.getByRole('button', { name: 'Copy into free writing' }));
+    expect(await screen.findByRole('alert')).toBeInTheDocument();
+    expect(push).not.toHaveBeenCalled();
+    expect(sessionStorage.getItem('nadoch.writingDraft')).toBeNull();
+  });
+
+  it('has no copy button inside a mock', () => {
+    renderWithIntl(<TeilReview result={LETTER_RESULT as never} run={{ ...LETTER_RUN, mockId: 'm1' } as never} />);
+    expect(screen.getByText('25 of 45 points (56%)')).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Copy into free writing' })).toBeNull();
   });
 });

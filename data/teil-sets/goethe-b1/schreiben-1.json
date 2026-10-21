@@ -1,0 +1,130 @@
+{
+  "formatId": "goethe-b1",
+  "partId": "schreiben-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-b1__schreiben-1__s01",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie haben am Sonntag zum ersten Mal bei einem Stadtlauf über zehn Kilometer mitgemacht. Ihr Freund Lukas läuft auch gern, war aber nicht dabei. Schreiben Sie Lukas eine E-Mail.",
+              "leitpunkte": [
+                "Beschreiben Sie: Wie war der Lauf für Sie?",
+                "Begründen Sie: Warum möchten Sie wieder mitmachen?",
+                "Machen Sie Lukas einen Vorschlag für ein gemeinsames Training."
+              ],
+              "register": "informal",
+              "wordTarget": {
+                "min": 64,
+                "max": 96
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Deal with all three points in about 80 words: describe how the run went for you (the route, how you felt, your time), give at least one reason why you want to run again, and suggest a concrete day and place for training together. Only an e-mail that does not fit the situation or hardly exists gets an E, and then the whole text scores 0; a missing or thin point only costs points.",
+            "de": "Behandeln Sie alle drei Punkte in etwa 80 Wörtern: Beschreiben Sie, wie der Lauf für Sie war (Strecke, Gefühl, Zeit), nennen Sie mindestens einen Grund, warum Sie wieder mitmachen möchten, und schlagen Sie einen konkreten Tag und Ort für ein gemeinsames Training vor. Ein E gibt es nur, wenn die E-Mail nicht zur Situation passt oder kaum vorhanden ist; dann zählt der ganze Text 0 Punkte. Ein fehlender oder zu knapper Punkt kostet nur Punkte."
+          },
+          {
+            "en": "Start with „Lieber Lukas“ or „Hallo Lukas“ and end with „Liebe Grüße“ or „Viele Grüße“ and your name. Give each point its own short paragraph and tell the run in order with zuerst and danach; lead to your reason and suggestion with deshalb.",
+            "de": "Beginnen Sie mit „Lieber Lukas“ oder „Hallo Lukas“ und enden Sie mit „Liebe Grüße“ oder „Viele Grüße“ und Ihrem Namen. Schreiben Sie zu jedem Punkt einen kurzen Absatz, erzählen Sie den Lauf der Reihe nach mit zuerst und danach und leiten Sie mit deshalb zu Grund und Vorschlag über."
+          },
+          {
+            "en": "Use running words: der Lauf, die Strecke, das Ziel, die Zuschauer, trainieren, anstrengend, stolz. Instead of repeating gut or toll, say exactly what you liked.",
+            "de": "Verwenden Sie Wörter zum Laufen: der Lauf, die Strecke, das Ziel, die Zuschauer, trainieren, anstrengend, stolz. Wiederholen Sie nicht immer gut oder toll; sagen Sie genau, was Ihnen gefallen hat."
+          },
+          {
+            "en": "Tell the run in the Perfekt with sein (Ich bin zehn Kilometer gelaufen, Ich bin nach einer Stunde ins Ziel gekommen) and check the verb at the end after weil (… weil die Stimmung so schön war). For the suggestion, Hast du Lust, … zu …? or Wir könnten … works well.",
+            "de": "Erzählen Sie den Lauf im Perfekt mit sein (Ich bin zehn Kilometer gelaufen, Ich bin nach einer Stunde ins Ziel gekommen) und achten Sie nach weil auf das Verb am Ende (… weil die Stimmung so schön war). Für den Vorschlag passen Hast du Lust, … zu …? oder Wir könnten …"
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__schreiben-1__s02",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Ihre Freundin Miriam hat Ihnen zum Geburtstag einen Gutschein für einen Kochkurs geschenkt. Letzten Samstag waren Sie dort. Schreiben Sie Miriam eine E-Mail.",
+              "leitpunkte": [
+                "Beschreiben Sie: Was haben Sie im Kurs gekocht?",
+                "Begründen Sie: Warum hat Ihnen der Kurs (nicht) gefallen?",
+                "Machen Sie einen Vorschlag für ein gemeinsames Essen."
+              ],
+              "register": "informal",
+              "wordTarget": {
+                "min": 64,
+                "max": 96
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Thank Miriam briefly, then cover all three points: name the dishes you cooked, say how you liked the course and why, and suggest when and where you could eat together. Only an e-mail that does not fit the situation or hardly exists gets an E, and then the whole text scores 0; a missing or thin point only costs points.",
+            "de": "Bedanken Sie sich kurz bei Miriam und behandeln Sie dann alle drei Punkte: Nennen Sie die Gerichte, die Sie gekocht haben, sagen Sie, wie Ihnen der Kurs gefallen hat und warum, und schlagen Sie vor, wann und wo Sie zusammen essen können. Ein E gibt es nur, wenn die E-Mail nicht zur Situation passt oder kaum vorhanden ist; dann zählt der ganze Text 0 Punkte. Ein fehlender oder zu knapper Punkt kostet nur Punkte."
+          },
+          {
+            "en": "Open with „Liebe Miriam“ and a thank-you, close with „Liebe Grüße“ and your name. Connect the points with zuerst, danach, außerdem and deshalb so that the course reads as a little story.",
+            "de": "Beginnen Sie mit „Liebe Miriam“ und einem Dank, und enden Sie mit „Liebe Grüße“ und Ihrem Namen. Verbinden Sie die Punkte mit zuerst, danach, außerdem und deshalb, damit der Kurs wie eine kleine Geschichte klingt."
+          },
+          {
+            "en": "Show cooking vocabulary: schneiden, braten, backen, die Soße, das Rezept, der Koch / die Köchin, lecker, scharf. To give your opinion, use Am besten hat mir … gefallen or Besonders interessant war …",
+            "de": "Zeigen Sie Wortschatz zum Kochen: schneiden, braten, backen, die Soße, das Rezept, der Koch / die Köchin, lecker, scharf. Für Ihre Bewertung passen Am besten hat mir … gefallen oder Besonders interessant war …"
+          },
+          {
+            "en": "Use the Perfekt for Saturday (Wir haben eine Gemüsesuppe gekocht) and a subordinate clause for the reason (… weil der Koch alles gut erklärt hat). For the invitation, try a question with Möchtest du … or Wollen wir …?",
+            "de": "Verwenden Sie das Perfekt für den Samstag (Wir haben eine Gemüsesuppe gekocht) und einen Nebensatz für die Begründung (… weil der Koch alles gut erklärt hat). Für die Einladung passt eine Frage mit Möchtest du … oder Wollen wir …?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__schreiben-1__s03",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Ihr Freund Daniel möchte im August mit Ihnen eine Woche lang eine Radtour an der Ostsee machen. Sie haben aber vor Kurzem eine neue Arbeitsstelle angefangen. Schreiben Sie Daniel eine E-Mail.",
+              "leitpunkte": [
+                "Beschreiben Sie: Was machen Sie in Ihrer neuen Arbeit?",
+                "Begründen Sie: Warum können Sie im August nicht mitfahren?",
+                "Machen Sie einen anderen Vorschlag."
+              ],
+              "register": "informal",
+              "wordTarget": {
+                "min": 64,
+                "max": 96
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "All three points matter: describe your new job (tasks, colleagues, hours), explain clearly why August does not work, and offer a real alternative, for example a weekend trip or a later date. Only an e-mail that does not fit the situation or hardly exists gets an E, and then the whole text scores 0; a missing or thin point only costs points.",
+            "de": "Alle drei Punkte sind wichtig: Beschreiben Sie Ihre neue Arbeit (Aufgaben, Kollegen, Arbeitszeiten), erklären Sie klar, warum der August nicht geht, und machen Sie einen echten anderen Vorschlag, zum Beispiel eine Wochenendtour oder einen späteren Termin. Ein E gibt es nur, wenn die E-Mail nicht zur Situation passt oder kaum vorhanden ist; dann zählt der ganze Text 0 Punkte. Ein fehlender oder zu knapper Punkt kostet nur Punkte."
+          },
+          {
+            "en": "Begin with „Lieber Daniel“ and thank him for the idea, end with „Viele Grüße“ and your name. Lead from the job to the reason with deshalb or leider, and to your suggestion with aber or stattdessen.",
+            "de": "Beginnen Sie mit „Lieber Daniel“ und danken Sie ihm für die Idee; enden Sie mit „Viele Grüße“ und Ihrem Namen. Führen Sie mit deshalb oder leider von der Arbeit zum Grund und mit aber oder stattdessen zu Ihrem Vorschlag."
+          },
+          {
+            "en": "Use words for work and holidays: die Probezeit, der Urlaub, die Kollegen, Urlaub nehmen, frei haben, die Radtour, übernachten. Soften the refusal with leider, schade or Es tut mir leid.",
+            "de": "Verwenden Sie Wörter zu Arbeit und Urlaub: die Probezeit, der Urlaub, die Kollegen, Urlaub nehmen, frei haben, die Radtour, übernachten. Machen Sie die Absage freundlicher mit leider, schade oder Es tut mir leid."
+          },
+          {
+            "en": "Explain the reason with weil or denn and watch the word order: weil puts the verb at the end, denn does not (… weil ich noch in der Probezeit bin / … denn ich bin noch in der Probezeit). For the alternative, the Konjunktiv II Wir könnten … sounds natural.",
+            "de": "Erklären Sie den Grund mit weil oder denn und achten Sie auf die Wortstellung: Nach weil steht das Verb am Ende, nach denn nicht (… weil ich noch in der Probezeit bin / … denn ich bin noch in der Probezeit). Für den anderen Vorschlag klingt der Konjunktiv II Wir könnten … natürlich."
+          }
+        ]
+      }
+    }
+  ]
+}

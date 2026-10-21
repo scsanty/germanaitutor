@@ -11,6 +11,7 @@ import type {
   MatchingContent,
   ClozeContent,
   AudioQuestionsContent,
+  LetterContent,
 } from '@/lib/curriculum/types';
 import type { PracticePoolItem, PracticeReviewStatus } from '@/lib/services/practiceAdminService';
 import { LEVELS, TRACKS, TRACK_LABEL } from '@/lib/tutoring/levels';
@@ -38,6 +39,8 @@ function preview(item: PracticePoolItem): string {
       return (item.content as PassageQuestionsContent).passage;
     case 'matching':
       return (item.content as MatchingContent).items.join(' | ');
+    case 'letter':
+      return (item.content as LetterContent).tasks[0]?.situation ?? '';
     case 'cloze':
       return (item.content as ClozeContent).text;
     case 'audio_questions':

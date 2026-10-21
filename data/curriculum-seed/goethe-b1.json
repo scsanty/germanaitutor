@@ -1,5 +1,5 @@
 {
-  "seedVersion": "10",
+  "seedVersion": "11",
   "formatVersion": 3,
   "track": "goethe",
   "level": "B1",
@@ -1864,6 +1864,33 @@
       }
     },
     {
+      "id": "b1-goethe-writing-aufgabe1-personal-email__ex4",
+      "lessonId": "b1-goethe-writing-aufgabe1-personal-email",
+      "track": "goethe",
+      "type": "letter",
+      "content": {
+        "instruction": {
+          "en": "Write a personal email (about 80 words) to your friend Clara and cover all three points.",
+          "de": "Schreiben Sie Ihrer Freundin Clara eine persönliche E-Mail (ca. 80 Wörter). Schreiben Sie zu allen drei Punkten."
+        },
+        "tasks": [
+          {
+            "situation": "Sie haben das letzte Wochenende auf einem Bauernhof verbracht und dort bei der Arbeit mitgeholfen. Ihre Freundin Clara war noch nie auf einem Bauernhof. Schreiben Sie Clara eine E-Mail.",
+            "leitpunkte": [
+              "Beschreiben Sie: Was haben Sie auf dem Bauernhof gemacht?",
+              "Begründen Sie: Was hat Ihnen besonders gut oder gar nicht gefallen?",
+              "Machen Sie Clara einen Vorschlag für ein Treffen."
+            ],
+            "register": "informal",
+            "wordTarget": {
+              "min": 64,
+              "max": 96
+            }
+          }
+        ]
+      }
+    },
+    {
       "id": "b1-goethe-writing-aufgabe2-forum-opinion__ex0",
       "lessonId": "b1-goethe-writing-aufgabe2-forum-opinion",
       "track": "goethe",
@@ -1914,6 +1941,33 @@
       }
     },
     {
+      "id": "b1-goethe-writing-aufgabe2-forum-opinion__ex4",
+      "lessonId": "b1-goethe-writing-aufgabe2-forum-opinion",
+      "track": "goethe",
+      "type": "letter",
+      "content": {
+        "instruction": {
+          "en": "Write a post (about 80 words) for the online guestbook and give your opinion. Do not use a letter greeting.",
+          "de": "Schreiben Sie einen Beitrag (ca. 80 Wörter) für das Online-Gästebuch und sagen Sie Ihre Meinung. Schreiben Sie keine Briefanrede."
+        },
+        "tasks": [
+          {
+            "situation": "Sie haben im Radio eine Sendung zum Thema „Einkaufen am Sonntag“ gehört. Im Online-Gästebuch der Sendung finden Sie folgenden Beitrag:\n\nKatrin: „Ich arbeite von Montag bis Samstag und komme oft erst um 19 Uhr nach Hause. Ich wünsche mir, dass die Geschäfte auch am Sonntag öffnen. Dann könnte ich endlich in Ruhe einkaufen.“",
+            "leitpunkte": [
+              "Ihre Meinung zu offenen Geschäften am Sonntag",
+              "Gründe und ein Beispiel aus Ihrem Alltag",
+              "Bezug zum Beitrag von Katrin"
+            ],
+            "register": "semi_formal",
+            "wordTarget": {
+              "min": 64,
+              "max": 96
+            }
+          }
+        ]
+      }
+    },
+    {
       "id": "b1-goethe-writing-aufgabe3-formal-apology-request__ex0",
       "lessonId": "b1-goethe-writing-aufgabe3-formal-apology-request",
       "track": "goethe",
@@ -1951,6 +2005,33 @@
           "en": "Write a complete formal email (ca. 40 words) to your language teacher, Herr Braun, explaining that you cannot attend class today due to an urgent doctor's appointment.",
           "de": "Schreiben Sie eine vollständige formelle E-Mail (ca. 40 Wörter) an Ihren Sprachlehrer, Herrn Braun. Erklären Sie, dass Sie heute wegen eines dringenden Arzttermins nicht zum Unterricht kommen können."
         }
+      }
+    },
+    {
+      "id": "b1-goethe-writing-aufgabe3-formal-apology-request__ex3",
+      "lessonId": "b1-goethe-writing-aufgabe3-formal-apology-request",
+      "track": "goethe",
+      "type": "letter",
+      "content": {
+        "instruction": {
+          "en": "Write a short formal email (about 40 words) to your manager and cover all three points.",
+          "de": "Schreiben Sie Ihrer Vorgesetzten eine kurze formelle E-Mail (ca. 40 Wörter). Schreiben Sie zu allen drei Punkten."
+        },
+        "tasks": [
+          {
+            "situation": "Ihre Vorgesetzte, Frau Lorenz, hat Sie für nächsten Montag um 9 Uhr zu einem Mitarbeitergespräch eingeladen. An diesem Tag können Sie aber nicht ins Büro kommen. Schreiben Sie Frau Lorenz eine E-Mail.",
+            "leitpunkte": [
+              "Entschuldigen Sie sich.",
+              "Nennen Sie den Grund.",
+              "Schlagen Sie zwei andere Termine vor."
+            ],
+            "register": "formal",
+            "wordTarget": {
+              "min": 32,
+              "max": 48
+            }
+          }
+        ]
       }
     },
     {

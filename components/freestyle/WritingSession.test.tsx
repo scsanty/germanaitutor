@@ -83,3 +83,69 @@ describe('WritingSession', () => {
     expect(onMessages).not.toHaveBeenCalled();
   });
 });
+
+// S11: "Copy into free writing" leaves the letter in sessionStorage; the box takes it once.
+describe('WritingSession draft from a Teil letter', () => {
+  afterEach(() => sessionStorage.clear());
+
+  it('pre-fills the empty box with the stored draft and removes it', () => {
+    sessionStorage.setItem('nadoch.writingDraft', 'Sehr geehrte Damen und Herren');
+    renderWithIntl(<WritingSession session={SESSION} onMessages={vi.fn()} />);
+    expect(screen.getByLabelText('Your text')).toHaveValue('Sehr geehrte Damen und Herren');
+    expect(sessionStorage.getItem('nadoch.writingDraft')).toBeNull();
+  });
+
+  it('works without a stored draft, and when storage throws', () => {
+    renderWithIntl(<WritingSession session={SESSION} onMessages={vi.fn()} />);
+    expect(screen.getByLabelText('Your text')).toHaveValue('');
+    const spy = vi.spyOn(Storage.prototype, 'getItem').mockImplementation(() => {
+      throw new Error('blocked');
+    });
+    renderWithIntl(<WritingSession session={SESSION} onMessages={vi.fn()} />);
+    spy.mockRestore();
+  });
+});
+
+describe('WritingSession marked-up corrections (T8)', () => {
+  const withReply = (content: string, corrections: unknown[]) => ({
+    ...SESSION,
+    messages: [
+      { id: 1, role: 'user', content, extra: null },
+      { id: 2, role: 'assistant', content: 'Korrigiert.', extra: { corrections, comment: { en: 'Nice!', de: 'Schön!' } } },
+    ] as never,
+  });
+
+  it('marks each correction in the submitted text and opens the fix, and lists every correction', () => {
+    vi.stubGlobal('fetch', vi.fn());
+    const corrections = [
+      { wrong: 'habe', right: 'bin', category: 'perfect_auxiliary', reason: { en: 'fahren takes sein', de: 'fahren mit sein' } },
+      { wrong: 'nicht im Text', right: 'x', category: 'other', reason: { en: 'missing', de: 'fehlt' } },
+    ];
+    renderWithIntl(<WritingSession session={withReply('Ich habe nach Rom gefahren.', corrections)} onMessages={vi.fn()} />);
+    fireEvent.click(screen.getByRole('button', { name: 'habe' }));
+    expect(screen.getByRole('dialog', { name: 'habe' })).toHaveTextContent('bin');
+    expect(screen.getAllByRole('button', { name: /habe|nicht im Text/ })).toHaveLength(1);
+    expect(screen.getByRole('list', { name: 'Corrections' })).toHaveTextContent('nicht im Text');
+  });
+
+  it('renders an old message without categories or a findable text without crashing', () => {
+    vi.stubGlobal('fetch', vi.fn());
+    const old = [{ wrong: 'habe', right: 'bin', reason: { en: 'sein', de: 'sein' } }];
+    renderWithIntl(<WritingSession session={withReply('Ich habe nach Rom gefahren.', old)} onMessages={vi.fn()} />);
+    expect(screen.getByRole('button', { name: 'habe' })).toBeInTheDocument();
+  });
+
+  it('marks text typed with decomposed umlauts', () => {
+    vi.stubGlobal('fetch', vi.fn());
+    const corrections = [{ wrong: 'Müller'.normalize('NFC'), right: 'Mueller', category: 'spelling', reason: { en: 'x', de: 'y' } }];
+    renderWithIntl(<WritingSession session={withReply('Herr Müller kommt.'.normalize('NFD'), corrections)} onMessages={vi.fn()} />);
+    expect(screen.getByRole('button', { name: 'Müller' })).toBeInTheDocument();
+  });
+
+  it('marks corrections the model listed out of text order, keeping repeats in order', () => {
+    vi.stubGlobal('fetch', vi.fn());
+    const c = (wrong: string) => ({ wrong, right: 'x', category: 'other', reason: { en: 'r', de: 'r' } });
+    renderWithIntl(<WritingSession session={withReply('Ich habe nach Rom gefahren und habe gegessen.', [c('gefahren'), c('habe'), c('habe')])} onMessages={vi.fn()} />);
+    expect(screen.getAllByRole('button', { name: /^(habe|gefahren)$/ }).map((b) => b.textContent)).toEqual(['habe', 'gefahren', 'habe']);
+  });
+});

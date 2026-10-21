@@ -1,0 +1,130 @@
+{
+  "formatId": "goethe-a1",
+  "partId": "schreiben-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-a1__schreiben-2__s01",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie machen am Samstag eine Geburtstagsparty. Sie möchten Ihre Freundin Lena einladen. Schreiben Sie Lena eine E-Mail.",
+              "leitpunkte": [
+                "Wann und wo ist die Party?",
+                "Wer kommt noch?",
+                "Was soll Lena mitbringen?"
+              ],
+              "register": "informal",
+              "wordTarget": {
+                "min": 24,
+                "max": 36
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Say the day, time and place, e.g. \"Die Party ist am Samstag um 19 Uhr bei mir.\"",
+            "de": "Nennen Sie Tag, Uhrzeit und Ort, z. B. „Die Party ist am Samstag um 19 Uhr bei mir.“"
+          },
+          {
+            "en": "Name the other guests, e.g. \"Meine Kollegen und meine Schwester kommen auch.\"",
+            "de": "Nennen Sie die anderen Gäste, z. B. „Meine Kollegen und meine Schwester kommen auch.“"
+          },
+          {
+            "en": "Say exactly what Lena should bring, e.g. \"Bringst du bitte einen Salat mit?\"",
+            "de": "Sagen Sie genau, was Lena mitbringen soll, z. B. „Bringst du bitte einen Salat mit?“"
+          },
+          {
+            "en": "Lena is a friend: start with \"Liebe Lena,\" and end with \"Viele Grüße\". Join sentences with \"und\" or \"aber\".",
+            "de": "Lena ist eine Freundin: Beginnen Sie mit „Liebe Lena,“ und enden Sie mit „Viele Grüße“. Verbinden Sie die Sätze mit „und“ oder „aber“."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a1__schreiben-2__s02",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie haben im Internet eine Anzeige gelesen: Herr Wagner verkauft einen Küchentisch. Sie möchten den Tisch kaufen. Schreiben Sie Herrn Wagner eine E-Mail.",
+              "leitpunkte": [
+                "Sagen Sie: Sie möchten den Tisch kaufen.",
+                "Fragen Sie nach dem Preis.",
+                "Wann können Sie den Tisch ansehen?"
+              ],
+              "register": "formal",
+              "wordTarget": {
+                "min": 24,
+                "max": 36
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Say clearly that you want the table, e.g. \"Ich möchte Ihren Küchentisch gern kaufen.\"",
+            "de": "Sagen Sie klar, dass Sie den Tisch möchten, z. B. „Ich möchte Ihren Küchentisch gern kaufen.“"
+          },
+          {
+            "en": "Ask a real question about the price, e.g. \"Wie viel kostet der Tisch?\"",
+            "de": "Stellen Sie eine echte Frage zum Preis, z. B. „Wie viel kostet der Tisch?“"
+          },
+          {
+            "en": "Name a day or time, e.g. \"Ich kann am Montag um 17 Uhr kommen.\"",
+            "de": "Nennen Sie einen Tag oder eine Uhrzeit, z. B. „Ich kann am Montag um 17 Uhr kommen.“"
+          },
+          {
+            "en": "Herr Wagner is a stranger: start with \"Sehr geehrter Herr Wagner,\", use \"Sie\" and end with \"Mit freundlichen Grüßen\". Join sentences with \"und\" or \"aber\".",
+            "de": "Herr Wagner ist ein Fremder: Beginnen Sie mit „Sehr geehrter Herr Wagner,“, schreiben Sie „Sie“ und enden Sie mit „Mit freundlichen Grüßen“. Verbinden Sie die Sätze mit „und“ oder „aber“."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a1__schreiben-2__s03",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Ihre Nachbarin, Frau Roth, hat heute ein Paket für Sie angenommen. Sie sind bis 19 Uhr bei der Arbeit. Schreiben Sie Frau Roth eine kurze Mitteilung.",
+              "leitpunkte": [
+                "Danken Sie Frau Roth.",
+                "Warum können Sie das Paket heute nicht abholen?",
+                "Wann kommen Sie?"
+              ],
+              "register": "semi_formal",
+              "wordTarget": {
+                "min": 24,
+                "max": 36
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Thank her for the parcel, e.g. \"Vielen Dank, Sie haben mein Paket angenommen.\"",
+            "de": "Bedanken Sie sich für das Paket, z. B. „Vielen Dank, Sie haben mein Paket angenommen.“"
+          },
+          {
+            "en": "Give a reason, e.g. \"Ich arbeite heute bis 19 Uhr, das ist zu spät.\"",
+            "de": "Nennen Sie einen Grund, z. B. „Ich arbeite heute bis 19 Uhr, das ist zu spät.“"
+          },
+          {
+            "en": "Name a day and time, e.g. \"Ich komme morgen um 8 Uhr zu Ihnen.\"",
+            "de": "Nennen Sie Tag und Uhrzeit, z. B. „Ich komme morgen um 8 Uhr zu Ihnen.“"
+          },
+          {
+            "en": "Frau Roth is a neighbour: start with \"Liebe Frau Roth,\", use \"Sie\" and end with \"Viele Grüße\". Join sentences with \"und\" or \"aber\".",
+            "de": "Frau Roth ist eine Nachbarin: Beginnen Sie mit „Liebe Frau Roth,“, schreiben Sie „Sie“ und enden Sie mit „Viele Grüße“. Verbinden Sie die Sätze mit „und“ oder „aber“."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -13,11 +13,11 @@ const files = readdirSync(DIR).filter((f) => f.endsWith('.json'));
 const seeds = files.map((f) => [f, JSON.parse(readFileSync(join(DIR, f), 'utf8')) as SeedFile] as const);
 
 describe('bundled curriculum seeds', () => {
-  it('has all 15 track+level files at seed version 10, format 3', () => {
+  it('has all 15 track+level files at seed version 11, format 3', () => {
     expect(files).toHaveLength(15);
     for (const [, seed] of seeds) {
       expect(seed.formatVersion).toBe(3);
-      expect(seed.seedVersion).toBe('10');
+      expect(seed.seedVersion).toBe('11');
     }
   });
 
@@ -63,6 +63,16 @@ describe('bundled curriculum seeds', () => {
     for (const lesson of seed.lessons.filter((l) => l.skill === 'reading')) {
       const types = seed.exercises.filter((e) => e.lessonId === lesson.id).map((e) => e.type);
       expect(types.some((t) => ['passage_questions', 'matching', 'cloze'].includes(t)), lesson.id).toBe(true);
+    }
+  });
+
+  // T13: only the three form-completion lessons go without a letter; they have a form cloze instead.
+  const FORM_LESSONS = ['a1-goethe-writing-teil1-form-completion', 'a1-telc-writing-registration-form', 'a2-telc-writing-teil1-form-completion'];
+  it.each(seeds)('%s: every writing lesson has a letter exercise (form lessons a form cloze)', (_f, seed) => {
+    for (const lesson of seed.lessons.filter((l) => l.skill === 'writing')) {
+      const exercises = seed.exercises.filter((e) => e.lessonId === lesson.id);
+      const needed = FORM_LESSONS.includes(lesson.id) ? 'cloze' : 'letter';
+      expect(exercises.some((e) => e.type === needed), lesson.id).toBe(true);
     }
   });
 

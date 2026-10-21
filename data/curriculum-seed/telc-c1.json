@@ -1,5 +1,5 @@
 {
-  "seedVersion": "10",
+  "seedVersion": "11",
   "formatVersion": 3,
   "track": "telc",
   "level": "C1",
@@ -1549,6 +1549,34 @@
       }
     },
     {
+      "id": "c1-telc-schriftlicher-ausdruck-stellungnahme__ex4",
+      "lessonId": "c1-telc-schriftlicher-ausdruck-stellungnahme",
+      "track": "telc",
+      "type": "letter",
+      "content": {
+        "instruction": {
+          "en": "Write an academic position paper (about 350 words) on the two quotations and cover all four points.",
+          "de": "Verfassen Sie eine wissenschaftliche Stellungnahme (ca. 350 Wörter) zu den beiden Zitaten. Gehen Sie auf alle vier Punkte ein."
+        },
+        "tasks": [
+          {
+            "situation": "Thema: Anwesenheitspflicht in universitären Lehrveranstaltungen?\n\nZitat 1, eine Hochschullehrerin: „Wissenschaft entsteht im Gespräch. Wer Seminare nur als Download konsumiert, verpasst den eigentlichen Kern akademischer Bildung – die gemeinsame Auseinandersetzung mit Argumenten.“\n\nZitat 2, ein Vertreter der Studierenden: „Viele Studierende arbeiten, pflegen Angehörige oder ziehen Kinder groß. Eine Anwesenheitspflicht bestraft gerade diejenigen, die ohnehin unter erschwerten Bedingungen studieren.“\n\nVerfassen Sie einen Text, in dem Sie beide Positionen aufgreifen, gegeneinander abwägen und einen eigenen, begründeten Standpunkt entwickeln.",
+            "leitpunkte": [
+              "Gegenüberstellung der beiden Positionen",
+              "Argumente für eine Anwesenheitspflicht",
+              "Einwände und mögliche Folgen für bestimmte Gruppen von Studierenden",
+              "Ihre eigene, begründete Position"
+            ],
+            "register": "formal",
+            "wordTarget": {
+              "min": 280,
+              "max": 420
+            }
+          }
+        ]
+      }
+    },
+    {
       "id": "c1-telc-grafikbeschreibung-und-synthese__ex0",
       "lessonId": "c1-telc-grafikbeschreibung-und-synthese",
       "track": "telc",
@@ -1596,6 +1624,34 @@
       "content": {
         "prompt": "Verfassen Sie einen Vergleich zweier Werte (z. B. 60 % vs. 20 %) unter Verwendung von 'wohingegen'.",
         "modelAnswer": "Rund 60 Prozent der befragten Studierenden befürworten digitale Prüfungsformate, wohingegen lediglich 20 Prozent der Dozierenden diese Einschätzung teilen."
+      }
+    },
+    {
+      "id": "c1-telc-grafikbeschreibung-und-synthese__ex4",
+      "lessonId": "c1-telc-grafikbeschreibung-und-synthese",
+      "track": "telc",
+      "type": "letter",
+      "content": {
+        "instruction": {
+          "en": "Describe and interpret the chart data (about 250 words) in an academic text and cover all four points.",
+          "de": "Beschreiben und interpretieren Sie die Daten der Grafik in einem wissenschaftlichen Text (ca. 250 Wörter). Gehen Sie auf alle vier Punkte ein."
+        },
+        "tasks": [
+          {
+            "situation": "Grafik (Balkendiagramm): „Wie finanzieren Studierende ihr Studium?“\nQuelle: Hochschulpanel Rabenkamm, Befragung von 2.400 Studierenden in den Jahren 2016 und 2024, Angaben in Prozent, Mehrfachnennungen möglich.\n\nUnterstützung durch die Eltern: 2016: 58 %, 2024: 49 %\nNebenjob: 2016: 52 %, 2024: 63 %\nStaatliche Förderung: 2016: 25 %, 2024: 18 %\nStipendium: 2016: 4 %, 2024: 6 %\nStudienkredit: 2016: 3 %, 2024: 7 %\n\nVerfassen Sie für eine Seminararbeit einen Text, in dem Sie die Grafik beschreiben und auswerten.",
+            "leitpunkte": [
+              "Einleitung mit Thema, Quelle, Zeitraum und Einheit",
+              "Die wichtigsten Ergebnisse mit Höchst- und Tiefstwerten",
+              "Vergleich der Entwicklungen zwischen 2016 und 2024",
+              "Mögliche Ursachen und Hypothesen"
+            ],
+            "register": "formal",
+            "wordTarget": {
+              "min": 200,
+              "max": 300
+            }
+          }
+        ]
       }
     },
     {

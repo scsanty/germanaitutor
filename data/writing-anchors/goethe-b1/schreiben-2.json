@@ -1,0 +1,98 @@
+{
+  "formatId": "goethe-b1",
+  "partId": "schreiben-2",
+  "anchors": [
+    {
+      "task": {
+        "situation": "Sie haben im Fernsehen eine Sendung zum Thema „Lebensmittel online bestellen“ gesehen. Im Online-Gästebuch der Sendung finden Sie folgenden Beitrag:\n\nHenrik: „Seit einem Jahr gehe ich nicht mehr in den Supermarkt. Ich bestelle alles per App, und am Abend bringt ein Fahrer die Tüten bis vor meine Tür. So spare ich jede Woche mindestens zwei Stunden.\n\nIch verstehe nicht, warum so viele Leute noch mit vollen Taschen durch die Stadt laufen. In ein paar Jahren geht doch sowieso niemand mehr selbst einkaufen.“\n\nSchreiben Sie Ihre Meinung zu diesem Thema.",
+        "leitpunkte": [
+          "Ihre Meinung zum Online-Einkauf von Lebensmitteln",
+          "Gründe für Ihre Meinung",
+          "Bezug zum Beitrag von Henrik"
+        ],
+        "register": "semi_formal",
+        "wordTarget": {
+          "min": 64,
+          "max": 96
+        }
+      },
+      "letter": "Ich kann gut verstehen, dass Henrik Zeit sparen möchte. Trotzdem glaube ich nicht, dass bald niemand mehr selbst einkaufen geht.\n\nObst und Gemüse kaufe ich lieber auf dem Markt, weil ich die Ware sehen und selbst auswählen möchte. Außerdem treffe ich dort oft Nachbarn, und so ist der Einkauf für mich auch ein bisschen Freizeit. Online bestelle ich nur schwere Sachen wie Getränke, denn die muss ich dann nicht in den vierten Stock tragen.\n\nMeiner Meinung nach ist eine Mischung aus beidem die beste Lösung.",
+      "grades": {
+        "erfuellung": "A",
+        "kohaerenz": "A",
+        "wortschatz": "A",
+        "strukturen": "A"
+      },
+      "justification": "Erfüllung A: Die Meinung („eine Mischung aus beidem“) ist klar und mit mehreren Gründen belegt (Ware selbst auswählen, Nachbarn treffen, schwere Getränke), Henriks Beitrag wird direkt aufgegriffen, und Ton und Umfang passen zu einem Gästebucheintrag. Kohärenz A: Der Text hat Einleitung, Begründung und Fazit, und „trotzdem“, „weil“, „außerdem“, „denn“ und „so“ verbinden die Sätze. Wortschatz A: Der Wortschatz ist für B1 breit und passend („Ware“, „auswählen“, „Mischung aus beidem“, „Meiner Meinung nach“). Strukturen A: Nebensätze mit „dass“ und „weil“ sowie Modalverben und Inversion („Obst und Gemüse kaufe ich lieber“) sind korrekt."
+    },
+    {
+      "task": {
+        "situation": "Sie haben im Fernsehen eine Sendung zum Thema „Lebensmittel online bestellen“ gesehen. Im Online-Gästebuch der Sendung finden Sie folgenden Beitrag:\n\nHenrik: „Seit einem Jahr gehe ich nicht mehr in den Supermarkt. Ich bestelle alles per App, und am Abend bringt ein Fahrer die Tüten bis vor meine Tür. So spare ich jede Woche mindestens zwei Stunden.\n\nIch verstehe nicht, warum so viele Leute noch mit vollen Taschen durch die Stadt laufen. In ein paar Jahren geht doch sowieso niemand mehr selbst einkaufen.“\n\nSchreiben Sie Ihre Meinung zu diesem Thema.",
+        "leitpunkte": [
+          "Ihre Meinung zum Online-Einkauf von Lebensmitteln",
+          "Gründe für Ihre Meinung",
+          "Bezug zum Beitrag von Henrik"
+        ],
+        "register": "semi_formal",
+        "wordTarget": {
+          "min": 64,
+          "max": 96
+        }
+      },
+      "letter": "Ich finde Online-Einkaufen nicht so gut. Henrik spart Zeit, das ist richtig. Aber ich gehe lieber selbst in den Supermarkt, weil ich will das Obst sehen. Manchmal das Obst von der App ist nicht frisch, das hat meine Kollegin gesagt. Und ich laufe gern, das ist gut für die Gesundheit. Ich glaube, viele Leute denken wie ich. Deshalb ich glaube nicht, dass niemand mehr einkaufen geht. Für alte Leute ist die App aber gut.",
+      "grades": {
+        "erfuellung": "B",
+        "kohaerenz": "B",
+        "wortschatz": "B",
+        "strukturen": "B"
+      },
+      "justification": "Erfüllung B: Die Meinung ist erkennbar und bezieht sich auf Henrik („Henrik spart Zeit, das ist richtig“), die Gründe bleiben aber knapp (frisches Obst, laufen ist gesund). Kohärenz B: Der Text ist überwiegend zusammenhängend, die Konnektoren („aber“, „und“, „deshalb“) sind richtig, aber einförmig, und es gibt keine Gliederung in Absätze. Wortschatz B: Der Wortschatz reicht für die Aufgabe, wiederholt sich aber („Ich glaube … ich glaube“, „gut … gut“). Strukturen B: Einige Wortstellungsfehler („weil ich will das Obst sehen“, „Manchmal das Obst … ist“, „Deshalb ich glaube“) stören das Verständnis kaum."
+    },
+    {
+      "task": {
+        "situation": "Sie haben im Fernsehen eine Sendung zum Thema „Lebensmittel online bestellen“ gesehen. Im Online-Gästebuch der Sendung finden Sie folgenden Beitrag:\n\nHenrik: „Seit einem Jahr gehe ich nicht mehr in den Supermarkt. Ich bestelle alles per App, und am Abend bringt ein Fahrer die Tüten bis vor meine Tür. So spare ich jede Woche mindestens zwei Stunden.\n\nIch verstehe nicht, warum so viele Leute noch mit vollen Taschen durch die Stadt laufen. In ein paar Jahren geht doch sowieso niemand mehr selbst einkaufen.“\n\nSchreiben Sie Ihre Meinung zu diesem Thema.",
+        "leitpunkte": [
+          "Ihre Meinung zum Online-Einkauf von Lebensmitteln",
+          "Gründe für Ihre Meinung",
+          "Bezug zum Beitrag von Henrik"
+        ],
+        "register": "semi_formal",
+        "wordTarget": {
+          "min": 64,
+          "max": 96
+        }
+      },
+      "letter": "Ich habe die Sendung gesehen, sie war interessant. Ich kaufe immer in Supermarkt bei mir, er ist nah. Die Supermarkt hat viel Sachen und ist billig, aber am Samstag ist viel Leute und man muss lange warten an die Kasse. Das ist nicht schön. Mein Mann kauft auch manchmal ein, er vergisst immer etwas. Online ich habe nie bestellt. Ich finde Online-Bestellen nicht gut, ich mache das nie. Henrik hat viel Zeit jetzt.",
+      "grades": {
+        "erfuellung": "C",
+        "kohaerenz": "C",
+        "wortschatz": "C",
+        "strukturen": "C"
+      },
+      "justification": "Erfüllung C: Eine Meinung wird genannt („Ich finde Online-Bestellen nicht gut“), aber kaum begründet, ein großer Teil handelt vom eigenen Supermarkt und vom Mann, und Henriks Beitrag wird nur am Ende kurz erwähnt. Kohärenz C: Der Zusammenhang springt zwischen Sendung, Supermarkt, Mann und Henrik, und es gibt nur wenige, einfache Konnektoren wie „aber“ und „und“. Wortschatz C: Der Wortschatz ist begrenzt und allgemein („viel Sachen“, „nicht schön“, „nicht gut“). Strukturen C: Vor allem einfache Sätze mit häufigen Fehlern bei Artikel und Kasus („Die Supermarkt“, „in Supermarkt“, „an die Kasse“), Kongruenz („ist viel Leute“) und Wortstellung („Online ich habe nie bestellt“)."
+    },
+    {
+      "task": {
+        "situation": "Sie haben im Fernsehen eine Sendung zum Thema „Lebensmittel online bestellen“ gesehen. Im Online-Gästebuch der Sendung finden Sie folgenden Beitrag:\n\nHenrik: „Seit einem Jahr gehe ich nicht mehr in den Supermarkt. Ich bestelle alles per App, und am Abend bringt ein Fahrer die Tüten bis vor meine Tür. So spare ich jede Woche mindestens zwei Stunden.\n\nIch verstehe nicht, warum so viele Leute noch mit vollen Taschen durch die Stadt laufen. In ein paar Jahren geht doch sowieso niemand mehr selbst einkaufen.“\n\nSchreiben Sie Ihre Meinung zu diesem Thema.",
+        "leitpunkte": [
+          "Ihre Meinung zum Online-Einkauf von Lebensmitteln",
+          "Gründe für Ihre Meinung",
+          "Bezug zum Beitrag von Henrik"
+        ],
+        "register": "semi_formal",
+        "wordTarget": {
+          "min": 64,
+          "max": 96
+        }
+      },
+      "letter": "Hallo Henrik, ich auch Handy neu. Handy gut, Foto schön. Du hast welche Handy? Ich spielen Spiel viel.\n\nTschüss",
+      "grades": {
+        "erfuellung": "E",
+        "kohaerenz": "D",
+        "wortschatz": "E",
+        "strukturen": "E"
+      },
+      "justification": "Erfüllung E: Der Text geht am Thema vorbei – es geht um ein neues Handy und Spiele, nicht um den Online-Einkauf von Lebensmitteln –, und er ist viel zu kurz. Kohärenz D: Die Sätze stehen unverbunden nebeneinander („Handy gut, Foto schön.“), und es gibt keine Konnektoren. Wortschatz E: Der Wortschatz zum Thema fehlt völlig. Strukturen E: Kaum ein Satz ist korrekt gebaut („ich auch Handy neu“, „Du hast welche Handy?“, „Ich spielen Spiel viel“), der Text ist kaum verständlich."
+    }
+  ]
+}

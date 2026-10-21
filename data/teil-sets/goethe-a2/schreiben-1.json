@@ -1,0 +1,130 @@
+{
+  "formatId": "goethe-a2",
+  "partId": "schreiben-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-a2__schreiben-1__s01",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie kaufen im Supermarkt für das Abendessen mit Ihrem Mitbewohner Felix ein. Es gibt keine Tomaten mehr. Schreiben Sie Felix eine SMS.",
+              "leitpunkte": [
+                "Wo sind Sie gerade?",
+                "Was ist das Problem?",
+                "Was kaufen Sie jetzt?"
+              ],
+              "register": "informal",
+              "wordTarget": {
+                "min": 20,
+                "max": 30
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Say where you are, e.g. \"Ich bin gerade im Supermarkt.\"",
+            "de": "Sagen Sie, wo Sie sind, z. B. „Ich bin gerade im Supermarkt.“"
+          },
+          {
+            "en": "Explain the problem clearly, e.g. \"Leider gibt es keine Tomaten mehr.\"",
+            "de": "Erklären Sie das Problem klar, z. B. „Leider gibt es keine Tomaten mehr.“"
+          },
+          {
+            "en": "Say what you buy instead, e.g. \"Ich kaufe Paprika, ist das okay?\"",
+            "de": "Sagen Sie, was Sie stattdessen kaufen, z. B. „Ich kaufe Paprika, ist das okay?“"
+          },
+          {
+            "en": "Keep it short like an SMS to a friend, with \"Hallo Felix\" and your name. Join sentences with \"aber\", \"denn\" or \"dann\".",
+            "de": "Schreiben Sie kurz wie eine SMS an einen Freund, mit „Hallo Felix“ und Ihrem Namen. Verbinden Sie die Sätze mit „aber“, „denn“ oder „dann“."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2__schreiben-1__s02",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie waren gestern Abend bei Ihrem Freund Marco zum Essen. Jetzt merken Sie: Ihre Jacke ist noch bei ihm. Schreiben Sie Marco eine SMS.",
+              "leitpunkte": [
+                "Was haben Sie vergessen?",
+                "Wann möchten Sie es abholen?",
+                "Fragen Sie: Ist Marco dann zu Hause?"
+              ],
+              "register": "informal",
+              "wordTarget": {
+                "min": 20,
+                "max": 30
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Name the item, e.g. \"Ich habe gestern meine Jacke bei dir vergessen.\"",
+            "de": "Nennen Sie die Sache, z. B. „Ich habe gestern meine Jacke bei dir vergessen.“"
+          },
+          {
+            "en": "Give a day or time, e.g. \"Kann ich sie morgen um 18 Uhr abholen?\"",
+            "de": "Nennen Sie einen Tag oder eine Uhrzeit, z. B. „Kann ich sie morgen um 18 Uhr abholen?“"
+          },
+          {
+            "en": "Ask a real question, e.g. \"Bist du dann zu Hause?\"",
+            "de": "Stellen Sie eine echte Frage, z. B. „Bist du dann zu Hause?“"
+          },
+          {
+            "en": "Write like a short SMS to a friend (\"du\"), with a greeting and your name. Join sentences with \"und\", \"denn\" or \"dann\".",
+            "de": "Schreiben Sie wie eine kurze SMS an einen Freund („du“), mit Gruß und Ihrem Namen. Verbinden Sie die Sätze mit „und“, „denn“ oder „dann“."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2__schreiben-1__s03",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie möchten am Samstag mit Ihrer Freundin Lea wandern gehen. Aber für Samstag ist starker Regen angesagt. Schreiben Sie Lea eine SMS.",
+              "leitpunkte": [
+                "Warum ist Wandern am Samstag keine gute Idee?",
+                "Machen Sie einen anderen Vorschlag.",
+                "Wann und wo treffen Sie sich?"
+              ],
+              "register": "informal",
+              "wordTarget": {
+                "min": 20,
+                "max": 30
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Give the reason, e.g. \"Am Samstag regnet es stark, das Wetter ist schlecht.\"",
+            "de": "Nennen Sie den Grund, z. B. „Am Samstag regnet es stark, das Wetter ist schlecht.“"
+          },
+          {
+            "en": "Suggest something else, e.g. \"Wollen wir lieber ins Museum gehen?\"",
+            "de": "Schlagen Sie etwas anderes vor, z. B. „Wollen wir lieber ins Museum gehen?“"
+          },
+          {
+            "en": "Give a time and place, e.g. \"Treffen wir uns um 14 Uhr am Bahnhof?\"",
+            "de": "Nennen Sie Uhrzeit und Ort, z. B. „Treffen wir uns um 14 Uhr am Bahnhof?“"
+          },
+          {
+            "en": "Write like a short SMS to a friend, with \"Hallo Lea\" and your name. Join sentences with \"aber\", \"denn\" or \"dann\".",
+            "de": "Schreiben Sie wie eine kurze SMS an eine Freundin, mit „Hallo Lea“ und Ihrem Namen. Verbinden Sie die Sätze mit „aber“, „denn“ oder „dann“."
+          }
+        ]
+      }
+    }
+  ]
+}

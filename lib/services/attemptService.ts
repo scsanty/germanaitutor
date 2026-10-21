@@ -1,5 +1,5 @@
 import type Database from 'better-sqlite3';
-import type { CefrLevel } from '../types';
+import type { CefrLevel, Track } from '../types';
 import type { Exercise } from '../curriculum/types';
 import { meetsCompletionRule } from '../tutoring/completion';
 import { localDate } from '../tutoring/dates';
@@ -21,6 +21,10 @@ import { createDeckService } from './deckService';
 import { gradeExerciseAnswer } from './exerciseGrading';
 import { lessonLock } from './levelGating';
 import { gradeFreeText, type FreeTextGradeOutcome } from './freeTextGradingService';
+import { recordMistakes } from './errorLogService';
+import { gradeLessonLetter, type LessonLetterInput, type LetterGradeOutcome } from './letterGradingService';
+import type { FreeTextMistake } from '../tutoring/freeTextGrading';
+import type { LetterGrade } from '../writing/letterGrading';
 import { storeFeedback, type LocalizedText } from '../i18n/localizedText';
 import { createProfileService } from './profileService';
 import { createProgressService } from './progressService';
@@ -58,6 +62,8 @@ export function toAttemptErrorResponse(err: unknown): { status: number; body: Ap
 
 export interface AttemptDeps {
   gradeFreeText?: (input: FreeTextGradingInput) => Promise<FreeTextGradeOutcome>;
+  // S6: tests inject the lesson letter grader instead of mocking the AI module.
+  gradeLetter?: (input: LessonLetterInput) => Promise<LetterGradeOutcome>;
   now?: () => Date;
   // Listening availability (S7): tests inject fakes for the speech service and the audio cache.
   audio?: AudioAvailabilityDeps;
@@ -78,9 +84,17 @@ interface SrsRow {
   next_due_at: string;
 }
 
+// S5: a letter's summary stays readable as {en, de} for the lesson chat (readFeedback); the whole
+// grade rides along under `letter`.
+function storedFeedback(feedback: LocalizedText | null, letter: LetterGrade | undefined): string | null {
+  if (letter) return JSON.stringify({ en: letter.summary.en, de: letter.summary.de, letter });
+  return feedback ? storeFeedback(feedback) : null;
+}
+
 export function createAttemptService(db: Database.Database, deps: AttemptDeps = {}) {
   const now = deps.now ?? (() => new Date());
   const gradeFree = deps.gradeFreeText ?? ((input: FreeTextGradingInput) => gradeFreeText(db, input));
+  const gradeLetter = deps.gradeLetter ?? ((input: LessonLetterInput) => gradeLessonLetter(db, input));
   const curriculum = createCurriculumService(db);
   const profiles = createProfileService(db);
   const progress = createProgressService(db, { audio: deps.audio });
@@ -117,6 +131,7 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
          JOIN milestones m ON m.id = p.milestone_id
          WHERE e.id = ? AND m.track = ? AND m.level = ? AND st.next_due_at <= ?
            AND NOT (e.type = 'flashcard' AND l.skill = 'vocabulary')
+           AND e.type <> 'letter'
            AND NOT EXISTS (
              SELECT 1 FROM lesson_attempts a WHERE a.exercise_id = e.id AND a.source = 'queue' AND a.answered_on = ?
            )`
@@ -128,10 +143,13 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
   async function grade(
     exercise: Exercise,
     answer: LessonAnswer,
-    level: CefrLevel
-  ): Promise<{ result: GradeResult; feedback: LocalizedText | null; itemResults?: boolean[] }> {
-    const graded = await gradeExerciseAnswer(exercise, answer, level, { gradeFreeText: gradeFree });
-    if (graded.ok) return { result: graded.result, feedback: graded.feedback, itemResults: graded.itemResults };
+    lesson: { sourceLevel: CefrLevel; track: Track }
+  ): Promise<{ result: GradeResult; feedback: LocalizedText | null; itemResults?: boolean[]; mistakes?: FreeTextMistake[]; letter?: LetterGrade }> {
+    const graded = await gradeExerciseAnswer(exercise, answer, lesson.sourceLevel, {
+      gradeFreeText: gradeFree,
+      gradeLetter: (input) => gradeLetter({ ...input, track: lesson.track }),
+    });
+    if (graded.ok) return graded;
     if (graded.reason === 'bad_request') throw new AttemptError(graded.message, 'bad_request');
     throw new AttemptError(graded.message, 'grading_failed', graded.code, graded.params);
   }
@@ -160,7 +178,10 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
 
   // Spec: Spaced Repetition, "Entering review" — based on the exercise's first-ever attempt.
   // Freestyle spec (B1): a vocabulary-lesson flashcard enters the deck instead of the Daily Queue.
+  // Spec: Lessons — a letter task never enters review, so it's never seeded (at completion or after).
   function seedFromFirstAttempt(exerciseId: string, today: string, at: string): void {
+    const type = db.prepare('SELECT type FROM exercises WHERE id = ?').get(exerciseId) as { type: string } | undefined;
+    if (type?.type === 'letter') return;
     const first = db
       .prepare('SELECT result FROM lesson_attempts WHERE exercise_id = ? ORDER BY id LIMIT 1')
       .get(exerciseId) as { result: GradeResult } | undefined;
@@ -198,7 +219,10 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
     const lesson = getUnlockedLesson(exercise.lessonId);
     if (source === 'lesson') assertLessonOpen(lesson.id);
     if (source === 'queue') assertDueInQueue(exercise.id, localDate(now()));
-    const { result, feedback, itemResults } = await grade(exercise, answer, lesson.sourceLevel);
+    const { result, feedback, itemResults, mistakes, letter } = await grade(exercise, answer, lesson);
+    // S7: free-text mistakes go to the error log after a successful grade, outside the transaction;
+    // logging never breaks grading. (Letter marks were logged by the letter grader.)
+    recordMistakes(db, 'lesson', mistakes ?? [], { now });
     // S8: availability is async (the speech service), so it's settled before the sync transaction.
     // Spec: completion counts only the exercises available at this moment.
     const exerciseIds = (await progress.availableExercises(lesson)).available.map((e) => e.id);
@@ -215,7 +239,7 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
       db.prepare(
         `INSERT INTO lesson_attempts (exercise_id, lesson_id, source, result, answer_text, ai_feedback, answered_at, answered_on)
          VALUES (?, ?, ?, ?, ?, ?, ?, ?)`
-      ).run(exercise.id, lesson.id, source, result, answerTextFor(exercise, answer), feedback ? storeFeedback(feedback) : null, at, today);
+      ).run(exercise.id, lesson.id, source, result, answerTextFor(exercise, answer), storedFeedback(feedback, letter), at, today);
 
       const wasComplete = progress.isCompleted(lesson.id);
       let justCompleted = false;
@@ -242,6 +266,7 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
         justCompleted,
         ...(itemResults ? { itemResults } : {}),
         ...(reveal ? { reveal } : {}),
+        ...(letter ? { letter } : {}),
       };
     })();
   }

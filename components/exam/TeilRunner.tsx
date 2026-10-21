@@ -9,6 +9,8 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import type { PracticeResult, PracticeRun } from '@/lib/exam/practiceViews';
 import type { SetTaskType, TaskAnswer } from '@/lib/tasks/taskTypes';
+import type { LetterView } from '@/lib/tasks/letter';
+import { LetterTaskInput } from '@/components/writing/LetterTaskInput';
 import { cn } from '@/lib/utils';
 import { answeredCount, emptyAnswer, TaskInputs } from './TaskInputs';
 import { formatClock, useCountdown } from './useCountdown';
@@ -33,6 +35,7 @@ export function TeilRunner({
   clockOffsetMs?: number;
 }) {
   const t = useTranslations('exam');
+  const tWriting = useTranslations('writing');
   const errorText = useApiErrorText();
   // Only the Teil task types reach the runner (RUNTIME_TASK_TYPES).
   const type = run.part.taskType as SetTaskType;
@@ -43,8 +46,10 @@ export function TeilRunner({
   const submitting = useRef(false);
   const { secondsLeft, overtime } = useCountdown(run.startedAt, run.minutes, clockOffsetMs);
   // A cloze is one flowing text with its gaps, so it isn't split into columns. A listening task keeps
-  // its player above the questions, so the student needn't switch panes while listening.
-  const split = type !== 'cloze' && type !== 'audio_questions';
+  // its player above the questions, so the student needn't switch panes while listening. A letter keeps
+  // its task beside the writing box.
+  const split = type !== 'cloze' && type !== 'audio_questions' && type !== 'letter';
+  const letter = answer.type === 'letter';
   // Spec: Replay rules. The part's replays, no seeking, counted on the client for this attempt (this
   // runner is keyed by attemptId, so a new attempt starts a fresh count).
   const audio = { mode: 'exam' as const, replays: run.part.replays };
@@ -101,9 +106,13 @@ export function TeilRunner({
       {run.part.instructions}
     </p>
   );
-  const inputs = (pane: 'text' | 'tasks' | 'all') => (
-    <TaskInputs type={type} view={run.set.view} value={answer} onChange={setAnswer} disabled={busy} pane={pane} audio={audio} />
-  );
+  const inputs = (pane: 'text' | 'tasks' | 'all') =>
+    answer.type === 'letter' ? (
+      // Spec: always timed, so spellcheck is off. Grading can take a minute; the letter stays as written.
+      <LetterTaskInput content={run.set.view as LetterView} value={answer} onChange={setAnswer} timed disabled={busy} />
+    ) : (
+      <TaskInputs type={type} view={run.set.view} value={answer} onChange={setAnswer} disabled={busy} pane={pane} audio={audio} />
+    );
   // Desktop: both columns scroll on their own; phone: one pane at a time, switched by the bottom tabs.
   // The wide FocusLayout is one viewport tall on desktop; the grid takes what the header and footer leave.
   const column = 'flex flex-col gap-4 lg:min-h-0 lg:overflow-y-auto lg:pr-2';
@@ -138,6 +147,12 @@ export function TeilRunner({
             <AlertDescription>{error}</AlertDescription>
           </Alert>
         )}
+        {/* Spec: no client timeout while a letter is graded (the server gives up after 90 s). */}
+        {letter && (
+          <p role="status" className={cn('text-sm text-text-muted', !busy && 'sr-only')}>
+            {busy ? tWriting('grading') : ''}
+          </p>
+        )}
         <div className="flex items-center gap-3">
           {split && (
             <div className="flex flex-1 rounded-full border border-border p-0.5 lg:hidden">
@@ -155,7 +170,7 @@ export function TeilRunner({
             </div>
           )}
           <Button size="lg" className="min-h-11 flex-1 lg:ml-auto lg:flex-none" onClick={submit} disabled={busy}>
-            {busy ? t('submitting') : t('submit')}
+            {busy ? (letter ? tWriting('grading') : t('submitting')) : t('submit')}
           </Button>
         </div>
       </div>

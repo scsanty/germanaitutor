@@ -1,11 +1,12 @@
 'use client';
 
-import { Fragment, useId } from 'react';
+import { Fragment, useId, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { Check, X } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { NativeSelect } from '@/components/ui/native-select';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { UmlautControls } from '@/components/typing/UmlautRow';
 import { AudioPlayer } from '@/components/audio/AudioPlayer';
 // I2: type-only imports; the audio task module pulls in node:crypto on the server.
 import type { AudioQuestionsAnswer, AudioQuestionsView } from '@/lib/tasks/audioQuestions';
@@ -22,6 +23,7 @@ const GAP = /\{\{(\d+)\}\}/g;
 
 // Answers start all-unanswered: null for passage and audio questions and cloze gaps, -1 for matching.
 export function emptyAnswer(type: SetTaskType, view: TaskView): TaskAnswer {
+  if (type === 'letter') return { type, taskIndex: 0, text: '' };
   if (type === 'passage_questions') return { type, selected: (view as PassageQuestionsView).questions.map(() => null) };
   if (type === 'audio_questions') return { type, selected: (view as AudioQuestionsView).questions.map(() => null) };
   if (type === 'matching') return { type, selected: (view as MatchingView).items.map(() => -1) };
@@ -29,6 +31,7 @@ export function emptyAnswer(type: SetTaskType, view: TaskView): TaskAnswer {
 }
 
 export function answeredCount(answer: TaskAnswer): number {
+  if (answer.type === 'letter') return answer.text.trim() ? 1 : 0;
   if (answer.type === 'cloze') return answer.values.filter((v) => v !== null && v !== '').length;
   if (answer.type === 'matching') return answer.selected.filter((s) => s !== -1).length;
   return answer.selected.filter((s) => s !== null).length;
@@ -201,6 +204,9 @@ function Cloze({ view, value, onChange, disabled, pane, itemResults }: Props<Clo
   const id = useId();
   const set = (index: number, v: string | number | null) => onChange({ ...value, values: value.values.map((old, i) => (i === index ? v : old)) });
   const parts = view.text.split(GAP);
+  // One umlaut row serves every typed gap, acting on the one focused last.
+  const lastGap = useRef<HTMLInputElement | null>(null);
+  const hasTyped = view.gaps.some((g) => g.mode === 'typed');
   const usesBank = !!view.bank && view.gaps.some((g) => g.mode === 'bank');
   return (
     <>
@@ -237,6 +243,7 @@ function Cloze({ view, value, onChange, disabled, pane, itemResults }: Props<Clo
                     value={typeof v === 'string' ? v : ''}
                     onChange={(e) => set(gi, e.target.value === '' ? null : e.target.value)}
                     disabled={disabled}
+                    onFocus={(e) => (lastGap.current = e.currentTarget)}
                     spellCheck={false}
                     autoComplete="off"
                     autoCapitalize="off"
@@ -271,6 +278,7 @@ function Cloze({ view, value, onChange, disabled, pane, itemResults }: Props<Clo
           })}
         </div>
       )}
+      {pane !== 'text' && hasTyped && <UmlautControls target={() => lastGap.current} disabled={disabled} />}
     </>
   );
 }
@@ -300,6 +308,8 @@ export function TaskInputs({
 }) {
   // Each answer shape is a TaskAnswer, so the shared onChange accepts what every input sends.
   const common = { disabled, pane, onChange, itemResults };
+  // T7 renders the letter editor; a letter must never fall through to the cloze input.
+  if (type === 'letter') return null;
   if (type === 'passage_questions') return <PassageQuestions {...common} view={view as PassageQuestionsView} value={value as PassageQuestionsAnswer} />;
   if (type === 'audio_questions') return <AudioQuestions {...common} audio={audio} view={view as AudioQuestionsView} value={value as AudioQuestionsAnswer} />;
   if (type === 'matching') return <Matching {...common} view={view as MatchingView} value={value as MatchingAnswer} />;

@@ -1,4 +1,5 @@
 import { extractJsonObject } from '../ai/json';
+import { normalizeCategory } from '../errors/taxonomy';
 import type { LocalizedText } from '../i18n/localizedText';
 import type { GradeResult } from '../tutoring/grading';
 import { lemmaKey, nounHasArticle } from '../deck/lemmaKey';
@@ -6,6 +7,8 @@ import { lemmaKey, nounHasArticle } from '../deck/lemmaKey';
 export interface Correction {
   wrong: string;
   right: string;
+  // Taxonomy id; rows stored before T8 have none, and read as 'other'.
+  category: string;
   reason: LocalizedText;
 }
 
@@ -20,7 +23,7 @@ function corrections(value: unknown): Correction[] | null {
   const out: Correction[] = [];
   for (const c of value as Record<string, unknown>[]) {
     if (!c || !str(c.wrong) || !str(c.right) || !str(c.reason_en) || !str(c.reason_de)) return null;
-    out.push({ wrong: c.wrong, right: c.right, reason: { en: c.reason_en, de: c.reason_de } });
+    out.push({ wrong: c.wrong, right: c.right, category: normalizeCategory(c.category), reason: { en: c.reason_en, de: c.reason_de } });
   }
   return out;
 }

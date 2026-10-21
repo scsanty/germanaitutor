@@ -1,10 +1,11 @@
 // Merges drafted new-type exercises into the bundled curriculum seeds and validates them.
-// Run: npx tsx scripts/merge-lesson-exercises.ts <workDir> [--seed <file-stem>] [--check-only] [--data-root <dir>]
+// Run: npx tsx scripts/merge-lesson-exercises.ts <workDir> [--seed <file-stem>] [--check-only] [--complete] [--data-root <dir>]
 //
 // Input:  <workDir>/<seed-stem>/<lessonId>.json, e.g. <workDir>/goethe-b1/b1-goethe-reading-teil2-press-articles.json
 //         Each file is an array of exercises WITHOUT ids. An entry is { "type", "content", "replaces"? }:
 //           type:     reading lessons: "passage_questions" | "matching" | "cloze"
 //                     listening lessons: "audio_questions"
+//                     writing lessons: "letter" ("cloze" in the form lessons only, FORM_LESSONS below)
 //           content:  the exercise content exactly as stored in the seed. The bilingual instruction lives
 //                     INSIDE content as "instruction": { "en": "...", "de": "..." } (both languages or neither).
 //           replaces: optional, the ids of existing exercises of this lesson that the new exercise supersedes
@@ -14,7 +15,7 @@
 //         No other keys are allowed. The seed supplies id, lessonId and track.
 // Output: <dataRoot>/curriculum-seed/<seed-stem>.json (dataRoot defaults to ./data, or $LESSON_DATA_ROOT, or --data-root).
 //
-// Per lesson: it must exist and have skill "reading" or "listening". New ids continue the lesson's
+// Per lesson: it must exist and have skill "reading", "listening" or "writing". New ids continue the lesson's
 // "<lessonId>__exN" numbering past every existing id (a replaced id is never reused, so the seed loader
 // deletes the old row instead of retyping it; preflight B1). A draft with "replaces" takes the position of
 // the first replaced exercise, and the replaced exercises are removed from the seed. Drafts without it are
@@ -24,6 +25,12 @@
 // scripts/audio-content-checks.ts (evidence required, one transcript line each; TTS hazards are warnings).
 // A listening lesson with drafts must end up with at least one audio_questions exercise, and none of its
 // other exercises may still print spoken text (preflight B2).
+//
+// A letter needs a German-only situation and Leitpunkte (warnings, via the Reading English-word list), the
+// instruction in both languages, exactly 1 task, a register (informal, semi_formal or formal) and a wordTarget
+// inside the usual range for the lesson's level (warning). A writing lesson with drafts must end up with at least
+// one letter, or in a form lesson (the three typed-gap form parts: goethe-a1/schreiben-1, telc-a1/schreiben-1,
+// telc-a2/schreiben-1) at least one cloze; a form lesson takes no letter and other writing lessons no cloze.
 //
 // Idempotence: a draft is "already merged" when the lesson already holds an exercise with the same type and
 // deep-equal content (object key order ignored) and none of its replaced ids remain. Such drafts are skipped,
@@ -35,13 +42,14 @@ import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { validateExerciseContent } from '../lib/curriculum/exerciseContentValidation';
 import { validateSeedFile, type SeedFile } from '../lib/services/curriculumSeedLoader';
-import { audioContentProblems, maybePrintsAudio, printsAudio } from './audio-content-checks';
+import { audioContentProblems, englishWords, maybePrintsAudio, printsAudio } from './audio-content-checks';
 
 export interface MergeOptions {
   workDir: string;
   dataRoot?: string;
   seed?: string;
   checkOnly?: boolean;
+  complete?: boolean;
 }
 
 export interface MergeResult {
@@ -54,7 +62,58 @@ export interface MergeResult {
 const NEW_TYPES: Record<string, string[]> = {
   reading: ['passage_questions', 'matching', 'cloze'],
   listening: ['audio_questions'],
+  writing: ['letter', 'cloze'],
 };
+
+// The form lessons teach the typed-gap form parts; they get a typed cloze instead of a letter (preflight B5).
+export const FORM_LESSONS = new Set([
+  'a1-goethe-writing-teil1-form-completion',
+  'a1-telc-writing-registration-form',
+  'a2-telc-writing-teil1-form-completion',
+]);
+
+// Usual word-target range of a lesson letter, by level (outside it is a warning).
+export const LETTER_WORDS: Record<string, { min: number; max: number }> = {
+  A1: { min: 15, max: 80 },
+  A2: { min: 20, max: 120 },
+  B1: { min: 30, max: 220 },
+  B2: { min: 80, max: 320 },
+  C1: { min: 90, max: 450 },
+};
+
+// Extra checks for a drafted writing exercise: errors, and warnings for the reviewer.
+function writingChecks(type: string, content: Record<string, unknown>, lessonId: string, level: string): { errors: string[]; warnings: string[] } {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+  const form = FORM_LESSONS.has(lessonId);
+  if (type === 'cloze') {
+    if (!form) errors.push('cloze is for the form lessons only; a writing lesson takes a letter');
+    (Array.isArray(content.gaps) ? content.gaps : []).forEach((g, i) => {
+      if ((g as { mode?: unknown })?.mode !== 'typed') warnings.push(`gap ${i + 1} is not typed; form lessons use typed gaps`);
+    });
+    return { errors, warnings };
+  }
+  if (form) errors.push('a form lesson takes a cloze, not a letter');
+  const instruction = content.instruction as { en?: unknown; de?: unknown } | undefined;
+  // validateExerciseContent only checks an instruction that is present; a lesson letter must have one.
+  if (!instruction) errors.push('a letter needs an instruction in English and German');
+  const tasks = Array.isArray(content.tasks) ? (content.tasks as Record<string, unknown>[]) : [];
+  if (tasks.length !== 1) errors.push('a lesson letter needs exactly 1 task');
+  const range = LETTER_WORDS[level];
+  const english = (where: string, text: unknown) => {
+    const en = typeof text === 'string' ? englishWords(text) : [];
+    if (en.length > 0) warnings.push(`${where}: English word(s) ${en.join(', ')}; the situation and Leitpunkte are German-only`);
+  };
+  for (const t of tasks) {
+    english('situation', t?.situation);
+    (Array.isArray(t?.leitpunkte) ? t.leitpunkte : []).forEach((l, k) => english(`Leitpunkt ${k + 1}`, l));
+    const w = t?.wordTarget as { min?: unknown; max?: unknown } | undefined;
+    if (range && typeof w?.min === 'number' && typeof w?.max === 'number' && (w.min < range.min || w.max > range.max)) {
+      warnings.push(`wordTarget ${w.min}-${w.max} is outside the usual ${range.min}-${range.max} words for ${level}`);
+    }
+  }
+  return { errors, warnings };
+}
 
 function canonical(v: unknown): string {
   if (Array.isArray(v)) return `[${v.map(canonical).join(',')}]`;
@@ -112,7 +171,7 @@ export function mergeLessonExercises(opts: MergeOptions): MergeResult {
       const lesson = seed.lessons.find((l) => l.id === lessonId);
       if (!lesson) { fail(['no such lesson in the seed']); continue; }
       const allowed = NEW_TYPES[lesson.skill];
-      if (!allowed) { fail([`lesson skill is "${lesson.skill}", not reading or listening`]); continue; }
+      if (!allowed) { fail([`lesson skill is "${lesson.skill}", not reading, listening or writing`]); continue; }
       let drafts: unknown;
       try {
         drafts = JSON.parse(readFileSync(join(opts.workDir, stem, file), 'utf8'));
@@ -164,6 +223,11 @@ export function mergeLessonExercises(opts: MergeOptions): MergeResult {
           const audio = audioContentProblems(content);
           found.push(...audio.errors);
           for (const w of audio.warnings) warnings.push(`${n}: ${w}`);
+        }
+        if (lesson.skill === 'writing') {
+          const w = writingChecks(d.type, content, lessonId, seed.level);
+          found.push(...w.errors);
+          for (const m of w.warnings) warnings.push(`${n}: ${m}`);
         }
         if (found.length > 0) { for (const f of found) problems.push(`${n}: ${f}`); return; }
         const key = `${d.type}|${canonical(content)}`;
@@ -236,6 +300,17 @@ export function mergeLessonExercises(opts: MergeOptions): MergeResult {
       lines.push(`${label}: ${fresh.length} added, ${lessonReplaced} replaced, ${skipped} already merged`);
     }
 
+    // Whole-seed coverage: every writing lesson needs a letter (a cloze in the form lessons). Uncovered lessons are
+    // warnings, and errors under --complete.
+    const writing = seed.lessons.filter((l) => l.skill === 'writing');
+    if (writing.length > 0) {
+      const uncovered = writing.filter((l) => !seed.exercises.some((e) => e.lessonId === l.id && e.type === (FORM_LESSONS.has(l.id) ? 'cloze' : 'letter')));
+      for (const l of uncovered) {
+        lines.push(`${stem}/${l.id}: ${opts.complete ? 'problem' : 'warning'}: no ${FORM_LESSONS.has(l.id) ? 'cloze' : 'letter'} exercise yet`);
+      }
+      lines.push(`${stem}: ${writing.length - uncovered.length} of ${writing.length} writing lessons covered`);
+      if (uncovered.length > 0 && opts.complete) seedOk = false;
+    }
     if (seedOk) {
       const whole = validateSeedFile(seed, stem);
       if (whole.length > 0) {
@@ -269,12 +344,15 @@ function main() {
   const ci = args.indexOf('--check-only');
   const checkOnly = ci >= 0;
   if (checkOnly) args.splice(ci, 1);
+  const co = args.indexOf('--complete');
+  const complete = co >= 0;
+  if (complete) args.splice(co, 1);
   const workDir = args[0];
   if (!workDir) {
-    console.error('Usage: npx tsx scripts/merge-lesson-exercises.ts <workDir> [--seed <file-stem>] [--check-only] [--data-root <dir>]');
+    console.error('Usage: npx tsx scripts/merge-lesson-exercises.ts <workDir> [--seed <file-stem>] [--check-only] [--complete] [--data-root <dir>]');
     process.exit(2);
   }
-  const result = mergeLessonExercises({ workDir, seed, dataRoot, checkOnly });
+  const result = mergeLessonExercises({ workDir, seed, dataRoot, checkOnly, complete });
   console.log(result.lines.join('\n'));
   if (!result.ok) process.exit(1);
 }

@@ -1,17 +1,22 @@
 'use client';
 
-import { memo, useCallback, useEffect, useRef, useState } from 'react';
+import { memo, useCallback, useMemo, useEffect, useRef, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { PenLine, Send } from 'lucide-react';
 import { LanguageToggle } from '@/components/LanguageToggle';
 import { useApiErrorText } from '@/components/useApiErrorText';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
+import { GermanTextarea } from '@/components/typing/GermanTextarea';
+import { WordCounter, countWords } from '@/components/typing/WordCounter';
 import { differsByLanguage, isLocalizedText, pickText, type ContentLanguage } from '@/lib/i18n/localizedText';
+import type { MarkType } from '@/lib/writing/letterGrading';
+import type { Correction } from '@/lib/freestyle/replies';
 import type { SessionMessage, SessionView } from '@/lib/freestyle/sessionViews';
+import { MarkedText, type TextMark } from '@/components/writing/MarkedText';
+import { locateMarks } from '@/lib/writing/marks';
+import { takeWritingDraft } from '@/components/writing/writingDraft';
 import { CorrectionList, readCorrections } from './CorrectionList';
-import { GermanLetters } from './GermanLetters';
 import { TappableGerman } from './TappableGerman';
 
 interface Version {
@@ -29,7 +34,6 @@ function pairVersions(messages: SessionMessage[]): Version[] {
   return versions;
 }
 
-const countWords = (text: string) => (text.trim() ? text.trim().split(/\s+/).length : 0);
 
 // Spec: free writing is AI correction, not in exam format. Versions are stacked, newest last (I15).
 export function WritingSession({ session, onMessages }: { session: SessionView; onMessages: (messages: SessionMessage[]) => void }) {
@@ -45,6 +49,12 @@ export function WritingSession({ session, onMessages }: { session: SessionView; 
   const shown = useRef(versions.length);
   // A ref as well as state: a second click can land before the re-render that disables submitting.
   const sending = useRef(false);
+
+  // S11: a letter copied from a Teil result fills the box, only while it is still empty.
+  useEffect(() => {
+    const copied = takeWritingDraft();
+    if (copied) setDraft((current) => (current.trim() === '' ? copied : current));
+  }, []);
 
   // Bring a newly added version into view; opening a session with versions leaves the page at the top.
   useEffect(() => {
@@ -125,7 +135,7 @@ export function WritingSession({ session, onMessages }: { session: SessionView; 
         <label htmlFor="freestyle-writing" className="text-sm font-medium">
           {t('yourText')}
         </label>
-        <Textarea
+        <GermanTextarea
           id="freestyle-writing"
           ref={box}
           lang="de"
@@ -139,11 +149,8 @@ export function WritingSession({ session, onMessages }: { session: SessionView; 
           className="min-h-48 text-base leading-relaxed"
         />
         <div className="flex flex-wrap items-center justify-between gap-2">
-          <GermanLetters box={box} value={draft} onChange={setDraft} disabled={busy} />
           <div className="flex items-center gap-3">
-            <span id="freestyle-writing-count" className="text-sm text-text-muted tabular-nums">
-              {t('words', { count: words })}
-            </span>
+            <WordCounter id="freestyle-writing-count" text={draft} />
             <Button type="button" className="min-h-11 px-5" disabled={busy || words === 0} onClick={() => void submit()}>
               <Send aria-hidden />
               {t('submit')}
@@ -157,6 +164,28 @@ export function WritingSession({ session, onMessages }: { session: SessionView; 
     </div>
   );
 }
+
+// S10: offsets are found client-side over the stored text, so old messages work too. Corrections whose
+// wrong text isn't found have no mark; they stay in the list below.
+function marksOf(text: string, corrections: Correction[]): TextMark[] {
+  // The model's list isn't ordered by position, and locateMarks searches forward. Give each correction the
+  // position of its own occurrence (the second "habe" gets the second occurrence), then order by position.
+  const nfc = text.normalize('NFC');
+  const from = new Map<string, number>();
+  const placed = corrections.map((c) => {
+    const needle = c.wrong.normalize('NFC');
+    const i = needle ? nfc.indexOf(needle, from.get(needle) ?? 0) : -1;
+    if (i >= 0) from.set(needle, i + needle.length);
+    return { c, at: i < 0 ? Infinity : i };
+  });
+  const ordered = placed.sort((x, y) => x.at - y.at).map(({ c }) => c);
+  return locateMarks(
+    text,
+    ordered.map((c) => ({ original: c.wrong, correction: c.right, reason: c.reason, type: markTypeOf(c.category) }))
+  );
+}
+
+const markTypeOf = (category: string): MarkType => (category === 'spelling' || category === 'register' ? category : 'grammar');
 
 const VersionCard = memo(function VersionCard({
   n,
@@ -174,7 +203,10 @@ const VersionCard = memo(function VersionCard({
   const t = useTranslations('freestyle');
   const locale = useLocale() as ContentLanguage;
   const [language, setLanguage] = useState<ContentLanguage>(locale);
-  const corrections = readCorrections(reply?.extra?.corrections);
+  const stored = reply?.extra?.corrections;
+  const corrections = useMemo(() => readCorrections(stored), [stored]);
+  const shownText = student.content.normalize('NFC');
+  const marks = useMemo(() => marksOf(shownText, corrections), [shownText, corrections]);
   const comment = isLocalizedText(reply?.extra?.comment) ? reply.extra.comment : null;
 
   return (
@@ -194,9 +226,7 @@ const VersionCard = memo(function VersionCard({
       <div className="grid gap-3 md:grid-cols-2">
         <div className="flex flex-col gap-1">
           <h3 className="text-xs font-semibold tracking-wide text-text-muted uppercase">{t('yourVersion')}</h3>
-          <p lang="de" className="leading-relaxed whitespace-pre-wrap">
-            {student.content}
-          </p>
+          <MarkedText text={shownText} marks={marks} className="leading-relaxed" />
         </div>
         {reply && (
           <div className="flex flex-col gap-1">

@@ -13,7 +13,25 @@
     { "id": "lesen-2", "skill": "reading", "title": { "en": "Reading Part 2", "de": "Lesen Teil 2" }, "taskType": "passage_questions", "items": 6, "points": 20, "minutes": 20, "instructions": "Lesen Sie einen Text (ca. 400 Wörter) und die Aufgaben 1–6. Welche Lösung (a, b oder c) ist richtig?" },
     { "id": "hoeren-1", "skill": "listening", "title": { "en": "Listening Part 1", "de": "Hören Teil 1" }, "taskType": "audio_questions", "items": 6, "points": 20, "minutes": 10, "instructions": "Sie hören 6 kurze Texte. Sie hören jeden Text zweimal. Sind die Aussagen richtig oder falsch?", "replays": 2 },
     { "id": "hoeren-2", "skill": "listening", "title": { "en": "Listening Part 2", "de": "Hören Teil 2" }, "taskType": "audio_questions", "items": 8, "points": 20, "minutes": 12, "instructions": "Sie hören ein Gespräch. Sie hören das Gespräch einmal. Welche Lösung (a, b oder c) ist richtig?", "replays": 1 },
-    { "id": "schreiben", "skill": "writing", "title": { "en": "Writing", "de": "Schreiben" }, "taskType": "letter", "items": 4, "points": 20, "minutes": 30, "instructions": "Schreiben Sie eine Nachricht (ca. 100 Wörter). Behandeln Sie alle Punkte der Aufgabe und denken Sie an Anrede und Gruß." },
+    { "id": "schreiben", "skill": "writing", "title": { "en": "Writing", "de": "Schreiben" }, "taskType": "letter", "items": 3, "points": 20, "minutes": 30, "choices": 1, "wordTarget": { "min": 80, "max": 120 },
+      "rubric": { "criteria": [
+      { "id": "aufgabe", "name": { "en": "Task completion", "de": "Aufgabenbewältigung" }, "points": { "A": 8, "B": 5, "C": 3, "D": 0 }, "descriptors": {
+        "A": "Alle Punkte der Aufgabe werden verständlich und passend zur Situation behandelt.",
+        "B": "Die meisten Punkte werden behandelt; einer fehlt oder bleibt sehr knapp.",
+        "C": "Nur ein Teil der Punkte wird behandelt, oder die Punkte sind kaum erkennbar.",
+        "D": "Die Aufgabe wird kaum oder gar nicht bearbeitet." } },
+      { "id": "gestaltung", "name": { "en": "Communicative design", "de": "Kommunikative Gestaltung" }, "points": { "A": 6, "B": 4, "C": 2, "D": 0 }, "descriptors": {
+        "A": "Anrede und Gruß passen, die Sätze sind mit passenden Konnektoren (z. B. weil, deshalb, trotzdem, außerdem) sinnvoll verbunden, und der Ton passt zur Empfängerin oder zum Empfänger.",
+        "B": "Anrede, Gruß und Ton passen meistens; die Sätze sind teilweise verbunden, aber Konnektoren fehlen manchmal.",
+        "C": "Anrede oder Gruß fehlt, die Sätze stehen meist ohne Konnektoren nebeneinander, oder der Ton passt oft nicht.",
+        "D": "Es gibt keinen erkennbaren Aufbau, oder die Nachricht passt nicht zur Empfängerin oder zum Empfänger." } },
+      { "id": "richtigkeit", "name": { "en": "Formal accuracy", "de": "Formale Richtigkeit" }, "points": { "A": 6, "B": 4, "C": 2, "D": 0 }, "descriptors": {
+        "A": "Wortschatz und Grammatik sind dem Niveau B1 angemessen und fast fehlerfrei; Rechtschreibfehler sind selten.",
+        "B": "Es gibt einige Fehler, die das Verständnis aber kaum stören.",
+        "C": "Viele Fehler erschweren stellenweise das Verständnis.",
+        "D": "Es gibt so viele Fehler, dass der Text größtenteils unverständlich ist." } }
+    ] },
+      "instructions": "Schreiben Sie eine Nachricht (ca. 100 Wörter). Behandeln Sie alle Punkte der Aufgabe und denken Sie an Anrede und Gruß." },
     { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Sprechen Teil 1" }, "taskType": "spoken", "items": 4, "points": 25, "minutes": 5, "instructions": "Ein Thema präsentieren: Sprechen Sie zusammenhängend über das Thema auf Ihrer Karte und beantworten Sie anschließend die Fragen." },
     { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Sprechen Teil 2" }, "taskType": "spoken", "items": 4, "points": 25, "minutes": 6, "instructions": "Diskussion: Diskutieren Sie über die Frage auf dem Aufgabenblatt. Begründen Sie Ihre Meinung und reagieren Sie auf die Argumente." }
   ]

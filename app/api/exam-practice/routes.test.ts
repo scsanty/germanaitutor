@@ -12,6 +12,7 @@ import { getDb, closeDb } from '@/lib/db/client';
 import { generateWithActiveProvider } from '@/lib/services/aiService';
 import { createProfileService } from '@/lib/services/profileService';
 import { createTeilSetService } from '@/lib/services/teilSetService';
+import { LETTER_MAX_LENGTH } from '@/lib/tasks/letter';
 import { sharedSpeechAvailability } from '@/lib/speech/speechAvailability';
 import { getSpeechUrl } from '@/lib/speech/speechProvider';
 import { GET as overview } from './route';
@@ -71,9 +72,12 @@ describe('/api/exam-practice', () => {
     const listening = await post(start, { formatId: 'telc-b1', partId: 'hoeren-1' });
     expect(listening.status).toBe(409);
     expect(await listening.json()).toMatchObject({ code: 'part_unavailable' });
-    const res = await post(start, { formatId: 'telc-b1', partId: 'schreiben' });
-    expect(res.status).toBe(409);
-    expect(await res.json()).toMatchObject({ code: 'part_unavailable' });
+    // Writing has bundled sets and a runner now; the spoken parts have no runner, and Sprachbausteine run only in the mock.
+    for (const partId of ['sprechen-1', 'sprachbausteine-1']) {
+      const res = await post(start, { formatId: 'telc-b1', partId });
+      expect(res.status, partId).toBe(409);
+      expect(await res.json(), partId).toMatchObject({ code: 'part_unavailable' });
+    }
     expect((await post(start, { formatId: '../../etc', partId: 'lesen-1' })).status).toBe(404);
     expect((await post(start, { formatId: 'telc-b1', partId: 'nope' })).status).toBe(404);
     expect((await post(start, {})).status).toBe(400);
@@ -93,9 +97,9 @@ describe('/api/exam-practice', () => {
   // Sprachbausteine parts run only in the mock, so the mock start is where a bad cloze reply would surface.
   it('mock start falls back to a seen set when the AI reply has a null cloze gap, instead of failing', async () => {
     const db = getDb();
-    // The mock includes the listening parts: give each one a set, and the speech service is up.
+    // The mock includes the listening and writing parts: give each one a set, and the speech service is up.
     sharedSpeechAvailability().record(getSpeechUrl(db), true);
-    for (const part of ['hoeren-2', 'hoeren-3']) {
+    for (const part of ['hoeren-2', 'hoeren-3', 'schreiben']) {
       const fixture = JSON.parse(readFileSync(join(process.cwd(), 'test', 'fixtures', 'teil-sets', 'telc-b1', `${part}.json`), 'utf8'));
       createTeilSetService(db).upload('telc-b1', part, [{ id: `fixture-${part}`, set: fixture.sets[0].set }]);
     }
@@ -113,6 +117,32 @@ describe('/api/exam-practice', () => {
     expect(generateWithActiveProvider).toHaveBeenCalledTimes(1);
     const pool = db.prepare("SELECT COUNT(*) AS n FROM teil_sets WHERE format_id = 'telc-b1' AND part_id = 'sprachbausteine-1' AND status = 'unreviewed'").get() as { n: number };
     expect(pool.n).toBe(0);
+  });
+
+  // S4: a letter that is being graded refuses a second submit with 409 letter_grading.
+  it('submit answers 409 letter_grading while the letter is being graded', async () => {
+    const db = getDb();
+    const fixture = JSON.parse(readFileSync(join(process.cwd(), 'test', 'fixtures', 'teil-sets', 'telc-b1', 'schreiben.json'), 'utf8'));
+    createTeilSetService(db).upload('telc-b1', 'schreiben', [{ id: 'fixture-schreiben', set: fixture.sets[0].set }]);
+    const run = await (await post(start, { formatId: 'telc-b1', partId: 'schreiben' })).json();
+    db.prepare('UPDATE teil_attempts SET grading_started_at = ? WHERE id = ?').run(new Date().toISOString(), run.attemptId);
+    const res = await post(submit, { attemptId: run.attemptId, answers: { type: 'letter', taskIndex: 0, text: 'Liebe Anna, danke!' } });
+    expect(res.status).toBe(409);
+    expect(await res.json()).toMatchObject({ code: 'letter_grading' });
+    expect(generateWithActiveProvider).not.toHaveBeenCalled();
+  });
+
+  // Final review Important 1: an over-long letter is refused before any AI call.
+  it('submit answers 400 for a letter longer than LETTER_MAX_LENGTH', async () => {
+    const db = getDb();
+    const fixture = JSON.parse(readFileSync(join(process.cwd(), 'test', 'fixtures', 'teil-sets', 'telc-b1', 'schreiben.json'), 'utf8'));
+    createTeilSetService(db).upload('telc-b1', 'schreiben', [{ id: 'fixture-schreiben', set: fixture.sets[0].set }]);
+    const run = await (await post(start, { formatId: 'telc-b1', partId: 'schreiben' })).json();
+    const text = 'a'.repeat(LETTER_MAX_LENGTH + 1);
+    const res = await post(submit, { attemptId: run.attemptId, answers: { type: 'letter', taskIndex: 0, text } });
+    expect(res.status).toBe(400);
+    expect(await res.json()).toMatchObject({ code: 'bad_request' });
+    expect(generateWithActiveProvider).not.toHaveBeenCalled();
   });
 
   it('mock start validates its body', async () => {

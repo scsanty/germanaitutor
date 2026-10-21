@@ -1,0 +1,231 @@
+{
+  "formatId": "telc-a1",
+  "partId": "schreiben-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-a1__schreiben-1__s01",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Ihr Freund Tomasz Kowalski kommt aus Polen. Er ist 29 Jahre alt und wohnt seit einem Jahr in Talbrück. Seine Adresse ist Bahnhofstraße 14, 72305 Talbrück. Tomasz möchte im Sportverein Talbrück schwimmen. Er arbeitet viel und hat nur am Mittwoch Zeit. Tomasz bezahlt den Beitrag jeden Monat. Er spricht noch nicht so gut Deutsch. Sie helfen ihm und füllen das Formular aus.\n\nSportverein Talbrück – Anmeldung\n\nFamilienname: Kowalski\nVorname: Tomasz\nAlter: {{1}}\nHerkunftsland: {{2}}\nStraße, Hausnummer: Bahnhofstraße 14\nPostleitzahl: 72305\nWohnort: {{3}}\nSportart: {{4}}\nTrainingstag: {{5}}\nZahlung: monatlich",
+          "gaps": [
+            {
+              "mode": "typed",
+              "answer": "29",
+              "variants": [
+                "29 Jahre",
+                "neunundzwanzig"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "Polen"
+            },
+            {
+              "mode": "typed",
+              "answer": "Talbrück",
+              "variants": [
+                "Talbrueck"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "Schwimmen",
+              "variants": [
+                "schwimmen"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "Mittwoch",
+              "variants": [
+                "mittwochs",
+                "Mittwochs",
+                "am Mittwoch",
+                "Am Mittwoch"
+              ]
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "The text says: \"Er ist 29 Jahre alt.\" Write the number: 29.",
+            "de": "Im Text steht: „Er ist 29 Jahre alt.“ Schreiben Sie die Zahl: 29."
+          },
+          {
+            "en": "Tomasz comes from Poland: \"kommt aus Polen\".",
+            "de": "Tomasz kommt aus Polen: „kommt aus Polen“."
+          },
+          {
+            "en": "His address is \"72305 Talbrück\", so the town is Talbrück.",
+            "de": "Seine Adresse ist „72305 Talbrück“, der Wohnort ist also Talbrück."
+          },
+          {
+            "en": "Tomasz wants to swim at the club, so the sport is Schwimmen.",
+            "de": "Tomasz möchte im Verein schwimmen, die Sportart ist also Schwimmen."
+          },
+          {
+            "en": "He only has time on Wednesday: \"nur am Mittwoch\".",
+            "de": "Er hat nur am Mittwoch Zeit: „nur am Mittwoch“."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a1__schreiben-1__s02",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Ihre Freundin Maria Santos wohnt in Kelbach. Sie möchte mit ihrem Mann und ihren zwei Kindern im Hotel Seeblick in Morlingen Urlaub machen. Die Familie kommt am 12. August und fährt am 19. August wieder nach Hause. Sie möchte zwei Zimmer. Die Familie möchte im Hotel nur frühstücken, nicht zu Mittag und nicht zu Abend essen. Maria bezahlt mit Kreditkarte. Sie füllen für Maria das Formular aus.\n\nHotel Seeblick Morlingen – Zimmerreservierung\n\nFamilienname: Santos\nVorname: Maria\nWohnort: Kelbach\nErwachsene: 2\nKinder: {{1}}\nAnreise: 12.08.\nAbreise: {{2}}\nAnzahl der Zimmer: {{3}}\nEssen im Hotel: {{4}}\nZahlung: {{5}}",
+          "gaps": [
+            {
+              "mode": "typed",
+              "answer": "2",
+              "variants": [
+                "zwei",
+                "2 Kinder",
+                "zwei Kinder"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "19.08.",
+              "variants": [
+                "19.8.",
+                "19.08",
+                "19.8",
+                "19. 8.",
+                "19. August",
+                "19 August",
+                "am 19. August",
+                "Am 19. August"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "2",
+              "variants": [
+                "zwei",
+                "2 Zimmer",
+                "zwei Zimmer"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "Frühstück",
+              "variants": [
+                "nur Frühstück",
+                "Nur Frühstück",
+                "Fruehstueck",
+                "nur Fruehstueck",
+                "Nur Fruehstueck"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "Kreditkarte",
+              "variants": [
+                "mit Kreditkarte",
+                "Mit Kreditkarte",
+                "per Kreditkarte",
+                "Per Kreditkarte"
+              ]
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Maria travels with \"ihren zwei Kindern\", so write 2.",
+            "de": "Maria fährt mit „ihren zwei Kindern“, schreiben Sie also 2."
+          },
+          {
+            "en": "The family goes home on 19 August. That is the departure date.",
+            "de": "Die Familie fährt am 19. August wieder nach Hause. Das ist die Abreise."
+          },
+          {
+            "en": "The text says: \"Sie möchte zwei Zimmer.\"",
+            "de": "Im Text steht: „Sie möchte zwei Zimmer.“"
+          },
+          {
+            "en": "The family only wants breakfast at the hotel, not lunch or dinner.",
+            "de": "Die Familie möchte im Hotel nur Frühstück, kein Mittagessen und kein Abendessen."
+          },
+          {
+            "en": "Maria pays by credit card: \"mit Kreditkarte\".",
+            "de": "Maria bezahlt „mit Kreditkarte“."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a1__schreiben-1__s03",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Ihr Nachbar Ahmed Karimi kommt aus dem Iran und wohnt im Lindenweg 7 in Halbstein. Er arbeitet als Koch in einem Restaurant. Seine Muttersprache ist Persisch, aber er liest gern Bücher auf Deutsch. Ahmed möchte einen Familienausweis für die Stadtbibliothek Halbstein: für sich, seine Frau und seine Tochter. Sie helfen ihm mit dem Formular.\n\nStadtbibliothek Halbstein – Familienausweis\n\nFamilienname: Karimi\nVorname: Ahmed\nHerkunftsland: {{1}}\nMuttersprache: {{2}}\nBeruf: {{3}}\nStraße, Hausnummer: {{4}}\nWohnort: Halbstein\nAusweis für wie viele Personen? {{5}}",
+          "gaps": [
+            {
+              "mode": "typed",
+              "answer": "Iran",
+              "variants": [
+                "der Iran",
+                "Der Iran"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "Persisch",
+              "variants": [
+                "persisch"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "Koch"
+            },
+            {
+              "mode": "typed",
+              "answer": "Lindenweg 7",
+              "variants": [
+                "Lindenweg, 7",
+                "Lindenweg Nr. 7"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "3",
+              "variants": [
+                "drei",
+                "3 Personen",
+                "drei Personen"
+              ]
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Ahmed comes \"aus dem Iran\". In the form, write the country: Iran.",
+            "de": "Ahmed kommt „aus dem Iran“. Im Formular steht das Land: Iran."
+          },
+          {
+            "en": "The text says: \"Seine Muttersprache ist Persisch.\"",
+            "de": "Im Text steht: „Seine Muttersprache ist Persisch.“"
+          },
+          {
+            "en": "He works as a cook: \"Er arbeitet als Koch.\"",
+            "de": "Er arbeitet als Koch: „Er arbeitet als Koch.“"
+          },
+          {
+            "en": "He lives at Lindenweg 7. Write the street and the house number.",
+            "de": "Er wohnt im Lindenweg 7. Schreiben Sie Straße und Hausnummer."
+          },
+          {
+            "en": "The card is for Ahmed, his wife and his daughter: 3 people.",
+            "de": "Der Ausweis ist für Ahmed, seine Frau und seine Tochter: 3 Personen."
+          }
+        ]
+      }
+    }
+  ]
+}

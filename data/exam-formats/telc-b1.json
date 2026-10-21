@@ -17,7 +17,25 @@
     { "id": "hoeren-1", "skill": "listening", "title": { "en": "Listening Part 1", "de": "Hörverstehen Teil 1" }, "taskType": "audio_questions", "items": 5, "points": 25, "minutes": 10, "replays": 1, "instructions": "Sie hören jetzt fünf kurze Texte. Sie hören jeden Text nur einmal. Entscheiden Sie, ob die Aussagen richtig oder falsch sind." },
     { "id": "hoeren-2", "skill": "listening", "title": { "en": "Listening Part 2", "de": "Hörverstehen Teil 2" }, "taskType": "audio_questions", "items": 10, "points": 25, "minutes": 12, "replays": 2, "instructions": "Sie hören jetzt ein Gespräch. Sie hören das Gespräch zweimal. Entscheiden Sie, ob die Aussagen richtig oder falsch sind." },
     { "id": "hoeren-3", "skill": "listening", "title": { "en": "Listening Part 3", "de": "Hörverstehen Teil 3" }, "taskType": "audio_questions", "items": 5, "points": 25, "minutes": 8, "replays": 2, "instructions": "Sie hören jetzt fünf kurze Texte. Sie hören jeden Text zweimal. Entscheiden Sie, ob die Aussagen richtig oder falsch sind." },
-    { "id": "schreiben", "skill": "writing", "title": { "en": "Writing", "de": "Schriftlicher Ausdruck" }, "taskType": "letter", "items": 3, "points": 45, "minutes": 30, "instructions": "Wählen Sie Aufgabe A oder Aufgabe B. Schreiben Sie einen Brief. Behandeln Sie darin die vier Leitpunkte." },
+    { "id": "schreiben", "skill": "writing", "title": { "en": "Writing", "de": "Schriftlicher Ausdruck" }, "taskType": "letter", "items": 3, "points": 45, "minutes": 30, "choices": 2, "wordTarget": { "min": 120, "max": 180 },
+      "rubric": { "criteria": [
+      { "id": "aufgabe", "name": { "en": "Task completion", "de": "Aufgabenbewältigung" }, "points": { "A": 15, "B": 9, "C": 3, "D": 0 }, "descriptors": {
+        "A": "Alle vier Leitpunkte werden angemessen ausgeführt, und der Text passt zur Situation.",
+        "B": "Die meisten Leitpunkte werden behandelt; einer fehlt oder bleibt zu knapp.",
+        "C": "Nur wenige Leitpunkte werden behandelt, oder fast alle bleiben oberflächlich.",
+        "D": "Die Aufgabe wird kaum oder gar nicht bearbeitet." } },
+      { "id": "gestaltung", "name": { "en": "Communicative design", "de": "Kommunikative Gestaltung" }, "points": { "A": 15, "B": 9, "C": 3, "D": 0 }, "descriptors": {
+        "A": "Der Brief ist klar gegliedert und zusammenhängend: Sätze und Leitpunkte sind mit passenden Konnektoren (z. B. weil, deshalb, außerdem) verknüpft, Anrede und Schluss passen, und der Ton passt zur Leserin oder zum Leser.",
+        "B": "Der Aufbau ist meist klar, und die Sätze sind überwiegend verknüpft; Konnektoren, Anrede, Schluss oder Ton passen nicht immer.",
+        "C": "Der Aufbau ist schwer nachzuvollziehen: Die Sätze stehen oft unverbunden nebeneinander, Konnektoren fehlen meist, oder der Ton ist häufig unpassend.",
+        "D": "Es gibt keinen erkennbaren Aufbau und keine Verknüpfung durch Konnektoren, und der Text passt nicht zum Adressaten." } },
+      { "id": "richtigkeit", "name": { "en": "Formal accuracy", "de": "Formale Richtigkeit" }, "points": { "A": 15, "B": 9, "C": 3, "D": 0 }, "descriptors": {
+        "A": "Wortschatz und Grammatik sind abwechslungsreich und fast fehlerfrei; Rechtschreibfehler sind selten.",
+        "B": "Es gibt einige Fehler, die das Verständnis aber kaum stören.",
+        "C": "Viele Fehler erschweren stellenweise das Verständnis.",
+        "D": "Es gibt so viele Fehler, dass der Text größtenteils unverständlich ist." } }
+    ], "zeroesTextOn": { "criterion": "aufgabe", "grade": "D" } },
+      "instructions": "Wählen Sie Aufgabe A oder Aufgabe B. Schreiben Sie einen Brief. Behandeln Sie darin die vier Leitpunkte." },
     { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Mündlicher Ausdruck Teil 1" }, "taskType": "spoken", "items": 3, "points": 15, "minutes": 3, "instructions": "Kontaktaufnahme: Unterhalten Sie sich mit Ihrem Partner / Ihrer Partnerin." },
     { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Mündlicher Ausdruck Teil 2" }, "taskType": "spoken", "items": 3, "points": 30, "minutes": 6, "instructions": "Gespräch über ein Thema: Berichten Sie über Ihren Text und sprechen Sie mit Ihrem Partner / Ihrer Partnerin darüber." },
     { "id": "sprechen-3", "skill": "speaking", "title": { "en": "Speaking Part 3", "de": "Mündlicher Ausdruck Teil 3" }, "taskType": "spoken", "items": 3, "points": 30, "minutes": 6, "instructions": "Gemeinsam etwas planen: Planen Sie zusammen mit Ihrem Partner / Ihrer Partnerin." }

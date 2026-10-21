@@ -32,6 +32,53 @@ describe('freestyleService', () => {
     expect(added[1].content).toBe('Wohin bist du gegangen?');
   });
 
+  it('logs corrections to the error log with the right source, asks writing for 8192 tokens, and logs resubmissions again', async () => {
+    const writingReply = JSON.stringify({
+      corrections: [{ wrong: 'habe', right: 'bin', category: 'perfect_auxiliary', reason_en: 'sein', reason_de: 'sein' }],
+      corrected: 'Ich bin gefahren.',
+      comment_en: 'Good.',
+      comment_de: 'Gut.',
+    });
+    const { db, generate, service } = setup([conversationReply, writingReply, writingReply]);
+    const log = () => db.prepare('SELECT source, category, wrong, "right" AS r FROM error_log ORDER BY id').all();
+    await service.start('conversation', { level: 'B1', setup: {} });
+    await service.turn('conversation', 'Ich habe gegangen zum Arzt.');
+    expect(log()).toEqual([{ source: 'freestyle_chat', category: 'other', wrong: 'Ich habe gegangen', r: 'Ich bin gegangen' }]);
+    await service.start('free_writing', { level: 'B1', setup: {} });
+    await service.turn('free_writing', 'Ich habe gefahren.');
+    await service.turn('free_writing', 'Ich habe gefahren.');
+    expect(log().slice(1)).toEqual(Array(2).fill({ source: 'freestyle_writing', category: 'perfect_auxiliary', wrong: 'habe', r: 'bin' }));
+    const calls = generate.mock.calls as unknown as [AiRequest][];
+    expect(calls[1][0].maxTokens).toBe(8192);
+  });
+
+  it('still resolves with the saved messages when the error-log write fails', async () => {
+    const writingReply = JSON.stringify({ corrections: [{ wrong: 'habe', right: 'bin', reason_en: 's', reason_de: 's' }], corrected: 'Ich bin gefahren.', comment_en: 'G', comment_de: 'G' });
+    const { db, service } = setup([conversationReply, writingReply]);
+    db.exec('DROP TABLE error_log');
+    const quiet = vi.spyOn(console, 'error').mockImplementation(() => {});
+    await service.start('conversation', { level: 'B1', setup: {} });
+    expect((await service.turn('conversation', 'Ich habe gegangen zum Arzt.')).map((m) => m.role)).toEqual(['user', 'assistant']);
+    await service.start('free_writing', { level: 'B1', setup: {} });
+    expect((await service.turn('free_writing', 'Ich habe gefahren.')).map((m) => m.role)).toEqual(['user', 'assistant']);
+    expect(service.session('free_writing')!.messages).toHaveLength(2);
+    quiet.mockRestore();
+  });
+
+  it('logs nothing when a free-writing turn gets a bad reply', async () => {
+    const { db, service } = setup(['not json']);
+    await service.start('free_writing', { level: 'B1', setup: {} });
+    await expect(service.turn('free_writing', 'Ich habe gefahren.')).rejects.toMatchObject({ code: 'ai_bad_reply' });
+    expect((db.prepare('SELECT COUNT(*) AS n FROM error_log').get() as { n: number }).n).toBe(0);
+  });
+
+  it('logs nothing when the turn fails', async () => {
+    const { db, service } = setup(['not json']);
+    await service.start('conversation', { level: 'B1', setup: {} });
+    await expect(service.turn('conversation', 'Hallo')).rejects.toBeDefined();
+    expect((db.prepare('SELECT COUNT(*) AS n FROM error_log').get() as { n: number }).n).toBe(0);
+  });
+
   it('refuses a locked level, an invalid level, and an unknown or disabled mode', async () => {
     const { service } = setup([]);
     const locked = service.start('conversation', { level: 'C1', setup: {} });
@@ -214,7 +261,7 @@ describe('freestyleService', () => {
     const { db, service } = setup([conversationReply, summaryReply]);
     const count = (t: string) => (db.prepare(`SELECT COUNT(*) AS n FROM ${t}`).get() as { n: number }).n;
     const tables = (
-      db.prepare("SELECT name FROM sqlite_master WHERE type = 'table' AND name NOT LIKE 'freestyle_%' AND name NOT LIKE 'sqlite_%'").all() as { name: string }[]
+      db.prepare("SELECT name FROM sqlite_master WHERE type = 'table' AND name NOT LIKE 'freestyle_%' AND name NOT LIKE 'sqlite_%' AND name <> 'error_log'").all() as { name: string }[]
     ).map((t) => t.name);
     expect(tables).toEqual(expect.arrayContaining(['lesson_attempts', 'lesson_completions', 'exercise_srs_state']));
     const before = tables.map(count);

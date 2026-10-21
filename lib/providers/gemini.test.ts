@@ -71,4 +71,17 @@ describe('createGeminiAdapter', () => {
     await adapter.testConnection({ apiKey: 'gm-test' });
     expect(fetchImpl).toHaveBeenCalledTimes(1);
   });
+
+  // Final review Important 2: maxOutputTokens includes a thinking model's reasoning, so a cap at the
+  // letter value could cut the JSON reply short. Gemini keeps its own default.
+  it('sends no output cap even when maxTokens is given, and passes a timeout signal', async () => {
+    const fetchImpl = vi.fn().mockResolvedValue({ ok: true, status: 200, json: async () => ({}) });
+    const adapter = createGeminiAdapter(fetchImpl);
+    const messages = [{ role: 'user' as const, content: 'Hi' }];
+    await adapter.generateText({ apiKey: 'k' }, { model: 'm', messages, maxTokens: 8192, timeoutMs: 90_000 });
+    const [first] = fetchImpl.mock.calls.map((c) => c[1]);
+    expect(JSON.parse(first.body).generationConfig).toBeUndefined();
+    expect(first.body).not.toContain('maxOutputTokens');
+    expect(first.signal).toBeInstanceOf(AbortSignal);
+  });
 });

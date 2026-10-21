@@ -1,0 +1,231 @@
+{
+  "formatId": "goethe-a1",
+  "partId": "schreiben-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-a1__schreiben-1__s01",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Ihre Freundin Lucia Moreno kommt aus Spanien und wohnt jetzt in Hellstadt. Ihre Adresse ist Gartenstraße 5, 34567 Hellstadt. Lucia arbeitet als Krankenschwester im Krankenhaus. Sie möchte in der Stadtbibliothek Bücher ausleihen. Sie liest gern Bücher auf Spanisch. Der Ausweis kostet 15 Euro im Jahr, und Lucia bezahlt bar. Sie helfen Lucia und füllen das Formular aus.\n\nStadtbibliothek Hellstadt – Antrag auf einen Leseausweis\n\nFamilienname: Moreno\nVorname: {{1}}\nStraße, Hausnummer: Gartenstraße 5\nPostleitzahl: {{2}}\nWohnort: Hellstadt\nBeruf: {{3}}\nBücher in welcher Sprache?: {{4}}\nZahlung: {{5}}",
+          "gaps": [
+            {
+              "mode": "typed",
+              "answer": "Lucia"
+            },
+            {
+              "mode": "typed",
+              "answer": "34567"
+            },
+            {
+              "mode": "typed",
+              "answer": "Krankenschwester"
+            },
+            {
+              "mode": "typed",
+              "answer": "Spanisch",
+              "variants": [
+                "spanisch",
+                "auf Spanisch",
+                "Auf Spanisch"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "bar",
+              "variants": [
+                "Bar",
+                "in bar",
+                "In bar"
+              ]
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Her first name is Lucia: \"Ihre Freundin Lucia Moreno\".",
+            "de": "Ihr Vorname ist Lucia: „Ihre Freundin Lucia Moreno“."
+          },
+          {
+            "en": "The address is \"34567 Hellstadt\". The postcode is the number: 34567.",
+            "de": "Die Adresse ist „34567 Hellstadt“. Die Postleitzahl ist die Zahl: 34567."
+          },
+          {
+            "en": "The text says: \"Lucia arbeitet als Krankenschwester\".",
+            "de": "Im Text steht: „Lucia arbeitet als Krankenschwester“."
+          },
+          {
+            "en": "She likes reading books in Spanish: \"Bücher auf Spanisch\". Write Spanisch.",
+            "de": "Sie liest gern „Bücher auf Spanisch“. Schreiben Sie Spanisch."
+          },
+          {
+            "en": "Lucia pays in cash: \"Lucia bezahlt bar.\"",
+            "de": "Lucia bezahlt in bar: „Lucia bezahlt bar.“"
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a1__schreiben-1__s02",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Ihr Kollege Daniel Okafor kommt aus Nigeria. Er möchte im Familienzentrum Mühlbrück einen Kochkurs machen. Seine Frau kommt auch mit, sie sind also zwei Personen. Der Kurs ist jeden Donnerstag von 18 bis 20 Uhr. Daniel und seine Frau essen kein Fleisch. Daniel hat keinen Computer, er bekommt die Rechnung mit der Post. Sie helfen Daniel und füllen das Formular aus.\n\nFamilienzentrum Mühlbrück – Anmeldung Kochkurs\n\nFamilienname: Okafor\nVorname: Daniel\nHerkunftsland: {{1}}\nAnzahl Personen: {{2}}\nKurstag: {{3}}\nKursbeginn (Uhrzeit): {{4}}\nEssen mit Fleisch oder vegetarisch?: {{5}}\nRechnung per E-Mail oder per Post?: per Post",
+          "gaps": [
+            {
+              "mode": "typed",
+              "answer": "Nigeria"
+            },
+            {
+              "mode": "typed",
+              "answer": "2",
+              "variants": [
+                "zwei",
+                "Zwei",
+                "2 Personen",
+                "zwei Personen",
+                "Zwei Personen"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "Donnerstag",
+              "variants": [
+                "donnerstags",
+                "Donnerstags",
+                "am Donnerstag",
+                "Am Donnerstag",
+                "jeden Donnerstag",
+                "Jeden Donnerstag"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "18 Uhr",
+              "variants": [
+                "18",
+                "18.00",
+                "18:00",
+                "18.00 Uhr",
+                "18:00 Uhr",
+                "um 18 Uhr",
+                "Um 18 Uhr",
+                "um 18.00 Uhr",
+                "Um 18.00 Uhr",
+                "um 18:00 Uhr",
+                "Um 18:00 Uhr"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "vegetarisch",
+              "variants": [
+                "Vegetarisch",
+                "ohne Fleisch",
+                "Ohne Fleisch"
+              ]
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Daniel comes from Nigeria: \"kommt aus Nigeria\".",
+            "de": "Daniel kommt aus Nigeria: „kommt aus Nigeria“."
+          },
+          {
+            "en": "His wife comes too, so they are two people: 2.",
+            "de": "Seine Frau kommt mit, sie sind also zwei Personen: 2."
+          },
+          {
+            "en": "The course is \"jeden Donnerstag\", so the day is Donnerstag.",
+            "de": "Der Kurs ist „jeden Donnerstag“, der Kurstag ist also Donnerstag."
+          },
+          {
+            "en": "The course runs \"von 18 bis 20 Uhr\", so it starts at 18 Uhr.",
+            "de": "Der Kurs ist „von 18 bis 20 Uhr“, er beginnt also um 18 Uhr."
+          },
+          {
+            "en": "They don't eat meat (\"essen kein Fleisch\"), so write vegetarisch.",
+            "de": "Sie essen „kein Fleisch“, schreiben Sie also vegetarisch."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a1__schreiben-1__s03",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Ihre Nachbarin Milena Petrova kommt aus Bulgarien. Sie spricht Bulgarisch und ein bisschen Deutsch. Milena ist verheiratet und hat drei Kinder. Sie arbeitet nachmittags als Verkäuferin in einer Bäckerei. Sie möchte einen Termin bei Dr. Lang, dem neuen Hausarzt in Ostwalden. Am Vormittag hat sie Zeit. Sie helfen Milena und füllen das Formular aus.\n\nHausarztpraxis Dr. Lang, Ostwalden – Neue Patienten\n\nFamilienname: Petrova\nVorname: Milena\nMuttersprache: {{1}}\nFamilienstand: {{2}}\nAnzahl Kinder: {{3}}\nBeruf: {{4}}\nTermin am liebsten: {{5}}",
+          "gaps": [
+            {
+              "mode": "typed",
+              "answer": "Bulgarisch",
+              "variants": [
+                "bulgarisch"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "verheiratet",
+              "variants": [
+                "Verheiratet"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "3",
+              "variants": [
+                "drei",
+                "Drei",
+                "3 Kinder",
+                "drei Kinder",
+                "Drei Kinder"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "Verkäuferin",
+              "variants": [
+                "Verkaeuferin"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "vormittags",
+              "variants": [
+                "Vormittags",
+                "am Vormittag",
+                "Am Vormittag",
+                "Vormittag"
+              ]
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Milena comes from Bulgaria and speaks Bulgarian: \"Sie spricht Bulgarisch.\"",
+            "de": "Milena kommt aus Bulgarien und spricht Bulgarisch: „Sie spricht Bulgarisch.“"
+          },
+          {
+            "en": "The text says: \"Milena ist verheiratet.\"",
+            "de": "Im Text steht: „Milena ist verheiratet.“"
+          },
+          {
+            "en": "She has three children: \"hat drei Kinder\". Write 3.",
+            "de": "Sie „hat drei Kinder“. Schreiben Sie 3."
+          },
+          {
+            "en": "She works in a bakery: \"arbeitet nachmittags als Verkäuferin\".",
+            "de": "Sie arbeitet in einer Bäckerei: „arbeitet nachmittags als Verkäuferin“."
+          },
+          {
+            "en": "She works in the afternoons but has time in the morning: \"Am Vormittag hat sie Zeit.\"",
+            "de": "Sie arbeitet nachmittags, aber „am Vormittag hat sie Zeit“."
+          }
+        ]
+      }
+    }
+  ]
+}

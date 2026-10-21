@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import type { Exercise } from '../curriculum/types';
 import { answerTextFor, correctAnswerFor, isAttemptSource, parseLessonAnswer, taskAnswerText, taskTextFor, taskTextOf, type TaskAnswerSource } from './lessonAnswers';
 import { toExerciseView } from './exerciseView';
+import { LETTER_MAX_LENGTH, parseLetterAnswer } from '../tasks/letter';
 
 const mc: Exercise = { id: 'mc', lessonId: 'l', track: null, type: 'multiple_choice', content: { question: 'Hi?', options: ['Hallo', 'Nein'], correctIndex: 0 } };
 const fill: Exercise = { id: 'fb', lessonId: 'l', track: null, type: 'fill_blank', content: { textWithBlank: 'Ich ___.', correctAnswer: 'bin' } };
@@ -21,6 +22,20 @@ describe('parseLessonAnswer', () => {
     [null, null],
   ])('%j → %j', (raw, expected) => {
     expect(parseLessonAnswer(raw)).toEqual(expected);
+  });
+});
+
+// Final review Important 1: letters are capped on the server as well as in the textarea.
+describe('the letter length cap', () => {
+  it('is 6000 characters', () => expect(LETTER_MAX_LENGTH).toBe(6000));
+  it('accepts a letter at the cap and refuses one over it', () => {
+    const at = { type: 'letter', taskIndex: 0, text: 'a'.repeat(LETTER_MAX_LENGTH) };
+    const over = { ...at, text: 'a'.repeat(LETTER_MAX_LENGTH + 1) };
+    expect(parseLessonAnswer(at)).toEqual(at);
+    expect(parseLessonAnswer(over)).toBeNull();
+    const content = { tasks: [{ situation: 's', leitpunkte: ['a', 'b', 'c'], register: 'informal' as const, wordTarget: { min: 1, max: 2 } }] };
+    expect(parseLetterAnswer(at, content)).toEqual(at);
+    expect(parseLetterAnswer(over, content)).toBeNull();
   });
 });
 

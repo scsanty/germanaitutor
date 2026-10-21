@@ -33,4 +33,14 @@ describe('createOpenAIAdapter', () => {
     );
     expect(result).toEqual({ text: 'Hallo!', inputTokens: 8, outputTokens: 4 });
   });
+
+  it('ignores maxTokens but passes a timeout signal', async () => {
+    const fetchImpl = vi.fn().mockResolvedValue({ ok: true, status: 200, json: async () => ({}) });
+    const adapter = createOpenAIAdapter(fetchImpl);
+    await adapter.generateText({ apiKey: 'k' }, { model: 'm', messages: [{ role: 'user', content: 'Hi' }], maxTokens: 4096, timeoutMs: 90_000 });
+    const init = fetchImpl.mock.calls[0][1];
+    // No output cap of any name reaches OpenAI: the body is only the model and the messages.
+    expect(Object.keys(JSON.parse(init.body)).sort()).toEqual(['messages', 'model']);
+    expect(init.signal).toBeInstanceOf(AbortSignal);
+  });
 });

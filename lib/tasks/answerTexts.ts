@@ -1,11 +1,13 @@
 import type { AudioQuestionsAnswer, AudioQuestionsContent } from './audioQuestions';
 import type { ClozeAnswer, ClozeContent } from './cloze';
+import type { LetterAnswer } from './letter';
 import type { MatchingAnswer, MatchingContent } from './matching';
 import type { PassageQuestionsAnswer, PassageQuestionsContent } from './passageQuestions';
 import type { SetTaskType, TaskAnswer, TaskContent } from './taskTypes';
 
 // The learner's answer per item, as display text: '' when unanswered, 'x' for matching's "none fits".
 export function answerTexts(type: SetTaskType, content: TaskContent, answer: TaskAnswer): string[] {
+  if (type === 'letter') return [(answer as LetterAnswer).text];
   if (type === 'passage_questions') {
     const c = content as PassageQuestionsContent;
     return (answer as PassageQuestionsAnswer).selected.map((s, i) => (s === null ? '' : (c.questions[i].options[s] ?? '')));

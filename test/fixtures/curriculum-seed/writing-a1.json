@@ -1,0 +1,79 @@
+{
+  "seedVersion": "10",
+  "formatVersion": 3,
+  "track": "telc",
+  "level": "A1",
+  "lessons": [
+    {
+      "id": "a1-telc-writing-registration-form",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "writing",
+      "title": "Completing Administrative and Registration Forms",
+      "explanation": "Filling out administrative forms requires extracting data from personal documents and mapping it to the appropriate fields.\nEnsure information is entered clearly without translation errors: Familienname (last name), Vorname (first name), Anschrift (street address and house number), PLZ / Ort (postal code and city), and Unterschrift (signature).\n",
+      "examples": [
+        "Name: Müller | Vorname: Thomas | Straße: Hauptstraße 12 | PLZ/Ort: 50667 Köln",
+        "Geburtsdatum: 02.11.1988 | Geburtsort: Damaskus | Staatsangehörigkeit: syrisch",
+        "Datum: 12.04.2024 | Unterschrift: [Handzeichen des Antragstellers]"
+      ],
+      "titleDe": "Formulare im Amt ausfüllen",
+      "explanationDe": "In ein Formular schreiben Sie Daten aus Ihren Dokumenten. Jede Information kommt in das richtige Feld.\nSchreiben Sie klar und übersetzen Sie nichts: Familienname, Vorname, Anschrift (Straße und Hausnummer), PLZ / Ort und Unterschrift.\n",
+      "examplesDe": [
+        "Name: Müller | Vorname: Thomas | Straße: Hauptstraße 12 | PLZ/Ort: 50667 Köln",
+        "Geburtsdatum: 02.11.1988 | Geburtsort: Damaskus | Staatsangehörigkeit: syrisch",
+        "Datum: 12.04.2024 | Unterschrift: [Handzeichen des Antragstellers]"
+      ]
+    },
+    {
+      "id": "a1-telc-writing-short-appointment-note",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A1",
+      "skill": "writing",
+      "title": "Writing Notes to Landlords, Doctors, or Employers",
+      "explanation": "Writing practical notes requires a clear statement of reason, a proposed solution or request, and polite closing phrasing.\nUseful expressions include: 'Sehr geehrte(r)...', 'Ich kann leider nicht kommen, weil...', and 'Können wir einen neuen Termin vereinbaren?'.\n",
+      "examples": [
+        "Sehr geehrte Frau Müller, mein Sohn ist heute krank und kann die Schule nicht besuchen. Viele Grüße, Fatima Aziz.",
+        "Sehr geehrter Herr Berger, die Heizung in meiner Wohnung funktioniert nicht. Können Sie bitte schnell einen Handwerker schicken? Mit freundlichen Grüßen, Ali Demir.",
+        "Guten Tag Herr Schneider, ich möchte meinen Termin am Donnerstag absagen und auf Freitag um 10 Uhr verschieben. Passt das? Herzliche Grüße."
+      ],
+      "titleDe": "Nachrichten an Vermieter, Arzt oder Chef",
+      "explanationDe": "Eine kurze Nachricht hat drei Teile: den Grund, eine Bitte oder eine Lösung und einen höflichen Gruß.\nNützliche Sätze sind: 'Sehr geehrte(r)...', 'Ich kann leider nicht kommen, weil...' und 'Können wir einen neuen Termin vereinbaren?'.\n",
+      "examplesDe": [
+        "Sehr geehrte Frau Müller, mein Sohn ist heute krank und kann die Schule nicht besuchen. Viele Grüße, Fatima Aziz.",
+        "Sehr geehrter Herr Berger, die Heizung in meiner Wohnung funktioniert nicht. Können Sie bitte schnell einen Handwerker schicken? Mit freundlichen Grüßen, Ali Demir.",
+        "Guten Tag Herr Schneider, ich möchte meinen Termin am Donnerstag absagen und auf Freitag um 10 Uhr verschieben. Passt das? Herzliche Grüße."
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a1-telc-writing-registration-form__ex0",
+      "lessonId": "a1-telc-writing-registration-form",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Formularfeld für den Vornamen: '___'",
+        "correctAnswer": "Vorname"
+      }
+    },
+    {
+      "id": "a1-telc-writing-short-appointment-note__ex0",
+      "lessonId": "a1-telc-writing-short-appointment-note",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "",
+        "modelAnswer": "Sehr geehrter Herr Meyer, die Heizung in meiner Wohnung ist kaputt. Können Sie bitte schnell helfen? Mit freundlichen Grüßen, Anna Schmidt.",
+        "instruction": {
+          "en": "Write a short note to your landlord stating that the heating is broken and requesting help.",
+          "de": "Schreiben Sie Ihrem Vermieter eine kurze Nachricht. Die Heizung ist kaputt. Bitten Sie um Hilfe."
+        }
+      }
+    }
+  ],
+  "prerequisites": [],
+  "milestones": [],
+  "conceptLinks": []
+}

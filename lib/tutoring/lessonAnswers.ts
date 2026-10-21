@@ -11,7 +11,9 @@ import type { PassageQuestionsAnswer, PassageQuestionsContent } from '../tasks/p
 import type { MatchingAnswer, MatchingContent } from '../tasks/matching';
 import type { ClozeAnswer, ClozeContent } from '../tasks/cloze';
 import { audioReveal, type AudioQuestionsAnswer, type AudioQuestionsContent, type AudioReveal } from '../tasks/audioQuestions';
+import { LETTER_MAX_LENGTH, type LetterAnswer, type LetterContent } from '../tasks/letter';
 import { correctTexts, type TaskContent } from '../tasks/taskTypes';
+import type { LetterGrade } from '../writing/letterGrading';
 
 export type FlashcardRating = 'knew' | 'sort_of' | 'didnt_know';
 export type AttemptSource = 'lesson' | 'queue';
@@ -24,7 +26,8 @@ export type LessonAnswer =
   | PassageQuestionsAnswer
   | MatchingAnswer
   | ClozeAnswer
-  | AudioQuestionsAnswer;
+  | AudioQuestionsAnswer
+  | LetterAnswer;
 
 export type { AudioReveal };
 
@@ -40,6 +43,8 @@ export interface AttemptOutcome {
   itemResults?: boolean[];
   // Listening: shown only after answering (audio_questions only).
   reveal?: AudioReveal;
+  // Writing: the full grade of a letter (marks, criteria, corrected version); `feedback` is its summary.
+  letter?: LetterGrade;
 }
 
 const FLASHCARD_RATINGS: readonly FlashcardRating[] = ['knew', 'sort_of', 'didnt_know'];
@@ -67,6 +72,10 @@ export function parseLessonAnswer(raw: unknown): LessonAnswer | null {
     return { type: a.type, selected: a.selected as (number | null)[] };
   }
   if (a.type === 'cloze' && Array.isArray(a.values)) return { type: 'cloze', values: a.values as (string | number | null)[] };
+  // The task index is checked against the content when graded.
+  if (a.type === 'letter' && typeof a.text === 'string' && a.text.length <= LETTER_MAX_LENGTH && Number.isInteger(a.taskIndex)) {
+    return { type: 'letter', taskIndex: a.taskIndex as number, text: a.text };
+  }
   return null;
 }
 
@@ -86,6 +95,7 @@ export function correctAnswerFor(exercise: Exercise): string | null {
     case 'free_text':
       return (exercise.content as FreeTextContent).modelAnswer;
     case 'flashcard':
+    case 'letter': // the corrected version comes with the grade
       return null;
     case 'passage_questions':
     case 'matching':
@@ -155,6 +165,7 @@ export function answerTextFor(exercise: Exercise, answer: LessonAnswer): string 
       return (exercise.content as MultipleChoiceContent).options[answer.selectedIndex] ?? '';
     case 'fill_blank':
     case 'free_text':
+    case 'letter':
       return answer.text;
     case 'flashcard':
       return answer.rating;
@@ -204,6 +215,13 @@ function setTaskText(exercise: Exercise): string {
   }
 }
 
+// Every task's situation and Leitpunkte (a lesson letter usually has one task, or two to choose from).
+function letterTaskText({ tasks }: LetterContent): string {
+  return tasks
+    .map((t, i) => `${tasks.length > 1 ? `Task ${String.fromCharCode(65 + i)}: ` : ''}${t.situation}\nPoints to cover: ${t.leitpunkte.join('; ')}`)
+    .join('\n\n');
+}
+
 // The task as text, for the lesson chat's context.
 export function taskTextFor(exercise: Exercise): string {
   switch (exercise.type) {
@@ -217,6 +235,8 @@ export function taskTextFor(exercise: Exercise): string {
       return (exercise.content as FlashcardContent).front;
     case 'free_text':
       return (exercise.content as FreeTextContent).prompt;
+    case 'letter':
+      return capped(letterTaskText(exercise.content as LetterContent));
     case 'passage_questions':
     case 'matching':
     case 'cloze':

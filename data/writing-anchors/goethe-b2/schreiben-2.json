@@ -1,0 +1,102 @@
+{
+  "formatId": "goethe-b2",
+  "partId": "schreiben-2",
+  "anchors": [
+    {
+      "task": {
+        "situation": "Ihre Abteilung soll im nächsten Monat in ein neues Großraumbüro umziehen. Ihre Vorgesetzte, Frau Dr. Albrecht, hat alle Mitarbeiterinnen und Mitarbeiter gebeten, ihr ihre Wünsche und Bedenken mitzuteilen. Schreiben Sie Frau Dr. Albrecht eine Nachricht.",
+        "leitpunkte": [
+          "Ihre Bedenken zum Großraumbüro",
+          "Ein Vorschlag, wie man das Problem lösen könnte",
+          "Ihre Wünsche für die Ausstattung Ihres Arbeitsplatzes",
+          "Ihr Angebot, bei der Planung mitzuhelfen"
+        ],
+        "register": "formal",
+        "wordTarget": {
+          "min": 100,
+          "max": 150
+        }
+      },
+      "letter": "Sehr geehrte Frau Dr. Albrecht,\n\nvielen Dank, dass Sie uns vor dem Umzug nach unserer Meinung fragen.\n\nEhrlich gesagt habe ich gewisse Bedenken, was das Großraumbüro betrifft. Da ich täglich viele Kundengespräche am Telefon führe, befürchte ich, dass sich meine Kolleginnen und Kollegen dadurch gestört fühlen und umgekehrt.\n\nDeshalb möchte ich vorschlagen, zwei oder drei kleine Räume einzurichten, in die man sich für Telefonate zurückziehen kann. Darüber hinaus würde ich mir einen höhenverstellbaren Schreibtisch sowie Trennwände zwischen den Arbeitsplätzen wünschen, um konzentrierter arbeiten zu können.\n\nFalls Sie bei der Planung Unterstützung benötigen, helfe ich gern mit. Ich könnte beispielsweise eine kurze Umfrage unter den Mitarbeitenden durchführen und Ihnen die Ergebnisse zusammenfassen.\n\nÜber eine kurze Rückmeldung von Ihnen würde ich mich freuen.\n\nMit freundlichen Grüßen\nDaniel Weber",
+      "grades": {
+        "erfuellung": "A",
+        "kohaerenz": "A",
+        "wortschatz": "A",
+        "strukturen": "A"
+      },
+      "justification": "Erfüllung A: Alle vier Punkte werden ausführlich und passend behandelt – die Bedenken wegen der Kundentelefonate, der Vorschlag kleiner Räume für Telefonate, konkrete Ausstattungswünsche (höhenverstellbarer Schreibtisch, Trennwände) und ein konkretes Hilfsangebot (Umfrage) –, und Register und Umfang passen zu einer Nachricht an die Vorgesetzte. Kohärenz A: Anrede, Einleitung („vielen Dank, dass Sie uns … fragen“), Schluss („Über eine kurze Rückmeldung … würde ich mich freuen“) und Gruß sind formell und passend, jeder Absatz behandelt einen Punkt, und „da“, „deshalb“, „darüber hinaus“, „sowie“ und „falls“ verknüpfen den Text. Wortschatz A: Der Wortschatz ist präzise und der Situation angemessen („gewisse Bedenken“, „was … betrifft“, „sich zurückziehen“, „höhenverstellbar“). Strukturen A: Komplexe Strukturen wie Kausal- und Konditionalsätze, ein Relativsatz mit Präposition („in die man sich … zurückziehen kann“), Infinitivsätze mit „um … zu“ und Konjunktiv II („würde … wünschen“, „könnte“) sind korrekt."
+    },
+    {
+      "task": {
+        "situation": "Ihre Abteilung soll im nächsten Monat in ein neues Großraumbüro umziehen. Ihre Vorgesetzte, Frau Dr. Albrecht, hat alle Mitarbeiterinnen und Mitarbeiter gebeten, ihr ihre Wünsche und Bedenken mitzuteilen. Schreiben Sie Frau Dr. Albrecht eine Nachricht.",
+        "leitpunkte": [
+          "Ihre Bedenken zum Großraumbüro",
+          "Ein Vorschlag, wie man das Problem lösen könnte",
+          "Ihre Wünsche für die Ausstattung Ihres Arbeitsplatzes",
+          "Ihr Angebot, bei der Planung mitzuhelfen"
+        ],
+        "register": "formal",
+        "wordTarget": {
+          "min": 100,
+          "max": 150
+        }
+      },
+      "letter": "Sehr geehrte Frau Dr. Albrecht,\n\ndanke für Ihre E-Mail über den Umzug in das neue Büro.\n\nIch habe ein bisschen Bedenken wegen dem Großraumbüro. Ich telefoniere jeden Tag viel mit Kunden, und in einem großen Raum es wird sehr laut. Dann können die Kollegen nicht gut arbeiten und ich auch nicht.\n\nMein Vorschlag ist, dass wir einen kleinen Raum für Telefonate bekommen. Dort kann man ruhig sprechen und stört niemanden. Außerdem wünsche ich mir für meinen Arbeitsplatz ein neuer Stuhl, weil mein alter Stuhl ist nicht gut für den Rücken. Auch eine Pflanze wäre schön.\n\nIch kann auch bei der Planung helfen.\n\nMit freundlichen Grüßen\nDaniel Weber",
+      "grades": {
+        "erfuellung": "B",
+        "kohaerenz": "B",
+        "wortschatz": "B",
+        "strukturen": "B"
+      },
+      "justification": "Erfüllung B: Bedenken, Vorschlag und Ausstattungswünsche werden passend behandelt, das Angebot zur Mithilfe bleibt aber mit „Ich kann auch bei der Planung helfen“ knapp und ohne konkreten Inhalt. Kohärenz B: Anrede, Gruß und Absätze passen, die Verknüpfung ist aber einförmig („und“, „dann“, „außerdem“, „auch“), und der kurze Schlusssatz wirkt abrupt. Wortschatz B: Der Wortschatz ist ausreichend („Bedenken“, „Telefonate“, „Arbeitsplatz“), mit einzelnen ungenauen Ausdrücken („ein bisschen Bedenken“, „nicht gut für den Rücken“). Strukturen B: Nebensätze mit „dass“ und „weil“ sowie „wäre“ werden verwendet; Fehler bei Wortstellung („in einem großen Raum es wird“, „weil mein alter Stuhl ist“), ein umgangssprachlicher Dativ („wegen dem Großraumbüro“) und Kasus („wünsche ich mir … ein neuer Stuhl“) stören kaum."
+    },
+    {
+      "task": {
+        "situation": "Ihre Abteilung soll im nächsten Monat in ein neues Großraumbüro umziehen. Ihre Vorgesetzte, Frau Dr. Albrecht, hat alle Mitarbeiterinnen und Mitarbeiter gebeten, ihr ihre Wünsche und Bedenken mitzuteilen. Schreiben Sie Frau Dr. Albrecht eine Nachricht.",
+        "leitpunkte": [
+          "Ihre Bedenken zum Großraumbüro",
+          "Ein Vorschlag, wie man das Problem lösen könnte",
+          "Ihre Wünsche für die Ausstattung Ihres Arbeitsplatzes",
+          "Ihr Angebot, bei der Planung mitzuhelfen"
+        ],
+        "register": "formal",
+        "wordTarget": {
+          "min": 100,
+          "max": 150
+        }
+      },
+      "letter": "Hallo Frau Albrecht,\n\nich habe Ihre Mail gelesen. Ich finde Großraumbüro nicht gut, weil es ist zu laut. Ich telefoniere viel mit die Kunden und alle hören, was ich sage, das ist für mich unangenehm. Ich brauche auch Ruhe für meine Arbeit, weil ich muss viele Rechnungen kontrollieren. In meine alte Firma wir hatten auch ein Großraumbüro und alle waren immer gestresst und krank, weil die Fenster immer offen und es war kalt. Mein Kollege hat gekündigt deswegen. Vielleicht wir können einen extra Zimmer für Telefon machen? Ich weiss nicht, ob das geht. Ich kann helfen bei Planung, wenn Sie wollen. Bitte sag mir Bescheid.\n\nDaniel",
+      "grades": {
+        "erfuellung": "C",
+        "kohaerenz": "C",
+        "wortschatz": "C",
+        "strukturen": "C"
+      },
+      "justification": "Erfüllung C: Die Bedenken (Lautstärke, Telefonate) und ein knapper Vorschlag („einen extra Zimmer für Telefon“) kommen vor, Wünsche zur Ausstattung des Arbeitsplatzes fehlen ganz, das Hilfsangebot bleibt sehr knapp, und viel Platz geht an die alte Firma; „Hallo“ und „sag mir“ passen nicht zum formellen Register. Kohärenz C: Der Text ist nicht in Absätze gegliedert, springt von den Telefonaten zur alten Firma und zum Kollegen, und ein passender Gruß fehlt – nur „Daniel“ steht am Ende. Wortschatz C: Der Wortschatz ist für B2 einfach und allgemein („nicht gut“, „Zimmer für Telefon machen“, „Mail“). Strukturen C: Überwiegend einfache Sätze mit Fehlern bei Wortstellung („weil es ist zu laut“, „In meine alte Firma wir hatten“, „Vielleicht wir können“), Kasus und Genus („mit die Kunden“, „einen extra Zimmer“) und einem fehlenden Verb („weil die Fenster immer offen“) erschweren stellenweise das Verständnis."
+    },
+    {
+      "task": {
+        "situation": "Ihre Abteilung soll im nächsten Monat in ein neues Großraumbüro umziehen. Ihre Vorgesetzte, Frau Dr. Albrecht, hat alle Mitarbeiterinnen und Mitarbeiter gebeten, ihr ihre Wünsche und Bedenken mitzuteilen. Schreiben Sie Frau Dr. Albrecht eine Nachricht.",
+        "leitpunkte": [
+          "Ihre Bedenken zum Großraumbüro",
+          "Ein Vorschlag, wie man das Problem lösen könnte",
+          "Ihre Wünsche für die Ausstattung Ihres Arbeitsplatzes",
+          "Ihr Angebot, bei der Planung mitzuhelfen"
+        ],
+        "register": "formal",
+        "wordTarget": {
+          "min": 100,
+          "max": 150
+        }
+      },
+      "letter": "Hallo,\n\nich nicht wollen neu Büro. Büro alt gut. Ich Urlaub machen August, Spanien, Strand schön. Sie auch Urlaub?\n\nTschüss",
+      "grades": {
+        "erfuellung": "E",
+        "kohaerenz": "D",
+        "wortschatz": "E",
+        "strukturen": "E"
+      },
+      "justification": "Erfüllung E: Der Text passt nicht zur Situation und ist kaum vorhanden: Die Bedenken werden nur mit „ich nicht wollen neu Büro“ ohne Begründung angedeutet, Vorschlag, Ausstattungswünsche und Hilfsangebot fehlen, und der Rest handelt vom Urlaub; damit wird der ganze Text mit 0 Punkten bewertet. Kohärenz D: Die Aussagen stehen unverbunden nebeneinander („Büro alt gut.“, „Strand schön.“), es gibt keine Konnektoren, und „Hallo“ und „Tschüss“ passen nicht zu einer Nachricht an die Vorgesetzte. Wortschatz E: Der Wortschatz reicht für die Aufgabe nicht aus. Strukturen E: Kaum ein Satz ist korrekt gebaut („ich nicht wollen neu Büro“, „Ich Urlaub machen August“), sodass der Text kaum verständlich ist."
+    }
+  ]
+}

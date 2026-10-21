@@ -1,5 +1,5 @@
 {
-  "seedVersion": "10",
+  "seedVersion": "11",
   "formatVersion": 3,
   "track": "goethe",
   "level": "A2",
@@ -1663,6 +1663,33 @@
       }
     },
     {
+      "id": "a2-goethe-writing-teil1-informal-note__ex3",
+      "lessonId": "a2-goethe-writing-teil1-informal-note",
+      "track": "goethe",
+      "type": "letter",
+      "content": {
+        "instruction": {
+          "en": "Write a short message (20–30 words) to your friend Sophie and cover all three points.",
+          "de": "Schreiben Sie Ihrer Freundin Sophie eine kurze Nachricht (20–30 Wörter). Schreiben Sie zu allen drei Punkten."
+        },
+        "tasks": [
+          {
+            "situation": "Ihre Freundin Sophie hat Ihnen vor zwei Wochen ein Buch geliehen. Jetzt haben Sie es gelesen. Schreiben Sie Sophie eine Nachricht.",
+            "leitpunkte": [
+              "Bedanken Sie sich. Wie hat Ihnen das Buch gefallen?",
+              "Wann können Sie Sophie das Buch zurückbringen?",
+              "Laden Sie Sophie zu einem Kaffee ein."
+            ],
+            "register": "informal",
+            "wordTarget": {
+              "min": 20,
+              "max": 30
+            }
+          }
+        ]
+      }
+    },
+    {
       "id": "a2-goethe-writing-teil2-semi-formal-message__ex0",
       "lessonId": "a2-goethe-writing-teil2-semi-formal-message",
       "track": "goethe",
@@ -1696,6 +1723,33 @@
           "Kommst du zur Party?"
         ],
         "correctIndex": 0
+      }
+    },
+    {
+      "id": "a2-goethe-writing-teil2-semi-formal-message__ex3",
+      "lessonId": "a2-goethe-writing-teil2-semi-formal-message",
+      "track": "goethe",
+      "type": "letter",
+      "content": {
+        "instruction": {
+          "en": "Write a polite email (30–40 words) to your child's kindergarten teacher and cover all three points.",
+          "de": "Schreiben Sie der Erzieherin Ihres Kindes eine höfliche E-Mail (30–40 Wörter). Schreiben Sie zu allen drei Punkten."
+        },
+        "tasks": [
+          {
+            "situation": "Ihr Sohn geht in den Kindergarten. Am Donnerstagabend gibt es dort einen Elternabend. Sie können aber nicht kommen. Schreiben Sie der Erzieherin, Frau Hollmann, eine E-Mail.",
+            "leitpunkte": [
+              "Entschuldigen Sie sich und nennen Sie den Grund.",
+              "Fragen Sie nach den wichtigen Informationen vom Elternabend.",
+              "Wann können Sie mit Frau Hollmann sprechen?"
+            ],
+            "register": "semi_formal",
+            "wordTarget": {
+              "min": 30,
+              "max": 40
+            }
+          }
+        ]
       }
     },
     {

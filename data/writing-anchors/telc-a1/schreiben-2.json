@@ -1,0 +1,98 @@
+{
+  "formatId": "telc-a1",
+  "partId": "schreiben-2",
+  "anchors": [
+    {
+      "task": {
+        "situation": "Ihr Freund Paul feiert am Samstag seinen Geburtstag und hat Sie zu seiner Party eingeladen. Sie können aber nicht kommen. Schreiben Sie Paul eine kurze Mitteilung.",
+        "leitpunkte": [
+          "Gratulieren Sie Paul zum Geburtstag.",
+          "Warum können Sie nicht kommen?",
+          "Schlagen Sie ein Treffen in der nächsten Woche vor."
+        ],
+        "register": "informal",
+        "wordTarget": {
+          "min": 24,
+          "max": 36
+        }
+      },
+      "letter": "Lieber Paul,\n\nalles Gute zum Geburtstag! Leider kann ich am Samstag nicht kommen, denn meine Schwester heiratet in Bremen. Hast du nächsten Freitag Zeit? Dann trinken wir zusammen Kaffee.\n\nViele Grüße\nAnna",
+      "grades": {
+        "punkt-1": "A",
+        "punkt-2": "A",
+        "punkt-3": "A",
+        "gestaltung": "A"
+      },
+      "justification": "Punkt 1 A: Der Glückwunsch „alles Gute zum Geburtstag!“ ist passend und klar. Punkt 2 A: Der Grund wird verständlich genannt („denn meine Schwester heiratet in Bremen“). Punkt 3 A: Anna schlägt einen konkreten Termin vor („nächsten Freitag … Kaffee“). Gestaltung A: „Lieber Paul“ und „Viele Grüße“ passen zu einem Freund, und die Sätze sind mit „denn“ und „dann“ verbunden."
+    },
+    {
+      "task": {
+        "situation": "Ihr Freund Paul feiert am Samstag seinen Geburtstag und hat Sie zu seiner Party eingeladen. Sie können aber nicht kommen. Schreiben Sie Paul eine kurze Mitteilung.",
+        "leitpunkte": [
+          "Gratulieren Sie Paul zum Geburtstag.",
+          "Warum können Sie nicht kommen?",
+          "Schlagen Sie ein Treffen in der nächsten Woche vor."
+        ],
+        "register": "informal",
+        "wordTarget": {
+          "min": 24,
+          "max": 36
+        }
+      },
+      "letter": "Hallo Paul,\n\nalles Gute zum Geburtstag! Ich kann nicht kommen am Samstag, ich muss arbeiten. Das ist schade, aber mein Chef sagt nein. Wir können vielleicht treffen, ja?\n\nLiebe Grüße\nAnna",
+      "grades": {
+        "punkt-1": "A",
+        "punkt-2": "A",
+        "punkt-3": "B",
+        "gestaltung": "A"
+      },
+      "justification": "Punkt 1 A: Der Glückwunsch „alles Gute zum Geburtstag!“ ist passend und klar. Punkt 2 A: Der Grund ist trotz der falschen Wortstellung („Ich kann nicht kommen am Samstag“) gut verständlich: Anna muss arbeiten. Punkt 3 B: Ein Treffen wird nur vage angesprochen („Wir können vielleicht treffen, ja?“), ohne Tag oder Vorschlag, und das Reflexivpronomen „uns“ fehlt. Gestaltung A: „Hallo Paul“ und „Liebe Grüße“ passen, und die Sätze sind mit „aber“ verbunden."
+    },
+    {
+      "task": {
+        "situation": "Ihr Freund Paul feiert am Samstag seinen Geburtstag und hat Sie zu seiner Party eingeladen. Sie können aber nicht kommen. Schreiben Sie Paul eine kurze Mitteilung.",
+        "leitpunkte": [
+          "Gratulieren Sie Paul zum Geburtstag.",
+          "Warum können Sie nicht kommen?",
+          "Schlagen Sie ein Treffen in der nächsten Woche vor."
+        ],
+        "register": "informal",
+        "wordTarget": {
+          "min": 24,
+          "max": 36
+        }
+      },
+      "letter": "Hallo Paul,\n\nGeburtstag gut. Ich nicht kommen Samstag. Ich habe Arbeit viel, Chef sagt muss. Ich bin traurig. Mein Auto ist kaputt, ich fahre mit die Bus zu Arbeit jeden Tag.\n\nAnna",
+      "grades": {
+        "punkt-1": "B",
+        "punkt-2": "B",
+        "punkt-3": "C",
+        "gestaltung": "B"
+      },
+      "justification": "Punkt 1 B: „Geburtstag gut“ deutet einen Glückwunsch nur an und ist kein richtiger Gratulationssatz. Punkt 2 B: Absage und Grund sind nur mit Mühe zu verstehen („Ich nicht kommen Samstag“, „Chef sagt muss“). Punkt 3 C: Ein Treffen wird nicht vorgeschlagen; stattdessen schreibt Anna über ihr kaputtes Auto und den Bus („mit die Bus zu Arbeit“). Gestaltung B: Die Anrede „Hallo Paul“ passt, aber ein Gruß fehlt, und die Sätze stehen ohne Konnektoren nebeneinander."
+    },
+    {
+      "task": {
+        "situation": "Ihr Freund Paul feiert am Samstag seinen Geburtstag und hat Sie zu seiner Party eingeladen. Sie können aber nicht kommen. Schreiben Sie Paul eine kurze Mitteilung.",
+        "leitpunkte": [
+          "Gratulieren Sie Paul zum Geburtstag.",
+          "Warum können Sie nicht kommen?",
+          "Schlagen Sie ein Treffen in der nächsten Woche vor."
+        ],
+        "register": "informal",
+        "wordTarget": {
+          "min": 24,
+          "max": 36
+        }
+      },
+      "letter": "Ich Kuchen machen, Schokolade. Kuchen gross und gut. Du mag Kuchen? Mein Fahrrad kaputt, ich laufen.",
+      "grades": {
+        "punkt-1": "C",
+        "punkt-2": "C",
+        "punkt-3": "C",
+        "gestaltung": "C"
+      },
+      "justification": "Punkt 1 C: Es gibt keinen Glückwunsch zum Geburtstag. Punkt 2 C: Dass Anna nicht kommen kann, und ein Grund dafür fehlen ganz. Punkt 3 C: Ein Treffen wird nicht vorgeschlagen; der Text handelt von Kuchen und einem kaputten Fahrrad („Ich Kuchen machen“, „ich laufen“). Gestaltung C: Anrede und Gruß fehlen, und die unverbundenen Satzstücke sind nicht als Mitteilung an Paul erkennbar."
+    }
+  ]
+}

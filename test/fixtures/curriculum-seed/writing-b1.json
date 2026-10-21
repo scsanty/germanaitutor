@@ -1,0 +1,137 @@
+{
+  "seedVersion": "10",
+  "formatVersion": 3,
+  "track": "telc",
+  "level": "B1",
+  "lessons": [
+    {
+      "id": "b1-telc-sprachbausteine-connectors-grammar",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "grammar",
+      "title": "Syntactic Connectors and Particle Accuracy (telc Sprachbausteine Teil 1)",
+      "explanation": "In telc Sprachbausteine Teil 1, candidates complete a ten-gap semi-formal or formal letter evaluating morphosyntactic precision.\nSuccess depends on recognizing whether a connector coordinates two main clauses in position zero (und, denn, aber, oder, sondern), inverts subject and verb in position one (deshalb, trotzdem, sonst, außerdem), or introduces a subordinate verb-final clause (weil, dass, obwohl, wenn, da).\nPrepositions paired with proper case declensions (trotz + Gen./Dat., wegen + Gen./Dat., seit + Dat.) represent additional frequent test targets.\n",
+      "examples": [
+        "Wir wollten gestern pünktlich abreisen, aber der Zug hatte erhebliche Verspätung.",
+        "Er war gesundheitlich angeschlagen, trotzdem erschien er pünktlich zum Arbeitseinsatz.",
+        "Ich schreibe Ihnen diese Mitteilung, weil ich um eine Terminverschiebung bitten möchte.",
+        "Wegen eines technischen Defekts bleibt unsere Filiale heute geschlossen."
+      ],
+      "titleDe": "Konnektoren und Grammatik (telc Sprachbausteine Teil 1)",
+      "explanationDe": "In telc Sprachbausteine Teil 1 ergänzen Sie einen halbformellen oder formellen Brief mit zehn Lücken. Hier wird vor allem die Grammatik geprüft.\nWichtig ist, welche Art von Konnektor in die Lücke passt: Manche verbinden zwei Hauptsätze auf Position 0 (und, denn, aber, oder, sondern), nach anderen stehen Verb und Subjekt vertauscht auf Position 1 (deshalb, trotzdem, sonst, außerdem), und wieder andere leiten einen Nebensatz mit dem Verb am Ende ein (weil, dass, obwohl, wenn, da).\nAuch Präpositionen mit dem richtigen Kasus werden oft geprüft (trotz + Gen./Dat., wegen + Gen./Dat., seit + Dat.).\n",
+      "examplesDe": [
+        "Wir wollten gestern pünktlich abreisen, aber der Zug hatte erhebliche Verspätung.",
+        "Er war gesundheitlich angeschlagen, trotzdem erschien er pünktlich zum Arbeitseinsatz.",
+        "Ich schreibe Ihnen diese Mitteilung, weil ich um eine Terminverschiebung bitten möchte.",
+        "Wegen eines technischen Defekts bleibt unsere Filiale heute geschlossen."
+      ]
+    },
+    {
+      "id": "b1-telc-writing-complaint-letter",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "B1",
+      "skill": "writing",
+      "title": "Composing a Formal Letter of Complaint (telc Schriftlicher Ausdruck)",
+      "explanation": "The written module of telc B1 requires candidates to draft a formal or semi-formal letter based on one of two given prompts.\nThe text must cover four mandatory content points (Leitpunkte).\nA formal complaint letter follows this layout:\n1. Formal greeting: 'Sehr geehrte Damen und Herren,'\n2. Reason for writing with invoice/order reference.\n3. Precise description of the defect or poor service.\n4. Setting a realistic deadline (Fristsetzung) for rectification, replacement, or reimbursement.\n5. Appropriate formal sign-off: 'Mit freundlichen Grüßen'.\n",
+      "examples": [
+        "Sehr geehrte Damen und Herren, am 12. Mai habe ich in Ihrem Online-Shop ein Notebook bestellt (Bestellnummer: 45892).",
+        "Leider musste ich nach dem Auspacken feststellen, dass der Bildschirm beschädigt ist und das Gerät sich nicht einschalten lässt.",
+        "Da ich den Laptop dringend für meine berufliche Arbeit benötige, fordere ich Sie hiermit auf, mir bis zum 25. Mai ein einwandfreies Ersatzgerät zu liefern.",
+        "Sollte diese Frist fruchtlos verstreichen, werde ich vom Kaufvertrag zurücktreten und mein Geld zurückfordern. Mit freundlichen Grüßen, Max Mustermann."
+      ],
+      "titleDe": "Einen formellen Beschwerdebrief schreiben (telc Schriftlicher Ausdruck)",
+      "explanationDe": "Im schriftlichen Teil von telc B1 schreiben Sie einen formellen oder halbformellen Brief. Sie wählen dafür eine von zwei Aufgaben.\nIhr Text muss vier Leitpunkte behandeln.\nEin formeller Beschwerdebrief ist so aufgebaut:\n1. Formelle Anrede: 'Sehr geehrte Damen und Herren,'\n2. Grund für das Schreiben, mit Rechnungs- oder Bestellnummer.\n3. Genaue Beschreibung des Mangels oder des schlechten Service.\n4. Eine realistische Frist (Fristsetzung) für Nachbesserung, Ersatz oder Erstattung.\n5. Passender formeller Gruß: 'Mit freundlichen Grüßen'.\n",
+      "examplesDe": [
+        "Sehr geehrte Damen und Herren, am 12. Mai habe ich in Ihrem Online-Shop ein Notebook bestellt (Bestellnummer: 45892).",
+        "Leider musste ich nach dem Auspacken feststellen, dass der Bildschirm beschädigt ist und das Gerät sich nicht einschalten lässt.",
+        "Da ich den Laptop dringend für meine berufliche Arbeit benötige, fordere ich Sie hiermit auf, mir bis zum 25. Mai ein einwandfreies Ersatzgerät zu liefern.",
+        "Sollte diese Frist fruchtlos verstreichen, werde ich vom Kaufvertrag zurücktreten und mein Geld zurückfordern. Mit freundlichen Grüßen, Max Mustermann."
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "b1-telc-sprachbausteine-connectors-grammar__ex0",
+      "lessonId": "b1-telc-sprachbausteine-connectors-grammar",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Klausurtext: 'Herr Meyer war krank, ___ konnte er den Auftrag rechtzeitig abschließen.' (Verb folgt sofort)",
+        "options": [
+          "obwohl",
+          "trotzdem",
+          "weil",
+          "denn"
+        ],
+        "correctIndex": 1
+      }
+    },
+    {
+      "id": "b1-telc-sprachbausteine-connectors-grammar__ex1",
+      "lessonId": "b1-telc-sprachbausteine-connectors-grammar",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Wir bitten um Entschuldigung, ___ die Lieferung sich um zwei Tage verzögert hat. (da / dass)",
+        "correctAnswer": "dass"
+      }
+    },
+    {
+      "id": "b1-telc-sprachbausteine-connectors-grammar__ex2",
+      "lessonId": "b1-telc-sprachbausteine-connectors-grammar",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welcher Konnektor fordert die Verb-Letzt-Stellung?",
+        "options": [
+          "deshalb",
+          "denn",
+          "obwohl",
+          "außerdem"
+        ],
+        "correctIndex": 2
+      }
+    },
+    {
+      "id": "b1-telc-sprachbausteine-connectors-grammar__ex3",
+      "lessonId": "b1-telc-sprachbausteine-connectors-grammar",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Die Baustelle wurde ___ des starken Regens für drei Tage stillgelegt. (wegen / trotz)",
+        "correctAnswer": "wegen"
+      }
+    },
+    {
+      "id": "b1-telc-sprachbausteine-connectors-grammar__ex4",
+      "lessonId": "b1-telc-sprachbausteine-connectors-grammar",
+      "track": "telc",
+      "type": "flashcard",
+      "content": {
+        "front": "Konnektoren auf Position 0 (ADUSO)",
+        "back": "aber, denn, und, sondern, oder (no change to standard subject-verb word order)"
+      }
+    },
+    {
+      "id": "b1-telc-writing-complaint-letter__ex0",
+      "lessonId": "b1-telc-writing-complaint-letter",
+      "track": "telc",
+      "type": "multiple_choice",
+      "content": {
+        "question": "Welche Grußformel ist in einem formellen Reklamationsschreiben korrekt, wenn der Empfänger unbekannt ist?",
+        "options": [
+          "Liebe Freunde,",
+          "Sehr geehrte Damen und Herren,",
+          "Hallo zusammen,",
+          "Guten Morgen allerseits,"
+        ],
+        "correctIndex": 1
+      }
+    }
+  ],
+  "prerequisites": [],
+  "milestones": [],
+  "conceptLinks": []
+}

@@ -8,7 +8,8 @@ import { reconcileExercises } from '../curriculum-admin/exerciseReconciliation';
 import { createProfileService } from './profileService';
 import { createProgressService } from './progressService';
 import { AttemptError, createAttemptService, toAttemptErrorResponse, type AttemptDeps } from './attemptService';
-import { addListeningExercise, listeningHash, markComplete, seedTutoringCurriculum } from '@/test/tutoringFixtures';
+import type { LetterGrade } from '../writing/letterGrading';
+import { addListeningExercise, listeningHash, markComplete, scheduleReview, seedTutoringCurriculum } from '@/test/tutoringFixtures';
 
 type GradeFreeText = NonNullable<AttemptDeps['gradeFreeText']>;
 
@@ -200,6 +201,132 @@ describe('attemptService.recordAttempt', () => {
     // Completing a1-greet also covers Goethe A1's only lesson, which finishes Goethe A1.
     await service.recordAttempt('a1-greet__ex2', knew, 'lesson');
     expect(profiles.getProfile()).toMatchObject({ highestUnlockedLevel: 'A2', unlockNoticeLevel: 'A2', activeLevel: 'A1' });
+  });
+});
+
+type GradeLetter = NonNullable<AttemptDeps['gradeLetter']>;
+
+const letterContent = {
+  instruction: { en: 'Write to your friend.', de: 'Schreib deiner Freundin.' },
+  tasks: [
+    {
+      situation: 'Ihre Freundin hat Sie eingeladen.',
+      leitpunkte: ['Dank', 'Absage', 'Vorschlag'],
+      register: 'informal',
+      wordTarget: { min: 30, max: 50 },
+    },
+  ],
+};
+
+const letterGrade = (percent: number): LetterGrade => ({
+  marks: [],
+  criteria: [{ id: 'task', grade: 'B', justification: { en: 'Fine.', de: 'Gut.' } }],
+  points: Math.round((percent / 100) * 15),
+  maxPoints: 15,
+  percent,
+  corrected: 'Liebe Anna, …',
+  summary: { en: `Summary ${percent}.`, de: `Zusammenfassung ${percent}.` },
+});
+
+describe('attemptService lesson letters', () => {
+  function letterSetup() {
+    const gradeLetter = vi
+      .fn<GradeLetter>()
+      .mockResolvedValueOnce({ ok: true, grade: letterGrade(47) })
+      .mockResolvedValueOnce({ ok: true, grade: letterGrade(73) })
+      .mockResolvedValue({ ok: true, grade: letterGrade(80) });
+    const db = createDbClient(':memory:');
+    seedTutoringCurriculum(db);
+    markComplete(db, 'a1-greet');
+    db.prepare("INSERT INTO exercises (id, lesson_id, type, content) VALUES ('a1-sein__ex11', 'a1-sein', 'letter', ?)").run(
+      JSON.stringify(letterContent)
+    );
+    const service = createAttemptService(db, {
+      gradeFreeText: vi.fn<GradeFreeText>().mockResolvedValue({ ok: true, result: 'correct', feedback: null, mistakes: [] }),
+      gradeLetter,
+      now: () => new Date(2026, 8, 24, 10, 0),
+    });
+    return { db, service, gradeLetter };
+  }
+  const letter = (text: string) => ({ type: 'letter', taskIndex: 0, text }) as const;
+
+  it('grades each submission as a new attempt: 47% is almost, then 73% is correct', async () => {
+    const { db, service, gradeLetter } = letterSetup();
+    const first = await service.recordAttempt('a1-sein__ex11', letter('Liebe Anna, ich kann nicht.'), 'lesson');
+    expect(first).toMatchObject({ result: 'almost', correctAnswer: null, feedback: { en: 'Summary 47.', de: 'Zusammenfassung 47.' }, letter: { percent: 47 } });
+    const second = await service.recordAttempt('a1-sein__ex11', letter('Liebe Anna, leider kann ich nicht kommen.'), 'lesson');
+    expect(second).toMatchObject({ result: 'correct', letter: { percent: 73 } });
+
+    expect(gradeLetter).toHaveBeenCalledWith({ level: 'A1', track: 'generic', content: letterContent, answer: letter('Liebe Anna, ich kann nicht.') });
+    const rows = db.prepare("SELECT result, answer_text, ai_feedback FROM lesson_attempts WHERE exercise_id = 'a1-sein__ex11' ORDER BY id").all() as {
+      result: string;
+      answer_text: string;
+      ai_feedback: string;
+    }[];
+    expect(rows.map((r) => [r.result, r.answer_text])).toEqual([
+      ['almost', 'Liebe Anna, ich kann nicht.'],
+      ['correct', 'Liebe Anna, leider kann ich nicht kommen.'],
+    ]);
+    // S5: the summary stays readable as {en, de} for the lesson chat; the whole grade rides along.
+    expect(JSON.parse(rows[1].ai_feedback)).toEqual({ en: 'Summary 73.', de: 'Zusammenfassung 73.', letter: letterGrade(73) });
+  });
+
+  it('never gives a letter a review schedule, at completion or after it', async () => {
+    const { db, service } = letterSetup();
+    await service.recordAttempt('a1-sein__ex2', { type: 'fill_blank', text: 'bin' }, 'lesson');
+    await service.recordAttempt('a1-sein__ex10', { type: 'free_text', text: 'Ich bin müde.' }, 'lesson');
+    // almost passes, so this completes the lesson; later versions take the post-completion path.
+    const done = await service.recordAttempt('a1-sein__ex11', letter('Liebe Anna, ich kann nicht.'), 'lesson');
+    expect(done).toMatchObject({ result: 'almost', justCompleted: true });
+    await service.recordAttempt('a1-sein__ex11', letter('Liebe Anna, leider nicht.'), 'lesson');
+    await service.recordAttempt('a1-sein__ex11', letter('Liebe Anna, noch einmal.'), 'lesson');
+
+    const scheduled = db.prepare('SELECT exercise_id FROM exercise_srs_state ORDER BY exercise_id').all();
+    expect(scheduled).toEqual([{ exercise_id: 'a1-sein__ex10' }, { exercise_id: 'a1-sein__ex2' }]);
+  });
+
+  it('refuses a whitespace-only letter with bad_request before any AI call (Review Focus 4)', async () => {
+    const { db, service, gradeLetter } = letterSetup();
+    await expect(service.recordAttempt('a1-sein__ex11', letter('  \n\t  '), 'lesson')).rejects.toMatchObject({
+      kind: 'bad_request',
+      code: 'bad_request',
+    });
+    expect(gradeLetter).not.toHaveBeenCalled();
+    expect(db.prepare('SELECT COUNT(*) AS n FROM lesson_attempts').get()).toEqual({ n: 0 });
+  });
+
+  it('refuses a queue answer to a letter even if a review row exists for it', async () => {
+    const { db, service, gradeLetter } = letterSetup();
+    scheduleReview(db, 'a1-sein__ex11', '2026-09-20');
+    await expect(service.recordAttempt('a1-sein__ex11', letter('Liebe Anna.'), 'queue')).rejects.toMatchObject({ code: 'not_due' });
+    expect(gradeLetter).not.toHaveBeenCalled();
+  });
+
+  it('maps a letter grading failure to grading_failed and stores nothing', async () => {
+    const { db, service, gradeLetter } = letterSetup();
+    gradeLetter.mockReset().mockResolvedValue({ ok: false, error: 'The AI replied in an unexpected format', code: 'ai_bad_reply' });
+    await expect(service.recordAttempt('a1-sein__ex11', letter('Liebe Anna.'), 'lesson')).rejects.toMatchObject({
+      kind: 'grading_failed',
+      code: 'ai_bad_reply',
+    });
+    expect(db.prepare('SELECT COUNT(*) AS n FROM lesson_attempts').get()).toEqual({ n: 0 });
+  });
+});
+
+describe('attemptService free-text mistakes', () => {
+  it('records the grader’s mistakes in the error log with source lesson (S7)', async () => {
+    const grade = vi.fn<GradeFreeText>().mockResolvedValue({
+      ok: true,
+      result: 'almost',
+      feedback: null,
+      mistakes: [{ category: 'spelling', wrong: 'mude', right: 'müde' }],
+    });
+    const { db, service } = setup({ grade });
+    markComplete(db, 'a1-greet');
+    await service.recordAttempt('a1-sein__ex10', { type: 'free_text', text: 'Ich bin mude.' }, 'lesson');
+    expect(db.prepare('SELECT source, category, wrong, "right" AS fix FROM error_log').all()).toEqual([
+      { source: 'lesson', category: 'spelling', wrong: 'mude', fix: 'müde' },
+    ]);
   });
 });
 

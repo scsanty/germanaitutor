@@ -75,7 +75,7 @@ function toRow(row: SetRow, summary = false): TeilSetRow {
     formatId: row.format_id,
     partId: row.part_id,
     status: row.status,
-    itemCount: isSetTaskType(set.taskType) ? itemCount(set.taskType, set.content) : 0,
+    itemCount: !isSetTaskType(set.taskType) ? 0 : set.taskType === 'letter' ? (set.explanations?.length ?? 0) : itemCount(set.taskType, set.content),
     createdAt: row.created_at,
     reviewedAt: row.reviewed_at,
     set: summary && row.status === 'reserved' ? null : set,

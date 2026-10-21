@@ -17,13 +17,17 @@ import { differsByLanguage, pickText, type ContentLanguage, type LocalizedText }
 import { useApiErrorText } from '@/components/useApiErrorText';
 import { useExerciseShortcuts } from '@/components/focus/useExerciseShortcuts';
 import { useSound } from '@/lib/sound/useSound';
-import { Check, CircleAlert, MessageCircle, X } from 'lucide-react';
+import { Check, CircleAlert, MessageCircle, PenLine, X } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import { GermanTextInput } from '@/components/typing/GermanTextInput';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { Textarea } from '@/components/ui/textarea';
+import { GermanTextarea } from '@/components/typing/GermanTextarea';
 import { cn } from '@/lib/utils';
+import { LetterTaskInput } from '@/components/writing/LetterTaskInput';
+import { LetterResult } from '@/components/writing/LetterResult';
+import type { LetterGrade } from '@/lib/writing/letterGrading';
+import { LESSON_LETTER_RUBRIC } from '@/lib/writing/rubric';
 
 const RATINGS: FlashcardRating[] = ['knew', 'sort_of', 'didnt_know'];
 
@@ -65,13 +69,26 @@ interface Shown {
   itemResults?: boolean[];
   // Listening: the transcript and evidence, shown only now that the student has answered.
   reveal?: AudioReveal;
+  // Writing: the graded letter (marks, criteria, corrected version).
+  letter?: LetterGrade;
 }
 
+// S12: a lesson letter's graded versions, kept for the card's lifetime (each one is its own attempt).
+interface LetterVersion {
+  percent: number;
+  text: string;
+}
+
+// Every set task type is also a lesson exercise type (Writing: letters too).
 type TaskExercise = Extract<ExerciseView, { type: SetTaskType }>;
 
 function isTaskExercise(exercise: ExerciseView): exercise is TaskExercise {
   return (
-    exercise.type === 'passage_questions' || exercise.type === 'matching' || exercise.type === 'cloze' || exercise.type === 'audio_questions'
+    exercise.type === 'passage_questions' ||
+    exercise.type === 'matching' ||
+    exercise.type === 'cloze' ||
+    exercise.type === 'audio_questions' ||
+    exercise.type === 'letter'
   );
 }
 
@@ -97,6 +114,9 @@ export function taskText(exercise: ExerciseView): string {
     case 'cloze':
     case 'audio_questions':
       return '';
+    // A lesson letter's first task (its card shows the choice between two).
+    case 'letter':
+      return exercise.tasks[0]?.situation ?? '';
   }
 }
 
@@ -122,6 +142,7 @@ function answerTextOf(exercise: ExerciseView, answer: LessonAnswer): string {
       return exercise.type === 'multiple_choice' ? (exercise.options[answer.selectedIndex] ?? '') : '';
     case 'fill_blank':
     case 'free_text':
+    case 'letter':
       return answer.text;
     case 'flashcard':
       return answer.rating;
@@ -135,6 +156,7 @@ function answerTextOf(exercise: ExerciseView, answer: LessonAnswer): string {
 }
 
 function itemsOf(answer: TaskAnswer): number {
+  if (answer.type === 'letter') return 1;
   return answer.type === 'cloze' ? answer.values.length : answer.selected.length;
 }
 
@@ -153,6 +175,7 @@ export function ExerciseCard({
   onAskAi,
 }: ExerciseCardProps) {
   const t = useTranslations('exercise');
+  const tWriting = useTranslations('writing');
   const tFocus = useTranslations('focus');
   const playSound = useSound();
   const errorText = useApiErrorText();
@@ -170,6 +193,7 @@ export function ExerciseCard({
   const [error, setError] = useState<string | null>(null);
   const [gradingError, setGradingError] = useState<string | null>(null);
   const [shown, setShown] = useState<Shown | null>(null);
+  const [versions, setVersions] = useState<LetterVersion[]>([]);
 
   async function submit(answer: LessonAnswer) {
     setBusy(true);
@@ -213,7 +237,10 @@ export function ExerciseCard({
             answerText,
             itemResults: outcome.itemResults,
             reveal: outcome.reveal,
+            letter: outcome.letter,
           });
+          const graded = outcome.letter;
+          if (graded) setVersions((all) => [...all, { percent: graded.percent, text: answerText }]);
           onAnswered?.(outcome);
         }
         return;
@@ -294,6 +321,70 @@ export function ExerciseCard({
     </>
   );
 
+  if (shown && exercise.type === 'letter' && shown.letter && taskAnswer?.type === 'letter') {
+    const style = RESULT_STYLE[shown.result];
+    const ResultIcon = style.icon;
+    const chosen = exercise.tasks[taskAnswer.taskIndex] ?? exercise.tasks[0];
+    const earlier = versions.slice(0, -1);
+    return (
+      <div className="flex flex-1 flex-col gap-6">
+        {instruction && <p className="text-sm text-text-muted">{instruction}</p>}
+        {chosen && (
+          <p lang="de" className="leading-relaxed font-semibold whitespace-pre-wrap">
+            {chosen.situation}
+          </p>
+        )}
+        {/* S12: earlier versions, collapsed, above the newest result. */}
+        {earlier.length > 0 && (
+          <details aria-label={tWriting('earlierVersions')} className="rounded-xl border border-border px-4">
+            <summary className="min-h-11 cursor-pointer py-3 font-semibold">{tWriting('earlierVersions')}</summary>
+            <ol className="flex flex-col gap-1 pb-3">
+              {earlier.map((v, i) => (
+                <li key={i}>
+                  <details>
+                    <summary className="min-h-11 cursor-pointer py-2 text-sm">{tWriting('version', { n: i + 1, percent: v.percent })}</summary>
+                    <p lang="de" className="rounded-lg bg-surface px-3 py-2 text-sm leading-relaxed whitespace-pre-wrap">
+                      {v.text}
+                    </p>
+                  </details>
+                </li>
+              ))}
+            </ol>
+          </details>
+        )}
+        <p className={cn('flex animate-rise-in items-center gap-2 rounded-2xl border-2 p-4 font-heading text-lg font-extrabold', style.box, style.text)}>
+          <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-current/15">
+            <ResultIcon aria-hidden className="size-4" strokeWidth={3} />
+          </span>
+          <span>{t(`result.${shown.result}`)}</span>
+        </p>
+        <LetterResult grade={shown.letter} text={shown.answerText} rubric={LESSON_LETTER_RUBRIC} />
+        <div className={FOOTER}>
+          {/* Revise keeps the text and the chosen task; the next Check is a new attempt. */}
+          <Button type="button" variant="outline" onClick={() => setShown(null)} className="min-h-11 w-full">
+            <PenLine aria-hidden />
+            {tWriting('revise')}
+          </Button>
+          {onAskAi && (
+            <Button
+              type="button"
+              variant="secondary"
+              onClick={() => onAskAi(exercise.id, { answerText: shown.answerText, result: shown.result })}
+              className="min-h-11 w-full"
+            >
+              <MessageCircle aria-hidden />
+              {t('askAi')}
+            </Button>
+          )}
+          <Button type="button" size="lg" onClick={onNext} className={PRIMARY}>
+            {t('next')}
+          </Button>
+          {keysHint}
+        </div>
+      </div>
+    );
+  }
+
   if (shown) {
     // Practice (spec Phase 2): the right answer only when the student missed it. Lessons keep
     // Phase 1's rule of also showing the model answer for correct free text.
@@ -306,7 +397,7 @@ export function ExerciseCard({
     return (
       <div className="flex flex-1 flex-col gap-6">
         {/* S17: a reading task stays visible, read-only, with a tick or cross per item. */}
-        {isTaskExercise(exercise) && taskAnswer ? (
+        {isTaskExercise(exercise) && exercise.type !== 'letter' && taskAnswer ? (
           <>
             {instruction && <p className="text-sm text-text-muted">{instruction}</p>}
             <TaskInputs type={exercise.type} view={taskViewOf(exercise)} value={taskAnswer} onChange={() => {}} disabled itemResults={shown.itemResults} pane="all" />
@@ -316,6 +407,7 @@ export function ExerciseCard({
           <ExerciseHeading exercise={exercise} language={language} />
         )}
         {exercise.type === 'flashcard' && <p className="rounded-xl border border-border bg-surface p-4 text-lg">{exercise.back}</p>}
+        {exercise.type === 'letter' && <p className="whitespace-pre-wrap rounded-xl border border-border bg-surface p-4">{shown.answerText}</p>}
         <div className={FOOTER}>
           {/* The result rises from the bottom (200 ms; none under reduced motion). */}
           <div className={cn('flex animate-rise-in flex-col gap-2 rounded-2xl border-2 p-4', style.box)}>
@@ -428,18 +520,22 @@ export function ExerciseCard({
       {exercise.type === 'fill_blank' && (
         <div className="flex flex-col gap-4">
           <p className={TASK}>{exercise.textWithBlank}</p>
-          <Input aria-label={t('answerLabel')} value={text} onChange={(e) => setText(e.target.value)} autoComplete="off" autoCapitalize="off" spellCheck={false} className="h-12 text-lg md:text-lg" />
+          <GermanTextInput aria-label={t('answerLabel')} value={text} onChange={(e) => setText(e.target.value)} autoComplete="off" autoCapitalize="off" spellCheck={false} className="h-12 text-lg md:text-lg" />
         </div>
       )}
-      {isTaskExercise(exercise) && taskAnswer && (
+      {isTaskExercise(exercise) && exercise.type !== 'letter' && taskAnswer && (
         <div className="flex flex-col gap-4">
           <TaskInputs type={exercise.type} view={taskViewOf(exercise)} value={taskAnswer} onChange={setTaskAnswer} disabled={busy} pane="all" />
         </div>
       )}
+      {/* S9: an untimed letter keeps the browser's spellcheck; with two tasks the student picks one. */}
+      {exercise.type === 'letter' && taskAnswer?.type === 'letter' && (
+        <LetterTaskInput content={exercise} value={taskAnswer} onChange={setTaskAnswer} timed={false} disabled={busy} />
+      )}
       {exercise.type === 'free_text' && (
         <div className="flex flex-col gap-4">
           <p className={TASK}>{exercise.prompt}</p>
-          <Textarea aria-label={t('answerLabel')} value={text} onChange={(e) => setText(e.target.value)} spellCheck={false} className="min-h-32 text-base md:text-base" />
+          <GermanTextarea aria-label={t('answerLabel')} value={text} onChange={(e) => setText(e.target.value)} spellCheck={false} className="min-h-32 text-base md:text-base" />
         </div>
       )}
       <div className={FOOTER}>

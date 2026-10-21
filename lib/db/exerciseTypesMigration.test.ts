@@ -28,12 +28,23 @@ const READING_TYPES = "'multiple_choice','fill_blank','flashcard','free_text','p
 const READING_EXERCISES = OLD_EXERCISES.replace("'multiple_choice','fill_blank','flashcard','free_text'", READING_TYPES);
 const READING_PRACTICE = OLD_PRACTICE.replace("'multiple_choice','fill_blank','flashcard','free_text'", READING_TYPES);
 
-function oldDatabase(state: 'pre-reading' | 'reading' = 'pre-reading'): Database.Database {
+// Writing: the tables as the Listening module left them (CHECK ends in 'audio_questions', no 'letter').
+const LISTENING_TYPES = `${READING_TYPES},'audio_questions'`;
+const LISTENING_EXERCISES = OLD_EXERCISES.replace("'multiple_choice','fill_blank','flashcard','free_text'", LISTENING_TYPES);
+const LISTENING_PRACTICE = OLD_PRACTICE.replace("'multiple_choice','fill_blank','flashcard','free_text'", LISTENING_TYPES);
+
+const DDL = {
+  'pre-reading': [OLD_EXERCISES, OLD_PRACTICE],
+  reading: [READING_EXERCISES, READING_PRACTICE],
+  listening: [LISTENING_EXERCISES, LISTENING_PRACTICE],
+} as const;
+
+function oldDatabase(state: keyof typeof DDL = 'pre-reading'): Database.Database {
   const db = createDbClient(':memory:');
   db.pragma('foreign_keys = OFF');
   for (const [table, ddl] of [
-    ['exercises', state === 'reading' ? READING_EXERCISES : OLD_EXERCISES],
-    ['practice_exercises', state === 'reading' ? READING_PRACTICE : OLD_PRACTICE],
+    ['exercises', DDL[state][0]],
+    ['practice_exercises', DDL[state][1]],
   ] as const) {
     db.exec(`${ddl}; DROP TABLE ${table}; ALTER TABLE ${table}_old RENAME TO ${table};`);
   }
@@ -105,6 +116,30 @@ describe('exercise types migration', () => {
     const before = db.prepare("SELECT name, sql FROM sqlite_master WHERE tbl_name IN ('exercises','practice_exercises') ORDER BY name").all();
     runMigrations(db);
     expect(db.prepare("SELECT name, sql FROM sqlite_master WHERE tbl_name IN ('exercises','practice_exercises') ORDER BY name").all()).toEqual(before);
+  });
+
+  it('rebuilds a database on the Listening types so letter inserts, keeping the links (Writing)', () => {
+    const db = oldDatabase('listening');
+    expect(() =>
+      db.prepare("INSERT INTO exercises (id, lesson_id, type, content) VALUES ('a1-greet__ex8', 'a1-greet', 'letter', '{}')").run()
+    ).toThrow();
+
+    runMigrations(db);
+
+    expect(() =>
+      db.prepare("INSERT INTO exercises (id, lesson_id, type, content) VALUES ('a1-greet__ex9', 'a1-greet', 'letter', '{}')").run()
+    ).not.toThrow();
+    expect(() => addPracticeExercise(db, 'p2', 'a1-sein', { type: 'letter', content: {} })).not.toThrow();
+    expect(count(db, "SELECT COUNT(*) AS n FROM lesson_attempts WHERE exercise_id = 'a1-greet__ex1'")).toBe(1);
+    expect(count(db, "SELECT COUNT(*) AS n FROM exercise_srs_state WHERE exercise_id = 'a1-sein__ex2'")).toBe(1);
+    expect(count(db, 'SELECT COUNT(*) AS n FROM lesson_chat_messages')).toBe(2);
+    expect(db.pragma('foreign_keys', { simple: true })).toBe(1);
+
+    const fresh = createDbClient(':memory:');
+    seedTutoringCurriculum(fresh);
+    expect(() =>
+      fresh.prepare("INSERT INTO exercises (id, lesson_id, type, content) VALUES ('a1-greet__ex9', 'a1-greet', 'letter', '{}')").run()
+    ).not.toThrow();
   });
 
   it('is a no-op on a second run and on a fresh database', () => {

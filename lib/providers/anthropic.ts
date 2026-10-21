@@ -6,6 +6,7 @@ import type {
   GenerateTextResult,
   FetchLike,
 } from './types';
+import { timeoutSignal } from './types';
 
 const API_BASE = 'https://api.anthropic.com/v1';
 const KNOWN_MODELS: ModelInfo[] = [
@@ -40,8 +41,9 @@ export function createAnthropicAdapter(fetchImpl: FetchLike = fetch): ProviderAd
           model: params.model,
           system: params.systemPrompt,
           messages: params.messages,
-          max_tokens: 1024,
+          max_tokens: params.maxTokens ?? 1024,
         }),
+        ...timeoutSignal(params),
       });
       if (!res.ok) throw new Error(`Anthropic returned ${res.status}`);
       const data = await res.json();

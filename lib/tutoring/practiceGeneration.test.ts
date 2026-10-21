@@ -11,6 +11,12 @@ const ctx = {
 };
 
 describe('buildPracticeGenerationPrompt', () => {
+  it('uses only exercises of the allowed types as style examples, so a letter is never one', () => {
+    const letter = { type: 'letter' as const, content: { tasks: [{ situation: 'BRIEF-SITUATION', leitpunkte: ['a', 'b', 'c'], register: 'informal' as const, wordTarget: { min: 20, max: 40 } }] } };
+    const { messages } = buildPracticeGenerationPrompt({ ...ctx, authoredExercises: [letter, ...ctx.authoredExercises] }, ['multiple_choice', 'fill_blank'], 3);
+    expect(messages[0].content).not.toContain('BRIEF-SITUATION');
+  });
+
   it('names the lesson, the count, the allowed types and only their shapes', () => {
     const { systemPrompt, messages } = buildPracticeGenerationPrompt(ctx, ['multiple_choice', 'flashcard'], 3);
     expect(systemPrompt).toContain('"Saying hello" at CEFR level A1 (skill: vocabulary)');

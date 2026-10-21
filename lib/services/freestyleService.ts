@@ -9,6 +9,7 @@ import { errorBodyFor, type ApiErrorBody, type ErrorCode, type ErrorParams } fro
 import { isAtOrBelow, isCefrLevel, levelsUpTo } from '../tutoring/levels';
 import { generateWithActiveProvider, isAiAvailable, type AiRequest, type AiResult } from './aiService';
 import { generateParsed } from './freestyleAi';
+import { recordMistakes } from './errorLogService';
 import { createProfileService } from './profileService';
 import { createContentText } from './contentText';
 import { loadLevelGating } from './levelGating';
@@ -63,6 +64,8 @@ const SETUP_KEYS: Partial<Record<FreestyleMode, readonly string[]>> = {
 export const MAX_SETUP_VALUE_LENGTH = 200;
 // Including the current message, the history sent to the AI stays within the prompts' 20-message window.
 const HISTORY_LIMIT = 19;
+// Only Anthropic applies the cap (see GenerateTextParams.maxTokens), where it counts the reply alone.
+const WRITING_MAX_TOKENS = 8192;
 
 export function createFreestyleService(
   db: Database.Database,
@@ -225,7 +228,9 @@ export function createFreestyleService(
         buildConversationPrompt({ level: r.level, scenario: scenario?.title.de ?? null, topic, history: history(r.id), message: text }),
         parseConversationReply
       );
-      return save({ corrections: reply.corrections }, reply.reply);
+      const added = save({ corrections: reply.corrections }, reply.reply);
+      recordMistakes(db, 'freestyle_chat', reply.corrections, { now });
+      return added;
     }
     if (mode === 'grammar_drill') {
       const reply = await ask(buildDrillPrompt({ level: r.level, topic: String(setup.topic), history: history(r.id), answer: text }), parseDrillReply);
@@ -233,8 +238,12 @@ export function createFreestyleService(
     }
     if (mode === 'free_writing') {
       const prompt = nonEmpty(setup.prompt) ? setup.prompt : '';
-      const reply = await ask(buildWritingPrompt({ level: r.level, prompt, text }), parseWritingReply);
-      return save(null, reply.corrected, { corrections: reply.corrections, comment: reply.comment });
+      // B1: a corrected text plus every correction outgrows the adapter's default output cap.
+      const reply = await ask({ ...buildWritingPrompt({ level: r.level, prompt, text }), maxTokens: WRITING_MAX_TOKENS }, parseWritingReply);
+      const added = save(null, reply.corrected, { corrections: reply.corrections, comment: reply.comment });
+      // I5: a resubmission logs its corrections again.
+      recordMistakes(db, 'freestyle_writing', reply.corrections, { now });
+      return added;
     }
     throw new FreestyleError('This mode has no turns', 'bad_request');
   }

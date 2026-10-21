@@ -6,6 +6,7 @@ import type {
   GenerateTextResult,
   FetchLike,
 } from './types';
+import { timeoutSignal } from './types';
 
 export function createOllamaAdapter(fetchImpl: FetchLike = fetch): ProviderAdapter {
   function base(creds: ProviderCredentials): string {
@@ -33,7 +34,9 @@ export function createOllamaAdapter(fetchImpl: FetchLike = fetch): ProviderAdapt
             ? [{ role: 'system', content: params.systemPrompt }, ...params.messages]
             : params.messages,
           stream: false,
+          // No num_predict: it counts a thinking model's reasoning, and a local model has no token cost.
         }),
+        ...timeoutSignal(params),
       });
       if (!res.ok) throw new Error(`Ollama returned ${res.status}`);
       const data = await res.json();

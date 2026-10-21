@@ -15,6 +15,7 @@ import { generateWithActiveProvider, type AiRequest, type AiResult } from './aiS
 import { createNotificationService, type NotificationService } from './notificationService';
 import { createCurriculumService } from './curriculumService';
 import { gradeExerciseAnswer } from './exerciseGrading';
+import { recordMistakes } from './errorLogService';
 import { gradeFreeText, type FreeTextGradeOutcome } from './freeTextGradingService';
 import { createProgressService } from './progressService';
 import { createUnlockService } from './unlockService';
@@ -229,6 +230,8 @@ export function createPracticeService(db: Database.Database, deps: PracticeDeps 
       if (graded.reason === 'bad_request') throw new PracticeError(graded.message, 'bad_request');
       throw new PracticeError(graded.message, 'ai_failed', graded.code, graded.params);
     }
+    // S7: free-text mistakes from lesson content feed the error log; logging never breaks grading.
+    recordMistakes(db, 'lesson', graded.mistakes ?? []);
     const reveal = revealFor(exercise);
     return {
       result: graded.result,

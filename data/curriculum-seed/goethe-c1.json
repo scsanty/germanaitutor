@@ -1,5 +1,5 @@
 {
-  "seedVersion": "10",
+  "seedVersion": "11",
   "formatVersion": 3,
   "track": "goethe",
   "level": "C1",
@@ -1353,6 +1353,34 @@
       }
     },
     {
+      "id": "c1-goethe-schreiben-teil1-freie-stellungnahme__ex4",
+      "lessonId": "c1-goethe-schreiben-teil1-freie-stellungnahme",
+      "track": "goethe",
+      "type": "letter",
+      "content": {
+        "instruction": {
+          "en": "Write a well-structured statement (about 230 words) on the topic and cover all four points.",
+          "de": "Verfassen Sie eine gut gegliederte Stellungnahme (ca. 230 Wörter) zum Thema. Behandeln Sie alle vier Punkte."
+        },
+        "tasks": [
+          {
+            "situation": "Eine Zeitschrift bittet ihre Leserinnen und Leser um Stellungnahmen zum Thema „Ehrenamt in der Krise?“. Dazu veröffentlicht sie eine Grafik des Forschungsinstituts Hollerbrück:\n\nAnteil der Menschen, die sich ehrenamtlich engagieren\n– insgesamt: 2014: 40 %, 2024: 31 %\n– 30- bis 49-Jährige: 2014: 42 %, 2024: 27 %\n– über 65-Jährige: 2014: 33 %, 2024: 35 %\n\nVerfassen Sie eine Stellungnahme für die Online-Ausgabe der Zeitschrift.",
+            "leitpunkte": [
+              "Die zentralen Aussagen der Grafik",
+              "Unterschiedliche Sichtweisen auf diese Entwicklung",
+              "Ihre eigene, gut begründete Position",
+              "Ein Ausblick auf die Zukunft des Ehrenamts"
+            ],
+            "register": "formal",
+            "wordTarget": {
+              "min": 184,
+              "max": 276
+            }
+          }
+        ]
+      }
+    },
+    {
       "id": "c1-goethe-schreiben-teil2-textumformung-register__ex0",
       "lessonId": "c1-goethe-schreiben-teil2-textumformung-register",
       "track": "goethe",
@@ -1399,6 +1427,34 @@
       "content": {
         "prompt": "Formulieren Sie den folgenden umgangssprachlichen Satz in geschäftssprachlichen Nominalstil um: 'Weil Sie den Vertrag nicht eingehalten haben, kündigen wir jetzt.'",
         "modelAnswer": "Aufgrund der Nichteinhaltung der vertraglichen Vereinbarungen Ihrerseits kündigen wir das Vertragsverhältnis mit sofortiger Wirkung."
+      }
+    },
+    {
+      "id": "c1-goethe-schreiben-teil2-textumformung-register__ex4",
+      "lessonId": "c1-goethe-schreiben-teil2-textumformung-register",
+      "track": "goethe",
+      "type": "letter",
+      "content": {
+        "instruction": {
+          "en": "Turn the informal note into a formal letter of complaint (about 120 words) to the property management and cover all four points.",
+          "de": "Formulieren Sie die Notiz in ein formelles Beschwerdeschreiben (ca. 120 Wörter) an die Hausverwaltung um. Behandeln Sie alle vier Punkte."
+        },
+        "tasks": [
+          {
+            "situation": "Sie wohnen im fünften Stock eines Mietshauses. Aus Ärger haben Sie spontan folgende Notiz geschrieben:\n\n„Jetzt reicht’s echt! Der Aufzug ist schon wieder seit zwei Wochen kaputt, und ich schlepp jeden Tag meine Einkäufe in den fünften Stock. Ich hab dreimal angerufen, aber da geht ja nie einer ran. Wenn das nicht bald repariert wird, zahl ich einfach weniger Miete!“\n\nMachen Sie daraus ein formelles Schreiben an die Hausverwaltung Kranzbühl GmbH.",
+            "leitpunkte": [
+              "Sachliche Darstellung des Mangels und seiner Dauer",
+              "Folgen für Sie als Mieterin oder Mieter",
+              "Ihre bisherigen erfolglosen Versuche, die Hausverwaltung zu erreichen",
+              "Ihre Forderung mit einer Frist und mögliche Konsequenzen"
+            ],
+            "register": "formal",
+            "wordTarget": {
+              "min": 96,
+              "max": 144
+            }
+          }
+        ]
       }
     },
     {

@@ -1,0 +1,267 @@
+{
+  "formatId": "telc-a2",
+  "partId": "schreiben-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-a2__schreiben-1__s01",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Ihre Freundin Elena Popescu schreibt Ihnen eine E-Mail.\n\nHallo,\n\nkannst du mich bitte bei der Sprachschule Wortreich für den Deutschkurs anmelden? Ich habe leider keinen Computer. Du weißt ja, ich komme aus Rumänien und bin seit acht Monaten hier. Meine neue Adresse ist Kirchgasse 5, 63452 Altmühlen. Ich habe in Rumänien schon ein Jahr Deutsch gelernt und habe das Zertifikat A1. Jetzt möchte ich den Kurs A2 machen. Nachmittags arbeite ich im Krankenhaus, ich kann also nur vormittags. Den Kurs bezahle ich per Überweisung, nicht bar.\n\nVielen Dank!\nElena\n\nSprachschule Wortreich – Anmeldung\n\nName: Popescu\nVorname: Elena\nHerkunftsland: {{1}}\nStraße, Hausnummer: Kirchgasse 5\nPLZ: 63452\nOrt: {{2}}\nGewünschter Kurs (Niveau): {{3}}\nKurszeit: {{4}}\nZahlungsart: {{5}}",
+          "gaps": [
+            {
+              "mode": "typed",
+              "answer": "Rumänien",
+              "variants": [
+                "Rumaenien"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "Altmühlen",
+              "variants": [
+                "Altmuehlen"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "A2",
+              "variants": [
+                "A 2",
+                "Deutsch A2",
+                "Kurs A2"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "vormittags",
+              "variants": [
+                "Vormittags",
+                "Vormittag",
+                "am Vormittag",
+                "Am Vormittag",
+                "nur vormittags",
+                "Nur vormittags"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "Überweisung",
+              "variants": [
+                "per Überweisung",
+                "Per Überweisung",
+                "Banküberweisung",
+                "Ueberweisung",
+                "per Ueberweisung",
+                "Per Ueberweisung",
+                "Bankueberweisung"
+              ]
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Elena writes: \"ich komme aus Rumänien\".",
+            "de": "Elena schreibt: „ich komme aus Rumänien“."
+          },
+          {
+            "en": "Her new address is \"63452 Altmühlen\", so the town is Altmühlen.",
+            "de": "Ihre neue Adresse ist „63452 Altmühlen“, der Ort ist also Altmühlen."
+          },
+          {
+            "en": "She already has A1 and now wants the A2 course. A1 is the old level, not the answer.",
+            "de": "Sie hat schon A1 und möchte jetzt den Kurs A2 machen. A1 ist das alte Niveau, nicht die Lösung."
+          },
+          {
+            "en": "She works in the afternoon, so she can only come in the morning: \"nur vormittags\".",
+            "de": "Nachmittags arbeitet sie, sie kann also „nur vormittags“."
+          },
+          {
+            "en": "She pays by bank transfer: \"per Überweisung, nicht bar\".",
+            "de": "Sie bezahlt „per Überweisung, nicht bar“."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a2__schreiben-1__s02",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Ihr Freund Jakob Wenzel schreibt Ihnen eine E-Mail.\n\nHallo,\n\nstell dir vor, gestern habe ich im Bus meinen Rucksack vergessen! Ich bin um 8.15 Uhr mit der Linie 12 zur Arbeit gefahren und bin am Marktplatz ausgestiegen. Erst im Büro habe ich gemerkt: Der Rucksack ist weg. Er ist schwarz und ziemlich neu. Mein Handy ist leider auch im Rucksack, also kann mich das Fundbüro nicht anrufen. Ich möchte lieber eine E-Mail bekommen. Kannst du für mich das Formular auf der Internetseite der Verkehrsbetriebe Rehnstadt ausfüllen? Ich bin den ganzen Tag im Büro und habe keine Zeit.\n\nDanke und liebe Grüße\nJakob\n\nVerkehrsbetriebe Rehnstadt – Fundbüro: Verlustmeldung\n\nName: Jakob Wenzel\nWas haben Sie verloren? {{1}}\nFarbe: {{2}}\nBuslinie: {{3}}\nUhrzeit: {{4}}\nAusgestiegen an der Haltestelle: Marktplatz\nWie sollen wir Sie informieren? {{5}}",
+          "gaps": [
+            {
+              "mode": "typed",
+              "answer": "Rucksack",
+              "variants": [
+                "einen Rucksack",
+                "Einen Rucksack",
+                "meinen Rucksack",
+                "Meinen Rucksack"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "schwarz",
+              "variants": [
+                "Schwarz"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "12",
+              "variants": [
+                "Linie 12",
+                "Bus 12",
+                "Buslinie 12",
+                "Nr. 12"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "8.15 Uhr",
+              "variants": [
+                "8.15",
+                "8:15",
+                "8:15 Uhr",
+                "08.15",
+                "08:15",
+                "08.15 Uhr",
+                "08:15 Uhr",
+                "um 8.15 Uhr",
+                "Um 8.15 Uhr",
+                "um 8:15 Uhr",
+                "Um 8:15 Uhr"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "E-Mail",
+              "variants": [
+                "Email",
+                "E-mail",
+                "per E-Mail",
+                "Per E-Mail",
+                "Mail",
+                "per Mail",
+                "Per Mail",
+                "mit E-Mail",
+                "Mit E-Mail",
+                "per Email",
+                "Per Email"
+              ]
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Jakob forgot his backpack on the bus: \"meinen Rucksack vergessen\".",
+            "de": "Jakob hat im Bus „meinen Rucksack vergessen“."
+          },
+          {
+            "en": "He writes: \"Er ist schwarz und ziemlich neu.\"",
+            "de": "Er schreibt: „Er ist schwarz und ziemlich neu.“"
+          },
+          {
+            "en": "He took line 12: \"mit der Linie 12\".",
+            "de": "Er ist „mit der Linie 12“ gefahren."
+          },
+          {
+            "en": "He took the bus at 8.15: \"um 8.15 Uhr\".",
+            "de": "Er ist „um 8.15 Uhr“ gefahren."
+          },
+          {
+            "en": "His phone is in the backpack, so the lost-property office cannot call. He wants an e-mail.",
+            "de": "Sein Handy ist im Rucksack, das Fundbüro kann also nicht anrufen. Er möchte eine E-Mail bekommen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a2__schreiben-1__s03",
+      "set": {
+        "taskType": "cloze",
+        "content": {
+          "text": "Sie arbeiten im Jugendzentrum Brunnhof. Frau Yilmaz schreibt Ihnen eine E-Mail.\n\nSehr geehrte Damen und Herren,\n\nich habe von Ihrem Sommerprogramm gelesen. Mein Sohn Emre ist 9 Jahre alt und möchte gern beim Fußballcamp mitmachen. Seine Schwester Selin möchte lieber in den Malkurs, aber sie ist im August bei ihrer Oma. Bitte beachten Sie: Emre darf keine Nüsse essen, er hat eine Allergie. Wir arbeiten beide bis 15.30 Uhr, deshalb hole ich ihn erst um 16 Uhr ab. Bitte melden Sie Emre für das Fußballcamp an. Vielen Dank!\n\nMit freundlichen Grüßen\nAylin Yilmaz\n\nJugendzentrum Brunnhof – Anmeldung Sommerprogramm\n\nName des Kindes: Emre Yilmaz\nAlter: {{1}}\nProgramm: {{2}}\nAllergien: {{3}}\nAbholzeit: {{4}}\nVorname der Mutter: {{5}}\nFamilienname der Mutter: Yilmaz",
+          "gaps": [
+            {
+              "mode": "typed",
+              "answer": "9",
+              "variants": [
+                "9 Jahre",
+                "neun",
+                "neun Jahre"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "Fußballcamp",
+              "variants": [
+                "Fußball",
+                "Fussballcamp",
+                "Fussball",
+                "Fußball-Camp",
+                "Fussball-Camp"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "Nüsse",
+              "variants": [
+                "Nuss",
+                "Nussallergie",
+                "Nuesse",
+                "gegen Nüsse",
+                "Gegen Nüsse",
+                "gegen Nuesse",
+                "Gegen Nuesse"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "16 Uhr",
+              "variants": [
+                "16.00 Uhr",
+                "16:00 Uhr",
+                "16.00",
+                "16:00",
+                "16",
+                "um 16 Uhr",
+                "Um 16 Uhr",
+                "um 16.00 Uhr",
+                "Um 16.00 Uhr"
+              ]
+            },
+            {
+              "mode": "typed",
+              "answer": "Aylin"
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Mrs Yilmaz writes: \"Mein Sohn Emre ist 9 Jahre alt.\"",
+            "de": "Frau Yilmaz schreibt: „Mein Sohn Emre ist 9 Jahre alt.“"
+          },
+          {
+            "en": "Emre wants to join the football camp. The painting course is for his sister Selin, and she is away.",
+            "de": "Emre möchte beim Fußballcamp mitmachen. Der Malkurs ist für seine Schwester Selin, und sie ist nicht da."
+          },
+          {
+            "en": "Emre may not eat nuts: \"er hat eine Allergie\".",
+            "de": "Emre darf keine Nüsse essen: „er hat eine Allergie“."
+          },
+          {
+            "en": "The parents work until 15.30, but the pick-up time is 16 Uhr.",
+            "de": "Die Eltern arbeiten bis 15.30 Uhr, aber die Abholzeit ist 16 Uhr."
+          },
+          {
+            "en": "The mother signs the letter \"Aylin Yilmaz\", so her first name is Aylin.",
+            "de": "Die Mutter unterschreibt mit „Aylin Yilmaz“, ihr Vorname ist also Aylin."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "seedVersion": "10",
+  "seedVersion": "11",
   "formatVersion": 3,
   "track": "telc",
   "level": "B2",
@@ -1190,6 +1190,34 @@
       }
     },
     {
+      "id": "b2-telc-schreiben-beschwerdebrief__ex2",
+      "lessonId": "b2-telc-schreiben-beschwerdebrief",
+      "track": "telc",
+      "type": "letter",
+      "content": {
+        "instruction": {
+          "en": "Write a formal letter of complaint (about 180 words). Deal with at least three of the four points in detail.",
+          "de": "Schreiben Sie einen formellen Beschwerdebrief (ca. 180 Wörter). Behandeln Sie mindestens drei der vier Punkte ausführlich."
+        },
+        "tasks": [
+          {
+            "situation": "Sie haben in einem Reisekatalog folgende Anzeige gelesen: „Wanderwoche im Rabenkammtal: Komfortzimmer mit eigenem Bad, täglich geführte Touren mit erfahrenen Bergführern, regionale Vollpension – alles für nur 890 Euro!“ Sie haben die Reise beim Veranstalter Wanderwerk Rabenkamm gebucht (Buchungsnummer RK-2291). Vor Ort mussten Sie sich ein Bad auf dem Flur mit drei anderen Zimmern teilen, an drei von sieben Tagen fand keine Tour statt, und statt Vollpension gab es abends nur kalte Speisen. Schreiben Sie einen Brief an den Reiseveranstalter.",
+            "leitpunkte": [
+              "Grund für Ihr Schreiben",
+              "Unterschiede zwischen der Anzeige und der Wirklichkeit",
+              "Folgen für Ihren Urlaub",
+              "Ihre Forderung an den Veranstalter mit Frist"
+            ],
+            "register": "formal",
+            "wordTarget": {
+              "min": 150,
+              "max": 200
+            }
+          }
+        ]
+      }
+    },
+    {
       "id": "b2-telc-schreiben-informationsbitte-anfrage__ex0",
       "lessonId": "b2-telc-schreiben-informationsbitte-anfrage",
       "track": "telc",
@@ -1207,6 +1235,33 @@
       "content": {
         "textWithBlank": "Ich wäre Ihnen sehr ___ , wenn Sie mir vorab Informationsmaterial zusenden könnten. (dankbar / erfreut)",
         "correctAnswer": "dankbar"
+      }
+    },
+    {
+      "id": "b2-telc-schreiben-informationsbitte-anfrage__ex2",
+      "lessonId": "b2-telc-schreiben-informationsbitte-anfrage",
+      "track": "telc",
+      "type": "letter",
+      "content": {
+        "instruction": {
+          "en": "Write a formal inquiry (about 180 words) and cover all three points.",
+          "de": "Schreiben Sie eine formelle Anfrage (ca. 180 Wörter). Schreiben Sie zu allen drei Punkten."
+        },
+        "tasks": [
+          {
+            "situation": "Sie haben in einer Fachzeitschrift folgende Anzeige gelesen: „Regionalmesse Glimmerfeld, 14. bis 16. März: über 120 Aussteller aus Handwerk und Design, Fachvorträge und günstige Gemeinschaftsstände für kleine Betriebe. Anmeldeschluss für Aussteller: 31. Januar.“ Sie führen eine kleine Tischlerei und möchten Ihre Möbel zum ersten Mal auf einer Messe zeigen. Schreiben Sie eine E-Mail an die Messeleitung.",
+            "leitpunkte": [
+              "Ihr Betrieb und Ihr Interesse an der Messe",
+              "Fragen zu Standgröße, Gemeinschaftsständen und Aufbauzeiten",
+              "Bitte um Unterlagen zu Standgebühren und Anmeldung"
+            ],
+            "register": "formal",
+            "wordTarget": {
+              "min": 150,
+              "max": 200
+            }
+          }
+        ]
       }
     },
     {

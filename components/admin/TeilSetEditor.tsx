@@ -10,6 +10,11 @@ import { BTN, FIELD_LABEL } from './adminStyles';
 import { ExerciseContentFields } from './ExerciseEditor';
 
 // Keeps one explanation pair per item as the item count changes: new items get empty pairs, removed ones drop theirs.
+// A letter set has one tip per rubric criterion (the part decides how many), so its explanations keep their count.
+function explanationCount(type: TeilSetContent['taskType'], content: TaskContent, current: LocalizedText[]): number {
+  return type === 'letter' ? current.length : itemCount(type, content);
+}
+
 function resized(explanations: LocalizedText[], count: number): LocalizedText[] {
   return Array.from({ length: count }, (_, i) => explanations[i] ?? { en: '', de: '' });
 }
@@ -30,11 +35,11 @@ export function TeilSetEditor({
 }) {
   const [set, setSet] = useState<TeilSetContent>(() => ({
     ...initial,
-    explanations: resized(initial.explanations ?? [], itemCount(initial.taskType, initial.content)),
+    explanations: resized(initial.explanations ?? [], explanationCount(initial.taskType, initial.content, initial.explanations ?? [])),
   }));
 
   function changeContent(content: TaskContent) {
-    setSet((s) => ({ ...s, content, explanations: resized(s.explanations, itemCount(s.taskType, content)) }));
+    setSet((s) => ({ ...s, content, explanations: resized(s.explanations, explanationCount(s.taskType, content, s.explanations)) }));
   }
 
   function changeExplanation(index: number, lang: 'en' | 'de', value: string) {
@@ -50,13 +55,18 @@ export function TeilSetEditor({
         onSave(set);
       }}
     >
-      <ExerciseContentFields
-        type={set.taskType}
-        content={set.content}
-        index={0}
-        allowInstruction={false}
-        onChange={(content) => changeContent(content as TaskContent)}
-      />
+      {set.taskType === 'letter' ? (
+        // Letter tasks are read-only in the admin; they are edited in data/ and merged with merge-teil-sets.
+        <pre className="whitespace-pre-wrap rounded-md border p-3 text-sm">{JSON.stringify(set.content, null, 2)}</pre>
+      ) : (
+        <ExerciseContentFields
+          type={set.taskType}
+          content={set.content}
+          index={0}
+          allowInstruction={false}
+          onChange={(content) => changeContent(content as TaskContent)}
+        />
+      )}
       <fieldset className="flex flex-col gap-3">
         <legend className="mb-2 font-semibold">Explanations</legend>
         {set.explanations.map((e, i) => (

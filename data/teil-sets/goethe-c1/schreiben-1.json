@@ -1,0 +1,133 @@
+{
+  "formatId": "goethe-c1",
+  "partId": "schreiben-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-c1__schreiben-1__s01",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie lesen in einem Online-Forum zum Thema Konsum und Umwelt folgende Meldung:\n\n„Nach einer Erhebung der Verbraucherzentrale Ostwalden wird nur etwa jedes dritte defekte Elektrogerät repariert, der Rest landet im Müll. Häufig ist eine Reparatur teurer als ein neues Gerät, oder es fehlen Ersatzteile. Die Stadt Ostwalden übernimmt deshalb seit Kurzem mit einem Reparaturbonus bis zu 75 Euro der Kosten. Kritiker halten das für Symbolpolitik und fordern stattdessen strengere Vorgaben für die Hersteller.“\n\nSchreiben Sie einen Diskussionsbeitrag für das Forum.",
+              "leitpunkte": [
+                "Gründe, warum defekte Geräte so selten repariert werden",
+                "Vor- und Nachteile eines staatlichen Reparaturbonus",
+                "Die Verantwortung der Hersteller",
+                "Ihre persönliche Meinung zum Thema"
+              ],
+              "register": "semi_formal",
+              "wordTarget": {
+                "min": 184,
+                "max": 276
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Develop all four points in depth: analyse why repairs are rare (price, missing spare parts, convenience), weigh up the repair bonus, discuss what manufacturers should do, and end with a well-argued personal position. Only a text that misses the situation or hardly touches the Leitpunkte gets an E here and scores 0 overall; a missing or thin point only costs points.",
+            "de": "Führen Sie alle vier Punkte differenziert aus: Analysieren Sie, warum selten repariert wird (Preis, fehlende Ersatzteile, Bequemlichkeit), wägen Sie den Reparaturbonus ab, erörtern Sie, was die Hersteller tun sollten, und schließen Sie mit einer gut begründeten eigenen Position. Nur ein Text, der die Situation verfehlt oder die Leitpunkte kaum berührt, bekommt hier ein E und erhält insgesamt 0 Punkte; ein fehlender oder knapper Punkt kostet nur Punkte."
+          },
+          {
+            "en": "Build a clear line of argument: an opening that picks up the figures from the report, then the causes, the bonus and the manufacturers, and a conclusion. Link your ideas with precise connectors and reference words (hinzu kommt, dem steht gegenüber, insofern, dies zeigt).",
+            "de": "Bauen Sie eine klare Argumentation auf: eine Einleitung, die die Zahlen aus der Meldung aufgreift, dann die Ursachen, der Bonus und die Hersteller, zum Schluss ein Fazit. Verknüpfen Sie Ihre Gedanken mit präzisen Konnektoren und Verweiswörtern (hinzu kommt, dem steht gegenüber, insofern, dies zeigt)."
+          },
+          {
+            "en": "Use precise, idiomatic vocabulary, for example Wegwerfgesellschaft, Lebensdauer, Ersatzteile vorhalten, geplanter Verschleiß, Anreiz schaffen, Ressourcen schonen. Avoid general words such as Sache or machen where a more exact expression exists.",
+            "de": "Verwenden Sie präzisen, idiomatischen Wortschatz, zum Beispiel Wegwerfgesellschaft, Lebensdauer, Ersatzteile vorhalten, geplanter Verschleiß, Anreiz schaffen, Ressourcen schonen. Vermeiden Sie allgemeine Wörter wie Sache oder machen, wo es einen genaueren Ausdruck gibt."
+          },
+          {
+            "en": "Show confident C1 structures: nominal style (die Verlängerung der Lebensdauer), passive with modal verbs (Hersteller müssten verpflichtet werden), Konjunktiv II for hypotheses and concessive clauses (so sinnvoll der Bonus auch sein mag, …). Check comma placement in complex sentences.",
+            "de": "Zeigen Sie sichere C1-Strukturen: Nominalstil (die Verlängerung der Lebensdauer), Passiv mit Modalverben (Hersteller müssten verpflichtet werden), Konjunktiv II für Hypothesen und Konzessivsätze (so sinnvoll der Bonus auch sein mag, …). Prüfen Sie die Kommasetzung in komplexen Sätzen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-c1__schreiben-1__s02",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie lesen in einem Online-Forum zum Thema Gesellschaft und Politik folgende Meldung:\n\n„Eine von der Bundesregierung eingesetzte Expertenkommission empfiehlt, das Rentenalter künftig an die steigende Lebenserwartung zu koppeln. Wer heute jung ist, müsste demnach bis 69 oder sogar 70 arbeiten. Nur so ließen sich die Renten langfristig finanzieren, argumentiert die Kommission. Gewerkschaften halten dagegen, dass viele Menschen in körperlich anstrengenden Berufen schon heute nicht bis 67 durchhalten.“\n\nSchreiben Sie einen Diskussionsbeitrag für das Forum.",
+              "leitpunkte": [
+                "Argumente für und gegen ein höheres Rentenalter",
+                "Mögliche Folgen für verschiedene Berufsgruppen",
+                "Andere Möglichkeiten, die Renten zu sichern",
+                "Ihre persönliche Meinung zum Vorschlag der Kommission"
+              ],
+              "register": "semi_formal",
+              "wordTarget": {
+                "min": 184,
+                "max": 276
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Treat all four points thoroughly: weigh the arguments for and against, show how the effects differ between, for example, office jobs and physically demanding work, propose other ways of securing pensions, and give a well-founded personal view on the proposal. Only a text that misses the situation or hardly touches the Leitpunkte gets an E here and scores 0 overall; a missing or thin point only costs points.",
+            "de": "Behandeln Sie alle vier Punkte gründlich: Wägen Sie die Argumente dafür und dagegen ab, zeigen Sie, wie unterschiedlich die Folgen etwa für Büroberufe und körperlich anstrengende Arbeit sind, schlagen Sie andere Wege zur Sicherung der Renten vor und begründen Sie Ihre persönliche Meinung zum Vorschlag. Nur ein Text, der die Situation verfehlt oder die Leitpunkte kaum berührt, bekommt hier ein E und erhält insgesamt 0 Punkte; ein fehlender oder knapper Punkt kostet nur Punkte."
+          },
+          {
+            "en": "Organise the post as a coherent argument: refer to the commission's proposal at the start, give each point its own paragraph, and lead logically to your conclusion. Use varied, precise connectors and reference words (zwar … jedoch, demgegenüber, vor diesem Hintergrund, daraus folgt).",
+            "de": "Gestalten Sie den Beitrag als schlüssige Argumentation: Greifen Sie zu Beginn den Vorschlag der Kommission auf, widmen Sie jedem Punkt einen eigenen Absatz und führen Sie logisch zu Ihrem Fazit. Verwenden Sie vielfältige, präzise Konnektoren und Verweiswörter (zwar … jedoch, demgegenüber, vor diesem Hintergrund, daraus folgt)."
+          },
+          {
+            "en": "Use precise vocabulary from social policy, for example Renteneintrittsalter, Lebenserwartung, Beitragszahler, Generationengerechtigkeit, Altersarmut, körperlich belastende Berufe. Vary your opinion phrases (ich halte es für bedenklich, dass …, aus meiner Sicht …).",
+            "de": "Verwenden Sie präzisen Wortschatz aus der Sozialpolitik, zum Beispiel Renteneintrittsalter, Lebenserwartung, Beitragszahler, Generationengerechtigkeit, Altersarmut, körperlich belastende Berufe. Variieren Sie Ihre Meinungsäußerungen (ich halte es für bedenklich, dass …, aus meiner Sicht …)."
+          },
+          {
+            "en": "Use a wide range of C1 structures: nominal style (die Kopplung des Rentenalters an …), Konjunktiv I or II to report and test the commission's view (die Renten ließen sich nur so finanzieren), passive alternatives (lässt sich …, ist zu …) and conditional clauses without wenn (Würde das Rentenalter erhöht, …).",
+            "de": "Verwenden Sie ein breites Spektrum an C1-Strukturen: Nominalstil (die Kopplung des Rentenalters an …), Konjunktiv I oder II, um die Sicht der Kommission wiederzugeben und zu prüfen (die Renten ließen sich nur so finanzieren), Passiversatzformen (lässt sich …, ist zu …) und Bedingungssätze ohne wenn (Würde das Rentenalter erhöht, …)."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-c1__schreiben-1__s03",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie lesen in einem Online-Forum zum Thema Ernährung folgende Meldung:\n\n„Das Studierendenwerk Talheim bietet in seinen Mensen ab dem Wintersemester nur noch an zwei Tagen pro Woche Gerichte mit Fleisch an. An den übrigen Tagen gibt es ausschließlich vegetarische und vegane Speisen. Das Studierendenwerk begründet die Entscheidung mit dem Klimaschutz und stark gestiegenen Einkaufspreisen. Ein Teil der Studierenden hat bereits eine Unterschriftenaktion gegen diese ‚Bevormundung‘ gestartet.“\n\nSchreiben Sie einen Diskussionsbeitrag für das Forum.",
+              "leitpunkte": [
+                "Gründe, die für die Entscheidung des Studierendenwerks sprechen",
+                "Kritik an der Entscheidung",
+                "Andere Wege, eine nachhaltige Ernährung zu fördern",
+                "Ihre persönliche Meinung zur Entscheidung"
+              ],
+              "register": "semi_formal",
+              "wordTarget": {
+                "min": 184,
+                "max": 276
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Develop all four points in a differentiated way: explain the reasons behind the decision (climate, costs), take the criticism of paternalism seriously, propose other ways of encouraging sustainable eating, and argue for your own position. Only a text that misses the situation or hardly touches the Leitpunkte gets an E here and scores 0 overall; a missing or thin point only costs points.",
+            "de": "Führen Sie alle vier Punkte differenziert aus: Erklären Sie die Gründe für die Entscheidung (Klima, Kosten), nehmen Sie die Kritik an der Bevormundung ernst, schlagen Sie andere Wege vor, eine nachhaltige Ernährung zu fördern, und vertreten Sie begründet Ihre eigene Position. Nur ein Text, der die Situation verfehlt oder die Leitpunkte kaum berührt, bekommt hier ein E und erhält insgesamt 0 Punkte; ein fehlender oder knapper Punkt kostet nur Punkte."
+          },
+          {
+            "en": "Give the post a clear structure: an introduction that refers to the news and the petition, a paragraph each for the arguments for, the criticism and the alternatives, and a conclusion. Link the ideas with precise connectors and reference words (nicht zuletzt, gleichwohl, dabei, angesichts dessen).",
+            "de": "Geben Sie dem Beitrag eine klare Struktur: eine Einleitung, die sich auf die Meldung und die Unterschriftenaktion bezieht, je ein Absatz zu den Argumenten dafür, zur Kritik und zu den Alternativen, und ein Fazit. Verknüpfen Sie die Gedanken mit präzisen Konnektoren und Verweiswörtern (nicht zuletzt, gleichwohl, dabei, angesichts dessen)."
+          },
+          {
+            "en": "Use precise, idiomatic vocabulary, for example Wahlfreiheit, Bevormundung, Klimabilanz, Ernährungsgewohnheiten, Anreize setzen, auf Akzeptanz stoßen. Keep the tone factual even when you disagree, and avoid colloquial expressions.",
+            "de": "Verwenden Sie präzisen, idiomatischen Wortschatz, zum Beispiel Wahlfreiheit, Bevormundung, Klimabilanz, Ernährungsgewohnheiten, Anreize setzen, auf Akzeptanz stoßen. Bleiben Sie auch bei Widerspruch sachlich und vermeiden Sie umgangssprachliche Ausdrücke."
+          },
+          {
+            "en": "Show C1 structures: extended participle attributes (die stark gestiegenen Einkaufspreise), nominal style, concessive clauses (auch wenn …, so nachvollziehbar … auch ist, …) and Konjunktiv II for alternatives (Sinnvoller wäre es, …). Check verb position and commas in long sentences.",
+            "de": "Zeigen Sie C1-Strukturen: erweiterte Partizipialattribute (die stark gestiegenen Einkaufspreise), Nominalstil, Konzessivsätze (auch wenn …, so nachvollziehbar … auch ist, …) und Konjunktiv II für Alternativen (Sinnvoller wäre es, …). Prüfen Sie Verbstellung und Kommas in langen Sätzen."
+          }
+        ]
+      }
+    }
+  ]
+}

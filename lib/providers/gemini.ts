@@ -5,6 +5,7 @@ import type {
   GenerateTextResult,
   FetchLike,
 } from './types';
+import { timeoutSignal } from './types';
 
 const API_BASE = 'https://generativelanguage.googleapis.com/v1beta';
 
@@ -50,7 +51,9 @@ export function createGeminiAdapter(fetchImpl: FetchLike = fetch): ProviderAdapt
               role: m.role === 'assistant' ? 'model' : 'user',
               parts: [{ text: m.content }],
             })),
+            // No maxOutputTokens: on thinking models it includes the reasoning, which could starve the reply.
           }),
+          ...timeoutSignal(params),
         }
       );
       if (!res.ok) throw new Error(`Gemini returned ${res.status}`);

@@ -3,7 +3,7 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import { cpSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { mergeTeilSets } from './merge-teil-sets';
+import { EXPECTED_LETTER_SETS, mergeTeilSets } from './merge-teil-sets';
 
 const REAL = join(process.cwd(), 'data');
 let root: string;
@@ -218,6 +218,97 @@ describe('mergeTeilSets', () => {
       const r = mergeTeilSets({ workDir: work, dataRoot: root });
       // Fixtures bundle 1 set each for telc-b1 hoeren-1/2/3 (5 + 10 + 5 items); hoeren-1 now has 2.
       expect(r.lines.at(-1)).toBe('listening telc: 25 of 294 items');
+    });
+  });
+
+  describe('letter', () => {
+    const task = (situation = 'Sie haben ein Zimmer im Hotel Sonne gebucht.', wordTarget = { min: 120, max: 180 }) => ({
+      situation,
+      leitpunkte: ['Beschreiben Sie das Problem.', 'Nennen Sie den Grund.', 'Fordern Sie eine Lösung.'],
+      register: 'formal',
+      wordTarget,
+    });
+    // telc-b1 schreiben: 2 tasks, 3 criteria, word target 120-180.
+    const letterSet = (situations = ['Sie haben ein Zimmer im Hotel Sonne gebucht.', 'Ihr Nachbar macht nachts Lärm.']) => ({
+      taskType: 'letter',
+      content: { tasks: situations.map((s) => task(s)) },
+      explanations: ['Aufgabe', 'Gestaltung', 'Richtigkeit'].map((n) => ({ en: `Tip ${n}`, de: `Tipp ${n}` })),
+    });
+    const putLetter = (n: string, set: unknown) => put(`telc-b1__schreiben__s${n}`, set);
+
+    it('merges a clean letter set and bumps the version on every change', () => {
+      putLetter('02', letterSet());
+      const r = mergeTeilSets({ workDir: work, dataRoot: root });
+      expect(r.ok).toBe(true);
+      expect(r.lines).toContain('telc-b1/schreiben: 2 sets OK, version 1 -> 2');
+      expect(out('schreiben').version).toBe('2');
+      putLetter('02', letterSet(['Sie haben ein Zimmer im Hotel Mond gebucht.', 'Ihr Nachbar macht nachts Lärm.']));
+      expect(mergeTeilSets({ workDir: work, dataRoot: root }).lines).toContain('telc-b1/schreiben: 2 sets OK, version 2 -> 3');
+      expect(out('schreiben').version).toBe('3');
+    });
+
+    it('rejects the wrong number of tasks, a wrong wordTarget and the wrong explanation count', () => {
+      const one = letterSet();
+      one.content.tasks.pop();
+      putLetter('02', one);
+      const wt = letterSet();
+      wt.content.tasks[1].wordTarget = { min: 80, max: 120 };
+      putLetter('03', wt);
+      const ex = letterSet();
+      ex.explanations.pop();
+      putLetter('04', ex);
+      const r = mergeTeilSets({ workDir: work, dataRoot: root });
+      expect(r.ok).toBe(false);
+      const text = r.lines.join('\n');
+      expect(text).toMatch(/s02: the part offers 2 task\(s\), the set has 1/);
+      expect(text).toMatch(/s03: task 2: wordTarget must be 120-180/);
+      expect(text).toMatch(/s04: .*3 items/);
+    });
+
+    it('rejects an instruction on a letter set', () => {
+      const s = letterSet() as Record<string, unknown>;
+      (s.content as Record<string, unknown>).instruction = { en: 'a', de: 'b' };
+      putLetter('02', s);
+      expect(mergeTeilSets({ workDir: work, dataRoot: root }).ok).toBe(false);
+    });
+
+    it('warns, without failing, on a situation repeated within the part', () => {
+      putLetter('02', letterSet());
+      putLetter('03', letterSet(['sie haben ein Zimmer im Hotel Sonne gebucht!', 'Sie suchen eine Wohnung.']));
+      const r = mergeTeilSets({ workDir: work, dataRoot: root });
+      expect(r.ok).toBe(true);
+      expect(r.lines.join('\n')).toMatch(/warning: telc-b1__schreiben__s03: task 1: the situation repeats telc-b1__schreiben__s02's task 1/);
+    });
+
+    it('warns when a situation is already bundled in another set of the part', () => {
+      putLetter('02', letterSet());
+      mergeTeilSets({ workDir: work, dataRoot: root });
+      rmSync(join(work, 'telc-b1'), { recursive: true });
+      putLetter('03', letterSet());
+      const r = mergeTeilSets({ workDir: work, dataRoot: root });
+      expect(r.ok).toBe(true);
+      expect(r.lines.join('\n')).toMatch(/s03: task 1: the situation repeats telc-b1__schreiben__s02's task 1/);
+    });
+
+    it('warns on English words in the situation and the Leitpunkte', () => {
+      const s = letterSet();
+      s.content.tasks[0].situation = 'Sie schreiben to the hotel and you want a refund.';
+      s.content.tasks[1].leitpunkte[2] = 'Please send the invoice.';
+      putLetter('02', s);
+      const r = mergeTeilSets({ workDir: work, dataRoot: root });
+      expect(r.ok).toBe(true);
+      const text = r.lines.join('\n');
+      expect(text).toMatch(/warning: telc-b1__schreiben__s02: task 1 situation: English word\(s\)/);
+      expect(text).toMatch(/warning: telc-b1__schreiben__s02: task 2 Leitpunkt 3: English word\(s\) .*please/);
+    });
+
+    it('prints the letter total per track against the 66-set target', () => {
+      putLetter('02', letterSet());
+      putLetter('03', letterSet(['Sie suchen eine Wohnung.', 'Ihr Chef hat Sie gelobt.']));
+      const r = mergeTeilSets({ workDir: work, dataRoot: root });
+      // 22 letter parts x 3 sets: NaDoch 7 parts (21), Goethe 10 (30), telc 5 (15).
+      expect(r.lines).toContain('letters telc: 3 of 15 sets (6 tasks)');
+      expect(EXPECTED_LETTER_SETS).toEqual({ generic: 21, goethe: 30, telc: 15 });
     });
   });
 });

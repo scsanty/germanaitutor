@@ -7,6 +7,7 @@ import { useApiErrorText } from '@/components/useApiErrorText';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { GermanTextInput } from '@/components/typing/GermanTextInput';
 import { pickText, type ContentLanguage, type LocalizedText } from '@/lib/i18n/localizedText';
 
 const SECTION = 'flex flex-col gap-3 rounded-2xl border border-border bg-surface px-5 py-5';
@@ -66,8 +67,9 @@ export function AddWord({ aiAvailable, onAdded }: { aiAvailable: boolean; onAdde
       <p id="deck-add-hint" className="text-sm text-text-muted">
         {t('addHint')}
       </p>
-      <div className="flex gap-2">
-        <Input
+      <div className="flex items-start gap-2">
+        <GermanTextInput
+          wrapperClassName="flex-1"
           id="deck-add-word"
           lang="de"
           autoComplete="off"
@@ -138,7 +140,7 @@ export function WordSearch() {
       <label htmlFor="deck-search" className="font-heading text-lg font-bold">
         {t('search')}
       </label>
-      <Input id="deck-search" type="search" lang="de" autoComplete="off" className={FIELD} value={query} onChange={(e) => setQuery(e.target.value)} />
+      <GermanTextInput id="deck-search" type="search" lang="de" autoComplete="off" className={FIELD} value={query} onChange={(e) => setQuery(e.target.value)} />
       {failed && (
         <Alert variant="destructive" role="alert">
           <AlertDescription>{t('searchFailed')}</AlertDescription>

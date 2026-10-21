@@ -1,0 +1,98 @@
+{
+  "formatId": "goethe-a2",
+  "partId": "schreiben-1",
+  "anchors": [
+    {
+      "task": {
+        "situation": "Sie sind heute um 18 Uhr mit Ihrem Freund Jonas im Café am Marktplatz verabredet. Sie sitzen im Zug, und der Zug hat Verspätung. Schreiben Sie Jonas eine SMS.",
+        "leitpunkte": [
+          "Warum kommen Sie zu spät?",
+          "Wann sind Sie im Café?",
+          "Was soll Jonas bis dahin machen?"
+        ],
+        "register": "informal",
+        "wordTarget": {
+          "min": 20,
+          "max": 30
+        }
+      },
+      "letter": "Hallo Jonas, ich komme später, denn mein Zug hat Verspätung. Ich bin erst um halb sieben im Café. Bestell dir schon einen Kaffee und warte bitte auf mich! Tim",
+      "grades": {
+        "punkt-1": "A",
+        "punkt-2": "A",
+        "punkt-3": "A",
+        "gestaltung": "A"
+      },
+      "justification": "Punkt 1 A: Der Grund ist klar („denn mein Zug hat Verspätung“). Punkt 2 A: Tim nennt eine genaue Uhrzeit („erst um halb sieben im Café“). Punkt 3 A: Er sagt deutlich, was Jonas machen soll („Bestell dir schon einen Kaffee und warte bitte auf mich!“). Gestaltung A: Der Text passt als kurze SMS an einen Freund, und die Sätze sind mit „denn“ und „und“ verbunden."
+    },
+    {
+      "task": {
+        "situation": "Sie sind heute um 18 Uhr mit Ihrem Freund Jonas im Café am Marktplatz verabredet. Sie sitzen im Zug, und der Zug hat Verspätung. Schreiben Sie Jonas eine SMS.",
+        "leitpunkte": [
+          "Warum kommen Sie zu spät?",
+          "Wann sind Sie im Café?",
+          "Was soll Jonas bis dahin machen?"
+        ],
+        "register": "informal",
+        "wordTarget": {
+          "min": 20,
+          "max": 30
+        }
+      },
+      "letter": "Hallo Jonas, ich komme spät, mein Zug hat Verspätung. Ich bin um 18.30 Uhr in Café. Du kannst machen, was du willst. Bis dann! Tim",
+      "grades": {
+        "punkt-1": "A",
+        "punkt-2": "A",
+        "punkt-3": "B",
+        "gestaltung": "B"
+      },
+      "justification": "Punkt 1 A: Der Grund ist verständlich („mein Zug hat Verspätung“). Punkt 2 A: Die Uhrzeit ist klar („um 18.30 Uhr“), der Fehler „in Café“ stört das Verständnis nicht. Punkt 3 B: Tim antwortet nur ausweichend („Du kannst machen, was du willst“) und sagt nicht konkret, was Jonas machen soll. Gestaltung B: Der Text passt als SMS, aber die Sätze stehen ohne Konnektoren nebeneinander."
+    },
+    {
+      "task": {
+        "situation": "Sie sind heute um 18 Uhr mit Ihrem Freund Jonas im Café am Marktplatz verabredet. Sie sitzen im Zug, und der Zug hat Verspätung. Schreiben Sie Jonas eine SMS.",
+        "leitpunkte": [
+          "Warum kommen Sie zu spät?",
+          "Wann sind Sie im Café?",
+          "Was soll Jonas bis dahin machen?"
+        ],
+        "register": "informal",
+        "wordTarget": {
+          "min": 20,
+          "max": 30
+        }
+      },
+      "letter": "Hallo Jonas, ich habe heute ein Problem, ich bin nicht pünktlich. Ich komme später, vielleicht sieben oder acht Uhr, ich weiß nicht. Du warten in Café? Tim",
+      "grades": {
+        "punkt-1": "B",
+        "punkt-2": "B",
+        "punkt-3": "B",
+        "gestaltung": "B"
+      },
+      "justification": "Punkt 1 B: Tim nennt keinen richtigen Grund, er schreibt nur „ich habe heute ein Problem“. Punkt 2 B: Die Zeit bleibt unklar („vielleicht sieben oder acht Uhr, ich weiß nicht“). Punkt 3 B: Die Bitte ist wegen des Fehlers nur halb verständlich („Du warten in Café?“), man muss raten, ob Jonas warten soll. Gestaltung B: Der Text ist als SMS erkennbar, aber die Sätze stehen ohne Konnektoren nebeneinander, und Fehler wie „Du warten“ erschweren das Lesen."
+    },
+    {
+      "task": {
+        "situation": "Sie sind heute um 18 Uhr mit Ihrem Freund Jonas im Café am Marktplatz verabredet. Sie sitzen im Zug, und der Zug hat Verspätung. Schreiben Sie Jonas eine SMS.",
+        "leitpunkte": [
+          "Warum kommen Sie zu spät?",
+          "Wann sind Sie im Café?",
+          "Was soll Jonas bis dahin machen?"
+        ],
+        "register": "informal",
+        "wordTarget": {
+          "min": 20,
+          "max": 30
+        }
+      },
+      "letter": "Hallo Jonas, Kaffee ist gut. Ich mag das Café. Du kommst morgen? Tim",
+      "grades": {
+        "punkt-1": "C",
+        "punkt-2": "C",
+        "punkt-3": "C",
+        "gestaltung": "B"
+      },
+      "justification": "Punkt 1 C: Tim schreibt nicht, warum er zu spät kommt; die Verspätung kommt gar nicht vor. Punkt 2 C: Wann er im Café ist, fehlt ganz. Punkt 3 C: Was Jonas machen soll, fehlt; „Du kommst morgen?“ passt nicht zur Situation. Gestaltung B: Der Text ist als kurze SMS erkennbar und verständlich, aber die Sätze stehen ohne Konnektoren nebeneinander."
+    }
+  ]
+}

@@ -2,12 +2,13 @@ import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import type { CefrLevel, Track } from '../types';
 import type { LocalizedText } from '../i18n/localizedText';
+import { rubricMaxPoints, rubricProblems, type WritingRubric } from '../writing/rubric';
 
 export type TaskTypeId = 'passage_questions' | 'matching' | 'cloze' | 'audio_questions' | 'letter' | 'spoken';
 const TASK_TYPES: TaskTypeId[] = ['passage_questions', 'matching', 'cloze', 'audio_questions', 'letter', 'spoken'];
 
-// Types that have a runner. Writing and Speaking add theirs.
-export const RUNTIME_TASK_TYPES = new Set<TaskTypeId>(['passage_questions', 'matching', 'cloze', 'audio_questions']);
+// Types that have a runner. Speaking adds its own. (A letter part also needs its rubric to be graded.)
+export const RUNTIME_TASK_TYPES = new Set<TaskTypeId>(['passage_questions', 'matching', 'cloze', 'audio_questions', 'letter']);
 
 export interface ExamPart {
   id: string;
@@ -19,6 +20,10 @@ export interface ExamPart {
   minutes: number;
   instructions: string;
   replays?: number;
+  // Writing (letter) parts.
+  rubric?: WritingRubric;
+  wordTarget?: { min: number; max: number };
+  choices?: 1 | 2;
 }
 
 export interface ExamBlock {
@@ -44,7 +49,7 @@ export interface ExamFormat {
 const DIR = () => join(/*turbopackIgnore: true*/ process.cwd(), 'data', 'exam-formats');
 
 // Format ids can arrive from request bodies; only these shapes ever reach the filesystem.
-const FORMAT_ID = /^(generic|goethe|telc)-(a1|a2|b1|b2|c1)$/;
+export const FORMAT_ID = /^(generic|goethe|telc)-(a1|a2|b1|b2|c1)$/;
 
 export function formatId(track: Track, level: CefrLevel): string {
   return `${track}-${level.toLowerCase()}`;
@@ -66,6 +71,23 @@ export function listFormats(): ExamFormat[] {
 
 const positiveInt = (n: unknown) => typeof n === 'number' && Number.isInteger(n) && n > 0;
 
+// A letter part needs a rubric, a word target and a choice count; the rubric's criteria are the part's items,
+// and its maximum is the part's points.
+function letterPartProblems(part: ExamPart): string[] {
+  const problems: string[] = [];
+  if (!part.rubric) problems.push(`part ${part.id}: a writing part needs a rubric`);
+  else {
+    for (const p of rubricProblems(part.rubric)) problems.push(`part ${part.id}: ${p}`);
+    if (part.items !== part.rubric.criteria.length) problems.push(`part ${part.id}: items must equal the rubric's ${part.rubric.criteria.length} criteria`);
+    if (rubricMaxPoints(part.rubric) !== part.points) problems.push(`part ${part.id}: the rubric's maximum ${rubricMaxPoints(part.rubric)} must equal the part's points ${part.points}`);
+  }
+  const t = part.wordTarget;
+  const isNum = (n: unknown) => typeof n === 'number' && Number.isFinite(n);
+  if (!t || !isNum(t.min) || !isNum(t.max) || !(t.min > 0 && t.max > t.min)) problems.push(`part ${part.id}: wordTarget needs 0 < min < max`);
+  if (part.choices !== 1 && part.choices !== 2) problems.push(`part ${part.id}: choices must be 1 or 2`);
+  return problems;
+}
+
 export function formatProblems(format: ExamFormat): string[] {
   const problems: string[] = [];
   const seen = new Set<string>();
@@ -78,6 +100,7 @@ export function formatProblems(format: ExamFormat): string[] {
     if (!(part.points > 0)) problems.push(`part ${part.id}: points must be positive`);
     if (!(part.minutes > 0)) problems.push(`part ${part.id}: minutes must be positive`);
     if (!TASK_TYPES.includes(part.taskType)) problems.push(`part ${part.id}: unknown task type ${part.taskType}`);
+    if (part.taskType === 'letter') problems.push(...letterPartProblems(part));
   }
   for (const block of format.blocks) {
     const missing = block.partIds.filter((id) => !byId.has(id));

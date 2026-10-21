@@ -1,0 +1,121 @@
+{
+  "formatId": "generic-b1",
+  "partId": "schreiben",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-b1__schreiben__s01",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie haben im Online-Shop „Wohnwelt Berger“ eine Stehlampe bestellt. Das Paket ist gestern angekommen, aber die Lampe ist kaputt. Schreiben Sie dem Kundenservice eine E-Mail.",
+              "leitpunkte": [
+                "Was Sie wann bestellt haben",
+                "Was genau kaputt ist",
+                "Was Sie jetzt vom Shop erwarten",
+                "Wie und wann man Sie erreichen kann"
+              ],
+              "register": "formal",
+              "wordTarget": {
+                "min": 80,
+                "max": 120
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Cover all four points: what you ordered and when (an order number helps), what exactly is broken, what you want now (a new lamp or your money back), and how and when the shop can reach you.",
+            "de": "Behandeln Sie alle vier Punkte: was Sie wann bestellt haben (eine Bestellnummer hilft), was genau kaputt ist, was Sie jetzt möchten (eine neue Lampe oder das Geld zurück) und wie und wann der Shop Sie erreichen kann."
+          },
+          {
+            "en": "This is a formal complaint: start with \"Sehr geehrte Damen und Herren,\" and end with \"Mit freundlichen Grüßen\". Stay polite but clear, and link ideas with \"leider\", \"deshalb\" and \"außerdem\".",
+            "de": "Das ist eine formelle Beschwerde: Beginnen Sie mit „Sehr geehrte Damen und Herren,“ und enden Sie mit „Mit freundlichen Grüßen“. Bleiben Sie höflich, aber deutlich, und verbinden Sie die Gedanken mit „leider“, „deshalb“ und „außerdem“."
+          },
+          {
+            "en": "Use the Perfekt for what happened (\"Ich habe am 3. Mai bestellt\") and subordinate clauses with the verb at the end, e.g. \"..., weil der Lampenschirm zerbrochen ist.\"",
+            "de": "Benutzen Sie das Perfekt für das, was passiert ist („Ich habe am 3. Mai bestellt“), und Nebensätze mit dem Verb am Ende, z. B. „…, weil der Lampenschirm zerbrochen ist.“"
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-b1__schreiben__s02",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Ihr Freund Paul möchte im Sommer eine Woche Urlaub in Ihrer Stadt machen. Er hat Sie um Tipps gebeten. Schreiben Sie Paul eine E-Mail.",
+              "leitpunkte": [
+                "Was er unbedingt sehen sollte",
+                "Wo er gut übernachten kann",
+                "Wie er in der Stadt am besten von Ort zu Ort kommt",
+                "Vorschlag für ein Treffen"
+              ],
+              "register": "informal",
+              "wordTarget": {
+                "min": 80,
+                "max": 120
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Cover all four points: one or two sights with a short reason, a place to stay, how to get around (bus, tram, bike) and a concrete suggestion for meeting up.",
+            "de": "Behandeln Sie alle vier Punkte: ein oder zwei Sehenswürdigkeiten mit kurzer Begründung, eine Übernachtungsmöglichkeit, wie er am besten von Ort zu Ort kommt (Bus, Straßenbahn, Fahrrad) und einen konkreten Vorschlag für ein Treffen."
+          },
+          {
+            "en": "Paul is a friend: start with \"Lieber Paul,\" and end with \"Viele Grüße\" or \"Bis bald\". Write warmly with \"du\" and connect your tips with \"außerdem\", \"deshalb\" and \"weil\".",
+            "de": "Paul ist ein Freund: Beginnen Sie mit „Lieber Paul,“ und enden Sie mit „Viele Grüße“ oder „Bis bald“. Schreiben Sie herzlich mit „du“ und verbinden Sie Ihre Tipps mit „außerdem“, „deshalb“ und „weil“."
+          },
+          {
+            "en": "Give advice with \"du solltest ...\" or \"am besten ...\", and check the verb position after \"deshalb\": \"Deshalb nimmst du am besten die Straßenbahn.\"",
+            "de": "Geben Sie Tipps mit „du solltest …“ oder „am besten …“, und achten Sie auf die Verbstellung nach „deshalb“: „Deshalb nimmst du am besten die Straßenbahn.“"
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-b1__schreiben__s03",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie feiern am Samstagabend in Ihrer Wohnung Ihren 30. Geburtstag mit vielen Gästen. Schreiben Sie Ihrem Nachbarn, Herrn Yılmaz, eine Nachricht.",
+              "leitpunkte": [
+                "Was Sie wann feiern",
+                "Entschuldigung für den möglichen Lärm",
+                "Bis wann die Party ungefähr dauert",
+                "Einladung zur Feier"
+              ],
+              "register": "semi_formal",
+              "wordTarget": {
+                "min": 80,
+                "max": 120
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Cover all four points: what you are celebrating and when, an apology for possible noise, roughly when the party will end, and an invitation to Herr Yılmaz.",
+            "de": "Behandeln Sie alle vier Punkte: was Sie wann feiern, eine Entschuldigung für möglichen Lärm, ungefähr wann die Party zu Ende ist, und eine Einladung an Herrn Yılmaz."
+          },
+          {
+            "en": "Herr Yılmaz is a neighbour: start with \"Lieber Herr Yılmaz,\" and end with \"Herzliche Grüße\" and your name. Use \"Sie\", stay friendly, and link sentences with \"deshalb\", \"trotzdem\" or \"außerdem\".",
+            "de": "Herr Yılmaz ist ein Nachbar: Beginnen Sie mit „Lieber Herr Yılmaz,“ und enden Sie mit „Herzliche Grüße“ und Ihrem Namen. Schreiben Sie „Sie“, bleiben Sie freundlich und verbinden Sie die Sätze mit „deshalb“, „trotzdem“ oder „außerdem“."
+          },
+          {
+            "en": "Polite forms help here: \"Es kann leider etwas laut werden\" and \"Wir würden uns freuen, wenn Sie vorbeikommen.\" Check the verb at the end after \"wenn\" and \"dass\".",
+            "de": "Höfliche Formen helfen hier: „Es kann leider etwas laut werden“ und „Wir würden uns freuen, wenn Sie vorbeikommen.“ Achten Sie nach „wenn“ und „dass“ auf das Verb am Ende."
+          }
+        ]
+      }
+    }
+  ]
+}

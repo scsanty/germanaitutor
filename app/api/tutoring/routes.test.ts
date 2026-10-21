@@ -5,6 +5,7 @@ import { tmpdir } from 'node:os';
 import { getDb, closeDb } from '@/lib/db/client';
 import { addSecondMilestone, seedTutoringCurriculum, markComplete } from '@/test/tutoringFixtures';
 import { createProfileService } from '@/lib/services/profileService';
+import { LETTER_MAX_LENGTH } from '@/lib/tasks/letter';
 import { GET as getTree } from './tree/route';
 import { GET as getQueue } from './queue/route';
 import { POST as postAttempt } from './attempts/route';
@@ -82,6 +83,14 @@ describe('/api/tutoring', () => {
     const locked = await attempt({ exerciseId: 'a2-past__ex1', answer: { type: 'fill_blank', text: 'war' }, source: 'lesson' });
     expect(locked.status).toBe(403);
     expect(await locked.json()).toEqual({ error: 'Level A2 is locked', code: 'level_locked', params: { level: 'A2' } });
+  });
+
+  // Final review Important 1: the server caps a letter's length, not only the textarea.
+  it('POST attempts answers 400 for a letter longer than LETTER_MAX_LENGTH', async () => {
+    const text = 'a'.repeat(LETTER_MAX_LENGTH + 1);
+    const res = await attempt({ exerciseId: 'a1-greet__ex1', answer: { type: 'letter', taskIndex: 0, text }, source: 'lesson' });
+    expect(res.status).toBe(400);
+    expect(await res.json()).toMatchObject({ code: 'bad_request' });
   });
 
   it('POST attempts refuses a queue answer that is not due', async () => {

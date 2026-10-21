@@ -1,6 +1,7 @@
 'use client';
 
 import { useId, useRef, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { useLocale, useTranslations } from 'next-intl';
 import { Check, MessageCircleQuestion, X } from 'lucide-react';
 import { LanguageToggle } from '@/components/LanguageToggle';
@@ -15,8 +16,15 @@ import type { AudioQuestionsView } from '@/lib/tasks/audioQuestions';
 import type { MatchingView } from '@/lib/tasks/matching';
 import type { PassageQuestionsView } from '@/lib/tasks/passageQuestions';
 import { cn } from '@/lib/utils';
+import { LetterResult } from '@/components/writing/LetterResult';
+import { storeWritingDraft } from '@/components/writing/writingDraft';
+import type { LetterView } from '@/lib/tasks/letter';
+import { trimSnippet } from '@/lib/errors/snippets';
+import type { WritingRubric } from '@/lib/writing/rubric';
 
 const QUESTION_LIMIT = 500;
+// Freestyle setup values are at most this long (MAX_SETUP_VALUE_LENGTH).
+const PROMPT_LIMIT = 200;
 
 export const percentOf = (score: number, max: number) => (max > 0 ? Math.round((score / max) * 100) : 0);
 
@@ -99,12 +107,86 @@ function AskAbout({ attemptId, itemIndex }: { attemptId: number; itemIndex: numb
   );
 }
 
+// S11: opens Freestyle free writing on the task's situation with the letter as the draft. An open
+// free-writing session is resumed as it is (its prompt stays); only the empty box gets the draft.
+function useCopyToFreestyle(run: PracticeRun, result: PracticeResult) {
+  const t = useTranslations('writing');
+  const errorText = useApiErrorText();
+  const router = useRouter();
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const copying = useRef(false);
+
+  async function copy() {
+    if (copying.current) return;
+    copying.current = true;
+    setBusy(true);
+    setError(null);
+    try {
+      const task = (run.set.view as LetterView).tasks[result.taskIndex ?? 0];
+      const level = run.formatId.split('-')[1]?.toUpperCase();
+      const res = await fetch('/api/freestyle/free_writing/session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ level, setup: task ? { prompt: trimSnippet(task.situation, PROMPT_LIMIT) } : {} }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setError(errorText(data, t('copyFailed')));
+        return;
+      }
+      storeWritingDraft(result.text ?? '');
+      router.push('/freestyle/free_writing?draft=1');
+    } catch {
+      setError(t('copyFailed'));
+    } finally {
+      copying.current = false;
+      setBusy(false);
+    }
+  }
+  return { copy, busy, error };
+}
+
+// S17: a letter's review is its grade. There's no item to ask about, and the copy is offered outside mocks.
+function LetterReview({ result, run, headingId }: { result: PracticeResult; run: PracticeRun; headingId: string }) {
+  const t = useTranslations('exam');
+  const { copy, busy, error } = useCopyToFreestyle(run, result);
+  return (
+    <section aria-labelledby={headingId} className="flex flex-col gap-4">
+      <div className="flex flex-col gap-1">
+        <h2 id={headingId} lang="de" className="font-heading text-xl font-bold">
+          {run.part.title.de}
+        </h2>
+        {result.overtimeSeconds > 0 && <p className="text-sm text-danger">{t('overtime', { minutes: Math.ceil(result.overtimeSeconds / 60) })}</p>}
+      </div>
+      <LetterResult
+        grade={result.letter!}
+        text={result.text ?? ''}
+        rubric={run.part.rubric as WritingRubric}
+        tips={result.tips}
+        onCopyToFreestyle={run.mockId ? undefined : () => void copy()}
+        copyBusy={busy}
+      />
+      {error && (
+        <Alert variant="destructive" role="alert">
+          <AlertDescription>{error}</AlertDescription>
+        </Alert>
+      )}
+    </section>
+  );
+}
+
 // Spec: the review after a Teil: score, overtime, and per item right/wrong with the stored explanation.
 export function TeilReview({ result, run }: { result: PracticeResult; run: PracticeRun }) {
-  const t = useTranslations('exam');
-  const locale = useLocale() as ContentLanguage;
   // Unique per review: the mock result renders several at once.
   const headingId = useId();
+  if (result.letter && run.part.rubric) return <LetterReview result={result} run={run} headingId={headingId} />;
+  return <ItemsReview result={result} run={run} headingId={headingId} />;
+}
+
+function ItemsReview({ result, run, headingId }: { result: PracticeResult; run: PracticeRun; headingId: string }) {
+  const t = useTranslations('exam');
+  const locale = useLocale() as ContentLanguage;
   const [language, setLanguage] = useState<ContentLanguage>(locale);
   const toggle = result.review.some((r) => differsByLanguage(r.explanation));
   const none = run.part.taskType === 'matching';

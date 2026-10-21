@@ -1,5 +1,5 @@
 {
-  "seedVersion": "10",
+  "seedVersion": "11",
   "formatVersion": 3,
   "track": "telc",
   "level": "A2",
@@ -1462,6 +1462,91 @@
       }
     },
     {
+      "id": "a2-telc-writing-teil1-form-completion__ex3",
+      "lessonId": "a2-telc-writing-teil1-form-completion",
+      "track": "telc",
+      "type": "cloze",
+      "content": {
+        "instruction": {
+          "en": "Read the e-mail and fill in the five missing fields on the form.",
+          "de": "Lesen Sie die E-Mail und ergänzen Sie die fünf Lücken im Formular."
+        },
+        "text": "Ihr Freund Duc Nguyen schreibt Ihnen eine E-Mail.\n\nHallo,\n\nkannst du mich bitte für den Flohmarkt im Stadtpark anmelden? Die Anmeldung geht nur im Internet, und mein Laptop ist kaputt. Der Flohmarkt ist am Samstag, dem 14. September. Ich wohne jetzt in der Mühlgasse 8, 37281 Kieselhofen. Ich möchte nur Kinderkleidung verkaufen, meine alten Bücher behalte ich. Den großen Stand mit vier Metern brauche ich nicht, zwei Meter sind genug. Die Gebühr bezahle ich am Tag vor Ort in bar.\n\nDanke dir!\nDuc\n\nFlohmarkt im Stadtpark – Anmeldung\n\nName: Nguyen\nVorname: Duc\nStraße, Hausnummer: Mühlgasse 8\nPLZ: 37281\nOrt: {{1}}\nDatum: {{2}}\nWaren: {{3}}\nGröße des Stands: {{4}}\nZahlungsart: {{5}}",
+        "gaps": [
+          {
+            "mode": "typed",
+            "answer": "Kieselhofen",
+            "variants": [
+              "kieselhofen"
+            ]
+          },
+          {
+            "mode": "typed",
+            "answer": "14. September",
+            "variants": [
+              "14.09.",
+              "14.9.",
+              "14.09",
+              "14.9",
+              "14. 09.",
+              "14 September",
+              "14. Sept.",
+              "am 14. September",
+              "Am 14. September",
+              "Samstag, 14. September",
+              "Samstag, der 14. September",
+              "Samstag, 14.09.",
+              "Samstag, 14.9.",
+              "Sa., 14.09.",
+              "Sa., 14.9.",
+              "Samstag, dem 14. September",
+              "Samstag, den 14. September",
+              "14.September",
+              "Sa, 14.09."
+            ]
+          },
+          {
+            "mode": "typed",
+            "answer": "Kinderkleidung",
+            "variants": [
+              "kinderkleidung",
+              "Kinderkleider",
+              "Kindersachen",
+              "Kleidung für Kinder"
+            ]
+          },
+          {
+            "mode": "typed",
+            "answer": "2 Meter",
+            "variants": [
+              "2 m",
+              "2m",
+              "2",
+              "zwei Meter",
+              "Zwei Meter",
+              "2 Metern",
+              "zwei"
+            ]
+          },
+          {
+            "mode": "typed",
+            "answer": "bar",
+            "variants": [
+              "Bar",
+              "in bar",
+              "In bar",
+              "Barzahlung",
+              "Bargeld",
+              "bar vor Ort",
+              "vor Ort in bar",
+              "Bar vor Ort",
+              "Vor Ort in bar"
+            ]
+          }
+        ]
+      }
+    },
+    {
       "id": "a2-telc-writing-teil2-practical-letter__ex0",
       "lessonId": "a2-telc-writing-teil2-practical-letter",
       "track": "telc",
@@ -1495,6 +1580,34 @@
           "Bis später"
         ],
         "correctIndex": 1
+      }
+    },
+    {
+      "id": "a2-telc-writing-teil2-practical-letter__ex3",
+      "lessonId": "a2-telc-writing-teil2-practical-letter",
+      "track": "telc",
+      "type": "letter",
+      "content": {
+        "instruction": {
+          "en": "Write a short formal e-mail (about 40 words) to your landlady. Choose three of the four points.",
+          "de": "Schreiben Sie Ihrer Vermieterin eine kurze formelle E-Mail (ca. 40 Wörter). Wählen Sie drei der vier Punkte aus."
+        },
+        "tasks": [
+          {
+            "situation": "Sie möchten in Ihrer Wohnung eine Katze haben. Im Mietvertrag steht, dass Sie für Haustiere eine Erlaubnis brauchen. Schreiben Sie Ihrer Vermieterin, Frau Rautenberg, eine E-Mail. Wählen Sie drei der vier Punkte aus.",
+            "leitpunkte": [
+              "Grund für Ihr Schreiben",
+              "Informationen über die Katze",
+              "Wer sich im Urlaub um die Katze kümmert",
+              "Bitte um eine schnelle Antwort"
+            ],
+            "register": "formal",
+            "wordTarget": {
+              "min": 32,
+              "max": 48
+            }
+          }
+        ]
       }
     },
     {

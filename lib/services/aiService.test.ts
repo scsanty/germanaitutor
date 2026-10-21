@@ -80,4 +80,18 @@ describe('generateWithActiveProvider', () => {
       lastError: 'Anthropic returned 429',
     });
   });
+
+  it('passes maxTokens and timeoutMs to the adapter, and reports a timeout as "timed out" (B1, S1)', async () => {
+    const { db, keyFilePath, providers } = setup();
+    const connection = providers.createConnection({ providerType: 'anthropic', apiKey: 'sk-test', selectedModel: 'model-x' });
+    providers.setActiveConnection(connection.id);
+    const timeout = Object.assign(new Error('The operation was aborted due to timeout'), { name: 'TimeoutError' });
+    const generateText = vi.fn().mockRejectedValue(timeout);
+    vi.mocked(getAdapter).mockReturnValue({ testConnection: vi.fn(), listModels: vi.fn(), generateText });
+
+    const result = await generateWithActiveProvider(db, { ...request, maxTokens: 4096, timeoutMs: 90_000 }, keyFilePath);
+
+    expect(generateText).toHaveBeenCalledWith(expect.anything(), expect.objectContaining({ maxTokens: 4096, timeoutMs: 90_000 }));
+    expect(result).toEqual({ ok: false, error: 'timed out', code: 'ai_failed', params: { detail: 'timed out' } });
+  });
 });

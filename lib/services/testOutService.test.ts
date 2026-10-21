@@ -165,6 +165,18 @@ describe('testOutService.start and answer', () => {
     expect(db.prepare("SELECT 1 FROM exercise_srs_state WHERE exercise_id = 'a1-late3__card'").get()).toBeUndefined();
   });
 
+  // Writing: a letter task never enters review, even when its lesson completes through a test-out.
+  it('on a pass: never schedules a letter task', async () => {
+    const { db, service } = setup();
+    db.prepare("INSERT INTO exercises (id, lesson_id, type, content) VALUES ('a1-late2__letter', 'a1-late2', 'letter', ?)").run(
+      JSON.stringify({ tasks: [{ situation: 'S', leitpunkte: ['a', 'b', 'c'], register: 'informal', wordTarget: { min: 20, max: 40 } }] })
+    );
+    const run = service.start('g-a1-m2');
+    expect(run.questions.some((q) => q.type === 'letter')).toBe(false);
+    for (const q of run.questions) await service.answer('g-a1-m2', q.id, right(db, q.id));
+    expect(db.prepare("SELECT 1 FROM exercise_srs_state WHERE exercise_id = 'a1-late2__letter'").get()).toBeUndefined();
+  });
+
   // B1: a flashcard in a grammar lesson stays an exercise review.
   it('on a pass: schedules a grammar lesson’s flashcard as an exercise review', async () => {
     const { db, service } = setup();
