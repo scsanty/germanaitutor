@@ -11,7 +11,7 @@ import type { PassageQuestionsAnswer, PassageQuestionsContent } from '../tasks/p
 import type { MatchingAnswer, MatchingContent } from '../tasks/matching';
 import type { ClozeAnswer, ClozeContent } from '../tasks/cloze';
 import { audioReveal, type AudioQuestionsAnswer, type AudioQuestionsContent, type AudioReveal } from '../tasks/audioQuestions';
-import type { LetterAnswer, LetterContent } from '../tasks/letter';
+import { LETTER_MAX_LENGTH, type LetterAnswer, type LetterContent } from '../tasks/letter';
 import { correctTexts, type TaskContent } from '../tasks/taskTypes';
 import type { LetterGrade } from '../writing/letterGrading';
 
@@ -73,7 +73,7 @@ export function parseLessonAnswer(raw: unknown): LessonAnswer | null {
   }
   if (a.type === 'cloze' && Array.isArray(a.values)) return { type: 'cloze', values: a.values as (string | number | null)[] };
   // The task index is checked against the content when graded.
-  if (a.type === 'letter' && typeof a.text === 'string' && Number.isInteger(a.taskIndex)) {
+  if (a.type === 'letter' && typeof a.text === 'string' && a.text.length <= LETTER_MAX_LENGTH && Number.isInteger(a.taskIndex)) {
     return { type: 'letter', taskIndex: a.taskIndex as number, text: a.text };
   }
   return null;

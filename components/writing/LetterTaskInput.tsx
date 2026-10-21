@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { GermanTextarea } from '@/components/typing/GermanTextarea';
 import { WordCounter } from '@/components/typing/WordCounter';
-import type { LetterAnswer, LetterContent } from '@/lib/tasks/letter';
+import { LETTER_MAX_LENGTH, type LetterAnswer, type LetterContent } from '@/lib/tasks/letter';
 
 // Spec: the letter task. With two tasks they are cards to choose from (the choice can change until
 // submit, and keeps the text); then the chosen task's situation and Leitpunkte, the textarea with its
@@ -81,7 +81,7 @@ export function LetterTaskInput({
           lang="de"
           rows={10}
           value={value.text}
-          maxLength={6000}
+          maxLength={LETTER_MAX_LENGTH}
           disabled={disabled}
           spellCheck={timed ? false : undefined}
           aria-describedby={`${id}-count`}

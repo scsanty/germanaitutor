@@ -21,6 +21,9 @@ export interface LetterAnswer {
   text: string;
 }
 
+// The longest letter the server accepts (the textarea has the same limit), as in Freestyle.
+export const LETTER_MAX_LENGTH = 6000;
+
 const nonEmpty = (v: unknown) => typeof v === 'string' && v.trim().length > 0;
 
 export function validateLetter(content: unknown): string[] {
@@ -42,7 +45,7 @@ export function validateLetter(content: unknown): string[] {
 
 export function parseLetterAnswer(raw: unknown, c: LetterContent): LetterAnswer | null {
   const a = raw as { type?: unknown; taskIndex?: unknown; text?: unknown };
-  if (a?.type !== 'letter' || typeof a.text !== 'string') return null;
+  if (a?.type !== 'letter' || typeof a.text !== 'string' || a.text.length > LETTER_MAX_LENGTH) return null;
   if (!Number.isInteger(a.taskIndex) || (a.taskIndex as number) < 0 || (a.taskIndex as number) >= c.tasks.length) return null;
   return { type: 'letter', taskIndex: a.taskIndex as number, text: a.text };
 }

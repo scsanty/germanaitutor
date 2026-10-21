@@ -12,6 +12,7 @@ import { getDb, closeDb } from '@/lib/db/client';
 import { generateWithActiveProvider } from '@/lib/services/aiService';
 import { createProfileService } from '@/lib/services/profileService';
 import { createTeilSetService } from '@/lib/services/teilSetService';
+import { LETTER_MAX_LENGTH } from '@/lib/tasks/letter';
 import { sharedSpeechAvailability } from '@/lib/speech/speechAvailability';
 import { getSpeechUrl } from '@/lib/speech/speechProvider';
 import { GET as overview } from './route';
@@ -128,6 +129,19 @@ describe('/api/exam-practice', () => {
     const res = await post(submit, { attemptId: run.attemptId, answers: { type: 'letter', taskIndex: 0, text: 'Liebe Anna, danke!' } });
     expect(res.status).toBe(409);
     expect(await res.json()).toMatchObject({ code: 'letter_grading' });
+    expect(generateWithActiveProvider).not.toHaveBeenCalled();
+  });
+
+  // Final review Important 1: an over-long letter is refused before any AI call.
+  it('submit answers 400 for a letter longer than LETTER_MAX_LENGTH', async () => {
+    const db = getDb();
+    const fixture = JSON.parse(readFileSync(join(process.cwd(), 'test', 'fixtures', 'teil-sets', 'telc-b1', 'schreiben.json'), 'utf8'));
+    createTeilSetService(db).upload('telc-b1', 'schreiben', [{ id: 'fixture-schreiben', set: fixture.sets[0].set }]);
+    const run = await (await post(start, { formatId: 'telc-b1', partId: 'schreiben' })).json();
+    const text = 'a'.repeat(LETTER_MAX_LENGTH + 1);
+    const res = await post(submit, { attemptId: run.attemptId, answers: { type: 'letter', taskIndex: 0, text } });
+    expect(res.status).toBe(400);
+    expect(await res.json()).toMatchObject({ code: 'bad_request' });
     expect(generateWithActiveProvider).not.toHaveBeenCalled();
   });
 
