@@ -56,7 +56,7 @@ export function TeilSetEditor({
       }}
     >
       {set.taskType === 'letter' ? (
-        // T12 gives letter sets an editor; until then the tasks are shown read-only.
+        // Letter tasks are read-only in the admin; they are edited in data/ and merged with merge-teil-sets.
         <pre className="whitespace-pre-wrap rounded-md border p-3 text-sm">{JSON.stringify(set.content, null, 2)}</pre>
       ) : (
         <ExerciseContentFields

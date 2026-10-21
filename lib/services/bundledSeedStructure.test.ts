@@ -66,10 +66,13 @@ describe('bundled curriculum seeds', () => {
     }
   });
 
+  // T13: only the three form-completion lessons go without a letter; they have a form cloze instead.
+  const FORM_LESSONS = ['a1-goethe-writing-teil1-form-completion', 'a1-telc-writing-registration-form', 'a2-telc-writing-teil1-form-completion'];
   it.each(seeds)('%s: every writing lesson has a letter exercise (form lessons a form cloze)', (_f, seed) => {
     for (const lesson of seed.lessons.filter((l) => l.skill === 'writing')) {
       const exercises = seed.exercises.filter((e) => e.lessonId === lesson.id);
-      expect(exercises.some((e) => e.type === 'letter' || e.type === 'cloze'), lesson.id).toBe(true);
+      const needed = FORM_LESSONS.includes(lesson.id) ? 'cloze' : 'letter';
+      expect(exercises.some((e) => e.type === needed), lesson.id).toBe(true);
     }
   });
 
