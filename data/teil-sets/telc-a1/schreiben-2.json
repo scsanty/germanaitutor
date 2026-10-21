@@ -1,0 +1,130 @@
+{
+  "formatId": "telc-a1",
+  "partId": "schreiben-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-a1__schreiben-2__s01",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie sind krank und können morgen nicht zum Deutschkurs kommen. Schreiben Sie Ihrer Lehrerin, Frau Berger, eine kurze Mitteilung.",
+              "leitpunkte": [
+                "Warum kommen Sie nicht?",
+                "Fragen Sie nach den Hausaufgaben.",
+                "Wann kommen Sie wieder?"
+              ],
+              "register": "semi_formal",
+              "wordTarget": {
+                "min": 24,
+                "max": 36
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Point 1: say why you cannot come, e.g. \"Ich bin krank und habe Fieber.\"",
+            "de": "Punkt 1: Schreiben Sie, warum Sie nicht kommen, z. B. „Ich bin krank und habe Fieber.“"
+          },
+          {
+            "en": "Point 2: ask about the homework, e.g. \"Was sind die Hausaufgaben?\"",
+            "de": "Punkt 2: Fragen Sie nach den Hausaufgaben, z. B. „Was sind die Hausaufgaben?“"
+          },
+          {
+            "en": "Point 3: say when you will be back, e.g. \"Am Montag komme ich wieder.\"",
+            "de": "Punkt 3: Schreiben Sie, wann Sie wiederkommen, z. B. „Am Montag komme ich wieder.“"
+          },
+          {
+            "en": "Use Sie with your teacher: start with \"Liebe Frau Berger,\" and end with \"Viele Grüße\" and your name. Join sentences with \"und\" or \"aber\".",
+            "de": "Schreiben Sie Ihrer Lehrerin mit „Sie“: Beginnen Sie mit „Liebe Frau Berger,“ und enden Sie mit „Viele Grüße“ und Ihrem Namen. Verbinden Sie die Sätze mit „und“ oder „aber“."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a1__schreiben-2__s02",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie möchten am Sonntag mit Ihrer Freundin Sara einen Ausflug mit dem Fahrrad machen. Schreiben Sie Sara eine kurze Mitteilung.",
+              "leitpunkte": [
+                "Wohin möchten Sie fahren?",
+                "Wann und wo treffen Sie sich?",
+                "Was soll Sara mitbringen?"
+              ],
+              "register": "informal",
+              "wordTarget": {
+                "min": 24,
+                "max": 36
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Point 1: name the destination, e.g. \"Ich möchte zum See fahren.\"",
+            "de": "Punkt 1: Nennen Sie das Ziel, z. B. „Ich möchte zum See fahren.“"
+          },
+          {
+            "en": "Point 2: give a time and a meeting place, e.g. \"Wir treffen uns um 10 Uhr am Bahnhof.\"",
+            "de": "Punkt 2: Nennen Sie Uhrzeit und Treffpunkt, z. B. „Wir treffen uns um 10 Uhr am Bahnhof.“"
+          },
+          {
+            "en": "Point 3: say what Sara should bring, e.g. \"Bring bitte Wasser und Brötchen mit.\"",
+            "de": "Punkt 3: Schreiben Sie, was Sara mitbringen soll, z. B. „Bring bitte Wasser und Brötchen mit.“"
+          },
+          {
+            "en": "Sara is a friend: start with \"Liebe Sara,\" or \"Hallo Sara,\" and end with \"Viele Grüße\" or \"Bis Sonntag\". Join sentences with \"und\" or \"aber\".",
+            "de": "Sara ist eine Freundin: Beginnen Sie mit „Liebe Sara,“ oder „Hallo Sara,“ und enden Sie mit „Viele Grüße“ oder „Bis Sonntag“. Verbinden Sie die Sätze mit „und“ oder „aber“."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a1__schreiben-2__s03",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "In Ihrer Wohnung ist die Heizung kaputt. Schreiben Sie Ihrem Vermieter, Herrn Schulz, eine kurze Mitteilung.",
+              "leitpunkte": [
+                "Was ist das Problem?",
+                "Seit wann gibt es das Problem?",
+                "Bitten Sie Herrn Schulz um einen Termin für die Reparatur."
+              ],
+              "register": "formal",
+              "wordTarget": {
+                "min": 24,
+                "max": 36
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Point 1: describe the problem, e.g. \"Die Heizung ist kaputt und die Wohnung ist kalt.\"",
+            "de": "Punkt 1: Beschreiben Sie das Problem, z. B. „Die Heizung ist kaputt und die Wohnung ist kalt.“"
+          },
+          {
+            "en": "Point 2: say since when, e.g. \"Seit Freitag geht die Heizung nicht.\"",
+            "de": "Punkt 2: Schreiben Sie, seit wann, z. B. „Seit Freitag geht die Heizung nicht.“"
+          },
+          {
+            "en": "Point 3: ask politely for a repair date, e.g. \"Können Sie bitte am Montag kommen?\"",
+            "de": "Punkt 3: Bitten Sie höflich um einen Termin, z. B. „Können Sie bitte am Montag kommen?“"
+          },
+          {
+            "en": "Your landlord gets a formal message: start with \"Sehr geehrter Herr Schulz,\" and end with \"Mit freundlichen Grüßen\" and your name. Join sentences with \"und\" or \"aber\".",
+            "de": "Ihr Vermieter bekommt eine formelle Mitteilung: Beginnen Sie mit „Sehr geehrter Herr Schulz,“ und enden Sie mit „Mit freundlichen Grüßen“ und Ihrem Namen. Verbinden Sie die Sätze mit „und“ oder „aber“."
+          }
+        ]
+      }
+    }
+  ]
+}

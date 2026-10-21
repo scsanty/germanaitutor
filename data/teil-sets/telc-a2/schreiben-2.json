@@ -1,0 +1,133 @@
+{
+  "formatId": "telc-a2",
+  "partId": "schreiben-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-a2__schreiben-2__s01",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Ihre Freundin Julia hat vor zwei Wochen ein Baby bekommen. Sie haben es gerade erst gehört. Schreiben Sie Julia eine E-Mail. Wählen Sie drei der vier Punkte aus.",
+              "leitpunkte": [
+                "Glückwunsch",
+                "Wie geht es dem Baby?",
+                "Geschenk",
+                "Besuch"
+              ],
+              "register": "informal",
+              "wordTarget": {
+                "min": 32,
+                "max": 48
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Your first chosen point in one or two full sentences. For \"Glückwunsch\", for example: \"Herzlichen Glückwunsch zu eurem Baby!\"",
+            "de": "Ihr erster gewählter Punkt in ein bis zwei ganzen Sätzen. Zu „Glückwunsch“ zum Beispiel: „Herzlichen Glückwunsch zu eurem Baby!“"
+          },
+          {
+            "en": "Your second chosen point. For \"Wie geht es dem Baby?\", ask a real question, e.g. \"Wie geht es dem Baby? Schläft es gut?\"",
+            "de": "Ihr zweiter gewählter Punkt. Zu „Wie geht es dem Baby?“ stellen Sie eine echte Frage, z. B. „Wie geht es dem Baby? Schläft es gut?“"
+          },
+          {
+            "en": "Your third chosen point. For \"Besuch\", suggest a day, e.g. \"Kann ich euch am Samstag besuchen?\" You may leave out one of the four points.",
+            "de": "Ihr dritter gewählter Punkt. Zu „Besuch“ schlagen Sie einen Tag vor, z. B. „Kann ich euch am Samstag besuchen?“ Einen der vier Punkte dürfen Sie weglassen."
+          },
+          {
+            "en": "Julia is a friend: start with \"Liebe Julia,\" and end with \"Liebe Grüße\". Join sentences with \"und\", \"aber\", \"denn\" or \"dann\".",
+            "de": "Julia ist eine Freundin: Beginnen Sie mit „Liebe Julia,“ und enden Sie mit „Liebe Grüße“. Verbinden Sie die Sätze mit „und“, „aber“, „denn“ oder „dann“."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a2__schreiben-2__s02",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie haben am Donnerstag um 9 Uhr einen Termin in der Zahnarztpraxis Dr. Albrecht. Sie können aber nicht kommen. Schreiben Sie eine E-Mail an die Praxis. Wählen Sie drei der vier Punkte aus.",
+              "leitpunkte": [
+                "Grund",
+                "Neuer Termin",
+                "Zahnschmerzen",
+                "Telefonnummer"
+              ],
+              "register": "formal",
+              "wordTarget": {
+                "min": 32,
+                "max": 48
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Your first chosen point in one or two full sentences. For \"Grund\", for example: \"Ich muss am Donnerstag leider arbeiten.\"",
+            "de": "Ihr erster gewählter Punkt in ein bis zwei ganzen Sätzen. Zu „Grund“ zum Beispiel: „Ich muss am Donnerstag leider arbeiten.“"
+          },
+          {
+            "en": "Your second chosen point. For \"Neuer Termin\", say when you have time, e.g. \"Haben Sie nächste Woche am Vormittag einen Termin frei?\"",
+            "de": "Ihr zweiter gewählter Punkt. Zu „Neuer Termin“ schreiben Sie, wann Sie Zeit haben, z. B. „Haben Sie nächste Woche am Vormittag einen Termin frei?“"
+          },
+          {
+            "en": "Your third chosen point. For \"Zahnschmerzen\", say how your tooth is, e.g. \"Der Zahn tut seit gestern weh.\" You may leave out one of the four points.",
+            "de": "Ihr dritter gewählter Punkt. Zu „Zahnschmerzen“ schreiben Sie, wie es dem Zahn geht, z. B. „Der Zahn tut seit gestern weh.“ Einen der vier Punkte dürfen Sie weglassen."
+          },
+          {
+            "en": "This is a formal e-mail: start with \"Sehr geehrte Damen und Herren,\" and end with \"Mit freundlichen Grüßen\". Join sentences with \"und\", \"aber\", \"denn\" or \"dann\".",
+            "de": "Das ist eine formelle E-Mail: Beginnen Sie mit „Sehr geehrte Damen und Herren,“ und enden Sie mit „Mit freundlichen Grüßen“. Verbinden Sie die Sätze mit „und“, „aber“, „denn“ oder „dann“."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a2__schreiben-2__s03",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie fahren für zwei Wochen in Urlaub. Ihre Nachbarin, Frau Klein, soll Ihnen in dieser Zeit helfen. Schreiben Sie Frau Klein einen kurzen Brief. Wählen Sie drei der vier Punkte aus.",
+              "leitpunkte": [
+                "Wann und wie lange?",
+                "Blumen",
+                "Briefkasten",
+                "Schlüssel"
+              ],
+              "register": "semi_formal",
+              "wordTarget": {
+                "min": 32,
+                "max": 48
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Your first chosen point in one or two full sentences. For \"Wann und wie lange?\", for example: \"Ich fahre am 3. Juli für zwei Wochen nach Italien.\"",
+            "de": "Ihr erster gewählter Punkt in ein bis zwei ganzen Sätzen. Zu „Wann und wie lange?“ zum Beispiel: „Ich fahre am 3. Juli für zwei Wochen nach Italien.“"
+          },
+          {
+            "en": "Your second chosen point. For \"Blumen\", ask politely, e.g. \"Könnten Sie bitte zweimal pro Woche meine Blumen gießen?\"",
+            "de": "Ihr zweiter gewählter Punkt. Zu „Blumen“ bitten Sie höflich, z. B. „Könnten Sie bitte zweimal pro Woche meine Blumen gießen?“"
+          },
+          {
+            "en": "Your third chosen point. For \"Schlüssel\", say how Mrs Klein gets the key, e.g. \"Ich bringe Ihnen am Freitag den Schlüssel.\" You may leave out one of the four points.",
+            "de": "Ihr dritter gewählter Punkt. Zu „Schlüssel“ schreiben Sie, wie Frau Klein den Schlüssel bekommt, z. B. „Ich bringe Ihnen am Freitag den Schlüssel.“ Einen der vier Punkte dürfen Sie weglassen."
+          },
+          {
+            "en": "Use Sie with your neighbour: start with \"Liebe Frau Klein,\" and end with \"Viele Grüße\" and your name. Join sentences with \"und\", \"aber\", \"denn\" or \"dann\".",
+            "de": "Schreiben Sie Ihrer Nachbarin mit „Sie“: Beginnen Sie mit „Liebe Frau Klein,“ und enden Sie mit „Viele Grüße“ und Ihrem Namen. Verbinden Sie die Sätze mit „und“, „aber“, „denn“ oder „dann“."
+          }
+        ]
+      }
+    }
+  ]
+}
