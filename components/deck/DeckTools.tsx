@@ -67,7 +67,7 @@ export function AddWord({ aiAvailable, onAdded }: { aiAvailable: boolean; onAdde
       <p id="deck-add-hint" className="text-sm text-text-muted">
         {t('addHint')}
       </p>
-      <div className="flex gap-2">
+      <div className="flex items-start gap-2">
         <GermanTextInput
           wrapperClassName="flex-1"
           id="deck-add-word"
@@ -140,7 +140,7 @@ export function WordSearch() {
       <label htmlFor="deck-search" className="font-heading text-lg font-bold">
         {t('search')}
       </label>
-      <Input id="deck-search" type="search" lang="de" autoComplete="off" className={FIELD} value={query} onChange={(e) => setQuery(e.target.value)} />
+      <GermanTextInput id="deck-search" type="search" lang="de" autoComplete="off" className={FIELD} value={query} onChange={(e) => setQuery(e.target.value)} />
       {failed && (
         <Alert variant="destructive" role="alert">
           <AlertDescription>{t('searchFailed')}</AlertDescription>

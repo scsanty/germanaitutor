@@ -186,7 +186,7 @@ export function LessonChat({ lessonId, open, onToggle, askAbout, onClearAskAbout
                 </Button>
               </p>
             )}
-            <div className="flex items-end gap-2">
+            <div className="flex items-start gap-2">
               <GermanTextarea
                 wrapperClassName="flex-1"
                 aria-label={t('messageLabel')}
