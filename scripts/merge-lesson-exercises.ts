@@ -1,5 +1,5 @@
 // Merges drafted new-type exercises into the bundled curriculum seeds and validates them.
-// Run: npx tsx scripts/merge-lesson-exercises.ts <workDir> [--seed <file-stem>] [--check-only] [--data-root <dir>]
+// Run: npx tsx scripts/merge-lesson-exercises.ts <workDir> [--seed <file-stem>] [--check-only] [--complete] [--data-root <dir>]
 //
 // Input:  <workDir>/<seed-stem>/<lessonId>.json, e.g. <workDir>/goethe-b1/b1-goethe-reading-teil2-press-articles.json
 //         Each file is an array of exercises WITHOUT ids. An entry is { "type", "content", "replaces"? }:
@@ -49,6 +49,7 @@ export interface MergeOptions {
   dataRoot?: string;
   seed?: string;
   checkOnly?: boolean;
+  complete?: boolean;
 }
 
 export interface MergeResult {
@@ -75,9 +76,9 @@ export const FORM_LESSONS = new Set([
 export const LETTER_WORDS: Record<string, { min: number; max: number }> = {
   A1: { min: 15, max: 80 },
   A2: { min: 20, max: 120 },
-  B1: { min: 40, max: 220 },
+  B1: { min: 30, max: 220 },
   B2: { min: 80, max: 320 },
-  C1: { min: 100, max: 450 },
+  C1: { min: 90, max: 450 },
 };
 
 // Extra checks for a drafted writing exercise: errors, and warnings for the reviewer.
@@ -94,6 +95,7 @@ function writingChecks(type: string, content: Record<string, unknown>, lessonId:
   }
   if (form) errors.push('a form lesson takes a cloze, not a letter');
   const instruction = content.instruction as { en?: unknown; de?: unknown } | undefined;
+  // validateExerciseContent only checks an instruction that is present; a lesson letter must have one.
   if (!instruction) errors.push('a letter needs an instruction in English and German');
   const tasks = Array.isArray(content.tasks) ? (content.tasks as Record<string, unknown>[]) : [];
   if (tasks.length !== 1) errors.push('a lesson letter needs exactly 1 task');
@@ -295,14 +297,20 @@ export function mergeLessonExercises(opts: MergeOptions): MergeResult {
         }
         if (afterProblems.length > 0) { fail(afterProblems); continue; }
       }
-      // A writing lesson needs a letter, or in a form lesson a cloze.
-      if (lesson.skill === 'writing') {
-        const need = FORM_LESSONS.has(lessonId) ? 'cloze' : 'letter';
-        if (!seed.exercises.some((e) => e.lessonId === lessonId && e.type === need)) { fail([`a writing lesson needs at least one ${need} exercise`]); continue; }
-      }
       lines.push(`${label}: ${fresh.length} added, ${lessonReplaced} replaced, ${skipped} already merged`);
     }
 
+    // Whole-seed coverage: every writing lesson needs a letter (a cloze in the form lessons). Uncovered lessons are
+    // warnings, and errors under --complete.
+    const writing = seed.lessons.filter((l) => l.skill === 'writing');
+    if (writing.length > 0) {
+      const uncovered = writing.filter((l) => !seed.exercises.some((e) => e.lessonId === l.id && e.type === (FORM_LESSONS.has(l.id) ? 'cloze' : 'letter')));
+      for (const l of uncovered) {
+        lines.push(`${stem}/${l.id}: ${opts.complete ? 'problem' : 'warning'}: no ${FORM_LESSONS.has(l.id) ? 'cloze' : 'letter'} exercise yet`);
+      }
+      lines.push(`${stem}: ${writing.length - uncovered.length} of ${writing.length} writing lessons covered`);
+      if (uncovered.length > 0 && opts.complete) seedOk = false;
+    }
     if (seedOk) {
       const whole = validateSeedFile(seed, stem);
       if (whole.length > 0) {
@@ -336,12 +344,15 @@ function main() {
   const ci = args.indexOf('--check-only');
   const checkOnly = ci >= 0;
   if (checkOnly) args.splice(ci, 1);
+  const co = args.indexOf('--complete');
+  const complete = co >= 0;
+  if (complete) args.splice(co, 1);
   const workDir = args[0];
   if (!workDir) {
-    console.error('Usage: npx tsx scripts/merge-lesson-exercises.ts <workDir> [--seed <file-stem>] [--check-only] [--data-root <dir>]');
+    console.error('Usage: npx tsx scripts/merge-lesson-exercises.ts <workDir> [--seed <file-stem>] [--check-only] [--complete] [--data-root <dir>]');
     process.exit(2);
   }
-  const result = mergeLessonExercises({ workDir, seed, dataRoot, checkOnly });
+  const result = mergeLessonExercises({ workDir, seed, dataRoot, checkOnly, complete });
   console.log(result.lines.join('\n'));
   if (!result.ok) process.exit(1);
 }

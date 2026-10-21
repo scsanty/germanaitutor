@@ -1,6 +1,6 @@
 // @vitest-environment node
 import { describe, it, expect, beforeEach } from 'vitest';
-import { cpSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { cpSync, mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { mergeLessonExercises } from './merge-lesson-exercises';
@@ -44,7 +44,7 @@ const audio = (topic = 'Straßenfest') => ({
     ],
   },
 });
-const run = (extra: { checkOnly?: boolean; seed?: string } = {}) => mergeLessonExercises({ workDir: work, dataRoot: root, ...extra });
+const run = (extra: { checkOnly?: boolean; seed?: string; complete?: boolean } = {}) => mergeLessonExercises({ workDir: work, dataRoot: root, ...extra });
 
 beforeEach(() => {
   root = mkdtempSync(join(tmpdir(), 'lesson-root-'));
@@ -272,9 +272,16 @@ describe('merge-lesson-exercises', () => {
   });
 
   describe('writing lessons', () => {
+    // Trimmed fixtures: writing-b1 (a grammar lesson and one B1 writing lesson), writing-a1 (the registration form
+    // lesson, in FORM_LESSONS, and a short-note lesson).
     const W_B1 = 'b1-telc-writing-complaint-letter';
     const FORM = 'a1-telc-writing-registration-form';
-    const formSeed = () => JSON.parse(readFileSync(join(root, 'curriculum-seed', 'telc-a1.json'), 'utf8'));
+    const NOTE = 'a1-telc-writing-short-appointment-note';
+    const GRAMMAR = 'b1-telc-sprachbausteine-connectors-grammar';
+    const B1 = 'writing-b1';
+    const A1 = 'writing-a1';
+    const seedOf = (stem: string) => JSON.parse(readFileSync(join(root, 'curriculum-seed', `${stem}.json`), 'utf8'));
+    const typesOf = (stem: string, id: string) => seedOf(stem).exercises.filter((e: { lessonId: string }) => e.lessonId === id).map((e: { type: string }) => e.type);
     const letterTask = (over: Record<string, unknown> = {}) => ({
       situation: 'Sie haben ein Zimmer im Hotel Sonne gebucht, aber es ist sehr laut.',
       leitpunkte: ['Beschreiben Sie das Problem.', 'Nennen Sie den Grund.', 'Fordern Sie eine Lösung.'],
@@ -297,87 +304,110 @@ describe('merge-lesson-exercises', () => {
     const text = (r: { lines: string[] }) => r.lines.join('\n');
 
     beforeEach(() => {
-      // The live telc seeds hold the writing lessons; the trimmed fixture has none.
-      for (const stem of ['telc-b1', 'telc-a1']) cpSync(join(process.cwd(), 'data', 'curriculum-seed', `${stem}.json`), join(root, 'curriculum-seed', `${stem}.json`));
+      for (const stem of [B1, A1]) cpSync(join(process.cwd(), 'test', 'fixtures', 'curriculum-seed', `${stem}.json`), join(root, 'curriculum-seed', `${stem}.json`));
     });
 
     it('merges a clean letter into a writing lesson', () => {
-      draft(W_B1, [letter()]);
-      const before = exercisesOf(W_B1).length;
+      draft(W_B1, [letter()], B1);
       const r = run();
       expect(r.ok).toBe(true);
       expect(r.added).toBe(1);
-      expect(exercisesOf(W_B1)).toHaveLength(before + 1);
-      expect(exercisesOf(W_B1).at(-1).type).toBe('letter');
-      expect(text(r)).not.toContain('warning');
+      expect(typesOf(B1, W_B1)).toEqual(['multiple_choice', 'letter']);
+      expect(text(r)).not.toContain('warning: exercise');
     });
 
     it('requires the instruction in both languages', () => {
-      draft(W_B1, [letter({}, null)]);
+      draft(W_B1, [letter({}, null)], B1);
       expect(text(run())).toContain('a letter needs an instruction in English and German');
-      draft(W_B1, [letter({}, { en: 'Write.', de: '' })]);
+      draft(W_B1, [letter({}, { en: 'Write.', de: '' })], B1);
       const r = run();
       expect(r.ok).toBe(false);
       expect(text(r)).toContain('instruction needs both English and German');
     });
 
     it('requires exactly one task', () => {
-      draft(W_B1, [{ type: 'letter', content: { instruction: { en: 'Write.', de: 'Schreiben Sie.' }, tasks: [letterTask(), letterTask({ situation: 'Eine andere Lage.' })] } }]);
+      draft(W_B1, [{ type: 'letter', content: { instruction: { en: 'Write.', de: 'Schreiben Sie.' }, tasks: [letterTask(), letterTask({ situation: 'Eine andere Lage.' })] } }], B1);
       const r = run();
       expect(r.ok).toBe(false);
       expect(text(r)).toContain('a lesson letter needs exactly 1 task');
     });
 
     it('requires a register and 3 to 4 Leitpunkte', () => {
-      draft(W_B1, [letter({ register: 'casual' })]);
+      draft(W_B1, [letter({ register: 'casual' })], B1);
       expect(text(run())).toContain('register must be informal, semi_formal or formal');
-      draft(W_B1, [letter({ leitpunkte: ['Eins', 'Zwei'] })]);
+      draft(W_B1, [letter({ leitpunkte: ['Eins', 'Zwei'] })], B1);
       expect(text(run())).toContain('leitpunkte must be 3 to 4 non-empty strings');
     });
 
     it('warns on English in the situation and the Leitpunkte, and still merges', () => {
-      draft(W_B1, [letter({ situation: 'You booked a room at the Hotel Sonne.', leitpunkte: ['Beschreiben Sie das Problem.', 'Please explain the reason.', 'Fordern Sie eine Lösung.'] })]);
+      draft(W_B1, [letter({ situation: 'You booked a room at the Hotel Sonne.', leitpunkte: ['Beschreiben Sie das Problem.', 'Please explain the reason.', 'Fordern Sie eine Lösung.'] })], B1);
       const r = run();
       expect(r.ok).toBe(true);
-      expect(text(r)).toContain(`${STEM}/${W_B1}: warning: exercise 1: situation: English word(s)`);
-      expect(text(r)).toContain(`${STEM}/${W_B1}: warning: exercise 1: Leitpunkt 2: English word(s) please`);
+      expect(text(r)).toContain(`${B1}/${W_B1}: warning: exercise 1: situation: English word(s)`);
+      expect(text(r)).toContain(`${B1}/${W_B1}: warning: exercise 1: Leitpunkt 2: English word(s) please`);
     });
 
     it('warns when the word target is outside the lesson level, and still merges', () => {
-      draft(W_B1, [letter({ wordTarget: { min: 10, max: 20 } })]);
+      draft(W_B1, [letter({ wordTarget: { min: 10, max: 20 } })], B1);
       const r = run();
       expect(r.ok).toBe(true);
-      expect(text(r)).toContain(`${STEM}/${W_B1}: warning: exercise 1: wordTarget 10-20 is outside the usual 40-220 words for B1`);
+      expect(text(r)).toContain(`${B1}/${W_B1}: warning: exercise 1: wordTarget 10-20 is outside the usual 30-220 words for B1`);
+      // Goethe B1 Teil 3 asks 32-48 words: no warning.
+      draft(W_B1, [letter({ wordTarget: { min: 32, max: 48 } })], B1);
+      expect(text(run())).not.toContain('outside the usual');
     });
 
     it('refuses a cloze in a letter lesson', () => {
-      draft(W_B1, [cloze()]);
+      draft(W_B1, [cloze()], B1);
       const r = run();
       expect(r.ok).toBe(false);
       expect(text(r)).toContain('cloze is for the form lessons only');
     });
 
     it('lets a form lesson take a typed cloze instead of a letter', () => {
-      draft(FORM, [cloze()], 'telc-a1');
-      const r = run();
-      expect(r.ok).toBe(true);
-      expect(formSeed().exercises.filter((e: { lessonId: string }) => e.lessonId === FORM).at(-1).type).toBe('cloze');
-      draft(FORM, [letter({ wordTarget: { min: 24, max: 36 } })], 'telc-a1');
+      draft(FORM, [cloze()], A1);
+      expect(run().ok).toBe(true);
+      expect(typesOf(A1, FORM)).toContain('cloze');
+      draft(FORM, [letter({ wordTarget: { min: 24, max: 36 } })], A1);
       const bad = run();
       expect(bad.ok).toBe(false);
       expect(text(bad)).toContain('a form lesson takes a cloze, not a letter');
     });
 
     it('warns when a form cloze has a gap that is not typed', () => {
-      draft(FORM, [cloze('select')], 'telc-a1');
+      draft(FORM, [cloze('select')], A1);
       const r = run();
       expect(r.ok).toBe(true);
       expect(text(r)).toContain('warning: exercise 1: gap 1 is not typed; form lessons use typed gaps');
     });
 
-    it('still refuses unsupported skills', () => {
-      draft('a1-telc-grammar-articles', [letter()]);
-      expect(run().ok).toBe(false);
+    it('reports writing lessons without a letter, and a draft then covers them', () => {
+      draft(FORM, [cloze()], A1);
+      const r = run();
+      expect(r.ok).toBe(true);
+      expect(text(r)).toContain(`${A1}/${NOTE}: warning: no letter exercise yet`);
+      expect(text(r)).toContain(`${A1}: 1 of 2 writing lessons covered`);
+      draft(NOTE, [letter({ register: 'informal', wordTarget: { min: 24, max: 36 } })], A1);
+      const fixed = run({ complete: true });
+      expect(fixed.ok).toBe(true);
+      expect(text(fixed)).toContain(`${A1}: 2 of 2 writing lessons covered`);
+      expect(text(fixed)).not.toContain('no letter exercise yet');
+    });
+
+    it('makes an uncovered writing lesson an error under --complete, writing nothing', () => {
+      draft(FORM, [cloze()], A1);
+      const before = readFileSync(join(root, 'curriculum-seed', `${A1}.json`), 'utf8');
+      const r = run({ complete: true });
+      expect(r.ok).toBe(false);
+      expect(text(r)).toContain(`${A1}/${NOTE}: problem: no letter exercise yet`);
+      expect(readFileSync(join(root, 'curriculum-seed', `${A1}.json`), 'utf8')).toBe(before);
+    });
+
+    it('refuses a lesson whose skill is not supported', () => {
+      draft(GRAMMAR, [letter()], B1);
+      const r = run();
+      expect(r.ok).toBe(false);
+      expect(text(r)).toContain('lesson skill is "grammar", not reading, listening or writing');
     });
   });
 });
