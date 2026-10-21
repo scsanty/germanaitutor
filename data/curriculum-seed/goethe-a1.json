@@ -1445,6 +1445,82 @@
       }
     },
     {
+      "id": "a1-goethe-writing-teil1-form-completion__ex3",
+      "lessonId": "a1-goethe-writing-teil1-form-completion",
+      "track": "goethe",
+      "type": "cloze",
+      "content": {
+        "instruction": {
+          "en": "Read the text and fill in the five missing fields on the form.",
+          "de": "Lesen Sie den Text und ergänzen Sie die fünf Lücken im Formular."
+        },
+        "text": "Ihr Nachbar Karim Haddad wohnt in Brunnfelden. Er möchte mit seiner Frau Leila in der Tanzschule Wirbelwind einen Tanzkurs machen. Die beiden haben noch nie getanzt. Leila möchte gern Tango lernen, aber Karim möchte lieber Salsa tanzen. Sie nehmen den Salsakurs. Am Montag und am Mittwoch arbeitet Karim abends. Nur am Freitag haben beide Zeit. Karims Handynummer ist 0172 4483196. Er hat keine Kreditkarte und bezahlt den Kurs bar. Sie füllen das Formular für Karim aus.\n\nTanzschule Wirbelwind – Anmeldung\n\nFamilienname: Haddad\nVorname: Karim\nWohnort: Brunnfelden\nAnzahl der Personen: 2\nKursniveau: {{1}}\nTanzkurs: {{2}}\nKurstag: {{3}}\nHandynummer: {{4}}\nZahlungsweise: {{5}}",
+        "gaps": [
+          {
+            "mode": "typed",
+            "answer": "Anfänger",
+            "variants": [
+              "Anfängerkurs",
+              "für Anfänger",
+              "Für Anfänger",
+              "anfänger",
+              "Anfaenger"
+            ]
+          },
+          {
+            "mode": "typed",
+            "answer": "Salsa",
+            "variants": [
+              "salsa",
+              "Salsakurs",
+              "Salsa-Kurs"
+            ]
+          },
+          {
+            "mode": "typed",
+            "answer": "Freitag",
+            "variants": [
+              "freitags",
+              "Freitags",
+              "am Freitag",
+              "Am Freitag",
+              "Fr.",
+              "Fr",
+              "Freitagabend",
+              "am Freitagabend",
+              "Am Freitagabend",
+              "freitagabends"
+            ]
+          },
+          {
+            "mode": "typed",
+            "answer": "0172 4483196",
+            "variants": [
+              "01724483196",
+              "0172/4483196",
+              "0172 / 4483196",
+              "0172-4483196",
+              "0172 - 4483196",
+              "0172 448 31 96",
+              "0172 44 83 196"
+            ]
+          },
+          {
+            "mode": "typed",
+            "answer": "bar",
+            "variants": [
+              "Bar",
+              "in bar",
+              "In bar",
+              "Barzahlung",
+              "bar bezahlen",
+              "Bargeld"
+            ]
+          }
+        ]
+      }
+    },
+    {
       "id": "a1-goethe-writing-teil2-short-letter__ex0",
       "lessonId": "a1-goethe-writing-teil2-short-letter",
       "track": "goethe",
@@ -1478,6 +1554,33 @@
           "Sehr geehrter Herr"
         ],
         "correctIndex": 2
+      }
+    },
+    {
+      "id": "a1-goethe-writing-teil2-short-letter__ex3",
+      "lessonId": "a1-goethe-writing-teil2-short-letter",
+      "track": "goethe",
+      "type": "letter",
+      "content": {
+        "instruction": {
+          "en": "Write a short email (about 30 words) to the arts centre and cover all three points.",
+          "de": "Schreiben Sie eine kurze E-Mail (ca. 30 Wörter) an das Kulturzentrum. Schreiben Sie zu allen drei Punkten."
+        },
+        "tasks": [
+          {
+            "situation": "Sie haben sich im Kulturzentrum Lindenhain für einen Malkurs angemeldet. Der Kurs beginnt nächste Woche. Sie haben noch Fragen. Schreiben Sie eine E-Mail an das Kulturzentrum.",
+            "leitpunkte": [
+              "Fragen Sie: Was müssen Sie zum Kurs mitbringen?",
+              "Sie können erst um 18.30 Uhr kommen. Ist das ein Problem?",
+              "Fragen Sie: Wo können Sie parken?"
+            ],
+            "register": "formal",
+            "wordTarget": {
+              "min": 24,
+              "max": 36
+            }
+          }
+        ]
       }
     },
     {

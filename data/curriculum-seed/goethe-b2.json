@@ -1485,6 +1485,34 @@
       }
     },
     {
+      "id": "b2-goethe-schreiben-teil1-forumsbeitrag__ex2",
+      "lessonId": "b2-goethe-schreiben-teil1-forumsbeitrag",
+      "track": "goethe",
+      "type": "letter",
+      "content": {
+        "instruction": {
+          "en": "Write a forum post (about 150 words) and cover all four points in a balanced way.",
+          "de": "Schreiben Sie einen Forumsbeitrag (ca. 150 Wörter). Behandeln Sie alle vier Punkte ausgewogen."
+        },
+        "tasks": [
+          {
+            "situation": "Sie lesen in einem Online-Forum zum Thema Leben in der Stadt folgende Meldung:\n\n„Die Stadt Kornhagen verbietet ab diesem Jahr private Feuerwerke an Silvester in der gesamten Innenstadt. Die Stadtverwaltung nennt als Gründe die vielen Verletzten, den Lärm, den Müll auf den Straßen und die hohe Belastung durch Feinstaub. Viele Bürgerinnen und Bürger halten das Verbot für übertrieben.“\n\nSchreiben Sie einen Beitrag für das Forum.",
+            "leitpunkte": [
+              "Ihre Meinung zum Verbot privater Feuerwerke und Gründe dafür",
+              "Gründe, warum das Thema zurzeit so stark diskutiert wird",
+              "Alternativen zu einem vollständigen Verbot",
+              "Vor- und Nachteile dieser Alternativen"
+            ],
+            "register": "semi_formal",
+            "wordTarget": {
+              "min": 150,
+              "max": 200
+            }
+          }
+        ]
+      }
+    },
+    {
       "id": "b2-goethe-schreiben-teil2-formelle-mitteilung__ex0",
       "lessonId": "b2-goethe-schreiben-teil2-formelle-mitteilung",
       "track": "goethe",
@@ -1502,6 +1530,34 @@
       "content": {
         "textWithBlank": "Formelle Anrede für einen Dozenten mit Doktortitel: 'Sehr geehrter Herr ___ Klein,'",
         "correctAnswer": "Dr."
+      }
+    },
+    {
+      "id": "b2-goethe-schreiben-teil2-formelle-mitteilung__ex2",
+      "lessonId": "b2-goethe-schreiben-teil2-formelle-mitteilung",
+      "track": "goethe",
+      "type": "letter",
+      "content": {
+        "instruction": {
+          "en": "Write a formal message (about 100 words) to the head of IT and cover all four points.",
+          "de": "Schreiben Sie eine formelle Mitteilung (ca. 100 Wörter) an den Leiter der IT-Abteilung. Behandeln Sie alle vier Punkte."
+        },
+        "tasks": [
+          {
+            "situation": "Sie haben vor drei Wochen von Ihrer Firma einen neuen Laptop bekommen. Seitdem stürzt das Gerät mehrmals am Tag ab, und bei Videokonferenzen funktioniert das Mikrofon oft nicht. Schreiben Sie dem Leiter der IT-Abteilung, Herrn Okonkwo, eine E-Mail.",
+            "leitpunkte": [
+              "Beschreibung der Probleme mit dem Gerät",
+              "Folgen für Ihre Arbeit",
+              "Was Sie selbst schon versucht haben",
+              "Ihre Bitte um eine Lösung bis zu einem bestimmten Termin"
+            ],
+            "register": "formal",
+            "wordTarget": {
+              "min": 100,
+              "max": 150
+            }
+          }
+        ]
       }
     },
     {
