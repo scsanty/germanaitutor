@@ -71,9 +71,12 @@ describe('/api/exam-practice', () => {
     const listening = await post(start, { formatId: 'telc-b1', partId: 'hoeren-1' });
     expect(listening.status).toBe(409);
     expect(await listening.json()).toMatchObject({ code: 'part_unavailable' });
-    const res = await post(start, { formatId: 'telc-b1', partId: 'schreiben' });
-    expect(res.status).toBe(409);
-    expect(await res.json()).toMatchObject({ code: 'part_unavailable' });
+    // Writing has bundled sets and a runner now; the spoken parts have no runner, and Sprachbausteine run only in the mock.
+    for (const partId of ['sprechen-1', 'sprachbausteine-1']) {
+      const res = await post(start, { formatId: 'telc-b1', partId });
+      expect(res.status, partId).toBe(409);
+      expect(await res.json(), partId).toMatchObject({ code: 'part_unavailable' });
+    }
     expect((await post(start, { formatId: '../../etc', partId: 'lesen-1' })).status).toBe(404);
     expect((await post(start, { formatId: 'telc-b1', partId: 'nope' })).status).toBe(404);
     expect((await post(start, {})).status).toBe(400);
