@@ -34,7 +34,7 @@ export function createOllamaAdapter(fetchImpl: FetchLike = fetch): ProviderAdapt
             ? [{ role: 'system', content: params.systemPrompt }, ...params.messages]
             : params.messages,
           stream: false,
-          ...(params.maxTokens ? { options: { num_predict: params.maxTokens } } : {}),
+          // No num_predict: it counts a thinking model's reasoning, and a local model has no token cost.
         }),
         ...timeoutSignal(params),
       });

@@ -32,15 +32,16 @@ describe('createOllamaAdapter', () => {
     expect(result).toEqual({ text: 'Hallo!', inputTokens: 7, outputTokens: 2 });
   });
 
-  it('maps maxTokens to options.num_predict only when given, and passes a timeout signal', async () => {
+  // Final review Important 2: num_predict counts a thinking model's reasoning, and a local model
+  // costs nothing per token, so Ollama keeps its own default.
+  it('sends no output cap even when maxTokens is given, and passes a timeout signal', async () => {
     const fetchImpl = vi.fn().mockResolvedValue({ ok: true, status: 200, json: async () => ({}) });
     const adapter = createOllamaAdapter(fetchImpl);
     const messages = [{ role: 'user' as const, content: 'Hi' }];
-    await adapter.generateText({}, { model: 'm', messages, maxTokens: 4096, timeoutMs: 90_000 });
-    await adapter.generateText({}, { model: 'm', messages });
-    const [first, second] = fetchImpl.mock.calls.map((c) => c[1]);
-    expect(JSON.parse(first.body).options).toEqual({ num_predict: 4096 });
+    await adapter.generateText({}, { model: 'm', messages, maxTokens: 8192, timeoutMs: 90_000 });
+    const [first] = fetchImpl.mock.calls.map((c) => c[1]);
+    expect(JSON.parse(first.body).options).toBeUndefined();
+    expect(first.body).not.toContain('num_predict');
     expect(first.signal).toBeInstanceOf(AbortSignal);
-    expect(JSON.parse(second.body).options).toBeUndefined();
   });
 });

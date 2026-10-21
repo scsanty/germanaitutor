@@ -51,7 +51,7 @@ export function createGeminiAdapter(fetchImpl: FetchLike = fetch): ProviderAdapt
               role: m.role === 'assistant' ? 'model' : 'user',
               parts: [{ text: m.content }],
             })),
-            ...(params.maxTokens ? { generationConfig: { maxOutputTokens: params.maxTokens } } : {}),
+            // No maxOutputTokens: on thinking models it includes the reasoning, which could starve the reply.
           }),
           ...timeoutSignal(params),
         }

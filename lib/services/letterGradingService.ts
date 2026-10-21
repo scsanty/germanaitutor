@@ -14,7 +14,8 @@ import { generateParsed } from './freestyleAi';
 import { createNotificationService } from './notificationService';
 
 // B1: one reply carries every mark, the criteria in two languages and a fully corrected letter.
-export const LETTER_MAX_TOKENS = 4096;
+// Only Anthropic applies the cap (see GenerateTextParams.maxTokens), where it counts the reply alone.
+export const LETTER_MAX_TOKENS = 8192;
 // S1: the spec's server provider timeout.
 export const LETTER_TIMEOUT_MS = 90_000;
 

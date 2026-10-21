@@ -27,7 +27,11 @@ export interface GenerateTextParams {
   model: string;
   systemPrompt?: string;
   messages: ChatMessage[];
-  /** Output cap. Anthropic needs one (default 1024); Gemini and Ollama map it when given; OpenAI ignores it. */
+  /**
+   * Output cap, applied by Anthropic only (it needs one, default 1024; extended thinking is never
+   * enabled, so it counts the reply alone). Gemini, Ollama and OpenAI ignore it and keep their
+   * provider defaults: their caps also count a thinking model's reasoning, which could cut the reply short.
+   */
   maxTokens?: number;
   /** Abort the request after this many milliseconds (S1). */
   timeoutMs?: number;

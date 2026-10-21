@@ -11,7 +11,7 @@ export type AiResult = { ok: true; text: string } | { ok: false; error: string; 
 export interface AiRequest {
   systemPrompt: string;
   messages: ChatMessage[];
-  // B1: an output cap above the adapter default (letter grading asks for 4096).
+  // B1: an output cap above the adapter default (letter grading asks for 8192; only Anthropic applies it).
   maxTokens?: number;
   // S1: abort the provider call after this long; a timeout is ai_failed with detail "timed out".
   timeoutMs?: number;

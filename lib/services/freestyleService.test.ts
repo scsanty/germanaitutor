@@ -32,7 +32,7 @@ describe('freestyleService', () => {
     expect(added[1].content).toBe('Wohin bist du gegangen?');
   });
 
-  it('logs corrections to the error log with the right source, asks writing for 4096 tokens, and logs resubmissions again', async () => {
+  it('logs corrections to the error log with the right source, asks writing for 8192 tokens, and logs resubmissions again', async () => {
     const writingReply = JSON.stringify({
       corrections: [{ wrong: 'habe', right: 'bin', category: 'perfect_auxiliary', reason_en: 'sein', reason_de: 'sein' }],
       corrected: 'Ich bin gefahren.',
@@ -49,7 +49,7 @@ describe('freestyleService', () => {
     await service.turn('free_writing', 'Ich habe gefahren.');
     expect(log().slice(1)).toEqual(Array(2).fill({ source: 'freestyle_writing', category: 'perfect_auxiliary', wrong: 'habe', r: 'bin' }));
     const calls = generate.mock.calls as unknown as [AiRequest][];
-    expect(calls[1][0].maxTokens).toBe(4096);
+    expect(calls[1][0].maxTokens).toBe(8192);
   });
 
   it('still resolves with the saved messages when the error-log write fails', async () => {

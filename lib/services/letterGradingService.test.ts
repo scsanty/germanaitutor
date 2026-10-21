@@ -55,7 +55,7 @@ const input = (over: Partial<LetterGradingInput> = {}): LetterGradingInput => ({
 const NOTIFICATIONS = "SELECT kind, problem_key, severity, title, body FROM admin_notifications WHERE kind = 'content_issues'";
 
 describe('gradeLetter', () => {
-  it('grades a valid reply, asks for 4096 tokens with a 90 s timeout, and logs the placed marks with the given source', async () => {
+  it('grades a valid reply, asks for 8192 tokens with a 90 s timeout, and logs the placed marks with the given source', async () => {
     const { db, generate, rows } = setup();
     const outcome = await gradeLetter(db, input(), { generate });
 
@@ -64,7 +64,7 @@ describe('gradeLetter', () => {
     expect(outcome.grade).toMatchObject({ points: 7, maxPoints: 15, percent: 47, summary: { en: 'A good start.', de: 'Ein guter Anfang.' } });
     expect(outcome.grade.marks).toHaveLength(1);
     expect(generate).toHaveBeenCalledWith(expect.objectContaining({ maxTokens: LETTER_MAX_TOKENS, timeoutMs: LETTER_TIMEOUT_MS }));
-    expect(LETTER_MAX_TOKENS).toBe(4096);
+    expect(LETTER_MAX_TOKENS).toBe(8192);
     expect(LETTER_TIMEOUT_MS).toBe(90_000);
     expect(rows('SELECT source, category, wrong, "right" AS fix FROM error_log')).toEqual([
       { source: 'teil', category: 'word_order_subclause', wrong: 'weil ich habe Arbeit', fix: 'weil ich arbeiten muss' },

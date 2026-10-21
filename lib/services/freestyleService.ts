@@ -64,7 +64,8 @@ const SETUP_KEYS: Partial<Record<FreestyleMode, readonly string[]>> = {
 export const MAX_SETUP_VALUE_LENGTH = 200;
 // Including the current message, the history sent to the AI stays within the prompts' 20-message window.
 const HISTORY_LIMIT = 19;
-const WRITING_MAX_TOKENS = 4096;
+// Only Anthropic applies the cap (see GenerateTextParams.maxTokens), where it counts the reply alone.
+const WRITING_MAX_TOKENS = 8192;
 
 export function createFreestyleService(
   db: Database.Database,
