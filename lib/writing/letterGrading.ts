@@ -78,7 +78,9 @@ export function buildLetterGradingPrompt(input: LetterPromptInput): { systemProm
   }
   if (rubric.zeroesTextOn) {
     const { criterion, grade } = rubric.zeroesTextOn;
-    lines.push(`If ${criterion} gets grade ${grade}, the whole text is worth 0 points; still grade every criterion.`);
+    lines.push(
+      `If ${criterion} gets grade ${grade}, the whole text is worth 0 points; still grade every criterion on its own descriptors, and give ${criterion} grade ${grade} whenever its descriptor fits, regardless of this rule.`
+    );
   }
   lines.push('', 'The task:', ...taskLines(task));
   if (!germanOnlyTask && instruction) lines.push(`Instructions the learner saw: ${instruction.en}`);

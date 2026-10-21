@@ -144,7 +144,9 @@ describe('letter grading: zero rule', () => {
 
   it('tells the model the lowest task grade makes the text worth 0, and still asks for every grade', () => {
     const { systemPrompt } = buildLetterGradingPrompt({ ...promptInput(true), rubric: ZEROED });
-    expect(systemPrompt).toContain('If task gets grade D, the whole text is worth 0 points; still grade every criterion.');
+    expect(systemPrompt).toContain(
+      'If task gets grade D, the whole text is worth 0 points; still grade every criterion on its own descriptors, and give task grade D whenever its descriptor fits, regardless of this rule.'
+    );
     expect(buildLetterGradingPrompt(promptInput(true)).systemPrompt).not.toContain('worth 0 points');
   });
 

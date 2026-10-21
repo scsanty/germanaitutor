@@ -107,6 +107,15 @@ describe('LetterResult', () => {
     const { unmount } = renderWithIntl(<LetterResult grade={offTopic} text={TEXT} rubric={zeroed} />);
     expect(screen.getByText('0 of 15 points (0%)')).toBeInTheDocument();
     expect(screen.getByText('Task completion got the lowest grade, so the whole letter scores 0 points.')).toBeInTheDocument();
+    // The cards keep each criterion's own grade and its own points; only the total is zeroed.
+    const cards = screen.getAllByRole('listitem');
+    expect(cards.map((c) => c.getAttribute('aria-label'))).toEqual(['Task completion', 'Communicative design', 'Formal accuracy']);
+    expect(within(cards[0]).getByText('Grade D')).toBeInTheDocument();
+    expect(within(cards[0]).getByText('0 of 5 points')).toBeInTheDocument();
+    expect(within(cards[1]).getByText('Grade B')).toBeInTheDocument();
+    expect(within(cards[1]).getByText('3 of 5 points')).toBeInTheDocument();
+    expect(within(cards[2]).getByText('Grade C')).toBeInTheDocument();
+    expect(within(cards[2]).getByText('1 of 5 points')).toBeInTheDocument();
     unmount();
     renderWithIntl(<LetterResult grade={offTopic} text={TEXT} rubric={LESSON_LETTER_RUBRIC} />);
     expect(screen.queryByText(/whole letter scores 0/)).toBeNull();

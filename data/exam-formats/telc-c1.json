@@ -35,9 +35,9 @@
         "D": "Der Wortschatz ist so begrenzt oder unpassend, dass die Gedanken kaum ausgedrückt werden können." } },
       { "id": "richtigkeit", "name": { "en": "Formal accuracy", "de": "Formale Richtigkeit" }, "points": { "A": 12, "B": 8, "C": 4, "D": 0 }, "descriptors": {
         "A": "Auch komplexe Satzstrukturen werden sicher beherrscht; Fehler in Grammatik, Rechtschreibung und Zeichensetzung sind sehr selten.",
-        "B": "Die Strukturen sind vielfältig und überwiegend korrekt; einzelne Fehler stören das Verständnis nicht.",
-        "C": "Es gibt immer wieder Fehler, auch in einfacheren Strukturen, die das Verständnis gelegentlich beeinträchtigen.",
-        "D": "Zahlreiche Fehler machen den Text weitgehend unverständlich." } }
+        "B": "Die Strukturen sind vielfältig und überwiegend korrekt; einzelne Fehler in Grammatik, Rechtschreibung oder Zeichensetzung stören das Verständnis nicht.",
+        "C": "Es gibt immer wieder grammatische Fehler, auch in einfacheren Strukturen, sowie Rechtschreib- oder Zeichensetzungsfehler, die das Verständnis gelegentlich beeinträchtigen.",
+        "D": "Zahlreiche Fehler in Grammatik, Rechtschreibung und Zeichensetzung machen den Text weitgehend unverständlich." } }
     ], "zeroesTextOn": { "criterion": "aufgabe", "grade": "D" } },
       "instructions": "Wählen Sie eines der beiden Themen. Schreiben Sie einen Text (ca. 350 Wörter), in dem Sie Ihren eigenen Standpunkt erarbeiten und argumentativ darlegen: Führen Sie Argumente an, legen Sie Vor- und Nachteile dar und begründen Sie am Schluss Ihre eigene Position." },
     { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1A", "de": "Mündlicher Ausdruck Teil 1A" }, "taskType": "spoken", "items": 3, "points": 18, "minutes": 6, "instructions": "Präsentation: Wählen Sie eines von zwei Themen und präsentieren Sie es (ca. 3 Minuten). Denken Sie an eine Einleitung und einen Schluss bzw. ein Fazit." },
