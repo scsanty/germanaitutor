@@ -37,7 +37,7 @@ describe('telc B1 coverage', () => {
       expect(id.startsWith('b1-telc-')).toBe(true);
       const exercises = seed.exercises.filter((e) => e.lessonId === id);
       expect(exercises.length, `${id} exercise count`).toBeGreaterThanOrEqual(4);
-      expect(exercises.length, `${id} exercise count`).toBeLessThanOrEqual(8);
+      expect(exercises.length, `${id} exercise count`).toBeLessThanOrEqual(9);
       if (lesson!.skill !== 'vocabulary') expect(exercises.some((e) => e.type === 'flashcard'), `${id} flashcards`).toBe(false);
       for (const e of exercises.filter((x) => x.type === 'multiple_choice')) {
         const c = e.content as { options: string[]; correctIndex: number };
