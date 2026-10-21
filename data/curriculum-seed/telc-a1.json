@@ -1333,6 +1333,67 @@
       }
     },
     {
+      "id": "a1-telc-writing-registration-form__ex3",
+      "lessonId": "a1-telc-writing-registration-form",
+      "track": "telc",
+      "type": "cloze",
+      "content": {
+        "instruction": {
+          "en": "Read the text and fill in the five missing fields on the form.",
+          "de": "Lesen Sie den Text und ergänzen Sie die fünf Lücken im Formular."
+        },
+        "text": "Ihre Nachbarin Olga Petrenko kommt aus der Ukraine. Sie wohnt im Erlenweg 23 in 41638 Glimmerfeld. Olga möchte in der Musikschule Notenschlüssel ein Instrument lernen. Ihr Sohn spielt schon Gitarre, aber Olga möchte Klavier spielen. Am Montag und am Donnerstag arbeitet sie lange. Nur am Dienstag hat sie Zeit. Sie helfen Olga und füllen das Formular aus.\n\nMusikschule Notenschlüssel – Anmeldung\n\nFamilienname: Petrenko\nVorname: Olga\nStraße, Hausnummer: {{1}}\nPLZ: {{2}}\nOrt: {{3}}\nInstrument: {{4}}\nUnterrichtstag: {{5}}\nUnterschrift: Olga Petrenko",
+        "gaps": [
+          {
+            "mode": "typed",
+            "answer": "Erlenweg 23",
+            "variants": [
+              "erlenweg 23",
+              "Erlenweg, 23",
+              "Erlenweg Nr. 23",
+              "Erlenweg 23."
+            ]
+          },
+          {
+            "mode": "typed",
+            "answer": "41638",
+            "variants": [
+              "41 638"
+            ]
+          },
+          {
+            "mode": "typed",
+            "answer": "Glimmerfeld",
+            "variants": [
+              "glimmerfeld"
+            ]
+          },
+          {
+            "mode": "typed",
+            "answer": "Klavier",
+            "variants": [
+              "klavier",
+              "Klavier spielen",
+              "Klavierunterricht"
+            ]
+          },
+          {
+            "mode": "typed",
+            "answer": "Dienstag",
+            "variants": [
+              "dienstag",
+              "dienstags",
+              "Dienstags",
+              "am Dienstag",
+              "Am Dienstag",
+              "Di.",
+              "Di"
+            ]
+          }
+        ]
+      }
+    },
+    {
       "id": "a1-telc-writing-short-appointment-note__ex0",
       "lessonId": "a1-telc-writing-short-appointment-note",
       "track": "telc",
@@ -1370,6 +1431,33 @@
           "Kuss"
         ],
         "correctIndex": 1
+      }
+    },
+    {
+      "id": "a1-telc-writing-short-appointment-note__ex3",
+      "lessonId": "a1-telc-writing-short-appointment-note",
+      "track": "telc",
+      "type": "letter",
+      "content": {
+        "instruction": {
+          "en": "Write a short formal note (about 30 words) to your boss and cover all three points.",
+          "de": "Schreiben Sie Ihrem Chef eine kurze formelle Mitteilung (ca. 30 Wörter). Schreiben Sie zu allen drei Punkten."
+        },
+        "tasks": [
+          {
+            "situation": "Sie arbeiten in der Bäckerei Krümelglück. Am Freitag möchten Sie nicht arbeiten, denn Sie ziehen in eine neue Wohnung um. Schreiben Sie Ihrem Chef, Herrn Brömmel, eine kurze Mitteilung.",
+            "leitpunkte": [
+              "Bitten Sie um einen freien Tag am Freitag.",
+              "Warum brauchen Sie den Tag?",
+              "Wann können Sie stattdessen arbeiten?"
+            ],
+            "register": "formal",
+            "wordTarget": {
+              "min": 24,
+              "max": 36
+            }
+          }
+        ]
       }
     },
     {
