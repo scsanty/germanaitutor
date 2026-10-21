@@ -1491,6 +1491,34 @@
       }
     },
     {
+      "id": "a1-writing-short-invitation__ex3",
+      "lessonId": "a1-writing-short-invitation",
+      "track": "generic",
+      "type": "letter",
+      "content": {
+        "instruction": {
+          "en": "Write a short invitation to your friend Carla. Cover all four points.",
+          "de": "Schreib eine kurze Einladung an deine Freundin Carla. Schreib zu allen vier Punkten."
+        },
+        "tasks": [
+          {
+            "situation": "Sie machen am Sonntag mit Freunden ein Picknick am See in Birkenhall. Schreiben Sie Ihrer Freundin Carla eine Einladung.",
+            "leitpunkte": [
+              "Wann und wo ist das Picknick?",
+              "Was machen Sie dort?",
+              "Was soll Carla mitbringen?",
+              "Bitten Sie Carla um eine Antwort."
+            ],
+            "register": "informal",
+            "wordTarget": {
+              "min": 24,
+              "max": 36
+            }
+          }
+        ]
+      }
+    },
+    {
       "id": "a1-speaking-self-introduction__ex0",
       "lessonId": "a1-speaking-self-introduction",
       "track": "generic",

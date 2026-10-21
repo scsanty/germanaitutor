@@ -1438,6 +1438,34 @@
       }
     },
     {
+      "id": "b2-stellungnahme-erlaeuterung-verfassen__ex2",
+      "lessonId": "b2-stellungnahme-erlaeuterung-verfassen",
+      "track": "generic",
+      "type": "letter",
+      "content": {
+        "instruction": {
+          "en": "Write a structured statement of opinion for the local newspaper. Build it as in the lesson and cover all four points.",
+          "de": "Verfassen Sie eine gegliederte Stellungnahme für die Lokalzeitung. Bauen Sie sie wie in der Lektion auf und gehen Sie auf alle vier Punkte ein."
+        },
+        "tasks": [
+          {
+            "situation": "Der Gemeinderat von Erlenbrück überlegt, ob es in Erlenbrück mehr verkaufsoffene Sonntage geben soll. Die Online-Ausgabe des „Erlenbrücker Boten“ bittet ihre Leserinnen und Leser um Stellungnahmen. Verfassen Sie einen Beitrag.",
+            "leitpunkte": [
+              "Führen Sie in das Thema ein und formulieren Sie die zentrale Frage.",
+              "Gehen Sie auf die Argumente der Gegenseite ein und entkräften Sie sie.",
+              "Begründen Sie Ihre eigene Position mit Argumenten und konkreten Beispielen.",
+              "Ziehen Sie ein abgewogenes Fazit und schlagen Sie gegebenenfalls einen Kompromiss vor."
+            ],
+            "register": "formal",
+            "wordTarget": {
+              "min": 120,
+              "max": 180
+            }
+          }
+        ]
+      }
+    },
+    {
       "id": "b2-beschwerdebrief-dienstleistung__ex0",
       "lessonId": "b2-beschwerdebrief-dienstleistung",
       "track": "generic",
@@ -1455,6 +1483,34 @@
       "content": {
         "textWithBlank": "Sollten Sie die Frist verstreichen lassen, sehe ich mich gezwungen, rechtliche Schritte einzu___ .",
         "correctAnswer": "leiten"
+      }
+    },
+    {
+      "id": "b2-beschwerdebrief-dienstleistung__ex2",
+      "lessonId": "b2-beschwerdebrief-dienstleistung",
+      "track": "generic",
+      "type": "letter",
+      "content": {
+        "instruction": {
+          "en": "Write a formal letter of complaint to the removal company. Cover all four points.",
+          "de": "Schreiben Sie einen formellen Beschwerdebrief an die Umzugsfirma. Gehen Sie auf alle vier Punkte ein."
+        },
+        "tasks": [
+          {
+            "situation": "Sie haben bei der Firma „Flinkhaus Umzüge“ einen Umzug gebucht (Auftragsnummer UM-2291). Die Möbelpacker kamen drei Stunden zu spät, ein Spiegel ging zu Bruch, und die Rechnung ist 180 Euro höher als im Angebot. Schreiben Sie an die Firma.",
+            "leitpunkte": [
+              "Betreff mit Auftragsnummer und Grund Ihres Schreibens",
+              "Was vereinbart war und was tatsächlich passiert ist",
+              "Ihre Forderung mit einer klaren Frist",
+              "Weitere Schritte, falls die Frist nicht eingehalten wird"
+            ],
+            "register": "formal",
+            "wordTarget": {
+              "min": 80,
+              "max": 120
+            }
+          }
+        ]
       }
     },
     {

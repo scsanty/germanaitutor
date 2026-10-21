@@ -1549,6 +1549,34 @@
       }
     },
     {
+      "id": "c1-verfassen-differenzierter-kommentare__ex4",
+      "lessonId": "c1-verfassen-differenzierter-kommentare",
+      "track": "generic",
+      "type": "letter",
+      "content": {
+        "instruction": {
+          "en": "Write a nuanced commentary for the magazine. Argue dialectically and cover all four points.",
+          "de": "Verfassen Sie einen differenzierten Kommentar für das Magazin. Argumentieren Sie dialektisch und gehen Sie auf alle vier Punkte ein."
+        },
+        "tasks": [
+          {
+            "situation": "Das Online-Magazin „Abwägung & Ausblick“ ruft seine Leserschaft dazu auf, Kommentare zu folgender Frage einzureichen: Sollten Städte die kurzfristige Vermietung von Wohnungen an Touristen über Online-Plattformen streng begrenzen? Verfassen Sie einen Kommentar.",
+            "leitpunkte": [
+              "Steigen Sie pointiert in die Problematik ein.",
+              "Erörtern Sie die Positionen beider Seiten und zeigen Sie Ambivalenzen auf.",
+              "Nehmen Sie Gegenargumente vorweg und entkräften Sie sie.",
+              "Schließen Sie mit einer abgewogenen, zukunftsweisenden Synthese."
+            ],
+            "register": "formal",
+            "wordTarget": {
+              "min": 176,
+              "max": 264
+            }
+          }
+        ]
+      }
+    },
+    {
       "id": "c1-strukturierung-akademischer-abhandlungen__ex0",
       "lessonId": "c1-strukturierung-akademischer-abhandlungen",
       "track": "generic",
@@ -1592,6 +1620,34 @@
       "content": {
         "prompt": "Formulieren Sie einen kurzen Absatz (2-3 Sätze), der den theoretischen Rahmen einer fiktiven soziologischen Arbeit umreißt.",
         "modelAnswer": "Den theoretischen Bezugsrahmen der Arbeit bildet Bourdieus Habitus- und Kapitaltheorie. Anhand dieses Ansatzes soll beleuchtet werden, wie Bildungsungleichheiten im tertiären Sektor reproduziert werden. Dabei wird insbesondere das Zusammenspiel von kulturellem und sozialem Kapital fokussiert."
+      }
+    },
+    {
+      "id": "c1-strukturierung-akademischer-abhandlungen__ex4",
+      "lessonId": "c1-strukturierung-akademischer-abhandlungen",
+      "track": "generic",
+      "type": "letter",
+      "content": {
+        "instruction": {
+          "en": "Write a short research proposal (Exposé) in an objective academic style. Cover all four points.",
+          "de": "Verfassen Sie ein kurzes Exposé in sachlichem, wissenschaftlichem Stil. Gehen Sie auf alle vier Punkte ein."
+        },
+        "tasks": [
+          {
+            "situation": "Sie bewerben sich am Institut für Bildungsforschung der Universität Wendelsau um ein Forschungsstipendium. Reichen Sie ein Exposé zum Thema „Digitale Lernplattformen und die Selbstständigkeit von Studierenden im ersten Semester“ ein.",
+            "leitpunkte": [
+              "Formulieren Sie eine präzise Forschungsfrage.",
+              "Ordnen Sie das Vorhaben in den aktuellen Forschungsstand ein.",
+              "Legen Sie die geplante Methodik dar.",
+              "Benennen Sie die Grenzen der Untersuchung."
+            ],
+            "register": "formal",
+            "wordTarget": {
+              "min": 176,
+              "max": 264
+            }
+          }
+        ]
       }
     },
     {
