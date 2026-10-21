@@ -1,0 +1,121 @@
+{
+  "formatId": "generic-a2",
+  "partId": "schreiben",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-a2__schreiben__s01",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie ziehen nächsten Samstag in eine neue Wohnung um. Ihr Freund Markus hat ein Auto. Schreiben Sie ihm eine Nachricht.",
+              "leitpunkte": [
+                "Wann und wohin Sie umziehen",
+                "Um welche Hilfe Sie bitten",
+                "Was Sie als Dank anbieten",
+                "Bitte um Antwort bis Mittwoch"
+              ],
+              "register": "informal",
+              "wordTarget": {
+                "min": 40,
+                "max": 60
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Cover all four points: when and where you move, what Markus should do (e.g. take your boxes to the new flat in his car), how you thank him, and ask for an answer by Wednesday.",
+            "de": "Behandeln Sie alle vier Punkte: wann und wohin Sie umziehen, was Markus tun soll (z. B. die Kisten mit seinem Auto in die neue Wohnung bringen), wie Sie sich bedanken, und bitten Sie um eine Antwort bis Mittwoch."
+          },
+          {
+            "en": "Markus is a friend: start with \"Lieber Markus,\" or \"Hallo Markus,\" and end with \"Viele Grüße\". Ask in a friendly way, e.g. \"Kannst du mir helfen?\", and join sentences with \"denn\" or \"dann\".",
+            "de": "Markus ist ein Freund: Beginnen Sie mit „Lieber Markus,“ oder „Hallo Markus,“ und enden Sie mit „Viele Grüße“. Fragen Sie freundlich, z. B. „Kannst du mir helfen?“, und verbinden Sie die Sätze mit „denn“ oder „dann“."
+          },
+          {
+            "en": "Use separable verbs correctly: \"Ich ziehe am Samstag um.\" For the thank-you, try \"Danach lade ich dich zum Essen ein.\"",
+            "de": "Benutzen Sie trennbare Verben richtig: „Ich ziehe am Samstag um.“ Für den Dank passt z. B. „Danach lade ich dich zum Essen ein.“"
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-a2__schreiben__s02",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie möchten bei der Sprachschule Lindner einen Abendkurs in Englisch machen. Schreiben Sie der Sprachschule eine E-Mail.",
+              "leitpunkte": [
+                "Wer Sie sind und was Sie lernen möchten",
+                "Frage nach Tagen und Uhrzeiten",
+                "Frage nach dem Preis",
+                "Wie Sie sich anmelden können"
+              ],
+              "register": "formal",
+              "wordTarget": {
+                "min": 40,
+                "max": 60
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Cover all four points: introduce yourself and your level, and ask about days and times, the price and how to register.",
+            "de": "Behandeln Sie alle vier Punkte: Stellen Sie sich und Ihr Niveau kurz vor, und fragen Sie nach Tagen und Uhrzeiten, nach dem Preis und nach der Anmeldung."
+          },
+          {
+            "en": "This is a formal e-mail to a school: start with \"Sehr geehrte Damen und Herren,\" and end with \"Mit freundlichen Grüßen\" and your full name. Join your questions with \"und\" or \"dann\".",
+            "de": "Das ist eine formelle E-Mail an eine Schule: Beginnen Sie mit „Sehr geehrte Damen und Herren,“ und enden Sie mit „Mit freundlichen Grüßen“ und Ihrem vollen Namen. Verbinden Sie Ihre Fragen mit „und“ oder „dann“."
+          },
+          {
+            "en": "Polite questions sound good with \"Könnten Sie mir bitte sagen, ...?\" or \"Wie viel kostet der Kurs?\" Put the verb first in yes/no questions.",
+            "de": "Höfliche Fragen klingen gut mit „Könnten Sie mir bitte sagen, …?“ oder „Wie viel kostet der Kurs?“. Bei Ja/Nein-Fragen steht das Verb vorne."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-a2__schreiben__s03",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie machen seit einem Monat einen Tanzkurs und finden ihn sehr gut. Ihre Freundin Clara möchte auch tanzen lernen. Schreiben Sie ihr eine Nachricht.",
+              "leitpunkte": [
+                "Wann und wo der Kurs ist",
+                "Wie die Lehrerin und die Gruppe sind",
+                "Was der Kurs kostet",
+                "Vorschlag: zusammen zur nächsten Stunde gehen"
+              ],
+              "register": "informal",
+              "wordTarget": {
+                "min": 40,
+                "max": 60
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Cover all four points: the day, time and place of the course, what the teacher and the group are like, the price, and suggest going to the next lesson together.",
+            "de": "Behandeln Sie alle vier Punkte: Tag, Uhrzeit und Ort des Kurses, wie die Lehrerin und die Gruppe sind, den Preis, und schlagen Sie vor, zusammen zur nächsten Stunde zu gehen."
+          },
+          {
+            "en": "Clara is a friend: start with \"Liebe Clara,\" and end with \"Liebe Grüße\". Sound enthusiastic, and join sentences with \"denn\", \"aber\" or \"dann\".",
+            "de": "Clara ist eine Freundin: Beginnen Sie mit „Liebe Clara,“ und enden Sie mit „Liebe Grüße“. Klingen Sie begeistert, und verbinden Sie die Sätze mit „denn“, „aber“ oder „dann“."
+          },
+          {
+            "en": "Use \"seit\" with the present tense: \"Ich tanze seit einem Monat.\" For the suggestion, try \"Wollen wir am Dienstag zusammen hingehen?\" or \"Komm doch mit!\"",
+            "de": "Benutzen Sie „seit“ mit dem Präsens: „Ich tanze seit einem Monat.“ Für den Vorschlag passt z. B. „Wollen wir am Dienstag zusammen hingehen?“ oder „Komm doch mit!“"
+          }
+        ]
+      }
+    }
+  ]
+}
