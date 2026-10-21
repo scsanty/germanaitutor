@@ -45,13 +45,15 @@ export interface LetterGradingDeps {
   generate?: (request: AiRequest) => Promise<AiResult>;
   // The error log's clock (tests inject it, like the free-text path).
   now?: () => Date;
+  // The anchor file reader (tests inject it, so they don't depend on which anchor files are bundled).
+  readAnchors?: typeof readAnchors;
 }
 
 // The 2-3 anchors of the first part that has a valid anchor file, selected on that part's own rubric,
 // which comes back too: lesson letters show the anchors' grades by that rubric's criterion names.
-function anchorsOf(parts: AnchorPart[]): { anchors: Anchor[]; rubric: WritingRubric } | null {
+function anchorsOf(parts: AnchorPart[], read: typeof readAnchors): { anchors: Anchor[]; rubric: WritingRubric } | null {
   for (const { formatId, partId } of parts) {
-    const anchors = readAnchors(formatId, partId);
+    const anchors = read(formatId, partId);
     const rubric = readFormat(formatId)?.parts.find((p) => p.id === partId)?.rubric;
     if (anchors && rubric) return { anchors: selectAnchors(anchors, rubric), rubric };
   }
@@ -68,7 +70,7 @@ export async function gradeLetter(
   if (!input.text.trim()) return { ok: false, error: 'Write your letter first', code: 'bad_request' };
   const generate = deps.generate ?? ((request: AiRequest) => generateWithActiveProvider(db, request));
 
-  const found = anchorsOf([input, ...(input.fallback ? [input.fallback] : [])]);
+  const found = anchorsOf([input, ...(input.fallback ? [input.fallback] : [])], deps.readAnchors ?? readAnchors);
   if (!found) {
     const part = `${input.formatId}/${input.partId}`;
     await createNotificationService(db).raise(

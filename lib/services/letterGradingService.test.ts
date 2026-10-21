@@ -96,8 +96,10 @@ describe('gradeLetter', () => {
 
   it('grades with the rubric only when the anchors are missing, and raises one content_issues notice per part (S3)', async () => {
     const { db, generate, rows } = setup();
-    expect((await gradeLetter(db, input(), { generate })).ok).toBe(true);
-    expect((await gradeLetter(db, input(), { generate })).ok).toBe(true);
+    // No anchor file, whatever is bundled.
+    const noAnchors = { generate, readAnchors: () => null };
+    expect((await gradeLetter(db, input(), noAnchors)).ok).toBe(true);
+    expect((await gradeLetter(db, input(), noAnchors)).ok).toBe(true);
 
     expect(generate.mock.calls[0][0].systemPrompt).not.toContain('Reference letters');
     expect(rows(NOTIFICATIONS)).toEqual([
@@ -157,8 +159,25 @@ describe('gradeLessonLetter', () => {
 
   it('takes the anchors from the format’s last letter part, skipping form (cloze) parts (B5)', async () => {
     const { db, generate, rows } = setup();
-    await gradeLessonLetter(db, { level: 'A1', track: 'telc', content, answer: { type: 'letter', taskIndex: 0, text } }, { generate });
+    const readAnchors = vi.fn(() => null);
+    await gradeLessonLetter(db, { level: 'A1', track: 'telc', content, answer: { type: 'letter', taskIndex: 0, text } }, { generate, readAnchors });
+    // telc A1's last letter part first, then the NaDoch fallback; neither has anchors here, so one notice for the primary.
+    expect(readAnchors.mock.calls).toEqual([
+      ['telc-a1', 'schreiben-2'],
+      ['generic-a1', 'schreiben'],
+    ]);
     expect(rows(NOTIFICATIONS)).toMatchObject([{ problem_key: 'writing_anchors:telc-a1/schreiben-2' }]);
+  });
+
+  it('uses the NaDoch fallback’s anchors when the track part has none, with no notice (B5)', async () => {
+    const { db, generate, rows } = setup();
+    const graded = (letter: string, g: 'A' | 'D') => ({ task, letter, grades: { aufgabe: g, gestaltung: g, richtigkeit: g }, justification: `Alles ${g}.` });
+    const readAnchors = vi.fn((formatId: string) => (formatId === 'generic-a1' ? [graded('Fallback-Brief A', 'A'), graded('Fallback-Brief D', 'D')] : null));
+    await gradeLessonLetter(db, { level: 'A1', track: 'telc', content, answer: { type: 'letter', taskIndex: 0, text } }, { generate, readAnchors });
+    const prompt = generate.mock.calls[0][0].systemPrompt;
+    expect(prompt).toContain('Letter: Fallback-Brief A');
+    expect(prompt).toContain('Letter: Fallback-Brief D');
+    expect(rows(NOTIFICATIONS)).toEqual([]);
   });
 
   it('refuses a task index the content does not have, before any AI call', async () => {
