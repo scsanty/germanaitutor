@@ -1,0 +1,163 @@
+{
+  "formatId": "telc-b2",
+  "partId": "schreiben",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b2__schreiben__s01",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie haben im Gemeindeblatt folgende Anzeige gelesen: „Sprachcafé im Stadtteilzentrum Nordpark sucht Gesprächspartnerinnen und Gesprächspartner! Jeden Mittwochabend treffen sich bei uns Menschen aus vielen Ländern, um in entspannter Atmosphäre Deutsch zu sprechen. Wer ehrenamtlich mitmachen möchte, meldet sich bitte bei Yusuf Demir.“ Schreiben Sie Herrn Demir eine E-Mail.",
+              "leitpunkte": [
+                "Warum Sie sich im Sprachcafé engagieren möchten",
+                "Ihre eigenen Erfahrungen beim Sprachenlernen",
+                "Wie oft Sie mittwochs kommen könnten",
+                "Ihre Fragen zum Ablauf der Treffen"
+              ],
+              "register": "semi_formal",
+              "wordTarget": {
+                "min": 150,
+                "max": 200
+              }
+            },
+            {
+              "situation": "Sie haben auf einem Internetportal folgende Anzeige gelesen: „Möblierte 2-Zimmer-Wohnung in Altenhagen zur Zwischenmiete, hell und ruhig, für sechs Monate ab dem 1. März. Haustiere nach Absprache. Bei Interesse bitte eine kurze E-Mail an Sabine Wendt.“ Schreiben Sie Frau Wendt eine E-Mail.",
+              "leitpunkte": [
+                "Wer Sie sind und warum Sie eine Wohnung suchen",
+                "Wie lange Sie die Wohnung brauchen",
+                "Ihre Fragen zu Miete und Nebenkosten",
+                "Ein Vorschlag für einen Besichtigungstermin"
+              ],
+              "register": "semi_formal",
+              "wordTarget": {
+                "min": 150,
+                "max": 200
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Develop all four Leitpunkte in detail and refer to the ad (the Wednesday evenings, the furnished flat for six months). For the language café, link your own learning experience to the role; for the flat, explain your situation and propose a concrete viewing date. Keep the semi-formal register throughout. Only an e-mail that misses the situation or hardly touches the Leitpunkte gets a D, and then the whole e-mail scores 0; a short or missing Leitpunkt costs points, but not everything.",
+            "de": "Führen Sie alle vier Leitpunkte ausführlich aus und beziehen Sie sich auf die Anzeige (die Mittwochabende, die möblierte Wohnung für sechs Monate). Verbinden Sie beim Sprachcafé Ihre eigene Lernerfahrung mit der Tätigkeit im Sprachcafé; erklären Sie bei der Wohnung Ihre Situation und schlagen Sie einen konkreten Besichtigungstermin vor. Bleiben Sie durchgehend im halbformellen Register. Ein D gibt es nur, wenn die E-Mail nicht zur Situation passt oder kaum einen Leitpunkt behandelt; dann zählt die ganze E-Mail 0 Punkte. Ein knapper oder fehlender Leitpunkt kostet Punkte, aber nicht alles."
+          },
+          {
+            "en": "Follow the order of the Leitpunkte in clear paragraphs and vary your connectors (darüber hinaus, allerdings, was … betrifft, folglich). Open with „Sehr geehrter Herr Demir“ or „Sehr geehrte Frau Wendt“ and a sentence about the ad, and close with a request for a reply and „Mit freundlichen Grüßen“.",
+            "de": "Folgen Sie der Reihenfolge der Leitpunkte in klaren Absätzen und variieren Sie die Konnektoren (darüber hinaus, allerdings, was … betrifft, folglich). Beginnen Sie mit „Sehr geehrter Herr Demir“ oder „Sehr geehrte Frau Wendt“ und einem Satz zur Anzeige, und schließen Sie mit der Bitte um Antwort und „Mit freundlichen Grüßen“."
+          },
+          {
+            "en": "Show B2 range: Konjunktiv II for polite wishes and questions (Ich wäre Ihnen dankbar, wenn …; Wäre es möglich, …?), indirect questions (ob die Nebenkosten in der Miete enthalten sind) and clauses with da, seit or sodass, while keeping errors rare.",
+            "de": "Zeigen Sie die Bandbreite des B2-Niveaus: Konjunktiv II für höfliche Wünsche und Fragen (Ich wäre Ihnen dankbar, wenn …; Wäre es möglich, …?), indirekte Fragen (ob die Nebenkosten in der Miete enthalten sind) und Nebensätze mit da, seit oder sodass, und achten Sie darauf, dass Fehler selten bleiben."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b2__schreiben__s02",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie haben am Schwarzen Brett Ihrer Bibliothek folgende Anzeige gelesen: „Fahrradwerkstatt zum Mitmachen! Im Jugendhaus Ostend reparieren wir jeden Samstag gemeinsam alte Fahrräder und verschenken sie an Familien mit wenig Geld. Wir suchen Helferinnen und Helfer – Vorkenntnisse sind nicht nötig. Kontakt: Malte Jansen.“ Schreiben Sie Herrn Jansen eine E-Mail.",
+              "leitpunkte": [
+                "Warum Ihnen das Projekt gefällt",
+                "Ihre handwerklichen Fähigkeiten",
+                "Wie oft Sie mithelfen können",
+                "Ihre Fragen zu Werkzeug und Versicherung"
+              ],
+              "register": "semi_formal",
+              "wordTarget": {
+                "min": 150,
+                "max": 200
+              }
+            },
+            {
+              "situation": "Sie haben in einem Kleinanzeigenportal folgende Anzeige gelesen: „Verkaufe gebrauchtes E-Piano, drei Jahre alt, sehr guter Zustand, mit Ständer und Kopfhörern, 450 Euro. Nur Abholung in Wiesental. Anfragen bitte an Bernd Kraus.“ Schreiben Sie Herrn Kraus eine E-Mail.",
+              "leitpunkte": [
+                "Warum Sie sich für das E-Piano interessieren",
+                "Ihre Fragen zum Zustand und zum Zubehör",
+                "Ihr Preisvorschlag",
+                "Wann und wie Sie das E-Piano abholen könnten"
+              ],
+              "register": "semi_formal",
+              "wordTarget": {
+                "min": 150,
+                "max": 200
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Treat each Leitpunkt in detail and with reference to the ad (the Saturday workshop for families, the piano with stand and headphones for 450 euros). Give reasons, not just facts: why the project matters to you, or why your price offer is fair. Keep the semi-formal register. Only an e-mail that misses the situation or hardly touches the Leitpunkte gets a D, and then the whole e-mail scores 0; a short or missing Leitpunkt costs points, but not everything.",
+            "de": "Behandeln Sie jeden Leitpunkt ausführlich und mit Bezug auf die Anzeige (die Samstagswerkstatt für Familien, das E-Piano mit Ständer und Kopfhörern für 450 Euro). Begründen Sie, statt nur Fakten zu nennen: warum Ihnen das Projekt wichtig ist oder warum Ihr Preisvorschlag fair ist. Bleiben Sie im halbformellen Register. Ein D gibt es nur, wenn die E-Mail nicht zur Situation passt oder kaum einen Leitpunkt behandelt; dann zählt die ganze E-Mail 0 Punkte. Ein knapper oder fehlender Leitpunkt kostet Punkte, aber nicht alles."
+          },
+          {
+            "en": "Build the e-mail logically: introduction with reference to the ad, one paragraph per Leitpunkt, then a closing. Use varied connectors (zum einen … zum anderen, außerdem, allerdings, deshalb) and an appropriate greeting and sign-off such as „Sehr geehrter Herr Jansen“ and „Mit freundlichen Grüßen“.",
+            "de": "Bauen Sie die E-Mail logisch auf: Einleitung mit Bezug zur Anzeige, ein Absatz pro Leitpunkt, dann ein Schluss. Verwenden Sie vielfältige Konnektoren (zum einen … zum anderen, außerdem, allerdings, deshalb) und eine passende Anrede und Grußformel wie „Sehr geehrter Herr Jansen“ und „Mit freundlichen Grüßen“."
+          },
+          {
+            "en": "Use precise vocabulary for the topic (reparieren, das Werkzeug, die Haftpflichtversicherung; der Zustand, das Zubehör, verhandeln) and B2 structures such as Konjunktiv II (Wären Sie mit 400 Euro einverstanden?) and relative clauses, with few errors.",
+            "de": "Verwenden Sie genauen Wortschatz zum Thema (reparieren, das Werkzeug, die Haftpflichtversicherung; der Zustand, das Zubehör, verhandeln) und B2-Strukturen wie den Konjunktiv II (Wären Sie mit 400 Euro einverstanden?) und Relativsätze, mit wenigen Fehlern."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b2__schreiben__s03",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie haben im Programmheft Ihres Familienzentrums folgende Anzeige gelesen: „Kochkurs ‚Gesund und günstig‘ im Familienzentrum Birkenweg: ab Oktober an acht Abenden. Außerdem suchen wir Teilnehmende, die an einem Abend ein Gericht aus ihrer Heimat vorstellen möchten. Anmeldung bei Carla Benedetti.“ Schreiben Sie Frau Benedetti eine E-Mail.",
+              "leitpunkte": [
+                "Warum Sie am Kurs teilnehmen möchten",
+                "Welches Gericht Sie vorstellen könnten",
+                "Ihre Ernährungswünsche oder Allergien",
+                "Ihre Fragen zu Kosten und Terminen"
+              ],
+              "register": "semi_formal",
+              "wordTarget": {
+                "min": 150,
+                "max": 200
+              }
+            },
+            {
+              "situation": "Sie haben auf einer Mitfahrbörse folgende Anzeige gelesen: „Ich fahre jeden Montag früh mit dem Auto von Steinach nach Bergfeld und freitags am Nachmittag zurück. Zwei Plätze sind frei, die Benzinkosten werden geteilt. Nichtraucher bevorzugt. Bitte melden Sie sich bei Jana Petersen.“ Schreiben Sie Frau Petersen eine E-Mail.",
+              "leitpunkte": [
+                "Warum Sie eine Mitfahrgelegenheit brauchen",
+                "Wie oft Sie mitfahren möchten",
+                "Ihr Vorschlag zur Aufteilung der Kosten",
+                "Ihre Fragen zu Abfahrtsort und Uhrzeit"
+              ],
+              "register": "semi_formal",
+              "wordTarget": {
+                "min": 150,
+                "max": 200
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Work through all four Leitpunkte in detail and tie them to the ad (the eight evenings and the dish from your home country; the Monday and Friday trips and shared petrol costs). Be concrete: name and briefly describe the dish, or suggest an amount per trip. Keep the semi-formal register. Only an e-mail that misses the situation or hardly touches the Leitpunkte gets a D, and then the whole e-mail scores 0; a short or missing Leitpunkt costs points, but not everything.",
+            "de": "Arbeiten Sie alle vier Leitpunkte ausführlich ab und beziehen Sie sie auf die Anzeige (die acht Abende und das Gericht aus der Heimat; die Fahrten am Montag und Freitag und die geteilten Benzinkosten). Seien Sie konkret: Nennen und beschreiben Sie kurz das Gericht, oder schlagen Sie einen Betrag pro Fahrt vor. Bleiben Sie im halbformellen Register. Ein D gibt es nur, wenn die E-Mail nicht zur Situation passt oder kaum einen Leitpunkt behandelt; dann zählt die ganze E-Mail 0 Punkte. Ein knapper oder fehlender Leitpunkt kostet Punkte, aber nicht alles."
+          },
+          {
+            "en": "Keep the Leitpunkte in a sensible order with smooth transitions (was … angeht, darüber hinaus, allerdings, abschließend). Open with an appropriate greeting and a link to the ad, and end with a closing sentence, for example asking for confirmation, and „Mit freundlichen Grüßen“.",
+            "de": "Halten Sie die Leitpunkte in einer sinnvollen Reihenfolge mit flüssigen Übergängen (was … angeht, darüber hinaus, allerdings, abschließend). Beginnen Sie mit einer passenden Anrede und einem Bezug zur Anzeige, und enden Sie mit einem Schlusssatz, etwa der Bitte um Bestätigung, und „Mit freundlichen Grüßen“."
+          },
+          {
+            "en": "Vary your vocabulary and sentence structures at B2 level: passive or zu-infinitives for describing the dish (Das Gericht wird mit … zubereitet), Konjunktiv II for proposals (Ich würde vorschlagen, dass …) and clauses with da, falls or obwohl. Errors should be rare.",
+            "de": "Variieren Sie Wortschatz und Satzbau auf B2-Niveau: Passiv oder Infinitiv mit zu für die Beschreibung des Gerichts (Das Gericht wird mit … zubereitet), Konjunktiv II für Vorschläge (Ich würde vorschlagen, dass …) und Nebensätze mit da, falls oder obwohl. Fehler sollten selten sein."
+          }
+        ]
+      }
+    }
+  ]
+}
