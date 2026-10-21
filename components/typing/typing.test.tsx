@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { useState } from 'react';
 import { screen, fireEvent } from '@testing-library/react';
 import { renderWithIntl } from '@/test/renderWithIntl';
@@ -43,6 +43,33 @@ describe('GermanTextarea', () => {
     first.unmount();
     renderWithIntl(<Harness />);
     expect(screen.getByRole('button', { name: 'Insert ß' })).toBeInTheDocument();
+  });
+
+  // Final review Important 3: blocked storage loses the memory, not the row.
+  it('still opens and closes the row when localStorage throws', () => {
+    const blocked = () => {
+      throw new DOMException('blocked', 'SecurityError');
+    };
+    const spies = [
+      vi.spyOn(Storage.prototype, 'getItem').mockImplementation(blocked),
+      vi.spyOn(Storage.prototype, 'setItem').mockImplementation(blocked),
+      vi.spyOn(Storage.prototype, 'removeItem').mockImplementation(blocked),
+    ];
+    try {
+      renderWithIntl(<Harness />);
+      const toggle = screen.getByRole('button', { name: 'äöü' });
+      // The in-memory state carries over from earlier tests (as it would within one page load).
+      if (toggle.getAttribute('aria-pressed') === 'true') fireEvent.click(toggle);
+      expect(toggle).toHaveAttribute('aria-pressed', 'false');
+      fireEvent.click(toggle);
+      expect(toggle).toHaveAttribute('aria-pressed', 'true');
+      expect(screen.getByRole('button', { name: 'Insert ß' })).toBeInTheDocument();
+      fireEvent.click(toggle);
+      expect(toggle).toHaveAttribute('aria-pressed', 'false');
+      expect(screen.queryByRole('button', { name: 'Insert ß' })).not.toBeInTheDocument();
+    } finally {
+      spies.forEach((s) => s.mockRestore());
+    }
   });
 
   it('disables the letters when the field is read-only', () => {

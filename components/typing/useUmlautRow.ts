@@ -4,12 +4,14 @@ import { useCallback, useSyncExternalStore } from 'react';
 
 const KEY = 'nadoch.umlautRow';
 const listeners = new Set<() => void>();
+// The state for this page load when storage is blocked: the choice isn't remembered, but the row still works.
+let fallback = false;
 
 function read(): boolean {
   try {
     return localStorage.getItem(KEY) === 'open';
   } catch {
-    return false;
+    return fallback;
   }
 }
 
@@ -27,9 +29,11 @@ function subscribe(listener: () => void) {
 export function useUmlautRow(): [open: boolean, toggle: () => void] {
   const open = useSyncExternalStore(subscribe, read, () => false);
   const toggle = useCallback(() => {
+    const next = !read();
+    fallback = next;
     try {
-      if (read()) localStorage.removeItem(KEY);
-      else localStorage.setItem(KEY, 'open');
+      if (next) localStorage.setItem(KEY, 'open');
+      else localStorage.removeItem(KEY);
     } catch {
       // Storage is unavailable: the choice just isn't remembered.
     }
