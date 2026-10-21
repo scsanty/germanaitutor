@@ -1,0 +1,98 @@
+{
+  "formatId": "goethe-b1",
+  "partId": "schreiben-1",
+  "anchors": [
+    {
+      "task": {
+        "situation": "Am letzten Samstag gab es in Ihrer Straße ein Straßenfest, und Sie haben dort mitgeholfen. Ihre Freundin Jana konnte leider nicht kommen. Schreiben Sie Jana eine E-Mail.",
+        "leitpunkte": [
+          "Beschreiben Sie: Was haben Sie beim Fest gemacht?",
+          "Begründen Sie: Was hat Ihnen besonders gut gefallen?",
+          "Machen Sie einen Vorschlag für ein Treffen."
+        ],
+        "register": "informal",
+        "wordTarget": {
+          "min": 64,
+          "max": 96
+        }
+      },
+      "letter": "Liebe Jana,\n\nschade, dass du am Samstag nicht beim Straßenfest warst! Ich habe am Kuchenstand geholfen und mit zwei Nachbarinnen Kaffee und Waffeln verkauft. Das war ziemlich anstrengend, weil den ganzen Tag so viele Leute gekommen sind.\n\nAm besten hat mir trotzdem die Stimmung gefallen. Alle waren gut gelaunt, und am Abend hat eine Band aus unserem Viertel gespielt. Deshalb haben wir bis Mitternacht getanzt.\n\nHast du nächsten Freitag Zeit? Dann könnten wir zusammen essen gehen, und ich zeige dir die Fotos.\n\nLiebe Grüße\nNora",
+      "grades": {
+        "erfuellung": "A",
+        "kohaerenz": "A",
+        "wortschatz": "A",
+        "strukturen": "A"
+      },
+      "justification": "Erfüllung A: Alle drei Punkte werden angemessen behandelt – die Arbeit am Kuchenstand, die Stimmung mit Band und Tanz als Begründung und ein konkreter Vorschlag für Freitag –, und Ton und Umfang passen zu einer E-Mail an eine Freundin. Kohärenz A: Anrede und Gruß passen, die Absätze folgen den Punkten, und „weil“, „trotzdem“, „deshalb“ und „dann“ verbinden die Sätze. Wortschatz A: Der Wortschatz ist breit und passend („Kuchenstand“, „gut gelaunt“, „Stimmung“, „aus unserem Viertel“). Strukturen A: Nebensätze mit „dass“ und „weil“, Perfekt und „könnten“ sind korrekt verwendet."
+    },
+    {
+      "task": {
+        "situation": "Am letzten Samstag gab es in Ihrer Straße ein Straßenfest, und Sie haben dort mitgeholfen. Ihre Freundin Jana konnte leider nicht kommen. Schreiben Sie Jana eine E-Mail.",
+        "leitpunkte": [
+          "Beschreiben Sie: Was haben Sie beim Fest gemacht?",
+          "Begründen Sie: Was hat Ihnen besonders gut gefallen?",
+          "Machen Sie einen Vorschlag für ein Treffen."
+        ],
+        "register": "informal",
+        "wordTarget": {
+          "min": 64,
+          "max": 96
+        }
+      },
+      "letter": "Hallo Jana,\n\nwie geht es dir? Am Samstag war das Straßenfest in unsere Straße und ich habe am Kuchenstand geholfen. Ich habe Kaffee und Waffeln verkauft und es war viel Arbeit, weil es gab sehr viele Leute.\n\nDas Fest hat mir gut gefallen. Die Stimmung war sehr gut und die Musik war auch sehr gut. Am Abend wir haben getanzt.\n\nHast du am Sonntag Zeit? Wir können ins Café gehen, dann erzähle ich dir mehr.\n\nViele Grüße\nNora",
+      "grades": {
+        "erfuellung": "B",
+        "kohaerenz": "B",
+        "wortschatz": "B",
+        "strukturen": "B"
+      },
+      "justification": "Erfüllung B: Alle drei Punkte kommen vor, aber die Begründung bleibt knapp („Die Stimmung war sehr gut und die Musik war auch sehr gut“). Kohärenz B: Anrede, Absätze und Gruß passen, doch die Sätze werden fast nur mit „und“ verbunden. Wortschatz B: Der Wortschatz reicht, wiederholt sich aber („sehr gut … sehr gut“, „es gab sehr viele Leute“). Strukturen B: Einige Fehler bei Wortstellung und Kasus („weil es gab“, „Am Abend wir haben getanzt“, „in unsere Straße“) stören das Verständnis kaum."
+    },
+    {
+      "task": {
+        "situation": "Am letzten Samstag gab es in Ihrer Straße ein Straßenfest, und Sie haben dort mitgeholfen. Ihre Freundin Jana konnte leider nicht kommen. Schreiben Sie Jana eine E-Mail.",
+        "leitpunkte": [
+          "Beschreiben Sie: Was haben Sie beim Fest gemacht?",
+          "Begründen Sie: Was hat Ihnen besonders gut gefallen?",
+          "Machen Sie einen Vorschlag für ein Treffen."
+        ],
+        "register": "informal",
+        "wordTarget": {
+          "min": 64,
+          "max": 96
+        }
+      },
+      "letter": "Hallo Jana,\n\nam Samstag ich war bei Straßenfest. Ich habe geholft bei die Kuchen. Viele Leute ist gekommen. Danach ich war sehr müde und ich habe geschlaft bis Sonntag Mittag. Am Sonntag ich habe auch meine Wohnung geputzt und meine Mutter angerufen, sie ist krank. Das Fest war schön. Es gibt Musik und Essen und Trinken. Ich finde gut. Und dein Wochenende? Was hast du gemacht? Ich hoffe gut.\n\nTschüss\nNora",
+      "grades": {
+        "erfuellung": "C",
+        "kohaerenz": "C",
+        "wortschatz": "C",
+        "strukturen": "C"
+      },
+      "justification": "Erfüllung C: Der Vorschlag für ein Treffen fehlt, die Begründung bleibt sehr knapp („Das Fest war schön … Ich finde gut“), und ein Teil des Textes handelt vom Sonntag, nach dem nicht gefragt wurde. Kohärenz C: Anrede und Gruß sind da, aber der Text ist ein ungegliederter Block, der Zusammenhang springt, und es gibt nur einfache Konnektoren wie „und“ und „danach“. Wortschatz C: Der Wortschatz ist begrenzt, und Ausdrücke wie „geholft bei die Kuchen“ erschweren stellenweise das Verständnis. Strukturen C: Häufige Fehler bei Wortstellung („am Samstag ich war“), Partizipien („geholft“, „geschlaft“), Kongruenz („Viele Leute ist“) und Tempus („Es gibt Musik“) in überwiegend einfachen Sätzen."
+    },
+    {
+      "task": {
+        "situation": "Am letzten Samstag gab es in Ihrer Straße ein Straßenfest, und Sie haben dort mitgeholfen. Ihre Freundin Jana konnte leider nicht kommen. Schreiben Sie Jana eine E-Mail.",
+        "leitpunkte": [
+          "Beschreiben Sie: Was haben Sie beim Fest gemacht?",
+          "Begründen Sie: Was hat Ihnen besonders gut gefallen?",
+          "Machen Sie einen Vorschlag für ein Treffen."
+        ],
+        "register": "informal",
+        "wordTarget": {
+          "min": 64,
+          "max": 96
+        }
+      },
+      "letter": "Hallo,\n\nich Straßenfest nicht da, Samstag Arbeit ich. Chef nicht nett, immer Arbeit, müde. Du auch Arbeit viel? Auto mein kaputt.\n\nNora",
+      "grades": {
+        "erfuellung": "E",
+        "kohaerenz": "D",
+        "wortschatz": "E",
+        "strukturen": "E"
+      },
+      "justification": "Erfüllung E: Der Text passt nicht zur Situation – Nora war gar nicht beim Fest, beschreibt nichts, begründet nichts und macht keinen Vorschlag, und er ist viel zu kurz. Kohärenz D: Es gibt nur unverbundene Einzelsätze ohne Konnektoren und keinen passenden Gruß. Wortschatz E: Mit wenigen Wörtern wie „Arbeit“, „Chef“ und „kaputt“ reicht der Wortschatz für die Aufgabe nicht aus. Strukturen E: Fast keine Sätze haben ein konjugiertes Verb („ich Straßenfest nicht da“, „Auto mein kaputt“), sodass der Text kaum verständlich ist."
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "formatId": "goethe-a1",
+  "partId": "schreiben-2",
+  "anchors": [
+    {
+      "task": {
+        "situation": "Ihr Freund Tobias zieht am Samstag in eine neue Wohnung. Sie wollten ihm beim Umzug helfen, aber Sie sind krank. Schreiben Sie Tobias eine E-Mail.",
+        "leitpunkte": [
+          "Warum können Sie am Samstag nicht kommen?",
+          "Wann können Sie helfen?",
+          "Was bringen Sie mit?"
+        ],
+        "register": "informal",
+        "wordTarget": {
+          "min": 24,
+          "max": 36
+        }
+      },
+      "letter": "Lieber Tobias,\n\nleider kann ich am Samstag nicht kommen, denn ich bin krank. Aber am Sonntag habe ich Zeit und kann dir helfen. Ich bringe Pizza und Getränke mit.\n\nViele Grüße\nSara",
+      "grades": {
+        "punkt-1": "A",
+        "punkt-2": "A",
+        "punkt-3": "A",
+        "gestaltung": "A"
+      },
+      "justification": "Punkt 1 A: Der Grund ist klar und verständlich („denn ich bin krank“). Punkt 2 A: Sara nennt einen konkreten Tag („am Sonntag habe ich Zeit“). Punkt 3 A: Sie sagt genau, was sie mitbringt („Pizza und Getränke“). Gestaltung A: Anrede und Gruß passen zu einem Freund, und die Sätze sind mit „denn“, „aber“ und „und“ verbunden."
+    },
+    {
+      "task": {
+        "situation": "Ihr Freund Tobias zieht am Samstag in eine neue Wohnung. Sie wollten ihm beim Umzug helfen, aber Sie sind krank. Schreiben Sie Tobias eine E-Mail.",
+        "leitpunkte": [
+          "Warum können Sie am Samstag nicht kommen?",
+          "Wann können Sie helfen?",
+          "Was bringen Sie mit?"
+        ],
+        "register": "informal",
+        "wordTarget": {
+          "min": 24,
+          "max": 36
+        }
+      },
+      "letter": "Hallo Tobias,\n\nich kann am Samstag nicht kommen. Ich bin krank, ich habe Fieber. Am Sonntag ich habe Zeit, ich helfe dich gerne. Ich bringe was mit, okay?\n\nLiebe Grüße\nSara",
+      "grades": {
+        "punkt-1": "A",
+        "punkt-2": "A",
+        "punkt-3": "B",
+        "gestaltung": "B"
+      },
+      "justification": "Punkt 1 A: Der Grund ist verständlich („Ich bin krank, ich habe Fieber“). Punkt 2 A: Der Tag ist klar („Am Sonntag“), die Fehler („Am Sonntag ich habe“, „ich helfe dich“) stören das Verständnis nicht. Punkt 3 B: Sara schreibt nur „Ich bringe was mit“ und sagt nicht, was. Gestaltung B: Anrede und Gruß passen, aber die Sätze stehen ohne Konnektoren nebeneinander."
+    },
+    {
+      "task": {
+        "situation": "Ihr Freund Tobias zieht am Samstag in eine neue Wohnung. Sie wollten ihm beim Umzug helfen, aber Sie sind krank. Schreiben Sie Tobias eine E-Mail.",
+        "leitpunkte": [
+          "Warum können Sie am Samstag nicht kommen?",
+          "Wann können Sie helfen?",
+          "Was bringen Sie mit?"
+        ],
+        "register": "informal",
+        "wordTarget": {
+          "min": 24,
+          "max": 36
+        }
+      },
+      "letter": "Samstag ich nicht kommen, ich bin nicht gut. Ich kann helfen später, wann du willst. Ich bringen Kuchen und Kaffee. Und meine Bruder kommt auch mit.\n\nTschüss\nSara",
+      "grades": {
+        "punkt-1": "B",
+        "punkt-2": "B",
+        "punkt-3": "A",
+        "gestaltung": "B"
+      },
+      "justification": "Punkt 1 B: Der Grund ist nur ungenau und fehlerhaft formuliert („ich bin nicht gut“), man muss raten, dass Sara krank ist. Punkt 2 B: Sie nennt keinen Tag, nur „später, wann du willst“. Punkt 3 A: Was sie mitbringt, ist trotz „Ich bringen“ klar („Kuchen und Kaffee“). Gestaltung B: Der Gruß passt, aber die Anrede fehlt, der Text beginnt direkt mit „Samstag ich nicht kommen“."
+    },
+    {
+      "task": {
+        "situation": "Ihr Freund Tobias zieht am Samstag in eine neue Wohnung. Sie wollten ihm beim Umzug helfen, aber Sie sind krank. Schreiben Sie Tobias eine E-Mail.",
+        "leitpunkte": [
+          "Warum können Sie am Samstag nicht kommen?",
+          "Wann können Sie helfen?",
+          "Was bringen Sie mit?"
+        ],
+        "register": "informal",
+        "wordTarget": {
+          "min": 24,
+          "max": 36
+        }
+      },
+      "letter": "Hallo Tobias, ich habe neu Wohnung auch. Wohnung ist groß. Du kommen?\n\nSara",
+      "grades": {
+        "punkt-1": "C",
+        "punkt-2": "C",
+        "punkt-3": "C",
+        "gestaltung": "B"
+      },
+      "justification": "Punkt 1 C: Sara schreibt nicht, warum sie am Samstag nicht kommt; der Text handelt von ihrer eigenen Wohnung. Punkt 2 C: Wann sie helfen kann, fehlt ganz. Punkt 3 C: Was sie mitbringt, fehlt ganz. Gestaltung B: Die Anrede „Hallo Tobias“ ist da, aber ein Gruß fehlt, und die Sätze stehen ohne Konnektoren nebeneinander."
+    }
+  ]
+}

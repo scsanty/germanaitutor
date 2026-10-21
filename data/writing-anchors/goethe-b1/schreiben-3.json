@@ -1,0 +1,98 @@
+{
+  "formatId": "goethe-b1",
+  "partId": "schreiben-3",
+  "anchors": [
+    {
+      "task": {
+        "situation": "Sie haben sich für einen Fotokurs an der Volkshochschule angemeldet. Der erste Kursabend ist am Donnerstag, aber Sie können nicht kommen. Schreiben Sie dem Kursleiter, Herrn Brandt, eine E-Mail.",
+        "leitpunkte": [
+          "Entschuldigen Sie sich.",
+          "Nennen Sie den Grund.",
+          "Bitten Sie um die Unterlagen vom ersten Abend."
+        ],
+        "register": "formal",
+        "wordTarget": {
+          "min": 32,
+          "max": 48
+        }
+      },
+      "letter": "Sehr geehrter Herr Brandt,\n\nes tut mir leid, aber ich kann am Donnerstag nicht zum ersten Kursabend kommen. Ich muss länger arbeiten, weil eine Kollegin krank ist. Könnten Sie mir bitte die Unterlagen per E-Mail schicken? Vielen Dank im Voraus!\n\nMit freundlichen Grüßen\nAmir Haddad",
+      "grades": {
+        "erfuellung": "A",
+        "kohaerenz": "A",
+        "wortschatz": "A",
+        "strukturen": "A"
+      },
+      "justification": "Erfüllung A: Entschuldigung („es tut mir leid“), Grund (eine kranke Kollegin) und die höfliche Bitte um die Unterlagen kommen klar vor, und das formelle Register passt. Kohärenz A: Anrede, Einleitung („es tut mir leid“), Schluss („Vielen Dank im Voraus!“) und Gruß sind formell und passend, und „aber“ und „weil“ verbinden die Sätze. Wortschatz A: Der Wortschatz ist passend („Kursabend“, „Unterlagen“, „per E-Mail“). Strukturen A: Der Nebensatz mit „weil“ und die höfliche Frage mit „Könnten Sie“ sind korrekt."
+    },
+    {
+      "task": {
+        "situation": "Sie haben sich für einen Fotokurs an der Volkshochschule angemeldet. Der erste Kursabend ist am Donnerstag, aber Sie können nicht kommen. Schreiben Sie dem Kursleiter, Herrn Brandt, eine E-Mail.",
+        "leitpunkte": [
+          "Entschuldigen Sie sich.",
+          "Nennen Sie den Grund.",
+          "Bitten Sie um die Unterlagen vom ersten Abend."
+        ],
+        "register": "formal",
+        "wordTarget": {
+          "min": 32,
+          "max": 48
+        }
+      },
+      "letter": "Sehr geehrter Herr Brandt,\n\nich kann am Donnerstag nicht in den Kurs kommen, sorry. Ich muss arbeiten länger, denn meine Kollegin ist krank. Können Sie mir die Unterlagen schicken? Das wäre sehr nett.\n\nViele Grüße\nAmir Haddad",
+      "grades": {
+        "erfuellung": "B",
+        "kohaerenz": "B",
+        "wortschatz": "B",
+        "strukturen": "B"
+      },
+      "justification": "Erfüllung B: Alle Punkte kommen vor, aber die Entschuldigung ist nur ein knappes „sorry“, das nicht zum formellen Register passt. Kohärenz B: Anrede und Gruß sind da, und der Text ist zusammenhängend, aber die Verbindungen bleiben einfach und einförmig (nur „denn“). Wortschatz B: Der Wortschatz reicht („Unterlagen“, „Das wäre sehr nett“), mit einem unpassenden Wort („sorry“). Strukturen B: Ein Wortstellungsfehler („Ich muss arbeiten länger“) stört das Verständnis kaum."
+    },
+    {
+      "task": {
+        "situation": "Sie haben sich für einen Fotokurs an der Volkshochschule angemeldet. Der erste Kursabend ist am Donnerstag, aber Sie können nicht kommen. Schreiben Sie dem Kursleiter, Herrn Brandt, eine E-Mail.",
+        "leitpunkte": [
+          "Entschuldigen Sie sich.",
+          "Nennen Sie den Grund.",
+          "Bitten Sie um die Unterlagen vom ersten Abend."
+        ],
+        "register": "formal",
+        "wordTarget": {
+          "min": 32,
+          "max": 48
+        }
+      },
+      "letter": "Hallo Herr Brandt,\n\nam Donnerstag ich komme nicht in Kurs. Ich habe Arbeit, mein Chef sagt ich muss bleiben bis 21 Uhr. Schick mir bitte die Papiere von Kurs. Ich komme dann nächste Woche.\n\nTschüss\nAmir",
+      "grades": {
+        "erfuellung": "C",
+        "kohaerenz": "C",
+        "wortschatz": "C",
+        "strukturen": "C"
+      },
+      "justification": "Erfüllung C: Grund und Bitte kommen vor, aber eine Entschuldigung fehlt, und das Register passt oft nicht („Hallo“, „Schick mir“, „Tschüss“). Kohärenz C: Es gibt nur einen einfachen Konnektor („dann“), und Anrede und Gruß passen nicht zu einer formellen E-Mail. Wortschatz C: Der Wortschatz ist begrenzt („Papiere“ statt „Unterlagen“, „Ich habe Arbeit“). Strukturen C: Einfache Sätze mit häufigen Fehlern bei Wortstellung und Artikel („am Donnerstag ich komme“, „in Kurs“, „von Kurs“)."
+    },
+    {
+      "task": {
+        "situation": "Sie haben sich für einen Fotokurs an der Volkshochschule angemeldet. Der erste Kursabend ist am Donnerstag, aber Sie können nicht kommen. Schreiben Sie dem Kursleiter, Herrn Brandt, eine E-Mail.",
+        "leitpunkte": [
+          "Entschuldigen Sie sich.",
+          "Nennen Sie den Grund.",
+          "Bitten Sie um die Unterlagen vom ersten Abend."
+        ],
+        "register": "formal",
+        "wordTarget": {
+          "min": 32,
+          "max": 48
+        }
+      },
+      "letter": "Hallo, Kurs Foto ich will. Kamera neu kaufen, welche? Was kosten?\n\nAmir",
+      "grades": {
+        "erfuellung": "E",
+        "kohaerenz": "E",
+        "wortschatz": "E",
+        "strukturen": "D"
+      },
+      "justification": "Erfüllung E: Der Text passt nicht zur Situation: Es gibt keine Entschuldigung, keinen Grund und keine Bitte um Unterlagen, nur Fragen zu einer Kamera, und er ist viel zu kurz. Kohärenz E: Zwischen den Satzstücken ist kein Zusammenhang erkennbar, und es gibt weder formelle Anrede noch Gruß. Wortschatz E: Die wenigen Wörter („Kurs“, „Kamera“, „kaufen“) reichen für die Aufgabe nicht aus. Strukturen D: Schon einfache Strukturen sind fehlerhaft („Kurs Foto ich will“, „Was kosten?“), das Verständnis ist stark behindert."
+    }
+  ]
+}
