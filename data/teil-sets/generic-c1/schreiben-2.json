@@ -1,0 +1,121 @@
+{
+  "formatId": "generic-c1",
+  "partId": "schreiben-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-c1__schreiben-2__s01",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie arbeiten seit sechs Jahren als Projektleiterin oder Projektleiter bei der Firma Hartwig Logistik in Kassbach. Sie möchten im nächsten Jahr eine sechsmonatige unbezahlte Auszeit (Sabbatical) nehmen. Schreiben Sie eine E-Mail an die Personalleiterin, Frau Kestner.",
+              "leitpunkte": [
+                "Ihr Anliegen und der gewünschte Zeitraum",
+                "Gründe für die Auszeit",
+                "Wie Ihre Aufgaben während Ihrer Abwesenheit übernommen werden könnten",
+                "Bitte um ein persönliches Gespräch"
+              ],
+              "register": "formal",
+              "wordTarget": {
+                "min": 120,
+                "max": 180
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Cover all four points in a differentiated way: state your request and the exact period, give convincing reasons, propose a concrete handover plan (who takes over which projects, how you prepare them), and ask for a meeting. Show that you have considered the company's interests as well.",
+            "de": "Behandeln Sie alle vier Punkte differenziert: Nennen Sie Ihr Anliegen und den genauen Zeitraum, geben Sie überzeugende Gründe, schlagen Sie einen konkreten Übergabeplan vor (wer welche Projekte übernimmt, wie Sie das vorbereiten) und bitten Sie um ein Gespräch. Zeigen Sie, dass Sie auch die Interessen der Firma bedacht haben."
+          },
+          {
+            "en": "Address Frau Kestner by name (\"Sehr geehrte Frau Kestner,\") and close with \"Mit freundlichen Grüßen\". Lead from request to reasons to solution, and link the parts with precise connectors and reference words such as \"zumal\", \"zu diesem Zweck\" and \"in diesem Zusammenhang\".",
+            "de": "Sprechen Sie Frau Kestner mit Namen an („Sehr geehrte Frau Kestner,“) und schließen Sie mit „Mit freundlichen Grüßen“. Führen Sie vom Anliegen über die Gründe zur Lösung und verknüpfen Sie die Teile mit präzisen Konnektoren und Verweiswörtern wie „zumal“, „zu diesem Zweck“ und „in diesem Zusammenhang“."
+          },
+          {
+            "en": "Use a confident, polished formal style: the Konjunktiv II for polite requests (\"Ich würde mich freuen, wenn …\"), nominal phrases (\"die Übergabe meiner Projekte\") and the passive (\"Die Aufgaben könnten von … übernommen werden\").",
+            "de": "Verwenden Sie einen sicheren, gepflegten formellen Stil: den Konjunktiv II für höfliche Bitten („Ich würde mich freuen, wenn …“), Nominalgruppen („die Übergabe meiner Projekte“) und das Passiv („Die Aufgaben könnten von … übernommen werden“)."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-c1__schreiben-2__s02",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Die Regionalzeitung „Lindhausener Tageblatt“ hat einen Artikel über Ihren Sportverein, den TSV Grünwalde, veröffentlicht. Darin wird behauptet, der Verein stehe kurz vor der Auflösung und habe Mitgliedsbeiträge falsch verwendet. Beides stimmt nicht. Schreiben Sie als Vorstandsmitglied eine E-Mail an die Redaktion.",
+              "leitpunkte": [
+                "Anlass Ihres Schreibens",
+                "Welche Aussagen falsch sind und wie die Tatsachen aussehen",
+                "Welche Folgen der Artikel für den Verein hat",
+                "Was Sie von der Redaktion erwarten"
+              ],
+              "register": "formal",
+              "wordTarget": {
+                "min": 120,
+                "max": 180
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Name the article precisely (date, headline), correct each false claim with concrete facts (e.g. member numbers, an audited budget), explain the consequences for the club (worried members, sponsors) and state clearly what you expect, e.g. a correction, a printed reply or an interview.",
+            "de": "Nennen Sie den Artikel genau (Datum, Überschrift), korrigieren Sie jede falsche Behauptung mit konkreten Fakten (z. B. Mitgliederzahlen, ein geprüfter Haushalt), erklären Sie die Folgen für den Verein (besorgte Mitglieder, Sponsoren) und sagen Sie klar, was Sie erwarten, z. B. eine Richtigstellung, eine Gegendarstellung oder ein Interview."
+          },
+          {
+            "en": "Stay objective and polite even though the article was unfair: a formal greeting, a clear structure (occasion, corrections, consequences, demand) and a courteous closing. Use precise links such as \"entgegen der Darstellung\", \"vielmehr\", \"infolgedessen\" and \"vor diesem Hintergrund\".",
+            "de": "Bleiben Sie sachlich und höflich, auch wenn der Artikel unfair war: formelle Anrede, klare Gliederung (Anlass, Richtigstellung, Folgen, Forderung) und ein höflicher Schluss. Verwenden Sie präzise Verknüpfungen wie „entgegen der Darstellung“, „vielmehr“, „infolgedessen“ und „vor diesem Hintergrund“."
+          },
+          {
+            "en": "Report the newspaper's claims in indirect speech with the Konjunktiv I (\"Es heißt, der Verein stehe vor der Auflösung\") and use precise formal vocabulary (\"Richtigstellung\", \"Behauptung\", \"Rufschädigung\").",
+            "de": "Geben Sie die Behauptungen der Zeitung in indirekter Rede mit dem Konjunktiv I wieder („Es heißt, der Verein stehe vor der Auflösung“) und verwenden Sie präzisen formellen Wortschatz („Richtigstellung“, „Behauptung“, „Rufschädigung“)."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-c1__schreiben-2__s03",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Sie organisieren ehrenamtlich in Ihrer Stadt Talbrück einen Schreibwettbewerb für Jugendliche zwischen 14 und 18 Jahren. Für Preise, eine Jury und eine Abschlussveranstaltung fehlt Ihnen noch Geld. Die Elsbeth-Rohde-Stiftung fördert kulturelle Projekte in der Region. Schreiben Sie eine E-Mail an die Stiftung.",
+              "leitpunkte": [
+                "Wer Sie sind und worum es in Ihrem Projekt geht",
+                "Warum das Projekt für Jugendliche in der Region wichtig ist",
+                "Wofür Sie die Förderung genau benötigen",
+                "Wie die Stiftung im Projekt sichtbar werden könnte"
+              ],
+              "register": "formal",
+              "wordTarget": {
+                "min": 120,
+                "max": 180
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Present the project concisely, then argue convincingly why it matters for young people in the region. Say exactly what the money is for (prizes, jury, final event, ideally with an approximate sum) and offer concrete ways to show the foundation's support, e.g. its logo on posters or a speech at the event.",
+            "de": "Stellen Sie das Projekt knapp vor und begründen Sie dann überzeugend, warum es für Jugendliche in der Region wichtig ist. Sagen Sie genau, wofür Sie das Geld brauchen (Preise, Jury, Abschlussveranstaltung, am besten mit ungefährer Summe), und bieten Sie konkrete Möglichkeiten an, die Unterstützung der Stiftung zu zeigen, z. B. ihr Logo auf Plakaten oder ein Grußwort bei der Veranstaltung."
+          },
+          {
+            "en": "Write a well-structured formal request: greeting, introduction of yourself and the project, justification, the concrete request, an offer in return and a polite closing. Use precise connectors and references such as \"darüber hinaus\", \"insbesondere\", \"zu diesem Zweck\" and \"im Gegenzug\".",
+            "de": "Schreiben Sie eine gut gegliederte formelle Anfrage: Anrede, Vorstellung Ihrer Person und des Projekts, Begründung, die konkrete Bitte, ein Angebot im Gegenzug und ein höflicher Schluss. Verwenden Sie präzise Konnektoren und Verweise wie „darüber hinaus“, „insbesondere“, „zu diesem Zweck“ und „im Gegenzug“."
+          },
+          {
+            "en": "Use polished C1 language: nominal style (\"die Förderung kultureller Bildung\"), final clauses (\"damit\", \"um … zu\"), the Konjunktiv II for requests (\"Wir würden uns sehr freuen, wenn …\") and participle attributes (\"die eingereichten Texte\").",
+            "de": "Verwenden Sie eine gepflegte C1-Sprache: Nominalstil („die Förderung kultureller Bildung“), Finalsätze („damit“, „um … zu“), den Konjunktiv II für Bitten („Wir würden uns sehr freuen, wenn …“) und Partizipialattribute („die eingereichten Texte“)."
+          }
+        ]
+      }
+    }
+  ]
+}
