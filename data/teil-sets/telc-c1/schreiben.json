@@ -1,0 +1,175 @@
+{
+  "formatId": "telc-c1",
+  "partId": "schreiben",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-c1__schreiben__s01",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Thema: Organspende – Zustimmung oder Widerspruch?\n\nIn vielen Ländern warten Tausende von Kranken jahrelang auf ein Spenderorgan. Deshalb wird vorgeschlagen, die sogenannte Widerspruchslösung einzuführen: Jeder Mensch gilt dann automatisch als Organspender, sofern er zu Lebzeiten nicht ausdrücklich widersprochen hat. Befürworter erhoffen sich deutlich mehr Spenderorgane, Kritiker sehen darin einen Eingriff in das Selbstbestimmungsrecht über den eigenen Körper.\n\nSchreiben Sie einen Text, in dem Sie Ihren eigenen Standpunkt zu der Frage erarbeiten und argumentativ darlegen, ob die Widerspruchslösung eingeführt werden sollte.",
+              "leitpunkte": [
+                "Mögliche Vorteile für Patientinnen und Patienten und für das Gesundheitswesen",
+                "Ethische und rechtliche Einwände",
+                "Andere Wege, die Bereitschaft zur Organspende zu erhöhen",
+                "Ihre eigene, begründete Position"
+              ],
+              "register": "formal",
+              "wordTarget": {
+                "min": 280,
+                "max": 420
+              }
+            },
+            {
+              "situation": "Thema: Werbeverbot für ungesunde Lebensmittel?\n\nFachleute für Kindergesundheit fordern, Werbung für besonders zucker-, fett- oder salzhaltige Lebensmittel zu verbieten, sobald sie sich an Kinder richtet – im Fernsehen, im Internet und in der Nähe von Schulen. Lebensmittelhersteller und Werbewirtschaft halten dagegen, dass Ernährung in erster Linie Sache der Eltern sei und ein Verbot die unternehmerische Freiheit unverhältnismäßig einschränke.\n\nSchreiben Sie einen Text, in dem Sie Ihren eigenen Standpunkt zu der Frage erarbeiten und argumentativ darlegen, ob ein solches Werbeverbot eingeführt werden sollte.",
+              "leitpunkte": [
+                "Argumente, die für ein Werbeverbot sprechen",
+                "Argumente, die dagegen sprechen",
+                "Die Rolle von Eltern, Schulen und Herstellern bei einer gesunden Ernährung von Kindern",
+                "Ihre eigene, begründete Position"
+              ],
+              "register": "formal",
+              "wordTarget": {
+                "min": 280,
+                "max": 420
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Work out a real position on whichever topic you choose: discuss the benefits (more donor organs and lives saved, or protecting children), give the objections their due (self-determination and ethical concerns, or parental responsibility and economic freedom), address the third Leitpunkt with concrete alternatives or roles, and justify your own view at the end. If the task is missed or barely addressed (a D here), the whole text scores 0.",
+            "de": "Erarbeiten Sie zum gewählten Thema einen echten Standpunkt: Erörtern Sie die Vorteile (mehr Spenderorgane und gerettete Leben bzw. Schutz der Kinder), nehmen Sie die Einwände ernst (Selbstbestimmung und ethische Bedenken bzw. Verantwortung der Eltern und unternehmerische Freiheit), behandeln Sie den dritten Leitpunkt mit konkreten anderen Wegen bzw. Rollen und begründen Sie am Schluss Ihre eigene Position. Wird das Thema verfehlt oder kaum bearbeitet (ein D hier), erhält der ganze Text 0 Punkte."
+          },
+          {
+            "en": "Give the text a clear structure: an introduction that sets out the debate, one paragraph each for the arguments for and against, then the alternatives or roles, and a conclusion with your position. Link the paragraphs with precise connectors (zum einen … zum anderen, dem lässt sich entgegenhalten, gleichwohl, folglich) instead of repeating „und“ and „aber“.",
+            "de": "Gliedern Sie den Text klar: eine Einleitung, die die Debatte umreißt, je ein Absatz zu den Argumenten dafür und dagegen, dann die anderen Wege oder Rollen und ein Schluss mit Ihrer Position. Verknüpfen Sie die Absätze mit präzisen Konnektoren (zum einen … zum anderen, dem lässt sich entgegenhalten, gleichwohl, folglich), statt immer wieder „und“ und „aber“ zu verwenden."
+          },
+          {
+            "en": "Use precise, factual vocabulary for the topic, for example Selbstbestimmungsrecht, Widerspruchslösung, Spendebereitschaft, or Kinderschutz, Eigenverantwortung, Selbstverpflichtung der Industrie. Vary how you express opinions (meines Erachtens, ich halte es für fraglich, ob …) and keep a neutral, objective style.",
+            "de": "Verwenden Sie präzisen, sachlichen Wortschatz zum Thema, zum Beispiel Selbstbestimmungsrecht, Widerspruchslösung, Spendebereitschaft oder Kinderschutz, Eigenverantwortung, Selbstverpflichtung der Industrie. Variieren Sie Ihre Meinungsäußerungen (meines Erachtens, ich halte es für fraglich, ob …) und bleiben Sie durchgehend sachlich und neutral."
+          },
+          {
+            "en": "Show confident C1 structures: nominal style (die Einführung der Widerspruchslösung), passive with modal verbs (müsste gesetzlich geregelt werden), Konjunktiv II for hypotheses (Ein Verbot würde … bewirken) and correctly punctuated subordinate and infinitive clauses. Check comma placement and verb position before handing in.",
+            "de": "Zeigen Sie sichere C1-Strukturen: Nominalstil (die Einführung der Widerspruchslösung), Passiv mit Modalverben (müsste gesetzlich geregelt werden), Konjunktiv II für Hypothesen (Ein Verbot würde … bewirken) und korrekt mit Kommas abgetrennte Neben- und Infinitivsätze. Prüfen Sie vor der Abgabe Kommasetzung und Verbstellung."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-c1__schreiben__s02",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Thema: Autofreie Innenstädte?\n\nIn vielen Städten wird darüber diskutiert, private Autos weitgehend aus den Innenstädten zu verbannen. Die frei werdenden Flächen sollen Fußgängern, Radfahrenden, Grünanlagen und Cafés zugutekommen. Einzelhändler befürchten jedoch, dass Kundschaft aus dem Umland ausbleibt, und Menschen mit eingeschränkter Mobilität sorgen sich, ob sie das Zentrum dann noch problemlos erreichen können.\n\nSchreiben Sie einen Text, in dem Sie Ihren eigenen Standpunkt zu der Frage erarbeiten und argumentativ darlegen, ob Innenstädte autofrei werden sollten.",
+              "leitpunkte": [
+                "Mögliche Vorteile für die Lebensqualität und die Umwelt",
+                "Mögliche Nachteile für Handel, Pendler und Menschen mit eingeschränkter Mobilität",
+                "Maßnahmen, die eine autofreie Innenstadt begleiten müssten",
+                "Ihre eigene, begründete Position"
+              ],
+              "register": "formal",
+              "wordTarget": {
+                "min": 280,
+                "max": 420
+              }
+            },
+            {
+              "situation": "Thema: Künstliche Intelligenz in Schule und Studium\n\nProgramme mit künstlicher Intelligenz können inzwischen in Sekunden Aufsätze verfassen, Aufgaben lösen und Texte zusammenfassen. Während einige Schulen und Hochschulen ihre Nutzung bei Hausarbeiten strikt untersagen, sehen andere darin ein Werkzeug, mit dem Lernende ohnehin umgehen lernen müssen. Kritiker fürchten, dass grundlegende Fähigkeiten wie eigenständiges Schreiben und Denken verkümmern.\n\nSchreiben Sie einen Text, in dem Sie Ihren eigenen Standpunkt zu der Frage erarbeiten und argumentativ darlegen, wie Schulen und Hochschulen mit künstlicher Intelligenz umgehen sollten.",
+              "leitpunkte": [
+                "Chancen, die künstliche Intelligenz für das Lernen bietet",
+                "Risiken für Lernende und für die Bewertung von Leistungen",
+                "Regeln oder Formen des Unterrichts, die einen sinnvollen Umgang ermöglichen könnten",
+                "Ihre eigene, begründete Position"
+              ],
+              "register": "formal",
+              "wordTarget": {
+                "min": 280,
+                "max": 420
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Whichever topic you choose, weigh both sides in detail: benefits such as cleaner air and more public space, or faster learning and individual support, against drawbacks such as lost customers and poorer accessibility, or weaker independent thinking and unfair assessment. Propose concrete accompanying measures or rules and end with a well-reasoned position of your own. A D here (topic missed or barely addressed) means the whole text scores 0.",
+            "de": "Wägen Sie zum gewählten Thema beide Seiten differenziert ab: Vorteile wie sauberere Luft und mehr öffentlicher Raum bzw. schnelleres Lernen und individuelle Förderung gegenüber Nachteilen wie ausbleibender Kundschaft und schlechterer Erreichbarkeit bzw. verkümmerndem eigenständigem Denken und unfairer Bewertung. Schlagen Sie konkrete Begleitmaßnahmen oder Regeln vor und schließen Sie mit einer gut begründeten eigenen Position. Ein D hier (Thema verfehlt oder kaum bearbeitet) bedeutet 0 Punkte für den ganzen Text."
+          },
+          {
+            "en": "Build the argument step by step: introduction, advantages, disadvantages, measures or rules, conclusion. Make the transitions explicit (wenn …, so …; demgegenüber; hinzu kommt, dass …; vor diesem Hintergrund) and refer back to earlier points with reference words (dieser Einwand, ein solches Verbot) so that the reasoning hangs together.",
+            "de": "Bauen Sie die Argumentation schrittweise auf: Einleitung, Vorteile, Nachteile, Maßnahmen oder Regeln, Schluss. Gestalten Sie die Übergänge ausdrücklich (wenn …, so …; demgegenüber; hinzu kommt, dass …; vor diesem Hintergrund) und greifen Sie frühere Punkte mit Verweiswörtern auf (dieser Einwand, ein solches Verbot), damit die Gedankenführung zusammenhängt."
+          },
+          {
+            "en": "Name abstract ideas precisely: Aufenthaltsqualität, Verkehrswende, Barrierefreiheit, Lieferverkehr, or Eigenleistung, Medienkompetenz, Prüfungsformat, Chancengleichheit. Avoid vague words like „Sache“ or „gut/schlecht“ and keep a formal, objective tone without colloquial expressions.",
+            "de": "Benennen Sie abstrakte Sachverhalte genau: Aufenthaltsqualität, Verkehrswende, Barrierefreiheit, Lieferverkehr bzw. Eigenleistung, Medienkompetenz, Prüfungsformat, Chancengleichheit. Vermeiden Sie vage Wörter wie „Sache“ oder „gut/schlecht“ und bleiben Sie formell und sachlich, ohne umgangssprachliche Wendungen."
+          },
+          {
+            "en": "Use complex sentences accurately: concessive clauses (auch wenn, obwohl), two-part connectors with correct word order (nicht nur …, sondern auch; je …, desto), relative clauses with prepositions (Programme, mit deren Hilfe …) and Konjunktiv II. Pay attention to adjective endings and commas around subordinate clauses.",
+            "de": "Setzen Sie komplexe Sätze korrekt ein: Konzessivsätze (auch wenn, obwohl), zweiteilige Konnektoren mit richtiger Wortstellung (nicht nur …, sondern auch; je …, desto), Relativsätze mit Präposition (Programme, mit deren Hilfe …) und Konjunktiv II. Achten Sie auf Adjektivendungen und Kommas bei Nebensätzen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-c1__schreiben__s03",
+      "set": {
+        "taskType": "letter",
+        "content": {
+          "tasks": [
+            {
+              "situation": "Thema: Obergrenzen für Touristen in beliebten Städten?\n\nManche Städte und Regionen leiden unter einem Ansturm von Besucherinnen und Besuchern: Altstädte sind überfüllt, Wohnungen werden in Ferienunterkünfte umgewandelt, und die Mieten steigen. Deshalb wird vorgeschlagen, die Zahl der Touristen zu begrenzen, etwa durch Eintrittsgebühren, Tageskontingente oder ein Verbot neuer Ferienwohnungen. Andere geben zu bedenken, dass viele Arbeitsplätze vom Tourismus abhängen.\n\nSchreiben Sie einen Text, in dem Sie Ihren eigenen Standpunkt zu der Frage erarbeiten und argumentativ darlegen, ob der Tourismus in beliebten Städten begrenzt werden sollte.",
+              "leitpunkte": [
+                "Gründe, die für eine Begrenzung des Tourismus sprechen",
+                "Wirtschaftliche und gesellschaftliche Einwände gegen Obergrenzen",
+                "Andere Möglichkeiten, die Folgen des Massentourismus zu verringern",
+                "Ihre eigene, begründete Position"
+              ],
+              "register": "formal",
+              "wordTarget": {
+                "min": 280,
+                "max": 420
+              }
+            },
+            {
+              "situation": "Thema: Eine Zukunft ohne Bargeld?\n\nImmer mehr Menschen bezahlen mit Karte oder Mobiltelefon, und einige Geschäfte nehmen schon gar kein Bargeld mehr an. Befürworter einer bargeldlosen Gesellschaft verweisen auf Bequemlichkeit, geringere Kosten und weniger Schwarzarbeit. Gegner warnen vor dem Verlust der Privatsphäre, vor der Abhängigkeit von Technik und davor, dass ältere oder ärmere Menschen ausgeschlossen werden könnten.\n\nSchreiben Sie einen Text, in dem Sie Ihren eigenen Standpunkt zu der Frage erarbeiten und argumentativ darlegen, ob das Bargeld abgeschafft werden sollte.",
+              "leitpunkte": [
+                "Mögliche Vorteile des bargeldlosen Bezahlens",
+                "Mögliche Nachteile und Risiken für einzelne Bevölkerungsgruppen",
+                "Die Bedeutung von Bargeld für Datenschutz und persönliche Freiheit",
+                "Ihre eigene, begründete Position"
+              ],
+              "register": "formal",
+              "wordTarget": {
+                "min": 280,
+                "max": 420
+              }
+            }
+          ]
+        },
+        "explanations": [
+          {
+            "en": "Treat every Leitpunkt in depth for your chosen topic: the reasons for limits (overcrowding, rising rents) or the benefits of cashless payment (convenience, less undeclared work), the economic and social objections to caps or the risks for older or poorer people, alternatives to caps or the role of cash for privacy, and finally your own clearly justified position. If the topic is missed or barely addressed (a D here), the whole text scores 0.",
+            "de": "Behandeln Sie zum gewählten Thema jeden Leitpunkt gründlich: die Gründe für eine Begrenzung (Überfüllung, steigende Mieten) bzw. die Vorteile des bargeldlosen Bezahlens (Bequemlichkeit, weniger Schwarzarbeit), die wirtschaftlichen und gesellschaftlichen Einwände gegen Obergrenzen bzw. die Risiken für ältere oder ärmere Menschen, Alternativen zu Obergrenzen bzw. die Bedeutung von Bargeld für den Datenschutz und schließlich Ihre eigene, klar begründete Position. Wird das Thema verfehlt oder kaum bearbeitet (ein D hier), erhält der ganze Text 0 Punkte."
+          },
+          {
+            "en": "Open with an introduction that leads into the question, and close with a conclusion that draws the threads together rather than just repeating them. In between, give each aspect its own paragraph and connect them with varied, precise connectors (einerseits … andererseits, ungeachtet dessen, nicht zuletzt, alles in allem).",
+            "de": "Beginnen Sie mit einer Einleitung, die zur Fragestellung hinführt, und enden Sie mit einem Schluss, der die Gedanken zusammenführt, statt sie nur zu wiederholen. Geben Sie dazwischen jedem Aspekt einen eigenen Absatz und verbinden Sie die Absätze mit abwechslungsreichen, präzisen Konnektoren (einerseits … andererseits, ungeachtet dessen, nicht zuletzt, alles in allem)."
+          },
+          {
+            "en": "Draw on topic-specific vocabulary: Massentourismus, Verdrängung der Anwohner, Wertschöpfung, nachhaltiger Tourismus, or Zahlungsverkehr, Datenspur, digitale Teilhabe, Ausfallsicherheit. Express weighing and evaluation with varied phrases (ins Gewicht fallen, zu bedenken geben, einen Kompromiss darstellen).",
+            "de": "Nutzen Sie themenspezifischen Wortschatz: Massentourismus, Verdrängung der Anwohner, Wertschöpfung, nachhaltiger Tourismus bzw. Zahlungsverkehr, Datenspur, digitale Teilhabe, Ausfallsicherheit. Drücken Sie Abwägungen und Bewertungen abwechslungsreich aus (ins Gewicht fallen, zu bedenken geben, einen Kompromiss darstellen)."
+          },
+          {
+            "en": "Master complex syntax: extended participle attributes (die stetig steigenden Mieten), passive constructions and their alternatives (lässt sich kaum verhindern), indirect speech in Konjunktiv I for others' views (Kritiker meinen, dies sei …) and correct case after prepositions such as aufgrund, angesichts and trotz.",
+            "de": "Beherrschen Sie komplexe Satzstrukturen: erweiterte Partizipialattribute (die stetig steigenden Mieten), Passiv und Passiversatz (lässt sich kaum verhindern), indirekte Rede im Konjunktiv I für fremde Meinungen (Kritiker meinen, dies sei …) und den richtigen Kasus nach Präpositionen wie aufgrund, angesichts und trotz."
+          }
+        ]
+      }
+    }
+  ]
+}
