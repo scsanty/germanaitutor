@@ -6,13 +6,17 @@
 // audio_questions sets also pass scripts/audio-content-checks.ts: evidence on every question, inside exactly one
 // transcript line; the part's option shape (Richtig/Falsch, a/b/c); the text count of multi-text parts; speakers;
 // and no transcript shared with another bundled set. TTS hazards and the like are printed as warnings only.
+// letter sets get the S14 checks through teilSetProblems (task count, wordTarget, explanation count), plus these
+// warnings: a situation repeated within a part (merged and incoming sets), and English words in the situation or
+// a Leitpunkt (exam content is German-only). A letters line per track reports sets against the 66 expected.
 // A part file's "version" goes up by one whenever its merged sets differ from the file on disk, so installs
 // that loaded the older bundle reload it (I11). An unchanged part keeps its version and is not rewritten.
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { teilSetProblems, type BundledSetFile, type TeilSetContent } from '../lib/exam/teilSets';
 import type { ExamFormat } from '../lib/exam/formats';
-import { audioContentProblems, transcriptHashOf } from './audio-content-checks';
+import { audioContentProblems, englishWords, transcriptHashOf } from './audio-content-checks';
+import type { LetterContent } from '../lib/tasks/letter';
 
 export interface MergeOptions {
   workDir: string;
@@ -31,6 +35,8 @@ const FILE_RE = /^(.+)__s(\d\d)\.json$/;
 
 // Expected listening items per track once every listening part has its 3 starter sets (preflight).
 export const EXPECTED_LISTENING_ITEMS: Record<string, number> = { telc: 294, goethe: 375, generic: 204 };
+// Letter sets once every one of the 22 letter parts has its 3 starter sets (NaDoch 7 parts, Goethe 10, telc 5).
+export const EXPECTED_LETTER_SETS: Record<string, number> = { generic: 21, goethe: 30, telc: 15 };
 const TRACK_NAMES: Record<string, string> = { telc: 'telc', goethe: 'Goethe', generic: 'NaDoch' };
 
 function canonical(v: unknown): string {
@@ -65,6 +71,31 @@ function bundledAudioHashes(dataRoot: string): Map<string, string> {
   return byId;
 }
 
+const normalizeSituation = (s: string) => s.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+
+// Warnings for one letter set: English words, and situations that repeat another set's task of the part.
+function letterWarnings(id: string, set: TeilSetContent, others: { id: string; set: TeilSetContent }[]): string[] {
+  const tasks = (set.content as LetterContent).tasks ?? [];
+  const out: string[] = [];
+  const english = (where: string, text: string) => {
+    const en = englishWords(text);
+    if (en.length > 0) out.push(`${id}: ${where}: English word(s) ${en.join(', ')}; exam content is German-only`);
+  };
+  tasks.forEach((t, i) => {
+    english(`task ${i + 1} situation`, t.situation);
+    t.leitpunkte.forEach((l, k) => english(`task ${i + 1} Leitpunkt ${k + 1}`, l));
+    const mine = normalizeSituation(t.situation);
+    for (const o of others) {
+      const j = ((o.set.content as LetterContent).tasks ?? []).findIndex((ot) => normalizeSituation(ot.situation) === mine);
+      if (j >= 0) {
+        out.push(`${id}: task ${i + 1}: the situation repeats ${o.id}'s task ${j + 1}`);
+        break;
+      }
+    }
+  });
+  return out;
+}
+
 function readJson<T>(path: string): T {
   return JSON.parse(readFileSync(path, 'utf8')) as T;
 }
@@ -78,6 +109,8 @@ export function mergeTeilSets(opts: MergeOptions): MergeResult {
   const audioHashes = bundledAudioHashes(dataRoot);
   // Listening sets per format and part after this run (check-only included), for the totals.
   const listeningSets = new Map<string, number>();
+  // Letter sets and tasks per format and part after this run.
+  const letterSets = new Map<string, { sets: number; tasks: number }>();
 
   const formatIds = readdirSync(opts.workDir, { withFileTypes: true })
     .filter((d) => d.isDirectory() && !d.name.startsWith('.') && (!opts.format || d.name === opts.format))
@@ -162,6 +195,12 @@ export function mergeTeilSets(opts: MergeOptions): MergeResult {
             else seenHash.set(h, id);
           }
         }
+        if (set.taskType === 'letter' && found.length === 0) {
+          // Bundled sets that stay, then the incoming sets before this one (each pair is reported once).
+          const kept = Object.values(existingSets(dataRoot, formatId, partId)).filter((b) => !incomingIds.has(b.id));
+          const before = incoming.slice(0, incoming.findIndex((x) => x.id === id));
+          warnings.push(...letterWarnings(id, set, [...kept, ...before]));
+        }
         for (const f of [...new Set(found)]) problems.push(`${id}: ${f}`);
       }
       if (warnings.length > 0) lines.push(`${label}: ${warnings.length} warning(s)`, ...warnings.map((w) => `  warning: ${w}`));
@@ -195,6 +234,10 @@ export function mergeTeilSets(opts: MergeOptions): MergeResult {
       }
       formatItems += sets.length * part.items;
       if (part.taskType === 'audio_questions') listeningSets.set(`${formatId}/${partId}`, sets.length);
+      if (part.taskType === 'letter') {
+        const tasks = sets.reduce((n, s) => n + ((s.set.content as LetterContent).tasks?.length ?? 0), 0);
+        letterSets.set(`${formatId}/${partId}`, { sets: sets.length, tasks });
+      }
       const versionNote = !changed ? `, unchanged (version ${version})` : existing ? `, version ${existing.version} -> ${version}` : `, version ${version}`;
       lines.push(`${label}: ${sets.length} sets OK${versionNote}`);
     }
@@ -205,8 +248,46 @@ export function mergeTeilSets(opts: MergeOptions): MergeResult {
     ok = false;
     lines.push('no format folders found in the work folder');
   }
+  lines.push(...letterTotals(dataRoot, formatIds, letterSets));
   lines.push(...listeningTotals(dataRoot, formatIds, listeningSets));
   return { ok, lines, itemCounts };
+}
+
+// The bundled sets of a part (the file on disk), by set id.
+function existingSets(dataRoot: string, formatId: string, partId: string): Record<string, { id: string; set: TeilSetContent }> {
+  const path = join(dataRoot, 'teil-sets', formatId, `${partId}.json`);
+  if (!existsSync(path)) return {};
+  try {
+    return Object.fromEntries((readJson<BundledSetFile>(path).sets ?? []).map((s) => [s.id, s]));
+  } catch {
+    return {};
+  }
+}
+
+// Letter sets (and tasks) per track, over every letter part of every format of a touched track, against the target.
+function letterTotals(dataRoot: string, formatIds: string[], thisRun: Map<string, { sets: number; tasks: number }>): string[] {
+  const tracks = [...new Set(formatIds.map((f) => f.split('-')[0]).filter((t) => t in EXPECTED_LETTER_SETS))].sort();
+  const out: string[] = [];
+  const formatsDir = join(dataRoot, 'exam-formats');
+  if (!existsSync(formatsDir)) return out;
+  for (const track of tracks) {
+    let sets = 0;
+    let tasks = 0;
+    for (const f of readdirSync(formatsDir).filter((n) => n.startsWith(`${track}-`) && n.endsWith('.json')).sort()) {
+      const format = readJson<ExamFormat>(join(formatsDir, f));
+      for (const part of format.parts.filter((p) => p.taskType === 'letter')) {
+        let c = thisRun.get(`${format.id}/${part.id}`);
+        if (!c) {
+          const list = Object.values(existingSets(dataRoot, format.id, part.id));
+          c = { sets: list.length, tasks: list.reduce((n, s) => n + ((s.set.content as LetterContent).tasks?.length ?? 0), 0) };
+        }
+        sets += c.sets;
+        tasks += c.tasks;
+      }
+    }
+    out.push(`letters ${TRACK_NAMES[track]}: ${sets} of ${EXPECTED_LETTER_SETS[track]} sets (${tasks} tasks)`);
+  }
+  return out;
 }
 
 // Listening items per track (every listening part of every format of a touched track) against the target.
