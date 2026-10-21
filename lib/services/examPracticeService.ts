@@ -78,7 +78,7 @@ const round2 = (n: number) => Math.round(n * 100) / 100;
 const GRADING_LOCK_MS = 120 * 1000;
 
 // Nothing was written: every criterion at its lowest grade, and no AI call.
-function emptyLetterGrade(rubric: WritingRubric): LetterGrade {
+export function emptyLetterGrade(rubric: WritingRubric): LetterGrade {
   const nothing = { en: 'Nothing was written.', de: 'Es wurde nichts geschrieben.' };
   const criteria = rubric.criteria.map((c) => {
     const graded = Object.entries(c.points).filter(([, p]) => p !== undefined) as [Grade, number][];
@@ -87,7 +87,8 @@ function emptyLetterGrade(rubric: WritingRubric): LetterGrade {
   });
   const maxPoints = rubricMaxPoints(rubric);
   const points = pointsFor(rubric, Object.fromEntries(criteria.map((c) => [c.id, c.grade])));
-  return { marks: [], criteria, points, maxPoints, percent: 0, corrected: '', summary: nothing };
+  const percent = maxPoints ? Math.round((points / maxPoints) * 100) : 0;
+  return { marks: [], criteria, points, maxPoints, percent, corrected: '', summary: nothing };
 }
 
 function translate(err: unknown): never {
@@ -308,13 +309,18 @@ export function createExamPracticeService(db: Database.Database, deps: ExamPract
 
   // Writes a finished attempt, guarded on finished_at so two racing submits can't both write. A letter
   // also stores its grade and releases its grading lock. Returns the stored result when another write won.
-  function finish(row: AttemptRow, score: number, maxScore: number, overtimeSeconds: number, now: Date, answer: TaskAnswer, grade: LetterGrade | null) {
+  // `unlockedBefore` also requires no live grading lock (one taken after that time), for the empty letter.
+  function finish(row: AttemptRow, score: number, maxScore: number, overtimeSeconds: number, now: Date, answer: TaskAnswer, grade: LetterGrade | null, unlockedBefore?: Date) {
+    const lockGuard = unlockedBefore ? ' AND (grading_started_at IS NULL OR grading_started_at < ?)' : '';
     return db
       .prepare(
         `UPDATE teil_attempts SET score = ?, max_score = ?, overtime_seconds = ?, finished_at = ?, answers = ?, result = ?, grading_started_at = NULL
-         WHERE id = ? AND finished_at IS NULL`
+         WHERE id = ? AND finished_at IS NULL${lockGuard}`
       )
-      .run(score, maxScore, overtimeSeconds, now.toISOString(), JSON.stringify(answer), grade ? JSON.stringify(grade) : null, row.id).changes > 0;
+      .run(
+        score, maxScore, overtimeSeconds, now.toISOString(), JSON.stringify(answer), grade ? JSON.stringify(grade) : null, row.id,
+        ...(unlockedBefore ? [unlockedBefore.toISOString()] : [])
+      ).changes > 0;
   }
 
   // S4 + B4: a letter is graded by the AI while the attempt holds a grading lock, taken atomically, so a
@@ -333,9 +339,17 @@ export function createExamPracticeService(db: Database.Database, deps: ExamPract
     const task = (set.content as LetterContent).tasks[answer.taskIndex];
     if (!task) throw new PracticeError('That task does not exist', 'bad_request');
 
+    const refuseWhileGrading = () => {
+      const current = requireAttempt(row.id);
+      if (current.finished_at) return storedResult(current);
+      throw new PracticeError('This letter is being graded', 'unavailable', 'letter_grading');
+    };
+
     if (!answer.text.trim()) {
+      // An empty submit never overrides a letter that another submit is grading right now.
       const grade = emptyLetterGrade(rubric);
-      if (!finish(row, grade.points, part.points, overtimeSeconds, now, answer, grade)) return storedResult(requireAttempt(row.id));
+      const staleBefore = new Date(clock().getTime() - GRADING_LOCK_MS);
+      if (!finish(row, grade.points, part.points, overtimeSeconds, now, answer, grade, staleBefore)) return refuseWhileGrading();
       return letterResult(requireAttempt(row.id), set, answer, grade);
     }
 
@@ -345,12 +359,12 @@ export function createExamPracticeService(db: Database.Database, deps: ExamPract
         'UPDATE teil_attempts SET grading_started_at = ? WHERE id = ? AND finished_at IS NULL AND (grading_started_at IS NULL OR grading_started_at < ?)'
       )
       .run(lockedAt.toISOString(), row.id, new Date(lockedAt.getTime() - GRADING_LOCK_MS).toISOString());
-    if (locked.changes === 0) {
-      const current = requireAttempt(row.id);
-      if (current.finished_at) return storedResult(current);
-      throw new PracticeError('This letter is being graded', 'unavailable', 'letter_grading');
-    }
-    const unlock = () => db.prepare('UPDATE teil_attempts SET grading_started_at = NULL WHERE id = ? AND finished_at IS NULL').run(row.id);
+    if (locked.changes === 0) return refuseWhileGrading();
+    // Releases only this submit's own lock, never one a later submit took over after it went stale.
+    const unlock = () =>
+      db
+        .prepare('UPDATE teil_attempts SET grading_started_at = NULL WHERE id = ? AND finished_at IS NULL AND grading_started_at = ?')
+        .run(row.id, lockedAt.toISOString());
 
     let outcome: Awaited<ReturnType<typeof gradeLetter>>;
     try {

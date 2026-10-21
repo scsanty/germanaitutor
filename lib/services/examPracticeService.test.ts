@@ -7,7 +7,7 @@ import { writeAudio } from '../audio/audioStore';
 import { audioHash, parseTranscript, type ParsedTranscript } from '../audio/transcript';
 import { createDbClient } from '../db/client';
 import { createProfileService } from './profileService';
-import { createExamPracticeService, type ExamPracticeDeps } from './examPracticeService';
+import { createExamPracticeService, emptyLetterGrade, type ExamPracticeDeps } from './examPracticeService';
 import type { AiRequest, AiResult } from './aiService';
 import { createTeilSetService } from './teilSetService';
 
@@ -359,6 +359,52 @@ describe('examPracticeService letters', () => {
     expect(result.letter).toMatchObject({ points: 0, percent: 0, marks: [] });
     expect(result.letter!.criteria.map((c) => c.grade)).toEqual(['D', 'D', 'D']);
     expect(generate).not.toHaveBeenCalled();
+  });
+
+  // Final review Minor 1: an empty submit from a second tab can't beat a letter that is being graded.
+  it('refuses an empty submit with letter_grading while a letter is being graded', async () => {
+    let release!: (result: AiResult) => void;
+    const generate = vi.fn(() => new Promise<AiResult>((resolve) => (release = resolve)));
+    const { db, service } = setup(generate);
+    const run = await service.start('telc-b1', 'schreiben');
+    const first = service.submit(run.attemptId, letter());
+    await vi.waitFor(() => expect(generate).toHaveBeenCalledTimes(1));
+    await expect(service.submit(run.attemptId, letter('', 0))).rejects.toMatchObject({ kind: 'unavailable', code: 'letter_grading' });
+    expect(row(db, run.attemptId).finished_at).toBeNull();
+    release({ ok: true, text: REPLY });
+    expect(await first).toMatchObject({ score: 21 });
+    expect(row(db, run.attemptId)).toMatchObject({ score: 21, answers: JSON.stringify(letter()) });
+  });
+
+  // Final review Minor 1: a failed grading only releases its own lock, not one a later submit took over.
+  it('a failed grading leaves a newer lock in place', async () => {
+    const pending: ((result: AiResult) => void)[] = [];
+    const generate = vi.fn(() => new Promise<AiResult>((resolve) => pending.push(resolve)));
+    const { db, service, advance } = setup(generate);
+    const run = await service.start('telc-b1', 'schreiben');
+    const first = service.submit(run.attemptId, letter());
+    await vi.waitFor(() => expect(generate).toHaveBeenCalledTimes(1));
+    advance(121); // the first lock is now stale, so a second submit takes it over
+    const second = service.submit(run.attemptId, letter());
+    await vi.waitFor(() => expect(generate).toHaveBeenCalledTimes(2));
+    const secondLock = row(db, run.attemptId).grading_started_at;
+    pending[0]({ ok: false, error: 'offline', code: 'ai_failed' });
+    await expect(first).rejects.toMatchObject({ code: 'ai_failed' });
+    expect(row(db, run.attemptId).grading_started_at).toBe(secondLock);
+    pending[1]({ ok: true, text: REPLY });
+    expect(await second).toMatchObject({ score: 21 });
+  });
+
+  // Final review Minor 1: the empty grade's percent follows its points, not a hard-coded 0.
+  it('gives an empty letter the percent of its lowest-grade points', () => {
+    const name = { en: 'x', de: 'x' };
+    const rubric = {
+      criteria: [
+        { id: 'a', name, descriptors: { A: 'a', C: 'c' }, points: { A: 4, C: 1 } },
+        { id: 'b', name, descriptors: { A: 'a', D: 'd' }, points: { A: 4, D: 0 } },
+      ],
+    };
+    expect(emptyLetterGrade(rubric)).toMatchObject({ points: 1, maxPoints: 8, percent: 13 });
   });
 
   // telc B1: the lowest Aufgabenbewältigung grade makes the whole letter worth 0, whatever the other grades.
