@@ -1,0 +1,102 @@
+{
+  "formatId": "telc-a2",
+  "partId": "schreiben-2",
+  "anchors": [
+    {
+      "task": {
+        "situation": "Sie haben in einer Anzeige gelesen, dass die Kochschule Lindenhof im Sommer einen Kochkurs für Anfänger anbietet. Sie möchten mehr über den Kurs wissen. Schreiben Sie eine E-Mail an die Kochschule. Wählen Sie drei der vier Punkte aus.",
+        "leitpunkte": [
+          "Kursbeginn",
+          "Preis",
+          "Was muss man mitbringen?",
+          "Anmeldung"
+        ],
+        "register": "formal",
+        "wordTarget": {
+          "min": 32,
+          "max": 48
+        }
+      },
+      "letter": "Sehr geehrte Damen und Herren,\n\nich habe Ihre Anzeige gelesen und interessiere mich für den Kochkurs. Wann beginnt der Kurs genau? Was kostet er? Außerdem möchte ich wissen, wie ich mich anmelden kann.\n\nVielen Dank für Ihre Antwort.\n\nMit freundlichen Grüßen\nMaria Kovač",
+      "grades": {
+        "punkt-1": "A",
+        "punkt-2": "A",
+        "punkt-3": "A",
+        "gestaltung": "A"
+      },
+      "justification": "Punkt 1 A: Maria fragt klar nach dem Kursbeginn („Wann beginnt der Kurs genau?“). Punkt 2 A: Die Frage nach dem Preis ist passend und verständlich („Was kostet er?“). Punkt 3 A: Sie fragt korrekt nach der Anmeldung („wie ich mich anmelden kann“). Gestaltung A: „Sehr geehrte Damen und Herren“ und „Mit freundlichen Grüßen“ passen zur formellen E-Mail, und die Sätze sind mit „und“ und „außerdem“ verbunden."
+    },
+    {
+      "task": {
+        "situation": "Sie haben in einer Anzeige gelesen, dass die Kochschule Lindenhof im Sommer einen Kochkurs für Anfänger anbietet. Sie möchten mehr über den Kurs wissen. Schreiben Sie eine E-Mail an die Kochschule. Wählen Sie drei der vier Punkte aus.",
+        "leitpunkte": [
+          "Kursbeginn",
+          "Preis",
+          "Was muss man mitbringen?",
+          "Anmeldung"
+        ],
+        "register": "formal",
+        "wordTarget": {
+          "min": 32,
+          "max": 48
+        }
+      },
+      "letter": "Sehr geehrte Damen und Herren,\n\nich habe Ihre Anzeige gelesen und ich möchte den Kochkurs machen. Wann der Kurs beginnt? Ist der Kurs teuer? Muss ich etwas mitbringen, zum Beispiel ein Messer oder ein Schürze?\n\nLiebe Grüße\nMaria",
+      "grades": {
+        "punkt-1": "A",
+        "punkt-2": "B",
+        "punkt-3": "A",
+        "gestaltung": "B"
+      },
+      "justification": "Punkt 1 A: Die Frage nach dem Kursbeginn ist trotz der falschen Wortstellung („Wann der Kurs beginnt?“) gut verständlich. Punkt 2 B: Zum Preis fragt Maria nur, ob der Kurs teuer ist, aber nicht, was er kostet; der Punkt wird nur teilweise behandelt. Punkt 3 A: Die Frage, was man mitbringen muss, ist mit Beispielen klar formuliert, auch wenn der Artikel falsch ist („ein Schürze“). Gestaltung B: Die Anrede passt, aber der Gruß „Liebe Grüße“ passt nicht zu einer formellen E-Mail an die Kochschule."
+    },
+    {
+      "task": {
+        "situation": "Sie haben in einer Anzeige gelesen, dass die Kochschule Lindenhof im Sommer einen Kochkurs für Anfänger anbietet. Sie möchten mehr über den Kurs wissen. Schreiben Sie eine E-Mail an die Kochschule. Wählen Sie drei der vier Punkte aus.",
+        "leitpunkte": [
+          "Kursbeginn",
+          "Preis",
+          "Was muss man mitbringen?",
+          "Anmeldung"
+        ],
+        "register": "formal",
+        "wordTarget": {
+          "min": 32,
+          "max": 48
+        }
+      },
+      "letter": "Hallo,\n\nich will Kochkurs. Ich koche gern, meine Mutter hat mir gelernt, ich koche Gulasch und Suppe für mein Familie. Kurs wann? Kosten wie viel ist? Ich wohne in die Gartenstraße, ist weit, ich habe kein Auto.\n\nMaria",
+      "grades": {
+        "punkt-1": "B",
+        "punkt-2": "B",
+        "punkt-3": "C",
+        "gestaltung": "B"
+      },
+      "justification": "Punkt 1 B: Nach dem Kursbeginn wird nur bruchstückhaft gefragt („Kurs wann?“). Punkt 2 B: Die Frage nach dem Preis ist nur mit Mühe zu verstehen („Kosten wie viel ist?“). Punkt 3 C: Ein dritter Punkt fehlt; statt nach dem Mitbringen oder der Anmeldung zu fragen, schreibt Maria über ihre Mutter, ihre Kochgewohnheiten und den weiten Weg aus der Gartenstraße. Gestaltung B: Die Anrede „Hallo“ passt nicht zu einer formellen E-Mail, und ein Gruß fehlt, aber der Text ist noch als Mitteilung an die Kochschule zu erkennen."
+    },
+    {
+      "task": {
+        "situation": "Sie haben in einer Anzeige gelesen, dass die Kochschule Lindenhof im Sommer einen Kochkurs für Anfänger anbietet. Sie möchten mehr über den Kurs wissen. Schreiben Sie eine E-Mail an die Kochschule. Wählen Sie drei der vier Punkte aus.",
+        "leitpunkte": [
+          "Kursbeginn",
+          "Preis",
+          "Was muss man mitbringen?",
+          "Anmeldung"
+        ],
+        "register": "formal",
+        "wordTarget": {
+          "min": 32,
+          "max": 48
+        }
+      },
+      "letter": "Ich koche gern Pizza, Käse und Tomate. Mein Bruder essen viel, er gross. Du kochen auch?",
+      "grades": {
+        "punkt-1": "C",
+        "punkt-2": "C",
+        "punkt-3": "C",
+        "gestaltung": "C"
+      },
+      "justification": "Punkt 1 C: Keiner der vier Punkte wird behandelt, es gibt also keinen ersten Punkt: Weder Kursbeginn noch Preis, Mitbringen oder Anmeldung kommen vor. Punkt 2 C: Auch ein zweiter Punkt fehlt; Maria schreibt nur über Pizza („Ich koche gern Pizza, Käse und Tomate“). Punkt 3 C: Ein dritter Punkt fehlt ebenso; stattdessen geht es um den Bruder („Mein Bruder essen viel, er gross“). Gestaltung C: Anrede und Gruß fehlen, und mit „Du kochen auch?“ ist der Text nicht als E-Mail an die Kochschule erkennbar."
+    }
+  ]
+}
