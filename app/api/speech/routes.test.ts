@@ -61,6 +61,29 @@ describe('/api/speech', () => {
     expect((await clipRequest(body.clipId)).status).toBe(404);
   });
 
+  it('serves byte ranges of a clip (Safari asks for them)', async () => {
+    const id = createSpeechClipService(getDb()).savePartnerClip('freestyle:spoken', Buffer.from('0123456789'), 'x');
+    const req = (range: string) => getClip(new Request('http://localhost/c', { headers: { Range: range } }), { params: Promise.resolve({ id }) });
+    const whole = await clipRequest(id);
+    expect(whole.headers.get('Accept-Ranges')).toBe('bytes');
+    const part = await req('bytes=2-5');
+    expect(part.status).toBe(206);
+    expect(part.headers.get('Content-Range')).toBe('bytes 2-5/10');
+    expect(Buffer.from(await part.arrayBuffer()).toString()).toBe('2345');
+    expect(part.headers.get('Cache-Control')).toBe('no-store');
+    expect((await req('bytes=-3')).headers.get('Content-Range')).toBe('bytes 7-9/10');
+    const bad = await req('bytes=50-');
+    expect(bad.status).toBe(416);
+    expect(bad.headers.get('Content-Range')).toBe('bytes */10');
+  });
+
+  it('refuses a recording whose type is unknown and cannot be sniffed with 400', async () => {
+    expect((await upload('lesson:abc', new Uint8Array([1, 2, 3]), { 'Content-Type': 'application/octet-stream' })).status).toBe(400);
+    expect(provider.transcribe).not.toHaveBeenCalled();
+    const ebml = await upload('lesson:abc', new Uint8Array([0x1a, 0x45, 0xdf, 0xa3, 0]), { 'Content-Type': 'application/octet-stream' });
+    expect(ebml.status).toBe(200);
+  });
+
   it('serves a partner clip, and 404s one with no audio or an unknown id', async () => {
     const service = createSpeechClipService(getDb());
     const withAudio = service.savePartnerClip('freestyle:spoken', Buffer.from('OggS'), 'Hallo');

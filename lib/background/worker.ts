@@ -51,7 +51,11 @@ export function startBackgroundWorker(getDb: () => Database.Database): void {
   });
   const health = createTick('health', async () => {
     const db = getDb();
-    createSpeechClipService(db).cleanupOlderThan(CLIP_MAX_AGE_HOURS); // recordings and transcripts live at most 6 h
+    try {
+      createSpeechClipService(db).cleanupOlderThan(CLIP_MAX_AGE_HOURS); // recordings and transcripts live at most 6 h
+    } catch (err) {
+      console.error('Speech clip cleanup failed:', err); // never skips the health check below
+    }
     const url = getSpeechUrl(db);
     const ok = await runHealthCheck(getSpeechProvider(db), createNotificationService(db), url);
     sharedSpeechAvailability().record(url, ok); // S7: requests reuse what the health tick saw

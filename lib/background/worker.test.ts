@@ -124,4 +124,27 @@ describe('background worker', () => {
       rmSync(dir, { recursive: true, force: true });
     }
   });
+
+  it('a failing clip cleanup is logged and does not skip the health check', async () => {
+    const dir = mkdtempSync(join(tmpdir(), 'gait-worker-'));
+    process.env.GAIT_DATA_DIR = dir;
+    vi.useFakeTimers({ toFake: ['setInterval', 'clearInterval'] });
+    const fetchSpy = vi.fn(async () => { throw new TypeError('fetch failed'); });
+    vi.stubGlobal('fetch', fetchSpy);
+    const error = vi.spyOn(console, 'error').mockImplementation(() => {});
+    try {
+      const db = createDbClient(':memory:');
+      setSetting(db, 'speech_url', 'http://127.0.0.1:9');
+      db.exec('DROP TABLE speech_clips'); // the cleanup throws
+      startBackgroundWorker(() => db);
+      await vi.advanceTimersByTimeAsync(HEALTH_TICK_MS);
+      await vi.waitFor(() => expect(fetchSpy).toHaveBeenCalled());
+      expect(error).toHaveBeenCalledWith('Speech clip cleanup failed:', expect.any(Error));
+    } finally {
+      error.mockRestore();
+      vi.unstubAllGlobals();
+      delete process.env.GAIT_DATA_DIR;
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
 });

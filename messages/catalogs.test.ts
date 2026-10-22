@@ -38,4 +38,9 @@ describe('message catalogs', () => {
       expect({ key, empty: message.trim() === '' }).toEqual({ key, empty: false });
     }
   });
+
+  it('word the speech errors as specified', () => {
+    expect((en as Tree & { errors: Record<string, string> }).errors.spoken_grading).toBe('This conversation is being graded.');
+    expect((de as Tree & { errors: Record<string, string> }).errors.spoken_grading).toBe('Dein Gespräch wird gerade bewertet.');
+  });
 });

@@ -281,5 +281,10 @@ export function importBackup(
   for (const sidecar of [`${dbPath}-wal`, `${dbPath}-shm`]) {
     if (existsSync(sidecar)) unlinkSync(sidecar);
   }
-  clearSpeech(dbPath, options.speechTmpDir);
+  // The restore has succeeded; a failed clean-up of temporary speech data must not turn it into an error.
+  try {
+    clearSpeech(dbPath, options.speechTmpDir);
+  } catch (err) {
+    console.error('Backup import: could not clear the speech clips:', err);
+  }
 }

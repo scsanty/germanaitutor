@@ -62,7 +62,7 @@ describe('speechClipService', () => {
 
   it('keeps nothing when the provider fails, and maps the failures', async () => {
     const db = createDbClient(':memory:');
-    const run = (err: Error) => createSpeechClipService(db, { provider: fakeProvider(async () => { throw err; }) }).transcribeForScope('lesson:l1', Buffer.from('a'));
+    const run = (err: Error) => createSpeechClipService(db, { provider: fakeProvider(async () => { throw err; }) }).transcribeForScope('lesson:l1', Buffer.from('a'), 'audio/webm');
     const caught = async (err: Error) => run(err).catch((e) => e);
 
     const long = await caught(new SpeechServiceError('speech service 400: audio longer than 5 minutes', 400));
@@ -82,16 +82,27 @@ describe('speechClipService', () => {
   it('refuses an invalid scope, an empty recording, a finished Teil attempt and a missing placement session', async () => {
     const db = createDbClient(':memory:');
     const service = createSpeechClipService(db, { provider: fakeProvider() });
-    await expect(service.transcribeForScope('bogus', Buffer.from('a'))).rejects.toMatchObject({ kind: 'bad_request' });
-    await expect(service.transcribeForScope('placement', Buffer.from('a'))).rejects.toMatchObject({ kind: 'bad_request' });
+    await expect(service.transcribeForScope('bogus', Buffer.from('a'), 'audio/webm')).rejects.toMatchObject({ kind: 'bad_request' });
+    await expect(service.transcribeForScope('placement', Buffer.from('a'), 'audio/webm')).rejects.toMatchObject({ kind: 'bad_request' });
     await expect(service.transcribeForScope('lesson:l1', Buffer.alloc(0))).rejects.toMatchObject({ kind: 'bad_request' });
-    await expect(service.transcribeForScope('teil:99', Buffer.from('a'))).rejects.toMatchObject({ kind: 'bad_request' });
+    await expect(service.transcribeForScope('teil:99', Buffer.from('a'), 'audio/webm')).rejects.toMatchObject({ kind: 'bad_request' });
     const open = db.prepare("INSERT INTO teil_attempts (format_id, part_id, kind, started_at) VALUES ('f', 'p', 'practice', ?)").run(new Date().toISOString());
-    await expect(service.transcribeForScope(`teil:${open.lastInsertRowid}`, Buffer.from('a'))).resolves.toMatchObject({ text: 'Guten Tag' });
+    await expect(service.transcribeForScope(`teil:${open.lastInsertRowid}`, Buffer.from('a'), 'audio/webm')).resolves.toMatchObject({ text: 'Guten Tag' });
     db.prepare('UPDATE teil_attempts SET finished_at = ? WHERE id = ?').run(new Date().toISOString(), open.lastInsertRowid);
-    await expect(service.transcribeForScope(`teil:${open.lastInsertRowid}`, Buffer.from('a'))).rejects.toMatchObject({ kind: 'bad_request' });
+    await expect(service.transcribeForScope(`teil:${open.lastInsertRowid}`, Buffer.from('a'), 'audio/webm')).rejects.toMatchObject({ kind: 'bad_request' });
     db.prepare("INSERT INTO placement_session (id, started_at, next_position, score, mistakes, answers) VALUES (1, ?, 0, 0, 0, '[]')").run('now');
-    await expect(service.transcribeForScope('placement', Buffer.from('a'))).resolves.toBeDefined();
+    await expect(service.transcribeForScope('placement', Buffer.from('a'), 'audio/webm')).resolves.toBeDefined();
+  });
+
+  it('takes the container from the bytes when the type is missing, and refuses what it cannot tell', async () => {
+    const service = createSpeechClipService(createDbClient(':memory:'), { provider: fakeProvider() });
+    const ext = async (bytes: Buffer, type?: string) => (await service.getClip((await service.transcribeForScope('lesson:l1', bytes, type)).clipId)!.path!.split('.').pop());
+    await expect(service.transcribeForScope('lesson:l1', Buffer.from('xxxx'), 'application/octet-stream')).rejects.toMatchObject({ kind: 'bad_request' });
+    await expect(service.transcribeForScope('lesson:l1', Buffer.from('xxxx'))).rejects.toMatchObject({ kind: 'bad_request' });
+    expect(tmpFiles()).toEqual([]);
+    expect(await ext(Buffer.from([0x1a, 0x45, 0xdf, 0xa3, 1]))).toBe('webm');
+    expect(await ext(Buffer.from('OggS....'), 'application/octet-stream')).toBe('ogg');
+    expect(await ext(Buffer.from('\0\0\0\x18ftypM4A '))).toBe('m4a');
   });
 
   it('saves a partner clip, with or without audio', () => {
@@ -108,7 +119,7 @@ describe('speechClipService', () => {
   it('deleteScope removes the rows and files of that scope only', async () => {
     const db = createDbClient(':memory:');
     const service = createSpeechClipService(db, { provider: fakeProvider() });
-    await service.transcribeForScope('lesson:l1', Buffer.from('a'));
+    await service.transcribeForScope('lesson:l1', Buffer.from('a'), 'audio/webm');
     service.savePartnerClip('lesson:l1', Buffer.from('OggS'), 'x');
     const other = service.savePartnerClip('lesson:l2', Buffer.from('OggS'), 'y');
     expect(service.deleteScope('lesson:l1')).toBe(2);

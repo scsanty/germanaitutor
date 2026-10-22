@@ -2,7 +2,7 @@ import type Database from 'better-sqlite3';
 import { randomUUID } from 'node:crypto';
 import { existsSync, mkdirSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { CLIP_MAX_AGE_HOURS, extensionFor, isValidScope, speechTmpDir } from '../speech/clips';
+import { CLIP_MAX_AGE_HOURS, extensionFor, isValidScope, sniffExtension, speechTmpDir } from '../speech/clips';
 import { getSpeechProvider, isUnreachableError, SpeechServiceError, type SpeechProvider, type TranscribedWord, type WhisperModel } from '../speech/speechProvider';
 import { errorBodyFor, type ApiErrorBody, type ErrorCode } from '../tutoring/errorCodes';
 import { getSetting } from './appSettings';
@@ -123,7 +123,8 @@ export function createSpeechClipService(db: Database.Database, deps: SpeechClipD
       if (!isValidScope(scope)) throw new SpeechClipError('Invalid scope', 'bad_request');
       assertScopeOpen(scope);
       if (audio.length === 0) throw new SpeechClipError('The recording is empty', 'bad_request');
-      const ext = extensionFor(contentType) ?? '.webm';
+      const ext = extensionFor(contentType) ?? sniffExtension(audio);
+      if (!ext) throw new SpeechClipError('Unsupported recording format', 'bad_request');
       let result;
       try {
         result = await provider().transcribe(audio, whisperModel(db));

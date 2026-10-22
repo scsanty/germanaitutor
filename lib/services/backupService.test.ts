@@ -1,6 +1,6 @@
 // lib/services/backupService.test.ts
-import { describe, it, expect } from 'vitest';
-import { mkdtempSync, writeFileSync, readFileSync, mkdirSync, readdirSync, existsSync } from 'node:fs';
+import { describe, it, expect, vi } from 'vitest';
+import { mkdtempSync, writeFileSync, readFileSync, mkdirSync, readdirSync, existsSync, chmodSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { createHash, randomBytes } from 'node:crypto';
@@ -306,6 +306,27 @@ describe('backupService', () => {
       // The live database is untouched.
       expect(db.prepare('SELECT COUNT(*) AS n FROM speech_clips').get()).toEqual({ n: 1 });
       db.close();
+    });
+
+    it('a failing speech clean-up after a restore is logged, not thrown', () => {
+      const { dbPath, keyPath } = setupFiles();
+      const archive = regzip({ version: 2, exportedAt: 'x', db: Buffer.from('fake-db-contents').toString('base64'), dbHash: sha256(Buffer.from('fake-db-contents')),
+        key: Buffer.from('k').toString('base64'), keyHash: sha256(Buffer.from('k')), audio: {} });
+      void dbPath; void keyPath;
+      const { restoredDb, restoredKey } = restoreTarget();
+      const locked = join(mkdtempSync(join(tmpdir(), 'gait-blk-')), 'speech-tmp');
+      mkdirSync(locked);
+      writeFileSync(join(locked, 'a.webm'), 'x');
+      chmodSync(locked, 0o500); // its files can't be unlinked
+      const warn = vi.spyOn(console, 'error').mockImplementation(() => {});
+      try {
+        importBackup(archive, restoredDb, restoredKey, undefined, { speechTmpDir: locked });
+        expect(readFileSync(restoredDb, 'utf8')).toBe('fake-db-contents');
+        expect(warn).toHaveBeenCalledWith('Backup import: could not clear the speech clips:', expect.any(Error));
+      } finally {
+        chmodSync(locked, 0o700);
+        warn.mockRestore();
+      }
     });
 
     it('an import empties speech_clips and the speech-tmp folder', async () => {

@@ -30,3 +30,11 @@ export function contentTypeFor(file: string): string {
   const dot = file.lastIndexOf('.');
   return CONTENT_TYPES[dot >= 0 ? file.slice(dot) : ''] ?? 'application/octet-stream';
 }
+
+// The container from the first bytes, for an upload whose type is missing or generic: EBML (webm), Ogg, or MP4's `ftyp`.
+export function sniffExtension(audio: Buffer): string | null {
+  if (audio.length >= 4 && audio.readUInt32BE(0) === 0x1a45dfa3) return '.webm';
+  if (audio.length >= 4 && audio.toString('latin1', 0, 4) === 'OggS') return '.ogg';
+  if (audio.length >= 8 && audio.toString('latin1', 4, 8) === 'ftyp') return '.m4a';
+  return null;
+}
