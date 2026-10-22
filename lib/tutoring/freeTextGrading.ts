@@ -17,6 +17,18 @@ export interface FreeTextGradingInput {
   modelAnswer: string;
   studentAnswer: string;
   level: CefrLevel;
+  // S15: a spoken lesson answer (its transcript) sends the low-confidence words and gets a pronunciation
+  // comment back. Placement never sends them.
+  unclearWords?: string[];
+}
+
+// The estimate note for a spoken answer: the student answer is a speech-recognition transcript.
+function spokenNote(unclearWords: string[]): string[] {
+  return [
+    'The student answer was spoken aloud and written down by speech recognition: do not count spelling, capitalisation or punctuation as mistakes.',
+    `Words recognised with low confidence: ${unclearWords.length > 0 ? unclearWords.join(', ') : 'none'}.`,
+    'Also comment on pronunciation in one short sentence, twice: "pronunciation_en" in English and "pronunciation_de" in simple German. The data is an estimate from speech recognition; comment tentatively.',
+  ];
 }
 
 export function buildFreeTextGradingPrompt(input: FreeTextGradingInput): {
@@ -33,7 +45,8 @@ export function buildFreeTextGradingPrompt(input: FreeTextGradingInput): {
     'Write the feedback twice: "feedback_en" in English and "feedback_de" in German. Each is one to three short sentences naming the main mistake and its corrected form, if there is one.',
     `Keep the German feedback simple enough for CEFR level ${input.level}.`,
     'List every mistake in "mistakes" (an empty list when there are none).',
-    `Reply with only a JSON object: {"result": "correct" | "almost" | "wrong", "feedback_en": "...", "feedback_de": "...", "mistakes": [{ "category": one of ${taxonomyIds().join(', ')}, "wrong": exact wrong words, "right": the correction }]}`,
+    ...(input.unclearWords ? spokenNote(input.unclearWords) : []),
+    `Reply with only a JSON object: {"result": "correct" | "almost" | "wrong", "feedback_en": "...", "feedback_de": "...", "mistakes": [{ "category": one of ${taxonomyIds().join(', ')}, "wrong": exact wrong words, "right": the correction }]${input.unclearWords ? ', "pronunciation_en": "...", "pronunciation_de": "..."' : ''}}`,
   ].join('\n');
   const messages: ChatMessage[] = [
     {
@@ -55,9 +68,18 @@ function parseMistakes(value: unknown): FreeTextMistake[] {
   });
 }
 
-export function parseFreeTextGrade(
-  text: string
-): { result: GradeResult; feedback: LocalizedText | null; mistakes: FreeTextMistake[] } | null {
+export interface ParsedFreeTextGrade {
+  result: GradeResult;
+  feedback: LocalizedText | null;
+  mistakes: FreeTextMistake[];
+  // Only when asked for (a spoken answer, S15).
+  pronunciation?: LocalizedText;
+}
+
+const filled = (value: unknown): value is string => typeof value === 'string' && value.trim().length > 0;
+
+// `pronunciation: true` when the prompt asked for the pronunciation comment: it's then required.
+export function parseFreeTextGrade(text: string, options: { pronunciation?: boolean } = {}): ParsedFreeTextGrade | null {
   const data = extractJsonObject(text);
   if (!data) return null;
   const { result, feedback_en, feedback_de } = data;
@@ -66,5 +88,8 @@ export function parseFreeTextGrade(
   const en = feedback_en.trim();
   const de = feedback_de.trim();
   // No feedback in either language: nothing to show, rather than an empty "Feedback:" line.
-  return { result, feedback: en || de ? { en, de } : null, mistakes: parseMistakes(data.mistakes) };
+  const parsed: ParsedFreeTextGrade = { result, feedback: en || de ? { en, de } : null, mistakes: parseMistakes(data.mistakes) };
+  if (!options.pronunciation) return parsed;
+  if (!filled(data.pronunciation_en) || !filled(data.pronunciation_de)) return null;
+  return { ...parsed, pronunciation: { en: data.pronunciation_en.trim(), de: data.pronunciation_de.trim() } };
 }

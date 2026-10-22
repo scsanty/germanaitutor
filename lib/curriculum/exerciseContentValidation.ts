@@ -1,6 +1,5 @@
-import type { ExerciseType } from './types';
+import type { ExerciseType, SpokenResponseContent } from './types';
 import { validateTask } from '../tasks/taskTypes';
-import type { LocalizedText } from '../i18n/localizedText';
 
 const EXERCISE_TYPES: readonly ExerciseType[] = [
   'multiple_choice',
@@ -12,6 +11,7 @@ const EXERCISE_TYPES: readonly ExerciseType[] = [
   'cloze',
   'audio_questions',
   'letter',
+  'spoken_response',
 ];
 
 function isNonEmptyString(value: unknown): value is string {
@@ -101,19 +101,16 @@ export function validateExerciseContent(type: unknown, content: unknown): string
       }
       break;
     }
+    // validateSpokenResponse checks the instruction itself.
+    case 'spoken_response':
+      return validateSpokenResponse(content);
   }
   errors.push(...instructionProblems(type, content));
   return errors;
 }
 
 // A `spoken_response` lesson exercise: a German prompt, a model answer and an optional minimum speaking time.
-// (Wired into validateExerciseContent when the exercise type is added.)
-export interface SpokenResponseContent {
-  instruction?: LocalizedText;
-  prompt: string;
-  modelAnswer: string;
-  minSeconds?: number;
-}
+export type { SpokenResponseContent };
 
 export function validateSpokenResponse(content: unknown): string[] {
   const c = content as Record<string, unknown> | null;

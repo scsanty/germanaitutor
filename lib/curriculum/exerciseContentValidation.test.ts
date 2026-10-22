@@ -85,3 +85,13 @@ describe('instructions', () => {
     expect(instructionProblems('fill_blank', { textWithBlank: 'Ich ___.', correctAnswer: 'bin' })).toEqual([]);
   });
 });
+
+describe('spoken_response content (Speaking)', () => {
+  it('is an exercise type validated by validateSpokenResponse', () => {
+    expect(validateExerciseContent('spoken_response', { prompt: 'Stellen Sie sich vor.', modelAnswer: 'Ich heiße Anna.' })).toEqual([]);
+    expect(validateExerciseContent('spoken_response', { prompt: 'x', modelAnswer: 'y', minSeconds: 1.5 })).toEqual(['minSeconds must be a positive whole number']);
+    expect(validateExerciseContent('spoken_response', { prompt: 'x', modelAnswer: 'y', instruction: { en: 'Speak', de: '' } })).toEqual([
+      'instruction needs both English and German',
+    ]);
+  });
+});

@@ -1,10 +1,11 @@
 import type { LocalizedText } from '../i18n/localizedText';
 import type { CefrLevel } from '../types';
-import type { Exercise, FillBlankContent, FreeTextContent, MultipleChoiceContent } from '../curriculum/types';
+import type { Exercise, FillBlankContent, FreeTextContent, MultipleChoiceContent, SpokenResponseContent } from '../curriculum/types';
 import type { ErrorCode, ErrorParams } from '../tutoring/errorCodes';
 import type { FreeTextGradingInput, FreeTextMistake } from '../tutoring/freeTextGrading';
 import { gradeFillBlank, gradeMultipleChoice, type GradeResult } from '../tutoring/grading';
-import { FLASHCARD_GRADES, taskTextOf, type LessonAnswer } from '../tutoring/lessonAnswers';
+import { FLASHCARD_GRADES, taskTextOf, type LessonAnswer, type SpokenOutcome } from '../tutoring/lessonAnswers';
+import { pronunciationEstimate } from '../speaking/pronunciation';
 import type { FreeTextGradeOutcome } from './freeTextGradingService';
 import { gradeTask, parseTaskAnswer, resultFromItems, type TaskContent } from '../tasks/taskTypes';
 import { parseLetterAnswer, type LetterAnswer, type LetterContent } from '../tasks/letter';
@@ -22,6 +23,8 @@ export type ExerciseGradeOutcome =
       itemResults?: boolean[];
       mistakes?: FreeTextMistake[];
       letter?: LetterGrade;
+      // Speaking: only for a spoken response answered with a clip.
+      spoken?: SpokenOutcome;
     }
   | { ok: false; reason: 'bad_request'; message: string }
   | { ok: false; reason: 'grading_failed'; message: string; code?: ErrorCode; params?: ErrorParams };
@@ -33,10 +36,20 @@ export interface ExerciseLetterInput {
   answer: LetterAnswer;
 }
 
+// The parts of a speech clip that grading needs (speechClipService.getClip).
+export interface GradableSpeechClip {
+  scope: string;
+  role: 'student' | 'partner';
+  transcript: string | null;
+  words: { word: string; probability: number }[];
+}
+
 export interface ExerciseGradingDeps {
   gradeFreeText: (input: FreeTextGradingInput) => Promise<FreeTextGradeOutcome>;
   // Only lessons grade letters. Without it (practice, test-out) a letter answer is a bad request.
   gradeLetter?: (input: ExerciseLetterInput) => Promise<LetterGradeOutcome>;
+  // Only lessons grade recorded answers. Without it (practice, test-out) a clip answer is a bad request.
+  getSpeechClip?: (clipId: string) => GradableSpeechClip | null;
 }
 
 // The one grading rule for authored and practice exercises (spec: Grades): deterministic for
@@ -91,6 +104,36 @@ export async function gradeExerciseAnswer(
       }
       // Spec: Lessons — correct at >= 60% of the rubric points, almost at >= 40%.
       return { ok: true, result: resultFromPercent(graded.grade.percent), feedback: graded.grade.summary, letter: graded.grade };
+    }
+    case 'spoken_response': {
+      const content = exercise.content as SpokenResponseContent;
+      const task = { prompt: taskTextOf(exercise), modelAnswer: content.modelAnswer, level };
+      // The typed fallback is plain free text, without an estimate.
+      if ('typed' in answer) {
+        if (!answer.typed.trim()) return { ok: false, reason: 'bad_request', message: 'Write an answer first' };
+        const graded = await deps.gradeFreeText({ ...task, studentAnswer: answer.typed });
+        if (!graded.ok) return { ok: false, reason: 'grading_failed', message: graded.error, code: graded.code, params: graded.params };
+        return { ok: true, result: graded.result, feedback: graded.feedback, mistakes: graded.mistakes ?? [] };
+      }
+      if (!deps.getSpeechClip) return { ok: false, reason: 'bad_request', message: 'Spoken answers are graded in lessons only' };
+      // The clip must be the student's own recording from this lesson's run.
+      const clip = deps.getSpeechClip(answer.clipId);
+      if (!clip || clip.role !== 'student' || clip.scope !== `lesson:${exercise.lessonId}`) {
+        return { ok: false, reason: 'bad_request', message: 'That recording does not belong to this lesson' };
+      }
+      const transcript = clip.transcript?.trim() ?? '';
+      if (!transcript) return { ok: false, reason: 'bad_request', message: 'Nothing was recognised in that recording' };
+      const estimate = pronunciationEstimate(clip.words);
+      const graded = await deps.gradeFreeText({ ...task, studentAnswer: transcript, unclearWords: estimate.unclear });
+      if (!graded.ok) return { ok: false, reason: 'grading_failed', message: graded.error, code: graded.code, params: graded.params };
+      if (!graded.pronunciation) return { ok: false, reason: 'grading_failed', message: 'The AI replied in an unexpected format', code: 'ai_bad_reply' };
+      return {
+        ok: true,
+        result: graded.result,
+        feedback: graded.feedback,
+        mistakes: graded.mistakes ?? [],
+        spoken: { transcript, estimate, pronunciation: graded.pronunciation },
+      };
     }
     case 'passage_questions':
     case 'matching':

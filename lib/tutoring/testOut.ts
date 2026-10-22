@@ -8,7 +8,7 @@ export const TESTOUT_MAX_QUESTIONS = 20;
 export const TESTOUT_MIN_QUESTIONS = 5;
 export const TESTOUT_COOLDOWN_HOURS = 24;
 
-// Types added later declare their own eligibility here (letter tasks and spoken answers won't be).
+// Types added later declare their own eligibility here. Letter tasks and spoken responses never are (S13).
 export function isTestOutEligibleType(type: ExerciseType, aiAvailable: boolean): boolean {
   if (type === 'multiple_choice' || type === 'fill_blank') return true;
   if (type === 'passage_questions' || type === 'matching' || type === 'cloze') return true; // graded without AI

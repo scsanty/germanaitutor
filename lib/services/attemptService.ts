@@ -1,6 +1,6 @@
 import type Database from 'better-sqlite3';
 import type { CefrLevel, Track } from '../types';
-import type { Exercise } from '../curriculum/types';
+import { isNeverReviewedType, NEVER_REVIEWED_SQL, type Exercise } from '../curriculum/types';
 import { meetsCompletionRule } from '../tutoring/completion';
 import { localDate } from '../tutoring/dates';
 import type { FreeTextGradingInput } from '../tutoring/freeTextGrading';
@@ -12,13 +12,15 @@ import {
   type AttemptOutcome,
   type AttemptSource,
   type LessonAnswer,
+  type SpokenOutcome,
 } from '../tutoring/lessonAnswers';
 import { computeNextReview, seedReview, type SrsState } from '../tutoring/srs';
 import { errorBodyFor, type ApiErrorBody, type ErrorCode, type ErrorParams } from '../tutoring/errorCodes';
 import { findItemByKey, lessonCardKey, lessonCardLemma, vocabularyCardContent } from '../deck/lessonCards';
 import { createCurriculumService } from './curriculumService';
 import { createDeckService } from './deckService';
-import { gradeExerciseAnswer } from './exerciseGrading';
+import { gradeExerciseAnswer, type GradableSpeechClip } from './exerciseGrading';
+import { createSpeechClipService } from './speechClipService';
 import { lessonLock } from './levelGating';
 import { gradeFreeText, type FreeTextGradeOutcome } from './freeTextGradingService';
 import { recordMistakes } from './errorLogService';
@@ -67,6 +69,8 @@ export interface AttemptDeps {
   now?: () => Date;
   // Listening availability (S7): tests inject fakes for the speech service and the audio cache.
   audio?: AudioAvailabilityDeps;
+  // Speaking: where a clip answer's transcript comes from (defaults to the speech_clips table).
+  getSpeechClip?: (clipId: string) => GradableSpeechClip | null;
 }
 
 interface ExerciseRow {
@@ -100,6 +104,7 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
   const progress = createProgressService(db, { audio: deps.audio });
   const unlocks = createUnlockService(db);
   const deck = createDeckService(db, { now });
+  const getSpeechClip = deps.getSpeechClip ?? ((clipId: string) => createSpeechClipService(db).getClip(clipId));
 
   function getExercise(exerciseId: string): Exercise {
     const row = db.prepare('SELECT * FROM exercises WHERE id = ?').get(exerciseId) as ExerciseRow | undefined;
@@ -131,7 +136,7 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
          JOIN milestones m ON m.id = p.milestone_id
          WHERE e.id = ? AND m.track = ? AND m.level = ? AND st.next_due_at <= ?
            AND NOT (e.type = 'flashcard' AND l.skill = 'vocabulary')
-           AND e.type <> 'letter'
+           AND e.type NOT IN ${NEVER_REVIEWED_SQL}
            AND NOT EXISTS (
              SELECT 1 FROM lesson_attempts a WHERE a.exercise_id = e.id AND a.source = 'queue' AND a.answered_on = ?
            )`
@@ -144,10 +149,18 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
     exercise: Exercise,
     answer: LessonAnswer,
     lesson: { sourceLevel: CefrLevel; track: Track }
-  ): Promise<{ result: GradeResult; feedback: LocalizedText | null; itemResults?: boolean[]; mistakes?: FreeTextMistake[]; letter?: LetterGrade }> {
+  ): Promise<{
+    result: GradeResult;
+    feedback: LocalizedText | null;
+    itemResults?: boolean[];
+    mistakes?: FreeTextMistake[];
+    letter?: LetterGrade;
+    spoken?: SpokenOutcome;
+  }> {
     const graded = await gradeExerciseAnswer(exercise, answer, lesson.sourceLevel, {
       gradeFreeText: gradeFree,
       gradeLetter: (input) => gradeLetter({ ...input, track: lesson.track }),
+      getSpeechClip,
     });
     if (graded.ok) return graded;
     if (graded.reason === 'bad_request') throw new AttemptError(graded.message, 'bad_request');
@@ -178,10 +191,11 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
 
   // Spec: Spaced Repetition, "Entering review" — based on the exercise's first-ever attempt.
   // Freestyle spec (B1): a vocabulary-lesson flashcard enters the deck instead of the Daily Queue.
-  // Spec: Lessons — a letter task never enters review, so it's never seeded (at completion or after).
+  // Spec: Lessons — a letter task or a spoken response never enters review, so it's never seeded
+  // (at completion or after).
   function seedFromFirstAttempt(exerciseId: string, today: string, at: string): void {
     const type = db.prepare('SELECT type FROM exercises WHERE id = ?').get(exerciseId) as { type: string } | undefined;
-    if (type?.type === 'letter') return;
+    if (type && isNeverReviewedType(type.type)) return;
     const first = db
       .prepare('SELECT result FROM lesson_attempts WHERE exercise_id = ? ORDER BY id LIMIT 1')
       .get(exerciseId) as { result: GradeResult } | undefined;
@@ -219,10 +233,11 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
     const lesson = getUnlockedLesson(exercise.lessonId);
     if (source === 'lesson') assertLessonOpen(lesson.id);
     if (source === 'queue') assertDueInQueue(exercise.id, localDate(now()));
-    const { result, feedback, itemResults, mistakes, letter } = await grade(exercise, answer, lesson);
+    const { result, feedback, itemResults, mistakes, letter, spoken } = await grade(exercise, answer, lesson);
     // S7: free-text mistakes go to the error log after a successful grade, outside the transaction;
     // logging never breaks grading. (Letter marks were logged by the letter grader.)
-    recordMistakes(db, 'lesson', mistakes ?? [], { now });
+    // S14: a recorded spoken answer logs as speaking; its typed fallback is free text and logs as lesson.
+    recordMistakes(db, spoken ? 'speaking' : 'lesson', mistakes ?? [], { now });
     // S8: availability is async (the speech service), so it's settled before the sync transaction.
     // Spec: completion counts only the exercises available at this moment.
     const exerciseIds = (await progress.availableExercises(lesson)).available.map((e) => e.id);
@@ -267,6 +282,7 @@ export function createAttemptService(db: Database.Database, deps: AttemptDeps = 
         ...(itemResults ? { itemResults } : {}),
         ...(reveal ? { reveal } : {}),
         ...(letter ? { letter } : {}),
+        ...(spoken ? { spoken } : {}),
       };
     })();
   }

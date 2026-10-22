@@ -90,3 +90,10 @@ describe('cooldownEndsAt', () => {
     expect(cooldownEndsAt('2026-09-29T10:00:00.000Z')).toBe('2026-09-30T10:00:00.000Z');
   });
 });
+
+describe('isTestOutEligibleType and spoken responses', () => {
+  it('never allows a spoken response', () => {
+    expect(isTestOutEligibleType('spoken_response', true)).toBe(false);
+    expect(isTestOutEligibleType('spoken_response', false)).toBe(false);
+  });
+});

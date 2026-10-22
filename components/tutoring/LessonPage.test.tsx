@@ -310,3 +310,38 @@ describe('LessonPage', () => {
     expect(await screen.findByRole('button', { name: 'Practice again' })).toBeInTheDocument();
   });
 });
+
+// Speaking: the run's clips (scope lesson:<id>) are deleted when the run ends, and on unmount.
+describe('LessonPage spoken responses', () => {
+  const SPOKEN_LESSON = {
+    ...LESSON,
+    skill: 'speaking',
+    exercises: [LESSON.exercises[0], { id: 'ex3', type: 'spoken_response', prompt: 'Wie heißen Sie?' }],
+  };
+  const SCOPE = 'DELETE /api/speech/scope?scope=lesson%3Aa1-greet';
+
+  it('deletes the lesson scope once when the run ends', async () => {
+    const fetchMock = stubFetch(
+      { 'GET /api/tutoring/lessons/a1-greet': () => delayedResponse(SPOKEN_LESSON), [SCOPE]: () => delayedResponse({ ok: true }) },
+      [() => delayedResponse(outcome('correct')), () => delayedResponse(outcome('correct', { correctAnswer: 'Ich heiße Anna.' }))]
+    );
+    renderWithIntl(<LessonPage lessonId="a1-greet" />);
+    fireEvent.click(await screen.findByRole('button', { name: 'Start the exercises' }));
+    await answer('Hallo');
+    fireEvent.click(await screen.findByRole('button', { name: 'Type instead' }));
+    fireEvent.change(screen.getByRole('textbox', { name: 'Your answer' }), { target: { value: 'Ich heiße Tom.' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }));
+    const scopeCalls = () => fetchMock.mock.calls.filter(([url, init]) => `${init?.method ?? 'GET'} ${url}` === SCOPE);
+    expect(scopeCalls()).toHaveLength(0);
+    fireEvent.click(await screen.findByRole('button', { name: 'Next' }));
+    await waitFor(() => expect(scopeCalls()).toHaveLength(1));
+  });
+
+  it('deletes the lesson scope when the page unmounts mid-run', async () => {
+    const fetchMock = stubFetch({ 'GET /api/tutoring/lessons/a1-greet': () => delayedResponse(SPOKEN_LESSON), [SCOPE]: () => delayedResponse({ ok: true }) });
+    const { unmount } = renderWithIntl(<LessonPage lessonId="a1-greet" />);
+    fireEvent.click(await screen.findByRole('button', { name: 'Start the exercises' }));
+    unmount();
+    expect(fetchMock.mock.calls.filter(([url, init]) => `${init?.method ?? 'GET'} ${url}` === SCOPE)).toHaveLength(1);
+  });
+});

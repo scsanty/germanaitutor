@@ -21,7 +21,18 @@ export type ExerciseType =
   // Listening module: questions about a spoken transcript (lib/tasks/audioQuestions)
   | 'audio_questions'
   // Writing module: a letter graded by the AI against a rubric (lib/tasks/letter)
-  | 'letter';
+  | 'letter'
+  // Speaking module: an answer spoken aloud (or typed), graded from its transcript like free text
+  | 'spoken_response';
+
+// S13: these never enter review (the Daily Queue, a test-out's schedule) and are never test-out questions.
+export const NEVER_REVIEWED_TYPES = ['letter', 'spoken_response'] as const satisfies readonly ExerciseType[];
+// The same list as an SQL value list, for `e.type NOT IN ${NEVER_REVIEWED_SQL}`.
+export const NEVER_REVIEWED_SQL = `(${NEVER_REVIEWED_TYPES.map((t) => `'${t}'`).join(', ')})`;
+
+export function isNeverReviewedType(type: string): boolean {
+  return (NEVER_REVIEWED_TYPES as readonly string[]).includes(type);
+}
 
 export interface Milestone {
   id: string;
@@ -89,6 +100,14 @@ export interface FreeTextContent {
   instruction?: LocalizedText;
 }
 
+// Speaking: a German prompt, a model answer and an optional minimum speaking time.
+export interface SpokenResponseContent {
+  instruction?: LocalizedText;
+  prompt: string;
+  modelAnswer: string;
+  minSeconds?: number;
+}
+
 export type ExerciseContent =
   | MultipleChoiceContent
   | FillBlankContent
@@ -98,7 +117,8 @@ export type ExerciseContent =
   | MatchingContent
   | ClozeContent
   | AudioQuestionsContent
-  | LetterContent;
+  | LetterContent
+  | SpokenResponseContent;
 
 export interface Exercise {
   id: string;

@@ -4,7 +4,15 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import type { ExerciseView } from '@/lib/tutoring/exerciseView';
-import { taskAnswerText, type AttemptOutcome, type AttemptSource, type FlashcardRating, type LessonAnswer, type TaskAnswerSource } from '@/lib/tutoring/lessonAnswers';
+import {
+  taskAnswerText,
+  type AttemptOutcome,
+  type AttemptSource,
+  type FlashcardRating,
+  type LessonAnswer,
+  type SpokenOutcome,
+  type TaskAnswerSource,
+} from '@/lib/tutoring/lessonAnswers';
 import type { SetTaskType, TaskAnswer, TaskView } from '@/lib/tasks/taskTypes';
 import { answeredCount, emptyAnswer, TaskInputs } from '@/components/exam/TaskInputs';
 import { TranscriptReveal } from '@/components/audio/TranscriptReveal';
@@ -17,7 +25,7 @@ import { differsByLanguage, pickText, type ContentLanguage, type LocalizedText }
 import { useApiErrorText } from '@/components/useApiErrorText';
 import { useExerciseShortcuts } from '@/components/focus/useExerciseShortcuts';
 import { useSound } from '@/lib/sound/useSound';
-import { Check, CircleAlert, MessageCircle, PenLine, X } from 'lucide-react';
+import { Check, CircleAlert, Keyboard, MessageCircle, PenLine, RotateCcw, X } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import { GermanTextInput } from '@/components/typing/GermanTextInput';
@@ -28,6 +36,9 @@ import { LetterTaskInput } from '@/components/writing/LetterTaskInput';
 import { LetterResult } from '@/components/writing/LetterResult';
 import type { LetterGrade } from '@/lib/writing/letterGrading';
 import { LESSON_LETTER_RUBRIC } from '@/lib/writing/rubric';
+import { MicButton } from '@/components/speech/MicButton';
+import { PronunciationBox } from '@/components/speech/PronunciationBox';
+import type { TranscribeResult } from '@/components/speech/useRecorder';
 
 const RATINGS: FlashcardRating[] = ['knew', 'sort_of', 'didnt_know'];
 
@@ -57,6 +68,8 @@ export interface ExerciseCardProps {
   onNext: () => void;
   onSkip: () => void;
   onAskAi?: (exerciseId: string, answer: { answerText: string; result: GradeResult }) => void;
+  // Speaking: the clip scope of a lesson run (`lesson:<lessonId>`). Without it a spoken response is typed only.
+  speechScope?: string;
 }
 
 // What the card shows after an answer, in lesson or practice mode.
@@ -71,6 +84,8 @@ interface Shown {
   reveal?: AudioReveal;
   // Writing: the graded letter (marks, criteria, corrected version).
   letter?: LetterGrade;
+  // Speaking: a recorded answer's pronunciation estimate and comment.
+  spoken?: SpokenOutcome;
 }
 
 // S12: a lesson letter's graded versions, kept for the card's lifetime (each one is its own attempt).
@@ -107,6 +122,7 @@ export function taskText(exercise: ExerciseView): string {
     case 'flashcard':
       return exercise.front;
     case 'free_text':
+    case 'spoken_response':
       return exercise.prompt;
     // Reading and listening task types: shown by their own inputs, never as a heading line.
     case 'passage_questions':
@@ -146,6 +162,9 @@ function answerTextOf(exercise: ExerciseView, answer: LessonAnswer): string {
       return answer.text;
     case 'flashcard':
       return answer.rating;
+    // A recorded answer's text is its transcript, which the caller has (the server stores none, B2).
+    case 'spoken_response':
+      return 'typed' in answer ? answer.typed : '';
     // The same text the server stores (answerTextFor): the chosen options or texts, not indexes.
     case 'passage_questions':
     case 'matching':
@@ -173,10 +192,12 @@ export function ExerciseCard({
   onNext,
   onSkip,
   onAskAi,
+  speechScope,
 }: ExerciseCardProps) {
   const t = useTranslations('exercise');
   const tWriting = useTranslations('writing');
   const tFocus = useTranslations('focus');
+  const tSpeech = useTranslations('speech');
   const playSound = useSound();
   const errorText = useApiErrorText();
   const locale = useLocale() as ContentLanguage;
@@ -194,6 +215,9 @@ export function ExerciseCard({
   const [gradingError, setGradingError] = useState<string | null>(null);
   const [shown, setShown] = useState<Shown | null>(null);
   const [versions, setVersions] = useState<LetterVersion[]>([]);
+  // Speaking: the latest recording (kept through a grading failure), and the typed fallback.
+  const [recording, setRecording] = useState<TranscribeResult | null>(null);
+  const [typing, setTyping] = useState(!speechScope);
 
   async function submit(answer: LessonAnswer) {
     setBusy(true);
@@ -220,7 +244,7 @@ export function ExerciseCard({
           onTestAnswered?.(data as TestOutAnswerOutcome);
           return;
         }
-        const answerText = answerTextOf(exercise, answer);
+        const answerText = answer.type === 'spoken_response' && 'clipId' in answer ? (recording?.text ?? '') : answerTextOf(exercise, answer);
         // Sound only where feedback is shown; 'almost' counts as correct.
         const graded = (data as { result: GradeResult }).result;
         playSound(graded === 'wrong' ? 'wrong' : 'correct');
@@ -238,6 +262,7 @@ export function ExerciseCard({
             itemResults: outcome.itemResults,
             reveal: outcome.reveal,
             letter: outcome.letter,
+            spoken: outcome.spoken,
           });
           const graded = outcome.letter;
           if (graded) setVersions((all) => [...all, { percent: graded.percent, text: answerText }]);
@@ -266,6 +291,10 @@ export function ExerciseCard({
       return selectedIndex === null ? null : { type: 'multiple_choice', selectedIndex };
     }
     if (exercise.type === 'flashcard') return null;
+    if (exercise.type === 'spoken_response') {
+      if (typing) return text.trim() ? { type: 'spoken_response', typed: text.trim() } : null;
+      return recording && recording.text.trim() ? { type: 'spoken_response', clipId: recording.clipId } : null;
+    }
     // Reading tasks: checkable once any item is answered; typed gaps go exactly as typed (grading is case-sensitive).
     if (isTaskExercise(exercise)) return taskAnswer && answeredCount(taskAnswer) > 0 ? (taskAnswer as LessonAnswer) : null;
     const trimmed = text.trim();
@@ -391,7 +420,7 @@ export function ExerciseCard({
     const showAnswer =
       exercise.type !== 'flashcard' &&
       shown.correctAnswer !== null &&
-      (shown.result !== 'correct' || (mode === 'lesson' && exercise.type === 'free_text'));
+      (shown.result !== 'correct' || (mode === 'lesson' && (exercise.type === 'free_text' || exercise.type === 'spoken_response')));
     const style = RESULT_STYLE[shown.result];
     const ResultIcon = style.icon;
     return (
@@ -408,6 +437,14 @@ export function ExerciseCard({
         )}
         {exercise.type === 'flashcard' && <p className="rounded-xl border border-border bg-surface p-4 text-lg">{exercise.back}</p>}
         {exercise.type === 'letter' && <p className="whitespace-pre-wrap rounded-xl border border-border bg-surface p-4">{shown.answerText}</p>}
+        {exercise.type === 'spoken_response' && (
+          <>
+            <p lang="de" className="whitespace-pre-wrap rounded-xl border border-border bg-surface p-4">
+              {shown.answerText}
+            </p>
+            {shown.spoken && <PronunciationBox estimate={shown.spoken.estimate} comment={shown.spoken.pronunciation} />}
+          </>
+        )}
         <div className={FOOTER}>
           {/* The result rises from the bottom (200 ms; none under reduced motion). */}
           <div className={cn('flex animate-rise-in flex-col gap-2 rounded-2xl border-2 p-4', style.box)}>
@@ -419,7 +456,7 @@ export function ExerciseCard({
             </p>
             {showAnswer && (
               <p className="font-semibold">
-                {exercise.type === 'free_text'
+                {exercise.type === 'free_text' || exercise.type === 'spoken_response'
                   ? t('modelAnswer', { answer: shown.correctAnswer ?? '' })
                   : t('correctAnswer', { answer: shown.correctAnswer ?? '' })}
               </p>
@@ -531,6 +568,35 @@ export function ExerciseCard({
       {/* S9: an untimed letter keeps the browser's spellcheck; with two tasks the student picks one. */}
       {exercise.type === 'letter' && taskAnswer?.type === 'letter' && (
         <LetterTaskInput content={exercise} value={taskAnswer} onChange={setTaskAnswer} timed={false} disabled={busy} />
+      )}
+      {exercise.type === 'spoken_response' && (
+        <div className="flex flex-col gap-4">
+          <p lang="de" className={TASK}>
+            {exercise.prompt}
+          </p>
+          {typing ? (
+            <GermanTextarea aria-label={t('answerLabel')} value={text} onChange={(e) => setText(e.target.value)} spellCheck={false} className="min-h-32 text-base md:text-base" />
+          ) : recording ? (
+            // The transcript preview: record again as often as wanted before submitting.
+            <div className="flex flex-col gap-3">
+              <p lang="de" className="whitespace-pre-wrap rounded-xl border border-border bg-surface p-4">
+                {recording.text}
+              </p>
+              <Button type="button" variant="outline" disabled={busy} onClick={() => setRecording(null)} className="min-h-11 self-start">
+                <RotateCcw aria-hidden />
+                {tSpeech('recordAgain')}
+              </Button>
+            </div>
+          ) : (
+            <MicButton scope={speechScope!} onTranscript={setRecording} disabled={busy} />
+          )}
+          {!typing && !recording && (
+            <Button type="button" variant="ghost" onClick={() => setTyping(true)} className="min-h-11 self-center">
+              <Keyboard aria-hidden />
+              {tSpeech('typeInstead')}
+            </Button>
+          )}
+        </div>
       )}
       {exercise.type === 'free_text' && (
         <div className="flex flex-col gap-4">

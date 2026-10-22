@@ -38,3 +38,21 @@ describe('gradeFreeText', () => {
     expect(await gradeFreeText(createDbClient(':memory:'), input)).toEqual(failure);
   });
 });
+
+describe('gradeFreeText for a spoken answer (S15)', () => {
+  it('returns the pronunciation comment when unclearWords were sent, and fails without it', async () => {
+    vi.mocked(generateWithActiveProvider).mockResolvedValue({
+      ok: true,
+      text: '{"result":"correct","feedback_en":"Good.","feedback_de":"Gut.","pronunciation_en":"Clear.","pronunciation_de":"Deutlich."}',
+    });
+    expect(await gradeFreeText(createDbClient(':memory:'), { ...input, unclearWords: [] })).toEqual({
+      ok: true,
+      result: 'correct',
+      feedback: { en: 'Good.', de: 'Gut.' },
+      mistakes: [],
+      pronunciation: { en: 'Clear.', de: 'Deutlich.' },
+    });
+    vi.mocked(generateWithActiveProvider).mockResolvedValue({ ok: true, text: '{"result":"correct","feedback_en":"Good.","feedback_de":"Gut."}' });
+    expect(await gradeFreeText(createDbClient(':memory:'), { ...input, unclearWords: ['x'] })).toMatchObject({ ok: false, code: 'ai_bad_reply' });
+  });
+});

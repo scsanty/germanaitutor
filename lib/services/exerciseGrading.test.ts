@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
 import type { Exercise } from '../curriculum/types';
-import { gradeExerciseAnswer } from './exerciseGrading';
+import { gradeExerciseAnswer, type GradableSpeechClip } from './exerciseGrading';
 import type { LetterGrade } from '../writing/letterGrading';
 
 const mc: Exercise = { id: 'mc', lessonId: 'l', track: null, type: 'multiple_choice', content: { question: 'Hi?', options: ['Hallo', 'Nein'], correctIndex: 0 } };
@@ -116,3 +116,73 @@ describe('gradeExerciseAnswer for letters (S6)', () => {
   });
 });
 
+
+describe('gradeExerciseAnswer for spoken responses (Speaking)', () => {
+  const spoken: Exercise = {
+    id: 'sr',
+    lessonId: 'a1-greet',
+    track: null,
+    type: 'spoken_response',
+    content: { instruction: { en: 'Answer aloud.', de: 'Antworte laut.' }, prompt: 'Wie heißen Sie?', modelAnswer: 'Ich heiße Anna.' },
+  };
+  const words = [
+    { word: 'Ich', start: 0, end: 0.3, probability: 0.9 },
+    { word: 'heiße', start: 0.3, end: 0.7, probability: 0.5 },
+    { word: 'Tom.', start: 0.7, end: 1, probability: 0.8 },
+  ];
+  const clip = (overrides: Partial<GradableSpeechClip> = {}): GradableSpeechClip => ({ scope: 'lesson:a1-greet', role: 'student', transcript: 'Ich heiße Tom.', words, ...overrides });
+  const graded = { ok: true, result: 'almost', feedback: { en: 'Almost.', de: 'Fast.' }, mistakes: [], pronunciation: { en: 'Check heiße.', de: 'Prüfe heiße.' } };
+
+  it('grades the transcript like free text, with the unclear words, and adds the estimate', async () => {
+    const d = deps(graded);
+    const getSpeechClip = vi.fn().mockReturnValue(clip());
+    expect(await gradeExerciseAnswer(spoken, { type: 'spoken_response', clipId: 'c1' }, 'A1', { ...d, getSpeechClip })).toEqual({
+      ok: true,
+      result: 'almost',
+      feedback: { en: 'Almost.', de: 'Fast.' },
+      mistakes: [],
+      spoken: { transcript: 'Ich heiße Tom.', estimate: { score: 73, unclear: ['heiße'] }, pronunciation: { en: 'Check heiße.', de: 'Prüfe heiße.' } },
+    });
+    expect(getSpeechClip).toHaveBeenCalledWith('c1');
+    expect(d.gradeFreeText).toHaveBeenCalledWith({
+      prompt: 'Answer aloud. — Wie heißen Sie?',
+      modelAnswer: 'Ich heiße Anna.',
+      studentAnswer: 'Ich heiße Tom.',
+      level: 'A1',
+      unclearWords: ['heiße'],
+    });
+  });
+
+  it('refuses a clip from another scope, a partner clip, a missing or empty clip, or no clip loader, before any AI call', async () => {
+    const d = deps(graded);
+    for (const found of [clip({ scope: 'lesson:a1-sein' }), clip({ scope: 'freestyle:spoken' }), clip({ role: 'partner' }), clip({ transcript: '  ' }), null]) {
+      expect(await gradeExerciseAnswer(spoken, { type: 'spoken_response', clipId: 'c1' }, 'A1', { ...d, getSpeechClip: () => found })).toMatchObject({
+        ok: false,
+        reason: 'bad_request',
+      });
+    }
+    expect(await gradeExerciseAnswer(spoken, { type: 'spoken_response', clipId: 'c1' }, 'A1', d)).toMatchObject({ ok: false, reason: 'bad_request' });
+    expect(d.gradeFreeText).not.toHaveBeenCalled();
+  });
+
+  it('grades a typed answer as plain free text, without an estimate', async () => {
+    const d = deps();
+    expect(await gradeExerciseAnswer(spoken, { type: 'spoken_response', typed: 'Ich heiße Tom.' }, 'A1', d)).toEqual({
+      ok: true,
+      result: 'almost',
+      feedback: { en: 'Almost.', de: 'Fast.' },
+      mistakes: [],
+    });
+    expect(d.gradeFreeText).toHaveBeenCalledWith({ prompt: 'Answer aloud. — Wie heißen Sie?', modelAnswer: 'Ich heiße Anna.', studentAnswer: 'Ich heiße Tom.', level: 'A1' });
+    expect(await gradeExerciseAnswer(spoken, { type: 'spoken_response', typed: '  ' }, 'A1', d)).toMatchObject({ ok: false, reason: 'bad_request' });
+  });
+
+  it('maps a grading failure to grading_failed', async () => {
+    const d = deps({ ok: false, error: 'bad', code: 'ai_bad_reply' });
+    expect(await gradeExerciseAnswer(spoken, { type: 'spoken_response', clipId: 'c1' }, 'A1', { ...d, getSpeechClip: () => clip() })).toMatchObject({
+      ok: false,
+      reason: 'grading_failed',
+      code: 'ai_bad_reply',
+    });
+  });
+});

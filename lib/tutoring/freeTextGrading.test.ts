@@ -97,3 +97,34 @@ describe('parseFreeTextGrade', () => {
     expect(parseFreeTextGrade('{"result":"correct","feedback_en":"Ok.","feedback_de":"Ok.","mistakes":"none"}')?.mistakes).toEqual([]);
   });
 });
+
+// S15: a spoken answer adds the estimate note and asks for a pronunciation comment.
+describe('free-text grading of a spoken answer', () => {
+  const spoken = { ...input, unclearWords: ['heiße'] };
+
+  it('adds the estimate note and the pronunciation fields only when unclearWords are given', () => {
+    const { systemPrompt, messages } = buildFreeTextGradingPrompt(spoken);
+    expect(systemPrompt).toContain('speech recognition');
+    expect(systemPrompt).toContain('Words recognised with low confidence: heiße.');
+    expect(systemPrompt).toContain('"pronunciation_en": "...", "pronunciation_de": "..."');
+    expect(messages[0].content).toContain('Student answer: Ich heiße Tom.');
+    expect(buildFreeTextGradingPrompt({ ...input, unclearWords: [] }).systemPrompt).toContain('Words recognised with low confidence: none.');
+    const plain = buildFreeTextGradingPrompt(input).systemPrompt;
+    expect(plain).not.toContain('pronunciation');
+    expect(plain).not.toContain('speech recognition');
+  });
+
+  it('returns the pronunciation comment, and requires it when it was asked for', () => {
+    const reply = '{"result": "almost", "feedback_en": "Nearly.", "feedback_de": "Fast.", "pronunciation_en": " Mostly clear. ", "pronunciation_de": " Meist deutlich. "}';
+    expect(parseFreeTextGrade(reply, { pronunciation: true })).toEqual({
+      result: 'almost',
+      feedback: { en: 'Nearly.', de: 'Fast.' },
+      mistakes: [],
+      pronunciation: { en: 'Mostly clear.', de: 'Meist deutlich.' },
+    });
+    expect(parseFreeTextGrade('{"result": "almost", "feedback_en": "Nearly.", "feedback_de": "Fast."}', { pronunciation: true })).toBeNull();
+    expect(parseFreeTextGrade('{"result": "almost", "feedback_en": "Nearly.", "feedback_de": "Fast.", "pronunciation_en": "x", "pronunciation_de": " "}', { pronunciation: true })).toBeNull();
+    // Not asked for: ignored.
+    expect(parseFreeTextGrade(reply)).toEqual({ result: 'almost', feedback: { en: 'Nearly.', de: 'Fast.' }, mistakes: [] });
+  });
+});

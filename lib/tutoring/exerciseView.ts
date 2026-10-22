@@ -4,6 +4,7 @@ import type {
   FlashcardContent,
   FreeTextContent,
   MultipleChoiceContent,
+  SpokenResponseContent,
 } from '../curriculum/types';
 import type { LocalizedText } from '../i18n/localizedText';
 import type { PassageQuestionsView } from '../tasks/passageQuestions';
@@ -25,7 +26,9 @@ export type ExerciseView =
   | ({ id: string; type: 'cloze' } & ClozeView)
   | ({ id: string; type: 'audio_questions' } & AudioQuestionsView)
   // Writing: nothing in a letter task is secret, so the view is the content.
-  | ({ id: string; type: 'letter' } & LetterView);
+  | ({ id: string; type: 'letter' } & LetterView)
+  // Speaking: the prompt to answer aloud; the model answer stays on the server.
+  | { id: string; type: 'spoken_response'; prompt: string; minSeconds?: number; instruction?: LocalizedText };
 
 function instructionOf(content: { instruction?: LocalizedText }): { instruction?: LocalizedText } {
   return content.instruction ? { instruction: content.instruction } : {};
@@ -71,5 +74,15 @@ export function toExerciseView(exercise: Exercise, playable: (hash: string) => b
       };
     case 'letter':
       return { id: exercise.id, type: 'letter', ...viewLetter(exercise.content as LetterContent) };
+    case 'spoken_response': {
+      const content = exercise.content as SpokenResponseContent;
+      return {
+        id: exercise.id,
+        type: 'spoken_response',
+        prompt: content.prompt,
+        ...(content.minSeconds !== undefined ? { minSeconds: content.minSeconds } : {}),
+        ...instructionOf(content),
+      };
+    }
   }
 }

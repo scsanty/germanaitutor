@@ -197,7 +197,8 @@ export function runMigrations(db: Database.Database): void {
   }
 }
 
-// Every exercise type the two exercise tables accept (the Reading types, Listening's audio_questions, Writing's letter).
+// Every exercise type the two exercise tables accept (the Reading types, Listening's audio_questions, Writing's letter,
+// Speaking's spoken_response).
 export const EXERCISE_TYPES = [
   'multiple_choice',
   'fill_blank',
@@ -208,6 +209,7 @@ export const EXERCISE_TYPES = [
   'cloze',
   'audio_questions',
   'letter',
+  'spoken_response',
 ] as const;
 
 // SQLite can't change a CHECK in place, so each table whose type CHECK lacks a type is rebuilt
@@ -428,7 +430,7 @@ function createTablesIfMissing(db: Database.Database): void {
       id TEXT PRIMARY KEY,
       lesson_id TEXT NOT NULL REFERENCES lessons(id) ON DELETE CASCADE,
       track TEXT CHECK (track IN ('generic','telc','goethe')),
-      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','flashcard','free_text','passage_questions','matching','cloze','audio_questions','letter')),
+      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','flashcard','free_text','passage_questions','matching','cloze','audio_questions','letter','spoken_response')),
       content TEXT NOT NULL
     );
 
@@ -545,7 +547,7 @@ function createTablesIfMissing(db: Database.Database): void {
     CREATE TABLE IF NOT EXISTS practice_exercises (
       id TEXT PRIMARY KEY,
       lesson_id TEXT NOT NULL REFERENCES lessons(id) ON DELETE CASCADE,
-      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','flashcard','free_text','passage_questions','matching','cloze','audio_questions','letter')),
+      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','flashcard','free_text','passage_questions','matching','cloze','audio_questions','letter','spoken_response')),
       content TEXT NOT NULL,
       review_status TEXT NOT NULL DEFAULT 'unreviewed' CHECK (review_status IN ('unreviewed','approved','rejected')),
       created_at TEXT NOT NULL,

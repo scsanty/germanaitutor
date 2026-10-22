@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from 'vitest';
+import { afterEach, describe, it, expect, vi } from 'vitest';
 import { screen, fireEvent, waitFor, within } from '@testing-library/react';
 import { renderWithIntl } from '@/test/renderWithIntl';
 import { delayedResponse } from '@/test/delayedResponse';
@@ -449,5 +449,113 @@ describe('ExerciseCard lesson letters', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Check' }));
     expect(await screen.findByText('7 of 15 points (47%)')).toBeInTheDocument();
     expect(fetchMock).toHaveBeenCalledTimes(2);
+  });
+});
+
+// Speaking: record (and record again), then submit the transcript; or type instead.
+describe('ExerciseCard spoken responses', () => {
+  const SPOKEN: ExerciseView = {
+    id: 'ex6',
+    type: 'spoken_response',
+    prompt: 'Wie heißen Sie?',
+    instruction: { en: 'Answer aloud.', de: 'Antworte laut.' },
+  };
+  class FakeRecorder {
+    static isTypeSupported = () => true;
+    mimeType = 'audio/webm;codecs=opus';
+    ondataavailable: ((e: { data: Blob }) => void) | null = null;
+    onstop: (() => void) | null = null;
+    start() {}
+    stop() {
+      setTimeout(() => {
+        this.ondataavailable?.({ data: new Blob(['abc'], { type: this.mimeType }) });
+        this.onstop?.();
+      }, 0);
+    }
+  }
+  afterEach(() => vi.unstubAllGlobals());
+  const clip = (clipId: string, text: string) => () => delayedResponse({ clipId, text, words: [{ word: text, start: 0, end: 1, probability: 0.8 }], duration: 2 });
+
+  function mockMicrophone() {
+    vi.stubGlobal('MediaRecorder', FakeRecorder);
+    Object.defineProperty(navigator, 'mediaDevices', {
+      configurable: true,
+      value: { getUserMedia: vi.fn().mockResolvedValue({ getTracks: () => [{ stop: vi.fn() }] }) },
+    });
+  }
+
+  function renderSpoken() {
+    const props = { onAnswered: vi.fn(), onNext: vi.fn(), onSkip: vi.fn() };
+    renderWithIntl(<ExerciseCard exercise={SPOKEN} source="lesson" speechScope="lesson:a1-greet" {...props} />);
+    return props;
+  }
+
+  async function record() {
+    fireEvent.click(await screen.findByRole('button', { name: 'Start speaking' }));
+    fireEvent.click(await screen.findByRole('button', { name: 'Stop and send' }));
+  }
+
+  it('previews the transcript with Record again, submits the latest clip, and shows the pronunciation box', async () => {
+    mockMicrophone();
+    const spoken = { transcript: 'Ich heiße Tom.', estimate: { score: 72, unclear: ['heiße'] }, pronunciation: { en: 'Mostly clear.', de: 'Meist deutlich.' } };
+    const fetchMock = stubAttempts(
+      clip('c1', 'Ich heisse.'),
+      clip('c2', 'Ich heiße Tom.'),
+      () => delayedResponse(outcome({ result: 'almost', correctAnswer: 'Ich heiße Anna.', feedback: { en: 'Nearly.', de: 'Fast.' }, spoken }))
+    );
+    const props = renderSpoken();
+    expect(screen.getByText('Wie heißen Sie?')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Check' })).toBeDisabled();
+
+    await record();
+    expect(await screen.findByText('Ich heisse.')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Record again' }));
+    await record();
+    expect(await screen.findByText('Ich heiße Tom.')).toBeInTheDocument();
+    expect(screen.queryByText('Ich heisse.')).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }));
+    expect(await screen.findByText('Pronunciation (estimate)')).toBeInTheDocument();
+    expect(fetchMock.mock.calls[0][0]).toBe('/api/speech/transcribe?scope=lesson%3Aa1-greet');
+    expect(JSON.parse(fetchMock.mock.calls[2][1]!.body as string)).toEqual({ exerciseId: 'ex6', answer: { type: 'spoken_response', clipId: 'c2' }, source: 'lesson' });
+    expect(screen.getByText('Mostly clear')).toBeInTheDocument();
+    expect(screen.getByText('Mostly clear.')).toBeInTheDocument();
+    expect(screen.getByText('Model answer: Ich heiße Anna.')).toBeInTheDocument();
+    expect(screen.getByText('Ich heiße Tom.')).toBeInTheDocument();
+    expect(props.onAnswered).toHaveBeenCalled();
+  });
+
+  it('keeps the transcript and offers a retry when grading fails', async () => {
+    mockMicrophone();
+    stubAttempts(clip('c1', 'Ich heiße Tom.'), () => delayedResponse({ error: 'AI down', code: 'ai_failed' }, { ok: false, status: 502 }));
+    renderSpoken();
+    await record();
+    expect(await screen.findByText('Ich heiße Tom.')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }));
+    expect(await screen.findByRole('alert')).toBeInTheDocument();
+    expect(screen.getByText('Ich heiße Tom.')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Check' })).toBeEnabled();
+  });
+
+  it('switches to a German textarea with Type instead and sends the typed answer, without an estimate', async () => {
+    mockMicrophone();
+    const fetchMock = stubAttempts(() => delayedResponse(outcome({ result: 'correct', correctAnswer: 'Ich heiße Anna.' })));
+    renderSpoken();
+    fireEvent.click(screen.getByRole('button', { name: 'Type instead' }));
+    expect(screen.queryByRole('button', { name: 'Start speaking' })).not.toBeInTheDocument();
+    const box = screen.getByRole('textbox', { name: 'Your answer' });
+    // GermanTextarea: the umlaut row comes with it.
+    expect(screen.getAllByRole('button', { name: /ä/ }).length).toBeGreaterThan(0);
+    fireEvent.change(box, { target: { value: 'Ich heiße Tom.' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Check' }));
+    expect(await screen.findByText('Correct!')).toBeInTheDocument();
+    expect(JSON.parse(fetchMock.mock.calls[0][1]!.body as string).answer).toEqual({ type: 'spoken_response', typed: 'Ich heiße Tom.' });
+    expect(screen.queryByText('Pronunciation (estimate)')).not.toBeInTheDocument();
+  });
+
+  it('offers only typing without a speech scope', () => {
+    renderWithIntl(<ExerciseCard exercise={SPOKEN} source="lesson" onNext={vi.fn()} onSkip={vi.fn()} />);
+    expect(screen.queryByRole('button', { name: 'Start speaking' })).not.toBeInTheDocument();
+    expect(screen.getByRole('textbox', { name: 'Your answer' })).toBeInTheDocument();
   });
 });
