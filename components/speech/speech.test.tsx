@@ -16,10 +16,13 @@ class FakeRecorder {
   start() {
     this.state = 'recording';
   }
+  // Like a browser, the stop event arrives later.
   stop() {
     this.state = 'inactive';
-    this.ondataavailable?.({ data: new Blob(['abc'], { type: this.mimeType }) });
-    this.onstop?.();
+    setTimeout(() => {
+      this.ondataavailable?.({ data: new Blob(['abc'], { type: this.mimeType }) });
+      this.onstop?.();
+    }, 0);
   }
 }
 
@@ -100,6 +103,52 @@ describe('MicButton', () => {
     expect(navigator.mediaDevices.getUserMedia).toHaveBeenCalledTimes(1);
   });
 
+  it('stops and uploads by itself at five minutes', async () => {
+    vi.useFakeTimers();
+    try {
+      const fetchMock = mockFetch(json(RESULT));
+      const onTranscript = vi.fn();
+      renderWithIntl(<MicButton scope="placement" onTranscript={onTranscript} />);
+      await act(async () => {
+        fireEvent.click(screen.getByRole('button', { name: 'Start speaking' }));
+      });
+      await act(async () => {
+        await vi.advanceTimersByTimeAsync(300_000);
+        await vi.advanceTimersByTimeAsync(10);
+      });
+      expect(fetchMock).toHaveBeenCalledTimes(1);
+      expect(onTranscript).toHaveBeenCalledTimes(1);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it('opens one stream on a double tap on start', async () => {
+    renderWithIntl(<MicButton scope="placement" onTranscript={vi.fn()} />);
+    const startBtn = screen.getByRole('button', { name: 'Start speaking' });
+    fireEvent.click(startBtn);
+    fireEvent.click(startBtn);
+    await screen.findByRole('button', { name: 'Stop and send' });
+    expect(navigator.mediaDevices.getUserMedia).toHaveBeenCalledTimes(1);
+  });
+
+  it('releases the stream when unmounted during the permission prompt', async () => {
+    let grant!: (s: unknown) => void;
+    (navigator.mediaDevices.getUserMedia as ReturnType<typeof vi.fn>).mockReturnValue(new Promise((r) => (grant = r)));
+    const { unmount } = renderWithIntl(<MicButton scope="placement" onTranscript={vi.fn()} />);
+    fireEvent.click(screen.getByRole('button', { name: 'Start speaking' }));
+    unmount();
+    await act(async () => grant({ getTracks: () => [{ stop: trackStop }] }));
+    expect(trackStop).toHaveBeenCalled();
+  });
+
+  it('reports another microphone failure as a microphone error', async () => {
+    (navigator.mediaDevices.getUserMedia as ReturnType<typeof vi.fn>).mockRejectedValue(new DOMException('busy', 'NotReadableError'));
+    renderWithIntl(<MicButton scope="placement" onTranscript={vi.fn()} />);
+    fireEvent.click(screen.getByRole('button', { name: 'Start speaking' }));
+    expect(await screen.findByRole('alert')).toHaveTextContent('The microphone could not be started.');
+  });
+
   it('shows the timer while recording and stops tracks on unmount', async () => {
     mockFetch();
     const { unmount } = renderWithIntl(<MicButton scope="placement" onTranscript={vi.fn()} />);
@@ -113,11 +162,18 @@ describe('MicButton', () => {
 
 describe('PronunciationBox', () => {
   it('shows the band, the unclear words and the note', () => {
-    renderWithIntl(<PronunciationBox estimate={{ score: 72, unclear: ['Straße'] }} comment="Watch the ß." />);
+    renderWithIntl(<PronunciationBox estimate={{ score: 72, unclear: ['Straße'] }} comment={{ en: 'Watch the ß.', de: 'Watch the ß.' }} />);
     expect(screen.getByText('Pronunciation (estimate)')).toBeInTheDocument();
     expect(screen.getByText(/Mostly clear/i)).toBeInTheDocument();
     expect(screen.getByText('Straße')).toBeInTheDocument();
     expect(screen.getByText('Watch the ß.')).toBeInTheDocument();
     expect(screen.getByText('Estimated from speech recognition.')).toBeInTheDocument();
+  });
+
+  it('switches the comment language with the toggle', () => {
+    renderWithIntl(<PronunciationBox estimate={{ score: 90, unclear: [] }} comment={{ en: 'Nice and clear.', de: 'Schön deutlich.' }} />);
+    expect(screen.getByText('Nice and clear.')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'DE' }));
+    expect(screen.getByText('Schön deutlich.')).toBeInTheDocument();
   });
 });

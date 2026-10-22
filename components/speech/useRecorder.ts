@@ -22,7 +22,9 @@ const PREFERRED_TYPE = 'audio/webm;codecs=opus';
 
 // Tap-to-talk: record with MediaRecorder, then send the raw clip to the transcription route.
 // A failed upload keeps the recording in memory so `retry` can send it again (S27).
-export function useRecorder({ scope }: { scope: string }) {
+const MAX_SECONDS = 300;
+
+export function useRecorder({ scope, onAutoStop }: { scope: string; onAutoStop?: (result: TranscribeResult) => void }) {
   const t = useTranslations('speech');
   const errorText = useApiErrorText();
   const [state, setState] = useState<RecorderState>('idle');
@@ -36,6 +38,11 @@ export function useRecorder({ scope }: { scope: string }) {
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const keptRef = useRef<{ blob: Blob; mimeType: string } | null>(null);
   const chosenTypeRef = useRef<string | undefined>(undefined);
+  const startingRef = useRef(false);
+  const unmountedRef = useRef(false);
+  const stopRef = useRef<() => Promise<TranscribeResult | null>>(() => Promise.resolve(null));
+  const onAutoStopRef = useRef(onAutoStop);
+  onAutoStopRef.current = onAutoStop;
   const inFlightRef = useRef<Promise<TranscribeResult | null> | null>(null);
 
   const stopTimer = () => {
@@ -47,13 +54,14 @@ export function useRecorder({ scope }: { scope: string }) {
     streamRef.current = null;
   };
 
-  useEffect(
-    () => () => {
+  useEffect(() => {
+    unmountedRef.current = false;
+    return () => {
+      unmountedRef.current = true;
       stopTimer();
       releaseStream();
-    },
-    []
-  );
+    };
+  }, []);
 
   const upload = useCallback(async (): Promise<TranscribeResult | null> => {
     const kept = keptRef.current;
@@ -79,7 +87,8 @@ export function useRecorder({ scope }: { scope: string }) {
   }, [scope, errorText, t]);
 
   const start = useCallback(async () => {
-    if (recorderRef.current) return;
+    if (recorderRef.current || startingRef.current) return;
+    startingRef.current = true;
     keptRef.current = null;
     setError(null);
     setDenied(false);
@@ -91,6 +100,10 @@ export function useRecorder({ scope }: { scope: string }) {
     }
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      if (unmountedRef.current) {
+        stream.getTracks().forEach((track) => track.stop());
+        return;
+      }
       streamRef.current = stream;
       const chosen = MediaRecorder.isTypeSupported?.(PREFERRED_TYPE) ? PREFERRED_TYPE : undefined;
       const recorder = chosen ? new MediaRecorder(stream, { mimeType: chosen }) : new MediaRecorder(stream);
@@ -102,15 +115,28 @@ export function useRecorder({ scope }: { scope: string }) {
       recorderRef.current = recorder;
       recorder.start();
       setSeconds(0);
-      timerRef.current = setInterval(() => setSeconds((s) => s + 1), 1000);
+      let elapsed = 0;
+      timerRef.current = setInterval(() => {
+        elapsed += 1;
+        setSeconds(elapsed);
+        // The server refuses clips over five minutes, so a long take is sent as it reaches the limit.
+        if (elapsed >= MAX_SECONDS) {
+          stopTimer();
+          void stopRef.current().then((result) => {
+            if (result) onAutoStopRef.current?.(result);
+          });
+        }
+      }, 1000);
       setState('recording');
     } catch (e) {
       releaseStream();
       recorderRef.current = null;
       const name = e instanceof DOMException || e instanceof Error ? e.name : '';
       if (name === 'NotAllowedError' || name === 'NotFoundError') setDenied(true);
-      else setError(t('uploadFailed'));
+      else setError(t('micError'));
       setState('error');
+    } finally {
+      startingRef.current = false;
     }
   }, [t]);
 
@@ -118,6 +144,8 @@ export function useRecorder({ scope }: { scope: string }) {
     if (inFlightRef.current) return inFlightRef.current;
     const recorder = recorderRef.current;
     if (!recorder) return Promise.resolve(null);
+    stopTimer();
+    setState('uploading');
     const promise = new Promise<TranscribeResult | null>((resolve) => {
       recorder.onstop = () => {
         stopTimer();
@@ -134,6 +162,8 @@ export function useRecorder({ scope }: { scope: string }) {
     inFlightRef.current = promise;
     return promise;
   }, [upload]);
+
+  stopRef.current = stop;
 
   // Sends the kept recording again, without recording it again.
   const retry = useCallback((): Promise<TranscribeResult | null> => {

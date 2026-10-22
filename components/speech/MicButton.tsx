@@ -1,5 +1,6 @@
 'use client';
 
+import { useRef } from 'react';
 import { Mic, Square } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { Alert, AlertDescription } from '@/components/ui/alert';
@@ -21,13 +22,21 @@ export function MicButton({
   disabled?: boolean;
 }) {
   const t = useTranslations('speech');
-  const { state, seconds, start, stop, retry, error, denied, canRetry } = useRecorder({ scope });
+  const { state, seconds, start, stop, retry, error, denied, canRetry } = useRecorder({ scope, onAutoStop: (r) => onTranscript(r) });
+  const busy = useRef(false);
   const recording = state === 'recording';
   const uploading = state === 'uploading';
 
   const send = async (run: () => Promise<TranscribeResult | null>) => {
-    const result = await run();
-    if (result) onTranscript(result);
+    // A second tap while the first is still in flight does nothing.
+    if (busy.current) return;
+    busy.current = true;
+    try {
+      const result = await run();
+      if (result) onTranscript(result);
+    } finally {
+      busy.current = false;
+    }
   };
 
   return (
