@@ -114,13 +114,30 @@ describe('SystemSettingsAdmin', () => {
     expect(fetchMock).toHaveBeenCalledWith('/api/admin/settings/speech', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ url: 'http://speech.local:5002/' }),
+      body: JSON.stringify({ url: 'http://speech.local:5002/', whisperModel: 'small' }),
     });
 
     fireEvent.click(form.getByRole('button', { name: 'Check' }));
     expect(await form.findByText('The speech service is running. Voices: thorsten, kerstin.')).toBeInTheDocument();
     fireEvent.click(form.getByRole('button', { name: 'Check' }));
     expect(await form.findByRole('alert')).toHaveTextContent('The speech service is not reachable at http://speech.local:5002.');
+  });
+
+  it('saves the speech recognition model', async () => {
+    const fetchMock = stubFetch({
+      'GET /api/admin/settings/smtp': () => delayedResponse({ settings: null }),
+      'GET /api/admin/settings/speech': () => delayedResponse({ ...SPEECH, whisperModel: 'small' }),
+      'PUT /api/admin/settings/speech': () => delayedResponse({ ...SPEECH, whisperModel: 'medium' }),
+    });
+    render(<SystemSettingsAdmin />);
+    const form = within(await speech());
+    const select = form.getByLabelText('Speech recognition model');
+    await waitFor(() => expect(select).toHaveValue('small'));
+    fireEvent.change(select, { target: { value: 'medium' } });
+    fireEvent.click(form.getByRole('button', { name: 'Save' }));
+    expect(await form.findByText('Saved')).toBeInTheDocument();
+    expect(fetchMock).toHaveBeenCalledWith('/api/admin/settings/speech', expect.objectContaining({ body: JSON.stringify({ url: '', whisperModel: 'medium' }) }));
+    expect(select).toHaveValue('medium');
   });
 
   it('shows a refused speech address', async () => {

@@ -25,7 +25,10 @@ export type ErrorCode =
   | 'session_ending'
   | 'part_unavailable'
   | 'audio_unavailable'
-  | 'letter_grading';
+  | 'letter_grading'
+  | 'speech_unavailable'
+  | 'audio_too_long'
+  | 'spoken_grading';
 
 export type ErrorParams = Record<string, string>;
 

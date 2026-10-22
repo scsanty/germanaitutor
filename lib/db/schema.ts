@@ -667,6 +667,18 @@ function createTablesIfMissing(db: Database.Database): void {
       created_at TEXT NOT NULL
     );
     CREATE INDEX IF NOT EXISTS idx_error_log_created ON error_log(created_at);
+
+    -- Speaking: temporary recordings and transcripts, deleted with their scope and after 6 h. Never backed up.
+    CREATE TABLE IF NOT EXISTS speech_clips (
+      id TEXT PRIMARY KEY,
+      scope TEXT NOT NULL,
+      role TEXT NOT NULL CHECK (role IN ('student','partner')),
+      file TEXT,
+      transcript TEXT,
+      words TEXT,
+      created_at TEXT NOT NULL
+    );
+    CREATE INDEX IF NOT EXISTS idx_speech_clips_scope ON speech_clips(scope);
   `);
 }
 

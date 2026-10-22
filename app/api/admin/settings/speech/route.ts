@@ -1,22 +1,24 @@
+import type Database from 'better-sqlite3';
 import { NextResponse } from 'next/server';
+import { whisperModel } from '@/lib/services/speechClipService';
 import { getDb } from '@/lib/db/client';
-import { getSetting } from '@/lib/services/appSettings';
+import { getSetting, setSetting } from '@/lib/services/appSettings';
 import { DEFAULT_SPEECH_URL, getSpeechProvider, getSpeechUrl, saveSpeechUrl, SpeechUrlError } from '@/lib/speech/speechProvider';
 import { sharedSpeechAvailability } from '@/lib/speech/speechAvailability';
 import { adminError, notAdmin, readJsonObject, unauthorized } from '../../adminResponses';
 
 export const dynamic = 'force-dynamic';
 
-function display(url: string, isDefault: boolean) {
-  return { url, defaultUrl: DEFAULT_SPEECH_URL, isDefault };
+function display(db: Database.Database, url: string, isDefault: boolean) {
+  return { url, defaultUrl: DEFAULT_SPEECH_URL, isDefault, whisperModel: whisperModel(db) };
 }
 
-// GET → { url, defaultUrl, isDefault }; with ?check=1 also { health: { ok, voices } } for the saved address.
+// GET → { url, defaultUrl, isDefault, whisperModel }; with ?check=1 also { health: { ok, voices } } for the saved address.
 export async function GET(request: Request) {
   if (await notAdmin()) return unauthorized();
   const db = getDb();
   const url = getSpeechUrl(db);
-  const body: Record<string, unknown> = display(url, !getSetting(db, 'speech_url'));
+  const body: Record<string, unknown> = display(db, url, !getSetting(db, 'speech_url'));
   if (new URL(request.url).searchParams.get('check') === '1') {
     const health = await getSpeechProvider(db).health();
     // The check is fresh, so the availability rules can use it straight away.
@@ -26,15 +28,19 @@ export async function GET(request: Request) {
   return NextResponse.json(body);
 }
 
-// PUT { url } → the saved address. An empty url goes back to the default.
+// PUT { url?, whisperModel? } → the saved settings. An empty url goes back to the default.
 export async function PUT(request: Request) {
   if (await notAdmin()) return unauthorized();
   const body = await readJsonObject(request);
-  if (!body || typeof body.url !== 'string') return adminError('Send { url }', 400);
+  const hasUrl = body !== null && body.url !== undefined;
+  const hasModel = body !== null && body.whisperModel !== undefined;
+  if (!body || (!hasUrl && !hasModel) || (hasUrl && typeof body.url !== 'string')) return adminError('Send { url } or { whisperModel }', 400);
+  if (hasModel && body.whisperModel !== 'small' && body.whisperModel !== 'medium') return adminError('The speech model must be small or medium', 400);
   try {
     const db = getDb();
-    const url = saveSpeechUrl(db, body.url);
-    return NextResponse.json(display(url, !getSetting(db, 'speech_url')));
+    const url = hasUrl ? saveSpeechUrl(db, body.url as string) : getSpeechUrl(db);
+    if (hasModel) setSetting(db, 'whisper_model', body.whisperModel as string);
+    return NextResponse.json(display(db, url, !getSetting(db, 'speech_url')));
   } catch (err) {
     if (err instanceof SpeechUrlError) return adminError(err.message, 400);
     throw err;

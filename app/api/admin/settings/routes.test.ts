@@ -107,7 +107,7 @@ describe('/api/admin/settings', () => {
     vi.stubGlobal('fetch', fetchMock);
 
     const plain = await (await getSpeech(new Request('http://localhost/api/admin/settings/speech'))).json();
-    expect(plain).toEqual({ url: 'http://speech.test:5002', defaultUrl: DEFAULT_SPEECH_URL, isDefault: false });
+    expect(plain).toEqual({ url: 'http://speech.test:5002', defaultUrl: DEFAULT_SPEECH_URL, isDefault: false, whisperModel: 'small' });
     expect(fetchMock).not.toHaveBeenCalled();
 
     const checked = await (await getSpeech(new Request('http://localhost/api/admin/settings/speech?check=1'))).json();
@@ -117,6 +117,32 @@ describe('/api/admin/settings', () => {
     fetchMock.mockRejectedValueOnce(new TypeError('fetch failed'));
     const down = await (await getSpeech(new Request('http://localhost/api/admin/settings/speech?check=1'))).json();
     expect(down.health).toEqual({ ok: false, voices: [] });
+  });
+});
+
+describe('/api/admin/settings/speech whisperModel', () => {
+  beforeEach(() => {
+    process.env.GAIT_DATA_DIR = mkdtempSync(join(tmpdir(), 'gait-admin-whisper-'));
+    vi.mocked(isAdminSessionValid).mockResolvedValue(true);
+  });
+  afterEach(() => {
+    closeDb();
+    delete process.env.GAIT_DATA_DIR;
+  });
+
+  it('saves the model alone, keeps the address, and refuses anything but small or medium', async () => {
+    setSetting(getDb(), 'speech_url', 'http://speech.test:5002');
+    const saved = await (await put(putSpeech, { whisperModel: 'medium' })).json();
+    expect(saved).toMatchObject({ url: 'http://speech.test:5002', whisperModel: 'medium' });
+    expect(getSetting(getDb(), 'whisper_model')).toBe('medium');
+
+    const bad = await put(putSpeech, { whisperModel: 'large' });
+    expect(bad.status).toBe(400);
+    expect(getSetting(getDb(), 'whisper_model')).toBe('medium');
+    expect((await put(putSpeech, {})).status).toBe(400);
+
+    const both = await (await put(putSpeech, { url: '', whisperModel: 'small' })).json();
+    expect(both).toMatchObject({ isDefault: true, whisperModel: 'small' });
   });
 });
 

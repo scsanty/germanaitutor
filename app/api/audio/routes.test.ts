@@ -53,7 +53,7 @@ describe('/api/audio/[hash]', () => {
     const { createAudioService } = await import('@/lib/services/audioService');
     const db = getDb();
     const convert = async (b: Buffer) => b;
-    const provider = { health: async () => ({ ok: true, voices: [] }), render: async () => Buffer.from('OggS-AAAA'), convert };
+    const provider = { health: async () => ({ ok: true, voices: [] }), render: async () => Buffer.from('OggS-AAAA'), convert, transcribe: async () => ({ text: '', language: 'de', duration: 0, words: [] }) };
     const hash = createAudioService(db, { provider, now: () => new Date('2026-09-29T10:00:00Z') }).enqueue('[Anrufer m] Hallo.')!;
     await createAudioService(db, { provider, now: () => new Date('2026-09-29T10:00:00Z') }).upload(hash, Buffer.from('OggS-AAAA'));
     const mtime = new Date('2026-09-29T10:00:00Z');

@@ -1,9 +1,11 @@
 import type Database from 'better-sqlite3';
 import { createAudioService } from '../services/audioService';
+import { createSpeechClipService } from '../services/speechClipService';
 import { createNotificationService } from '../services/notificationService';
 import { getSpeechProvider, getSpeechUrl } from '../speech/speechProvider';
 import { runHealthCheck } from './healthCheck';
 import { runContentCheck } from './contentCheck';
+import { CLIP_MAX_AGE_HOURS } from '../speech/clips';
 import { sharedSpeechAvailability } from '../speech/speechAvailability';
 
 const started = Symbol.for('nadoch.worker');
@@ -49,6 +51,7 @@ export function startBackgroundWorker(getDb: () => Database.Database): void {
   });
   const health = createTick('health', async () => {
     const db = getDb();
+    createSpeechClipService(db).cleanupOlderThan(CLIP_MAX_AGE_HOURS); // recordings and transcripts live at most 6 h
     const url = getSpeechUrl(db);
     const ok = await runHealthCheck(getSpeechProvider(db), createNotificationService(db), url);
     sharedSpeechAvailability().record(url, ok); // S7: requests reuse what the health tick saw

@@ -7,6 +7,7 @@ import { createDbClient } from '../db/client';
 import nodemailer from 'nodemailer';
 import { setSetting } from '../services/appSettings';
 import { saveSmtpSettings } from '../services/mailService';
+import { createSpeechClipService } from '../services/speechClipService';
 import { createTick, startBackgroundWorker, JOB_TICK_MS, HEALTH_TICK_MS } from './worker';
 
 const started = Symbol.for('nadoch.worker');
@@ -96,6 +97,28 @@ describe('background worker', () => {
       expect(db.prepare("SELECT COUNT(*) AS n FROM admin_notifications WHERE kind = 'audio_failed'").get()).toEqual({ n: 0 });
     } finally {
       transport.mockRestore();
+      vi.unstubAllGlobals();
+      delete process.env.GAIT_DATA_DIR;
+      rmSync(dir, { recursive: true, force: true });
+    }
+  });
+
+  it('deletes speech clips older than 6 h on the health tick', async () => {
+    const dir = mkdtempSync(join(tmpdir(), 'gait-worker-'));
+    process.env.GAIT_DATA_DIR = dir;
+    vi.useFakeTimers({ toFake: ['setInterval', 'clearInterval'] });
+    vi.stubGlobal('fetch', vi.fn(async () => { throw new TypeError('fetch failed'); }));
+    try {
+      const db = createDbClient(':memory:');
+      setSetting(db, 'speech_url', 'http://127.0.0.1:9');
+      const old = new Date(Date.now() - 7 * 3600_000);
+      const stale = createSpeechClipService(db, { now: () => old }).savePartnerClip('placement', Buffer.from('OggS'), 'Hallo');
+      const fresh = createSpeechClipService(db).savePartnerClip('placement', Buffer.from('OggS'), 'Hallo');
+      startBackgroundWorker(() => db);
+      await vi.advanceTimersByTimeAsync(HEALTH_TICK_MS);
+      await vi.waitFor(() => expect(createSpeechClipService(db).getClip(stale)).toBeNull());
+      expect(createSpeechClipService(db).getClip(fresh)).not.toBeNull();
+    } finally {
       vi.unstubAllGlobals();
       delete process.env.GAIT_DATA_DIR;
       rmSync(dir, { recursive: true, force: true });
