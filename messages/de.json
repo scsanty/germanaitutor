@@ -536,7 +536,9 @@
     "review": "Auswertung",
     "back": "Zurück zum Prüfungstraining",
     "unanswered": "—",
-    "none": "x (keine)"
+    "none": "x (keine)",
+    "speechUnavailable": "Braucht den Sprachdienst, der gerade nicht verfügbar ist",
+    "aiMissing": "Wird von der KI bewertet: Es ist noch kein KI-Anbieter eingerichtet, daher schlägt die Bewertung fehl, bis einer eingerichtet ist."
   },
   "audio": {
     "play": "Abspielen",
@@ -605,5 +607,25 @@
     "tryAgain": "Nochmal versuchen",
     "micError": "Das Mikrofon konnte nicht gestartet werden.",
     "uploadFailed": "Die Aufnahme konnte nicht gesendet werden."
+  },
+  "speaking": {
+    "taskSheet": "Aufgabenblatt",
+    "yourTurn": "Du bist dran: Tippe auf das Mikrofon und sprich.",
+    "finish": "Beenden",
+    "closing": "Die Prüferin beendet das Gespräch.",
+    "oralPart": "Mündlicher Teil",
+    "oralPartBody": "Die Sprechteile mit einer KI als Partner, nacheinander, mit einer gemeinsamen Zeit ({minutes} Min.).",
+    "startOral": "Mündlichen Teil starten",
+    "examiner": "Prüferin",
+    "partnerLabel": "Partner/in",
+    "you": "Du",
+    "partner": "Dein Gesprächspartner: {name}",
+    "conversation": "Gespräch",
+    "answering": "{name} antwortet …",
+    "grading": "Dein Gespräch wird bewertet …",
+    "turnFailed": "Dein Beitrag konnte nicht gesendet werden.",
+    "finishFailed": "Dein Gespräch konnte nicht bewertet werden.",
+    "play": "Diesen Beitrag abspielen",
+    "conversationDeleted": "Das Gespräch wurde gelöscht; nur die Bewertung bleibt gespeichert."
   }
 }

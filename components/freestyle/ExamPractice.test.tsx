@@ -160,6 +160,65 @@ describe('ExamPractice', () => {
     expectNoViolations(await axe(container));
   });
 
+  // S17 + NEEDS_USER5: a spoken part needs the speech service; AI-graded parts warn when no provider is set up.
+  it('says when a spoken part needs the speech service, and warns on AI-graded parts without a provider', async () => {
+    const SPRECHEN = { id: 'sprechen-3', skill: 'speaking', title: { en: 'Speaking Part 3', de: 'Mündlicher Ausdruck Teil 3' }, taskType: 'spoken', items: 3, points: 30, minutes: 6, instructions: 'Planen …' };
+    stubFetch({
+      '/api/exam-practice': {
+        ...OVERVIEW,
+        format: { ...OVERVIEW.format, parts: [LESEN_1, SPRECHEN] },
+        parts: [{ ...OVERVIEW.parts[0], speechUnavailable: false }, { part: SPRECHEN, runnable: false, mockOnly: false, audioUnavailable: false, speechUnavailable: true, lastPercent: null }],
+        aiReady: false,
+      },
+    });
+    renderPractice();
+    const sprechen = (await screen.findByText('Mündlicher Ausdruck Teil 3')).closest('[data-slot="card"]') as HTMLElement;
+    expect(sprechen).toHaveTextContent("Needs the speech service, which isn't available right now");
+    expect(sprechen).toHaveTextContent('Graded by AI: no AI provider is set up yet');
+    expect(sprechen.querySelector('button')).toBeDisabled();
+    const lesen = screen.getByText('Leseverstehen Teil 1').closest('[data-slot="card"]') as HTMLElement;
+    expect(lesen).not.toHaveTextContent('Graded by AI');
+  });
+
+  // B4: after the written block's result, the oral block starts on demand and gets its own result.
+  it('offers the oral part after the written mock and shows its own block result', async () => {
+    const RUBRIC = { criteria: [{ id: 'aufgabe', name: { en: 'Task completion', de: 'Aufgabenbewältigung' }, points: { A: 30, B: 18, C: 6, D: 0 }, descriptors: { A: 'a', B: 'b', C: 'c', D: 'd' } }] };
+    const SPRECHEN = { id: 'sprechen-3', skill: 'speaking', title: { en: 'Speaking Part 3', de: 'Mündlicher Ausdruck Teil 3' }, taskType: 'spoken', items: 1, points: 30, minutes: 6, instructions: 'Planen …', rubric: RUBRIC };
+    const SET = { situation: 'Elena zieht weg.', materials: [], examinerIntro: 'Guten Tag.', partner: { name: 'Jonas', gender: 'm', profile: 'p' }, turns: 4 };
+    const turns = [
+      { speaker: 'examiner', text: 'Guten Tag.', clipId: 'i', audio: false },
+      { speaker: 'student', text: 'Hallo Jonas.', clipId: 'c', audio: true },
+      { speaker: 'partner', text: 'Hallo!', clipId: 'p', audio: false },
+    ];
+    const oralRun = { attemptId: 9, formatId: 'telc-b1', part: SPRECHEN, set: { id: 's9', view: SET }, minutes: 6, startedAt: new Date().toISOString(), mockId: 'm1', spoken: { set: SET, turns, state: 'student' } };
+    const format = {
+      ...OVERVIEW.format,
+      blocks: [...OVERVIEW.format.blocks, { id: 'oral', title: { en: 'Oral exam', de: 'Mündliche Prüfung' }, minutes: 6, partIds: ['sprechen-3'], passRatio: 0.6 }],
+      parts: [LESEN_1, HOEREN_1, SPRECHEN],
+    };
+    const grade = { criteria: [{ id: 'aufgabe', grade: 'A', justification: { en: 'Great.', de: 'Toll.' } }], points: 30, maxPoints: 30, percent: 100, marks: [], pronunciation: null, summary: { en: 'Well done.', de: 'Gut gemacht.' }, estimate: null };
+    const routes: Record<string, unknown> = {
+      '/api/exam-practice': { ...OVERVIEW, format, aiReady: true },
+      '/api/exam-practice/mock/start': { mockId: 'm1', minutes: 20, runs: [RUN], oral: { partIds: ['sprechen-3'], runnable: true } },
+      '/api/exam-practice/submit': { attemptId: 3, score: 20, maxScore: 25, overtimeSeconds: 0, review: [] },
+      '/api/exam-practice/mock/oral': { mockId: 'm1', runs: [oralRun] },
+      '/api/exam-practice/spoken/finish': { attemptId: 9, score: 30, maxScore: 30, overtimeSeconds: 0, review: [], tips: [], spoken: { grade, turns } },
+    };
+    vi.spyOn(HTMLMediaElement.prototype, 'play').mockResolvedValue(undefined);
+    const fetchMock = stubFetch(routes);
+    renderPractice();
+    fireEvent.click(await screen.findByRole('button', { name: 'Full mock' }));
+    fireEvent.click(await screen.findByRole('button', { name: 'Submit' }));
+    expect(await screen.findByText('Written exam: 20 of 25 points — passed')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Start the oral part' }));
+    expect(await screen.findByRole('heading', { name: 'Mündlicher Ausdruck Teil 3' })).toBeInTheDocument();
+    expect(screen.getByText('06:00')).toBeInTheDocument();
+    expect(fetchMock).toHaveBeenCalledWith('/api/exam-practice/mock/oral', expect.objectContaining({ body: JSON.stringify({ mockId: 'm1' }) }));
+    fireEvent.click(screen.getByRole('button', { name: 'Finish' }));
+    expect(await screen.findByText('Oral exam: 30 of 30 points — passed')).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Start the oral part' })).not.toBeInTheDocument();
+  });
+
   it('says so when the track and level have no format', async () => {
     stubFetch({ '/api/exam-practice': { format: null, parts: [] } });
     renderPractice();

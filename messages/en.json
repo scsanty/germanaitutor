@@ -536,7 +536,9 @@
     "review": "Review",
     "back": "Back to exam practice",
     "unanswered": "—",
-    "none": "x (none)"
+    "none": "x (none)",
+    "speechUnavailable": "Needs the speech service, which isn't available right now",
+    "aiMissing": "Graded by AI: no AI provider is set up yet, so grading will fail until one is."
   },
   "audio": {
     "play": "Play",
@@ -605,5 +607,25 @@
     "tryAgain": "Try again",
     "micError": "The microphone could not be started.",
     "uploadFailed": "The recording could not be sent."
+  },
+  "speaking": {
+    "taskSheet": "Task sheet",
+    "yourTurn": "Your turn: tap the microphone and speak.",
+    "finish": "Finish",
+    "closing": "The examiner closes the conversation.",
+    "oralPart": "Oral part",
+    "oralPartBody": "The speaking parts with an AI partner, one after another, under one timer ({minutes} min).",
+    "startOral": "Start the oral part",
+    "examiner": "Examiner",
+    "partnerLabel": "Partner",
+    "you": "You",
+    "partner": "Your partner: {name}",
+    "conversation": "Conversation",
+    "answering": "{name} is answering…",
+    "grading": "Grading your conversation…",
+    "turnFailed": "Your turn could not be sent.",
+    "finishFailed": "Your conversation could not be graded.",
+    "play": "Play this line",
+    "conversationDeleted": "The conversation has been deleted; only the grades are kept."
   }
 }

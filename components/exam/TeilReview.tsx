@@ -17,6 +17,8 @@ import type { MatchingView } from '@/lib/tasks/matching';
 import type { PassageQuestionsView } from '@/lib/tasks/passageQuestions';
 import { cn } from '@/lib/utils';
 import { LetterResult } from '@/components/writing/LetterResult';
+import { SpokenResult } from '@/components/speaking/SpokenResult';
+import type { SpokenPartView } from '@/lib/tasks/spoken';
 import { storeWritingDraft } from '@/components/writing/writingDraft';
 import type { LetterView } from '@/lib/tasks/letter';
 import { trimSnippet } from '@/lib/errors/snippets';
@@ -176,11 +178,29 @@ function LetterReview({ result, run, headingId }: { result: PracticeResult; run:
   );
 }
 
+// A spoken part's review is its grade and the conversation (only right after finishing; B2).
+function SpokenReview({ result, run, headingId }: { result: PracticeResult; run: PracticeRun; headingId: string }) {
+  const t = useTranslations('exam');
+  const partner = (run.spoken?.set ?? (run.set.view as SpokenPartView)).partner?.name;
+  return (
+    <section aria-labelledby={headingId} className="flex flex-col gap-4">
+      <div className="flex flex-col gap-1">
+        <h2 id={headingId} lang="de" className="font-heading text-xl font-bold">
+          {run.part.title.de}
+        </h2>
+        {result.overtimeSeconds > 0 && <p className="text-sm text-danger">{t('overtime', { minutes: Math.ceil(result.overtimeSeconds / 60) })}</p>}
+      </div>
+      <SpokenResult result={result} rubric={run.part.rubric as WritingRubric} attemptId={result.attemptId} partnerName={partner} />
+    </section>
+  );
+}
+
 // Spec: the review after a Teil: score, overtime, and per item right/wrong with the stored explanation.
 export function TeilReview({ result, run }: { result: PracticeResult; run: PracticeRun }) {
   // Unique per review: the mock result renders several at once.
   const headingId = useId();
   if (result.letter && run.part.rubric) return <LetterReview result={result} run={run} headingId={headingId} />;
+  if (result.spoken && run.part.rubric) return <SpokenReview result={result} run={run} headingId={headingId} />;
   return <ItemsReview result={result} run={run} headingId={headingId} />;
 }
 
