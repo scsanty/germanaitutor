@@ -586,5 +586,23 @@
     "earlierVersions": "Frühere Versionen",
     "copying": "Freies Schreiben wird geöffnet …",
     "copyFailed": "Freies Schreiben konnte nicht geöffnet werden."
+  },
+  "speech": {
+    "start": "Sprechen",
+    "stop": "Stopp und senden",
+    "transcribing": "Wird erkannt …",
+    "recordAgain": "Neu aufnehmen",
+    "micDenied": "Das Mikrofon ist nicht verfügbar. Erlaube es im Browser; es funktioniert nur mit HTTPS oder localhost.",
+    "pronunciation": "Aussprache (Schätzung)",
+    "band": {
+      "clear": "Deutlich",
+      "mostly_clear": "Meist deutlich",
+      "sometimes_unclear": "Manchmal undeutlich"
+    },
+    "unclearWords": "Möglicherweise undeutliche Wörter",
+    "estimateNote": "Geschätzt aus der Spracherkennung.",
+    "typeInstead": "Stattdessen tippen",
+    "tryAgain": "Nochmal versuchen",
+    "uploadFailed": "Die Aufnahme konnte nicht gesendet werden."
   }
 }

@@ -586,5 +586,23 @@
     "earlierVersions": "Earlier versions",
     "copying": "Opening free writing…",
     "copyFailed": "Free writing could not be opened."
+  },
+  "speech": {
+    "start": "Start speaking",
+    "stop": "Stop and send",
+    "transcribing": "Transcribing…",
+    "recordAgain": "Record again",
+    "micDenied": "The microphone isn't available. Allow it in your browser; it only works on HTTPS or localhost.",
+    "pronunciation": "Pronunciation (estimate)",
+    "band": {
+      "clear": "Clear",
+      "mostly_clear": "Mostly clear",
+      "sometimes_unclear": "Sometimes unclear"
+    },
+    "unclearWords": "Possibly unclear words",
+    "estimateNote": "Estimated from speech recognition.",
+    "typeInstead": "Type instead",
+    "tryAgain": "Try again",
+    "uploadFailed": "The recording could not be sent."
   }
 }
