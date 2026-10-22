@@ -9,8 +9,8 @@ import { locateMarks } from './marks';
 import { pointsFor, rubricMaxPoints, type Grade, type WritingRubric } from './rubric';
 
 export type MarkType = 'grammar' | 'vocabulary' | 'spelling' | 'register';
-const MARK_TYPES: MarkType[] = ['grammar', 'vocabulary', 'spelling', 'register'];
-const GRADES: Grade[] = ['A', 'B', 'C', 'D', 'E'];
+export const MARK_TYPES: MarkType[] = ['grammar', 'vocabulary', 'spelling', 'register'];
+export const GRADES: Grade[] = ['A', 'B', 'C', 'D', 'E'];
 
 export interface Mark {
   start: number;

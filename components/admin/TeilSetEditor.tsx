@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import type { LocalizedText } from '@/lib/i18n/localizedText';
+import type { ExerciseContent } from '@/lib/curriculum/types';
 import type { TeilSetContent } from '@/lib/exam/teilSets';
 import { itemCount, type TaskContent } from '@/lib/tasks/taskTypes';
 import { Button } from '@/components/ui/button';
@@ -10,9 +11,9 @@ import { BTN, FIELD_LABEL } from './adminStyles';
 import { ExerciseContentFields } from './ExerciseEditor';
 
 // Keeps one explanation pair per item as the item count changes: new items get empty pairs, removed ones drop theirs.
-// A letter set has one tip per rubric criterion (the part decides how many), so its explanations keep their count.
+// A letter or spoken set has one tip per rubric criterion (the part decides how many), so its explanations keep their count.
 function explanationCount(type: TeilSetContent['taskType'], content: TaskContent, current: LocalizedText[]): number {
-  return type === 'letter' ? current.length : itemCount(type, content);
+  return type === 'letter' || type === 'spoken' ? current.length : itemCount(type, content);
 }
 
 function resized(explanations: LocalizedText[], count: number): LocalizedText[] {
@@ -55,13 +56,13 @@ export function TeilSetEditor({
         onSave(set);
       }}
     >
-      {set.taskType === 'letter' ? (
-        // Letter tasks are read-only in the admin; they are edited in data/ and merged with merge-teil-sets.
+      {set.taskType === 'letter' || set.taskType === 'spoken' ? (
+        // Letter and spoken tasks are read-only in the admin; they are edited in data/ and merged with merge-teil-sets.
         <pre className="whitespace-pre-wrap rounded-md border p-3 text-sm">{JSON.stringify(set.content, null, 2)}</pre>
       ) : (
         <ExerciseContentFields
           type={set.taskType}
-          content={set.content}
+          content={set.content as ExerciseContent}
           index={0}
           allowInstruction={false}
           onChange={(content) => changeContent(content as TaskContent)}

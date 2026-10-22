@@ -51,15 +51,16 @@ function extremeGrade(c: RubricCriterion, sign: 1 | -1): Grade | undefined {
 }
 
 // The top anchor has every criterion's highest-points grade.
-const isTop = (a: Anchor, r: WritingRubric) => r.criteria.every((c) => a.grades?.[c.id] === extremeGrade(c, 1));
+export type Graded = { grades: Record<string, Grade> };
+export const isTop = (a: Graded, r: WritingRubric) => r.criteria.every((c) => a.grades?.[c.id] === extremeGrade(c, 1));
 // The bottom anchor has every criterion's lowest-points grade, or all but one.
-const isBottom = (a: Anchor, r: WritingRubric) =>
+export const isBottom = (a: Graded, r: WritingRubric) =>
   r.criteria.filter((c) => a.grades?.[c.id] === extremeGrade(c, -1)).length >= Math.max(1, r.criteria.length - 1);
 
 // The 2-3 anchors for a grading call, in prompt order: the top anchor, the bottom anchor, and the
 // remaining anchor nearest an all-B grade (the pass band). Anchors that don't exist are simply left out.
-export function selectAnchors(anchors: Anchor[], rubric: WritingRubric): Anchor[] {
-  const picked: Anchor[] = [];
+export function selectAnchors<T extends Graded>(anchors: T[], rubric: WritingRubric): T[] {
+  const picked: T[] = [];
   const top = anchors.find((a) => isTop(a, rubric));
   if (top) picked.push(top);
   const bottom = anchors.find((a) => !picked.includes(a) && isBottom(a, rubric));

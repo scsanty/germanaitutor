@@ -156,7 +156,7 @@ function answerTextOf(exercise: ExerciseView, answer: LessonAnswer): string {
 }
 
 function itemsOf(answer: TaskAnswer): number {
-  if (answer.type === 'letter') return 1;
+  if (answer.type === 'letter' || answer.type === 'spoken') return 1;
   return answer.type === 'cloze' ? answer.values.length : answer.selected.length;
 }
 
@@ -267,7 +267,7 @@ export function ExerciseCard({
     }
     if (exercise.type === 'flashcard') return null;
     // Reading tasks: checkable once any item is answered; typed gaps go exactly as typed (grading is case-sensitive).
-    if (isTaskExercise(exercise)) return taskAnswer && answeredCount(taskAnswer) > 0 ? taskAnswer : null;
+    if (isTaskExercise(exercise)) return taskAnswer && answeredCount(taskAnswer) > 0 ? (taskAnswer as LessonAnswer) : null;
     const trimmed = text.trim();
     if (!trimmed) return null;
     return exercise.type === 'fill_blank' ? { type: 'fill_blank', text: trimmed } : { type: 'free_text', text: trimmed };

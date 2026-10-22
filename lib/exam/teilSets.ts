@@ -55,8 +55,8 @@ export function teilSetProblems(set: TeilSetContent, part: ExamPart): string[] {
   if (hasInstructionKey(set.content)) problems.push('Teil sets are German-only and cannot have an instruction');
   if (problems.length > 0) return problems;
   if (set.taskType === 'letter') problems.push(...letterSetProblems(set, part));
-  // A letter set has one explanation per rubric criterion, which is the part's item count.
-  const items = set.taskType === 'letter' ? part.items : itemCount(set.taskType, set.content);
+  // A letter or spoken set has one explanation per rubric criterion, which is the part's item count.
+  const items = set.taskType === 'letter' || set.taskType === 'spoken' ? part.items : itemCount(set.taskType, set.content);
   if (items !== part.items) problems.push(`the part has ${part.items} items, the set has ${items}`);
   if (!Array.isArray(set.explanations) || set.explanations.length !== items) {
     problems.push(`${items} items need ${items} explanations, found ${Array.isArray(set.explanations) ? set.explanations.length : 0}`);
@@ -72,21 +72,26 @@ const SHAPE: Record<SetTaskType, string> = {
   cloze: '{"text": "... {{1}} ... {{2}} ...", "gaps": [{"mode": "select", "options": ["...", "...", "..."], "correctIndex": 0} | {"mode": "bank", "answer": 0}], "bank": ["..."] (only with bank gaps)}',
   audio_questions: '{"transcript": "[Name m|f] … lines, optional first line @filter …", "questions": [{"question": "...", "options": ["...", "...", "..."], "correctIndex": 0, "evidence": "..."}]}',
   letter: '{"tasks": [{"situation": "...", "leitpunkte": ["...", "...", "..."], "register": "informal" | "semi_formal" | "formal", "wordTarget": {"min": 80, "max": 100}}]}',
+  spoken:
+    '{"situation": "...", "materials": [{"title": "...", "points": ["..."]}], "examinerIntro": "...", "partner": {"name": "...", "gender": "m" | "f", "profile": "..."}, "turns": 6}',
 };
 
 // Spec: pool sets are CEFR-style and German-only, in the part's exact format.
 export function buildTeilSetPrompt(part: ExamPart, level: CefrLevel): { systemPrompt: string; messages: ChatMessage[] } {
   if (!isSetTaskType(part.taskType)) throw new Error(`No set generation for ${part.taskType}`);
   const isLetter = part.taskType === 'letter';
+  const isSpoken = part.taskType === 'spoken';
   return {
     systemPrompt: [
       `You write one practice set for the exam part "${part.title.de}" at CEFR level ${level}.`,
       `Follow the real exam format. The task instructions are: ${part.instructions}`,
-      isLetter
+      isSpoken
+        ? `Write everything entirely in German, using vocabulary and grammar appropriate for CEFR level ${level}. The partner is who the learner talks to; "turns" is a whole number from 4 to 10 for how many turns the learner speaks before the examiner closes.`
+        : isLetter
         ? `Write everything entirely in German, using vocabulary and grammar appropriate for CEFR level ${level}. Write exactly ${part.choices ?? 1} task(s). Each task's wordTarget must be ${JSON.stringify(part.wordTarget)}.`
         : `Write everything entirely in German, using vocabulary and grammar appropriate for CEFR level ${level}. The set must have exactly ${part.items} scored items.`,
       'Do not add an "instruction" field; the task instructions above are the only task text.',
-      isLetter
+      isLetter || isSpoken
         ? `Explanations: one tip per rubric criterion, in English and in simple German, in this order: ${(part.rubric?.criteria ?? []).map((c) => c.name.en).join(', ')}.`
         : 'For every item, add an explanation of the right answer in English and in simple German.',
       `Reply with only a JSON object: {"content": ${SHAPE[part.taskType]}, "explanations": [{"en": "...", "de": "..."}]}`,

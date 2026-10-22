@@ -109,3 +109,26 @@ describe('readFormat', () => {
     expect(source).toContain('readFileSync(/*turbopackIgnore: true*/');
   });
 });
+
+describe('formatProblems for spoken parts', () => {
+  const crit = (id: string) => ({ id, name: { en: id, de: id }, descriptors: { A: 'x', D: 'y' }, points: { A: 10, D: 0 } });
+  const spoken = (over: Partial<ExamFormat['parts'][number]>): ExamFormat => ({
+    ...base,
+    blocks: [{ ...base.blocks[0], partIds: ['sprechen'], minutes: 3 }],
+    parts: [{ id: 'sprechen', skill: 'speaking', title: { en: 'S', de: 'S' }, taskType: 'spoken', items: 2, points: 20, minutes: 3, instructions: 'Sprechen Sie …', ...over }],
+  });
+  it('lets a spoken part go without a rubric until Task 9', () => {
+    expect(formatProblems(spoken({}))).toEqual([]);
+  });
+  it('checks a rubric when present', () => {
+    expect(formatProblems(spoken({ rubric: { criteria: [crit('a'), crit('b')] } }))).toEqual([]);
+    expect(formatProblems(spoken({ rubric: { criteria: [crit('a')] } }))).toEqual([
+      "part sprechen: items must equal the rubric's 1 criteria",
+      "part sprechen: the rubric's maximum 10 must equal the part's points 20",
+    ]);
+    expect(formatProblems(spoken({ rubric: { criteria: [crit('a'), crit('b')] }, wordTarget: { min: 1, max: 2 }, choices: 1 }))).toEqual([
+      'part sprechen: a spoken part has no wordTarget',
+      'part sprechen: a spoken part has no choices',
+    ]);
+  });
+});

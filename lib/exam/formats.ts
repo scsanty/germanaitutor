@@ -88,6 +88,20 @@ function letterPartProblems(part: ExamPart): string[] {
   return problems;
 }
 
+// A spoken part's rubric (the oral criteria) is optional until the content task adds one to every part; when present
+// it follows the letter rules, without a word target or choices.
+function spokenPartProblems(part: ExamPart): string[] {
+  const problems: string[] = [];
+  if (part.rubric) {
+    for (const p of rubricProblems(part.rubric)) problems.push(`part ${part.id}: ${p}`);
+    if (part.items !== part.rubric.criteria.length) problems.push(`part ${part.id}: items must equal the rubric's ${part.rubric.criteria.length} criteria`);
+    if (rubricMaxPoints(part.rubric) !== part.points) problems.push(`part ${part.id}: the rubric's maximum ${rubricMaxPoints(part.rubric)} must equal the part's points ${part.points}`);
+  }
+  if (part.wordTarget !== undefined) problems.push(`part ${part.id}: a spoken part has no wordTarget`);
+  if (part.choices !== undefined) problems.push(`part ${part.id}: a spoken part has no choices`);
+  return problems;
+}
+
 export function formatProblems(format: ExamFormat): string[] {
   const problems: string[] = [];
   const seen = new Set<string>();
@@ -101,6 +115,7 @@ export function formatProblems(format: ExamFormat): string[] {
     if (!(part.minutes > 0)) problems.push(`part ${part.id}: minutes must be positive`);
     if (!TASK_TYPES.includes(part.taskType)) problems.push(`part ${part.id}: unknown task type ${part.taskType}`);
     if (part.taskType === 'letter') problems.push(...letterPartProblems(part));
+    if (part.taskType === 'spoken') problems.push(...spokenPartProblems(part));
   }
   for (const block of format.blocks) {
     const missing = block.partIds.filter((id) => !byId.has(id));

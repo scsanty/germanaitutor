@@ -1,5 +1,6 @@
 import type { ExerciseType } from './types';
 import { validateTask } from '../tasks/taskTypes';
+import type { LocalizedText } from '../i18n/localizedText';
 
 const EXERCISE_TYPES: readonly ExerciseType[] = [
   'multiple_choice',
@@ -102,5 +103,27 @@ export function validateExerciseContent(type: unknown, content: unknown): string
     }
   }
   errors.push(...instructionProblems(type, content));
+  return errors;
+}
+
+// A `spoken_response` lesson exercise: a German prompt, a model answer and an optional minimum speaking time.
+// (Wired into validateExerciseContent when the exercise type is added.)
+export interface SpokenResponseContent {
+  instruction?: LocalizedText;
+  prompt: string;
+  modelAnswer: string;
+  minSeconds?: number;
+}
+
+export function validateSpokenResponse(content: unknown): string[] {
+  const c = content as Record<string, unknown> | null;
+  if (!c || typeof c !== 'object' || Array.isArray(c)) return ['content must be an object'];
+  const errors: string[] = [];
+  if (hasInstruction(c) ? typeof c.prompt !== 'string' : !isNonEmptyString(c.prompt)) errors.push('prompt must be a non-empty string');
+  if (!isNonEmptyString(c.modelAnswer)) errors.push('modelAnswer must be a non-empty string');
+  if (c.minSeconds !== undefined && !(typeof c.minSeconds === 'number' && Number.isInteger(c.minSeconds) && c.minSeconds > 0)) {
+    errors.push('minSeconds must be a positive whole number');
+  }
+  errors.push(...instructionProblems('spoken_response', content));
   return errors;
 }
