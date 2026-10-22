@@ -28,6 +28,12 @@ MAX_TEXT_CHARS = 2000
 # Request body caps, enforced while reading. The app caps uploads at 20 MB.
 MAX_RENDER_BYTES = 1024 * 1024
 MAX_CONVERT_BYTES = 25 * 1024 * 1024
+MAX_TRANSCRIBE_BYTES = 25 * 1024 * 1024
+# Transcription: 16 kHz mono s16le PCM (2 bytes per sample), at most 5 minutes, two Whisper sizes.
+TRANSCRIBE_RATE = 16000
+PCM_BYTES_PER_SECOND = TRANSCRIBE_RATE * 2
+MAX_TRANSCRIBE_SECONDS = 300
+WHISPER_MODELS = ("small", "medium")
 # Longest a single ffmpeg call may run. The app gives up after 60 s.
 FFMPEG_TIMEOUT_S = 120
 
@@ -233,6 +239,31 @@ def encode_args(listing: str, filter_name: str) -> list[str]:
 def convert_args(src: str) -> list[str]:
     """Turn an uploaded recording (any audio container on the allow-list) into the app's ogg/opus."""
     return ["-protocol_whitelist", "file", "-format_whitelist", CONVERT_FORMATS, "-i", src, *OGG_OUT]
+
+
+def transcribe_args() -> list[str]:
+    """Decode an uploaded recording to raw 16 kHz mono s16le PCM on stdout (what Whisper takes)."""
+    return ["-i", "pipe:0", "-ac", "1", "-ar", str(TRANSCRIBE_RATE), "-f", "s16le", "pipe:1"]
+
+
+def pcm_seconds(pcm: bytes) -> float:
+    return len(pcm) / PCM_BYTES_PER_SECOND
+
+
+def check_whisper_model(name: str) -> str:
+    if name not in WHISPER_MODELS:
+        raise SpeechError(400, f"unknown model {name}")
+    return name
+
+
+def check_pcm(pcm: bytes) -> float:
+    """The duration of decoded audio; 400 when it holds nothing or is over 5 minutes."""
+    seconds = pcm_seconds(pcm)
+    if seconds <= 0:
+        raise SpeechError(400, "could not read the audio")
+    if seconds > MAX_TRANSCRIBE_SECONDS:
+        raise SpeechError(400, "audio longer than 5 minutes")
+    return seconds
 
 
 # ---------- running ffmpeg ----------

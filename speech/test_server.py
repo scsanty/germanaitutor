@@ -107,5 +107,38 @@ class ServerTest(unittest.TestCase):
         expected = sum(alone) + 0.5
         self.assertAlmostEqual(both, expected, delta=expected * 0.1)
 
+    @unittest.skipUnless(HAVE_VOICES, f"no voice files in {VOICE_DIR}")
+    def test_transcribe_returns_text_and_word_probabilities(self):
+        audio = client.post("/render", json={"segments": [{"text": "Ich wohne seit drei Jahren in Berlin.", "voice": "thorsten"}]}).content
+        res = client.post("/transcribe?model=small", content=audio)
+        self.assertEqual(res.status_code, 200, res.text)
+        body = res.json()
+        self.assertIn("berlin", body["text"].lower())
+        self.assertEqual(body["language"], "de")
+        self.assertGreater(body["duration"], 1)
+        self.assertTrue(body["words"])
+        for w in body["words"]:
+            self.assertEqual(sorted(w), ["end", "probability", "start", "word"])
+            self.assertTrue(0 <= w["probability"] <= 1)
+
+    def test_transcribe_rejects_empty_unknown_model_and_garbage(self):
+        res = client.post("/transcribe", content=b"")
+        self.assertEqual((res.status_code, res.json()), (400, {"error": "empty audio"}))
+        res = client.post("/transcribe?model=huge", content=b"x")
+        self.assertEqual((res.status_code, res.json()), (400, {"error": "unknown model huge"}))
+        res = client.post("/transcribe", content=b"this is not audio")
+        self.assertEqual((res.status_code, res.json()), (400, {"error": "could not read the audio"}))
+
+    def test_transcribe_oversized_body_is_413(self):
+        res = client.post("/transcribe", content=b"\0" * (audio_core.MAX_TRANSCRIBE_BYTES + 1))
+        self.assertEqual(res.status_code, 413)
+
+    @unittest.skipUnless(HAVE_VOICES, f"no voice files in {VOICE_DIR}")
+    def test_transcribe_rejects_audio_over_five_minutes(self):
+        silence = audio_core.run_ffmpeg(["-f", "lavfi", "-i", "anullsrc=r=16000:cl=mono", "-t", "301", "-c:a", "libopus", "-b:a", "16k", "-f", "ogg", "pipe:1"])
+        res = client.post("/transcribe", content=silence)
+        self.assertEqual((res.status_code, res.json()), (400, {"error": "audio longer than 5 minutes"}))
+
+
 if __name__ == "__main__":
     unittest.main()

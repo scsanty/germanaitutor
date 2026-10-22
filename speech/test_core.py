@@ -508,5 +508,32 @@ class BuildGuardsTest(unittest.TestCase):
         self.assertEqual(shell, audio_core.parse_voice_manifest(manifest))
 
 
+class TranscribeHelpersTest(unittest.TestCase):
+    def test_decode_args_ask_for_16k_mono_s16le_pcm(self):
+        args = audio_core.transcribe_args()
+        self.assertEqual(args[args.index("-ar") + 1], "16000")
+        self.assertEqual(args[args.index("-ac") + 1], "1")
+        self.assertEqual(args[args.index("-f") + 1], "s16le")
+
+    def test_duration_is_bytes_over_32000(self):
+        self.assertEqual(audio_core.pcm_seconds(b"\0" * 64000), 2.0)
+
+    def test_check_pcm_limits(self):
+        self.assertEqual(audio_core.check_pcm(b"\0" * 32000 * 300), 300.0)
+        with self.assertRaises(audio_core.SpeechError) as e:
+            audio_core.check_pcm(b"\0" * (32000 * 300 + 2))
+        self.assertEqual((e.exception.status, e.exception.message), (400, "audio longer than 5 minutes"))
+        with self.assertRaises(audio_core.SpeechError) as e:
+            audio_core.check_pcm(b"")
+        self.assertEqual(e.exception.status, 400)
+
+    def test_model_names(self):
+        self.assertEqual(audio_core.check_whisper_model("medium"), "medium")
+        with self.assertRaises(audio_core.SpeechError) as e:
+            audio_core.check_whisper_model("large")
+        self.assertEqual((e.exception.status, e.exception.message), (400, "unknown model large"))
+        self.assertEqual(audio_core.MAX_TRANSCRIBE_BYTES, 25 * 1024 * 1024)
+
+
 if __name__ == "__main__":
     unittest.main()

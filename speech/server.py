@@ -1,6 +1,7 @@
 """NaDoch! speech sidecar: German TTS with Piper, and audio conversion, via ffmpeg.
 
 POST /render joins synthesized segments with pauses and applies a situational filter.
+POST /transcribe turns a recording into German text with word probabilities (faster-whisper).
 POST /convert turns an uploaded recording into the app's audio format (ogg/opus, mono, 24 kHz).
 Errors are `{"error": "..."}`: 400 for a bad request, 413 for an oversized body, 500 when synthesis or
 ffmpeg fails (or anything else goes wrong).
@@ -14,9 +15,12 @@ import os
 import threading
 import wave
 
+import numpy as np
+
 from fastapi import FastAPI, Request, Response
 from fastapi.responses import JSONResponse
 from starlette.concurrency import run_in_threadpool
+from faster_whisper import WhisperModel
 from piper import PiperVoice
 
 import audio_core
@@ -26,6 +30,9 @@ VOICE_DIR = os.environ.get("VOICE_DIR", "/voices")
 
 app = FastAPI()
 _voices: dict[str, PiperVoice] = {}
+_models: dict[str, WhisperModel] = {}
+# One transcription at a time: it uses every CPU core, and this also makes the model cache race-free.
+_transcribe_lock = threading.Lock()
 
 
 @app.exception_handler(SpeechError)
@@ -99,3 +106,36 @@ async def convert(request: Request):
     data = await audio_core.read_limited(request.stream(), audio_core.MAX_CONVERT_BYTES, request.headers.get("content-length"))
     audio = await run_in_threadpool(audio_core.convert, data)
     return Response(content=audio, media_type="audio/ogg")
+
+
+def _transcribe(pcm: bytes, model_name: str) -> tuple[str, list[dict]]:
+    audio = np.frombuffer(pcm, np.int16).astype(np.float32) / 32768.0
+    with _transcribe_lock:
+        if model_name not in _models:
+            _models[model_name] = WhisperModel(model_name, device="cpu", compute_type="int8")
+        segments, _info = _models[model_name].transcribe(audio, language="de", word_timestamps=True, vad_filter=True)
+        segments = list(segments)  # the generator does the work, so drain it under the lock
+    text = " ".join(s.text.strip() for s in segments).strip()
+    words = [
+        {"word": w.word.strip(), "start": w.start, "end": w.end, "probability": w.probability}
+        for s in segments
+        for w in (s.words or [])
+    ]
+    return text, words
+
+
+@app.post("/transcribe")
+async def transcribe(request: Request, model: str = "small"):
+    audio_core.check_whisper_model(model)
+    data = await audio_core.read_limited(request.stream(), audio_core.MAX_TRANSCRIBE_BYTES, request.headers.get("content-length"))
+    if not data:
+        raise SpeechError(400, "empty audio")
+    try:
+        pcm = await run_in_threadpool(audio_core.run_ffmpeg, audio_core.transcribe_args(), data)
+    except SpeechError as e:
+        if e.status == 500 and e.message.startswith("ffmpeg failed"):
+            raise SpeechError(400, "could not read the audio")
+        raise
+    duration = audio_core.check_pcm(pcm)
+    text, words = await run_in_threadpool(_transcribe, pcm, model)
+    return {"text": text, "language": "de", "duration": duration, "words": words}
