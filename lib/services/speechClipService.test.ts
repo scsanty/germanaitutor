@@ -86,7 +86,12 @@ describe('speechClipService', () => {
     await expect(service.transcribeForScope('placement', Buffer.from('a'), 'audio/webm')).rejects.toMatchObject({ kind: 'bad_request' });
     await expect(service.transcribeForScope('lesson:l1', Buffer.alloc(0))).rejects.toMatchObject({ kind: 'bad_request' });
     await expect(service.transcribeForScope('teil:99', Buffer.from('a'), 'audio/webm')).rejects.toMatchObject({ kind: 'bad_request' });
-    const open = db.prepare("INSERT INTO teil_attempts (format_id, part_id, kind, started_at) VALUES ('f', 'p', 'practice', ?)").run(new Date().toISOString());
+    // S3: only an open attempt of a spoken part takes recordings.
+    const reading = db.prepare("INSERT INTO teil_attempts (format_id, part_id, kind, started_at) VALUES ('telc-b1', 'lesen-1', 'practice', ?)").run(new Date().toISOString());
+    await expect(service.transcribeForScope(`teil:${reading.lastInsertRowid}`, Buffer.from('a'), 'audio/webm')).rejects.toMatchObject({ kind: 'bad_request' });
+    const unknown = db.prepare("INSERT INTO teil_attempts (format_id, part_id, kind, started_at) VALUES ('f', 'p', 'practice', ?)").run(new Date().toISOString());
+    await expect(service.transcribeForScope(`teil:${unknown.lastInsertRowid}`, Buffer.from('a'), 'audio/webm')).rejects.toMatchObject({ kind: 'bad_request' });
+    const open = db.prepare("INSERT INTO teil_attempts (format_id, part_id, kind, started_at) VALUES ('telc-b1', 'sprechen-3', 'practice', ?)").run(new Date().toISOString());
     await expect(service.transcribeForScope(`teil:${open.lastInsertRowid}`, Buffer.from('a'), 'audio/webm')).resolves.toMatchObject({ text: 'Guten Tag' });
     db.prepare('UPDATE teil_attempts SET finished_at = ? WHERE id = ?').run(new Date().toISOString(), open.lastInsertRowid);
     await expect(service.transcribeForScope(`teil:${open.lastInsertRowid}`, Buffer.from('a'), 'audio/webm')).rejects.toMatchObject({ kind: 'bad_request' });

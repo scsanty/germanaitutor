@@ -1,0 +1,50 @@
+{
+  "formatId": "telc-b1",
+  "partId": "sprechen-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b1__sprechen-3__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Elena, eine Teilnehmerin aus Ihrem Deutschkurs, zieht bald nach Hamburg. Sie möchten zusammen mit Ihrem Partner / Ihrer Partnerin eine kleine Abschiedsfeier für sie organisieren.",
+          "materials": [
+            {
+              "title": "Abschiedsfeier für Elena planen",
+              "points": [
+                "Wann?",
+                "Wo?",
+                "Wer wird eingeladen?",
+                "Essen und Getränke",
+                "Geschenk",
+                "Wer übernimmt welche Aufgabe?"
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. In diesem Teil planen Sie gemeinsam etwas. Ihre Kurskollegin Elena zieht bald nach Hamburg, und Sie möchten zusammen eine kleine Abschiedsfeier für sie organisieren. Überlegen Sie gemeinsam, wann und wo die Feier stattfindet, wer kommt und wer welche Aufgabe übernimmt. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Jonas",
+            "gender": "m",
+            "profile": "Jonas ist 34 und besucht denselben Deutschkurs. Er arbeitet als Krankenpfleger im Schichtdienst und hat freitags Spätdienst. Er ist hilfsbereit, kocht und backt gern und schlägt lieber etwas Einfaches und Günstiges vor."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Make your own suggestions for every point on the sheet (when, where, guests, food, present, who does what), react to your partner's ideas with reasons, and sum up what you agreed at the end.",
+            "de": "Mach zu jedem Punkt auf dem Blatt eigene Vorschläge (wann, wo, Gäste, Essen, Geschenk, wer macht was), reagiere mit Begründung auf die Ideen deines Partners und fasse am Ende zusammen, was ihr vereinbart habt."
+          },
+          {
+            "en": "Use planning phrases such as „Wie wäre es mit …?“, „Ich würde vorschlagen, dass …“ and „Einverstanden, aber …“, and link your ideas with weil, denn or deshalb.",
+            "de": "Benutze Redemittel zum Planen wie „Wie wäre es mit …?“, „Ich würde vorschlagen, dass …“ und „Einverstanden, aber …“, und verbinde deine Ideen mit weil, denn oder deshalb."
+          },
+          {
+            "en": "Speak at a calm pace and let your voice rise for questions and fall at the end of statements; clear word endings make you easier to understand.",
+            "de": "Sprich in ruhigem Tempo, lass die Stimme bei Fragen steigen und am Satzende fallen; deutliche Wortendungen machen dich leichter verständlich."
+          }
+        ]
+      }
+    }
+  ]
+}

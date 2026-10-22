@@ -36,8 +36,71 @@
         "D": "Es gibt so viele Fehler, dass der Text größtenteils unverständlich ist." } }
     ], "zeroesTextOn": { "criterion": "aufgabe", "grade": "D" } },
       "instructions": "Wählen Sie Aufgabe A oder Aufgabe B. Schreiben Sie einen Brief. Behandeln Sie darin die vier Leitpunkte." },
-    { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Mündlicher Ausdruck Teil 1" }, "taskType": "spoken", "items": 3, "points": 15, "minutes": 3, "instructions": "Kontaktaufnahme: Unterhalten Sie sich mit Ihrem Partner / Ihrer Partnerin." },
-    { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Mündlicher Ausdruck Teil 2" }, "taskType": "spoken", "items": 3, "points": 30, "minutes": 6, "instructions": "Gespräch über ein Thema: Berichten Sie über Ihren Text und sprechen Sie mit Ihrem Partner / Ihrer Partnerin darüber." },
-    { "id": "sprechen-3", "skill": "speaking", "title": { "en": "Speaking Part 3", "de": "Mündlicher Ausdruck Teil 3" }, "taskType": "spoken", "items": 3, "points": 30, "minutes": 6, "instructions": "Gemeinsam etwas planen: Planen Sie zusammen mit Ihrem Partner / Ihrer Partnerin." }
+    { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Mündlicher Ausdruck Teil 1" }, "taskType": "spoken", "items": 3, "points": 15, "minutes": 3,
+      "rubric": { "criteria": [
+      { "id": "aufgabe", "name": { "en": "Task completion", "de": "Aufgabenbewältigung" }, "points": { "A": 5, "B": 3, "C": 1, "D": 0 }, "descriptors": {
+        "A": "Stellt sich ausführlich vor, stellt Fragen, reagiert passend auf den Partner / die Partnerin und hält das Gespräch in Gang.",
+        "B": "Stellt sich vor und reagiert meist passend; einzelne Punkte bleiben knapp, oder es wird wenig nachgefragt.",
+        "C": "Gibt nur wenige Informationen über sich und reagiert kaum auf den Partner / die Partnerin.",
+        "D": "Die Aufgabe wird kaum oder gar nicht bewältigt."
+      } },
+      { "id": "sprache", "name": { "en": "Language", "de": "Ausdrucksfähigkeit und formale Richtigkeit" }, "points": { "A": 5, "B": 3, "C": 1, "D": 0 }, "descriptors": {
+        "A": "Wortschatz und Strukturen sind für B1 angemessen und abwechslungsreich; Fehler sind selten und stören das Verständnis nicht.",
+        "B": "Wortschatz und Strukturen reichen meist aus; es gibt einige Fehler, die das Verständnis aber kaum stören.",
+        "C": "Wortschatz und Strukturen sind sehr begrenzt; viele Fehler erschweren das Verständnis stellenweise.",
+        "D": "Wegen der Wortschatz- und Grammatikfehler sind die Äußerungen größtenteils unverständlich."
+      } },
+      { "id": "aussprache", "name": { "en": "Pronunciation and intonation", "de": "Aussprache und Intonation" }, "points": { "A": 5, "B": 3, "C": 1, "D": 0 }, "descriptors": {
+        "A": "Aussprache und Intonation sind klar und natürlich; kleine Abweichungen stören nicht.",
+        "B": "Aussprache und Intonation sind meist gut verständlich; ein fremder Akzent ist hörbar, stört aber kaum.",
+        "C": "Aussprache und Intonation erschweren das Verständnis stellenweise deutlich.",
+        "D": "Aussprache und Intonation machen die Äußerungen größtenteils unverständlich."
+      } }
+      ] },
+      "instructions": "Kontaktaufnahme: Unterhalten Sie sich mit Ihrem Partner / Ihrer Partnerin." },
+    { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Mündlicher Ausdruck Teil 2" }, "taskType": "spoken", "items": 3, "points": 30, "minutes": 6,
+      "rubric": { "criteria": [
+      { "id": "aufgabe", "name": { "en": "Task completion", "de": "Aufgabenbewältigung" }, "points": { "A": 10, "B": 6, "C": 2, "D": 0 }, "descriptors": {
+        "A": "Berichtet zusammenhängend über den eigenen Text, äußert und begründet die eigene Meinung und geht auf Fragen und Aussagen des Partners / der Partnerin ein.",
+        "B": "Berichtet über den Text und äußert eine Meinung; die Begründung oder das Eingehen auf den Partner / die Partnerin bleibt teilweise knapp.",
+        "C": "Gibt den Text nur bruchstückhaft wieder, äußert kaum eine eigene Meinung und reagiert wenig auf den Partner / die Partnerin.",
+        "D": "Die Aufgabe wird kaum oder gar nicht bewältigt."
+      } },
+      { "id": "sprache", "name": { "en": "Language", "de": "Ausdrucksfähigkeit und formale Richtigkeit" }, "points": { "A": 10, "B": 6, "C": 2, "D": 0 }, "descriptors": {
+        "A": "Wortschatz und Strukturen sind für B1 angemessen und abwechslungsreich; Fehler sind selten und stören das Verständnis nicht.",
+        "B": "Wortschatz und Strukturen reichen meist aus; es gibt einige Fehler, die das Verständnis aber kaum stören.",
+        "C": "Wortschatz und Strukturen sind sehr begrenzt; viele Fehler erschweren das Verständnis stellenweise.",
+        "D": "Wegen der Wortschatz- und Grammatikfehler sind die Äußerungen größtenteils unverständlich."
+      } },
+      { "id": "aussprache", "name": { "en": "Pronunciation and intonation", "de": "Aussprache und Intonation" }, "points": { "A": 10, "B": 6, "C": 2, "D": 0 }, "descriptors": {
+        "A": "Aussprache und Intonation sind klar und natürlich; kleine Abweichungen stören nicht.",
+        "B": "Aussprache und Intonation sind meist gut verständlich; ein fremder Akzent ist hörbar, stört aber kaum.",
+        "C": "Aussprache und Intonation erschweren das Verständnis stellenweise deutlich.",
+        "D": "Aussprache und Intonation machen die Äußerungen größtenteils unverständlich."
+      } }
+      ] },
+      "instructions": "Gespräch über ein Thema: Berichten Sie über Ihren Text und sprechen Sie mit Ihrem Partner / Ihrer Partnerin darüber." },
+    { "id": "sprechen-3", "skill": "speaking", "title": { "en": "Speaking Part 3", "de": "Mündlicher Ausdruck Teil 3" }, "taskType": "spoken", "items": 3, "points": 30, "minutes": 6,
+      "rubric": { "criteria": [
+      { "id": "aufgabe", "name": { "en": "Task completion", "de": "Aufgabenbewältigung" }, "points": { "A": 10, "B": 6, "C": 2, "D": 0 }, "descriptors": {
+        "A": "Macht eigene Vorschläge, reagiert auf die Vorschläge des Partners / der Partnerin, begründet Zustimmung oder Ablehnung und trägt aktiv zu einer gemeinsamen Planung bei.",
+        "B": "Macht Vorschläge und reagiert meist passend; Begründungen fehlen manchmal, oder einzelne Planungspunkte bleiben offen.",
+        "C": "Macht kaum eigene Vorschläge, reagiert nur knapp und trägt wenig zur gemeinsamen Planung bei.",
+        "D": "Die Aufgabe wird kaum oder gar nicht bewältigt."
+      } },
+      { "id": "sprache", "name": { "en": "Language", "de": "Ausdrucksfähigkeit und formale Richtigkeit" }, "points": { "A": 10, "B": 6, "C": 2, "D": 0 }, "descriptors": {
+        "A": "Wortschatz und Strukturen sind für B1 angemessen und abwechslungsreich; Fehler sind selten und stören das Verständnis nicht.",
+        "B": "Wortschatz und Strukturen reichen meist aus; es gibt einige Fehler, die das Verständnis aber kaum stören.",
+        "C": "Wortschatz und Strukturen sind sehr begrenzt; viele Fehler erschweren das Verständnis stellenweise.",
+        "D": "Wegen der Wortschatz- und Grammatikfehler sind die Äußerungen größtenteils unverständlich."
+      } },
+      { "id": "aussprache", "name": { "en": "Pronunciation and intonation", "de": "Aussprache und Intonation" }, "points": { "A": 10, "B": 6, "C": 2, "D": 0 }, "descriptors": {
+        "A": "Aussprache und Intonation sind klar und natürlich; kleine Abweichungen stören nicht.",
+        "B": "Aussprache und Intonation sind meist gut verständlich; ein fremder Akzent ist hörbar, stört aber kaum.",
+        "C": "Aussprache und Intonation erschweren das Verständnis stellenweise deutlich.",
+        "D": "Aussprache und Intonation machen die Äußerungen größtenteils unverständlich."
+      } }
+      ] },
+      "instructions": "Gemeinsam etwas planen: Planen Sie zusammen mit Ihrem Partner / Ihrer Partnerin." }
   ]
 }

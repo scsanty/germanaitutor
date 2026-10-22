@@ -20,6 +20,9 @@ import { POST as start } from './start/route';
 import { POST as submit } from './submit/route';
 import { POST as explain } from './explain/route';
 import { POST as startMock } from './mock/start/route';
+import { POST as startMockOral } from './mock/oral/route';
+import { POST as spokenTurn } from './spoken/turn/route';
+import { POST as spokenFinish } from './spoken/finish/route';
 import { GET as readiness } from './readiness/route';
 
 const post = (fn: (r: Request) => Promise<Response>, body: unknown) =>
@@ -72,12 +75,14 @@ describe('/api/exam-practice', () => {
     const listening = await post(start, { formatId: 'telc-b1', partId: 'hoeren-1' });
     expect(listening.status).toBe(409);
     expect(await listening.json()).toMatchObject({ code: 'part_unavailable' });
-    // Writing has bundled sets and a runner now; the spoken parts have no runner, and Sprachbausteine run only in the mock.
-    for (const partId of ['sprechen-1', 'sprachbausteine-1']) {
-      const res = await post(start, { formatId: 'telc-b1', partId });
-      expect(res.status, partId).toBe(409);
-      expect(await res.json(), partId).toMatchObject({ code: 'part_unavailable' });
-    }
+    // Writing has bundled sets and a runner now; Sprachbausteine run only in the mock.
+    const mockOnly = await post(start, { formatId: 'telc-b1', partId: 'sprachbausteine-1' });
+    expect(mockOnly.status).toBe(409);
+    expect(await mockOnly.json()).toMatchObject({ code: 'part_unavailable' });
+    // S17: a spoken part needs the speech service, which is down here.
+    const spoken = await post(start, { formatId: 'telc-b1', partId: 'sprechen-3' });
+    expect(spoken.status).toBe(409);
+    expect(await spoken.json()).toMatchObject({ code: 'speech_unavailable' });
     expect((await post(start, { formatId: '../../etc', partId: 'lesen-1' })).status).toBe(404);
     expect((await post(start, { formatId: 'telc-b1', partId: 'nope' })).status).toBe(404);
     expect((await post(start, {})).status).toBe(400);
@@ -143,6 +148,34 @@ describe('/api/exam-practice', () => {
     expect(res.status).toBe(400);
     expect(await res.json()).toMatchObject({ code: 'bad_request' });
     expect(generateWithActiveProvider).not.toHaveBeenCalled();
+  });
+
+  // B7: a spoken attempt being graded refuses another finish and new turns with 409 spoken_grading.
+  it('spoken turn and finish validate their bodies and answer 409 spoken_grading while grading', async () => {
+    const db = getDb();
+    const setId = (db.prepare("SELECT id FROM teil_sets WHERE format_id = 'telc-b1' AND part_id = 'sprechen-3'").get() as { id: string }).id;
+    const now = new Date().toISOString();
+    const attemptId = Number(
+      db
+        .prepare("INSERT INTO teil_attempts (format_id, part_id, set_id, kind, max_score, started_at, answers, grading_started_at) VALUES ('telc-b1', 'sprechen-3', ?, 'practice', 30, ?, ?, ?)")
+        .run(setId, now, JSON.stringify({ type: 'spoken', clipIds: [] }), now).lastInsertRowid
+    );
+    for (const body of ['not json', {}, { attemptId: 'x', clipId: 'c' }, { attemptId }]) expect((await post(spokenTurn, body)).status).toBe(400);
+    for (const body of ['not json', {}, { attemptId: 0 }]) expect((await post(spokenFinish, body)).status).toBe(400);
+    expect((await post(spokenTurn, { attemptId: 9999, clipId: 'c' })).status).toBe(404);
+    expect((await post(spokenFinish, { attemptId: 9999 })).status).toBe(404);
+
+    const turn = await post(spokenTurn, { attemptId, clipId: 'c' });
+    expect(turn.status).toBe(409);
+    expect(await turn.json()).toMatchObject({ code: 'spoken_grading' });
+    // Nothing was said yet: finishing is a bad request, before any lock or AI call.
+    expect((await post(spokenFinish, { attemptId })).status).toBe(400);
+    expect(generateWithActiveProvider).not.toHaveBeenCalled();
+  });
+
+  it('mock oral validates its body and refuses an unknown mock', async () => {
+    expect((await post(startMockOral, {})).status).toBe(400);
+    expect((await post(startMockOral, { mockId: 'no-such-mock' })).status).toBe(404);
   });
 
   it('mock start validates its body', async () => {

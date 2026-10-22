@@ -3,7 +3,10 @@ import { pronunciationBand, pronunciationEstimate } from './pronunciation';
 import { buildPartnerPrompt, buildSpokenGradingPrompt, parsePartnerReply, parseSpokenGrade, type SpokenAnchor, type SpokenTurn } from './spokenGrading';
 import { nextTurnState } from './turnLoop';
 import { EXAMINER_VOICE, PARTNER_VOICES } from './voices';
-import { spokenAnchorProblems } from './anchors';
+import { readSpokenAnchors, spokenAnchorProblems, type SpokenAnchorFile } from './anchors';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { readFormat } from '../exam/formats';
 import { validateSpokenResponse } from '../curriculum/exerciseContentValidation';
 import { selectAnchors } from '../writing/anchors';
 import type { ExamPart } from '../exam/formats';
@@ -181,6 +184,16 @@ describe('spoken anchors', () => {
   });
   it('selectAnchors works on spoken anchors', () => {
     expect(selectAnchors(good, rubric).map((x) => x.band)).toEqual(['A', 'D', 'C']);
+  });
+  // File IO: the bundled telc B1 Teil 3 anchors are read, valid against the part's rubric, and malformed ids never reach the disk.
+  it('reads the bundled telc B1 sprechen-3 anchors from disk', () => {
+    const anchors = readSpokenAnchors('telc-b1', 'sprechen-3');
+    expect(anchors?.map((x) => x.band)).toEqual(['A', 'C', 'D']);
+    const file = JSON.parse(readFileSync(join(process.cwd(), 'data', 'speaking-anchors', 'telc-b1', 'sprechen-3.json'), 'utf8')) as SpokenAnchorFile;
+    expect(spokenAnchorProblems(file, readFormat('telc-b1')!.parts.find((p) => p.id === 'sprechen-3')!.rubric!)).toEqual([]);
+    expect(readSpokenAnchors('telc-b1', 'sprechen-1')).toBeNull();
+    expect(readSpokenAnchors('telc-b1', '../sprechen-3')).toBeNull();
+    expect(readSpokenAnchors('nope-b1', 'sprechen-3')).toBeNull();
   });
 });
 

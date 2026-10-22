@@ -5,6 +5,7 @@ import { join } from 'node:path';
 import { CLIP_MAX_AGE_HOURS, extensionFor, isValidScope, sniffExtension, speechTmpDir } from '../speech/clips';
 import { getSpeechProvider, isUnreachableError, SpeechServiceError, type SpeechProvider, type TranscribedWord, type WhisperModel } from '../speech/speechProvider';
 import { errorBodyFor, type ApiErrorBody, type ErrorCode } from '../tutoring/errorCodes';
+import { readFormat } from '../exam/formats';
 import { getSetting } from './appSettings';
 
 export type SpeechClipErrorKind = 'bad_request' | 'not_found' | 'unavailable';
@@ -105,12 +106,15 @@ export function createSpeechClipService(db: Database.Database, deps: SpeechClipD
     if (file) rmSync(join(dir(), file), { force: true });
   }
 
-  // S3: a Teil recording needs an open attempt, a placement one an open session. (That the attempt's part
-  // is a spoken one is checked by the Teil runner, which owns that knowledge.)
+  // S3: a Teil recording needs an open attempt of a spoken part, a placement one an open session.
   function assertScopeOpen(scope: string): void {
     if (scope.startsWith('teil:')) {
-      const row = db.prepare('SELECT finished_at FROM teil_attempts WHERE id = ?').get(Number(scope.slice(5))) as { finished_at: string | null } | undefined;
+      const row = db.prepare('SELECT format_id, part_id, finished_at FROM teil_attempts WHERE id = ?').get(Number(scope.slice(5))) as
+        | { format_id: string; part_id: string; finished_at: string | null }
+        | undefined;
       if (!row || row.finished_at) throw new SpeechClipError('This attempt is not open', 'bad_request');
+      const part = readFormat(row.format_id)?.parts.find((p) => p.id === row.part_id);
+      if (part?.taskType !== 'spoken') throw new SpeechClipError('This attempt takes no recordings', 'bad_request');
     } else if (scope === 'placement') {
       if (!db.prepare('SELECT 1 FROM placement_session WHERE id = 1').get()) throw new SpeechClipError('No placement test is open', 'bad_request');
     }
@@ -161,6 +165,14 @@ export function createSpeechClipService(db: Database.Database, deps: SpeechClipD
         words,
         createdAt: row.created_at,
       };
+    },
+
+    // Removes one clip (row and file), e.g. a partner reply whose turn lost a race.
+    deleteClip(id: string): void {
+      const row = db.prepare('SELECT file FROM speech_clips WHERE id = ?').get(id) as { file: string | null } | undefined;
+      if (!row) return;
+      db.prepare('DELETE FROM speech_clips WHERE id = ?').run(id);
+      removeFile(row.file);
     },
 
     // Removes a scope's rows and files; returns how many clips went.
