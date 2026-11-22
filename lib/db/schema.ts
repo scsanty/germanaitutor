@@ -186,6 +186,8 @@ export function runMigrations(db: Database.Database): void {
     migrateExerciseTypeCheck(db, EXERCISE_TYPES);
     migrateTeilAttemptColumns(db);
     migrateSpeechClipRoles(db);
+    migratePlacementQuestionTypeCheck(db);
+    migratePlacementServedIds(db);
   });
   // Table rebuilds (migrateExerciseTypeCheck) must run with foreign keys OFF, or DROP TABLE would cascade
   // to attempts and reviews. SQLite ignores this pragma inside a transaction, so it wraps the transaction.
@@ -462,7 +464,7 @@ function createTablesIfMissing(db: Database.Database): void {
       id TEXT PRIMARY KEY,
       position INTEGER NOT NULL UNIQUE,
       level TEXT NOT NULL CHECK (level IN ('A1','A2','B1','B2','C1')),
-      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','free_text')),
+      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','free_text','spoken')),
       content TEXT NOT NULL
     );
 
@@ -480,7 +482,10 @@ function createTablesIfMissing(db: Database.Database): void {
       next_position INTEGER NOT NULL,
       score REAL NOT NULL,
       mistakes INTEGER NOT NULL,
-      answers TEXT NOT NULL
+      answers TEXT NOT NULL,
+      -- The question ids served this session, in order (spoken items are left out when the speech service was down
+      -- at start). Empty means the whole stored exam.
+      served_ids TEXT NOT NULL DEFAULT '[]'
     );
 
     CREATE TABLE IF NOT EXISTS placement_best_result (
@@ -706,6 +711,35 @@ function migrateSpeechClipRoles(db: Database.Database): void {
     ALTER TABLE speech_clips_new RENAME TO speech_clips;
     CREATE INDEX IF NOT EXISTS idx_speech_clips_scope ON speech_clips(scope);
   `);
+}
+
+// Speaking (B8): the placement exam may hold `spoken` items, so the question table's type CHECK is rebuilt once
+// (create-copy-drop-rename, keeping the rows). Like migrateExerciseTypeCheck it must run with foreign keys OFF
+// (see runMigrations); nothing references the table, but the guard keeps a future reference from cascading.
+function migratePlacementQuestionTypeCheck(db: Database.Database): void {
+  const row = db.prepare("SELECT sql FROM sqlite_master WHERE type = 'table' AND name = 'placement_questions'").get() as { sql: string } | undefined;
+  if (!row || row.sql.includes("'spoken'")) return;
+  if (db.pragma('foreign_keys', { simple: true }) !== 0) {
+    throw new Error('Cannot rebuild placement_questions with foreign keys on; run migrations outside any transaction');
+  }
+  db.exec(`
+    CREATE TABLE placement_questions_new (
+      id TEXT PRIMARY KEY,
+      position INTEGER NOT NULL UNIQUE,
+      level TEXT NOT NULL CHECK (level IN ('A1','A2','B1','B2','C1')),
+      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','free_text','spoken')),
+      content TEXT NOT NULL
+    );
+    INSERT INTO placement_questions_new (id, position, level, type, content) SELECT id, position, level, type, content FROM placement_questions;
+    DROP TABLE placement_questions;
+    ALTER TABLE placement_questions_new RENAME TO placement_questions;
+  `);
+}
+
+// Speaking (B8): a session in progress from before has no served order; empty means the whole exam.
+function migratePlacementServedIds(db: Database.Database): void {
+  const columns = (db.prepare('PRAGMA table_info(placement_session)').all() as { name: string }[]).map((c) => c.name);
+  if (!columns.includes('served_ids')) db.exec("ALTER TABLE placement_session ADD COLUMN served_ids TEXT NOT NULL DEFAULT '[]'");
 }
 
 // Reading module (S9): a finished attempt keeps its raw answers, so a repeated submit can return the

@@ -70,6 +70,7 @@ export function PlacementExamAdmin({ questionCount }: { questionCount: number })
           <p className={`${HINT} max-w-prose`}>
             Upload a JSON or YAML file in the same format as the download. The whole exam is replaced. A file with any
             problem is rejected and nothing changes. Past placement results and unlocked levels are kept.
+            A question of type "spoken" (content: prompt, modelAnswer, optional instruction) is answered by voice. It is served only when the speech service is up at the start of a test, and the maximum score and the level thresholds are then worked out from the questions served.
           </p>
           <div className="flex flex-wrap items-center gap-3">
             <input

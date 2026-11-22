@@ -22,7 +22,9 @@ import { GermanTextInput } from '@/components/typing/GermanTextInput';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { GermanTextarea } from '@/components/typing/GermanTextarea';
 import { cn } from '@/lib/utils';
-import { Compass } from 'lucide-react';
+import { Compass, RotateCcw } from 'lucide-react';
+import { MicButton } from '@/components/speech/MicButton';
+import type { TranscribeResult } from '@/components/speech/useRecorder';
 
 // The same task size and thumb-zone footer as the exercise card (components/tutoring/ExerciseCard).
 const TASK = 'text-xl leading-snug font-semibold whitespace-pre-line';
@@ -34,12 +36,15 @@ export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; 
   const t = useTranslations('placement');
   const errorText = useApiErrorText();
   const tToggle = useTranslations('languageToggle');
+  const tSpeech = useTranslations('speech');
   const [language, setLanguage] = useState<ContentLanguage>(useLocale() as ContentLanguage);
   const [phase, setPhase] = useState<Phase>('intro');
   const [question, setQuestion] = useState<PlacementQuestionView | null>(null);
   const [outcome, setOutcome] = useState<PlacementOutcome | null>(null);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [text, setText] = useState('');
+  // A spoken item's latest recording (kept through a grading failure, so the answer can be sent again).
+  const [recording, setRecording] = useState<TranscribeResult | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [gradingErrorDetail, setGradingErrorDetail] = useState<string | null>(null);
@@ -57,6 +62,7 @@ export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; 
     setQuestion(state.question);
     setSelectedIndex(null);
     setText('');
+    setRecording(null);
     setPhase('question');
   }
 
@@ -147,6 +153,7 @@ export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; 
     if (question.type === 'multiple_choice') {
       return selectedIndex === null ? null : { type: 'multiple_choice', selectedIndex };
     }
+    if (question.type === 'spoken') return recording && recording.text.trim() ? { type: 'spoken', clipId: recording.clipId } : null;
     const trimmed = text.trim();
     if (!trimmed) return null;
     return question.type === 'fill_blank' ? { type: 'fill_blank', text: trimmed } : { type: 'free_text', text: trimmed };
@@ -196,6 +203,7 @@ export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; 
           setQuestion(null);
           setSelectedIndex(null);
           setText('');
+          setRecording(null);
           setPhase('intro');
         }}
       >
@@ -253,6 +261,25 @@ export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; 
               <GermanTextarea aria-label={t('answerLabel')} value={text} onChange={(e) => setText(e.target.value)} spellCheck={false} className="min-h-32 text-base md:text-base" />
             </div>
           )}
+          {question.type === 'spoken' && (
+            <div className="flex flex-col gap-4">
+              <p lang="de" className={TASK}>{question.prompt}</p>
+              {recording ? (
+                // The transcript preview: record again as often as wanted before sending.
+                <div className="flex flex-col gap-3">
+                  <p lang="de" className="whitespace-pre-wrap rounded-xl border border-border bg-surface p-4">
+                    {recording.text}
+                  </p>
+                  <Button type="button" variant="outline" disabled={busy} onClick={() => setRecording(null)} className="min-h-11 self-start">
+                    <RotateCcw aria-hidden />
+                    {tSpeech('recordAgain')}
+                  </Button>
+                </div>
+              ) : (
+                <MicButton scope="placement" onTranscript={setRecording} disabled={busy} />
+              )}
+            </div>
+          )}
           <div className={FOOTER}>
             {errorAlert()}
             <Button
@@ -264,6 +291,18 @@ export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; 
             >
               {busy ? t('submitting') : t('submit')}
             </Button>
+            {question.type === 'spoken' && (
+              <Button
+                type="button"
+                size="lg"
+                variant="secondary"
+                disabled={busy}
+                onClick={() => send('/api/placement/answer', { questionId: question.id, answer: { type: 'spoken', skipped: true } })}
+                className="min-h-11 w-full"
+              >
+                {t('skipSpoken')}
+              </Button>
+            )}
             <Button type="button" size="lg" variant="secondary" disabled={busy} onClick={() => send('/api/placement/stop')} className="min-h-11 w-full">
               {t('beyond')}
             </Button>
@@ -317,7 +356,7 @@ export function PlacementTest({ onFinished, onSkip }: { onFinished: () => void; 
                 <div className="flex flex-col gap-1 text-sm">
                   <p className="break-words">{t('given', { answer: a.given || t('noAnswer') })}</p>
                   <p className={cn('break-words', a.result !== 'correct' && 'font-semibold text-success')}>
-                    {a.type === 'free_text'
+                    {a.type === 'free_text' || a.type === 'spoken'
                       ? t('modelAnswer', { answer: a.correctAnswer })
                       : t('correctAnswer', { answer: a.correctAnswer })}
                   </p>

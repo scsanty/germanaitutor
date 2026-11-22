@@ -4,6 +4,14 @@ import { renderWithIntl } from '@/test/renderWithIntl';
 import { delayedResponse } from '@/test/delayedResponse';
 import { PlacementTest } from './PlacementTest';
 
+vi.mock('@/components/speech/MicButton', () => ({
+  MicButton: ({ scope, onTranscript }: { scope: string; onTranscript: (r: unknown) => void }) => (
+    <button type="button" onClick={() => onTranscript({ clipId: 'c1', text: 'Ich heiße Anna.', words: [], duration: 2 })}>
+      {`Mic ${scope}`}
+    </button>
+  ),
+}));
+
 const MC_QUESTION = {
   id: 'q1',
   position: 1,
@@ -234,5 +242,46 @@ describe('PlacementTest', () => {
     expect(await screen.findByText('B2 is now unlocked. Switch to it?')).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Switch' }));
     expect(await screen.findByText('Switched to B2.')).toBeInTheDocument();
+  });
+
+  describe('spoken items', () => {
+    const SPOKEN = { id: 'q3', position: 1, total: 3, level: 'A1', type: 'spoken', prompt: 'Stellen Sie sich vor.' };
+
+    it('records with the placement scope, shows the transcript, and sends the clip', async () => {
+      const fetchMock = stubFetch({
+        '/api/placement/start': () => delayedResponse({ status: 'in_progress', question: SPOKEN }),
+        '/api/placement/answer': () => delayedResponse({ status: 'finished', outcome: OUTCOME }),
+      });
+      renderWithIntl(<PlacementTest onFinished={vi.fn()} />);
+      fireEvent.click(screen.getByText('Start the test'));
+      expect(await screen.findByText('Stellen Sie sich vor.')).toBeInTheDocument();
+      // No typed fallback, and nothing to send before a recording exists.
+      expect(screen.queryByRole('textbox')).not.toBeInTheDocument();
+      expect(screen.getByRole('button', { name: 'Submit answer' })).toBeDisabled();
+
+      fireEvent.click(screen.getByRole('button', { name: 'Mic placement' }));
+      expect(screen.getByText('Ich heiße Anna.')).toBeInTheDocument();
+      fireEvent.click(screen.getByRole('button', { name: 'Submit answer' }));
+      await screen.findByText('Your result');
+      const body = JSON.parse((fetchMock.mock.calls.find((c) => c[0] === '/api/placement/answer') as unknown as [string, { body: string }])[1].body);
+      expect(body).toEqual({ questionId: 'q3', answer: { type: 'spoken', clipId: 'c1' } });
+    });
+
+    it('lets the student record again, and skip the item', async () => {
+      const fetchMock = stubFetch({
+        '/api/placement/start': () => delayedResponse({ status: 'in_progress', question: SPOKEN }),
+        '/api/placement/answer': () => delayedResponse({ status: 'finished', outcome: OUTCOME }),
+      });
+      renderWithIntl(<PlacementTest onFinished={vi.fn()} />);
+      fireEvent.click(screen.getByText('Start the test'));
+      fireEvent.click(await screen.findByRole('button', { name: 'Mic placement' }));
+      fireEvent.click(screen.getByRole('button', { name: 'Record again' }));
+      expect(screen.getByRole('button', { name: 'Mic placement' })).toBeInTheDocument();
+
+      fireEvent.click(screen.getByRole('button', { name: 'Skip this question' }));
+      await screen.findByText('Your result');
+      const body = JSON.parse((fetchMock.mock.calls.find((c) => c[0] === '/api/placement/answer') as unknown as [string, { body: string }])[1].body);
+      expect(body.answer).toEqual({ type: 'spoken', skipped: true });
+    });
   });
 });

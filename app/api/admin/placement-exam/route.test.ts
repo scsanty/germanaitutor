@@ -52,11 +52,19 @@ describe('/api/admin/placement-exam', () => {
     expect(createPlacementService(getDb()).questionCount()).toBe(5);
   });
 
+  it('accepts an exam with a spoken item, and stores it', async () => {
+    const mcs = smallPlacementExam().filter((q) => q.type === 'multiple_choice');
+    const spoken = { id: 'A1-spoken', level: 'A1' as const, type: 'spoken' as const, content: { prompt: 'Stellen Sie sich vor.', modelAnswer: 'Ich heiße Anna.' } };
+    const res = await put(serializePlacementExam([mcs[0], spoken, ...mcs.slice(1)], 'json'));
+    expect(res.status).toBe(200);
+    expect(createPlacementService(getDb()).getExam().map((q) => q.type)).toContain('spoken');
+  });
+
   it('rejects an invalid upload with every error and changes nothing', async () => {
     const res = await put(JSON.stringify({ questions: [{ id: 'x', level: 'A1', type: 'flashcard', content: {} }] }));
     expect(res.status).toBe(400);
     const body = await res.json();
-    expect(body.errors).toContain('Question 1 (x): type must be one of multiple_choice, fill_blank, free_text');
+    expect(body.errors).toContain('Question 1 (x): type must be one of multiple_choice, fill_blank, free_text, spoken');
     expect(createPlacementService(getDb()).questionCount()).toBe(10);
   });
 
