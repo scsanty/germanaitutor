@@ -11,6 +11,10 @@ export async function POST(request: Request, props: ModeProps) {
   const mode = await modeOf(props);
   if (mode instanceof NextResponse) return mode;
   const body = await request.json().catch(() => null);
+  if (mode === 'spoken') {
+    if (typeof body?.clipId !== 'string' || !body.clipId) return badRequest('clipId is required');
+    return respond(async () => ({ messages: await createFreestyleService(getDb()).turn(mode, { clipId: body.clipId }) }));
+  }
   if (typeof body?.text !== 'string') return badRequest('text is required');
   const limit = mode === 'free_writing' ? 6000 : 2000;
   if (body.text.length > limit) return badRequest(`text is limited to ${limit} characters`);

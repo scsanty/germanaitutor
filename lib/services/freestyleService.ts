@@ -13,13 +13,17 @@ import { recordMistakes } from './errorLogService';
 import { createProfileService } from './profileService';
 import { createContentText } from './contentText';
 import { loadLevelGating } from './levelGating';
+import { createSpeechClipService } from './speechClipService';
+import { PARTNER_VOICES } from '../speaking/voices';
+import { getSpeechProvider, type SpeechProvider } from '../speech/speechProvider';
+import { isSpeechUp } from '../speech/speechAvailability';
 
 // Spec: Freestyle never writes to lesson attempts, completions, exercise reviews or anything the
 // tree reads. It touches only freestyle_sessions and freestyle_messages; End deletes both, and the
 // summary is returned once and never stored.
 
-export type FreestyleErrorKind = 'not_found' | 'bad_request' | 'locked' | 'busy' | 'ai_failed';
-const STATUS: Record<FreestyleErrorKind, number> = { not_found: 404, bad_request: 400, locked: 403, busy: 409, ai_failed: 502 };
+export type FreestyleErrorKind = 'not_found' | 'bad_request' | 'locked' | 'busy' | 'ai_failed' | 'unavailable';
+const STATUS: Record<FreestyleErrorKind, number> = { not_found: 404, bad_request: 400, locked: 403, busy: 409, ai_failed: 502, unavailable: 503 };
 // S10: `busy` means the session is ending: a second End, or a turn or new article while an End
 // runs. It maps to session_ending.
 const CODE: Record<FreestyleErrorKind, ErrorCode> = {
@@ -28,6 +32,7 @@ const CODE: Record<FreestyleErrorKind, ErrorCode> = {
   locked: 'level_locked',
   busy: 'session_ending',
   ai_failed: 'ai_failed',
+  unavailable: 'speech_unavailable',
 };
 
 export class FreestyleError extends Error {
@@ -57,6 +62,7 @@ const nonEmpty = (v: unknown): v is string => typeof v === 'string' && v.trim().
 // The setup keys each mode accepts (the brief's setup shapes); `article` is written by the server.
 const SETUP_KEYS: Partial<Record<FreestyleMode, readonly string[]>> = {
   conversation: ['scenarioId', 'topic'],
+  spoken: ['scenarioId', 'topic'],
   grammar_drill: ['topic'],
   free_reading: ['topic'],
   free_writing: ['prompt'],
@@ -69,11 +75,20 @@ const WRITING_MAX_TOKENS = 8192;
 
 export function createFreestyleService(
   db: Database.Database,
-  deps: { generate?: (request: AiRequest) => Promise<AiResult>; now?: () => Date } = {}
+  deps: {
+    generate?: (request: AiRequest) => Promise<AiResult>;
+    now?: () => Date;
+    // Spoken conversation: the speech service (tests inject fakes), the clip folder and the availability check.
+    provider?: SpeechProvider;
+    clipsDir?: string;
+    speechUp?: () => Promise<boolean>;
+  } = {}
 ) {
   const generate = deps.generate ?? ((request: AiRequest) => generateWithActiveProvider(db, request));
   const now = deps.now ?? (() => new Date());
   const profiles = createProfileService(db);
+  const speechUp = deps.speechUp ?? (() => isSpeechUp(db));
+  const clips = createSpeechClipService(db, { provider: deps.provider, dir: deps.clipsDir, now });
 
   function row(mode: FreestyleMode): SessionRow | undefined {
     return db.prepare('SELECT id, mode, level, setup, ending FROM freestyle_sessions WHERE mode = ?').get(mode) as SessionRow | undefined;
@@ -150,7 +165,7 @@ export function createFreestyleService(
         throw new FreestyleError(`setup.${key} must be a string of at most ${MAX_SETUP_VALUE_LENGTH} characters`, 'bad_request');
       }
     }
-    if (mode === 'conversation' && setup.scenarioId !== undefined) {
+    if ((mode === 'conversation' || mode === 'spoken') && setup.scenarioId !== undefined) {
       const scenario = SCENARIOS.find((s) => s.id === setup.scenarioId);
       if (!scenario) throw new FreestyleError('Unknown scenario', 'bad_request');
       if (scenario.level !== level) throw new FreestyleError(`Scenario ${scenario.id} is not a ${level} scenario`, 'bad_request');
@@ -180,6 +195,8 @@ export function createFreestyleService(
     // S27: a value that isn't a level is a bad request; a real level above the ceiling is locked.
     if (!isCefrLevel(input.level)) throw new FreestyleError(`Not a level: ${String(input.level)}`, 'bad_request');
     const setup = validateSetup(mode, input.level, input.setup);
+    // A spoken session records and transcribes, so it needs the speech service from the start.
+    if (mode === 'spoken' && !(await speechUp())) throw new FreestyleError("The speech service isn't available right now", 'unavailable');
     const open = row(mode);
     // A session that is ending can't be resumed; its End is still deciding whether it stays.
     if (open?.ending) throw new FreestyleError('This session is already ending', 'busy');
@@ -188,7 +205,7 @@ export function createFreestyleService(
       throw new FreestyleError(`Level ${input.level} is locked`, 'locked', 'level_locked', { level: input.level });
     }
     let first: string | null = null;
-    if (mode === 'conversation' && setup.scenarioId !== undefined) {
+    if ((mode === 'conversation' || mode === 'spoken') && setup.scenarioId !== undefined) {
       first = SCENARIOS.find((s) => s.id === setup.scenarioId)!.opener;
     }
     if (mode === 'grammar_drill') {
@@ -212,9 +229,11 @@ export function createFreestyleService(
   }
 
   // The student's message is stored only after the AI answered, so a failure leaves the thread clean.
-  async function turn(mode: FreestyleMode, text: string): Promise<SessionMessage[]> {
+  async function turn(mode: FreestyleMode, input: string | { clipId: string }): Promise<SessionMessage[]> {
     const r = requireSession(mode);
-    if (!nonEmpty(text)) throw new FreestyleError('Write something first', 'bad_request');
+    if (mode === 'spoken') return spokenTurn(r, input);
+    const text = input;
+    if (typeof text !== 'string' || !nonEmpty(text)) throw new FreestyleError('Write something first', 'bad_request');
     if (r.ending) throw new FreestyleError('This session is already ending', 'busy');
     const setup = JSON.parse(r.setup) as Record<string, unknown>;
     const save = (userExtra: unknown, reply: string, replyExtra: unknown = null): SessionMessage[] => {
@@ -246,6 +265,45 @@ export function createFreestyleService(
       return added;
     }
     throw new FreestyleError('This mode has no turns', 'bad_request');
+  }
+
+  // The student's recording is a clip in `freestyle:spoken`; its transcript is the message. The reply is rendered
+  // in the partner's voice into a clip of the same scope, and a failed render keeps the text only.
+  async function spokenTurn(r: SessionRow, input: string | { clipId: string }): Promise<SessionMessage[]> {
+    if (typeof input === 'string' || !nonEmpty(input?.clipId)) throw new FreestyleError('clipId is required', 'bad_request');
+    if (r.ending) throw new FreestyleError('This session is already ending', 'busy');
+    const clip = clips.getClip(input.clipId);
+    if (!clip || clip.scope !== 'freestyle:spoken' || clip.role !== 'student') throw new FreestyleError('Unknown recording', 'bad_request');
+    if (messagesOf(r.id).some((m) => m.extra?.clipId === clip.id)) throw new FreestyleError('That recording was already sent', 'bad_request');
+    const text = clip.transcript ?? '';
+    if (!nonEmpty(text)) throw new FreestyleError('Nothing was heard in that recording', 'bad_request');
+    const setup = JSON.parse(r.setup) as Record<string, unknown>;
+    const scenario = SCENARIOS.find((s) => s.id === setup.scenarioId);
+    const topic = nonEmpty(setup.topic) ? setup.topic : null;
+    const reply = await ask(
+      buildConversationPrompt({ level: r.level, scenario: scenario?.title.de ?? null, topic, history: history(r.id), message: text }),
+      parseConversationReply
+    );
+    let audio: Buffer | null = null;
+    try {
+      audio = await (deps.provider ?? getSpeechProvider(db)).render({ segments: [{ text: reply.reply, voice: PARTNER_VOICES.f }], filter: 'none', pauseMs: 600 });
+    } catch {
+      audio = null;
+    }
+    const replyClipId = clips.savePartnerClip('freestyle:spoken', audio, reply.reply);
+    let added: SessionMessage[];
+    try {
+      stillOpen(r);
+      added = db.transaction(() => [
+        addMessage(r.id, 'user', text, { corrections: reply.corrections, clipId: clip.id }),
+        addMessage(r.id, 'assistant', reply.reply, { clipId: replyClipId, audio: audio !== null }),
+      ])();
+    } catch (err) {
+      clips.deleteClip(replyClipId);
+      throw err;
+    }
+    recordMistakes(db, 'freestyle_chat', reply.corrections, { now });
+    return added;
   }
 
   async function newArticle(): Promise<SessionView> {
@@ -280,14 +338,19 @@ export function createFreestyleService(
       db.prepare('DELETE FROM freestyle_messages WHERE session_id = ?').run(r.id);
       db.prepare('DELETE FROM freestyle_sessions WHERE id = ?').run(r.id);
     });
-    if (opts.skipSummary) {
+    // Spoken: the recordings go with the session.
+    const removeAll = () => {
       remove();
+      if (mode === 'spoken') clips.deleteScope('freestyle:spoken');
+    };
+    if (opts.skipSummary) {
+      removeAll();
       return null;
     }
     const transcript = transcriptOf(r);
     try {
       const summary = await ask(buildSummaryPrompt({ mode, level: r.level, transcript }), parseSummaryReply);
-      remove();
+      removeAll();
       return summary;
     } catch (err) {
       // The summary failed: release the claim and keep the session so the student can retry.

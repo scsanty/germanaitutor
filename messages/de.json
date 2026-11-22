@@ -353,6 +353,7 @@
       "grammarDrill": "Grammatiktraining",
       "freeReading": "Freies Lesen",
       "freeWriting": "Freies Schreiben",
+      "spoken": "Gesprochenes Gespräch",
       "examPractice": "Prüfungstraining"
     },
     "descriptions": {
@@ -360,6 +361,7 @@
       "grammarDrill": "Übe ein Grammatikthema mit kurzen Fragen",
       "freeReading": "Lies einen kurzen Artikel zu einem beliebigen Thema, auf deinem Niveau",
       "freeWriting": "Schreibe frei und erhalte markiertes Feedback",
+      "spoken": "Sprich laut auf Deutsch, mit Korrekturen und gesprochener Antwort",
       "examPractice": "Prüfungsteile mit Zeitlimit und komplette Modelltests, bewertet wie in der echten Prüfung"
     },
     "continue": "Sitzung fortsetzen",
@@ -394,6 +396,9 @@
     "sending": "Wird gesendet…",
     "sendFailed": "Deine Nachricht konnte nicht gesendet werden.",
     "thread": "Nachrichten",
+    "playReply": "Antwort {n} abspielen",
+    "speakYourTurn": "Du bist dran: Tippe auf das Mikrofon und sprich.",
+    "replying": "Dein Gesprächspartner antwortet…",
     "corrections": "Korrekturen",
     "correctionLanguage": "Sprache der Korrektur",
     "explanationLanguage": "Sprache der Erklärung",

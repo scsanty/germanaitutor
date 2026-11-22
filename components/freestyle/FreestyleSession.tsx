@@ -14,6 +14,7 @@ import { ChatThread } from './ChatThread';
 import { EndSession } from './EndSession';
 import { ReadingSession } from './ReadingSession';
 import { SessionSetup } from './SessionSetup';
+import { SpokenSession } from './SpokenSession';
 import { WritingSession } from './WritingSession';
 
 interface SetupData {
@@ -150,6 +151,8 @@ export function FreestyleSession({ mode, initialTopic }: { mode: FreestyleMode; 
     );
   } else if (session && (mode === 'conversation' || mode === 'grammar_drill')) {
     body = <ChatThread mode={mode} messages={session.messages} onSend={send} />;
+  } else if (session && mode === 'spoken') {
+    body = <SpokenSession session={session} onMessages={addMessages} />;
   } else if (session && mode === 'free_reading') {
     body = <ReadingSession session={session} onSession={setSession} />;
   } else if (session && mode === 'free_writing') {

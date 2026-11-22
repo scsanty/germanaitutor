@@ -353,6 +353,7 @@
       "grammarDrill": "Grammar drill",
       "freeReading": "Free reading",
       "freeWriting": "Free writing",
+      "spoken": "Spoken conversation",
       "examPractice": "Exam practice"
     },
     "descriptions": {
@@ -360,6 +361,7 @@
       "grammarDrill": "Practise one grammar topic with quick questions",
       "freeReading": "Read a short article on any topic, at your level",
       "freeWriting": "Write freely and get marked-up feedback",
+      "spoken": "Talk in German out loud, with corrections and a spoken reply",
       "examPractice": "Timed exam parts and full mocks, scored like the real exam"
     },
     "continue": "Continue your session",
@@ -394,6 +396,9 @@
     "sending": "Sending…",
     "sendFailed": "Could not send your message.",
     "thread": "Messages",
+    "playReply": "Play reply {n}",
+    "speakYourTurn": "Your turn: tap the microphone and speak.",
+    "replying": "Your partner is answering…",
     "corrections": "Corrections",
     "correctionLanguage": "Correction language",
     "explanationLanguage": "Explanation language",

@@ -1,4 +1,9 @@
 import { describe, it, expect, vi } from 'vitest';
+import { existsSync, mkdtempSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { createSpeechClipService } from './speechClipService';
+import type { SpeechProvider } from '../speech/speechProvider';
 import { createDbClient } from '../db/client';
 import { createProfileService } from './profileService';
 import { createFreestyleService, FreestyleError, MAX_SETUP_VALUE_LENGTH } from './freestyleService';
@@ -85,7 +90,7 @@ describe('freestyleService', () => {
     await expect(locked).rejects.toBeInstanceOf(FreestyleError);
     await expect(locked).rejects.toMatchObject({ kind: 'locked', code: 'level_locked' });
     await expect(service.start('conversation', { level: 'Z9' as never, setup: {} })).rejects.toMatchObject({ kind: 'bad_request', code: 'bad_request' });
-    await expect(service.start('spoken', { level: 'B1', setup: {} })).rejects.toMatchObject({ kind: 'not_found' });
+    await expect(service.start('exam_practice' as never, { level: 'B1', setup: { x: 'y' } })).rejects.toMatchObject({ kind: 'bad_request' });
   });
 
   it('refuses sessions for exam practice, which has its own screen (S12)', async () => {
@@ -269,5 +274,90 @@ describe('freestyleService', () => {
     await service.turn('conversation', 'Hallo');
     await service.end('conversation', {});
     expect(tables.map(count)).toEqual(before);
+  });
+});
+
+describe('freestyleService: spoken conversation', () => {
+  function spokenSetup(replies: string[], opts: { up?: boolean; render?: () => Promise<Buffer> } = {}) {
+    const base = setup(replies);
+    const dir = mkdtempSync(join(tmpdir(), 'gait-spoken-'));
+    const render = vi.fn(opts.render ?? (async () => Buffer.from('ogg')));
+    const provider = { render } as unknown as SpeechProvider;
+    const clips = createSpeechClipService(base.db, { provider, dir });
+    const service = createFreestyleService(base.db, {
+      generate: base.generate,
+      now: () => new Date('2026-09-29T10:00:00Z'),
+      provider,
+      clipsDir: dir,
+      speechUp: async () => opts.up ?? true,
+    });
+    const studentClip = (transcript: string, scope = 'freestyle:spoken', role = 'student') => {
+      const id = `clip-${Math.random().toString(36).slice(2)}`;
+      base.db.prepare('INSERT INTO speech_clips (id, scope, role, file, transcript, words, created_at) VALUES (?, ?, ?, NULL, ?, NULL, ?)').run(id, scope, role, transcript, '2026-09-29T10:00:00Z');
+      return id;
+    };
+    return { ...base, service, render, clips, dir, studentClip };
+  }
+
+  it('starts a spoken session with the scenario opener, and needs the speech service', async () => {
+    const { service } = spokenSetup([]);
+    const started = await service.start('spoken', { level: 'B1', setup: { scenarioId: 'b1-doctor' } });
+    expect(started.messages.map((m) => m.role)).toEqual(['assistant']);
+    const down = spokenSetup([], { up: false });
+    await expect(down.service.start('spoken', { level: 'B1', setup: {} })).rejects.toMatchObject({ code: 'speech_unavailable' });
+    await expect(spokenSetup([]).service.start('spoken', { level: 'B1', setup: { prompt: 'x' } })).rejects.toMatchObject({ kind: 'bad_request' });
+    await expect(spokenSetup([]).service.start('spoken', { level: 'B1', setup: { scenarioId: 'a1-nope' } })).rejects.toMatchObject({ kind: 'bad_request' });
+  });
+
+  it('stores the transcript with its corrections and the reply with a rendered clip, and logs to freestyle_chat', async () => {
+    const { db, service, render, clips, studentClip } = spokenSetup([conversationReply]);
+    await service.start('spoken', { level: 'B1', setup: {} });
+    const clipId = studentClip('Ich habe gegangen zum Arzt.');
+    const added = await service.turn('spoken', { clipId });
+    expect(added.map((m) => m.role)).toEqual(['user', 'assistant']);
+    expect(added[0].content).toBe('Ich habe gegangen zum Arzt.');
+    expect(added[0].extra).toMatchObject({ clipId, corrections: [{ right: 'Ich bin gegangen' }] });
+    expect(added[1].content).toBe('Wohin bist du gegangen?');
+    expect(added[1].extra).toMatchObject({ audio: true });
+    const replyClip = clips.getClip(added[1].extra!.clipId as string)!;
+    expect(replyClip).toMatchObject({ scope: 'freestyle:spoken', role: 'partner', transcript: 'Wohin bist du gegangen?' });
+    expect(existsSync(replyClip.path!)).toBe(true);
+    expect(render).toHaveBeenCalledWith(expect.objectContaining({ segments: [{ text: 'Wohin bist du gegangen?', voice: 'ramona' }] }));
+    expect(db.prepare('SELECT source, wrong FROM error_log').all()).toEqual([{ source: 'freestyle_chat', wrong: 'Ich habe gegangen' }]);
+  });
+
+  it('keeps the reply as text when the voice render fails', async () => {
+    const { service, studentClip } = spokenSetup([conversationReply], { render: async () => { throw new Error('tts down'); } });
+    await service.start('spoken', { level: 'B1', setup: {} });
+    const added = await service.turn('spoken', { clipId: studentClip('Hallo') });
+    expect(added[1].extra).toMatchObject({ audio: false });
+    expect(added[1].content).toBe('Wohin bist du gegangen?');
+  });
+
+  it('refuses a missing, foreign-scope, partner or reused clip, and text input', async () => {
+    const { service, studentClip } = spokenSetup([conversationReply, conversationReply]);
+    await service.start('spoken', { level: 'B1', setup: {} });
+    await expect(service.turn('spoken', { clipId: 'nope' })).rejects.toMatchObject({ kind: 'bad_request' });
+    await expect(service.turn('spoken', { clipId: studentClip('Hallo', 'lesson:x') })).rejects.toMatchObject({ kind: 'bad_request' });
+    await expect(service.turn('spoken', { clipId: studentClip('Hallo', 'freestyle:spoken', 'partner') })).rejects.toMatchObject({ kind: 'bad_request' });
+    await expect(service.turn('spoken', 'Hallo')).rejects.toMatchObject({ kind: 'bad_request' });
+    const ok = studentClip('Hallo');
+    await service.turn('spoken', { clipId: ok });
+    await expect(service.turn('spoken', { clipId: ok })).rejects.toMatchObject({ kind: 'bad_request' });
+  });
+
+  it('deletes the freestyle:spoken clips when the session ends, with or without a summary', async () => {
+    const { db, service, studentClip, dir } = spokenSetup([conversationReply, summaryReply, conversationReply]);
+    const count = () => (db.prepare("SELECT COUNT(*) AS n FROM speech_clips WHERE scope = 'freestyle:spoken'").get() as { n: number }).n;
+    await service.start('spoken', { level: 'B1', setup: {} });
+    await service.turn('spoken', { clipId: studentClip('Hallo') });
+    expect(count()).toBe(2);
+    await service.end('spoken', {});
+    expect(count()).toBe(0);
+    await service.start('spoken', { level: 'B1', setup: {} });
+    await service.turn('spoken', { clipId: studentClip('Hallo') });
+    await service.end('spoken', { skipSummary: true });
+    expect(count()).toBe(0);
+    expect(dir).toBeTruthy();
   });
 });
