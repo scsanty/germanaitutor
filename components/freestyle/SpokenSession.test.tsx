@@ -102,8 +102,28 @@ describe('SpokenSession', () => {
     await waitFor(() => expect(onMessages).toHaveBeenCalledWith(ADDED));
   });
 
+  it('keeps the mic usable after a 400, with no Try again, and sends a new recording', async () => {
+    let clip = 0;
+    let sends = 0;
+    vi.stubGlobal(
+      'fetch',
+      vi.fn((url: string) => {
+        if (url.startsWith('/api/speech/transcribe')) return delayedResponse({ clipId: `c${++clip}`, text: 'Hallo', words: [], duration: 1 });
+        sends += 1;
+        return sends === 1 ? delayedResponse({ error: 'x', code: 'bad_request' }, { ok: false, status: 400 }) : delayedResponse({ messages: ADDED });
+      })
+    );
+    const onMessages = vi.fn();
+    renderWithIntl(<SpokenSession session={SESSION} onMessages={onMessages} />);
+    await record();
+    expect(await screen.findByRole('alert')).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Try again' })).not.toBeInTheDocument();
+    await record();
+    await waitFor(() => expect(onMessages).toHaveBeenCalledWith(ADDED));
+  });
+
   it('shows a reply without audio as text, with "Audio unavailable right now" and no autoplay', async () => {
-    const messages: SessionMessage[] = [...SESSION.messages, { id: 2, role: 'assistant', content: 'Nur Text.', extra: { clipId: null, audio: false } }];
+    const messages: SessionMessage[] = [...SESSION.messages, { id: 2, role: 'assistant', content: 'Nur Text.', extra: { clipId: 'r0', audio: false } }];
     renderWithIntl(<SpokenSession session={{ ...SESSION, messages }} onMessages={vi.fn()} />);
     expect(screen.getByText(reply('Nur Text.'))).toBeInTheDocument();
     expect(screen.getByText('Audio unavailable right now')).toBeInTheDocument();

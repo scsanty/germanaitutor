@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
-import { existsSync, mkdtempSync } from 'node:fs';
+import { existsSync, mkdtempSync, readdirSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { createSpeechClipService } from './speechClipService';
@@ -293,7 +293,8 @@ describe('freestyleService: spoken conversation', () => {
     });
     const studentClip = (transcript: string, scope = 'freestyle:spoken', role = 'student') => {
       const id = `clip-${Math.random().toString(36).slice(2)}`;
-      base.db.prepare('INSERT INTO speech_clips (id, scope, role, file, transcript, words, created_at) VALUES (?, ?, ?, NULL, ?, NULL, ?)').run(id, scope, role, transcript, '2026-09-29T10:00:00Z');
+      writeFileSync(join(dir, `${id}.webm`), 'abc');
+      base.db.prepare('INSERT INTO speech_clips (id, scope, role, file, transcript, words, created_at) VALUES (?, ?, ?, ?, ?, NULL, ?)').run(id, scope, role, `${id}.webm`, transcript, '2026-09-29T10:00:00Z');
       return id;
     };
     return { ...base, service, render, clips, dir, studentClip };
@@ -327,11 +328,21 @@ describe('freestyleService: spoken conversation', () => {
   });
 
   it('keeps the reply as text when the voice render fails', async () => {
-    const { service, studentClip } = spokenSetup([conversationReply], { render: async () => { throw new Error('tts down'); } });
+    const { db, service, studentClip } = spokenSetup([conversationReply], { render: async () => { throw new Error('tts down'); } });
     await service.start('spoken', { level: 'B1', setup: {} });
     const added = await service.turn('spoken', { clipId: studentClip('Hallo') });
     expect(added[1].extra).toMatchObject({ audio: false });
     expect(added[1].content).toBe('Wohin bist du gegangen?');
+    expect(db.prepare('SELECT file FROM speech_clips WHERE id = ?').get(added[1].extra!.clipId)).toEqual({ file: null });
+  });
+
+  it('stores one pair when two requests send the same recording at once', async () => {
+    const { service, studentClip } = spokenSetup([conversationReply, conversationReply]);
+    await service.start('spoken', { level: 'B1', setup: {} });
+    const clipId = studentClip('Hallo');
+    const results = await Promise.allSettled([service.turn('spoken', { clipId }), service.turn('spoken', { clipId })]);
+    expect(results.map((x) => x.status).sort()).toEqual(['fulfilled', 'rejected']);
+    expect(service.session('spoken')!.messages).toHaveLength(2);
   });
 
   it('refuses a missing, foreign-scope, partner or reused clip, and text input', async () => {
@@ -348,16 +359,19 @@ describe('freestyleService: spoken conversation', () => {
 
   it('deletes the freestyle:spoken clips when the session ends, with or without a summary', async () => {
     const { db, service, studentClip, dir } = spokenSetup([conversationReply, summaryReply, conversationReply]);
+    const files = () => readdirSync(dir);
     const count = () => (db.prepare("SELECT COUNT(*) AS n FROM speech_clips WHERE scope = 'freestyle:spoken'").get() as { n: number }).n;
     await service.start('spoken', { level: 'B1', setup: {} });
     await service.turn('spoken', { clipId: studentClip('Hallo') });
     expect(count()).toBe(2);
+    expect(files()).toHaveLength(2); // the student's recording and the reply
     await service.end('spoken', {});
     expect(count()).toBe(0);
+    expect(files()).toHaveLength(0);
     await service.start('spoken', { level: 'B1', setup: {} });
     await service.turn('spoken', { clipId: studentClip('Hallo') });
     await service.end('spoken', { skipSummary: true });
     expect(count()).toBe(0);
-    expect(dir).toBeTruthy();
+    expect(files()).toHaveLength(0);
   });
 });

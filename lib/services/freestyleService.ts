@@ -195,8 +195,6 @@ export function createFreestyleService(
     // S27: a value that isn't a level is a bad request; a real level above the ceiling is locked.
     if (!isCefrLevel(input.level)) throw new FreestyleError(`Not a level: ${String(input.level)}`, 'bad_request');
     const setup = validateSetup(mode, input.level, input.setup);
-    // A spoken session records and transcribes, so it needs the speech service from the start.
-    if (mode === 'spoken' && !(await speechUp())) throw new FreestyleError("The speech service isn't available right now", 'unavailable');
     const open = row(mode);
     // A session that is ending can't be resumed; its End is still deciding whether it stays.
     if (open?.ending) throw new FreestyleError('This session is already ending', 'busy');
@@ -204,6 +202,8 @@ export function createFreestyleService(
     if (!isAtOrBelow(input.level, profiles.getProfile().highestUnlockedLevel)) {
       throw new FreestyleError(`Level ${input.level} is locked`, 'locked', 'level_locked', { level: input.level });
     }
+    // A spoken session records and transcribes, so it needs the speech service to be created (not to be resumed).
+    if (mode === 'spoken' && !(await speechUp())) throw new FreestyleError("The speech service isn't available right now", 'unavailable');
     let first: string | null = null;
     if ((mode === 'conversation' || mode === 'spoken') && setup.scenarioId !== undefined) {
       first = SCENARIOS.find((s) => s.id === setup.scenarioId)!.opener;
@@ -228,6 +228,13 @@ export function createFreestyleService(
     return view(row(mode)!);
   }
 
+  // One conversation exchange, shared by the typed and the spoken conversation so they can't drift.
+  function askConversation(r: SessionRow, setup: Record<string, unknown>, text: string) {
+    const scenario = SCENARIOS.find((s) => s.id === setup.scenarioId);
+    const topic = nonEmpty(setup.topic) ? setup.topic : null;
+    return ask(buildConversationPrompt({ level: r.level, scenario: scenario?.title.de ?? null, topic, history: history(r.id), message: text }), parseConversationReply);
+  }
+
   // The student's message is stored only after the AI answered, so a failure leaves the thread clean.
   async function turn(mode: FreestyleMode, input: string | { clipId: string }): Promise<SessionMessage[]> {
     const r = requireSession(mode);
@@ -241,12 +248,7 @@ export function createFreestyleService(
       return db.transaction(() => [addMessage(r.id, 'user', text, userExtra), addMessage(r.id, 'assistant', reply, replyExtra)])();
     };
     if (mode === 'conversation') {
-      const scenario = SCENARIOS.find((s) => s.id === setup.scenarioId);
-      const topic = nonEmpty(setup.topic) ? setup.topic : null;
-      const reply = await ask(
-        buildConversationPrompt({ level: r.level, scenario: scenario?.title.de ?? null, topic, history: history(r.id), message: text }),
-        parseConversationReply
-      );
+      const reply = await askConversation(r, setup, text);
       const added = save({ corrections: reply.corrections }, reply.reply);
       recordMistakes(db, 'freestyle_chat', reply.corrections, { now });
       return added;
@@ -278,12 +280,7 @@ export function createFreestyleService(
     const text = clip.transcript ?? '';
     if (!nonEmpty(text)) throw new FreestyleError('Nothing was heard in that recording', 'bad_request');
     const setup = JSON.parse(r.setup) as Record<string, unknown>;
-    const scenario = SCENARIOS.find((s) => s.id === setup.scenarioId);
-    const topic = nonEmpty(setup.topic) ? setup.topic : null;
-    const reply = await ask(
-      buildConversationPrompt({ level: r.level, scenario: scenario?.title.de ?? null, topic, history: history(r.id), message: text }),
-      parseConversationReply
-    );
+    const reply = await askConversation(r, setup, text);
     let audio: Buffer | null = null;
     try {
       audio = await (deps.provider ?? getSpeechProvider(db)).render({ segments: [{ text: reply.reply, voice: PARTNER_VOICES.f }], filter: 'none', pauseMs: 600 });
@@ -294,10 +291,14 @@ export function createFreestyleService(
     let added: SessionMessage[];
     try {
       stillOpen(r);
-      added = db.transaction(() => [
+      added = db.transaction(() => {
+        // A concurrent request may have stored this recording while the AI ran.
+        if (messagesOf(r.id).some((m) => m.extra?.clipId === clip.id)) throw new FreestyleError('That recording was already sent', 'bad_request');
+        return [
         addMessage(r.id, 'user', text, { corrections: reply.corrections, clipId: clip.id }),
         addMessage(r.id, 'assistant', reply.reply, { clipId: replyClipId, audio: audio !== null }),
-      ])();
+        ];
+      })();
     } catch (err) {
       clips.deleteClip(replyClipId);
       throw err;

@@ -24,6 +24,8 @@ export function SpokenSession({ session, onMessages }: { session: SessionView; o
   const [sending, setSending] = useState(false);
   const [pending, setPending] = useState<{ clipId: string; text: string } | null>(null);
   const [error, setError] = useState<string | null>(null);
+  // Only a failure that can succeed on a second try (not a 400 about this recording) offers Try again.
+  const [retryable, setRetryable] = useState(false);
   const busy = useRef(false);
   const audioRef = useRef<HTMLAudioElement>(null);
   const played = useRef(new Set<string>());
@@ -68,6 +70,7 @@ export function SpokenSession({ session, onMessages }: { session: SessionView; o
     setSending(true);
     setPending({ clipId, text });
     setError(null);
+    setRetryable(false);
     try {
       const res = await fetch('/api/freestyle/spoken/message', {
         method: 'POST',
@@ -77,12 +80,15 @@ export function SpokenSession({ session, onMessages }: { session: SessionView; o
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
         setError(errorText(data, t('sendFailed')));
+        setRetryable(res.status !== 400);
+        if (res.status === 400) setPending(null);
         return;
       }
       setPending(null);
       onMessages((data as { messages: SessionMessage[] }).messages);
     } catch {
       setError(t('sendFailed'));
+      setRetryable(true);
     } finally {
       busy.current = false;
       setSending(false);
@@ -143,16 +149,21 @@ export function SpokenSession({ session, onMessages }: { session: SessionView; o
         <p role="status" className={sending ? 'text-sm text-text-muted' : 'sr-only'}>
           {sending ? t('replying') : ''}
         </p>
-        {error && pending && !sending ? (
+        {error && pending && retryable && !sending && (
           <Button type="button" variant="outline" className="min-h-11" onClick={() => void send(pending.clipId, pending.text)}>
             {tSpeech('tryAgain')}
           </Button>
-        ) : (
-          <>
-            {!sending && <p className="text-sm font-medium">{t('speakYourTurn')}</p>}
-            <MicButton scope={SCOPE} disabled={sending} onTranscript={(r) => void send(r.clipId, r.text)} />
-          </>
         )}
+        {!sending && <p className="text-sm font-medium">{t('speakYourTurn')}</p>}
+        {/* Recording again is always possible; a new recording replaces a failed one. */}
+        <MicButton
+          scope={SCOPE}
+          disabled={sending}
+          onTranscript={(r) => {
+            setPending(null);
+            void send(r.clipId, r.text);
+          }}
+        />
       </div>
       <div ref={end} aria-hidden className="scroll-mb-40 md:scroll-mb-0" />
     </div>
