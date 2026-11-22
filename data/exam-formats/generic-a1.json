@@ -32,7 +32,53 @@
         "D": "Es gibt so viele Fehler, dass der Text größtenteils unverständlich ist." } }
     ] },
       "instructions": "Schreiben Sie eine Nachricht (ca. 30 Wörter). Behandeln Sie alle Punkte der Aufgabe und denken Sie an Anrede und Gruß." },
-    { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Sprechen Teil 1" }, "taskType": "spoken", "items": 4, "points": 25, "minutes": 3, "instructions": "Sich vorstellen und Fragen beantworten: Erzählen Sie etwas über sich und beantworten Sie die Fragen." },
-    { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Sprechen Teil 2" }, "taskType": "spoken", "items": 4, "points": 25, "minutes": 4, "instructions": "Gemeinsam etwas planen: Planen Sie zusammen mit Ihrem Gesprächspartner / Ihrer Gesprächspartnerin etwas und einigen Sie sich." }
+    { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Sprechen Teil 1" }, "taskType": "spoken", "items": 4, "points": 25, "minutes": 3,
+      "rubric": { "criteria": [
+      { "id": "ausdruck", "name": { "en": "Expression", "de": "Ausdrucksfähigkeit" }, "points": { "A": 7, "B": 4, "C": 1.5, "D": 0 }, "descriptors": {
+        "A": "Drückt sich mit einfachen Wörtern und festen Wendungen verständlich aus; die Äußerungen sind mit und, aber oder dann verbunden.",
+        "B": "Drückt sich mit sehr einfachen Wörtern meist verständlich aus; es gibt Pausen bei der Wortsuche, und Sätze stehen oft unverbunden nebeneinander.",
+        "C": "Bringt nur einzelne Wörter und Wendungen hervor; die Wortsuche unterbricht das Gespräch immer wieder.",
+        "D": "Kann sich kaum ausdrücken; die Äußerungen bestehen aus einzelnen Wörtern oder sind nicht zu verstehen." } },
+      { "id": "aufgabe", "name": { "en": "Task completion", "de": "Aufgabenbewältigung" }, "points": { "A": 7, "B": 4, "C": 1.5, "D": 0 }, "descriptors": {
+        "A": "Erzählt ausführlich und verständlich über sich und beantwortet alle Fragen passend.",
+        "B": "Erzählt über sich und beantwortet die meisten Fragen; einzelne Antworten bleiben knapp.",
+        "C": "Gibt nur wenige Informationen über sich und beantwortet die Fragen kaum.",
+        "D": "Die Aufgabe wird kaum oder gar nicht bewältigt." } },
+      { "id": "richtigkeit", "name": { "en": "Formal accuracy", "de": "Formale Richtigkeit" }, "points": { "A": 7, "B": 4, "C": 1.5, "D": 0 }, "descriptors": {
+        "A": "Einfache Sätze und feste Wendungen sind weitgehend korrekt; Fehler stören das Verständnis nicht.",
+        "B": "Es gibt Fehler auch in einfachen Sätzen, die das Verständnis aber kaum stören.",
+        "C": "Viele Fehler erschweren das Verständnis stellenweise deutlich.",
+        "D": "Die Äußerungen sind wegen der Fehler größtenteils unverständlich." } },
+      { "id": "aussprache", "name": { "en": "Pronunciation and intonation", "de": "Aussprache und Intonation" }, "points": { "A": 4, "B": 2.5, "C": 1, "D": 0 }, "descriptors": {
+        "A": "Aussprache und Intonation sind klar und natürlich; kleine Abweichungen stören nicht.",
+        "B": "Aussprache und Intonation sind meist gut verständlich; ein fremder Akzent ist hörbar, stört aber kaum.",
+        "C": "Aussprache und Intonation erschweren das Verständnis stellenweise deutlich.",
+        "D": "Aussprache und Intonation machen die Äußerungen größtenteils unverständlich." } }
+    ] },
+      "instructions": "Sich vorstellen und Fragen beantworten: Erzählen Sie etwas über sich und beantworten Sie die Fragen." },
+    { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Sprechen Teil 2" }, "taskType": "spoken", "items": 4, "points": 25, "minutes": 4,
+      "rubric": { "criteria": [
+      { "id": "ausdruck", "name": { "en": "Expression", "de": "Ausdrucksfähigkeit" }, "points": { "A": 7, "B": 4, "C": 1.5, "D": 0 }, "descriptors": {
+        "A": "Drückt sich mit einfachen Wörtern und festen Wendungen verständlich aus; die Äußerungen sind mit und, aber oder dann verbunden.",
+        "B": "Drückt sich mit sehr einfachen Wörtern meist verständlich aus; es gibt Pausen bei der Wortsuche, und Sätze stehen oft unverbunden nebeneinander.",
+        "C": "Bringt nur einzelne Wörter und Wendungen hervor; die Wortsuche unterbricht das Gespräch immer wieder.",
+        "D": "Kann sich kaum ausdrücken; die Äußerungen bestehen aus einzelnen Wörtern oder sind nicht zu verstehen." } },
+      { "id": "aufgabe", "name": { "en": "Task completion", "de": "Aufgabenbewältigung" }, "points": { "A": 7, "B": 4, "C": 1.5, "D": 0 }, "descriptors": {
+        "A": "Macht eigene Vorschläge, reagiert auf die Vorschläge des Partners / der Partnerin und einigt sich mit ihm / ihr.",
+        "B": "Macht Vorschläge und reagiert meist passend; einzelne Punkte bleiben offen.",
+        "C": "Macht kaum eigene Vorschläge und reagiert nur knapp; eine Einigung kommt kaum zustande.",
+        "D": "Die Aufgabe wird kaum oder gar nicht bewältigt." } },
+      { "id": "richtigkeit", "name": { "en": "Formal accuracy", "de": "Formale Richtigkeit" }, "points": { "A": 7, "B": 4, "C": 1.5, "D": 0 }, "descriptors": {
+        "A": "Einfache Sätze und feste Wendungen sind weitgehend korrekt; Fehler stören das Verständnis nicht.",
+        "B": "Es gibt Fehler auch in einfachen Sätzen, die das Verständnis aber kaum stören.",
+        "C": "Viele Fehler erschweren das Verständnis stellenweise deutlich.",
+        "D": "Die Äußerungen sind wegen der Fehler größtenteils unverständlich." } },
+      { "id": "aussprache", "name": { "en": "Pronunciation and intonation", "de": "Aussprache und Intonation" }, "points": { "A": 4, "B": 2.5, "C": 1, "D": 0 }, "descriptors": {
+        "A": "Aussprache und Intonation sind klar und natürlich; kleine Abweichungen stören nicht.",
+        "B": "Aussprache und Intonation sind meist gut verständlich; ein fremder Akzent ist hörbar, stört aber kaum.",
+        "C": "Aussprache und Intonation erschweren das Verständnis stellenweise deutlich.",
+        "D": "Aussprache und Intonation machen die Äußerungen größtenteils unverständlich." } }
+    ] },
+      "instructions": "Gemeinsam etwas planen: Planen Sie zusammen mit Ihrem Gesprächspartner / Ihrer Gesprächspartnerin etwas und einigen Sie sich." }
   ]
 }

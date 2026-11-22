@@ -51,7 +51,53 @@
         "D": "Es gibt so viele Fehler, dass der Text größtenteils unverständlich ist." } }
     ] },
       "instructions": "Schreiben Sie eine formelle E-Mail (ca. 150 Wörter). Behandeln Sie alle Punkte der Aufgabe und achten Sie auf einen angemessenen Stil." },
-    { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Sprechen Teil 1" }, "taskType": "spoken", "items": 4, "points": 25, "minutes": 7, "instructions": "Ein Thema präsentieren: Sprechen Sie zusammenhängend über das Thema auf Ihrer Karte und beantworten Sie anschließend die Fragen." },
-    { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Sprechen Teil 2" }, "taskType": "spoken", "items": 4, "points": 25, "minutes": 8, "instructions": "Diskussion: Diskutieren Sie über die Frage auf dem Aufgabenblatt. Begründen Sie Ihre Meinung und reagieren Sie auf die Argumente." }
+    { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Sprechen Teil 1" }, "taskType": "spoken", "items": 4, "points": 25, "minutes": 7,
+      "rubric": { "criteria": [
+      { "id": "ausdruck", "name": { "en": "Expression", "de": "Ausdrucksfähigkeit" }, "points": { "A": 7, "B": 4, "C": 1.5, "D": 0 }, "descriptors": {
+        "A": "Drückt sich flüssig, spontan und differenziert aus; der Wortschatz ist für C1 breit, präzise und idiomatisch, und der Redefluss ist durch vielfältige Konnektoren und Verweise klar gegliedert.",
+        "B": "Drückt sich meist flüssig und differenziert aus; einzelne Formulierungen sind ungenau, oder die Gliederung durch Konnektoren ist stellenweise einförmig.",
+        "C": "Drückt sich oft umständlich oder stockend aus; der Wortschatz reicht für komplexe Inhalte nur begrenzt, und die Äußerungen sind wenig gegliedert.",
+        "D": "Kann sich zum Thema kaum angemessen ausdrücken; die Äußerungen sind bruchstückhaft oder schwer verständlich." } },
+      { "id": "aufgabe", "name": { "en": "Task completion", "de": "Aufgabenbewältigung" }, "points": { "A": 7, "B": 4, "C": 1.5, "D": 0 }, "descriptors": {
+        "A": "Spricht zusammenhängend und ausführlich über das Thema der Karte, mit Beispielen und eigener Meinung, und beantwortet die Fragen genau.",
+        "B": "Spricht verständlich über das Thema und beantwortet die Fragen; einzelne Aspekte bleiben knapp.",
+        "C": "Spricht nur oberflächlich über das Thema und beantwortet die Fragen kaum.",
+        "D": "Die Aufgabe wird kaum oder gar nicht bewältigt." } },
+      { "id": "richtigkeit", "name": { "en": "Formal accuracy", "de": "Formale Richtigkeit" }, "points": { "A": 7, "B": 4, "C": 1.5, "D": 0 }, "descriptors": {
+        "A": "Komplexe Strukturen werden durchgehend sicher und korrekt verwendet; Fehler sind sehr selten und kaum zu bemerken.",
+        "B": "Komplexe Strukturen sind meist korrekt; vereinzelte Fehler stören das Verständnis nicht.",
+        "C": "Fehler in komplexen und auch einfacheren Strukturen sind häufig und erschweren das Verständnis stellenweise.",
+        "D": "Die Äußerungen sind wegen der Fehler oft unverständlich." } },
+      { "id": "aussprache", "name": { "en": "Pronunciation and intonation", "de": "Aussprache und Intonation" }, "points": { "A": 4, "B": 2.5, "C": 1, "D": 0 }, "descriptors": {
+        "A": "Aussprache und Intonation sind klar und natürlich; kleine Abweichungen stören nicht.",
+        "B": "Aussprache und Intonation sind meist gut verständlich; ein fremder Akzent ist hörbar, stört aber kaum.",
+        "C": "Aussprache und Intonation erschweren das Verständnis stellenweise deutlich.",
+        "D": "Aussprache und Intonation machen die Äußerungen größtenteils unverständlich." } }
+    ] },
+      "instructions": "Ein Thema präsentieren: Sprechen Sie zusammenhängend über das Thema auf Ihrer Karte und beantworten Sie anschließend die Fragen." },
+    { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Sprechen Teil 2" }, "taskType": "spoken", "items": 4, "points": 25, "minutes": 8,
+      "rubric": { "criteria": [
+      { "id": "ausdruck", "name": { "en": "Expression", "de": "Ausdrucksfähigkeit" }, "points": { "A": 7, "B": 4, "C": 1.5, "D": 0 }, "descriptors": {
+        "A": "Drückt sich flüssig, spontan und differenziert aus; der Wortschatz ist für C1 breit, präzise und idiomatisch, und der Redefluss ist durch vielfältige Konnektoren und Verweise klar gegliedert.",
+        "B": "Drückt sich meist flüssig und differenziert aus; einzelne Formulierungen sind ungenau, oder die Gliederung durch Konnektoren ist stellenweise einförmig.",
+        "C": "Drückt sich oft umständlich oder stockend aus; der Wortschatz reicht für komplexe Inhalte nur begrenzt, und die Äußerungen sind wenig gegliedert.",
+        "D": "Kann sich zum Thema kaum angemessen ausdrücken; die Äußerungen sind bruchstückhaft oder schwer verständlich." } },
+      { "id": "aufgabe", "name": { "en": "Task completion", "de": "Aufgabenbewältigung" }, "points": { "A": 7, "B": 4, "C": 1.5, "D": 0 }, "descriptors": {
+        "A": "Äußert und begründet die eigene Meinung überzeugend und geht auf die Argumente des Partners / der Partnerin ein.",
+        "B": "Äußert und begründet eine Meinung; das Eingehen auf die Argumente des Partners / der Partnerin bleibt teilweise knapp.",
+        "C": "Äußert kaum eine begründete Meinung und reagiert wenig auf den Partner / die Partnerin.",
+        "D": "Die Aufgabe wird kaum oder gar nicht bewältigt." } },
+      { "id": "richtigkeit", "name": { "en": "Formal accuracy", "de": "Formale Richtigkeit" }, "points": { "A": 7, "B": 4, "C": 1.5, "D": 0 }, "descriptors": {
+        "A": "Komplexe Strukturen werden durchgehend sicher und korrekt verwendet; Fehler sind sehr selten und kaum zu bemerken.",
+        "B": "Komplexe Strukturen sind meist korrekt; vereinzelte Fehler stören das Verständnis nicht.",
+        "C": "Fehler in komplexen und auch einfacheren Strukturen sind häufig und erschweren das Verständnis stellenweise.",
+        "D": "Die Äußerungen sind wegen der Fehler oft unverständlich." } },
+      { "id": "aussprache", "name": { "en": "Pronunciation and intonation", "de": "Aussprache und Intonation" }, "points": { "A": 4, "B": 2.5, "C": 1, "D": 0 }, "descriptors": {
+        "A": "Aussprache und Intonation sind klar und natürlich; kleine Abweichungen stören nicht.",
+        "B": "Aussprache und Intonation sind meist gut verständlich; ein fremder Akzent ist hörbar, stört aber kaum.",
+        "C": "Aussprache und Intonation erschweren das Verständnis stellenweise deutlich.",
+        "D": "Aussprache und Intonation machen die Äußerungen größtenteils unverständlich." } }
+    ] },
+      "instructions": "Diskussion: Diskutieren Sie über die Frage auf dem Aufgabenblatt. Begründen Sie Ihre Meinung und reagieren Sie auf die Argumente." }
   ]
 }

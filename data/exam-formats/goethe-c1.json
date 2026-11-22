@@ -73,7 +73,73 @@
         "E": "Die Strukturen sind so fehlerhaft, dass der Text kaum verständlich ist." } }
     ], "zeroesTextOn": { "criterion": "erfuellung", "grade": "E" } },
       "instructions": "Schreiben Sie eine (halb-)formelle E-Mail (ca. 120 Wörter). Behandeln Sie alle vier Inhaltspunkte und achten Sie auf einen angemessenen, höflichen Stil." },
-    { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Sprechen Teil 1" }, "taskType": "spoken", "items": 4, "points": 50, "minutes": 15, "instructions": "Vortrag halten: Wählen Sie eines von zwei Themen und halten Sie einen Vortrag (ca. 5 Minuten). Gehen Sie auf alle vier Punkte ein. Beantworten Sie danach die Fragen Ihres Partners / Ihrer Partnerin (ca. 2 Minuten)." },
-    { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Sprechen Teil 2" }, "taskType": "spoken", "items": 4, "points": 50, "minutes": 5, "instructions": "Diskussion führen: Diskutieren Sie mit Ihrem Partner / Ihrer Partnerin über die kontroverse Frage. Gehen Sie auf die vier Stichpunkte ein, tauschen Sie Argumente aus und kommen Sie zu einer Einigung oder Zusammenfassung." }
+    { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Sprechen Teil 1" }, "taskType": "spoken", "items": 5, "points": 50, "minutes": 15,
+      "rubric": { "criteria": [
+      { "id": "erfuellung", "name": { "en": "Task fulfilment", "de": "Erfüllung" }, "points": { "A": 10, "B": 7.5, "C": 5, "D": 2.5, "E": 0 }, "descriptors": {
+        "A": "Hält einen ausführlichen, differenzierten Vortrag zu allen vier Punkten und beantwortet die Fragen des Partners / der Partnerin genau und ausführlich.",
+        "B": "Behandelt alle vier Punkte und beantwortet die Fragen; ein Punkt oder eine Antwort bleibt weniger differenziert.",
+        "C": "Ein Punkt fehlt, oder mehrere bleiben oberflächlich; die Fragen werden nur teilweise beantwortet.",
+        "D": "Nur ein Teil der Punkte wird behandelt, oder der Vortrag ist deutlich zu kurz.",
+        "E": "Die Aufgabe wird nicht erfüllt." } },
+      { "id": "kohaerenz", "name": { "en": "Coherence", "de": "Kohärenz" }, "points": { "A": 10, "B": 7.5, "C": 5, "D": 2.5, "E": 0 }, "descriptors": {
+        "A": "Der Vortrag ist klar und logisch aufgebaut; komplexe Gedanken sind mit vielfältigen Konnektoren, Verweisen und Überleitungen souverän verknüpft.",
+        "B": "Der Vortrag ist gut aufgebaut und zusammenhängend; einzelne Übergänge sind weniger elegant oder einförmig.",
+        "C": "Der Aufbau ist erkennbar, aber der Zusammenhang komplexer Gedanken ist stellenweise unklar.",
+        "D": "Der Vortrag ist kaum strukturiert; Gedanken stehen weitgehend unverbunden nebeneinander.",
+        "E": "Es ist kein Zusammenhang erkennbar." } },
+      { "id": "wortschatz", "name": { "en": "Vocabulary", "de": "Wortschatz" }, "points": { "A": 10, "B": 7.5, "C": 5, "D": 2.5, "E": 0 }, "descriptors": {
+        "A": "Der Wortschatz ist für C1 breit, präzise und idiomatisch; auch Nuancen werden treffend ausgedrückt.",
+        "B": "Der Wortschatz ist breit und meist präzise; einzelne Wortwahlen sind weniger treffend.",
+        "C": "Der Wortschatz reicht für das Thema, ist aber wenig differenziert; ungenaue Wörter erschweren das Verständnis stellenweise.",
+        "D": "Der Wortschatz ist für komplexe Inhalte zu begrenzt, und Fehler behindern das Verständnis.",
+        "E": "Der Wortschatz reicht für die Aufgabe nicht aus." } },
+      { "id": "strukturen", "name": { "en": "Structures", "de": "Strukturen" }, "points": { "A": 10, "B": 7.5, "C": 5, "D": 2.5, "E": 0 }, "descriptors": {
+        "A": "Komplexe Strukturen werden durchgehend sicher, abwechslungsreich und korrekt verwendet.",
+        "B": "Komplexe Strukturen sind meist korrekt; vereinzelte Fehler stören nicht.",
+        "C": "Komplexe Strukturen werden vermieden oder sind oft fehlerhaft; das Verständnis ist stellenweise erschwert.",
+        "D": "Viele Fehler behindern das Verständnis.",
+        "E": "Die Strukturen sind so fehlerhaft, dass die Äußerungen kaum verständlich sind." } },
+      { "id": "aussprache", "name": { "en": "Pronunciation", "de": "Aussprache" }, "points": { "A": 10, "B": 7.5, "C": 5, "D": 2.5, "E": 0 }, "descriptors": {
+        "A": "Aussprache, Satzmelodie und Wortakzent sind klar und natürlich; ein Akzent stört nicht.",
+        "B": "Aussprache und Satzmelodie sind gut verständlich; ein fremder Akzent ist hörbar, stört aber kaum.",
+        "C": "Aussprache und Satzmelodie erschweren das Verständnis stellenweise.",
+        "D": "Aussprache und Satzmelodie erschweren das Verständnis häufig deutlich.",
+        "E": "Aussprache und Satzmelodie machen die Äußerungen größtenteils unverständlich." } }
+    ] },
+      "instructions": "Vortrag halten: Wählen Sie eines von zwei Themen und halten Sie einen Vortrag (ca. 5 Minuten). Gehen Sie auf alle vier Punkte ein. Beantworten Sie danach die Fragen Ihres Partners / Ihrer Partnerin (ca. 2 Minuten)." },
+    { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Sprechen Teil 2" }, "taskType": "spoken", "items": 5, "points": 50, "minutes": 5,
+      "rubric": { "criteria": [
+      { "id": "erfuellung", "name": { "en": "Task fulfilment", "de": "Erfüllung" }, "points": { "A": 10, "B": 7.5, "C": 5, "D": 2.5, "E": 0 }, "descriptors": {
+        "A": "Geht auf alle vier Stichpunkte ein, argumentiert differenziert und überzeugend und führt die Diskussion zu einer Einigung oder Zusammenfassung.",
+        "B": "Geht auf die Stichpunkte ein und argumentiert überzeugend; Einigung oder Zusammenfassung bleibt knapp.",
+        "C": "Ein Stichpunkt fehlt, oder mehrere bleiben oberflächlich; die Diskussion kommt kaum zu einem Ergebnis.",
+        "D": "Nur ein Teil der Stichpunkte wird angesprochen; Argumente fehlen weitgehend.",
+        "E": "Die Aufgabe wird nicht erfüllt." } },
+      { "id": "kohaerenz", "name": { "en": "Coherence and interaction", "de": "Kohärenz und Interaktion" }, "points": { "A": 10, "B": 7.5, "C": 5, "D": 2.5, "E": 0 }, "descriptors": {
+        "A": "Lenkt das Gespräch souverän, greift Argumente des Partners / der Partnerin präzise auf, widerspricht oder stimmt differenziert zu und führt zu einem Ergebnis.",
+        "B": "Geht gut auf den Partner / die Partnerin ein und bringt das Gespräch voran; einzelne Anknüpfungen bleiben oberflächlich.",
+        "C": "Geht nur teilweise auf die Argumente des Partners / der Partnerin ein; das Gespräch bleibt stellenweise ohne Zusammenhang.",
+        "D": "Reagiert kaum auf den Partner / die Partnerin und trägt wenig zum Gesprächsverlauf bei.",
+        "E": "Es findet keine Interaktion statt." } },
+      { "id": "wortschatz", "name": { "en": "Vocabulary", "de": "Wortschatz" }, "points": { "A": 10, "B": 7.5, "C": 5, "D": 2.5, "E": 0 }, "descriptors": {
+        "A": "Der Wortschatz ist für C1 breit, präzise und idiomatisch; auch Nuancen werden treffend ausgedrückt.",
+        "B": "Der Wortschatz ist breit und meist präzise; einzelne Wortwahlen sind weniger treffend.",
+        "C": "Der Wortschatz reicht für das Thema, ist aber wenig differenziert; ungenaue Wörter erschweren das Verständnis stellenweise.",
+        "D": "Der Wortschatz ist für komplexe Inhalte zu begrenzt, und Fehler behindern das Verständnis.",
+        "E": "Der Wortschatz reicht für die Aufgabe nicht aus." } },
+      { "id": "strukturen", "name": { "en": "Structures", "de": "Strukturen" }, "points": { "A": 10, "B": 7.5, "C": 5, "D": 2.5, "E": 0 }, "descriptors": {
+        "A": "Komplexe Strukturen werden durchgehend sicher, abwechslungsreich und korrekt verwendet.",
+        "B": "Komplexe Strukturen sind meist korrekt; vereinzelte Fehler stören nicht.",
+        "C": "Komplexe Strukturen werden vermieden oder sind oft fehlerhaft; das Verständnis ist stellenweise erschwert.",
+        "D": "Viele Fehler behindern das Verständnis.",
+        "E": "Die Strukturen sind so fehlerhaft, dass die Äußerungen kaum verständlich sind." } },
+      { "id": "aussprache", "name": { "en": "Pronunciation", "de": "Aussprache" }, "points": { "A": 10, "B": 7.5, "C": 5, "D": 2.5, "E": 0 }, "descriptors": {
+        "A": "Aussprache, Satzmelodie und Wortakzent sind klar und natürlich; ein Akzent stört nicht.",
+        "B": "Aussprache und Satzmelodie sind gut verständlich; ein fremder Akzent ist hörbar, stört aber kaum.",
+        "C": "Aussprache und Satzmelodie erschweren das Verständnis stellenweise.",
+        "D": "Aussprache und Satzmelodie erschweren das Verständnis häufig deutlich.",
+        "E": "Aussprache und Satzmelodie machen die Äußerungen größtenteils unverständlich." } }
+    ] },
+      "instructions": "Diskussion führen: Diskutieren Sie mit Ihrem Partner / Ihrer Partnerin über die kontroverse Frage. Gehen Sie auf die vier Stichpunkte ein, tauschen Sie Argumente aus und kommen Sie zu einer Einigung oder Zusammenfassung." }
   ]
 }

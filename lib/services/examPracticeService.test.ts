@@ -81,7 +81,7 @@ describe('examPracticeService', () => {
 
   it('refuses parts without a runner, mock-only parts, unknown parts and malformed answers', async () => {
     const { service } = setup();
-    // A spoken part without a rubric (until the content task adds them all) has no runner.
+    // telc A2's spoken parts have rubrics but no bundled set yet, so they can't start.
     await expect(service.start('telc-a2', 'sprechen-1')).rejects.toMatchObject({ kind: 'unavailable', code: 'part_unavailable' });
     await expect(service.start('telc-b1', 'sprachbausteine-1')).rejects.toMatchObject({ kind: 'unavailable', code: 'part_unavailable' });
     await expect(service.start('telc-b1', 'nope')).rejects.toMatchObject({ kind: 'not_found' });

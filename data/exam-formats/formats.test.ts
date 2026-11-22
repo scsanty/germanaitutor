@@ -69,6 +69,33 @@ describe('bundled exam formats', () => {
     }
   });
 
+  // A spoken part without a rubric has no runner, so none may stay unrunnable unnoticed.
+  it('gives every spoken part a valid rubric, with no word target or choice count', () => {
+    const spoken = listFormats().flatMap((f) => f.parts.filter((p) => p.taskType === 'spoken').map((p) => [f, p] as const));
+    expect(spoken.length).toBe(38);
+    for (const [f, p] of spoken) {
+      const where = `${f.id}/${p.id}`;
+      expect(p.rubric, where).toBeDefined();
+      expect(rubricProblems(p.rubric!), where).toEqual([]);
+      expect(rubricMaxPoints(p.rubric!), where).toBe(p.points);
+      expect(p.items, where).toBe(p.rubric!.criteria.length);
+      expect(p.rubric!.zeroesTextOn, where).toBeUndefined();
+      expect([p.wordTarget, p.choices], where).toEqual([undefined, undefined]);
+    }
+  });
+
+  // Anchors (Task 10) and set explanations (Task 11) key on these ids: telc and NaDoch grade the four telc criteria,
+  // Goethe its five, and every rubric grades pronunciation.
+  it('grades every spoken part on its exam family’s criteria, pronunciation included', () => {
+    const TELC = ['ausdruck', 'aufgabe', 'richtigkeit', 'aussprache'];
+    const GOETHE = ['erfuellung', 'kohaerenz', 'wortschatz', 'strukturen', 'aussprache'];
+    for (const f of listFormats()) {
+      for (const p of f.parts.filter((x) => x.taskType === 'spoken')) {
+        expect(p.rubric!.criteria.map((c) => c.id), `${f.id}/${p.id}`).toEqual(f.track === 'goethe' ? GOETHE : TELC);
+      }
+    }
+  });
+
   // telc B1, B2 and C1 offer two tasks to choose from; every other letter part has one.
   it('offers a choice of two tasks only in telc B1, B2 and C1', () => {
     const two = listFormats().flatMap((f) => f.parts.filter((p) => p.taskType === 'letter' && p.choices === 2).map((p) => `${f.id}/${p.id}`));

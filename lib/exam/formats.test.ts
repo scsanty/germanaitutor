@@ -117,10 +117,10 @@ describe('formatProblems for spoken parts', () => {
     blocks: [{ ...base.blocks[0], partIds: ['sprechen'], minutes: 3 }],
     parts: [{ id: 'sprechen', skill: 'speaking', title: { en: 'S', de: 'S' }, taskType: 'spoken', items: 2, points: 20, minutes: 3, instructions: 'Sprechen Sie …', ...over }],
   });
-  it('lets a spoken part go without a rubric until Task 9', () => {
-    expect(formatProblems(spoken({}))).toEqual([]);
+  it('requires a rubric on a spoken part', () => {
+    expect(formatProblems(spoken({}))).toEqual(['part sprechen: a spoken part needs a rubric']);
   });
-  it('checks a rubric when present', () => {
+  it('checks the rubric', () => {
     expect(formatProblems(spoken({ rubric: { criteria: [crit('a'), crit('b')] } }))).toEqual([]);
     expect(formatProblems(spoken({ rubric: { criteria: [crit('a')] } }))).toEqual([
       "part sprechen: items must equal the rubric's 1 criteria",

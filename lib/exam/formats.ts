@@ -20,7 +20,7 @@ export interface ExamPart {
   minutes: number;
   instructions: string;
   replays?: number;
-  // Writing (letter) parts.
+  // Writing (letter) and speaking (spoken) parts.
   rubric?: WritingRubric;
   wordTarget?: { min: number; max: number };
   choices?: 1 | 2;
@@ -88,11 +88,11 @@ function letterPartProblems(part: ExamPart): string[] {
   return problems;
 }
 
-// A spoken part's rubric (the oral criteria) is optional until the content task adds one to every part; when present
-// it follows the letter rules, without a word target or choices.
+// A spoken part needs a rubric (the oral criteria), which follows the letter rules, without a word target or choices.
 function spokenPartProblems(part: ExamPart): string[] {
   const problems: string[] = [];
-  if (part.rubric) {
+  if (!part.rubric) problems.push(`part ${part.id}: a spoken part needs a rubric`);
+  else {
     for (const p of rubricProblems(part.rubric)) problems.push(`part ${part.id}: ${p}`);
     if (part.items !== part.rubric.criteria.length) problems.push(`part ${part.id}: items must equal the rubric's ${part.rubric.criteria.length} criteria`);
     if (rubricMaxPoints(part.rubric) !== part.points) problems.push(`part ${part.id}: the rubric's maximum ${rubricMaxPoints(part.rubric)} must equal the part's points ${part.points}`);

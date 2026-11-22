@@ -10,7 +10,7 @@ import { SpokenPartRunner } from './SpokenPartRunner';
 import { SpokenResult } from './SpokenResult';
 
 const crit = (id: string, en: string) => ({ id, name: { en, de: en }, points: { A: 10, B: 6, C: 2, D: 0 }, descriptors: { A: 'a', B: 'b', C: 'c', D: 'd' } });
-const RUBRIC: WritingRubric = { criteria: [crit('aufgabe', 'Task completion'), crit('sprache', 'Language'), crit('aussprache', 'Pronunciation and intonation')] };
+const RUBRIC: WritingRubric = { criteria: [crit('aufgabe', 'Task completion'), crit('richtigkeit', 'Formal accuracy'), crit('aussprache', 'Pronunciation and intonation')] };
 const SET = {
   situation: 'Elena zieht nach Hamburg.',
   materials: [{ title: 'Abschiedsfeier planen', points: ['Wann?', 'Wo?'] }],
@@ -35,7 +35,7 @@ const PARTNER: SpokenTurnView = { speaker: 'partner', text: 'Samstag passt mir b
 const GRADE = {
   criteria: [
     { id: 'aufgabe', grade: 'B' as const, justification: { en: 'Good plan.', de: 'Guter Plan.' } },
-    { id: 'sprache', grade: 'C' as const, justification: { en: 'Some errors.', de: 'Einige Fehler.' } },
+    { id: 'richtigkeit', grade: 'C' as const, justification: { en: 'Some errors.', de: 'Einige Fehler.' } },
     { id: 'aussprache', grade: 'B' as const, justification: { en: 'Clear.', de: 'Deutlich.' } },
   ],
   points: 14,
@@ -215,7 +215,7 @@ describe('SpokenResult', () => {
     const { unmount, container } = renderWithIntl(<SpokenResult result={RESULT} rubric={RUBRIC} attemptId={8} />);
     const deletes = () => fetchMock.mock.calls.filter(([url]) => url === '/api/speech/scope?scope=teil%3A8');
     expect(screen.getByText('14 of 30 points (47%)')).toBeInTheDocument();
-    for (const name of ['Task completion', 'Language', 'Pronunciation and intonation']) expect(screen.getByRole('listitem', { name })).toBeInTheDocument();
+    for (const name of ['Task completion', 'Formal accuracy', 'Pronunciation and intonation']) expect(screen.getByRole('listitem', { name })).toBeInTheDocument();
     // The mark sits on the student's turn, not on the partner's.
     expect(screen.getByRole('button', { name: 'gehe gestern' })).toBeInTheDocument();
     expect(screen.getByText(PARTNER.text)).toBeInTheDocument();
@@ -235,6 +235,6 @@ describe('SpokenResult', () => {
     const stored: PracticeResult = { ...RESULT, spoken: { grade: { ...GRADE, marks: [], estimate: { score: 75, unclear: [] } }, turns: [] } };
     renderWithIntl(<SpokenResult result={stored} rubric={RUBRIC} attemptId={7} />);
     expect(screen.getByText('The conversation has been deleted; only the grades are kept.')).toBeInTheDocument();
-    expect(screen.getByRole('listitem', { name: 'Language' })).toBeInTheDocument();
+    expect(screen.getByRole('listitem', { name: 'Formal accuracy' })).toBeInTheDocument();
   });
 });

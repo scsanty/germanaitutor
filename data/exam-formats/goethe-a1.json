@@ -36,8 +36,77 @@
         "C": "Anfang und Gruß fehlen, und der Text ist nicht als Mitteilung erkennbar." } }
     ] },
       "instructions": "Schreiben Sie eine kurze Mitteilung (ca. 30 Wörter). Schreiben Sie zu jedem der drei Punkte ein bis zwei Sätze. Vergessen Sie nicht die Anrede und den Gruß." },
-    { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Sprechen Teil 1" }, "taskType": "spoken", "items": 3, "points": 3, "minutes": 3, "instructions": "Sich vorstellen: Stellen Sie sich vor. Sprechen Sie über Name, Alter, Land, Wohnort, Sprachen, Beruf und Hobby. Buchstabieren Sie danach ein Wort und nennen Sie eine Zahl." },
-    { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Sprechen Teil 2" }, "taskType": "spoken", "items": 4, "points": 6, "minutes": 6, "instructions": "Um Informationen bitten und Informationen geben: Ziehen Sie eine Karte, stellen Sie eine Frage zum Thema und antworten Sie auf die Frage Ihres Partners / Ihrer Partnerin." },
-    { "id": "sprechen-3", "skill": "speaking", "title": { "en": "Speaking Part 3", "de": "Sprechen Teil 3" }, "taskType": "spoken", "items": 4, "points": 6, "minutes": 6, "instructions": "Bitten formulieren und darauf reagieren: Ziehen Sie eine Karte, formulieren Sie eine Bitte und reagieren Sie auf die Bitte Ihres Partners / Ihrer Partnerin." }
+    { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Sprechen Teil 1" }, "taskType": "spoken", "items": 5, "points": 3, "minutes": 3,
+      "rubric": { "criteria": [
+      { "id": "erfuellung", "name": { "en": "Task fulfilment", "de": "Erfüllung" }, "points": { "A": 1, "B": 0.5, "C": 0 }, "descriptors": {
+        "A": "Stellt sich zu allen Punkten vor (Name, Alter, Land, Wohnort, Sprachen, Beruf, Hobby), buchstabiert das Wort und nennt die Zahl richtig.",
+        "B": "Stellt sich nur zu einigen Punkten vor, oder Buchstabieren bzw. Zahl gelingen nicht.",
+        "C": "Die Vorstellung fehlt oder ist nicht zu verstehen." } },
+      { "id": "kohaerenz", "name": { "en": "Coherence", "de": "Kohärenz" }, "points": { "A": 0.5, "B": 0.25, "C": 0 }, "descriptors": {
+        "A": "Die Angaben sind verständlich verbunden, z. B. mit und, aber, dann.",
+        "B": "Die Angaben stehen meist unverbunden nebeneinander.",
+        "C": "Es ist kein Zusammenhang erkennbar." } },
+      { "id": "wortschatz", "name": { "en": "Vocabulary", "de": "Wortschatz" }, "points": { "A": 0.5, "B": 0.25, "C": 0 }, "descriptors": {
+        "A": "Der Wortschatz reicht für die Aufgabe; kleine Fehler stören das Verständnis nicht.",
+        "B": "Der Wortschatz ist sehr begrenzt; Fehler erschweren das Verständnis stellenweise.",
+        "C": "Der Wortschatz reicht für die Aufgabe nicht aus." } },
+      { "id": "strukturen", "name": { "en": "Structures", "de": "Strukturen" }, "points": { "A": 0.5, "B": 0.25, "C": 0 }, "descriptors": {
+        "A": "Einfache Sätze sind weitgehend korrekt (z. B. Verbstellung, Fragesätze).",
+        "B": "Fehler auch in einfachen Sätzen erschweren das Verständnis stellenweise.",
+        "C": "Die Sätze sind so fehlerhaft, dass sie kaum verständlich sind." } },
+      { "id": "aussprache", "name": { "en": "Pronunciation", "de": "Aussprache" }, "points": { "A": 0.5, "B": 0.25, "C": 0 }, "descriptors": {
+        "A": "Die Aussprache ist trotz Akzent gut verständlich.",
+        "B": "Die Aussprache erschwert das Verständnis stellenweise.",
+        "C": "Die Aussprache macht die Äußerungen größtenteils unverständlich." } }
+    ] },
+      "instructions": "Sich vorstellen: Stellen Sie sich vor. Sprechen Sie über Name, Alter, Land, Wohnort, Sprachen, Beruf und Hobby. Buchstabieren Sie danach ein Wort und nennen Sie eine Zahl." },
+    { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Sprechen Teil 2" }, "taskType": "spoken", "items": 5, "points": 6, "minutes": 6,
+      "rubric": { "criteria": [
+      { "id": "erfuellung", "name": { "en": "Task fulfilment", "de": "Erfüllung" }, "points": { "A": 2, "B": 1, "C": 0 }, "descriptors": {
+        "A": "Stellt zu jeder Karte eine passende Frage zum Thema und beantwortet die Fragen des Partners / der Partnerin verständlich.",
+        "B": "Fragen oder Antworten passen nur teilweise zur Karte, zum Thema oder zur Frage.",
+        "C": "Es gibt keine passenden Fragen oder Antworten." } },
+      { "id": "kohaerenz", "name": { "en": "Coherence and interaction", "de": "Kohärenz und Interaktion" }, "points": { "A": 1, "B": 0.5, "C": 0 }, "descriptors": {
+        "A": "Fragen und Antworten passen zusammen; reagiert verständlich auf den Partner / die Partnerin.",
+        "B": "Reagiert nur teilweise passend auf den Partner / die Partnerin.",
+        "C": "Es gibt keine passende Reaktion auf den Partner / die Partnerin." } },
+      { "id": "wortschatz", "name": { "en": "Vocabulary", "de": "Wortschatz" }, "points": { "A": 1, "B": 0.5, "C": 0 }, "descriptors": {
+        "A": "Der Wortschatz reicht für die Aufgabe; kleine Fehler stören das Verständnis nicht.",
+        "B": "Der Wortschatz ist sehr begrenzt; Fehler erschweren das Verständnis stellenweise.",
+        "C": "Der Wortschatz reicht für die Aufgabe nicht aus." } },
+      { "id": "strukturen", "name": { "en": "Structures", "de": "Strukturen" }, "points": { "A": 1, "B": 0.5, "C": 0 }, "descriptors": {
+        "A": "Einfache Sätze sind weitgehend korrekt (z. B. Verbstellung, Fragesätze).",
+        "B": "Fehler auch in einfachen Sätzen erschweren das Verständnis stellenweise.",
+        "C": "Die Sätze sind so fehlerhaft, dass sie kaum verständlich sind." } },
+      { "id": "aussprache", "name": { "en": "Pronunciation", "de": "Aussprache" }, "points": { "A": 1, "B": 0.5, "C": 0 }, "descriptors": {
+        "A": "Die Aussprache ist trotz Akzent gut verständlich.",
+        "B": "Die Aussprache erschwert das Verständnis stellenweise.",
+        "C": "Die Aussprache macht die Äußerungen größtenteils unverständlich." } }
+    ] },
+      "instructions": "Um Informationen bitten und Informationen geben: Ziehen Sie eine Karte, stellen Sie eine Frage zum Thema und antworten Sie auf die Frage Ihres Partners / Ihrer Partnerin." },
+    { "id": "sprechen-3", "skill": "speaking", "title": { "en": "Speaking Part 3", "de": "Sprechen Teil 3" }, "taskType": "spoken", "items": 5, "points": 6, "minutes": 6,
+      "rubric": { "criteria": [
+      { "id": "erfuellung", "name": { "en": "Task fulfilment", "de": "Erfüllung" }, "points": { "A": 2, "B": 1, "C": 0 }, "descriptors": {
+        "A": "Formuliert zu jeder Karte eine passende Bitte und reagiert verständlich auf die Bitten des Partners / der Partnerin.",
+        "B": "Bitten oder Reaktionen passen nur teilweise zur Karte oder zur Situation.",
+        "C": "Es gibt keine passenden Bitten oder Reaktionen." } },
+      { "id": "kohaerenz", "name": { "en": "Coherence and interaction", "de": "Kohärenz und Interaktion" }, "points": { "A": 1, "B": 0.5, "C": 0 }, "descriptors": {
+        "A": "Fragen und Antworten passen zusammen; reagiert verständlich auf den Partner / die Partnerin.",
+        "B": "Reagiert nur teilweise passend auf den Partner / die Partnerin.",
+        "C": "Es gibt keine passende Reaktion auf den Partner / die Partnerin." } },
+      { "id": "wortschatz", "name": { "en": "Vocabulary", "de": "Wortschatz" }, "points": { "A": 1, "B": 0.5, "C": 0 }, "descriptors": {
+        "A": "Der Wortschatz reicht für die Aufgabe; kleine Fehler stören das Verständnis nicht.",
+        "B": "Der Wortschatz ist sehr begrenzt; Fehler erschweren das Verständnis stellenweise.",
+        "C": "Der Wortschatz reicht für die Aufgabe nicht aus." } },
+      { "id": "strukturen", "name": { "en": "Structures", "de": "Strukturen" }, "points": { "A": 1, "B": 0.5, "C": 0 }, "descriptors": {
+        "A": "Einfache Sätze sind weitgehend korrekt (z. B. Verbstellung, Fragesätze).",
+        "B": "Fehler auch in einfachen Sätzen erschweren das Verständnis stellenweise.",
+        "C": "Die Sätze sind so fehlerhaft, dass sie kaum verständlich sind." } },
+      { "id": "aussprache", "name": { "en": "Pronunciation", "de": "Aussprache" }, "points": { "A": 1, "B": 0.5, "C": 0 }, "descriptors": {
+        "A": "Die Aussprache ist trotz Akzent gut verständlich.",
+        "B": "Die Aussprache erschwert das Verständnis stellenweise.",
+        "C": "Die Aussprache macht die Äußerungen größtenteils unverständlich." } }
+    ] },
+      "instructions": "Bitten formulieren und darauf reagieren: Ziehen Sie eine Karte, formulieren Sie eine Bitte und reagieren Sie auf die Bitte Ihres Partners / Ihrer Partnerin." }
   ]
 }

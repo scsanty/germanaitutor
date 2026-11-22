@@ -17,16 +17,17 @@ const SETS_DIR = join(process.cwd(), 'test', 'fixtures', 'teil-sets');
 const INTRO = 'Guten Tag. In diesem Teil planen Sie gemeinsam etwas.';
 
 const ANCHORS: SpokenAnchor[] = [
-  { band: 'A', turns: ['a', 'b', 'c', 'd'], grades: { aufgabe: 'A', sprache: 'A', aussprache: 'A' }, justification: 'Sehr gut.' },
-  { band: 'C', turns: ['a', 'b', 'c', 'd'], grades: { aufgabe: 'C', sprache: 'C', aussprache: 'B' }, justification: 'Mittel.' },
-  { band: 'D', turns: ['a', 'b', 'c', 'd'], grades: { aufgabe: 'D', sprache: 'D', aussprache: 'D' }, justification: 'Schwach.' },
+  { band: 'A', turns: ['a', 'b', 'c', 'd'], grades: { ausdruck: 'A', aufgabe: 'A', richtigkeit: 'A', aussprache: 'A' }, justification: 'Sehr gut.' },
+  { band: 'C', turns: ['a', 'b', 'c', 'd'], grades: { ausdruck: 'C', aufgabe: 'C', richtigkeit: 'C', aussprache: 'B' }, justification: 'Mittel.' },
+  { band: 'D', turns: ['a', 'b', 'c', 'd'], grades: { ausdruck: 'D', aufgabe: 'D', richtigkeit: 'D', aussprache: 'D' }, justification: 'Schwach.' },
 ];
 
 const GRADE = JSON.stringify({
   marks: [{ original: 'ich gehe gestern', correction: 'ich bin gestern gegangen', type: 'grammar', category: 'perfect_auxiliary', reason_en: 'Past.', reason_de: 'Vergangenheit.' }],
   criteria: [
+    { id: 'ausdruck', grade: 'B', justification_en: 'Fitting phrases.', justification_de: 'Passende Redemittel.' },
     { id: 'aufgabe', grade: 'B', justification_en: 'Good plan.', justification_de: 'Guter Plan.' },
-    { id: 'sprache', grade: 'C', justification_en: 'Some errors.', justification_de: 'Einige Fehler.' },
+    { id: 'richtigkeit', grade: 'C', justification_en: 'Some errors.', justification_de: 'Einige Fehler.' },
     { id: 'aussprache', grade: 'B', justification_en: 'Clear.', justification_de: 'Deutlich.' },
   ],
   pronunciation_en: 'Mostly clear.',
@@ -123,11 +124,11 @@ describe('spoken Teil', () => {
     expect(answers).not.toContain('Freitag');
 
     const result = await spoken.finish(run.attemptId);
-    expect(result).toMatchObject({ score: 14, maxScore: 30, review: [] });
-    expect(result.spoken!.grade).toMatchObject({ points: 14, maxPoints: 30, percent: 47, pronunciation: { en: 'Mostly clear.' }, estimate: { score: 90, unclear: [] } });
+    expect(result).toMatchObject({ score: 15, maxScore: 30, review: [] });
+    expect(result.spoken!.grade).toMatchObject({ points: 15, maxPoints: 30, percent: 50, pronunciation: { en: 'Mostly clear.' }, estimate: { score: 90, unclear: [] } });
     expect(result.spoken!.grade.marks).toEqual([expect.objectContaining({ original: 'ich gehe gestern', turnIndex: 3, start: 5 })]);
     expect(result.spoken!.turns).toHaveLength(5);
-    expect(result.tips).toHaveLength(3);
+    expect(result.tips).toHaveLength(4);
     const grading = generate.mock.calls[1][0];
     expect(grading).toMatchObject({ maxTokens: 8192, timeoutMs: 90_000 });
     expect(grading.systemPrompt).toContain('Reference conversations');
@@ -135,12 +136,12 @@ describe('spoken Teil', () => {
 
     // B2: the stored result has no marks, turns or student words.
     const stored = row(run.attemptId);
-    expect(stored).toMatchObject({ score: 14, max_score: 30, grading_started_at: null, finished_at: expect.any(String) });
+    expect(stored).toMatchObject({ score: 15, max_score: 30, grading_started_at: null, finished_at: expect.any(String) });
     expect(JSON.parse(stored.result as string)).toEqual({
       criteria: result.spoken!.grade.criteria,
-      points: 14,
+      points: 15,
       maxPoints: 30,
-      percent: 47,
+      percent: 50,
       pronunciation: { en: 'Mostly clear.', de: 'Meist deutlich.' },
       summary: { en: 'A solid plan.', de: 'Ein solider Plan.' },
       estimate: { score: 90 },
@@ -148,7 +149,7 @@ describe('spoken Teil', () => {
     expect(stored.result).not.toContain('gestern');
     // A repeated finish replays the stored grade, without the conversation.
     const again = await spoken.finish(run.attemptId);
-    expect(again.spoken).toMatchObject({ turns: [], grade: { marks: [], points: 14 } });
+    expect(again.spoken).toMatchObject({ turns: [], grade: { marks: [], points: 15 } });
     expect(generate).toHaveBeenCalledTimes(2);
   });
 
@@ -222,7 +223,7 @@ describe('spoken Teil', () => {
     advance(30);
     await expect(spoken.finish(run.attemptId)).rejects.toMatchObject({ code: 'spoken_grading' });
     releaseGrade({ ok: true, text: GRADE });
-    expect(await first).toMatchObject({ score: 14 });
+    expect(await first).toMatchObject({ score: 15 });
     expect(db.prepare('SELECT COUNT(*) AS n FROM error_log').get()).toEqual({ n: 1 });
   });
 
@@ -265,7 +266,7 @@ describe('spoken Teil', () => {
     await expect(spoken.finish(run.attemptId)).rejects.toMatchObject({ kind: 'ai_failed', code: 'ai_failed' });
     expect(row(run.attemptId)).toMatchObject({ finished_at: null, grading_started_at: null, result: null });
     fail = false;
-    expect(await spoken.finish(run.attemptId)).toMatchObject({ score: 14 });
+    expect(await spoken.finish(run.attemptId)).toMatchObject({ score: 15 });
   });
 
   // S19: Finish before the last turn stores the examiner's closing line, then grades.
@@ -295,7 +296,7 @@ describe('spoken Teil', () => {
     // A turn is refused too while the conversation is being graded.
     await expect(spoken.turn(run.attemptId, 'x')).rejects.toMatchObject({ code: 'spoken_grading' });
     release({ ok: true, text: GRADE });
-    expect(await first).toMatchObject({ score: 14 });
+    expect(await first).toMatchObject({ score: 15 });
   });
 
   // B7: clip checks and the minimum of one student turn.
@@ -367,7 +368,7 @@ describe('spoken Teil', () => {
     const { db, practice, spoken, generate, say } = setup({ anchors: null, replies: [{ speaker: 'partner', text: 'Ja.' }] });
     const run = await practice.start('telc-b1', 'sprechen-3');
     await spoken.turn(run.attemptId, await say(run.attemptId, 'Hallo'));
-    expect(await spoken.finish(run.attemptId)).toMatchObject({ score: 14 });
+    expect(await spoken.finish(run.attemptId)).toMatchObject({ score: 15 });
     expect(generate.mock.calls.at(-1)![0].systemPrompt).not.toContain('Reference conversations');
     expect(db.prepare('SELECT kind, problem_key, title FROM admin_notifications').all()).toEqual([
       { kind: 'content_issues', problem_key: 'speaking_anchors:telc-b1/sprechen-3', title: 'Speaking anchors missing' },
