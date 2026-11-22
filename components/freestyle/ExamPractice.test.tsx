@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { screen, fireEvent } from '@testing-library/react';
+import { screen, fireEvent, waitFor } from '@testing-library/react';
 import { renderWithIntl } from '@/test/renderWithIntl';
 import { delayedResponse } from '@/test/delayedResponse';
 import { ShellProvider } from '@/components/shell/ShellContext';
@@ -217,6 +217,43 @@ describe('ExamPractice', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Finish' }));
     expect(await screen.findByText('Oral exam: 30 of 30 points — passed')).toBeInTheDocument();
     expect(screen.queryByRole('button', { name: 'Start the oral part' })).not.toBeInTheDocument();
+  });
+
+  // Fix round 1 (Minor 3): leaving the oral block mid-way deletes the recordings of its finished parts, whose result
+  // screen (which would delete them) never shows.
+  it('deletes the finished oral parts\' recordings when the oral block is left mid-way', async () => {
+    const RUBRIC = { criteria: [{ id: 'aufgabe', name: { en: 'Task completion', de: 'Aufgabenbewältigung' }, points: { A: 15, B: 9, C: 3, D: 0 }, descriptors: { A: 'a', B: 'b', C: 'c', D: 'd' } }] };
+    const part = (id: string, n: number) => ({ id, skill: 'speaking', title: { en: `Speaking Part ${n}`, de: `Mündlicher Ausdruck Teil ${n}` }, taskType: 'spoken', items: 1, points: 15, minutes: 3, instructions: 'Sprechen …', rubric: RUBRIC });
+    const [S1, S2] = [part('sprechen-1', 1), part('sprechen-2', 2)];
+    const SET = { situation: 'Elena zieht weg.', materials: [], examinerIntro: 'Guten Tag.', partner: { name: 'Jonas', gender: 'm', profile: 'p' }, turns: 4 };
+    const intro = { speaker: 'examiner', text: 'Guten Tag.', clipId: 'i', audio: false };
+    const first = [intro, { speaker: 'student', text: 'Hallo Jonas.', clipId: 'c', audio: true }, { speaker: 'partner', text: 'Hallo!', clipId: 'p', audio: false }];
+    const oralRun = (attemptId: number, p: typeof S1, turns: unknown[]) => ({ attemptId, formatId: 'telc-b1', part: p, set: { id: `s${attemptId}`, view: SET }, minutes: 6, startedAt: new Date().toISOString(), mockId: 'm1', spoken: { set: SET, turns, state: 'student' } });
+    const format = {
+      ...OVERVIEW.format,
+      blocks: [...OVERVIEW.format.blocks, { id: 'oral', title: { en: 'Oral exam', de: 'Mündliche Prüfung' }, minutes: 6, partIds: ['sprechen-1', 'sprechen-2'], passRatio: 0.6 }],
+      parts: [LESEN_1, HOEREN_1, S1, S2],
+    };
+    const grade = { criteria: [{ id: 'aufgabe', grade: 'A', justification: { en: 'Great.', de: 'Toll.' } }], points: 15, maxPoints: 15, percent: 100, marks: [], pronunciation: null, summary: { en: 'Well done.', de: 'Gut gemacht.' }, estimate: null };
+    vi.spyOn(HTMLMediaElement.prototype, 'play').mockResolvedValue(undefined);
+    const fetchMock = stubFetch({
+      '/api/exam-practice': { ...OVERVIEW, format, aiReady: true },
+      '/api/exam-practice/mock/start': { mockId: 'm1', minutes: 20, runs: [RUN], oral: { partIds: ['sprechen-1', 'sprechen-2'], runnable: true } },
+      '/api/exam-practice/submit': { attemptId: 3, score: 20, maxScore: 25, overtimeSeconds: 0, review: [] },
+      '/api/exam-practice/mock/oral': { mockId: 'm1', runs: [oralRun(21, S1, first), oralRun(22, S2, [intro])] },
+      '/api/exam-practice/spoken/finish': { attemptId: 21, score: 15, maxScore: 15, overtimeSeconds: 0, review: [], tips: [], spoken: { grade, turns: first } },
+    });
+    renderPractice();
+    fireEvent.click(await screen.findByRole('button', { name: 'Full mock' }));
+    fireEvent.click(await screen.findByRole('button', { name: 'Submit' }));
+    fireEvent.click(await screen.findByRole('button', { name: 'Start the oral part' }));
+    expect(await screen.findByRole('heading', { name: 'Mündlicher Ausdruck Teil 1' })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Finish' }));
+    expect(await screen.findByRole('heading', { name: 'Mündlicher Ausdruck Teil 2' })).toBeInTheDocument();
+    const deletes = () => (fetchMock.mock.calls as unknown as [string, RequestInit | undefined][]).filter(([, init]) => init?.method === 'DELETE').map(([url]) => url);
+    expect(deletes()).not.toContain('/api/speech/scope?scope=teil%3A21');
+    fireEvent.click(screen.getByRole('button', { name: 'Leave' }));
+    await waitFor(() => expect(deletes()).toEqual(expect.arrayContaining(['/api/speech/scope?scope=teil%3A21', '/api/speech/scope?scope=teil%3A22'])));
   });
 
   it('says so when the track and level have no format', async () => {

@@ -8,7 +8,7 @@ import { errorBody } from '@/lib/tutoring/errorCodes';
 
 export const dynamic = 'force-dynamic';
 
-// The audio of a student or partner clip (replay during feedback). Never cached: it is deleted with its scope.
+// The audio of a student, partner or examiner clip (replay during feedback). Never cached: it is deleted with its scope.
 export async function GET(request: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const clip = createSpeechClipService(getDb()).getClip(id);

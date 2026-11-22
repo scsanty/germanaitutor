@@ -261,14 +261,34 @@ export function createExamPracticeService(db: Database.Database, deps: ExamPract
     if (!format) throw new PracticeError('Mock not found', 'not_found');
     const parts = mockParts(format, 'oral');
     if (parts.length === 0) throw new PracticeError('This exam has no oral parts to practise yet', 'unavailable');
-    if (attempts.some((a) => parts.some((p) => p.id === a.part_id))) throw new PracticeError('The oral part of this mock has already started', 'unavailable');
+    const alreadyStarted = () => {
+      const ids = (db.prepare('SELECT part_id FROM teil_attempts WHERE mock_id = ?').all(mockId) as { part_id: string }[]).map((a) => a.part_id);
+      return parts.some((p) => ids.includes(p.id));
+    };
+    const started = () => new PracticeError('The oral part of this mock has already started', 'unavailable');
+    if (alreadyStarted()) throw started();
     const speechUp = speechCheck();
     await requireSpeech(speechUp);
     const picks: { id: string; set: TeilSetContent; playable: (hash: string) => boolean }[] = [];
     for (const part of parts) picks.push(await pick(format.id, part, speechUp));
     const startedAt = clock().toISOString();
+    // All the oral attempts are created at once, re-checked in the same transaction, so two racing starts can't
+    // create the block twice (which would double its clock). Their conversations open afterwards.
+    const attemptIds = db.transaction(() => {
+      if (alreadyStarted()) throw started();
+      return parts.map((part, i) => insertAttempt(format.id, part, picks[i].id, 'mock', mockId, startedAt));
+    })();
     const runs: PracticeRun[] = [];
-    for (const [i, part] of parts.entries()) runs.push(await startAttempt(format.id, part, picks[i], 'mock', mockId, startedAt));
+    try {
+      for (const [i, part] of parts.entries()) {
+        const spokenRun = await spoken.open(attemptIds[i], picks[i].set.content as SpokenPartContent);
+        runs.push(runOf(attemptIds[i], format.id, part, picks[i], startedAt, mockId, spokenRun));
+      }
+    } catch (err) {
+      // A conversation that can't open takes the whole block back out, so starting it again works.
+      for (const id of attemptIds) spoken.discard(id);
+      throw err;
+    }
     return { mockId, runs };
   }
 

@@ -185,6 +185,7 @@ export function runMigrations(db: Database.Database): void {
     migrateFlashcardReviewsToDeck(db);
     migrateExerciseTypeCheck(db, EXERCISE_TYPES);
     migrateTeilAttemptColumns(db);
+    migrateSpeechClipRoles(db);
   });
   // Table rebuilds (migrateExerciseTypeCheck) must run with foreign keys OFF, or DROP TABLE would cascade
   // to attempts and reviews. SQLite ignores this pragma inside a transaction, so it wraps the transaction.
@@ -674,12 +675,35 @@ function createTablesIfMissing(db: Database.Database): void {
     CREATE TABLE IF NOT EXISTS speech_clips (
       id TEXT PRIMARY KEY,
       scope TEXT NOT NULL,
-      role TEXT NOT NULL CHECK (role IN ('student','partner')),
+      role TEXT NOT NULL CHECK (role IN ('student','partner','examiner')),
       file TEXT,
       transcript TEXT,
       words TEXT,
       created_at TEXT NOT NULL
     );
+    CREATE INDEX IF NOT EXISTS idx_speech_clips_scope ON speech_clips(scope);
+  `);
+}
+
+// Speaking (fix round 1): an AI line's clip records who spoke it, the examiner or the partner. A table from before
+// knows only student and partner, so it is rebuilt once (the rows are temporary, but kept). Nothing references it.
+function migrateSpeechClipRoles(db: Database.Database): void {
+  const row = db.prepare("SELECT sql FROM sqlite_master WHERE type = 'table' AND name = 'speech_clips'").get() as { sql: string } | undefined;
+  if (!row || row.sql.includes("'examiner'")) return;
+  db.exec(`
+    CREATE TABLE speech_clips_new (
+      id TEXT PRIMARY KEY,
+      scope TEXT NOT NULL,
+      role TEXT NOT NULL CHECK (role IN ('student','partner','examiner')),
+      file TEXT,
+      transcript TEXT,
+      words TEXT,
+      created_at TEXT NOT NULL
+    );
+    INSERT INTO speech_clips_new (rowid, id, scope, role, file, transcript, words, created_at)
+      SELECT rowid, id, scope, role, file, transcript, words, created_at FROM speech_clips;
+    DROP TABLE speech_clips;
+    ALTER TABLE speech_clips_new RENAME TO speech_clips;
     CREATE INDEX IF NOT EXISTS idx_speech_clips_scope ON speech_clips(scope);
   `);
 }

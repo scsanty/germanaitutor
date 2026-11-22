@@ -39,7 +39,7 @@ export interface ExerciseLetterInput {
 // The parts of a speech clip that grading needs (speechClipService.getClip).
 export interface GradableSpeechClip {
   scope: string;
-  role: 'student' | 'partner';
+  role: 'student' | 'partner' | 'examiner';
   transcript: string | null;
   words: { word: string; probability: number }[];
 }

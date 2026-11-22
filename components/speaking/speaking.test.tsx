@@ -126,7 +126,8 @@ describe('SpokenPartRunner', () => {
 
     const conversation = screen.getByRole('region', { name: 'Conversation' });
     expect(within(conversation).getByText(INTRO.text)).toBeInTheDocument();
-    expect(within(conversation).getByRole('button', { name: 'Play this line' })).toBeInTheDocument();
+    // Minor 5: each play button names its line and speaker.
+    expect(within(conversation).getByRole('button', { name: 'Play line 1 (Examiner)' })).toBeInTheDocument();
     // The intro plays as it arrives.
     await waitFor(() => expect(play).toHaveBeenCalled());
     expect(screen.getByText('Your turn: tap the microphone and speak.')).toBeInTheDocument();
@@ -176,6 +177,9 @@ describe('SpokenPartRunner', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Finish' }));
     expect(await screen.findByRole('alert')).toHaveTextContent('This conversation is being graded.');
     expect(screen.getByText(STUDENT.text)).toBeInTheDocument();
+    // Fix round 1 (I2): Finish closed the conversation; only grading can be retried, no more turns.
+    expect(screen.queryByRole('button', { name: 'Start speaking' })).not.toBeInTheDocument();
+    expect(screen.queryByText('Your turn: tap the microphone and speak.')).not.toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Finish' }));
     await waitFor(() => expect(onFinished).toHaveBeenCalledWith(RESULT));
   });

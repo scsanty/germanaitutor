@@ -1,6 +1,6 @@
 // @vitest-environment node
 import { afterEach, beforeEach, describe, it, expect, vi } from 'vitest';
-import { existsSync, mkdtempSync, readdirSync, rmSync } from 'node:fs';
+import { existsSync, mkdtempSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { createDbClient } from '../db/client';
@@ -165,6 +165,98 @@ describe('spoken Teil', () => {
     expect(second.turns.at(-1)).toMatchObject({ speaker: 'partner', text: 'Gute Idee.' });
   });
 
+  // Fix round 1 (I1): the speaker is stored on the clip row, so a mid-way examiner line stays the examiner's.
+  it('keeps a mid-way examiner line labelled examiner in later prompts, the grading prompt and the finish turns', async () => {
+    const { db, practice, spoken, generate, say } = setup({ turns: 3, replies: [{ speaker: 'examiner', text: 'Bitte sprechen Sie auch über das Geschenk.' }, { speaker: 'partner', text: 'Gute Idee.' }] });
+    const run = await practice.start('telc-b1', 'sprechen-3');
+    await spoken.turn(run.attemptId, await say(run.attemptId, 'Wir feiern am Freitag'));
+    const second = await spoken.turn(run.attemptId, await say(run.attemptId, 'Ein Fotoalbum vielleicht'));
+    expect(second.turns.map((t) => t.speaker)).toEqual(['examiner', 'student', 'examiner', 'student', 'partner']);
+    expect(JSON.stringify(generate.mock.calls[1][0].messages)).toContain(JSON.stringify(JSON.stringify({ speaker: 'examiner', text: 'Bitte sprechen Sie auch über das Geschenk.' })).slice(1, -1));
+    expect(db.prepare("SELECT role FROM speech_clips WHERE transcript = 'Bitte sprechen Sie auch über das Geschenk.'").get()).toEqual({ role: 'examiner' });
+    const result = await spoken.finish(run.attemptId);
+    expect(result.spoken!.turns.map((t) => t.speaker)).toEqual(['examiner', 'student', 'examiner', 'student', 'partner', 'examiner']);
+    expect(generate.mock.calls.at(-1)![0].messages[0].content).toContain('Examiner: Bitte sprechen Sie auch über das Geschenk.');
+  });
+
+  // Fix round 1 (I1): the closing line is recognised by state, never by its text.
+  it('treats a partner reply that reads like the closing line as the partner\'s, and still closes on Finish', async () => {
+    const { practice, spoken, say } = setup({ turns: 4, replies: [{ speaker: 'partner', text: CLOSING_LINE }, { speaker: 'partner', text: 'Ja.' }] });
+    const run = await practice.start('telc-b1', 'sprechen-3');
+    const first = await spoken.turn(run.attemptId, await say(run.attemptId, 'Hallo'));
+    expect(first).toMatchObject({ state: 'student' });
+    expect(first.turns.at(-1)).toMatchObject({ speaker: 'partner', text: CLOSING_LINE });
+    const result = await spoken.finish(run.attemptId);
+    expect(result.spoken!.turns.map((t) => t.speaker)).toEqual(['examiner', 'student', 'partner', 'examiner']);
+  });
+
+  // Fix round 1 (I2): once the examiner has closed (here by an early Finish whose grading failed), no more turns.
+  it('refuses turns after an early Finish whose grading failed, and the retry adds no second closing line', async () => {
+    let fail = true;
+    const { practice, spoken, say } = setup({ turns: 4, replies: [{ speaker: 'partner', text: 'Ja.' }, { speaker: 'partner', text: 'Nein.' }], grade: () => (fail ? { ok: false, error: 'down', code: 'ai_failed' } : { ok: true, text: GRADE }) });
+    const run = await practice.start('telc-b1', 'sprechen-3');
+    await spoken.turn(run.attemptId, await say(run.attemptId, 'Hallo'));
+    await expect(spoken.finish(run.attemptId)).rejects.toMatchObject({ kind: 'ai_failed' });
+    await expect(spoken.turn(run.attemptId, await say(run.attemptId, 'Noch was'))).rejects.toMatchObject({ kind: 'bad_request' });
+    fail = false;
+    const result = await spoken.finish(run.attemptId);
+    expect(result.spoken!.turns.map((t) => t.speaker)).toEqual(['examiner', 'student', 'partner', 'examiner']);
+  });
+
+  // Fix round 1 (I3): the slow closing render happens before the lock, so render plus grading can't outlast the
+  // lock's 120 s and let a second Finish grade (and log the marks) again.
+  it('grades once when the closing render and the grading together take longer than the lock', async () => {
+    let releaseGrade: (r: AiResult) => void = () => {};
+    const { db, practice, spoken, generate, say, provider, row, advance } = setup({ turns: 4, replies: [{ speaker: 'partner', text: 'Ja.' }] });
+    const run = await practice.start('telc-b1', 'sprechen-3');
+    await spoken.turn(run.attemptId, await say(run.attemptId, 'ich gehe gestern einkaufen'));
+    // The closing line takes 100 s to render, then grading hangs.
+    vi.mocked(provider.render).mockImplementation(async () => {
+      advance(100);
+      return Buffer.from('OggS-slow');
+    });
+    generate.mockImplementationOnce(() => new Promise<AiResult>((resolve) => (releaseGrade = resolve)));
+    const first = spoken.finish(run.attemptId);
+    await vi.waitFor(() => expect(generate).toHaveBeenCalledTimes(2));
+    expect(row(run.attemptId).grading_started_at).toEqual(expect.any(String));
+    advance(30);
+    await expect(spoken.finish(run.attemptId)).rejects.toMatchObject({ code: 'spoken_grading' });
+    releaseGrade({ ok: true, text: GRADE });
+    expect(await first).toMatchObject({ score: 14 });
+    expect(db.prepare('SELECT COUNT(*) AS n FROM error_log').get()).toEqual({ n: 1 });
+  });
+
+  // Fix round 1 (I3): two Finishes that both render a closing line keep only the lock winner's.
+  it('keeps one closing line when two Finishes render at once', async () => {
+    const { db, practice, spoken, say } = setup({ turns: 4, replies: [{ speaker: 'partner', text: 'Ja.' }] });
+    const run = await practice.start('telc-b1', 'sprechen-3');
+    await spoken.turn(run.attemptId, await say(run.attemptId, 'ich gehe gestern einkaufen'));
+    const outcomes = await Promise.allSettled([spoken.finish(run.attemptId), spoken.finish(run.attemptId)]);
+    expect(outcomes.map((o) => o.status).sort()).toEqual(['fulfilled', 'rejected']);
+    expect(db.prepare('SELECT COUNT(*) AS n FROM error_log').get()).toEqual({ n: 1 });
+    expect(db.prepare("SELECT COUNT(*) AS n FROM speech_clips WHERE role = 'examiner'").get()).toEqual({ n: 2 });
+  });
+
+  // Fix round 1 (Minor 2): a turn that loses its write to a Finish's grading lock is told so.
+  it('answers spoken_grading when a turn loses its write to a Finish', async () => {
+    let releaseTurn: (r: AiResult) => void = () => {};
+    let releaseGrade: (r: AiResult) => void = () => {};
+    const { practice, spoken, generate, say, row } = setup({ turns: 4, replies: [{ speaker: 'partner', text: 'Ja.' }] });
+    const run = await practice.start('telc-b1', 'sprechen-3');
+    await spoken.turn(run.attemptId, await say(run.attemptId, 'Hallo'));
+    const clip = await say(run.attemptId, 'Noch was');
+    generate.mockImplementationOnce(() => new Promise<AiResult>((resolve) => (releaseTurn = resolve)));
+    const turn = spoken.turn(run.attemptId, clip);
+    await vi.waitFor(() => expect(generate).toHaveBeenCalledTimes(2));
+    generate.mockImplementationOnce(() => new Promise<AiResult>((resolve) => (releaseGrade = resolve)));
+    const finish = spoken.finish(run.attemptId);
+    await vi.waitFor(() => expect(row(run.attemptId).grading_started_at).toEqual(expect.any(String)));
+    releaseTurn({ ok: true, text: JSON.stringify({ speaker: 'partner', text: 'Zu spät.' }) });
+    await expect(turn).rejects.toMatchObject({ code: 'spoken_grading' });
+    releaseGrade({ ok: true, text: GRADE });
+    expect((await finish).spoken!.turns.some((t) => t.text === 'Zu spät.')).toBe(false);
+  });
+
   it('leaves the attempt open and unlocked when grading fails, and grades on a retry', async () => {
     let fail = true;
     const { practice, spoken, say, row } = setup({ replies: [{ speaker: 'partner', text: 'Ja.' }], grade: () => (fail ? { ok: false, error: 'down', code: 'ai_failed' } : { ok: true, text: GRADE }) });
@@ -244,7 +336,10 @@ describe('spoken Teil', () => {
     expect(lost.turns).toEqual(won.turns);
     expect(JSON.parse(row(run.attemptId).answers as string).clipIds).toHaveLength(3);
     // The loser's rendered reply is gone: only the intro and the winning reply remain as partner clips.
-    expect(db.prepare("SELECT transcript FROM speech_clips WHERE role = 'partner' ORDER BY rowid").all()).toEqual([{ transcript: expect.stringContaining(INTRO) }, { transcript: 'Antwort eins' }]);
+    expect(db.prepare("SELECT role, transcript FROM speech_clips WHERE role <> 'student' ORDER BY rowid").all()).toEqual([
+      { role: 'examiner', transcript: expect.stringContaining(INTRO) },
+      { role: 'partner', transcript: 'Antwort eins' },
+    ]);
   });
 
   // B3: a failed text-to-speech keeps the text, without audio.
@@ -252,7 +347,7 @@ describe('spoken Teil', () => {
     const { practice, spoken, say, clips, clipsDir } = setup({ render: async () => Promise.reject(new Error('tts down')), replies: [{ speaker: 'partner', text: 'Ja.' }] });
     const run = await practice.start('telc-b1', 'sprechen-3');
     expect(run.spoken!.turns[0]).toMatchObject({ audio: false });
-    expect(clips.getClip(run.spoken!.turns[0].clipId)).toMatchObject({ role: 'partner', path: null });
+    expect(clips.getClip(run.spoken!.turns[0].clipId)).toMatchObject({ role: 'examiner', path: null });
     const turn = await spoken.turn(run.attemptId, await say(run.attemptId, 'Hallo'));
     expect(turn.turns.at(-1)).toMatchObject({ speaker: 'partner', text: 'Ja.', audio: false });
     expect(existsSync(clipsDir) ? readdirSync(clipsDir).filter((f) => f.endsWith('.ogg')) : []).toEqual([]);
@@ -349,6 +444,43 @@ describe('spoken parts in exam practice', () => {
     const clip = await createSpeechClipService(db, { provider: { health: async () => ({ ok: true, voices: [] }), render: async () => Buffer.alloc(0), convert: async (d) => d, transcribe: async () => ({ text: 'Hallo Jonas', language: 'de', duration: 1, words: [] }) }, dir: join(dir, 'speech-tmp') }).transcribeForScope(`teil:${oral.runs[2].attemptId}`, Buffer.from('rec'), 'audio/webm');
     db.prepare('UPDATE teil_attempts SET answers = ? WHERE id = ?').run(JSON.stringify({ type: 'spoken', clipIds: [oral.runs[2].spoken!.turns[0].clipId, clip.clipId] }), oral.runs[2].attemptId);
     expect((await spoken.finish(oral.runs[2].attemptId)).overtimeSeconds).toBe(60);
+  });
+
+  // Fix round 1 (Minor 1): two racing starts create the oral block once.
+  it('creates the oral block once when two starts race', async () => {
+    const { db, practice } = setup();
+    const mock = await practice.startMock('telc-b1');
+    const content = (db.prepare("SELECT content FROM teil_sets WHERE part_id = 'sprechen-3'").get() as { content: string }).content;
+    for (const partId of ['sprechen-1', 'sprechen-2']) {
+      db.prepare("INSERT INTO teil_sets (id, format_id, part_id, status, content, created_at) VALUES (?, 'telc-b1', ?, 'starter', ?, '2026-10-22')").run(`fx-${partId}`, partId, content);
+    }
+    const [a, b] = await Promise.allSettled([practice.startMockOral(mock.mockId), practice.startMockOral(mock.mockId)]);
+    expect([a.status, b.status].sort()).toEqual(['fulfilled', 'rejected']);
+    expect(db.prepare("SELECT COUNT(*) AS n FROM teil_attempts WHERE mock_id = ? AND part_id LIKE 'sprechen-%'").get(mock.mockId)).toEqual({ n: 3 });
+  });
+
+  // Fix round 1 (Minor 1): a conversation that fails to open takes the whole block back out, so it can be retried.
+  it('removes the oral block when one of its conversations fails to open, so a retry starts it', async () => {
+    const { db, practice, provider, clipsDir } = setup();
+    const mock = await practice.startMock('telc-b1');
+    const content = (db.prepare("SELECT content FROM teil_sets WHERE part_id = 'sprechen-3'").get() as { content: string }).content;
+    for (const partId of ['sprechen-1', 'sprechen-2']) {
+      db.prepare("INSERT INTO teil_sets (id, format_id, part_id, status, content, created_at) VALUES (?, 'telc-b1', ?, 'starter', ?, '2026-10-22')").run(`fx-${partId}`, partId, content);
+    }
+    // The second intro can't be stored: its folder has become a file.
+    let calls = 0;
+    vi.mocked(provider.render).mockImplementation(async () => {
+      if (++calls === 2) {
+        rmSync(clipsDir, { recursive: true, force: true });
+        writeFileSync(clipsDir, 'not a folder');
+      }
+      return Buffer.from('OggS-rendered');
+    });
+    await expect(practice.startMockOral(mock.mockId)).rejects.toThrow();
+    expect(db.prepare("SELECT COUNT(*) AS n FROM teil_attempts WHERE mock_id = ? AND part_id LIKE 'sprechen-%'").get(mock.mockId)).toEqual({ n: 0 });
+    expect(db.prepare("SELECT COUNT(*) AS n FROM speech_clips WHERE scope LIKE 'teil:%'").get()).toEqual({ n: 0 });
+    rmSync(clipsDir, { force: true });
+    expect((await practice.startMockOral(mock.mockId)).runs).toHaveLength(3);
   });
 
   it('refuses the oral block while the speech service is down', async () => {

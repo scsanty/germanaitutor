@@ -33,10 +33,13 @@ export interface SpeechClipDeps {
   dir?: string;
 }
 
+// Who spoke a clip: the student's recordings, and the AI's lines as the partner or the examiner.
+export type SpeechClipRole = 'student' | 'partner' | 'examiner';
+
 export interface SpeechClip {
   id: string;
   scope: string;
-  role: 'student' | 'partner';
+  role: SpeechClipRole;
   // Absolute path; null when the partner audio could not be rendered.
   path: string | null;
   transcript: string | null;
@@ -47,7 +50,7 @@ export interface SpeechClip {
 interface ClipRow {
   id: string;
   scope: string;
-  role: 'student' | 'partner';
+  role: SpeechClipRole;
   file: string | null;
   transcript: string | null;
   words: string | null;
@@ -76,14 +79,14 @@ export function createSpeechClipService(db: Database.Database, deps: SpeechClipD
   const dir = () => deps.dir ?? speechTmpDir();
   const provider = () => deps.provider ?? getSpeechProvider(db);
 
-  function insert(id: string, scope: string, role: 'student' | 'partner', file: string | null, transcript: string | null, words: TranscribedWord[] | null): void {
+  function insert(id: string, scope: string, role: SpeechClipRole, file: string | null, transcript: string | null, words: TranscribedWord[] | null): void {
     db.prepare('INSERT INTO speech_clips (id, scope, role, file, transcript, words, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)').run(
       id, scope, role, file, transcript, words ? JSON.stringify(words) : null, now().toISOString()
     );
   }
 
   // The file goes first; a failed insert takes it back out.
-  function store(scope: string, role: 'student' | 'partner', audio: Buffer | null, ext: string, transcript: string, words: TranscribedWord[] | null): string {
+  function store(scope: string, role: SpeechClipRole, audio: Buffer | null, ext: string, transcript: string, words: TranscribedWord[] | null): string {
     const id = randomUUID();
     const file = audio ? writeFile(id, ext, audio) : null;
     try {
@@ -141,10 +144,11 @@ export function createSpeechClipService(db: Database.Database, deps: SpeechClipD
       return { clipId: id, text: result.text, words: result.words, duration: result.duration };
     },
 
-    // The partner's line: the ogg when it was rendered, `null` when the text-to-speech failed (text only).
-    savePartnerClip(scope: string, audioOgg: Buffer | null, transcript: string): string {
+    // An AI line (the partner's, or the examiner's in a spoken Teil): the ogg when it was rendered, `null` when
+    // the text-to-speech failed (text only). The speaker is kept on the row.
+    savePartnerClip(scope: string, audioOgg: Buffer | null, transcript: string, speaker: 'partner' | 'examiner' = 'partner'): string {
       if (!isValidScope(scope)) throw new SpeechClipError('Invalid scope', 'bad_request');
-      return store(scope, 'partner', audioOgg, '.ogg', transcript, null);
+      return store(scope, speaker, audioOgg, '.ogg', transcript, null);
     },
 
     getClip(id: string): SpeechClip | null {

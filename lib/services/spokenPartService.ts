@@ -66,15 +66,17 @@ export function createSpokenPartService(db: Database.Database, deps: SpokenPartD
   const provider = () => deps.provider ?? getSpeechProvider(db);
   const readAnchors = deps.readAnchors ?? readSpokenAnchors;
 
-  // B3: a line in the given voice, stored as a partner clip; a failed text-to-speech keeps the text only.
-  async function speak(attemptId: number, text: string, voice: string): Promise<string> {
+  // B3: an AI line in its speaker's voice, stored as a clip that records the speaker; a failed text-to-speech
+  // keeps the text only.
+  async function speak(attemptId: number, text: string, speaker: 'partner' | 'examiner', gender: 'm' | 'f'): Promise<string> {
+    const voice = speaker === 'examiner' ? EXAMINER_VOICE : PARTNER_VOICES[gender];
     let audio: Buffer | null = null;
     try {
       audio = await provider().render({ segments: [{ text, voice }], ...RENDER });
     } catch {
       audio = null;
     }
-    return clips.savePartnerClip(scopeOf(attemptId), audio, text);
+    return clips.savePartnerClip(scopeOf(attemptId), audio, text, speaker);
   }
 
   function answerOf(row: AttemptRow): SpokenAnswer {
@@ -82,21 +84,25 @@ export function createSpokenPartService(db: Database.Database, deps: SpokenPartD
     return parsed?.type === 'spoken' && Array.isArray(parsed.clipIds) ? { type: 'spoken', clipIds: parsed.clipIds } : { type: 'spoken', clipIds: [] };
   }
 
-  // B2: the conversation lives only in its clips. The first line is the examiner's intro and the fixed closing
-  // line is the examiner's; every other partner clip reads as the partner's (the attempt keeps clip ids only).
+  // B2: the conversation lives only in its clips (the attempt keeps their ids); each clip row records its speaker.
   function turnsOf(clipIds: string[]): SpokenTurnView[] {
-    return clipIds.map((clipId, i) => {
+    return clipIds.map((clipId) => {
       const clip = clips.getClip(clipId);
       if (!clip) throw new PracticeError('This conversation has expired', 'not_found');
-      const text = clip.transcript ?? '';
-      const speaker = clip.role === 'student' ? 'student' : i === 0 || text === CLOSING_LINE ? 'examiner' : 'partner';
-      return { speaker, text, clipId, audio: clip.path !== null };
+      return { speaker: clip.role, text: clip.transcript ?? '', clipId, audio: clip.path !== null };
     });
   }
 
-  // Review Focus 4 + S8: only the student's turn count decides; a reply's speaker never does.
-  const closedAt = (turns: SpokenTurnView[], set: SpokenPartContent) => turns.filter(isStudent).length >= set.turns;
-  const stateOf = (turns: SpokenTurnView[], set: SpokenPartContent): SpokenState => (closedAt(turns, set) ? 'closing' : 'student');
+  // Review Focus 4 + S8: whether the examiner has closed. Never from a line's text or a reply's speaker, only from
+  // the conversation's shape, which only this service writes: the intro, then pairs of a student turn and its reply.
+  // The examiner closes at the last student turn (that turn's reply), or on Finish, when the closing line follows a
+  // reply directly; nothing else puts two AI lines in a row.
+  function isClosed(turns: SpokenTurnView[], set: SpokenPartContent): boolean {
+    if (turns.filter(isStudent).length >= set.turns) return true;
+    const [before, last] = turns.slice(-2);
+    return turns.length > 1 && !isStudent(before) && !isStudent(last);
+  }
+  const stateOf = (turns: SpokenTurnView[], set: SpokenPartContent): SpokenState => (isClosed(turns, set) ? 'closing' : 'student');
 
   function spokenAttempt(attemptId: number) {
     const row = requireAttempt(db, attemptId);
@@ -123,7 +129,7 @@ export function createSpokenPartService(db: Database.Database, deps: SpokenPartD
 
   // The examiner's intro, as the conversation's first line (S18). Called right after the attempt is created.
   async function open(attemptId: number, set: SpokenPartContent): Promise<SpokenRunView> {
-    const clipId = await speak(attemptId, set.examinerIntro, EXAMINER_VOICE);
+    const clipId = await speak(attemptId, set.examinerIntro, 'examiner', set.partner.gender);
     db.prepare('UPDATE teil_attempts SET answers = ? WHERE id = ?').run(JSON.stringify({ type: 'spoken', clipIds: [clipId] } satisfies SpokenAnswer), attemptId);
     return { set, turns: turnsOf([clipId]), state: 'student' };
   }
@@ -148,7 +154,7 @@ export function createSpokenPartService(db: Database.Database, deps: SpokenPartD
 
     const turns = turnsOf(answer.clipIds);
     const studentTurns = turns.filter(isStudent).length + 1;
-    const state = nextTurnState({ studentTurns, maxTurns: set.turns, finished: false, closed: closedAt(turns, set) });
+    const state = nextTurnState({ studentTurns, maxTurns: set.turns, finished: false, closed: isClosed(turns, set) });
     if (state === 'done') throw new PracticeError('This conversation is over', 'bad_request');
 
     let reply: { speaker: 'partner' | 'examiner'; text: string };
@@ -164,19 +170,19 @@ export function createSpokenPartService(db: Database.Database, deps: SpokenPartD
       if (!partnerReply.ok) throw new PracticeError(partnerReply.error, 'ai_failed', partnerReply.code, partnerReply.params);
       reply = partnerReply.value;
     }
-    const replyId = await speak(row.id, reply.text, reply.speaker === 'examiner' ? EXAMINER_VOICE : PARTNER_VOICES[set.partner.gender]);
+    const replyId = await speak(row.id, reply.text, reply.speaker, set.partner.gender);
 
     const next: SpokenAnswer = { type: 'spoken', clipIds: [...answer.clipIds, clipId, replyId] };
     if (!writeAnswer(row.id, row.answers, next)) {
       // Another request changed the conversation first: this reply never happened.
       clips.deleteClip(replyId);
-      const current = turnsOf(answerOf(requireAttempt(db, row.id)).clipIds);
-      return { turns: current, state: stateOf(current, set) };
+      const current = requireAttempt(db, row.id);
+      // A Finish took the conversation over: say so, instead of silently dropping this turn.
+      if (current.finished_at || isGrading(current, clock())) throw gradingError();
+      const turns = turnsOf(answerOf(current).clipIds);
+      return { turns, state: stateOf(turns, set) };
     }
-    const out = turnsOf(next.clipIds);
-    // The reply's own speaker (a mid-way examiner line plays as the examiner's).
-    out[out.length - 1] = { ...out[out.length - 1], speaker: reply.speaker };
-    return { turns: out, state };
+    return { turns: turnsOf(next.clipIds), state };
   }
 
   // B7: graded once, under the grading lock. A failure releases the lock and leaves the attempt open.
@@ -189,26 +195,34 @@ export function createSpokenPartService(db: Database.Database, deps: SpokenPartD
     if (!rubric) throw new PracticeError(`${part.id} has no rubric yet`, 'unavailable');
     if (!turnsOf(answerOf(row).clipIds).some(isStudent)) throw new PracticeError('Say something before you finish', 'bad_request');
     const overtimeSeconds = overtimeSecondsOf(db, row, part, format, now);
-
-    const lockedAt = clock();
-    const unlock = takeGradingLock(db, row.id, lockedAt);
-    if (!unlock) {
+    const refuse = () => {
       const current = requireAttempt(db, row.id);
       if (current.finished_at) return spokenStoredResult(current, teilSet);
       throw gradingError();
+    };
+    if (isGrading(row, now)) return refuse();
+
+    // I3: the closing line (S19: an early Finish) is rendered before the lock is taken, so a slow text-to-speech
+    // never eats into the lock's time; the lock then covers only the grading call, which times out well within it.
+    const closingId = isClosed(turnsOf(answerOf(row).clipIds), set) ? null : await speak(row.id, CLOSING_LINE, 'examiner', set.partner.gender);
+    const unlock = takeGradingLock(db, row.id, clock());
+    if (!unlock) {
+      if (closingId) clips.deleteClip(closingId);
+      return refuse();
     }
     try {
       // Read again under the lock: a turn may have landed since.
       const locked = requireAttempt(db, row.id);
+      const lockedAt = locked.grading_started_at!;
       let answer = answerOf(locked);
       let turns = turnsOf(answer.clipIds);
-      // S19: an early Finish (or the last student turn without its reply) gets the examiner's closing line first.
-      const last = turns.at(-1);
-      if (!last || last.speaker === 'student' || last.text !== CLOSING_LINE) {
-        const closingId = await speak(row.id, CLOSING_LINE, EXAMINER_VOICE);
-        const closed: SpokenAnswer = { type: 'spoken', clipIds: [...answer.clipIds, closingId] };
-        if (!writeAnswer(row.id, locked.answers, closed, lockedAt.toISOString())) {
-          clips.deleteClip(closingId);
+      if (isClosed(turns, set)) {
+        // A turn's own closing line landed meanwhile: this one isn't needed.
+        if (closingId) clips.deleteClip(closingId);
+      } else {
+        const closed: SpokenAnswer = { type: 'spoken', clipIds: [...answer.clipIds, closingId!] };
+        if (!closingId || !writeAnswer(row.id, locked.answers, closed, lockedAt)) {
+          if (closingId) clips.deleteClip(closingId);
           throw gradingError();
         }
         answer = closed;
@@ -279,5 +293,16 @@ export function createSpokenPartService(db: Database.Database, deps: SpokenPartD
     }
   }
 
-  return { open, turn, finish };
+  // A conversation that never got going (its block failed to start): the attempt and its clips go. The clip files
+  // are best effort; the worker removes any it leaves.
+  function discard(attemptId: number): void {
+    db.prepare('DELETE FROM teil_attempts WHERE id = ? AND finished_at IS NULL').run(attemptId);
+    try {
+      clips.deleteScope(scopeOf(attemptId));
+    } catch {
+      // The rows are gone before the files; a file left behind is an orphan the cleanup sweeps.
+    }
+  }
+
+  return { open, turn, finish, discard };
 }

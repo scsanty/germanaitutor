@@ -67,6 +67,17 @@ export function ExamPractice() {
   }, [reload]);
 
   function back() {
+    // Minor 3: leaving the oral block early deletes the recordings of the parts already finished in it (their result
+    // screen, which would delete them, never shows). The part being run deletes its own.
+    if (screen.kind === 'oral') {
+      for (const r of screen.results) {
+        try {
+          void fetch(`/api/speech/scope?scope=${encodeURIComponent(`teil:${r.attemptId}`)}`, { method: 'DELETE', keepalive: true }).catch(() => {});
+        } catch {
+          // Best effort: the worker removes leftovers after 6 h.
+        }
+      }
+    }
     setScreen({ kind: 'overview' });
     setError(null);
     setReload((n) => n + 1);

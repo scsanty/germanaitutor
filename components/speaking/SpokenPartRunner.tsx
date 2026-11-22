@@ -82,6 +82,9 @@ export function SpokenPartRunner({
     if (busy.current) return;
     busy.current = true;
     setPhase('grading');
+    // Fix round 1 (I2): Finish closes the conversation (the server adds the examiner's closing line), so even if
+    // grading fails only Finish is offered again, never another turn.
+    setState('closing');
     setError(null);
     try {
       const res = await fetch('/api/exam-practice/spoken/finish', {

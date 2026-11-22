@@ -40,7 +40,7 @@ export function ConversationList({
             <div className="flex items-center justify-between gap-2">
               <span className="text-xs font-semibold tracking-wide text-text-muted uppercase">{label(turn.speaker)}</span>
               {turn.audio && canPlay(turn) && (
-                <Button type="button" variant="ghost" size="icon" className="size-11" aria-label={t('play')} onClick={() => onPlay(turn.clipId)}>
+                <Button type="button" variant="ghost" size="icon" className="size-11" aria-label={t('play', { n: i + 1, speaker: label(turn.speaker) })} onClick={() => onPlay(turn.clipId)}>
                   <Play aria-hidden />
                 </Button>
               )}
