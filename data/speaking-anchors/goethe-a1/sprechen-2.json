@@ -8,7 +8,7 @@
         "Mein Thema ist „Einkaufen“, und mein Wort ist „Supermarkt“. Wann gehst du in den Supermarkt?",
         "Meine Karte ist „Obst“. Ich esse gern Äpfel und Bananen. Bananen kaufe ich jede Woche.",
         "Mein Wort ist jetzt „Geschäft“. Welches Geschäft magst du am liebsten?",
-        "Du fragst „Preis“? Ein Kilo Tomaten kostet im Markt ungefähr drei Euro.",
+        "Du fragst „Preis“? Ein Kilo Tomaten kostet auf dem Markt ungefähr drei Euro.",
         "Meine letzte Karte ist „Kleidung“. Kaufst du deine Kleidung im Internet?"
       ],
       "grades": { "erfuellung": "A", "kohaerenz": "A", "wortschatz": "A", "strukturen": "A", "aussprache": "A" },
@@ -18,24 +18,24 @@
       "band": "C",
       "turns": [
         "Supermarkt … wann du gehst Supermarkt?",
-        "Obst? Ich esse Apfel. Gern.",
-        "Geschäft … welche Geschäft du magst?",
-        "Preis … Tomaten, drei Euro, glaube ich.",
+        "Obst? Ich … Apfel. Gern.",
+        "Geschäft … welche Geschäft du … äh … magst?",
+        "Preis … ja, ich kaufe Tomaten.",
         "Kleidung … du kaufen Internet?"
       ],
-      "grades": { "erfuellung": "B", "kohaerenz": "B", "wortschatz": "B", "strukturen": "C", "aussprache": "B" },
-      "justification": "Die Lernende stellt zu den Karten Fragen, die verständlich sind, aber oft falsch gebaut („wann du gehst Supermarkt?“, „du kaufen Internet?“). Ihre Antworten sind sehr kurz, gehen aber auf die Fragen ein. Artikel und Verbformen fehlen häufig. Die Aussprache ist meist verständlich."
+      "grades": { "erfuellung": "B", "kohaerenz": "B", "wortschatz": "B", "strukturen": "B", "aussprache": "B" },
+      "justification": "Die Lernende stellt zu den Karten Fragen zum Thema; auf die Frage nach dem Preis antwortet sie aber nicht passend, sodass Fragen und Antworten nur teilweise zusammenpassen und sie nur teilweise passend auf den Partner reagiert. Der Wortschatz ist sehr begrenzt (Artikel und Verben fehlen oft), und Fehler in einfachen Fragesätzen („wann du gehst Supermarkt?“, „du kaufen Internet?“) erschweren das Verständnis stellenweise. Die Aussprache erschwert das Verständnis ebenfalls stellenweise."
     },
     {
       "band": "D",
       "turns": [
         "Supermarkt.",
-        "Ja … Apfel.",
+        "Ja … ja.",
         "Äh … Geschäft … ich nicht weiß.",
         "Kleidung. Ja."
       ],
       "grades": { "erfuellung": "C", "kohaerenz": "C", "wortschatz": "C", "strukturen": "C", "aussprache": "C" },
-      "justification": "Der Lernende liest nur die Wörter auf den Karten vor und stellt keine Frage; auf die Fragen des Partners reagiert er kaum. Es gibt keinen Satzbau. Die Aussprache ist so undeutlich, dass er kaum zu verstehen ist."
+      "justification": "Der Lernende liest nur die Wörter auf den Karten vor und stellt keine Frage; auf die Fragen des Partners gibt es keine passende Reaktion. Der Wortschatz reicht für die Aufgabe nicht aus, und ohne Satzbau sind die Äußerungen kaum verständlich. Die Aussprache ist so undeutlich, dass er größtenteils unverständlich ist."
     }
   ]
 }

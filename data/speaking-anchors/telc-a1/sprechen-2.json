@@ -18,25 +18,25 @@
     {
       "band": "C",
       "turns": [
-        "Frühstück … du isst Frühstück?",
-        "Ich esse Brot. Kaffee.",
+        "Frühstück … du … äh … Frühstück essen?",
+        "Ich … Brot. Und Kaffee.",
         "Restaurant … du gehen Restaurant?",
-        "Lieblingsessen … ist Reis mit Hähnchen.",
-        "Obst? Du magst Obst, welche?"
+        "Lieblingsessen … äh … ich koche.",
+        "Obst … Obst ist gesund."
       ],
-      "grades": { "ausdruck": "B", "aufgabe": "B", "richtigkeit": "C", "aussprache": "B" },
-      "justification": "Die Lernende stellt zu den Karten Fragen, die verständlich sind, aber oft nicht richtig gebaut („du gehen Restaurant?“). Ihre Antworten sind sehr kurz. Verbformen, Präpositionen und Artikel fehlen oft. Die Aussprache ist meist verständlich."
+      "grades": { "ausdruck": "B", "aufgabe": "B", "richtigkeit": "B", "aussprache": "B" },
+      "justification": "Die Lernende stellt zu den Karten „Frühstück“ und „Restaurant“ eine erkennbare Frage; bei „Obst“ macht sie nur eine Aussage statt einer Frage, und auf die Frage nach dem Lieblingsessen antwortet sie nicht passend. Fragen und Antworten passen also nur teilweise. Sie drückt sich nur mit sehr wenigen Wörtern aus und sucht oft lange. Viele Fehler bei Verbformen und Satzbau („du gehen Restaurant?“) erschweren das Verständnis stellenweise, ebenso die Aussprache einzelner Wörter."
     },
     {
       "band": "D",
       "turns": [
         "Frühstück.",
-        "Ja … Brot.",
-        "Äh … Restaurant … ja?",
+        "Ja … äh … ja.",
+        "Restaurant … Restaurant?",
         "Ich nicht verstehe."
       ],
       "grades": { "ausdruck": "C", "aufgabe": "C", "richtigkeit": "C", "aussprache": "C" },
-      "justification": "Der Lernende liest nur das Wort von der Karte vor und stellt keine Frage. Auf die Frage der Partnerin antwortet er mit einem Wort oder gar nicht. Es gibt keine Sätze, und wegen der Pausen und der Aussprache ist er kaum zu verstehen."
+      "justification": "Der Lernende liest nur das Wort von der Karte vor und stellt keine Frage; auf die Fragen der Partnerin gibt es keine passende Antwort. Er findet kaum Wörter für die Aufgabe und bildet keine Sätze, sodass die Äußerungen kaum zu verstehen sind. Wegen der Pausen und der Aussprache ist er größtenteils unverständlich."
     }
   ]
 }

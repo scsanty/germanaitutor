@@ -186,7 +186,8 @@ describe('spoken anchors', () => {
   it('selectAnchors works on spoken anchors', () => {
     expect(selectAnchors(good, rubric).map((x) => x.band)).toEqual(['A', 'D', 'C']);
   });
-  // File IO: the bundled telc B1 Teil 3 anchors are read, valid against the part's rubric, and malformed ids never reach the disk.
+  // File IO: the bundled telc B1 Teil 3 anchors are read and valid against the part's rubric; an unknown part (so no rubric)
+  // and malformed ids return null. The missing-file case is in the scratch-dir test below.
   it('reads the bundled telc B1 sprechen-3 anchors from disk', () => {
     const anchors = readSpokenAnchors('telc-b1', 'sprechen-3');
     expect(anchors?.map((x) => x.band)).toEqual(['A', 'C', 'D']);
