@@ -1,5 +1,5 @@
 {
-  "seedVersion": "11",
+  "seedVersion": "12",
   "formatVersion": 3,
   "track": "goethe",
   "level": "B1",
@@ -2085,6 +2085,21 @@
       }
     },
     {
+      "id": "b1-goethe-speaking-teil1-planning-together__ex4",
+      "lessonId": "b1-goethe-speaking-teil1-planning-together",
+      "track": "goethe",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "As in Goethe B1 Teil 1, plan something with your partner: make suggestions, react and agree on the details.",
+          "de": "Planen Sie wie in Goethe B1 Teil 1 etwas mit Ihrem Partner: Machen Sie Vorschläge, reagieren Sie und einigen Sie sich über die Einzelheiten."
+        },
+        "prompt": "Ein Freund aus Ihrem Deutschkurs hat im Krankenhaus gelegen und ist jetzt wieder zu Hause. Sie möchten ihn zusammen besuchen. Planen Sie: Wann? Was bringen Sie mit? Wie fahren Sie hin? Wie lange bleiben Sie?",
+        "modelAnswer": "Ich finde es schön, dass wir Lukas besuchen wollen. Wann passt es dir denn? Ich hätte am Donnerstag nach dem Kurs Zeit, so gegen fünf. Als Geschenk könnten wir ihm etwas zu lesen mitbringen, oder vielleicht Obst, damit er schnell wieder gesund wird. Hinfahren würde ich mit der Straßenbahn, die Linie drei hält direkt vor seinem Haus. Wir sollten aber nicht zu lange bleiben, vielleicht eine Stunde, weil er sich sicher noch ausruhen muss. Bist du damit einverstanden?",
+        "minSeconds": 45
+      }
+    },
+    {
       "id": "b1-goethe-speaking-teil2-monologic-presentation__ex0",
       "lessonId": "b1-goethe-speaking-teil2-monologic-presentation",
       "track": "goethe",
@@ -2135,6 +2150,21 @@
       }
     },
     {
+      "id": "b1-goethe-speaking-teil2-monologic-presentation__ex4",
+      "lessonId": "b1-goethe-speaking-teil2-monologic-presentation",
+      "track": "goethe",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "Give the Goethe B1 Teil 2 presentation on the five slides: topic, your experience, your home country, pros and cons, conclusion.",
+          "de": "Halten Sie die Präsentation aus Goethe B1 Teil 2 mit den fünf Folien: Thema, Ihre Erfahrung, Ihr Heimatland, Vor- und Nachteile, Schluss."
+        },
+        "prompt": "Thema: „Sollte man in der Schule eine Schuluniform tragen?“ Folie 1: Thema vorstellen. Folie 2: persönliche Erfahrung. Folie 3: Situation im Heimatland. Folie 4: Vor- und Nachteile, Ihre Meinung. Folie 5: Abschluss und Dank.",
+        "modelAnswer": "Ich möchte heute über das Thema „Schuluniform“ sprechen. Zuerst erzähle ich von meinen Erfahrungen, dann von der Situation in meinem Heimatland, und danach nenne ich Vor- und Nachteile. In meiner Schulzeit mussten wir eine Uniform tragen, einen blauen Rock oder eine Hose und ein weißes Hemd. In Indien tragen fast alle Schüler eine Uniform. Ein Vorteil ist, dass man nicht sieht, wer reich oder arm ist. Ein Nachteil ist, dass Kinder ihren eigenen Stil nicht zeigen können. Ich persönlich finde Uniformen eher gut. Vielen Dank für Ihre Aufmerksamkeit.",
+        "minSeconds": 60
+      }
+    },
+    {
       "id": "b1-goethe-speaking-teil3-feedback-and-questions__ex0",
       "lessonId": "b1-goethe-speaking-teil3-feedback-and-questions",
       "track": "goethe",
@@ -2182,6 +2212,21 @@
       "content": {
         "front": "Reaktion auf Prüferfragen in Teil 3",
         "back": "Ruhig durchatmen, Frage kurz bestätigen ('Das ist ein wichtiger Aspekt...') und präzise in 2-3 Sätzen mit Begründung antworten."
+      }
+    },
+    {
+      "id": "b1-goethe-speaking-teil3-feedback-and-questions__ex4",
+      "lessonId": "b1-goethe-speaking-teil3-feedback-and-questions",
+      "track": "goethe",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "As in Goethe B1 Teil 3, react to your partner's presentation: give feedback and ask a question, then answer a question about your own talk.",
+          "de": "Reagieren Sie wie in Goethe B1 Teil 3 auf die Präsentation Ihres Partners: Geben Sie eine Rückmeldung und stellen Sie eine Frage. Beantworten Sie dann eine Frage zu Ihrer eigenen Präsentation."
+        },
+        "prompt": "Ihr Partner hat über „Online-Unterricht“ gesprochen. Geben Sie eine Rückmeldung und stellen Sie eine Frage. Dann fragt er Sie zu Ihrem Thema „Haustiere“: „Hast du selbst ein Haustier?“",
+        "modelAnswer": "Vielen Dank für deine Präsentation, das Thema finde ich sehr interessant. Mir hat gefallen, dass du so viele Beispiele aus deinem eigenen Kurs genannt hast. Ich habe eine Frage: Glaubst du, dass man eine Sprache online genauso gut lernen kann wie im Kursraum? Zu deiner Frage: Ja, ich habe eine Katze, sie heißt Mimi. Ich habe sie vor zwei Jahren aus dem Tierheim geholt, und sie ist für mich wie ein Familienmitglied.",
+        "minSeconds": 45
       }
     }
   ],

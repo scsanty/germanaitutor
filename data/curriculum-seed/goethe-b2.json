@@ -1,5 +1,5 @@
 {
-  "seedVersion": "11",
+  "seedVersion": "12",
   "formatVersion": 3,
   "track": "goethe",
   "level": "B2",
@@ -1587,6 +1587,21 @@
       }
     },
     {
+      "id": "b2-goethe-sprechen-teil1-vortrag__ex2",
+      "lessonId": "b2-goethe-sprechen-teil1-vortrag",
+      "track": "goethe",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "Give the Goethe B2 Teil 1 talk: present the options, compare them with pros and cons, and give your own view.",
+          "de": "Halten Sie den Vortrag aus Goethe B2 Teil 1: Stellen Sie die Möglichkeiten vor, vergleichen Sie sie mit Vor- und Nachteilen und begründen Sie Ihre Meinung."
+        },
+        "prompt": "Thema: „Wie sollten Kinder ihre Freizeit verbringen?“ Möglichkeiten: in einem Verein (Sport, Musik) oder frei und ohne feste Termine. Sprechen Sie etwa drei Minuten.",
+        "modelAnswer": "In meinem Vortrag geht es um die Frage, wie Kinder ihre Freizeit am besten verbringen sollten. Ich möchte zwei Möglichkeiten vergleichen: die Mitgliedschaft in einem Verein und die freie, unverplante Zeit. Für den Verein spricht, dass Kinder dort Disziplin lernen, Freundschaften schließen und sich regelmäßig bewegen. Ein Nachteil ist jedoch, dass manche Kinder durch zu viele Termine unter Druck geraten. Freie Zeit dagegen fördert Kreativität und Selbstständigkeit, birgt aber die Gefahr, dass Kinder vor allem vor dem Bildschirm sitzen. Ich persönlich halte eine Mischung für ideal: ein oder zwei Hobbys im Verein und daneben genug Zeit zum freien Spielen.",
+        "minSeconds": 90
+      }
+    },
+    {
       "id": "b2-goethe-sprechen-teil2-diskussion__ex0",
       "lessonId": "b2-goethe-sprechen-teil2-diskussion",
       "track": "goethe",
@@ -1610,6 +1625,21 @@
           "Einen Kompromiss aushandeln."
         ],
         "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-goethe-sprechen-teil2-diskussion__ex2",
+      "lessonId": "b2-goethe-sprechen-teil2-diskussion",
+      "track": "goethe",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "Discuss the Goethe B2 Teil 2 question with your partner: give your opinion with reasons, react to the counter-argument and move towards a conclusion.",
+          "de": "Diskutieren Sie die Frage aus Goethe B2 Teil 2 mit Ihrem Partner: Begründen Sie Ihre Meinung, reagieren Sie auf das Gegenargument und kommen Sie zu einem Ergebnis."
+        },
+        "prompt": "Diskussionsfrage: „Sollten Supermärkte am Sonntag öffnen dürfen?“ Ihr Partner sagt: „Viele Menschen arbeiten unter der Woche lange und haben nur am Sonntag Zeit zum Einkaufen.“",
+        "modelAnswer": "Ich verstehe dein Argument, denn für Menschen mit langen Arbeitszeiten wäre ein offener Sonntag natürlich bequem. Trotzdem bin ich gegen eine generelle Sonntagsöffnung. Erstens müssten dann noch mehr Verkäuferinnen und Verkäufer am Wochenende arbeiten und hätten weniger Zeit für ihre Familien. Zweitens ist der Sonntag für viele ein wichtiger Ruhetag. Außerdem haben viele Supermärkte inzwischen werktags bis zweiundzwanzig Uhr geöffnet. Vielleicht könnten wir uns darauf einigen, dass Bäckereien und Läden am Bahnhof am Sonntag öffnen dürfen, große Supermärkte aber nicht?",
+        "minSeconds": 60
       }
     }
   ],

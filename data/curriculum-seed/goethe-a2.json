@@ -1,5 +1,5 @@
 {
-  "seedVersion": "11",
+  "seedVersion": "12",
   "formatVersion": 3,
   "track": "goethe",
   "level": "A2",
@@ -1797,6 +1797,21 @@
       }
     },
     {
+      "id": "a2-goethe-speaking-teil1-question-exchange__ex3",
+      "lessonId": "a2-goethe-speaking-teil1-question-exchange",
+      "track": "goethe",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "As in Goethe A2 Teil 1, ask your partner questions with the four cue words, then answer one of them yourself.",
+          "de": "Stellen Sie wie in Goethe A2 Teil 1 Ihrem Partner Fragen mit den vier Wörtern und beantworten Sie dann eine davon selbst."
+        },
+        "prompt": "Thema: „Freizeit“. Wörter: „Wochenende“, „Sport“, „Lieblingsessen“, „Urlaub“. Stellen Sie zu jedem Wort eine Frage. Beantworten Sie dann selbst die Frage zum Wochenende.",
+        "modelAnswer": "Was machst du am Wochenende? Treibst du gern Sport, zum Beispiel Fußball oder Schwimmen? Was ist dein Lieblingsessen? Wohin fährst du im Urlaub am liebsten? Und ich? Am Wochenende schlafe ich lange, dann treffe ich meine Freunde. Am Sonntag gehen wir oft zusammen ins Café oder in den Park.",
+        "minSeconds": 30
+      }
+    },
+    {
       "id": "a2-goethe-speaking-teil2-monologic-topic__ex0",
       "lessonId": "a2-goethe-speaking-teil2-monologic-topic",
       "track": "goethe",
@@ -1841,6 +1856,21 @@
       }
     },
     {
+      "id": "a2-goethe-speaking-teil2-monologic-topic__ex3",
+      "lessonId": "a2-goethe-speaking-teil2-monologic-topic",
+      "track": "goethe",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "Talk about yourself on the Goethe A2 Teil 2 card: cover all four points.",
+          "de": "Erzählen Sie wie in Goethe A2 Teil 2 von sich und sprechen Sie über alle vier Punkte der Karte."
+        },
+        "prompt": "Thema: „Wohnen“. Wo wohnen Sie? Wie viele Zimmer hat Ihre Wohnung? Was gefällt Ihnen, was gefällt Ihnen nicht? Wie haben Sie in Ihrem Heimatland gewohnt?",
+        "modelAnswer": "Ich wohne in einer Wohnung in Stuttgart, nicht weit vom Zentrum. Die Wohnung hat drei Zimmer, eine Küche und ein Bad. Mir gefällt der Balkon sehr gut, dort sitze ich im Sommer gern und lese. Nicht so gut ist, dass die Straße laut ist und die Miete sehr teuer ist. In meinem Heimatland habe ich mit meinen Eltern in einem großen Haus mit Garten gewohnt. Das war schön, aber hier bin ich unabhängig.",
+        "minSeconds": 30
+      }
+    },
+    {
       "id": "a2-goethe-speaking-teil3-joint-negotiation__ex0",
       "lessonId": "a2-goethe-speaking-teil3-joint-negotiation",
       "track": "goethe",
@@ -1882,6 +1912,21 @@
           "Nein, auf keinen Fall."
         ],
         "correctIndex": 0
+      }
+    },
+    {
+      "id": "a2-goethe-speaking-teil3-joint-negotiation__ex3",
+      "lessonId": "a2-goethe-speaking-teil3-joint-negotiation",
+      "track": "goethe",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "As in Goethe A2 Teil 3, find a time with your partner: compare your calendar, suggest times and agree.",
+          "de": "Finden Sie wie in Goethe A2 Teil 3 mit Ihrem Partner einen Termin: Vergleichen Sie Ihren Kalender, schlagen Sie Zeiten vor und einigen Sie sich."
+        },
+        "prompt": "Sie möchten am Samstag zusammen für eine Freundin ein Geschenk kaufen. Ihr Kalender: bis zehn Uhr Frühstück mit der Familie, zwölf bis vierzehn Uhr Arbeit, ab achtzehn Uhr Kino. Ihr Partner kann am Vormittag nicht.",
+        "modelAnswer": "Am Samstagvormittag kannst du nicht, oder? Ich habe bis zehn Uhr Frühstück mit meiner Familie und von zwölf bis zwei muss ich arbeiten. Wie wäre es um halb drei? Dann haben wir genug Zeit bis sechs, denn um sechs gehe ich ins Kino. Gut, das passt dir? Super, dann treffen wir uns um halb drei vor dem Kaufhaus. Wir können ihr vielleicht ein Buch oder einen schönen Schal kaufen.",
+        "minSeconds": 30
       }
     }
   ],
