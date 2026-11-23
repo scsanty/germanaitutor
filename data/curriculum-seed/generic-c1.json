@@ -1,5 +1,5 @@
 {
-  "seedVersion": "11",
+  "seedVersion": "12",
   "formatVersion": 3,
   "track": "generic",
   "level": "C1",
@@ -1697,6 +1697,21 @@
       }
     },
     {
+      "id": "c1-spontane-nuancierte-diskussionsfuehrung__ex4",
+      "lessonId": "c1-spontane-nuancierte-diskussionsfuehrung",
+      "track": "generic",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "React spontaneously in a discussion: summarise your partner's view, acknowledge it in part and qualify it with a nuanced counter-argument.",
+          "de": "Reagieren Sie spontan in einer Diskussion: Fassen Sie die Sicht Ihres Gegenübers zusammen, erkennen Sie sie teilweise an und relativieren Sie sie mit einem differenzierten Gegenargument."
+        },
+        "prompt": "Ihr Gesprächspartner behauptet: „Homeoffice zerstört den Zusammenhalt in Unternehmen. Wir sollten wieder alle ins Büro zurückkehren.“",
+        "modelAnswer": "Wenn ich Sie richtig verstehe, befürchten Sie, dass durch das Homeoffice der informelle Austausch und damit auch die Bindung an das Unternehmen verloren gehen. Diesen Punkt halte ich für durchaus berechtigt, gerade neue Mitarbeitende tun sich ohne persönliche Begegnungen oft schwer. Allerdings würde ich bezweifeln, dass eine vollständige Rückkehr ins Büro die richtige Antwort ist. Viele Beschäftigte haben im Homeoffice konzentrierter gearbeitet und schätzen die gewonnene Zeit ohne Pendeln. Ein Zwang könnte daher gerade die Leistungsträger vertreiben. Sinnvoller erscheint mir ein hybrides Modell mit festen Präsenztagen, an denen bewusst Raum für Begegnung geschaffen wird.",
+        "minSeconds": 90
+      }
+    },
+    {
       "id": "c1-rhetorische-praesentation-komplexer-themen__ex0",
       "lessonId": "c1-rhetorische-praesentation-komplexer-themen",
       "track": "generic",
@@ -1744,6 +1759,21 @@
           "zusammenfassen",
           "kondensieren"
         ]
+      }
+    },
+    {
+      "id": "c1-rhetorische-praesentation-komplexer-themen__ex4",
+      "lessonId": "c1-rhetorische-praesentation-komplexer-themen",
+      "track": "generic",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "Present a complex topic with rhetorical skill: a striking opening, a clear structure, one developed argument and a memorable close.",
+          "de": "Präsentieren Sie ein komplexes Thema rhetorisch gekonnt: ein prägnanter Einstieg, eine klare Gliederung, ein ausgeführtes Argument und ein einprägsamer Schluss."
+        },
+        "prompt": "Thema: „Brauchen wir ein Recht auf Nichterreichbarkeit nach Feierabend?“ Sprechen Sie etwa zwei Minuten.",
+        "modelAnswer": "Wann haben Sie zuletzt nach Feierabend noch schnell eine dienstliche E-Mail gelesen? Vermutlich gestern – und genau darin liegt das Problem. Ich möchte im Folgenden zunächst die Ursachen der ständigen Erreichbarkeit beleuchten, dann die gesundheitlichen Folgen erörtern und schließlich die Frage beantworten, ob ein gesetzliches Recht auf Nichterreichbarkeit Abhilfe schaffen kann. Arbeitsmedizinische Untersuchungen belegen, dass Beschäftigte, die abends regelmäßig erreichbar sind, deutlich häufiger unter Erschöpfung leiden. Freiwillige Selbstverpflichtungen der Unternehmen haben daran bislang wenig geändert. Frankreich hat bereits vorgemacht, wie eine gesetzliche Regelung aussehen kann. Mein Fazit lautet daher: Wer Erholung ernst nimmt, darf sie nicht dem guten Willen Einzelner überlassen. Abschalten muss zum Recht werden – und nicht länger ein Privileg bleiben.",
+        "minSeconds": 90
       }
     }
   ],

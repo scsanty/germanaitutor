@@ -1,5 +1,5 @@
 {
-  "seedVersion": "11",
+  "seedVersion": "12",
   "formatVersion": 3,
   "track": "generic",
   "level": "A1",
@@ -1560,6 +1560,21 @@
           "Was machen Sie beruflich?"
         ],
         "correctIndex": 2
+      }
+    },
+    {
+      "id": "a1-speaking-self-introduction__ex3",
+      "lessonId": "a1-speaking-self-introduction",
+      "track": "generic",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "Introduce yourself out loud: your name, where you come from, where you live, what you do and what you like.",
+          "de": "Stell dich laut vor: Sag deinen Namen, woher du kommst, wo du wohnst, was du machst und was du gern machst."
+        },
+        "prompt": "Stell dich vor: Wie heißt du? Woher kommst du? Wo wohnst du? Was bist du von Beruf? Was machst du gern?",
+        "modelAnswer": "Hallo! Ich heiße Sofia. Ich komme aus Griechenland. Ich wohne jetzt in Frankfurt. Ich bin Krankenschwester von Beruf. Ich lese gern und ich koche gern. Ich lerne Deutsch.",
+        "minSeconds": 20
       }
     }
   ],

@@ -1,5 +1,5 @@
 {
-  "seedVersion": "11",
+  "seedVersion": "12",
   "formatVersion": 3,
   "track": "generic",
   "level": "A2",
@@ -1821,6 +1821,21 @@
           "Obwohl"
         ],
         "correctIndex": 0
+      }
+    },
+    {
+      "id": "a2-speaking-reporting-past-weekend__ex3",
+      "lessonId": "a2-speaking-reporting-past-weekend",
+      "track": "generic",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "Tell a friend about your last weekend in the Perfekt, then say what you plan for next weekend.",
+          "de": "Erzähl einer Freundin im Perfekt von deinem letzten Wochenende und sag dann, was du nächstes Wochenende vorhast."
+        },
+        "prompt": "Deine Freundin fragt: „Na, wie war dein Wochenende? Und was machst du nächstes Wochenende?“",
+        "modelAnswer": "Mein Wochenende war super! Am Samstag habe ich lange geschlafen und dann bin ich mit meiner Schwester in die Stadt gefahren. Wir haben Kleidung gekauft und in einem Café Kuchen gegessen. Am Sonntag habe ich meine Wohnung geputzt und am Abend habe ich einen Film gesehen. Nächstes Wochenende möchte ich mit Freunden wandern gehen, wenn das Wetter gut ist.",
+        "minSeconds": 30
       }
     }
   ],
