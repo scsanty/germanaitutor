@@ -38,11 +38,31 @@ export interface BackupSizeOptions {
 
 // B6: speech recordings and transcripts are temporary and never leave the install. True when `db` has
 // the table (an older database may not).
+function hasTable(db: Database.Database, name: string): boolean {
+  return db.prepare("SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = ?").get(name) !== undefined;
+}
 function hasSpeechClips(db: Database.Database): boolean {
-  return db.prepare("SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = 'speech_clips'").get() !== undefined;
+  return hasTable(db, 'speech_clips');
 }
 
-// The database file as a backup carries it: a copy with `speech_clips` emptied and vacuumed, so the
+// Transcripts also live, for the session's lifetime, outside `speech_clips`: an open spoken Freestyle
+// session keeps them as its messages, and an unfinished placement run keeps them in its answers. A
+// backup carries neither (the spec: nothing spoken is retained after the session).
+function stripSpeech(db: Database.Database): void {
+  db.transaction(() => {
+    if (hasSpeechClips(db)) db.exec('DELETE FROM speech_clips');
+    if (hasTable(db, 'freestyle_sessions')) {
+      // Foreign keys are off on this connection, so the messages are deleted explicitly.
+      if (hasTable(db, 'freestyle_messages')) {
+        db.exec("DELETE FROM freestyle_messages WHERE session_id IN (SELECT id FROM freestyle_sessions WHERE mode = 'spoken')");
+      }
+      db.exec("DELETE FROM freestyle_sessions WHERE mode = 'spoken'");
+    }
+    if (hasTable(db, 'placement_session')) db.exec('DELETE FROM placement_session');
+  })();
+}
+
+// The database file as a backup carries it: a copy stripped of speech (above) and vacuumed, so the
 // transcripts are not left in free pages. A file that isn't SQLite at all has nothing to strip.
 function readDatabaseWithoutSpeech(dbPath: string): Buffer {
   const dir = mkdtempSync(join(tmpdir(), 'gait-backup-db-'));
@@ -56,10 +76,8 @@ function readDatabaseWithoutSpeech(dbPath: string): Buffer {
     }
     const db = new Database(copy);
     try {
-      if (hasSpeechClips(db)) {
-        db.exec('DELETE FROM speech_clips');
-        db.exec('VACUUM');
-      }
+      stripSpeech(db);
+      db.exec('VACUUM');
     } finally {
       db.close();
     }

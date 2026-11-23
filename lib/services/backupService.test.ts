@@ -308,6 +308,35 @@ describe('backupService', () => {
       db.close();
     });
 
+    it('exports no spoken Freestyle session, its messages or a placement run, and keeps the rest', async () => {
+      const { dir, db, dbPath, keyPath } = realDb();
+      const now = new Date().toISOString();
+      const spoken = db.prepare("INSERT INTO freestyle_sessions (mode, level, started_at) VALUES ('spoken', 'B1', ?)").run(now).lastInsertRowid;
+      const chat = db.prepare("INSERT INTO freestyle_sessions (mode, level, started_at) VALUES ('conversation', 'B1', ?)").run(now).lastInsertRowid;
+      const msg = db.prepare("INSERT INTO freestyle_messages (session_id, role, content, created_at) VALUES (?, 'user', ?, ?)");
+      msg.run(spoken, 'GESPROCHENES-TRANSKRIPT', now);
+      msg.run(chat, 'getippte Nachricht', now);
+      db.prepare("INSERT INTO placement_session (id, started_at, next_position, score, mistakes, answers) VALUES (1, ?, 3, 1, 0, ?)")
+        .run(now, JSON.stringify([{ given: 'PLATZIERUNG-TRANSKRIPT' }]));
+      db.pragma('wal_checkpoint(TRUNCATE)');
+
+      const archive = await exportBackup(dbPath, keyPath, join(dir, 'audio'));
+      const exported = Buffer.from(envelopeOf(archive).db as string, 'base64');
+      expect(exported.includes('GESPROCHENES-TRANSKRIPT')).toBe(false);
+      expect(exported.includes('PLATZIERUNG-TRANSKRIPT')).toBe(false);
+      const out = join(mkdtempSync(join(tmpdir(), 'gait-backup-out-')), 'x.db');
+      writeFileSync(out, exported);
+      const copy = new Database(out, { readonly: true });
+      expect(copy.prepare('SELECT mode FROM freestyle_sessions').all()).toEqual([{ mode: 'conversation' }]);
+      expect(copy.prepare('SELECT content FROM freestyle_messages').all()).toEqual([{ content: 'getippte Nachricht' }]);
+      expect(copy.prepare('SELECT COUNT(*) AS n FROM placement_session').get()).toEqual({ n: 0 });
+      copy.close();
+      // The live database is untouched.
+      expect(db.prepare('SELECT COUNT(*) AS n FROM freestyle_messages').get()).toEqual({ n: 2 });
+      expect(db.prepare('SELECT COUNT(*) AS n FROM placement_session').get()).toEqual({ n: 1 });
+      db.close();
+    });
+
     it('a failing speech clean-up after a restore is logged, not thrown', () => {
       const { dbPath, keyPath } = setupFiles();
       const archive = regzip({ version: 2, exportedAt: 'x', db: Buffer.from('fake-db-contents').toString('base64'), dbHash: sha256(Buffer.from('fake-db-contents')),
