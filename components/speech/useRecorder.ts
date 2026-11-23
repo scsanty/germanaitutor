@@ -22,7 +22,11 @@ const PREFERRED_TYPE = 'audio/webm;codecs=opus';
 
 // Tap-to-talk: record with MediaRecorder, then send the raw clip to the transcription route.
 // A failed upload keeps the recording in memory so `retry` can send it again (S27).
-const MAX_SECONDS = 300;
+// The sidecar refuses audio over 300 s (SPEECH_LIMIT_SECONDS). Interval ticks are never early and the
+// recorder flushes after stop(), so an auto-stop at exactly 300 s always overran the limit; stopping
+// at 290 s leaves 10 s of headroom.
+export const SPEECH_LIMIT_SECONDS = 300;
+export const MAX_SECONDS = 290;
 
 export function useRecorder({ scope, onAutoStop }: { scope: string; onAutoStop?: (result: TranscribeResult) => void }) {
   const t = useTranslations('speech');
@@ -119,7 +123,7 @@ export function useRecorder({ scope, onAutoStop }: { scope: string; onAutoStop?:
       timerRef.current = setInterval(() => {
         elapsed += 1;
         setSeconds(elapsed);
-        // The server refuses clips over five minutes, so a long take is sent as it reaches the limit.
+        // The server refuses clips over five minutes, so a long take is sent shortly before the limit.
         if (elapsed >= MAX_SECONDS) {
           stopTimer();
           void stopRef.current().then((result) => {

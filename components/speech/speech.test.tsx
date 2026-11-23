@@ -3,6 +3,7 @@ import { screen, fireEvent, waitFor, act } from '@testing-library/react';
 import { renderWithIntl } from '@/test/renderWithIntl';
 import { MicButton } from './MicButton';
 import { PronunciationBox } from './PronunciationBox';
+import { MAX_SECONDS, SPEECH_LIMIT_SECONDS } from './useRecorder';
 
 class FakeRecorder {
   static isTypeSupported = vi.fn(() => true);
@@ -103,7 +104,14 @@ describe('MicButton', () => {
     expect(navigator.mediaDevices.getUserMedia).toHaveBeenCalledTimes(1);
   });
 
-  it('stops and uploads by itself at five minutes', async () => {
+  it('auto-stops with headroom under the sidecar limit', () => {
+    expect(MAX_SECONDS).toBe(290);
+    expect(SPEECH_LIMIT_SECONDS).toBe(300);
+    // A late tick plus the recorder's flush must still leave the clip under the limit.
+    expect(MAX_SECONDS + 5).toBeLessThan(SPEECH_LIMIT_SECONDS);
+  });
+
+  it('stops and uploads by itself at 290 seconds, not before', async () => {
     vi.useFakeTimers();
     try {
       const fetchMock = mockFetch(json(RESULT));
@@ -113,7 +121,11 @@ describe('MicButton', () => {
         fireEvent.click(screen.getByRole('button', { name: 'Start speaking' }));
       });
       await act(async () => {
-        await vi.advanceTimersByTimeAsync(300_000);
+        await vi.advanceTimersByTimeAsync(289_000);
+      });
+      expect(fetchMock).not.toHaveBeenCalled();
+      await act(async () => {
+        await vi.advanceTimersByTimeAsync(1_000);
         await vi.advanceTimersByTimeAsync(10);
       });
       expect(fetchMock).toHaveBeenCalledTimes(1);
