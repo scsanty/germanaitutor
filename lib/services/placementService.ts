@@ -143,8 +143,9 @@ export function createPlacementService(db: Database.Database, deps?: PlacementDe
     ).run(source, contentHash);
   }
 
-  // An attempt in progress refers to the old questions by position, so it goes too, unless the
-  // caller knows the question order is unchanged (a bundled refresh with the same ids).
+  // An attempt in progress was served from the old questions (its served ids), so it goes too, with
+  // its speech clips, unless the caller knows the questions are unchanged (a bundled refresh with the
+  // same ids).
   function replaceExam(
     questions: PlacementQuestion[],
     options: { source?: PlacementExamSource; contentHash?: string | null; keepSession?: boolean } = {}
@@ -156,6 +157,7 @@ export function createPlacementService(db: Database.Database, deps?: PlacementDe
       questions.forEach((q, i) => insert.run(q.id, i + 1, q.level, q.type, JSON.stringify(q.content)));
       setMeta(options.source ?? 'uploaded', options.contentHash ?? null);
     })();
+    if (!options.keepSession) deleteClips(PLACEMENT_SCOPE);
   }
 
   // Seed time: load the bundled exam into an empty table, and refresh a stored exam that came from

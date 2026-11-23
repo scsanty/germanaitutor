@@ -332,6 +332,18 @@ describe('toPlacementErrorResponse', () => {
     const record = async (clips: ReturnType<typeof createSpeechClipService>, scope = 'placement') =>
       (await clips.transcribeForScope(scope, Buffer.from('OggS....'), 'audio/ogg')).clipId;
 
+    it('replacing the exam deletes the old run\'s clips, but not when the session is kept', async () => {
+      const { db, service, clips } = spokenSetup(async () => true);
+      await service.start();
+      await record(clips);
+      const count = () => (db.prepare("SELECT COUNT(*) AS n FROM speech_clips WHERE scope = 'placement'").get() as { n: number }).n;
+      service.replaceExam(spokenExam, { keepSession: true });
+      expect(count()).toBe(1);
+      service.replaceExam(spokenExam);
+      expect(count()).toBe(0);
+      expect(db.prepare('SELECT COUNT(*) AS n FROM placement_session').get()).toEqual({ n: 0 });
+    });
+
     it('leaves spoken items out when the speech service is down at start, even if it comes back', async () => {
       let up = false;
       const { service } = spokenSetup(async () => up);
