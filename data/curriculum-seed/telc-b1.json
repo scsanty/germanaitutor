@@ -1,5 +1,5 @@
 {
-  "seedVersion": "11",
+  "seedVersion": "12",
   "formatVersion": 3,
   "track": "telc",
   "level": "B1",
@@ -2470,6 +2470,21 @@
       }
     },
     {
+      "id": "b1-telc-speaking-teil1-kontaktaufnahme__ex4",
+      "lessonId": "b1-telc-speaking-teil1-kontaktaufnahme",
+      "track": "telc",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "Open the telc B1 contact conversation: introduce yourself to your partner and ask two personal questions.",
+          "de": "Beginnen Sie das Kontaktgespräch aus telc B1: Stellen Sie sich Ihrem Partner vor und stellen Sie zwei persönliche Fragen."
+        },
+        "prompt": "Sie lernen Ihren Prüfungspartner kennen. Erzählen Sie etwas über sich (Herkunft, Wohnort, Arbeit, Deutschlernen) und fragen Sie nach seiner Familie und seinen Hobbys.",
+        "modelAnswer": "Hallo, ich bin Marta und komme aus Polen. Seit zwei Jahren wohne ich in Hannover und arbeite dort in einem Hotel an der Rezeption. Deutsch lerne ich, weil ich mit den Gästen besser sprechen möchte und weil ich hier bleiben will. Und du? Hast du Familie hier in Deutschland, oder wohnt deine Familie noch in deinem Heimatland? Und was machst du gern in deiner Freizeit?",
+        "minSeconds": 45
+      }
+    },
+    {
       "id": "b1-telc-speaking-teil2-topic-discussion__ex0",
       "lessonId": "b1-telc-speaking-teil2-topic-discussion",
       "track": "telc",
@@ -2520,6 +2535,21 @@
       }
     },
     {
+      "id": "b1-telc-speaking-teil2-topic-discussion__ex4",
+      "lessonId": "b1-telc-speaking-teil2-topic-discussion",
+      "track": "telc",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "Talk about the topic as in telc Teil 2: summarise the statement, give your experience and your opinion.",
+          "de": "Sprechen Sie wie in telc Teil 2 über das Thema: Geben Sie die Aussage wieder, erzählen Sie von Ihren Erfahrungen und sagen Sie Ihre Meinung."
+        },
+        "prompt": "Aussage: „Kinder sollten kein eigenes Handy haben, bevor sie zwölf Jahre alt sind.“ Was steht in der Aussage? Welche Erfahrungen haben Sie? Wie ist es in Ihrem Heimatland? Was meinen Sie?",
+        "modelAnswer": "In der Aussage geht es darum, dass Kinder erst mit zwölf Jahren ein eigenes Handy bekommen sollen. Ich habe selbst einen Sohn, er ist zehn. Er hat noch kein Smartphone, aber ein einfaches Telefon für Notfälle. In meinem Heimatland haben viele Kinder schon mit acht Jahren ein Handy. Ich finde die Aussage teilweise richtig, weil Kinder sonst zu viel Zeit am Bildschirm verbringen. Andererseits ist es praktisch, wenn die Eltern ihr Kind erreichen können.",
+        "minSeconds": 45
+      }
+    },
+    {
       "id": "b1-telc-speaking-teil3-joint-planning__ex0",
       "lessonId": "b1-telc-speaking-teil3-joint-planning",
       "track": "telc",
@@ -2567,6 +2597,21 @@
       "content": {
         "front": "Kompromissformel in Teil 3",
         "back": "Lass uns doch einen Kompromiss schließen: Wir machen zuerst X und danach Y."
+      }
+    },
+    {
+      "id": "b1-telc-speaking-teil3-joint-planning__ex4",
+      "lessonId": "b1-telc-speaking-teil3-joint-planning",
+      "track": "telc",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "Plan together as in telc Teil 3: make suggestions, react to your partner and agree on who does what.",
+          "de": "Planen Sie gemeinsam wie in telc Teil 3: Machen Sie Vorschläge, reagieren Sie auf Ihren Partner und einigen Sie sich, wer was macht."
+        },
+        "prompt": "Eine Kollegin feiert ihr zehnjähriges Firmenjubiläum. Planen Sie mit Ihrem Partner eine kleine Überraschung: Wann und wo? Geschenk? Essen und Getränke? Wer macht was?",
+        "modelAnswer": "Ich schlage vor, dass wir die Überraschung am Freitag in der Mittagspause machen, im Besprechungsraum. Was meinst du? Gut, dann brauchen wir noch ein Geschenk. Wir könnten bei allen Kollegen Geld sammeln und ihr einen Gutschein für ein Restaurant kaufen. Zum Essen bringe ich einen Kuchen mit, und du könntest dich um die Getränke kümmern. Ich sammle das Geld und kaufe den Gutschein. Einverstanden?",
+        "minSeconds": 45
       }
     },
     {
@@ -5935,6 +5980,21 @@
       }
     },
     {
+      "id": "b1-telc-phone-calls-and-voicemails__ex8",
+      "lessonId": "b1-telc-phone-calls-and-voicemails",
+      "track": "telc",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "Leave a voicemail message: say who you are, why you are calling, what you need and how to reach you.",
+          "de": "Sprechen Sie eine Nachricht auf die Mailbox: Sagen Sie, wer Sie sind, warum Sie anrufen, was Sie brauchen und wie man Sie erreicht."
+        },
+        "prompt": "Sie haben im Fitnessstudio Ihre Jacke vergessen. Rufen Sie an, das Studio ist geschlossen. Sprechen Sie auf den Anrufbeantworter: Wer sind Sie? Was ist passiert? Beschreiben Sie die Jacke. Bitten Sie um einen Rückruf.",
+        "modelAnswer": "Guten Abend, hier spricht Daniel Rossi. Ich bin Mitglied in Ihrem Studio und war heute Nachmittag beim Training. Leider habe ich meine Jacke in der Umkleide vergessen. Sie ist dunkelblau, aus Wolle, und in der Tasche ist ein Schlüssel. Könnten Sie bitte nachsehen, ob die Jacke noch da ist? Bitte rufen Sie mich morgen zurück, meine Nummer ist null eins fünf eins, sieben acht neun, vier drei zwei. Vielen Dank und auf Wiederhören!",
+        "minSeconds": 45
+      }
+    },
+    {
       "id": "b1-telc-appointments-making-moving-cancelling__ex0",
       "lessonId": "b1-telc-appointments-making-moving-cancelling",
       "track": "telc",
@@ -6068,6 +6128,21 @@
       }
     },
     {
+      "id": "b1-telc-appointments-making-moving-cancelling__ex8",
+      "lessonId": "b1-telc-appointments-making-moving-cancelling",
+      "track": "telc",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "Call to move an appointment: apologise, give the reason and suggest two new times.",
+          "de": "Rufen Sie an, um einen Termin zu verschieben: Entschuldigen Sie sich, nennen Sie den Grund und schlagen Sie zwei neue Termine vor."
+        },
+        "prompt": "Sie haben am Donnerstag um neun Uhr einen Termin beim Bürgeramt. Ihr Kind ist krank. Rufen Sie an und verschieben Sie den Termin.",
+        "modelAnswer": "Guten Tag, mein Name ist Ayşe Demir. Ich habe am Donnerstag um neun Uhr einen Termin bei Ihnen, um meinen Pass zu verlängern. Leider muss ich den Termin verschieben, weil mein Sohn krank ist und ich zu Hause bleiben muss. Das tut mir sehr leid. Wäre es vielleicht nächste Woche am Dienstag möglich? Oder am Mittwochnachmittag, das würde auch gehen. Bitte sagen Sie mir, welcher Termin noch frei ist.",
+        "minSeconds": 45
+      }
+    },
+    {
       "id": "b1-telc-speaking-preparation-time__ex0",
       "lessonId": "b1-telc-speaking-preparation-time",
       "track": "telc",
@@ -6187,6 +6262,21 @@
           "en": "Now it is Teil 2. Use your notes to present your text to your partner in a few full sentences.",
           "de": "Jetzt ist Teil 2. Stellen Sie Ihrem Partner mit Hilfe Ihrer Notizen Ihren Text in einigen ganzen Sätzen vor."
         }
+      }
+    },
+    {
+      "id": "b1-telc-speaking-preparation-time__ex7",
+      "lessonId": "b1-telc-speaking-preparation-time",
+      "track": "telc",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "Use your preparation notes: speak for about a minute on the Teil 2 text, following the points you prepared.",
+          "de": "Nutzen Sie Ihre Notizen aus der Vorbereitungszeit: Sprechen Sie etwa eine Minute über den Text aus Teil 2 und folgen Sie Ihren Stichpunkten."
+        },
+        "prompt": "Ihre Notizen: „Text: Supermärkte werfen viele Lebensmittel weg – Grund: Datum abgelaufen, sieht nicht schön aus – meine Erfahrung: Foodsharing in meiner Stadt – Heimatland: Markt, weniger Verpackung – Meinung: Gesetz gegen Wegwerfen gut.“ Sprechen Sie frei mit diesen Stichpunkten.",
+        "modelAnswer": "In meinem Text geht es darum, dass Supermärkte sehr viele Lebensmittel wegwerfen. Oft ist das Datum abgelaufen oder das Obst sieht nicht mehr schön aus, obwohl man es noch essen kann. In meiner Stadt gibt es eine Foodsharing-Gruppe; dort holen Freiwillige die Lebensmittel ab und verteilen sie. Ich habe das auch schon gemacht. In meinem Heimatland kaufen viele Leute auf dem Markt ein, da gibt es weniger Verpackung. Ich finde, ein Gesetz gegen das Wegwerfen wäre eine gute Idee.",
+        "minSeconds": 60
       }
     },
     {
@@ -6484,6 +6574,21 @@
       }
     },
     {
+      "id": "b1-telc-advice-asking-and-giving__ex8",
+      "lessonId": "b1-telc-advice-asking-and-giving",
+      "track": "telc",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "A friend asks you for advice. Show understanding, give at least two tips and explain why.",
+          "de": "Ein Freund bittet Sie um Rat. Zeigen Sie Verständnis, geben Sie mindestens zwei Tipps und begründen Sie sie."
+        },
+        "prompt": "Ihr Freund sagt: „Ich schlafe seit Wochen schlecht und bin bei der Arbeit immer müde. Was soll ich machen?“ Antworten Sie ihm.",
+        "modelAnswer": "Oh, das kenne ich, das ist wirklich anstrengend. An deiner Stelle würde ich abends das Handy weglegen, mindestens eine Stunde vor dem Schlafen, weil das Licht vom Bildschirm wach macht. Außerdem solltest du nachmittags keinen Kaffee mehr trinken. Vielleicht hilft es auch, wenn du jeden Tag ein bisschen spazieren gehst. Und wenn es nach ein paar Wochen nicht besser wird, würde ich zum Arzt gehen.",
+        "minSeconds": 45
+      }
+    },
+    {
       "id": "b1-telc-plans-and-wishes__ex0",
       "lessonId": "b1-telc-plans-and-wishes",
       "track": "telc",
@@ -6617,6 +6722,21 @@
           "en": "Write the email. Use Sie.",
           "de": "Schreiben Sie die E-Mail. Benutzen Sie Sie."
         }
+      }
+    },
+    {
+      "id": "b1-telc-plans-and-wishes__ex8",
+      "lessonId": "b1-telc-plans-and-wishes",
+      "track": "telc",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "Talk about your plans and wishes: what you have planned, what you would like to do, and why.",
+          "de": "Sprechen Sie über Ihre Pläne und Wünsche: Was haben Sie geplant, was würden Sie gern machen und warum?"
+        },
+        "prompt": "Die Prüferin fragt: „Was haben Sie für die nächsten zwei Jahre vor? Und was würden Sie gern machen, wenn Sie mehr Zeit und Geld hätten?“",
+        "modelAnswer": "In den nächsten zwei Jahren möchte ich zuerst die B1-Prüfung bestehen und danach eine Ausbildung als Pflegefachmann anfangen. Ich habe mich schon bei zwei Kliniken beworben. Außerdem planen wir, in eine größere Wohnung umzuziehen, weil unsere Wohnung zu klein ist. Wenn ich mehr Zeit und Geld hätte, würde ich gern meine Eltern in Brasilien besuchen und mit ihnen eine Reise durch Europa machen. Das ist mein größter Wunsch.",
+        "minSeconds": 45
       }
     },
     {
@@ -6757,6 +6877,21 @@
       }
     },
     {
+      "id": "b1-telc-talking-about-experiences__ex8",
+      "lessonId": "b1-telc-talking-about-experiences",
+      "track": "telc",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "Tell about an experience in the past: when and where it was, what happened, and what you learned.",
+          "de": "Erzählen Sie von einer Erfahrung: Wann und wo war das, was ist passiert und was haben Sie gelernt?"
+        },
+        "prompt": "Erzählen Sie von Ihrem ersten Arbeitstag in Deutschland oder von einem anderen ersten Tag (Schule, Kurs, neue Stadt).",
+        "modelAnswer": "Mein erster Arbeitstag in Deutschland war vor drei Jahren in einer Bäckerei in Bremen. Ich musste schon um fünf Uhr morgens anfangen und war sehr nervös. Am Anfang habe ich fast nichts verstanden, weil die Kollegen so schnell gesprochen haben. Aber eine Kollegin hat mir alles erklärt und mir gezeigt, wie man die Brötchen backt. Am Ende des Tages war ich müde, aber glücklich. Ich habe gelernt, dass man ruhig nachfragen darf, wenn man etwas nicht versteht.",
+        "minSeconds": 45
+      }
+    },
+    {
       "id": "b1-telc-feelings-and-reacting-to-news__ex0",
       "lessonId": "b1-telc-feelings-and-reacting-to-news",
       "track": "telc",
@@ -6884,6 +7019,21 @@
           "en": "Write the reply. Use Sie.",
           "de": "Schreiben Sie die Antwort. Benutzen Sie Sie."
         }
+      }
+    },
+    {
+      "id": "b1-telc-feelings-and-reacting-to-news__ex8",
+      "lessonId": "b1-telc-feelings-and-reacting-to-news",
+      "track": "telc",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "React to your friend's news: show your feelings, ask a question and offer something.",
+          "de": "Reagieren Sie auf die Nachricht Ihrer Freundin: Zeigen Sie Ihre Gefühle, stellen Sie eine Frage und bieten Sie etwas an."
+        },
+        "prompt": "Ihre Freundin erzählt: „Stell dir vor, ich habe die Prüfung nicht bestanden. Mir haben nur zwei Punkte gefehlt.“ Reagieren Sie.",
+        "modelAnswer": "Oh nein, das tut mir wirklich leid! Das ist ja ärgerlich, nur zwei Punkte. Ich kann verstehen, dass du enttäuscht bist. Aber du hast so viel gelernt, das ist nicht verloren. Weißt du schon, wann du die Prüfung wiederholen kannst? Wenn du willst, können wir zusammen lernen, ich helfe dir gern beim Sprechen. Und heute Abend lade ich dich auf einen Tee ein, dann reden wir in Ruhe.",
+        "minSeconds": 45
       }
     },
     {

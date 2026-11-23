@@ -1,5 +1,5 @@
 {
-  "seedVersion": "11",
+  "seedVersion": "12",
   "formatVersion": 3,
   "track": "telc",
   "level": "B2",
@@ -1291,6 +1291,21 @@
       }
     },
     {
+      "id": "b2-telc-sprechen-teil1-praesentation__ex2",
+      "lessonId": "b2-telc-sprechen-teil1-praesentation",
+      "track": "telc",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "Give the telc B2 Teil 1 presentation: introduce your topic, describe the experience, give your view and close.",
+          "de": "Halten Sie die Präsentation aus telc B2 Teil 1: Stellen Sie Ihr Thema vor, beschreiben Sie die Erfahrung, geben Sie Ihre Einschätzung und kommen Sie zum Schluss."
+        },
+        "prompt": "Thema: „Ein Buch, ein Film oder eine Sendung, die Sie beeindruckt hat“. Präsentieren Sie etwa anderthalb Minuten: Worum geht es? Warum hat es Sie beeindruckt? Was würden Sie anderen empfehlen?",
+        "modelAnswer": "Ich habe mich für einen Film entschieden, der mich lange beschäftigt hat, nämlich „Das Leben der Anderen“. Der Film spielt in der DDR und erzählt von einem Stasi-Offizier, der ein Künstlerpaar überwacht und sich dabei allmählich verändert. Beeindruckt hat mich vor allem, wie ruhig und genau der Film zeigt, was Überwachung mit Menschen macht. Für mich war er außerdem eine gute Gelegenheit, mehr über die deutsche Geschichte zu erfahren. Wer sich für Geschichte oder spannende Dramen interessiert, dem würde ich ihn unbedingt empfehlen. Damit bin ich am Ende und freue mich auf Ihre Fragen.",
+        "minSeconds": 60
+      }
+    },
+    {
       "id": "b2-telc-sprechen-teil2-diskussion__ex0",
       "lessonId": "b2-telc-sprechen-teil2-diskussion",
       "track": "telc",
@@ -1317,6 +1332,21 @@
       }
     },
     {
+      "id": "b2-telc-sprechen-teil2-diskussion__ex2",
+      "lessonId": "b2-telc-sprechen-teil2-diskussion",
+      "track": "telc",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "Take part in the telc B2 Teil 2 discussion: state your position, give reasons and respond to the counter-argument.",
+          "de": "Nehmen Sie an der Diskussion aus telc B2 Teil 2 teil: Vertreten Sie Ihre Position, begründen Sie sie und gehen Sie auf das Gegenargument ein."
+        },
+        "prompt": "Diskussionsthema: „Sollte das Autofahren in Innenstädten verboten werden?“ Ihr Partner meint: „Ohne Auto kommen ältere Menschen nicht mehr in die Stadt.“ Nehmen Sie Stellung.",
+        "modelAnswer": "Ich bin grundsätzlich dafür, die Innenstädte weitgehend autofrei zu machen, denn die Luft wäre besser, es wäre leiser und es gäbe mehr Platz für Fußgänger und Cafés. Dein Einwand ist allerdings berechtigt: Ältere oder kranke Menschen dürfen nicht ausgeschlossen werden. Deshalb würde ich kein vollständiges Verbot vorschlagen, sondern Ausnahmen für Menschen mit Behinderung, Lieferverkehr und Taxis. Gleichzeitig müssten Busse und Bahnen häufiger fahren und barrierefrei sein. Was hältst du von so einem Kompromiss?",
+        "minSeconds": 60
+      }
+    },
+    {
       "id": "b2-telc-sprechen-teil3-problemlosung-planung__ex0",
       "lessonId": "b2-telc-sprechen-teil3-problemlosung-planung",
       "track": "telc",
@@ -1334,6 +1364,21 @@
       "content": {
         "textWithBlank": "Können wir uns darauf ___ , dass wir das Fest am Samstag, den 14. Juli veranstalten? (einigen / vereinbaren)",
         "correctAnswer": "einigen"
+      }
+    },
+    {
+      "id": "b2-telc-sprechen-teil3-problemlosung-planung__ex2",
+      "lessonId": "b2-telc-sprechen-teil3-problemlosung-planung",
+      "track": "telc",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "Solve the telc B2 Teil 3 planning task: weigh the options, suggest a solution and divide the tasks.",
+          "de": "Lösen Sie die Planungsaufgabe aus telc B2 Teil 3: Wägen Sie die Möglichkeiten ab, schlagen Sie eine Lösung vor und verteilen Sie die Aufgaben."
+        },
+        "prompt": "Ihr Sprachkurs möchte einen Ausflug machen, aber das Budget ist knapp und einige Teilnehmer arbeiten am Wochenende. Besprechen Sie: Ziel, Termin, Kosten, Organisation.",
+        "modelAnswer": "Da das Budget begrenzt ist, schlage ich vor, dass wir kein weit entferntes Ziel wählen, sondern eine Stadtführung mit anschließendem Picknick im Park machen. Das kostet kaum etwas. Was den Termin angeht, wäre ein Freitagnachmittag sinnvoll, weil viele am Wochenende arbeiten. Wir sollten vorher eine Umfrage machen, damit möglichst alle teilnehmen können. Ich kümmere mich um die Stadtführung und frage nach einem Gruppenrabatt; könntest du die Umfrage übernehmen und das Picknick organisieren?",
+        "minSeconds": 60
       }
     }
   ],

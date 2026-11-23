@@ -1,5 +1,5 @@
 {
-  "seedVersion": "11",
+  "seedVersion": "12",
   "formatVersion": 3,
   "track": "telc",
   "level": "C1",
@@ -1705,6 +1705,21 @@
       }
     },
     {
+      "id": "c1-telc-muendlicher-ausdruck-teil1a-praesentation__ex4",
+      "lessonId": "c1-telc-muendlicher-ausdruck-teil1a-praesentation",
+      "track": "telc",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "Give the opening and main part of a telc C1 Teil 1A presentation: introduce the topic, outline your structure and develop one argument.",
+          "de": "Halten Sie Einleitung und Hauptteil einer Präsentation aus telc C1 Teil 1A: Führen Sie ins Thema ein, skizzieren Sie Ihre Gliederung und entfalten Sie ein Argument."
+        },
+        "prompt": "Thema: „Sollten Hochschulen Anwesenheitspflicht in Lehrveranstaltungen einführen?“ Sprechen Sie etwa zwei Minuten.",
+        "modelAnswer": "Ob Studierende zu Lehrveranstaltungen verpflichtet werden sollten, wird an deutschen Hochschulen seit Jahren kontrovers diskutiert. In meinem Vortrag möchte ich zunächst die rechtliche Ausgangslage kurz skizzieren, anschließend die zentralen Argumente beider Seiten gegenüberstellen und abschließend eine eigene Einschätzung formulieren. Befürworter argumentieren, dass Anwesenheit den Lernerfolg nachweislich steigere, da Diskussionen und unmittelbares Feedback nicht durch Skripte ersetzt werden könnten. Dem lässt sich jedoch entgegenhalten, dass viele Studierende erwerbstätig sind oder Angehörige pflegen; eine starre Pflicht würde gerade sie benachteiligen. Meines Erachtens wäre daher eine Anwesenheitspflicht allenfalls für Seminare mit Diskussionscharakter vertretbar, nicht aber für Vorlesungen.",
+        "minSeconds": 90
+      }
+    },
+    {
       "id": "c1-telc-muendlicher-ausdruck-teil1b-nachfragen__ex0",
       "lessonId": "c1-telc-muendlicher-ausdruck-teil1b-nachfragen",
       "track": "telc",
@@ -1755,6 +1770,21 @@
       }
     },
     {
+      "id": "c1-telc-muendlicher-ausdruck-teil1b-nachfragen__ex4",
+      "lessonId": "c1-telc-muendlicher-ausdruck-teil1b-nachfragen",
+      "track": "telc",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "As in telc C1 Teil 1B, give your partner feedback on their presentation and ask a well-founded follow-up question.",
+          "de": "Geben Sie Ihrem Partner wie in telc C1 Teil 1B eine Rückmeldung zu seiner Präsentation und stellen Sie eine fundierte Nachfrage."
+        },
+        "prompt": "Ihr Partner hat über „Die Vier-Tage-Woche als Arbeitsmodell der Zukunft“ referiert und vor allem die Produktivitätsgewinne betont. Reagieren Sie.",
+        "modelAnswer": "Vielen Dank für deinen gut strukturierten Vortrag. Besonders überzeugend fand ich, wie du die Ergebnisse der Pilotstudien aus Großbritannien und Island eingeordnet hast. Mir ist allerdings aufgefallen, dass du dich fast ausschließlich auf Büroberufe bezogen hast. Wie ließe sich die Vier-Tage-Woche deiner Meinung nach in Branchen umsetzen, in denen eine ständige Präsenz erforderlich ist, etwa in der Pflege oder im Einzelhandel, ohne dass der Personalmangel dort noch verschärft wird?",
+        "minSeconds": 60
+      }
+    },
+    {
       "id": "c1-telc-muendlicher-ausdruck-teil2-diskussion__ex0",
       "lessonId": "c1-telc-muendlicher-ausdruck-teil2-diskussion",
       "track": "telc",
@@ -1798,6 +1828,21 @@
       "content": {
         "prompt": "Formulieren Sie ein vermittelndes Schlussplädoyer, das beide konträren Diskussionsstränge zu einer Synthese führt.",
         "modelAnswer": "Wenngleich unsere Positionen hinsichtlich der regulatorischen Eingriffstiefe divergieren, herrscht Einigkeit darüber, dass eine ethische Rahmung der Technologie unverzichtbar ist, wenn wir Innovation nicht mit Kontrollverlust bezahlen wollen."
+      }
+    },
+    {
+      "id": "c1-telc-muendlicher-ausdruck-teil2-diskussion__ex4",
+      "lessonId": "c1-telc-muendlicher-ausdruck-teil2-diskussion",
+      "track": "telc",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "Argue your position in the telc C1 Teil 2 discussion: take a clear stance, acknowledge the counter-argument and qualify it.",
+          "de": "Vertreten Sie Ihre Position in der Diskussion aus telc C1 Teil 2: Beziehen Sie klar Stellung, erkennen Sie das Gegenargument an und relativieren Sie es."
+        },
+        "prompt": "Diskussionsthema: „Sollte das Wahlalter bei Bundestagswahlen auf 16 Jahre gesenkt werden?“ Ihr Gesprächspartner hält Sechzehnjährige für politisch noch nicht reif genug.",
+        "modelAnswer": "Ich halte eine Absenkung des Wahlalters auf sechzehn Jahre für überfällig. Gerade Entscheidungen zur Klima- oder Rentenpolitik betreffen junge Menschen über Jahrzehnte, und dennoch haben sie bislang keine Stimme. Ihren Einwand, Sechzehnjährige seien politisch nicht reif genug, nehme ich durchaus ernst. Allerdings zeigen die Erfahrungen aus Österreich und aus mehreren Bundesländern, in denen auf kommunaler Ebene bereits ab sechzehn gewählt wird, dass die Wahlbeteiligung dieser Gruppe keineswegs geringer ausfällt. Zudem stellt sich die Frage, nach welchem Maßstab man politische Reife überhaupt bemessen wollte – bei Erwachsenen prüfen wir sie schließlich auch nicht. Entscheidend wäre vielmehr, die politische Bildung an Schulen deutlich zu stärken.",
+        "minSeconds": 90
       }
     }
   ],

@@ -407,7 +407,104 @@ describe('merge-lesson-exercises', () => {
       draft(GRAMMAR, [letter()], B1);
       const r = run();
       expect(r.ok).toBe(false);
-      expect(text(r)).toContain('lesson skill is "grammar", not reading, listening or writing');
+      expect(text(r)).toContain('lesson skill is "grammar", not reading, listening, writing or speaking');
+    });
+  });
+
+  describe('speaking lessons', () => {
+    // Trimmed fixture speaking-a2: a grammar lesson and two telc A2 speaking lessons, one free_text each.
+    const INTRO = 'a2-telc-speaking-teil1-detailed-introduction';
+    const EXCHANGE = 'a2-telc-speaking-teil2-information-exchange';
+    const GRAMMAR = 'a2-telc-perfekt-daily-work';
+    const A2 = 'speaking-a2';
+    const seedOf = (stem: string) => JSON.parse(readFileSync(join(root, 'curriculum-seed', `${stem}.json`), 'utf8'));
+    const typesOf = (id: string) => seedOf(A2).exercises.filter((e: { lessonId: string }) => e.lessonId === id).map((e: { type: string }) => e.type);
+    const spoken = (over: Record<string, unknown> = {}) => ({
+      type: 'spoken_response',
+      content: {
+        instruction: { en: 'Introduce yourself out loud.', de: 'Stellen Sie sich mündlich vor.' },
+        prompt: 'Erzählen Sie von Ihrer Arbeit und Ihrer Familie.',
+        modelAnswer: 'Ich heiße Ana und arbeite als Verkäuferin. Ich bin verheiratet und habe zwei Kinder.',
+        minSeconds: 30,
+        ...over,
+      },
+    });
+    const text = (r: { lines: string[] }) => r.lines.join('\n');
+
+    beforeEach(() => {
+      cpSync(join(process.cwd(), 'test', 'fixtures', 'curriculum-seed', `${A2}.json`), join(root, 'curriculum-seed', `${A2}.json`));
+    });
+
+    it('merges a clean spoken_response into a speaking lesson', () => {
+      draft(INTRO, [spoken()], A2);
+      const r = run();
+      expect(r.ok).toBe(true);
+      expect(r.added).toBe(1);
+      expect(typesOf(INTRO)).toEqual(['free_text', 'spoken_response']);
+      expect(text(r)).not.toContain('warning: exercise');
+    });
+
+    it('refuses other new types in a speaking lesson', () => {
+      draft(INTRO, [{ type: 'letter', content: {} }], A2);
+      const r = run();
+      expect(r.ok).toBe(false);
+      expect(text(r)).toContain('type must be one of spoken_response in a speaking lesson');
+    });
+
+    it('requires the instruction in both languages', () => {
+      const { instruction: _drop, ...bare } = spoken().content;
+      draft(INTRO, [{ type: 'spoken_response', content: bare }], A2);
+      expect(text(run())).toContain('a spoken_response needs an instruction in English and German');
+      draft(INTRO, [spoken({ instruction: { en: 'Speak.', de: '' } })], A2);
+      const r = run();
+      expect(r.ok).toBe(false);
+      expect(text(r)).toContain('instruction needs both English and German');
+    });
+
+    it('requires a German prompt and model answer', () => {
+      draft(INTRO, [spoken({ prompt: '' })], A2);
+      const r = run();
+      expect(r.ok).toBe(false);
+      expect(text(r)).toContain('a spoken_response needs a prompt');
+      draft(INTRO, [spoken({ modelAnswer: '' })], A2);
+      expect(text(run())).toContain('modelAnswer must be a non-empty string');
+      draft(INTRO, [spoken({ prompt: 'Please tell me about your work.', modelAnswer: 'I work in a shop and my family is here.' })], A2);
+      const warned = run();
+      expect(warned.ok).toBe(true);
+      expect(text(warned)).toContain(`${A2}/${INTRO}: warning: exercise 1: prompt: English word(s)`);
+      expect(text(warned)).toContain(`${A2}/${INTRO}: warning: exercise 1: modelAnswer: English word(s)`);
+    });
+
+    it('requires minSeconds to be a positive whole number when present', () => {
+      draft(INTRO, [spoken({ minSeconds: 0 })], A2);
+      expect(text(run())).toContain('minSeconds must be a positive whole number');
+      draft(INTRO, [spoken({ minSeconds: 12.5 })], A2);
+      expect(run().ok).toBe(false);
+      const { minSeconds: _drop, ...noMin } = spoken().content;
+      draft(INTRO, [{ type: 'spoken_response', content: noMin }], A2);
+      expect(run().ok).toBe(true);
+    });
+
+    it('reports speaking lessons without a spoken_response, and makes them an error under --complete', () => {
+      draft(INTRO, [spoken()], A2);
+      const r = run({ checkOnly: true });
+      expect(r.ok).toBe(true);
+      expect(text(r)).toContain(`${A2}/${EXCHANGE}: warning: no spoken_response exercise yet`);
+      expect(text(r)).toContain(`${A2}: 1 of 2 speaking lessons covered`);
+      const before = readFileSync(join(root, 'curriculum-seed', `${A2}.json`), 'utf8');
+      const strict = run({ complete: true });
+      expect(strict.ok).toBe(false);
+      expect(text(strict)).toContain(`${A2}/${EXCHANGE}: problem: no spoken_response exercise yet`);
+      expect(readFileSync(join(root, 'curriculum-seed', `${A2}.json`), 'utf8')).toBe(before);
+      draft(EXCHANGE, [spoken({ prompt: 'Fragen Sie Ihren Partner nach seinem Wochenende und antworten Sie.' })], A2);
+      const fixed = run({ complete: true });
+      expect(fixed.ok).toBe(true);
+      expect(text(fixed)).toContain(`${A2}: 2 of 2 speaking lessons covered`);
+    });
+
+    it('still refuses a grammar lesson', () => {
+      draft(GRAMMAR, [spoken()], A2);
+      expect(text(run())).toContain('lesson skill is "grammar", not reading, listening, writing or speaking');
     });
   });
 });
