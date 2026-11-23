@@ -1,10 +1,11 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { pronunciationBand, pronunciationEstimate } from './pronunciation';
 import { buildPartnerPrompt, buildSpokenGradingPrompt, parsePartnerReply, parseSpokenGrade, type SpokenAnchor, type SpokenTurn } from './spokenGrading';
 import { nextTurnState } from './turnLoop';
 import { EXAMINER_VOICE, PARTNER_VOICES } from './voices';
 import { readSpokenAnchors, spokenAnchorProblems, type SpokenAnchorFile } from './anchors';
-import { readFileSync } from 'node:fs';
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { readFormat } from '../exam/formats';
 import { validateSpokenResponse } from '../curriculum/exerciseContentValidation';
@@ -191,9 +192,33 @@ describe('spoken anchors', () => {
     expect(anchors?.map((x) => x.band)).toEqual(['A', 'C', 'D']);
     const file = JSON.parse(readFileSync(join(process.cwd(), 'data', 'speaking-anchors', 'telc-b1', 'sprechen-3.json'), 'utf8')) as SpokenAnchorFile;
     expect(spokenAnchorProblems(file, readFormat('telc-b1')!.parts.find((p) => p.id === 'sprechen-3')!.rubric!)).toEqual([]);
-    expect(readSpokenAnchors('telc-b1', 'sprechen-1')).toBeNull();
+    expect(readSpokenAnchors('telc-b1', 'sprechen-9')).toBeNull();
     expect(readSpokenAnchors('telc-b1', '../sprechen-3')).toBeNull();
     expect(readSpokenAnchors('nope-b1', 'sprechen-3')).toBeNull();
+  });
+  // File IO against a scratch data dir: the real formats are linked in, and only the anchor file changes per case.
+  it('returns null for a missing, malformed or under-graded anchor file', () => {
+    const root = mkdtempSync(join(tmpdir(), 'spoken-anchors-'));
+    mkdirSync(join(root, 'data', 'speaking-anchors', 'telc-b1'), { recursive: true });
+    symlinkSync(join(process.cwd(), 'data', 'exam-formats'), join(root, 'data', 'exam-formats'));
+    const real = readFileSync(join(process.cwd(), 'data', 'speaking-anchors', 'telc-b1', 'sprechen-3.json'), 'utf8');
+    const path = join(root, 'data', 'speaking-anchors', 'telc-b1', 'sprechen-3.json');
+    const cwd = vi.spyOn(process, 'cwd').mockReturnValue(root);
+    try {
+      expect(readSpokenAnchors('telc-b1', 'sprechen-3')).toBeNull();
+      writeFileSync(path, '{ not json');
+      expect(readSpokenAnchors('telc-b1', 'sprechen-3')).toBeNull();
+      const parsed = JSON.parse(real) as SpokenAnchorFile;
+      writeFileSync(path, JSON.stringify({ ...parsed, anchors: [parsed.anchors[1]] }));
+      expect(readSpokenAnchors('telc-b1', 'sprechen-3')).toBeNull();
+      writeFileSync(path, JSON.stringify({ ...parsed, anchors: [{ ...parsed.anchors[0], grades: null }, ...parsed.anchors.slice(1)] }));
+      expect(readSpokenAnchors('telc-b1', 'sprechen-3')).toBeNull();
+      writeFileSync(path, real);
+      expect(readSpokenAnchors('telc-b1', 'sprechen-3')?.map((x) => x.band)).toEqual(['A', 'C', 'D']);
+    } finally {
+      cwd.mockRestore();
+      rmSync(root, { recursive: true, force: true });
+    }
   });
 });
 

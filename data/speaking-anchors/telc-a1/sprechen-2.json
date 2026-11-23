@@ -1,0 +1,42 @@
+{
+  "formatId": "telc-a1",
+  "partId": "sprechen-2",
+  "anchors": [
+    {
+      "band": "A",
+      "turns": [
+        "Meine Karte ist „Frühstück“. Was isst du zum Frühstück?",
+        "Zum Frühstück esse ich Brot mit Käse, und ich trinke Kaffee.",
+        "Meine Karte ist jetzt „Restaurant“. Gehst du oft ins Restaurant?",
+        "Mein Lieblingsessen ist Pizza. Aber ich koche auch gern Suppe.",
+        "Die nächste Karte ist „Obst“. Welches Obst magst du?",
+        "Am Abend trinke ich Tee, keinen Kaffee."
+      ],
+      "grades": { "ausdruck": "A", "aufgabe": "A", "richtigkeit": "A", "aussprache": "A" },
+      "justification": "Der Lernende stellt zu jeder Karte eine passende Frage zum Thema „Essen und Trinken“ und beantwortet die Fragen der Partnerin verständlich. Fragen und Antworten sind einfache, korrekte Sätze mit passendem Wortschatz. Die Aussprache ist klar."
+    },
+    {
+      "band": "C",
+      "turns": [
+        "Frühstück … du isst Frühstück?",
+        "Ich esse Brot. Kaffee.",
+        "Restaurant … du gehen Restaurant?",
+        "Lieblingsessen … ist Reis mit Hähnchen.",
+        "Obst? Du magst Obst, welche?"
+      ],
+      "grades": { "ausdruck": "B", "aufgabe": "B", "richtigkeit": "C", "aussprache": "B" },
+      "justification": "Die Lernende stellt zu den Karten Fragen, die verständlich sind, aber oft nicht richtig gebaut („du gehen Restaurant?“). Ihre Antworten sind sehr kurz. Verbformen, Präpositionen und Artikel fehlen oft. Die Aussprache ist meist verständlich."
+    },
+    {
+      "band": "D",
+      "turns": [
+        "Frühstück.",
+        "Ja … Brot.",
+        "Äh … Restaurant … ja?",
+        "Ich nicht verstehe."
+      ],
+      "grades": { "ausdruck": "C", "aufgabe": "C", "richtigkeit": "C", "aussprache": "C" },
+      "justification": "Der Lernende liest nur das Wort von der Karte vor und stellt keine Frage. Auf die Frage der Partnerin antwortet er mit einem Wort oder gar nicht. Es gibt keine Sätze, und wegen der Pausen und der Aussprache ist er kaum zu verstehen."
+    }
+  ]
+}

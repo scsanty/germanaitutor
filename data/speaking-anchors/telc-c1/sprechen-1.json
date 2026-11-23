@@ -1,0 +1,42 @@
+{
+  "formatId": "telc-c1",
+  "partId": "sprechen-1",
+  "anchors": [
+    {
+      "band": "A",
+      "turns": [
+        "Ich habe mich für das Thema „Lebenslanges Lernen – Pflicht oder Chance?“ entschieden und möchte zunächst erläutern, warum es gerade heute so aktuell ist, anschließend auf Vor- und Nachteile eingehen und zum Schluss ein persönliches Fazit ziehen.",
+        "Der technologische Wandel hat zur Folge, dass Wissen immer schneller veraltet. Wer vor zwanzig Jahren eine Ausbildung abgeschlossen hat, arbeitet heute oft mit Werkzeugen, die es damals schlichtweg nicht gab.",
+        "Für lebenslanges Lernen spricht in erster Linie, dass es die Beschäftigungsfähigkeit sichert. Darüber hinaus deuten Studien darauf hin, dass geistige Aktivität im Alter das Demenzrisiko verringern kann – Lernen ist also nicht nur wirtschaftlich, sondern auch gesundheitlich relevant.",
+        "Andererseits darf man nicht verkennen, dass der Appell zum ständigen Weiterlernen auch Druck erzeugt. Gerade Geringverdienende haben oft weder die Zeit noch das Geld für Kurse, sodass sich bestehende Ungleichheiten eher verstärken.",
+        "Aus eigener Erfahrung kann ich sagen: Als ich mit Mitte dreißig Deutsch gelernt habe, war das mühsam, hat mir aber berufliche Türen geöffnet, die mir sonst verschlossen geblieben wären.",
+        "Mein Fazit lautet daher: Lebenslanges Lernen ist eine Chance, sofern Arbeitgeber und Staat dafür sorgen, dass alle Zugang dazu haben. Andernfalls wird es zu einer Pflicht, die nur einige erfüllen können."
+      ],
+      "grades": { "ausdruck": "A", "aufgabe": "A", "richtigkeit": "A", "aussprache": "A" },
+      "justification": "Der Lernende präsentiert das Thema gut strukturiert: Er kündigt den Aufbau an, wägt Argumente mit Beispielen und eigener Erfahrung differenziert ab und schließt mit einem klaren Fazit. Er verfügt über einen präzisen, gehobenen Wortschatz („verkennen“, „Beschäftigungsfähigkeit“) und komplexe Strukturen (Konsekutiv- und Konditionalsätze, Konjunktiv II der Vergangenheit) ohne Fehler. Die Aussprache und Intonation sind klar und natürlich."
+    },
+    {
+      "band": "C",
+      "turns": [
+        "Mein Thema ist lebenslanges Lernen. Ich spreche über Vorteile und Nachteile.",
+        "Heute die Technik ändert sich sehr schnell, deshalb man muss immer neue Sachen lernen.",
+        "Ein Vorteil ist, man findet besser eine Arbeit. Und es ist gut für den Kopf, wenn man alt ist.",
+        "Ein Nachteil ist, es kostet viel Geld und Zeit. Nicht alle können das bezahlen.",
+        "Ich denke, lebenslanges Lernen ist wichtig. Das ist mein Fazit."
+      ],
+      "grades": { "ausdruck": "C", "aufgabe": "C", "richtigkeit": "C", "aussprache": "B" },
+      "justification": "Der Lernende nennt das Thema und je ein Argument dafür und dagegen, entwickelt sie aber nicht und bringt keine Beispiele; das Fazit ist nur eine Behauptung. Wortschatz und Satzbau liegen deutlich unter C1, und die Wortstellung nach „heute“ und „deshalb“ ist wiederholt falsch. Die Aussprache ist meist gut verständlich."
+    },
+    {
+      "band": "D",
+      "turns": [
+        "Ich spreche über … Lernen. Lebenslang.",
+        "Lernen ist wichtig. Für Arbeit … und so.",
+        "Äh … Geld … ist … teuer, Kurse.",
+        "Ja. Das ist alles, glaube ich."
+      ],
+      "grades": { "ausdruck": "D", "aufgabe": "D", "richtigkeit": "D", "aussprache": "D" },
+      "justification": "Der Lernende kann das Thema nicht präsentieren: Es gibt weder Einleitung noch Argumente noch Fazit, nur einzelne Stichworte. Die Äußerungen sind bruchstückhaft, und Grammatik und Aussprache machen sie größtenteils unverständlich."
+    }
+  ]
+}

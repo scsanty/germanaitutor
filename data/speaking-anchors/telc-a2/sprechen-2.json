@@ -1,0 +1,43 @@
+{
+  "formatId": "telc-a2",
+  "partId": "sprechen-2",
+  "anchors": [
+    {
+      "band": "A",
+      "turns": [
+        "Meine erste Karte ist „Sport“. Welchen Sport machst du gern, und wie oft?",
+        "Ich gehe zweimal pro Woche schwimmen, meistens am Dienstag und am Freitag nach der Arbeit. Das ist gut für den Rücken.",
+        "Die zweite Karte ist „Urlaub“. Wohin bist du letztes Jahr in Urlaub gefahren?",
+        "Ich war im Sommer mit meiner Schwester in Österreich. Wir sind viel gewandert, und das Wetter war sehr schön.",
+        "Meine letzte Karte ist „Fernsehen“. Was siehst du am liebsten im Fernsehen?",
+        "Ich sehe nicht so viel fern. Ich höre lieber Musik oder lese ein Buch, besonders am Abend."
+      ],
+      "grades": { "ausdruck": "A", "aufgabe": "A", "richtigkeit": "A", "aussprache": "A" },
+      "justification": "Die Lernende stellt zu jeder Karte eine passende Frage zum Thema „Freizeit“ und beantwortet die Fragen des Partners ausführlich, mit Details und Begründungen. Perfekt, Zeitangaben und trennbare Verben sind korrekt. Die Aussprache ist klar."
+    },
+    {
+      "band": "C",
+      "turns": [
+        "Sport. Du machst Sport? Welche Sport?",
+        "Ich spiele Fußball. Am Sonntag.",
+        "Urlaub … wohin du fährst in Urlaub?",
+        "Letzte Jahr ich bin in Türkei gefahren. Es war schön.",
+        "Fernsehen … du siehst Fernsehen viel?",
+        "Nein, nicht viel. Nur Nachrichten."
+      ],
+      "grades": { "ausdruck": "B", "aufgabe": "B", "richtigkeit": "C", "aussprache": "B" },
+      "justification": "Der Lernende stellt zu allen Karten eine Frage und antwortet, aber sehr knapp und ohne Einzelheiten. Wortstellung, Artikel und Endungen sind oft falsch („Welche Sport?“, „Letzte Jahr ich bin in Türkei gefahren“). Die Aussprache ist meist verständlich."
+    },
+    {
+      "band": "D",
+      "turns": [
+        "Sport … du?",
+        "Ja. Fußball.",
+        "Urlaub … ich nicht … äh.",
+        "Fernsehen. Ja."
+      ],
+      "grades": { "ausdruck": "C", "aufgabe": "C", "richtigkeit": "C", "aussprache": "C" },
+      "justification": "Die Lernende nennt nur die Wörter von den Karten, stellt keine vollständige Frage und beantwortet die Fragen des Partners nur mit einzelnen Wörtern. Es gibt keine Sätze, und die Aussprache ist schwer zu verstehen."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "formatId": "telc-a2",
+  "partId": "sprechen-1",
+  "anchors": [
+    {
+      "band": "A",
+      "turns": [
+        "Hallo, ich heiße Tomasz Nowak und ich bin 34 Jahre alt. Ich komme aus Polen, aus Krakau.",
+        "Seit zwei Jahren wohne ich mit meiner Frau und unseren zwei Kindern in Leipzig.",
+        "Ich spreche Polnisch, Englisch und jetzt auch Deutsch. Deutsch lerne ich seit einem Jahr in einem Abendkurs.",
+        "Von Beruf bin ich Elektriker. Ich arbeite bei einer kleinen Firma in der Nähe vom Bahnhof.",
+        "In meiner Freizeit fahre ich gern Fahrrad, und ich spiele Gitarre.",
+        "Am Wochenende gehen wir oft in den Park oder wir besuchen Freunde. Manchmal koche ich für die ganze Familie."
+      ],
+      "grades": { "ausdruck": "A", "aufgabe": "A", "richtigkeit": "A", "aussprache": "A" },
+      "justification": "Der Lernende stellt sich zu allen Stichworten vor und beantwortet beide Zusatzfragen ausführlich. Er verbindet Sätze mit „und“ und „oder“, benutzt Präpositionen wie „seit“ und „bei“ und macht keine nennenswerten Fehler. Die Aussprache ist klar und gut verständlich."
+    },
+    {
+      "band": "C",
+      "turns": [
+        "Ich heiße Fatima, ich bin 41 Jahre. Ich komme aus Marokko.",
+        "Ich wohne in Frankfurt mit mein Mann und drei Kinder.",
+        "Ich spreche Arabisch, Französisch und Deutsch, aber Deutsch nicht so gut.",
+        "Ich habe kein Arbeit jetzt. In Marokko ich war Verkäuferin.",
+        "Hobby … ich koche gern und gehe spazieren.",
+        "Am Wochenende … ich bin zu Hause. Mit Familie."
+      ],
+      "grades": { "ausdruck": "B", "aufgabe": "B", "richtigkeit": "C", "aussprache": "B" },
+      "justification": "Die Lernende spricht über die meisten Stichworte und beantwortet die Zusatzfragen, aber nur kurz. Der Wortschatz ist einfach. Fehler bei Endungen und Wortstellung kommen häufig vor („mit mein Mann“, „In Marokko ich war“), stören das Verständnis aber nicht sehr. Die Aussprache ist meist verständlich."
+    },
+    {
+      "band": "D",
+      "turns": [
+        "Name … Sanjay.",
+        "Ich Indien. Ich … Hamburg.",
+        "Arbeit … nein.",
+        "Wochenende? … Ich nicht verstehen."
+      ],
+      "grades": { "ausdruck": "C", "aufgabe": "C", "richtigkeit": "C", "aussprache": "C" },
+      "justification": "Der Lernende nennt nur Name, Land und Wohnort mit einzelnen Wörtern; die anderen Stichworte fehlen, und die Zusatzfragen beantwortet er nicht. Er bildet keine Sätze, und die Aussprache ist schwer zu verstehen."
+    }
+  ]
+}

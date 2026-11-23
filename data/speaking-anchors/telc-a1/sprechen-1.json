@@ -1,0 +1,43 @@
+{
+  "formatId": "telc-a1",
+  "partId": "sprechen-1",
+  "anchors": [
+    {
+      "band": "A",
+      "turns": [
+        "Guten Tag! Ich heiße Maria López. Ich bin 28 Jahre alt.",
+        "Ich komme aus Spanien, aus Valencia. Jetzt wohne ich in Köln.",
+        "Ich spreche Spanisch, Englisch und ein bisschen Deutsch.",
+        "Ich bin Krankenschwester von Beruf. Mein Hobby ist Schwimmen.",
+        "Mein Familienname, buchstabiert: L – O – P – E – Z.",
+        "Meine Telefonnummer ist null – zwei – zwei – eins, vier – fünf – sechs – sieben – acht."
+      ],
+      "grades": { "ausdruck": "A", "aufgabe": "A", "richtigkeit": "A", "aussprache": "A" },
+      "justification": "Die Lernende stellt sich zu allen Punkten vor (Name, Alter, Land, Wohnort, Sprachen, Beruf, Hobby), buchstabiert ihren Namen und nennt die Zahl richtig. Sie spricht in kurzen, vollständigen Sätzen, die für A1 korrekt sind. Die Aussprache ist klar und gut verständlich."
+    },
+    {
+      "band": "C",
+      "turns": [
+        "Ich heiße Ahmed. Ich bin … dreißig Jahre.",
+        "Ich komme von Syrien. Ich wohne in Dortmund.",
+        "Sprache … Arabisch und Deutsch, bisschen.",
+        "Beruf … ich bin Fahrer. Hobby Fußball.",
+        "A – H – M – E – … D.",
+        "Hausnummer … sechsundvierzig. Nein, vierundsechzig."
+      ],
+      "grades": { "ausdruck": "B", "aufgabe": "B", "richtigkeit": "C", "aussprache": "B" },
+      "justification": "Der Lernende nennt die meisten Punkte, aber oft nur mit einzelnen Wörtern („Sprache … Arabisch“, „Hobby Fußball“); die Zahl korrigiert er erst im zweiten Versuch. Es gibt mehrere Fehler („von Syrien“, „dreißig Jahre“ ohne „alt“), und viele Äußerungen sind keine Sätze. Die Aussprache ist trotz Pausen meist verständlich."
+    },
+    {
+      "band": "D",
+      "turns": [
+        "Ich … Name Li.",
+        "China.",
+        "Wohnen … äh … nicht weiß.",
+        "Zahl … sieben? Ja."
+      ],
+      "grades": { "ausdruck": "C", "aufgabe": "C", "richtigkeit": "C", "aussprache": "C" },
+      "justification": "Die Lernende nennt nur Name und Land; Wohnort, Sprachen, Beruf und Hobby fehlen, und es wird nichts buchstabiert. Sie spricht nur in einzelnen Wörtern ohne Satzbau. Wegen langer Pausen und undeutlicher Aussprache ist sie kaum zu verstehen."
+    }
+  ]
+}

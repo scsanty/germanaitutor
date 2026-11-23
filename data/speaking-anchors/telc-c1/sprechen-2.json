@@ -1,0 +1,41 @@
+{
+  "formatId": "telc-c1",
+  "partId": "sprechen-2",
+  "anchors": [
+    {
+      "band": "A",
+      "turns": [
+        "Du hast über die Frage gesprochen, ob Innenstädte autofrei werden sollten, und dabei zunächst das Beispiel Kopenhagen angeführt, wo der Autoverkehr in den letzten Jahren drastisch reduziert wurde.",
+        "Als Vorteile hast du vor allem die bessere Luftqualität, weniger Lärm und mehr Platz für Grünflächen und Cafés genannt. Außerdem hast du betont, dass der Einzelhandel entgegen vielen Befürchtungen sogar profitiert habe.",
+        "Auf der anderen Seite hast du eingeräumt, dass ältere oder gehbehinderte Menschen sowie Handwerker auf das Auto angewiesen sind und dass der öffentliche Nahverkehr dafür massiv ausgebaut werden müsste.",
+        "Dein Fazit war, dass ein schrittweiser Umbau sinnvoll ist, also zunächst einzelne Straßen zu sperren und Erfahrungen zu sammeln, statt abrupt ein Verbot zu erlassen.",
+        "Dazu hätte ich eine Anschlussfrage: Wie sollte deiner Meinung nach die Belieferung der Geschäfte organisiert werden, wenn Lieferwagen nicht mehr in die Innenstadt fahren dürfen?"
+      ],
+      "grades": { "ausdruck": "A", "aufgabe": "A", "richtigkeit": "A", "aussprache": "A" },
+      "justification": "Die Lernende fasst die Präsentation des Partners vollständig und genau zusammen, mit Beispiel, Pro- und Contra-Argumenten und Fazit, und stellt eine weiterführende Anschlussfrage. Sie gibt die Aussagen sprachlich gewandt wieder (indirekte Rede, „eingeräumt“, „entgegen vielen Befürchtungen“) und macht keine Fehler. Die Aussprache ist klar und natürlich."
+    },
+    {
+      "band": "C",
+      "turns": [
+        "Du hast über autofreie Städte gesprochen. Du hast gesagt, in Kopenhagen gibt es weniger Autos.",
+        "Die Vorteile sind, die Luft ist besser und weniger Lärm.",
+        "Aber manche Leute brauchen das Auto, zum Beispiel alte Leute.",
+        "Und am Ende du sagst, man soll langsam machen.",
+        "Meine Frage ist: Findest du das gut?"
+      ],
+      "grades": { "ausdruck": "C", "aufgabe": "C", "richtigkeit": "C", "aussprache": "B" },
+      "justification": "Die Lernende gibt nur einzelne Punkte der Präsentation wieder; das Argument zum Einzelhandel und der Ausbau des Nahverkehrs fehlen, und das Fazit bleibt ungenau. Die Anschlussfrage führt nicht weiter. Der Ausdruck ist sehr einfach, und es gibt Fehler bei der Wortstellung („am Ende du sagst“). Die Aussprache ist meist gut verständlich."
+    },
+    {
+      "band": "D",
+      "turns": [
+        "Du hast gesprochen über … Autos. Stadt.",
+        "Es ist … gut für Luft. Ich glaube.",
+        "Mehr habe ich nicht verstanden.",
+        "Frage … nein, keine Frage."
+      ],
+      "grades": { "ausdruck": "D", "aufgabe": "D", "richtigkeit": "D", "aussprache": "D" },
+      "justification": "Die Lernende kann die Präsentation nicht zusammenfassen, nennt nur zwei Stichworte und stellt keine Anschlussfrage. Sie spricht in Bruchstücken, die wegen Grammatik und Aussprache kaum zu verstehen sind."
+    }
+  ]
+}
