@@ -327,6 +327,19 @@ describe('freestyleService: spoken conversation', () => {
     expect(db.prepare('SELECT source, wrong FROM error_log').all()).toEqual([{ source: 'freestyle_chat', wrong: 'Ich habe gegangen' }]);
   });
 
+  it('marks a reply whose clip the 6 h clean-up deleted as expired when the session is resumed', async () => {
+    const { db, service, studentClip } = spokenSetup([conversationReply, conversationReply]);
+    await service.start('spoken', { level: 'B1', setup: {} });
+    const first = await service.turn('spoken', { clipId: studentClip('Hallo') });
+    const second = await service.turn('spoken', { clipId: studentClip('Tschüss') });
+    db.prepare('DELETE FROM speech_clips WHERE id = ?').run(first[1].extra!.clipId);
+    const replies = service.session('spoken')!.messages.filter((m) => m.role === 'assistant' && m.extra);
+    expect(replies.map((m) => m.extra)).toEqual([
+      { clipId: first[1].extra!.clipId, audio: false, expired: true },
+      { clipId: second[1].extra!.clipId, audio: true },
+    ]);
+  });
+
   it('keeps the reply as text when the voice render fails', async () => {
     const { db, service, studentClip } = spokenSetup([conversationReply], { render: async () => { throw new Error('tts down'); } });
     await service.start('spoken', { level: 'B1', setup: {} });

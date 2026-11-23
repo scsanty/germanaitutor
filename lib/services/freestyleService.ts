@@ -105,8 +105,20 @@ export function createFreestyleService(
     ).map((m) => ({ ...m, extra: m.extra ? JSON.parse(m.extra) : null }));
   }
 
+  // A spoken session can outlive its reply clips (the worker deletes clips after 6 h). Such a reply is shown as
+  // text only: `expired` hides its play button without the "Audio unavailable" note of a failed render.
+  function withExpiredClips(messages: SessionMessage[]): SessionMessage[] {
+    const live = db.prepare('SELECT 1 FROM speech_clips WHERE id = ? AND file IS NOT NULL');
+    return messages.map((m) => {
+      const clipId = m.extra?.clipId;
+      if (m.role !== 'assistant' || m.extra?.audio !== true || typeof clipId !== 'string' || live.get(clipId)) return m;
+      return { ...m, extra: { ...m.extra, audio: false, expired: true } };
+    });
+  }
+
   function view(r: SessionRow): SessionView {
-    return { mode: r.mode, level: r.level, setup: JSON.parse(r.setup), messages: messagesOf(r.id) };
+    const messages = messagesOf(r.id);
+    return { mode: r.mode, level: r.level, setup: JSON.parse(r.setup), messages: r.mode === 'spoken' ? withExpiredClips(messages) : messages };
   }
 
   function addMessage(sessionId: number, role: 'user' | 'assistant', content: string, extra: unknown = null): SessionMessage {
@@ -295,8 +307,8 @@ export function createFreestyleService(
         // A concurrent request may have stored this recording while the AI ran.
         if (messagesOf(r.id).some((m) => m.extra?.clipId === clip.id)) throw new FreestyleError('That recording was already sent', 'bad_request');
         return [
-        addMessage(r.id, 'user', text, { corrections: reply.corrections, clipId: clip.id }),
-        addMessage(r.id, 'assistant', reply.reply, { clipId: replyClipId, audio: audio !== null }),
+          addMessage(r.id, 'user', text, { corrections: reply.corrections, clipId: clip.id }),
+          addMessage(r.id, 'assistant', reply.reply, { clipId: replyClipId, audio: audio !== null }),
         ];
       })();
     } catch (err) {

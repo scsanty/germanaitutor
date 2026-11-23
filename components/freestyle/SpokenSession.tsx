@@ -113,7 +113,8 @@ export function SpokenSession({ session, onMessages }: { session: SessionView; o
           }
           replies += 1;
           const clipId = message.extra?.audio === true ? clipOf(message) : null;
-          const noAudio = message.extra !== null && message.extra.audio === false;
+          // An expired clip (deleted by the 6 h clean-up) leaves the text alone, with no note.
+          const noAudio = message.extra !== null && message.extra.audio === false && message.extra.expired !== true;
           return (
             <li key={message.id} className="flex flex-col items-start gap-1">
               <div className="flex max-w-[85%] items-start gap-2">

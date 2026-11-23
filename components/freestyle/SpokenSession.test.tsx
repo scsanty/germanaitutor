@@ -130,6 +130,14 @@ describe('SpokenSession', () => {
     expect(play).not.toHaveBeenCalled();
   });
 
+  it('shows a reply whose clip has expired as text only, with no play button and no note', () => {
+    const messages: SessionMessage[] = [...SESSION.messages, { id: 2, role: 'assistant', content: 'Alter Text.', extra: { clipId: 'r0', audio: false, expired: true } }];
+    renderWithIntl(<SpokenSession session={{ ...SESSION, messages }} onMessages={vi.fn()} />);
+    expect(screen.getByText(reply('Alter Text.'))).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /play/i })).not.toBeInTheDocument();
+    expect(screen.queryByText('Audio unavailable right now')).not.toBeInTheDocument();
+  });
+
   it('has no accessibility violations', async () => {
     const messages: SessionMessage[] = [...SESSION.messages, ...ADDED];
     const { container } = renderWithIntl(<SpokenSession session={{ ...SESSION, messages }} onMessages={vi.fn()} />);
