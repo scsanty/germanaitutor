@@ -4,6 +4,7 @@ import { join } from 'node:path';
 import { LEVELS } from './levels';
 import { validatePlacementExam } from './placementExamFormat';
 import { placementThresholds } from './placementScoring';
+import { englishWords } from '../../scripts/audio-content-checks';
 
 function loadDefaultExam() {
   const parsed = validatePlacementExam(JSON.parse(readFileSync(join(process.cwd(), 'data', 'placement-exam.json'), 'utf8')));
@@ -35,11 +36,12 @@ describe('the default placement exam', () => {
     }
   });
 
-  it('gives every spoken item a German prompt and model answer, and no English instruction-only task', () => {
+  it('gives every spoken item a non-empty German prompt and model answer, with no English words', () => {
     for (const q of loadDefaultExam().filter((x) => x.type === 'spoken')) {
       const c = q.content as { prompt: string; modelAnswer: string };
       expect(c.prompt.trim(), q.id).not.toBe('');
       expect(c.modelAnswer.trim(), q.id).not.toBe('');
+      expect(englishWords(`${c.prompt} ${c.modelAnswer}`), q.id).toEqual([]);
     }
   });
 

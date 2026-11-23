@@ -4,7 +4,7 @@ import type Database from 'better-sqlite3';
 import type { CefrLevel, Profile } from '../types';
 import { gradeFillBlank, gradeMultipleChoice } from '../tutoring/grading';
 import type { FreeTextGradingInput } from '../tutoring/freeTextGrading';
-import { higherLevel } from '../tutoring/levels';
+import { higherLevel, levelIndex } from '../tutoring/levels';
 import { validatePlacementExam, type PlacementQuestion } from '../tutoring/placementExamFormat';
 import { maxScore, placedLevel, pointsFor, servedExam, stopReasonAfterAnswer, type PlacementStopReason } from '../tutoring/placementScoring';
 import type {
@@ -325,7 +325,7 @@ export function createPlacementService(db: Database.Database, deps?: PlacementDe
       const placed = placedLevel(session.score, exam);
       const max = maxScore(exam);
       const best = getBestResult();
-      const isNewBest = best === null || session.score > best.score;
+      const isNewBest = best === null || isBetterResult({ score: session.score, maxScore: max, placedLevel: placed }, best);
       if (isNewBest) {
         db.prepare(
           `INSERT INTO placement_best_result (id, score, max_score, placed_level, stop_reason, taken_at)
@@ -373,6 +373,19 @@ export function createPlacementService(db: Database.Database, deps?: PlacementDe
     const profile = profiles.getProfile();
     if (profile.placementStatus !== 'pending') return profile;
     return profiles.writeLevelState({ placementStatus: 'skipped' });
+  }
+
+  // Sessions can serve different question sets (spoken items only when the speech service is up), so raw
+  // scores are not comparable: a higher placed level wins, and on the same level the higher share of the
+  // session's maximum. A tie keeps the earlier result.
+  function isBetterResult(
+    next: { score: number; maxScore: number; placedLevel: CefrLevel },
+    best: { score: number; maxScore: number; placedLevel: CefrLevel }
+  ): boolean {
+    const byLevel = levelIndex(next.placedLevel) - levelIndex(best.placedLevel);
+    if (byLevel !== 0) return byLevel > 0;
+    const share = (r: { score: number; maxScore: number }) => (r.maxScore > 0 ? r.score / r.maxScore : 0);
+    return share(next) > share(best);
   }
 
   function getBestResult(): PlacementBestResult | null {

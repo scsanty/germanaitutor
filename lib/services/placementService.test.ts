@@ -246,6 +246,46 @@ describe('placementService', () => {
     expect(service.getBestResult()).toMatchObject({ score: 2, takenAt: '2026-01-01 00:00:00' });
   });
 
+  it('keeps a higher placed level as the best result even when a bigger exam gives a higher raw score', async () => {
+    // Reviewer example: 36/120 placed B2 (spoken items left out) against 37/135 placed B1 (spoken items served).
+    const mc = (level: PlacementQuestion['level'], i: number): PlacementQuestion => ({
+      id: `${level}-${i}`, level, type: 'multiple_choice', content: { question: `${level} ${i}`, options: ['right', 'wrong'], correctIndex: 0 },
+    });
+    const exam = (['A1', 'A2', 'B1', 'B2', 'C1'] as const).flatMap((level) => Array.from({ length: 9 }, (_, i) => mc(level, i)));
+    const { db, service } = setup(exam);
+    db.prepare(
+      `INSERT INTO placement_best_result (id, score, max_score, placed_level, stop_reason, taken_at)
+       VALUES (1, 36, 120, 'B2', 'beyond_my_knowledge', '2026-01-01 00:00:00')`
+    ).run();
+    // A1 all right (9), A2 eight right and one wrong (16), B1 four right (12): 37 of 135, placed B1.
+    let state = await service.start();
+    for (let i = 0; i < 22 && state.status === 'in_progress'; i++) {
+      state = await service.answer(exam[i].id, i === 17 ? wrongAnswer(exam[i]) : rightAnswer(exam[i]));
+    }
+    expect(service.stop()).toMatchObject({ outcome: { score: 37, maxScore: 135, placedLevel: 'B1', isNewBest: false } });
+    expect(service.getBestResult()).toMatchObject({ score: 36, maxScore: 120, placedLevel: 'B2' });
+  });
+
+  it('on the same placed level, the higher share of the maximum wins, not the higher raw score', async () => {
+    const { db, service, exam } = setup();
+    const best = (score: number, max: number) =>
+      db.prepare(
+        `INSERT INTO placement_best_result (id, score, max_score, placed_level, stop_reason, taken_at)
+         VALUES (1, ?, ?, 'A2', 'beyond_my_knowledge', '2026-01-01 00:00:00')
+         ON CONFLICT(id) DO UPDATE SET score = excluded.score, max_score = excluded.max_score, placed_level = 'A2'`
+      ).run(score, max);
+    // Three right (A1 mc, A1 fill, A2 mc): 4 of 30, placed A2, a share of 0.133.
+    best(3, 10); // 0.3: a lower raw score but a higher share stays best.
+    await answerInOrder(service, exam, 3, 3);
+    expect(service.stop()).toMatchObject({ outcome: { score: 4, maxScore: 30, placedLevel: 'A2', isNewBest: false } });
+    expect(service.getBestResult()).toMatchObject({ score: 3, maxScore: 10 });
+
+    best(5, 40); // 0.125: the new 0.133 wins.
+    await answerInOrder(service, exam, 3, 3);
+    expect(service.stop()).toMatchObject({ outcome: { isNewBest: true } });
+    expect(service.getBestResult()).toMatchObject({ score: 4, maxScore: 30, placedLevel: 'A2' });
+  });
+
   it('accepts only one of two simultaneous answers to the same question', async () => {
     const gradeFreeText = vi.fn(async () => {
       await new Promise((resolve) => setTimeout(resolve, 5));

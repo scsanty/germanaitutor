@@ -1570,11 +1570,11 @@
       "type": "spoken_response",
       "content": {
         "instruction": {
-          "en": "You are at the town hall. Ask the clerk two polite questions and make one polite request.",
-          "de": "Sie sind im Rathaus. Stellen Sie zwei höfliche Fragen und bitten Sie höflich um etwas."
+          "en": "You are at the town hall. Ask the clerk two polite questions and make two polite requests.",
+          "de": "Sie sind im Rathaus. Stellen Sie zwei höfliche Fragen und bitten Sie zweimal höflich um etwas."
         },
         "prompt": "Sie möchten sich anmelden. Fragen Sie: Wo ist Zimmer 12? Wann ist das Büro offen? Bitten Sie um ein Formular und einen Kugelschreiber.",
-        "modelAnswer": "Guten Tag! Entschuldigung, wo ist bitte Zimmer zwölf? Und wann ist das Büro morgen offen? Ich möchte mich anmelden. Geben Sie mir bitte ein Formular? Und können Sie mir bitte einen Kugelschreiber geben? Vielen Dank!",
+        "modelAnswer": "Guten Tag! Entschuldigung, wo ist bitte Zimmer zwölf? Und wann ist das Büro morgen offen? Ich möchte mich anmelden. Kann ich bitte ein Formular haben? Und können Sie mir bitte einen Kugelschreiber geben? Vielen Dank!",
         "minSeconds": 20
       }
     }
