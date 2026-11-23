@@ -131,7 +131,7 @@ async def transcribe(request: Request, model: str = "small"):
     if not data:
         raise SpeechError(400, "empty audio")
     try:
-        pcm = await run_in_threadpool(audio_core.run_ffmpeg, audio_core.transcribe_args(), data)
+        pcm = await run_in_threadpool(audio_core.decode_for_transcription, data)
     except SpeechError as e:
         if e.status == 500 and e.message.startswith("ffmpeg failed"):
             raise SpeechError(400, "could not read the audio")

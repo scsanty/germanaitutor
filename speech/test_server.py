@@ -121,6 +121,36 @@ class ServerTest(unittest.TestCase):
             self.assertEqual(sorted(w), ["end", "probability", "start", "word"])
             self.assertTrue(0 <= w["probability"] <= 1)
 
+    def _roundtrip(self, out_args: list[str]) -> None:
+        """Render German speech, re-encode it as a browser would record it, and transcribe that."""
+        ogg = client.post("/render", json={"segments": [{"text": "Ich wohne seit drei Jahren in Berlin.", "voice": "thorsten"}]}).content
+        with tempfile.TemporaryDirectory() as tmp:
+            src = os.path.join(tmp, "in.ogg")
+            with open(src, "wb") as f:
+                f.write(ogg)
+            dst = os.path.join(tmp, "out")
+            audio_core.run_ffmpeg(["-i", src, *out_args, dst])
+            with open(dst, "rb") as f:
+                audio = f.read()
+        res = client.post("/transcribe?model=small", content=audio)
+        self.assertEqual(res.status_code, 200, res.text)
+        self.assertIn("berlin", res.json()["text"].lower())
+
+    @unittest.skipUnless(HAVE_VOICES, f"no voice files in {VOICE_DIR}")
+    def test_transcribe_reads_webm_opus(self):
+        # What Chrome and Firefox record (audio/webm;codecs=opus).
+        self._roundtrip(["-c:a", "libopus", "-b:a", "32k", "-f", "webm"])
+
+    @unittest.skipUnless(HAVE_VOICES, f"no voice files in {VOICE_DIR}")
+    def test_transcribe_reads_mp4_aac(self):
+        # What Safari records (audio/mp4), with the moov atom at the end as a seekable file has it.
+        self._roundtrip(["-c:a", "aac", "-b:a", "64k", "-f", "mp4"])
+
+    def test_transcribe_rejects_a_playlist(self):
+        # hls is not on the allow-list, so a playlist can't make ffmpeg open other files.
+        res = client.post("/transcribe", content=b"#EXTM3U\n#EXTINF:1,\n/etc/passwd\n")
+        self.assertEqual((res.status_code, res.json()), (400, {"error": "could not read the audio"}))
+
     def test_transcribe_rejects_empty_unknown_model_and_garbage(self):
         res = client.post("/transcribe", content=b"")
         self.assertEqual((res.status_code, res.json()), (400, {"error": "empty audio"}))
@@ -135,7 +165,8 @@ class ServerTest(unittest.TestCase):
 
     @unittest.skipUnless(HAVE_VOICES, f"no voice files in {VOICE_DIR}")
     def test_transcribe_rejects_audio_over_five_minutes(self):
-        silence = audio_core.run_ffmpeg(["-f", "lavfi", "-i", "anullsrc=r=16000:cl=mono", "-t", "301", "-c:a", "libopus", "-b:a", "16k", "-f", "ogg", "pipe:1"])
+        # Longer than the 302 s decode cap: decoding stops at the cap, which is still refused.
+        silence = audio_core.run_ffmpeg(["-f", "lavfi", "-i", "anullsrc=r=16000:cl=mono", "-t", "310", "-c:a", "libopus", "-b:a", "16k", "-f", "ogg", "pipe:1"])
         res = client.post("/transcribe", content=silence)
         self.assertEqual((res.status_code, res.json()), (400, {"error": "audio longer than 5 minutes"}))
 

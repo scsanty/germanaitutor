@@ -510,18 +510,43 @@ class BuildGuardsTest(unittest.TestCase):
 
 class TranscribeHelpersTest(unittest.TestCase):
     def test_decode_args_ask_for_16k_mono_s16le_pcm(self):
-        args = audio_core.transcribe_args()
+        args = audio_core.transcribe_args("/tmp/x/upload")
         self.assertEqual(args[args.index("-ar") + 1], "16000")
         self.assertEqual(args[args.index("-ac") + 1], "1")
         self.assertEqual(args[args.index("-f") + 1], "s16le")
+
+    def test_decode_args_whitelist_and_cap_like_convert(self):
+        args = audio_core.transcribe_args("/tmp/x/upload")
+        self.assertEqual(args[:6], ["-protocol_whitelist", "file", "-format_whitelist", audio_core.CONVERT_FORMATS, "-i", "/tmp/x/upload"])
+        self.assertNotIn("pipe:0", args)
+        # -t is an output option (after -i) and sits past the refusal point.
+        self.assertGreater(args.index("-t"), args.index("-i"))
+        self.assertEqual(args[args.index("-t") + 1], "302")
+        self.assertGreater(audio_core.TRANSCRIBE_DECODE_CAP_SECONDS, audio_core.MAX_TRANSCRIBE_SECONDS + audio_core.TRANSCRIBE_GRACE_SECONDS)
+
+    def test_decode_goes_through_a_temp_file(self):
+        seen = {}
+
+        def fake(args):
+            src = args[args.index("-i") + 1]
+            with open(src, "rb") as f:
+                seen["data"] = f.read()
+            seen["args"] = args
+            return b"pcm"
+
+        self.assertEqual(audio_core.decode_for_transcription(b"upload bytes", fake), b"pcm")
+        self.assertEqual(seen["data"], b"upload bytes")
+        self.assertFalse(os.path.exists(seen["args"][seen["args"].index("-i") + 1]))
 
     def test_duration_is_bytes_over_32000(self):
         self.assertEqual(audio_core.pcm_seconds(b"\0" * 64000), 2.0)
 
     def test_check_pcm_limits(self):
         self.assertEqual(audio_core.check_pcm(b"\0" * 32000 * 300), 300.0)
+        # A small overrun past 300 s (an auto-stopped browser take) is accepted.
+        self.assertEqual(audio_core.check_pcm(b"\0" * 32000 * 301), 301.0)
         with self.assertRaises(audio_core.SpeechError) as e:
-            audio_core.check_pcm(b"\0" * (32000 * 300 + 2))
+            audio_core.check_pcm(b"\0" * (32000 * 301 + 2))
         self.assertEqual((e.exception.status, e.exception.message), (400, "audio longer than 5 minutes"))
         with self.assertRaises(audio_core.SpeechError) as e:
             audio_core.check_pcm(b"")
