@@ -1,0 +1,148 @@
+{
+  "formatId": "telc-b2",
+  "partId": "sprechen-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b2__sprechen-3__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "In Ihrem Mehrfamilienhaus wohnen viele Parteien, die sich kaum kennen. Sie und Ihr Partner / Ihre Partnerin möchten im Sommer ein Hoffest für die Hausgemeinschaft organisieren.",
+          "materials": [
+            {
+              "title": "Hoffest für die Hausgemeinschaft planen",
+              "points": [
+                "Termin und Uhrzeit",
+                "Einladung der Nachbarn",
+                "Essen und Getränke: Wer bringt was mit?",
+                "Programm für Kinder und Erwachsene",
+                "Rücksicht auf Ruhezeiten und die Hausverwaltung",
+                "Plan B bei Regen"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zum dritten Teil. In Ihrem Haus kennen sich die Nachbarn kaum, und Sie möchten im Sommer ein Hoffest organisieren. Planen Sie gemeinsam, wie das Fest aussehen soll. Bringen Sie eigene Ideen ein und einigen Sie sich. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Nina",
+            "gender": "f",
+            "profile": "Nina ist 36, wohnt im zweiten Stock und hat zwei kleine Kinder. Sie ist für ein Fest am Samstagnachmittag mit Kinderprogramm und möchte, dass jeder etwas zum Buffet mitbringt. Sie macht sich Sorgen wegen des älteren Herrn im Erdgeschoss, der sich oft über Lärm beschwert, und möchte vorher mit der Hausverwaltung sprechen."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Bring in your own ideas and negotiate: „Ich hätte da eine Idee: …“, „Was hältst du davon, wenn …?“, „Das ist ein guter Punkt, aber wir sollten auch bedenken, dass …“, „Dann halten wir fest: …“.",
+            "de": "Bring eigene Ideen ein und verhandle: „Ich hätte da eine Idee: …“, „Was hältst du davon, wenn …?“, „Das ist ein guter Punkt, aber wir sollten auch bedenken, dass …“, „Dann halten wir fest: …“."
+          },
+          {
+            "en": "Bring your own ideas to every point (date, invitation, food, programme, quiet hours, rain plan), weigh Nina’s suggestions, find compromises and summarise the agreed plan at the end.",
+            "de": "Bring zu jedem Punkt eigene Ideen ein (Termin, Einladung, Essen, Programm, Ruhezeiten, Plan B), wäge Ninas Vorschläge ab, findet Kompromisse und fasse am Ende den gemeinsamen Plan zusammen."
+          },
+          {
+            "en": "Use the Konjunktiv II for polite suggestions („Wir könnten …“, „Es wäre besser, …“) and keep the verb at the end in wenn-, dass- and damit-clauses.",
+            "de": "Benutze den Konjunktiv II für höfliche Vorschläge („Wir könnten …“, „Es wäre besser, …“) und stell das Verb in wenn-, dass- und damit-Sätzen ans Ende."
+          },
+          {
+            "en": "Keep a friendly, cooperative tone; a rising intonation on your suggestions invites your partner to respond.",
+            "de": "Bleib freundlich und kooperativ im Ton; eine steigende Intonation bei Vorschlägen lädt deinen Partner zur Antwort ein."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b2__sprechen-3__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "In Ihrer Firma fangen im September zehn neue Auszubildende an. Sie und Ihr Partner / Ihre Partnerin sollen für die neuen Kolleginnen und Kollegen einen Einführungstag organisieren.",
+          "materials": [
+            {
+              "title": "Einführungstag für neue Auszubildende planen",
+              "points": [
+                "Ablauf des Tages",
+                "Vorstellung der Abteilungen",
+                "Gemeinsames Mittagessen oder Aktivität zum Kennenlernen",
+                "Paten oder Ansprechpersonen",
+                "Informationsmaterial",
+                "Budget von 500 Euro"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zum dritten Teil. In Ihrer Firma beginnen im September zehn neue Auszubildende, und Sie sollen einen Einführungstag für sie planen. Überlegen Sie gemeinsam, wie der Tag ablaufen soll, bringen Sie eigene Vorschläge ein und einigen Sie sich. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Oliver",
+            "gender": "m",
+            "profile": "Oliver ist 42 und arbeitet in der Personalabteilung. Er möchte einen gut strukturierten Tag mit Präsentationen aller Abteilungen und einem Rundgang. Für Teambuilding wie Klettern oder Kochkurs ist er skeptisch, weil das Budget knapp ist; er schlägt eine Kantine zum Mittagessen vor und möchte jedem Azubi einen Paten zuteilen."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Bring in your own ideas and negotiate: „Ich hätte da eine Idee: …“, „Was hältst du davon, wenn …?“, „Das ist ein guter Punkt, aber wir sollten auch bedenken, dass …“, „Dann halten wir fest: …“.",
+            "de": "Bring eigene Ideen ein und verhandle: „Ich hätte da eine Idee: …“, „Was hältst du davon, wenn …?“, „Das ist ein guter Punkt, aber wir sollten auch bedenken, dass …“, „Dann halten wir fest: …“."
+          },
+          {
+            "en": "Contribute your own ideas for each point (schedule, departments, lunch or activity, mentors, materials, budget), discuss Oliver’s proposals with reasons and agree on a concrete plan within 500 euros.",
+            "de": "Bring zu jedem Punkt eigene Ideen ein (Ablauf, Abteilungen, Mittagessen oder Aktivität, Paten, Material, Budget), diskutiere Olivers Vorschläge mit Begründung und einigt euch auf einen konkreten Plan im Rahmen von 500 Euro."
+          },
+          {
+            "en": "Use the Konjunktiv II for polite suggestions („Wir könnten …“, „Es wäre besser, …“) and keep the verb at the end in wenn-, dass- and damit-clauses.",
+            "de": "Benutze den Konjunktiv II für höfliche Vorschläge („Wir könnten …“, „Es wäre besser, …“) und stell das Verb in wenn-, dass- und damit-Sätzen ans Ende."
+          },
+          {
+            "en": "Keep a friendly, cooperative tone; a rising intonation on your suggestions invites your partner to respond.",
+            "de": "Bleib freundlich und kooperativ im Ton; eine steigende Intonation bei Vorschlägen lädt deinen Partner zur Antwort ein."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b2__sprechen-3__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Ihr Sportverein braucht Geld für neue Trikots und einen Kleinbus. Sie und Ihr Partner / Ihre Partnerin sollen einen Spendenlauf organisieren, bei dem Sponsoren pro gelaufene Runde einen Betrag spenden.",
+          "materials": [
+            {
+              "title": "Spendenlauf für den Sportverein planen",
+              "points": [
+                "Ort, Strecke und Termin",
+                "Teilnehmende gewinnen (Mitglieder, Schulen, Familien)",
+                "Sponsoren finden",
+                "Werbung und Presse",
+                "Verpflegung und Sanitätsdienst",
+                "Helferinnen und Helfer am Tag selbst"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zum dritten Teil. Ihr Sportverein braucht Geld, und Sie sollen gemeinsam einen Spendenlauf organisieren. Planen Sie zusammen, wie der Lauf aussehen soll, machen Sie Vorschläge, reagieren Sie auf die Vorschläge Ihrer Partnerin und einigen Sie sich. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Selin",
+            "gender": "f",
+            "profile": "Selin ist 30, trainiert die Jugendmannschaft und kennt viele Eltern und zwei Schulleiter. Sie möchte den Lauf im Stadtpark machen, auch wenn dafür eine Genehmigung nötig ist, und hat Kontakt zu einer Bäckerei und einem Autohaus als mögliche Sponsoren. Mit Pressearbeit kennt sie sich nicht aus."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Bring in your own ideas and negotiate: „Ich hätte da eine Idee: …“, „Was hältst du davon, wenn …?“, „Das ist ein guter Punkt, aber wir sollten auch bedenken, dass …“, „Dann halten wir fest: …“.",
+            "de": "Bring eigene Ideen ein und verhandle: „Ich hätte da eine Idee: …“, „Was hältst du davon, wenn …?“, „Das ist ein guter Punkt, aber wir sollten auch bedenken, dass …“, „Dann halten wir fest: …“."
+          },
+          {
+            "en": "Make your own suggestions for each point (place and date, participants, sponsors, advertising, food and first aid, helpers), react to Selin’s ideas, negotiate and summarise the plan.",
+            "de": "Mach zu jedem Punkt eigene Vorschläge (Ort und Termin, Teilnehmende, Sponsoren, Werbung, Verpflegung und Sanitätsdienst, Helfer), reagiere auf Selins Ideen, verhandle und fasse den Plan zusammen."
+          },
+          {
+            "en": "Use the Konjunktiv II for polite suggestions („Wir könnten …“, „Es wäre besser, …“) and keep the verb at the end in wenn-, dass- and damit-clauses.",
+            "de": "Benutze den Konjunktiv II für höfliche Vorschläge („Wir könnten …“, „Es wäre besser, …“) und stell das Verb in wenn-, dass- und damit-Sätzen ans Ende."
+          },
+          {
+            "en": "Keep a friendly, cooperative tone; a rising intonation on your suggestions invites your partner to respond.",
+            "de": "Bleib freundlich und kooperativ im Ton; eine steigende Intonation bei Vorschlägen lädt deinen Partner zur Antwort ein."
+          }
+        ]
+      }
+    }
+  ]
+}

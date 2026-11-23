@@ -1,0 +1,163 @@
+{
+  "formatId": "telc-a1",
+  "partId": "sprechen-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-a1__sprechen-2__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie und Ihr Partner / Ihre Partnerin sprechen über das Thema „Einkaufen“. Jeder zieht nacheinander eine Karte mit einem Wort, stellt dazu eine Frage und beantwortet die Frage des anderen.",
+          "materials": [
+            {
+              "title": "Thema: Einkaufen – Ihre Karten",
+              "points": [
+                "Supermarkt",
+                "Preis",
+                "Samstag"
+              ]
+            },
+            {
+              "title": "Die Karten Ihres Partners / Ihrer Partnerin",
+              "points": [
+                "Kleidung",
+                "Markt",
+                "Geld"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2. Das Thema ist „Einkaufen“. Sie ziehen eine Karte und stellen Ihrem Partner eine Frage zu dem Wort auf der Karte. Ihr Partner antwortet. Dann fragt Ihr Partner Sie. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Karim",
+            "gender": "m",
+            "profile": "Karim ist 27, kommt aus Tunesien und arbeitet in einer Bäckerei. Er kauft meistens im Discounter ein, geht samstags gern auf den Markt und gibt nicht viel Geld für Kleidung aus. Er antwortet in kurzen, einfachen Sätzen und stellt zu seinen Karten Kleidung, Markt und Geld je eine Frage."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Start your question with a W-word (Was, Wo, Wann, Wie oft) or with the verb, and answer with a whole sentence, not one word.",
+            "de": "Beginne deine Frage mit einem W-Wort (Was, Wo, Wann, Wie oft) oder mit dem Verb und antworte mit einem ganzen Satz, nicht mit einem Wort."
+          },
+          {
+            "en": "Ask one question about each of your cards (Supermarkt, Preis, Samstag) that fits the topic „Einkaufen“, and answer each of your partner’s questions with a full sentence.",
+            "de": "Stell zu jeder deiner Karten (Supermarkt, Preis, Samstag) eine Frage, die zum Thema „Einkaufen“ passt, und beantworte jede Frage deines Partners mit einem ganzen Satz."
+          },
+          {
+            "en": "In W-questions the verb comes second („Wo kaufst du …?“), in yes/no questions first („Hast du …?“); use the du-form with your partner.",
+            "de": "In W-Fragen steht das Verb an zweiter Stelle („Wo kaufst du …?“), in Ja/Nein-Fragen am Anfang („Hast du …?“); benutze mit deinem Partner die du-Form."
+          },
+          {
+            "en": "Let your voice rise at the end of yes/no questions and fall at the end of answers, so your partner hears the difference.",
+            "de": "Lass die Stimme am Ende von Ja/Nein-Fragen steigen und am Ende von Antworten fallen, damit dein Partner den Unterschied hört."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a1__sprechen-2__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie und Ihr Partner / Ihre Partnerin sprechen über das Thema „Wohnen“. Jeder zieht nacheinander eine Karte mit einem Wort, stellt dazu eine Frage und beantwortet die Frage des anderen.",
+          "materials": [
+            {
+              "title": "Thema: Wohnen – Ihre Karten",
+              "points": [
+                "Zimmer",
+                "Balkon",
+                "Nachbarn"
+              ]
+            },
+            {
+              "title": "Die Karten Ihres Partners / Ihrer Partnerin",
+              "points": [
+                "Küche",
+                "Miete",
+                "Garten"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2. Das Thema ist „Wohnen“. Bitte ziehen Sie eine Karte und fragen Sie Ihre Partnerin etwas zu dem Wort. Ihre Partnerin antwortet und fragt Sie dann auch etwas. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Olena",
+            "gender": "f",
+            "profile": "Olena ist 35, kommt aus der Ukraine und wohnt mit ihrem Sohn in einer kleinen Zwei-Zimmer-Wohnung in Bremen. Die Küche ist klein, die Miete ist hoch, aber die Nachbarn sind nett. Einen Garten hat sie nicht. Sie spricht einfach und langsam und stellt zu ihren Karten Küche, Miete und Garten je eine Frage."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Start your question with a W-word (Was, Wo, Wann, Wie oft) or with the verb, and answer with a whole sentence, not one word.",
+            "de": "Beginne deine Frage mit einem W-Wort (Was, Wo, Wann, Wie oft) oder mit dem Verb und antworte mit einem ganzen Satz, nicht mit einem Wort."
+          },
+          {
+            "en": "Make one question for each of your cards (Zimmer, Balkon, Nachbarn) about your partner’s home, and answer her questions about your kitchen, rent and garden.",
+            "de": "Stell zu jeder deiner Karten (Zimmer, Balkon, Nachbarn) eine Frage zur Wohnung deiner Partnerin und beantworte ihre Fragen zu deiner Küche, Miete und deinem Garten."
+          },
+          {
+            "en": "In W-questions the verb comes second („Wo kaufst du …?“), in yes/no questions first („Hast du …?“); use the du-form with your partner.",
+            "de": "In W-Fragen steht das Verb an zweiter Stelle („Wo kaufst du …?“), in Ja/Nein-Fragen am Anfang („Hast du …?“); benutze mit deinem Partner die du-Form."
+          },
+          {
+            "en": "Let your voice rise at the end of yes/no questions and fall at the end of answers, so your partner hears the difference.",
+            "de": "Lass die Stimme am Ende von Ja/Nein-Fragen steigen und am Ende von Antworten fallen, damit dein Partner den Unterschied hört."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a1__sprechen-2__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie und Ihr Partner / Ihre Partnerin sprechen über das Thema „Familie und Freunde“. Jeder zieht nacheinander eine Karte mit einem Wort, stellt dazu eine Frage und beantwortet die Frage des anderen.",
+          "materials": [
+            {
+              "title": "Thema: Familie und Freunde – Ihre Karten",
+              "points": [
+                "Geschwister",
+                "Geburtstag",
+                "Wochenende"
+              ]
+            },
+            {
+              "title": "Die Karten Ihres Partners / Ihrer Partnerin",
+              "points": [
+                "Kinder",
+                "Eltern",
+                "Telefon"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2. Das Thema ist „Familie und Freunde“. Sie ziehen eine Karte, zum Beispiel „Geschwister“, und stellen eine Frage dazu. Ihr Partner antwortet. Dann stellt Ihr Partner eine Frage. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Paolo",
+            "gender": "m",
+            "profile": "Paolo ist 41, kommt aus Italien und ist Busfahrer in Nürnberg. Er hat zwei Schwestern, eine Tochter und einen Sohn; seine Eltern wohnen in Neapel, und er telefoniert jeden Sonntag mit ihnen. Am Wochenende trifft er Freunde im Park. Er antwortet fröhlich in kurzen Sätzen und fragt zu Kinder, Eltern und Telefon."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Start your question with a W-word (Was, Wo, Wann, Wie oft) or with the verb, and answer with a whole sentence, not one word.",
+            "de": "Beginne deine Frage mit einem W-Wort (Was, Wo, Wann, Wie oft) oder mit dem Verb und antworte mit einem ganzen Satz, nicht mit einem Wort."
+          },
+          {
+            "en": "Ask about your partner’s brothers and sisters, birthday and weekend, one question per card, and answer his questions about children, parents and phone calls with short full sentences.",
+            "de": "Frag deinen Partner zu Geschwistern, Geburtstag und Wochenende, eine Frage pro Karte, und beantworte seine Fragen zu Kindern, Eltern und Telefonieren mit kurzen ganzen Sätzen."
+          },
+          {
+            "en": "In W-questions the verb comes second („Wo kaufst du …?“), in yes/no questions first („Hast du …?“); use the du-form with your partner.",
+            "de": "In W-Fragen steht das Verb an zweiter Stelle („Wo kaufst du …?“), in Ja/Nein-Fragen am Anfang („Hast du …?“); benutze mit deinem Partner die du-Form."
+          },
+          {
+            "en": "Let your voice rise at the end of yes/no questions and fall at the end of answers, so your partner hears the difference.",
+            "de": "Lass die Stimme am Ende von Ja/Nein-Fragen steigen und am Ende von Antworten fallen, damit dein Partner den Unterschied hört."
+          }
+        ]
+      }
+    }
+  ]
+}

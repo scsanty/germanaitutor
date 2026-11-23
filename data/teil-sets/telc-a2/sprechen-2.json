@@ -1,0 +1,163 @@
+{
+  "formatId": "telc-a2",
+  "partId": "sprechen-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-a2__sprechen-2__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie und Ihr Partner / Ihre Partnerin unterhalten sich über das Thema „Arbeit und Beruf“. Jeder hat drei Karten. Stellen Sie zu jeder Karte eine Frage und beantworten Sie die Fragen Ihres Partners / Ihrer Partnerin.",
+          "materials": [
+            {
+              "title": "Thema: Arbeit und Beruf – Ihre drei Karten",
+              "points": [
+                "Arbeitszeit",
+                "Kollegen",
+                "Weg zur Arbeit"
+              ]
+            },
+            {
+              "title": "Die Karten Ihres Partners / Ihrer Partnerin",
+              "points": [
+                "Mittagspause",
+                "Traumberuf",
+                "Urlaubstage"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2. Das Thema ist „Arbeit und Beruf“. Sie haben drei Karten. Stellen Sie Ihrer Partnerin zu jeder Karte eine Frage. Ihre Partnerin antwortet und stellt Ihnen dann auch Fragen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Ewa",
+            "gender": "f",
+            "profile": "Ewa ist 33, kommt aus Polen und arbeitet als Verkäuferin in einem Baumarkt in Hannover. Sie arbeitet im Schichtdienst, mag ihre Kollegen und fährt mit dem Fahrrad zur Arbeit. Ihr Traumberuf ist Gärtnerin. Sie fragt zu Mittagspause, Traumberuf und Urlaubstagen."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Ask open questions (Wie, Was, Warum, Wie oft) and give answers with a reason or an example: „…, weil …“, „Zum Beispiel …“.",
+            "de": "Stell offene Fragen (Wie, Was, Warum, Wie oft) und gib Antworten mit Grund oder Beispiel: „…, weil …“, „Zum Beispiel …“."
+          },
+          {
+            "en": "Ask one open question for each card (working hours, colleagues, way to work) and answer Ewa’s three questions with a reason or an example, so that it becomes a real conversation.",
+            "de": "Stell zu jeder Karte (Arbeitszeit, Kollegen, Weg zur Arbeit) eine offene Frage und beantworte Ewas drei Fragen mit einem Grund oder einem Beispiel, damit ein echtes Gespräch entsteht."
+          },
+          {
+            "en": "After weil the verb goes to the end („…, weil ich viel arbeite.“); in questions the verb comes right after the W-word.",
+            "de": "Nach weil steht das Verb am Ende („…, weil ich viel arbeite.“); in Fragen steht das Verb direkt nach dem W-Wort."
+          },
+          {
+            "en": "Pronounce word endings clearly (-en, -er, -t), because they show the person and the plural.",
+            "de": "Sprich Wortendungen deutlich (-en, -er, -t), denn sie zeigen die Person und den Plural."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a2__sprechen-2__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie und Ihr Partner / Ihre Partnerin unterhalten sich über das Thema „Gesundheit“. Jeder hat drei Karten. Stellen Sie zu jeder Karte eine Frage und beantworten Sie die Fragen Ihres Partners / Ihrer Partnerin.",
+          "materials": [
+            {
+              "title": "Thema: Gesundheit – Ihre drei Karten",
+              "points": [
+                "Schlaf",
+                "Arztbesuch",
+                "Bewegung"
+              ]
+            },
+            {
+              "title": "Die Karten Ihres Partners / Ihrer Partnerin",
+              "points": [
+                "Frühstück",
+                "Erkältung",
+                "Stress"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2. Das Thema ist „Gesundheit“. Sie haben drei Karten. Bitte stellen Sie Ihrem Partner zu jeder Karte eine Frage, und beantworten Sie dann seine Fragen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Thanh",
+            "gender": "m",
+            "profile": "Thanh ist 29, kommt aus Vietnam und macht eine Ausbildung als Koch in Dresden. Er schläft oft zu wenig, weil er spät arbeitet, geht selten zum Arzt und läuft am Wochenende gern an der Elbe. Er fragt zu Frühstück, Erkältung und Stress."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Ask open questions (Wie, Was, Warum, Wie oft) and give answers with a reason or an example: „…, weil …“, „Zum Beispiel …“.",
+            "de": "Stell offene Fragen (Wie, Was, Warum, Wie oft) und gib Antworten mit Grund oder Beispiel: „…, weil …“, „Zum Beispiel …“."
+          },
+          {
+            "en": "For each card (sleep, visiting the doctor, exercise) ask a question about your partner’s habits, and answer his questions about breakfast, colds and stress with details from your life.",
+            "de": "Stell zu jeder Karte (Schlaf, Arztbesuch, Bewegung) eine Frage zu den Gewohnheiten deines Partners und beantworte seine Fragen zu Frühstück, Erkältung und Stress mit Details aus deinem Leben."
+          },
+          {
+            "en": "After weil the verb goes to the end („…, weil ich viel arbeite.“); in questions the verb comes right after the W-word.",
+            "de": "Nach weil steht das Verb am Ende („…, weil ich viel arbeite.“); in Fragen steht das Verb direkt nach dem W-Wort."
+          },
+          {
+            "en": "Pronounce word endings clearly (-en, -er, -t), because they show the person and the plural.",
+            "de": "Sprich Wortendungen deutlich (-en, -er, -t), denn sie zeigen die Person und den Plural."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a2__sprechen-2__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie und Ihr Partner / Ihre Partnerin unterhalten sich über das Thema „Feste und Feiern“. Jeder hat drei Karten. Stellen Sie zu jeder Karte eine Frage und beantworten Sie die Fragen Ihres Partners / Ihrer Partnerin.",
+          "materials": [
+            {
+              "title": "Thema: Feste und Feiern – Ihre drei Karten",
+              "points": [
+                "Geburtstag",
+                "Geschenke",
+                "Hochzeit"
+              ]
+            },
+            {
+              "title": "Die Karten Ihres Partners / Ihrer Partnerin",
+              "points": [
+                "Silvester",
+                "Essen",
+                "Familienfest"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2. Das Thema ist „Feste und Feiern“. Sie haben drei Karten. Stellen Sie Ihrer Partnerin zu jeder Karte eine Frage. Ihre Partnerin antwortet und fragt Sie dann. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Amina",
+            "gender": "f",
+            "profile": "Amina ist 38, kommt aus Somalia und wohnt mit ihrer großen Familie in Kassel. Sie feiert Geburtstage gern mit vielen Leuten und viel Essen, schenkt meistens etwas Selbstgemachtes und war letzten Sommer auf der Hochzeit ihrer Cousine. Sie fragt zu Silvester, Essen und Familienfest."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Ask open questions (Wie, Was, Warum, Wie oft) and give answers with a reason or an example: „…, weil …“, „Zum Beispiel …“.",
+            "de": "Stell offene Fragen (Wie, Was, Warum, Wie oft) und gib Antworten mit Grund oder Beispiel: „…, weil …“, „Zum Beispiel …“."
+          },
+          {
+            "en": "Ask one question per card (birthday, presents, wedding), for example „Wie feierst du …?“ or „Was schenkst du …?“, and answer Amina’s questions about New Year’s Eve, food and family celebrations.",
+            "de": "Stell eine Frage pro Karte (Geburtstag, Geschenke, Hochzeit), zum Beispiel „Wie feierst du …?“ oder „Was schenkst du …?“, und beantworte Aminas Fragen zu Silvester, Essen und Familienfest."
+          },
+          {
+            "en": "After weil the verb goes to the end („…, weil ich viel arbeite.“); in questions the verb comes right after the W-word.",
+            "de": "Nach weil steht das Verb am Ende („…, weil ich viel arbeite.“); in Fragen steht das Verb direkt nach dem W-Wort."
+          },
+          {
+            "en": "Pronounce word endings clearly (-en, -er, -t), because they show the person and the plural.",
+            "de": "Sprich Wortendungen deutlich (-en, -er, -t), denn sie zeigen die Person und den Plural."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "formatId": "telc-b2",
+  "partId": "sprechen-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b2__sprechen-1__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie haben in der Vorbereitungszeit ein Thema vorbereitet: „Ein Umzug in eine andere Stadt oder ein anderes Land“. Sprechen Sie etwa zwei Minuten über Ihre Erfahrungen. Danach stellt Ihnen Ihr Partner / Ihre Partnerin Fragen.",
+          "materials": [
+            {
+              "title": "Thema: Ein Umzug in eine andere Stadt oder ein anderes Land",
+              "points": [
+                "Wohin sind Sie gezogen und warum?",
+                "Wie haben Sie sich vorbereitet?",
+                "Was war am Anfang besonders schwierig?",
+                "Was hat Ihnen geholfen, sich einzuleben?",
+                "Was würden Sie heute anders machen?"
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Im ersten Teil sprechen Sie über ein Thema, das Sie vorbereitet haben. Erzählen Sie bitte etwa zwei Minuten von Ihren Erfahrungen mit einem Umzug in eine andere Stadt oder ein anderes Land. Ihre Partnerin hört zu und stellt Ihnen anschließend Fragen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Julia",
+            "gender": "f",
+            "profile": "Julia ist 31, Ingenieurin, und ist beruflich schon zweimal umgezogen, zuletzt von Hamburg nach Wien. Sie hört aufmerksam zu und stellt danach konkrete Nachfragen, zum Beispiel zur Wohnungssuche, zu Behörden, zu neuen Kontakten und dazu, ob der Lernende wieder umziehen würde."
+          },
+          "turns": 5
+        },
+        "explanations": [
+          {
+            "en": "Structure your talk: „Ich möchte von … erzählen“, „Zunächst …“, „Was mich besonders überrascht hat, war …“, „Rückblickend würde ich sagen …“, and use precise words for feelings and results.",
+            "de": "Gliedere deinen Vortrag: „Ich möchte von … erzählen“, „Zunächst …“, „Was mich besonders überrascht hat, war …“, „Rückblickend würde ich sagen …“, und benutze genaue Wörter für Gefühle und Ergebnisse."
+          },
+          {
+            "en": "Cover the guiding questions in a clear order (where and why, preparation, difficulties, what helped, what you would do differently) and give detailed answers to Julia’s follow-up questions.",
+            "de": "Geh in klarer Reihenfolge auf die Leitfragen ein (wohin und warum, Vorbereitung, Schwierigkeiten, was geholfen hat, was du anders machen würdest) und beantworte Julias Nachfragen ausführlich."
+          },
+          {
+            "en": "Tell the story in the past (Perfekt in speech, Präteritum for sein, haben and the modal verbs), and use subordinate clauses with als, nachdem and obwohl correctly.",
+            "de": "Erzähl in der Vergangenheit (Perfekt beim Sprechen, Präteritum bei sein, haben und den Modalverben) und bilde Nebensätze mit als, nachdem und obwohl korrekt."
+          },
+          {
+            "en": "Vary your intonation and pace to keep the listener interested, and pause briefly between the parts of your talk.",
+            "de": "Variiere Intonation und Tempo, damit der Zuhörer interessiert bleibt, und mach zwischen den Teilen deines Vortrags kurze Pausen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b2__sprechen-1__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie haben in der Vorbereitungszeit ein Thema vorbereitet: „Eine Weiterbildung, die Sie beruflich oder persönlich weitergebracht hat“. Sprechen Sie etwa zwei Minuten über Ihre Erfahrungen. Danach stellt Ihnen Ihr Partner / Ihre Partnerin Fragen.",
+          "materials": [
+            {
+              "title": "Thema: Eine Weiterbildung, die Sie weitergebracht hat",
+              "points": [
+                "Welche Weiterbildung oder welchen Kurs haben Sie gemacht?",
+                "Warum haben Sie sich dafür entschieden?",
+                "Wie lief die Weiterbildung ab?",
+                "Was hat sie Ihnen gebracht?",
+                "Würden Sie sie weiterempfehlen?"
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Im ersten Teil berichten Sie über ein Thema, das Sie vorbereitet haben. Erzählen Sie bitte etwa zwei Minuten von einer Weiterbildung oder einem Kurs, der Sie beruflich oder persönlich weitergebracht hat. Ihr Partner stellt Ihnen danach einige Fragen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Florian",
+            "gender": "m",
+            "profile": "Florian ist 38 und arbeitet als Teamleiter in einer Spedition. Sein Arbeitgeber bezahlt Weiterbildungen, aber er ist unsicher, ob sich ein berufsbegleitender Kurs neben Familie und Job lohnt. Er fragt nach Kosten, Zeitaufwand, Unterstützung durch den Arbeitgeber und konkreten Vorteilen."
+          },
+          "turns": 5
+        },
+        "explanations": [
+          {
+            "en": "Structure your talk: „Ich möchte von … erzählen“, „Zunächst …“, „Was mich besonders überrascht hat, war …“, „Rückblickend würde ich sagen …“, and use precise words for feelings and results.",
+            "de": "Gliedere deinen Vortrag: „Ich möchte von … erzählen“, „Zunächst …“, „Was mich besonders überrascht hat, war …“, „Rückblickend würde ich sagen …“, und benutze genaue Wörter für Gefühle und Ergebnisse."
+          },
+          {
+            "en": "Talk through all the guiding points (which course, why, how it worked, what it brought you, recommendation) with concrete examples, then answer Florian’s questions about cost and time in detail.",
+            "de": "Sprich mit konkreten Beispielen über alle Leitpunkte (welcher Kurs, warum, Ablauf, Nutzen, Empfehlung) und beantworte dann Florians Fragen zu Kosten und Zeit ausführlich."
+          },
+          {
+            "en": "Tell the story in the past (Perfekt in speech, Präteritum for sein, haben and the modal verbs), and use subordinate clauses with als, nachdem and obwohl correctly.",
+            "de": "Erzähl in der Vergangenheit (Perfekt beim Sprechen, Präteritum bei sein, haben und den Modalverben) und bilde Nebensätze mit als, nachdem und obwohl korrekt."
+          },
+          {
+            "en": "Vary your intonation and pace to keep the listener interested, and pause briefly between the parts of your talk.",
+            "de": "Variiere Intonation und Tempo, damit der Zuhörer interessiert bleibt, und mach zwischen den Teilen deines Vortrags kurze Pausen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b2__sprechen-1__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie haben in der Vorbereitungszeit ein Thema vorbereitet: „Eine Reise, die nicht nach Plan verlief“. Sprechen Sie etwa zwei Minuten über Ihre Erfahrungen. Danach stellt Ihnen Ihr Partner / Ihre Partnerin Fragen.",
+          "materials": [
+            {
+              "title": "Thema: Eine Reise, die nicht nach Plan verlief",
+              "points": [
+                "Wohin ging die Reise, und was hatten Sie geplant?",
+                "Was ist schiefgegangen?",
+                "Wie haben Sie reagiert, und wer hat Ihnen geholfen?",
+                "Wie ging die Reise weiter?",
+                "Was haben Sie aus dieser Erfahrung gelernt?"
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Im ersten Teil erzählen Sie von einem Thema, das Sie vorbereitet haben. Berichten Sie bitte etwa zwei Minuten von einer Reise, die nicht nach Plan verlief. Ihre Partnerin hört zu und stellt Ihnen danach Fragen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Mariam",
+            "gender": "f",
+            "profile": "Mariam ist 35 und arbeitet als Apothekerin. Sie reist viel und hat einmal wegen eines Streiks zwei Tage am Flughafen in Lissabon festgesessen. Sie hört interessiert zu und fragt nach Details: Kosten, Versicherung, wie man so etwas vermeiden kann und ob man wieder dorthin reisen würde."
+          },
+          "turns": 5
+        },
+        "explanations": [
+          {
+            "en": "Structure your talk: „Ich möchte von … erzählen“, „Zunächst …“, „Was mich besonders überrascht hat, war …“, „Rückblickend würde ich sagen …“, and use precise words for feelings and results.",
+            "de": "Gliedere deinen Vortrag: „Ich möchte von … erzählen“, „Zunächst …“, „Was mich besonders überrascht hat, war …“, „Rückblickend würde ich sagen …“, und benutze genaue Wörter für Gefühle und Ergebnisse."
+          },
+          {
+            "en": "Tell the story in a clear sequence (plan, what went wrong, your reaction, how it continued, what you learned), then answer Mariam’s questions with details and your own assessment.",
+            "de": "Erzähl die Geschichte in klarer Reihenfolge (Plan, was schiefging, deine Reaktion, wie es weiterging, was du gelernt hast) und beantworte dann Mariams Fragen mit Details und deiner eigenen Einschätzung."
+          },
+          {
+            "en": "Tell the story in the past (Perfekt in speech, Präteritum for sein, haben and the modal verbs), and use subordinate clauses with als, nachdem and obwohl correctly.",
+            "de": "Erzähl in der Vergangenheit (Perfekt beim Sprechen, Präteritum bei sein, haben und den Modalverben) und bilde Nebensätze mit als, nachdem und obwohl korrekt."
+          },
+          {
+            "en": "Vary your intonation and pace to keep the listener interested, and pause briefly between the parts of your talk.",
+            "de": "Variiere Intonation und Tempo, damit der Zuhörer interessiert bleibt, und mach zwischen den Teilen deines Vortrags kurze Pausen."
+          }
+        ]
+      }
+    }
+  ]
+}

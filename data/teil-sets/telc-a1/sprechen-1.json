@@ -1,0 +1,172 @@
+{
+  "formatId": "telc-a1",
+  "partId": "sprechen-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-a1__sprechen-1__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie sind zum ersten Mal in einem neuen Deutschkurs an der Volkshochschule. Stellen Sie sich der Gruppe vor. Danach buchstabieren Sie Ihren Vornamen und nennen Ihre Handynummer.",
+          "materials": [
+            {
+              "title": "Stellen Sie sich vor",
+              "points": [
+                "Name?",
+                "Alter?",
+                "Land?",
+                "Wohnort?",
+                "Sprachen?",
+                "Beruf?",
+                "Hobby?"
+              ]
+            },
+            {
+              "title": "Danach",
+              "points": [
+                "Buchstabieren Sie Ihren Vornamen.",
+                "Nennen Sie Ihre Handynummer."
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1. Bitte stellen Sie sich vor. Sagen Sie etwas zu Ihrem Namen, Alter, Land, Wohnort, zu Ihren Sprachen, Ihrem Beruf und Ihrem Hobby. Danach buchstabieren Sie bitte Ihren Vornamen und sagen Ihre Handynummer. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Herr Bauer",
+            "gender": "m",
+            "profile": "Herr Bauer ist der Kursleiter. Er hört freundlich zu, stellt nur kurze, einfache Fragen („Wie bitte?“, „Und Ihr Hobby?“) und bittet am Ende ums Buchstabieren und um die Handynummer, wenn das noch fehlt."
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Use short, complete sentences for each key word: „Ich heiße …“, „Ich komme aus …“, „Ich wohne in …“, „Ich spreche …“.",
+            "de": "Sprich zu jedem Stichwort in kurzen, ganzen Sätzen: „Ich heiße …“, „Ich komme aus …“, „Ich wohne in …“, „Ich spreche …“."
+          },
+          {
+            "en": "Say something about every key word on the sheet, then spell your first name letter by letter and give your mobile number in pairs of digits or digit by digit.",
+            "de": "Sag etwas zu jedem Stichwort auf dem Blatt, buchstabiere dann deinen Vornamen Buchstabe für Buchstabe und nenne deine Handynummer in Zweiergruppen oder Ziffer für Ziffer."
+          },
+          {
+            "en": "Put the verb in second place and use the ich-form: „Ich bin …“, „Ich habe …“, „Ich arbeite als …“ (no article before the job: „Ich bin Lehrerin“).",
+            "de": "Stell das Verb an die zweite Stelle und benutze die ich-Form: „Ich bin …“, „Ich habe …“, „Ich arbeite als …“ (ohne Artikel vor dem Beruf: „Ich bin Lehrerin“)."
+          },
+          {
+            "en": "Learn the German alphabet for spelling (especially E, I, J, V, W, Y and the umlauts) and say numbers slowly, digit by digit for phone numbers.",
+            "de": "Lerne das deutsche Alphabet zum Buchstabieren (besonders E, I, J, V, W, Y und die Umlaute) und sprich Zahlen langsam, bei Telefonnummern Ziffer für Ziffer."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a1__sprechen-1__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie melden sich in einem Sportverein an. Die Trainerin möchte die neuen Mitglieder kennenlernen. Stellen Sie sich vor. Danach buchstabieren Sie den Namen Ihrer Straße und nennen Ihre Hausnummer und Postleitzahl.",
+          "materials": [
+            {
+              "title": "Stellen Sie sich vor",
+              "points": [
+                "Name?",
+                "Alter?",
+                "Land?",
+                "Wohnort?",
+                "Sprachen?",
+                "Beruf?",
+                "Hobby?"
+              ]
+            },
+            {
+              "title": "Danach",
+              "points": [
+                "Buchstabieren Sie Ihre Straße.",
+                "Nennen Sie Ihre Hausnummer und Ihre Postleitzahl."
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1. Bitte stellen Sie sich vor. Die Stichwörter auf dem Blatt helfen Ihnen: Name, Alter, Land, Wohnort, Sprachen, Beruf und Hobby. Danach buchstabieren Sie bitte Ihre Straße und sagen Ihre Hausnummer und Ihre Postleitzahl. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Frau Yilmaz",
+            "gender": "f",
+            "profile": "Frau Yilmaz ist Trainerin im Sportverein und füllt die Anmeldung aus. Sie ist freundlich, spricht langsam und fragt kurz nach, wenn eine Angabe fehlt („Und wo wohnen Sie?“, „Wie ist die Postleitzahl?“)."
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Use short, complete sentences for each key word: „Ich heiße …“, „Ich komme aus …“, „Ich wohne in …“, „Ich spreche …“.",
+            "de": "Sprich zu jedem Stichwort in kurzen, ganzen Sätzen: „Ich heiße …“, „Ich komme aus …“, „Ich wohne in …“, „Ich spreche …“."
+          },
+          {
+            "en": "Cover all seven key words, then spell your street name letter by letter (say „ß“ as „Eszett“) and give the house number and the five-digit postcode.",
+            "de": "Sprich über alle sieben Stichwörter, buchstabiere dann deinen Straßennamen Buchstabe für Buchstabe (sag „ß“ als „Eszett“) und nenne die Hausnummer und die fünfstellige Postleitzahl."
+          },
+          {
+            "en": "Put the verb in second place and use the ich-form: „Ich bin …“, „Ich habe …“, „Ich arbeite als …“ (no article before the job: „Ich bin Lehrerin“).",
+            "de": "Stell das Verb an die zweite Stelle und benutze die ich-Form: „Ich bin …“, „Ich habe …“, „Ich arbeite als …“ (ohne Artikel vor dem Beruf: „Ich bin Lehrerin“)."
+          },
+          {
+            "en": "Learn the German alphabet for spelling (especially E, I, J, V, W, Y and the umlauts) and say numbers slowly, digit by digit for phone numbers.",
+            "de": "Lerne das deutsche Alphabet zum Buchstabieren (besonders E, I, J, V, W, Y und die Umlaute) und sprich Zahlen langsam, bei Telefonnummern Ziffer für Ziffer."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a1__sprechen-1__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Ihr Kind kommt in einen neuen Kindergarten. Beim ersten Elternabend stellen sich alle Eltern vor. Stellen Sie sich vor. Danach buchstabieren Sie Ihre Stadt und nennen Ihr Geburtsjahr.",
+          "materials": [
+            {
+              "title": "Stellen Sie sich vor",
+              "points": [
+                "Name?",
+                "Alter?",
+                "Land?",
+                "Wohnort?",
+                "Sprachen?",
+                "Beruf?",
+                "Hobby?"
+              ]
+            },
+            {
+              "title": "Danach",
+              "points": [
+                "Buchstabieren Sie den Namen Ihrer Stadt.",
+                "Nennen Sie Ihr Geburtsjahr."
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1. Bitte stellen Sie sich vor: Name, Alter, Land, Wohnort, Sprachen, Beruf und Hobby. Danach buchstabieren Sie bitte den Namen Ihrer Stadt und sagen Ihr Geburtsjahr. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Frau Schröder",
+            "gender": "f",
+            "profile": "Frau Schröder ist Erzieherin im Kindergarten und leitet den Elternabend. Sie ist geduldig, lächelt viel und stellt einfache Nachfragen („Woher kommen Sie?“, „Wie alt sind Sie?“), wenn ein Stichwort fehlt."
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Use short, complete sentences for each key word: „Ich heiße …“, „Ich komme aus …“, „Ich wohne in …“, „Ich spreche …“.",
+            "de": "Sprich zu jedem Stichwort in kurzen, ganzen Sätzen: „Ich heiße …“, „Ich komme aus …“, „Ich wohne in …“, „Ich spreche …“."
+          },
+          {
+            "en": "Talk about each key word in a short sentence, then spell your town letter by letter and say your year of birth as a full number, for example „neunzehnhundertneunzig“ or „zweitausendzwei“.",
+            "de": "Sag zu jedem Stichwort einen kurzen Satz, buchstabiere dann deine Stadt Buchstabe für Buchstabe und sag dein Geburtsjahr als ganze Zahl, zum Beispiel „neunzehnhundertneunzig“ oder „zweitausendzwei“."
+          },
+          {
+            "en": "Put the verb in second place and use the ich-form: „Ich bin …“, „Ich habe …“, „Ich arbeite als …“ (no article before the job: „Ich bin Lehrerin“).",
+            "de": "Stell das Verb an die zweite Stelle und benutze die ich-Form: „Ich bin …“, „Ich habe …“, „Ich arbeite als …“ (ohne Artikel vor dem Beruf: „Ich bin Lehrerin“)."
+          },
+          {
+            "en": "Learn the German alphabet for spelling (especially E, I, J, V, W, Y and the umlauts) and say numbers slowly, digit by digit for phone numbers.",
+            "de": "Lerne das deutsche Alphabet zum Buchstabieren (besonders E, I, J, V, W, Y und die Umlaute) und sprich Zahlen langsam, bei Telefonnummern Ziffer für Ziffer."
+          }
+        ]
+      }
+    }
+  ]
+}

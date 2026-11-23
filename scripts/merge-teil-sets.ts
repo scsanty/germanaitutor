@@ -8,7 +8,8 @@
 // and no transcript shared with another bundled set. TTS hazards and the like are printed as warnings only.
 // letter sets get the S14 checks through teilSetProblems (task count, wordTarget, explanation count), plus these
 // warnings: a situation repeated within a part (merged and incoming sets), and English words in the situation or
-// a Leitpunkt (exam content is German-only). A letters line per track reports sets against the 66 expected.
+// a Leitpunkt (exam content is German-only). A letters line per track reports sets against the 66 expected,
+// and a spoken line per track reports spoken sets against the 114 expected (S23).
 // A part file's "version" goes up by one whenever its merged sets differ from the file on disk, so installs
 // that loaded the older bundle reload it (I11). An unchanged part keeps its version and is not rewritten.
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
@@ -37,6 +38,8 @@ const FILE_RE = /^(.+)__s(\d\d)\.json$/;
 export const EXPECTED_LISTENING_ITEMS: Record<string, number> = { telc: 294, goethe: 375, generic: 204 };
 // Letter sets once every one of the 22 letter parts has its 3 starter sets (NaDoch 7 parts, Goethe 10, telc 5).
 export const EXPECTED_LETTER_SETS: Record<string, number> = { generic: 21, goethe: 30, telc: 15 };
+// Spoken sets once every one of the 38 spoken parts has its 3 starter sets (NaDoch 10 parts, Goethe 13, telc 15).
+export const EXPECTED_SPOKEN_SETS: Record<string, number> = { generic: 30, goethe: 39, telc: 45 };
 const TRACK_NAMES: Record<string, string> = { telc: 'telc', goethe: 'Goethe', generic: 'NaDoch' };
 
 function canonical(v: unknown): string {
@@ -111,6 +114,8 @@ export function mergeTeilSets(opts: MergeOptions): MergeResult {
   const listeningSets = new Map<string, number>();
   // Letter sets and tasks per format and part after this run.
   const letterSets = new Map<string, { sets: number; tasks: number }>();
+  // Spoken sets per format and part after this run.
+  const spokenSets = new Map<string, number>();
 
   const formatIds = readdirSync(opts.workDir, { withFileTypes: true })
     .filter((d) => d.isDirectory() && !d.name.startsWith('.') && (!opts.format || d.name === opts.format))
@@ -234,6 +239,7 @@ export function mergeTeilSets(opts: MergeOptions): MergeResult {
       }
       formatItems += sets.length * part.items;
       if (part.taskType === 'audio_questions') listeningSets.set(`${formatId}/${partId}`, sets.length);
+      if (part.taskType === 'spoken') spokenSets.set(`${formatId}/${partId}`, sets.length);
       if (part.taskType === 'letter') {
         const tasks = sets.reduce((n, s) => n + ((s.set.content as LetterContent).tasks?.length ?? 0), 0);
         letterSets.set(`${formatId}/${partId}`, { sets: sets.length, tasks });
@@ -249,6 +255,7 @@ export function mergeTeilSets(opts: MergeOptions): MergeResult {
     lines.push('no format folders found in the work folder');
   }
   lines.push(...letterTotals(dataRoot, formatIds, letterSets));
+  lines.push(...spokenTotals(dataRoot, formatIds, spokenSets));
   lines.push(...listeningTotals(dataRoot, formatIds, listeningSets));
   return { ok, lines, itemCounts };
 }
@@ -286,6 +293,25 @@ function letterTotals(dataRoot: string, formatIds: string[], thisRun: Map<string
       }
     }
     out.push(`letters ${TRACK_NAMES[track]}: ${sets} of ${EXPECTED_LETTER_SETS[track]} sets (${tasks} tasks)`);
+  }
+  return out;
+}
+
+// Spoken sets per track, over every spoken part of every format of a touched track, against the target.
+function spokenTotals(dataRoot: string, formatIds: string[], thisRun: Map<string, number>): string[] {
+  const tracks = [...new Set(formatIds.map((f) => f.split('-')[0]).filter((t) => t in EXPECTED_SPOKEN_SETS))].sort();
+  const out: string[] = [];
+  const formatsDir = join(dataRoot, 'exam-formats');
+  if (!existsSync(formatsDir)) return out;
+  for (const track of tracks) {
+    let sets = 0;
+    for (const f of readdirSync(formatsDir).filter((n) => n.startsWith(`${track}-`) && n.endsWith('.json')).sort()) {
+      const format = readJson<ExamFormat>(join(formatsDir, f));
+      for (const part of format.parts.filter((p) => p.taskType === 'spoken')) {
+        sets += thisRun.get(`${format.id}/${part.id}`) ?? Object.keys(existingSets(dataRoot, format.id, part.id)).length;
+      }
+    }
+    out.push(`spoken ${TRACK_NAMES[track]}: ${sets} of ${EXPECTED_SPOKEN_SETS[track]} sets`);
   }
   return out;
 }

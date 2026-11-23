@@ -1,0 +1,157 @@
+{
+  "formatId": "telc-b1",
+  "partId": "sprechen-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b1__sprechen-1__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie und Ihr Partner / Ihre Partnerin kennen sich noch nicht. Unterhalten Sie sich und lernen Sie sich kennen. Stellen Sie Fragen und erzählen Sie auch von sich.",
+          "materials": [
+            {
+              "title": "Kontaktaufnahme – mögliche Themen",
+              "points": [
+                "Name",
+                "Herkunft",
+                "Wohnort",
+                "Familie",
+                "Beruf / Ausbildung",
+                "Sprachen",
+                "Freizeit / Hobbys",
+                "Warum lernen Sie Deutsch?",
+                "Wohnen in Deutschland: Was gefällt Ihnen, was ist schwierig?"
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag, herzlich willkommen zur mündlichen Prüfung. Im ersten Teil sollen Sie sich kennenlernen. Unterhalten Sie sich bitte mit Ihrer Partnerin. Die Themen auf dem Blatt helfen Ihnen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Leyla",
+            "gender": "f",
+            "profile": "Leyla ist 32, kommt aus der Türkei, aus Izmir, und wohnt seit vier Jahren mit ihrem Mann und ihrer Tochter in Mannheim. Sie ist Erzieherin und möchte ihre Berufsanerkennung bekommen, deshalb lernt sie Deutsch. Sie tanzt gern und vermisst das Meer. Sie ist offen und fragt interessiert zurück."
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Ask your partner questions too, and show interest with „Ach, wirklich?“, „Das klingt interessant.“ or „Und wie ist das bei dir?“.",
+            "de": "Stell deinem Partner auch Fragen und zeig Interesse mit „Ach, wirklich?“, „Das klingt interessant.“ oder „Und wie ist das bei dir?“."
+          },
+          {
+            "en": "Talk about yourself and ask Leyla questions on several topics from the sheet (for example origin, work, why you learn German); a real exchange, not a monologue, gets the points.",
+            "de": "Erzähl von dir und stell Leyla Fragen zu mehreren Themen vom Blatt (zum Beispiel Herkunft, Arbeit, warum ihr Deutsch lernt); Punkte gibt es für ein echtes Gespräch, nicht für einen Monolog."
+          },
+          {
+            "en": "Mix tenses correctly: the present for now, the perfect for the past („Ich bin vor drei Jahren nach Deutschland gekommen“), and watch the verb at the end after weil and dass.",
+            "de": "Benutze die Zeiten richtig: Präsens für jetzt, Perfekt für die Vergangenheit („Ich bin vor drei Jahren nach Deutschland gekommen“), und achte nach weil und dass auf das Verb am Ende."
+          },
+          {
+            "en": "Speak naturally, not word by word; short pauses between ideas help your partner follow you.",
+            "de": "Sprich natürlich und nicht Wort für Wort; kurze Pausen zwischen den Gedanken helfen deinem Partner, dir zu folgen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b1__sprechen-1__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie und Ihr Partner / Ihre Partnerin kennen sich noch nicht. Unterhalten Sie sich und lernen Sie sich kennen. Stellen Sie Fragen und erzählen Sie auch von sich.",
+          "materials": [
+            {
+              "title": "Kontaktaufnahme – mögliche Themen",
+              "points": [
+                "Name",
+                "Herkunft",
+                "Wohnort",
+                "Familie",
+                "Beruf / Ausbildung",
+                "Sprachen",
+                "Freizeit / Hobbys",
+                "Reisen: Wo waren Sie schon?",
+                "Pläne für die Zukunft"
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit dem ersten Teil, der Kontaktaufnahme. Sie kennen sich noch nicht. Unterhalten Sie sich bitte mit Ihrem Partner und lernen Sie sich kennen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Diego",
+            "gender": "m",
+            "profile": "Diego ist 29, kommt aus Chile, aus Valparaíso, und lebt seit eineinhalb Jahren in Freiburg. Er arbeitet als Koch in einem Hotelrestaurant und möchte später ein eigenes kleines Restaurant eröffnen. Er wandert gern im Schwarzwald und war schon in Spanien und Portugal. Er ist gesprächig und stellt gern Gegenfragen."
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Ask your partner questions too, and show interest with „Ach, wirklich?“, „Das klingt interessant.“ or „Und wie ist das bei dir?“.",
+            "de": "Stell deinem Partner auch Fragen und zeig Interesse mit „Ach, wirklich?“, „Das klingt interessant.“ oder „Und wie ist das bei dir?“."
+          },
+          {
+            "en": "Get to know Diego: tell him about yourself and ask about his work, travels and plans; react to his answers before you change the topic.",
+            "de": "Lern Diego kennen: Erzähl von dir und frag ihn nach Arbeit, Reisen und Plänen; reagiere auf seine Antworten, bevor du das Thema wechselst."
+          },
+          {
+            "en": "Mix tenses correctly: the present for now, the perfect for the past („Ich bin vor drei Jahren nach Deutschland gekommen“), and watch the verb at the end after weil and dass.",
+            "de": "Benutze die Zeiten richtig: Präsens für jetzt, Perfekt für die Vergangenheit („Ich bin vor drei Jahren nach Deutschland gekommen“), und achte nach weil und dass auf das Verb am Ende."
+          },
+          {
+            "en": "Speak naturally, not word by word; short pauses between ideas help your partner follow you.",
+            "de": "Sprich natürlich und nicht Wort für Wort; kurze Pausen zwischen den Gedanken helfen deinem Partner, dir zu folgen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b1__sprechen-1__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie und Ihr Partner / Ihre Partnerin kennen sich noch nicht. Unterhalten Sie sich und lernen Sie sich kennen. Stellen Sie Fragen und erzählen Sie auch von sich.",
+          "materials": [
+            {
+              "title": "Kontaktaufnahme – mögliche Themen",
+              "points": [
+                "Name",
+                "Herkunft",
+                "Wohnort",
+                "Familie",
+                "Beruf / Ausbildung",
+                "Sprachen",
+                "Freizeit / Hobbys",
+                "Ihr Alltag: Wie sieht ein normaler Tag aus?",
+                "Was vermissen Sie aus Ihrem Heimatland?"
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Im ersten Teil der Prüfung möchten wir, dass Sie sich kennenlernen. Unterhalten Sie sich bitte mit Ihrer Partnerin über die Themen auf dem Blatt. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Hanna",
+            "gender": "f",
+            "profile": "Hanna ist 41, kommt aus der Ukraine, aus Charkiw, und wohnt seit drei Jahren mit ihren zwei Söhnen in Erfurt. Sie war Buchhalterin und macht jetzt ein Praktikum in einem Steuerbüro. Ihr Tag beginnt um sechs Uhr; sie vermisst ihre Eltern und das Essen ihrer Mutter. Sie ist ruhig, freundlich und stellt auch Fragen."
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Ask your partner questions too, and show interest with „Ach, wirklich?“, „Das klingt interessant.“ or „Und wie ist das bei dir?“.",
+            "de": "Stell deinem Partner auch Fragen und zeig Interesse mit „Ach, wirklich?“, „Das klingt interessant.“ oder „Und wie ist das bei dir?“."
+          },
+          {
+            "en": "Exchange information with Hanna on several topics, including your daily routine and what you miss from home; ask follow-up questions such as „Und wie ist das bei dir?“.",
+            "de": "Tausch mit Hanna Informationen zu mehreren Themen aus, auch zu deinem Alltag und dazu, was du aus der Heimat vermisst; stell Nachfragen wie „Und wie ist das bei dir?“."
+          },
+          {
+            "en": "Mix tenses correctly: the present for now, the perfect for the past („Ich bin vor drei Jahren nach Deutschland gekommen“), and watch the verb at the end after weil and dass.",
+            "de": "Benutze die Zeiten richtig: Präsens für jetzt, Perfekt für die Vergangenheit („Ich bin vor drei Jahren nach Deutschland gekommen“), und achte nach weil und dass auf das Verb am Ende."
+          },
+          {
+            "en": "Speak naturally, not word by word; short pauses between ideas help your partner follow you.",
+            "de": "Sprich natürlich und nicht Wort für Wort; kurze Pausen zwischen den Gedanken helfen deinem Partner, dir zu folgen."
+          }
+        ]
+      }
+    }
+  ]
+}

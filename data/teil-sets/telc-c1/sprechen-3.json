@@ -1,0 +1,145 @@
+{
+  "formatId": "telc-c1",
+  "partId": "sprechen-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-c1__sprechen-3__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie diskutieren mit Ihrem Partner / Ihrer Partnerin über die Frage: „Sollte das Wahlalter bei Bundestagswahlen auf 16 Jahre gesenkt werden?“ Tauschen Sie Argumente aus und gehen Sie auf die Argumente Ihres Partners / Ihrer Partnerin ein.",
+          "materials": [
+            {
+              "title": "Diskussionsthema: Wahlrecht ab 16?",
+              "points": [
+                "Politisches Interesse und Reife Jugendlicher",
+                "Erfahrungen mit Wahlen ab 16 bei Kommunal- und Europawahlen",
+                "Demografischer Wandel: Gewicht der älteren Generation",
+                "Einfluss von Schule, Eltern und sozialen Medien",
+                "Rechte und Pflichten: Volljährigkeit mit 18"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2, der Diskussion. Das Thema lautet: „Sollte das Wahlalter bei Bundestagswahlen auf 16 Jahre gesenkt werden?“ Diskutieren Sie bitte etwa sechs Minuten mit Ihrer Partnerin darüber. Tauschen Sie Argumente aus und gehen Sie auf die Argumente Ihrer Partnerin ein. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Sabine",
+            "gender": "f",
+            "profile": "Sabine ist 55 und arbeitet als Richterin am Amtsgericht. Sie ist gegen ein Wahlrecht ab 16, weil sie Rechte und Pflichten nicht trennen möchte und Jugendliche für leichter beeinflussbar hält. Sie argumentiert sachlich, präzise und fordert Belege, erkennt gute Argumente aber an."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Use a wide range of discussion phrases: „Ich vertrete die Auffassung, dass …“, „Dem kann ich nur bedingt zustimmen …“, „Lass mich das an einem Beispiel verdeutlichen.“, „Wir sind uns also zumindest darin einig, dass …“.",
+            "de": "Benutze vielfältige Redemittel zum Diskutieren: „Ich vertrete die Auffassung, dass …“, „Dem kann ich nur bedingt zustimmen …“, „Lass mich das an einem Beispiel verdeutlichen.“, „Wir sind uns also zumindest darin einig, dass …“."
+          },
+          {
+            "en": "Take a clear position on voting at 16, support it with several arguments and examples (such as local elections), take up Sabine’s points about maturity and influence directly, and work towards a nuanced conclusion.",
+            "de": "Bezieh klar Stellung zum Wahlrecht ab 16, stütze deine Position mit mehreren Argumenten und Beispielen (etwa Kommunalwahlen), geh direkt auf Sabines Punkte zu Reife und Beeinflussbarkeit ein und arbeite auf ein differenziertes Fazit hin."
+          },
+          {
+            "en": "Use the Konjunktiv II for hypotheses („Würde man …, hätte das zur Folge, dass …“) and two-part connectors (nicht nur … sondern auch, je … desto) without errors in word order.",
+            "de": "Benutze den Konjunktiv II für Hypothesen („Würde man …, hätte das zur Folge, dass …“) und zweiteilige Konnektoren (nicht nur … sondern auch, je … desto) ohne Fehler in der Wortstellung."
+          },
+          {
+            "en": "Speak fluently and naturally; use intonation to mark contrast („Einerseits … – andererseits …“) and to show that you are taking up your partner’s point.",
+            "de": "Sprich flüssig und natürlich; zeig mit der Intonation Gegensätze („Einerseits … – andererseits …“) und dass du den Punkt deines Partners aufgreifst."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-c1__sprechen-3__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie diskutieren mit Ihrem Partner / Ihrer Partnerin über die Frage: „Sollten Unternehmen verpflichtet werden, Bewerbungen anonym zu prüfen?“ Tauschen Sie Argumente aus und gehen Sie auf die Argumente Ihres Partners / Ihrer Partnerin ein.",
+          "materials": [
+            {
+              "title": "Diskussionsthema: Anonyme Bewerbungen als Pflicht?",
+              "points": [
+                "Diskriminierung wegen Name, Foto, Alter oder Geschlecht",
+                "Ergebnisse von Pilotprojekten in Deutschland",
+                "Aufwand für Unternehmen, besonders für kleine Betriebe",
+                "Spätestens im Vorstellungsgespräch fällt die Anonymität weg",
+                "Alternativen: Schulungen, Quoten, freiwillige Selbstverpflichtung"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2, der Diskussion. Ihr Thema ist die Frage, ob Unternehmen verpflichtet werden sollten, Bewerbungen anonym zu prüfen, also ohne Name, Foto und Alter. Diskutieren Sie bitte etwa sechs Minuten mit Ihrem Partner. Tauschen Sie Argumente aus und gehen Sie auf seine Argumente ein. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Ahmet",
+            "gender": "m",
+            "profile": "Ahmet ist 44 und führt ein mittelständisches Ingenieurbüro mit 30 Mitarbeitern in Stuttgart. Er hat selbst erlebt, dass er wegen seines Namens weniger Einladungen bekam, hält eine gesetzliche Pflicht für kleine Firmen aber für zu bürokratisch und setzt auf freiwillige Lösungen. Er diskutiert lebhaft und bringt Beispiele aus seinem Betrieb."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Use a wide range of discussion phrases: „Ich vertrete die Auffassung, dass …“, „Dem kann ich nur bedingt zustimmen …“, „Lass mich das an einem Beispiel verdeutlichen.“, „Wir sind uns also zumindest darin einig, dass …“.",
+            "de": "Benutze vielfältige Redemittel zum Diskutieren: „Ich vertrete die Auffassung, dass …“, „Dem kann ich nur bedingt zustimmen …“, „Lass mich das an einem Beispiel verdeutlichen.“, „Wir sind uns also zumindest darin einig, dass …“."
+          },
+          {
+            "en": "Argue for or against an obligation with well-founded reasons and examples, address Ahmet’s mixed position (personal experience versus bureaucracy) and explore alternatives before you draw a conclusion.",
+            "de": "Argumentiere mit fundierten Gründen und Beispielen für oder gegen eine Pflicht, geh auf Ahmets zwiespältige Position ein (eigene Erfahrung gegen Bürokratie) und prüft Alternativen, bevor du ein Fazit ziehst."
+          },
+          {
+            "en": "Use the Konjunktiv II for hypotheses („Würde man …, hätte das zur Folge, dass …“) and two-part connectors (nicht nur … sondern auch, je … desto) without errors in word order.",
+            "de": "Benutze den Konjunktiv II für Hypothesen („Würde man …, hätte das zur Folge, dass …“) und zweiteilige Konnektoren (nicht nur … sondern auch, je … desto) ohne Fehler in der Wortstellung."
+          },
+          {
+            "en": "Speak fluently and naturally; use intonation to mark contrast („Einerseits … – andererseits …“) and to show that you are taking up your partner’s point.",
+            "de": "Sprich flüssig und natürlich; zeig mit der Intonation Gegensätze („Einerseits … – andererseits …“) und dass du den Punkt deines Partners aufgreifst."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-c1__sprechen-3__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie diskutieren mit Ihrem Partner / Ihrer Partnerin über die Frage: „Brauchen wir eine Steuer auf stark gezuckerte Getränke?“ Tauschen Sie Argumente aus und gehen Sie auf die Argumente Ihres Partners / Ihrer Partnerin ein.",
+          "materials": [
+            {
+              "title": "Diskussionsthema: Eine Zuckersteuer für Getränke?",
+              "points": [
+                "Zunahme von Übergewicht und Diabetes, auch bei Kindern",
+                "Erfahrungen in Großbritannien: Hersteller haben den Zuckergehalt gesenkt",
+                "Bevormundung der Verbraucher oder notwendige Steuerung?",
+                "Soziale Gerechtigkeit: Belastung für Haushalte mit wenig Geld",
+                "Alternativen: Aufklärung, Kennzeichnung, Werbeverbote für Kinder"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2, der Diskussion. Die Frage lautet: „Brauchen wir eine Steuer auf stark gezuckerte Getränke?“ Diskutieren Sie bitte etwa sechs Minuten mit Ihrer Partnerin. Tauschen Sie Argumente aus und gehen Sie auf die Argumente Ihrer Partnerin ein. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Katrin",
+            "gender": "f",
+            "profile": "Katrin ist 39, Kinderärztin in einer Praxis in Dortmund, und erlebt täglich übergewichtige Kinder. Sie ist klar für eine Zuckersteuer nach britischem Vorbild und hält Aufklärung allein für wirkungslos. Sie argumentiert leidenschaftlich, aber fair, und reagiert auf das Argument der sozialen Gerechtigkeit mit dem Vorschlag, die Einnahmen in Schulessen zu investieren."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Use a wide range of discussion phrases: „Ich vertrete die Auffassung, dass …“, „Dem kann ich nur bedingt zustimmen …“, „Lass mich das an einem Beispiel verdeutlichen.“, „Wir sind uns also zumindest darin einig, dass …“.",
+            "de": "Benutze vielfältige Redemittel zum Diskutieren: „Ich vertrete die Auffassung, dass …“, „Dem kann ich nur bedingt zustimmen …“, „Lass mich das an einem Beispiel verdeutlichen.“, „Wir sind uns also zumindest darin einig, dass …“."
+          },
+          {
+            "en": "Develop your position on a sugar tax with several arguments (health, the UK example, freedom of choice, social fairness), engage with Katrin’s medical arguments and her proposal for the revenue, and reach a reasoned conclusion.",
+            "de": "Entwickle deine Position zur Zuckersteuer mit mehreren Argumenten (Gesundheit, britisches Beispiel, Wahlfreiheit, soziale Gerechtigkeit), setz dich mit Katrins medizinischen Argumenten und ihrem Vorschlag für die Einnahmen auseinander und komm zu einem begründeten Fazit."
+          },
+          {
+            "en": "Use the Konjunktiv II for hypotheses („Würde man …, hätte das zur Folge, dass …“) and two-part connectors (nicht nur … sondern auch, je … desto) without errors in word order.",
+            "de": "Benutze den Konjunktiv II für Hypothesen („Würde man …, hätte das zur Folge, dass …“) und zweiteilige Konnektoren (nicht nur … sondern auch, je … desto) ohne Fehler in der Wortstellung."
+          },
+          {
+            "en": "Speak fluently and naturally; use intonation to mark contrast („Einerseits … – andererseits …“) and to show that you are taking up your partner’s point.",
+            "de": "Sprich flüssig und natürlich; zeig mit der Intonation Gegensätze („Einerseits … – andererseits …“) und dass du den Punkt deines Partners aufgreifst."
+          }
+        ]
+      }
+    }
+  ]
+}

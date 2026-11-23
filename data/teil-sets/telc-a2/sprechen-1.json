@@ -1,0 +1,175 @@
+{
+  "formatId": "telc-a2",
+  "partId": "sprechen-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-a2__sprechen-1__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie lernen Ihren Partner / Ihre Partnerin in der Prüfung kennen. Stellen Sie sich vor. Die Stichworte helfen Ihnen. Danach beantworten Sie zwei Zusatzfragen Ihrer Partnerin.",
+          "materials": [
+            {
+              "title": "Stichworte",
+              "points": [
+                "Name",
+                "Alter",
+                "Herkunft",
+                "Wohnort",
+                "Familie",
+                "Beruf / Arbeit",
+                "Sprachen",
+                "Hobbys"
+              ]
+            },
+            {
+              "title": "Zusatzfragen Ihrer Partnerin",
+              "points": [
+                "Wie lange lernen Sie schon Deutsch?",
+                "Was machen Sie gern am Abend?"
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1. Bitte stellen Sie sich Ihrer Partnerin vor. Die Stichworte auf dem Aufgabenblatt helfen Ihnen. Danach stellt Ihnen Ihre Partnerin noch zwei Fragen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Mei",
+            "gender": "f",
+            "profile": "Mei ist 26, kommt aus China und studiert in Aachen Maschinenbau. Sie hört freundlich zu und stellt nach der Vorstellung genau zwei Zusatzfragen: „Wie lange lernst du schon Deutsch?“ und „Was machst du gern am Abend?“. Sie spricht einfach und deutlich."
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Join your facts into a few connected sentences with und, aber and seit: „Ich wohne seit zwei Jahren in …, und ich arbeite als …“.",
+            "de": "Verbinde deine Angaben zu zusammenhängenden Sätzen mit und, aber und seit: „Ich wohne seit zwei Jahren in …, und ich arbeite als …“."
+          },
+          {
+            "en": "Say something about all the key words in connected sentences, then answer both extra questions (how long you have been learning German, what you like doing in the evening) with a detail or a reason.",
+            "de": "Sprich in zusammenhängenden Sätzen über alle Stichworte und beantworte dann beide Zusatzfragen (wie lange du schon Deutsch lernst, was du am Abend gern machst) mit einem Detail oder einem Grund."
+          },
+          {
+            "en": "Watch the dative after mit and seit („mit meiner Familie“, „seit einem Jahr“) and the perfect tense for the past („Ich habe … gearbeitet“).",
+            "de": "Achte auf den Dativ nach mit und seit („mit meiner Familie“, „seit einem Jahr“) und auf das Perfekt für die Vergangenheit („Ich habe … gearbeitet“)."
+          },
+          {
+            "en": "Speak at a calm pace and stress the important word in each sentence, such as your country, your city or your job.",
+            "de": "Sprich in ruhigem Tempo und betone das wichtige Wort im Satz, zum Beispiel dein Land, deine Stadt oder deinen Beruf."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a2__sprechen-1__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie lernen Ihren Partner / Ihre Partnerin in der Prüfung kennen. Stellen Sie sich vor. Die Stichworte helfen Ihnen. Danach beantworten Sie zwei Zusatzfragen Ihres Partners.",
+          "materials": [
+            {
+              "title": "Stichworte",
+              "points": [
+                "Name",
+                "Alter",
+                "Herkunft",
+                "Wohnort",
+                "Familie",
+                "Beruf / Arbeit",
+                "Sprachen",
+                "Hobbys"
+              ]
+            },
+            {
+              "title": "Zusatzfragen Ihres Partners",
+              "points": [
+                "Wo haben Sie früher gewohnt?",
+                "Was ist Ihr Lieblingsessen?"
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1. Stellen Sie sich bitte Ihrem Partner vor. Sprechen Sie über die Stichworte auf dem Blatt. Danach hat Ihr Partner noch zwei Fragen an Sie. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Kofi",
+            "gender": "m",
+            "profile": "Kofi ist 37, kommt aus Ghana und arbeitet als Lagerist in Duisburg. Er hört aufmerksam zu und stellt nach der Vorstellung genau zwei Zusatzfragen: „Wo hast du früher gewohnt?“ und „Was ist dein Lieblingsessen?“. Er spricht ruhig und deutlich."
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Join your facts into a few connected sentences with und, aber and seit: „Ich wohne seit zwei Jahren in …, und ich arbeite als …“.",
+            "de": "Verbinde deine Angaben zu zusammenhängenden Sätzen mit und, aber und seit: „Ich wohne seit zwei Jahren in …, und ich arbeite als …“."
+          },
+          {
+            "en": "Introduce yourself with all the key words, then answer the two extra questions: where you used to live (use the perfect tense) and your favourite food, with a short description.",
+            "de": "Stell dich mit allen Stichworten vor und beantworte dann die zwei Zusatzfragen: wo du früher gewohnt hast (im Perfekt) und was dein Lieblingsessen ist, mit einer kurzen Beschreibung."
+          },
+          {
+            "en": "Watch the dative after mit and seit („mit meiner Familie“, „seit einem Jahr“) and the perfect tense for the past („Ich habe … gearbeitet“).",
+            "de": "Achte auf den Dativ nach mit und seit („mit meiner Familie“, „seit einem Jahr“) und auf das Perfekt für die Vergangenheit („Ich habe … gearbeitet“)."
+          },
+          {
+            "en": "Speak at a calm pace and stress the important word in each sentence, such as your country, your city or your job.",
+            "de": "Sprich in ruhigem Tempo und betone das wichtige Wort im Satz, zum Beispiel dein Land, deine Stadt oder deinen Beruf."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a2__sprechen-1__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie lernen Ihren Partner / Ihre Partnerin in der Prüfung kennen. Stellen Sie sich vor. Die Stichworte helfen Ihnen. Danach beantworten Sie zwei Zusatzfragen Ihrer Partnerin.",
+          "materials": [
+            {
+              "title": "Stichworte",
+              "points": [
+                "Name",
+                "Alter",
+                "Herkunft",
+                "Wohnort",
+                "Familie",
+                "Beruf / Arbeit",
+                "Sprachen",
+                "Hobbys"
+              ]
+            },
+            {
+              "title": "Zusatzfragen Ihrer Partnerin",
+              "points": [
+                "Wie kommen Sie zur Arbeit oder zum Kurs?",
+                "Was möchten Sie in Zukunft beruflich machen?"
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1. Bitte stellen Sie sich Ihrer Partnerin vor. Die Stichworte helfen Ihnen. Danach beantworten Sie bitte zwei Fragen Ihrer Partnerin. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Rosa",
+            "gender": "f",
+            "profile": "Rosa ist 45, kommt aus Portugal und arbeitet als Reinigungskraft in einem Krankenhaus in Wiesbaden. Sie ist freundlich und stellt nach der Vorstellung genau zwei Zusatzfragen: „Wie kommst du zur Arbeit oder zum Kurs?“ und „Was möchtest du in Zukunft beruflich machen?“."
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Join your facts into a few connected sentences with und, aber and seit: „Ich wohne seit zwei Jahren in …, und ich arbeite als …“.",
+            "de": "Verbinde deine Angaben zu zusammenhängenden Sätzen mit und, aber und seit: „Ich wohne seit zwei Jahren in …, und ich arbeite als …“."
+          },
+          {
+            "en": "Talk about every key word, then answer both extra questions: how you get to work or to class (mit dem Bus, zu Fuß …) and your plans for your future job (ich möchte …, weil …).",
+            "de": "Sprich über jedes Stichwort und beantworte dann beide Zusatzfragen: wie du zur Arbeit oder zum Kurs kommst (mit dem Bus, zu Fuß …) und was du später beruflich machen möchtest (ich möchte …, weil …)."
+          },
+          {
+            "en": "Watch the dative after mit and seit („mit meiner Familie“, „seit einem Jahr“) and the perfect tense for the past („Ich habe … gearbeitet“).",
+            "de": "Achte auf den Dativ nach mit und seit („mit meiner Familie“, „seit einem Jahr“) und auf das Perfekt für die Vergangenheit („Ich habe … gearbeitet“)."
+          },
+          {
+            "en": "Speak at a calm pace and stress the important word in each sentence, such as your country, your city or your job.",
+            "de": "Sprich in ruhigem Tempo und betone das wichtige Wort im Satz, zum Beispiel dein Land, deine Stadt oder deinen Beruf."
+          }
+        ]
+      }
+    }
+  ]
+}

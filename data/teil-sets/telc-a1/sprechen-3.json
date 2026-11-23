@@ -1,0 +1,163 @@
+{
+  "formatId": "telc-a1",
+  "partId": "sprechen-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-a1__sprechen-3__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie sind im Deutschkurs. Sie ziehen Karten mit Bildern. Zu jedem Bild bitten Sie Ihren Partner / Ihre Partnerin um etwas. Ihr Partner / Ihre Partnerin reagiert. Dann bittet er / sie Sie um etwas.",
+          "materials": [
+            {
+              "title": "Ihre Bildkarten",
+              "points": [
+                "Bild: ein Wörterbuch",
+                "Bild: eine Lampe (Licht an)",
+                "Bild: eine Tür (zumachen)"
+              ]
+            },
+            {
+              "title": "Die Bildkarten Ihres Partners / Ihrer Partnerin",
+              "points": [
+                "Bild: ein Heft",
+                "Bild: eine Uhr",
+                "Bild: ein Radiergummi"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 3. Sie sehen ein Bild auf Ihrer Karte. Bitten Sie Ihren Partner um etwas. Ihr Partner reagiert auf Ihre Bitte. Dann bittet Ihr Partner Sie um etwas. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Mehmet",
+            "gender": "m",
+            "profile": "Mehmet ist ein Kurskollege, 30 Jahre alt, aus der Türkei. Er ist hilfsbereit. Sein Wörterbuch hat er heute zu Hause vergessen, aber sonst hilft er gern. Er bittet selbst um ein Heft, um die Uhrzeit und um einen Radiergummi."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Make polite requests with „Kannst du bitte …?“, „Gib mir bitte …“ or „Ich brauche …, bitte.“ and react with „Ja, gern.“, „Hier, bitte.“ or „Tut mir leid, …“.",
+            "de": "Formuliere höfliche Bitten mit „Kannst du bitte …?“, „Gib mir bitte …“ oder „Ich brauche …, bitte.“ und reagiere mit „Ja, gern.“, „Hier, bitte.“ oder „Tut mir leid, …“."
+          },
+          {
+            "en": "Make one polite request for each of your three pictures (dictionary, light, door) and react to each of your partner’s requests: say yes and give the thing, or say sorry and give a short reason.",
+            "de": "Formuliere zu jedem deiner drei Bilder (Wörterbuch, Licht, Tür) eine höfliche Bitte und reagiere auf jede Bitte deines Partners: Sag ja und gib ihm die Sache, oder entschuldige dich mit einem kurzen Grund."
+          },
+          {
+            "en": "With „Kannst du …“ the second verb goes to the end in its basic form: „Kannst du bitte die Tür zumachen?“; in the imperative the verb comes first: „Gib mir bitte …“.",
+            "de": "Bei „Kannst du …“ steht das zweite Verb im Infinitiv am Ende: „Kannst du bitte die Tür zumachen?“; im Imperativ steht das Verb vorn: „Gib mir bitte …“."
+          },
+          {
+            "en": "Say „bitte“ clearly and in a friendly tone; a rising voice at the end makes your request sound like a polite question.",
+            "de": "Sag „bitte“ deutlich und freundlich; eine steigende Stimme am Ende macht deine Bitte zu einer höflichen Frage."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a1__sprechen-3__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie sind am Bahnhof und warten auf den Zug. Sie ziehen Karten mit Bildern. Zu jedem Bild bitten Sie Ihren Partner / Ihre Partnerin um etwas. Ihr Partner / Ihre Partnerin reagiert. Dann bittet er / sie Sie um etwas.",
+          "materials": [
+            {
+              "title": "Ihre Bildkarten",
+              "points": [
+                "Bild: ein Koffer (tragen)",
+                "Bild: ein Stadtplan",
+                "Bild: ein Platz auf der Bank"
+              ]
+            },
+            {
+              "title": "Die Bildkarten Ihres Partners / Ihrer Partnerin",
+              "points": [
+                "Bild: eine Fahrkarte",
+                "Bild: ein Kugelschreiber und Papier",
+                "Bild: ein Foto (fotografieren)"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 3. Auf Ihrer Karte sehen Sie ein Bild. Bitten Sie Ihre Partnerin um etwas. Ihre Partnerin antwortet. Danach bittet Ihre Partnerin Sie um etwas. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Sophie",
+            "gender": "f",
+            "profile": "Sophie ist 24 und reist mit dem Zug nach Berlin. Sie ist freundlich und hilft gern. Einen Stadtplan hat sie nur auf dem Handy. Sie bittet selbst darum, kurz die Fahrkarte anzusehen, um einen Kugelschreiber und darum, ein Foto von ihr zu machen."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Make polite requests with „Kannst du bitte …?“, „Gib mir bitte …“ or „Ich brauche …, bitte.“ and react with „Ja, gern.“, „Hier, bitte.“ or „Tut mir leid, …“.",
+            "de": "Formuliere höfliche Bitten mit „Kannst du bitte …?“, „Gib mir bitte …“ oder „Ich brauche …, bitte.“ und reagiere mit „Ja, gern.“, „Hier, bitte.“ oder „Tut mir leid, …“."
+          },
+          {
+            "en": "Ask for help with each picture (carry the suitcase, the city map, a seat on the bench) and answer each of Sophie’s requests clearly with yes or a polite no.",
+            "de": "Bitte zu jedem Bild um Hilfe (Koffer tragen, Stadtplan, Platz auf der Bank) und beantworte jede Bitte von Sophie deutlich mit Ja oder einem höflichen Nein."
+          },
+          {
+            "en": "With „Kannst du …“ the second verb goes to the end in its basic form: „Kannst du bitte die Tür zumachen?“; in the imperative the verb comes first: „Gib mir bitte …“.",
+            "de": "Bei „Kannst du …“ steht das zweite Verb im Infinitiv am Ende: „Kannst du bitte die Tür zumachen?“; im Imperativ steht das Verb vorn: „Gib mir bitte …“."
+          },
+          {
+            "en": "Say „bitte“ clearly and in a friendly tone; a rising voice at the end makes your request sound like a polite question.",
+            "de": "Sag „bitte“ deutlich und freundlich; eine steigende Stimme am Ende macht deine Bitte zu einer höflichen Frage."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a1__sprechen-3__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie wohnen in einem Haus mit vielen Nachbarn. Sie ziehen Karten mit Bildern. Zu jedem Bild bitten Sie Ihren Nachbarn / Ihre Nachbarin um etwas. Er / Sie reagiert. Dann bittet er / sie Sie um etwas.",
+          "materials": [
+            {
+              "title": "Ihre Bildkarten",
+              "points": [
+                "Bild: ein Paket (annehmen)",
+                "Bild: Salz",
+                "Bild: Musik (leiser machen)"
+              ]
+            },
+            {
+              "title": "Die Bildkarten Ihres Partners / Ihrer Partnerin",
+              "points": [
+                "Bild: Blumen (gießen)",
+                "Bild: eine Leiter",
+                "Bild: ein Regenschirm"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 3. Sie sehen ein Bild auf Ihrer Karte. Bitten Sie Ihren Nachbarn um etwas. Er reagiert auf Ihre Bitte. Dann bittet er Sie um etwas. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Herr Wagner",
+            "gender": "m",
+            "profile": "Herr Wagner ist der Nachbar von nebenan, 62 Jahre alt und Rentner. Er ist meistens zu Hause und nimmt gern Pakete an. Er hört manchmal laut Musik. Er bittet selbst darum, nächste Woche seine Blumen zu gießen, um eine Leiter und um einen Regenschirm."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Make polite requests with „Kannst du bitte …?“, „Gib mir bitte …“ or „Ich brauche …, bitte.“ and react with „Ja, gern.“, „Hier, bitte.“ or „Tut mir leid, …“.",
+            "de": "Formuliere höfliche Bitten mit „Kannst du bitte …?“, „Gib mir bitte …“ oder „Ich brauche …, bitte.“ und reagiere mit „Ja, gern.“, „Hier, bitte.“ oder „Tut mir leid, …“."
+          },
+          {
+            "en": "Make a polite request for each picture (take a parcel, salt, turn the music down) and react to each of Herr Wagner’s requests; you can say „du“ or „Sie“, but stay consistent.",
+            "de": "Formuliere zu jedem Bild eine höfliche Bitte (Paket annehmen, Salz, Musik leiser machen) und reagiere auf jede Bitte von Herrn Wagner; du kannst „du“ oder „Sie“ sagen, aber bleib dabei."
+          },
+          {
+            "en": "With „Kannst du …“ the second verb goes to the end in its basic form: „Kannst du bitte die Tür zumachen?“; in the imperative the verb comes first: „Gib mir bitte …“.",
+            "de": "Bei „Kannst du …“ steht das zweite Verb im Infinitiv am Ende: „Kannst du bitte die Tür zumachen?“; im Imperativ steht das Verb vorn: „Gib mir bitte …“."
+          },
+          {
+            "en": "Say „bitte“ clearly and in a friendly tone; a rising voice at the end makes your request sound like a polite question.",
+            "de": "Sag „bitte“ deutlich und freundlich; eine steigende Stimme am Ende macht deine Bitte zu einer höflichen Frage."
+          }
+        ]
+      }
+    }
+  ]
+}
