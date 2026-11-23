@@ -1,0 +1,43 @@
+{
+  "formatId": "generic-a2",
+  "partId": "sprechen-1",
+  "anchors": [
+    {
+      "band": "A",
+      "turns": [
+        "Guten Tag, mein Name ist Priya Sharma. Ich komme aus Indien und lebe seit zwei Jahren in Stuttgart.",
+        "Ich arbeite als Krankenschwester in einem Krankenhaus. Die Arbeit ist anstrengend, aber sie macht mir Spaß.",
+        "Ich wohne mit meinem Mann in einer Dreizimmerwohnung. Sie ist nicht sehr groß, aber hell, und wir haben einen kleinen Balkon.",
+        "Die Nachbarn sind sehr freundlich. Letzte Woche hat uns eine Nachbarin zum Kaffee eingeladen.",
+        "Deutsch lerne ich, weil ich es für meine Arbeit brauche. Ich besuche zweimal pro Woche einen Abendkurs.",
+        "Am schwierigsten finde ich die Artikel. Deshalb schreibe ich jedes neue Wort mit Artikel in ein Heft."
+      ],
+      "grades": { "ausdruck": "A", "aufgabe": "A", "richtigkeit": "A", "aussprache": "A" },
+      "justification": "Die Lernende stellt sich ausführlich vor und beantwortet die Fragen zur Wohnung und zum Deutschlernen genau, mit Begründungen und Beispielen. Sie verwendet für A2 einen breiten Wortschatz und verknüpft ihre Sätze („aber“, „weil“, „deshalb“). Nebensätze, Perfekt und Inversion sind korrekt („Letzte Woche hat uns eine Nachbarin … eingeladen“). Die Aussprache ist klar und flüssig."
+    },
+    {
+      "band": "C",
+      "turns": [
+        "Ich heiße Diego, ich komme aus Kolumbien. Ich bin hier seit ein Jahr.",
+        "Ich arbeite in eine Hotel, in der Küche.",
+        "Meine Wohnung ist klein. Ich wohne allein. Es gibt keine Balkon.",
+        "Nachbarn … ich kenne nicht. Sie sind ruhig.",
+        "Ich lerne Deutsch, weil ich will hier bleiben.",
+        "Grammatik ist schwer. Ich habe gelernt mit App."
+      ],
+      "grades": { "ausdruck": "C", "aufgabe": "C", "richtigkeit": "C", "aussprache": "B" },
+      "justification": "Der Lernende stellt sich vor und beantwortet alle Fragen, aber meist nur mit kurzen, einfachen Aussagen ohne Beispiele. Der Wortschatz reicht für die Aufgabe, ist aber begrenzt. Es gibt viele Fehler: Kasus nach Präpositionen („seit ein Jahr“, „in eine Hotel“), Genus („keine Balkon“) und Wortstellung („weil ich will hier bleiben“, „Ich habe gelernt mit App“). Die Aussprache ist meist gut verständlich."
+    },
+    {
+      "band": "D",
+      "turns": [
+        "Ich bin … Fatima. Marokko.",
+        "Wohnung … klein. Ja.",
+        "Deutsch … für … äh … Arbeit? Nein … Kinder.",
+        "Schwer. Alles schwer."
+      ],
+      "grades": { "ausdruck": "D", "aufgabe": "D", "richtigkeit": "D", "aussprache": "D" },
+      "justification": "Die Lernende nennt nur Name und Land; Beruf und Wohnort fehlen, und die Fragen beantwortet sie nur mit einzelnen, unsicheren Wörtern. Es gibt keine vollständigen Sätze und keine Verbindungen. Die Aussprache ist wegen vieler Pausen und Abbrüche kaum verständlich."
+    }
+  ]
+}

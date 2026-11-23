@@ -1,0 +1,42 @@
+{
+  "formatId": "generic-a1",
+  "partId": "sprechen-2",
+  "anchors": [
+    {
+      "band": "A",
+      "turns": [
+        "Gehen wir am Samstag zusammen in den Zoo? Hast du Zeit?",
+        "Um zehn Uhr kann ich nicht, da kaufe ich ein. Geht es um elf Uhr?",
+        "Super. Wir treffen uns am Bahnhof, okay? Dann fahren wir mit der Straßenbahn.",
+        "Das Ticket kostet fünfzehn Euro. Das ist nicht so teuer.",
+        "Ich bringe Brötchen und Wasser mit. Bringst du Obst mit?",
+        "Gut, also Samstag, elf Uhr, am Bahnhof. Bis Samstag!"
+      ],
+      "grades": { "ausdruck": "A", "aufgabe": "A", "richtigkeit": "A", "aussprache": "A" },
+      "justification": "Die Lernende macht klare Vorschläge, reagiert auf den Partner (lehnt eine Uhrzeit ab und bietet eine neue an) und fasst die Einigung am Ende zusammen. Fragen und Vorschläge sind für A1 vielfältig („Gehen wir …?“, „Geht es um …?“, „Bringst du … mit?“). Verbstellung, trennbare Verben und Präpositionen sind korrekt. Die Aussprache ist klar."
+    },
+    {
+      "band": "C",
+      "turns": [
+        "Samstag … wir gehen Zoo?",
+        "Zehn Uhr? Nein, ich kann nicht. Elf Uhr gut.",
+        "Wir treffen … Bahnhof.",
+        "Ticket … wie viel? Fünfzehn Euro? Okay.",
+        "Ich bringe Wasser. Du … Obst?"
+      ],
+      "grades": { "ausdruck": "C", "aufgabe": "C", "richtigkeit": "C", "aussprache": "B" },
+      "justification": "Der Lernende macht Vorschläge zu Tag, Uhrzeit und Treffpunkt und reagiert auf den Partner, aber die Beiträge sind sehr kurz, und eine klare gemeinsame Einigung wird nicht formuliert. Er benutzt nur wenige einfache Wörter. Präpositionen und Verben fehlen oft („wir gehen Zoo“, „Wir treffen … Bahnhof“), und die Fragen sind meist nur durch die Intonation erkennbar. Die Aussprache ist meist verständlich."
+    },
+    {
+      "band": "D",
+      "turns": [
+        "Zoo.",
+        "Ja … ja.",
+        "Samstag? Äh … nicht.",
+        "Okay. Tschüss."
+      ],
+      "grades": { "ausdruck": "D", "aufgabe": "D", "richtigkeit": "D", "aussprache": "C" },
+      "justification": "Die Lernende macht keinen eigenen Vorschlag und reagiert nur mit „ja“, „okay“ oder einzelnen Wörtern; es entsteht keine Planung und keine Einigung. Sie bildet keine Sätze. Die Aussprache der wenigen Wörter ist teilweise verständlich, aber es gibt lange Pausen."
+    }
+  ]
+}

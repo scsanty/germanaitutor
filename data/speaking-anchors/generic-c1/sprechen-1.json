@@ -1,0 +1,43 @@
+{
+  "formatId": "generic-c1",
+  "partId": "sprechen-1",
+  "anchors": [
+    {
+      "band": "A",
+      "turns": [
+        "Mein Thema ist der Einsatz künstlicher Intelligenz in der Medizin, ein Bereich, in dem Hoffnungen und Befürchtungen besonders nah beieinanderliegen.",
+        "Ich werde zunächst zeigen, wo KI heute schon eingesetzt wird, anschließend die ethischen Probleme beleuchten und abschließend eine eigene Einschätzung wagen.",
+        "Bereits heute erkennen Algorithmen auf Röntgen- und Hautbildern bestimmte Tumoren mindestens so zuverlässig wie erfahrene Fachärzte, und zwar in einem Bruchteil der Zeit.",
+        "Problematisch wird es dort, wo nicht mehr nachvollziehbar ist, wie ein System zu seiner Empfehlung kommt. Wer haftet, wenn die Maschine irrt und der Arzt ihr blind vertraut hat?",
+        "Hinzu kommt der Datenschutz: Je mehr Patientendaten in die Modelle einfließen, desto besser werden sie, aber desto größer ist auch das Missbrauchsrisiko.",
+        "Meiner Ansicht nach sollte KI den Arzt entlasten, ihn aber keinesfalls ersetzen. Die letzte Entscheidung und das Gespräch mit dem Patienten müssen beim Menschen bleiben.",
+        "Ob ich mich selbst von einer KI diagnostizieren lassen würde? Als zweite Meinung durchaus, als alleinige Instanz hingegen nicht, zumindest nicht beim gegenwärtigen Stand der Technik."
+      ],
+      "grades": { "ausdruck": "A", "aufgabe": "A", "richtigkeit": "A", "aussprache": "A" },
+      "justification": "Die Lernende präsentiert ein komplexes Thema souverän, klar gegliedert und mit präzisen Beispielen, wägt Chancen und Risiken ab und beantwortet die Frage differenziert. Der Wortschatz ist breit, idiomatisch und fachlich treffend („nachvollziehbar“, „haften“, „als alleinige Instanz“). Sehr komplexe Strukturen (je … desto, Passiv, indirekte Fragen) sind fehlerfrei. Aussprache und Intonation sind natürlich und unterstützen die Argumentation."
+    },
+    {
+      "band": "C",
+      "turns": [
+        "Ich spreche über künstliche Intelligenz in der Medizin.",
+        "KI kann heute schon Bilder anschauen und Krankheiten finden, zum Beispiel Krebs. Das ist sehr schnell.",
+        "Aber es gibt auch Probleme. Man weiß nicht immer, warum die KI so entscheidet. Und die Daten von Patienten sind sensibel.",
+        "Ich denke, KI ist gut als Hilfe für Ärzte, aber der Arzt muss entscheiden.",
+        "Ob ich KI vertraue? Hm, ein bisschen. Ich möchte lieber mit einem Mensch sprechen."
+      ],
+      "grades": { "ausdruck": "C", "aufgabe": "C", "richtigkeit": "C", "aussprache": "B" },
+      "justification": "Der Lernende behandelt die wichtigsten Aspekte des Themas und äußert eine Meinung, bleibt aber oberflächlich: Es fehlen eine klare Gliederung, genaue Beispiele und eine Auseinandersetzung mit den Argumenten; die Frage beantwortet er knapp. Wortschatz und Strukturen liegen deutlich unter C1-Niveau. Er beschränkt sich auf einfache Hauptsätze, und auch dabei gibt es Fehler („mit einem Mensch“). Die Aussprache ist gut verständlich."
+    },
+    {
+      "band": "D",
+      "turns": [
+        "KI … Medizin … ja.",
+        "Computer … Bilder … Krankheit.",
+        "Problem … Daten? Ich glaube.",
+        "Arzt … besser. Nein … ich weiß nicht."
+      ],
+      "grades": { "ausdruck": "D", "aufgabe": "D", "richtigkeit": "D", "aussprache": "D" },
+      "justification": "Die Lernende kann das Thema nicht präsentieren: Sie nennt nur einzelne Stichwörter, ohne Zusammenhang, ohne Gliederung und ohne Meinung, und beantwortet die Frage nicht. Satzstrukturen fehlen völlig, der Wortschatz reicht für die Aufgabe nicht aus. Die Aussprache ist nur mit großer Mühe verständlich."
+    }
+  ]
+}

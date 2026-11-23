@@ -1,0 +1,42 @@
+{
+  "formatId": "generic-a1",
+  "partId": "sprechen-1",
+  "anchors": [
+    {
+      "band": "A",
+      "turns": [
+        "Hallo, ich heiße Mehmet Yılmaz. Ich bin 28 Jahre alt und komme aus der Türkei, aus Izmir.",
+        "Jetzt wohne ich in Dortmund. Ich bin Mechaniker und arbeite in einer Autowerkstatt.",
+        "Ich bin verheiratet. Meine Frau heißt Ayşe, und wir haben eine Tochter. Sie ist drei Jahre alt.",
+        "Meine Eltern wohnen noch in Izmir. Ich habe auch zwei Brüder.",
+        "Zur Arbeit fahre ich mit dem Bus. Das dauert zwanzig Minuten.",
+        "Am Wochenende spiele ich gern mit meiner Tochter im Park."
+      ],
+      "grades": { "ausdruck": "A", "aufgabe": "A", "richtigkeit": "A", "aussprache": "A" },
+      "justification": "Der Lernende stellt sich vollständig vor und beantwortet die Fragen zu Familie und Arbeitsweg genau und mit kleinen Zusatzinformationen. Er verwendet für A1 einen passenden, abwechslungsreichen Wortschatz und verbindet seine Sätze mit „und“. Satzbau, Verbformen und Artikel sind korrekt („mit dem Bus“, „in einer Autowerkstatt“). Die Aussprache ist klar und gut verständlich."
+    },
+    {
+      "band": "C",
+      "turns": [
+        "Ich heiße Lan. Ich komme aus Vietnam.",
+        "Ich wohne in Berlin. Ich bin … Verkäuferin.",
+        "Familie … ich habe ein Sohn. Er ist sieben Jahre.",
+        "Mein Mann arbeiten in Restaurant.",
+        "Arbeit … ich fahre mit U-Bahn. Fünfzehn Minute."
+      ],
+      "grades": { "ausdruck": "C", "aufgabe": "C", "richtigkeit": "C", "aussprache": "B" },
+      "justification": "Die Lernende nennt Name, Herkunft, Wohnort und Beruf und beantwortet die Fragen, aber nur sehr knapp; das Alter fehlt, und sie sagt kaum mehr als das Nötigste. Der Wortschatz ist einfach und wiederholt sich. Es gibt häufige Fehler bei Artikeln, Endungen und Verbformen („ein Sohn“ statt „einen Sohn“, „Mein Mann arbeiten“, „mit U-Bahn“). Die Aussprache ist trotz einiger Pausen meist verständlich."
+    },
+    {
+      "band": "D",
+      "turns": [
+        "Ich … Ana.",
+        "Brasilien.",
+        "Familie … ja. Zwei … äh … Kinder?",
+        "Arbeit … Bus. Nein … ich nicht weiß."
+      ],
+      "grades": { "ausdruck": "D", "aufgabe": "D", "richtigkeit": "D", "aussprache": "D" },
+      "justification": "Die Lernende nennt nur ihren Namen und ihr Land; Wohnort, Beruf und Alter fehlen, und die Fragen zum Arbeitsweg beantwortet sie nicht verständlich. Sie spricht nur in einzelnen Wörtern ohne Satzbau und ohne Verben. Wegen langer Pausen und undeutlicher Aussprache ist sie kaum zu verstehen."
+    }
+  ]
+}

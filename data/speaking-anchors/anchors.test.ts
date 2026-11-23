@@ -5,10 +5,6 @@ import { listFormats, readFormat } from '@/lib/exam/formats';
 import { readSpokenAnchors, spokenAnchorProblems, type SpokenAnchorFile } from '@/lib/speaking/anchors';
 import { isBottom, isTop } from '@/lib/writing/anchors';
 
-// The tracks whose spoken parts must all have anchors. Task 10 lands one track per commit, and each extends this list,
-// so the suite stays green between commits. When it holds every track, every spoken part of every format is covered.
-const ANCHORED_TRACKS = ['telc', 'goethe'];
-
 const DIR = join(__dirname);
 const files = readdirSync(DIR, { withFileTypes: true })
   .filter((d) => d.isDirectory())
@@ -19,9 +15,9 @@ const files = readdirSync(DIR, { withFileTypes: true })
   );
 
 describe('bundled speaking anchors', () => {
-  it('cover every spoken part of every anchored track', () => {
+  // Every track, so a new format can't ship a spoken part without anchors.
+  it('cover every spoken part of every format', () => {
     const parts = listFormats()
-      .filter((f) => ANCHORED_TRACKS.includes(f.track))
       .flatMap((f) => f.parts.filter((p) => p.taskType === 'spoken').map((p) => `${f.id}/${p.id}`));
     expect(parts.length).toBeGreaterThan(0);
     expect(parts.filter((key) => !existsSync(join(DIR, `${key}.json`)))).toEqual([]);
