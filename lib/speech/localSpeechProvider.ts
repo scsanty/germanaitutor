@@ -6,7 +6,21 @@ export const MAX_RENDER_BYTES = 1024 * 1024;
 export const MAX_CONVERT_BYTES = 25 * 1024 * 1024;
 
 export const MAX_TRANSCRIBE_BYTES = 25 * 1024 * 1024;
-const TRANSCRIBE_TIMEOUT_MS = 120_000;
+// Final review I4: Whisper on the CPU takes longer the longer the clip, and `medium` is several times
+// slower than `small`. The upload size is the duration proxy the app has before the sidecar decodes it:
+// a 5-minute browser recording is about 1-2.5 MB of webm/opus (32-64 kbit/s) and up to about 5 MB of
+// Safari mp4/aac (128 kbit/s). 120 s stays the floor; each MB adds 120 s. At 64 kbit/s 1 MB is about
+// 2 minutes of speech, so that is one second of waiting per second of speech on top of the floor, which
+// covers `medium` at about real time on a slow CPU. The cap of 600 s (reached at 4 MB) means no request
+// waits more than 10 minutes.
+const TRANSCRIBE_MIN_TIMEOUT_MS = 120_000;
+const TRANSCRIBE_TIMEOUT_MS_PER_MB = 120_000;
+const TRANSCRIBE_MAX_TIMEOUT_MS = 600_000;
+
+export function transcribeTimeoutMs(bytes: number): number {
+  const scaled = TRANSCRIBE_MIN_TIMEOUT_MS + (bytes / (1024 * 1024)) * TRANSCRIBE_TIMEOUT_MS_PER_MB;
+  return Math.round(Math.min(TRANSCRIBE_MAX_TIMEOUT_MS, scaled));
+}
 
 const HEALTH_TIMEOUT_MS = 3000;
 const BASE_TIMEOUT_MS = 60_000;
@@ -97,7 +111,7 @@ export function createLocalSpeechProvider(baseUrl: string): SpeechProvider {
         url(`/transcribe?model=${encodeURIComponent(model)}`),
         new Uint8Array(audio),
         { 'Content-Type': 'application/octet-stream' },
-        TRANSCRIBE_TIMEOUT_MS
+        transcribeTimeoutMs(audio.length)
       );
       try {
         return parseTranscription(await res.json());
