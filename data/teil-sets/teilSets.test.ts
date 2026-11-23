@@ -41,7 +41,7 @@ describe('bundled Teil sets', () => {
     expect(parts).toBeGreaterThan(0);
   });
   // S23: 3 starter sets per spoken part. Tracks are added here as their sets land (Task 11: telc, then Goethe and NaDoch).
-  const SPOKEN_SET_TRACKS = ['telc'];
+  const SPOKEN_SET_TRACKS = ['telc', 'goethe'];
   it('give every spoken part of the covered tracks 3 sets, each with its own materials', () => {
     let parts = 0;
     for (const format of listFormats().filter((f) => SPOKEN_SET_TRACKS.includes(f.id.split('-')[0]))) {
@@ -55,6 +55,6 @@ describe('bundled Teil sets', () => {
         expect(new Set(materials).size, `${format.id}/${part.id}: distinct materials`).toBe(3);
       }
     }
-    expect(parts).toBe(15);
+    expect(parts).toBe(28);
   });
 });

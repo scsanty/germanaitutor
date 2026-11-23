@@ -1,0 +1,181 @@
+{
+  "formatId": "goethe-b2",
+  "partId": "sprechen-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-b2__sprechen-1__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Wählen Sie eines der beiden Themen und halten Sie einen Vortrag von etwa vier Minuten mit Einleitung, Hauptteil und Schluss. Danach stellt Ihnen Ihr Partner / Ihre Partnerin Fragen.",
+          "materials": [
+            {
+              "title": "Thema 1: Ständig erreichbar – auch in der Freizeit?",
+              "points": [
+                "Beschreiben Sie verschiedene Situationen, in denen Menschen nach Feierabend erreichbar sind.",
+                "Erläutern Sie eine davon genauer.",
+                "Nennen Sie Vor- und Nachteile und bewerten Sie diese.",
+                "Gehen Sie auch auf die Situation in Ihrem Heimatland ein."
+              ]
+            },
+            {
+              "title": "Thema 2: Wohnen im Alter – wo und wie?",
+              "points": [
+                "Beschreiben Sie verschiedene Wohnformen für ältere Menschen.",
+                "Erläutern Sie eine davon genauer.",
+                "Nennen Sie Vor- und Nachteile und bewerten Sie diese.",
+                "Gehen Sie auch auf die Situation in Ihrem Heimatland ein."
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1, dem Vortrag. Sie haben eines der beiden Themen gewählt. Nennen Sie bitte zuerst Ihr Thema und halten Sie dann einen Vortrag von etwa vier Minuten. Achten Sie auf Einleitung, Hauptteil und Schluss. Anschließend stellt Ihnen Ihre Partnerin Fragen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Miriam",
+            "gender": "f",
+            "profile": "Miriam ist 46 und arbeitet als Personalreferentin in einem großen Versicherungsunternehmen in Köln. Sie kümmert sich außerdem um ihre Mutter, die bald nicht mehr allein wohnen kann. Sie hört dem Vortrag aufmerksam zu und stellt danach ein bis zwei gezielte Fragen, zum Beispiel nach einem Beispiel oder nach einer Lösung."
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Name your topic, then cover all four points: describe several situations or forms, explain one in more detail, weigh up the advantages and disadvantages, include your home country, and end with a conclusion before answering Miriam’s questions.",
+            "de": "Nenne dein Thema und geh dann auf alle vier Punkte ein: mehrere Situationen bzw. Formen beschreiben, eine genauer erläutern, Vor- und Nachteile abwägen, dein Heimatland einbeziehen, und schließ mit einem Fazit, bevor du Miriams Fragen beantwortest."
+          },
+          {
+            "en": "Give your talk a clear introduction, main part and conclusion and signal each transition: „Zunächst möchte ich …“, „Damit komme ich zum nächsten Punkt.“, „Zusammenfassend …“.",
+            "de": "Gib deinem Vortrag eine klare Einleitung, einen Hauptteil und einen Schluss und mach jeden Übergang deutlich: „Zunächst möchte ich …“, „Damit komme ich zum nächsten Punkt.“, „Zusammenfassend …“."
+          },
+          {
+            "en": "Use precise, topic-specific words instead of general ones, and vary your phrases for weighing up: „Dafür spricht …“, „Dagegen lässt sich einwenden …“, „Ausschlaggebend ist für mich …“.",
+            "de": "Benutze genaue, themenspezifische Wörter statt allgemeiner und variiere deine Redemittel zum Abwägen: „Dafür spricht …“, „Dagegen lässt sich einwenden …“, „Ausschlaggebend ist für mich …“."
+          },
+          {
+            "en": "Use a range of structures correctly: the passive („Es wird oft behauptet …“), relative clauses and connectors such as zwar … aber, obwohl, während and dennoch.",
+            "de": "Benutze verschiedene Strukturen korrekt: das Passiv („Es wird oft behauptet …“), Relativsätze und Konnektoren wie zwar … aber, obwohl, während und dennoch."
+          },
+          {
+            "en": "Speak freely for about four minutes at an even pace; vary your intonation and pause between the parts of your talk.",
+            "de": "Sprich etwa vier Minuten frei und in gleichmäßigem Tempo; variiere die Intonation und mach zwischen den Teilen deines Vortrags Pausen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b2__sprechen-1__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Wählen Sie eines der beiden Themen und halten Sie einen Vortrag von etwa vier Minuten mit Einleitung, Hauptteil und Schluss. Danach stellt Ihnen Ihr Partner / Ihre Partnerin Fragen.",
+          "materials": [
+            {
+              "title": "Thema 1: Bibliotheken im digitalen Zeitalter",
+              "points": [
+                "Beschreiben Sie verschiedene Angebote, die Bibliotheken heute machen.",
+                "Erläutern Sie eine davon genauer.",
+                "Nennen Sie Vor- und Nachteile und bewerten Sie diese.",
+                "Gehen Sie auch auf die Situation in Ihrem Heimatland ein."
+              ]
+            },
+            {
+              "title": "Thema 2: Sport als Schulfach – mit Noten?",
+              "points": [
+                "Beschreiben Sie verschiedene Möglichkeiten, Sport in der Schule zu bewerten.",
+                "Erläutern Sie eine davon genauer.",
+                "Nennen Sie Vor- und Nachteile und bewerten Sie diese.",
+                "Gehen Sie auch auf die Situation in Ihrem Heimatland ein."
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1. Bitte sagen Sie zuerst, welches der beiden Themen Sie gewählt haben, und halten Sie dann Ihren Vortrag, etwa vier Minuten lang, mit Einleitung, Hauptteil und Schluss. Danach hat Ihr Partner Fragen an Sie. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Florian",
+            "gender": "m",
+            "profile": "Florian ist 38, Sportlehrer an einer Gesamtschule in Kassel und leiht sich regelmäßig E-Books bei der Stadtbibliothek aus. Er hört zu und stellt danach ein bis zwei kritische Fragen, zum Beispiel ob die Bibliothek wirklich noch gebraucht wird oder wie man unsportliche Kinder fair bewertet."
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "State your topic, cover all four points (several offers or ways of grading, one in depth, pros and cons with your evaluation, your home country), close with a clear conclusion and answer Florian’s questions with arguments.",
+            "de": "Nenne dein Thema, geh auf alle vier Punkte ein (mehrere Angebote bzw. Bewertungsmöglichkeiten, eine davon genauer, Vor- und Nachteile mit Bewertung, dein Heimatland), schließ mit einem klaren Fazit und beantworte Florians Fragen mit Argumenten."
+          },
+          {
+            "en": "Give your talk a clear introduction, main part and conclusion and signal each transition: „Zunächst möchte ich …“, „Damit komme ich zum nächsten Punkt.“, „Zusammenfassend …“.",
+            "de": "Gib deinem Vortrag eine klare Einleitung, einen Hauptteil und einen Schluss und mach jeden Übergang deutlich: „Zunächst möchte ich …“, „Damit komme ich zum nächsten Punkt.“, „Zusammenfassend …“."
+          },
+          {
+            "en": "Use precise, topic-specific words instead of general ones, and vary your phrases for weighing up: „Dafür spricht …“, „Dagegen lässt sich einwenden …“, „Ausschlaggebend ist für mich …“.",
+            "de": "Benutze genaue, themenspezifische Wörter statt allgemeiner und variiere deine Redemittel zum Abwägen: „Dafür spricht …“, „Dagegen lässt sich einwenden …“, „Ausschlaggebend ist für mich …“."
+          },
+          {
+            "en": "Use a range of structures correctly: the passive („Es wird oft behauptet …“), relative clauses and connectors such as zwar … aber, obwohl, während and dennoch.",
+            "de": "Benutze verschiedene Strukturen korrekt: das Passiv („Es wird oft behauptet …“), Relativsätze und Konnektoren wie zwar … aber, obwohl, während und dennoch."
+          },
+          {
+            "en": "Speak freely for about four minutes at an even pace; vary your intonation and pause between the parts of your talk.",
+            "de": "Sprich etwa vier Minuten frei und in gleichmäßigem Tempo; variiere die Intonation und mach zwischen den Teilen deines Vortrags Pausen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b2__sprechen-1__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Wählen Sie eines der beiden Themen und halten Sie einen Vortrag von etwa vier Minuten mit Einleitung, Hauptteil und Schluss. Danach stellt Ihnen Ihr Partner / Ihre Partnerin Fragen.",
+          "materials": [
+            {
+              "title": "Thema 1: Influencer – ein Beruf mit Zukunft?",
+              "points": [
+                "Beschreiben Sie verschiedene Arten von Influencern und wie sie Geld verdienen.",
+                "Erläutern Sie eine davon genauer.",
+                "Nennen Sie Vor- und Nachteile und bewerten Sie diese.",
+                "Gehen Sie auch auf die Situation in Ihrem Heimatland ein."
+              ]
+            },
+            {
+              "title": "Thema 2: Neben dem Studium jobben",
+              "points": [
+                "Beschreiben Sie verschiedene Jobs, die Studierende neben dem Studium machen.",
+                "Erläutern Sie eine davon genauer.",
+                "Nennen Sie Vor- und Nachteile und bewerten Sie diese.",
+                "Gehen Sie auch auf die Situation in Ihrem Heimatland ein."
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1, dem Vortrag. Nennen Sie bitte das Thema, das Sie gewählt haben, und sprechen Sie etwa vier Minuten darüber. Denken Sie an eine Einleitung und einen Schluss. Ihre Partnerin stellt Ihnen danach Fragen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Leonie",
+            "gender": "f",
+            "profile": "Leonie ist 27, hat Medienwissenschaft studiert und arbeitet jetzt in einer Marketingagentur in Berlin; während des Studiums hat sie in einem Café und als Nachhilfelehrerin gejobbt. Sie hört aufmerksam zu und stellt danach ein bis zwei Fragen, die nachhaken, etwa nach Risiken oder nach eigenen Erfahrungen."
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Name your topic and work through all four points: describe several types or jobs, explain one in detail, assess the advantages and disadvantages, refer to your home country, then conclude and answer Leonie’s follow-up questions.",
+            "de": "Nenne dein Thema und arbeite alle vier Punkte ab: mehrere Arten bzw. Jobs beschreiben, einen genauer erläutern, Vor- und Nachteile bewerten, auf dein Heimatland eingehen, dann ein Fazit ziehen und Leonies Nachfragen beantworten."
+          },
+          {
+            "en": "Give your talk a clear introduction, main part and conclusion and signal each transition: „Zunächst möchte ich …“, „Damit komme ich zum nächsten Punkt.“, „Zusammenfassend …“.",
+            "de": "Gib deinem Vortrag eine klare Einleitung, einen Hauptteil und einen Schluss und mach jeden Übergang deutlich: „Zunächst möchte ich …“, „Damit komme ich zum nächsten Punkt.“, „Zusammenfassend …“."
+          },
+          {
+            "en": "Use precise, topic-specific words instead of general ones, and vary your phrases for weighing up: „Dafür spricht …“, „Dagegen lässt sich einwenden …“, „Ausschlaggebend ist für mich …“.",
+            "de": "Benutze genaue, themenspezifische Wörter statt allgemeiner und variiere deine Redemittel zum Abwägen: „Dafür spricht …“, „Dagegen lässt sich einwenden …“, „Ausschlaggebend ist für mich …“."
+          },
+          {
+            "en": "Use a range of structures correctly: the passive („Es wird oft behauptet …“), relative clauses and connectors such as zwar … aber, obwohl, während and dennoch.",
+            "de": "Benutze verschiedene Strukturen korrekt: das Passiv („Es wird oft behauptet …“), Relativsätze und Konnektoren wie zwar … aber, obwohl, während und dennoch."
+          },
+          {
+            "en": "Speak freely for about four minutes at an even pace; vary your intonation and pause between the parts of your talk.",
+            "de": "Sprich etwa vier Minuten frei und in gleichmäßigem Tempo; variiere die Intonation und mach zwischen den Teilen deines Vortrags Pausen."
+          }
+        ]
+      }
+    }
+  ]
+}

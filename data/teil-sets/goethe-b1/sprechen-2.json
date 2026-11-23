@@ -1,0 +1,220 @@
+{
+  "formatId": "goethe-b1",
+  "partId": "sprechen-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-b1__sprechen-2__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie halten eine kurze Präsentation zum Thema „Allein reisen oder in der Gruppe?“. Ihre Präsentation hat fünf Folien. Sprechen Sie etwa drei bis vier Minuten. Ihr Partner / Ihre Partnerin hört zu.",
+          "materials": [
+            {
+              "title": "Folie 1: Allein reisen oder in der Gruppe?",
+              "points": [
+                "Ist es besser, allein oder mit anderen zu verreisen?",
+                "Stellen Sie Ihr Thema vor und erklären Sie den Inhalt und die Struktur Ihrer Präsentation."
+              ]
+            },
+            {
+              "title": "Folie 2: Meine persönlichen Erfahrungen",
+              "points": [
+                "Berichten Sie von einer Reise, die Sie allein oder in einer Gruppe gemacht haben."
+              ]
+            },
+            {
+              "title": "Folie 3: Die Situation in meinem Heimatland",
+              "points": [
+                "Berichten Sie, wie die Menschen in Ihrem Heimatland meistens Urlaub machen."
+              ]
+            },
+            {
+              "title": "Folie 4: Vor- und Nachteile & meine Meinung",
+              "points": [
+                "Nennen Sie Vor- und Nachteile und sagen Sie dazu Ihre Meinung. Geben Sie auch Beispiele."
+              ]
+            },
+            {
+              "title": "Folie 5: Abschluss & Dank",
+              "points": [
+                "Beenden Sie Ihre Präsentation und bedanken Sie sich bei den Zuhörern."
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2. Sie präsentieren jetzt Ihr Thema „Allein reisen oder in der Gruppe?“. Ihre Präsentation hat fünf Schritte; die Folien helfen Ihnen. Sprechen Sie bitte etwa drei bis vier Minuten. Ihr Partner hört zu. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Oliver",
+            "gender": "m",
+            "profile": "Oliver ist 35 und arbeitet als Lehrer. Er hört aufmerksam zu und unterbricht nicht. Zwischen den Teilen sagt er höchstens ganz kurz etwas wie „Mhm, interessant.“ oder „Und wie ist das in deinem Heimatland?“, damit du weitersprichst. Feedback und Fragen kommen erst in Teil 3."
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Cover all five steps of the slides: introduce the topic and your structure, tell a real travel experience, describe holidays in your home country, weigh up travelling alone or in a group with your opinion and examples, then close and thank the listeners.",
+            "de": "Geh auf alle fünf Schritte der Folien ein: Thema und Gliederung vorstellen, eine echte Reiseerfahrung erzählen, den Urlaub in deinem Heimatland beschreiben, Vor- und Nachteile des Allein- oder Gruppenreisens mit deiner Meinung und Beispielen abwägen, dann abschließen und dich bedanken."
+          },
+          {
+            "en": "Announce each of the five steps („Zuerst …“, „Jetzt möchte ich von meinen Erfahrungen erzählen.“, „Wie ist das in meinem Heimatland?“, „Zum Schluss …“) so the structure is easy to follow.",
+            "de": "Kündige jeden der fünf Schritte an („Zuerst …“, „Jetzt möchte ich von meinen Erfahrungen erzählen.“, „Wie ist das in meinem Heimatland?“, „Zum Schluss …“), damit man der Gliederung leicht folgen kann."
+          },
+          {
+            "en": "Use topic words from the slides and phrases for advantages and disadvantages: „Ein Vorteil ist, dass …“, „Ein Nachteil ist …“, „Meiner Meinung nach …“.",
+            "de": "Benutze die Themenwörter von den Folien und Redemittel für Vor- und Nachteile: „Ein Vorteil ist, dass …“, „Ein Nachteil ist …“, „Meiner Meinung nach …“."
+          },
+          {
+            "en": "Tell your experience in the Perfekt, use comparisons („mehr als“, „nicht so … wie“) for your home country and subordinate clauses with dass, weil and wenn.",
+            "de": "Erzähl deine Erfahrungen im Perfekt, benutze für dein Heimatland Vergleiche („mehr als“, „nicht so … wie“) und Nebensätze mit dass, weil und wenn."
+          },
+          {
+            "en": "Speak freely from the slides, not from a script; pause between the steps and stress the key words of each slide.",
+            "de": "Sprich frei nach den Folien, nicht vom Blatt; mach zwischen den Schritten Pausen und betone die Schlüsselwörter jeder Folie."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__sprechen-2__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie halten eine kurze Präsentation zum Thema „Selbst kochen oder Fertiggerichte?“. Ihre Präsentation hat fünf Folien. Sprechen Sie etwa drei bis vier Minuten. Ihr Partner / Ihre Partnerin hört zu.",
+          "materials": [
+            {
+              "title": "Folie 1: Selbst kochen oder Fertiggerichte?",
+              "points": [
+                "Sollte man jeden Tag frisch kochen?",
+                "Stellen Sie Ihr Thema vor und erklären Sie den Inhalt und die Struktur Ihrer Präsentation."
+              ]
+            },
+            {
+              "title": "Folie 2: Meine persönlichen Erfahrungen",
+              "points": [
+                "Berichten Sie, wie Sie selbst kochen und essen, und von einem Erlebnis mit Kochen oder Fertigessen."
+              ]
+            },
+            {
+              "title": "Folie 3: Die Situation in meinem Heimatland",
+              "points": [
+                "Berichten Sie, wie wichtig das Kochen in Ihrem Heimatland ist und wer meistens kocht."
+              ]
+            },
+            {
+              "title": "Folie 4: Vor- und Nachteile & meine Meinung",
+              "points": [
+                "Nennen Sie Vor- und Nachteile und sagen Sie dazu Ihre Meinung. Geben Sie auch Beispiele."
+              ]
+            },
+            {
+              "title": "Folie 5: Abschluss & Dank",
+              "points": [
+                "Beenden Sie Ihre Präsentation und bedanken Sie sich bei den Zuhörern."
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2. Bitte präsentieren Sie jetzt Ihr Thema „Selbst kochen oder Fertiggerichte?“. Gehen Sie die fünf Folien der Reihe nach durch und sprechen Sie etwa drei bis vier Minuten. Ihre Partnerin hört zu. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Petra",
+            "gender": "f",
+            "profile": "Petra ist 42 und arbeitet als Krankenschwester im Schichtdienst. Sie hört aufmerksam zu und unterbricht nicht. Zwischen den Teilen sagt sie höchstens ganz kurz etwas wie „Ah ja.“ oder „Und was ist deine Meinung?“, damit du weitersprichst. Feedback und Fragen kommen erst in Teil 3."
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Go through all five steps: present the topic and structure, describe your own cooking habits with an example, explain the role of cooking in your home country, give advantages and disadvantages with your opinion, then finish and thank the audience.",
+            "de": "Geh alle fünf Schritte durch: Thema und Gliederung vorstellen, deine eigenen Kochgewohnheiten mit einem Beispiel beschreiben, die Rolle des Kochens in deinem Heimatland erklären, Vor- und Nachteile mit deiner Meinung nennen, dann abschließen und dich bedanken."
+          },
+          {
+            "en": "Announce each of the five steps („Zuerst …“, „Jetzt möchte ich von meinen Erfahrungen erzählen.“, „Wie ist das in meinem Heimatland?“, „Zum Schluss …“) so the structure is easy to follow.",
+            "de": "Kündige jeden der fünf Schritte an („Zuerst …“, „Jetzt möchte ich von meinen Erfahrungen erzählen.“, „Wie ist das in meinem Heimatland?“, „Zum Schluss …“), damit man der Gliederung leicht folgen kann."
+          },
+          {
+            "en": "Use topic words from the slides and phrases for advantages and disadvantages: „Ein Vorteil ist, dass …“, „Ein Nachteil ist …“, „Meiner Meinung nach …“.",
+            "de": "Benutze die Themenwörter von den Folien und Redemittel für Vor- und Nachteile: „Ein Vorteil ist, dass …“, „Ein Nachteil ist …“, „Meiner Meinung nach …“."
+          },
+          {
+            "en": "Tell your experience in the Perfekt, use comparisons („mehr als“, „nicht so … wie“) for your home country and subordinate clauses with dass, weil and wenn.",
+            "de": "Erzähl deine Erfahrungen im Perfekt, benutze für dein Heimatland Vergleiche („mehr als“, „nicht so … wie“) und Nebensätze mit dass, weil und wenn."
+          },
+          {
+            "en": "Speak freely from the slides, not from a script; pause between the steps and stress the key words of each slide.",
+            "de": "Sprich frei nach den Folien, nicht vom Blatt; mach zwischen den Schritten Pausen und betone die Schlüsselwörter jeder Folie."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__sprechen-2__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie halten eine kurze Präsentation zum Thema „Mit dem Fahrrad zur Arbeit?“. Ihre Präsentation hat fünf Folien. Sprechen Sie etwa drei bis vier Minuten. Ihr Partner / Ihre Partnerin hört zu.",
+          "materials": [
+            {
+              "title": "Folie 1: Mit dem Fahrrad zur Arbeit?",
+              "points": [
+                "Sollten mehr Menschen mit dem Fahrrad zur Arbeit fahren?",
+                "Stellen Sie Ihr Thema vor und erklären Sie den Inhalt und die Struktur Ihrer Präsentation."
+              ]
+            },
+            {
+              "title": "Folie 2: Meine persönlichen Erfahrungen",
+              "points": [
+                "Berichten Sie, wie Sie zur Arbeit, zum Kurs oder zur Schule kommen, und von Ihren Erfahrungen mit dem Fahrrad."
+              ]
+            },
+            {
+              "title": "Folie 3: Die Situation in meinem Heimatland",
+              "points": [
+                "Berichten Sie, wie die Menschen in Ihrem Heimatland zur Arbeit fahren und welche Rolle das Fahrrad spielt."
+              ]
+            },
+            {
+              "title": "Folie 4: Vor- und Nachteile & meine Meinung",
+              "points": [
+                "Nennen Sie Vor- und Nachteile und sagen Sie dazu Ihre Meinung. Geben Sie auch Beispiele."
+              ]
+            },
+            {
+              "title": "Folie 5: Abschluss & Dank",
+              "points": [
+                "Beenden Sie Ihre Präsentation und bedanken Sie sich bei den Zuhörern."
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2. Sie präsentieren jetzt Ihr Thema „Mit dem Fahrrad zur Arbeit?“. Die fünf Folien helfen Ihnen. Sprechen Sie bitte etwa drei bis vier Minuten. Ihr Partner hört zu. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Yusuf",
+            "gender": "m",
+            "profile": "Yusuf ist 39 und arbeitet als Taxifahrer. Er hört aufmerksam zu und unterbricht nicht. Zwischen den Teilen sagt er höchstens ganz kurz etwas wie „Verstehe.“ oder „Und die Vor- und Nachteile?“, damit du weitersprichst. Feedback und Fragen kommen erst in Teil 3."
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Cover all five slides: introduce the question and your structure, describe how you travel and your experience with cycling, compare commuting in your home country, weigh up the pros and cons with your opinion and examples, then close and say thank you.",
+            "de": "Geh auf alle fünf Folien ein: Frage und Gliederung vorstellen, beschreiben, wie du unterwegs bist und welche Erfahrungen du mit dem Fahrrad hast, den Arbeitsweg in deinem Heimatland vergleichen, Vor- und Nachteile mit deiner Meinung und Beispielen abwägen, dann abschließen und Danke sagen."
+          },
+          {
+            "en": "Announce each of the five steps („Zuerst …“, „Jetzt möchte ich von meinen Erfahrungen erzählen.“, „Wie ist das in meinem Heimatland?“, „Zum Schluss …“) so the structure is easy to follow.",
+            "de": "Kündige jeden der fünf Schritte an („Zuerst …“, „Jetzt möchte ich von meinen Erfahrungen erzählen.“, „Wie ist das in meinem Heimatland?“, „Zum Schluss …“), damit man der Gliederung leicht folgen kann."
+          },
+          {
+            "en": "Use topic words from the slides and phrases for advantages and disadvantages: „Ein Vorteil ist, dass …“, „Ein Nachteil ist …“, „Meiner Meinung nach …“.",
+            "de": "Benutze die Themenwörter von den Folien und Redemittel für Vor- und Nachteile: „Ein Vorteil ist, dass …“, „Ein Nachteil ist …“, „Meiner Meinung nach …“."
+          },
+          {
+            "en": "Tell your experience in the Perfekt, use comparisons („mehr als“, „nicht so … wie“) for your home country and subordinate clauses with dass, weil and wenn.",
+            "de": "Erzähl deine Erfahrungen im Perfekt, benutze für dein Heimatland Vergleiche („mehr als“, „nicht so … wie“) und Nebensätze mit dass, weil und wenn."
+          },
+          {
+            "en": "Speak freely from the slides, not from a script; pause between the steps and stress the key words of each slide.",
+            "de": "Sprich frei nach den Folien, nicht vom Blatt; mach zwischen den Schritten Pausen und betone die Schlüsselwörter jeder Folie."
+          }
+        ]
+      }
+    }
+  ]
+}
