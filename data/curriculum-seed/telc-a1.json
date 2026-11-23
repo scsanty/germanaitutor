@@ -1,5 +1,5 @@
 {
-  "seedVersion": "11",
+  "seedVersion": "12",
   "formatVersion": 3,
   "track": "telc",
   "level": "A1",
@@ -1505,6 +1505,21 @@
       }
     },
     {
+      "id": "a1-telc-speaking-personal-disclosure__ex3",
+      "lessonId": "a1-telc-speaking-personal-disclosure",
+      "track": "telc",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "Say your personal details out loud, as in telc Sprechen Teil 1, and spell your surname.",
+          "de": "Sagen Sie Ihre persönlichen Daten laut, wie in telc Sprechen Teil 1, und buchstabieren Sie Ihren Familiennamen."
+        },
+        "prompt": "Name? Alter? Land? Wohnort? Sprachen? Beruf? Hobby? Buchstabieren Sie bitte auch Ihren Familiennamen.",
+        "modelAnswer": "Ich heiße Lina Petrova. Ich bin 31 Jahre alt. Ich komme aus Bulgarien und wohne jetzt in Leipzig. Ich spreche Bulgarisch, Englisch und ein bisschen Deutsch. Ich bin Köchin von Beruf. Mein Hobby ist Schwimmen. Mein Familienname ist Petrova: P-E-T-R-O-V-A.",
+        "minSeconds": 20
+      }
+    },
+    {
       "id": "a1-telc-speaking-asking-requesting__ex0",
       "lessonId": "a1-telc-speaking-asking-requesting",
       "track": "telc",
@@ -1546,6 +1561,21 @@
           "en": "Politely ask an official for an administrative form.",
           "de": "Sie sind im Amt. Bitten Sie höflich um ein Formular."
         }
+      }
+    },
+    {
+      "id": "a1-telc-speaking-asking-requesting__ex3",
+      "lessonId": "a1-telc-speaking-asking-requesting",
+      "track": "telc",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "You are at the town hall. Ask the clerk two polite questions and make two polite requests.",
+          "de": "Sie sind im Rathaus. Stellen Sie zwei höfliche Fragen und bitten Sie zweimal höflich um etwas."
+        },
+        "prompt": "Sie möchten sich anmelden. Fragen Sie: Wo ist Zimmer 12? Wann ist das Büro offen? Bitten Sie um ein Formular und einen Kugelschreiber.",
+        "modelAnswer": "Guten Tag! Entschuldigung, wo ist bitte Zimmer zwölf? Und wann ist das Büro morgen offen? Ich möchte mich anmelden. Kann ich bitte ein Formular haben? Und können Sie mir bitte einen Kugelschreiber geben? Vielen Dank!",
+        "minSeconds": 20
       }
     }
   ],

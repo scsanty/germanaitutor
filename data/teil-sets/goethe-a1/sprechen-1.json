@@ -1,0 +1,184 @@
+{
+  "formatId": "goethe-a1",
+  "partId": "sprechen-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-a1__sprechen-1__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Heute ist Ihr erster Tag in einer neuen Firma. Beim Teamfrühstück stellen sich die neuen Kolleginnen und Kollegen vor. Stellen Sie sich vor. Danach buchstabieren Sie Ihren Nachnamen und nennen Ihr Geburtsdatum.",
+          "materials": [
+            {
+              "title": "Stellen Sie sich vor",
+              "points": [
+                "Name?",
+                "Alter?",
+                "Land?",
+                "Wohnort?",
+                "Sprachen?",
+                "Beruf?",
+                "Hobby?"
+              ]
+            },
+            {
+              "title": "Danach",
+              "points": [
+                "Buchstabieren Sie Ihren Nachnamen.",
+                "Nennen Sie Ihr Geburtsdatum (Tag, Monat, Jahr)."
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1. Bitte stellen Sie sich vor. Die Wörter auf dem Blatt helfen Ihnen: Name, Alter, Land, Wohnort, Sprachen, Beruf, Hobby. Danach buchstabieren Sie bitte Ihren Nachnamen und sagen Ihr Geburtsdatum. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Frau Keller",
+            "gender": "f",
+            "profile": "Frau Keller ist die Teamleiterin und schreibt die Daten für die Personalabteilung auf. Sie ist freundlich, spricht langsam und deutlich und fragt kurz nach, wenn etwas fehlt („Und was sind Ihre Hobbys?“). Am Ende bittet sie: „Buchstabieren Sie bitte Ihren Nachnamen.“ und „Wann sind Sie geboren?“"
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Say something about all seven key words, then spell your surname letter by letter and give your full date of birth (day, month, year).",
+            "de": "Sag etwas zu allen sieben Stichwörtern, buchstabiere dann deinen Nachnamen Buchstabe für Buchstabe und nenne dein vollständiges Geburtsdatum (Tag, Monat, Jahr)."
+          },
+          {
+            "en": "Go through the key words in order and link your sentences with und, aber and auch: „Ich komme aus Peru, aber jetzt wohne ich in Köln.“",
+            "de": "Geh die Stichwörter der Reihe nach durch und verbinde deine Sätze mit und, aber und auch: „Ich komme aus Peru, aber jetzt wohne ich in Köln.“"
+          },
+          {
+            "en": "Learn the words you need about yourself: your country and language („Ich komme aus Syrien. Ich spreche Arabisch.“), your job and one or two hobbies.",
+            "de": "Lerne die Wörter, die du über dich brauchst: dein Land und deine Sprache („Ich komme aus Syrien. Ich spreche Arabisch.“), deinen Beruf und ein oder zwei Hobbys."
+          },
+          {
+            "en": "Put the verb in second place and use the right ich-form: „Ich heiße …“, „Ich bin … Jahre alt“, „Ich wohne in …“, „Ich arbeite als …“.",
+            "de": "Stell das Verb an die zweite Stelle und benutze die richtige ich-Form: „Ich heiße …“, „Ich bin … Jahre alt“, „Ich wohne in …“, „Ich arbeite als …“."
+          },
+          {
+            "en": "Practise the German alphabet for spelling (especially A, E, I, J, V, W, Y and the umlauts) and say numbers slowly and clearly.",
+            "de": "Übe das deutsche Alphabet zum Buchstabieren (besonders A, E, I, J, V, W, Y und die Umlaute) und sprich Zahlen langsam und deutlich."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a1__sprechen-1__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie sind neu in einem Mietshaus. Bei der Hausversammlung lernen Sie die Nachbarn kennen. Stellen Sie sich vor. Danach buchstabieren Sie den Namen Ihres Heimatlandes und sagen, in welchem Stock und in welcher Wohnung Sie wohnen.",
+          "materials": [
+            {
+              "title": "Stellen Sie sich vor",
+              "points": [
+                "Name?",
+                "Alter?",
+                "Land?",
+                "Wohnort?",
+                "Sprachen?",
+                "Beruf?",
+                "Hobby?"
+              ]
+            },
+            {
+              "title": "Danach",
+              "points": [
+                "Buchstabieren Sie den Namen Ihres Heimatlandes.",
+                "Nennen Sie Ihr Stockwerk und Ihre Wohnungsnummer."
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1. Bitte stellen Sie sich vor: Name, Alter, Land, Wohnort, Sprachen, Beruf und Hobby. Danach buchstabieren Sie bitte den Namen Ihres Heimatlandes und sagen eine Zahl: Ihr Stockwerk und Ihre Wohnungsnummer. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Herr Wagner",
+            "gender": "m",
+            "profile": "Herr Wagner ist der Hausmeister und leitet die Hausversammlung. Er ist 60, freundlich und ein bisschen neugierig. Er stellt kurze Fragen („Woher kommen Sie?“, „Welche Sprachen sprechen Sie?“) und fragt am Ende: „Wie schreibt man das?“ und „In welchem Stock wohnen Sie? Welche Wohnungsnummer?“"
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Cover every key word on the sheet, then spell the name of your home country and say your floor and flat number clearly („im dritten Stock, Wohnung 12“).",
+            "de": "Sprich über jedes Stichwort auf dem Blatt, buchstabiere dann den Namen deines Heimatlandes und nenne deutlich dein Stockwerk und deine Wohnungsnummer („im dritten Stock, Wohnung 12“)."
+          },
+          {
+            "en": "Go through the key words in order and link your sentences with und, aber and auch: „Ich komme aus Peru, aber jetzt wohne ich in Köln.“",
+            "de": "Geh die Stichwörter der Reihe nach durch und verbinde deine Sätze mit und, aber und auch: „Ich komme aus Peru, aber jetzt wohne ich in Köln.“"
+          },
+          {
+            "en": "Learn the words you need about yourself: your country and language („Ich komme aus Syrien. Ich spreche Arabisch.“), your job and one or two hobbies.",
+            "de": "Lerne die Wörter, die du über dich brauchst: dein Land und deine Sprache („Ich komme aus Syrien. Ich spreche Arabisch.“), deinen Beruf und ein oder zwei Hobbys."
+          },
+          {
+            "en": "Put the verb in second place and use the right ich-form: „Ich heiße …“, „Ich bin … Jahre alt“, „Ich wohne in …“, „Ich arbeite als …“.",
+            "de": "Stell das Verb an die zweite Stelle und benutze die richtige ich-Form: „Ich heiße …“, „Ich bin … Jahre alt“, „Ich wohne in …“, „Ich arbeite als …“."
+          },
+          {
+            "en": "Practise the German alphabet for spelling (especially A, E, I, J, V, W, Y and the umlauts) and say numbers slowly and clearly.",
+            "de": "Übe das deutsche Alphabet zum Buchstabieren (besonders A, E, I, J, V, W, Y und die Umlaute) und sprich Zahlen langsam und deutlich."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a1__sprechen-1__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie möchten einen Ausweis für die Stadtbibliothek. Die Mitarbeiterin möchte etwas über Sie wissen. Stellen Sie sich vor. Danach buchstabieren Sie Ihre E-Mail-Adresse und nennen Ihre Telefonnummer.",
+          "materials": [
+            {
+              "title": "Stellen Sie sich vor",
+              "points": [
+                "Name?",
+                "Alter?",
+                "Land?",
+                "Wohnort?",
+                "Sprachen?",
+                "Beruf?",
+                "Hobby?"
+              ]
+            },
+            {
+              "title": "Danach",
+              "points": [
+                "Buchstabieren Sie Ihre E-Mail-Adresse.",
+                "Nennen Sie Ihre Telefonnummer."
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1. Bitte stellen Sie sich vor. Sprechen Sie über Name, Alter, Land, Wohnort, Sprachen, Beruf und Hobby. Danach buchstabieren Sie bitte Ihre E-Mail-Adresse und sagen Ihre Telefonnummer. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Frau Neumann",
+            "gender": "f",
+            "profile": "Frau Neumann arbeitet an der Information der Stadtbibliothek und füllt das Anmeldeformular aus. Sie ist geduldig und hilfsbereit, fragt nach, wenn ein Stichwort fehlt („Was lesen Sie gern?“, „Und Ihr Beruf?“), und bittet am Ende um die E-Mail-Adresse und die Telefonnummer."
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Talk about all seven key words, then spell your e-mail address letter by letter (say „@“ as „at“ and „.“ as „Punkt“) and give your phone number digit by digit.",
+            "de": "Sprich über alle sieben Stichwörter, buchstabiere dann deine E-Mail-Adresse Buchstabe für Buchstabe (sag „@“ als „at“ und „.“ als „Punkt“) und nenne deine Telefonnummer Ziffer für Ziffer."
+          },
+          {
+            "en": "Go through the key words in order and link your sentences with und, aber and auch: „Ich komme aus Peru, aber jetzt wohne ich in Köln.“",
+            "de": "Geh die Stichwörter der Reihe nach durch und verbinde deine Sätze mit und, aber und auch: „Ich komme aus Peru, aber jetzt wohne ich in Köln.“"
+          },
+          {
+            "en": "Learn the words you need about yourself: your country and language („Ich komme aus Syrien. Ich spreche Arabisch.“), your job and one or two hobbies.",
+            "de": "Lerne die Wörter, die du über dich brauchst: dein Land und deine Sprache („Ich komme aus Syrien. Ich spreche Arabisch.“), deinen Beruf und ein oder zwei Hobbys."
+          },
+          {
+            "en": "Put the verb in second place and use the right ich-form: „Ich heiße …“, „Ich bin … Jahre alt“, „Ich wohne in …“, „Ich arbeite als …“.",
+            "de": "Stell das Verb an die zweite Stelle und benutze die richtige ich-Form: „Ich heiße …“, „Ich bin … Jahre alt“, „Ich wohne in …“, „Ich arbeite als …“."
+          },
+          {
+            "en": "Practise the German alphabet for spelling (especially A, E, I, J, V, W, Y and the umlauts) and say numbers slowly and clearly.",
+            "de": "Übe das deutsche Alphabet zum Buchstabieren (besonders A, E, I, J, V, W, Y und die Umlaute) und sprich Zahlen langsam und deutlich."
+          }
+        ]
+      }
+    }
+  ]
+}

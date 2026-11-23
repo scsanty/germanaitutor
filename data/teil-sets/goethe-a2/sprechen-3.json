@@ -1,0 +1,160 @@
+{
+  "formatId": "goethe-a2",
+  "partId": "sprechen-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-a2__sprechen-3__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Ihre Kollegin Ines liegt nach einer Operation im Krankenhaus. Sie möchten sie am Donnerstag zusammen mit Ihrem Partner / Ihrer Partnerin besuchen. Die Besuchszeit ist von 14 bis 19 Uhr. Finden Sie mit Hilfe Ihres Kalenders einen gemeinsamen Termin.",
+          "materials": [
+            {
+              "title": "Ihr Kalender: Donnerstag",
+              "points": [
+                "7:00–14:30 Arbeit",
+                "15:00 Kinder vom Kindergarten abholen",
+                "15:30–16:30 frei",
+                "16:30–17:30 Kinder zum Schwimmkurs bringen",
+                "ab 17:30 frei",
+                "19:30 Elternabend"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 3. Ihre Kollegin Ines ist im Krankenhaus. Sie möchten sie am Donnerstag zusammen besuchen. Die Besuchszeit ist von 14 bis 19 Uhr. Sie haben beide einen Kalender. Finden Sie einen Termin, an dem Sie beide Zeit haben. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Martin",
+            "gender": "m",
+            "profile": "Martin ist ein Kollege, 40 Jahre alt. Sein Donnerstag: bis 15 Uhr Arbeit, von 15:30 bis 16:30 Uhr Zahnarzt, von 16:30 bis 17:30 Uhr frei, ab 18 Uhr Training im Fitnessstudio. Er schlägt vor, Blumen oder Schokolade mitzubringen. Er reagiert freundlich auf Vorschläge und sagt klar, wann er nicht kann und warum."
+          },
+          "turns": 5
+        },
+        "explanations": [
+          {
+            "en": "Suggest times inside the visiting hours, explain with your calendar why some times don’t work, react to Martin’s times and agree on a time that suits you both (about 17:30) and on what to bring.",
+            "de": "Schlag Zeiten innerhalb der Besuchszeit vor, erklär mit deinem Kalender, warum manche Zeiten nicht gehen, reagiere auf Martins Zeiten und einigt euch auf eine Zeit, die für beide passt (etwa 17:30 Uhr), und darauf, was ihr mitbringt."
+          },
+          {
+            "en": "React to each suggestion before you make a new one: „Das geht leider nicht, da … Und wie ist es um …?“, and sum up the time you agreed at the end.",
+            "de": "Reagiere auf jeden Vorschlag, bevor du einen neuen machst: „Das geht leider nicht, da … Und wie ist es um …?“, und fasse am Ende die vereinbarte Zeit zusammen."
+          },
+          {
+            "en": "Use phrases for appointments: „Hast du um … Zeit?“, „Da kann ich leider nicht.“, „Passt dir …?“, „Gut, dann treffen wir uns um …“.",
+            "de": "Benutze Redemittel für Termine: „Hast du um … Zeit?“, „Da kann ich leider nicht.“, „Passt dir …?“, „Gut, dann treffen wir uns um …“."
+          },
+          {
+            "en": "Use modal verbs correctly (können, müssen, wollen) with the infinitive at the end, and time expressions such as um, von … bis, ab, am Vormittag.",
+            "de": "Benutze die Modalverben richtig (können, müssen, wollen) mit dem Infinitiv am Ende und Zeitangaben wie um, von … bis, ab, am Vormittag."
+          },
+          {
+            "en": "Say times clearly („um halb drei“, „um Viertel nach zehn“) and use a friendly, open tone for suggestions.",
+            "de": "Sprich Uhrzeiten deutlich („um halb drei“, „um Viertel nach zehn“) und benutze für Vorschläge einen freundlichen, offenen Ton."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2__sprechen-3__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie möchten am Sonntag mit Ihrem Partner / Ihrer Partnerin ins Naturkundemuseum gehen. Das Museum ist von 10 bis 18 Uhr geöffnet, und der Besuch dauert etwa zwei Stunden. Finden Sie mit Hilfe Ihres Kalenders einen gemeinsamen Termin.",
+          "materials": [
+            {
+              "title": "Ihr Kalender: Sonntag",
+              "points": [
+                "bis 9:30 ausschlafen",
+                "10:00–12:00 Brunch mit Freunden",
+                "12:00–13:00 frei",
+                "13:00–15:00 Wohnung putzen",
+                "ab 15:00 frei",
+                "18:30 Telefonat mit der Familie"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 3. Sie möchten am Sonntag zusammen ins Museum gehen. Das Museum ist von 10 bis 18 Uhr offen, und Sie brauchen etwa zwei Stunden. Sie haben beide einen Kalender. Finden Sie zusammen eine passende Zeit. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Elif",
+            "gender": "f",
+            "profile": "Elif ist eine Freundin aus dem Deutschkurs, 27 Jahre alt. Ihr Sonntag: bis 11 Uhr Joggen und Frühstück, von 12 bis 14 Uhr Mittagessen bei ihrer Tante, ab 14 Uhr frei bis zum Abend. Sie fährt gern mit der Straßenbahn und schlägt vor, danach noch ein Eis zu essen."
+          },
+          "turns": 5
+        },
+        "explanations": [
+          {
+            "en": "Make suggestions for a two-hour visit within the opening hours, say why some times are impossible, react to Elif’s plans and agree on a start time (from 15:00) and how you get there.",
+            "de": "Mach Vorschläge für einen Besuch von zwei Stunden innerhalb der Öffnungszeiten, sag, warum manche Zeiten nicht gehen, reagiere auf Elifs Pläne und einigt euch auf eine Anfangszeit (ab 15 Uhr) und darauf, wie ihr hinkommt."
+          },
+          {
+            "en": "React to each suggestion before you make a new one: „Das geht leider nicht, da … Und wie ist es um …?“, and sum up the time you agreed at the end.",
+            "de": "Reagiere auf jeden Vorschlag, bevor du einen neuen machst: „Das geht leider nicht, da … Und wie ist es um …?“, und fasse am Ende die vereinbarte Zeit zusammen."
+          },
+          {
+            "en": "Use phrases for appointments: „Hast du um … Zeit?“, „Da kann ich leider nicht.“, „Passt dir …?“, „Gut, dann treffen wir uns um …“.",
+            "de": "Benutze Redemittel für Termine: „Hast du um … Zeit?“, „Da kann ich leider nicht.“, „Passt dir …?“, „Gut, dann treffen wir uns um …“."
+          },
+          {
+            "en": "Use modal verbs correctly (können, müssen, wollen) with the infinitive at the end, and time expressions such as um, von … bis, ab, am Vormittag.",
+            "de": "Benutze die Modalverben richtig (können, müssen, wollen) mit dem Infinitiv am Ende und Zeitangaben wie um, von … bis, ab, am Vormittag."
+          },
+          {
+            "en": "Say times clearly („um halb drei“, „um Viertel nach zehn“) and use a friendly, open tone for suggestions.",
+            "de": "Sprich Uhrzeiten deutlich („um halb drei“, „um Viertel nach zehn“) und benutze für Vorschläge einen freundlichen, offenen Ton."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2__sprechen-3__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie und Ihr Partner / Ihre Partnerin machen bald die Deutschprüfung. Sie möchten am Dienstag zusammen in der Stadtbibliothek lernen, etwa eineinhalb Stunden. Die Bibliothek ist von 10 bis 20 Uhr geöffnet. Finden Sie mit Hilfe Ihres Kalenders einen gemeinsamen Termin.",
+          "materials": [
+            {
+              "title": "Ihr Kalender: Dienstag",
+              "points": [
+                "8:00–13:00 Arbeit im Supermarkt",
+                "13:30 Mittagessen mit Kollegen",
+                "14:30–16:00 frei",
+                "16:00 Termin beim Jobcenter",
+                "17:00–20:00 frei",
+                "20:30 Fußball im Fernsehen"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 3. Sie möchten am Dienstag zusammen für die Prüfung lernen, in der Bibliothek, etwa eineinhalb Stunden. Die Bibliothek ist bis 20 Uhr offen. Sie haben beide einen Kalender. Finden Sie einen gemeinsamen Termin. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Bogdan",
+            "gender": "m",
+            "profile": "Bogdan ist 34, kommt aus Rumänien und arbeitet als Maler. Sein Dienstag: bis 16 Uhr Arbeit, von 16:30 bis 17:30 Uhr holt er seine Tochter vom Tanzkurs ab, ab 17:30 Uhr ist er frei. Er möchte vor allem das Sprechen üben und fragt, ob ihr danach zusammen etwas essen geht."
+          },
+          "turns": 5
+        },
+        "explanations": [
+          {
+            "en": "Suggest times, explain with your calendar why some don’t fit, react to Bogdan’s times and agree on a 90-minute slot that suits you both (from 17:30) and what you will practise.",
+            "de": "Schlag Zeiten vor, erklär mit deinem Kalender, warum manche nicht passen, reagiere auf Bogdans Zeiten und einigt euch auf 90 Minuten, die für beide passen (ab 17:30 Uhr), und darauf, was ihr übt."
+          },
+          {
+            "en": "React to each suggestion before you make a new one: „Das geht leider nicht, da … Und wie ist es um …?“, and sum up the time you agreed at the end.",
+            "de": "Reagiere auf jeden Vorschlag, bevor du einen neuen machst: „Das geht leider nicht, da … Und wie ist es um …?“, und fasse am Ende die vereinbarte Zeit zusammen."
+          },
+          {
+            "en": "Use phrases for appointments: „Hast du um … Zeit?“, „Da kann ich leider nicht.“, „Passt dir …?“, „Gut, dann treffen wir uns um …“.",
+            "de": "Benutze Redemittel für Termine: „Hast du um … Zeit?“, „Da kann ich leider nicht.“, „Passt dir …?“, „Gut, dann treffen wir uns um …“."
+          },
+          {
+            "en": "Use modal verbs correctly (können, müssen, wollen) with the infinitive at the end, and time expressions such as um, von … bis, ab, am Vormittag.",
+            "de": "Benutze die Modalverben richtig (können, müssen, wollen) mit dem Infinitiv am Ende und Zeitangaben wie um, von … bis, ab, am Vormittag."
+          },
+          {
+            "en": "Say times clearly („um halb drei“, „um Viertel nach zehn“) and use a friendly, open tone for suggestions.",
+            "de": "Sprich Uhrzeiten deutlich („um halb drei“, „um Viertel nach zehn“) und benutze für Vorschläge einen freundlichen, offenen Ton."
+          }
+        ]
+      }
+    }
+  ]
+}

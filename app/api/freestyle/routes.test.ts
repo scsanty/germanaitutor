@@ -34,10 +34,10 @@ describe('/api/freestyle', () => {
     vi.mocked(generateWithActiveProvider).mockReset();
   });
 
-  it('GET lists the five enabled modes, none open', async () => {
+  it('GET lists the six enabled modes, none open', async () => {
     const body = await (await overview()).json();
     expect(body.modes).toEqual(
-      ['conversation', 'grammar_drill', 'free_reading', 'free_writing', 'exam_practice'].map((mode) => ({ mode, enabled: true, open: false }))
+      ['conversation', 'grammar_drill', 'free_reading', 'free_writing', 'spoken', 'exam_practice'].map((mode) => ({ mode, enabled: true, open: false }))
     );
     expect(body.levels).toEqual(['A1']);
     expect(body.activeLevel).toBe('A1');
@@ -56,8 +56,13 @@ describe('/api/freestyle', () => {
     expect(await (await call(getSession, 'conversation')).json()).toEqual({ session: null });
   });
 
-  it('validates the start body: unknown or disabled mode 404, bad level 400, locked level 403, bad setup 400', async () => {
-    expect((await call(startSession, 'spoken', { level: 'A1', setup: {} })).status).toBe(404);
+  it('takes a clipId, not text, for a spoken message', async () => {
+    expect((await call(message, 'spoken', { text: 'Hallo' })).status).toBe(400);
+    expect((await call(message, 'conversation', { clipId: 'x' })).status).toBe(400);
+    expect((await call(message, 'spoken', { clipId: 'x' })).status).toBe(404); // no open session
+  });
+
+  it('validates the start body: unknown mode 404, bad level 400, locked level 403, bad setup 400', async () => {
     expect((await call(startSession, 'nonsense', { level: 'A1', setup: {} })).status).toBe(404);
     const bad = await call(startSession, 'conversation', { level: 'Z9', setup: {} });
     expect(bad.status).toBe(400);

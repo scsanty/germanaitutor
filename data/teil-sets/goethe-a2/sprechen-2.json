@@ -1,0 +1,154 @@
+{
+  "formatId": "goethe-a2",
+  "partId": "sprechen-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-a2__sprechen-2__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie bekommen eine Karte mit einem Thema und vier Stichpunkten. Erzählen Sie etwas über Ihr Leben. Danach stellt Ihnen Ihr Partner / Ihre Partnerin eine Frage dazu.",
+          "materials": [
+            {
+              "title": "Karte: Sprachen lernen",
+              "points": [
+                "Welche Sprachen?",
+                "Wann und wo gelernt?",
+                "Wie lernen Sie?",
+                "Was ist schwer?"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2. Auf Ihrer Karte steht das Thema „Sprachen lernen“. Erzählen Sie bitte etwas über sich. Die vier Stichpunkte helfen Ihnen. Danach stellt Ihnen Ihr Partner eine Frage. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Erik",
+            "gender": "m",
+            "profile": "Erik ist 45, kommt aus Schweden und arbeitet als Ingenieur in Stuttgart. Er hört zu und stellt danach eine einfache Frage, zum Beispiel „Welche Sprache möchtest du noch lernen?“ oder „Lernst du auch mit einer App?“. Er erzählt kurz, dass er Deutsch vor allem mit Podcasts lernt."
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Talk about all four points on the card (which languages, when and where you learned them, how you learn, what is difficult) and then answer Erik’s question in two or three sentences.",
+            "de": "Sprich über alle vier Punkte auf der Karte (welche Sprachen, wann und wo gelernt, wie du lernst, was schwer ist) und beantworte dann Eriks Frage mit zwei oder drei Sätzen."
+          },
+          {
+            "en": "Go through the four points on the card one by one and link your sentences with und, aber, dann, deshalb and weil.",
+            "de": "Geh die vier Punkte auf der Karte nacheinander durch und verbinde deine Sätze mit und, aber, dann, deshalb und weil."
+          },
+          {
+            "en": "Use concrete words from your own life (places, times, people) and a few expressions for liking and not liking: „Ich mag …“, „Am liebsten …“, „… finde ich langweilig“.",
+            "de": "Benutze konkrete Wörter aus deinem Leben (Orte, Zeiten, Personen) und ein paar Ausdrücke für Vorlieben: „Ich mag …“, „Am liebsten …“, „… finde ich langweilig“."
+          },
+          {
+            "en": "Talk about the past with the Perfekt („Ich habe … gelernt“, „Ich bin … gefahren“) and put the verb at the end after weil.",
+            "de": "Erzähl über die Vergangenheit im Perfekt („Ich habe … gelernt“, „Ich bin … gefahren“) und stell das Verb nach weil ans Ende."
+          },
+          {
+            "en": "Speak at a calm pace and pause briefly between the four points, so the listener can follow.",
+            "de": "Sprich in ruhigem Tempo und mach zwischen den vier Punkten eine kurze Pause, damit man dir gut folgen kann."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2__sprechen-2__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie bekommen eine Karte mit einem Thema und vier Stichpunkten. Erzählen Sie etwas über Ihr Leben. Danach stellt Ihnen Ihr Partner / Ihre Partnerin eine Frage dazu.",
+          "materials": [
+            {
+              "title": "Karte: Mein Lieblingsort in der Stadt",
+              "points": [
+                "Wo ist der Ort?",
+                "Was machen Sie dort?",
+                "Mit wem?",
+                "Warum gefällt er Ihnen?"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2. Ihr Thema ist „Mein Lieblingsort in der Stadt“. Erzählen Sie bitte etwas darüber. Die Stichpunkte auf der Karte helfen Ihnen. Danach hat Ihre Partnerin eine Frage an Sie. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Nadia",
+            "gender": "f",
+            "profile": "Nadia ist 32, kommt aus Marokko und arbeitet als Verkäuferin in einer Bäckerei. Sie hört interessiert zu und stellt danach eine einfache Frage, zum Beispiel „Wie oft gehst du dorthin?“ oder „Gibt es so einen Ort auch in deiner Heimatstadt?“. Ihr eigener Lieblingsort ist der Rhein im Sommer."
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Describe your favourite place using all four points (where it is, what you do there, with whom, why you like it) and answer Nadia’s question with a little detail.",
+            "de": "Beschreibe deinen Lieblingsort mit allen vier Punkten (wo er ist, was du dort machst, mit wem, warum er dir gefällt) und beantworte Nadias Frage mit einem kleinen Detail."
+          },
+          {
+            "en": "Go through the four points on the card one by one and link your sentences with und, aber, dann, deshalb and weil.",
+            "de": "Geh die vier Punkte auf der Karte nacheinander durch und verbinde deine Sätze mit und, aber, dann, deshalb und weil."
+          },
+          {
+            "en": "Use concrete words from your own life (places, times, people) and a few expressions for liking and not liking: „Ich mag …“, „Am liebsten …“, „… finde ich langweilig“.",
+            "de": "Benutze konkrete Wörter aus deinem Leben (Orte, Zeiten, Personen) und ein paar Ausdrücke für Vorlieben: „Ich mag …“, „Am liebsten …“, „… finde ich langweilig“."
+          },
+          {
+            "en": "Talk about the past with the Perfekt („Ich habe … gelernt“, „Ich bin … gefahren“) and put the verb at the end after weil.",
+            "de": "Erzähl über die Vergangenheit im Perfekt („Ich habe … gelernt“, „Ich bin … gefahren“) und stell das Verb nach weil ans Ende."
+          },
+          {
+            "en": "Speak at a calm pace and pause briefly between the four points, so the listener can follow.",
+            "de": "Sprich in ruhigem Tempo und mach zwischen den vier Punkten eine kurze Pause, damit man dir gut folgen kann."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2__sprechen-2__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie bekommen eine Karte mit einem Thema und vier Stichpunkten. Erzählen Sie etwas über Ihr Leben. Danach stellt Ihnen Ihr Partner / Ihre Partnerin eine Frage dazu.",
+          "materials": [
+            {
+              "title": "Karte: Wetter und Jahreszeiten",
+              "points": [
+                "Lieblingsjahreszeit?",
+                "Wetter in Ihrem Heimatland?",
+                "Was machen Sie im Sommer / im Winter?",
+                "Was ziehen Sie bei Regen an?"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2. Auf Ihrer Karte steht das Thema „Wetter und Jahreszeiten“. Bitte erzählen Sie etwas über sich. Die vier Stichpunkte helfen Ihnen. Danach stellt Ihnen Ihr Partner eine Frage. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Felipe",
+            "gender": "m",
+            "profile": "Felipe ist 28, kommt aus Kolumbien und studiert Musik in Weimar. Er hört zu und stellt danach eine einfache Frage, zum Beispiel „Was hast du im letzten Winter gemacht?“ oder „Wie war das Wetter in deiner Kindheit?“. Er vermisst die Sonne seiner Heimat."
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Speak about all four points (favourite season, weather at home, what you do in summer or winter, clothes for rain) and answer Felipe’s question, using the Perfekt if he asks about the past.",
+            "de": "Sprich über alle vier Punkte (Lieblingsjahreszeit, Wetter in der Heimat, was du im Sommer oder Winter machst, Kleidung bei Regen) und beantworte Felipes Frage, im Perfekt, wenn er nach der Vergangenheit fragt."
+          },
+          {
+            "en": "Go through the four points on the card one by one and link your sentences with und, aber, dann, deshalb and weil.",
+            "de": "Geh die vier Punkte auf der Karte nacheinander durch und verbinde deine Sätze mit und, aber, dann, deshalb und weil."
+          },
+          {
+            "en": "Use concrete words from your own life (places, times, people) and a few expressions for liking and not liking: „Ich mag …“, „Am liebsten …“, „… finde ich langweilig“.",
+            "de": "Benutze konkrete Wörter aus deinem Leben (Orte, Zeiten, Personen) und ein paar Ausdrücke für Vorlieben: „Ich mag …“, „Am liebsten …“, „… finde ich langweilig“."
+          },
+          {
+            "en": "Talk about the past with the Perfekt („Ich habe … gelernt“, „Ich bin … gefahren“) and put the verb at the end after weil.",
+            "de": "Erzähl über die Vergangenheit im Perfekt („Ich habe … gelernt“, „Ich bin … gefahren“) und stell das Verb nach weil ans Ende."
+          },
+          {
+            "en": "Speak at a calm pace and pause briefly between the four points, so the listener can follow.",
+            "de": "Sprich in ruhigem Tempo und mach zwischen den vier Punkten eine kurze Pause, damit man dir gut folgen kann."
+          }
+        ]
+      }
+    }
+  ]
+}

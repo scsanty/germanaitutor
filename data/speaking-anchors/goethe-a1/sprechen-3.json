@@ -1,0 +1,41 @@
+{
+  "formatId": "goethe-a1",
+  "partId": "sprechen-3",
+  "anchors": [
+    {
+      "band": "A",
+      "turns": [
+        "Auf meiner Karte ist ein Fenster. Können Sie bitte das Fenster aufmachen? Es ist sehr warm hier.",
+        "Ja, natürlich. Hier ist mein Kugelschreiber. Bitte schön.",
+        "Meine Karte zeigt eine Tasse Kaffee. Kann ich bitte einen Kaffee haben?",
+        "Mein Handy? Ja, gern. Hier, bitte.",
+        "Und hier ist ein Buch. Können Sie mir bitte das Buch geben?"
+      ],
+      "grades": { "erfuellung": "A", "kohaerenz": "A", "wortschatz": "A", "strukturen": "A", "aussprache": "A" },
+      "justification": "Die Lernende formuliert zu jeder Karte eine höfliche, passende Bitte („Können Sie bitte …?“, „Kann ich bitte … haben?“) und reagiert angemessen auf die Bitten des Partners. Sie benutzt die Modalverben in Bitten und Fragen korrekt, der Wortschatz passt. Die Aussprache ist klar."
+    },
+    {
+      "band": "C",
+      "turns": [
+        "Fenster … bitte, Sie machen auf?",
+        "Ja, hier Kuli. Bitte.",
+        "Kaffee … ich möchte Kaffee, bitte.",
+        "Handy … äh … nein, ich brauche.",
+        "Buch … bitte geben."
+      ],
+      "grades": { "erfuellung": "B", "kohaerenz": "B", "wortschatz": "B", "strukturen": "B", "aussprache": "B" },
+      "justification": "Der Lernende formuliert zu den Karten „Fenster“, „Kaffee“ und „Buch“ eine erkennbare Bitte und reagiert passend auf die Bitte nach dem Kuli; auf die Bitte nach dem Handy reagiert er unklar, sodass Bitten und Reaktionen nur teilweise passen, und höfliche Formen fehlen teilweise. Der Wortschatz ist sehr begrenzt, und Fehler in einfachen Sätzen („Sie machen auf?“, „Buch … bitte geben“) erschweren das Verständnis stellenweise. Die Aussprache erschwert das Verständnis stellenweise."
+    },
+    {
+      "band": "D",
+      "turns": [
+        "Fenster.",
+        "Äh … ja.",
+        "Kaffee … Kaffee.",
+        "Nein … ich nicht verstehe."
+      ],
+      "grades": { "erfuellung": "C", "kohaerenz": "C", "wortschatz": "C", "strukturen": "C", "aussprache": "C" },
+      "justification": "Die Lernende formuliert keine Bitte, sondern nennt nur das Wort auf der Karte; auf die Bitten des Partners gibt es keine passende Reaktion. Der Wortschatz reicht für die Aufgabe nicht aus, und ohne Sätze sind die Äußerungen kaum verständlich. Die Aussprache macht sie größtenteils unverständlich."
+    }
+  ]
+}

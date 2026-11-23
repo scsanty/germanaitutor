@@ -49,3 +49,11 @@ export function stopReasonAfterAnswer(
   if (answeredCount >= totalQuestions) return 'finished';
   return null;
 }
+
+// The questions a session serves, in served order. An empty list (a session from before the served order was
+// stored) means the whole exam; an id the exam no longer holds is dropped.
+export function servedExam<T extends { id: string }>(exam: T[], servedIds: string[]): T[] {
+  if (servedIds.length === 0) return exam;
+  const byId = new Map(exam.map((q) => [q.id, q]));
+  return servedIds.flatMap((id) => byId.get(id) ?? []);
+}

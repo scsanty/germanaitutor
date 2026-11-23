@@ -1,9 +1,11 @@
 // lib/services/backupService.test.ts
-import { describe, it, expect } from 'vitest';
-import { mkdtempSync, writeFileSync, readFileSync, mkdirSync, readdirSync, existsSync } from 'node:fs';
+import { describe, it, expect, vi } from 'vitest';
+import { mkdtempSync, writeFileSync, readFileSync, mkdirSync, readdirSync, existsSync, chmodSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { createHash, randomBytes } from 'node:crypto';
+import Database from 'better-sqlite3';
+import { createDbClient } from '../db/client';
 import { gzipSync, gunzipSync } from 'node:zlib';
 import { BackupTooLargeError, exportBackup, importBackup, InvalidBackupError, MAX_BACKUP_JSON_BYTES } from './backupService';
 
@@ -268,5 +270,112 @@ describe('backupService', () => {
     expect(() => importBackup(archive, restoredDb, restoredKey, restoredAudio)).toThrow();
     expect(readFileSync(restoredDb, 'utf8')).toBe('old-db');
     expect(readFileSync(restoredKey, 'utf8')).toBe('old-key');
+  });
+
+  // B6: speech recordings and transcripts are temporary and never part of a backup.
+  describe('speech clips', () => {
+    function realDb() {
+      const dir = mkdtempSync(join(tmpdir(), 'gait-backup-real-'));
+      const dbPath = join(dir, 'app.db');
+      const db = createDbClient(dbPath);
+      db.prepare("INSERT INTO speech_clips (id, scope, role, file, transcript, words, created_at) VALUES ('c1', 'placement', 'student', 'c1.webm', 'GEHEIMER-TRANSKRIPT', '[]', ?)").run(new Date().toISOString());
+      db.prepare("INSERT INTO app_settings (key, value) VALUES ('keep', 'me')").run();
+      db.pragma('wal_checkpoint(TRUNCATE)');
+      const keyPath = join(dir, 'master.key');
+      writeFileSync(keyPath, 'fake-key-contents');
+      return { dir, db, dbPath, keyPath };
+    }
+
+    it('exports no speech_clips rows, no transcript bytes and no speech-tmp files', async () => {
+      const { dir, db, dbPath, keyPath } = realDb();
+      mkdirSync(join(dir, 'speech-tmp'));
+      writeFileSync(join(dir, 'speech-tmp', 'c1.webm'), 'RECORDING-BYTES');
+      const archive = await exportBackup(dbPath, keyPath, join(dir, 'audio'));
+
+      const envelope = envelopeOf(archive);
+      expect(Object.keys(envelope.audio as object)).toEqual([]);
+      const exported = Buffer.from(envelope.db as string, 'base64');
+      expect(exported.includes('GEHEIMER-TRANSKRIPT')).toBe(false);
+      expect(gunzipSync(archive).includes('RECORDING-BYTES')).toBe(false);
+      const out = join(mkdtempSync(join(tmpdir(), 'gait-backup-out-')), 'x.db');
+      writeFileSync(out, exported);
+      const copy = new Database(out, { readonly: true });
+      expect(copy.prepare('SELECT COUNT(*) AS n FROM speech_clips').get()).toEqual({ n: 0 });
+      expect(copy.prepare("SELECT value FROM app_settings WHERE key = 'keep'").get()).toEqual({ value: 'me' });
+      copy.close();
+      // The live database is untouched.
+      expect(db.prepare('SELECT COUNT(*) AS n FROM speech_clips').get()).toEqual({ n: 1 });
+      db.close();
+    });
+
+    it('exports no spoken Freestyle session, its messages or a placement run, and keeps the rest', async () => {
+      const { dir, db, dbPath, keyPath } = realDb();
+      const now = new Date().toISOString();
+      const spoken = db.prepare("INSERT INTO freestyle_sessions (mode, level, started_at) VALUES ('spoken', 'B1', ?)").run(now).lastInsertRowid;
+      const chat = db.prepare("INSERT INTO freestyle_sessions (mode, level, started_at) VALUES ('conversation', 'B1', ?)").run(now).lastInsertRowid;
+      const msg = db.prepare("INSERT INTO freestyle_messages (session_id, role, content, created_at) VALUES (?, 'user', ?, ?)");
+      msg.run(spoken, 'GESPROCHENES-TRANSKRIPT', now);
+      msg.run(chat, 'getippte Nachricht', now);
+      db.prepare("INSERT INTO placement_session (id, started_at, next_position, score, mistakes, answers) VALUES (1, ?, 3, 1, 0, ?)")
+        .run(now, JSON.stringify([{ given: 'PLATZIERUNG-TRANSKRIPT' }]));
+      db.pragma('wal_checkpoint(TRUNCATE)');
+
+      const archive = await exportBackup(dbPath, keyPath, join(dir, 'audio'));
+      const exported = Buffer.from(envelopeOf(archive).db as string, 'base64');
+      expect(exported.includes('GESPROCHENES-TRANSKRIPT')).toBe(false);
+      expect(exported.includes('PLATZIERUNG-TRANSKRIPT')).toBe(false);
+      const out = join(mkdtempSync(join(tmpdir(), 'gait-backup-out-')), 'x.db');
+      writeFileSync(out, exported);
+      const copy = new Database(out, { readonly: true });
+      expect(copy.prepare('SELECT mode FROM freestyle_sessions').all()).toEqual([{ mode: 'conversation' }]);
+      expect(copy.prepare('SELECT content FROM freestyle_messages').all()).toEqual([{ content: 'getippte Nachricht' }]);
+      expect(copy.prepare('SELECT COUNT(*) AS n FROM placement_session').get()).toEqual({ n: 0 });
+      copy.close();
+      // The live database is untouched.
+      expect(db.prepare('SELECT COUNT(*) AS n FROM freestyle_messages').get()).toEqual({ n: 2 });
+      expect(db.prepare('SELECT COUNT(*) AS n FROM placement_session').get()).toEqual({ n: 1 });
+      db.close();
+    });
+
+    it('a failing speech clean-up after a restore is logged, not thrown', () => {
+      const { dbPath, keyPath } = setupFiles();
+      const archive = regzip({ version: 2, exportedAt: 'x', db: Buffer.from('fake-db-contents').toString('base64'), dbHash: sha256(Buffer.from('fake-db-contents')),
+        key: Buffer.from('k').toString('base64'), keyHash: sha256(Buffer.from('k')), audio: {} });
+      void dbPath; void keyPath;
+      const { restoredDb, restoredKey } = restoreTarget();
+      const locked = join(mkdtempSync(join(tmpdir(), 'gait-blk-')), 'speech-tmp');
+      mkdirSync(locked);
+      writeFileSync(join(locked, 'a.webm'), 'x');
+      chmodSync(locked, 0o500); // its files can't be unlinked
+      const warn = vi.spyOn(console, 'error').mockImplementation(() => {});
+      try {
+        importBackup(archive, restoredDb, restoredKey, undefined, { speechTmpDir: locked });
+        expect(readFileSync(restoredDb, 'utf8')).toBe('fake-db-contents');
+        expect(warn).toHaveBeenCalledWith('Backup import: could not clear the speech clips:', expect.any(Error));
+      } finally {
+        chmodSync(locked, 0o700);
+        warn.mockRestore();
+      }
+    });
+
+    it('an import empties speech_clips and the speech-tmp folder', async () => {
+      const { db, dbPath, keyPath } = realDb();
+      // An archive from before this rule: the table still holds a row.
+      const raw = readFileSync(dbPath);
+      db.close();
+      const key = readFileSync(keyPath);
+      const archive = regzip({
+        version: 2, exportedAt: new Date().toISOString(), db: raw.toString('base64'), dbHash: sha256(raw),
+        key: key.toString('base64'), keyHash: sha256(key), audio: {},
+      });
+      const { restoredDb, restoredKey } = restoreTarget();
+      const tmp = mkdtempSync(join(tmpdir(), 'gait-speech-tmp-'));
+      writeFileSync(join(tmp, 'old.webm'), 'x');
+      importBackup(archive, restoredDb, restoredKey, undefined, { speechTmpDir: tmp });
+      expect(existsSync(tmp)).toBe(false);
+      const restored = new Database(restoredDb, { readonly: true });
+      expect(restored.prepare('SELECT COUNT(*) AS n FROM speech_clips').get()).toEqual({ n: 0 });
+      restored.close();
+    });
   });
 });

@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
+import { NativeSelect } from '@/components/ui/native-select';
 import { Switch } from '@/components/ui/switch';
 import { BTN, FIELD_LABEL, HINT, INPUT } from './adminStyles';
 
@@ -245,12 +246,14 @@ interface SpeechInfo {
   url: string;
   defaultUrl: string;
   isDefault: boolean;
+  whisperModel?: 'small' | 'medium';
   health?: { ok: boolean; voices: string[] };
 }
 
 function SpeechSettingsCard() {
   const [info, setInfo] = useState<SpeechInfo | null>(null);
   const [url, setUrl] = useState('');
+  const [model, setModel] = useState<'small' | 'medium'>('small');
   const [loadFailed, setLoadFailed] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -266,6 +269,7 @@ function SpeechSettingsCard() {
         if (cancelled) return;
         setInfo(data);
         setUrl(data.isDefault ? '' : data.url);
+        setModel(data.whisperModel ?? 'small');
       })
       .catch(() => {
         if (!cancelled) setLoadFailed(true);
@@ -281,7 +285,7 @@ function SpeechSettingsCard() {
       setMessage(null);
       setHealth(null);
       try {
-        const res = await fetch('/api/admin/settings/speech', { method: 'PUT', headers: JSON_HEADERS, body: JSON.stringify({ url }) });
+        const res = await fetch('/api/admin/settings/speech', { method: 'PUT', headers: JSON_HEADERS, body: JSON.stringify({ url, whisperModel: model }) });
         if (!res.ok) {
           setError(await errorOf(res));
           return;
@@ -289,6 +293,7 @@ function SpeechSettingsCard() {
         const data = (await res.json()) as SpeechInfo;
         setInfo(data);
         setUrl(data.isDefault ? '' : data.url);
+        setModel(data.whisperModel ?? model);
         setMessage('Saved');
       } catch (err) {
         setError((err as Error).message);
@@ -317,7 +322,7 @@ function SpeechSettingsCard() {
     <Card className="min-w-0 gap-4">
       <CardHeader>
         <h2 className="text-lg leading-tight">Speech service</h2>
-        <p className={HINT}>The local service that turns listening transcripts into audio.</p>
+        <p className={HINT}>The local service that turns listening transcripts into audio and transcribes spoken answers.</p>
       </CardHeader>
       <CardContent>
         {loadFailed && (
@@ -348,6 +353,16 @@ function SpeechSettingsCard() {
             </label>
             <p id="speech-url-hint" className={`${HINT} -mt-2`}>
               Scheme, host and port only, like {info.defaultUrl}. Leave it empty for the default. Now in use: {info.url}
+            </p>
+            <label className={`${FIELD_LABEL} md:max-w-md`}>
+              Speech recognition model
+              <NativeSelect value={model} onChange={(e) => setModel(e.target.value as 'small' | 'medium')} aria-describedby="speech-model-hint">
+                <option value="small">small</option>
+                <option value="medium">medium</option>
+              </NativeSelect>
+            </label>
+            <p id="speech-model-hint" className={`${HINT} -mt-2`}>
+              small is faster; medium is more accurate and downloads about 1.5 GB on first use.
             </p>
             <div className="flex flex-wrap items-center gap-2">
               <Button type="submit" className={BTN} disabled={busy}>

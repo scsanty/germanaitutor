@@ -1,0 +1,166 @@
+{
+  "formatId": "generic-a1",
+  "partId": "sprechen-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-a1__sprechen-1__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie machen einen Nähkurs im Familienzentrum. In der ersten Stunde stellen sich alle vor. Erzählen Sie etwas über sich. Danach stellt Ihnen die Kursleiterin zwei Fragen.",
+          "materials": [
+            {
+              "title": "Erzählen Sie über sich",
+              "points": [
+                "Name?",
+                "Alter?",
+                "Land?",
+                "Wohnort?",
+                "Familie?",
+                "Sprachen?"
+              ]
+            },
+            {
+              "title": "Danach",
+              "points": [
+                "Beantworten Sie die Fragen der Kursleiterin."
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1. Bitte erzählen Sie etwas über sich. Die Wörter auf dem Blatt helfen Ihnen. Danach stellt Ihnen die Kursleiterin zwei Fragen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Frau Demir",
+            "gender": "f",
+            "profile": "Frau Demir ist die Kursleiterin im Nähkurs. Sie ist 50, freundlich und spricht langsam und einfach. Sie hört zu, sagt kurz „Schön!“ und stellt dann zwei Fragen, eine nach der anderen: „Nähen Sie schon lange?“ und „Was möchten Sie im Kurs nähen?“"
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Use short, complete sentences about yourself and link them with und and aber: „Ich komme aus Ghana, aber jetzt wohne ich in Bremen.“",
+            "de": "Sprich in kurzen, vollständigen Sätzen über dich und verbinde sie mit und und aber: „Ich komme aus Ghana, aber jetzt wohne ich in Bremen.“"
+          },
+          {
+            "en": "Say something about each key word (name, age, country, town, family, languages), then answer Frau Demir’s two questions about sewing with a full sentence each.",
+            "de": "Sag etwas zu jedem Stichwort (Name, Alter, Land, Wohnort, Familie, Sprachen) und beantworte dann Frau Demirs zwei Fragen zum Nähen mit je einem ganzen Satz."
+          },
+          {
+            "en": "Put the verb in second place and use the right ich-form: „Ich heiße …“, „Ich bin … Jahre alt“, „Ich wohne in …“, „Ich arbeite als …“. Answer a question with a full sentence.",
+            "de": "Stell das Verb an die zweite Stelle und benutze die richtige ich-Form: „Ich heiße …“, „Ich bin … Jahre alt“, „Ich wohne in …“, „Ich arbeite als …“. Beantworte eine Frage mit einem ganzen Satz."
+          },
+          {
+            "en": "Speak slowly and clearly, say numbers carefully („dreiunddreißig“) and let your voice go down at the end of each sentence.",
+            "de": "Sprich langsam und deutlich, sag Zahlen sorgfältig („dreiunddreißig“) und lass die Stimme am Ende jedes Satzes nach unten gehen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-a1__sprechen-1__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Heute ist Ihr erster Arbeitstag in einer Bäckerei. Die Chefin möchte Sie kennenlernen. Erzählen Sie etwas über sich. Danach stellt Ihnen die Chefin zwei Fragen.",
+          "materials": [
+            {
+              "title": "Erzählen Sie über sich",
+              "points": [
+                "Name?",
+                "Alter?",
+                "Land?",
+                "Wohnort?",
+                "Beruf früher?",
+                "Hobby?"
+              ]
+            },
+            {
+              "title": "Danach",
+              "points": [
+                "Beantworten Sie die Fragen der Chefin."
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1. Stellen Sie sich bitte vor. Die Stichwörter auf dem Blatt helfen Ihnen. Die Chefin stellt Ihnen danach zwei Fragen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Frau Huber",
+            "gender": "f",
+            "profile": "Frau Huber ist 45 und hat eine kleine Bäckerei. Sie ist nett, aber sie hat wenig Zeit, und spricht kurz und deutlich. Nach der Vorstellung fragt sie: „Wie kommen Sie zur Arbeit?“ und dann „Können Sie früh aufstehen? Wir beginnen um fünf Uhr.“"
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Use short, complete sentences about yourself and link them with und and aber: „Ich komme aus Ghana, aber jetzt wohne ich in Bremen.“",
+            "de": "Sprich in kurzen, vollständigen Sätzen über dich und verbinde sie mit und und aber: „Ich komme aus Ghana, aber jetzt wohne ich in Bremen.“"
+          },
+          {
+            "en": "Introduce yourself with all six key words, including your former job, then tell Frau Huber how you get to work and whether you can start at five in the morning.",
+            "de": "Stell dich mit allen sechs Stichwörtern vor, auch mit deinem früheren Beruf, und sag Frau Huber dann, wie du zur Arbeit kommst und ob du um fünf Uhr morgens anfangen kannst."
+          },
+          {
+            "en": "Put the verb in second place and use the right ich-form: „Ich heiße …“, „Ich bin … Jahre alt“, „Ich wohne in …“, „Ich arbeite als …“. Answer a question with a full sentence.",
+            "de": "Stell das Verb an die zweite Stelle und benutze die richtige ich-Form: „Ich heiße …“, „Ich bin … Jahre alt“, „Ich wohne in …“, „Ich arbeite als …“. Beantworte eine Frage mit einem ganzen Satz."
+          },
+          {
+            "en": "Speak slowly and clearly, say numbers carefully („dreiunddreißig“) and let your voice go down at the end of each sentence.",
+            "de": "Sprich langsam und deutlich, sag Zahlen sorgfältig („dreiunddreißig“) und lass die Stimme am Ende jedes Satzes nach unten gehen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-a1__sprechen-1__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie sind in einem Tanzkurs für Anfänger. Vor der ersten Stunde lernen sich alle kennen. Erzählen Sie etwas über sich. Danach stellt Ihnen der Tanzlehrer zwei Fragen.",
+          "materials": [
+            {
+              "title": "Erzählen Sie über sich",
+              "points": [
+                "Name?",
+                "Land?",
+                "Wohnort?",
+                "Sprachen?",
+                "Arbeit?",
+                "Musik?"
+              ]
+            },
+            {
+              "title": "Danach",
+              "points": [
+                "Beantworten Sie die Fragen des Tanzlehrers."
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1. Bitte erzählen Sie etwas über sich: Name, Land, Wohnort, Sprachen, Arbeit und Musik. Danach stellt Ihnen der Tanzlehrer zwei Fragen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Marco",
+            "gender": "m",
+            "profile": "Marco ist 34 und Tanzlehrer. Er ist fröhlich und locker, duzt alle und spricht einfache Sätze. Nach der Vorstellung fragt er: „Tanzt du gern? Wo tanzt man in deinem Land?“ und dann „Was machst du am Wochenende?“"
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Use short, complete sentences about yourself and link them with und and aber: „Ich komme aus Ghana, aber jetzt wohne ich in Bremen.“",
+            "de": "Sprich in kurzen, vollständigen Sätzen über dich und verbinde sie mit und und aber: „Ich komme aus Ghana, aber jetzt wohne ich in Bremen.“"
+          },
+          {
+            "en": "Talk about all six key words, including the music you like, then answer Marco: say whether you like dancing, where people dance in your country and what you do at the weekend.",
+            "de": "Sprich über alle sechs Stichwörter, auch über die Musik, die du magst, und antworte Marco: ob du gern tanzt, wo man in deinem Land tanzt und was du am Wochenende machst."
+          },
+          {
+            "en": "Put the verb in second place and use the right ich-form: „Ich heiße …“, „Ich bin … Jahre alt“, „Ich wohne in …“, „Ich arbeite als …“. Answer a question with a full sentence.",
+            "de": "Stell das Verb an die zweite Stelle und benutze die richtige ich-Form: „Ich heiße …“, „Ich bin … Jahre alt“, „Ich wohne in …“, „Ich arbeite als …“. Beantworte eine Frage mit einem ganzen Satz."
+          },
+          {
+            "en": "Speak slowly and clearly, say numbers carefully („dreiunddreißig“) and let your voice go down at the end of each sentence.",
+            "de": "Sprich langsam und deutlich, sag Zahlen sorgfältig („dreiunddreißig“) und lass die Stimme am Ende jedes Satzes nach unten gehen."
+          }
+        ]
+      }
+    }
+  ]
+}

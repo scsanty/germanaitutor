@@ -27,7 +27,10 @@
     "session_ending": "This session is already ending. Please wait a moment.",
     "part_unavailable": "This part can't be practised yet",
     "audio_unavailable": "This audio isn't available right now",
-    "letter_grading": "This letter is being graded."
+    "letter_grading": "This letter is being graded.",
+    "speech_unavailable": "The speech service isn't available right now",
+    "audio_too_long": "That recording is too long (max. 5 minutes)",
+    "spoken_grading": "This conversation is being graded."
   },
   "languageToggle": {
     "lesson": "Lesson language",
@@ -75,6 +78,7 @@
     "answerLabel": "Your answer",
     "submit": "Submit answer",
     "submitting": "Checking…",
+    "skipSpoken": "Skip this question",
     "beyond": "Beyond my knowledge",
     "gradingFailed": "Your answer could not be graded: {error}. Your answer is kept, so you can try again. <link>Visit Settings</link> if this keeps happening.",
     "genericError": "Something went wrong: {error}",
@@ -350,6 +354,7 @@
       "grammarDrill": "Grammar drill",
       "freeReading": "Free reading",
       "freeWriting": "Free writing",
+      "spoken": "Spoken conversation",
       "examPractice": "Exam practice"
     },
     "descriptions": {
@@ -357,6 +362,7 @@
       "grammarDrill": "Practise one grammar topic with quick questions",
       "freeReading": "Read a short article on any topic, at your level",
       "freeWriting": "Write freely and get marked-up feedback",
+      "spoken": "Talk in German out loud, with corrections and a spoken reply",
       "examPractice": "Timed exam parts and full mocks, scored like the real exam"
     },
     "continue": "Continue your session",
@@ -391,6 +397,9 @@
     "sending": "Sending…",
     "sendFailed": "Could not send your message.",
     "thread": "Messages",
+    "playReply": "Play reply {n}",
+    "speakYourTurn": "Your turn: tap the microphone and speak.",
+    "replying": "Your partner is answering…",
     "corrections": "Corrections",
     "correctionLanguage": "Correction language",
     "explanationLanguage": "Explanation language",
@@ -533,7 +542,9 @@
     "review": "Review",
     "back": "Back to exam practice",
     "unanswered": "—",
-    "none": "x (none)"
+    "none": "x (none)",
+    "speechUnavailable": "Needs the speech service, which isn't available right now",
+    "aiMissing": "Graded by AI: no AI provider is set up yet, so grading will fail until one is."
   },
   "audio": {
     "play": "Play",
@@ -583,5 +594,44 @@
     "earlierVersions": "Earlier versions",
     "copying": "Opening free writing…",
     "copyFailed": "Free writing could not be opened."
+  },
+  "speech": {
+    "start": "Start speaking",
+    "stop": "Stop and send",
+    "transcribing": "Transcribing…",
+    "recordAgain": "Record again",
+    "micDenied": "The microphone isn't available. Allow it in your browser; it only works on HTTPS or localhost.",
+    "pronunciation": "Pronunciation (estimate)",
+    "band": {
+      "clear": "Clear",
+      "mostly_clear": "Mostly clear",
+      "sometimes_unclear": "Sometimes unclear"
+    },
+    "unclearWords": "Possibly unclear words",
+    "estimateNote": "Estimated from speech recognition.",
+    "typeInstead": "Type instead",
+    "tryAgain": "Try again",
+    "micError": "The microphone could not be started.",
+    "uploadFailed": "The recording could not be sent."
+  },
+  "speaking": {
+    "taskSheet": "Task sheet",
+    "yourTurn": "Your turn: tap the microphone and speak.",
+    "finish": "Finish",
+    "closing": "The examiner closes the conversation.",
+    "oralPart": "Oral part",
+    "oralPartBody": "The speaking parts with an AI partner, one after another, under one timer ({minutes} min).",
+    "startOral": "Start the oral part",
+    "examiner": "Examiner",
+    "partnerLabel": "Partner",
+    "you": "You",
+    "partner": "Your partner: {name}",
+    "conversation": "Conversation",
+    "answering": "{name} is answering…",
+    "grading": "Grading your conversation…",
+    "turnFailed": "Your turn could not be sent.",
+    "finishFailed": "Your conversation could not be graded.",
+    "play": "Play line {n} ({speaker})",
+    "conversationDeleted": "The conversation has been deleted; only the grades are kept."
   }
 }

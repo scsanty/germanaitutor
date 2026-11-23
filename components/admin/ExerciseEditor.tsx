@@ -12,6 +12,7 @@ import type {
   ClozeContent,
   AudioQuestionsContent,
   LetterContent,
+  SpokenResponseContent,
 } from '@/lib/curriculum/types';
 import { Plus, Trash2, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -53,6 +54,9 @@ function blankContentFor(type: ExerciseType): ExerciseContent {
     // Writing: one task to start; saving checks it in full.
     case 'letter':
       return { tasks: [blankLetterTask()] };
+    // Speaking: saving checks it in full.
+    case 'spoken_response':
+      return { prompt: '', modelAnswer: '' };
   }
 }
 
@@ -108,6 +112,7 @@ export function ExerciseEditor({
                 <option value="cloze">Cloze</option>
                 <option value="audio_questions">Listening + questions</option>
                 <option value="letter">Letter task</option>
+                <option value="spoken_response">Spoken response</option>
               </NativeSelect>
               <Button type="button" variant="ghost" className={`${BTN} text-destructive hover:text-destructive`} onClick={() => removeAt(index)}>
                 <Trash2 aria-hidden />
@@ -188,6 +193,8 @@ function typeSpecificFields(type: ExerciseType, content: ExerciseContent, index:
       return <AudioQuestionsFields content={content as AudioQuestionsContent} index={index} onChange={onChange} />;
     case 'letter':
       return <LetterTaskFields content={content as LetterContent} index={index} onChange={onChange} />;
+    case 'spoken_response':
+      return <SpokenResponseFields content={content as SpokenResponseContent} index={index} onChange={onChange} />;
   }
 }
 
@@ -372,6 +379,51 @@ function FreeTextFields({
         value={content.modelAnswer}
         onChange={(e) => onChange({ ...content, modelAnswer: e.target.value })}
         placeholder="Model answer"
+      />
+    </div>
+  );
+}
+
+// Speaking: a German prompt, the model answer, and an optional minimum speaking time in seconds.
+function SpokenResponseFields({
+  content,
+  index,
+  onChange,
+}: {
+  content: SpokenResponseContent;
+  index: number;
+  onChange: (content: SpokenResponseContent) => void;
+}) {
+  return (
+    <div className="grid gap-3 md:grid-cols-2">
+      <Input
+        className={INPUT}
+        aria-label={`Exercise ${index + 1} prompt`}
+        value={content.prompt}
+        onChange={(e) => onChange({ ...content, prompt: e.target.value })}
+        placeholder="Prompt (German)"
+      />
+      <Input
+        className={INPUT}
+        aria-label={`Exercise ${index + 1} model answer`}
+        value={content.modelAnswer}
+        onChange={(e) => onChange({ ...content, modelAnswer: e.target.value })}
+        placeholder="Model answer"
+      />
+      <Input
+        className={INPUT}
+        type="number"
+        min={1}
+        step={1}
+        inputMode="numeric"
+        aria-label={`Exercise ${index + 1} minimum seconds`}
+        value={content.minSeconds ?? ''}
+        onChange={(e) => {
+          const { minSeconds: _old, ...rest } = content;
+          // Empty means no minimum; the key is removed, never stored empty. Saving checks the number.
+          onChange(e.target.value === '' ? rest : { ...rest, minSeconds: Number(e.target.value) });
+        }}
+        placeholder="Minimum seconds (optional)"
       />
     </div>
   );

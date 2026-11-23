@@ -1,0 +1,45 @@
+{
+  "formatId": "generic-c1",
+  "partId": "sprechen-1",
+  "anchors": [
+    {
+      "band": "A",
+      "turns": [
+        "Mein Thema ist der Einsatz künstlicher Intelligenz in der Medizin, ein Bereich, in dem Hoffnungen und Befürchtungen besonders nah beieinanderliegen.",
+        "Ich werde zunächst zeigen, wo KI heute schon eingesetzt wird, anschließend die ethischen Probleme beleuchten und abschließend eine eigene Einschätzung wagen.",
+        "Bereits heute erkennen Algorithmen auf Röntgen- und Hautbildern bestimmte Tumoren mindestens so zuverlässig wie erfahrene Fachärzte, und zwar in einem Bruchteil der Zeit.",
+        "Problematisch wird es dort, wo nicht mehr nachvollziehbar ist, wie ein System zu seiner Empfehlung kommt. Wer haftet, wenn die Maschine irrt und der Arzt ihr blind vertraut hat?",
+        "Hinzu kommt der Datenschutz: Je mehr Patientendaten in die Modelle einfließen, desto besser werden sie, aber desto größer ist auch das Missbrauchsrisiko.",
+        "Meiner Ansicht nach sollte KI den Arzt entlasten, ihn aber keinesfalls ersetzen. Die letzte Entscheidung und das Gespräch mit dem Patienten müssen beim Menschen bleiben.",
+        "Ob ich mich selbst von einer KI diagnostizieren lassen würde? Als zweite Meinung durchaus, als alleinige Instanz hingegen nicht, zumindest nicht beim gegenwärtigen Stand der Technik."
+      ],
+      "grades": { "ausdruck": "A", "aufgabe": "A", "richtigkeit": "A", "aussprache": "A" },
+      "justification": "Die Lernende präsentiert ein komplexes Thema souverän, klar gegliedert und mit präzisen Beispielen, wägt Chancen und Risiken ab und beantwortet die Frage differenziert. Der Wortschatz ist breit, idiomatisch und fachlich treffend („nachvollziehbar“, „haften“, „als alleinige Instanz“). Sehr komplexe Strukturen (je … desto, Passiv, indirekte Fragen) sind fehlerfrei. Aussprache und Intonation sind natürlich und unterstützen die Argumentation."
+    },
+    {
+      "band": "C",
+      "turns": [
+        "Mein Thema ist künstliche Intelligenz in der Medizin, ein Thema, bei dem es viele Hoffnungen, aber auch Ängste gibt.",
+        "Zuerst zeige ich, wo KI heute schon benutzt wird, dann spreche ich über die ethischen Probleme, und zum Schluss gebe ich meine eigene Einschätzung.",
+        "Schon heute können Algorithmen auf Röntgenbildern bestimmte Tumoren genauso gut erkennen wie erfahrene Ärzte, und das viel schneller.",
+        "Problematisch ist, dass man oft nicht nachvollziehen kann, wie das System zu seiner Empfehlung kommt. Und wenn die Maschine einen Fehler macht, wer ist dann verantwortlich?",
+        "Ein weiteres Problem ist der Datenschutz: Je mehr Daten die Systeme bekommen, desto besser werden sie, aber das Risiko von Missbrauch steigt auch.",
+        "Meiner Meinung nach sollte KI die Ärzte unterstützen, aber nicht zu ersetzen.",
+        "Ob ich mich von einer KI diagnostizieren lassen würde? Als zweite Meinung ja, aber allein nicht."
+      ],
+      "grades": { "ausdruck": "B", "aufgabe": "B", "richtigkeit": "B", "aussprache": "B" },
+      "justification": "Die Lernende spricht verständlich und gegliedert über das Thema, nennt Beispiele, Probleme und ihre Meinung und beantwortet die Frage; die eigene Einschätzung und die Antwort auf die Frage bleiben aber knapp und unbegründet. Sie drückt sich meist flüssig und differenziert aus („nachvollziehen“, „je mehr …, desto …“), einzelne Formulierungen sind aber ungenau („allein nicht“), und die Gliederung („zuerst“, „dann“, „zum Schluss“) ist einförmig. Komplexe Strukturen sind meist korrekt; ein vereinzelter Fehler („unterstützen, aber nicht zu ersetzen“) stört das Verständnis nicht. Die Aussprache ist meist gut verständlich; ein Akzent ist hörbar, stört aber kaum."
+    },
+    {
+      "band": "D",
+      "turns": [
+        "KI … Medizin … ja.",
+        "Computer … Bilder … Krankheit.",
+        "Problem … Daten? Ich glaube.",
+        "Arzt … besser. Nein … ich weiß nicht."
+      ],
+      "grades": { "ausdruck": "D", "aufgabe": "D", "richtigkeit": "D", "aussprache": "D" },
+      "justification": "Die Lernende kann das Thema nicht präsentieren: Sie nennt nur einzelne Stichwörter, ohne Zusammenhang, ohne Gliederung und ohne Meinung, und beantwortet die Frage nicht. Die Äußerungen sind bruchstückhaft, und ohne Satzstrukturen sind sie oft unverständlich. Die Aussprache macht sie größtenteils unverständlich."
+    }
+  ]
+}

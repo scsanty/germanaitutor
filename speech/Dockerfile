@@ -4,6 +4,10 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 ENV VOICE_DIR=/voices
+# faster-whisper's model cache: the `small` model downloaded below is the one used at runtime.
+# `medium` (~1.5 GB) downloads on first use.
+ENV HF_HOME=/models
+RUN python -c "from faster_whisper import WhisperModel; WhisperModel('small', device='cpu', compute_type='int8')"
 # Download each voice in voices.txt (<name> <path>): <path>.onnx and <path>.onnx.json.
 COPY voices.txt .
 RUN mkdir -p /voices && sed 's/#.*//' voices.txt | while read -r name path; do \

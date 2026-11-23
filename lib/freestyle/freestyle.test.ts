@@ -32,8 +32,8 @@ describe('extractJsonObject', () => {
 });
 
 describe('registries', () => {
-  it('enables the five built modes only', () => {
-    expect(FREESTYLE_MODES.filter((m) => m.enabled).map((m) => m.mode)).toEqual(['conversation', 'grammar_drill', 'free_reading', 'free_writing', 'exam_practice']);
+  it('enables the six built modes', () => {
+    expect(FREESTYLE_MODES.filter((m) => m.enabled).map((m) => m.mode)).toEqual(['conversation', 'grammar_drill', 'free_reading', 'free_writing', 'spoken', 'exam_practice']);
   });
 
   it('has 6–10 scenarios per level with unique level-prefixed ids, both title languages and a German opener', () => {

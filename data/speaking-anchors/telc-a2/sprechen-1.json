@@ -1,0 +1,43 @@
+{
+  "formatId": "telc-a2",
+  "partId": "sprechen-1",
+  "anchors": [
+    {
+      "band": "A",
+      "turns": [
+        "Hallo, ich heiße Tomasz Nowak und ich bin 34 Jahre alt. Ich komme aus Polen, aus Krakau.",
+        "Seit zwei Jahren wohne ich mit meiner Frau und unseren zwei Kindern in Leipzig.",
+        "Ich spreche Polnisch, Englisch und jetzt auch Deutsch. Deutsch lerne ich seit einem Jahr in einem Abendkurs.",
+        "Von Beruf bin ich Elektriker. Ich arbeite bei einer kleinen Firma in der Nähe vom Bahnhof.",
+        "In meiner Freizeit fahre ich gern Fahrrad, und ich spiele Gitarre.",
+        "Am Wochenende gehen wir oft in den Park oder wir besuchen Freunde. Manchmal koche ich für die ganze Familie."
+      ],
+      "grades": { "ausdruck": "A", "aufgabe": "A", "richtigkeit": "A", "aussprache": "A" },
+      "justification": "Der Lernende stellt sich zu allen Stichworten vor und beantwortet beide Zusatzfragen ausführlich. Er verbindet Sätze mit „und“ und „oder“, benutzt Präpositionen wie „seit“ und „bei“ und macht keine nennenswerten Fehler. Die Aussprache ist klar und gut verständlich."
+    },
+    {
+      "band": "C",
+      "turns": [
+        "Ich heiße Fatima. Ich bin … 41 Jahre.",
+        "Ich komme aus Marokko. Wohne in Frankfurt … mit mein Mann und drei Kind.",
+        "Sprache … Arabisch, Französisch. Deutsch … bisschen.",
+        "Arbeit … jetzt nicht. In Marokko ich war … äh … Verkauf … Verkäuferin.",
+        "Wochenende? … Äh … ich … Familie. Zu Hause.",
+        "Wie bitte? … Ich weiß nicht. Entschuldigung."
+      ],
+      "grades": { "ausdruck": "B", "aufgabe": "B", "richtigkeit": "B", "aussprache": "B" },
+      "justification": "Die Lernende stellt sich zu den meisten Stichworten vor, aber das Hobby fehlt, und die zweite Zusatzfrage beantwortet sie nicht. Sie drückt sich nur mit sehr wenigen Wörtern aus, die Wortsuche unterbricht sie oft, und viele Äußerungen sind keine ganzen Sätze. Viele Fehler bei Endungen und Wortstellung („mit mein Mann und drei Kind“, „In Marokko ich war“) erschweren das Verständnis stellenweise, und auch die Aussprache erschwert es stellenweise."
+    },
+    {
+      "band": "D",
+      "turns": [
+        "Name … Sanjay.",
+        "Ich Indien. Ich … Hamburg.",
+        "Arbeit … nein.",
+        "Wochenende? … Ich nicht verstehen."
+      ],
+      "grades": { "ausdruck": "C", "aufgabe": "C", "richtigkeit": "C", "aussprache": "C" },
+      "justification": "Der Lernende findet kaum Wörter: Zu erkennen sind nur Name, Land und Wohnort; die anderen Stichworte fehlen, und die Zusatzfragen beantwortet er nicht, sodass eine Vorstellung praktisch fehlt. Er bildet keine Sätze, die Äußerungen sind kaum zu verstehen, und die Aussprache macht sie größtenteils unverständlich."
+    }
+  ]
+}

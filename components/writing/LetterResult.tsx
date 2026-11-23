@@ -4,15 +4,13 @@ import { useId, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { Copy } from 'lucide-react';
 import { LanguageToggle } from '@/components/LanguageToggle';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { differsByLanguage, pickText, type ContentLanguage, type LocalizedText } from '@/lib/i18n/localizedText';
 import type { LetterGrade } from '@/lib/writing/letterGrading';
 import { isZeroed, type WritingRubric } from '@/lib/writing/rubric';
 import { cn } from '@/lib/utils';
+import { CriterionCards } from './CriterionCards';
 import { MarkedText } from './MarkedText';
-
-const criterionMax = (points: Partial<Record<string, number>>) => Math.max(0, ...Object.values(points).map((p) => p ?? 0));
 
 // Spec: the result of a graded letter: the marked-up letter, the criterion cards, the total, the corrected
 // version (side by side on wide screens), the summary, and optionally "Copy into free writing".
@@ -76,34 +74,7 @@ export function LetterResult({
         </div>
       </section>
 
-      <section aria-labelledby={`${id}-criteria`} className="flex flex-col gap-3">
-        <h3 id={`${id}-criteria`} className="text-xs font-semibold tracking-wide text-text-muted uppercase">
-          {t('criteria')}
-        </h3>
-        <ul className="flex flex-col gap-3">
-          {rubric.criteria.map((criterion, i) => {
-            const graded = grade.criteria.find((c) => c.id === criterion.id);
-            if (!graded) return null;
-            const name = pickText(criterion.name, locale);
-            const tip = tips?.[i] ? pickText(tips[i], language).trim() : '';
-            return (
-              <li key={criterion.id} aria-label={name} className="flex flex-col gap-2 rounded-xl border border-border px-4 py-3">
-                <div className="flex flex-wrap items-center justify-between gap-2">
-                  <span className="font-semibold">{name}</span>
-                  <span className="flex items-center gap-2">
-                    <Badge variant="secondary">{t('grade', { grade: graded.grade })}</Badge>
-                    <span className="text-sm text-text-muted tabular-nums">
-                      {t('criterionPoints', { points: criterion.points[graded.grade] ?? 0, max: criterionMax(criterion.points) })}
-                    </span>
-                  </span>
-                </div>
-                {pickText(graded.justification, language).trim() && <p className="text-sm leading-relaxed">{pickText(graded.justification, language)}</p>}
-                {tip && <p className="text-sm leading-relaxed text-text-muted">{t('tip', { tip })}</p>}
-              </li>
-            );
-          })}
-        </ul>
-      </section>
+      <CriterionCards rubric={rubric} criteria={grade.criteria} tips={tips} language={language} headingId={`${id}-criteria`} />
 
       <section aria-labelledby={`${id}-summary`} className="flex flex-col gap-1">
         <h3 id={`${id}-summary`} className="text-xs font-semibold tracking-wide text-text-muted uppercase">

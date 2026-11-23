@@ -1,0 +1,145 @@
+{
+  "formatId": "telc-b1",
+  "partId": "sprechen-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b1__sprechen-2__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie haben in der Vorbereitungszeit einen kurzen Text zum Thema „Wohnen in der Stadt oder auf dem Land?“ gelesen. Ihr Partner / Ihre Partnerin hat einen anderen Text zum selben Thema gelesen. Berichten Sie über Ihren Text, hören Sie den Bericht Ihres Partners / Ihrer Partnerin und sprechen Sie dann über Ihre eigenen Erfahrungen und Meinungen.",
+          "materials": [
+            {
+              "title": "Ihr Text: „Zurück aufs Dorf“",
+              "points": [
+                "Familie Hoffmann ist von München in ein Dorf im Allgäu gezogen.",
+                "Gründe: hohe Mieten in der Stadt, mehr Platz und Natur für die Kinder.",
+                "Vorteile heute: großer Garten, ruhige Nachbarschaft, die Kinder spielen draußen.",
+                "Probleme: lange Wege zur Arbeit, wenig Busse, kaum Geschäfte und Ärzte.",
+                "Fazit der Mutter: „Wir sind glücklicher, aber ohne Auto geht hier nichts.“"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zum zweiten Teil. Sie haben beide einen Text zum Thema „Wohnen in der Stadt oder auf dem Land?“ gelesen. Berichten Sie zuerst kurz, was in Ihrem Text steht. Danach erzählt Ihr Partner von seinem Text. Sprechen Sie dann miteinander über das Thema und über Ihre eigenen Erfahrungen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Marco",
+            "gender": "m",
+            "profile": "Marco ist 36 und arbeitet als Elektriker. Sein Text heißt „Das Leben in der Großstadt“: Eine junge Frau zieht vom Land nach Köln, weil es dort Arbeit, Kultur und gute Verbindungen gibt; sie findet aber nur eine teure, kleine Wohnung, und es ist oft laut. Marco selbst ist auf einem Bauernhof in Italien aufgewachsen und lebt jetzt gern in der Stadt."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Introduce your text with „In meinem Text geht es um …“, report with „Der Autor / Die Person meint, dass …“ and give your view with „Ich persönlich finde …, weil …“.",
+            "de": "Leite deinen Text mit „In meinem Text geht es um …“ ein, berichte mit „Der Autor / Die Person meint, dass …“ und sag deine Meinung mit „Ich persönlich finde …, weil …“."
+          },
+          {
+            "en": "Report the main points of your text (who, why, advantages, problems), listen to Marco’s text, then compare both and talk about your own experience with city or country life.",
+            "de": "Berichte die Hauptpunkte deines Textes (wer, warum, Vorteile, Probleme), hör dir Marcos Text an, vergleich dann beide und sprich über deine eigenen Erfahrungen mit dem Leben in der Stadt oder auf dem Land."
+          },
+          {
+            "en": "Use dass-clauses and weil-clauses with the verb at the end, and the right case after prepositions (in der Stadt, auf dem Land, für die Kinder).",
+            "de": "Benutze dass- und weil-Sätze mit dem Verb am Ende und den richtigen Kasus nach Präpositionen (in der Stadt, auf dem Land, für die Kinder)."
+          },
+          {
+            "en": "Stress the key words of your report and let your voice fall at the end of statements; that makes your summary easy to follow.",
+            "de": "Betone die Schlüsselwörter deines Berichts und lass die Stimme am Satzende fallen; so ist deine Zusammenfassung leicht zu verstehen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b1__sprechen-2__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie haben in der Vorbereitungszeit einen kurzen Text zum Thema „Ehrenamt“ gelesen. Ihr Partner / Ihre Partnerin hat einen anderen Text zum selben Thema gelesen. Berichten Sie über Ihren Text, hören Sie den Bericht Ihres Partners / Ihrer Partnerin und sprechen Sie dann über Ihre eigenen Erfahrungen und Meinungen.",
+          "materials": [
+            {
+              "title": "Ihr Text: „Jeden Dienstag bei der Tafel“",
+              "points": [
+                "Herr Krämer (67) hilft seit seiner Rente jeden Dienstag bei der Tafel.",
+                "Die Tafel sammelt Lebensmittel von Supermärkten und gibt sie an Menschen mit wenig Geld.",
+                "Er sagt: „Ich fühle mich gebraucht und habe viele neue Leute kennengelernt.“",
+                "Problem: Es gibt zu wenige junge Helferinnen und Helfer.",
+                "Die Tafel sucht Leute, die zwei Stunden pro Woche Zeit haben."
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zum zweiten Teil. Sie haben beide einen Text zum Thema „Ehrenamt“ gelesen, also zu Menschen, die in ihrer Freizeit ohne Bezahlung anderen helfen. Berichten Sie bitte zuerst über Ihren Text. Danach berichtet Ihre Partnerin. Sprechen Sie dann zusammen darüber, was Sie davon halten. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Bianca",
+            "gender": "f",
+            "profile": "Bianca ist 27 und studiert Soziale Arbeit. Ihr Text heißt „Keine Zeit fürs Ehrenamt?“: Eine Umfrage zeigt, dass viele Berufstätige gern helfen würden, aber zu wenig Zeit haben; manche helfen deshalb online, zum Beispiel als Lernpatin per Video. Bianca trainiert selbst ehrenamtlich eine Mädchen-Fußballmannschaft."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Introduce your text with „In meinem Text geht es um …“, report with „Der Autor / Die Person meint, dass …“ and give your view with „Ich persönlich finde …, weil …“.",
+            "de": "Leite deinen Text mit „In meinem Text geht es um …“ ein, berichte mit „Der Autor / Die Person meint, dass …“ und sag deine Meinung mit „Ich persönlich finde …, weil …“."
+          },
+          {
+            "en": "Summarise the main points of your text about the food bank, listen to Bianca’s text, then discuss volunteering: have you helped others, and what stops people from doing it?",
+            "de": "Fasse die Hauptpunkte deines Textes über die Tafel zusammen, hör Biancas Text zu und sprecht dann über das Ehrenamt: Hast du schon anderen geholfen, und was hält Menschen davon ab?"
+          },
+          {
+            "en": "Use dass-clauses and weil-clauses with the verb at the end, and the right case after prepositions (in der Stadt, auf dem Land, für die Kinder).",
+            "de": "Benutze dass- und weil-Sätze mit dem Verb am Ende und den richtigen Kasus nach Präpositionen (in der Stadt, auf dem Land, für die Kinder)."
+          },
+          {
+            "en": "Stress the key words of your report and let your voice fall at the end of statements; that makes your summary easy to follow.",
+            "de": "Betone die Schlüsselwörter deines Berichts und lass die Stimme am Satzende fallen; so ist deine Zusammenfassung leicht zu verstehen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b1__sprechen-2__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie haben in der Vorbereitungszeit einen kurzen Text zum Thema „Einkaufen im Internet“ gelesen. Ihr Partner / Ihre Partnerin hat einen anderen Text zum selben Thema gelesen. Berichten Sie über Ihren Text, hören Sie den Bericht Ihres Partners / Ihrer Partnerin und sprechen Sie dann über Ihre eigenen Erfahrungen und Meinungen.",
+          "materials": [
+            {
+              "title": "Ihr Text: „Alles mit einem Klick“",
+              "points": [
+                "Frau Becker (45) bestellt fast alles online: Kleidung, Bücher und sogar Lebensmittel.",
+                "Vorteile für sie: keine Zeit im Stau, große Auswahl, Preise leicht vergleichen.",
+                "Sie arbeitet Vollzeit und hat zwei Kinder, deshalb spart sie viel Zeit.",
+                "Nachteil: Viele Pakete gehen zurück, und es gibt viel Verpackungsmüll.",
+                "Ihr Tipp: Bewertungen lesen und Bestellungen sammeln."
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zum zweiten Teil. Sie haben beide einen Text zum Thema „Einkaufen im Internet“ gelesen. Berichten Sie bitte zuerst kurz über Ihren Text. Dann berichtet Ihr Partner über seinen Text. Unterhalten Sie sich danach über Ihre Meinungen und Erfahrungen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Stefan",
+            "gender": "m",
+            "profile": "Stefan ist 52 und arbeitet als Busfahrer. Sein Text heißt „Leere Läden in der Innenstadt“: Ein Buchhändler in Kassel musste schließen, weil viele Kunden online bestellen; die Innenstadt wird leerer, und Arbeitsplätze gehen verloren. Stefan kauft lieber im Geschäft, weil er die Sachen anfassen und beraten werden möchte."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Introduce your text with „In meinem Text geht es um …“, report with „Der Autor / Die Person meint, dass …“ and give your view with „Ich persönlich finde …, weil …“.",
+            "de": "Leite deinen Text mit „In meinem Text geht es um …“ ein, berichte mit „Der Autor / Die Person meint, dass …“ und sag deine Meinung mit „Ich persönlich finde …, weil …“."
+          },
+          {
+            "en": "Report what your text says about online shopping (advantages and problems), listen to Stefan’s text about empty shops, then discuss where you prefer to shop and why.",
+            "de": "Berichte, was dein Text über Online-Einkaufen sagt (Vorteile und Probleme), hör Stefans Text über leere Geschäfte zu und sprecht dann darüber, wo ihr lieber einkauft und warum."
+          },
+          {
+            "en": "Use dass-clauses and weil-clauses with the verb at the end, and the right case after prepositions (in der Stadt, auf dem Land, für die Kinder).",
+            "de": "Benutze dass- und weil-Sätze mit dem Verb am Ende und den richtigen Kasus nach Präpositionen (in der Stadt, auf dem Land, für die Kinder)."
+          },
+          {
+            "en": "Stress the key words of your report and let your voice fall at the end of statements; that makes your summary easy to follow.",
+            "de": "Betone die Schlüsselwörter deines Berichts und lass die Stimme am Satzende fallen; so ist deine Zusammenfassung leicht zu verstehen."
+          }
+        ]
+      }
+    }
+  ]
+}

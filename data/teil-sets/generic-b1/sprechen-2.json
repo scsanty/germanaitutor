@@ -1,0 +1,145 @@
+{
+  "formatId": "generic-b1",
+  "partId": "sprechen-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-b1__sprechen-2__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Diskutieren Sie mit Ihrer Partnerin über die Frage auf dem Aufgabenblatt. Sagen Sie Ihre Meinung, begründen Sie sie und reagieren Sie auf die Argumente Ihrer Partnerin.",
+          "materials": [
+            {
+              "title": "Frage: Sollen Bus und Bahn in der Stadt kostenlos sein?",
+              "points": [
+                "weniger Autos und Staus",
+                "Hilfe für Menschen mit wenig Geld",
+                "Wer bezahlt das? (Steuern)",
+                "volle Busse und Bahnen",
+                "Ihre Erfahrungen"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2, der Diskussion. Die Frage lautet: „Sollen Bus und Bahn in der Stadt kostenlos sein?“ Diskutieren Sie bitte mit Ihrer Partnerin. Begründen Sie Ihre Meinung und reagieren Sie auf ihre Argumente. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Petra",
+            "gender": "f",
+            "profile": "Petra ist 52, arbeitet bei der Stadtverwaltung und fährt jeden Tag mit der Straßenbahn. Sie ist gegen kostenlose Busse und Bahnen: Das kostet die Stadt viel Geld, und die Bahnen sind schon jetzt zu voll. Lieber möchte sie ein billiges Monatsticket und mehr Fahrten. Sie hört zu, gibt zu, wenn ein Argument gut ist, und fragt nach („Und wer soll das bezahlen?“)."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Give your opinion with a reason and react to your partner: „Ich bin dafür, weil …“, „Du sagst, dass … Das verstehe ich, aber …“, „Da hast du recht.“, „Ich sehe das anders, denn …“.",
+            "de": "Sag deine Meinung mit einem Grund und reagiere auf deinen Partner: „Ich bin dafür, weil …“, „Du sagst, dass … Das verstehe ich, aber …“, „Da hast du recht.“, „Ich sehe das anders, denn …“."
+          },
+          {
+            "en": "State your opinion on free public transport with at least two reasons from the sheet or your experience, respond directly to Petra’s points about cost and crowded trams, and say where you agree or disagree at the end.",
+            "de": "Sag deine Meinung zu kostenlosem Nahverkehr mit mindestens zwei Gründen vom Blatt oder aus deiner Erfahrung, geh direkt auf Petras Punkte zu Kosten und vollen Bahnen ein und sag am Ende, wo ihr einig oder uneinig seid."
+          },
+          {
+            "en": "Use dass- and weil-clauses with the verb at the end, the Konjunktiv II for suggestions („Man könnte …“, „Es wäre besser, wenn …“) and correct comparatives (billiger, sicherer als).",
+            "de": "Benutze dass- und weil-Sätze mit dem Verb am Ende, den Konjunktiv II für Vorschläge („Man könnte …“, „Es wäre besser, wenn …“) und korrekte Komparative (billiger, sicherer als)."
+          },
+          {
+            "en": "Stress the word that carries your argument and speak fluently, without long pauses, so the discussion keeps moving.",
+            "de": "Betone das Wort, das dein Argument trägt, und sprich flüssig, ohne lange Pausen, damit die Diskussion in Bewegung bleibt."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-b1__sprechen-2__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Diskutieren Sie mit Ihrem Partner über die Frage auf dem Aufgabenblatt. Sagen Sie Ihre Meinung, begründen Sie sie und reagieren Sie auf die Argumente Ihres Partners.",
+          "materials": [
+            {
+              "title": "Frage: Deutschkurs online oder im Kursraum – was ist besser?",
+              "points": [
+                "kein Weg zum Kurs, flexible Zeiten",
+                "Kontakt zu anderen Teilnehmenden",
+                "Technik: Internet, Laptop",
+                "Konzentration zu Hause",
+                "Ihre Erfahrungen"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2, der Diskussion. Sie sprechen über die Frage: „Deutschkurs online oder im Kursraum – was ist besser?“ Diskutieren Sie bitte mit Ihrem Partner, begründen Sie Ihre Meinung und reagieren Sie auf seine Argumente. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Ahmad",
+            "gender": "m",
+            "profile": "Ahmad ist 35, kommt aus Afghanistan, arbeitet im Schichtdienst in einer Fabrik und hat zwei kleine Kinder. Er findet Online-Kurse besser, weil er keine Zeit für den Weg hat und abends von zu Hause lernen kann. Er gibt zu, dass er online manchmal abgelenkt ist und weniger spricht. Er ist freundlich und fragt nach Beispielen."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Give your opinion with a reason and react to your partner: „Ich bin dafür, weil …“, „Du sagst, dass … Das verstehe ich, aber …“, „Da hast du recht.“, „Ich sehe das anders, denn …“.",
+            "de": "Sag deine Meinung mit einem Grund und reagiere auf deinen Partner: „Ich bin dafür, weil …“, „Du sagst, dass … Das verstehe ich, aber …“, „Da hast du recht.“, „Ich sehe das anders, denn …“."
+          },
+          {
+            "en": "Give and justify your view on online versus classroom courses, use your own learning experience as an example, react to Ahmad’s reasons (shifts, children) and look for a fair conclusion, for example a mix of both.",
+            "de": "Sag und begründe deine Meinung zu Online- und Präsenzkursen, nimm deine eigene Lernerfahrung als Beispiel, reagiere auf Ahmads Gründe (Schichtdienst, Kinder) und such einen fairen Schluss, zum Beispiel eine Mischung aus beidem."
+          },
+          {
+            "en": "Use dass- and weil-clauses with the verb at the end, the Konjunktiv II for suggestions („Man könnte …“, „Es wäre besser, wenn …“) and correct comparatives (billiger, sicherer als).",
+            "de": "Benutze dass- und weil-Sätze mit dem Verb am Ende, den Konjunktiv II für Vorschläge („Man könnte …“, „Es wäre besser, wenn …“) und korrekte Komparative (billiger, sicherer als)."
+          },
+          {
+            "en": "Stress the word that carries your argument and speak fluently, without long pauses, so the discussion keeps moving.",
+            "de": "Betone das Wort, das dein Argument trägt, und sprich flüssig, ohne lange Pausen, damit die Diskussion in Bewegung bleibt."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-b1__sprechen-2__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Diskutieren Sie mit Ihrer Partnerin über die Frage auf dem Aufgabenblatt. Sagen Sie Ihre Meinung, begründen Sie sie und reagieren Sie auf die Argumente Ihrer Partnerin.",
+          "materials": [
+            {
+              "title": "Frage: Sollen Kinder ab acht Jahren allein zur Schule gehen?",
+              "points": [
+                "Selbstständigkeit lernen",
+                "Verkehr und Sicherheit",
+                "Bewegung statt „Elterntaxi“",
+                "Handy für Kinder?",
+                "Ihre Erfahrungen"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2, der Diskussion. Die Frage lautet: „Sollen Kinder ab acht Jahren allein zur Schule gehen?“ Bitte diskutieren Sie mit Ihrer Partnerin. Begründen Sie Ihre Meinung und reagieren Sie auf ihre Argumente. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Nadine",
+            "gender": "f",
+            "profile": "Nadine ist 37, Krankenschwester und Mutter einer achtjährigen Tochter. Sie fährt ihr Kind jeden Morgen mit dem Auto zur Schule, weil die Straße davor gefährlich ist und sie Angst hat. Sie findet aber auch, dass Kinder selbstständig werden müssen, und ist offen für Ideen wie eine Gruppe von Kindern, die zusammen geht. Sie spricht schnell, aber freundlich."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Give your opinion with a reason and react to your partner: „Ich bin dafür, weil …“, „Du sagst, dass … Das verstehe ich, aber …“, „Da hast du recht.“, „Ich sehe das anders, denn …“.",
+            "de": "Sag deine Meinung mit einem Grund und reagiere auf deinen Partner: „Ich bin dafür, weil …“, „Du sagst, dass … Das verstehe ich, aber …“, „Da hast du recht.“, „Ich sehe das anders, denn …“."
+          },
+          {
+            "en": "Say whether eight-year-olds should walk to school alone and give reasons, take up Nadine’s safety worries with concrete ideas (walking groups, practising the route) and come to a clear conclusion together.",
+            "de": "Sag, ob Achtjährige allein zur Schule gehen sollen, und begründe es, nimm Nadines Sorgen um die Sicherheit mit konkreten Ideen auf (Laufgruppen, den Weg üben) und kommt gemeinsam zu einem klaren Ergebnis."
+          },
+          {
+            "en": "Use dass- and weil-clauses with the verb at the end, the Konjunktiv II for suggestions („Man könnte …“, „Es wäre besser, wenn …“) and correct comparatives (billiger, sicherer als).",
+            "de": "Benutze dass- und weil-Sätze mit dem Verb am Ende, den Konjunktiv II für Vorschläge („Man könnte …“, „Es wäre besser, wenn …“) und korrekte Komparative (billiger, sicherer als)."
+          },
+          {
+            "en": "Stress the word that carries your argument and speak fluently, without long pauses, so the discussion keeps moving.",
+            "de": "Betone das Wort, das dein Argument trägt, und sprich flüssig, ohne lange Pausen, damit die Diskussion in Bewegung bleibt."
+          }
+        ]
+      }
+    }
+  ]
+}

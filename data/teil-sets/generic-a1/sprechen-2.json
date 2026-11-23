@@ -1,0 +1,164 @@
+{
+  "formatId": "generic-a1",
+  "partId": "sprechen-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-a1__sprechen-2__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie möchten mit Ihrer Kursnachbarin am Freitagabend zusammen kochen. Planen Sie zusammen: Wann? Wo? Was kochen Sie? Wer kauft was ein? Machen Sie Vorschläge und einigen Sie sich.",
+          "materials": [
+            {
+              "title": "Zusammen kochen am Freitag",
+              "points": [
+                "Wann? (Uhrzeit)",
+                "Wo? (bei dir oder bei mir?)",
+                "Was kochen wir?",
+                "Wer kauft was ein?"
+              ]
+            },
+            {
+              "title": "Ihr Freitag",
+              "points": [
+                "bis 17 Uhr arbeiten",
+                "ab 18 Uhr frei",
+                "Sie haben keinen Backofen."
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2. Sie möchten mit Ihrer Partnerin am Freitagabend zusammen kochen. Planen Sie bitte zusammen. Die Punkte auf dem Blatt helfen Ihnen. Machen Sie Vorschläge und einigen Sie sich. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Sofia",
+            "gender": "f",
+            "profile": "Sofia ist 29, kommt aus Griechenland und sitzt im Deutschkurs neben dir. Sie arbeitet am Freitag bis 18 Uhr und kann erst um 19 Uhr. Sie hat einen Backofen und möchte gern Pizza oder Moussaka machen. Sie kauft gern Gemüse auf dem Markt ein. Sie spricht einfach und freundlich und macht auch eigene Vorschläge."
+          },
+          "turns": 5
+        },
+        "explanations": [
+          {
+            "en": "Use simple phrases for planning: „Gehen wir …?“, „Hast du am … Zeit?“, „Um … Uhr kann ich nicht.“, „Okay, gut!“, „Bringst du … mit?“",
+            "de": "Benutze einfache Redemittel zum Planen: „Gehen wir …?“, „Hast du am … Zeit?“, „Um … Uhr kann ich nicht.“, „Okay, gut!“, „Bringst du … mit?“"
+          },
+          {
+            "en": "Make your own suggestions for the time, the place, the meal and the shopping, react to Sofia’s ideas (she can only come at seven and has an oven) and agree on all four points at the end.",
+            "de": "Mach eigene Vorschläge zu Uhrzeit, Ort, Essen und Einkauf, reagiere auf Sofias Ideen (sie kann erst um sieben und hat einen Backofen) und einigt euch am Ende auf alle vier Punkte."
+          },
+          {
+            "en": "Use the time with um and am („am Freitag um sechs Uhr“), put the verb first in yes/no questions and send the prefix of separable verbs to the end („Ich bringe Brot mit.“).",
+            "de": "Benutze die Zeit mit um und am („am Freitag um sechs Uhr“), stell das Verb in Ja/Nein-Fragen an den Anfang und schick die Vorsilbe trennbarer Verben ans Ende („Ich bringe Brot mit.“)."
+          },
+          {
+            "en": "Let your voice go up at the end of a question and say times and prices clearly, so your partner understands them the first time.",
+            "de": "Lass die Stimme am Ende einer Frage nach oben gehen und sag Uhrzeiten und Preise deutlich, damit dein Partner sie gleich beim ersten Mal versteht."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-a1__sprechen-2__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie möchten mit einem Freund am Sonntag ins Schwimmbad gehen. Planen Sie zusammen: Wann? Welches Schwimmbad? Wie fahren Sie hin? Was nehmen Sie mit? Machen Sie Vorschläge und einigen Sie sich.",
+          "materials": [
+            {
+              "title": "Sonntag: ins Schwimmbad",
+              "points": [
+                "Wann? (Uhrzeit)",
+                "Hallenbad oder Freibad?",
+                "Wie fahren wir? (Bus, Fahrrad …)",
+                "Was nehmen wir mit?"
+              ]
+            },
+            {
+              "title": "Ihr Sonntag",
+              "points": [
+                "bis 11 Uhr: Frühstück mit der Familie",
+                "Sie haben kein Fahrrad."
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2. Sie möchten mit Ihrem Partner am Sonntag ins Schwimmbad gehen. Planen Sie bitte zusammen und machen Sie Vorschläge. Die Punkte auf dem Blatt helfen Ihnen. Einigen Sie sich am Ende. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Tarek",
+            "gender": "m",
+            "profile": "Tarek ist 25 und ein Freund aus dem Deutschkurs. Er möchte gern früh schwimmen, um zehn Uhr, und mag das Freibad, weil die Sonne scheint. Er fährt gern Fahrrad. Er nimmt Handtücher mit und fragt, wer Essen mitbringt. Er spricht kurz und freundlich und ist offen für andere Ideen."
+          },
+          "turns": 5
+        },
+        "explanations": [
+          {
+            "en": "Use simple phrases for planning: „Gehen wir …?“, „Hast du am … Zeit?“, „Um … Uhr kann ich nicht.“, „Okay, gut!“, „Bringst du … mit?“",
+            "de": "Benutze einfache Redemittel zum Planen: „Gehen wir …?“, „Hast du am … Zeit?“, „Um … Uhr kann ich nicht.“, „Okay, gut!“, „Bringst du … mit?“"
+          },
+          {
+            "en": "Suggest a time, a pool, how to get there and what to bring, react to Tarek’s wish to go at ten by bike (you have breakfast until eleven and no bike) and agree on a plan.",
+            "de": "Schlag eine Uhrzeit, ein Schwimmbad, den Weg dorthin und die Sachen zum Mitnehmen vor, reagiere auf Tareks Wunsch, um zehn mit dem Fahrrad zu fahren (du frühstückst bis elf und hast kein Fahrrad), und einigt euch auf einen Plan."
+          },
+          {
+            "en": "Use the time with um and am („am Freitag um sechs Uhr“), put the verb first in yes/no questions and send the prefix of separable verbs to the end („Ich bringe Brot mit.“).",
+            "de": "Benutze die Zeit mit um und am („am Freitag um sechs Uhr“), stell das Verb in Ja/Nein-Fragen an den Anfang und schick die Vorsilbe trennbarer Verben ans Ende („Ich bringe Brot mit.“)."
+          },
+          {
+            "en": "Let your voice go up at the end of a question and say times and prices clearly, so your partner understands them the first time.",
+            "de": "Lass die Stimme am Ende einer Frage nach oben gehen und sag Uhrzeiten und Preise deutlich, damit dein Partner sie gleich beim ersten Mal versteht."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-a1__sprechen-2__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie möchten mit einer Nachbarin am Freitag auf den Weihnachtsmarkt gehen. Planen Sie zusammen: Wann? Wo treffen Sie sich? Was machen Sie dort? Wie viel Geld nehmen Sie mit? Machen Sie Vorschläge und einigen Sie sich.",
+          "materials": [
+            {
+              "title": "Freitag: Weihnachtsmarkt",
+              "points": [
+                "Wann? (Uhrzeit)",
+                "Wo treffen wir uns?",
+                "Was machen wir? (essen, trinken, kaufen …)",
+                "Wie viel Geld?"
+              ]
+            },
+            {
+              "title": "Ihr Freitag",
+              "points": [
+                "bis 16 Uhr: Kurs",
+                "16 bis 17 Uhr: Kinder abholen"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2. Sie möchten mit Ihrer Partnerin am Freitag auf den Weihnachtsmarkt gehen. Planen Sie bitte zusammen. Die Punkte auf dem Blatt helfen Ihnen. Machen Sie Vorschläge und einigen Sie sich. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Frau Becker",
+            "gender": "f",
+            "profile": "Frau Becker ist 63 und wohnt im Haus neben dir. Sie möchte gern um 15 Uhr gehen, weil es dann noch nicht so voll ist, kann aber auch später. Sie möchte sich an der Haltestelle treffen, Kinderpunsch trinken und eine Kerze kaufen. Zwanzig Euro sind für sie genug. Sie spricht langsam, siezt dich und freut sich über Vorschläge."
+          },
+          "turns": 5
+        },
+        "explanations": [
+          {
+            "en": "Use simple phrases for planning: „Gehen wir …?“, „Hast du am … Zeit?“, „Um … Uhr kann ich nicht.“, „Okay, gut!“, „Bringst du … mit?“",
+            "de": "Benutze einfache Redemittel zum Planen: „Gehen wir …?“, „Hast du am … Zeit?“, „Um … Uhr kann ich nicht.“, „Okay, gut!“, „Bringst du … mit?“"
+          },
+          {
+            "en": "Make suggestions for the time, the meeting point, what to do and how much money to take, react to Frau Becker’s wish to go at three (you are busy until five) and sum up what you agreed.",
+            "de": "Mach Vorschläge zu Uhrzeit, Treffpunkt, Programm und Geld, reagiere auf Frau Beckers Wunsch, um drei zu gehen (du hast bis fünf keine Zeit), und fasse am Ende zusammen, was ihr vereinbart habt."
+          },
+          {
+            "en": "Use the time with um and am („am Freitag um sechs Uhr“), put the verb first in yes/no questions and send the prefix of separable verbs to the end („Ich bringe Brot mit.“).",
+            "de": "Benutze die Zeit mit um und am („am Freitag um sechs Uhr“), stell das Verb in Ja/Nein-Fragen an den Anfang und schick die Vorsilbe trennbarer Verben ans Ende („Ich bringe Brot mit.“)."
+          },
+          {
+            "en": "Let your voice go up at the end of a question and say times and prices clearly, so your partner understands them the first time.",
+            "de": "Lass die Stimme am Ende einer Frage nach oben gehen und sag Uhrzeiten und Preise deutlich, damit dein Partner sie gleich beim ersten Mal versteht."
+          }
+        ]
+      }
+    }
+  ]
+}

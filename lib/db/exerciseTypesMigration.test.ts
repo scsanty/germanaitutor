@@ -33,10 +33,16 @@ const LISTENING_TYPES = `${READING_TYPES},'audio_questions'`;
 const LISTENING_EXERCISES = OLD_EXERCISES.replace("'multiple_choice','fill_blank','flashcard','free_text'", LISTENING_TYPES);
 const LISTENING_PRACTICE = OLD_PRACTICE.replace("'multiple_choice','fill_blank','flashcard','free_text'", LISTENING_TYPES);
 
+// Speaking: the tables as the Writing module left them (CHECK ends in 'letter', no 'spoken_response').
+const WRITING_TYPES = `${LISTENING_TYPES},'letter'`;
+const WRITING_EXERCISES = OLD_EXERCISES.replace("'multiple_choice','fill_blank','flashcard','free_text'", WRITING_TYPES);
+const WRITING_PRACTICE = OLD_PRACTICE.replace("'multiple_choice','fill_blank','flashcard','free_text'", WRITING_TYPES);
+
 const DDL = {
   'pre-reading': [OLD_EXERCISES, OLD_PRACTICE],
   reading: [READING_EXERCISES, READING_PRACTICE],
   listening: [LISTENING_EXERCISES, LISTENING_PRACTICE],
+  writing: [WRITING_EXERCISES, WRITING_PRACTICE],
 } as const;
 
 function oldDatabase(state: keyof typeof DDL = 'pre-reading'): Database.Database {
@@ -139,6 +145,30 @@ describe('exercise types migration', () => {
     seedTutoringCurriculum(fresh);
     expect(() =>
       fresh.prepare("INSERT INTO exercises (id, lesson_id, type, content) VALUES ('a1-greet__ex9', 'a1-greet', 'letter', '{}')").run()
+    ).not.toThrow();
+  });
+
+  it('rebuilds a database on the Writing types so spoken_response inserts, keeping the links (Speaking)', () => {
+    const db = oldDatabase('writing');
+    expect(() =>
+      db.prepare("INSERT INTO exercises (id, lesson_id, type, content) VALUES ('a1-greet__ex8', 'a1-greet', 'spoken_response', '{}')").run()
+    ).toThrow();
+
+    runMigrations(db);
+
+    expect(() =>
+      db.prepare("INSERT INTO exercises (id, lesson_id, type, content) VALUES ('a1-greet__ex9', 'a1-greet', 'spoken_response', '{}')").run()
+    ).not.toThrow();
+    expect(count(db, "SELECT COUNT(*) AS n FROM lesson_attempts WHERE exercise_id = 'a1-greet__ex1'")).toBe(1);
+    expect(count(db, "SELECT COUNT(*) AS n FROM exercise_srs_state WHERE exercise_id = 'a1-sein__ex2'")).toBe(1);
+    expect(count(db, 'SELECT COUNT(*) AS n FROM lesson_chat_messages')).toBe(2);
+    expect(count(db, "SELECT COUNT(*) AS n FROM practice_seen WHERE practice_exercise_id = 'p1'")).toBe(1);
+    expect(db.pragma('foreign_keys', { simple: true })).toBe(1);
+
+    const fresh = createDbClient(':memory:');
+    seedTutoringCurriculum(fresh);
+    expect(() =>
+      fresh.prepare("INSERT INTO exercises (id, lesson_id, type, content) VALUES ('a1-greet__ex9', 'a1-greet', 'spoken_response', '{}')").run()
     ).not.toThrow();
   });
 

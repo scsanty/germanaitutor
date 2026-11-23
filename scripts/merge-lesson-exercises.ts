@@ -6,6 +6,7 @@
 //           type:     reading lessons: "passage_questions" | "matching" | "cloze"
 //                     listening lessons: "audio_questions"
 //                     writing lessons: "letter" ("cloze" in the form lessons only, FORM_LESSONS below)
+//                     speaking lessons: "spoken_response"
 //           content:  the exercise content exactly as stored in the seed. The bilingual instruction lives
 //                     INSIDE content as "instruction": { "en": "...", "de": "..." } (both languages or neither).
 //           replaces: optional, the ids of existing exercises of this lesson that the new exercise supersedes
@@ -15,7 +16,7 @@
 //         No other keys are allowed. The seed supplies id, lessonId and track.
 // Output: <dataRoot>/curriculum-seed/<seed-stem>.json (dataRoot defaults to ./data, or $LESSON_DATA_ROOT, or --data-root).
 //
-// Per lesson: it must exist and have skill "reading", "listening" or "writing". New ids continue the lesson's
+// Per lesson: it must exist and have skill "reading", "listening", "writing" or "speaking". New ids continue the lesson's
 // "<lessonId>__exN" numbering past every existing id (a replaced id is never reused, so the seed loader
 // deletes the old row instead of retyping it; preflight B1). A draft with "replaces" takes the position of
 // the first replaced exercise, and the replaced exercises are removed from the seed. Drafts without it are
@@ -31,6 +32,10 @@
 // inside the usual range for the lesson's level (warning). A writing lesson with drafts must end up with at least
 // one letter, or in a form lesson (the three typed-gap form parts: goethe-a1/schreiben-1, telc-a1/schreiben-1,
 // telc-a2/schreiben-1) at least one cloze; a form lesson takes no letter and other writing lessons no cloze.
+//
+// A spoken_response needs the instruction in both languages, a non-empty German prompt and model answer (English
+// words are warnings, via the same list) and, when present, minSeconds as a positive whole number (the validator).
+// Speaking lessons without a spoken_response are reported like writing lessons without a letter.
 //
 // Idempotence: a draft is "already merged" when the lesson already holds an exercise with the same type and
 // deep-equal content (object key order ignored) and none of its replaced ids remain. Such drafts are skipped,
@@ -63,6 +68,7 @@ const NEW_TYPES: Record<string, string[]> = {
   reading: ['passage_questions', 'matching', 'cloze'],
   listening: ['audio_questions'],
   writing: ['letter', 'cloze'],
+  speaking: ['spoken_response'],
 };
 
 // The form lessons teach the typed-gap form parts; they get a typed cloze instead of a letter (preflight B5).
@@ -111,6 +117,21 @@ function writingChecks(type: string, content: Record<string, unknown>, lessonId:
     if (range && typeof w?.min === 'number' && typeof w?.max === 'number' && (w.min < range.min || w.max > range.max)) {
       warnings.push(`wordTarget ${w.min}-${w.max} is outside the usual ${range.min}-${range.max} words for ${level}`);
     }
+  }
+  return { errors, warnings };
+}
+
+// Extra checks for a drafted spoken_response: errors, and warnings for the reviewer.
+function speakingChecks(content: Record<string, unknown>): { errors: string[]; warnings: string[] } {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+  // validateExerciseContent accepts an empty prompt when an instruction is present; a lesson exercise needs both.
+  if (!content.instruction) errors.push('a spoken_response needs an instruction in English and German');
+  if (typeof content.prompt !== 'string' || content.prompt.trim() === '') errors.push('a spoken_response needs a prompt in German');
+  for (const field of ['prompt', 'modelAnswer'] as const) {
+    const value = content[field];
+    const en = typeof value === 'string' ? englishWords(value) : [];
+    if (en.length > 0) warnings.push(`${field}: English word(s) ${en.join(', ')}; the prompt and model answer are German-only`);
   }
   return { errors, warnings };
 }
@@ -171,7 +192,7 @@ export function mergeLessonExercises(opts: MergeOptions): MergeResult {
       const lesson = seed.lessons.find((l) => l.id === lessonId);
       if (!lesson) { fail(['no such lesson in the seed']); continue; }
       const allowed = NEW_TYPES[lesson.skill];
-      if (!allowed) { fail([`lesson skill is "${lesson.skill}", not reading, listening or writing`]); continue; }
+      if (!allowed) { fail([`lesson skill is "${lesson.skill}", not reading, listening, writing or speaking`]); continue; }
       let drafts: unknown;
       try {
         drafts = JSON.parse(readFileSync(join(opts.workDir, stem, file), 'utf8'));
@@ -228,6 +249,11 @@ export function mergeLessonExercises(opts: MergeOptions): MergeResult {
           const w = writingChecks(d.type, content, lessonId, seed.level);
           found.push(...w.errors);
           for (const m of w.warnings) warnings.push(`${n}: ${m}`);
+        }
+        if (lesson.skill === 'speaking') {
+          const sp = speakingChecks(content);
+          found.push(...sp.errors);
+          for (const m of sp.warnings) warnings.push(`${n}: ${m}`);
         }
         if (found.length > 0) { for (const f of found) problems.push(`${n}: ${f}`); return; }
         const key = `${d.type}|${canonical(content)}`;
@@ -309,6 +335,14 @@ export function mergeLessonExercises(opts: MergeOptions): MergeResult {
         lines.push(`${stem}/${l.id}: ${opts.complete ? 'problem' : 'warning'}: no ${FORM_LESSONS.has(l.id) ? 'cloze' : 'letter'} exercise yet`);
       }
       lines.push(`${stem}: ${writing.length - uncovered.length} of ${writing.length} writing lessons covered`);
+      if (uncovered.length > 0 && opts.complete) seedOk = false;
+    }
+    // Every speaking lesson needs a spoken_response; same reporting as the writing coverage.
+    const speaking = seed.lessons.filter((l) => l.skill === 'speaking');
+    if (speaking.length > 0) {
+      const uncovered = speaking.filter((l) => !seed.exercises.some((e) => e.lessonId === l.id && e.type === 'spoken_response'));
+      for (const l of uncovered) lines.push(`${stem}/${l.id}: ${opts.complete ? 'problem' : 'warning'}: no spoken_response exercise yet`);
+      lines.push(`${stem}: ${speaking.length - uncovered.length} of ${speaking.length} speaking lessons covered`);
       if (uncovered.length > 0 && opts.complete) seedOk = false;
     }
     if (seedOk) {

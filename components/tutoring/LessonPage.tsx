@@ -88,6 +88,22 @@ export function LessonPage({ lessonId }: { lessonId: string }) {
     return () => clearTimeout(timer);
   }, [finishedNow, playSound]);
 
+  // Speaking: a run's recordings live under `lesson:<id>` only until the run ends (or the page goes away).
+  const speechScope = `lesson:${lessonId}`;
+  const hasSpoken = Boolean(view && !view.locked && view.exercises.some((e) => e.type === 'spoken_response'));
+  const runActive = Boolean(run && run.pending.length > 0);
+  useEffect(() => {
+    if (!runActive || !hasSpoken) return;
+    return () => {
+      // Best effort: the worker deletes leftovers after 6 h anyway.
+      try {
+        void fetch(`/api/speech/scope?scope=${encodeURIComponent(speechScope)}`, { method: 'DELETE', keepalive: true }).catch(() => {});
+      } catch {
+        // ignored
+      }
+    };
+  }, [runActive, hasSpoken, speechScope]);
+
   function startRun(lesson: OpenLesson) {
     const practice = lesson.completed;
     const passed = new Set(lesson.passedExerciseIds);
@@ -241,6 +257,7 @@ export function LessonPage({ lessonId }: { lessonId: string }) {
           onNext={() => advance(lastPassed)}
           onSkip={() => advance(false)}
           onAskAi={askAi}
+          speechScope={speechScope}
         />
         <LessonChat
           lessonId={lesson.id}

@@ -177,6 +177,18 @@ describe('testOutService.start and answer', () => {
     expect(db.prepare("SELECT 1 FROM exercise_srs_state WHERE exercise_id = 'a1-late2__letter'").get()).toBeUndefined();
   });
 
+  // Speaking: a spoken response never enters review, and is never a test-out question.
+  it('on a pass: never asks or schedules a spoken response', async () => {
+    const { db, service } = setup();
+    db.prepare("INSERT INTO exercises (id, lesson_id, type, content) VALUES ('a1-late2__spoken', 'a1-late2', 'spoken_response', ?)").run(
+      JSON.stringify({ prompt: 'Wie geht es?', modelAnswer: 'Gut.' })
+    );
+    const run = service.start('g-a1-m2');
+    expect(run.questions.some((q) => q.type === 'spoken_response')).toBe(false);
+    for (const q of run.questions) await service.answer('g-a1-m2', q.id, right(db, q.id));
+    expect(db.prepare("SELECT 1 FROM exercise_srs_state WHERE exercise_id = 'a1-late2__spoken'").get()).toBeUndefined();
+  });
+
   // B1: a flashcard in a grammar lesson stays an exercise review.
   it('on a pass: schedules a grammar lesson’s flashcard as an exercise review', async () => {
     const { db, service } = setup();

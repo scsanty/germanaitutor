@@ -1,5 +1,5 @@
 {
-  "seedVersion": "11",
+  "seedVersion": "12",
   "formatVersion": 3,
   "track": "generic",
   "level": "B1",
@@ -1734,6 +1734,21 @@
           "en": "Formulate an introductory opening statement announcing your presentation on 'Shopping Online vs. Retail Stores'.",
           "de": "Formuliere einen Einstieg, mit dem du deine Präsentation zum Thema 'Online-Shopping oder Einkaufen im Geschäft' ankündigst."
         }
+      }
+    },
+    {
+      "id": "b1-speaking-presenting-topic__ex4",
+      "lessonId": "b1-speaking-presenting-topic",
+      "track": "generic",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "Give a short presentation in five steps: introduce the topic, your experience, the situation in your country, pros and cons with your opinion, and a conclusion.",
+          "de": "Halte eine kurze Präsentation in fünf Schritten: Thema vorstellen, deine Erfahrung, die Situation in deinem Land, Vor- und Nachteile mit deiner Meinung und ein Schluss."
+        },
+        "prompt": "Thema: „Mit dem Fahrrad zur Arbeit oder zur Schule fahren“.",
+        "modelAnswer": "Das Thema meiner Präsentation ist „Mit dem Fahrrad zur Arbeit fahren“. Ich selbst fahre seit einem Jahr jeden Tag mit dem Rad ins Büro, ungefähr zwanzig Minuten. In meinem Heimatland, in Mexiko, fahren nur wenige Leute mit dem Fahrrad, weil es sehr heiß ist und es kaum Radwege gibt. Ein großer Vorteil ist, dass man sich bewegt und Geld spart. Ein Nachteil ist, dass man bei Regen nass wird. Ich finde, wenn der Weg nicht zu lang ist, ist das Fahrrad die beste Lösung. Vielen Dank fürs Zuhören!",
+        "minSeconds": 60
       }
     }
   ],

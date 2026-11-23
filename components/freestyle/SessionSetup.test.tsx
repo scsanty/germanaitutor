@@ -5,6 +5,17 @@ import { delayedResponse } from "@/test/delayedResponse";
 import { SessionSetup } from "./SessionSetup";
 
 describe("SessionSetup", () => {
+  it("sets a spoken conversation up like a conversation, posting to the spoken session", async () => {
+    const fetchMock = vi.fn(() => delayedResponse({ mode: "spoken", level: "A2", setup: {}, messages: [] }));
+    vi.stubGlobal("fetch", fetchMock);
+    const onStarted = vi.fn();
+    renderWithIntl(<SessionSetup mode="spoken" levels={["A1", "A2"]} activeLevel="A2" grammarTopics={[]} onStarted={onStarted} />);
+    fireEvent.click(screen.getByRole("radio", { name: "Talking about the weekend" }));
+    fireEvent.click(screen.getByRole("button", { name: "Start" }));
+    await waitFor(() => expect(onStarted).toHaveBeenCalled());
+    expect(fetchMock).toHaveBeenCalledWith("/api/freestyle/spoken/session", expect.objectContaining({ body: JSON.stringify({ level: "A2", setup: { scenarioId: "a2-weekend" } }) }));
+  });
+
   it("starts a conversation at the chosen level with a scenario", async () => {
     const fetchMock = vi.fn(() =>
       delayedResponse({

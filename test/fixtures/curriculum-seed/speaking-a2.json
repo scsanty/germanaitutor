@@ -1,0 +1,112 @@
+{
+  "seedVersion": "11",
+  "formatVersion": 3,
+  "track": "telc",
+  "level": "A2",
+  "lessons": [
+    {
+      "id": "a2-telc-perfekt-daily-work",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A2",
+      "skill": "grammar",
+      "title": "Perfekt Tense for Daily Work and Life Tasks",
+      "explanation": "In telc A2 examinations, describing workplace duties, completed administrative tasks, and daily routines requires active control of the Perfekt.\nForm the Perfekt with the conjugated present of haben or sein and the past participle at the end of the sentence.\nWorkplace verbs like anrufen (hat angerufen), ausfüllen (hat ausgefüllt), bearbeiten (hat bearbeitet), and überweisen (hat überwiesen) are essential.\n",
+      "examples": [
+        "Ich habe die Unterlagen bereits an die Behörde geschickt.",
+        "Der Sachbearbeiter hat den Antrag gestern geprüft.",
+        "Haben Sie die Rechnung schon bezahlt?",
+        "Mein Kollege ist heute früher nach Hause gegangen."
+      ],
+      "titleDe": "Das Perfekt bei der Arbeit und im Alltag",
+      "explanationDe": "In der telc-Prüfung A2 erzählen Sie oft, was Sie bei der Arbeit, im Amt oder im Alltag gemacht haben. Dafür brauchen Sie das Perfekt.\nDas Perfekt bildet man mit haben oder sein im Präsens. Das Partizip steht am Satzende.\nWichtige Verben für die Arbeit sind: anrufen (hat angerufen), ausfüllen (hat ausgefüllt), bearbeiten (hat bearbeitet) und überweisen (hat überwiesen).\n",
+      "examplesDe": [
+        "Ich habe die Unterlagen bereits an die Behörde geschickt.",
+        "Der Sachbearbeiter hat den Antrag gestern geprüft.",
+        "Haben Sie die Rechnung schon bezahlt?",
+        "Mein Kollege ist heute früher nach Hause gegangen."
+      ]
+    },
+    {
+      "id": "a2-telc-speaking-teil1-detailed-introduction",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A2",
+      "skill": "speaking",
+      "title": "telc Sprechen Teil 1: Extended Personal Presentation and Follow-Ups",
+      "explanation": "In telc Sprechen Teil 1, candidates introduce themselves using at least six complete sentences based on prompt words (Name, Herkunft, Wohnort, Familie, Beruf/Ausbildung, Sprachen, Hobbys).\nFollowing your introduction, the examiner will ask two detailed follow-up questions (e.g., about your daily work routine or commute).\n",
+      "examples": [
+        "Kandidat: 'Mein Name ist Tarik Mansour. Ich komme aus Marokko, aber ich wohne seit zwei Jahren in Nürnberg. Ich bin verheiratet und habe zwei Kinder. Von Beruf bin ich Elektriker und arbeite bei einer Baufirma. In meiner Freizeit spiele ich gerne Fußball.' - Prüfer: 'Wie kommen Sie morgens zur Arbeit?' - Kandidat: 'Ich fahre meistens mit der U-Bahn.'"
+      ],
+      "titleDe": "Sprechen Teil 1: Sich ausführlich vorstellen",
+      "explanationDe": "In Sprechen Teil 1 stellen Sie sich mit mindestens sechs ganzen Sätzen vor. Dabei helfen Stichwörter (Name, Herkunft, Wohnort, Familie, Beruf/Ausbildung, Sprachen, Hobbys).\nDanach stellt der Prüfer zwei Fragen, zum Beispiel zu Ihrem Arbeitsalltag oder zu Ihrem Weg zur Arbeit.\n",
+      "examplesDe": [
+        "Kandidat: 'Mein Name ist Tarik Mansour. Ich komme aus Marokko, aber ich wohne seit zwei Jahren in Nürnberg. Ich bin verheiratet und habe zwei Kinder. Von Beruf bin ich Elektriker und arbeite bei einer Baufirma. In meiner Freizeit spiele ich gerne Fußball.' - Prüfer: 'Wie kommen Sie morgens zur Arbeit?' - Kandidat: 'Ich fahre meistens mit der U-Bahn.'"
+      ]
+    },
+    {
+      "id": "a2-telc-speaking-teil2-information-exchange",
+      "track": "telc",
+      "conceptId": null,
+      "sourceLevel": "A2",
+      "skill": "speaking",
+      "title": "telc Sprechen Teil 2: Paired Everyday Information Exchange",
+      "explanation": "In telc Sprechen Teil 2, test takers converse in pairs about familiar everyday themes (e.g., shopping habits, housing, weekends, holidays).\nCandidates take turns asking questions and responding with complete, descriptive answers rather than simple yes/no replies.\n",
+      "examples": [
+        "Kandidat A: 'Thema: Wohnen - Haben Sie einen Garten oder einen Balkon an Ihrer Wohnung?'",
+        "Kandidat B: 'Ja, wir haben einen kleinen Balkon. Im Sommer frühstücken wir dort sehr gern. Und wie wohnen Sie?'",
+        "Kandidat A: 'Ich wohne in einer Zweizimmerwohnung mitten in der Innenstadt, leider ohne Balkon.'"
+      ],
+      "titleDe": "Sprechen Teil 2: Informationen austauschen",
+      "explanationDe": "In Sprechen Teil 2 sprechen Sie zu zweit über Alltagsthemen, zum Beispiel Einkaufen, Wohnen, Wochenende oder Urlaub.\nSie fragen abwechselnd und antworten mit ganzen Sätzen. Sagen Sie nicht nur Ja oder Nein, sondern erzählen Sie etwas.\n",
+      "examplesDe": [
+        "Kandidat A: 'Thema: Wohnen - Haben Sie einen Garten oder einen Balkon an Ihrer Wohnung?'",
+        "Kandidat B: 'Ja, wir haben einen kleinen Balkon. Im Sommer frühstücken wir dort sehr gern. Und wie wohnen Sie?'",
+        "Kandidat A: 'Ich wohne in einer Zweizimmerwohnung mitten in der Innenstadt, leider ohne Balkon.'"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "a2-telc-perfekt-daily-work__ex0",
+      "lessonId": "a2-telc-perfekt-daily-work",
+      "track": "telc",
+      "type": "fill_blank",
+      "content": {
+        "textWithBlank": "Haben Sie das Formular vollständig ___ ? (ausfüllen)",
+        "correctAnswer": "ausgefüllt"
+      }
+    },
+    {
+      "id": "a2-telc-speaking-teil1-detailed-introduction__ex0",
+      "lessonId": "a2-telc-speaking-teil1-detailed-introduction",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "",
+        "modelAnswer": "Ich bin Krankenpfleger von Beruf und fahre jeden Tag mit dem Bus zur Klinik. Ich bin verheiratet und lebe mit meiner Familie in Köln.",
+        "instruction": {
+          "en": "Formulate your self-introduction in German covering your profession, your daily commute, and your family status.",
+          "de": "Stellen Sie sich vor. Sprechen Sie über Ihren Beruf, Ihren Weg zur Arbeit und Ihre Familie."
+        }
+      }
+    },
+    {
+      "id": "a2-telc-speaking-teil2-information-exchange__ex0",
+      "lessonId": "a2-telc-speaking-teil2-information-exchange",
+      "track": "telc",
+      "type": "free_text",
+      "content": {
+        "prompt": "Thema 'Einkaufen'",
+        "modelAnswer": "Wo kaufen Sie normalerweise Ihre Lebensmittel ein und warum?",
+        "instruction": {
+          "en": "Ask your partner where they usually buy groceries and why.",
+          "de": "Fragen Sie Ihren Partner, wo er meistens Lebensmittel kauft und warum."
+        }
+      }
+    }
+  ],
+  "prerequisites": [],
+  "milestones": [],
+  "conceptLinks": []
+}

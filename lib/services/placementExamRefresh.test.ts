@@ -31,21 +31,21 @@ function setup() {
 const firstQuestion = (service: ReturnType<typeof setup>['service']) => (service.getExam()[0].content as { question: string }).question;
 
 describe('syncBundledExam', () => {
-  it('loads the bundled exam into a fresh DB and records it as bundled', () => {
+  it('loads the bundled exam into a fresh DB and records it as bundled', async () => {
     const { service } = setup();
     service.syncBundledExam(examFile(smallPlacementExam()));
     expect(service.questionCount()).toBe(10);
     expect(service.examSource()).toBe('bundled');
   });
 
-  it('refreshes a bundled exam when the bundled file has changed', () => {
+  it('refreshes a bundled exam when the bundled file has changed', async () => {
     const { service } = setup();
     service.syncBundledExam(examFile(smallPlacementExam()));
     service.syncBundledExam(examFile(reworded()));
     expect(firstQuestion(service)).toBe('Neue Frage');
   });
 
-  it('never touches an exam an admin uploaded', () => {
+  it('never touches an exam an admin uploaded', async () => {
     const { service } = setup();
     service.syncBundledExam(examFile(smallPlacementExam()));
     service.replaceExam(smallPlacementExam().slice(0, 3), { source: 'uploaded' });
@@ -55,7 +55,7 @@ describe('syncBundledExam', () => {
     expect(service.examSource()).toBe('uploaded');
   });
 
-  it('refreshes a legacy exam with no metadata whose ids all come from the bundled file', () => {
+  it('refreshes a legacy exam with no metadata whose ids all come from the bundled file', async () => {
     const { db, service } = setup();
     service.replaceExam(smallPlacementExam());
     db.prepare('DELETE FROM placement_exam_meta').run();
@@ -64,7 +64,7 @@ describe('syncBundledExam', () => {
     expect(service.examSource()).toBe('bundled');
   });
 
-  it('leaves a legacy exam with ids the bundled file does not have', () => {
+  it('leaves a legacy exam with ids the bundled file does not have', async () => {
     const { db, service } = setup();
     service.replaceExam([{ id: 'custom', level: 'A1', type: 'multiple_choice', content: { question: 'Q', options: ['a', 'b'], correctIndex: 0 } }]);
     db.prepare('DELETE FROM placement_exam_meta').run();
@@ -73,11 +73,11 @@ describe('syncBundledExam', () => {
     expect(service.examSource()).toBe('uploaded');
   });
 
-  it('is a no-op when the bundled content is unchanged, keeping an attempt in progress', () => {
+  it('is a no-op when the bundled content is unchanged, keeping an attempt in progress', async () => {
     const { db, service } = setup();
     const file = examFile(smallPlacementExam());
     service.syncBundledExam(file);
-    service.start();
+    await service.start();
     // A marker a reload would overwrite.
     db.prepare("UPDATE placement_questions SET content = json_set(content, '$.question', 'marker') WHERE position = 1").run();
     service.syncBundledExam(file);
@@ -88,14 +88,14 @@ describe('syncBundledExam', () => {
   it('keeps an attempt in progress across a refresh when the question order is unchanged', async () => {
     const { service } = setup();
     service.syncBundledExam(examFile(smallPlacementExam()));
-    service.start();
+    await service.start();
     await service.answer('A1-mc', { type: 'multiple_choice', selectedIndex: 0 });
     service.syncBundledExam(examFile(reworded()));
     const state = await service.answer('A1-fill', { type: 'fill_blank', text: 'ja' });
     expect(state.status).toBe('in_progress');
   });
 
-  it('still throws on an invalid bundled exam', () => {
+  it('still throws on an invalid bundled exam', async () => {
     const { service } = setup();
     expect(() => service.syncBundledExam(examFile([{ id: 'x' } as unknown as PlacementQuestion]))).toThrow(/Bundled placement exam is invalid/);
   });

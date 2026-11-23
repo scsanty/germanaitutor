@@ -1,0 +1,42 @@
+{
+  "formatId": "generic-a1",
+  "partId": "sprechen-1",
+  "anchors": [
+    {
+      "band": "A",
+      "turns": [
+        "Hallo, ich heiße Mehmet Yılmaz. Ich bin 28 Jahre alt und komme aus der Türkei, aus Izmir.",
+        "Jetzt wohne ich in Dortmund. Ich bin Mechaniker und arbeite in einer Autowerkstatt.",
+        "Ich bin verheiratet. Meine Frau heißt Ayşe, und wir haben eine Tochter. Sie ist drei Jahre alt.",
+        "Meine Eltern wohnen noch in Izmir. Ich habe auch zwei Brüder.",
+        "Zur Arbeit fahre ich mit dem Bus. Das dauert zwanzig Minuten.",
+        "Am Wochenende spiele ich gern mit meiner Tochter im Park."
+      ],
+      "grades": { "ausdruck": "A", "aufgabe": "A", "richtigkeit": "A", "aussprache": "A" },
+      "justification": "Der Lernende stellt sich vollständig vor und beantwortet die Fragen zu Familie und Arbeitsweg genau und mit kleinen Zusatzinformationen. Er verwendet für A1 einen passenden, abwechslungsreichen Wortschatz und verbindet seine Sätze mit „und“. Satzbau, Verbformen und Artikel sind korrekt („mit dem Bus“, „in einer Autowerkstatt“). Die Aussprache ist klar und gut verständlich."
+    },
+    {
+      "band": "C",
+      "turns": [
+        "Ich heiße Lan. Ich bin … dreißig Jahre alt. Ich komme aus Vietnam.",
+        "Ich wohne in Berlin. Ich bin … äh … Verkäuferin.",
+        "Familie … ich habe ein Sohn. Er ist sieben Jahre alt.",
+        "Mein Mann arbeiten in Restaurant. Er ist Koch.",
+        "Zur Arbeit … ich fahre mit U-Bahn. Fünfzehn Minute."
+      ],
+      "grades": { "ausdruck": "B", "aufgabe": "B", "richtigkeit": "B", "aussprache": "B" },
+      "justification": "Die Lernende erzählt über sich (Name, Alter, Herkunft, Wohnort, Beruf) und beantwortet die Fragen zu Familie und Arbeitsweg; die Antworten bleiben aber knapp und ohne Zusatzinformationen. Sie drückt sich mit sehr einfachen Wörtern meist verständlich aus, macht Pausen bei der Wortsuche, und die Sätze stehen unverbunden nebeneinander. Es gibt Fehler auch in einfachen Sätzen („ein Sohn“ statt „einen Sohn“, „Mein Mann arbeiten“, „mit U-Bahn“), die das Verständnis aber kaum stören. Die Aussprache ist meist gut verständlich; ein Akzent ist hörbar, stört aber kaum."
+    },
+    {
+      "band": "D",
+      "turns": [
+        "Ich … Ana.",
+        "Brasilien.",
+        "Familie … ja. Zwei … äh … Kinder?",
+        "Arbeit … Bus. Nein … ich nicht weiß."
+      ],
+      "grades": { "ausdruck": "D", "aufgabe": "D", "richtigkeit": "D", "aussprache": "D" },
+      "justification": "Die Lernende nennt nur ihren Namen und ihr Land; Wohnort, Beruf und Alter fehlen, und die Fragen beantwortet sie nicht verständlich, sodass die Aufgabe kaum bewältigt wird. Sie kann sich kaum ausdrücken und spricht nur in einzelnen Wörtern ohne Satzbau und ohne Verben. Wegen langer Pausen und undeutlicher Aussprache ist sie größtenteils unverständlich."
+    }
+  ]
+}

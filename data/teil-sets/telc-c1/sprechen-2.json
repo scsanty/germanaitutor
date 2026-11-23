@@ -1,0 +1,145 @@
+{
+  "formatId": "telc-c1",
+  "partId": "sprechen-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-c1__sprechen-2__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Ihre Partnerin hat gerade eine Präsentation zum Thema „Fast Fashion – der wahre Preis billiger Kleidung“ gehalten. Sie haben sich dabei Notizen gemacht. Fassen Sie die Präsentation etwa zwei Minuten lang zusammen und stellen Sie mindestens eine Anschlussfrage.",
+          "materials": [
+            {
+              "title": "Ihre Notizen zur Präsentation „Fast Fashion“",
+              "points": [
+                "Einstieg: Deutsche kaufen im Schnitt etwa 60 Kleidungsstücke pro Jahr, viele werden kaum getragen.",
+                "Ursachen: sehr niedrige Preise, ständig neue Kollektionen, Werbung in sozialen Medien.",
+                "Folgen: hoher Wasserverbrauch, Chemikalien, schlechte Arbeitsbedingungen in Produktionsländern.",
+                "Lösungsansätze: Second-Hand, Reparieren, Lieferkettengesetz, faire Siegel.",
+                "Fazit der Partnerin: Verbraucher allein können das Problem nicht lösen, die Politik muss Standards setzen."
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 1B. Ihre Partnerin hat gerade über das Thema „Fast Fashion“ gesprochen. Fassen Sie bitte die wichtigsten Punkte ihrer Präsentation etwa zwei Minuten lang zusammen. Stellen Sie danach mindestens eine Anschlussfrage. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Clara",
+            "gender": "f",
+            "profile": "Clara ist 29 und arbeitet als Einkäuferin für ein nachhaltiges Modelabel in Hamburg. Sie hat gerade die Präsentation gehalten, deren Inhalt in den Notizen steht. Sie beantwortet Anschlussfragen kompetent und mit Beispielen aus ihrer Arbeit und korrigiert freundlich, wenn etwas falsch wiedergegeben wird."
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Report with varied verbs („Du hast dargelegt / betont / eingeräumt, dass …“) and introduce your question with „Mich würde noch interessieren, …“ or „Daran anknüpfend: …“.",
+            "de": "Gib die Aussagen mit abwechslungsreichen Verben wieder („Du hast dargelegt / betont / eingeräumt, dass …“) und leite deine Frage mit „Mich würde noch interessieren, …“ oder „Daran anknüpfend: …“ ein."
+          },
+          {
+            "en": "Summarise all five parts of Clara’s talk (opening figure, causes, consequences, solutions, conclusion) accurately and in your own words, then ask at least one follow-up question that goes beyond what she said.",
+            "de": "Fasse alle fünf Teile von Claras Vortrag (Einstiegszahl, Ursachen, Folgen, Lösungen, Fazit) genau und mit eigenen Worten zusammen und stell dann mindestens eine Anschlussfrage, die über das Gesagte hinausgeht."
+          },
+          {
+            "en": "Keep the tenses consistent (Perfekt for what your partner said) and use indirect speech or dass-clauses correctly; an indirect question ends with the verb („…, wie du das umsetzen würdest“).",
+            "de": "Bleib bei den Zeiten konsequent (Perfekt für das, was dein Partner gesagt hat) und benutze indirekte Rede oder dass-Sätze korrekt; eine indirekte Frage endet mit dem Verb („…, wie du das umsetzen würdest“)."
+          },
+          {
+            "en": "Speak fluently and summarise in your own rhythm; stress the main points so your partner hears what you consider important.",
+            "de": "Sprich flüssig und fasse in deinem eigenen Rhythmus zusammen; betone die Hauptpunkte, damit dein Partner hört, was du für wichtig hältst."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-c1__sprechen-2__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Ihr Partner hat gerade eine Präsentation zum Thema „Mehrsprachig aufwachsen – Chance oder Überforderung?“ gehalten. Sie haben sich dabei Notizen gemacht. Fassen Sie die Präsentation etwa zwei Minuten lang zusammen und stellen Sie mindestens eine Anschlussfrage.",
+          "materials": [
+            {
+              "title": "Ihre Notizen zur Präsentation „Mehrsprachig aufwachsen“",
+              "points": [
+                "Einstieg: In Deutschland wächst etwa jedes dritte Kind mit mehr als einer Sprache auf.",
+                "Vorteile: kognitive Flexibilität, bessere Berufschancen, Verbindung zur Herkunftskultur.",
+                "Herausforderungen: Sprachmischung, anfangs kleinerer Wortschatz pro Sprache, Druck durch Eltern.",
+                "Rolle von Kita und Schule: Herkunftssprachen werden oft zu wenig wertgeschätzt.",
+                "Fazit des Partners: Mehrsprachigkeit ist ein Gewinn, wenn sie konsequent unterstützt wird."
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 1B. Ihr Partner hat eben über das Thema „Mehrsprachig aufwachsen“ gesprochen. Bitte fassen Sie seine Präsentation etwa zwei Minuten lang zusammen und stellen Sie ihm anschließend mindestens eine Frage. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Rafael",
+            "gender": "m",
+            "profile": "Rafael ist 40, Sprachtherapeut in Frankfurt, und erzieht seine zwei Kinder dreisprachig (Deutsch, Portugiesisch, Englisch). Er hat gerade die Präsentation gehalten, deren Inhalt in den Notizen steht. Er beantwortet Anschlussfragen ausführlich, mit Beispielen aus der Praxis und aus seiner Familie."
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Report with varied verbs („Du hast dargelegt / betont / eingeräumt, dass …“) and introduce your question with „Mich würde noch interessieren, …“ or „Daran anknüpfend: …“.",
+            "de": "Gib die Aussagen mit abwechslungsreichen Verben wieder („Du hast dargelegt / betont / eingeräumt, dass …“) und leite deine Frage mit „Mich würde noch interessieren, …“ oder „Daran anknüpfend: …“ ein."
+          },
+          {
+            "en": "Reproduce Rafael’s talk completely and precisely (figure, advantages, challenges, nursery and school, conclusion), using your own wording, and ask a follow-up question, for example about advice for parents.",
+            "de": "Gib Rafaels Vortrag vollständig und genau wieder (Zahl, Vorteile, Herausforderungen, Kita und Schule, Fazit), mit eigenen Formulierungen, und stell eine Anschlussfrage, zum Beispiel nach Tipps für Eltern."
+          },
+          {
+            "en": "Keep the tenses consistent (Perfekt for what your partner said) and use indirect speech or dass-clauses correctly; an indirect question ends with the verb („…, wie du das umsetzen würdest“).",
+            "de": "Bleib bei den Zeiten konsequent (Perfekt für das, was dein Partner gesagt hat) und benutze indirekte Rede oder dass-Sätze korrekt; eine indirekte Frage endet mit dem Verb („…, wie du das umsetzen würdest“)."
+          },
+          {
+            "en": "Speak fluently and summarise in your own rhythm; stress the main points so your partner hears what you consider important.",
+            "de": "Sprich flüssig und fasse in deinem eigenen Rhythmus zusammen; betone die Hauptpunkte, damit dein Partner hört, was du für wichtig hältst."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-c1__sprechen-2__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Ihre Partnerin hat gerade eine Präsentation zum Thema „Urban Gardening – Gemüse mitten in der Stadt“ gehalten. Sie haben sich dabei Notizen gemacht. Fassen Sie die Präsentation etwa zwei Minuten lang zusammen und stellen Sie mindestens eine Anschlussfrage.",
+          "materials": [
+            {
+              "title": "Ihre Notizen zur Präsentation „Urban Gardening“",
+              "points": [
+                "Einstieg: Beispiel Prinzessinnengarten in Berlin, aus einer Brachfläche entstanden.",
+                "Formen: Gemeinschaftsgärten, Dachgärten, Beete auf Verkehrsinseln, Schulgärten.",
+                "Nutzen: Begegnung der Nachbarn, Umweltbildung, besseres Stadtklima, Artenvielfalt.",
+                "Grenzen: kaum Beitrag zur Versorgung, fehlende Flächen, Konflikte mit Bauprojekten.",
+                "Fazit der Partnerin: Städte sollten Flächen langfristig sichern, statt Projekte nur zu dulden."
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 1B. Ihre Partnerin hat gerade über „Urban Gardening“ gesprochen. Bitte fassen Sie zusammen, was sie vorgetragen hat, etwa zwei Minuten lang, und stellen Sie danach mindestens eine Anschlussfrage. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Johanna",
+            "gender": "f",
+            "profile": "Johanna ist 37, Landschaftsarchitektin in Köln, und hat selbst einen Gemeinschaftsgarten in ihrem Viertel mitgegründet. Sie hat gerade die Präsentation gehalten, deren Inhalt in den Notizen steht. Sie beantwortet Anschlussfragen engagiert und konkret."
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Report with varied verbs („Du hast dargelegt / betont / eingeräumt, dass …“) and introduce your question with „Mich würde noch interessieren, …“ or „Daran anknüpfend: …“.",
+            "de": "Gib die Aussagen mit abwechslungsreichen Verben wieder („Du hast dargelegt / betont / eingeräumt, dass …“) und leite deine Frage mit „Mich würde noch interessieren, …“ oder „Daran anknüpfend: …“ ein."
+          },
+          {
+            "en": "Cover every part of Johanna’s talk in your summary (example, forms, benefits, limits, conclusion) without adding your own opinion, then ask a follow-up question, for example how such a garden is started or financed.",
+            "de": "Geh in deiner Zusammenfassung auf jeden Teil von Johannas Vortrag ein (Beispiel, Formen, Nutzen, Grenzen, Fazit), ohne deine eigene Meinung hinzuzufügen, und stell dann eine Anschlussfrage, zum Beispiel wie man so einen Garten gründet oder finanziert."
+          },
+          {
+            "en": "Keep the tenses consistent (Perfekt for what your partner said) and use indirect speech or dass-clauses correctly; an indirect question ends with the verb („…, wie du das umsetzen würdest“).",
+            "de": "Bleib bei den Zeiten konsequent (Perfekt für das, was dein Partner gesagt hat) und benutze indirekte Rede oder dass-Sätze korrekt; eine indirekte Frage endet mit dem Verb („…, wie du das umsetzen würdest“)."
+          },
+          {
+            "en": "Speak fluently and summarise in your own rhythm; stress the main points so your partner hears what you consider important.",
+            "de": "Sprich flüssig und fasse in deinem eigenen Rhythmus zusammen; betone die Hauptpunkte, damit dein Partner hört, was du für wichtig hältst."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -27,7 +27,10 @@
     "session_ending": "Diese Sitzung wird gerade beendet. Bitte warte einen Moment.",
     "part_unavailable": "Dieser Teil kann noch nicht geübt werden",
     "audio_unavailable": "Dieses Audio ist gerade nicht verfügbar",
-    "letter_grading": "Dein Brief wird gerade bewertet."
+    "letter_grading": "Dein Brief wird gerade bewertet.",
+    "speech_unavailable": "Der Sprachdienst ist gerade nicht verfügbar",
+    "audio_too_long": "Diese Aufnahme ist zu lang (max. 5 Minuten)",
+    "spoken_grading": "Dein Gespräch wird gerade bewertet."
   },
   "languageToggle": {
     "lesson": "Sprache der Lektion",
@@ -75,6 +78,7 @@
     "answerLabel": "Deine Antwort",
     "submit": "Antwort abschicken",
     "submitting": "Wird geprüft…",
+    "skipSpoken": "Diese Frage überspringen",
     "beyond": "Übersteigt mein Wissen",
     "gradingFailed": "Deine Antwort konnte nicht bewertet werden: {error}. Deine Antwort bleibt erhalten, du kannst es noch einmal versuchen. <link>Öffne die Einstellungen</link>, falls das öfter passiert.",
     "genericError": "Etwas ist schiefgelaufen: {error}",
@@ -350,6 +354,7 @@
       "grammarDrill": "Grammatiktraining",
       "freeReading": "Freies Lesen",
       "freeWriting": "Freies Schreiben",
+      "spoken": "Gesprochenes Gespräch",
       "examPractice": "Prüfungstraining"
     },
     "descriptions": {
@@ -357,6 +362,7 @@
       "grammarDrill": "Übe ein Grammatikthema mit kurzen Fragen",
       "freeReading": "Lies einen kurzen Artikel zu einem beliebigen Thema, auf deinem Niveau",
       "freeWriting": "Schreibe frei und erhalte markiertes Feedback",
+      "spoken": "Sprich laut auf Deutsch, mit Korrekturen und gesprochener Antwort",
       "examPractice": "Prüfungsteile mit Zeitlimit und komplette Modelltests, bewertet wie in der echten Prüfung"
     },
     "continue": "Sitzung fortsetzen",
@@ -391,6 +397,9 @@
     "sending": "Wird gesendet…",
     "sendFailed": "Deine Nachricht konnte nicht gesendet werden.",
     "thread": "Nachrichten",
+    "playReply": "Antwort {n} abspielen",
+    "speakYourTurn": "Du bist dran: Tippe auf das Mikrofon und sprich.",
+    "replying": "Dein Gesprächspartner antwortet…",
     "corrections": "Korrekturen",
     "correctionLanguage": "Sprache der Korrektur",
     "explanationLanguage": "Sprache der Erklärung",
@@ -533,7 +542,9 @@
     "review": "Auswertung",
     "back": "Zurück zum Prüfungstraining",
     "unanswered": "—",
-    "none": "x (keine)"
+    "none": "x (keine)",
+    "speechUnavailable": "Braucht den Sprachdienst, der gerade nicht verfügbar ist",
+    "aiMissing": "Wird von der KI bewertet: Es ist noch kein KI-Anbieter eingerichtet, daher schlägt die Bewertung fehl, bis einer eingerichtet ist."
   },
   "audio": {
     "play": "Abspielen",
@@ -583,5 +594,44 @@
     "earlierVersions": "Frühere Versionen",
     "copying": "Freies Schreiben wird geöffnet …",
     "copyFailed": "Freies Schreiben konnte nicht geöffnet werden."
+  },
+  "speech": {
+    "start": "Sprechen",
+    "stop": "Stopp und senden",
+    "transcribing": "Wird erkannt …",
+    "recordAgain": "Neu aufnehmen",
+    "micDenied": "Das Mikrofon ist nicht verfügbar. Erlaube es im Browser; es funktioniert nur mit HTTPS oder localhost.",
+    "pronunciation": "Aussprache (Schätzung)",
+    "band": {
+      "clear": "Deutlich",
+      "mostly_clear": "Meist deutlich",
+      "sometimes_unclear": "Manchmal undeutlich"
+    },
+    "unclearWords": "Möglicherweise undeutliche Wörter",
+    "estimateNote": "Geschätzt aus der Spracherkennung.",
+    "typeInstead": "Stattdessen tippen",
+    "tryAgain": "Nochmal versuchen",
+    "micError": "Das Mikrofon konnte nicht gestartet werden.",
+    "uploadFailed": "Die Aufnahme konnte nicht gesendet werden."
+  },
+  "speaking": {
+    "taskSheet": "Aufgabenblatt",
+    "yourTurn": "Du bist dran: Tippe auf das Mikrofon und sprich.",
+    "finish": "Beenden",
+    "closing": "Die Prüferin beendet das Gespräch.",
+    "oralPart": "Mündlicher Teil",
+    "oralPartBody": "Die Sprechteile mit einer KI als Partner, nacheinander, mit einer gemeinsamen Zeit ({minutes} Min.).",
+    "startOral": "Mündlichen Teil starten",
+    "examiner": "Prüferin",
+    "partnerLabel": "Partner/in",
+    "you": "Du",
+    "partner": "Dein Gesprächspartner: {name}",
+    "conversation": "Gespräch",
+    "answering": "{name} antwortet …",
+    "grading": "Dein Gespräch wird bewertet …",
+    "turnFailed": "Dein Beitrag konnte nicht gesendet werden.",
+    "finishFailed": "Dein Gespräch konnte nicht bewertet werden.",
+    "play": "Beitrag {n} abspielen ({speaker})",
+    "conversationDeleted": "Das Gespräch wurde gelöscht; nur die Bewertung bleibt gespeichert."
   }
 }

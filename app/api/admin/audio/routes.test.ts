@@ -13,6 +13,7 @@ const provider = {
   health: vi.fn(async () => ({ ok: true, voices: [] })),
   render: vi.fn(async () => Buffer.from('OggS-rendered')),
   convert: vi.fn(async (b: Buffer) => Buffer.concat([Buffer.from('OggS-'), b])),
+  transcribe: vi.fn(async () => ({ text: '', language: 'de', duration: 0, words: [] })),
 };
 const uploadSpy = vi.fn();
 vi.mock('@/lib/services/audioService', async (importOriginal) => {

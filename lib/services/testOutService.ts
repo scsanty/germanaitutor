@@ -1,6 +1,6 @@
 import type Database from 'better-sqlite3';
 import type { CefrLevel, Track } from '../types';
-import type { Exercise } from '../curriculum/types';
+import { NEVER_REVIEWED_SQL, type Exercise } from '../curriculum/types';
 import { addDays, localDate } from '../tutoring/dates';
 import { errorBody, type ApiErrorBody, type ErrorCode, type ErrorParams } from '../tutoring/errorCodes';
 import { toExerciseView } from '../tutoring/exerciseView';
@@ -244,8 +244,8 @@ export function createTestOutService(db: Database.Database, deps: TestOutDeps = 
          VALUES (?, 0, ?, 1, ?, ?) ON CONFLICT(exercise_id) DO NOTHING`
       );
       // B1: a vocabulary-lesson flashcard enters the deck instead of the Daily Queue.
-      // Writing: a letter task never enters review.
-      const exercisesOf = db.prepare("SELECT id FROM exercises WHERE lesson_id = ? AND type <> 'letter' ORDER BY rowid");
+      // Writing and Speaking: a letter task or a spoken response never enters review.
+      const exercisesOf = db.prepare(`SELECT id FROM exercises WHERE lesson_id = ? AND type NOT IN ${NEVER_REVIEWED_SQL} ORDER BY rowid`);
       for (const lessonId of lessonIds) {
         complete.run(lessonId, at);
         for (const { id } of exercisesOf.all(lessonId) as { id: string }[]) {

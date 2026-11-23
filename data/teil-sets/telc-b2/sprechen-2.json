@@ -1,0 +1,145 @@
+{
+  "formatId": "telc-b2",
+  "partId": "sprechen-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-b2__sprechen-2__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie haben in der Vorbereitungszeit einen kurzen Zeitungsartikel gelesen. Geben Sie die Hauptaussagen wieder und diskutieren Sie mit Ihrem Partner / Ihrer Partnerin über das Thema. Begründen Sie Ihre Meinung und reagieren Sie auf seine / ihre Argumente.",
+          "materials": [
+            {
+              "title": "Zeitungsartikel: „Sollen Supermärkte Lebensmittel spenden müssen?“",
+              "points": [
+                "In Deutschland werden jedes Jahr Millionen Tonnen Lebensmittel weggeworfen, ein Teil davon im Handel.",
+                "In Frankreich müssen große Supermärkte unverkaufte, noch genießbare Lebensmittel seit 2016 spenden.",
+                "Befürworter: weniger Verschwendung, Hilfe für Bedürftige, Klimaschutz.",
+                "Kritiker: zusätzlicher Aufwand für Logistik und Kühlung, Haftungsfragen; viele Märkte spenden schon freiwillig.",
+                "Die Bundesregierung prüft ein Gesetz, die Handelsverbände lehnen es ab."
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zum zweiten Teil. Sie haben einen Zeitungsartikel zur Frage gelesen, ob Supermärkte gesetzlich verpflichtet werden sollen, unverkaufte Lebensmittel zu spenden. Geben Sie bitte zuerst kurz die Hauptaussagen wieder. Diskutieren Sie dann mit Ihrem Partner darüber, und begründen Sie Ihre Meinung. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Benedikt",
+            "gender": "m",
+            "profile": "Benedikt ist 45 und leitet eine Supermarktfiliale. Er ist gegen eine gesetzliche Pflicht: Seine Filiale arbeitet bereits mit der Tafel zusammen, ein Gesetz bringe nur Bürokratie, und kleine Märkte könnten Kühlung und Transport nicht bezahlen. Er bleibt höflich, lässt sich aber nur von guten Argumenten überzeugen."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Report with „Im Artikel wird berichtet, dass …“, „Laut einer Umfrage …“, argue with „Ein wichtiges Argument dafür ist …“ and respond with „Da muss ich dir widersprechen, denn …“ or „Das sehe ich ähnlich, allerdings …“.",
+            "de": "Berichte mit „Im Artikel wird berichtet, dass …“, „Laut einer Umfrage …“, argumentiere mit „Ein wichtiges Argument dafür ist …“ und reagiere mit „Da muss ich dir widersprechen, denn …“ oder „Das sehe ich ähnlich, allerdings …“."
+          },
+          {
+            "en": "Summarise the key facts and both positions in the article in your own words, state your opinion with at least two reasons, and respond directly to Benedikt’s objections about bureaucracy and cost.",
+            "de": "Fasse die wichtigsten Fakten und beide Positionen des Artikels mit eigenen Worten zusammen, nenne deine Meinung mit mindestens zwei Gründen und geh direkt auf Benedikts Einwände zu Bürokratie und Kosten ein."
+          },
+          {
+            "en": "Use the passive and the Konjunktiv I or würde for reported statements („Die Regierung plane …“), and connectors such as zwar … aber, einerseits … andererseits, trotzdem.",
+            "de": "Benutze für wiedergegebene Aussagen das Passiv und den Konjunktiv I oder würde („Die Regierung plane …“) und Konnektoren wie zwar … aber, einerseits … andererseits, trotzdem."
+          },
+          {
+            "en": "Stress the words that carry your argument and use a clear falling tone at the end of your opinion, so it sounds convincing.",
+            "de": "Betone die Wörter, die dein Argument tragen, und lass die Stimme am Ende deiner Meinung klar fallen, damit sie überzeugend klingt."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b2__sprechen-2__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie haben in der Vorbereitungszeit einen kurzen Zeitungsartikel gelesen. Geben Sie die Hauptaussagen wieder und diskutieren Sie mit Ihrem Partner / Ihrer Partnerin über das Thema. Begründen Sie Ihre Meinung und reagieren Sie auf seine / ihre Argumente.",
+          "materials": [
+            {
+              "title": "Zeitungsartikel: „Ein Tempolimit auf deutschen Autobahnen?“",
+              "points": [
+                "Deutschland ist eines der wenigen Länder ohne generelles Tempolimit auf Autobahnen.",
+                "Laut Umweltbundesamt würde Tempo 120 jährlich mehrere Millionen Tonnen CO₂ einsparen.",
+                "Befürworter: weniger schwere Unfälle, weniger Lärm, entspannteres Fahren.",
+                "Gegner: Eingriff in die Freiheit, Autobahnen sind ohnehin sicher, geringe Wirkung aufs Klima.",
+                "In Umfragen ist inzwischen eine knappe Mehrheit für ein Tempolimit."
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zum zweiten Teil. Sie haben einen Artikel zur Diskussion über ein Tempolimit auf deutschen Autobahnen gelesen. Geben Sie bitte zuerst die wichtigsten Aussagen des Artikels wieder. Diskutieren Sie danach mit Ihrer Partnerin und begründen Sie Ihre Meinung. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Claudia",
+            "gender": "f",
+            "profile": "Claudia ist 50 und arbeitet als Außendienstmitarbeiterin; sie fährt jedes Jahr rund 40 000 Kilometer auf der Autobahn. Sie ist gegen ein starres Tempolimit, würde aber flexible Begrenzungen bei Baustellen und Stau akzeptieren. Sie argumentiert mit Zeitdruck im Beruf und eigener Verantwortung."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Report with „Im Artikel wird berichtet, dass …“, „Laut einer Umfrage …“, argue with „Ein wichtiges Argument dafür ist …“ and respond with „Da muss ich dir widersprechen, denn …“ or „Das sehe ich ähnlich, allerdings …“.",
+            "de": "Berichte mit „Im Artikel wird berichtet, dass …“, „Laut einer Umfrage …“, argumentiere mit „Ein wichtiges Argument dafür ist …“ und reagiere mit „Da muss ich dir widersprechen, denn …“ oder „Das sehe ich ähnlich, allerdings …“."
+          },
+          {
+            "en": "Report the facts and the arguments for and against from the article, take a clear position with reasons, and react to Claudia’s arguments about time pressure and personal responsibility, perhaps with a compromise.",
+            "de": "Gib die Fakten und die Argumente dafür und dagegen aus dem Artikel wieder, bezieh mit Gründen klar Stellung und reagiere auf Claudias Argumente zu Zeitdruck und Eigenverantwortung, vielleicht mit einem Kompromiss."
+          },
+          {
+            "en": "Use the passive and the Konjunktiv I or würde for reported statements („Die Regierung plane …“), and connectors such as zwar … aber, einerseits … andererseits, trotzdem.",
+            "de": "Benutze für wiedergegebene Aussagen das Passiv und den Konjunktiv I oder würde („Die Regierung plane …“) und Konnektoren wie zwar … aber, einerseits … andererseits, trotzdem."
+          },
+          {
+            "en": "Stress the words that carry your argument and use a clear falling tone at the end of your opinion, so it sounds convincing.",
+            "de": "Betone die Wörter, die dein Argument tragen, und lass die Stimme am Ende deiner Meinung klar fallen, damit sie überzeugend klingt."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-b2__sprechen-2__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie haben in der Vorbereitungszeit einen kurzen Zeitungsartikel gelesen. Geben Sie die Hauptaussagen wieder und diskutieren Sie mit Ihrem Partner / Ihrer Partnerin über das Thema. Begründen Sie Ihre Meinung und reagieren Sie auf seine / ihre Argumente.",
+          "materials": [
+            {
+              "title": "Zeitungsartikel: „Hat das Bargeld bald ausgedient?“",
+              "points": [
+                "Immer mehr Menschen bezahlen mit Karte oder Smartphone; der Bargeldanteil im Handel sinkt seit Jahren.",
+                "In Schweden akzeptieren viele Geschäfte gar kein Bargeld mehr.",
+                "Vorteile des digitalen Bezahlens: schneller, hygienischer, weniger Kosten für den Handel.",
+                "Kritik: Datenschutz, Abhängigkeit von Technik, Probleme für ältere Menschen und Menschen ohne Konto.",
+                "Die Bundesbank betont, dass Bargeld als Zahlungsmittel erhalten bleiben soll."
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zum zweiten Teil. Sie haben einen Artikel zu der Frage gelesen, ob das Bargeld in Zukunft verschwinden wird. Geben Sie bitte zuerst die Hauptaussagen des Artikels wieder. Diskutieren Sie dann mit Ihrem Partner über das Thema, und begründen Sie Ihre Meinung. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Jan",
+            "gender": "m",
+            "profile": "Jan ist 28 und arbeitet als Softwareentwickler. Er bezahlt fast nur mit dem Smartphone und findet Bargeld unpraktisch und altmodisch. Er unterschätzt anfangs die Probleme älterer Menschen, ist aber bereit, auf gute Gegenargumente einzugehen, zum Beispiel beim Datenschutz."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Report with „Im Artikel wird berichtet, dass …“, „Laut einer Umfrage …“, argue with „Ein wichtiges Argument dafür ist …“ and respond with „Da muss ich dir widersprechen, denn …“ or „Das sehe ich ähnlich, allerdings …“.",
+            "de": "Berichte mit „Im Artikel wird berichtet, dass …“, „Laut einer Umfrage …“, argumentiere mit „Ein wichtiges Argument dafür ist …“ und reagiere mit „Da muss ich dir widersprechen, denn …“ oder „Das sehe ich ähnlich, allerdings …“."
+          },
+          {
+            "en": "Give the main statements of the article (trend, Sweden, advantages, criticism, Bundesbank) briefly, say what you think and why, and answer Jan’s arguments, for example with the data-protection or older-people point.",
+            "de": "Gib die Hauptaussagen des Artikels kurz wieder (Trend, Schweden, Vorteile, Kritik, Bundesbank), sag, was du denkst und warum, und antworte auf Jans Argumente, zum Beispiel mit dem Datenschutz oder der Lage älterer Menschen."
+          },
+          {
+            "en": "Use the passive and the Konjunktiv I or würde for reported statements („Die Regierung plane …“), and connectors such as zwar … aber, einerseits … andererseits, trotzdem.",
+            "de": "Benutze für wiedergegebene Aussagen das Passiv und den Konjunktiv I oder würde („Die Regierung plane …“) und Konnektoren wie zwar … aber, einerseits … andererseits, trotzdem."
+          },
+          {
+            "en": "Stress the words that carry your argument and use a clear falling tone at the end of your opinion, so it sounds convincing.",
+            "de": "Betone die Wörter, die dein Argument tragen, und lass die Stimme am Ende deiner Meinung klar fallen, damit sie überzeugend klingt."
+          }
+        ]
+      }
+    }
+  ]
+}

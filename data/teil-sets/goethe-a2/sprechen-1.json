@@ -1,0 +1,181 @@
+{
+  "formatId": "goethe-a2",
+  "partId": "sprechen-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-a2__sprechen-1__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie lernen Ihren Partner / Ihre Partnerin im Deutschkurs gerade erst kennen. Sie haben vier Karten mit Wörtern. Stellen Sie mit jedem Wort eine Frage und antworten Sie auf die Fragen Ihres Partners / Ihrer Partnerin.",
+          "materials": [
+            {
+              "title": "Ihre vier Karten",
+              "points": [
+                "Familie?",
+                "Wohnung?",
+                "Handy?",
+                "Urlaub?"
+              ]
+            },
+            {
+              "title": "Die Karten Ihres Partners / Ihrer Partnerin",
+              "points": [
+                "Stadt?",
+                "Arbeit?",
+                "Kochen?",
+                "Sport?"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir beginnen mit Teil 1. Sie haben vier Karten. Stellen Sie Ihrer Partnerin mit jeder Karte eine Frage. Ihre Partnerin antwortet. Ihre Partnerin stellt Ihnen dann auch Fragen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Anja",
+            "gender": "f",
+            "profile": "Anja ist 30, kommt aus der Ukraine und arbeitet als Zahnarzthelferin. Sie hat einen Bruder, wohnt in einer kleinen Zweizimmerwohnung, benutzt ihr Handy viel für Fotos und fährt im Urlaub zu ihren Eltern nach Lwiw. Sie antwortet mit ein bis zwei Sätzen und stellt zu ihren Karten Stadt, Arbeit, Kochen und Sport je eine Frage."
+          },
+          "turns": 5
+        },
+        "explanations": [
+          {
+            "en": "Make a real question with each of your four cards (Familie, Wohnung, Handy, Urlaub), for example „Hast du Geschwister?“, and answer Anja’s four questions with a sentence and one detail each.",
+            "de": "Stell mit jeder deiner vier Karten (Familie, Wohnung, Handy, Urlaub) eine richtige Frage, zum Beispiel „Hast du Geschwister?“, und beantworte Anjas vier Fragen jeweils mit einem Satz und einem Detail."
+          },
+          {
+            "en": "After each answer, ask your next question so the conversation flows: answer, then „Und jetzt meine Frage: …“.",
+            "de": "Stell nach jeder Antwort gleich deine nächste Frage, damit das Gespräch fließt: antworten, dann „Und jetzt meine Frage: …“."
+          },
+          {
+            "en": "Build a real question from each card word and answer with a detail (when, where, with whom, how often), not just „ja“ or „nein“.",
+            "de": "Bilde aus jedem Kartenwort eine richtige Frage und antworte mit einem Detail (wann, wo, mit wem, wie oft), nicht nur mit „ja“ oder „nein“."
+          },
+          {
+            "en": "Check the verb ending for du („Wohnst du …?“, „Hast du …?“) and use weil or denn to give a reason in your answer.",
+            "de": "Achte auf die Verbendung bei du („Wohnst du …?“, „Hast du …?“) und benutze weil oder denn, um in deiner Antwort einen Grund zu nennen."
+          },
+          {
+            "en": "Pronounce the endings clearly (-st, -t, -en) and let your voice rise at the end of yes/no questions.",
+            "de": "Sprich die Endungen deutlich (-st, -t, -en) und lass die Stimme am Ende von Ja/Nein-Fragen steigen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2__sprechen-1__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie sind bei einem Sprachcafé und sitzen neben einer neuen Person. Sie haben vier Karten mit Wörtern. Stellen Sie mit jedem Wort eine Frage und antworten Sie auf die Fragen Ihres Partners / Ihrer Partnerin.",
+          "materials": [
+            {
+              "title": "Ihre vier Karten",
+              "points": [
+                "Musik?",
+                "Kino?",
+                "Freunde?",
+                "Auto?"
+              ]
+            },
+            {
+              "title": "Die Karten Ihres Partners / Ihrer Partnerin",
+              "points": [
+                "Sprachen?",
+                "Wochenende?",
+                "Haus oder Wohnung?",
+                "Lieblingsjahreszeit?"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir beginnen mit Teil 1. Sie haben vier Karten mit Wörtern. Stellen Sie Ihrem Partner zu jedem Wort eine Frage, und Ihr Partner antwortet. Danach fragt Ihr Partner Sie. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Ibrahim",
+            "gender": "m",
+            "profile": "Ibrahim ist 26, kommt aus dem Sudan und macht eine Ausbildung als Mechatroniker. Er hört gern arabische Popmusik, geht selten ins Kino, trifft seine Freunde beim Fußball und hat noch kein Auto, nur ein Fahrrad. Er antwortet freundlich in kurzen Sätzen und stellt zu seinen Karten Sprachen, Wochenende, Haus oder Wohnung und Lieblingsjahreszeit je eine Frage."
+          },
+          "turns": 5
+        },
+        "explanations": [
+          {
+            "en": "Ask one question with each of your cards (Musik, Kino, Freunde, Auto) and answer Ibrahim’s four questions with a full sentence and a reason or example.",
+            "de": "Stell mit jeder deiner Karten (Musik, Kino, Freunde, Auto) eine Frage und beantworte Ibrahims vier Fragen mit einem ganzen Satz und einem Grund oder Beispiel."
+          },
+          {
+            "en": "After each answer, ask your next question so the conversation flows: answer, then „Und jetzt meine Frage: …“.",
+            "de": "Stell nach jeder Antwort gleich deine nächste Frage, damit das Gespräch fließt: antworten, dann „Und jetzt meine Frage: …“."
+          },
+          {
+            "en": "Build a real question from each card word and answer with a detail (when, where, with whom, how often), not just „ja“ or „nein“.",
+            "de": "Bilde aus jedem Kartenwort eine richtige Frage und antworte mit einem Detail (wann, wo, mit wem, wie oft), nicht nur mit „ja“ oder „nein“."
+          },
+          {
+            "en": "Check the verb ending for du („Wohnst du …?“, „Hast du …?“) and use weil or denn to give a reason in your answer.",
+            "de": "Achte auf die Verbendung bei du („Wohnst du …?“, „Hast du …?“) und benutze weil oder denn, um in deiner Antwort einen Grund zu nennen."
+          },
+          {
+            "en": "Pronounce the endings clearly (-st, -t, -en) and let your voice rise at the end of yes/no questions.",
+            "de": "Sprich die Endungen deutlich (-st, -t, -en) und lass die Stimme am Ende von Ja/Nein-Fragen steigen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a2__sprechen-1__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie sind neu in einem Chor und lernen in der Pause ein anderes Mitglied kennen. Sie haben vier Karten mit Wörtern. Stellen Sie mit jedem Wort eine Frage und antworten Sie auf die Fragen Ihres Partners / Ihrer Partnerin.",
+          "materials": [
+            {
+              "title": "Ihre vier Karten",
+              "points": [
+                "Schule?",
+                "Fahrrad?",
+                "Kaffee?",
+                "Sonntag?"
+              ]
+            },
+            {
+              "title": "Die Karten Ihres Partners / Ihrer Partnerin",
+              "points": [
+                "Beruf?",
+                "Kinder?",
+                "Fernsehen?",
+                "Reisen?"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir beginnen mit Teil 1. Bitte stellen Sie Ihrer Partnerin mit jeder Ihrer vier Karten eine Frage zu ihrer Person. Ihre Partnerin antwortet und stellt Ihnen dann auch Fragen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Gisela",
+            "gender": "f",
+            "profile": "Gisela ist 58 und arbeitet als Buchhändlerin. Sie war in Bremen in der Schule, fährt jeden Tag mit dem Fahrrad zur Arbeit, trinkt morgens zwei Tassen Kaffee und wandert sonntags mit ihrem Mann. Sie antwortet gern und ausführlich, aber einfach, und stellt zu ihren Karten Beruf, Kinder, Fernsehen und Reisen je eine Frage."
+          },
+          "turns": 5
+        },
+        "explanations": [
+          {
+            "en": "Turn each of your cards (Schule, Fahrrad, Kaffee, Sonntag) into a personal question for Gisela and answer her four questions about job, children, TV and travel with one or two sentences each.",
+            "de": "Mach aus jeder deiner Karten (Schule, Fahrrad, Kaffee, Sonntag) eine persönliche Frage an Gisela und beantworte ihre vier Fragen zu Beruf, Kindern, Fernsehen und Reisen mit je ein bis zwei Sätzen."
+          },
+          {
+            "en": "After each answer, ask your next question so the conversation flows: answer, then „Und jetzt meine Frage: …“.",
+            "de": "Stell nach jeder Antwort gleich deine nächste Frage, damit das Gespräch fließt: antworten, dann „Und jetzt meine Frage: …“."
+          },
+          {
+            "en": "Build a real question from each card word and answer with a detail (when, where, with whom, how often), not just „ja“ or „nein“.",
+            "de": "Bilde aus jedem Kartenwort eine richtige Frage und antworte mit einem Detail (wann, wo, mit wem, wie oft), nicht nur mit „ja“ oder „nein“."
+          },
+          {
+            "en": "Check the verb ending for du („Wohnst du …?“, „Hast du …?“) and use weil or denn to give a reason in your answer.",
+            "de": "Achte auf die Verbendung bei du („Wohnst du …?“, „Hast du …?“) und benutze weil oder denn, um in deiner Antwort einen Grund zu nennen."
+          },
+          {
+            "en": "Pronounce the endings clearly (-st, -t, -en) and let your voice rise at the end of yes/no questions.",
+            "de": "Sprich die Endungen deutlich (-st, -t, -en) und lass die Stimme am Ende von Ja/Nein-Fragen steigen."
+          }
+        ]
+      }
+    }
+  ]
+}

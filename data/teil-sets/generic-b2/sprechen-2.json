@@ -1,0 +1,145 @@
+{
+  "formatId": "generic-b2",
+  "partId": "sprechen-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-b2__sprechen-2__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Diskutieren Sie mit Ihrem Partner über die Frage auf dem Aufgabenblatt. Begründen Sie Ihre Meinung, gehen Sie auf seine Argumente ein und versuchen Sie, zu einem Ergebnis zu kommen.",
+          "materials": [
+            {
+              "title": "Frage: Soll Werbung für ungesunde Lebensmittel, die sich an Kinder richtet, verboten werden?",
+              "points": [
+                "Übergewicht bei Kindern",
+                "Verantwortung der Eltern",
+                "Werbung im Fernsehen, in Apps und bei Influencern",
+                "Folgen für Hersteller und Medien",
+                "Erfahrungen aus anderen Ländern"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2, der Diskussion. Die Frage lautet: „Soll Werbung für ungesunde Lebensmittel, die sich an Kinder richtet, verboten werden?“ Diskutieren Sie bitte mit Ihrem Partner, begründen Sie Ihre Meinung und gehen Sie auf seine Argumente ein. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Herr Vogel",
+            "gender": "m",
+            "profile": "Herr Vogel ist 51 und arbeitet im Marketing eines Süßwarenherstellers. Er hält ein Verbot für übertrieben: Eltern seien verantwortlich, was ihre Kinder essen, und Werbung finanziere Kinderfernsehen und kostenlose Apps. Er gibt zu, dass Werbung über Influencer schwer zu kontrollieren ist, und könnte strengere Regeln dafür akzeptieren. Er siezt dich und argumentiert sachlich."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Take up your partner’s arguments explicitly („Ihr Einwand, dass …, ist berechtigt, allerdings …“, „Da muss ich widersprechen …“) and use varied phrases instead of repeating „gut“ and „schlecht“.",
+            "de": "Greif die Argumente deines Partners ausdrücklich auf („Ihr Einwand, dass …, ist berechtigt, allerdings …“, „Da muss ich widersprechen …“) und benutze abwechslungsreiche Redemittel, statt „gut“ und „schlecht“ zu wiederholen."
+          },
+          {
+            "en": "Take a clear position on banning junk-food advertising aimed at children, support it with at least two arguments from the sheet, respond precisely to Herr Vogel’s points on parental responsibility and funding, and work towards a result.",
+            "de": "Bezieh klar Stellung zu einem Verbot von Werbung für ungesunde Lebensmittel bei Kindern, stütze sie mit mindestens zwei Argumenten vom Blatt, geh genau auf Herrn Vogels Punkte zur Verantwortung der Eltern und zur Finanzierung ein und arbeite auf ein Ergebnis hin."
+          },
+          {
+            "en": "Use the Konjunktiv II for hypotheses („Wenn …, würde …“), two-part connectors (einerseits … andererseits, je … desto) and correct word order in subordinate clauses.",
+            "de": "Benutze den Konjunktiv II für Hypothesen („Wenn …, würde …“), zweiteilige Konnektoren (einerseits … andererseits, je … desto) und die richtige Wortstellung in Nebensätzen."
+          },
+          {
+            "en": "Stress the words that carry your argument and use intonation to show contrast, so your position sounds clear and convincing.",
+            "de": "Betone die Wörter, die dein Argument tragen, und zeig mit der Intonation Gegensätze, damit deine Position klar und überzeugend klingt."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-b2__sprechen-2__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Diskutieren Sie mit Ihrer Partnerin über die Frage auf dem Aufgabenblatt. Begründen Sie Ihre Meinung, gehen Sie auf ihre Argumente ein und versuchen Sie, zu einem Ergebnis zu kommen.",
+          "materials": [
+            {
+              "title": "Frage: Mehr Videoüberwachung auf öffentlichen Plätzen?",
+              "points": [
+                "Sicherheitsgefühl und Aufklärung von Straftaten",
+                "Datenschutz und Privatsphäre",
+                "Kosten im Vergleich zu mehr Polizei",
+                "Gesichtserkennung",
+                "Erfahrungen in Ihrem Heimatland"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2, der Diskussion. Sie sprechen über die Frage: „Mehr Videoüberwachung auf öffentlichen Plätzen?“ Diskutieren Sie bitte mit Ihrer Partnerin, begründen Sie Ihre Meinung und gehen Sie auf ihre Argumente ein. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Dr. Hannah Weiß",
+            "gender": "f",
+            "profile": "Hannah Weiß ist 42 und arbeitet als Juristin für den Datenschutz. Sie ist gegen mehr Kameras: Sie verhindern kaum Straftaten, verschieben sie nur, und Gesichtserkennung sei ein großer Eingriff in die Freiheit. An Bahnhöfen hält sie Kameras aber für sinnvoll. Sie argumentiert präzise, siezt dich und fragt nach Belegen."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Take up your partner’s arguments explicitly („Ihr Einwand, dass …, ist berechtigt, allerdings …“, „Da muss ich widersprechen …“) and use varied phrases instead of repeating „gut“ and „schlecht“.",
+            "de": "Greif die Argumente deines Partners ausdrücklich auf („Ihr Einwand, dass …, ist berechtigt, allerdings …“, „Da muss ich widersprechen …“) und benutze abwechslungsreiche Redemittel, statt „gut“ und „schlecht“ zu wiederholen."
+          },
+          {
+            "en": "Argue for or against more CCTV with clear reasons, weigh security against privacy, respond to Dr Weiß’s legal objections and her exception for stations, and try to reach a shared conclusion or name your remaining differences.",
+            "de": "Argumentiere mit klaren Gründen für oder gegen mehr Videoüberwachung, wäge Sicherheit und Privatsphäre ab, geh auf Dr. Weiß’ rechtliche Einwände und ihre Ausnahme für Bahnhöfe ein und versuch, zu einem gemeinsamen Ergebnis zu kommen oder die übrigen Unterschiede zu benennen."
+          },
+          {
+            "en": "Use the Konjunktiv II for hypotheses („Wenn …, würde …“), two-part connectors (einerseits … andererseits, je … desto) and correct word order in subordinate clauses.",
+            "de": "Benutze den Konjunktiv II für Hypothesen („Wenn …, würde …“), zweiteilige Konnektoren (einerseits … andererseits, je … desto) und die richtige Wortstellung in Nebensätzen."
+          },
+          {
+            "en": "Stress the words that carry your argument and use intonation to show contrast, so your position sounds clear and convincing.",
+            "de": "Betone die Wörter, die dein Argument tragen, und zeig mit der Intonation Gegensätze, damit deine Position klar und überzeugend klingt."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-b2__sprechen-2__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Diskutieren Sie mit Ihrem Partner über die Frage auf dem Aufgabenblatt. Begründen Sie Ihre Meinung, gehen Sie auf seine Argumente ein und versuchen Sie, zu einem Ergebnis zu kommen.",
+          "materials": [
+            {
+              "title": "Frage: Soll privates Feuerwerk an Silvester verboten werden?",
+              "points": [
+                "Verletzungen und Einsätze der Rettungsdienste",
+                "Feinstaub, Müll und Haustiere",
+                "Tradition und Freude",
+                "zentrale Feuerwerke der Städte als Alternative",
+                "Wie feiert man in Ihrem Heimatland?"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2, der Diskussion. Die Frage lautet: „Soll privates Feuerwerk an Silvester verboten werden?“ Bitte diskutieren Sie mit Ihrem Partner, begründen Sie Ihre Meinung und gehen Sie auf seine Argumente ein. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Sven",
+            "gender": "m",
+            "profile": "Sven ist 30, Kfz-Mechatroniker, und zündet jedes Jahr mit seinen Freunden Raketen. Für ihn ist Feuerwerk eine schöne Tradition, und ein Verbot nimmt den Leuten die Freude. Er gibt zu, dass es jedes Jahr Verletzte gibt und viel Müll liegen bleibt, und könnte Verbotszonen in Innenstädten akzeptieren. Er duzt dich, spricht lebhaft und lässt sich auf Kompromisse ein."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Take up your partner’s arguments explicitly („Ihr Einwand, dass …, ist berechtigt, allerdings …“, „Da muss ich widersprechen …“) and use varied phrases instead of repeating „gut“ and „schlecht“.",
+            "de": "Greif die Argumente deines Partners ausdrücklich auf („Ihr Einwand, dass …, ist berechtigt, allerdings …“, „Da muss ich widersprechen …“) und benutze abwechslungsreiche Redemittel, statt „gut“ und „schlecht“ zu wiederholen."
+          },
+          {
+            "en": "Give a clear, reasoned position on a ban on private fireworks, weigh safety and environment against tradition, respond to Sven’s arguments and his idea of no-firework zones, and aim for a compromise or a clear summary.",
+            "de": "Bezieh eine klare, begründete Position zu einem Verbot von privatem Feuerwerk, wäge Sicherheit und Umwelt gegen Tradition ab, geh auf Svens Argumente und seine Idee von Verbotszonen ein und strebe einen Kompromiss oder eine klare Zusammenfassung an."
+          },
+          {
+            "en": "Use the Konjunktiv II for hypotheses („Wenn …, würde …“), two-part connectors (einerseits … andererseits, je … desto) and correct word order in subordinate clauses.",
+            "de": "Benutze den Konjunktiv II für Hypothesen („Wenn …, würde …“), zweiteilige Konnektoren (einerseits … andererseits, je … desto) und die richtige Wortstellung in Nebensätzen."
+          },
+          {
+            "en": "Stress the words that carry your argument and use intonation to show contrast, so your position sounds clear and convincing.",
+            "de": "Betone die Wörter, die dein Argument tragen, und zeig mit der Intonation Gegensätze, damit deine Position klar und überzeugend klingt."
+          }
+        ]
+      }
+    }
+  ]
+}

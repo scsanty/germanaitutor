@@ -4,9 +4,9 @@ import type Database from 'better-sqlite3';
 import type { CefrLevel, Profile } from '../types';
 import { gradeFillBlank, gradeMultipleChoice } from '../tutoring/grading';
 import type { FreeTextGradingInput } from '../tutoring/freeTextGrading';
-import { higherLevel } from '../tutoring/levels';
+import { higherLevel, levelIndex } from '../tutoring/levels';
 import { validatePlacementExam, type PlacementQuestion } from '../tutoring/placementExamFormat';
-import { maxScore, placedLevel, pointsFor, stopReasonAfterAnswer, type PlacementStopReason } from '../tutoring/placementScoring';
+import { maxScore, placedLevel, pointsFor, servedExam, stopReasonAfterAnswer, type PlacementStopReason } from '../tutoring/placementScoring';
 import type {
   PlacementAnswer,
   PlacementAnswerRecord,
@@ -20,6 +20,11 @@ import { gradeFreeText, type FreeTextGradeOutcome } from './freeTextGradingServi
 import { readFeedback } from '../i18n/localizedText';
 import { createProfileService } from './profileService';
 import { createUnlockService } from './unlockService';
+import { isSpeechUp } from '../speech/speechAvailability';
+import { createSpeechClipService, type SpeechClip } from './speechClipService';
+
+// The speech clips of a placement run live in this scope until the session ends.
+const PLACEMENT_SCOPE = 'placement';
 
 export type PlacementExamSource = 'bundled' | 'uploaded';
 
@@ -53,6 +58,10 @@ export function toPlacementErrorResponse(err: unknown): { status: number; body: 
 
 export interface PlacementDeps {
   gradeFreeText: (input: FreeTextGradingInput) => Promise<FreeTextGradeOutcome>;
+  // Asked once, at the start of a session, and only when the exam has spoken items.
+  speechUp?: () => Promise<boolean>;
+  getSpeechClip?: (id: string) => SpeechClip | null;
+  deleteSpeechScope?: (scope: string) => number;
 }
 
 interface QuestionRow {
@@ -68,6 +77,7 @@ interface SessionRow {
   score: number;
   mistakes: number;
   answers: string;
+  served_ids: string;
 }
 
 interface BestRow {
@@ -93,6 +103,8 @@ function toView(question: PlacementQuestion, position: number, total: number): P
       return { ...base, type: 'fill_blank', textWithBlank: question.content.textWithBlank, ...instruction };
     case 'free_text':
       return { ...base, type: 'free_text', prompt: question.content.prompt, ...instruction };
+    case 'spoken':
+      return { ...base, type: 'spoken', prompt: question.content.prompt, ...instruction };
   }
 }
 
@@ -100,6 +112,15 @@ export function createPlacementService(db: Database.Database, deps?: PlacementDe
   const gradeFree = deps?.gradeFreeText ?? ((input: FreeTextGradingInput) => gradeFreeText(db, input));
   const profiles = createProfileService(db);
   const unlocks = createUnlockService(db);
+  const speechUp = deps?.speechUp ?? (() => isSpeechUp(db));
+  const speechClips = createSpeechClipService(db);
+  const getClip = deps?.getSpeechClip ?? ((id: string) => speechClips.getClip(id));
+  const deleteClips = deps?.deleteSpeechScope ?? ((scope: string) => speechClips.deleteScope(scope));
+
+  // The questions this session serves (see servedExam).
+  function servedFor(session: SessionRow): PlacementQuestion[] {
+    return servedExam(getExam(), JSON.parse(session.served_ids) as string[]);
+  }
 
   function getExam(): PlacementQuestion[] {
     const rows = db.prepare('SELECT * FROM placement_questions ORDER BY position').all() as QuestionRow[];
@@ -122,8 +143,9 @@ export function createPlacementService(db: Database.Database, deps?: PlacementDe
     ).run(source, contentHash);
   }
 
-  // An attempt in progress refers to the old questions by position, so it goes too, unless the
-  // caller knows the question order is unchanged (a bundled refresh with the same ids).
+  // An attempt in progress was served from the old questions (its served ids), so it goes too, with
+  // its speech clips, unless the caller knows the questions are unchanged (a bundled refresh with the
+  // same ids).
   function replaceExam(
     questions: PlacementQuestion[],
     options: { source?: PlacementExamSource; contentHash?: string | null; keepSession?: boolean } = {}
@@ -135,6 +157,7 @@ export function createPlacementService(db: Database.Database, deps?: PlacementDe
       questions.forEach((q, i) => insert.run(q.id, i + 1, q.level, q.type, JSON.stringify(q.content)));
       setMeta(options.source ?? 'uploaded', options.contentHash ?? null);
     })();
+    if (!options.keepSession) deleteClips(PLACEMENT_SCOPE);
   }
 
   // Seed time: load the bundled exam into an empty table, and refresh a stored exam that came from
@@ -172,15 +195,23 @@ export function createPlacementService(db: Database.Database, deps?: PlacementDe
     return row;
   }
 
-  function start(): PlacementState {
+  // B8: the speech service is asked once. If it is down, the spoken items are left out for this whole session,
+  // whatever it does later; thresholds, the maximum and the stop rule all follow what is served.
+  async function start(): Promise<PlacementState> {
     const exam = getExam();
     if (exam.length === 0) throw new PlacementError('No placement exam is loaded', 'no_exam');
+    const hasSpoken = exam.some((q) => q.type === 'spoken');
+    const withSpoken = hasSpoken && (await speechUp());
+    const served = hasSpoken && !withSpoken ? exam.filter((q) => q.type !== 'spoken') : exam;
+    if (served.length === 0) throw new PlacementError('No placement exam is loaded', 'no_exam');
+    deleteClips(PLACEMENT_SCOPE);
     db.prepare(
-      `INSERT INTO placement_session (id, started_at, next_position, score, mistakes, answers)
-       VALUES (1, datetime('now'), 1, 0, 0, '[]')
-       ON CONFLICT(id) DO UPDATE SET started_at = excluded.started_at, next_position = 1, score = 0, mistakes = 0, answers = '[]'`
-    ).run();
-    return { status: 'in_progress', question: toView(exam[0], 1, exam.length) };
+      `INSERT INTO placement_session (id, started_at, next_position, score, mistakes, answers, served_ids)
+       VALUES (1, datetime('now'), 1, 0, 0, '[]', ?)
+       ON CONFLICT(id) DO UPDATE SET started_at = excluded.started_at, next_position = 1, score = 0, mistakes = 0,
+         answers = '[]', served_ids = excluded.served_ids`
+    ).run(JSON.stringify(served.map((q) => q.id)));
+    return { status: 'in_progress', question: toView(served[0], 1, served.length) };
   }
 
   async function gradeAnswer(question: PlacementQuestion, answer: PlacementAnswer): Promise<PlacementAnswerRecord> {
@@ -230,12 +261,32 @@ export function createPlacementService(db: Database.Database, deps?: PlacementDe
         feedback: graded.feedback,
       };
     }
+    if (question.type === 'spoken' && answer.type === 'spoken') {
+      const { content } = question;
+      const spokenBase = { ...base, question: content.prompt, correctAnswer: content.modelAnswer };
+      // After a speech outage the student can skip the item: no points, and not a mistake (see answer()).
+      if ('skipped' in answer) return { ...spokenBase, given: '', result: 'wrong', feedback: null };
+      const clip = getClip(answer.clipId);
+      if (!clip || clip.role !== 'student' || clip.scope !== PLACEMENT_SCOPE) {
+        throw new PlacementError('That recording does not belong to this test', 'bad_request');
+      }
+      const transcript = clip.transcript?.trim() ?? '';
+      if (!transcript) throw new PlacementError('Nothing was recognised in that recording', 'bad_request');
+      const graded = await gradeFree({
+        prompt: [content.instruction?.en, content.prompt].filter(Boolean).join(' — '),
+        modelAnswer: content.modelAnswer,
+        studentAnswer: transcript,
+        level: question.level,
+      });
+      if (!graded.ok) throw new PlacementError(graded.error, 'grading_failed', graded.code, graded.params);
+      return { ...spokenBase, given: transcript, result: graded.result, feedback: graded.feedback };
+    }
     throw new PlacementError('The answer does not match the question type', 'bad_request');
   }
 
   async function answer(questionId: string, given: PlacementAnswer): Promise<PlacementState> {
-    const exam = getExam();
     const session = getSession();
+    const exam = servedFor(session);
     const question = exam[session.next_position - 1];
     if (!question || question.id !== questionId) {
       throw new PlacementError('That question is not the current one', 'bad_request');
@@ -249,7 +300,8 @@ export function createPlacementService(db: Database.Database, deps?: PlacementDe
     }
     const answered = current.next_position;
     const score = current.score + pointsFor(question.level, record.result);
-    const mistakes = current.mistakes + (record.result === 'wrong' ? 1 : 0);
+    const skipped = 'skipped' in given;
+    const mistakes = current.mistakes + (record.result === 'wrong' && !skipped ? 1 : 0);
     const records = [...readAnswers(current.answers), record];
     db.prepare('UPDATE placement_session SET next_position = ?, score = ?, mistakes = ?, answers = ? WHERE id = 1').run(
       answered + 1,
@@ -270,12 +322,12 @@ export function createPlacementService(db: Database.Database, deps?: PlacementDe
 
   function finish(stopReason: PlacementStopReason): PlacementOutcome {
     return db.transaction((): PlacementOutcome => {
-      const exam = getExam();
       const session = getSession();
+      const exam = servedFor(session);
       const placed = placedLevel(session.score, exam);
       const max = maxScore(exam);
       const best = getBestResult();
-      const isNewBest = best === null || session.score > best.score;
+      const isNewBest = best === null || isBetterResult({ score: session.score, maxScore: max, placedLevel: placed }, best);
       if (isNewBest) {
         db.prepare(
           `INSERT INTO placement_best_result (id, score, max_score, placed_level, stop_reason, taken_at)
@@ -306,6 +358,7 @@ export function createPlacementService(db: Database.Database, deps?: PlacementDe
       }
 
       db.prepare('DELETE FROM placement_session').run();
+      deleteClips(PLACEMENT_SCOPE);
       return {
         score: session.score,
         maxScore: max,
@@ -322,6 +375,19 @@ export function createPlacementService(db: Database.Database, deps?: PlacementDe
     const profile = profiles.getProfile();
     if (profile.placementStatus !== 'pending') return profile;
     return profiles.writeLevelState({ placementStatus: 'skipped' });
+  }
+
+  // Sessions can serve different question sets (spoken items only when the speech service is up), so raw
+  // scores are not comparable: a higher placed level wins, and on the same level the higher share of the
+  // session's maximum. A tie keeps the earlier result.
+  function isBetterResult(
+    next: { score: number; maxScore: number; placedLevel: CefrLevel },
+    best: { score: number; maxScore: number; placedLevel: CefrLevel }
+  ): boolean {
+    const byLevel = levelIndex(next.placedLevel) - levelIndex(best.placedLevel);
+    if (byLevel !== 0) return byLevel > 0;
+    const share = (r: { score: number; maxScore: number }) => (r.maxScore > 0 ? r.score / r.maxScore : 0);
+    return share(next) > share(best);
   }
 
   function getBestResult(): PlacementBestResult | null {

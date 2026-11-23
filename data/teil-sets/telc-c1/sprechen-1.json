@@ -1,0 +1,175 @@
+{
+  "formatId": "telc-c1",
+  "partId": "sprechen-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-c1__sprechen-1__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie haben in der Vorbereitungszeit eines von zwei Themen ausgewählt und eine kurze Präsentation vorbereitet. Präsentieren Sie Ihr Thema etwa drei Minuten lang. Ihr Partner / Ihre Partnerin hört zu und stellt danach Fragen.",
+          "materials": [
+            {
+              "title": "Thema A: Künstliche Intelligenz im Alltag – Erleichterung oder Risiko?",
+              "points": [
+                "Beispiele, wo KI heute im Alltag eingesetzt wird",
+                "Chancen für Einzelne und die Gesellschaft",
+                "Risiken, z. B. Datenschutz, Fehlentscheidungen, Arbeitsplätze",
+                "Situation in Ihrem Heimatland",
+                "Ihre persönliche Einschätzung und ein Fazit"
+              ]
+            },
+            {
+              "title": "Thema B: Wohnungsnot in Großstädten",
+              "points": [
+                "Ursachen steigender Mieten",
+                "Folgen für verschiedene Bevölkerungsgruppen",
+                "Mögliche Lösungsansätze der Politik",
+                "Situation in Ihrem Heimatland",
+                "Ihre persönliche Einschätzung und ein Fazit"
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1A, der Präsentation. Sie haben eines der beiden Themen gewählt. Bitte nennen Sie zuerst Ihr Thema und präsentieren Sie es dann etwa drei Minuten lang. Denken Sie an eine Einleitung und einen Schluss. Ihr Partner hört zu und stellt Ihnen anschließend Fragen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Markus",
+            "gender": "m",
+            "profile": "Markus ist 47, Arzt in einer Klinik in Leipzig, und arbeitet täglich mit KI-gestützter Bilddiagnostik; er hat außerdem lange eine bezahlbare Wohnung in der Stadt gesucht. Er hört der Präsentation aufmerksam zu und stellt danach ein bis zwei präzise, kritische Anschlussfragen."
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Signal your structure clearly („Ich möchte zunächst …, anschließend …“, „Damit komme ich zu …“, „Abschließend lässt sich festhalten …“) and use topic-specific vocabulary rather than general words.",
+            "de": "Mach deine Gliederung deutlich („Ich möchte zunächst …, anschließend …“, „Damit komme ich zu …“, „Abschließend lässt sich festhalten …“) und benutze themenspezifischen Wortschatz statt allgemeiner Wörter."
+          },
+          {
+            "en": "Name your topic, give a short introduction with an outline, work through the guiding points with examples (including your home country) and finish with a clear conclusion; then answer the follow-up questions in detail.",
+            "de": "Nenne dein Thema, gib eine kurze Einleitung mit Gliederung, behandle die Leitpunkte mit Beispielen (auch zu deinem Heimatland) und schließ mit einem klaren Fazit; beantworte dann die Anschlussfragen ausführlich."
+          },
+          {
+            "en": "Use complex structures accurately: nominal style („die Einführung von …“), the passive, participle phrases and correct case after prepositions such as aufgrund, angesichts and trotz (genitive).",
+            "de": "Benutze komplexe Strukturen korrekt: Nominalstil („die Einführung von …“), das Passiv, Partizipialkonstruktionen und den richtigen Kasus nach Präpositionen wie aufgrund, angesichts und trotz (Genitiv)."
+          },
+          {
+            "en": "Present freely from notes, not from a script; vary pace and emphasis and pause after each section so your structure is audible.",
+            "de": "Präsentiere frei nach Stichpunkten, nicht vom Blatt; variiere Tempo und Betonung und mach nach jedem Abschnitt eine Pause, damit deine Gliederung hörbar wird."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-c1__sprechen-1__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie haben in der Vorbereitungszeit eines von zwei Themen ausgewählt und eine kurze Präsentation vorbereitet. Präsentieren Sie Ihr Thema etwa drei Minuten lang. Ihr Partner / Ihre Partnerin hört zu und stellt danach Fragen.",
+          "materials": [
+            {
+              "title": "Thema A: Massentourismus – Segen oder Fluch für beliebte Reiseziele?",
+              "points": [
+                "Entwicklung des Tourismus in den letzten Jahrzehnten",
+                "Wirtschaftliche Bedeutung für die Reiseziele",
+                "Belastungen für Umwelt und Einheimische",
+                "Situation in Ihrem Heimatland",
+                "Ihre persönliche Einschätzung und ein Fazit"
+              ]
+            },
+            {
+              "title": "Thema B: Ehrenamt – unverzichtbar für die Gesellschaft?",
+              "points": [
+                "Bereiche, in denen sich Menschen ehrenamtlich engagieren",
+                "Motive für ehrenamtliches Engagement",
+                "Grenzen: Ersatz für bezahlte Arbeit?",
+                "Situation in Ihrem Heimatland",
+                "Ihre persönliche Einschätzung und ein Fazit"
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1A. Sie haben sich in der Vorbereitungszeit für eines von zwei Themen entschieden. Nennen Sie bitte Ihr Thema und halten Sie dann eine Präsentation von etwa drei Minuten, mit Einleitung und Fazit. Ihre Partnerin hört zu und stellt Ihnen danach Fragen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Elif",
+            "gender": "f",
+            "profile": "Elif ist 34, arbeitet im Hotelmanagement in München und engagiert sich in ihrer Freizeit bei einer Hilfsorganisation für Geflüchtete. Sie hört aufmerksam zu und stellt danach eine durchdachte Anschlussfrage, zum Beispiel zu konkreten Maßnahmen oder zu einem Widerspruch in der Argumentation."
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Signal your structure clearly („Ich möchte zunächst …, anschließend …“, „Damit komme ich zu …“, „Abschließend lässt sich festhalten …“) and use topic-specific vocabulary rather than general words.",
+            "de": "Mach deine Gliederung deutlich („Ich möchte zunächst …, anschließend …“, „Damit komme ich zu …“, „Abschließend lässt sich festhalten …“) und benutze themenspezifischen Wortschatz statt allgemeiner Wörter."
+          },
+          {
+            "en": "Choose one topic, introduce it with a clear structure, deal with all guiding points (development, benefits, burdens or limits, your home country) and close with a reasoned conclusion before taking questions.",
+            "de": "Wähle ein Thema, leite es mit klarer Struktur ein, behandle alle Leitpunkte (Entwicklung, Nutzen, Belastungen oder Grenzen, dein Heimatland) und schließ mit einem begründeten Fazit, bevor du Fragen beantwortest."
+          },
+          {
+            "en": "Use complex structures accurately: nominal style („die Einführung von …“), the passive, participle phrases and correct case after prepositions such as aufgrund, angesichts and trotz (genitive).",
+            "de": "Benutze komplexe Strukturen korrekt: Nominalstil („die Einführung von …“), das Passiv, Partizipialkonstruktionen und den richtigen Kasus nach Präpositionen wie aufgrund, angesichts und trotz (Genitiv)."
+          },
+          {
+            "en": "Present freely from notes, not from a script; vary pace and emphasis and pause after each section so your structure is audible.",
+            "de": "Präsentiere frei nach Stichpunkten, nicht vom Blatt; variiere Tempo und Betonung und mach nach jedem Abschnitt eine Pause, damit deine Gliederung hörbar wird."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-c1__sprechen-1__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie haben in der Vorbereitungszeit eines von zwei Themen ausgewählt und eine kurze Präsentation vorbereitet. Präsentieren Sie Ihr Thema etwa drei Minuten lang. Ihr Partner / Ihre Partnerin hört zu und stellt danach Fragen.",
+          "materials": [
+            {
+              "title": "Thema A: Hat das gedruckte Buch eine Zukunft?",
+              "points": [
+                "Veränderungen im Leseverhalten",
+                "Vor- und Nachteile von E-Books und Hörbüchern",
+                "Bedeutung von Buchhandlungen und Bibliotheken",
+                "Situation in Ihrem Heimatland",
+                "Ihre persönliche Einschätzung und ein Fazit"
+              ]
+            },
+            {
+              "title": "Thema B: Fleischkonsum – Privatsache oder gesellschaftliche Verantwortung?",
+              "points": [
+                "Entwicklung des Fleischkonsums",
+                "Folgen für Gesundheit, Klima und Tierwohl",
+                "Mögliche Maßnahmen: Aufklärung, Preise, Verbote",
+                "Situation in Ihrem Heimatland",
+                "Ihre persönliche Einschätzung und ein Fazit"
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1A, der Präsentation. Bitte nennen Sie zuerst, welches der beiden Themen Sie gewählt haben, und präsentieren Sie es dann etwa drei Minuten lang. Achten Sie auf eine Einleitung und einen Schluss. Ihr Partner hört zu und stellt Ihnen danach Fragen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Henrik",
+            "gender": "m",
+            "profile": "Henrik ist 52, Gymnasiallehrer für Deutsch und Biologie in Kiel. Er liest viel auf Papier, kocht aber seit Jahren überwiegend vegetarisch. Er hört genau zu und stellt danach eine weiterführende Anschlussfrage, etwa nach der Rolle der Schulen oder der Politik."
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Signal your structure clearly („Ich möchte zunächst …, anschließend …“, „Damit komme ich zu …“, „Abschließend lässt sich festhalten …“) and use topic-specific vocabulary rather than general words.",
+            "de": "Mach deine Gliederung deutlich („Ich möchte zunächst …, anschließend …“, „Damit komme ich zu …“, „Abschließend lässt sich festhalten …“) und benutze themenspezifischen Wortschatz statt allgemeiner Wörter."
+          },
+          {
+            "en": "State your chosen topic, outline your talk, cover all the guiding points with examples and data where you can, compare with your home country and end with a clear personal conclusion.",
+            "de": "Nenne dein gewähltes Thema, gib einen Überblick über deinen Vortrag, behandle alle Leitpunkte mit Beispielen und, wenn möglich, Zahlen, vergleiche mit deinem Heimatland und schließ mit einem klaren persönlichen Fazit."
+          },
+          {
+            "en": "Use complex structures accurately: nominal style („die Einführung von …“), the passive, participle phrases and correct case after prepositions such as aufgrund, angesichts and trotz (genitive).",
+            "de": "Benutze komplexe Strukturen korrekt: Nominalstil („die Einführung von …“), das Passiv, Partizipialkonstruktionen und den richtigen Kasus nach Präpositionen wie aufgrund, angesichts und trotz (Genitiv)."
+          },
+          {
+            "en": "Present freely from notes, not from a script; vary pace and emphasis and pause after each section so your structure is audible.",
+            "de": "Präsentiere frei nach Stichpunkten, nicht vom Blatt; variiere Tempo und Betonung und mach nach jedem Abschnitt eine Pause, damit deine Gliederung hörbar wird."
+          }
+        ]
+      }
+    }
+  ]
+}

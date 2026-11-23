@@ -1,0 +1,160 @@
+{
+  "formatId": "goethe-b1",
+  "partId": "sprechen-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-b1__sprechen-1__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Ihr Deutschkurs endet bald. Sie möchten zusammen mit Ihrem Partner / Ihrer Partnerin einen Ausflug für die ganze Klasse organisieren.",
+          "materials": [
+            {
+              "title": "Einen Kursausflug planen",
+              "points": [
+                "Wann?",
+                "Wohin?",
+                "Wie fahren wir dorthin?",
+                "Was kostet das?",
+                "Essen?",
+                "Wer informiert die anderen?"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir beginnen mit Teil 1. Ihr Deutschkurs ist bald zu Ende, und Sie möchten zusammen einen Ausflug für die Klasse planen. Überlegen Sie gemeinsam, wann und wohin Sie fahren, wie Sie dorthin kommen und wer was macht. Die Punkte auf dem Blatt helfen Ihnen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Tamara",
+            "gender": "f",
+            "profile": "Tamara ist 31 und besucht denselben Kurs. Sie arbeitet als Kellnerin und hat nur sonntags frei. Sie möchte gern an einen See oder in die Berge, findet das Wandern aber für manche Kursteilnehmer zu anstrengend, und achtet auf die Kosten, weil nicht alle viel Geld haben."
+          },
+          "turns": 5
+        },
+        "explanations": [
+          {
+            "en": "Make your own suggestions for the points on the sheet (when, where, transport, costs, food, who tells the others), react to Tamara’s ideas with reasons and agree on a plan.",
+            "de": "Mach eigene Vorschläge zu den Punkten auf dem Blatt (wann, wohin, Verkehrsmittel, Kosten, Essen, wer die anderen informiert), reagiere mit Begründungen auf Tamaras Ideen und einigt euch auf einen Plan."
+          },
+          {
+            "en": "Take turns properly: react to each idea of your partner („Gute Idee, und …“, „Ich weiß nicht, vielleicht lieber …“) before you add your own, and agree on the result at the end.",
+            "de": "Wechsle dich richtig ab: reagiere auf jede Idee deines Partners („Gute Idee, und …“, „Ich weiß nicht, vielleicht lieber …“), bevor du eine eigene ergänzt, und einigt euch am Ende auf ein Ergebnis."
+          },
+          {
+            "en": "Use planning phrases: „Wie wäre es, wenn wir …?“, „Ich schlage vor, dass …“, „Das finde ich nicht so gut, weil …“, „Dann machen wir es so.“",
+            "de": "Benutze Redemittel zum Planen: „Wie wäre es, wenn wir …?“, „Ich schlage vor, dass …“, „Das finde ich nicht so gut, weil …“, „Dann machen wir es so.“"
+          },
+          {
+            "en": "Use the Konjunktiv II for suggestions („Wir könnten …“, „Es wäre gut, …“) and put the verb at the end in wenn-, dass- and weil-clauses.",
+            "de": "Benutze den Konjunktiv II für Vorschläge („Wir könnten …“, „Es wäre gut, …“) und stell das Verb in wenn-, dass- und weil-Sätzen ans Ende."
+          },
+          {
+            "en": "Speak fluently and naturally, without long pauses; a rising intonation on your suggestions invites your partner to answer.",
+            "de": "Sprich flüssig und natürlich, ohne lange Pausen; eine steigende Intonation bei Vorschlägen lädt deinen Partner zur Antwort ein."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__sprechen-1__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Eine gemeinsame Freundin aus dem Ausland kommt für ein Wochenende zu Besuch. Sie möchten zusammen mit Ihrem Partner / Ihrer Partnerin ein Programm für sie planen.",
+          "materials": [
+            {
+              "title": "Besuch von Daniela planen",
+              "points": [
+                "Abholen am Bahnhof: wann und wer?",
+                "Wo schläft sie?",
+                "Programm am Samstag",
+                "Abendessen: zu Hause oder Restaurant?",
+                "Programm bei Regen",
+                "Abschied am Sonntag"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir beginnen mit Teil 1. Ihre gemeinsame Freundin Daniela kommt am Wochenende zu Besuch. Planen Sie bitte zusammen, was Sie mit ihr machen. Die Punkte auf dem Blatt helfen Ihnen. Machen Sie Vorschläge und reagieren Sie auf die Vorschläge Ihres Partners. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Lars",
+            "gender": "m",
+            "profile": "Lars ist 37 und arbeitet als Grafiker. Er hat ein Sofa im Wohnzimmer, aber eine kleine Wohnung. Er möchte Daniela gern die Altstadt und ein Museum zeigen, kocht nicht gern und muss am Samstagvormittag bis 12 Uhr arbeiten. Bei Regen schlägt er Kino oder eine Therme vor."
+          },
+          "turns": 5
+        },
+        "explanations": [
+          {
+            "en": "Discuss every point (pick-up, where she sleeps, Saturday programme, dinner, a rainy-day plan, saying goodbye), make your own suggestions, respond to Lars’s ideas and fix a plan together.",
+            "de": "Sprecht über jeden Punkt (Abholen, Übernachtung, Programm am Samstag, Abendessen, Plan bei Regen, Abschied), mach eigene Vorschläge, reagiere auf die Ideen von Lars und legt gemeinsam einen Plan fest."
+          },
+          {
+            "en": "Take turns properly: react to each idea of your partner („Gute Idee, und …“, „Ich weiß nicht, vielleicht lieber …“) before you add your own, and agree on the result at the end.",
+            "de": "Wechsle dich richtig ab: reagiere auf jede Idee deines Partners („Gute Idee, und …“, „Ich weiß nicht, vielleicht lieber …“), bevor du eine eigene ergänzt, und einigt euch am Ende auf ein Ergebnis."
+          },
+          {
+            "en": "Use planning phrases: „Wie wäre es, wenn wir …?“, „Ich schlage vor, dass …“, „Das finde ich nicht so gut, weil …“, „Dann machen wir es so.“",
+            "de": "Benutze Redemittel zum Planen: „Wie wäre es, wenn wir …?“, „Ich schlage vor, dass …“, „Das finde ich nicht so gut, weil …“, „Dann machen wir es so.“"
+          },
+          {
+            "en": "Use the Konjunktiv II for suggestions („Wir könnten …“, „Es wäre gut, …“) and put the verb at the end in wenn-, dass- and weil-clauses.",
+            "de": "Benutze den Konjunktiv II für Vorschläge („Wir könnten …“, „Es wäre gut, …“) und stell das Verb in wenn-, dass- und weil-Sätzen ans Ende."
+          },
+          {
+            "en": "Speak fluently and naturally, without long pauses; a rising intonation on your suggestions invites your partner to answer.",
+            "de": "Sprich flüssig und natürlich, ohne lange Pausen; eine steigende Intonation bei Vorschlägen lädt deinen Partner zur Antwort ein."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__sprechen-1__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Ein Freund aus Ihrem Sportverein zieht nächsten Monat in eine neue Wohnung. Sie möchten ihm zusammen mit Ihrem Partner / Ihrer Partnerin beim Umzug helfen.",
+          "materials": [
+            {
+              "title": "Umzugshilfe für Kemal planen",
+              "points": [
+                "An welchem Tag?",
+                "Transporter mieten?",
+                "Wer hilft noch?",
+                "Kartons und Werkzeug",
+                "Essen und Getränke für die Helfer",
+                "Ein kleines Geschenk für die neue Wohnung?"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir beginnen mit Teil 1. Ihr Freund Kemal zieht um, und Sie möchten ihm zusammen helfen. Planen Sie gemeinsam, wann Sie helfen, was Sie brauchen und wer was übernimmt. Die Punkte auf dem Blatt helfen Ihnen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Sophie",
+            "gender": "f",
+            "profile": "Sophie ist 29, Physiotherapeutin, und spielt mit Ihnen und Kemal im Volleyballverein. Sie hat einen Führerschein, aber kein Auto, und kann nur am Samstag. Sie kennt einen Kollegen mit Bohrmaschine, möchte Pizza für alle bestellen und findet, dass zwei weitere Helfer aus dem Verein reichen."
+          },
+          "turns": 5
+        },
+        "explanations": [
+          {
+            "en": "Make suggestions for all six points (day, van, helpers, boxes and tools, food and drink, a present), react to Sophie’s ideas with reasons and agree on who does what.",
+            "de": "Mach Vorschläge zu allen sechs Punkten (Tag, Transporter, Helfer, Kartons und Werkzeug, Essen und Getränke, Geschenk), reagiere mit Begründung auf Sophies Ideen und einigt euch, wer was übernimmt."
+          },
+          {
+            "en": "Take turns properly: react to each idea of your partner („Gute Idee, und …“, „Ich weiß nicht, vielleicht lieber …“) before you add your own, and agree on the result at the end.",
+            "de": "Wechsle dich richtig ab: reagiere auf jede Idee deines Partners („Gute Idee, und …“, „Ich weiß nicht, vielleicht lieber …“), bevor du eine eigene ergänzt, und einigt euch am Ende auf ein Ergebnis."
+          },
+          {
+            "en": "Use planning phrases: „Wie wäre es, wenn wir …?“, „Ich schlage vor, dass …“, „Das finde ich nicht so gut, weil …“, „Dann machen wir es so.“",
+            "de": "Benutze Redemittel zum Planen: „Wie wäre es, wenn wir …?“, „Ich schlage vor, dass …“, „Das finde ich nicht so gut, weil …“, „Dann machen wir es so.“"
+          },
+          {
+            "en": "Use the Konjunktiv II for suggestions („Wir könnten …“, „Es wäre gut, …“) and put the verb at the end in wenn-, dass- and weil-clauses.",
+            "de": "Benutze den Konjunktiv II für Vorschläge („Wir könnten …“, „Es wäre gut, …“) und stell das Verb in wenn-, dass- und weil-Sätzen ans Ende."
+          },
+          {
+            "en": "Speak fluently and naturally, without long pauses; a rising intonation on your suggestions invites your partner to answer.",
+            "de": "Sprich flüssig und natürlich, ohne lange Pausen; eine steigende Intonation bei Vorschlägen lädt deinen Partner zur Antwort ein."
+          }
+        ]
+      }
+    }
+  ]
+}

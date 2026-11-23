@@ -1,5 +1,5 @@
 {
-  "seedVersion": "11",
+  "seedVersion": "12",
   "formatVersion": 3,
   "track": "goethe",
   "level": "A1",
@@ -1623,6 +1623,21 @@
           "en": "Teil 3: You receive a card depicting a glass of water. Formulate a polite request.",
           "de": "Teil 3: Sie bekommen eine Karte mit einem Glas Wasser. Sagen Sie eine höfliche Bitte."
         }
+      }
+    },
+    {
+      "id": "a1-goethe-speaking-teil1-teil2-teil3__ex3",
+      "lessonId": "a1-goethe-speaking-teil1-teil2-teil3",
+      "track": "goethe",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "Do the three Goethe A1 Sprechen parts in one go: introduce yourself, ask a question on the card, and make a request.",
+          "de": "Machen Sie die drei Teile von Goethe A1 Sprechen nacheinander: Stellen Sie sich vor, stellen Sie eine Frage zur Karte und bitten Sie um etwas."
+        },
+        "prompt": "Teil 1: Name, Alter, Land, Wohnort, Sprachen, Beruf, Hobby. Teil 2: Thema „Essen und Trinken“, Karte „Frühstück“ – fragen Sie Ihren Partner. Teil 3: Karte mit einem Bild von einem Glas Wasser – bitten Sie Ihren Partner.",
+        "modelAnswer": "Ich heiße Tomás. Ich bin 25 Jahre alt. Ich komme aus Portugal und wohne in München. Ich spreche Portugiesisch, Spanisch und ein bisschen Deutsch. Ich bin Student. Mein Hobby ist Musik. Was isst du zum Frühstück? Kannst du mir bitte ein Glas Wasser geben?",
+        "minSeconds": 20
       }
     }
   ],

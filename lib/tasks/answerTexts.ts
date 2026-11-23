@@ -8,6 +8,8 @@ import type { SetTaskType, TaskAnswer, TaskContent } from './taskTypes';
 // The learner's answer per item, as display text: '' when unanswered, 'x' for matching's "none fits".
 export function answerTexts(type: SetTaskType, content: TaskContent, answer: TaskAnswer): string[] {
   if (type === 'letter') return [(answer as LetterAnswer).text];
+  // A spoken part keeps no answer text: its transcripts live only in the temporary clips.
+  if (type === 'spoken') return [];
   if (type === 'passage_questions') {
     const c = content as PassageQuestionsContent;
     return (answer as PassageQuestionsAnswer).selected.map((s, i) => (s === null ? '' : (c.questions[i].options[s] ?? '')));

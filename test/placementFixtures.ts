@@ -14,6 +14,7 @@ export function smallPlacementExam(): PlacementQuestion[] {
 export function rightAnswer(question: PlacementQuestion): PlacementAnswer {
   if (question.type === 'multiple_choice') return { type: 'multiple_choice', selectedIndex: question.content.correctIndex };
   if (question.type === 'fill_blank') return { type: 'fill_blank', text: question.content.correctAnswer };
+  if (question.type === 'spoken') return { type: 'spoken', clipId: 'clip' };
   return { type: 'free_text', text: question.content.modelAnswer };
 }
 
@@ -22,5 +23,6 @@ export function wrongAnswer(question: PlacementQuestion): PlacementAnswer {
     return { type: 'multiple_choice', selectedIndex: question.content.correctIndex === 0 ? 1 : 0 };
   }
   if (question.type === 'fill_blank') return { type: 'fill_blank', text: 'definitely wrong' };
+  if (question.type === 'spoken') return { type: 'spoken', skipped: true };
   return { type: 'free_text', text: 'definitely wrong' };
 }

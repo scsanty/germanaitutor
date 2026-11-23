@@ -1,5 +1,7 @@
-import { readFileSync, writeFileSync, renameSync, existsSync, unlinkSync, readdirSync, mkdirSync, rmSync } from 'node:fs';
+import { readFileSync, writeFileSync, renameSync, existsSync, unlinkSync, readdirSync, mkdirSync, mkdtempSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { join } from 'node:path';
+import Database from 'better-sqlite3';
 import { Readable, pipeline } from 'node:stream';
 import { constants as bufferConstants } from 'node:buffer';
 import { createGzip, gunzipSync } from 'node:zlib';
@@ -32,6 +34,75 @@ export class BackupTooLargeError extends InvalidBackupError {}
 
 export interface BackupSizeOptions {
   maxJsonBytes?: number;
+}
+
+// B6: speech recordings and transcripts are temporary and never leave the install. True when `db` has
+// the table (an older database may not).
+function hasTable(db: Database.Database, name: string): boolean {
+  return db.prepare("SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = ?").get(name) !== undefined;
+}
+function hasSpeechClips(db: Database.Database): boolean {
+  return hasTable(db, 'speech_clips');
+}
+
+// Transcripts also live, for the session's lifetime, outside `speech_clips`: an open spoken Freestyle
+// session keeps them as its messages, and an unfinished placement run keeps them in its answers. A
+// backup carries neither (the spec: nothing spoken is retained after the session).
+function stripSpeech(db: Database.Database): void {
+  db.transaction(() => {
+    if (hasSpeechClips(db)) db.exec('DELETE FROM speech_clips');
+    if (hasTable(db, 'freestyle_sessions')) {
+      // Foreign keys are off on this connection, so the messages are deleted explicitly.
+      if (hasTable(db, 'freestyle_messages')) {
+        db.exec("DELETE FROM freestyle_messages WHERE session_id IN (SELECT id FROM freestyle_sessions WHERE mode = 'spoken')");
+      }
+      db.exec("DELETE FROM freestyle_sessions WHERE mode = 'spoken'");
+    }
+    if (hasTable(db, 'placement_session')) db.exec('DELETE FROM placement_session');
+  })();
+}
+
+// The database file as a backup carries it: a copy stripped of speech (above) and vacuumed, so the
+// transcripts are not left in free pages. A file that isn't SQLite at all has nothing to strip.
+function readDatabaseWithoutSpeech(dbPath: string): Buffer {
+  const dir = mkdtempSync(join(tmpdir(), 'gait-backup-db-'));
+  const copy = join(dir, 'copy.db');
+  try {
+    const src = new Database(dbPath, { readonly: true });
+    try {
+      src.exec(`VACUUM INTO '${copy.replace(/'/g, "''")}'`);
+    } finally {
+      src.close();
+    }
+    const db = new Database(copy);
+    try {
+      stripSpeech(db);
+      db.exec('VACUUM');
+    } finally {
+      db.close();
+    }
+    return readFileSync(copy);
+  } catch (err) {
+    if ((err as { code?: string }).code === 'SQLITE_NOTADB') return readFileSync(dbPath);
+    throw err;
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+}
+
+// After a restore: the backup carries no clips, and any recordings on disk belong to the old database.
+function clearSpeech(dbPath: string, speechTmpDir: string | undefined): void {
+  if (speechTmpDir) rmSync(speechTmpDir, { recursive: true, force: true });
+  try {
+    const db = new Database(dbPath);
+    try {
+      if (hasSpeechClips(db)) db.exec('DELETE FROM speech_clips');
+    } finally {
+      db.close();
+    }
+  } catch (err) {
+    if ((err as { code?: string }).code !== 'SQLITE_NOTADB') throw err;
+  }
 }
 
 const base64Length = (bytes: number) => Math.ceil(bytes / 3) * 4;
@@ -99,7 +170,7 @@ function* envelopeChunks(head: string, dbBuf: Buffer, audioDir: string | undefin
 // Throws BackupTooLargeError up front when the database alone would pass the size cap.
 export function createBackupStream(dbPath: string, keyFilePath: string, audioDir?: string, options: BackupSizeOptions = {}): Readable {
   const maxJsonBytes = options.maxJsonBytes ?? MAX_BACKUP_JSON_BYTES;
-  const dbBuf = readFileSync(dbPath);
+  const dbBuf = readDatabaseWithoutSpeech(dbPath);
   const keyBuf = readFileSync(keyFilePath);
   const meta = {
     version: BACKUP_VERSION,
@@ -129,6 +200,8 @@ export async function exportBackup(dbPath: string, keyFilePath: string, audioDir
 
 export interface ImportBackupOptions extends BackupSizeOptions {
   maxAudioBytes?: number;
+  // Emptied after the restore (B6).
+  speechTmpDir?: string;
 }
 
 const BASE64 = /^[A-Za-z0-9+/]*={0,2}$/;
@@ -225,5 +298,11 @@ export function importBackup(
   // the old file and would be replayed over the restored one on next open.
   for (const sidecar of [`${dbPath}-wal`, `${dbPath}-shm`]) {
     if (existsSync(sidecar)) unlinkSync(sidecar);
+  }
+  // The restore has succeeded; a failed clean-up of temporary speech data must not turn it into an error.
+  try {
+    clearSpeech(dbPath, options.speechTmpDir);
+  } catch (err) {
+    console.error('Backup import: could not clear the speech clips:', err);
   }
 }

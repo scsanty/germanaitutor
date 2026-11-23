@@ -28,6 +28,17 @@ MAX_TEXT_CHARS = 2000
 # Request body caps, enforced while reading. The app caps uploads at 20 MB.
 MAX_RENDER_BYTES = 1024 * 1024
 MAX_CONVERT_BYTES = 25 * 1024 * 1024
+MAX_TRANSCRIBE_BYTES = 25 * 1024 * 1024
+# Transcription: 16 kHz mono s16le PCM (2 bytes per sample), at most 5 minutes, two Whisper sizes.
+TRANSCRIBE_RATE = 16000
+PCM_BYTES_PER_SECOND = TRANSCRIBE_RATE * 2
+MAX_TRANSCRIBE_SECONDS = 300
+# A browser recording that stops at the limit runs slightly over it (late timer tick, final flush),
+# so up to 1 s over is accepted. Decoding stops at 302 s: past the refusal point, so audio that is
+# really longer than 5 minutes is still refused, but ffmpeg never decodes more than that.
+TRANSCRIBE_GRACE_SECONDS = 1
+TRANSCRIBE_DECODE_CAP_SECONDS = 302
+WHISPER_MODELS = ("small", "medium")
 # Longest a single ffmpeg call may run. The app gives up after 60 s.
 FFMPEG_TIMEOUT_S = 120
 
@@ -235,6 +246,36 @@ def convert_args(src: str) -> list[str]:
     return ["-protocol_whitelist", "file", "-format_whitelist", CONVERT_FORMATS, "-i", src, *OGG_OUT]
 
 
+def transcribe_args(src: str) -> list[str]:
+    """Decode an uploaded recording (any container on the /convert allow-list, file protocol only) to
+    raw 16 kHz mono s16le PCM on stdout (what Whisper takes), stopping at the decode cap."""
+    return [
+        "-protocol_whitelist", "file", "-format_whitelist", CONVERT_FORMATS, "-i", src,
+        "-t", str(TRANSCRIBE_DECODE_CAP_SECONDS),
+        "-ac", "1", "-ar", str(TRANSCRIBE_RATE), "-f", "s16le", "pipe:1",
+    ]
+
+
+def pcm_seconds(pcm: bytes) -> float:
+    return len(pcm) / PCM_BYTES_PER_SECOND
+
+
+def check_whisper_model(name: str) -> str:
+    if name not in WHISPER_MODELS:
+        raise SpeechError(400, f"unknown model {name}")
+    return name
+
+
+def check_pcm(pcm: bytes) -> float:
+    """The duration of decoded audio; 400 when it holds nothing or is over 5 minutes (plus the grace)."""
+    seconds = pcm_seconds(pcm)
+    if seconds <= 0:
+        raise SpeechError(400, "could not read the audio")
+    if seconds > MAX_TRANSCRIBE_SECONDS + TRANSCRIBE_GRACE_SECONDS:
+        raise SpeechError(400, "audio longer than 5 minutes")
+    return seconds
+
+
 # ---------- running ffmpeg ----------
 
 def run_ffmpeg(args: list[str], data: bytes | None = None, binary: str = "ffmpeg", timeout: float = FFMPEG_TIMEOUT_S) -> bytes:
@@ -333,3 +374,13 @@ def convert(data: bytes, ffmpeg: Ffmpeg = run_ffmpeg) -> bytes:
         with open(src, "wb") as f:
             f.write(data)
         return ffmpeg(convert_args(src))
+
+
+def decode_for_transcription(data: bytes, ffmpeg: Callable[[list[str]], bytes] = run_ffmpeg) -> bytes:
+    """Decode an upload to PCM. Like `convert`, it goes through a temp file, not a pipe, so formats that
+    need seeking (mp4/m4a from Safari) work."""
+    with tempfile.TemporaryDirectory() as tmp:
+        src = os.path.join(tmp, "upload")
+        with open(src, "wb") as f:
+            f.write(data)
+        return ffmpeg(transcribe_args(src))

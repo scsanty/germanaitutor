@@ -1,0 +1,42 @@
+{
+  "formatId": "telc-b1",
+  "partId": "sprechen-1",
+  "anchors": [
+    {
+      "band": "A",
+      "turns": [
+        "Hallo, ich bin Ana. Ich komme aus Brasilien, aus einer Stadt in der Nähe von São Paulo, und wohne seit drei Jahren in Stuttgart. Und du, woher kommst du?",
+        "Ach, aus Polen! Da war ich noch nie, aber ich habe gehört, dass Danzig sehr schön ist. Was machst du beruflich?",
+        "Ich arbeite als Pflegerin in einem Altenheim. Die Arbeit ist anstrengend, weil wir oft Schichtdienst haben, aber sie macht mir viel Spaß.",
+        "Deutsch lerne ich, weil ich als Krankenschwester anerkannt werden möchte. Dafür brauche ich das B1-Zertifikat. Warum machst du die Prüfung?",
+        "Das verstehe ich gut. In meiner Freizeit tanze ich gern Samba, natürlich, und am Wochenende gehe ich manchmal mit Kollegen wandern. Hast du auch ein Hobby?",
+        "Klettern klingt spannend! Vielleicht kannst du mir mal erzählen, wo man hier in der Gegend gut klettern kann."
+      ],
+      "grades": { "ausdruck": "A", "aufgabe": "A", "richtigkeit": "A", "aussprache": "A" },
+      "justification": "Die Lernende stellt sich ausführlich vor, stellt dem Partner Fragen, greift seine Antworten auf und hält das Gespräch in Gang. Sie benutzt für B1 abwechslungsreiche Strukturen (Nebensätze mit „weil“ und „dass“, Passiv mit Modalverb) fast fehlerfrei. Die Aussprache ist durchgehend klar."
+    },
+    {
+      "band": "C",
+      "turns": [
+        "Hallo, ich heiße Ana. Ich komme aus Brasilien und wohne jetzt … seit drei Jahre in Stuttgart. Und du, woher kommst du?",
+        "Aus Polen, aha. Das ist … äh … schön. Was machst du von Beruf?",
+        "Ich arbeite in einem Altenheim, als Pflegerin. Die Arbeit ist schwer, weil wir haben oft Schichtdienst, aber sie macht mir Spaß.",
+        "Ich lerne Deutsch, weil ich brauche das B1-Zertifikat für meine Arbeit. Ich möchte als Krankenschwester arbeiten.",
+        "In meiner Freizeit tanze ich gern. Und am Wochenende … äh … gehe ich manchmal spazieren. Und du, was machst du gern?"
+      ],
+      "grades": { "ausdruck": "B", "aufgabe": "B", "richtigkeit": "B", "aussprache": "B" },
+      "justification": "Die Lernende stellt sich vor, stellt dem Partner einige Fragen und reagiert meist passend; auf seine Antworten geht sie aber nur kurz ein („Das ist schön“), und sie fragt kaum nach. Der Wortschatz reicht für die Aufgabe, wiederholt sich aber („Und du …?“), und es gibt Pausen bei der Wortsuche. Es gibt einige Fehler, vor allem in Nebensätzen („weil wir haben“, „weil ich brauche“) und bei „seit drei Jahre“, die das Verständnis aber kaum stören. Die Aussprache ist meist gut verständlich; ein Akzent ist hörbar, stört aber kaum."
+    },
+    {
+      "band": "D",
+      "turns": [
+        "Ich Ana. Brasilien.",
+        "Arbeit … ja. Altenheim.",
+        "Deutsch … weil … äh … ich weiß nicht.",
+        "Ja. Okay."
+      ],
+      "grades": { "ausdruck": "D", "aufgabe": "D", "richtigkeit": "D", "aussprache": "D" },
+      "justification": "Die Lernende sagt nur einzelne Wörter über sich, stellt keine Fragen und reagiert nicht auf den Partner; ein Gespräch entsteht nicht. Die Äußerungen sind bruchstückhaft und wegen Grammatik und Aussprache größtenteils unverständlich."
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "seedVersion": "11",
+  "seedVersion": "12",
   "formatVersion": 3,
   "track": "telc",
   "level": "A2",
@@ -1655,6 +1655,21 @@
       }
     },
     {
+      "id": "a2-telc-speaking-teil1-detailed-introduction__ex3",
+      "lessonId": "a2-telc-speaking-teil1-detailed-introduction",
+      "track": "telc",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "Introduce yourself in detail, as in telc Sprechen Teil 1, then answer the examiner's follow-up question.",
+          "de": "Stellen Sie sich ausführlich vor, wie in telc Sprechen Teil 1, und beantworten Sie dann die Frage der Prüferin."
+        },
+        "prompt": "Erzählen Sie von sich: Name, Herkunft, Wohnort, Familie, Beruf und Freizeit. Die Prüferin fragt danach: „Warum lernen Sie Deutsch?“",
+        "modelAnswer": "Mein Name ist Karim Haddad. Ich komme aus Syrien und wohne seit drei Jahren in Dortmund. Ich bin verheiratet und wir haben eine Tochter, sie geht in den Kindergarten. Ich arbeite als Elektriker in einer kleinen Firma. In meiner Freizeit spiele ich Fußball oder gehe mit meiner Familie in den Park. Ich lerne Deutsch, weil ich bei der Arbeit mit Kunden sprechen muss und später eine Weiterbildung machen möchte.",
+        "minSeconds": 30
+      }
+    },
+    {
       "id": "a2-telc-speaking-teil2-information-exchange__ex0",
       "lessonId": "a2-telc-speaking-teil2-information-exchange",
       "track": "telc",
@@ -1699,6 +1714,21 @@
       }
     },
     {
+      "id": "a2-telc-speaking-teil2-information-exchange__ex3",
+      "lessonId": "a2-telc-speaking-teil2-information-exchange",
+      "track": "telc",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "Take both turns of the telc Teil 2 exchange: ask your partner about the topic, then answer the same question yourself.",
+          "de": "Übernehmen Sie beide Teile des Gesprächs aus telc Teil 2: Fragen Sie Ihren Partner zum Thema und beantworten Sie die Frage dann selbst."
+        },
+        "prompt": "Thema: „Feste und Feiern“. Fragen Sie Ihren Partner, wie er seinen Geburtstag feiert. Erzählen Sie dann, wie Sie selbst Ihren Geburtstag feiern.",
+        "modelAnswer": "Wie feierst du eigentlich deinen Geburtstag? Machst du eine Party oder gehst du lieber essen? Also, ich feiere meinen Geburtstag meistens zu Hause. Ich koche für meine Familie und lade ein paar Freunde ein. Wir essen zusammen, hören Musik und am Abend gibt es einen Kuchen. Letztes Jahr sind wir aber in ein Restaurant gegangen, das war auch schön.",
+        "minSeconds": 30
+      }
+    },
+    {
       "id": "a2-telc-speaking-teil3-joint-planning__ex0",
       "lessonId": "a2-telc-speaking-teil3-joint-planning",
       "track": "telc",
@@ -1740,6 +1770,21 @@
           "Du musst jetzt gehen."
         ],
         "correctIndex": 0
+      }
+    },
+    {
+      "id": "a2-telc-speaking-teil3-joint-planning__ex3",
+      "lessonId": "a2-telc-speaking-teil3-joint-planning",
+      "track": "telc",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "Play the planning conversation from telc Teil 3: suggest a time, react to a problem and agree on a plan.",
+          "de": "Spielen Sie das Planungsgespräch aus telc Teil 3: Schlagen Sie einen Termin vor, reagieren Sie auf ein Problem und einigen Sie sich."
+        },
+        "prompt": "Sie möchten mit einer Freundin am Wochenende einen Kollegen im Krankenhaus besuchen. Sie hat am Samstagvormittag keine Zeit. Schlagen Sie eine andere Zeit vor und besprechen Sie, was Sie mitbringen.",
+        "modelAnswer": "Am Samstagvormittag hast du keine Zeit, das ist kein Problem. Wie wäre es am Samstagnachmittag um drei Uhr? Die Besuchszeit ist bis sechs Uhr. Wir können uns vor dem Krankenhaus treffen. Was bringen wir mit? Ich finde, Blumen sind schön, oder wir kaufen ihm Obst und eine Zeitschrift. Ich kaufe die Blumen und du bringst das Obst mit, ja? Gut, dann bis Samstag!",
+        "minSeconds": 30
       }
     }
   ],

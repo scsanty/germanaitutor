@@ -41,7 +41,8 @@ describe('examPracticeService', () => {
     expect(parts.find((p) => p.part.id === 'lesen-1')).toMatchObject({ runnable: true, mockOnly: false, lastPercent: null });
     expect(parts.find((p) => p.part.id === 'hoeren-1')).toMatchObject({ runnable: true, audioUnavailable: false });
     expect(parts.find((p) => p.part.id === 'schreiben')?.runnable).toBe(true);
-    expect(parts.find((p) => p.part.id === 'sprechen-1')?.runnable).toBe(false);
+    // telc B1's spoken parts have rubrics, so they run while the speech service is up.
+    expect(parts.find((p) => p.part.id === 'sprechen-1')).toMatchObject({ runnable: true, speechUnavailable: false });
     expect(parts.find((p) => p.part.id === 'sprachbausteine-1')).toMatchObject({ runnable: false, mockOnly: true });
   });
 
@@ -80,7 +81,8 @@ describe('examPracticeService', () => {
 
   it('refuses parts without a runner, mock-only parts, unknown parts and malformed answers', async () => {
     const { service } = setup();
-    await expect(service.start('telc-b1', 'sprechen-1')).rejects.toMatchObject({ kind: 'unavailable', code: 'part_unavailable' });
+    // telc A2's spoken parts have rubrics but no set in the service fixtures (test/fixtures/teil-sets), so they can't start here.
+    await expect(service.start('telc-a2', 'sprechen-1')).rejects.toMatchObject({ kind: 'unavailable', code: 'part_unavailable' });
     await expect(service.start('telc-b1', 'sprachbausteine-1')).rejects.toMatchObject({ kind: 'unavailable', code: 'part_unavailable' });
     await expect(service.start('telc-b1', 'nope')).rejects.toMatchObject({ kind: 'not_found' });
     await expect(service.start('../../x', 'lesen-1')).rejects.toMatchObject({ kind: 'not_found' });
@@ -109,7 +111,7 @@ describe('examPracticeService', () => {
     expect(view.parts.find((p) => p.partId === 'lesen-2')).toMatchObject({ averagePercent: null, attempts: 0, overtime: false });
     expect(view.parts.some((p) => p.partId === 'hoeren-1')).toBe(true);
     expect(view.parts.some((p) => p.partId === 'schreiben')).toBe(true);
-    expect(view.parts.some((p) => p.partId === 'sprechen-1')).toBe(false);
+    expect(view.parts.some((p) => p.partId === 'sprechen-1')).toBe(true);
   });
 
   it('runs a mock over every runnable written part with one shared timer (B2)', async () => {

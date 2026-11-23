@@ -4,6 +4,7 @@ import { declaresMoreThan, readCappedBody } from '@/lib/http/readCappedBody';
 import { getDb, getDbPath, closeDb } from '@/lib/db/client';
 import { defaultKeyFilePath } from '@/lib/crypto/keyfile';
 import { loadBundledSeeds } from '@/lib/services/bundledSeeds';
+import { speechTmpDir } from '@/lib/speech/clips';
 import { audioDir } from '@/lib/audio/audioStore';
 import { createAudioService } from '@/lib/services/audioService';
 import { createNotificationService } from '@/lib/services/notificationService';
@@ -20,7 +21,7 @@ export async function POST(request: Request) {
   // S2: the background worker resolves getDb() on every tick, so it picks up the reopened handle.
   closeDb();
   try {
-    importBackup(archive, getDbPath(), defaultKeyFilePath(), audioDir());
+    importBackup(archive, getDbPath(), defaultKeyFilePath(), audioDir(), { speechTmpDir: speechTmpDir() });
     // A backup from before the bundled seeds existed (or one taken right after
     // a reset) can restore an empty curriculum/placement table; reload the
     // bundled seeds now instead of leaving that to the next server restart (I-1).

@@ -190,3 +190,30 @@ describe('letter task type', () => {
     expect(() => itemCount('letter', content)).toThrow(/use the part/);
   });
 });
+
+describe('spoken task type', () => {
+  const content = {
+    situation: 'Sie lernen jemanden kennen.',
+    materials: [{ title: 'Notizen', points: ['Wohnort'] }],
+    examinerIntro: 'Guten Tag.',
+    partner: { name: 'Anna', gender: 'f' as const, profile: 'freundlich' },
+    turns: 5,
+  };
+  it('validates a part', () => {
+    expect(validateTask('spoken', content)).toEqual([]);
+    expect(validateTask('spoken', { ...content, materials: [] })).toEqual([]);
+    expect(validateTask('spoken', { ...content, turns: 3 })).toEqual(['turns must be a whole number from 4 to 10']);
+    expect(validateTask('spoken', { ...content, turns: 11 })).toHaveLength(1);
+    expect(validateTask('spoken', { ...content, partner: { ...content.partner, gender: 'x' } })).toEqual(['partner.gender must be m or f']);
+    expect(validateTask('spoken', { ...content, situation: ' ', examinerIntro: '' })).toHaveLength(2);
+    expect(validateTask('spoken', { ...content, materials: [{ title: 'x', points: [1] }] })).toHaveLength(1);
+    expect(validateTask('spoken', null)).toHaveLength(1);
+  });
+  it('shows the whole content, refuses the generic submit and has no auto-grading', () => {
+    expect(viewTask('spoken', content)).toEqual(content);
+    expect(parseTaskAnswer('spoken', { type: 'spoken', clipIds: ['a'] }, content)).toBeNull();
+    expect(() => gradeTask('spoken', content, { type: 'spoken', clipIds: [] })).toThrow(/AI/);
+    expect(() => correctTexts('spoken', content)).toThrow();
+    expect(() => itemCount('spoken', content)).toThrow(/use the part/);
+  });
+});

@@ -36,8 +36,65 @@
         "C": "Anfang und Gruß fehlen, und der Text ist nicht als Mitteilung erkennbar." } }
     ] },
       "instructions": "Schreiben Sie eine kurze Mitteilung (ca. 30 Wörter). Schreiben Sie zu jedem der drei Punkte ein bis zwei Sätze. Vergessen Sie nicht die Anrede und den Gruß." },
-    { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Sprechen Teil 1" }, "taskType": "spoken", "items": 3, "points": 3, "minutes": 3, "instructions": "Sich vorstellen: Stellen Sie sich vor. Sprechen Sie über Name, Alter, Land, Wohnort, Sprachen, Beruf und Hobby. Buchstabieren Sie danach ein Wort und nennen Sie eine Zahl." },
-    { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Sprechen Teil 2" }, "taskType": "spoken", "items": 4, "points": 6, "minutes": 6, "instructions": "Um Informationen bitten und Informationen geben: Ziehen Sie eine Karte, stellen Sie eine Frage zum Thema und antworten Sie auf die Frage Ihres Partners / Ihrer Partnerin." },
-    { "id": "sprechen-3", "skill": "speaking", "title": { "en": "Speaking Part 3", "de": "Sprechen Teil 3" }, "taskType": "spoken", "items": 4, "points": 6, "minutes": 6, "instructions": "Bitten formulieren und darauf reagieren: Ziehen Sie eine Karte, formulieren Sie eine Bitte und reagieren Sie auf die Bitte Ihres Partners / Ihrer Partnerin." }
+    { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Sprechen Teil 1" }, "taskType": "spoken", "items": 4, "points": 3, "minutes": 3,
+      "rubric": { "criteria": [
+      { "id": "ausdruck", "name": { "en": "Expression", "de": "Ausdrucksfähigkeit" }, "points": { "A": 0.5, "B": 0.25, "C": 0 }, "descriptors": {
+        "A": "Drückt sich mit einfachen Wörtern und Wendungen verständlich und passend zur Situation aus.",
+        "B": "Drückt sich nur mit sehr wenigen Wörtern aus; die Wortsuche unterbricht das Gespräch oft.",
+        "C": "Findet kaum Wörter für die Aufgabe; die Äußerungen sind nicht zu verstehen." } },
+      { "id": "aufgabe", "name": { "en": "Task completion", "de": "Aufgabenbewältigung" }, "points": { "A": 1.5, "B": 0.75, "C": 0 }, "descriptors": {
+        "A": "Stellt sich zu allen Punkten vor (Name, Alter, Land, Wohnort, Sprachen, Beruf, Hobby), buchstabiert das Wort und nennt die Zahl richtig.",
+        "B": "Stellt sich nur zu einigen Punkten vor, oder Buchstabieren bzw. Zahl gelingen nicht.",
+        "C": "Die Vorstellung fehlt oder ist nicht zu verstehen." } },
+      { "id": "richtigkeit", "name": { "en": "Formal accuracy", "de": "Formale Richtigkeit" }, "points": { "A": 0.5, "B": 0.25, "C": 0 }, "descriptors": {
+        "A": "Einfache Sätze und feste Wendungen sind weitgehend korrekt; Fehler stören das Verständnis nicht.",
+        "B": "Viele Fehler erschweren das Verständnis stellenweise.",
+        "C": "Die Äußerungen sind wegen der Fehler kaum zu verstehen." } },
+      { "id": "aussprache", "name": { "en": "Pronunciation and intonation", "de": "Aussprache und Intonation" }, "points": { "A": 0.5, "B": 0.25, "C": 0 }, "descriptors": {
+        "A": "Aussprache und Intonation sind trotz Akzent gut verständlich.",
+        "B": "Aussprache und Intonation erschweren das Verständnis stellenweise.",
+        "C": "Aussprache und Intonation machen die Äußerungen größtenteils unverständlich." } }
+    ] },
+      "instructions": "Sich vorstellen: Stellen Sie sich vor. Sprechen Sie über Name, Alter, Land, Wohnort, Sprachen, Beruf und Hobby. Buchstabieren Sie danach ein Wort und nennen Sie eine Zahl." },
+    { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Sprechen Teil 2" }, "taskType": "spoken", "items": 4, "points": 6, "minutes": 6,
+      "rubric": { "criteria": [
+      { "id": "ausdruck", "name": { "en": "Expression", "de": "Ausdrucksfähigkeit" }, "points": { "A": 1, "B": 0.5, "C": 0 }, "descriptors": {
+        "A": "Drückt sich mit einfachen Wörtern und Wendungen verständlich und passend zur Situation aus.",
+        "B": "Drückt sich nur mit sehr wenigen Wörtern aus; die Wortsuche unterbricht das Gespräch oft.",
+        "C": "Findet kaum Wörter für die Aufgabe; die Äußerungen sind nicht zu verstehen." } },
+      { "id": "aufgabe", "name": { "en": "Task completion", "de": "Aufgabenbewältigung" }, "points": { "A": 3, "B": 1.5, "C": 0 }, "descriptors": {
+        "A": "Stellt zu jeder Karte eine passende Frage zum Thema und beantwortet die Fragen des Partners / der Partnerin verständlich.",
+        "B": "Fragen oder Antworten passen nur teilweise zur Karte, zum Thema oder zur Frage.",
+        "C": "Es gibt keine passenden Fragen oder Antworten." } },
+      { "id": "richtigkeit", "name": { "en": "Formal accuracy", "de": "Formale Richtigkeit" }, "points": { "A": 1, "B": 0.5, "C": 0 }, "descriptors": {
+        "A": "Einfache Sätze und feste Wendungen sind weitgehend korrekt; Fehler stören das Verständnis nicht.",
+        "B": "Viele Fehler erschweren das Verständnis stellenweise.",
+        "C": "Die Äußerungen sind wegen der Fehler kaum zu verstehen." } },
+      { "id": "aussprache", "name": { "en": "Pronunciation and intonation", "de": "Aussprache und Intonation" }, "points": { "A": 1, "B": 0.5, "C": 0 }, "descriptors": {
+        "A": "Aussprache und Intonation sind trotz Akzent gut verständlich.",
+        "B": "Aussprache und Intonation erschweren das Verständnis stellenweise.",
+        "C": "Aussprache und Intonation machen die Äußerungen größtenteils unverständlich." } }
+    ] },
+      "instructions": "Um Informationen bitten und Informationen geben: Ziehen Sie eine Karte, stellen Sie eine Frage zum Thema und antworten Sie auf die Frage Ihres Partners / Ihrer Partnerin." },
+    { "id": "sprechen-3", "skill": "speaking", "title": { "en": "Speaking Part 3", "de": "Sprechen Teil 3" }, "taskType": "spoken", "items": 4, "points": 6, "minutes": 6,
+      "rubric": { "criteria": [
+      { "id": "ausdruck", "name": { "en": "Expression", "de": "Ausdrucksfähigkeit" }, "points": { "A": 1, "B": 0.5, "C": 0 }, "descriptors": {
+        "A": "Drückt sich mit einfachen Wörtern und Wendungen verständlich und passend zur Situation aus.",
+        "B": "Drückt sich nur mit sehr wenigen Wörtern aus; die Wortsuche unterbricht das Gespräch oft.",
+        "C": "Findet kaum Wörter für die Aufgabe; die Äußerungen sind nicht zu verstehen." } },
+      { "id": "aufgabe", "name": { "en": "Task completion", "de": "Aufgabenbewältigung" }, "points": { "A": 3, "B": 1.5, "C": 0 }, "descriptors": {
+        "A": "Formuliert zu jeder Karte eine passende Bitte und reagiert verständlich auf die Bitten des Partners / der Partnerin.",
+        "B": "Bitten oder Reaktionen passen nur teilweise zur Karte oder zur Situation.",
+        "C": "Es gibt keine passenden Bitten oder Reaktionen." } },
+      { "id": "richtigkeit", "name": { "en": "Formal accuracy", "de": "Formale Richtigkeit" }, "points": { "A": 1, "B": 0.5, "C": 0 }, "descriptors": {
+        "A": "Einfache Sätze und feste Wendungen sind weitgehend korrekt; Fehler stören das Verständnis nicht.",
+        "B": "Viele Fehler erschweren das Verständnis stellenweise.",
+        "C": "Die Äußerungen sind wegen der Fehler kaum zu verstehen." } },
+      { "id": "aussprache", "name": { "en": "Pronunciation and intonation", "de": "Aussprache und Intonation" }, "points": { "A": 1, "B": 0.5, "C": 0 }, "descriptors": {
+        "A": "Aussprache und Intonation sind trotz Akzent gut verständlich.",
+        "B": "Aussprache und Intonation erschweren das Verständnis stellenweise.",
+        "C": "Aussprache und Intonation machen die Äußerungen größtenteils unverständlich." } }
+    ] },
+      "instructions": "Bitten formulieren und darauf reagieren: Ziehen Sie eine Karte, formulieren Sie eine Bitte und reagieren Sie auf die Bitte Ihres Partners / Ihrer Partnerin." }
   ]
 }

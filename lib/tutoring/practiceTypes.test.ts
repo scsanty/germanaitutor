@@ -31,3 +31,10 @@ describe('allowedPracticeTypes', () => {
     expect(PRACTICE_BATCH_SIZE).toBe(5);
   });
 });
+
+describe('allowedPracticeTypes and spoken responses (S13)', () => {
+  it('never puts a spoken response in the German-only practice pool', () => {
+    expect(allowedPracticeTypes('speaking', ['spoken_response', 'multiple_choice'])).toEqual(['multiple_choice']);
+    expect(allowedPracticeTypes('speaking', ['spoken_response'])).toEqual(['multiple_choice', 'fill_blank']);
+  });
+});

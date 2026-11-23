@@ -1,5 +1,5 @@
 {
-  "seedVersion": "11",
+  "seedVersion": "12",
   "formatVersion": 3,
   "track": "generic",
   "level": "B2",
@@ -1540,6 +1540,21 @@
       }
     },
     {
+      "id": "b2-pro-kontra-diskussion-fuehren__ex2",
+      "lessonId": "b2-pro-kontra-diskussion-fuehren",
+      "track": "generic",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "Argue in a discussion: state your position, add nuance, and counter your partner's objection.",
+          "de": "Argumentieren Sie in einer Diskussion: Nennen Sie Ihre Position, differenzieren Sie und entkräften Sie den Einwand Ihres Gegenübers."
+        },
+        "prompt": "Thema: „Sollten soziale Netzwerke erst ab sechzehn Jahren erlaubt sein?“ Ihr Gegenüber meint: „Ein Verbot lässt sich ohnehin nicht kontrollieren.“",
+        "modelAnswer": "Ich spreche mich klar für eine Altersgrenze von sechzehn Jahren aus, weil zahlreiche Studien zeigen, dass soziale Netzwerke bei jüngeren Kindern Angst und Schlafprobleme verstärken können. Dabei geht es mir nicht darum, Jugendliche vollständig vom Internet fernzuhalten, sondern um einen besseren Schutz in einer besonders sensiblen Phase. Sie haben natürlich recht, dass sich ein solches Verbot nicht lückenlos kontrollieren lässt. Das gilt aber auch für das Rauchen oder den Alkohol, und trotzdem stellt niemand diese Altersgrenzen infrage. Eine klare Regel würde Eltern zumindest eine Argumentationshilfe geben und die Plattformen stärker in die Pflicht nehmen.",
+        "minSeconds": 60
+      }
+    },
+    {
       "id": "b2-fachpraesentation-strukturieren__ex0",
       "lessonId": "b2-fachpraesentation-strukturieren",
       "track": "generic",
@@ -1563,6 +1578,21 @@
           "Jetzt können Sie klatschen."
         ],
         "correctIndex": 1
+      }
+    },
+    {
+      "id": "b2-fachpraesentation-strukturieren__ex2",
+      "lessonId": "b2-fachpraesentation-strukturieren",
+      "track": "generic",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "Give the opening of a specialist talk: introduce the topic, outline the structure and move into the first point.",
+          "de": "Halten Sie den Anfang eines Fachvortrags: Führen Sie ins Thema ein, stellen Sie die Gliederung vor und leiten Sie zum ersten Punkt über."
+        },
+        "prompt": "Thema Ihres Vortrags: „Erneuerbare Energien in privaten Haushalten“. Sprechen Sie etwa eine Minute.",
+        "modelAnswer": "Sehr geehrte Damen und Herren, in meinem Vortrag beschäftige ich mich mit der Frage, wie private Haushalte erneuerbare Energien sinnvoll nutzen können. Mein Vortrag gliedert sich in drei Teile: Zuerst gebe ich einen kurzen Überblick über die wichtigsten Technologien, danach gehe ich auf Kosten und Förderprogramme ein, und zum Schluss stelle ich ein Beispiel aus meiner eigenen Nachbarschaft vor. Beginnen möchte ich mit der Photovoltaik, denn sie ist für Hausbesitzer inzwischen die verbreitetste Lösung.",
+        "minSeconds": 60
       }
     }
   ],

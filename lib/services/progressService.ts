@@ -1,7 +1,7 @@
 import type Database from 'better-sqlite3';
 import { localized } from '../i18n/localizedText';
 import type { CefrLevel, Track } from '../types';
-import type { Exercise, ExerciseType, Skill } from '../curriculum/types';
+import { NEVER_REVIEWED_SQL, type Exercise, type ExerciseType, type Skill } from '../curriculum/types';
 import { unsortedMilestoneId } from '../curriculum-admin/unsortedBucket';
 import { lessonStatus } from '../tutoring/completion';
 import { toExerciseView } from '../tutoring/exerciseView';
@@ -225,7 +225,7 @@ export function createProgressService(db: Database.Database, deps: ProgressDeps 
          JOIN milestones m ON m.id = p.milestone_id
          WHERE m.track = ? AND m.level = ? AND st.next_due_at <= ?
            AND NOT (e.type = 'flashcard' AND l.skill = 'vocabulary') -- B1: those live in the vocabulary deck
-           AND e.type <> 'letter' -- Writing: a letter task never enters review
+           AND e.type NOT IN ${NEVER_REVIEWED_SQL} -- a letter task or a spoken response never enters review
            AND NOT EXISTS (
              SELECT 1 FROM lesson_attempts a WHERE a.exercise_id = e.id AND a.source = 'queue' AND a.answered_on = ?
            )

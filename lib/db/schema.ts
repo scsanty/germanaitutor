@@ -185,6 +185,9 @@ export function runMigrations(db: Database.Database): void {
     migrateFlashcardReviewsToDeck(db);
     migrateExerciseTypeCheck(db, EXERCISE_TYPES);
     migrateTeilAttemptColumns(db);
+    migrateSpeechClipRoles(db);
+    migratePlacementQuestionTypeCheck(db);
+    migratePlacementServedIds(db);
   });
   // Table rebuilds (migrateExerciseTypeCheck) must run with foreign keys OFF, or DROP TABLE would cascade
   // to attempts and reviews. SQLite ignores this pragma inside a transaction, so it wraps the transaction.
@@ -197,7 +200,8 @@ export function runMigrations(db: Database.Database): void {
   }
 }
 
-// Every exercise type the two exercise tables accept (the Reading types, Listening's audio_questions, Writing's letter).
+// Every exercise type the two exercise tables accept (the Reading types, Listening's audio_questions, Writing's letter,
+// Speaking's spoken_response).
 export const EXERCISE_TYPES = [
   'multiple_choice',
   'fill_blank',
@@ -208,6 +212,7 @@ export const EXERCISE_TYPES = [
   'cloze',
   'audio_questions',
   'letter',
+  'spoken_response',
 ] as const;
 
 // SQLite can't change a CHECK in place, so each table whose type CHECK lacks a type is rebuilt
@@ -428,7 +433,7 @@ function createTablesIfMissing(db: Database.Database): void {
       id TEXT PRIMARY KEY,
       lesson_id TEXT NOT NULL REFERENCES lessons(id) ON DELETE CASCADE,
       track TEXT CHECK (track IN ('generic','telc','goethe')),
-      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','flashcard','free_text','passage_questions','matching','cloze','audio_questions','letter')),
+      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','flashcard','free_text','passage_questions','matching','cloze','audio_questions','letter','spoken_response')),
       content TEXT NOT NULL
     );
 
@@ -459,7 +464,7 @@ function createTablesIfMissing(db: Database.Database): void {
       id TEXT PRIMARY KEY,
       position INTEGER NOT NULL UNIQUE,
       level TEXT NOT NULL CHECK (level IN ('A1','A2','B1','B2','C1')),
-      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','free_text')),
+      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','free_text','spoken')),
       content TEXT NOT NULL
     );
 
@@ -477,7 +482,10 @@ function createTablesIfMissing(db: Database.Database): void {
       next_position INTEGER NOT NULL,
       score REAL NOT NULL,
       mistakes INTEGER NOT NULL,
-      answers TEXT NOT NULL
+      answers TEXT NOT NULL,
+      -- The question ids served this session, in order (spoken items are left out when the speech service was down
+      -- at start). Empty means the whole stored exam.
+      served_ids TEXT NOT NULL DEFAULT '[]'
     );
 
     CREATE TABLE IF NOT EXISTS placement_best_result (
@@ -545,7 +553,7 @@ function createTablesIfMissing(db: Database.Database): void {
     CREATE TABLE IF NOT EXISTS practice_exercises (
       id TEXT PRIMARY KEY,
       lesson_id TEXT NOT NULL REFERENCES lessons(id) ON DELETE CASCADE,
-      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','flashcard','free_text','passage_questions','matching','cloze','audio_questions','letter')),
+      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','flashcard','free_text','passage_questions','matching','cloze','audio_questions','letter','spoken_response')),
       content TEXT NOT NULL,
       review_status TEXT NOT NULL DEFAULT 'unreviewed' CHECK (review_status IN ('unreviewed','approved','rejected')),
       created_at TEXT NOT NULL,
@@ -667,7 +675,71 @@ function createTablesIfMissing(db: Database.Database): void {
       created_at TEXT NOT NULL
     );
     CREATE INDEX IF NOT EXISTS idx_error_log_created ON error_log(created_at);
+
+    -- Speaking: temporary recordings and transcripts, deleted with their scope and after 6 h. Never backed up.
+    CREATE TABLE IF NOT EXISTS speech_clips (
+      id TEXT PRIMARY KEY,
+      scope TEXT NOT NULL,
+      role TEXT NOT NULL CHECK (role IN ('student','partner','examiner')),
+      file TEXT,
+      transcript TEXT,
+      words TEXT,
+      created_at TEXT NOT NULL
+    );
+    CREATE INDEX IF NOT EXISTS idx_speech_clips_scope ON speech_clips(scope);
   `);
+}
+
+// Speaking (fix round 1): an AI line's clip records who spoke it, the examiner or the partner. A table from before
+// knows only student and partner, so it is rebuilt once (the rows are temporary, but kept). Nothing references it.
+function migrateSpeechClipRoles(db: Database.Database): void {
+  const row = db.prepare("SELECT sql FROM sqlite_master WHERE type = 'table' AND name = 'speech_clips'").get() as { sql: string } | undefined;
+  if (!row || row.sql.includes("'examiner'")) return;
+  db.exec(`
+    CREATE TABLE speech_clips_new (
+      id TEXT PRIMARY KEY,
+      scope TEXT NOT NULL,
+      role TEXT NOT NULL CHECK (role IN ('student','partner','examiner')),
+      file TEXT,
+      transcript TEXT,
+      words TEXT,
+      created_at TEXT NOT NULL
+    );
+    INSERT INTO speech_clips_new (rowid, id, scope, role, file, transcript, words, created_at)
+      SELECT rowid, id, scope, role, file, transcript, words, created_at FROM speech_clips;
+    DROP TABLE speech_clips;
+    ALTER TABLE speech_clips_new RENAME TO speech_clips;
+    CREATE INDEX IF NOT EXISTS idx_speech_clips_scope ON speech_clips(scope);
+  `);
+}
+
+// Speaking (B8): the placement exam may hold `spoken` items, so the question table's type CHECK is rebuilt once
+// (create-copy-drop-rename, keeping the rows). Like migrateExerciseTypeCheck it must run with foreign keys OFF
+// (see runMigrations); nothing references the table, but the guard keeps a future reference from cascading.
+function migratePlacementQuestionTypeCheck(db: Database.Database): void {
+  const row = db.prepare("SELECT sql FROM sqlite_master WHERE type = 'table' AND name = 'placement_questions'").get() as { sql: string } | undefined;
+  if (!row || row.sql.includes("'spoken'")) return;
+  if (db.pragma('foreign_keys', { simple: true }) !== 0) {
+    throw new Error('Cannot rebuild placement_questions with foreign keys on; run migrations outside any transaction');
+  }
+  db.exec(`
+    CREATE TABLE placement_questions_new (
+      id TEXT PRIMARY KEY,
+      position INTEGER NOT NULL UNIQUE,
+      level TEXT NOT NULL CHECK (level IN ('A1','A2','B1','B2','C1')),
+      type TEXT NOT NULL CHECK (type IN ('multiple_choice','fill_blank','free_text','spoken')),
+      content TEXT NOT NULL
+    );
+    INSERT INTO placement_questions_new (id, position, level, type, content) SELECT id, position, level, type, content FROM placement_questions;
+    DROP TABLE placement_questions;
+    ALTER TABLE placement_questions_new RENAME TO placement_questions;
+  `);
+}
+
+// Speaking (B8): a session in progress from before has no served order; empty means the whole exam.
+function migratePlacementServedIds(db: Database.Database): void {
+  const columns = (db.prepare('PRAGMA table_info(placement_session)').all() as { name: string }[]).map((c) => c.name);
+  if (!columns.includes('served_ids')) db.exec("ALTER TABLE placement_session ADD COLUMN served_ids TEXT NOT NULL DEFAULT '[]'");
 }
 
 // Reading module (S9): a finished attempt keeps its raw answers, so a repeated submit can return the

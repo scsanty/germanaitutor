@@ -7,7 +7,10 @@ import type { PlacementStopReason } from './placementScoring';
 export type PlacementAnswer =
   | { type: 'multiple_choice'; selectedIndex: number }
   | { type: 'fill_blank'; text: string }
-  | { type: 'free_text'; text: string };
+  | { type: 'free_text'; text: string }
+  // A recorded answer (placement scope, graded on its transcript), or skipping the item after a speech outage.
+  | { type: 'spoken'; clipId: string }
+  | { type: 'spoken'; skipped: true };
 
 interface QuestionViewBase {
   id: string;
@@ -20,7 +23,8 @@ interface QuestionViewBase {
 export type PlacementQuestionView =
   | (QuestionViewBase & { type: 'multiple_choice'; question: string; options: string[]; instruction?: LocalizedText })
   | (QuestionViewBase & { type: 'fill_blank'; textWithBlank: string; instruction?: LocalizedText })
-  | (QuestionViewBase & { type: 'free_text'; prompt: string; instruction?: LocalizedText });
+  | (QuestionViewBase & { type: 'free_text'; prompt: string; instruction?: LocalizedText })
+  | (QuestionViewBase & { type: 'spoken'; prompt: string; instruction?: LocalizedText });
 
 export interface PlacementAnswerRecord {
   questionId: string;
@@ -65,5 +69,7 @@ export function parsePlacementAnswer(raw: unknown): PlacementAnswer | null {
   }
   if (a.type === 'fill_blank' && typeof a.text === 'string') return { type: 'fill_blank', text: a.text };
   if (a.type === 'free_text' && typeof a.text === 'string') return { type: 'free_text', text: a.text };
+  if (a.type === 'spoken' && typeof a.clipId === 'string' && a.clipId !== '') return { type: 'spoken', clipId: a.clipId };
+  if (a.type === 'spoken' && a.skipped === true) return { type: 'spoken', skipped: true };
   return null;
 }

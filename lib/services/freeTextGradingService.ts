@@ -7,7 +7,7 @@ import { generateWithActiveProvider } from './aiService';
 
 export type FreeTextGradeOutcome =
   // S7: mistakes are returned, never logged here (placement shares this grader and never logs).
-  | { ok: true; result: GradeResult; feedback: LocalizedText | null; mistakes?: FreeTextMistake[] }
+  | { ok: true; result: GradeResult; feedback: LocalizedText | null; mistakes?: FreeTextMistake[]; pronunciation?: LocalizedText }
   | { ok: false; error: string; code?: ErrorCode; params?: ErrorParams };
 
 export async function gradeFreeText(
@@ -17,7 +17,7 @@ export async function gradeFreeText(
 ): Promise<FreeTextGradeOutcome> {
   const response = await generateWithActiveProvider(db, buildFreeTextGradingPrompt(input), keyFilePath);
   if (!response.ok) return response;
-  const parsed = parseFreeTextGrade(response.text);
+  const parsed = parseFreeTextGrade(response.text, { pronunciation: input.unclearWords !== undefined });
   if (!parsed) return { ok: false, error: 'The AI replied in an unexpected format', code: 'ai_bad_reply' };
   return { ok: true, ...parsed };
 }

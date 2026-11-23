@@ -1,0 +1,43 @@
+{
+  "formatId": "telc-a2",
+  "partId": "sprechen-2",
+  "anchors": [
+    {
+      "band": "A",
+      "turns": [
+        "Meine erste Karte ist „Sport“. Welchen Sport machst du gern, und wie oft?",
+        "Ich gehe zweimal pro Woche schwimmen, meistens am Dienstag und am Freitag nach der Arbeit. Das ist gut für den Rücken.",
+        "Die zweite Karte ist „Urlaub“. Wohin bist du letztes Jahr in Urlaub gefahren?",
+        "Ich war im Sommer mit meiner Schwester in Österreich. Wir sind viel gewandert, und das Wetter war sehr schön.",
+        "Meine letzte Karte ist „Fernsehen“. Was siehst du am liebsten im Fernsehen?",
+        "Ich sehe nicht so viel fern. Ich höre lieber Musik oder lese ein Buch, besonders am Abend."
+      ],
+      "grades": { "ausdruck": "A", "aufgabe": "A", "richtigkeit": "A", "aussprache": "A" },
+      "justification": "Die Lernende stellt zu jeder Karte eine passende Frage zum Thema „Freizeit“ und beantwortet die Fragen des Partners ausführlich, mit Details und Begründungen. Perfekt, Zeitangaben und trennbare Verben sind korrekt. Die Aussprache ist klar."
+    },
+    {
+      "band": "C",
+      "turns": [
+        "Sport … du machst Sport? Welche Sport?",
+        "Ich … Fußball. Sonntag.",
+        "Urlaub … wohin du … äh … fährst Urlaub?",
+        "Letzte Jahr … Türkei. Schön.",
+        "Fernsehen … du … Fernsehen … gut?",
+        "Nein. Nicht viel."
+      ],
+      "grades": { "ausdruck": "B", "aufgabe": "B", "richtigkeit": "B", "aussprache": "B" },
+      "justification": "Der Lernende stellt zu jeder Karte eine Frage, die Frage zu „Fernsehen“ ist aber unklar, und seine Antworten bleiben sehr knapp und ohne Einzelheiten. Er drückt sich nur mit sehr wenigen Wörtern aus und macht oft Pausen bei der Wortsuche. Viele Fehler bei Wortstellung, Artikeln und Endungen („Welche Sport?“, „wohin du … fährst Urlaub?“) erschweren das Verständnis stellenweise, und auch die Aussprache erschwert es stellenweise."
+    },
+    {
+      "band": "D",
+      "turns": [
+        "Sport … du?",
+        "Äh … ja … ja.",
+        "Urlaub … ich nicht … äh.",
+        "Fernsehen. Ja."
+      ],
+      "grades": { "ausdruck": "C", "aufgabe": "C", "richtigkeit": "C", "aussprache": "C" },
+      "justification": "Die Lernende nennt nur die Wörter von den Karten und stellt keine passende Frage; auf die Fragen des Partners gibt es keine passende Antwort. Sie findet kaum Wörter für die Aufgabe und bildet keine Sätze, sodass die Äußerungen kaum zu verstehen sind. Die Aussprache macht sie größtenteils unverständlich."
+    }
+  ]
+}

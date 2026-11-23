@@ -1,0 +1,145 @@
+{
+  "formatId": "generic-b2",
+  "partId": "sprechen-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-b2__sprechen-1__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Halten Sie eine zusammenhängende Präsentation von etwa vier Minuten über das Thema auf Ihrer Karte. Gehen Sie auf alle Punkte ein. Danach stellt Ihnen Ihre Partnerin Fragen.",
+          "materials": [
+            {
+              "title": "Themenkarte: Pendeln – lange Arbeitswege und ihre Folgen",
+              "points": [
+                "Warum nehmen viele Menschen lange Arbeitswege in Kauf?",
+                "Folgen für Gesundheit, Familie und Umwelt",
+                "Die Situation in Ihrem Heimatland",
+                "Mögliche Lösungen (Homeoffice, Wohnungsbau, Verkehr)",
+                "Ihre persönliche Meinung"
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1. Ihr Thema ist: „Pendeln – lange Arbeitswege und ihre Folgen“. Halten Sie bitte eine Präsentation von etwa vier Minuten und gehen Sie auf alle Punkte ein. Danach stellt Ihnen Ihre Partnerin einige Fragen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Frau Albrecht",
+            "gender": "f",
+            "profile": "Frau Albrecht ist 46, Steuerberaterin, und pendelt jeden Tag 70 Kilometer mit dem Zug von Kassel nach Göttingen. Während der Präsentation hört sie nur zu. Danach stellt sie zwei oder drei Fragen, zum Beispiel „Würden Sie für eine kürzere Fahrt eine kleinere Wohnung akzeptieren?“ oder „Sollten Arbeitgeber die Fahrzeit bezahlen?“, und hakt nach, wenn eine Antwort zu allgemein bleibt."
+          },
+          "turns": 5
+        },
+        "explanations": [
+          {
+            "en": "Give your talk an introduction, a main part and a conclusion and signal each step: „Zunächst möchte ich …“, „Damit komme ich zu …“, „Abschließend lässt sich sagen …“. Prefer precise topic words to general ones.",
+            "de": "Gib deinem Vortrag eine Einleitung, einen Hauptteil und einen Schluss und kündige jeden Schritt an: „Zunächst möchte ich …“, „Damit komme ich zu …“, „Abschließend lässt sich sagen …“. Benutze lieber genaue Fachwörter als allgemeine."
+          },
+          {
+            "en": "Present all five points (reasons, consequences, your home country, solutions, your opinion) in a clear order with examples, then answer Frau Albrecht’s follow-up questions precisely and with reasons.",
+            "de": "Präsentiere alle fünf Punkte (Gründe, Folgen, dein Heimatland, Lösungen, deine Meinung) in klarer Reihenfolge mit Beispielen und beantworte dann Frau Albrechts Nachfragen genau und begründet."
+          },
+          {
+            "en": "Use a range of structures correctly: the passive („Es wird oft behauptet, dass …“), relative clauses and connectors such as zwar … aber, obwohl, während and dennoch.",
+            "de": "Benutze verschiedene Strukturen korrekt: das Passiv („Es wird oft behauptet, dass …“), Relativsätze und Konnektoren wie zwar … aber, obwohl, während und dennoch."
+          },
+          {
+            "en": "Speak freely at an even pace for several minutes; vary your intonation and pause between the parts of your talk.",
+            "de": "Sprich mehrere Minuten frei und in gleichmäßigem Tempo; variiere die Intonation und mach zwischen den Teilen deines Vortrags Pausen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-b2__sprechen-1__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Halten Sie eine zusammenhängende Präsentation von etwa vier Minuten über das Thema auf Ihrer Karte. Gehen Sie auf alle Punkte ein. Danach stellt Ihnen Ihr Partner Fragen.",
+          "materials": [
+            {
+              "title": "Themenkarte: Videospiele – Zeitverschwendung oder Kulturgut?",
+              "points": [
+                "Wer spielt heute, und warum?",
+                "Chancen: Lernen, Kreativität, Gemeinschaft",
+                "Risiken: Sucht, Bewegungsmangel, Kosten",
+                "Wie sieht man Videospiele in Ihrem Heimatland?",
+                "Ihre persönliche Meinung"
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1. Bitte halten Sie eine Präsentation von etwa vier Minuten zum Thema: „Videospiele – Zeitverschwendung oder Kulturgut?“ Gehen Sie auf alle Punkte ein. Anschließend stellt Ihnen Ihr Partner Fragen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Florian",
+            "gender": "m",
+            "profile": "Florian ist 33, Grundschullehrer und spielt selbst gern Strategiespiele am Wochenende. Während der Präsentation hört er nur zu. Danach fragt er zum Beispiel „Ab welchem Alter und wie lange sollten Kinder spielen dürfen?“ und „Sollten Videospiele im Unterricht eingesetzt werden?“ und bittet um ein konkretes Beispiel, wenn eine Antwort zu allgemein ist."
+          },
+          "turns": 5
+        },
+        "explanations": [
+          {
+            "en": "Give your talk an introduction, a main part and a conclusion and signal each step: „Zunächst möchte ich …“, „Damit komme ich zu …“, „Abschließend lässt sich sagen …“. Prefer precise topic words to general ones.",
+            "de": "Gib deinem Vortrag eine Einleitung, einen Hauptteil und einen Schluss und kündige jeden Schritt an: „Zunächst möchte ich …“, „Damit komme ich zu …“, „Abschließend lässt sich sagen …“. Benutze lieber genaue Fachwörter als allgemeine."
+          },
+          {
+            "en": "Cover all five points (who plays and why, opportunities, risks, the view in your home country, your opinion) with concrete examples, then answer Florian’s questions on age limits and games in school with a clear position.",
+            "de": "Behandle alle fünf Punkte (wer spielt und warum, Chancen, Risiken, die Sicht in deinem Heimatland, deine Meinung) mit konkreten Beispielen und beantworte dann Florians Fragen zu Altersgrenzen und Spielen im Unterricht mit einer klaren Position."
+          },
+          {
+            "en": "Use a range of structures correctly: the passive („Es wird oft behauptet, dass …“), relative clauses and connectors such as zwar … aber, obwohl, während and dennoch.",
+            "de": "Benutze verschiedene Strukturen korrekt: das Passiv („Es wird oft behauptet, dass …“), Relativsätze und Konnektoren wie zwar … aber, obwohl, während und dennoch."
+          },
+          {
+            "en": "Speak freely at an even pace for several minutes; vary your intonation and pause between the parts of your talk.",
+            "de": "Sprich mehrere Minuten frei und in gleichmäßigem Tempo; variiere die Intonation und mach zwischen den Teilen deines Vortrags Pausen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-b2__sprechen-1__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Halten Sie eine zusammenhängende Präsentation von etwa vier Minuten über das Thema auf Ihrer Karte. Gehen Sie auf alle Punkte ein. Danach stellt Ihnen Ihre Partnerin Fragen.",
+          "materials": [
+            {
+              "title": "Themenkarte: Großeltern als Kinderbetreuung",
+              "points": [
+                "Welche Rolle spielen Großeltern heute in Familien?",
+                "Vorteile für Kinder, Eltern und Großeltern",
+                "Probleme: Entfernung, Belastung, unterschiedliche Erziehung",
+                "Die Situation in Ihrem Heimatland",
+                "Ihre persönliche Meinung"
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1. Ihr Thema lautet: „Großeltern als Kinderbetreuung“. Halten Sie bitte eine Präsentation von etwa vier Minuten und gehen Sie auf alle Punkte ein. Danach stellt Ihnen Ihre Partnerin Fragen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Ingrid",
+            "gender": "f",
+            "profile": "Ingrid ist 66, pensionierte Bankangestellte, und holt dreimal pro Woche ihre Enkel vom Kindergarten ab. Sie macht das gern, ist aber oft müde. Während der Präsentation hört sie nur zu. Danach fragt sie zum Beispiel „Sollte der Staat Großeltern für die Betreuung bezahlen?“ und „Was tun Familien, deren Großeltern weit weg wohnen?“"
+          },
+          "turns": 5
+        },
+        "explanations": [
+          {
+            "en": "Give your talk an introduction, a main part and a conclusion and signal each step: „Zunächst möchte ich …“, „Damit komme ich zu …“, „Abschließend lässt sich sagen …“. Prefer precise topic words to general ones.",
+            "de": "Gib deinem Vortrag eine Einleitung, einen Hauptteil und einen Schluss und kündige jeden Schritt an: „Zunächst möchte ich …“, „Damit komme ich zu …“, „Abschließend lässt sich sagen …“. Benutze lieber genaue Fachwörter als allgemeine."
+          },
+          {
+            "en": "Present all five points (the role of grandparents, advantages, problems, your home country, your opinion) in a structured way, then answer Ingrid’s questions about payment and families far from grandparents with reasons.",
+            "de": "Präsentiere alle fünf Punkte (die Rolle der Großeltern, Vorteile, Probleme, dein Heimatland, deine Meinung) gut gegliedert und beantworte dann Ingrids Fragen zur Bezahlung und zu Familien ohne Großeltern in der Nähe mit Begründung."
+          },
+          {
+            "en": "Use a range of structures correctly: the passive („Es wird oft behauptet, dass …“), relative clauses and connectors such as zwar … aber, obwohl, während and dennoch.",
+            "de": "Benutze verschiedene Strukturen korrekt: das Passiv („Es wird oft behauptet, dass …“), Relativsätze und Konnektoren wie zwar … aber, obwohl, während und dennoch."
+          },
+          {
+            "en": "Speak freely at an even pace for several minutes; vary your intonation and pause between the parts of your talk.",
+            "de": "Sprich mehrere Minuten frei und in gleichmäßigem Tempo; variiere die Intonation und mach zwischen den Teilen deines Vortrags Pausen."
+          }
+        ]
+      }
+    }
+  ]
+}

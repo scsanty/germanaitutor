@@ -1,0 +1,181 @@
+{
+  "formatId": "goethe-b1",
+  "partId": "sprechen-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-b1__sprechen-3__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Ihr Partner / Ihre Partnerin hat gerade eine Präsentation zum Thema „In einer Wohngemeinschaft leben?“ gehalten, Sie haben eine zum Thema „Allein reisen oder in der Gruppe?“ gehalten. Geben Sie zuerst eine Rückmeldung zur Präsentation Ihres Partners / Ihrer Partnerin und stellen Sie eine Frage. Danach reagieren Sie auf seine / ihre Rückmeldung und Frage zu Ihrer Präsentation.",
+          "materials": [
+            {
+              "title": "Ihre Notizen zur Präsentation „In einer Wohngemeinschaft leben?“",
+              "points": [
+                "wohnt seit drei Jahren mit zwei Studentinnen in einer WG in Leipzig",
+                "in ihrem Heimatland Brasilien wohnen junge Leute meist bei den Eltern",
+                "Vorteile: billiger, nie allein, man lernt schnell Deutsch",
+                "Nachteile: Streit beim Putzen, wenig Ruhe",
+                "Meinung: für ein paar Jahre ideal, später lieber allein"
+              ]
+            },
+            {
+              "title": "Ihre eigene Präsentation „Allein reisen oder in der Gruppe?“",
+              "points": [
+                "eigene Erfahrung: eine Reise allein oder mit einer Gruppe",
+                "Urlaub in Ihrem Heimatland",
+                "Vor- und Nachteile und Ihre Meinung"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 3. Ihre Partnerin hat über das Thema „In einer Wohngemeinschaft leben?“ gesprochen. Geben Sie ihr bitte zuerst eine Rückmeldung und stellen Sie eine Frage. Danach gibt Ihre Partnerin Ihnen eine Rückmeldung zu Ihrer Präsentation über das Reisen und stellt Ihnen eine Frage. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Beatriz",
+            "gender": "f",
+            "profile": "Beatriz ist 24, kommt aus Brasilien und studiert Soziale Arbeit in Leipzig. Sie hat die Präsentation über das Leben in der WG gehalten, deren Inhalt in den Notizen steht, und beantwortet Fragen dazu gern mit Beispielen aus ihrer WG. Danach lobt sie an deiner Reise-Präsentation ein konkretes Beispiel und fragt: „Wohin würdest du gern einmal allein reisen, und warum?“"
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Give Beatriz specific feedback on her flat-share presentation and ask one real question about it, then thank her for her feedback on your travel talk and answer her question with a reason and an example.",
+            "de": "Gib Beatriz eine konkrete Rückmeldung zu ihrer WG-Präsentation und stell ihr eine echte Frage dazu, bedank dich dann für ihre Rückmeldung zu deiner Reise-Präsentation und beantworte ihre Frage mit Grund und Beispiel."
+          },
+          {
+            "en": "Give your feedback, ask your question, and later answer your partner’s question directly before you add details; refer back to what was said („Du hast gesagt, dass …“).",
+            "de": "Gib deine Rückmeldung, stell deine Frage und beantworte später die Frage deines Partners direkt, bevor du Details ergänzt; bezieh dich auf das Gesagte („Du hast gesagt, dass …“)."
+          },
+          {
+            "en": "Use feedback phrases: „Mir hat besonders gefallen, dass …“, „Das Thema war sehr interessant, weil …“, „Ich hätte eine Frage: …“, „Danke für die Frage.“",
+            "de": "Benutze Redemittel für Rückmeldungen: „Mir hat besonders gefallen, dass …“, „Das Thema war sehr interessant, weil …“, „Ich hätte eine Frage: …“, „Danke für die Frage.“"
+          },
+          {
+            "en": "Use the Perfekt for what your partner said, the Konjunktiv II for polite questions („Könntest du noch erklären, …?“) and correct word order in indirect questions („…, wie du das machst“).",
+            "de": "Benutze das Perfekt für das, was dein Partner gesagt hat, den Konjunktiv II für höfliche Fragen („Könntest du noch erklären, …?“) und die richtige Wortstellung in indirekten Fragen („…, wie du das machst“)."
+          },
+          {
+            "en": "Sound friendly and interested; stress the point you liked and let your voice rise at the end of your question.",
+            "de": "Klinge freundlich und interessiert; betone den Punkt, der dir gefallen hat, und lass die Stimme am Ende deiner Frage steigen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__sprechen-3__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Ihr Partner / Ihre Partnerin hat gerade eine Präsentation zum Thema „Gebrauchte Sachen kaufen?“ gehalten, Sie haben eine zum Thema „Selbst kochen oder Fertiggerichte?“ gehalten. Geben Sie zuerst eine Rückmeldung zur Präsentation Ihres Partners / Ihrer Partnerin und stellen Sie eine Frage. Danach reagieren Sie auf seine / ihre Rückmeldung und Frage zu Ihrer Präsentation.",
+          "materials": [
+            {
+              "title": "Ihre Notizen zur Präsentation „Gebrauchte Sachen kaufen?“",
+              "points": [
+                "kauft Möbel und Kinderkleidung fast nur gebraucht, oft über eine App",
+                "in seinem Heimatland Polen gibt es viele Second-Hand-Läden",
+                "Vorteile: spart Geld, gut für die Umwelt, manchmal besondere Stücke",
+                "Nachteile: keine Garantie, manchmal kaputt, man braucht Zeit zum Suchen",
+                "Meinung: Kleidung und Möbel ja, Elektrogeräte lieber neu"
+              ]
+            },
+            {
+              "title": "Ihre eigene Präsentation „Selbst kochen oder Fertiggerichte?“",
+              "points": [
+                "eigene Kochgewohnheiten",
+                "Kochen in Ihrem Heimatland",
+                "Vor- und Nachteile und Ihre Meinung"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 3. Ihr Partner hat über das Thema „Gebrauchte Sachen kaufen?“ gesprochen. Geben Sie ihm bitte zuerst eine Rückmeldung und stellen Sie ihm eine Frage. Danach gibt Ihr Partner Ihnen eine Rückmeldung zu Ihrer Präsentation über das Kochen und stellt Ihnen eine Frage. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Tomasz",
+            "gender": "m",
+            "profile": "Tomasz ist 36, kommt aus Polen, ist Vater von zwei Kindern und arbeitet als Lagerist. Er hat die Präsentation über gebrauchte Sachen gehalten, deren Inhalt in den Notizen steht, und beantwortet Fragen mit eigenen Beispielen. Danach sagt er, dass ihm dein Beispiel aus dem Heimatland gefallen hat, und fragt: „Was kochst du, wenn du nur zwanzig Minuten Zeit hast?“"
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Say what you liked about Tomasz’s second-hand presentation, ask him a real question about it, then react to his feedback on your cooking talk and answer his question in a few sentences with an example.",
+            "de": "Sag, was dir an Tomasz’ Präsentation über gebrauchte Sachen gefallen hat, stell ihm eine echte Frage dazu, reagiere dann auf seine Rückmeldung zu deiner Koch-Präsentation und beantworte seine Frage in ein paar Sätzen mit einem Beispiel."
+          },
+          {
+            "en": "Give your feedback, ask your question, and later answer your partner’s question directly before you add details; refer back to what was said („Du hast gesagt, dass …“).",
+            "de": "Gib deine Rückmeldung, stell deine Frage und beantworte später die Frage deines Partners direkt, bevor du Details ergänzt; bezieh dich auf das Gesagte („Du hast gesagt, dass …“)."
+          },
+          {
+            "en": "Use feedback phrases: „Mir hat besonders gefallen, dass …“, „Das Thema war sehr interessant, weil …“, „Ich hätte eine Frage: …“, „Danke für die Frage.“",
+            "de": "Benutze Redemittel für Rückmeldungen: „Mir hat besonders gefallen, dass …“, „Das Thema war sehr interessant, weil …“, „Ich hätte eine Frage: …“, „Danke für die Frage.“"
+          },
+          {
+            "en": "Use the Perfekt for what your partner said, the Konjunktiv II for polite questions („Könntest du noch erklären, …?“) and correct word order in indirect questions („…, wie du das machst“).",
+            "de": "Benutze das Perfekt für das, was dein Partner gesagt hat, den Konjunktiv II für höfliche Fragen („Könntest du noch erklären, …?“) und die richtige Wortstellung in indirekten Fragen („…, wie du das machst“)."
+          },
+          {
+            "en": "Sound friendly and interested; stress the point you liked and let your voice rise at the end of your question.",
+            "de": "Klinge freundlich und interessiert; betone den Punkt, der dir gefallen hat, und lass die Stimme am Ende deiner Frage steigen."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-b1__sprechen-3__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Ihr Partner / Ihre Partnerin hat gerade eine Präsentation zum Thema „Teilzeit arbeiten?“ gehalten, Sie haben eine zum Thema „Mit dem Fahrrad zur Arbeit?“ gehalten. Geben Sie zuerst eine Rückmeldung zur Präsentation Ihres Partners / Ihrer Partnerin und stellen Sie eine Frage. Danach reagieren Sie auf seine / ihre Rückmeldung und Frage zu Ihrer Präsentation.",
+          "materials": [
+            {
+              "title": "Ihre Notizen zur Präsentation „Teilzeit arbeiten?“",
+              "points": [
+                "arbeitet seit der Geburt ihrer Tochter 25 Stunden pro Woche im Labor",
+                "in ihrem Heimatland Vietnam arbeiten fast alle Vollzeit, oft helfen die Großeltern",
+                "Vorteile: mehr Zeit für Familie und Hobbys, weniger Stress",
+                "Nachteile: weniger Geld, später weniger Rente, schlechtere Karrierechancen",
+                "Meinung: gut für eine bestimmte Zeit, Firmen sollten flexibler sein"
+              ]
+            },
+            {
+              "title": "Ihre eigene Präsentation „Mit dem Fahrrad zur Arbeit?“",
+              "points": [
+                "wie Sie zur Arbeit oder zum Kurs kommen",
+                "Arbeitsweg in Ihrem Heimatland",
+                "Vor- und Nachteile und Ihre Meinung"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 3. Ihre Partnerin hat über das Thema „Teilzeit arbeiten?“ gesprochen. Geben Sie ihr bitte zuerst eine Rückmeldung und stellen Sie eine Frage. Danach gibt Ihre Partnerin Ihnen eine Rückmeldung zu Ihrer Präsentation über das Fahrrad und stellt Ihnen eine Frage. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Linh",
+            "gender": "f",
+            "profile": "Linh ist 33, kommt aus Vietnam und arbeitet als Chemielaborantin in Ludwigshafen. Sie hat die Präsentation über Teilzeitarbeit gehalten, deren Inhalt in den Notizen steht, und beantwortet Fragen dazu offen und mit Beispielen. Danach lobt sie die klare Struktur deiner Fahrrad-Präsentation und fragt: „Was müsste deine Stadt tun, damit mehr Leute mit dem Fahrrad fahren?“"
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Give Linh concrete feedback on her part-time presentation and ask a real question about it, then thank her for her feedback and answer her question about cycling in your town with reasons and a suggestion.",
+            "de": "Gib Linh eine konkrete Rückmeldung zu ihrer Präsentation über Teilzeit und stell eine echte Frage dazu, bedank dich dann für ihre Rückmeldung und beantworte ihre Frage zum Radfahren in deiner Stadt mit Gründen und einem Vorschlag."
+          },
+          {
+            "en": "Give your feedback, ask your question, and later answer your partner’s question directly before you add details; refer back to what was said („Du hast gesagt, dass …“).",
+            "de": "Gib deine Rückmeldung, stell deine Frage und beantworte später die Frage deines Partners direkt, bevor du Details ergänzt; bezieh dich auf das Gesagte („Du hast gesagt, dass …“)."
+          },
+          {
+            "en": "Use feedback phrases: „Mir hat besonders gefallen, dass …“, „Das Thema war sehr interessant, weil …“, „Ich hätte eine Frage: …“, „Danke für die Frage.“",
+            "de": "Benutze Redemittel für Rückmeldungen: „Mir hat besonders gefallen, dass …“, „Das Thema war sehr interessant, weil …“, „Ich hätte eine Frage: …“, „Danke für die Frage.“"
+          },
+          {
+            "en": "Use the Perfekt for what your partner said, the Konjunktiv II for polite questions („Könntest du noch erklären, …?“) and correct word order in indirect questions („…, wie du das machst“).",
+            "de": "Benutze das Perfekt für das, was dein Partner gesagt hat, den Konjunktiv II für höfliche Fragen („Könntest du noch erklären, …?“) und die richtige Wortstellung in indirekten Fragen („…, wie du das machst“)."
+          },
+          {
+            "en": "Sound friendly and interested; stress the point you liked and let your voice rise at the end of your question.",
+            "de": "Klinge freundlich und interessiert; betone den Punkt, der dir gefallen hat, und lass die Stimme am Ende deiner Frage steigen."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "formatId": "telc-a1",
+  "partId": "sprechen-1",
+  "anchors": [
+    {
+      "band": "A",
+      "turns": [
+        "Guten Tag! Ich heiße Maria López. Ich bin 28 Jahre alt.",
+        "Ich komme aus Spanien, aus Valencia. Jetzt wohne ich in Köln.",
+        "Ich spreche Spanisch, Englisch und ein bisschen Deutsch.",
+        "Ich bin Krankenschwester von Beruf. Mein Hobby ist Schwimmen.",
+        "Mein Familienname, buchstabiert: L – O – P – E – Z.",
+        "Meine Telefonnummer ist null – zwei – zwei – eins, vier – fünf – sechs – sieben – acht."
+      ],
+      "grades": { "ausdruck": "A", "aufgabe": "A", "richtigkeit": "A", "aussprache": "A" },
+      "justification": "Die Lernende stellt sich zu allen Punkten vor (Name, Alter, Land, Wohnort, Sprachen, Beruf, Hobby), buchstabiert ihren Namen und nennt die Zahl richtig. Sie spricht in kurzen, vollständigen Sätzen, die für A1 korrekt sind. Die Aussprache ist klar und gut verständlich."
+    },
+    {
+      "band": "C",
+      "turns": [
+        "Ich heiße … Ahmed. Ich bin … dreißig.",
+        "Ich komme von Syrien. Wohnen … Dortmund.",
+        "Beruf … äh … Fahrer. Ich bin Fahrer.",
+        "Buchstabieren … A – H – … äh … M – D.",
+        "Zahl … sechsundvierzig. Nein … vierundsechzig?"
+      ],
+      "grades": { "ausdruck": "B", "aufgabe": "B", "richtigkeit": "B", "aussprache": "B" },
+      "justification": "Der Lernende stellt sich nur zu einigen Punkten vor: Name, Alter, Land, Wohnort und Beruf nennt er, Sprachen und Hobby fehlen. Beim Buchstabieren fehlt ein Buchstabe, und die Zahl gelingt erst im zweiten Versuch. Er drückt sich nur mit sehr wenigen Wörtern aus, und die Wortsuche unterbricht ihn oft. Viele Fehler („von Syrien“, „Wohnen … Dortmund“) erschweren das Verständnis stellenweise, und auch die Aussprache erschwert es stellenweise."
+    },
+    {
+      "band": "D",
+      "turns": [
+        "Ich … Name Li.",
+        "China.",
+        "Wohnen … äh … nicht weiß.",
+        "Zahl … sieben? Ja."
+      ],
+      "grades": { "ausdruck": "C", "aufgabe": "C", "richtigkeit": "C", "aussprache": "C" },
+      "justification": "Eine Vorstellung kommt kaum zustande: Die Lernende findet kaum Wörter, zu erkennen sind nur Name und Land; Wohnort, Sprachen, Beruf und Hobby fehlen, und es wird nichts buchstabiert. Ohne Satzbau sind die Äußerungen kaum zu verstehen, und lange Pausen und eine undeutliche Aussprache machen sie größtenteils unverständlich."
+    }
+  ]
+}

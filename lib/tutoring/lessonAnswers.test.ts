@@ -156,3 +156,38 @@ describe('taskAnswerText (shared by the card and the attempt log)', () => {
     expect(answerTextFor(exercise, answer as never)).toBe(expected);
   });
 });
+
+describe('spoken responses (Speaking)', () => {
+  const spoken: Exercise = {
+    id: 'sr',
+    lessonId: 'l',
+    track: null,
+    type: 'spoken_response',
+    content: { instruction: { en: 'Answer aloud.', de: 'Antworte laut.' }, prompt: 'Wie heißen Sie?', modelAnswer: 'Ich heiße Anna.', minSeconds: 10 },
+  };
+
+  it('parses a clip answer or a typed answer, and nothing else', () => {
+    expect(parseLessonAnswer({ type: 'spoken_response', clipId: 'c1' })).toEqual({ type: 'spoken_response', clipId: 'c1' });
+    expect(parseLessonAnswer({ type: 'spoken_response', typed: 'Ich heiße Tom.' })).toEqual({ type: 'spoken_response', typed: 'Ich heiße Tom.' });
+    expect(parseLessonAnswer({ type: 'spoken_response', clipId: '' })).toBeNull();
+    expect(parseLessonAnswer({ type: 'spoken_response', clipId: 'c1', typed: 'x' })).toBeNull();
+    expect(parseLessonAnswer({ type: 'spoken_response' })).toBeNull();
+  });
+
+  it('stores no answer text for a clip (B2), the typed text otherwise, and shows the model answer', () => {
+    expect(answerTextFor(spoken, { type: 'spoken_response', clipId: 'c1' })).toBe('');
+    expect(answerTextFor(spoken, { type: 'spoken_response', typed: 'Ich heiße Tom.' })).toBe('Ich heiße Tom.');
+    expect(correctAnswerFor(spoken)).toBe('Ich heiße Anna.');
+    expect(taskTextOf(spoken)).toBe('Answer aloud. — Wie heißen Sie?');
+  });
+
+  it('views the prompt, the instruction and the minimum time, never the model answer', () => {
+    expect(toExerciseView(spoken)).toEqual({
+      id: 'sr',
+      type: 'spoken_response',
+      prompt: 'Wie heißen Sie?',
+      minSeconds: 10,
+      instruction: { en: 'Answer aloud.', de: 'Antworte laut.' },
+    });
+  });
+});

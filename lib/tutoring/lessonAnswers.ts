@@ -4,6 +4,7 @@ import type {
   FlashcardContent,
   FreeTextContent,
   MultipleChoiceContent,
+  SpokenResponseContent,
 } from '../curriculum/types';
 import type { LocalizedText } from '../i18n/localizedText';
 import type { GradeResult } from './grading';
@@ -14,9 +15,20 @@ import { audioReveal, type AudioQuestionsAnswer, type AudioQuestionsContent, typ
 import { LETTER_MAX_LENGTH, type LetterAnswer, type LetterContent } from '../tasks/letter';
 import { correctTexts, type TaskContent } from '../tasks/taskTypes';
 import type { LetterGrade } from '../writing/letterGrading';
+import type { PronunciationEstimate } from '../speaking/pronunciation';
 
 export type FlashcardRating = 'knew' | 'sort_of' | 'didnt_know';
 export type AttemptSource = 'lesson' | 'queue';
+
+// Speaking: a recorded clip (its transcript is graded) or the typed fallback.
+export type SpokenResponseAnswer = { type: 'spoken_response'; clipId: string } | { type: 'spoken_response'; typed: string };
+
+// What the student sees of a graded clip answer; the transcript comes from the clip and is never stored (B2).
+export interface SpokenOutcome {
+  transcript: string;
+  estimate: PronunciationEstimate;
+  pronunciation: LocalizedText;
+}
 
 export type LessonAnswer =
   | { type: 'multiple_choice'; selectedIndex: number }
@@ -27,7 +39,8 @@ export type LessonAnswer =
   | MatchingAnswer
   | ClozeAnswer
   | AudioQuestionsAnswer
-  | LetterAnswer;
+  | LetterAnswer
+  | SpokenResponseAnswer;
 
 export type { AudioReveal };
 
@@ -45,6 +58,8 @@ export interface AttemptOutcome {
   reveal?: AudioReveal;
   // Writing: the full grade of a letter (marks, criteria, corrected version); `feedback` is its summary.
   letter?: LetterGrade;
+  // Speaking: a clip answer's transcript, pronunciation estimate and comment (never for a typed answer).
+  spoken?: SpokenOutcome;
 }
 
 const FLASHCARD_RATINGS: readonly FlashcardRating[] = ['knew', 'sort_of', 'didnt_know'];
@@ -76,6 +91,11 @@ export function parseLessonAnswer(raw: unknown): LessonAnswer | null {
   if (a.type === 'letter' && typeof a.text === 'string' && a.text.length <= LETTER_MAX_LENGTH && Number.isInteger(a.taskIndex)) {
     return { type: 'letter', taskIndex: a.taskIndex as number, text: a.text };
   }
+  // Exactly one of clipId and typed; the clip's scope is checked when graded.
+  if (a.type === 'spoken_response' && (a.clipId === undefined) !== (a.typed === undefined)) {
+    if (typeof a.clipId === 'string' && a.clipId.length > 0 && a.clipId.length <= 64) return { type: 'spoken_response', clipId: a.clipId };
+    if (typeof a.typed === 'string') return { type: 'spoken_response', typed: a.typed };
+  }
   return null;
 }
 
@@ -94,6 +114,8 @@ export function correctAnswerFor(exercise: Exercise): string | null {
       return (exercise.content as FillBlankContent).correctAnswer;
     case 'free_text':
       return (exercise.content as FreeTextContent).modelAnswer;
+    case 'spoken_response':
+      return (exercise.content as SpokenResponseContent).modelAnswer;
     case 'flashcard':
     case 'letter': // the corrected version comes with the grade
       return null;
@@ -167,6 +189,9 @@ export function answerTextFor(exercise: Exercise, answer: LessonAnswer): string 
     case 'free_text':
     case 'letter':
       return answer.text;
+    // B2: a clip's transcript lives only in speech_clips, so a clip answer stores no text.
+    case 'spoken_response':
+      return 'typed' in answer ? answer.typed : '';
     case 'flashcard':
       return answer.rating;
     case 'passage_questions':
@@ -235,6 +260,8 @@ export function taskTextFor(exercise: Exercise): string {
       return (exercise.content as FlashcardContent).front;
     case 'free_text':
       return (exercise.content as FreeTextContent).prompt;
+    case 'spoken_response':
+      return (exercise.content as SpokenResponseContent).prompt;
     case 'letter':
       return capped(letterTaskText(exercise.content as LetterContent));
     case 'passage_questions':

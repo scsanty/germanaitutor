@@ -7,6 +7,7 @@ import {
   BookOpen,
   ClipboardCheck,
   MessageCircle,
+  Mic,
   PenLine,
   Puzzle,
   type LucideIcon,
@@ -26,6 +27,7 @@ const ICONS: Partial<Record<FreestyleMode, LucideIcon>> = {
   grammar_drill: Puzzle,
   free_reading: BookOpen,
   free_writing: PenLine,
+  spoken: Mic,
   exam_practice: ClipboardCheck,
 };
 

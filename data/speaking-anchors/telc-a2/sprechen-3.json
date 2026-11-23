@@ -1,0 +1,40 @@
+{
+  "formatId": "telc-a2",
+  "partId": "sprechen-3",
+  "anchors": [
+    {
+      "band": "A",
+      "turns": [
+        "Wollen wir am Samstag zusammen ins Kino gehen? Es gibt einen neuen Film mit Tom Hanks.",
+        "Am Vormittag kann ich leider nicht, da muss ich einkaufen. Hast du am Nachmittag Zeit?",
+        "Um drei Uhr spielst du Tennis? Okay, dann vielleicht um sechs Uhr? Danach können wir noch etwas essen.",
+        "Gute Idee! Ich kenne ein kleines italienisches Restaurant neben dem Kino. Das ist nicht so teuer.",
+        "Wir treffen uns also um Viertel vor sechs vor dem Kino. Ich kaufe die Karten im Internet, ja?"
+      ],
+      "grades": { "ausdruck": "A", "aufgabe": "A", "richtigkeit": "A", "aussprache": "A" },
+      "justification": "Der Lernende macht Vorschläge, reagiert auf die Termine der Partnerin, schlägt eine andere Uhrzeit vor und einigt sich am Ende klar auf Zeit und Treffpunkt. Modalverben, Uhrzeiten und Präpositionen sind korrekt. Die Aussprache ist klar und gut verständlich."
+    },
+    {
+      "band": "C",
+      "turns": [
+        "Samstag … wir gehen Kino?",
+        "Vormittag … nein. Ich muss einkaufen.",
+        "Drei Uhr … du hast Tennis? … Äh … dann … sechs?",
+        "Ja … okay. Sechs … oder sieben. Ich weiß nicht."
+      ],
+      "grades": { "ausdruck": "B", "aufgabe": "B", "richtigkeit": "B", "aussprache": "B" },
+      "justification": "Die Lernende macht nur einen eigenen Vorschlag (Kino) und reagiert auf die Termine des Partners sehr knapp; eine Uhrzeit wird zwar genannt, aber eine klare Einigung auf Zeit und Treffpunkt kommt kaum zustande. Sie drückt sich nur mit sehr wenigen Wörtern aus, und die Wortsuche unterbricht das Gespräch oft. Viele Fehler, vor allem fehlende Präpositionen und Artikel („wir gehen Kino“), erschweren das Verständnis stellenweise, und auch die Aussprache erschwert es stellenweise."
+    },
+    {
+      "band": "D",
+      "turns": [
+        "Kino … ja.",
+        "Samstag … nein. Äh … ja.",
+        "Ich weiß nicht. Zeit … nicht.",
+        "Okay. Tschüss."
+      ],
+      "grades": { "ausdruck": "C", "aufgabe": "C", "richtigkeit": "C", "aussprache": "C" },
+      "justification": "Der Lernende macht keinen eigenen Vorschlag und reagiert auf die Vorschläge der Partnerin nur mit „ja“ oder „nein“, die nicht zueinander passen; es gibt keine Einigung. Er findet kaum Wörter, bildet keine Sätze, und die Äußerungen sind kaum zu verstehen. Die Aussprache macht die wenigen Wörter größtenteils unverständlich."
+    }
+  ]
+}

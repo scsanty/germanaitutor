@@ -3,7 +3,7 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import { cpSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { EXPECTED_LETTER_SETS, mergeTeilSets } from './merge-teil-sets';
+import { EXPECTED_LETTER_SETS, EXPECTED_SPOKEN_SETS, mergeTeilSets } from './merge-teil-sets';
 
 const REAL = join(process.cwd(), 'data');
 let root: string;
@@ -309,6 +309,44 @@ describe('mergeTeilSets', () => {
       // 22 letter parts x 3 sets: NaDoch 7 parts (21), Goethe 10 (30), telc 5 (15).
       expect(r.lines).toContain('letters telc: 3 of 15 sets (6 tasks)');
       expect(EXPECTED_LETTER_SETS).toEqual({ generic: 21, goethe: 30, telc: 15 });
+    });
+  });
+  describe('spoken', () => {
+    // telc-b1 sprechen-1: 4 rubric criteria, so 4 explanations.
+    const spokenSet = (turns = 4) => ({
+      taskType: 'spoken',
+      content: {
+        situation: 'Sie lernen sich kennen.',
+        materials: [{ title: 'Themen', points: ['Name', 'Herkunft'] }],
+        examinerIntro: 'Guten Tag. Bitte beginnen Sie.',
+        partner: { name: 'Leyla', gender: 'f', profile: 'Leyla ist 32 und Erzieherin.' },
+        turns,
+      },
+      explanations: ['Ausdruck', 'Aufgabe', 'Richtigkeit', 'Aussprache'].map((n) => ({ en: `Tip ${n}`, de: `Tipp ${n}` })),
+    });
+    const putSpoken = (n: string, set: unknown) => put(`telc-b1__sprechen-1__s${n}`, set);
+
+    it('merges clean spoken sets and prints the spoken total per track against the 114-set target', () => {
+      putSpoken('01', spokenSet());
+      putSpoken('02', spokenSet(6));
+      const r = mergeTeilSets({ workDir: work, dataRoot: root });
+      expect(r.ok).toBe(true);
+      expect(r.lines).toContain('telc-b1/sprechen-1: 2 sets OK, version 1');
+      // The fixture's telc-b1 sprechen-3 set counts too.
+      expect(r.lines).toContain('spoken telc: 3 of 45 sets');
+      expect(EXPECTED_SPOKEN_SETS).toEqual({ generic: 30, goethe: 39, telc: 45 });
+    });
+
+    it('rejects too many turns and the wrong explanation count', () => {
+      putSpoken('01', spokenSet(11));
+      const ex = spokenSet();
+      ex.explanations.pop();
+      putSpoken('02', ex);
+      const r = mergeTeilSets({ workDir: work, dataRoot: root });
+      expect(r.ok).toBe(false);
+      const text = r.lines.join('\n');
+      expect(text).toMatch(/s01: turns must be a whole number from 4 to 10/);
+      expect(text).toMatch(/s02: .*4 items need 4 explanations/);
     });
   });
 });

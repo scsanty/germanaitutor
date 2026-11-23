@@ -1,5 +1,5 @@
 {
-  "seedVersion": "11",
+  "seedVersion": "12",
   "formatVersion": 3,
   "track": "goethe",
   "level": "C1",
@@ -1504,6 +1504,21 @@
       }
     },
     {
+      "id": "c1-goethe-sprechen-teil1-monologischer-vortrag__ex4",
+      "lessonId": "c1-goethe-sprechen-teil1-monologischer-vortrag",
+      "track": "goethe",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "Give the Goethe C1 Teil 1 talk: open the topic, present different positions with examples, and argue your own conclusion.",
+          "de": "Halten Sie den Vortrag aus Goethe C1 Teil 1: Führen Sie ins Thema ein, stellen Sie verschiedene Positionen mit Beispielen dar und begründen Sie Ihr eigenes Fazit."
+        },
+        "prompt": "Thema: „Sollte der öffentliche Nahverkehr kostenlos sein?“ Sprechen Sie etwa drei bis vier Minuten.",
+        "modelAnswer": "Spätestens seit dem Neun-Euro-Ticket wird in Deutschland intensiv darüber diskutiert, ob Busse und Bahnen nicht grundsätzlich kostenlos sein sollten. Ich möchte zunächst die wichtigsten Argumente der Befürworter darstellen, anschließend auf die Einwände eingehen und abschließend meine eigene Position begründen. Befürworter verweisen darauf, dass ein kostenloser Nahverkehr Menschen mit geringem Einkommen entlasten und den Autoverkehr spürbar reduzieren könnte; Luxemburg dient hier häufig als Beispiel. Kritiker halten dem entgegen, dass vor allem das Angebot und nicht der Preis entscheidend sei: Was nützt ein Gratisticket, wenn auf dem Land nur zweimal am Tag ein Bus fährt? Zudem müssten die Einnahmeausfälle aus Steuermitteln gedeckt werden. Ich komme daher zu dem Schluss, dass zunächst massiv in den Ausbau investiert werden sollte, bevor man über eine vollständige Kostenfreiheit nachdenkt.",
+        "minSeconds": 120
+      }
+    },
+    {
       "id": "c1-goethe-sprechen-teil2-partnerdiskussion-konsens__ex0",
       "lessonId": "c1-goethe-sprechen-teil2-partnerdiskussion-konsens",
       "track": "goethe",
@@ -1547,6 +1562,21 @@
       "content": {
         "prompt": "Formulieren Sie den abschließenden Konsenssatz an die Prüfenden nach erfolgreicher Diskussion.",
         "modelAnswer": "Wir haben uns nach Abwägung aller Vor- und Nachteile darauf verständigt, vorrangig das Mehrgenerationen-Projekt zu fördern, da es gesellschaftlich die nachhaltigste Breitenwirkung entfaltet."
+      }
+    },
+    {
+      "id": "c1-goethe-sprechen-teil2-partnerdiskussion-konsens__ex4",
+      "lessonId": "c1-goethe-sprechen-teil2-partnerdiskussion-konsens",
+      "track": "goethe",
+      "type": "spoken_response",
+      "content": {
+        "instruction": {
+          "en": "As in Goethe C1 Teil 2, weigh the options with your partner, respond to their proposal and work towards a shared decision.",
+          "de": "Wägen Sie wie in Goethe C1 Teil 2 mit Ihrem Partner die Optionen ab, gehen Sie auf seinen Vorschlag ein und arbeiten Sie auf eine gemeinsame Entscheidung hin."
+        },
+        "prompt": "Ihre Gemeinde hat Geld für ein Projekt: einen Jugendtreff, eine Begegnungsstätte für Seniorinnen und Senioren oder mehr Radwege. Ihr Partner bevorzugt die Radwege. Diskutieren Sie und einigen Sie sich.",
+        "modelAnswer": "Ich kann gut nachvollziehen, warum du die Radwege bevorzugst, denn sie kämen der gesamten Bevölkerung zugute und würden zudem den Verkehr sicherer machen. Allerdings gebe ich zu bedenken, dass es für Jugendliche in unserer Gemeinde derzeit praktisch keinen Ort gibt, an dem sie sich ohne Konsumzwang treffen können. Gerade nach den Jahren der Pandemie halte ich das für ein drängendes Problem. Was hältst du von folgendem Vorschlag: Wir fördern in erster Linie den Jugendtreff, gestalten ihn aber als Mehrgenerationenhaus, das tagsüber auch Seniorinnen und Senioren offensteht, und beantragen für die Radwege zusätzlich Fördermittel des Landes? So würden wir zwei Anliegen gleichzeitig gerecht.",
+        "minSeconds": 90
       }
     }
   ],

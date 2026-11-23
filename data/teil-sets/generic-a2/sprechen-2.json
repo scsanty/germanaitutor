@@ -1,0 +1,167 @@
+{
+  "formatId": "generic-a2",
+  "partId": "sprechen-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-a2__sprechen-2__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie möchten mit einem Kollegen am Samstag einen Tagesausflug mit dem Zug nach Heidelberg machen. Planen Sie zusammen. Machen Sie Vorschläge, reagieren Sie auf die Vorschläge Ihres Partners und einigen Sie sich.",
+          "materials": [
+            {
+              "title": "Ausflug nach Heidelberg",
+              "points": [
+                "Abfahrt: wann?",
+                "Fahrkarte: welche?",
+                "Programm: Schloss, Altstadt, Schiff …?",
+                "Mittagessen: wo?",
+                "Rückfahrt: wann?"
+              ]
+            },
+            {
+              "title": "Ihr Samstag",
+              "points": [
+                "Sie müssen um 19 Uhr zu Hause sein.",
+                "Sie haben nicht viel Geld."
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2. Sie und Ihr Partner möchten am Samstag einen Ausflug nach Heidelberg machen. Planen Sie bitte zusammen, was Sie machen. Die Punkte auf dem Blatt helfen Ihnen. Einigen Sie sich am Ende. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Pavel",
+            "gender": "m",
+            "profile": "Pavel ist 38, kommt aus Tschechien und arbeitet mit dir im Lager. Er möchte früh losfahren, um sieben Uhr, und unbedingt das Schloss sehen. Er findet eine Schifffahrt auf dem Neckar toll, aber sie kostet 18 Euro. Zum Mittagessen möchte er in ein Restaurant in der Altstadt. Er kennt das Gruppenticket für den Regionalzug. Er ist flexibel, wenn man ihm gute Gründe nennt."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Make suggestions and react to your partner’s: „Wollen wir …?“, „Ich schlage vor, dass …“, „Das ist eine gute Idee.“, „Da kann ich leider nicht, aber …“, and sum up at the end: „Also, wir …“.",
+            "de": "Mach Vorschläge und reagiere auf die deines Partners: „Wollen wir …?“, „Ich schlage vor, dass …“, „Das ist eine gute Idee.“, „Da kann ich leider nicht, aber …“, und fasse am Ende zusammen: „Also, wir …“."
+          },
+          {
+            "en": "Make your own suggestions for each point (departure, ticket, programme, lunch, return), react to Pavel’s wishes (early start, castle, boat trip, restaurant) with your limits on time and money, and agree on a complete plan.",
+            "de": "Mach zu jedem Punkt eigene Vorschläge (Abfahrt, Fahrkarte, Programm, Mittagessen, Rückfahrt), reagiere auf Pavels Wünsche (früh los, Schloss, Schifffahrt, Restaurant) mit deinen Grenzen bei Zeit und Geld und einigt euch auf einen vollständigen Plan."
+          },
+          {
+            "en": "Use modal verbs with the infinitive at the end („Wir können um zehn Uhr fahren.“), the verb at the end after dass and weil, and the right prepositions of time and place (um, am, vor, beim Bahnhof).",
+            "de": "Benutze Modalverben mit dem Infinitiv am Ende („Wir können um zehn Uhr fahren.“), das Verb nach dass und weil am Ende und die richtigen Präpositionen für Zeit und Ort (um, am, vor, beim Bahnhof)."
+          },
+          {
+            "en": "Use a friendly, rising tone for suggestions and a clear falling tone when you sum up what you have agreed.",
+            "de": "Benutze für Vorschläge einen freundlichen, steigenden Ton und einen klar fallenden Ton, wenn du zusammenfasst, was ihr vereinbart habt."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-a2__sprechen-2__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie möchten mit einer Freundin einen Spieleabend bei Ihnen zu Hause machen. Planen Sie zusammen. Machen Sie Vorschläge, reagieren Sie auf die Vorschläge Ihrer Partnerin und einigen Sie sich.",
+          "materials": [
+            {
+              "title": "Spieleabend",
+              "points": [
+                "Tag und Uhrzeit?",
+                "Wen laden wir ein?",
+                "Welche Spiele?",
+                "Essen und Getränke: wer bringt was?",
+                "Wann ist Schluss?"
+              ]
+            },
+            {
+              "title": "Ihre Woche",
+              "points": [
+                "Montag bis Donnerstag: Spätschicht bis 22 Uhr",
+                "Ihre Wohnung ist klein: höchstens sechs Personen."
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2. Sie möchten mit Ihrer Partnerin einen Spieleabend bei Ihnen zu Hause machen. Planen Sie bitte gemeinsam. Die Punkte auf dem Blatt helfen Ihnen. Machen Sie Vorschläge und einigen Sie sich. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Amina",
+            "gender": "f",
+            "profile": "Amina ist 31, kommt aus Somalia und ist deine Freundin aus dem Sprachkurs. Sie möchte am liebsten am Mittwoch spielen und den ganzen Kurs einladen, also zehn Leute. Sie mag Kartenspiele und „Stadt, Land, Fluss“, weil man dabei Deutsch lernt. Sie kann einen Kuchen backen. Am nächsten Tag muss sie früh aufstehen. Sie ist kompromissbereit."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Make suggestions and react to your partner’s: „Wollen wir …?“, „Ich schlage vor, dass …“, „Das ist eine gute Idee.“, „Da kann ich leider nicht, aber …“, and sum up at the end: „Also, wir …“.",
+            "de": "Mach Vorschläge und reagiere auf die deines Partners: „Wollen wir …?“, „Ich schlage vor, dass …“, „Das ist eine gute Idee.“, „Da kann ich leider nicht, aber …“, und fasse am Ende zusammen: „Also, wir …“."
+          },
+          {
+            "en": "Suggest a day and time, the guests, the games, the food and an end time, react to Amina’s ideas (Wednesday, ten guests) with your shifts and small flat, and agree on every point.",
+            "de": "Schlag Tag und Uhrzeit, Gäste, Spiele, Essen und ein Ende vor, reagiere auf Aminas Ideen (Mittwoch, zehn Gäste) mit deinen Schichten und deiner kleinen Wohnung und einigt euch auf jeden Punkt."
+          },
+          {
+            "en": "Use modal verbs with the infinitive at the end („Wir können um zehn Uhr fahren.“), the verb at the end after dass and weil, and the right prepositions of time and place (um, am, vor, beim Bahnhof).",
+            "de": "Benutze Modalverben mit dem Infinitiv am Ende („Wir können um zehn Uhr fahren.“), das Verb nach dass und weil am Ende und die richtigen Präpositionen für Zeit und Ort (um, am, vor, beim Bahnhof)."
+          },
+          {
+            "en": "Use a friendly, rising tone for suggestions and a clear falling tone when you sum up what you have agreed.",
+            "de": "Benutze für Vorschläge einen freundlichen, steigenden Ton und einen klar fallenden Ton, wenn du zusammenfasst, was ihr vereinbart habt."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-a2__sprechen-2__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Im Stadtpark gibt es am Samstagabend ein Open-Air-Konzert. Sie möchten mit einem Nachbarn hingehen. Planen Sie zusammen. Machen Sie Vorschläge, reagieren Sie auf die Vorschläge Ihres Partners und einigen Sie sich.",
+          "materials": [
+            {
+              "title": "Open-Air-Konzert im Stadtpark",
+              "points": [
+                "Karten: online oder an der Abendkasse?",
+                "Treffpunkt und Uhrzeit?",
+                "Wie kommen wir hin?",
+                "Essen: mitnehmen oder dort kaufen?",
+                "Was machen wir bei Regen?"
+              ]
+            },
+            {
+              "title": "Informationen",
+              "points": [
+                "Konzert: 20 bis 22:30 Uhr",
+                "Karten online 15 €, Abendkasse 20 €",
+                "Picknickdecken erlaubt, keine Glasflaschen"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2. Sie möchten mit Ihrem Partner am Samstagabend zu einem Konzert im Stadtpark gehen. Planen Sie bitte zusammen. Die Punkte auf dem Blatt helfen Ihnen. Einigen Sie sich am Ende. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Herr Okafor",
+            "gender": "m",
+            "profile": "Herr Okafor ist 47, wohnt eine Etage über dir und hört gern Livemusik. Er möchte die Karten erst an der Abendkasse kaufen, falls es regnet. Er möchte mit dem Auto fahren, aber am Park gibt es wenig Parkplätze. Er bringt gern eine Picknickdecke mit. Er siezt dich, ist freundlich und lässt sich von guten Argumenten überzeugen."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Make suggestions and react to your partner’s: „Wollen wir …?“, „Ich schlage vor, dass …“, „Das ist eine gute Idee.“, „Da kann ich leider nicht, aber …“, and sum up at the end: „Also, wir …“.",
+            "de": "Mach Vorschläge und reagiere auf die deines Partners: „Wollen wir …?“, „Ich schlage vor, dass …“, „Das ist eine gute Idee.“, „Da kann ich leider nicht, aber …“, und fasse am Ende zusammen: „Also, wir …“."
+          },
+          {
+            "en": "Make suggestions about tickets, meeting time, transport, food and a plan B for rain, use the information on the sheet (prices, times, no glass) to answer Herr Okafor’s ideas and agree on a full plan.",
+            "de": "Mach Vorschläge zu Karten, Treffpunkt, Anfahrt, Essen und einem Plan B bei Regen, benutze die Informationen auf dem Blatt (Preise, Zeiten, kein Glas), um auf Herrn Okafors Ideen zu reagieren, und einigt euch auf einen vollständigen Plan."
+          },
+          {
+            "en": "Use modal verbs with the infinitive at the end („Wir können um zehn Uhr fahren.“), the verb at the end after dass and weil, and the right prepositions of time and place (um, am, vor, beim Bahnhof).",
+            "de": "Benutze Modalverben mit dem Infinitiv am Ende („Wir können um zehn Uhr fahren.“), das Verb nach dass und weil am Ende und die richtigen Präpositionen für Zeit und Ort (um, am, vor, beim Bahnhof)."
+          },
+          {
+            "en": "Use a friendly, rising tone for suggestions and a clear falling tone when you sum up what you have agreed.",
+            "de": "Benutze für Vorschläge einen freundlichen, steigenden Ton und einen klar fallenden Ton, wenn du zusammenfasst, was ihr vereinbart habt."
+          }
+        ]
+      }
+    }
+  ]
+}

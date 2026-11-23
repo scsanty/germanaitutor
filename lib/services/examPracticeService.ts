@@ -1,12 +1,11 @@
 import type Database from 'better-sqlite3';
 import { randomUUID } from 'node:crypto';
 import { formatId as formatIdOf, readFormat, RUNTIME_TASK_TYPES, type ExamFormat, type ExamPart } from '../exam/formats';
-import type { ItemReview, MockRun, PracticeOverview, PracticeResult, PracticeRun, ReadinessView } from '../exam/practiceViews';
+import type { ItemReview, MockRun, OralMockRun, PracticeOverview, PracticeResult, PracticeRun, ReadinessView } from '../exam/practiceViews';
 import type { TeilSetContent } from '../exam/teilSets';
 import type { MatchingContent } from '../tasks/matching';
 import { correctTexts, gradeTask, parseTaskAnswer, viewTask, type TaskAnswer } from '../tasks/taskTypes';
 import { answerTexts } from '../tasks/answerTexts';
-import { errorBodyFor, type ApiErrorBody, type ErrorCode, type ErrorParams } from '../tutoring/errorCodes';
 import { generateWithActiveProvider, type AiRequest, type AiResult } from './aiService';
 import { createProfileService } from './profileService';
 import { createTeilSetService, TeilSetError } from './teilSetService';
@@ -16,26 +15,24 @@ import { isSpeechUp } from '../speech/speechAvailability';
 import { audioReveal, type AudioQuestionsContent, type AudioReveal } from '../tasks/audioQuestions';
 import type { LetterAnswer, LetterContent } from '../tasks/letter';
 import type { LetterGrade } from '../writing/letterGrading';
+import type { SpokenPartContent } from '../tasks/spoken';
 import { pointsFor, rubricMaxPoints, type Grade, type WritingRubric } from '../writing/rubric';
 import { gradeLetter } from './letterGradingService';
+import { PracticeError } from './practiceError';
+import { createSpokenPartService, spokenStoredResult, type SpokenPartDeps } from './spokenPartService';
+import {
+  ABANDONED_MS,
+  GRADING_LOCK_MS,
+  overtimeSecondsOf,
+  partOf,
+  requireAttempt as requireAttemptIn,
+  round2,
+  setOf as setOfIn,
+  takeGradingLock,
+  type AttemptRow,
+} from './teilAttempts';
 
-export type PracticeErrorKind = 'not_found' | 'bad_request' | 'unavailable' | 'ai_failed';
-const STATUS: Record<PracticeErrorKind, number> = { not_found: 404, bad_request: 400, unavailable: 409, ai_failed: 502 };
-// S7: an unavailable part is a legitimate state with its own message, not a bad request.
-const CODE: Record<PracticeErrorKind, ErrorCode> = { not_found: 'not_found', bad_request: 'bad_request', unavailable: 'part_unavailable', ai_failed: 'ai_failed' };
-
-export class PracticeError extends Error {
-  readonly code: ErrorCode;
-  constructor(message: string, readonly kind: PracticeErrorKind, code?: ErrorCode, readonly params?: ErrorParams) {
-    super(message);
-    this.code = code ?? CODE[kind];
-  }
-}
-
-export function toPracticeErrorResponse(err: unknown): { status: number; body: ApiErrorBody } | null {
-  if (!(err instanceof PracticeError)) return null;
-  return { status: STATUS[err.kind], body: errorBodyFor(err) };
-}
+export { PracticeError, toPracticeErrorResponse, type PracticeErrorKind } from './practiceError';
 
 export interface ExamPracticeDeps {
   generate?: (request: AiRequest) => Promise<AiResult>;
@@ -43,39 +40,21 @@ export interface ExamPracticeDeps {
   // The bundled Teil sets folder (B2); tests point it at a fixture.
   setsDir?: string;
   // Listening availability (S7): tests inject fakes for the speech service and the audio cache.
+  // Spoken parts ask the same speech check.
   audio?: AudioAvailabilityDeps;
+  // Spoken parts: the voice renderer, the clip folder and the anchor reader (tests inject them).
+  spoken?: Omit<SpokenPartDeps, 'generate' | 'now'>;
 }
 
-// Review Focus 2: an attempt left open longer than this can't be submitted any more.
-const ABANDONED_MS = 3 * 3600 * 1000;
 const READINESS_WINDOW = 5;
 
-interface AttemptRow {
-  id: number;
-  format_id: string;
-  part_id: string;
-  set_id: string | null;
-  kind: 'practice' | 'mock';
-  mock_id: string | null;
-  score: number | null;
-  max_score: number | null;
-  overtime_seconds: number | null;
-  started_at: string;
-  finished_at: string | null;
-  answers: string | null;
-  grading_started_at: string | null;
-  result: string | null;
-}
-
-// A letter part is graded on its rubric, so it has no runner without one (formatProblems requires it for bundled formats).
-const hasRunner = (part: ExamPart) => RUNTIME_TASK_TYPES.has(part.taskType) && (part.taskType !== 'letter' || part.rubric !== undefined);
+// A letter or spoken part is graded on its rubric, so it has no runner without one.
+const hasRunner = (part: ExamPart) => RUNTIME_TASK_TYPES.has(part.taskType) && ((part.taskType !== 'letter' && part.taskType !== 'spoken') || part.rubric !== undefined);
 const isListening = (part: ExamPart) => part.taskType === 'audio_questions';
+const isSpoken = (part: ExamPart) => part.taskType === 'spoken';
 // S10: Sprachbausteine are practised only inside the full mock.
 const singlyRunnable = (part: ExamPart) => hasRunner(part) && part.skill !== 'sprachbausteine';
 const percent = (score: number, max: number) => (max > 0 ? (score / max) * 100 : 0);
-const round2 = (n: number) => Math.round(n * 100) / 100;
-// B4: a letter's grading lock older than this is stale (the provider times out after 90 s).
-const GRADING_LOCK_MS = 120 * 1000;
 
 // Nothing was written: every criterion at its lowest grade, and no AI call.
 export function emptyLetterGrade(rubric: WritingRubric): LetterGrade {
@@ -100,6 +79,7 @@ export function createExamPracticeService(db: Database.Database, deps: ExamPract
   const generate = deps.generate ?? ((request: AiRequest) => generateWithActiveProvider(db, request));
   const clock = deps.now ?? (() => new Date());
   const teilSets = createTeilSetService(db, { generate, now: clock, setsDir: deps.setsDir });
+  const spoken = createSpokenPartService(db, { ...deps.spoken, generate, now: clock });
   const cached = deps.audio?.cached ?? hasAudio;
   const askSpeech = deps.audio?.speechUp ?? (() => isSpeechUp(db));
   // One speech check per request (the answer is memoized in-process for 30 s anyway).
@@ -119,24 +99,13 @@ export function createExamPracticeService(db: Database.Database, deps: ExamPract
     return teilSets.hasUsableSet(formatId, part.id, setCached) || (await speechUp());
   }
 
-  function partOf(formatId: string, partId: string): { format: ExamFormat; part: ExamPart } {
-    // S1: readFormat accepts only known format-id shapes.
-    const format = typeof formatId === 'string' ? readFormat(formatId) : null;
-    const part = format?.parts.find((p) => p.id === partId);
-    if (!format || !part) throw new PracticeError(`Unknown exam part: ${formatId}/${partId}`, 'not_found');
-    return { format, part };
-  }
-
   function activeFormat(): ExamFormat | null {
     const profile = createProfileService(db).getProfile();
     return readFormat(formatIdOf(profile.activeTrack, profile.activeLevel));
   }
 
-  function setOf(setId: string | null): TeilSetContent {
-    const row = setId ? (db.prepare('SELECT content FROM teil_sets WHERE id = ?').get(setId) as { content: string } | undefined) : undefined;
-    if (!row) throw new PracticeError('The set for this attempt no longer exists', 'not_found');
-    return JSON.parse(row.content) as TeilSetContent;
-  }
+  const setOf = (setId: string | null) => setOfIn(db, setId);
+  const requireAttempt = (attemptId: number) => requireAttemptIn(db, attemptId);
 
   // S10: while the speech service is down a listening part serves only sets with cached audio and
   // never asks the AI for a new set (its audio couldn't be rendered). `playable` feeds the view.
@@ -173,7 +142,8 @@ export function createExamPracticeService(db: Database.Database, deps: ExamPract
     part: ExamPart,
     picked: { id: string; set: TeilSetContent; playable: (hash: string) => boolean },
     startedAt: string,
-    mockId: string | null
+    mockId: string | null,
+    spokenRun?: PracticeRun['spoken']
   ): PracticeRun => ({
     attemptId,
     formatId,
@@ -182,17 +152,39 @@ export function createExamPracticeService(db: Database.Database, deps: ExamPract
     minutes: part.minutes,
     startedAt,
     mockId,
+    ...(spokenRun ? { spoken: spokenRun } : {}),
   });
 
-  // The written-block parts a mock runs, in block order.
-  function mockParts(format: ExamFormat): ExamPart[] {
-    const block = format.blocks.find((b) => b.id === 'written');
+  // A block's parts with a runner, in block order: the written block is the mock, the oral block follows it (B4).
+  function mockParts(format: ExamFormat, blockId: 'written' | 'oral' = 'written'): ExamPart[] {
+    const block = format.blocks.find((b) => b.id === blockId);
     return (block?.partIds ?? []).map((id) => format.parts.find((p) => p.id === id)!).filter(hasRunner);
   }
 
+  // S17: a spoken part needs the speech service for its voices and the student's recordings.
+  async function requireSpeech(speechUp: () => Promise<boolean>): Promise<void> {
+    if (!(await speechUp())) throw new PracticeError("The speech service isn't available right now", 'unavailable', 'speech_unavailable');
+  }
+
+  // Creates the attempt; a spoken part also opens its conversation with the examiner's intro (S18).
+  async function startAttempt(
+    formatId: string,
+    part: ExamPart,
+    picked: { id: string; set: TeilSetContent; playable: (hash: string) => boolean },
+    kind: 'practice' | 'mock',
+    mockId: string | null,
+    startedAt: string
+  ): Promise<PracticeRun> {
+    const attemptId = insertAttempt(formatId, part, picked.id, kind, mockId, startedAt);
+    const spokenRun = picked.set.taskType === 'spoken' ? await spoken.open(attemptId, picked.set.content as SpokenPartContent) : undefined;
+    return runOf(attemptId, formatId, part, picked, startedAt, mockId, spokenRun);
+  }
+
+  const aiReady = () => db.prepare('SELECT 1 FROM provider_connections WHERE is_active = 1').get() !== undefined;
+
   async function overview(): Promise<PracticeOverview> {
     const format = activeFormat();
-    if (!format) return { format: null, parts: [], mockRunnable: false };
+    if (!format) return { format: null, parts: [], mockRunnable: false, aiReady: aiReady() };
     const last = db.prepare(
       'SELECT score, max_score FROM teil_attempts WHERE format_id = ? AND part_id = ? AND finished_at IS NOT NULL ORDER BY finished_at DESC, id DESC LIMIT 1'
     );
@@ -202,29 +194,35 @@ export function createExamPracticeService(db: Database.Database, deps: ExamPract
       listeningOk.set(part.id, await listeningRunnable(format.id, part, speechUp));
     }
     const available = (part: ExamPart) => listeningOk.get(part.id) ?? true;
+    const speaks = format.parts.some((p) => hasRunner(p) && isSpoken(p)) && (await speechUp());
     const inMock = mockParts(format);
     return {
       format,
       parts: format.parts.map((part) => {
         const row = last.get(format.id, part.id) as { score: number; max_score: number } | undefined;
+        const speechUnavailable = hasRunner(part) && isSpoken(part) && !speaks;
         return {
           part,
-          runnable: singlyRunnable(part) && available(part),
+          runnable: singlyRunnable(part) && available(part) && !speechUnavailable,
           mockOnly: hasRunner(part) && !singlyRunnable(part),
           audioUnavailable: !available(part),
+          speechUnavailable,
           lastPercent: row ? Math.round(percent(row.score, row.max_score)) : null,
         };
       }),
       mockRunnable: inMock.length > 0 && inMock.every(available),
+      aiReady: aiReady(),
     };
   }
 
   async function start(formatId: string, partId: string): Promise<PracticeRun> {
     const { part } = partOf(formatId, partId);
     if (!singlyRunnable(part)) throw new PracticeError(`${partId} can't be practised on its own`, 'unavailable');
-    const picked = await pick(formatId, part, speechCheck());
+    const speechUp = speechCheck();
+    if (isSpoken(part)) await requireSpeech(speechUp);
+    const picked = await pick(formatId, part, speechUp);
     const startedAt = clock().toISOString();
-    return runOf(insertAttempt(formatId, part, picked.id, 'practice', null, startedAt), formatId, part, picked, startedAt, null);
+    return startAttempt(formatId, part, picked, 'practice', null, startedAt);
   }
 
   // Spec + B2: every written-block part with a runner, in block order, under one timer. A part
@@ -248,30 +246,60 @@ export function createExamPracticeService(db: Database.Database, deps: ExamPract
     const runs = db.transaction(() =>
       parts.map((part, i) => runOf(insertAttempt(format.id, part, picks[i].id, 'mock', mockId, startedAt), format.id, part, picks[i], startedAt, mockId))
     )();
-    return { mockId, runs, minutes: parts.reduce((s, p) => s + p.minutes, 0) };
+    // B4: the oral block isn't started here; its clock starts when the student starts it.
+    const oralParts = mockParts(format, 'oral');
+    const oral = oralParts.length > 0 ? { partIds: oralParts.map((p) => p.id), runnable: await speechUp() } : null;
+    return { mockId, runs, minutes: parts.reduce((s, p) => s + p.minutes, 0), oral };
   }
 
-  // For a mock attempt the clock is the mock's: its shared start and the sum of its parts' minutes.
-  function allowedMinutes(row: AttemptRow, part: ExamPart, format: ExamFormat): number {
-    if (!row.mock_id) return part.minutes;
-    const ids = db.prepare('SELECT part_id FROM teil_attempts WHERE mock_id = ?').all(row.mock_id) as { part_id: string }[];
-    return ids.reduce((s, { part_id }) => s + (format.parts.find((p) => p.id === part_id)?.minutes ?? 0), 0);
+  // B4: the oral block of a mock, created when the student starts it: its spoken parts in block order,
+  // sharing the mock's id and one start, so it has its own clock.
+  async function startMockOral(mockId: string): Promise<OralMockRun> {
+    const attempts =
+      typeof mockId === 'string' ? (db.prepare('SELECT format_id, part_id FROM teil_attempts WHERE mock_id = ?').all(mockId) as { format_id: string; part_id: string }[]) : [];
+    const format = attempts.length > 0 ? readFormat(attempts[0].format_id) : null;
+    if (!format) throw new PracticeError('Mock not found', 'not_found');
+    const parts = mockParts(format, 'oral');
+    if (parts.length === 0) throw new PracticeError('This exam has no oral parts to practise yet', 'unavailable');
+    const alreadyStarted = () => {
+      const ids = (db.prepare('SELECT part_id FROM teil_attempts WHERE mock_id = ?').all(mockId) as { part_id: string }[]).map((a) => a.part_id);
+      return parts.some((p) => ids.includes(p.id));
+    };
+    const started = () => new PracticeError('The oral part of this mock has already started', 'unavailable');
+    if (alreadyStarted()) throw started();
+    const speechUp = speechCheck();
+    await requireSpeech(speechUp);
+    const picks: { id: string; set: TeilSetContent; playable: (hash: string) => boolean }[] = [];
+    for (const part of parts) picks.push(await pick(format.id, part, speechUp));
+    const startedAt = clock().toISOString();
+    // All the oral attempts are created at once, re-checked in the same transaction, so two racing starts can't
+    // create the block twice (which would double its clock). Their conversations open afterwards.
+    const attemptIds = db.transaction(() => {
+      if (alreadyStarted()) throw started();
+      return parts.map((part, i) => insertAttempt(format.id, part, picks[i].id, 'mock', mockId, startedAt));
+    })();
+    const runs: PracticeRun[] = [];
+    try {
+      for (const [i, part] of parts.entries()) {
+        const spokenRun = await spoken.open(attemptIds[i], picks[i].set.content as SpokenPartContent);
+        runs.push(runOf(attemptIds[i], format.id, part, picks[i], startedAt, mockId, spokenRun));
+      }
+    } catch (err) {
+      // A conversation that can't open takes the whole block back out, so starting it again works.
+      for (const id of attemptIds) spoken.discard(id);
+      throw err;
+    }
+    return { mockId, runs };
   }
 
-  // A letter has no per-item review (gradeTask throws for letters): its grade is stored instead (B4).
+  // A letter or spoken part has no per-item review (gradeTask throws for them): its grade is stored instead (B4).
   function reviewOf(set: TeilSetContent, answer: TaskAnswer): { review: ItemReview[]; right: number } {
-    if (set.taskType === 'letter') return { review: [], right: 0 };
+    if (set.taskType === 'letter' || set.taskType === 'spoken') return { review: [], right: 0 };
     const { itemResults } = gradeTask(set.taskType, set.content, answer);
     const correct = correctTexts(set.taskType, set.content);
     const given = answerTexts(set.taskType, set.content, answer);
     const review = itemResults.map((right, index) => ({ index, answerText: given[index], right, correct: correct[index], explanation: set.explanations[index] }));
     return { review, right: itemResults.filter(Boolean).length };
-  }
-
-  function requireAttempt(attemptId: number): AttemptRow {
-    const row = Number.isInteger(attemptId) ? (db.prepare('SELECT * FROM teil_attempts WHERE id = ?').get(attemptId) as AttemptRow | undefined) : undefined;
-    if (!row) throw new PracticeError('Attempt not found', 'not_found');
-    return row;
   }
 
   // Listening: after submit the transcript and evidence are shown (spec: never before answering).
@@ -301,8 +329,9 @@ export function createExamPracticeService(db: Database.Database, deps: ExamPract
   function storedResult(row: AttemptRow): PracticeResult {
     const set = setOf(row.set_id);
     const answer = JSON.parse(row.answers!) as TaskAnswer;
-    // B4: a letter replays its stored grade; it is never graded again.
+    // B4: a letter replays its stored grade; it is never graded again. B2: so does a spoken part, without its conversation.
     if (answer.type === 'letter') return letterResult(row, set, answer, JSON.parse(row.result!) as LetterGrade);
+    if (answer.type === 'spoken') return spokenStoredResult(row, set);
     const { review } = reviewOf(set, answer);
     return { attemptId: row.id, score: row.score!, maxScore: row.max_score!, overtimeSeconds: row.overtime_seconds ?? 0, review, ...revealOf(set) };
   }
@@ -353,18 +382,9 @@ export function createExamPracticeService(db: Database.Database, deps: ExamPract
       return letterResult(requireAttempt(row.id), set, answer, grade);
     }
 
-    const lockedAt = clock();
-    const locked = db
-      .prepare(
-        'UPDATE teil_attempts SET grading_started_at = ? WHERE id = ? AND finished_at IS NULL AND (grading_started_at IS NULL OR grading_started_at < ?)'
-      )
-      .run(lockedAt.toISOString(), row.id, new Date(lockedAt.getTime() - GRADING_LOCK_MS).toISOString());
-    if (locked.changes === 0) return refuseWhileGrading();
     // Releases only this submit's own lock, never one a later submit took over after it went stale.
-    const unlock = () =>
-      db
-        .prepare('UPDATE teil_attempts SET grading_started_at = NULL WHERE id = ? AND finished_at IS NULL AND grading_started_at = ?')
-        .run(row.id, lockedAt.toISOString());
+    const unlock = takeGradingLock(db, row.id, clock());
+    if (!unlock) return refuseWhileGrading();
 
     let outcome: Awaited<ReturnType<typeof gradeLetter>>;
     try {
@@ -392,8 +412,7 @@ export function createExamPracticeService(db: Database.Database, deps: ExamPract
     // Review Focus 1: a repeated submit returns the first result unchanged.
     if (row.finished_at) return storedResult(row);
     const now = clock();
-    const elapsedMs = now.getTime() - Date.parse(row.started_at);
-    if (elapsedMs > ABANDONED_MS) throw new PracticeError('This attempt has expired', 'not_found');
+    if (now.getTime() - Date.parse(row.started_at) > ABANDONED_MS) throw new PracticeError('This attempt has expired', 'not_found');
     const { format, part } = partOf(row.format_id, row.part_id);
     const set = setOf(row.set_id);
     const answer = parseTaskAnswer(set.taskType, answers, set.content);
@@ -402,7 +421,7 @@ export function createExamPracticeService(db: Database.Database, deps: ExamPract
       answer?.type === 'matching' && !(set.content as MatchingContent).allowNone && answer.selected.some((s) => s === null);
     if (!answer || noneWithoutOption) throw new PracticeError('The answers do not fit this task', 'bad_request');
     // S4: measured at request entry, before any AI call, so grading time never counts as overtime.
-    const overtimeSeconds = Math.max(0, Math.floor(elapsedMs / 1000 - allowedMinutes(row, part, format) * 60));
+    const overtimeSeconds = overtimeSecondsOf(db, row, part, format, now);
     if (answer.type === 'letter') return submitLetter(row, format, part, set, answer, now, overtimeSeconds);
     const { review, right } = reviewOf(set, answer);
     const score = round2((right * part.points) / review.length);
@@ -415,8 +434,8 @@ export function createExamPracticeService(db: Database.Database, deps: ExamPract
     if (!row.finished_at) throw new PracticeError('Submit the part before asking about it', 'bad_request');
     const { part } = partOf(row.format_id, row.part_id);
     const set = setOf(row.set_id);
-    // S17: a letter's feedback is its grade; there is no item to ask about.
-    if (set.taskType === 'letter') throw new PracticeError('A letter has no items to ask about', 'bad_request');
+    // S17: a letter's (or a spoken part's) feedback is its grade; there is no item to ask about.
+    if (set.taskType === 'letter' || set.taskType === 'spoken') throw new PracticeError('This part has no items to ask about', 'bad_request');
     const { review } = reviewOf(set, JSON.parse(row.answers!) as TaskAnswer);
     const item = Number.isInteger(itemIndex) ? review[itemIndex] : undefined;
     if (!item) throw new PracticeError('There is no such item', 'bad_request');
@@ -471,5 +490,5 @@ export function createExamPracticeService(db: Database.Database, deps: ExamPract
     };
   }
 
-  return { overview, start, startMock, submit, explain, readiness };
+  return { overview, start, startMock, startMockOral, submit, explain, readiness };
 }

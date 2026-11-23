@@ -513,3 +513,95 @@ describe('attemptService listening availability', () => {
     await expect(service.markLessonDone('a1-hear')).rejects.toThrow(AttemptError);
   });
 });
+
+describe('attemptService spoken responses (Speaking)', () => {
+  const content = { instruction: { en: 'Answer aloud.', de: 'Antworte laut.' }, prompt: 'Wie geht es Ihnen?', modelAnswer: 'Mir geht es gut.' };
+  const words = [
+    { word: 'Mir', start: 0, end: 0.3, probability: 0.9 },
+    { word: 'geht', start: 0.3, end: 0.6, probability: 0.4 },
+    { word: 'gut.', start: 0.6, end: 1, probability: 0.8 },
+  ];
+
+  function spokenSetup(gradeResult: 'correct' | 'almost' | 'wrong' = 'almost') {
+    const gradeFreeText = vi.fn<GradeFreeText>().mockImplementation(async (input) => ({
+      ok: true,
+      result: gradeResult,
+      feedback: { en: 'Nearly.', de: 'Fast.' },
+      mistakes: [{ category: 'verbs', wrong: 'geht', right: 'geht es' }],
+      ...(input.unclearWords ? { pronunciation: { en: 'Mostly clear.', de: 'Meist deutlich.' } } : {}),
+    }));
+    const db = createDbClient(':memory:');
+    seedTutoringCurriculum(db);
+    markComplete(db, 'a1-greet');
+    db.prepare("INSERT INTO exercises (id, lesson_id, type, content) VALUES ('a1-sein__ex12', 'a1-sein', 'spoken_response', ?)").run(JSON.stringify(content));
+    const addClip = (id: string, scope = 'lesson:a1-sein', role = 'student') =>
+      db.prepare('INSERT INTO speech_clips (id, scope, role, file, transcript, words, created_at) VALUES (?, ?, ?, NULL, ?, ?, ?)').run(
+        id, scope, role, 'Mir geht gut.', JSON.stringify(words), '2026-09-24T08:00:00.000Z'
+      );
+    const service = createAttemptService(db, { gradeFreeText, now: () => new Date(2026, 8, 24, 10, 0) });
+    return { db, service, gradeFreeText, addClip };
+  }
+
+  it('grades a clip answer with the estimate, never stores the transcript, and logs mistakes as speaking', async () => {
+    const { db, service, gradeFreeText, addClip } = spokenSetup();
+    addClip('c1');
+    const outcome = await service.recordAttempt('a1-sein__ex12', { type: 'spoken_response', clipId: 'c1' }, 'lesson');
+    expect(outcome).toMatchObject({
+      result: 'almost',
+      correctAnswer: 'Mir geht es gut.',
+      feedback: { en: 'Nearly.', de: 'Fast.' },
+      spoken: { transcript: 'Mir geht gut.', estimate: { score: 70, unclear: ['geht'] }, pronunciation: { en: 'Mostly clear.', de: 'Meist deutlich.' } },
+    });
+    expect(gradeFreeText).toHaveBeenCalledWith({
+      prompt: 'Answer aloud. — Wie geht es Ihnen?',
+      modelAnswer: 'Mir geht es gut.',
+      studentAnswer: 'Mir geht gut.',
+      level: 'A1',
+      unclearWords: ['geht'],
+    });
+    // B2: the transcript lives only in speech_clips.
+    expect(db.prepare("SELECT answer_text FROM lesson_attempts WHERE exercise_id = 'a1-sein__ex12'").get()).toEqual({ answer_text: '' });
+    expect(db.prepare('SELECT source, wrong FROM error_log').all()).toEqual([{ source: 'speaking', wrong: 'geht' }]);
+  });
+
+  it('refuses a clip from another scope with bad_request, before any AI call', async () => {
+    const { db, service, gradeFreeText, addClip } = spokenSetup();
+    addClip('other', 'lesson:a1-greet');
+    addClip('partner', 'lesson:a1-sein', 'partner');
+    for (const clipId of ['other', 'partner', 'missing']) {
+      await expect(service.recordAttempt('a1-sein__ex12', { type: 'spoken_response', clipId }, 'lesson')).rejects.toMatchObject({ kind: 'bad_request' });
+    }
+    expect(gradeFreeText).not.toHaveBeenCalled();
+    expect(db.prepare('SELECT COUNT(*) AS n FROM lesson_attempts').get()).toEqual({ n: 0 });
+  });
+
+  it('grades a typed answer as free text: no spoken part, stored as typed, mistakes logged as lesson', async () => {
+    const { db, service, gradeFreeText } = spokenSetup();
+    const outcome = await service.recordAttempt('a1-sein__ex12', { type: 'spoken_response', typed: 'Mir geht gut.' }, 'lesson');
+    expect(outcome).toMatchObject({ result: 'almost', correctAnswer: 'Mir geht es gut.' });
+    expect(outcome).not.toHaveProperty('spoken');
+    expect(gradeFreeText).toHaveBeenCalledWith({ prompt: 'Answer aloud. — Wie geht es Ihnen?', modelAnswer: 'Mir geht es gut.', studentAnswer: 'Mir geht gut.', level: 'A1' });
+    expect(db.prepare("SELECT answer_text FROM lesson_attempts WHERE exercise_id = 'a1-sein__ex12'").get()).toEqual({ answer_text: 'Mir geht gut.' });
+    expect(db.prepare('SELECT source FROM error_log').all()).toEqual([{ source: 'lesson' }]);
+  });
+
+  it('counts toward completion, and never gets a review schedule, at completion or after it', async () => {
+    const { db, service, addClip } = spokenSetup();
+    await service.recordAttempt('a1-sein__ex2', { type: 'fill_blank', text: 'bin' }, 'lesson');
+    expect(await service.recordAttempt('a1-sein__ex10', { type: 'free_text', text: 'Ich bin müde.' }, 'lesson')).toMatchObject({ justCompleted: false });
+    addClip('c1');
+    expect(await service.recordAttempt('a1-sein__ex12', { type: 'spoken_response', clipId: 'c1' }, 'lesson')).toMatchObject({ justCompleted: true });
+    await service.recordAttempt('a1-sein__ex12', { type: 'spoken_response', typed: 'Mir geht es gut.' }, 'lesson');
+    expect(db.prepare('SELECT exercise_id FROM exercise_srs_state ORDER BY exercise_id').all()).toEqual([
+      { exercise_id: 'a1-sein__ex10' },
+      { exercise_id: 'a1-sein__ex2' },
+    ]);
+  });
+
+  it('refuses a queue answer to a spoken response even if a review row exists for it', async () => {
+    const { db, service, gradeFreeText } = spokenSetup();
+    scheduleReview(db, 'a1-sein__ex12', '2026-09-20');
+    await expect(service.recordAttempt('a1-sein__ex12', { type: 'spoken_response', typed: 'Gut.' }, 'queue')).rejects.toMatchObject({ code: 'not_due' });
+    expect(gradeFreeText).not.toHaveBeenCalled();
+  });
+});

@@ -1,0 +1,42 @@
+{
+  "formatId": "goethe-a1",
+  "partId": "sprechen-1",
+  "anchors": [
+    {
+      "band": "A",
+      "turns": [
+        "Guten Tag. Mein Name ist Elena Petrova. Ich bin 31 Jahre alt.",
+        "Ich komme aus Bulgarien, aus Sofia. Jetzt wohne ich in Leipzig.",
+        "Ich spreche Bulgarisch, Russisch, Englisch und ein bisschen Deutsch.",
+        "Ich bin Ingenieurin von Beruf. In meiner Freizeit lese ich gern und ich fahre Fahrrad.",
+        "Das Wort ist „Bahnhof“: B – A – H – N – H – O – F.",
+        "Meine Zahl ist achtundvierzig."
+      ],
+      "grades": { "erfuellung": "A", "kohaerenz": "A", "wortschatz": "A", "strukturen": "A", "aussprache": "A" },
+      "justification": "Die Lernende spricht zu allen Stichpunkten (Name, Alter, Land, Wohnort, Sprachen, Beruf, Hobby), buchstabiert das Wort richtig und nennt die Zahl ohne Fehler. Die Sätze sind kurz, logisch verbunden („und“) und für A1 korrekt; der Wortschatz passt. Die Aussprache ist klar und gut verständlich."
+    },
+    {
+      "band": "C",
+      "turns": [
+        "Ich heiße Tomasz. Ich bin … vierzig.",
+        "Ich komme aus Polen. Wohnen … Hamburg.",
+        "Ich arbeiten in Restaurant. Hobby … Fußball.",
+        "Wort „Kino“: K – I – … äh … M – O.",
+        "Zahl … dreiundfünfzig. Nein … fünfunddreißig."
+      ],
+      "grades": { "erfuellung": "B", "kohaerenz": "B", "wortschatz": "B", "strukturen": "B", "aussprache": "B" },
+      "justification": "Der Lernende stellt sich nur zu einigen Punkten vor: Die Sprachen fehlen, beim Buchstabieren macht er einen Fehler („M“ statt „N“), und die Zahl gelingt erst im zweiten Versuch. Die Angaben stehen meist unverbunden nebeneinander. Der Wortschatz ist sehr begrenzt, und Fehler auch in einfachen Sätzen („Ich arbeiten in Restaurant“, „Wohnen … Hamburg“) erschweren das Verständnis stellenweise. Auch die Aussprache erschwert das Verständnis stellenweise."
+    },
+    {
+      "band": "D",
+      "turns": [
+        "Ich … Name Amira.",
+        "Ägypten.",
+        "Wohnen … äh … nicht weiß.",
+        "Zahl … zwölf? Ja."
+      ],
+      "grades": { "erfuellung": "C", "kohaerenz": "C", "wortschatz": "C", "strukturen": "C", "aussprache": "C" },
+      "justification": "Eine Vorstellung kommt kaum zustande: Die Lernende nennt nur Name und Land; Alter, Wohnort, Sprachen, Beruf und Hobby fehlen, und sie buchstabiert nichts. Es ist kein Zusammenhang erkennbar, der Wortschatz reicht für die Aufgabe nicht aus, und ohne Satzbau sind die Äußerungen kaum verständlich. Lange Pausen und eine undeutliche Aussprache machen sie größtenteils unverständlich."
+    }
+  ]
+}

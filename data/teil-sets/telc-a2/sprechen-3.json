@@ -1,0 +1,148 @@
+{
+  "formatId": "telc-a2",
+  "partId": "sprechen-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "telc-a2__sprechen-3__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Ihre Kollegin Sandra hat nächste Woche Geburtstag. Sie möchten mit Ihrem Partner / Ihrer Partnerin am Samstag zusammen ein Geschenk für sie kaufen. Finden Sie einen Termin.",
+          "materials": [
+            {
+              "title": "Ihr Terminkalender: Samstag",
+              "points": [
+                "8:00–10:00 Frühstück mit der Familie",
+                "10:30 Friseur",
+                "12:00–14:00 frei",
+                "14:00–15:30 Fußballspiel von meinem Sohn",
+                "ab 16:00 frei",
+                "19:00 Abendessen bei Freunden"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 3. Sie möchten am Samstag zusammen ein Geburtstagsgeschenk für Ihre Kollegin Sandra kaufen. Sie haben beide einen Terminkalender. Finden Sie zusammen eine Zeit, wann Sie in die Stadt gehen können. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Lukas",
+            "gender": "m",
+            "profile": "Lukas ist ein Kollege, 31 Jahre alt. Sein Samstag: bis 11 Uhr schläft er und geht joggen, von 12 bis 13 Uhr hat er einen Termin in der Autowerkstatt, von 15 bis 17 Uhr hilft er seiner Mutter im Garten, ab 17 Uhr ist er frei. Er kennt Sandra gut und weiß, dass sie gern liest und Tee trinkt."
+          },
+          "turns": 5
+        },
+        "explanations": [
+          {
+            "en": "Use phrases for suggesting and reacting: „Wollen wir …?“, „Hast du um … Zeit?“, „Das geht leider nicht, da muss ich …“, „Gut, dann treffen wir uns um …“.",
+            "de": "Benutze Redemittel zum Vorschlagen und Reagieren: „Wollen wir …?“, „Hast du um … Zeit?“, „Das geht leider nicht, da muss ich …“, „Gut, dann treffen wir uns um …“."
+          },
+          {
+            "en": "Make suggestions for times, say why some times do not work (with your calendar), react to Lukas’s times and agree on one concrete time and meeting place at the end.",
+            "de": "Schlag Uhrzeiten vor, sag mit Hilfe deines Kalenders, warum manche Zeiten nicht gehen, reagiere auf die Zeiten von Lukas und einigt euch am Ende auf eine konkrete Uhrzeit und einen Treffpunkt."
+          },
+          {
+            "en": "Say times correctly („um halb vier“, „am Nachmittag“, „von zehn bis zwölf“) and put the verb second after a time: „Um drei muss ich …“.",
+            "de": "Nenne Uhrzeiten richtig („um halb vier“, „am Nachmittag“, „von zehn bis zwölf“) und stell das Verb nach einer Zeitangabe an die zweite Stelle: „Um drei muss ich …“."
+          },
+          {
+            "en": "Say times and numbers slowly and clearly so that your partner does not misunderstand the appointment.",
+            "de": "Sprich Uhrzeiten und Zahlen langsam und deutlich, damit dein Partner den Termin nicht falsch versteht."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a2__sprechen-3__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Am Sonntag ist ein großer Flohmarkt im Stadtpark. Sie möchten mit Ihrem Partner / Ihrer Partnerin zusammen hingehen. Finden Sie einen Termin.",
+          "materials": [
+            {
+              "title": "Ihr Terminkalender: Sonntag",
+              "points": [
+                "bis 9:30 ausschlafen",
+                "10:00–11:30 Schwimmbad mit den Kindern",
+                "12:00 Mittagessen",
+                "13:00–14:00 frei",
+                "14:00–16:00 Besuch von Oma",
+                "ab 16:30 frei (Flohmarkt bis 18 Uhr)"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 3. Am Sonntag gibt es einen Flohmarkt im Stadtpark, und Sie möchten zusammen hingehen. Sehen Sie in Ihren Terminkalender und finden Sie eine Zeit, die für Sie beide passt. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Nadia",
+            "gender": "f",
+            "profile": "Nadia ist eine Freundin aus dem Deutschkurs, 28 Jahre alt. Ihr Sonntag: von 9 bis 11 Uhr arbeitet sie im Café, von 12 bis 13:30 Uhr kocht sie mit ihrem Mann, ab 14 Uhr ist sie frei, um 17 Uhr muss sie zu Hause sein. Sie sucht auf dem Flohmarkt einen kleinen Tisch und Kinderbücher."
+          },
+          "turns": 5
+        },
+        "explanations": [
+          {
+            "en": "Use phrases for suggesting and reacting: „Wollen wir …?“, „Hast du um … Zeit?“, „Das geht leider nicht, da muss ich …“, „Gut, dann treffen wir uns um …“.",
+            "de": "Benutze Redemittel zum Vorschlagen und Reagieren: „Wollen wir …?“, „Hast du um … Zeit?“, „Das geht leider nicht, da muss ich …“, „Gut, dann treffen wir uns um …“."
+          },
+          {
+            "en": "Suggest times from your calendar, explain when you cannot go and why, react to Nadia’s suggestions and agree on a time that fits both of you before the flea market closes.",
+            "de": "Schlag Zeiten aus deinem Kalender vor, erklär, wann du nicht kannst und warum, reagiere auf Nadias Vorschläge und einigt euch auf eine Zeit, die für euch beide passt, bevor der Flohmarkt schließt."
+          },
+          {
+            "en": "Say times correctly („um halb vier“, „am Nachmittag“, „von zehn bis zwölf“) and put the verb second after a time: „Um drei muss ich …“.",
+            "de": "Nenne Uhrzeiten richtig („um halb vier“, „am Nachmittag“, „von zehn bis zwölf“) und stell das Verb nach einer Zeitangabe an die zweite Stelle: „Um drei muss ich …“."
+          },
+          {
+            "en": "Say times and numbers slowly and clearly so that your partner does not misunderstand the appointment.",
+            "de": "Sprich Uhrzeiten und Zahlen langsam und deutlich, damit dein Partner den Termin nicht falsch versteht."
+          }
+        ]
+      }
+    },
+    {
+      "id": "telc-a2__sprechen-3__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Ihr Partner / Ihre Partnerin möchte ein Fahrrad kaufen, und Sie kennen sich gut mit Fahrrädern aus. Sie möchten am Freitag zusammen in ein Fahrradgeschäft gehen. Finden Sie einen Termin.",
+          "materials": [
+            {
+              "title": "Ihr Terminkalender: Freitag",
+              "points": [
+                "7:00–13:00 Arbeit",
+                "13:30 Mittagessen mit Kollegen",
+                "14:30–16:00 frei",
+                "16:00 Kinder vom Kindergarten abholen",
+                "17:00–18:30 Deutschkurs",
+                "Fahrradgeschäft: Mo–Fr 9–19 Uhr"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 3. Ihr Partner möchte ein Fahrrad kaufen, und Sie möchten am Freitag zusammen in ein Fahrradgeschäft gehen. Finden Sie mit Hilfe Ihres Terminkalenders eine passende Zeit. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Samir",
+            "gender": "m",
+            "profile": "Samir ist ein Nachbar, 26 Jahre alt. Sein Freitag: von 8 bis 12 Uhr hat er einen Kurs, von 12:30 bis 15 Uhr arbeitet er im Lager, um 15:30 Uhr ist er frei, ab 18 Uhr geht er zum Fußballtraining. Er möchte ein gebrauchtes Fahrrad für höchstens 200 Euro."
+          },
+          "turns": 5
+        },
+        "explanations": [
+          {
+            "en": "Use phrases for suggesting and reacting: „Wollen wir …?“, „Hast du um … Zeit?“, „Das geht leider nicht, da muss ich …“, „Gut, dann treffen wir uns um …“.",
+            "de": "Benutze Redemittel zum Vorschlagen und Reagieren: „Wollen wir …?“, „Hast du um … Zeit?“, „Das geht leider nicht, da muss ich …“, „Gut, dann treffen wir uns um …“."
+          },
+          {
+            "en": "Propose times, use your calendar to explain what is not possible, react to Samir’s times and agree on a time and a place to meet before you go to the shop.",
+            "de": "Schlag Zeiten vor, erklär mit deinem Kalender, was nicht geht, reagiere auf Samirs Zeiten und einigt euch auf eine Uhrzeit und einen Treffpunkt, bevor ihr ins Geschäft geht."
+          },
+          {
+            "en": "Say times correctly („um halb vier“, „am Nachmittag“, „von zehn bis zwölf“) and put the verb second after a time: „Um drei muss ich …“.",
+            "de": "Nenne Uhrzeiten richtig („um halb vier“, „am Nachmittag“, „von zehn bis zwölf“) und stell das Verb nach einer Zeitangabe an die zweite Stelle: „Um drei muss ich …“."
+          },
+          {
+            "en": "Say times and numbers slowly and clearly so that your partner does not misunderstand the appointment.",
+            "de": "Sprich Uhrzeiten und Zahlen langsam und deutlich, damit dein Partner den Termin nicht falsch versteht."
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -36,8 +36,77 @@
         "D": "Die Fehler sind so zahlreich, dass der Text über weite Strecken unverständlich ist." } }
     ], "zeroesTextOn": { "criterion": "aufgabe", "grade": "D" } },
       "instructions": "Wählen Sie Aufgabe A oder Aufgabe B. Schreiben Sie eine halbformelle E-Mail als Antwort auf eine Anzeige (mindestens 150 Wörter). Behandeln Sie die vier Leitpunkte und achten Sie auf eine passende Reihenfolge, Anrede und Gruß." },
-    { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Mündlicher Ausdruck Teil 1" }, "taskType": "spoken", "items": 3, "points": 25, "minutes": 5, "instructions": "Über Erfahrungen sprechen: Sprechen Sie über das Thema, das Sie vorbereitet haben, und beantworten Sie anschließend die Fragen Ihres Partners / Ihrer Partnerin." },
-    { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Mündlicher Ausdruck Teil 2" }, "taskType": "spoken", "items": 3, "points": 25, "minutes": 5, "instructions": "Diskussion: Geben Sie die Hauptaussagen des Zeitungsartikels wieder, den Sie in der Vorbereitungszeit gelesen haben. Diskutieren Sie mit Ihrem Partner / Ihrer Partnerin darüber, begründen Sie Ihre Meinung und reagieren Sie auf seine / ihre Argumente." },
-    { "id": "sprechen-3", "skill": "speaking", "title": { "en": "Speaking Part 3", "de": "Mündlicher Ausdruck Teil 3" }, "taskType": "spoken", "items": 3, "points": 25, "minutes": 5, "instructions": "Gemeinsam etwas planen: Planen Sie zusammen mit Ihrem Partner / Ihrer Partnerin eine Aktivität. Bringen Sie eigene Ideen ein, machen Sie Vorschläge, reagieren Sie auf die Vorschläge und einigen Sie sich." }
+    { "id": "sprechen-1", "skill": "speaking", "title": { "en": "Speaking Part 1", "de": "Mündlicher Ausdruck Teil 1" }, "taskType": "spoken", "items": 4, "points": 25, "minutes": 5,
+      "rubric": { "criteria": [
+      { "id": "ausdruck", "name": { "en": "Expression", "de": "Ausdrucksfähigkeit" }, "points": { "A": 7, "B": 4, "C": 1.5, "D": 0 }, "descriptors": {
+        "A": "Drückt sich flüssig, klar und situationsangemessen aus; der Wortschatz ist für B2 breit und präzise, und Argumente sind mit vielfältigen Konnektoren (z. B. allerdings, daher, im Gegensatz dazu) verknüpft.",
+        "B": "Drückt sich meist flüssig und angemessen aus; der Wortschatz reicht für die Aufgabe, ist aber stellenweise ungenau, und Konnektoren sind eher einförmig.",
+        "C": "Drückt sich oft stockend aus; der Wortschatz ist begrenzt, Umschreibungen gelingen selten, und die Äußerungen sind wenig verknüpft.",
+        "D": "Kann sich zum Thema kaum ausdrücken; die Äußerungen sind bruchstückhaft oder größtenteils unverständlich." } },
+      { "id": "aufgabe", "name": { "en": "Task completion", "de": "Aufgabenbewältigung" }, "points": { "A": 7, "B": 4, "C": 1.5, "D": 0 }, "descriptors": {
+        "A": "Spricht ausführlich und zusammenhängend über das vorbereitete Thema, bringt eigene Erfahrungen und Beispiele ein und beantwortet die Fragen des Partners / der Partnerin genau.",
+        "B": "Spricht über das Thema und bringt Erfahrungen ein; einzelne Aspekte oder Antworten bleiben knapp.",
+        "C": "Spricht nur oberflächlich über das Thema, bringt kaum Erfahrungen ein und beantwortet die Fragen nur teilweise.",
+        "D": "Die Aufgabe wird kaum oder gar nicht bewältigt." } },
+      { "id": "richtigkeit", "name": { "en": "Formal accuracy", "de": "Formale Richtigkeit" }, "points": { "A": 7, "B": 4, "C": 1.5, "D": 0 }, "descriptors": {
+        "A": "Ein breites Spektrum an Strukturen wird sicher und weitgehend korrekt verwendet; Fehler sind selten und werden oft selbst korrigiert.",
+        "B": "Die Strukturen sind meist korrekt; Fehler in komplexen Sätzen kommen vor, führen aber nicht zu Missverständnissen.",
+        "C": "Häufige Fehler, auch in einfachen Strukturen, erschweren das Verständnis stellenweise.",
+        "D": "Die Äußerungen sind wegen der Fehler größtenteils unverständlich." } },
+      { "id": "aussprache", "name": { "en": "Pronunciation and intonation", "de": "Aussprache und Intonation" }, "points": { "A": 4, "B": 2.5, "C": 1, "D": 0 }, "descriptors": {
+        "A": "Aussprache und Intonation sind klar und natürlich; kleine Abweichungen stören nicht.",
+        "B": "Aussprache und Intonation sind meist gut verständlich; ein fremder Akzent ist hörbar, stört aber kaum.",
+        "C": "Aussprache und Intonation erschweren das Verständnis stellenweise deutlich.",
+        "D": "Aussprache und Intonation machen die Äußerungen größtenteils unverständlich." } }
+    ] },
+      "instructions": "Über Erfahrungen sprechen: Sprechen Sie über das Thema, das Sie vorbereitet haben, und beantworten Sie anschließend die Fragen Ihres Partners / Ihrer Partnerin." },
+    { "id": "sprechen-2", "skill": "speaking", "title": { "en": "Speaking Part 2", "de": "Mündlicher Ausdruck Teil 2" }, "taskType": "spoken", "items": 4, "points": 25, "minutes": 5,
+      "rubric": { "criteria": [
+      { "id": "ausdruck", "name": { "en": "Expression", "de": "Ausdrucksfähigkeit" }, "points": { "A": 7, "B": 4, "C": 1.5, "D": 0 }, "descriptors": {
+        "A": "Drückt sich flüssig, klar und situationsangemessen aus; der Wortschatz ist für B2 breit und präzise, und Argumente sind mit vielfältigen Konnektoren (z. B. allerdings, daher, im Gegensatz dazu) verknüpft.",
+        "B": "Drückt sich meist flüssig und angemessen aus; der Wortschatz reicht für die Aufgabe, ist aber stellenweise ungenau, und Konnektoren sind eher einförmig.",
+        "C": "Drückt sich oft stockend aus; der Wortschatz ist begrenzt, Umschreibungen gelingen selten, und die Äußerungen sind wenig verknüpft.",
+        "D": "Kann sich zum Thema kaum ausdrücken; die Äußerungen sind bruchstückhaft oder größtenteils unverständlich." } },
+      { "id": "aufgabe", "name": { "en": "Task completion", "de": "Aufgabenbewältigung" }, "points": { "A": 7, "B": 4, "C": 1.5, "D": 0 }, "descriptors": {
+        "A": "Gibt die Hauptaussagen des Artikels treffend wieder, vertritt eine eigene Meinung mit überzeugenden Argumenten und geht auf die Argumente des Partners / der Partnerin ein.",
+        "B": "Gibt die wichtigsten Aussagen des Artikels wieder und begründet die eigene Meinung; das Eingehen auf die Gegenargumente bleibt teilweise knapp.",
+        "C": "Gibt den Artikel nur bruchstückhaft wieder, begründet die eigene Meinung kaum und geht wenig auf den Partner / die Partnerin ein.",
+        "D": "Die Aufgabe wird kaum oder gar nicht bewältigt." } },
+      { "id": "richtigkeit", "name": { "en": "Formal accuracy", "de": "Formale Richtigkeit" }, "points": { "A": 7, "B": 4, "C": 1.5, "D": 0 }, "descriptors": {
+        "A": "Ein breites Spektrum an Strukturen wird sicher und weitgehend korrekt verwendet; Fehler sind selten und werden oft selbst korrigiert.",
+        "B": "Die Strukturen sind meist korrekt; Fehler in komplexen Sätzen kommen vor, führen aber nicht zu Missverständnissen.",
+        "C": "Häufige Fehler, auch in einfachen Strukturen, erschweren das Verständnis stellenweise.",
+        "D": "Die Äußerungen sind wegen der Fehler größtenteils unverständlich." } },
+      { "id": "aussprache", "name": { "en": "Pronunciation and intonation", "de": "Aussprache und Intonation" }, "points": { "A": 4, "B": 2.5, "C": 1, "D": 0 }, "descriptors": {
+        "A": "Aussprache und Intonation sind klar und natürlich; kleine Abweichungen stören nicht.",
+        "B": "Aussprache und Intonation sind meist gut verständlich; ein fremder Akzent ist hörbar, stört aber kaum.",
+        "C": "Aussprache und Intonation erschweren das Verständnis stellenweise deutlich.",
+        "D": "Aussprache und Intonation machen die Äußerungen größtenteils unverständlich." } }
+    ] },
+      "instructions": "Diskussion: Geben Sie die Hauptaussagen des Zeitungsartikels wieder, den Sie in der Vorbereitungszeit gelesen haben. Diskutieren Sie mit Ihrem Partner / Ihrer Partnerin darüber, begründen Sie Ihre Meinung und reagieren Sie auf seine / ihre Argumente." },
+    { "id": "sprechen-3", "skill": "speaking", "title": { "en": "Speaking Part 3", "de": "Mündlicher Ausdruck Teil 3" }, "taskType": "spoken", "items": 4, "points": 25, "minutes": 5,
+      "rubric": { "criteria": [
+      { "id": "ausdruck", "name": { "en": "Expression", "de": "Ausdrucksfähigkeit" }, "points": { "A": 7, "B": 4, "C": 1.5, "D": 0 }, "descriptors": {
+        "A": "Drückt sich flüssig, klar und situationsangemessen aus; der Wortschatz ist für B2 breit und präzise, und Argumente sind mit vielfältigen Konnektoren (z. B. allerdings, daher, im Gegensatz dazu) verknüpft.",
+        "B": "Drückt sich meist flüssig und angemessen aus; der Wortschatz reicht für die Aufgabe, ist aber stellenweise ungenau, und Konnektoren sind eher einförmig.",
+        "C": "Drückt sich oft stockend aus; der Wortschatz ist begrenzt, Umschreibungen gelingen selten, und die Äußerungen sind wenig verknüpft.",
+        "D": "Kann sich zum Thema kaum ausdrücken; die Äußerungen sind bruchstückhaft oder größtenteils unverständlich." } },
+      { "id": "aufgabe", "name": { "en": "Task completion", "de": "Aufgabenbewältigung" }, "points": { "A": 7, "B": 4, "C": 1.5, "D": 0 }, "descriptors": {
+        "A": "Bringt eigene Ideen ein, macht und begründet Vorschläge, wägt die Vorschläge des Partners / der Partnerin ab und führt das Gespräch zu einer gemeinsamen Lösung.",
+        "B": "Macht Vorschläge und reagiert meist passend; Begründungen oder einzelne Planungspunkte bleiben knapp.",
+        "C": "Bringt kaum eigene Ideen ein, reagiert nur knapp und trägt wenig zur Einigung bei.",
+        "D": "Die Aufgabe wird kaum oder gar nicht bewältigt." } },
+      { "id": "richtigkeit", "name": { "en": "Formal accuracy", "de": "Formale Richtigkeit" }, "points": { "A": 7, "B": 4, "C": 1.5, "D": 0 }, "descriptors": {
+        "A": "Ein breites Spektrum an Strukturen wird sicher und weitgehend korrekt verwendet; Fehler sind selten und werden oft selbst korrigiert.",
+        "B": "Die Strukturen sind meist korrekt; Fehler in komplexen Sätzen kommen vor, führen aber nicht zu Missverständnissen.",
+        "C": "Häufige Fehler, auch in einfachen Strukturen, erschweren das Verständnis stellenweise.",
+        "D": "Die Äußerungen sind wegen der Fehler größtenteils unverständlich." } },
+      { "id": "aussprache", "name": { "en": "Pronunciation and intonation", "de": "Aussprache und Intonation" }, "points": { "A": 4, "B": 2.5, "C": 1, "D": 0 }, "descriptors": {
+        "A": "Aussprache und Intonation sind klar und natürlich; kleine Abweichungen stören nicht.",
+        "B": "Aussprache und Intonation sind meist gut verständlich; ein fremder Akzent ist hörbar, stört aber kaum.",
+        "C": "Aussprache und Intonation erschweren das Verständnis stellenweise deutlich.",
+        "D": "Aussprache und Intonation machen die Äußerungen größtenteils unverständlich." } }
+    ] },
+      "instructions": "Gemeinsam etwas planen: Planen Sie zusammen mit Ihrem Partner / Ihrer Partnerin eine Aktivität. Bringen Sie eigene Ideen ein, machen Sie Vorschläge, reagieren Sie auf die Vorschläge und einigen Sie sich." }
   ]
 }

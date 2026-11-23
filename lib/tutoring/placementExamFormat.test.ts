@@ -46,7 +46,7 @@ describe('placement exam format', () => {
       errors: [
         'Question 6 (q1): duplicate id',
         'Question 6 (q1): level A1 comes after C1; questions must be ordered from easiest to hardest level',
-        'Question 6 (q1): type must be one of multiple_choice, fill_blank, free_text',
+        'Question 6 (q1): type must be one of multiple_choice, fill_blank, free_text, spoken',
         'Question 7 (q7): level must be one of A1, A2, B1, B2, C1',
         'Question 7 (q7): modelAnswer must be a non-empty string',
       ],
@@ -59,5 +59,15 @@ describe('placement exam format', () => {
       ok: false,
       errors: ['The exam has no B2 questions; every level from A1 to C1 needs at least one'],
     });
+  });
+
+  it('accepts a spoken item and rejects one without a prompt or model answer', () => {
+    const spoken: PlacementQuestion = { id: 's', level: 'A1', type: 'spoken', content: { prompt: 'Stellen Sie sich vor.', modelAnswer: 'Ich heiße Anna.' } };
+    const exam = [spoken, ...validExam().slice(1)];
+    expect(validatePlacementExam({ questions: exam })).toEqual({ ok: true, questions: exam });
+    const bad = [{ ...spoken, content: { prompt: '', modelAnswer: 'x' } }, ...validExam().slice(1)];
+    const result = validatePlacementExam({ questions: bad });
+    expect(result.ok).toBe(false);
+    if (!result.ok) expect(result.errors.join(' ')).toMatch(/prompt/);
   });
 });

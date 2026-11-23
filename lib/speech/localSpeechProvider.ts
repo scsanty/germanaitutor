@@ -1,9 +1,26 @@
-import type { RenderInput, SpeechProvider } from './speechProvider';
+import type { RenderInput, SpeechProvider, Transcription } from './speechProvider';
 import { SpeechServiceError, SpeechUnreachableError } from './speechErrors';
 
 // The sidecar's body limits (speech/audio_core.py); a larger body is refused here instead of sent.
 export const MAX_RENDER_BYTES = 1024 * 1024;
 export const MAX_CONVERT_BYTES = 25 * 1024 * 1024;
+
+export const MAX_TRANSCRIBE_BYTES = 25 * 1024 * 1024;
+// Final review I4: Whisper on the CPU takes longer the longer the clip, and `medium` is several times
+// slower than `small`. The upload size is the duration proxy the app has before the sidecar decodes it:
+// a 5-minute browser recording is about 1-2.5 MB of webm/opus (32-64 kbit/s) and up to about 5 MB of
+// Safari mp4/aac (128 kbit/s). 120 s stays the floor; each MB adds 120 s. At 64 kbit/s 1 MB is about
+// 2 minutes of speech, so that is one second of waiting per second of speech on top of the floor, which
+// covers `medium` at about real time on a slow CPU. The cap of 600 s (reached at 4 MB) means no request
+// waits more than 10 minutes.
+const TRANSCRIBE_MIN_TIMEOUT_MS = 120_000;
+const TRANSCRIBE_TIMEOUT_MS_PER_MB = 120_000;
+const TRANSCRIBE_MAX_TIMEOUT_MS = 600_000;
+
+export function transcribeTimeoutMs(bytes: number): number {
+  const scaled = TRANSCRIBE_MIN_TIMEOUT_MS + (bytes / (1024 * 1024)) * TRANSCRIBE_TIMEOUT_MS_PER_MB;
+  return Math.round(Math.min(TRANSCRIBE_MAX_TIMEOUT_MS, scaled));
+}
 
 const HEALTH_TIMEOUT_MS = 3000;
 const BASE_TIMEOUT_MS = 60_000;
@@ -31,7 +48,7 @@ async function errorText(res: Response): Promise<string> {
 }
 
 // S6: AbortSignal.timeout (not a hand-made controller) so Node's fetch accepts the signal in every environment.
-async function post(url: string, body: BodyInit, headers: Record<string, string>, timeoutMs = BASE_TIMEOUT_MS): Promise<Buffer> {
+async function send(url: string, body: BodyInit, headers: Record<string, string>, timeoutMs: number): Promise<Response> {
   let res: Response;
   try {
     res = await fetch(url, { method: 'POST', headers, body, signal: AbortSignal.timeout(timeoutMs) });
@@ -41,11 +58,28 @@ async function post(url: string, body: BodyInit, headers: Record<string, string>
     throw new SpeechUnreachableError(`speech service unreachable: ${(err as Error).name === 'TimeoutError' ? 'timed out' : detail}`);
   }
   if (!res.ok) throw new SpeechServiceError(`speech service ${res.status}: ${await errorText(res)}`, res.status);
+  return res;
+}
+
+async function post(url: string, body: BodyInit, headers: Record<string, string>, timeoutMs = BASE_TIMEOUT_MS): Promise<Buffer> {
+  const res = await send(url, body, headers, timeoutMs);
   try {
     return Buffer.from(await res.arrayBuffer());
   } catch (err) {
     throw new SpeechUnreachableError(`speech service unreachable: ${(err as Error).message}`);
   }
+}
+
+// The sidecar's reply is checked, so a malformed one never reaches a stored transcript.
+function parseTranscription(raw: unknown): Transcription {
+  const body = raw as Partial<Transcription> | null;
+  if (!body || typeof body.text !== 'string' || typeof body.duration !== 'number' || !Array.isArray(body.words)) {
+    throw new SpeechServiceError('speech service 502: unexpected /transcribe reply', 502);
+  }
+  const words = body.words.filter(
+    (w) => w && typeof w.word === 'string' && typeof w.start === 'number' && typeof w.end === 'number' && typeof w.probability === 'number'
+  );
+  return { text: body.text, language: typeof body.language === 'string' ? body.language : 'de', duration: body.duration, words };
 }
 
 export function createLocalSpeechProvider(baseUrl: string): SpeechProvider {
@@ -70,6 +104,21 @@ export function createLocalSpeechProvider(baseUrl: string): SpeechProvider {
     async convert(data) {
       if (data.length > MAX_CONVERT_BYTES) throw new SpeechServiceError('speech service 413: the recording is larger than 25 MB', 413);
       return post(url('/convert'), new Uint8Array(data), { 'Content-Type': 'application/octet-stream' });
+    },
+    async transcribe(audio, model) {
+      if (audio.length > MAX_TRANSCRIBE_BYTES) throw new SpeechServiceError('speech service 413: the recording is larger than 25 MB', 413);
+      const res = await send(
+        url(`/transcribe?model=${encodeURIComponent(model)}`),
+        new Uint8Array(audio),
+        { 'Content-Type': 'application/octet-stream' },
+        transcribeTimeoutMs(audio.length)
+      );
+      try {
+        return parseTranscription(await res.json());
+      } catch (err) {
+        if (err instanceof SpeechServiceError) throw err;
+        throw new SpeechUnreachableError(`speech service unreachable: ${(err as Error).message}`);
+      }
     },
   };
 }

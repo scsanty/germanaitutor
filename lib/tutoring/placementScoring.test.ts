@@ -7,6 +7,7 @@ import {
   placementThresholds,
   placedLevel,
   stopReasonAfterAnswer,
+  servedExam,
   MAX_MISTAKES,
 } from './placementScoring';
 
@@ -59,5 +60,11 @@ describe('placement scoring', () => {
     expect(stopReasonAfterAnswer(5, 10, 40)).toBe('five_mistakes');
     expect(stopReasonAfterAnswer(2, 40, 40)).toBe('finished');
     expect(stopReasonAfterAnswer(5, 40, 40)).toBe('five_mistakes');
+  });
+
+  it('servedExam keeps the exam in served order, and an empty list means the whole exam', () => {
+    const exam = [{ id: 'a' }, { id: 'b' }, { id: 'c' }];
+    expect(servedExam(exam, ['a', 'c'])).toEqual([{ id: 'a' }, { id: 'c' }]);
+    expect(servedExam(exam, [])).toBe(exam);
   });
 });

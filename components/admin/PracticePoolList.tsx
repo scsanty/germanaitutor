@@ -34,6 +34,7 @@ function preview(item: PracticePoolItem): string {
       return `${c.front} → ${c.back}`;
     }
     case 'free_text':
+    case 'spoken_response': // never generated for the pool; listed for completeness
       return (item.content as FreeTextContent).prompt;
     case 'passage_questions':
       return (item.content as PassageQuestionsContent).passage;

@@ -1,0 +1,175 @@
+{
+  "formatId": "goethe-a1",
+  "partId": "sprechen-3",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-a1__sprechen-3__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie arbeiten zusammen im Büro. Sie und Ihr Partner / Ihre Partnerin haben Bildkarten. Formulieren Sie zu jedem Bild eine Bitte und reagieren Sie auf die Bitten Ihres Partners / Ihrer Partnerin.",
+          "materials": [
+            {
+              "title": "Ihre Bildkarten",
+              "points": [
+                "Bild: eine Schere",
+                "Bild: ein Kalender",
+                "Bild: eine Tasse Kaffee"
+              ]
+            },
+            {
+              "title": "Die Bildkarten Ihres Partners / Ihrer Partnerin",
+              "points": [
+                "Bild: ein Telefon",
+                "Bild: ein Stuhl",
+                "Bild: ein Drucker mit Papier"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 3. Sie sind im Büro. Sie haben Karten mit Bildern. Formulieren Sie mit Ihrer Karte eine Bitte an Ihre Partnerin. Ihre Partnerin reagiert. Dann hat Ihre Partnerin eine Bitte an Sie. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Frau Kaya",
+            "gender": "f",
+            "profile": "Frau Kaya ist eine Kollegin im Büro, 38 Jahre alt. Sie ist hilfsbereit: Die Schere und den Kalender gibt sie gern, Kaffee ist leider alle. Ihre eigenen Bitten: kurz telefonieren, einen Stuhl für einen Gast, Papier für den Drucker. Sie spricht in kurzen, höflichen Sätzen."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Make a polite request for each of your pictures (Schere, Kalender, Kaffee) that fits the office, and react to each of Frau Kaya’s requests (telephone, chair, printer paper) with yes or with a polite reason why not.",
+            "de": "Formuliere zu jedem deiner Bilder (Schere, Kalender, Kaffee) eine höfliche Bitte, die ins Büro passt, und reagiere auf jede Bitte von Frau Kaya (Telefon, Stuhl, Druckerpapier) mit Ja oder mit einem höflichen Grund, warum nicht."
+          },
+          {
+            "en": "Make your request, then react to your partner’s request with a clear answer („Ja, gern. Hier, bitte.“ or „Tut mir leid, …“) before you take the next card.",
+            "de": "Formuliere deine Bitte und reagiere dann mit einer klaren Antwort auf die Bitte deines Partners („Ja, gern. Hier, bitte.“ oder „Tut mir leid, …“), bevor du die nächste Karte nimmst."
+          },
+          {
+            "en": "Name the thing in the picture with its article and use polite words: bitte, danke, gern, Entschuldigung.",
+            "de": "Nenne den Gegenstand auf dem Bild mit Artikel und benutze höfliche Wörter: bitte, danke, gern, Entschuldigung."
+          },
+          {
+            "en": "Use the polite request forms „Kannst du / Können Sie bitte …?“ with the infinitive at the end, or „Ich möchte bitte …“ / „Gib mir bitte …“.",
+            "de": "Benutze die höflichen Bitten „Kannst du / Können Sie bitte …?“ mit dem Infinitiv am Ende oder „Ich möchte bitte …“ / „Gib mir bitte …“."
+          },
+          {
+            "en": "Speak in a friendly tone and stress the important word: „Kannst du mir bitte das SALZ geben?“",
+            "de": "Sprich in einem freundlichen Ton und betone das wichtige Wort: „Kannst du mir bitte das SALZ geben?“"
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a1__sprechen-3__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie sitzen mit Ihrem Partner / Ihrer Partnerin in einem Café. Sie haben beide Bildkarten. Formulieren Sie zu jedem Bild eine Bitte und reagieren Sie auf die Bitten Ihres Partners / Ihrer Partnerin.",
+          "materials": [
+            {
+              "title": "Ihre Bildkarten",
+              "points": [
+                "Bild: eine Speisekarte",
+                "Bild: Zucker",
+                "Bild: eine Rechnung"
+              ]
+            },
+            {
+              "title": "Die Bildkarten Ihres Partners / Ihrer Partnerin",
+              "points": [
+                "Bild: eine Serviette",
+                "Bild: ein Löffel",
+                "Bild: ein Handy"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 3. Sie sind zusammen in einem Café. Auf Ihren Karten sind Bilder. Bitten Sie Ihren Partner mit Ihrer Karte um etwas. Ihr Partner reagiert. Danach bittet Ihr Partner Sie um etwas. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Jonas",
+            "gender": "m",
+            "profile": "Jonas ist 29, ein Freund aus dem Deutschkurs, und arbeitet als Koch. Er gibt die Speisekarte und den Zucker gern weiter und möchte die Rechnung heute bezahlen. Seine Bitten: eine Serviette, einen Löffel, kurz das Handy, weil sein Akku leer ist. Er antwortet kurz und locker."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Ask for the menu, the sugar and the bill with a polite request each, and react to Jonas’s requests (napkin, spoon, phone) clearly, giving the thing or saying politely why you can’t.",
+            "de": "Bitte höflich um die Speisekarte, den Zucker und die Rechnung und reagiere klar auf die Bitten von Jonas (Serviette, Löffel, Handy): Gib ihm die Sache oder sag höflich, warum es nicht geht."
+          },
+          {
+            "en": "Make your request, then react to your partner’s request with a clear answer („Ja, gern. Hier, bitte.“ or „Tut mir leid, …“) before you take the next card.",
+            "de": "Formuliere deine Bitte und reagiere dann mit einer klaren Antwort auf die Bitte deines Partners („Ja, gern. Hier, bitte.“ oder „Tut mir leid, …“), bevor du die nächste Karte nimmst."
+          },
+          {
+            "en": "Name the thing in the picture with its article and use polite words: bitte, danke, gern, Entschuldigung.",
+            "de": "Nenne den Gegenstand auf dem Bild mit Artikel und benutze höfliche Wörter: bitte, danke, gern, Entschuldigung."
+          },
+          {
+            "en": "Use the polite request forms „Kannst du / Können Sie bitte …?“ with the infinitive at the end, or „Ich möchte bitte …“ / „Gib mir bitte …“.",
+            "de": "Benutze die höflichen Bitten „Kannst du / Können Sie bitte …?“ mit dem Infinitiv am Ende oder „Ich möchte bitte …“ / „Gib mir bitte …“."
+          },
+          {
+            "en": "Speak in a friendly tone and stress the important word: „Kannst du mir bitte das SALZ geben?“",
+            "de": "Sprich in einem freundlichen Ton und betone das wichtige Wort: „Kannst du mir bitte das SALZ geben?“"
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a1__sprechen-3__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie haben Besuch zu Hause: Ihr Partner / Ihre Partnerin ist Ihr Gast. Sie haben beide Bildkarten. Formulieren Sie zu jedem Bild eine Bitte und reagieren Sie auf die Bitten Ihres Partners / Ihrer Partnerin.",
+          "materials": [
+            {
+              "title": "Ihre Bildkarten",
+              "points": [
+                "Bild: ein Foto",
+                "Bild: eine Uhr",
+                "Bild: ein Schlüssel"
+              ]
+            },
+            {
+              "title": "Die Bildkarten Ihres Partners / Ihrer Partnerin",
+              "points": [
+                "Bild: ein Handtuch",
+                "Bild: Brot",
+                "Bild: ein Fernseher"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 3. Ihre Partnerin ist bei Ihnen zu Besuch. Sie haben Karten mit Bildern. Formulieren Sie mit Ihrer Karte eine Bitte. Ihre Partnerin antwortet. Dann formuliert Ihre Partnerin eine Bitte. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Lucía",
+            "gender": "f",
+            "profile": "Lucía ist 35, kommt aus Spanien und ist eine Freundin aus der Nachbarschaft. Sie hat Fotos von ihrer Familie auf dem Handy, sie weiß die Uhrzeit, und den Schlüssel für ihr Fahrrad hat sie dabei. Ihre Bitten an Sie: ein Handtuch, ein Stück Brot, den Fernseher leiser machen. Sie spricht einfach und freundlich."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Make one polite request for each picture (photo, clock or time, key), for example „Zeigst du mir bitte ein Foto?“, and react to Lucía’s requests (towel, bread, TV) with a clear answer.",
+            "de": "Formuliere zu jedem Bild (Foto, Uhr bzw. Uhrzeit, Schlüssel) eine höfliche Bitte, zum Beispiel „Zeigst du mir bitte ein Foto?“, und reagiere mit einer klaren Antwort auf Lucías Bitten (Handtuch, Brot, Fernseher)."
+          },
+          {
+            "en": "Make your request, then react to your partner’s request with a clear answer („Ja, gern. Hier, bitte.“ or „Tut mir leid, …“) before you take the next card.",
+            "de": "Formuliere deine Bitte und reagiere dann mit einer klaren Antwort auf die Bitte deines Partners („Ja, gern. Hier, bitte.“ oder „Tut mir leid, …“), bevor du die nächste Karte nimmst."
+          },
+          {
+            "en": "Name the thing in the picture with its article and use polite words: bitte, danke, gern, Entschuldigung.",
+            "de": "Nenne den Gegenstand auf dem Bild mit Artikel und benutze höfliche Wörter: bitte, danke, gern, Entschuldigung."
+          },
+          {
+            "en": "Use the polite request forms „Kannst du / Können Sie bitte …?“ with the infinitive at the end, or „Ich möchte bitte …“ / „Gib mir bitte …“.",
+            "de": "Benutze die höflichen Bitten „Kannst du / Können Sie bitte …?“ mit dem Infinitiv am Ende oder „Ich möchte bitte …“ / „Gib mir bitte …“."
+          },
+          {
+            "en": "Speak in a friendly tone and stress the important word: „Kannst du mir bitte das SALZ geben?“",
+            "de": "Sprich in einem freundlichen Ton und betone das wichtige Wort: „Kannst du mir bitte das SALZ geben?“"
+          }
+        ]
+      }
+    }
+  ]
+}

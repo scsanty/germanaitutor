@@ -4,14 +4,15 @@ import * as mt from './matching';
 import * as cz from './cloze';
 import * as aq from './audioQuestions';
 import * as lt from './letter';
+import * as sp from './spoken';
 
-export type SetTaskType = 'passage_questions' | 'matching' | 'cloze' | 'audio_questions' | 'letter';
-export type TaskContent = pq.PassageQuestionsContent | mt.MatchingContent | cz.ClozeContent | aq.AudioQuestionsContent | lt.LetterContent;
-export type TaskView = pq.PassageQuestionsView | mt.MatchingView | cz.ClozeView | aq.AudioQuestionsView | lt.LetterView;
-export type TaskAnswer = pq.PassageQuestionsAnswer | mt.MatchingAnswer | cz.ClozeAnswer | aq.AudioQuestionsAnswer | lt.LetterAnswer;
+export type SetTaskType = 'passage_questions' | 'matching' | 'cloze' | 'audio_questions' | 'letter' | 'spoken';
+export type TaskContent = pq.PassageQuestionsContent | mt.MatchingContent | cz.ClozeContent | aq.AudioQuestionsContent | lt.LetterContent | sp.SpokenPartContent;
+export type TaskView = pq.PassageQuestionsView | mt.MatchingView | cz.ClozeView | aq.AudioQuestionsView | lt.LetterView | sp.SpokenPartView;
+export type TaskAnswer = pq.PassageQuestionsAnswer | mt.MatchingAnswer | cz.ClozeAnswer | aq.AudioQuestionsAnswer | lt.LetterAnswer | sp.SpokenAnswer;
 
 export function isSetTaskType(v: unknown): v is SetTaskType {
-  return v === 'passage_questions' || v === 'matching' || v === 'cloze' || v === 'audio_questions' || v === 'letter';
+  return v === 'passage_questions' || v === 'matching' || v === 'cloze' || v === 'audio_questions' || v === 'letter' || v === 'spoken';
 }
 
 export function validateTask(type: SetTaskType, content: unknown): string[] {
@@ -26,6 +27,8 @@ export function validateTask(type: SetTaskType, content: unknown): string[] {
       return aq.validateAudioQuestions(content);
     case 'letter':
       return lt.validateLetter(content);
+    case 'spoken':
+      return sp.validateSpokenPart(content);
   }
 }
 
@@ -42,6 +45,8 @@ export function viewTask(type: SetTaskType, content: TaskContent, available: (ha
       return aq.viewAudioQuestions(content as aq.AudioQuestionsContent, available);
     case 'letter':
       return lt.viewLetter(content as lt.LetterContent);
+    case 'spoken':
+      return sp.viewSpokenPart(content as sp.SpokenPartContent);
   }
 }
 
@@ -57,6 +62,9 @@ export function parseTaskAnswer(type: SetTaskType, raw: unknown, content: TaskCo
       return aq.parseAudioQuestionsAnswer(raw, content as aq.AudioQuestionsContent);
     case 'letter':
       return lt.parseLetterAnswer(raw, content as lt.LetterContent);
+    case 'spoken':
+      // A spoken attempt finishes only through the spoken routes, so the generic submit refuses it.
+      return null;
   }
 }
 
@@ -72,6 +80,8 @@ export function gradeTask(type: SetTaskType, content: TaskContent, answer: TaskA
       return aq.gradeAudioQuestions(content as aq.AudioQuestionsContent, answer as aq.AudioQuestionsAnswer);
     case 'letter':
       throw new Error('a letter is graded by the AI');
+    case 'spoken':
+      throw new Error('a spoken part is graded by the AI');
   }
 }
 
@@ -87,6 +97,8 @@ export function correctTexts(type: SetTaskType, content: TaskContent): string[] 
       return aq.correctTextAudioQuestions(content as aq.AudioQuestionsContent);
     case 'letter':
       throw new Error('a letter has no single correct text');
+    case 'spoken':
+      throw new Error('a spoken part has no single correct text');
   }
 }
 
@@ -107,5 +119,7 @@ export function itemCount(type: SetTaskType, content: TaskContent): number {
       return (content as aq.AudioQuestionsContent).questions.length;
     case 'letter':
       throw new Error('a letter set has one item per rubric criterion; use the part');
+    case 'spoken':
+      throw new Error('a spoken set has one item per rubric criterion; use the part');
   }
 }

@@ -1,0 +1,43 @@
+{
+  "formatId": "generic-a1",
+  "partId": "sprechen-2",
+  "anchors": [
+    {
+      "band": "A",
+      "turns": [
+        "Gehen wir am Samstag zusammen in den Zoo? Hast du Zeit?",
+        "Um zehn Uhr kann ich nicht, da kaufe ich ein. Geht es um elf Uhr?",
+        "Super. Wir treffen uns am Bahnhof, okay? Dann fahren wir mit der Straßenbahn.",
+        "Das Ticket kostet fünfzehn Euro. Das ist nicht so teuer.",
+        "Ich bringe Brötchen und Wasser mit. Bringst du Obst mit?",
+        "Gut, also Samstag, elf Uhr, am Bahnhof. Bis Samstag!"
+      ],
+      "grades": { "ausdruck": "A", "aufgabe": "A", "richtigkeit": "A", "aussprache": "A" },
+      "justification": "Die Lernende macht klare Vorschläge, reagiert auf den Partner (lehnt eine Uhrzeit ab und bietet eine neue an) und fasst die Einigung am Ende zusammen. Fragen und Vorschläge sind für A1 vielfältig („Gehen wir …?“, „Geht es um …?“, „Bringst du … mit?“). Verbstellung, trennbare Verben und Präpositionen sind korrekt. Die Aussprache ist klar."
+    },
+    {
+      "band": "C",
+      "turns": [
+        "Samstag … gehen wir Zoo? Hast du Zeit?",
+        "Zehn Uhr? Nein, ich kann nicht. Elf Uhr ist gut?",
+        "Wir treffen … am Bahnhof. Okay?",
+        "Ticket … wie viel? Fünfzehn Euro? Okay, gut.",
+        "Ich bringe Wasser. Du … Obst?",
+        "Gut. Samstag, elf Uhr, Bahnhof."
+      ],
+      "grades": { "ausdruck": "B", "aufgabe": "B", "richtigkeit": "B", "aussprache": "B" },
+      "justification": "Der Lernende macht Vorschläge zu Tag, Uhrzeit, Treffpunkt und Essen, reagiert meist passend auf den Partner und fasst die Einigung kurz zusammen; ob der Partner Obst mitbringt, bleibt offen. Er drückt sich mit sehr einfachen Wörtern meist verständlich aus, macht Pausen bei der Wortsuche, und die Sätze stehen oft unverbunden nebeneinander. Es gibt Fehler auch in einfachen Sätzen (fehlende Präposition und fehlendes Verb: „gehen wir Zoo?“, „Wir treffen … am Bahnhof“), die das Verständnis aber kaum stören. Die Aussprache ist meist gut verständlich; ein Akzent ist hörbar, stört aber kaum."
+    },
+    {
+      "band": "D",
+      "turns": [
+        "Zoo.",
+        "Ja … ja.",
+        "Samstag? Äh … nicht.",
+        "Okay. Tschüss."
+      ],
+      "grades": { "ausdruck": "D", "aufgabe": "D", "richtigkeit": "D", "aussprache": "C" },
+      "justification": "Die Lernende macht keinen eigenen Vorschlag und reagiert nur mit „ja“, „okay“ oder einzelnen Wörtern; es entsteht keine Planung und keine Einigung. Sie bildet keine Sätze, und die Bruchstücke sind größtenteils unverständlich. Die Aussprache erschwert das Verständnis stellenweise deutlich, und es gibt lange Pausen."
+    }
+  ]
+}

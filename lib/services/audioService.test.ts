@@ -24,6 +24,7 @@ function fakeProvider(ok = true) {
       return Buffer.from('OggS-fake');
     }),
     convert: vi.fn(async (b: Buffer) => Buffer.concat([Buffer.from('OggS-'), b])),
+    transcribe: vi.fn(async () => ({ text: '', language: 'de', duration: 0, words: [] })),
   };
 }
 
@@ -35,6 +36,7 @@ function brokenRenderer() {
       throw new Error('speech service 500: ffmpeg failed');
     }),
     convert: vi.fn(async (b: Buffer) => b),
+    transcribe: vi.fn(async () => ({ text: '', language: 'de', duration: 0, words: [] })),
   };
 }
 
@@ -498,6 +500,12 @@ describe('localSpeechProvider', () => {
           return res.writeHead(200, { 'Content-Type': 'audio/ogg' }).end(Buffer.from('OggS-rendered'));
         }
         if (req.url === '/convert') return res.writeHead(200, { 'Content-Type': 'audio/ogg' }).end(Buffer.concat([Buffer.from('OggS-'), body]));
+        if (req.url?.startsWith('/transcribe')) {
+          if (body.toString() === 'long') return res.writeHead(400, { 'Content-Type': 'application/json' }).end('{"error":"audio longer than 5 minutes"}');
+          return res
+            .writeHead(200, { 'Content-Type': 'application/json' })
+            .end('{"text":"Hallo","language":"de","duration":1.5,"words":[{"word":"Hallo","start":0,"end":1,"probability":0.9},{"word":3}]}');
+        }
         res.writeHead(404).end();
       });
     });
@@ -521,6 +529,18 @@ describe('localSpeechProvider', () => {
     const bad = provider.render({ ...input, segments: [] });
     await expect(bad).rejects.toThrow('speech service 400: no segments');
     await bad.catch((err) => expect(isUnreachableError(err)).toBe(false));
+  });
+
+  it('transcribes: the raw body, the model in the query, a checked JSON reply, and the 400 text', async () => {
+    const provider = createLocalSpeechProvider(base);
+    const out = await provider.transcribe(Buffer.from('webm'), 'medium');
+    expect(out).toEqual({ text: 'Hallo', language: 'de', duration: 1.5, words: [{ word: 'Hallo', start: 0, end: 1, probability: 0.9 }] });
+    expect(seen.at(-1)).toMatchObject({ url: '/transcribe?model=medium', type: 'application/octet-stream' });
+    expect(seen.at(-1)!.body.toString()).toBe('webm');
+    const err = await provider.transcribe(Buffer.from('long'), 'small').catch((e: unknown) => e);
+    expect(err).toBeInstanceOf(SpeechServiceError);
+    expect(err).toMatchObject({ status: 400, message: 'speech service 400: audio longer than 5 minutes' });
+    await expect(provider.transcribe(Buffer.alloc(25 * 1024 * 1024 + 1), 'small')).rejects.toThrow('413');
   });
 
   it('refuses oversized bodies before sending them', async () => {

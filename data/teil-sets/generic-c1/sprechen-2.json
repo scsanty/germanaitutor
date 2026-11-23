@@ -1,0 +1,145 @@
+{
+  "formatId": "generic-c1",
+  "partId": "sprechen-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-c1__sprechen-2__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Diskutieren Sie mit Ihrer Partnerin über die Frage auf dem Aufgabenblatt. Begründen Sie Ihre Meinung, gehen Sie differenziert auf ihre Argumente ein und versuchen Sie, zu einem Ergebnis zu kommen.",
+          "materials": [
+            {
+              "title": "Frage: Sollte ein bedingungsloses Grundeinkommen eingeführt werden?",
+              "points": [
+                "Existenzsicherung und weniger Bürokratie",
+                "Finanzierbarkeit",
+                "Arbeitsanreize und der Wert von Arbeit",
+                "Automatisierung und Zukunft der Arbeit",
+                "Ergebnisse von Pilotprojekten"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2, der Diskussion. Die Frage lautet: „Sollte ein bedingungsloses Grundeinkommen eingeführt werden?“ Diskutieren Sie bitte mit Ihrer Partnerin, begründen Sie Ihre Meinung und gehen Sie auf ihre Argumente ein. Versuchen Sie, zu einem Ergebnis zu kommen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Prof. Dr. Claudia Neumann",
+            "gender": "f",
+            "profile": "Claudia Neumann ist 57 und Volkswirtin an einer Hochschule. Sie ist skeptisch: Ein Grundeinkommen für alle sei kaum finanzierbar und würde Geld an Menschen verteilen, die es nicht brauchen. Gezielte Hilfen und eine einfachere Grundsicherung hält sie für besser. Sie kennt Pilotprojekte und räumt ein, dass die Teilnehmenden dort kaum weniger gearbeitet haben. Sie argumentiert präzise und fragt nach Zahlen."
+          },
+          "turns": 7
+        },
+        "explanations": [
+          {
+            "en": "Argue precisely and with nuance: concede before you counter („Das mag zutreffen, greift aber zu kurz, weil …“), ask follow-up questions and steer towards a result: „Lässt sich festhalten, dass …?“",
+            "de": "Argumentiere genau und differenziert: räume ein, bevor du widersprichst („Das mag zutreffen, greift aber zu kurz, weil …“), stell Rückfragen und steuere auf ein Ergebnis zu: „Lässt sich festhalten, dass …?“"
+          },
+          {
+            "en": "Develop a nuanced position on a universal basic income, address several points from the sheet (security, funding, work incentives, automation, pilot projects), engage with Prof. Neumann’s economic objections and reach an agreement or a precise summary of your differences.",
+            "de": "Entwickle eine differenzierte Position zum bedingungslosen Grundeinkommen, behandle mehrere Punkte vom Blatt (Existenzsicherung, Finanzierung, Arbeitsanreize, Automatisierung, Pilotprojekte), setz dich mit Prof. Neumanns ökonomischen Einwänden auseinander und kommt zu einer Einigung oder einer genauen Zusammenfassung eurer Unterschiede."
+          },
+          {
+            "en": "Use Konjunktiv II and I correctly („Würde man …, hätte das zur Folge, dass …“; „Sie sagen, das sei …“), concessive clauses (auch wenn, wenngleich) and complex word order without slips.",
+            "de": "Benutze Konjunktiv II und I korrekt („Würde man …, hätte das zur Folge, dass …“; „Sie sagen, das sei …“), konzessive Sätze (auch wenn, wenngleich) und eine komplexe Wortstellung ohne Fehler."
+          },
+          {
+            "en": "Use stress and intonation to mark contrast and concession, and keep a natural pace even when you disagree strongly.",
+            "de": "Setze Betonung und Intonation ein, um Gegensätze und Einräumungen hörbar zu machen, und halte ein natürliches Tempo, auch wenn du deutlich widersprichst."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-c1__sprechen-2__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Diskutieren Sie mit Ihrem Partner über die Frage auf dem Aufgabenblatt. Begründen Sie Ihre Meinung, gehen Sie differenziert auf seine Argumente ein und versuchen Sie, zu einem Ergebnis zu kommen.",
+          "materials": [
+            {
+              "title": "Frage: Sollten staatliche Hochschulen wieder Studiengebühren erheben?",
+              "points": [
+                "Qualität der Lehre und Ausstattung",
+                "Chancengleichheit und soziale Herkunft",
+                "Studienkredite und nachgelagerte Gebühren",
+                "Vergleich mit anderen Ländern",
+                "Bildung als öffentliches Gut"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2, der Diskussion. Sie diskutieren über die Frage: „Sollten staatliche Hochschulen wieder Studiengebühren erheben?“ Begründen Sie bitte Ihre Meinung, gehen Sie auf die Argumente Ihres Partners ein und versuchen Sie, zu einem Ergebnis zu kommen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Dennis",
+            "gender": "m",
+            "profile": "Dennis ist 26, studiert Maschinenbau im Master und arbeitet nebenbei zwanzig Stunden pro Woche. Er ist entschieden gegen Studiengebühren: Schon jetzt hielten Miete und Lebenshaltung Kinder aus ärmeren Familien vom Studium ab. Er räumt ein, dass Hörsäle überfüllt und Bibliotheken veraltet sind, und könnte über nachgelagerte Gebühren nach dem Berufseinstieg nachdenken. Er argumentiert engagiert, aber fair."
+          },
+          "turns": 7
+        },
+        "explanations": [
+          {
+            "en": "Argue precisely and with nuance: concede before you counter („Das mag zutreffen, greift aber zu kurz, weil …“), ask follow-up questions and steer towards a result: „Lässt sich festhalten, dass …?“",
+            "de": "Argumentiere genau und differenziert: räume ein, bevor du widersprichst („Das mag zutreffen, greift aber zu kurz, weil …“), stell Rückfragen und steuere auf ein Ergebnis zu: „Lässt sich festhalten, dass …?“"
+          },
+          {
+            "en": "Take a well-founded stance on tuition fees, weigh teaching quality against equal opportunities, discuss models such as deferred fees, respond precisely to Dennis’s social arguments and end with an agreement or a clear summary.",
+            "de": "Bezieh fundiert Stellung zu Studiengebühren, wäge die Qualität der Lehre gegen Chancengleichheit ab, besprich Modelle wie nachgelagerte Gebühren, reagiere genau auf Dennis’ soziale Argumente und schließ mit einer Einigung oder einer klaren Zusammenfassung."
+          },
+          {
+            "en": "Use Konjunktiv II and I correctly („Würde man …, hätte das zur Folge, dass …“; „Sie sagen, das sei …“), concessive clauses (auch wenn, wenngleich) and complex word order without slips.",
+            "de": "Benutze Konjunktiv II und I korrekt („Würde man …, hätte das zur Folge, dass …“; „Sie sagen, das sei …“), konzessive Sätze (auch wenn, wenngleich) und eine komplexe Wortstellung ohne Fehler."
+          },
+          {
+            "en": "Use stress and intonation to mark contrast and concession, and keep a natural pace even when you disagree strongly.",
+            "de": "Setze Betonung und Intonation ein, um Gegensätze und Einräumungen hörbar zu machen, und halte ein natürliches Tempo, auch wenn du deutlich widersprichst."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-c1__sprechen-2__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Diskutieren Sie mit Ihrer Partnerin über die Frage auf dem Aufgabenblatt. Begründen Sie Ihre Meinung, gehen Sie differenziert auf ihre Argumente ein und versuchen Sie, zu einem Ergebnis zu kommen.",
+          "materials": [
+            {
+              "title": "Frage: Sollten Tierversuche vollständig verboten werden?",
+              "points": [
+                "Ethik und Tierschutz",
+                "medizinischer Fortschritt und Arzneimittelsicherheit",
+                "Alternativen: Zellkulturen, Organchips, Computermodelle",
+                "Kosmetik- versus Medikamentenforschung",
+                "Forschungsstandort und internationale Regeln"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2, der Diskussion. Die Frage lautet: „Sollten Tierversuche vollständig verboten werden?“ Diskutieren Sie bitte mit Ihrer Partnerin, begründen Sie Ihre Meinung, gehen Sie auf ihre Argumente ein und versuchen Sie, zu einem Ergebnis zu kommen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Dr. Mira Lindqvist",
+            "gender": "f",
+            "profile": "Mira Lindqvist ist 39 und Pharmakologin in einem Forschungsinstitut. Sie lehnt ein vollständiges Verbot ab: Für viele Medikamente gebe es noch keine gleichwertigen Alternativen, und Forschung würde ins Ausland abwandern. Sie unterstützt das Verbot für Kosmetik und mehr Geld für Ersatzmethoden. Sie argumentiert sachlich, mit Beispielen aus der Praxis, und erkennt ethische Einwände ausdrücklich an."
+          },
+          "turns": 7
+        },
+        "explanations": [
+          {
+            "en": "Argue precisely and with nuance: concede before you counter („Das mag zutreffen, greift aber zu kurz, weil …“), ask follow-up questions and steer towards a result: „Lässt sich festhalten, dass …?“",
+            "de": "Argumentiere genau und differenziert: räume ein, bevor du widersprichst („Das mag zutreffen, greift aber zu kurz, weil …“), stell Rückfragen und steuere auf ein Ergebnis zu: „Lässt sich festhalten, dass …?“"
+          },
+          {
+            "en": "Argue a nuanced position on a complete ban on animal testing, distinguish cosmetics from medicine, discuss alternatives and research location, engage with Dr Lindqvist’s scientific arguments and reach an agreement or a precise summary.",
+            "de": "Vertritt eine differenzierte Position zu einem vollständigen Verbot von Tierversuchen, unterscheide zwischen Kosmetik und Medizin, besprich Alternativen und den Forschungsstandort, setz dich mit Dr. Lindqvists wissenschaftlichen Argumenten auseinander und kommt zu einer Einigung oder einer genauen Zusammenfassung."
+          },
+          {
+            "en": "Use Konjunktiv II and I correctly („Würde man …, hätte das zur Folge, dass …“; „Sie sagen, das sei …“), concessive clauses (auch wenn, wenngleich) and complex word order without slips.",
+            "de": "Benutze Konjunktiv II und I korrekt („Würde man …, hätte das zur Folge, dass …“; „Sie sagen, das sei …“), konzessive Sätze (auch wenn, wenngleich) und eine komplexe Wortstellung ohne Fehler."
+          },
+          {
+            "en": "Use stress and intonation to mark contrast and concession, and keep a natural pace even when you disagree strongly.",
+            "de": "Setze Betonung und Intonation ein, um Gegensätze und Einräumungen hörbar zu machen, und halte ein natürliches Tempo, auch wenn du deutlich widersprichst."
+          }
+        ]
+      }
+    }
+  ]
+}

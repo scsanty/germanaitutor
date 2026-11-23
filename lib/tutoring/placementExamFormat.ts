@@ -1,17 +1,19 @@
 import { parse as parseYaml, stringify as stringifyYaml } from 'yaml';
 import type { CefrLevel } from '../types';
-import type { MultipleChoiceContent, FillBlankContent, FreeTextContent } from '../curriculum/types';
+import type { MultipleChoiceContent, FillBlankContent, FreeTextContent, SpokenResponseContent } from '../curriculum/types';
 import { validateExerciseContent } from '../curriculum/exerciseContentValidation';
 import { LEVELS, isCefrLevel, levelIndex } from './levels';
 
-export type PlacementQuestionType = 'multiple_choice' | 'fill_blank' | 'free_text';
+export type PlacementQuestionType = 'multiple_choice' | 'fill_blank' | 'free_text' | 'spoken';
 
-export const PLACEMENT_QUESTION_TYPES: readonly PlacementQuestionType[] = ['multiple_choice', 'fill_blank', 'free_text'];
+export const PLACEMENT_QUESTION_TYPES: readonly PlacementQuestionType[] = ['multiple_choice', 'fill_blank', 'free_text', 'spoken'];
 
 export type PlacementQuestion =
   | { id: string; level: CefrLevel; type: 'multiple_choice'; content: MultipleChoiceContent }
   | { id: string; level: CefrLevel; type: 'fill_blank'; content: FillBlankContent }
-  | { id: string; level: CefrLevel; type: 'free_text'; content: FreeTextContent };
+  | { id: string; level: CefrLevel; type: 'free_text'; content: FreeTextContent }
+  // Answered by voice; the transcript is graded like free text. Served only when the speech service is up.
+  | { id: string; level: CefrLevel; type: 'spoken'; content: SpokenResponseContent };
 
 export type ExamFormat = 'json' | 'yaml';
 
@@ -58,7 +60,7 @@ export function validatePlacementExam(data: unknown): ExamParseResult {
     if (!PLACEMENT_QUESTION_TYPES.includes(q.type as PlacementQuestionType)) {
       errors.push(`${name}: type must be one of ${PLACEMENT_QUESTION_TYPES.join(', ')}`);
     } else {
-      for (const problem of validateExerciseContent(q.type, q.content)) errors.push(`${name}: ${problem}`);
+      for (const problem of validateExerciseContent(q.type === 'spoken' ? 'spoken_response' : q.type, q.content)) errors.push(`${name}: ${problem}`);
     }
   });
 

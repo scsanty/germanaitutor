@@ -114,7 +114,7 @@ describe('ExerciseEditor flashcard rule', () => {
       />
     );
     const options = Array.from(screen.getByLabelText('Exercise 1 type').querySelectorAll('option')).map((o) => o.value);
-    expect(options).toEqual(['multiple_choice', 'fill_blank', 'free_text', 'passage_questions', 'matching', 'cloze', 'audio_questions', 'letter']);
+    expect(options).toEqual(['multiple_choice', 'fill_blank', 'free_text', 'passage_questions', 'matching', 'cloze', 'audio_questions', 'letter', 'spoken_response']);
   });
 
   it('still shows an existing flashcard as a flashcard so it can be changed', () => {
@@ -318,6 +318,25 @@ describe('ExerciseEditor listening exercises', () => {
     expect(screen.getByLabelText('Exercise 1 task b situation')).toHaveValue('');
     fireEvent.click(screen.getByRole('button', { name: 'Remove Task B' }));
     expect(onChange.mock.lastCall![0][0].content.tasks).toEqual([task]);
+  });
+
+  it('offers the spoken response and authors a prompt, model answer, minimum seconds and the instruction (Speaking)', () => {
+    const onChange = vi.fn();
+    render(<Host initial={[{ type: 'multiple_choice', content: { question: '', options: ['', ''], correctIndex: 0 } }]} onChange={onChange} />);
+    fireEvent.change(screen.getByLabelText('Exercise 1 type'), { target: { value: 'spoken_response' } });
+    fireEvent.change(screen.getByLabelText('Exercise 1 prompt'), { target: { value: 'Wie heißen Sie?' } });
+    fireEvent.change(screen.getByLabelText('Exercise 1 model answer'), { target: { value: 'Ich heiße Anna.' } });
+    fireEvent.change(screen.getByLabelText('Exercise 1 minimum seconds'), { target: { value: '15' } });
+    fireEvent.change(screen.getByLabelText('Exercise 1 instruction (English)'), { target: { value: 'Answer aloud.' } });
+    fireEvent.change(screen.getByLabelText('Exercise 1 instruction (German)'), { target: { value: 'Antworte laut.' } });
+    expect(onChange).toHaveBeenLastCalledWith([
+      {
+        type: 'spoken_response',
+        content: { prompt: 'Wie heißen Sie?', modelAnswer: 'Ich heiße Anna.', minSeconds: 15, instruction: { en: 'Answer aloud.', de: 'Antworte laut.' } },
+      },
+    ]);
+    fireEvent.change(screen.getByLabelText('Exercise 1 minimum seconds'), { target: { value: '' } });
+    expect(onChange.mock.lastCall![0][0].content).not.toHaveProperty('minSeconds');
   });
 
   it('shows the validation problems of a transcript being written', () => {

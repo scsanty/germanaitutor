@@ -238,6 +238,15 @@ describe('progressService.getDailyQueue', () => {
     expect((await progress.getDailyQueue('2026-09-29')).items.map((i) => i.exercise.id)).toEqual(['a1-greet__ex1']);
   });
 
+  // Speaking: a spoken response is never in the Daily Queue, even if a review row exists for it.
+  it('never puts spoken responses in the Daily Queue', async () => {
+    const { db, progress } = setup();
+    db.exec(`INSERT INTO exercises (id, lesson_id, type, content) VALUES ('a1-sein__spoken', 'a1-sein', 'spoken_response', '{"prompt":"Wie geht es?","modelAnswer":"Gut."}')`);
+    scheduleReview(db, 'a1-sein__spoken', '2026-09-20');
+    scheduleReview(db, 'a1-greet__ex1', '2026-09-20');
+    expect((await progress.getDailyQueue('2026-09-29')).items.map((i) => i.exercise.id)).toEqual(['a1-greet__ex1']);
+  });
+
   it('suggests the first incomplete lesson whose prerequisites are done', async () => {
     const { db, progress } = setup();
     expect((await progress.getDailyQueue(today)).suggestedLesson).toEqual({ id: 'a1-greet', title: 'Saying hello' });

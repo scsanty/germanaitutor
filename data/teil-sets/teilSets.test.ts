@@ -40,4 +40,20 @@ describe('bundled Teil sets', () => {
     }
     expect(parts).toBeGreaterThan(0);
   });
+  // S23: 3 starter sets per spoken part, for every format (telc, Goethe and NaDoch), so a new format can't skip them.
+  it('give every spoken part of every format 3 sets, each with its own materials', () => {
+    let parts = 0;
+    for (const format of listFormats()) {
+      for (const part of format.parts.filter((p) => p.taskType === 'spoken')) {
+        parts += 1;
+        const path = join(ROOT, format.id, `${part.id}.json`);
+        expect(existsSync(path), `${format.id}/${part.id}`).toBe(true);
+        const bundle = JSON.parse(readFileSync(path, 'utf8')) as BundledSetFile;
+        expect(bundle.sets.length, `${format.id}/${part.id}`).toBe(3);
+        const materials = bundle.sets.map((s) => JSON.stringify((s.set.content as { situation: string; materials: unknown }).materials));
+        expect(new Set(materials).size, `${format.id}/${part.id}: distinct materials`).toBe(3);
+      }
+    }
+    expect(parts).toBe(38);
+  });
 });

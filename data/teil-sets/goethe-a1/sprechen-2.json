@@ -1,0 +1,175 @@
+{
+  "formatId": "goethe-a1",
+  "partId": "sprechen-2",
+  "version": "1",
+  "sets": [
+    {
+      "id": "goethe-a1__sprechen-2__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie und Ihr Partner / Ihre Partnerin haben Themen-Karten zum Thema „Reisen“. Auf jeder Karte steht ein Wort. Stellen Sie mit jedem Wort eine Frage und antworten Sie auf die Fragen Ihres Partners / Ihrer Partnerin.",
+          "materials": [
+            {
+              "title": "Themen-Karten „Reisen“ – Ihre Karten",
+              "points": [
+                "Zug",
+                "Hotel",
+                "Sommer"
+              ]
+            },
+            {
+              "title": "Die Karten Ihres Partners / Ihrer Partnerin",
+              "points": [
+                "Koffer",
+                "Meer",
+                "Fahrkarte"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2. Das Thema ist „Reisen“. Sie haben Karten mit einem Wort. Stellen Sie Ihrem Partner eine Frage mit dem Wort auf Ihrer Karte. Ihr Partner antwortet. Dann fragt Ihr Partner Sie. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Pavel",
+            "gender": "m",
+            "profile": "Pavel ist 33, kommt aus Tschechien und arbeitet als Busfahrer. Er fährt im Urlaub gern mit dem Zug, schläft lieber in Pensionen als im Hotel und fährt im Sommer an die Ostsee. Er antwortet in kurzen, einfachen Sätzen und stellt zu seinen Karten Koffer, Meer und Fahrkarte je eine Frage."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Ask one question about each of your cards (Zug, Hotel, Sommer) that fits the topic „Reisen“, and answer each of Pavel’s questions about Koffer, Meer and Fahrkarte with a full sentence.",
+            "de": "Stell zu jeder deiner Karten (Zug, Hotel, Sommer) eine Frage, die zum Thema „Reisen“ passt, und beantworte jede Frage von Pavel zu Koffer, Meer und Fahrkarte mit einem ganzen Satz."
+          },
+          {
+            "en": "Ask your question, wait for the answer, then answer your partner’s question before you take the next card; a short „Danke“ or „Und du?“ keeps the conversation going.",
+            "de": "Stell deine Frage, warte auf die Antwort und beantworte dann die Frage deines Partners, bevor du die nächste Karte nimmst; ein kurzes „Danke“ oder „Und du?“ hält das Gespräch in Gang."
+          },
+          {
+            "en": "Use the word on the card in your question and add one or two words that fit the topic, so the question makes sense in the theme.",
+            "de": "Benutze das Wort von der Karte in deiner Frage und ergänze ein oder zwei Wörter, die zum Thema passen, damit die Frage zum Thema passt."
+          },
+          {
+            "en": "Start questions with a W-word (Wann, Wo, Was, Wie oft) or with the verb („Fährst du gern Zug?“), and put the verb in second place in your answers.",
+            "de": "Beginne Fragen mit einem W-Wort (Wann, Wo, Was, Wie oft) oder mit dem Verb („Fährst du gern Zug?“) und stell in deinen Antworten das Verb an die zweite Stelle."
+          },
+          {
+            "en": "Let your voice go up at the end of a yes/no question and down at the end of a W-question and of your answers.",
+            "de": "Lass die Stimme am Ende einer Ja/Nein-Frage nach oben gehen und am Ende einer W-Frage und deiner Antworten nach unten."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a1__sprechen-2__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie und Ihr Partner / Ihre Partnerin haben Themen-Karten zum Thema „Kleidung“. Auf jeder Karte steht ein Wort. Stellen Sie mit jedem Wort eine Frage und antworten Sie auf die Fragen Ihres Partners / Ihrer Partnerin.",
+          "materials": [
+            {
+              "title": "Themen-Karten „Kleidung“ – Ihre Karten",
+              "points": [
+                "Farbe",
+                "Schuhe",
+                "Winter"
+              ]
+            },
+            {
+              "title": "Die Karten Ihres Partners / Ihrer Partnerin",
+              "points": [
+                "Jacke",
+                "Geschäft",
+                "Hose"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2. Das Thema heißt „Kleidung“. Nehmen Sie eine Karte und stellen Sie Ihrer Partnerin eine Frage zu dem Wort. Ihre Partnerin antwortet und fragt dann Sie. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Mei",
+            "gender": "f",
+            "profile": "Mei ist 25, kommt aus China und studiert Informatik in Darmstadt. Ihre Lieblingsfarbe ist Grün, sie trägt meistens Turnschuhe und findet den Winter in Deutschland sehr kalt. Sie antwortet kurz und freundlich und stellt zu ihren Karten Jacke, Geschäft und Hose je eine Frage."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Make one question from each of your cards (Farbe, Schuhe, Winter) about clothes, and answer Mei’s questions about Jacke, Geschäft and Hose with a full sentence each.",
+            "de": "Bilde aus jeder deiner Karten (Farbe, Schuhe, Winter) eine Frage zum Thema Kleidung und beantworte Meis Fragen zu Jacke, Geschäft und Hose jeweils mit einem ganzen Satz."
+          },
+          {
+            "en": "Ask your question, wait for the answer, then answer your partner’s question before you take the next card; a short „Danke“ or „Und du?“ keeps the conversation going.",
+            "de": "Stell deine Frage, warte auf die Antwort und beantworte dann die Frage deines Partners, bevor du die nächste Karte nimmst; ein kurzes „Danke“ oder „Und du?“ hält das Gespräch in Gang."
+          },
+          {
+            "en": "Use the word on the card in your question and add one or two words that fit the topic, so the question makes sense in the theme.",
+            "de": "Benutze das Wort von der Karte in deiner Frage und ergänze ein oder zwei Wörter, die zum Thema passen, damit die Frage zum Thema passt."
+          },
+          {
+            "en": "Start questions with a W-word (Wann, Wo, Was, Wie oft) or with the verb („Fährst du gern Zug?“), and put the verb in second place in your answers.",
+            "de": "Beginne Fragen mit einem W-Wort (Wann, Wo, Was, Wie oft) oder mit dem Verb („Fährst du gern Zug?“) und stell in deinen Antworten das Verb an die zweite Stelle."
+          },
+          {
+            "en": "Let your voice go up at the end of a yes/no question and down at the end of a W-question and of your answers.",
+            "de": "Lass die Stimme am Ende einer Ja/Nein-Frage nach oben gehen und am Ende einer W-Frage und deiner Antworten nach unten."
+          }
+        ]
+      }
+    },
+    {
+      "id": "goethe-a1__sprechen-2__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie und Ihr Partner / Ihre Partnerin haben Themen-Karten zum Thema „Mein Tag“. Auf jeder Karte steht ein Wort. Stellen Sie mit jedem Wort eine Frage und antworten Sie auf die Fragen Ihres Partners / Ihrer Partnerin.",
+          "materials": [
+            {
+              "title": "Themen-Karten „Mein Tag“ – Ihre Karten",
+              "points": [
+                "Aufstehen",
+                "Mittagessen",
+                "Abend"
+              ]
+            },
+            {
+              "title": "Die Karten Ihres Partners / Ihrer Partnerin",
+              "points": [
+                "Frühstück",
+                "Bus",
+                "Schlafen"
+              ]
+            }
+          ],
+          "examinerIntro": "Wir kommen zu Teil 2. Das Thema ist „Mein Tag“. Sie stellen Ihrem Partner eine Frage mit dem Wort auf Ihrer Karte, und Ihr Partner antwortet. Danach stellt Ihr Partner Ihnen eine Frage. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Samuel",
+            "gender": "m",
+            "profile": "Samuel ist 41, kommt aus Ghana und arbeitet als Pfleger im Altenheim. Er steht um fünf Uhr auf, isst mittags in der Kantine und sieht abends mit seinen Kindern fern. Er antwortet in einfachen Sätzen und stellt zu seinen Karten Frühstück, Bus und Schlafen je eine Frage."
+          },
+          "turns": 6
+        },
+        "explanations": [
+          {
+            "en": "Ask Samuel one question about each of your cards (Aufstehen, Mittagessen, Abend) about his day, and answer his questions about Frühstück, Bus and Schlafen with a full sentence and a time where it fits.",
+            "de": "Stell Samuel zu jeder deiner Karten (Aufstehen, Mittagessen, Abend) eine Frage zu seinem Tag und beantworte seine Fragen zu Frühstück, Bus und Schlafen mit einem ganzen Satz und, wo es passt, mit einer Uhrzeit."
+          },
+          {
+            "en": "Ask your question, wait for the answer, then answer your partner’s question before you take the next card; a short „Danke“ or „Und du?“ keeps the conversation going.",
+            "de": "Stell deine Frage, warte auf die Antwort und beantworte dann die Frage deines Partners, bevor du die nächste Karte nimmst; ein kurzes „Danke“ oder „Und du?“ hält das Gespräch in Gang."
+          },
+          {
+            "en": "Use the word on the card in your question and add one or two words that fit the topic, so the question makes sense in the theme.",
+            "de": "Benutze das Wort von der Karte in deiner Frage und ergänze ein oder zwei Wörter, die zum Thema passen, damit die Frage zum Thema passt."
+          },
+          {
+            "en": "Start questions with a W-word (Wann, Wo, Was, Wie oft) or with the verb („Fährst du gern Zug?“), and put the verb in second place in your answers.",
+            "de": "Beginne Fragen mit einem W-Wort (Wann, Wo, Was, Wie oft) oder mit dem Verb („Fährst du gern Zug?“) und stell in deinen Antworten das Verb an die zweite Stelle."
+          },
+          {
+            "en": "Let your voice go up at the end of a yes/no question and down at the end of a W-question and of your answers.",
+            "de": "Lass die Stimme am Ende einer Ja/Nein-Frage nach oben gehen und am Ende einer W-Frage und deiner Antworten nach unten."
+          }
+        ]
+      }
+    }
+  ]
+}

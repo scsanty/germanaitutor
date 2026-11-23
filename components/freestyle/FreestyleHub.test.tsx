@@ -17,6 +17,7 @@ describe("FreestyleHub", () => {
             { mode: "grammar_drill", enabled: true, open: false },
             { mode: "free_reading", enabled: true, open: false },
             { mode: "free_writing", enabled: true, open: false },
+            { mode: "spoken", enabled: true, open: false },
           ],
           aiAvailable: true,
           levels: ["A1", "A2", "B1"],
@@ -33,7 +34,7 @@ describe("FreestyleHub", () => {
       "href",
       "/freestyle/grammar_drill",
     );
-    expect(screen.queryByText(/Spoken/)).not.toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /Spoken conversation/ })).toHaveAttribute("href", "/freestyle/spoken");
   });
 
   // S17: no provider -> the modes show as unavailable (not links), with the alert and a Settings link.

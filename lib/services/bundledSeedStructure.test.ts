@@ -13,11 +13,11 @@ const files = readdirSync(DIR).filter((f) => f.endsWith('.json'));
 const seeds = files.map((f) => [f, JSON.parse(readFileSync(join(DIR, f), 'utf8')) as SeedFile] as const);
 
 describe('bundled curriculum seeds', () => {
-  it('has all 15 track+level files at seed version 11, format 3', () => {
+  it('has all 15 track+level files at seed version 12, format 3', () => {
     expect(files).toHaveLength(15);
     for (const [, seed] of seeds) {
       expect(seed.formatVersion).toBe(3);
-      expect(seed.seedVersion).toBe('11');
+      expect(seed.seedVersion).toBe('12');
     }
   });
 
@@ -74,6 +74,17 @@ describe('bundled curriculum seeds', () => {
       const needed = FORM_LESSONS.includes(lesson.id) ? 'cloze' : 'letter';
       expect(exercises.some((e) => e.type === needed), lesson.id).toBe(true);
     }
+  });
+
+  it.each(seeds)('%s: every speaking lesson has a spoken_response exercise', (_f, seed) => {
+    for (const lesson of seed.lessons.filter((l) => l.skill === 'speaking')) {
+      const exercises = seed.exercises.filter((e) => e.lessonId === lesson.id);
+      expect(exercises.some((e) => e.type === 'spoken_response'), lesson.id).toBe(true);
+    }
+  });
+
+  it('has 39 speaking lessons across the seeds', () => {
+    expect(seeds.flatMap(([, seed]) => seed.lessons.filter((l) => l.skill === 'speaking'))).toHaveLength(39);
   });
 
   it.each(seeds)('%s: every listening lesson has audio and prints no spoken text', (_f, seed) => {

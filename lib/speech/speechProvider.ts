@@ -10,11 +10,30 @@ export interface RenderInput {
   pauseMs: number;
 }
 
+export type WhisperModel = 'small' | 'medium';
+
+export interface TranscribedWord {
+  word: string;
+  start: number;
+  end: number;
+  probability: number;
+}
+
+// The body of the sidecar's POST /transcribe (speech/server.py).
+export interface Transcription {
+  text: string;
+  language: string;
+  duration: number;
+  words: TranscribedWord[];
+}
+
 export interface SpeechProvider {
   health(): Promise<{ ok: boolean; voices: string[] }>;
   render(input: RenderInput): Promise<Buffer>;
   // An uploaded recording, converted to the app's format (ogg/opus).
   convert(data: Buffer): Promise<Buffer>;
+  // Speech to text (German), with word timings and confidence. At most 5 minutes of audio.
+  transcribe(audio: Buffer, model: WhisperModel): Promise<Transcription>;
 }
 
 export { SpeechServiceError, SpeechUnreachableError, isUnreachableError } from './speechErrors';

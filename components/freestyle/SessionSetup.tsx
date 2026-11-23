@@ -52,7 +52,7 @@ export function SessionSetup({
   );
   // conversation: a scenario id or FREE; grammar drill: a lesson title or FREE ('' = nothing chosen yet).
   const drillTopic = mode === "grammar_drill" ? initialTopic?.trim() || "" : "";
-  const [choice, setChoice] = useState(mode === "conversation" || drillTopic ? FREE : "");
+  const [choice, setChoice] = useState(mode === "conversation" || mode === "spoken" || drillTopic ? FREE : "");
   const [text, setText] = useState(drillTopic);
   // The topics load after the first render, so a matching one is picked up until the learner chooses.
   const [untouched, setUntouched] = useState(true);
@@ -62,27 +62,29 @@ export function SessionSetup({
   const starting = useRef(false);
   const [error, setError] = useState<string | null>(null);
 
+  // A spoken session is set up like a conversation: a scenario or a free topic.
+  const conversational = mode === "conversation" || mode === "spoken";
   const scenarios = scenariosFor(level);
   const trimmed = text.trim();
   const choiceList =
-    mode === "conversation" ? scenarios.map((s) => s.id) : grammarTopics;
+    conversational ? scenarios.map((s) => s.id) : grammarTopics;
   const effectiveChoice = matchedTopic
     ? matchedTopic
     : choice === FREE || choiceList.includes(choice)
       ? choice
-      : mode === "conversation"
+      : conversational
         ? FREE
         : "";
 
   function changeLevel(next: CefrLevel) {
     setLevel(next);
     setUntouched(false);
-    if (mode === "conversation") setChoice(FREE);
+    if (conversational) setChoice(FREE);
     onLevelChange?.(next);
   }
 
   function buildSetup(): Record<string, string> | null {
-    if (mode === "conversation") {
+    if (conversational) {
       if (effectiveChoice !== FREE) return { scenarioId: effectiveChoice };
       return trimmed ? { topic: trimmed } : {};
     }
@@ -144,7 +146,7 @@ export function SessionSetup({
         : null;
   const suggestionNs =
     mode === "free_reading" ? "readingSuggestions" : "writingSuggestions";
-  const choosing = mode === "conversation" || mode === "grammar_drill";
+  const choosing = conversational || mode === "grammar_drill";
   const showInput = !choosing || effectiveChoice === FREE;
 
   return (
@@ -174,9 +176,9 @@ export function SessionSetup({
             setUntouched(false);
             setChoice(value);
           }}
-          aria-label={mode === "conversation" ? t("scenario") : t("topic")}
+          aria-label={conversational ? t("scenario") : t("topic")}
         >
-          {mode === "conversation"
+          {conversational
             ? scenarios.map((s) => choiceRow(s.id, pickText(s.title, language)))
             : grammarTopics.map((topic) => choiceRow(topic, topic))}
           {choiceRow(FREE, t("freeTopic"))}

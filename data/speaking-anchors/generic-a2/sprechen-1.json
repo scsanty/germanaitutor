@@ -1,0 +1,43 @@
+{
+  "formatId": "generic-a2",
+  "partId": "sprechen-1",
+  "anchors": [
+    {
+      "band": "A",
+      "turns": [
+        "Guten Tag, mein Name ist Priya Sharma. Ich komme aus Indien und lebe seit zwei Jahren in Stuttgart.",
+        "Ich arbeite als Krankenschwester in einem Krankenhaus. Die Arbeit ist anstrengend, aber sie macht mir Spaß.",
+        "Ich wohne mit meinem Mann in einer Dreizimmerwohnung. Sie ist nicht sehr groß, aber hell, und wir haben einen kleinen Balkon.",
+        "Die Nachbarn sind sehr freundlich. Letzte Woche hat uns eine Nachbarin zum Kaffee eingeladen.",
+        "Deutsch lerne ich, weil ich es für meine Arbeit brauche. Ich besuche zweimal pro Woche einen Abendkurs.",
+        "Am schwierigsten finde ich die Artikel. Deshalb schreibe ich jedes neue Wort mit Artikel in ein Heft."
+      ],
+      "grades": { "ausdruck": "A", "aufgabe": "A", "richtigkeit": "A", "aussprache": "A" },
+      "justification": "Die Lernende stellt sich ausführlich vor und beantwortet die Fragen zur Wohnung und zum Deutschlernen genau, mit Begründungen und Beispielen. Sie verwendet für A2 einen breiten Wortschatz und verknüpft ihre Sätze („aber“, „weil“, „deshalb“). Nebensätze, Perfekt und Inversion sind korrekt („Letzte Woche hat uns eine Nachbarin … eingeladen“). Die Aussprache ist klar und flüssig."
+    },
+    {
+      "band": "C",
+      "turns": [
+        "Ich heiße Diego, ich komme aus Kolumbien. Ich bin hier in Deutschland seit ein Jahr.",
+        "Ich arbeite in einem Hotel, in der Küche. Die Arbeit ist gut, aber ich arbeite viel am Wochenende.",
+        "Meine Wohnung ist klein, ich wohne allein. Es gibt keine Balkon, aber die Wohnung ist hell.",
+        "Die Nachbarn … ich kenne sie nicht so gut. Sie sind ruhig.",
+        "Ich lerne Deutsch, weil ich will hier bleiben. Ich gehe in einen Kurs.",
+        "Grammatik ist schwer für mich. Ich lerne auch mit einer App."
+      ],
+      "grades": { "ausdruck": "B", "aufgabe": "B", "richtigkeit": "B", "aussprache": "B" },
+      "justification": "Der Lernende erzählt über sich und beantwortet die Fragen zu Wohnung, Nachbarn und Deutschlernen; die Antwort zu den Nachbarn bleibt knapp. Er drückt sich meist verständlich aus, der Wortschatz reicht für die Aufgabe, wiederholt sich aber („Arbeit“, „Wohnung“), und er verbindet nur mit „aber“ und „weil“. Es gibt einige Fehler in einfachen Strukturen („seit ein Jahr“, „keine Balkon“, „weil ich will hier bleiben“), die das Verständnis aber kaum stören. Die Aussprache ist meist gut verständlich; ein Akzent ist hörbar, stört aber kaum."
+    },
+    {
+      "band": "D",
+      "turns": [
+        "Ich bin … Fatima. Marokko.",
+        "Wohnung … klein. Ja.",
+        "Deutsch … für … äh … Arbeit? Nein … Kinder.",
+        "Schwer. Alles schwer."
+      ],
+      "grades": { "ausdruck": "D", "aufgabe": "D", "richtigkeit": "D", "aussprache": "D" },
+      "justification": "Die Lernende nennt nur Name und Land; Beruf und Wohnort fehlen, und die Fragen beantwortet sie nur mit einzelnen, unsicheren Wörtern, sodass die Aufgabe kaum bewältigt wird. Sie kann sich kaum ausdrücken, und ihre Bruchstücke sind wegen der Fehler größtenteils unverständlich. Wegen vieler Pausen und Abbrüche ist auch die Aussprache größtenteils unverständlich."
+    }
+  ]
+}

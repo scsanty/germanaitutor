@@ -1,0 +1,42 @@
+{
+  "formatId": "telc-a1",
+  "partId": "sprechen-3",
+  "anchors": [
+    {
+      "band": "A",
+      "turns": [
+        "Entschuldigung, kannst du bitte das Fenster aufmachen? Es ist sehr warm hier.",
+        "Ja, natürlich. Hier ist mein Kuli.",
+        "Gib mir bitte ein Glas Wasser.",
+        "Tut mir leid, mein Handy ist leider kaputt. Aber da vorne ist ein Telefon.",
+        "Kannst du mir bitte am Samstag helfen? Ich ziehe um.",
+        "Ja, gern. Ich mache die Tür zu."
+      ],
+      "grades": { "ausdruck": "A", "aufgabe": "A", "richtigkeit": "A", "aussprache": "A" },
+      "justification": "Die Lernende formuliert zu jeder Karte eine passende, höfliche Bitte und reagiert auf die Bitten des Partners angemessen, auch mit einer freundlichen Ablehnung. Imperativ und Modalverb werden korrekt benutzt. Die Aussprache ist klar und gut verständlich."
+    },
+    {
+      "band": "C",
+      "turns": [
+        "Fenster … bitte … auf machen?",
+        "Ja. Hier … Kuli.",
+        "Du geben … äh … Wasser, bitte.",
+        "Telefon … äh … ich … Telefon bitte?",
+        "Samstag … helfen? … Ja … nein … äh."
+      ],
+      "grades": { "ausdruck": "B", "aufgabe": "B", "richtigkeit": "B", "aussprache": "B" },
+      "justification": "Der Lernende formuliert zu den Karten „Fenster“ und „Wasser“ eine erkennbare Bitte und reagiert passend auf die Bitte nach dem Kuli; bei „Telefon“ und „Samstag“ passen seine Reaktionen nur teilweise zur Situation. Er drückt sich nur mit sehr wenigen Wörtern aus, und die Wortsuche unterbricht ihn oft. Viele Fehler bei Imperativ und Verbformen („Du geben … Wasser“) erschweren das Verständnis stellenweise, und auch die Aussprache erschwert es stellenweise."
+    },
+    {
+      "band": "D",
+      "turns": [
+        "Fenster.",
+        "Ja, ja.",
+        "Wasser … bitte … äh.",
+        "Nein. Ich nicht weiß."
+      ],
+      "grades": { "ausdruck": "C", "aufgabe": "C", "richtigkeit": "C", "aussprache": "C" },
+      "justification": "Die Lernende nennt nur die Wörter auf den Karten und formuliert keine Bitte; auf die Bitten des Partners gibt es keine passende Reaktion. Sie findet kaum Wörter und bildet keine Sätze, sodass die Äußerungen kaum zu verstehen sind. Die Aussprache macht sie größtenteils unverständlich."
+    }
+  ]
+}

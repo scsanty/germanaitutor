@@ -2,7 +2,6 @@
 
 import { useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { Timer } from 'lucide-react';
 import { FocusLayout } from '@/components/focus/FocusLayout';
 import { useApiErrorText } from '@/components/useApiErrorText';
 import { Alert, AlertDescription } from '@/components/ui/alert';
@@ -11,21 +10,15 @@ import type { PracticeResult, PracticeRun } from '@/lib/exam/practiceViews';
 import type { SetTaskType, TaskAnswer } from '@/lib/tasks/taskTypes';
 import type { LetterView } from '@/lib/tasks/letter';
 import { LetterTaskInput } from '@/components/writing/LetterTaskInput';
+import { SpokenPartRunner } from '@/components/speaking/SpokenPartRunner';
 import { cn } from '@/lib/utils';
 import { answeredCount, emptyAnswer, TaskInputs } from './TaskInputs';
-import { formatClock, useCountdown } from './useCountdown';
+import { RunnerHeader } from './RunnerHeader';
+import { useCountdown } from './useCountdown';
 
 type Tab = 'text' | 'tasks';
 
-// Spec: the timed Teil runner, in focus mode. The clock is the server's (startedAt + minutes); at
-// zero the attempt carries on and is marked as overtime by the server.
-export function TeilRunner({
-  run,
-  onFinished,
-  onExit,
-  progress = null,
-  clockOffsetMs = 0,
-}: {
+interface TeilRunnerProps {
   run: PracticeRun;
   onFinished: (result: PracticeResult) => void;
   onExit?: () => void;
@@ -33,7 +26,23 @@ export function TeilRunner({
   progress?: { current: number; total: number } | null;
   // Server clock minus client clock, measured when the run arrived (see useCountdown).
   clockOffsetMs?: number;
-}) {
+}
+
+// Spec: the timed Teil runner, in focus mode. A spoken part runs as a conversation (SpokenPartRunner); every
+// other part is answered on the page and submitted.
+export function TeilRunner(props: TeilRunnerProps) {
+  if (props.run.part.taskType === 'spoken' && props.run.spoken) return <SpokenPartRunner {...props} />;
+  return <WrittenTeilRunner {...props} />;
+}
+
+// The clock is the server's (startedAt + minutes); at zero the attempt carries on and is marked as overtime by the server.
+function WrittenTeilRunner({
+  run,
+  onFinished,
+  onExit,
+  progress = null,
+  clockOffsetMs = 0,
+}: TeilRunnerProps) {
   const t = useTranslations('exam');
   const tWriting = useTranslations('writing');
   const errorText = useApiErrorText();
@@ -80,26 +89,7 @@ export function TeilRunner({
     }
   }
 
-  const header = (
-    <div className="flex min-w-0 flex-1 items-center justify-between gap-3">
-      <div className="flex min-w-0 flex-col">
-        <h1 lang="de" className="truncate font-heading text-base font-bold md:text-lg">{run.part.title.de}</h1>
-        {progress && <p className="text-xs text-text-muted">{t('mockPart', progress)}</p>}
-      </div>
-      <div
-        role="timer"
-        aria-label={t('timer')}
-        className={cn('flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-1 font-mono text-base tabular-nums', overtime ? 'border-danger/60 bg-danger/10 text-danger' : 'border-border')}
-      >
-        <Timer aria-hidden className="size-4" />
-        {formatClock(secondsLeft)}
-      </div>
-      {/* The timer itself isn't live (it would speak every second); this announces each minute. */}
-      <span aria-live="polite" className="sr-only">
-        {overtime ? '' : t('minutesLeft', { minutes: Math.ceil(secondsLeft / 60) })}
-      </span>
-    </div>
-  );
+  const header = <RunnerHeader title={run.part.title.de} progress={progress} secondsLeft={secondsLeft} overtime={overtime} />;
 
   const instructions = (
     <p lang="de" className="rounded-xl bg-surface px-4 py-3 text-sm leading-relaxed whitespace-pre-wrap">
