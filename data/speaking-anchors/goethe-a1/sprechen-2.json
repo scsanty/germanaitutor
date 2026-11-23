@@ -1,0 +1,41 @@
+{
+  "formatId": "goethe-a1",
+  "partId": "sprechen-2",
+  "anchors": [
+    {
+      "band": "A",
+      "turns": [
+        "Mein Thema ist „Einkaufen“, und mein Wort ist „Supermarkt“. Wann gehst du in den Supermarkt?",
+        "Meine Karte ist „Obst“. Ich esse gern Äpfel und Bananen. Bananen kaufe ich jede Woche.",
+        "Mein Wort ist jetzt „Geschäft“. Welches Geschäft magst du am liebsten?",
+        "Du fragst „Preis“? Ein Kilo Tomaten kostet im Markt ungefähr drei Euro.",
+        "Meine letzte Karte ist „Kleidung“. Kaufst du deine Kleidung im Internet?"
+      ],
+      "grades": { "erfuellung": "A", "kohaerenz": "A", "wortschatz": "A", "strukturen": "A", "aussprache": "A" },
+      "justification": "Der Lernende stellt zu jeder Karte eine passende Frage zum Thema „Einkaufen“ und beantwortet die Fragen des Partners vollständig. Fragen und Antworten sind einfache, korrekte Sätze (Verbstellung in W- und Ja/Nein-Fragen) mit passendem Wortschatz. Die Aussprache ist klar."
+    },
+    {
+      "band": "C",
+      "turns": [
+        "Supermarkt … wann du gehst Supermarkt?",
+        "Obst? Ich esse Apfel. Gern.",
+        "Geschäft … welche Geschäft du magst?",
+        "Preis … Tomaten, drei Euro, glaube ich.",
+        "Kleidung … du kaufen Internet?"
+      ],
+      "grades": { "erfuellung": "B", "kohaerenz": "B", "wortschatz": "B", "strukturen": "C", "aussprache": "B" },
+      "justification": "Die Lernende stellt zu den Karten Fragen, die verständlich sind, aber oft falsch gebaut („wann du gehst Supermarkt?“, „du kaufen Internet?“). Ihre Antworten sind sehr kurz, gehen aber auf die Fragen ein. Artikel und Verbformen fehlen häufig. Die Aussprache ist meist verständlich."
+    },
+    {
+      "band": "D",
+      "turns": [
+        "Supermarkt.",
+        "Ja … Apfel.",
+        "Äh … Geschäft … ich nicht weiß.",
+        "Kleidung. Ja."
+      ],
+      "grades": { "erfuellung": "C", "kohaerenz": "C", "wortschatz": "C", "strukturen": "C", "aussprache": "C" },
+      "justification": "Der Lernende liest nur die Wörter auf den Karten vor und stellt keine Frage; auf die Fragen des Partners reagiert er kaum. Es gibt keinen Satzbau. Die Aussprache ist so undeutlich, dass er kaum zu verstehen ist."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "formatId": "goethe-b1",
+  "partId": "sprechen-3",
+  "anchors": [
+    {
+      "band": "A",
+      "turns": [
+        "Vielen Dank für die Frage. Ja, meine Katze bleibt bei einer Nachbarin, wenn ich im Urlaub bin. Das klappt sehr gut, weil sie selbst Katzen hat.",
+        "Da haben Sie recht, das ist nicht immer einfach. Deshalb plane ich meine Reisen meistens so, dass ich höchstens zwei Wochen weg bin.",
+        "Jetzt möchte ich etwas zu Ihrer Präsentation sagen. Mir hat besonders gut gefallen, wie Sie über das Homeoffice in Ihrem Heimatland erzählt haben. Das war sehr interessant für mich.",
+        "Ich habe aber noch eine Frage: Sie haben gesagt, dass man im Homeoffice mehr arbeitet. Wie trennen Sie selbst Arbeit und Freizeit, wenn Sie zu Hause arbeiten?"
+      ],
+      "grades": { "erfuellung": "A", "kohaerenz": "A", "wortschatz": "A", "strukturen": "A", "aussprache": "A" },
+      "justification": "Die Lernende beantwortet die Frage des Partners ausführlich und begründet, reagiert auf seinen Einwand, gibt eine konkrete, positive Rückmeldung zu seiner Präsentation und stellt eine passende Frage dazu. Ihre Beiträge sind gut verbunden und gehen klar auf den Partner ein. Wortschatz und Strukturen sind für B1 sicher und vielfältig. Die Aussprache ist klar."
+    },
+    {
+      "band": "C",
+      "turns": [
+        "Ja, meine Katze … die Nachbarin hilft. Das ist gut.",
+        "Ja, das stimmt. Ist manchmal schwer.",
+        "Ihre Präsentation war gut. Interessant.",
+        "Meine Frage ist: Sie arbeiten zu Hause, das ist gut oder nicht gut?"
+      ],
+      "grades": { "erfuellung": "C", "kohaerenz": "C", "wortschatz": "C", "strukturen": "C", "aussprache": "C" },
+      "justification": "Der Lernende beantwortet die Frage nur knapp und ohne Begründung, die Rückmeldung zur Präsentation bleibt allgemein („war gut“), und seine Frage nimmt kaum Bezug auf den Inhalt. Die Beiträge sind kurz und wenig verbunden. Der Wortschatz ist einfach, und die Wortstellung ist oft falsch („das ist gut oder nicht gut?“). Die Aussprache ist verständlich, aber stark vom Akzent geprägt."
+    },
+    {
+      "band": "D",
+      "turns": [
+        "Katze … äh … ja.",
+        "Ich nicht verstehe Frage.",
+        "Präsentation … gut.",
+        "Frage … nein. Keine."
+      ],
+      "grades": { "erfuellung": "E", "kohaerenz": "E", "wortschatz": "E", "strukturen": "E", "aussprache": "D" },
+      "justification": "Die Lernende beantwortet die Frage des Partners nicht, gibt nur ein Wort als Rückmeldung und stellt keine Frage; eine Interaktion entsteht nicht. Die Äußerungen bestehen aus einzelnen Wörtern ohne Satzbau. Die Aussprache ist nur mit großer Mühe verständlich."
+    }
+  ]
+}

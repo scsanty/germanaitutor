@@ -7,7 +7,7 @@ import { isBottom, isTop } from '@/lib/writing/anchors';
 
 // The tracks whose spoken parts must all have anchors. Task 10 lands one track per commit, and each extends this list,
 // so the suite stays green between commits. When it holds every track, every spoken part of every format is covered.
-const ANCHORED_TRACKS = ['telc'];
+const ANCHORED_TRACKS = ['telc', 'goethe'];
 
 const DIR = join(__dirname);
 const files = readdirSync(DIR, { withFileTypes: true })

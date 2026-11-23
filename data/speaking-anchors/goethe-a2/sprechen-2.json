@@ -1,0 +1,40 @@
+{
+  "formatId": "goethe-a2",
+  "partId": "sprechen-2",
+  "anchors": [
+    {
+      "band": "A",
+      "turns": [
+        "Mein Thema ist „Freizeit“. In meiner Freizeit gehe ich gern schwimmen und treffe Freunde.",
+        "Am Wochenende habe ich mehr Zeit. Samstags gehe ich oft auf den Markt, und sonntags koche ich für meine Familie.",
+        "Am liebsten fahre ich Fahrrad, weil ich dann draußen bin. Letzten Sommer bin ich mit meinem Mann am Rhein entlang gefahren.",
+        "Mit meinen Freunden gehe ich manchmal ins Kino oder wir spielen zusammen Karten.",
+        "Leider habe ich in der Woche nicht so viel Freizeit, denn ich arbeite bis 18 Uhr."
+      ],
+      "grades": { "erfuellung": "A", "kohaerenz": "A", "wortschatz": "A", "strukturen": "A", "aussprache": "A" },
+      "justification": "Die Lernende spricht zu allen vier Stichpunkten auf der Karte und erzählt zusammenhängend mit persönlichen Beispielen. Sie verbindet ihre Sätze mit „weil“, „denn“ und „oder“, benutzt Perfekt und Zeitangaben korrekt und hat einen passenden Wortschatz. Die Aussprache ist klar."
+    },
+    {
+      "band": "C",
+      "turns": [
+        "Mein Thema ist Freizeit. Ich mache gern Sport.",
+        "Am Wochenende ich gehe in Park. Mit meine Kinder.",
+        "Ich fahre gern Fahrrad. Letzte Sommer ich habe gefahrt nach Bonn.",
+        "Freunde … ja, wir gehen Kino. Manchmal."
+      ],
+      "grades": { "erfuellung": "B", "kohaerenz": "B", "wortschatz": "B", "strukturen": "C", "aussprache": "B" },
+      "justification": "Der Lernende spricht zu den meisten Stichpunkten, aber nur in kurzen, wenig verbundenen Sätzen. Wortstellung, Dativ und Partizip sind oft falsch („Am Wochenende ich gehe“, „habe gefahrt“), die Aussagen bleiben aber verständlich. Die Aussprache ist meist verständlich."
+    },
+    {
+      "band": "D",
+      "turns": [
+        "Freizeit … ich … Sport.",
+        "Wochenende … äh … Hause.",
+        "Fahrrad. Ja.",
+        "Ich weiß nicht."
+      ],
+      "grades": { "erfuellung": "C", "kohaerenz": "C", "wortschatz": "C", "strukturen": "C", "aussprache": "C" },
+      "justification": "Die Lernende spricht nur einzelne Wörter zu zwei Stichpunkten; eine Erzählung über ihr Leben entsteht nicht. Es gibt keinen Satzbau und keine Verbindungen. Wegen langer Pausen und undeutlicher Aussprache ist sie kaum zu verstehen."
+    }
+  ]
+}

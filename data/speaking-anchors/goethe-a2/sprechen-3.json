@@ -1,0 +1,40 @@
+{
+  "formatId": "goethe-a2",
+  "partId": "sprechen-3",
+  "anchors": [
+    {
+      "band": "A",
+      "turns": [
+        "Wir wollen doch zusammen für das Geschenk für Paula einkaufen gehen. Wann hast du am Samstag Zeit?",
+        "Um zehn Uhr kann ich leider nicht, da gehe ich zum Arzt. Wie ist es um zwölf?",
+        "Ach, du isst um zwölf mit deiner Mutter zu Mittag. Und um halb drei? Da habe ich frei.",
+        "Super, halb drei passt also. Wo treffen wir uns? Vielleicht vor dem Kaufhaus am Marktplatz?",
+        "Gut, dann treffen wir uns um halb drei vor dem Kaufhaus. Ich freue mich!"
+      ],
+      "grades": { "erfuellung": "A", "kohaerenz": "A", "wortschatz": "A", "strukturen": "A", "aussprache": "A" },
+      "justification": "Der Lernende macht Vorschläge, begründet, warum ein Termin nicht passt, reagiert auf die Partnerin und findet mit ihr einen gemeinsamen Termin und Treffpunkt. Er benutzt Uhrzeiten, Modalverben und Nebensätze korrekt und fasst das Ergebnis zusammen. Die Aussprache ist klar."
+    },
+    {
+      "band": "C",
+      "turns": [
+        "Wir kaufen Geschenk für Paula. Wann du hast Zeit?",
+        "Zehn Uhr nicht. Ich gehe Arzt.",
+        "Zwölf Uhr … du nicht kannst? Okay.",
+        "Halb drei? Ja, gut. Wir treffen … Kaufhaus."
+      ],
+      "grades": { "erfuellung": "B", "kohaerenz": "B", "wortschatz": "B", "strukturen": "C", "aussprache": "B" },
+      "justification": "Die Lernende macht Vorschläge und reagiert auf die Partnerin, und am Ende steht ein gemeinsamer Termin, aber Begründungen fehlen oft und die Äußerungen sind sehr knapp. Wortstellung und Präpositionen sind häufig falsch („Wann du hast Zeit?“, „Ich gehe Arzt“). Die Aussprache ist meist verständlich."
+    },
+    {
+      "band": "D",
+      "turns": [
+        "Samstag?",
+        "Zehn … nein.",
+        "Äh … ich weiß nicht.",
+        "Ja. Okay."
+      ],
+      "grades": { "erfuellung": "C", "kohaerenz": "C", "wortschatz": "C", "strukturen": "C", "aussprache": "C" },
+      "justification": "Der Lernende macht keinen klaren Vorschlag und geht auf die Vorschläge der Partnerin nicht ein; ein gemeinsamer Termin wird nicht gefunden. Er spricht nur in einzelnen Wörtern. Die Aussprache ist kaum verständlich."
+    }
+  ]
+}

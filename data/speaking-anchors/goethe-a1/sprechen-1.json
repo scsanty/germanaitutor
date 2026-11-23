@@ -1,0 +1,43 @@
+{
+  "formatId": "goethe-a1",
+  "partId": "sprechen-1",
+  "anchors": [
+    {
+      "band": "A",
+      "turns": [
+        "Guten Tag. Mein Name ist Elena Petrova. Ich bin 31 Jahre alt.",
+        "Ich komme aus Bulgarien, aus Sofia. Jetzt wohne ich in Leipzig.",
+        "Ich spreche Bulgarisch, Russisch, Englisch und ein bisschen Deutsch.",
+        "Ich bin Ingenieurin von Beruf. In meiner Freizeit lese ich gern und ich fahre Fahrrad.",
+        "Das Wort ist „Bahnhof“: B – A – H – N – H – O – F.",
+        "Meine Zahl ist achtundvierzig."
+      ],
+      "grades": { "erfuellung": "A", "kohaerenz": "A", "wortschatz": "A", "strukturen": "A", "aussprache": "A" },
+      "justification": "Die Lernende spricht zu allen Stichpunkten (Name, Alter, Land, Wohnort, Sprachen, Beruf, Hobby), buchstabiert das Wort richtig und nennt die Zahl ohne Fehler. Die Sätze sind kurz, logisch verbunden („und“) und für A1 korrekt; der Wortschatz passt. Die Aussprache ist klar und gut verständlich."
+    },
+    {
+      "band": "C",
+      "turns": [
+        "Ich heiße Tomasz. Ich bin … vierzig Jahre.",
+        "Ich komme aus Polen. Ich wohne in Hamburg.",
+        "Sprache … Polnisch. Deutsch bisschen.",
+        "Ich arbeiten in Restaurant. Hobby … Fußball.",
+        "Wort „Kino“: K – I – N – O.",
+        "Zahl … dreiundfünfzig. Nein … fünfunddreißig."
+      ],
+      "grades": { "erfuellung": "B", "kohaerenz": "B", "wortschatz": "B", "strukturen": "C", "aussprache": "B" },
+      "justification": "Der Lernende nennt die meisten Stichpunkte, teilweise aber nur mit einzelnen Wörtern („Sprache … Polnisch“, „Hobby … Fußball“); die Zahl korrigiert er erst im zweiten Versuch. Viele Äußerungen sind keine vollständigen Sätze, und es gibt Fehler bei Verbform und Präposition („Ich arbeiten in Restaurant“). Die Aussprache ist trotz Pausen meist verständlich."
+    },
+    {
+      "band": "D",
+      "turns": [
+        "Ich … Name Amira.",
+        "Ägypten.",
+        "Wohnen … äh … nicht weiß.",
+        "Zahl … zwölf? Ja."
+      ],
+      "grades": { "erfuellung": "C", "kohaerenz": "C", "wortschatz": "C", "strukturen": "C", "aussprache": "C" },
+      "justification": "Die Lernende nennt nur Name und Land; Alter, Wohnort, Sprachen, Beruf und Hobby fehlen, und sie buchstabiert nichts. Sie spricht in einzelnen Wörtern ohne Satzbau und ohne Verbindung. Wegen langer Pausen und undeutlicher Aussprache ist sie kaum zu verstehen."
+    }
+  ]
+}

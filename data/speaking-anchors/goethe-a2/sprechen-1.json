@@ -1,0 +1,42 @@
+{
+  "formatId": "goethe-a2",
+  "partId": "sprechen-1",
+  "anchors": [
+    {
+      "band": "A",
+      "turns": [
+        "Meine erste Karte ist „Geburtstag“. Wann hast du Geburtstag?",
+        "Ich habe im März Geburtstag. Meistens feiere ich mit meiner Familie zu Hause.",
+        "Meine zweite Karte ist „Wohnung“. Wie groß ist deine Wohnung?",
+        "Ich spreche zu Hause Türkisch, aber mit meinen Kindern spreche ich manchmal auch Deutsch.",
+        "Die dritte Karte ist „Lieblingsessen“. Was isst du am liebsten?",
+        "Und meine letzte Karte ist „Wochenende“. Was hast du letztes Wochenende gemacht?"
+      ],
+      "grades": { "erfuellung": "A", "kohaerenz": "A", "wortschatz": "A", "strukturen": "A", "aussprache": "A" },
+      "justification": "Der Lernende stellt mit jedem Wort eine passende Frage zur Person und beantwortet die Fragen der Partnerin ausführlich. Er verbindet Sätze mit „aber“ und „und“, benutzt Präsens und Perfekt korrekt und hat für A2 einen passenden Wortschatz. Die Aussprache ist klar."
+    },
+    {
+      "band": "C",
+      "turns": [
+        "Geburtstag … wann ist du Geburtstag?",
+        "Mein Geburtstag ist in März. Ich feiere mit Familie.",
+        "Wohnung … wie groß deine Wohnung?",
+        "Ich spreche Spanisch. Deutsch auch, aber nicht so gut.",
+        "Wochenende … was du hast gemacht?"
+      ],
+      "grades": { "erfuellung": "B", "kohaerenz": "B", "wortschatz": "B", "strukturen": "C", "aussprache": "B" },
+      "justification": "Die Lernende stellt zu den Karten verständliche Fragen und antwortet auf die Partnerin, aber oft sehr knapp. Es gibt viele Fehler in Wortstellung und Verbform („wann ist du Geburtstag?“, „was du hast gemacht?“), und Artikel fehlen. Die Aussprache ist meist gut verständlich."
+    },
+    {
+      "band": "D",
+      "turns": [
+        "Geburtstag?",
+        "Ich … März. Ja.",
+        "Wohnung … äh … groß.",
+        "Ich nicht verstehe. Nochmal?"
+      ],
+      "grades": { "erfuellung": "C", "kohaerenz": "C", "wortschatz": "C", "strukturen": "C", "aussprache": "C" },
+      "justification": "Der Lernende liest meist nur das Wort auf der Karte vor, ohne eine Frage zu bilden, und beantwortet die Fragen der Partnerin nur mit einzelnen Wörtern. Satzbau fehlt fast ganz. Die Aussprache ist stellenweise unverständlich."
+    }
+  ]
+}

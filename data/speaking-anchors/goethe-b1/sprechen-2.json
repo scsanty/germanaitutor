@@ -1,0 +1,42 @@
+{
+  "formatId": "goethe-b1",
+  "partId": "sprechen-2",
+  "anchors": [
+    {
+      "band": "A",
+      "turns": [
+        "Mein Thema heißt „Haustiere in der Stadt“. Ich möchte zuerst über meine eigenen Erfahrungen sprechen, dann über die Situation in meinem Heimatland, und am Ende sage ich meine Meinung.",
+        "Ich habe seit vier Jahren eine Katze. Als ich nach Frankfurt gezogen bin, war ich oft allein, und die Katze hat mir sehr geholfen, mich zu Hause zu fühlen.",
+        "In Indien, wo ich herkomme, haben viele Familien in der Stadt keine Haustiere, weil die Wohnungen klein sind. Auf dem Land ist das anders, dort gibt es fast überall Hunde.",
+        "Ein großer Vorteil von Haustieren ist, dass man weniger einsam ist. Außerdem bewegt man sich mit einem Hund mehr. Ein Nachteil ist allerdings, dass Tiere viel Geld und Zeit kosten, zum Beispiel für den Tierarzt.",
+        "Meiner Meinung nach sollte man sich ein Haustier nur dann anschaffen, wenn man wirklich genug Zeit hat. Sonst leidet das Tier.",
+        "Damit bin ich am Ende meiner Präsentation. Vielen Dank fürs Zuhören! Haben Sie noch Fragen?"
+      ],
+      "grades": { "erfuellung": "A", "kohaerenz": "A", "wortschatz": "A", "strukturen": "A", "aussprache": "A" },
+      "justification": "Der Lernende arbeitet alle fünf Schritte ab: Er stellt das Thema und seinen Aufbau vor, erzählt von eigenen Erfahrungen, beschreibt die Situation im Heimatland, nennt Vor- und Nachteile mit seiner Meinung und schließt mit einem Dank. Die Präsentation ist klar gegliedert und gut verbunden („zuerst“, „außerdem“, „allerdings“, „damit“). Er benutzt vielfältige Nebensätze und einen breiten, passenden Wortschatz fast fehlerfrei. Die Aussprache ist klar und flüssig."
+    },
+    {
+      "band": "C",
+      "turns": [
+        "Mein Thema ist Haustiere in der Stadt.",
+        "Ich habe eine Katze. Die Katze ist sehr lieb. Ich liebe meine Katze.",
+        "In meine Land … viele Leute haben keine Tiere in Stadt, weil die Wohnung ist klein.",
+        "Vorteil ist, man ist nicht allein. Nachteil ist, Tiere kosten viel Geld.",
+        "Ich finde Haustiere gut. Danke."
+      ],
+      "grades": { "erfuellung": "C", "kohaerenz": "C", "wortschatz": "C", "strukturen": "C", "aussprache": "C" },
+      "justification": "Die Lernende spricht die fünf Schritte an, aber jeweils nur in ein oder zwei Sätzen; die Einleitung nennt keinen Aufbau, und die Meinung wird nicht begründet. Die Sätze stehen ohne Verbindung nebeneinander, und Wiederholungen ersetzen Inhalt. Der Wortschatz ist einfach, und es gibt häufige Fehler in Kasus und Wortstellung („In meine Land“, „weil die Wohnung ist klein“). Die Aussprache ist verständlich, aber auffällig von der Muttersprache geprägt."
+    },
+    {
+      "band": "D",
+      "turns": [
+        "Thema … Haustiere.",
+        "Ich … Katze. Katze gut.",
+        "Mein Land … äh … nicht so viel … ich weiß nicht.",
+        "Danke."
+      ],
+      "grades": { "erfuellung": "E", "kohaerenz": "E", "wortschatz": "E", "strukturen": "E", "aussprache": "E" },
+      "justification": "Der Lernende stellt das Thema nur mit einem Wort vor, über Vor- und Nachteile und seine Meinung spricht er gar nicht; eine Präsentation entsteht nicht. Er spricht in Bruchstücken ohne Zusammenhang, der Wortschatz reicht nicht aus, und Satzstrukturen fehlen. Die Aussprache ist größtenteils unverständlich."
+    }
+  ]
+}
