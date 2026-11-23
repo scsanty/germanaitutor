@@ -1,0 +1,142 @@
+{
+  "formatId": "generic-b1",
+  "partId": "sprechen-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-b1__sprechen-1__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sprechen Sie etwa drei Minuten zusammenhängend über das Thema auf Ihrer Karte. Gehen Sie auf alle Punkte ein. Danach stellt Ihnen Ihr Partner Fragen zu Ihrer Präsentation.",
+          "materials": [
+            {
+              "title": "Themenkarte: Fernsehen oder Streaming – wie sehen wir heute Filme?",
+              "points": [
+                "Ihre eigenen Erfahrungen mit dem Thema „Fernsehen und Streaming“",
+                "Wie ist das in Ihrem Heimatland?",
+                "Vor- und Nachteile",
+                "Ihre Meinung"
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1. Sie sprechen jetzt etwa drei Minuten über das Thema auf Ihrer Karte: „Fernsehen oder Streaming – wie sehen wir heute Filme?“ Gehen Sie bitte auf alle Punkte ein. Danach stellt Ihnen Ihr Partner Fragen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Jonas",
+            "gender": "m",
+            "profile": "Jonas ist 27, arbeitet als Elektriker und schaut fast nur Serien auf dem Handy. Während der Präsentation sagt er höchstens kurz „Mhm“ oder „Interessant“. Danach stellt er zwei Fragen, eine nach der anderen: „Wie viel Geld gibst du im Monat für Streaming aus?“ und „Siehst du noch manchmal Nachrichten im normalen Fernsehen?“"
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Structure your talk and say what comes next: „Zuerst erzähle ich von mir, dann …“, „Ein Vorteil ist, dass …“, „Meiner Meinung nach …“, „Zum Schluss …“. Link your ideas with weil, deshalb and trotzdem.",
+            "de": "Gliedere deinen Vortrag und sag, was als Nächstes kommt: „Zuerst erzähle ich von mir, dann …“, „Ein Vorteil ist, dass …“, „Meiner Meinung nach …“, „Zum Schluss …“. Verbinde deine Gedanken mit weil, deshalb und trotzdem."
+          },
+          {
+            "en": "Talk about all four points (your own viewing habits, the situation in your home country, pros and cons of streaming, your opinion) with examples, then answer Jonas’s questions about costs and TV news precisely.",
+            "de": "Sprich über alle vier Punkte (deine eigenen Gewohnheiten, die Situation in deinem Heimatland, Vor- und Nachteile des Streamings, deine Meinung) mit Beispielen und beantworte dann Jonas’ Fragen zu den Kosten und zu den Fernsehnachrichten genau."
+          },
+          {
+            "en": "Tell your own experience in the Perfekt, compare with your home country („In … ist das anders als hier, weil …“) and check the verb position in weil-, dass- and wenn-clauses.",
+            "de": "Erzähl deine eigenen Erfahrungen im Perfekt, vergleiche mit deinem Heimatland („In … ist das anders als hier, weil …“) und achte auf die Verbstellung in weil-, dass- und wenn-Sätzen."
+          },
+          {
+            "en": "Speak freely from the points on the card, not from a script; pause between the parts of your talk and stress the key words.",
+            "de": "Sprich frei nach den Punkten auf der Karte, nicht vom Blatt; mach zwischen den Teilen deines Vortrags Pausen und betone die Schlüsselwörter."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-b1__sprechen-1__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sprechen Sie etwa drei Minuten zusammenhängend über das Thema auf Ihrer Karte. Gehen Sie auf alle Punkte ein. Danach stellt Ihnen Ihre Partnerin Fragen zu Ihrer Präsentation.",
+          "materials": [
+            {
+              "title": "Themenkarte: Nachbarschaft – kennen Sie Ihre Nachbarn?",
+              "points": [
+                "Ihre eigenen Erfahrungen mit dem Thema „Nachbarschaft“",
+                "Wie ist das in Ihrem Heimatland?",
+                "Vor- und Nachteile",
+                "Ihre Meinung"
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1. Bitte sprechen Sie etwa drei Minuten über Ihr Thema: „Nachbarschaft – kennen Sie Ihre Nachbarn?“ Die Punkte auf der Karte helfen Ihnen. Anschließend stellt Ihnen Ihre Partnerin Fragen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Gül",
+            "gender": "f",
+            "profile": "Gül ist 44, Verkäuferin, und wohnt seit zwanzig Jahren im selben Haus in Duisburg, wo sie alle Nachbarn kennt. Während der Präsentation hört sie zu und sagt nur kurz „Ja“ oder „Aha“. Danach fragt sie: „Hast du schon einmal Hilfe von einem Nachbarn bekommen?“ und „Was kann man tun, wenn ein Nachbar immer laut ist?“"
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Structure your talk and say what comes next: „Zuerst erzähle ich von mir, dann …“, „Ein Vorteil ist, dass …“, „Meiner Meinung nach …“, „Zum Schluss …“. Link your ideas with weil, deshalb and trotzdem.",
+            "de": "Gliedere deinen Vortrag und sag, was als Nächstes kommt: „Zuerst erzähle ich von mir, dann …“, „Ein Vorteil ist, dass …“, „Meiner Meinung nach …“, „Zum Schluss …“. Verbinde deine Gedanken mit weil, deshalb und trotzdem."
+          },
+          {
+            "en": "Cover all four points (your neighbours, neighbourhood life in your home country, advantages and disadvantages of close contact, your opinion) with an example, then answer Gül’s questions about help from neighbours and noisy neighbours.",
+            "de": "Behandle alle vier Punkte (deine Nachbarn, Nachbarschaft in deinem Heimatland, Vor- und Nachteile von engem Kontakt, deine Meinung) mit einem Beispiel und beantworte dann Güls Fragen zur Hilfe von Nachbarn und zu lauten Nachbarn."
+          },
+          {
+            "en": "Tell your own experience in the Perfekt, compare with your home country („In … ist das anders als hier, weil …“) and check the verb position in weil-, dass- and wenn-clauses.",
+            "de": "Erzähl deine eigenen Erfahrungen im Perfekt, vergleiche mit deinem Heimatland („In … ist das anders als hier, weil …“) und achte auf die Verbstellung in weil-, dass- und wenn-Sätzen."
+          },
+          {
+            "en": "Speak freely from the points on the card, not from a script; pause between the parts of your talk and stress the key words.",
+            "de": "Sprich frei nach den Punkten auf der Karte, nicht vom Blatt; mach zwischen den Teilen deines Vortrags Pausen und betone die Schlüsselwörter."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-b1__sprechen-1__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sprechen Sie etwa drei Minuten zusammenhängend über das Thema auf Ihrer Karte. Gehen Sie auf alle Punkte ein. Danach stellt Ihnen Ihr Partner Fragen zu Ihrer Präsentation.",
+          "materials": [
+            {
+              "title": "Themenkarte: Taschengeld für Kinder – ab wann und wie viel?",
+              "points": [
+                "Ihre eigenen Erfahrungen mit dem Thema „Taschengeld“",
+                "Wie ist das in Ihrem Heimatland?",
+                "Vor- und Nachteile",
+                "Ihre Meinung"
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1. Sie sprechen jetzt etwa drei Minuten über das Thema auf Ihrer Karte: „Taschengeld für Kinder – ab wann und wie viel?“ Bitte gehen Sie auf alle Punkte ein. Danach stellt Ihnen Ihr Partner Fragen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Herr Schmitt",
+            "gender": "m",
+            "profile": "Herr Schmitt ist 39, Busfahrer und Vater von zwei Kindern, sieben und elf Jahre alt. Während der Präsentation sagt er höchstens „Mhm“. Danach stellt er zwei Fragen: „Sollen Kinder für ihr Taschengeld im Haushalt helfen?“ und „Was macht man, wenn ein Kind sein ganzes Geld für Süßigkeiten ausgibt?“ Er siezt dich."
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Structure your talk and say what comes next: „Zuerst erzähle ich von mir, dann …“, „Ein Vorteil ist, dass …“, „Meiner Meinung nach …“, „Zum Schluss …“. Link your ideas with weil, deshalb and trotzdem.",
+            "de": "Gliedere deinen Vortrag und sag, was als Nächstes kommt: „Zuerst erzähle ich von mir, dann …“, „Ein Vorteil ist, dass …“, „Meiner Meinung nach …“, „Zum Schluss …“. Verbinde deine Gedanken mit weil, deshalb und trotzdem."
+          },
+          {
+            "en": "Talk about all four points (your own experience with pocket money, the custom in your home country, pros and cons, your opinion on age and amount), then answer Herr Schmitt’s questions about housework and sweets with reasons.",
+            "de": "Sprich über alle vier Punkte (deine Erfahrungen mit Taschengeld, die Gewohnheiten in deinem Heimatland, Vor- und Nachteile, deine Meinung zu Alter und Betrag) und beantworte dann Herrn Schmitts Fragen zur Hilfe im Haushalt und zu Süßigkeiten mit Begründung."
+          },
+          {
+            "en": "Tell your own experience in the Perfekt, compare with your home country („In … ist das anders als hier, weil …“) and check the verb position in weil-, dass- and wenn-clauses.",
+            "de": "Erzähl deine eigenen Erfahrungen im Perfekt, vergleiche mit deinem Heimatland („In … ist das anders als hier, weil …“) und achte auf die Verbstellung in weil-, dass- und wenn-Sätzen."
+          },
+          {
+            "en": "Speak freely from the points on the card, not from a script; pause between the parts of your talk and stress the key words.",
+            "de": "Sprich frei nach den Punkten auf der Karte, nicht vom Blatt; mach zwischen den Teilen deines Vortrags Pausen und betone die Schlüsselwörter."
+          }
+        ]
+      }
+    }
+  ]
+}

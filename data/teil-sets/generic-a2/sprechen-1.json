@@ -1,0 +1,163 @@
+{
+  "formatId": "generic-a2",
+  "partId": "sprechen-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-a2__sprechen-1__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie sind neu in einer Laufgruppe in Ihrem Stadtteil. Beim ersten Treffen stellen sich alle vor. Erzählen Sie etwas über sich. Danach stellt Ihnen die Leiterin der Gruppe zwei Fragen.",
+          "materials": [
+            {
+              "title": "Erzählen Sie über sich",
+              "points": [
+                "Herkunft und Wohnort",
+                "seit wann in Deutschland?",
+                "Arbeit oder Ausbildung",
+                "Familie",
+                "Sport früher und heute"
+              ]
+            },
+            {
+              "title": "Danach",
+              "points": [
+                "Beantworten Sie die Fragen der Leiterin."
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1. Bitte stellen Sie sich vor und erzählen Sie etwas über sich. Die Punkte auf dem Blatt helfen Ihnen. Danach stellt Ihnen die Leiterin der Laufgruppe zwei Fragen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Katrin",
+            "gender": "f",
+            "profile": "Katrin ist 41, Physiotherapeutin und leitet die Laufgruppe ehrenamtlich. Sie ist sportlich, offen und spricht in normalem Tempo, aber deutlich. Nach der Vorstellung fragt sie: „Wie war dein erster Winter in Deutschland?“ und dann „Was vermisst du aus deiner Heimat?“"
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Tell a little more than the facts: add a detail or a feeling („Die Arbeit ist anstrengend, aber sie macht mir Spaß.“) and link your sentences with denn, deshalb and weil.",
+            "de": "Erzähl ein bisschen mehr als nur Fakten: ergänze ein Detail oder ein Gefühl („Die Arbeit ist anstrengend, aber sie macht mir Spaß.“) und verbinde deine Sätze mit denn, deshalb und weil."
+          },
+          {
+            "en": "Talk about all five points, including the sport you did before and do now, then answer Katrin’s questions about your first winter in Germany and what you miss from home with a reason or example.",
+            "de": "Sprich über alle fünf Punkte, auch über den Sport früher und heute, und beantworte dann Katrins Fragen zu deinem ersten Winter in Deutschland und zu dem, was du aus deiner Heimat vermisst, mit einem Grund oder Beispiel."
+          },
+          {
+            "en": "Use the Perfekt for the past („Ich bin 2023 nach Deutschland gekommen.“, „Ich habe als … gearbeitet.“), seit with the present tense („Ich lebe seit zwei Jahren hier.“) and the verb at the end after weil.",
+            "de": "Benutze das Perfekt für die Vergangenheit („Ich bin 2023 nach Deutschland gekommen.“, „Ich habe als … gearbeitet.“), seit mit dem Präsens („Ich lebe seit zwei Jahren hier.“) und das Verb nach weil am Ende."
+          },
+          {
+            "en": "Pronounce the endings clearly (-t, -en, -st) and make short pauses between your topics, so the listener can follow.",
+            "de": "Sprich die Endungen deutlich (-t, -en, -st) und mach kurze Pausen zwischen deinen Themen, damit man dir gut folgen kann."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-a2__sprechen-1__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie möchten im Tierheim ehrenamtlich helfen. Beim Kennenlerngespräch erzählen Sie etwas über sich. Danach stellt Ihnen der Mitarbeiter zwei Fragen.",
+          "materials": [
+            {
+              "title": "Erzählen Sie über sich",
+              "points": [
+                "Name, Alter, Herkunft",
+                "Wohnort und Wohnung",
+                "Arbeit oder Kurs",
+                "Hobbys",
+                "Tiere in Ihrem Leben"
+              ]
+            },
+            {
+              "title": "Danach",
+              "points": [
+                "Beantworten Sie die Fragen des Mitarbeiters."
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1. Erzählen Sie bitte etwas über sich. Die Punkte auf dem Blatt helfen Ihnen. Anschließend stellt Ihnen der Mitarbeiter des Tierheims zwei Fragen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Herr Lorenz",
+            "gender": "m",
+            "profile": "Herr Lorenz ist 55 und arbeitet seit vielen Jahren im Tierheim. Er ist ruhig und freundlich und siezt dich. Nach der Vorstellung fragt er: „Haben Sie schon Erfahrung mit Hunden oder Katzen?“ und dann „An welchen Tagen und wie lange haben Sie Zeit?“"
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Tell a little more than the facts: add a detail or a feeling („Die Arbeit ist anstrengend, aber sie macht mir Spaß.“) and link your sentences with denn, deshalb and weil.",
+            "de": "Erzähl ein bisschen mehr als nur Fakten: ergänze ein Detail oder ein Gefühl („Die Arbeit ist anstrengend, aber sie macht mir Spaß.“) und verbinde deine Sätze mit denn, deshalb und weil."
+          },
+          {
+            "en": "Cover all five points, including animals in your life, then answer Herr Lorenz: describe any experience with dogs or cats and say exactly on which days and for how long you can help.",
+            "de": "Sprich über alle fünf Punkte, auch über Tiere in deinem Leben, und antworte Herrn Lorenz: beschreib deine Erfahrung mit Hunden oder Katzen und sag genau, an welchen Tagen und wie lange du helfen kannst."
+          },
+          {
+            "en": "Use the Perfekt for the past („Ich bin 2023 nach Deutschland gekommen.“, „Ich habe als … gearbeitet.“), seit with the present tense („Ich lebe seit zwei Jahren hier.“) and the verb at the end after weil.",
+            "de": "Benutze das Perfekt für die Vergangenheit („Ich bin 2023 nach Deutschland gekommen.“, „Ich habe als … gearbeitet.“), seit mit dem Präsens („Ich lebe seit zwei Jahren hier.“) und das Verb nach weil am Ende."
+          },
+          {
+            "en": "Pronounce the endings clearly (-t, -en, -st) and make short pauses between your topics, so the listener can follow.",
+            "de": "Sprich die Endungen deutlich (-t, -en, -st) und mach kurze Pausen zwischen deinen Themen, damit man dir gut folgen kann."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-a2__sprechen-1__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Sie treffen zum ersten Mal Ihre Tandempartnerin. Sie lernt Ihre Sprache, Sie lernen Deutsch. Erzählen Sie etwas über sich. Danach stellt Ihnen Ihre Tandempartnerin zwei Fragen.",
+          "materials": [
+            {
+              "title": "Erzählen Sie über sich",
+              "points": [
+                "Herkunft und Muttersprache",
+                "Wohnort und seit wann dort",
+                "Arbeit oder Studium",
+                "Freizeit",
+                "Warum Deutsch?"
+              ]
+            },
+            {
+              "title": "Danach",
+              "points": [
+                "Beantworten Sie die Fragen Ihrer Tandempartnerin."
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1. Bitte erzählen Sie etwas über sich. Die Punkte auf dem Blatt helfen Ihnen. Danach stellt Ihnen Ihre Tandempartnerin zwei Fragen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Lena",
+            "gender": "f",
+            "profile": "Lena ist 23 und studiert Lehramt in Leipzig. Sie möchte die Sprache ihres Tandempartners lernen und ist neugierig und herzlich. Nach der Vorstellung fragt sie: „Welches Fest feiert man in deinem Land besonders gern, und wie?“ und dann „Was ist für dich am Deutschen besonders schwer?“"
+          },
+          "turns": 4
+        },
+        "explanations": [
+          {
+            "en": "Tell a little more than the facts: add a detail or a feeling („Die Arbeit ist anstrengend, aber sie macht mir Spaß.“) and link your sentences with denn, deshalb and weil.",
+            "de": "Erzähl ein bisschen mehr als nur Fakten: ergänze ein Detail oder ein Gefühl („Die Arbeit ist anstrengend, aber sie macht mir Spaß.“) und verbinde deine Sätze mit denn, deshalb und weil."
+          },
+          {
+            "en": "Talk about all five points, including why you are learning German, then answer Lena: describe a festival from your country and how it is celebrated, and explain what you find hardest about German.",
+            "de": "Sprich über alle fünf Punkte, auch darüber, warum du Deutsch lernst, und antworte Lena: beschreib ein Fest aus deinem Land und wie man es feiert, und erklär, was für dich am Deutschen am schwersten ist."
+          },
+          {
+            "en": "Use the Perfekt for the past („Ich bin 2023 nach Deutschland gekommen.“, „Ich habe als … gearbeitet.“), seit with the present tense („Ich lebe seit zwei Jahren hier.“) and the verb at the end after weil.",
+            "de": "Benutze das Perfekt für die Vergangenheit („Ich bin 2023 nach Deutschland gekommen.“, „Ich habe als … gearbeitet.“), seit mit dem Präsens („Ich lebe seit zwei Jahren hier.“) und das Verb nach weil am Ende."
+          },
+          {
+            "en": "Pronounce the endings clearly (-t, -en, -st) and make short pauses between your topics, so the listener can follow.",
+            "de": "Sprich die Endungen deutlich (-t, -en, -st) und mach kurze Pausen zwischen deinen Themen, damit man dir gut folgen kann."
+          }
+        ]
+      }
+    }
+  ]
+}

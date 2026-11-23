@@ -1,0 +1,145 @@
+{
+  "formatId": "generic-c1",
+  "partId": "sprechen-1",
+  "version": "1",
+  "sets": [
+    {
+      "id": "generic-c1__sprechen-1__s01",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Halten Sie eine zusammenhängende Präsentation von etwa fünf Minuten über das Thema auf Ihrer Karte. Gehen Sie auf alle Punkte ein. Danach stellt Ihnen Ihr Partner Fragen.",
+          "materials": [
+            {
+              "title": "Themenkarte: Einsamkeit – ein unterschätztes gesellschaftliches Problem?",
+              "points": [
+                "Ausmaß und betroffene Gruppen (nicht nur ältere Menschen)",
+                "Ursachen: Arbeitswelt, Mobilität, digitale Kommunikation",
+                "Folgen für Gesundheit und Gesellschaft",
+                "Ansätze in Ihrem Herkunftsland und in Deutschland (z. B. Einsamkeitsbeauftragte)",
+                "Ihre begründete Einschätzung"
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1. Ihr Thema lautet: „Einsamkeit – ein unterschätztes gesellschaftliches Problem?“ Halten Sie bitte eine Präsentation von etwa fünf Minuten und gehen Sie auf alle Punkte ein. Im Anschluss stellt Ihnen Ihr Partner Fragen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Dr. Matthias Kern",
+            "gender": "m",
+            "profile": "Matthias Kern ist 54 und Hausarzt in einer Großstadt; viele seiner Patientinnen und Patienten leben allein. Während der Präsentation hört er nur zu. Danach stellt er zwei oder drei anspruchsvolle Fragen, etwa „Ist Einsamkeit wirklich Aufgabe der Politik oder nicht eher Privatsache?“ oder „Verstärken soziale Medien das Problem, oder können sie es lindern?“, und hakt kritisch nach."
+          },
+          "turns": 5
+        },
+        "explanations": [
+          {
+            "en": "Present in a well-structured, idiomatic way: frame the topic in your introduction, weigh up the aspects with precise vocabulary („Hinzu kommt …“, „Nicht zu unterschätzen ist …“) and close with a clear conclusion.",
+            "de": "Präsentiere gut gegliedert und idiomatisch: rahme das Thema in der Einleitung ein, wäge die Aspekte mit genauem Wortschatz ab („Hinzu kommt …“, „Nicht zu unterschätzen ist …“) und schließ mit einem klaren Fazit."
+          },
+          {
+            "en": "Present all five points in depth (extent, causes, consequences, approaches in your country of origin and in Germany, your reasoned assessment), then answer Dr Kern’s critical questions on politics versus private life and on social media in a nuanced way.",
+            "de": "Präsentiere alle fünf Punkte gründlich (Ausmaß, Ursachen, Folgen, Ansätze in deinem Herkunftsland und in Deutschland, deine begründete Einschätzung) und beantworte dann Dr. Kerns kritische Fragen zu Politik und Privatsache und zu sozialen Medien differenziert."
+          },
+          {
+            "en": "Use complex structures accurately: nominal style where it fits („die Zunahme der …“), passive with modal verbs („muss berücksichtigt werden“), Konjunktiv I for reported views and extended attributes.",
+            "de": "Benutze komplexe Strukturen korrekt: Nominalstil, wo er passt („die Zunahme der …“), Passiv mit Modalverben („muss berücksichtigt werden“), Konjunktiv I für wiedergegebene Positionen und erweiterte Attribute."
+          },
+          {
+            "en": "Speak fluently and naturally, with intonation that marks what is important; slow down for your main thesis and your conclusion.",
+            "de": "Sprich flüssig und natürlich, mit einer Intonation, die Wichtiges hervorhebt; werde bei deiner Hauptthese und deinem Fazit etwas langsamer."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-c1__sprechen-1__s02",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Halten Sie eine zusammenhängende Präsentation von etwa fünf Minuten über das Thema auf Ihrer Karte. Gehen Sie auf alle Punkte ein. Danach stellt Ihnen Ihre Partnerin Fragen.",
+          "materials": [
+            {
+              "title": "Themenkarte: Bürgerbeteiligung – mehr Mitsprache in der Kommunalpolitik?",
+              "points": [
+                "Formen: Bürgerräte, Bürgerentscheide, Bürgerhaushalte",
+                "Chancen: Akzeptanz, Vertrauen, Wissen der Betroffenen",
+                "Grenzen: Aufwand, geringe Beteiligung, Lobbygruppen",
+                "Beteiligung in Ihrem Herkunftsland",
+                "Ihre begründete Einschätzung"
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1. Sprechen Sie bitte etwa fünf Minuten zum Thema: „Bürgerbeteiligung – mehr Mitsprache in der Kommunalpolitik?“ Gehen Sie dabei auf alle Punkte ein. Danach stellt Ihnen Ihre Partnerin Fragen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Beate Krüger",
+            "gender": "f",
+            "profile": "Beate Krüger ist 58 und seit zwölf Jahren ehrenamtliche Gemeinderätin in einer Kleinstadt bei Hannover. Sie hat einen Bürgerentscheid über ein neues Gewerbegebiet erlebt, der die Stadt gespalten hat. Während der Präsentation hört sie nur zu. Danach fragt sie etwa „Wer beteiligt sich denn tatsächlich – nicht immer dieselben?“ und „Sollten die Ergebnisse von Bürgerräten verbindlich sein?“"
+          },
+          "turns": 5
+        },
+        "explanations": [
+          {
+            "en": "Present in a well-structured, idiomatic way: frame the topic in your introduction, weigh up the aspects with precise vocabulary („Hinzu kommt …“, „Nicht zu unterschätzen ist …“) and close with a clear conclusion.",
+            "de": "Präsentiere gut gegliedert und idiomatisch: rahme das Thema in der Einleitung ein, wäge die Aspekte mit genauem Wortschatz ab („Hinzu kommt …“, „Nicht zu unterschätzen ist …“) und schließ mit einem klaren Fazit."
+          },
+          {
+            "en": "Present all five points (forms, opportunities, limits, participation in your country of origin, your assessment) with concrete examples, then answer Beate Krüger’s questions on who really takes part and on binding results with a differentiated position.",
+            "de": "Präsentiere alle fünf Punkte (Formen, Chancen, Grenzen, Beteiligung in deinem Herkunftsland, deine Einschätzung) mit konkreten Beispielen und beantworte dann Beate Krügers Fragen, wer sich wirklich beteiligt und ob Ergebnisse verbindlich sein sollen, mit einer differenzierten Position."
+          },
+          {
+            "en": "Use complex structures accurately: nominal style where it fits („die Zunahme der …“), passive with modal verbs („muss berücksichtigt werden“), Konjunktiv I for reported views and extended attributes.",
+            "de": "Benutze komplexe Strukturen korrekt: Nominalstil, wo er passt („die Zunahme der …“), Passiv mit Modalverben („muss berücksichtigt werden“), Konjunktiv I für wiedergegebene Positionen und erweiterte Attribute."
+          },
+          {
+            "en": "Speak fluently and naturally, with intonation that marks what is important; slow down for your main thesis and your conclusion.",
+            "de": "Sprich flüssig und natürlich, mit einer Intonation, die Wichtiges hervorhebt; werde bei deiner Hauptthese und deinem Fazit etwas langsamer."
+          }
+        ]
+      }
+    },
+    {
+      "id": "generic-c1__sprechen-1__s03",
+      "set": {
+        "taskType": "spoken",
+        "content": {
+          "situation": "Halten Sie eine zusammenhängende Präsentation von etwa fünf Minuten über das Thema auf Ihrer Karte. Gehen Sie auf alle Punkte ein. Danach stellt Ihnen Ihr Partner Fragen.",
+          "materials": [
+            {
+              "title": "Themenkarte: Die Zukunft des Journalismus in Zeiten von Desinformation",
+              "points": [
+                "Wandel der Mediennutzung: Zeitung, Online, soziale Medien",
+                "Desinformation und ihre Folgen für die Demokratie",
+                "Finanzierung von Qualitätsjournalismus (Bezahlschranken, Rundfunkbeitrag)",
+                "Medienlandschaft und Pressefreiheit in Ihrem Herkunftsland",
+                "Ihre begründete Einschätzung"
+              ]
+            }
+          ],
+          "examinerIntro": "Guten Tag. Wir beginnen mit Teil 1. Ihr Thema ist: „Die Zukunft des Journalismus in Zeiten von Desinformation“. Halten Sie bitte eine Präsentation von etwa fünf Minuten und gehen Sie auf alle Punkte ein. Anschließend stellt Ihnen Ihr Partner Fragen. Bitte beginnen Sie.",
+          "partner": {
+            "name": "Tobias Hartmann",
+            "gender": "m",
+            "profile": "Tobias Hartmann ist 40 und Redakteur bei einer Regionalzeitung, deren Auflage seit Jahren sinkt. Während der Präsentation hört er nur zu. Danach stellt er Fragen wie „Würden Sie selbst für Nachrichten im Internet bezahlen?“ und „Wer sollte entscheiden, was als Desinformation gelöscht wird – Plattformen oder der Staat?“, und fordert eine klare Position."
+          },
+          "turns": 5
+        },
+        "explanations": [
+          {
+            "en": "Present in a well-structured, idiomatic way: frame the topic in your introduction, weigh up the aspects with precise vocabulary („Hinzu kommt …“, „Nicht zu unterschätzen ist …“) and close with a clear conclusion.",
+            "de": "Präsentiere gut gegliedert und idiomatisch: rahme das Thema in der Einleitung ein, wäge die Aspekte mit genauem Wortschatz ab („Hinzu kommt …“, „Nicht zu unterschätzen ist …“) und schließ mit einem klaren Fazit."
+          },
+          {
+            "en": "Present all five points in a well-structured way (media use, disinformation, funding, the press in your country of origin, your assessment), then answer Tobias Hartmann’s questions on paying for news and on who should remove disinformation with a clear, reasoned stance.",
+            "de": "Präsentiere alle fünf Punkte gut gegliedert (Mediennutzung, Desinformation, Finanzierung, die Presse in deinem Herkunftsland, deine Einschätzung) und beantworte dann Tobias Hartmanns Fragen zum Bezahlen für Nachrichten und dazu, wer Desinformation löschen soll, mit einer klaren, begründeten Haltung."
+          },
+          {
+            "en": "Use complex structures accurately: nominal style where it fits („die Zunahme der …“), passive with modal verbs („muss berücksichtigt werden“), Konjunktiv I for reported views and extended attributes.",
+            "de": "Benutze komplexe Strukturen korrekt: Nominalstil, wo er passt („die Zunahme der …“), Passiv mit Modalverben („muss berücksichtigt werden“), Konjunktiv I für wiedergegebene Positionen und erweiterte Attribute."
+          },
+          {
+            "en": "Speak fluently and naturally, with intonation that marks what is important; slow down for your main thesis and your conclusion.",
+            "de": "Sprich flüssig und natürlich, mit einer Intonation, die Wichtiges hervorhebt; werde bei deiner Hauptthese und deinem Fazit etwas langsamer."
+          }
+        ]
+      }
+    }
+  ]
+}
